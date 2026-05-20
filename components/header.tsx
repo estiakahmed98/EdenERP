@@ -158,9 +158,19 @@ export default function Header() {
           label: "Furniture Store",
           href: "/industries/retail/furniture-store",
         },
-        "Grocery Store",
-        "Hardware Store",
-        "Toy Store",
+        {
+          label: "Grocery Store",
+          href: "/industries/retail/grocery-store",
+        },
+        {
+          label: "Hardware Store",
+          href: "/industries/retail/hardware-store",
+        },
+        {
+          label: "Toy Store",
+          href: "/industries/retail/toy-store",
+        },
+      
       ],
     },
     {
