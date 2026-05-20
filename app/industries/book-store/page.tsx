@@ -1,3 +1,5 @@
+//app/industries/book-store/page.tsx
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,34 +29,52 @@ export const metadata: Metadata = {
 const features = [
   {
     title: "Reporting",
-    description: "Track your sales trends, bestsellers, and stock performance in one place.",
+    description:
+      "Track your sales trends, bestsellers, and stock performance in one place.",
   },
   {
     title: "Multiple cashiers",
-    description: "Assign secure cashier profiles with badges or PINs for every shift.",
+    description:
+      "Assign secure cashier profiles with badges or PINs for every shift.",
   },
   {
     title: "Loyalty programs",
-    description: "Reward returning readers with points, tiered perks, and member pricing.",
+    description:
+      "Reward returning readers with points, tiered perks, and member pricing.",
   },
   {
     title: "Sell consignment products",
-    description: "Receive, store, and settle consignment books with clear partner visibility.",
+    description:
+      "Receive, store, and settle consignment books with clear partner visibility.",
   },
   {
     title: "Gift cards",
-    description: "Create, top up, and redeem physical or digital gift cards in seconds.",
+    description:
+      "Create, top up, and redeem physical or digital gift cards in seconds.",
   },
   {
     title: "Pricelists",
-    description: "Set flexible pricing by customer type, channel, event, or campaign.",
+    description:
+      "Set flexible pricing by customer type, channel, event, or campaign.",
   },
 ];
 
 const apps = [
-  { title: "Point of Sale", subtitle: "Ring up orders at checkout", icon: ShoppingBag },
-  { title: "Invoicing", subtitle: "Create and follow invoices", icon: ReceiptText },
-  { title: "Purchase", subtitle: "Restock from suppliers faster", icon: Library },
+  {
+    title: "Point of Sale",
+    subtitle: "Ring up orders at checkout",
+    icon: ShoppingBag,
+  },
+  {
+    title: "Invoicing",
+    subtitle: "Create and follow invoices",
+    icon: ReceiptText,
+  },
+  {
+    title: "Purchase",
+    subtitle: "Restock from suppliers faster",
+    icon: Library,
+  },
   { title: "Inventory", subtitle: "Keep every shelf in sync", icon: BookOpen },
   { title: "eCommerce", subtitle: "Sell books online too", icon: Sparkles },
   { title: "Email Marketing", subtitle: "Launch reader campaigns", icon: Mail },
@@ -82,8 +102,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -164,9 +183,7 @@ export default function BookStorePage() {
             </div>
 
             <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="mb-4 text-4xl leading-none text-amber-500">
-                "
-              </div>
+              <div className="mb-4 text-4xl leading-none text-amber-500">"</div>
               <p className="text-base leading-7 text-slate-700">
                 EdenERP gives bookstore teams the kind of visibility that makes
                 daily decisions faster. From bestseller trends to shelf-level
@@ -265,7 +282,9 @@ export default function BookStorePage() {
                       key={title}
                       className="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-sm"
                     >
-                      <span className="font-medium text-slate-700">{title}</span>
+                      <span className="font-medium text-slate-700">
+                        {title}
+                      </span>
                       <span className="text-sm text-slate-500">{value}</span>
                     </div>
                   ))}
@@ -281,20 +300,31 @@ export default function BookStorePage() {
 
               <div className="rounded-[1.5rem] bg-[#f5eefc] p-4">
                 <div className="grid grid-cols-3 gap-2">
-                  {["1", "2", "3", "4", "5", "6", "7", "8", "9", "%", "0", "Pay"].map(
-                    (key) => (
-                      <div
-                        key={key}
-                        className={`flex aspect-square items-center justify-center rounded-2xl text-sm font-semibold ${
-                          key === "Pay"
-                            ? "bg-primary text-white"
-                            : "bg-white text-slate-600 shadow-sm"
-                        }`}
-                      >
-                        {key}
-                      </div>
-                    )
-                  )}
+                  {[
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "%",
+                    "0",
+                    "Pay",
+                  ].map((key) => (
+                    <div
+                      key={key}
+                      className={`flex aspect-square items-center justify-center rounded-2xl text-sm font-semibold ${
+                        key === "Pay"
+                          ? "bg-primary text-white"
+                          : "bg-white text-slate-600 shadow-sm"
+                      }`}
+                    >
+                      {key}
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -333,7 +363,9 @@ export default function BookStorePage() {
                         }`}
                       />
                       <div className="space-y-1 p-3">
-                        <p className="text-sm font-semibold text-slate-700">{item}</p>
+                        <p className="text-sm font-semibold text-slate-700">
+                          {item}
+                        </p>
                         <p className="text-xs text-slate-400">Tap to add</p>
                       </div>
                     </div>
@@ -350,7 +382,9 @@ export default function BookStorePage() {
               height={28}
               className="h-7 w-7 rounded-full object-cover"
             />
-            <span className="text-sm text-slate-500">Keep track of your books.</span>
+            <span className="text-sm text-slate-500">
+              Keep track of your books.
+            </span>
           </div>
         </div>
       </section>
@@ -413,7 +447,9 @@ export default function BookStorePage() {
               height={28}
               className="h-7 w-7 rounded-full object-cover"
             />
-            <span className="text-sm text-slate-500">Avoid manual stock management.</span>
+            <span className="text-sm text-slate-500">
+              Avoid manual stock management.
+            </span>
           </div>
         </div>
       </section>
@@ -425,9 +461,7 @@ export default function BookStorePage() {
             label="Inventory discipline"
           />
           <div className="mx-auto mt-8 max-w-4xl">
-            <ScriptHeading>
-              Shelf control is the key to success
-            </ScriptHeading>
+            <ScriptHeading>Shelf control is the key to success</ScriptHeading>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
               Maintain optimal stock levels by generating smart replenishment
               orders when a title drops below threshold, so fast-moving books
@@ -449,7 +483,14 @@ export default function BookStorePage() {
             </div>
             <div className="divide-y divide-slate-100">
               {[
-                ["The Silent Patient", "Warehouse 01", "3", "1", "5", "Restock now"],
+                [
+                  "The Silent Patient",
+                  "Warehouse 01",
+                  "3",
+                  "1",
+                  "5",
+                  "Restock now",
+                ],
                 ["Why Fish Don't Exist", "Shelf B4", "14", "9", "6", "Healthy"],
                 ["The Kite Runner", "Warehouse 01", "5", "2", "4", "Low stock"],
                 ["The Book Thief", "Shelf C2", "8", "5", "5", "Healthy"],
@@ -490,7 +531,9 @@ export default function BookStorePage() {
               height={28}
               className="h-7 w-7 rounded-full object-cover"
             />
-            <span className="text-sm text-slate-500">But wait! There&apos;s more.</span>
+            <span className="text-sm text-slate-500">
+              But wait! There&apos;s more.
+            </span>
           </div>
         </div>
       </section>
@@ -530,9 +573,7 @@ export default function BookStorePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
-          <ScriptHeading>
-            One need, one app.
-          </ScriptHeading>
+          <ScriptHeading>One need, one app.</ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-slate-600">
             Expand as you grow with connected apps for your retail operation,
             finance, supplier flows, and customer communication.
@@ -553,8 +594,12 @@ export default function BookStorePage() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">{app.subtitle}</p>
+                    <h3 className="font-semibold text-slate-900">
+                      {app.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      {app.subtitle}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -578,7 +623,11 @@ export default function BookStorePage() {
               <div
                 key={person.name}
                 className={`absolute h-14 w-14 overflow-hidden rounded-full border-4 border-white shadow-lg ${
-                  index % 3 === 0 ? "bg-violet-200" : index % 3 === 1 ? "bg-amber-200" : "bg-teal-200"
+                  index % 3 === 0
+                    ? "bg-violet-200"
+                    : index % 3 === 1
+                      ? "bg-amber-200"
+                      : "bg-teal-200"
                 }`}
                 style={{ top: person.top, left: person.left }}
               >
@@ -618,7 +667,8 @@ export default function BookStorePage() {
               Join 75 million users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with software that feels simple from day one.
+              who grow their business with software that feels simple from day
+              one.
             </p>
           </div>
         </div>

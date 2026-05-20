@@ -380,30 +380,82 @@ export default function Header() {
                               />
                               <ul className="mt-4 space-y-3">
                                 {(() => {
-                                  // Map section title to route
+                                  // Map section title and label to route
                                   const sectionRouteMap = {
-                                    Learn: "/community/learn",
-                                    "Empower Education":
-                                      "/community/empower-education",
-                                    "Get The Software":
-                                      "/community/get-the-software",
-                                    Collaborate: "/community/collaborate",
-                                    "Get Services": "/community/get-services",
+                                    Learn: {
+                                      Tutorials: "/community/learn/tutorials",
+                                      Documentation:
+                                        "/community/learn/documentation",
+                                      Certifications:
+                                        "/community/learn/certifications",
+                                      Training: "/community/learn/training",
+                                      Blog: "/community/learn/blog",
+                                      Podcast: "/community/learn/podcast",
+                                    },
+                                    "Empower Education": {
+                                      "Education Program":
+                                        "/community/empower-education/education-program",
+                                      "Scale Up! Business Game":
+                                        "/community/empower-education/scale-up-business-game",
+                                      "Visit Odoo":
+                                        "/community/empower-education/visit-odoo",
+                                    },
+                                    "Get The Software": {
+                                      Download:
+                                        "/community/get-the-software/download",
+                                      "Compare Editions":
+                                        "/community/get-the-software/compare-editions",
+                                      Releases:
+                                        "/community/get-the-software/releases",
+                                    },
+                                    Collaborate: {
+                                      Github: "/community/collaborate/github",
+                                      Forum: "/community/collaborate/forum",
+                                      Events: "/community/collaborate/events",
+                                      Translations:
+                                        "/community/collaborate/translations",
+                                      "Become a Partner":
+                                        "/community/collaborate/become-a-partner",
+                                      "Services for Partners":
+                                        "/community/collaborate/services-for-partners",
+                                      "Register your Accounting Firm":
+                                        "/community/collaborate/register-your-accounting-firm",
+                                    },
+                                    "Get Services": {
+                                      "Find a Partner":
+                                        "/community/get-services/find-a-partner",
+                                      "Find an Accountant":
+                                        "/community/get-services/find-an-accountant",
+                                      "Meet an advisor":
+                                        "/community/get-services/meet-an-advisor",
+                                      "Implementation Services":
+                                        "/community/get-services/implementation-services",
+                                      "Customer References":
+                                        "/community/get-services/customer-references",
+                                      Support:
+                                        "/community/get-services/support",
+                                      Upgrades:
+                                        "/community/get-services/upgrades",
+                                    },
                                   };
-                                  return col.links.map((label, idx) => (
-                                    <li key={`${col.title}:${label}`}>
-                                      <Link
-                                        href={
-                                          sectionRouteMap[col.title] ||
-                                          "/community"
-                                        }
-                                        className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
-                                        onClick={() => setOpenDesktopMenu(null)}
-                                      >
-                                        {label}
-                                      </Link>
-                                    </li>
-                                  ));
+                                  return col.links.map((label, idx) => {
+                                    const href =
+                                      sectionRouteMap[col.title]?.[label] ||
+                                      "/community";
+                                    return (
+                                      <li key={`${col.title}:${label}`}>
+                                        <Link
+                                          href={href}
+                                          className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
+                                          onClick={() =>
+                                            setOpenDesktopMenu(null)
+                                          }
+                                        >
+                                          {label}
+                                        </Link>
+                                      </li>
+                                    );
+                                  });
                                 })()}
                               </ul>
                             </div>
