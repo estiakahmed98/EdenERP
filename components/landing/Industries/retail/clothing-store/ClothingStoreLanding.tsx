@@ -21,6 +21,7 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Clothing Store | EdenERP Industries",
@@ -31,23 +32,28 @@ export const metadata: Metadata = {
 const features = [
   {
     title: "Multiple variants",
-    description: "Configure sizes, colors, and materials for every product in your catalog.",
+    description:
+      "Configure sizes, colors, and materials for every product in your catalog.",
   },
   {
     title: "Loyalty programs",
-    description: "Reward returning customers with points, tiered perks, and exclusive discounts.",
+    description:
+      "Reward returning customers with points, tiered perks, and exclusive discounts.",
   },
   {
     title: "All payment methods",
-    description: "Accept cash, cards, e-wallets, and contactless payments in-store and online.",
+    description:
+      "Accept cash, cards, e-wallets, and contactless payments in-store and online.",
   },
   {
     title: "Dynamic pricing",
-    description: "Set flexible pricing by season, customer type, or automatic promotions.",
+    description:
+      "Set flexible pricing by season, customer type, or automatic promotions.",
   },
   {
     title: "Gift cards & eWallet",
-    description: "Create, top up, and redeem physical or digital gift cards in seconds.",
+    description:
+      "Create, top up, and redeem physical or digital gift cards in seconds.",
   },
   {
     title: "Click & collect",
@@ -56,7 +62,11 @@ const features = [
 ];
 
 const apps = [
-  { title: "Point of Sale", subtitle: "Fast in-store checkout", icon: ShoppingBag },
+  {
+    title: "Point of Sale",
+    subtitle: "Fast in-store checkout",
+    icon: ShoppingBag,
+  },
   { title: "Inventory", subtitle: "Real-time stock tracking", icon: Package },
   { title: "Purchase", subtitle: "Automated replenishment", icon: ReceiptText },
   { title: "Invoicing", subtitle: "Professional invoices", icon: CreditCard },
@@ -92,8 +102,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -118,10 +127,10 @@ function SectionEyebrow({
 
 export default function ClothingStorePage() {
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#fffaf5_18%,_#ffffff_100%)] text-slate-800">
+    <main className="overflow-hidden bg-[linear-linear(180deg,_#fff_0%,_#fffaf5_18%,_#ffffff_100%)] text-slate-800">
       {/* Hero Section */}
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_15%_12%,rgba(244,114,182,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(168,85,247,0.1),transparent_24%),linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(255,250,245,1)_100%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-linear(circle_at_15%_12%,rgba(244,114,182,0.12),transparent_25%),radial-linear(circle_at_85%_15%,rgba(168,85,247,0.1),transparent_24%),linear-linear(180deg,rgba(255,255,255,1)_0%,rgba(255,250,245,1)_100%)]" />
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
@@ -154,8 +163,8 @@ export default function ClothingStorePage() {
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
                 Easily configure products in PoS and eCommerce, use RFID barcode
-                integration for real-time stock tracking, and create client reward
-                systems to boost retention.
+                integration for real-time stock tracking, and create client
+                reward systems to boost retention.
               </p>
             </div>
 
@@ -175,9 +184,7 @@ export default function ClothingStorePage() {
             </div>
 
             <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="mb-4 text-4xl leading-none text-rose-500">
-                "
-              </div>
+              <div className="mb-4 text-4xl leading-none text-rose-500">"</div>
               <p className="text-base leading-7 text-slate-700">
                 EdenERP made us an omnichannel brand with 360-degree sales
                 visibility. From RFID inventory to client loyalty, everything
@@ -185,7 +192,9 @@ export default function ClothingStorePage() {
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
                 <div>
-                  <p className="font-semibold text-slate-900">Pierre Hamblenne</p>
+                  <p className="font-semibold text-slate-900">
+                    Pierre Hamblenne
+                  </p>
                   <p className="text-sm text-slate-500">CEO of J&JOY</p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
@@ -200,7 +209,7 @@ export default function ClothingStorePage() {
           <div className="relative mx-auto flex w-full max-w-xl items-center justify-center">
             <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-rose-100 blur-3xl" />
             <div className="absolute -bottom-10 left-4 h-36 w-36 rounded-full bg-violet-100 blur-3xl" />
-            <div className="relative h-[25rem] w-[25rem] overflow-hidden rounded-full border-[14px] border-white bg-[linear-gradient(180deg,_#fef2f2_0%,_#ffffff_35%,_#fefce8_100%)] shadow-[0_40px_100px_rgba(225,29,72,0.15)]">
+            <div className="relative h-[25rem] w-[25rem] overflow-hidden rounded-full border-[14px] border-white bg-[linear-linear(180deg,_#fef2f2_0%,_#ffffff_35%,_#fefce8_100%)] shadow-[0_40px_100px_rgba(225,29,72,0.15)]">
               <div className="absolute inset-0">
                 <div className="absolute left-10 right-10 top-10 bottom-14 rounded-[2rem] bg-rose-800 p-6 shadow-inner">
                   <div className="grid h-full grid-cols-5 gap-2">
@@ -271,8 +280,12 @@ export default function ClothingStorePage() {
                       className="flex items-center justify-between rounded-2xl bg-white px-4 py-3 shadow-sm"
                     >
                       <div>
-                        <span className="font-medium text-slate-700">{title}</span>
-                        <span className="ml-2 text-xs text-slate-400">x{qty}</span>
+                        <span className="font-medium text-slate-700">
+                          {title}
+                        </span>
+                        <span className="ml-2 text-xs text-slate-400">
+                          x{qty}
+                        </span>
                       </div>
                       <span className="text-sm text-slate-500">{price}</span>
                     </div>
@@ -294,20 +307,31 @@ export default function ClothingStorePage() {
               {/* Numpad */}
               <div className="rounded-[1.5rem] bg-rose-50 p-4">
                 <div className="grid grid-cols-3 gap-2">
-                  {["1", "2", "3", "4", "5", "6", "7", "8", "9", "%", "0", "Pay"].map(
-                    (key) => (
-                      <div
-                        key={key}
-                        className={`flex aspect-square items-center justify-center rounded-2xl text-sm font-semibold ${
-                          key === "Pay"
-                            ? "bg-rose-600 text-white"
-                            : "bg-white text-slate-600 shadow-sm"
-                        }`}
-                      >
-                        {key}
-                      </div>
-                    )
-                  )}
+                  {[
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "%",
+                    "0",
+                    "Pay",
+                  ].map((key) => (
+                    <div
+                      key={key}
+                      className={`flex aspect-square items-center justify-center rounded-2xl text-sm font-semibold ${
+                        key === "Pay"
+                          ? "bg-rose-600 text-white"
+                          : "bg-white text-slate-600 shadow-sm"
+                      }`}
+                    >
+                      {key}
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -337,17 +361,19 @@ export default function ClothingStorePage() {
                       <div
                         className={`h-24 ${
                           [
-                            "bg-gradient-to-br from-rose-200 to-pink-300",
-                            "bg-gradient-to-br from-amber-200 to-yellow-300",
-                            "bg-gradient-to-br from-sky-200 to-indigo-300",
-                            "bg-gradient-to-br from-emerald-200 to-teal-300",
-                            "bg-gradient-to-br from-violet-200 to-fuchsia-300",
-                            "bg-gradient-to-br from-orange-200 to-rose-300",
+                            "bg-linear-to-br from-rose-200 to-pink-300",
+                            "bg-linear-to-br from-amber-200 to-yellow-300",
+                            "bg-linear-to-br from-sky-200 to-indigo-300",
+                            "bg-linear-to-br from-emerald-200 to-teal-300",
+                            "bg-linear-to-br from-violet-200 to-fuchsia-300",
+                            "bg-linear-to-br from-orange-200 to-rose-300",
                           ][index]
                         }`}
                       />
                       <div className="space-y-1 p-3">
-                        <p className="text-sm font-semibold text-slate-700">{item}</p>
+                        <p className="text-sm font-semibold text-slate-700">
+                          {item}
+                        </p>
                         <p className="text-xs text-slate-400">Tap to add</p>
                       </div>
                     </div>
@@ -364,7 +390,9 @@ export default function ClothingStorePage() {
               height={28}
               className="h-7 w-7 rounded-full object-cover"
             />
-            <span className="text-sm text-slate-500">Handle all transactions with ease.</span>
+            <span className="text-sm text-slate-500">
+              Handle all transactions with ease.
+            </span>
           </div>
         </div>
       </section>
@@ -381,8 +409,8 @@ export default function ClothingStorePage() {
           </ScriptHeading>
           <p className="max-w-md text-base leading-7 text-slate-600">
             Use RFID barcode integration for real-time stock tracking. Create or
-            search products, process operations faster, and manage your inventory
-            effortlessly.
+            search products, process operations faster, and manage your
+            inventory effortlessly.
           </p>
         </div>
 
@@ -428,7 +456,9 @@ export default function ClothingStorePage() {
               height={28}
               className="h-7 w-7 rounded-full object-cover"
             />
-            <span className="text-sm text-slate-500">Real-time stock updates.</span>
+            <span className="text-sm text-slate-500">
+              Real-time stock updates.
+            </span>
           </div>
         </div>
       </section>
@@ -441,9 +471,7 @@ export default function ClothingStorePage() {
             label="Inventory discipline"
           />
           <div className="mx-auto mt-8 max-w-4xl">
-            <ScriptHeading>
-              Stock management that never sleeps
-            </ScriptHeading>
+            <ScriptHeading>Stock management that never sleeps</ScriptHeading>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
               Real-time inventory level updates and automated replenishment keep
               your bestsellers always available.
@@ -464,8 +492,22 @@ export default function ClothingStorePage() {
             </div>
             <div className="divide-y divide-slate-100">
               {[
-                ["Linen Wide Leg Pant", "Warehouse A", "8", "12", "15", "Reorder"],
-                ["Chiffon Jumpsuit", "Store Floor", "42", "28", "10", "Healthy"],
+                [
+                  "Linen Wide Leg Pant",
+                  "Warehouse A",
+                  "8",
+                  "12",
+                  "15",
+                  "Reorder",
+                ],
+                [
+                  "Chiffon Jumpsuit",
+                  "Store Floor",
+                  "42",
+                  "28",
+                  "10",
+                  "Healthy",
+                ],
                 ["Silk Scarf", "Warehouse B", "3", "5", "8", "Low stock"],
                 ["Cotton T-Shirt", "Store Floor", "56", "34", "20", "Healthy"],
                 ["Denim Jacket", "Warehouse A", "12", "9", "10", "Reorder"],
@@ -506,14 +548,16 @@ export default function ClothingStorePage() {
               height={28}
               className="h-7 w-7 rounded-full object-cover"
             />
-            <span className="text-sm text-slate-500">But wait! There's more.</span>
+            <span className="text-sm text-slate-500">
+              But wait! There's more.
+            </span>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="relative overflow-hidden rounded-t-[4rem] bg-[#faf7f2] py-16 lg:py-24">
-        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_center,_rgba(225,29,72,0.06),transparent_68%)]" />
+        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-linear(circle_at_center,_rgba(225,29,72,0.06),transparent_68%)]" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
@@ -549,7 +593,8 @@ export default function ClothingStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
+            <HandUnderline color="bg-sky-400">app</HandUnderline>.
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-slate-600">
             Expand as you grow with connected apps for your retail operation,
@@ -571,8 +616,12 @@ export default function ClothingStorePage() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">{app.subtitle}</p>
+                    <h3 className="font-semibold text-slate-900">
+                      {app.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      {app.subtitle}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -606,7 +655,9 @@ export default function ClothingStorePage() {
                 "{testimonial.content}"
               </p>
               <div className="mt-6">
-                <p className="font-semibold text-slate-900">{testimonial.name}</p>
+                <p className="font-semibold text-slate-900">
+                  {testimonial.name}
+                </p>
                 <p className="text-sm text-slate-500">{testimonial.role}</p>
               </div>
             </div>
@@ -616,7 +667,7 @@ export default function ClothingStorePage() {
 
       {/* CTA Banner */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-gradient(135deg,_#fff_0%,_#fef2f2_45%,_#fff8ed_100%)] px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
+        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-linear(135deg,_#fff_0%,_#fef2f2_45%,_#fff8ed_100%)] px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
           <div className="absolute inset-0 opacity-40">
             <div className="absolute top-[10%] left-[5%] h-20 w-20 rounded-full bg-rose-200/50" />
             <div className="absolute bottom-[15%] right-[8%] h-24 w-24 rounded-full bg-amber-200/50" />

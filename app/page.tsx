@@ -1,453 +1,774 @@
-import EdenAppsSection from "@/components/landing/ServiceSection";
-import Link from "next/link";
-import Image from "next/image";
-import {
-  ArrowRight,
-  BadgeCheck,
-  BarChart3,
-  CheckCircle2,
-  CirclePlay,
-  Clock3,
-  Globe2,
-  Layers3,
-  LockKeyhole,
-  MessageSquareText,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
-  Star,
-  Users,
-  Workflow,
-  Zap,
-} from "lucide-react";
+"use client";
+
+import React, { useState, useEffect } from "react";
+
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const apps = [
+  { name: "Accounting", icon: "📊", color: "#e8d5f5" },
+  { name: "Knowledge",  icon: "📘", color: "#d5e8f5" },
+  { name: "Sign",       icon: "✍️",  color: "#d5f5e8" },
+  { name: "CRM",        icon: "🤝", color: "#f5e8d5" },
+  { name: "Studio",     icon: "🛠️",  color: "#f5d5e8" },
+  { name: "Subscribe",  icon: "🔄", color: "#e8f5d5" },
+  { name: "AI",         icon: "🤖", color: "#f5f5d5" },
+  { name: "Point Sale", icon: "🏪", color: "#d5f5f5" },
+  { name: "Discuss",    icon: "💬", color: "#e8d5f5" },
+  { name: "Documents",  icon: "📂", color: "#f5e8d5" },
+  { name: "Project",    icon: "✅", color: "#d5e8f5" },
+  { name: "Timesheets", icon: "⏱️",  color: "#d5f5e8" },
+  { name: "Field Svc",  icon: "⚡", color: "#f5d5d5" },
+  { name: "Planning",   icon: "🔀", color: "#d5d5f5" },
+  { name: "Helpdesk",   icon: "➕", color: "#f5e8f5" },
+  { name: "eCommerce",  icon: "🛍️",  color: "#e8f5e8" },
+  { name: "Website",    icon: "🌐", color: "#f5f0d5" },
+  { name: "Email Mktg", icon: "🚀", color: "#d5f0f5" },
+  { name: "Purchase",   icon: "💳", color: "#f0d5f5" },
+  { name: "Inventory",  icon: "📦", color: "#d5f5f0" },
+  { name: "Manufactur", icon: "🏭", color: "#f5d5f0" },
+  { name: "Sales",      icon: "📈", color: "#f0f5d5" },
+  { name: "HR",         icon: "👥", color: "#d5e8f0" },
+  { name: "Dashboard",  icon: "🎛️",  color: "#f0e8d5" },
+];
+
+const features = [
+  { icon: "⚡", title: "Automated renewals", desc: "Renew contracts and invoices automatically without manual tracking." },
+  { icon: "👤", title: "Customer portal",    desc: "Let customers view plans, invoices, and payment history securely." },
+  { icon: "📄", title: "Recurring invoices", desc: "Generate invoices based on billing cycles and contract rules." },
+  { icon: "💳", title: "Payment automation", desc: "Collect payments, retry failed charges, keep billing updated." },
+  { icon: "📊", title: "Revenue analytics",  desc: "Track MRR, ARR, churn, renewals, and lifetime value." },
+  { icon: "🛡️", title: "Retention flows",    desc: "Trigger smart follow-ups before renewals or cancellation risks." },
+];
+
+const testimonials = [
+  { name: "Fiona Laurent", role: "CEO, Floral Studio", quote: "Eden ERP cut our billing time by 70%. Every invoice runs itself now.", avatar: "🌸" },
+  { name: "James Park",    role: "CTO, Nova Retail",    quote: "The accounting module alone replaced three separate tools we used.", avatar: "🎯" },
+  { name: "Amara Diallo",  role: "CFO, Green Valley",   quote: "We grew 3× without hiring extra finance staff. That says it all.",  avatar: "🌿" },
+];
 
 const stats = [
-  { value: "45+", label: "Business apps" },
-  { value: "99.9%", label: "Reliable uptime" },
-  { value: "24/7", label: "Team visibility" },
-  { value: "1", label: "Unified workspace" },
+  { value: "15M+", label: "Businesses worldwide" },
+  { value: "50+",  label: "Integrated apps" },
+  { value: "99.9%",label: "Uptime guaranteed" },
+  { value: "4.8★", label: "Customer rating" },
 ];
 
-const highlights = [
-  {
-    title: "Sales, CRM & Clients",
-    description:
-      "Manage leads, clients, quotations, onboarding, follow-ups, and revenue from one connected pipeline.",
-    icon: Users,
-  },
-  {
-    title: "Tasks & Operations",
-    description:
-      "Assign work, track progress, automate approval flows, and keep every team aligned without scattered tools.",
-    icon: Workflow,
-  },
-  {
-    title: "Finance & Reports",
-    description:
-      "Monitor invoices, payouts, profit, activity logs, and business performance with clear dashboards.",
-    icon: BarChart3,
-  },
-];
+// ─── STYLE CONSTANTS ─────────────────────────────────────────────────────────
 
-const modules = [
-  "CRM",
-  "Projects",
-  "Inventory",
-  "Accounting",
-  "HRM",
-  "Ecommerce",
-  "Client Portal",
-  "Automation",
-];
+const PURPLE  = "#7C4A8C";
+const PURPLE2 = "#5B3A89";
+const CREAM   = "#FAF7F2";
+const INK     = "#1C1117";
+const MUTED   = "#7A6A72";
 
-const timeline = [
-  "Capture client request",
-  "Create package & assignment",
-  "Generate tasks automatically",
-  "Review quality & approvals",
-  "Publish, report, and scale",
-];
+const serif  = '"Playfair Display", Georgia, serif';
+const script = '"Dancing Script", "Segoe Print", cursive';
+const sans   = '"DM Sans", "Inter", sans-serif';
 
-function ScriptHeading({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
+// ─── TINY HELPERS ────────────────────────────────────────────────────────────
+
+const Eyebrow = ({ children }) => (
+  <span style={{
+    display: "inline-flex", alignItems: "center", gap: 6,
+    background: "#F3EDF7", color: PURPLE,
+    borderRadius: 99, padding: "5px 14px",
+    fontSize: 12, fontWeight: 600, letterSpacing: 1.2,
+    textTransform: "uppercase", fontFamily: sans,
+    border: `1px solid ${PURPLE}22`,
+  }}>{children}</span>
+);
+
+const Btn = ({ children, primary, style = {}, ...rest }) => (
+  <button {...rest} style={{
+    display: "inline-flex", alignItems: "center", gap: 8,
+    padding: primary ? "13px 28px" : "12px 26px",
+    borderRadius: 12,
+    background: primary ? `linear-gradient(135deg,${PURPLE},${PURPLE2})` : "white",
+    color: primary ? "white" : INK,
+    border: primary ? "none" : `1.5px solid ${INK}18`,
+    fontFamily: sans, fontSize: 14, fontWeight: 600,
+    cursor: "pointer",
+    boxShadow: primary ? `0 8px 32px ${PURPLE}44` : "0 2px 8px #0002",
+    transition: "transform .18s,box-shadow .18s",
+    ...style,
+  }}
+    onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; }}
+    onMouseLeave={e => { e.currentTarget.style.transform = "none"; }}
+  >{children}</button>
+);
+
+// Handwritten underline decoration
+const Squiggle = ({ color = PURPLE }) => (
+  <svg width="100%" height="10" viewBox="0 0 200 10" preserveAspectRatio="none"
+    style={{ position: "absolute", bottom: -4, left: 0, pointerEvents: "none" }}>
+    <path d="M0,7 Q25,2 50,7 Q75,12 100,7 Q125,2 150,7 Q175,12 200,7"
+      fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" />
+  </svg>
+);
+
+const Highlighted = ({ children, color = "#FFE066" }) => (
+  <span style={{ position: "relative", display: "inline-block" }}>
+    <span style={{
+      position: "absolute", left: -4, right: -4, bottom: 0,
+      height: "40%", background: color, zIndex: 0, borderRadius: 4,
+    }} />
+    <span style={{ position: "relative", zIndex: 1 }}>{children}</span>
+  </span>
+);
+
+const Circled = ({ children }) => (
+  <span style={{ position: "relative", display: "inline-block", padding: "0 10px" }}>
+    <svg style={{ position:"absolute", inset:0, width:"100%", height:"100%", overflow:"visible" }}>
+      <ellipse cx="50%" cy="50%" rx="49%" ry="48%" fill="none"
+        stroke={PURPLE} strokeWidth="2.5" strokeDasharray="4 2"
+        style={{ transform: "rotate(-3deg)", transformOrigin:"center" }} />
+    </svg>
+    <span style={{ position:"relative", zIndex:1 }}>{children}</span>
+  </span>
+);
+
+// ─── SECTIONS ────────────────────────────────────────────────────────────────
+
+function Hero() {
   return (
-    <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl ${className}`}
-      style={{
-        fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
-      }}
-    >
-      {children}
-    </h2>
-  );
-}
+    <section style={{
+      background: CREAM, textAlign:"center",
+      padding: "80px 48px 60px",
+      position:"relative", overflow:"hidden",
+    }}>
+      {/* Background blobs */}
+      {[
+        { top:-120, left:-80, size:420, color:"#E8D5F5" },
+        { top:40, right:-100, size:300, color:"#D5E8F5" },
+        { bottom:-60, left:"30%", size:260, color:"#F5E8D5" },
+      ].map((b,i) => (
+        <div key={i} style={{
+          position:"absolute", borderRadius:"50%",
+          width:b.size, height:b.size,
+          top:b.top, left:b.left, right:b.right, bottom:b.bottom,
+          background:b.color, filter:"blur(60px)", opacity:.55,
+          pointerEvents:"none",
+        }} />
+      ))}
 
-function Eyebrow({
-  children,
-  icon,
-}: {
-  children: React.ReactNode;
-  icon: React.ReactNode;
-}) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl">
-      {icon}
-      {children}
-    </div>
-  );
-}
+      <div style={{ position:"relative", zIndex:1 }}>
+        <Eyebrow>✦ All your business on one platform</Eyebrow>
 
-export default function Home() {
-  return (
-    <main className="min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#ffffff_0%,_#fbf7ff_22%,_#ffffff_52%,_#fff8ed_100%)] text-slate-800">
-      <section className="relative isolate min-h-[760px] overflow-hidden rounded-b-[3rem] sm:rounded-b-[5rem] lg:rounded-b-[8rem]">
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/Assets/hero.png"
-            alt="EdenERP business workspace"
-            fill
-            priority
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.84)_38%,rgba(255,255,255,0.48)_70%,rgba(255,255,255,0.2)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(124,58,237,0.18),transparent_26%),radial-gradient(circle_at_82%_18%,rgba(245,158,11,0.14),transparent_28%),linear-gradient(180deg,transparent_0%,rgba(255,255,255,0.86)_100%)]" />
+        <h1 style={{
+          fontFamily: serif,
+          fontSize: "clamp(44px, 6vw, 80px)",
+          fontWeight: 700,
+          color: INK,
+          lineHeight: 1.1,
+          marginTop: 28,
+          letterSpacing: -2,
+        }}>
+          Simple, efficient,<br />
+          yet{" "}
+          <span style={{ position:"relative", display:"inline-block", color: PURPLE }}>
+            <Squiggle color={PURPLE} />
+            affordable.
+          </span>
+        </h1>
+
+        <p style={{
+          fontFamily: sans, fontSize: 18, color: MUTED,
+          maxWidth: 520, margin: "22px auto 0", lineHeight: 1.7,
+        }}>
+          One click install. No complexity, no code — just a single platform
+          that empowers every person in your business.
+        </p>
+
+        <div style={{ display:"flex", gap:12, justifyContent:"center", marginTop:36, flexWrap:"wrap" }}>
+          <Btn primary style={{ fontSize:15, padding:"15px 32px" }}>Start Free Trial →</Btn>
+          <Btn style={{ fontSize:15 }}>▶ Watch demo</Btn>
         </div>
 
-        <div className="absolute left-8 top-28 hidden h-20 w-20 rounded-[2rem] bg-white/75 shadow-xl backdrop-blur-xl lg:block" />
-        <div className="absolute right-20 top-40 hidden h-28 w-28 rounded-full bg-primary/10 blur-2xl lg:block" />
-        <div className="absolute bottom-20 left-1/2 hidden h-56 w-56 -translate-x-1/2 rounded-full bg-amber-200/25 blur-3xl lg:block" />
+        <p style={{ fontFamily:sans, fontSize:12, color:MUTED, marginTop:14 }}>
+          US$ 9.99 / month · for All apps · No credit card required
+        </p>
 
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 pb-16 pt-16 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-24 lg:pt-24">
-          <div className="flex max-w-2xl flex-col justify-center space-y-8">
-            <Eyebrow icon={<Sparkles className="h-4 w-4" />}>
-              Modern ERP for growing teams
-            </Eyebrow>
-
-            <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.34em] text-primary/70">
-                EdenERP Business Suite
-              </p>
-
-              <h1
-                className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
-                style={{
-                  fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
-                }}
-              >
-                Run your entire
-                <span className="block bg-[linear-gradient(90deg,_#6d28d9,_#db2777,_#f59e0b)] bg-clip-text text-transparent">
-                  business beautifully.
-                </span>
-              </h1>
-
-              <p className="max-w-xl text-lg leading-8 text-slate-600">
-                EdenERP brings CRM, tasks, accounting, inventory, ecommerce,
-                clients, teams, reports, and automation into one premium
-                workspace built for speed, clarity, and growth.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-4 text-sm font-semibold text-white shadow-xl shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl"
-              >
-                Get Started
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-
-              <Link
-                href="#demo"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-white/75 px-7 py-4 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-primary/40 hover:bg-white"
-              >
-                <CirclePlay className="h-5 w-5 fill-primary/15" />
-                Watch Demo
-              </Link>
-            </div>
-
-            <div className="grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
-              {stats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-2xl border border-white/80 bg-white/80 p-4 shadow-sm backdrop-blur-xl"
-                >
-                  <div className="text-2xl font-bold text-slate-950">
-                    {item.value}
-                  </div>
-                  <div className="mt-1 text-xs font-medium text-slate-500">
-                    {item.label}
-                  </div>
-                </div>
+        {/* Hero preview card */}
+        <div style={{
+          marginTop: 56, maxWidth: 860, marginInline:"auto",
+          background:"white", borderRadius: 24,
+          boxShadow: "0 40px 100px #0000001a, 0 0 0 1px #0000000a",
+          overflow:"hidden",
+        }}>
+          {/* Fake browser bar */}
+          <div style={{
+            background:"#F8F5F0", borderBottom:"1px solid #E8E0D8",
+            padding:"10px 18px", display:"flex", alignItems:"center", gap:8,
+          }}>
+            <div style={{ display:"flex", gap:6 }}>
+              {["#F87171","#FBBF24","#34D399"].map(c=>(
+                <div key={c} style={{ width:12, height:12, borderRadius:"50%", background:c }} />
               ))}
             </div>
+            <div style={{
+              flex:1, background:"#EDE8E0", borderRadius:6, height:24,
+              display:"flex", alignItems:"center", justifyContent:"center",
+              fontSize:11, fontFamily:sans, color:MUTED,
+            }}>eden-erp.com/subscriptions</div>
           </div>
 
-          <div className="relative mx-auto flex w-full max-w-xl items-center justify-center lg:justify-end">
-            <div className="absolute -left-6 top-6 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
-                  <CheckCircle2 className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">
-                    Tasks synced
-                  </p>
-                  <p className="text-xs text-slate-500">124 updates today</p>
-                </div>
-              </div>
+          {/* Mini table */}
+          <div style={{ padding:"24px 28px" }}>
+            <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:16 }}>
+              <span style={{ fontFamily:sans, fontWeight:700, fontSize:15, color:INK }}>🔄 Eden Subscriptions</span>
+              <span style={{ background:"#D1FAE5", color:"#065F46", fontSize:11, fontWeight:700, borderRadius:99, padding:"4px 10px" }}>● Active billing</span>
             </div>
-
-            <div className="absolute -right-3 bottom-12 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
-                  <Rocket className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">
-                    Growth ready
-                  </p>
-                  <p className="text-xs text-slate-500">Scale without chaos</p>
-                </div>
+            <div style={{ borderRadius:12, overflow:"hidden", border:"1px solid #F0EAE0" }}>
+              <div style={{
+                display:"grid", gridTemplateColumns:"80px 1fr 110px 110px 100px",
+                background:"#F8F5F0", padding:"10px 16px",
+                fontSize:10, fontFamily:sans, fontWeight:700, color:MUTED,
+                letterSpacing:1, textTransform:"uppercase",
+              }}>
+                {["ID","Customer","Next Bill","Revenue","Status"].map(h=><span key={h}>{h}</span>)}
               </div>
-            </div>
-
-            <div className="relative w-full overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/75 p-4 shadow-[0_40px_120px_rgba(15,23,42,0.16)] backdrop-blur-2xl">
-              <div className="overflow-hidden rounded-[2rem] bg-slate-950 text-white shadow-inner">
-                <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
-                  <span className="h-3 w-3 rounded-full bg-rose-400" />
-                  <span className="h-3 w-3 rounded-full bg-amber-400" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                  <span className="ml-3 text-xs font-medium text-white/50">
-                    EdenERP Command Center
+              {[
+                ["S00016","Sophia Thomas","09/25/2026","$350/mo","Active"],
+                ["S00017","Bright Studio","10/12/2026","$1,250/mo","Quote"],
+                ["S00018","Green Valley","10/20/2026","$650/mo","Active"],
+                ["S00019","Nova Retail","11/01/2026","$2,400/mo","Active"],
+              ].map((row,i)=>(
+                <div key={row[0]} style={{
+                  display:"grid", gridTemplateColumns:"80px 1fr 110px 110px 100px",
+                  padding:"11px 16px", fontSize:12, fontFamily:sans,
+                  background: i%2===0 ? "white" : "#FDFAF7",
+                  borderTop:"1px solid #F0EAE0",
+                }}>
+                  <span style={{ color:PURPLE, fontWeight:600 }}>{row[0]}</span>
+                  <span style={{ color:INK }}>{row[1]}</span>
+                  <span style={{ color:"#E11D48" }}>{row[2]}</span>
+                  <span style={{ fontWeight:700, color:INK }}>{row[3]}</span>
+                  <span>
+                    <span style={{
+                      background: row[4]==="Quote" ? "#EFF6FF" : "#D1FAE5",
+                      color: row[4]==="Quote" ? "#1D4ED8" : "#065F46",
+                      borderRadius:99, padding:"3px 10px", fontSize:10, fontWeight:700,
+                    }}>{row[4]}</span>
                   </span>
                 </div>
-
-                <div className="grid gap-4 p-5 sm:grid-cols-[0.8fr_1.2fr]">
-                  <div className="space-y-3">
-                    {modules.slice(0, 6).map((module, index) => (
-                      <div
-                        key={module}
-                        className={`rounded-2xl px-4 py-3 text-sm font-medium ${
-                          index === 0
-                            ? "bg-white text-slate-950"
-                            : "bg-white/8 text-white/70"
-                        }`}
-                      >
-                        {module}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="rounded-2xl bg-white p-5 text-slate-900">
-                      <div className="flex items-center justify-between">
-                        <p className="text-sm font-semibold">Revenue Flow</p>
-                        <BadgeCheck className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="mt-6 h-32 rounded-2xl bg-[linear-gradient(135deg,_#ede9fe,_#fef3c7)] p-4">
-                        <div className="flex h-full items-end gap-2">
-                          {[35, 55, 42, 78, 66, 92, 74].map((height, i) => (
-                            <div
-                              key={i}
-                              className="flex-1 rounded-t-xl bg-primary/80"
-                              style={{ height: `${height}%` }}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="rounded-2xl bg-white/10 p-4">
-                        <Clock3 className="h-5 w-5 text-amber-300" />
-                        <p className="mt-3 text-lg font-bold">8.4h</p>
-                        <p className="text-xs text-white/50">Saved weekly</p>
-                      </div>
-                      <div className="rounded-2xl bg-white/10 p-4">
-                        <ShieldCheck className="h-5 w-5 text-emerald-300" />
-                        <p className="mt-3 text-lg font-bold">Secure</p>
-                        <p className="text-xs text-white/50">Role access</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="text-center">
-          <Eyebrow icon={<Layers3 className="h-4 w-4" />}>
-            One platform, every workflow
-          </Eyebrow>
-          <div className="mx-auto mt-8 max-w-4xl">
-            <ScriptHeading>
-              Replace scattered tools with one beautifully connected system.
-            </ScriptHeading>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
-              EdenERP helps your business operate with fewer tabs, fewer manual
-              updates, and far more visibility.
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {highlights.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="group rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                  <Icon className="h-7 w-7" />
-                </div>
-                <h3 className="mt-6 text-xl font-semibold text-slate-950">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {item.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-[#f6f5f8] py-16 lg:py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.08),transparent_26%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.12),transparent_30%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-          <div className="self-center">
-            <Eyebrow icon={<Zap className="h-4 w-4" />}>
-              Smart automation
-            </Eyebrow>
-            <div className="mt-8">
-              <ScriptHeading>
-                From client request to delivery, every step stays organized.
-              </ScriptHeading>
-            </div>
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600">
-              Build repeatable workflows for sales, onboarding, task creation,
-              quality control, posting, reporting, and support—without losing
-              the human touch.
-            </p>
-          </div>
-
-          <div className="rounded-[2.5rem] border border-white bg-white/80 p-6 shadow-[0_35px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl">
-            <div className="space-y-4">
-              {timeline.map((step, index) => (
-                <div key={step} className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-sm font-bold text-white">
-                    {String(index + 1).padStart(2, "0")}
-                  </div>
-                  <div className="flex-1 rounded-2xl border border-slate-100 bg-slate-50 px-5 py-4">
-                    <p className="font-semibold text-slate-900">{step}</p>
-                    <p className="mt-1 text-sm text-slate-500">
-                      Automated handoff with clear ownership
-                    </p>
-                  </div>
-                  {index < timeline.length - 1 && (
-                    <ArrowRight className="hidden h-5 w-5 text-slate-300 sm:block" />
-                  )}
-                </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <EdenAppsSection />
+function AppsGrid() {
+  const [altsOn, setAltsOn] = useState(false);
 
-      <section
-        id="demo"
-        className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
-      >
-        <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
-          <div className="overflow-hidden rounded-[3rem] bg-[linear-gradient(135deg,_#111827_0%,_#4c1d95_55%,_#f59e0b_140%)] p-8 text-white shadow-[0_35px_90px_rgba(15,23,42,0.18)] sm:p-10">
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-xl">
-              <CirclePlay className="h-9 w-9 fill-white/20" />
-            </div>
-            <h2
-              className="mt-8 text-4xl font-semibold leading-tight sm:text-5xl"
-              style={{
-                fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
+  const alts = {
+    "Accounting":"Quickbooks","Knowledge":"Notion","Sign":"DocuSign",
+    "CRM":"Salesforce","Subscribe":"Chargebee","Point Sale":"Lightspeed",
+    "Discuss":"Slack","Project":"Asana","Timesheets":"Harvest",
+    "Field Svc":"Service Cloud","Helpdesk":"Zendesk","eCommerce":"Shopify",
+    "Email Mktg":"Hubspot","HR":"BambooHR","Dashboard":"Tableau",
+  };
+
+  return (
+    <section style={{ background: CREAM, padding:"80px 48px", textAlign:"center" }}>
+      <Eyebrow>✦ 50+ apps</Eyebrow>
+      <h2 style={{
+        fontFamily:serif, fontSize:"clamp(32px,4vw,54px)", fontWeight:700,
+        color:INK, marginTop:20, marginBottom:8, letterSpacing:-1,
+      }}>
+        Imagine{" "}
+        <Highlighted color="#FFE066">without</Highlighted>
+        {" "}Eden ERP
+      </h2>
+      <p style={{ fontFamily:sans, color:MUTED, fontSize:15, maxWidth:480, margin:"0 auto 48px", lineHeight:1.7 }}>
+        Each app simplifies a process and empowers more people.
+        Toggle to see what you'd replace each one with.
+      </p>
+
+      <div style={{
+        display:"grid",
+        gridTemplateColumns:"repeat(6, 1fr)",
+        columnGap: 16,
+        rowGap: altsOn ? 58 : 24,
+        maxWidth: 820, margin:"0 auto",
+        paddingTop: altsOn ? 44 : 0,
+        transition:"row-gap .3s ease, padding-top .3s ease",
+        position:"relative",
+      }}>
+        {apps.map((app,i) => {
+          const alt = alts[app.name];
+          return (
+            <div key={i} style={{
+              display:"flex", flexDirection:"column", alignItems:"center", gap:8,
+              position:"relative", cursor:"pointer",
+            }}>
+              {/* Alt badge */}
+              {alt && (
+                <div style={{
+                  position:"absolute", top:-38, left:"50%",
+                  transform:"translateX(-50%)",
+                  whiteSpace:"nowrap", padding:"3px 10px",
+                  borderRadius:4, fontSize:10, fontFamily:serif,
+                  fontStyle:"italic", color:PURPLE,
+                  border:`1px solid ${PURPLE}55`,
+                  background:CREAM, zIndex:20,
+                  opacity: altsOn ? 1 : 0,
+                  pointerEvents:"none",
+                  transition:"opacity .25s",
+                }}>
+                  {alt}
+                  <div style={{
+                    position:"absolute", bottom:-5, left:"50%",
+                    transform:"translateX(-50%)",
+                    width:1, height:6, background:PURPLE,
+                  }} />
+                </div>
+              )}
+              {/* Icon */}
+              <div style={{
+                width:68, height:68, borderRadius:12,
+                background: app.color,
+                border:`1.5px solid ${app.color}`,
+                display:"flex", alignItems:"center", justifyContent:"center",
+                fontSize:26, position:"relative",
+                boxShadow:`4px 4px 0 ${app.color}88`,
+                transition:"transform .2s",
               }}
-            >
-              See how EdenERP feels in action.
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-white/75">
-              A premium ERP experience should feel simple, fast, and confident
-              from the first click. Explore the workflow before you start.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              Book a walkthrough
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+                onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-4px) rotate(-2deg)";}}
+                onMouseLeave={e=>{e.currentTarget.style.transform="none";}}
+              >
+                {app.icon}
+              </div>
+              <span style={{
+                fontSize:10, fontWeight:600, letterSpacing:.5,
+                color:MUTED, textAlign:"center", textTransform:"uppercase",
+                fontFamily:sans,
+              }}>{app.name}</span>
+            </div>
+          );
+        })}
+      </div>
 
-          <div className="rounded-[3rem] border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
-            <div className="flex items-center gap-2 text-amber-400">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <Star key={index} className="h-5 w-5 fill-current" />
-              ))}
-            </div>
-            <p className="mt-6 text-xl leading-9 text-slate-700">
-              “EdenERP gives teams the clarity of a modern command center—every
-              client, task, report, and workflow stays connected.”
-            </p>
-            <div className="mt-8 flex items-center gap-4 border-t border-slate-100 pt-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <MessageSquareText className="h-6 w-6" />
-              </div>
-              <div>
-                <p className="font-semibold text-slate-950">Operations Team</p>
-                <p className="text-sm text-slate-500">Built for daily growth</p>
-              </div>
-            </div>
+      {/* SAP line */}
+      <div style={{
+        maxWidth:820, margin:"28px auto 0",
+        opacity: altsOn ? 1 : 0, transition:"opacity .35s",
+        display:"flex", alignItems:"center", gap:16,
+        fontFamily:serif, fontStyle:"italic", fontSize:18, color:PURPLE,
+      }}>
+        <div style={{ flex:1, height:1, background:`linear-gradient(to right,transparent,${PURPLE}44)` }} />
+        ↙ replaces SAP ↘
+        <div style={{ flex:1, height:1, background:`linear-gradient(to left,transparent,${PURPLE}44)` }} />
+      </div>
+
+      {/* Toggle */}
+      <div style={{ marginTop:44, display:"flex", alignItems:"center", justifyContent:"center", gap:12 }}>
+        <div onClick={()=>setAltsOn(!altsOn)} style={{
+          width:48, height:26, borderRadius:13,
+          background: altsOn ? PURPLE : "#D9CEBD",
+          border:`1px solid ${altsOn?PURPLE:"#B8A89A"}`,
+          position:"relative", cursor:"pointer", transition:"background .25s",
+        }}>
+          <div style={{
+            position:"absolute", top:4, left: altsOn?26:4,
+            width:16, height:16, borderRadius:"50%",
+            background:"white", transition:"left .25s",
+            boxShadow:"0 1px 3px #0003",
+          }} />
+        </div>
+        <span style={{ fontFamily:sans, fontSize:13, fontWeight:600, color:PURPLE }}>
+          {altsOn ? "Imagine without Eden ERP ✦" : "Compare alternatives"}
+        </span>
+      </div>
+
+      <a href="#" style={{
+        display:"inline-block", marginTop:20,
+        fontFamily:sans, fontSize:13, color:PURPLE, fontWeight:600,
+        textDecoration:"none", letterSpacing:1,
+      }}>View all 50+ apps ↗</a>
+    </section>
+  );
+}
+
+function LevelUp() {
+  return (
+    <section style={{ background:"white", padding:"100px 48px", textAlign:"center" }}>
+      <h2 style={{
+        fontFamily:script, fontSize:"clamp(36px,5vw,64px)",
+        color:INK, marginBottom:48, lineHeight:1.2,
+      }}>
+        <span style={{ color:PURPLE, textDecoration:"underline", textDecorationStyle:"wavy", textDecorationColor:PURPLE }}>Level up</span>
+        {" "}your quality of work
+      </h2>
+
+      {/* Fake storefront cards */}
+      <div style={{ display:"flex", gap:20, justifyContent:"center", flexWrap:"wrap" }}>
+        {[
+          { name:"Monkey Coffee Lab", emoji:"☕", bg:"#1C1117", fg:"white", tag:"Café & Roasters" },
+          { name:"Fiona's Floral Cafe", emoji:"🌸", bg:"#FDF4F0", fg:INK, tag:"Flower Boutique" },
+          { name:"Nova Tech Studio",   emoji:"💻", bg:"#0F172A", fg:"white", tag:"Software Agency" },
+        ].map(s=>(
+          <div key={s.name} style={{
+            background:s.bg, color:s.fg,
+            borderRadius:20, padding:"32px 28px", width:220,
+            boxShadow:"0 20px 60px #0000001a",
+            textAlign:"left",
+          }}>
+            <div style={{ fontSize:36, marginBottom:12 }}>{s.emoji}</div>
+            <div style={{ fontFamily:serif, fontSize:16, fontWeight:700, marginBottom:4 }}>{s.name}</div>
+            <div style={{ fontSize:11, opacity:.5, fontFamily:sans, letterSpacing:1, textTransform:"uppercase" }}>{s.tag}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{
+        marginTop:48, display:"inline-flex", alignItems:"center", gap:12,
+        background:"#F3EDF7", borderRadius:16, padding:"16px 24px",
+        border:`1px solid ${PURPLE}22`,
+      }}>
+        <span style={{ fontSize:24 }}>🤖</span>
+        <div style={{ textAlign:"left" }}>
+          <div style={{ fontFamily:sans, fontWeight:700, color:INK, fontSize:14 }}>
+            Eden AI — Your smartest employee
+          </div>
+          <div style={{ fontFamily:sans, color:MUTED, fontSize:12, marginTop:2 }}>
+            Native AI across all your business operations
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section className="mx-auto max-w-5xl px-4 pb-20 text-center sm:px-6 lg:px-8 lg:pb-28">
-        <div className="rounded-[3rem] bg-white px-6 py-14 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-            <LockKeyhole className="h-8 w-8" />
-          </div>
-          <ScriptHeading className="mt-7">
-            Start small. Scale beautifully.
-          </ScriptHeading>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600">
-            Launch with the apps you need today and keep expanding your system
-            as your business grows.
+function Productivity() {
+  return (
+    <section style={{ background:CREAM, padding:"100px 48px" }}>
+      <div style={{ maxWidth:960, margin:"0 auto", display:"grid", gridTemplateColumns:"1fr 1fr", gap:64, alignItems:"center" }}>
+        <div>
+          <Eyebrow>✦ Performance</Eyebrow>
+          <h2 style={{
+            fontFamily:script, fontSize:"clamp(32px,4vw,52px)",
+            color:INK, marginTop:20, lineHeight:1.2,
+          }}>
+            Optimised for{" "}
+            <span style={{ color:PURPLE }}>productivity</span>
+          </h2>
+          <p style={{ fontFamily:sans, color:MUTED, fontSize:15, lineHeight:1.8, marginTop:18 }}>
+            Experience true speed. Sub-second data entry, smart AI, and a fast UI.
+            All operations are done in less than 90ms — faster than a blink.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-4 text-sm font-semibold text-white shadow-xl shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
-            >
-              View Pricing
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/apps"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-7 py-4 text-sm font-semibold text-slate-700 transition-colors hover:border-primary/30 hover:text-primary"
-            >
-              Explore Apps
-              <Globe2 className="h-4 w-4" />
-            </Link>
+          <div style={{ marginTop:32, display:"flex", flexDirection:"column", gap:14 }}>
+            {[
+              ["⚡","90ms","Average operation speed"],
+              ["🧠","Native AI","Built into every workflow"],
+              ["🔒","SOC 2","Enterprise-grade security"],
+            ].map(([ico,val,lbl])=>(
+              <div key={val} style={{
+                display:"flex", alignItems:"center", gap:14,
+                background:"white", borderRadius:12, padding:"14px 18px",
+                border:"1px solid #E8E0D8",
+              }}>
+                <span style={{ fontSize:22 }}>{ico}</span>
+                <span style={{ fontFamily:sans, fontWeight:800, fontSize:16, color:PURPLE }}>{val}</span>
+                <span style={{ fontFamily:sans, fontSize:13, color:MUTED }}>{lbl}</span>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
+
+        {/* Right: fake kanban */}
+        <div style={{
+          background:"white", borderRadius:20, overflow:"hidden",
+          boxShadow:"0 30px 80px #0000001a", border:"1px solid #E8E0D8",
+        }}>
+          <div style={{ background:PURPLE, padding:"14px 20px", display:"flex", alignItems:"center", gap:10 }}>
+            <span style={{ fontSize:16 }}>✅</span>
+            <span style={{ fontFamily:sans, fontWeight:700, color:"white", fontSize:14 }}>Eden Project</span>
+            <span style={{ marginLeft:"auto", background:"white22", borderRadius:99, padding:"2px 10px", fontSize:11, color:"white", fontWeight:600 }}>Sprint 4</span>
+          </div>
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:12, padding:16 }}>
+            {[
+              { col:"To Do", color:"#FEF3C7", items:["Design mockup","User research","API spec"] },
+              { col:"In Progress", color:"#DBEAFE", items:["Auth flow","Dashboard","Mobile nav"] },
+              { col:"Done", color:"#D1FAE5", items:["DB schema","CI/CD","Staging env"] },
+            ].map(col=>(
+              <div key={col.col}>
+                <div style={{ fontFamily:sans, fontSize:10, fontWeight:700, color:MUTED, letterSpacing:1, textTransform:"uppercase", marginBottom:8 }}>{col.col}</div>
+                {col.items.map(item=>(
+                  <div key={item} style={{
+                    background:col.color, borderRadius:8, padding:"8px 10px",
+                    marginBottom:8, fontSize:11, fontFamily:sans, fontWeight:500, color:INK,
+                    boxShadow:"0 1px 4px #0001",
+                  }}>{item}</div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NativeAI() {
+  const [idx, setIdx] = useState(0);
+  const slides = [
+    { q:"You use Eden to run your", completions:["finances automatically","subscriptions effortlessly","operations seamlessly"] },
+  ];
+  useEffect(()=>{
+    const t = setInterval(()=>setIdx(i=>(i+1)%3),2200);
+    return ()=>clearInterval(t);
+  },[]);
+
+  return (
+    <section style={{
+      background:INK, padding:"100px 48px", textAlign:"center",
+      position:"relative", overflow:"hidden",
+    }}>
+      {/* Noise texture */}
+      <div style={{
+        position:"absolute", inset:0, opacity:.04,
+        backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+        backgroundSize:"200px",
+      }} />
+      <Eyebrow>🤖 Native AI</Eyebrow>
+      <h2 style={{
+        fontFamily:script, fontSize:"clamp(32px,5vw,60px)",
+        color:"white", marginTop:24, marginBottom:16,
+      }}>Native AI across all your business</h2>
+
+      <div style={{
+        maxWidth:700, margin:"48px auto",
+        background:"#FFFFFF0F", backdropFilter:"blur(20px)",
+        borderRadius:24, border:"1px solid #FFFFFF18",
+        padding:"40px 48px",
+      }}>
+        <div style={{ fontFamily:serif, fontSize:"clamp(24px,3vw,40px)", color:"white", fontWeight:700, lineHeight:1.3 }}>
+          You use{" "}
+          <span style={{ color:PURPLE, fontStyle:"italic" }}>Eden</span>
+          {" "}to run your
+        </div>
+        <div style={{
+          fontFamily:serif, fontSize:"clamp(24px,3vw,40px)",
+          color:"#FFE066", fontWeight:700, marginTop:8,
+          minHeight:"1.4em",
+          transition:"opacity .3s",
+        }}>
+          {["finances automatically","subscriptions effortlessly","operations seamlessly"][idx]}
+        </div>
+        <div style={{ width:40, height:3, background:PURPLE, borderRadius:2, margin:"24px auto 0" }} />
+        <p style={{ fontFamily:sans, color:"#FFFFFF88", fontSize:14, marginTop:16, lineHeight:1.7 }}>
+          Automate work, tailor features, perform deep research,
+          and scale without limits.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function EnterpriseSection() {
+  return (
+    <section style={{ background:CREAM, padding:"100px 48px" }}>
+      <div style={{ maxWidth:960, margin:"0 auto" }}>
+        <div style={{ marginBottom:56 }}>
+          <Eyebrow>✦ Enterprise grade</Eyebrow>
+          <h2 style={{
+            fontFamily:script, fontSize:"clamp(36px,5vw,60px)",
+            color:INK, marginTop:20, lineHeight:1.2,
+          }}>
+            Enterprise{" "}
+            <Circled>software</Circled>
+            <br />done right
+          </h2>
+        </div>
+
+        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:24 }}>
+          {[
+            { icon:"🌍", title:"Open Source", desc:"Built on a community of 30k+ developers. Available in two editions: Community (free) and Enterprise.", badge:"Community" },
+            { icon:"🔒", title:"No vendor lock-in", desc:"Your data stays yours. Self-host on any infrastructure or use our cloud — full flexibility.", badge:"Self-host" },
+            { icon:"🤖", title:"Open Source + AI", desc:"Use Eden AI to develop in ultra-cost-efficient mindset. All models are already trained on our source code.", badge:"40k+ apps" },
+            { icon:"💰", title:"Fair pricing", desc:"No module pricing, no feature upselling, no long-term contracts — all at a single price per user.", badge:"Transparent" },
+          ].map(c=>(
+            <div key={c.title} style={{
+              background:"white", borderRadius:20, padding:"28px",
+              border:"1px solid #E8E0D8",
+              boxShadow:"0 4px 20px #0000000a",
+              transition:"transform .2s, box-shadow .2s",
+            }}
+              onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-4px)";e.currentTarget.style.boxShadow="0 16px 48px #0000001a";}}
+              onMouseLeave={e=>{e.currentTarget.style.transform="none";e.currentTarget.style.boxShadow="0 4px 20px #0000000a";}}
+            >
+              <div style={{ fontSize:32, marginBottom:16 }}>{c.icon}</div>
+              <div style={{ fontFamily:sans, fontWeight:700, fontSize:16, color:INK, marginBottom:8 }}>{c.title}</div>
+              <p style={{ fontFamily:sans, fontSize:13, color:MUTED, lineHeight:1.7, marginBottom:16 }}>{c.desc}</p>
+              <span style={{
+                background:"#F3EDF7", color:PURPLE,
+                borderRadius:99, padding:"4px 12px", fontSize:11, fontWeight:700,
+                fontFamily:sans,
+              }}>{c.badge}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Features() {
+  return (
+    <section style={{ background:"white", padding:"100px 48px", textAlign:"center" }}>
+      <Eyebrow>✦ Features</Eyebrow>
+      <h2 style={{
+        fontFamily:script, fontSize:"clamp(32px,4vw,54px)",
+        color:INK, marginTop:20, letterSpacing:-1,
+      }}>
+        All the features,{" "}
+        <span style={{ position:"relative", display:"inline-block" }}>
+          <Squiggle color="#FFE066" />
+          <span style={{ position:"relative", zIndex:1 }}>done right.</span>
+        </span>
+      </h2>
+
+      <div style={{
+        display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:20,
+        maxWidth:900, margin:"56px auto 0",
+      }}>
+        {features.map(f=>(
+          <div key={f.title} style={{
+            background:CREAM, borderRadius:20, padding:"28px",
+            border:"1px solid #E8E0D8", textAlign:"left",
+            transition:"transform .2s, box-shadow .2s",
+          }}
+            onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-4px)";e.currentTarget.style.boxShadow="0 16px 48px #0000001a";}}
+            onMouseLeave={e=>{e.currentTarget.style.transform="none";e.currentTarget.style.boxShadow="none";}}
+          >
+            <div style={{
+              width:44, height:44, borderRadius:12, background:"white",
+              display:"flex", alignItems:"center", justifyContent:"center",
+              fontSize:22, marginBottom:16,
+              boxShadow:"0 4px 12px #0000000f",
+            }}>{f.icon}</div>
+            <div style={{ fontFamily:sans, fontWeight:700, fontSize:15, color:INK, marginBottom:8 }}>{f.title}</div>
+            <p style={{ fontFamily:sans, fontSize:13, color:MUTED, lineHeight:1.7 }}>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Stats() {
+  return (
+    <section style={{ background:PURPLE, padding:"72px 48px", textAlign:"center" }}>
+      <div style={{ display:"flex", justifyContent:"center", gap:64, flexWrap:"wrap" }}>
+        {stats.map(s=>(
+          <div key={s.label}>
+            <div style={{ fontFamily:serif, fontSize:48, fontWeight:700, color:"white", lineHeight:1 }}>{s.value}</div>
+            <div style={{ fontFamily:sans, fontSize:13, color:"#FFFFFF99", marginTop:6, letterSpacing:1 }}>{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Testimonials() {
+  return (
+    <section style={{ background:CREAM, padding:"100px 48px", textAlign:"center" }}>
+      <Eyebrow>✦ Loved by teams worldwide</Eyebrow>
+      <h2 style={{
+        fontFamily:script, fontSize:"clamp(32px,4vw,52px)",
+        color:INK, marginTop:20, marginBottom:56,
+      }}>
+        Join <Highlighted>15 million</Highlighted> users
+      </h2>
+
+      <div style={{ display:"flex", gap:24, justifyContent:"center", flexWrap:"wrap", maxWidth:900, margin:"0 auto" }}>
+        {testimonials.map(t=>(
+          <div key={t.name} style={{
+            background:"white", borderRadius:24, padding:"32px",
+            border:"1px solid #E8E0D8", maxWidth:280, textAlign:"left",
+            boxShadow:"0 8px 32px #0000000a",
+          }}>
+            <div style={{ fontSize:32, marginBottom:16 }}>{t.avatar}</div>
+            <p style={{ fontFamily:serif, fontStyle:"italic", fontSize:15, color:INK, lineHeight:1.7, marginBottom:20 }}>
+              "{t.quote}"
+            </p>
+            <div style={{ fontFamily:sans, fontWeight:700, fontSize:13, color:PURPLE }}>{t.name}</div>
+            <div style={{ fontFamily:sans, fontSize:12, color:MUTED, marginTop:2 }}>{t.role}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CTA() {
+  return (
+    <section style={{
+      background:`linear-gradient(135deg,${PURPLE},${PURPLE2})`,
+      padding:"100px 48px", textAlign:"center", position:"relative", overflow:"hidden",
+    }}>
+      {[
+        { top:-100, left:-100, size:300 },
+        { bottom:-80, right:-80, size:250 },
+      ].map((b,i)=>(
+        <div key={i} style={{
+          position:"absolute", borderRadius:"50%",
+          width:b.size, height:b.size,
+          top:b.top, left:b.left, right:b.right, bottom:b.bottom,
+          background:"#FFFFFF0A", pointerEvents:"none",
+        }} />
+      ))}
+
+      <div style={{ position:"relative", zIndex:1 }}>
+        <div style={{ fontSize:48, marginBottom:20 }}>✨</div>
+        <h2 style={{
+          fontFamily:script, fontSize:"clamp(36px,6vw,72px)",
+          color:"white", lineHeight:1.1, marginBottom:20,
+        }}>
+          Unleash<br />your growth potential
+        </h2>
+        <p style={{ fontFamily:sans, color:"#FFFFFF99", fontSize:16, maxWidth:480, margin:"0 auto 40px", lineHeight:1.7 }}>
+          Build recurring revenue workflows with automated billing,
+          renewals, payments, and customer retention inside Eden ERP.
+        </p>
+        <div style={{ display:"flex", gap:12, justifyContent:"center", flexWrap:"wrap" }}>
+          <Btn style={{ background:"white", color:PURPLE, fontSize:15, padding:"15px 32px", fontWeight:700, boxShadow:"0 8px 32px #00000033" }}>
+            Start Free Trial →
+          </Btn>
+          <Btn style={{ background:"transparent", color:"white", border:"1.5px solid #FFFFFF44", fontSize:15 }}>
+            Contact Sales
+          </Btn>
+        </div>
+        <p style={{ fontFamily:sans, fontSize:13, color:"#FFFFFF66", marginTop:20 }}>
+          Free trial · No credit card · Instant access
+        </p>
+      </div>
+    </section>
+  );
+}
+
+// ─── ROOT ────────────────────────────────────────────────────────────────────
+
+export default function EdenLandingPage() {
+  return (
+    <main style={{ background:CREAM, minHeight:"100vh" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap');
+      `}</style>
+      <Hero />
+      <AppsGrid />
+      <LevelUp />
+      <Productivity />
+      <NativeAI />
+      <EnterpriseSection />
+      <Features />
+      <Stats />
+      <Testimonials />
+      <CTA />
     </main>
   );
 }

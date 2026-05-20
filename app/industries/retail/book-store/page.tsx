@@ -19,6 +19,7 @@ import {
   Star,
   Users,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Book Store | EdenERP Industries",
@@ -127,9 +128,9 @@ function SectionEyebrow({
 
 export default function BookStorePage() {
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#fffcf7_18%,_#ffffff_100%)] text-slate-800">
+    <main className="overflow-hidden bg-[linear-linear(180deg,_#fff_0%,_#fffcf7_18%,_#ffffff_100%)] text-slate-800">
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_15%_12%,rgba(251,191,36,0.18),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(167,139,250,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(255,252,247,1)_100%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-linear(circle_at_15%_12%,rgba(251,191,36,0.18),transparent_25%),radial-linear(circle_at_85%_15%,rgba(167,139,250,0.14),transparent_24%),linear-linear(180deg,rgba(255,255,255,1)_0%,rgba(255,252,247,1)_100%)]" />
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
@@ -208,7 +209,7 @@ export default function BookStorePage() {
           <div className="relative mx-auto flex w-full max-w-xl items-center justify-center">
             <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-amber-100 blur-3xl" />
             <div className="absolute -bottom-10 left-4 h-36 w-36 rounded-full bg-violet-100 blur-3xl" />
-            <div className="relative h-[25rem] w-[25rem] overflow-hidden rounded-full border-[14px] border-white bg-[linear-gradient(180deg,_#f3ebff_0%,_#ffffff_35%,_#fdf6ea_100%)] shadow-[0_40px_100px_rgba(76,29,149,0.18)]">
+            <div className="relative h-[25rem] w-[25rem] overflow-hidden rounded-full border-[14px] border-white bg-[linear-linear(180deg,_#f3ebff_0%,_#ffffff_35%,_#fdf6ea_100%)] shadow-[0_40px_100px_rgba(76,29,149,0.18)]">
               <div className="absolute inset-0">
                 <div className="absolute left-10 right-10 top-10 bottom-14 rounded-[2rem] bg-[#5f3b84] p-6 shadow-inner">
                   <div className="grid h-full grid-cols-5 gap-2">
@@ -353,12 +354,12 @@ export default function BookStorePage() {
                       <div
                         className={`h-24 ${
                           [
-                            "bg-gradient-to-br from-orange-200 to-rose-300",
-                            "bg-gradient-to-br from-sky-200 to-indigo-300",
-                            "bg-gradient-to-br from-amber-200 to-yellow-300",
-                            "bg-gradient-to-br from-violet-200 to-fuchsia-300",
-                            "bg-gradient-to-br from-emerald-200 to-teal-300",
-                            "bg-gradient-to-br from-pink-200 to-rose-200",
+                            "bg-linear-to-br from-orange-200 to-rose-300",
+                            "bg-linear-to-br from-sky-200 to-indigo-300",
+                            "bg-linear-to-br from-amber-200 to-yellow-300",
+                            "bg-linear-to-br from-violet-200 to-fuchsia-300",
+                            "bg-linear-to-br from-emerald-200 to-teal-300",
+                            "bg-linear-to-br from-pink-200 to-rose-200",
                           ][index]
                         }`}
                       />
@@ -539,7 +540,7 @@ export default function BookStorePage() {
       </section>
 
       <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f5f7] py-16 lg:py-24">
-        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_center,_rgba(168,85,247,0.08),transparent_68%)]" />
+        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-linear(circle_at_center,_rgba(168,85,247,0.08),transparent_68%)]" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
@@ -573,7 +574,10 @@ export default function BookStorePage() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
-          <ScriptHeading>One need, one app.</ScriptHeading>
+          <ScriptHeading>
+            One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
+            <HandUnderline color="bg-sky-400">app</HandUnderline>.
+          </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-slate-600">
             Expand as you grow with connected apps for your retail operation,
             finance, supplier flows, and customer communication.
@@ -617,7 +621,7 @@ export default function BookStorePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-gradient(135deg,_#fff_0%,_#faf5ff_45%,_#fff8ed_100%)] px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
+        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-linear(135deg,_#fff_0%,_#faf5ff_45%,_#fff8ed_100%)] px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
           <div className="absolute inset-0 opacity-90">
             {people.map((person, index) => (
               <div

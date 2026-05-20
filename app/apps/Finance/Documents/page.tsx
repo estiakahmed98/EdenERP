@@ -31,6 +31,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 const features = [
   {
@@ -672,7 +673,10 @@ export default function DocumentsPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <ScriptHeading>One need, one app.</ScriptHeading>
+        <ScriptHeading>
+          One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
+          <HandUnderline color="bg-sky-400">app</HandUnderline>.
+        </ScriptHeading>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {apps.map((app) => {
