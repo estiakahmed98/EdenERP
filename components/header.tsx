@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useEffect, useId, useRef, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import Link from "next/link";
+import { useEffect, useId, useRef, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 type MegaMenuLink = {
   label: string;
@@ -13,202 +13,311 @@ export default function Header() {
   const navId = useId();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<
-    'apps' | 'industries' | 'community' | null
+    "apps" | "industries" | "community" | null
   >(null);
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
 
   const appsMegaMenu = [
     {
-      title: 'Finance',
-      accentClass: 'text-teal-600',
-      underlineClass: 'bg-teal-200',
-      links: ['Accounting', 'Invoicing', 'Expenses', 'Spreadsheet (BI)', 'Documents', 'Sign'],
+      title: "Finance",
+      accentClass: "text-teal-600",
+      underlineClass: "bg-teal-200",
+      links: [
+        "Accounting",
+        "Invoicing",
+        "Expenses",
+        "Spreadsheet (BI)",
+        "Documents",
+        "Sign",
+      ],
     },
     {
-      title: 'Sales',
-      accentClass: 'text-rose-500',
-      underlineClass: 'bg-rose-200',
-      links: ['CRM', 'Sales', 'POS Shop', 'POS Restaurant', 'Subscriptions', 'Rental'],
+      title: "Sales",
+      accentClass: "text-rose-500",
+      underlineClass: "bg-rose-200",
+      links: [
+        "CRM",
+        "Sales",
+        "POS Shop",
+        "POS Restaurant",
+        "Subscriptions",
+        "Rental",
+      ],
     },
     {
-      title: 'Websites',
-      accentClass: 'text-sky-600',
-      underlineClass: 'bg-sky-200',
-      links: ['Website Builder', 'eCommerce', 'Blog', 'Forum', 'Live Chat', 'eLearning'],
+      title: "Websites",
+      accentClass: "text-sky-600",
+      underlineClass: "bg-sky-200",
+      links: [
+        "Website Builder",
+        "eCommerce",
+        "Blog",
+        "Forum",
+        "Live Chat",
+        "eLearning",
+      ],
     },
     {
-      title: 'Supply Chain',
-      accentClass: 'text-indigo-500',
-      underlineClass: 'bg-indigo-200',
-      links: ['Inventory', 'Manufacturing', 'PLM', 'Purchase', 'Maintenance', 'Quality'],
+      title: "Supply Chain",
+      accentClass: "text-indigo-500",
+      underlineClass: "bg-indigo-200",
+      links: [
+        "Inventory",
+        "Manufacturing",
+        "PLM",
+        "Purchase",
+        "Maintenance",
+        "Quality",
+      ],
     },
     {
-      title: 'Human Resources',
-      accentClass: 'text-violet-600',
-      underlineClass: 'bg-violet-200',
-      links: ['Employees', 'Recruitment', 'Time Off', 'Appraisals', 'Referrals', 'Fleet'],
+      title: "Human Resources",
+      accentClass: "text-violet-600",
+      underlineClass: "bg-violet-200",
+      links: [
+        "Employees",
+        "Recruitment",
+        "Time Off",
+        "Appraisals",
+        "Referrals",
+        "Fleet",
+      ],
     },
     {
-      title: 'Marketing',
-      accentClass: 'text-orange-500',
-      underlineClass: 'bg-orange-200',
-      links: ['Social Marketing', 'Email Marketing', 'SMS Marketing', 'Events', 'Marketing Automation', 'Surveys'],
+      title: "Marketing",
+      accentClass: "text-orange-500",
+      underlineClass: "bg-orange-200",
+      links: [
+        "Social Marketing",
+        "Email Marketing",
+        "SMS Marketing",
+        "Events",
+        "Marketing Automation",
+        "Surveys",
+      ],
     },
     {
-      title: 'Services',
-      accentClass: 'text-orange-600',
-      underlineClass: 'bg-orange-200',
-      links: ['Project', 'Timesheets', 'Field Service', 'Helpdesk', 'Planning', 'Appointments'],
+      title: "Services",
+      accentClass: "text-orange-600",
+      underlineClass: "bg-orange-200",
+      links: [
+        "Project",
+        "Timesheets",
+        "Field Service",
+        "Helpdesk",
+        "Planning",
+        "Appointments",
+      ],
     },
     {
-      title: 'Productivity',
-      accentClass: 'text-purple-600',
-      underlineClass: 'bg-purple-200',
-      links: ['Discuss', 'Artificial Intelligence', 'IoT', 'VoIP', 'Knowledge', 'WhatsApp'],
+      title: "Productivity",
+      accentClass: "text-purple-600",
+      underlineClass: "bg-purple-200",
+      links: [
+        "Discuss",
+        "Artificial Intelligence",
+        "IoT",
+        "VoIP",
+        "Knowledge",
+        "WhatsApp",
+      ],
     },
   ];
 
   const industriesMegaMenu = [
     {
-      title: 'Retail',
-      accentClass: 'text-teal-600',
-      underlineClass: 'bg-teal-200',
+      title: "Retail",
+      accentClass: "text-teal-600",
+      underlineClass: "bg-teal-200",
       links: [
-        { label: 'Book Store', href: '/industries/book-store' },
-        { label: 'Clothing Store' },
-        { label: 'Furniture Store' },
+        { label: 'Book Store', href: '/industries/retail/book-store' },
+        { label: 'Clothing Store', href: '/industries/retail/clothing-store' },
+        { label: 'Furniture Store',href: '/industries/retail/furniture-store' },
         { label: 'Grocery Store' },
         { label: 'Hardware Store' },
         { label: 'Toy Store' },
       ],
     },
     {
-      title: 'Food & Hospitality',
-      accentClass: 'text-sky-600',
-      underlineClass: 'bg-sky-200',
-      links: ['Bar and Pub', 'Restaurant', 'Fast Food', 'Guest House', 'Beverage Distributor', 'Hotel'],
-    },
-    {
-      title: 'Real Estate',
-      accentClass: 'text-rose-500',
-      underlineClass: 'bg-rose-200',
+      title: "Food & Hospitality",
+      accentClass: "text-sky-600",
+      underlineClass: "bg-sky-200",
       links: [
-        'Real Estate Agency',
-        'Architecture Firm',
-        'Construction',
-        'Property Management',
-        'Gardening',
-        'Property Owner Association',
+        "Bar and Pub",
+        "Restaurant",
+        "Fast Food",
+        "Guest House",
+        "Beverage Distributor",
+        "Hotel",
       ],
     },
     {
-      title: 'Consulting',
-      accentClass: 'text-indigo-500',
-      underlineClass: 'bg-indigo-200',
+      title: "Real Estate",
+      accentClass: "text-rose-500",
+      underlineClass: "bg-rose-200",
       links: [
-        'Accounting Firm',
-        'Odoo Partner',
-        'Marketing Agency',
-        'Law firm',
-        'Talent Acquisition',
-        'Audit & Certification',
+        "Real Estate Agency",
+        "Architecture Firm",
+        "Construction",
+        "Property Management",
+        "Gardening",
+        "Property Owner Association",
       ],
     },
     {
-      title: 'Manufacturing',
-      accentClass: 'text-violet-600',
-      underlineClass: 'bg-violet-200',
-      links: ['Textile', 'Metal', 'Furnitures', 'Food', 'Brewery', 'Corporate Gifts'],
-    },
-    {
-      title: 'Health & Fitness',
-      accentClass: 'text-orange-500',
-      underlineClass: 'bg-orange-200',
-      links: ['Sports Club', 'Eyewear Store', 'Fitness Center', 'Wellness Practitioners', 'Pharmacy', 'Hair Salon'],
-    },
-    {
-      title: 'Trades',
-      accentClass: 'text-orange-600',
-      underlineClass: 'bg-orange-200',
-      links: ['Handyman', 'IT Hardware & Support', 'Solar Energy Systems', 'Shoe Maker', 'Cleaning Services', 'HVAC Services'],
-    },
-    {
-      title: 'Others',
-      accentClass: 'text-purple-600',
-      underlineClass: 'bg-purple-200',
+      title: "Consulting",
+      accentClass: "text-indigo-500",
+      underlineClass: "bg-indigo-200",
       links: [
-        'Nonprofit Organization',
-        'Environmental Agency',
-        'Billboard Rental',
-        'Photography',
-        'Bike Leasing',
-        'Software Reseller',
+        "Accounting Firm",
+        "Odoo Partner",
+        "Marketing Agency",
+        "Law firm",
+        "Talent Acquisition",
+        "Audit & Certification",
+      ],
+    },
+    {
+      title: "Manufacturing",
+      accentClass: "text-violet-600",
+      underlineClass: "bg-violet-200",
+      links: [
+        "Textile",
+        "Metal",
+        "Furnitures",
+        "Food",
+        "Brewery",
+        "Corporate Gifts",
+      ],
+    },
+    {
+      title: "Health & Fitness",
+      accentClass: "text-orange-500",
+      underlineClass: "bg-orange-200",
+      links: [
+        "Sports Club",
+        "Eyewear Store",
+        "Fitness Center",
+        "Wellness Practitioners",
+        "Pharmacy",
+        "Hair Salon",
+      ],
+    },
+    {
+      title: "Trades",
+      accentClass: "text-orange-600",
+      underlineClass: "bg-orange-200",
+      links: [
+        "Handyman",
+        "IT Hardware & Support",
+        "Solar Energy Systems",
+        "Shoe Maker",
+        "Cleaning Services",
+        "HVAC Services",
+      ],
+    },
+    {
+      title: "Others",
+      accentClass: "text-purple-600",
+      underlineClass: "bg-purple-200",
+      links: [
+        "Nonprofit Organization",
+        "Environmental Agency",
+        "Billboard Rental",
+        "Photography",
+        "Bike Leasing",
+        "Software Reseller",
       ],
     },
   ];
 
   const navItems = [
-    { label: 'Apps', href: '/apps', id: 'apps' as const, megaMenu: appsMegaMenu },
-    { label: 'Industries', href: '/industries', id: 'industries' as const, megaMenu: industriesMegaMenu },
     {
-      label: 'Community',
-      href: '/community',
-      id: 'community' as const,
+      label: "Apps",
+      href: "/apps",
+      id: "apps" as const,
+      megaMenu: appsMegaMenu,
+    },
+    {
+      label: "Industries",
+      href: "/industries",
+      id: "industries" as const,
+      megaMenu: industriesMegaMenu,
+    },
+    {
+      label: "Community",
+      href: "/community",
+      id: "community" as const,
       megaMenu: [
         {
-          title: 'Learn',
-          accentClass: 'text-orange-500',
-          underlineClass: 'bg-orange-200',
-          links: ['Tutorials', 'Documentation', 'Certifications', 'Training', 'Blog', 'Podcast'],
-        },
-        {
-          title: 'Empower Education',
-          accentClass: 'text-orange-600',
-          underlineClass: 'bg-orange-200',
-          links: ['Education Program', 'Scale Up! Business Game', 'Visit Odoo'],
-        },
-        {
-          title: 'Get The Software',
-          accentClass: 'text-teal-600',
-          underlineClass: 'bg-teal-200',
-          links: ['Download', 'Compare Editions', 'Releases'],
-        },
-        {
-          title: 'Collaborate',
-          accentClass: 'text-purple-600',
-          underlineClass: 'bg-purple-200',
+          title: "Learn",
+          accentClass: "text-orange-500",
+          underlineClass: "bg-orange-200",
           links: [
-            'Github',
-            'Forum',
-            'Events',
-            'Translations',
-            'Become a Partner',
-            'Services for Partners',
-            'Register your Accounting Firm',
+            "Tutorials",
+            "Documentation",
+            "Certifications",
+            "Training",
+            "Blog",
+            "Podcast",
           ],
         },
         {
-          title: 'Get Services',
-          accentClass: 'text-sky-600',
-          underlineClass: 'bg-sky-200',
+          title: "Empower Education",
+          accentClass: "text-orange-600",
+          underlineClass: "bg-orange-200",
+          links: ["Education Program", "Scale Up! Business Game", "Visit Odoo"],
+        },
+        {
+          title: "Get The Software",
+          accentClass: "text-teal-600",
+          underlineClass: "bg-teal-200",
+          links: ["Download", "Compare Editions", "Releases"],
+        },
+        {
+          title: "Collaborate",
+          accentClass: "text-purple-600",
+          underlineClass: "bg-purple-200",
           links: [
-            'Find a Partner',
-            'Find an Accountant',
-            'Meet an advisor',
-            'Implementation Services',
-            'Customer References',
-            'Support',
-            'Upgrades',
+            "Github",
+            "Forum",
+            "Events",
+            "Translations",
+            "Become a Partner",
+            "Services for Partners",
+            "Register your Accounting Firm",
+          ],
+        },
+        {
+          title: "Get Services",
+          accentClass: "text-sky-600",
+          underlineClass: "bg-sky-200",
+          links: [
+            "Find a Partner",
+            "Find an Accountant",
+            "Meet an advisor",
+            "Implementation Services",
+            "Customer References",
+            "Support",
+            "Upgrades",
           ],
         },
       ],
     },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Help', href: '/help' },
+    { label: "Pricing", href: "/pricing" },
+    { label: "Help", href: "/help" },
   ];
 
   const normalizeMegaMenuLinks = (links: Array<string | MegaMenuLink>) =>
-    links.map((link) => (typeof link === 'string' ? { label: link } : link));
+    links.map((link) => (typeof link === "string" ? { label: link } : link));
+
+  const sectionRouteMap: Record<string, string> = {
+    Learn: "/community/learn",
+    "Empower Education": "/community/empower-education",
+    "Get The Software": "/community/get-the-software",
+    Collaborate: "/community/collaborate",
+    "Get Services": "/community/get-services",
+  };
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
@@ -220,14 +329,14 @@ export default function Header() {
     }
 
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') setOpenDesktopMenu(null);
+      if (event.key === "Escape") setOpenDesktopMenu(null);
     }
 
-    document.addEventListener('pointerdown', onPointerDown);
-    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
     return () => {
-      document.removeEventListener('pointerdown', onPointerDown);
-      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
     };
   }, [openDesktopMenu]);
 
@@ -236,7 +345,9 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-bold text-xl hidden sm:inline text-foreground">Eden Erp</span>
+          <span className="font-bold text-xl hidden sm:inline text-foreground">
+            Eden Erp
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -252,7 +363,9 @@ export default function Header() {
                     aria-controls={`${navId}-${item.id}-panel`}
                     className="text-foreground hover:text-primary font-medium transition-colors relative"
                     onClick={() =>
-                      setOpenDesktopMenu((prev) => (prev === item.id ? null : item.id))
+                      setOpenDesktopMenu((prev) =>
+                        prev === item.id ? null : item.id,
+                      )
                     }
                   >
                     {item.label}
@@ -270,30 +383,26 @@ export default function Header() {
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10 p-8 lg:p-10">
                           {item.megaMenu.map((col) => (
                             <div key={col.title}>
-                              <div className={`text-xs font-bold tracking-widest uppercase ${col.accentClass}`}>
+                              <div
+                                className={`text-xs font-bold tracking-widest uppercase ${col.accentClass}`}
+                              >
                                 {col.title}
                               </div>
-                              <div className={`mt-2 h-px w-full ${col.underlineClass}`} />
+                              <div
+                                className={`mt-2 h-px w-full ${col.underlineClass}`}
+                              />
                               <ul className="mt-4 space-y-3">
-                                {normalizeMegaMenuLinks(col.links).map((link) => (
+                                {normalizeMegaMenuLinks(
+                                  col.links as Array<string | MegaMenuLink>,
+                                ).map((link) => (
                                   <li key={`${col.title}:${link.label}`}>
-                                    {link.href ? (
-                                      <Link
-                                        href={link.href}
-                                        className="text-left text-sm text-foreground/80 hover:text-primary transition-colors"
-                                        onClick={() => setOpenDesktopMenu(null)}
-                                      >
-                                        {link.label}
-                                      </Link>
-                                    ) : (
-                                      <button
-                                        type="button"
-                                        className="text-left text-sm text-foreground/80 hover:text-primary transition-colors"
-                                        onClick={() => setOpenDesktopMenu(null)}
-                                      >
-                                        {link.label}
-                                      </button>
-                                    )}
+                                    <Link
+                                      href={link.href ?? sectionRouteMap[col.title] ?? item.href}
+                                      className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
+                                      onClick={() => setOpenDesktopMenu(null)}
+                                    >
+                                      {link.label}
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
