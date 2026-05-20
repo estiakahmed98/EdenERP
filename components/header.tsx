@@ -262,13 +262,13 @@ export default function Header() {
                               <ul className="mt-4 space-y-3">
                                 {col.links.map((label) => (
                                   <li key={`${col.title}:${label}`}>
-                                    <button
-                                      type="button"
-                                      className="text-left text-sm text-foreground/80 hover:text-primary transition-colors"
+                                    <Link
+                                      href={`/apps/${col.title}/${label.replace(' (BI)', '').replace(' ', '')}`}
+                                      className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
                                       onClick={() => setOpenDesktopMenu(null)}
                                     >
                                       {label}
-                                    </button>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>

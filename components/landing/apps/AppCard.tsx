@@ -1,5 +1,6 @@
 import { App } from "@/data/apps";
 import { Star, Download, Building2 } from "lucide-react";
+import Image from "next/image";
 
 interface AppCardProps {
   app: App;
@@ -10,6 +11,16 @@ export default function AppCard({ app }: AppCardProps) {
     <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       {/* Banner Image Placeholder */}
       <div className={`h-32 ${app.gradient} relative overflow-hidden`}>
+        {app.imageSrc ? (
+          <Image
+            src={encodeURI(app.imageSrc)}
+            alt={app.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 420px"
+            className="object-cover"
+            priority={false}
+          />
+        ) : null}
         <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-semibold text-gray-900">
           {app.category}
