@@ -4,6 +4,11 @@ import Link from 'next/link';
 import { useEffect, useId, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
+type MegaMenuLink = {
+  label: string;
+  href?: string;
+};
+
 export default function Header() {
   const navId = useId();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -68,7 +73,14 @@ export default function Header() {
       title: 'Retail',
       accentClass: 'text-teal-600',
       underlineClass: 'bg-teal-200',
-      links: ['Book Store', 'Clothing Store', 'Furniture Store', 'Grocery Store', 'Hardware Store', 'Toy Store'],
+      links: [
+        { label: 'Book Store', href: '/industries/book-store' },
+        { label: 'Clothing Store' },
+        { label: 'Furniture Store' },
+        { label: 'Grocery Store' },
+        { label: 'Hardware Store' },
+        { label: 'Toy Store' },
+      ],
     },
     {
       title: 'Food & Hospitality',
@@ -195,6 +207,9 @@ export default function Header() {
     { label: 'Help', href: '/help' },
   ];
 
+  const normalizeMegaMenuLinks = (links: Array<string | MegaMenuLink>) =>
+    links.map((link) => (typeof link === 'string' ? { label: link } : link));
+
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
       if (!openDesktopMenu) return;
@@ -260,15 +275,25 @@ export default function Header() {
                               </div>
                               <div className={`mt-2 h-px w-full ${col.underlineClass}`} />
                               <ul className="mt-4 space-y-3">
-                                {col.links.map((label) => (
-                                  <li key={`${col.title}:${label}`}>
-                                    <Link
-                                      href={`/apps/${col.title}/${label.replace(' (BI)', '').replace(' ', '')}`}
-                                      className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
-                                      onClick={() => setOpenDesktopMenu(null)}
-                                    >
-                                      {label}
-                                    </Link>
+                                {normalizeMegaMenuLinks(col.links).map((link) => (
+                                  <li key={`${col.title}:${link.label}`}>
+                                    {link.href ? (
+                                      <Link
+                                        href={link.href}
+                                        className="text-left text-sm text-foreground/80 hover:text-primary transition-colors"
+                                        onClick={() => setOpenDesktopMenu(null)}
+                                      >
+                                        {link.label}
+                                      </Link>
+                                    ) : (
+                                      <button
+                                        type="button"
+                                        className="text-left text-sm text-foreground/80 hover:text-primary transition-colors"
+                                        onClick={() => setOpenDesktopMenu(null)}
+                                      >
+                                        {link.label}
+                                      </button>
+                                    )}
                                   </li>
                                 ))}
                               </ul>
