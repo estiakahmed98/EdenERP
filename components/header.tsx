@@ -4,6 +4,11 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
+type MegaMenuLink = {
+  label: string;
+  href?: string;
+};
+
 export default function Header() {
   const navId = useId();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -127,7 +132,7 @@ export default function Header() {
       links: [
         { label: 'Book Store', href: '/industries/retail/book-store' },
         { label: 'Clothing Store', href: '/industries/retail/clothing-store' },
-        { label: 'Furniture Store' },
+        { label: 'Furniture Store',href: '/industries/retail/furniture-store' },
         { label: 'Grocery Store' },
         { label: 'Hardware Store' },
         { label: 'Toy Store' },
@@ -306,6 +311,14 @@ export default function Header() {
   const normalizeMegaMenuLinks = (links: Array<string | MegaMenuLink>) =>
     links.map((link) => (typeof link === "string" ? { label: link } : link));
 
+  const sectionRouteMap: Record<string, string> = {
+    Learn: "/community/learn",
+    "Empower Education": "/community/empower-education",
+    "Get The Software": "/community/get-the-software",
+    Collaborate: "/community/collaborate",
+    "Get Services": "/community/get-services",
+  };
+
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
       if (!openDesktopMenu) return;
@@ -379,32 +392,19 @@ export default function Header() {
                                 className={`mt-2 h-px w-full ${col.underlineClass}`}
                               />
                               <ul className="mt-4 space-y-3">
-                                {(() => {
-                                  // Map section title to route
-                                  const sectionRouteMap = {
-                                    Learn: "/community/learn",
-                                    "Empower Education":
-                                      "/community/empower-education",
-                                    "Get The Software":
-                                      "/community/get-the-software",
-                                    Collaborate: "/community/collaborate",
-                                    "Get Services": "/community/get-services",
-                                  };
-                                  return col.links.map((label, idx) => (
-                                    <li key={`${col.title}:${label}`}>
-                                      <Link
-                                        href={
-                                          sectionRouteMap[col.title] ||
-                                          "/community"
-                                        }
-                                        className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
-                                        onClick={() => setOpenDesktopMenu(null)}
-                                      >
-                                        {label}
-                                      </Link>
-                                    </li>
-                                  ));
-                                })()}
+                                {normalizeMegaMenuLinks(
+                                  col.links as Array<string | MegaMenuLink>,
+                                ).map((link) => (
+                                  <li key={`${col.title}:${link.label}`}>
+                                    <Link
+                                      href={link.href ?? sectionRouteMap[col.title] ?? item.href}
+                                      className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
+                                      onClick={() => setOpenDesktopMenu(null)}
+                                    >
+                                      {link.label}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
                           ))}
