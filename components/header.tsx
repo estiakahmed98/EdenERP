@@ -74,8 +74,8 @@ export default function Header() {
       accentClass: 'text-teal-600',
       underlineClass: 'bg-teal-200',
       links: [
-        { label: 'Book Store', href: '/industries/book-store' },
-        { label: 'Clothing Store' },
+        { label: 'Book Store', href: '/industries/retail/book-store' },
+        { label: 'Clothing Store', href: '/industries/retail/clothing-store' },
         { label: 'Furniture Store' },
         { label: 'Grocery Store' },
         { label: 'Hardware Store' },
