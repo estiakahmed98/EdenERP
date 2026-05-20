@@ -4,6 +4,11 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
+type MegaMenuLink = {
+  label: string;
+  href?: string;
+};
+
 export default function Header() {
   const navId = useId();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -125,12 +130,15 @@ export default function Header() {
       accentClass: "text-teal-600",
       underlineClass: "bg-teal-200",
       links: [
-        "Book Store",
-        "Clothing Store",
-        "Furniture Store",
-        "Grocery Store",
-        "Hardware Store",
-        "Toy Store",
+        { label: "Book Store", href: "/industries/retail/book-store" },
+        { label: "Clothing Store", href: "/industries/retail/clothing-store" },
+        {
+          label: "Furniture Store",
+          href: "/industries/retail/furniture-store",
+        },
+        { label: "Grocery Store" },
+        { label: "Hardware Store" },
+        { label: "Toy Store" },
       ],
     },
     {
@@ -305,6 +313,14 @@ export default function Header() {
 
   const normalizeMegaMenuLinks = (links: Array<string | MegaMenuLink>) =>
     links.map((link) => (typeof link === "string" ? { label: link } : link));
+
+  const sectionRouteMap: Record<string, string> = {
+    Learn: "/community/learn",
+    "Empower Education": "/community/empower-education",
+    "Get The Software": "/community/get-the-software",
+    Collaborate: "/community/collaborate",
+    "Get Services": "/community/get-services",
+  };
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
