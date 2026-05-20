@@ -2,33 +2,55 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Sparkles, X } from "lucide-react";
 
 type MegaMenuLink = {
   label: string;
   href?: string;
 };
 
+type MegaMenuColumn = {
+  title: string;
+  accentClass: string;
+  underlineClass: string;
+  links: Array<string | MegaMenuLink>;
+};
+
+type NavItem =
+  | {
+      label: string;
+      href: string;
+      id: "apps" | "industries" | "community";
+      megaMenu: MegaMenuColumn[];
+    }
+  | {
+      label: string;
+      href: string;
+      id?: never;
+      megaMenu?: never;
+    };
+
 export default function Header() {
   const navId = useId();
+  const desktopNavRef = useRef<HTMLDivElement | null>(null);
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<
     "apps" | "industries" | "community" | null
   >(null);
-  const desktopNavRef = useRef<HTMLDivElement | null>(null);
 
-  const appsMegaMenu = [
+  const appsMegaMenu: MegaMenuColumn[] = [
     {
       title: "Finance",
-      accentClass: "text-teal-600",
-      underlineClass: "bg-teal-200",
+      accentClass: "text-emerald-600",
+      underlineClass: "bg-emerald-200",
       links: [
-        "Accounting",
-        "Invoicing",
-        "Expenses",
-        "Spreadsheet (BI)",
-        "Documents",
-        "Sign",
+        { label: "Accounting", href: "/apps/Finance/Accounting" },
+        { label: "Invoicing", href: "/apps/Finance/Invoicing" },
+        { label: "Expenses", href: "/apps/Finance/Expenses" },
+        { label: "Spreadsheet", href: "/apps/Finance/Spreadsheet" },
+        { label: "Documents", href: "/apps/Finance/Documents" },
+        { label: "Sign", href: "/apps/Finance/esign" },
       ],
     },
     {
@@ -64,10 +86,10 @@ export default function Header() {
       links: [
         "Inventory",
         "Manufacturing",
-        "PLM",
         "Purchase",
         "Maintenance",
         "Quality",
+        "Barcode",
       ],
     },
     {
@@ -79,8 +101,8 @@ export default function Header() {
         "Recruitment",
         "Time Off",
         "Appraisals",
-        "Referrals",
-        "Fleet",
+        "Attendance",
+        "Payroll",
       ],
     },
     {
@@ -92,14 +114,14 @@ export default function Header() {
         "Email Marketing",
         "SMS Marketing",
         "Events",
-        "Marketing Automation",
+        "Automation",
         "Surveys",
       ],
     },
     {
       title: "Services",
-      accentClass: "text-orange-600",
-      underlineClass: "bg-orange-200",
+      accentClass: "text-cyan-600",
+      underlineClass: "bg-cyan-200",
       links: [
         "Project",
         "Timesheets",
@@ -116,26 +138,29 @@ export default function Header() {
       links: [
         "Discuss",
         "Artificial Intelligence",
-        "IoT",
-        "VoIP",
         "Knowledge",
+        "VoIP",
         "WhatsApp",
+        "Approvals",
       ],
     },
   ];
 
-  const industriesMegaMenu = [
+  const industriesMegaMenu: MegaMenuColumn[] = [
     {
       title: "Retail",
-      accentClass: "text-teal-600",
-      underlineClass: "bg-teal-200",
+      accentClass: "text-emerald-600",
+      underlineClass: "bg-emerald-200",
       links: [
-        { label: 'Book Store', href: '/industries/retail/book-store' },
-        { label: 'Clothing Store', href: '/industries/retail/clothing-store' },
-        { label: 'Furniture Store',href: '/industries/retail/furniture-store' },
-        { label: 'Grocery Store' },
-        { label: 'Hardware Store' },
-        { label: 'Toy Store' },
+        { label: "Book Store", href: "/industries/retail/book-store" },
+        { label: "Clothing Store", href: "/industries/retail/clothing-store" },
+        {
+          label: "Furniture Store",
+          href: "/industries/retail/furniture-store",
+        },
+        "Grocery Store",
+        "Hardware Store",
+        "Toy Store",
       ],
     },
     {
@@ -143,12 +168,12 @@ export default function Header() {
       accentClass: "text-sky-600",
       underlineClass: "bg-sky-200",
       links: [
-        "Bar and Pub",
         "Restaurant",
         "Fast Food",
         "Guest House",
         "Beverage Distributor",
         "Hotel",
+        "Coffee Shop",
       ],
     },
     {
@@ -161,7 +186,6 @@ export default function Header() {
         "Construction",
         "Property Management",
         "Gardening",
-        "Property Owner Association",
       ],
     },
     {
@@ -170,11 +194,10 @@ export default function Header() {
       underlineClass: "bg-indigo-200",
       links: [
         "Accounting Firm",
-        "Odoo Partner",
         "Marketing Agency",
-        "Law firm",
-        "Talent Acquisition",
+        "Law Firm",
         "Audit & Certification",
+        "Talent Acquisition",
       ],
     },
     {
@@ -184,7 +207,7 @@ export default function Header() {
       links: [
         "Textile",
         "Metal",
-        "Furnitures",
+        "Furniture",
         "Food",
         "Brewery",
         "Corporate Gifts",
@@ -196,22 +219,21 @@ export default function Header() {
       underlineClass: "bg-orange-200",
       links: [
         "Sports Club",
-        "Eyewear Store",
         "Fitness Center",
-        "Wellness Practitioners",
+        "Wellness",
         "Pharmacy",
         "Hair Salon",
+        "Eyewear Store",
       ],
     },
     {
       title: "Trades",
-      accentClass: "text-orange-600",
-      underlineClass: "bg-orange-200",
+      accentClass: "text-cyan-600",
+      underlineClass: "bg-cyan-200",
       links: [
         "Handyman",
-        "IT Hardware & Support",
-        "Solar Energy Systems",
-        "Shoe Maker",
+        "IT Support",
+        "Solar Energy",
         "Cleaning Services",
         "HVAC Services",
       ],
@@ -221,88 +243,55 @@ export default function Header() {
       accentClass: "text-purple-600",
       underlineClass: "bg-purple-200",
       links: [
-        "Nonprofit Organization",
-        "Environmental Agency",
-        "Billboard Rental",
+        "Nonprofit",
         "Photography",
         "Bike Leasing",
         "Software Reseller",
+        "Agency",
       ],
     },
   ];
 
-  const navItems = [
+  const communityMegaMenu: MegaMenuColumn[] = [
     {
-      label: "Apps",
-      href: "/apps",
-      id: "apps" as const,
-      megaMenu: appsMegaMenu,
+      title: "Learn",
+      accentClass: "text-orange-500",
+      underlineClass: "bg-orange-200",
+      links: ["Tutorials", "Documentation", "Training", "Blog", "Podcast"],
     },
+    {
+      title: "Get Services",
+      accentClass: "text-sky-600",
+      underlineClass: "bg-sky-200",
+      links: [
+        "Find a Partner",
+        "Meet an Advisor",
+        "Implementation",
+        "Support",
+        "Customer Stories",
+      ],
+    },
+    {
+      title: "Collaborate",
+      accentClass: "text-purple-600",
+      underlineClass: "bg-purple-200",
+      links: ["GitHub", "Forum", "Events", "Translations", "Become a Partner"],
+    },
+  ];
+
+  const navItems: NavItem[] = [
+    { label: "Apps", href: "/apps", id: "apps", megaMenu: appsMegaMenu },
     {
       label: "Industries",
       href: "/industries",
-      id: "industries" as const,
+      id: "industries",
       megaMenu: industriesMegaMenu,
     },
     {
       label: "Community",
       href: "/community",
-      id: "community" as const,
-      megaMenu: [
-        {
-          title: "Learn",
-          accentClass: "text-orange-500",
-          underlineClass: "bg-orange-200",
-          links: [
-            "Tutorials",
-            "Documentation",
-            "Certifications",
-            "Training",
-            "Blog",
-            "Podcast",
-          ],
-        },
-        {
-          title: "Empower Education",
-          accentClass: "text-orange-600",
-          underlineClass: "bg-orange-200",
-          links: ["Education Program", "Scale Up! Business Game", "Visit Odoo"],
-        },
-        {
-          title: "Get The Software",
-          accentClass: "text-teal-600",
-          underlineClass: "bg-teal-200",
-          links: ["Download", "Compare Editions", "Releases"],
-        },
-        {
-          title: "Collaborate",
-          accentClass: "text-purple-600",
-          underlineClass: "bg-purple-200",
-          links: [
-            "Github",
-            "Forum",
-            "Events",
-            "Translations",
-            "Become a Partner",
-            "Services for Partners",
-            "Register your Accounting Firm",
-          ],
-        },
-        {
-          title: "Get Services",
-          accentClass: "text-sky-600",
-          underlineClass: "bg-sky-200",
-          links: [
-            "Find a Partner",
-            "Find an Accountant",
-            "Meet an advisor",
-            "Implementation Services",
-            "Customer References",
-            "Support",
-            "Upgrades",
-          ],
-        },
-      ],
+      id: "community",
+      megaMenu: communityMegaMenu,
     },
     { label: "Pricing", href: "/pricing" },
     { label: "Help", href: "/help" },
@@ -311,20 +300,14 @@ export default function Header() {
   const normalizeMegaMenuLinks = (links: Array<string | MegaMenuLink>) =>
     links.map((link) => (typeof link === "string" ? { label: link } : link));
 
-  const sectionRouteMap: Record<string, string> = {
-    Learn: "/community/learn",
-    "Empower Education": "/community/empower-education",
-    "Get The Software": "/community/get-the-software",
-    Collaborate: "/community/collaborate",
-    "Get Services": "/community/get-services",
-  };
-
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
       if (!openDesktopMenu) return;
+
       const target = event.target as Node | null;
       if (!target) return;
       if (desktopNavRef.current?.contains(target)) return;
+
       setOpenDesktopMenu(null);
     }
 
@@ -334,6 +317,7 @@ export default function Header() {
 
     document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
+
     return () => {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
@@ -341,19 +325,38 @@ export default function Header() {
   }, [openDesktopMenu]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b border-border">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-bold text-xl hidden sm:inline text-foreground">
-            Eden Erp
-          </span>
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="group flex items-center gap-3">
+          <div className="leading-none">
+            <span className="flex items-end text-[30px] font-black tracking-[-0.06em]">
+              <span
+                style={{
+                  fontFamily:
+                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                  WebkitTextStroke: "1px transparent", // Smooths out thick text gradients in some browsers
+                }}
+                className="relative bg-[linear-gradient(90deg,#0f172a_0%,#155e75_35%,#0ea5e9_60%,#10b981_100%)] bg-clip-text text-transparent drop-shadow-[0_10px_25px_rgba(16,185,129,0.18)] text-3xl font-black [@supports(-webkit-text-stroke:0)]:font-extrabold"
+              >
+                Eden
+              </span>
+
+              <span
+                className="ml-1.5 text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-600/90"
+                style={{
+                  fontFamily:
+                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                }}
+              >
+                ERP
+              </span>
+            </span>
+          </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div ref={desktopNavRef} className="hidden md:flex items-center gap-8">
+        <div ref={desktopNavRef} className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => (
-            <div key={item.href} className="relative group">
+            <div key={item.href} className="relative">
               {item.megaMenu ? (
                 <>
                   <button
@@ -361,15 +364,23 @@ export default function Header() {
                     aria-haspopup="dialog"
                     aria-expanded={openDesktopMenu === item.id}
                     aria-controls={`${navId}-${item.id}-panel`}
-                    className="text-foreground hover:text-primary font-medium transition-colors relative"
                     onClick={() =>
                       setOpenDesktopMenu((prev) =>
                         prev === item.id ? null : item.id,
                       )
                     }
+                    className={`group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
+                      openDesktopMenu === item.id
+                        ? "text-cyan-700"
+                        : "text-slate-700 hover:text-cyan-700"
+                    }`}
                   >
                     {item.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${
+                        openDesktopMenu === item.id ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
 
                   {openDesktopMenu === item.id && (
@@ -377,34 +388,46 @@ export default function Header() {
                       id={`${navId}-${item.id}-panel`}
                       role="dialog"
                       aria-label={`${item.label} menu`}
-                      className="absolute left-1/2 top-full z-50 mt-5 w-[min(1100px,calc(100vw-2rem))] -translate-x-1/2"
+                      className="absolute left-1/2 top-full z-50 mt-6 w-[min(1120px,calc(100vw-2rem))] -translate-x-1/2"
                     >
-                      <div className="rounded-2xl border border-border bg-background shadow-xl ring-1 ring-border/50">
-                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10 p-8 lg:p-10">
+                      <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/60">
+                        <div className="border-b border-slate-100 bg-linear-to-r from-slate-50 to-white px-8 py-5">
+                          <p className="text-sm font-semibold text-slate-950">
+                            Explore Eden ERP {item.label}
+                          </p>
+                          <p className="mt-1 text-sm text-slate-500">
+                            Premium business tools connected in one unified ERP
+                            platform.
+                          </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-x-10 gap-y-9 p-8 lg:grid-cols-4 lg:p-10">
                           {item.megaMenu.map((col) => (
                             <div key={col.title}>
                               <div
-                                className={`text-xs font-bold tracking-widest uppercase ${col.accentClass}`}
+                                className={`text-xs font-black uppercase tracking-[0.22em] ${col.accentClass}`}
                               >
                                 {col.title}
                               </div>
+
                               <div
                                 className={`mt-2 h-px w-full ${col.underlineClass}`}
                               />
-                              <ul className="mt-4 space-y-3">
-                                {normalizeMegaMenuLinks(
-                                  col.links as Array<string | MegaMenuLink>,
-                                ).map((link) => (
-                                  <li key={`${col.title}:${link.label}`}>
-                                    <Link
-                                      href={link.href ?? sectionRouteMap[col.title] ?? item.href}
-                                      className="text-left text-sm text-foreground/80 hover:text-primary transition-colors block"
-                                      onClick={() => setOpenDesktopMenu(null)}
-                                    >
-                                      {link.label}
-                                    </Link>
-                                  </li>
-                                ))}
+
+                              <ul className="mt-4 space-y-2.5">
+                                {normalizeMegaMenuLinks(col.links).map(
+                                  (link) => (
+                                    <li key={`${col.title}:${link.label}`}>
+                                      <Link
+                                        href={link.href ?? item.href}
+                                        onClick={() => setOpenDesktopMenu(null)}
+                                        className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-600 transition-all hover:bg-slate-50 hover:text-cyan-700"
+                                      >
+                                        {link.label}
+                                      </Link>
+                                    </li>
+                                  ),
+                                )}
                               </ul>
                             </div>
                           ))}
@@ -416,49 +439,73 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="text-foreground hover:text-primary font-medium transition-colors relative"
+                  className="relative text-sm font-semibold text-slate-700 transition-colors hover:text-cyan-700"
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-linear-to-r from-cyan-500 to-emerald-500 transition-all duration-300 hover:w-full" />
                 </Link>
               )}
             </div>
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center gap-4">
-          <button className="px-6 py-2 rounded-lg bg-linear-to-r from-primary to-secondary text-primary-foreground font-semibold hover:shadow-lg transition-all hover:scale-105">
-            Get Started
-          </button>
+        <div className="hidden items-center gap-3 md:flex">
+          <Link
+            href="/login"
+            className="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
+          >
+            Sign in
+          </Link>
+
+          <Link
+            href="/pricing"
+            className="rounded-xl bg-linear-to-r from-[#5B3B5F] to-cyan-700 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 hover:shadow-xl"
+          >
+            Try it free
+          </Link>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 hover:bg-muted rounded-lg transition-colors"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          type="button"
+          aria-label="Toggle menu"
+          className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 md:hidden"
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-card">
-          <div className="px-4 py-4 space-y-3">
+        <div className="border-t border-slate-200 bg-white md:hidden">
+          <div className="space-y-1 px-4 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-2 text-foreground hover:bg-muted rounded-lg transition-colors font-medium"
                 onClick={() => setMobileMenuOpen(false)}
+                className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700"
               >
                 {item.label}
               </Link>
             ))}
-            <button className="w-full px-6 py-2 rounded-lg bg-linear-to-r from-primary to-secondary text-primary-foreground font-semibold hover:shadow-lg transition-all mt-4">
-              Get Started
-            </button>
+
+            <div className="grid gap-3 pt-4">
+              <Link
+                href="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700"
+              >
+                Sign in
+              </Link>
+
+              <Link
+                href="/pricing"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-xl bg-linear-to-r from-[#5B3B5F] to-cyan-700 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-cyan-500/20"
+              >
+                Try it free
+              </Link>
+            </div>
           </div>
         </div>
       )}
