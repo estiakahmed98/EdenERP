@@ -303,6 +303,9 @@ export default function Header() {
     { label: "Help", href: "/help" },
   ];
 
+  const normalizeMegaMenuLinks = (links: Array<string | MegaMenuLink>) =>
+    links.map((link) => (typeof link === "string" ? { label: link } : link));
+
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
       if (!openDesktopMenu) return;
