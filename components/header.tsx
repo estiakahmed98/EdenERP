@@ -327,29 +327,65 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex items-center gap-3">
-          <div className="leading-none">
-            <span className="flex items-end text-[30px] font-black tracking-[-0.06em]">
-              <span
-                style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                  WebkitTextStroke: "1px transparent", // Smooths out thick text gradients in some browsers
-                }}
-                className="relative bg-[linear-gradient(90deg,#0f172a_0%,#155e75_35%,#0ea5e9_60%,#10b981_100%)] bg-clip-text text-transparent drop-shadow-[0_10px_25px_rgba(16,185,129,0.18)] text-3xl font-black [@supports(-webkit-text-stroke:0)]:font-extrabold"
-              >
-                Eden
-              </span>
+        <Link href="/" className={`group relative flex items-center gap-0`}>
+          {/* Eden Text */}
+          <div className="relative">
+            <span
+              className="relative inline-block transition-all duration-300 group-hover:scale-105"
+              style={{
+                fontFamily:
+                  '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
+                fontSize: "32px",
+                fontWeight: 900,
+                background:
+                  "linear-gradient(135deg, #0f172a 0%, #1e293b 45%, #0ea5e9 70%, #10b981 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                letterSpacing: "-0.06em",
+              }}
+            >
+              Eden
+            </span>
 
-              <span
-                className="ml-1.5 text-[11px] font-bold uppercase tracking-[0.28em] text-cyan-600/90"
-                style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                }}
-              >
-                ERP
-              </span>
+            {/* Animated underline */}
+            <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-linear-to-r from-emerald-500 to-cyan-500 transition-all duration-500 group-hover:w-full" />
+          </div>
+
+          {/* Dash separator */}
+          <span
+            className="mx-1 inline-block transition-all duration-300 group-hover:rotate-0"
+            style={{
+              fontFamily:
+                '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontSize: "12px",
+              fontWeight: 200,
+              color: "#cbd5e1",
+              transform: "rotate(-12deg)",
+            }}
+          >
+            —
+          </span>
+
+          {/* ERP Badge */}
+          <div className="relative">
+            {/* Background glow */}
+            <div className="absolute inset-0 rounded-lg bg-linear-to-r from-emerald-500/20 to-cyan-500/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+
+            <span
+              className="relative inline-block rounded-lg px-2 py-0.5 font-black uppercase tracking-wider transition-all duration-300 group-hover:scale-105"
+              style={{
+                fontFamily:
+                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                fontSize: "20px",
+                background: "linear-gradient(135deg, #10b981 0%, #06b6d4 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                letterSpacing: "0.1em",
+              }}
+            >
+              ERP
             </span>
           </div>
         </Link>
