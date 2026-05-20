@@ -83,11 +83,17 @@ export default function EdenAppsSection() {
       
       {/* Eden ERP Header */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight">
+        <h1 
+          style={{
+            fontFamily:
+              '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
+          }}
+          className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight">
           <span className="text-[#875A7B]">E</span>
           <span className="text-[#A24689]">d</span>
           <span className="text-[#7C7BAD]">e</span>
           <span className="text-[#5C5C5C]">n</span>
+          <span className="text-[#5C5C5C]"> -</span>
           <span className="ml-3 text-gray-700 text-4xl sm:text-5xl md:text-6xl font-semibold">ERP</span>
         </h1>
         <p className="text-gray-500 mt-3 text-sm tracking-wide">All-in-one business management platform</p>

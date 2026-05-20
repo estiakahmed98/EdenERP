@@ -198,7 +198,13 @@ export default function EsignPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+            <h1
+              style={{
+                fontFamily:
+                  '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
+              }}
+              className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
+            >
               eSign.{" "}
               <span
                 className="text-cyan-600"
