@@ -1,3 +1,5 @@
+import EdenAppsSection from "@/components/landing/ServiceSection";
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
@@ -16,6 +18,8 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      <EdenAppsSection/>
     </main>
   );
 }
