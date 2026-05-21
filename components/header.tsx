@@ -180,9 +180,9 @@ export default function Header() {
       links: [
         { label: "Restaurant", href: "/industries/food&hospitality/restaurant" },
         { label: "Fast Food", href: "/industries/food&hospitality/fast-food" },
-        "Guest House",
-        "Beverage Distributor",
-        "Hotel",
+        { label: "Guest House", href: "/industries/food&hospitality/guest-house" },
+        { label: "Beverage Distributor", href: "/industries/food&hospitality/beverage-distributor" },
+        { label: "Hotel", href: "/industries/food&hospitality/hotel" },
       ],
     },
     {
