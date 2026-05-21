@@ -231,7 +231,7 @@ export default function PurchaseLandingSections() {
             </div>
 
             <FloatingNote
-              className="mx-auto mt-12"
+              className="mx-auto mt-12 z-30"
               color="bg-amber-400"
               text="Never run out, never overbuy"
             />
@@ -486,7 +486,7 @@ export default function PurchaseLandingSections() {
             </div>
 
             <FloatingNote
-              className="mx-auto mt-12"
+              className="mx-auto mt-12 z-30"
               color="bg-amber-400"
               text="Agreements make purchasing smooth"
             />

@@ -256,7 +256,7 @@ export default function ELearningLandingSections() {
               </div>
             </div>
 
-            <FloatingNote className="mx-auto mt-12 z-50" />
+            <FloatingNote className="mx-auto mt-12 z-30" />
           </div>
         </div>
 

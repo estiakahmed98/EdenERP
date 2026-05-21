@@ -542,7 +542,7 @@ export default function LiveChatLandingSections() {
             </div>
           </div>
 
-          <FloatingNote className="mx-auto mt-12 z-50" />
+          <FloatingNote className="mx-auto mt-12 z-30" />
         </div>
       </section>
 
@@ -616,7 +616,7 @@ export default function LiveChatLandingSections() {
               </div>
             </div>
 
-            <FloatingNote className="absolute -left-16 -top-24 hidden lg:flex" />
+            <FloatingNote className="absolute -left-16 -top-24 hidden lg:flex z-30" />
           </div>
         </div>
       </section>
