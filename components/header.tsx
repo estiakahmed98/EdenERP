@@ -178,7 +178,7 @@ export default function Header() {
       accentClass: "text-sky-600",
       underlineClass: "bg-sky-200",
       links: [
-        "Restaurant",
+        { label: "Restaurant", href: "/industries/food&hospitality/restaurant" },
         "Fast Food",
         "Guest House",
         "Beverage Distributor",
