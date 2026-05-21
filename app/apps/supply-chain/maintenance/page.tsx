@@ -200,7 +200,7 @@ export default function MaintenanceLandingSections() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 -z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
       <section className="bg-white py-24">

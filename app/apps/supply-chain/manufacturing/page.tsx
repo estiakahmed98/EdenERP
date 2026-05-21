@@ -269,7 +269,7 @@ export default function MRPLandingSections() {
             </div>
 
             <FloatingNote
-              className="mx-auto mt-12"
+              className="mx-auto mt-12 z-30"
               color="bg-sky-400"
               text="Check all operations in real time"
             />
@@ -452,7 +452,7 @@ export default function MRPLandingSections() {
             </p>
 
             <FloatingNote
-              className="mt-10"
+              className="mt-10 z-30"
               color="bg-sky-400"
               text="Scan, produce, and validate"
             />

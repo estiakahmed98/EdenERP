@@ -368,7 +368,7 @@ export default function InventoryLandingSections() {
               accurately.
             </p>
 
-            <FloatingNote className="mt-10" text="Scan faster. Move smarter." />
+            <FloatingNote className="mt-10 z-30" text="Scan faster. Move smarter." />
           </div>
         </div>
       </section>

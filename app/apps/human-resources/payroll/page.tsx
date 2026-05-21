@@ -4,24 +4,24 @@ import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
+  Banknote,
   BarChart3,
-  Boxes,
+  BriefcaseBusiness,
+  Calculator,
+  CalendarCheck,
   CheckCircle2,
-  ClipboardCheck,
+  Clock3,
+  FileCheck2,
+  FileSignature,
   FileText,
-  PackageCheck,
+  HandCoins,
   Play,
-  QrCode,
-  ScanBarcode,
-  ScanLine,
+  ReceiptText,
   ShieldCheck,
-  ShoppingCart,
   Sparkles,
   Star,
-  Truck,
   Users,
-  Warehouse,
-  Zap,
+  WalletCards,
 } from "lucide-react";
 
 import { HandUnderline } from "@/components/ui/headunderline";
@@ -31,57 +31,57 @@ const handwrittenFont =
 
 const features = [
   {
-    title: "Barcode scanning",
+    title: "Salary rules",
     description:
-      "Scan products, lots, serial numbers, packages, locations, and transfers in seconds.",
+      "Create flexible salary structures, allowances, deductions, benefits, and country-specific payroll rules.",
   },
   {
-    title: "Batch operations",
+    title: "Payslip batches",
     description:
-      "Validate multiple receipts, deliveries, inventory adjustments, and internal transfers faster.",
+      "Generate payslips for teams, departments, or the whole company in a clean batch workflow.",
   },
   {
-    title: "Lot and serial tracking",
+    title: "Work entries",
     description:
-      "Track each product movement with full traceability from receipt to delivery.",
+      "Connect attendance, time off, planning, and contracts to calculate accurate payroll inputs.",
   },
   {
-    title: "Mobile warehouse flow",
+    title: "Accounting integration",
     description:
-      "Use barcode flows on phones, tablets, scanners, or warehouse devices.",
+      "Post salary expenses, liabilities, and journal entries directly to your accounting system.",
   },
   {
-    title: "Inventory accuracy",
+    title: "Employee portal",
     description:
-      "Reduce manual mistakes and keep real-time stock quantities clean and reliable.",
+      "Let employees access payslips, contracts, benefits, and payroll documents securely.",
   },
 ];
 
 const apps = [
   {
-    title: "Inventory",
-    description: "Track stock",
-    icon: Warehouse,
+    title: "Employees",
+    description: "Manage employee contracts",
+    icon: Users,
   },
   {
-    title: "Sales",
-    description: "Deliver orders",
-    icon: BarChart3,
+    title: "Attendance",
+    description: "Track worked hours",
+    icon: Clock3,
   },
   {
-    title: "Purchase",
-    description: "Receive products",
-    icon: ShoppingCart,
+    title: "Time Off",
+    description: "Calculate absences",
+    icon: CalendarCheck,
   },
   {
-    title: "Manufacturing",
-    description: "Scan components",
-    icon: Boxes,
+    title: "Accounting",
+    description: "Post payroll entries",
+    icon: ReceiptText,
   },
   {
-    title: "Quality",
-    description: "Validate checks",
-    icon: ShieldCheck,
+    title: "Sign",
+    description: "Approve documents",
+    icon: FileSignature,
   },
 ];
 
@@ -98,7 +98,16 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
-export default function BarcodeLandingSections() {
+const payrollRows = [
+  ["Marc Demo", "Basic Salary", "$4,200", "$620", "$3,580", "Done"],
+  ["Anita Oliver", "Monthly Wage", "$5,100", "$740", "$4,360", "Done"],
+  ["Beth Evans", "Hourly Wage", "$3,880", "$410", "$3,470", "Draft"],
+  ["Audrey Peterson", "Monthly Wage", "$6,400", "$920", "$5,480", "Ready"],
+  ["Joel Willis", "Contract", "$4,950", "$680", "$4,270", "Done"],
+  ["Jennie Fletcher", "Monthly Wage", "$5,750", "$810", "$4,940", "Ready"],
+];
+
+export default function PayrollLandingSections() {
   return (
     <main className="overflow-hidden bg-white text-slate-900">
       <section className="relative overflow-hidden bg-white pt-16">
@@ -107,15 +116,15 @@ export default function BarcodeLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Scan faster.{" "}
-            <HandUnderline color="bg-[#02cfc3]">
-              <span className="text-[#02a6a6]">Move smarter.</span>
+            Payroll{" "}
+            <HandUnderline color="bg-amber-300">
+              <span className="text-amber-500">without the headache</span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Barcode helps your warehouse team receive, pick, pack, transfer,
-            count, and validate inventory with speed and accuracy.
+            Automate payslips, contracts, work entries, deductions, benefits,
+            and salary payments from one accurate payroll system.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -130,7 +139,7 @@ export default function BarcodeLandingSections() {
               href="#features"
               className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
-              Watch a demo
+              Meet an advisor
             </Link>
           </div>
 
@@ -146,106 +155,76 @@ export default function BarcodeLandingSections() {
             <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
               <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <ScanBarcode className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Barcode</span>
+                  <WalletCards className="h-5 w-5 text-[#714b67]" />
+                  <span className="font-bold text-slate-900">Payroll</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
-                    Receipts / Delivery Orders / Inventory / Transfers
+                    Payslips / Contracts / Work Entries / Reporting
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
-                  Scan
+                  New Batch
                 </button>
               </div>
 
-              <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[260px_1fr]">
-                <aside className="rounded-xl bg-white p-5 text-left shadow-sm ring-1 ring-slate-100">
-                  <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-2xl bg-slate-50">
-                    <QrCode className="h-24 w-24 text-slate-900" />
-                  </div>
-
-                  <p className="mt-5 text-center text-sm font-bold text-slate-900">
-                    Scan product barcode
-                  </p>
-
-                  <div className="mt-5 space-y-3">
-                    {[
-                      "Product scanned",
-                      "Lot number detected",
-                      "Quantity updated",
-                      "Location assigned",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-2 rounded-lg bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600"
-                      >
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </aside>
-
-                <div className="mt-5 lg:ml-5 lg:mt-0">
-                  <div className="grid gap-4 md:grid-cols-4">
-                    {[
-                      ["Receipts", "48", "bg-sky-50 text-sky-600"],
-                      ["Pickings", "21", "bg-amber-50 text-amber-600"],
-                      ["Transfers", "36", "bg-emerald-50 text-emerald-600"],
-                      ["Errors", "02", "bg-rose-50 text-rose-600"],
-                    ].map(([label, value, color]) => (
-                      <div
-                        key={label}
-                        className={`rounded-lg p-4 text-left ${color}`}
-                      >
-                        <p className="text-xs font-bold">{label}</p>
-                        <p className="mt-2 text-2xl font-bold">{value}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-5 overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                    <div className="grid grid-cols-6 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
-                      <span>Barcode</span>
-                      <span>Product</span>
-                      <span>Lot/Serial</span>
-                      <span>Location</span>
-                      <span>Qty</span>
-                      <span>Status</span>
+              <div className="bg-[#f7f8fb] p-6">
+                <div className="mb-5 grid gap-3 sm:grid-cols-4">
+                  {[
+                    ["Payslips", "42", "bg-[#714b67] text-white"],
+                    ["Ready", "18", "bg-emerald-50 text-emerald-600"],
+                    ["Draft", "09", "bg-amber-50 text-amber-600"],
+                    ["Net Pay", "$82k", "bg-sky-50 text-sky-600"],
+                  ].map(([label, value, color]) => (
+                    <div
+                      key={label}
+                      className={`rounded-lg p-4 text-left ${color}`}
+                    >
+                      <p className="text-xs font-bold opacity-80">{label}</p>
+                      <p className="mt-2 text-2xl font-bold">{value}</p>
                     </div>
+                  ))}
+                </div>
 
-                    {[
-                      ["BC-000421", "Office Chair", "LOT-24A", "WH/Stock", "28", "Done"],
-                      ["BC-000422", "Desk Lamp", "SN-9921", "WH/Input", "12", "Ready"],
-                      ["BC-000423", "Storage Box", "LOT-19C", "WH/Pack", "64", "Picked"],
-                      ["BC-000424", "Blue Sofa", "SN-4178", "WH/Output", "04", "Waiting"],
-                      ["BC-000425", "Wood Table", "LOT-77B", "WH/Stock", "18", "Done"],
-                    ].map((row) => (
-                      <div
-                        key={row[0]}
-                        className="grid grid-cols-6 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
-                      >
-                        <span className="font-bold text-[#714b67]">{row[0]}</span>
-                        <span className="text-slate-700">{row[1]}</span>
-                        <span className="text-slate-500">{row[2]}</span>
-                        <span className="text-slate-500">{row[3]}</span>
-                        <span className="font-bold text-slate-900">{row[4]}</span>
-                        <span
-                          className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                            row[5] === "Done"
-                              ? "bg-emerald-50 text-emerald-600"
-                              : row[5] === "Ready"
-                                ? "bg-sky-50 text-sky-600"
-                                : row[5] === "Picked"
-                                  ? "bg-amber-50 text-amber-600"
-                                  : "bg-slate-100 text-slate-500"
-                          }`}
-                        >
-                          {row[5]}
-                        </span>
-                      </div>
-                    ))}
+                <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
+                  <div className="grid grid-cols-6 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                    <span>Employee</span>
+                    <span>Structure</span>
+                    <span>Gross</span>
+                    <span>Deductions</span>
+                    <span>Net Pay</span>
+                    <span>Status</span>
                   </div>
+
+                  {payrollRows.map((row, index) => (
+                    <div
+                      key={row[0]}
+                      className="grid grid-cols-6 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                    >
+                      <span className="flex items-center gap-2 font-bold text-slate-900">
+                        <img
+                          src={avatars[index]}
+                          alt={row[0]}
+                          className="h-7 w-7 rounded-full object-cover"
+                        />
+                        {row[0]}
+                      </span>
+                      <span className="text-slate-600">{row[1]}</span>
+                      <span className="font-bold text-slate-900">{row[2]}</span>
+                      <span className="text-slate-500">{row[3]}</span>
+                      <span className="font-bold text-emerald-600">{row[4]}</span>
+                      <span
+                        className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
+                          row[5] === "Done"
+                            ? "bg-emerald-50 text-emerald-600"
+                            : row[5] === "Ready"
+                              ? "bg-sky-50 text-sky-600"
+                              : "bg-amber-50 text-amber-600"
+                        }`}
+                      >
+                        {row[5]}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -256,8 +235,8 @@ export default function BarcodeLandingSections() {
 
             <FloatingNote
               className="mx-auto mt-12 z-30"
-              color="bg-[#02cfc3]"
-              text="Scan once. Update everywhere."
+              color="bg-amber-400"
+              text="Payroll done right, every month"
             />
           </div>
         </div>
@@ -265,7 +244,7 @@ export default function BarcodeLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-[#f3f4f7] py-20">
+      <section className="bg-[#f3f4f7] py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <DashedArrow className="mb-8 h-24 w-24 rotate-[-18deg] text-slate-300" />
@@ -274,17 +253,17 @@ export default function BarcodeLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              <HandUnderline color="bg-[#02cfc3]">
-                <span>Receive</span>
-              </HandUnderline>{" "}
-              products
+              Generate payslips
               <br />
-              without the paperwork
+              in{" "}
+              <HandUnderline color="bg-[#02cfc3]">
+                <span>one click</span>
+              </HandUnderline>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
-              Scan incoming goods, validate purchase orders, confirm quantities,
-              and place products directly into the right warehouse location.
+              Create payslips from employee contracts, work entries, attendance,
+              time off, and salary rules without manual calculation.
             </p>
           </div>
 
@@ -293,22 +272,21 @@ export default function BarcodeLandingSections() {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Incoming Shipment</p>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
-                  Ready
+                <p className="font-bold text-slate-900">Payslip Batch</p>
+                <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
+                  July Payroll
                 </span>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4 sm:grid-cols-3">
                 {[
-                  ["Vendor", "Azure Interior"],
-                  ["Reference", "WH/IN/00042"],
-                  ["Expected", "Today"],
-                  ["Destination", "WH/Stock"],
+                  ["Employees", "42"],
+                  ["Gross Pay", "$102k"],
+                  ["Net Pay", "$82k"],
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-lg bg-slate-50 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900">
+                    <p className="mt-2 text-2xl font-bold text-slate-900">
                       {value}
                     </p>
                   </div>
@@ -317,123 +295,48 @@ export default function BarcodeLandingSections() {
 
               <div className="mt-6 space-y-3">
                 {[
-                  ["Office Chair", "28 / 28", "Validated"],
-                  ["Desk Lamp", "12 / 12", "Validated"],
-                  ["Wood Table", "18 / 20", "To scan"],
-                ].map(([name, qty, status]) => (
+                  "Compute work entries",
+                  "Apply salary rules",
+                  "Generate payslips",
+                  "Post accounting entries",
+                ].map((item) => (
                   <div
-                    key={name}
-                    className="grid grid-cols-[1fr_90px_100px] items-center rounded-lg border border-slate-100 px-4 py-3 text-sm"
+                    key={item}
+                    className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3"
                   >
-                    <span className="font-semibold text-slate-700">{name}</span>
-                    <span className="text-slate-500">{qty}</span>
-                    <span
-                      className={`rounded-full px-3 py-1 text-center text-[10px] font-bold ${
-                        status === "Validated"
-                          ? "bg-emerald-50 text-emerald-600"
-                          : "bg-amber-50 text-amber-600"
-                      }`}
-                    >
-                      {status}
+                    <span className="text-sm font-bold text-slate-700">
+                      {item}
                     </span>
+                    <CheckCircle2 className="h-5 w-5 text-emerald-500" />
                   </div>
                 ))}
               </div>
 
               <button className="mt-6 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white">
-                Validate receipt
+                Generate Payslips
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
-        <div className="absolute left-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] lg:block" />
-
-        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-full bg-slate-100" />
-
-              <div className="relative rotate-12 rounded-3xl bg-slate-900 p-4 shadow-2xl">
-                <div className="h-96 w-56 rounded-2xl bg-white p-4">
-                  <div className="mx-auto h-3 w-16 rounded-full bg-slate-200" />
-
-                  <div className="mt-6 rounded-xl bg-slate-50 p-4 text-center">
-                    <QrCode className="mx-auto h-24 w-24 text-slate-900" />
-                    <p className="mt-3 text-xs font-bold text-slate-500">
-                      Scan package
-                    </p>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {[
-                      "WH/OUT/00091",
-                      "Customer: Deco Addict",
-                      "3 products picked",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-lg bg-slate-50 px-4 py-3 text-xs font-bold text-slate-600"
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-
-                  <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white">
-                    Scan next
-                  </button>
-                </div>
-              </div>
-
-              <ScanLine className="absolute -right-8 top-16 h-14 w-14 text-[#02a6a6]" />
-            </div>
-          </div>
-
-          <div>
-            <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
-            >
-              Pick, pack, and{" "}
-              <HandUnderline color="bg-amber-300">
-                <span>ship</span>
-              </HandUnderline>
-              <br />
-              with confidence
-            </h2>
-
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
-              Scan each product during picking and packing. Prevent wrong
-              shipments, missing items, duplicate scans, and location mistakes.
-            </p>
-
-            <FloatingNote
-              className="mt-10 z-30"
-              color="bg-amber-400"
-              text="No more wrong packages"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
+      <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <Calculator className="mx-auto h-12 w-12 text-[#02a6a6]" />
+
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Count inventory{" "}
+            Flexible{" "}
             <HandUnderline color="bg-sky-300">
-              <span>without chaos</span>
+              <span>salary rules</span>
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
-            Run physical counts by scanning locations and products. Update stock
-            quantities with clean audit trails and fewer manual corrections.
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+            Build payroll structures with basic wage, allowances, deductions,
+            tax rules, reimbursements, benefits, and employer contributions.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
@@ -442,48 +345,47 @@ export default function BarcodeLandingSections() {
             <div className="relative grid gap-6 md:grid-cols-3">
               {[
                 {
-                  title: "Scan location",
-                  icon: Warehouse,
+                  title: "Basic Salary",
+                  amount: "$4,200",
+                  icon: Banknote,
+                  color: "bg-emerald-100 text-emerald-600",
+                },
+                {
+                  title: "Allowances",
+                  amount: "$650",
+                  icon: HandCoins,
                   color: "bg-sky-100 text-sky-600",
                 },
                 {
-                  title: "Scan product",
-                  icon: ScanBarcode,
-                  color: "bg-[#02cfc3]/20 text-[#02a6a6]",
+                  title: "Deductions",
+                  amount: "-$420",
+                  icon: ReceiptText,
+                  color: "bg-rose-100 text-rose-600",
                 },
-                {
-                  title: "Confirm quantity",
-                  icon: CheckCircle2,
-                  color: "bg-emerald-100 text-emerald-600",
-                },
-              ].map((step, index) => {
-                const Icon = step.icon;
+              ].map((item) => {
+                const Icon = item.icon;
 
                 return (
                   <div
-                    key={step.title}
-                    className="relative rounded-xl border border-slate-200 bg-white p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                    key={item.title}
+                    className="rounded-xl border border-slate-200 bg-white p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
                   >
                     <div
-                      className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${step.color}`}
+                      className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${item.color}`}
                     >
                       <Icon className="h-8 w-8" />
                     </div>
 
-                    <h3
-                      className="mt-5 text-2xl font-bold text-slate-900"
-                      style={{ fontFamily: handwrittenFont }}
-                    >
-                      {step.title}
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-6 text-slate-500">
-                      Step {index + 1} for fast and clean inventory adjustment.
+                    <p className="mt-5 text-sm font-bold text-slate-500">
+                      {item.title}
                     </p>
 
-                    {index < 2 && (
-                      <ArrowRight className="absolute -right-5 top-1/2 hidden h-8 w-8 -translate-y-1/2 text-slate-300 md:block" />
-                    )}
+                    <p
+                      className="mt-2 text-4xl font-bold text-slate-900"
+                      style={{ fontFamily: handwrittenFont }}
+                    >
+                      {item.amount}
+                    </p>
                   </div>
                 );
               })}
@@ -492,7 +394,7 @@ export default function BarcodeLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white py-24">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -501,62 +403,184 @@ export default function BarcodeLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Full traceability
+              Work entries
               <br />
-              from{" "}
-              <HandUnderline color="bg-rose-300">
-                <span>barcode to delivery</span>
+              that{" "}
+              <HandUnderline color="bg-amber-300">
+                <span>make sense</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
-              Link barcodes with lots, serial numbers, packages, warehouse
-              locations, vendor receipts, manufacturing components, and customer
-              deliveries.
+              Connect contracts, attendance, planning, and time off to create
+              accurate payroll inputs before payslips are calculated.
             </p>
           </div>
 
-          <div className="relative">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <div className="mb-6 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Traceability Report</p>
-                <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
-                  Live
-                </span>
-              </div>
-
-              <div className="space-y-4">
-                {[
-                  ["Receipt", "WH/IN/00042", "Vendor → WH/Input"],
-                  ["Quality Check", "QC/0018", "Passed"],
-                  ["Internal Transfer", "WH/INT/00031", "Input → Stock"],
-                  ["Picking", "WH/OUT/00091", "Stock → Pack"],
-                  ["Delivery", "WH/OUT/00091", "Pack → Customer"],
-                ].map(([type, reference, route], index) => (
-                  <div
-                    key={`${type}:${reference}:${index}`}
-                    className="grid grid-cols-[42px_1fr] gap-4"
-                  >
-                    <div className="flex flex-col items-center">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#714b67] text-xs font-bold text-white">
-                        {index + 1}
-                      </span>
-                      {index < 4 && <span className="h-8 w-px bg-slate-200" />}
-                    </div>
-
-                    <div className="rounded-lg bg-slate-50 p-4 text-left">
-                      <p className="text-sm font-bold text-slate-900">{type}</p>
-                      <p className="mt-1 text-xs font-bold text-[#714b67]">
-                        {reference}
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500">{route}</p>
-                    </div>
+          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["Regular Work", "160h", "Validated", "bg-emerald-50 text-emerald-600"],
+                ["Paid Time Off", "16h", "Approved", "bg-sky-50 text-sky-600"],
+                ["Sick Leave", "8h", "To Review", "bg-amber-50 text-amber-600"],
+                ["Unpaid Leave", "4h", "Deducted", "bg-rose-50 text-rose-600"],
+              ].map(([name, hours, status, color]) => (
+                <div
+                  key={name}
+                  className="rounded-lg bg-slate-50 p-4 text-left"
+                >
+                  <div className="flex items-center justify-between">
+                    <p className="font-bold text-slate-900">{name}</p>
+                    <span className="font-bold text-slate-700">{hours}</span>
                   </div>
-                ))}
+
+                  <span
+                    className={`mt-4 inline-block rounded-full px-3 py-1 text-[10px] font-bold ${color}`}
+                  >
+                    {status}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 rounded-lg bg-[#714b67] p-5 text-left text-white">
+              <p className="text-sm font-bold">Payroll Input Summary</p>
+              <p className="mt-2 text-3xl font-bold">172h calculated</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="mb-5 flex items-center justify-between">
+              <p className="font-bold text-slate-900">Employee Payslip</p>
+              <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
+                Ready
+              </span>
+            </div>
+
+            <div className="mb-6 flex items-center gap-4">
+              <img
+                src={avatars[3]}
+                alt="Audrey Peterson"
+                className="h-14 w-14 rounded-xl object-cover"
+              />
+              <div>
+                <p className="text-xl font-bold text-slate-900">
+                  Audrey Peterson
+                </p>
+                <p className="text-sm text-slate-500">July 2026 Payslip</p>
               </div>
             </div>
 
-            <ScanBarcode className="absolute -bottom-8 right-8 h-14 w-14 text-amber-500" />
+            <div className="space-y-3">
+              {[
+                ["Basic Salary", "$5,200"],
+                ["Transport Allowance", "$300"],
+                ["Meal Allowance", "$180"],
+                ["Tax Deduction", "-$620"],
+                ["Insurance", "-$210"],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-sm"
+                >
+                  <span className="font-semibold text-slate-700">{label}</span>
+                  <span
+                    className={`font-bold ${
+                      value.startsWith("-") ? "text-rose-500" : "text-slate-900"
+                    }`}
+                  >
+                    {value}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-5 rounded-lg bg-emerald-50 px-4 py-4">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-emerald-700">Net Salary</span>
+                <span className="text-2xl font-bold text-emerald-700">
+                  $4,850
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <FileCheck2 className="mb-6 h-12 w-12 text-[#02a6a6]" />
+
+            <h2
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              Clear payslips,
+              <br />
+              happy{" "}
+              <HandUnderline color="bg-[#02cfc3]">
+                <span>employees</span>
+              </HandUnderline>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+              Give employees transparent payslips with earnings, deductions,
+              benefits, worked time, and net salary clearly explained.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f3f4f7] py-24">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <BarChart3 className="mx-auto h-12 w-12 text-sky-500" />
+
+          <h2
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            style={{ fontFamily: handwrittenFont }}
+          >
+            Payroll reporting
+            <br />
+            <HandUnderline color="bg-sky-300">
+              <span>without confusion</span>
+            </HandUnderline>
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+            Understand salary cost, taxes, departments, deductions, and payroll
+            trends with clean visual reporting.
+          </p>
+
+          <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="mb-5 flex items-center justify-between">
+              <p className="font-bold text-slate-900">Payroll Analysis</p>
+              <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
+                Monthly
+              </span>
+            </div>
+
+            <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 p-5">
+              {[55, 90, 125, 105, 155].map((height, index) => (
+                <div key={index} className="flex flex-1 flex-col items-center">
+                  <div
+                    className="w-full bg-emerald-300"
+                    style={{ height: `${height * 0.3}px` }}
+                  />
+                  <div
+                    className="w-full bg-sky-200"
+                    style={{ height: `${height * 0.55}px` }}
+                  />
+                  <div
+                    className="w-full bg-orange-400"
+                    style={{ height: `${height}px` }}
+                  />
+                  <p className="mt-3 text-xs font-bold text-slate-400">
+                    Month {index + 1}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -623,7 +647,7 @@ export default function BarcodeLandingSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-sky-300">
               <span>need</span>
             </HandUnderline>
             , one{" "}
@@ -715,7 +739,7 @@ export default function BarcodeLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Odoo
               </p>
             </div>
           </div>
@@ -726,22 +750,21 @@ export default function BarcodeLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Barcode helped our warehouse team reduce manual mistakes,
-                  speed up picking, and keep every product movement visible.
+                  Payroll used to take days of spreadsheet checks. Now payslips,
+                  deductions, work entries, and salary reports are generated in
+                  one place.
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
                   <img
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face"
+                    src={avatars[4]}
                     alt="Customer"
                     className="h-12 w-12 rounded-full object-cover"
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Andrew Ross</p>
-                    <p className="text-sm text-slate-500">
-                      Warehouse manager
-                    </p>
+                    <p className="font-bold text-slate-900">Laura Johnson</p>
+                    <p className="text-sm text-slate-500">HR director</p>
                   </div>
                 </div>
               </div>
@@ -757,13 +780,12 @@ export default function BarcodeLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Speed up
+              Pay your team
               <br />
-              your{" "}
+              with{" "}
               <HandUnderline color="bg-[#02cfc3]">
-                <span className="text-[#02a6a6]">warehouse</span>
-              </HandUnderline>{" "}
-              flow
+                <span className="text-[#02a6a6]">confidence</span>
+              </HandUnderline>
             </h2>
 
             <Link
@@ -785,8 +807,8 @@ export default function BarcodeLandingSections() {
 
 function FloatingNote({
   className = "",
-  text = "Share information and make connections",
-  color = "bg-[#02cfc3]",
+  text = "Payroll done right, every month",
+  color = "bg-amber-400",
 }: {
   className?: string;
   text?: string;
