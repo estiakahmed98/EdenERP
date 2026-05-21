@@ -193,11 +193,11 @@ export default function Header() {
       accentClass: "text-rose-500",
       underlineClass: "bg-rose-200",
       links: [
-        { label: "Real Estate Agency", href: "/industries/real-estate/real-estate-agency" },
-        { label: "Architecture Firm", href: "/industries/real-estate/architecture-firm" },
-        { label: "Construction", href: "/industries/real-estate/construction" },
-        { label: "Property Management", href: "/industries/real-estate/property-management" },
-        { label: "Gardening", href: "/industries/real-estate/gardening" },
+        { label: "Real Estate Agency", href: "/industries/realestate/real-estate-agency" },
+        { label: "Architecture Firm", href: "/industries/realestate/architecture-firm" },
+        { label: "Construction", href: "/industries/realestate/construction" },
+        { label: "Property Management", href: "/industries/realestate/property-management" },
+        { label: "Gardening", href: "/industries/realestate/gardening" },
       ],
     },
     {
