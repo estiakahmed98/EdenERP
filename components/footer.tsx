@@ -51,10 +51,7 @@ export default function Footer() {
                   backgroundClip: "text",
                 }}
               >
-                Eden
-              </span>
-              <span className="text-[11px] font-black uppercase tracking-[0.25em] text-cyan-700">
-                ERP
+                Eden-ERP
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-600">
