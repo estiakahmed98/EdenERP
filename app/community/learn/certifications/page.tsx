@@ -55,7 +55,7 @@ const benefits = [
 
 export default function CertificationsPage() {
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#faf7ff_25%,_#ffffff_100%)] text-slate-800">
+    <main className="overflow-hidden bg-[linear-gradient(180deg,#fff_0%,#faf7ff_25%,#ffffff_100%)] text-slate-800">
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.14),transparent_24%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.14),transparent_28%)]" />
 
@@ -132,7 +132,7 @@ export default function CertificationsPage() {
             <div className="absolute -bottom-8 left-6 h-32 w-32 rounded-full bg-amber-100 blur-3xl" />
 
             <div className="relative overflow-hidden rounded-[2.5rem] border border-white/80 bg-white p-8 shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
-              <div className="rounded-[2rem] bg-[linear-gradient(135deg,_#6d28d9_0%,_#8b5cf6_55%,_#f59e0b_100%)] p-8 text-white shadow-xl">
+              <div className="rounded-xl bg-[linear-gradient(135deg,#6d28d9_0%,#8b5cf6_55%,#f59e0b_100%)] p-8 text-white shadow-xl">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm uppercase tracking-[0.25em] text-white/80">
@@ -192,7 +192,7 @@ export default function CertificationsPage() {
           {certifications.map((item) => (
             <div
               key={item.title}
-              className="group rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-100 text-violet-700">
                 <BookOpen className="h-7 w-7" />
@@ -273,7 +273,7 @@ export default function CertificationsPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="rounded-[3rem] bg-[linear-gradient(135deg,_#ffffff_0%,_#faf5ff_50%,_#fff7ed_100%)] px-8 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
+        <div className="rounded-[3rem] bg-[linear-gradient(135deg,#ffffff_0%,#faf5ff_50%,#fff7ed_100%)] px-8 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-violet-100 text-violet-700">
               <Globe className="h-8 w-8" />
