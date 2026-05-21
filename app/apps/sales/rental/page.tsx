@@ -222,7 +222,7 @@ export default function CertificationsPage() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 -z-0 h-40 w-full bg-[#f3f4f7] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
       <section className="relative bg-white py-20 sm:py-28">
