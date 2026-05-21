@@ -20,6 +20,7 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Furniture Store | EdenERP Industries",
@@ -30,32 +31,42 @@ export const metadata: Metadata = {
 const features = [
   {
     title: "Easy invoicing",
-    description: "Create professional invoices in seconds and track payments effortlessly.",
+    description:
+      "Create professional invoices in seconds and track payments effortlessly.",
   },
   {
     title: "Loyalty programs",
-    description: "Reward returning customers with points, tiered perks, and exclusive discounts.",
+    description:
+      "Reward returning customers with points, tiered perks, and exclusive discounts.",
   },
   {
     title: "Quotation builder",
-    description: "Generate custom quotes for B2B clients and convert them to orders instantly.",
+    description:
+      "Generate custom quotes for B2B clients and convert them to orders instantly.",
   },
   {
     title: "Free domain name",
-    description: "Launch your online store with a professional domain included.",
+    description:
+      "Launch your online store with a professional domain included.",
   },
   {
     title: "Shipping connectors",
-    description: "Integrate with major carriers for seamless delivery management.",
+    description:
+      "Integrate with major carriers for seamless delivery management.",
   },
   {
     title: "Integrated reporting",
-    description: "Track sales trends, inventory turnover, and profitability in real-time.",
+    description:
+      "Track sales trends, inventory turnover, and profitability in real-time.",
   },
 ];
 
 const apps = [
-  { title: "Point of Sale", subtitle: "Fast in-store checkout", icon: ShoppingBag },
+  {
+    title: "Point of Sale",
+    subtitle: "Fast in-store checkout",
+    icon: ShoppingBag,
+  },
   { title: "eCommerce", subtitle: "Sell furniture online", icon: ShoppingCart },
   { title: "CRM", subtitle: "Manage customer relationships", icon: Users },
   { title: "Invoicing", subtitle: "Professional billing", icon: ReceiptText },
@@ -91,8 +102,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -117,10 +127,10 @@ function SectionEyebrow({
 
 export default function FurnitureStorePage() {
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#fefaf5_18%,_#ffffff_100%)] text-slate-800">
+    <main className="overflow-hidden bg-[linear-linear(180deg,_#fff_0%,_#fefaf5_18%,_#ffffff_100%)] text-slate-800">
       {/* Hero Section */}
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_15%_12%,rgba(251,191,36,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(168,85,247,0.08),transparent_24%),linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(255,250,245,1)_100%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-linear(circle_at_15%_12%,rgba(251,191,36,0.12),transparent_25%),radial-linear(circle_at_85%_15%,rgba(168,85,247,0.08),transparent_24%),linear-linear(180deg,rgba(255,255,255,1)_0%,rgba(255,250,245,1)_100%)]" />
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
@@ -152,9 +162,9 @@ export default function FurnitureStorePage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                With its ability to handle everything from eCommerce and Point of Sale
-                transactions to custom furniture orders, EdenERP is a complete solution
-                for managing your B2B and B2C sales.
+                With its ability to handle everything from eCommerce and Point
+                of Sale transactions to custom furniture orders, EdenERP is a
+                complete solution for managing your B2B and B2C sales.
               </p>
             </div>
 
@@ -174,9 +184,7 @@ export default function FurnitureStorePage() {
             </div>
 
             <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
-              <div className="mb-4 text-4xl leading-none text-amber-500">
-                "
-              </div>
+              <div className="mb-4 text-4xl leading-none text-amber-500">"</div>
               <p className="text-base leading-7 text-slate-700">
                 EdenERP has been nothing but a good thing for us. From custom
                 furniture orders to B2B quotations, it has worked really well
@@ -199,7 +207,7 @@ export default function FurnitureStorePage() {
           <div className="relative mx-auto flex w-full max-w-xl items-center justify-center">
             <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-amber-100 blur-3xl" />
             <div className="absolute -bottom-10 left-4 h-36 w-36 rounded-full bg-violet-100 blur-3xl" />
-            <div className="relative h-[25rem] w-[25rem] overflow-hidden rounded-full border-[14px] border-white bg-[linear-gradient(180deg,_#fefce8_0%,_#ffffff_35%,_#fef2f2_100%)] shadow-[0_40px_100px_rgba(217,119,6,0.15)]">
+            <div className="relative h-[25rem] w-[25rem] overflow-hidden rounded-full border-[14px] border-white bg-[linear-linear(180deg,_#fefce8_0%,_#ffffff_35%,_#fef2f2_100%)] shadow-[0_40px_100px_rgba(217,119,6,0.15)]">
               <div className="absolute inset-0">
                 <div className="absolute left-10 right-10 top-10 bottom-14 rounded-[2rem] bg-amber-800 p-6 shadow-inner">
                   <div className="grid h-full grid-cols-5 gap-2">
@@ -261,7 +269,7 @@ export default function FurnitureStorePage() {
                 {Array.from({ length: 8 }).map((_, index) => (
                   <div
                     key={index}
-                    className="aspect-[4/3] rounded-xl bg-gradient-to-br from-amber-100 to-slate-200"
+                    className="aspect-[4/3] rounded-xl bg-linear-to-br from-amber-100 to-slate-200"
                   />
                 ))}
               </div>
@@ -273,9 +281,12 @@ export default function FurnitureStorePage() {
                   🛋️
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900">Flexible products</h3>
+                  <h3 className="font-bold text-slate-900">
+                    Flexible products
+                  </h3>
                   <p className="mt-1 text-sm text-slate-600">
-                    Offer your customers different sizes, colors, and materials in your online store.
+                    Offer your customers different sizes, colors, and materials
+                    in your online store.
                   </p>
                 </div>
               </div>
@@ -286,7 +297,8 @@ export default function FurnitureStorePage() {
                 <div>
                   <h3 className="font-bold text-slate-900">Pricelists</h3>
                   <p className="mt-1 text-sm text-slate-600">
-                    Manage your B2B and B2C sales through a single website with flexible pricing.
+                    Manage your B2B and B2C sales through a single website with
+                    flexible pricing.
                   </p>
                 </div>
               </div>
@@ -297,7 +309,8 @@ export default function FurnitureStorePage() {
                 <div>
                   <h3 className="font-bold text-slate-900">Custom forms</h3>
                   <p className="mt-1 text-sm text-slate-600">
-                    Create custom forms for your website. Customers can request quotes directly online.
+                    Create custom forms for your website. Customers can request
+                    quotes directly online.
                   </p>
                 </div>
               </div>
@@ -328,7 +341,7 @@ export default function FurnitureStorePage() {
               {Array.from({ length: 12 }).map((_, index) => (
                 <div
                   key={index}
-                  className="aspect-[4/3] rounded-xl bg-gradient-to-br from-amber-100 to-slate-200"
+                  className="aspect-[4/3] rounded-xl bg-linear-to-br from-amber-100 to-slate-200"
                 />
               ))}
             </div>
@@ -384,8 +397,8 @@ export default function FurnitureStorePage() {
             </ScriptHeading>
             <p className="mt-6 max-w-md text-base leading-7 text-slate-600">
               Smart sourcing automatically places purchase orders based on your
-              sales of custom products. Made-to-order custom items are tracked from
-              quotation to manufacturing.
+              sales of custom products. Made-to-order custom items are tracked
+              from quotation to manufacturing.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-amber-50 px-4 py-2 text-sm">
@@ -419,7 +432,7 @@ export default function FurnitureStorePage() {
 
       {/* Features Section */}
       <section className="relative overflow-hidden rounded-t-[4rem] bg-[#faf7f2] py-16 lg:py-24">
-        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_center,_rgba(217,119,6,0.06),transparent_68%)]" />
+        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-linear(circle_at_center,_rgba(217,119,6,0.06),transparent_68%)]" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
@@ -455,7 +468,8 @@ export default function FurnitureStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
+            <HandUnderline color="bg-sky-400">app</HandUnderline>.
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-slate-600">
             Expand as you grow with connected apps for your retail operation,
@@ -477,8 +491,12 @@ export default function FurnitureStorePage() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">{app.subtitle}</p>
+                    <h3 className="font-semibold text-slate-900">
+                      {app.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      {app.subtitle}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -512,7 +530,9 @@ export default function FurnitureStorePage() {
                 "{testimonial.content}"
               </p>
               <div className="mt-6">
-                <p className="font-semibold text-slate-900">{testimonial.name}</p>
+                <p className="font-semibold text-slate-900">
+                  {testimonial.name}
+                </p>
                 <p className="text-sm text-slate-500">{testimonial.role}</p>
               </div>
             </div>
@@ -522,7 +542,7 @@ export default function FurnitureStorePage() {
 
       {/* Community Banner */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-gradient(135deg,_#fff_0%,_#fefaf5_45%,_#fefce8_100%)] px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
+        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-linear(135deg,_#fff_0%,_#fefaf5_45%,_#fefce8_100%)] px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
           <div className="absolute inset-0 opacity-40">
             <div className="absolute top-[10%] left-[5%] h-20 w-20 rounded-full bg-amber-200/50" />
             <div className="absolute bottom-[15%] right-[8%] h-24 w-24 rounded-full bg-orange-200/50" />

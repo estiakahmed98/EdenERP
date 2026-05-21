@@ -1,7 +1,5 @@
-# app/community/learn/certifications/page.tsx
+"use client";
 
-
-import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Award,
@@ -18,12 +16,6 @@ import {
   Trophy,
   Users,
 } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Certifications | EdenERP Community",
-  description:
-    "Professional EdenERP certifications for developers, consultants, accountants, and business teams.",
-};
 
 const certifications = [
   {

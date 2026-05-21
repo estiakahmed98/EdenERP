@@ -27,6 +27,7 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 const features = [
   {
@@ -475,7 +476,10 @@ export default function EsignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <ScriptHeading>One need, one app.</ScriptHeading>
+        <ScriptHeading>
+          One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
+          <HandUnderline color="bg-sky-400">app</HandUnderline>.
+        </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600">
           Expand your signing workflow across the Eden ERP ecosystem.
         </p>

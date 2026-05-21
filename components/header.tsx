@@ -58,12 +58,12 @@ export default function Header() {
       accentClass: "text-rose-500",
       underlineClass: "bg-rose-200",
       links: [
-        "CRM",
-        "Sales",
-        "POS Shop",
-        "POS Restaurant",
-        "Subscriptions",
-        "Rental",
+        { label: "CRM", href: "/apps/sales/crm" },
+        { label: "Sales", href: "/apps/sales" },
+        { label: "POS Shop", href: "/apps/sales/pos" },
+        { label: "POS Restaurant", href: "/apps/sales/pos-restaurant" },
+        { label: "Subscriptions", href: "/apps/sales/subscriptions" },
+        { label: "Rental", href: "/apps/sales/rental" },
       ],
     },
     {
