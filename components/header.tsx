@@ -179,11 +179,10 @@ export default function Header() {
       underlineClass: "bg-sky-200",
       links: [
         { label: "Restaurant", href: "/industries/food&hospitality/restaurant" },
-        "Fast Food",
+        { label: "Fast Food", href: "/industries/food&hospitality/fast-food" },
         "Guest House",
         "Beverage Distributor",
         "Hotel",
-        "Coffee Shop",
       ],
     },
     {
