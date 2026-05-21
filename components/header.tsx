@@ -112,7 +112,6 @@ export default function Header() {
       links: [
         { label: "Project", href: "/apps/services/project" },
         { label: "Timesheets", href: "/apps/services/timesheets" },
-        { label: "Field Service", href: "/apps/services/field-service" },
         { label: "Helpdesk", href: "/apps/services/helpdesk" },
         { label: "Planning", href: "/apps/services/planning" },
         { label: "Appointments", href: "/apps/services/appointments" },
@@ -128,9 +127,6 @@ export default function Header() {
           label: "Artificial Intelligence",
           href: "/apps/productivity/artificial-intelligence",
         },
-        { label: "Knowledge", href: "/apps/productivity/knowledge" },
-        { label: "VoIP", href: "/apps/productivity/voip" },
-        { label: "WhatsApp", href: "/apps/productivity/whatsapp" },
         { label: "Approvals", href: "/apps/productivity/approvals" },
       ],
     },
