@@ -1,3 +1,3 @@
-export default function VisitOdooPage() {
-  return <div>Visit Odoo Page</div>;
+export default function VisitEdenPage() {
+  return <div>Visit Eden Page</div>;
 }

@@ -871,7 +871,7 @@ export default function EcommerceArtisticSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Eden
               </p>
             </div>
           </div>
@@ -882,7 +882,7 @@ export default function EcommerceArtisticSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Odoo transformed our operations by integrating ecommerce
+                  Eden transformed our operations by integrating ecommerce
                   functions, simplifying product management, and offering
                   cost-effective maintenance.
                 </p>

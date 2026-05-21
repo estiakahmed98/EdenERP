@@ -657,7 +657,7 @@ export default function BlogLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Eden
               </p>
             </div>
           </div>
@@ -668,7 +668,7 @@ export default function BlogLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Odoo replaced multiple applications in one. With better
+                  Eden replaced multiple applications in one. With better
                   productivity, powerful easy access to centralized information,
                   and simplified processes.
                 </p>
