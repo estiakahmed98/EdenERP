@@ -112,7 +112,6 @@ export default function Header() {
       links: [
         { label: "Project", href: "/apps/services/project" },
         { label: "Timesheets", href: "/apps/services/timesheets" },
-        { label: "Field Service", href: "/apps/services/field-service" },
         { label: "Helpdesk", href: "/apps/services/helpdesk" },
         { label: "Planning", href: "/apps/services/planning" },
         { label: "Appointments", href: "/apps/services/appointments" },
@@ -128,9 +127,6 @@ export default function Header() {
           label: "Artificial Intelligence",
           href: "/apps/productivity/artificial-intelligence",
         },
-        { label: "Knowledge", href: "/apps/productivity/knowledge" },
-        { label: "VoIP", href: "/apps/productivity/voip" },
-        { label: "WhatsApp", href: "/apps/productivity/whatsapp" },
         { label: "Approvals", href: "/apps/productivity/approvals" },
       ],
     },
@@ -192,7 +188,6 @@ export default function Header() {
       links: [
         { label: "Accounting Firm", href: "/industries/consulting/accounting-firm" },
         { label: "Marketing Agency", href: "/industries/consulting/marketing-agency" },
-        { label: "Law Firm", href: "/industries/consulting/law-firm" },
         { label: "Audit & Certification", href: "/industries/consulting/audit-certification" },
         { label: "Talent Acquisition", href: "/industries/consulting/talent-acquisition" },
       ],
@@ -207,43 +202,6 @@ export default function Header() {
         { label: "Furniture", href: "/industries/manufacturing/furniture" },
       ],
     },
-    // {
-    //   title: "Health & Fitness",
-    //   accentClass: "text-orange-500",
-    //   underlineClass: "bg-orange-200",
-    //   links: [
-    //     { label: "Sports Club", href: "/industries/health-fitness/sports-club" },
-    //     { label: "Fitness Center", href: "/industries/health-fitness/fitness-center" },
-    //     { label: "Wellness", href: "/industries/health-fitness/wellness" },
-    //     { label: "Pharmacy", href: "/industries/health-fitness/pharmacy" },
-    //     { label: "Hair Salon", href: "/industries/health-fitness/hair-salon" },
-    //     { label: "Eyewear Store", href: "/industries/health-fitness/eyewear-store" },
-    //   ],
-    // },
-    // {
-    //   title: "Trades",
-    //   accentClass: "text-cyan-600",
-    //   underlineClass: "bg-cyan-200",
-    //   links: [
-    //     { label: "Handyman", href: "/industries/trades/handyman" },
-    //     { label: "IT Support", href: "/industries/trades/it-support" },
-    //     { label: "Solar Energy", href: "/industries/trades/solar-energy" },
-    //     { label: "Cleaning Services", href: "/industries/trades/cleaning-services" },
-    //     { label: "HVAC Services", href: "/industries/trades/hvac-services" },
-    //   ],
-    // },
-    // {
-    //   title: "Others",
-    //   accentClass: "text-purple-600",
-    //   underlineClass: "bg-purple-200",
-    //   links: [
-    //     { label: "Nonprofit", href: "/industries/others/nonprofit" },
-    //     { label: "Photography", href: "/industries/others/photography" },
-    //     { label: "Bike Leasing", href: "/industries/others/bike-leasing" },
-    //     { label: "Software Reseller", href: "/industries/others/software-reseller" },
-    //     { label: "Agency", href: "/industries/others/agency" },
-    //   ],
-    // },
   ];
 
   const communityMegaMenu: MegaMenuColumn[] = [
