@@ -213,8 +213,7 @@ export default function Header() {
         { label: "Tutorials", href: "/community/learn/tutorials" },
         { label: "Documentation", href: "/community/learn/documentation" },
         { label: "Training", href: "/community/learn/training" },
-        { label: "Blog", href: "/community/learn/blog" },
-        { label: "Podcast", href: "/community/learn/podcast" },
+        { label: "Blog", href: "/community/learn/blog" }
       ],
     },
     {
