@@ -127,7 +127,7 @@ export default function Header() {
           label: "Artificial Intelligence",
           href: "/apps/productivity/artificial-intelligence",
         },
-        { label: "Approvals", href: "/apps/productivity/approvals" },
+        { label: "IoT", href: "/apps/productivity/iot" },
       ],
     },
   ];

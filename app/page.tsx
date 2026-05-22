@@ -104,7 +104,8 @@ const TESTIMONIALS: TestimonialItem[] = [
   {
     name: "Fiona Laurent",
     role: "CEO, Floral Studio",
-    quote: "Adon ERP cut our billing time by 70%. Every invoice runs itself now.",
+    quote:
+      "Adon ERP cut our billing time by 70%. Every invoice runs itself now.",
     avatar: "🌸",
     score: 5,
   },
@@ -190,7 +191,8 @@ function ThreeBg() {
     if (!ref.current) return;
 
     const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+    script.src =
+      "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
     script.onload = () => {
       if (!ref.current || !window.THREE) return;
 
@@ -290,21 +292,29 @@ function ThreeBg() {
       };
 
       rafId = requestAnimationFrame(tick);
-      (ref.current as HTMLCanvasElement & { _cleanup?: () => void })._cleanup = () => {
-        cancelAnimationFrame(rafId);
-        renderer.dispose();
-        window.removeEventListener("mousemove", onMouse);
-      };
+      (ref.current as HTMLCanvasElement & { _cleanup?: () => void })._cleanup =
+        () => {
+          cancelAnimationFrame(rafId);
+          renderer.dispose();
+          window.removeEventListener("mousemove", onMouse);
+        };
     };
 
     document.head.appendChild(script);
 
     return () => {
-      (ref.current as HTMLCanvasElement & { _cleanup?: () => void } | null)?._cleanup?.();
+      (
+        ref.current as (HTMLCanvasElement & { _cleanup?: () => void }) | null
+      )?._cleanup?.();
     };
   }, []);
 
-  return <canvas ref={ref} className="pointer-events-none absolute inset-0 h-full w-full" />;
+  return (
+    <canvas
+      ref={ref}
+      className="pointer-events-none absolute inset-0 h-full w-full"
+    />
+  );
 }
 
 function TypeWriter({ words }: { words: string[] }) {
@@ -464,8 +474,8 @@ function Hero() {
         </h1>
 
         <p className="reveal reveal-d2 mx-auto mt-5 max-w-[520px] font-body text-lg leading-[1.7] text-[var(--muted)]">
-          One click install. No complexity, no code — just a single platform that empowers every
-          person in your business.
+          One click install. No complexity, no code — just a single platform
+          that empowers every person in your business.
         </p>
 
         <div className="reveal reveal-d3 mt-8 flex flex-wrap justify-center gap-3">
@@ -485,7 +495,11 @@ function Hero() {
           <div className="flex items-center gap-2 border-b border-[#ede8e0] bg-[#f8f5f2] px-[18px] py-2.5">
             <div className="flex gap-[5px]">
               {["#f87171", "#fbbf24", "#34d399"].map((color) => (
-                <div key={color} className="h-[11px] w-[11px] rounded-full" style={{ background: color }} />
+                <div
+                  key={color}
+                  className="h-[11px] w-[11px] rounded-full"
+                  style={{ background: color }}
+                />
               ))}
             </div>
             <div className="flex h-[22px] flex-1 items-center justify-center rounded-md bg-[#ede8e0] text-[11px] text-[#999]">
@@ -495,7 +509,9 @@ function Hero() {
 
           <div className="p-5 sm:p-6">
             <div className="mb-3.5 flex items-center justify-between">
-              <span className="text-sm font-bold text-[#1a1a2e]">🔄 Subscriptions</span>
+              <span className="text-sm font-bold text-[#1a1a2e]">
+                🔄 Subscriptions
+              </span>
               <span className="rounded-full bg-[#d1fae5] px-2.5 py-1 text-[11px] font-bold text-[#065f46]">
                 ● Active billing
               </span>
@@ -503,9 +519,11 @@ function Hero() {
 
             <div className="overflow-hidden rounded-xl border border-[#f0eae0]">
               <div className="grid grid-cols-[80px_1fr_110px_110px_100px] bg-[#f8f5f0] px-4 py-[9px] font-body text-[10px] font-bold uppercase tracking-[1px] text-[#999]">
-                {["ID", "Customer", "Next Bill", "Revenue", "Status"].map((heading) => (
-                  <span key={heading}>{heading}</span>
-                ))}
+                {["ID", "Customer", "Next Bill", "Revenue", "Status"].map(
+                  (heading) => (
+                    <span key={heading}>{heading}</span>
+                  ),
+                )}
               </div>
               {[
                 ["S-0016", "Sophia Thomas", "09/25/2026", "$350/mo", "Active"],
@@ -519,7 +537,9 @@ function Hero() {
                     index % 2 === 0 ? "bg-white" : "bg-[#fdfaf7]"
                   }`}
                 >
-                  <span className="font-semibold text-[var(--purple)]">{row[0]}</span>
+                  <span className="font-semibold text-[var(--purple)]">
+                    {row[0]}
+                  </span>
                   <span className="text-[#1a1a2e]">{row[1]}</span>
                   <span className="text-[#e11d48]">{row[2]}</span>
                   <span className="font-bold">{row[3]}</span>
@@ -580,7 +600,9 @@ function MarqueeStrip() {
 
 function AppsSection() {
   const [altsOn, setAltsOn] = useState(false);
-  const rows = [0, 1, 2, 3].map((rowIndex) => APPS.slice(rowIndex * 6, rowIndex * 6 + 6));
+  const rows = [0, 1, 2, 3].map((rowIndex) =>
+    APPS.slice(rowIndex * 6, rowIndex * 6 + 6),
+  );
 
   const monogram = (name: string) =>
     name
@@ -612,14 +634,18 @@ function AppsSection() {
             Imagine <HandText>without</HandText> Adon ERP
           </h2>
           <p className="mx-auto mb-12 max-w-[460px] font-body text-[15px] leading-[1.7] text-[var(--muted)]">
-            Each app simplifies a process. Toggle to see what you'd need instead.
+            Each app simplifies a process. Toggle to see what you'd need
+            instead.
           </p>
         </div>
 
-        <div className={`reveal mx-auto max-w-[860px] transition-[padding-top] duration-300 ${altsOn ? "pt-11" : "pt-0"}`}>
+        <div
+          className={`reveal mx-auto max-w-[860px] transition-[padding-top] duration-300 ${altsOn ? "pt-11" : "pt-0"}`}
+        >
           {rows.map((row, rowIndex) => {
             const track = [...row, ...row];
-            const direction = rowIndex % 2 === 0 ? "marquee-right" : "marquee-left";
+            const direction =
+              rowIndex % 2 === 0 ? "marquee-right" : "marquee-left";
 
             return (
               <div
@@ -666,7 +692,10 @@ function AppsSection() {
                           <span
                             aria-hidden="true"
                             className="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-[10px] border text-[13px] shadow-[0_10px_22px_#00000012] saturate-125"
-                            style={{ background: app.color, borderColor: app.color }}
+                            style={{
+                              background: app.color,
+                              borderColor: app.color,
+                            }}
                           >
                             {app.icon}
                           </span>
@@ -677,7 +706,9 @@ function AppsSection() {
                         </span>
                         <div
                           className={`mt-1.5 min-h-[18px] font-hand text-sm ${
-                            altsOn && alt ? "text-[var(--purple)] opacity-100" : "text-[#8f8688] opacity-90"
+                            altsOn && alt
+                              ? "text-[var(--purple)] opacity-100"
+                              : "text-[#8f8688] opacity-90"
                           }`}
                         >
                           {altsOn && alt ? alt : "Adon"}
@@ -730,7 +761,8 @@ function NativeAISection() {
           </p>
           <div className="mx-auto mt-6 h-[3px] w-10 rounded-sm bg-[var(--purple)]" />
           <p className="mt-4 font-body text-sm leading-[1.7] text-[#475569]">
-            Automate work, tailor features, perform deep research, and scale without limits.
+            Automate work, tailor features, perform deep research, and scale
+            without limits.
           </p>
         </div>
       </div>
@@ -752,8 +784,8 @@ function LevelUpSection() {
               </HandText>
             </h2>
             <p className="mt-5 font-body text-[15px] leading-[1.8] text-[var(--muted)]">
-              Experience true speed. Sub-second data entry, smart AI, and a fast UI. All
-              operations complete in less than 90ms.
+              Experience true speed. Sub-second data entry, smart AI, and a fast
+              UI. All operations complete in less than 90ms.
             </p>
 
             <div className="mt-8 flex flex-col gap-3">
@@ -767,8 +799,12 @@ function LevelUpSection() {
                   className="flex items-center gap-3.5 rounded-[14px] border border-[#eeedf2] bg-[var(--cream)] px-[18px] py-3.5"
                 >
                   <span className="text-[22px]">{icon}</span>
-                  <span className="font-body text-base font-extrabold text-[var(--purple)]">{value}</span>
-                  <span className="font-body text-[13px] text-[var(--muted)]">{label}</span>
+                  <span className="font-body text-base font-extrabold text-[var(--purple)]">
+                    {value}
+                  </span>
+                  <span className="font-body text-[13px] text-[var(--muted)]">
+                    {label}
+                  </span>
                 </div>
               ))}
             </div>
@@ -777,16 +813,30 @@ function LevelUpSection() {
           <div className="reveal shadow-float overflow-hidden rounded-[20px] border border-[#eeedf2]">
             <div className="flex items-center gap-2.5 bg-[var(--purple)] px-5 py-3.5">
               <span className="text-base">✅</span>
-              <span className="font-body text-sm font-bold text-white">Adon Project</span>
+              <span className="font-body text-sm font-bold text-white">
+                Adon Project
+              </span>
               <span className="ml-auto rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white">
                 Sprint 4
               </span>
             </div>
             <div className="grid grid-cols-3 gap-2.5 bg-[var(--gray-bg)] p-4">
               {[
-                { col: "To Do", color: "#fef3c7", items: ["Design mockup", "User research", "API spec"] },
-                { col: "In Progress", color: "#dbeafe", items: ["Auth flow", "Dashboard", "Mobile nav"] },
-                { col: "Done", color: "#d1fae5", items: ["DB schema", "CI/CD", "Staging env"] },
+                {
+                  col: "To Do",
+                  color: "#fef3c7",
+                  items: ["Design mockup", "User research", "API spec"],
+                },
+                {
+                  col: "In Progress",
+                  color: "#dbeafe",
+                  items: ["Auth flow", "Dashboard", "Mobile nav"],
+                },
+                {
+                  col: "Done",
+                  color: "#d1fae5",
+                  items: ["DB schema", "CI/CD", "Staging env"],
+                },
               ].map((column) => (
                 <div key={column.col}>
                   <div className="mb-2 font-body text-[10px] font-bold uppercase tracking-[1px] text-[var(--muted)]">
@@ -811,7 +861,13 @@ function LevelUpSection() {
   );
 }
 
-function FeatureCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function FeatureCard({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <div
       className={`relative overflow-hidden rounded-[20px] border-[1.5px] border-[#eeedf2] bg-white p-7 transition hover:-translate-y-1 hover:border-[#714b6722] hover:shadow-[0_20px_60px_#714b6712] ${className}`}
@@ -823,7 +879,10 @@ function FeatureCard({ children, className = "" }: { children: React.ReactNode; 
 
 function FeaturesSection() {
   return (
-    <section id="features" className="rounded-t-[48px] bg-[var(--gray-bg)] px-6 py-[100px]">
+    <section
+      id="features"
+      className="rounded-t-[48px] bg-[var(--gray-bg)] px-6 py-[100px]"
+    >
       <div className="mx-auto max-w-[960px]">
         <div className="reveal mb-12">
           <h2 className="max-w-[500px] font-hand text-[clamp(40px,6vw,68px)] font-bold leading-[1.1] text-[#1a1a2e]">
@@ -835,7 +894,10 @@ function FeaturesSection() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {FEATURES.map((feature, index) => (
-            <FeatureCard key={feature.title} className={`reveal reveal-d${(index % 2) + 1}`}>
+            <FeatureCard
+              key={feature.title}
+              className={`reveal reveal-d${(index % 2) + 1}`}
+            >
               <div className="flex items-start justify-between">
                 <div className="flex h-[46px] w-[46px] items-center justify-center rounded-[14px] bg-[var(--purple-light)] text-[22px]">
                   {feature.icon}
@@ -845,7 +907,9 @@ function FeaturesSection() {
               <h3 className="mt-[18px] mb-2 font-body text-base font-bold text-[#1a1a2e]">
                 {feature.title}
               </h3>
-              <p className="font-body text-[13px] leading-[1.7] text-[var(--muted)]">{feature.desc}</p>
+              <p className="font-body text-[13px] leading-[1.7] text-[var(--muted)]">
+                {feature.desc}
+              </p>
             </FeatureCard>
           ))}
         </div>
@@ -903,15 +967,22 @@ function EnterpriseSection() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {cards.map((card, index) => (
-            <FeatureCard key={card.title} className={`reveal reveal-d${(index % 2) + 1}`}>
+            <FeatureCard
+              key={card.title}
+              className={`reveal reveal-d${(index % 2) + 1}`}
+            >
               <div className="flex items-start justify-between">
                 <div className="text-3xl">{card.icon}</div>
                 <span className="rounded-full bg-[var(--purple-light)] px-2.5 py-1 font-body text-[11px] font-extrabold text-[var(--purple)]">
                   {card.badge}
                 </span>
               </div>
-              <h3 className="mt-4 mb-2 font-body text-base font-extrabold">{card.title}</h3>
-              <p className="font-body text-[13px] leading-[1.7] text-[var(--muted)]">{card.desc}</p>
+              <h3 className="mt-4 mb-2 font-body text-base font-extrabold">
+                {card.title}
+              </h3>
+              <p className="font-body text-[13px] leading-[1.7] text-[var(--muted)]">
+                {card.desc}
+              </p>
             </FeatureCard>
           ))}
         </div>
@@ -937,9 +1008,16 @@ function StatsSection() {
             { value: "99.9%", label: "Uptime guaranteed" },
             { value: "4.8★", label: "Customer rating" },
           ].map((stat) => (
-            <FeatureCard key={stat.label} className="reveal p-[22px] text-center">
-              <div className="font-hand text-[42px] font-extrabold text-[var(--purple)]">{stat.value}</div>
-              <div className="mt-1.5 font-body text-xs font-bold text-[var(--muted)]">{stat.label}</div>
+            <FeatureCard
+              key={stat.label}
+              className="reveal p-[22px] text-center"
+            >
+              <div className="font-hand text-[42px] font-extrabold text-[var(--purple)]">
+                {stat.value}
+              </div>
+              <div className="mt-1.5 font-body text-xs font-bold text-[var(--muted)]">
+                {stat.label}
+              </div>
             </FeatureCard>
           ))}
         </div>
@@ -961,7 +1039,10 @@ function TestimonialsSection() {
 
         <div className="grid gap-5 lg:grid-cols-3">
           {TESTIMONIALS.map((testimonial, index) => (
-            <FeatureCard key={testimonial.name} className={`reveal reveal-d${index + 1} text-left`}>
+            <FeatureCard
+              key={testimonial.name}
+              className={`reveal reveal-d${index + 1} text-left`}
+            >
               <div className="mb-4 text-[32px]">{testimonial.avatar}</div>
               <div className="mb-3 flex gap-0.5">
                 {[...Array(testimonial.score)].map((_, starIndex) => (
@@ -973,26 +1054,34 @@ function TestimonialsSection() {
               <p className="mb-5 font-body text-sm italic leading-[1.8] text-[#475569]">
                 "{testimonial.quote}"
               </p>
-              <div className="font-body text-[13px] font-bold text-[var(--purple)]">{testimonial.name}</div>
-              <div className="mt-0.5 font-body text-xs text-[var(--muted)]">{testimonial.role}</div>
+              <div className="font-body text-[13px] font-bold text-[var(--purple)]">
+                {testimonial.name}
+              </div>
+              <div className="mt-0.5 font-body text-xs text-[var(--muted)]">
+                {testimonial.role}
+              </div>
             </FeatureCard>
           ))}
         </div>
 
         <div className="reveal shadow-float mt-6 flex items-start gap-6 rounded-[20px] bg-white px-6 py-9 text-left sm:px-10">
-          <div className="shrink-0 font-serif text-[60px] leading-none text-[#fbbf24]">"</div>
+          <div className="shrink-0 font-serif text-[60px] leading-none text-[#fbbf24]">
+            "
+          </div>
           <div>
             <p className="font-body text-base leading-[1.8] text-[#475569]">
-              Adon is so full of a software Army Knife. You can tailor it to your business
-              requirements. This is one of the key reasons that has helped us implement Adon
-              successfully.
+              Adon is so full of a software Army Knife. You can tailor it to
+              your business requirements. This is one of the key reasons that
+              has helped us implement Adon successfully.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--purple-light)] text-xl">
                 👤
               </div>
               <div>
-                <div className="font-body text-[13px] font-bold text-[#1a1a2e]">Richard Miles</div>
+                <div className="font-body text-[13px] font-bold text-[#1a1a2e]">
+                  Richard Miles
+                </div>
                 <div className="font-body text-xs text-[var(--muted)]">
                   Training Manager, Enterprise Corp
                 </div>
@@ -1018,8 +1107,8 @@ function CTASection() {
           your growth potential
         </h2>
         <p className="reveal mx-auto mb-10 max-w-[460px] font-body text-base leading-[1.7] text-white/60">
-          Build recurring revenue workflows with automated billing, renewals, payments, and customer
-          retention inside Adon ERP.
+          Build recurring revenue workflows with automated billing, renewals,
+          payments, and customer retention inside Adon ERP.
         </p>
         <div className="reveal flex flex-wrap justify-center gap-3">
           <button className="rounded-[10px] bg-white px-8 py-[15px] font-body text-[15px] font-bold text-[var(--purple)] shadow-[0_8px_32px_#00000033] transition hover:-translate-y-0.5">
@@ -1056,4 +1145,3 @@ export default function AdonLandingPage() {
     </main>
   );
 }
-
