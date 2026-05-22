@@ -48,9 +48,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Accounting Firm | EdenERP Industries",
+  title: "Accounting Firm | AdonERP Industries",
   description:
-    "An accounting firm landing page for EdenERP with CRM, project management, electronic invoicing, timesheets, and document management.",
+    "An accounting firm landing page for AdonERP with CRM, project management, electronic invoicing, timesheets, and document management.",
 };
 
 const features = [
@@ -94,7 +94,7 @@ const testimonials = [
     name: "Jennifer Walsh",
     role: "Managing Partner, Walsh & Associates",
     content:
-      "A VAT closing that used to take 4 days is now done in 3 hours with EdenERP, with a better service for our clients.",
+      "A VAT closing that used to take 4 days is now done in 3 hours with AdonERP, with a better service for our clients.",
     rating: 5,
   },
   {
@@ -204,7 +204,7 @@ export default function AccountingFirmPage() {
               </div>
               <p className="text-base leading-7 text-slate-700">
                 A VAT closing that used to take 4 days is now done in 3 hours with
-                EdenERP, with a better service for our clients.
+                AdonERP, with a better service for our clients.
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
                 <div>
@@ -564,7 +564,7 @@ export default function AccountingFirmPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               accounting firms and professional services.
             </p>
           </div>

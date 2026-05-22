@@ -601,7 +601,7 @@ export default function AccountingPage() {
               Smart bank reconciliation
             </ScriptHeading>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-              Never import bank statements manually again. Eden ERP integrates with 28,000+ banks
+              Never import bank statements manually again. Adon ERP integrates with 28,000+ banks
               from all around the world with smart AI matching.
             </p>
             
@@ -712,7 +712,7 @@ export default function AccountingPage() {
             </div>
             
             <p className="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto mb-6">
-              "A VAT closing that used to take 4 days is now done in 3 hours with Eden ERP,
+              "A VAT closing that used to take 4 days is now done in 3 hours with Adon ERP,
               with a better service for our clients: real-time accounting."
             </p>
             
@@ -742,7 +742,7 @@ export default function AccountingPage() {
               Unleash your growth potential
             </ScriptHeading>
             <p className="mt-4 text-lg text-emerald-100 max-w-2xl mx-auto">
-              Join 15 million users who grow their business with Eden ERP.
+              Join 15 million users who grow their business with Adon ERP.
               Start your 30-day free trial today.
             </p>
             

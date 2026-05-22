@@ -43,9 +43,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Metal Fabrication | EdenERP Industries",
+  title: "Metal Fabrication | AdonERP Industries",
   description:
-    "A metal fabrication landing page for EdenERP with CRM, quote calculator, procurement automation, inventory, and project management.",
+    "A metal fabrication landing page for AdonERP with CRM, quote calculator, procurement automation, inventory, and project management.",
 };
 
 const features = [
@@ -96,7 +96,7 @@ const testimonials = [
     name: "Elena Vasquez",
     role: "Owner, Superior Fabrication",
     content:
-      "EdenERP transformed our metal fabrication business. The quote calculator alone saved us hours, and the procurement automation keeps our shop running smoothly.",
+      "AdonERP transformed our metal fabrication business. The quote calculator alone saved us hours, and the procurement automation keeps our shop running smoothly.",
     rating: 5,
   },
 ];
@@ -570,7 +570,7 @@ export default function MetalFabricationPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               metal fabrication shops and manufacturers.
             </p>
           </div>

@@ -261,7 +261,7 @@ export default function SalesQuotationPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Eden ERP Sales helps your team create polished quotes, manage
+              Adon ERP Sales helps your team create polished quotes, manage
               pricing, close deals faster, and convert opportunities into orders.
             </p>
           </div>
@@ -607,7 +607,7 @@ export default function SalesQuotationPage() {
           <HandUnderline color="bg-sky-400">app</HandUnderline>.
         </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600">
-          Expand your sales workflow across the Eden ERP ecosystem.
+          Expand your sales workflow across the Adon ERP ecosystem.
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -652,7 +652,7 @@ export default function SalesQuotationPage() {
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600">
-              Teams use Eden Sales to create better quotes, close faster, and
+              Teams use Adon Sales to create better quotes, close faster, and
               grow revenue with confidence.
             </p>
 
@@ -676,7 +676,7 @@ export default function SalesQuotationPage() {
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
           Build premium quotations, automate approvals, and turn more
-          opportunities into confirmed orders with Eden ERP.
+          opportunities into confirmed orders with Adon ERP.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

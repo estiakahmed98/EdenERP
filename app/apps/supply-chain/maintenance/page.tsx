@@ -568,7 +568,7 @@ export default function MaintenanceLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Adon
               </p>
             </div>
           </div>

@@ -34,9 +34,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Architecture Firm | EdenERP Industries",
+  title: "Architecture Firm | AdonERP Industries",
   description:
-    "An architecture firm landing page for EdenERP with project management, quotations, timesheets, invoicing, and resource planning.",
+    "An architecture firm landing page for AdonERP with project management, quotations, timesheets, invoicing, and resource planning.",
 };
 
 const features = [
@@ -80,14 +80,14 @@ const testimonials = [
     name: "Michael Chen",
     role: "Principal Architect, Chen & Associates",
     content:
-      "EdenERP's automation has reduced human error and increased productivity, allowing employees to focus on activities that add the most value.",
+      "AdonERP's automation has reduced human error and increased productivity, allowing employees to focus on activities that add the most value.",
     rating: 5,
   },
   {
     name: "Isabella Rossi",
     role: "Studio Director, Urban Design Collective",
     content:
-      "From project quotes to timesheets and invoicing, EdenERP transformed our workflow. We now deliver projects faster and with better profitability tracking.",
+      "From project quotes to timesheets and invoicing, AdonERP transformed our workflow. We now deliver projects faster and with better profitability tracking.",
     rating: 5,
   },
 ];
@@ -189,7 +189,7 @@ export default function ArchitectureFirmPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP's automation has reduced human error and increased productivity,
+                AdonERP's automation has reduced human error and increased productivity,
                 allowing employees to focus on activities that add the most value.
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
@@ -533,7 +533,7 @@ export default function ArchitectureFirmPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               architecture firms and design studios.
             </p>
           </div>

@@ -147,7 +147,7 @@ function SubscriptionPreview() {
         <div className="flex items-center gap-2">
           <Repeat className="h-5 w-5 text-amber-600" />
           <span className="text-sm font-semibold text-slate-800">
-            Eden Subscriptions
+            Adon Subscriptions
           </span>
         </div>
 
@@ -228,7 +228,7 @@ export default function SubscriptionsPage() {
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
               From subscription quotes and renewals to automated billing and
-              retention workflows, Eden ERP keeps recurring revenue predictable.
+              retention workflows, Adon ERP keeps recurring revenue predictable.
             </p>
           </div>
 
@@ -283,7 +283,7 @@ export default function SubscriptionsPage() {
           </p>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
-            Concentrate on customer relationships while Eden ERP handles
+            Concentrate on customer relationships while Adon ERP handles
             contract creation, automated invoices, recurring renewals, payment
             reminders, and plan upgrades according to your settings.
           </p>
@@ -515,7 +515,7 @@ export default function SubscriptionsPage() {
         </ScriptHeading>
 
         <p className="mt-3 max-w-xl text-slate-600">
-          Expand subscription workflows across the Eden ERP ecosystem.
+          Expand subscription workflows across the Adon ERP ecosystem.
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -565,7 +565,7 @@ export default function SubscriptionsPage() {
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600">
-              Teams use Eden Subscriptions to manage renewals, automate billing,
+              Teams use Adon Subscriptions to manage renewals, automate billing,
               and grow predictable revenue.
             </p>
 
@@ -592,7 +592,7 @@ export default function SubscriptionsPage() {
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
           Build recurring revenue workflows with automated billing, renewals,
-          payments, and customer retention inside Eden ERP.
+          payments, and customer retention inside Adon ERP.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

@@ -292,7 +292,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className={`group relative flex items-center gap-0`}>
-          {/* Eden Text */}
+          {/* Adon Text */}
           <div className="relative">
             <span
               className="relative inline-block transition-all duration-300 group-hover:scale-105"
@@ -309,7 +309,7 @@ export default function Header() {
                 letterSpacing: "-0.06em",
               }}
             >
-              Eden
+              Adon
             </span>
 
             {/* Animated underline */}
@@ -393,7 +393,7 @@ export default function Header() {
                       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/60">
                         <div className="border-b border-slate-100 bg-linear-to-r from-slate-50 to-white px-8 py-5">
                           <p className="text-sm font-semibold text-slate-950">
-                            Explore Eden ERP {item.label}
+                            Explore Adon ERP {item.label}
                           </p>
                           <p className="mt-1 text-sm text-slate-500">
                             Premium business tools connected in one unified ERP

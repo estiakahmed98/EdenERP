@@ -50,7 +50,7 @@ const benefits = [
   "Hands-on practical exams",
   "Career-ready learning paths",
   "Global partner opportunities",
-  "Official EdenERP badge",
+  "Official AdonERP badge",
 ];
 
 export default function CertificationsPage() {
@@ -63,7 +63,7 @@ export default function CertificationsPage() {
           <div className="max-w-2xl space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-4 py-2 text-sm font-semibold text-violet-700 ring-1 ring-violet-100">
               <Award className="h-4 w-4" />
-              EdenERP Certifications
+              AdonERP Certifications
             </div>
 
             <div className="space-y-6">
@@ -86,7 +86,7 @@ export default function CertificationsPage() {
               </div>
 
               <p className="max-w-xl text-lg leading-8 text-slate-600">
-                Become officially certified in EdenERP and showcase your
+                Become officially certified in AdonERP and showcase your
                 implementation, accounting, technical, and business process
                 skills with globally recognized credentials.
               </p>
@@ -139,7 +139,7 @@ export default function CertificationsPage() {
                       Official Certificate
                     </p>
                     <h3 className="mt-3 text-3xl font-bold">
-                      EdenERP Expert
+                      AdonERP Expert
                     </h3>
                   </div>
 
@@ -293,7 +293,7 @@ export default function CertificationsPage() {
 
             <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600">
               Join thousands of professionals who grow their ERP careers with
-              official EdenERP certifications and verified expertise.
+              official AdonERP certifications and verified expertise.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

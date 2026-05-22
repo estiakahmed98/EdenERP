@@ -107,7 +107,7 @@ function SpreadsheetMockup() {
         <div className="flex items-center gap-2">
           <FileSpreadsheet className="h-5 w-5 text-cyan-600" />
           <span className="text-sm font-semibold text-slate-800">
-            Eden Spreadsheet
+            Adon Spreadsheet
           </span>
         </div>
         <div className="flex items-center gap-2 text-xs text-slate-500">
@@ -212,7 +212,7 @@ export default function SpreadsheetPage() {
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <SectionEyebrow
-            label="Smart spreadsheets for Eden ERP"
+            label="Smart spreadsheets for Adon ERP"
             icon={<Table2 className="h-4 w-4" />}
           />
 
@@ -230,7 +230,7 @@ export default function SpreadsheetPage() {
               </span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Eden ERP Spreadsheet turns business data into live reports,
+              Adon ERP Spreadsheet turns business data into live reports,
               collaborative planning sheets, and real-time dashboards without
               endless copy-paste.
             </p>
@@ -379,7 +379,7 @@ export default function SpreadsheetPage() {
           </ScriptHeading>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
             Build beautiful dashboards from spreadsheet data and keep every
-            report connected to your live Eden ERP workspace.
+            report connected to your live Adon ERP workspace.
           </p>
         </div>
 
@@ -492,7 +492,7 @@ export default function SpreadsheetPage() {
               Join growing teams
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              Finance, sales, and operations teams use Eden ERP Spreadsheet to
+              Finance, sales, and operations teams use Adon ERP Spreadsheet to
               plan faster and report smarter.
             </p>
 

@@ -32,9 +32,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Real Estate Agency | EdenERP Industries",
+  title: "Real Estate Agency | AdonERP Industries",
   description:
-    "A real estate agency landing page for EdenERP with property listings, CRM, document management, electronic signatures, and invoicing.",
+    "A real estate agency landing page for AdonERP with property listings, CRM, document management, electronic signatures, and invoicing.",
 };
 
 const features = [
@@ -78,14 +78,14 @@ const testimonials = [
     name: "Sarah Martinez",
     role: "Owner, Elite Realty Group",
     content:
-      "EdenERP helped kick-start our digital transformation process. It provided us with an integrated system of different applications needed for our business to reach ahead into digital.",
+      "AdonERP helped kick-start our digital transformation process. It provided us with an integrated system of different applications needed for our business to reach ahead into digital.",
     rating: 5,
   },
   {
     name: "James Wilson",
     role: "Operations Director, HomeFinders Real Estate",
     content:
-      "From property listings to electronic signatures, EdenERP streamlined our entire workflow. Our agents save hours every day and clients love the seamless experience.",
+      "From property listings to electronic signatures, AdonERP streamlined our entire workflow. Our agents save hours every day and clients love the seamless experience.",
     rating: 5,
   },
 ];
@@ -188,7 +188,7 @@ export default function RealEstateAgencyPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP helped kick-start our digital transformation process. It provided
+                AdonERP helped kick-start our digital transformation process. It provided
                 us with an integrated system of different applications needed for our
                 business to reach ahead into digital.
               </p>
@@ -562,7 +562,7 @@ export default function RealEstateAgencyPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               real estate agencies and property management.
             </p>
           </div>

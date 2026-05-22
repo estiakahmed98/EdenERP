@@ -45,9 +45,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom Furniture Production | EdenERP Industries",
+  title: "Custom Furniture Production | AdonERP Industries",
   description:
-    "A custom furniture production landing page for EdenERP with CRM, quotation builder, product variants, quality control, and project management.",
+    "A custom furniture production landing page for AdonERP with CRM, quotation builder, product variants, quality control, and project management.",
 };
 
 const features = [
@@ -99,14 +99,14 @@ const testimonials = [
     name: "Jonathan Miller",
     role: "Owner, Miller Custom Woodworks",
     content:
-      "The best part is how everything is connected in EdenERP. It is not just about handling tasks, it is about making every part of our business work together seamlessly.",
+      "The best part is how everything is connected in AdonERP. It is not just about handling tasks, it is about making every part of our business work together seamlessly.",
     rating: 5,
   },
   {
     name: "Sophia Chen",
     role: "Production Manager, Artisan Furniture Co.",
     content:
-      "From custom quotes to quality control, EdenERP transformed our furniture business. Our clients love the detailed proposals and we love the production tracking.",
+      "From custom quotes to quality control, AdonERP transformed our furniture business. Our clients love the detailed proposals and we love the production tracking.",
     rating: 5,
   },
 ];
@@ -183,7 +183,7 @@ export default function CustomFurnitureProductionPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP lets you send custom quotations, manage sales, handle production,
+                AdonERP lets you send custom quotations, manage sales, handle production,
                 plan custom work, and provide after-sales support.
               </p>
             </div>
@@ -208,7 +208,7 @@ export default function CustomFurnitureProductionPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                The best part is how everything is connected in EdenERP. It is not just
+                The best part is how everything is connected in AdonERP. It is not just
                 about handling tasks, it is about making every part of our business
                 work together seamlessly.
               </p>
@@ -583,7 +583,7 @@ export default function CustomFurnitureProductionPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               custom furniture makers and manufacturers.
             </p>
           </div>

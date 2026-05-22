@@ -27,9 +27,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Guest House | EdenERP Industries",
+  title: "Guest House | AdonERP Industries",
   description:
-    "A guest house industry landing page for EdenERP with online booking management, room planning, invoicing, and guest operations.",
+    "A guest house industry landing page for AdonERP with online booking management, room planning, invoicing, and guest operations.",
 };
 
 const features = [
@@ -73,7 +73,7 @@ const testimonials = [
     name: "Elena Martinez",
     role: "Owner, Seaside Guest House",
     content:
-      "EdenERP helped us achieve our goals while expanding, reducing costs and improving productivity, invoicing, and decision-making thanks to data availability.",
+      "AdonERP helped us achieve our goals while expanding, reducing costs and improving productivity, invoicing, and decision-making thanks to data availability.",
     rating: 5,
   },
   {
@@ -159,7 +159,7 @@ export default function GuestHousePage() {
               <p className="max-w-lg text-lg leading-8 text-slate-600">
                 Capture attention with a stunning website, accept online bookings,
                 manage availability, and take care of your guests from check-in to
-                check-out with EdenERP.
+                check-out with AdonERP.
               </p>
             </div>
 
@@ -183,7 +183,7 @@ export default function GuestHousePage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP helped us achieve our goals while expanding, reducing costs and
+                AdonERP helped us achieve our goals while expanding, reducing costs and
                 improving productivity, invoicing, and decision-making thanks to data
                 availability.
               </p>
@@ -251,7 +251,7 @@ export default function GuestHousePage() {
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-slate-600 md:grid-cols-2">
           <div className="rounded-xl bg-white p-5 shadow-sm">
-            Create a website using EdenERP's AI-based builder. Showcase your rooms,
+            Create a website using AdonERP's AI-based builder. Showcase your rooms,
             add photos, drag and drop elements, and optimize your SEO.
           </div>
           <div className="rounded-xl bg-white p-5 shadow-sm">
@@ -554,7 +554,7 @@ export default function GuestHousePage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               guest houses and hospitality.
             </p>
           </div>

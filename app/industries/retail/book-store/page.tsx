@@ -22,9 +22,9 @@ import {
 import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
-  title: "Book Store | EdenERP Industries",
+  title: "Book Store | AdonERP Industries",
   description:
-    "A bookstore industry landing page for EdenERP with point of sale, inventory, and retail workflow sections.",
+    "A bookstore industry landing page for AdonERP with point of sale, inventory, and retail workflow sections.",
 };
 
 const features = [
@@ -164,7 +164,7 @@ export default function BookStorePage() {
               <p className="max-w-lg text-lg leading-8 text-slate-600">
                 Organize ISBN codes, simplify bookstore checkout, keep stock
                 accurate, and deliver better customer service from one unified
-                EdenERP workspace.
+                AdonERP workspace.
               </p>
             </div>
 
@@ -186,7 +186,7 @@ export default function BookStorePage() {
             <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
               <div className="mb-4 text-4xl leading-none text-amber-500">"</div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP gives bookstore teams the kind of visibility that makes
+                AdonERP gives bookstore teams the kind of visibility that makes
                 daily decisions faster. From bestseller trends to shelf-level
                 stock control, every move feels simpler and more precise.
               </p>

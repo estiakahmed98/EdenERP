@@ -14,7 +14,7 @@ export const topApps: App[] = [
   {
     id: "1",
     title: "Shopify Connector",
-    vendor: "Eden Labs",
+    vendor: "Adon Labs",
     price: "$49.00",
     rating: 4.8,
     downloads: 12450,

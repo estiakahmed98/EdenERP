@@ -5,7 +5,7 @@ const industryCards = [
   {
     title: "Book Store",
     description:
-      "A bookstore landing page inspired by your provided reference, adapted to EdenERP's shell.",
+      "A bookstore landing page inspired by your provided reference, adapted to AdonERP's shell.",
     href: "/industries/book-store",
     icon: BookOpen,
     accent: "from-amber-100 via-white to-rose-100",
@@ -42,7 +42,7 @@ export default function IndustriesPage() {
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
               The new bookstore page is ready under the industries route. It
-              follows your reference layout while keeping the EdenERP header and
+              follows your reference layout while keeping the AdonERP header and
               footer already used across the project.
             </p>
           </div>

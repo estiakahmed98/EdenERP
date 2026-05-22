@@ -61,7 +61,7 @@ const features = [
   {
     title: "E-sign workflows",
     description:
-      "Send, sign, approve, and archive documents without leaving Eden ERP.",
+      "Send, sign, approve, and archive documents without leaving Adon ERP.",
     icon: FileSignature,
   },
   {
@@ -128,7 +128,7 @@ function DocumentDashboard() {
         <div className="flex items-center gap-2">
           <Cloud className="h-5 w-5 text-orange-600" />
           <span className="text-sm font-semibold text-slate-800">
-            Eden Documents
+            Adon Documents
           </span>
         </div>
 
@@ -252,7 +252,7 @@ export default function DocumentsPage() {
               </span>
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Eden ERP Documents gives your team one secure hub to scan, store,
+              Adon ERP Documents gives your team one secure hub to scan, store,
               approve, sign, share, and find every business file.
             </p>
           </div>
@@ -418,7 +418,7 @@ export default function DocumentsPage() {
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
             Send contracts, offers, approvals, and agreements for signature.
-            Eden ERP keeps every signed document attached to the right client,
+            Adon ERP keeps every signed document attached to the right client,
             task, or project.
           </p>
 
@@ -609,7 +609,7 @@ export default function DocumentsPage() {
               <div className="space-y-3">
                 {[
                   "Upload or scan a document",
-                  "Eden ERP identifies the type and owner",
+                  "Adon ERP identifies the type and owner",
                   "The file is routed to the right workflow",
                   "Approvals, signatures, and archive rules run automatically",
                 ].map((item, index) => (
@@ -744,7 +744,7 @@ export default function DocumentsPage() {
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600">
-              Teams use Eden ERP Documents to organize operations, reduce file
+              Teams use Adon ERP Documents to organize operations, reduce file
               chaos, and move work forward faster.
             </p>
 
@@ -771,7 +771,7 @@ export default function DocumentsPage() {
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
           Replace scattered folders with a secure, searchable, automated
-          document workspace inside Eden ERP.
+          document workspace inside Adon ERP.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

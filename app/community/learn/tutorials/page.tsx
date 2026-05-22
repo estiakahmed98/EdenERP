@@ -24,9 +24,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Tutorials | EdenERP Community",
+  title: "Tutorials | AdonERP Community",
   description:
-    "Learn EdenERP step by step with practical tutorials, guided learning paths, videos, and role-based business workflows.",
+    "Learn AdonERP step by step with practical tutorials, guided learning paths, videos, and role-based business workflows.",
 };
 
 const tutorialCategories = [
@@ -194,7 +194,7 @@ export default function TutorialsPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Learn EdenERP with practical
+                  Learn AdonERP with practical
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-slate-900 sm:text-6xl"
@@ -207,7 +207,7 @@ export default function TutorialsPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                Master every EdenERP workflow through short, practical, and
+                Master every AdonERP workflow through short, practical, and
                 business-focused tutorials designed for owners, managers,
                 operators, accountants, and developers.
               </p>
@@ -372,7 +372,7 @@ export default function TutorialsPage() {
               </ScriptHeading>
               <p className="max-w-md text-base leading-7 text-slate-600">
                 These tutorials are selected for new teams who want to launch
-                faster and understand the core EdenERP workflow from day one.
+                faster and understand the core AdonERP workflow from day one.
               </p>
               <Link
                 href="#learning-path"

@@ -25,9 +25,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Fast Food | EdenERP Industries",
+  title: "Fast Food | AdonERP Industries",
   description:
-    "A fast food industry landing page for EdenERP with self-ordering kiosks, kitchen management, inventory, and loyalty programs.",
+    "A fast food industry landing page for AdonERP with self-ordering kiosks, kitchen management, inventory, and loyalty programs.",
 };
 
 const features = [
@@ -69,7 +69,7 @@ const testimonials = [
     name: "Maria Gonzalez",
     role: "Owner, Burger Palace",
     content:
-      "EdenERP helped us achieve our goals while expanding, by reducing costs by approximately 10%, increasing employee productivity by 50%, and massively improving the decision-making process.",
+      "AdonERP helped us achieve our goals while expanding, by reducing costs by approximately 10%, increasing employee productivity by 50%, and massively improving the decision-making process.",
     rating: 5,
   },
   {
@@ -153,7 +153,7 @@ export default function FastFoodPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP covers everything from self-ordering kiosks and kitchen
+                AdonERP covers everything from self-ordering kiosks and kitchen
                 management to inventory and staff, all in one seamless platform.
               </p>
             </div>
@@ -178,7 +178,7 @@ export default function FastFoodPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP helped us achieve our goals while expanding, by reducing costs by
+                AdonERP helped us achieve our goals while expanding, by reducing costs by
                 approximately 10%, increasing employee productivity by 50%, and massively
                 improving the decision-making process.
               </p>
@@ -373,7 +373,7 @@ export default function FastFoodPage() {
           <span className="bg-orange-200 px-2">out of stock</span>
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600">
-          Smart replenishment strategies let EdenERP propose or trigger purchase
+          Smart replenishment strategies let AdonERP propose or trigger purchase
           orders automatically.
         </p>
 
@@ -538,7 +538,7 @@ export default function FastFoodPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               fast food and quick service restaurants.
             </p>
           </div>

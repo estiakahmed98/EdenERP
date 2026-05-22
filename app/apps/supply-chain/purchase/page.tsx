@@ -803,7 +803,7 @@ export default function PurchaseLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -815,7 +815,7 @@ export default function PurchaseLandingSections() {
               <div>
                 <p className="text-base leading-8 text-slate-700">
                   We successfully supply 70 restaurants through 1,000 orders a
-                  day thanks to Eden Purchase.
+                  day thanks to Adon Purchase.
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">

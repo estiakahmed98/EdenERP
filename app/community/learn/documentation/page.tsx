@@ -19,16 +19,16 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Documentation | EdenERP",
+  title: "Documentation | AdonERP",
   description:
-    "Explore EdenERP documentation, guides, developer references, and implementation resources.",
+    "Explore AdonERP documentation, guides, developer references, and implementation resources.",
 };
 
 const docCategories = [
   {
     title: "Getting Started",
     description:
-      "Install, configure, and launch your EdenERP workspace with guided setup steps.",
+      "Install, configure, and launch your AdonERP workspace with guided setup steps.",
     icon: Sparkles,
     articles: "18 articles",
   },
@@ -81,7 +81,7 @@ const popularDocs = [
 const developerSteps = [
   "Create an API key from your admin settings",
   "Choose REST endpoints or webhook events",
-  "Map EdenERP objects with your external system",
+  "Map AdonERP objects with your external system",
   "Test requests safely in a sandbox workspace",
 ];
 
@@ -141,7 +141,7 @@ export default function DocumentationPage() {
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                EdenERP Documentation
+                AdonERP Documentation
               </p>
               <div className="space-y-3">
                 <p
@@ -160,7 +160,7 @@ export default function DocumentationPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  EdenERP
+                  AdonERP
                 </h1>
               </div>
               <p className="max-w-xl text-lg leading-8 text-slate-600">
@@ -205,7 +205,7 @@ export default function DocumentationPage() {
                   <span className="h-3 w-3 rounded-full bg-amber-400" />
                   <span className="h-3 w-3 rounded-full bg-emerald-400" />
                   <span className="ml-auto rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
-                    docs.eden-erp.com
+                    docs.adon-erp.com
                   </span>
                 </div>
 
@@ -372,7 +372,7 @@ export default function DocumentationPage() {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    name: "Eden Books",
+    name: "Adon Books",
     email: "team@example.com",
   }),
 });`}
@@ -386,7 +386,7 @@ export default function DocumentationPage() {
             label="Developer-friendly integration"
           />
           <ScriptHeading className="text-3xl sm:text-4xl">
-            Connect EdenERP with your own tools.
+            Connect AdonERP with your own tools.
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-slate-600">
             Use clean references and practical examples to integrate accounting,

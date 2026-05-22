@@ -40,9 +40,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Textile Manufacturing | EdenERP Industries",
+  title: "Textile Manufacturing | AdonERP Industries",
   description:
-    "A textile manufacturing landing page for EdenERP with CRM, production management, inventory tracking, purchasing, and subcontracting.",
+    "A textile manufacturing landing page for AdonERP with CRM, production management, inventory tracking, purchasing, and subcontracting.",
 };
 
 const features = [
@@ -93,7 +93,7 @@ const testimonials = [
     name: "Ahmed Malik",
     role: "Owner, Crescent Fabrics",
     content:
-      "EdenERP transformed our textile manufacturing workflow. The integration between CRM, production, and inventory is seamless. Our lead times have improved dramatically.",
+      "AdonERP transformed our textile manufacturing workflow. The integration between CRM, production, and inventory is seamless. Our lead times have improved dramatically.",
     rating: 5,
   },
 ];
@@ -548,7 +548,7 @@ export default function TextileManufacturingPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               textile manufacturers and apparel producers.
             </p>
           </div>

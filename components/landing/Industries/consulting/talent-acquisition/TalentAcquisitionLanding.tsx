@@ -59,9 +59,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Talent Acquisition | EdenERP Industries",
+  title: "Talent Acquisition | AdonERP Industries",
   description:
-    "A talent acquisition landing page for EdenERP with job posting, candidate tracking, interview scheduling, and document management.",
+    "A talent acquisition landing page for AdonERP with job posting, candidate tracking, interview scheduling, and document management.",
 };
 
 const features = [
@@ -105,7 +105,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "HR Director, TalentFinders",
     content:
-      "EdenERP saved us plenty of web development time, allowing us to focus on individual strengths which is immensely helpful for start-ups.",
+      "AdonERP saved us plenty of web development time, allowing us to focus on individual strengths which is immensely helpful for start-ups.",
     rating: 5,
   },
   {
@@ -189,7 +189,7 @@ export default function TalentAcquisitionPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP is a dedicated solution for talent acquisition, supporting every
+                AdonERP is a dedicated solution for talent acquisition, supporting every
                 step from building job pages to managing candidates and hiring.
               </p>
             </div>
@@ -214,7 +214,7 @@ export default function TalentAcquisitionPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP saved us plenty of web development time, allowing us to focus on
+                AdonERP saved us plenty of web development time, allowing us to focus on
                 individual strengths which is immensely helpful for start-ups.
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
@@ -567,7 +567,7 @@ export default function TalentAcquisitionPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               talent acquisition and recruitment.
             </p>
           </div>

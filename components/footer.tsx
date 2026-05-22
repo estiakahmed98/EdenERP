@@ -51,7 +51,7 @@ export default function Footer() {
                   backgroundClip: "text",
                 }}
               >
-                Eden-ERP
+                Adon-ERP
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-slate-600">
@@ -99,7 +99,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 pt-8 sm:flex-row">
           <p className="text-sm text-slate-500">
-            &copy; {currentYear} Eden ERP. All rights reserved.
+            &copy; {currentYear} Adon ERP. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

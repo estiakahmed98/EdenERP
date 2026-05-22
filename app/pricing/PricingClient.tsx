@@ -95,7 +95,7 @@ const plans = [
     periodMonthly: "",
     periodAnnual: "",
     description:
-      "A tailored EdenERP environment for large teams, complex workflows, and dedicated support.",
+      "A tailored AdonERP environment for large teams, complex workflows, and dedicated support.",
     icon: Building2,
     color: "from-slate-950 via-violet-900 to-primary",
     softBg: "bg-slate-100",
@@ -252,7 +252,7 @@ const faqs = [
   },
   {
     q: "Can I add only the modules I need?",
-    a: "Yes. EdenERP is designed to scale module by module. You can start with CRM, tasks, sales, inventory, HR, ecommerce, or analytics depending on your business needs.",
+    a: "Yes. AdonERP is designed to scale module by module. You can start with CRM, tasks, sales, inventory, HR, ecommerce, or analytics depending on your business needs.",
   },
   {
     q: "Do you support custom workflows?",
@@ -342,7 +342,7 @@ export default function PricingClient() {
 
             <div className="space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.34em] text-primary/70">
-                EdenERP Pricing
+                AdonERP Pricing
               </p>
 
               <h1
@@ -432,7 +432,7 @@ export default function PricingClient() {
                   <span className="h-3 w-3 rounded-full bg-amber-400" />
                   <span className="h-3 w-3 rounded-full bg-emerald-400" />
                   <span className="ml-3 text-xs font-medium text-white/50">
-                    EdenERP Billing Center
+                    AdonERP Billing Center
                   </span>
                 </div>
 
@@ -707,7 +707,7 @@ export default function PricingClient() {
                 </ScriptHeading>
               </div>
               <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
-                EdenERP keeps your cost structure predictable while giving your
+                AdonERP keeps your cost structure predictable while giving your
                 team room to add modules, users, workflows, storage, reporting,
                 and enterprise support.
               </p>

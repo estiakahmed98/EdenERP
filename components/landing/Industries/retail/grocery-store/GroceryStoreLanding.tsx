@@ -23,9 +23,9 @@ import {
 import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
-  title: "Grocery Store | EdenERP Industries",
+  title: "Grocery Store | AdonERP Industries",
   description:
-    "A grocery store industry landing page for EdenERP with point of sale, inventory management, loyalty programs, and expiration tracking.",
+    "A grocery store industry landing page for AdonERP with point of sale, inventory management, loyalty programs, and expiration tracking.",
 };
 
 const rewards = [
@@ -98,7 +98,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "Owner, FreshMart",
     content:
-      "I have used other programs before, but EdenERP has a variety of layers that make it easier to work. From expiration tracking to loyalty programs, everything just works.",
+      "I have used other programs before, but AdonERP has a variety of layers that make it easier to work. From expiration tracking to loyalty programs, everything just works.",
     rating: 5,
   },
   {
@@ -181,7 +181,7 @@ export default function GroceryStorePage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP contains an intuitive, easy-to-set-up Point of Sale, and
+                AdonERP contains an intuitive, easy-to-set-up Point of Sale, and
                 allows you to streamline purchasing, sales, inventory
                 management, accounting, and B2C/B2B sales from one platform.
               </p>
@@ -207,7 +207,7 @@ export default function GroceryStorePage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                I have used other programs before, but EdenERP has a variety of
+                I have used other programs before, but AdonERP has a variety of
                 layers that make it easier to work. From expiration tracking to
                 loyalty programs, everything just works.
               </p>
@@ -620,7 +620,7 @@ export default function GroceryStorePage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               grocery retailers.
             </p>
           </div>

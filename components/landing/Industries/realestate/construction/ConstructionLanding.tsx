@@ -37,9 +37,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Construction Business | EdenERP Industries",
+  title: "Construction Business | AdonERP Industries",
   description:
-    "A construction business landing page for EdenERP with project management, material tracking, timesheets, invoicing, and field service.",
+    "A construction business landing page for AdonERP with project management, material tracking, timesheets, invoicing, and field service.",
 };
 
 const features = [
@@ -83,14 +83,14 @@ const testimonials = [
     name: "Robert Johnson",
     role: "Owner, Johnson Construction Group",
     content:
-      "The most significant change that EdenERP has brought to our business operations and culture is the sense of calm that has permeated our daily work life.",
+      "The most significant change that AdonERP has brought to our business operations and culture is the sense of calm that has permeated our daily work life.",
     rating: 5,
   },
   {
     name: "Maria Gonzales",
     role: "Project Director, BuildRight Contractors",
     content:
-      "From material tracking to timesheets and invoicing, EdenERP streamlined our entire construction workflow. No more material shortages or budget overruns.",
+      "From material tracking to timesheets and invoicing, AdonERP streamlined our entire construction workflow. No more material shortages or budget overruns.",
     rating: 5,
   },
 ];
@@ -167,7 +167,7 @@ export default function ConstructionPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP allows you to handle all aspects of construction projects from
+                AdonERP allows you to handle all aspects of construction projects from
                 start to finish while eliminating pain points such as material
                 shortages and budget management.
               </p>
@@ -193,7 +193,7 @@ export default function ConstructionPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                The most significant change that EdenERP has brought to our business
+                The most significant change that AdonERP has brought to our business
                 operations and culture is the sense of calm that has permeated our
                 daily work life.
               </p>
@@ -542,7 +542,7 @@ export default function ConstructionPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               construction companies and contractors.
             </p>
           </div>

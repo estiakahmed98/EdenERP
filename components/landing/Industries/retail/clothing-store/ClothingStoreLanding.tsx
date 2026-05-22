@@ -24,9 +24,9 @@ import {
 import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
-  title: "Clothing Store | EdenERP Industries",
+  title: "Clothing Store | AdonERP Industries",
   description:
-    "A clothing store industry landing page for EdenERP with point of sale, inventory, and retail workflow sections.",
+    "A clothing store industry landing page for AdonERP with point of sale, inventory, and retail workflow sections.",
 };
 
 const features = [
@@ -79,7 +79,7 @@ const testimonials = [
     name: "Sophia Chen",
     role: "Founder, Moda Boutique",
     content:
-      "EdenERP transformed how we manage our clothing store. From RFID inventory to seamless POS, everything just works.",
+      "AdonERP transformed how we manage our clothing store. From RFID inventory to seamless POS, everything just works.",
     rating: 5,
   },
   {
@@ -186,7 +186,7 @@ export default function ClothingStorePage() {
             <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
               <div className="mb-4 text-4xl leading-none text-rose-500">"</div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP made us an omnichannel brand with 360-degree sales
+                AdonERP made us an omnichannel brand with 360-degree sales
                 visibility. From RFID inventory to client loyalty, everything
                 runs seamlessly.
               </p>
@@ -682,7 +682,7 @@ export default function ClothingStorePage() {
               Join 15 million users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the smart choice for modern
+              who grow their business with AdonERP — the smart choice for modern
               clothing retailers.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

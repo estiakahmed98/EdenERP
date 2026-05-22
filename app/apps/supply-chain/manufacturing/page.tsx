@@ -815,7 +815,7 @@ export default function MRPLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -826,7 +826,7 @@ export default function MRPLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Eden allowed our company to efficiently manage a growth from a
+                  Adon allowed our company to efficiently manage a growth from a
                   turnover of $2.4M to $10M in 4 years.
                 </p>
 

@@ -847,7 +847,7 @@ export default function WebsiteBuilderSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -858,7 +858,7 @@ export default function WebsiteBuilderSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Eden&apos;s flexibility, scalability, and app ecosystem have
+                  Adon&apos;s flexibility, scalability, and app ecosystem have
                   been crucial for our success and community growth.
                 </p>
 

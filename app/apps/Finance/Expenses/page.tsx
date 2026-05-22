@@ -456,7 +456,7 @@ export default function ExpensesPage() {
                 <div className="flex justify-between items-start mb-8">
                   <div>
                     <p className="text-white/60 text-xs">Company Card</p>
-                    <p className="text-white font-semibold text-lg mt-1">Eden ERP • Marketing</p>
+                    <p className="text-white font-semibold text-lg mt-1">Adon ERP • Marketing</p>
                   </div>
                   <CreditCard className="h-8 w-8 text-white/40" />
                 </div>
@@ -805,7 +805,7 @@ export default function ExpensesPage() {
             </div>
             
             <p className="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto mb-6">
-              "Eden ERP transformed how we manage expenses. We've cut processing time by 75%
+              "Adon ERP transformed how we manage expenses. We've cut processing time by 75%
               and eliminated paper receipts entirely. The AI capture is incredibly accurate."
             </p>
             

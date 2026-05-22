@@ -775,7 +775,7 @@ export default function LiveChatLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -786,7 +786,7 @@ export default function LiveChatLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  From what I have seen so far, Eden solved our intent problem
+                  From what I have seen so far, Adon solved our intent problem
                   better than any information workflow. It helped our team
                   understand customers and continue the conversation smoothly.
                 </p>

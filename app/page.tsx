@@ -104,7 +104,7 @@ const TESTIMONIALS: TestimonialItem[] = [
   {
     name: "Fiona Laurent",
     role: "CEO, Floral Studio",
-    quote: "Eden ERP cut our billing time by 70%. Every invoice runs itself now.",
+    quote: "Adon ERP cut our billing time by 70%. Every invoice runs itself now.",
     avatar: "🌸",
     score: 5,
   },
@@ -489,7 +489,7 @@ function Hero() {
               ))}
             </div>
             <div className="flex h-[22px] flex-1 items-center justify-center rounded-md bg-[#ede8e0] text-[11px] text-[#999]">
-              eden-erp.com/subscriptions
+              adon-erp.com/subscriptions
             </div>
           </div>
 
@@ -609,7 +609,7 @@ function AppsSection() {
         <div className="reveal">
           <SectionTag>✦ 50+ apps</SectionTag>
           <h2 className="mt-4 mb-2.5 font-hand text-[clamp(36px,5vw,62px)] font-bold leading-[1.1] text-[#1a1a2e]">
-            Imagine <HandText>without</HandText> Eden ERP
+            Imagine <HandText>without</HandText> Adon ERP
           </h2>
           <p className="mx-auto mb-12 max-w-[460px] font-body text-[15px] leading-[1.7] text-[var(--muted)]">
             Each app simplifies a process. Toggle to see what you'd need instead.
@@ -680,7 +680,7 @@ function AppsSection() {
                             altsOn && alt ? "text-[var(--purple)] opacity-100" : "text-[#8f8688] opacity-90"
                           }`}
                         >
-                          {altsOn && alt ? alt : "Eden"}
+                          {altsOn && alt ? alt : "Adon"}
                         </div>
                       </div>
                     );
@@ -716,7 +716,7 @@ function NativeAISection() {
 
         <div className="reveal shadow-float mx-auto max-w-[680px] rounded-3xl border border-white bg-white/80 px-6 py-11 backdrop-blur-sm sm:px-12">
           <p className="font-hand text-[clamp(28px,4vw,48px)] font-semibold leading-[1.3] text-[#1a1a2e]">
-            You use <span className="text-[var(--teal)]">Eden</span> to run your
+            You use <span className="text-[var(--teal)]">Adon</span> to run your
           </p>
           <p className="mt-2 min-h-[1.4em] font-hand text-[clamp(28px,4vw,48px)] font-bold">
             <TypeWriter
@@ -777,7 +777,7 @@ function LevelUpSection() {
           <div className="reveal shadow-float overflow-hidden rounded-[20px] border border-[#eeedf2]">
             <div className="flex items-center gap-2.5 bg-[var(--purple)] px-5 py-3.5">
               <span className="text-base">✅</span>
-              <span className="font-body text-sm font-bold text-white">Eden Project</span>
+              <span className="font-body text-sm font-bold text-white">Adon Project</span>
               <span className="ml-auto rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white">
                 Sprint 4
               </span>
@@ -878,7 +878,7 @@ function EnterpriseSection() {
     {
       icon: "🤖",
       title: "Open Source + AI",
-      desc: "Use Eden AI to develop with an ultra-cost-efficient mindset. All models trained on our source code.",
+      desc: "Use Adon AI to develop with an ultra-cost-efficient mindset. All models trained on our source code.",
       badge: "40k+ apps",
     },
     {
@@ -983,8 +983,8 @@ function TestimonialsSection() {
           <div className="shrink-0 font-serif text-[60px] leading-none text-[#fbbf24]">"</div>
           <div>
             <p className="font-body text-base leading-[1.8] text-[#475569]">
-              Eden is so full of a software Army Knife. You can tailor it to your business
-              requirements. This is one of the key reasons that has helped us implement Eden
+              Adon is so full of a software Army Knife. You can tailor it to your business
+              requirements. This is one of the key reasons that has helped us implement Adon
               successfully.
             </p>
             <div className="mt-5 flex items-center gap-3">
@@ -1019,7 +1019,7 @@ function CTASection() {
         </h2>
         <p className="reveal mx-auto mb-10 max-w-[460px] font-body text-base leading-[1.7] text-white/60">
           Build recurring revenue workflows with automated billing, renewals, payments, and customer
-          retention inside Eden ERP.
+          retention inside Adon ERP.
         </p>
         <div className="reveal flex flex-wrap justify-center gap-3">
           <button className="rounded-[10px] bg-white px-8 py-[15px] font-body text-[15px] font-bold text-[var(--purple)] shadow-[0_8px_32px_#00000033] transition hover:-translate-y-0.5">
@@ -1037,7 +1037,7 @@ function CTASection() {
   );
 }
 
-export default function EdenLandingPage() {
+export default function AdonLandingPage() {
   useReveal();
 
   return (

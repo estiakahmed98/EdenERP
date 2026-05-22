@@ -51,9 +51,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Marketing Agency | EdenERP Industries",
+  title: "Marketing Agency | AdonERP Industries",
   description:
-    "A marketing agency landing page for EdenERP with website builder, project management, CRM, invoicing, and campaign tracking.",
+    "A marketing agency landing page for AdonERP with website builder, project management, CRM, invoicing, and campaign tracking.",
 };
 
 const features = [
@@ -97,14 +97,14 @@ const testimonials = [
     name: "Michael Bennett",
     role: "CEO, Creative Spark Agency",
     content:
-      "With most systems, you get 70% of what you hoped. With EdenERP, you get more than what you expected. It transformed our agency operations.",
+      "With most systems, you get 70% of what you hoped. With AdonERP, you get more than what you expected. It transformed our agency operations.",
     rating: 5,
   },
   {
     name: "Jessica Taylor",
     role: "Operations Director, Digital Flow",
     content:
-      "From project management to recurring invoices, EdenERP streamlined everything. Our team is more productive and clients love the transparency.",
+      "From project management to recurring invoices, AdonERP streamlined everything. Our team is more productive and clients love the transparency.",
     rating: 5,
   },
 ];
@@ -181,7 +181,7 @@ export default function MarketingAgencyPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP allows you to streamline all aspects of your marketing agency on
+                AdonERP allows you to streamline all aspects of your marketing agency on
                 one intuitive platform, from building websites to managing projects,
                 client communication and invoicing.
               </p>
@@ -207,7 +207,7 @@ export default function MarketingAgencyPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                With most systems, you get 70% of what you hoped. With EdenERP, you get
+                With most systems, you get 70% of what you hoped. With AdonERP, you get
                 more than what you expected. It transformed our agency operations.
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
@@ -273,7 +273,7 @@ export default function MarketingAgencyPage() {
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-slate-600 md:grid-cols-2">
           <div className="rounded-xl bg-white p-5 shadow-sm">
-            Create a stunning website using EdenERP's AI-based builder, add
+            Create a stunning website using AdonERP's AI-based builder, add
             photos, drag-and-drop elements, and SEO optimization tools.
           </div>
           <div className="rounded-xl bg-white p-5 shadow-sm">
@@ -539,7 +539,7 @@ export default function MarketingAgencyPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               marketing agencies and creative studios.
             </p>
           </div>

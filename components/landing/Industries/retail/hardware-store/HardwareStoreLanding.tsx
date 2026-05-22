@@ -25,9 +25,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Hardware Store | EdenERP Industries",
+  title: "Hardware Store | AdonERP Industries",
   description:
-    "A hardware store industry landing page for EdenERP with point of sale, inventory management, loyalty programs, and multi-channel sales.",
+    "A hardware store industry landing page for AdonERP with point of sale, inventory management, loyalty programs, and multi-channel sales.",
 };
 
 const features = [
@@ -73,14 +73,14 @@ const testimonials = [
     name: "PT Global Teknologi Niaga",
     role: "Hardware Retail Chain",
     content:
-      "It's great to see how technology solutions like EdenERP can streamline operations and enhance productivity for businesses in the hardware retail industry.",
+      "It's great to see how technology solutions like AdonERP can streamline operations and enhance productivity for businesses in the hardware retail industry.",
     rating: 5,
   },
   {
     name: "Michael Zhang",
     role: "Owner, ToolBox Hardware",
     content:
-      "From inventory management to multi-channel sales, EdenERP handles everything. Our team mastered the POS in just one day.",
+      "From inventory management to multi-channel sales, AdonERP handles everything. Our team mastered the POS in just one day.",
     rating: 5,
   },
 ];
@@ -157,7 +157,7 @@ export default function HardwareStorePage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP covers all the software needs for your hardware store, from
+                AdonERP covers all the software needs for your hardware store, from
                 online and in-store transactions to order management and inventory
                 control.
               </p>
@@ -183,7 +183,7 @@ export default function HardwareStorePage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                It's great to see how technology solutions like EdenERP can
+                It's great to see how technology solutions like AdonERP can
                 streamline operations and enhance productivity for businesses in
                 the hardware retail industry.
               </p>
@@ -253,7 +253,7 @@ export default function HardwareStorePage() {
             hardware sales
           </ScriptHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600">
-            An efficient point-of-sale that lets anyone master EdenERP POS in minutes,
+            An efficient point-of-sale that lets anyone master AdonERP POS in minutes,
             adapt to any configuration, and focus on what matters: the customer.
           </p>
         </div>
@@ -512,7 +512,7 @@ export default function HardwareStorePage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               hardware retailers.
             </p>
           </div>

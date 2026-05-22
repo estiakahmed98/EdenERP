@@ -117,7 +117,7 @@ function EsignDashboard() {
         <div className="flex items-center gap-2">
           <FileSignature className="h-5 w-5 text-cyan-600" />
           <span className="text-sm font-semibold text-slate-800">
-            Eden Sign
+            Adon Sign
           </span>
         </div>
 
@@ -219,7 +219,7 @@ export default function EsignPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Send, sign, and manage business agreements inside Eden ERP with
+              Send, sign, and manage business agreements inside Adon ERP with
               secure workflows, reminders, audit trails, and one-click approvals.
             </p>
           </div>
@@ -274,7 +274,7 @@ export default function EsignPage() {
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
             Drag and drop signature fields, assign recipients, set signing
-            order, and let Eden ERP handle reminders, tracking, and final
+            order, and let Adon ERP handle reminders, tracking, and final
             archiving.
           </p>
 
@@ -481,7 +481,7 @@ export default function EsignPage() {
           <HandUnderline color="bg-sky-400">app</HandUnderline>.
         </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600">
-          Expand your signing workflow across the Eden ERP ecosystem.
+          Expand your signing workflow across the Adon ERP ecosystem.
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -550,7 +550,7 @@ export default function EsignPage() {
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600">
-              Teams use Eden Sign to close agreements faster, reduce paperwork,
+              Teams use Adon Sign to close agreements faster, reduce paperwork,
               and keep every signature traceable.
             </p>
 
@@ -577,7 +577,7 @@ export default function EsignPage() {
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
           Replace manual signing with a secure, automated, and beautifully simple
-          agreement workflow inside Eden ERP.
+          agreement workflow inside Adon ERP.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">

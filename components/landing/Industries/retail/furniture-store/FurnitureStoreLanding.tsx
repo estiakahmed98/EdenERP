@@ -23,9 +23,9 @@ import {
 import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
-  title: "Furniture Store | EdenERP Industries",
+  title: "Furniture Store | AdonERP Industries",
   description:
-    "A furniture store industry landing page for EdenERP with point of sale, inventory, eCommerce, and custom order management.",
+    "A furniture store industry landing page for AdonERP with point of sale, inventory, eCommerce, and custom order management.",
 };
 
 const features = [
@@ -79,7 +79,7 @@ const testimonials = [
     name: "Ville Kurvato",
     role: "COO, Nordic Home",
     content:
-      "EdenERP has been nothing but a good thing for us. From custom furniture orders to B2B quotations, it has worked really well for our growing business.",
+      "AdonERP has been nothing but a good thing for us. From custom furniture orders to B2B quotations, it has worked really well for our growing business.",
     rating: 5,
   },
   {
@@ -163,7 +163,7 @@ export default function FurnitureStorePage() {
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
                 With its ability to handle everything from eCommerce and Point
-                of Sale transactions to custom furniture orders, EdenERP is a
+                of Sale transactions to custom furniture orders, AdonERP is a
                 complete solution for managing your B2B and B2C sales.
               </p>
             </div>
@@ -186,7 +186,7 @@ export default function FurnitureStorePage() {
             <div className="rounded-[2rem] border border-slate-200/80 bg-white/95 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)]">
               <div className="mb-4 text-4xl leading-none text-amber-500">"</div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP has been nothing but a good thing for us. From custom
+                AdonERP has been nothing but a good thing for us. From custom
                 furniture orders to B2B quotations, it has worked really well
                 for our growing business.
               </p>
@@ -557,7 +557,7 @@ export default function FurnitureStorePage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               furniture retailers.
             </p>
           </div>

@@ -93,7 +93,7 @@ const testimonials = [
   {
     name: "Sarah Johnson",
     role: "CEO, TechFlow Solutions",
-    content: "Eden ERP transformed our invoicing workflow. We've reduced payment collection time by 60% and eliminated manual data entry entirely.",
+    content: "Adon ERP transformed our invoicing workflow. We've reduced payment collection time by 60% and eliminated manual data entry entirely.",
     rating: 5,
     avatar: "https://randomuser.me/api/portraits/women/1.jpg",
   },
@@ -380,7 +380,7 @@ export default function InvoicingPage() {
                   <div className="bg-linear-to-r from-emerald-600 to-cyan-600 p-4">
                     <div className="flex items-center justify-between text-white">
                       <Smartphone className="h-5 w-5" />
-                      <span className="text-sm font-semibold">Eden Mobile</span>
+                      <span className="text-sm font-semibold">Adon Mobile</span>
                       <Bell className="h-5 w-5" />
                     </div>
                   </div>

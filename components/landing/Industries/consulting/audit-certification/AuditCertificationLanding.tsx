@@ -54,9 +54,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Audit & Certification | EdenERP Industries",
+  title: "Audit & Certification | AdonERP Industries",
   description:
-    "An audit and certification landing page for EdenERP with website builder, CRM pipeline, field service, timesheets, and invoicing.",
+    "An audit and certification landing page for AdonERP with website builder, CRM pipeline, field service, timesheets, and invoicing.",
 };
 
 const features = [
@@ -100,7 +100,7 @@ const testimonials = [
     name: "Robert Chen",
     role: "Managing Director, Assurance Plus",
     content:
-      "Our client base has increased by 40%, and EdenERP's advanced technology and tools have reduced operational efforts by 80%.",
+      "Our client base has increased by 40%, and AdonERP's advanced technology and tools have reduced operational efforts by 80%.",
     rating: 5,
   },
   {
@@ -184,7 +184,7 @@ export default function AuditCertificationPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP contains an AI-based website builder, an intuitive CRM pipeline
+                AdonERP contains an AI-based website builder, an intuitive CRM pipeline
                 to manage leads, and a complete Field Service solution to handle your
                 onsite visits.
               </p>
@@ -210,7 +210,7 @@ export default function AuditCertificationPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                Our client base has increased by 40%, and EdenERP's advanced
+                Our client base has increased by 40%, and AdonERP's advanced
                 technology and tools have reduced operational efforts by 80%.
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
@@ -528,7 +528,7 @@ export default function AuditCertificationPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               audit firms and certification bodies.
             </p>
           </div>

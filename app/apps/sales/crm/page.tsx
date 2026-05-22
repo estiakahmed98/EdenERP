@@ -130,7 +130,7 @@ function CrmDashboard() {
         <div className="flex items-center gap-2">
           <Users className="h-5 w-5 text-cyan-600" />
           <span className="text-sm font-semibold text-slate-800">
-            Eden CRM Pipeline
+            Adon CRM Pipeline
           </span>
         </div>
 
@@ -219,7 +219,7 @@ export default function CrmPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Eden ERP CRM helps your team capture leads, manage pipelines,
+              Adon ERP CRM helps your team capture leads, manage pipelines,
               automate follow-ups, and turn every opportunity into revenue.
             </p>
           </div>
@@ -276,7 +276,7 @@ export default function CrmPage() {
           </ScriptHeading>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-            Keep every deal visible from first contact to close. Eden CRM gives
+            Keep every deal visible from first contact to close. Adon CRM gives
             your sales team a clean pipeline, next actions, deal values, and
             customer context in one place.
           </p>
@@ -597,7 +597,7 @@ export default function CrmPage() {
           <HandUnderline color="bg-sky-400">app</HandUnderline>.
         </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600">
-          Expand your CRM workflow across the Eden ERP ecosystem.
+          Expand your CRM workflow across the Adon ERP ecosystem.
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -666,7 +666,7 @@ export default function CrmPage() {
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600">
-              Teams use Eden CRM to manage leads, communicate better, close
+              Teams use Adon CRM to manage leads, communicate better, close
               faster, and grow revenue with confidence.
             </p>
 

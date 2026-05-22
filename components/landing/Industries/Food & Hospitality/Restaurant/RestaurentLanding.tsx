@@ -25,9 +25,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Restaurant | EdenERP Industries",
+  title: "Restaurant | AdonERP Industries",
   description:
-    "A restaurant industry landing page for EdenERP with point of sale, table booking, inventory management, and staff scheduling.",
+    "A restaurant industry landing page for AdonERP with point of sale, table booking, inventory management, and staff scheduling.",
 };
 
 const features = [
@@ -79,14 +79,14 @@ const testimonials = [
     name: "Chef Antonio Rossi",
     role: "Owner, Bella Italia",
     content:
-      "EdenERP improved resource management, making planning and invoicing more efficient, enhancing communication and collaboration across our team.",
+      "AdonERP improved resource management, making planning and invoicing more efficient, enhancing communication and collaboration across our team.",
     rating: 5,
   },
   {
     name: "Sarah Mitchell",
     role: "Operations Manager, The Gourmet Kitchen",
     content:
-      "From table bookings to inventory management, EdenERP transformed how we run our restaurant. The POS is incredibly intuitive and our staff loves it.",
+      "From table bookings to inventory management, AdonERP transformed how we run our restaurant. The POS is incredibly intuitive and our staff loves it.",
     rating: 5,
   },
 ];
@@ -163,7 +163,7 @@ export default function RestaurantPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP offers everything your restaurant needs to manage point of sale,
+                AdonERP offers everything your restaurant needs to manage point of sale,
                 inventory, staff, reservations, purchasing, and services from one platform.
               </p>
             </div>
@@ -188,7 +188,7 @@ export default function RestaurantPage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                EdenERP improved resource management, making planning and invoicing more
+                AdonERP improved resource management, making planning and invoicing more
                 efficient, enhancing communication and collaboration across our team.
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-100 pt-5">
@@ -578,7 +578,7 @@ export default function RestaurantPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               restaurants and hospitality.
             </p>
           </div>

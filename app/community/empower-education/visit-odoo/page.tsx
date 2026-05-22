@@ -1,3 +1,3 @@
-export default function VisitEdenPage() {
-  return <div>Visit Eden Page</div>;
+export default function VisitAdonPage() {
+  return <div>Visit Adon Page</div>;
 }

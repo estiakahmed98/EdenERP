@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import PricingClient from "./PricingClient";
 
 export const metadata: Metadata = {
-  title: "Pricing | EdenERP",
+  title: "Pricing | AdonERP",
   description:
-    "Simple, transparent EdenERP pricing for startups, growing teams, and enterprise organizations.",
+    "Simple, transparent AdonERP pricing for startups, growing teams, and enterprise organizations.",
 };
 
 export default function PricingPage() {

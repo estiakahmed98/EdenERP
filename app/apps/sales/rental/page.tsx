@@ -132,7 +132,7 @@ export default function CertificationsPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Eden Rental is now inventory, ecommerce, sales, accounting, and
+            Adon Rental is now inventory, ecommerce, sales, accounting, and
             signatures in one app. Get organized, reduce manual work, and make
             every rental process faster.
           </p>
@@ -437,7 +437,7 @@ export default function CertificationsPage() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
-            From pickup to return, Eden can automatically create tasks for your
+            From pickup to return, Adon can automatically create tasks for your
             team so nothing gets missed.
           </p>
 
@@ -611,7 +611,7 @@ export default function CertificationsPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -621,7 +621,7 @@ export default function CertificationsPage() {
               <div className="text-5xl text-amber-400">“</div>
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  After renting hundreds of products, Eden helped us manage
+                  After renting hundreds of products, Adon helped us manage
                   every contract, invoice, signature, and delivery from one
                   simple platform. The best part is that our team finally knows
                   what to do next.

@@ -23,9 +23,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Toy Store | EdenERP Industries",
+  title: "Toy Store | AdonERP Industries",
   description:
-    "A toy store industry landing page for EdenERP with point of sale, inventory management, loyalty programs, and multi-channel sales.",
+    "A toy store industry landing page for AdonERP with point of sale, inventory management, loyalty programs, and multi-channel sales.",
 };
 
 const features = [
@@ -76,7 +76,7 @@ const testimonials = [
     name: "Emma Watson",
     role: "Owner, Wonder Toys",
     content:
-      "Working with EdenERP allowed us to digitize all our internal processes. We were able to be more efficient and finally reach full traceability on our products lifecycle.",
+      "Working with AdonERP allowed us to digitize all our internal processes. We were able to be more efficient and finally reach full traceability on our products lifecycle.",
     rating: 5,
   },
   {
@@ -181,7 +181,7 @@ export default function ToyStorePage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP allows you to maximize sales across multiple channels, manage
+                AdonERP allows you to maximize sales across multiple channels, manage
                 inventory, track purchases, and run your toy store from one platform.
               </p>
             </div>
@@ -206,7 +206,7 @@ export default function ToyStorePage() {
                 "
               </div>
               <p className="text-base leading-7 text-slate-700">
-                Working with EdenERP allowed us to digitize all our internal processes.
+                Working with AdonERP allowed us to digitize all our internal processes.
                 We were able to be more efficient and finally reach full traceability
                 on our products lifecycle.
               </p>
@@ -541,7 +541,7 @@ export default function ToyStorePage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               toy retailers.
             </p>
           </div>

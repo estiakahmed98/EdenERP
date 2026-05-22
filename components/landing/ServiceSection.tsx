@@ -220,7 +220,7 @@ function ScriptHeading({
   );
 }
 
-export default function EdenAppsSection() {
+export default function AdonAppsSection() {
   const [showAlternatives, setShowAlternatives] = useState(false);
 
   return (
@@ -247,7 +247,7 @@ export default function EdenAppsSection() {
           </div>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            EdenERP replaces scattered software with one elegant operating
+            AdonERP replaces scattered software with one elegant operating
             system for sales, accounting, inventory, projects, marketing, HR,
             support, and automation.
           </p>
@@ -289,7 +289,7 @@ export default function EdenAppsSection() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm font-medium text-white/65">
-                      EdenERP Suite
+                      AdonERP Suite
                     </p>
                     <h3 className="mt-2 text-3xl font-bold">One system</h3>
                   </div>
@@ -336,7 +336,7 @@ export default function EdenAppsSection() {
                   className="rounded-[2rem] border border-violet-100 bg-violet-50/80 p-6"
                 >
                   <p className="text-sm font-semibold text-violet-800">
-                    Without EdenERP
+                    Without AdonERP
                   </p>
                   <p className="mt-2 text-sm leading-7 text-violet-700/80">
                     Teams often pay for multiple apps, duplicate data manually,
@@ -345,14 +345,14 @@ export default function EdenAppsSection() {
                 </motion.div>
               ) : (
                 <motion.div
-                  key="eden"
+                  key="adon"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   className="rounded-[2rem] border border-emerald-100 bg-emerald-50/80 p-6"
                 >
                   <p className="text-sm font-semibold text-emerald-800">
-                    With EdenERP
+                    With AdonERP
                   </p>
                   <p className="mt-2 text-sm leading-7 text-emerald-700/80">
                     Every app shares the same data layer, so your business runs
@@ -367,7 +367,7 @@ export default function EdenAppsSection() {
             <div className="mb-5 flex flex-col gap-3 border-b border-slate-100 pb-5 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-900">
-                  EdenERP App Ecosystem
+                  AdonERP App Ecosystem
                 </p>
                 <p className="mt-1 text-xs text-slate-500">
                   Connected modules for every department
@@ -432,7 +432,7 @@ export default function EdenAppsSection() {
                             exit={{ opacity: 0, y: -6 }}
                             className="text-xs leading-5 text-slate-500"
                           >
-                            Works with every EdenERP module.
+                            Works with every AdonERP module.
                           </motion.p>
                         )}
                       </AnimatePresence>
@@ -451,7 +451,7 @@ export default function EdenAppsSection() {
                 Why teams choose one suite instead of many disconnected tools
               </h3>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600">
-                With EdenERP, every department works from the same source of
+                With AdonERP, every department works from the same source of
                 truth. Sales creates demand, operations deliver, finance tracks
                 money, and leadership sees the full picture instantly.
               </p>

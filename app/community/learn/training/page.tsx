@@ -23,9 +23,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Training | EdenERP Community",
+  title: "Training | AdonERP Community",
   description:
-    "Professional EdenERP training programs, live classes, workshops, and guided learning paths for teams.",
+    "Professional AdonERP training programs, live classes, workshops, and guided learning paths for teams.",
 };
 
 const learningPaths = [
@@ -44,7 +44,7 @@ const learningPaths = [
     duration: "8 weeks",
     lessons: "56 lessons",
     description:
-      "Build modules, customize workflows, connect APIs, and prepare production-ready EdenERP extensions.",
+      "Build modules, customize workflows, connect APIs, and prepare production-ready AdonERP extensions.",
     topics: ["Next.js", "API", "Prisma", "Automation", "Deployment"],
   },
   {
@@ -68,7 +68,7 @@ const formats = [
   {
     title: "On-site Team Training",
     description:
-      "Bring EdenERP experts to your organization for role-based hands-on workshops.",
+      "Bring AdonERP experts to your organization for role-based hands-on workshops.",
     icon: Users,
   },
   {
@@ -159,7 +159,7 @@ export default function TrainingPage() {
           <div className="max-w-2xl space-y-8">
             <SectionEyebrow
               icon={<GraduationCap className="h-4 w-4" />}
-              label="EdenERP Training Academy"
+              label="AdonERP Training Academy"
             />
 
             <div className="space-y-5">
@@ -173,7 +173,7 @@ export default function TrainingPage() {
                     '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                 }}
               >
-                Learn EdenERP
+                Learn AdonERP
                 <br />
                 the practical way
               </h1>
@@ -470,7 +470,7 @@ export default function TrainingPage() {
           <ScriptHeading>
             Build stronger teams
             <br />
-            with EdenERP training
+            with AdonERP training
           </ScriptHeading>
         </div>
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">

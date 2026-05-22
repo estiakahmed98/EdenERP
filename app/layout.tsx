@@ -9,9 +9,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Eden ERP - Transform Your Business",
+  title: "Adon ERP - Transform Your Business",
   description:
-    "Empower your business with innovative solutions for digital transformation. Join thousands of companies scaling faster with Eden ERP.",
+    "Empower your business with innovative solutions for digital transformation. Join thousands of companies scaling faster with Adon ERP.",
   generator: "v0.app",
   icons: {
     icon: [

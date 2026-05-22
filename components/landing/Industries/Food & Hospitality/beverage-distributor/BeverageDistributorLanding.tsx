@@ -30,9 +30,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Beverage Distributor | EdenERP Industries",
+  title: "Beverage Distributor | AdonERP Industries",
   description:
-    "A beverage distributor and liquor store landing page for EdenERP with point of sale, inventory management, B2B/B2C eCommerce, and bottle return workflows.",
+    "A beverage distributor and liquor store landing page for AdonERP with point of sale, inventory management, B2B/B2C eCommerce, and bottle return workflows.",
 };
 
 const features = [
@@ -83,7 +83,7 @@ const testimonials = [
     name: "Lisa Chen",
     role: "Operations Director, Craft Beer Collective",
     content:
-      "EdenERP transformed our beverage distribution. From keg tracking to B2B ordering, everything runs smoothly. Our customers love the online shop.",
+      "AdonERP transformed our beverage distribution. From keg tracking to B2B ordering, everything runs smoothly. Our customers love the online shop.",
     rating: 5,
   },
 ];
@@ -160,7 +160,7 @@ export default function BeverageDistributorPage() {
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-slate-600">
-                EdenERP allows you to manage the entire sales cycle of your beverage
+                AdonERP allows you to manage the entire sales cycle of your beverage
                 distribution business, from inventory to point of sale, custom
                 features, craft drinks and bottle returns.
               </p>
@@ -560,7 +560,7 @@ export default function BeverageDistributorPage() {
               Join 15 million happy users
             </ScriptHeading>
             <p className="mt-3 text-base text-slate-600">
-              who grow their business with EdenERP — the complete solution for
+              who grow their business with AdonERP — the complete solution for
               beverage distributors and liquor stores.
             </p>
           </div>

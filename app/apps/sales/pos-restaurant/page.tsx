@@ -163,7 +163,7 @@ function RestaurantPosPreview() {
         <div className="flex items-center gap-2">
           <Utensils className="h-5 w-5 text-sky-600" />
           <span className="text-sm font-semibold text-slate-800">
-            Eden Restaurant POS
+            Adon Restaurant POS
           </span>
         </div>
 
@@ -271,7 +271,7 @@ export default function RestaurantPosPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Eden ERP Restaurant POS connects your tables, orders, kitchen,
+              Adon ERP Restaurant POS connects your tables, orders, kitchen,
               payments, inventory, and accounting in one seamless workflow.
             </p>
           </div>
@@ -558,7 +558,7 @@ export default function RestaurantPosPage() {
         </ScriptHeading>
 
         <p className="mt-3 max-w-xl text-slate-600">
-          Expand your restaurant workflow across the Eden ERP ecosystem.
+          Expand your restaurant workflow across the Adon ERP ecosystem.
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -608,7 +608,7 @@ export default function RestaurantPosPage() {
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600">
-              Restaurant teams use Eden POS to serve faster, reduce errors, and
+              Restaurant teams use Adon POS to serve faster, reduce errors, and
               keep every order connected from table to accounting.
             </p>
 

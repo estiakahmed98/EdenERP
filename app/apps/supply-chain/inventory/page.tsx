@@ -675,7 +675,7 @@ export default function InventoryLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Eden
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -686,7 +686,7 @@ export default function InventoryLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Eden inventory reduced our logistics spreadsheet work while
+                  Adon inventory reduced our logistics spreadsheet work while
                   making our warehouse easier to manage. The biggest benefit is
                   real-time stock visibility and fewer manual mistakes.
                 </p>

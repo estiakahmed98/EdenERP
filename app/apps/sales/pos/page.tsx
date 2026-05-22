@@ -53,7 +53,7 @@ const features = [
   {
     title: "Integrated payments",
     description:
-      "Accept cards, wallets, cash, and bank payments directly from your Eden ERP POS.",
+      "Accept cards, wallets, cash, and bank payments directly from your Adon ERP POS.",
     icon: WalletCards,
   },
   {
@@ -180,7 +180,7 @@ function PosPreview() {
         <div className="flex items-center gap-2">
           <Store className="h-5 w-5 text-cyan-600" />
           <span className="text-sm font-semibold text-slate-800">
-            Eden POS · Retail Counter
+            Adon POS · Retail Counter
           </span>
         </div>
 
@@ -309,7 +309,7 @@ export default function PosRetailPage() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-              Eden ERP POS helps your team sell faster, manage inventory, reward
+              Adon ERP POS helps your team sell faster, manage inventory, reward
               loyal customers, and sync every transaction with accounting.
             </p>
           </div>
@@ -596,7 +596,7 @@ export default function PosRetailPage() {
           <HandUnderline color="bg-sky-400">app</HandUnderline>.
         </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600">
-          Expand your retail workflow across the Eden ERP ecosystem.
+          Expand your retail workflow across the Adon ERP ecosystem.
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -646,7 +646,7 @@ export default function PosRetailPage() {
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600">
-              Retail teams use Eden POS to sell faster, manage stock, and serve
+              Retail teams use Adon POS to sell faster, manage stock, and serve
               customers with a connected business system.
             </p>
 
@@ -673,7 +673,7 @@ export default function PosRetailPage() {
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
           Build a connected retail operation with POS, inventory, customer
-          loyalty, ecommerce, and accounting in one Eden ERP workspace.
+          loyalty, ecommerce, and accounting in one Adon ERP workspace.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
