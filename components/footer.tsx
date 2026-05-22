@@ -64,17 +64,44 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-12">
           <div className="lg:col-span-1">
-            <Link href="/" className="group mb-4 inline-flex items-center gap-2">
+            <Link
+              href="/"
+              className="group mb-4 inline-flex items-center gap-0"
+            >
               <span
-                className="inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-2xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)]"
+                className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105"
                 style={{
                   fontFamily:
                     '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive'
                 }}
               >
-                Adon-ERP
+                Adon
+              </span>
+
+              <span
+                className="mx-1 inline-block text-slate-500"
+                style={{
+                  fontFamily:
+                    '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                  fontSize: "12px",
+                  fontWeight: 200,
+                  transform: "rotate(-12deg)",
+                }}
+              >
+                —
+              </span>
+
+              <span
+                className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-xl font-black uppercase tracking-wider text-transparent"
+                style={{
+                  fontFamily:
+                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                }}
+              >
+                ERP
               </span>
             </Link>
+
 
             <p className="text-sm leading-relaxed text-slate-300">
               {t("description")}
@@ -84,13 +111,25 @@ export default function Footer() {
               <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
+              >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
+              >
                 <Instagram size={20} />
               </a>
             </div>
@@ -101,6 +140,7 @@ export default function Footer() {
               <h3 className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-white">
                 {t(section.titleKey)}
               </h3>
+
 
               <ul className="space-y-2">
                 {section.links.map((link) => (

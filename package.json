@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
     "@radix-ui/react-accordion": "1.2.12",
     "@radix-ui/react-alert-dialog": "1.1.15",
     "@radix-ui/react-aspect-ratio": "1.1.8",
@@ -39,6 +41,7 @@
     "@radix-ui/react-tooltip": "1.2.8",
     "@vercel/analytics": "1.6.1",
     "autoprefixer": "^10.4.20",
+    "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.1.1",
@@ -50,6 +53,7 @@
     "next": "16.2.6",
     "next-intl": "^4.12.0",
     "next-themes": "^0.4.6",
+    "pg": "^8.21.0",
     "react": "^19",
     "react-day-picker": "9.13.2",
     "react-dom": "^19",
@@ -67,8 +71,26 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8.5",
+    "prisma": "^7.8.0",
     "tailwindcss": "^4.2.0",
     "tw-animate-css": "1.3.3",
     "typescript": "5.7.3"
-  }
+  },
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estiakahmed98/EdenERP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/estiakahmed98/EdenERP/issues"
+  },
+  "homepage": "https://github.com/estiakahmed98/EdenERP#readme"
 }

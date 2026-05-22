@@ -527,7 +527,7 @@ export default function Header() {
           <LanguageSwitcher />
 
           <Link
-            href="/login"
+            href="/auth/signin"
             className="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
           >
             {t("nav.signIn")}
@@ -571,7 +571,7 @@ export default function Header() {
 
             <div className="grid gap-3 pt-2">
               <Link
-                href="/login"
+                href="/auth/signin"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700"
               >
