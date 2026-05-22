@@ -21,12 +21,12 @@ const enMessages = {
       "One click install. No complexity, no code — just a single platform that empowers every person in your business.",
   },
   apps: {
-    tag: "✦ 50+ apps",
-    title: "Imagine",
-    titleHand: "without",
-    titleSuffix: "Adon ERP",
+    tag: "✦ Built for modern businesses",
+    title: "Run faster with",
+    titleHand: "one",
+    titleSuffix: "connected Adon ERP",
     description:
-      "Each app simplifies a process. Toggle to see what you'd need instead.",
+      "From accounting to CRM, every app shares one data flow so your team moves faster, reduces manual work, and scales with confidence.",
     altLabel: "Adon",
   },
   nativeAi: {
@@ -35,6 +35,7 @@ const enMessages = {
     quotePrefix: "You use",
     quoteHighlight: "Adon",
     quoteSuffix: "to run your",
+    typeWords: ["finance", "sales", "operations", "HR"],
     description:
       "Automate work, tailor features, perform deep research, and scale without limits.",
   },
@@ -113,4 +114,3 @@ const enMessages = {
 } as const;
 
 export default enMessages;
-
