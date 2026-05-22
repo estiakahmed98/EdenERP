@@ -103,7 +103,7 @@ export default function Header() {
         { label: "Time Off", href: "/apps/human-resources/time-off" },
         { label: "Appraisals", href: "/apps/human-resources/appraisals" },
         { label: "Attendance", href: "/apps/human-resources/attendance" },
-        { label: "Payroll", href: "/apps/human-resources/payroll", },
+        { label: "Payroll", href: "/apps/human-resources/payroll" },
       ],
     },
     {
@@ -157,7 +157,6 @@ export default function Header() {
           label: "Toy Store",
           href: "/industries/retail/toy-store",
         },
-      
       ],
     },
     {
@@ -165,10 +164,19 @@ export default function Header() {
       accentClass: "text-sky-600",
       underlineClass: "bg-sky-200",
       links: [
-        { label: "Restaurant", href: "/industries/food&hospitality/restaurant" },
+        {
+          label: "Restaurant",
+          href: "/industries/food&hospitality/restaurant",
+        },
         { label: "Fast Food", href: "/industries/food&hospitality/fast-food" },
-        { label: "Guest House", href: "/industries/food&hospitality/guest-house" },
-        { label: "Beverage Distributor", href: "/industries/food&hospitality/beverage-distributor" },
+        {
+          label: "Guest House",
+          href: "/industries/food&hospitality/guest-house",
+        },
+        {
+          label: "Beverage Distributor",
+          href: "/industries/food&hospitality/beverage-distributor",
+        },
         { label: "Hotel", href: "/industries/food&hospitality/hotel" },
       ],
     },
@@ -177,8 +185,14 @@ export default function Header() {
       accentClass: "text-rose-500",
       underlineClass: "bg-rose-200",
       links: [
-        { label: "Real Estate Agency", href: "/industries/realestate/real-estate-agency" },
-        { label: "Architecture Firm", href: "/industries/realestate/architecture-firm" },
+        {
+          label: "Real Estate Agency",
+          href: "/industries/realestate/real-estate-agency",
+        },
+        {
+          label: "Architecture Firm",
+          href: "/industries/realestate/architecture-firm",
+        },
         { label: "Construction", href: "/industries/realestate/construction" },
       ],
     },
@@ -187,10 +201,22 @@ export default function Header() {
       accentClass: "text-indigo-500",
       underlineClass: "bg-indigo-200",
       links: [
-        { label: "Accounting Firm", href: "/industries/consulting/accounting-firm" },
-        { label: "Marketing Agency", href: "/industries/consulting/marketing-agency" },
-        { label: "Audit & Certification", href: "/industries/consulting/audit-certification" },
-        { label: "Talent Acquisition", href: "/industries/consulting/talent-acquisition" },
+        {
+          label: "Accounting Firm",
+          href: "/industries/consulting/accounting-firm",
+        },
+        {
+          label: "Marketing Agency",
+          href: "/industries/consulting/marketing-agency",
+        },
+        {
+          label: "Audit & Certification",
+          href: "/industries/consulting/audit-certification",
+        },
+        {
+          label: "Talent Acquisition",
+          href: "/industries/consulting/talent-acquisition",
+        },
       ],
     },
     {
@@ -214,7 +240,7 @@ export default function Header() {
         { label: "Tutorials", href: "/community/learn/tutorials" },
         { label: "Documentation", href: "/community/learn/documentation" },
         { label: "Training", href: "/community/learn/training" },
-        { label: "Blog", href: "/community/learn/blog" }
+        { label: "Blog", href: "/community/learn/blog" },
       ],
     },
     {
@@ -222,11 +248,23 @@ export default function Header() {
       accentClass: "text-sky-600",
       underlineClass: "bg-sky-200",
       links: [
-        { label: "Find a Partner", href: "/community/get-services/find-partner" },
-        { label: "Meet an Advisor", href: "/community/get-services/meet-advisor" },
-        { label: "Implementation", href: "/community/get-services/implementation" },
+        {
+          label: "Find a Partner",
+          href: "/community/get-services/find-partner",
+        },
+        {
+          label: "Meet an Advisor",
+          href: "/community/get-services/meet-advisor",
+        },
+        {
+          label: "Implementation",
+          href: "/community/get-services/implementation",
+        },
         { label: "Support", href: "/community/get-services/support" },
-        { label: "Customer Stories", href: "/community/get-services/customer-stories" },
+        {
+          label: "Customer Stories",
+          href: "/community/get-services/customer-stories",
+        },
       ],
     },
     {
@@ -238,7 +276,10 @@ export default function Header() {
         { label: "Forum", href: "/community/collaborate/forum" },
         { label: "Events", href: "/community/collaborate/events" },
         { label: "Translations", href: "/community/collaborate/translations" },
-        { label: "Become a Partner", href: "/community/collaborate/become-a-partner" },
+        {
+          label: "Become a Partner",
+          href: "/community/collaborate/become-a-partner",
+        },
       ],
     },
   ];
@@ -451,7 +492,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href="/login"
+            href="/auth/signin"
             className="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
           >
             Sign in
@@ -531,7 +572,7 @@ export default function Header() {
 
             <div className="grid gap-3 pt-4">
               <Link
-                href="/login"
+                href="/auth/signin"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700"
               >
