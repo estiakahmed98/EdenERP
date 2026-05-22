@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -408,7 +409,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="group relative flex items-center gap-0">
+        <Link href="/" className="group relative flex items-center gap-3">
+          <Image
+            src="/icon.svg"
+            alt="Adon ERP icon"
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+            priority
+          />
+
           <div className="relative">
             <span
               className="relative inline-block transition-all duration-300 group-hover:scale-105"
@@ -432,7 +442,7 @@ export default function Header() {
           </div>
 
           <span
-            className="mx-1 inline-block transition-all duration-300 group-hover:rotate-0"
+            className="inline-block transition-all duration-300 group-hover:rotate-0"
             style={{
               fontFamily:
                 '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -449,7 +459,7 @@ export default function Header() {
             <div className="absolute inset-0 rounded-lg bg-linear-to-r from-emerald-500/20 to-cyan-500/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
 
             <span
-              className="relative inline-block rounded-lg px-2 py-0.5 font-black uppercase tracking-wider transition-all duration-300 group-hover:scale-105"
+              className="relative inline-block rounded-lg px-1 py-0.5 font-black uppercase tracking-wider transition-all duration-300 group-hover:scale-105"
               style={{
                 fontFamily:
                   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
