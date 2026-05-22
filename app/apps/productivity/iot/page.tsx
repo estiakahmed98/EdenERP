@@ -1,11 +1,54 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+import { siteConfig } from "@/lib/site";
+
+const title = "Eden Defence IoT Platform";
+const description =
+  "Build connected drone systems, autonomous robots, missile monitoring, and air defence command operations with one intelligent IoT platform.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/apps/productivity/iot" },
+  openGraph: {
+    type: "website",
+    title,
+    description,
+    url: "/apps/productivity/iot",
+    siteName: siteConfig.name,
+    images: [{ url: "/icon.svg" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/icon.svg"],
+    creator: siteConfig.twitterHandle,
+  },
+};
 
 export default function IoTDefencePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: `${siteConfig.url}/apps/productivity/iot`,
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <main className="overflow-hidden bg-white text-slate-900">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* HERO */}
       <section className="relative bg-white pt-20 text-center">
         <div className="mx-auto max-w-7xl px-4 pb-24">

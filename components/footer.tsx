@@ -34,41 +34,36 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-200 bg-linear-to-b from-white to-slate-50">
+    <footer className="border-t border-slate-800 bg-linear-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-100">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           <div className="lg:col-span-1">
             <Link href="/" className="group mb-4 inline-flex items-center gap-2">
               <span
-                className="text-2xl font-black"
+                className="inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-2xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)]"
                 style={{
                   fontFamily:
                     '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
-                  background:
-                    "linear-gradient(135deg, #0f172a 0%, #1e293b 45%, #0ea5e9 70%, #10b981 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
                 }}
               >
                 Adon-ERP
               </span>
             </Link>
-            <p className="text-sm leading-relaxed text-slate-600">
+            <p className="text-sm leading-relaxed text-slate-300">
               Unified apps for finance, sales, operations, and growth in one
               connected ERP platform.
             </p>
             <div className="flex gap-4 mt-6">
-              <a href="#" className="text-slate-500 transition-colors hover:text-cyan-700">
+              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-slate-500 transition-colors hover:text-cyan-700">
+              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-slate-500 transition-colors hover:text-cyan-700">
+              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-slate-500 transition-colors hover:text-cyan-700">
+              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
                 <Instagram size={20} />
               </a>
             </div>
@@ -76,7 +71,7 @@ export default function Footer() {
 
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h3 className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-slate-900">
+              <h3 className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-white">
                 {section}
               </h3>
               <ul className="space-y-2">
@@ -84,7 +79,7 @@ export default function Footer() {
                   <li key={`${section}:${link.label}`}>
                     <Link
                       href={link.href}
-                      className="text-sm font-medium text-slate-600 transition-colors hover:text-cyan-700"
+                      className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
                     >
                       {link.label}
                     </Link>
@@ -95,10 +90,10 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-slate-200" />
+        <div className="border-t border-slate-800" />
 
         <div className="flex flex-col items-center justify-between gap-4 pt-8 sm:flex-row">
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-slate-400">
             &copy; {currentYear} Adon ERP. All rights reserved.
           </p>
           <div className="flex gap-6">
