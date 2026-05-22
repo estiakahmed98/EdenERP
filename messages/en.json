@@ -1,0 +1,439 @@
+{
+  "LanguageSwitcher": {
+    "label": "Language",
+    "englishShort": "EN",
+    "banglaShort": "বাং"
+  },
+  "Header": {
+    "nav": {
+      "apps": "Apps",
+      "industries": "Industries",
+      "community": "Community",
+      "pricing": "Pricing",
+      "help": "Help",
+      "signIn": "Sign in",
+      "tryFree": "Try it free"
+    },
+    "menu": {
+      "explore": "Explore Adon ERP {label}",
+      "description": "Premium business tools connected in one unified ERP platform.",
+      "apps": {
+        "finance": "Finance",
+        "sales": "Sales",
+        "websites": "Websites",
+        "supplyChain": "Supply Chain",
+        "humanResources": "Human Resources",
+        "services": "Services",
+        "productivity": "Productivity",
+        "accounting": "Accounting",
+        "invoicing": "Invoicing",
+        "expenses": "Expenses",
+        "spreadsheet": "Spreadsheet",
+        "documents": "Documents",
+        "sign": "Sign",
+        "crm": "CRM",
+        "salesApp": "Sales",
+        "posShop": "POS Shop",
+        "posRestaurant": "POS Restaurant",
+        "subscriptions": "Subscriptions",
+        "rental": "Rental",
+        "websiteBuilder": "Website Builder",
+        "ecommerce": "eCommerce",
+        "blog": "Blog",
+        "forum": "Forum",
+        "liveChat": "Live Chat",
+        "elearning": "eLearning",
+        "inventory": "Inventory",
+        "manufacturing": "Manufacturing",
+        "purchase": "Purchase",
+        "maintenance": "Maintenance",
+        "quality": "Quality",
+        "barcode": "Barcode",
+        "employees": "Employees",
+        "recruitment": "Recruitment",
+        "timeOff": "Time Off",
+        "appraisals": "Appraisals",
+        "attendance": "Attendance",
+        "payroll": "Payroll",
+        "project": "Project",
+        "timesheets": "Timesheets",
+        "helpdesk": "Helpdesk",
+        "planning": "Planning",
+        "appointments": "Appointments",
+        "discuss": "Discuss",
+        "artificialIntelligence": "Artificial Intelligence",
+        "iot": "IoT"
+      },
+      "industries": {
+        "retail": "Retail",
+        "foodHospitality": "Food & Hospitality",
+        "realEstate": "Real Estate",
+        "consulting": "Consulting",
+        "manufacturing": "Manufacturing",
+        "bookStore": "Book Store",
+        "clothingStore": "Clothing Store",
+        "furnitureStore": "Furniture Store",
+        "groceryStore": "Grocery Store",
+        "hardwareStore": "Hardware Store",
+        "toyStore": "Toy Store",
+        "restaurant": "Restaurant",
+        "fastFood": "Fast Food",
+        "guestHouse": "Guest House",
+        "beverageDistributor": "Beverage Distributor",
+        "hotel": "Hotel",
+        "realEstateAgency": "Real Estate Agency",
+        "architectureFirm": "Architecture Firm",
+        "construction": "Construction",
+        "accountingFirm": "Accounting Firm",
+        "marketingAgency": "Marketing Agency",
+        "auditCertification": "Audit & Certification",
+        "talentAcquisition": "Talent Acquisition",
+        "textile": "Textile",
+        "metal": "Metal",
+        "furniture": "Furniture"
+      },
+      "community": {
+        "learn": "Learn",
+        "getServices": "Get Services",
+        "collaborate": "Collaborate",
+        "tutorials": "Tutorials",
+        "documentation": "Documentation",
+        "training": "Training",
+        "blog": "Blog",
+        "findPartner": "Find a Partner",
+        "meetAdvisor": "Meet an Advisor",
+        "implementation": "Implementation",
+        "support": "Support",
+        "customerStories": "Customer Stories",
+        "github": "GitHub",
+        "forum": "Forum",
+        "events": "Events",
+        "translations": "Translations",
+        "becomePartner": "Become a Partner"
+      }
+    },
+    "mobileMenuLabel": "Toggle menu"
+  },
+  "Footer": {
+    "description": "Unified apps for finance, sales, operations, and growth in one connected ERP platform.",
+    "sections": {
+      "product": "Product",
+      "company": "Company",
+      "support": "Support",
+      "legal": "Legal"
+    },
+    "links": {
+      "apps": "Apps",
+      "industries": "Industries",
+      "pricing": "Pricing",
+      "help": "Help",
+      "community": "Community",
+      "learn": "Learn",
+      "getServices": "Get Services",
+      "collaborate": "Collaborate",
+      "helpCenter": "Help Center",
+      "documentation": "Documentation",
+      "tutorials": "Tutorials",
+      "training": "Training",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies",
+      "gdpr": "GDPR"
+    },
+    "copyright": "© {year} Adon ERP. All rights reserved.",
+    "tryFree": "Try it free"
+  },
+  "HelpPage": {
+    "metadata": {
+      "title": "Help | Adon ERP",
+      "description": "Get support and find answers to your questions."
+    },
+    "hero": {
+      "title": "How Can We <highlight>Help You?</highlight>",
+      "description": "Find answers, get support, and learn how to make the most of our platform.",
+      "searchPlaceholder": "Search help articles..."
+    },
+    "categories": {
+      "documentation": {
+        "title": "Documentation",
+        "description": "Comprehensive guides and API documentation.",
+        "topics": {
+          "gettingStarted": "Getting Started",
+          "apiReference": "API Reference",
+          "bestPractices": "Best Practices",
+          "migrationGuide": "Migration Guide"
+        }
+      },
+      "faq": {
+        "title": "FAQ",
+        "description": "Answers to frequently asked questions.",
+        "topics": {
+          "billing": "Billing",
+          "security": "Security",
+          "features": "Features",
+          "account": "Account"
+        }
+      },
+      "communitySupport": {
+        "title": "Community Support",
+        "description": "Get help from our community.",
+        "topics": {
+          "forums": "Forums",
+          "discord": "Discord",
+          "communityPosts": "Community Posts",
+          "shareIdeas": "Share Ideas"
+        }
+      },
+      "contactSupport": {
+        "title": "Contact Support",
+        "description": "Reach our support team directly.",
+        "topics": {
+          "emailSupport": "Email Support",
+          "chat": "Chat",
+          "phone": "Phone",
+          "ticketSystem": "Ticket System"
+        }
+      }
+    },
+    "popularTopics": {
+      "title": "Popular Topics",
+      "items": {
+        "gettingStarted": "Getting Started with Adon ERP",
+        "apiAuth": "API Authentication Guide",
+        "billing": "Billing and Subscription",
+        "integrations": "Integrations and Webhooks",
+        "security": "Security Best Practices",
+        "troubleshooting": "Troubleshooting Common Issues"
+      },
+      "views": {
+        "gettingStarted": "12.5K views",
+        "apiAuth": "8.3K views",
+        "billing": "7.1K views",
+        "integrations": "6.8K views",
+        "security": "5.9K views",
+        "troubleshooting": "5.2K views"
+      }
+    },
+    "supportOptions": {
+      "title": "Get in Touch",
+      "liveChat": {
+        "title": "Live Chat",
+        "description": "Chat with our support team in real-time.",
+        "action": "Start Chat",
+        "time": "Available 24/7"
+      },
+      "emailSupport": {
+        "title": "Email Support",
+        "description": "Send us an email and we'll respond within 24 hours.",
+        "action": "Send Email",
+        "time": "support@adon-erp.com"
+      },
+      "phoneSupport": {
+        "title": "Phone Support",
+        "description": "Call our support team for urgent issues.",
+        "action": "Call Now",
+        "time": "+1 (800) 123-4567"
+      }
+    },
+    "status": {
+      "title": "System Status",
+      "description": "All systems operational. No incidents reported.",
+      "updated": "Last updated 5 minutes ago",
+      "action": "View Status"
+    }
+  },
+  "SupportPage": {
+    "hero": {
+      "eyebrow": "We're here to help",
+      "title": "Need help?",
+      "description": "Get support from our team of experts. We're available 24/7 to assist you.",
+      "searchPlaceholder": "Ask Adon ERP AI...",
+      "or": "or",
+      "askHuman": "Ask a Human"
+    },
+    "contact": {
+      "title": "Contact us",
+      "description": "Choose the best way to reach out to our team",
+      "advisor": "Meet an advisor",
+      "development": "Request developments",
+      "partner": "Become a partner",
+      "bug": "Report a bug"
+    },
+    "emergency": {
+      "title": "Emergency Lines",
+      "bangladesh": "Bangladesh",
+      "support": "Support",
+      "office": "Office",
+      "available": "24/7 support available"
+    },
+    "offices": {
+      "title": "Adon ERP <accent>Offices</accent>",
+      "description": "Visit us at our headquarters or contact our regional offices",
+      "officeTitle": "Adon ERP Office",
+      "bangladesh": {
+        "city": "Dhaka",
+        "tags": {
+          "sales": "Sales",
+          "services": "Services",
+          "support": "Support"
+        },
+        "address": {
+          "line1": "Tower 71, Flat # 9 A-B, 516/3 South Manikdi",
+          "line2": "Matikata Road, ECB Chattar",
+          "line3": "Dhaka Cantonment, Dhaka - 1206"
+        }
+      }
+    },
+    "trust": {
+      "reviews": "4.9/5 from 500+ reviews",
+      "users": "15M+ happy users",
+      "support": "24/7 support",
+      "response": "Average response: 2min"
+    },
+    "cta": {
+      "title": "Still have questions?",
+      "description": "Our team is ready to help you with any questions about Adon ERP.",
+      "action": "Start a Live Chat"
+    }
+  },
+  "HomePage": {
+    "metadata": {
+      "title": "Home | Adon ERP",
+      "description": "Run finance, sales, operations and customer service from one connected ERP platform."
+    },
+    "hero": {
+      "eyebrow": "One connected ERP platform",
+      "title": "Run your business faster with <accent>clarity, control and automation</accent>",
+      "description": "Adon ERP brings finance, sales, inventory, HR and customer support into one modern workspace so your team can move faster without juggling disconnected tools.",
+      "primaryCta": "See pricing",
+      "secondaryCta": "Talk to an advisor",
+      "points": {
+        "pointOne": "English and Bangla support from the same platform",
+        "pointTwo": "One source of truth for teams, stock and revenue",
+        "pointThree": "Launch quickly and scale without rebuilding workflows"
+      }
+    },
+    "dashboard": {
+      "label": "Live business pulse",
+      "title": "Today's snapshot",
+      "badge": "Updated now",
+      "metrics": {
+        "revenue": {
+          "label": "Revenue",
+          "value": "$128K",
+          "note": "Payments, invoices and collections synced"
+        },
+        "orders": {
+          "label": "Orders",
+          "value": "342",
+          "note": "Sales, POS and web orders in one queue"
+        },
+        "inventory": {
+          "label": "Inventory health",
+          "value": "98.4%",
+          "note": "Smart replenishment across warehouses"
+        },
+        "support": {
+          "label": "Support SLA",
+          "value": "12m",
+          "note": "Average first response for open tickets"
+        }
+      },
+      "highlight": {
+        "label": "Why teams switch",
+        "text": "Instead of stitching together five separate products, you manage operations from one clean system with shared data."
+      }
+    },
+    "platform": {
+      "eyebrow": "Built for daily work",
+      "title": "The core tools your team uses every day",
+      "description": "Start with the modules you need now and expand over time without replacing your data, your processes or your reporting stack.",
+      "modules": {
+        "finance": {
+          "title": "Finance",
+          "description": "Control accounting, invoices, cash flow and expenses with one reliable source of financial truth."
+        },
+        "sales": {
+          "title": "Sales",
+          "description": "Track leads, quotations, POS activity and renewals from first contact to recurring revenue."
+        },
+        "operations": {
+          "title": "Operations",
+          "description": "Keep stock, procurement and fulfillment aligned so teams can deliver faster with fewer errors."
+        },
+        "people": {
+          "title": "People",
+          "description": "Handle recruitment, attendance, time off and employee records from one structured workspace."
+        },
+        "commerce": {
+          "title": "Commerce",
+          "description": "Run your website, product catalog, customer communication and online sales from the same backend."
+        },
+        "analytics": {
+          "title": "Analytics",
+          "description": "Make better decisions with dashboards and KPIs that pull from the same live business data."
+        }
+      }
+    },
+    "workflow": {
+      "eyebrow": "Implementation flow",
+      "title": "A rollout that is practical, not disruptive",
+      "description": "You do not need a massive transformation project to start. The platform is designed to land in phases and produce value quickly.",
+      "stepLabel": "Step {index}",
+      "steps": {
+        "discover": {
+          "title": "Map your current workflow",
+          "description": "We identify the processes that create friction today and define a rollout that matches your business priorities."
+        },
+        "launch": {
+          "title": "Go live with the essentials",
+          "description": "Finance, sales or inventory can launch first, while the rest of the system stays aligned for the next phase."
+        },
+        "scale": {
+          "title": "Expand with confidence",
+          "description": "As your team grows, add more apps, automations and reports without replatforming from scratch."
+        }
+      }
+    },
+    "industries": {
+      "eyebrow": "Industry-ready",
+      "title": "Configured for the way different businesses actually operate",
+      "description": "Retail, manufacturing, service teams and education programs all need different workflows. Adon ERP adapts without turning into a custom-code mess.",
+      "cta": "Explore industries",
+      "cards": {
+        "retail": {
+          "title": "Retail",
+          "description": "Connect stock, POS, eCommerce and customer follow-up from one operational view."
+        },
+        "manufacturing": {
+          "title": "Manufacturing",
+          "description": "Plan materials, production and delivery with real visibility into cost and capacity."
+        },
+        "services": {
+          "title": "Services",
+          "description": "Manage projects, appointments, timesheets and support without losing context between teams."
+        },
+        "education": {
+          "title": "Education",
+          "description": "Support training programs, learning content and operational coordination from one platform."
+        }
+      }
+    },
+    "trust": {
+      "eyebrow": "Why it works",
+      "title": "One platform means fewer blind spots",
+      "description": "When accounting, operations and customer-facing teams all rely on the same system, decisions get faster and reporting stops turning into guesswork.",
+      "quote": "We stopped reconciling data between separate tools every week. Now finance, operations and support all work from the same numbers.",
+      "author": "Operations leadership",
+      "role": "Adon ERP implementation partner",
+      "badge": "Unified data"
+    },
+    "cta": {
+      "eyebrow": "Ready to start",
+      "title": "Move to a cleaner ERP setup without breaking your momentum",
+      "description": "Start with a focused rollout, keep your teams aligned, and scale into a full platform when the business is ready.",
+      "primaryCta": "Start with pricing",
+      "secondaryCta": "Get support"
+    }
+  }
+}

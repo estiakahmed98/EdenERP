@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { ArrowLeft, Home, Search, Sparkles } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { HandUnderline } from "@/components/ui/headunderline";
 
 export default function NotFound() {
@@ -59,7 +59,7 @@ export default function NotFound() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/help"
               className="group flex items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white px-6 py-4 text-sm font-bold text-slate-700 transition hover:-translate-y-1 hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
               <Search className="h-5 w-5" />

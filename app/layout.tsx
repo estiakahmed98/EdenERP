@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { getLocale } from "next-intl/server";
 
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
@@ -150,19 +149,20 @@ const websiteSchema = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable}`}
     >
       <body className="bg-background font-sans antialiased">
-        {/* Organization Schema */}
         <Script
           id="organization-schema"
           type="application/ld+json"
@@ -171,7 +171,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* Website Schema */}
         <Script
           id="website-schema"
           type="application/ld+json"
@@ -180,11 +179,7 @@ export default function RootLayout({
           }}
         />
 
-        <Header />
-
         {children}
-
-        <Footer />
 
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>

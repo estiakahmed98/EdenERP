@@ -1,267 +1,348 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import { ChevronDown, Menu, Sparkles, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
+
+import { Link } from "@/i18n/navigation";
+import LanguageSwitcher from "@/components/language-switcher";
 
 type MegaMenuLink = {
-  label: string;
-  href?: string;
+  labelKey: string;
+  href: string;
 };
 
 type MegaMenuColumn = {
-  title: string;
+  titleKey: string;
   accentClass: string;
   underlineClass: string;
-  links: Array<string | MegaMenuLink>;
+  links: MegaMenuLink[];
 };
+
+type MenuId = "apps" | "industries" | "community";
 
 type NavItem =
   | {
-      label: string;
+      labelKey: string;
       href: string;
-      id: "apps" | "industries" | "community";
+      id: MenuId;
       megaMenu: MegaMenuColumn[];
     }
   | {
-      label: string;
+      labelKey: string;
       href: string;
       id?: never;
       megaMenu?: never;
     };
 
+const appsMegaMenu: MegaMenuColumn[] = [
+  {
+    titleKey: "menu.apps.finance",
+    accentClass: "text-emerald-600",
+    underlineClass: "bg-emerald-200",
+    links: [
+      { labelKey: "menu.apps.accounting", href: "/apps/Finance/Accounting" },
+      { labelKey: "menu.apps.invoicing", href: "/apps/Finance/Invoicing" },
+      { labelKey: "menu.apps.expenses", href: "/apps/Finance/Expenses" },
+      { labelKey: "menu.apps.spreadsheet", href: "/apps/Finance/Spreadsheet" },
+      { labelKey: "menu.apps.documents", href: "/apps/Finance/Documents" },
+      { labelKey: "menu.apps.sign", href: "/apps/Finance/esign" }
+    ]
+  },
+  {
+    titleKey: "menu.apps.sales",
+    accentClass: "text-rose-500",
+    underlineClass: "bg-rose-200",
+    links: [
+      { labelKey: "menu.apps.crm", href: "/apps/sales/crm" },
+      { labelKey: "menu.apps.salesApp", href: "/apps/sales" },
+      { labelKey: "menu.apps.posShop", href: "/apps/sales/pos" },
+      {
+        labelKey: "menu.apps.posRestaurant",
+        href: "/apps/sales/pos-restaurant"
+      },
+      {
+        labelKey: "menu.apps.subscriptions",
+        href: "/apps/sales/subscriptions"
+      },
+      { labelKey: "menu.apps.rental", href: "/apps/sales/rental" }
+    ]
+  },
+  {
+    titleKey: "menu.apps.websites",
+    accentClass: "text-sky-600",
+    underlineClass: "bg-sky-200",
+    links: [
+      { labelKey: "menu.apps.websiteBuilder", href: "/apps/website" },
+      { labelKey: "menu.apps.ecommerce", href: "/apps/website/ecommerce" },
+      { labelKey: "menu.apps.blog", href: "/apps/website/blog" },
+      { labelKey: "menu.apps.forum", href: "/apps/website/forum" },
+      { labelKey: "menu.apps.liveChat", href: "/apps/website/live-chat" },
+      { labelKey: "menu.apps.elearning", href: "/apps/website/elearning" }
+    ]
+  },
+  {
+    titleKey: "menu.apps.supplyChain",
+    accentClass: "text-indigo-500",
+    underlineClass: "bg-indigo-200",
+    links: [
+      { labelKey: "menu.apps.inventory", href: "/apps/supply-chain/inventory" },
+      {
+        labelKey: "menu.apps.manufacturing",
+        href: "/apps/supply-chain/manufacturing"
+      },
+      { labelKey: "menu.apps.purchase", href: "/apps/supply-chain/purchase" },
+      {
+        labelKey: "menu.apps.maintenance",
+        href: "/apps/supply-chain/maintenance"
+      },
+      { labelKey: "menu.apps.quality", href: "/apps/supply-chain/quality" },
+      { labelKey: "menu.apps.barcode", href: "/apps/supply-chain/barcode" }
+    ]
+  },
+  {
+    titleKey: "menu.apps.humanResources",
+    accentClass: "text-violet-600",
+    underlineClass: "bg-violet-200",
+    links: [
+      {
+        labelKey: "menu.apps.employees",
+        href: "/apps/human-resources/employees"
+      },
+      {
+        labelKey: "menu.apps.recruitment",
+        href: "/apps/human-resources/recruitment"
+      },
+      { labelKey: "menu.apps.timeOff", href: "/apps/human-resources/time-off" },
+      {
+        labelKey: "menu.apps.appraisals",
+        href: "/apps/human-resources/appraisals"
+      },
+      {
+        labelKey: "menu.apps.attendance",
+        href: "/apps/human-resources/attendance"
+      },
+      { labelKey: "menu.apps.payroll", href: "/apps/human-resources/payroll" }
+    ]
+  },
+  {
+    titleKey: "menu.apps.services",
+    accentClass: "text-cyan-600",
+    underlineClass: "bg-cyan-200",
+    links: [
+      { labelKey: "menu.apps.project", href: "/apps/services/project" },
+      { labelKey: "menu.apps.timesheets", href: "/apps/services/timesheets" },
+      { labelKey: "menu.apps.helpdesk", href: "/apps/services/helpdesk" },
+      { labelKey: "menu.apps.planning", href: "/apps/services/planning" },
+      {
+        labelKey: "menu.apps.appointments",
+        href: "/apps/services/appointments"
+      }
+    ]
+  },
+  {
+    titleKey: "menu.apps.productivity",
+    accentClass: "text-purple-600",
+    underlineClass: "bg-purple-200",
+    links: [
+      { labelKey: "menu.apps.discuss", href: "/apps/productivity/discuss" },
+      {
+        labelKey: "menu.apps.artificialIntelligence",
+        href: "/apps/productivity/artificial-intelligence"
+      },
+      { labelKey: "menu.apps.iot", href: "/apps/productivity/iot" }
+    ]
+  }
+];
+
+const industriesMegaMenu: MegaMenuColumn[] = [
+  {
+    titleKey: "menu.industries.retail",
+    accentClass: "text-emerald-600",
+    underlineClass: "bg-emerald-200",
+    links: [
+      { labelKey: "menu.industries.bookStore", href: "/industries/retail/book-store" },
+      {
+        labelKey: "menu.industries.clothingStore",
+        href: "/industries/retail/clothing-store"
+      },
+      {
+        labelKey: "menu.industries.furnitureStore",
+        href: "/industries/retail/furniture-store"
+      },
+      {
+        labelKey: "menu.industries.groceryStore",
+        href: "/industries/retail/grocery-store"
+      },
+      {
+        labelKey: "menu.industries.hardwareStore",
+        href: "/industries/retail/hardware-store"
+      },
+      { labelKey: "menu.industries.toyStore", href: "/industries/retail/toy-store" }
+    ]
+  },
+  {
+    titleKey: "menu.industries.foodHospitality",
+    accentClass: "text-sky-600",
+    underlineClass: "bg-sky-200",
+    links: [
+      {
+        labelKey: "menu.industries.restaurant",
+        href: "/industries/food&hospitality/restaurant"
+      },
+      {
+        labelKey: "menu.industries.fastFood",
+        href: "/industries/food&hospitality/fast-food"
+      },
+      {
+        labelKey: "menu.industries.guestHouse",
+        href: "/industries/food&hospitality/guest-house"
+      },
+      {
+        labelKey: "menu.industries.beverageDistributor",
+        href: "/industries/food&hospitality/beverage-distributor"
+      },
+      { labelKey: "menu.industries.hotel", href: "/industries/food&hospitality/hotel" }
+    ]
+  },
+  {
+    titleKey: "menu.industries.realEstate",
+    accentClass: "text-rose-500",
+    underlineClass: "bg-rose-200",
+    links: [
+      {
+        labelKey: "menu.industries.realEstateAgency",
+        href: "/industries/realestate/real-estate-agency"
+      },
+      {
+        labelKey: "menu.industries.architectureFirm",
+        href: "/industries/realestate/architecture-firm"
+      },
+      {
+        labelKey: "menu.industries.construction",
+        href: "/industries/realestate/construction"
+      }
+    ]
+  },
+  {
+    titleKey: "menu.industries.consulting",
+    accentClass: "text-indigo-500",
+    underlineClass: "bg-indigo-200",
+    links: [
+      {
+        labelKey: "menu.industries.accountingFirm",
+        href: "/industries/consulting/accounting-firm"
+      },
+      {
+        labelKey: "menu.industries.marketingAgency",
+        href: "/industries/consulting/marketing-agency"
+      },
+      {
+        labelKey: "menu.industries.auditCertification",
+        href: "/industries/consulting/audit-certification"
+      },
+      {
+        labelKey: "menu.industries.talentAcquisition",
+        href: "/industries/consulting/talent-acquisition"
+      }
+    ]
+  },
+  {
+    titleKey: "menu.industries.manufacturing",
+    accentClass: "text-violet-600",
+    underlineClass: "bg-violet-200",
+    links: [
+      { labelKey: "menu.industries.textile", href: "/industries/manufacturing/textile" },
+      { labelKey: "menu.industries.metal", href: "/industries/manufacturing/metal" },
+      { labelKey: "menu.industries.furniture", href: "/industries/manufacturing/furniture" }
+    ]
+  }
+];
+
+const communityMegaMenu: MegaMenuColumn[] = [
+  {
+    titleKey: "menu.community.learn",
+    accentClass: "text-orange-500",
+    underlineClass: "bg-orange-200",
+    links: [
+      { labelKey: "menu.community.tutorials", href: "/community/learn/tutorials" },
+      {
+        labelKey: "menu.community.documentation",
+        href: "/community/learn/documentation"
+      },
+      { labelKey: "menu.community.training", href: "/community/learn/training" },
+      { labelKey: "menu.community.blog", href: "/community/learn/blog" }
+    ]
+  },
+  {
+    titleKey: "menu.community.getServices",
+    accentClass: "text-sky-600",
+    underlineClass: "bg-sky-200",
+    links: [
+      {
+        labelKey: "menu.community.findPartner",
+        href: "/community/get-services/find-partner"
+      },
+      {
+        labelKey: "menu.community.meetAdvisor",
+        href: "/community/get-services/meet-advisor"
+      },
+      {
+        labelKey: "menu.community.implementation",
+        href: "/community/get-services/implementation"
+      },
+      { labelKey: "menu.community.support", href: "/community/get-services/support" },
+      {
+        labelKey: "menu.community.customerStories",
+        href: "/community/get-services/customer-stories"
+      }
+    ]
+  },
+  {
+    titleKey: "menu.community.collaborate",
+    accentClass: "text-purple-600",
+    underlineClass: "bg-purple-200",
+    links: [
+      { labelKey: "menu.community.github", href: "/community/collaborate/github" },
+      { labelKey: "menu.community.forum", href: "/community/collaborate/forum" },
+      { labelKey: "menu.community.events", href: "/community/collaborate/events" },
+      {
+        labelKey: "menu.community.translations",
+        href: "/community/collaborate/translations"
+      },
+      {
+        labelKey: "menu.community.becomePartner",
+        href: "/community/collaborate/become-a-partner"
+      }
+    ]
+  }
+];
+
+const navItems: NavItem[] = [
+  { labelKey: "nav.apps", href: "/apps", id: "apps", megaMenu: appsMegaMenu },
+  {
+    labelKey: "nav.industries",
+    href: "/industries",
+    id: "industries",
+    megaMenu: industriesMegaMenu
+  },
+  {
+    labelKey: "nav.community",
+    href: "/community",
+    id: "community",
+    megaMenu: communityMegaMenu
+  },
+  { labelKey: "nav.pricing", href: "/pricing" },
+  { labelKey: "nav.help", href: "/help" }
+];
+
 export default function Header() {
+  const t = useTranslations("Header");
   const navId = useId();
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openDesktopMenu, setOpenDesktopMenu] = useState<
-    "apps" | "industries" | "community" | null
-  >(null);
-
-  const appsMegaMenu: MegaMenuColumn[] = [
-    {
-      title: "Finance",
-      accentClass: "text-emerald-600",
-      underlineClass: "bg-emerald-200",
-      links: [
-        { label: "Accounting", href: "/apps/Finance/Accounting" },
-        { label: "Invoicing", href: "/apps/Finance/Invoicing" },
-        { label: "Expenses", href: "/apps/Finance/Expenses" },
-        { label: "Spreadsheet", href: "/apps/Finance/Spreadsheet" },
-        { label: "Documents", href: "/apps/Finance/Documents" },
-        { label: "Sign", href: "/apps/Finance/esign" },
-      ],
-    },
-    {
-      title: "Sales",
-      accentClass: "text-rose-500",
-      underlineClass: "bg-rose-200",
-      links: [
-        { label: "CRM", href: "/apps/sales/crm" },
-        { label: "Sales", href: "/apps/sales" },
-        { label: "POS Shop", href: "/apps/sales/pos" },
-        { label: "POS Restaurant", href: "/apps/sales/pos-restaurant" },
-        { label: "Subscriptions", href: "/apps/sales/subscriptions" },
-        { label: "Rental", href: "/apps/sales/rental" },
-      ],
-    },
-    {
-      title: "Websites",
-      accentClass: "text-sky-600",
-      underlineClass: "bg-sky-200",
-      links: [
-        { label: "Website Builder", href: "/apps/website" },
-        { label: "eCommerce", href: "/apps/website/ecommerce" },
-        { label: "Blog", href: "/apps/website/blog" },
-        { label: "Forum", href: "/apps/website/forum" },
-        { label: "Live Chat", href: "/apps/website/live-chat" },
-        { label: "eLearning", href: "/apps/website/elearning" },
-      ],
-    },
-    {
-      title: "Supply Chain",
-      accentClass: "text-indigo-500",
-      underlineClass: "bg-indigo-200",
-      links: [
-        { label: "Inventory", href: "/apps/supply-chain/inventory" },
-        { label: "Manufacturing", href: "/apps/supply-chain/manufacturing" },
-        { label: "Purchase", href: "/apps/supply-chain/purchase" },
-        { label: "Maintenance", href: "/apps/supply-chain/maintenance" },
-        { label: "Quality", href: "/apps/supply-chain/quality" },
-        { label: "Barcode", href: "/apps/supply-chain/barcode" },
-      ],
-    },
-    {
-      title: "Human Resources",
-      accentClass: "text-violet-600",
-      underlineClass: "bg-violet-200",
-      links: [
-        { label: "Employees", href: "/apps/human-resources/employees" },
-        { label: "Recruitment", href: "/apps/human-resources/recruitment" },
-        { label: "Time Off", href: "/apps/human-resources/time-off" },
-        { label: "Appraisals", href: "/apps/human-resources/appraisals" },
-        { label: "Attendance", href: "/apps/human-resources/attendance" },
-        { label: "Payroll", href: "/apps/human-resources/payroll", },
-      ],
-    },
-    {
-      title: "Services",
-      accentClass: "text-cyan-600",
-      underlineClass: "bg-cyan-200",
-      links: [
-        { label: "Project", href: "/apps/services/project" },
-        { label: "Timesheets", href: "/apps/services/timesheets" },
-        { label: "Helpdesk", href: "/apps/services/helpdesk" },
-        { label: "Planning", href: "/apps/services/planning" },
-        { label: "Appointments", href: "/apps/services/appointments" },
-      ],
-    },
-    {
-      title: "Productivity",
-      accentClass: "text-purple-600",
-      underlineClass: "bg-purple-200",
-      links: [
-        { label: "Discuss", href: "/apps/productivity/discuss" },
-        {
-          label: "Artificial Intelligence",
-          href: "/apps/productivity/artificial-intelligence",
-        },
-        { label: "IoT", href: "/apps/productivity/iot" },
-      ],
-    },
-  ];
-
-  const industriesMegaMenu: MegaMenuColumn[] = [
-    {
-      title: "Retail",
-      accentClass: "text-emerald-600",
-      underlineClass: "bg-emerald-200",
-      links: [
-        { label: "Book Store", href: "/industries/retail/book-store" },
-        { label: "Clothing Store", href: "/industries/retail/clothing-store" },
-        {
-          label: "Furniture Store",
-          href: "/industries/retail/furniture-store",
-        },
-        {
-          label: "Grocery Store",
-          href: "/industries/retail/grocery-store",
-        },
-        {
-          label: "Hardware Store",
-          href: "/industries/retail/hardware-store",
-        },
-        {
-          label: "Toy Store",
-          href: "/industries/retail/toy-store",
-        },
-      
-      ],
-    },
-    {
-      title: "Food & Hospitality",
-      accentClass: "text-sky-600",
-      underlineClass: "bg-sky-200",
-      links: [
-        { label: "Restaurant", href: "/industries/food&hospitality/restaurant" },
-        { label: "Fast Food", href: "/industries/food&hospitality/fast-food" },
-        { label: "Guest House", href: "/industries/food&hospitality/guest-house" },
-        { label: "Beverage Distributor", href: "/industries/food&hospitality/beverage-distributor" },
-        { label: "Hotel", href: "/industries/food&hospitality/hotel" },
-      ],
-    },
-    {
-      title: "Real Estate",
-      accentClass: "text-rose-500",
-      underlineClass: "bg-rose-200",
-      links: [
-        { label: "Real Estate Agency", href: "/industries/realestate/real-estate-agency" },
-        { label: "Architecture Firm", href: "/industries/realestate/architecture-firm" },
-        { label: "Construction", href: "/industries/realestate/construction" },
-      ],
-    },
-    {
-      title: "Consulting",
-      accentClass: "text-indigo-500",
-      underlineClass: "bg-indigo-200",
-      links: [
-        { label: "Accounting Firm", href: "/industries/consulting/accounting-firm" },
-        { label: "Marketing Agency", href: "/industries/consulting/marketing-agency" },
-        { label: "Audit & Certification", href: "/industries/consulting/audit-certification" },
-        { label: "Talent Acquisition", href: "/industries/consulting/talent-acquisition" },
-      ],
-    },
-    {
-      title: "Manufacturing",
-      accentClass: "text-violet-600",
-      underlineClass: "bg-violet-200",
-      links: [
-        { label: "Textile", href: "/industries/manufacturing/textile" },
-        { label: "Metal", href: "/industries/manufacturing/metal" },
-        { label: "Furniture", href: "/industries/manufacturing/furniture" },
-      ],
-    },
-  ];
-
-  const communityMegaMenu: MegaMenuColumn[] = [
-    {
-      title: "Learn",
-      accentClass: "text-orange-500",
-      underlineClass: "bg-orange-200",
-      links: [
-        { label: "Tutorials", href: "/community/learn/tutorials" },
-        { label: "Documentation", href: "/community/learn/documentation" },
-        { label: "Training", href: "/community/learn/training" },
-        { label: "Blog", href: "/community/learn/blog" }
-      ],
-    },
-    {
-      title: "Get Services",
-      accentClass: "text-sky-600",
-      underlineClass: "bg-sky-200",
-      links: [
-        { label: "Find a Partner", href: "/community/get-services/find-partner" },
-        { label: "Meet an Advisor", href: "/community/get-services/meet-advisor" },
-        { label: "Implementation", href: "/community/get-services/implementation" },
-        { label: "Support", href: "/community/get-services/support" },
-        { label: "Customer Stories", href: "/community/get-services/customer-stories" },
-      ],
-    },
-    {
-      title: "Collaborate",
-      accentClass: "text-purple-600",
-      underlineClass: "bg-purple-200",
-      links: [
-        { label: "GitHub", href: "/community/collaborate/github" },
-        { label: "Forum", href: "/community/collaborate/forum" },
-        { label: "Events", href: "/community/collaborate/events" },
-        { label: "Translations", href: "/community/collaborate/translations" },
-        { label: "Become a Partner", href: "/community/collaborate/become-a-partner" },
-      ],
-    },
-  ];
-
-  const navItems: NavItem[] = [
-    { label: "Apps", href: "/apps", id: "apps", megaMenu: appsMegaMenu },
-    {
-      label: "Industries",
-      href: "/industries",
-      id: "industries",
-      megaMenu: industriesMegaMenu,
-    },
-    {
-      label: "Community",
-      href: "/community",
-      id: "community",
-      megaMenu: communityMegaMenu,
-    },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Help", href: "/help" },
-  ];
-
-  const normalizeMegaMenuLinks = (links: Array<string | MegaMenuLink>) =>
-    links.map((link) => (typeof link === "string" ? { label: link } : link));
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<MenuId | null>(null);
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
@@ -275,7 +356,9 @@ export default function Header() {
     }
 
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpenDesktopMenu(null);
+      if (event.key === "Escape") {
+        setOpenDesktopMenu(null);
+      }
     }
 
     document.addEventListener("pointerdown", onPointerDown);
@@ -290,8 +373,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className={`group relative flex items-center gap-0`}>
-          {/* Adon Text */}
+        <Link href="/" className="group relative flex items-center gap-0">
           <div className="relative">
             <span
               className="relative inline-block transition-all duration-300 group-hover:scale-105"
@@ -305,17 +387,15 @@ export default function Header() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                letterSpacing: "-0.06em",
+                letterSpacing: "-0.06em"
               }}
             >
               Adon
             </span>
 
-            {/* Animated underline */}
             <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-linear-to-r from-emerald-500 to-cyan-500 transition-all duration-500 group-hover:w-full" />
           </div>
 
-          {/* Dash separator */}
           <span
             className="mx-1 inline-block transition-all duration-300 group-hover:rotate-0"
             style={{
@@ -324,15 +404,13 @@ export default function Header() {
               fontSize: "12px",
               fontWeight: 200,
               color: "#cbd5e1",
-              transform: "rotate(-12deg)",
+              transform: "rotate(-12deg)"
             }}
           >
-            —
+            -
           </span>
 
-          {/* ERP Badge */}
           <div className="relative">
-            {/* Background glow */}
             <div className="absolute inset-0 rounded-lg bg-linear-to-r from-emerald-500/20 to-cyan-500/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
 
             <span
@@ -345,7 +423,7 @@ export default function Header() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.1em"
               }}
             >
               ERP
@@ -365,7 +443,7 @@ export default function Header() {
                     aria-controls={`${navId}-${item.id}-panel`}
                     onClick={() =>
                       setOpenDesktopMenu((prev) =>
-                        prev === item.id ? null : item.id,
+                        prev === item.id ? null : item.id
                       )
                     }
                     className={`group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
@@ -374,7 +452,7 @@ export default function Header() {
                         : "text-slate-700 hover:text-cyan-700"
                     }`}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                     <ChevronDown
                       className={`h-4 w-4 transition-transform ${
                         openDesktopMenu === item.id ? "rotate-180" : ""
@@ -386,47 +464,44 @@ export default function Header() {
                     <div
                       id={`${navId}-${item.id}-panel`}
                       role="dialog"
-                      aria-label={`${item.label} menu`}
+                      aria-label={`${t(item.labelKey)} menu`}
                       className="absolute left-1/2 top-full z-50 mt-6 w-[min(1120px,calc(100vw-2rem))] -translate-x-1/2"
                     >
                       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/60">
                         <div className="border-b border-slate-100 bg-linear-to-r from-slate-50 to-white px-8 py-5">
                           <p className="text-sm font-semibold text-slate-950">
-                            Explore Adon ERP {item.label}
+                            {t("menu.explore", { label: t(item.labelKey) })}
                           </p>
                           <p className="mt-1 text-sm text-slate-500">
-                            Premium business tools connected in one unified ERP
-                            platform.
+                            {t("menu.description")}
                           </p>
                         </div>
 
                         <div className="grid grid-cols-2 gap-x-10 gap-y-9 p-8 lg:grid-cols-4 lg:p-10">
-                          {item.megaMenu.map((col) => (
-                            <div key={col.title}>
+                          {item.megaMenu.map((column) => (
+                            <div key={column.titleKey}>
                               <div
-                                className={`text-xs font-black uppercase tracking-[0.22em] ${col.accentClass}`}
+                                className={`text-xs font-black uppercase tracking-[0.22em] ${column.accentClass}`}
                               >
-                                {col.title}
+                                {t(column.titleKey)}
                               </div>
 
                               <div
-                                className={`mt-2 h-px w-full ${col.underlineClass}`}
+                                className={`mt-2 h-px w-full ${column.underlineClass}`}
                               />
 
                               <ul className="mt-4 space-y-2.5">
-                                {normalizeMegaMenuLinks(col.links).map(
-                                  (link) => (
-                                    <li key={`${col.title}:${link.label}`}>
-                                      <Link
-                                        href={link.href ?? item.href}
-                                        onClick={() => setOpenDesktopMenu(null)}
-                                        className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-600 transition-all hover:bg-slate-50 hover:text-cyan-700"
-                                      >
-                                        {link.label}
-                                      </Link>
-                                    </li>
-                                  ),
-                                )}
+                                {column.links.map((link) => (
+                                  <li key={`${column.titleKey}:${link.href}`}>
+                                    <Link
+                                      href={link.href}
+                                      onClick={() => setOpenDesktopMenu(null)}
+                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-600 transition-all hover:bg-slate-50 hover:text-cyan-700"
+                                    >
+                                      {t(link.labelKey)}
+                                    </Link>
+                                  </li>
+                                ))}
                               </ul>
                             </div>
                           ))}
@@ -438,10 +513,10 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="relative text-sm font-semibold text-slate-700 transition-colors hover:text-cyan-700"
+                  className="group relative text-sm font-semibold text-slate-700 transition-colors hover:text-cyan-700"
                 >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-linear-to-r from-cyan-500 to-emerald-500 transition-all duration-300 hover:w-full" />
+                  {t(item.labelKey)}
+                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-linear-to-r from-cyan-500 to-emerald-500 transition-all duration-300 group-hover:w-full" />
                 </Link>
               )}
             </div>
@@ -449,24 +524,26 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher />
+
           <Link
             href="/login"
             className="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
           >
-            Sign in
+            {t("nav.signIn")}
           </Link>
 
           <Link
             href="/pricing"
             className="rounded-xl bg-linear-to-r from-[#5B3B5F] to-cyan-700 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 hover:shadow-xl"
           >
-            Try it free
+            {t("nav.tryFree")}
           </Link>
         </div>
 
         <button
           type="button"
-          aria-label="Toggle menu"
+          aria-label={t("mobileMenuLabel")}
           className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 md:hidden"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
         >
@@ -476,25 +553,29 @@ export default function Header() {
 
       {mobileMenuOpen && (
         <div className="border-t border-slate-200 bg-white md:hidden">
-          <div className="space-y-1 px-4 py-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <div className="space-y-4 px-4 py-4">
+            <LanguageSwitcher mobile />
 
-            <div className="grid gap-3 pt-4">
+            <div className="space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700"
+                >
+                  {t(item.labelKey)}
+                </Link>
+              ))}
+            </div>
+
+            <div className="grid gap-3 pt-2">
               <Link
                 href="/login"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700"
               >
-                Sign in
+                {t("nav.signIn")}
               </Link>
 
               <Link
@@ -502,7 +583,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl bg-linear-to-r from-[#5B3B5F] to-cyan-700 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-cyan-500/20"
               >
-                Try it free
+                {t("nav.tryFree")}
               </Link>
             </div>
           </div>
