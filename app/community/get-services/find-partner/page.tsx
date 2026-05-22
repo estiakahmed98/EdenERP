@@ -1,3 +1,5 @@
-export default function FindAPartnerPage() {
-  return <div>Find a Partner Page</div>;
+import PartnersPage from "@/components/landing/community/get services/PartnersPage";
+
+export default function Page() {
+  return <PartnersPage />;
 }
