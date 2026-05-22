@@ -458,9 +458,7 @@ function Hero() {
         </div>
 
         <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(52px,8vw,96px)] font-bold leading-[1.05] tracking-[-1px] text-[#1a1a2e]">
-          Simple, efficient,
-          <br />
-          yet{" "}
+          Simple, efficient, <br />
           <HandText>
             <TypeWriter
               words={[

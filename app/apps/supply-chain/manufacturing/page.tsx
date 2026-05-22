@@ -477,16 +477,18 @@ export default function MRPLandingSections() {
                 </p>
 
                 <div className="mt-5 space-y-3">
-                  {["Scan component", "Start operation", "Validate quantity"].map(
-                    (item) => (
-                      <div
-                        key={item}
-                        className="rounded-lg bg-white px-4 py-3 text-center text-xs font-bold text-slate-600 shadow-sm"
-                      >
-                        {item}
-                      </div>
-                    ),
-                  )}
+                  {[
+                    "Scan component",
+                    "Start operation",
+                    "Validate quantity",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-lg bg-white px-4 py-3 text-center text-xs font-bold text-slate-600 shadow-sm"
+                    >
+                      {item}
+                    </div>
+                  ))}
                 </div>
 
                 <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white">
@@ -771,7 +773,7 @@ export default function MRPLandingSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
