@@ -1,3 +1,5 @@
-export default function BlogPage() {
-  return <div>Blog Page</div>;
+import BlogPage from "@/components/landing/community/blog/BlogPage";
+
+export default function Page() {
+  return <BlogPage />;
 }
