@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import { ChevronDown, Menu, Sparkles, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, Sparkles, X } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 type MegaMenuLink = {
   label: string;
@@ -477,16 +478,56 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="border-t border-slate-200 bg-white md:hidden">
           <div className="space-y-1 px-4 py-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.megaMenu ? (
+                <Collapsible key={item.href} defaultOpen>
+                  <CollapsibleTrigger asChild>
+                    <button
+                      type="button"
+                      className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700"
+                    >
+                      {item.label}
+                      <ChevronRight className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-90" />
+                    </button>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="overflow-hidden pl-2 transition-all duration-200">
+                    <div className="border-l-2 border-slate-200 pl-4">
+                      {item.megaMenu.map((col) => (
+                        <div key={col.title} className="py-3">
+                          <div
+                            className={`text-[11px] font-black uppercase tracking-[0.18em] ${col.accentClass}`}
+                          >
+                            {col.title}
+                          </div>
+                          <ul className="mt-2 space-y-1">
+                            {normalizeMegaMenuLinks(col.links).map((link) => (
+                              <li key={`${col.title}:${link.label}`}>
+                                <Link
+                                  href={link.href ?? item.href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-500 transition-colors hover:bg-slate-50 hover:text-cyan-700"
+                                >
+                                  {link.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
 
             <div className="grid gap-3 pt-4">
               <Link
