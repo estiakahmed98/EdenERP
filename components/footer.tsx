@@ -20,8 +20,8 @@ const footerSections: FooterSection[] = [
       { labelKey: "links.apps", href: "/apps" },
       { labelKey: "links.industries", href: "/industries" },
       { labelKey: "links.pricing", href: "/pricing" },
-      { labelKey: "links.help", href: "/help" }
-    ]
+      { labelKey: "links.help", href: "/help" },
+    ],
   },
   {
     titleKey: "sections.company",
@@ -29,8 +29,8 @@ const footerSections: FooterSection[] = [
       { labelKey: "links.community", href: "/community" },
       { labelKey: "links.learn", href: "/community/learn" },
       { labelKey: "links.getServices", href: "/community/get-services" },
-      { labelKey: "links.collaborate", href: "/community/collaborate" }
-    ]
+      { labelKey: "links.collaborate", href: "/community/collaborate" },
+    ],
   },
   {
     titleKey: "sections.support",
@@ -38,11 +38,11 @@ const footerSections: FooterSection[] = [
       { labelKey: "links.helpCenter", href: "/help" },
       {
         labelKey: "links.documentation",
-        href: "/community/learn/documentation"
+        href: "/community/learn/documentation",
       },
       { labelKey: "links.tutorials", href: "/community/learn/tutorials" },
-      { labelKey: "links.training", href: "/community/learn/training" }
-    ]
+      { labelKey: "links.training", href: "/community/learn/training" },
+    ],
   },
   {
     titleKey: "sections.legal",
@@ -50,9 +50,9 @@ const footerSections: FooterSection[] = [
       { labelKey: "links.privacy", href: "#" },
       { labelKey: "links.terms", href: "#" },
       { labelKey: "links.cookies", href: "#" },
-      { labelKey: "links.gdpr", href: "#" }
-    ]
-  }
+      { labelKey: "links.gdpr", href: "#" },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -72,7 +72,7 @@ export default function Footer() {
                 className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105"
                 style={{
                   fontFamily:
-                    '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive'
+                    '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
                 }}
               >
                 Adon
@@ -102,13 +102,15 @@ export default function Footer() {
               </span>
             </Link>
 
-
             <p className="text-sm leading-relaxed text-slate-300">
               {t("description")}
             </p>
 
             <div className="mt-6 flex gap-4">
-              <a href="#" className="text-slate-300 transition-colors hover:text-cyan-300">
+              <a
+                href="#"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
+              >
                 <Twitter size={20} />
               </a>
               <a
@@ -141,10 +143,9 @@ export default function Footer() {
                 {t(section.titleKey)}
               </h3>
 
-
               <ul className="space-y-2">
                 {section.links.map((link) => (
-                  <li key={`${section.titleKey}:${link.href}`}>
+                  <li key={`${section.titleKey}:${link.labelKey}`}>
                     <Link
                       href={link.href}
                       className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
@@ -164,15 +165,6 @@ export default function Footer() {
           <p className="text-sm text-slate-400">
             {t("copyright", { year: currentYear })}
           </p>
-
-          <div className="flex gap-6">
-            <Link
-              href="/pricing"
-              className="rounded-xl bg-linear-to-r from-[#5B3B5F] to-cyan-700 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              {t("tryFree")}
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

@@ -3,6 +3,6 @@
  * Add more locales as your app requires.
  */
 module.exports = {
-  locales: ["en"],
+  locales: ["en", "bn"],
   defaultLocale: "en",
 };

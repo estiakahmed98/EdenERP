@@ -5,7 +5,6 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
-import LanguageSwitcher from "@/components/language-switcher";
 
 type MegaMenuLink = {
   labelKey: string;
@@ -46,8 +45,8 @@ const appsMegaMenu: MegaMenuColumn[] = [
       { labelKey: "menu.apps.expenses", href: "/apps/Finance/Expenses" },
       { labelKey: "menu.apps.spreadsheet", href: "/apps/Finance/Spreadsheet" },
       { labelKey: "menu.apps.documents", href: "/apps/Finance/Documents" },
-      { labelKey: "menu.apps.sign", href: "/apps/Finance/esign" }
-    ]
+      { labelKey: "menu.apps.sign", href: "/apps/Finance/esign" },
+    ],
   },
   {
     titleKey: "menu.apps.sales",
@@ -59,14 +58,14 @@ const appsMegaMenu: MegaMenuColumn[] = [
       { labelKey: "menu.apps.posShop", href: "/apps/sales/pos" },
       {
         labelKey: "menu.apps.posRestaurant",
-        href: "/apps/sales/pos-restaurant"
+        href: "/apps/sales/pos-restaurant",
       },
       {
         labelKey: "menu.apps.subscriptions",
-        href: "/apps/sales/subscriptions"
+        href: "/apps/sales/subscriptions",
       },
-      { labelKey: "menu.apps.rental", href: "/apps/sales/rental" }
-    ]
+      { labelKey: "menu.apps.rental", href: "/apps/sales/rental" },
+    ],
   },
   {
     titleKey: "menu.apps.websites",
@@ -78,8 +77,8 @@ const appsMegaMenu: MegaMenuColumn[] = [
       { labelKey: "menu.apps.blog", href: "/apps/website/blog" },
       { labelKey: "menu.apps.forum", href: "/apps/website/forum" },
       { labelKey: "menu.apps.liveChat", href: "/apps/website/live-chat" },
-      { labelKey: "menu.apps.elearning", href: "/apps/website/elearning" }
-    ]
+      { labelKey: "menu.apps.elearning", href: "/apps/website/elearning" },
+    ],
   },
   {
     titleKey: "menu.apps.supplyChain",
@@ -89,16 +88,16 @@ const appsMegaMenu: MegaMenuColumn[] = [
       { labelKey: "menu.apps.inventory", href: "/apps/supply-chain/inventory" },
       {
         labelKey: "menu.apps.manufacturing",
-        href: "/apps/supply-chain/manufacturing"
+        href: "/apps/supply-chain/manufacturing",
       },
       { labelKey: "menu.apps.purchase", href: "/apps/supply-chain/purchase" },
       {
         labelKey: "menu.apps.maintenance",
-        href: "/apps/supply-chain/maintenance"
+        href: "/apps/supply-chain/maintenance",
       },
       { labelKey: "menu.apps.quality", href: "/apps/supply-chain/quality" },
-      { labelKey: "menu.apps.barcode", href: "/apps/supply-chain/barcode" }
-    ]
+      { labelKey: "menu.apps.barcode", href: "/apps/supply-chain/barcode" },
+    ],
   },
   {
     titleKey: "menu.apps.humanResources",
@@ -107,23 +106,23 @@ const appsMegaMenu: MegaMenuColumn[] = [
     links: [
       {
         labelKey: "menu.apps.employees",
-        href: "/apps/human-resources/employees"
+        href: "/apps/human-resources/employees",
       },
       {
         labelKey: "menu.apps.recruitment",
-        href: "/apps/human-resources/recruitment"
+        href: "/apps/human-resources/recruitment",
       },
       { labelKey: "menu.apps.timeOff", href: "/apps/human-resources/time-off" },
       {
         labelKey: "menu.apps.appraisals",
-        href: "/apps/human-resources/appraisals"
+        href: "/apps/human-resources/appraisals",
       },
       {
         labelKey: "menu.apps.attendance",
-        href: "/apps/human-resources/attendance"
+        href: "/apps/human-resources/attendance",
       },
-      { labelKey: "menu.apps.payroll", href: "/apps/human-resources/payroll" }
-    ]
+      { labelKey: "menu.apps.payroll", href: "/apps/human-resources/payroll" },
+    ],
   },
   {
     titleKey: "menu.apps.services",
@@ -136,9 +135,9 @@ const appsMegaMenu: MegaMenuColumn[] = [
       { labelKey: "menu.apps.planning", href: "/apps/services/planning" },
       {
         labelKey: "menu.apps.appointments",
-        href: "/apps/services/appointments"
-      }
-    ]
+        href: "/apps/services/appointments",
+      },
+    ],
   },
   {
     titleKey: "menu.apps.productivity",
@@ -148,11 +147,11 @@ const appsMegaMenu: MegaMenuColumn[] = [
       { labelKey: "menu.apps.discuss", href: "/apps/productivity/discuss" },
       {
         labelKey: "menu.apps.artificialIntelligence",
-        href: "/apps/productivity/artificial-intelligence"
+        href: "/apps/productivity/artificial-intelligence",
       },
-      { labelKey: "menu.apps.iot", href: "/apps/productivity/iot" }
-    ]
-  }
+      { labelKey: "menu.apps.iot", href: "/apps/productivity/iot" },
+    ],
+  },
 ];
 
 const industriesMegaMenu: MegaMenuColumn[] = [
@@ -161,25 +160,31 @@ const industriesMegaMenu: MegaMenuColumn[] = [
     accentClass: "text-emerald-600",
     underlineClass: "bg-emerald-200",
     links: [
-      { labelKey: "menu.industries.bookStore", href: "/industries/retail/book-store" },
+      {
+        labelKey: "menu.industries.bookStore",
+        href: "/industries/retail/book-store",
+      },
       {
         labelKey: "menu.industries.clothingStore",
-        href: "/industries/retail/clothing-store"
+        href: "/industries/retail/clothing-store",
       },
       {
         labelKey: "menu.industries.furnitureStore",
-        href: "/industries/retail/furniture-store"
+        href: "/industries/retail/furniture-store",
       },
       {
         labelKey: "menu.industries.groceryStore",
-        href: "/industries/retail/grocery-store"
+        href: "/industries/retail/grocery-store",
       },
       {
         labelKey: "menu.industries.hardwareStore",
-        href: "/industries/retail/hardware-store"
+        href: "/industries/retail/hardware-store",
       },
-      { labelKey: "menu.industries.toyStore", href: "/industries/retail/toy-store" }
-    ]
+      {
+        labelKey: "menu.industries.toyStore",
+        href: "/industries/retail/toy-store",
+      },
+    ],
   },
   {
     titleKey: "menu.industries.foodHospitality",
@@ -188,22 +193,25 @@ const industriesMegaMenu: MegaMenuColumn[] = [
     links: [
       {
         labelKey: "menu.industries.restaurant",
-        href: "/industries/food&hospitality/restaurant"
+        href: "/industries/food&hospitality/restaurant",
       },
       {
         labelKey: "menu.industries.fastFood",
-        href: "/industries/food&hospitality/fast-food"
+        href: "/industries/food&hospitality/fast-food",
       },
       {
         labelKey: "menu.industries.guestHouse",
-        href: "/industries/food&hospitality/guest-house"
+        href: "/industries/food&hospitality/guest-house",
       },
       {
         labelKey: "menu.industries.beverageDistributor",
-        href: "/industries/food&hospitality/beverage-distributor"
+        href: "/industries/food&hospitality/beverage-distributor",
       },
-      { labelKey: "menu.industries.hotel", href: "/industries/food&hospitality/hotel" }
-    ]
+      {
+        labelKey: "menu.industries.hotel",
+        href: "/industries/food&hospitality/hotel",
+      },
+    ],
   },
   {
     titleKey: "menu.industries.realEstate",
@@ -212,17 +220,17 @@ const industriesMegaMenu: MegaMenuColumn[] = [
     links: [
       {
         labelKey: "menu.industries.realEstateAgency",
-        href: "/industries/realestate/real-estate-agency"
+        href: "/industries/realestate/real-estate-agency",
       },
       {
         labelKey: "menu.industries.architectureFirm",
-        href: "/industries/realestate/architecture-firm"
+        href: "/industries/realestate/architecture-firm",
       },
       {
         labelKey: "menu.industries.construction",
-        href: "/industries/realestate/construction"
-      }
-    ]
+        href: "/industries/realestate/construction",
+      },
+    ],
   },
   {
     titleKey: "menu.industries.consulting",
@@ -231,32 +239,41 @@ const industriesMegaMenu: MegaMenuColumn[] = [
     links: [
       {
         labelKey: "menu.industries.accountingFirm",
-        href: "/industries/consulting/accounting-firm"
+        href: "/industries/consulting/accounting-firm",
       },
       {
         labelKey: "menu.industries.marketingAgency",
-        href: "/industries/consulting/marketing-agency"
+        href: "/industries/consulting/marketing-agency",
       },
       {
         labelKey: "menu.industries.auditCertification",
-        href: "/industries/consulting/audit-certification"
+        href: "/industries/consulting/audit-certification",
       },
       {
         labelKey: "menu.industries.talentAcquisition",
-        href: "/industries/consulting/talent-acquisition"
-      }
-    ]
+        href: "/industries/consulting/talent-acquisition",
+      },
+    ],
   },
   {
     titleKey: "menu.industries.manufacturing",
     accentClass: "text-violet-600",
     underlineClass: "bg-violet-200",
     links: [
-      { labelKey: "menu.industries.textile", href: "/industries/manufacturing/textile" },
-      { labelKey: "menu.industries.metal", href: "/industries/manufacturing/metal" },
-      { labelKey: "menu.industries.furniture", href: "/industries/manufacturing/furniture" }
-    ]
-  }
+      {
+        labelKey: "menu.industries.textile",
+        href: "/industries/manufacturing/textile",
+      },
+      {
+        labelKey: "menu.industries.metal",
+        href: "/industries/manufacturing/metal",
+      },
+      {
+        labelKey: "menu.industries.furniture",
+        href: "/industries/manufacturing/furniture",
+      },
+    ],
+  },
 ];
 
 const communityMegaMenu: MegaMenuColumn[] = [
@@ -265,14 +282,20 @@ const communityMegaMenu: MegaMenuColumn[] = [
     accentClass: "text-orange-500",
     underlineClass: "bg-orange-200",
     links: [
-      { labelKey: "menu.community.tutorials", href: "/community/learn/tutorials" },
+      {
+        labelKey: "menu.community.tutorials",
+        href: "/community/learn/tutorials",
+      },
       {
         labelKey: "menu.community.documentation",
-        href: "/community/learn/documentation"
+        href: "/community/learn/documentation",
       },
-      { labelKey: "menu.community.training", href: "/community/learn/training" },
-      { labelKey: "menu.community.blog", href: "/community/learn/blog" }
-    ]
+      {
+        labelKey: "menu.community.training",
+        href: "/community/learn/training",
+      },
+      { labelKey: "menu.community.blog", href: "/community/learn/blog" },
+    ],
   },
   {
     titleKey: "menu.community.getServices",
@@ -281,41 +304,53 @@ const communityMegaMenu: MegaMenuColumn[] = [
     links: [
       {
         labelKey: "menu.community.findPartner",
-        href: "/community/get-services/find-partner"
+        href: "/community/get-services/find-partner",
       },
       {
         labelKey: "menu.community.meetAdvisor",
-        href: "/community/get-services/meet-advisor"
+        href: "/community/get-services/meet-advisor",
       },
       {
         labelKey: "menu.community.implementation",
-        href: "/community/get-services/implementation"
+        href: "/community/get-services/implementation",
       },
-      { labelKey: "menu.community.support", href: "/community/get-services/support" },
+      {
+        labelKey: "menu.community.support",
+        href: "/community/get-services/support",
+      },
       {
         labelKey: "menu.community.customerStories",
-        href: "/community/get-services/customer-stories"
-      }
-    ]
+        href: "/community/get-services/customer-stories",
+      },
+    ],
   },
   {
     titleKey: "menu.community.collaborate",
     accentClass: "text-purple-600",
     underlineClass: "bg-purple-200",
     links: [
-      { labelKey: "menu.community.github", href: "/community/collaborate/github" },
-      { labelKey: "menu.community.forum", href: "/community/collaborate/forum" },
-      { labelKey: "menu.community.events", href: "/community/collaborate/events" },
+      {
+        labelKey: "menu.community.github",
+        href: "/community/collaborate/github",
+      },
+      {
+        labelKey: "menu.community.forum",
+        href: "/community/collaborate/forum",
+      },
+      {
+        labelKey: "menu.community.events",
+        href: "/community/collaborate/events",
+      },
       {
         labelKey: "menu.community.translations",
-        href: "/community/collaborate/translations"
+        href: "/community/collaborate/translations",
       },
       {
         labelKey: "menu.community.becomePartner",
-        href: "/community/collaborate/become-a-partner"
-      }
-    ]
-  }
+        href: "/community/collaborate/become-a-partner",
+      },
+    ],
+  },
 ];
 
 const navItems: NavItem[] = [
@@ -324,16 +359,16 @@ const navItems: NavItem[] = [
     labelKey: "nav.industries",
     href: "/industries",
     id: "industries",
-    megaMenu: industriesMegaMenu
+    megaMenu: industriesMegaMenu,
   },
   {
     labelKey: "nav.community",
     href: "/community",
     id: "community",
-    megaMenu: communityMegaMenu
+    megaMenu: communityMegaMenu,
   },
   { labelKey: "nav.pricing", href: "/pricing" },
-  { labelKey: "nav.help", href: "/help" }
+  { labelKey: "nav.help", href: "/help" },
 ];
 
 export default function Header() {
@@ -387,7 +422,7 @@ export default function Header() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                letterSpacing: "-0.06em"
+                letterSpacing: "-0.06em",
               }}
             >
               Adon
@@ -404,7 +439,7 @@ export default function Header() {
               fontSize: "12px",
               fontWeight: 200,
               color: "#cbd5e1",
-              transform: "rotate(-12deg)"
+              transform: "rotate(-12deg)",
             }}
           >
             -
@@ -423,7 +458,7 @@ export default function Header() {
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
-                letterSpacing: "0.1em"
+                letterSpacing: "0.1em",
               }}
             >
               ERP
@@ -443,7 +478,7 @@ export default function Header() {
                     aria-controls={`${navId}-${item.id}-panel`}
                     onClick={() =>
                       setOpenDesktopMenu((prev) =>
-                        prev === item.id ? null : item.id
+                        prev === item.id ? null : item.id,
                       )
                     }
                     className={`group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
@@ -524,20 +559,11 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <LanguageSwitcher />
-
           <Link
             href="/auth/signin"
             className="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
           >
             {t("nav.signIn")}
-          </Link>
-
-          <Link
-            href="/pricing"
-            className="rounded-xl bg-linear-to-r from-[#5B3B5F] to-cyan-700 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 hover:shadow-xl"
-          >
-            {t("nav.tryFree")}
           </Link>
         </div>
 
@@ -554,8 +580,6 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="border-t border-slate-200 bg-white md:hidden">
           <div className="space-y-4 px-4 py-4">
-            <LanguageSwitcher mobile />
-
             <div className="space-y-1">
               {navItems.map((item) => (
                 <Link

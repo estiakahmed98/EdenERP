@@ -224,10 +224,10 @@ export default function AdonAppsSection() {
   const [showAlternatives, setShowAlternatives] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,_#ffffff_0%,_#f8f5ff_48%,_#ffffff_100%)] py-20 sm:py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-linear-gradient(180deg,_#ffffff_0%,_#f8f5ff_48%,_#ffffff_100%) py-20 sm:py-24 lg:py-32">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-[-8rem] top-24 h-72 w-72 rounded-full bg-violet-200/30 blur-3xl" />
-        <div className="absolute right-[-8rem] top-72 h-80 w-80 rounded-full bg-amber-200/35 blur-3xl" />
+        <div className="absolute -left-32 top-24 h-72 w-72 rounded-full bg-violet-200/30 blur-3xl" />
+        <div className="absolute -right-32 top-72 h-80 w-80 rounded-full bg-amber-200/35 blur-3xl" />
         <div className="absolute bottom-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-emerald-100/40 blur-3xl" />
       </div>
 
@@ -285,7 +285,7 @@ export default function AdonAppsSection() {
         <div className="mt-14 grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="space-y-6 lg:sticky lg:top-24">
             <div className="overflow-hidden rounded-[2.5rem] border border-white/90 bg-white/85 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur-xl">
-              <div className="rounded-[2rem] bg-[linear-gradient(135deg,_#111827_0%,_#5b21b6_58%,_#f59e0b_130%)] p-6 text-white">
+              <div className="rounded-4xl bg-linear-gradient(135deg,_#111827_0%,_#5b21b6_58%,_#f59e0b_130%) p-6 text-white">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm font-medium text-white/65">
@@ -333,7 +333,7 @@ export default function AdonAppsSection() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
-                  className="rounded-[2rem] border border-violet-100 bg-violet-50/80 p-6"
+                  className="rounded-4xl border border-violet-100 bg-violet-50/80 p-6"
                 >
                   <p className="text-sm font-semibold text-violet-800">
                     Without AdonERP
@@ -349,7 +349,7 @@ export default function AdonAppsSection() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
-                  className="rounded-[2rem] border border-emerald-100 bg-emerald-50/80 p-6"
+                  className="rounded-4xl border border-emerald-100 bg-emerald-50/80 p-6"
                 >
                   <p className="text-sm font-semibold text-emerald-800">
                     With AdonERP
@@ -393,9 +393,9 @@ export default function AdonAppsSection() {
                       duration: 0.35,
                       delay: Math.min(index * 0.025, 0.35),
                     }}
-                    className="group relative min-h-[9.5rem] overflow-hidden rounded-[1.6rem] border border-slate-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-xl"
+                    className="group relative min-h-38 overflow-hidden rounded-[1.6rem] border border-slate-100 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-xl"
                   >
-                    <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,_rgba(109,40,217,0.1),rgba(245,158,11,0.28),rgba(16,185,129,0.12))] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-x-0 top-0 h-1 bg-linear-gradient(90deg,_rgba(109,40,217,0.1),rgba(245,158,11,0.28),rgba(16,185,129,0.12)) opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-white">

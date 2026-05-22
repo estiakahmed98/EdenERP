@@ -109,7 +109,7 @@ export default function SupportPage() {
     <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#faf5ff_18%,_#f4f4f4_100%)] font-sans text-slate-800">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-[28rem] bg-[radial-gradient(circle_at_15%_12%,rgba(147,51,234,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(168,85,247,0.06),transparent_24%)]" />
-        <div className="absolute left-0 top-32 -z-5 h-[420px] w-[120%] rounded-full bg-purple-50/50" />
+        <div className="absolute left-0 top-32 -z-5 h-105 w-[120%] rounded-full bg-purple-50/50" />
 
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="text-center">
