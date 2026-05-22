@@ -84,7 +84,7 @@ export default function DiscussLandingPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Odoo Discuss is the fully integrated communication hub for messages,
+            Adon Discuss is the fully integrated communication hub for messages,
             channels, calls, notifications, and business conversations.
           </p>
 
@@ -158,8 +158,14 @@ export default function DiscussLandingPage() {
                   </div>
 
                   {[
-                    ["Audrey Peterson", "The new dashboard is ready for review."],
-                    ["Mitchell Admin", "Great work! Please share it with sales."],
+                    [
+                      "Audrey Peterson",
+                      "The new dashboard is ready for review.",
+                    ],
+                    [
+                      "Mitchell Admin",
+                      "Great work! Please share it with sales.",
+                    ],
                     ["Joel Willis", "I added the report and screenshots."],
                   ].map(([name, message], index) => (
                     <div key={message} className="mb-4 flex gap-3">
@@ -169,7 +175,9 @@ export default function DiscussLandingPage() {
                         className="h-10 w-10 rounded-full object-cover"
                       />
                       <div className="rounded-xl bg-[#e9fbf8] px-4 py-3">
-                        <p className="text-sm font-bold text-slate-900">{name}</p>
+                        <p className="text-sm font-bold text-slate-900">
+                          {name}
+                        </p>
                         <p className="mt-1 text-sm text-slate-600">{message}</p>
                       </div>
                     </div>
@@ -213,7 +221,7 @@ export default function DiscussLandingPage() {
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Odoo Discuss: a fully{" "}
+            Adon Discuss: a fully{" "}
             <HandUnderline color="bg-sky-300">
               <span>integrated</span>
             </HandUnderline>
@@ -237,7 +245,9 @@ export default function DiscussLandingPage() {
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#714b67] text-xs font-bold text-white">
                     {index + 1}
                   </span>
-                  <span className="text-sm font-bold text-slate-700">{item}</span>
+                  <span className="text-sm font-bold text-slate-700">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -298,16 +308,16 @@ export default function DiscussLandingPage() {
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Odoo Discuss is integrated throughout all
+            Adon Discuss is integrated throughout all
             <br />
             the{" "}
             <HandUnderline color="bg-rose-300">
-              <span>Odoo apps</span>
+              <span>Adon apps</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
-            Communicate with every single Odoo app.
+            Communicate with every single Adon app.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-3xl">
@@ -360,7 +370,7 @@ export default function DiscussLandingPage() {
               <HandUnderline color="bg-sky-300">
                 <span>communications</span>
               </HandUnderline>{" "}
-              hub in Odoo
+              hub in Adon
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
@@ -371,22 +381,25 @@ export default function DiscussLandingPage() {
 
           <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 md:grid-cols-3">
-              {["Sales", "Inventory", "Project", "Accounting", "Website", "CRM"].map(
-                (app, index) => (
-                  <div
-                    key={app}
-                    className="rounded-lg bg-slate-50 p-4 text-center"
-                  >
-                    <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#02a6a6] shadow-sm">
-                      <CheckCircle2 className="h-5 w-5" />
-                    </div>
-                    <p className="mt-3 text-sm font-bold text-slate-900">
-                      {app}
-                    </p>
-                    <p className="mt-1 text-xs text-slate-400">Connected</p>
+              {[
+                "Sales",
+                "Inventory",
+                "Project",
+                "Accounting",
+                "Website",
+                "CRM",
+              ].map((app, index) => (
+                <div
+                  key={app}
+                  className="rounded-lg bg-slate-50 p-4 text-center"
+                >
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#02a6a6] shadow-sm">
+                    <CheckCircle2 className="h-5 w-5" />
                   </div>
-                ),
-              )}
+                  <p className="mt-3 text-sm font-bold text-slate-900">{app}</p>
+                  <p className="mt-1 text-xs text-slate-400">Connected</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -508,7 +521,7 @@ export default function DiscussLandingPage() {
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
               Never lose track of important messages, mentions, assignments, and
-              updates from every Odoo app.
+              updates from every Adon app.
             </p>
           </div>
         </div>
@@ -716,7 +729,7 @@ export default function DiscussLandingPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -727,8 +740,8 @@ export default function DiscussLandingPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  The easy to use interface lets users discuss tasks and projects
-                  while keeping business communication organized.
+                  The easy to use interface lets users discuss tasks and
+                  projects while keeping business communication organized.
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">

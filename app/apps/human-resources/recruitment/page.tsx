@@ -187,27 +187,48 @@ export default function RecruitmentATSPage() {
                 {[
                   {
                     title: "New Applications",
-                    cards: ["Graphic Designer", "Sales Executive", "QA Engineer"],
+                    cards: [
+                      "Graphic Designer",
+                      "Sales Executive",
+                      "QA Engineer",
+                    ],
                   },
                   {
                     title: "Initial Qualification",
-                    cards: ["Frontend Developer", "Marketing Manager", "HR Officer"],
+                    cards: [
+                      "Frontend Developer",
+                      "Marketing Manager",
+                      "HR Officer",
+                    ],
                   },
                   {
                     title: "First Interview",
-                    cards: ["Product Designer", "Account Manager", "UX Researcher"],
+                    cards: [
+                      "Product Designer",
+                      "Account Manager",
+                      "UX Researcher",
+                    ],
                   },
                   {
                     title: "Contract Proposal",
-                    cards: ["Senior Developer", "Operations Lead", "SEO Specialist"],
+                    cards: [
+                      "Senior Developer",
+                      "Operations Lead",
+                      "SEO Specialist",
+                    ],
                   },
                 ].map((column, columnIndex) => (
-                  <div key={column.title} className="rounded-lg bg-slate-50 p-3">
+                  <div
+                    key={column.title}
+                    className="rounded-lg bg-slate-50 p-3"
+                  >
                     <div className="mb-3 flex items-center justify-between">
                       <p className="text-sm font-bold text-slate-900">
                         {column.title}
                       </p>
-                      <span className="text-lg font-bold text-slate-400">+</span>
+                      <span className="text-lg font-bold text-slate-400">
+                        +
+                      </span>
                     </div>
 
                     <div className="space-y-3">
@@ -228,7 +249,11 @@ export default function RecruitmentATSPage() {
                               Interview
                             </span>
                             <img
-                              src={avatars[(columnIndex + cardIndex) % avatars.length]}
+                              src={
+                                avatars[
+                                  (columnIndex + cardIndex) % avatars.length
+                                ]
+                              }
                               alt="Candidate"
                               className="h-6 w-6 rounded-full object-cover"
                             />
@@ -270,27 +295,29 @@ export default function RecruitmentATSPage() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
-                {["Open Jobs", "In Progress", "Hired"].map((column, columnIndex) => (
-                  <div key={column} className="rounded-lg bg-slate-50 p-4">
-                    <p className="mb-4 text-left text-sm font-bold text-slate-900">
-                      {column}
-                    </p>
+                {["Open Jobs", "In Progress", "Hired"].map(
+                  (column, columnIndex) => (
+                    <div key={column} className="rounded-lg bg-slate-50 p-4">
+                      <p className="mb-4 text-left text-sm font-bold text-slate-900">
+                        {column}
+                      </p>
 
-                    {Array.from({ length: 3 }).map((_, index) => (
-                      <div
-                        key={index}
-                        className="mb-3 rounded-lg bg-white p-4 text-left shadow-sm"
-                      >
-                        <div className="h-3 w-3/4 rounded bg-[#714b67]" />
-                        <div className="mt-2 h-2 w-full rounded bg-slate-100" />
-                        <div className="mt-2 h-2 w-2/3 rounded bg-slate-100" />
-                        <p className="mt-3 text-xs text-slate-400">
-                          {columnIndex + index + 2} candidates
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                ))}
+                      {Array.from({ length: 3 }).map((_, index) => (
+                        <div
+                          key={index}
+                          className="mb-3 rounded-lg bg-white p-4 text-left shadow-sm"
+                        >
+                          <div className="h-3 w-3/4 rounded bg-[#714b67]" />
+                          <div className="mt-2 h-2 w-full rounded bg-slate-100" />
+                          <div className="mt-2 h-2 w-2/3 rounded bg-slate-100" />
+                          <p className="mt-3 text-xs text-slate-400">
+                            {columnIndex + index + 2} candidates
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </div>
@@ -319,46 +346,48 @@ export default function RecruitmentATSPage() {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
-                {["Qualified", "Interview", "Contract"].map((stage, stageIndex) => (
-                  <div key={stage} className="rounded-lg bg-slate-50 p-4">
-                    <p className="mb-4 text-left text-sm font-bold text-slate-900">
-                      {stage}
-                    </p>
+                {["Qualified", "Interview", "Contract"].map(
+                  (stage, stageIndex) => (
+                    <div key={stage} className="rounded-lg bg-slate-50 p-4">
+                      <p className="mb-4 text-left text-sm font-bold text-slate-900">
+                        {stage}
+                      </p>
 
-                    {candidates.slice(0, 3).map((candidate, index) => (
-                      <div
-                        key={`${stage}-${candidate.name}`}
-                        className="mb-3 rounded-lg bg-white p-4 text-left shadow-sm"
-                      >
-                        <div className="flex gap-3">
-                          <img
-                            src={candidate.image}
-                            alt={candidate.name}
-                            className="h-10 w-10 rounded-full object-cover"
-                          />
+                      {candidates.slice(0, 3).map((candidate, index) => (
+                        <div
+                          key={`${stage}-${candidate.name}`}
+                          className="mb-3 rounded-lg bg-white p-4 text-left shadow-sm"
+                        >
+                          <div className="flex gap-3">
+                            <img
+                              src={candidate.image}
+                              alt={candidate.name}
+                              className="h-10 w-10 rounded-full object-cover"
+                            />
 
-                          <div>
-                            <p className="text-sm font-bold text-slate-900">
-                              {candidate.name}
-                            </p>
-                            <p className="text-xs text-slate-400">
-                              {candidate.role}
-                            </p>
+                            <div>
+                              <p className="text-sm font-bold text-slate-900">
+                                {candidate.name}
+                              </p>
+                              <p className="text-xs text-slate-400">
+                                {candidate.role}
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="mt-3 flex items-center gap-2">
+                            <span className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600">
+                              {stageIndex + index + 1} stars
+                            </span>
+                            <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white">
+                              Interview
+                            </span>
                           </div>
                         </div>
-
-                        <div className="mt-3 flex items-center gap-2">
-                          <span className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600">
-                            {stageIndex + index + 1} stars
-                          </span>
-                          <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white">
-                            Interview
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
+                      ))}
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </div>
@@ -403,7 +432,9 @@ export default function RecruitmentATSPage() {
               ].map(([label, value]) => (
                 <div key={label} className="rounded-lg bg-slate-50 p-4">
                   <p className="text-xs font-bold text-slate-400">{label}</p>
-                  <p className="mt-2 text-sm font-bold text-slate-900">{value}</p>
+                  <p className="mt-2 text-sm font-bold text-slate-900">
+                    {value}
+                  </p>
                 </div>
               ))}
             </div>
@@ -545,7 +576,10 @@ export default function RecruitmentATSPage() {
 
               <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 p-5">
                 {[35, 58, 80, 130].map((height, index) => (
-                  <div key={index} className="flex flex-1 flex-col items-center">
+                  <div
+                    key={index}
+                    className="flex flex-1 flex-col items-center"
+                  >
                     <div
                       className="w-full bg-emerald-300"
                       style={{ height: `${height * 0.35}px` }}
@@ -723,7 +757,7 @@ export default function RecruitmentATSPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -734,7 +768,7 @@ export default function RecruitmentATSPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Odoo saved us plenty of web development time, allowing us to
+                  Adon saved us plenty of web development time, allowing us to
                   focus on individual strengths, which is immensely helpful for
                   start-ups.
                 </p>

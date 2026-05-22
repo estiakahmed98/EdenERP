@@ -46,7 +46,8 @@ const features = [
   },
   {
     title: "Reminders",
-    description: "Send reminders to users that have timesheets to encode or validate.",
+    description:
+      "Send reminders to users that have timesheets to encode or validate.",
   },
   {
     title: "Validation",
@@ -111,7 +112,7 @@ export default function TimesheetsLandingPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Odoo Timesheets allows you to automate time tracking, eliminate
+            Adon Timesheets allows you to automate time tracking, eliminate
             leakage, and boost billable hours. All with an interface powered by
             smart recommendations.
           </p>
@@ -170,12 +171,66 @@ export default function TimesheetsLandingPage() {
                   </div>
 
                   {[
-                    ["SO001 - Website Design", "0:00", "3:00", "2:00", "4:00", "1:00", "0:00", "10:00"],
-                    ["Office Design", "2:30", "1:00", "0:30", "3:00", "2:00", "0:00", "9:00"],
-                    ["Research & Development", "1:00", "2:00", "4:00", "2:00", "1:30", "0:00", "10:30"],
-                    ["Support - Subscription", "0:30", "1:30", "2:00", "1:00", "0:30", "0:00", "5:30"],
-                    ["Internal Meeting", "1:00", "0:30", "1:00", "0:30", "1:00", "0:00", "4:00"],
-                    ["Training", "0:00", "0:00", "2:00", "2:00", "0:00", "0:00", "4:00"],
+                    [
+                      "SO001 - Website Design",
+                      "0:00",
+                      "3:00",
+                      "2:00",
+                      "4:00",
+                      "1:00",
+                      "0:00",
+                      "10:00",
+                    ],
+                    [
+                      "Office Design",
+                      "2:30",
+                      "1:00",
+                      "0:30",
+                      "3:00",
+                      "2:00",
+                      "0:00",
+                      "9:00",
+                    ],
+                    [
+                      "Research & Development",
+                      "1:00",
+                      "2:00",
+                      "4:00",
+                      "2:00",
+                      "1:30",
+                      "0:00",
+                      "10:30",
+                    ],
+                    [
+                      "Support - Subscription",
+                      "0:30",
+                      "1:30",
+                      "2:00",
+                      "1:00",
+                      "0:30",
+                      "0:00",
+                      "5:30",
+                    ],
+                    [
+                      "Internal Meeting",
+                      "1:00",
+                      "0:30",
+                      "1:00",
+                      "0:30",
+                      "1:00",
+                      "0:00",
+                      "4:00",
+                    ],
+                    [
+                      "Training",
+                      "0:00",
+                      "0:00",
+                      "2:00",
+                      "2:00",
+                      "0:00",
+                      "0:00",
+                      "4:00",
+                    ],
                   ].map((row, rowIndex) => (
                     <div
                       key={row[0]}
@@ -256,9 +311,15 @@ export default function TimesheetsLandingPage() {
               <span className="rounded bg-[#714b67] px-3 py-1 text-xs font-bold text-white">
                 Day
               </span>
-              <span className="ml-4 text-xs font-bold text-slate-500">Week</span>
-              <span className="ml-4 text-xs font-bold text-slate-500">Month</span>
-              <span className="ml-6 text-xs text-slate-400">SO001 / Project Check Code</span>
+              <span className="ml-4 text-xs font-bold text-slate-500">
+                Week
+              </span>
+              <span className="ml-4 text-xs font-bold text-slate-500">
+                Month
+              </span>
+              <span className="ml-6 text-xs text-slate-400">
+                SO001 / Project Check Code
+              </span>
             </div>
 
             <p
@@ -353,17 +414,18 @@ export default function TimesheetsLandingPage() {
             </div>
 
             <div className="flex h-64 items-end gap-3">
-              {[65, 92, 88, 70, 110, 220, 85, 76, 95, 130, 230, 92, 97, 105, 82, 75, 68, 110, 80].map(
-                (height, index) => (
-                  <div key={index} className="flex flex-1 flex-col items-center">
-                    <div
-                      className="w-full bg-sky-600/80"
-                      style={{ height: `${height}px` }}
-                    />
-                    <span className="mt-2 h-2 w-2 rounded-full bg-slate-200" />
-                  </div>
-                ),
-              )}
+              {[
+                65, 92, 88, 70, 110, 220, 85, 76, 95, 130, 230, 92, 97, 105, 82,
+                75, 68, 110, 80,
+              ].map((height, index) => (
+                <div key={index} className="flex flex-1 flex-col items-center">
+                  <div
+                    className="w-full bg-sky-600/80"
+                    style={{ height: `${height}px` }}
+                  />
+                  <span className="mt-2 h-2 w-2 rounded-full bg-slate-200" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -569,7 +631,7 @@ export default function TimesheetsLandingPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -581,7 +643,7 @@ export default function TimesheetsLandingPage() {
               <div>
                 <p className="text-base leading-8 text-slate-700">
                   Our day-to-day tasks have become simpler, and we have been
-                  able to complete them in less time. Thanks to Odoo automation
+                  able to complete them in less time. Thanks to Adon automation
                   and integration features, our work efficiency has grown
                   significantly.
                 </p>

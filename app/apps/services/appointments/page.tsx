@@ -45,7 +45,7 @@ const features = [
   },
   {
     title: "Calendar integration",
-    description: "Fully integrated with the Odoo Calendar app.",
+    description: "Fully integrated with the Adon Calendar app.",
   },
   {
     title: "Leads / Opportunities",
@@ -64,9 +64,17 @@ const features = [
 const apps = [
   { title: "Website", description: "Create appointment pages", icon: Globe2 },
   { title: "Contacts", description: "Manage customer bookings", icon: Users },
-  { title: "WhatsApp", description: "Send booking reminders", icon: MessageCircle },
+  {
+    title: "WhatsApp",
+    description: "Send booking reminders",
+    icon: MessageCircle,
+  },
   { title: "SMS Marketing", description: "Reach clients quickly", icon: Mail },
-  { title: "CRM", description: "Convert meetings into opportunities", icon: BarChart3 },
+  {
+    title: "CRM",
+    description: "Convert meetings into opportunities",
+    icon: BarChart3,
+  },
 ];
 
 export default function AppointmentSchedulingPage() {
@@ -192,8 +200,7 @@ export default function AppointmentSchedulingPage() {
             >
               Appointments, at your
               <br />
-              customers fingertips{" "}
-              <span className="text-amber-500">👌</span>
+              customers fingertips <span className="text-amber-500">👌</span>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
@@ -269,16 +276,18 @@ export default function AppointmentSchedulingPage() {
             <div className="rounded-xl border border-slate-200 bg-white p-5 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               <p className="mb-4 font-bold text-slate-900">Availability</p>
 
-              {["Monday 9:00 - 17:00", "Tuesday 9:00 - 17:00", "Wednesday 10:00 - 16:00"].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="mb-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600"
-                  >
-                    {item}
-                  </div>
-                ),
-              )}
+              {[
+                "Monday 9:00 - 17:00",
+                "Tuesday 9:00 - 17:00",
+                "Wednesday 10:00 - 16:00",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="mb-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600"
+                >
+                  {item}
+                </div>
+              ))}
             </div>
 
             <ArrowRight className="mx-auto h-12 w-12 text-[#714b67]" />
@@ -423,8 +432,8 @@ export default function AppointmentSchedulingPage() {
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
-              Optimize your resources based on time constraints and discover
-              how customers interact with your booking flow.
+              Optimize your resources based on time constraints and discover how
+              customers interact with your booking flow.
             </p>
 
             <FloatingNote
@@ -510,8 +519,7 @@ export default function AppointmentSchedulingPage() {
             >
               Send calendar alarms
               <br />
-              or reminders{" "}
-              <span className="text-amber-500">🔔</span>
+              or reminders <span className="text-amber-500">🔔</span>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
@@ -709,7 +717,7 @@ export default function AppointmentSchedulingPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>

@@ -211,7 +211,9 @@ export default function PayrollLandingSections() {
                       <span className="text-slate-600">{row[1]}</span>
                       <span className="font-bold text-slate-900">{row[2]}</span>
                       <span className="text-slate-500">{row[3]}</span>
-                      <span className="font-bold text-emerald-600">{row[4]}</span>
+                      <span className="font-bold text-emerald-600">
+                        {row[4]}
+                      </span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                           row[5] === "Done"
@@ -420,7 +422,12 @@ export default function PayrollLandingSections() {
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                ["Regular Work", "160h", "Validated", "bg-emerald-50 text-emerald-600"],
+                [
+                  "Regular Work",
+                  "160h",
+                  "Validated",
+                  "bg-emerald-50 text-emerald-600",
+                ],
                 ["Paid Time Off", "16h", "Approved", "bg-sky-50 text-sky-600"],
                 ["Sick Leave", "8h", "To Review", "bg-amber-50 text-amber-600"],
                 ["Unpaid Leave", "4h", "Deducted", "bg-rose-50 text-rose-600"],
@@ -739,7 +746,7 @@ export default function PayrollLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>

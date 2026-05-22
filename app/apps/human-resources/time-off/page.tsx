@@ -211,12 +211,60 @@ export default function TimeOffLandingSections() {
                   </div>
 
                   {[
-                    ["Marc Demo", "Paid Time Off", "Jul 04", "Jul 09", "5 days", "Mitchell", "Approved"],
-                    ["Anita Oliver", "Sick Leave", "Jul 11", "Jul 12", "2 days", "Audrey", "To Approve"],
-                    ["Beth Evans", "Remote Work", "Jul 15", "Jul 15", "1 day", "Marc", "Approved"],
-                    ["Audrey Peterson", "Vacation", "Jul 20", "Jul 28", "8 days", "Mitchell", "Pending"],
-                    ["Joel Willis", "Paid Time Off", "Aug 01", "Aug 03", "3 days", "Audrey", "Approved"],
-                    ["Jennie Fletcher", "Sick Leave", "Aug 05", "Aug 06", "2 days", "Marc", "Refused"],
+                    [
+                      "Marc Demo",
+                      "Paid Time Off",
+                      "Jul 04",
+                      "Jul 09",
+                      "5 days",
+                      "Mitchell",
+                      "Approved",
+                    ],
+                    [
+                      "Anita Oliver",
+                      "Sick Leave",
+                      "Jul 11",
+                      "Jul 12",
+                      "2 days",
+                      "Audrey",
+                      "To Approve",
+                    ],
+                    [
+                      "Beth Evans",
+                      "Remote Work",
+                      "Jul 15",
+                      "Jul 15",
+                      "1 day",
+                      "Marc",
+                      "Approved",
+                    ],
+                    [
+                      "Audrey Peterson",
+                      "Vacation",
+                      "Jul 20",
+                      "Jul 28",
+                      "8 days",
+                      "Mitchell",
+                      "Pending",
+                    ],
+                    [
+                      "Joel Willis",
+                      "Paid Time Off",
+                      "Aug 01",
+                      "Aug 03",
+                      "3 days",
+                      "Audrey",
+                      "Approved",
+                    ],
+                    [
+                      "Jennie Fletcher",
+                      "Sick Leave",
+                      "Aug 05",
+                      "Aug 06",
+                      "2 days",
+                      "Marc",
+                      "Refused",
+                    ],
                   ].map((row) => (
                     <div
                       key={`${row[0]}-${row[2]}`}
@@ -446,7 +494,9 @@ export default function TimeOffLandingSections() {
                   <p className="text-xl font-bold text-slate-900">
                     Anita Oliver
                   </p>
-                  <p className="text-sm text-slate-500">Paid Time Off Request</p>
+                  <p className="text-sm text-slate-500">
+                    Paid Time Off Request
+                  </p>
                 </div>
               </div>
 
@@ -497,54 +547,56 @@ export default function TimeOffLandingSections() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
-            Managers can review all requests from one dashboard, approve quickly,
-            and keep the team calendar accurate.
+            Managers can review all requests from one dashboard, approve
+            quickly, and keep the team calendar accurate.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
             <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
-                {["Absent", "Present", "To Approve"].map((column, columnIndex) => (
-                  <div key={column} className="rounded-lg bg-slate-50 p-4">
-                    <p className="mb-5 text-left font-bold text-slate-900">
-                      {column}
-                    </p>
+                {["Absent", "Present", "To Approve"].map(
+                  (column, columnIndex) => (
+                    <div key={column} className="rounded-lg bg-slate-50 p-4">
+                      <p className="mb-5 text-left font-bold text-slate-900">
+                        {column}
+                      </p>
 
-                    <div className="space-y-4">
-                      {requests.slice(0, 3).map((request, index) => (
-                        <div
-                          key={`${column}-${request.name}`}
-                          className="flex gap-3 rounded-lg bg-white p-3 text-left shadow-sm"
-                        >
-                          <img
-                            src={request.image}
-                            alt={request.name}
-                            className="h-14 w-14 rounded-xl object-cover"
-                          />
+                      <div className="space-y-4">
+                        {requests.slice(0, 3).map((request, index) => (
+                          <div
+                            key={`${column}-${request.name}`}
+                            className="flex gap-3 rounded-lg bg-white p-3 text-left shadow-sm"
+                          >
+                            <img
+                              src={request.image}
+                              alt={request.name}
+                              className="h-14 w-14 rounded-xl object-cover"
+                            />
 
-                          <div className="min-w-0 flex-1">
-                            <p className="truncate text-sm font-bold text-slate-900">
-                              {request.name}
-                            </p>
-                            <p className="mt-1 text-xs text-slate-500">
-                              {request.type}
-                            </p>
+                            <div className="min-w-0 flex-1">
+                              <p className="truncate text-sm font-bold text-slate-900">
+                                {request.name}
+                              </p>
+                              <p className="mt-1 text-xs text-slate-500">
+                                {request.type}
+                              </p>
 
-                            <span
-                              className={`mt-2 inline-block rounded-full px-2 py-1 text-[10px] font-bold ${
-                                (index + columnIndex) % 2 === 0
-                                  ? "bg-emerald-50 text-emerald-600"
-                                  : "bg-amber-50 text-amber-600"
-                              }`}
-                            >
-                              {request.days}
-                            </span>
+                              <span
+                                className={`mt-2 inline-block rounded-full px-2 py-1 text-[10px] font-bold ${
+                                  (index + columnIndex) % 2 === 0
+                                    ? "bg-emerald-50 text-emerald-600"
+                                    : "bg-amber-50 text-amber-600"
+                                }`}
+                              >
+                                {request.days}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ),
+                )}
               </div>
             </div>
 
@@ -745,7 +797,7 @@ export default function TimeOffLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -758,7 +810,7 @@ export default function TimeOffLandingSections() {
                 <p className="text-base leading-8 text-slate-700">
                   After realizing that our configured spreadsheets were not
                   looking for an HR application, we found exactly what we needed
-                  with Odoo Time Off.
+                  with Adon Time Off.
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
