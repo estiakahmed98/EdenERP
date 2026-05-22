@@ -1,29 +1,56 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { siteConfig } from "@/lib/site";
+
 import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+
   title: {
     default: "Adon ERP - Transform Your Business",
     template: "%s | Adon ERP",
   },
+
   description: siteConfig.description,
-  generator: "v0.app",
+
+  keywords: [
+    "ERP",
+    "Business Software",
+    "Inventory Management",
+    "CRM",
+    "Accounting",
+    "POS",
+    "Manufacturing",
+    "HRM",
+    "Adon ERP",
+  ],
+
   applicationName: siteConfig.name,
+
   alternates: {
     canonical: "/",
   },
+
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -32,22 +59,39 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   openGraph: {
     type: "website",
-    siteName: siteConfig.name,
-    title: "Adon ERP - Transform Your Business",
-    description: siteConfig.description,
-    url: "/",
     locale: siteConfig.locale,
-    images: [{ url: "/icon.svg" }],
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+
+    title: "Adon ERP - Transform Your Business",
+
+    description: siteConfig.description,
+
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Adon ERP",
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
+
     title: "Adon ERP - Transform Your Business",
+
     description: siteConfig.description,
-    images: ["/icon.svg"],
+
     creator: siteConfig.twitterHandle,
+
+    images: ["/og-image.png"],
   },
+
   icons: {
     icon: [
       {
@@ -63,7 +107,46 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
+
     apple: "/apple-icon.png",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+
+  name: siteConfig.name,
+
+  url: siteConfig.url,
+
+  logo: `${siteConfig.url}/icon.svg`,
+
+  description: siteConfig.description,
+
+  sameAs: [
+    "https://facebook.com",
+    "https://linkedin.com",
+    "https://twitter.com",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+
+  name: siteConfig.name,
+
+  url: siteConfig.url,
+
+  description: siteConfig.description,
+
+  potentialAction: {
+    "@type": "SearchAction",
+
+    target: `${siteConfig.url}/search?q={search_term_string}`,
+
+    "query-input": "required name=search_term_string",
   },
 };
 
@@ -75,14 +158,34 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-background"
-      suppressHydrationWarning={true}
-      data-lt-installed="true"
+      suppressHydrationWarning
+      className={`${geist.variable} ${geistMono.variable}`}
     >
-      <body className="font-sans antialiased">
+      <body className="bg-background font-sans antialiased">
+        {/* Organization Schema */}
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+
+        {/* Website Schema */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+
         <Header />
+
         {children}
+
         <Footer />
+
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
