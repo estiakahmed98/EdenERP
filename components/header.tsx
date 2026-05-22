@@ -568,15 +568,6 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="/auth/signin"
-            className="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
-          >
-            {t("nav.signIn")}
-          </Link>
-        </div>
-
         <button
           type="button"
           aria-label={t("mobileMenuLabel")}
@@ -585,6 +576,15 @@ export default function Header() {
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+
+        <div className="hidden items-center gap-3 md:flex bg-(--purple) text-white rounded-xl">
+          <Link
+            href="/auth/signin"
+            className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
+          >
+            {t("nav.signIn")}
+          </Link>
+        </div>
       </nav>
 
       {mobileMenuOpen && (
@@ -610,14 +610,6 @@ export default function Header() {
                 className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700"
               >
                 {t("nav.signIn")}
-              </Link>
-
-              <Link
-                href="/pricing"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl bg-linear-to-r from-[#5B3B5F] to-cyan-700 px-5 py-3 text-center text-sm font-bold text-white shadow-lg shadow-cyan-500/20"
-              >
-                {t("nav.tryFree")}
               </Link>
             </div>
           </div>
