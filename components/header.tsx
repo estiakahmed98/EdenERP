@@ -237,7 +237,7 @@ export default function Header() {
         { label: "Forum", href: "/community/collaborate/forum" },
         { label: "Events", href: "/community/collaborate/events" },
         { label: "Translations", href: "/community/collaborate/translations" },
-        { label: "Become a Partner", href: "/community/collaborate/become-partner" },
+        { label: "Become a Partner", href: "/community/collaborate/become-a-partner" },
       ],
     },
   ];
