@@ -150,7 +150,9 @@ export default function FieldServiceLandingPage() {
               <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Wrench className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Field Service</span>
+                  <span className="font-bold text-slate-900">
+                    Field Service
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     My Tasks / All Tasks / Planning / Reporting
                   </span>
@@ -165,23 +167,40 @@ export default function FieldServiceLandingPage() {
                 {[
                   {
                     title: "9:30 AM",
-                    cards: ["Repair office AC", "Install smart lock", "Fix printer issue"],
+                    cards: [
+                      "Repair office AC",
+                      "Install smart lock",
+                      "Fix printer issue",
+                    ],
                   },
                   {
                     title: "11:30 AM",
-                    cards: ["Measurement update", "Customer follow-up", "Maintenance check"],
+                    cards: [
+                      "Measurement update",
+                      "Customer follow-up",
+                      "Maintenance check",
+                    ],
                   },
                   {
                     title: "2:00 PM",
-                    cards: ["Solar panel setup", "Router inspection", "Final validation"],
+                    cards: [
+                      "Solar panel setup",
+                      "Router inspection",
+                      "Final validation",
+                    ],
                   },
                 ].map((column, columnIndex) => (
-                  <div key={column.title} className="rounded-lg bg-slate-50 p-3">
+                  <div
+                    key={column.title}
+                    className="rounded-lg bg-slate-50 p-3"
+                  >
                     <div className="mb-3 flex items-center justify-between">
                       <p className="text-sm font-bold text-slate-900">
                         {column.title}
                       </p>
-                      <span className="text-lg font-bold text-slate-400">+</span>
+                      <span className="text-lg font-bold text-slate-400">
+                        +
+                      </span>
                     </div>
 
                     <div className="space-y-3">
@@ -205,7 +224,11 @@ export default function FieldServiceLandingPage() {
                             </span>
 
                             <img
-                              src={avatars[(columnIndex + cardIndex) % avatars.length]}
+                              src={
+                                avatars[
+                                  (columnIndex + cardIndex) % avatars.length
+                                ]
+                              }
                               alt=""
                               className="h-6 w-6 rounded-full object-cover"
                             />
@@ -281,18 +304,24 @@ export default function FieldServiceLandingPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
-            Planning operations, work orders, and tasks is much easier when
-            your team knows where to go, what to do, and what comes next.
+            Planning operations, work orders, and tasks is much easier when your
+            team knows where to go, what to do, and what comes next.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
             <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid grid-cols-7 gap-2 border-b border-slate-100 pb-3 text-center text-xs font-bold text-slate-400">
-                {["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map(
-                  (day) => (
-                    <span key={day}>{day}</span>
-                  ),
-                )}
+                {[
+                  "Sunday",
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ].map((day) => (
+                  <span key={day}>{day}</span>
+                ))}
               </div>
 
               <div className="mt-4 grid grid-cols-7 gap-2">
@@ -690,7 +719,7 @@ export default function FieldServiceLandingPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>

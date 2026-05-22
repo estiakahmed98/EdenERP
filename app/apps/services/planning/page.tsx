@@ -57,10 +57,22 @@ const features = [
 
 const apps = [
   { title: "Sales", description: "Plan from sales orders", icon: BarChart3 },
-  { title: "Project", description: "Forecast deadlines accurately", icon: CheckCircle2 },
-  { title: "Time Off", description: "Plan around employees’ leave", icon: Timer },
+  {
+    title: "Project",
+    description: "Forecast deadlines accurately",
+    icon: CheckCircle2,
+  },
+  {
+    title: "Time Off",
+    description: "Plan around employees’ leave",
+    icon: Timer,
+  },
   { title: "Payroll", description: "Security is key", icon: BriefcaseBusiness },
-  { title: "Timesheet", description: "Compare with effective hours", icon: Clock3 },
+  {
+    title: "Timesheet",
+    description: "Compare with effective hours",
+    icon: Clock3,
+  },
 ];
 
 export default function PlanningLandingPage() {
@@ -79,7 +91,7 @@ export default function PlanningLandingPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Odoo Planning optimizes scheduling through automation. Schedule
+            Adon Planning optimizes scheduling through automation. Schedule
             shifts and resources, manage onsite work, and enjoy the simplicity
             of integrated timesheets and invoices.
           </p>
@@ -128,53 +140,62 @@ export default function PlanningLandingPage() {
                 <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
                   <div className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 bg-slate-50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                     <span>Employee</span>
-                    {["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"].map(
-                      (day) => (
-                        <span key={day} className="text-center">
-                          {day}
-                        </span>
-                      ),
-                    )}
+                    {[
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                      "Saturday",
+                    ].map((day) => (
+                      <span key={day} className="text-center">
+                        {day}
+                      </span>
+                    ))}
                   </div>
 
-                  {["Anita Oliver", "Audrey Peterson", "Beth Evans", "Deco Cola", "Mitchell Admin"].map(
-                    (name, rowIndex) => (
-                      <div
-                        key={name}
-                        className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 px-4 py-3 text-xs last:border-0"
-                      >
-                        <span className="flex items-center gap-2 font-bold text-slate-900">
-                          <img
-                            src={avatars[rowIndex % avatars.length]}
-                            alt=""
-                            className="h-7 w-7 rounded-full object-cover"
-                          />
-                          {name}
-                        </span>
+                  {[
+                    "Anita Oliver",
+                    "Audrey Peterson",
+                    "Beth Evans",
+                    "Deco Cola",
+                    "Mitchell Admin",
+                  ].map((name, rowIndex) => (
+                    <div
+                      key={name}
+                      className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 px-4 py-3 text-xs last:border-0"
+                    >
+                      <span className="flex items-center gap-2 font-bold text-slate-900">
+                        <img
+                          src={avatars[rowIndex % avatars.length]}
+                          alt=""
+                          className="h-7 w-7 rounded-full object-cover"
+                        />
+                        {name}
+                      </span>
 
-                        {Array.from({ length: 6 }).map((_, index) => (
-                          <span
-                            key={index}
-                            className={`mx-1 rounded px-2 py-3 text-center font-bold ${
-                              (index + rowIndex) % 4 === 0
-                                ? "bg-[#02cfc3]/30 text-[#027f7c]"
-                                : (index + rowIndex) % 4 === 1
-                                  ? "bg-amber-100 text-amber-700"
-                                  : (index + rowIndex) % 4 === 2
-                                    ? "bg-rose-100 text-rose-600"
-                                    : "bg-sky-100 text-sky-700"
-                            }`}
-                          >
-                            {(index + rowIndex) % 3 === 0
-                              ? "Consultant"
-                              : (index + rowIndex) % 3 === 1
-                                ? "7:00 AM"
-                                : "Body ME"}
-                          </span>
-                        ))}
-                      </div>
-                    ),
-                  )}
+                      {Array.from({ length: 6 }).map((_, index) => (
+                        <span
+                          key={index}
+                          className={`mx-1 rounded px-2 py-3 text-center font-bold ${
+                            (index + rowIndex) % 4 === 0
+                              ? "bg-[#02cfc3]/30 text-[#027f7c]"
+                              : (index + rowIndex) % 4 === 1
+                                ? "bg-amber-100 text-amber-700"
+                                : (index + rowIndex) % 4 === 2
+                                  ? "bg-rose-100 text-rose-600"
+                                  : "bg-sky-100 text-sky-700"
+                          }`}
+                        >
+                          {(index + rowIndex) % 3 === 0
+                            ? "Consultant"
+                            : (index + rowIndex) % 3 === 1
+                              ? "7:00 AM"
+                              : "Body ME"}
+                        </span>
+                      ))}
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -225,16 +246,19 @@ export default function PlanningLandingPage() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-4">
-                {["8 AM - HR Management", "9 AM - Project Manager", "10 AM - HR Management", "11 AM - CEO"].map(
-                  (item) => (
-                    <span
-                      key={item}
-                      className="rounded-md bg-slate-50 px-3 py-2 text-xs font-bold text-slate-500"
-                    >
-                      {item}
-                    </span>
-                  ),
-                )}
+                {[
+                  "8 AM - HR Management",
+                  "9 AM - Project Manager",
+                  "10 AM - HR Management",
+                  "11 AM - CEO",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-md bg-slate-50 px-3 py-2 text-xs font-bold text-slate-500"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
 
               <div className="mt-7 grid gap-5 sm:grid-cols-2">
@@ -289,19 +313,21 @@ export default function PlanningLandingPage() {
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
-              Control your planning. Create shifts and reassign them effortlessly
-              using a user-friendly drag-and-drop interface. With collaboration
-              options, allow everyone on the team to see open shifts and switch
-              them among one another.
+              Control your planning. Create shifts and reassign them
+              effortlessly using a user-friendly drag-and-drop interface. With
+              collaboration options, allow everyone on the team to see open
+              shifts and switch them among one another.
             </p>
           </div>
 
           <div className="relative mx-auto w-full max-w-lg rounded-xl border border-slate-200 bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="rounded-lg bg-white p-5">
               <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-slate-400">
-                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-                  <span key={day}>{day}</span>
-                ))}
+                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
+                  (day) => (
+                    <span key={day}>{day}</span>
+                  ),
+                )}
               </div>
 
               <div className="mt-4 grid grid-cols-7 gap-2">
@@ -491,7 +517,7 @@ export default function PlanningLandingPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -502,7 +528,7 @@ export default function PlanningLandingPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Odoo improved resource management, making planning and
+                  Adon improved resource management, making planning and
                   invoicing more efficient, enhancing communication and
                   collaboration.
                 </p>

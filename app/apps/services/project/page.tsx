@@ -170,12 +170,17 @@ export default function ProjectLandingSections() {
                     cards: ["Client Brief", "Brand Assets", "Planning"],
                   },
                 ].map((column, columnIndex) => (
-                  <div key={column.title} className="rounded-lg bg-slate-50 p-3">
+                  <div
+                    key={column.title}
+                    className="rounded-lg bg-slate-50 p-3"
+                  >
                     <div className="mb-3 flex items-center justify-between">
                       <p className="text-sm font-bold text-slate-900">
                         {column.title}
                       </p>
-                      <span className="text-lg font-bold text-slate-400">+</span>
+                      <span className="text-lg font-bold text-slate-400">
+                        +
+                      </span>
                     </div>
 
                     <div className="space-y-3">
@@ -199,12 +204,21 @@ export default function ProjectLandingSections() {
 
                             <div className="flex -space-x-2">
                               <img
-                                src={avatars[(columnIndex + cardIndex) % avatars.length]}
+                                src={
+                                  avatars[
+                                    (columnIndex + cardIndex) % avatars.length
+                                  ]
+                                }
                                 alt="Member"
                                 className="h-6 w-6 rounded-full border-2 border-white object-cover"
                               />
                               <img
-                                src={avatars[(columnIndex + cardIndex + 2) % avatars.length]}
+                                src={
+                                  avatars[
+                                    (columnIndex + cardIndex + 2) %
+                                      avatars.length
+                                  ]
+                                }
                                 alt="Member"
                                 className="h-6 w-6 rounded-full border-2 border-white object-cover"
                               />
@@ -786,7 +800,7 @@ export default function ProjectLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>
@@ -797,7 +811,7 @@ export default function ProjectLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700">
-                  Odoo is the backbone of Kick & Rush, fostering collaboration,
+                  Adon is the backbone of Kick & Rush, fostering collaboration,
                   providing consistency, and adapting to unique requirements.
                 </p>
 

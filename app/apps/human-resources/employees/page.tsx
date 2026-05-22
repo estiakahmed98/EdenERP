@@ -100,8 +100,7 @@ const features = [
   },
   {
     title: "Recruitment management",
-    description:
-      "Create job openings and manage applications from one place.",
+    description: "Create job openings and manage applications from one place.",
   },
 ];
 
@@ -319,7 +318,9 @@ export default function HumanResourcesLandingSections() {
             <div className="mx-auto max-w-3xl rounded-xl bg-white p-7 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)] ring-1 ring-slate-100">
               <div className="grid gap-8 md:grid-cols-3">
                 <div>
-                  <p className="mb-4 text-sm font-bold text-slate-900">Filters</p>
+                  <p className="mb-4 text-sm font-bold text-slate-900">
+                    Filters
+                  </p>
                   {[
                     "Department",
                     "Job Position",
@@ -462,16 +463,16 @@ export default function HumanResourcesLandingSections() {
                     </p>
 
                     <div className="mt-3 flex flex-wrap gap-2">
-                      {["React", "Sales", "Design"].slice(0, index + 1).map(
-                        (skill) => (
+                      {["React", "Sales", "Design"]
+                        .slice(0, index + 1)
+                        .map((skill) => (
                           <span
                             key={skill}
                             className="rounded-full bg-white px-2 py-1 text-[10px] font-bold text-[#714b67]"
                           >
                             {skill}
                           </span>
-                        ),
-                      )}
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -700,7 +701,9 @@ export default function HumanResourcesLandingSections() {
                   />
                   <div>
                     <p className="font-bold text-slate-900">Jennie Fletcher</p>
-                    <p className="text-xs text-slate-400">Manager&apos;s Feedback</p>
+                    <p className="text-xs text-slate-400">
+                      Manager&apos;s Feedback
+                    </p>
                   </div>
                 </div>
 
@@ -860,7 +863,7 @@ export default function HumanResourcesLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>

@@ -49,7 +49,7 @@ const features = [
   {
     title: "AI chatter assistant",
     description:
-      "Chat with AI inside Odoo, preparing replies, summaries, and next steps.",
+      "Chat with AI inside Adon, preparing replies, summaries, and next steps.",
   },
   {
     title: "Email template",
@@ -63,17 +63,28 @@ const features = [
   },
   {
     title: "Livechat",
-    description:
-      "Answer website visitors faster with AI-assisted responses.",
+    description: "Answer website visitors faster with AI-assisted responses.",
   },
 ];
 
 const apps = [
   { title: "CRM", description: "Smart sales recommendations", icon: Brain },
   { title: "Website", description: "AI content creation", icon: Globe2 },
-  { title: "Documents", description: "AI-powered document analysis", icon: FileText },
-  { title: "Project", description: "Generate project summaries", icon: ClipboardList },
-  { title: "Sales", description: "AI pricing and forecasting", icon: BarChart3 },
+  {
+    title: "Documents",
+    description: "AI-powered document analysis",
+    icon: FileText,
+  },
+  {
+    title: "Project",
+    description: "Generate project summaries",
+    icon: ClipboardList,
+  },
+  {
+    title: "Sales",
+    description: "AI pricing and forecasting",
+    icon: BarChart3,
+  },
 ];
 
 export default function AIPoweredAppsLandingPage() {
@@ -92,7 +103,7 @@ export default function AIPoweredAppsLandingPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Odoo Artificial Intelligence turns your everyday data into smarter
+            Adon Artificial Intelligence turns your everyday data into smarter
             decisions, faster workflows, and better results.
           </p>
 
@@ -317,23 +328,23 @@ export default function AIPoweredAppsLandingPage() {
                     AI
                   </span>
                 </span>
-                <p className="font-bold text-slate-900">
-                  Draft sales proposal
-                </p>
+                <p className="font-bold text-slate-900">Draft sales proposal</p>
               </div>
 
               <div className="space-y-3">
-                {["Customer context analyzed", "Quote items suggested", "Email draft prepared"].map(
-                  (item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-bold text-slate-600"
-                    >
-                      <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                      {item}
-                    </div>
-                  ),
-                )}
+                {[
+                  "Customer context analyzed",
+                  "Quote items suggested",
+                  "Email draft prepared",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-bold text-slate-600"
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                    {item}
+                  </div>
+                ))}
               </div>
 
               <button className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
@@ -363,8 +374,8 @@ export default function AIPoweredAppsLandingPage() {
           </h2>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
-            Ask your data what matters. AI turns business questions into
-            instant reporting and visual analytics.
+            Ask your data what matters. AI turns business questions into instant
+            reporting and visual analytics.
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-white p-8">
@@ -606,7 +617,7 @@ export default function AIPoweredAppsLandingPage() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>

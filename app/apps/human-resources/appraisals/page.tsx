@@ -70,8 +70,8 @@ export default function PerformanceLandingSections() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-            Unlock your team&apos;s full potential with 360° feedback,
-            real-time goals, and automated appraisal cycles.
+            Unlock your team&apos;s full potential with 360° feedback, real-time
+            goals, and automated appraisal cycles.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -232,9 +232,9 @@ export default function PerformanceLandingSections() {
 
           <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600">
             Maintain the motivational process in your company by doing
-            periodical evaluations of your employees&apos; performance. Regularly
-            assess your human resources to bring benefits for your people as
-            well as for your organization.
+            periodical evaluations of your employees&apos; performance.
+            Regularly assess your human resources to bring benefits for your
+            people as well as for your organization.
           </p>
 
           <div className="mt-14 grid gap-8 lg:grid-cols-3">
@@ -254,8 +254,7 @@ export default function PerformanceLandingSections() {
               {
                 title: "Exportable answers",
                 icon: FileText,
-                description:
-                  "Turn every evaluation into a printable PDF form.",
+                description: "Turn every evaluation into a printable PDF form.",
               },
             ].map((item, index) => {
               const Icon = item.icon;
@@ -352,8 +351,22 @@ export default function PerformanceLandingSections() {
               </div>
 
               {[
-                ["Anita Oliver", "Management", "07/24/2026", "Planned", "To Confirm", "12"],
-                ["Mitchell Admin", "HR", "08/03/2026", "Done", "Confirmed", "9"],
+                [
+                  "Anita Oliver",
+                  "Management",
+                  "07/24/2026",
+                  "Planned",
+                  "To Confirm",
+                  "12",
+                ],
+                [
+                  "Mitchell Admin",
+                  "HR",
+                  "08/03/2026",
+                  "Done",
+                  "Confirmed",
+                  "9",
+                ],
               ].map((row) => (
                 <div
                   key={row[0]}
@@ -440,9 +453,7 @@ export default function PerformanceLandingSections() {
             </div>
 
             <div className="text-left">
-              <p className="text-xl font-bold text-slate-900">
-                Mitchell Admin
-              </p>
+              <p className="text-xl font-bold text-slate-900">Mitchell Admin</p>
               <p className="mt-2 text-sm text-slate-500">
                 Appraisal plan generated automatically
               </p>
@@ -584,7 +595,7 @@ export default function PerformanceLandingSections() {
                 Join 15 million users
               </p>
               <p className="mt-3 text-sm text-slate-500">
-                who grow their business with Odoo
+                who grow their business with Adon
               </p>
             </div>
           </div>
