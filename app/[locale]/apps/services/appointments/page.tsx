@@ -79,11 +79,11 @@ const apps = [
 
 export default function AppointmentSchedulingPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Scheduling{" "}
@@ -92,7 +92,7 @@ export default function AppointmentSchedulingPage() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Generate appointments, schedule resources, manage meetings,
             reminders, video calls, and customer booking pages from one smart
             system.
@@ -108,7 +108,7 @@ export default function AppointmentSchedulingPage() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
@@ -123,11 +123,11 @@ export default function AppointmentSchedulingPage() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <CalendarDays className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Appointments</span>
+                  <CalendarDays className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Appointments</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Slots / Bookings / Availability / Reporting
                   </span>
@@ -139,7 +139,7 @@ export default function AppointmentSchedulingPage() {
               </div>
 
               <div className="bg-[#f7f8fb] p-6">
-                <p className="mb-5 text-left font-bold text-slate-900">
+                <p className="mb-5 text-left font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   Choose your appointments
                 </p>
 
@@ -152,7 +152,7 @@ export default function AppointmentSchedulingPage() {
                   ].map(([title, desc], index) => (
                     <div
                       key={title}
-                      className="overflow-hidden rounded-lg bg-white text-left shadow-sm ring-1 ring-slate-100"
+                      className="overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-left shadow-sm ring-1 ring-slate-100"
                     >
                       <div
                         className={`h-28 ${
@@ -167,8 +167,8 @@ export default function AppointmentSchedulingPage() {
                       />
 
                       <div className="p-4">
-                        <h3 className="font-bold text-slate-900">{title}</h3>
-                        <p className="mt-2 text-xs leading-5 text-slate-500">
+                        <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{title}</h3>
+                        <p className="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
                           {desc}
                         </p>
 
@@ -181,7 +181,7 @@ export default function AppointmentSchedulingPage() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -191,11 +191,11 @@ export default function AppointmentSchedulingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Appointments, at your
@@ -203,15 +203,15 @@ export default function AppointmentSchedulingPage() {
               customers fingertips <span className="text-amber-500">👌</span>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Scheduling made easy. Access a free platform to schedule, discuss,
               and share availabilities with your customers.
             </p>
           </div>
 
-          <div className="mx-auto w-full max-w-xs rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="mx-auto w-full max-w-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Select a date & time</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Select a date & time</p>
               <span className="text-slate-400">×</span>
             </div>
 
@@ -229,8 +229,8 @@ export default function AppointmentSchedulingPage() {
                     index === 17
                       ? "bg-[#714b67] text-white"
                       : [10, 12, 19, 24].includes(index)
-                        ? "bg-[#02cfc3]/20 text-[#02a6a6]"
-                        : "bg-slate-50 text-slate-500"
+                        ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30/20 text-[#02a6a6]"
+                        : "bg-slate-50 dark:bg-slate-800/40 text-slate-500 dark:text-slate-400"
                   }`}
                 >
                   {index + 1}
@@ -242,7 +242,7 @@ export default function AppointmentSchedulingPage() {
               {["09:00", "10:30", "14:00", "16:30"].map((time) => (
                 <button
                   key={time}
-                  className="rounded-md border border-slate-200 px-3 py-2 text-xs font-bold text-slate-600"
+                  className="rounded-md border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300"
                 >
                   {time}
                 </button>
@@ -252,10 +252,10 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Set{" "}
@@ -267,14 +267,14 @@ export default function AppointmentSchedulingPage() {
             and connect your calendar
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Configure templates, upload availability, publish your booking page,
             and sync it with your Google Calendar, Outlook, and more.
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_80px_1fr]">
-            <div className="rounded-xl border border-slate-200 bg-white p-5 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-              <p className="mb-4 font-bold text-slate-900">Availability</p>
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+              <p className="mb-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">Availability</p>
 
               {[
                 "Monday 9:00 - 17:00",
@@ -283,16 +283,16 @@ export default function AppointmentSchedulingPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="mb-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600"
+                  className="mb-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300"
                 >
                   {item}
                 </div>
               ))}
             </div>
 
-            <ArrowRight className="mx-auto h-12 w-12 text-[#714b67]" />
+            <ArrowRight className="mx-auto h-12 w-12 text-[#714b67] dark:text-[#9b6a8f]" />
 
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-slate-400">
                 {["M", "T", "W", "T", "F", "S", "S"].map((day, index) => (
                   <span key={index}>{day}</span>
@@ -307,8 +307,8 @@ export default function AppointmentSchedulingPage() {
                       [8, 12, 16, 24].includes(index)
                         ? "bg-amber-200"
                         : [7, 14, 21].includes(index)
-                          ? "bg-[#02cfc3]/30"
-                          : "bg-slate-50"
+                          ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30/30"
+                          : "bg-slate-50 dark:bg-slate-800/40"
                     }`}
                   />
                 ))}
@@ -318,11 +318,11 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Never miss out on an
@@ -332,13 +332,13 @@ export default function AppointmentSchedulingPage() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Use appointment scheduling to transform every conversation into an
               opportunity, meeting, lead, or customer relationship.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid grid-cols-2 gap-3">
               {avatars.slice(0, 4).map((avatar, index) => (
                 <div
@@ -366,30 +366,30 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CalendarDays className="mx-auto h-12 w-12 text-[#02a6a6]" />
 
           <h2
-            className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Online appointment{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>scheduling</span>
             </HandUnderline>
             <br />
             made easy
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Manage appointment scheduling with automated forms, custom
             questions, and a simple booking experience for customers.
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-slate-900/70 p-12 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-            <div className="mx-auto max-w-xl rounded-lg bg-white p-7 text-left">
-              <p className="mb-5 font-bold text-slate-900">Schedule meeting</p>
+            <div className="mx-auto max-w-xl rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 text-left">
+              <p className="mb-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">Schedule meeting</p>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
@@ -400,7 +400,7 @@ export default function AppointmentSchedulingPage() {
                 ].map(([label, value]) => (
                   <div key={label}>
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <div className="mt-2 rounded-md bg-slate-50 px-4 py-3 text-sm font-bold text-slate-700">
+                    <div className="mt-2 rounded-md bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-bold text-slate-700 dark:text-slate-200">
                       {value}
                     </div>
                   </div>
@@ -415,11 +415,11 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <span className="relative inline-block px-2">
@@ -431,7 +431,7 @@ export default function AppointmentSchedulingPage() {
               bookings
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Optimize your resources based on time constraints and discover how
               customers interact with your booking flow.
             </p>
@@ -443,8 +443,8 @@ export default function AppointmentSchedulingPage() {
             />
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-            <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 p-5">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
               {[120, 40, 115, 190, 170, 130].map((height, index) => (
                 <div key={index} className="flex flex-1 flex-col items-center">
                   <div
@@ -461,11 +461,11 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Appointment</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Appointment</p>
               <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                 Confirmed
               </span>
@@ -478,9 +478,9 @@ export default function AppointmentSchedulingPage() {
                 ["Date", "July 24, 2026"],
                 ["Options", "Video call + Reminder"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-lg bg-slate-50 p-4">
+                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                   <p className="text-xs font-bold text-slate-400">{label}</p>
-                  <p className="mt-2 text-sm font-bold text-slate-900">
+                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     {value}
                   </p>
                 </div>
@@ -490,18 +490,18 @@ export default function AppointmentSchedulingPage() {
 
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Appointments loaded
               <br />
               with{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span>options</span>
               </HandUnderline>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Set your schedule, manage appointment configuration, and
               communication messages. Each booking can include extra options and
               custom questions.
@@ -510,11 +510,11 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Send calendar alarms
@@ -522,14 +522,14 @@ export default function AppointmentSchedulingPage() {
               or reminders <span className="text-amber-500">🔔</span>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Get into contact reminders using customized text messages,
               WhatsApp notifications, and email reminders so everyone shows up
               on time.
             </p>
           </div>
 
-          <div className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <Bell className="absolute -right-5 -top-5 h-12 w-12 text-amber-500" />
 
             <div className="mb-5 flex items-center gap-4">
@@ -540,12 +540,12 @@ export default function AppointmentSchedulingPage() {
               />
 
               <div>
-                <p className="font-bold text-slate-900">Reminder message</p>
-                <p className="text-sm text-slate-500">Sent 24 hours before</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Reminder message</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Sent 24 hours before</p>
               </div>
             </div>
 
-            <div className="rounded-lg bg-slate-50 p-5 text-sm leading-7 text-slate-600">
+            <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
               Hi Anita, this is a reminder for your appointment tomorrow at
               10:30 AM. Reply CONFIRM to keep your booking.
             </div>
@@ -554,7 +554,7 @@ export default function AppointmentSchedulingPage() {
               <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
                 Send reminder
               </button>
-              <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+              <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                 Preview
               </button>
             </div>
@@ -568,7 +568,7 @@ export default function AppointmentSchedulingPage() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -588,21 +588,21 @@ export default function AppointmentSchedulingPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -611,17 +611,17 @@ export default function AppointmentSchedulingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -634,7 +634,7 @@ export default function AppointmentSchedulingPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -645,15 +645,15 @@ export default function AppointmentSchedulingPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -664,14 +664,14 @@ export default function AppointmentSchedulingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -709,14 +709,14 @@ export default function AppointmentSchedulingPage() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -727,7 +727,7 @@ export default function AppointmentSchedulingPage() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   By improving CRM-related features, Enadysim estimates
                   management and efficiency in the appointment process.
                 </p>
@@ -740,8 +740,8 @@ export default function AppointmentSchedulingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Milan Ayala</p>
-                    <p className="text-sm text-slate-500">CEO</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Milan Ayala</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">CEO</p>
                   </div>
                 </div>
               </div>
@@ -754,13 +754,13 @@ export default function AppointmentSchedulingPage() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -786,7 +786,7 @@ export default function AppointmentSchedulingPage() {
 function FloatingNote({
   className = "",
   text = "Project note",
-  color = "bg-[#02cfc3]",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
 }: {
   className?: string;
   text?: string;
@@ -794,7 +794,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -806,7 +806,7 @@ function FloatingNote({
         className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
       />
 
-      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900" />
+      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
 
       <span className="relative z-10">{text}</span>
     </div>
@@ -838,3 +838,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

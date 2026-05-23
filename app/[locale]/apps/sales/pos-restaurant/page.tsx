@@ -89,7 +89,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={scriptFont}
     >
       {children}
@@ -166,10 +166,10 @@ function SectionEyebrow({
 function RestaurantPosPreview() {
   return (
     <div className="relative overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
           <Utensils className="h-5 w-5 text-sky-600 dark:text-sky-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-white">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
             Adon Restaurant POS
           </span>
         </div>
@@ -180,8 +180,8 @@ function RestaurantPosPreview() {
       </div>
 
       <div className="grid gap-5 p-5 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-4">
-          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
+          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
             Current order
           </p>
 
@@ -193,12 +193,12 @@ function RestaurantPosPreview() {
             ].map(([item, price]) => (
               <div
                 key={item}
-                className="flex items-center justify-between rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
+                className="flex items-center justify-between rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
               >
-                <span className="font-medium text-slate-700 dark:text-slate-300">
+                <span className="font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   {item}
                 </span>
-                <span className="font-bold text-slate-950 dark:text-white">
+                <span className="font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                   {price}
                 </span>
               </div>
@@ -210,18 +210,18 @@ function RestaurantPosPreview() {
               <span>Total</span>
               <span>$20.50</span>
             </div>
-            <button className="mt-4 w-full rounded-xl bg-white py-2 text-sm font-bold text-sky-700 dark:text-sky-600">
+            <button className="mt-4 w-full rounded-xl bg-white dark:bg-slate-900 py-2 text-sm font-bold text-sky-700 dark:text-sky-600">
               Pay order
             </button>
           </div>
         </div>
 
-        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-4">
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
           <div className="mb-4 flex items-center justify-between">
-            <p className="text-sm font-semibold text-slate-900 dark:text-white">
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
               Menu
             </p>
-            <span className="rounded-full bg-white dark:bg-slate-700 px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+            <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-400">
               48 items
             </span>
           </div>
@@ -231,7 +231,7 @@ function RestaurantPosPreview() {
               (item, index) => (
                 <div
                   key={item}
-                  className="overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm"
+                  className="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-sm"
                 >
                   <div
                     className={`h-20 ${
@@ -246,10 +246,10 @@ function RestaurantPosPreview() {
                     }`}
                   />
                   <div className="p-3 text-left">
-                    <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                    <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
                       {item}
                     </p>
-                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">
                       Tap to add
                     </p>
                   </div>
@@ -260,7 +260,7 @@ function RestaurantPosPreview() {
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-sky-600 text-sky-600 dark:fill-sky-500 dark:text-sky-500" />
       </button>
     </div>
@@ -269,7 +269,7 @@ function RestaurantPosPreview() {
 
 export default function RestaurantPosPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(14,165,233,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(14,165,233,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.07),transparent_25%)]" />
 
@@ -280,7 +280,7 @@ export default function RestaurantPosPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
               <HandUnderline color="bg-sky-400">All-in-one</HandUnderline>{" "}
               <span
                 className="text-sky-500 dark:text-sky-400"
@@ -314,12 +314,12 @@ export default function RestaurantPosPage() {
           >
             <RestaurantPosPreview />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-sky-600 dark:text-sky-400" />
               Faster service
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               Kitchen synced
             </div>
@@ -341,7 +341,7 @@ export default function RestaurantPosPage() {
 
         <div className="mx-auto mt-12 max-w-5xl rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
           <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5 text-left">
+            <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5 text-left">
               {[
                 "Floor plan control",
                 "Loyalty programs",
@@ -350,7 +350,7 @@ export default function RestaurantPosPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="mb-3 rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm"
+                  className="mb-3 rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300 shadow-sm"
                 >
                   {item}
                 </div>
@@ -363,10 +363,10 @@ export default function RestaurantPosPage() {
                   (item) => (
                     <div
                       key={item}
-                      className="rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-sm"
+                      className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-4 shadow-sm"
                     >
                       <Utensils className="mx-auto h-6 w-6 text-sky-600 dark:text-sky-400" />
-                      <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                      <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
                         {item}
                       </p>
                     </div>
@@ -381,18 +381,18 @@ export default function RestaurantPosPage() {
       <section className="bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-800" />
+            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800" />
             <div className="relative rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-4">
-                  <p className="font-semibold text-slate-900 dark:text-white">
+                <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
+                  <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     QR menu
                   </p>
                   <div className="mt-4 grid grid-cols-2 gap-3">
                     {["Meal", "Drink", "Dessert", "Add-on"].map((item) => (
                       <div
                         key={item}
-                        className="rounded-2xl bg-white dark:bg-slate-800 px-4 py-5 text-center text-sm text-slate-600 dark:text-slate-400 shadow-sm"
+                        className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-5 text-center text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400 shadow-sm"
                       >
                         {item}
                       </div>
@@ -406,7 +406,7 @@ export default function RestaurantPosPage() {
                   <p className="mt-2 text-sm text-white/80">
                     Waiting for payment
                   </p>
-                  <button className="mt-6 w-full rounded-xl bg-white py-2 text-sm font-bold text-sky-700 dark:text-sky-600">
+                  <button className="mt-6 w-full rounded-xl bg-white dark:bg-slate-900 py-2 text-sm font-bold text-sky-700 dark:text-sky-600">
                     Pay now
                   </button>
                 </div>
@@ -449,7 +449,7 @@ export default function RestaurantPosPage() {
         </div>
 
         <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="grid grid-cols-5 gap-4 rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5">
+          <div className="grid grid-cols-5 gap-4 rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5">
             {Array.from({ length: 15 }).map((_, index) => (
               <div
                 key={index}
@@ -458,7 +458,7 @@ export default function RestaurantPosPage() {
                     ? "bg-rose-100 dark:bg-rose-950/50 text-rose-700 dark:text-rose-400"
                     : index % 3 === 0
                       ? "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400"
-                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                      : "bg-white dark:bg-slate-900 dark:bg-slate-800 text-slate-600 dark:text-slate-300 dark:text-slate-400"
                 }`}
               >
                 T{index + 1}
@@ -485,14 +485,14 @@ export default function RestaurantPosPage() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
             <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-              <p className="text-left font-semibold text-slate-950 dark:text-white">
+              <p className="text-left font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
                 Kitchen display
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {["New orders", "Preparing", "Ready", "Served"].map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl bg-linear-to-br from-sky-50 to-emerald-50 dark:from-sky-950/30 dark:to-emerald-950/30 px-4 py-5 text-sm font-semibold text-slate-700 dark:text-slate-300"
+                    className="rounded-2xl bg-linear-to-br from-sky-50 to-emerald-50 dark:from-sky-950/30 dark:to-emerald-950/30 px-4 py-5 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300"
                   >
                     {item}
                   </div>
@@ -501,7 +501,7 @@ export default function RestaurantPosPage() {
             </div>
 
             <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-              <p className="font-semibold text-slate-950 dark:text-white">
+              <p className="font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
                 Preparation workflow
               </p>
               <div className="mt-5 space-y-3">
@@ -513,7 +513,7 @@ export default function RestaurantPosPage() {
                 ].map((item, index) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-600 dark:text-slate-400"
+                    className="flex items-center gap-3 rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400"
                   >
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-sky-100 dark:bg-sky-950/50 text-xs font-bold text-sky-700 dark:text-sky-400">
                       {index + 1}
@@ -551,7 +551,7 @@ export default function RestaurantPosPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {feature.title}
                   </h3>
 
@@ -598,10 +598,10 @@ export default function RestaurantPosPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -622,7 +622,7 @@ export default function RestaurantPosPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-sky-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.2)]">
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sky-100 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400">
               <Users className="h-7 w-7" />
             </div>
@@ -675,3 +675,4 @@ export default function RestaurantPosPage() {
     </main>
   );
 }
+

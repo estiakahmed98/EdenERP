@@ -77,11 +77,11 @@ const apps = [
 
 export default function PlanningLandingPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Smart planning.{" "}
@@ -90,7 +90,7 @@ export default function PlanningLandingPage() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Adon Planning optimizes scheduling through automation. Schedule
             shifts and resources, manage onsite work, and enjoy the simplicity
             of integrated timesheets and invoices.
@@ -106,7 +106,7 @@ export default function PlanningLandingPage() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
@@ -121,11 +121,11 @@ export default function PlanningLandingPage() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <CalendarDays className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Planning</span>
+                  <CalendarDays className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Planning</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Schedule / My Planning / Reporting / Configuration
                   </span>
@@ -137,8 +137,8 @@ export default function PlanningLandingPage() {
               </div>
 
               <div className="bg-[#f7f8fb] p-6">
-                <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 bg-slate-50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                  <div className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                     <span>Employee</span>
                     {[
                       "Monday",
@@ -163,9 +163,9 @@ export default function PlanningLandingPage() {
                   ].map((name, rowIndex) => (
                     <div
                       key={name}
-                      className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 px-4 py-3 text-xs last:border-0"
+                      className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 dark:border-slate-700 px-4 py-3 text-xs last:border-0"
                     >
-                      <span className="flex items-center gap-2 font-bold text-slate-900">
+                      <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         <img
                           src={avatars[rowIndex % avatars.length]}
                           alt=""
@@ -179,7 +179,7 @@ export default function PlanningLandingPage() {
                           key={index}
                           className={`mx-1 rounded px-2 py-3 text-center font-bold ${
                             (index + rowIndex) % 4 === 0
-                              ? "bg-[#02cfc3]/30 text-[#027f7c]"
+                              ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30/30 text-[#027f7c]"
                               : (index + rowIndex) % 4 === 1
                                 ? "bg-amber-100 text-amber-700"
                                 : (index + rowIndex) % 4 === 2
@@ -199,7 +199,7 @@ export default function PlanningLandingPage() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -209,19 +209,19 @@ export default function PlanningLandingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>Step up</span>
             </HandUnderline>{" "}
             your scheduling game
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Visualize and optimize your schedule. Gain clarity and efficiency
             with a stunning Gantt chart tool, templates, auto-planning, and
             recurrent tasks simplify your agenda management.
@@ -229,7 +229,7 @@ export default function PlanningLandingPage() {
 
           <div className="relative mx-auto mt-14 max-w-4xl">
             <p
-              className="absolute -right-14 top-10 hidden rotate-28 text-lg font-bold text-[#714b67] lg:block"
+              className="absolute -right-14 top-10 hidden rotate-28 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
               Allocation of hours
@@ -239,9 +239,9 @@ export default function PlanningLandingPage() {
 
             <DashedArrow className="absolute -right-4 top-28 hidden h-24 w-24 rotate-140 text-slate-300 lg:block" />
 
-            <div className="rounded-xl border border-slate-200 bg-white p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-6 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Add Shift</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Add Shift</p>
                 <span className="text-slate-400">×</span>
               </div>
 
@@ -254,7 +254,7 @@ export default function PlanningLandingPage() {
                 ].map((item) => (
                   <span
                     key={item}
-                    className="rounded-md bg-slate-50 px-3 py-2 text-xs font-bold text-slate-500"
+                    className="rounded-md bg-slate-50 dark:bg-slate-800/40 px-3 py-2 text-xs font-bold text-slate-500 dark:text-slate-400"
                   >
                     {item}
                   </span>
@@ -270,7 +270,7 @@ export default function PlanningLandingPage() {
                 ].map(([label, value]) => (
                   <div key={label}>
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <div className="mt-2 rounded-md bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700">
+                    <div className="mt-2 rounded-md bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
                       {value}
                     </div>
                   </div>
@@ -281,10 +281,10 @@ export default function PlanningLandingPage() {
                 <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
                   Save
                 </button>
-                <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+                <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                   Publish & Save
                 </button>
-                <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+                <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                   Auto Plan
                 </button>
               </div>
@@ -292,27 +292,27 @@ export default function PlanningLandingPage() {
 
             <FloatingNote
               className="mx-auto mt-12 z-30"
-              color="bg-[#02cfc3]"
+              color="bg-[#02cfc3] dark:bg-[#02cfc3]/30"
               text="We cannot wait for you to use this"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span>Cover</span>
               </HandUnderline>{" "}
               my shift?
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Control your planning. Create shifts and reassign them
               effortlessly using a user-friendly drag-and-drop interface. With
               collaboration options, allow everyone on the team to see open
@@ -320,8 +320,8 @@ export default function PlanningLandingPage() {
             </p>
           </div>
 
-          <div className="relative mx-auto w-full max-w-lg rounded-xl border border-slate-200 bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-            <div className="rounded-lg bg-white p-5">
+          <div className="relative mx-auto w-full max-w-lg rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-5">
               <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-slate-400">
                 {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
                   (day) => (
@@ -336,21 +336,21 @@ export default function PlanningLandingPage() {
                     key={index}
                     className={`h-12 rounded ${
                       [8, 14, 20].includes(index)
-                        ? "bg-[#02cfc3]/30"
+                        ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30/30"
                         : [10, 16, 24].includes(index)
                           ? "bg-[#714b67]/40"
-                          : "bg-slate-50"
+                          : "bg-slate-50 dark:bg-slate-800/40"
                     }`}
                   />
                 ))}
               </div>
             </div>
 
-            <div className="absolute left-1/2 top-1/2 w-80 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-6 text-left shadow-2xl">
-              <p className="font-bold text-slate-900">
+            <div className="absolute left-1/2 top-1/2 w-80 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-2xl">
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                 Anita Oliver - Developer
               </p>
-              <p className="mt-2 text-sm text-slate-500">
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                 This shift needs to be covered by another team member.
               </p>
 
@@ -368,7 +368,7 @@ export default function PlanningLandingPage() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -388,21 +388,21 @@ export default function PlanningLandingPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -411,17 +411,17 @@ export default function PlanningLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -434,7 +434,7 @@ export default function PlanningLandingPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -445,15 +445,15 @@ export default function PlanningLandingPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -464,14 +464,14 @@ export default function PlanningLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -509,14 +509,14 @@ export default function PlanningLandingPage() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -527,7 +527,7 @@ export default function PlanningLandingPage() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon improved resource management, making planning and
                   invoicing more efficient, enhancing communication and
                   collaboration.
@@ -541,8 +541,8 @@ export default function PlanningLandingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Cédric Lesaux</p>
-                    <p className="text-sm text-slate-500">CEO of XLG</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Cédric Lesaux</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">CEO of XLG</p>
                   </div>
                 </div>
               </div>
@@ -555,13 +555,13 @@ export default function PlanningLandingPage() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -587,7 +587,7 @@ export default function PlanningLandingPage() {
 function FloatingNote({
   className = "",
   text = "Project note",
-  color = "bg-[#02cfc3]",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
 }: {
   className?: string;
   text?: string;
@@ -595,7 +595,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -607,7 +607,7 @@ function FloatingNote({
         className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
       />
 
-      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900" />
+      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
 
       <span className="relative z-10">{text}</span>
     </div>
@@ -639,3 +639,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

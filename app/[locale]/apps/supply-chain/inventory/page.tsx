@@ -99,20 +99,20 @@ const avatars = [
 
 export default function InventoryLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6]">Modern</span>
             </HandUnderline>{" "}
             inventory system
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Track every product movement, automate stock operations, optimize
             warehouse flows, and manage your inventory with complete visibility.
           </p>
@@ -127,7 +127,7 @@ export default function InventoryLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -142,12 +142,12 @@ export default function InventoryLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center justify-between">
                   <div>
                     <span
-                      className="text-lg font-bold text-[#714b67]"
+                      className="text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       Inventory
@@ -181,8 +181,8 @@ export default function InventoryLandingSections() {
                   ))}
                 </div>
 
-                <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                     <span>Reference</span>
                     <span>Product</span>
                     <span>Source</span>
@@ -250,13 +250,13 @@ export default function InventoryLandingSections() {
                   ].map((row) => (
                     <div
                       key={row[0]}
-                      className="grid grid-cols-7 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                      className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
-                      <span className="font-bold text-[#714b67]">{row[0]}</span>
-                      <span className="text-slate-700">{row[1]}</span>
-                      <span className="text-slate-500">{row[2]}</span>
-                      <span className="text-slate-500">{row[3]}</span>
-                      <span className="font-bold text-slate-900">{row[4]}</span>
+                      <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">{row[0]}</span>
+                      <span className="text-slate-700 dark:text-slate-200">{row[1]}</span>
+                      <span className="text-slate-500 dark:text-slate-400">{row[2]}</span>
+                      <span className="text-slate-500 dark:text-slate-400">{row[3]}</span>
+                      <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{row[4]}</span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                           row[5] === "Done"
@@ -274,28 +274,28 @@ export default function InventoryLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
 
-            <div className="relative z-50 mx-auto mt-10 max-w-md rounded-xl bg-white p-5 shadow-xl ring-1 ring-slate-100">
+            <div className="relative z-50 mx-auto mt-10 max-w-md rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-xl ring-1 ring-slate-100">
               <div className="grid grid-cols-2 gap-4 text-left text-xs">
                 <div>
-                  <p className="font-bold text-slate-900">Forecasted</p>
-                  <p className="mt-1 text-slate-500">12,400 units</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Forecasted</p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">12,400 units</p>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Available</p>
-                  <p className="mt-1 text-slate-500">9,800 units</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Available</p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">9,800 units</p>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Replenishment</p>
-                  <p className="mt-1 text-slate-500">Auto rules</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Replenishment</p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">Auto rules</p>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900">Traceability</p>
-                  <p className="mt-1 text-slate-500">Lots / serials</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Traceability</p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">Lots / serials</p>
                 </div>
               </div>
             </div>
@@ -310,7 +310,7 @@ export default function InventoryLandingSections() {
           <DashedArrow className="mx-auto mb-8 h-24 w-24 rotate-[-20deg] text-slate-300" />
 
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Flawless{" "}
@@ -319,13 +319,13 @@ export default function InventoryLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Never run out of stock again. Forecast needs, automate purchase
             rules, replenish based on minimum quantities, and keep the right
             product available at the right time.
           </p>
 
-          <div className="mx-auto mt-12 max-w-4xl rounded-xl bg-white p-8 shadow-sm ring-1 ring-slate-100">
+          <div className="mx-auto mt-12 max-w-4xl rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-8 shadow-sm ring-1 ring-slate-100">
             <div className="grid items-center gap-8 md:grid-cols-3">
               {[
                 {
@@ -355,7 +355,7 @@ export default function InventoryLandingSections() {
                     </div>
 
                     <p
-                      className="mt-4 text-xl font-bold text-slate-900"
+                      className="mt-4 text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       {item.title}
@@ -372,7 +372,7 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="absolute left-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -380,10 +380,10 @@ export default function InventoryLandingSections() {
             <div className="relative">
               <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-full bg-slate-100" />
               <div className="relative -rotate-12 rounded-3xl bg-slate-900 p-4 shadow-2xl">
-                <div className="h-80 w-44 rounded-2xl bg-white p-4">
+                <div className="h-80 w-44 rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4">
                   <div className="mx-auto h-3 w-16 rounded-full bg-slate-200" />
-                  <div className="mt-6 rounded-xl bg-slate-50 p-4">
-                    <QrCode className="mx-auto h-20 w-20 text-slate-900" />
+                  <div className="mt-6 rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <QrCode className="mx-auto h-20 w-20 text-slate-900 dark:text-white dark:text-slate-100" />
                   </div>
                   <div className="mt-6 space-y-3">
                     <div className="h-3 rounded bg-slate-100" />
@@ -399,7 +399,7 @@ export default function InventoryLandingSections() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Speed up receipt,{" "}
@@ -410,7 +410,7 @@ export default function InventoryLandingSections() {
               control and storage
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Barcode scanning and smart routes let your warehouse team receive
               products, verify quality, and put items away quickly and
               accurately.
@@ -424,19 +424,19 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <DashedArrow className="mb-8 h-28 w-28 -rotate-90 text-slate-300" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Optimize your warehouse
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Build clean warehouse operations with locations, routes, putaway
               rules, replenishment rules, picking flows, and transfer
               management.
@@ -446,11 +446,11 @@ export default function InventoryLandingSections() {
           <div className="relative">
             <div className="absolute inset-0 translate-x-10 translate-y-10 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 sm:grid-cols-3">
                 {["Receipts", "Pick", "Pack"].map((title, columnIndex) => (
-                  <div key={title} className="rounded-lg bg-slate-50 p-4">
-                    <p className="mb-4 text-sm font-bold text-slate-900">
+                  <div key={title} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {title}
                     </p>
 
@@ -458,9 +458,9 @@ export default function InventoryLandingSections() {
                       {Array.from({ length: 4 }).map((_, index) => (
                         <div
                           key={index}
-                          className="rounded-lg bg-white p-3 shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-3 shadow-sm ring-1 ring-slate-100"
                         >
-                          <p className="text-xs font-bold text-[#714b67]">
+                          <p className="text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
                             WH/{columnIndex + 1}0{index + 1}
                           </p>
                           <div className="mt-2 h-2 rounded bg-slate-100" />
@@ -478,21 +478,21 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <DashedArrow className="mx-auto mb-8 h-24 w-24 -rotate-90 text-slate-300" />
 
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6]">Minimize</span>
             </HandUnderline>{" "}
             picking movements
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Use smart routes, batches, waves, zones, and optimized pick paths to
             reduce walking time and speed up warehouse operations.
           </p>
@@ -502,15 +502,15 @@ export default function InventoryLandingSections() {
               (title, cardIndex) => (
                 <div
                   key={title}
-                  className="rounded-xl border border-slate-200 bg-white p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                  className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
                 >
-                  <div className="grid h-52 grid-cols-5 gap-2 rounded-lg bg-slate-50 p-4">
+                  <div className="grid h-52 grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                     {Array.from({ length: 20 }).map((_, index) => (
                       <div
                         key={index}
                         className={`rounded ${
                           [2, 8, 13, 17].includes(index + cardIndex)
-                            ? "bg-[#02cfc3]"
+                            ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30"
                             : [4, 11, 18].includes(index + cardIndex)
                               ? "bg-amber-300"
                               : "bg-slate-200"
@@ -520,13 +520,13 @@ export default function InventoryLandingSections() {
                   </div>
 
                   <h3
-                    className="mt-5 text-xl font-bold text-slate-900"
+                    className="mt-5 text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
                     style={{ fontFamily: handwrittenFont }}
                   >
                     {title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                  <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                     Reduce unnecessary walking and pick items in smarter groups.
                   </p>
                 </div>
@@ -536,11 +536,11 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-rose-300">
@@ -549,7 +549,7 @@ export default function InventoryLandingSections() {
               has never been easier
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Validate transfers, prepare packages, print labels, scan products,
               and make sure every delivery is accurate before it leaves your
               warehouse.
@@ -576,7 +576,7 @@ export default function InventoryLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -586,7 +586,7 @@ export default function InventoryLandingSections() {
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>right.</span>
             </HandUnderline>
           </h2>
@@ -595,21 +595,21 @@ export default function InventoryLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -618,21 +618,21 @@ export default function InventoryLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one{" "}
@@ -641,7 +641,7 @@ export default function InventoryLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -652,15 +652,15 @@ export default function InventoryLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -671,14 +671,14 @@ export default function InventoryLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -716,14 +716,14 @@ export default function InventoryLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -734,7 +734,7 @@ export default function InventoryLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon inventory reduced our logistics spreadsheet work while
                   making our warehouse easier to manage. The biggest benefit is
                   real-time stock visibility and fewer manual mistakes.
@@ -748,8 +748,8 @@ export default function InventoryLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Andrew Ross</p>
-                    <p className="text-sm text-slate-500">Warehouse manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Andrew Ross</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Warehouse manager</p>
                   </div>
                 </div>
               </div>
@@ -762,7 +762,7 @@ export default function InventoryLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Being organized
@@ -796,9 +796,9 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
-      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-[#02cfc3]" />
+      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
 
       <img
         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
@@ -836,3 +836,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

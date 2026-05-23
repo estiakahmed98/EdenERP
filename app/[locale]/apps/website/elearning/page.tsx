@@ -93,11 +93,11 @@ const avatars = [
 
 export default function ELearningLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Keep your learners{" "}
@@ -106,7 +106,7 @@ export default function ELearningLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Create online courses, publish lessons, track progress, measure
             results, and help your students reach success with a beautiful
             learning platform.
@@ -122,7 +122,7 @@ export default function ELearningLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -146,25 +146,25 @@ export default function ELearningLandingSections() {
               for any device
             </p>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <span
-                  className="text-xl font-bold text-[#714b67]"
+                  className="text-xl font-bold text-[#714b67] dark:text-[#9b6a8f]"
                   style={{ fontFamily: handwrittenFont }}
                 >
                   Learn Academy
                 </span>
               </div>
 
-              <div className="grid bg-white lg:grid-cols-[230px_1fr]">
-                <aside className="border-r border-slate-100 bg-slate-50 p-5 text-left">
-                  <div className="rounded-lg bg-white p-4 shadow-sm">
-                    <p className="text-sm font-bold text-slate-900">
+              <div className="grid bg-white dark:bg-slate-950 dark:bg-slate-900 lg:grid-cols-[230px_1fr]">
+                <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
+                  <div className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-sm">
+                    <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       Course progress
                     </p>
 
                     <div className="mt-4">
-                      <div className="mb-2 flex justify-between text-xs font-bold text-slate-500">
+                      <div className="mb-2 flex justify-between text-xs font-bold text-slate-500 dark:text-slate-400">
                         <span>Completed</span>
                         <span>47%</span>
                       </div>
@@ -186,8 +186,8 @@ export default function ELearningLandingSections() {
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 1
-                            ? "bg-white text-[#714b67] shadow-sm"
-                            : "text-slate-500"
+                            ? "bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
+                            : "text-slate-500 dark:text-slate-400"
                         }`}
                       >
                         {item}
@@ -196,9 +196,9 @@ export default function ELearningLandingSections() {
                   </div>
                 </aside>
 
-                <div className="bg-white p-6 text-left">
+                <div className="bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left">
                   <div className="relative overflow-hidden rounded-lg bg-[#7a4d6e] p-8 text-white">
-                    <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-white/10" />
+                    <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-white dark:bg-slate-950/10" />
 
                     <p className="text-sm font-bold text-white/70">
                       Gardening Course
@@ -213,7 +213,7 @@ export default function ELearningLandingSections() {
                       through structured lessons and interactive activities.
                     </p>
 
-                    <button className="mt-6 flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-bold text-[#714b67]">
+                    <button className="mt-6 flex items-center gap-2 rounded-md bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-3 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
                       <Play className="h-4 w-4 fill-current" />
                       Continue
                     </button>
@@ -228,13 +228,13 @@ export default function ELearningLandingSections() {
                     ].map(([number, title, status], index) => (
                       <div
                         key={title}
-                        className="grid grid-cols-[44px_1fr_110px] items-center rounded-lg border border-slate-100 px-4 py-3"
+                        className="grid grid-cols-[44px_1fr_110px] items-center rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3"
                       >
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-xs font-bold text-[#714b67]">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800/40 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
                           {number}
                         </span>
 
-                        <span className="text-sm font-semibold text-slate-700">
+                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
                           {title}
                         </span>
 
@@ -270,7 +270,7 @@ export default function ELearningLandingSections() {
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Easy to use, fun to{" "}
@@ -279,15 +279,15 @@ export default function ELearningLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Create engaging courses with lessons, videos, quizzes, text blocks,
             images, downloadable files, and interactive learning content.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid lg:grid-cols-[1fr_250px]">
-                <div className="bg-white p-7">
+                <div className="bg-white dark:bg-slate-950 dark:bg-slate-900 p-7">
                   <div className="mb-5 rounded-lg bg-[#714b67] px-5 py-4 text-left text-white">
                     <p className="text-sm font-bold">Taking care of Trees</p>
                   </div>
@@ -308,8 +308,8 @@ export default function ELearningLandingSections() {
                       <div
                         key={item.title}
                         className={`overflow-hidden rounded-xl border ${
-                          index === 1 ? "border-[#02cfc3]" : "border-slate-100"
-                        } bg-slate-50`}
+                          index === 1 ? "border-[#02cfc3]" : "border-slate-100 dark:border-slate-700"
+                        } bg-slate-50 dark:bg-slate-800/40`}
                       >
                         <img
                           src={item.image}
@@ -318,10 +318,10 @@ export default function ELearningLandingSections() {
                         />
 
                         <div className="p-5 text-left">
-                          <h3 className="font-bold text-slate-900">
+                          <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {item.title}
                           </h3>
-                          <p className="mt-2 text-sm leading-6 text-slate-500">
+                          <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                             Learn with beautiful content blocks and simple
                             course structure.
                           </p>
@@ -331,7 +331,7 @@ export default function ELearningLandingSections() {
                   </div>
                 </div>
 
-                <aside className="border-l border-slate-200 bg-[#171824] p-5 text-left text-white">
+                <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] p-5 text-left text-white">
                   <p className="mb-5 text-sm font-bold">Editor</p>
 
                   {[
@@ -348,9 +348,9 @@ export default function ELearningLandingSections() {
                         <span>{index + 1}</span>
                       </div>
 
-                      <div className="h-2 rounded-full bg-white/10">
+                      <div className="h-2 rounded-full bg-white dark:bg-slate-950/10">
                         <div
-                          className="h-2 rounded-full bg-[#02cfc3]"
+                          className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30"
                           style={{ width: `${45 + index * 8}%` }}
                         />
                       </div>
@@ -363,11 +363,11 @@ export default function ELearningLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300">
@@ -378,7 +378,7 @@ export default function ELearningLandingSections() {
               not a destination
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Engage students. Keep them motivated with points, badges,
               profiles, progress tracking, and achievement milestones that make
               learning feel rewarding.
@@ -390,7 +390,7 @@ export default function ELearningLandingSections() {
           <div className="relative">
             <div className="absolute inset-0 translate-x-10 translate-y-8 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="bg-[#714b67] px-6 py-5 text-white">
                 <div className="flex items-center gap-4">
                   <img
@@ -406,9 +406,9 @@ export default function ELearningLandingSections() {
               </div>
 
               <div className="grid gap-5 p-6 sm:grid-cols-[180px_1fr]">
-                <div className="rounded-xl bg-slate-50 p-5 text-center">
+                <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5 text-center">
                   <Trophy className="mx-auto h-12 w-12 text-amber-400" />
-                  <p className="mt-3 text-2xl font-bold text-slate-900">
+                  <p className="mt-3 text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     3,407
                   </p>
                   <p className="text-xs font-bold text-slate-400">XP POINTS</p>
@@ -423,9 +423,9 @@ export default function ELearningLandingSections() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="flex items-center justify-between rounded-lg border border-slate-100 px-4 py-3 text-sm"
+                      className="flex items-center justify-between rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3 text-sm"
                     >
-                      <span className="font-semibold text-slate-700">
+                      <span className="font-semibold text-slate-700 dark:text-slate-200">
                         {item}
                       </span>
                       <CheckCircle2 className="h-4 w-4 text-emerald-500" />
@@ -438,10 +438,10 @@ export default function ELearningLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-amber-300">
@@ -454,7 +454,7 @@ export default function ELearningLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Evaluate attendance, progress, answers, grades, and participation.
             Use insights to improve learning and support students better.
           </p>
@@ -462,7 +462,7 @@ export default function ELearningLandingSections() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="absolute inset-0 translate-y-10 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid min-h-[430px] lg:grid-cols-[220px_1fr]">
                 <aside className="bg-[#1f2937] p-5 text-left text-white">
                   <p className="text-sm font-bold">Course results</p>
@@ -479,7 +479,7 @@ export default function ELearningLandingSections() {
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 1
-                            ? "bg-white/15 text-white"
+                            ? "bg-white dark:bg-slate-950/15 text-white"
                             : "text-white/60"
                         }`}
                       >
@@ -491,7 +491,7 @@ export default function ELearningLandingSections() {
 
                 <div className="p-7 text-left">
                   <div className="mb-6 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-slate-900">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       Survey and quiz feedback
                     </h3>
 
@@ -513,9 +513,9 @@ export default function ELearningLandingSections() {
                     ].map((item) => (
                       <div
                         key={item.question}
-                        className="rounded-xl border border-slate-100 bg-slate-50 p-5"
+                        className="rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5"
                       >
-                        <p className="font-bold text-slate-900">
+                        <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                           {item.question}
                         </p>
 
@@ -526,7 +526,7 @@ export default function ELearningLandingSections() {
                               className={`rounded-lg px-4 py-3 text-sm ${
                                 index === 0
                                   ? "bg-emerald-50 text-emerald-700"
-                                  : "bg-white text-slate-500"
+                                  : "bg-white dark:bg-slate-950 dark:bg-slate-900 text-slate-500 dark:text-slate-400"
                               }`}
                             >
                               {answer}
@@ -553,7 +553,7 @@ export default function ELearningLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -563,7 +563,7 @@ export default function ELearningLandingSections() {
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>right.</span>
             </HandUnderline>
           </h2>
@@ -572,21 +572,21 @@ export default function ELearningLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -595,21 +595,21 @@ export default function ELearningLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one{" "}
@@ -618,7 +618,7 @@ export default function ELearningLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -629,15 +629,15 @@ export default function ELearningLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -648,14 +648,14 @@ export default function ELearningLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -693,14 +693,14 @@ export default function ELearningLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -711,7 +711,7 @@ export default function ELearningLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon is so full of a software Army Knife. You can tailor it to
                   your business requirements. This is one of the key reasons
                   that has helped us implement Adon.
@@ -725,8 +725,8 @@ export default function ELearningLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Richard Miles</p>
-                    <p className="text-sm text-slate-500">Training manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Richard Miles</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Training manager</p>
                   </div>
                 </div>
               </div>
@@ -739,13 +739,13 @@ export default function ELearningLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -771,7 +771,7 @@ export default function ELearningLandingSections() {
 function FloatingNote({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-amber-400" />
       <img
@@ -779,7 +779,7 @@ function FloatingNote({ className = "" }: { className?: string }) {
         alt="User"
         className="absolute left-3 h-12 w-12 rounded-full object-cover"
       />
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900" />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
       Create courses and help learners grow
     </div>
   );
@@ -810,3 +810,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

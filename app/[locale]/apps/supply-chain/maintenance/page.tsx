@@ -59,11 +59,11 @@ const avatars = [
 
 export default function MaintenanceLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Plan Maintenance.{" "}
@@ -72,7 +72,7 @@ export default function MaintenanceLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Manage preventive and corrective maintenance in one place, so issues
             are handled early and emergencies stay off the schedule.
           </p>
@@ -87,7 +87,7 @@ export default function MaintenanceLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
@@ -102,11 +102,11 @@ export default function MaintenanceLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <Wrench className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Maintenance</span>
+                  <Wrench className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Maintenance</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Dashboard / Requests / Equipment / Reporting
                   </span>
@@ -150,10 +150,10 @@ export default function MaintenanceLandingSections() {
                 ].map((column, columnIndex) => (
                   <div
                     key={column.title}
-                    className="rounded-lg bg-slate-50 p-3"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         {column.title}
                       </p>
                       <span className="text-lg font-bold text-slate-400">
@@ -165,9 +165,9 @@ export default function MaintenanceLandingSections() {
                       {column.cards.map((card, cardIndex) => (
                         <div
                           key={card}
-                          className="rounded-lg bg-white p-4 text-left shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
                         >
-                          <p className="text-sm font-bold text-slate-900">
+                          <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {card}
                           </p>
                           <p className="mt-1 text-xs text-slate-400">
@@ -202,7 +202,7 @@ export default function MaintenanceLandingSections() {
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -212,13 +212,13 @@ export default function MaintenanceLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
             <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 pb-3 text-center text-xs font-bold text-slate-400">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-700 pb-3 text-center text-xs font-bold text-slate-400">
                 {["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"].map(
                   (day) => (
                     <span key={day}>{day}</span>
@@ -235,7 +235,7 @@ export default function MaintenanceLandingSections() {
                         ? "bg-emerald-100 text-emerald-700"
                         : [7, 14, 23].includes(index)
                           ? "bg-purple-100 text-purple-700"
-                          : "bg-slate-50 text-slate-400"
+                          : "bg-slate-50 dark:bg-slate-800/40 text-slate-400"
                     }`}
                   >
                     <span>{index + 1}</span>
@@ -252,17 +252,17 @@ export default function MaintenanceLandingSections() {
           </div>
 
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
               Automate preventive
               <br />
               maintenance
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
               to keep your line running.
             </p>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Use computed statistics, scheduling rules, expected next failure
               dates, and IoT data to automate metrology and preventive
               maintenance.
@@ -271,32 +271,32 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
               Organize your
               <br />
               maintenance requests
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
               with great kanban and calendar views.
             </p>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Easily track maintenance requests with kanban view. Use the
               maintenance calendar to organize activities and manage team
               workload in a clean drag-and-drop interface.
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 md:grid-cols-3">
               {["New Request", "In Progress", "Repaired"].map(
                 (column, columnIndex) => (
-                  <div key={column} className="rounded-lg bg-slate-50 p-4">
-                    <p className="mb-4 text-sm font-bold text-slate-900">
+                  <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {column}
                     </p>
 
@@ -304,7 +304,7 @@ export default function MaintenanceLandingSections() {
                       {Array.from({ length: 2 }).map((_, index) => (
                         <div
                           key={index}
-                          className="rounded-lg bg-white p-4 text-left shadow-sm"
+                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm"
                         >
                           <div className="h-3 w-3/4 rounded bg-slate-200" />
                           <div className="mt-2 h-2 w-full rounded bg-slate-100" />
@@ -336,11 +336,11 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div className="flex justify-center">
             <div className="relative rounded-[2.3rem] bg-slate-900 p-4 shadow-2xl">
-              <div className="h-[520px] w-[250px] rounded-[1.7rem] bg-white p-4">
+              <div className="h-[520px] w-[250px] rounded-[1.7rem] bg-white dark:bg-slate-950 dark:bg-slate-900 p-4">
                 <div className="mx-auto mb-5 h-2 w-20 rounded-full bg-slate-200" />
 
                 <div className="rounded-lg bg-[#714b67] px-4 py-3 text-white">
@@ -358,10 +358,10 @@ export default function MaintenanceLandingSections() {
                   ].map((item, index) => (
                     <div
                       key={item}
-                      className="rounded-lg border border-slate-100 bg-slate-50 p-3"
+                      className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-3"
                     >
                       <div className="flex items-center justify-between">
-                        <p className="text-xs font-bold text-slate-900">
+                        <p className="text-xs font-bold text-slate-900 dark:text-white dark:text-slate-100">
                           {item}
                         </p>
                         <span
@@ -383,23 +383,23 @@ export default function MaintenanceLandingSections() {
           </div>
 
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
               Increase overall equipment
               <br />
               effectiveness.
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
               with efficient maintenance.
             </p>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Manufacturing teams can trigger maintenance requests directly from
               work centers. When the team acts, the right people are updated in
               real time.
             </p>
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Better communication reduces downtime and makes your manufacturing
               operation more efficient.
             </p>
@@ -407,18 +407,18 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
               Dashboard & Statistics
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
               to optimize your performance.
             </p>
 
-            <p className="mt-6 text-sm leading-7 text-slate-600">
+            <p className="mt-6 text-sm leading-7 text-slate-600 dark:text-slate-300">
               Use automatically computed statistics including MTBF and MTBR to
               fine tune preventive maintenance rules and reduce risk of
               equipment failure.
@@ -462,8 +462,8 @@ export default function MaintenanceLandingSections() {
                 key={bar.name}
                 className="relative flex w-36 flex-col items-center"
               >
-                <div className="absolute -top-12 z-10 rounded-md bg-white px-4 py-2 text-xs shadow-lg ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900">{bar.name}</p>
+                <div className="absolute -top-12 z-10 rounded-md bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-2 text-xs shadow-lg ring-1 ring-slate-100">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{bar.name}</p>
                   <p className="mt-1 text-slate-400">New request</p>
                 </div>
 
@@ -487,10 +487,10 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -503,7 +503,7 @@ export default function MaintenanceLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -514,15 +514,15 @@ export default function MaintenanceLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -533,14 +533,14 @@ export default function MaintenanceLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -578,14 +578,14 @@ export default function MaintenanceLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -597,13 +597,13 @@ export default function MaintenanceLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -625,3 +625,5 @@ export default function MaintenanceLandingSections() {
     </main>
   );
 }
+
+

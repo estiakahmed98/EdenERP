@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -83,7 +83,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={scriptFont}
     >
       {children}
@@ -143,10 +143,10 @@ function SectionEyebrow({
 function SubscriptionPreview() {
   return (
     <div className="relative overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
           <Repeat className="h-5 w-5 text-amber-600 dark:text-amber-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-white">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
             Adon Subscriptions
           </span>
         </div>
@@ -157,8 +157,8 @@ function SubscriptionPreview() {
       </div>
 
       <div className="p-5">
-        <div className="overflow-hidden rounded-3xl border border-slate-100 dark:border-slate-800">
-          <div className="grid grid-cols-[90px_1fr_120px_120px_120px] bg-slate-50 dark:bg-slate-800/70 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400 dark:text-slate-500">
+        <div className="overflow-hidden rounded-3xl border border-slate-100 dark:border-slate-700 dark:border-slate-800">
+          <div className="grid grid-cols-[90px_1fr_120px_120px_120px] bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/70 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400 dark:text-slate-500 dark:text-slate-400">
             <span>ID</span>
             <span>Customer</span>
             <span>Next bill</span>
@@ -178,17 +178,17 @@ function SubscriptionPreview() {
               className={`grid grid-cols-[90px_1fr_120px_120px_120px] px-4 py-3 text-sm ${
                 index % 2 === 0
                   ? "bg-white dark:bg-slate-900"
-                  : "bg-slate-50/70 dark:bg-slate-800/50"
+                  : "bg-slate-50 dark:bg-slate-800/40/70 dark:bg-slate-800/50"
               }`}
             >
-              <span className="font-medium text-slate-700 dark:text-slate-300">
+              <span className="font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                 {row[0]}
               </span>
-              <span className="text-slate-700 dark:text-slate-300">
+              <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                 {row[1]}
               </span>
               <span className="text-rose-500 dark:text-rose-400">{row[2]}</span>
-              <span className="font-semibold text-slate-900 dark:text-white">
+              <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                 {row[3]}
               </span>
               <span>
@@ -207,7 +207,7 @@ function SubscriptionPreview() {
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-amber-500 text-amber-500 dark:fill-amber-400 dark:text-amber-400" />
       </button>
     </div>
@@ -216,7 +216,7 @@ function SubscriptionPreview() {
 
 export default function SubscriptionsPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(245,158,11,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(14,165,233,0.11),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(245,158,11,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(14,165,233,0.06),transparent_25%)]" />
 
@@ -227,7 +227,7 @@ export default function SubscriptionsPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
               Recurring revenues.{" "}
               <span
                 className="text-amber-500 dark:text-amber-400"
@@ -261,12 +261,12 @@ export default function SubscriptionsPage() {
           >
             <SubscriptionPreview />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-amber-500 dark:text-amber-400" />
               Auto renewals
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               Revenue synced
             </div>
@@ -282,7 +282,7 @@ export default function SubscriptionsPage() {
             great services
           </ScriptHeading>
 
-          <p className="mt-5 max-w-xl text-lg font-semibold text-slate-800 dark:text-slate-200">
+          <p className="mt-5 max-w-xl text-lg font-semibold text-slate-800 dark:text-slate-100 dark:text-slate-200">
             Simple features to manage subscriptions automatically.
           </p>
 
@@ -294,9 +294,9 @@ export default function SubscriptionsPage() {
         </div>
 
         <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5">
+          <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5">
             <div className="flex items-center justify-between">
-              <p className="font-semibold text-slate-950 dark:text-white">
+              <p className="font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
                 Office cleaning monthly
               </p>
               <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
@@ -313,12 +313,12 @@ export default function SubscriptionsPage() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="flex justify-between rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
+                  className="flex justify-between rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
                 >
-                  <span className="text-slate-500 dark:text-slate-400">
+                  <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     {label}
                   </span>
-                  <span className="font-semibold text-slate-900 dark:text-white">
+                  <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {value}
                   </span>
                 </div>
@@ -333,7 +333,7 @@ export default function SubscriptionsPage() {
           From happy visitors to satisfied customers
         </ScriptHeading>
 
-        <p className="mx-auto mt-5 max-w-2xl text-base font-semibold text-slate-700 dark:text-slate-300">
+        <p className="mx-auto mt-5 max-w-2xl text-base font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
           Create great long lasting relations with your subscribers.
         </p>
 
@@ -368,7 +368,7 @@ export default function SubscriptionsPage() {
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400">
                   <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-950 dark:text-white">
+                <h3 className="text-lg font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -384,7 +384,7 @@ export default function SubscriptionsPage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>Get a more efficient sales force</ScriptHeading>
 
-          <p className="mx-auto mt-5 max-w-xl text-base font-semibold text-slate-700 dark:text-slate-300">
+          <p className="mx-auto mt-5 max-w-xl text-base font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
             Save time on routine tasks and focus on growing revenue.
           </p>
 
@@ -413,10 +413,10 @@ export default function SubscriptionsPage() {
 
               return (
                 <div key={item.title} className="text-center">
-                  <div className="mx-auto flex h-20 w-20 rotate-[-4deg] items-center justify-center rounded-3xl bg-white dark:bg-slate-800 text-amber-500 dark:text-amber-400 shadow-sm ring-4 ring-slate-950/90 dark:ring-slate-700">
+                  <div className="mx-auto flex h-20 w-20 rotate-[-4deg] items-center justify-center rounded-3xl bg-white dark:bg-slate-900 dark:bg-slate-800 text-amber-500 dark:text-amber-400 shadow-sm ring-4 ring-slate-950/90 dark:ring-slate-700">
                     <Icon className="h-10 w-10" />
                   </div>
-                  <h3 className="mt-6 text-lg font-bold text-slate-950 dark:text-white">
+                  <h3 className="mt-6 text-lg font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                     {item.title}
                   </h3>
                   <p className="mx-auto mt-3 max-w-sm text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -432,7 +432,7 @@ export default function SubscriptionsPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>Analysis tools to optimize your business</ScriptHeading>
 
-        <p className="mx-auto mt-5 max-w-xl text-base font-semibold text-slate-700 dark:text-slate-300">
+        <p className="mx-auto mt-5 max-w-xl text-base font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
           Find out what metrics to act on in a click.
         </p>
 
@@ -467,7 +467,7 @@ export default function SubscriptionsPage() {
                 <div className="mb-5 rounded-3xl bg-linear-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 p-5">
                   <Icon className="h-10 w-10 text-amber-600 dark:text-amber-400" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-950 dark:text-white">
+                <h3 className="text-lg font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                   {item.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -503,7 +503,7 @@ export default function SubscriptionsPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {feature.title}
                   </h3>
 
@@ -542,10 +542,10 @@ export default function SubscriptionsPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -566,7 +566,7 @@ export default function SubscriptionsPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-amber-50 to-orange-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.2)]">
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400">
               <Users className="h-7 w-7" />
             </div>
@@ -619,3 +619,4 @@ export default function SubscriptionsPage() {
     </main>
   );
 }
+

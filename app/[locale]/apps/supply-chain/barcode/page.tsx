@@ -100,20 +100,20 @@ const avatars = [
 
 export default function BarcodeLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Scan faster.{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6]">Move smarter.</span>
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Barcode helps your warehouse team receive, pick, pack, transfer,
             count, and validate inventory with speed and accuracy.
           </p>
@@ -128,7 +128,7 @@ export default function BarcodeLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -143,11 +143,11 @@ export default function BarcodeLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <ScanBarcode className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Barcode</span>
+                  <ScanBarcode className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Barcode</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Receipts / Delivery Orders / Inventory / Transfers
                   </span>
@@ -159,12 +159,12 @@ export default function BarcodeLandingSections() {
               </div>
 
               <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[260px_1fr]">
-                <aside className="rounded-xl bg-white p-5 text-left shadow-sm ring-1 ring-slate-100">
-                  <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-2xl bg-slate-50">
-                    <QrCode className="h-24 w-24 text-slate-900" />
+                <aside className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-sm ring-1 ring-slate-100">
+                  <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-2xl bg-slate-50 dark:bg-slate-800/40">
+                    <QrCode className="h-24 w-24 text-slate-900 dark:text-white dark:text-slate-100" />
                   </div>
 
-                  <p className="mt-5 text-center text-sm font-bold text-slate-900">
+                  <p className="mt-5 text-center text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     Scan product barcode
                   </p>
 
@@ -177,7 +177,7 @@ export default function BarcodeLandingSections() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="flex items-center gap-2 rounded-lg bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600"
+                        className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300"
                       >
                         <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                         {item}
@@ -204,8 +204,8 @@ export default function BarcodeLandingSections() {
                     ))}
                   </div>
 
-                  <div className="mt-5 overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                    <div className="grid grid-cols-6 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                  <div className="mt-5 overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                    <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                       <span>Barcode</span>
                       <span>Product</span>
                       <span>Lot/Serial</span>
@@ -258,15 +258,15 @@ export default function BarcodeLandingSections() {
                     ].map((row) => (
                       <div
                         key={row[0]}
-                        className="grid grid-cols-6 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                        className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                       >
-                        <span className="font-bold text-[#714b67]">
+                        <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
                           {row[0]}
                         </span>
-                        <span className="text-slate-700">{row[1]}</span>
-                        <span className="text-slate-500">{row[2]}</span>
-                        <span className="text-slate-500">{row[3]}</span>
-                        <span className="font-bold text-slate-900">
+                        <span className="text-slate-700 dark:text-slate-200">{row[1]}</span>
+                        <span className="text-slate-500 dark:text-slate-400">{row[2]}</span>
+                        <span className="text-slate-500 dark:text-slate-400">{row[3]}</span>
+                        <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                           {row[4]}
                         </span>
                         <span
@@ -277,7 +277,7 @@ export default function BarcodeLandingSections() {
                                 ? "bg-sky-50 text-sky-600"
                                 : row[5] === "Picked"
                                   ? "bg-amber-50 text-amber-600"
-                                  : "bg-slate-100 text-slate-500"
+                                  : "bg-slate-100 text-slate-500 dark:text-slate-400"
                           }`}
                         >
                           {row[5]}
@@ -288,14 +288,14 @@ export default function BarcodeLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
 
             <FloatingNote
               className="mx-auto mt-12 z-30"
-              color="bg-[#02cfc3]"
+              color="bg-[#02cfc3] dark:bg-[#02cfc3]/30"
               text="Scan once. Update everywhere."
             />
           </div>
@@ -310,10 +310,10 @@ export default function BarcodeLandingSections() {
             <DashedArrow className="mb-8 h-24 w-24 rotate-[-18deg] text-slate-300" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span>Receive</span>
               </HandUnderline>{" "}
               products
@@ -321,18 +321,18 @@ export default function BarcodeLandingSections() {
               without the paperwork
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Scan incoming goods, validate purchase orders, confirm quantities,
               and place products directly into the right warehouse location.
             </p>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white" />
+            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Incoming Shipment</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Incoming Shipment</p>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                   Ready
                 </span>
@@ -345,9 +345,9 @@ export default function BarcodeLandingSections() {
                   ["Expected", "Today"],
                   ["Destination", "WH/Stock"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 p-4">
+                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900">
+                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {value}
                     </p>
                   </div>
@@ -362,10 +362,10 @@ export default function BarcodeLandingSections() {
                 ].map(([name, qty, status]) => (
                   <div
                     key={name}
-                    className="grid grid-cols-[1fr_90px_100px] items-center rounded-lg border border-slate-100 px-4 py-3 text-sm"
+                    className="grid grid-cols-[1fr_90px_100px] items-center rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3 text-sm"
                   >
-                    <span className="font-semibold text-slate-700">{name}</span>
-                    <span className="text-slate-500">{qty}</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">{name}</span>
+                    <span className="text-slate-500 dark:text-slate-400">{qty}</span>
                     <span
                       className={`rounded-full px-3 py-1 text-center text-[10px] font-bold ${
                         status === "Validated"
@@ -387,7 +387,7 @@ export default function BarcodeLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="absolute left-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
@@ -396,12 +396,12 @@ export default function BarcodeLandingSections() {
               <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-full bg-slate-100" />
 
               <div className="relative rotate-12 rounded-3xl bg-slate-900 p-4 shadow-2xl">
-                <div className="h-96 w-56 rounded-2xl bg-white p-4">
+                <div className="h-96 w-56 rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4">
                   <div className="mx-auto h-3 w-16 rounded-full bg-slate-200" />
 
-                  <div className="mt-6 rounded-xl bg-slate-50 p-4 text-center">
-                    <QrCode className="mx-auto h-24 w-24 text-slate-900" />
-                    <p className="mt-3 text-xs font-bold text-slate-500">
+                  <div className="mt-6 rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4 text-center">
+                    <QrCode className="mx-auto h-24 w-24 text-slate-900 dark:text-white dark:text-slate-100" />
+                    <p className="mt-3 text-xs font-bold text-slate-500 dark:text-slate-400">
                       Scan package
                     </p>
                   </div>
@@ -414,7 +414,7 @@ export default function BarcodeLandingSections() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="rounded-lg bg-slate-50 px-4 py-3 text-xs font-bold text-slate-600"
+                        className="rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs font-bold text-slate-600 dark:text-slate-300"
                       >
                         {item}
                       </div>
@@ -433,7 +433,7 @@ export default function BarcodeLandingSections() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Pick, pack, and{" "}
@@ -444,7 +444,7 @@ export default function BarcodeLandingSections() {
               with confidence
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Scan each product during picking and packing. Prevent wrong
               shipments, missing items, duplicate scans, and location mistakes.
             </p>
@@ -458,10 +458,10 @@ export default function BarcodeLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Count inventory{" "}
@@ -470,7 +470,7 @@ export default function BarcodeLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Run physical counts by scanning locations and products. Update stock
             quantities with clean audit trails and fewer manual corrections.
           </p>
@@ -488,7 +488,7 @@ export default function BarcodeLandingSections() {
                 {
                   title: "Scan product",
                   icon: ScanBarcode,
-                  color: "bg-[#02cfc3]/20 text-[#02a6a6]",
+                  color: "bg-[#02cfc3] dark:bg-[#02cfc3]/30/20 text-[#02a6a6]",
                 },
                 {
                   title: "Confirm quantity",
@@ -501,7 +501,7 @@ export default function BarcodeLandingSections() {
                 return (
                   <div
                     key={step.title}
-                    className="relative rounded-xl border border-slate-200 bg-white p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                    className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
                   >
                     <div
                       className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${step.color}`}
@@ -510,13 +510,13 @@ export default function BarcodeLandingSections() {
                     </div>
 
                     <h3
-                      className="mt-5 text-2xl font-bold text-slate-900"
+                      className="mt-5 text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       {step.title}
                     </h3>
 
-                    <p className="mt-3 text-sm leading-6 text-slate-500">
+                    <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
                       Step {index + 1} for fast and clean inventory adjustment.
                     </p>
 
@@ -531,13 +531,13 @@ export default function BarcodeLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Full traceability
@@ -548,7 +548,7 @@ export default function BarcodeLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Link barcodes with lots, serial numbers, packages, warehouse
               locations, vendor receipts, manufacturing components, and customer
               deliveries.
@@ -556,9 +556,9 @@ export default function BarcodeLandingSections() {
           </div>
 
           <div className="relative">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-6 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Traceability Report</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Traceability Report</p>
                 <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
                   Live
                 </span>
@@ -583,12 +583,12 @@ export default function BarcodeLandingSections() {
                       {index < 4 && <span className="h-8 w-px bg-slate-200" />}
                     </div>
 
-                    <div className="rounded-lg bg-slate-50 p-4 text-left">
-                      <p className="text-sm font-bold text-slate-900">{type}</p>
-                      <p className="mt-1 text-xs font-bold text-[#714b67]">
+                    <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{type}</p>
+                      <p className="mt-1 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
                         {reference}
                       </p>
-                      <p className="mt-1 text-xs text-slate-500">{route}</p>
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{route}</p>
                     </div>
                   </div>
                 ))}
@@ -606,7 +606,7 @@ export default function BarcodeLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -616,7 +616,7 @@ export default function BarcodeLandingSections() {
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>right.</span>
             </HandUnderline>
           </h2>
@@ -625,21 +625,21 @@ export default function BarcodeLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -648,21 +648,21 @@ export default function BarcodeLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one{" "}
@@ -671,7 +671,7 @@ export default function BarcodeLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -682,15 +682,15 @@ export default function BarcodeLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -701,14 +701,14 @@ export default function BarcodeLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -746,14 +746,14 @@ export default function BarcodeLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -764,7 +764,7 @@ export default function BarcodeLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Barcode helped our warehouse team reduce manual mistakes,
                   speed up picking, and keep every product movement visible.
                 </p>
@@ -777,8 +777,8 @@ export default function BarcodeLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Andrew Ross</p>
-                    <p className="text-sm text-slate-500">Warehouse manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Andrew Ross</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Warehouse manager</p>
                   </div>
                 </div>
               </div>
@@ -791,13 +791,13 @@ export default function BarcodeLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Speed up
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">warehouse</span>
               </HandUnderline>{" "}
               flow
@@ -823,7 +823,7 @@ export default function BarcodeLandingSections() {
 function FloatingNote({
   className = "",
   text = "Share information and make connections",
-  color = "bg-[#02cfc3]",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
 }: {
   className?: string;
   text?: string;
@@ -831,7 +831,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -873,3 +873,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

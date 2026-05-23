@@ -113,15 +113,15 @@ const handwrittenFont =
 
 export default function CertificationsPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-28">
+    <main className="min-h-screen overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-900 dark:text-slate-100 dark:text-white dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 pt-28">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
-          <p className="mx-auto mb-4 max-w-xl text-sm font-medium text-slate-500 dark:text-slate-400">
+          <p className="mx-auto mb-4 max-w-xl text-sm font-medium text-slate-500 dark:text-slate-400 dark:text-slate-400">
             Rental management software for modern businesses
           </p>
 
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Rent it.{" "}
@@ -152,7 +152,7 @@ export default function CertificationsPage() {
             </div>
 
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-3 shadow-[0_30px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
-              <div className="rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50">
+              <div className="rounded-lg border border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50">
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3">
                   <div className="flex items-center gap-2">
                     <span className="h-3 w-3 rounded-full bg-red-300 dark:bg-red-700" />
@@ -176,7 +176,7 @@ export default function CertificationsPage() {
                         className={`rounded-md px-3 py-2 text-left text-xs font-semibold ${
                           index === 0
                             ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
-                            : "bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400"
+                            : "bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 dark:text-slate-400"
                         }`}
                       >
                         {item}
@@ -185,7 +185,7 @@ export default function CertificationsPage() {
                   </div>
 
                   <div className="rounded-lg bg-white dark:bg-slate-900 p-4 shadow-sm">
-                    <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 text-[10px] font-semibold uppercase text-slate-400 dark:text-slate-500">
+                    <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 pb-3 text-[10px] font-semibold uppercase text-slate-400 dark:text-slate-500 dark:text-slate-400">
                       {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
                         (day) => (
                           <div key={day}>{day}</div>
@@ -194,16 +194,16 @@ export default function CertificationsPage() {
                     </div>
 
                     <div className="mt-4 space-y-3">
-                      <div className="ml-[14%] h-8 w-[45%] rounded-md bg-[#f6c453] dark:bg-[#d4a83a] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-900">
+                      <div className="ml-[14%] h-8 w-[45%] rounded-md bg-[#f6c453] dark:bg-[#d4a83a] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-100 dark:text-slate-900 dark:text-slate-100">
                         Camera Kit
                       </div>
-                      <div className="ml-[25%] h-8 w-[38%] rounded-md bg-[#93c5fd] dark:bg-[#6b9fd3] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-900">
+                      <div className="ml-[25%] h-8 w-[38%] rounded-md bg-[#93c5fd] dark:bg-[#6b9fd3] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-100 dark:text-slate-900 dark:text-slate-100">
                         Meeting Room
                       </div>
-                      <div className="ml-[40%] h-8 w-[35%] rounded-md bg-[#a7f3d0] dark:bg-[#7ecfa5] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-900">
+                      <div className="ml-[40%] h-8 w-[35%] rounded-md bg-[#a7f3d0] dark:bg-[#7ecfa5] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-100 dark:text-slate-900 dark:text-slate-100">
                         Delivery Van
                       </div>
-                      <div className="ml-[8%] h-8 w-[28%] rounded-md bg-[#c4b5fd] dark:bg-[#9a87d4] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-900">
+                      <div className="ml-[8%] h-8 w-[28%] rounded-md bg-[#c4b5fd] dark:bg-[#9a87d4] px-3 py-2 text-left text-xs font-bold text-slate-800 dark:text-slate-100 dark:text-slate-900 dark:text-slate-100">
                         Projector
                       </div>
                     </div>
@@ -217,14 +217,14 @@ export default function CertificationsPage() {
         <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 py-20 sm:py-28">
+      <section className="relative bg-white dark:bg-slate-900 dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-50 dark:bg-cyan-950/40 text-[#02a6a6] dark:text-[#02cfc3]">
             <Wifi className="h-8 w-8" />
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Save time,{" "}
@@ -241,7 +241,7 @@ export default function CertificationsPage() {
 
           <div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
             <div className="grid lg:grid-cols-[1fr_1.1fr]">
-              <div className="bg-slate-50 dark:bg-slate-800/50 p-5">
+              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5">
                 <img
                   src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop"
                   alt="Rental workspace"
@@ -250,10 +250,10 @@ export default function CertificationsPage() {
               </div>
 
               <div className="p-6 text-left">
-                <p className="text-sm font-bold text-slate-900 dark:text-white">
+                <p className="text-sm font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                   Working Space
                 </p>
-                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   Select available dates
                 </p>
 
@@ -264,7 +264,7 @@ export default function CertificationsPage() {
                       className={`flex h-8 items-center justify-center rounded-md ${
                         [10, 11, 12, 18, 19].includes(index)
                           ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
-                          : "bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
+                          : "bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 text-slate-500 dark:text-slate-400 dark:text-slate-400"
                       }`}
                     >
                       {index + 1}
@@ -294,12 +294,12 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 py-20">
+      <section className="relative bg-white dark:bg-slate-900 dark:bg-slate-950 py-20">
         <div className="absolute left-0 top-1/2 hidden h-64 w-64 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-            <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+            <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
               <div className="mb-4 flex items-center justify-between">
                 <div>
                   <div className="h-4 w-32 rounded bg-slate-200 dark:bg-slate-700" />
@@ -320,12 +320,12 @@ export default function CertificationsPage() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="flex items-center justify-between rounded-md bg-white dark:bg-slate-800 px-4 py-3 text-sm"
+                    className="flex items-center justify-between rounded-md bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm"
                   >
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {label}
                     </span>
-                    <span className="font-bold text-slate-900 dark:text-white">
+                    <span className="font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                       {value}
                     </span>
                   </div>
@@ -336,7 +336,7 @@ export default function CertificationsPage() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Time is money...
@@ -350,7 +350,7 @@ export default function CertificationsPage() {
               serving customers.
             </p>
 
-            <div className="mt-10 flex items-center gap-4 text-slate-300 dark:text-slate-600">
+            <div className="mt-10 flex items-center gap-4 text-slate-300 dark:text-slate-600 dark:text-slate-300">
               <div className="h-px w-20 border-t border-dashed border-slate-300 dark:border-slate-700" />
               <ArrowDown className="h-8 w-8 rotate-[-25deg]" />
             </div>
@@ -358,11 +358,11 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 py-20">
+      <section className="bg-white dark:bg-slate-900 dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Signature requests
@@ -379,13 +379,13 @@ export default function CertificationsPage() {
 
           <div className="relative">
             <div className="mb-6 flex justify-center">
-              <div className="rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400 shadow-sm">
+              <div className="rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-500 dark:text-slate-400 dark:text-slate-400 shadow-sm">
                 Quotation → Agreement → Signature → Confirmed
               </div>
             </div>
 
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-              <div className="border-b border-slate-100 dark:border-slate-800 pb-3">
+              <div className="border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 pb-3">
                 <div className="h-4 w-24 rounded bg-[#714b67] dark:bg-[#8a5a7e]" />
               </div>
 
@@ -419,10 +419,10 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 py-20">
+      <section className="bg-white dark:bg-slate-900 dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Automate your{" "}
@@ -447,18 +447,18 @@ export default function CertificationsPage() {
               ].map(([task, priority, date, status]) => (
                 <div
                   key={task}
-                  className="grid grid-cols-4 items-center rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs"
+                  className="grid grid-cols-4 items-center rounded-lg bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3 text-xs"
                 >
-                  <span className="font-bold text-slate-800 dark:text-white">
+                  <span className="font-bold text-slate-800 dark:text-slate-100 dark:text-white">
                     {task}
                   </span>
-                  <span className="text-slate-500 dark:text-slate-400">
+                  <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     {priority}
                   </span>
-                  <span className="text-slate-500 dark:text-slate-400">
+                  <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     {date}
                   </span>
-                  <span className="rounded-full bg-white dark:bg-slate-700 px-3 py-1 text-center font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                  <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-3 py-1 text-center font-bold text-[#714b67] dark:text-[#9b6a8f]">
                     {status}
                   </span>
                 </div>
@@ -474,7 +474,7 @@ export default function CertificationsPage() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+            className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -502,7 +502,7 @@ export default function CertificationsPage() {
                     <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                   </div>
 
-                  <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
+                  <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                     {feature.title}
                   </h3>
 
@@ -523,10 +523,10 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-900 dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -551,17 +551,17 @@ export default function CertificationsPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5 transition hover:bg-white dark:bg-slate-900 dark:hover:bg-slate-800 hover:shadow-lg"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -579,7 +579,7 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -619,12 +619,12 @@ export default function CertificationsPage() {
 
             <div className="absolute left-1/2 top-1/2 z-10 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -636,7 +636,7 @@ export default function CertificationsPage() {
                 “
               </div>
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   After renting hundreds of products, Adon helped us manage
                   every contract, invoice, signature, and delivery from one
                   simple platform. The best part is that our team finally knows
@@ -650,10 +650,10 @@ export default function CertificationsPage() {
                     className="h-12 w-12 rounded-full object-cover"
                   />
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white">
+                    <p className="font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                       Marc Robinson
                     </p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                    <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       Rental manager
                     </p>
                   </div>
@@ -668,7 +668,7 @@ export default function CertificationsPage() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
@@ -688,3 +688,4 @@ export default function CertificationsPage() {
     </main>
   );
 }
+

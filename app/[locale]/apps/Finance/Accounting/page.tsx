@@ -150,7 +150,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -177,7 +177,7 @@ function SectionEyebrow({
 
 export default function AccountingPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
@@ -192,7 +192,7 @@ export default function AccountingPage() {
               />
 
               <div className="space-y-5">
-                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl">
+                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
                   Accounting made
                   <br />
                   <span
@@ -237,7 +237,7 @@ export default function AccountingPage() {
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-400">
+                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">
                     from 15,000+ businesses
                   </span>
                 </div>
@@ -267,9 +267,9 @@ export default function AccountingPage() {
                 <div className="p-5">
                   <div className="grid gap-4 sm:grid-cols-2">
                     {/* Customer Invoices Card */}
-                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4">
+                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-4">
                       <div className="flex justify-between items-start mb-3">
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           Customer Invoices
                         </p>
                         <div className="flex gap-1">
@@ -286,7 +286,7 @@ export default function AccountingPage() {
                           <span className="text-slate-600 dark:text-slate-300">
                             Unpaid
                           </span>
-                          <span className="font-semibold text-slate-900 dark:text-white">
+                          <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                             $128,657.25
                           </span>
                         </div>
@@ -302,9 +302,9 @@ export default function AccountingPage() {
                     </div>
 
                     {/* Vendor Bills Card */}
-                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4">
+                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-4">
                       <div className="flex justify-between items-start mb-3">
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           Vendor Bills
                         </p>
                       </div>
@@ -313,7 +313,7 @@ export default function AccountingPage() {
                           <span className="text-slate-600 dark:text-slate-300">
                             To Pay
                           </span>
-                          <span className="font-semibold text-slate-900 dark:text-white">
+                          <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                             $652.27
                           </span>
                         </div>
@@ -332,23 +332,23 @@ export default function AccountingPage() {
                   {/* Bank Balance Card */}
                   <div className="mt-4 bg-linear-to-r from-emerald-50 to-cyan-50 dark:from-emerald-950/30 dark:to-cyan-950/30 rounded-xl p-4">
                     <div className="text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                         Bank Balance
                       </p>
-                      <p className="text-2xl font-bold text-slate-900 dark:text-white">
+                      <p className="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                         $9,944.87
                       </p>
                       <div className="grid grid-cols-3 gap-2 mt-3 text-xs">
                         <div>
-                          <p className="text-slate-500 dark:text-slate-400">
+                          <p className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                             Last Statement
                           </p>
-                          <p className="font-semibold text-slate-900 dark:text-white">
+                          <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                             $6,378.00
                           </p>
                         </div>
                         <div>
-                          <p className="text-slate-500 dark:text-slate-400">
+                          <p className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                             Payments
                           </p>
                           <p className="font-semibold text-emerald-600 dark:text-emerald-400">
@@ -356,7 +356,7 @@ export default function AccountingPage() {
                           </p>
                         </div>
                         <div>
-                          <p className="text-slate-500 dark:text-slate-400">
+                          <p className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                             Expenses
                           </p>
                           <p className="font-semibold text-red-600 dark:text-red-400">
@@ -370,15 +370,15 @@ export default function AccountingPage() {
               </div>
 
               {/* Floating badges */}
-              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <Zap className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   Real-time sync
                 </span>
               </div>
-              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <RefreshCw className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   Auto-updated
                 </span>
               </div>
@@ -432,7 +432,7 @@ export default function AccountingPage() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-4 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700"
+                  className="flex items-center gap-4 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700"
                 >
                   <div
                     className={`h-10 w-10 rounded-lg bg-${item.color}-100 dark:bg-${item.color}-900/30 flex items-center justify-center`}
@@ -442,10 +442,10 @@ export default function AccountingPage() {
                     />
                   </div>
                   <div>
-                    <div className="text-xl font-bold text-slate-900 dark:text-white">
+                    <div className="text-xl font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                       {item.value}
                     </div>
-                    <div className="text-sm text-slate-500 dark:text-slate-400">
+                    <div className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {item.label}
                     </div>
                   </div>
@@ -470,32 +470,32 @@ export default function AccountingPage() {
               </div>
               <div className="p-5 space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-slate-500 dark:text-slate-400 text-sm">
+                  <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400 text-sm">
                     Vendor
                   </span>
-                  <span className="font-medium text-sm text-slate-700 dark:text-slate-300">
+                  <span className="font-medium text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     Azure Interior
                   </span>
                 </div>
                 <div className="border-t dark:border-slate-700 pt-3">
                   <div className="flex justify-between text-sm">
-                    <span className="text-slate-600 dark:text-slate-400">
+                    <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
                       Office Design Software
                     </span>
-                    <span className="text-slate-700 dark:text-slate-300">
+                    <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       $10.00
                     </span>
                   </div>
                   <div className="flex justify-between text-sm mt-2">
-                    <span className="text-slate-600 dark:text-slate-400">
+                    <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
                       Office Chair (x5)
                     </span>
-                    <span className="text-slate-700 dark:text-slate-300">
+                    <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       $20.00
                     </span>
                   </div>
                   <div className="border-t dark:border-slate-700 mt-3 pt-3 flex justify-between font-semibold">
-                    <span className="text-slate-900 dark:text-white">
+                    <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                       Total
                     </span>
                     <span className="text-emerald-600 dark:text-emerald-400">
@@ -511,7 +511,7 @@ export default function AccountingPage() {
       </section>
 
       {/* Automation Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -521,24 +521,24 @@ export default function AccountingPage() {
             className="order-2 lg:order-1"
           >
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-slate-50 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
+              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center gap-2">
                   <Receipt className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     Smart OCR Processing
                   </span>
                 </div>
               </div>
               <div className="p-5 space-y-3">
                 <div className="flex items-center gap-3 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl">
-                  <div className="h-10 w-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 flex items-center justify-center">
                     <Camera className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                       Invoice scanned
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       98% recognition rate
                     </p>
                   </div>
@@ -546,14 +546,14 @@ export default function AccountingPage() {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-cyan-50 dark:bg-cyan-950/30 rounded-xl">
-                  <div className="h-10 w-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 flex items-center justify-center">
                     <Sparkles className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                       AI processing
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       Auto-extracting data
                     </p>
                   </div>
@@ -561,14 +561,14 @@ export default function AccountingPage() {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl">
-                  <div className="h-10 w-10 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 flex items-center justify-center">
                     <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                       Ready to validate
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       Zero manual entry
                     </p>
                   </div>
@@ -605,7 +605,7 @@ export default function AccountingPage() {
                 <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                   98%
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400">
+                <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   Recognition Rate
                 </div>
               </div>
@@ -613,7 +613,7 @@ export default function AccountingPage() {
                 <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
                   95%
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400">
+                <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   Auto-Matching
                 </div>
               </div>
@@ -655,7 +655,7 @@ export default function AccountingPage() {
               ].map((feature, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-slate-700 dark:text-slate-300">
+                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     {feature}
                   </span>
                 </div>
@@ -698,32 +698,32 @@ export default function AccountingPage() {
                     <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3">
                       <div className="flex items-center gap-2 mb-2">
                         <Camera className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                        <span className="text-sm text-slate-700 dark:text-slate-300">
+                        <span className="text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                           Receipt scanned
                         </span>
                       </div>
                       <div className="space-y-1 text-sm">
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">
+                          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
                             Office Supplies
                           </span>
-                          <span className="text-slate-700 dark:text-slate-300">
+                          <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                             $45.99
                           </span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">
+                          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
                             Meal Expense
                           </span>
-                          <span className="text-slate-700 dark:text-slate-300">
+                          <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                             $28.50
                           </span>
                         </div>
                         <div className="border-t dark:border-slate-700 pt-1 flex justify-between font-semibold">
-                          <span className="text-slate-900 dark:text-white">
+                          <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                             Total
                           </span>
-                          <span className="text-slate-900 dark:text-white">
+                          <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                             $74.49
                           </span>
                         </div>
@@ -738,7 +738,7 @@ export default function AccountingPage() {
       </section>
 
       {/* Bank Reconciliation Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -748,11 +748,11 @@ export default function AccountingPage() {
             className="order-2 lg:order-1"
           >
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-slate-50 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
+              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Building2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                    <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       Bank Reconciliation
                     </span>
                   </div>
@@ -766,7 +766,7 @@ export default function AccountingPage() {
                 {recentTransactions.map((transaction, idx) => (
                   <div
                     key={idx}
-                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition"
+                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/60 dark:bg-slate-800/40 dark:hover:bg-slate-800/50 transition"
                   >
                     <div className="flex items-center gap-3">
                       <div
@@ -777,16 +777,16 @@ export default function AccountingPage() {
                         }`}
                       />
                       <div>
-                        <p className="font-medium text-sm text-slate-900 dark:text-white">
+                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100 dark:text-white">
                           {transaction.name}
                         </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           {transaction.date}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-sm text-slate-700 dark:text-slate-300">
+                      <span className="font-semibold text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                         {transaction.amount}
                       </span>
                       {transaction.status === "cleared" && (
@@ -837,10 +837,10 @@ export default function AccountingPage() {
                   <Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     28,000+ banks supported
                   </h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     Global coverage across 50+ countries
                   </p>
                 </div>
@@ -850,10 +850,10 @@ export default function AccountingPage() {
                   <RefreshCw className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     95% auto-matching rate
                   </h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     AI-powered transaction matching
                   </p>
                 </div>
@@ -895,10 +895,10 @@ export default function AccountingPage() {
                   className={`h-6 w-6 text-${category.color}-600 dark:text-${category.color}-400`}
                 />
               </div>
-              <p className="font-semibold text-slate-900 dark:text-white text-sm">
+              <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white text-sm">
                 {category.name}
               </p>
-              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+              <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400 mt-1">
                 {category.amount}
               </p>
             </motion.div>
@@ -907,7 +907,7 @@ export default function AccountingPage() {
       </section>
 
       {/* Features Grid Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <SectionEyebrow
             icon={<Sparkles className="h-4 w-4" />}
@@ -938,12 +938,12 @@ export default function AccountingPage() {
                 <div
                   className={`h-10 w-10 rounded-xl bg-linear-to-br ${feature.gradient} bg-opacity-10 flex items-center justify-center mb-3`}
                 >
-                  <feature.icon className="h-5 w-5 text-slate-700 dark:text-slate-300" />
+                  <feature.icon className="h-5 w-5 text-slate-700 dark:text-slate-200 dark:text-slate-300" />
                 </div>
-                <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white mb-1">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -981,10 +981,10 @@ export default function AccountingPage() {
                 WV
               </div>
               <div className="text-left">
-                <p className="font-semibold text-slate-900 dark:text-white">
+                <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   Wim Van den Brande
                 </p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   Head of Accounting, KPMG
                 </p>
               </div>
@@ -1016,7 +1016,7 @@ export default function AccountingPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5 dark:bg-slate-950 dark:text-slate-100"
               >
                 Start Free Trial
                 <ArrowRight className="h-4 w-4" />
@@ -1039,3 +1039,4 @@ export default function AccountingPage() {
     </main>
   );
 }
+

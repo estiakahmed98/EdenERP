@@ -43,14 +43,14 @@ export default function IoTDefencePage() {
   };
 
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* HERO */}
-      <section className="relative bg-white pt-20 text-center">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 pt-20 text-center">
         <div className="mx-auto max-w-7xl px-4 pb-24">
           <h1
             className="text-5xl font-bold leading-tight sm:text-6xl lg:text-7xl"
@@ -66,7 +66,7 @@ export default function IoTDefencePage() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
             Build connected drone systems, autonomous robots, missile
             monitoring, and air defence command operations with one intelligent
             IoT platform.
@@ -77,7 +77,7 @@ export default function IoTDefencePage() {
               Start now - it&apos;s free
             </button>
 
-            <button className="rounded-md bg-slate-100 px-7 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-200">
+            <button className="rounded-md bg-slate-100 px-7 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 transition hover:bg-slate-200">
               Meet an advisor
             </button>
           </div>
@@ -87,7 +87,7 @@ export default function IoTDefencePage() {
               <SparklesIcon />
             </div>
 
-            <div className="relative z-20 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_35px_100px_rgba(15,23,42,0.14)]">
+            <div className="relative z-20 overflow-hidden rounded-[28px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_35px_100px_rgba(15,23,42,0.14)]">
               <div className="bg-linear-to-r from-slate-950 via-slate-900 to-slate-800 p-8 text-left text-white">
                 <div className="flex flex-wrap items-center justify-between gap-5">
                   <div>
@@ -100,7 +100,7 @@ export default function IoTDefencePage() {
                     </h2>
                   </div>
 
-                  <div className="rounded-2xl bg-white/10 px-5 py-3 text-xs font-bold tracking-[0.2em] text-white backdrop-blur">
+                  <div className="rounded-2xl bg-white dark:bg-slate-950/10 px-5 py-3 text-xs font-bold tracking-[0.2em] text-white backdrop-blur">
                     LIVE SYSTEM
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function IoTDefencePage() {
                 ].map(([title, value, color, image]) => (
                   <div
                     key={title}
-                    className="overflow-hidden rounded-2xl bg-white shadow-sm"
+                    className="overflow-hidden rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm"
                   >
                     <div className="h-36 overflow-hidden">
                       <Image
@@ -154,17 +154,17 @@ export default function IoTDefencePage() {
                         LIVE
                       </div>
 
-                      <h3 className="text-lg font-bold text-slate-900">
+                      <h3 className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         {title}
                       </h3>
 
-                      <p className="mt-2 text-sm text-slate-500">{value}</p>
+                      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{value}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 z-30 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
+              <button className="absolute left-1/2 top-1/2 z-30 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
                 ▶
               </button>
             </div>
@@ -175,7 +175,7 @@ export default function IoTDefencePage() {
       </section>
 
       {/* MISSION */}
-      <section className="bg-white py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-28">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
@@ -195,11 +195,11 @@ export default function IoTDefencePage() {
                 Mission-ready{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10">technology</span>
-                  <span className="absolute bottom-1 left-0 h-5 w-full rounded-lg bg-[#02cfc3]" />
+                  <span className="absolute bottom-1 left-0 h-5 w-full rounded-lg bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
                 </span>
               </h2>
 
-              <p className="mt-7 text-lg leading-8 text-slate-600">
+              <p className="mt-7 text-lg leading-8 text-slate-600 dark:text-slate-300">
                 Coordinate drone fleets, robotic systems, missile defence
                 monitoring, radar communication, and IoT sensors from one secure
                 intelligent platform.
@@ -214,19 +214,19 @@ export default function IoTDefencePage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-4 rounded-xl bg-slate-50 px-5 py-4"
+                    className="flex items-center gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 px-5 py-4"
                   >
-                    <div className="h-3 w-3 rounded-full bg-[#02cfc3]" />
-                    <p className="font-semibold text-slate-700">{item}</p>
+                    <div className="h-3 w-3 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
+                    <p className="font-semibold text-slate-700 dark:text-slate-200">{item}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="relative">
-              <div className="absolute -left-10 top-10 z-0 h-72 w-72 rounded-full bg-[#02cfc3]/10 blur-3xl" />
+              <div className="absolute -left-10 top-10 z-0 h-72 w-72 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30/10 blur-3xl" />
 
-              <div className="relative z-10 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_25px_90px_rgba(15,23,42,0.12)]">
+              <div className="relative z-10 overflow-hidden rounded-[28px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_25px_90px_rgba(15,23,42,0.12)]">
                 <Image
                   src="/Assets/apps/Air Defence.webp"
                   alt="Air Defence"
@@ -241,7 +241,7 @@ export default function IoTDefencePage() {
       </section>
 
       {/* DEFENCE CARDS */}
-      <section className="bg-white py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-28">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-4">
             {[
@@ -268,7 +268,7 @@ export default function IoTDefencePage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="group overflow-hidden rounded-[28px] border border-slate-200 bg-white transition duration-300 hover:-translate-y-2 hover:shadow-[0_25px_90px_rgba(15,23,42,0.14)]"
+                className="group overflow-hidden rounded-[28px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 transition duration-300 hover:-translate-y-2 hover:shadow-[0_25px_90px_rgba(15,23,42,0.14)]"
               >
                 <div className="h-56 overflow-hidden">
                   <Image
@@ -281,11 +281,11 @@ export default function IoTDefencePage() {
                 </div>
 
                 <div className="p-7">
-                  <h3 className="text-2xl font-black text-slate-900">
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white dark:text-slate-100">
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-slate-600">
+                  <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {item.desc}
                   </p>
                 </div>
@@ -347,21 +347,21 @@ export default function IoTDefencePage() {
                 "Unified visualization for defence & industrial operations.",
               ],
             ].map(([title, desc]) => (
-              <div key={title} className="rounded-2xl bg-white p-7 shadow-sm">
+              <div key={title} className="rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 shadow-sm">
                 <div className="flex items-start justify-between gap-5">
-                  <h3 className="text-lg font-black text-slate-900">{title}</h3>
+                  <h3 className="text-lg font-black text-slate-900 dark:text-white dark:text-slate-100">{title}</h3>
 
                   <div className="text-xl text-amber-400">★</div>
                 </div>
 
-                <p className="mt-4 text-sm leading-7 text-slate-600">{desc}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{desc}</p>
               </div>
             ))}
           </div>
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features →
           </Link>
@@ -369,7 +369,7 @@ export default function IoTDefencePage() {
       </section>
 
       {/* APPS */}
-      <section className="bg-white py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-28">
         <div className="mx-auto max-w-7xl px-4">
           <h2
             className="text-5xl font-bold"
@@ -382,7 +382,7 @@ export default function IoTDefencePage() {
             <span className="border-b-4 border-sky-300">app.</span>
           </h2>
 
-          <p className="mt-4 text-slate-600">Expand as your defence grows.</p>
+          <p className="mt-4 text-slate-600 dark:text-slate-300">Expand as your defence grows.</p>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {[
@@ -392,12 +392,12 @@ export default function IoTDefencePage() {
               "Inventory",
               "Purchase",
             ].map((app) => (
-              <div key={app} className="rounded-2xl bg-slate-50 p-6 shadow-sm">
-                <div className="mb-4 h-12 w-12 rounded-xl bg-white shadow-sm" />
+              <div key={app} className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-6 shadow-sm">
+                <div className="mb-4 h-12 w-12 rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm" />
 
-                <h3 className="font-bold text-slate-900">{app}</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app}</h3>
 
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                   Connected operations
                 </p>
               </div>
@@ -407,7 +407,7 @@ export default function IoTDefencePage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-white py-28 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-28 text-center">
         <div className="mx-auto max-w-4xl px-4">
           <h2
             className="text-6xl font-bold leading-tight"
@@ -460,3 +460,5 @@ function SparklesIcon() {
     </svg>
   );
 }
+
+

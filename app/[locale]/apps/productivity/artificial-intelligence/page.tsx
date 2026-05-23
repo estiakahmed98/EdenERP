@@ -89,11 +89,11 @@ const apps = [
 
 export default function AIPoweredAppsLandingPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Your apps.{" "}
@@ -102,7 +102,7 @@ export default function AIPoweredAppsLandingPage() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Adon Artificial Intelligence turns your everyday data into smarter
             decisions, faster workflows, and better results.
           </p>
@@ -117,7 +117,7 @@ export default function AIPoweredAppsLandingPage() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
@@ -132,14 +132,14 @@ export default function AIPoweredAppsLandingPage() {
               <Sparkles className="h-12 w-12 rotate-[-20" />
             </div>
 
-            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
               <div className="flex h-64 items-center justify-center bg-linear-to-r from-slate-950 via-slate-900 to-slate-800">
                 <div className="relative">
                   <div className="absolute -left-8 -top-8 text-amber-400">
                     <Sparkles className="h-8 w-8 rotate-[-15" />
                   </div>
 
-                  <div className="flex h-28 w-28 items-center justify-center rounded-2xl bg-white shadow-2xl">
+                  <div className="flex h-28 w-28 items-center justify-center rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-2xl">
                     <span className="bg-linear-to-r from-[#714b67] via-amber-400 to-sky-500 bg-clip-text text-5xl font-black text-transparent">
                       AI
                     </span>
@@ -147,9 +147,9 @@ export default function AIPoweredAppsLandingPage() {
                 </div>
               </div>
 
-              <div className="h-40 bg-white" />
+              <div className="h-40 bg-white dark:bg-slate-950 dark:bg-slate-900" />
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -159,13 +159,13 @@ export default function AIPoweredAppsLandingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>Automate</span>
             </HandUnderline>{" "}
             the work that slows you down
@@ -182,10 +182,10 @@ export default function AIPoweredAppsLandingPage() {
             ].map(([label, value, description], index) => (
               <div
                 key={label}
-                className="relative rounded-xl bg-white p-6 text-left shadow-sm ring-1 ring-slate-100"
+                className="relative rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100"
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="rounded-full bg-slate-50 px-3 py-1 text-xs font-bold text-slate-500">
+                  <span className="rounded-full bg-slate-50 dark:bg-slate-800/40 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400">
                     {label}
                   </span>
 
@@ -198,11 +198,11 @@ export default function AIPoweredAppsLandingPage() {
                   )}
                 </div>
 
-                <p className="text-center text-4xl font-black text-slate-900">
+                <p className="text-center text-4xl font-black text-slate-900 dark:text-white dark:text-slate-100">
                   {value}
                 </p>
 
-                <p className="mt-2 text-center text-sm font-bold text-slate-500">
+                <p className="mt-2 text-center text-sm font-bold text-slate-500 dark:text-slate-400">
                   {description}
                 </p>
               </div>
@@ -211,10 +211,10 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-rose-300">
@@ -223,7 +223,7 @@ export default function AIPoweredAppsLandingPage() {
             on your terms
           </h2>
 
-          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Set up your AI assistant, define tasks, configure permissions, and
             let it work inside your apps.
           </p>
@@ -235,8 +235,8 @@ export default function AIPoweredAppsLandingPage() {
                   1
                 </span>
                 <div>
-                  <p className="font-bold text-slate-900">Create your agent</p>
-                  <p className="mt-2 text-sm text-slate-500">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Create your agent</p>
+                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                     Define role, tools, access, and what this assistant can do.
                   </p>
                 </div>
@@ -247,54 +247,54 @@ export default function AIPoweredAppsLandingPage() {
                   2
                 </span>
                 <div>
-                  <p className="font-bold text-slate-900">Configure it</p>
-                  <p className="mt-2 text-sm text-slate-500">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Configure it</p>
+                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                     Train it with documents, workflow rules, and business data.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               <span className="absolute -left-10 top-8 flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 text-lg font-bold text-rose-500">
                 3
               </span>
 
-              <p className="mb-5 font-bold text-slate-900">
+              <p className="mb-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">
                 Get tailored responses
               </p>
 
-              <div className="rounded-lg bg-slate-50 p-4">
-                <p className="text-sm font-bold text-slate-900">
+              <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   Compliance Assistant
                 </p>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
+                <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                   I found the required policy, summarized the risk, and prepared
                   a reply for approval.
                 </p>
               </div>
 
               <div className="mt-5 rounded-lg bg-[#e9fbf8] p-4">
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   AI generated answer
                 </p>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
+                <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                   Based on your company rules, this customer request can be
                   accepted with a manager validation.
                 </p>
               </div>
             </div>
 
-            <DashedArrow className="absolute left-1/2 top-28 hidden h-28 w-28 rotate-80 text-[#714b67]/50 lg:block" />
+            <DashedArrow className="absolute left-1/2 top-28 hidden h-28 w-28 rotate-80 text-[#714b67] dark:text-[#9b6a8f]/50 lg:block" />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Let AI drive the{" "}
@@ -303,7 +303,7 @@ export default function AIPoweredAppsLandingPage() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               From everyday manual work to smart business recommendations, AI
               can suggest actions, summarize records, and move work forward.
             </p>
@@ -321,14 +321,14 @@ export default function AIPoweredAppsLandingPage() {
           <div className="relative">
             <div className="absolute left-1/2 top-1/2 z-0 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-100" />
 
-            <div className="relative z-10 rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="relative z-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               <div className="mb-5 flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow ring-1 ring-slate-100">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow ring-1 ring-slate-100">
                   <span className="bg-linear-to-r from-[#714b67] via-amber-400 to-sky-500 bg-clip-text text-2xl font-black text-transparent">
                     AI
                   </span>
                 </span>
-                <p className="font-bold text-slate-900">Draft sales proposal</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Draft sales proposal</p>
               </div>
 
               <div className="space-y-3">
@@ -339,7 +339,7 @@ export default function AIPoweredAppsLandingPage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-bold text-slate-600"
+                    className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-bold text-slate-600 dark:text-slate-300"
                   >
                     <CheckCircle2 className="h-5 w-5 text-emerald-500" />
                     {item}
@@ -352,18 +352,18 @@ export default function AIPoweredAppsLandingPage() {
               </button>
             </div>
 
-            <DashedArrow className="absolute right-0 top-12 z-20 h-24 w-24 rotate-210 text-[#714b67]/50" />
-            <DashedArrow className="absolute bottom-8 left-0 z-20 h-24 w-24 rotate-20 text-[#714b67]/50" />
+            <DashedArrow className="absolute right-0 top-12 z-20 h-24 w-24 rotate-210 text-[#714b67] dark:text-[#9b6a8f]/50" />
+            <DashedArrow className="absolute bottom-8 left-0 z-20 h-24 w-24 rotate-20 text-[#714b67] dark:text-[#9b6a8f]/50" />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Zap className="mb-6 h-12 w-12 text-amber-500" />
 
           <h2
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <span className="relative inline-block px-2">
@@ -373,16 +373,16 @@ export default function AIPoweredAppsLandingPage() {
             business insights
           </h2>
 
-          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Ask your data what matters. AI turns business questions into instant
             reporting and visual analytics.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-white p-8">
-            <div className="flex h-80 items-end gap-4 border-b border-slate-200">
+          <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-8">
+            <div className="flex h-80 items-end gap-4 border-b border-slate-200 dark:border-slate-700">
               {[45, 52, 48, 65, 80, 110, 155, 230].map((height, index) => (
                 <div key={index} className="flex flex-1 flex-col items-center">
-                  <div className="w-full bg-[#02cfc3]" style={{ height }} />
+                  <div className="w-full bg-[#02cfc3] dark:bg-[#02cfc3]/30" style={{ height }} />
                   <div
                     className="w-full bg-rose-400"
                     style={{ height: height * 0.45 }}
@@ -401,33 +401,33 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Next-level organization.
             <br />
             Next-level{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>organization</span>
             </HandUnderline>
           </h2>
 
-          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Documents, tasks, emails, and records become searchable, organized,
             and easier to act on with AI.
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr]">
-            <div className="rounded-xl border border-dashed border-slate-300 bg-white p-8 text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#02cfc3]/10 text-[#02a6a6]">
+            <div className="rounded-xl border border-dashed border-slate-300 bg-white dark:bg-slate-950 dark:bg-slate-900 p-8 text-center">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#02cfc3] dark:bg-[#02cfc3]/30/10 text-[#02a6a6]">
                 <FileText className="h-8 w-8" />
               </div>
 
               <p
-                className="mt-5 text-xl font-bold text-slate-900"
+                className="mt-5 text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Upload files
@@ -442,15 +442,15 @@ export default function AIPoweredAppsLandingPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center justify-between rounded-xl bg-slate-50 px-5 py-4"
+                  className="flex items-center justify-between rounded-xl bg-slate-50 dark:bg-slate-800/40 px-5 py-4"
                 >
-                  <span className="font-bold text-slate-700">{item}</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-200">{item}</span>
                   <CheckCircle2 className="h-5 w-5 text-emerald-500" />
                 </div>
               ))}
             </div>
 
-            <DashedArrow className="absolute left-[260px] top-20 hidden h-24 w-24 rotate-[260 text-[#714b67]/50 lg:block" />
+            <DashedArrow className="absolute left-[260px] top-20 hidden h-24 w-24 rotate-[260 text-[#714b67] dark:text-[#9b6a8f]/50 lg:block" />
           </div>
 
           <p
@@ -468,7 +468,7 @@ export default function AIPoweredAppsLandingPage() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -488,21 +488,21 @@ export default function AIPoweredAppsLandingPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -511,17 +511,17 @@ export default function AIPoweredAppsLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -534,7 +534,7 @@ export default function AIPoweredAppsLandingPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -545,15 +545,15 @@ export default function AIPoweredAppsLandingPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -564,14 +564,14 @@ export default function AIPoweredAppsLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -609,14 +609,14 @@ export default function AIPoweredAppsLandingPage() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -627,7 +627,7 @@ export default function AIPoweredAppsLandingPage() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   The processing time for accounting documents prior to analysis
                   is now reduced dramatically with AI automation.
                 </p>
@@ -640,8 +640,8 @@ export default function AIPoweredAppsLandingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Mike Solutions</p>
-                    <p className="text-sm text-slate-500">Operations manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Mike Solutions</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Operations manager</p>
                   </div>
                 </div>
               </div>
@@ -654,13 +654,13 @@ export default function AIPoweredAppsLandingPage() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -708,3 +708,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

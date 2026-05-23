@@ -125,7 +125,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -154,7 +154,7 @@ export default function InvoicingPage() {
   const [activeTab, setActiveTab] = useState("preview");
 
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
@@ -169,7 +169,7 @@ export default function InvoicingPage() {
               />
 
               <div className="space-y-5">
-                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl">
+                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
                   Invoicing made
                   <br />
                   <span
@@ -199,7 +199,7 @@ export default function InvoicingPage() {
                 </Link>
                 <Link
                   href="#demo"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
                 >
                   <Play className="h-4 w-4" />
                   Watch Demo
@@ -221,7 +221,7 @@ export default function InvoicingPage() {
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-400">
+                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">
                     from 15,000+ businesses
                   </span>
                 </div>
@@ -249,10 +249,10 @@ export default function InvoicingPage() {
                 <div className="p-6">
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400 mb-1">
                         Bill To
                       </p>
-                      <p className="font-semibold text-slate-900 dark:text-white">
+                      <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                         Acme Corporation
                       </p>
                       <p className="text-sm text-slate-600 dark:text-slate-300">
@@ -263,22 +263,22 @@ export default function InvoicingPage() {
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400 mb-1">
                         Invoice Date
                       </p>
-                      <p className="font-semibold text-slate-900 dark:text-white">
+                      <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                         March 15, 2024
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400 mt-2">
                         Due Date
                       </p>
-                      <p className="font-semibold text-slate-900 dark:text-white">
+                      <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                         April 14, 2024
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-6 border-t border-slate-100 dark:border-slate-800 pt-4">
+                  <div className="mt-6 border-t border-slate-100 dark:border-slate-700 dark:border-slate-800 pt-4">
                     <div className="space-y-3">
                       {[
                         {
@@ -295,23 +295,23 @@ export default function InvoicingPage() {
                       ].map((line, idx) => (
                         <div key={idx} className="flex justify-between text-sm">
                           <div>
-                            <span className="text-slate-900 dark:text-white">
+                            <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                               {line.item}
                             </span>
                             <span className="text-slate-400 ml-2">
                               ×{line.qty}
                             </span>
                           </div>
-                          <span className="text-slate-900 dark:text-white">
+                          <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                             {line.price}
                           </span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="border-t border-slate-100 dark:border-slate-800 mt-4 pt-4">
+                    <div className="border-t border-slate-100 dark:border-slate-700 dark:border-slate-800 mt-4 pt-4">
                       <div className="flex justify-between text-lg font-bold">
-                        <span className="text-slate-900 dark:text-white">
+                        <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                           Total
                         </span>
                         <span className="text-emerald-600 dark:text-emerald-400">
@@ -326,23 +326,23 @@ export default function InvoicingPage() {
                       <Send className="h-4 w-4" />
                       Send Invoice
                     </button>
-                    <button className="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                      <Download className="h-4 w-4 text-slate-600 dark:text-slate-400" />
+                    <button className="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 dark:bg-slate-800/40 dark:hover:bg-slate-800 transition">
+                      <Download className="h-4 w-4 text-slate-600 dark:text-slate-300 dark:text-slate-400" />
                     </button>
                   </div>
                 </div>
               </div>
 
               {/* Floating badges */}
-              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <Zap className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   Instant delivery
                 </span>
               </div>
-              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   Due in 30 days
                 </span>
               </div>
@@ -400,7 +400,7 @@ export default function InvoicingPage() {
                       className={`h-3 w-3 text-${item.color}-600 dark:text-${item.color}-400`}
                     />
                   </div>
-                  <span className="text-slate-700 dark:text-slate-300">
+                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     {item.text}
                   </span>
                 </div>
@@ -415,11 +415,11 @@ export default function InvoicingPage() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 px-5 py-3">
+            <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <div className="bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 px-5 py-3">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     Delivery Status
                   </span>
                 </div>
@@ -428,37 +428,37 @@ export default function InvoicingPage() {
                 <div className="flex items-center gap-3 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl">
                   <Send className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                       Invoice sent to client@acme.com
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       March 15, 2024 • 10:32 AM
                     </p>
                   </div>
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
 
-                <div className="border-t border-slate-100 dark:border-slate-800 pt-3">
+                <div className="border-t border-slate-100 dark:border-slate-700 dark:border-slate-800 pt-3">
                   <div className="flex justify-between text-sm py-2">
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       Email opened
                     </span>
-                    <span className="font-medium text-slate-900 dark:text-white">
+                    <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                       2 minutes ago
                     </span>
                   </div>
                   <div className="flex justify-between text-sm py-2">
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       Invoice viewed
                     </span>
-                    <span className="font-medium text-slate-900 dark:text-white">
+                    <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                       5 minutes ago
                     </span>
                   </div>
                 </div>
 
                 <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-3 text-center">
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">
                     ✨ Smart reminder scheduled in 7 days
                   </p>
                 </div>
@@ -497,10 +497,10 @@ export default function InvoicingPage() {
                           <Camera className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-slate-900 dark:text-white">
+                          <p className="text-sm font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                             New Invoice
                           </p>
-                          <p className="text-xs text-slate-500 dark:text-slate-400">
+                          <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                             Acme Corp • $3,500
                           </p>
                         </div>
@@ -512,15 +512,15 @@ export default function InvoicingPage() {
 
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-500 dark:text-slate-400">
+                        <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           Pending Invoices
                         </span>
-                        <span className="font-semibold text-slate-900 dark:text-white">
+                        <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                           3
                         </span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-500 dark:text-slate-400">
+                        <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           Paid This Month
                         </span>
                         <span className="font-semibold text-emerald-600 dark:text-emerald-400">
@@ -604,7 +604,7 @@ export default function InvoicingPage() {
               ].map((feature, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-slate-700 dark:text-slate-300">
+                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     {feature}
                   </span>
                 </div>
@@ -617,7 +617,7 @@ export default function InvoicingPage() {
                   key={idx}
                   className={`bg-linear-to-r ${gateway.gradient} bg-opacity-10 p-3 rounded-xl text-center border border-slate-100 dark:border-slate-700`}
                 >
-                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     {gateway.name}
                   </span>
                 </div>
@@ -637,7 +637,7 @@ export default function InvoicingPage() {
                   <p className="text-slate-400 text-sm">Total Due</p>
                   <p className="text-3xl font-bold text-white">$3,500.00</p>
                 </div>
-                <CreditCard className="h-8 w-8 text-slate-500" />
+                <CreditCard className="h-8 w-8 text-slate-500 dark:text-slate-400" />
               </div>
 
               <div className="space-y-4">
@@ -675,11 +675,11 @@ export default function InvoicingPage() {
             className="order-2 lg:order-1"
           >
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-slate-50 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
+              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Building2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                    <span className="font-medium text-sm text-slate-700 dark:text-slate-300">
+                    <span className="font-medium text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       Bank Reconciliation
                     </span>
                   </div>
@@ -712,7 +712,7 @@ export default function InvoicingPage() {
                 ].map((transaction, idx) => (
                   <div
                     key={idx}
-                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition"
+                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/60 dark:bg-slate-800/40 dark:hover:bg-slate-800/50 transition"
                   >
                     <div className="flex items-center gap-3">
                       <div
@@ -725,16 +725,16 @@ export default function InvoicingPage() {
                         }`}
                       />
                       <div>
-                        <p className="font-medium text-sm text-slate-900 dark:text-white">
+                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100 dark:text-white">
                           {transaction.name}
                         </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           {transaction.date}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-sm text-slate-700 dark:text-slate-300">
+                      <span className="font-semibold text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                         {transaction.amount}
                       </span>
                       {transaction.status === "matched" && (
@@ -789,10 +789,10 @@ export default function InvoicingPage() {
                   <Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     28,000+ banks supported
                   </h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     Global coverage across 50+ countries
                   </p>
                 </div>
@@ -802,10 +802,10 @@ export default function InvoicingPage() {
                   <RefreshCw className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     95% auto-matching rate
                   </h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                  <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     AI-powered transaction matching
                   </p>
                 </div>
@@ -848,12 +848,12 @@ export default function InvoicingPage() {
                 <div
                   className={`h-10 w-10 rounded-xl bg-linear-to-br ${feature.gradient} bg-opacity-10 flex items-center justify-center mb-3`}
                 >
-                  <feature.icon className="h-5 w-5 text-slate-700 dark:text-slate-300" />
+                  <feature.icon className="h-5 w-5 text-slate-700 dark:text-slate-200 dark:text-slate-300" />
                 </div>
-                <h3 className="font-semibold text-slate-900 dark:text-white mb-1">
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white mb-1">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400 leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -872,7 +872,7 @@ export default function InvoicingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-slate-50 dark:bg-slate-800/40 rounded-2xl p-6 border border-slate-200 dark:border-slate-700"
+              className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/40 rounded-2xl p-6 border border-slate-200 dark:border-slate-700"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -894,10 +894,10 @@ export default function InvoicingPage() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 dark:text-white text-sm">
+                  <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white text-sm">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     {testimonial.role}
                   </p>
                 </div>
@@ -930,7 +930,7 @@ export default function InvoicingPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5 dark:bg-slate-950 dark:text-slate-100"
               >
                 Start Free Trial
                 <ArrowRight className="h-4 w-4" />
@@ -952,3 +952,4 @@ export default function InvoicingPage() {
     </main>
   );
 }
+
