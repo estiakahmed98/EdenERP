@@ -115,7 +115,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
         fontFamily:
           '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -134,8 +134,8 @@ function SectionEyebrow({
   label: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-4 py-2 text-sm font-semibold text-purple-700 shadow-sm ring-1 ring-purple-100">
-      <span className="text-purple-500">{icon}</span>
+    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
+      <span className="text-primary">{icon}</span>
       {label}
     </div>
   );
@@ -149,10 +149,10 @@ export default function PricingPacksPage() {
   };
 
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#faf5ff_18%,_#f7f7f7_100%)] font-sans text-slate-800">
+    <main className="overflow-hidden bg-background text-foreground font-sans">
       {/* Hero Section */}
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[28rem] bg-[radial-gradient(circle_at_15%_12%,rgba(147,51,234,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(168,85,247,0.06),transparent_24%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[28rem] bg-[radial-gradient(circle_at_15%_12%,rgba(139,92,246,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
             <div>
@@ -163,12 +163,12 @@ export default function PricingPacksPage() {
               <ScriptHeading className="mt-4">
                 Eden ERP Success Packs
               </ScriptHeading>
-              <p className="mt-4 text-xl text-slate-600" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              <p className="mt-4 text-xl text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                 98% implementation success rate, vs 65% without success pack{" "}
                 <span className="italic">(self-implemented)</span>.
               </p>
             </div>
-            <button className="inline-flex items-center gap-2 rounded-xl bg-purple-700 px-8 py-4 font-bold text-white shadow-lg shadow-purple-700/20 transition hover:-translate-y-0.5 hover:bg-purple-800" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <button className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-bold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/90" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
               Project Estimator
               <ArrowRight className="h-5 w-5" />
             </button>
@@ -178,11 +178,11 @@ export default function PricingPacksPage() {
 
       {/* Pricing Table */}
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="overflow-x-auto rounded-2xl bg-white shadow-xl">
+        <div className="overflow-x-auto rounded-2xl bg-card shadow-xl">
           <table className="w-full min-w-[900px] border-collapse">
             <thead>
               <tr>
-                <th className="border-b bg-white px-6 py-5 text-left text-sm font-bold text-slate-700" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                <th className="border-b border-border bg-card px-6 py-5 text-left text-sm font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                   Recommended for:
                 </th>
                 {plans.map((plan) => (
@@ -201,8 +201,8 @@ export default function PricingPacksPage() {
             </thead>
             <tbody>
               {/* Hours Row */}
-              <tr className="border-b">
-                <td className="px-6 py-5 font-bold text-slate-700" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              <tr className="border-b border-border">
+                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                   Dedicated Consultant Hours
                 </td>
                 {plans.map((plan) => (
@@ -218,8 +218,8 @@ export default function PricingPacksPage() {
 
               {/* Features Rows */}
               {features.map((feature, idx) => (
-                <tr key={feature} className="border-b hover:bg-slate-50/50">
-                  <td className="px-6 py-4 font-medium text-slate-700" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                <tr key={feature} className="border-b border-border hover:bg-muted/30">
+                  <td className="px-6 py-4 font-medium text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                     {feature}
                   </td>
                   {plans.map((plan, i) => {
@@ -243,11 +243,11 @@ export default function PricingPacksPage() {
                     return (
                       <td key={i} className="px-6 py-4 text-center">
                         {showCheck ? (
-                          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-green-100 text-green-600">
+                          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent/20 text-accent-foreground">
                             <Check className="h-4 w-4" />
                           </span>
                         ) : (
-                          <span className="text-slate-300">—</span>
+                          <span className="text-muted-foreground">—</span>
                         )}
                       </td>
                     );
@@ -256,14 +256,14 @@ export default function PricingPacksPage() {
               ))}
 
               {/* Returning Customers */}
-              <tr className="border-b bg-slate-50">
-                <td className="px-6 py-5 font-bold text-slate-700" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              <tr className="border-b border-border bg-muted/20">
+                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                   Returning Customers
                 </td>
                 {plans.map((plan) => (
                   <td
                     key={plan.name}
-                    className="px-6 py-5 text-center text-2xl font-black text-purple-700"
+                    className="px-6 py-5 text-center text-2xl font-black text-primary"
                     style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
                   >
                     {plan.returning}
@@ -273,8 +273,8 @@ export default function PricingPacksPage() {
 
               {/* New Customers */}
               <tr>
-                <td className="px-6 py-5 font-bold text-slate-700" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-                  New Customers <span className="text-sm font-normal">(15% off)</span>
+                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                  New Customers <span className="text-sm font-normal text-muted-foreground">(15% off)</span>
                 </td>
                 {plans.map((plan) => (
                   <td
@@ -291,7 +291,7 @@ export default function PricingPacksPage() {
         </div>
 
         {/* Notes */}
-        <div className="mt-6 space-y-1 text-sm text-slate-500" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+        <div className="mt-6 space-y-1 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
           <p>* Travel time billed; Travel expenses billed separately.</p>
           <p>** Extra monthly charges apply for maintenance.</p>
           <p>*** A 15% discount applies automatically to new customers.</p>
@@ -299,7 +299,7 @@ export default function PricingPacksPage() {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <button className="inline-flex items-center gap-2 rounded-xl bg-purple-700 px-10 py-4 font-bold text-white shadow-lg shadow-purple-700/20 transition hover:-translate-y-0.5 hover:bg-purple-800" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <button className="inline-flex items-center gap-2 rounded-xl bg-primary px-10 py-4 font-bold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/90" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
             Meet an advisor
             <ArrowRight className="h-5 w-5" />
           </button>
@@ -307,7 +307,7 @@ export default function PricingPacksPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-[#f7f7f7] py-20">
+      <section className="bg-muted/30 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <SectionEyebrow
@@ -315,7 +315,7 @@ export default function PricingPacksPage() {
               label="Got questions?"
             />
             <ScriptHeading className="mt-4">Any Questions?</ScriptHeading>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
               If the answer to your question is not on this page,
               please contact our Account Managers.
             </p>
@@ -325,22 +325,22 @@ export default function PricingPacksPage() {
             {faqs.map((faq, index) => (
               <div
                 key={faq.question}
-                className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md"
+                className="overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:shadow-md"
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="flex w-full items-center justify-between px-6 py-5 text-left font-semibold text-slate-800 transition hover:bg-slate-50"
+                  className="flex w-full items-center justify-between px-6 py-5 text-left font-semibold text-foreground transition hover:bg-muted/30"
                   style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
                 >
                   <span className="text-lg">{faq.question}</span>
                   {openFaq === index ? (
-                    <ChevronUp className="h-5 w-5 text-purple-500" />
+                    <ChevronUp className="h-5 w-5 text-primary" />
                   ) : (
-                    <ChevronDown className="h-5 w-5 text-purple-500" />
+                    <ChevronDown className="h-5 w-5 text-primary" />
                   )}
                 </button>
                 {openFaq === index && (
-                  <div className="border-t border-slate-100 px-6 py-4 text-slate-600" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                  <div className="border-t border-border px-6 py-4 text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
                     {faq.answer}
                   </div>
                 )}
@@ -349,10 +349,10 @@ export default function PricingPacksPage() {
           </div>
 
           {/* Contact Banner */}
-          <div className="mt-10 rounded-2xl bg-gradient-to-r from-purple-50 to-purple-100 p-6 text-center">
-            <p className="text-slate-600" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <div className="mt-10 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/5 p-6 text-center">
+            <p className="text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
               Still have questions?{" "}
-              <button className="font-semibold text-purple-700 hover:underline">
+              <button className="font-semibold text-primary hover:underline">
                 Contact our team
               </button>
             </p>
@@ -363,20 +363,20 @@ export default function PricingPacksPage() {
       {/* Trust Badge */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-center justify-center gap-8 text-center">
-          <div className="flex items-center gap-2 text-sm text-slate-500" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
             <span>4.9/5 from 500+ reviews</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-slate-500" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-            <Users className="h-4 w-4 text-purple-500" />
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <Users className="h-4 w-4 text-primary" />
             <span>15M+ happy users</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-slate-500" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-            <Award className="h-4 w-4 text-purple-500" />
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <Award className="h-4 w-4 text-primary" />
             <span>98% success rate</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-slate-500" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
-            <Calendar className="h-4 w-4 text-purple-500" />
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <Calendar className="h-4 w-4 text-primary" />
             <span>30-day satisfaction guarantee</span>
           </div>
         </div>
