@@ -125,11 +125,11 @@ const candidates = [
 
 export default function RecruitmentATSPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3]">
@@ -138,7 +138,7 @@ export default function RecruitmentATSPage() {
             ATS
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Source, track, interview, and hire candidates from one beautiful
             recruitment pipeline.
           </p>
@@ -153,7 +153,7 @@ export default function RecruitmentATSPage() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
               Meet an advisor
             </Link>
@@ -168,11 +168,11 @@ export default function RecruitmentATSPage() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <BriefcaseBusiness className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Recruitment</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Recruitment</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Jobs / Applications / Interviews / Reporting
                   </span>
@@ -220,10 +220,10 @@ export default function RecruitmentATSPage() {
                 ].map((column, columnIndex) => (
                   <div
                     key={column.title}
-                    className="rounded-lg bg-slate-50 p-3"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900">
+                      <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                         {column.title}
                       </p>
                       <span className="text-lg font-bold text-slate-400">
@@ -235,9 +235,9 @@ export default function RecruitmentATSPage() {
                       {column.cards.map((card, cardIndex) => (
                         <div
                           key={card}
-                          className="rounded-lg bg-white p-4 text-left shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
                         >
-                          <p className="text-sm font-bold text-slate-900">
+                          <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                             {card}
                           </p>
                           <p className="mt-1 text-xs text-slate-400">
@@ -265,7 +265,7 @@ export default function RecruitmentATSPage() {
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 text-[#714b67] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -278,7 +278,7 @@ export default function RecruitmentATSPage() {
       <section className="bg-[#f3f4f7] py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Never wonder about a{" "}
@@ -287,25 +287,25 @@ export default function RecruitmentATSPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Get full pipeline visibility from application to offer, so your team
             always knows what comes next.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
                 {["Open Jobs", "In Progress", "Hired"].map(
                   (column, columnIndex) => (
-                    <div key={column} className="rounded-lg bg-slate-50 p-4">
-                      <p className="mb-4 text-left text-sm font-bold text-slate-900">
+                    <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                      <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-slate-100">
                         {column}
                       </p>
 
                       {Array.from({ length: 3 }).map((_, index) => (
                         <div
                           key={index}
-                          className="mb-3 rounded-lg bg-white p-4 text-left shadow-sm"
+                          className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
                         >
                           <div className="h-3 w-3/4 rounded bg-[#714b67]" />
                           <div className="mt-2 h-2 w-full rounded bg-slate-100" />
@@ -324,10 +324,10 @@ export default function RecruitmentATSPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Visualize the{" "}
@@ -336,7 +336,7 @@ export default function RecruitmentATSPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Move applicants through your recruitment stages with a clean kanban
             view, interview status, tags, activities, and notes.
           </p>
@@ -344,19 +344,19 @@ export default function RecruitmentATSPage() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="absolute inset-0 translate-y-12 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
                 {["Qualified", "Interview", "Contract"].map(
                   (stage, stageIndex) => (
-                    <div key={stage} className="rounded-lg bg-slate-50 p-4">
-                      <p className="mb-4 text-left text-sm font-bold text-slate-900">
+                    <div key={stage} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                      <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-slate-100">
                         {stage}
                       </p>
 
                       {candidates.slice(0, 3).map((candidate, index) => (
                         <div
                           key={`${stage}-${candidate.name}`}
-                          className="mb-3 rounded-lg bg-white p-4 text-left shadow-sm"
+                          className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
                         >
                           <div className="flex gap-3">
                             <img
@@ -366,7 +366,7 @@ export default function RecruitmentATSPage() {
                             />
 
                             <div>
-                              <p className="text-sm font-bold text-slate-900">
+                              <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                                 {candidate.name}
                               </p>
                               <p className="text-xs text-slate-400">
@@ -394,13 +394,13 @@ export default function RecruitmentATSPage() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white dark:bg-slate-900 py-24">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-rose-300">
@@ -411,15 +411,15 @@ export default function RecruitmentATSPage() {
               typing
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Automate descriptions using templates and AI. Generate job posts,
               interview invitations, and candidate messages quickly.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Job Description</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">Job Description</p>
               <WandSparkles className="h-5 w-5 text-amber-500" />
             </div>
 
@@ -430,9 +430,9 @@ export default function RecruitmentATSPage() {
                 ["Location", "Remote / Hybrid"],
                 ["Experience", "3+ years"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-lg bg-slate-50 p-4">
+                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                   <p className="text-xs font-bold text-slate-400">{label}</p>
-                  <p className="mt-2 text-sm font-bold text-slate-900">
+                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                     {value}
                   </p>
                 </div>
@@ -446,10 +446,10 @@ export default function RecruitmentATSPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Tailor-made{" "}
@@ -458,7 +458,7 @@ export default function RecruitmentATSPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Create custom recruitment steps for every department, job role, and
             hiring process.
           </p>
@@ -466,9 +466,9 @@ export default function RecruitmentATSPage() {
           <div className="relative mx-auto mt-14 max-w-3xl">
             <div className="absolute inset-0 translate-y-8 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative rounded-xl border border-slate-200 bg-white p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Pipeline Builder</p>
+                <p className="font-bold text-slate-900 dark:text-slate-100">Pipeline Builder</p>
                 <span className="text-slate-400">×</span>
               </div>
 
@@ -481,9 +481,9 @@ export default function RecruitmentATSPage() {
               ].map((step, index) => (
                 <div
                   key={step}
-                  className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-sm"
+                  className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                 >
-                  <span className="font-bold text-slate-700">{step}</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-200">{step}</span>
                   <span
                     className={`rounded-full px-3 py-1 text-[10px] font-bold ${
                       index < 2
@@ -500,12 +500,12 @@ export default function RecruitmentATSPage() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white dark:bg-slate-900 py-24">
         <div className="absolute left-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-            <div className="grid grid-cols-7 gap-2 border-b border-slate-100 pb-3 text-center text-xs font-bold text-slate-400">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-700 pb-3 text-center text-xs font-bold text-slate-400">
               {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
                 <span key={day}>{day}</span>
               ))}
@@ -520,7 +520,7 @@ export default function RecruitmentATSPage() {
                       ? "bg-[#714b67] text-white"
                       : [10, 18, 24].includes(index)
                         ? "bg-amber-100 text-amber-700"
-                        : "bg-slate-50 text-slate-400"
+                        : "bg-slate-50 dark:bg-slate-800/40 text-slate-400"
                   }`}
                 >
                   <span>{index + 1}</span>
@@ -534,7 +534,7 @@ export default function RecruitmentATSPage() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Less scheduling,
@@ -542,7 +542,7 @@ export default function RecruitmentATSPage() {
               more interviewing!
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Schedule interviews, send calendar invitations, coordinate with
               hiring teams, and keep candidates updated automatically.
             </p>
@@ -550,10 +550,10 @@ export default function RecruitmentATSPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-rose-300">
@@ -562,19 +562,19 @@ export default function RecruitmentATSPage() {
             that makes sense
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Look at your hiring data and understand where your candidates come
             from, how your pipeline performs, and where your team can improve.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Recruitment Analysis</p>
+                <p className="font-bold text-slate-900 dark:text-slate-100">Recruitment Analysis</p>
                 <BarChart3 className="h-5 w-5 text-[#714b67]" />
               </div>
 
-              <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 p-5">
+              <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
                 {[35, 58, 80, 130].map((height, index) => (
                   <div
                     key={index}
@@ -609,7 +609,7 @@ export default function RecruitmentATSPage() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -628,7 +628,7 @@ export default function RecruitmentATSPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
@@ -638,11 +638,11 @@ export default function RecruitmentATSPage() {
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -658,10 +658,10 @@ export default function RecruitmentATSPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -674,7 +674,7 @@ export default function RecruitmentATSPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -685,14 +685,14 @@ export default function RecruitmentATSPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -711,7 +711,7 @@ export default function RecruitmentATSPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-[360px]">
             {avatars.map((avatar, index) => (
@@ -749,9 +749,9 @@ export default function RecruitmentATSPage() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -767,7 +767,7 @@ export default function RecruitmentATSPage() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon saved us plenty of web development time, allowing us to
                   focus on individual strengths, which is immensely helpful for
                   start-ups.
@@ -781,7 +781,7 @@ export default function RecruitmentATSPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Daphne Wright</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">Daphne Wright</p>
                     <p className="text-sm text-slate-500">HR manager</p>
                   </div>
                 </div>
@@ -795,7 +795,7 @@ export default function RecruitmentATSPage() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
@@ -823,3 +823,5 @@ export default function RecruitmentATSPage() {
     </main>
   );
 }
+
+

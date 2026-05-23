@@ -147,11 +147,11 @@ const avatars = [
 
 export default function HumanResourcesLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Human Resources{" "}
@@ -160,7 +160,7 @@ export default function HumanResourcesLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Streamline hiring, onboarding, attendance, performance, payroll, and
             employee self-service in one AI-powered people platform.
           </p>
@@ -175,7 +175,7 @@ export default function HumanResourcesLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
               Meet an advisor
             </Link>
@@ -190,11 +190,11 @@ export default function HumanResourcesLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Users className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Employees</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Employees</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Directory / Departments / Contracts / Planning
                   </span>
@@ -206,8 +206,8 @@ export default function HumanResourcesLandingSections() {
               </div>
 
               <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[230px_1fr]">
-                <aside className="rounded-xl bg-white p-5 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="text-sm font-bold text-slate-900">
+                <aside className="rounded-xl bg-white p-5 text-left shadow-sm ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700">
+                  <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                     Departments
                   </p>
 
@@ -225,7 +225,7 @@ export default function HumanResourcesLandingSections() {
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 0
                             ? "bg-[#714b67] text-white"
-                            : "bg-slate-50 text-slate-500"
+                            : "bg-slate-50 dark:bg-slate-800/40 text-slate-500"
                         }`}
                       >
                         {item}
@@ -238,7 +238,7 @@ export default function HumanResourcesLandingSections() {
                   {employees.map((employee) => (
                     <div
                       key={employee.name}
-                      className="flex items-center gap-4 rounded-xl bg-white p-4 text-left shadow-sm ring-1 ring-slate-100"
+                      className="flex items-center gap-4 rounded-xl bg-white p-4 text-left shadow-sm ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700"
                     >
                       <img
                         src={employee.image}
@@ -247,7 +247,7 @@ export default function HumanResourcesLandingSections() {
                       />
 
                       <div className="min-w-0 flex-1">
-                        <p className="truncate font-bold text-slate-900">
+                        <p className="truncate font-bold text-slate-900 dark:text-slate-100">
                           {employee.name}
                         </p>
                         <p className="mt-1 text-sm text-slate-500">
@@ -274,7 +274,7 @@ export default function HumanResourcesLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 text-[#714b67] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -287,7 +287,7 @@ export default function HumanResourcesLandingSections() {
       <section className="bg-[#f3f4f7] py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All of your people.
@@ -295,18 +295,18 @@ export default function HumanResourcesLandingSections() {
             All in one place.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Get a detailed view of every department and employee. Sort by role,
             team, skill, manager, contract status, and attendance details.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-100">
+            <div className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700">
               <div className="flex items-center gap-3">
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
                   Employees
                 </button>
-                <div className="flex-1 rounded-md bg-slate-50 px-4 py-2 text-left text-sm text-slate-400">
+                <div className="flex-1 rounded-md bg-slate-50 dark:bg-slate-800/40 px-4 py-2 text-left text-sm text-slate-400">
                   Search...
                 </div>
                 <span className="text-xs text-slate-400">1-12 / 42</span>
@@ -315,10 +315,10 @@ export default function HumanResourcesLandingSections() {
 
             <DashedArrow className="mx-auto my-10 h-24 w-24 rotate-90 text-slate-300" />
 
-            <div className="mx-auto max-w-3xl rounded-xl bg-white p-7 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)] ring-1 ring-slate-100">
+            <div className="mx-auto max-w-3xl rounded-xl bg-white p-7 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)] ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700">
               <div className="grid gap-8 md:grid-cols-3">
                 <div>
-                  <p className="mb-4 text-sm font-bold text-slate-900">
+                  <p className="mb-4 text-sm font-bold text-slate-900 dark:text-slate-100">
                     Filters
                   </p>
                   {[
@@ -330,7 +330,7 @@ export default function HumanResourcesLandingSections() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="mb-3 rounded-md bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-500"
+                      className="mb-3 rounded-md bg-slate-50 dark:bg-slate-800/40 px-3 py-2 text-xs font-semibold text-slate-500"
                     >
                       {item}
                     </div>
@@ -338,14 +338,14 @@ export default function HumanResourcesLandingSections() {
                 </div>
 
                 <div>
-                  <p className="mb-4 text-sm font-bold text-slate-900">
+                  <p className="mb-4 text-sm font-bold text-slate-900 dark:text-slate-100">
                     Group By
                   </p>
                   {["Manager", "Department", "Job Position", "Skills"].map(
                     (item) => (
                       <div
                         key={item}
-                        className="mb-3 rounded-md bg-slate-50 px-3 py-2 text-xs font-semibold text-slate-500"
+                        className="mb-3 rounded-md bg-slate-50 dark:bg-slate-800/40 px-3 py-2 text-xs font-semibold text-slate-500"
                       >
                         {item}
                       </div>
@@ -354,7 +354,7 @@ export default function HumanResourcesLandingSections() {
                 </div>
 
                 <div>
-                  <p className="mb-4 text-sm font-bold text-slate-900">
+                  <p className="mb-4 text-sm font-bold text-slate-900 dark:text-slate-100">
                     Favorites
                   </p>
                   {["Save current search", "My team", "New hires"].map(
@@ -374,11 +374,11 @@ export default function HumanResourcesLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Keep the{" "}
@@ -389,7 +389,7 @@ export default function HumanResourcesLandingSections() {
               stuff private
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Restricted access settings protect employee contracts, wages,
               private information, emergency contacts, visa information, and
               sensitive HR records.
@@ -399,7 +399,7 @@ export default function HumanResourcesLandingSections() {
           <div className="relative">
             <LockKeyhole className="absolute -right-4 -top-10 h-14 w-14 text-rose-500" />
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               <div className="mb-5 flex items-center gap-4">
                 <img
                   src={avatars[0]}
@@ -407,7 +407,7 @@ export default function HumanResourcesLandingSections() {
                   className="h-16 w-16 rounded-xl object-cover"
                 />
                 <div>
-                  <p className="text-xl font-bold text-slate-900">
+                  <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
                     Audrey Peterson
                   </p>
                   <p className="text-sm text-rose-500">Confidential</p>
@@ -423,9 +423,9 @@ export default function HumanResourcesLandingSections() {
                   ["Visa", "Protected"],
                   ["Bank Account", "Hidden"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 p-4">
+                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900">
+                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
                   </div>
@@ -441,14 +441,14 @@ export default function HumanResourcesLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 sm:grid-cols-2">
               {employees.slice(0, 4).map((employee, index) => (
                 <div
                   key={employee.name}
-                  className="flex gap-4 rounded-lg bg-slate-50 p-4 text-left"
+                  className="flex gap-4 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
                   <img
                     src={employee.image}
@@ -457,7 +457,7 @@ export default function HumanResourcesLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">{employee.name}</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">{employee.name}</p>
                     <p className="mt-1 text-sm text-slate-500">
                       {employee.role}
                     </p>
@@ -468,7 +468,7 @@ export default function HumanResourcesLandingSections() {
                         .map((skill) => (
                           <span
                             key={skill}
-                            className="rounded-full bg-white px-2 py-1 text-[10px] font-bold text-[#714b67]"
+                            className="rounded-full bg-white dark:bg-slate-900 px-2 py-1 text-[10px] font-bold text-[#714b67]"
                           >
                             {skill}
                           </span>
@@ -482,7 +482,7 @@ export default function HumanResourcesLandingSections() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Show off
@@ -492,7 +492,7 @@ export default function HumanResourcesLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Record every employee&apos;s skill set so the next time you need a
               French-speaking JavaScript expert, you know exactly who to call.
             </p>
@@ -502,7 +502,7 @@ export default function HumanResourcesLandingSections() {
                 (skill) => (
                   <span
                     key={skill}
-                    className="rounded-full bg-slate-50 px-4 py-2 text-xs font-bold text-slate-600 ring-1 ring-slate-100"
+                    className="rounded-full bg-slate-50 px-4 py-2 text-xs font-bold text-slate-600 ring-1 ring-slate-100 dark:bg-slate-800/40 dark:text-slate-300 dark:ring-slate-700"
                   >
                     {skill}
                   </span>
@@ -513,14 +513,14 @@ export default function HumanResourcesLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sky-100 text-sky-600">
             <Clock3 className="h-9 w-9" />
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Take control of{" "}
@@ -529,7 +529,7 @@ export default function HumanResourcesLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Stay on top of PTO requests with integrated time off tracking. Use
             absence reports to monitor attendance and quickly approve vacation
             requests.
@@ -555,9 +555,9 @@ export default function HumanResourcesLandingSections() {
               ].map((column) => (
                 <div
                   key={column.title}
-                  className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                  className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
                 >
-                  <p className="mb-5 text-left font-bold text-slate-900">
+                  <p className="mb-5 text-left font-bold text-slate-900 dark:text-slate-100">
                     {column.title}
                   </p>
 
@@ -565,7 +565,7 @@ export default function HumanResourcesLandingSections() {
                     {column.people.map((person, index) => (
                       <div
                         key={person.name}
-                        className="flex gap-3 rounded-lg bg-slate-50 p-3 text-left"
+                        className="flex gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3 text-left"
                       >
                         <img
                           src={person.image}
@@ -573,7 +573,7 @@ export default function HumanResourcesLandingSections() {
                           className="h-14 w-14 rounded-xl object-cover"
                         />
                         <div>
-                          <p className="text-sm font-bold text-slate-900">
+                          <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                             {person.name}
                           </p>
                           <p className="mt-1 text-xs text-slate-500">
@@ -593,16 +593,16 @@ export default function HumanResourcesLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Never lose track of another document
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Upload every contract, request signature, then store them all in one
             secure location.
           </p>
@@ -641,7 +641,7 @@ export default function HumanResourcesLandingSections() {
                   </div>
 
                   <p
-                    className="mt-4 text-lg font-bold text-slate-900"
+                    className="mt-4 text-lg font-bold text-slate-900 dark:text-slate-100"
                     style={{ fontFamily: handwrittenFont }}
                   >
                     {item.title}
@@ -659,7 +659,7 @@ export default function HumanResourcesLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -675,7 +675,7 @@ export default function HumanResourcesLandingSections() {
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-3">
+            <div className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-3">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
                   <Trophy className="h-5 w-5" />
@@ -684,15 +684,15 @@ export default function HumanResourcesLandingSections() {
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold text-slate-900">
+              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100">
                 Performance appraisals
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 Schedule employee appraisals and measure skills development.
               </p>
 
-              <div className="mt-8 rounded-xl bg-slate-50 p-5">
+              <div className="mt-8 rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5">
                 <div className="flex items-center gap-3">
                   <img
                     src={employees[4].image}
@@ -700,7 +700,7 @@ export default function HumanResourcesLandingSections() {
                     className="h-12 w-12 rounded-xl object-cover"
                   />
                   <div>
-                    <p className="font-bold text-slate-900">Jennie Fletcher</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">Jennie Fletcher</p>
                     <p className="text-xs text-slate-400">
                       Manager&apos;s Feedback
                     </p>
@@ -719,7 +719,7 @@ export default function HumanResourcesLandingSections() {
                         <span>{label}</span>
                         <span>{"★".repeat(Number(score))}</span>
                       </div>
-                      <div className="h-2 rounded-full bg-white">
+                      <div className="h-2 rounded-full bg-white dark:bg-slate-900">
                         <div
                           className="h-2 rounded-full bg-[#714b67]"
                           style={{ width: `${Number(score) * 20}%` }}
@@ -734,7 +734,7 @@ export default function HumanResourcesLandingSections() {
             {features.slice(1).map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
@@ -744,11 +744,11 @@ export default function HumanResourcesLandingSections() {
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -764,10 +764,10 @@ export default function HumanResourcesLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -780,7 +780,7 @@ export default function HumanResourcesLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -791,14 +791,14 @@ export default function HumanResourcesLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/40 dark:hover:bg-slate-800/60"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -817,7 +817,7 @@ export default function HumanResourcesLandingSections() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-[360px]">
             {avatars.map((avatar, index) => (
@@ -855,9 +855,9 @@ export default function HumanResourcesLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -874,7 +874,7 @@ export default function HumanResourcesLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Build a better
@@ -927,3 +927,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

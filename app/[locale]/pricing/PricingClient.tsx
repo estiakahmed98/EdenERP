@@ -277,7 +277,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl dark:text-slate-100 ${className}`}
       style={{
         fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
       }}
@@ -295,7 +295,7 @@ function SectionEyebrow({
   label: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl">
+    <div className="inline-flex items-center gap-2 rounded-full border border-primary/10 bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl dark:bg-slate-950/60">
       <span>{icon}</span>
       {label}
     </div>
@@ -310,7 +310,7 @@ function FeatureValue({ value }: { value: string | boolean }) {
         Included
       </span>
     ) : (
-      <span className="text-slate-400">Not included</span>
+      <span className="text-slate-400 dark:text-slate-500">Not included</span>
     );
   }
 
@@ -325,11 +325,11 @@ export default function PricingClient() {
   const isAnnual = billingCycle === "annually";
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#ffffff_0%,_#fbf7ff_22%,_#ffffff_55%,_#fff8ed_100%)] text-slate-800">
+    <main className="min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#ffffff_0%,_#fbf7ff_22%,_#ffffff_55%,_#fff8ed_100%)] text-slate-800 dark:bg-[linear-gradient(180deg,_#020617_0%,_#0b1220_35%,_#020617_70%,_#020617_100%)] dark:text-slate-100">
       {/* Hero Section */}
       <section className="relative isolate overflow-hidden rounded-b-[3rem] sm:rounded-b-[5rem] lg:rounded-b-[7rem]">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_12%,rgba(124,58,237,0.18),transparent_28%),radial-gradient(circle_at_85%_18%,rgba(245,158,11,0.16),transparent_26%),linear-gradient(180deg,#ffffff_0%,#fbf7ff_62%,#ffffff_100%)]" />
-        <div className="absolute left-10 top-28 -z-10 hidden h-24 w-24 rounded-[2rem] bg-white/80 shadow-xl backdrop-blur-xl lg:block" />
+        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_12%,rgba(124,58,237,0.18),transparent_28%),radial-gradient(circle_at_85%_18%,rgba(245,158,11,0.16),transparent_26%),linear-gradient(180deg,#ffffff_0%,#fbf7ff_62%,#ffffff_100%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(124,58,237,0.22),transparent_32%),radial-gradient(circle_at_85%_18%,rgba(245,158,11,0.18),transparent_30%),linear-gradient(180deg,#020617_0%,#0b1220_62%,#020617_100%)]" />
+        <div className="absolute left-10 top-28 -z-10 hidden h-24 w-24 rounded-[2rem] bg-white/80 shadow-xl backdrop-blur-xl lg:block dark:bg-slate-950/50 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]" />
         <div className="absolute right-20 top-32 -z-10 hidden h-36 w-36 rounded-full bg-primary/10 blur-3xl lg:block" />
         <div className="absolute bottom-12 left-1/2 -z-10 hidden h-56 w-56 -translate-x-1/2 rounded-full bg-amber-200/30 blur-3xl lg:block" />
 
@@ -346,7 +346,7 @@ export default function PricingClient() {
               </p>
 
               <h1
-                className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
+                className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl dark:text-slate-100"
                 style={{
                   fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
                 }}
@@ -357,7 +357,7 @@ export default function PricingClient() {
                 </span>
               </h1>
 
-              <p className="max-w-2xl text-lg leading-8 text-slate-600">
+              <p className="max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
                 Start with the tools your team needs today, then scale into CRM,
                 tasks, sales, accounting, inventory, ecommerce, automation, and
                 reporting from one premium workspace.
@@ -375,14 +375,14 @@ export default function PricingClient() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-white/80 px-7 py-4 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-primary/40 hover:bg-white"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-white/80 px-7 py-4 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-primary/40 hover:bg-white dark:bg-slate-950/60 dark:hover:bg-slate-950/80"
               >
                 Talk to Sales
                 <MessageSquareText className="h-4 w-4" />
               </Link>
             </div>
 
-            <div className="flex flex-wrap gap-4 text-sm font-medium text-slate-600">
+            <div className="flex flex-wrap gap-4 text-sm font-medium text-slate-600 dark:text-slate-300">
               {["No hidden fees", "Cancel anytime", "14-day trial"].map(
                 (item) => (
                   <span key={item} className="inline-flex items-center gap-2">
@@ -395,13 +395,13 @@ export default function PricingClient() {
           </div>
 
           <div className="relative mx-auto flex w-full max-w-xl items-center justify-center lg:justify-end">
-            <div className="absolute -left-4 top-8 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block">
+            <div className="absolute -left-4 top-8 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block dark:border-slate-800/70 dark:bg-slate-950/60 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
                   <BadgeCheck className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     Best value
                   </p>
                   <p className="text-xs text-slate-500">Professional plan</p>
@@ -409,13 +409,13 @@ export default function PricingClient() {
               </div>
             </div>
 
-            <div className="absolute -right-2 bottom-12 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block">
+            <div className="absolute -right-2 bottom-12 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block dark:border-slate-800/70 dark:bg-slate-950/60 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
                   <Rocket className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-slate-900">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     Scale-ready
                   </p>
                   <p className="text-xs text-slate-500">
@@ -425,7 +425,7 @@ export default function PricingClient() {
               </div>
             </div>
 
-            <div className="relative w-full overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/75 p-4 shadow-[0_40px_120px_rgba(15,23,42,0.16)] backdrop-blur-2xl">
+            <div className="relative w-full overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/75 p-4 shadow-[0_40px_120px_rgba(15,23,42,0.16)] backdrop-blur-2xl dark:border-slate-800/70 dark:bg-slate-950/55 dark:shadow-[0_40px_120px_rgba(0,0,0,0.65)]">
               <div className="overflow-hidden rounded-[2rem] bg-slate-950 text-white">
                 <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
                   <span className="h-3 w-3 rounded-full bg-rose-400" />
@@ -437,7 +437,7 @@ export default function PricingClient() {
                 </div>
 
                 <div className="space-y-5 p-5">
-                  <div className="rounded-2xl bg-white p-5 text-slate-900">
+                  <div className="rounded-2xl bg-white p-5 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-sm font-semibold text-slate-500">
@@ -460,10 +460,12 @@ export default function PricingClient() {
                       ].map(([value, label]) => (
                         <div
                           key={label}
-                          className="rounded-2xl bg-slate-50 p-3 text-center"
+                          className="rounded-2xl bg-slate-50 p-3 text-center dark:bg-slate-800/60"
                         >
-                          <p className="font-bold text-slate-950">{value}</p>
-                          <p className="mt-1 text-xs text-slate-500">
+                          <p className="font-bold text-slate-950 dark:text-slate-100">
+                            {value}
+                          </p>
+                          <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
                             {label}
                           </p>
                         </div>
@@ -513,13 +515,13 @@ export default function PricingClient() {
       </section>
 
       {/* Modules Strip */}
-      <section className="border-y border-slate-200 bg-white/70 py-8 backdrop-blur-xl">
+      <section className="border-y border-slate-200 bg-white/70 py-8 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/35">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-3">
             {modules.map((module) => (
               <span
                 key={module}
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-md"
+                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-md dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300"
               >
                 {module}
               </span>
@@ -541,19 +543,19 @@ export default function PricingClient() {
           <div className="mt-8">
             <ScriptHeading>Simple pricing. Serious business power.</ScriptHeading>
           </div>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Pick the package that matches your current stage. You can expand
             modules, users, storage, and support as your operation grows.
           </p>
 
-          <div className="mt-8 inline-flex rounded-2xl border border-slate-200 bg-white p-1 shadow-sm">
+          <div className="mt-8 inline-flex rounded-2xl border border-slate-200 bg-white p-1 shadow-sm dark:border-slate-800 dark:bg-slate-950">
             <button
               type="button"
               onClick={() => setBillingCycle("monthly")}
               className={`rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
                 billingCycle === "monthly"
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "text-slate-600 hover:text-primary"
+                  : "text-slate-600 hover:text-primary dark:text-slate-300"
               }`}
             >
               Monthly
@@ -565,19 +567,19 @@ export default function PricingClient() {
               className={`rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
                 billingCycle === "annually"
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
-                  : "text-slate-600 hover:text-primary"
+                  : "text-slate-600 hover:text-primary dark:text-slate-300"
               }`}
             >
               Annually
               <span
                 className={`ml-2 rounded-full px-2 py-1 text-xs ${
-                  billingCycle === "annually"
-                    ? "bg-white/20 text-white"
-                    : "bg-amber-100 text-amber-700"
-                }`}
-              >
-                Save 20%
-              </span>
+                billingCycle === "annually"
+                  ? "bg-white/20 text-white"
+                  : "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-200"
+              }`}
+            >
+              Save 20%
+            </span>
             </button>
           </div>
         </div>
@@ -608,7 +610,7 @@ export default function PricingClient() {
                 />
 
                 <div
-                  className={`relative flex h-full flex-col rounded-[2.2rem] border bg-white p-7 shadow-sm transition-all duration-300 group-hover:shadow-2xl ${
+                  className={`relative flex h-full flex-col rounded-[2.2rem] border bg-white p-7 shadow-sm transition-all duration-300 group-hover:shadow-2xl dark:bg-slate-950 dark:border-slate-800 ${
                     plan.highlighted
                       ? "border-primary/40 shadow-[0_35px_90px_rgba(124,58,237,0.18)]"
                       : "border-slate-200"
@@ -619,7 +621,7 @@ export default function PricingClient() {
                       <p className="text-sm font-semibold text-primary">
                         {plan.badge}
                       </p>
-                      <h3 className="mt-3 text-2xl font-bold text-slate-950">
+                      <h3 className="mt-3 text-2xl font-bold text-slate-950 dark:text-slate-100">
                         {plan.name}
                       </h3>
                     </div>
@@ -631,17 +633,17 @@ export default function PricingClient() {
                     </div>
                   </div>
 
-                  <p className="mt-5 min-h-20 text-sm leading-7 text-slate-600">
+                  <p className="mt-5 min-h-20 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {plan.description}
                   </p>
 
                   <div className="mt-7">
                     <div className="flex items-end gap-1">
-                      <span className="text-5xl font-bold tracking-tight text-slate-950">
+                      <span className="text-5xl font-bold tracking-tight text-slate-950 dark:text-slate-100">
                         {isAnnual ? plan.annualPrice : plan.monthlyPrice}
                       </span>
 
-                      <span className="pb-2 text-base font-medium text-slate-500">
+                      <span className="pb-2 text-base font-medium text-slate-500 dark:text-slate-400">
                         {isAnnual ? plan.periodAnnual : plan.periodMonthly}
                       </span>
                     </div>
@@ -658,15 +660,15 @@ export default function PricingClient() {
                     className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm font-semibold transition-all duration-300 ${
                       plan.highlighted
                         ? "bg-primary text-white shadow-xl shadow-primary/20 hover:-translate-y-0.5 hover:shadow-2xl"
-                        : "border border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-lg"
+                        : "border border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-lg dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200"
                     }`}
                   >
                     {plan.cta}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
 
-                  <div className="mt-8 border-t border-slate-100 pt-7">
-                    <p className="text-sm font-semibold text-slate-950">
+                  <div className="mt-8 border-t border-slate-100 pt-7 dark:border-slate-800">
+                    <p className="text-sm font-semibold text-slate-950 dark:text-slate-100">
                       Features included:
                     </p>
 
@@ -676,7 +678,7 @@ export default function PricingClient() {
                           <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
                             <Check className="h-3.5 w-3.5" />
                           </span>
-                          <span className="text-sm leading-6 text-slate-600">
+                          <span className="text-sm leading-6 text-slate-600 dark:text-slate-300">
                             {feature}
                           </span>
                         </li>
@@ -691,8 +693,8 @@ export default function PricingClient() {
       </section>
 
       {/* Benefits */}
-      <section className="relative overflow-hidden bg-[#f6f5f8] py-16 lg:py-24">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.08),transparent_26%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.12),transparent_30%)]" />
+      <section className="relative overflow-hidden bg-[#f6f5f8] py-16 lg:py-24 dark:bg-slate-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.08),transparent_26%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.12),transparent_30%)] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.16),transparent_30%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.16),transparent_34%)]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
@@ -706,7 +708,7 @@ export default function PricingClient() {
                   Pricing that stays clear as your business grows.
                 </ScriptHeading>
               </div>
-              <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
+              <p className="mt-5 max-w-xl text-base leading-8 text-slate-600 dark:text-slate-300">
                 AdonERP keeps your cost structure predictable while giving your
                 team room to add modules, users, workflows, storage, reporting,
                 and enterprise support.
@@ -720,15 +722,15 @@ export default function PricingClient() {
                 return (
                   <div
                     key={item.title}
-                    className="rounded-[2rem] border border-white bg-white/85 p-6 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className="rounded-[2rem] border border-white bg-white/85 p-6 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800/70 dark:bg-slate-950/60"
                   >
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <h3 className="mt-5 text-lg font-semibold text-slate-950">
+                    <h3 className="mt-5 text-lg font-semibold text-slate-950 dark:text-slate-100">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                    <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                       {item.description}
                     </p>
                   </div>
@@ -749,27 +751,27 @@ export default function PricingClient() {
           <div className="mt-8">
             <ScriptHeading>Compare every plan clearly.</ScriptHeading>
           </div>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Review users, storage, automation, integrations, branding, and
             support before choosing the right plan for your team.
           </p>
         </div>
 
-        <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+        <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[820px] text-sm">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50">
-                  <th className="px-6 py-5 text-left font-bold text-slate-950">
+                <tr className="border-b border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/40">
+                  <th className="px-6 py-5 text-left font-bold text-slate-950 dark:text-slate-100">
                     Feature
                   </th>
-                  <th className="px-6 py-5 text-left font-bold text-slate-950">
+                  <th className="px-6 py-5 text-left font-bold text-slate-950 dark:text-slate-100">
                     Starter
                   </th>
                   <th className="px-6 py-5 text-left font-bold text-primary">
                     Professional
                   </th>
-                  <th className="px-6 py-5 text-left font-bold text-slate-950">
+                  <th className="px-6 py-5 text-left font-bold text-slate-950 dark:text-slate-100">
                     Enterprise
                   </th>
                 </tr>
@@ -779,18 +781,18 @@ export default function PricingClient() {
                 {comparison.map((row) => (
                   <tr
                     key={row.feature}
-                    className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50"
+                    className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900/30"
                   >
-                    <td className="px-6 py-5 font-semibold text-slate-950">
+                    <td className="px-6 py-5 font-semibold text-slate-950 dark:text-slate-100">
                       {row.feature}
                     </td>
-                    <td className="px-6 py-5 text-slate-600">
+                    <td className="px-6 py-5 text-slate-600 dark:text-slate-300">
                       <FeatureValue value={row.starter} />
                     </td>
-                    <td className="px-6 py-5 text-slate-600">
+                    <td className="px-6 py-5 text-slate-600 dark:text-slate-300">
                       <FeatureValue value={row.professional} />
                     </td>
-                    <td className="px-6 py-5 text-slate-600">
+                    <td className="px-6 py-5 text-slate-600 dark:text-slate-300">
                       <FeatureValue value={row.enterprise} />
                     </td>
                   </tr>
@@ -802,8 +804,8 @@ export default function PricingClient() {
       </section>
 
       {/* Add-ons */}
-      <section className="relative overflow-hidden bg-white py-16 lg:py-24">
-        <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,#fbf7ff_0%,transparent_100%)]" />
+      <section className="relative overflow-hidden bg-white py-16 lg:py-24 dark:bg-slate-950">
+        <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,#fbf7ff_0%,transparent_100%)] dark:bg-[linear-gradient(180deg,#0b1220_0%,transparent_100%)]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -814,7 +816,7 @@ export default function PricingClient() {
             <div className="mt-8">
               <ScriptHeading>Extend your workspace when needed.</ScriptHeading>
             </div>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
               Add extra capacity, expert implementation help, or advanced
               analytics without changing your whole plan.
             </p>
@@ -827,18 +829,18 @@ export default function PricingClient() {
               return (
                 <div
                   key={item.title}
-                  className="group rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl"
+                  className="group rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950"
                 >
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
                     <Icon className="h-7 w-7" />
                   </div>
-                  <h3 className="mt-6 text-xl font-semibold text-slate-950">
+                  <h3 className="mt-6 text-xl font-semibold text-slate-950 dark:text-slate-100">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-2xl font-bold text-primary">
                     {item.price}
                   </p>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {item.description}
                   </p>
                 </div>
@@ -849,7 +851,7 @@ export default function PricingClient() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[linear-gradient(180deg,_#fff8ed_0%,_#ffffff_100%)] py-16 lg:py-24">
+      <section className="bg-[linear-gradient(180deg,_#fff8ed_0%,_#ffffff_100%)] py-16 lg:py-24 dark:bg-[linear-gradient(180deg,_#020617_0%,_#0b1220_65%,_#020617_100%)]">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <SectionEyebrow
@@ -865,12 +867,12 @@ export default function PricingClient() {
             {faqs.map((faq) => (
               <div
                 key={faq.q}
-                className="group rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
+                className="group rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950"
               >
-                <h3 className="text-base font-semibold text-slate-950 transition-colors group-hover:text-primary">
+                <h3 className="text-base font-semibold text-slate-950 transition-colors group-hover:text-primary dark:text-slate-100">
                   {faq.q}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
+                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                   {faq.a}
                 </p>
               </div>

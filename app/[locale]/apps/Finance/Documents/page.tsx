@@ -123,11 +123,11 @@ function SectionEyebrow({
 
 function DocumentDashboard() {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_40px_100px_rgba(15,23,42,0.14)]">
-      <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-5 py-4">
+    <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white shadow-[0_40px_100px_rgba(15,23,42,0.14)]">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
         <div className="flex items-center gap-2">
           <Cloud className="h-5 w-5 text-orange-600" />
-          <span className="text-sm font-semibold text-slate-800">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
             Adon Documents
           </span>
         </div>
@@ -142,7 +142,7 @@ function DocumentDashboard() {
       </div>
 
       <div className="grid min-h-[360px] md:grid-cols-[210px_1fr_240px]">
-        <aside className="border-r border-slate-100 bg-slate-50 p-4">
+        <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-4">
           <div className="space-y-2">
             {["Inbox", "Contracts", "Invoices", "HR Files", "Shared", "Archive"].map(
               (item, index) => (
@@ -151,7 +151,7 @@ function DocumentDashboard() {
                   className={`flex items-center justify-between rounded-xl px-3 py-2 text-sm ${
                     index === 0
                       ? "bg-orange-100 font-semibold text-orange-700"
-                      : "text-slate-600"
+                      : "text-slate-600 dark:text-slate-300"
                   }`}
                 >
                   <span>{item}</span>
@@ -172,7 +172,7 @@ function DocumentDashboard() {
             ].map(([title, status, color]) => (
               <div
                 key={title}
-                className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm"
+                className="rounded-2xl border border-slate-100 dark:border-slate-700 bg-white p-4 shadow-sm dark:bg-slate-900"
               >
                 <div
                   className={`mb-4 h-24 rounded-xl bg-linear-to-br ${
@@ -185,14 +185,14 @@ function DocumentDashboard() {
                           : "from-violet-100 to-purple-50"
                   }`}
                 />
-                <p className="font-semibold text-slate-900">{title}</p>
+                <p className="font-semibold text-slate-900 dark:text-slate-100">{title}</p>
                 <p className="mt-1 text-xs text-slate-500">{status}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <aside className="hidden border-l border-slate-100 bg-slate-950 p-4 text-white md:block">
+        <aside className="hidden border-l border-slate-100 dark:border-slate-700 bg-slate-950 p-4 text-white md:block">
           <p className="text-sm font-semibold">Preview</p>
           <div className="mt-4 rounded-2xl bg-white p-4">
             <div className="space-y-2">
@@ -228,7 +228,7 @@ function DocumentDashboard() {
 
 export default function DocumentsPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(249,115,22,0.14),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(6,182,212,0.1),transparent_25%)]" />
 
@@ -251,7 +251,7 @@ export default function DocumentsPage() {
                 Time saved.
               </span>
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               Adon ERP Documents gives your team one secure hub to scan, store,
               approve, sign, share, and find every business file.
             </p>
@@ -268,7 +268,7 @@ export default function DocumentsPage() {
 
             <Link
               href="#demo"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700"
             >
               Watch Demo
             </Link>
@@ -282,12 +282,12 @@ export default function DocumentsPage() {
           >
             <DocumentDashboard />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-orange-600" />
               Auto-classified
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <ShieldCheck className="mr-2 h-4 w-4 text-emerald-600" />
               Secure archive
             </div>
@@ -303,7 +303,7 @@ export default function DocumentsPage() {
           </span>
         </ScriptHeading>
 
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
           Bring every file into one intelligent workspace. Capture documents
           from email, scanning, uploads, clients, teams, and ERP workflows.
         </p>
@@ -315,12 +315,12 @@ export default function DocumentsPage() {
             return (
               <div
                 key={item.title}
-                className="rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-[1.7rem] border border-slate-200 dark:border-slate-700 bg-white p-6 shadow-sm dark:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
                   <Icon className="h-7 w-7" />
                 </div>
-                <p className="mt-4 font-semibold text-slate-900">
+                <p className="mt-4 font-semibold text-slate-900 dark:text-slate-100">
                   {item.title}
                 </p>
               </div>
@@ -328,15 +328,15 @@ export default function DocumentsPage() {
           })}
         </div>
 
-        <div className="relative mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
+        <div className="relative mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
           <div className="grid gap-5 md:grid-cols-[1fr_1.2fr_1fr]">
             <div className="space-y-4">
               {["Payment slip", "Contract file"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-left"
+                  className="rounded-2xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
-                  <p className="font-semibold text-slate-900">{item}</p>
+                  <p className="font-semibold text-slate-900 dark:text-slate-100">{item}</p>
                   <p className="mt-1 text-xs text-slate-500">
                     Captured from email
                   </p>
@@ -344,8 +344,8 @@ export default function DocumentsPage() {
               ))}
             </div>
 
-            <div className="rounded-[1.7rem] bg-slate-50 p-4">
-              <div className="mx-auto max-w-xs rounded-2xl bg-white p-4 shadow-sm">
+            <div className="rounded-[1.7rem] bg-slate-50 dark:bg-slate-800/40 p-4">
+              <div className="mx-auto max-w-xs rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-900">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="text-sm font-semibold">Document inbox</span>
                   <Inbox className="h-4 w-4 text-orange-500" />
@@ -355,7 +355,7 @@ export default function DocumentsPage() {
                     (item) => (
                       <div
                         key={item}
-                        className="rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-600"
+                        className="rounded-xl bg-slate-50 dark:bg-slate-800/40 px-3 py-2 text-sm text-slate-600 dark:text-slate-300"
                       >
                         {item}
                       </div>
@@ -369,9 +369,9 @@ export default function DocumentsPage() {
               {["Client doc", "Signed certificate"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-100 bg-slate-50 p-4 text-left"
+                  className="rounded-2xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
-                  <p className="font-semibold text-slate-900">{item}</p>
+                  <p className="font-semibold text-slate-900 dark:text-slate-100">{item}</p>
                   <p className="mt-1 text-xs text-slate-500">
                     Ready to archive
                   </p>
@@ -385,12 +385,12 @@ export default function DocumentsPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="relative mx-auto w-full max-w-sm">
           <div className="absolute inset-0 rounded-full bg-slate-100" />
-          <div className="relative mx-auto max-w-xs rounded-[2.5rem] border border-slate-200 bg-white p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
-            <div className="rounded-xl bg-slate-50 p-4">
-              <p className="mb-4 text-sm font-semibold text-slate-900">
+          <div className="relative mx-auto max-w-xs rounded-[2.5rem] border border-slate-200 dark:border-slate-700 bg-white p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+            <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
+              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
                 Signature request
               </p>
-              <div className="rounded-2xl bg-white p-4 shadow-sm">
+              <div className="rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-900">
                 <div className="h-4 w-32 rounded bg-slate-200" />
                 <div className="mt-3 h-24 rounded-xl bg-slate-100" />
                 <div className="mt-4 rounded-xl border border-dashed border-cyan-300 bg-cyan-50 p-3 text-center text-sm font-semibold text-cyan-700">
@@ -416,7 +416,7 @@ export default function DocumentsPage() {
             Sign online!
           </ScriptHeading>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Send contracts, offers, approvals, and agreements for signature.
             Adon ERP keeps every signed document attached to the right client,
             task, or project.
@@ -430,7 +430,7 @@ export default function DocumentsPage() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-                <span className="text-slate-700">{item}</span>
+                <span className="text-slate-700 dark:text-slate-200">{item}</span>
               </div>
             ))}
           </div>
@@ -450,18 +450,18 @@ export default function DocumentsPage() {
         </div>
 
         <ScriptHeading>Organization is the key</ScriptHeading>
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
           Keep departments, clients, tasks, and approvals connected. Your team
           always knows where every file belongs and what needs action.
         </p>
 
-        <div className="mx-auto mt-12 max-w-5xl rounded-xl border border-slate-200 bg-white p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
+        <div className="mx-auto mt-12 max-w-5xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
           <div className="grid gap-4 md:grid-cols-4">
             {["Inbox", "In Review", "Waiting Signature", "Approved"].map(
               (column, index) => (
-                <div key={column} className="rounded-2xl bg-slate-50 p-4">
+                <div key={column} className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
                   <div className="mb-4 flex items-center justify-between">
-                    <p className="text-sm font-semibold text-slate-900">
+                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                       {column}
                     </p>
                     <span className="rounded-full bg-white px-2 py-1 text-xs text-slate-500">
@@ -475,7 +475,7 @@ export default function DocumentsPage() {
                         key={`${column}-${card}-${i}`}
                         className="rounded-xl bg-white p-3 text-left shadow-sm"
                       >
-                        <p className="text-sm font-semibold text-slate-800">
+                        <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
                           {card}
                         </p>
                         <p className="mt-1 text-xs text-slate-500">
@@ -503,7 +503,7 @@ export default function DocumentsPage() {
             <span className="text-cyan-600">collaboration</span>
           </ScriptHeading>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Discuss documents with teammates, assign ownership, request
             approvals, and keep all comments connected to the file.
           </p>
@@ -513,7 +513,7 @@ export default function DocumentsPage() {
               (item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-700 shadow-sm"
+                  className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white p-4 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm"
                 >
                   {item}
                 </div>
@@ -522,10 +522,10 @@ export default function DocumentsPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
-          <div className="rounded-2xl bg-slate-50 p-4">
-            <div className="rounded-2xl bg-white p-4 shadow-sm">
-              <p className="font-semibold text-slate-900">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
+          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
+            <div className="rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-900">
+              <p className="font-semibold text-slate-900 dark:text-slate-100">
                 Website contract draft
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-500">
@@ -544,7 +544,7 @@ export default function DocumentsPage() {
                   key={name}
                   className="rounded-xl bg-white px-4 py-3 text-left shadow-sm"
                 >
-                  <p className="text-sm font-semibold text-slate-900">{name}</p>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{name}</p>
                   <p className="text-xs text-slate-500">{comment}</p>
                 </div>
               ))}
@@ -563,7 +563,7 @@ export default function DocumentsPage() {
 
             <ScriptHeading className="mt-5">Time-saving tool</ScriptHeading>
 
-            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
               Measure exactly how much time your team saves by automating
               capture, routing, signing, approvals, and archiving.
             </p>
@@ -577,7 +577,7 @@ export default function DocumentsPage() {
               ].map(([label, value]) => (
                 <div key={label}>
                   <div className="mb-2 flex justify-between text-sm">
-                    <span className="font-medium text-slate-700">{label}</span>
+                    <span className="font-medium text-slate-700 dark:text-slate-200">{label}</span>
                     <span className="text-orange-600">{value}</span>
                   </div>
                   <div className="h-2 rounded-full bg-slate-100">
@@ -589,20 +589,20 @@ export default function DocumentsPage() {
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-6 shadow-sm dark:bg-slate-900">
               <p className="text-sm text-slate-500">Average search time</p>
               <p className="mt-3 text-5xl font-bold text-slate-950">40.9</p>
               <p className="mt-2 text-sm text-slate-500">seconds saved per file</p>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-6 shadow-sm dark:bg-slate-900">
               <p className="text-sm text-slate-500">Automation accuracy</p>
               <p className="mt-3 text-5xl font-bold text-slate-950">90.4%</p>
               <p className="mt-2 text-sm text-slate-500">classification success</p>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm sm:col-span-2">
-              <p className="mb-4 font-semibold text-slate-900">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-6 shadow-sm dark:bg-slate-900 sm:col-span-2">
+              <p className="mb-4 font-semibold text-slate-900 dark:text-slate-100">
                 How does document automation work?
               </p>
 
@@ -615,12 +615,12 @@ export default function DocumentsPage() {
                 ].map((item, index) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-xl bg-slate-50 px-4 py-3"
+                    className="flex items-center gap-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 px-4 py-3"
                   >
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-orange-100 text-sm font-semibold text-orange-700">
                       {index + 1}
                     </span>
-                    <span className="text-sm text-slate-700">{item}</span>
+                    <span className="text-sm text-slate-700 dark:text-slate-200">{item}</span>
                   </div>
                 ))}
               </div>
@@ -644,17 +644,17 @@ export default function DocumentsPage() {
               return (
                 <div
                   key={feature.title}
-                  className="group rounded-[1.6rem] border border-white bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="group rounded-[1.6rem] border border-white bg-white p-6 shadow-sm dark:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-50 text-orange-600">
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                     {feature.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {feature.description}
                   </p>
                 </div>
@@ -685,7 +685,7 @@ export default function DocumentsPage() {
             return (
               <div
                 key={app.title}
-                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-sm dark:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-orange-600">
@@ -693,7 +693,7 @@ export default function DocumentsPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500">{app.desc}</p>
@@ -714,7 +714,7 @@ export default function DocumentsPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-orange-50 to-cyan-50 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
+        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-orange-50 to-cyan-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
           <div className="absolute inset-0 opacity-80">
             {Array.from({ length: 28 }).map((_, index) => (
               <div
@@ -734,7 +734,7 @@ export default function DocumentsPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-orange-100 text-orange-600">
               <Users className="h-7 w-7" />
             </div>
@@ -743,7 +743,7 @@ export default function DocumentsPage() {
               Join modern teams
             </ScriptHeading>
 
-            <p className="mt-3 text-base text-slate-600">
+            <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
               Teams use Adon ERP Documents to organize operations, reduce file
               chaos, and move work forward faster.
             </p>
@@ -769,7 +769,7 @@ export default function DocumentsPage() {
           in your work
         </ScriptHeading>
 
-        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
+        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
           Replace scattered folders with a secure, searchable, automated
           document workspace inside Adon ERP.
         </p>
@@ -785,7 +785,7 @@ export default function DocumentsPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700"
           >
             Contact Sales
           </Link>
@@ -798,3 +798,5 @@ export default function DocumentsPage() {
     </main>
   );
 }
+
+

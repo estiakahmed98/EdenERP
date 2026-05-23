@@ -106,11 +106,11 @@ const attendanceRows = [
 
 export default function AttendanceLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Attendance{" "}
@@ -119,7 +119,7 @@ export default function AttendanceLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Track check-ins, check-outs, working hours, late arrivals, and
             overtime in one simple HR attendance system.
           </p>
@@ -134,7 +134,7 @@ export default function AttendanceLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
               Meet an advisor
             </Link>
@@ -149,11 +149,11 @@ export default function AttendanceLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Clock3 className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Attendance</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Attendance</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Overview / Check In / Management / Reporting
                   </span>
@@ -182,8 +182,8 @@ export default function AttendanceLandingSections() {
                   ))}
                 </div>
 
-                <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-6 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                  <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                     <span>Employee</span>
                     <span>Check In</span>
                     <span>Check Out</span>
@@ -195,9 +195,9 @@ export default function AttendanceLandingSections() {
                   {attendanceRows.map((row, index) => (
                     <div
                       key={row[0]}
-                      className="grid grid-cols-6 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                      className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
-                      <span className="flex items-center gap-2 font-bold text-slate-900">
+                      <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-slate-100">
                         <img
                           src={avatars[index]}
                           alt={row[0]}
@@ -205,9 +205,9 @@ export default function AttendanceLandingSections() {
                         />
                         {row[0]}
                       </span>
-                      <span className="text-slate-600">{row[1]}</span>
-                      <span className="text-slate-600">{row[2]}</span>
-                      <span className="font-bold text-slate-900">{row[3]}</span>
+                      <span className="text-slate-600 dark:text-slate-300">{row[1]}</span>
+                      <span className="text-slate-600 dark:text-slate-300">{row[2]}</span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">{row[3]}</span>
                       <span className="text-slate-500">Office</span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
@@ -227,7 +227,7 @@ export default function AttendanceLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 text-[#714b67] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -247,7 +247,7 @@ export default function AttendanceLandingSections() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Clock in with{" "}
@@ -256,7 +256,7 @@ export default function AttendanceLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Employees can check in from a kiosk, browser, or mobile device.
               Keep attendance fast, clear, and easy for the whole team.
             </p>
@@ -265,10 +265,10 @@ export default function AttendanceLandingSections() {
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white" />
+            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-900" />
 
             <div className="relative mx-auto max-w-sm rounded-4xl bg-slate-900 p-4 shadow-2xl">
-              <div className="rounded-3xl bg-white p-6 text-center">
+              <div className="rounded-3xl bg-white dark:bg-slate-900 p-6 text-center">
                 <div className="mx-auto mb-6 h-2 w-20 rounded-full bg-slate-200" />
 
                 <img
@@ -277,7 +277,7 @@ export default function AttendanceLandingSections() {
                   className="mx-auto h-24 w-24 rounded-full object-cover"
                 />
 
-                <h3 className="mt-5 text-2xl font-bold text-slate-900">
+                <h3 className="mt-5 text-2xl font-bold text-slate-900 dark:text-slate-100">
                   Anita Oliver
                 </h3>
 
@@ -302,12 +302,12 @@ export default function AttendanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Clock3 className="mx-auto h-12 w-12 text-amber-500" />
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Never lose track of{" "}
@@ -316,7 +316,7 @@ export default function AttendanceLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Monitor work time, breaks, check-in history, and exceptions without
             chasing spreadsheets or manual reports.
           </p>
@@ -350,7 +350,7 @@ export default function AttendanceLandingSections() {
                 return (
                   <div
                     key={item.title}
-                    className="rounded-xl border border-slate-200 bg-white p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                    className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
                   >
                     <div
                       className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${item.color}`}
@@ -363,7 +363,7 @@ export default function AttendanceLandingSections() {
                     </p>
 
                     <p
-                      className="mt-2 text-4xl font-bold text-slate-900"
+                      className="mt-2 text-4xl font-bold text-slate-900 dark:text-slate-100"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       {item.value}
@@ -376,13 +376,13 @@ export default function AttendanceLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white dark:bg-slate-900 py-24">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Know who is{" "}
@@ -393,7 +393,7 @@ export default function AttendanceLandingSections() {
               right now
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               See live attendance status across departments. Quickly understand
               who is checked in, working remotely, late, or missing.
             </p>
@@ -403,7 +403,7 @@ export default function AttendanceLandingSections() {
                 (item) => (
                   <span
                     key={item}
-                    className="rounded-full bg-slate-50 px-4 py-2 text-xs font-bold text-slate-600 ring-1 ring-slate-100"
+                    className="rounded-full bg-slate-50 dark:bg-slate-800/40 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 ring-1 ring-slate-100"
                   >
                     {item}
                   </span>
@@ -412,7 +412,7 @@ export default function AttendanceLandingSections() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
                 ["Audrey Peterson", "Checked in", "Office", avatars[0]],
@@ -422,7 +422,7 @@ export default function AttendanceLandingSections() {
               ].map(([name, status, location, avatar]) => (
                 <div
                   key={name}
-                  className="flex gap-4 rounded-lg bg-slate-50 p-4 text-left"
+                  className="flex gap-4 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
                   <img
                     src={avatar}
@@ -431,7 +431,7 @@ export default function AttendanceLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">{name}</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">{name}</p>
                     <p className="mt-1 text-sm text-slate-500">{location}</p>
 
                     <span
@@ -455,11 +455,11 @@ export default function AttendanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Attendance Correction</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">Attendance Correction</p>
               <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-600">
                 To Review
               </span>
@@ -472,9 +472,9 @@ export default function AttendanceLandingSections() {
                 ["Suggested Time", "17:45"],
                 ["Reason", "Forgot to check out"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-lg bg-slate-50 p-4">
+                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                   <p className="text-xs font-bold text-slate-400">{label}</p>
-                  <p className="mt-2 text-sm font-bold text-slate-900">
+                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                     {value}
                   </p>
                 </div>
@@ -485,7 +485,7 @@ export default function AttendanceLandingSections() {
               <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
                 Approve
               </button>
-              <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+              <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                 Refuse
               </button>
             </div>
@@ -495,7 +495,7 @@ export default function AttendanceLandingSections() {
             <ShieldCheck className="mb-6 h-12 w-12 text-[#02a6a6]" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Review exceptions,
@@ -506,7 +506,7 @@ export default function AttendanceLandingSections() {
               corrections
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Managers can review missing check-outs, late arrivals, unusual
               hours, and correction requests before they impact payroll or
               reports.
@@ -520,7 +520,7 @@ export default function AttendanceLandingSections() {
           <BarChart3 className="mx-auto h-12 w-12 text-sky-500" />
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Reporting that{" "}
@@ -529,20 +529,20 @@ export default function AttendanceLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Analyze attendance by employee, department, week, month, work
             location, and approval status.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+          <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Attendance Analysis</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">Attendance Analysis</p>
               <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
                 Monthly
               </span>
             </div>
 
-            <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 p-5">
+            <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
               {[45, 80, 120, 95, 150].map((height, index) => (
                 <div key={index} className="flex flex-1 flex-col items-center">
                   <div
@@ -573,7 +573,7 @@ export default function AttendanceLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -592,7 +592,7 @@ export default function AttendanceLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
@@ -602,11 +602,11 @@ export default function AttendanceLandingSections() {
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -622,10 +622,10 @@ export default function AttendanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -638,7 +638,7 @@ export default function AttendanceLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -649,14 +649,14 @@ export default function AttendanceLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -675,7 +675,7 @@ export default function AttendanceLandingSections() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-[360px]">
             {avatars.map((avatar, index) => (
@@ -713,9 +713,9 @@ export default function AttendanceLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -731,7 +731,7 @@ export default function AttendanceLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Attendance used to be scattered across spreadsheets. Now we
                   know who is present, who needs approval, and how many hours
                   our team worked in real time.
@@ -745,7 +745,7 @@ export default function AttendanceLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Laura Johnson</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">Laura Johnson</p>
                     <p className="text-sm text-slate-500">HR director</p>
                   </div>
                 </div>
@@ -759,7 +759,7 @@ export default function AttendanceLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
@@ -799,7 +799,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -841,3 +841,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

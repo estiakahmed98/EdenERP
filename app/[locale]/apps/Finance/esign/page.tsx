@@ -112,11 +112,11 @@ function SectionEyebrow({
 
 function EsignDashboard() {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_40px_100px_rgba(15,23,42,0.14)]">
-      <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-5 py-4">
+    <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white shadow-[0_40px_100px_rgba(15,23,42,0.14)]">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
         <div className="flex items-center gap-2">
           <FileSignature className="h-5 w-5 text-cyan-600" />
-          <span className="text-sm font-semibold text-slate-800">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
             Adon Sign
           </span>
         </div>
@@ -130,7 +130,7 @@ function EsignDashboard() {
       </div>
 
       <div className="grid min-h-[360px] md:grid-cols-[210px_1fr]">
-        <aside className="border-r border-slate-100 bg-slate-50 p-4">
+        <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-4">
           {["Dashboard", "To Sign", "Waiting", "Completed", "Templates"].map(
             (item, index) => (
               <div
@@ -138,7 +138,7 @@ function EsignDashboard() {
                 className={`mb-2 rounded-xl px-3 py-2 text-sm ${
                   index === 1
                     ? "bg-cyan-100 font-semibold text-cyan-700"
-                    : "text-slate-600"
+                    : "text-slate-600 dark:text-slate-300"
                 }`}
               >
                 {item}
@@ -149,9 +149,9 @@ function EsignDashboard() {
 
         <div className="grid gap-4 p-5 md:grid-cols-3">
           {["Draft", "Waiting Signature", "Signed"].map((column, index) => (
-            <div key={column} className="rounded-2xl bg-slate-50 p-4">
+            <div key={column} className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
               <div className="mb-4 flex items-center justify-between">
-                <p className="text-sm font-semibold text-slate-900">{column}</p>
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{column}</p>
                 <span className="rounded-full bg-white px-2 py-1 text-xs text-slate-500">
                   {index + 3}
                 </span>
@@ -164,7 +164,7 @@ function EsignDashboard() {
                       key={`${column}-${item}-${i}`}
                       className="rounded-xl bg-white p-3 text-left shadow-sm"
                     >
-                      <p className="text-sm font-semibold text-slate-800">
+                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
                         {item}
                       </p>
                       <p className="mt-1 text-xs text-slate-500">
@@ -188,7 +188,7 @@ function EsignDashboard() {
 
 export default function EsignPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)]" />
 
@@ -218,7 +218,7 @@ export default function EsignPage() {
               </span>
             </h1>
 
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               Send, sign, and manage business agreements inside Adon ERP with
               secure workflows, reminders, audit trails, and one-click approvals.
             </p>
@@ -235,7 +235,7 @@ export default function EsignPage() {
 
             <Link
               href="#advisor"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
             >
               Meet an advisor
             </Link>
@@ -249,12 +249,12 @@ export default function EsignPage() {
           >
             <EsignDashboard />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-cyan-600" />
               Instant workflow
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <ShieldCheck className="mr-2 h-4 w-4 text-emerald-600" />
               Legally traceable
             </div>
@@ -272,7 +272,7 @@ export default function EsignPage() {
             <span className="text-cyan-600">sign it</span>
           </ScriptHeading>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Drag and drop signature fields, assign recipients, set signing
             order, and let Adon ERP handle reminders, tracking, and final
             archiving.
@@ -286,16 +286,16 @@ export default function EsignPage() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-                <span className="text-slate-700">{item}</span>
+                <span className="text-slate-700 dark:text-slate-200">{item}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
-          <div className="rounded-2xl bg-slate-50 p-4">
-            <div className="rounded-2xl bg-white p-4 shadow-sm">
-              <p className="mb-4 text-sm font-semibold text-slate-900">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
+          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
+            <div className="rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-900">
+              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
                 Service agreement
               </p>
               <div className="space-y-3">
@@ -321,15 +321,15 @@ export default function EsignPage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute inset-0 rounded-full bg-white" />
-            <div className="relative mx-auto max-w-xs rounded-[2.5rem] border border-slate-200 bg-white p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
-              <div className="rounded-xl bg-slate-50 p-4">
-                <p className="mb-4 text-sm font-semibold text-slate-900">
+            <div className="relative mx-auto max-w-xs rounded-[2.5rem] border border-slate-200 dark:border-slate-700 bg-white p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+              <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
+                <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
                   Adopt your signature
                 </p>
 
-                <div className="rounded-2xl bg-white p-4 shadow-sm">
+                <div className="rounded-2xl bg-white p-4 shadow-sm dark:bg-slate-900">
                   <p className="text-xs text-slate-500">Full name</p>
-                  <p className="mt-2 font-semibold text-slate-900">
+                  <p className="mt-2 font-semibold text-slate-900 dark:text-slate-100">
                     Katie Cole
                   </p>
 
@@ -363,7 +363,7 @@ export default function EsignPage() {
               wherever
             </ScriptHeading>
 
-            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
               Clients and teammates can review and sign agreements from any
               device. No printing, scanning, or back-and-forth email chaos.
             </p>
@@ -373,7 +373,7 @@ export default function EsignPage() {
                 (item) => (
                   <div
                     key={item}
-                    className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-700 shadow-sm"
+                    className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white p-4 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm"
                   >
                     {item}
                   </div>
@@ -397,13 +397,13 @@ export default function EsignPage() {
             under <span className="text-cyan-600">control</span>
           </ScriptHeading>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Track every request, recipient, deadline, reminder, and completion
             status from one clean signing dashboard.
           </p>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
+        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
           <div className="grid gap-4 sm:grid-cols-2">
             {[
               ["Waiting for signature", "12", "cyan"],
@@ -411,7 +411,7 @@ export default function EsignPage() {
               ["Completed", "42", "emerald"],
               ["Expired", "2", "rose"],
             ].map(([label, count, color]) => (
-              <div key={label} className="rounded-2xl bg-slate-50 p-5">
+              <div key={label} className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-5">
                 <p className="text-sm text-slate-500">{label}</p>
                 <p
                   className={`mt-3 text-4xl font-bold ${
@@ -447,17 +447,17 @@ export default function EsignPage() {
               return (
                 <div
                   key={feature.title}
-                  className="group rounded-[1.6rem] border border-white bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="group rounded-[1.6rem] border border-white bg-white p-6 shadow-sm dark:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
                   <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600">
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                     {feature.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {feature.description}
                   </p>
                 </div>
@@ -480,7 +480,7 @@ export default function EsignPage() {
           One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
           <HandUnderline color="bg-sky-400">app</HandUnderline>.
         </ScriptHeading>
-        <p className="mt-3 max-w-xl text-slate-600">
+        <p className="mt-3 max-w-xl text-slate-600 dark:text-slate-300">
           Expand your signing workflow across the Adon ERP ecosystem.
         </p>
 
@@ -491,7 +491,7 @@ export default function EsignPage() {
             return (
               <div
                 key={app.title}
-                className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-sm dark:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-cyan-600">
@@ -499,7 +499,7 @@ export default function EsignPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500">{app.desc}</p>
@@ -520,7 +520,7 @@ export default function EsignPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
+        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
           <div className="absolute inset-0 opacity-80">
             {Array.from({ length: 30 }).map((_, index) => (
               <div
@@ -540,7 +540,7 @@ export default function EsignPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 text-cyan-600">
               <Users className="h-7 w-7" />
             </div>
@@ -549,7 +549,7 @@ export default function EsignPage() {
               Join modern teams
             </ScriptHeading>
 
-            <p className="mt-3 text-base text-slate-600">
+            <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
               Teams use Adon Sign to close agreements faster, reduce paperwork,
               and keep every signature traceable.
             </p>
@@ -575,7 +575,7 @@ export default function EsignPage() {
           your growth potential
         </ScriptHeading>
 
-        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
+        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
           Replace manual signing with a secure, automated, and beautifully simple
           agreement workflow inside Adon ERP.
         </p>
@@ -592,7 +592,7 @@ export default function EsignPage() {
           <Link
             href="/contact"
             id="advisor"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
           >
             Contact Sales
           </Link>
@@ -605,3 +605,5 @@ export default function EsignPage() {
     </main>
   );
 }
+
+
