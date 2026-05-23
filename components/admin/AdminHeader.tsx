@@ -39,7 +39,7 @@ const AdminHeader = ({
             </h1>
 
             <p className="hidden text-sm text-zinc-500 dark:text-zinc-400 sm:block">
-              Birds Of Eden Admin Panel
+              Adon ERP Admin Panel
             </p>
           </div>
         </div>
