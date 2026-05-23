@@ -147,7 +147,7 @@ const avatars = [
 
 export default function HumanResourcesLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
@@ -206,7 +206,7 @@ export default function HumanResourcesLandingSections() {
               </div>
 
               <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[230px_1fr]">
-                <aside className="rounded-xl bg-white dark:bg-slate-900 p-5 text-left shadow-sm ring-1 ring-slate-100">
+                <aside className="rounded-xl bg-white p-5 text-left shadow-sm ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700">
                   <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                     Departments
                   </p>
@@ -238,7 +238,7 @@ export default function HumanResourcesLandingSections() {
                   {employees.map((employee) => (
                     <div
                       key={employee.name}
-                      className="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
+                      className="flex items-center gap-4 rounded-xl bg-white p-4 text-left shadow-sm ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700"
                     >
                       <img
                         src={employee.image}
@@ -301,7 +301,7 @@ export default function HumanResourcesLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="rounded-xl bg-white dark:bg-slate-900 p-5 shadow-sm ring-1 ring-slate-100">
+            <div className="rounded-xl bg-white p-5 shadow-sm ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700">
               <div className="flex items-center gap-3">
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
                   Employees
@@ -315,7 +315,7 @@ export default function HumanResourcesLandingSections() {
 
             <DashedArrow className="mx-auto my-10 h-24 w-24 rotate-90 text-slate-300" />
 
-            <div className="mx-auto max-w-3xl rounded-xl bg-white dark:bg-slate-900 p-7 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)] ring-1 ring-slate-100">
+            <div className="mx-auto max-w-3xl rounded-xl bg-white p-7 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)] ring-1 ring-slate-100 dark:bg-slate-900 dark:ring-slate-700">
               <div className="grid gap-8 md:grid-cols-3">
                 <div>
                   <p className="mb-4 text-sm font-bold text-slate-900 dark:text-slate-100">
@@ -502,7 +502,7 @@ export default function HumanResourcesLandingSections() {
                 (skill) => (
                   <span
                     key={skill}
-                    className="rounded-full bg-slate-50 dark:bg-slate-800/40 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 ring-1 ring-slate-100"
+                    className="rounded-full bg-slate-50 px-4 py-2 text-xs font-bold text-slate-600 ring-1 ring-slate-100 dark:bg-slate-800/40 dark:text-slate-300 dark:ring-slate-700"
                   >
                     {skill}
                   </span>
@@ -791,7 +791,7 @@ export default function HumanResourcesLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/40 dark:hover:bg-slate-800/60"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
