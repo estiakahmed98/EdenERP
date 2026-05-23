@@ -473,7 +473,7 @@ export default function PlanningLandingPage() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}

@@ -157,9 +157,7 @@ export default function EcommerceArtisticSections() {
             <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
               <div className="grid bg-white lg:grid-cols-[220px_1fr]">
                 <aside className="border-r border-slate-100 bg-white p-5 text-left">
-                  <p className="text-sm font-bold text-slate-900">
-                    Categories
-                  </p>
+                  <p className="text-sm font-bold text-slate-900">Categories</p>
 
                   <div className="mt-5 space-y-3">
                     {[
@@ -344,10 +342,7 @@ export default function EcommerceArtisticSections() {
 
                       <div className="mt-3 flex gap-1 text-amber-400">
                         {Array.from({ length: 5 }).map((_, index) => (
-                          <Star
-                            key={index}
-                            className="h-4 w-4 fill-current"
-                          />
+                          <Star key={index} className="h-4 w-4 fill-current" />
                         ))}
                       </div>
 
@@ -589,9 +584,7 @@ export default function EcommerceArtisticSections() {
             </div>
 
             <div className="rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-              <h3 className="text-lg font-bold text-slate-900">
-                Loyalty feed
-              </h3>
+              <h3 className="text-lg font-bold text-slate-900">Loyalty feed</h3>
 
               <div className="mt-5 space-y-5">
                 {[
@@ -827,7 +820,7 @@ export default function EcommerceArtisticSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatarImages.map((avatar, index) => (
               <img
                 key={avatar}
@@ -895,9 +888,7 @@ export default function EcommerceArtisticSections() {
                   />
                   <div>
                     <p className="font-bold text-slate-900">Noah Carter</p>
-                    <p className="text-sm text-slate-500">
-                      eCommerce Founder
-                    </p>
+                    <p className="text-sm text-slate-500">eCommerce Founder</p>
                   </div>
                 </div>
               </div>

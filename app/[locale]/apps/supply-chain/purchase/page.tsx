@@ -190,12 +190,60 @@ export default function PurchaseLandingSections() {
                   </div>
 
                   {[
-                    ["P00023", "Azure Interior", "Mitchell", "Desk", "Today", "$4,250", "RFQ"],
-                    ["P00024", "Ready Mat", "Marc", "Chairs", "Tomorrow", "$1,840", "Approved"],
-                    ["P00025", "Wood Corner", "Audrey", "Table", "Friday", "$2,400", "Ordered"],
-                    ["P00026", "Office Plus", "Mitchell", "Lamp", "Monday", "$620", "Received"],
-                    ["P00027", "Stock Lab", "Joel", "Storage", "Tuesday", "$3,950", "Approved"],
-                    ["P00028", "Global Supply", "Marc", "Monitor", "Next week", "$7,100", "RFQ"],
+                    [
+                      "P00023",
+                      "Azure Interior",
+                      "Mitchell",
+                      "Desk",
+                      "Today",
+                      "$4,250",
+                      "RFQ",
+                    ],
+                    [
+                      "P00024",
+                      "Ready Mat",
+                      "Marc",
+                      "Chairs",
+                      "Tomorrow",
+                      "$1,840",
+                      "Approved",
+                    ],
+                    [
+                      "P00025",
+                      "Wood Corner",
+                      "Audrey",
+                      "Table",
+                      "Friday",
+                      "$2,400",
+                      "Ordered",
+                    ],
+                    [
+                      "P00026",
+                      "Office Plus",
+                      "Mitchell",
+                      "Lamp",
+                      "Monday",
+                      "$620",
+                      "Received",
+                    ],
+                    [
+                      "P00027",
+                      "Stock Lab",
+                      "Joel",
+                      "Storage",
+                      "Tuesday",
+                      "$3,950",
+                      "Approved",
+                    ],
+                    [
+                      "P00028",
+                      "Global Supply",
+                      "Marc",
+                      "Monitor",
+                      "Next week",
+                      "$7,100",
+                      "RFQ",
+                    ],
                   ].map((row) => (
                     <div
                       key={row[0]}
@@ -284,7 +332,9 @@ export default function PurchaseLandingSections() {
                 </div>
 
                 <div className="rounded-xl bg-white p-6 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900">Replenishment rules</p>
+                  <p className="font-bold text-slate-900">
+                    Replenishment rules
+                  </p>
 
                   <div className="mt-5 space-y-3">
                     {[
@@ -344,20 +394,17 @@ export default function PurchaseLandingSections() {
                   <p className="font-bold text-slate-900">Smart actions</p>
 
                   <div className="mt-5 space-y-3">
-                    {[
-                      "Order once",
-                      "Automate",
-                      "Confirm",
-                      "Receive",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600"
-                      >
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                        {item}
-                      </div>
-                    ))}
+                    {["Order once", "Automate", "Confirm", "Receive"].map(
+                      (item) => (
+                        <div
+                          key={item}
+                          className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600"
+                        >
+                          <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                          {item}
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
               </div>
@@ -759,7 +806,7 @@ export default function PurchaseLandingSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}

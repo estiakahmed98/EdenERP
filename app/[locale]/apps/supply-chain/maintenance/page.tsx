@@ -148,12 +148,17 @@ export default function MaintenanceLandingSections() {
                     cards: ["Old laptop", "Broken monitor", "Damaged printer"],
                   },
                 ].map((column, columnIndex) => (
-                  <div key={column.title} className="rounded-lg bg-slate-50 p-3">
+                  <div
+                    key={column.title}
+                    className="rounded-lg bg-slate-50 p-3"
+                  >
                     <div className="mb-3 flex items-center justify-between">
                       <p className="text-sm font-bold text-slate-900">
                         {column.title}
                       </p>
-                      <span className="text-lg font-bold text-slate-400">+</span>
+                      <span className="text-lg font-bold text-slate-400">
+                        +
+                      </span>
                     </div>
 
                     <div className="space-y-3">
@@ -181,7 +186,11 @@ export default function MaintenanceLandingSections() {
                             </div>
 
                             <img
-                              src={avatars[(columnIndex + cardIndex) % avatars.length]}
+                              src={
+                                avatars[
+                                  (columnIndex + cardIndex) % avatars.length
+                                ]
+                              }
                               alt="Assignee"
                               className="h-6 w-6 rounded-full object-cover"
                             />
@@ -210,9 +219,11 @@ export default function MaintenanceLandingSections() {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               <div className="grid grid-cols-7 gap-2 border-b border-slate-100 pb-3 text-center text-xs font-bold text-slate-400">
-                {["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"].map((day) => (
-                  <span key={day}>{day}</span>
-                ))}
+                {["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"].map(
+                  (day) => (
+                    <span key={day}>{day}</span>
+                  ),
+                )}
               </div>
 
               <div className="mt-4 grid grid-cols-7 gap-2">
@@ -282,40 +293,44 @@ export default function MaintenanceLandingSections() {
 
           <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 md:grid-cols-3">
-              {["New Request", "In Progress", "Repaired"].map((column, columnIndex) => (
-                <div key={column} className="rounded-lg bg-slate-50 p-4">
-                  <p className="mb-4 text-sm font-bold text-slate-900">
-                    {column}
-                  </p>
+              {["New Request", "In Progress", "Repaired"].map(
+                (column, columnIndex) => (
+                  <div key={column} className="rounded-lg bg-slate-50 p-4">
+                    <p className="mb-4 text-sm font-bold text-slate-900">
+                      {column}
+                    </p>
 
-                  <div className="space-y-3">
-                    {Array.from({ length: 2 }).map((_, index) => (
-                      <div
-                        key={index}
-                        className="rounded-lg bg-white p-4 text-left shadow-sm"
-                      >
-                        <div className="h-3 w-3/4 rounded bg-slate-200" />
-                        <div className="mt-2 h-2 w-full rounded bg-slate-100" />
-                        <div className="mt-3 flex items-center justify-between">
-                          <div className="flex gap-1 text-amber-400">
-                            {Array.from({ length: 3 }).map((_, starIndex) => (
-                              <Star
-                                key={starIndex}
-                                className="h-3 w-3 fill-current"
-                              />
-                            ))}
+                    <div className="space-y-3">
+                      {Array.from({ length: 2 }).map((_, index) => (
+                        <div
+                          key={index}
+                          className="rounded-lg bg-white p-4 text-left shadow-sm"
+                        >
+                          <div className="h-3 w-3/4 rounded bg-slate-200" />
+                          <div className="mt-2 h-2 w-full rounded bg-slate-100" />
+                          <div className="mt-3 flex items-center justify-between">
+                            <div className="flex gap-1 text-amber-400">
+                              {Array.from({ length: 3 }).map((_, starIndex) => (
+                                <Star
+                                  key={starIndex}
+                                  className="h-3 w-3 fill-current"
+                                />
+                              ))}
+                            </div>
+                            <img
+                              src={
+                                avatars[(columnIndex + index) % avatars.length]
+                              }
+                              alt="User"
+                              className="h-6 w-6 rounded-full object-cover"
+                            />
                           </div>
-                          <img
-                            src={avatars[(columnIndex + index) % avatars.length]}
-                            alt="User"
-                            className="h-6 w-6 rounded-full object-cover"
-                          />
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ),
+              )}
             </div>
           </div>
         </div>
@@ -385,8 +400,8 @@ export default function MaintenanceLandingSections() {
             </p>
 
             <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600">
-              Better communication reduces downtime and makes your
-              manufacturing operation more efficient.
+              Better communication reduces downtime and makes your manufacturing
+              operation more efficient.
             </p>
           </div>
         </div>
@@ -443,7 +458,10 @@ export default function MaintenanceLandingSections() {
                 light: 170,
               },
             ].map((bar) => (
-              <div key={bar.name} className="relative flex w-36 flex-col items-center">
+              <div
+                key={bar.name}
+                className="relative flex w-36 flex-col items-center"
+              >
                 <div className="absolute -top-12 z-10 rounded-md bg-white px-4 py-2 text-xs shadow-lg ring-1 ring-slate-100">
                   <p className="font-bold text-slate-900">{bar.name}</p>
                   <p className="mt-1 text-slate-400">New request</p>
@@ -524,7 +542,7 @@ export default function MaintenanceLandingSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}

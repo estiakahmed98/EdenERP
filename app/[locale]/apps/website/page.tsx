@@ -341,29 +341,22 @@ export default function WebsiteBuilderSections() {
           <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
             <div className="grid min-h-[420px] lg:grid-cols-[220px_1fr]">
               <aside className="border-r border-slate-100 bg-white p-5 text-left">
-                <p className="mb-6 text-sm font-bold text-slate-900">
-                  Website
-                </p>
+                <p className="mb-6 text-sm font-bold text-slate-900">Website</p>
 
-                {[
-                  "Pages",
-                  "Blocks",
-                  "Theme",
-                  "Style",
-                  "Media",
-                  "Settings",
-                ].map((item, index) => (
-                  <div
-                    key={item}
-                    className={`mb-2 rounded-md px-4 py-3 text-sm font-semibold ${
-                      index === 3
-                        ? "bg-[#714b67] text-white"
-                        : "text-slate-500 hover:bg-slate-50"
-                    }`}
-                  >
-                    {item}
-                  </div>
-                ))}
+                {["Pages", "Blocks", "Theme", "Style", "Media", "Settings"].map(
+                  (item, index) => (
+                    <div
+                      key={item}
+                      className={`mb-2 rounded-md px-4 py-3 text-sm font-semibold ${
+                        index === 3
+                          ? "bg-[#714b67] text-white"
+                          : "text-slate-500 hover:bg-slate-50"
+                      }`}
+                    >
+                      {item}
+                    </div>
+                  ),
+                )}
               </aside>
 
               <div className="bg-[#eef0f4] p-7">
@@ -803,7 +796,7 @@ export default function WebsiteBuilderSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatarImages.map((avatar, index) => (
               <img
                 key={avatar}

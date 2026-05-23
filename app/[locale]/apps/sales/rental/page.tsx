@@ -176,20 +176,23 @@ export default function CertificationsPage() {
 
                 <div className="grid gap-3 p-5 lg:grid-cols-[190px_1fr]">
                   <div className="space-y-3 rounded-lg bg-white p-4 shadow-sm">
-                    {["Rental Orders", "Quotations", "Products", "Calendar"].map(
-                      (item, index) => (
-                        <div
-                          key={item}
-                          className={`rounded-md px-3 py-2 text-left text-xs font-semibold ${
-                            index === 0
-                              ? "bg-[#714b67] text-white"
-                              : "bg-slate-50 text-slate-500"
-                          }`}
-                        >
-                          {item}
-                        </div>
-                      ),
-                    )}
+                    {[
+                      "Rental Orders",
+                      "Quotations",
+                      "Products",
+                      "Calendar",
+                    ].map((item, index) => (
+                      <div
+                        key={item}
+                        className={`rounded-md px-3 py-2 text-left text-xs font-semibold ${
+                          index === 0
+                            ? "bg-[#714b67] text-white"
+                            : "bg-slate-50 text-slate-500"
+                        }`}
+                      >
+                        {item}
+                      </div>
+                    ))}
                   </div>
 
                   <div className="rounded-lg bg-white p-4 shadow-sm">
@@ -466,7 +469,10 @@ export default function CertificationsPage() {
         </div>
       </section>
 
-      <section id="features" className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28">
+      <section
+        id="features"
+        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
@@ -524,8 +530,8 @@ export default function CertificationsPage() {
             className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One <HandUnderline color="bg-sky-400">need</HandUnderline>,{" "}
-            one <HandUnderline color="bg-sky-400">app</HandUnderline>.
+            One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
+            <HandUnderline color="bg-sky-400">app</HandUnderline>.
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
@@ -567,7 +573,7 @@ export default function CertificationsPage() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}

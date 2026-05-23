@@ -103,7 +103,9 @@ export default function PerformanceLandingSections() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Trophy className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900 dark:text-slate-100">Appraisals</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">
+                    Appraisals
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Appraisals / Goals / Reporting / Configuration
                   </span>
@@ -261,7 +263,9 @@ export default function PerformanceLandingSections() {
 
               return (
                 <div key={item.title} className="text-center">
-                  <p className="mb-5 font-bold text-slate-900 dark:text-slate-100">{item.title}</p>
+                  <p className="mb-5 font-bold text-slate-900 dark:text-slate-100">
+                    {item.title}
+                  </p>
 
                   <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
                     {index === 0 && (
@@ -429,7 +433,9 @@ export default function PerformanceLandingSections() {
                   key={item}
                   className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                 >
-                  <span className="font-semibold text-slate-700 dark:text-slate-200">{item}</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">
+                    {item}
+                  </span>
                   <span className="text-xs font-bold text-slate-400">
                     {index + 1} answer
                   </span>
@@ -453,7 +459,9 @@ export default function PerformanceLandingSections() {
             </div>
 
             <div className="text-left">
-              <p className="text-xl font-bold text-slate-900 dark:text-slate-100">Mitchell Admin</p>
+              <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                Mitchell Admin
+              </p>
               <p className="mt-2 text-sm text-slate-500">
                 Appraisal plan generated automatically
               </p>
@@ -530,7 +538,9 @@ export default function PerformanceLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -551,7 +561,7 @@ export default function PerformanceLandingSections() {
 
       <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -634,5 +644,3 @@ export default function PerformanceLandingSections() {
     </main>
   );
 }
-
-

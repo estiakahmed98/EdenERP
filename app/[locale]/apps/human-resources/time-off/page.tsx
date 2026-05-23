@@ -170,7 +170,9 @@ export default function TimeOffLandingSections() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <CalendarDays className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900 dark:text-slate-100">Time Off</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">
+                    Time Off
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     My Time Off / Management / Reporting / Configuration
                   </span>
@@ -270,11 +272,17 @@ export default function TimeOffLandingSections() {
                       key={`${row[0]}-${row[2]}`}
                       className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
-                      <span className="font-bold text-slate-900 dark:text-slate-100">{row[0]}</span>
-                      <span className="text-slate-600 dark:text-slate-300">{row[1]}</span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">
+                        {row[0]}
+                      </span>
+                      <span className="text-slate-600 dark:text-slate-300">
+                        {row[1]}
+                      </span>
                       <span className="text-slate-500">{row[2]}</span>
                       <span className="text-slate-500">{row[3]}</span>
-                      <span className="font-bold text-slate-900 dark:text-slate-100">{row[4]}</span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">
+                        {row[4]}
+                      </span>
                       <span className="text-slate-500">{row[5]}</span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
@@ -339,7 +347,9 @@ export default function TimeOffLandingSections() {
                   key={item}
                   className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-sm"
                 >
-                  <span className="font-semibold text-slate-700 dark:text-slate-200">{item}</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">
+                    {item}
+                  </span>
                   <span
                     className={`h-3 w-3 rounded-full ${
                       index % 3 === 0
@@ -365,7 +375,10 @@ export default function TimeOffLandingSections() {
                   ["Responsible", "Marc Demo"],
                   ["Validity", "Current year"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <div
+                    key={label}
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
                     <p className="text-xs font-bold text-slate-400">{label}</p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
@@ -509,7 +522,10 @@ export default function TimeOffLandingSections() {
                   ["Approver", "Marc Demo"],
                   ["Status", "To Approve"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <div
+                    key={label}
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
                     <p className="text-xs font-bold text-slate-400">{label}</p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
@@ -556,7 +572,10 @@ export default function TimeOffLandingSections() {
               <div className="grid gap-4 md:grid-cols-3">
                 {["Absent", "Present", "To Approve"].map(
                   (column, columnIndex) => (
-                    <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <div
+                      key={column}
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    >
                       <p className="mb-5 text-left font-bold text-slate-900 dark:text-slate-100">
                         {column}
                       </p>
@@ -655,7 +674,10 @@ export default function TimeOffLandingSections() {
                   ["Yearly allocation", "18 days"],
                   ["Carryover", "5 days"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-white dark:bg-slate-900 p-4">
+                  <div
+                    key={label}
+                    className="rounded-lg bg-white dark:bg-slate-900 p-4"
+                  >
                     <p className="text-xs font-bold text-slate-400">{label}</p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
@@ -732,7 +754,9 @@ export default function TimeOffLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -753,7 +777,7 @@ export default function TimeOffLandingSections() {
 
       <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -821,7 +845,9 @@ export default function TimeOffLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-slate-100">Laura Johnson</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">
+                      Laura Johnson
+                    </p>
                     <p className="text-sm text-slate-500">HR director</p>
                   </div>
                 </div>
@@ -891,5 +917,3 @@ function FloatingNote({
     </div>
   );
 }
-
-

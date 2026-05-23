@@ -153,7 +153,9 @@ export default function AttendanceLandingSections() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Clock3 className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900 dark:text-slate-100">Attendance</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">
+                    Attendance
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Overview / Check In / Management / Reporting
                   </span>
@@ -205,9 +207,15 @@ export default function AttendanceLandingSections() {
                         />
                         {row[0]}
                       </span>
-                      <span className="text-slate-600 dark:text-slate-300">{row[1]}</span>
-                      <span className="text-slate-600 dark:text-slate-300">{row[2]}</span>
-                      <span className="font-bold text-slate-900 dark:text-slate-100">{row[3]}</span>
+                      <span className="text-slate-600 dark:text-slate-300">
+                        {row[1]}
+                      </span>
+                      <span className="text-slate-600 dark:text-slate-300">
+                        {row[2]}
+                      </span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">
+                        {row[3]}
+                      </span>
                       <span className="text-slate-500">Office</span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
@@ -431,7 +439,9 @@ export default function AttendanceLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-slate-100">{name}</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">
+                      {name}
+                    </p>
                     <p className="mt-1 text-sm text-slate-500">{location}</p>
 
                     <span
@@ -459,7 +469,9 @@ export default function AttendanceLandingSections() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-slate-100">Attendance Correction</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">
+                Attendance Correction
+              </p>
               <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-600">
                 To Review
               </span>
@@ -472,7 +484,10 @@ export default function AttendanceLandingSections() {
                 ["Suggested Time", "17:45"],
                 ["Reason", "Forgot to check out"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                <div
+                  key={label}
+                  className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                >
                   <p className="text-xs font-bold text-slate-400">{label}</p>
                   <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                     {value}
@@ -536,7 +551,9 @@ export default function AttendanceLandingSections() {
 
           <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-slate-100">Attendance Analysis</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">
+                Attendance Analysis
+              </p>
               <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
                 Monthly
               </span>
@@ -656,7 +673,9 @@ export default function AttendanceLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -677,7 +696,7 @@ export default function AttendanceLandingSections() {
 
       <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -745,7 +764,9 @@ export default function AttendanceLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-slate-100">Laura Johnson</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">
+                      Laura Johnson
+                    </p>
                     <p className="text-sm text-slate-500">HR director</p>
                   </div>
                 </div>
@@ -841,5 +862,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-
