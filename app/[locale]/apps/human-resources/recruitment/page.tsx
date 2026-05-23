@@ -172,7 +172,9 @@ export default function RecruitmentATSPage() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <BriefcaseBusiness className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900 dark:text-slate-100">Recruitment</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">
+                    Recruitment
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Jobs / Applications / Interviews / Reporting
                   </span>
@@ -297,7 +299,10 @@ export default function RecruitmentATSPage() {
               <div className="grid gap-4 md:grid-cols-3">
                 {["Open Jobs", "In Progress", "Hired"].map(
                   (column, columnIndex) => (
-                    <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <div
+                      key={column}
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    >
                       <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-slate-100">
                         {column}
                       </p>
@@ -348,7 +353,10 @@ export default function RecruitmentATSPage() {
               <div className="grid gap-4 md:grid-cols-3">
                 {["Qualified", "Interview", "Contract"].map(
                   (stage, stageIndex) => (
-                    <div key={stage} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <div
+                      key={stage}
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    >
                       <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-slate-100">
                         {stage}
                       </p>
@@ -419,7 +427,9 @@ export default function RecruitmentATSPage() {
 
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-slate-100">Job Description</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">
+                Job Description
+              </p>
               <WandSparkles className="h-5 w-5 text-amber-500" />
             </div>
 
@@ -430,7 +440,10 @@ export default function RecruitmentATSPage() {
                 ["Location", "Remote / Hybrid"],
                 ["Experience", "3+ years"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                <div
+                  key={label}
+                  className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                >
                   <p className="text-xs font-bold text-slate-400">{label}</p>
                   <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                     {value}
@@ -468,7 +481,9 @@ export default function RecruitmentATSPage() {
 
             <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-slate-100">Pipeline Builder</p>
+                <p className="font-bold text-slate-900 dark:text-slate-100">
+                  Pipeline Builder
+                </p>
                 <span className="text-slate-400">×</span>
               </div>
 
@@ -483,7 +498,9 @@ export default function RecruitmentATSPage() {
                   key={step}
                   className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                 >
-                  <span className="font-bold text-slate-700 dark:text-slate-200">{step}</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-200">
+                    {step}
+                  </span>
                   <span
                     className={`rounded-full px-3 py-1 text-[10px] font-bold ${
                       index < 2
@@ -570,7 +587,9 @@ export default function RecruitmentATSPage() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-slate-100">Recruitment Analysis</p>
+                <p className="font-bold text-slate-900 dark:text-slate-100">
+                  Recruitment Analysis
+                </p>
                 <BarChart3 className="h-5 w-5 text-[#714b67]" />
               </div>
 
@@ -692,7 +711,9 @@ export default function RecruitmentATSPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -713,7 +734,7 @@ export default function RecruitmentATSPage() {
 
       <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -781,7 +802,9 @@ export default function RecruitmentATSPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-slate-100">Daphne Wright</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">
+                      Daphne Wright
+                    </p>
                     <p className="text-sm text-slate-500">HR manager</p>
                   </div>
                 </div>
@@ -823,5 +846,3 @@ export default function RecruitmentATSPage() {
     </main>
   );
 }
-
-
