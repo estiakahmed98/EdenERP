@@ -116,20 +116,9 @@ export default function ProjectLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
-            </Link>
-
-            <Link
-              href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
-            >
               Meet an advisor
             </Link>
           </div>
-
-          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-            Free, forever, with unlimited users
-          </p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">

@@ -89,16 +89,16 @@ const apps = [
 
 export default function AIPoweredAppsLandingPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Your apps.{" "}
-            <HandUnderline color="bg-sky-300">
-              <span className="text-sky-500">AI-powered</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="text-sky-500 dark:text-sky-400">AI-powered</span>
             </HandUnderline>
           </h1>
 
@@ -110,63 +110,59 @@ export default function AIPoweredAppsLandingPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
-            Free, forever, with unlimited users. See why
-          </p>
-
           <div className="relative mx-auto mt-16 max-w-5xl">
-            <div className="absolute -left-10 -top-10 hidden text-sky-400 sm:block">
-              <Sparkles className="h-12 w-12 rotate-[-20" />
+            <div className="absolute -left-10 -top-10 hidden text-sky-400 dark:text-sky-500 sm:block">
+              <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex h-64 items-center justify-center bg-linear-to-r from-slate-950 via-slate-900 to-slate-800">
+            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="flex h-64 items-center justify-center bg-linear-to-r from-slate-950 via-slate-900 to-slate-800 dark:from-slate-950 dark:via-slate-900 dark:to-slate-800">
                 <div className="relative">
-                  <div className="absolute -left-8 -top-8 text-amber-400">
-                    <Sparkles className="h-8 w-8 rotate-[-15" />
+                  <div className="absolute -left-8 -top-8 text-amber-400 dark:text-amber-500">
+                    <Sparkles className="h-8 w-8 rotate-[-15deg]" />
                   </div>
 
-                  <div className="flex h-28 w-28 items-center justify-center rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-2xl">
-                    <span className="bg-linear-to-r from-[#714b67] via-amber-400 to-sky-500 bg-clip-text text-5xl font-black text-transparent">
+                  <div className="flex h-28 w-28 items-center justify-center rounded-2xl bg-white dark:bg-slate-800 shadow-2xl">
+                    <span className="bg-linear-to-r from-[#714b67] via-amber-400 to-sky-500 dark:from-[#9b6a8f] dark:via-amber-400 dark:to-sky-400 bg-clip-text text-5xl font-black text-transparent">
                       AI
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="h-40 bg-white dark:bg-slate-950 dark:bg-slate-900" />
+              <div className="h-40 bg-white dark:bg-slate-900" />
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>Automate</span>
+              <span className="dark:text-[#02cfc3]">Automate</span>
             </HandUnderline>{" "}
             the work that slows you down
           </h2>
@@ -182,23 +178,23 @@ export default function AIPoweredAppsLandingPage() {
             ].map(([label, value, description], index) => (
               <div
                 key={label}
-                className="relative rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100"
+                className="relative rounded-xl bg-white dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="rounded-full bg-slate-50 dark:bg-slate-800/40 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400">
+                  <span className="rounded-full bg-slate-50 dark:bg-slate-800/50 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400">
                     {label}
                   </span>
 
                   {index % 3 === 0 ? (
-                    <Bot className="h-7 w-7 text-sky-500" />
+                    <Bot className="h-7 w-7 text-sky-500 dark:text-sky-400" />
                   ) : index % 3 === 1 ? (
-                    <Brain className="h-7 w-7 text-amber-500" />
+                    <Brain className="h-7 w-7 text-amber-500 dark:text-amber-400" />
                   ) : (
-                    <Zap className="h-7 w-7 text-rose-500" />
+                    <Zap className="h-7 w-7 text-rose-500 dark:text-rose-400" />
                   )}
                 </div>
 
-                <p className="text-center text-4xl font-black text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="text-center text-4xl font-black text-slate-900 dark:text-white">
                   {value}
                 </p>
 
@@ -211,14 +207,14 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-rose-300">
-              <span>Agents</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="dark:text-rose-200">Agents</span>
             </HandUnderline>{" "}
             on your terms
           </h2>
@@ -231,11 +227,11 @@ export default function AIPoweredAppsLandingPage() {
           <div className="relative mx-auto mt-14 grid max-w-5xl gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
               <div className="mb-10 flex gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 text-lg font-bold text-rose-500">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 dark:border-rose-600 text-lg font-bold text-rose-500 dark:text-rose-400">
                   1
                 </span>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <p className="font-bold text-slate-900 dark:text-white">
                     Create your agent
                   </p>
                   <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -245,11 +241,11 @@ export default function AIPoweredAppsLandingPage() {
               </div>
 
               <div className="mb-10 flex gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 text-lg font-bold text-rose-500">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 dark:border-rose-600 text-lg font-bold text-rose-500 dark:text-rose-400">
                   2
                 </span>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <p className="font-bold text-slate-900 dark:text-white">
                     Configure it
                   </p>
                   <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -259,17 +255,17 @@ export default function AIPoweredAppsLandingPage() {
               </div>
             </div>
 
-            <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-              <span className="absolute -left-10 top-8 flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 text-lg font-bold text-rose-500">
+            <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+              <span className="absolute -left-10 top-8 flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 dark:border-rose-600 text-lg font-bold text-rose-500 dark:text-rose-400">
                 3
               </span>
 
-              <p className="mb-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <p className="mb-5 font-bold text-slate-900 dark:text-white">
                 Get tailored responses
               </p>
 
-              <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
-                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+                <p className="text-sm font-bold text-slate-900 dark:text-white">
                   Compliance Assistant
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
@@ -278,8 +274,8 @@ export default function AIPoweredAppsLandingPage() {
                 </p>
               </div>
 
-              <div className="mt-5 rounded-lg bg-[#e9fbf8] p-4">
-                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <div className="mt-5 rounded-lg bg-[#e9fbf8] dark:bg-[#0a2a2d] p-4">
+                <p className="text-sm font-bold text-slate-900 dark:text-white">
                   AI generated answer
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
@@ -294,16 +290,16 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Let AI drive the{" "}
-              <HandUnderline color="bg-sky-300">
-                <span>next move</span>
+              <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+                <span className="dark:text-sky-200">next move</span>
               </HandUnderline>
             </h2>
 
@@ -313,7 +309,7 @@ export default function AIPoweredAppsLandingPage() {
             </p>
 
             <p
-              className="mt-10 text-2xl font-bold text-sky-500"
+              className="mt-10 text-2xl font-bold text-sky-500 dark:text-sky-400"
               style={{ fontFamily: handwrittenFont }}
             >
               Use case
@@ -323,16 +319,16 @@ export default function AIPoweredAppsLandingPage() {
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 top-1/2 z-0 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-100" />
+            <div className="absolute left-1/2 top-1/2 z-0 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-100 dark:bg-sky-900/30" />
 
-            <div className="relative z-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="relative z-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
               <div className="mb-5 flex items-center gap-3">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow ring-1 ring-slate-100">
-                  <span className="bg-linear-to-r from-[#714b67] via-amber-400 to-sky-500 bg-clip-text text-2xl font-black text-transparent">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-white dark:bg-slate-800 shadow ring-1 ring-slate-100 dark:ring-slate-700">
+                  <span className="bg-linear-to-r from-[#714b67] via-amber-400 to-sky-500 dark:from-[#9b6a8f] dark:via-amber-400 dark:to-sky-400 bg-clip-text text-2xl font-black text-transparent">
                     AI
                   </span>
                 </span>
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="font-bold text-slate-900 dark:text-white">
                   Draft sales proposal
                 </p>
               </div>
@@ -345,15 +341,15 @@ export default function AIPoweredAppsLandingPage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-bold text-slate-600 dark:text-slate-300"
+                    className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-bold text-slate-600 dark:text-slate-300"
                   >
-                    <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                    <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
                     {item}
                   </div>
                 ))}
               </div>
 
-              <button className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
+              <button className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                 Apply suggestion
               </button>
             </div>
@@ -364,17 +360,17 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Zap className="mb-6 h-12 w-12 text-amber-500" />
+          <Zap className="mb-6 h-12 w-12 text-amber-500 dark:text-amber-400" />
 
           <h2
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <span className="relative inline-block px-2">
               <span className="relative z-10">Instant</span>
-              <span className="absolute inset-x-0 bottom-2 h-6 rounded-lg bg-amber-300" />
+              <span className="absolute inset-x-0 bottom-2 h-6 rounded-lg bg-amber-300 dark:bg-amber-700" />
             </span>{" "}
             business insights
           </h2>
@@ -384,23 +380,23 @@ export default function AIPoweredAppsLandingPage() {
             reporting and visual analytics.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-8">
+          <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-white dark:bg-slate-900 p-8">
             <div className="flex h-80 items-end gap-4 border-b border-slate-200 dark:border-slate-700">
               {[45, 52, 48, 65, 80, 110, 155, 230].map((height, index) => (
                 <div key={index} className="flex flex-1 flex-col items-center">
                   <div
-                    className="w-full bg-[#02cfc3] dark:bg-[#02cfc3]/30"
+                    className="w-full bg-[#02cfc3] dark:bg-[#02cfc3]/50"
                     style={{ height }}
                   />
                   <div
-                    className="w-full bg-rose-400"
+                    className="w-full bg-rose-400 dark:bg-rose-600"
                     style={{ height: height * 0.45 }}
                   />
                   <div
-                    className="w-full bg-amber-400"
+                    className="w-full bg-amber-400 dark:bg-amber-600"
                     style={{ height: height * 0.3 }}
                   />
-                  <p className="mt-3 text-xs font-bold text-slate-400">
+                  <p className="mt-3 text-xs font-bold text-slate-400 dark:text-slate-500">
                     A{index + 1}
                   </p>
                 </div>
@@ -410,17 +406,17 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Next-level organization.
             <br />
             Next-level{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>organization</span>
+              <span className="dark:text-[#02cfc3]">organization</span>
             </HandUnderline>
           </h2>
 
@@ -430,13 +426,13 @@ export default function AIPoweredAppsLandingPage() {
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr]">
-            <div className="rounded-xl border border-dashed border-slate-300 bg-white dark:bg-slate-950 dark:bg-slate-900 p-8 text-center">
-              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#02cfc3] dark:bg-[#02cfc3]/30/10 text-[#02a6a6]">
+            <div className="rounded-xl border border-dashed border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 p-8 text-center">
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-[#02cfc3] dark:bg-[#02cfc3]/30 text-[#02a6a6] dark:text-[#02cfc3]">
                 <FileText className="h-8 w-8" />
               </div>
 
               <p
-                className="mt-5 text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
+                className="mt-5 text-xl font-bold text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Upload files
@@ -451,21 +447,21 @@ export default function AIPoweredAppsLandingPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="flex items-center justify-between rounded-xl bg-slate-50 dark:bg-slate-800/40 px-5 py-4"
+                  className="flex items-center justify-between rounded-xl bg-slate-50 dark:bg-slate-800/50 px-5 py-4"
                 >
                   <span className="font-bold text-slate-700 dark:text-slate-200">
                     {item}
                   </span>
-                  <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                  <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
                 </div>
               ))}
             </div>
 
-            <DashedArrow className="absolute left-[260px] top-20 hidden h-24 w-24 rotate-[260 text-[#714b67] dark:text-[#9b6a8f]/50 lg:block" />
+            <DashedArrow className="absolute left-65 top-20 hidden h-24 w-24 rotate-260 text-[#714b67] dark:text-[#9b6a8f]/50 lg:block" />
           </div>
 
           <p
-            className="mt-12 text-center text-lg font-bold text-amber-500"
+            className="mt-12 text-center text-lg font-bold text-amber-500 dark:text-amber-400"
             style={{ fontFamily: handwrittenFont }}
           >
             Be useful! There is work!!!
@@ -475,23 +471,23 @@ export default function AIPoweredAppsLandingPage() {
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <span className="relative inline-block">
               <span className="relative z-10">right.</span>
-              <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400" />
+              <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
 
@@ -499,17 +495,17 @@ export default function AIPoweredAppsLandingPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -522,26 +518,26 @@ export default function AIPoweredAppsLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>need</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -556,14 +552,14 @@ export default function AIPoweredAppsLandingPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -577,14 +573,14 @@ export default function AIPoweredAppsLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -592,7 +588,7 @@ export default function AIPoweredAppsLandingPage() {
                 key={avatar}
                 src={avatar}
                 alt=""
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -603,7 +599,7 @@ export default function AIPoweredAppsLandingPage() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -614,7 +610,7 @@ export default function AIPoweredAppsLandingPage() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -622,9 +618,9 @@ export default function AIPoweredAppsLandingPage() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -635,12 +631,14 @@ export default function AIPoweredAppsLandingPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                “
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   The processing time for accounting documents prior to analysis
                   is now reduced dramatically with AI automation.
                 </p>
@@ -653,7 +651,7 @@ export default function AIPoweredAppsLandingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Mike Solutions
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -666,31 +664,33 @@ export default function AIPoweredAppsLandingPage() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400"></p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
