@@ -452,24 +452,11 @@ export default function Header() {
                 '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
             }}
           >
-            Adon
+            Adon<span className="text-slate-400 mx-1.5">|</span>
           </span>
 
           <span
-            className="-mx-0.5 inline-block text-slate-500"
-            style={{
-              fontFamily:
-                '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-              fontSize: "10px",
-              fontWeight: 200,
-              transform: "rotate(-12deg)",
-            }}
-          >
-            —
-          </span>
-
-          <span
-            className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-lg font-black uppercase tracking-wide text-transparent"
+            className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-4xl font-black uppercase tracking-wide text-transparent"
             style={{
               fontFamily:
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
