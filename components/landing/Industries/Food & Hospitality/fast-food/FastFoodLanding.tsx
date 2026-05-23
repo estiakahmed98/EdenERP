@@ -574,7 +574,7 @@ export default function FastFoodPage() {
               Start now
             </Link>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">No credit card required</p>
+         
         </div>
       </section>
     </main>

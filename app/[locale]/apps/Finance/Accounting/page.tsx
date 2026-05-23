@@ -1030,7 +1030,7 @@ export default function AccountingPage() {
             </div>
 
             <p className="mt-6 text-sm text-emerald-200/80">
-              Free forever plan available • No credit card required • Instant
+              Free forever plan available •  • Instant
               access
             </p>
           </div>

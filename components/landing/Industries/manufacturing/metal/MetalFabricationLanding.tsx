@@ -613,7 +613,7 @@ export default function MetalFabricationPage() {
               15-day free trial
             </div>
           </div>
-          <p className="mt-4 text-xs text-slate-400">No credit card required</p>
+          <p className="mt-4 text-xs text-slate-400"></p>
         </div>
       </section>
     </main>
