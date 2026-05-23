@@ -656,7 +656,7 @@ export default function RestaurantPosPage() {
         </div>
 
         <p className="mt-5 text-sm text-slate-500">
-          Free trial available · No credit card required · Instant access
+          Free trial available ·  · Instant access
         </p>
       </section>
     </main>

@@ -619,7 +619,7 @@ export default function GroceryStorePage() {
               Start now
             </Link>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">No credit card required</p>
+          <p className="mt-4 text-xs text-muted-foreground"></p>
         </div>
       </section>
     </main>

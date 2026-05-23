@@ -874,7 +874,7 @@ export default function QualityLandingSections() {
             </Link>
 
             <p className="mt-3 text-xs text-slate-400">
-              No credit card required
+              
             </p>
           </div>
         </div>
