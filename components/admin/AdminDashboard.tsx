@@ -171,10 +171,85 @@ const PIE_COLORS = [
   "#84cc16",
 ];
 
+const BD_TIMEZONE = "Asia/Dhaka";
+
+function getTimeZoneOffsetMs(date: Date, timeZone: string) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  })
+    .formatToParts(date)
+    .reduce<Record<string, string>>((acc, p) => {
+      if (p.type !== "literal") acc[p.type] = p.value;
+      return acc;
+    }, {});
+
+  const asUTC = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    Number(parts.hour),
+    Number(parts.minute),
+    Number(parts.second),
+  );
+
+  return asUTC - date.getTime();
+}
+
+function startOfTodayInTimeZone(now: Date, timeZone: string) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  })
+    .formatToParts(now)
+    .reduce<Record<string, string>>((acc, p) => {
+      if (p.type !== "literal") acc[p.type] = p.value;
+      return acc;
+    }, {});
+
+  const midnightNaiveUTC = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    0,
+    0,
+    0,
+  );
+
+  const offset = getTimeZoneOffsetMs(new Date(midnightNaiveUTC), timeZone);
+  return new Date(midnightNaiveUTC - offset);
+}
+
+function formatBdTime(date: Date | null) {
+  if (!date) return "";
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: BD_TIMEZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).format(date);
+}
+
 const AdminDashboard: React.FC = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [isLoadingBlogs, setIsLoadingBlogs] = useState<boolean>(true);
   const [errorBlogs, setErrorBlogs] = useState<string | null>(null);
+  const [autoRefreshTick, setAutoRefreshTick] = useState(0);
+  const [autoRefreshing, setAutoRefreshing] = useState(false);
+  const [lastAnalyticsUpdatedAt, setLastAnalyticsUpdatedAt] = useState<Date | null>(null);
+  const [lastBlogsUpdatedAt, setLastBlogsUpdatedAt] = useState<Date | null>(null);
 
   const [isEditModalVisible, setIsEditModalVisible] = useState<boolean>(false);
   const [editBlogData, setEditBlogData] = useState<Blog | null>(null);
@@ -276,6 +351,22 @@ const AdminDashboard: React.FC = () => {
     return () => controller.abort();
   }, [fetchBlogs]);
 
+  // Auto refresh (analytics + blogs) every 30s
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setAutoRefreshing(true);
+      setAutoRefreshTick((t) => t + 1);
+      window.setTimeout(() => setAutoRefreshing(false), 1200);
+    }, 30_000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    // Avoid double-fetch on initial mount (the first effect already loads).
+    if (autoRefreshTick === 0) return;
+    void fetchBlogs().finally(() => setLastBlogsUpdatedAt(new Date()));
+  }, [autoRefreshTick, fetchBlogs]);
+
   const recentBlogs = useMemo(() => blogs.slice(0, 5), [blogs]);
 
   // ---------- Blog actions ----------
@@ -338,11 +429,7 @@ const AdminDashboard: React.FC = () => {
   const resolveRange = useCallback(() => {
     const now = new Date();
     if (rangePreset === "today") {
-      const startOfToday = new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate(),
-      );
+      const startOfToday = startOfTodayInTimeZone(now, BD_TIMEZONE);
       return {
         from: startOfToday,
         to: now,
@@ -413,6 +500,7 @@ const AdminDashboard: React.FC = () => {
         }
         const data = (await res.json()) as AnalyticsSummary;
         startTransition(() => setAnalytics(data));
+        setLastAnalyticsUpdatedAt(new Date());
       } catch (e) {
         if (isAbortError(e)) return;
         console.error(e);
@@ -426,7 +514,7 @@ const AdminDashboard: React.FC = () => {
 
     loadAnalytics();
     return () => controller.abort();
-  }, [resolveRange, startTransition]);
+  }, [resolveRange, startTransition, autoRefreshTick]);
 
   // ✅ devices data memo
   const deviceTypeRows = useMemo(
@@ -468,6 +556,14 @@ const AdminDashboard: React.FC = () => {
             </h2>
             <p className="text-sm text-muted-foreground">
               Visitors, page views, active time, sources, geo & devices
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {autoRefreshing ? "Refreshing..." : " "}
+              {lastAnalyticsUpdatedAt ? (
+                <span className="ml-2">
+                  Updated (BD): {formatBdTime(lastAnalyticsUpdatedAt)}
+                </span>
+              ) : null}
             </p>
           </div>
 
@@ -616,8 +712,8 @@ const AdminDashboard: React.FC = () => {
                       Unique visitors trend
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                    <FaEye className="text-primary text-sm" />
+                  <div className="w-10 h-10 rounded-full bg-ring flex items-center justify-center">
+                    <FaEye className="text-white text-sm" />
                   </div>
                 </div>
                 <div className="h-[260px]">
@@ -722,8 +818,8 @@ const AdminDashboard: React.FC = () => {
                       Total page views trend
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                    <FaRegChartBar className="text-primary text-sm" />
+                  <div className="w-10 h-10 rounded-full bg-ring flex items-center justify-center">
+                    <FaRegChartBar className="text-white text-sm" />
                   </div>
                 </div>
                 <div className="h-[260px]">
@@ -884,8 +980,8 @@ const AdminDashboard: React.FC = () => {
                               </div>
                             </td>
                             <td className="px-6 py-4">
-                              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent text-primary rounded-full">
-                                <div className="w-2 h-2 rounded-full bg-[#BC913A] animate-pulse"></div>
+                              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-ring text-white rounded-full">
+                                <div className="w-2 h-2 rounded-full bg-accent animate-pulse"></div>
                                 <span className="text-sm font-medium">
                                   {fmtSec(p.avgActiveTimeSec)}
                                 </span>

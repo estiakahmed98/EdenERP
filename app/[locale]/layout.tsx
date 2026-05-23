@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import AnalyticsTracker from "@/components/admin/AnalyticsTracker";
 import { isLocale, locales } from "@/i18n/config";
 
 export function generateStaticParams() {
@@ -28,6 +29,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={activeLocale} messages={messages}>
+      <AnalyticsTracker />
       <Header />
       {children}
       <Footer />

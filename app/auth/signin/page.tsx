@@ -9,7 +9,7 @@ export default function SignInPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const message = searchParams.get("message");
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
+  const callbackUrl = searchParams.get("callbackUrl") || "/admin";
 
   const { data: session, status } = useSession();
   const [form, setForm] = useState({ email: "", password: "" });

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import NextLink from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -621,13 +622,13 @@ export default function Header() {
             </div>
 
             <div className="grid gap-3 pt-2">
-              <Link
+              <NextLink
                 href="/auth/signin"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700 dark:border-slate-800 dark:text-slate-200"
               >
                 {t("nav.signIn")}
-              </Link>
+              </NextLink>
             </div>
           </div>
         </div>

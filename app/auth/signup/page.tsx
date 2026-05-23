@@ -14,7 +14,7 @@ export default function SignUp() {
 
   useEffect(() => {
     if (status !== "authenticated") return;
-    router.replace(session?.user?.role === "ADMIN" ? "/admin" : "/");
+    router.replace("/admin");
   }, [router, session?.user?.role, status]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ export default function SignUp() {
     setError("");
 
     try {
-      const res = await fetch("/api/authauth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -40,7 +40,9 @@ export default function SignUp() {
         return;
       }
 
-      router.push("/auth/signin?message=Account created! Please sign in.");
+      router.push(
+        "/auth/signin?message=Account created! Please sign in.&callbackUrl=%2Fadmin",
+      );
     } catch {
       setError("Network error");
     } finally {
