@@ -384,6 +384,7 @@ export default function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<MenuId | null>(null);
+  const [mobileOpenMenu, setMobileOpenMenu] = useState<MenuId | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -512,19 +513,19 @@ export default function Header() {
                       id={`${navId}-${item.id}-panel`}
                       role="dialog"
                       aria-label={`${t(item.labelKey)} menu`}
-                      className="absolute left-1/2 top-full z-50 mt-6 w-[min(1120px,calc(100vw-2rem))] -translate-x-1/2"
+                      className="fixed left-1/2 top-[92px] z-50 w-[min(calc(100vw-2rem),1120px)] -translate-x-1/2 overflow-hidden rounded-2xl border border-slate-700 bg-[#071126] shadow-2xl shadow-black/40"
                     >
-                      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/60 dark:border-slate-800 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 dark:ring-slate-800/60 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
-                        <div className="border-b border-slate-100 bg-linear-to-r from-slate-50 to-white px-8 py-5 dark:border-slate-800 dark:bg-linear-to-r dark:from-slate-950 dark:to-slate-900/60">
-                          <p className="text-sm font-semibold text-slate-950 dark:text-slate-100">
-                            {t("menu.explore", { label: t(item.labelKey) })}
-                          </p>
-                          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                            {t("menu.description")}
-                          </p>
-                        </div>
+                      <div className="border-b border-slate-700 bg-linear-to-r from-slate-950 to-slate-900/60 px-6 py-4">
+                        <p className="text-sm font-semibold text-slate-100">
+                          {t("menu.explore", { label: t(item.labelKey) })}
+                        </p>
+                        <p className="mt-1 text-sm text-slate-400">
+                          {t("menu.description")}
+                        </p>
+                      </div>
 
-                        <div className="grid grid-cols-2 gap-x-10 gap-y-9 p-8 lg:grid-cols-4 lg:p-10">
+                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5">
+                        <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                           {item.megaMenu.map((column) => (
                             <div key={column.titleKey}>
                               <div
@@ -537,13 +538,13 @@ export default function Header() {
                                 className={`mt-2 h-px w-full ${column.underlineClass}`}
                               />
 
-                              <ul className="mt-4 space-y-2.5">
+                              <ul className="mt-3 space-y-2">
                                 {column.links.map((link) => (
                                   <li key={`${column.titleKey}:${link.href}`}>
                                     <Link
                                       href={link.href}
                                       onClick={() => setOpenDesktopMenu(null)}
-                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-600 transition-all hover:bg-slate-50 hover:text-cyan-700 dark:text-slate-300 dark:hover:bg-slate-900/60 dark:hover:text-cyan-300"
+                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-300 transition-all hover:bg-slate-900/60 hover:text-cyan-300"
                                     >
                                       {t(link.labelKey)}
                                     </Link>
@@ -630,69 +631,223 @@ export default function Header() {
       </nav>
 
       {mobileMenuOpen && (
-        <div className="border-t border-slate-200 bg-white md:hidden dark:border-slate-800 dark:bg-slate-950">
-          <div className="space-y-4 px-4 py-4">
-            <div className="flex items-center justify-end">
+        <div className="fixed inset-x-0 top-[102px] z-50 max-h-[calc(100vh-102px)] overflow-y-auto border-t border-slate-800 bg-[#020817] px-4 py-5 md:hidden">
+          <div className="mb-5 flex justify-end">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+              }
+              className="flex items-center gap-2 rounded-2xl border border-slate-700 px-5 py-3 text-sm font-bold text-white"
+            >
+              {isDark ? <Sun size={16} /> : <Moon size={16} />}
+              <span>{isDark ? "Light" : "Dark"}</span>
+            </button>
+          </div>
+
+          <div className="space-y-3">
+            {/* Apps Accordion */}
+            <div>
               <button
                 type="button"
-                onClick={toggleTheme}
-                aria-label={
-                  isDark ? "Switch to light mode" : "Switch to dark mode"
+                onClick={() =>
+                  setMobileOpenMenu(mobileOpenMenu === "apps" ? null : "apps")
                 }
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-xs transition-colors hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900/60"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-200 hover:bg-slate-900"
               >
-                {isDark ? <Sun size={18} /> : <Moon size={18} />}
-                <span>{isDark ? "Light" : "Dark"}</span>
+                {t("nav.apps")}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    mobileOpenMenu === "apps" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileOpenMenu === "apps" && (
+                <div className="mt-3 rounded-2xl border border-slate-800 bg-[#071126] p-4">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    {appsMegaMenu.map((column) => (
+                      <div key={column.titleKey}>
+                        <div
+                          className={`mb-3 border-b border-slate-700 pb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
+                        >
+                          {t(column.titleKey)}
+                        </div>
+
+                        <ul className="space-y-2">
+                          {column.links.map((link) => (
+                            <li key={`${column.titleKey}:${link.href}`}>
+                              <Link
+                                href={link.href}
+                                className="block rounded-lg px-2 py-2 text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setMobileOpenMenu(null);
+                                }}
+                              >
+                                {t(link.labelKey)}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Industries Accordion */}
+            <div>
+              <button
+                type="button"
+                onClick={() =>
+                  setMobileOpenMenu(
+                    mobileOpenMenu === "industries" ? null : "industries",
+                  )
+                }
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-200 hover:bg-slate-900"
+              >
+                {t("nav.industries")}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    mobileOpenMenu === "industries" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileOpenMenu === "industries" && (
+                <div className="mt-3 rounded-2xl border border-slate-800 bg-[#071126] p-4">
+                  <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {industriesMegaMenu.map((column) => (
+                      <div key={column.titleKey}>
+                        <div
+                          className={`mb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
+                        >
+                          {t(column.titleKey)}
+                        </div>
+                        <ul className="ml-2 space-y-1">
+                          {column.links.map((link) => (
+                            <li key={`${column.titleKey}:${link.href}`}>
+                              <Link
+                                href={link.href}
+                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setMobileOpenMenu(null);
+                                }}
+                              >
+                                {t(link.labelKey)}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            {/* Community Accordion */}
+            <div>
+              <button
+                type="button"
+                onClick={() =>
+                  setMobileOpenMenu(
+                    mobileOpenMenu === "community" ? null : "community",
+                  )
+                }
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-200 hover:bg-slate-900"
+              >
+                {t("nav.community")}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    mobileOpenMenu === "community" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileOpenMenu === "community" && (
+                <div className="mt-3 rounded-2xl border border-slate-800 bg-[#071126] p-4">
+                  <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {communityMegaMenu.map((column) => (
+                      <div key={column.titleKey}>
+                        <div
+                          className={`mb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
+                        >
+                          {t(column.titleKey)}
+                        </div>
+                        <ul className="ml-2 space-y-1">
+                          {column.links.map((link) => (
+                            <li key={`${column.titleKey}:${link.href}`}>
+                              <Link
+                                href={link.href}
+                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white"
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  setMobileOpenMenu(null);
+                                }}
+                              >
+                                {t(link.labelKey)}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/pricing"
+              className="block rounded-xl px-4 py-3 text-base font-bold text-slate-200 hover:bg-slate-900"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.pricing")}
+            </Link>
+
+            <Link
+              href="/help"
+              className="block rounded-xl px-4 py-3 text-base font-bold text-slate-200 hover:bg-slate-900"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.help")}
+            </Link>
+          </div>
+
+          <div className="mt-8 space-y-4">
+            <div className="flex w-full items-center justify-center gap-10 rounded-2xl border border-slate-800 px-5 py-4">
+              <button
+                type="button"
+                onClick={() => switchLanguage("en")}
+                className={`text-sm font-bold ${
+                  locale === "en" ? "text-white" : "text-slate-400"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => switchLanguage("bn")}
+                className={`text-sm font-bold ${
+                  locale === "bn" ? "text-white" : "text-slate-400"
+                }`}
+              >
+                বাংলা
               </button>
             </div>
 
-            <div className="space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700 dark:text-slate-200 dark:hover:bg-slate-900/60 dark:hover:text-cyan-300"
-                >
-                  {t(item.labelKey)}
-                </Link>
-              ))}
-            </div>
-
-            <div className="grid gap-3 pt-2">
-              <div className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 p-2 dark:border-slate-800">
-                <button
-                  type="button"
-                  onClick={() => switchLanguage("en")}
-                  className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
-                    locale === "en"
-                      ? "bg-(--purple) text-white"
-                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-                  }`}
-                >
-                  EN
-                </button>
-                <button
-                  type="button"
-                  onClick={() => switchLanguage("bn")}
-                  className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
-                    locale === "bn"
-                      ? "bg-(--purple) text-white"
-                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-                  }`}
-                >
-                  বাংলা
-                </button>
-              </div>
-
-              <Link
-                href="/auth/signin"
-                onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700 dark:border-slate-800 dark:text-slate-200"
-              >
-                {t("nav.signIn")}
-              </Link>
-            </div>
+            <Link
+              href="/auth/signin"
+              className="block w-full rounded-2xl border border-slate-800 px-5 py-4 text-center text-base font-bold text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t("nav.signIn")}
+            </Link>
           </div>
         </div>
       )}

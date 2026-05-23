@@ -175,7 +175,7 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${tiroBangla.variable}`}
     >
-      <body className="bg-background font-sans antialiased">
+      <body className="bg-background font-sans antialiased" suppressHydrationWarning>
         <Script
           id="organization-schema"
           type="application/ld+json"
