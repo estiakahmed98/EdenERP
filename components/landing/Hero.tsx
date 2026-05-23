@@ -63,17 +63,17 @@ export default function Hero() {
           <div className="p-5 sm:p-6">
             <div className="mb-3.5 flex items-center justify-between">
               <span className="text-sm font-bold text-[#1a1a2e] dark:text-slate-100">
-                🔄 Subscriptions
+                📦 Client Subscriptions
               </span>
 
-              <span className="rounded-full bg-[#d1fae5] px-2.5 py-1 text-[11px] font-bold text-[#065f46]">
-                ● Active billing
+              <span className="rounded-full bg-[#dbeafe] px-2.5 py-1 text-[11px] font-bold text-[#1d4ed8]">
+                ● 24 Active Plans
               </span>
             </div>
 
             <div className="overflow-hidden rounded-xl border border-[#f0eae0] dark:border-slate-700">
               <div className="grid grid-cols-[80px_1fr_110px_110px_100px] bg-[#f8f5f0] px-4 py-2.25 font-body text-[10px] font-bold uppercase tracking-[1px] text-[#999] dark:bg-slate-800 dark:text-slate-300">
-                {["ID", "Customer", "Next Bill", "Revenue", "Status"].map(
+                {["ID", "Business", "Renewal", "Plan", "Status"].map(
                   (heading) => (
                     <span key={heading}>{heading}</span>
                   ),
@@ -81,30 +81,34 @@ export default function Hero() {
               </div>
 
               {[
-                ["S-0016", "Sophia Thomas", "09/25/2026", "$350/mo", "Active"],
-                ["S-0017", "Bright Studio", "10/12/2026", "$1,250/mo", "Quote"],
-                ["S-0018", "Green Valley", "10/20/2026", "$650/mo", "Active"],
-                ["S-0019", "Nova Retail", "11/01/2026", "$2,400/mo", "Active"],
+                ["AD-102", "Pixel Craft", "12 Sep", "Starter", "Active"],
+                ["AD-103", "Nexa Fashion", "18 Sep", "Business", "Active"],
+                ["AD-104", "Urban Mart", "22 Sep", "Starter", "Pending"],
+                ["AD-105", "Bright Agency", "01 Oct", "Enterprise", "Active"],
               ].map((row, index) => (
                 <div
                   key={row[0]}
                   className={`grid grid-cols-[80px_1fr_110px_110px_100px] border-t border-[#f0eae0] px-4 py-2.75 text-xs ${
-                    index % 2 === 0 ? "bg-white dark:bg-slate-900" : "bg-[#fdfaf7] dark:bg-slate-800/70"
+                    index % 2 === 0
+                      ? "bg-white dark:bg-slate-900"
+                      : "bg-[#fdfaf7] dark:bg-slate-800/70"
                   }`}
                 >
                   <span className="font-semibold text-purple">{row[0]}</span>
 
-                  <span className="text-[#1a1a2e] dark:text-slate-200">{row[1]}</span>
+                  <span className="text-[#1a1a2e] dark:text-slate-200">
+                    {row[1]}
+                  </span>
 
-                  <span className="text-[#e11d48]">{row[2]}</span>
+                  <span className="text-[#f59e0b]">{row[2]}</span>
 
                   <span className="font-bold">{row[3]}</span>
 
                   <span>
                     <span
                       className={`rounded-full px-2.5 py-0.75 text-[10px] font-bold ${
-                        row[4] === "Quote"
-                          ? "bg-[#eff6ff] text-[#1d4ed8]"
+                        row[4] === "Pending"
+                          ? "bg-[#fef3c7] text-[#92400e]"
                           : "bg-[#d1fae5] text-[#065f46]"
                       }`}
                     >
