@@ -198,7 +198,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -216,8 +216,8 @@ function SectionEyebrow({
   label: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-purple-50 px-4 py-2 text-sm font-semibold text-purple-700 shadow-sm ring-1 ring-purple-100">
-      <span className="text-purple-500">{icon}</span>
+    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
+      <span className="text-primary">{icon}</span>
       {label}
     </div>
   );
@@ -256,10 +256,10 @@ export default function ForumPage() {
   const heroInView = useInView(heroRef, { once: true, margin: "-80px" });
 
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#faf5ff_18%,_#ffffff_100%)] text-slate-800">
+    <main className="overflow-hidden bg-background text-foreground">
       {/* ═════════════════════ HERO ═════════════════════ */}
       <section className="relative isolate" ref={heroRef}>
-        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_15%_12%,rgba(124,58,237,0.12),transparent_28%),radial-gradient(circle_at_85%_8%,rgba(168,85,247,0.11),transparent_26%),linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(250,245,255,1)_30%,rgba(255,255,255,1)_100%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_15%_12%,rgba(139,92,246,0.08),transparent_28%),radial-gradient(circle_at_85%_8%,rgba(139,92,246,0.06),transparent_26%)]" />
 
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
           {/* Left content */}
@@ -280,7 +280,7 @@ export default function ForumPage() {
               </p>
               <div className="space-y-3">
                 <p
-                  className="text-2xl font-medium text-slate-700"
+                  className="text-2xl font-medium text-muted-foreground"
                   style={{
                     fontFamily:
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -289,16 +289,16 @@ export default function ForumPage() {
                   Questions, tips,
                 </p>
                 <h1
-                  className="text-5xl font-semibold leading-none tracking-tight text-slate-900 sm:text-6xl"
+                  className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
                   style={{
                     fontFamily:
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  <span className="text-purple-600">discussions</span>
+                  <span className="text-primary">discussions</span>
                 </h1>
               </div>
-              <p className="max-w-lg text-lg leading-8 text-slate-600">
+              <p className="max-w-lg text-lg leading-8 text-muted-foreground">
                 The Adon ERP community forum is where developers, users, and
                 partners connect. Ask questions, share insights, and have a say
                 in the product roadmap.
@@ -308,14 +308,14 @@ export default function ForumPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#categories"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
                 <MessageSquareText className="h-4 w-4" />
                 Browse categories
               </Link>
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors duration-300 hover:border-purple-300 hover:text-purple-600"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 <PlusCircle className="h-4 w-4" />
                 Start a thread
@@ -323,11 +323,11 @@ export default function ForumPage() {
             </div>
 
             {/* Stats strip */}
-            <div className="grid grid-cols-4 gap-3 rounded-2xl border border-purple-100 bg-white/80 p-5 backdrop-blur-sm shadow-sm">
+            <div className="grid grid-cols-4 gap-3 rounded-2xl border border-primary/20 bg-card/80 p-5 backdrop-blur-sm shadow-sm">
               {STATS.map((s) => (
                 <div key={s.label} className="text-center">
-                  <p className="text-xl font-black text-purple-600">{s.value}</p>
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+                  <p className="text-xl font-black text-primary">{s.value}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                     {s.label}
                   </p>
                 </div>
@@ -346,17 +346,17 @@ export default function ForumPage() {
             }
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-purple-100 blur-3xl" />
-            <div className="absolute -bottom-10 left-4 h-36 w-36 rounded-full bg-violet-100 blur-3xl" />
+            <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute -bottom-10 left-4 h-36 w-36 rounded-full bg-primary/15 blur-3xl" />
 
-            <div className="w-full overflow-hidden rounded-[2.5rem] border-8 border-white bg-white shadow-[0_40px_100px_rgba(15,23,42,0.1)]">
+            <div className="w-full overflow-hidden rounded-[2.5rem] border-8 border-card bg-card shadow-[0_40px_100px_rgba(0,0,0,0.1)]">
               {/* Browser chrome */}
-              <div className="flex items-center gap-2 border-b border-slate-100 px-5 py-3">
+              <div className="flex items-center gap-2 border-b border-border px-5 py-3">
                 <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
                 <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
                 <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-                <div className="ml-3 flex-1 rounded-lg bg-slate-100 px-3 py-1">
-                  <span className="text-xs text-slate-400">
+                <div className="ml-3 flex-1 rounded-lg bg-muted px-3 py-1">
+                  <span className="text-xs text-muted-foreground">
                     community.adonerp.com/forum
                   </span>
                 </div>
@@ -391,21 +391,21 @@ export default function ForumPage() {
                 ].map((thread, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 rounded-xl border border-slate-100 px-4 py-3 transition-colors hover:bg-purple-50/50"
+                    className="flex items-center gap-3 rounded-xl border border-border px-4 py-3 transition-colors hover:bg-primary/5"
                   >
-                    <div className="shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-purple-50 text-purple-600">
+                    <div className="shrink-0 flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary">
                       <MessageSquareText className="h-4 w-4" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         {thread.hot && (
-                          <Flame className="h-3 w-3 text-rose-500" />
+                          <Flame className="h-3 w-3 text-destructive" />
                         )}
-                        <p className="truncate text-sm font-medium text-slate-800">
+                        <p className="truncate text-sm font-medium text-foreground">
                           {thread.title}
                         </p>
                       </div>
-                      <p className="mt-0.5 text-[11px] text-slate-400">
+                      <p className="mt-0.5 text-[11px] text-muted-foreground">
                         {thread.meta}
                       </p>
                     </div>
@@ -427,7 +427,7 @@ export default function ForumPage() {
           <ScriptHeading className="mt-6">
             Find the right place to ask
           </ScriptHeading>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Every topic has a home. Browse categories and jump into the
             conversation that matters most to you.
           </p>
@@ -446,26 +446,26 @@ export default function ForumPage() {
                   delay: Math.min(index * 0.07, 0.4),
                 }}
                 viewport={{ once: true, amount: 0.15 }}
-                className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-200 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl"
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${cat.gradient} opacity-[0.030] transition-opacity duration-300 group-hover:opacity-[0.06]`}
                 />
                 <div className="relative">
                   <div
-                    className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${cat.gradient} shadow-md shadow-purple-500/10`}
+                    className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${cat.gradient} shadow-md shadow-primary/10`}
                   >
                     <Icon className="h-5.5 w-5.5 text-white" />
                   </div>
                   <div className="mb-1 flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-slate-900">
+                    <h3 className="text-lg font-semibold text-foreground">
                       {cat.title}
                     </h3>
-                    <span className="text-xs font-semibold text-slate-400">
+                    <span className="text-xs font-semibold text-muted-foreground">
                       {cat.count}
                     </span>
                   </div>
-                  <p className="text-sm leading-7 text-slate-500">
+                  <p className="text-sm leading-7 text-muted-foreground">
                     {cat.description}
                   </p>
                   <Link
@@ -492,7 +492,7 @@ export default function ForumPage() {
           <ScriptHeading className="mt-6">
             Built for <HandUnderlineText>answers</HandUnderlineText>, not noise
           </ScriptHeading>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Reddit-style chaos has no place here. Our forum is curated, voted, and
             moderated — so the good stuff rises to the top.
           </p>
@@ -511,16 +511,16 @@ export default function ForumPage() {
                   delay: Math.min(index * 0.07, 0.4),
                 }}
                 viewport={{ once: true, amount: 0.15 }}
-                className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-200 hover:shadow-xl"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl"
               >
                 <div className="relative">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-50 text-purple-600 shadow-sm">
-                    <Icon className="h-5.5 w-5.5 text-purple-600" />
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-sm">
+                    <Icon className="h-5.5 w-5.5" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {feature.title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-7 text-slate-500">
+                  <p className="mt-2.5 text-sm leading-7 text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>
@@ -540,7 +540,7 @@ export default function ForumPage() {
           <ScriptHeading className="mt-6">
             Hot threads from this week
           </ScriptHeading>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Catch up on what the community is talking about right now.
           </p>
         </div>
@@ -553,20 +553,20 @@ export default function ForumPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: index * 0.06 }}
               viewport={{ once: true }}
-              className="group flex flex-wrap items-center gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-4 shadow-sm transition-all"
+              className="group flex flex-wrap items-center gap-4 rounded-2xl border border-border bg-card px-6 py-4 shadow-sm transition-all"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-purple-50">
-                <MessageSquareText className="h-5 w-5 text-purple-600" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                <MessageSquareText className="h-5 w-5 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="truncate text-sm font-semibold text-slate-900 group-hover:text-primary transition-colors">
+                <p className="truncate text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                   {thread.title}
                 </p>
                 <div className="mt-1 flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">
                     {thread.category}
                   </span>
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-muted-foreground">
                     by {thread.author} &middot;{" "}
                     {thread.replies} replies &middot; {thread.views + " views"} &middot;{" "}
                     {thread.lastActive}
@@ -577,13 +577,13 @@ export default function ForumPage() {
                 {thread.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-50 px-2 py-0.5 rounded-full"
+                    className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground bg-muted/30 px-2 py-0.5 rounded-full"
                   >
                     #{tag}
                   </span>
                 ))}
               </div>
-              <button className="shrink-0 rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition-colors hover:bg-purple-50 hover:text-primary">
+              <button className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:bg-primary/10 hover:text-primary">
                 View
               </button>
             </motion.div>
@@ -593,7 +593,7 @@ export default function ForumPage() {
         <div className="mt-8 text-center">
           <a
             href="#"
-            className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:border-purple-300 hover:text-purple-600"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary/30 hover:text-primary"
           >
             View all threads
             <ArrowRight className="h-4 w-4" />
@@ -611,7 +611,7 @@ export default function ForumPage() {
           <ScriptHeading className="mt-6">
             Our top forum contributors
           </ScriptHeading>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             Members who consistently help others, welcome newcomers, and keep
             the conversation constructive.
           </p>
@@ -625,10 +625,10 @@ export default function ForumPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
               viewport={{ once: true, amount: 0.2 }}
-              className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
             >
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 text-sm font-black text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-sm font-black text-primary-foreground">
                   {c.name
                     .split(" ")
                     .map((n) => n[0])
@@ -636,25 +636,25 @@ export default function ForumPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
-                    <p className="truncate text-sm font-semibold text-slate-900">
+                    <p className="truncate text-sm font-semibold text-foreground">
                       {c.name}
                     </p>
-                    <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-purple-100 text-purple-700">
+                    <span className="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-primary/10 text-primary">
                       {c.role}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500">Contributor</p>
+                  <p className="text-xs text-muted-foreground">Contributor</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-xl bg-slate-50 p-3 text-center">
-                  <p className="text-lg font-black text-purple-600">{c.posts}</p>
-                  <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-0.5">Posts</p>
+                <div className="rounded-xl bg-muted/30 p-3 text-center">
+                  <p className="text-lg font-black text-primary">{c.posts}</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Posts</p>
                 </div>
-                <div className="rounded-xl bg-slate-50 p-3 text-center">
-                  <p className="text-lg font-black text-violet-600">{c.badges}</p>
-                  <p className="text-[10px] text-slate-500 uppercase tracking-widest mt-0.5">Badges</p>
+                <div className="rounded-xl bg-muted/30 p-3 text-center">
+                  <p className="text-lg font-black text-secondary-foreground">{c.badges}</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Badges</p>
                 </div>
               </div>
             </motion.div>
@@ -672,7 +672,7 @@ export default function ForumPage() {
           <ScriptHeading className="mt-6">
             Keep it welcoming
           </ScriptHeading>
-          <p className="mt-4 max-w-2xl text-lg text-slate-600">
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
             A great community starts with great behaviour. Follow these simple
             rules and help us keep Adon ERP a safe, inclusive place.
           </p>
@@ -713,15 +713,15 @@ export default function ForumPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm"
+                className="rounded-3xl border border-border bg-card p-7 shadow-sm"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-50 text-purple-600">
-                  <Icon className="h-5.5 w-5.5 text-purple-600" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Icon className="h-5.5 w-5.5" />
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900">
+                <h3 className="text-lg font-semibold text-foreground">
                   {rule.title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-7 text-slate-500">
+                <p className="mt-2.5 text-sm leading-7 text-muted-foreground">
                   {rule.description}
                 </p>
               </motion.div>
@@ -767,31 +767,31 @@ export default function ForumPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: index * 0.15 }}
               viewport={{ once: true, amount: 0.15 }}
-              className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm"
+              className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-8 shadow-sm"
             >
-              <div className="absolute -top-14 -right-14 h-48 w-48 rounded-full bg-purple-100/40 blur-3xl" />
+              <div className="absolute -top-14 -right-14 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
               <div className="relative space-y-5">
                 <div className="flex items-center gap-4">
-                  <BarChart3 className="h-8 w-8 text-purple-400" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-purple-500">
+                  <BarChart3 className="h-8 w-8 text-primary/60" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-primary">
                     Forum
                   </span>
                 </div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-foreground/80">
                   &quot;{t.quote}&quot;
                 </p>
-                <div className="flex items-center gap-1 text-purple-400">
+                <div className="flex items-center gap-1 text-primary/60">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-                <div className="flex items-center gap-4 border-t border-slate-100 pt-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-violet-600 text-sm font-black text-white">
+                <div className="flex items-center gap-4 border-t border-border pt-5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-sm font-black text-primary-foreground">
                     {t.avatar}
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900">{t.name}</p>
-                    <p className="text-sm text-slate-500">{t.role}</p>
+                    <p className="font-semibold text-foreground">{t.name}</p>
+                    <p className="text-sm text-muted-foreground">{t.role}</p>
                   </div>
                 </div>
               </div>
@@ -807,16 +807,16 @@ export default function ForumPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-purple-900 to-violet-900 px-6 py-16 text-center shadow-[0_50px_130px_rgba(15,23,42,0.22)] sm:px-10 sm:py-20"
+          className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-primary/90 to-primary/70 px-6 py-16 text-center shadow-[0_50px_130px_rgba(0,0,0,0.22)] sm:px-10 sm:py-20"
         >
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -right-24 h-60 w-60 rounded-full bg-purple-500/25 blur-3xl" />
-            <div className="absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-violet-600/20 blur-3xl" />
+            <div className="absolute -top-24 -right-24 h-60 w-60 rounded-full bg-primary/30 blur-3xl" />
+            <div className="absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
           </div>
 
           <div className="relative space-y-6">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 shadow-lg">
-              <Users className="h-8 w-8 text-purple-300" />
+              <Users className="h-8 w-8 text-primary-foreground/80" />
             </div>
 
             <ScriptHeading className="text-white text-4xl sm:text-5xl lg:text-6xl">
@@ -824,7 +824,7 @@ export default function ForumPage() {
               <HandUnderlineText>conversation</HandUnderlineText>?
             </ScriptHeading>
 
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-purple-100/80">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
               Whether you are here to ask, answer, or just lurk — the Adon ERP
               community forum welcomes you.
             </p>
@@ -832,7 +832,7 @@ export default function ForumPage() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
                 href="#"
-                className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-purple-900 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-primary shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5"
               >
                 <PlusCircle className="h-4 w-4" />
                 Create an account
@@ -846,7 +846,7 @@ export default function ForumPage() {
               </a>
             </div>
 
-            <p className="mt-6 text-sm text-purple-200/60">
+            <p className="mt-6 text-sm text-primary-foreground/60">
               Free &amp; open to everyone &middot; No spam &middot; Community-moderated
             </p>
           </div>
