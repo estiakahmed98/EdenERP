@@ -116,7 +116,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl ${className}`}
       style={scriptFont}
     >
       {children}
@@ -166,8 +166,8 @@ function SectionEyebrow({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-700 shadow-sm ring-1 ring-cyan-100">
-      <span className="text-cyan-500">{icon}</span>
+    <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-4 py-2 text-sm font-semibold text-cyan-700 dark:text-cyan-300 shadow-sm ring-1 ring-cyan-100 dark:ring-cyan-800">
+      <span className="text-cyan-500 dark:text-cyan-400">{icon}</span>
       {label}
     </div>
   );
@@ -175,23 +175,25 @@ function SectionEyebrow({
 
 function PosPreview() {
   return (
-    <div className="relative overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-[0_40px_100px_rgba(15,23,42,0.14)]">
-      <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50 px-5 py-4">
+    <div className="relative overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
-          <Store className="h-5 w-5 text-cyan-600" />
-          <span className="text-sm font-semibold text-slate-800">
+          <Store className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
+          <span className="text-sm font-semibold text-slate-800 dark:text-white">
             Adon POS · Retail Counter
           </span>
         </div>
 
-        <span className="rounded-full bg-emerald-100 px-2 py-1 text-xs font-semibold text-emerald-700">
+        <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
           Online
         </span>
       </div>
 
       <div className="grid gap-5 p-5 lg:grid-cols-[0.8fr_1.2fr_0.55fr]">
-        <div className="rounded-3xl bg-slate-50 p-4">
-          <p className="text-sm font-semibold text-slate-900">Order</p>
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-4">
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+            Order
+          </p>
 
           <div className="mt-4 space-y-3">
             {[
@@ -201,10 +203,14 @@ function PosPreview() {
             ].map(([item, price]) => (
               <div
                 key={item}
-                className="flex items-center justify-between rounded-2xl bg-white px-4 py-3 text-sm shadow-sm"
+                className="flex items-center justify-between rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
               >
-                <span className="font-medium text-slate-700">{item}</span>
-                <span className="font-bold text-slate-950">{price}</span>
+                <span className="font-medium text-slate-700 dark:text-slate-300">
+                  {item}
+                </span>
+                <span className="font-bold text-slate-950 dark:text-white">
+                  {price}
+                </span>
               </div>
             ))}
           </div>
@@ -214,16 +220,18 @@ function PosPreview() {
               <span>Total</span>
               <span>$180.00</span>
             </div>
-            <button className="mt-4 w-full rounded-xl bg-white py-2 text-sm font-bold text-cyan-700">
+            <button className="mt-4 w-full rounded-xl bg-white py-2 text-sm font-bold text-cyan-700 dark:text-cyan-600">
               Payment
             </button>
           </div>
         </div>
 
-        <div className="rounded-3xl bg-slate-50 p-4">
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-4">
           <div className="mb-4 flex items-center justify-between">
-            <p className="text-sm font-semibold text-slate-900">Products</p>
-            <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-500">
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
+              Products
+            </p>
+            <span className="rounded-full bg-white dark:bg-slate-700 px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400">
               32 items
             </span>
           </div>
@@ -233,25 +241,27 @@ function PosPreview() {
               (item, index) => (
                 <div
                   key={item}
-                  className="overflow-hidden rounded-2xl bg-white shadow-sm"
+                  className="overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm"
                 >
                   <div
                     className={`h-20 ${
                       [
-                        "bg-linear-to-br from-cyan-100 to-sky-200",
-                        "bg-linear-to-br from-emerald-100 to-teal-200",
-                        "bg-linear-to-br from-amber-100 to-orange-200",
-                        "bg-linear-to-br from-rose-100 to-pink-200",
-                        "bg-linear-to-br from-violet-100 to-purple-200",
-                        "bg-linear-to-br from-slate-100 to-slate-200",
+                        "bg-linear-to-br from-cyan-100 to-sky-200 dark:from-cyan-900/50 dark:to-sky-900/50",
+                        "bg-linear-to-br from-emerald-100 to-teal-200 dark:from-emerald-900/50 dark:to-teal-900/50",
+                        "bg-linear-to-br from-amber-100 to-orange-200 dark:from-amber-900/50 dark:to-orange-900/50",
+                        "bg-linear-to-br from-rose-100 to-pink-200 dark:from-rose-900/50 dark:to-pink-900/50",
+                        "bg-linear-to-br from-violet-100 to-purple-200 dark:from-violet-900/50 dark:to-purple-900/50",
+                        "bg-linear-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700",
                       ][index]
                     }`}
                   />
                   <div className="p-3 text-left">
-                    <p className="text-sm font-semibold text-slate-800">
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white">
                       {item}
                     </p>
-                    <p className="mt-1 text-xs text-slate-400">Tap to add</p>
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                      Tap to add
+                    </p>
                   </div>
                 </div>
               ),
@@ -259,7 +269,7 @@ function PosPreview() {
           </div>
         </div>
 
-        <div className="rounded-3xl bg-slate-950 p-4 text-white">
+        <div className="rounded-3xl bg-slate-950 dark:bg-slate-900 p-4 text-white">
           <p className="text-sm font-semibold">Card terminal</p>
           <div className="mt-4 rounded-2xl bg-white/10 p-4">
             <CreditCard className="mx-auto h-10 w-10 text-cyan-300" />
@@ -272,7 +282,7 @@ function PosPreview() {
             {["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((key) => (
               <div
                 key={key}
-                className="flex aspect-square items-center justify-center rounded-xl bg-white/10 text-sm"
+                className="flex aspect-square items-center justify-center rounded-xl bg-white/10 text-sm hover:bg-white/20 transition cursor-pointer"
               >
                 {key}
               </div>
@@ -281,8 +291,8 @@ function PosPreview() {
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-2xl ring-1 ring-slate-200">
-        <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600" />
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+        <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
   );
@@ -290,9 +300,9 @@ function PosPreview() {
 
 export default function PosRetailPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-800">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.07),transparent_25%)]" />
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <SectionEyebrow
@@ -301,14 +311,17 @@ export default function PosRetailPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
               <HandUnderline>PoS</HandUnderline>{" "}
-              <span className="text-emerald-500" style={scriptFont}>
+              <span
+                className="text-emerald-500 dark:text-emerald-400"
+                style={scriptFont}
+              >
                 made for retail
               </span>
             </h1>
 
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               Adon ERP POS helps your team sell faster, manage inventory, reward
               loyal customers, and sync every transaction with accounting.
             </p>
@@ -317,7 +330,7 @@ export default function PosRetailPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="#get-started"
-              className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
             >
               Start Free Trial
               <ArrowRight className="h-4 w-4" />
@@ -325,7 +338,7 @@ export default function PosRetailPage() {
 
             <Link
               href="#demo"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
             >
               Watch Demo
             </Link>
@@ -339,13 +352,13 @@ export default function PosRetailPage() {
           >
             <PosPreview />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-lg md:flex">
-              <Zap className="mr-2 h-4 w-4 text-cyan-600" />
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+              <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
               Fast checkout
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-lg md:flex">
-              <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600" />
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+              <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               Synced with ERP
             </div>
           </motion.div>
@@ -354,18 +367,23 @@ export default function PosRetailPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Complex <HandCircle color="border-teal-400">meets</HandCircle>{" "}
-          <HandCircle color="border-cyan-400">intuitive</HandCircle>
+          Complex{" "}
+          <HandCircle color="border-teal-400 dark:border-teal-500">
+            meets
+          </HandCircle>{" "}
+          <HandCircle color="border-cyan-400 dark:border-cyan-500">
+            intuitive
+          </HandCircle>
         </ScriptHeading>
 
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+        <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
           Handle advanced retail operations with a clean interface your cashier
           can understand in minutes.
         </p>
 
-        <div className="mx-auto mt-12 max-w-5xl rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
+        <div className="mx-auto mt-12 max-w-5xl rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
           <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-3xl bg-slate-50 p-5 text-left">
+            <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5 text-left">
               {[
                 "Customer account",
                 "Loyalty program",
@@ -374,23 +392,23 @@ export default function PosRetailPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="mb-3 rounded-2xl bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm"
+                  className="mb-3 rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm"
                 >
                   {item}
                 </div>
               ))}
             </div>
 
-            <div className="rounded-3xl bg-linear-to-br from-cyan-50 to-emerald-50 p-5">
+            <div className="rounded-3xl bg-linear-to-br from-cyan-50 to-emerald-50 dark:from-cyan-950/30 dark:to-emerald-950/30 p-5">
               <div className="grid grid-cols-3 gap-3">
                 {["Desk", "Chair", "Lamp", "Shelf", "Sofa", "Table"].map(
                   (item) => (
                     <div
                       key={item}
-                      className="rounded-2xl bg-white p-4 shadow-sm"
+                      className="rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-sm"
                     >
-                      <ShoppingBag className="mx-auto h-6 w-6 text-cyan-600" />
-                      <p className="mt-2 text-sm font-semibold text-slate-700">
+                      <ShoppingBag className="mx-auto h-6 w-6 text-cyan-600 dark:text-cyan-400" />
+                      <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
                         {item}
                       </p>
                     </div>
@@ -402,20 +420,22 @@ export default function PosRetailPage() {
         </div>
       </section>
 
-      <section className="bg-[#f5f7fb] py-20">
+      <section className="bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute inset-0 rounded-full bg-white" />
-            <div className="relative rounded-4xl border border-slate-200 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-800" />
+            <div className="relative rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-3xl bg-slate-50 p-4">
-                  <p className="font-semibold text-slate-900">Self ordering</p>
+                <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-4">
+                  <p className="font-semibold text-slate-900 dark:text-white">
+                    Self ordering
+                  </p>
                   <div className="mt-4 space-y-3">
                     {["Select product", "Choose options", "Pay securely"].map(
                       (item) => (
                         <div
                           key={item}
-                          className="rounded-2xl bg-white px-4 py-3 text-sm text-slate-600 shadow-sm"
+                          className="rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm text-slate-600 dark:text-slate-400 shadow-sm"
                         >
                           {item}
                         </div>
@@ -430,7 +450,7 @@ export default function PosRetailPage() {
                   <p className="mt-2 text-sm text-white/80">
                     Ready for payment
                   </p>
-                  <button className="mt-6 w-full rounded-xl bg-white py-2 text-sm font-bold text-cyan-700">
+                  <button className="mt-6 w-full rounded-xl bg-white py-2 text-sm font-bold text-cyan-700 dark:text-cyan-600">
                     Pay now
                   </button>
                 </div>
@@ -450,7 +470,7 @@ export default function PosRetailPage() {
               for the win
             </ScriptHeading>
 
-            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
               Let customers order from a kiosk, QR menu, tablet, or mobile page.
               Orders flow directly into your POS and inventory.
             </p>
@@ -466,7 +486,7 @@ export default function PosRetailPage() {
             customers
           </ScriptHeading>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Keep customers coming back with points, memberships, coupons,
             birthday rewards, and targeted retail promotions.
           </p>
@@ -479,12 +499,12 @@ export default function PosRetailPage() {
             return (
               <div key={item.title} className="text-center">
                 <div
-                  className={`mx-auto flex h-20 w-20 rotate-[-4deg] items-center justify-center rounded-3xl ${item.bg} ${item.color} shadow-sm ring-4 ring-slate-950/90`}
+                  className={`mx-auto flex h-20 w-20 rotate-[-4deg] items-center justify-center rounded-3xl ${item.bg} dark:bg-opacity-20 ${item.color} shadow-sm ring-4 ring-slate-950/90 dark:ring-slate-700`}
                 >
                   <Icon className="h-10 w-10" />
                 </div>
                 <p
-                  className="mt-5 text-2xl font-semibold text-slate-950"
+                  className="mt-5 text-2xl font-semibold text-slate-950 dark:text-white"
                   style={scriptFont}
                 >
                   {item.title}
@@ -495,21 +515,23 @@ export default function PosRetailPage() {
         </div>
       </section>
 
-      <section className="bg-[#f5f7fb] py-20">
+      <section className="bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>
-            <HandUnderline color="bg-rose-300">Cross-channel</HandUnderline>{" "}
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              Cross-channel
+            </HandUnderline>{" "}
             selling
           </ScriptHeading>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Sell from your store, website, social channels, and mobile orders
             while keeping stock and accounting perfectly connected.
           </p>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
-            <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
-              <p className="text-left font-semibold text-slate-950">
+            <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+              <p className="text-left font-semibold text-slate-950 dark:text-white">
                 Online order
               </p>
               <div className="mt-5 space-y-3">
@@ -520,7 +542,7 @@ export default function PosRetailPage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl bg-slate-50 px-4 py-3 text-left text-sm text-slate-600"
+                    className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-left text-sm text-slate-600 dark:text-slate-400"
                   >
                     {item}
                   </div>
@@ -528,15 +550,15 @@ export default function PosRetailPage() {
               </div>
             </div>
 
-            <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
-              <p className="text-left font-semibold text-slate-950">
+            <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+              <p className="text-left font-semibold text-slate-950 dark:text-white">
                 Store workflow
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {["Pick", "Pack", "Ship", "Invoice"].map((item) => (
                   <div
                     key={item}
-                    className="rounded-2xl bg-linear-to-br from-cyan-50 to-emerald-50 px-4 py-5 text-sm font-semibold text-slate-700"
+                    className="rounded-2xl bg-linear-to-br from-cyan-50 to-emerald-50 dark:from-cyan-950/30 dark:to-emerald-950/30 px-4 py-5 text-sm font-semibold text-slate-700 dark:text-slate-300"
                   >
                     {item}
                   </div>
@@ -547,12 +569,18 @@ export default function PosRetailPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f7fb] py-20">
+      <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
-            All the <HandCircle color="border-teal-400">features</HandCircle>
+            All the{" "}
+            <HandCircle color="border-teal-400 dark:border-teal-500">
+              features
+            </HandCircle>
             <br />
-            done <HandUnderline color="bg-sky-400">right.</HandUnderline>
+            done{" "}
+            <HandUnderline color="bg-sky-400 dark:bg-sky-500">
+              right.
+            </HandUnderline>
           </ScriptHeading>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -562,17 +590,17 @@ export default function PosRetailPage() {
               return (
                 <div
                   key={feature.title}
-                  className="group rounded-4xl border border-white bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="group rounded-4xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400">
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                     {feature.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                  <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
                     {feature.description}
                   </p>
                 </div>
@@ -582,7 +610,7 @@ export default function PosRetailPage() {
 
           <Link
             href="/features"
-            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-800"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
           >
             See all features
             <ArrowRight className="h-4 w-4" />
@@ -592,10 +620,12 @@ export default function PosRetailPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
-          <HandUnderline color="bg-sky-400">app</HandUnderline>.
+          One{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-500">need</HandUnderline>
+          , one{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-500">app</HandUnderline>.
         </ScriptHeading>
-        <p className="mt-3 max-w-xl text-slate-600">
+        <p className="mt-3 max-w-xl text-slate-600 dark:text-slate-300">
           Expand your retail workflow across the Adon ERP ecosystem.
         </p>
 
@@ -606,18 +636,20 @@ export default function PosRetailPage() {
             return (
               <div
                 key={app.title}
-                className="rounded-4xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-cyan-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-cyan-600 dark:text-cyan-400">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900">
+                    <h3 className="font-semibold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500">{app.desc}</p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                      {app.desc}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -627,7 +659,7 @@ export default function PosRetailPage() {
 
         <Link
           href="/apps"
-          className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-800"
+          className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
         >
           See all apps
           <ArrowRight className="h-4 w-4" />
@@ -635,9 +667,9 @@ export default function PosRetailPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 px-8 py-10 shadow-xl backdrop-blur-sm">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 text-cyan-600">
+        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.2)]">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
 
@@ -645,7 +677,7 @@ export default function PosRetailPage() {
               Join modern retailers
             </ScriptHeading>
 
-            <p className="mt-3 text-base text-slate-600">
+            <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
               Retail teams use Adon POS to sell faster, manage stock, and serve
               customers with a connected business system.
             </p>
@@ -663,7 +695,7 @@ export default function PosRetailPage() {
         id="get-started"
         className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8"
       >
-        <Sparkles className="mx-auto mb-6 h-10 w-10 text-cyan-600" />
+        <Sparkles className="mx-auto mb-6 h-10 w-10 text-cyan-600 dark:text-cyan-400" />
 
         <ScriptHeading>
           Unleash
@@ -671,7 +703,7 @@ export default function PosRetailPage() {
           your growth potential
         </ScriptHeading>
 
-        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
+        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
           Build a connected retail operation with POS, inventory, customer
           loyalty, ecommerce, and accounting in one Adon ERP workspace.
         </p>
@@ -679,7 +711,7 @@ export default function PosRetailPage() {
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <Link
             href="/pricing"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
           >
             Start Free Trial
             <ArrowRight className="h-4 w-4" />
@@ -687,14 +719,14 @@ export default function PosRetailPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
           >
             Contact Sales
           </Link>
         </div>
 
-        <p className="mt-5 text-sm text-slate-500">
-          Free trial available ·  · Instant access
+        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
+          Free trial available · No credit card required · Instant access
         </p>
       </section>
     </main>
