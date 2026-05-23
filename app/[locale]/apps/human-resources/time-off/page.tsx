@@ -123,11 +123,11 @@ const requests = [
 
 export default function TimeOffLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Time off{" "}
@@ -136,7 +136,7 @@ export default function TimeOffLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Manage leave requests, approvals, allocations, holidays, and team
             availability in one simple HR workspace.
           </p>
@@ -151,7 +151,7 @@ export default function TimeOffLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
               Meet an advisor
             </Link>
@@ -166,11 +166,11 @@ export default function TimeOffLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <CalendarDays className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Time Off</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Time Off</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     My Time Off / Management / Reporting / Configuration
                   </span>
@@ -199,8 +199,8 @@ export default function TimeOffLandingSections() {
                   ))}
                 </div>
 
-                <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                     <span>Employee</span>
                     <span>Type</span>
                     <span>Start</span>
@@ -268,13 +268,13 @@ export default function TimeOffLandingSections() {
                   ].map((row) => (
                     <div
                       key={`${row[0]}-${row[2]}`}
-                      className="grid grid-cols-7 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                      className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
-                      <span className="font-bold text-slate-900">{row[0]}</span>
-                      <span className="text-slate-600">{row[1]}</span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">{row[0]}</span>
+                      <span className="text-slate-600 dark:text-slate-300">{row[1]}</span>
                       <span className="text-slate-500">{row[2]}</span>
                       <span className="text-slate-500">{row[3]}</span>
-                      <span className="font-bold text-slate-900">{row[4]}</span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">{row[4]}</span>
                       <span className="text-slate-500">{row[5]}</span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
@@ -292,7 +292,7 @@ export default function TimeOffLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 text-[#714b67] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -302,10 +302,10 @@ export default function TimeOffLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Always be ready
@@ -316,14 +316,14 @@ export default function TimeOffLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Customize leave types and absence forms so every request collects
             the right information from the start.
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-4xl items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)]">
-              <p className="mb-5 text-left font-bold text-slate-900">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)]">
+              <p className="mb-5 text-left font-bold text-slate-900 dark:text-slate-100">
                 Time Off Types
               </p>
 
@@ -337,9 +337,9 @@ export default function TimeOffLandingSections() {
               ].map((item, index) => (
                 <div
                   key={item}
-                  className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-left text-sm"
+                  className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-sm"
                 >
-                  <span className="font-semibold text-slate-700">{item}</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">{item}</span>
                   <span
                     className={`h-3 w-3 rounded-full ${
                       index % 3 === 0
@@ -353,8 +353,8 @@ export default function TimeOffLandingSections() {
               ))}
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <h3 className="text-xl font-bold text-slate-900">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                 Training Time Off
               </h3>
 
@@ -365,9 +365,9 @@ export default function TimeOffLandingSections() {
                   ["Responsible", "Marc Demo"],
                   ["Validity", "Current year"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 p-4">
+                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900">
+                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
                   </div>
@@ -395,7 +395,7 @@ export default function TimeOffLandingSections() {
 
       <section className="relative bg-[#f3f4f7] py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <p
               className="mb-5 text-center text-lg font-bold text-rose-400"
               style={{ fontFamily: handwrittenFont }}
@@ -403,7 +403,7 @@ export default function TimeOffLandingSections() {
               See the breakdown of your available days
             </p>
 
-            <div className="grid grid-cols-6 gap-2 border-b border-slate-100 pb-3 text-center text-xs font-bold text-slate-400">
+            <div className="grid grid-cols-6 gap-2 border-b border-slate-100 dark:border-slate-700 pb-3 text-center text-xs font-bold text-slate-400">
               {["Jan", "Feb", "Mar", "Apr", "May", "Jun"].map((month) => (
                 <span key={month}>{month}</span>
               ))}
@@ -418,7 +418,7 @@ export default function TimeOffLandingSections() {
                       ? "bg-[#714b67] text-white"
                       : [5, 14, 25].includes(index)
                         ? "bg-amber-100 text-amber-700"
-                        : "bg-slate-50 text-slate-400"
+                        : "bg-slate-50 dark:bg-slate-800/40 text-slate-400"
                   }`}
                 >
                   <span>{index + 1}</span>
@@ -434,7 +434,7 @@ export default function TimeOffLandingSections() {
             <Clock3 className="mb-6 h-12 w-12 text-rose-400" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Do you have
@@ -445,7 +445,7 @@ export default function TimeOffLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Know exactly how many days are available, planned, taken, and
               pending before an employee submits a request.
             </p>
@@ -453,13 +453,13 @@ export default function TimeOffLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white dark:bg-slate-900 py-24">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300">
@@ -469,7 +469,7 @@ export default function TimeOffLandingSections() {
               few clicks away
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Employees can submit a leave request in seconds. Managers get the
               context they need to approve or refuse without confusion.
             </p>
@@ -483,7 +483,7 @@ export default function TimeOffLandingSections() {
               Track your time on request move
             </p>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center gap-4">
                 <img
                   src={avatars[3]}
@@ -491,7 +491,7 @@ export default function TimeOffLandingSections() {
                   className="h-14 w-14 rounded-xl object-cover"
                 />
                 <div>
-                  <p className="text-xl font-bold text-slate-900">
+                  <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
                     Anita Oliver
                   </p>
                   <p className="text-sm text-slate-500">
@@ -509,9 +509,9 @@ export default function TimeOffLandingSections() {
                   ["Approver", "Marc Demo"],
                   ["Status", "To Approve"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 p-4">
+                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900">
+                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
                   </div>
@@ -522,7 +522,7 @@ export default function TimeOffLandingSections() {
                 <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
                   Approve
                 </button>
-                <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+                <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                   Refuse
                 </button>
               </div>
@@ -531,12 +531,12 @@ export default function TimeOffLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <CheckCircle2 className="mx-auto h-12 w-12 text-[#02a6a6]" />
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Review,{" "}
@@ -546,18 +546,18 @@ export default function TimeOffLandingSections() {
             , done
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Managers can review all requests from one dashboard, approve
             quickly, and keep the team calendar accurate.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
                 {["Absent", "Present", "To Approve"].map(
                   (column, columnIndex) => (
-                    <div key={column} className="rounded-lg bg-slate-50 p-4">
-                      <p className="mb-5 text-left font-bold text-slate-900">
+                    <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                      <p className="mb-5 text-left font-bold text-slate-900 dark:text-slate-100">
                         {column}
                       </p>
 
@@ -565,7 +565,7 @@ export default function TimeOffLandingSections() {
                         {requests.slice(0, 3).map((request, index) => (
                           <div
                             key={`${column}-${request.name}`}
-                            className="flex gap-3 rounded-lg bg-white p-3 text-left shadow-sm"
+                            className="flex gap-3 rounded-lg bg-white dark:bg-slate-900 p-3 text-left shadow-sm"
                           >
                             <img
                               src={request.image}
@@ -574,7 +574,7 @@ export default function TimeOffLandingSections() {
                             />
 
                             <div className="min-w-0 flex-1">
-                              <p className="truncate text-sm font-bold text-slate-900">
+                              <p className="truncate text-sm font-bold text-slate-900 dark:text-slate-100">
                                 {request.name}
                               </p>
                               <p className="mt-1 text-xs text-slate-500">
@@ -615,7 +615,7 @@ export default function TimeOffLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -631,7 +631,7 @@ export default function TimeOffLandingSections() {
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
+            <div className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
                   <CalendarDays className="h-5 w-5" />
@@ -640,24 +640,24 @@ export default function TimeOffLandingSections() {
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold text-slate-900">
+              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100">
                 Accrual plans
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 Customize accrual levels, allocation rules, and yearly leave
                 calculations for your team.
               </p>
 
-              <div className="mt-8 space-y-4 rounded-lg bg-slate-50 p-5">
+              <div className="mt-8 space-y-4 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
                 {[
                   ["Monthly accrual", "1.5 days"],
                   ["Yearly allocation", "18 days"],
                   ["Carryover", "5 days"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-white p-4">
+                  <div key={label} className="rounded-lg bg-white dark:bg-slate-900 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900">
+                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
                   </div>
@@ -668,7 +668,7 @@ export default function TimeOffLandingSections() {
             {features.slice(1).map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
@@ -678,11 +678,11 @@ export default function TimeOffLandingSections() {
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -698,10 +698,10 @@ export default function TimeOffLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -714,7 +714,7 @@ export default function TimeOffLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -725,14 +725,14 @@ export default function TimeOffLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -751,7 +751,7 @@ export default function TimeOffLandingSections() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-[360px]">
             {avatars.map((avatar, index) => (
@@ -789,9 +789,9 @@ export default function TimeOffLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -807,7 +807,7 @@ export default function TimeOffLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   After realizing that our configured spreadsheets were not
                   looking for an HR application, we found exactly what we needed
                   with Adon Time Off.
@@ -821,7 +821,7 @@ export default function TimeOffLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Laura Johnson</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">Laura Johnson</p>
                     <p className="text-sm text-slate-500">HR director</p>
                   </div>
                 </div>
@@ -835,7 +835,7 @@ export default function TimeOffLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
@@ -875,7 +875,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -891,3 +891,5 @@ function FloatingNote({
     </div>
   );
 }
+
+

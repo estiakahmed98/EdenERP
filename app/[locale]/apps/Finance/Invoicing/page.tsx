@@ -116,7 +116,7 @@ const paymentGateways = [
 function ScriptHeading({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-slate-100 ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl dark:text-slate-100 ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -139,7 +139,7 @@ export default function InvoicingPage() {
   const [activeTab, setActiveTab] = useState("preview");
 
   return (
-    <main className="overflow-hidden bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)]" />
@@ -151,14 +151,14 @@ export default function InvoicingPage() {
               <SectionEyebrow icon={<Receipt className="h-4 w-4" />} label="Intelligent Invoicing" />
               
               <div className="space-y-5">
-                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl">
                   Invoicing made
                   <br />
                   <span className="text-emerald-600" style={{ fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive' }}>
                     effortlessly simple
                   </span>
                 </h1>
-                <p className="max-w-lg text-lg leading-relaxed text-slate-600">
+                <p className="max-w-lg text-lg leading-relaxed text-slate-600 dark:text-slate-300">
                   Automate your entire billing workflow — from creation to payment.
                   Save hours every week with smart templates, auto-reminders, and instant reconciliation.
                 </p>
@@ -174,7 +174,7 @@ export default function InvoicingPage() {
                 </Link>
                 <Link
                   href="#demo"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600"
                 >
                   <Play className="h-4 w-4" />
                   Watch Demo
@@ -193,7 +193,7 @@ export default function InvoicingPage() {
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <span className="ml-2 text-sm text-slate-600">from 15,000+ businesses</span>
+                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-300">from 15,000+ businesses</span>
                 </div>
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function InvoicingPage() {
               <div className="absolute -top-6 -right-8 h-32 w-32 rounded-full bg-emerald-100 blur-3xl" />
               <div className="absolute -bottom-10 -left-8 h-36 w-36 rounded-full bg-purple-100 blur-3xl" />
               
-              <div className="relative rounded-2xl border border-slate-200 bg-white shadow-2xl overflow-hidden">
+              <div className="relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white shadow-2xl overflow-hidden">
                 {/* Invoice Header */}
                 <div className="bg-linear-to-r from-emerald-600 to-cyan-600 px-6 py-4">
                   <div className="flex items-center justify-between text-white">
@@ -220,19 +220,19 @@ export default function InvoicingPage() {
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
                       <p className="text-xs text-slate-500 mb-1">Bill To</p>
-                      <p className="font-semibold text-slate-900">Acme Corporation</p>
-                      <p className="text-sm text-slate-600">123 Business Ave</p>
-                      <p className="text-sm text-slate-600">San Francisco, CA 94105</p>
+                      <p className="font-semibold text-slate-900 dark:text-slate-100">Acme Corporation</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300">123 Business Ave</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-300">San Francisco, CA 94105</p>
                     </div>
                     <div className="text-right">
                       <p className="text-xs text-slate-500 mb-1">Invoice Date</p>
-                      <p className="font-semibold text-slate-900">March 15, 2024</p>
+                      <p className="font-semibold text-slate-900 dark:text-slate-100">March 15, 2024</p>
                       <p className="text-xs text-slate-500 mt-2">Due Date</p>
-                      <p className="font-semibold text-slate-900">April 14, 2024</p>
+                      <p className="font-semibold text-slate-900 dark:text-slate-100">April 14, 2024</p>
                     </div>
                   </div>
                   
-                  <div className="mt-6 border-t border-slate-100 pt-4">
+                  <div className="mt-6 border-t border-slate-100 dark:border-slate-700 pt-4">
                     <div className="space-y-3">
                       {[
                         { item: "Enterprise Plan - Annual", qty: 1, price: "$2,400.00" },
@@ -241,15 +241,15 @@ export default function InvoicingPage() {
                       ].map((line, idx) => (
                         <div key={idx} className="flex justify-between text-sm">
                           <div>
-                            <span className="text-slate-900">{line.item}</span>
+                            <span className="text-slate-900 dark:text-slate-100">{line.item}</span>
                             <span className="text-slate-400 ml-2">×{line.qty}</span>
                           </div>
-                          <span className="text-slate-900">{line.price}</span>
+                          <span className="text-slate-900 dark:text-slate-100">{line.price}</span>
                         </div>
                       ))}
                     </div>
                     
-                    <div className="border-t border-slate-100 mt-4 pt-4">
+                    <div className="border-t border-slate-100 dark:border-slate-700 mt-4 pt-4">
                       <div className="flex justify-between text-lg font-bold">
                         <span>Total</span>
                         <span className="text-emerald-600">$3,500.00</span>
@@ -262,7 +262,7 @@ export default function InvoicingPage() {
                       <Send className="h-4 w-4" />
                       Send Invoice
                     </button>
-                    <button className="px-4 py-2 border border-slate-200 rounded-lg hover:bg-slate-50 transition">
+                    <button className="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:bg-slate-800/40 dark:hover:bg-slate-800/60 transition">
                       <Download className="h-4 w-4" />
                     </button>
                   </div>
@@ -270,11 +270,11 @@ export default function InvoicingPage() {
               </div>
               
               {/* Floating badges */}
-              <div className="absolute -top-3 -right-4 bg-white rounded-full px-3 py-1.5 shadow-lg border border-slate-200 flex items-center gap-1.5">
+              <div className="absolute -top-3 -right-4 bg-white rounded-full dark:bg-slate-900 px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <Zap className="h-4 w-4 text-emerald-600" />
                 <span className="text-xs font-medium">Instant delivery</span>
               </div>
-              <div className="absolute -bottom-3 -left-4 bg-white rounded-full px-3 py-1.5 shadow-lg border border-slate-200 flex items-center gap-1.5">
+              <div className="absolute -bottom-3 -left-4 bg-white rounded-full dark:bg-slate-900 px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-cyan-600" />
                 <span className="text-xs font-medium">Due in 30 days</span>
               </div>
@@ -296,7 +296,7 @@ export default function InvoicingPage() {
             <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
               Click. Invoice sent.
             </ScriptHeading>
-            <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Send professional invoices in seconds. Our intelligent system automates email delivery,
               payment reminders, and PDF generation — all with a single click.
             </p>
@@ -312,7 +312,7 @@ export default function InvoicingPage() {
                   <div className={`h-6 w-6 rounded-full bg-${item.color}-100 flex items-center justify-center`}>
                     <item.icon className={`h-3 w-3 text-${item.color}-600`} />
                   </div>
-                  <span className="text-slate-700">{item.text}</span>
+                  <span className="text-slate-700 dark:text-slate-200">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -325,8 +325,8 @@ export default function InvoicingPage() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden">
-              <div className="bg-white border-b border-slate-100 px-5 py-3">
+            <div className="bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <div className="bg-white border-b border-slate-100 dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 text-emerald-600" />
                   <span className="text-sm font-medium">Delivery Status</span>
@@ -336,25 +336,25 @@ export default function InvoicingPage() {
                 <div className="flex items-center gap-3 p-3 bg-emerald-50 rounded-xl">
                   <Send className="h-5 w-5 text-emerald-600" />
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900">Invoice sent to client@acme.com</p>
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100">Invoice sent to client@acme.com</p>
                     <p className="text-xs text-slate-500">March 15, 2024 • 10:32 AM</p>
                   </div>
                   <CheckCircle2 className="h-5 w-5 text-emerald-600" />
                 </div>
                 
-                <div className="border-t border-slate-100 pt-3">
+                <div className="border-t border-slate-100 dark:border-slate-700 pt-3">
                   <div className="flex justify-between text-sm py-2">
                     <span className="text-slate-500">Email opened</span>
-                    <span className="font-medium text-slate-900">2 minutes ago</span>
+                    <span className="font-medium text-slate-900 dark:text-slate-100">2 minutes ago</span>
                   </div>
                   <div className="flex justify-between text-sm py-2">
                     <span className="text-slate-500">Invoice viewed</span>
-                    <span className="font-medium text-slate-900">5 minutes ago</span>
+                    <span className="font-medium text-slate-900 dark:text-slate-100">5 minutes ago</span>
                   </div>
                 </div>
                 
                 <div className="bg-slate-100 rounded-lg p-3 text-center">
-                  <p className="text-sm text-slate-600">✨ Smart reminder scheduled in 7 days</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300">✨ Smart reminder scheduled in 7 days</p>
                 </div>
               </div>
             </div>
@@ -427,7 +427,7 @@ export default function InvoicingPage() {
             <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
               Your invoices in your <span className="text-emerald-600">pocket</span>
             </ScriptHeading>
-            <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Manage your entire invoicing workflow from anywhere. Create, send, and track
               invoices on the go with our native mobile apps.
             </p>
@@ -459,7 +459,7 @@ export default function InvoicingPage() {
             <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
               Get paid <span className="text-emerald-600">in a flash</span>
             </ScriptHeading>
-            <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Accept payments from anywhere in the world. Seamless integration with major
               payment gateways, automatic reconciliation, and real-time payment tracking.
             </p>
@@ -468,15 +468,15 @@ export default function InvoicingPage() {
               {["Instant payment confirmation", "Automatic reconciliation", "Multi-currency support", "Recurring billing"].map((feature, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-                  <span className="text-slate-700">{feature}</span>
+                  <span className="text-slate-700 dark:text-slate-200">{feature}</span>
                 </div>
               ))}
             </div>
             
             <div className="mt-6 grid grid-cols-2 gap-3">
               {paymentGateways.map((gateway, idx) => (
-                <div key={idx} className={`bg-linear-to-r ${gateway.gradient} bg-opacity-10 p-3 rounded-xl text-center border border-slate-100`}>
-                  <span className="text-sm font-semibold text-slate-700">{gateway.name}</span>
+                <div key={idx} className={`bg-linear-to-r ${gateway.gradient} bg-opacity-10 p-3 rounded-xl text-center border border-slate-100 dark:border-slate-700`}>
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">{gateway.name}</span>
                 </div>
               ))}
             </div>
@@ -531,8 +531,8 @@ export default function InvoicingPage() {
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <div className="bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-              <div className="bg-slate-50 border-b px-5 py-3">
+            <div className="bg-white rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden dark:bg-slate-900 dark:border-slate-700">
+              <div className="bg-slate-50 dark:bg-slate-800/40 border-b dark:bg-slate-800 dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Building2 className="h-4 w-4 text-emerald-600" />
@@ -548,14 +548,14 @@ export default function InvoicingPage() {
                   { name: "TechStart Inc", amount: "$1,200.00", status: "matched", date: "Yesterday" },
                   { name: "Global Solutions", amount: "$890.00", status: "overdue", date: "3 days ago" },
                 ].map((transaction, idx) => (
-                  <div key={idx} className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 transition">
+                  <div key={idx} className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:bg-slate-800/40 dark:hover:bg-slate-800/60 transition">
                     <div className="flex items-center gap-3">
                       <div className={`h-1.5 w-1.5 rounded-full ${
                         transaction.status === 'matched' ? 'bg-emerald-500' :
                         transaction.status === 'pending' ? 'bg-yellow-500' : 'bg-red-500'
                       }`} />
                       <div>
-                        <p className="font-medium text-sm text-slate-900">{transaction.name}</p>
+                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100">{transaction.name}</p>
                         <p className="text-xs text-slate-500">{transaction.date}</p>
                       </div>
                     </div>
@@ -591,7 +591,7 @@ export default function InvoicingPage() {
               <br />
               Automate follow-ups.
             </ScriptHeading>
-            <p className="mt-4 text-lg text-slate-600 leading-relaxed">
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               Never chase payments again. Smart bank synchronization combined with automated
               follow-ups ensures you get paid faster.
             </p>
@@ -602,7 +602,7 @@ export default function InvoicingPage() {
                   <Building2 className="h-5 w-5 text-emerald-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">28,000+ banks supported</h4>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">28,000+ banks supported</h4>
                   <p className="text-sm text-slate-500">Global coverage across 50+ countries</p>
                 </div>
               </div>
@@ -611,7 +611,7 @@ export default function InvoicingPage() {
                   <RefreshCw className="h-5 w-5 text-cyan-600" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">95% auto-matching rate</h4>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">95% auto-matching rate</h4>
                   <p className="text-sm text-slate-500">AI-powered transaction matching</p>
                 </div>
               </div>
@@ -627,7 +627,7 @@ export default function InvoicingPage() {
           <ScriptHeading className="mt-4">
             All the features done right.
           </ScriptHeading>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
             Everything you need to manage invoicing, payments, and reconciliation in one place.
           </p>
         </div>
@@ -640,14 +640,14 @@ export default function InvoicingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
               viewport={{ once: true }}
-              className="group relative bg-white rounded-xl p-5 border border-slate-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-white rounded-xl p-5 border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className={`absolute inset-0 bg-linear-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 rounded-xl transition-opacity`} />
               <div className="relative">
                 <div className={`h-10 w-10 rounded-xl bg-linear-to-br ${feature.gradient} bg-opacity-10 flex items-center justify-center mb-3`}>
-                  <feature.icon className="h-5 w-5 text-slate-700" />
+                  <feature.icon className="h-5 w-5 text-slate-700 dark:text-slate-200" />
                 </div>
-                <h3 className="font-semibold text-slate-900 mb-1">{feature.title}</h3>
+                <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">{feature.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{feature.description}</p>
               </div>
             </motion.div>
@@ -665,20 +665,20 @@ export default function InvoicingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="bg-slate-50 rounded-2xl p-6 border border-slate-200"
+              className="bg-slate-50 dark:bg-slate-800/40 rounded-2xl p-6 border border-slate-200 dark:border-slate-700"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-slate-600 leading-relaxed mb-4">"{testimonial.content}"</p>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">"{testimonial.content}"</p>
               <div className="flex items-center gap-3">
                 <div className="h-10 w-10 rounded-full bg-slate-300 overflow-hidden">
                   <img src={testimonial.avatar} alt="" className="h-full w-full object-cover" />
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900 text-sm">{testimonial.name}</p>
+                  <p className="font-semibold text-slate-900 dark:text-slate-100 text-sm">{testimonial.name}</p>
                   <p className="text-xs text-slate-500">{testimonial.role}</p>
                 </div>
               </div>
@@ -706,14 +706,14 @@ export default function InvoicingPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 dark:text-slate-100 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
               >
                 Start Free Trial
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm text-white px-6 py-3 font-semibold border border-white/20 hover:bg-white/20 transition"
+                className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm dark:bg-white/5 text-white px-6 py-3 font-semibold border border-white/20 hover:bg-white/20 transition"
               >
                 Contact Sales
               </Link>
@@ -728,3 +728,5 @@ export default function InvoicingPage() {
     </main>
   );
 }
+
+

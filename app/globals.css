@@ -4,6 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --purple: #714b67;
+  --purple-light: #f3eef1;
+  --purple-dark: #5a3854;
+  --teal: #02cfc3;
+  --cream: #faf9f7;
+  --gray-bg: #f3f4f7;
+  --ink: #1a1a2e;
+  --muted: #64748b;
   --background: oklch(0.98 0.001 250);
   --foreground: oklch(0.18 0.01 250);
   --card: oklch(1 0 0);
@@ -40,6 +48,11 @@
 }
 
 .dark {
+  --cream: #0b1120;
+  --gray-bg: #111827;
+  --ink: #e5e7eb;
+  --muted: #94a3b8;
+  --purple-light: #1f1521;
   --background: oklch(0.15 0.01 250);
   --foreground: oklch(0.95 0.01 250);
   --card: oklch(0.2 0.01 250);

@@ -109,11 +109,11 @@ const payrollRows = [
 
 export default function PayrollLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Payroll{" "}
@@ -122,7 +122,7 @@ export default function PayrollLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Automate payslips, contracts, work entries, deductions, benefits,
             and salary payments from one accurate payroll system.
           </p>
@@ -137,7 +137,7 @@ export default function PayrollLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
               Meet an advisor
             </Link>
@@ -152,11 +152,11 @@ export default function PayrollLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <WalletCards className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Payroll</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Payroll</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Payslips / Contracts / Work Entries / Reporting
                   </span>
@@ -185,8 +185,8 @@ export default function PayrollLandingSections() {
                   ))}
                 </div>
 
-                <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-6 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                  <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                     <span>Employee</span>
                     <span>Structure</span>
                     <span>Gross</span>
@@ -198,9 +198,9 @@ export default function PayrollLandingSections() {
                   {payrollRows.map((row, index) => (
                     <div
                       key={row[0]}
-                      className="grid grid-cols-6 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                      className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
-                      <span className="flex items-center gap-2 font-bold text-slate-900">
+                      <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-slate-100">
                         <img
                           src={avatars[index]}
                           alt={row[0]}
@@ -208,8 +208,8 @@ export default function PayrollLandingSections() {
                         />
                         {row[0]}
                       </span>
-                      <span className="text-slate-600">{row[1]}</span>
-                      <span className="font-bold text-slate-900">{row[2]}</span>
+                      <span className="text-slate-600 dark:text-slate-300">{row[1]}</span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">{row[2]}</span>
                       <span className="text-slate-500">{row[3]}</span>
                       <span className="font-bold text-emerald-600">
                         {row[4]}
@@ -230,7 +230,7 @@ export default function PayrollLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 text-[#714b67] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -252,7 +252,7 @@ export default function PayrollLandingSections() {
             <DashedArrow className="mb-8 h-24 w-24 rotate-[-18deg] text-slate-300" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Generate payslips
@@ -263,18 +263,18 @@ export default function PayrollLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Create payslips from employee contracts, work entries, attendance,
               time off, and salary rules without manual calculation.
             </p>
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white" />
+            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-900" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Payslip Batch</p>
+                <p className="font-bold text-slate-900 dark:text-slate-100">Payslip Batch</p>
                 <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
                   July Payroll
                 </span>
@@ -286,9 +286,9 @@ export default function PayrollLandingSections() {
                   ["Gross Pay", "$102k"],
                   ["Net Pay", "$82k"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 p-4">
+                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-2xl font-bold text-slate-900">
+                    <p className="mt-2 text-2xl font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
                   </div>
@@ -304,9 +304,9 @@ export default function PayrollLandingSections() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3"
+                    className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3"
                   >
-                    <span className="text-sm font-bold text-slate-700">
+                    <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
                       {item}
                     </span>
                     <CheckCircle2 className="h-5 w-5 text-emerald-500" />
@@ -322,12 +322,12 @@ export default function PayrollLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Calculator className="mx-auto h-12 w-12 text-[#02a6a6]" />
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Flexible{" "}
@@ -336,7 +336,7 @@ export default function PayrollLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Build payroll structures with basic wage, allowances, deductions,
             tax rules, reimbursements, benefits, and employer contributions.
           </p>
@@ -370,7 +370,7 @@ export default function PayrollLandingSections() {
                 return (
                   <div
                     key={item.title}
-                    className="rounded-xl border border-slate-200 bg-white p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                    className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
                   >
                     <div
                       className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${item.color}`}
@@ -383,7 +383,7 @@ export default function PayrollLandingSections() {
                     </p>
 
                     <p
-                      className="mt-2 text-4xl font-bold text-slate-900"
+                      className="mt-2 text-4xl font-bold text-slate-900 dark:text-slate-100"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       {item.amount}
@@ -396,13 +396,13 @@ export default function PayrollLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white dark:bg-slate-900 py-24">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Work entries
@@ -413,13 +413,13 @@ export default function PayrollLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Connect contracts, attendance, planning, and time off to create
               accurate payroll inputs before payslips are calculated.
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
                 [
@@ -434,11 +434,11 @@ export default function PayrollLandingSections() {
               ].map(([name, hours, status, color]) => (
                 <div
                   key={name}
-                  className="rounded-lg bg-slate-50 p-4 text-left"
+                  className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
                   <div className="flex items-center justify-between">
-                    <p className="font-bold text-slate-900">{name}</p>
-                    <span className="font-bold text-slate-700">{hours}</span>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">{name}</p>
+                    <span className="font-bold text-slate-700 dark:text-slate-200">{hours}</span>
                   </div>
 
                   <span
@@ -458,11 +458,11 @@ export default function PayrollLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Employee Payslip</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">Employee Payslip</p>
               <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                 Ready
               </span>
@@ -475,7 +475,7 @@ export default function PayrollLandingSections() {
                 className="h-14 w-14 rounded-xl object-cover"
               />
               <div>
-                <p className="text-xl font-bold text-slate-900">
+                <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
                   Audrey Peterson
                 </p>
                 <p className="text-sm text-slate-500">July 2026 Payslip</p>
@@ -492,12 +492,12 @@ export default function PayrollLandingSections() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-sm"
+                  className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                 >
-                  <span className="font-semibold text-slate-700">{label}</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">{label}</span>
                   <span
                     className={`font-bold ${
-                      value.startsWith("-") ? "text-rose-500" : "text-slate-900"
+                      value.startsWith("-") ? "text-rose-500" : "text-slate-900 dark:text-slate-100"
                     }`}
                   >
                     {value}
@@ -520,7 +520,7 @@ export default function PayrollLandingSections() {
             <FileCheck2 className="mb-6 h-12 w-12 text-[#02a6a6]" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Clear payslips,
@@ -531,7 +531,7 @@ export default function PayrollLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Give employees transparent payslips with earnings, deductions,
               benefits, worked time, and net salary clearly explained.
             </p>
@@ -544,7 +544,7 @@ export default function PayrollLandingSections() {
           <BarChart3 className="mx-auto h-12 w-12 text-sky-500" />
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Payroll reporting
@@ -554,20 +554,20 @@ export default function PayrollLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Understand salary cost, taxes, departments, deductions, and payroll
             trends with clean visual reporting.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+          <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Payroll Analysis</p>
+              <p className="font-bold text-slate-900 dark:text-slate-100">Payroll Analysis</p>
               <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
                 Monthly
               </span>
             </div>
 
-            <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 p-5">
+            <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
               {[55, 90, 125, 105, 155].map((height, index) => (
                 <div key={index} className="flex flex-1 flex-col items-center">
                   <div
@@ -598,7 +598,7 @@ export default function PayrollLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -617,7 +617,7 @@ export default function PayrollLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
@@ -627,11 +627,11 @@ export default function PayrollLandingSections() {
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -647,10 +647,10 @@ export default function PayrollLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -663,7 +663,7 @@ export default function PayrollLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -674,14 +674,14 @@ export default function PayrollLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -700,7 +700,7 @@ export default function PayrollLandingSections() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-[360px]">
             {avatars.map((avatar, index) => (
@@ -738,9 +738,9 @@ export default function PayrollLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -756,7 +756,7 @@ export default function PayrollLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Payroll used to take days of spreadsheet checks. Now payslips,
                   deductions, work entries, and salary reports are generated in
                   one place.
@@ -770,7 +770,7 @@ export default function PayrollLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Laura Johnson</p>
+                    <p className="font-bold text-slate-900 dark:text-slate-100">Laura Johnson</p>
                     <p className="text-sm text-slate-500">HR director</p>
                   </div>
                 </div>
@@ -784,7 +784,7 @@ export default function PayrollLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Pay your team
@@ -823,7 +823,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -865,3 +865,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

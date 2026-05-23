@@ -56,11 +56,11 @@ const avatars = [
 
 export default function PerformanceLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Performance{" "}
@@ -69,7 +69,7 @@ export default function PerformanceLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Unlock your team&apos;s full potential with 360° feedback, real-time
             goals, and automated appraisal cycles.
           </p>
@@ -84,7 +84,7 @@ export default function PerformanceLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
             >
               Meet an advisor
             </Link>
@@ -99,11 +99,11 @@ export default function PerformanceLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Trophy className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Appraisals</span>
+                  <span className="font-bold text-slate-900 dark:text-slate-100">Appraisals</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Appraisals / Goals / Reporting / Configuration
                   </span>
@@ -115,8 +115,8 @@ export default function PerformanceLandingSections() {
               </div>
 
               <div className="bg-[#f7f8fb] p-6">
-                <div className="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-100">
-                  <div className="border-b border-slate-100 bg-white px-6 py-4 text-left">
+                <div className="overflow-hidden rounded-xl bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                  <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-4 text-left">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <img
@@ -125,7 +125,7 @@ export default function PerformanceLandingSections() {
                           className="h-14 w-14 rounded-xl object-cover"
                         />
                         <div>
-                          <h3 className="text-xl font-bold text-slate-900">
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                             Anita Oliver
                           </h3>
                           <p className="text-sm text-slate-500">
@@ -141,8 +141,8 @@ export default function PerformanceLandingSections() {
                   </div>
 
                   <div className="grid gap-0 lg:grid-cols-2">
-                    <div className="border-r border-slate-100 p-6 text-left">
-                      <p className="font-bold text-slate-900">
+                    <div className="border-r border-slate-100 dark:border-slate-700 p-6 text-left">
+                      <p className="font-bold text-slate-900 dark:text-slate-100">
                         Employee&apos;s Feedback
                       </p>
 
@@ -153,7 +153,7 @@ export default function PerformanceLandingSections() {
                           "What would I need to improve my work?",
                         ].map((question) => (
                           <div key={question}>
-                            <p className="text-sm font-bold text-slate-900">
+                            <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                               {question}
                             </p>
                             <div className="mt-2 h-3 w-full rounded bg-slate-100" />
@@ -163,16 +163,16 @@ export default function PerformanceLandingSections() {
                       </div>
                     </div>
 
-                    <div className="bg-slate-50 p-6 text-left">
+                    <div className="bg-slate-50 dark:bg-slate-800/40 p-6 text-left">
                       <div className="mb-5 flex items-center justify-between">
-                        <p className="font-bold text-slate-900">
+                        <p className="font-bold text-slate-900 dark:text-slate-100">
                           Manager&apos;s Feedback
                         </p>
                         <CheckCircle2 className="h-5 w-5 text-emerald-500" />
                       </div>
 
-                      <div className="rounded-lg bg-white p-5 shadow-sm">
-                        <p className="text-sm font-bold text-slate-900">
+                      <div className="rounded-lg bg-white dark:bg-slate-900 p-5 shadow-sm">
+                        <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                           Feedback
                         </p>
                         <p className="mt-3 text-sm leading-6 text-slate-500">
@@ -181,8 +181,8 @@ export default function PerformanceLandingSections() {
                         </p>
                       </div>
 
-                      <div className="mt-5 rounded-lg bg-white p-5 shadow-sm">
-                        <p className="mb-4 text-sm font-bold text-slate-900">
+                      <div className="mt-5 rounded-lg bg-white dark:bg-slate-900 p-5 shadow-sm">
+                        <p className="mb-4 text-sm font-bold text-slate-900 dark:text-slate-100">
                           Evaluation
                         </p>
 
@@ -196,7 +196,7 @@ export default function PerformanceLandingSections() {
                             key={String(label)}
                             className="mb-3 flex items-center justify-between text-sm"
                           >
-                            <span className="font-medium text-slate-600">
+                            <span className="font-medium text-slate-600 dark:text-slate-300">
                               {label}
                             </span>
                             <span className="text-amber-400">
@@ -210,7 +210,7 @@ export default function PerformanceLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 text-[#714b67] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -220,17 +220,17 @@ export default function PerformanceLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
             Set up periodical employee evaluation
           </h2>
 
-          <p className="mt-3 text-lg font-bold text-slate-900">
+          <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
             Strengthen your company&apos;s key asset : employees
           </p>
 
-          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Maintain the motivational process in your company by doing
             periodical evaluations of your employees&apos; performance.
             Regularly assess your human resources to bring benefits for your
@@ -261,9 +261,9 @@ export default function PerformanceLandingSections() {
 
               return (
                 <div key={item.title} className="text-center">
-                  <p className="mb-5 font-bold text-slate-900">{item.title}</p>
+                  <p className="mb-5 font-bold text-slate-900 dark:text-slate-100">{item.title}</p>
 
-                  <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
+                  <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
                     {index === 0 && (
                       <div className="space-y-3 text-left">
                         <div className="rounded-lg bg-[#02cfc3]/20 p-4 text-sm font-bold text-[#02a6a6]">
@@ -282,7 +282,7 @@ export default function PerformanceLandingSections() {
                             className={`h-8 rounded ${
                               [7, 16, 24].includes(i)
                                 ? "bg-[#714b67]"
-                                : "bg-slate-50"
+                                : "bg-slate-50 dark:bg-slate-800/40"
                             }`}
                           />
                         ))}
@@ -292,7 +292,7 @@ export default function PerformanceLandingSections() {
                     {index === 2 && (
                       <div className="space-y-3 text-left">
                         <div className="flex items-center justify-between">
-                          <span className="font-bold text-slate-900">
+                          <span className="font-bold text-slate-900 dark:text-slate-100">
                             Evaluation
                           </span>
                           <span className="rounded bg-[#714b67] px-3 py-1 text-xs text-white">
@@ -308,7 +308,7 @@ export default function PerformanceLandingSections() {
                     <Icon className="mx-auto mt-5 h-6 w-6 text-[#714b67]" />
                   </div>
 
-                  <p className="mt-5 text-sm leading-6 text-slate-600">
+                  <p className="mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300">
                     {item.description}
                   </p>
                 </div>
@@ -320,28 +320,28 @@ export default function PerformanceLandingSections() {
 
       <section className="bg-[#f3f4f7] py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+          <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
             Build the right appraisal
           </h2>
 
-          <p className="mt-3 text-lg font-bold text-slate-900">
+          <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
             Ask the right questions and collect insightful information
           </p>
 
-          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Create the right survey to collect your employees answers. Prepare
             your own templates or choose from existing ones. Manage several
             types of evaluations: bottom-up, top-down, self-evaluations, and
             final evaluation by the manager.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
+          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
             <div className="bg-[#714b67] px-6 py-4 text-left text-white">
               <p className="font-bold">Appraisal</p>
             </div>
 
             <div className="overflow-hidden">
-              <div className="grid grid-cols-6 bg-slate-50 px-5 py-3 text-left text-xs font-bold uppercase text-slate-400">
+              <div className="grid grid-cols-6 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-xs font-bold uppercase text-slate-400">
                 <span>Employee</span>
                 <span>Department</span>
                 <span>Appraisal Deadline</span>
@@ -370,14 +370,14 @@ export default function PerformanceLandingSections() {
               ].map((row) => (
                 <div
                   key={row[0]}
-                  className="grid grid-cols-6 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                  className="grid grid-cols-6 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                 >
                   {row.map((cell, index) => (
                     <span
                       key={cell}
                       className={
                         index === 0
-                          ? "font-bold text-slate-900"
+                          ? "font-bold text-slate-900 dark:text-slate-100"
                           : index === 4
                             ? "w-fit rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600"
                             : "text-slate-500"
@@ -393,18 +393,18 @@ export default function PerformanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
               Design your own survey
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
               Use templates or create them your way
             </p>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Create your own surveys to gather important information and
               opinions from your employees. Quickly add questions, edit pages,
               and draft a useful survey using great built-in templates or making
@@ -412,8 +412,8 @@ export default function PerformanceLandingSections() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-            <p className="mb-5 text-left text-xl font-bold text-slate-900">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <p className="mb-5 text-left text-xl font-bold text-slate-900 dark:text-slate-100">
               Employee Appraisal Form
             </p>
 
@@ -427,9 +427,9 @@ export default function PerformanceLandingSections() {
               ].map((item, index) => (
                 <div
                   key={item}
-                  className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-sm"
+                  className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                 >
-                  <span className="font-semibold text-slate-700">{item}</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-200">{item}</span>
                   <span className="text-xs font-bold text-slate-400">
                     {index + 1} answer
                   </span>
@@ -440,9 +440,9 @@ export default function PerformanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
               <span className="rounded bg-[#02cfc3]/20 px-3 py-1 text-xs font-bold text-[#02a6a6]">
                 AUTOMATED APPRAISAL PLAN
@@ -453,7 +453,7 @@ export default function PerformanceLandingSections() {
             </div>
 
             <div className="text-left">
-              <p className="text-xl font-bold text-slate-900">Mitchell Admin</p>
+              <p className="text-xl font-bold text-slate-900 dark:text-slate-100">Mitchell Admin</p>
               <p className="mt-2 text-sm text-slate-500">
                 Appraisal plan generated automatically
               </p>
@@ -464,9 +464,9 @@ export default function PerformanceLandingSections() {
                 (item) => (
                   <div
                     key={item}
-                    className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3"
+                    className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3"
                   >
-                    <span className="text-sm font-bold text-slate-700">
+                    <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
                       {item}
                     </span>
                     <CheckCircle2 className="h-5 w-5 text-emerald-500" />
@@ -477,17 +477,17 @@ export default function PerformanceLandingSections() {
           </div>
 
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
               Automate the evaluation
               <br />
               process
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
               Make sure evaluations stick to the schedule
             </p>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Create evaluation plans with a clear schedule to automatically
               generate interview requests. Specify the employee, department or
               level in the hierarchy which can answer your surveys.
@@ -496,10 +496,10 @@ export default function PerformanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -512,7 +512,7 @@ export default function PerformanceLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -523,14 +523,14 @@ export default function PerformanceLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-slate-100">{app.title}</h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -549,7 +549,7 @@ export default function PerformanceLandingSections() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-[360px]">
             {avatars.map((avatar, index) => (
@@ -587,9 +587,9 @@ export default function PerformanceLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -606,7 +606,7 @@ export default function PerformanceLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
@@ -634,3 +634,5 @@ export default function PerformanceLandingSections() {
     </main>
   );
 }
+
+
