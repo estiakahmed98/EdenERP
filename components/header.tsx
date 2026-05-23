@@ -379,6 +379,7 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const navId = useId();
+  const headerRef = useRef<HTMLElement | null>(null);
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
   const { theme, resolvedTheme, setTheme } = useTheme();
 
@@ -386,6 +387,7 @@ export default function Header() {
   const [openDesktopMenu, setOpenDesktopMenu] = useState<MenuId | null>(null);
   const [mobileOpenMenu, setMobileOpenMenu] = useState<MenuId | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [mobileDrawerTop, setMobileDrawerTop] = useState(0);
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
@@ -417,6 +419,28 @@ export default function Header() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    function updateMobileDrawerTop() {
+      setMobileDrawerTop(headerRef.current?.offsetHeight ?? 0);
+    }
+
+    function onResize() {
+      updateMobileDrawerTop();
+
+      if (window.innerWidth >= 768) {
+        setMobileMenuOpen(false);
+        setMobileOpenMenu(null);
+      }
+    }
+
+    updateMobileDrawerTop();
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
   function toggleTheme() {
     const current = resolvedTheme ?? theme;
     setTheme(current === "dark" ? "light" : "dark");
@@ -430,33 +454,36 @@ export default function Header() {
   const isDark = mounted && (resolvedTheme ?? theme) === "dark";
 
   return (
-    <header className="bn-content sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl dark:border-slate-800 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    <header
+      ref={headerRef}
+      className="bn-content sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl dark:border-slate-800 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+    >
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group mb-4 inline-flex items-center gap-1 transition-transform duration-300 hover:scale-105"
+          className="group inline-flex min-w-0 items-center gap-1 transition-transform duration-300 hover:scale-105"
         >
           <Image
             src="/icon.svg"
             alt="Adon ERP icon"
             width={30}
             height={30}
-            className="h-10 w-10 mr-2 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+            className="mr-1.5 h-8 w-8 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 sm:mr-2 sm:h-10 sm:w-10"
             priority
           />
 
           <span
-            className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105"
+            className="relative inline-block whitespace-nowrap bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-2xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105 sm:text-3xl"
             style={{
               fontFamily:
                 '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
             }}
           >
-            Adon<span className="text-slate-400 mx-1.5">|</span>
+            Adon<span className="mx-1 text-slate-400 sm:mx-1.5">|</span>
           </span>
 
           <span
-            className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-4xl font-black uppercase tracking-wide text-transparent"
+            className="relative inline-block whitespace-nowrap bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-3xl font-black uppercase tracking-wide text-transparent sm:text-4xl"
             style={{
               fontFamily:
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -558,8 +585,8 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white/90 p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900/90">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <div className="hidden items-center gap-1 rounded-full border border-slate-200 bg-white/90 p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900/90 md:inline-flex">
             <button
               type="button"
               onClick={() => switchLanguage("en")}
@@ -618,7 +645,14 @@ export default function Header() {
       </nav>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[102px] z-50 max-h-[calc(100vh-102px)] overflow-y-auto border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-[#020817] px-4 py-5 md:hidden">
+        <div
+          className="fixed inset-x-0 z-50 overflow-x-hidden overflow-y-auto border-t border-slate-200 bg-white px-4 py-5 dark:border-slate-800 dark:bg-[#020817] md:hidden"
+          style={{
+            top: mobileDrawerTop,
+            maxHeight:
+              mobileDrawerTop > 0 ? `calc(100dvh - ${mobileDrawerTop}px)` : "100dvh",
+          }}
+        >
           <div className="mb-5 flex justify-end">
             <button
               type="button"
@@ -706,7 +740,7 @@ export default function Header() {
 
               {mobileOpenMenu === "industries" && (
                 <div className="mt-3 rounded-2xl border border-slate-300 dark:border-slate-800 bg-white dark:bg-[#071126] p-4">
-                  <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {industriesMegaMenu.map((column) => (
                       <div key={column.titleKey}>
                         <div
@@ -719,7 +753,7 @@ export default function Header() {
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+                                className="block break-words rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMenu(null);
@@ -732,7 +766,7 @@ export default function Header() {
                         </ul>
                       </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
             </div>
@@ -758,7 +792,7 @@ export default function Header() {
 
               {mobileOpenMenu === "community" && (
                 <div className="mt-3 rounded-2xl border border-slate-300 dark:border-slate-800 bg-white dark:bg-[#071126] p-4">
-                  <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {communityMegaMenu.map((column) => (
                       <div key={column.titleKey}>
                         <div
@@ -771,7 +805,7 @@ export default function Header() {
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+                                className="block break-words rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMenu(null);
@@ -784,7 +818,7 @@ export default function Header() {
                         </ul>
                       </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
             </div>
