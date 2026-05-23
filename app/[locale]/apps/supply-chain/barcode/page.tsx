@@ -100,16 +100,18 @@ const avatars = [
 
 export default function BarcodeLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Scan faster.{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="text-[#02a6a6]">Move smarter.</span>
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                Move smarter.
+              </span>
             </HandUnderline>
           </h1>
 
@@ -121,52 +123,48 @@ export default function BarcodeLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
-            Free, forever, with unlimited users
-          </p>
-
           <div className="relative mx-auto mt-16 max-w-5xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <ScanBarcode className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <span className="font-bold text-slate-900 dark:text-white">
                     Barcode
                   </span>
-                  <span className="hidden text-xs text-slate-400 sm:block">
+                  <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
                     Receipts / Delivery Orders / Inventory / Transfers
                   </span>
                 </div>
 
-                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                   Scan
                 </button>
               </div>
 
-              <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[260px_1fr]">
-                <aside className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-sm ring-1 ring-slate-100">
-                  <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-2xl bg-slate-50 dark:bg-slate-800/40">
-                    <QrCode className="h-24 w-24 text-slate-900 dark:text-white dark:text-slate-100" />
+              <div className="grid bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 lg:grid-cols-[260px_1fr]">
+                <aside className="rounded-xl bg-white dark:bg-slate-800 p-5 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                  <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-2xl bg-slate-50 dark:bg-slate-800/50">
+                    <QrCode className="h-24 w-24 text-slate-900 dark:text-white" />
                   </div>
 
-                  <p className="mt-5 text-center text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <p className="mt-5 text-center text-sm font-bold text-slate-900 dark:text-white">
                     Scan product barcode
                   </p>
 
@@ -179,9 +177,9 @@ export default function BarcodeLandingSections() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300"
+                        className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300"
                       >
-                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
                         {item}
                       </div>
                     ))}
@@ -191,10 +189,26 @@ export default function BarcodeLandingSections() {
                 <div className="mt-5 lg:ml-5 lg:mt-0">
                   <div className="grid gap-4 md:grid-cols-4">
                     {[
-                      ["Receipts", "48", "bg-sky-50 text-sky-600"],
-                      ["Pickings", "21", "bg-amber-50 text-amber-600"],
-                      ["Transfers", "36", "bg-emerald-50 text-emerald-600"],
-                      ["Errors", "02", "bg-rose-50 text-rose-600"],
+                      [
+                        "Receipts",
+                        "48",
+                        "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
+                      ],
+                      [
+                        "Pickings",
+                        "21",
+                        "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
+                      ],
+                      [
+                        "Transfers",
+                        "36",
+                        "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
+                      ],
+                      [
+                        "Errors",
+                        "02",
+                        "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
+                      ],
                     ].map(([label, value, color]) => (
                       <div
                         key={label}
@@ -206,8 +220,8 @@ export default function BarcodeLandingSections() {
                     ))}
                   </div>
 
-                  <div className="mt-5 overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
-                    <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                  <div className="mt-5 overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                    <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
                       <span>Barcode</span>
                       <span>Product</span>
                       <span>Lot/Serial</span>
@@ -274,18 +288,18 @@ export default function BarcodeLandingSections() {
                         <span className="text-slate-500 dark:text-slate-400">
                           {row[3]}
                         </span>
-                        <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        <span className="font-bold text-slate-900 dark:text-white">
                           {row[4]}
                         </span>
                         <span
                           className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                             row[5] === "Done"
-                              ? "bg-emerald-50 text-emerald-600"
+                              ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
                               : row[5] === "Ready"
-                                ? "bg-sky-50 text-sky-600"
+                                ? "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400"
                                 : row[5] === "Picked"
-                                  ? "bg-amber-50 text-amber-600"
-                                  : "bg-slate-100 text-slate-500 dark:text-slate-400"
+                                  ? "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
+                                  : "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400"
                           }`}
                         >
                           {row[5]}
@@ -296,7 +310,7 @@ export default function BarcodeLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -309,20 +323,20 @@ export default function BarcodeLandingSections() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-[#f3f4f7] py-20">
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <DashedArrow className="mb-8 h-24 w-24 rotate-[-18deg] text-slate-300" />
+            <DashedArrow className="mb-8 h-24 w-24 rotate-[-18deg] text-slate-300 dark:text-slate-600" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span>Receive</span>
+                <span className="dark:text-[#02cfc3]">Receive</span>
               </HandUnderline>{" "}
               products
               <br />
@@ -336,14 +350,14 @@ export default function BarcodeLandingSections() {
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900" />
+            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-800" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="font-bold text-slate-900 dark:text-white">
                   Incoming Shipment
                 </p>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
+                <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
                   Ready
                 </span>
               </div>
@@ -357,10 +371,12 @@ export default function BarcodeLandingSections() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
                   >
-                    <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                      {label}
+                    </p>
+                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white">
                       {value}
                     </p>
                   </div>
@@ -386,8 +402,8 @@ export default function BarcodeLandingSections() {
                     <span
                       className={`rounded-full px-3 py-1 text-center text-[10px] font-bold ${
                         status === "Validated"
-                          ? "bg-emerald-50 text-emerald-600"
-                          : "bg-amber-50 text-amber-600"
+                          ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
+                          : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
                       }`}
                     >
                       {status}
@@ -396,7 +412,7 @@ export default function BarcodeLandingSections() {
                 ))}
               </div>
 
-              <button className="mt-6 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white">
+              <button className="mt-6 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                 Validate receipt
               </button>
             </div>
@@ -404,20 +420,20 @@ export default function BarcodeLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
-        <div className="absolute left-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] lg:block" />
+      <section className="relative bg-white dark:bg-slate-950 py-20">
+        <div className="absolute left-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div className="flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-full bg-slate-100" />
+              <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-full bg-slate-100 dark:bg-slate-800" />
 
-              <div className="relative rotate-12 rounded-3xl bg-slate-900 p-4 shadow-2xl">
-                <div className="h-96 w-56 rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4">
-                  <div className="mx-auto h-3 w-16 rounded-full bg-slate-200" />
+              <div className="relative rotate-12 rounded-3xl bg-slate-900 dark:bg-slate-800 p-4 shadow-2xl">
+                <div className="h-96 w-56 rounded-2xl bg-white dark:bg-slate-900 p-4">
+                  <div className="mx-auto h-3 w-16 rounded-full bg-slate-200 dark:bg-slate-700" />
 
-                  <div className="mt-6 rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4 text-center">
-                    <QrCode className="mx-auto h-24 w-24 text-slate-900 dark:text-white dark:text-slate-100" />
+                  <div className="mt-6 rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4 text-center">
+                    <QrCode className="mx-auto h-24 w-24 text-slate-900 dark:text-white" />
                     <p className="mt-3 text-xs font-bold text-slate-500 dark:text-slate-400">
                       Scan package
                     </p>
@@ -431,31 +447,31 @@ export default function BarcodeLandingSections() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs font-bold text-slate-600 dark:text-slate-300"
+                        className="rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs font-bold text-slate-600 dark:text-slate-300"
                       >
                         {item}
                       </div>
                     ))}
                   </div>
 
-                  <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white">
+                  <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                     Scan next
                   </button>
                 </div>
               </div>
 
-              <ScanLine className="absolute -right-8 top-16 h-14 w-14 text-[#02a6a6]" />
+              <ScanLine className="absolute -right-8 top-16 h-14 w-14 text-[#02a6a6] dark:text-[#02cfc3]" />
             </div>
           </div>
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Pick, pack, and{" "}
-              <HandUnderline color="bg-amber-300">
-                <span>ship</span>
+              <HandUnderline color="bg-amber-300 dark:bg-amber-800">
+                <span className="dark:text-amber-200">ship</span>
               </HandUnderline>
               <br />
               with confidence
@@ -468,22 +484,22 @@ export default function BarcodeLandingSections() {
 
             <FloatingNote
               className="mt-10 z-30"
-              color="bg-amber-400"
+              color="bg-amber-400 dark:bg-amber-700"
               text="No more wrong packages"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Count inventory{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>without chaos</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">without chaos</span>
             </HandUnderline>
           </h2>
 
@@ -493,24 +509,27 @@ export default function BarcodeLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="absolute inset-0 translate-y-12 rounded-full bg-[#f3f4f7]" />
+            <div className="absolute inset-0 translate-y-12 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
             <div className="relative grid gap-6 md:grid-cols-3">
               {[
                 {
                   title: "Scan location",
                   icon: Warehouse,
-                  color: "bg-sky-100 text-sky-600",
+                  color:
+                    "bg-sky-100 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
                 },
                 {
                   title: "Scan product",
                   icon: ScanBarcode,
-                  color: "bg-[#02cfc3] dark:bg-[#02cfc3]/30/20 text-[#02a6a6]",
+                  color:
+                    "bg-[#02cfc3] dark:bg-[#02cfc3]/30 text-[#02a6a6] dark:text-[#02cfc3]",
                 },
                 {
                   title: "Confirm quantity",
                   icon: CheckCircle2,
-                  color: "bg-emerald-100 text-emerald-600",
+                  color:
+                    "bg-emerald-100 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
                 },
               ].map((step, index) => {
                 const Icon = step.icon;
@@ -518,7 +537,7 @@ export default function BarcodeLandingSections() {
                 return (
                   <div
                     key={step.title}
-                    className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                    className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
                   >
                     <div
                       className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${step.color}`}
@@ -527,7 +546,7 @@ export default function BarcodeLandingSections() {
                     </div>
 
                     <h3
-                      className="mt-5 text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
+                      className="mt-5 text-2xl font-bold text-slate-900 dark:text-white"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       {step.title}
@@ -538,7 +557,7 @@ export default function BarcodeLandingSections() {
                     </p>
 
                     {index < 2 && (
-                      <ArrowRight className="absolute -right-5 top-1/2 hidden h-8 w-8 -translate-y-1/2 text-slate-300 md:block" />
+                      <ArrowRight className="absolute -right-5 top-1/2 hidden h-8 w-8 -translate-y-1/2 text-slate-300 dark:text-slate-600 md:block" />
                     )}
                   </div>
                 );
@@ -548,20 +567,20 @@ export default function BarcodeLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
-        <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
+      <section className="relative bg-white dark:bg-slate-950 py-20">
+        <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Full traceability
               <br />
               from{" "}
-              <HandUnderline color="bg-rose-300">
-                <span>barcode to delivery</span>
+              <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+                <span className="dark:text-rose-200">barcode to delivery</span>
               </HandUnderline>
             </h2>
 
@@ -573,12 +592,12 @@ export default function BarcodeLandingSections() {
           </div>
 
           <div className="relative">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-6 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="font-bold text-slate-900 dark:text-white">
                   Traceability Report
                 </p>
-                <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
+                <span className="rounded-full bg-sky-50 dark:bg-sky-950/50 px-3 py-1 text-xs font-bold text-sky-600 dark:text-sky-400">
                   Live
                 </span>
               </div>
@@ -596,14 +615,16 @@ export default function BarcodeLandingSections() {
                     className="grid grid-cols-[42px_1fr] gap-4"
                   >
                     <div className="flex flex-col items-center">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#714b67] text-xs font-bold text-white">
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#714b67] text-xs font-bold text-white dark:bg-[#8a5a7e]">
                         {index + 1}
                       </span>
-                      {index < 4 && <span className="h-8 w-px bg-slate-200" />}
+                      {index < 4 && (
+                        <span className="h-8 w-px bg-slate-200 dark:bg-slate-700" />
+                      )}
                     </div>
 
-                    <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-left">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white">
                         {type}
                       </p>
                       <p className="mt-1 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
@@ -618,29 +639,29 @@ export default function BarcodeLandingSections() {
               </div>
             </div>
 
-            <ScanBarcode className="absolute -bottom-8 right-8 h-14 w-14 text-amber-500" />
+            <ScanBarcode className="absolute -bottom-8 right-8 h-14 w-14 text-amber-500 dark:text-amber-400" />
           </div>
         </div>
       </section>
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>right.</span>
+              <span className="dark:text-[#02cfc3]">right.</span>
             </HandUnderline>
           </h2>
 
@@ -648,17 +669,17 @@ export default function BarcodeLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -671,26 +692,26 @@ export default function BarcodeLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>need</span>
+              <span className="dark:text-[#02cfc3]">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -705,14 +726,14 @@ export default function BarcodeLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -726,14 +747,14 @@ export default function BarcodeLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -741,7 +762,7 @@ export default function BarcodeLandingSections() {
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -752,7 +773,7 @@ export default function BarcodeLandingSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -763,7 +784,7 @@ export default function BarcodeLandingSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -771,9 +792,9 @@ export default function BarcodeLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -784,12 +805,14 @@ export default function BarcodeLandingSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                “
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   Barcode helped our warehouse team reduce manual mistakes,
                   speed up picking, and keep every product movement visible.
                 </p>
@@ -802,7 +825,7 @@ export default function BarcodeLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Andrew Ross
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -815,31 +838,31 @@ export default function BarcodeLandingSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Speed up
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">warehouse</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  warehouse
+                </span>
               </HandUnderline>{" "}
               flow
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -858,7 +881,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
