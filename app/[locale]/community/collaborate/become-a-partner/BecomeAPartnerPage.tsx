@@ -516,14 +516,15 @@ export default function BecomeAPartnerPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, amount: 0.15 }}
-                className="group relative overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1"
+                className="group relative overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-slate-950/45 dark:shadow-[0_20px_80px_rgba(0,0,0,0.55)]"
               >
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${type.accent} opacity-30 group-hover:opacity-40 transition-opacity`}
+                  className={`absolute inset-0 bg-gradient-to-br ${type.accent} opacity-30 group-hover:opacity-40 transition-opacity dark:hidden`}
                 />
+                <div className="absolute inset-0 hidden bg-gradient-to-br from-white/10 via-white/5 to-transparent opacity-40 transition-opacity group-hover:opacity-60 dark:block" />
 
                 <div className="relative space-y-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-card/90 shadow-sm">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border/60 bg-card/90 shadow-sm dark:border-white/10 dark:bg-white/5">
                     <Icon className="h-7 w-7 text-primary" />
                   </div>
 
