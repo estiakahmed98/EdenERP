@@ -524,7 +524,22 @@ export default function Header() {
                         </p>
                       </div>
 
-                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5">
+                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5 scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-transparent hover:scrollbar-thumb-slate-500">
+  <style jsx>{`
+    div::-webkit-scrollbar {
+      width: 8px;
+    }
+    div::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    div::-webkit-scrollbar-thumb {
+      background: #475569;
+      border-radius: 4px;
+    }
+    div::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+  `}</style>
                         <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                           {item.megaMenu.map((column) => (
                             <div key={column.titleKey}>

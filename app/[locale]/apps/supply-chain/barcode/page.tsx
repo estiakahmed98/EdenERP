@@ -215,21 +215,60 @@ export default function BarcodeLandingSections() {
                     </div>
 
                     {[
-                      ["BC-000421", "Office Chair", "LOT-24A", "WH/Stock", "28", "Done"],
-                      ["BC-000422", "Desk Lamp", "SN-9921", "WH/Input", "12", "Ready"],
-                      ["BC-000423", "Storage Box", "LOT-19C", "WH/Pack", "64", "Picked"],
-                      ["BC-000424", "Blue Sofa", "SN-4178", "WH/Output", "04", "Waiting"],
-                      ["BC-000425", "Wood Table", "LOT-77B", "WH/Stock", "18", "Done"],
+                      [
+                        "BC-000421",
+                        "Office Chair",
+                        "LOT-24A",
+                        "WH/Stock",
+                        "28",
+                        "Done",
+                      ],
+                      [
+                        "BC-000422",
+                        "Desk Lamp",
+                        "SN-9921",
+                        "WH/Input",
+                        "12",
+                        "Ready",
+                      ],
+                      [
+                        "BC-000423",
+                        "Storage Box",
+                        "LOT-19C",
+                        "WH/Pack",
+                        "64",
+                        "Picked",
+                      ],
+                      [
+                        "BC-000424",
+                        "Blue Sofa",
+                        "SN-4178",
+                        "WH/Output",
+                        "04",
+                        "Waiting",
+                      ],
+                      [
+                        "BC-000425",
+                        "Wood Table",
+                        "LOT-77B",
+                        "WH/Stock",
+                        "18",
+                        "Done",
+                      ],
                     ].map((row) => (
                       <div
                         key={row[0]}
                         className="grid grid-cols-6 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
                       >
-                        <span className="font-bold text-[#714b67]">{row[0]}</span>
+                        <span className="font-bold text-[#714b67]">
+                          {row[0]}
+                        </span>
                         <span className="text-slate-700">{row[1]}</span>
                         <span className="text-slate-500">{row[2]}</span>
                         <span className="text-slate-500">{row[3]}</span>
-                        <span className="font-bold text-slate-900">{row[4]}</span>
+                        <span className="font-bold text-slate-900">
+                          {row[4]}
+                        </span>
                         <span
                           className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                             row[5] === "Done"
@@ -671,7 +710,7 @@ export default function BarcodeLandingSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -739,9 +778,7 @@ export default function BarcodeLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900">Andrew Ross</p>
-                    <p className="text-sm text-slate-500">
-                      Warehouse manager
-                    </p>
+                    <p className="text-sm text-slate-500">Warehouse manager</p>
                   </div>
                 </div>
               </div>

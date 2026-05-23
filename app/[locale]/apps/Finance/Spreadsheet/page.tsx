@@ -27,32 +27,38 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const features = [
   {
     title: "Collaborative sheets",
-    description: "Work with your team in real time with controlled access and shared views.",
+    description:
+      "Work with your team in real time with controlled access and shared views.",
     icon: Users,
   },
   {
     title: "Smart formulas",
-    description: "Create calculations faster with formula suggestions and reusable logic.",
+    description:
+      "Create calculations faster with formula suggestions and reusable logic.",
     icon: WandSparkles,
   },
   {
     title: "Live dashboards",
-    description: "Turn spreadsheet data into reports, charts, and business dashboards.",
+    description:
+      "Turn spreadsheet data into reports, charts, and business dashboards.",
     icon: BarChart3,
   },
   {
     title: "Data validation",
-    description: "Keep every cell clean with dropdowns, rules, and approval-ready checks.",
+    description:
+      "Keep every cell clean with dropdowns, rules, and approval-ready checks.",
     icon: CheckCircle2,
   },
   {
     title: "ERP data sync",
-    description: "Connect sales, inventory, finance, and projects without copy-paste.",
+    description:
+      "Connect sales, inventory, finance, and projects without copy-paste.",
     icon: RefreshCw,
   },
   {
     title: "Secure sharing",
-    description: "Share reports safely with role-based access and protected ranges.",
+    description:
+      "Share reports safely with role-based access and protected ranges.",
     icon: Lock,
   },
 ];
@@ -60,7 +66,11 @@ const features = [
 const apps = [
   { title: "Sales", desc: "Pipeline and revenue sheets", icon: BarChart3 },
   { title: "Inventory", desc: "Stock planning and forecasts", icon: Database },
-  { title: "Accounting", desc: "Budgets and cash tracking", icon: FileSpreadsheet },
+  {
+    title: "Accounting",
+    desc: "Budgets and cash tracking",
+    icon: FileSpreadsheet,
+  },
   { title: "Projects", desc: "Task planning and workload", icon: Grid3X3 },
   { title: "CRM", desc: "Customer analysis", icon: Users },
   { title: "Reports", desc: "Live dashboards", icon: PieChart },
@@ -75,7 +85,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl dark:text-slate-100 ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -93,8 +103,8 @@ function SectionEyebrow({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-700 shadow-sm ring-1 ring-cyan-100">
-      <span className="text-cyan-500">{icon}</span>
+    <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50 dark:bg-cyan-950/40 px-4 py-2 text-sm font-semibold text-cyan-700 dark:text-cyan-300 shadow-sm ring-1 ring-cyan-100 dark:ring-cyan-800">
+      <span className="text-cyan-500 dark:text-cyan-400">{icon}</span>
       {label}
     </div>
   );
@@ -102,27 +112,27 @@ function SectionEyebrow({
 
 function SpreadsheetMockup() {
   return (
-    <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white shadow-[0_40px_100px_rgba(15,23,42,0.14)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
+    <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
-          <FileSpreadsheet className="h-5 w-5 text-cyan-600" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+          <FileSpreadsheet className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
+          <span className="text-sm font-semibold text-slate-800 dark:text-white">
             Adon Spreadsheet
           </span>
         </div>
-        <div className="flex items-center gap-2 text-xs text-slate-500">
-          <span className="rounded-full bg-emerald-100 px-2 py-1 text-emerald-700">
+        <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+          <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-1 text-emerald-700 dark:text-emerald-400">
             Live
           </span>
           <Share2 className="h-4 w-4" />
         </div>
       </div>
 
-      <div className="grid grid-cols-[120px_repeat(5,1fr)] border-b border-slate-100 dark:border-slate-700 text-xs">
+      <div className="grid grid-cols-[120px_repeat(5,1fr)] border-b border-slate-100 dark:border-slate-800 text-xs">
         {["Metric", "Jan", "Feb", "Mar", "Apr", "Total"].map((item) => (
           <div
             key={item}
-            className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 font-semibold text-slate-500"
+            className="border-r border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 font-semibold text-slate-500 dark:text-slate-400"
           >
             {item}
           </div>
@@ -142,11 +152,11 @@ function SpreadsheetMockup() {
           {row.map((cell, cellIndex) => (
             <div
               key={cell}
-              className={`border-r border-t border-slate-100 dark:border-slate-700 px-4 py-3 ${
+              className={`border-r border-t border-slate-100 dark:border-slate-800 px-4 py-3 ${
                 cellIndex === 0
-                  ? "font-semibold text-slate-800 dark:text-slate-100"
+                  ? "font-semibold text-slate-800 dark:text-white"
                   : index === 2
-                    ? "font-medium text-emerald-600"
+                    ? "font-medium text-emerald-600 dark:text-emerald-400"
                     : "text-slate-600 dark:text-slate-300"
               }`}
             >
@@ -157,12 +167,12 @@ function SpreadsheetMockup() {
       ))}
 
       <div className="grid gap-4 p-5 md:grid-cols-2">
-        <div className="rounded-2xl bg-cyan-50 p-4">
+        <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/30 p-4">
           <div className="mb-4 flex items-center justify-between">
-            <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+            <span className="text-sm font-semibold text-slate-800 dark:text-white">
               Revenue trend
             </span>
-            <LineChart className="h-4 w-4 text-cyan-600" />
+            <LineChart className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
           </div>
           <div className="flex h-28 items-end gap-3">
             {[35, 55, 48, 75, 68, 92].map((height, index) => (
@@ -175,30 +185,32 @@ function SpreadsheetMockup() {
           </div>
         </div>
 
-        <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
+        <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4">
           <div className="mb-3 flex items-center justify-between">
-            <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+            <span className="text-sm font-semibold text-slate-800 dark:text-white">
               Smart insights
             </span>
-            <Sparkles className="h-4 w-4 text-amber-500" />
+            <Sparkles className="h-4 w-4 text-amber-500 dark:text-amber-400" />
           </div>
           <div className="space-y-3">
-            {["Sales increased by 32%", "Marketing cost is stable", "Cashflow forecast is healthy"].map(
-              (item) => (
-                <div
-                  key={item}
-                  className="rounded-xl bg-white px-3 py-2 text-xs text-slate-600 dark:text-slate-300 shadow-sm"
-                >
-                  {item}
-                </div>
-              )
-            )}
+            {[
+              "Sales increased by 32%",
+              "Marketing cost is stable",
+              "Cashflow forecast is healthy",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-xl bg-white dark:bg-slate-800 px-3 py-2 text-xs text-slate-600 dark:text-slate-300 shadow-sm"
+              >
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-2xl ring-1 ring-slate-200">
-        <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600" />
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+        <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
   );
@@ -206,9 +218,9 @@ function SpreadsheetMockup() {
 
 export default function SpreadsheetPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-linear(circle_at_18%_12%,rgba(6,182,212,0.14),transparent_26%),radial-linear(circle_at_85%_18%,rgba(16,185,129,0.12),transparent_25%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_18%_12%,rgba(6,182,212,0.14),transparent_26%),radial-gradient(circle_at_85%_18%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_18%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_85%_18%,rgba(16,185,129,0.07),transparent_25%)]" />
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <SectionEyebrow
@@ -217,10 +229,10 @@ export default function SpreadsheetPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
               Decisions,{" "}
               <span
-                className="text-cyan-600"
+                className="text-cyan-600 dark:text-cyan-400"
                 style={{
                   fontFamily:
                     '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -239,14 +251,14 @@ export default function SpreadsheetPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="#get-started"
-              className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
             >
               Start Free Trial
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="#demo"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
             >
               Watch Demo
             </Link>
@@ -260,13 +272,13 @@ export default function SpreadsheetPage() {
           >
             <SpreadsheetMockup />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
-              <Zap className="mr-2 h-4 w-4 text-cyan-600" />
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+              <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
               Real-time sync
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
-              <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600" />
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+              <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               No copy-paste
             </div>
           </motion.div>
@@ -298,12 +310,12 @@ export default function SpreadsheetPage() {
             return (
               <div
                 key={title as string}
-                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400">
                   <LucideIcon className="h-6 w-6" />
                 </div>
-                <p className="mt-4 text-sm font-semibold text-slate-800 dark:text-slate-100">
+                <p className="mt-4 text-sm font-semibold text-slate-800 dark:text-white">
                   {title as string}
                 </p>
               </div>
@@ -321,7 +333,7 @@ export default function SpreadsheetPage() {
             />
             <ScriptHeading className="mt-5">
               Your business’s pivot{" "}
-              <span className="text-cyan-600">moment</span>
+              <span className="text-cyan-600 dark:text-cyan-400">moment</span>
             </ScriptHeading>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
               Create dynamic pivot tables from ERP records and instantly reveal
@@ -330,23 +342,27 @@ export default function SpreadsheetPage() {
             </p>
 
             <div className="mt-8 space-y-4">
-              {["Group data by customer, product, region, or team", "Refresh reports without exporting CSV files", "Share protected views with managers"].map(
-                (item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-                    <span className="text-slate-700 dark:text-slate-200">{item}</span>
-                  </div>
-                )
-              )}
+              {[
+                "Group data by customer, product, region, or team",
+                "Refresh reports without exporting CSV files",
+                "Share protected views with managers",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                  <span className="text-slate-700 dark:text-slate-300">
+                    {item}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)]">
+          <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
             <div className="mb-4 flex items-center justify-between">
-              <span className="font-semibold text-slate-900 dark:text-slate-100">
+              <span className="font-semibold text-slate-900 dark:text-white">
                 Pivot analysis
               </span>
-              <RefreshCw className="h-4 w-4 text-cyan-600" />
+              <RefreshCw className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
             </div>
 
             <div className="space-y-3">
@@ -358,12 +374,20 @@ export default function SpreadsheetPage() {
               ].map((row) => (
                 <div
                   key={row[0]}
-                  className="grid grid-cols-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
+                  className="grid grid-cols-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
                 >
-                  <span className="font-medium text-slate-900 dark:text-slate-100">{row[0]}</span>
-                  <span className="text-slate-500">{row[1]}</span>
-                  <span className="font-semibold text-slate-800 dark:text-slate-100">{row[2]}</span>
-                  <span className="text-emerald-600">{row[3]}</span>
+                  <span className="font-medium text-slate-900 dark:text-white">
+                    {row[0]}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {row[1]}
+                  </span>
+                  <span className="font-semibold text-slate-800 dark:text-white">
+                    {row[2]}
+                  </span>
+                  <span className="text-emerald-600 dark:text-emerald-400">
+                    {row[3]}
+                  </span>
                 </div>
               ))}
             </div>
@@ -375,7 +399,9 @@ export default function SpreadsheetPage() {
         <div className="text-center">
           <ScriptHeading>
             Visualize, decide,{" "}
-            <span className="text-emerald-600">succeed</span>
+            <span className="text-emerald-600 dark:text-emerald-400">
+              succeed
+            </span>
           </ScriptHeading>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Build beautiful dashboards from spreadsheet data and keep every
@@ -383,7 +409,7 @@ export default function SpreadsheetPage() {
           </p>
         </div>
 
-        <div className="relative mx-auto mt-12 max-w-5xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)]">
+        <div className="relative mx-auto mt-12 max-w-5xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
           <div className="grid gap-5 md:grid-cols-4">
             {[
               ["Leads", "1,240", "+18%"],
@@ -391,19 +417,24 @@ export default function SpreadsheetPage() {
               ["Orders", "846", "+21%"],
               ["Profit", "$41.8k", "+27%"],
             ].map((stat) => (
-              <div key={stat[0]} className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
-                <p className="text-sm text-slate-500">{stat[0]}</p>
-                <p className="mt-2 text-2xl font-bold text-slate-950">
+              <div
+                key={stat[0]}
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4"
+              >
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  {stat[0]}
+                </p>
+                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">
                   {stat[1]}
                 </p>
-                <p className="mt-1 text-sm font-medium text-emerald-600">
+                <p className="mt-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
                   {stat[2]}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 rounded-2xl bg-linear-to-br from-cyan-50 to-emerald-50 p-6">
+          <div className="mt-6 rounded-2xl bg-linear-to-br from-cyan-50 to-emerald-50 dark:from-cyan-950/30 dark:to-emerald-950/30 p-6">
             <div className="flex h-56 items-end gap-4">
               {[38, 52, 44, 70, 62, 88, 74, 96].map((height, index) => (
                 <div
@@ -417,7 +448,7 @@ export default function SpreadsheetPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f7fb] py-20">
+      <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
             All the features
@@ -432,12 +463,12 @@ export default function SpreadsheetPage() {
               return (
                 <div
                   key={feature.title}
-                  className="group rounded-[1.6rem] border border-white bg-white p-6 shadow-sm dark:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-xl"
+                  className="group rounded-[1.6rem] border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600">
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                     {feature.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -452,8 +483,10 @@ export default function SpreadsheetPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          One <HandUnderline color="bg-sky-400">need</HandUnderline>, one{" "}
-          <HandUnderline color="bg-sky-400">app</HandUnderline>.
+          One{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-900">need</HandUnderline>
+          , one{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-900">app</HandUnderline>.
         </ScriptHeading>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -463,17 +496,19 @@ export default function SpreadsheetPage() {
             return (
               <div
                 key={app.title}
-                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white p-5 shadow-sm dark:bg-slate-900 transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-cyan-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800 text-cyan-600 dark:text-cyan-400">
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+                    <h3 className="font-semibold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500">{app.desc}</p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                      {app.desc}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -483,9 +518,9 @@ export default function SpreadsheetPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)]">
+        <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.2)]">
           <div className="mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 text-cyan-600">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
@@ -509,7 +544,7 @@ export default function SpreadsheetPage() {
         id="get-started"
         className="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8"
       >
-        <Sparkles className="mx-auto mb-6 h-10 w-10 text-cyan-600" />
+        <Sparkles className="mx-auto mb-6 h-10 w-10 text-cyan-600 dark:text-cyan-400" />
         <ScriptHeading>
           Unleash your
           <br />
@@ -523,7 +558,7 @@ export default function SpreadsheetPage() {
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <Link
             href="/pricing"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
           >
             Start Free Trial
             <ArrowRight className="h-4 w-4" />
@@ -531,7 +566,7 @@ export default function SpreadsheetPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
           >
             Contact Sales
           </Link>
@@ -540,5 +575,3 @@ export default function SpreadsheetPage() {
     </main>
   );
 }
-
-

@@ -193,12 +193,60 @@ export default function InventoryLandingSections() {
                   </div>
 
                   {[
-                    ["WH/IN/00034", "Office Chair", "Vendor", "Stock", "28", "Ready", "Today"],
-                    ["WH/OUT/00129", "Laptop Stand", "Stock", "Customer", "12", "Waiting", "Today"],
-                    ["WH/INT/00011", "Desk Lamp", "Aisle A", "Aisle B", "40", "Done", "Yesterday"],
-                    ["WH/IN/00035", "Storage Box", "Vendor", "Stock", "64", "Ready", "Tomorrow"],
-                    ["WH/OUT/00130", "Wood Table", "Stock", "Customer", "07", "Ready", "Friday"],
-                    ["WH/INT/00012", "Blue Sofa", "Zone 1", "Zone 3", "09", "Done", "Monday"],
+                    [
+                      "WH/IN/00034",
+                      "Office Chair",
+                      "Vendor",
+                      "Stock",
+                      "28",
+                      "Ready",
+                      "Today",
+                    ],
+                    [
+                      "WH/OUT/00129",
+                      "Laptop Stand",
+                      "Stock",
+                      "Customer",
+                      "12",
+                      "Waiting",
+                      "Today",
+                    ],
+                    [
+                      "WH/INT/00011",
+                      "Desk Lamp",
+                      "Aisle A",
+                      "Aisle B",
+                      "40",
+                      "Done",
+                      "Yesterday",
+                    ],
+                    [
+                      "WH/IN/00035",
+                      "Storage Box",
+                      "Vendor",
+                      "Stock",
+                      "64",
+                      "Ready",
+                      "Tomorrow",
+                    ],
+                    [
+                      "WH/OUT/00130",
+                      "Wood Table",
+                      "Stock",
+                      "Customer",
+                      "07",
+                      "Ready",
+                      "Friday",
+                    ],
+                    [
+                      "WH/INT/00012",
+                      "Blue Sofa",
+                      "Zone 1",
+                      "Zone 3",
+                      "09",
+                      "Done",
+                      "Monday",
+                    ],
                   ].map((row) => (
                     <div
                       key={row[0]}
@@ -368,7 +416,10 @@ export default function InventoryLandingSections() {
               accurately.
             </p>
 
-            <FloatingNote className="mt-10 z-30" text="Scan faster. Move smarter." />
+            <FloatingNote
+              className="mt-10 z-30"
+              text="Scan faster. Move smarter."
+            />
           </div>
         </div>
       </section>
@@ -447,42 +498,40 @@ export default function InventoryLandingSections() {
           </p>
 
           <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
-            {[
-              "Wave picking",
-              "Cluster picking",
-              "Batch picking",
-            ].map((title, cardIndex) => (
-              <div
-                key={title}
-                className="rounded-xl border border-slate-200 bg-white p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
-              >
-                <div className="grid h-52 grid-cols-5 gap-2 rounded-lg bg-slate-50 p-4">
-                  {Array.from({ length: 20 }).map((_, index) => (
-                    <div
-                      key={index}
-                      className={`rounded ${
-                        [2, 8, 13, 17].includes(index + cardIndex)
-                          ? "bg-[#02cfc3]"
-                          : [4, 11, 18].includes(index + cardIndex)
-                            ? "bg-amber-300"
-                            : "bg-slate-200"
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <h3
-                  className="mt-5 text-xl font-bold text-slate-900"
-                  style={{ fontFamily: handwrittenFont }}
+            {["Wave picking", "Cluster picking", "Batch picking"].map(
+              (title, cardIndex) => (
+                <div
+                  key={title}
+                  className="rounded-xl border border-slate-200 bg-white p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
                 >
-                  {title}
-                </h3>
+                  <div className="grid h-52 grid-cols-5 gap-2 rounded-lg bg-slate-50 p-4">
+                    {Array.from({ length: 20 }).map((_, index) => (
+                      <div
+                        key={index}
+                        className={`rounded ${
+                          [2, 8, 13, 17].includes(index + cardIndex)
+                            ? "bg-[#02cfc3]"
+                            : [4, 11, 18].includes(index + cardIndex)
+                              ? "bg-amber-300"
+                              : "bg-slate-200"
+                        }`}
+                      />
+                    ))}
+                  </div>
 
-                <p className="mt-2 text-sm leading-6 text-slate-500">
-                  Reduce unnecessary walking and pick items in smarter groups.
-                </p>
-              </div>
-            ))}
+                  <h3
+                    className="mt-5 text-xl font-bold text-slate-900"
+                    style={{ fontFamily: handwrittenFont }}
+                  >
+                    {title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                    Reduce unnecessary walking and pick items in smarter groups.
+                  </p>
+                </div>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -631,7 +680,7 @@ export default function InventoryLandingSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -700,9 +749,7 @@ export default function InventoryLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900">Andrew Ross</p>
-                    <p className="text-sm text-slate-500">
-                      Warehouse manager
-                    </p>
+                    <p className="text-sm text-slate-500">Warehouse manager</p>
                   </div>
                 </div>
               </div>

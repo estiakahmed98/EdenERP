@@ -39,8 +39,7 @@ const features = [
   },
   {
     title: "Theme selection",
-    description:
-      "Select the best theme for your business and community style.",
+    description: "Select the best theme for your business and community style.",
   },
   {
     title: "Notifications",
@@ -310,7 +309,9 @@ export default function ForumLandingSections() {
                           views
                         </div>
 
-                        <div className="text-sm text-slate-400">{post.time}</div>
+                        <div className="text-sm text-slate-400">
+                          {post.time}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -647,7 +648,7 @@ export default function ForumLandingSections() {
 
       <section className="relative overflow-hidden bg-white py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-[360px]">
+          <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -715,9 +716,7 @@ export default function ForumLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900">Mark Anderson</p>
-                    <p className="text-sm text-slate-500">
-                      CEO & Founder
-                    </p>
+                    <p className="text-sm text-slate-500">CEO & Founder</p>
                   </div>
                 </div>
               </div>
