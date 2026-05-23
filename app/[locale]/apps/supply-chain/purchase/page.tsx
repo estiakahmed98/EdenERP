@@ -96,16 +96,18 @@ const avatars = [
 
 export default function PurchaseLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Restock on time{" "}
-            <HandUnderline color="bg-rose-300">
-              <span className="text-rose-500">without overbuying</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="text-rose-500 dark:text-rose-400">
+                without overbuying
+              </span>
             </HandUnderline>
           </h1>
 
@@ -117,30 +119,26 @@ export default function PurchaseLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
-            Free, forever, with unlimited users
-          </p>
-
           <div className="relative mx-auto mt-16 max-w-4xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center justify-between">
                   <div>
                     <span
@@ -149,28 +147,36 @@ export default function PurchaseLandingSections() {
                     >
                       Purchase
                     </span>
-                    <p className="mt-1 text-xs text-slate-400">
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
                       RFQ / Purchase Orders / Vendors / Products / Bills
                     </p>
                   </div>
 
-                  <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+                  <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                     New RFQ
                   </button>
                 </div>
               </div>
 
-              <div className="bg-[#f7f8fb] p-6">
+              <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
                 <div className="mb-5 grid gap-3 sm:grid-cols-4">
                   {[
-                    ["RFQs", "16", "bg-[#714b67] text-white"],
-                    ["To Approve", "09", "bg-[#7f5f78] text-white"],
+                    ["RFQs", "16", "bg-[#714b67] text-white dark:bg-[#8a5a7e]"],
+                    [
+                      "To Approve",
+                      "09",
+                      "bg-[#7f5f78] text-white dark:bg-[#9b6a8f] dark:text-white",
+                    ],
                     [
                       "Orders",
                       "34",
-                      "bg-slate-100 text-slate-700 dark:text-slate-200",
+                      "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200",
                     ],
-                    ["Late", "03", "bg-rose-50 text-rose-600"],
+                    [
+                      "Late",
+                      "03",
+                      "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
+                    ],
                   ].map(([label, value, color]) => (
                     <div
                       key={label}
@@ -182,8 +188,8 @@ export default function PurchaseLandingSections() {
                   ))}
                 </div>
 
-                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
                     <span>Reference</span>
                     <span>Vendor</span>
                     <span>Buyer</span>
@@ -268,18 +274,18 @@ export default function PurchaseLandingSections() {
                       <span className="text-slate-500 dark:text-slate-400">
                         {row[4]}
                       </span>
-                      <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      <span className="font-bold text-slate-900 dark:text-white">
                         {row[5]}
                       </span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                           row[6] === "Received"
-                            ? "bg-emerald-50 text-emerald-600"
+                            ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
                             : row[6] === "Ordered"
-                              ? "bg-sky-50 text-sky-600"
+                              ? "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400"
                               : row[6] === "Approved"
-                                ? "bg-amber-50 text-amber-600"
-                                : "bg-slate-100 text-slate-500 dark:text-slate-400"
+                                ? "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
+                                : "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400"
                         }`}
                       >
                         {row[6]}
@@ -289,30 +295,30 @@ export default function PurchaseLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
 
             <FloatingNote
               className="mx-auto mt-12 z-30"
-              color="bg-amber-400"
+              color="bg-amber-400 dark:bg-amber-700"
               text="Never run out, never overbuy"
             />
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-[#f3f4f7] py-20">
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>Automated</span>
+              <span className="dark:text-[#02cfc3]">Automated</span>
             </HandUnderline>{" "}
             RFQs
             <br />
@@ -325,11 +331,11 @@ export default function PurchaseLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900" />
+            <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white dark:bg-slate-800" />
 
             <div className="relative grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
               <div className="space-y-6">
-                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm ring-1 ring-slate-100">
+                <div className="rounded-xl bg-white dark:bg-slate-800 p-6 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                   <div className="grid grid-cols-3 gap-4">
                     {[
                       ["RFQ", "12"],
@@ -338,7 +344,7 @@ export default function PurchaseLandingSections() {
                     ].map(([label, value]) => (
                       <div
                         key={label}
-                        className="rounded-lg bg-[#714b67] p-4 text-white"
+                        className="rounded-lg bg-[#714b67] dark:bg-[#8a5a7e] p-4 text-white"
                       >
                         <p className="text-xs font-bold opacity-80">{label}</p>
                         <p className="mt-2 text-2xl font-bold">{value}</p>
@@ -347,8 +353,8 @@ export default function PurchaseLandingSections() {
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <div className="rounded-xl bg-white dark:bg-slate-800 p-6 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                  <p className="font-bold text-slate-900 dark:text-white">
                     Replenishment rules
                   </p>
 
@@ -361,12 +367,12 @@ export default function PurchaseLandingSections() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
+                        className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
                       >
                         <span className="font-semibold text-slate-700 dark:text-slate-200">
                           {item}
                         </span>
-                        <span className="rounded-full bg-sky-50 px-3 py-1 text-[10px] font-bold text-sky-600">
+                        <span className="rounded-full bg-sky-50 dark:bg-sky-950/50 px-3 py-1 text-[10px] font-bold text-sky-600 dark:text-sky-400">
                           Auto RFQ
                         </span>
                       </div>
@@ -376,8 +382,8 @@ export default function PurchaseLandingSections() {
               </div>
 
               <div className="grid gap-6">
-                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <div className="rounded-xl bg-white dark:bg-slate-800 p-6 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                  <p className="font-bold text-slate-900 dark:text-white">
                     RFQ Status
                   </p>
 
@@ -391,7 +397,7 @@ export default function PurchaseLandingSections() {
                     ].map(([qty, status]) => (
                       <div
                         key={qty}
-                        className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
+                        className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
                       >
                         <span className="font-bold text-slate-700 dark:text-slate-200">
                           {qty}
@@ -399,8 +405,8 @@ export default function PurchaseLandingSections() {
                         <span
                           className={`rounded-full px-3 py-1 text-[10px] font-bold ${
                             status === "Purchased"
-                              ? "bg-emerald-50 text-emerald-600"
-                              : "bg-sky-50 text-sky-600"
+                              ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
+                              : "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400"
                           }`}
                         >
                           {status}
@@ -410,8 +416,8 @@ export default function PurchaseLandingSections() {
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <div className="rounded-xl bg-white dark:bg-slate-800 p-6 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                  <p className="font-bold text-slate-900 dark:text-white">
                     Smart actions
                   </p>
 
@@ -420,9 +426,9 @@ export default function PurchaseLandingSections() {
                       (item) => (
                         <div
                           key={item}
-                          className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300"
+                          className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300"
                         >
-                          <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                          <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
                           {item}
                         </div>
                       ),
@@ -435,10 +441,10 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Flexible purchase agreements,
@@ -452,39 +458,41 @@ export default function PurchaseLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="absolute inset-0 translate-y-16 rounded-full bg-[#f3f4f7]" />
+            <div className="absolute inset-0 translate-y-16 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <div className="flex flex-col justify-between gap-5 border-b border-slate-100 dark:border-slate-700 pb-5 md:flex-row">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <div className="flex flex-col justify-between gap-5 border-b border-slate-100 dark:border-slate-800 pb-5 md:flex-row">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
+                  <p className="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-slate-500">
                     Purchase Agreement
                   </p>
-                  <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">
                     P00023
                   </h3>
                 </div>
 
                 <div className="grid gap-3 text-sm md:grid-cols-2">
                   <div>
-                    <p className="text-xs font-bold text-slate-400">Vendor</p>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                      Vendor
+                    </p>
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Azure Interior
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-slate-400">
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
                       Agreement Type
                     </p>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Blanket Order
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 overflow-hidden rounded-lg ring-1 ring-slate-100">
-                <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+              <div className="mt-6 overflow-hidden rounded-lg ring-1 ring-slate-100 dark:ring-slate-700">
+                <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
                   <span>Product</span>
                   <span>Vendor Ref</span>
                   <span>Scheduled</span>
@@ -507,7 +515,7 @@ export default function PurchaseLandingSections() {
                         key={cell}
                         className={
                           index === 0
-                            ? "font-bold text-slate-900 dark:text-white dark:text-slate-100"
+                            ? "font-bold text-slate-900 dark:text-white"
                             : "text-slate-500 dark:text-slate-400"
                         }
                       >
@@ -521,8 +529,8 @@ export default function PurchaseLandingSections() {
 
             <DashedArrow className="mx-auto mt-10 h-24 w-24 rotate-90 text-[#714b67] dark:text-[#9b6a8f]/40" />
 
-            <div className="relative mt-8 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)]">
-              <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+            <div className="relative mt-8 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+              <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
                 <span>Order</span>
                 <span>Product</span>
                 <span>Vendor</span>
@@ -547,7 +555,7 @@ export default function PurchaseLandingSections() {
                         index === 0
                           ? "font-bold text-[#714b67] dark:text-[#9b6a8f]"
                           : index === 5
-                            ? "w-fit rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600"
+                            ? "w-fit rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400"
                             : "text-slate-500 dark:text-slate-400"
                       }
                     >
@@ -560,26 +568,26 @@ export default function PurchaseLandingSections() {
 
             <FloatingNote
               className="mx-auto mt-12 z-30"
-              color="bg-amber-400"
+              color="bg-amber-400 dark:bg-amber-700"
               text="Agreements make purchasing smooth"
             />
           </div>
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
-        <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
+      <section className="relative bg-white dark:bg-slate-950 py-20">
+        <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Charge vendors on
               <br />
-              <HandUnderline color="bg-rose-300">
-                <span>your terms</span>
+              <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+                <span className="dark:text-rose-200">your terms</span>
               </HandUnderline>
             </h2>
 
@@ -591,11 +599,11 @@ export default function PurchaseLandingSections() {
           </div>
 
           <div className="relative mx-auto w-full max-w-lg">
-            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900" />
+            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-800" />
 
             <div className="relative grid gap-5 sm:grid-cols-[0.8fr_1.1fr]">
-              <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] ring-1 ring-slate-100">
-                <p className="mb-5 text-left font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <div className="rounded-xl bg-white dark:bg-slate-800 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)] ring-1 ring-slate-100 dark:ring-slate-700">
+                <p className="mb-5 text-left font-bold text-slate-900 dark:text-white">
                   Payment terms
                 </p>
 
@@ -603,7 +611,7 @@ export default function PurchaseLandingSections() {
                   (item, index) => (
                     <div
                       key={item}
-                      className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs"
+                      className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs"
                     >
                       <span className="font-bold text-slate-700 dark:text-slate-200">
                         {item}
@@ -611,8 +619,8 @@ export default function PurchaseLandingSections() {
                       <span
                         className={`rounded-full px-2 py-1 text-[10px] font-bold ${
                           index < 2
-                            ? "bg-emerald-50 text-emerald-600"
-                            : "bg-amber-50 text-amber-600"
+                            ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
+                            : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
                         }`}
                       >
                         Active
@@ -622,8 +630,8 @@ export default function PurchaseLandingSections() {
                 )}
               </div>
 
-              <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] ring-1 ring-slate-100">
-                <p className="mb-5 text-left font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <div className="rounded-xl bg-white dark:bg-slate-800 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)] ring-1 ring-slate-100 dark:ring-slate-700">
+                <p className="mb-5 text-left font-bold text-slate-900 dark:text-white">
                   Vendor bills
                 </p>
 
@@ -635,7 +643,7 @@ export default function PurchaseLandingSections() {
                 ].map(([vendor, amount, status]) => (
                   <div
                     key={vendor}
-                    className="mb-3 grid grid-cols-[1fr_70px_70px] items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs"
+                    className="mb-3 grid grid-cols-[1fr_70px_70px] items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs"
                   >
                     <span className="font-bold text-slate-700 dark:text-slate-200">
                       {vendor}
@@ -646,10 +654,10 @@ export default function PurchaseLandingSections() {
                     <span
                       className={`rounded-full px-2 py-1 text-center text-[10px] font-bold ${
                         status === "Paid"
-                          ? "bg-emerald-50 text-emerald-600"
+                          ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
                           : status === "To Pay"
-                            ? "bg-amber-50 text-amber-600"
-                            : "bg-slate-100 text-slate-500 dark:text-slate-400"
+                            ? "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
+                            : "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400"
                       }`}
                     >
                       {status}
@@ -662,16 +670,16 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the small things that make
             <br />
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>procurement</span>
+              <span className="dark:text-[#02cfc3]">procurement</span>
             </HandUnderline>{" "}
             possible
           </h2>
@@ -701,10 +709,10 @@ export default function PurchaseLandingSections() {
             ].map((card, index) => (
               <div
                 key={card.title}
-                className={`relative mx-auto mb-0 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.10)] ${card.offset}`}
+                className={`relative mx-auto mb-0 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.10)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)] ${card.offset}`}
                 style={{ zIndex: 10 - index }}
               >
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="font-bold text-slate-900 dark:text-white">
                   {card.title}
                 </p>
 
@@ -714,10 +722,10 @@ export default function PurchaseLandingSections() {
                       key={tag}
                       className={`rounded-full px-3 py-1 text-xs font-bold ${
                         tagIndex === 0
-                          ? "bg-[#714b67] text-white"
+                          ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
                           : tagIndex === 1
-                            ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30/20 text-[#02a6a6]"
-                            : "bg-amber-50 text-amber-600"
+                            ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30 text-[#02a6a6] dark:text-[#02cfc3]"
+                            : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
                       }`}
                     >
                       {tag}
@@ -732,22 +740,22 @@ export default function PurchaseLandingSections() {
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>right.</span>
+              <span className="dark:text-[#02cfc3]">right.</span>
             </HandUnderline>
           </h2>
 
@@ -755,17 +763,17 @@ export default function PurchaseLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -778,26 +786,26 @@ export default function PurchaseLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>need</span>
+              <span className="dark:text-[#02cfc3]">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -812,14 +820,14 @@ export default function PurchaseLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -833,14 +841,14 @@ export default function PurchaseLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -848,7 +856,7 @@ export default function PurchaseLandingSections() {
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -859,7 +867,7 @@ export default function PurchaseLandingSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -870,7 +878,7 @@ export default function PurchaseLandingSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -878,9 +886,9 @@ export default function PurchaseLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -891,12 +899,14 @@ export default function PurchaseLandingSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                “
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   We successfully supply 70 restaurants through 1,000 orders a
                   day thanks to Adon Purchase.
                 </p>
@@ -909,7 +919,7 @@ export default function PurchaseLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Arthur King
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -922,31 +932,33 @@ export default function PurchaseLandingSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400"></p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
@@ -965,7 +977,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}

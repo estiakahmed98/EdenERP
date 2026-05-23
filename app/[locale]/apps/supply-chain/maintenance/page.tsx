@@ -59,16 +59,18 @@ const avatars = [
 
 export default function MaintenanceLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Plan Maintenance.{" "}
-            <HandUnderline color="bg-rose-300">
-              <span className="text-rose-500">Not Emergencies.</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="text-rose-500 dark:text-rose-400">
+                Not Emergencies.
+              </span>
             </HandUnderline>
           </h1>
 
@@ -80,46 +82,42 @@ export default function MaintenanceLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
-            Free, forever, with unlimited users
-          </p>
-
           <div className="relative mx-auto mt-16 max-w-5xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Wrench className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <span className="font-bold text-slate-900 dark:text-white">
                     Maintenance
                   </span>
-                  <span className="hidden text-xs text-slate-400 sm:block">
+                  <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
                     Dashboard / Requests / Equipment / Reporting
                   </span>
                 </div>
 
-                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                   New
                 </button>
               </div>
 
-              <div className="grid gap-4 bg-[#f7f8fb] p-6 md:grid-cols-4">
+              <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
                 {[
                   {
                     title: "New Request",
@@ -155,10 +153,10 @@ export default function MaintenanceLandingSections() {
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white">
                         {column.title}
                       </p>
-                      <span className="text-lg font-bold text-slate-400">
+                      <span className="text-lg font-bold text-slate-400 dark:text-slate-500">
                         +
                       </span>
                     </div>
@@ -167,18 +165,18 @@ export default function MaintenanceLandingSections() {
                       {column.cards.map((card, cardIndex) => (
                         <div
                           key={card}
-                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
                         >
-                          <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                          <p className="text-sm font-bold text-slate-900 dark:text-white">
                             {card}
                           </p>
-                          <p className="mt-1 text-xs text-slate-400">
+                          <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
                             Request #{columnIndex + 1}
                             {cardIndex + 1} / Equipment
                           </p>
 
                           <div className="mt-3 flex items-center justify-between">
-                            <div className="flex gap-1 text-amber-400">
+                            <div className="flex gap-1 text-amber-400 dark:text-amber-500">
                               {Array.from({ length: 3 }).map((_, index) => (
                                 <Star
                                   key={index}
@@ -204,23 +202,23 @@ export default function MaintenanceLandingSections() {
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
-            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-[#f3f4f7]" />
+            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-700 pb-3 text-center text-xs font-bold text-slate-400">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
                 {["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"].map(
                   (day) => (
                     <span key={day}>{day}</span>
@@ -234,10 +232,10 @@ export default function MaintenanceLandingSections() {
                     key={index}
                     className={`min-h-16 rounded-md p-1 text-left text-[10px] ${
                       [3, 10, 16, 18, 25, 29].includes(index)
-                        ? "bg-emerald-100 text-emerald-700"
+                        ? "bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400"
                         : [7, 14, 23].includes(index)
-                          ? "bg-purple-100 text-purple-700"
-                          : "bg-slate-50 dark:bg-slate-800/40 text-slate-400"
+                          ? "bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-400"
+                          : "bg-slate-50 dark:bg-slate-800/50 text-slate-400 dark:text-slate-500"
                     }`}
                   >
                     <span>{index + 1}</span>
@@ -254,13 +252,13 @@ export default function MaintenanceLandingSections() {
           </div>
 
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
               Automate preventive
               <br />
               maintenance
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
               to keep your line running.
             </p>
 
@@ -273,16 +271,16 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
               Organize your
               <br />
               maintenance requests
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
               with great kanban and calendar views.
             </p>
 
@@ -293,15 +291,15 @@ export default function MaintenanceLandingSections() {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="grid gap-4 md:grid-cols-3">
               {["New Request", "In Progress", "Repaired"].map(
                 (column, columnIndex) => (
                   <div
                     key={column}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
                   >
-                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white">
                       {column}
                     </p>
 
@@ -309,12 +307,12 @@ export default function MaintenanceLandingSections() {
                       {Array.from({ length: 2 }).map((_, index) => (
                         <div
                           key={index}
-                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm"
+                          className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm"
                         >
-                          <div className="h-3 w-3/4 rounded bg-slate-200" />
-                          <div className="mt-2 h-2 w-full rounded bg-slate-100" />
+                          <div className="h-3 w-3/4 rounded bg-slate-200 dark:bg-slate-700" />
+                          <div className="mt-2 h-2 w-full rounded bg-slate-100 dark:bg-slate-700/50" />
                           <div className="mt-3 flex items-center justify-between">
-                            <div className="flex gap-1 text-amber-400">
+                            <div className="flex gap-1 text-amber-400 dark:text-amber-500">
                               {Array.from({ length: 3 }).map((_, starIndex) => (
                                 <Star
                                   key={starIndex}
@@ -341,14 +339,14 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div className="flex justify-center">
-            <div className="relative rounded-[2.3rem] bg-slate-900 p-4 shadow-2xl">
-              <div className="h-[520px] w-[250px] rounded-[1.7rem] bg-white dark:bg-slate-950 dark:bg-slate-900 p-4">
-                <div className="mx-auto mb-5 h-2 w-20 rounded-full bg-slate-200" />
+            <div className="relative rounded-[2.3rem] bg-slate-900 dark:bg-slate-800 p-4 shadow-2xl">
+              <div className="h-130 w-62 rounded-[1.7rem] bg-white dark:bg-slate-900 p-4">
+                <div className="mx-auto mb-5 h-2 w-20 rounded-full bg-slate-200 dark:bg-slate-700" />
 
-                <div className="rounded-lg bg-[#714b67] px-4 py-3 text-white">
+                <div className="rounded-lg bg-[#714b67] dark:bg-[#8a5a7e] px-4 py-3 text-white">
                   <p className="text-sm font-bold">Equipment</p>
                 </div>
 
@@ -363,23 +361,23 @@ export default function MaintenanceLandingSections() {
                   ].map((item, index) => (
                     <div
                       key={item}
-                      className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-3"
+                      className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-3"
                     >
                       <div className="flex items-center justify-between">
-                        <p className="text-xs font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        <p className="text-xs font-bold text-slate-900 dark:text-white">
                           {item}
                         </p>
                         <span
                           className={`h-2.5 w-2.5 rounded-full ${
                             index % 3 === 0
-                              ? "bg-rose-400"
+                              ? "bg-rose-400 dark:bg-rose-500"
                               : index % 2 === 0
-                                ? "bg-amber-400"
-                                : "bg-emerald-400"
+                                ? "bg-amber-400 dark:bg-amber-500"
+                                : "bg-emerald-400 dark:bg-emerald-500"
                           }`}
                         />
                       </div>
-                      <div className="mt-2 h-2 w-3/4 rounded bg-slate-200" />
+                      <div className="mt-2 h-2 w-3/4 rounded bg-slate-200 dark:bg-slate-700" />
                     </div>
                   ))}
                 </div>
@@ -388,13 +386,13 @@ export default function MaintenanceLandingSections() {
           </div>
 
           <div>
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
               Increase overall equipment
               <br />
               effectiveness.
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
               with efficient maintenance.
             </p>
 
@@ -412,14 +410,14 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
               Dashboard & Statistics
             </h2>
 
-            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+            <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
               to optimize your performance.
             </p>
 
@@ -430,7 +428,7 @@ export default function MaintenanceLandingSections() {
             </p>
           </div>
 
-          <div className="mt-16 flex h-[430px] items-end justify-center gap-6">
+          <div className="mt-16 flex h-107 items-end justify-center gap-6">
             {[
               {
                 name: "Camille Watkins",
@@ -467,25 +465,27 @@ export default function MaintenanceLandingSections() {
                 key={bar.name}
                 className="relative flex w-36 flex-col items-center"
               >
-                <div className="absolute -top-12 z-10 rounded-md bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-2 text-xs shadow-lg ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <div className="absolute -top-12 z-10 rounded-md bg-white dark:bg-slate-800 px-4 py-2 text-xs shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
+                  <p className="font-bold text-slate-900 dark:text-white">
                     {bar.name}
                   </p>
-                  <p className="mt-1 text-slate-400">New request</p>
+                  <p className="mt-1 text-slate-400 dark:text-slate-500">
+                    New request
+                  </p>
                 </div>
 
                 {bar.orange > 0 && (
                   <div
-                    className="w-full bg-orange-300"
+                    className="w-full bg-orange-300 dark:bg-orange-600"
                     style={{ height: `${bar.orange}px` }}
                   />
                 )}
                 <div
-                  className="w-full bg-sky-200"
+                  className="w-full bg-sky-200 dark:bg-sky-800"
                   style={{ height: `${bar.light}px` }}
                 />
                 <div
-                  className="w-full bg-sky-600/70"
+                  className="w-full bg-sky-600/70 dark:bg-sky-500/70"
                   style={{ height: `${bar.blue}px` }}
                 />
               </div>
@@ -494,19 +494,19 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>need</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -521,14 +521,14 @@ export default function MaintenanceLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -542,14 +542,14 @@ export default function MaintenanceLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -557,7 +557,7 @@ export default function MaintenanceLandingSections() {
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -568,7 +568,7 @@ export default function MaintenanceLandingSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -579,7 +579,7 @@ export default function MaintenanceLandingSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -587,9 +587,9 @@ export default function MaintenanceLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -601,31 +601,33 @@ export default function MaintenanceLandingSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400"></p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
