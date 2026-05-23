@@ -252,7 +252,7 @@ export function SectionTag({
       className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-body text-xs font-bold tracking-[0.5px] ${
         light
           ? "border-white/20 bg-white/10 text-white"
-          : "border-[#714b6722] bg-(--purple-light) text-(--purple)"
+          : "border-[#714b6722] bg-(--purple-light) text-(--purple) dark:text-white"
       }`}
     >
       {children}

@@ -14,7 +14,7 @@ export default function CTASection() {
       <div className="relative z-10">
         <div className="mb-4 text-5xl">✨</div>
 
-        <h2 className="reveal mb-5 font-hand text-[clamp(40px,7vw,80px)] font-bold leading-[1.1] text-white">
+        <h2 className="reveal mb-5 font-hand text-[clamp(28px,4.5vw,58px)] font-bold leading-[1.1] text-white">
           {t("cta.title")}
         </h2>
 
