@@ -1,115 +1,131 @@
 const enMessages = {
   common: {
-    tryFree: "Start now — it's free →",
-    watchDemo: "▶ Watch demo",
-    priceNote: "US$ 9.99/month · All apps · No credit card required",
-    viewAllApps: "View all 50+ apps ↗",
-    seeAllFeatures: "See all features ↗",
-    contactSales: "Contact Sales",
+    tryFree: "Get Started Free →",
+    watchDemo: "▶ Watch Demo",
+    priceNote: "US$ 9.99/month · All tools included · No credit card needed",
+    viewAllApps: "Explore 50+ tools ↗",
+    seeAllFeatures: "Explore all features ↗",
+    contactSales: "Talk to Sales",
     freeTrialNote: "Free trial · No credit card · Instant access",
   },
+
   hero: {
-    tag: "✦ All your business on one platform",
-    titlePrefix: "Simple, efficient,",
+    tag: "✦ Manage your entire business in one place",
+    titlePrefix: "Simple, fast,",
     typeWords: [
-      "finances automatically",
-      "subscriptions effortlessly",
-      "operations seamlessly",
-      "growth intelligently",
+      "financial management",
+      "subscription handling",
+      "daily operations",
+      "business growth",
     ],
     description:
-      "One click install. No complexity, no code — just a single platform that empowers every person in your business.",
+      "Set up in minutes with no coding or complicated configuration. Manage your team, sales, accounting, and operations from one connected platform.",
   },
+
   apps: {
     tag: "✦ Built for modern businesses",
-    title: "Run faster with",
+    title: "Manage everything with",
     titleHand: "one",
-    titleSuffix: "connected Adon ERP",
+    titleSuffix: "smart Adon ERP",
     description:
-      "From accounting to CRM, every app shares one data flow so your team moves faster, reduces manual work, and scales with confidence.",
+      "Keep accounting, sales, customer management, inventory, and team workflows connected in one system. Reduce manual work, avoid mistakes, and make faster business decisions.",
     altLabel: "Adon",
   },
+
   nativeAi: {
-    tag: "Native AI",
-    title: "Native AI across all your business",
-    quotePrefix: "You use",
+    tag: "Smart AI Assistance",
+    title: "AI support across your entire business",
+    quotePrefix: "Use",
     quoteHighlight: "Adon",
-    quoteSuffix: "to run your",
-    typeWords: ["finance", "sales", "operations", "HR"],
+    quoteSuffix: "to simplify your",
+    typeWords: ["accounting", "sales", "operations", "HR"],
     description:
-      "Automate work, tailor features, perform deep research, and scale without limits.",
+      "Generate reports, understand data, automate tasks, and make faster decisions with built-in AI assistance.",
   },
+
   levelUp: {
-    tag: "✦ Performance",
-    titlePrefix: "Optimised for",
+    tag: "✦ Fast & reliable",
+    titlePrefix: "Built to improve",
     titleHand: "productivity",
     description:
-      "Experience true speed. Sub-second data entry, smart AI, and a fast UI. All operations complete in less than 90ms.",
+      "Enjoy fast workflows, clean interfaces, and smart suggestions that help your team complete more work in less time.",
     stats: [
-      { icon: "⚡", value: "90ms", label: "Average operation speed" },
-      { icon: "🧠", value: "Native AI", label: "Built into every workflow" },
-      { icon: "🔒", value: "SOC 2", label: "Enterprise-grade security" },
-    ],
-  },
-  features: {
-    titlePrefix: "All the",
-    titleHand: "features",
-    titleSuffix: "done right.",
-  },
-  enterprise: {
-    tag: "✦ Enterprise grade",
-    titlePrefix: "Enterprise",
-    titleCircled: "software",
-    titleSuffix: "done right",
-    cards: [
+      { icon: "⚡", value: "Fast workflows", label: "Smooth daily operations" },
       {
-        icon: "🌍",
-        title: "Open Source",
-        desc: "Built on a community of 30k+ developers. Available in Community (free) and Enterprise editions.",
-        badge: "Community",
+        icon: "🧠",
+        value: "AI-powered",
+        label: "Smart assistance where needed",
       },
       {
         icon: "🔒",
-        title: "No vendor lock-in",
-        desc: "Your data stays yours. Self-host on any infrastructure or use our cloud — full flexibility.",
-        badge: "Self-host",
+        value: "Secure platform",
+        label: "Protect your business data",
+      },
+    ],
+  },
+
+  features: {
+    titlePrefix: "Everything your business",
+    titleHand: "needs",
+    titleSuffix: "in one platform.",
+  },
+
+  enterprise: {
+    tag: "✦ Powerful business solution",
+    titlePrefix: "Modern",
+    titleCircled: "business",
+    titleSuffix: "management software",
+    cards: [
+      {
+        icon: "🌍",
+        title: "Flexible for every business",
+        desc: "Whether you're a startup or a large company, Adon adapts to the way your team works.",
+        badge: "Flexible",
+      },
+      {
+        icon: "🔒",
+        title: "Your data stays yours",
+        desc: "Keep your business data secure with full control. Use our cloud or host it on your own infrastructure.",
+        badge: "Secure",
       },
       {
         icon: "🤖",
-        title: "Open Source + AI",
-        desc: "Use Adon AI to develop with an ultra-cost-efficient mindset. All models trained on our source code.",
-        badge: "40k+ apps",
+        title: "AI that helps you work smarter",
+        desc: "Use AI assistance for reporting, analysis, automation, and faster decision-making across your business.",
+        badge: "AI Ready",
       },
       {
         icon: "💰",
-        title: "Fair pricing",
-        desc: "No module pricing, no feature upselling, no long-term contracts — one transparent price per user.",
+        title: "Simple pricing",
+        desc: "No hidden fees or complicated plans. Transparent pricing designed for growing businesses.",
         badge: "Transparent",
       },
     ],
   },
+
   stats: {
-    tag: "✦ Trusted worldwide",
-    title: "Scale with confidence",
+    tag: "✦ Built for growing businesses",
+    title: "Start small, grow with confidence",
     items: [
-      { value: "15M+", label: "Businesses worldwide" },
-      { value: "50+", label: "Integrated apps" },
-      { value: "99.9%", label: "Uptime guaranteed" },
-      { value: "4.8★", label: "Customer rating" },
+      { value: "100+", label: "Early users" },
+      { value: "50+", label: "Business tools" },
+      { value: "Reliable", label: "Stable daily workflows" },
+      { value: "Simple", label: "Easy for every team" },
     ],
   },
   testimonials: {
-    tag: "✦ Stories",
-    title: "Loved by teams",
+    tag: "✦ Customer stories",
+    title: "Teams love using Adon",
     extraQuote:
-      "Adon is so full of a software Army Knife. You can tailor it to your business requirements. This is one of the key reasons that has helped us implement Adon successfully.",
+      "Adon helped us simplify accounting, sales, and team management in one place. Instead of juggling multiple tools, everything is now connected and much easier to manage.",
     extraAuthor: "Richard Miles",
     extraRole: "Training Manager, Enterprise Corp",
   },
+
   cta: {
-    title: "Unleash your growth potential",
+    title: "Take your business to the next level",
     description:
-      "Build recurring revenue workflows with automated billing, renewals, payments, and customer retention inside Adon ERP.",
+      "Manage billing, payments, renewals, customer relationships, and reporting from one unified platform with Adon ERP.",
   },
 } as const;
 
