@@ -1,5 +1,3 @@
-// app/community/learn/tutorials/page.tsx
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -144,7 +142,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -162,8 +160,8 @@ function SectionEyebrow({
   label: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-700 shadow-sm ring-1 ring-amber-100">
-      <span className="text-amber-500">{icon}</span>
+    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
+      <span className="text-primary">{icon}</span>
       {label}
     </div>
   );
@@ -171,9 +169,10 @@ function SectionEyebrow({
 
 export default function TutorialsPage() {
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#fffcf7_18%,_#ffffff_100%)] text-slate-800">
+    <main className="overflow-hidden bg-background text-foreground">
+      {/* Hero Section */}
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_15%_12%,rgba(251,191,36,0.18),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(167,139,250,0.14),transparent_24%),linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(255,252,247,1)_100%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_15%_12%,rgba(139,92,246,0.06),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.04),transparent_24%)]" />
 
         <div className="mx-auto grid max-w-7xl gap-14 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
@@ -188,7 +187,7 @@ export default function TutorialsPage() {
               </p>
               <div className="space-y-3">
                 <p
-                  className="text-2xl font-medium text-slate-700"
+                  className="text-2xl font-medium text-muted-foreground"
                   style={{
                     fontFamily:
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -197,7 +196,7 @@ export default function TutorialsPage() {
                   Learn AdonERP with practical
                 </p>
                 <h1
-                  className="text-5xl font-semibold leading-none tracking-tight text-slate-900 sm:text-6xl"
+                  className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
                   style={{
                     fontFamily:
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -206,7 +205,7 @@ export default function TutorialsPage() {
                   Tutorials
                 </h1>
               </div>
-              <p className="max-w-lg text-lg leading-8 text-slate-600">
+              <p className="max-w-lg text-lg leading-8 text-muted-foreground">
                 Master every AdonERP workflow through short, practical, and
                 business-focused tutorials designed for owners, managers,
                 operators, accountants, and developers.
@@ -216,13 +215,13 @@ export default function TutorialsPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#tutorials"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
                 Start learning
               </Link>
               <Link
                 href="#learning-path"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
+                className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 View learning path
               </Link>
@@ -232,12 +231,12 @@ export default function TutorialsPage() {
               {stats.map(([value, label]) => (
                 <div
                   key={label}
-                  className="rounded-2xl border border-slate-200 bg-white/90 p-4 text-center shadow-sm"
+                  className="rounded-2xl border border-border bg-card/90 p-4 text-center shadow-sm"
                 >
-                  <p className="text-2xl font-semibold text-slate-900">
+                  <p className="text-2xl font-semibold text-foreground">
                     {value}
                   </p>
-                  <p className="mt-1 text-xs leading-5 text-slate-500">
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground">
                     {label}
                   </p>
                 </div>
@@ -246,29 +245,29 @@ export default function TutorialsPage() {
           </div>
 
           <div className="relative mx-auto flex w-full max-w-xl items-center justify-center">
-            <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-amber-100 blur-3xl" />
-            <div className="absolute -bottom-10 left-4 h-36 w-36 rounded-full bg-violet-100 blur-3xl" />
+            <div className="absolute -top-6 right-8 h-28 w-28 rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute -bottom-10 left-4 h-36 w-36 rounded-full bg-primary/15 blur-3xl" />
 
-            <div className="relative w-full rounded-[2.5rem] border border-slate-200 bg-white p-5 shadow-[0_40px_100px_rgba(76,29,149,0.16)]">
-              <div className="rounded-[2rem] bg-[linear-gradient(135deg,_#f7f0ff_0%,_#fff8ed_100%)] p-5">
+            <div className="relative w-full rounded-[2.5rem] border border-border bg-card p-5 shadow-[0_40px_100px_rgba(0,0,0,0.15)]">
+              <div className="rounded-[2rem] bg-gradient-to-br from-muted to-background p-5">
                 <div className="mb-5 flex items-center justify-between">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                       Tutorial player
                     </p>
-                    <h3 className="mt-2 text-xl font-semibold text-slate-900">
+                    <h3 className="mt-2 text-xl font-semibold text-foreground">
                       Sales pipeline basics
                     </h3>
                   </div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary shadow-md">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-card text-primary shadow-md">
                     <PlayCircle className="h-7 w-7 fill-primary/10" />
                   </div>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[1.6rem] bg-slate-900 p-5 text-white shadow-2xl">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(251,191,36,0.25),transparent_24%),radial-gradient(circle_at_82%_40%,rgba(168,85,247,0.28),transparent_24%)]" />
+                <div className="relative overflow-hidden rounded-[1.6rem] bg-gradient-to-br from-slate-800 to-slate-900 p-5 text-white shadow-2xl">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.25),transparent_24%),radial-gradient(circle_at_82%_40%,rgba(139,92,246,0.2),transparent_24%)]" />
                   <div className="relative flex min-h-56 items-center justify-center">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/95 shadow-2xl">
+                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-card/95 shadow-2xl">
                       <CirclePlay className="h-10 w-10 fill-primary text-primary" />
                     </div>
                   </div>
@@ -278,12 +277,12 @@ export default function TutorialsPage() {
                   {["Watch", "Practice", "Apply"].map((item, index) => (
                     <div
                       key={item}
-                      className="rounded-2xl bg-white px-4 py-3 shadow-sm"
+                      className="rounded-2xl bg-card px-4 py-3 shadow-sm"
                     >
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                         Step {index + 1}
                       </p>
-                      <p className="mt-1 font-semibold text-slate-800">
+                      <p className="mt-1 font-semibold text-foreground">
                         {item}
                       </p>
                     </div>
@@ -295,6 +294,7 @@ export default function TutorialsPage() {
         </div>
       </section>
 
+      {/* Browse by business workflow Section */}
       <section
         id="tutorials"
         className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20"
@@ -310,16 +310,16 @@ export default function TutorialsPage() {
               <br />
               to learn faster.
             </ScriptHeading>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
               Pick a topic, follow the guided lesson, and apply the workflow to
               your real business process immediately.
             </p>
           </div>
         </div>
 
-        <div className="mx-auto mt-10 flex max-w-2xl items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
-          <Search className="h-5 w-5 text-slate-400" />
-          <span className="text-sm text-slate-500">
+        <div className="mx-auto mt-10 flex max-w-2xl items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm">
+          <Search className="h-5 w-5 text-muted-foreground" />
+          <span className="text-sm text-muted-foreground">
             Search tutorials by app, workflow, role, or difficulty...
           </span>
         </div>
@@ -331,20 +331,20 @@ export default function TutorialsPage() {
             return (
               <div
                 key={category.title}
-                className="group rounded-[1.8rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60"
+                className="group rounded-[1.8rem] border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
+                    <h3 className="text-lg font-semibold text-foreground">
                       {category.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-7 text-slate-600">
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">
                       {category.description}
                     </p>
-                    <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
+                    <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                       <Video className="h-3.5 w-3.5" />
                       {category.lessons}
                     </div>
@@ -356,8 +356,9 @@ export default function TutorialsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f5f7] py-16 lg:py-24">
-        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_center,_rgba(168,85,247,0.08),transparent_68%)]" />
+      {/* Featured lessons Section */}
+      <section className="relative overflow-hidden rounded-t-[4rem] bg-muted/30 py-16 lg:py-24">
+        <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.06),transparent_68%)]" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="space-y-5 self-center">
@@ -370,7 +371,7 @@ export default function TutorialsPage() {
                 <br />
                 most useful flows.
               </ScriptHeading>
-              <p className="max-w-md text-base leading-7 text-slate-600">
+              <p className="max-w-md text-base leading-7 text-muted-foreground">
                 These tutorials are selected for new teams who want to launch
                 faster and understand the core AdonERP workflow from day one.
               </p>
@@ -387,27 +388,27 @@ export default function TutorialsPage() {
               {featuredTutorials.map((tutorial, index) => (
                 <div
                   key={tutorial.title}
-                  className="rounded-[1.8rem] border border-white bg-white p-6 shadow-sm"
+                  className="rounded-[1.8rem] border border-border bg-card p-6 shadow-sm"
                 >
                   <div className="mb-5 flex items-center justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <CirclePlay className="h-6 w-6" />
                     </div>
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-500">
+                    <span className="rounded-full bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
                       #{index + 1}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold leading-7 text-slate-900">
+                  <h3 className="text-lg font-semibold leading-7 text-foreground">
                     {tutorial.title}
                   </h3>
                   <div className="mt-5 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                       {tutorial.tag}
                     </span>
-                    <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700">
+                    <span className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-semibold text-secondary-foreground">
                       {tutorial.level}
                     </span>
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent-foreground">
                       <Clock3 className="h-3 w-3" />
                       {tutorial.time}
                     </span>
@@ -419,6 +420,7 @@ export default function TutorialsPage() {
         </div>
       </section>
 
+      {/* Guided learning path Section */}
       <section
         id="learning-path"
         className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-24"
@@ -433,32 +435,32 @@ export default function TutorialsPage() {
             <br />
             Use it every day.
           </ScriptHeading>
-          <p className="max-w-md text-base leading-7 text-slate-600">
+          <p className="max-w-md text-base leading-7 text-muted-foreground">
             Follow a clear path from setup to daily operation. Each lesson is
             built around real business actions, not theory only.
           </p>
         </div>
 
         <div className="relative">
-          <div className="absolute inset-x-12 bottom-0 top-10 rounded-full bg-slate-100" />
-          <div className="relative rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_35px_80px_rgba(15,23,42,0.1)]">
+          <div className="absolute inset-x-12 bottom-0 top-10 rounded-full bg-muted" />
+          <div className="relative rounded-[2rem] border border-border bg-card p-6 shadow-[0_35px_80px_rgba(0,0,0,0.1)]">
             <div className="space-y-4">
               {learningPath.map((step, index) => (
                 <div
                   key={step}
-                  className="flex items-center gap-4 rounded-2xl bg-slate-50 px-5 py-4"
+                  className="flex items-center gap-4 rounded-2xl bg-muted/30 px-5 py-4"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-900">{step}</p>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="font-semibold text-foreground">{step}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">
                       Complete this step and move to the next recommended
                       workflow.
                     </p>
                   </div>
-                  <Check className="h-5 w-5 text-emerald-500" />
+                  <Check className="h-5 w-5 text-accent" />
                 </div>
               ))}
             </div>
@@ -466,12 +468,13 @@ export default function TutorialsPage() {
         </div>
       </section>
 
+      {/* CTA Banner */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
-        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-gradient(135deg,_#fff_0%,_#faf5ff_45%,_#fff8ed_100%)] px-6 py-16 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
-          <div className="absolute -left-12 top-10 h-40 w-40 rounded-full bg-amber-100 blur-3xl" />
-          <div className="absolute -right-12 bottom-10 h-44 w-44 rounded-full bg-violet-100 blur-3xl" />
+        <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-background via-primary/5 to-muted px-6 py-16 shadow-[0_35px_90px_rgba(0,0,0,0.08)] sm:px-10">
+          <div className="absolute -left-12 top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
+          <div className="absolute -right-12 bottom-10 h-44 w-44 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative mx-auto max-w-3xl text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber-100 text-amber-600">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/20 text-primary">
               <Star className="h-7 w-7 fill-current" />
             </div>
             <ScriptHeading className="mt-6">
@@ -479,20 +482,20 @@ export default function TutorialsPage() {
               <br />
               want to learn by doing.
             </ScriptHeading>
-            <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600">
+            <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
               Train your team with tutorials that connect learning, practice,
               and real operational workflows inside one business platform.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 href="#tutorials"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
                 Browse tutorials
               </Link>
               <Link
                 href="/community/learn/documentation"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
+                className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 Read documentation
               </Link>
@@ -501,6 +504,7 @@ export default function TutorialsPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="text-center">
           <SectionEyebrow
@@ -514,10 +518,10 @@ export default function TutorialsPage() {
           {faqs.map((faq) => (
             <div
               key={faq.q}
-              className="rounded-[1.6rem] border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-primary/30"
+              className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-colors hover:border-primary/30"
             >
-              <h3 className="font-semibold text-slate-900">{faq.q}</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-600">{faq.a}</p>
+              <h3 className="font-semibold text-foreground">{faq.q}</h3>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{faq.a}</p>
             </div>
           ))}
         </div>
