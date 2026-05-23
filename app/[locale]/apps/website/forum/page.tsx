@@ -96,20 +96,20 @@ const avatars = [
 
 export default function ForumLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Connect with{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6]">your community</span>
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Create a community, foster collaboration, improve support, and give
             users a simple place to ask, answer, vote, and share knowledge.
           </p>
@@ -124,7 +124,7 @@ export default function ForumLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -139,8 +139,8 @@ export default function ForumLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4">
                 <div className="flex items-center gap-3">
                   <span
                     className="text-xl font-bold text-orange-700"
@@ -159,7 +159,7 @@ export default function ForumLandingSections() {
               </div>
 
               <div className="grid min-h-[420px] lg:grid-cols-[230px_1fr]">
-                <aside className="border-r border-slate-100 bg-slate-50 p-5 text-left">
+                <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
                   <div className="flex items-center gap-3">
                     <img
                       src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
@@ -167,10 +167,10 @@ export default function ForumLandingSections() {
                       className="h-10 w-10 rounded-full object-cover"
                     />
                     <div>
-                      <p className="text-sm font-bold text-slate-900">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         Robin Cole
                       </p>
-                      <p className="text-xs text-slate-500">Top user</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Top user</p>
                     </div>
                   </div>
 
@@ -186,8 +186,8 @@ export default function ForumLandingSections() {
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 0
-                            ? "bg-white text-[#714b67] shadow-sm"
-                            : "text-slate-500"
+                            ? "bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
+                            : "text-slate-500 dark:text-slate-400"
                         }`}
                       >
                         {item}
@@ -196,12 +196,12 @@ export default function ForumLandingSections() {
                   </div>
 
                   <div className="mt-8">
-                    <p className="text-xs font-bold text-slate-500">Tags</p>
+                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400">Tags</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {["Help", "Tips", "Support"].map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-white px-3 py-1 text-[11px] font-bold text-slate-500"
+                          className="rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 px-3 py-1 text-[11px] font-bold text-slate-500 dark:text-slate-400"
                         >
                           {tag}
                         </span>
@@ -210,13 +210,13 @@ export default function ForumLandingSections() {
                   </div>
                 </aside>
 
-                <div className="bg-white p-6 text-left">
+                <div className="bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left">
                   <div className="mb-5 flex items-center justify-between gap-4">
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         The coffee lovers corner
                       </h3>
-                      <p className="mt-1 text-xs text-slate-500">
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                         Ask questions, share tips, and help each other.
                       </p>
                     </div>
@@ -226,7 +226,7 @@ export default function ForumLandingSections() {
                     </button>
                   </div>
 
-                  <div className="mb-5 flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3">
+                  <div className="mb-5 flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3">
                     <Search className="h-4 w-4 text-slate-400" />
                     <span className="text-sm text-slate-400">
                       Search discussions...
@@ -266,10 +266,10 @@ export default function ForumLandingSections() {
                     ].map((post, index) => (
                       <div
                         key={post.title}
-                        className="grid gap-4 rounded-lg border border-slate-100 bg-white p-4 shadow-sm sm:grid-cols-[1fr_90px_90px_120px]"
+                        className="grid gap-4 rounded-lg border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-sm sm:grid-cols-[1fr_90px_90px_120px]"
                       >
                         <div>
-                          <p className="font-bold text-slate-900">
+                          <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {post.title}
                           </p>
                           <div className="mt-2 flex items-center gap-2">
@@ -277,7 +277,7 @@ export default function ForumLandingSections() {
                               className={`rounded-full px-2 py-1 text-[10px] font-bold ${
                                 index === 0
                                   ? "bg-emerald-50 text-emerald-600"
-                                  : "bg-slate-100 text-slate-500"
+                                  : "bg-slate-100 text-slate-500 dark:text-slate-400"
                               }`}
                             >
                               {post.tag}
@@ -295,15 +295,15 @@ export default function ForumLandingSections() {
                           </div>
                         </div>
 
-                        <div className="text-sm text-slate-500">
-                          <span className="font-bold text-slate-900">
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {post.replies}
                           </span>{" "}
                           replies
                         </div>
 
-                        <div className="text-sm text-slate-500">
-                          <span className="font-bold text-slate-900">
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {post.views}
                           </span>{" "}
                           views
@@ -328,7 +328,7 @@ export default function ForumLandingSections() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-center text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl lg:text-left"
+              className="text-center text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl lg:text-left"
               style={{ fontFamily: handwrittenFont }}
             >
               By and for the{" "}
@@ -338,21 +338,21 @@ export default function ForumLandingSections() {
               </span>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Enable users to help each other. Boost collective knowledge and
               anticipate your customer&apos;s needs with valuable insights and
               problem-solving discussions.
             </p>
 
-            <div className="mt-10 flex max-w-xs items-center gap-3 rounded-full bg-white px-4 py-3 text-xs font-semibold text-slate-600 shadow-lg ring-1 ring-slate-100">
+            <div className="mt-10 flex max-w-xs items-center gap-3 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100">
               <MessageCircle className="h-4 w-4 text-rose-500" />
               Get customer service
             </div>
           </div>
 
           <div className="relative">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <h3 className="text-lg font-bold text-slate-900">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                 The best brushes for pottery?
               </h3>
 
@@ -361,7 +361,7 @@ export default function ForumLandingSections() {
                   {
                     name: "Alex Martin",
                     text: "Which brush is best for smooth details?",
-                    bg: "bg-white",
+                    bg: "bg-white dark:bg-slate-950 dark:bg-slate-900",
                   },
                   {
                     name: "Kate Rowan",
@@ -371,12 +371,12 @@ export default function ForumLandingSections() {
                   {
                     name: "Thomas Joseph",
                     text: "Thanks! This was super helpful.",
-                    bg: "bg-white",
+                    bg: "bg-white dark:bg-slate-950 dark:bg-slate-900",
                   },
                 ].map((item, index) => (
                   <div
                     key={item.name}
-                    className={`rounded-xl border border-slate-100 p-4 text-left ${item.bg}`}
+                    className={`rounded-xl border border-slate-100 dark:border-slate-700 p-4 text-left ${item.bg}`}
                   >
                     <div className="flex items-center gap-3">
                       <img
@@ -385,13 +385,13 @@ export default function ForumLandingSections() {
                         className="h-9 w-9 rounded-full object-cover"
                       />
                       <div>
-                        <p className="text-sm font-bold text-slate-900">
+                        <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                           {item.name}
                         </p>
                         <p className="text-xs text-slate-400">Community user</p>
                       </div>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">
+                    <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                       {item.text}
                     </p>
                   </div>
@@ -402,12 +402,12 @@ export default function ForumLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Trophy className="mx-auto h-12 w-12 text-amber-500" />
 
           <h2
-            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Gamification drives{" "}
@@ -416,18 +416,18 @@ export default function ForumLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Motivate, engage, and drive actions. Set up a reward system with
             karma points to give your most active members more moderation
             features and responsibilities.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="bg-[#714b67] px-6 py-5 text-left text-white">
               <p className="text-xl font-bold">All Users</p>
             </div>
 
-            <div className="grid gap-5 bg-white p-6 sm:grid-cols-3">
+            <div className="grid gap-5 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 sm:grid-cols-3">
               {[
                 ["Robin Bineau", "2877 XP", avatars[0]],
                 ["Marine Duvelle", "1791 XP", avatars[1]],
@@ -435,28 +435,28 @@ export default function ForumLandingSections() {
               ].map(([name, score, avatar]) => (
                 <div
                   key={name}
-                  className="rounded-xl bg-slate-50 p-5 text-center ring-1 ring-slate-100"
+                  className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5 text-center ring-1 ring-slate-100"
                 >
                   <img
                     src={avatar}
                     alt={name}
                     className="mx-auto h-20 w-20 rounded-full object-cover"
                   />
-                  <p className="mt-4 font-bold text-slate-900">{name}</p>
-                  <p className="mt-1 text-sm text-[#714b67]">{score}</p>
+                  <p className="mt-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">{name}</p>
+                  <p className="mt-1 text-sm text-[#714b67] dark:text-[#9b6a8f]">{score}</p>
                 </div>
               ))}
             </div>
 
-            <div className="border-t border-slate-100 p-5">
+            <div className="border-t border-slate-100 dark:border-slate-700 p-5">
               {["New badge unlocked", "Answer accepted", "Top contributor"].map(
                 (item) => (
                   <div
                     key={item}
-                    className="flex items-center justify-between border-b border-slate-100 py-3 text-sm last:border-0"
+                    className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 py-3 text-sm last:border-0"
                   >
-                    <span className="text-slate-600">{item}</span>
-                    <span className="font-bold text-[#714b67]">+25 Karma</span>
+                    <span className="text-slate-600 dark:text-slate-300">{item}</span>
+                    <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">+25 Karma</span>
                   </div>
                 ),
               )}
@@ -465,47 +465,47 @@ export default function ForumLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="absolute right-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#02cfc3] text-slate-900 shadow-[8px_8px_0_rgba(15,23,42,0.9)]">
+            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#02cfc3] dark:bg-[#02cfc3]/30 text-slate-900 dark:text-white dark:text-slate-100 shadow-[8px_8px_0_rgba(15,23,42,0.9)]">
               <Palette className="h-9 w-9" />
             </div>
 
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <span className="relative inline-block">
                 <span className="relative z-10">Customize</span>
-                <span className="absolute bottom-2 left-0 h-5 w-full rounded-full bg-[#02cfc3]" />
+                <span className="absolute bottom-2 left-0 h-5 w-full rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
               </span>{" "}
               your
               <br />
               content&apos;s design
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               User-friendly and advanced text editor. Enable users to edit and
               structure their content with plenty of helpful features.
             </p>
           </div>
 
           <div className="relative">
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-4 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Your Answer</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Your Answer</p>
                 <span className="text-sm text-slate-400">•••</span>
               </div>
 
-              <div className="rounded-lg border border-slate-100 bg-slate-50 p-4">
+              <div className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-4">
                 <div className="mb-4 flex gap-2">
                   {["B", "I", "U", "Link", "Image", "Code"].map((tool) => (
                     <span
                       key={tool}
-                      className="rounded bg-white px-3 py-1 text-xs font-bold text-slate-500"
+                      className="rounded bg-white dark:bg-slate-950 dark:bg-slate-900 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400"
                     >
                       {tool}
                     </span>
@@ -516,17 +516,17 @@ export default function ForumLandingSections() {
                   <div className="h-3 w-full rounded bg-slate-200" />
                   <div className="h-3 w-11/12 rounded bg-slate-200" />
                   <div className="h-3 w-4/5 rounded bg-slate-200" />
-                  <div className="h-24 rounded bg-white ring-1 ring-slate-100" />
+                  <div className="h-24 rounded bg-white dark:bg-slate-950 dark:bg-slate-900 ring-1 ring-slate-100" />
                 </div>
               </div>
             </div>
 
-            <div className="absolute -bottom-16 left-8 hidden w-56 rounded-xl border border-slate-200 bg-white p-4 shadow-xl lg:block">
+            <div className="absolute -bottom-16 left-8 hidden w-56 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-xl lg:block">
               {["Bold text", "Upload image", "Embed video", "Insert quote"].map(
                 (item) => (
                   <div
                     key={item}
-                    className="mb-2 flex items-center gap-2 text-xs text-slate-500 last:mb-0"
+                    className="mb-2 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 last:mb-0"
                   >
                     <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
                     {item}
@@ -544,7 +544,7 @@ export default function ForumLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -554,7 +554,7 @@ export default function ForumLandingSections() {
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>right.</span>
             </HandUnderline>
           </h2>
@@ -563,21 +563,21 @@ export default function ForumLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -586,21 +586,21 @@ export default function ForumLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one{" "}
@@ -609,7 +609,7 @@ export default function ForumLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -620,15 +620,15 @@ export default function ForumLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -639,14 +639,14 @@ export default function ForumLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -684,14 +684,14 @@ export default function ForumLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -702,7 +702,7 @@ export default function ForumLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon ensures product quality and triples production without
                   extra hiring.
                 </p>
@@ -715,8 +715,8 @@ export default function ForumLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Mark Anderson</p>
-                    <p className="text-sm text-slate-500">CEO & Founder</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Mark Anderson</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">CEO & Founder</p>
                   </div>
                 </div>
               </div>
@@ -729,13 +729,13 @@ export default function ForumLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -757,3 +757,5 @@ export default function ForumLandingSections() {
     </main>
   );
 }
+
+

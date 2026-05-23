@@ -85,7 +85,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -113,14 +113,14 @@ function SectionEyebrow({
 function SpreadsheetMockup() {
   return (
     <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
           <FileSpreadsheet className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-white">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
             Adon Spreadsheet
           </span>
         </div>
-        <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
           <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-1 text-emerald-700 dark:text-emerald-400">
             Live
           </span>
@@ -128,11 +128,11 @@ function SpreadsheetMockup() {
         </div>
       </div>
 
-      <div className="grid grid-cols-[120px_repeat(5,1fr)] border-b border-slate-100 dark:border-slate-800 text-xs">
+      <div className="grid grid-cols-[120px_repeat(5,1fr)] border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 text-xs">
         {["Metric", "Jan", "Feb", "Mar", "Apr", "Total"].map((item) => (
           <div
             key={item}
-            className="border-r border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 font-semibold text-slate-500 dark:text-slate-400"
+            className="border-r border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3 font-semibold text-slate-500 dark:text-slate-400 dark:text-slate-400"
           >
             {item}
           </div>
@@ -152,9 +152,9 @@ function SpreadsheetMockup() {
           {row.map((cell, cellIndex) => (
             <div
               key={cell}
-              className={`border-r border-t border-slate-100 dark:border-slate-800 px-4 py-3 ${
+              className={`border-r border-t border-slate-100 dark:border-slate-700 dark:border-slate-800 px-4 py-3 ${
                 cellIndex === 0
-                  ? "font-semibold text-slate-800 dark:text-white"
+                  ? "font-semibold text-slate-800 dark:text-slate-100 dark:text-white"
                   : index === 2
                     ? "font-medium text-emerald-600 dark:text-emerald-400"
                     : "text-slate-600 dark:text-slate-300"
@@ -169,7 +169,7 @@ function SpreadsheetMockup() {
       <div className="grid gap-4 p-5 md:grid-cols-2">
         <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/30 p-4">
           <div className="mb-4 flex items-center justify-between">
-            <span className="text-sm font-semibold text-slate-800 dark:text-white">
+            <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
               Revenue trend
             </span>
             <LineChart className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
@@ -185,9 +185,9 @@ function SpreadsheetMockup() {
           </div>
         </div>
 
-        <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4">
+        <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
           <div className="mb-3 flex items-center justify-between">
-            <span className="text-sm font-semibold text-slate-800 dark:text-white">
+            <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
               Smart insights
             </span>
             <Sparkles className="h-4 w-4 text-amber-500 dark:text-amber-400" />
@@ -200,7 +200,7 @@ function SpreadsheetMockup() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-xl bg-white dark:bg-slate-800 px-3 py-2 text-xs text-slate-600 dark:text-slate-300 shadow-sm"
+                className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-3 py-2 text-xs text-slate-600 dark:text-slate-300 shadow-sm"
               >
                 {item}
               </div>
@@ -209,7 +209,7 @@ function SpreadsheetMockup() {
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
@@ -218,7 +218,7 @@ function SpreadsheetMockup() {
 
 export default function SpreadsheetPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_18%_12%,rgba(6,182,212,0.14),transparent_26%),radial-gradient(circle_at_85%_18%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_18%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_85%_18%,rgba(16,185,129,0.07),transparent_25%)]" />
 
@@ -229,7 +229,7 @@ export default function SpreadsheetPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
               Decisions,{" "}
               <span
                 className="text-cyan-600 dark:text-cyan-400"
@@ -258,7 +258,7 @@ export default function SpreadsheetPage() {
             </Link>
             <Link
               href="#demo"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
             >
               Watch Demo
             </Link>
@@ -272,12 +272,12 @@ export default function SpreadsheetPage() {
           >
             <SpreadsheetMockup />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
               Real-time sync
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               No copy-paste
             </div>
@@ -315,7 +315,7 @@ export default function SpreadsheetPage() {
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400">
                   <LucideIcon className="h-6 w-6" />
                 </div>
-                <p className="mt-4 text-sm font-semibold text-slate-800 dark:text-white">
+                <p className="mt-4 text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
                   {title as string}
                 </p>
               </div>
@@ -349,7 +349,7 @@ export default function SpreadsheetPage() {
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-slate-700 dark:text-slate-300">
+                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     {item}
                   </span>
                 </div>
@@ -359,7 +359,7 @@ export default function SpreadsheetPage() {
 
           <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
             <div className="mb-4 flex items-center justify-between">
-              <span className="font-semibold text-slate-900 dark:text-white">
+              <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                 Pivot analysis
               </span>
               <RefreshCw className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
@@ -374,15 +374,15 @@ export default function SpreadsheetPage() {
               ].map((row) => (
                 <div
                   key={row[0]}
-                  className="grid grid-cols-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
+                  className="grid grid-cols-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3 text-sm"
                 >
-                  <span className="font-medium text-slate-900 dark:text-white">
+                  <span className="font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                     {row[0]}
                   </span>
-                  <span className="text-slate-500 dark:text-slate-400">
+                  <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     {row[1]}
                   </span>
-                  <span className="font-semibold text-slate-800 dark:text-white">
+                  <span className="font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
                     {row[2]}
                   </span>
                   <span className="text-emerald-600 dark:text-emerald-400">
@@ -419,12 +419,12 @@ export default function SpreadsheetPage() {
             ].map((stat) => (
               <div
                 key={stat[0]}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
               >
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   {stat[0]}
                 </p>
-                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">
+                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                   {stat[1]}
                 </p>
                 <p className="mt-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
@@ -468,7 +468,7 @@ export default function SpreadsheetPage() {
                   <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {feature.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
@@ -503,10 +503,10 @@ export default function SpreadsheetPage() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -519,7 +519,7 @@ export default function SpreadsheetPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.2)]">
-          <div className="mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
@@ -566,7 +566,7 @@ export default function SpreadsheetPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
           >
             Contact Sales
           </Link>
@@ -575,3 +575,4 @@ export default function SpreadsheetPage() {
     </main>
   );
 }
+

@@ -70,11 +70,11 @@ const apps = [
 
 export default function DiscussLandingPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Discuss{" "}
@@ -83,7 +83,7 @@ export default function DiscussLandingPage() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Adon Discuss is the fully integrated communication hub for messages,
             channels, calls, notifications, and business conversations.
           </p>
@@ -98,7 +98,7 @@ export default function DiscussLandingPage() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
@@ -113,11 +113,11 @@ export default function DiscussLandingPage() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <MessageCircle className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Discuss</span>
+                  <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Discuss</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Inbox / Channels / Messages / Meetings
                   </span>
@@ -129,8 +129,8 @@ export default function DiscussLandingPage() {
               </div>
 
               <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[220px_1fr_220px]">
-                <aside className="rounded-xl bg-white p-4 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="mb-4 font-bold text-slate-900">Channels</p>
+                <aside className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100">
+                  <p className="mb-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">Channels</p>
 
                   {["General", "Marketing", "Sales", "Support", "Project"].map(
                     (item, index) => (
@@ -139,7 +139,7 @@ export default function DiscussLandingPage() {
                         className={`mb-2 rounded-md px-3 py-2 text-xs font-bold ${
                           index === 0
                             ? "bg-[#714b67] text-white"
-                            : "bg-slate-50 text-slate-500"
+                            : "bg-slate-50 dark:bg-slate-800/40 text-slate-500 dark:text-slate-400"
                         }`}
                       >
                         # {item}
@@ -148,10 +148,10 @@ export default function DiscussLandingPage() {
                   )}
                 </aside>
 
-                <div className="mt-5 rounded-xl bg-white p-5 text-left shadow-sm ring-1 ring-slate-100 lg:mx-5 lg:mt-0">
-                  <div className="mb-5 rounded-lg bg-slate-50 p-4">
-                    <p className="font-bold text-slate-900">Company updates</p>
-                    <p className="mt-2 text-sm text-slate-500">
+                <div className="mt-5 rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-sm ring-1 ring-slate-100 lg:mx-5 lg:mt-0">
+                  <div className="mb-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Company updates</p>
+                    <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                       Share information, project progress, files, and decisions
                       in one place.
                     </p>
@@ -175,17 +175,17 @@ export default function DiscussLandingPage() {
                         className="h-10 w-10 rounded-full object-cover"
                       />
                       <div className="rounded-xl bg-[#e9fbf8] px-4 py-3">
-                        <p className="text-sm font-bold text-slate-900">
+                        <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                           {name}
                         </p>
-                        <p className="mt-1 text-sm text-slate-600">{message}</p>
+                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{message}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <aside className="mt-5 rounded-xl bg-white p-4 text-left shadow-sm ring-1 ring-slate-100 lg:mt-0">
-                  <p className="mb-4 font-bold text-slate-900">Online</p>
+                <aside className="mt-5 rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100 lg:mt-0">
+                  <p className="mb-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">Online</p>
 
                   {avatars.slice(0, 5).map((avatar, index) => (
                     <div key={avatar} className="mb-3 flex items-center gap-3">
@@ -195,7 +195,7 @@ export default function DiscussLandingPage() {
                         className="h-9 w-9 rounded-full object-cover"
                       />
                       <div>
-                        <p className="text-xs font-bold text-slate-700">
+                        <p className="text-xs font-bold text-slate-700 dark:text-slate-200">
                           User {index + 1}
                         </p>
                         <p className="text-[10px] text-emerald-500">Online</p>
@@ -205,7 +205,7 @@ export default function DiscussLandingPage() {
                 </aside>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -215,10 +215,10 @@ export default function DiscussLandingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Adon Discuss: a fully{" "}
@@ -230,7 +230,7 @@ export default function DiscussLandingPage() {
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-14 lg:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               {[
                 "General company updates",
                 "Marketing campaign",
@@ -240,19 +240,19 @@ export default function DiscussLandingPage() {
               ].map((item, index) => (
                 <div
                   key={item}
-                  className="mb-3 flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-left"
+                  className="mb-3 flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#714b67] text-xs font-bold text-white">
                     {index + 1}
                   </span>
-                  <span className="text-sm font-bold text-slate-700">
+                  <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
                     {item}
                   </span>
                 </div>
               ))}
             </div>
 
-            <p className="text-left text-sm leading-7 text-slate-600">
+            <p className="text-left text-sm leading-7 text-slate-600 dark:text-slate-300">
               Bring channels, messages, meetings, notifications, and business
               records together without switching between different tools.
             </p>
@@ -260,11 +260,11 @@ export default function DiscussLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Create message
@@ -276,23 +276,23 @@ export default function DiscussLandingPage() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Group everyone into channels for company-wide announcements,
               focused project updates, or customer-facing communication.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center gap-3">
-              <MessageCircle className="h-5 w-5 text-[#714b67]" />
-              <p className="font-bold text-slate-900">#general</p>
+              <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">#general</p>
             </div>
 
-            <div className="rounded-xl bg-slate-50 p-5">
-              <p className="text-sm font-bold text-slate-900">
+            <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5">
+              <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                 New office launch
               </p>
-              <p className="mt-2 text-sm leading-6 text-slate-500">
+              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                 We are excited to share photos from our new workspace.
               </p>
 
@@ -302,10 +302,10 @@ export default function DiscussLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Adon Discuss is integrated throughout all
@@ -316,14 +316,14 @@ export default function DiscussLandingPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Communicate with every single Adon app.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-3xl">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Sales Order</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Sales Order</p>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                   Discuss
                 </span>
@@ -332,9 +332,9 @@ export default function DiscussLandingPage() {
               <div className="grid gap-5 md:grid-cols-[1fr_260px]">
                 <div className="space-y-3">
                   {["Customer", "Quotation", "Total", "Status"].map((item) => (
-                    <div key={item} className="rounded-lg bg-slate-50 p-4">
+                    <div key={item} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                       <p className="text-xs font-bold text-slate-400">{item}</p>
-                      <p className="mt-2 text-sm font-bold text-slate-900">
+                      <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         Connected business record
                       </p>
                     </div>
@@ -342,10 +342,10 @@ export default function DiscussLandingPage() {
                 </div>
 
                 <div className="rounded-xl bg-[#e9fbf8] p-4">
-                  <p className="text-sm font-bold text-slate-900">
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     Discuss thread
                   </p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                  <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                     Ask questions, mention team members, and keep decisions
                     attached to the document.
                   </p>
@@ -358,11 +358,11 @@ export default function DiscussLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               The Discuss app is the central
@@ -373,13 +373,13 @@ export default function DiscussLandingPage() {
               hub in Adon
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Access your conversations from every business workflow and keep
               every team connected around shared records.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 md:grid-cols-3">
               {[
                 "Sales",
@@ -391,12 +391,12 @@ export default function DiscussLandingPage() {
               ].map((app, index) => (
                 <div
                   key={app}
-                  className="rounded-lg bg-slate-50 p-4 text-center"
+                  className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-center"
                 >
-                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-white text-[#02a6a6] shadow-sm">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <CheckCircle2 className="h-5 w-5" />
                   </div>
-                  <p className="mt-3 text-sm font-bold text-slate-900">{app}</p>
+                  <p className="mt-3 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{app}</p>
                   <p className="mt-1 text-xs text-slate-400">Connected</p>
                 </div>
               ))}
@@ -405,9 +405,9 @@ export default function DiscussLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid grid-cols-2 gap-3">
               {avatars.slice(0, 4).map((avatar, index) => (
                 <div
@@ -435,7 +435,7 @@ export default function DiscussLandingPage() {
 
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Video meetings for internal
@@ -443,7 +443,7 @@ export default function DiscussLandingPage() {
               and external users!
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Meet with colleagues, partners, customers, and teams without
               leaving the communication workspace.
             </p>
@@ -451,10 +451,10 @@ export default function DiscussLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             #Message_channels for targeted{" "}
@@ -465,20 +465,20 @@ export default function DiscussLandingPage() {
             communications!
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Organize communication around teams, topics, announcements, and
             customer groups.
           </p>
 
-          <div className="mx-auto mt-14 max-w-3xl rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+          <div className="mx-auto mt-14 max-w-3xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="mb-5 flex items-center gap-3">
-              <MessageCircle className="h-5 w-5 text-[#714b67]" />
-              <p className="font-bold text-slate-900">#coffee-lovers</p>
+              <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">#coffee-lovers</p>
             </div>
 
             <div className="rounded-xl bg-[#e9fbf8] p-5">
-              <p className="text-sm font-bold text-slate-900">Team update</p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">Team update</p>
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 Here is the latest campaign concept. Please review and share
                 your comments before tomorrow.
               </p>
@@ -489,10 +489,10 @@ export default function DiscussLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-            <p className="mb-5 font-bold text-slate-900">Inbox</p>
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <p className="mb-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">Inbox</p>
 
             {[
               "You were mentioned in Sales Order",
@@ -501,7 +501,7 @@ export default function DiscussLandingPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="mb-3 rounded-lg bg-[#e9fbf8] px-4 py-3 text-sm font-semibold text-slate-700"
+                className="mb-3 rounded-lg bg-[#e9fbf8] px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200"
               >
                 {item}
               </div>
@@ -510,7 +510,7 @@ export default function DiscussLandingPage() {
 
           <div>
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Notifications all in{" "}
@@ -519,7 +519,7 @@ export default function DiscussLandingPage() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Never lose track of important messages, mentions, assignments, and
               updates from every Adon app.
             </p>
@@ -527,7 +527,7 @@ export default function DiscussLandingPage() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="absolute right-0 top-1/2 z-0 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -535,7 +535,7 @@ export default function DiscussLandingPage() {
             <Zap className="mb-6 h-12 w-12 text-sky-500" />
 
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Effective communication
@@ -543,13 +543,13 @@ export default function DiscussLandingPage() {
               drives business success
             </h2>
 
-            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Collaborate naturally with colleagues whether you are discussing a
               project, a sale, a customer request, or a company announcement.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             {[
               ["Audrey Peterson", "Can we validate this quote today?"],
               ["Joel Willis", "Yes, I attached the latest file."],
@@ -557,7 +557,7 @@ export default function DiscussLandingPage() {
             ].map(([name, message], index) => (
               <div
                 key={message}
-                className="mb-4 flex gap-3 rounded-lg bg-slate-50 p-4"
+                className="mb-4 flex gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
               >
                 <img
                   src={avatars[index]}
@@ -565,8 +565,8 @@ export default function DiscussLandingPage() {
                   className="h-10 w-10 rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-sm font-bold text-slate-900">{name}</p>
-                  <p className="mt-1 text-sm text-slate-500">{message}</p>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{name}</p>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{message}</p>
                 </div>
               </div>
             ))}
@@ -580,7 +580,7 @@ export default function DiscussLandingPage() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -600,21 +600,21 @@ export default function DiscussLandingPage() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -623,17 +623,17 @@ export default function DiscussLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -646,7 +646,7 @@ export default function DiscussLandingPage() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -657,15 +657,15 @@ export default function DiscussLandingPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -676,14 +676,14 @@ export default function DiscussLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -721,14 +721,14 @@ export default function DiscussLandingPage() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -739,7 +739,7 @@ export default function DiscussLandingPage() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   The easy to use interface lets users discuss tasks and
                   projects while keeping business communication organized.
                 </p>
@@ -752,8 +752,8 @@ export default function DiscussLandingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Nicolas Martin</p>
-                    <p className="text-sm text-slate-500">Operations manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Nicolas Martin</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Operations manager</p>
                   </div>
                 </div>
               </div>
@@ -766,7 +766,7 @@ export default function DiscussLandingPage() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Reignite the spark
@@ -816,3 +816,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

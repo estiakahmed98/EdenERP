@@ -103,8 +103,8 @@ const avatarImages = [
 
 export default function EcommerceArtisticSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <p
             className="mb-2 text-lg font-bold text-sky-500"
@@ -114,16 +114,16 @@ export default function EcommerceArtisticSections() {
           </p>
 
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Open source{" "}
             <HandUnderline color="bg-sky-400">
-              <span className="text-slate-900">eCommerce</span>
+              <span className="text-slate-900 dark:text-white dark:text-slate-100">eCommerce</span>
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Sell anything, anywhere, with everything connected in one app.
             Create your store, manage products, accept orders, and grow your
             brand beautifully.
@@ -139,7 +139,7 @@ export default function EcommerceArtisticSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -154,10 +154,10 @@ export default function EcommerceArtisticSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="grid bg-white lg:grid-cols-[220px_1fr]">
-                <aside className="border-r border-slate-100 bg-white p-5 text-left">
-                  <p className="text-sm font-bold text-slate-900">Categories</p>
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="grid bg-white dark:bg-slate-950 dark:bg-slate-900 lg:grid-cols-[220px_1fr]">
+                <aside className="border-r border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left">
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">Categories</p>
 
                   <div className="mt-5 space-y-3">
                     {[
@@ -173,7 +173,7 @@ export default function EcommerceArtisticSections() {
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 0
                             ? "bg-[#714b67] text-white"
-                            : "bg-slate-50 text-slate-500"
+                            : "bg-slate-50 dark:bg-slate-800/40 text-slate-500 dark:text-slate-400"
                         }`}
                       >
                         {item}
@@ -182,12 +182,12 @@ export default function EcommerceArtisticSections() {
                   </div>
 
                   <div className="mt-8">
-                    <p className="text-xs font-bold text-slate-500">Filter</p>
+                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400">Filter</p>
                     <div className="mt-3 space-y-2">
                       {["In stock", "New arrivals", "On sale"].map((item) => (
                         <div
                           key={item}
-                          className="flex items-center gap-2 text-xs text-slate-500"
+                          className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400"
                         >
                           <span className="h-3 w-3 rounded border border-slate-300" />
                           {item}
@@ -200,10 +200,10 @@ export default function EcommerceArtisticSections() {
                 <div className="bg-[#f7f8fb] p-6">
                   <div className="mb-5 flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-bold text-slate-900">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         Furniture Store
                       </p>
-                      <p className="mt-1 text-xs text-slate-500">
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                         8 products found
                       </p>
                     </div>
@@ -254,7 +254,7 @@ export default function EcommerceArtisticSections() {
                     ].map((product, index) => (
                       <div
                         key={product.title}
-                        className="group overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-xl"
+                        className="group overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-xl"
                       >
                         <div className="relative">
                           <img
@@ -271,16 +271,16 @@ export default function EcommerceArtisticSections() {
                         </div>
 
                         <div className="p-4 text-left">
-                          <h3 className="text-sm font-bold text-slate-900">
+                          <h3 className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {product.title}
                           </h3>
 
                           <div className="mt-2 flex items-center justify-between">
-                            <p className="text-sm font-bold text-[#714b67]">
+                            <p className="text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
                               {product.price}
                             </p>
 
-                            <button className="rounded-md bg-slate-100 p-2 text-slate-500 transition group-hover:bg-[#714b67] group-hover:text-white">
+                            <button className="rounded-md bg-slate-100 p-2 text-slate-500 dark:text-slate-400 transition group-hover:bg-[#714b67] group-hover:text-white">
                               <ShoppingBag className="h-4 w-4" />
                             </button>
                           </div>
@@ -300,10 +300,10 @@ export default function EcommerceArtisticSections() {
       <section className="bg-[#f3f4f7] py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto mb-10 flex max-w-3xl items-center justify-center gap-4">
-            <Zap className="h-9 w-9 text-slate-900" />
-            <div className="flex-1 rounded-md bg-[#02cfc3] py-2">
+            <Zap className="h-9 w-9 text-slate-900 dark:text-white dark:text-slate-100" />
+            <div className="flex-1 rounded-md bg-[#02cfc3] dark:bg-[#02cfc3]/30 py-2">
               <h2
-                className="text-3xl font-bold text-slate-900 sm:text-4xl"
+                className="text-3xl font-bold text-slate-900 dark:text-white dark:text-slate-100 sm:text-4xl"
                 style={{ fontFamily: handwrittenFont }}
               >
                 No code Mode
@@ -311,15 +311,15 @@ export default function EcommerceArtisticSections() {
             </div>
           </div>
 
-          <p className="mx-auto max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Build your online store visually. Add products, edit pages, manage
             checkout, customize layouts, and publish without writing code.
           </p>
 
           <div className="relative mx-auto mt-12 max-w-4xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid lg:grid-cols-[1fr_250px]">
-                <div className="bg-white p-7">
+                <div className="bg-white dark:bg-slate-950 dark:bg-slate-900 p-7">
                   <div className="mb-5 flex items-center justify-between">
                     <div className="h-4 w-40 rounded bg-slate-100" />
                     <div className="flex gap-2">
@@ -336,7 +336,7 @@ export default function EcommerceArtisticSections() {
                     />
 
                     <div className="text-left">
-                      <h3 className="text-2xl font-bold text-slate-900">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         Sugar Bloom Box
                       </h3>
 
@@ -346,11 +346,11 @@ export default function EcommerceArtisticSections() {
                         ))}
                       </div>
 
-                      <p className="mt-4 text-2xl font-bold text-[#714b67]">
+                      <p className="mt-4 text-2xl font-bold text-[#714b67] dark:text-[#9b6a8f]">
                         $29.00
                       </p>
 
-                      <p className="mt-4 text-sm leading-7 text-slate-600">
+                      <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
                         A beautiful product page with images, reviews, product
                         options, and quick checkout.
                       </p>
@@ -367,7 +367,7 @@ export default function EcommerceArtisticSections() {
                         ].map((item) => (
                           <div
                             key={item}
-                            className="flex items-center gap-2 text-sm text-slate-600"
+                            className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300"
                           >
                             <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                             {item}
@@ -378,7 +378,7 @@ export default function EcommerceArtisticSections() {
                   </div>
                 </div>
 
-                <aside className="border-l border-slate-200 bg-[#171824] p-5 text-left text-white">
+                <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] p-5 text-left text-white">
                   <p className="mb-5 text-sm font-bold">Edit panel</p>
 
                   {[
@@ -394,9 +394,9 @@ export default function EcommerceArtisticSections() {
                         <span>{item}</span>
                         <span>{index + 1}</span>
                       </div>
-                      <div className="h-2 rounded-full bg-white/10">
+                      <div className="h-2 rounded-full bg-white dark:bg-slate-950/10">
                         <div
-                          className="h-2 rounded-full bg-[#02cfc3]"
+                          className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30"
                           style={{ width: `${45 + index * 8}%` }}
                         />
                       </div>
@@ -408,7 +408,7 @@ export default function EcommerceArtisticSections() {
 
             <div className="mt-10 text-center">
               <span
-                className="text-2xl font-bold text-slate-900"
+                className="text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 + 3 million free photos
@@ -418,12 +418,12 @@ export default function EcommerceArtisticSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Crown className="mx-auto h-12 w-12 text-amber-500" />
 
           <h2
-            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-amber-300">
@@ -435,13 +435,13 @@ export default function EcommerceArtisticSections() {
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-12 lg:grid-cols-2">
             <div className="text-left">
               <h3
-                className="text-2xl font-bold text-slate-900"
+                className="text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Adaptable products
               </h3>
 
-              <p className="mt-5 text-sm leading-7 text-slate-600">
+              <p className="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
                 Build simple products, variants, digital products, services,
                 bundles, and subscriptions. Every product can include images,
                 inventory rules, pricing, descriptions, and promotions.
@@ -455,12 +455,12 @@ export default function EcommerceArtisticSections() {
                 ].map((item) => (
                   <div key={item}>
                     <p
-                      className="text-lg font-bold text-slate-900"
+                      className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       {item}
                     </p>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       Manage your store with connected data and smart actions.
                     </p>
                   </div>
@@ -471,7 +471,7 @@ export default function EcommerceArtisticSections() {
             <div className="relative">
               <div className="absolute inset-0 translate-x-10 translate-y-10 rounded-full bg-[#f3f4f7]" />
 
-              <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+              <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
                 <div className="grid gap-6 sm:grid-cols-[1fr_1fr]">
                   <img
                     src="https://images.unsplash.com/photo-1503602642458-232111445657?w=600&auto=format&fit=crop"
@@ -480,11 +480,11 @@ export default function EcommerceArtisticSections() {
                   />
 
                   <div className="text-left">
-                    <p className="text-xs font-bold text-[#714b67]">
+                    <p className="text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
                       CUSTOMIZABLE DESK
                     </p>
 
-                    <h3 className="mt-3 text-2xl font-bold text-slate-900">
+                    <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       Modern Oak Chair
                     </h3>
 
@@ -494,7 +494,7 @@ export default function EcommerceArtisticSections() {
                       ))}
                     </div>
 
-                    <p className="mt-4 text-2xl font-bold text-[#714b67]">
+                    <p className="mt-4 text-2xl font-bold text-[#714b67] dark:text-[#9b6a8f]">
                       $149.00
                     </p>
 
@@ -504,8 +504,8 @@ export default function EcommerceArtisticSections() {
                           key={item}
                           className={`rounded-md border px-2 py-2 text-center text-xs font-bold ${
                             index === 0
-                              ? "border-[#714b67] text-[#714b67]"
-                              : "border-slate-200 text-slate-400"
+                              ? "border-[#714b67] text-[#714b67] dark:text-[#9b6a8f]"
+                              : "border-slate-200 dark:border-slate-700 text-slate-400"
                           }`}
                         >
                           {item}
@@ -533,12 +533,12 @@ export default function EcommerceArtisticSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto flex items-center justify-center gap-5">
             <Heart className="h-9 w-9 fill-amber-300 text-amber-400" />
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Bump up{" "}
@@ -552,13 +552,13 @@ export default function EcommerceArtisticSections() {
             <Gift className="h-9 w-9 text-rose-500" />
           </div>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Encourage conversations, collect customer feedback, create rewards,
             send promotions, and keep your buyers coming back.
           </p>
 
           <div className="mx-auto mt-14 grid max-w-4xl gap-8 lg:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
               <div className="mb-5 rounded-md bg-[#714b67] px-4 py-3 text-left text-sm font-bold text-white">
                 Messages
               </div>
@@ -574,7 +574,7 @@ export default function EcommerceArtisticSections() {
                     className={`rounded-2xl p-4 text-sm leading-6 ${
                       index === 1
                         ? "ml-8 bg-emerald-50 text-emerald-700"
-                        : "mr-8 bg-slate-50 text-slate-600"
+                        : "mr-8 bg-slate-50 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300"
                     }`}
                   >
                     {message}
@@ -583,8 +583,8 @@ export default function EcommerceArtisticSections() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-              <h3 className="text-lg font-bold text-slate-900">Loyalty feed</h3>
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">Loyalty feed</h3>
 
               <div className="mt-5 space-y-5">
                 {[
@@ -593,13 +593,13 @@ export default function EcommerceArtisticSections() {
                   ["Social sharing", "Turn happy buyers into promoters"],
                 ].map(([title, text]) => (
                   <div key={title} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f8eff6] text-[#714b67]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                       <BadgeCheck className="h-5 w-5" />
                     </div>
 
                     <div>
-                      <p className="font-bold text-slate-900">{title}</p>
-                      <p className="mt-1 text-sm text-slate-500">{text}</p>
+                      <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{title}</p>
+                      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{text}</p>
                     </div>
                   </div>
                 ))}
@@ -609,11 +609,11 @@ export default function EcommerceArtisticSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Your store in the{" "}
@@ -622,28 +622,28 @@ export default function EcommerceArtisticSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600">
+            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-slate-300">
               Understand visitors, revenue, conversion, products, and campaign
               performance with visual ecommerce analytics.
             </p>
           </div>
 
           <div className="relative">
-            <div className="mb-5 flex justify-end gap-3 text-slate-700">
+            <div className="mb-5 flex justify-end gap-3 text-slate-700 dark:text-slate-200">
               <BarChart3 className="h-7 w-7 text-sky-500" />
               <TrendingUp className="h-7 w-7 text-amber-500" />
               <LineChart className="h-7 w-7 text-rose-500" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Revenue analytics</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Revenue analytics</p>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                   +28%
                 </span>
               </div>
 
-              <div className="flex h-72 items-end gap-3 rounded-lg bg-slate-50 p-5">
+              <div className="flex h-72 items-end gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
                 {[35, 48, 42, 58, 63, 55, 72, 80, 76, 92, 88, 100].map(
                   (height, index) => (
                     <div
@@ -657,7 +657,7 @@ export default function EcommerceArtisticSections() {
             </div>
 
             <p
-              className="ml-auto mt-8 max-w-xs rotate-[-10deg] text-center text-lg text-[#714b67]"
+              className="ml-auto mt-8 max-w-xs rotate-[-10deg] text-center text-lg text-[#714b67] dark:text-[#9b6a8f]"
               style={{ fontFamily: handwrittenFont }}
             >
               Integrated with Google Analytics
@@ -666,10 +666,10 @@ export default function EcommerceArtisticSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Built using our apps
@@ -695,7 +695,7 @@ export default function EcommerceArtisticSections() {
             ].map((item, index) => (
               <div
                 key={item.title}
-                className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.10)] ${
+                className={`overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.10)] ${
                   index === 1 ? "md:mt-10" : ""
                 }`}
               >
@@ -706,8 +706,8 @@ export default function EcommerceArtisticSections() {
                 />
 
                 <div className="p-5 text-left">
-                  <p className="font-bold text-slate-900">{item.title}</p>
-                  <p className="mt-2 text-sm text-slate-500">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{item.title}</p>
+                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                     Built with ecommerce, website, inventory, and marketing.
                   </p>
                 </div>
@@ -723,11 +723,11 @@ export default function EcommerceArtisticSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6]">features</span>
             </HandUnderline>
             <br />
@@ -738,21 +738,21 @@ export default function EcommerceArtisticSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -761,27 +761,27 @@ export default function EcommerceArtisticSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one app.
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow with integrated apps that work together.
           </p>
 
@@ -792,15 +792,15 @@ export default function EcommerceArtisticSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -811,14 +811,14 @@ export default function EcommerceArtisticSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatarImages.map((avatar, index) => (
@@ -856,14 +856,14 @@ export default function EcommerceArtisticSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -874,7 +874,7 @@ export default function EcommerceArtisticSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon transformed our operations by integrating ecommerce
                   functions, simplifying product management, and offering
                   cost-effective maintenance.
@@ -887,8 +887,8 @@ export default function EcommerceArtisticSections() {
                     className="h-12 w-12 rounded-full object-cover"
                   />
                   <div>
-                    <p className="font-bold text-slate-900">Noah Carter</p>
-                    <p className="text-sm text-slate-500">eCommerce Founder</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Noah Carter</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">eCommerce Founder</p>
                   </div>
                 </div>
               </div>
@@ -901,13 +901,13 @@ export default function EcommerceArtisticSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -929,3 +929,5 @@ export default function EcommerceArtisticSections() {
     </main>
   );
 }
+
+

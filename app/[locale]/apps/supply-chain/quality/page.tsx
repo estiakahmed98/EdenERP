@@ -84,11 +84,11 @@ const avatars = [
 
 export default function QualityLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Quality{" "}
@@ -97,7 +97,7 @@ export default function QualityLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Build smart quality checks, catch defects early, manage inspections,
             and keep production moving without adding unnecessary complexity.
           </p>
@@ -112,7 +112,7 @@ export default function QualityLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
@@ -127,11 +127,11 @@ export default function QualityLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <ShieldCheck className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Quality</span>
+                  <ShieldCheck className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Quality</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Overview / Quality Control / Alerts / Reporting
                   </span>
@@ -179,10 +179,10 @@ export default function QualityLandingSections() {
                 ].map((column, columnIndex) => (
                   <div
                     key={column.title}
-                    className="rounded-lg bg-slate-50 p-3"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         {column.title}
                       </p>
                       <span className="text-lg font-bold text-slate-400">
@@ -194,9 +194,9 @@ export default function QualityLandingSections() {
                       {column.cards.map((card, cardIndex) => (
                         <div
                           key={card}
-                          className="rounded-lg bg-white p-4 text-left shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
                         >
-                          <p className="text-sm font-bold text-slate-900">
+                          <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {card}
                           </p>
 
@@ -232,7 +232,7 @@ export default function QualityLandingSections() {
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -242,14 +242,14 @@ export default function QualityLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Quality{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>inspections</span>
             </HandUnderline>{" "}
             that won&apos;t interrupt
@@ -260,16 +260,16 @@ export default function QualityLandingSections() {
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-12 lg:grid-cols-2">
             <div className="relative">
               <div className="mb-6 flex justify-center">
-                <div className="rounded-full bg-white px-5 py-2 text-xs font-bold text-slate-500 shadow-lg ring-1 ring-slate-100">
+                <div className="rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-2 text-xs font-bold text-slate-500 dark:text-slate-400 shadow-lg ring-1 ring-slate-100">
                   Quality / Control Points / Tablet view
                 </div>
               </div>
 
-              <DashedArrow className="mx-auto mb-6 h-20 w-20 rotate-90 text-[#714b67]/50" />
+              <DashedArrow className="mx-auto mb-6 h-20 w-20 rotate-90 text-[#714b67] dark:text-[#9b6a8f]/50" />
 
-              <div className="rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+              <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
                 <div className="mb-5 flex items-center justify-between">
-                  <p className="font-bold text-slate-900">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     Quality control point
                   </p>
                   <span className="text-slate-400">×</span>
@@ -285,7 +285,7 @@ export default function QualityLandingSections() {
                       <p className="text-xs font-bold text-slate-400">
                         {label}
                       </p>
-                      <div className="mt-2 rounded-md bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-100">
+                      <div className="mt-2 rounded-md bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 ring-1 ring-slate-100">
                         {value}
                       </div>
                     </div>
@@ -296,14 +296,14 @@ export default function QualityLandingSections() {
                   <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
                     Pass
                   </button>
-                  <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+                  <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                     Fail
                   </button>
                 </div>
               </div>
             </div>
 
-            <p className="mx-auto max-w-md text-left text-sm leading-7 text-slate-600">
+            <p className="mx-auto max-w-md text-left text-sm leading-7 text-slate-600 dark:text-slate-300">
               Maintain product consistency and quality by configuring checks
               directly on manufacturing orders, work centers, receipts, and
               delivery flows.
@@ -312,13 +312,13 @@ export default function QualityLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Zero in on{" "}
@@ -329,7 +329,7 @@ export default function QualityLandingSections() {
               before they cost you
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Create quality alerts, isolate problems, assign responsibility,
               and take corrective action before defects affect customers or
               production schedules.
@@ -337,7 +337,7 @@ export default function QualityLandingSections() {
           </div>
 
           <div className="relative">
-            <div className="absolute -top-24 right-6 hidden rounded-xl border border-slate-200 bg-white p-4 shadow-xl lg:block">
+            <div className="absolute -top-24 right-6 hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-xl lg:block">
               {[
                 "Scrap product",
                 "Create alert",
@@ -349,7 +349,7 @@ export default function QualityLandingSections() {
                   className={`mb-2 rounded-md px-4 py-2 text-xs font-bold last:mb-0 ${
                     index === 1
                       ? "bg-rose-500 text-white"
-                      : "bg-slate-50 text-slate-600"
+                      : "bg-slate-50 dark:bg-slate-800/40 text-slate-600 dark:text-slate-300"
                   }`}
                 >
                   {item}
@@ -357,15 +357,15 @@ export default function QualityLandingSections() {
               ))}
             </div>
 
-            <DashedArrow className="absolute -left-10 -top-8 hidden h-20 w-20 rotate-80 text-[#714b67]/60 lg:block" />
+            <DashedArrow className="absolute -left-10 -top-8 hidden h-20 w-20 rotate-80 text-[#714b67] dark:text-[#9b6a8f]/60 lg:block" />
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
                     Quality Alert
                   </p>
-                  <h3 className="mt-2 text-3xl font-bold text-slate-900">
+                  <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     QA00079
                   </h3>
                 </div>
@@ -382,20 +382,20 @@ export default function QualityLandingSections() {
                   ["Team", "Quality Team"],
                   ["Priority", "High"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 p-4">
+                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                     <p className="text-xs font-bold text-slate-400">{label}</p>
-                    <p className="mt-2 text-sm font-bold text-slate-900">
+                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {value}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-5 rounded-lg bg-slate-50 p-5">
-                <p className="text-sm font-bold text-slate-900">
+              <div className="mt-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
+                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   Corrective action
                 </p>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
+                <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                   Block the faulty batch, notify supplier, and re-check
                   components before production continues.
                 </p>
@@ -405,11 +405,11 @@ export default function QualityLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Inspection worksheet</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Inspection worksheet</p>
               <span className="text-slate-400">×</span>
             </div>
 
@@ -418,11 +418,11 @@ export default function QualityLandingSections() {
                 <div className="h-3 w-3/4 rounded bg-slate-200" />
                 <div className="h-3 w-full rounded bg-slate-100" />
                 <div className="h-3 w-5/6 rounded bg-slate-100" />
-                <div className="mt-6 rounded-lg bg-slate-50 p-4">
-                  <p className="text-sm font-bold text-slate-700">
+                <div className="mt-6 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <p className="text-sm font-bold text-slate-700 dark:text-slate-200">
                     Operator note
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                  <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                     Add measurement, attach image, and validate the inspection.
                   </p>
                 </div>
@@ -451,7 +451,7 @@ export default function QualityLandingSections() {
               <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
                 Pass
               </button>
-              <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+              <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                 Fail
               </button>
             </div>
@@ -459,7 +459,7 @@ export default function QualityLandingSections() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               No product left
@@ -469,7 +469,7 @@ export default function QualityLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Choose product-specific checks and inspection worksheets. Track
               photos, measurements, pass/fail answers, and comments for every
               important operation.
@@ -478,11 +478,11 @@ export default function QualityLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Put your{" "}
@@ -492,18 +492,18 @@ export default function QualityLandingSections() {
               teams in control
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Create unlimited quality teams dedicated to specific products,
               operations, or issues. Assign alerts and make sure every concern
               reaches the right person.
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 md:grid-cols-3">
               {["New", "In Progress", "Done"].map((column, columnIndex) => (
-                <div key={column} className="rounded-lg bg-slate-50 p-4">
-                  <p className="mb-4 text-sm font-bold text-slate-900">
+                <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     {column}
                   </p>
 
@@ -511,7 +511,7 @@ export default function QualityLandingSections() {
                     {Array.from({ length: 3 }).map((_, index) => (
                       <div
                         key={index}
-                        className="rounded-lg bg-white p-4 text-left shadow-sm"
+                        className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm"
                       >
                         <div className="h-3 w-3/4 rounded bg-slate-200" />
                         <div className="mt-2 h-2 w-full rounded bg-slate-100" />
@@ -545,10 +545,10 @@ export default function QualityLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Worksheets make{" "}
@@ -558,7 +558,7 @@ export default function QualityLandingSections() {
             effortless
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Create interactive worksheets for operators to fill out when
             performing quality checks.
           </p>
@@ -566,13 +566,13 @@ export default function QualityLandingSections() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="absolute inset-0 translate-y-8 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative rounded-xl border border-slate-200 bg-white p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
                     Worksheet
                   </p>
-                  <h3 className="mt-2 text-xl font-bold text-slate-900">
+                  <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     Quality control checklist
                   </h3>
                 </div>
@@ -590,15 +590,15 @@ export default function QualityLandingSections() {
                 ].map((item, index) => (
                   <div
                     key={item}
-                    className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-4"
+                    className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-4"
                   >
                     <div className="flex items-center gap-3">
                       {index % 2 === 0 ? (
                         <CheckCircle2 className="h-5 w-5 text-emerald-500" />
                       ) : (
-                        <FileText className="h-5 w-5 text-[#714b67]" />
+                        <FileText className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                       )}
-                      <span className="text-sm font-bold text-slate-700">
+                      <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
                         {item}
                       </span>
                     </div>
@@ -613,7 +613,7 @@ export default function QualityLandingSections() {
                 <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
                   Save
                 </button>
-                <button className="rounded-md border border-slate-200 px-5 py-2 text-sm font-bold text-slate-600">
+                <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
                   Cancel
                 </button>
               </div>
@@ -628,7 +628,7 @@ export default function QualityLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -638,31 +638,31 @@ export default function QualityLandingSections() {
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>right.</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
+            <div className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                   <TrendingUp className="h-5 w-5" />
                 </div>
 
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold text-slate-900">
+              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                 Quality statistics
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 Track defects, inspections, teams, and corrective actions with
                 easy-to-read reporting.
               </p>
 
-              <div className="mt-8 flex h-64 items-end gap-5 rounded-lg bg-slate-50 p-5">
+              <div className="mt-8 flex h-64 items-end gap-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
                 {[
                   { orange: 75, blue: 110 },
                   { orange: 45, blue: 170 },
@@ -688,21 +688,21 @@ export default function QualityLandingSections() {
             {features.slice(1).map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -711,17 +711,17 @@ export default function QualityLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -734,7 +734,7 @@ export default function QualityLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -745,15 +745,15 @@ export default function QualityLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -764,14 +764,14 @@ export default function QualityLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -809,14 +809,14 @@ export default function QualityLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -827,7 +827,7 @@ export default function QualityLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Quality checks became easier to follow, and our teams now
                   catch issues before they reach customers.
                 </p>
@@ -840,8 +840,8 @@ export default function QualityLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Robert Hayes</p>
-                    <p className="text-sm text-slate-500">Quality manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Robert Hayes</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Quality manager</p>
                   </div>
                 </div>
               </div>
@@ -854,13 +854,13 @@ export default function QualityLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -908,3 +908,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

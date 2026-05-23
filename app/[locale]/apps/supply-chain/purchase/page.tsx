@@ -96,11 +96,11 @@ const avatars = [
 
 export default function PurchaseLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Restock on time{" "}
@@ -109,7 +109,7 @@ export default function PurchaseLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Automate RFQs, compare vendors, control costs, avoid stockouts, and
             purchase exactly what your business needs.
           </p>
@@ -124,7 +124,7 @@ export default function PurchaseLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -139,12 +139,12 @@ export default function PurchaseLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center justify-between">
                   <div>
                     <span
-                      className="text-lg font-bold text-[#714b67]"
+                      className="text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       Purchase
@@ -165,7 +165,7 @@ export default function PurchaseLandingSections() {
                   {[
                     ["RFQs", "16", "bg-[#714b67] text-white"],
                     ["To Approve", "09", "bg-[#7f5f78] text-white"],
-                    ["Orders", "34", "bg-slate-100 text-slate-700"],
+                    ["Orders", "34", "bg-slate-100 text-slate-700 dark:text-slate-200"],
                     ["Late", "03", "bg-rose-50 text-rose-600"],
                   ].map(([label, value, color]) => (
                     <div
@@ -178,8 +178,8 @@ export default function PurchaseLandingSections() {
                   ))}
                 </div>
 
-                <div className="overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
+                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                     <span>Reference</span>
                     <span>Vendor</span>
                     <span>Buyer</span>
@@ -247,14 +247,14 @@ export default function PurchaseLandingSections() {
                   ].map((row) => (
                     <div
                       key={row[0]}
-                      className="grid grid-cols-7 gap-4 border-b border-slate-100 px-5 py-4 text-left text-xs last:border-0"
+                      className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
-                      <span className="font-bold text-[#714b67]">{row[0]}</span>
-                      <span className="text-slate-700">{row[1]}</span>
-                      <span className="text-slate-500">{row[2]}</span>
-                      <span className="text-slate-500">{row[3]}</span>
-                      <span className="text-slate-500">{row[4]}</span>
-                      <span className="font-bold text-slate-900">{row[5]}</span>
+                      <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">{row[0]}</span>
+                      <span className="text-slate-700 dark:text-slate-200">{row[1]}</span>
+                      <span className="text-slate-500 dark:text-slate-400">{row[2]}</span>
+                      <span className="text-slate-500 dark:text-slate-400">{row[3]}</span>
+                      <span className="text-slate-500 dark:text-slate-400">{row[4]}</span>
+                      <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{row[5]}</span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                           row[6] === "Received"
@@ -263,7 +263,7 @@ export default function PurchaseLandingSections() {
                               ? "bg-sky-50 text-sky-600"
                               : row[6] === "Approved"
                                 ? "bg-amber-50 text-amber-600"
-                                : "bg-slate-100 text-slate-500"
+                                : "bg-slate-100 text-slate-500 dark:text-slate-400"
                         }`}
                       >
                         {row[6]}
@@ -273,7 +273,7 @@ export default function PurchaseLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -292,10 +292,10 @@ export default function PurchaseLandingSections() {
       <section className="bg-[#f3f4f7] py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>Automated</span>
             </HandUnderline>{" "}
             RFQs
@@ -303,17 +303,17 @@ export default function PurchaseLandingSections() {
             for the busy bee
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Automatically trigger RFQs from replenishment rules, compare vendor
             offers, and confirm the best purchase at the right time.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
+            <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900" />
 
             <div className="relative grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
               <div className="space-y-6">
-                <div className="rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm ring-1 ring-slate-100">
                   <div className="grid grid-cols-3 gap-4">
                     {[
                       ["RFQ", "12"],
@@ -331,8 +331,8 @@ export default function PurchaseLandingSections() {
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white p-6 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900">
+                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     Replenishment rules
                   </p>
 
@@ -345,9 +345,9 @@ export default function PurchaseLandingSections() {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-sm"
+                        className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                       >
-                        <span className="font-semibold text-slate-700">
+                        <span className="font-semibold text-slate-700 dark:text-slate-200">
                           {item}
                         </span>
                         <span className="rounded-full bg-sky-50 px-3 py-1 text-[10px] font-bold text-sky-600">
@@ -360,8 +360,8 @@ export default function PurchaseLandingSections() {
               </div>
 
               <div className="grid gap-6">
-                <div className="rounded-xl bg-white p-6 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900">RFQ Status</p>
+                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">RFQ Status</p>
 
                   <div className="mt-5 space-y-3">
                     {[
@@ -373,9 +373,9 @@ export default function PurchaseLandingSections() {
                     ].map(([qty, status]) => (
                       <div
                         key={qty}
-                        className="flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-sm"
+                        className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                       >
-                        <span className="font-bold text-slate-700">{qty}</span>
+                        <span className="font-bold text-slate-700 dark:text-slate-200">{qty}</span>
                         <span
                           className={`rounded-full px-3 py-1 text-[10px] font-bold ${
                             status === "Purchased"
@@ -390,15 +390,15 @@ export default function PurchaseLandingSections() {
                   </div>
                 </div>
 
-                <div className="rounded-xl bg-white p-6 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900">Smart actions</p>
+                <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100">
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Smart actions</p>
 
                   <div className="mt-5 space-y-3">
                     {["Order once", "Automate", "Confirm", "Receive"].map(
                       (item) => (
                         <div
                           key={item}
-                          className="flex items-center gap-3 rounded-lg bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600"
+                          className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300"
                         >
                           <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                           {item}
@@ -413,10 +413,10 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Flexible purchase agreements,
@@ -424,7 +424,7 @@ export default function PurchaseLandingSections() {
             for every situation
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Optimize procurement with blanket orders, vendor agreements, prices,
             delivery schedules, and purchase conditions.
           </p>
@@ -432,13 +432,13 @@ export default function PurchaseLandingSections() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="absolute inset-0 translate-y-16 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <div className="flex flex-col justify-between gap-5 border-b border-slate-100 pb-5 md:flex-row">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+              <div className="flex flex-col justify-between gap-5 border-b border-slate-100 dark:border-slate-700 pb-5 md:flex-row">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-slate-400">
                     Purchase Agreement
                   </p>
-                  <h3 className="mt-2 text-3xl font-bold text-slate-900">
+                  <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     P00023
                   </h3>
                 </div>
@@ -446,19 +446,19 @@ export default function PurchaseLandingSections() {
                 <div className="grid gap-3 text-sm md:grid-cols-2">
                   <div>
                     <p className="text-xs font-bold text-slate-400">Vendor</p>
-                    <p className="font-bold text-slate-900">Azure Interior</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Azure Interior</p>
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-400">
                       Agreement Type
                     </p>
-                    <p className="font-bold text-slate-900">Blanket Order</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Blanket Order</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 overflow-hidden rounded-lg ring-1 ring-slate-100">
-                <div className="grid grid-cols-5 bg-slate-50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                   <span>Product</span>
                   <span>Vendor Ref</span>
                   <span>Scheduled</span>
@@ -474,15 +474,15 @@ export default function PurchaseLandingSections() {
                 ].map((row) => (
                   <div
                     key={row[0]}
-                    className="grid grid-cols-5 border-b border-slate-100 px-4 py-4 text-sm last:border-0"
+                    className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-sm last:border-0"
                   >
                     {row.map((cell, index) => (
                       <span
                         key={cell}
                         className={
                           index === 0
-                            ? "font-bold text-slate-900"
-                            : "text-slate-500"
+                            ? "font-bold text-slate-900 dark:text-white dark:text-slate-100"
+                            : "text-slate-500 dark:text-slate-400"
                         }
                       >
                         {cell}
@@ -493,10 +493,10 @@ export default function PurchaseLandingSections() {
               </div>
             </div>
 
-            <DashedArrow className="mx-auto mt-10 h-24 w-24 rotate-90 text-[#714b67]/40" />
+            <DashedArrow className="mx-auto mt-10 h-24 w-24 rotate-90 text-[#714b67] dark:text-[#9b6a8f]/40" />
 
-            <div className="relative mt-8 overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)]">
-              <div className="grid grid-cols-6 gap-4 border-b border-slate-100 bg-slate-50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+            <div className="relative mt-8 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)]">
+              <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                 <span>Order</span>
                 <span>Product</span>
                 <span>Vendor</span>
@@ -512,17 +512,17 @@ export default function PurchaseLandingSections() {
               ].map((row) => (
                 <div
                   key={row[0]}
-                  className="grid grid-cols-6 gap-4 border-b border-slate-100 px-4 py-4 text-left text-xs last:border-0"
+                  className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-left text-xs last:border-0"
                 >
                   {row.map((cell, index) => (
                     <span
                       key={cell}
                       className={
                         index === 0
-                          ? "font-bold text-[#714b67]"
+                          ? "font-bold text-[#714b67] dark:text-[#9b6a8f]"
                           : index === 5
                             ? "w-fit rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600"
-                            : "text-slate-500"
+                            : "text-slate-500 dark:text-slate-400"
                       }
                     >
                       {cell}
@@ -541,13 +541,13 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Charge vendors on
@@ -557,7 +557,7 @@ export default function PurchaseLandingSections() {
               </HandUnderline>
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Create vendor price lists, payment terms, delivery agreements, and
               approval flows. Keep every supplier aligned with your purchasing
               rules.
@@ -565,11 +565,11 @@ export default function PurchaseLandingSections() {
           </div>
 
           <div className="relative mx-auto w-full max-w-lg">
-            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white" />
+            <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900" />
 
             <div className="relative grid gap-5 sm:grid-cols-[0.8fr_1.1fr]">
-              <div className="rounded-xl bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] ring-1 ring-slate-100">
-                <p className="mb-5 text-left font-bold text-slate-900">
+              <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] ring-1 ring-slate-100">
+                <p className="mb-5 text-left font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   Payment terms
                 </p>
 
@@ -577,9 +577,9 @@ export default function PurchaseLandingSections() {
                   (item, index) => (
                     <div
                       key={item}
-                      className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 text-xs"
+                      className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs"
                     >
-                      <span className="font-bold text-slate-700">{item}</span>
+                      <span className="font-bold text-slate-700 dark:text-slate-200">{item}</span>
                       <span
                         className={`rounded-full px-2 py-1 text-[10px] font-bold ${
                           index < 2
@@ -594,8 +594,8 @@ export default function PurchaseLandingSections() {
                 )}
               </div>
 
-              <div className="rounded-xl bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] ring-1 ring-slate-100">
-                <p className="mb-5 text-left font-bold text-slate-900">
+              <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] ring-1 ring-slate-100">
+                <p className="mb-5 text-left font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   Vendor bills
                 </p>
 
@@ -607,17 +607,17 @@ export default function PurchaseLandingSections() {
                 ].map(([vendor, amount, status]) => (
                   <div
                     key={vendor}
-                    className="mb-3 grid grid-cols-[1fr_70px_70px] items-center gap-2 rounded-lg bg-slate-50 px-4 py-3 text-xs"
+                    className="mb-3 grid grid-cols-[1fr_70px_70px] items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs"
                   >
-                    <span className="font-bold text-slate-700">{vendor}</span>
-                    <span className="text-slate-500">{amount}</span>
+                    <span className="font-bold text-slate-700 dark:text-slate-200">{vendor}</span>
+                    <span className="text-slate-500 dark:text-slate-400">{amount}</span>
                     <span
                       className={`rounded-full px-2 py-1 text-center text-[10px] font-bold ${
                         status === "Paid"
                           ? "bg-emerald-50 text-emerald-600"
                           : status === "To Pay"
                             ? "bg-amber-50 text-amber-600"
-                            : "bg-slate-100 text-slate-500"
+                            : "bg-slate-100 text-slate-500 dark:text-slate-400"
                       }`}
                     >
                       {status}
@@ -630,21 +630,21 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the small things that make
             <br />
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>procurement</span>
             </HandUnderline>{" "}
             possible
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Manage purchase approvals, vendor references, product variants,
             taxes, landed costs, and every detail that keeps procurement clean.
           </p>
@@ -669,10 +669,10 @@ export default function PurchaseLandingSections() {
             ].map((card, index) => (
               <div
                 key={card.title}
-                className={`relative mx-auto mb-0 rounded-xl border border-slate-200 bg-white p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.10)] ${card.offset}`}
+                className={`relative mx-auto mb-0 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.10)] ${card.offset}`}
                 style={{ zIndex: 10 - index }}
               >
-                <p className="font-bold text-slate-900">{card.title}</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{card.title}</p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {card.tags.map((tag, tagIndex) => (
@@ -682,7 +682,7 @@ export default function PurchaseLandingSections() {
                         tagIndex === 0
                           ? "bg-[#714b67] text-white"
                           : tagIndex === 1
-                            ? "bg-[#02cfc3]/20 text-[#02a6a6]"
+                            ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30/20 text-[#02a6a6]"
                             : "bg-amber-50 text-amber-600"
                       }`}
                     >
@@ -702,7 +702,7 @@ export default function PurchaseLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -712,7 +712,7 @@ export default function PurchaseLandingSections() {
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>right.</span>
             </HandUnderline>
           </h2>
@@ -721,21 +721,21 @@ export default function PurchaseLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -744,21 +744,21 @@ export default function PurchaseLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one{" "}
@@ -767,7 +767,7 @@ export default function PurchaseLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -778,15 +778,15 @@ export default function PurchaseLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -797,14 +797,14 @@ export default function PurchaseLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -842,14 +842,14 @@ export default function PurchaseLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -860,7 +860,7 @@ export default function PurchaseLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   We successfully supply 70 restaurants through 1,000 orders a
                   day thanks to Adon Purchase.
                 </p>
@@ -873,8 +873,8 @@ export default function PurchaseLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Arthur King</p>
-                    <p className="text-sm text-slate-500">
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Arthur King</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
                       Procurement director
                     </p>
                   </div>
@@ -889,13 +889,13 @@ export default function PurchaseLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -929,7 +929,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -971,3 +971,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

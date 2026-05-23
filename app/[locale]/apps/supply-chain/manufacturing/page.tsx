@@ -100,11 +100,11 @@ const avatars = [
 
 export default function MRPLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             The{" "}
@@ -114,7 +114,7 @@ export default function MRPLandingSections() {
             of MRP
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Plan, manufacture, control quality, manage shop floor operations,
             and improve production with a simple modern MRP system.
           </p>
@@ -129,7 +129,7 @@ export default function MRPLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -144,12 +144,12 @@ export default function MRPLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center justify-between">
                   <div>
                     <span
-                      className="text-lg font-bold text-[#714b67]"
+                      className="text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
                       style={{ fontFamily: handwrittenFont }}
                     >
                       Manufacturing
@@ -166,8 +166,8 @@ export default function MRPLandingSections() {
               </div>
 
               <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[210px_1fr]">
-                <aside className="rounded-lg bg-white p-4 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="text-sm font-bold text-slate-900">MRP Menu</p>
+                <aside className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100">
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">MRP Menu</p>
 
                   <div className="mt-5 space-y-2">
                     {[
@@ -182,7 +182,7 @@ export default function MRPLandingSections() {
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 1
                             ? "bg-[#714b67] text-white"
-                            : "bg-slate-50 text-slate-500"
+                            : "bg-slate-50 dark:bg-slate-800/40 text-slate-500 dark:text-slate-400"
                         }`}
                       >
                         {item}
@@ -233,10 +233,10 @@ export default function MRPLandingSections() {
                     ].map((item) => (
                       <div
                         key={item.title}
-                        className="rounded-lg bg-white p-5 text-left shadow-sm ring-1 ring-slate-100"
+                        className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-sm ring-1 ring-slate-100"
                       >
                         <div className="flex items-center justify-between">
-                          <p className="font-bold text-slate-900">
+                          <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {item.title}
                           </p>
                           <span
@@ -263,7 +263,7 @@ export default function MRPLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -285,7 +285,7 @@ export default function MRPLandingSections() {
             <DashedArrow className="mb-8 h-24 w-24 rotate-[-18deg] text-slate-300" />
 
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300">
@@ -296,23 +296,23 @@ export default function MRPLandingSections() {
               operations
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Simulate manufacturing orders with real-time capacity, inventory,
               components, work centers, and schedule constraints before
               execution.
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900">Simulation result</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Simulation result</p>
               <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                 Feasible
               </span>
             </div>
 
             <div className="overflow-hidden rounded-lg ring-1 ring-slate-100">
-              <div className="grid grid-cols-5 bg-slate-50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+              <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
                 <span>Order</span>
                 <span>Material</span>
                 <span>Stock</span>
@@ -328,12 +328,12 @@ export default function MRPLandingSections() {
               ].map((row) => (
                 <div
                   key={row[0]}
-                  className="grid grid-cols-5 border-b border-slate-100 px-4 py-4 text-left text-xs last:border-0"
+                  className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-left text-xs last:border-0"
                 >
-                  <span className="font-bold text-[#714b67]">{row[0]}</span>
-                  <span className="text-slate-600">{row[1]}</span>
-                  <span className="text-slate-500">{row[2]}</span>
-                  <span className="text-slate-500">{row[3]}</span>
+                  <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">{row[0]}</span>
+                  <span className="text-slate-600 dark:text-slate-300">{row[1]}</span>
+                  <span className="text-slate-500 dark:text-slate-400">{row[2]}</span>
+                  <span className="text-slate-500 dark:text-slate-400">{row[3]}</span>
                   <span
                     className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                       row[4] === "Ready"
@@ -350,25 +350,25 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Factory className="mx-auto h-12 w-12 text-amber-500" />
 
           <h2
-            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Planning that puts you ahead of schedule
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Schedule manufacturing orders, reserve components, balance work
             centers, and see production timing before problems happen.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 pb-4 text-xs font-bold text-slate-400">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-700 pb-4 text-xs font-bold text-slate-400">
                 {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
                   (day) => (
                     <div key={day}>{day}</div>
@@ -399,7 +399,7 @@ export default function MRPLandingSections() {
                     key={row.line}
                     className="grid grid-cols-[140px_1fr] items-center gap-4"
                   >
-                    <p className="text-sm font-bold text-slate-700">
+                    <p className="text-sm font-bold text-slate-700 dark:text-slate-200">
                       {row.line}
                     </p>
 
@@ -412,7 +412,7 @@ export default function MRPLandingSections() {
                           }`}
                         >
                           {index % 2 === 0 && (
-                            <div className="p-2 text-[10px] font-bold text-slate-700">
+                            <div className="p-2 text-[10px] font-bold text-slate-700 dark:text-slate-200">
                               MO/{rowIndex + 1}
                               {index + 1}
                             </div>
@@ -428,13 +428,13 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="absolute right-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300">
@@ -445,7 +445,7 @@ export default function MRPLandingSections() {
               components
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Register each production operation, consume components, record
               finished products, print labels, and keep traceability clean from
               start to finish.
@@ -466,13 +466,13 @@ export default function MRPLandingSections() {
               Mobile barcode app
             </p>
 
-            <div className="mx-auto max-w-xs rounded-4xl border border-slate-200 bg-white p-4 shadow-[0_30px_90px_rgba(15,23,42,0.16)]">
-              <div className="rounded-3xl bg-slate-50 p-5">
+            <div className="mx-auto max-w-xs rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-[0_30px_90px_rgba(15,23,42,0.16)]">
+              <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 p-5">
                 <div className="mx-auto mb-5 h-2 w-20 rounded-full bg-slate-200" />
 
-                <ScanLine className="mx-auto h-16 w-16 text-[#714b67]" />
+                <ScanLine className="mx-auto h-16 w-16 text-[#714b67] dark:text-[#9b6a8f]" />
 
-                <p className="mt-6 text-center text-sm font-bold text-slate-900">
+                <p className="mt-6 text-center text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   Active work order
                 </p>
 
@@ -484,7 +484,7 @@ export default function MRPLandingSections() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-lg bg-white px-4 py-3 text-center text-xs font-bold text-slate-600 shadow-sm"
+                      className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-3 text-center text-xs font-bold text-slate-600 dark:text-slate-300 shadow-sm"
                     >
                       {item}
                     </div>
@@ -500,33 +500,33 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white py-20">
+      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
             <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-[#f3f4f7]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 sm:grid-cols-[180px_1fr]">
                 <div className="space-y-3">
                   {["BOM", "Routing", "Work order", "Quality"].map((item) => (
                     <div
                       key={item}
-                      className="rounded-lg bg-slate-50 p-4 text-sm font-bold text-slate-600"
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-sm font-bold text-slate-600 dark:text-slate-300"
                     >
                       {item}
                     </div>
                   ))}
                 </div>
 
-                <div className="rounded-lg bg-slate-50 p-5">
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
                   <div className="mb-4 h-4 w-40 rounded bg-slate-200" />
                   <div className="space-y-3">
                     {Array.from({ length: 7 }).map((_, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between rounded-lg bg-white px-4 py-3 shadow-sm"
+                        className="flex items-center justify-between rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-3 shadow-sm"
                       >
-                        <span className="text-xs font-bold text-slate-600">
+                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">
                           Component {index + 1}
                         </span>
                         <span className="rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-bold text-emerald-600">
@@ -542,7 +542,7 @@ export default function MRPLandingSections() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Become a{" "}
@@ -553,7 +553,7 @@ export default function MRPLandingSections() {
               company
             </h2>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600">
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
               Give operators everything they need directly on screen:
               instructions, components, checks, drawings, notes, and validation
               actions.
@@ -562,33 +562,33 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Recycle className="mx-auto h-12 w-12 text-[#02a6a6]" />
 
           <h2
-            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Get ready for{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>Six-Sigma</span>
             </HandUnderline>{" "}
             level 6!
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <p className="text-left text-sm leading-7 text-slate-600">
+            <p className="text-left text-sm leading-7 text-slate-600 dark:text-slate-300">
               Cut costs, reduce waste, detect quality issues, and ensure every
               product meets your standards. Track checks directly inside your
               production process.
             </p>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
                 {["Checks", "Control Points", "Alerts"].map((title, col) => (
-                  <div key={title} className="rounded-lg bg-slate-50 p-4">
-                    <p className="mb-4 text-sm font-bold text-slate-900">
+                  <div key={title} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {title}
                     </p>
 
@@ -596,7 +596,7 @@ export default function MRPLandingSections() {
                       {Array.from({ length: 4 }).map((_, index) => (
                         <div
                           key={index}
-                          className="rounded-lg bg-white p-3 text-left shadow-sm"
+                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-3 text-left shadow-sm"
                         >
                           <div className="flex items-center gap-2">
                             <span
@@ -606,7 +606,7 @@ export default function MRPLandingSections() {
                                   : "bg-amber-400"
                               }`}
                             />
-                            <span className="text-xs font-bold text-slate-600">
+                            <span className="text-xs font-bold text-slate-600 dark:text-slate-300">
                               QC Step {index + 1}
                             </span>
                           </div>
@@ -622,10 +622,10 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             The perfect tool for{" "}
@@ -649,7 +649,7 @@ export default function MRPLandingSections() {
                 "Feedback",
               ].map((item, index) => (
                 <div key={item} className="relative">
-                  <div className="rounded-lg bg-white p-4 text-sm font-bold text-slate-600 shadow-sm ring-1 ring-slate-100">
+                  <div className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-sm font-bold text-slate-600 dark:text-slate-300 shadow-sm ring-1 ring-slate-100">
                     {item}
                   </div>
 
@@ -669,7 +669,7 @@ export default function MRPLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -679,7 +679,7 @@ export default function MRPLandingSections() {
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>right.</span>
             </HandUnderline>
           </h2>
@@ -688,21 +688,21 @@ export default function MRPLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -711,21 +711,21 @@ export default function MRPLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one{" "}
@@ -734,7 +734,7 @@ export default function MRPLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -745,15 +745,15 @@ export default function MRPLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -764,14 +764,14 @@ export default function MRPLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -809,14 +809,14 @@ export default function MRPLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -827,7 +827,7 @@ export default function MRPLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon allowed our company to efficiently manage a growth from a
                   turnover of $2.4M to $10M in 4 years.
                 </p>
@@ -840,8 +840,8 @@ export default function MRPLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Andrew Morgan</p>
-                    <p className="text-sm text-slate-500">
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Andrew Morgan</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
                       Manufacturing director
                     </p>
                   </div>
@@ -856,13 +856,13 @@ export default function MRPLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -896,7 +896,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -938,3 +938,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

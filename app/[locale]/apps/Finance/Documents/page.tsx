@@ -96,7 +96,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -124,17 +124,17 @@ function SectionEyebrow({
 function DocumentDashboard() {
   return (
     <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
           <Cloud className="h-5 w-5 text-orange-600 dark:text-orange-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-white">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
             Adon Documents
           </span>
         </div>
 
         <div className="flex items-center gap-3">
-          <Search className="h-4 w-4 text-slate-400 dark:text-slate-500" />
-          <Bell className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+          <Search className="h-4 w-4 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
+          <Bell className="h-4 w-4 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
           <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
             Synced
           </span>
@@ -142,7 +142,7 @@ function DocumentDashboard() {
       </div>
 
       <div className="grid min-h-90 md:grid-cols-[210px_1fr_240px]">
-        <aside className="border-r border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4">
+        <aside className="border-r border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
           <div className="space-y-2">
             {[
               "Inbox",
@@ -179,7 +179,7 @@ function DocumentDashboard() {
             ].map(([title, status, color]) => (
               <div
                 key={title}
-                className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm"
+                className="rounded-2xl border border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm"
               >
                 <div
                   className={`mb-4 h-24 rounded-xl bg-linear-to-br ${
@@ -192,10 +192,10 @@ function DocumentDashboard() {
                           : "from-violet-100 to-purple-50 dark:from-violet-950/50 dark:to-purple-950/30"
                   }`}
                 />
-                <p className="font-semibold text-slate-900 dark:text-white">
+                <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   {title}
                 </p>
-                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   {status}
                 </p>
               </div>
@@ -203,9 +203,9 @@ function DocumentDashboard() {
           </div>
         </div>
 
-        <aside className="hidden border-l border-slate-100 dark:border-slate-800 bg-slate-950 dark:bg-slate-900 p-4 text-white md:block">
+        <aside className="hidden border-l border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-950 dark:bg-slate-900 p-4 text-white md:block">
           <p className="text-sm font-semibold text-white">Preview</p>
-          <div className="mt-4 rounded-2xl bg-white dark:bg-slate-800 p-4">
+          <div className="mt-4 rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-4">
             <div className="space-y-2">
               <div className="h-3 rounded bg-slate-200 dark:bg-slate-700" />
               <div className="h-3 w-3/4 rounded bg-slate-200 dark:bg-slate-700" />
@@ -230,7 +230,7 @@ function DocumentDashboard() {
         </aside>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-orange-600 text-orange-600 dark:fill-orange-500 dark:text-orange-500" />
       </button>
     </div>
@@ -239,7 +239,7 @@ function DocumentDashboard() {
 
 export default function DocumentsPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(249,115,22,0.14),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(6,182,212,0.1),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(249,115,22,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(6,182,212,0.06),transparent_25%)]" />
 
@@ -250,7 +250,7 @@ export default function DocumentsPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
               Files organized.{" "}
               <span
                 className="text-orange-500 dark:text-orange-400"
@@ -279,7 +279,7 @@ export default function DocumentsPage() {
 
             <Link
               href="#demo"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700 dark:hover:border-orange-600 dark:hover:text-orange-400"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700 dark:hover:border-orange-600 dark:hover:text-orange-400"
             >
               Watch Demo
             </Link>
@@ -293,12 +293,12 @@ export default function DocumentsPage() {
           >
             <DocumentDashboard />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-orange-600 dark:text-orange-400" />
               Auto-classified
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <ShieldCheck className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               Secure archive
             </div>
@@ -331,7 +331,7 @@ export default function DocumentsPage() {
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400">
                   <Icon className="h-7 w-7" />
                 </div>
-                <p className="mt-4 font-semibold text-slate-900 dark:text-white">
+                <p className="mt-4 font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   {item.title}
                 </p>
               </div>
@@ -345,22 +345,22 @@ export default function DocumentsPage() {
               {["Payment slip", "Contract file"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 text-left"
+                  className="rounded-2xl border border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4 text-left"
                 >
-                  <p className="font-semibold text-slate-900 dark:text-white">
+                  <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {item}
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     Captured from email
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-[1.7rem] bg-slate-50 dark:bg-slate-800/50 p-4">
+            <div className="rounded-[1.7rem] bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
               <div className="mx-auto max-w-xs rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="text-sm font-semibold text-slate-900 dark:text-white">
+                  <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     Document inbox
                   </span>
                   <Inbox className="h-4 w-4 text-orange-500 dark:text-orange-400" />
@@ -370,7 +370,7 @@ export default function DocumentsPage() {
                     (item) => (
                       <div
                         key={item}
-                        className="rounded-xl bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-sm text-slate-600 dark:text-slate-300"
+                        className="rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-3 py-2 text-sm text-slate-600 dark:text-slate-300"
                       >
                         {item}
                       </div>
@@ -384,12 +384,12 @@ export default function DocumentsPage() {
               {["Client doc", "Signed certificate"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4 text-left"
+                  className="rounded-2xl border border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4 text-left"
                 >
-                  <p className="font-semibold text-slate-900 dark:text-white">
+                  <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {item}
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     Ready to archive
                   </p>
                 </div>
@@ -403,8 +403,8 @@ export default function DocumentsPage() {
         <div className="relative mx-auto w-full max-w-sm">
           <div className="absolute inset-0 rounded-full bg-slate-100 dark:bg-slate-800" />
           <div className="relative mx-auto max-w-xs rounded-[2.5rem] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-            <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4">
-              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-white">
+            <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
+              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                 Signature request
               </p>
               <div className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
@@ -447,7 +447,7 @@ export default function DocumentsPage() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-slate-700 dark:text-slate-300">
+                <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   {item}
                 </span>
               </div>
@@ -480,13 +480,13 @@ export default function DocumentsPage() {
               (column, index) => (
                 <div
                   key={column}
-                  className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4"
+                  className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
                 >
                   <div className="mb-4 flex items-center justify-between">
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {column}
                     </p>
-                    <span className="rounded-full bg-white dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400">
+                    <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {index + 3}
                     </span>
                   </div>
@@ -495,12 +495,12 @@ export default function DocumentsPage() {
                     {["Invoice", "Proposal", "Agreement"].map((card, i) => (
                       <div
                         key={`${column}-${card}-${i}`}
-                        className="rounded-xl bg-white dark:bg-slate-800 p-3 text-left shadow-sm"
+                        className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-3 text-left shadow-sm"
                       >
-                        <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                        <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
                           {card}
                         </p>
-                        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           Client workspace
                         </p>
                       </div>
@@ -537,7 +537,7 @@ export default function DocumentsPage() {
               (item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 text-sm font-semibold text-slate-700 dark:text-slate-300 shadow-sm"
+                  className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300 shadow-sm"
                 >
                   {item}
                 </div>
@@ -547,12 +547,12 @@ export default function DocumentsPage() {
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4">
+          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
             <div className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
-              <p className="font-semibold text-slate-900 dark:text-white">
+              <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                 Website contract draft
               </p>
-              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400 dark:text-slate-400">
                 Please review the pricing section before sending it to the
                 client.
               </p>
@@ -568,10 +568,10 @@ export default function DocumentsPage() {
                   key={name}
                   className="rounded-xl bg-white dark:bg-slate-900 px-4 py-3 text-left shadow-sm"
                 >
-                  <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {name}
                   </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     {comment}
                   </p>
                 </div>
@@ -605,7 +605,7 @@ export default function DocumentsPage() {
               ].map(([label, value]) => (
                 <div key={label}>
                   <div className="mb-2 flex justify-between text-sm">
-                    <span className="font-medium text-slate-700 dark:text-slate-300">
+                    <span className="font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       {label}
                     </span>
                     <span className="text-orange-600 dark:text-orange-400">
@@ -622,31 +622,31 @@ export default function DocumentsPage() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm">
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+              <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                 Average search time
               </p>
-              <p className="mt-3 text-5xl font-bold text-slate-950 dark:text-white">
+              <p className="mt-3 text-5xl font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                 40.9
               </p>
-              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                 seconds saved per file
               </p>
             </div>
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm">
-              <p className="text-sm text-slate-500 dark:text-slate-400">
+              <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                 Automation accuracy
               </p>
-              <p className="mt-3 text-5xl font-bold text-slate-950 dark:text-white">
+              <p className="mt-3 text-5xl font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                 90.4%
               </p>
-              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                 classification success
               </p>
             </div>
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm sm:col-span-2">
-              <p className="mb-4 font-semibold text-slate-900 dark:text-white">
+              <p className="mb-4 font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                 How does document automation work?
               </p>
 
@@ -659,12 +659,12 @@ export default function DocumentsPage() {
                 ].map((item, index) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3"
+                    className="flex items-center gap-3 rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3"
                   >
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-950/50 text-sm font-semibold text-orange-700 dark:text-orange-400">
                       {index + 1}
                     </span>
-                    <span className="text-sm text-slate-700 dark:text-slate-300">
+                    <span className="text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       {item}
                     </span>
                   </div>
@@ -696,7 +696,7 @@ export default function DocumentsPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {feature.title}
                   </h3>
 
@@ -741,10 +741,10 @@ export default function DocumentsPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -784,7 +784,7 @@ export default function DocumentsPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-950/50 text-orange-600 dark:text-orange-400">
               <Users className="h-7 w-7" />
             </div>
@@ -835,16 +835,17 @@ export default function DocumentsPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700 dark:hover:border-orange-600 dark:hover:text-orange-400"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700 dark:hover:border-orange-600 dark:hover:text-orange-400"
           >
             Contact Sales
           </Link>
         </div>
 
-        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
           Free trial available ·  · Instant access
         </p>
       </section>
     </main>
   );
 }
+

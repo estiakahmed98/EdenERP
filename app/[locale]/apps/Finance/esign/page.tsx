@@ -97,7 +97,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -125,10 +125,10 @@ function SectionEyebrow({
 function EsignDashboard() {
   return (
     <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
           <FileSignature className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-white">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
             Adon Sign
           </span>
         </div>
@@ -137,12 +137,12 @@ function EsignDashboard() {
           <span className="rounded-full bg-cyan-100 dark:bg-cyan-950/50 px-2 py-1 text-xs font-semibold text-cyan-700 dark:text-cyan-400">
             Live
           </span>
-          <Lock className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+          <Lock className="h-4 w-4 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
         </div>
       </div>
 
       <div className="grid min-h-90 md:grid-cols-[210px_1fr]">
-        <aside className="border-r border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-4">
+        <aside className="border-r border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
           {["Dashboard", "To Sign", "Waiting", "Completed", "Templates"].map(
             (item, index) => (
               <div
@@ -163,13 +163,13 @@ function EsignDashboard() {
           {["Draft", "Waiting Signature", "Signed"].map((column, index) => (
             <div
               key={column}
-              className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4"
+              className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
             >
               <div className="mb-4 flex items-center justify-between">
-                <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   {column}
                 </p>
-                <span className="rounded-full bg-white dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400">
+                <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   {index + 3}
                 </span>
               </div>
@@ -179,12 +179,12 @@ function EsignDashboard() {
                   (item, i) => (
                     <div
                       key={`${column}-${item}-${i}`}
-                      className="rounded-xl bg-white dark:bg-slate-800 p-3 text-left shadow-sm"
+                      className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-3 text-left shadow-sm"
                     >
-                      <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
                         {item}
                       </p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                         {index === 2 ? "Completed" : "Needs action"}
                       </p>
                     </div>
@@ -196,7 +196,7 @@ function EsignDashboard() {
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
@@ -205,7 +205,7 @@ function EsignDashboard() {
 
 export default function EsignPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.07),transparent_25%)]" />
 
@@ -221,7 +221,7 @@ export default function EsignPage() {
                 fontFamily:
                   '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
               }}
-              className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl"
+              className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl"
             >
               eSign.{" "}
               <span
@@ -253,7 +253,7 @@ export default function EsignPage() {
 
             <Link
               href="#advisor"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
             >
               Meet an advisor
             </Link>
@@ -267,12 +267,12 @@ export default function EsignPage() {
           >
             <EsignDashboard />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
               Instant workflow
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <ShieldCheck className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               Legally traceable
             </div>
@@ -304,7 +304,7 @@ export default function EsignPage() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-slate-700 dark:text-slate-300">
+                <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   {item}
                 </span>
               </div>
@@ -313,9 +313,9 @@ export default function EsignPage() {
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4">
+          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
             <div className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
-              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-white">
+              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                 Service agreement
               </p>
               <div className="space-y-3">
@@ -340,18 +340,18 @@ export default function EsignPage() {
       <section className="bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-800" />
+            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800" />
             <div className="relative mx-auto max-w-xs rounded-[2.5rem] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-              <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4">
-                <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-white">
+              <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
+                <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   Adopt your signature
                 </p>
 
                 <div className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     Full name
                   </p>
-                  <p className="mt-2 font-semibold text-slate-900 dark:text-white">
+                  <p className="mt-2 font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     Katie Cole
                   </p>
 
@@ -399,7 +399,7 @@ export default function EsignPage() {
               ].map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 text-sm font-semibold text-slate-700 dark:text-slate-300 shadow-sm"
+                  className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300 shadow-sm"
                 >
                   {item}
                 </div>
@@ -439,9 +439,9 @@ export default function EsignPage() {
             ].map(([label, count, color]) => (
               <div
                 key={label}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-5"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5"
               >
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   {label}
                 </p>
                 <p
@@ -484,7 +484,7 @@ export default function EsignPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {feature.title}
                   </h3>
 
@@ -532,10 +532,10 @@ export default function EsignPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -575,7 +575,7 @@ export default function EsignPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
@@ -627,16 +627,17 @@ export default function EsignPage() {
           <Link
             href="/contact"
             id="advisor"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
           >
             Contact Sales
           </Link>
         </div>
 
-        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
           Free trial available ·  · Instant access
         </p>
       </section>
     </main>
   );
 }
+

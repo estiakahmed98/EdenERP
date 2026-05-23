@@ -314,7 +314,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -344,7 +344,7 @@ export default function ExpensesPage() {
   const [selectedPeriod, setSelectedPeriod] = useState("month");
 
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
@@ -359,7 +359,7 @@ export default function ExpensesPage() {
               />
 
               <div className="space-y-5">
-                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl">
+                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
                   Stop chasing
                   <br />
                   <span
@@ -389,7 +389,7 @@ export default function ExpensesPage() {
                 </Link>
                 <Link
                   href="#demo"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
                 >
                   <Play className="h-4 w-4" />
                   Watch Demo
@@ -417,7 +417,7 @@ export default function ExpensesPage() {
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-400">
+                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">
                     from 15,000+ businesses
                   </span>
                 </div>
@@ -454,10 +454,10 @@ export default function ExpensesPage() {
                 <div className="p-5">
                   {/* Total Spent Card */}
                   <div className="bg-linear-to-br from-emerald-50 to-cyan-50 dark:from-emerald-950/30 dark:to-cyan-950/30 rounded-xl p-4 mb-4 text-center">
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400 mb-1">
                       Total Spent This Month
                     </p>
-                    <p className="text-3xl font-bold text-slate-900 dark:text-white">
+                    <p className="text-3xl font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                       $23,847.50
                     </p>
                     <div className="flex items-center justify-center gap-2 mt-2">
@@ -470,24 +470,24 @@ export default function ExpensesPage() {
 
                   {/* Stats Grid */}
                   <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-3 text-center">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                         Cards in Use
                       </p>
-                      <p className="text-xl font-bold text-slate-900 dark:text-white">
+                      <p className="text-xl font-bold text-slate-900 dark:text-slate-100 dark:text-white">
                         24
                       </p>
                     </div>
-                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-3 text-center">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                         Pending Approvals
                       </p>
                       <p className="text-xl font-bold text-amber-600 dark:text-amber-400">
                         8
                       </p>
                     </div>
-                    <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-3 text-center">
+                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                         Auto-Matched
                       </p>
                       <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">
@@ -498,13 +498,13 @@ export default function ExpensesPage() {
 
                   {/* Recent Expenses */}
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                    <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                       Recent Expenses
                     </p>
                     {recentExpenses.slice(0, 3).map((expense, idx) => (
                       <div
                         key={idx}
-                        className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-slate-800/50 rounded-lg transition"
+                        className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-slate-800/60 dark:bg-slate-800/40 dark:hover:bg-slate-800/50 rounded-lg transition"
                       >
                         <div className="flex items-center gap-2">
                           <div
@@ -527,16 +527,16 @@ export default function ExpensesPage() {
                             />
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-slate-900 dark:text-white">
+                            <p className="text-sm font-medium text-slate-900 dark:text-slate-100 dark:text-white">
                               {expense.name}
                             </p>
-                            <p className="text-xs text-slate-500 dark:text-slate-400">
+                            <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                               {expense.date}
                             </p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                             {expense.amount}
                           </p>
                           <p
@@ -558,15 +558,15 @@ export default function ExpensesPage() {
               </div>
 
               {/* Floating badges */}
-              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <Zap className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   Real-time sync
                 </span>
               </div>
-              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
                 <RefreshCw className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   Auto-categorized
                 </span>
               </div>
@@ -628,7 +628,7 @@ export default function ExpensesPage() {
                       className={`h-3 w-3 text-${item.color}-600 dark:text-${item.color}-400`}
                     />
                   </div>
-                  <span className="text-slate-700 dark:text-slate-300">
+                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     {item.text}
                   </span>
                 </div>
@@ -684,7 +684,7 @@ export default function ExpensesPage() {
       </section>
 
       {/* Smart Capture Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -694,10 +694,10 @@ export default function ExpensesPage() {
             className="order-2 lg:order-1"
           >
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-slate-50 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
+              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center gap-2">
                   <Scan className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     Smart Receipt Capture
                   </span>
                 </div>
@@ -710,7 +710,7 @@ export default function ExpensesPage() {
                   <p className="text-slate-600 dark:text-slate-300 mb-2">
                     Drag & drop or click to upload
                   </p>
-                  <p className="text-xs text-slate-400 dark:text-slate-500">
+                  <p className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">
                     Supports PDF, PNG, JPG up to 10MB
                   </p>
                   <button className="mt-4 text-sm bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
@@ -720,13 +720,13 @@ export default function ExpensesPage() {
                 <div className="mt-4 space-y-2">
                   <div className="flex items-center gap-3 p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg">
                     <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                    <span className="text-sm text-slate-700 dark:text-slate-300">
+                    <span className="text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       AI-powered data extraction
                     </span>
                   </div>
                   <div className="flex items-center gap-3 p-2 bg-cyan-50 dark:bg-cyan-950/30 rounded-lg">
                     <Sparkles className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                    <span className="text-sm text-slate-700 dark:text-slate-300">
+                    <span className="text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
                       98% recognition accuracy
                     </span>
                   </div>
@@ -760,7 +760,7 @@ export default function ExpensesPage() {
                 <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                   98%
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400">
+                <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   Recognition Rate
                 </div>
               </div>
@@ -768,7 +768,7 @@ export default function ExpensesPage() {
                 <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
                   3s
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400">
+                <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   Processing Time
                 </div>
               </div>
@@ -808,7 +808,7 @@ export default function ExpensesPage() {
               ].map((feature, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-slate-700 dark:text-slate-300">
+                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     {feature}
                   </span>
                 </div>
@@ -823,10 +823,10 @@ export default function ExpensesPage() {
             viewport={{ once: true }}
           >
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-slate-50 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
+              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center gap-2">
                   <Bell className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                     Pending Approvals
                   </span>
                 </div>
@@ -835,7 +835,7 @@ export default function ExpensesPage() {
                 {teamMembers.map((member, idx) => (
                   <div
                     key={idx}
-                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/50 transition"
+                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/60 dark:bg-slate-800/40 dark:hover:bg-slate-800/50 transition"
                   >
                     <div className="flex items-center gap-3">
                       <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
@@ -846,10 +846,10 @@ export default function ExpensesPage() {
                         />
                       </div>
                       <div>
-                        <p className="font-medium text-sm text-slate-900 dark:text-white">
+                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100 dark:text-white">
                           {member.name}
                         </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                        <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                           {member.role}
                         </p>
                       </div>
@@ -871,7 +871,7 @@ export default function ExpensesPage() {
       </section>
 
       {/* Expense Categories Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <SectionEyebrow
             icon={<PieChart className="h-4 w-4" />}
@@ -905,15 +905,15 @@ export default function ExpensesPage() {
                     />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900 dark:text-white">
+                    <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {category.name}
                     </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {category.amount}
                     </p>
                   </div>
                 </div>
-                <span className="text-sm font-semibold text-slate-600 dark:text-slate-400">
+                <span className="text-sm font-semibold text-slate-600 dark:text-slate-300 dark:text-slate-400">
                   {category.percentage}%
                 </span>
               </div>
@@ -954,32 +954,32 @@ export default function ExpensesPage() {
                     <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-xl p-3">
                       <div className="flex items-center gap-2 mb-2">
                         <Camera className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
                           Receipt scanned
                         </span>
                       </div>
                       <div className="space-y-1">
                         <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-400">
+                          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
                             Starbucks Coffee
                           </span>
-                          <span className="text-slate-700 dark:text-slate-300">
+                          <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                             $12.50
                           </span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-400">
+                          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
                             Uber Ride
                           </span>
-                          <span className="text-slate-700 dark:text-slate-300">
+                          <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                             $24.00
                           </span>
                         </div>
                         <div className="border-t dark:border-slate-800 pt-1 flex justify-between font-semibold text-sm">
-                          <span className="text-slate-900 dark:text-white">
+                          <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                             Total
                           </span>
-                          <span className="text-slate-900 dark:text-white">
+                          <span className="text-slate-900 dark:text-slate-100 dark:text-white">
                             $36.50
                           </span>
                         </div>
@@ -1029,7 +1029,7 @@ export default function ExpensesPage() {
       </section>
 
       {/* Integrations Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <SectionEyebrow
             icon={<RefreshCw className="h-4 w-4" />}
@@ -1068,7 +1068,7 @@ export default function ExpensesPage() {
                   className={`h-6 w-6 text-${integration.color}-600 dark:text-${integration.color}-400`}
                 />
               </div>
-              <p className="font-semibold text-sm text-slate-900 dark:text-white">
+              <p className="font-semibold text-sm text-slate-900 dark:text-slate-100 dark:text-white">
                 {integration.name}
               </p>
             </motion.div>
@@ -1109,10 +1109,10 @@ export default function ExpensesPage() {
                 />
               </div>
               <div className="text-left">
-                <p className="font-semibold text-slate-900 dark:text-white">
+                <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   Sarah Johnson
                 </p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   CFO, TechFlow Solutions
                 </p>
               </div>
@@ -1144,7 +1144,7 @@ export default function ExpensesPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5 dark:bg-slate-950 dark:text-slate-100"
               >
                 Start Free Trial
                 <ArrowRight className="h-4 w-4" />
@@ -1166,3 +1166,4 @@ export default function ExpensesPage() {
     </main>
   );
 }
+

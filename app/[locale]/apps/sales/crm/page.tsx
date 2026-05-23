@@ -102,7 +102,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
       style={scriptFont}
     >
       {children}
@@ -128,10 +128,10 @@ function SectionEyebrow({
 function CrmDashboard() {
   return (
     <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
         <div className="flex items-center gap-2">
           <Users className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-white">
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
             Adon CRM Pipeline
           </span>
         </div>
@@ -140,7 +140,7 @@ function CrmDashboard() {
           <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
             Live
           </span>
-          <Bell className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+          <Bell className="h-4 w-4 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
         </div>
       </div>
 
@@ -170,7 +170,7 @@ function CrmDashboard() {
           <div key={column} className={`rounded-2xl ${bg} p-4`}>
             <div className="mb-4 flex items-center justify-between">
               <p className={`text-sm font-bold ${text}`}>{column}</p>
-              <span className="rounded-full bg-white dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400">
+              <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                 {index + 4}
               </span>
             </div>
@@ -183,12 +183,12 @@ function CrmDashboard() {
               ].map((item, itemIndex) => (
                 <div
                   key={`${column}-${item}`}
-                  className="rounded-xl bg-white dark:bg-slate-800 p-3 text-left shadow-sm"
+                  className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-3 text-left shadow-sm"
                 >
-                  <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
                     {item}
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                     ${[5200, 8400, 12600][itemIndex].toLocaleString()} deal
                   </p>
                   <div className="mt-3 flex items-center justify-between">
@@ -200,7 +200,7 @@ function CrmDashboard() {
                         />
                       ))}
                     </div>
-                    <span className="rounded-full bg-slate-100 dark:bg-slate-700 px-2 py-1 text-[10px] font-semibold text-slate-500 dark:text-slate-400">
+                    <span className="rounded-full bg-slate-100 dark:bg-slate-700 px-2 py-1 text-[10px] font-semibold text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       Today
                     </span>
                   </div>
@@ -211,7 +211,7 @@ function CrmDashboard() {
         ))}
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
@@ -220,7 +220,7 @@ function CrmDashboard() {
 
 export default function CrmPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.07),transparent_25%)]" />
 
@@ -231,7 +231,7 @@ export default function CrmPage() {
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
               Customer Relationship{" "}
               <span
                 className="text-cyan-600 dark:text-cyan-400"
@@ -265,12 +265,12 @@ export default function CrmPage() {
           >
             <CrmDashboard />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
               Real-time pipeline
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
               Smart follow-ups
             </div>
@@ -305,7 +305,7 @@ export default function CrmPage() {
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-slate-700 dark:text-slate-300">
+                <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   {item}
                 </span>
               </div>
@@ -318,21 +318,21 @@ export default function CrmPage() {
             {["Leads", "Qualified", "Won"].map((stage, index) => (
               <div
                 key={stage}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
               >
-                <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   {stage}
                 </p>
                 <div className="mt-4 space-y-3">
                   {["Apex Ltd", "Bright Co", "Nova Group"].map((client) => (
                     <div
                       key={client}
-                      className="rounded-xl bg-white dark:bg-slate-800 p-3 shadow-sm"
+                      className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-3 shadow-sm"
                     >
-                      <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
                         {client}
                       </p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                         ${[3200, 4800, 6900][index].toLocaleString()}
                       </p>
                     </div>
@@ -370,10 +370,10 @@ export default function CrmPage() {
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400">
                     <Icon className="h-7 w-7" />
                   </div>
-                  <p className="mt-4 font-semibold text-slate-900 dark:text-white">
+                  <p className="mt-4 font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {item.title}
                   </p>
-                  <p className="mt-1 text-xs font-medium text-slate-400 dark:text-slate-500">
+                  <p className="mt-1 text-xs font-medium text-slate-400 dark:text-slate-500 dark:text-slate-400">
                     {item.time}
                   </p>
                 </div>
@@ -400,8 +400,8 @@ export default function CrmPage() {
 
         <div className="mx-auto mt-12 max-w-5xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
           <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-5 text-left">
-              <p className="font-semibold text-slate-950 dark:text-white">
+            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5 text-left">
+              <p className="font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
                 Customer profile
               </p>
               <div className="mt-5 space-y-3">
@@ -413,12 +413,12 @@ export default function CrmPage() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="flex items-center justify-between rounded-xl bg-white dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
+                    className="flex items-center justify-between rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
                   >
-                    <span className="text-slate-500 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {label}
                     </span>
-                    <span className="font-semibold text-slate-900 dark:text-white">
+                    <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {value}
                     </span>
                   </div>
@@ -427,7 +427,7 @@ export default function CrmPage() {
             </div>
 
             <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/30 p-5 text-left">
-              <p className="font-semibold text-slate-950 dark:text-white">
+              <p className="font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
                 Communication
               </p>
               <div className="mt-5 space-y-3">
@@ -438,12 +438,12 @@ export default function CrmPage() {
                 ].map(([title, desc]) => (
                   <div
                     key={title}
-                    className="rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm"
+                    className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-4 shadow-sm"
                   >
-                    <p className="text-sm font-semibold text-slate-900 dark:text-white">
+                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {title}
                     </p>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {desc}
                     </p>
                   </div>
@@ -453,7 +453,7 @@ export default function CrmPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-3xl gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 p-5 sm:grid-cols-4">
+        <div className="mx-auto mt-10 grid max-w-3xl gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5 sm:grid-cols-4">
           {[
             ["Email", Mail],
             ["Live chat", MessageCircle],
@@ -465,10 +465,10 @@ export default function CrmPage() {
             return (
               <div
                 key={label as string}
-                className="rounded-2xl bg-white dark:bg-slate-800 p-4"
+                className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-4"
               >
                 <LucideIcon className="mx-auto h-6 w-6 text-cyan-600 dark:text-cyan-400" />
-                <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
                   {label as string}
                 </p>
               </div>
@@ -500,10 +500,10 @@ export default function CrmPage() {
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4">
-            <div className="rounded-2xl bg-white dark:bg-slate-800 p-5 shadow-sm">
+          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
+            <div className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-5 shadow-sm">
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-slate-900 dark:text-white">
+                <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                   Quotation
                 </p>
                 <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
@@ -519,12 +519,12 @@ export default function CrmPage() {
                 ].map(([name, price]) => (
                   <div
                     key={name}
-                    className="flex justify-between rounded-xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
+                    className="flex justify-between rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3 text-sm"
                   >
-                    <span className="text-slate-600 dark:text-slate-400">
+                    <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
                       {name}
                     </span>
-                    <span className="font-semibold text-slate-900 dark:text-white">
+                    <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {price}
                     </span>
                   </div>
@@ -549,12 +549,12 @@ export default function CrmPage() {
             ].map(([label, value, change]) => (
               <div
                 key={label}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-4"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
               >
-                <p className="text-sm text-slate-500 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                   {label}
                 </p>
-                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">
+                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-slate-100 dark:text-white">
                   {value}
                 </p>
                 <p className="mt-1 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
@@ -615,7 +615,7 @@ export default function CrmPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                     {feature.title}
                   </h3>
 
@@ -663,10 +663,10 @@ export default function CrmPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -706,7 +706,7 @@ export default function CrmPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
@@ -755,10 +755,11 @@ export default function CrmPage() {
           </Link>
         </div>
 
-        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
           Free trial available · No credit card required · Instant access
         </p>
       </section>
     </main>
   );
 }
+

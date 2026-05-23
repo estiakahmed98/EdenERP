@@ -93,11 +93,11 @@ const apps = [
 
 export default function ProjectLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-sky-300">
@@ -106,7 +106,7 @@ export default function ProjectLandingSections() {
             teamwork
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             The AI-powered project management software to plan, track, and
             deliver faster.
           </p>
@@ -121,7 +121,7 @@ export default function ProjectLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
@@ -136,11 +136,11 @@ export default function ProjectLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 bg-white px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <FolderKanban className="h-5 w-5 text-[#714b67]" />
-                  <span className="font-bold text-slate-900">Project</span>
+                  <FolderKanban className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Project</span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Tasks / Gantt / Calendar / Reporting / Configuration
                   </span>
@@ -172,10 +172,10 @@ export default function ProjectLandingSections() {
                 ].map((column, columnIndex) => (
                   <div
                     key={column.title}
-                    className="rounded-lg bg-slate-50 p-3"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         {column.title}
                       </p>
                       <span className="text-lg font-bold text-slate-400">
@@ -187,9 +187,9 @@ export default function ProjectLandingSections() {
                       {column.cards.map((card, cardIndex) => (
                         <div
                           key={card}
-                          className="rounded-lg bg-white p-4 text-left shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
                         >
-                          <p className="text-sm font-bold text-slate-900">
+                          <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                             {card}
                           </p>
 
@@ -231,7 +231,7 @@ export default function ProjectLandingSections() {
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
@@ -256,7 +256,7 @@ export default function ProjectLandingSections() {
               return (
                 <div
                   key={index}
-                  className="flex h-14 w-14 items-center justify-center rounded-xl bg-white shadow-sm"
+                  className="flex h-14 w-14 items-center justify-center rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm"
                 >
                   <Icon className={`h-7 w-7 ${item.color}`} />
                 </div>
@@ -265,15 +265,15 @@ export default function ProjectLandingSections() {
           </div>
 
           <h2
-            className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Different{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>needs</span>
             </HandUnderline>
             , different{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>views</span>
             </HandUnderline>
           </h2>
@@ -287,8 +287,8 @@ export default function ProjectLandingSections() {
               ].map((text, index) => (
                 <div key={text} className="flex gap-4">
                   <Sparkles className="mt-1 h-5 w-5 flex-none text-[#02cfc3]" />
-                  <p className="text-sm leading-7 text-slate-600">
-                    <span className="font-bold text-slate-900">
+                  <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
+                    <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {index === 0
                         ? "Spreadsheet view."
                         : index === 1
@@ -301,9 +301,9 @@ export default function ProjectLandingSections() {
               ))}
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900">Project Schedule</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Project Schedule</p>
                 <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
                   Timeline
                 </span>
@@ -313,7 +313,7 @@ export default function ProjectLandingSections() {
                 {["Design", "Development", "Review", "Launch"].map(
                   (row, rowIndex) => (
                     <div key={row} className="contents">
-                      <p className="py-3 text-sm font-bold text-slate-600">
+                      <p className="py-3 text-sm font-bold text-slate-600 dark:text-slate-300">
                         {row}
                       </p>
 
@@ -326,7 +326,7 @@ export default function ProjectLandingSections() {
                                 ? "bg-[#714b67]/20"
                                 : index === rowIndex + 2
                                   ? "bg-amber-100"
-                                  : "bg-slate-50"
+                                  : "bg-slate-50 dark:bg-slate-800/40"
                             }`}
                           />
                         ))}
@@ -347,7 +347,7 @@ export default function ProjectLandingSections() {
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Enjoy a comprehensive dashboard
@@ -355,24 +355,24 @@ export default function ProjectLandingSections() {
 
           <div className="relative mx-auto mt-14 max-w-4xl">
             <p
-              className="absolute -left-10 top-20 hidden rotate-[-15deg] text-lg font-bold text-[#714b67] lg:block"
+              className="absolute -left-10 top-20 hidden rotate-[-15deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
               Status view
             </p>
 
             <p
-              className="absolute -right-10 top-28 hidden rotate-[15deg] text-lg font-bold text-[#714b67] lg:block"
+              className="absolute -right-10 top-28 hidden rotate-[15deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
               Tags
             </p>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-5 md:grid-cols-2">
                 {["In Progress", "Final Checks"].map((column, columnIndex) => (
-                  <div key={column} className="rounded-xl bg-slate-50 p-4">
-                    <p className="mb-4 text-left font-bold text-slate-900">
+                  <div key={column} className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <p className="mb-4 text-left font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {column}
                     </p>
 
@@ -383,10 +383,10 @@ export default function ProjectLandingSections() {
                     ].map((task, index) => (
                       <div
                         key={`${column}-${task}`}
-                        className="mb-3 rounded-lg bg-white p-4 text-left shadow-sm"
+                        className="mb-3 rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm"
                       >
                         <div className="flex items-center justify-between">
-                          <p className="font-bold text-slate-900">{task}</p>
+                          <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{task}</p>
                           <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                         </div>
 
@@ -399,7 +399,7 @@ export default function ProjectLandingSections() {
                           <span className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600">
                             Client
                           </span>
-                          <span className="rounded-full bg-[#714b67]/10 px-2 py-1 text-[10px] font-bold text-[#714b67]">
+                          <span className="rounded-full bg-[#714b67]/10 px-2 py-1 text-[10px] font-bold text-[#714b67] dark:text-[#9b6a8f]">
                             Internal
                           </span>
                         </div>
@@ -411,7 +411,7 @@ export default function ProjectLandingSections() {
             </div>
 
             <p
-              className="mt-5 text-center text-lg font-bold text-[#714b67]"
+              className="mt-5 text-center text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
               style={{ fontFamily: handwrittenFont }}
             >
               Kanban view &nbsp;&nbsp;&nbsp;&nbsp; All activities
@@ -420,14 +420,14 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
             <Rocket className="mb-6 h-14 w-14 rotate-25 text-amber-500" />
             <DashedArrow className="absolute left-16 -top-20 h-32 w-32 rotate-20 text-slate-300" />
 
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Foster{" "}
@@ -440,8 +440,8 @@ export default function ProjectLandingSections() {
               boost efficiency
             </h2>
 
-            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600">
-              <span className="font-bold text-slate-700">
+            <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+              <span className="font-bold text-slate-700 dark:text-slate-200">
                 Involve your customers.
               </span>{" "}
               Decide what parts of your project stakeholders can view and edit.
@@ -449,10 +449,10 @@ export default function ProjectLandingSections() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center gap-3">
-              <MessageCircle className="h-5 w-5 text-[#714b67]" />
-              <p className="font-bold text-slate-900">Project Discussion</p>
+              <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Project Discussion</p>
             </div>
 
             <div className="space-y-4">
@@ -463,7 +463,7 @@ export default function ProjectLandingSections() {
               ].map(([name, message], index) => (
                 <div
                   key={message}
-                  className="flex gap-3 rounded-lg bg-slate-50 p-4 text-left"
+                  className="flex gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
                   <img
                     src={avatars[index]}
@@ -471,8 +471,8 @@ export default function ProjectLandingSections() {
                     className="h-10 w-10 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-sm font-bold text-slate-900">{name}</p>
-                    <p className="mt-1 text-sm text-slate-500">{message}</p>
+                    <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{name}</p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{message}</p>
                   </div>
                 </div>
               ))}
@@ -481,20 +481,20 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-50 text-rose-500">
             <Timer className="h-9 w-9" />
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Time is money
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Timesheets and analytics help you know exactly where the money is
             going and how your team is spending billable hours.
           </p>
@@ -503,22 +503,22 @@ export default function ProjectLandingSections() {
             <button className="rounded-md bg-[#714b67] px-5 py-2 text-xs font-bold text-white">
               Stage 1
             </button>
-            <button className="px-5 py-2 text-xs font-bold text-slate-500">
+            <button className="px-5 py-2 text-xs font-bold text-slate-500 dark:text-slate-400">
               Record
             </button>
-            <button className="px-5 py-2 text-xs font-bold text-slate-500">
+            <button className="px-5 py-2 text-xs font-bold text-slate-500 dark:text-slate-400">
               00:42:00
             </button>
           </div>
 
-          <DashedArrow className="mx-auto my-8 h-24 w-24 rotate-90 text-[#714b67]/50" />
+          <DashedArrow className="mx-auto my-8 h-24 w-24 rotate-90 text-[#714b67] dark:text-[#9b6a8f]/50" />
 
-          <div className="relative mx-auto max-w-4xl rounded-xl border border-slate-200 bg-white p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-            <h3 className="text-2xl font-bold text-slate-900">Check List</h3>
-            <p className="mt-1 text-sm text-slate-500">Project Task Details</p>
+          <div className="relative mx-auto max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">Check List</h3>
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Project Task Details</p>
 
             <div className="mt-6 overflow-hidden rounded-lg ring-1 ring-slate-100">
-              <div className="grid grid-cols-5 bg-slate-50 px-4 py-3 text-xs font-bold uppercase text-slate-400">
+              <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs font-bold uppercase text-slate-400">
                 <span>Date</span>
                 <span>Employee</span>
                 <span>Description</span>
@@ -533,15 +533,15 @@ export default function ProjectLandingSections() {
               ].map((row) => (
                 <div
                   key={row[0]}
-                  className="grid grid-cols-5 border-b border-slate-100 px-4 py-4 text-xs last:border-0"
+                  className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-xs last:border-0"
                 >
                   {row.map((cell, index) => (
                     <span
                       key={cell}
                       className={
                         index === 1
-                          ? "font-bold text-slate-900"
-                          : "text-slate-500"
+                          ? "font-bold text-slate-900 dark:text-white dark:text-slate-100"
+                          : "text-slate-500 dark:text-slate-400"
                       }
                     >
                       {cell}
@@ -557,12 +557,12 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <h2
-                className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+                className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Always know where your
@@ -570,7 +570,7 @@ export default function ProjectLandingSections() {
                 project stands
               </h2>
 
-              <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600">
+              <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
                 Project updates are generated in real-time and give quick access
                 to important statistics, invoices, costs, revenue, and progress.
               </p>
@@ -578,7 +578,7 @@ export default function ProjectLandingSections() {
 
             <FloatingNote
               className="justify-self-center lg:justify-self-end"
-              color="bg-[#02cfc3]"
+              color="bg-[#02cfc3] dark:bg-[#02cfc3]/30"
               text="Your client can follow along"
             />
           </div>
@@ -593,13 +593,13 @@ export default function ProjectLandingSections() {
             ].map(([title, value, trend], index) => (
               <div
                 key={title}
-                className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
               >
                 <span className="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-rose-50 text-xs font-bold text-rose-500">
                   {index + 1}
                 </span>
-                <p className="text-sm font-bold text-slate-500">{title}</p>
-                <p className="mt-3 text-3xl font-bold text-slate-900">
+                <p className="text-sm font-bold text-slate-500 dark:text-slate-400">{title}</p>
+                <p className="mt-3 text-3xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {value}
                 </p>
                 <p className="mt-2 text-sm font-bold text-emerald-600">
@@ -617,7 +617,7 @@ export default function ProjectLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -634,25 +634,25 @@ export default function ProjectLandingSections() {
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
+            <div className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                   <CalendarDays className="h-5 w-5" />
                 </div>
 
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold text-slate-900">
+              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                 Project planning
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 Plan tasks, deadlines, resources, and activities from one visual
                 workspace.
               </p>
 
-              <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 p-5">
+              <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
                 {Array.from({ length: 30 }).map((_, index) => (
                   <div
                     key={index}
@@ -661,7 +661,7 @@ export default function ProjectLandingSections() {
                         ? "bg-[#714b67]/30"
                         : [5, 15, 24].includes(index)
                           ? "bg-amber-200"
-                          : "bg-white"
+                          : "bg-white dark:bg-slate-950 dark:bg-slate-900"
                     }`}
                   />
                 ))}
@@ -671,21 +671,21 @@ export default function ProjectLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -694,17 +694,17 @@ export default function ProjectLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -717,7 +717,7 @@ export default function ProjectLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow.
           </p>
 
@@ -728,15 +728,15 @@ export default function ProjectLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -747,14 +747,14 @@ export default function ProjectLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -792,14 +792,14 @@ export default function ProjectLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -810,7 +810,7 @@ export default function ProjectLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon is the backbone of Kick & Rush, fostering collaboration,
                   providing consistency, and adapting to unique requirements.
                 </p>
@@ -823,8 +823,8 @@ export default function ProjectLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Tyrone Miller</p>
-                    <p className="text-sm text-slate-500">Project director</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Tyrone Miller</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Project director</p>
                   </div>
                 </div>
               </div>
@@ -837,13 +837,13 @@ export default function ProjectLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -869,7 +869,7 @@ export default function ProjectLandingSections() {
 function FloatingNote({
   className = "",
   text = "Project note",
-  color = "bg-[#02cfc3]",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
 }: {
   className?: string;
   text?: string;
@@ -877,7 +877,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white py-3 pl-16 pr-8 text-sm italic text-slate-700 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -889,7 +889,7 @@ function FloatingNote({
         className="absolute left-3 h-12 w-12 rounded-full object-cover"
       />
 
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900" />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
 
       {text}
     </div>
@@ -921,3 +921,5 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+

@@ -137,11 +137,11 @@ const avatars = [
 
 export default function BlogLandingSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Share your{" "}
@@ -150,7 +150,7 @@ export default function BlogLandingSections() {
             </HandUnderline>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
             Create beautiful blog posts, connect with your audience, improve
             SEO, and turn your knowledge into a powerful growth channel.
           </p>
@@ -165,7 +165,7 @@ export default function BlogLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -180,12 +180,12 @@ export default function BlogLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
               <div className="relative h-56 bg-[url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1400&auto=format&fit=crop')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-black/35" />
 
                 <div className="relative flex h-full flex-col items-center justify-center text-white">
-                  <p className="rounded-full bg-white/20 px-4 py-1 text-xs font-bold backdrop-blur">
+                  <p className="rounded-full bg-white dark:bg-slate-950/20 px-4 py-1 text-xs font-bold backdrop-blur">
                     Travel / Adventure / Blog
                   </p>
 
@@ -196,17 +196,17 @@ export default function BlogLandingSections() {
                     Buying a Telescope
                   </h2>
 
-                  <button className="mt-6 flex h-14 w-14 items-center justify-center rounded-full bg-white text-[#714b67] shadow-xl">
+                  <button className="mt-6 flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                     <Play className="ml-1 h-6 w-6 fill-current" />
                   </button>
                 </div>
               </div>
 
-              <div className="grid gap-5 bg-white p-6 md:grid-cols-3">
+              <div className="grid gap-5 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 md:grid-cols-3">
                 {blogPosts.slice(0, 6).map((post) => (
                   <article
                     key={post.title}
-                    className="overflow-hidden rounded-lg bg-slate-50 text-left ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-lg"
+                    className="overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800/40 text-left ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-lg"
                   >
                     <img
                       src={post.image}
@@ -215,15 +215,15 @@ export default function BlogLandingSections() {
                     />
 
                     <div className="p-4">
-                      <p className="text-[10px] font-bold uppercase tracking-wide text-[#714b67]">
+                      <p className="text-[10px] font-bold uppercase tracking-wide text-[#714b67] dark:text-[#9b6a8f]">
                         {post.category}
                       </p>
 
-                      <h3 className="mt-2 line-clamp-2 text-sm font-bold text-slate-900">
+                      <h3 className="mt-2 line-clamp-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         {post.title}
                       </h3>
 
-                      <p className="mt-2 line-clamp-2 text-xs leading-5 text-slate-500">
+                      <p className="mt-2 line-clamp-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
                         Share your thoughts, stories, and useful ideas with a
                         clean reading experience.
                       </p>
@@ -240,32 +240,32 @@ export default function BlogLandingSections() {
 
       <section className="bg-[#f3f4f7] py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mx-auto mb-7 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white px-4 py-3 text-xs font-semibold text-slate-600 shadow-lg ring-1 ring-slate-100">
+          <div className="mx-auto mb-7 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100">
             <MessageCircle className="h-4 w-4 text-[#02a6a6]" />
             Write your next story faster
           </div>
 
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Explore our text{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6]">editor&apos;s</span>
             </HandUnderline>{" "}
             magic
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Write, format, structure, and publish your articles visually with a
             beautiful editor made for creators and businesses.
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid lg:grid-cols-[220px_1fr_230px]">
-                <aside className="border-r border-slate-100 bg-white p-5 text-left">
-                  <p className="mb-5 text-sm font-bold text-slate-900">
+                <aside className="border-r border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left">
+                  <p className="mb-5 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     Blog Tools
                   </p>
 
@@ -283,7 +283,7 @@ export default function BlogLandingSections() {
                       className={`mb-2 rounded-md px-3 py-2 text-xs font-semibold ${
                         index === 0
                           ? "bg-[#714b67] text-white"
-                          : "bg-slate-50 text-slate-500"
+                          : "bg-slate-50 dark:bg-slate-800/40 text-slate-500 dark:text-slate-400"
                       }`}
                     >
                       {item}
@@ -291,7 +291,7 @@ export default function BlogLandingSections() {
                   ))}
                 </aside>
 
-                <div className="relative bg-white p-6 text-left">
+                <div className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left">
                   <div className="relative h-56 overflow-hidden rounded-lg bg-[url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop')] bg-cover bg-center">
                     <div className="absolute inset-0 bg-black/30" />
                     <div className="relative flex h-full flex-col items-center justify-center text-white">
@@ -312,14 +312,14 @@ export default function BlogLandingSections() {
                   </div>
 
                   <div
-                    className="mt-8 rotate-[-8deg] text-lg text-[#714b67]"
+                    className="mt-8 rotate-[-8deg] text-lg text-[#714b67] dark:text-[#9b6a8f]"
                     style={{ fontFamily: handwrittenFont }}
                   >
                     Drag and drop any block here
                   </div>
                 </div>
 
-                <aside className="border-l border-slate-200 bg-[#171824] p-5 text-left text-white">
+                <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] p-5 text-left text-white">
                   <p className="mb-5 text-sm font-bold">Design</p>
 
                   {[
@@ -336,9 +336,9 @@ export default function BlogLandingSections() {
                         <span>{index + 1}</span>
                       </div>
 
-                      <div className="h-2 rounded-full bg-white/10">
+                      <div className="h-2 rounded-full bg-white dark:bg-slate-950/10">
                         <div
-                          className="h-2 rounded-full bg-[#02cfc3]"
+                          className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30"
                           style={{ width: `${50 + index * 7}%` }}
                         />
                       </div>
@@ -351,14 +351,14 @@ export default function BlogLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white py-20">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber-50 text-amber-500">
             <Zap className="h-8 w-8" />
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Effortlessly{" "}
@@ -369,19 +369,19 @@ export default function BlogLandingSections() {
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-12 lg:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
               <div className="grid gap-5 sm:grid-cols-2">
                 {["Starter Plan", "Premium Plan"].map((plan, index) => (
                   <div
                     key={plan}
-                    className="rounded-lg bg-slate-50 p-5 text-left"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5 text-left"
                   >
-                    <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white text-[#714b67] shadow-sm">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-sm">
                       <FileText className="h-8 w-8" />
                     </div>
 
-                    <h3 className="mt-5 font-bold text-slate-900">{plan}</h3>
-                    <p className="mt-2 text-sm font-bold text-[#714b67]">
+                    <h3 className="mt-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">{plan}</h3>
+                    <p className="mt-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
                       ${index === 0 ? "9" : "29"}.00
                     </p>
 
@@ -392,9 +392,9 @@ export default function BlogLandingSections() {
                 ))}
               </div>
 
-              <div className="mt-5 rounded-lg bg-slate-50 p-5 text-left">
-                <p className="font-bold text-slate-900">Analyze this</p>
-                <p className="mt-2 text-sm leading-6 text-slate-500">
+              <div className="mt-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Analyze this</p>
+                <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                   Add forms, lead magnets, offers, and call-to-action sections
                   directly inside your articles.
                 </p>
@@ -402,11 +402,11 @@ export default function BlogLandingSections() {
             </div>
 
             <div className="text-left">
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                 Engaging user experience
               </h3>
 
-              <p className="mt-4 max-w-md text-sm leading-7 text-slate-600">
+              <p className="mt-4 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">
                 Build articles that guide readers toward a next step: subscribe,
                 contact you, download a resource, or purchase your offer.
               </p>
@@ -420,7 +420,7 @@ export default function BlogLandingSections() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-2 rounded-lg bg-slate-50 p-4 text-sm font-semibold text-slate-600"
+                    className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-sm font-semibold text-slate-600 dark:text-slate-300"
                   >
                     <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                     {item}
@@ -439,7 +439,7 @@ export default function BlogLandingSections() {
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Maximize your{" "}
@@ -448,15 +448,15 @@ export default function BlogLandingSections() {
             </HandUnderline>
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
             Improve discoverability with metadata, snippets, search previews,
             internal links, and structured content.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="grid lg:grid-cols-2">
-              <div className="border-r border-slate-100 p-6 text-left">
-                <p className="text-sm font-bold text-slate-900">SEO settings</p>
+              <div className="border-r border-slate-100 dark:border-slate-700 p-6 text-left">
+                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">SEO settings</p>
 
                 <div className="mt-5 space-y-4">
                   {[
@@ -467,28 +467,28 @@ export default function BlogLandingSections() {
                     "Focus keyword",
                   ].map((item) => (
                     <div key={item}>
-                      <label className="text-xs font-bold text-slate-500">
+                      <label className="text-xs font-bold text-slate-500 dark:text-slate-400">
                         {item}
                       </label>
-                      <div className="mt-2 h-10 rounded-md bg-slate-50 ring-1 ring-slate-100" />
+                      <div className="mt-2 h-10 rounded-md bg-slate-50 dark:bg-slate-800/40 ring-1 ring-slate-100" />
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="p-6 text-left">
-                <p className="text-sm font-bold text-slate-900">
+                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   Search preview
                 </p>
 
-                <div className="mt-5 rounded-lg border border-slate-200 p-5">
+                <div className="mt-5 rounded-lg border border-slate-200 dark:border-slate-700 p-5">
                   <p className="text-sm text-blue-600">
                     Your Blog Article | Website
                   </p>
-                  <p className="mt-2 text-lg font-bold text-slate-900">
+                  <p className="mt-2 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     Buying a Telescope: Complete Guide
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">
+                  <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                     Learn how to choose the right telescope, understand key
                     features, and start exploring the sky.
                   </p>
@@ -503,7 +503,7 @@ export default function BlogLandingSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white px-4 py-3 text-xs font-semibold text-slate-600 shadow-lg ring-1 ring-slate-100">
+          <div className="mx-auto mt-10 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100">
             <MessageCircle className="h-4 w-4 text-sky-500" />
             SEO score improved
           </div>
@@ -516,11 +516,11 @@ export default function BlogLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl"
+            className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6]">features</span>
             </HandUnderline>
             <br />
@@ -531,21 +531,21 @@ export default function BlogLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
                   {feature.title}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-slate-600">
+                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
               </div>
@@ -554,27 +554,27 @@ export default function BlogLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02cfc3]">
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>need</span>
             </HandUnderline>
             , one app.
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
             Expand as you grow with integrated apps that work together.
           </p>
 
@@ -585,15 +585,15 @@ export default function BlogLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 p-5 transition hover:bg-white hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900">{app.title}</h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -604,14 +604,14 @@ export default function BlogLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
           >
             See all apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -649,14 +649,14 @@ export default function BlogLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
@@ -667,7 +667,7 @@ export default function BlogLandingSections() {
               <div className="text-5xl text-amber-400">“</div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
                   Adon replaced multiple applications in one. With better
                   productivity, powerful easy access to centralized information,
                   and simplified processes.
@@ -681,8 +681,8 @@ export default function BlogLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900">Robert Chen</p>
-                    <p className="text-sm text-slate-500">Content strategist</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Robert Chen</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Content strategist</p>
                   </div>
                 </div>
               </div>
@@ -695,13 +695,13 @@ export default function BlogLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -723,3 +723,5 @@ export default function BlogLandingSections() {
     </main>
   );
 }
+
+
