@@ -1,5 +1,3 @@
-// app/community/learn/documentation/page.tsx
-
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -101,7 +99,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -119,8 +117,8 @@ function SectionEyebrow({
   label: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-violet-50 px-4 py-2 text-sm font-semibold text-violet-700 shadow-sm ring-1 ring-violet-100">
-      <span className="text-violet-500">{icon}</span>
+    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
+      <span className="text-primary">{icon}</span>
       {label}
     </div>
   );
@@ -128,9 +126,10 @@ function SectionEyebrow({
 
 export default function DocumentationPage() {
   return (
-    <main className="overflow-hidden bg-[linear-gradient(180deg,_#fff_0%,_#faf7ff_18%,_#ffffff_100%)] text-slate-800">
+    <main className="overflow-hidden bg-background text-foreground">
+      {/* Hero Section */}
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_12%_16%,rgba(168,85,247,0.18),transparent_26%),radial-gradient(circle_at_88%_12%,rgba(251,191,36,0.16),transparent_25%),linear-gradient(180deg,rgba(255,255,255,1)_0%,rgba(250,247,255,1)_100%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_12%_16%,rgba(139,92,246,0.08),transparent_26%),radial-gradient(circle_at_88%_12%,rgba(139,92,246,0.06),transparent_25%)]" />
 
         <div className="mx-auto grid max-w-7xl gap-14 px-4 py-14 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:py-24">
           <div className="max-w-2xl space-y-8">
@@ -145,7 +144,7 @@ export default function DocumentationPage() {
               </p>
               <div className="space-y-3">
                 <p
-                  className="text-2xl font-medium text-slate-700"
+                  className="text-2xl font-medium text-muted-foreground"
                   style={{
                     fontFamily:
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -154,7 +153,7 @@ export default function DocumentationPage() {
                   Everything you need to master
                 </p>
                 <h1
-                  className="text-5xl font-semibold leading-none tracking-tight text-slate-900 sm:text-6xl"
+                  className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
                   style={{
                     fontFamily:
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -163,7 +162,7 @@ export default function DocumentationPage() {
                   AdonERP
                 </h1>
               </div>
-              <p className="max-w-xl text-lg leading-8 text-slate-600">
+              <p className="max-w-xl text-lg leading-8 text-muted-foreground">
                 Browse clear guides, product documentation, developer
                 references, and workflow examples to help your team launch
                 faster and run every business process with confidence.
@@ -171,24 +170,24 @@ export default function DocumentationPage() {
             </div>
 
             <div className="relative max-w-xl">
-              <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+              <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <input
                 type="text"
                 placeholder="Search documentation, guides, APIs..."
-                className="h-14 w-full rounded-2xl border border-slate-200 bg-white pl-13 pr-4 text-sm text-slate-700 shadow-[0_20px_60px_rgba(15,23,42,0.08)] outline-none transition-all placeholder:text-slate-400 focus:border-primary/40 focus:ring-4 focus:ring-primary/10"
+                className="h-14 w-full rounded-2xl border border-border bg-card pl-13 pr-4 text-sm text-foreground shadow-[0_20px_60px_rgba(0,0,0,0.08)] outline-none transition-all placeholder:text-muted-foreground focus:border-primary/40 focus:ring-4 focus:ring-primary/10"
               />
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#categories"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
                 Browse docs
               </Link>
               <Link
                 href="#developer"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
+                className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 Developer reference
               </Link>
@@ -196,10 +195,10 @@ export default function DocumentationPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-xl">
-            <div className="absolute -right-4 top-8 h-32 w-32 rounded-full bg-amber-100 blur-3xl" />
-            <div className="absolute -bottom-8 left-6 h-40 w-40 rounded-full bg-violet-100 blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-5 shadow-[0_40px_100px_rgba(76,29,149,0.16)]">
-              <div className="rounded-[2rem] bg-slate-950 p-4 text-white">
+            <div className="absolute -right-4 top-8 h-32 w-32 rounded-full bg-primary/20 blur-3xl" />
+            <div className="absolute -bottom-8 left-6 h-40 w-40 rounded-full bg-primary/15 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-card p-5 shadow-[0_40px_100px_rgba(0,0,0,0.15)]">
+              <div className="rounded-[2rem] bg-gradient-to-br from-slate-800 to-slate-900 p-4 text-white">
                 <div className="mb-4 flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-rose-400" />
                   <span className="h-3 w-3 rounded-full bg-amber-400" />
@@ -209,41 +208,39 @@ export default function DocumentationPage() {
                   </span>
                 </div>
 
-                <div className="space-y-3 rounded-[1.5rem] bg-white p-4 text-slate-800">
-                  <div className="flex items-center gap-3 rounded-2xl bg-violet-50 p-4">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-white">
+                <div className="space-y-3 rounded-[1.5rem] bg-card p-4 text-foreground">
+                  <div className="flex items-center gap-3 rounded-2xl bg-primary/10 p-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground">
                       <FileText className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-900">
+                      <p className="font-semibold text-foreground">
                         Setup Guide
                       </p>
-                      <p className="text-sm text-slate-500">
+                      <p className="text-sm text-muted-foreground">
                         Company, apps, users, and workflow basics
                       </p>
                     </div>
                   </div>
 
-                  {[
-                    "CRM configuration",
-                    "Inventory rules",
-                    "Invoice workflow",
-                  ].map((item, index) => (
-                    <div
-                      key={item}
-                      className="flex items-center justify-between rounded-2xl bg-slate-50 px-4 py-3"
-                    >
-                      <span className="text-sm font-medium text-slate-700">
-                        {item}
-                      </span>
-                      <span className="rounded-full bg-white px-3 py-1 text-xs text-slate-500 shadow-sm">
-                        {index + 4} min
-                      </span>
-                    </div>
-                  ))}
+                  {["CRM configuration", "Inventory rules", "Invoice workflow"].map(
+                    (item, index) => (
+                      <div
+                        key={item}
+                        className="flex items-center justify-between rounded-2xl bg-muted/30 px-4 py-3"
+                      >
+                        <span className="text-sm font-medium text-foreground">
+                          {item}
+                        </span>
+                        <span className="rounded-full bg-card px-3 py-1 text-xs text-muted-foreground shadow-sm">
+                          {index + 4} min
+                        </span>
+                      </div>
+                    )
+                  )}
                 </div>
 
-                <div className="mt-4 rounded-[1.5rem] bg-[#17112b] p-4 font-mono text-xs leading-6 text-violet-100">
+                <div className="mt-4 rounded-[1.5rem] bg-slate-950 p-4 font-mono text-xs leading-6 text-violet-100">
                   <p className="text-emerald-300">GET /api/v1/products</p>
                   <p className="text-white/60">Authorization: Bearer API_KEY</p>
                   <p className="text-amber-200">status: 200 OK</p>
@@ -254,6 +251,7 @@ export default function DocumentationPage() {
         </div>
       </section>
 
+      {/* Knowledge Base Categories Section */}
       <section
         id="categories"
         className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20"
@@ -266,7 +264,7 @@ export default function DocumentationPage() {
           <div className="mt-8">
             <ScriptHeading>Find the right answer faster.</ScriptHeading>
           </div>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
             Documentation is grouped by workflow so business teams, managers,
             and developers can move from problem to solution without confusion.
           </p>
@@ -280,20 +278,20 @@ export default function DocumentationPage() {
               <Link
                 key={category.title}
                 href="#"
-                className="group rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_25px_70px_rgba(15,23,42,0.1)]"
+                className="group rounded-[1.7rem] border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_25px_70px_rgba(0,0,0,0.1)]"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-violet-50 text-primary ring-1 ring-violet-100">
+                  <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <span className="rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-slate-500">
+                  <span className="rounded-full bg-muted/30 px-3 py-1 text-xs font-medium text-muted-foreground">
                     {category.articles}
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-semibold text-slate-900">
+                <h3 className="mt-6 text-xl font-semibold text-foreground">
                   {category.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">
                   {category.description}
                 </p>
                 <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
@@ -306,8 +304,9 @@ export default function DocumentationPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f5f7] py-16 lg:py-24">
-        <div className="absolute inset-y-0 left-0 w-44 bg-[radial-gradient(circle_at_center,_rgba(168,85,247,0.08),transparent_68%)]" />
+      {/* Popular Guides Section */}
+      <section className="relative overflow-hidden rounded-t-[4rem] bg-muted/30 py-16 lg:py-24">
+        <div className="absolute inset-y-0 left-0 w-44 bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.06),transparent_68%)]" />
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <div className="space-y-5 self-center">
             <SectionEyebrow
@@ -318,14 +317,14 @@ export default function DocumentationPage() {
               Learn what matters,
               <br /> exactly when you need it.
             </ScriptHeading>
-            <p className="max-w-xl text-base leading-7 text-slate-600">
+            <p className="max-w-xl text-base leading-7 text-muted-foreground">
               Start with the most-used documentation topics for daily business
               setup, team operations, reporting, and system administration.
             </p>
           </div>
 
-          <div className="rounded-[2rem] border border-white bg-white p-4 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:p-6">
-            <div className="divide-y divide-slate-100">
+          <div className="rounded-[2rem] border border-border bg-card p-4 shadow-[0_35px_90px_rgba(0,0,0,0.08)] sm:p-6">
+            <div className="divide-y divide-border">
               {popularDocs.map((doc, index) => (
                 <Link
                   key={doc}
@@ -333,14 +332,14 @@ export default function DocumentationPage() {
                   className="group flex items-center justify-between gap-4 py-4"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-100 text-sm font-semibold text-slate-600">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-muted/30 text-sm font-semibold text-muted-foreground">
                       {String(index + 1).padStart(2, "0")}
                     </div>
-                    <span className="font-medium text-slate-800 group-hover:text-primary">
+                    <span className="font-medium text-foreground group-hover:text-primary">
                       {doc}
                     </span>
                   </div>
-                  <ArrowRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+                  <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
                 </Link>
               ))}
             </div>
@@ -348,13 +347,14 @@ export default function DocumentationPage() {
         </div>
       </section>
 
+      {/* Developer Section */}
       <section
         id="developer"
         className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8 lg:py-24"
       >
         <div className="relative">
-          <div className="absolute inset-x-12 bottom-0 top-8 rounded-full bg-violet-50" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 p-6 shadow-[0_35px_90px_rgba(15,23,42,0.16)]">
+          <div className="absolute inset-x-12 bottom-0 top-8 rounded-full bg-primary/10" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-gradient-to-br from-slate-800 to-slate-900 p-6 shadow-[0_35px_90px_rgba(0,0,0,0.16)]">
             <div className="mb-5 flex items-center justify-between text-white">
               <div className="flex items-center gap-2">
                 <TerminalSquare className="h-5 w-5 text-emerald-300" />
@@ -364,11 +364,11 @@ export default function DocumentationPage() {
                 v1.0
               </span>
             </div>
-            <pre className="overflow-x-auto rounded-[1.5rem] bg-[#120f1f] p-5 text-sm leading-7 text-violet-100">
+            <pre className="overflow-x-auto rounded-[1.5rem] bg-slate-950 p-5 text-sm leading-7 text-violet-100">
               {`const response = await fetch("/api/v1/customers", {
   method: "POST",
   headers: {
-    Authorization: "Bearer EDEN_API_KEY",
+    Authorization: "Bearer ADON_API_KEY",
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
@@ -388,7 +388,7 @@ export default function DocumentationPage() {
           <ScriptHeading className="text-3xl sm:text-4xl">
             Connect AdonERP with your own tools.
           </ScriptHeading>
-          <p className="max-w-xl text-base leading-7 text-slate-600">
+          <p className="max-w-xl text-base leading-7 text-muted-foreground">
             Use clean references and practical examples to integrate accounting,
             ecommerce, logistics, analytics, and internal automation systems.
           </p>
@@ -396,10 +396,10 @@ export default function DocumentationPage() {
             {developerSteps.map((step) => (
               <div
                 key={step}
-                className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
+                className="flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm"
               >
-                <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />
-                <span className="text-sm font-medium text-slate-700">
+                <CheckCircle2 className="h-5 w-5 shrink-0 text-accent" />
+                <span className="text-sm font-medium text-foreground">
                   {step}
                 </span>
               </div>
@@ -408,10 +408,11 @@ export default function DocumentationPage() {
         </div>
       </section>
 
+      {/* Continue Learning Banner */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
-        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-gradient(135deg,_#fff_0%,_#faf5ff_45%,_#fff8ed_100%)] px-6 py-14 shadow-[0_35px_90px_rgba(15,23,42,0.08)] sm:px-10">
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-amber-100 blur-3xl" />
-          <div className="absolute -bottom-12 -left-8 h-48 w-48 rounded-full bg-violet-100 blur-3xl" />
+        <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-background via-primary/5 to-muted px-6 py-14 shadow-[0_35px_90px_rgba(0,0,0,0.08)] sm:px-10">
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
+          <div className="absolute -bottom-12 -left-8 h-48 w-48 rounded-full bg-primary/15 blur-3xl" />
 
           <div className="relative mx-auto max-w-3xl text-center">
             <SectionEyebrow
@@ -421,7 +422,7 @@ export default function DocumentationPage() {
             <div className="mt-8">
               <ScriptHeading>One platform, many ways to learn.</ScriptHeading>
             </div>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
               Move from documentation to guided lessons, training resources, and
               community knowledge whenever your team needs deeper support.
             </p>
@@ -431,7 +432,7 @@ export default function DocumentationPage() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary"
+                  className="inline-flex items-center rounded-xl border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary"
                 >
                   {link.label}
                 </Link>

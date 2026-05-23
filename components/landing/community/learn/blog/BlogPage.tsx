@@ -1,5 +1,3 @@
-// app/blog/page.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -103,34 +101,33 @@ const tags = [
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-[#f7f7f7]">
-
-      {/* Hero */}
+    <main className="min-h-screen bg-background text-foreground">
+      {/* Hero Section */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <h1 className="text-center text-5xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-center text-5xl font-bold tracking-tight text-foreground">
             Our Latest Posts
           </h1>
 
           <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_320px]">
-            {/* Posts */}
+            {/* Posts Column */}
             <div>
-              {/* Categories */}
-              <div className="mb-10 flex flex-wrap gap-4 text-sm font-medium text-slate-600">
-                <button className="text-[#714B67]">All</button>
-                <button>Customer Reviews</button>
-                <button>Employee Testimonials</button>
-                <button>Partner Stories</button>
-                <button>Adon News</button>
-                <button>Business Hacks</button>
+              {/* Categories Filter */}
+              <div className="mb-10 flex flex-wrap gap-4 text-sm font-medium text-muted-foreground">
+                <button className="text-primary font-semibold">All</button>
+                <button className="hover:text-primary transition-colors">Customer Reviews</button>
+                <button className="hover:text-primary transition-colors">Employee Testimonials</button>
+                <button className="hover:text-primary transition-colors">Partner Stories</button>
+                <button className="hover:text-primary transition-colors">Adon News</button>
+                <button className="hover:text-primary transition-colors">Business Hacks</button>
               </div>
 
-              {/* Grid */}
+              {/* Posts Grid */}
               <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
                 {posts.map((post) => (
                   <article
                     key={post.title}
-                    className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                    className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
                     <div className="relative aspect-[16/9] overflow-hidden">
                       <Image
@@ -143,26 +140,25 @@ export default function BlogPage() {
 
                     <div className="p-5">
                       <div className="mb-3 flex items-center justify-between">
-                        <span className="rounded-full bg-purple-100 px-3 py-1 text-xs font-semibold text-[#714B67]">
+                        <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                           {post.category}
                         </span>
-
-                        <span className="text-xs text-slate-500">
+                        <span className="text-xs text-muted-foreground">
                           {post.date}
                         </span>
                       </div>
 
-                      <h2 className="line-clamp-2 text-xl font-bold leading-snug text-slate-800">
+                      <h2 className="line-clamp-2 text-xl font-bold leading-snug text-foreground">
                         {post.title}
                       </h2>
 
-                      <p className="mt-3 text-sm leading-7 text-slate-500">
+                      <p className="mt-3 text-sm leading-7 text-muted-foreground">
                         Discover how modern businesses use smart ERP, CRM,
                         automation, analytics, and integrations to scale
                         operations efficiently.
                       </p>
 
-                      <button className="mt-5 flex items-center gap-2 text-sm font-semibold text-[#714B67] transition hover:text-[#5f3f56]">
+                      <button className="mt-5 flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80">
                         Read More
                         <ChevronRight size={16} />
                       </button>
@@ -173,27 +169,22 @@ export default function BlogPage() {
 
               {/* Pagination */}
               <div className="mt-12 flex items-center gap-3">
-                <button className="flex h-10 w-10 items-center justify-center rounded-md bg-[#714B67] text-white">
+                <button className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
                   1
                 </button>
-
-                <button className="flex h-10 w-10 items-center justify-center rounded-md border bg-white">
+                <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">
                   2
                 </button>
-
-                <button className="flex h-10 w-10 items-center justify-center rounded-md border bg-white">
+                <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">
                   3
                 </button>
-
-                <button className="flex h-10 w-10 items-center justify-center rounded-md border bg-white">
+                <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">
                   4
                 </button>
-
-                <button className="flex h-10 w-10 items-center justify-center rounded-md border bg-white">
+                <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">
                   133
                 </button>
-
-                <button className="flex h-10 w-10 items-center justify-center rounded-md border bg-white">
+                <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">
                   <ChevronRight size={18} />
                 </button>
               </div>
@@ -201,25 +192,23 @@ export default function BlogPage() {
 
             {/* Sidebar */}
             <aside>
-              {/* Search */}
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div className="flex items-center rounded-lg border border-slate-200 px-4 py-3">
+              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                {/* Search */}
+                <div className="flex items-center rounded-lg border border-input px-4 py-3">
                   <input
                     type="text"
                     placeholder="Search..."
-                    className="w-full bg-transparent text-sm outline-none"
+                    className="w-full bg-transparent text-sm outline-none text-foreground placeholder:text-muted-foreground"
                   />
-
-                  <Search size={18} className="text-slate-500" />
+                  <Search size={18} className="text-muted-foreground" />
                 </div>
 
                 {/* Archives */}
                 <div className="mt-8">
-                  <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-slate-700">
+                  <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-foreground">
                     Archives
                   </h3>
-
-                  <select className="w-full rounded-lg border border-slate-200 px-4 py-3 text-sm outline-none">
+                  <select className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none text-foreground focus:border-primary/40 focus:ring-1 focus:ring-primary/20">
                     <option>All dates</option>
                     <option>2026</option>
                     <option>2025</option>
@@ -228,15 +217,14 @@ export default function BlogPage() {
 
                 {/* Tags */}
                 <div className="mt-8">
-                  <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-slate-700">
+                  <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-foreground">
                     Tags
                   </h3>
-
                   <div className="flex flex-wrap gap-3">
                     {tags.map((tag) => (
                       <button
                         key={tag}
-                        className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-medium text-slate-700 transition hover:border-[#714B67] hover:bg-[#714B67] hover:text-white"
+                        className="rounded-full border border-border bg-muted/30 px-4 py-2 text-xs font-medium text-foreground transition-all hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
                       >
                         {tag}
                       </button>
