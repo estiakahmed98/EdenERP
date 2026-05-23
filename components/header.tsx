@@ -513,33 +513,18 @@ export default function Header() {
                       id={`${navId}-${item.id}-panel`}
                       role="dialog"
                       aria-label={`${t(item.labelKey)} menu`}
-                      className="fixed left-1/2 top-[92px] z-50 w-[min(calc(100vw-2rem),1120px)] -translate-x-1/2 overflow-hidden rounded-2xl border border-slate-700 bg-[#071126] shadow-2xl shadow-black/40"
+                      className="fixed left-1/2 top-[92px] z-50 w-[min(calc(100vw-2rem),1120px)] -translate-x-1/2 overflow-hidden rounded-2xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#071126] shadow-2xl dark:shadow-black/40"
                     >
-                      <div className="border-b border-slate-700 bg-linear-to-r from-slate-950 to-slate-900/60 px-6 py-4">
-                        <p className="text-sm font-semibold text-slate-100">
+                      <div className="border-b border-slate-200 dark:border-slate-700 bg-linear-to-r from-slate-50 to-white dark:from-slate-950 dark:to-slate-900/60 px-6 py-4">
+                        <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                           {t("menu.explore", { label: t(item.labelKey) })}
                         </p>
-                        <p className="mt-1 text-sm text-slate-400">
+                        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                           {t("menu.description")}
                         </p>
                       </div>
 
-                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5 scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-transparent hover:scrollbar-thumb-slate-500">
-  <style jsx>{`
-    div::-webkit-scrollbar {
-      width: 8px;
-    }
-    div::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    div::-webkit-scrollbar-thumb {
-      background: #475569;
-      border-radius: 4px;
-    }
-    div::-webkit-scrollbar-thumb:hover {
-      background: #64748b;
-    }
-  `}</style>
+                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5 scrollbar-thin">
                         <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                           {item.megaMenu.map((column) => (
                             <div key={column.titleKey}>
@@ -559,7 +544,7 @@ export default function Header() {
                                     <Link
                                       href={link.href}
                                       onClick={() => setOpenDesktopMenu(null)}
-                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-300 transition-all hover:bg-slate-900/60 hover:text-cyan-300"
+                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-300 transition-all hover:bg-slate-100 dark:hover:bg-slate-900/60 hover:text-cyan-700 dark:hover:text-cyan-300"
                                     >
                                       {t(link.labelKey)}
                                     </Link>
@@ -646,7 +631,7 @@ export default function Header() {
       </nav>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-[102px] z-50 max-h-[calc(100vh-102px)] overflow-y-auto border-t border-slate-800 bg-[#020817] px-4 py-5 md:hidden">
+        <div className="fixed inset-x-0 top-[102px] z-50 max-h-[calc(100vh-102px)] overflow-y-auto border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-[#020817] px-4 py-5 md:hidden">
           <div className="mb-5 flex justify-end">
             <button
               type="button"
@@ -654,7 +639,7 @@ export default function Header() {
               aria-label={
                 isDark ? "Switch to light mode" : "Switch to dark mode"
               }
-              className="flex items-center gap-2 rounded-2xl border border-slate-700 px-5 py-3 text-sm font-bold text-white"
+              className="flex items-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 px-5 py-3 text-sm font-bold text-slate-800 dark:text-white"
             >
               {isDark ? <Sun size={16} /> : <Moon size={16} />}
               <span>{isDark ? "Light" : "Dark"}</span>
@@ -669,7 +654,7 @@ export default function Header() {
                 onClick={() =>
                   setMobileOpenMenu(mobileOpenMenu === "apps" ? null : "apps")
                 }
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-200 hover:bg-slate-900"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
               >
                 {t("nav.apps")}
                 <ChevronDown
@@ -680,12 +665,12 @@ export default function Header() {
               </button>
 
               {mobileOpenMenu === "apps" && (
-                <div className="mt-3 rounded-2xl border border-slate-800 bg-[#071126] p-4">
+                <div className="mt-3 rounded-2xl border border-slate-300 dark:border-slate-800 bg-white dark:bg-[#071126] p-4">
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     {appsMegaMenu.map((column) => (
                       <div key={column.titleKey}>
                         <div
-                          className={`mb-3 border-b border-slate-700 pb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
+                          className={`mb-3 border-b border-slate-300 dark:border-slate-700 pb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
                         >
                           {t(column.titleKey)}
                         </div>
@@ -722,7 +707,7 @@ export default function Header() {
                     mobileOpenMenu === "industries" ? null : "industries",
                   )
                 }
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-200 hover:bg-slate-900"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
               >
                 {t("nav.industries")}
                 <ChevronDown
@@ -733,7 +718,7 @@ export default function Header() {
               </button>
 
               {mobileOpenMenu === "industries" && (
-                <div className="mt-3 rounded-2xl border border-slate-800 bg-[#071126] p-4">
+                <div className="mt-3 rounded-2xl border border-slate-300 dark:border-slate-800 bg-white dark:bg-[#071126] p-4">
                   <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {industriesMegaMenu.map((column) => (
                       <div key={column.titleKey}>
@@ -747,7 +732,7 @@ export default function Header() {
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white"
+                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMenu(null);
@@ -774,7 +759,7 @@ export default function Header() {
                     mobileOpenMenu === "community" ? null : "community",
                   )
                 }
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-200 hover:bg-slate-900"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
               >
                 {t("nav.community")}
                 <ChevronDown
@@ -785,7 +770,7 @@ export default function Header() {
               </button>
 
               {mobileOpenMenu === "community" && (
-                <div className="mt-3 rounded-2xl border border-slate-800 bg-[#071126] p-4">
+                <div className="mt-3 rounded-2xl border border-slate-300 dark:border-slate-800 bg-white dark:bg-[#071126] p-4">
                   <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {communityMegaMenu.map((column) => (
                       <div key={column.titleKey}>
@@ -799,7 +784,7 @@ export default function Header() {
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-300 hover:bg-slate-800 hover:text-white"
+                                className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMenu(null);
@@ -819,7 +804,7 @@ export default function Header() {
 
             <Link
               href="/pricing"
-              className="block rounded-xl px-4 py-3 text-base font-bold text-slate-200 hover:bg-slate-900"
+              className="block rounded-xl px-4 py-3 text-base font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.pricing")}
@@ -827,7 +812,7 @@ export default function Header() {
 
             <Link
               href="/help"
-              className="block rounded-xl px-4 py-3 text-base font-bold text-slate-200 hover:bg-slate-900"
+              className="block rounded-xl px-4 py-3 text-base font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.help")}
@@ -835,12 +820,12 @@ export default function Header() {
           </div>
 
           <div className="mt-8 space-y-4">
-            <div className="flex w-full items-center justify-center gap-10 rounded-2xl border border-slate-800 px-5 py-4">
+            <div className="flex w-full items-center justify-center gap-10 rounded-2xl border border-slate-300 dark:border-slate-800 px-5 py-4">
               <button
                 type="button"
                 onClick={() => switchLanguage("en")}
                 className={`text-sm font-bold ${
-                  locale === "en" ? "text-white" : "text-slate-400"
+                  locale === "en" ? "text-slate-900" : "text-slate-500"
                 }`}
               >
                 EN
@@ -849,7 +834,7 @@ export default function Header() {
                 type="button"
                 onClick={() => switchLanguage("bn")}
                 className={`text-sm font-bold ${
-                  locale === "bn" ? "text-white" : "text-slate-400"
+                  locale === "bn" ? "text-slate-900" : "text-slate-500"
                 }`}
               >
                 বাংলা
@@ -858,7 +843,7 @@ export default function Header() {
 
             <Link
               href="/auth/signin"
-              className="block w-full rounded-2xl border border-slate-800 px-5 py-4 text-center text-base font-bold text-white"
+              className="block w-full rounded-2xl border border-slate-300 dark:border-slate-800 px-5 py-4 text-center text-base font-bold text-slate-800 dark:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.signIn")}
