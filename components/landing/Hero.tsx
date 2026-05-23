@@ -10,7 +10,7 @@ export default function Hero() {
   const typeWords = t("hero.typeWords") as string[];
 
   return (
-    <section className="relative overflow-hidden bg-white pb-20 pt-25">
+    <section className="relative overflow-hidden bg-white pb-20 pt-25 dark:bg-slate-950">
       <ThreeBg />
 
       <div className="pointer-events-none absolute -left-20 -top-30 h-105 w-105 rounded-full bg-[#f3eef122] blur-[60px]" />
@@ -22,7 +22,7 @@ export default function Hero() {
           <SectionTag>{t("hero.tag")}</SectionTag>
         </div>
 
-        <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(52px,8vw,96px)] font-bold leading-[1.05] tracking-[-1px] text-[#1a1a2e]">
+        <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(52px,8vw,96px)] font-bold leading-[1.05] tracking-[-1px] text-[#1a1a2e] dark:text-slate-100">
           {t("hero.titlePrefix")} <br />
           <HandText>
             <TypeWriter words={typeWords} />
@@ -43,8 +43,8 @@ export default function Hero() {
           {t("common.priceNote")}
         </p> */}
 
-        <div className="reveal shadow-float mt-14 animate-[scale-in_.8s_.5s_both] overflow-hidden rounded-[20px] border border-[#eeedf2] bg-white">
-          <div className="flex items-center gap-2 border-b border-[#ede8e0] bg-[#f8f5f2] px-4.5 py-2.5">
+        <div className="reveal shadow-float mt-14 animate-[scale-in_.8s_.5s_both] overflow-hidden rounded-[20px] border border-[#eeedf2] bg-white dark:border-slate-800 dark:bg-slate-900">
+          <div className="flex items-center gap-2 border-b border-[#ede8e0] bg-[#f8f5f2] px-4.5 py-2.5 dark:border-slate-800 dark:bg-slate-800">
             <div className="flex gap-1.25">
               {["#f87171", "#fbbf24", "#34d399"].map((color) => (
                 <div
@@ -55,14 +55,14 @@ export default function Hero() {
               ))}
             </div>
 
-            <div className="flex h-5.5 flex-1 items-center justify-center rounded-md bg-[#ede8e0] text-[11px] text-[#999]">
+            <div className="flex h-5.5 flex-1 items-center justify-center rounded-md bg-[#ede8e0] text-[11px] text-[#999] dark:bg-slate-700 dark:text-slate-300">
               adon-erp.com/subscriptions
             </div>
           </div>
 
           <div className="p-5 sm:p-6">
             <div className="mb-3.5 flex items-center justify-between">
-              <span className="text-sm font-bold text-[#1a1a2e]">
+              <span className="text-sm font-bold text-[#1a1a2e] dark:text-slate-100">
                 🔄 Subscriptions
               </span>
 
@@ -71,8 +71,8 @@ export default function Hero() {
               </span>
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-[#f0eae0]">
-              <div className="grid grid-cols-[80px_1fr_110px_110px_100px] bg-[#f8f5f0] px-4 py-2.25 font-body text-[10px] font-bold uppercase tracking-[1px] text-[#999]">
+            <div className="overflow-hidden rounded-xl border border-[#f0eae0] dark:border-slate-700">
+              <div className="grid grid-cols-[80px_1fr_110px_110px_100px] bg-[#f8f5f0] px-4 py-2.25 font-body text-[10px] font-bold uppercase tracking-[1px] text-[#999] dark:bg-slate-800 dark:text-slate-300">
                 {["ID", "Customer", "Next Bill", "Revenue", "Status"].map(
                   (heading) => (
                     <span key={heading}>{heading}</span>
@@ -89,12 +89,12 @@ export default function Hero() {
                 <div
                   key={row[0]}
                   className={`grid grid-cols-[80px_1fr_110px_110px_100px] border-t border-[#f0eae0] px-4 py-2.75 text-xs ${
-                    index % 2 === 0 ? "bg-white" : "bg-[#fdfaf7]"
+                    index % 2 === 0 ? "bg-white dark:bg-slate-900" : "bg-[#fdfaf7] dark:bg-slate-800/70"
                   }`}
                 >
                   <span className="font-semibold text-purple">{row[0]}</span>
 
-                  <span className="text-[#1a1a2e]">{row[1]}</span>
+                  <span className="text-[#1a1a2e] dark:text-slate-200">{row[1]}</span>
 
                   <span className="text-[#e11d48]">{row[2]}</span>
 

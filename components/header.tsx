@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
 
 import { Link } from "@/i18n/navigation";
 
@@ -376,9 +377,11 @@ export default function Header() {
   const t = useTranslations("Header");
   const navId = useId();
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<MenuId | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
@@ -406,8 +409,19 @@ export default function Header() {
     };
   }, [openDesktopMenu]);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  function toggleTheme() {
+    const current = resolvedTheme ?? theme;
+    setTheme(current === "dark" ? "light" : "dark");
+  }
+
+  const isDark = mounted && (resolvedTheme ?? theme) === "dark";
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl">
+    <header className="bn-content sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl dark:border-slate-800 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="group relative flex items-center gap-3">
           <Image
@@ -418,57 +432,35 @@ export default function Header() {
             className="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
             priority
           />
-
           <div className="relative">
             <span
-              className="relative inline-block transition-all duration-300 group-hover:scale-105"
+              className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105"
               style={{
                 fontFamily:
                   '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
-                fontSize: "32px",
-                fontWeight: 900,
-                background:
-                  "linear-gradient(135deg, #0f172a 0%, #1e293b 45%, #0ea5e9 70%, #10b981 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                letterSpacing: "-0.06em",
               }}
             >
               Adon
             </span>
 
-            <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-linear-to-r from-emerald-500 to-cyan-500 transition-all duration-500 group-hover:w-full" />
-          </div>
-
-          <span
-            className="inline-block transition-all duration-300 group-hover:rotate-0"
-            style={{
-              fontFamily:
-                '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-              fontSize: "12px",
-              fontWeight: 200,
-              color: "#cbd5e1",
-              transform: "rotate(-12deg)",
-            }}
-          >
-            -
-          </span>
-
-          <div className="relative">
-            <div className="absolute inset-0 rounded-lg bg-linear-to-r from-emerald-500/20 to-cyan-500/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+            <span
+              className="mx-1 inline-block text-slate-500"
+              style={{
+                fontFamily:
+                  '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                fontSize: "12px",
+                fontWeight: 200,
+                transform: "rotate(-12deg)",
+              }}
+            >
+              —
+            </span>
 
             <span
-              className="relative inline-block rounded-lg px-1 py-0.5 font-black uppercase tracking-wider transition-all duration-300 group-hover:scale-105"
+              className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-xl font-black uppercase tracking-wider text-transparent"
               style={{
                 fontFamily:
                   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                fontSize: "20px",
-                background: "linear-gradient(135deg, #10b981 0%, #06b6d4 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-                letterSpacing: "0.1em",
               }}
             >
               ERP
@@ -494,7 +486,7 @@ export default function Header() {
                     className={`group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
                       openDesktopMenu === item.id
                         ? "text-cyan-700"
-                        : "text-slate-700 hover:text-cyan-700"
+                        : "text-slate-700 hover:text-cyan-700 dark:text-slate-200 dark:hover:text-cyan-300"
                     }`}
                   >
                     {t(item.labelKey)}
@@ -512,12 +504,12 @@ export default function Header() {
                       aria-label={`${t(item.labelKey)} menu`}
                       className="absolute left-1/2 top-full z-50 mt-6 w-[min(1120px,calc(100vw-2rem))] -translate-x-1/2"
                     >
-                      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/60">
-                        <div className="border-b border-slate-100 bg-linear-to-r from-slate-50 to-white px-8 py-5">
-                          <p className="text-sm font-semibold text-slate-950">
+                      <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)] ring-1 ring-slate-200/60 dark:border-slate-800 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 dark:ring-slate-800/60 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
+                        <div className="border-b border-slate-100 bg-linear-to-r from-slate-50 to-white px-8 py-5 dark:border-slate-800 dark:bg-linear-to-r dark:from-slate-950 dark:to-slate-900/60">
+                          <p className="text-sm font-semibold text-slate-950 dark:text-slate-100">
                             {t("menu.explore", { label: t(item.labelKey) })}
                           </p>
-                          <p className="mt-1 text-sm text-slate-500">
+                          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                             {t("menu.description")}
                           </p>
                         </div>
@@ -541,7 +533,7 @@ export default function Header() {
                                     <Link
                                       href={link.href}
                                       onClick={() => setOpenDesktopMenu(null)}
-                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-600 transition-all hover:bg-slate-50 hover:text-cyan-700"
+                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-slate-600 transition-all hover:bg-slate-50 hover:text-cyan-700 dark:text-slate-300 dark:hover:bg-slate-900/60 dark:hover:text-cyan-300"
                                     >
                                       {t(link.labelKey)}
                                     </Link>
@@ -558,7 +550,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="group relative text-sm font-semibold text-slate-700 transition-colors hover:text-cyan-700"
+                  className="group relative text-sm font-semibold text-slate-700 transition-colors hover:text-cyan-700 dark:text-slate-200 dark:hover:text-cyan-300"
                 >
                   {t(item.labelKey)}
                   <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-linear-to-r from-cyan-500 to-emerald-500 transition-all duration-300 group-hover:w-full" />
@@ -571,32 +563,57 @@ export default function Header() {
         <button
           type="button"
           aria-label={t("mobileMenuLabel")}
-          className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 md:hidden"
+          className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 md:hidden dark:text-slate-200 dark:hover:bg-slate-900/60"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <div className="hidden items-center gap-3 md:flex bg-(--purple) text-white rounded-xl">
-          <Link
-            href="/auth/signin"
-            className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
+        <div className="hidden items-center gap-2 md:flex">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white p-2 text-slate-700 shadow-xs transition-colors hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900/60"
           >
-            {t("nav.signIn")}
-          </Link>
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+
+          <div className="flex items-center gap-3 rounded-xl bg-(--purple) text-white">
+            <Link
+              href="/auth/signin"
+              className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
+            >
+              {t("nav.signIn")}
+            </Link>
+          </div>
         </div>
       </nav>
 
       {mobileMenuOpen && (
-        <div className="border-t border-slate-200 bg-white md:hidden">
+        <div className="border-t border-slate-200 bg-white md:hidden dark:border-slate-800 dark:bg-slate-950">
           <div className="space-y-4 px-4 py-4">
+            <div className="flex items-center justify-end">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={
+                  isDark ? "Switch to light mode" : "Switch to dark mode"
+                }
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-xs transition-colors hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900/60"
+              >
+                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                <span>{isDark ? "Light" : "Dark"}</span>
+              </button>
+            </div>
+
             <div className="space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700"
+                  className="block rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 hover:text-cyan-700 dark:text-slate-200 dark:hover:bg-slate-900/60 dark:hover:text-cyan-300"
                 >
                   {t(item.labelKey)}
                 </Link>
@@ -607,7 +624,7 @@ export default function Header() {
               <Link
                 href="/auth/signin"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700"
+                className="rounded-xl border border-slate-200 px-5 py-3 text-center text-sm font-semibold text-slate-700 dark:border-slate-800 dark:text-slate-200"
               >
                 {t("nav.signIn")}
               </Link>

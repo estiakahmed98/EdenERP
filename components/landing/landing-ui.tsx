@@ -18,7 +18,9 @@ export const GLOBAL_CSS = `
   --body: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
-body { font-family: var(--body); background: #fff; color: var(--ink); overflow-x: hidden; }
+body { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
+html[lang^='bn'] { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
+.dark { --cream: #0b1120; --gray-bg: #111827; --ink: #e5e7eb; --muted: #94a3b8; --purple-light: #1f1521; }
 
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }

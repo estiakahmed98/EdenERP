@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Rubik, Tiro_Bangla } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { getLocale } from "next-intl/server";
 
+import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
@@ -16,6 +17,18 @@ const geist = Geist({
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+});
+
+const rubik = Rubik({
+  subsets: ["latin"],
+  variable: "--font-rubik",
+});
+
+const tiroBangla = Tiro_Bangla({
+  subsets: ["bengali"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-tiro-bangla",
 });
 
 export const metadata: Metadata = {
@@ -160,7 +173,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${geist.variable} ${geistMono.variable}`}
+      className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${tiroBangla.variable}`}
     >
       <body className="bg-background font-sans antialiased">
         <Script
@@ -179,7 +192,14 @@ export default async function RootLayout({
           }}
         />
 
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
 
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>

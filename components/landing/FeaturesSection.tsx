@@ -11,10 +11,10 @@ export default function FeaturesSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="features" className="rounded-t-[48px] bg-gray-bg px-6 py-25">
+    <section id="features" className="rounded-t-[48px] bg-gray-bg px-6 py-25 dark:bg-slate-900">
       <div className="mx-auto max-w-240">
         <div className="reveal mb-12">
-          <h2 className="max-w-125 font-hand text-[clamp(40px,6vw,68px)] font-bold leading-[1.1] text-[#1a1a2e]">
+          <h2 className="max-w-125 font-hand text-[clamp(40px,6vw,68px)] font-bold leading-[1.1] text-[#1a1a2e] dark:text-slate-100">
             {t("features.titlePrefix")}{" "}
             <Circled color="var(--teal)">{t("features.titleHand")}</Circled>
             <br />
@@ -36,7 +36,7 @@ export default function FeaturesSection() {
                 <span className="text-base text-[#fbbf24]">★</span>
               </div>
 
-              <h3 className="mt-4.5 mb-2 font-body text-base font-bold text-[#1a1a2e]">
+              <h3 className="mt-4.5 mb-2 font-body text-base font-bold text-[#1a1a2e] dark:text-slate-100">
                 {feature.title}
               </h3>
 

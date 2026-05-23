@@ -9,13 +9,13 @@ export default function LevelUpSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-white px-6 py-25">
+    <section className="bg-white px-6 py-25 dark:bg-slate-950">
       <div className="mx-auto max-w-250">
         <div className="grid items-center gap-18 lg:grid-cols-2">
           <div className="reveal">
             <SectionTag>{t("levelUp.tag")}</SectionTag>
 
-            <h2 className="mt-4 font-hand text-[clamp(36px,5vw,56px)] font-bold leading-[1.15] text-[#1a1a2e]">
+            <h2 className="mt-4 font-hand text-[clamp(36px,5vw,56px)] font-bold leading-[1.15] text-[#1a1a2e] dark:text-slate-100">
               {t("levelUp.titlePrefix")}{" "}
               <HandText color="#bfdbfe" className="text-[#1d4ed8]">
                 {t("levelUp.titleHand")}
@@ -30,7 +30,7 @@ export default function LevelUpSection() {
               {(t("levelUp.stats") as any[]).map((stat: any, idx: number) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3.5 rounded-[14px] border border-[#eeedf2] bg-cream px-4.5 py-3.5"
+                  className="flex items-center gap-3.5 rounded-[14px] border border-[#eeedf2] bg-cream px-4.5 py-3.5 dark:border-slate-700 dark:bg-slate-900"
                 >
                   <span className="text-[22px]">{stat.icon}</span>
 
@@ -46,7 +46,7 @@ export default function LevelUpSection() {
             </div>
           </div>
 
-          <div className="reveal shadow-float overflow-hidden rounded-[20px] border border-[#eeedf2]">
+          <div className="reveal shadow-float overflow-hidden rounded-[20px] border border-[#eeedf2] dark:border-slate-700">
             <div className="flex items-center gap-2.5 bg-purple px-5 py-3.5">
               <span className="text-base">✅</span>
 

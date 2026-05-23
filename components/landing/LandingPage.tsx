@@ -21,7 +21,7 @@ export default function LandingPage({ locale }: { locale: Language }) {
 
   return (
     <LanguageProvider initialLanguage={locale}>
-      <main className="min-h-screen bg-(--cream)">
+      <main className="bn-content min-h-screen bg-(--cream) text-(--ink)">
         <style>{GLOBAL_CSS}</style>
         <LanguageSwitcher />
         <Hero />

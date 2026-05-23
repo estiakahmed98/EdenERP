@@ -11,12 +11,12 @@ export default function StatsSection() {
   const stats = t("stats.items") as any[];
 
   return (
-    <section className="bg-white px-6 py-22.5">
+    <section className="bg-white px-6 py-22.5 dark:bg-slate-950">
       <div className="mx-auto max-w-240">
         <div className="reveal mb-6">
           <SectionTag>{t("stats.tag")}</SectionTag>
 
-          <h2 className="mt-3.5 font-hand text-[clamp(34px,5vw,58px)] font-bold leading-[1.1] text-[#1a1a2e]">
+          <h2 className="mt-3.5 font-hand text-[clamp(34px,5vw,58px)] font-bold leading-[1.1] text-[#1a1a2e] dark:text-slate-100">
             {t("stats.title")}
           </h2>
         </div>

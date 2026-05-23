@@ -11,11 +11,11 @@ export default function TestimonialsSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-gray-bg px-6 py-25">
+    <section className="bg-gray-bg px-6 py-25 dark:bg-slate-900">
       <div className="mx-auto max-w-240">
         <div className="reveal mb-8">
           <SectionTag>{t("testimonials.tag")}</SectionTag>
-          <h2 className="mt-3.5 font-hand text-[clamp(34px,5vw,58px)] font-bold leading-[1.1] text-[#1a1a2e]">
+          <h2 className="mt-3.5 font-hand text-[clamp(34px,5vw,58px)] font-bold leading-[1.1] text-[#1a1a2e] dark:text-slate-100">
             {t("testimonials.title")}
           </h2>
         </div>
@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="reveal shadow-float mt-6 flex items-start gap-6 rounded-[20px] bg-white px-6 py-9 text-left sm:px-10">
+        <div className="reveal shadow-float mt-6 flex items-start gap-6 rounded-[20px] bg-white px-6 py-9 text-left sm:px-10 dark:bg-slate-900">
           <div className="shrink-0 font-serif text-[60px] leading-none text-[#fbbf24]">
             "
           </div>
@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
                 👤
               </div>
               <div>
-                <div className="font-body text-[13px] font-bold text-[#1a1a2e]">
+                <div className="font-body text-[13px] font-bold text-[#1a1a2e] dark:text-slate-100">
                   {t("testimonials.extraAuthor")}
                 </div>
                 <div className="font-body text-xs text-muted">
