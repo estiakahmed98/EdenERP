@@ -123,7 +123,7 @@ export default function BarcodeLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -147,7 +147,9 @@ export default function BarcodeLandingSections() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <ScanBarcode className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Barcode</span>
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Barcode
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Receipts / Delivery Orders / Inventory / Transfers
                   </span>
@@ -263,9 +265,15 @@ export default function BarcodeLandingSections() {
                         <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
                           {row[0]}
                         </span>
-                        <span className="text-slate-700 dark:text-slate-200">{row[1]}</span>
-                        <span className="text-slate-500 dark:text-slate-400">{row[2]}</span>
-                        <span className="text-slate-500 dark:text-slate-400">{row[3]}</span>
+                        <span className="text-slate-700 dark:text-slate-200">
+                          {row[1]}
+                        </span>
+                        <span className="text-slate-500 dark:text-slate-400">
+                          {row[2]}
+                        </span>
+                        <span className="text-slate-500 dark:text-slate-400">
+                          {row[3]}
+                        </span>
                         <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
                           {row[4]}
                         </span>
@@ -332,7 +340,9 @@ export default function BarcodeLandingSections() {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Incoming Shipment</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Incoming Shipment
+                </p>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                   Ready
                 </span>
@@ -345,7 +355,10 @@ export default function BarcodeLandingSections() {
                   ["Expected", "Today"],
                   ["Destination", "WH/Stock"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <div
+                    key={label}
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
                     <p className="text-xs font-bold text-slate-400">{label}</p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {value}
@@ -364,8 +377,12 @@ export default function BarcodeLandingSections() {
                     key={name}
                     className="grid grid-cols-[1fr_90px_100px] items-center rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3 text-sm"
                   >
-                    <span className="font-semibold text-slate-700 dark:text-slate-200">{name}</span>
-                    <span className="text-slate-500 dark:text-slate-400">{qty}</span>
+                    <span className="font-semibold text-slate-700 dark:text-slate-200">
+                      {name}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {qty}
+                    </span>
                     <span
                       className={`rounded-full px-3 py-1 text-center text-[10px] font-bold ${
                         status === "Validated"
@@ -558,7 +575,9 @@ export default function BarcodeLandingSections() {
           <div className="relative">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-6 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Traceability Report</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Traceability Report
+                </p>
                 <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
                   Live
                 </span>
@@ -584,11 +603,15 @@ export default function BarcodeLandingSections() {
                     </div>
 
                     <div className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{type}</p>
+                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        {type}
+                      </p>
                       <p className="mt-1 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
                         {reference}
                       </p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{route}</p>
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                        {route}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -689,7 +712,9 @@ export default function BarcodeLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -777,8 +802,12 @@ export default function BarcodeLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Andrew Ross</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Warehouse manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Andrew Ross
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Warehouse manager
+                    </p>
                   </div>
                 </div>
               </div>
@@ -807,12 +836,10 @@ export default function BarcodeLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -873,5 +900,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

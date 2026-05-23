@@ -107,7 +107,7 @@ export default function QualityLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -131,7 +131,9 @@ export default function QualityLandingSections() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <ShieldCheck className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Quality</span>
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Quality
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Overview / Quality Control / Alerts / Reporting
                   </span>
@@ -382,7 +384,10 @@ export default function QualityLandingSections() {
                   ["Team", "Quality Team"],
                   ["Priority", "High"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <div
+                    key={label}
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
                     <p className="text-xs font-bold text-slate-400">{label}</p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {value}
@@ -409,7 +414,9 @@ export default function QualityLandingSections() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Inspection worksheet</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                Inspection worksheet
+              </p>
               <span className="text-slate-400">×</span>
             </div>
 
@@ -502,7 +509,10 @@ export default function QualityLandingSections() {
           <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-4 md:grid-cols-3">
               {["New", "In Progress", "Done"].map((column, columnIndex) => (
-                <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                <div
+                  key={column}
+                  className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                >
                   <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                     {column}
                   </p>
@@ -752,7 +762,9 @@ export default function QualityLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -840,8 +852,12 @@ export default function QualityLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Robert Hayes</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Quality manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Robert Hayes
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Quality manager
+                    </p>
                   </div>
                 </div>
               </div>
@@ -870,12 +886,10 @@ export default function QualityLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -908,5 +922,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

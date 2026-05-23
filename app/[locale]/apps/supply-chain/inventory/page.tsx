@@ -122,7 +122,7 @@ export default function InventoryLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -252,11 +252,21 @@ export default function InventoryLandingSections() {
                       key={row[0]}
                       className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
-                      <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">{row[0]}</span>
-                      <span className="text-slate-700 dark:text-slate-200">{row[1]}</span>
-                      <span className="text-slate-500 dark:text-slate-400">{row[2]}</span>
-                      <span className="text-slate-500 dark:text-slate-400">{row[3]}</span>
-                      <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{row[4]}</span>
+                      <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                        {row[0]}
+                      </span>
+                      <span className="text-slate-700 dark:text-slate-200">
+                        {row[1]}
+                      </span>
+                      <span className="text-slate-500 dark:text-slate-400">
+                        {row[2]}
+                      </span>
+                      <span className="text-slate-500 dark:text-slate-400">
+                        {row[3]}
+                      </span>
+                      <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        {row[4]}
+                      </span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                           row[5] === "Done"
@@ -282,20 +292,36 @@ export default function InventoryLandingSections() {
             <div className="relative z-50 mx-auto mt-10 max-w-md rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-xl ring-1 ring-slate-100">
               <div className="grid grid-cols-2 gap-4 text-left text-xs">
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Forecasted</p>
-                  <p className="mt-1 text-slate-500 dark:text-slate-400">12,400 units</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Forecasted
+                  </p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">
+                    12,400 units
+                  </p>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Available</p>
-                  <p className="mt-1 text-slate-500 dark:text-slate-400">9,800 units</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Available
+                  </p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">
+                    9,800 units
+                  </p>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Replenishment</p>
-                  <p className="mt-1 text-slate-500 dark:text-slate-400">Auto rules</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Replenishment
+                  </p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">
+                    Auto rules
+                  </p>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Traceability</p>
-                  <p className="mt-1 text-slate-500 dark:text-slate-400">Lots / serials</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Traceability
+                  </p>
+                  <p className="mt-1 text-slate-500 dark:text-slate-400">
+                    Lots / serials
+                  </p>
                 </div>
               </div>
             </div>
@@ -449,7 +475,10 @@ export default function InventoryLandingSections() {
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 sm:grid-cols-3">
                 {["Receipts", "Pick", "Pack"].map((title, columnIndex) => (
-                  <div key={title} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <div
+                    key={title}
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
                     <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {title}
                     </p>
@@ -659,7 +688,9 @@ export default function InventoryLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -748,8 +779,12 @@ export default function InventoryLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Andrew Ross</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Warehouse manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Andrew Ross
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Warehouse manager
+                    </p>
                   </div>
                 </div>
               </div>
@@ -774,12 +809,10 @@ export default function InventoryLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -836,5 +869,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

@@ -112,7 +112,7 @@ export default function AIPoweredAppsLandingPage() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -235,7 +235,9 @@ export default function AIPoweredAppsLandingPage() {
                   1
                 </span>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Create your agent</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Create your agent
+                  </p>
                   <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                     Define role, tools, access, and what this assistant can do.
                   </p>
@@ -247,7 +249,9 @@ export default function AIPoweredAppsLandingPage() {
                   2
                 </span>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Configure it</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Configure it
+                  </p>
                   <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                     Train it with documents, workflow rules, and business data.
                   </p>
@@ -328,7 +332,9 @@ export default function AIPoweredAppsLandingPage() {
                     AI
                   </span>
                 </span>
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Draft sales proposal</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Draft sales proposal
+                </p>
               </div>
 
               <div className="space-y-3">
@@ -382,7 +388,10 @@ export default function AIPoweredAppsLandingPage() {
             <div className="flex h-80 items-end gap-4 border-b border-slate-200 dark:border-slate-700">
               {[45, 52, 48, 65, 80, 110, 155, 230].map((height, index) => (
                 <div key={index} className="flex flex-1 flex-col items-center">
-                  <div className="w-full bg-[#02cfc3] dark:bg-[#02cfc3]/30" style={{ height }} />
+                  <div
+                    className="w-full bg-[#02cfc3] dark:bg-[#02cfc3]/30"
+                    style={{ height }}
+                  />
                   <div
                     className="w-full bg-rose-400"
                     style={{ height: height * 0.45 }}
@@ -444,7 +453,9 @@ export default function AIPoweredAppsLandingPage() {
                   key={item}
                   className="flex items-center justify-between rounded-xl bg-slate-50 dark:bg-slate-800/40 px-5 py-4"
                 >
-                  <span className="font-bold text-slate-700 dark:text-slate-200">{item}</span>
+                  <span className="font-bold text-slate-700 dark:text-slate-200">
+                    {item}
+                  </span>
                   <CheckCircle2 className="h-5 w-5 text-emerald-500" />
                 </div>
               ))}
@@ -552,7 +563,9 @@ export default function AIPoweredAppsLandingPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -640,8 +653,12 @@ export default function AIPoweredAppsLandingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Mike Solutions</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Operations manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Mike Solutions
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Operations manager
+                    </p>
                   </div>
                 </div>
               </div>
@@ -670,12 +687,10 @@ export default function AIPoweredAppsLandingPage() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -708,5 +723,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

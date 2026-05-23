@@ -160,7 +160,7 @@ export default function BlogLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -380,7 +380,9 @@ export default function BlogLandingSections() {
                       <FileText className="h-8 w-8" />
                     </div>
 
-                    <h3 className="mt-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">{plan}</h3>
+                    <h3 className="mt-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {plan}
+                    </h3>
                     <p className="mt-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
                       ${index === 0 ? "9" : "29"}.00
                     </p>
@@ -393,7 +395,9 @@ export default function BlogLandingSections() {
               </div>
 
               <div className="mt-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Analyze this</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Analyze this
+                </p>
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
                   Add forms, lead magnets, offers, and call-to-action sections
                   directly inside your articles.
@@ -456,7 +460,9 @@ export default function BlogLandingSections() {
           <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="grid lg:grid-cols-2">
               <div className="border-r border-slate-100 dark:border-slate-700 p-6 text-left">
-                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">SEO settings</p>
+                <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  SEO settings
+                </p>
 
                 <div className="mt-5 space-y-4">
                   {[
@@ -592,7 +598,9 @@ export default function BlogLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -681,8 +689,12 @@ export default function BlogLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Robert Chen</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Content strategist</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Robert Chen
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Content strategist
+                    </p>
                   </div>
                 </div>
               </div>
@@ -711,17 +723,13 @@ export default function BlogLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-

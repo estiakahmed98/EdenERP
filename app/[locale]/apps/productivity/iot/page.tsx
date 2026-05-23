@@ -74,7 +74,7 @@ export default function IoTDefencePage() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button className="rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#5d3f57]">
-              Start now - it&apos;s free
+              Start now
             </button>
 
             <button className="rounded-md bg-slate-100 px-7 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 transition hover:bg-slate-200">
@@ -158,7 +158,9 @@ export default function IoTDefencePage() {
                         {title}
                       </h3>
 
-                      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">{value}</p>
+                      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                        {value}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -217,7 +219,9 @@ export default function IoTDefencePage() {
                     className="flex items-center gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 px-5 py-4"
                   >
                     <div className="h-3 w-3 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
-                    <p className="font-semibold text-slate-700 dark:text-slate-200">{item}</p>
+                    <p className="font-semibold text-slate-700 dark:text-slate-200">
+                      {item}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -347,14 +351,21 @@ export default function IoTDefencePage() {
                 "Unified visualization for defence & industrial operations.",
               ],
             ].map(([title, desc]) => (
-              <div key={title} className="rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 shadow-sm">
+              <div
+                key={title}
+                className="rounded-2xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-7 shadow-sm"
+              >
                 <div className="flex items-start justify-between gap-5">
-                  <h3 className="text-lg font-black text-slate-900 dark:text-white dark:text-slate-100">{title}</h3>
+                  <h3 className="text-lg font-black text-slate-900 dark:text-white dark:text-slate-100">
+                    {title}
+                  </h3>
 
                   <div className="text-xl text-amber-400">★</div>
                 </div>
 
-                <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{desc}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
@@ -382,7 +393,9 @@ export default function IoTDefencePage() {
             <span className="border-b-4 border-sky-300">app.</span>
           </h2>
 
-          <p className="mt-4 text-slate-600 dark:text-slate-300">Expand as your defence grows.</p>
+          <p className="mt-4 text-slate-600 dark:text-slate-300">
+            Expand as your defence grows.
+          </p>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {[
@@ -392,10 +405,15 @@ export default function IoTDefencePage() {
               "Inventory",
               "Purchase",
             ].map((app) => (
-              <div key={app} className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-6 shadow-sm">
+              <div
+                key={app}
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-6 shadow-sm"
+              >
                 <div className="mb-4 h-12 w-12 rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm" />
 
-                <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app}</h3>
+                <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  {app}
+                </h3>
 
                 <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                   Connected operations
@@ -422,7 +440,7 @@ export default function IoTDefencePage() {
           </h2>
 
           <button className="mt-10 rounded-md bg-[#714b67] px-8 py-4 text-sm font-bold text-white transition hover:bg-[#5d3f57]">
-            Start now - it&apos;s free
+            Start now
           </button>
         </div>
       </section>
@@ -460,5 +478,3 @@ function SparklesIcon() {
     </svg>
   );
 }
-
-

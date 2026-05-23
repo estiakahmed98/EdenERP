@@ -82,7 +82,7 @@ export default function MaintenanceLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -106,7 +106,9 @@ export default function MaintenanceLandingSections() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Wrench className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Maintenance</span>
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Maintenance
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Dashboard / Requests / Equipment / Reporting
                   </span>
@@ -295,7 +297,10 @@ export default function MaintenanceLandingSections() {
             <div className="grid gap-4 md:grid-cols-3">
               {["New Request", "In Progress", "Repaired"].map(
                 (column, columnIndex) => (
-                  <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <div
+                    key={column}
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
                     <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {column}
                     </p>
@@ -463,7 +468,9 @@ export default function MaintenanceLandingSections() {
                 className="relative flex w-36 flex-col items-center"
               >
                 <div className="absolute -top-12 z-10 rounded-md bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-2 text-xs shadow-lg ring-1 ring-slate-100">
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{bar.name}</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    {bar.name}
+                  </p>
                   <p className="mt-1 text-slate-400">New request</p>
                 </div>
 
@@ -521,7 +528,9 @@ export default function MaintenanceLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -613,17 +622,13 @@ export default function MaintenanceLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-
