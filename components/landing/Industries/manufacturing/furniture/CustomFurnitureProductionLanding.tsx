@@ -626,7 +626,7 @@ export default function CustomFurnitureProductionPage() {
               15-day free trial
             </div>
           </div>
-          <p className="mt-4 text-xs text-slate-400">No credit card required</p>
+          
         </div>
       </section>
     </main>

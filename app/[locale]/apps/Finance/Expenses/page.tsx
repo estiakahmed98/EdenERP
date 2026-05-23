@@ -1158,7 +1158,7 @@ export default function ExpensesPage() {
             </div>
 
             <p className="mt-6 text-sm text-emerald-200/80">
-              No credit card required • Free forever plan • Cancel anytime
+               • Free forever plan • Cancel anytime
             </p>
           </div>
         </div>

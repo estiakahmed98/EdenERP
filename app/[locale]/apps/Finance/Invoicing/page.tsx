@@ -944,7 +944,7 @@ export default function InvoicingPage() {
             </div>
 
             <p className="mt-6 text-sm text-emerald-200/80">
-              Free forever plan available • No credit card required
+              Free forever plan available • 
             </p>
           </div>
         </div>
