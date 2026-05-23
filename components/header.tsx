@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 type MegaMenuLink = {
   labelKey: string;
@@ -375,6 +375,9 @@ const navItems: NavItem[] = [
 
 export default function Header() {
   const t = useTranslations("Header");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const navId = useId();
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
   const { theme, resolvedTheme, setTheme } = useTheme();
@@ -418,54 +421,61 @@ export default function Header() {
     setTheme(current === "dark" ? "light" : "dark");
   }
 
+  function switchLanguage(nextLocale: "en" | "bn") {
+    if (nextLocale === locale) return;
+    router.replace(pathname, { locale: nextLocale });
+  }
+
   const isDark = mounted && (resolvedTheme ?? theme) === "dark";
 
   return (
     <header className="bn-content sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/85 backdrop-blur-2xl dark:border-slate-800 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="group relative flex items-center gap-3">
+        <Link
+          href="/"
+          className="group mb-4 inline-flex items-center gap-1 transition-transform duration-300 hover:scale-105"
+        >
           <Image
             src="/icon.svg"
             alt="Adon ERP icon"
-            width={40}
-            height={40}
-            className="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+            width={30}
+            height={30}
+            className="h-10 w-10 mr-2 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
             priority
           />
-          <div className="relative">
-            <span
-              className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105"
-              style={{
-                fontFamily:
-                  '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
-              }}
-            >
-              Adon
-            </span>
 
-            <span
-              className="mx-1 inline-block text-slate-500"
-              style={{
-                fontFamily:
-                  '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                fontSize: "12px",
-                fontWeight: 200,
-                transform: "rotate(-12deg)",
-              }}
-            >
-              —
-            </span>
+          <span
+            className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105"
+            style={{
+              fontFamily:
+                '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
+            }}
+          >
+            Adon
+          </span>
 
-            <span
-              className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-xl font-black uppercase tracking-wider text-transparent"
-              style={{
-                fontFamily:
-                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-              }}
-            >
-              ERP
-            </span>
-          </div>
+          <span
+            className="-mx-0.5 inline-block text-slate-500"
+            style={{
+              fontFamily:
+                '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontSize: "10px",
+              fontWeight: 200,
+              transform: "rotate(-12deg)",
+            }}
+          >
+            —
+          </span>
+
+          <span
+            className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-lg font-black uppercase tracking-wide text-transparent"
+            style={{
+              fontFamily:
+                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+            }}
+          >
+            ERP
+          </span>
         </Link>
 
         <div ref={desktopNavRef} className="hidden items-center gap-7 md:flex">
@@ -560,32 +570,61 @@ export default function Header() {
           ))}
         </div>
 
-        <button
-          type="button"
-          aria-label={t("mobileMenuLabel")}
-          className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 md:hidden dark:text-slate-200 dark:hover:bg-slate-900/60"
-          onClick={() => setMobileMenuOpen((prev) => !prev)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-4">
+          <div className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white/90 p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900/90">
+            <button
+              type="button"
+              onClick={() => switchLanguage("en")}
+              className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
+                locale === "en"
+                  ? "bg-(--purple) text-white"
+                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+              }`}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              onClick={() => switchLanguage("bn")}
+              className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
+                locale === "bn"
+                  ? "bg-(--purple) text-white"
+                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+              }`}
+            >
+              বাংলা
+            </button>
+          </div>
 
-        <div className="hidden items-center gap-2 md:flex">
           <button
             type="button"
-            onClick={toggleTheme}
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white p-2 text-slate-700 shadow-xs transition-colors hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900/60"
+            aria-label={t("mobileMenuLabel")}
+            className="rounded-xl p-2 text-slate-700 transition-colors hover:bg-slate-100 md:hidden dark:text-slate-200 dark:hover:bg-slate-900/60"
+            onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          <div className="flex items-center gap-3 rounded-xl bg-(--purple) text-white">
-            <Link
-              href="/auth/signin"
-              className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
+          <div className="hidden items-center gap-2 md:flex">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+              }
+              className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white p-2 text-slate-700 shadow-xs transition-colors hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900/60"
             >
-              {t("nav.signIn")}
-            </Link>
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
+            <div className="flex items-center gap-3 rounded-xl bg-(--purple) text-white">
+              <Link
+                href="/auth/signin"
+                className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
+              >
+                {t("nav.signIn")}
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
@@ -621,6 +660,31 @@ export default function Header() {
             </div>
 
             <div className="grid gap-3 pt-2">
+              <div className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 p-2 dark:border-slate-800">
+                <button
+                  type="button"
+                  onClick={() => switchLanguage("en")}
+                  className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
+                    locale === "en"
+                      ? "bg-(--purple) text-white"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                  }`}
+                >
+                  EN
+                </button>
+                <button
+                  type="button"
+                  onClick={() => switchLanguage("bn")}
+                  className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
+                    locale === "bn"
+                      ? "bg-(--purple) text-white"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                  }`}
+                >
+                  বাংলা
+                </button>
+              </div>
+
               <Link
                 href="/auth/signin"
                 onClick={() => setMobileMenuOpen(false)}

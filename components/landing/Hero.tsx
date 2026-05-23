@@ -22,7 +22,7 @@ export default function Hero() {
           <SectionTag>{t("hero.tag")}</SectionTag>
         </div>
 
-        <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(52px,8vw,96px)] font-bold leading-[1.05] tracking-[-1px] text-[#1a1a2e] dark:text-slate-100">
+        <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(34px,5.5vw,78px)] font-bold leading-[1.1] tracking-[-1px] text-[#1a1a2e] dark:text-slate-100">
           {t("hero.titlePrefix")} <br />
           <HandText>
             <TypeWriter words={typeWords} />
@@ -89,12 +89,16 @@ export default function Hero() {
                 <div
                   key={row[0]}
                   className={`grid grid-cols-[80px_1fr_110px_110px_100px] border-t border-[#f0eae0] px-4 py-2.75 text-xs ${
-                    index % 2 === 0 ? "bg-white dark:bg-slate-900" : "bg-[#fdfaf7] dark:bg-slate-800/70"
+                    index % 2 === 0
+                      ? "bg-white dark:bg-slate-900"
+                      : "bg-[#fdfaf7] dark:bg-slate-800/70"
                   }`}
                 >
                   <span className="font-semibold text-purple">{row[0]}</span>
 
-                  <span className="text-[#1a1a2e] dark:text-slate-200">{row[1]}</span>
+                  <span className="text-[#1a1a2e] dark:text-slate-200">
+                    {row[1]}
+                  </span>
 
                   <span className="text-[#e11d48]">{row[2]}</span>
 
