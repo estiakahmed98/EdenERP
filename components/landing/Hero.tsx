@@ -22,7 +22,7 @@ export default function Hero() {
           <SectionTag>{t("hero.tag")}</SectionTag>
         </div>
 
-        <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(52px,8vw,96px)] font-bold leading-[1.05] tracking-[-1px] text-[#1a1a2e] dark:text-slate-100">
+        <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(34px,5.5vw,78px)] font-bold leading-[1.1] tracking-[-1px] text-[#1a1a2e] dark:text-slate-100">
           {t("hero.titlePrefix")} <br />
           <HandText>
             <TypeWriter words={typeWords} />
