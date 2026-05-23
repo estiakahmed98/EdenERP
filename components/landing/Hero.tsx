@@ -18,9 +18,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute -right-25 top-15 h-80 w-80 rounded-full bg-[#02cfc30a] blur-[60px]" />
 
       <div className="relative z-10 mx-auto max-w-225 px-6 text-center">
-        <div className="reveal animate-[fadeIn_.6s_both]">
-          <SectionTag>{t("hero.tag")}</SectionTag>
-        </div>
+        <SectionTag>{t("hero.tag")}</SectionTag>
 
         <h1 className="reveal reveal-d1 mt-6 font-hand text-[clamp(34px,5.5vw,78px)] font-bold leading-[1.1] tracking-[-1px] text-[#1a1a2e] dark:text-slate-100">
           {t("hero.titlePrefix")} <br />
