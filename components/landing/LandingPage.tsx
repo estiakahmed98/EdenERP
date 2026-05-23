@@ -8,7 +8,6 @@ import EnterpriseSection from "./EnterpriseSection";
 import FeaturesSection from "./FeaturesSection";
 import Hero from "./Hero";
 import { LanguageProvider, type Language } from "./LanguageProvider";
-import LanguageSwitcher from "./LanguageSwitcher";
 import LevelUpSection from "./LevelUpSection";
 import MarqueeStrip from "./MarqueeStrip";
 import NativeAISection from "./NativeAISection";
@@ -23,7 +22,6 @@ export default function LandingPage({ locale }: { locale: Language }) {
     <LanguageProvider initialLanguage={locale}>
       <main className="bn-content min-h-screen bg-(--cream) text-(--ink)">
         <style>{GLOBAL_CSS}</style>
-        <LanguageSwitcher />
         <Hero />
         <MarqueeStrip />
         <AppsSection />

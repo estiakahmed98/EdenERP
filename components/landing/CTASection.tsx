@@ -23,18 +23,18 @@ export default function CTASection() {
         </p>
 
         <div className="reveal flex flex-wrap justify-center gap-3">
-          <button className="rounded-[10px] bg-white px-8 py-3.75 font-body text-[15px] font-bold text-(--purple) shadow-[0_8px_32px_#00000033] transition hover:-translate-y-0.5">
+          {/* <button className="rounded-[10px] bg-white px-8 py-3.75 font-body text-[15px] font-bold text-(--purple) shadow-[0_8px_32px_#00000033] transition hover:-translate-y-0.5">
             {t("common.tryFree")}
-          </button>
+          </button> */}
 
           <button className="rounded-[10px] border-[1.5px] border-white/25 bg-transparent px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5">
             {t("common.contactSales")}
           </button>
         </div>
 
-        <p className="reveal mt-5 font-body text-xs text-white/35">
+        {/* <p className="reveal mt-5 font-body text-xs text-white/35">
           {t("common.freeTrialNote")}
-        </p>
+        </p> */}
       </div>
     </section>
   );

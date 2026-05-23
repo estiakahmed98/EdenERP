@@ -75,7 +75,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 sm:text-5xl dark:text-slate-100 ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -206,7 +206,7 @@ function SpreadsheetMockup() {
 
 export default function SpreadsheetPage() {
   return (
-    <main className="overflow-hidden bg-white text-slate-800">
+    <main className="overflow-hidden bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-linear(circle_at_18%_12%,rgba(6,182,212,0.14),transparent_26%),radial-linear(circle_at_85%_18%,rgba(16,185,129,0.12),transparent_25%)]" />
 

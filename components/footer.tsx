@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import { Link } from "@/i18n/navigation";
 
@@ -60,14 +61,23 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bn-content border-t border-slate-200 bg-slate-50 text-slate-800 dark:border-slate-800 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-950 dark:to-slate-900 dark:text-slate-100">
+    <footer className="bn-content border-t border-slate-800 bg-linear-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-100">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="mb-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-12">
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="group mb-4 inline-flex items-center gap-0"
+              className="group mb-4 inline-flex items-center gap-1 transition-transform duration-300 hover:scale-105"
             >
+              <Image
+                src="/icon.svg"
+                alt="Adon ERP icon"
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
+
               <span
                 className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105"
                 style={{
@@ -79,11 +89,11 @@ export default function Footer() {
               </span>
 
               <span
-                className="mx-1 inline-block text-slate-400 dark:text-slate-500"
+                className="-mx-0.5 inline-block text-slate-500"
                 style={{
                   fontFamily:
                     '"Hauser Script", "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                  fontSize: "12px",
+                  fontSize: "10px",
                   fontWeight: 200,
                   transform: "rotate(-12deg)",
                 }}
@@ -92,7 +102,7 @@ export default function Footer() {
               </span>
 
               <span
-                className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-xl font-black uppercase tracking-wider text-transparent"
+                className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-lg font-black uppercase tracking-wide text-transparent"
                 style={{
                   fontFamily:
                     '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -102,35 +112,38 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            <p className="text-sm leading-relaxed text-slate-300">
               {t("description")}
             </p>
 
             <div className="mt-6 flex gap-4">
               <a
                 href="#"
-                className="text-slate-500 transition-colors hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
               >
                 <Twitter size={20} />
               </a>
+
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="text-slate-500 transition-colors hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
               >
                 <Linkedin size={20} />
               </a>
+
               <a
                 href="#"
                 aria-label="Facebook"
-                className="text-slate-500 transition-colors hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
               >
                 <Facebook size={20} />
               </a>
+
               <a
                 href="#"
                 aria-label="Instagram"
-                className="text-slate-500 transition-colors hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                className="text-slate-300 transition-colors hover:text-cyan-300"
               >
                 <Instagram size={20} />
               </a>
@@ -139,7 +152,7 @@ export default function Footer() {
 
           {footerSections.map((section) => (
             <div key={section.titleKey}>
-              <h3 className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-slate-900 dark:text-white">
+              <h3 className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-white">
                 {t(section.titleKey)}
               </h3>
 
@@ -148,7 +161,7 @@ export default function Footer() {
                   <li key={`${section.titleKey}:${link.labelKey}`}>
                     <Link
                       href={link.href}
-                      className="text-sm font-medium text-slate-600 transition-colors hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                      className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-300"
                     >
                       {t(link.labelKey)}
                     </Link>
@@ -159,10 +172,10 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-slate-200 dark:border-slate-800" />
+        <div className="border-t border-slate-800" />
 
         <div className="flex flex-col items-center justify-between gap-4 pt-8 sm:flex-row">
-          <p className="text-sm text-slate-500 dark:text-slate-400">
+          <p className="text-sm text-slate-400">
             {t("copyright", { year: currentYear })}
           </p>
         </div>

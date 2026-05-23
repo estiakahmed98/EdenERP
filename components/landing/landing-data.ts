@@ -98,25 +98,25 @@ export const FEATURES: FeatureItem[] = [
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
-    name: "Fiona Laurent",
-    role: "CEO, Floral Studio",
-    quote: "Adon ERP cut our billing time by 70%. Every invoice runs itself now.",
+    name: "Nazmus Sadat",
+    role: "Project Manager, Net Reputation",
+    quote:
+      "Adon ERP cut our billing time by 70%. Every invoice runs itself now.",
     avatar: "🌸",
     score: 5,
   },
   {
-    name: "James Park",
-    role: "CTO, Nova Retail",
+    name: "David Rayan",
+    role: "CEO, Reputation Prime",
     quote: "The accounting module alone replaced three separate tools we used.",
     avatar: "🎯",
     score: 5,
   },
   {
-    name: "Amara Diallo",
-    role: "CFO, Green Valley",
+    name: "Md Mosarouf Hossain",
+    role: "CFO, Gravionne",
     quote: "We grew 3× without hiring extra finance staff. That says it all.",
     avatar: "🌿",
     score: 5,
   },
 ];
-
