@@ -414,12 +414,6 @@ export default function ClothingStorePage() {
               ))}
             </div>
           </div>
-          <div className="mt-7 flex max-w-fit items-center gap-3 rounded-full border border-border bg-card px-5 py-2 shadow-lg shadow-black/5">
-            <div className="h-7 w-7 rounded-full bg-muted" />
-            <span className="text-sm text-muted-foreground">
-              Real-time stock updates.
-            </span>
-          </div>
         </div>
       </section>
 
@@ -621,14 +615,6 @@ export default function ClothingStorePage() {
               who grow their business with AdonERP — the smart choice for modern
               clothing retailers.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href="#get-started"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
-              >
-                Start 15-day trial
-              </Link>
-            </div>
           </div>
         </div>
       </section>

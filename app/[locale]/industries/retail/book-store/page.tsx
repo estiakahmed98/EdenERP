@@ -393,12 +393,6 @@ export default function BookStorePage() {
               ))}
             </div>
           </div>
-          <div className="mt-7 flex max-w-fit items-center gap-3 rounded-full border border-border bg-card px-5 py-2 shadow-lg shadow-black/5">
-            <div className="h-7 w-7 rounded-full bg-muted" />
-            <span className="text-sm text-muted-foreground">
-              Avoid manual stock management.
-            </span>
-          </div>
         </div>
       </section>
 
@@ -463,12 +457,6 @@ export default function BookStorePage() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="mx-auto mt-7 flex max-w-fit items-center gap-3 rounded-full border border-border bg-card px-5 py-2 shadow-lg shadow-black/5">
-            <div className="h-7 w-7 rounded-full bg-muted" />
-            <span className="text-sm text-muted-foreground">
-              But wait! There&apos;s more.
-            </span>
           </div>
         </div>
       </section>
