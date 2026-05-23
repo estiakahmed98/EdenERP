@@ -123,7 +123,7 @@ export default function LiveChatLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -322,7 +322,9 @@ export default function LiveChatLandingSections() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-5 lg:grid-cols-[1fr_180px]">
               <div className="text-left">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Opportunity</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Opportunity
+                </p>
                 <div className="mt-5 space-y-3">
                   {["Customer", "Email", "Phone", "Product", "Priority"].map(
                     (item) => (
@@ -497,17 +499,24 @@ export default function LiveChatLandingSections() {
                     ["Customer", "Audrey Peterson"],
                     ["Stage", "Qualified"],
                   ].map(([label, value]) => (
-                    <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <div
+                      key={label}
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    >
                       <p className="text-xs font-bold text-slate-400">
                         {label}
                       </p>
-                      <p className="mt-2 font-bold text-slate-900 dark:text-white dark:text-slate-100">{value}</p>
+                      <p className="mt-2 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        {value}
+                      </p>
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-6 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
-                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">Notes</p>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Notes
+                  </p>
                   <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
                     Customer asked about pricing, delivery time, and product
                     recommendations.
@@ -581,7 +590,9 @@ export default function LiveChatLandingSections() {
                   <Bot className="h-7 w-7" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Chatbot flows</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Chatbot flows
+                  </p>
                   <p className="text-sm text-slate-500 dark:text-slate-400">
                     Automated conversation paths
                   </p>
@@ -710,7 +721,9 @@ export default function LiveChatLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -799,8 +812,12 @@ export default function LiveChatLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Mike Hills</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Sales lead</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Mike Hills
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Sales lead
+                    </p>
                   </div>
                 </div>
               </div>
@@ -829,12 +846,10 @@ export default function LiveChatLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -884,5 +899,3 @@ function FloatingNote({ className = "" }: { className?: string }) {
     </div>
   );
 }
-
-

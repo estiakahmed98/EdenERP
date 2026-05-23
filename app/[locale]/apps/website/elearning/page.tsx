@@ -117,7 +117,7 @@ export default function ELearningLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -308,7 +308,9 @@ export default function ELearningLandingSections() {
                       <div
                         key={item.title}
                         className={`overflow-hidden rounded-xl border ${
-                          index === 1 ? "border-[#02cfc3]" : "border-slate-100 dark:border-slate-700"
+                          index === 1
+                            ? "border-[#02cfc3]"
+                            : "border-slate-100 dark:border-slate-700"
                         } bg-slate-50 dark:bg-slate-800/40`}
                       >
                         <img
@@ -636,7 +638,9 @@ export default function ELearningLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -725,8 +729,12 @@ export default function ELearningLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Richard Miles</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Training manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Richard Miles
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Training manager
+                    </p>
                   </div>
                 </div>
               </div>
@@ -755,12 +763,10 @@ export default function ELearningLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -810,5 +816,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

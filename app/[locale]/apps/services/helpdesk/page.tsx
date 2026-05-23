@@ -103,16 +103,18 @@ const apps = [
 
 export default function FieldServiceLandingPage() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Field service.{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="text-[#02a6a6]">Simplified</span>
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                Simplified
+              </span>
             </HandUnderline>
           </h1>
 
@@ -124,46 +126,46 @@ export default function FieldServiceLandingPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
+          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
             Free, forever, with unlimited users. See why
           </p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
-              <Sparkles className="h-12 w-12 rotate-[-20" />
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
+              <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
+            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <Wrench className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <span className="font-bold text-slate-900 dark:text-white">
                     Field Service
                   </span>
-                  <span className="hidden text-xs text-slate-400 sm:block">
+                  <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
                     My Tasks / All Tasks / Planning / Reporting
                   </span>
                 </div>
 
-                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                   New
                 </button>
               </div>
 
-              <div className="grid gap-4 bg-[#f7f8fb] p-6 md:grid-cols-3">
+              <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-3">
                 {[
                   {
                     title: "9:30 AM",
@@ -195,10 +197,10 @@ export default function FieldServiceLandingPage() {
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white">
                         {column.title}
                       </p>
-                      <span className="text-lg font-bold text-slate-400">
+                      <span className="text-lg font-bold text-slate-400 dark:text-slate-500">
                         +
                       </span>
                     </div>
@@ -207,19 +209,19 @@ export default function FieldServiceLandingPage() {
                       {column.cards.map((card, cardIndex) => (
                         <div
                           key={card}
-                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
                         >
-                          <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                          <p className="text-sm font-bold text-slate-900 dark:text-white">
                             {card}
                           </p>
 
-                          <p className="mt-1 text-xs text-slate-400">
+                          <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
                             Customer #{columnIndex + 1}
                             {cardIndex + 1}
                           </p>
 
                           <div className="mt-3 flex items-center justify-between">
-                            <span className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600">
+                            <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
                               Planned
                             </span>
 
@@ -240,66 +242,66 @@ export default function FieldServiceLandingPage() {
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
 
-            <div className="absolute -right-8 bottom-8 z-30 hidden w-60 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-2xl lg:block">
-              <div className="h-64 bg-[#dff4f7] p-4">
+            <div className="absolute -right-8 bottom-8 z-30 hidden w-60 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl lg:block">
+              <div className="h-64 bg-[#dff4f7] dark:bg-[#0a2a2d] p-4">
                 <div className="grid grid-cols-3 gap-2">
                   {Array.from({ length: 24 }).map((_, index) => (
                     <div
                       key={index}
                       className={`h-8 rounded ${
                         index % 5 === 0
-                          ? "bg-[#714b67]/30"
+                          ? "bg-[#714b67]/30 dark:bg-[#9b6a8f]/30"
                           : index % 3 === 0
-                            ? "bg-sky-200"
-                            : "bg-white dark:bg-slate-950/80"
+                            ? "bg-sky-200 dark:bg-sky-900/50"
+                            : "bg-white dark:bg-slate-800"
                       }`}
                     />
                   ))}
                 </div>
 
-                <MapPin className="absolute right-16 top-20 h-8 w-8 text-rose-500" />
+                <MapPin className="absolute right-16 top-20 h-8 w-8 text-rose-500 dark:text-rose-400" />
                 <MapPin className="absolute bottom-20 left-16 h-8 w-8 text-[#714b67] dark:text-[#9b6a8f]" />
-                <MapPin className="absolute bottom-28 right-10 h-8 w-8 text-[#02a6a6]" />
+                <MapPin className="absolute bottom-28 right-10 h-8 w-8 text-[#02a6a6] dark:text-[#02cfc3]" />
               </div>
             </div>
 
             <FloatingNote
               className="mx-auto mt-12 z-30"
-              color="bg-sky-400"
+              color="bg-sky-400 dark:bg-sky-800"
               text="Drag and drop your day on the map"
             />
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
+      <section className="relative bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex justify-center gap-8">
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-50 text-amber-500 shadow-sm">
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amber-500 dark:text-amber-400 shadow-sm">
               <CalendarDays className="h-7 w-7" />
             </div>
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-sky-50 text-sky-500 shadow-sm">
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-sky-50 dark:bg-sky-950/50 text-sky-500 dark:text-sky-400 shadow-sm">
               <ClipboardList className="h-7 w-7" />
             </div>
-            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#02cfc3] dark:bg-[#02cfc3]/30/10 text-[#02a6a6] shadow-sm">
+            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#02cfc3]/10 dark:bg-[#02cfc3]/20 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
               <Map className="h-7 w-7" />
             </div>
           </div>
 
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Great plan = great{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>execution</span>
+              <span className="dark:text-[#02cfc3]">execution</span>
             </HandUnderline>
           </h2>
 
@@ -309,8 +311,8 @@ export default function FieldServiceLandingPage() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-700 pb-3 text-center text-xs font-bold text-slate-400">
+            <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
                 {[
                   "Sunday",
                   "Monday",
@@ -330,10 +332,10 @@ export default function FieldServiceLandingPage() {
                     key={index}
                     className={`min-h-16 rounded-md p-2 text-left text-[10px] ${
                       [3, 8, 16, 18, 25, 29].includes(index)
-                        ? "bg-amber-100 text-amber-700"
+                        ? "bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400"
                         : [7, 14, 23].includes(index)
-                          ? "bg-emerald-100 text-emerald-700"
-                          : "bg-slate-50 dark:bg-slate-800/40 text-slate-400"
+                          ? "bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400"
+                          : "bg-slate-50 dark:bg-slate-800/50 text-slate-400 dark:text-slate-500"
                     }`}
                   >
                     <span>{index + 1}</span>
@@ -348,18 +350,22 @@ export default function FieldServiceLandingPage() {
               </div>
             </div>
 
-            <div className="absolute -right-8 bottom-8 z-30 hidden w-64 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-2xl lg:block">
-              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Task detail</p>
-              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Install solar panel</p>
+            <div className="absolute -right-8 bottom-8 z-30 hidden w-64 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left shadow-2xl lg:block">
+              <p className="font-bold text-slate-900 dark:text-white">
+                Task detail
+              </p>
+              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                Install solar panel
+              </p>
 
               <div className="mt-5 space-y-3">
                 {["Customer ready", "Route optimized", "Parts available"].map(
                   (item) => (
                     <div
                       key={item}
-                      className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300"
+                      className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300"
                     >
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                      <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
                       {item}
                     </div>
                   ),
@@ -370,14 +376,14 @@ export default function FieldServiceLandingPage() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24 text-center">
+      <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>All-in-one</span>
+              <span className="dark:text-[#02cfc3]">All-in-one</span>
             </HandUnderline>{" "}
             mobile app
           </h2>
@@ -409,14 +415,16 @@ export default function FieldServiceLandingPage() {
               Keep track of your parts and manage invoices
             </p>
 
-            <DashedArrow className="absolute left-20 top-20 hidden h-24 w-24 rotate-80 text-slate-300 lg:block" />
-            <DashedArrow className="absolute right-24 top-20 hidden h-24 w-24 rotate-220 text-slate-300 lg:block" />
+            <DashedArrow className="absolute left-20 top-20 hidden h-24 w-24 rotate-80 text-slate-300 dark:text-slate-600 lg:block" />
+            <DashedArrow className="absolute right-24 top-20 hidden h-24 w-24 rotate-220 text-slate-300 dark:text-slate-600 lg:block" />
 
-            <div className="relative mx-auto max-w-xs rounded-4xl bg-slate-900 p-4 shadow-2xl">
-              <div className="rounded-3xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left">
-                <div className="mx-auto mb-5 h-2 w-20 rounded-full bg-slate-200" />
+            <div className="relative mx-auto max-w-xs rounded-4xl bg-slate-900 dark:bg-slate-800 p-4 shadow-2xl">
+              <div className="rounded-3xl bg-white dark:bg-slate-900 p-5 text-left">
+                <div className="mx-auto mb-5 h-2 w-20 rounded-full bg-slate-200 dark:bg-slate-700" />
 
-                <p className="text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">Field Task</p>
+                <p className="text-xl font-bold text-slate-900 dark:text-white">
+                  Field Task
+                </p>
                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                   Customer intervention
                 </p>
@@ -430,7 +438,7 @@ export default function FieldServiceLandingPage() {
                   ].map((item) => (
                     <div
                       key={item}
-                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs font-bold text-slate-600 dark:text-slate-300"
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs font-bold text-slate-600 dark:text-slate-300"
                     >
                       {item}
                     </div>
@@ -438,29 +446,37 @@ export default function FieldServiceLandingPage() {
                 </div>
 
                 <div className="mt-6 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
-                  <p className="text-xs font-bold text-slate-400">Signature</p>
+                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                    Signature
+                  </p>
                   <div
-                    className="mt-3 text-2xl text-slate-900 dark:text-white dark:text-slate-100"
+                    className="mt-3 text-2xl text-slate-900 dark:text-white"
                     style={{ fontFamily: handwrittenFont }}
                   >
                     J. Customer
                   </div>
                 </div>
 
-                <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white">
+                <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                   Validate task
                 </button>
               </div>
             </div>
 
-            <div className="absolute right-52 top-16 hidden rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-xl ring-1 ring-slate-100 lg:block">
-              <p className="text-xs font-bold text-slate-400">Timer</p>
-              <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">00:43</p>
+            <div className="absolute right-52 top-16 hidden rounded-xl bg-white dark:bg-slate-800 p-4 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 lg:block">
+              <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                Timer
+              </p>
+              <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">
+                00:43
+              </p>
             </div>
 
-            <div className="absolute bottom-28 right-44 hidden rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-xl ring-1 ring-slate-100 lg:block">
-              <p className="text-xs font-bold text-slate-400">Invoice</p>
-              <p className="mt-1 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+            <div className="absolute bottom-28 right-44 hidden rounded-xl bg-white dark:bg-slate-800 p-4 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 lg:block">
+              <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                Invoice
+              </p>
+              <p className="mt-1 text-sm font-bold text-slate-900 dark:text-white">
                 2 products added
               </p>
             </div>
@@ -468,20 +484,20 @@ export default function FieldServiceLandingPage() {
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
-        <div className="absolute bottom-0 right-0 z-0 hidden h-72 w-1/2 bg-[#f3f4f7] lg:block" />
+      <section className="relative bg-white dark:bg-slate-950 py-24">
+        <div className="absolute bottom-0 right-0 z-0 hidden h-72 w-1/2 bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
         <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <div className="mb-6 flex gap-2 text-2xl">🌹🌹🌹</div>
 
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Carefree{" "}
-              <HandUnderline color="bg-sky-300">
-                <span>invoicing</span>
+              <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+                <span className="dark:text-sky-200">invoicing</span>
               </HandUnderline>
             </h2>
 
@@ -492,14 +508,16 @@ export default function FieldServiceLandingPage() {
 
             <FloatingNote
               className="mt-10 z-30"
-              color="bg-sky-400"
+              color="bg-sky-400 dark:bg-sky-800"
               text="Create invoices directly from the task"
             />
           </div>
 
-          <div className="relative z-20 mx-auto w-full max-w-md rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-8 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-            <p className="text-sm font-bold text-slate-400">Invoice</p>
-            <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
+          <div className="relative z-20 mx-auto w-full max-w-md rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-8 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <p className="text-sm font-bold text-slate-400 dark:text-slate-500">
+              Invoice
+            </p>
+            <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">
               INV/2026/00038
             </h3>
 
@@ -512,17 +530,23 @@ export default function FieldServiceLandingPage() {
               ].map(([label, price]) => (
                 <div
                   key={label}
-                  className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 pb-3 text-sm"
+                  className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 text-sm"
                 >
-                  <span className="font-semibold text-slate-600 dark:text-slate-300">{label}</span>
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{price}</span>
+                  <span className="font-semibold text-slate-600 dark:text-slate-300">
+                    {label}
+                  </span>
+                  <span className="font-bold text-slate-900 dark:text-white">
+                    {price}
+                  </span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 flex items-center justify-between rounded-lg bg-emerald-50 px-5 py-4">
-              <span className="font-bold text-emerald-700">Total</span>
-              <span className="text-2xl font-bold text-emerald-700">
+            <div className="mt-8 flex items-center justify-between rounded-lg bg-emerald-50 dark:bg-emerald-950/50 px-5 py-4">
+              <span className="font-bold text-emerald-700 dark:text-emerald-400">
+                Total
+              </span>
+              <span className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">
                 $755.00
               </span>
             </div>
@@ -532,37 +556,37 @@ export default function FieldServiceLandingPage() {
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <span className="relative inline-block">
               <span className="relative z-10">right.</span>
-              <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400" />
+              <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-3">
+            <div className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-3">
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                   <CalendarDays className="h-5 w-5" />
                 </div>
 
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                 Calendar view
               </h3>
 
@@ -571,16 +595,16 @@ export default function FieldServiceLandingPage() {
                 calendar.
               </p>
 
-              <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
+              <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
                 {Array.from({ length: 35 }).map((_, index) => (
                   <div
                     key={index}
                     className={`h-10 rounded ${
                       [2, 8, 12, 17, 21, 25].includes(index)
-                        ? "bg-[#02cfc3] dark:bg-[#02cfc3]/30/30"
+                        ? "bg-[#02cfc3] dark:bg-[#02cfc3]/40"
                         : [5, 15, 24].includes(index)
-                          ? "bg-amber-200"
-                          : "bg-white dark:bg-slate-950 dark:bg-slate-900"
+                          ? "bg-amber-200 dark:bg-amber-800/50"
+                          : "bg-white dark:bg-slate-800"
                     }`}
                   />
                 ))}
@@ -590,17 +614,17 @@ export default function FieldServiceLandingPage() {
             {features.slice(1).map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -613,26 +637,26 @@ export default function FieldServiceLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>need</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -647,14 +671,16 @@ export default function FieldServiceLandingPage() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -666,14 +692,14 @@ export default function FieldServiceLandingPage() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -681,7 +707,7 @@ export default function FieldServiceLandingPage() {
                 key={avatar}
                 src={avatar}
                 alt=""
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -692,7 +718,7 @@ export default function FieldServiceLandingPage() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -703,7 +729,7 @@ export default function FieldServiceLandingPage() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -711,9 +737,9 @@ export default function FieldServiceLandingPage() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -724,12 +750,14 @@ export default function FieldServiceLandingPage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                “
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   The purchasing time for accounting documents prior to analysis
                   is now reduced from 2 days to only 5 hours.
                 </p>
@@ -742,7 +770,9 @@ export default function FieldServiceLandingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Arthur Green</p>
+                    <p className="font-bold text-slate-900 dark:text-white">
+                      Arthur Green
+                    </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                       Field service director
                     </p>
@@ -753,33 +783,33 @@ export default function FieldServiceLandingPage() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
@@ -798,10 +828,10 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
     >
       <span
-        className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14 rounded-[35%] ${color}`}
+        className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
       />
 
       <img
@@ -810,7 +840,7 @@ function FloatingNote({
         className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
       />
 
-      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
+      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white" />
 
       <span className="relative z-10">{text}</span>
     </div>
@@ -842,5 +872,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

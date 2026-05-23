@@ -119,7 +119,7 @@ export default function ForumLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -170,7 +170,9 @@ export default function ForumLandingSections() {
                       <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         Robin Cole
                       </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">Top user</p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Top user
+                      </p>
                     </div>
                   </div>
 
@@ -196,7 +198,9 @@ export default function ForumLandingSections() {
                   </div>
 
                   <div className="mt-8">
-                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400">Tags</p>
+                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                      Tags
+                    </p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {["Help", "Tips", "Support"].map((tag) => (
                         <span
@@ -442,8 +446,12 @@ export default function ForumLandingSections() {
                     alt={name}
                     className="mx-auto h-20 w-20 rounded-full object-cover"
                   />
-                  <p className="mt-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">{name}</p>
-                  <p className="mt-1 text-sm text-[#714b67] dark:text-[#9b6a8f]">{score}</p>
+                  <p className="mt-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    {name}
+                  </p>
+                  <p className="mt-1 text-sm text-[#714b67] dark:text-[#9b6a8f]">
+                    {score}
+                  </p>
                 </div>
               ))}
             </div>
@@ -455,8 +463,12 @@ export default function ForumLandingSections() {
                     key={item}
                     className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 py-3 text-sm last:border-0"
                   >
-                    <span className="text-slate-600 dark:text-slate-300">{item}</span>
-                    <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">+25 Karma</span>
+                    <span className="text-slate-600 dark:text-slate-300">
+                      {item}
+                    </span>
+                    <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                      +25 Karma
+                    </span>
                   </div>
                 ),
               )}
@@ -496,7 +508,9 @@ export default function ForumLandingSections() {
           <div className="relative">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-4 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Your Answer</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Your Answer
+                </p>
                 <span className="text-sm text-slate-400">•••</span>
               </div>
 
@@ -627,7 +641,9 @@ export default function ForumLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -715,8 +731,12 @@ export default function ForumLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Mark Anderson</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">CEO & Founder</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Mark Anderson
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      CEO & Founder
+                    </p>
                   </div>
                 </div>
               </div>
@@ -745,17 +765,13 @@ export default function ForumLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-

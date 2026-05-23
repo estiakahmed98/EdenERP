@@ -93,15 +93,15 @@ const apps = [
 
 export default function ProjectLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-sky-300">
-              <span className="text-sky-500">Modern</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="text-sky-500 dark:text-sky-400">Modern</span>
             </HandUnderline>{" "}
             teamwork
           </h1>
@@ -114,44 +114,46 @@ export default function ProjectLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Meet an advisor
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
+          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
             Free, forever, with unlimited users
           </p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <FolderKanban className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Project</span>
-                  <span className="hidden text-xs text-slate-400 sm:block">
+                  <span className="font-bold text-slate-900 dark:text-white">
+                    Project
+                  </span>
+                  <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
                     Tasks / Gantt / Calendar / Reporting / Configuration
                   </span>
                 </div>
 
-                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                   New
                 </button>
               </div>
 
-              <div className="grid gap-4 bg-[#f7f8fb] p-6 md:grid-cols-4">
+              <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
                 {[
                   {
                     title: "To Do",
@@ -175,10 +177,10 @@ export default function ProjectLandingSections() {
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white">
                         {column.title}
                       </p>
-                      <span className="text-lg font-bold text-slate-400">
+                      <span className="text-lg font-bold text-slate-400 dark:text-slate-500">
                         +
                       </span>
                     </div>
@@ -187,18 +189,18 @@ export default function ProjectLandingSections() {
                       {column.cards.map((card, cardIndex) => (
                         <div
                           key={card}
-                          className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100"
+                          className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
                         >
-                          <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                          <p className="text-sm font-bold text-slate-900 dark:text-white">
                             {card}
                           </p>
 
-                          <p className="mt-1 text-xs text-slate-400">
+                          <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
                             {cardIndex + 2} tasks · {columnIndex + 1} days left
                           </p>
 
                           <div className="mt-3 flex items-center justify-between">
-                            <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white">
+                            <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white dark:bg-[#8a5a7e]">
                               Project
                             </span>
 
@@ -210,7 +212,7 @@ export default function ProjectLandingSections() {
                                   ]
                                 }
                                 alt="Member"
-                                className="h-6 w-6 rounded-full border-2 border-white object-cover"
+                                className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 object-cover"
                               />
                               <img
                                 src={
@@ -220,7 +222,7 @@ export default function ProjectLandingSections() {
                                   ]
                                 }
                                 alt="Member"
-                                className="h-6 w-6 rounded-full border-2 border-white object-cover"
+                                className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 object-cover"
                               />
                             </div>
                           </div>
@@ -231,32 +233,35 @@ export default function ProjectLandingSections() {
                 ))}
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 -z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-[#f3f4f7] py-24">
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <DashedArrow className="mx-auto mb-8 h-24 w-24 rotate-[90deg] text-slate-300" />
+          <DashedArrow className="mx-auto mb-8 h-24 w-24 rotate-90 text-slate-300 dark:text-slate-600" />
 
           <div className="mb-8 flex justify-center gap-6">
             {[
-              { icon: CalendarDays, color: "text-amber-500" },
-              { icon: ClipboardList, color: "text-sky-500" },
-              { icon: Workflow, color: "text-[#02a6a6]" },
+              {
+                icon: CalendarDays,
+                color: "text-amber-500 dark:text-amber-400",
+              },
+              { icon: ClipboardList, color: "text-sky-500 dark:text-sky-400" },
+              { icon: Workflow, color: "text-[#02a6a6] dark:text-[#02cfc3]" },
             ].map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={index}
-                  className="flex h-14 w-14 items-center justify-center rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-sm"
+                  className="flex h-14 w-14 items-center justify-center rounded-xl bg-white dark:bg-slate-800 shadow-sm"
                 >
                   <Icon className={`h-7 w-7 ${item.color}`} />
                 </div>
@@ -265,16 +270,16 @@ export default function ProjectLandingSections() {
           </div>
 
           <h2
-            className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Different{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>needs</span>
+              <span className="dark:text-[#02cfc3]">needs</span>
             </HandUnderline>
             , different{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>views</span>
+              <span className="dark:text-[#02cfc3]">views</span>
             </HandUnderline>
           </h2>
 
@@ -288,7 +293,7 @@ export default function ProjectLandingSections() {
                 <div key={text} className="flex gap-4">
                   <Sparkles className="mt-1 h-5 w-5 flex-none text-[#02cfc3]" />
                   <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
-                    <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <span className="font-bold text-slate-900 dark:text-white">
                       {index === 0
                         ? "Spreadsheet view."
                         : index === 1
@@ -301,10 +306,12 @@ export default function ProjectLandingSections() {
               ))}
             </div>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Project Schedule</p>
-                <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-bold text-sky-600">
+                <p className="font-bold text-slate-900 dark:text-white">
+                  Project Schedule
+                </p>
+                <span className="rounded-full bg-sky-50 dark:bg-sky-950/50 px-3 py-1 text-xs font-bold text-sky-600 dark:text-sky-400">
                   Timeline
                 </span>
               </div>
@@ -323,10 +330,10 @@ export default function ProjectLandingSections() {
                             key={index}
                             className={`h-10 rounded-md ${
                               index >= rowIndex && index <= rowIndex + 1
-                                ? "bg-[#714b67]/20"
+                                ? "bg-[#714b67]/20 dark:bg-[#9b6a8f]/20"
                                 : index === rowIndex + 2
-                                  ? "bg-amber-100"
-                                  : "bg-slate-50 dark:bg-slate-800/40"
+                                  ? "bg-amber-100 dark:bg-amber-950/50"
+                                  : "bg-slate-50 dark:bg-slate-800/50"
                             }`}
                           />
                         ))}
@@ -340,14 +347,14 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
-      <section className="bg-[#f3f4f7] py-24">
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 text-amber-500">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-500 dark:text-amber-400">
             <CheckCircle2 className="h-9 w-9" />
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Enjoy a comprehensive dashboard
@@ -362,17 +369,20 @@ export default function ProjectLandingSections() {
             </p>
 
             <p
-              className="absolute -right-10 top-28 hidden rotate-[15deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
+              className="absolute -right-10 top-28 hidden rotate-15 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
               Tags
             </p>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid gap-5 md:grid-cols-2">
                 {["In Progress", "Final Checks"].map((column, columnIndex) => (
-                  <div key={column} className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
-                    <p className="mb-4 text-left font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <div
+                    key={column}
+                    className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
+                    <p className="mb-4 text-left font-bold text-slate-900 dark:text-white">
                       {column}
                     </p>
 
@@ -383,23 +393,25 @@ export default function ProjectLandingSections() {
                     ].map((task, index) => (
                       <div
                         key={`${column}-${task}`}
-                        className="mb-3 rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm"
+                        className="mb-3 rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm"
                       >
                         <div className="flex items-center justify-between">
-                          <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{task}</p>
+                          <p className="font-bold text-slate-900 dark:text-white">
+                            {task}
+                          </p>
                           <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
                         </div>
 
-                        <p className="mt-2 text-xs text-slate-400">
+                        <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
                           Task #{columnIndex + 1}
                           {index + 1}
                         </p>
 
                         <div className="mt-3 flex items-center gap-2">
-                          <span className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-bold text-emerald-600">
+                          <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
                             Client
                           </span>
-                          <span className="rounded-full bg-[#714b67]/10 px-2 py-1 text-[10px] font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                          <span className="rounded-full bg-[#714b67]/10 dark:bg-[#9b6a8f]/20 px-2 py-1 text-[10px] font-bold text-[#714b67] dark:text-[#9b6a8f]">
                             Internal
                           </span>
                         </div>
@@ -420,20 +432,20 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
-            <Rocket className="mb-6 h-14 w-14 rotate-25 text-amber-500" />
-            <DashedArrow className="absolute left-16 -top-20 h-32 w-32 rotate-20 text-slate-300" />
+            <Rocket className="mb-6 h-14 w-14 rotate-25 text-amber-500 dark:text-amber-400" />
+            <DashedArrow className="absolute left-16 -top-20 h-32 w-32 rotate-20 text-slate-300 dark:text-slate-600" />
 
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Foster{" "}
               <span className="relative inline-block px-2">
                 <span className="relative z-10">collaboration</span>
-                <span className="absolute inset-x-0 bottom-2 h-7 rounded-lg bg-amber-300" />
+                <span className="absolute inset-x-0 bottom-2 h-7 rounded-lg bg-amber-300 dark:bg-amber-700" />
               </span>{" "}
               to
               <br />
@@ -449,10 +461,12 @@ export default function ProjectLandingSections() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex items-center gap-3">
               <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Project Discussion</p>
+              <p className="font-bold text-slate-900 dark:text-white">
+                Project Discussion
+              </p>
             </div>
 
             <div className="space-y-4">
@@ -463,7 +477,7 @@ export default function ProjectLandingSections() {
               ].map(([name, message], index) => (
                 <div
                   key={message}
-                  className="flex gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
+                  className="flex gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-left"
                 >
                   <img
                     src={avatars[index]}
@@ -471,8 +485,12 @@ export default function ProjectLandingSections() {
                     className="h-10 w-10 rounded-full object-cover"
                   />
                   <div>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{name}</p>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{message}</p>
+                    <p className="text-sm font-bold text-slate-900 dark:text-white">
+                      {name}
+                    </p>
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                      {message}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -481,14 +499,14 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-50 text-rose-500">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-50 dark:bg-rose-950/50 text-rose-500 dark:text-rose-400">
             <Timer className="h-9 w-9" />
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Time is money
@@ -499,8 +517,8 @@ export default function ProjectLandingSections() {
             going and how your team is spending billable hours.
           </p>
 
-          <div className="mx-auto mt-8 flex w-fit rounded-lg bg-slate-100 p-1">
-            <button className="rounded-md bg-[#714b67] px-5 py-2 text-xs font-bold text-white">
+          <div className="mx-auto mt-8 flex w-fit rounded-lg bg-slate-100 dark:bg-slate-800 p-1">
+            <button className="rounded-md bg-[#714b67] px-5 py-2 text-xs font-bold text-white dark:bg-[#8a5a7e]">
               Stage 1
             </button>
             <button className="px-5 py-2 text-xs font-bold text-slate-500 dark:text-slate-400">
@@ -513,12 +531,16 @@ export default function ProjectLandingSections() {
 
           <DashedArrow className="mx-auto my-8 h-24 w-24 rotate-90 text-[#714b67] dark:text-[#9b6a8f]/50" />
 
-          <div className="relative mx-auto max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">Check List</h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Project Task Details</p>
+          <div className="relative mx-auto max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              Check List
+            </h3>
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              Project Task Details
+            </p>
 
-            <div className="mt-6 overflow-hidden rounded-lg ring-1 ring-slate-100">
-              <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-xs font-bold uppercase text-slate-400">
+            <div className="mt-6 overflow-hidden rounded-lg ring-1 ring-slate-100 dark:ring-slate-800">
+              <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs font-bold uppercase text-slate-400 dark:text-slate-500">
                 <span>Date</span>
                 <span>Employee</span>
                 <span>Description</span>
@@ -533,14 +555,14 @@ export default function ProjectLandingSections() {
               ].map((row) => (
                 <div
                   key={row[0]}
-                  className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-xs last:border-0"
+                  className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-800 px-4 py-4 text-xs last:border-0"
                 >
                   {row.map((cell, index) => (
                     <span
                       key={cell}
                       className={
                         index === 1
-                          ? "font-bold text-slate-900 dark:text-white dark:text-slate-100"
+                          ? "font-bold text-slate-900 dark:text-white"
                           : "text-slate-500 dark:text-slate-400"
                       }
                     >
@@ -552,17 +574,17 @@ export default function ProjectLandingSections() {
             </div>
           </div>
 
-          <DashedArrow className="mx-auto mt-10 h-28 w-28 rotate-[90deg] text-slate-300" />
-          <X className="mx-auto -mt-8 h-10 w-10 text-[#02cfc3]" />
+          <DashedArrow className="mx-auto mt-10 h-28 w-28 rotate-90 text-slate-300 dark:text-slate-600" />
+          <X className="mx-auto -mt-8 h-10 w-10 text-[#02cfc3] dark:text-[#02cfc3]" />
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <h2
-                className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+                className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Always know where your
@@ -584,7 +606,7 @@ export default function ProjectLandingSections() {
           </div>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
-            <div className="absolute inset-0 translate-y-8 rounded-full bg-[#f3f4f7]" />
+            <div className="absolute inset-0 translate-y-8 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
             {[
               ["Tasks", "48", "+12%"],
@@ -593,16 +615,18 @@ export default function ProjectLandingSections() {
             ].map(([title, value, trend], index) => (
               <div
                 key={title}
-                className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+                className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
               >
-                <span className="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-rose-50 text-xs font-bold text-rose-500">
+                <span className="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-rose-50 dark:bg-rose-950/50 text-xs font-bold text-rose-500 dark:text-rose-400">
                   {index + 1}
                 </span>
-                <p className="text-sm font-bold text-slate-500 dark:text-slate-400">{title}</p>
-                <p className="mt-3 text-3xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="text-sm font-bold text-slate-500 dark:text-slate-400">
+                  {title}
+                </p>
+                <p className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">
                   {value}
                 </p>
-                <p className="mt-2 text-sm font-bold text-emerald-600">
+                <p className="mt-2 text-sm font-bold text-emerald-600 dark:text-emerald-400">
                   {trend}
                 </p>
               </div>
@@ -613,37 +637,37 @@ export default function ProjectLandingSections() {
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <span className="relative inline-block">
               <span className="relative z-10">right.</span>
-              <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400" />
+              <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
+            <div className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                   <CalendarDays className="h-5 w-5" />
                 </div>
 
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
-              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                 Project planning
               </h3>
 
@@ -652,16 +676,16 @@ export default function ProjectLandingSections() {
                 workspace.
               </p>
 
-              <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
+              <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
                 {Array.from({ length: 30 }).map((_, index) => (
                   <div
                     key={index}
                     className={`h-8 rounded ${
                       [2, 8, 12, 17, 21, 25].includes(index)
-                        ? "bg-[#714b67]/30"
+                        ? "bg-[#714b67]/30 dark:bg-[#9b6a8f]/30"
                         : [5, 15, 24].includes(index)
-                          ? "bg-amber-200"
-                          : "bg-white dark:bg-slate-950 dark:bg-slate-900"
+                          ? "bg-amber-200 dark:bg-amber-800/50"
+                          : "bg-white dark:bg-slate-800"
                     }`}
                   />
                 ))}
@@ -671,17 +695,17 @@ export default function ProjectLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -694,26 +718,26 @@ export default function ProjectLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>need</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -728,14 +752,16 @@ export default function ProjectLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -747,14 +773,14 @@ export default function ProjectLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -762,7 +788,7 @@ export default function ProjectLandingSections() {
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -773,7 +799,7 @@ export default function ProjectLandingSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -784,7 +810,7 @@ export default function ProjectLandingSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -792,9 +818,9 @@ export default function ProjectLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -805,12 +831,14 @@ export default function ProjectLandingSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                “
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   Adon is the backbone of Kick & Rush, fostering collaboration,
                   providing consistency, and adapting to unique requirements.
                 </p>
@@ -823,8 +851,12 @@ export default function ProjectLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Tyrone Miller</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Project director</p>
+                    <p className="font-bold text-slate-900 dark:text-white">
+                      Tyrone Miller
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Project director
+                    </p>
                   </div>
                 </div>
               </div>
@@ -832,33 +864,33 @@ export default function ProjectLandingSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
@@ -877,7 +909,7 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
     >
       <span
         className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
@@ -889,7 +921,7 @@ function FloatingNote({
         className="absolute left-3 h-12 w-12 rounded-full object-cover"
       />
 
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
 
       {text}
     </div>
@@ -921,5 +953,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

@@ -93,7 +93,7 @@ export default function DiscussLandingPage() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -117,7 +117,9 @@ export default function DiscussLandingPage() {
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Discuss</span>
+                  <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Discuss
+                  </span>
                   <span className="hidden text-xs text-slate-400 sm:block">
                     Inbox / Channels / Messages / Meetings
                   </span>
@@ -130,7 +132,9 @@ export default function DiscussLandingPage() {
 
               <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[220px_1fr_220px]">
                 <aside className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="mb-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">Channels</p>
+                  <p className="mb-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Channels
+                  </p>
 
                   {["General", "Marketing", "Sales", "Support", "Project"].map(
                     (item, index) => (
@@ -150,7 +154,9 @@ export default function DiscussLandingPage() {
 
                 <div className="mt-5 rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left shadow-sm ring-1 ring-slate-100 lg:mx-5 lg:mt-0">
                   <div className="mb-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Company updates</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Company updates
+                    </p>
                     <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                       Share information, project progress, files, and decisions
                       in one place.
@@ -178,14 +184,18 @@ export default function DiscussLandingPage() {
                         <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                           {name}
                         </p>
-                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">{message}</p>
+                        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                          {message}
+                        </p>
                       </div>
                     </div>
                   ))}
                 </div>
 
                 <aside className="mt-5 rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100 lg:mt-0">
-                  <p className="mb-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">Online</p>
+                  <p className="mb-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Online
+                  </p>
 
                   {avatars.slice(0, 5).map((avatar, index) => (
                     <div key={avatar} className="mb-3 flex items-center gap-3">
@@ -285,7 +295,9 @@ export default function DiscussLandingPage() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center gap-3">
               <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">#general</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                #general
+              </p>
             </div>
 
             <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5">
@@ -323,7 +335,9 @@ export default function DiscussLandingPage() {
           <div className="relative mx-auto mt-14 max-w-3xl">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Sales Order</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Sales Order
+                </p>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                   Discuss
                 </span>
@@ -332,7 +346,10 @@ export default function DiscussLandingPage() {
               <div className="grid gap-5 md:grid-cols-[1fr_260px]">
                 <div className="space-y-3">
                   {["Customer", "Quotation", "Total", "Status"].map((item) => (
-                    <div key={item} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <div
+                      key={item}
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    >
                       <p className="text-xs font-bold text-slate-400">{item}</p>
                       <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                         Connected business record
@@ -396,7 +413,9 @@ export default function DiscussLandingPage() {
                   <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <CheckCircle2 className="h-5 w-5" />
                   </div>
-                  <p className="mt-3 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{app}</p>
+                  <p className="mt-3 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    {app}
+                  </p>
                   <p className="mt-1 text-xs text-slate-400">Connected</p>
                 </div>
               ))}
@@ -473,11 +492,15 @@ export default function DiscussLandingPage() {
           <div className="mx-auto mt-14 max-w-3xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="mb-5 flex items-center gap-3">
               <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">#coffee-lovers</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                #coffee-lovers
+              </p>
             </div>
 
             <div className="rounded-xl bg-[#e9fbf8] p-5">
-              <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">Team update</p>
+              <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                Team update
+              </p>
               <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 Here is the latest campaign concept. Please review and share
                 your comments before tomorrow.
@@ -492,7 +515,9 @@ export default function DiscussLandingPage() {
       <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-            <p className="mb-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">Inbox</p>
+            <p className="mb-5 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              Inbox
+            </p>
 
             {[
               "You were mentioned in Sales Order",
@@ -565,8 +590,12 @@ export default function DiscussLandingPage() {
                   className="h-10 w-10 rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">{name}</p>
-                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{message}</p>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    {name}
+                  </p>
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                    {message}
+                  </p>
                 </div>
               </div>
             ))}
@@ -664,7 +693,9 @@ export default function DiscussLandingPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -752,8 +783,12 @@ export default function DiscussLandingPage() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Nicolas Martin</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Operations manager</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Nicolas Martin
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Operations manager
+                    </p>
                   </div>
                 </div>
               </div>
@@ -778,12 +813,10 @@ export default function DiscussLandingPage() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -816,5 +849,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-

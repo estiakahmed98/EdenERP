@@ -171,7 +171,7 @@ export default function WebsiteBuilderSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -341,7 +341,9 @@ export default function WebsiteBuilderSections() {
           <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
             <div className="grid min-h-[420px] lg:grid-cols-[220px_1fr]">
               <aside className="border-r border-slate-100 bg-white dark:bg-slate-950 p-5 text-left">
-                <p className="mb-6 text-sm font-bold text-slate-900 dark:text-white">Website</p>
+                <p className="mb-6 text-sm font-bold text-slate-900 dark:text-white">
+                  Website
+                </p>
 
                 {["Pages", "Blocks", "Theme", "Style", "Media", "Settings"].map(
                   (item, index) => (
@@ -775,7 +777,9 @@ export default function WebsiteBuilderSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500">
                       {app.description}
                     </p>
@@ -896,12 +900,10 @@ export default function WebsiteBuilderSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -924,4 +926,3 @@ function XIcon() {
 function ReceiptIcon({ className }: { className?: string }) {
   return <FileText className={className} />;
 }
-

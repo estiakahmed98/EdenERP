@@ -171,7 +171,7 @@ export default function HumanResourcesLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -921,12 +921,10 @@ export default function HumanResourcesLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-gray-400 dark:text-gray-500">
-              
-            </p>
+            <p className="mt-3 text-xs text-gray-400 dark:text-gray-500"></p>
           </div>
         </div>
       </section>

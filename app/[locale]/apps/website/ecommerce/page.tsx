@@ -119,7 +119,9 @@ export default function EcommerceArtisticSections() {
           >
             Open source{" "}
             <HandUnderline color="bg-sky-400">
-              <span className="text-slate-900 dark:text-white dark:text-slate-100">eCommerce</span>
+              <span className="text-slate-900 dark:text-white dark:text-slate-100">
+                eCommerce
+              </span>
             </HandUnderline>
           </h1>
 
@@ -134,7 +136,7 @@ export default function EcommerceArtisticSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -157,7 +159,9 @@ export default function EcommerceArtisticSections() {
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
               <div className="grid bg-white dark:bg-slate-950 dark:bg-slate-900 lg:grid-cols-[220px_1fr]">
                 <aside className="border-r border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 text-left">
-                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">Categories</p>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    Categories
+                  </p>
 
                   <div className="mt-5 space-y-3">
                     {[
@@ -182,7 +186,9 @@ export default function EcommerceArtisticSections() {
                   </div>
 
                   <div className="mt-8">
-                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400">Filter</p>
+                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                      Filter
+                    </p>
                     <div className="mt-3 space-y-2">
                       {["In stock", "New arrivals", "On sale"].map((item) => (
                         <div
@@ -584,7 +590,9 @@ export default function EcommerceArtisticSections() {
             </div>
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">Loyalty feed</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                Loyalty feed
+              </h3>
 
               <div className="mt-5 space-y-5">
                 {[
@@ -598,8 +606,12 @@ export default function EcommerceArtisticSections() {
                     </div>
 
                     <div>
-                      <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{title}</p>
-                      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{text}</p>
+                      <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        {title}
+                      </p>
+                      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+                        {text}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -637,7 +649,9 @@ export default function EcommerceArtisticSections() {
 
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
               <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Revenue analytics</p>
+                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  Revenue analytics
+                </p>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                   +28%
                 </span>
@@ -706,7 +720,9 @@ export default function EcommerceArtisticSections() {
                 />
 
                 <div className="p-5 text-left">
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{item.title}</p>
+                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    {item.title}
+                  </p>
                   <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
                     Built with ecommerce, website, inventory, and marketing.
                   </p>
@@ -799,7 +815,9 @@ export default function EcommerceArtisticSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -887,8 +905,12 @@ export default function EcommerceArtisticSections() {
                     className="h-12 w-12 rounded-full object-cover"
                   />
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Noah Carter</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">eCommerce Founder</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Noah Carter
+                    </p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      eCommerce Founder
+                    </p>
                   </div>
                 </div>
               </div>
@@ -917,17 +939,13 @@ export default function EcommerceArtisticSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
     </main>
   );
 }
-
-

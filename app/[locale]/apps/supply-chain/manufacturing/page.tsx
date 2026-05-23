@@ -124,7 +124,7 @@ export default function MRPLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
             <Link
@@ -167,7 +167,9 @@ export default function MRPLandingSections() {
 
               <div className="grid bg-[#f7f8fb] p-6 lg:grid-cols-[210px_1fr]">
                 <aside className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100">
-                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">MRP Menu</p>
+                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    MRP Menu
+                  </p>
 
                   <div className="mt-5 space-y-2">
                     {[
@@ -305,7 +307,9 @@ export default function MRPLandingSections() {
 
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Simulation result</p>
+              <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                Simulation result
+              </p>
               <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-600">
                 Feasible
               </span>
@@ -330,10 +334,18 @@ export default function MRPLandingSections() {
                   key={row[0]}
                   className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-left text-xs last:border-0"
                 >
-                  <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">{row[0]}</span>
-                  <span className="text-slate-600 dark:text-slate-300">{row[1]}</span>
-                  <span className="text-slate-500 dark:text-slate-400">{row[2]}</span>
-                  <span className="text-slate-500 dark:text-slate-400">{row[3]}</span>
+                  <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                    {row[0]}
+                  </span>
+                  <span className="text-slate-600 dark:text-slate-300">
+                    {row[1]}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {row[2]}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {row[3]}
+                  </span>
                   <span
                     className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                       row[4] === "Ready"
@@ -587,7 +599,10 @@ export default function MRPLandingSections() {
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="grid gap-4 md:grid-cols-3">
                 {["Checks", "Control Points", "Alerts"].map((title, col) => (
-                  <div key={title} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <div
+                    key={title}
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                  >
                     <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
                       {title}
                     </p>
@@ -752,7 +767,9 @@ export default function MRPLandingSections() {
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">{app.title}</h3>
+                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      {app.title}
+                    </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
@@ -840,7 +857,9 @@ export default function MRPLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">Andrew Morgan</p>
+                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      Andrew Morgan
+                    </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                       Manufacturing director
                     </p>
@@ -872,12 +891,10 @@ export default function MRPLandingSections() {
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
             >
-              Start now - it&apos;s free
+              Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400">
-              
-            </p>
+            <p className="mt-3 text-xs text-slate-400"></p>
           </div>
         </div>
       </section>
@@ -938,5 +955,3 @@ function DashedArrow({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-
