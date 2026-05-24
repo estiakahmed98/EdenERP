@@ -123,16 +123,19 @@ const requests = [
 
 export default function TimeOffLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Time off{" "}
-            <HandUnderline color="bg-rose-300">
-              <span className="text-rose-500">without the hassle</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="text-rose-500 dark:text-rose-400">
+                without the hassle
+              </span>
             </HandUnderline>
           </h1>
 
@@ -144,36 +147,36 @@ export default function TimeOffLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:text-[#714b67]"
             >
               Meet an advisor
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
+          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
             Free, forever, with unlimited users
           </p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.5)]">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
                   <CalendarDays className="h-5 w-5 text-[#714b67]" />
                   <span className="font-bold text-slate-900 dark:text-slate-100">
                     Time Off
                   </span>
-                  <span className="hidden text-xs text-slate-400 sm:block">
+                  <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
                     My Time Off / Management / Reporting / Configuration
                   </span>
                 </div>
@@ -183,26 +186,28 @@ export default function TimeOffLandingSections() {
                 </button>
               </div>
 
-              <div className="bg-[#f7f8fb] p-6">
+              <div className="bg-[#f7f8fb] dark:bg-slate-800/50 p-6">
                 <div className="mb-5 grid gap-3 sm:grid-cols-4">
-                  {[
-                    ["Requests", "42", "bg-[#714b67] text-white"],
-                    ["Approved", "31", "bg-emerald-50 text-emerald-600"],
-                    ["Pending", "08", "bg-amber-50 text-amber-600"],
-                    ["Refused", "03", "bg-rose-50 text-rose-600"],
-                  ].map(([label, value, color]) => (
-                    <div
-                      key={label}
-                      className={`rounded-lg p-4 text-left ${color}`}
-                    >
-                      <p className="text-xs font-bold opacity-80">{label}</p>
-                      <p className="mt-2 text-2xl font-bold">{value}</p>
-                    </div>
-                  ))}
+                  <div className="rounded-lg bg-[#714b67] p-4 text-left text-white">
+                    <p className="text-xs font-bold opacity-80">Requests</p>
+                    <p className="mt-2 text-2xl font-bold">42</p>
+                  </div>
+                  <div className="rounded-lg bg-emerald-50 dark:bg-emerald-950/40 p-4 text-left text-emerald-600 dark:text-emerald-400">
+                    <p className="text-xs font-bold opacity-80">Approved</p>
+                    <p className="mt-2 text-2xl font-bold">31</p>
+                  </div>
+                  <div className="rounded-lg bg-amber-50 dark:bg-amber-950/40 p-4 text-left text-amber-600 dark:text-amber-400">
+                    <p className="text-xs font-bold opacity-80">Pending</p>
+                    <p className="mt-2 text-2xl font-bold">08</p>
+                  </div>
+                  <div className="rounded-lg bg-rose-50 dark:bg-rose-950/40 p-4 text-left text-rose-600 dark:text-rose-400">
+                    <p className="text-xs font-bold opacity-80">Refused</p>
+                    <p className="mt-2 text-2xl font-bold">03</p>
+                  </div>
                 </div>
 
-                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100">
-                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400">
+                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
+                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
                     <span>Employee</span>
                     <span>Type</span>
                     <span>Start</span>
@@ -278,19 +283,25 @@ export default function TimeOffLandingSections() {
                       <span className="text-slate-600 dark:text-slate-300">
                         {row[1]}
                       </span>
-                      <span className="text-slate-500">{row[2]}</span>
-                      <span className="text-slate-500">{row[3]}</span>
+                      <span className="text-slate-500 dark:text-slate-400">
+                        {row[2]}
+                      </span>
+                      <span className="text-slate-500 dark:text-slate-400">
+                        {row[3]}
+                      </span>
                       <span className="font-bold text-slate-900 dark:text-slate-100">
                         {row[4]}
                       </span>
-                      <span className="text-slate-500">{row[5]}</span>
+                      <span className="text-slate-500 dark:text-slate-400">
+                        {row[5]}
+                      </span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
                           row[6] === "Approved"
-                            ? "bg-emerald-50 text-emerald-600"
+                            ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400"
                             : row[6] === "To Approve" || row[6] === "Pending"
-                              ? "bg-amber-50 text-amber-600"
-                              : "bg-rose-50 text-rose-600"
+                              ? "bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400"
+                              : "bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400"
                         }`}
                       >
                         {row[6]}
@@ -300,17 +311,18 @@ export default function TimeOffLandingSections() {
                 </div>
               </div>
 
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 text-[#714b67] shadow-xl">
+              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] shadow-xl">
                 <Play className="ml-1 h-6 w-6 fill-current" />
               </button>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-slate-800/30 [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white dark:bg-slate-900 py-24">
+      {/* Features Section 2 */}
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
@@ -319,8 +331,8 @@ export default function TimeOffLandingSections() {
             Always be ready
             <br />
             for every{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>request</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="text-sky-600 dark:text-sky-400">request</span>
             </HandUnderline>
           </h2>
 
@@ -330,7 +342,7 @@ export default function TimeOffLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-4xl items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.10)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
               <p className="mb-5 text-left font-bold text-slate-900 dark:text-slate-100">
                 Time Off Types
               </p>
@@ -345,7 +357,7 @@ export default function TimeOffLandingSections() {
               ].map((item, index) => (
                 <div
                   key={item}
-                  className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-sm"
+                  className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/60 px-4 py-3 text-left text-sm"
                 >
                   <span className="font-semibold text-slate-700 dark:text-slate-200">
                     {item}
@@ -355,15 +367,15 @@ export default function TimeOffLandingSections() {
                       index % 3 === 0
                         ? "bg-[#714b67]"
                         : index % 2 === 0
-                          ? "bg-sky-400"
-                          : "bg-amber-400"
+                          ? "bg-sky-400 dark:bg-sky-500"
+                          : "bg-amber-400 dark:bg-amber-500"
                     }`}
                   />
                 </div>
               ))}
             </div>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
               <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                 Training Time Off
               </h3>
@@ -377,9 +389,11 @@ export default function TimeOffLandingSections() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/60 p-4"
                   >
-                    <p className="text-xs font-bold text-slate-400">{label}</p>
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                      {label}
+                    </p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
@@ -392,7 +406,7 @@ export default function TimeOffLandingSections() {
                   (item) => (
                     <span
                       key={item}
-                      className="rounded-full bg-[#714b67]/10 px-3 py-1 text-xs font-bold text-[#714b67]"
+                      className="rounded-full bg-[#714b67]/10 dark:bg-[#714b67]/20 px-3 py-1 text-xs font-bold text-[#714b67]"
                     >
                       {item}
                     </span>
@@ -401,22 +415,23 @@ export default function TimeOffLandingSections() {
               </div>
             </div>
 
-            <ArrowRight className="absolute left-[39%] top-1/2 hidden h-8 w-8 -translate-y-1/2 text-[#714b67]/60 lg:block" />
+            <ArrowRight className="absolute left-[39%] top-1/2 hidden h-8 w-8 -translate-y-1/2 text-[#714b67]/60 dark:text-[#714b67]/40 lg:block" />
           </div>
         </div>
       </section>
 
-      <section className="relative bg-[#f3f4f7] py-24">
+      {/* Availability Section */}
+      <section className="relative bg-[#f3f4f7] dark:bg-slate-800/30 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <p
-              className="mb-5 text-center text-lg font-bold text-rose-400"
+              className="mb-5 text-center text-lg font-bold text-rose-400 dark:text-rose-500"
               style={{ fontFamily: handwrittenFont }}
             >
               See the breakdown of your available days
             </p>
 
-            <div className="grid grid-cols-6 gap-2 border-b border-slate-100 dark:border-slate-700 pb-3 text-center text-xs font-bold text-slate-400">
+            <div className="grid grid-cols-6 gap-2 border-b border-slate-100 dark:border-slate-700 pb-3 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
               {["Jan", "Feb", "Mar", "Apr", "May", "Jun"].map((month) => (
                 <span key={month}>{month}</span>
               ))}
@@ -430,8 +445,8 @@ export default function TimeOffLandingSections() {
                     [3, 9, 16, 22, 30].includes(index)
                       ? "bg-[#714b67] text-white"
                       : [5, 14, 25].includes(index)
-                        ? "bg-amber-100 text-amber-700"
-                        : "bg-slate-50 dark:bg-slate-800/40 text-slate-400"
+                        ? "bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400"
+                        : "bg-slate-50 dark:bg-slate-800/40 text-slate-400 dark:text-slate-500"
                   }`}
                 >
                   <span>{index + 1}</span>
@@ -444,7 +459,7 @@ export default function TimeOffLandingSections() {
           </div>
 
           <div>
-            <Clock3 className="mb-6 h-12 w-12 text-rose-400" />
+            <Clock3 className="mb-6 h-12 w-12 text-rose-400 dark:text-rose-500" />
 
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
@@ -453,8 +468,10 @@ export default function TimeOffLandingSections() {
               Do you have
               <br />
               the{" "}
-              <HandUnderline color="bg-amber-300">
-                <span>time?</span>
+              <HandUnderline color="bg-amber-300 dark:bg-amber-800">
+                <span className="text-amber-600 dark:text-amber-400">
+                  time?
+                </span>
               </HandUnderline>
             </h2>
 
@@ -466,8 +483,9 @@ export default function TimeOffLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-900 py-24">
-        <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
+      {/* Freedom Section */}
+      <section className="relative bg-white dark:bg-slate-950 py-24">
+        <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] dark:bg-slate-800/20 lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -475,8 +493,8 @@ export default function TimeOffLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              <HandUnderline color="bg-sky-300">
-                <span className="text-sky-600">Freedom</span>
+              <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+                <span className="text-sky-600 dark:text-sky-400">Freedom</span>
               </HandUnderline>{" "}
               is only a<br />
               few clicks away
@@ -490,13 +508,13 @@ export default function TimeOffLandingSections() {
 
           <div>
             <p
-              className="mb-4 text-right text-lg font-bold text-sky-500"
+              className="mb-4 text-right text-lg font-bold text-sky-500 dark:text-sky-400"
               style={{ fontFamily: handwrittenFont }}
             >
               Track your time on request move
             </p>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
               <div className="mb-5 flex items-center gap-4">
                 <img
                   src={avatars[3]}
@@ -507,7 +525,7 @@ export default function TimeOffLandingSections() {
                   <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
                     Anita Oliver
                   </p>
-                  <p className="text-sm text-slate-500">
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
                     Paid Time Off Request
                   </p>
                 </div>
@@ -524,9 +542,11 @@ export default function TimeOffLandingSections() {
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                    className="rounded-lg bg-slate-50 dark:bg-slate-800/60 p-4"
                   >
-                    <p className="text-xs font-bold text-slate-400">{label}</p>
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                      {label}
+                    </p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
@@ -547,17 +567,18 @@ export default function TimeOffLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-900 py-24">
+      {/* Review Section */}
+      <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <CheckCircle2 className="mx-auto h-12 w-12 text-[#02a6a6]" />
+          <CheckCircle2 className="mx-auto h-12 w-12 text-[#02a6a6] dark:text-[#02a6a6]" />
 
           <h2
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Review,{" "}
-            <HandUnderline color="bg-[#02cfc3]">
-              <span>approve</span>
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+              <span className="text-[#02a6a6]">approve</span>
             </HandUnderline>
             , done
           </h2>
@@ -568,13 +589,13 @@ export default function TimeOffLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
               <div className="grid gap-4 md:grid-cols-3">
                 {["Absent", "Present", "To Approve"].map(
                   (column, columnIndex) => (
                     <div
                       key={column}
-                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
+                      className="rounded-lg bg-slate-50 dark:bg-slate-800/60 p-4"
                     >
                       <p className="mb-5 text-left font-bold text-slate-900 dark:text-slate-100">
                         {column}
@@ -596,15 +617,15 @@ export default function TimeOffLandingSections() {
                               <p className="truncate text-sm font-bold text-slate-900 dark:text-slate-100">
                                 {request.name}
                               </p>
-                              <p className="mt-1 text-xs text-slate-500">
+                              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                                 {request.type}
                               </p>
 
                               <span
                                 className={`mt-2 inline-block rounded-full px-2 py-1 text-[10px] font-bold ${
                                   (index + columnIndex) % 2 === 0
-                                    ? "bg-emerald-50 text-emerald-600"
-                                    : "bg-amber-50 text-amber-600"
+                                    ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400"
+                                    : "bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400"
                                 }`}
                               >
                                 {request.days}
@@ -621,16 +642,17 @@ export default function TimeOffLandingSections() {
 
             <FloatingNote
               className="mx-auto mt-12 z-30"
-              color="bg-amber-400"
+              color="bg-amber-400 dark:bg-amber-600"
               text="Approved in one click"
             />
           </div>
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-slate-800/30 py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -640,19 +662,19 @@ export default function TimeOffLandingSections() {
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/50" />
             </span>
             <br />
             done{" "}
-            <HandUnderline color="bg-[#02cfc3]">
-              <span>right.</span>
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+              <span className="text-[#02a6a6]">right.</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
             <div className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl lg:row-span-2">
               <div className="flex items-start justify-between gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#714b67]/20 text-[#714b67]">
                   <CalendarDays className="h-5 w-5" />
                 </div>
 
@@ -668,7 +690,7 @@ export default function TimeOffLandingSections() {
                 calculations for your team.
               </p>
 
-              <div className="mt-8 space-y-4 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
+              <div className="mt-8 space-y-4 rounded-lg bg-slate-50 dark:bg-slate-800/60 p-5">
                 {[
                   ["Monthly accrual", "1.5 days"],
                   ["Yearly allocation", "18 days"],
@@ -678,7 +700,9 @@ export default function TimeOffLandingSections() {
                     key={label}
                     className="rounded-lg bg-white dark:bg-slate-900 p-4"
                   >
-                    <p className="text-xs font-bold text-slate-400">{label}</p>
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                      {label}
+                    </p>
                     <p className="mt-2 text-sm font-bold text-slate-900 dark:text-slate-100">
                       {value}
                     </p>
@@ -693,7 +717,7 @@ export default function TimeOffLandingSections() {
                 className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#714b67]/20 text-[#714b67]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
@@ -713,26 +737,27 @@ export default function TimeOffLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] hover:text-[#5f3d56] dark:hover:text-[#8b5e7e]"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-900 py-20 sm:py-28">
+      {/* Apps Section */}
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>need</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="text-sky-600 dark:text-sky-400">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="text-sky-600 dark:text-sky-400">app.</span>
             </HandUnderline>
           </h2>
 
@@ -747,7 +772,7 @@ export default function TimeOffLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800/60 hover:shadow-lg"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-900 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
@@ -757,7 +782,7 @@ export default function TimeOffLandingSections() {
                     <h3 className="font-bold text-slate-900 dark:text-slate-100">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -768,22 +793,23 @@ export default function TimeOffLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] hover:text-[#5f3d56] dark:hover:text-[#8b5e7e]"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-900 py-20">
+      {/* CTA Section */}
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-90">
+          <div className="relative mx-auto min-h-[400px] sm:min-h-[500px]">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-12 w-12 sm:h-14 sm:w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -794,7 +820,7 @@ export default function TimeOffLandingSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -805,7 +831,7 @@ export default function TimeOffLandingSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-10 w-10 sm:h-12 sm:w-12 rounded-md bg-[#714b67] opacity-70 dark:opacity-50"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -813,25 +839,27 @@ export default function TimeOffLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/95 dark:bg-slate-900/95 p-6 sm:p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
+                className="text-2xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500">
+              <p className="mt-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-6 sm:p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                "
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   After realizing that our configured spreadsheets were not
                   looking for an HR application, we found exactly what we needed
                   with Adon Time Off.
@@ -848,7 +876,9 @@ export default function TimeOffLandingSections() {
                     <p className="font-bold text-slate-900 dark:text-slate-100">
                       Laura Johnson
                     </p>
-                    <p className="text-sm text-slate-500">HR director</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      HR director
+                    </p>
                   </div>
                 </div>
               </div>
@@ -856,18 +886,18 @@ export default function TimeOffLandingSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
+              className="text-3xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02cfc3]">
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6]">growth</span>
               </HandUnderline>{" "}
               potential
@@ -880,7 +910,7 @@ export default function TimeOffLandingSections() {
               Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400"></p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
@@ -899,10 +929,10 @@ function FloatingNote({
 }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
     >
       <span
-        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
+        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color} dark:opacity-70`}
       />
 
       <img

@@ -93,16 +93,16 @@ const avatars = [
 
 export default function ELearningLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Keep your learners{" "}
-            <HandUnderline color="bg-rose-300">
-              <span className="text-rose-500">engaged</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="text-rose-500 dark:text-rose-400">engaged</span>
             </HandUnderline>
           </h1>
 
@@ -115,30 +115,26 @@ export default function ELearningLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
-            Free, forever, with unlimited users
-          </p>
-
           <div className="relative mx-auto mt-16 max-w-4xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
             <p
-              className="absolute -right-10 top-8 hidden rotate-12 text-lg font-bold text-rose-400 lg:block"
+              className="absolute -right-10 top-8 hidden rotate-12 text-lg font-bold text-rose-400 dark:text-rose-500 lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
               Available
@@ -146,8 +142,8 @@ export default function ELearningLandingSections() {
               for any device
             </p>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4 text-left">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <span
                   className="text-xl font-bold text-[#714b67] dark:text-[#9b6a8f]"
                   style={{ fontFamily: handwrittenFont }}
@@ -156,10 +152,10 @@ export default function ELearningLandingSections() {
                 </span>
               </div>
 
-              <div className="grid bg-white dark:bg-slate-950 dark:bg-slate-900 lg:grid-cols-[230px_1fr]">
-                <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
-                  <div className="rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-sm">
-                    <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+              <div className="grid bg-white dark:bg-slate-900 lg:grid-cols-[230px_1fr]">
+                <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5 text-left">
+                  <div className="rounded-lg bg-white dark:bg-slate-800 p-4 shadow-sm">
+                    <p className="text-sm font-bold text-slate-900 dark:text-white">
                       Course progress
                     </p>
 
@@ -168,8 +164,8 @@ export default function ELearningLandingSections() {
                         <span>Completed</span>
                         <span>47%</span>
                       </div>
-                      <div className="h-2 rounded-full bg-slate-100">
-                        <div className="h-2 w-[47%] rounded-full bg-[#714b67]" />
+                      <div className="h-2 rounded-full bg-slate-100 dark:bg-slate-700">
+                        <div className="h-2 w-[47%] rounded-full bg-[#714b67] dark:bg-[#8a5a7e]" />
                       </div>
                     </div>
                   </div>
@@ -186,7 +182,7 @@ export default function ELearningLandingSections() {
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 1
-                            ? "bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
+                            ? "bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
                             : "text-slate-500 dark:text-slate-400"
                         }`}
                       >
@@ -196,9 +192,9 @@ export default function ELearningLandingSections() {
                   </div>
                 </aside>
 
-                <div className="bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left">
-                  <div className="relative overflow-hidden rounded-lg bg-[#7a4d6e] p-8 text-white">
-                    <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-white dark:bg-slate-950/10" />
+                <div className="bg-white dark:bg-slate-900 p-6 text-left">
+                  <div className="relative overflow-hidden rounded-lg bg-[#7a4d6e] dark:bg-[#5a3854] p-8 text-white">
+                    <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-white/10 dark:bg-white/5" />
 
                     <p className="text-sm font-bold text-white/70">
                       Gardening Course
@@ -213,7 +209,7 @@ export default function ELearningLandingSections() {
                       through structured lessons and interactive activities.
                     </p>
 
-                    <button className="mt-6 flex items-center gap-2 rounded-md bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-3 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                    <button className="mt-6 flex items-center gap-2 rounded-md bg-white dark:bg-slate-800 px-5 py-3 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
                       <Play className="h-4 w-4 fill-current" />
                       Continue
                     </button>
@@ -230,7 +226,7 @@ export default function ELearningLandingSections() {
                         key={title}
                         className="grid grid-cols-[44px_1fr_110px] items-center rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3"
                       >
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800/40 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800/50 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
                           {number}
                         </span>
 
@@ -241,10 +237,10 @@ export default function ELearningLandingSections() {
                         <span
                           className={`rounded-full px-3 py-1 text-center text-[10px] font-bold ${
                             index === 0
-                              ? "bg-emerald-50 text-emerald-600"
+                              ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
                               : index === 1
-                                ? "bg-amber-50 text-amber-600"
-                                : "bg-slate-100 text-slate-400"
+                                ? "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
+                                : "bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500"
                           }`}
                         >
                           {status}
@@ -260,22 +256,22 @@ export default function ELearningLandingSections() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-[#f3f4f7] py-20">
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber-50 text-amber-500">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-500 dark:text-amber-400">
             <CheckCircle2 className="h-8 w-8" />
           </div>
 
           <h2
-            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Easy to use, fun to{" "}
-            <HandUnderline color="bg-rose-300">
-              <span>learn</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="dark:text-rose-200">learn</span>
             </HandUnderline>
           </h2>
 
@@ -285,10 +281,10 @@ export default function ELearningLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid lg:grid-cols-[1fr_250px]">
-                <div className="bg-white dark:bg-slate-950 dark:bg-slate-900 p-7">
-                  <div className="mb-5 rounded-lg bg-[#714b67] px-5 py-4 text-left text-white">
+                <div className="bg-white dark:bg-slate-900 p-7">
+                  <div className="mb-5 rounded-lg bg-[#714b67] dark:bg-[#8a5a7e] px-5 py-4 text-left text-white">
                     <p className="text-sm font-bold">Taking care of Trees</p>
                   </div>
 
@@ -309,9 +305,9 @@ export default function ELearningLandingSections() {
                         key={item.title}
                         className={`overflow-hidden rounded-xl border ${
                           index === 1
-                            ? "border-[#02cfc3]"
+                            ? "border-[#02cfc3] dark:border-[#02cfc3]/50"
                             : "border-slate-100 dark:border-slate-700"
-                        } bg-slate-50 dark:bg-slate-800/40`}
+                        } bg-slate-50 dark:bg-slate-800/50`}
                       >
                         <img
                           src={item.image}
@@ -320,7 +316,7 @@ export default function ELearningLandingSections() {
                         />
 
                         <div className="p-5 text-left">
-                          <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                          <h3 className="font-bold text-slate-900 dark:text-white">
                             {item.title}
                           </h3>
                           <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
@@ -333,7 +329,7 @@ export default function ELearningLandingSections() {
                   </div>
                 </div>
 
-                <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] p-5 text-left text-white">
+                <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
                   <p className="mb-5 text-sm font-bold">Editor</p>
 
                   {[
@@ -350,9 +346,9 @@ export default function ELearningLandingSections() {
                         <span>{index + 1}</span>
                       </div>
 
-                      <div className="h-2 rounded-full bg-white dark:bg-slate-950/10">
+                      <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
                         <div
-                          className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30"
+                          className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/50"
                           style={{ width: `${45 + index * 8}%` }}
                         />
                       </div>
@@ -365,15 +361,15 @@ export default function ELearningLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              <HandUnderline color="bg-sky-300">
-                <span className="text-sky-600">Learning</span>
+              <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+                <span className="text-sky-600 dark:text-sky-400">Learning</span>
               </HandUnderline>{" "}
               is a journey,
               <br />
@@ -386,19 +382,19 @@ export default function ELearningLandingSections() {
               learning feel rewarding.
             </p>
 
-            <DashedArrow className="mt-10 h-36 w-36 rotate-180 translate-x-100 rotate-x-180 text-rose-300" />
+            <DashedArrow className="mt-10 h-36 w-36 rotate-180 translate-x-100 rotate-x-180 text-rose-300 dark:text-rose-600" />
           </div>
 
           <div className="relative">
-            <div className="absolute inset-0 translate-x-10 translate-y-8 rounded-full bg-[#f3f4f7]" />
+            <div className="absolute inset-0 translate-x-10 translate-y-8 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <div className="bg-[#714b67] px-6 py-5 text-white">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <div className="bg-[#714b67] dark:bg-[#8a5a7e] px-6 py-5 text-white">
                 <div className="flex items-center gap-4">
                   <img
                     src={avatars[2]}
                     alt="Student"
-                    className="h-20 w-20 rounded-full border-4 border-white object-cover"
+                    className="h-20 w-20 rounded-full border-4 border-white dark:border-slate-800 object-cover"
                   />
                   <div>
                     <h3 className="text-2xl font-bold">Joel Willis</h3>
@@ -408,12 +404,14 @@ export default function ELearningLandingSections() {
               </div>
 
               <div className="grid gap-5 p-6 sm:grid-cols-[180px_1fr]">
-                <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5 text-center">
-                  <Trophy className="mx-auto h-12 w-12 text-amber-400" />
-                  <p className="mt-3 text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-5 text-center">
+                  <Trophy className="mx-auto h-12 w-12 text-amber-400 dark:text-amber-500" />
+                  <p className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">
                     3,407
                   </p>
-                  <p className="text-xs font-bold text-slate-400">XP POINTS</p>
+                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                    XP POINTS
+                  </p>
                 </div>
 
                 <div className="space-y-3">
@@ -430,7 +428,7 @@ export default function ELearningLandingSections() {
                       <span className="font-semibold text-slate-700 dark:text-slate-200">
                         {item}
                       </span>
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                      <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
                     </div>
                   ))}
                 </div>
@@ -440,19 +438,19 @@ export default function ELearningLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            <HandUnderline color="bg-amber-300">
-              <span>Train</span>
+            <HandUnderline color="bg-amber-300 dark:bg-amber-800">
+              <span className="dark:text-amber-200">Train</span>
             </HandUnderline>{" "}
             people. Measure results.
             <br />
-            <HandUnderline color="bg-rose-300">
-              <span>Drive growth.</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="dark:text-rose-200">Drive growth.</span>
             </HandUnderline>
           </h2>
 
@@ -462,11 +460,11 @@ export default function ELearningLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="absolute inset-0 translate-y-10 rounded-full bg-[#f3f4f7]" />
+            <div className="absolute inset-0 translate-y-10 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <div className="grid min-h-[430px] lg:grid-cols-[220px_1fr]">
-                <aside className="bg-[#1f2937] p-5 text-left text-white">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <div className="grid min-h-105 lg:grid-cols-[220px_1fr]">
+                <aside className="bg-[#1f2937] dark:bg-[#0f0f1a] p-5 text-left text-white">
                   <p className="text-sm font-bold">Course results</p>
 
                   <div className="mt-6 space-y-2">
@@ -481,7 +479,7 @@ export default function ELearningLandingSections() {
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 1
-                            ? "bg-white dark:bg-slate-950/15 text-white"
+                            ? "bg-white/15 dark:bg-white/10 text-white"
                             : "text-white/60"
                         }`}
                       >
@@ -493,11 +491,11 @@ export default function ELearningLandingSections() {
 
                 <div className="p-7 text-left">
                   <div className="mb-6 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                       Survey and quiz feedback
                     </h3>
 
-                    <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-600">
+                    <span className="rounded-full bg-amber-50 dark:bg-amber-950/50 px-3 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
                       In progress
                     </span>
                   </div>
@@ -515,9 +513,9 @@ export default function ELearningLandingSections() {
                     ].map((item) => (
                       <div
                         key={item.question}
-                        className="rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5"
+                        className="rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5"
                       >
-                        <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        <p className="font-bold text-slate-900 dark:text-white">
                           {item.question}
                         </p>
 
@@ -527,8 +525,8 @@ export default function ELearningLandingSections() {
                               key={answer}
                               className={`rounded-lg px-4 py-3 text-sm ${
                                 index === 0
-                                  ? "bg-emerald-50 text-emerald-700"
-                                  : "bg-white dark:bg-slate-950 dark:bg-slate-900 text-slate-500 dark:text-slate-400"
+                                  ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400"
+                                  : "bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400"
                               }`}
                             >
                               {answer}
@@ -539,7 +537,7 @@ export default function ELearningLandingSections() {
                     ))}
                   </div>
 
-                  <button className="mt-6 rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white">
+                  <button className="mt-6 rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                     See evaluation
                   </button>
                 </div>
@@ -551,22 +549,22 @@ export default function ELearningLandingSections() {
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>right.</span>
+              <span className="dark:text-[#02cfc3]">right.</span>
             </HandUnderline>
           </h2>
 
@@ -574,17 +572,17 @@ export default function ELearningLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -597,26 +595,26 @@ export default function ELearningLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>need</span>
+              <span className="dark:text-[#02cfc3]">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -631,14 +629,14 @@ export default function ELearningLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -652,14 +650,14 @@ export default function ELearningLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -667,7 +665,7 @@ export default function ELearningLandingSections() {
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -678,7 +676,7 @@ export default function ELearningLandingSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -689,7 +687,7 @@ export default function ELearningLandingSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -697,9 +695,9 @@ export default function ELearningLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -710,12 +708,14 @@ export default function ELearningLandingSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                “
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   Adon is so full of a software Army Knife. You can tailor it to
                   your business requirements. This is one of the key reasons
                   that has helped us implement Adon.
@@ -729,7 +729,7 @@ export default function ELearningLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Richard Miles
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -742,31 +742,33 @@ export default function ELearningLandingSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400"></p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
@@ -777,15 +779,15 @@ export default function ELearningLandingSections() {
 function FloatingNote({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
     >
-      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-amber-400" />
+      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-amber-400 dark:bg-amber-700" />
       <img
         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
         alt="User"
         className="absolute left-3 h-12 w-12 rounded-full object-cover"
       />
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
       Create courses and help learners grow
     </div>
   );
