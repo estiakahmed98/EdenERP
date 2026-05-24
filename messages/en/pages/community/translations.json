@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "eyebrow": "Make Adon ERP Global",
+    "breadcrumb": "Community / Collaborate / Translations",
+    "title": "Help Translate Adon ERP",
+    "description": "Join the Adon ERP translation community and help make the platform accessible in every language. Translators worldwide ensure Adon ERP works seamlessly for users in their native languages."
+  },
+  "currentLanguages": {
+    "title": "Currently Supported Languages",
+    "description": "Adon ERP is available in multiple languages thanks to our global community of translators."
+  },
+  "translationProcess": {
+    "title": "How Translation Works",
+    "steps": [
+      {
+        "title": "Choose a language",
+        "description": "Select a language you want to help translate."
+      },
+      {
+        "title": "Review strings",
+        "description": "Browse and translate text strings from the platform."
+      },
+      {
+        "title": "Submit translations",
+        "description": "Submit your translations for review by the translation team."
+      },
+      {
+        "title": "Get deployed",
+        "description": "Once approved, your translations ship with the next release."
+      }
+    ]
+  },
+  "contributeLanguages": {
+    "title": "Contribute to a Language",
+    "description": "Help us reach more users by translating Adon ERP into your language."
+  },
+  "guidelines": {
+    "title": "Translation Guidelines",
+    "points": [
+      "Maintain consistency with existing translations",
+      "Use context to choose the right words",
+      "Keep translations concise and clear",
+      "Follow formatting and style guides"
+    ]
+  },
+  "cta": {
+    "startTranslating": "Start Translating",
+    "joinTeam": "Join a Translation Team",
+    "viewGuidelines": "View Guidelines"
+  }
+}
