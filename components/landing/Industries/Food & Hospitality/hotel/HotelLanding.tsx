@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -26,6 +27,7 @@ import {
   Utensils,
   Wallet,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Hotel | AdonERP Industries",
@@ -33,58 +35,32 @@ export const metadata: Metadata = {
     "A hotel industry landing page for AdonERP with online booking management, room planning, invoicing, and guest operations.",
 };
 
-const features = [
-  {
-    title: "Online booking management",
-    description: "Accept reservations directly from your website with real-time availability.",
-  },
-  {
-    title: "Integrated sales and rental",
-    description: "Sell additional services and manage room rentals from one platform.",
-  },
-  {
-    title: "City tax",
-    description: "Automatically calculate and apply local city taxes to guest invoices.",
-  },
-  {
-    title: "Flexible invoicing",
-    description: "Generate professional invoices for individuals and corporate clients.",
-  },
-  {
-    title: "Streamlined planning",
-    description: "Manage room availability, check-ins, and check-outs from a single calendar.",
-  },
-  {
-    title: "Payment providers",
-    description: "Accept multiple payment methods including cards and digital wallets.",
-  },
-];
-
-const apps = [
-  { title: "Sales", subtitle: "Manage bookings and reservations", icon: ShoppingCart },
-  { title: "Invoicing", subtitle: "Professional guest billing", icon: ReceiptText },
-  { title: "Rental", subtitle: "Room and equipment rental management", icon: Building },
-  { title: "Website", subtitle: "Online booking website", icon: Home },
-  { title: "Hotel", subtitle: "Complete hotel management", icon: Hotel },
-  { title: "Planning", subtitle: "Room and staff scheduling", icon: Calendar },
-];
-
-const testimonials = [
-  {
-    name: "Isabelle Moreau",
-    role: "General Manager, Grand Plaza Hotel",
-    content:
-      "With AdonERP, restaurant and hotel results are visible in real time. It helps improve costs, monitor KPIs, manage shifts and keep budget control reliable.",
-    rating: 5,
-  },
-  {
-    name: "David Thompson",
-    role: "Owner, Seaside Resort & Spa",
-    content:
-      "The online booking system and integrated planning tools transformed our hotel operations. We now manage everything from one dashboard, and our guests love the seamless experience.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+  };
+  return icons[iconName] || Hotel;
+};
 
 function ScriptHeading({
   children,
@@ -97,8 +73,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -107,21 +82,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function HotelPage() {
+  const t = useTranslations("pages.hotel");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -130,12 +112,13 @@ export default function HotelPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Hotel className="h-4 w-4" />}
-              label="Hospitality industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Hotel
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -145,7 +128,7 @@ export default function HotelPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  All-in-one solution for
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -154,12 +137,11 @@ export default function HotelPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  your Hotel
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                From online booking to check-out, AdonERP brings every part of your hotel
-                operations into one seamless system.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -168,27 +150,27 @@ export default function HotelPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                With AdonERP, restaurant and hotel results are visible in real time. It
-                helps improve costs, monitor KPIs, manage shifts and keep budget
-                control reliable.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Isabelle Moreau</p>
-                  <p className="text-sm text-muted-foreground">General Manager, Grand Plaza Hotel</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -243,18 +225,16 @@ export default function HotelPage() {
       {/* Website ready for bookings Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          Website ready for{" "}
-          <span className="bg-primary/20 px-2 rounded">bookings</span>
+          {t("websiteSection.title")}{" "}
+          <span className="bg-primary/20 px-2 rounded">{t("websiteSection.titleHighlight")}</span>
         </ScriptHeading>
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Create a website using AdonERP's AI-based builder, add photos, drag and
-            drop elements, and improve search visibility.
+            {t("websiteSection.cards.builder")}
           </div>
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            List room availability, details and rates, then allow clients to make
-            reservations online.
+            {t("websiteSection.cards.listing")}
           </div>
         </div>
 
@@ -273,15 +253,15 @@ export default function HotelPage() {
 
           <div className="rounded-2xl border border-border bg-card p-5 shadow-xl">
             <div className="mb-4 aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/20 to-muted" />
-            <h3 className="font-bold text-foreground">Deluxe Room</h3>
-            <p className="mt-1 text-sm text-muted-foreground">$145.00 / night</p>
+            <h3 className="font-bold text-foreground">{t("websiteSection.demoRoom.name")}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{t("websiteSection.demoRoom.price")}</p>
             <div className="mt-3 flex items-center gap-1 text-amber-400">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="h-3 w-3 fill-current" />
               ))}
             </div>
             <button className="mt-4 w-full rounded-xl bg-secondary py-2 text-sm font-semibold text-secondary-foreground transition hover:bg-secondary/90">
-              Book Now
+              {t("websiteSection.demoRoom.button")}
             </button>
           </div>
         </div>
@@ -303,32 +283,31 @@ export default function HotelPage() {
                 ))}
               </div>
               <div className="mt-4 text-center text-xs text-muted-foreground">
-                Room availability calendar • June 2026
+                {t("planningSection.calendarLabel")}
               </div>
             </div>
 
             <div className="order-1 md:order-2">
               <div className="mb-4 text-5xl">📅</div>
               <ScriptHeading>
-                Save time,{" "}
+                {t("planningSection.title")}{" "}
                 <span className="underline decoration-primary underline-offset-8">
-                  maximize
+                  {t("planningSection.titleHighlight")}
                 </span>
                 <br />
-                bookings
+                {t("planningSection.titleEnd")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Manage planning, bookings, modifications, room upgrades and extra
-                services from one integrated calendar.
+                {t("planningSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Calendar className="h-4 w-4 text-primary" />
-                  Real-time availability
+                  {t("planningSection.badges.realTimeAvailability")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Users className="h-4 w-4 text-primary" />
-                  Guest management
+                  {t("planningSection.badges.guestManagement")}
                 </div>
               </div>
             </div>
@@ -341,22 +320,21 @@ export default function HotelPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Guest-centric
+              {t("operationsSection.title")}
               <br />
-              operations
+              {t("operationsSection.titleHighlight")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Run easy check-in and check-out, add breakfast or activity services,
-              and collect guest information whenever required.
+              {t("operationsSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Clock className="h-4 w-4" />
-                Express check-in
+                {t("operationsSection.badges.expressCheckin")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Utensils className="h-4 w-4" />
-                Breakfast service
+                {t("operationsSection.badges.breakfastService")}
               </div>
             </div>
           </div>
@@ -381,23 +359,22 @@ export default function HotelPage() {
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
               <ScriptHeading>
-                Flexible{" "}
+                {t("invoicingSection.title")}{" "}
                 <span className="underline decoration-primary underline-offset-8">
-                  invoicing
+                  {t("invoicingSection.titleHighlight")}
                 </span>
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Generate professional invoices in one click and accept multiple
-                payment methods. Perfect for corporate clients and direct bookings.
+                {t("invoicingSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <CreditCard className="h-4 w-4 text-primary" />
-                  Multiple payments
+                  {t("invoicingSection.badges.multiplePayments")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <ReceiptText className="h-4 w-4 text-primary" />
-                  Digital receipts
+                  {t("invoicingSection.badges.digitalReceipts")}
                 </div>
               </div>
             </div>
@@ -436,18 +413,17 @@ export default function HotelPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Everything needed to manage hotel bookings, rooms, payments,
-              planning and guest services all in one place.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -468,18 +444,16 @@ export default function HotelPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your hotel operation,
-            booking management, and guest services.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -487,7 +461,7 @@ export default function HotelPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -505,7 +479,7 @@ export default function HotelPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -513,7 +487,7 @@ export default function HotelPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -549,11 +523,10 @@ export default function HotelPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              hotels and hospitality.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -566,26 +539,26 @@ export default function HotelPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your property"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a hotel management workflow that helps you maximize bookings,
-            streamline operations, and create memorable guest experiences.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

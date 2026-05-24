@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Hotel | AdonERP",
+    "description": "AI-powered hotel management platform for all your hospitality operations — from online booking management and room planning to invoicing and guest services."
+  },
+  "hero": {
+    "eyebrowIcon": "Hotel",
+    "eyebrowLabel": "Hospitality industry template",
+    "industriesLabel": "Industries / Hotel",
+    "preHeading": "All-in-one solution for",
+    "title": "your Hotel",
+    "description": "From online booking to check-out, AdonERP brings every part of your hotel operations into one seamless system.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "With AdonERP, restaurant and hotel results are visible in real time. It helps improve costs, monitor KPIs, manage shifts and keep budget control reliable.",
+    "testimonialName": "Isabelle Moreau",
+    "testimonialRole": "General Manager, Grand Plaza Hotel"
+  },
+  "websiteSection": {
+    "title": "Website ready for",
+    "titleHighlight": "bookings",
+    "cards": {
+      "builder": "Create a website using AdonERP's AI-based builder, add photos, drag and drop elements, and improve search visibility.",
+      "listing": "List room availability, details and rates, then allow clients to make reservations online."
+    },
+    "demoRoom": {
+      "name": "Deluxe Room",
+      "price": "$145.00 / night",
+      "button": "Book Now"
+    }
+  },
+  "planningSection": {
+    "title": "Save time,",
+    "titleHighlight": "maximize",
+    "titleEnd": "bookings",
+    "description": "Manage planning, bookings, modifications, room upgrades and extra services from one integrated calendar.",
+    "badges": {
+      "realTimeAvailability": "Real-time availability",
+      "guestManagement": "Guest management"
+    },
+    "calendarLabel": "Room availability calendar • June 2026"
+  },
+  "operationsSection": {
+    "title": "Guest-centric",
+    "titleHighlight": "operations",
+    "description": "Run easy check-in and check-out, add breakfast or activity services, and collect guest information whenever required.",
+    "badges": {
+      "expressCheckin": "Express check-in",
+      "breakfastService": "Breakfast service"
+    }
+  },
+  "invoicingSection": {
+    "title": "Flexible",
+    "titleHighlight": "invoicing",
+    "description": "Generate professional invoices in one click and accept multiple payment methods. Perfect for corporate clients and direct bookings.",
+    "badges": {
+      "multiplePayments": "Multiple payments",
+      "digitalReceipts": "Digital receipts"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Everything needed to manage hotel bookings, rooms, payments, planning and guest services all in one place.",
+    "list": [
+      {
+        "title": "Online booking management",
+        "description": "Accept reservations directly from your website with real-time availability."
+      },
+      {
+        "title": "Integrated sales and rental",
+        "description": "Sell additional services and manage room rentals from one platform."
+      },
+      {
+        "title": "City tax",
+        "description": "Automatically calculate and apply local city taxes to guest invoices."
+      },
+      {
+        "title": "Flexible invoicing",
+        "description": "Generate professional invoices for individuals and corporate clients."
+      },
+      {
+        "title": "Streamlined planning",
+        "description": "Manage room availability, check-ins, and check-outs from a single calendar."
+      },
+      {
+        "title": "Payment providers",
+        "description": "Accept multiple payment methods including cards and digital wallets."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your hotel operation, booking management, and guest services.",
+    "apps": [
+      {
+        "title": "Sales",
+        "subtitle": "Manage bookings and reservations",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Professional guest billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Rental",
+        "subtitle": "Room and equipment rental management",
+        "icon": "Building"
+      },
+      {
+        "title": "Website",
+        "subtitle": "Online booking website",
+        "icon": "Home"
+      },
+      {
+        "title": "Hotel",
+        "subtitle": "Complete hotel management",
+        "icon": "Hotel"
+      },
+      {
+        "title": "Planning",
+        "subtitle": "Room and staff scheduling",
+        "icon": "Calendar"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Isabelle Moreau",
+        "role": "General Manager, Grand Plaza Hotel",
+        "content": "With AdonERP, restaurant and hotel results are visible in real time. It helps improve costs, monitor KPIs, manage shifts and keep budget control reliable.",
+        "rating": 5
+      },
+      {
+        "name": "David Thompson",
+        "role": "Owner, Seaside Resort & Spa",
+        "content": "The online booking system and integrated planning tools transformed our hotel operations. We now manage everything from one dashboard, and our guests love the seamless experience.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for hotels and hospitality."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your property",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a hotel management workflow that helps you maximize bookings, streamline operations, and create memorable guest experiences.",
+    "button": "Start now"
+  }
+}
