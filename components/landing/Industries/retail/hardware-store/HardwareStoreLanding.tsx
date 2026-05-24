@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -23,6 +24,7 @@ import {
   Wallet,
   Wrench,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Hardware Store | AdonERP Industries",
@@ -30,60 +32,29 @@ export const metadata: Metadata = {
     "A hardware store industry landing page for AdonERP with point of sale, inventory management, loyalty programs, and multi-channel sales.",
 };
 
-const features = [
-  {
-    title: "All devices welcome",
-    description: "Works perfectly on tablets, laptops, desktops, and industrial scanners.",
-  },
-  {
-    title: "Physical inventory",
-    description: "Conduct cycle counts and full inventory audits with ease.",
-  },
-  {
-    title: "Multiple cashiers",
-    description: "Manage several cashier accounts with badges or PIN codes.",
-  },
-  {
-    title: "Website domain name",
-    description: "Get a professional domain name included with your online store.",
-  },
-  {
-    title: "All payment methods",
-    description: "Accept cash, cards, e-wallets, and contactless payments.",
-  },
-  {
-    title: "Shipping integrations",
-    description: "Connect with major carriers for seamless delivery management.",
-  },
-];
-
-const apps = [
-  { title: "Point of Sale", subtitle: "Fast in-store checkout", icon: ShoppingBag },
-  { title: "Inventory", subtitle: "Real-time stock tracking", icon: Package },
-  { title: "Invoicing", subtitle: "Professional billing", icon: ReceiptText },
-  { title: "Planning", subtitle: "Optimize staff schedules", icon: Calendar },
-  { title: "Purchase", subtitle: "Smart supplier orders", icon: Box },
-  { title: "eCommerce", subtitle: "Sell hardware online", icon: ShoppingCart },
-];
-
-const rewards = ["Coupons", "Loyalty cards", "Promotions", "eWallet", "Gift cards"];
-
-const testimonials = [
-  {
-    name: "PT Global Teknologi Niaga",
-    role: "Hardware Retail Chain",
-    content:
-      "It's great to see how technology solutions like AdonERP can streamline operations and enhance productivity for businesses in the hardware retail industry.",
-    rating: 5,
-  },
-  {
-    name: "Michael Zhang",
-    role: "Owner, ToolBox Hardware",
-    content:
-      "From inventory management to multi-channel sales, AdonERP handles everything. Our team mastered the POS in just one day.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Wrench,
+    HardDrive,
+    Settings,
+  };
+  return icons[iconName] || Wrench;
+};
 
 function ScriptHeading({
   children,
@@ -96,8 +67,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -106,21 +76,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function HardwareStorePage() {
+  const t = useTranslations("pages.hardwarestore");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -129,12 +106,13 @@ export default function HardwareStorePage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Wrench className="h-4 w-4" />}
-              label="Hardware industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Hardware Store
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -144,7 +122,7 @@ export default function HardwareStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The #1 solution for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -153,13 +131,11 @@ export default function HardwareStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Hardware Store
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP covers all the software needs for your hardware store, from
-                online and in-store transactions to order management and inventory
-                control.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -168,27 +144,27 @@ export default function HardwareStorePage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                It's great to see how technology solutions like AdonERP can
-                streamline operations and enhance productivity for businesses in
-                the hardware retail industry.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">PT Global Teknologi Niaga</p>
-                  <p className="text-sm text-muted-foreground">Hardware Retail Chain</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -245,14 +221,14 @@ export default function HardwareStorePage() {
         <div className="text-center">
           <div className="mb-4 text-6xl">😊</div>
           <ScriptHeading>
-            An{" "}
-            <span className="bg-primary/20 px-2 rounded">intuitive</span> interface for
+            {t("interfaceSection.titlePrefix")}{" "}
+            <span className="bg-primary/20 px-2 rounded">{t("interfaceSection.titleHighlight")}</span>{" "}
+            {t("interfaceSection.titleEnd")}
             <br />
-            hardware sales
+            {t("interfaceSection.titleEnd2")}
           </ScriptHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-            An efficient point-of-sale that lets anyone master AdonERP POS in minutes,
-            adapt to any configuration, and focus on what matters: the customer.
+            {t("interfaceSection.description")}
           </p>
         </div>
 
@@ -281,21 +257,21 @@ export default function HardwareStorePage() {
         <div className="grid gap-10 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Stay on top of your{" "}
+              {t("stockSection.title")}{" "}
               <span className="underline decoration-primary underline-offset-8">
-                stock
+                {t("stockSection.titleHighlight")}
               </span>{" "}
-              levels
+              {t("stockSection.titleEnd")}
             </ScriptHeading>
           </div>
           <div className="grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
             <div className="rounded-xl bg-card border border-border p-4 shadow-sm">
-              <strong className="text-foreground">Flexible product configuration.</strong>
-              <p className="mt-2 text-sm">Hardware comes in all configurations. Display more variants by configuring memory, components, and other variables.</p>
+              <strong className="text-foreground">{t("stockSection.features.flexibleConfig.title")}</strong>
+              <p className="mt-2 text-sm">{t("stockSection.features.flexibleConfig.description")}</p>
             </div>
             <div className="rounded-xl bg-card border border-border p-4 shadow-sm">
-              <strong className="text-foreground">Effortless stock management.</strong>
-              <p className="mt-2 text-sm">Real-time inventory updates and automatic replenishment keep you ahead.</p>
+              <strong className="text-foreground">{t("stockSection.features.effortlessStock.title")}</strong>
+              <p className="mt-2 text-sm">{t("stockSection.features.effortlessStock.description")}</p>
             </div>
           </div>
         </div>
@@ -304,34 +280,25 @@ export default function HardwareStorePage() {
           <div className="overflow-hidden rounded-[2rem] border border-border bg-card shadow-2xl">
             <div className="border-b border-border bg-muted/30 px-6 py-4">
               <div className="grid grid-cols-5 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                <span>Product</span>
-                <span>On Hand</span>
-                <span>Forecast</span>
-                <span>Min / Max</span>
-                <span>Status</span>
+                {t.raw("stockSection.table.headers").map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["Hammer (16oz)", "32", "28", "10/50", "Healthy"],
-                ["Power Drill", "12", "8", "5/25", "Reorder"],
-                ["Screwdriver Set", "45", "42", "20/80", "Healthy"],
-                ["Measuring Tape", "18", "15", "10/40", "Low stock"],
-                ["Toolbox 20\"", "6", "4", "5/20", "Reorder"],
-                ["Paint Brush Set", "27", "25", "10/50", "Healthy"],
-              ].map((row, idx) => (
-                <div key={row[0]} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
-                  <span className="font-medium text-foreground">{row[0]}</span>
-                  <span className="text-foreground">{row[1]}</span>
-                  <span className="text-foreground">{row[2]}</span>
-                  <span className="text-foreground">{row[3]}</span>
+              {t.raw("stockSection.table.rows").map((row: any, idx: number) => (
+                <div key={row.product} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
+                  <span className="font-medium text-foreground">{row.product}</span>
+                  <span className="text-foreground">{row.onHand}</span>
+                  <span className="text-foreground">{row.forecast}</span>
+                  <span className="text-foreground">{row.minMax}</span>
                   <span>
                     <span className={`rounded-full px-2 py-1 text-xs font-semibold ${
-                      row[4] === "Healthy" ? "bg-accent/20 text-accent-foreground" :
-                      row[4] === "Reorder" ? "bg-destructive/20 text-destructive" :
+                      row.status === "Healthy" || row.status === "সুস্থ" ? "bg-accent/20 text-accent-foreground" :
+                      row.status === "Reorder" || row.status === "পুনর্বিন্যাস" ? "bg-destructive/20 text-destructive" :
                       "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
                     }`}>
-                      {row[4]}
+                      {row.status}
                     </span>
                   </span>
                 </div>
@@ -346,46 +313,42 @@ export default function HardwareStorePage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Boost{" "}
+              {t("loyaltySection.title")}{" "}
               <span className="underline decoration-secondary underline-offset-8">
-                sales
+                {t("loyaltySection.titleHighlight")}
               </span>{" "}
-              with
+              {t("loyaltySection.titleMiddle")}
               <br />
-              loyalty programs
+              {t("loyaltySection.titleEnd")}
             </ScriptHeading>
             <p className="mt-6 max-w-md text-base leading-7 text-muted-foreground">
-              Loyalty programs improve your clients' shopping experience.
-              Handle products from around the world and reward repeat customers.
+              {t("loyaltySection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Heart className="h-4 w-4" />
-                Reward points
+                {t("loyaltySection.badges.rewardPoints")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Wallet className="h-4 w-4" />
-                Digital wallet
+                {t("loyaltySection.badges.digitalWallet")}
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-            {rewards.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
-              >
-                <div className="text-4xl">
-                  {item === "Coupons" && "🎫"}
-                  {item === "Loyalty cards" && "💳"}
-                  {item === "Promotions" && "🔥"}
-                  {item === "eWallet" && "📱"}
-                  {item === "Gift cards" && "🎁"}
+            {t.raw("loyaltySection.rewards").map((item: string) => {
+              const iconsMap = t.raw("loyaltySection.rewardIcons");
+              return (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
+                >
+                  <div className="text-4xl">{iconsMap[item] || "🎁"}</div>
+                  <p className="mt-2 font-semibold text-foreground">{item}</p>
                 </div>
-                <p className="mt-2 font-semibold text-foreground">{item}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -396,18 +359,17 @@ export default function HardwareStorePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Smart tools to run hardware retail, stock management, payments, and
-              delivery from one place.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -428,18 +390,16 @@ export default function HardwareStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your hardware retail operation,
-            finance, supplier flows, and customer communication.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -447,7 +407,7 @@ export default function HardwareStorePage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -465,7 +425,7 @@ export default function HardwareStorePage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -473,7 +433,7 @@ export default function HardwareStorePage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -509,11 +469,10 @@ export default function HardwareStorePage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              hardware retailers.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -526,26 +485,26 @@ export default function HardwareStorePage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your store"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a hardware store workflow that helps your team sell faster,
-            manage inventory smarter, and scale from one location to many.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground"></p>
