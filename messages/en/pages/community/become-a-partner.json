@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "eyebrow": "Grow Your Business",
+    "breadcrumb": "Community / Collaborate / Become a Partner",
+    "title": "Join the Adon ERP Partner Program",
+    "description": "Expand your implementation, consulting, or reseller business. Access training, certification, co-marketing support, and a global network of partners."
+  },
+  "partnerTypes": [
+    {
+      "title": "Implementation Partners",
+      "description": "Help customers deploy and configure Adon ERP to fit their business needs.",
+      "benefits": [
+        "Training and certification programs",
+        "Technical resources and documentation",
+        "Priority support channel",
+        "Co-marketing opportunities"
+      ]
+    },
+    {
+      "title": "Consulting Partners",
+      "description": "Provide strategic advisory services to help customers get the most from Adon ERP.",
+      "benefits": [
+        "Pre-sales technical support",
+        "Business development resources",
+        "Referral commissions",
+        "Co-branded marketing"
+      ]
+    },
+    {
+      "title": "Reseller Partners",
+      "description": "Offer Adon ERP solutions to your customers with margin and white-label options.",
+      "benefits": [
+        "Competitive margins and pricing",
+        "Sales enablement tools",
+        "Deal registration program",
+        "Partner portal access"
+      ]
+    }
+  ],
+  "benefits": {
+    "title": "Why Become a Partner",
+    "items": [
+      {
+        "icon": "BookOpen",
+        "title": "Training & Certification",
+        "description": "Comprehensive programs to upskill your team on Adon ERP."
+      },
+      {
+        "icon": "Users",
+        "title": "Global Network",
+        "description": "Connect with 1000+ partners worldwide and expand your reach."
+      },
+      {
+        "icon": "TrendingUp",
+        "title": "Revenue Growth",
+        "description": "Multiple revenue streams through implementation, consulting, and resale."
+      },
+      {
+        "icon": "Zap",
+        "title": "Technical Support",
+        "description": "Priority support and technical resources for your implementations."
+      }
+    ]
+  },
+  "process": {
+    "title": "Partnership Application Process",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Apply",
+        "description": "Submit your partnership application and company information."
+      },
+      {
+        "number": "2",
+        "title": "Review",
+        "description": "Our team reviews your application and verifies your capabilities."
+      },
+      {
+        "number": "3",
+        "title": "Onboard",
+        "description": "Get access to training, resources, and the partner portal."
+      },
+      {
+        "number": "4",
+        "title": "Grow",
+        "description": "Start delivering Adon ERP solutions and grow your business."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "What are the eligibility requirements?",
+        "answer": "Requirements vary by partner type. Generally, we look for companies with relevant implementation experience and a commitment to customer success."
+      },
+      {
+        "question": "How much does it cost to become a partner?",
+        "answer": "Adon ERP has a tiered partner program with no upfront costs for initial tiers. Revenue share and margin structures vary by partner level."
+      },
+      {
+        "question": "Do you offer training programs?",
+        "answer": "Yes! We provide comprehensive training programs, certifications, and ongoing technical support for all partners."
+      },
+      {
+        "question": "Can I specialize in a specific industry?",
+        "answer": "Absolutely. Many partners focus on specific verticals like manufacturing, retail, or services. We'll help you specialize."
+      }
+    ]
+  },
+  "cta": {
+    "applyNow": "Apply Now",
+    "learnMore": "Learn More",
+    "contact": "Contact Partnership Team"
+  }
+}

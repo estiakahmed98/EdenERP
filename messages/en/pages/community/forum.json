@@ -1,0 +1,191 @@
+{
+  "hero": {
+    "eyebrow": "Ask & Learn Together",
+    "breadcrumb": "Community / Collaborate / Forum",
+    "title": "The Adon ERP Community Forum",
+    "description": "50K+ posts from 12K+ members across 180+ countries. Ask questions, share insights, and get answers from active maintainers and contributors. Average response time under 2 hours."
+  },
+  "categories": [
+    {
+      "icon": "MessageSquareText",
+      "title": "General Discussion",
+      "description": "Chat about anything Adon ERP — from quick tips to deep architectural debates.",
+      "count": "2.4K threads",
+      "color": "text-blue-600",
+      "bg": "bg-blue-50"
+    },
+    {
+      "icon": "BookOpen",
+      "title": "Getting Started",
+      "description": "New to Adon ERP? Ask setup questions, browse tutorials, and connect with mentors.",
+      "count": "1.8K threads",
+      "color": "text-emerald-600",
+      "bg": "bg-emerald-50"
+    },
+    {
+      "icon": "Code2",
+      "title": "Development & API",
+      "description": "Dive into the codebase, discuss API endpoints, and share integration patterns.",
+      "count": "3.1K threads",
+      "color": "text-violet-600",
+      "bg": "bg-violet-50"
+    },
+    {
+      "icon": "Zap",
+      "title": "Feature Requests",
+      "description": "Propose new features, vote on what the community wants next, and shape the roadmap.",
+      "count": "965 threads",
+      "color": "text-amber-600",
+      "bg": "bg-amber-50"
+    },
+    {
+      "icon": "ShieldCheck",
+      "title": "Bug Reports",
+      "description": "Found something unexpected? File a bug report here and get triage from the team.",
+      "count": "760 threads",
+      "color": "text-rose-600",
+      "bg": "bg-rose-50"
+    },
+    {
+      "icon": "Lightbulb",
+      "title": "Ideas & Show & Tell",
+      "description": "Share what you have built, demo your modules, and inspire the next contributor.",
+      "count": "540 threads",
+      "color": "text-cyan-600",
+      "bg": "bg-cyan-50"
+    }
+  ],
+  "features": [
+    {
+      "icon": "Search",
+      "title": "Search everything",
+      "description": "Full-text search across all threads, replies, and attachments — find the answer before you ask."
+    },
+    {
+      "icon": "ThumbsUp",
+      "title": "Vote on answers",
+      "description": "Upvote helpful replies so the best solution rises to the top. Accepted answers get a green check."
+    },
+    {
+      "icon": "Headphones",
+      "title": "Community-led support",
+      "description": "Active contributors and maintainers answer questions daily. Average first response is under 2 hours."
+    },
+    {
+      "icon": "TrendingUp",
+      "title": "Trending topics",
+      "description": "Hot threads are surfaced on the home page so you never miss a topic the community is buzzing about."
+    }
+  ],
+  "recentThreads": {
+    "title": "Recent Threads",
+    "threads": [
+      {
+        "title": "How to extend the Purchase module with custom fields?",
+        "category": "Development & API",
+        "author": "Sofia L.",
+        "replies": 14,
+        "views": 312,
+        "lastActive": "2 hours ago",
+        "tags": ["purchase", "custom-fields"]
+      },
+      {
+        "title": "Best practices for multi-currency reporting in v17?",
+        "category": "General Discussion",
+        "author": "Rajesh M.",
+        "replies": 8,
+        "views": 189,
+        "lastActive": "5 hours ago",
+        "tags": ["multi-currency", "reporting"]
+      },
+      {
+        "title": "Feature request: webhook notifications for stock transfers",
+        "category": "Feature Requests",
+        "author": "Lena K.",
+        "replies": 34,
+        "views": 721,
+        "lastActive": "30 minutes ago",
+        "tags": ["webhook", "inventory", "feature-request"]
+      },
+      {
+        "title": "Getting Started guide for Windows dev setup",
+        "category": "Getting Started",
+        "author": "Jules P.",
+        "replies": 21,
+        "views": 540,
+        "lastActive": "1 hour ago",
+        "tags": ["windows", "setup", "dev"]
+      },
+      {
+        "title": "Bug: stock reconciliation produces negative qty on partial picks",
+        "category": "Bug Reports",
+        "author": "Omar Y.",
+        "replies": 6,
+        "views": 134,
+        "lastActive": "12 hours ago",
+        "tags": ["inventory", "bug", "stock"]
+      },
+      {
+        "title": "Show & Tell: our custom CRM module for service firms",
+        "category": "Ideas & Show & Tell",
+        "author": "Nadia R.",
+        "replies": 18,
+        "views": 445,
+        "lastActive": "3 hours ago",
+        "tags": ["crm", "module", "show-and-tell"]
+      }
+    ]
+  },
+  "topContributors": {
+    "title": "Top Forum Contributors",
+    "description": "These members have made the forum a vibrant, helpful place — answering questions, writing guides, and helping others succeed.",
+    "contributors": [
+      {
+        "name": "Omar Yousef",
+        "posts": 382,
+        "badges": 12,
+        "role": "Moderator"
+      },
+      {
+        "name": "Aisha Karim",
+        "posts": 291,
+        "badges": 9,
+        "role": "Top Contributor"
+      },
+      {
+        "name": "Lena Kowalska",
+        "posts": 245,
+        "badges": 8,
+        "role": "Top Contributor"
+      },
+      {
+        "name": "Tiago Nascimento",
+        "posts": 198,
+        "badges": 6,
+        "role": "Contributor"
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": "50K+",
+      "label": "Posts"
+    },
+    {
+      "value": "12K+",
+      "label": "Members"
+    },
+    {
+      "value": "180+",
+      "label": "Countries"
+    },
+    {
+      "value": "< 2hrs",
+      "label": "Avg response"
+    }
+  ],
+  "cta": {
+    "join": "Join the Forum",
+    "description": "Start your free account and join thousands of Adon ERP users and developers."
+  }
+}

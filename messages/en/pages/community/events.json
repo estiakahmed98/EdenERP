@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "eyebrow": "Connect & Learn Live",
+    "breadcrumb": "Community / Collaborate / Events",
+    "title": "Adon ERP Community Events",
+    "description": "Join live webinars, workshops, meetups, and annual conferences. Network with users and developers worldwide, learn new skills, and shape the future of Adon ERP."
+  },
+  "upcomingEvents": {
+    "title": "Upcoming Events",
+    "subtitle": "Mark your calendar and don't miss out"
+  },
+  "pastEvents": {
+    "title": "Past Events",
+    "subtitle": "Explore recorded sessions and resources from previous events"
+  },
+  "eventTypes": {
+    "webinar": "Webinar",
+    "workshop": "Workshop",
+    "meetup": "Meetup",
+    "conference": "Conference",
+    "training": "Training"
+  },
+  "eventFilters": {
+    "all": "All Events",
+    "upcoming": "Upcoming",
+    "past": "Past",
+    "recorded": "Recorded"
+  },
+  "cta": {
+    "registerNow": "Register Now",
+    "viewRecording": "View Recording",
+    "learnMore": "Learn More"
+  }
+}
