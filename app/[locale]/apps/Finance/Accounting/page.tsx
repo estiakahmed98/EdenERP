@@ -1023,10 +1023,6 @@ export default function AccountingPage() {
                 {t("cta.sales")}
               </Link>
             </div>
-
-            <p className="mt-6 text-sm text-emerald-200/80">
-              Free forever plan available • Instant access
-            </p>
           </div>
         </div>
       </section>
