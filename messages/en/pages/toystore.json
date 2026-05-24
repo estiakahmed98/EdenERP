@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "title": "Toy Store | AdonERP",
+    "description": "AI-powered toy store management platform for all your retail operations — from point of sale and inventory management to loyalty programs and multi-channel sales."
+  },
+  "hero": {
+    "eyebrowIcon": "Gift",
+    "eyebrowLabel": "Toy industry template",
+    "industriesLabel": "Industries / Toy Store",
+    "preHeading": "The #1 software suite for your",
+    "title": "Toy Store",
+    "description": "AdonERP allows you to maximize sales across multiple channels, manage inventory, track purchases, and run your toy store from one platform.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "Working with AdonERP allowed us to digitize all our internal processes. We were able to be more efficient and finally reach full traceability on our products lifecycle.",
+    "testimonialName": "Emma Watson",
+    "testimonialRole": "Owner, Wonder Toys"
+  },
+  "posSection": {
+    "title": "Play with the intuitive",
+    "subtitle": "point-of-sale interface"
+  },
+  "productsSection": {
+    "titlePrefix": "Thousands",
+    "titleHighlight": "of products?",
+    "titleEnd": "Don't be puzzled!",
+    "description": "Product configuration, stock tracking, purchasing and sales tools keep your toy inventory easy to manage.",
+    "badges": {
+      "variants": "Variants",
+      "stockTracking": "Stock tracking"
+    },
+    "categories": ["Teddy Bears", "Action Figures", "Board Games"]
+  },
+  "rewardsSection": {
+    "title": "Game-changing",
+    "titleHighlight": "rewards",
+    "description": "Reward your customers with coupons, loyalty cards, promotions, gift cards and eWallet options. Keep them coming back for more toys.",
+    "badges": {
+      "pointsSystem": "Points system",
+      "digitalWallet": "Digital wallet"
+    },
+    "rewards": ["Coupons", "Loyalty cards", "Promotions", "eWallet", "Gift cards"],
+    "rewardIcons": {
+      "Coupons": "🎫",
+      "Loyalty cards": "💳",
+      "Promotions": "🔥",
+      "eWallet": "📱",
+      "Gift cards": "🎁"
+    }
+  },
+  "onlineStoreSection": {
+    "title": "Building blocks to",
+    "titleHighlight": "create",
+    "titleEnd": "your online store",
+    "description": "Use ready-made website blocks to create a beautiful toy store online and sell through ecommerce. No coding required.",
+    "builderLabel": "drag & drop builder"
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Everything you need to run toy sales, stock management, payments, and online orders from one platform.",
+    "list": [
+      {
+        "title": "All devices welcome",
+        "description": "Works perfectly on tablets, laptops, desktops, and industrial scanners."
+      },
+      {
+        "title": "Website domain name",
+        "description": "Get a professional domain name included with your online store."
+      },
+      {
+        "title": "Multiple cashiers",
+        "description": "Manage several cashier accounts with badges or PIN codes."
+      },
+      {
+        "title": "Click and collect",
+        "description": "Let customers shop online and pick up orders at your store."
+      },
+      {
+        "title": "All payment methods",
+        "description": "Accept cash, cards, e-wallets, and contactless payments."
+      },
+      {
+        "title": "Shipping integration",
+        "description": "Connect with major carriers for seamless delivery management."
+      },
+      {
+        "title": "Physical inventory",
+        "description": "Conduct cycle counts and full inventory audits with ease."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your toy retail operation, finance, supplier flows, and customer communication.",
+    "apps": [
+      {
+        "title": "Point of Sale",
+        "subtitle": "Fast in-store checkout",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "eCommerce",
+        "subtitle": "Sell toys online",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Professional billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Real-time stock tracking",
+        "icon": "Package"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Smart supplier orders",
+        "icon": "Box"
+      },
+      {
+        "title": "Email Marketing",
+        "subtitle": "Launch customer campaigns",
+        "icon": "Mail"
+      },
+      {
+        "title": "Planning",
+        "subtitle": "Optimize staff schedules",
+        "icon": "Calendar"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Emma Watson",
+        "role": "Owner, Wonder Toys",
+        "content": "Working with AdonERP allowed us to digitize all our internal processes. We were able to be more efficient and finally reach full traceability on our products lifecycle.",
+        "rating": 5
+      },
+      {
+        "name": "James Wilson",
+        "role": "Store Manager, Kid's Joy",
+        "content": "The intuitive POS and multi-channel capabilities transformed our toy store. Our team mastered it in minutes and sales have never been better.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for toy retailers."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your store",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a toy store workflow that helps your team sell faster, manage inventory smarter, and create magical shopping experiences.",
+    "button": "Start now"
+  }
+}
