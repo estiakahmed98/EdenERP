@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -29,58 +30,23 @@ export const metadata: Metadata = {
     "A clothing store industry landing page for AdonERP with point of sale, inventory, and retail workflow sections.",
 };
 
-const features = [
-  {
-    title: "Multiple variants",
-    description: "Configure sizes, colors, and materials for every product in your catalog.",
-  },
-  {
-    title: "Loyalty programs",
-    description: "Reward returning customers with points, tiered perks, and exclusive discounts.",
-  },
-  {
-    title: "All payment methods",
-    description: "Accept cash, cards, e-wallets, and contactless payments in-store and online.",
-  },
-  {
-    title: "Dynamic pricing",
-    description: "Set flexible pricing by season, customer type, or automatic promotions.",
-  },
-  {
-    title: "Gift cards & eWallet",
-    description: "Create, top up, and redeem physical or digital gift cards in seconds.",
-  },
-  {
-    title: "Click & collect",
-    description: "Let customers shop online and pick up orders at your store.",
-  },
-];
-
-const apps = [
-  { title: "Point of Sale", subtitle: "Fast in-store checkout", icon: ShoppingBag },
-  { title: "Inventory", subtitle: "Real-time stock tracking", icon: Package },
-  { title: "Purchase", subtitle: "Automated replenishment", icon: ReceiptText },
-  { title: "Invoicing", subtitle: "Professional invoices", icon: CreditCard },
-  { title: "eCommerce", subtitle: "Sell clothes online", icon: ShoppingCart },
-  { title: "Planning", subtitle: "Optimize staff schedules", icon: Users },
-];
-
-const testimonials = [
-  {
-    name: "Sophia Chen",
-    role: "Founder, Moda Boutique",
-    content:
-      "AdonERP transformed how we manage our clothing store. From RFID inventory to seamless POS, everything just works.",
-    rating: 5,
-  },
-  {
-    name: "Marcus Rivera",
-    role: "Operations Director, Urban Threads",
-    content:
-      "The omnichannel capabilities are incredible. Our online and in-store stock sync perfectly, and customers love it.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ReceiptText,
+    Package,
+    CreditCard,
+    ShoppingCart,
+    Users,
+    LayoutGrid,
+    Sparkles,
+    BadgeCheck,
+    Barcode,
+    Heart,
+  };
+  return icons[iconName] || ShoppingBag;
+};
 
 function ScriptHeading({
   children,
@@ -102,21 +68,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function ClothingStorePage() {
+  const t = useTranslations("pages.clothingstore");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -125,12 +98,13 @@ export default function ClothingStorePage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<ShoppingBag className="h-4 w-4" />}
-              label="Fashion industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Clothing Store
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -140,7 +114,7 @@ export default function ClothingStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The best software fit for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -149,13 +123,11 @@ export default function ClothingStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Clothing Store
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Easily configure products in PoS and eCommerce, use RFID barcode
-                integration for real-time stock tracking, and create client
-                reward systems to boost retention.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -164,27 +136,27 @@ export default function ClothingStorePage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                AdonERP made us an omnichannel brand with 360-degree sales
-                visibility. From RFID inventory to client loyalty, everything
-                runs seamlessly.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Pierre Hamblenne</p>
-                  <p className="text-sm text-muted-foreground">CEO of J&JOY</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -240,15 +212,16 @@ export default function ClothingStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-20">
         <div className="text-center">
           <SectionEyebrow
-            icon={<LayoutGrid className="h-4 w-4" />}
-            label="Efficient point of sale"
+            iconName={t("posSection.eyebrowIcon")}
+            labelKey="posSection.eyebrowLabel"
+            t={t}
           />
         </div>
         <div className="mx-auto mt-8 max-w-4xl text-center">
           <ScriptHeading>
-            An efficient POS that anyone
+            {t("posSection.title")}
             <br />
-            can master in minutes
+            {t("posSection.subtitle")}
           </ScriptHeading>
         </div>
 
@@ -259,13 +232,13 @@ export default function ClothingStorePage() {
               <div className="rounded-[1.5rem] bg-muted/30 p-4">
                 <div className="space-y-3">
                   {[
-                    ["Linen Wide Leg Pant", "$45.00", "1"],
-                    ["Chiffon Jumpsuit", "$59.00", "1"],
-                    ["Silk Scarf", "$28.00", "2"],
-                    ["Cotton T-Shirt", "$24.00", "1"],
+                    [t("posSection.demo.cartItems.linenPant"), "$45.00", "1"],
+                    [t("posSection.demo.cartItems.chiffonJumpsuit"), "$59.00", "1"],
+                    [t("posSection.demo.cartItems.silkScarf"), "$28.00", "2"],
+                    [t("posSection.demo.cartItems.cottonTShirt"), "$24.00", "1"],
                   ].map(([title, price, qty]) => (
                     <div
-                      key={title}
+                      key={title as string}
                       className="flex items-center justify-between rounded-2xl bg-card px-4 py-3 shadow-sm"
                     >
                       <div>
@@ -278,11 +251,11 @@ export default function ClothingStorePage() {
                 </div>
                 <div className="mt-4 rounded-2xl bg-primary px-4 py-4 text-primary-foreground">
                   <div className="flex items-center justify-between text-sm opacity-90">
-                    <span>Subtotal</span>
+                    <span>{t("posSection.demo.subtotal")}</span>
                     <span>$184.00</span>
                   </div>
                   <div className="mt-1 flex items-center justify-between text-sm opacity-90">
-                    <span>Tax (10%)</span>
+                    <span>{t("posSection.demo.tax")}</span>
                     <span>$18.40</span>
                   </div>
                   <div className="mt-3 text-2xl font-semibold">$202.40</div>
@@ -292,12 +265,12 @@ export default function ClothingStorePage() {
               {/* Numpad */}
               <div className="rounded-[1.5rem] bg-primary/5 p-4">
                 <div className="grid grid-cols-3 gap-2">
-                  {["1", "2", "3", "4", "5", "6", "7", "8", "9", "%", "0", "Pay"].map(
+                  {["1", "2", "3", "4", "5", "6", "7", "8", "9", "%", "0", t("posSection.demo.keypad.pay")].map(
                     (key) => (
                       <div
                         key={key}
                         className={`flex aspect-square items-center justify-center rounded-2xl text-sm font-semibold ${
-                          key === "Pay"
+                          key === t("posSection.demo.keypad.pay")
                             ? "bg-primary text-primary-foreground"
                             : "bg-card text-foreground shadow-sm"
                         }`}
@@ -313,20 +286,20 @@ export default function ClothingStorePage() {
               <div className="rounded-[1.5rem] bg-muted/30 p-4">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    Categories
+                    {t("posSection.demo.categoriesTab")}
                   </span>
                   <span className="rounded-full bg-card px-3 py-1 text-xs font-medium text-foreground shadow-sm">
-                    New Arrivals
+                    {t("posSection.demo.newArrivals")}
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {[
-                    "Dresses",
-                    "Tops",
-                    "Bottoms",
-                    "Outerwear",
-                    "Accessories",
-                    "Shoes",
+                    t("posSection.demo.categories.dresses"),
+                    t("posSection.demo.categories.tops"),
+                    t("posSection.demo.categories.bottoms"),
+                    t("posSection.demo.categories.outerwear"),
+                    t("posSection.demo.categories.accessories"),
+                    t("posSection.demo.categories.shoes"),
                   ].map((item, index) => (
                     <div
                       key={item}
@@ -346,7 +319,7 @@ export default function ClothingStorePage() {
                       />
                       <div className="space-y-1 p-3">
                         <p className="text-sm font-semibold text-foreground">{item}</p>
-                        <p className="text-xs text-muted-foreground">Tap to add</p>
+                        <p className="text-xs text-muted-foreground">{t("posSection.demo.tapToAdd")}</p>
                       </div>
                     </div>
                   ))}
@@ -357,7 +330,7 @@ export default function ClothingStorePage() {
           <div className="mx-auto mt-8 flex max-w-fit items-center gap-3 rounded-full border border-border bg-card px-5 py-2 shadow-lg shadow-black/5">
             <div className="h-7 w-7 rounded-full bg-muted" />
             <span className="text-sm text-muted-foreground">
-              Handle all transactions with ease.
+              {t("posSection.demo.footerMessage")}
             </span>
           </div>
         </div>
@@ -371,12 +344,10 @@ export default function ClothingStorePage() {
             <div className="h-1 w-24 rounded-full bg-primary/50" />
           </div>
           <ScriptHeading className="text-3xl sm:text-4xl">
-            Scan it, track it
+            {t("rfidSection.title")}
           </ScriptHeading>
           <p className="max-w-md text-base leading-7 text-muted-foreground">
-            Use RFID barcode integration for real-time stock tracking. Create or
-            search products, process operations faster, and manage your
-            inventory effortlessly.
+            {t("rfidSection.description")}
           </p>
         </div>
 
@@ -386,26 +357,26 @@ export default function ClothingStorePage() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                  Product details
+                  {t("rfidSection.demo.productBadge")}
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold text-foreground">
                   Chiffon Jumpsuit
                 </h3>
               </div>
               <div className="rounded-full bg-accent/20 px-3 py-1 text-xs font-semibold text-accent-foreground">
-                In stock: 42 units
+                {t("rfidSection.demo.inStock")}
               </div>
             </div>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
-                ["Price", "$59.00"],
-                ["SKU", "CHF-JMP-001"],
-                ["Category", "Dresses / Jumpsuits"],
-                ["Sizes", "XS, S, M, L, XL"],
-                ["Colors", "Black, Navy, Olive"],
-                ["Material", "100% Chiffon"],
+                [t("rfidSection.demo.fields.price"), "$59.00"],
+                [t("rfidSection.demo.fields.sku"), "CHF-JMP-001"],
+                [t("rfidSection.demo.fields.category"), "Dresses / Jumpsuits"],
+                [t("rfidSection.demo.fields.sizes"), "XS, S, M, L, XL"],
+                [t("rfidSection.demo.fields.colors"), "Black, Navy, Olive"],
+                [t("rfidSection.demo.fields.material"), "100% Chiffon"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-2xl bg-muted/30 px-4 py-3">
+                <div key={label as string} className="rounded-2xl bg-muted/30 px-4 py-3">
                   <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
                     {label}
                   </p>
@@ -421,14 +392,14 @@ export default function ClothingStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
         <div className="text-center">
           <SectionEyebrow
-            icon={<Package className="h-4 w-4" />}
-            label="Inventory discipline"
+            iconName={t("inventorySection.eyebrowIcon")}
+            labelKey="inventorySection.eyebrowLabel"
+            t={t}
           />
           <div className="mx-auto mt-8 max-w-4xl">
-            <ScriptHeading>Stock management that never sleeps</ScriptHeading>
+            <ScriptHeading>{t("inventorySection.title")}</ScriptHeading>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              Real-time inventory level updates and automated replenishment keep
-              your bestsellers always available.
+              {t("inventorySection.description")}
             </p>
           </div>
         </div>
@@ -437,45 +408,32 @@ export default function ClothingStorePage() {
           <div className="absolute inset-x-14 top-8 h-72 rounded-full bg-muted" />
           <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-[0_35px_90px_rgba(0,0,0,0.12)]">
             <div className="grid grid-cols-[1.2fr_0.7fr_0.6fr_0.6fr_0.6fr_0.7fr] gap-2 border-b border-border bg-muted/30 px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              <span>Product</span>
-              <span>Location</span>
-              <span>On Hand</span>
-              <span>Forecast</span>
-              <span>Min</span>
-              <span>Status</span>
+              {t.raw("inventorySection.table.headers").map((header: string) => (
+                <span key={header}>{header}</span>
+              ))}
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["Linen Wide Leg Pant", "Warehouse A", "8", "12", "15", "Reorder"],
-                ["Chiffon Jumpsuit", "Store Floor", "42", "28", "10", "Healthy"],
-                ["Silk Scarf", "Warehouse B", "3", "5", "8", "Low stock"],
-                ["Cotton T-Shirt", "Store Floor", "56", "34", "20", "Healthy"],
-                ["Denim Jacket", "Warehouse A", "12", "9", "10", "Reorder"],
-              ].map((row, rowIndex) => (
+              {t.raw("inventorySection.table.rows").map((row: any, rowIndex: number) => (
                 <div
-                  key={row[0]}
+                  key={row.product}
                   className="grid grid-cols-[1.2fr_0.7fr_0.6fr_0.6fr_0.6fr_0.7fr] gap-2 px-6 py-4 text-sm text-foreground"
                 >
-                  {row.map((cell, cellIndex) => (
-                    <div
-                      key={`${row[0]}-${cellIndex}`}
-                      className={
-                        cellIndex === 5
-                          ? `inline-flex max-w-fit rounded-full px-3 py-1 text-xs font-semibold ${
-                              rowIndex === 0 || rowIndex === 4
-                                ? "bg-destructive/20 text-destructive"
-                                : rowIndex === 2
-                                  ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                                  : "bg-accent/20 text-accent-foreground"
-                            }`
-                          : cellIndex === 0
-                            ? "font-semibold text-foreground"
-                            : ""
-                      }
-                    >
-                      {cell}
-                    </div>
-                  ))}
+                  <div className="font-semibold text-foreground">{row.product}</div>
+                  <div>{row.location}</div>
+                  <div>{row.onHand}</div>
+                  <div>{row.forecast}</div>
+                  <div>{row.min}</div>
+                  <div
+                    className={`inline-flex max-w-fit rounded-full px-3 py-1 text-xs font-semibold ${
+                      row.status === "Reorder" || row.status === "পুনর্বিন্যাস"
+                        ? "bg-destructive/20 text-destructive"
+                        : row.status === "Low stock" || row.status === "স্বল্প স্টক"
+                          ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
+                          : "bg-accent/20 text-accent-foreground"
+                    }`}
+                  >
+                    {row.status}
+                  </div>
                 </div>
               ))}
             </div>
@@ -483,7 +441,7 @@ export default function ClothingStorePage() {
           <div className="mx-auto mt-7 flex max-w-fit items-center gap-3 rounded-full border border-border bg-card px-5 py-2 shadow-lg shadow-black/5">
             <div className="h-7 w-7 rounded-full bg-muted" />
             <span className="text-sm text-muted-foreground">
-              But wait! There's more.
+              {t("inventorySection.footerMessage")}
             </span>
           </div>
         </div>
@@ -495,18 +453,17 @@ export default function ClothingStorePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Everything your clothing business needs in one simple platform,
-              from checkout to replenishment.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -527,19 +484,19 @@ export default function ClothingStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One <HandUnderline color="bg-primary">need</HandUnderline>, one{" "}
-            <HandUnderline color="bg-primary">app</HandUnderline>.
+            {t("appsSection.title")}{" "}
+            <HandUnderline color="bg-primary">{t("appsSection.titleHighlight")}</HandUnderline>
+            , {t("appsSection.titleMiddle")}{" "}
+            <HandUnderline color="bg-primary">{t("appsSection.titleHighlight2")}</HandUnderline>.
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your retail operation,
-            finance, supplier flows, and customer communication.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -547,7 +504,7 @@ export default function ClothingStorePage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -565,7 +522,7 @@ export default function ClothingStorePage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -573,7 +530,7 @@ export default function ClothingStorePage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -609,11 +566,10 @@ export default function ClothingStorePage() {
               <Heart className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the smart choice for modern
-              clothing retailers.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -626,26 +582,26 @@ export default function ClothingStorePage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your store"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a clothing store workflow that helps your team sell faster,
-            stock smarter, and scale from one boutique to many.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

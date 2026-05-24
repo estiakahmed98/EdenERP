@@ -1,0 +1,224 @@
+{
+      "metadata": {
+        "title": "Clothing Store | AdonERP",
+        "description": "AI-powered clothing store management platform for all your retail operations — from point of sale and inventory to loyalty programs and omnichannel selling."
+      },
+      "hero": {
+        "eyebrowIcon": "ShoppingBag",
+        "eyebrowLabel": "Fashion industry template",
+        "industriesLabel": "Industries / Clothing Store",
+        "preHeading": "The best software fit for your",
+        "title": "Clothing Store",
+        "description": "Easily configure products in PoS and eCommerce, use RFID barcode integration for real-time stock tracking, and create client reward systems to boost retention.",
+        "startButton": "Start now",
+        "advisorButton": "Meet an advisor",
+        "testimonialQuote": "AdonERP made us an omnichannel brand with 360-degree sales visibility. From RFID inventory to client loyalty, everything runs seamlessly.",
+        "testimonialName": "Pierre Hamblenne",
+        "testimonialRole": "CEO of J&JOY"
+      },
+      "posSection": {
+        "eyebrowIcon": "LayoutGrid",
+        "eyebrowLabel": "Efficient point of sale",
+        "title": "An efficient POS that anyone",
+        "subtitle": "can master in minutes",
+        "demo": {
+          "cartItems": {
+            "linenPant": "Linen Wide Leg Pant",
+            "chiffonJumpsuit": "Chiffon Jumpsuit",
+            "silkScarf": "Silk Scarf",
+            "cottonTShirt": "Cotton T-Shirt"
+          },
+          "subtotal": "Subtotal",
+          "tax": "Tax (10%)",
+          "keypad": {
+            "pay": "Pay"
+          },
+          "categoriesTab": "Categories",
+          "newArrivals": "New Arrivals",
+          "categories": {
+            "dresses": "Dresses",
+            "tops": "Tops",
+            "bottoms": "Bottoms",
+            "outerwear": "Outerwear",
+            "accessories": "Accessories",
+            "shoes": "Shoes"
+          },
+          "tapToAdd": "Tap to add",
+          "footerMessage": "Handle all transactions with ease."
+        }
+      },
+      "rfidSection": {
+        "title": "Scan it, track it",
+        "description": "Use RFID barcode integration for real-time stock tracking. Create or search products, process operations faster, and manage your inventory effortlessly.",
+        "demo": {
+          "productBadge": "Product details",
+          "inStock": "In stock: 42 units",
+          "fields": {
+            "price": "Price",
+            "sku": "SKU",
+            "category": "Category",
+            "sizes": "Sizes",
+            "colors": "Colors",
+            "material": "Material"
+          }
+        }
+      },
+      "inventorySection": {
+        "eyebrowIcon": "Package",
+        "eyebrowLabel": "Inventory discipline",
+        "title": "Stock management that never sleeps",
+        "description": "Real-time inventory level updates and automated replenishment keep your bestsellers always available.",
+        "table": {
+          "headers": [
+            "Product",
+            "Location",
+            "On Hand",
+            "Forecast",
+            "Min",
+            "Status"
+          ],
+          "rows": [
+            {
+              "product": "Linen Wide Leg Pant",
+              "location": "Warehouse A",
+              "onHand": "8",
+              "forecast": "12",
+              "min": "15",
+              "status": "Reorder"
+            },
+            {
+              "product": "Chiffon Jumpsuit",
+              "location": "Store Floor",
+              "onHand": "42",
+              "forecast": "28",
+              "min": "10",
+              "status": "Healthy"
+            },
+            {
+              "product": "Silk Scarf",
+              "location": "Warehouse B",
+              "onHand": "3",
+              "forecast": "5",
+              "min": "8",
+              "status": "Low stock"
+            },
+            {
+              "product": "Cotton T-Shirt",
+              "location": "Store Floor",
+              "onHand": "56",
+              "forecast": "34",
+              "min": "20",
+              "status": "Healthy"
+            },
+            {
+              "product": "Denim Jacket",
+              "location": "Warehouse A",
+              "onHand": "12",
+              "forecast": "9",
+              "min": "10",
+              "status": "Reorder"
+            }
+          ]
+        },
+        "footerMessage": "But wait! There's more."
+      },
+      "featuresSection": {
+        "title": "All the features",
+        "subtitle": "done right.",
+        "description": "Everything your clothing business needs in one simple platform, from checkout to replenishment.",
+        "list": [
+          {
+            "title": "Multiple variants",
+            "description": "Configure sizes, colors, and materials for every product in your catalog."
+          },
+          {
+            "title": "Loyalty programs",
+            "description": "Reward returning customers with points, tiered perks, and exclusive discounts."
+          },
+          {
+            "title": "All payment methods",
+            "description": "Accept cash, cards, e-wallets, and contactless payments in-store and online."
+          },
+          {
+            "title": "Dynamic pricing",
+            "description": "Set flexible pricing by season, customer type, or automatic promotions."
+          },
+          {
+            "title": "Gift cards & eWallet",
+            "description": "Create, top up, and redeem physical or digital gift cards in seconds."
+          },
+          {
+            "title": "Click & collect",
+            "description": "Let customers shop online and pick up orders at your store."
+          }
+        ]
+      },
+      "appsSection": {
+        "title": "One",
+        "titleHighlight": "need",
+        "titleMiddle": "one",
+        "titleHighlight2": "app",
+        "description": "Expand as you grow with connected apps for your retail operation, finance, supplier flows, and customer communication.",
+        "apps": [
+          {
+            "title": "Point of Sale",
+            "subtitle": "Fast in-store checkout",
+            "icon": "ShoppingBag"
+          },
+          {
+            "title": "Inventory",
+            "subtitle": "Real-time stock tracking",
+            "icon": "Package"
+          },
+          {
+            "title": "Purchase",
+            "subtitle": "Automated replenishment",
+            "icon": "ReceiptText"
+          },
+          {
+            "title": "Invoicing",
+            "subtitle": "Professional invoices",
+            "icon": "CreditCard"
+          },
+          {
+            "title": "eCommerce",
+            "subtitle": "Sell clothes online",
+            "icon": "ShoppingCart"
+          },
+          {
+            "title": "Planning",
+            "subtitle": "Optimize staff schedules",
+            "icon": "Users"
+          }
+        ],
+        "seeAllLink": "See all apps"
+      },
+      "testimonialsSection": {
+        "testimonials": [
+          {
+            "name": "Sophia Chen",
+            "role": "Founder, Moda Boutique",
+            "content": "AdonERP transformed how we manage our clothing store. From RFID inventory to seamless POS, everything just works.",
+            "rating": 5
+          },
+          {
+            "name": "Marcus Rivera",
+            "role": "Operations Director, Urban Threads",
+            "content": "The omnichannel capabilities are incredible. Our online and in-store stock sync perfectly, and customers love it.",
+            "rating": 5
+          }
+        ]
+      },
+      "ctaBanner": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with AdonERP — the smart choice for modern clothing retailers."
+      },
+      "footerCta": {
+        "eyebrowIcon": "Sparkles",
+        "eyebrowLabel": "Ready to scale your store",
+        "title": "Unleash",
+        "subtitle": "your growth potential",
+        "description": "Launch a clothing store workflow that helps your team sell faster, stock smarter, and scale from one boutique to many.",
+        "button": "Start now"
+      }
+}
