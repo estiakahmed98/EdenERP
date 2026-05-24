@@ -1,0 +1,193 @@
+{
+  "metadata": {
+    "title": "Restaurant | AdonERP",
+    "description": "AI-powered restaurant management platform for all your hospitality operations — from point of sale and table booking to inventory management and staff scheduling."
+  },
+  "hero": {
+    "eyebrowIcon": "Utensils",
+    "eyebrowLabel": "Restaurant industry template",
+    "industriesLabel": "Industries / Restaurant",
+    "preHeading": "The ultimate software for your",
+    "title": "Restaurant",
+    "description": "AdonERP offers everything your restaurant needs to manage point of sale, inventory, staff, reservations, purchasing, and services from one platform.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP improved resource management, making planning and invoicing more efficient, enhancing communication and collaboration across our team.",
+    "testimonialName": "Chef Antonio Rossi",
+    "testimonialRole": "Owner, Bella Italia"
+  },
+  "posSection": {
+    "title": "Take your orders with precision",
+    "description": "Manage restaurant orders, floor operations, split bills and payments with an intuitive point-of-sale interface."
+  },
+  "bookingSection": {
+    "title": "Table booking made simple",
+    "description": "Create table bookings, manage reservations, and organize restaurant floor plans with clear visual tools.",
+    "floorPlanLabel": "Floor plan • 12 tables"
+  },
+  "inventorySection": {
+    "title": "Never ever run",
+    "titleHighlight": "out of stock",
+    "description": "Automate purchase orders and manage replenishment so your kitchen always has the ingredients it needs.",
+    "table": {
+      "headers": ["Ingredient", "On Hand", "Min Stock", "Order Qty", "Status"],
+      "rows": [
+        {
+          "ingredient": "Tomatoes",
+          "onHand": "15 kg",
+          "minStock": "10 kg",
+          "orderQty": "20 kg",
+          "status": "Good"
+        },
+        {
+          "ingredient": "Onions",
+          "onHand": "8 kg",
+          "minStock": "10 kg",
+          "orderQty": "15 kg",
+          "status": "Reorder"
+        },
+        {
+          "ingredient": "Chicken Breast",
+          "onHand": "22 kg",
+          "minStock": "15 kg",
+          "orderQty": "25 kg",
+          "status": "Good"
+        },
+        {
+          "ingredient": "Olive Oil",
+          "onHand": "5 L",
+          "minStock": "8 L",
+          "orderQty": "12 L",
+          "status": "Low stock"
+        },
+        {
+          "ingredient": "Parmesan Cheese",
+          "onHand": "3 kg",
+          "minStock": "4 kg",
+          "orderQty": "6 kg",
+          "status": "Reorder"
+        },
+        {
+          "ingredient": "Fresh Basil",
+          "onHand": "2 kg",
+          "minStock": "2 kg",
+          "orderQty": "3 kg",
+          "status": "Warning"
+        }
+      ]
+    }
+  },
+  "planningSection": {
+    "title": "Plan your services",
+    "subtitle": "like a pro",
+    "description": "Schedule staff, organize shifts, manage planning and keep your restaurant team aligned every day.",
+    "badges": {
+      "shiftPlanning": "Shift planning",
+      "teamManagement": "Team management"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Smart restaurant tools for service, reservations, stock management, and team coordination from one platform.",
+    "list": [
+      {
+        "title": "Compatible with any device",
+        "description": "Works perfectly on tablets, laptops, desktops, and kitchen display systems."
+      },
+      {
+        "title": "Custom floor plans",
+        "description": "Design and manage your restaurant layout with drag-and-drop tools."
+      },
+      {
+        "title": "Table management",
+        "description": "Track table status, split bills, and manage orders efficiently."
+      },
+      {
+        "title": "Purchase Orders",
+        "description": "Create and track purchase orders for ingredients and supplies."
+      },
+      {
+        "title": "Table Booking",
+        "description": "Accept online reservations and manage booking calendar."
+      },
+      {
+        "title": "Staff Scheduling",
+        "description": "Plan shifts, manage attendance, and optimize labor costs."
+      },
+      {
+        "title": "Replenishment",
+        "description": "Automated reordering when stock reaches minimum levels."
+      },
+      {
+        "title": "Planning",
+        "description": "Organize services, events, and daily operations seamlessly."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your restaurant operation, inventory, reservations, and team management.",
+    "apps": [
+      {
+        "title": "Point of Sale",
+        "subtitle": "Fast order taking & billing",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Smart supplier orders",
+        "icon": "Package"
+      },
+      {
+        "title": "Appointments",
+        "subtitle": "Online table booking",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Real-time stock tracking",
+        "icon": "Box"
+      },
+      {
+        "title": "Planning",
+        "subtitle": "Staff shift management",
+        "icon": "Clock"
+      },
+      {
+        "title": "Website",
+        "subtitle": "Restaurant online presence",
+        "icon": "Utensils"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Chef Antonio Rossi",
+        "role": "Owner, Bella Italia",
+        "content": "AdonERP improved resource management, making planning and invoicing more efficient, enhancing communication and collaboration across our team.",
+        "rating": 5
+      },
+      {
+        "name": "Sarah Mitchell",
+        "role": "Operations Manager, The Gourmet Kitchen",
+        "content": "From table bookings to inventory management, AdonERP transformed how we run our restaurant. The POS is incredibly intuitive and our staff loves it.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for restaurants and hospitality."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your restaurant",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a restaurant management workflow that helps your team serve faster, manage reservations, and scale from one location to many.",
+    "button": "Start now"
+  }
+}
