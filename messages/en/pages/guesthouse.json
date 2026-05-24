@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Guest House | AdonERP",
+    "description": "AI-powered guest house management platform for all your hospitality operations — from online booking management and room planning to invoicing and guest services."
+  },
+  "hero": {
+    "eyebrowIcon": "Home",
+    "eyebrowLabel": "Hospitality industry template",
+    "industriesLabel": "Industries / Guest House",
+    "preHeading": "All-in-one software for your",
+    "title": "Guest House",
+    "description": "Capture attention with a stunning website, accept online bookings, manage availability, and take care of your guests from check-in to check-out with AdonERP.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP helped us achieve our goals while expanding, reducing costs and improving productivity, invoicing, and decision-making thanks to data availability.",
+    "testimonialName": "Elena Martinez",
+    "testimonialRole": "Owner, Seaside Guest House"
+  },
+  "websiteSection": {
+    "title": "Website ready for",
+    "titleHighlight": "bookings",
+    "cards": {
+      "builder": "Create a website using AdonERP's AI-based builder. Showcase your rooms, add photos, drag and drop elements, and optimize your SEO.",
+      "listing": "List your availabilities, room details, rates, and allow clients to make reservations online."
+    },
+    "demoRoom": {
+      "name": "Deluxe Room",
+      "price": "$150.00 / night",
+      "button": "Book Now"
+    }
+  },
+  "planningSection": {
+    "title": "Save time,",
+    "titleHighlight": "maximize",
+    "titleEnd": "bookings",
+    "description": "Manage your planning, bookings, modifications, room upgrades, and additional services from one connected calendar.",
+    "badges": {
+      "realTimeAvailability": "Real-time availability",
+      "guestManagement": "Guest management"
+    },
+    "calendarLabel": "Room availability calendar • June 2026"
+  },
+  "operationsSection": {
+    "title": "Guest-centric",
+    "titleHighlight": "operations",
+    "description": "Run smooth check-in and check-out, add optional services like breakfast or activities, and collect guest information when required.",
+    "badges": {
+      "expressCheckin": "Express check-in",
+      "breakfastService": "Breakfast service"
+    }
+  },
+  "invoicingSection": {
+    "title": "Flexible",
+    "titleHighlight": "invoicing",
+    "description": "Generate professional invoices in one click and accept multiple payment methods. Perfect for corporate clients and direct bookings.",
+    "badges": {
+      "multiplePayments": "Multiple payments",
+      "digitalReceipts": "Digital receipts"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Tools to manage bookings, rooms, payments, planning, and guest services all in one place.",
+    "list": [
+      {
+        "title": "Online booking management",
+        "description": "Accept reservations directly from your website with real-time availability."
+      },
+      {
+        "title": "Integrated sales and rental",
+        "description": "Sell additional services and manage room rentals from one platform."
+      },
+      {
+        "title": "City tax",
+        "description": "Automatically calculate and apply local city taxes to guest invoices."
+      },
+      {
+        "title": "Flexible invoicing",
+        "description": "Generate professional invoices for individuals and corporate clients."
+      },
+      {
+        "title": "Streamlined planning",
+        "description": "Manage room availability, check-ins, and check-outs from a single calendar."
+      },
+      {
+        "title": "Payment providers",
+        "description": "Accept multiple payment methods including cards and digital wallets."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your guest house operation, booking management, and guest services.",
+    "apps": [
+      {
+        "title": "Sales",
+        "subtitle": "Manage bookings and reservations",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Professional guest billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Rental",
+        "subtitle": "Room and equipment rental management",
+        "icon": "Building"
+      },
+      {
+        "title": "Website",
+        "subtitle": "Online booking website",
+        "icon": "Home"
+      },
+      {
+        "title": "Guest House",
+        "subtitle": "Complete guest management",
+        "icon": "Users"
+      },
+      {
+        "title": "Planning",
+        "subtitle": "Room and staff scheduling",
+        "icon": "Calendar"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Elena Martinez",
+        "role": "Owner, Seaside Guest House",
+        "content": "AdonERP helped us achieve our goals while expanding, reducing costs and improving productivity, invoicing, and decision-making thanks to data availability.",
+        "rating": 5
+      },
+      {
+        "name": "Thomas Anderson",
+        "role": "Operations Manager, Mountain View Lodge",
+        "content": "The online booking system and planning tools transformed our guest house. We now manage everything from one dashboard, and our guests love the seamless experience.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for guest houses and hospitality."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your property",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a guest house management workflow that helps you maximize bookings, streamline operations, and create memorable guest experiences.",
+    "button": "Start now"
+  }
+}
