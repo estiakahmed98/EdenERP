@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "title": "Our Latest Posts",
+    "categories": [
+      "All",
+      "Customer Reviews",
+      "Employee Testimonials",
+      "Partner Stories",
+      "Adon News",
+      "Business Hacks"
+    ]
+  },
+  "posts": [
+    {
+      "title": "Access Management Suite",
+      "image": "/Assets/apps/Access Management Suite.jpg",
+      "category": "Security",
+      "date": "May 24, 2026"
+    },
+    {
+      "title": "Accounting Suite for Modern Businesses",
+      "image": "/Assets/apps/Accounting Suite.jpg",
+      "category": "Accounting",
+      "date": "May 24, 2026"
+    },
+    {
+      "title": "AI Business Dashboard Analytics",
+      "image": "/Assets/apps/AI Business Dashboard.jpg",
+      "category": "Analytics",
+      "date": "May 23, 2026"
+    },
+    {
+      "title": "Advanced BI Dashboard Reporting",
+      "image": "/Assets/apps/BI Dashboard.png",
+      "category": "Business Intelligence",
+      "date": "May 23, 2026"
+    },
+    {
+      "title": "Contact Field Validation System",
+      "image": "/Assets/apps/Contact Field Validation.jpg",
+      "category": "CRM",
+      "date": "May 22, 2026"
+    },
+    {
+      "title": "Customer Follow-ups Automation",
+      "image": "/Assets/apps/Customer Follow-ups.webp",
+      "category": "Customer Success",
+      "date": "May 22, 2026"
+    },
+    {
+      "title": "Delivery Shipping Connector",
+      "image": "/Assets/apps/Delivery Shipping Connector.avif",
+      "category": "Logistics",
+      "date": "May 21, 2026"
+    },
+    {
+      "title": "Direct Print Pro Solution",
+      "image": "/Assets/apps/Direct Print Pro.jpg",
+      "category": "Printing",
+      "date": "May 21, 2026"
+    },
+    {
+      "title": "Export Manager for Enterprises",
+      "image": "/Assets/apps/Export Manager.jpg",
+      "category": "Finance",
+      "date": "May 20, 2026"
+    },
+    {
+      "title": "IT Hardware & Support Services",
+      "image": "/Assets/apps/IT Hardware & Support.jpg",
+      "category": "IT Services",
+      "date": "May 20, 2026"
+    },
+    {
+      "title": "Multi Currency Financial Reports",
+      "image": "/Assets/apps/Multi Currency Reports.jpg",
+      "category": "Accounting",
+      "date": "May 19, 2026"
+    },
+    {
+      "title": "Shopify Connector Integration",
+      "image": "/Assets/apps/Shopify-Connector.jpg",
+      "category": "eCommerce",
+      "date": "May 19, 2026"
+    }
+  ],
+  "description": "Discover how modern businesses use smart ERP, CRM, automation, analytics, and integrations to scale operations efficiently.",
+  "readMore": "Read More",
+  "pagination": {
+    "dates": ["2026", "2025"],
+    "lastPage": "133",
+    "aria": "Pagination"
+  },
+  "sidebar": {
+    "search": "Search...",
+    "archives": "Archives",
+    "tags": "Tags",
+    "allDates": "All dates"
+  },
+  "tags": [
+    "Accounting",
+    "CRM",
+    "Analytics",
+    "Security",
+    "Manufacturing",
+    "Finance",
+    "eCommerce",
+    "Logistics",
+    "Marketing",
+    "Technology",
+    "ERP",
+    "Business",
+    "Automation",
+    "Dashboard",
+    "IT Services",
+    "Customer Success"
+  ]
+}

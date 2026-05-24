@@ -1,10 +1,18 @@
-import ForumPage from "./ForumPage";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  title: "Forum | AdonERP Collaborate",
-  description:
-    "Join the Adon ERP community forum — ask questions, share insights, and connect with developers and users from 180+ countries.",
-};
+import ForumPage from "./ForumPage";
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("pages.community.metadata.collaborateForum");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/collaborate/forum"),
+  };
+}
 
 export default function Page() {
   return <ForumPage />;

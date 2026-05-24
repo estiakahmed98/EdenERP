@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "eyebrow": "Community / Learn / Documentation",
+    "kicker": "AdonERP Documentation",
+    "lead": "Everything you need to master",
+    "title": "AdonERP",
+    "description": "Browse clear guides, product documentation, developer references, and workflow examples to help your team launch faster and run every business process with confidence.",
+    "searchPlaceholder": "Search documentation, guides, APIs...",
+    "primaryCta": "Browse docs",
+    "secondaryCta": "Developer reference"
+  },
+  "preview": {
+    "domain": "docs.adon-erp.com",
+    "cardTitle": "Setup Guide",
+    "cardDescription": "Company, apps, users, and workflow basics",
+    "items": ["CRM configuration", "Inventory rules", "Invoice workflow"]
+  },
+  "categoriesSection": {
+    "eyebrow": "Product knowledge base",
+    "title": "Find the right answer faster.",
+    "description": "Documentation is grouped by workflow so business teams, managers, and developers can move from problem to solution without confusion.",
+    "browseLabel": "Explore articles"
+  },
+  "categories": [
+    {
+      "title": "Getting Started",
+      "description": "Install, configure, and launch your AdonERP workspace with guided setup steps.",
+      "icon": "Sparkles",
+      "articles": "18 articles"
+    },
+    {
+      "title": "Apps & Modules",
+      "description": "Learn how CRM, Sales, Inventory, Accounting, HR, and Projects work together.",
+      "icon": "Workflow",
+      "articles": "42 articles"
+    },
+    {
+      "title": "User Management",
+      "description": "Configure teams, roles, access rights, approvals, and secure collaboration rules.",
+      "icon": "Users",
+      "articles": "16 articles"
+    },
+    {
+      "title": "Developer Docs",
+      "description": "Use APIs, webhooks, custom fields, integrations, and automation workflows.",
+      "icon": "Code2",
+      "articles": "31 articles"
+    },
+    {
+      "title": "Security & Compliance",
+      "description": "Understand authentication, permissions, audit logs, backups, and data governance.",
+      "icon": "ShieldCheck",
+      "articles": "12 articles"
+    },
+    {
+      "title": "Support Center",
+      "description": "Troubleshoot common issues and find best-practice answers from the support team.",
+      "icon": "LifeBuoy",
+      "articles": "25 articles"
+    }
+  ],
+  "popularSection": {
+    "eyebrow": "Popular guides",
+    "titleLine1": "Learn what matters,",
+    "titleLine2": "exactly when you need it.",
+    "description": "Start with the most-used documentation topics for daily business setup, team operations, reporting, and system administration."
+  },
+  "popularDocs": [
+    "Set up your company profile and workspace",
+    "Invite users and assign role-based permissions",
+    "Create products, variants, and inventory rules",
+    "Connect sales orders with invoices and payments",
+    "Build approval workflows for your team",
+    "Configure dashboards and reporting views"
+  ],
+  "developerSection": {
+    "eyebrow": "Developer-friendly integration",
+    "title": "Connect AdonERP with your own tools.",
+    "description": "Use clean references and practical examples to integrate accounting, ecommerce, logistics, analytics, and internal automation systems.",
+    "label": "API Reference"
+  },
+  "developerSteps": [
+    "Create an API key from your admin settings",
+    "Choose REST endpoints or webhook events",
+    "Map AdonERP objects with your external system",
+    "Test requests safely in a sandbox workspace"
+  ],
+  "continueSection": {
+    "eyebrow": "Continue learning",
+    "title": "One platform, many ways to learn.",
+    "description": "Move from documentation to guided lessons, training resources, and community knowledge whenever your team needs deeper support."
+  },
+  "quickLinks": [
+    { "label": "Tutorials", "href": "/community/learn/tutorials" },
+    { "label": "Certifications", "href": "/community/learn/certifications" },
+    { "label": "Training", "href": "/community/learn/training" },
+    { "label": "Blog", "href": "/community/learn/blog" }
+  ]
+}

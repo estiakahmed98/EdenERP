@@ -1,10 +1,20 @@
 import CustomerStoriesPage from "./CustomerStoriesPage";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  title: "Customer Stories | AdonERP Get Services",
-  description:
-    "Read verified customer stories from 600+ companies across 45+ industries. See how Adon ERP teams deliver real results.",
-};
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations(
+    "pages.community.metadata.getServicesCustomerStories",
+  );
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/get-services/customer-stories"),
+  };
+}
 
 export default function Page() {
   return <CustomerStoriesPage />;

@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "eyebrow": "Implementation success",
+    "title": "Adon ERP Success Packs",
+    "subtitle": "98% implementation success rate, vs 65% without success pack (self-implemented).",
+    "cta": "Project Estimator"
+  },
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "hours": "4 hours",
+      "returning": "US$ 223.53",
+      "newCustomer": "US$ 190.00",
+      "description": "Perfect for small businesses"
+    },
+    {
+      "id": "basic",
+      "name": "Basic",
+      "hours": "25 hours",
+      "returning": "US$ 1,150.00",
+      "newCustomer": "US$ 977.50",
+      "description": "Ideal for growing companies"
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "hours": "50 hours",
+      "returning": "US$ 2,240.00",
+      "newCustomer": "US$ 1,904.00",
+      "description": "For established businesses"
+    },
+    {
+      "id": "custom",
+      "name": "Custom",
+      "hours": "100 hours",
+      "returning": "US$ 4,000.00",
+      "newCustomer": "US$ 3,400.00",
+      "description": "Tailored to specific needs"
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "hours": "200 hours",
+      "returning": "US$ 8,000.00",
+      "newCustomer": "US$ 6,800.00",
+      "description": "For enterprise-level operations"
+    }
+  ],
+  "table": {
+    "recommendedFor": "Recommended for:",
+    "consultantHours": "Dedicated Consultant Hours",
+    "returningCustomers": "Returning Customers",
+    "newCustomers": "New Customers",
+    "newCustomersNote": "(15% off)",
+    "notes": [
+      "* Travel time billed; Travel expenses billed separately.",
+      "** Extra monthly charges apply for maintenance.",
+      "*** A 15% discount applies automatically to new customers."
+    ]
+  },
+  "features": [
+    "Project Management",
+    "Email + Phone Support",
+    "Training & Coaching",
+    "Configuration",
+    "Data Import Assistance",
+    "Onsite Consulting",
+    "Customizations",
+    "Developments",
+    "Performance Issues"
+  ],
+  "faqs": [
+    {
+      "question": "What do the Success Packs include?",
+      "answer": "Success Packs include dedicated consultant hours, project management, training, configuration assistance, and ongoing support to ensure successful implementation."
+    },
+    {
+      "question": "What will the 'Dedicated Customer Success Consultant' do?",
+      "answer": "Your dedicated consultant will guide you through setup, provide best practices, assist with configuration, and ensure your team is trained properly."
+    },
+    {
+      "question": "What if I have custom needs that require developments and ad hoc integration?",
+      "answer": "Our team can handle custom developments and integrations. Custom and Pro packs include development hours, and additional hours can be purchased."
+    },
+    {
+      "question": "What should I do if I have performance issues?",
+      "answer": "Performance issues are covered under all Success Packs. Our team will diagnose and resolve any performance-related concerns promptly."
+    }
+  ],
+  "faqSection": {
+    "eyebrow": "Got questions?",
+    "title": "Any Questions?",
+    "description": "If the answer to your question is not on this page, please contact our Account Managers.",
+    "bannerLead": "Still have questions?",
+    "contact": "Contact our team"
+  },
+  "trust": [
+    "4.9/5 from 500+ reviews",
+    "15M+ happy users",
+    "98% success rate",
+    "30-day satisfaction guarantee"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "eyebrow": "Community learning center",
+    "breadcrumb": "Community / Learn / Tutorials",
+    "lead": "Learn AdonERP with practical",
+    "title": "Tutorials",
+    "description": "Master every AdonERP workflow through short, practical, and business-focused tutorials designed for owners, managers, operators, accountants, and developers.",
+    "primaryCta": "Start learning",
+    "secondaryCta": "View learning path"
+  },
+  "stats": [
+    { "value": "90+", "label": "practical tutorials" },
+    { "value": "12", "label": "business workflows" },
+    { "value": "15 min", "label": "average lesson" },
+    { "value": "24/7", "label": "self-paced access" }
+  ],
+  "player": {
+    "label": "Tutorial player",
+    "title": "Sales pipeline basics",
+    "steps": ["Watch", "Practice", "Apply"]
+  },
+  "categoriesSection": {
+    "eyebrow": "Browse by business workflow",
+    "titleLine1": "Everything you need",
+    "titleLine2": "to learn faster.",
+    "description": "Pick a topic, follow the guided lesson, and apply the workflow to your real business process immediately.",
+    "searchPlaceholder": "Search tutorials by app, workflow, role, or difficulty..."
+  },
+  "categories": [
+    {
+      "title": "Getting Started",
+      "description": "Set up your workspace, users, company profile, apps, and basic access rules.",
+      "lessons": "12 tutorials",
+      "icon": "Compass"
+    },
+    {
+      "title": "Sales & CRM",
+      "description": "Manage leads, customers, quotations, pipelines, follow-ups, and sales reports.",
+      "lessons": "18 tutorials",
+      "icon": "Users"
+    },
+    {
+      "title": "Inventory & Purchase",
+      "description": "Track products, stock moves, vendors, purchase orders, and replenishment rules.",
+      "lessons": "16 tutorials",
+      "icon": "LibraryBig"
+    },
+    {
+      "title": "Accounting & Invoicing",
+      "description": "Create invoices, track payments, review taxes, and monitor financial activity.",
+      "lessons": "14 tutorials",
+      "icon": "BadgeCheck"
+    },
+    {
+      "title": "Project & Tasks",
+      "description": "Organize tasks, teams, approvals, deadlines, and performance dashboards.",
+      "lessons": "20 tutorials",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "title": "Developer Guides",
+      "description": "Learn API usage, customization patterns, modules, automation, and integrations.",
+      "lessons": "10 tutorials",
+      "icon": "Code2"
+    }
+  ],
+  "featuredSection": {
+    "eyebrow": "Featured lessons",
+    "titleLine1": "Start with the",
+    "titleLine2": "most useful flows.",
+    "description": "These tutorials are selected for new teams who want to launch faster and understand the core AdonERP workflow from day one.",
+    "link": "See recommended path"
+  },
+  "featuredTutorials": [
+    { "title": "Create your first company workspace", "level": "Beginner", "time": "18 min", "tag": "Setup" },
+    { "title": "Build a complete sales pipeline", "level": "Beginner", "time": "24 min", "tag": "CRM" },
+    { "title": "Configure roles and permissions", "level": "Intermediate", "time": "32 min", "tag": "Security" },
+    { "title": "Automate purchase replenishment", "level": "Intermediate", "time": "28 min", "tag": "Inventory" }
+  ],
+  "learningPathSection": {
+    "eyebrow": "Guided learning path",
+    "titleLine1": "Learn it once.",
+    "titleLine2": "Use it every day.",
+    "description": "Follow a clear path from setup to daily operation. Each lesson is built around real business actions, not theory only.",
+    "stepDescription": "Complete this step and move to the next recommended workflow."
+  },
+  "learningPath": [
+    "Choose your business app",
+    "Watch guided tutorials",
+    "Practice with sample data",
+    "Apply it to your workflow",
+    "Track progress and improve"
+  ],
+  "ctaSection": {
+    "titleLine1": "Built for teams who",
+    "titleLine2": "want to learn by doing.",
+    "description": "Train your team with tutorials that connect learning, practice, and real operational workflows inside one business platform.",
+    "primaryCta": "Browse tutorials",
+    "secondaryCta": "Read documentation"
+  },
+  "faqSection": {
+    "eyebrow": "Common questions",
+    "title": "Tutorial FAQ"
+  },
+  "faqs": [
+    {
+      "q": "Are the tutorials beginner friendly?",
+      "a": "Yes. Each tutorial starts from the basics and then moves into practical business use cases."
+    },
+    {
+      "q": "Do I need technical knowledge?",
+      "a": "Most business tutorials require no coding. Developer tutorials are clearly marked separately."
+    },
+    {
+      "q": "Can my team follow the same learning path?",
+      "a": "Yes. Teams can use the tutorials to train sales, inventory, finance, support, and operations users."
+    },
+    {
+      "q": "Are tutorials connected with documentation?",
+      "a": "Tutorials explain the practical flow, while documentation can be used for deeper reference."
+    }
+  ]
+}

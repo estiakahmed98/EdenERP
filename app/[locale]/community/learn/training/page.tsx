@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
@@ -19,100 +18,52 @@ import {
   Users,
   Video,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Training | AdonERP Community",
-  description:
-    "Professional AdonERP training programs, live classes, workshops, and guided learning paths for teams.",
+import { Link } from "@/i18n/navigation";
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+const formatIcons = {
+  MonitorPlay,
+  Users,
+  Video,
+  Trophy,
 };
 
-const learningPaths = [
-  {
-    title: "Functional Consultant",
-    level: "Beginner to advanced",
-    duration: "6 weeks",
-    lessons: "42 lessons",
-    description:
-      "Master business workflows, app configuration, implementation planning, and client-facing ERP delivery.",
-    topics: ["CRM", "Sales", "Inventory", "Accounting", "Implementation"],
-  },
-  {
-    title: "Developer Bootcamp",
-    level: "Intermediate",
-    duration: "8 weeks",
-    lessons: "56 lessons",
-    description:
-      "Build modules, customize workflows, connect APIs, and prepare production-ready AdonERP extensions.",
-    topics: ["Next.js", "API", "Prisma", "Automation", "Deployment"],
-  },
-  {
-    title: "Business User Training",
-    level: "Team friendly",
-    duration: "3 weeks",
-    lessons: "24 lessons",
-    description:
-      "Train daily users to manage customers, quotations, invoices, tasks, reports, and approvals confidently.",
-    topics: ["Dashboard", "Tasks", "Reports", "Approvals", "Productivity"],
-  },
-];
+const liveClassIcons = {
+  BookOpenCheck,
+  Clock3,
+  BadgeCheck,
+};
 
-const formats = [
-  {
-    title: "Live Online Classes",
-    description:
-      "Join instructor-led sessions with real-time Q&A, demos, and guided exercises.",
-    icon: MonitorPlay,
-  },
-  {
-    title: "On-site Team Training",
-    description:
-      "Bring AdonERP experts to your organization for role-based hands-on workshops.",
-    icon: Users,
-  },
-  {
-    title: "Self-paced Academy",
-    description:
-      "Learn anytime through structured videos, checkpoints, quizzes, and downloadable resources.",
-    icon: Video,
-  },
-  {
-    title: "Certification Prep",
-    description:
-      "Practice implementation cases and prepare for consultant or developer certification.",
-    icon: Trophy,
-  },
-];
+type LearningPath = {
+  title: string;
+  level: string;
+  duration: string;
+  lessons: string;
+  description: string;
+  topics: string[];
+};
 
-const schedule = [
-  {
-    title: "ERP Foundations Workshop",
-    type: "Live online",
-    date: "Mar 12",
-    time: "10:00 AM",
-    location: "Remote",
-  },
-  {
-    title: "Inventory & Sales Masterclass",
-    type: "Advanced",
-    date: "Mar 18",
-    time: "02:00 PM",
-    location: "Remote",
-  },
-  {
-    title: "Developer Customization Lab",
-    type: "Hands-on",
-    date: "Mar 25",
-    time: "06:00 PM",
-    location: "Dhaka / Online",
-  },
-];
+type Format = {
+  title: string;
+  description: string;
+  icon: keyof typeof formatIcons;
+};
 
-const stats = [
-  ["12k+", "learners trained"],
-  ["96%", "completion satisfaction"],
-  ["40+", "practical labs"],
-  ["24/7", "academy access"],
-];
+type ScheduleItem = {
+  title: string;
+  type: string;
+  date: string;
+  time: string;
+  location: string;
+};
+
+type LiveClassItem = {
+  title: string;
+  text: string;
+  icon: keyof typeof liveClassIcons;
+};
 
 function ScriptHeading({
   children,
@@ -148,10 +99,26 @@ function SectionEyebrow({
   );
 }
 
-export default function TrainingPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("pages.community.metadata.learnTraining");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/learn/training"),
+  };
+}
+
+export default async function TrainingPage() {
+  const t = await getTranslations("pages.community.training");
+  const stats = t.raw("stats") as Array<{ value: string; label: string }>;
+  const liveClassItems = t.raw("liveClass.items") as LiveClassItem[];
+  const learningPaths = t.raw("learningPaths") as LearningPath[];
+  const formats = t.raw("formats") as Format[];
+  const schedule = t.raw("schedule") as ScheduleItem[];
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
-      {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_14%_12%,rgba(139,92,246,0.08),transparent_28%),radial-gradient(circle_at_82%_8%,rgba(139,92,246,0.06),transparent_25%)]" />
 
@@ -159,12 +126,12 @@ export default function TrainingPage() {
           <div className="max-w-2xl space-y-8">
             <SectionEyebrow
               icon={<GraduationCap className="h-4 w-4" />}
-              label="AdonERP Training Academy"
+              label={t("hero.eyebrow")}
             />
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Community / Learn / Training
+                {t("hero.breadcrumb")}
               </p>
               <h1
                 className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl lg:text-7xl"
@@ -173,14 +140,12 @@ export default function TrainingPage() {
                     '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                 }}
               >
-                Learn AdonERP
+                {t("hero.titleLine1")}
                 <br />
-                the practical way
+                {t("hero.titleLine2")}
               </h1>
               <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-                Build real ERP confidence with guided courses, live workshops,
-                hands-on labs, and role-based training for business users,
-                consultants, and developers.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -189,28 +154,28 @@ export default function TrainingPage() {
                 href="#paths"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Explore training paths
+                {t("hero.primaryCta")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
                 href="#schedule"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                View schedule
+                {t("hero.secondaryCta")}
               </Link>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-4">
-              {stats.map(([value, label]) => (
+              {stats.map((stat) => (
                 <div
-                  key={label}
+                  key={stat.label}
                   className="rounded-2xl border border-border bg-card/90 p-4 shadow-sm"
                 >
                   <p className="text-2xl font-semibold text-foreground">
-                    {value}
+                    {stat.value}
                   </p>
                   <p className="mt-1 text-xs font-medium text-muted-foreground">
-                    {label}
+                    {stat.label}
                   </p>
                 </div>
               ))}
@@ -225,10 +190,10 @@ export default function TrainingPage() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                      Live class
+                      {t("liveClass.label")}
                     </p>
                     <h3 className="mt-3 text-2xl font-semibold text-foreground">
-                      ERP Foundations
+                      {t("liveClass.title")}
                     </h3>
                   </div>
                   <div className="flex h-14 w-14 items-center justify-center rounded-full bg-card text-primary shadow-lg">
@@ -237,26 +202,22 @@ export default function TrainingPage() {
                 </div>
 
                 <div className="mt-8 grid gap-4 rounded-[1.6rem] bg-card/85 p-4 shadow-sm">
-                  {[
-                    [BookOpenCheck, "12 modules", "Structured learning"],
-                    [Clock3, "4h 30m", "Total video time"],
-                    [BadgeCheck, "Certificate", "After completion"],
-                  ].map(([Icon, title, text]) => {
-                    const IconComponent = Icon as typeof BookOpenCheck;
+                  {liveClassItems.map((item) => {
+                    const Icon = liveClassIcons[item.icon];
                     return (
                       <div
-                        key={title as string}
+                        key={item.title}
                         className="flex items-center gap-4 rounded-2xl bg-muted/30 px-4 py-3"
                       >
                         <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-card text-primary shadow-sm">
-                          <IconComponent className="h-5 w-5" />
+                          <Icon className="h-5 w-5" />
                         </div>
                         <div>
                           <p className="font-semibold text-foreground">
-                            {title as string}
+                            {item.title}
                           </p>
                           <p className="text-sm text-muted-foreground">
-                            {text as string}
+                            {item.text}
                           </p>
                         </div>
                       </div>
@@ -271,10 +232,11 @@ export default function TrainingPage() {
                     ))}
                   </div>
                   <p className="mt-4 text-sm leading-6 text-slate-200">
-                    “The training helped our team understand the full workflow,
-                    not just individual screens.”
+                    &quot;{t("liveClass.quote")}&quot;
                   </p>
-                  <p className="mt-4 text-sm font-semibold">Ariyan Rahman</p>
+                  <p className="mt-4 text-sm font-semibold">
+                    {t("liveClass.author")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -282,7 +244,6 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* Role-based learning paths Section */}
       <section
         id="paths"
         className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
@@ -290,15 +251,13 @@ export default function TrainingPage() {
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow
             icon={<Layers3 className="h-4 w-4" />}
-            label="Role-based learning paths"
+            label={t("pathsSection.eyebrow")}
           />
           <div className="mt-8">
-            <ScriptHeading>Choose the path that fits your role</ScriptHeading>
+            <ScriptHeading>{t("pathsSection.title")}</ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-            Every course path is designed around practical implementation work,
-            so learners can apply the concepts immediately in real business
-            scenarios.
+            {t("pathsSection.description")}
           </p>
         </div>
 
@@ -312,11 +271,11 @@ export default function TrainingPage() {
                   : "border-border"
               }`}
             >
-              {index === 1 && (
+              {index === 1 ? (
                 <div className="mb-5 inline-flex rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                  Most popular
+                  {t("pathsSection.popular")}
                 </div>
-              )}
+              ) : null}
               <h3 className="text-2xl font-semibold text-foreground">
                 {path.title}
               </h3>
@@ -351,7 +310,7 @@ export default function TrainingPage() {
                 href="#get-started"
                 className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80"
               >
-                Start this path
+                {t("pathsSection.cta")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -359,24 +318,22 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* Training formats Section */}
       <section className="relative overflow-hidden rounded-t-[4rem] bg-muted/30 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              Training formats
+              {t("formatsSection.titleLine1")}
               <br />
-              for every team.
+              {t("formatsSection.titleLine2")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Learn live, on-site, or at your own pace. Mix formats to build a
-              training plan that works for your team and implementation stage.
+              {t("formatsSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {formats.map((format) => {
-              const Icon = format.icon;
+              const Icon = formatIcons[format.icon];
               return (
                 <div
                   key={format.title}
@@ -398,7 +355,6 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* Upcoming sessions Section */}
       <section
         id="schedule"
         className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
@@ -407,18 +363,17 @@ export default function TrainingPage() {
           <div className="space-y-5 self-center">
             <SectionEyebrow
               icon={<CalendarDays className="h-4 w-4" />}
-              label="Upcoming sessions"
+              label={t("scheduleSection.eyebrow")}
             />
-            <ScriptHeading>Join the next live training</ScriptHeading>
+            <ScriptHeading>{t("scheduleSection.title")}</ScriptHeading>
             <p className="max-w-md text-base leading-7 text-muted-foreground">
-              Reserve a seat for upcoming classes and workshops. Each session
-              includes downloadable resources, recordings, and exercises.
+              {t("scheduleSection.description")}
             </p>
             <Link
               href="#get-started"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Reserve a seat
+              {t("scheduleSection.cta")}
             </Link>
           </div>
 
@@ -452,7 +407,7 @@ export default function TrainingPage() {
                     href="#get-started"
                     className="inline-flex items-center justify-center rounded-xl border border-border px-5 py-3 text-sm font-semibold text-foreground hover:border-primary/30 hover:text-primary"
                   >
-                    Enroll
+                    {t("scheduleSection.enroll")}
                   </Link>
                 </div>
               </div>
@@ -461,36 +416,34 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      {/* Final CTA Section */}
       <section
         id="get-started"
         className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24"
       >
         <SectionEyebrow
           icon={<Sparkles className="h-4 w-4" />}
-          label="Start learning today"
+          label={t("ctaSection.eyebrow")}
         />
         <div className="mt-8">
           <ScriptHeading>
-            Build stronger teams
+            {t("ctaSection.titleLine1")}
             <br />
-            with AdonERP training
+            {t("ctaSection.titleLine2")}
           </ScriptHeading>
         </div>
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-          Give your users, consultants, and developers a clear learning path so
-          adoption becomes faster, cleaner, and easier to scale.
+          {t("ctaSection.description")}
         </p>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/pricing"
             className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
           >
-            Start now
+            {t("ctaSection.primaryCta")}
           </Link>
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm font-medium text-accent-foreground">
             <Check className="h-4 w-4" />
-            Includes certificate option
+            {t("ctaSection.badge")}
           </div>
         </div>
       </section>

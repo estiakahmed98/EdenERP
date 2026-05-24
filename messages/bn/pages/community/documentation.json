@@ -1,0 +1,99 @@
+{
+  "hero": {
+    "eyebrow": "কমিউনিটি / Learn / Documentation",
+    "kicker": "AdonERP Documentation",
+    "lead": "AdonERP আয়ত্ত করতে",
+    "title": "যা দরকার সব",
+    "description": "Clear guide, product documentation, developer reference এবং workflow example দেখে আপনার টিমকে দ্রুত launch করতে এবং আত্মবিশ্বাসের সাথে process চালাতে সাহায্য করুন।",
+    "searchPlaceholder": "Documentation, guide, API খুঁজুন...",
+    "primaryCta": "ডকস দেখুন",
+    "secondaryCta": "Developer reference"
+  },
+  "preview": {
+    "domain": "docs.adon-erp.com",
+    "cardTitle": "Setup Guide",
+    "cardDescription": "Company, app, user এবং workflow basics",
+    "items": ["CRM configuration", "Inventory rules", "Invoice workflow"]
+  },
+  "categoriesSection": {
+    "eyebrow": "প্রোডাক্ট নলেজ বেস",
+    "title": "সঠিক উত্তর দ্রুত খুঁজে নিন।",
+    "description": "Documentation-কে workflow অনুযায়ী সাজানো হয়েছে, যাতে business team, manager এবং developer সহজে problem থেকে solution-এ যেতে পারে।",
+    "browseLabel": "আর্টিকেল দেখুন"
+  },
+  "categories": [
+    {
+      "title": "Getting Started",
+      "description": "Guided setup step দিয়ে আপনার AdonERP workspace install, configure এবং launch করুন।",
+      "icon": "Sparkles",
+      "articles": "১৮টি আর্টিকেল"
+    },
+    {
+      "title": "Apps & Modules",
+      "description": "CRM, Sales, Inventory, Accounting, HR এবং Project কীভাবে একসাথে কাজ করে তা জানুন।",
+      "icon": "Workflow",
+      "articles": "৪২টি আর্টিকেল"
+    },
+    {
+      "title": "User Management",
+      "description": "Team, role, access right, approval এবং secure collaboration rule configure করুন।",
+      "icon": "Users",
+      "articles": "১৬টি আর্টিকেল"
+    },
+    {
+      "title": "Developer Docs",
+      "description": "API, webhook, custom field, integration এবং automation workflow ব্যবহার শিখুন।",
+      "icon": "Code2",
+      "articles": "৩১টি আর্টিকেল"
+    },
+    {
+      "title": "Security & Compliance",
+      "description": "Authentication, permission, audit log, backup এবং data governance বুঝুন।",
+      "icon": "ShieldCheck",
+      "articles": "১২টি আর্টিকেল"
+    },
+    {
+      "title": "Support Center",
+      "description": "Common issue troubleshoot করুন এবং support team-এর best-practice answer খুঁজে নিন।",
+      "icon": "LifeBuoy",
+      "articles": "২৫টি আর্টিকেল"
+    }
+  ],
+  "popularSection": {
+    "eyebrow": "জনপ্রিয় গাইড",
+    "titleLine1": "যা দরকার,",
+    "titleLine2": "ঠিক সময়ে তা শিখুন।",
+    "description": "Daily setup, team operation, reporting এবং system administration-এর সবচেয়ে ব্যবহৃত documentation topic দিয়ে শুরু করুন।"
+  },
+  "popularDocs": [
+    "Company profile এবং workspace সেটআপ করুন",
+    "User invite করে role-based permission দিন",
+    "Product, variant এবং inventory rule তৈরি করুন",
+    "Sales order-এর সাথে invoice ও payment connect করুন",
+    "আপনার টিমের জন্য approval workflow তৈরি করুন",
+    "Dashboard এবং reporting view configure করুন"
+  ],
+  "developerSection": {
+    "eyebrow": "Developer-friendly integration",
+    "title": "নিজের tool-এর সাথে AdonERP connect করুন।",
+    "description": "Accounting, ecommerce, logistics, analytics এবং internal automation system integrate করতে practical example ও clean reference ব্যবহার করুন।",
+    "label": "API Reference"
+  },
+  "developerSteps": [
+    "Admin settings থেকে API key তৈরি করুন",
+    "REST endpoint বা webhook event বেছে নিন",
+    "AdonERP object-কে external system-এর সাথে map করুন",
+    "Sandbox workspace-এ request নিরাপদভাবে test করুন"
+  ],
+  "continueSection": {
+    "eyebrow": "শেখা চালিয়ে যান",
+    "title": "এক প্ল্যাটফর্ম, শেখার অনেক পথ।",
+    "description": "যখন deeper support দরকার হবে, তখন documentation থেকে guided lesson, training resource এবং community knowledge-এ move করুন।"
+  },
+  "quickLinks": [
+    { "label": "Tutorials", "href": "/community/learn/tutorials" },
+    { "label": "Certifications", "href": "/community/learn/certifications" },
+    { "label": "Training", "href": "/community/learn/training" },
+    { "label": "Blog", "href": "/community/learn/blog" }
+  ]
+}

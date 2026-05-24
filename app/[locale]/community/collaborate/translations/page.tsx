@@ -1,10 +1,20 @@
-import TranslationsPage from "./TranslationsPage";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  title: "Community Translations | AdonERP Collaborate",
-  description:
-    "Join the Adon ERP global translation community — make the platform accessible in every language, earn recognition, and help millions of users.",
-};
+import TranslationsPage from "./TranslationsPage";
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations(
+    "pages.community.metadata.collaborateTranslations",
+  );
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/collaborate/translations"),
+  };
+}
 
 export default function Page() {
   return <TranslationsPage />;

@@ -7,10 +7,13 @@
     }
   },
   "theme": {
+    "label": "থিম",
     "switchToLight": "লাইট মোডে পরিবর্তন করুন",
     "switchToDark": "ডার্ক মোডে পরিবর্তন করুন",
     "light": "লাইট",
-    "dark": "ডার্ক"
+    "dark": "ডার্ক",
+    "green": "সবুজ",
+    "oceanBlue": "ওশান ব্লু"
   },
   "actions": {
     "watchDemo": "ডেমো দেখুন",

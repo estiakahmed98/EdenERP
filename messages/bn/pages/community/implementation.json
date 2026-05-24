@@ -1,0 +1,104 @@
+{
+  "hero": {
+    "eyebrow": "ইমপ্লিমেন্টেশন সাফল্য",
+    "title": "Adon ERP Success Packs",
+    "subtitle": "সাকসেস প্যাক থাকলে ইমপ্লিমেন্টেশনের সাফল্যের হার ৯৮%, আর না থাকলে ৬৫% (নিজে বাস্তবায়িত)।",
+    "cta": "প্রজেক্ট এস্টিমেটর"
+  },
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "hours": "4 hours",
+      "returning": "US$ 223.53",
+      "newCustomer": "US$ 190.00",
+      "description": "ছোট ব্যবসার জন্য"
+    },
+    {
+      "id": "basic",
+      "name": "Basic",
+      "hours": "25 hours",
+      "returning": "US$ 1,150.00",
+      "newCustomer": "US$ 977.50",
+      "description": "বর্ধনশীল কোম্পানির জন্য"
+    },
+    {
+      "id": "standard",
+      "name": "Standard",
+      "hours": "50 hours",
+      "returning": "US$ 2,240.00",
+      "newCustomer": "US$ 1,904.00",
+      "description": "প্রতিষ্ঠিত ব্যবসার জন্য"
+    },
+    {
+      "id": "custom",
+      "name": "Custom",
+      "hours": "100 hours",
+      "returning": "US$ 4,000.00",
+      "newCustomer": "US$ 3,400.00",
+      "description": "নির্দিষ্ট চাহিদার জন্য"
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "hours": "200 hours",
+      "returning": "US$ 8,000.00",
+      "newCustomer": "US$ 6,800.00",
+      "description": "এন্টারপ্রাইজ পর্যায়ের জন্য"
+    }
+  ],
+  "table": {
+    "recommendedFor": "কার জন্য প্রস্তাবিত:",
+    "consultantHours": "ডেডিকেটেড কনসালট্যান্ট ঘণ্টা",
+    "returningCustomers": "ফেরত গ্রাহক",
+    "newCustomers": "নতুন গ্রাহক",
+    "newCustomersNote": "(১৫% ছাড়)",
+    "notes": [
+      "* Travel time billed; Travel expenses billed separately.",
+      "** Extra monthly charges apply for maintenance.",
+      "*** New customers-এর জন্য ১৫% ছাড় স্বয়ংক্রিয়ভাবে প্রযোজ্য।"
+    ]
+  },
+  "features": [
+    "প্রজেক্ট ম্যানেজমেন্ট",
+    "ইমেইল + ফোন সাপোর্ট",
+    "ট্রেনিং ও কোচিং",
+    "কনফিগারেশন",
+    "ডেটা ইমপোর্ট সহায়তা",
+    "অনসাইট কনসাল্টিং",
+    "কাস্টমাইজেশন",
+    "ডেভেলপমেন্ট",
+    "পারফরম্যান্স সমস্যা"
+  ],
+  "faqs": [
+    {
+      "question": "Success Packs-এ কী কী থাকে?",
+      "answer": "Success Packs-এ ডেডিকেটেড কনসালট্যান্ট ঘণ্টা, প্রজেক্ট ম্যানেজমেন্ট, ট্রেনিং, কনফিগারেশন সহায়তা এবং চলমান সাপোর্ট থাকে।"
+    },
+    {
+      "question": "'Dedicated Customer Success Consultant' কী করবেন?",
+      "answer": "আপনার ডেডিকেটেড কনসালট্যান্ট সেটআপ, best practices, কনফিগারেশন এবং টিম ট্রেনিং-এ গাইড করবেন।"
+    },
+    {
+      "question": "কাস্টম ডেভেলপমেন্ট বা ad hoc integration লাগলে কী হবে?",
+      "answer": "আমাদের টিম কাস্টম ডেভেলপমেন্ট এবং integration সামলাতে পারে। Custom ও Pro প্যাকেজে development hours থাকে, অতিরিক্ত ঘণ্টাও কেনা যায়।"
+    },
+    {
+      "question": "পারফরম্যান্স সমস্যা হলে কী করব?",
+      "answer": "সব Success Pack-এ performance issues covered। আমাদের টিম দ্রুত diagnose করে সমাধান করবে।"
+    }
+  ],
+  "faqSection": {
+    "eyebrow": "প্রশ্ন আছে?",
+    "title": "আরও প্রশ্ন?",
+    "description": "আপনার প্রশ্নের উত্তর এই পৃষ্ঠায় না থাকলে আমাদের Account Managers-এর সাথে যোগাযোগ করুন।",
+    "bannerLead": "এখনও প্রশ্ন আছে?",
+    "contact": "আমাদের টিমের সাথে যোগাযোগ করুন"
+  },
+  "trust": [
+    "500+ রিভিউ থেকে 4.9/5",
+    "15M+ সন্তুষ্ট ব্যবহারকারী",
+    "98% সাফল্যের হার",
+    "30 দিনের সন্তুষ্টি গ্যারান্টি"
+  ]
+}

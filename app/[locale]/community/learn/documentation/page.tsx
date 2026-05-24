@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
@@ -15,80 +14,31 @@ import {
   Users,
   Workflow,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Documentation | AdonERP",
-  description:
-    "Explore AdonERP documentation, guides, developer references, and implementation resources.",
+import { Link } from "@/i18n/navigation";
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+const categoryIcons = {
+  Sparkles,
+  Workflow,
+  Users,
+  Code2,
+  ShieldCheck,
+  LifeBuoy,
 };
 
-const docCategories = [
-  {
-    title: "Getting Started",
-    description:
-      "Install, configure, and launch your AdonERP workspace with guided setup steps.",
-    icon: Sparkles,
-    articles: "18 articles",
-  },
-  {
-    title: "Apps & Modules",
-    description:
-      "Learn how CRM, Sales, Inventory, Accounting, HR, and Projects work together.",
-    icon: Workflow,
-    articles: "42 articles",
-  },
-  {
-    title: "User Management",
-    description:
-      "Configure teams, roles, access rights, approvals, and secure collaboration rules.",
-    icon: Users,
-    articles: "16 articles",
-  },
-  {
-    title: "Developer Docs",
-    description:
-      "Use APIs, webhooks, custom fields, integrations, and automation workflows.",
-    icon: Code2,
-    articles: "31 articles",
-  },
-  {
-    title: "Security & Compliance",
-    description:
-      "Understand authentication, permissions, audit logs, backups, and data governance.",
-    icon: ShieldCheck,
-    articles: "12 articles",
-  },
-  {
-    title: "Support Center",
-    description:
-      "Troubleshoot common issues and find best-practice answers from the support team.",
-    icon: LifeBuoy,
-    articles: "25 articles",
-  },
-];
+type DocCategory = {
+  title: string;
+  description: string;
+  icon: keyof typeof categoryIcons;
+  articles: string;
+};
 
-const popularDocs = [
-  "Set up your company profile and workspace",
-  "Invite users and assign role-based permissions",
-  "Create products, variants, and inventory rules",
-  "Connect sales orders with invoices and payments",
-  "Build approval workflows for your team",
-  "Configure dashboards and reporting views",
-];
-
-const developerSteps = [
-  "Create an API key from your admin settings",
-  "Choose REST endpoints or webhook events",
-  "Map AdonERP objects with your external system",
-  "Test requests safely in a sandbox workspace",
-];
-
-const quickLinks = [
-  { label: "Tutorials", href: "/community/learn/tutorials" },
-  { label: "Certifications", href: "/community/learn/certifications" },
-  { label: "Training", href: "/community/learn/training" },
-  { label: "Blog", href: "/community/learn/blog" },
-];
+type QuickLink = {
+  label: string;
+  href: string;
+};
 
 function ScriptHeading({
   children,
@@ -124,10 +74,28 @@ function SectionEyebrow({
   );
 }
 
-export default function DocumentationPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations(
+    "pages.community.metadata.learnDocumentation",
+  );
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/learn/documentation"),
+  };
+}
+
+export default async function DocumentationPage() {
+  const t = await getTranslations("pages.community.documentation");
+  const categories = t.raw("categories") as DocCategory[];
+  const previewItems = t.raw("preview.items") as string[];
+  const popularDocs = t.raw("popularDocs") as string[];
+  const developerSteps = t.raw("developerSteps") as string[];
+  const quickLinks = t.raw("quickLinks") as QuickLink[];
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
-      {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_12%_16%,rgba(139,92,246,0.08),transparent_26%),radial-gradient(circle_at_88%_12%,rgba(139,92,246,0.06),transparent_25%)]" />
 
@@ -135,12 +103,12 @@ export default function DocumentationPage() {
           <div className="max-w-2xl space-y-8">
             <SectionEyebrow
               icon={<BookOpen className="h-4 w-4" />}
-              label="Community / Learn / Documentation"
+              label={t("hero.eyebrow")}
             />
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                AdonERP Documentation
+                {t("hero.kicker")}
               </p>
               <div className="space-y-3">
                 <p
@@ -150,7 +118,7 @@ export default function DocumentationPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Everything you need to master
+                  {t("hero.lead")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -159,13 +127,11 @@ export default function DocumentationPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  AdonERP
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-                Browse clear guides, product documentation, developer
-                references, and workflow examples to help your team launch
-                faster and run every business process with confidence.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -173,7 +139,7 @@ export default function DocumentationPage() {
               <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search documentation, guides, APIs..."
+                placeholder={t("hero.searchPlaceholder")}
                 className="h-14 w-full rounded-2xl border border-border bg-card pl-13 pr-4 text-sm text-foreground shadow-[0_20px_60px_rgba(0,0,0,0.08)] outline-none transition-all placeholder:text-muted-foreground focus:border-primary/40 focus:ring-4 focus:ring-primary/10"
               />
             </div>
@@ -183,13 +149,13 @@ export default function DocumentationPage() {
                 href="#categories"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Browse docs
+                {t("hero.primaryCta")}
               </Link>
               <Link
                 href="#developer"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Developer reference
+                {t("hero.secondaryCta")}
               </Link>
             </div>
           </div>
@@ -204,7 +170,7 @@ export default function DocumentationPage() {
                   <span className="h-3 w-3 rounded-full bg-amber-400" />
                   <span className="h-3 w-3 rounded-full bg-emerald-400" />
                   <span className="ml-auto rounded-full bg-white/10 px-3 py-1 text-xs text-white/70">
-                    docs.adon-erp.com
+                    {t("preview.domain")}
                   </span>
                 </div>
 
@@ -215,29 +181,27 @@ export default function DocumentationPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">
-                        Setup Guide
+                        {t("preview.cardTitle")}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        Company, apps, users, and workflow basics
+                        {t("preview.cardDescription")}
                       </p>
                     </div>
                   </div>
 
-                  {["CRM configuration", "Inventory rules", "Invoice workflow"].map(
-                    (item, index) => (
-                      <div
-                        key={item}
-                        className="flex items-center justify-between rounded-2xl bg-muted/30 px-4 py-3"
-                      >
-                        <span className="text-sm font-medium text-foreground">
-                          {item}
-                        </span>
-                        <span className="rounded-full bg-card px-3 py-1 text-xs text-muted-foreground shadow-sm">
-                          {index + 4} min
-                        </span>
-                      </div>
-                    )
-                  )}
+                  {previewItems.map((item, index) => (
+                    <div
+                      key={item}
+                      className="flex items-center justify-between rounded-2xl bg-muted/30 px-4 py-3"
+                    >
+                      <span className="text-sm font-medium text-foreground">
+                        {item}
+                      </span>
+                      <span className="rounded-full bg-card px-3 py-1 text-xs text-muted-foreground shadow-sm">
+                        {index + 4} min
+                      </span>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="mt-4 rounded-[1.5rem] bg-slate-950 p-4 font-mono text-xs leading-6 text-violet-100">
@@ -251,7 +215,6 @@ export default function DocumentationPage() {
         </div>
       </section>
 
-      {/* Knowledge Base Categories Section */}
       <section
         id="categories"
         className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20"
@@ -259,25 +222,23 @@ export default function DocumentationPage() {
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow
             icon={<FileText className="h-4 w-4" />}
-            label="Product knowledge base"
+            label={t("categoriesSection.eyebrow")}
           />
           <div className="mt-8">
-            <ScriptHeading>Find the right answer faster.</ScriptHeading>
+            <ScriptHeading>{t("categoriesSection.title")}</ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-            Documentation is grouped by workflow so business teams, managers,
-            and developers can move from problem to solution without confusion.
+            {t("categoriesSection.description")}
           </p>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {docCategories.map((category) => {
-            const Icon = category.icon;
+          {categories.map((category) => {
+            const Icon = categoryIcons[category.icon];
 
             return (
-              <Link
+              <div
                 key={category.title}
-                href="#"
                 className="group rounded-[1.7rem] border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_25px_70px_rgba(0,0,0,0.1)]"
               >
                 <div className="flex items-start justify-between gap-4">
@@ -295,40 +256,38 @@ export default function DocumentationPage() {
                   {category.description}
                 </p>
                 <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                  Explore articles
+                  {t("categoriesSection.browseLabel")}
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
       </section>
 
-      {/* Popular Guides Section */}
       <section className="relative overflow-hidden rounded-t-[4rem] bg-muted/30 py-16 lg:py-24">
         <div className="absolute inset-y-0 left-0 w-44 bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.06),transparent_68%)]" />
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <div className="space-y-5 self-center">
             <SectionEyebrow
               icon={<PlayCircle className="h-4 w-4" />}
-              label="Popular guides"
+              label={t("popularSection.eyebrow")}
             />
             <ScriptHeading>
-              Learn what matters,
-              <br /> exactly when you need it.
+              {t("popularSection.titleLine1")}
+              <br />
+              {t("popularSection.titleLine2")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Start with the most-used documentation topics for daily business
-              setup, team operations, reporting, and system administration.
+              {t("popularSection.description")}
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-border bg-card p-4 shadow-[0_35px_90px_rgba(0,0,0,0.08)] sm:p-6">
             <div className="divide-y divide-border">
               {popularDocs.map((doc, index) => (
-                <Link
+                <div
                   key={doc}
-                  href="#"
                   className="group flex items-center justify-between gap-4 py-4"
                 >
                   <div className="flex items-center gap-4">
@@ -340,14 +299,13 @@ export default function DocumentationPage() {
                     </span>
                   </div>
                   <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
-                </Link>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Developer Section */}
       <section
         id="developer"
         className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8 lg:py-24"
@@ -358,7 +316,9 @@ export default function DocumentationPage() {
             <div className="mb-5 flex items-center justify-between text-white">
               <div className="flex items-center gap-2">
                 <TerminalSquare className="h-5 w-5 text-emerald-300" />
-                <span className="font-semibold">API Reference</span>
+                <span className="font-semibold">
+                  {t("developerSection.label")}
+                </span>
               </div>
               <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/60">
                 v1.0
@@ -383,14 +343,13 @@ export default function DocumentationPage() {
         <div className="space-y-6 self-center">
           <SectionEyebrow
             icon={<Code2 className="h-4 w-4" />}
-            label="Developer-friendly integration"
+            label={t("developerSection.eyebrow")}
           />
           <ScriptHeading className="text-3xl sm:text-4xl">
-            Connect AdonERP with your own tools.
+            {t("developerSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Use clean references and practical examples to integrate accounting,
-            ecommerce, logistics, analytics, and internal automation systems.
+            {t("developerSection.description")}
           </p>
           <div className="space-y-3">
             {developerSteps.map((step) => (
@@ -408,7 +367,6 @@ export default function DocumentationPage() {
         </div>
       </section>
 
-      {/* Continue Learning Banner */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
         <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-background via-primary/5 to-muted px-6 py-14 shadow-[0_35px_90px_rgba(0,0,0,0.08)] sm:px-10">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
@@ -417,20 +375,19 @@ export default function DocumentationPage() {
           <div className="relative mx-auto max-w-3xl text-center">
             <SectionEyebrow
               icon={<BookOpen className="h-4 w-4" />}
-              label="Continue learning"
+              label={t("continueSection.eyebrow")}
             />
             <div className="mt-8">
-              <ScriptHeading>One platform, many ways to learn.</ScriptHeading>
+              <ScriptHeading>{t("continueSection.title")}</ScriptHeading>
             </div>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              Move from documentation to guided lessons, training resources, and
-              community knowledge whenever your team needs deeper support.
+              {t("continueSection.description")}
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {quickLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   className="inline-flex items-center rounded-xl border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary"
                 >

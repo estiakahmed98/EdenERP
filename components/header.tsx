@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
-import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
 
 import LanguageSwitcher from "@/components/language-switcher";
+import ThemeSwitcher from "@/components/theme-switcher";
 import { Link } from "@/i18n/navigation";
 
 type MegaMenuLink = {
@@ -376,16 +376,13 @@ const navItems: NavItem[] = [
 
 export default function Header() {
   const t = useTranslations("layout.header");
-  const commonT = useTranslations("common.theme");
   const navId = useId();
   const headerRef = useRef<HTMLElement | null>(null);
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
-  const { theme, resolvedTheme, setTheme } = useTheme();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<MenuId | null>(null);
   const [mobileOpenMenu, setMobileOpenMenu] = useState<MenuId | null>(null);
-  const [mounted, setMounted] = useState(false);
   const [mobileDrawerTop, setMobileDrawerTop] = useState(0);
 
   useEffect(() => {
@@ -415,10 +412,6 @@ export default function Header() {
   }, [openDesktopMenu]);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
     function updateMobileDrawerTop() {
       setMobileDrawerTop(headerRef.current?.offsetHeight ?? 0);
     }
@@ -439,13 +432,6 @@ export default function Header() {
       window.removeEventListener("resize", onResize);
     };
   }, []);
-
-  function toggleTheme() {
-    const current = resolvedTheme ?? theme;
-    setTheme(current === "dark" ? "light" : "dark");
-  }
-
-  const isDark = mounted && (resolvedTheme ?? theme) === "dark";
 
   return (
     <header
@@ -592,16 +578,7 @@ export default function Header() {
           </button>
 
           <div className="hidden items-center gap-2 md:flex">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={
-                isDark ? commonT("switchToLight") : commonT("switchToDark")
-              }
-              className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white p-2 text-slate-700 shadow-xs transition-colors hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900/60"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
+            <ThemeSwitcher variant="desktop" />
 
             <div className="flex items-center gap-3 rounded-xl bg-(--purple) text-white">
               <Link
@@ -624,18 +601,8 @@ export default function Header() {
               mobileDrawerTop > 0 ? `calc(100dvh - ${mobileDrawerTop}px)` : "100dvh",
           }}
         >
-          <div className="mb-5 flex justify-end">
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={
-                isDark ? commonT("switchToLight") : commonT("switchToDark")
-              }
-              className="flex items-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 px-5 py-3 text-sm font-bold text-slate-800 dark:text-white"
-            >
-              {isDark ? <Sun size={16} /> : <Moon size={16} />}
-              <span>{isDark ? commonT("light") : commonT("dark")}</span>
-            </button>
+          <div className="mb-5">
+            <ThemeSwitcher variant="mobile" />
           </div>
 
           <div className="space-y-3">

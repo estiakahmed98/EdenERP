@@ -21,19 +21,17 @@ type HubAction = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations(
-    "pages.community.metadata.getSoftwareDownload",
-  );
+  const t = await getTranslations("pages.community.metadata.root");
 
   return {
     title: t("title"),
     description: t("description"),
-    alternates: getLocaleAlternates("/community/get-the-software/download"),
+    alternates: getLocaleAlternates("/community"),
   };
 }
 
-export default async function DownloadPage() {
-  const t = await getTranslations("pages.community.hubs.getSoftwareDownload");
+export default async function CommunityPage() {
+  const t = await getTranslations("pages.community.hubs.communityRoot");
 
   return (
     <CommunityHubPage

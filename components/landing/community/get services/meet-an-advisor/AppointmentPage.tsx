@@ -1,39 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import {
-  ArrowRight,
-  Sparkles,
-  Star,
-  Users,
+  Briefcase,
+  Building,
   Calendar,
   Check,
   Clock,
-  Video,
-  Building,
-  Briefcase,
-  Award,
+  Star,
+  Users,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const appointments = [
-  {
-    title: "Micro Company",
-    subtitle: "1-5 employees",
-    type: "Online",
-    duration: "1 hour",
-    image: "/Assets/apps/meeting.avif",
-    benefits: ["tailored demonstration", "custom recommendations", "quick setup guide"],
-  },
-  {
-    title: "Small Company",
-    subtitle: "5-250 employees",
-    type: "Online",
-    duration: "1 hour",
-    image: "/Assets/apps/meeting2.avif",
-    benefits: ["tailored demonstration", "implementation roadmap", "team training plan"],
-  },
-];
+type Appointment = {
+  id: string;
+  title: string;
+  subtitle: string;
+  type: string;
+  duration: string;
+  image: string;
+  benefits: string[];
+};
 
 function ScriptHeading({
   children,
@@ -71,40 +58,37 @@ function SectionEyebrow({
 }
 
 export default function AppointmentPage() {
+  const t = useTranslations("pages.community.meet-advisor");
+  const appointments = t.raw("appointments") as Appointment[];
+  const trust = t.raw("trust") as string[];
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
-      {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-[28rem] bg-[radial-gradient(circle_at_15%_12%,rgba(139,92,246,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
         <div className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
           <SectionEyebrow
             icon={<Calendar className="h-4 w-4" />}
-            label="Book a meeting"
+            label={t("hero.eyebrow")}
           />
           <ScriptHeading className="mt-6">
-            Choose your{" "}
-            <span className="underline decoration-primary underline-offset-8">
-              appointment
-            </span>
+            {t("hero.title")}
           </ScriptHeading>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Schedule a free consultation with our experts. Get personalized
-            guidance for your business needs.
+            {t("hero.description")}
           </p>
         </div>
       </section>
 
-      {/* Cards Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           {appointments.map((item, index) => (
             <div
-              key={item.title}
+              key={item.id}
               className="group rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
-              {/* Image Container */}
               <div className="relative overflow-hidden rounded-t-2xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
+                <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 to-transparent" />
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -112,17 +96,16 @@ export default function AppointmentPage() {
                   height={300}
                   className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-4 right-4 z-20 flex gap-2">
-                  <span className="rounded-full bg-primary/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary-foreground">
+                <div className="absolute right-4 top-4 z-20 flex gap-2">
+                  <span className="rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold text-primary-foreground backdrop-blur-sm">
                     {item.type}
                   </span>
-                  <span className="rounded-full bg-card/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-foreground">
+                  <span className="rounded-full bg-card/90 px-3 py-1 text-xs font-semibold text-foreground backdrop-blur-sm">
                     ◷ {item.duration}
                   </span>
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-7">
                 <div className="mb-2 flex items-center gap-2">
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -136,17 +119,22 @@ export default function AppointmentPage() {
                     <h3 className="text-2xl font-bold text-foreground">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {item.subtitle}
+                    </p>
                   </div>
                 </div>
 
                 <div className="mt-5 space-y-3">
                   <p className="text-sm font-semibold text-primary">
-                    What you'll get:
+                    {t("card.label")}
                   </p>
                   <ul className="space-y-2">
                     {item.benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <li
+                        key={benefit}
+                        className="flex items-center gap-2 text-sm text-muted-foreground"
+                      >
                         <Check className="h-4 w-4 text-primary" />
                         {benefit}
                       </li>
@@ -155,41 +143,39 @@ export default function AppointmentPage() {
                 </div>
 
                 <button className="mt-8 w-full rounded-xl bg-primary py-3.5 font-semibold text-primary-foreground transition hover:bg-primary/90">
-                  Book now
+                  {t("card.book")}
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Extra Info Banner */}
         <div className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center">
           <div className="mx-auto flex max-w-2xl flex-col items-center gap-4 sm:flex-row sm:justify-between sm:text-left">
             <div>
-              <h4 className="font-semibold text-foreground">Need a custom plan?</h4>
+              <h4 className="font-semibold text-foreground">{t("banner.title")}</h4>
               <p className="text-sm text-muted-foreground">
-                We also offer consultations for larger teams and enterprises.
+                {t("banner.description")}
               </p>
             </div>
             <button className="rounded-xl border border-primary/30 bg-card px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary/10">
-              Contact Sales
+              {t("banner.action")}
             </button>
           </div>
         </div>
 
-        {/* Trust Badge */}
         <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-center">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-            <span>4.9/5 from 500+ reviews</span>
+            <span>{trust[0]}</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Users className="h-4 w-4 text-primary" />
-            <span>15M+ happy users</span>
+            <span>{trust[1]}</span>
           </div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Clock className="h-4 w-4 text-primary" />
-            <span>Free 1-hour session</span>
+            <span>{trust[2]}</span>
           </div>
         </div>
       </section>

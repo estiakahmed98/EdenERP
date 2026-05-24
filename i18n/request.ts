@@ -9,6 +9,27 @@ type Locale = "en" | "bn";
 
 type Messages = Record<string, unknown>;
 
+function isRecord(value: unknown): value is Messages {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function mergeMessages(
+  existingValue: unknown,
+  incomingValue: unknown,
+): unknown {
+  if (isRecord(existingValue) && isRecord(incomingValue)) {
+    const merged: Messages = { ...existingValue };
+
+    for (const [key, value] of Object.entries(incomingValue)) {
+      merged[key] = key in merged ? mergeMessages(merged[key], value) : value;
+    }
+
+    return merged;
+  }
+
+  return incomingValue;
+}
+
 async function loadMessagesFromDirectory(
   directoryPath: string,
 ): Promise<Messages> {
@@ -21,15 +42,21 @@ async function loadMessagesFromDirectory(
       const fullPath = path.join(directoryPath, entry.name);
 
       if (entry.isDirectory()) {
-        messages[entry.name] = await loadMessagesFromDirectory(fullPath);
+        const incomingMessages = await loadMessagesFromDirectory(fullPath);
+        messages[entry.name] = entry.name in messages
+          ? mergeMessages(messages[entry.name], incomingMessages)
+          : incomingMessages;
         return;
       }
 
       if (entry.isFile() && entry.name.endsWith(".json")) {
         const namespace = entry.name.replace(/\.json$/, "");
         const fileContent = await readFile(fullPath, "utf8");
+        const parsedContent = JSON.parse(fileContent);
 
-        messages[namespace] = JSON.parse(fileContent);
+        messages[namespace] = namespace in messages
+          ? mergeMessages(messages[namespace], parsedContent)
+          : parsedContent;
       }
     }),
   );

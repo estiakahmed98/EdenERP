@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "eyebrow": "Book a meeting",
+    "title": "Choose your appointment",
+    "description": "Schedule a free consultation with our experts. Get personalized guidance for your business needs."
+  },
+  "appointments": [
+    {
+      "id": "micro",
+      "title": "Micro Company",
+      "subtitle": "1-5 employees",
+      "type": "Online",
+      "duration": "1 hour",
+      "image": "/Assets/apps/meeting.avif",
+      "benefits": ["tailored demonstration", "custom recommendations", "quick setup guide"]
+    },
+    {
+      "id": "small",
+      "title": "Small Company",
+      "subtitle": "5-250 employees",
+      "type": "Online",
+      "duration": "1 hour",
+      "image": "/Assets/apps/meeting2.avif",
+      "benefits": ["tailored demonstration", "implementation roadmap", "team training plan"]
+    }
+  ],
+  "banner": {
+    "title": "Need a custom plan?",
+    "description": "We also offer consultations for larger teams and enterprises.",
+    "action": "Contact Sales"
+  },
+  "card": {
+    "label": "What you'll get:",
+    "book": "Book now"
+  },
+  "trust": [
+    "4.9/5 from 500+ reviews",
+    "15M+ happy users",
+    "Free 1-hour session"
+  ]
+}
