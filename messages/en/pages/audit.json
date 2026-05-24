@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "title": "Audit & Certification | AdonERP",
+    "description": "AI-powered audit and certification management platform for all your professional services — from website builder and CRM pipeline to field service, timesheets, and invoicing."
+  },
+  "hero": {
+    "eyebrowIcon": "ClipboardCheck",
+    "eyebrowLabel": "Audit industry template",
+    "industriesLabel": "Industries / Audit & Certification",
+    "preHeading": "#1 software for",
+    "title": "Audit and Certification businesses",
+    "description": "AdonERP contains an AI-based website builder, an intuitive CRM pipeline to manage leads, and a complete Field Service solution to handle your onsite visits.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "Our client base has increased by 40%, and AdonERP's advanced technology and tools have reduced operational efforts by 80%.",
+    "testimonialName": "Robert Chen",
+    "testimonialRole": "Managing Director, Assurance Plus"
+  },
+  "websiteSection": {
+    "title": "AI-based",
+    "titleHighlight": "website",
+    "titleEnd": "builder",
+    "description": "Build a professional website using AI-generated content, templates, picture libraries and drag-and-drop elements.",
+    "badges": {
+      "aiContent": "AI content generation",
+      "freeDomain": "Free domain included"
+    },
+    "cards": {
+      "forms": "Set up contact forms that automatically create leads, appointments or onsite audit tasks.",
+      "domain": "Enjoy a free domain plan connected to your database and business site."
+    }
+  },
+  "leadsSection": {
+    "title": "Easy lead",
+    "subtitle": "management",
+    "description": "Centralize leads from your website, email, phone and direct contact in one intuitive pipeline. Schedule activities and turn leads into sales with ease.",
+    "badges": {
+      "leadTracking": "Lead tracking",
+      "activityScheduling": "Activity scheduling"
+    },
+    "stages": ["New Leads", "Qualified", "Won"]
+  },
+  "mobileSection": {
+    "title": "Mobile solution for onsite",
+    "titleHighlight": " audits",
+    "cards": {
+      "streamline": "Streamline services. Once a sale is finalized, a task containing all visit information is automatically created.",
+      "auditors": "Auditors can navigate to the client location, verify information, fill certification data and get signatures."
+    },
+    "features": {
+      "navigate": "Navigate to location",
+      "fillData": "Fill in certification data"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Tools for audit and certification teams to manage leads, websites, visits, timesheets, worksheets and invoicing.",
+    "list": [
+      {
+        "title": "CRM pipeline",
+        "description": "Track leads, audits, and certifications through every stage."
+      },
+      {
+        "title": "Website builder",
+        "description": "Create professional websites with AI-generated content and forms."
+      },
+      {
+        "title": "Service invoicing",
+        "description": "Generate invoices for audit services and certification fees."
+      },
+      {
+        "title": "Timesheets",
+        "description": "Track billable hours by client, audit type, and certification level."
+      },
+      {
+        "title": "Custom worksheets",
+        "description": "Create detailed audit checklists and certification forms."
+      },
+      {
+        "title": "Free domain name",
+        "description": "Get a professional domain name included with your website."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your audit and certification business, lead management, field service, and billing.",
+    "apps": [
+      {
+        "title": "Website",
+        "subtitle": "Professional online presence",
+        "icon": "Home"
+      },
+      {
+        "title": "Sign",
+        "subtitle": "Electronic signatures",
+        "icon": "FileSignature"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Client billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "CRM",
+        "subtitle": "Lead management",
+        "icon": "Users"
+      },
+      {
+        "title": "Appointments",
+        "subtitle": "Onsite visit scheduling",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Audit task tracking",
+        "icon": "HardDrive"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Robert Chen",
+        "role": "Managing Director, Assurance Plus",
+        "content": "Our client base has increased by 40%, and AdonERP's advanced technology and tools have reduced operational efforts by 80%.",
+        "rating": 5
+      },
+      {
+        "name": "Lisa Thompson",
+        "role": "Operations Manager, Global Certifications",
+        "content": "The mobile audit solution transformed our field operations. Auditors can now complete certifications onsite and get signatures instantly.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for audit firms and certification bodies."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your firm",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch an audit and certification workflow that helps you manage leads, conduct onsite visits, and deliver professional certifications.",
+    "button": "Start now"
+  }
+}

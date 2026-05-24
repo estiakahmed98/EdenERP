@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -49,6 +50,7 @@ import {
   TrendingUp,
   BarChart,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Marketing Agency | AdonERP Industries",
@@ -56,58 +58,55 @@ export const metadata: Metadata = {
     "A marketing agency landing page for AdonERP with website builder, project management, CRM, invoicing, and campaign tracking.",
 };
 
-const features = [
-  {
-    title: "Website builder",
-    description: "Create stunning agency websites with drag-and-drop tools and AI assistance.",
-  },
-  {
-    title: "Product configurator",
-    description: "Build customizable service packages for different client needs.",
-  },
-  {
-    title: "Pricelists",
-    description: "Set flexible pricing by client tier, service type, or campaign.",
-  },
-  {
-    title: "Automated delivery",
-    description: "Auto-send deliverables and reports to clients upon completion.",
-  },
-  {
-    title: "Recurring invoices",
-    description: "Set up subscription billing for retainer clients.",
-  },
-  {
-    title: "Easy purchasing",
-    description: "Manage vendor orders for ad spend, printing, and tools.",
-  },
-];
-
-const apps = [
-  { title: "CRM", subtitle: "Lead and client management", icon: Users },
-  { title: "Sales", subtitle: "Proposals and contracts", icon: ShoppingCart },
-  { title: "Project", subtitle: "Campaign task tracking", icon: HardDrive },
-  { title: "Social Marketing", subtitle: "Social media management", icon: Megaphone },
-  { title: "Invoicing", subtitle: "Client billing", icon: ReceiptText },
-  { title: "Website", subtitle: "Portfolio showcase", icon: Home },
-];
-
-const testimonials = [
-  {
-    name: "Michael Bennett",
-    role: "CEO, Creative Spark Agency",
-    content:
-      "With most systems, you get 70% of what you hoped. With AdonERP, you get more than what you expected. It transformed our agency operations.",
-    rating: 5,
-  },
-  {
-    name: "Jessica Taylor",
-    role: "Operations Director, Digital Flow",
-    content:
-      "From project management to recurring invoices, AdonERP streamlined everything. Our team is more productive and clients love the transparency.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+    Ruler,
+    HardDrive,
+    Hammer,
+    ClipboardList,
+    Warehouse,
+    Shirt,
+    Scissors,
+    Factory,
+    Wrench,
+    Cog,
+    Layers,
+    Sofa,
+    Armchair,
+    Calculator,
+    Briefcase,
+    FileCheck,
+    Megaphone,
+    TrendingUp,
+    BarChart,
+  };
+  return icons[iconName] || Megaphone;
+};
 
 function ScriptHeading({
   children,
@@ -120,8 +119,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -130,21 +128,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function MarketingAgencyPage() {
+  const t = useTranslations("pages.marketing");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -153,12 +158,13 @@ export default function MarketingAgencyPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Megaphone className="h-4 w-4" />}
-              label="Agency industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Marketing Agency
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -168,7 +174,7 @@ export default function MarketingAgencyPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The best solution for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -177,13 +183,11 @@ export default function MarketingAgencyPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Marketing Agency
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP allows you to streamline all aspects of your marketing agency on
-                one intuitive platform, from building websites to managing projects,
-                client communication and invoicing.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -192,26 +196,27 @@ export default function MarketingAgencyPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                With most systems, you get 70% of what you hoped. With AdonERP, you get
-                more than what you expected. It transformed our agency operations.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Michael Bennett</p>
-                  <p className="text-sm text-muted-foreground">CEO, Creative Spark Agency</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -266,17 +271,15 @@ export default function MarketingAgencyPage() {
       {/* Make your services shine Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          Make your services shine
+          {t("servicesSection.title")}
         </ScriptHeading>
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Create a stunning website using AdonERP's AI-based builder, add
-            photos, drag-and-drop elements, and SEO optimization tools.
+            {t("servicesSection.cards.website")}
           </div>
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Use templates and customization tools to showcase your agency services
-            in a clear, polished way.
+            {t("servicesSection.cards.templates")}
           </div>
         </div>
 
@@ -295,10 +298,10 @@ export default function MarketingAgencyPage() {
 
           <div className="rounded-2xl border border-border bg-card p-5 shadow-xl">
             <div className="mb-4 aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/20 to-muted" />
-            <h3 className="font-bold text-foreground">Creative Studio</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Present your services beautifully</p>
+            <h3 className="font-bold text-foreground">{t("servicesSection.demoService.name")}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{t("servicesSection.demoService.description")}</p>
             <button className="mt-4 w-full rounded-xl bg-secondary py-2 text-sm font-semibold text-secondary-foreground transition hover:bg-secondary/90">
-              View Portfolio
+              {t("servicesSection.demoService.button")}
             </button>
           </div>
         </div>
@@ -308,20 +311,19 @@ export default function MarketingAgencyPage() {
       <section className="bg-primary/5 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>
-            All-in-one{" "}
+            {t("projectSection.title")}{" "}
             <span className="underline decoration-primary underline-offset-8">
-              project
+              {t("projectSection.titleHighlight")}
             </span>{" "}
-            hub
+            {t("projectSection.titleEnd")}
           </ScriptHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-            Manage projects, tasks, timesheets, meetings, documents and team
-            expenses from one complete dashboard.
+            {t("projectSection.description")}
           </p>
 
           <div className="mx-auto mt-12 rounded-2xl border border-border bg-card p-6 shadow-xl">
             <div className="grid gap-4 md:grid-cols-4">
-              {["To Do", "In Progress", "Review", "Done"].map((stage) => (
+              {t.raw("projectSection.stages").map((stage: string) => (
                 <div key={stage} className="rounded-xl bg-muted/30 p-4">
                   <div className="mb-3 text-xs font-semibold text-primary">{stage}</div>
                   <div className="space-y-2">
@@ -341,30 +343,29 @@ export default function MarketingAgencyPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              From lead to{" "}
+              {t("pipelineSection.title")}{" "}
               <span className="underline decoration-primary underline-offset-8">
-                invoice
+                {t("pipelineSection.titleHighlight")}
               </span>
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Centralize leads, send invoices to clients in one click, and choose
-              the best payment methods for your agency.
+              {t("pipelineSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <TrendingUp className="h-4 w-4" />
-                Lead tracking
+                {t("pipelineSection.badges.leadTracking")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <ReceiptText className="h-4 w-4" />
-                One-click invoicing
+                {t("pipelineSection.badges.oneClickInvoicing")}
               </div>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
             <div className="grid gap-4 md:grid-cols-3">
-              {["New", "Proposal", "Won"].map((stage, idx) => (
+              {t.raw("pipelineSection.stages").map((stage: string) => (
                 <div key={stage} className="rounded-xl bg-muted/30 p-4">
                   <div className="mb-3 text-xs font-semibold text-primary">{stage}</div>
                   <div className="space-y-2">
@@ -385,7 +386,7 @@ export default function MarketingAgencyPage() {
             <div className="order-2 md:order-1 rounded-2xl border border-border bg-card p-6 shadow-xl">
               <div className="mb-5 h-8 rounded-xl bg-muted" />
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-                {["SEO", "Social", "Content", "Email"].map((item, idx) => (
+                {t.raw("expandSection.services").map((item: string, idx: number) => (
                   <div key={item} className="rounded-xl bg-muted/30 p-4 text-center">
                     <div className="text-2xl mb-2">{idx === 0 ? "🔍" : idx === 1 ? "📱" : idx === 2 ? "✍️" : "📧"}</div>
                     <div className="text-xs font-medium text-foreground">{item}</div>
@@ -396,20 +397,19 @@ export default function MarketingAgencyPage() {
 
             <div className="order-1 md:order-2">
               <ScriptHeading>
-                Expand as you grow
+                {t("expandSection.title")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Marketing warehouse apps centralize all your tools in one platform,
-                automate scheduling, create events, and track campaign performance.
+                {t("expandSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <BarChart className="h-4 w-4 text-primary" />
-                  Campaign analytics
+                  {t("expandSection.badges.campaignAnalytics")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Calendar className="h-4 w-4 text-primary" />
-                  Auto-scheduling
+                  {t("expandSection.badges.autoScheduling")}
                 </div>
               </div>
             </div>
@@ -423,18 +423,17 @@ export default function MarketingAgencyPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Practical tools for agency websites, services, sales,
-              automation, purchasing and recurring billing.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -455,18 +454,16 @@ export default function MarketingAgencyPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your agency, client
-            management, projects, and billing.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -474,7 +471,7 @@ export default function MarketingAgencyPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -492,7 +489,7 @@ export default function MarketingAgencyPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -500,7 +497,7 @@ export default function MarketingAgencyPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -536,11 +533,10 @@ export default function MarketingAgencyPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              marketing agencies and creative studios.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -553,26 +549,26 @@ export default function MarketingAgencyPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your agency"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a marketing agency workflow that helps you manage clients,
-            track campaigns, and deliver exceptional results.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

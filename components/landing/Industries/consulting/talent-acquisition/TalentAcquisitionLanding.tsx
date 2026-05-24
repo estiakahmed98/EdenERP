@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -57,6 +58,7 @@ import {
   Mail,
   Calendar as CalendarIcon,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Talent Acquisition | AdonERP Industries",
@@ -64,58 +66,63 @@ export const metadata: Metadata = {
     "A talent acquisition landing page for AdonERP with job posting, candidate tracking, interview scheduling, and document management.",
 };
 
-const features = [
-  {
-    title: "Stay on target",
-    description: "Track recruitment metrics and hiring goals in real-time.",
-  },
-  {
-    title: "Personalized website",
-    description: "Create custom career pages that reflect your employer brand.",
-  },
-  {
-    title: "Mobile friendly",
-    description: "Candidates can apply from any device, anywhere.",
-  },
-  {
-    title: "Make the most of your time",
-    description: "Automate repetitive tasks and focus on interviewing.",
-  },
-  {
-    title: "Professional communication",
-    description: "Send automated updates and personalized messages to candidates.",
-  },
-  {
-    title: "Automated data importing",
-    description: "Import candidate data from job boards and career sites automatically.",
-  },
-];
-
-const apps = [
-  { title: "Online Jobs", subtitle: "Job posting management", icon: Briefcase },
-  { title: "Invoicing", subtitle: "Recruitment billing", icon: ReceiptText },
-  { title: "Employees Referral", subtitle: "Referral program tracking", icon: UserPlus },
-  { title: "Employees", subtitle: "HR and staff management", icon: Users },
-  { title: "Documents", subtitle: "Candidate file storage", icon: FileText },
-  { title: "Social Marketing", subtitle: "Job promotion", icon: Megaphone },
-];
-
-const testimonials = [
-  {
-    name: "Sarah Johnson",
-    role: "HR Director, TalentFinders",
-    content:
-      "AdonERP saved us plenty of web development time, allowing us to focus on individual strengths which is immensely helpful for start-ups.",
-    rating: 5,
-  },
-  {
-    name: "Michael Chen",
-    role: "Recruitment Manager, Global Hire",
-    content:
-      "The automated pipeline and interview scheduling transformed our hiring process. We reduced time-to-hire by 60%.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+    Ruler,
+    HardDrive,
+    Hammer,
+    ClipboardList,
+    Warehouse,
+    Shirt,
+    Scissors,
+    Factory,
+    Wrench,
+    Cog,
+    Layers,
+    Sofa,
+    Armchair,
+    Calculator,
+    Briefcase,
+    FileCheck,
+    Megaphone,
+    TrendingUp,
+    BarChart,
+    ClipboardCheck,
+    MapPin,
+    Smartphone,
+    UserPlus,
+    Target,
+    Globe,
+    Mail,
+    CalendarIcon,
+  };
+  return icons[iconName] || UserPlus;
+};
 
 function ScriptHeading({
   children,
@@ -128,8 +135,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -138,21 +144,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function TalentAcquisitionPage() {
+  const t = useTranslations("pages.talent");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -161,12 +174,13 @@ export default function TalentAcquisitionPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<UserPlus className="h-4 w-4" />}
-              label="HR & recruitment template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Talent Acquisition
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -176,7 +190,7 @@ export default function TalentAcquisitionPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  All-in-one solution for successful
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -185,12 +199,11 @@ export default function TalentAcquisitionPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  ⭐ Talent Acquisition
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP is a dedicated solution for talent acquisition, supporting every
-                step from building job pages to managing candidates and hiring.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -199,26 +212,27 @@ export default function TalentAcquisitionPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                AdonERP saved us plenty of web development time, allowing us to focus on
-                individual strengths which is immensely helpful for start-ups.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Sarah Johnson</p>
-                  <p className="text-sm text-muted-foreground">HR Director, TalentFinders</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -273,19 +287,18 @@ export default function TalentAcquisitionPage() {
       {/* From your website to your pipeline Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          From your website to your{" "}
+          {t("pipelineSection.title")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            pipeline
+            {t("pipelineSection.titleHighlight")}
           </span>
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-          Smart contact forms turn website visitors into applicants and push their
-          information directly into your recruitment pipeline.
+          {t("pipelineSection.description")}
         </p>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-6 text-left shadow-xl">
-            <h3 className="mb-5 font-bold text-foreground">Apply Now</h3>
+            <h3 className="mb-5 font-bold text-foreground">{t("pipelineSection.applyForm.title")}</h3>
             <div className="space-y-3">
               <div className="h-10 rounded-xl bg-muted" />
               <div className="h-10 rounded-xl bg-muted" />
@@ -295,7 +308,7 @@ export default function TalentAcquisitionPage() {
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6 text-left shadow-xl">
-            <h3 className="font-bold text-foreground">New Applicant</h3>
+            <h3 className="font-bold text-foreground">{t("pipelineSection.applicantCard.title")}</h3>
             <div className="mt-5 space-y-3">
               <div className="h-8 rounded-xl bg-muted" />
               <div className="h-8 rounded-xl bg-primary/20" />
@@ -309,40 +322,33 @@ export default function TalentAcquisitionPage() {
       <section className="bg-primary/5 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>
-            Efficiently manage your{" "}
-            <span className="bg-accent/20 px-2 rounded">talent pool</span>
+            {t("talentSection.title")}{" "}
+            <span className="bg-accent/20 px-2 rounded">{t("talentSection.titleHighlight")}</span>
           </ScriptHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-            Track applications, candidates and documents in one place so your team
-            can evaluate the right people faster.
+            {t("talentSection.description")}
           </p>
 
           <div className="relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
             <div className="border-b border-border bg-muted/30 px-6 py-4">
               <div className="grid grid-cols-4 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                <span>Name</span>
-                <span>Position</span>
-                <span>Stage</span>
-                <span>Applied</span>
+                {t.raw("talentSection.table.headers").map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["Emma Watson", "Frontend Developer", "Screening", "May 15"],
-                ["James Chen", "Product Manager", "Interview", "May 14"],
-                ["Sophia Lee", "UX Designer", "New", "May 13"],
-                ["Michael Brown", "Backend Engineer", "Technical Test", "May 12"],
-              ].map((row) => (
-                <div key={row[0]} className="grid grid-cols-4 gap-3 px-6 py-4 text-sm">
-                  <span className="font-medium text-foreground">{row[0]}</span>
-                  <span className="text-foreground">{row[1]}</span>
+              {t.raw("talentSection.table.rows").map((row: any) => (
+                <div key={row.name} className="grid grid-cols-4 gap-3 px-6 py-4 text-sm">
+                  <span className="font-medium text-foreground">{row.name}</span>
+                  <span className="text-foreground">{row.position}</span>
                   <span className={`inline-flex w-fit rounded-full px-2 py-1 text-xs font-semibold ${
-                    row[2] === "Screening" ? "bg-primary/20 text-primary" :
-                    row[2] === "Interview" ? "bg-secondary/20 text-secondary-foreground" :
-                    row[2] === "New" ? "bg-accent/20 text-accent-foreground" :
+                    row.stage === "Screening" || row.stage === "স্ক্রিনিং" ? "bg-primary/20 text-primary" :
+                    row.stage === "Interview" || row.stage === "ইন্টারভিউ" ? "bg-secondary/20 text-secondary-foreground" :
+                    row.stage === "New" || row.stage === "নতুন" ? "bg-accent/20 text-accent-foreground" :
                     "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                  }`}>{row[2]}</span>
-                  <span className="text-foreground">{row[3]}</span>
+                  }`}>{row.stage}</span>
+                  <span className="text-foreground">{row.applied}</span>
                 </div>
               ))}
             </div>
@@ -366,22 +372,21 @@ export default function TalentAcquisitionPage() {
           <div>
             <div className="mb-4 text-5xl">🏆</div>
             <ScriptHeading>
-              Tailor-made pipeline to
+              {t("workflowSection.title")}
               <br />
-              fit your workflow
+              {t("workflowSection.subtitle")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Candidates progress automatically through recruitment stages, while
-              your team keeps full control of every step.
+              {t("workflowSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Target className="h-4 w-4" />
-                Automated stages
+                {t("workflowSection.badges.automatedStages")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Users className="h-4 w-4" />
-                Team collaboration
+                {t("workflowSection.badges.teamCollaboration")}
               </div>
             </div>
           </div>
@@ -394,21 +399,20 @@ export default function TalentAcquisitionPage() {
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
               <ScriptHeading>
-                Less scheduling, more{" "}
-                <span className="bg-secondary/20 px-2 rounded">interviewing!</span>
+                {t("schedulingSection.title")}{" "}
+                <span className="bg-secondary/20 px-2 rounded">{t("schedulingSection.titleHighlight")}</span>
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Send interview links, sync calendars, and let candidates pick suitable
-                interview slots without manual scheduling.
+                {t("schedulingSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <CalendarIcon className="h-4 w-4 text-primary" />
-                  Calendar sync
+                  {t("schedulingSection.badges.calendarSync")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Mail className="h-4 w-4 text-primary" />
-                  Auto-reminders
+                  {t("schedulingSection.badges.autoReminders")}
                 </div>
               </div>
             </div>
@@ -432,11 +436,11 @@ export default function TalentAcquisitionPage() {
       {/* Never lose track of another document Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Never lose track of another document
+          {t("documentsSection.title")}
         </ScriptHeading>
 
         <div className="mx-auto mt-12 grid max-w-4xl gap-6 rounded-2xl bg-muted/30 p-8 md:grid-cols-4">
-          {["Resumes", "Cover Letters", "Portfolios", "Certificates"].map((doc, idx) => (
+          {t.raw("documentsSection.documents").map((doc: string) => (
             <div key={doc} className="rounded-xl bg-card p-6 text-center shadow-sm">
               <div className="text-4xl mb-3">📄</div>
               <p className="font-semibold text-foreground">{doc}</p>
@@ -451,18 +455,17 @@ export default function TalentAcquisitionPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Tools to streamline hiring, job pages, candidate tracking,
-              interviews, documents and communication.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -483,18 +486,16 @@ export default function TalentAcquisitionPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your recruitment process,
-            candidate management, and HR operations.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -502,7 +503,7 @@ export default function TalentAcquisitionPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -520,7 +521,7 @@ export default function TalentAcquisitionPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -528,7 +529,7 @@ export default function TalentAcquisitionPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -564,11 +565,10 @@ export default function TalentAcquisitionPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              talent acquisition and recruitment.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -581,26 +581,26 @@ export default function TalentAcquisitionPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to transform your hiring"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a talent acquisition workflow that helps you attract top talent,
-            streamline interviews, and build your dream team.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

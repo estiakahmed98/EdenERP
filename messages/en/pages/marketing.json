@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "title": "Marketing Agency | AdonERP",
+    "description": "AI-powered marketing agency management platform for all your creative operations — from website builder and project management to CRM, invoicing, and campaign tracking."
+  },
+  "hero": {
+    "eyebrowIcon": "Megaphone",
+    "eyebrowLabel": "Agency industry template",
+    "industriesLabel": "Industries / Marketing Agency",
+    "preHeading": "The best solution for your",
+    "title": "Marketing Agency",
+    "description": "AdonERP allows you to streamline all aspects of your marketing agency on one intuitive platform, from building websites to managing projects, client communication and invoicing.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "With most systems, you get 70% of what you hoped. With AdonERP, you get more than what you expected. It transformed our agency operations.",
+    "testimonialName": "Michael Bennett",
+    "testimonialRole": "CEO, Creative Spark Agency"
+  },
+  "servicesSection": {
+    "title": "Make your services shine",
+    "cards": {
+      "website": "Create a stunning website using AdonERP's AI-based builder, add photos, drag-and-drop elements, and SEO optimization tools.",
+      "templates": "Use templates and customization tools to showcase your agency services in a clear, polished way."
+    },
+    "demoService": {
+      "name": "Creative Studio",
+      "description": "Present your services beautifully",
+      "button": "View Portfolio"
+    }
+  },
+  "projectSection": {
+    "title": "All-in-one",
+    "titleHighlight": "project",
+    "titleEnd": "hub",
+    "description": "Manage projects, tasks, timesheets, meetings, documents and team expenses from one complete dashboard.",
+    "stages": ["To Do", "In Progress", "Review", "Done"]
+  },
+  "pipelineSection": {
+    "title": "From lead to",
+    "titleHighlight": "invoice",
+    "description": "Centralize leads, send invoices to clients in one click, and choose the best payment methods for your agency.",
+    "badges": {
+      "leadTracking": "Lead tracking",
+      "oneClickInvoicing": "One-click invoicing"
+    },
+    "stages": ["New", "Proposal", "Won"]
+  },
+  "expandSection": {
+    "title": "Expand as you grow",
+    "description": "Marketing warehouse apps centralize all your tools in one platform, automate scheduling, create events, and track campaign performance.",
+    "badges": {
+      "campaignAnalytics": "Campaign analytics",
+      "autoScheduling": "Auto-scheduling"
+    },
+    "services": ["SEO", "Social", "Content", "Email"]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Practical tools for agency websites, services, sales, automation, purchasing and recurring billing.",
+    "list": [
+      {
+        "title": "Website builder",
+        "description": "Create stunning agency websites with drag-and-drop tools and AI assistance."
+      },
+      {
+        "title": "Product configurator",
+        "description": "Build customizable service packages for different client needs."
+      },
+      {
+        "title": "Pricelists",
+        "description": "Set flexible pricing by client tier, service type, or campaign."
+      },
+      {
+        "title": "Automated delivery",
+        "description": "Auto-send deliverables and reports to clients upon completion."
+      },
+      {
+        "title": "Recurring invoices",
+        "description": "Set up subscription billing for retainer clients."
+      },
+      {
+        "title": "Easy purchasing",
+        "description": "Manage vendor orders for ad spend, printing, and tools."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your agency, client management, projects, and billing.",
+    "apps": [
+      {
+        "title": "CRM",
+        "subtitle": "Lead and client management",
+        "icon": "Users"
+      },
+      {
+        "title": "Sales",
+        "subtitle": "Proposals and contracts",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Campaign task tracking",
+        "icon": "HardDrive"
+      },
+      {
+        "title": "Social Marketing",
+        "subtitle": "Social media management",
+        "icon": "Megaphone"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Client billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Website",
+        "subtitle": "Portfolio showcase",
+        "icon": "Home"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Michael Bennett",
+        "role": "CEO, Creative Spark Agency",
+        "content": "With most systems, you get 70% of what you hoped. With AdonERP, you get more than what you expected. It transformed our agency operations.",
+        "rating": 5
+      },
+      {
+        "name": "Jessica Taylor",
+        "role": "Operations Director, Digital Flow",
+        "content": "From project management to recurring invoices, AdonERP streamlined everything. Our team is more productive and clients love the transparency.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for marketing agencies and creative studios."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your agency",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a marketing agency workflow that helps you manage clients, track campaigns, and deliver exceptional results.",
+    "button": "Start now"
+  }
+}
