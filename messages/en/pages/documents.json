@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "Documents | AdonERP",
+    "description": "AI-powered document management platform integrated with your ERP — from smart capture and e-signatures to automated workflows and secure collaboration."
+  },
+  "hero": {
+    "eyebrowIcon": "Cloud",
+    "eyebrowLabel": "Smart document management",
+    "title": "Files organized.",
+    "titleHighlight": "Time saved.",
+    "description": "Adon ERP Documents gives your team one secure hub to scan, store, approve, sign, share, and find every business file.",
+    "startButton": "Start Free Trial",
+    "demoButton": "Watch Demo",
+    "dashboard": {
+      "title": "Adon Documents",
+      "synced": "Synced",
+      "folders": ["Inbox", "Contracts", "Invoices", "HR Files", "Shared", "Archive"],
+      "documents": [
+        { "title": "Client contract", "status": "Ready for signature", "color": "orange" },
+        { "title": "Supplier invoice", "status": "Auto-classified", "color": "emerald" },
+        { "title": "HR onboarding", "status": "Needs approval", "color": "cyan" },
+        { "title": "Project brief", "status": "Shared with team", "color": "violet" }
+      ],
+      "preview": {
+        "title": "Preview",
+        "owner": "Owner: Finance",
+        "status": "Status: Review",
+        "access": "Access: Private"
+      }
+    },
+    "badges": {
+      "autoClassified": "Auto-classified",
+      "secureArchive": "Secure archive"
+    }
+  },
+  "documentHubSection": {
+    "title": "Your",
+    "titleHighlight": "document hub",
+    "description": "Bring every file into one intelligent workspace. Capture documents from email, scanning, uploads, clients, teams, and ERP workflows.",
+    "documentTypes": [
+      { "title": "Email", "icon": "Mail" },
+      { "title": "Scan", "icon": "UploadCloud" },
+      { "title": "Files", "icon": "File" }
+    ],
+    "demo": {
+      "leftItems": ["Payment slip", "Contract file"],
+      "inboxItems": ["Invoice", "Agreement", "Receipt", "Approval note"],
+      "rightItems": ["Client doc", "Signed certificate"]
+    }
+  },
+  "signingSection": {
+    "eyebrowIcon": "PenLine",
+    "eyebrowLabel": "Digital signing",
+    "title": "Print, sign, scan?",
+    "subtitle": "Sign online!",
+    "description": "Send contracts, offers, approvals, and agreements for signature. Adon ERP keeps every signed document attached to the right client, task, or project.",
+    "features": [
+      "Send signature requests in one click",
+      "Track signed, pending, and expired documents",
+      "Automatically archive completed files"
+    ],
+    "demo": {
+      "title": "Signature request",
+      "signatureLabel": "Signature"
+    }
+  },
+  "organizationSection": {
+    "title": "Organization is the key",
+    "description": "Keep departments, clients, tasks, and approvals connected. Your team always knows where every file belongs and what needs action.",
+    "columns": ["Inbox", "In Review", "Waiting Signature", "Approved"],
+    "cards": ["Invoice", "Proposal", "Agreement"]
+  },
+  "collaborationSection": {
+    "eyebrowIcon": "Users",
+    "eyebrowLabel": "Team collaboration",
+    "title": "The art of effective",
+    "titleHighlight": "collaboration",
+    "description": "Discuss documents with teammates, assign ownership, request approvals, and keep all comments connected to the file.",
+    "features": ["Comments", "Approvals", "Mentions", "Access control"],
+    "demo": {
+      "title": "Website contract draft",
+      "comment": "Please review the pricing section before sending it to the client.",
+      "comments": [
+        { "name": "Sarah", "text": "Approved the final terms" },
+        { "name": "Nadim", "text": "Added missing client attachment" },
+        { "name": "Emma", "text": "Requested signature from client" }
+      ]
+    }
+  },
+  "timeSavingSection": {
+    "eyebrowIcon": "Clock",
+    "eyebrowLabel": "Time-saving tool",
+    "title": "Time-saving tool",
+    "description": "Measure exactly how much time your team saves by automating capture, routing, signing, approvals, and archiving.",
+    "metrics": [
+      { "label": "Manual file sorting", "saved": "42h saved/month", "percentage": 75 },
+      { "label": "Signature follow-up", "saved": "18h saved/month", "percentage": 65 },
+      { "label": "Approval tracking", "saved": "31h saved/month", "percentage": 70 },
+      { "label": "Searching documents", "saved": "24h saved/month", "percentage": 60 }
+    ],
+    "stats": {
+      "searchTime": "40.9",
+      "searchLabel": "seconds saved per file",
+      "accuracy": "90.4%",
+      "accuracyLabel": "classification success"
+    },
+    "steps": [
+      "Upload or scan a document",
+      "Adon ERP identifies the type and owner",
+      "The file is routed to the right workflow",
+      "Approvals, signatures, and archive rules run automatically"
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "list": [
+      {
+        "title": "Split PDFs",
+        "description": "Separate contracts, invoices, and forms into clean documents in seconds.",
+        "icon": "File"
+      },
+      {
+        "title": "Auto folder rules",
+        "description": "Route files to the right workspace using tags, clients, projects, and teams.",
+        "icon": "FolderKanban"
+      },
+      {
+        "title": "Smart search",
+        "description": "Find any document by title, content, owner, client, or approval status.",
+        "icon": "Search"
+      },
+      {
+        "title": "Secure sharing",
+        "description": "Share files with role-based permissions, expiry links, and audit trails.",
+        "icon": "Lock"
+      },
+      {
+        "title": "E-sign workflows",
+        "description": "Send, sign, approve, and archive documents without leaving Adon ERP.",
+        "icon": "FileSignature"
+      },
+      {
+        "title": "Activity insights",
+        "description": "Track views, approvals, comments, and document performance in one place.",
+        "icon": "BarChart3"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "apps": [
+      { "title": "CRM", "description": "Client files and proposals", "icon": "Users" },
+      { "title": "Projects", "description": "Tasks, briefs, and docs", "icon": "Grid3X3" },
+      { "title": "Accounting", "description": "Bills and statements", "icon": "FileCheck2" },
+      { "title": "HR", "description": "Employee documents", "icon": "BadgeCheck" },
+      { "title": "Helpdesk", "description": "Tickets and attachments", "icon": "MessageSquare" },
+      { "title": "Approvals", "description": "Review and sign-off flows", "icon": "ShieldCheck" }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "ctaBanner": {
+    "title": "Join modern teams",
+    "description": "Teams use Adon ERP Documents to organize operations, reduce file chaos, and move work forward faster.",
+    "rating": 5
+  },
+  "footerCta": {
+    "title": "Rediscover bliss",
+    "subtitle": "in your work",
+    "description": "Replace scattered folders with a secure, searchable, automated document workspace inside Adon ERP.",
+    "trialButton": "Start Free Trial",
+    "salesButton": "Contact Sales",
+    "footerText": "Free trial available · Instant access"
+  }
+}
