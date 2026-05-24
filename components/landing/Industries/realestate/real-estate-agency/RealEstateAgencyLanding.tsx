@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -30,6 +31,7 @@ import {
   PenTool,
   FileSignature,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Real Estate Agency | AdonERP Industries",
@@ -37,58 +39,36 @@ export const metadata: Metadata = {
     "A real estate agency landing page for AdonERP with property listings, CRM, document management, electronic signatures, and invoicing.",
 };
 
-const features = [
-  {
-    title: "Website builder",
-    description: "Create stunning property websites with drag-and-drop tools and AI assistance.",
-  },
-  {
-    title: "Custom quotations",
-    description: "Generate professional property quotes and offers for clients.",
-  },
-  {
-    title: "Property matchmaking",
-    description: "Match buyers with properties using intelligent search algorithms.",
-  },
-  {
-    title: "Valid electronic signatures",
-    description: "Collect legally binding signatures on contracts from any device.",
-  },
-  {
-    title: "CRM pipeline",
-    description: "Track leads, follow-ups, and deal stages from one dashboard.",
-  },
-  {
-    title: "Easy invoicing",
-    description: "Generate invoices and manage agent commissions automatically.",
-  },
-];
-
-const apps = [
-  { title: "Properties", subtitle: "Property listing management", icon: Building },
-  { title: "Website", subtitle: "Online property showcase", icon: Home },
-  { title: "Sales", subtitle: "Manage offers and bookings", icon: ShoppingCart },
-  { title: "CRM", subtitle: "Lead and client management", icon: Users },
-  { title: "Invoicing", subtitle: "Professional billing", icon: ReceiptText },
-  { title: "Sign", subtitle: "Electronic signatures", icon: FileSignature },
-];
-
-const testimonials = [
-  {
-    name: "Sarah Martinez",
-    role: "Owner, Elite Realty Group",
-    content:
-      "AdonERP helped kick-start our digital transformation process. It provided us with an integrated system of different applications needed for our business to reach ahead into digital.",
-    rating: 5,
-  },
-  {
-    name: "James Wilson",
-    role: "Operations Director, HomeFinders Real Estate",
-    content:
-      "From property listings to electronic signatures, AdonERP streamlined our entire workflow. Our agents save hours every day and clients love the seamless experience.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+  };
+  return icons[iconName] || Building;
+};
 
 function ScriptHeading({
   children,
@@ -101,8 +81,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -111,21 +90,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function RealEstateAgencyPage() {
+  const t = useTranslations("pages.realestate");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -134,12 +120,13 @@ export default function RealEstateAgencyPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Building className="h-4 w-4" />}
-              label="Real estate industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Real Estate Agency
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -149,7 +136,7 @@ export default function RealEstateAgencyPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  #1 Software solution for
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -158,13 +145,11 @@ export default function RealEstateAgencyPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Real Estate Agencies
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Manage your real estate agency from creating detailed property
-                listings to booking visits, handling customer relationships, and
-                closing the sale.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -173,27 +158,27 @@ export default function RealEstateAgencyPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                AdonERP helped kick-start our digital transformation process. It provided
-                us with an integrated system of different applications needed for our
-                business to reach ahead into digital.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Sarah Martinez</p>
-                  <p className="text-sm text-muted-foreground">Owner, Elite Realty Group</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -248,20 +233,18 @@ export default function RealEstateAgencyPage() {
       {/* Showcase your properties Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          Showcase your{" "}
+          {t("propertiesSection.title")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            properties
+            {t("propertiesSection.titleHighlight")}
           </span>
         </ScriptHeading>
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Create property listings, add photos and descriptions, and publish
-            detailed information about location, rooms, energy rating and more.
+            {t("propertiesSection.cards.listings")}
           </div>
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Build custom searches so clients can filter by location, budget,
-            property type and other criteria.
+            {t("propertiesSection.cards.searches")}
           </div>
         </div>
 
@@ -280,16 +263,16 @@ export default function RealEstateAgencyPage() {
 
           <div className="rounded-2xl border border-border bg-card p-5 shadow-xl">
             <div className="mb-4 aspect-[4/3] rounded-xl bg-gradient-to-br from-primary/20 to-muted" />
-            <h3 className="font-bold text-foreground">Your Dream House</h3>
-            <p className="mt-1 text-sm text-muted-foreground">Available property match</p>
+            <h3 className="font-bold text-foreground">{t("propertiesSection.demoProperty.name")}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{t("propertiesSection.demoProperty.subtitle")}</p>
             <div className="mt-3 flex items-center gap-1 text-amber-400">
-              {Array.from({ length: 4 }).map((_, i) => (
+              {Array.from({ length: t.raw("propertiesSection.demoProperty.rating") }).map((_, i) => (
                 <Star key={i} className="h-3 w-3 fill-current" />
               ))}
-              <span className="text-xs text-muted-foreground">(24 reviews)</span>
+              <span className="text-xs text-muted-foreground">({t("propertiesSection.demoProperty.reviews")})</span>
             </div>
             <button className="mt-4 w-full rounded-xl bg-secondary py-2 text-sm font-semibold text-secondary-foreground transition hover:bg-secondary/90">
-              Contact Agent
+              {t("propertiesSection.demoProperty.button")}
             </button>
           </div>
         </div>
@@ -299,20 +282,20 @@ export default function RealEstateAgencyPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
           <span className="underline decoration-primary underline-offset-8">
-            Nourish
+            {t("relationshipsSection.title")}
           </span>{" "}
-          relationships
+          {t("relationshipsSection.titleHighlight")}
         </ScriptHeading>
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-3">
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Centralize leads and follow every win, loss and follow-up from one CRM pipeline.
+            {t("relationshipsSection.cards.crm")}
           </div>
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Schedule appointments and let clients book viewings directly from the website.
+            {t("relationshipsSection.cards.appointments")}
           </div>
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Keep track of activities such as calls, emails, meetings and next steps.
+            {t("relationshipsSection.cards.activities")}
           </div>
         </div>
 
@@ -326,7 +309,7 @@ export default function RealEstateAgencyPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-center text-xs text-muted-foreground">Sales pipeline • Qualified leads</div>
+            <div className="mt-3 text-center text-xs text-muted-foreground">{t("relationshipsSection.pipelineLabel")}</div>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
@@ -340,7 +323,7 @@ export default function RealEstateAgencyPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-center text-xs text-muted-foreground">Activities • Calls & Meetings</div>
+            <div className="mt-3 text-center text-xs text-muted-foreground">{t("relationshipsSection.activitiesLabel")}</div>
           </div>
         </div>
       </section>
@@ -362,22 +345,21 @@ export default function RealEstateAgencyPage() {
             <div className="order-1 md:order-2">
               <div className="mb-4 text-5xl">🖊️</div>
               <ScriptHeading>
-                Manage documents,
+                {t("documentsSection.title")}
                 <br />
-                collect signatures
+                {t("documentsSection.subtitle")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Manage contracts, send documents online, and collect electronic
-                signatures securely from any device.
+                {t("documentsSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <FileText className="h-4 w-4 text-primary" />
-                  Contract management
+                  {t("documentsSection.badges.contractManagement")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <FileSignature className="h-4 w-4 text-primary" />
-                  E-signatures
+                  {t("documentsSection.badges.eSignatures")}
                 </div>
               </div>
             </div>
@@ -390,25 +372,24 @@ export default function RealEstateAgencyPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Integrated{" "}
+              {t("financeSection.title")}{" "}
               <span className="text-primary underline decoration-primary underline-offset-8">
-                finance
+                {t("financeSection.titleHighlight")}
               </span>
               <br />
-              management
+              {t("financeSection.titleEnd")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Create invoices, get paid faster, match payments and manage agent
-              commissions automatically when a deal is closed.
+              {t("financeSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <CreditCard className="h-4 w-4" />
-                Automated commissions
+                {t("financeSection.badges.automatedCommissions")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <ReceiptText className="h-4 w-4" />
-                Payment tracking
+                {t("financeSection.badges.paymentTracking")}
               </div>
             </div>
           </div>
@@ -446,18 +427,17 @@ export default function RealEstateAgencyPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Smart real estate tools for property listings, lead management, documents,
-              signatures, invoicing, and sales.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -478,18 +458,16 @@ export default function RealEstateAgencyPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your real estate agency,
-            property management, client relationships, and financials.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -497,7 +475,7 @@ export default function RealEstateAgencyPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -515,7 +493,7 @@ export default function RealEstateAgencyPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -523,7 +501,7 @@ export default function RealEstateAgencyPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -559,11 +537,10 @@ export default function RealEstateAgencyPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              real estate agencies and property management.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -576,26 +553,26 @@ export default function RealEstateAgencyPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your agency"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a real estate management workflow that helps you showcase properties,
-            nurture leads, and close deals faster.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

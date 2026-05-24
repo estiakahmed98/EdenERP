@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Architecture Firm | AdonERP",
+    "description": "AI-powered architecture firm management platform for all your professional services — from project management and quotations to timesheets, invoicing, and resource planning."
+  },
+  "hero": {
+    "eyebrowIcon": "Ruler",
+    "eyebrowLabel": "Architecture industry template",
+    "industriesLabel": "Industries / Architecture Firm",
+    "preHeading": "The ultimate software for your",
+    "title": "Architecture Firm",
+    "description": "Handle all your projects, from gathering leads and creating quotations to managing tasks, signing plans, and logging timesheets.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP's automation has reduced human error and increased productivity, allowing employees to focus on activities that add the most value.",
+    "testimonialName": "Michael Chen",
+    "testimonialRole": "Principal Architect, Chen & Associates"
+  },
+  "projectSection": {
+    "titlePrefix": "Smart",
+    "titleHighlight": "project",
+    "titleEnd": "management",
+    "description": "Centralize dashboards, handle recurring tasks, organize activities, and keep every project moving smoothly.",
+    "badges": {
+      "taskTracking": "Task tracking",
+      "teamCollaboration": "Team collaboration"
+    }
+  },
+  "quotationsSection": {
+    "title": "State of the art",
+    "titleHighlight": "quotations",
+    "cards": {
+      "custom": "Create custom quotations aligned with your project scope, pricing, files, blueprints, and architectural services.",
+      "templates": "Use templates and built-in quote tools to make proposals faster and more professional."
+    },
+    "demoDocs": ["Quotation", "Proposal", "Invoice"]
+  },
+  "financeSection": {
+    "title": "Finance management to turn",
+    "titleHighlight": "profit",
+    "features": {
+      "flexibleInvoicing": {
+        "title": "Flexible invoicing.",
+        "description": "Invoice clients based on fixed rates, time and material, or milestones."
+      },
+      "analyticalBreakdowns": {
+        "title": "Analytical breakdowns",
+        "description": "Help track profitability and costs on each project."
+      }
+    }
+  },
+  "resourceSection": {
+    "title": "Resource",
+    "titleHighlight": "planning",
+    "description": "Create shifts, track colleagues, material resources, planning, recruiting shifts and project timelines.",
+    "table": {
+      "headers": ["Resource", "Mon", "Tue", "Wed", "Thu"],
+      "resources": ["Senior Architect", "Junior Designer", "3D Visualizer", "Project Manager", "Intern"]
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Complete tools for architecture projects, quotes, planning, signatures, timesheets and invoicing.",
+    "list": [
+      {
+        "title": "CRM pipeline",
+        "description": "Track leads, proposals, and project stages from one dashboard."
+      },
+      {
+        "title": "Custom quotations",
+        "description": "Create professional quotes aligned with project scope and pricing."
+      },
+      {
+        "title": "Quote Calculator",
+        "description": "Calculate costs automatically based on materials, labor, and services."
+      },
+      {
+        "title": "Valid electronic signatures",
+        "description": "Collect legally binding signatures on contracts from any device."
+      },
+      {
+        "title": "Integrated timesheets",
+        "description": "Track billable hours and project costs accurately."
+      },
+      {
+        "title": "Easy invoicing",
+        "description": "Generate invoices based on fixed rates, time & material, or milestones."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your architecture firm, project management, client relationships, and financials.",
+    "apps": [
+      {
+        "title": "CRM",
+        "subtitle": "Lead and client management",
+        "icon": "Users"
+      },
+      {
+        "title": "Website",
+        "subtitle": "Portfolio showcase",
+        "icon": "Home"
+      },
+      {
+        "title": "Sales",
+        "subtitle": "Quotations and proposals",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Task and milestone tracking",
+        "icon": "HardDrive"
+      },
+      {
+        "title": "Accounting",
+        "subtitle": "Financial management",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Planning",
+        "subtitle": "Resource scheduling",
+        "icon": "Calendar"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Michael Chen",
+        "role": "Principal Architect, Chen & Associates",
+        "content": "AdonERP's automation has reduced human error and increased productivity, allowing employees to focus on activities that add the most value.",
+        "rating": 5
+      },
+      {
+        "name": "Isabella Rossi",
+        "role": "Studio Director, Urban Design Collective",
+        "content": "From project quotes to timesheets and invoicing, AdonERP transformed our workflow. We now deliver projects faster and with better profitability tracking.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for architecture firms and design studios."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your firm",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch an architecture firm workflow that helps you manage projects, create professional quotes, and track profitability.",
+    "button": "Start now"
+  }
+}

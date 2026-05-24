@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -32,6 +33,7 @@ import {
   Ruler,
   HardDrive,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Architecture Firm | AdonERP Industries",
@@ -39,58 +41,38 @@ export const metadata: Metadata = {
     "An architecture firm landing page for AdonERP with project management, quotations, timesheets, invoicing, and resource planning.",
 };
 
-const features = [
-  {
-    title: "CRM pipeline",
-    description: "Track leads, proposals, and project stages from one dashboard.",
-  },
-  {
-    title: "Custom quotations",
-    description: "Create professional quotes aligned with project scope and pricing.",
-  },
-  {
-    title: "Quote Calculator",
-    description: "Calculate costs automatically based on materials, labor, and services.",
-  },
-  {
-    title: "Valid electronic signatures",
-    description: "Collect legally binding signatures on contracts from any device.",
-  },
-  {
-    title: "Integrated timesheets",
-    description: "Track billable hours and project costs accurately.",
-  },
-  {
-    title: "Easy invoicing",
-    description: "Generate invoices based on fixed rates, time & material, or milestones.",
-  },
-];
-
-const apps = [
-  { title: "CRM", subtitle: "Lead and client management", icon: Users },
-  { title: "Website", subtitle: "Portfolio showcase", icon: Home },
-  { title: "Sales", subtitle: "Quotations and proposals", icon: ShoppingCart },
-  { title: "Project", subtitle: "Task and milestone tracking", icon: HardDrive },
-  { title: "Accounting", subtitle: "Financial management", icon: CreditCard },
-  { title: "Planning", subtitle: "Resource scheduling", icon: Calendar },
-];
-
-const testimonials = [
-  {
-    name: "Michael Chen",
-    role: "Principal Architect, Chen & Associates",
-    content:
-      "AdonERP's automation has reduced human error and increased productivity, allowing employees to focus on activities that add the most value.",
-    rating: 5,
-  },
-  {
-    name: "Isabella Rossi",
-    role: "Studio Director, Urban Design Collective",
-    content:
-      "From project quotes to timesheets and invoicing, AdonERP transformed our workflow. We now deliver projects faster and with better profitability tracking.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Ruler,
+    Key,
+    PenTool,
+    FileSignature,
+    HardDrive,
+    FileText,
+  };
+  return icons[iconName] || Ruler;
+};
 
 function ScriptHeading({
   children,
@@ -103,8 +85,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -113,21 +94,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function ArchitectureFirmPage() {
+  const t = useTranslations("pages.architecture");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -136,12 +124,13 @@ export default function ArchitectureFirmPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Ruler className="h-4 w-4" />}
-              label="Architecture industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Architecture Firm
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -151,7 +140,7 @@ export default function ArchitectureFirmPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The ultimate software for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -160,12 +149,11 @@ export default function ArchitectureFirmPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Architecture Firm
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Handle all your projects, from gathering leads and creating quotations
-                to managing tasks, signing plans, and logging timesheets.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -174,26 +162,27 @@ export default function ArchitectureFirmPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                AdonERP's automation has reduced human error and increased productivity,
-                allowing employees to focus on activities that add the most value.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Michael Chen</p>
-                  <p className="text-sm text-muted-foreground">Principal Architect, Chen & Associates</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -264,24 +253,23 @@ export default function ArchitectureFirmPage() {
               <div className="mb-4 text-5xl">🏠</div>
               <ScriptHeading>
                 <span className="rounded-full border-4 border-secondary px-2">
-                  Smart
+                  {t("projectSection.titlePrefix")}
                 </span>{" "}
-                project
+                {t("projectSection.titleHighlight")}
                 <br />
-                management
+                {t("projectSection.titleEnd")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Centralize dashboards, handle recurring tasks, organize activities,
-                and keep every project moving smoothly.
+                {t("projectSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <HardDrive className="h-4 w-4 text-primary" />
-                  Task tracking
+                  {t("projectSection.badges.taskTracking")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Users className="h-4 w-4 text-primary" />
-                  Team collaboration
+                  {t("projectSection.badges.teamCollaboration")}
                 </div>
               </div>
             </div>
@@ -292,25 +280,23 @@ export default function ArchitectureFirmPage() {
       {/* State of the art quotations Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          State of the art{" "}
+          {t("quotationsSection.title")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            quotations
+            {t("quotationsSection.titleHighlight")}
           </span>
         </ScriptHeading>
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Create custom quotations aligned with your project scope, pricing,
-            files, blueprints, and architectural services.
+            {t("quotationsSection.cards.custom")}
           </div>
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Use templates and built-in quote tools to make proposals faster and
-            more professional.
+            {t("quotationsSection.cards.templates")}
           </div>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {["Quotation", "Proposal", "Invoice"].map((title, idx) => (
+          {t.raw("quotationsSection.demoDocs").map((title: string) => (
             <div key={title} className="rounded-2xl border border-border bg-card p-6 shadow-xl">
               <div className="mb-5 aspect-[3/4] rounded-xl bg-gradient-to-br from-primary/20 to-muted" />
               <h3 className="font-bold text-foreground">{title}</h3>
@@ -325,9 +311,9 @@ export default function ArchitectureFirmPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <ScriptHeading>
-              Finance management to turn{" "}
+              {t("financeSection.title")}{" "}
               <span className="text-primary underline decoration-primary underline-offset-8">
-                profit
+                {t("financeSection.titleHighlight")}
               </span>
             </ScriptHeading>
           </div>
@@ -360,12 +346,12 @@ export default function ArchitectureFirmPage() {
 
             <div className="space-y-5 text-left">
               <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-                <strong className="text-foreground">Flexible invoicing.</strong>
-                <p className="mt-2 text-muted-foreground">Invoice clients based on fixed rates, time and material, or milestones.</p>
+                <strong className="text-foreground">{t("financeSection.features.flexibleInvoicing.title")}</strong>
+                <p className="mt-2 text-muted-foreground">{t("financeSection.features.flexibleInvoicing.description")}</p>
               </div>
               <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-                <strong className="text-foreground">Analytical breakdowns</strong>
-                <p className="mt-2 text-muted-foreground">Help track profitability and costs on each project.</p>
+                <strong className="text-foreground">{t("financeSection.features.analyticalBreakdowns.title")}</strong>
+                <p className="mt-2 text-muted-foreground">{t("financeSection.features.analyticalBreakdowns.description")}</p>
               </div>
             </div>
           </div>
@@ -376,29 +362,26 @@ export default function ArchitectureFirmPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-xl">
           <ScriptHeading>
-            Resource{" "}
+            {t("resourceSection.title")}{" "}
             <span className="underline decoration-primary underline-offset-8">
-              planning
+              {t("resourceSection.titleHighlight")}
             </span>
           </ScriptHeading>
           <p className="mt-6 text-base leading-7 text-muted-foreground">
-            Create shifts, track colleagues, material resources, planning,
-            recruiting shifts and project timelines.
+            {t("resourceSection.description")}
           </p>
         </div>
 
         <div className="relative mx-auto mt-8 overflow-hidden rounded-[2rem] border border-border bg-card shadow-xl">
           <div className="border-b border-border bg-muted/30 px-6 py-3">
             <div className="grid grid-cols-5 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              <span>Resource</span>
-              <span>Mon</span>
-              <span>Tue</span>
-              <span>Wed</span>
-              <span>Thu</span>
+              {t.raw("resourceSection.table.headers").map((header: string) => (
+                <span key={header}>{header}</span>
+              ))}
             </div>
           </div>
           <div className="divide-y divide-border">
-            {["Senior Architect", "Junior Designer", "3D Visualizer", "Project Manager", "Intern"].map((role, idx) => (
+            {t.raw("resourceSection.table.resources").map((role: string, idx: number) => (
               <div key={role} className="grid grid-cols-5 gap-3 px-6 py-3 text-sm">
                 <span className="font-medium text-foreground">{role}</span>
                 <div className={`h-6 rounded ${idx % 2 === 0 ? "bg-primary/20" : "bg-muted"}`} />
@@ -417,18 +400,17 @@ export default function ArchitectureFirmPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Complete tools for architecture projects, quotes, planning,
-              signatures, timesheets and invoicing.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -449,18 +431,16 @@ export default function ArchitectureFirmPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your architecture firm,
-            project management, client relationships, and financials.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -468,7 +448,7 @@ export default function ArchitectureFirmPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -486,7 +466,7 @@ export default function ArchitectureFirmPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -494,7 +474,7 @@ export default function ArchitectureFirmPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -530,11 +510,10 @@ export default function ArchitectureFirmPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              architecture firms and design studios.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -547,26 +526,26 @@ export default function ArchitectureFirmPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your firm"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch an architecture firm workflow that helps you manage projects,
-            create professional quotes, and track profitability.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>
