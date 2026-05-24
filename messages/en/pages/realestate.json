@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "title": "Real Estate Agency | AdonERP",
+    "description": "AI-powered real estate agency management platform for all your property operations — from property listings and CRM to document management, electronic signatures, and invoicing."
+  },
+  "hero": {
+    "eyebrowIcon": "Building",
+    "eyebrowLabel": "Real estate industry template",
+    "industriesLabel": "Industries / Real Estate Agency",
+    "preHeading": "#1 Software solution for",
+    "title": "Real Estate Agencies",
+    "description": "Manage your real estate agency from creating detailed property listings to booking visits, handling customer relationships, and closing the sale.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP helped kick-start our digital transformation process. It provided us with an integrated system of different applications needed for our business to reach ahead into digital.",
+    "testimonialName": "Sarah Martinez",
+    "testimonialRole": "Owner, Elite Realty Group"
+  },
+  "propertiesSection": {
+    "title": "Showcase your",
+    "titleHighlight": "properties",
+    "cards": {
+      "listings": "Create property listings, add photos and descriptions, and publish detailed information about location, rooms, energy rating and more.",
+      "searches": "Build custom searches so clients can filter by location, budget, property type and other criteria."
+    },
+    "demoProperty": {
+      "name": "Your Dream House",
+      "subtitle": "Available property match",
+      "rating": 4,
+      "reviews": "24 reviews",
+      "button": "Contact Agent"
+    }
+  },
+  "relationshipsSection": {
+    "title": "Nourish",
+    "titleHighlight": "relationships",
+    "cards": {
+      "crm": "Centralize leads and follow every win, loss and follow-up from one CRM pipeline.",
+      "appointments": "Schedule appointments and let clients book viewings directly from the website.",
+      "activities": "Keep track of activities such as calls, emails, meetings and next steps."
+    },
+    "pipelineLabel": "Sales pipeline • Qualified leads",
+    "activitiesLabel": "Activities • Calls & Meetings"
+  },
+  "documentsSection": {
+    "title": "Manage documents,",
+    "subtitle": "collect signatures",
+    "description": "Manage contracts, send documents online, and collect electronic signatures securely from any device.",
+    "badges": {
+      "contractManagement": "Contract management",
+      "eSignatures": "E-signatures"
+    }
+  },
+  "financeSection": {
+    "title": "Integrated",
+    "titleHighlight": "finance",
+    "titleEnd": "management",
+    "description": "Create invoices, get paid faster, match payments and manage agent commissions automatically when a deal is closed.",
+    "badges": {
+      "automatedCommissions": "Automated commissions",
+      "paymentTracking": "Payment tracking"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Smart real estate tools for property listings, lead management, documents, signatures, invoicing, and sales.",
+    "list": [
+      {
+        "title": "Website builder",
+        "description": "Create stunning property websites with drag-and-drop tools and AI assistance."
+      },
+      {
+        "title": "Custom quotations",
+        "description": "Generate professional property quotes and offers for clients."
+      },
+      {
+        "title": "Property matchmaking",
+        "description": "Match buyers with properties using intelligent search algorithms."
+      },
+      {
+        "title": "Valid electronic signatures",
+        "description": "Collect legally binding signatures on contracts from any device."
+      },
+      {
+        "title": "CRM pipeline",
+        "description": "Track leads, follow-ups, and deal stages from one dashboard."
+      },
+      {
+        "title": "Easy invoicing",
+        "description": "Generate invoices and manage agent commissions automatically."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your real estate agency, property management, client relationships, and financials.",
+    "apps": [
+      {
+        "title": "Properties",
+        "subtitle": "Property listing management",
+        "icon": "Building"
+      },
+      {
+        "title": "Website",
+        "subtitle": "Online property showcase",
+        "icon": "Home"
+      },
+      {
+        "title": "Sales",
+        "subtitle": "Manage offers and bookings",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "CRM",
+        "subtitle": "Lead and client management",
+        "icon": "Users"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Professional billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Sign",
+        "subtitle": "Electronic signatures",
+        "icon": "FileSignature"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Sarah Martinez",
+        "role": "Owner, Elite Realty Group",
+        "content": "AdonERP helped kick-start our digital transformation process. It provided us with an integrated system of different applications needed for our business to reach ahead into digital.",
+        "rating": 5
+      },
+      {
+        "name": "James Wilson",
+        "role": "Operations Director, HomeFinders Real Estate",
+        "content": "From property listings to electronic signatures, AdonERP streamlined our entire workflow. Our agents save hours every day and clients love the seamless experience.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for real estate agencies and property management."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your agency",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a real estate management workflow that helps you showcase properties, nurture leads, and close deals faster.",
+    "button": "Start now"
+  }
+}

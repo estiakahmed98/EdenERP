@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -35,6 +36,7 @@ import {
   ClipboardList,
   Warehouse,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Construction Business | AdonERP Industries",
@@ -42,58 +44,41 @@ export const metadata: Metadata = {
     "A construction business landing page for AdonERP with project management, material tracking, timesheets, invoicing, and field service.",
 };
 
-const features = [
-  {
-    title: "Quotation builder",
-    description: "Create professional construction quotes with materials, labor, and markup.",
-  },
-  {
-    title: "Timesheet timer",
-    description: "Track billable hours for crew members and subcontractors accurately.",
-  },
-  {
-    title: "Clear traceability",
-    description: "Follow every material from purchase order to job site installation.",
-  },
-  {
-    title: "Invoicing",
-    description: "Generate progress invoices based on milestones or completion percentage.",
-  },
-  {
-    title: "Resource planning",
-    description: "Schedule crew, equipment, and materials across multiple job sites.",
-  },
-  {
-    title: "Opportunities",
-    description: "Track bids, proposals, and win rates from your sales pipeline.",
-  },
-];
-
-const apps = [
-  { title: "CRM", subtitle: "Lead and bid management", icon: Users },
-  { title: "Sales", subtitle: "Quotations and proposals", icon: ShoppingCart },
-  { title: "Project", subtitle: "Job site task tracking", icon: HardDrive },
-  { title: "Inventory", subtitle: "Material stock control", icon: Warehouse },
-  { title: "Purchase", subtitle: "Supplier orders", icon: Package },
-  { title: "Field Service", subtitle: "On-site operations", icon: Truck },
-];
-
-const testimonials = [
-  {
-    name: "Robert Johnson",
-    role: "Owner, Johnson Construction Group",
-    content:
-      "The most significant change that AdonERP has brought to our business operations and culture is the sense of calm that has permeated our daily work life.",
-    rating: 5,
-  },
-  {
-    name: "Maria Gonzales",
-    role: "Project Director, BuildRight Contractors",
-    content:
-      "From material tracking to timesheets and invoicing, AdonERP streamlined our entire construction workflow. No more material shortages or budget overruns.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+    Ruler,
+    HardDrive,
+    Hammer,
+    ClipboardList,
+    Warehouse,
+  };
+  return icons[iconName] || Hammer;
+};
 
 function ScriptHeading({
   children,
@@ -106,8 +91,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -116,21 +100,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function ConstructionPage() {
+  const t = useTranslations("pages.construction");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -139,12 +130,13 @@ export default function ConstructionPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Hammer className="h-4 w-4" />}
-              label="Construction industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Construction
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -154,7 +146,7 @@ export default function ConstructionPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  All-in-one toolkit for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -163,13 +155,11 @@ export default function ConstructionPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  🏠 Construction business
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP allows you to handle all aspects of construction projects from
-                start to finish while eliminating pain points such as material
-                shortages and budget management.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -178,27 +168,27 @@ export default function ConstructionPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                The most significant change that AdonERP has brought to our business
-                operations and culture is the sense of calm that has permeated our
-                daily work life.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Robert Johnson</p>
-                  <p className="text-sm text-muted-foreground">Owner, Johnson Construction Group</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -255,25 +245,24 @@ export default function ConstructionPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Groundbreaking{" "}
+              {t("projectSection.title")}{" "}
               <span className="underline decoration-primary underline-offset-8">
-                project
+                {t("projectSection.titleHighlight")}
               </span>
               <br />
-              management
+              {t("projectSection.titleEnd")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Manage all aspects of your construction project from one dashboard.
-              Track tasks, materials, stock moves, planning shifts and deadlines.
+              {t("projectSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <ClipboardList className="h-4 w-4" />
-                Task tracking
+                {t("projectSection.badges.taskTracking")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Calendar className="h-4 w-4" />
-                Deadline management
+                {t("projectSection.badges.deadlineManagement")}
               </div>
             </div>
           </div>
@@ -287,7 +276,7 @@ export default function ConstructionPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-3 text-center text-xs text-muted-foreground">Project kanban • Active jobs</div>
+            <div className="mt-3 text-center text-xs text-muted-foreground">{t("projectSection.kanbanLabel")}</div>
           </div>
         </div>
       </section>
@@ -297,30 +286,31 @@ export default function ConstructionPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-4 text-5xl">📦</div>
           <ScriptHeading>
-            Never lose{" "}
-            <span className="bg-primary/20 px-2 rounded">track</span> of materials
+            {t("materialsSection.title")}{" "}
+            <span className="bg-primary/20 px-2 rounded">{t("materialsSection.titleHighlight")}</span>{" "}
+            {t("materialsSection.titleEnd")}
           </ScriptHeading>
 
           <div className="mt-12 grid gap-12 md:grid-cols-2">
             <div className="space-y-5">
               <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-                <strong className="text-foreground">Streamline purchasing.</strong>
-                <p className="mt-2 text-muted-foreground">Keep track of vendor orders and automate procurement with purchase agreements.</p>
+                <strong className="text-foreground">{t("materialsSection.features.purchasing.title")}</strong>
+                <p className="mt-2 text-muted-foreground">{t("materialsSection.features.purchasing.description")}</p>
               </div>
               <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-                <strong className="text-foreground">Barcode scanning.</strong>
-                <p className="mt-2 text-muted-foreground">Use barcode scanners to simplify inventory operations.</p>
+                <strong className="text-foreground">{t("materialsSection.features.barcode.title")}</strong>
+                <p className="mt-2 text-muted-foreground">{t("materialsSection.features.barcode.description")}</p>
               </div>
               <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-                <strong className="text-foreground">Material control.</strong>
-                <p className="mt-2 text-muted-foreground">Track all materials stored and used on construction jobs.</p>
+                <strong className="text-foreground">{t("materialsSection.features.materialControl.title")}</strong>
+                <p className="mt-2 text-muted-foreground">{t("materialsSection.features.materialControl.description")}</p>
               </div>
             </div>
 
             <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
               <div className="mb-5 h-8 rounded-xl bg-muted" />
               <div className="space-y-3">
-                {["Concrete", "Rebar", "Lumber", "Drywall", "Paint"].map((material, idx) => (
+                {t.raw("materialsSection.materials").map((material: string, idx: number) => (
                   <div key={material} className="grid grid-cols-4 gap-3">
                     <div className={`h-7 rounded-xl ${idx === 0 ? "bg-primary/20" : "bg-muted"}`} />
                     <div className="h-7 rounded-xl bg-muted" />
@@ -329,7 +319,7 @@ export default function ConstructionPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-3 text-center text-xs text-muted-foreground">Material inventory • Stock levels</div>
+              <div className="mt-3 text-center text-xs text-muted-foreground">{t("materialsSection.inventoryLabel")}</div>
             </div>
           </div>
         </div>
@@ -366,21 +356,20 @@ export default function ConstructionPage() {
           <div>
             <div className="mb-4 text-5xl">👁️</div>
             <ScriptHeading>
-              Keep an eye on the{" "}
-              <span className="bg-primary/20 px-2 rounded">costs</span>
+              {t("costsSection.title")}{" "}
+              <span className="bg-primary/20 px-2 rounded">{t("costsSection.titleHighlight")}</span>
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Invoice clients, manage contractor bills, log timesheets, track
-              expenses and analyze cost distribution to keep every job profitable.
+              {t("costsSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Clock className="h-4 w-4" />
-                Timesheet tracking
+                {t("costsSection.badges.timesheetTracking")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <ReceiptText className="h-4 w-4" />
-                Expense management
+                {t("costsSection.badges.expenseManagement")}
               </div>
             </div>
           </div>
@@ -391,14 +380,13 @@ export default function ConstructionPage() {
       <section className="bg-primary/5 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
-            On to some final{" "}
+            {t("finishingSection.title")}{" "}
             <span className="text-primary underline decoration-primary underline-offset-8">
-              touches!
+              {t("finishingSection.titleHighlight")}
             </span>
           </ScriptHeading>
           <p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">
-            Handle after-sales support, customer service requests and field service
-            visits with organized tasks and map-based planning.
+            {t("finishingSection.description")}
           </p>
 
           <div className="mt-12 grid gap-8 md:grid-cols-[1fr_280px]">
@@ -414,7 +402,7 @@ export default function ConstructionPage() {
             </div>
             <div className="rounded-2xl border border-border bg-card p-5 shadow-xl">
               <div className="aspect-[3/5] rounded-xl bg-gradient-to-br from-primary/20 to-muted" />
-              <div className="mt-3 text-center text-xs text-muted-foreground">Service map • Field locations</div>
+              <div className="mt-3 text-center text-xs text-muted-foreground">{t("finishingSection.serviceMapLabel")}</div>
             </div>
           </div>
         </div>
@@ -426,18 +414,17 @@ export default function ConstructionPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Practical tools for construction quotes, projects, inventory,
-              timesheets, invoices and planning.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -458,18 +445,16 @@ export default function ConstructionPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your construction business,
-            project management, inventory, and field operations.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -477,7 +462,7 @@ export default function ConstructionPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -495,7 +480,7 @@ export default function ConstructionPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -503,7 +488,7 @@ export default function ConstructionPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -539,11 +524,10 @@ export default function ConstructionPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              construction companies and contractors.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -556,26 +540,26 @@ export default function ConstructionPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your business"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a construction management workflow that helps you track materials,
-            manage costs, and deliver projects on time and on budget.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

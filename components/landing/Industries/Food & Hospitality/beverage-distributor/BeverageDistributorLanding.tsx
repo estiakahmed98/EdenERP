@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -28,6 +29,7 @@ import {
   Wine,
   Coffee,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Beverage Distributor | AdonERP Industries",
@@ -35,58 +37,34 @@ export const metadata: Metadata = {
     "A beverage distributor and liquor store landing page for AdonERP with point of sale, inventory management, B2B/B2C eCommerce, and bottle return workflows.",
 };
 
-const features = [
-  {
-    title: "Easy Material renting",
-    description: "Manage keg and equipment rentals for events and bars with ease.",
-  },
-  {
-    title: "HR Apps",
-    description: "Track employee schedules, payroll, and performance from one place.",
-  },
-  {
-    title: "Organize Events",
-    description: "Plan tastings, launches, and promotions directly from your platform.",
-  },
-  {
-    title: "Marketing Apps",
-    description: "Launch email campaigns and loyalty programs to boost repeat business.",
-  },
-  {
-    title: "Transport Management System",
-    description: "Optimize delivery routes and manage fleet operations efficiently.",
-  },
-  {
-    title: "Customer Loyalty tools",
-    description: "Reward repeat customers with points, discounts, and exclusive offers.",
-  },
-];
-
-const apps = [
-  { title: "Point of Sale", subtitle: "Fast in-store checkout", icon: ShoppingBag },
-  { title: "Inventory", subtitle: "Real-time stock tracking", icon: Package },
-  { title: "Purchase", subtitle: "Smart supplier orders", icon: Box },
-  { title: "Planning", subtitle: "Delivery route optimization", icon: Calendar },
-  { title: "Employees", subtitle: "Staff management", icon: Users },
-  { title: "Project", subtitle: "Event management", icon: Calendar },
-];
-
-const testimonials = [
-  {
-    name: "Marco Rossi",
-    role: "Owner, Vintage Wines & Spirits",
-    content:
-      "The processing time for accounting documents prior to analysis is now reduced from 2 days to only 5 hours, allowing us to focus on reporting and counseling.",
-    rating: 5,
-  },
-  {
-    name: "Lisa Chen",
-    role: "Operations Director, Craft Beer Collective",
-    content:
-      "AdonERP transformed our beverage distribution. From keg tracking to B2B ordering, everything runs smoothly. Our customers love the online shop.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Beer,
+    Wine,
+    Coffee,
+  };
+  return icons[iconName] || Beer;
+};
 
 function ScriptHeading({
   children,
@@ -99,8 +77,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -109,21 +86,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function BeverageDistributorPage() {
+  const t = useTranslations("pages.beveragedistributor");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -132,12 +116,13 @@ export default function BeverageDistributorPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Beer className="h-4 w-4" />}
-              label="Beverage industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Beverage Distributor
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -147,7 +132,7 @@ export default function BeverageDistributorPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  All you need to digitize your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -156,13 +141,11 @@ export default function BeverageDistributorPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  🍺 Liquor Store
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP allows you to manage the entire sales cycle of your beverage
-                distribution business, from inventory to point of sale, custom
-                features, craft drinks and bottle returns.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -171,27 +154,27 @@ export default function BeverageDistributorPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                The processing time for accounting documents prior to analysis is now
-                reduced from 2 days to only 5 hours, allowing us to focus on reporting
-                and counseling.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Marco Rossi</p>
-                  <p className="text-sm text-muted-foreground">Owner, Vintage Wines & Spirits</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -261,24 +244,23 @@ export default function BeverageDistributorPage() {
 
             <div className="order-1 md:order-2">
               <ScriptHeading>
-                PoS optimized for
+                {t("posSection.title")}
                 <br />
                 <span className="underline decoration-primary underline-offset-8">
-                  beverages
+                  {t("posSection.titleHighlight")}
                 </span>
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Run a beverage store with B2B pricelists, multiple packaging, fast
-                product creation, consignments, and bottle return workflows.
+                {t("posSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Beer className="h-4 w-4 text-primary" />
-                  Bottle return
+                  {t("posSection.badges.bottleReturn")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Package className="h-4 w-4 text-primary" />
-                  Multiple packaging
+                  {t("posSection.badges.multiplePackaging")}
                 </div>
               </div>
             </div>
@@ -289,15 +271,14 @@ export default function BeverageDistributorPage() {
       {/* B2B and B2C online shop Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          B2B and{" "}
+          {t("ecommerceSection.title")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            B2C
+            {t("ecommerceSection.titleHighlight")}
           </span>{" "}
-          online shop
+          {t("ecommerceSection.titleEnd")}
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-          Restaurants and cafés work with your B2B account, while customers can
-          browse products, pick up in store, or order delivery.
+          {t("ecommerceSection.description")}
         </p>
 
         <div className="mx-auto mt-12 grid max-w-6xl items-start gap-8 md:grid-cols-[1fr_280px]">
@@ -314,25 +295,25 @@ export default function BeverageDistributorPage() {
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-5 shadow-xl">
-            <h3 className="font-bold text-foreground">Your Cart</h3>
+            <h3 className="font-bold text-foreground">{t("ecommerceSection.cart.title")}</h3>
             <div className="mt-3 space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Craft Beer Pack</span>
+                <span className="text-muted-foreground">{t("ecommerceSection.cart.items.craftBeer")}</span>
                 <span className="text-foreground">$24.00</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-muted-foreground">Red Wine Bottle</span>
+                <span className="text-muted-foreground">{t("ecommerceSection.cart.items.redWine")}</span>
                 <span className="text-foreground">$18.50</span>
               </div>
             </div>
             <div className="mt-4 border-t border-border pt-3">
               <div className="flex justify-between font-semibold">
-                <span className="text-foreground">Total</span>
+                <span className="text-foreground">{t("ecommerceSection.cart.total")}</span>
                 <span className="text-foreground">$42.50</span>
               </div>
             </div>
             <button className="mt-5 w-full rounded-xl bg-primary py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90">
-              Checkout
+              {t("ecommerceSection.cart.checkout")}
             </button>
           </div>
         </div>
@@ -347,25 +328,24 @@ export default function BeverageDistributorPage() {
                 <Barcode className="h-10 w-10" />
               </div>
               <ScriptHeading>
-                Modern{" "}
+                {t("inventorySection.title")}{" "}
                 <span className="underline decoration-primary underline-offset-8">
-                  inventory
+                  {t("inventorySection.titleHighlight")}
                 </span>
                 <br />
-                management
+                {t("inventorySection.titleEnd")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Receive, store and deliver faster with barcode scanning. Buy
-                pallets, sell by boxes, and handle packaging smoothly.
+                {t("inventorySection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Barcode className="h-4 w-4 text-primary" />
-                  Batch tracking
+                  {t("inventorySection.badges.batchTracking")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Box className="h-4 w-4 text-primary" />
-                  Multi-unit selling
+                  {t("inventorySection.badges.multiUnitSelling")}
                 </div>
               </div>
             </div>
@@ -417,21 +397,19 @@ export default function BeverageDistributorPage() {
           <div className="order-1 md:order-2">
             <div className="mb-4 text-5xl">📘</div>
             <ScriptHeading>
-              Integrated Accounting
+              {t("accountingSection.title")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Imagine having all your data in real-time, from inventory to sales.
-              Everything becomes easier with inventory valuation, customer
-              statements, and more.
+              {t("accountingSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <CreditCard className="h-4 w-4" />
-                Real-time valuation
+                {t("accountingSection.badges.realTimeValuation")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <ReceiptText className="h-4 w-4" />
-                Customer statements
+                {t("accountingSection.badges.customerStatements")}
               </div>
             </div>
           </div>
@@ -444,18 +422,17 @@ export default function BeverageDistributorPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Smart tools for beverage retail, inventory management, logistics, events,
-              team management, and customer loyalty.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -476,18 +453,16 @@ export default function BeverageDistributorPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your beverage distribution
-            operation, inventory, logistics, and customer management.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -495,7 +470,7 @@ export default function BeverageDistributorPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -513,7 +488,7 @@ export default function BeverageDistributorPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -521,7 +496,7 @@ export default function BeverageDistributorPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -557,11 +532,10 @@ export default function BeverageDistributorPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              beverage distributors and liquor stores.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -574,29 +548,28 @@ export default function BeverageDistributorPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your business"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              The #1 Brewery
+              {t("footerCta.title")}
               <br />
-              and liquor store apps
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a beverage distribution workflow that helps you manage inventory,
-            streamline B2B/B2C sales, and scale from one location to many.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
-        
         </div>
       </section>
     </main>

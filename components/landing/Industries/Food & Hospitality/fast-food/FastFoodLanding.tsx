@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -23,6 +24,7 @@ import {
   Utensils,
   Wallet,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Fast Food | AdonERP Industries",
@@ -30,56 +32,29 @@ export const metadata: Metadata = {
     "A fast food industry landing page for AdonERP with self-ordering kiosks, kitchen management, inventory, and loyalty programs.",
 };
 
-const features = [
-  {
-    title: "Loyalty programs",
-    description: "Reward repeat customers with points, discounts, and exclusive offers.",
-  },
-  {
-    title: "Combo meals",
-    description: "Create meal bundles and special offers to increase average order value.",
-  },
-  {
-    title: "Self-ordering",
-    description: "Let customers place orders directly from kiosks or QR codes.",
-  },
-  {
-    title: "Payment provider",
-    description: "Accept multiple payment methods including cards and digital wallets.",
-  },
-  {
-    title: "Plan your service",
-    description: "Schedule staff shifts and optimize kitchen operations.",
-  },
-];
-
-const apps = [
-  { title: "Sales", subtitle: "Manage orders and quotations", icon: ShoppingCart },
-  { title: "Invoicing", subtitle: "Professional billing", icon: ReceiptText },
-  { title: "Inventory", subtitle: "Real-time stock tracking", icon: Package },
-  { title: "Purchase", subtitle: "Smart supplier orders", icon: Box },
-  { title: "CRM", subtitle: "Customer relationship management", icon: Users },
-  { title: "Accounting", subtitle: "Financial management", icon: CreditCard },
-];
-
-const rewards = ["Coupons", "Loyalty cards", "Promotions"];
-
-const testimonials = [
-  {
-    name: "Maria Gonzalez",
-    role: "Owner, Burger Palace",
-    content:
-      "AdonERP helped us achieve our goals while expanding, by reducing costs by approximately 10%, increasing employee productivity by 50%, and massively improving the decision-making process.",
-    rating: 5,
-  },
-  {
-    name: "David Kim",
-    role: "Operations Director, QuickBite",
-    content:
-      "The self-ordering kiosks and kitchen display system transformed our operations. Customers love the speed, and our team stays perfectly synchronized.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+  };
+  return icons[iconName] || Utensils;
+};
 
 function ScriptHeading({
   children,
@@ -92,8 +67,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -102,21 +76,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function FastFoodPage() {
+  const t = useTranslations("pages.fastfood");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -125,12 +106,13 @@ export default function FastFoodPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Utensils className="h-4 w-4" />}
-              label="Fast food industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Fast Food
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -140,7 +122,7 @@ export default function FastFoodPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The best software for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -149,12 +131,11 @@ export default function FastFoodPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  🍔 Fast Food
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP covers everything from self-ordering kiosks and kitchen
-                management to inventory and staff, all in one seamless platform.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -163,27 +144,27 @@ export default function FastFoodPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                AdonERP helped us achieve our goals while expanding, by reducing costs by
-                approximately 10%, increasing employee productivity by 50%, and massively
-                improving the decision-making process.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Maria Gonzalez</p>
-                  <p className="text-sm text-muted-foreground">Owner, Burger Palace</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -264,23 +245,21 @@ export default function FastFoodPage() {
           <div>
             <div className="mb-4 text-5xl">👆</div>
             <ScriptHeading>
-              Self-ordering at
+              {t("kioskSection.title")}
               <br />
-              the kiosk
+              {t("kioskSection.subtitle")}
             </ScriptHeading>
             <p className="mt-6 max-w-md text-base leading-7 text-muted-foreground">
-              Let customers place and pay for their orders directly from the kiosk.
-              They can browse meals, choose extras, and enjoy a faster ordering
-              experience.
+              {t("kioskSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <ShoppingCart className="h-4 w-4" />
-                QR ordering
+                {t("kioskSection.badges.qrOrdering")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <CreditCard className="h-4 w-4" />
-                Digital payments
+                {t("kioskSection.badges.digitalPayments")}
               </div>
             </div>
           </div>
@@ -291,13 +270,11 @@ export default function FastFoodPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
           <span className="underline decoration-primary underline-offset-8">
-            Smooth
-          </span>{" "}
-          service
+            {t("serviceSection.title")}
+          </span>
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-          Seamless order preparation and kitchen display keep staff aligned with
-          orders so they can prepare meals exactly on time.
+          {t("serviceSection.description")}
         </p>
 
         <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">
@@ -328,38 +305,36 @@ export default function FastFoodPage() {
           <div>
             <div className="mb-4 text-5xl">👕</div>
             <ScriptHeading>
-              <span className="bg-primary/20 px-2 rounded">Tasty</span> rewards
+              <span className="bg-primary/20 px-2 rounded">{t("rewardsSection.title")}</span>
             </ScriptHeading>
             <p className="mt-6 max-w-md text-base leading-7 text-muted-foreground">
-              Keep your customers coming back with loyalty programs, coupons,
-              discounts and promotional rewards.
+              {t("rewardsSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Gift className="h-4 w-4" />
-                Points system
+                {t("rewardsSection.badges.pointsSystem")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Wallet className="h-4 w-4" />
-                Digital wallet
+                {t("rewardsSection.badges.digitalWallet")}
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-6">
-            {rewards.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
-              >
-                <div className="text-4xl">
-                  {item === "Coupons" && "🎫"}
-                  {item === "Loyalty cards" && "💳"}
-                  {item === "Promotions" && "🔥"}
+            {t.raw("rewardsSection.rewards").map((item: string) => {
+              const iconsMap = t.raw("rewardsSection.rewardIcons");
+              return (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
+                >
+                  <div className="text-4xl">{iconsMap[item] || "🎁"}</div>
+                  <p className="mt-2 font-semibold text-foreground">{item}</p>
                 </div>
-                <p className="mt-2 font-semibold text-foreground">{item}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -367,46 +342,36 @@ export default function FastFoodPage() {
       {/* Never ever run out of stock Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Never ever run{" "}
-          <span className="bg-primary/20 px-2 rounded">out of stock</span>
+          {t("inventorySection.title")}{" "}
+          <span className="bg-primary/20 px-2 rounded">{t("inventorySection.titleHighlight")}</span>
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-          Smart replenishment strategies let AdonERP propose or trigger purchase
-          orders automatically.
+          {t("inventorySection.description")}
         </p>
 
         <div className="relative mx-auto mt-12 max-w-5xl">
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
             <div className="border-b border-border bg-muted/30 px-6 py-4">
               <div className="grid grid-cols-5 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                <span>Ingredient</span>
-                <span>On Hand</span>
-                <span>Min Stock</span>
-                <span>Order Qty</span>
-                <span>Status</span>
+                {t.raw("inventorySection.table.headers").map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["Burger Patties", "120 pcs", "100 pcs", "200 pcs", "Good"],
-                ["Buns", "85 pcs", "100 pcs", "150 pcs", "Reorder"],
-                ["French Fries", "45 kg", "40 kg", "60 kg", "Warning"],
-                ["Cheese Slices", "60 pcs", "50 pcs", "100 pcs", "Good"],
-                ["Lettuce", "8 kg", "10 kg", "15 kg", "Reorder"],
-                ["Tomato Sauce", "12 L", "10 L", "20 L", "Good"],
-              ].map((row, idx) => (
-                <div key={row[0]} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
-                  <span className="font-medium text-foreground">{row[0]}</span>
-                  <span className="text-foreground">{row[1]}</span>
-                  <span className="text-foreground">{row[2]}</span>
-                  <span className="text-foreground">{row[3]}</span>
+              {t.raw("inventorySection.table.rows").map((row: any, idx: number) => (
+                <div key={row.ingredient} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
+                  <span className="font-medium text-foreground">{row.ingredient}</span>
+                  <span className="text-foreground">{row.onHand}</span>
+                  <span className="text-foreground">{row.minStock}</span>
+                  <span className="text-foreground">{row.orderQty}</span>
                   <span>
                     <span className={`rounded-full px-2 py-1 text-xs font-semibold ${
-                      row[4] === "Good" ? "bg-accent/20 text-accent-foreground" :
-                      row[4] === "Reorder" ? "bg-destructive/20 text-destructive" :
+                      row.status === "Good" || row.status === "ভাল" ? "bg-accent/20 text-accent-foreground" :
+                      row.status === "Reorder" || row.status === "পুনর্বিন্যাস" ? "bg-destructive/20 text-destructive" :
                       "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
                     }`}>
-                      {row[4]}
+                      {row.status}
                     </span>
                   </span>
                 </div>
@@ -422,18 +387,17 @@ export default function FastFoodPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Everything needed to run fast food ordering, payments, stock management,
-              and service from one platform.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -454,18 +418,16 @@ export default function FastFoodPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your fast food operation,
-            inventory, customer management, and financials.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -473,7 +435,7 @@ export default function FastFoodPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -491,7 +453,7 @@ export default function FastFoodPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -499,7 +461,7 @@ export default function FastFoodPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -535,11 +497,10 @@ export default function FastFoodPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              fast food and quick service restaurants.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -552,29 +513,28 @@ export default function FastFoodPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your restaurant"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a fast food management workflow that helps your team serve faster,
-            manage inventory smarter, and scale from one location to many.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
-         
         </div>
       </section>
     </main>

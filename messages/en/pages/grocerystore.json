@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "title": "Grocery Store | AdonERP",
+    "description": "AI-powered grocery store management platform for all your retail operations — from point of sale and inventory management to loyalty programs and expiration tracking."
+  },
+  "hero": {
+    "eyebrowIcon": "ShoppingBag",
+    "eyebrowLabel": "Grocery industry template",
+    "industriesLabel": "Industries / Grocery Store",
+    "preHeading": "All-in-one software for",
+    "title": "Grocery Stores",
+    "description": "AdonERP contains an intuitive, easy-to-set-up Point of Sale, and allows you to streamline purchasing, sales, inventory management, accounting, and B2C/B2B sales from one platform.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "I have used other programs before, but AdonERP has a variety of layers that make it easier to work. From expiration tracking to loyalty programs, everything just works.",
+    "testimonialName": "Sarah Johnson",
+    "testimonialRole": "Owner, FreshMart"
+  },
+  "posSection": {
+    "eyebrowIcon": "ShoppingBag",
+    "eyebrowLabel": "Point of sale",
+    "title": "A",
+    "titleHighlight": "reliable",
+    "titleEnd": "Point of Sale"
+  },
+  "loyaltySection": {
+    "title": "Convenient shopping to boost",
+    "titleHighlight": "loyalty",
+    "description": "Promotions and discounts offer customers flexible shopping experiences, while loyalty programs help them keep coming back.",
+    "badges": {
+      "memberPricing": "Member pricing",
+      "weeklySpecials": "Weekly specials"
+    },
+    "rewards": ["Coupon", "Loyalty cards", "Promotions", "Discount", "Gift card"],
+    "rewardIcons": {
+      "Coupon": "🎫",
+      "Loyalty cards": "💳",
+      "Promotions": "🔥",
+      "Discount": "🏷️",
+      "Gift card": "🎁"
+    }
+  },
+  "expirationSection": {
+    "title": "Expiration dates",
+    "description": "Track product expiration dates, manage lots and serial numbers, and reduce waste with better inventory visibility. Never sell expired products again.",
+    "badges": {
+      "expiryAlerts": "⚠️ Expiry alerts",
+      "lotTracking": "✓ Lot tracking"
+    },
+    "demo": {
+      "items": [
+        { "name": "Organic Apples", "date": "12/2026", "status": "fresh" },
+        { "name": "Whole Wheat Bread", "date": "11/2026", "status": "fresh" },
+        { "name": "Fresh Milk", "date": "09/2026", "status": "warning" },
+        { "name": "Fresh Dates", "date": "02/2027", "status": "fresh" }
+      ]
+    }
+  },
+  "replenishmentSection": {
+    "title": "Flawless Replenishment",
+    "description": "Never run out of stock with automated purchase orders and smart replenishment rules.",
+    "demo": {
+      "autoReorder": "Auto reorder point",
+      "autoReorderValue": "When stock < 50",
+      "orderQuantity": "Order quantity",
+      "orderQuantityValue": "200 units",
+      "supplierLeadTime": "Supplier lead time",
+      "supplierLeadTimeValue": "2 days"
+    }
+  },
+  "scanSection": {
+    "titlePrefix": "Scan",
+    "titleHighlight": "it",
+    "titleEnd": "that's it",
+    "description": "Scan products to speed up inventory transfers, receiving, checkout, and product traceability. Works with any barcode scanner.",
+    "badges": {
+      "receiving": "Receiving",
+      "checkout": "Checkout",
+      "transfers": "Transfers"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Powerful grocery tools for daily sales, stock management, and reporting.",
+    "list": [
+      {
+        "title": "Payment providers",
+        "description": "Accept multiple payment methods including cards, e-wallets, and contactless."
+      },
+      {
+        "title": "Multiple cashiers",
+        "description": "Manage several cashier accounts with badges or PIN codes."
+      },
+      {
+        "title": "Integrated accounting",
+        "description": "Seamless accounting integration for real-time financial tracking."
+      },
+      {
+        "title": "Bills reloading",
+        "description": "Easily reload and manage utility bill payments for customers."
+      },
+      {
+        "title": "Loyalty programs",
+        "description": "Reward returning customers with points and exclusive discounts."
+      },
+      {
+        "title": "Reporting",
+        "description": "Track sales trends, bestsellers, and stock performance in one place."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One",
+    "titleHighlight": "need",
+    "titleMiddle": "one",
+    "titleHighlight2": "app",
+    "description": "Expand as you grow with connected apps for your grocery operation, finance, supplier flows, and customer communication.",
+    "apps": [
+      {
+        "title": "Point of Sale",
+        "subtitle": "Fast in-store checkout",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "Sales",
+        "subtitle": "Manage orders and quotations",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Real-time stock tracking",
+        "icon": "Package"
+      },
+      {
+        "title": "Employees",
+        "subtitle": "Staff management and scheduling",
+        "icon": "Users"
+      },
+      {
+        "title": "Accounting",
+        "subtitle": "Professional financial management",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Smart supplier orders",
+        "icon": "Box"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Owner, FreshMart",
+        "content": "I have used other programs before, but AdonERP has a variety of layers that make it easier to work. From expiration tracking to loyalty programs, everything just works.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Store Manager, GreenGrocers",
+        "content": "The integrated POS and inventory management saved us hours of manual work. Our perishable waste reduced by 30% since we started tracking expiration dates.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for grocery retailers."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your store",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a grocery store workflow that helps your team sell faster, manage inventory smarter, and reduce waste with expiration tracking.",
+    "button": "Start now"
+  }
+}

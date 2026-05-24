@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "title": "Furniture Store | AdonERP",
+    "description": "AI-powered furniture store management platform for all your retail operations — from point of sale and eCommerce to custom orders and B2B quotations."
+  },
+  "hero": {
+    "eyebrowIcon": "Home",
+    "eyebrowLabel": "Furniture industry template",
+    "industriesLabel": "Industries / Furniture Store",
+    "preHeading": "The #1 software for",
+    "title": "Furniture Stores",
+    "description": "With its ability to handle everything from eCommerce and Point of Sale transactions to custom furniture orders, AdonERP is a complete solution for managing your B2B and B2C sales.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP has been nothing but a good thing for us. From custom furniture orders to B2B quotations, it has worked really well for our growing business.",
+    "testimonialName": "Ville Kurvato",
+    "testimonialRole": "COO, Nordic Home"
+  },
+  "ecommerceSection": {
+    "eyebrowIcon": "ShoppingCart",
+    "eyebrowLabel": "Complete eCommerce solution",
+    "title": "All-in-one eCommerce",
+    "subtitle": "for furniture retailers",
+    "features": {
+      "flexibleProducts": {
+        "title": "Flexible products",
+        "description": "Offer your customers different sizes, colors, and materials in your online store."
+      },
+      "pricelists": {
+        "title": "Pricelists",
+        "description": "Manage your B2B and B2C sales through a single website with flexible pricing."
+      },
+      "customForms": {
+        "title": "Custom forms",
+        "description": "Create custom forms for your website. Customers can request quotes directly online."
+      }
+    }
+  },
+  "posSection": {
+    "eyebrowIcon": "ShoppingBag",
+    "eyebrowLabel": "Point of sale",
+    "title": "In-store check out",
+    "subtitle": "made simple",
+    "features": {
+      "productKits": {
+        "title": "Product kits",
+        "description": "Bundle sets of furniture together and sell entire rooms at once."
+      },
+      "payNowShipLater": {
+        "title": "Pay now, ship later!",
+        "description": "Automatically generate delivery orders from the point of sale."
+      }
+    },
+    "demo": {
+      "kitchenJosh": "Kitchen Josh",
+      "invoice": "Invoice #F-2024"
+    },
+    "footerMessage": "Fast checkout, loyalty perks, and live stock in one furniture store flow."
+  },
+  "customOrderSection": {
+    "title": "Custom order?",
+    "subtitle": "No problem!",
+    "description": "Smart sourcing automatically places purchase orders based on your sales of custom products. Made-to-order custom items are tracked from quotation to manufacturing.",
+    "badges": {
+      "madeToOrder": "Made-to-order",
+      "smartSourcing": "Smart sourcing"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Powerful tools designed to simplify furniture retail operations, from custom orders to multi-channel sales.",
+    "list": [
+      {
+        "title": "Easy invoicing",
+        "description": "Create professional invoices in seconds and track payments effortlessly."
+      },
+      {
+        "title": "Loyalty programs",
+        "description": "Reward returning customers with points, tiered perks, and exclusive discounts."
+      },
+      {
+        "title": "Quotation builder",
+        "description": "Generate custom quotes for B2B clients and convert them to orders instantly."
+      },
+      {
+        "title": "Free domain name",
+        "description": "Launch your online store with a professional domain included."
+      },
+      {
+        "title": "Shipping connectors",
+        "description": "Integrate with major carriers for seamless delivery management."
+      },
+      {
+        "title": "Integrated reporting",
+        "description": "Track sales trends, inventory turnover, and profitability in real-time."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One",
+    "titleHighlight": "need",
+    "titleMiddle": "one",
+    "titleHighlight2": "app",
+    "description": "Expand as you grow with connected apps for your retail operation, finance, supplier flows, and customer communication.",
+    "apps": [
+      {
+        "title": "Point of Sale",
+        "subtitle": "Fast in-store checkout",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "eCommerce",
+        "subtitle": "Sell furniture online",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "CRM",
+        "subtitle": "Manage customer relationships",
+        "icon": "Users"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Professional billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Smart supplier orders",
+        "icon": "Package"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Real-time stock tracking",
+        "icon": "Box"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Ville Kurvato",
+        "role": "COO, Nordic Home",
+        "content": "AdonERP has been nothing but a good thing for us. From custom furniture orders to B2B quotations, it has worked really well for our growing business.",
+        "rating": 5
+      },
+      {
+        "name": "Elena Marchetti",
+        "role": "Owner, Modern Living",
+        "content": "The ability to handle both B2B and B2C sales through a single platform is game-changing. Our team manages everything from one place.",
+        "rating": 5
+      }
+    ]
+  },
+  "communityBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for furniture retailers."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your store",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a furniture store workflow that helps your team sell faster, manage custom orders, and scale from one showroom to many.",
+    "button": "Start now"
+  }
+}

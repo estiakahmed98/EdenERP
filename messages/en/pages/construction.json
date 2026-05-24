@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "title": "Construction Business | AdonERP",
+    "description": "AI-powered construction management platform for all your building operations — from project management and material tracking to timesheets, invoicing, and field service."
+  },
+  "hero": {
+    "eyebrowIcon": "Hammer",
+    "eyebrowLabel": "Construction industry template",
+    "industriesLabel": "Industries / Construction",
+    "preHeading": "All-in-one toolkit for your",
+    "title": "🏠 Construction business",
+    "description": "AdonERP allows you to handle all aspects of construction projects from start to finish while eliminating pain points such as material shortages and budget management.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "The most significant change that AdonERP has brought to our business operations and culture is the sense of calm that has permeated our daily work life.",
+    "testimonialName": "Robert Johnson",
+    "testimonialRole": "Owner, Johnson Construction Group"
+  },
+  "projectSection": {
+    "title": "Groundbreaking",
+    "titleHighlight": "project",
+    "titleEnd": "management",
+    "description": "Manage all aspects of your construction project from one dashboard. Track tasks, materials, stock moves, planning shifts and deadlines.",
+    "badges": {
+      "taskTracking": "Task tracking",
+      "deadlineManagement": "Deadline management"
+    },
+    "kanbanLabel": "Project kanban • Active jobs"
+  },
+  "materialsSection": {
+    "title": "Never lose",
+    "titleHighlight": "track",
+    "titleEnd": "of materials",
+    "features": {
+      "purchasing": {
+        "title": "Streamline purchasing.",
+        "description": "Keep track of vendor orders and automate procurement with purchase agreements."
+      },
+      "barcode": {
+        "title": "Barcode scanning.",
+        "description": "Use barcode scanners to simplify inventory operations."
+      },
+      "materialControl": {
+        "title": "Material control.",
+        "description": "Track all materials stored and used on construction jobs."
+      }
+    },
+    "inventoryLabel": "Material inventory • Stock levels",
+    "materials": ["Concrete", "Rebar", "Lumber", "Drywall", "Paint"]
+  },
+  "costsSection": {
+    "title": "Keep an eye on the",
+    "titleHighlight": "costs",
+    "description": "Invoice clients, manage contractor bills, log timesheets, track expenses and analyze cost distribution to keep every job profitable.",
+    "badges": {
+      "timesheetTracking": "Timesheet tracking",
+      "expenseManagement": "Expense management"
+    }
+  },
+  "finishingSection": {
+    "title": "On to some final",
+    "titleHighlight": "touches!",
+    "description": "Handle after-sales support, customer service requests and field service visits with organized tasks and map-based planning.",
+    "serviceMapLabel": "Service map • Field locations"
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Practical tools for construction quotes, projects, inventory, timesheets, invoices and planning.",
+    "list": [
+      {
+        "title": "Quotation builder",
+        "description": "Create professional construction quotes with materials, labor, and markup."
+      },
+      {
+        "title": "Timesheet timer",
+        "description": "Track billable hours for crew members and subcontractors accurately."
+      },
+      {
+        "title": "Clear traceability",
+        "description": "Follow every material from purchase order to job site installation."
+      },
+      {
+        "title": "Invoicing",
+        "description": "Generate progress invoices based on milestones or completion percentage."
+      },
+      {
+        "title": "Resource planning",
+        "description": "Schedule crew, equipment, and materials across multiple job sites."
+      },
+      {
+        "title": "Opportunities",
+        "description": "Track bids, proposals, and win rates from your sales pipeline."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your construction business, project management, inventory, and field operations.",
+    "apps": [
+      {
+        "title": "CRM",
+        "subtitle": "Lead and bid management",
+        "icon": "Users"
+      },
+      {
+        "title": "Sales",
+        "subtitle": "Quotations and proposals",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Job site task tracking",
+        "icon": "HardDrive"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Material stock control",
+        "icon": "Warehouse"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Supplier orders",
+        "icon": "Package"
+      },
+      {
+        "title": "Field Service",
+        "subtitle": "On-site operations",
+        "icon": "Truck"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Robert Johnson",
+        "role": "Owner, Johnson Construction Group",
+        "content": "The most significant change that AdonERP has brought to our business operations and culture is the sense of calm that has permeated our daily work life.",
+        "rating": 5
+      },
+      {
+        "name": "Maria Gonzales",
+        "role": "Project Director, BuildRight Contractors",
+        "content": "From material tracking to timesheets and invoicing, AdonERP streamlined our entire construction workflow. No more material shortages or budget overruns.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for construction companies and contractors."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your business",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a construction management workflow that helps you track materials, manage costs, and deliver projects on time and on budget.",
+    "button": "Start now"
+  }
+}

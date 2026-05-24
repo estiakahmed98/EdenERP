@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "title": "Hardware Store | AdonERP",
+    "description": "AI-powered hardware store management platform for all your retail operations — from point of sale and inventory management to loyalty programs and multi-channel sales."
+  },
+  "hero": {
+    "eyebrowIcon": "Wrench",
+    "eyebrowLabel": "Hardware industry template",
+    "industriesLabel": "Industries / Hardware Store",
+    "preHeading": "The #1 solution for your",
+    "title": "Hardware Store",
+    "description": "AdonERP covers all the software needs for your hardware store, from online and in-store transactions to order management and inventory control.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "It's great to see how technology solutions like AdonERP can streamline operations and enhance productivity for businesses in the hardware retail industry.",
+    "testimonialName": "PT Global Teknologi Niaga",
+    "testimonialRole": "Hardware Retail Chain"
+  },
+  "interfaceSection": {
+    "titlePrefix": "An",
+    "titleHighlight": "intuitive",
+    "titleEnd": "interface for",
+    "titleEnd2": "hardware sales",
+    "description": "An efficient point-of-sale that lets anyone master AdonERP POS in minutes, adapt to any configuration, and focus on what matters: the customer."
+  },
+  "stockSection": {
+    "title": "Stay on top of your",
+    "titleHighlight": "stock",
+    "titleEnd": "levels",
+    "features": {
+      "flexibleConfig": {
+        "title": "Flexible product configuration.",
+        "description": "Hardware comes in all configurations. Display more variants by configuring memory, components, and other variables."
+      },
+      "effortlessStock": {
+        "title": "Effortless stock management.",
+        "description": "Real-time inventory updates and automatic replenishment keep you ahead."
+      }
+    },
+    "table": {
+      "headers": ["Product", "On Hand", "Forecast", "Min / Max", "Status"],
+      "rows": [
+        {
+          "product": "Hammer (16oz)",
+          "onHand": "32",
+          "forecast": "28",
+          "minMax": "10/50",
+          "status": "Healthy"
+        },
+        {
+          "product": "Power Drill",
+          "onHand": "12",
+          "forecast": "8",
+          "minMax": "5/25",
+          "status": "Reorder"
+        },
+        {
+          "product": "Screwdriver Set",
+          "onHand": "45",
+          "forecast": "42",
+          "minMax": "20/80",
+          "status": "Healthy"
+        },
+        {
+          "product": "Measuring Tape",
+          "onHand": "18",
+          "forecast": "15",
+          "minMax": "10/40",
+          "status": "Low stock"
+        },
+        {
+          "product": "Toolbox 20\"",
+          "onHand": "6",
+          "forecast": "4",
+          "minMax": "5/20",
+          "status": "Reorder"
+        },
+        {
+          "product": "Paint Brush Set",
+          "onHand": "27",
+          "forecast": "25",
+          "minMax": "10/50",
+          "status": "Healthy"
+        }
+      ]
+    }
+  },
+  "loyaltySection": {
+    "title": "Boost",
+    "titleHighlight": "sales",
+    "titleMiddle": "with",
+    "titleEnd": "loyalty programs",
+    "description": "Loyalty programs improve your clients' shopping experience. Handle products from around the world and reward repeat customers.",
+    "badges": {
+      "rewardPoints": "Reward points",
+      "digitalWallet": "Digital wallet"
+    },
+    "rewards": ["Coupons", "Loyalty cards", "Promotions", "eWallet", "Gift cards"],
+    "rewardIcons": {
+      "Coupons": "🎫",
+      "Loyalty cards": "💳",
+      "Promotions": "🔥",
+      "eWallet": "📱",
+      "Gift cards": "🎁"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Smart tools to run hardware retail, stock management, payments, and delivery from one place.",
+    "list": [
+      {
+        "title": "All devices welcome",
+        "description": "Works perfectly on tablets, laptops, desktops, and industrial scanners."
+      },
+      {
+        "title": "Physical inventory",
+        "description": "Conduct cycle counts and full inventory audits with ease."
+      },
+      {
+        "title": "Multiple cashiers",
+        "description": "Manage several cashier accounts with badges or PIN codes."
+      },
+      {
+        "title": "Website domain name",
+        "description": "Get a professional domain name included with your online store."
+      },
+      {
+        "title": "All payment methods",
+        "description": "Accept cash, cards, e-wallets, and contactless payments."
+      },
+      {
+        "title": "Shipping integrations",
+        "description": "Connect with major carriers for seamless delivery management."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your hardware retail operation, finance, supplier flows, and customer communication.",
+    "apps": [
+      {
+        "title": "Point of Sale",
+        "subtitle": "Fast in-store checkout",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Real-time stock tracking",
+        "icon": "Package"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Professional billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Planning",
+        "subtitle": "Optimize staff schedules",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Smart supplier orders",
+        "icon": "Box"
+      },
+      {
+        "title": "eCommerce",
+        "subtitle": "Sell hardware online",
+        "icon": "ShoppingCart"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "PT Global Teknologi Niaga",
+        "role": "Hardware Retail Chain",
+        "content": "It's great to see how technology solutions like AdonERP can streamline operations and enhance productivity for businesses in the hardware retail industry.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Zhang",
+        "role": "Owner, ToolBox Hardware",
+        "content": "From inventory management to multi-channel sales, AdonERP handles everything. Our team mastered the POS in just one day.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for hardware retailers."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your store",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a hardware store workflow that helps your team sell faster, manage inventory smarter, and scale from one location to many.",
+    "button": "Start now"
+  }
+}

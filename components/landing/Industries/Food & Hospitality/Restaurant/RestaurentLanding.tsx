@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -23,6 +24,7 @@ import {
   Utensils,
   Wallet,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Restaurant | AdonERP Industries",
@@ -30,66 +32,29 @@ export const metadata: Metadata = {
     "A restaurant industry landing page for AdonERP with point of sale, table booking, inventory management, and staff scheduling.",
 };
 
-const features = [
-  {
-    title: "Compatible with any device",
-    description: "Works perfectly on tablets, laptops, desktops, and kitchen display systems.",
-  },
-  {
-    title: "Custom floor plans",
-    description: "Design and manage your restaurant layout with drag-and-drop tools.",
-  },
-  {
-    title: "Table management",
-    description: "Track table status, split bills, and manage orders efficiently.",
-  },
-  {
-    title: "Purchase Orders",
-    description: "Create and track purchase orders for ingredients and supplies.",
-  },
-  {
-    title: "Table Booking",
-    description: "Accept online reservations and manage booking calendar.",
-  },
-  {
-    title: "Staff Scheduling",
-    description: "Plan shifts, manage attendance, and optimize labor costs.",
-  },
-  {
-    title: "Replenishment",
-    description: "Automated reordering when stock reaches minimum levels.",
-  },
-  {
-    title: "Planning",
-    description: "Organize services, events, and daily operations seamlessly.",
-  },
-];
-
-const apps = [
-  { title: "Point of Sale", subtitle: "Fast order taking & billing", icon: ShoppingBag },
-  { title: "Purchase", subtitle: "Smart supplier orders", icon: Package },
-  { title: "Appointments", subtitle: "Online table booking", icon: Calendar },
-  { title: "Inventory", subtitle: "Real-time stock tracking", icon: Box },
-  { title: "Planning", subtitle: "Staff shift management", icon: Clock },
-  { title: "Website", subtitle: "Restaurant online presence", icon: Utensils },
-];
-
-const testimonials = [
-  {
-    name: "Chef Antonio Rossi",
-    role: "Owner, Bella Italia",
-    content:
-      "AdonERP improved resource management, making planning and invoicing more efficient, enhancing communication and collaboration across our team.",
-    rating: 5,
-  },
-  {
-    name: "Sarah Mitchell",
-    role: "Operations Manager, The Gourmet Kitchen",
-    content:
-      "From table bookings to inventory management, AdonERP transformed how we run our restaurant. The POS is incredibly intuitive and our staff loves it.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Table,
+  };
+  return icons[iconName] || Utensils;
+};
 
 function ScriptHeading({
   children,
@@ -102,8 +67,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -112,21 +76,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function RestaurantPage() {
+  const t = useTranslations("pages.restaurant");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -135,12 +106,13 @@ export default function RestaurantPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Utensils className="h-4 w-4" />}
-              label="Restaurant industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Restaurant
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -150,7 +122,7 @@ export default function RestaurantPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The ultimate software for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -159,12 +131,11 @@ export default function RestaurantPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Restaurant
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP offers everything your restaurant needs to manage point of sale,
-                inventory, staff, reservations, purchasing, and services from one platform.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -173,26 +144,27 @@ export default function RestaurantPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                AdonERP improved resource management, making planning and invoicing more
-                efficient, enhancing communication and collaboration across our team.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Chef Antonio Rossi</p>
-                  <p className="text-sm text-muted-foreground">Owner, Bella Italia</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -247,11 +219,10 @@ export default function RestaurantPage() {
       {/* Take your orders with precision Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Take your orders with precision
+          {t("posSection.title")}
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-          Manage restaurant orders, floor operations, split bills and payments
-          with an intuitive point-of-sale interface.
+          {t("posSection.description")}
         </p>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
@@ -281,11 +252,10 @@ export default function RestaurantPage() {
           <div className="text-center">
             <div className="mb-3 text-5xl">😊</div>
             <ScriptHeading>
-              Table booking made simple
+              {t("bookingSection.title")}
             </ScriptHeading>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-              Create table bookings, manage reservations, and organize restaurant
-              floor plans with clear visual tools.
+              {t("bookingSection.description")}
             </p>
           </div>
 
@@ -305,7 +275,7 @@ export default function RestaurantPage() {
                 ))}
               </div>
               <div className="mt-4 text-center text-sm text-muted-foreground">
-                Floor plan • 12 tables
+                {t("bookingSection.floorPlanLabel")}
               </div>
             </div>
             <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
@@ -347,46 +317,37 @@ export default function RestaurantPage() {
       {/* Never ever run out of stock Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Never ever run{" "}
-          <span className="bg-primary/20 px-2 rounded">out of stock</span>
+          {t("inventorySection.title")}{" "}
+          <span className="bg-primary/20 px-2 rounded">{t("inventorySection.titleHighlight")}</span>
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-          Automate purchase orders and manage replenishment so your kitchen always
-          has the ingredients it needs.
+          {t("inventorySection.description")}
         </p>
 
         <div className="relative mx-auto mt-12 max-w-5xl">
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
             <div className="border-b border-border bg-muted/30 px-6 py-4">
               <div className="grid grid-cols-5 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                <span>Ingredient</span>
-                <span>On Hand</span>
-                <span>Min Stock</span>
-                <span>Order Qty</span>
-                <span>Status</span>
+                {t.raw("inventorySection.table.headers").map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["Tomatoes", "15 kg", "10 kg", "20 kg", "Good"],
-                ["Onions", "8 kg", "10 kg", "15 kg", "Reorder"],
-                ["Chicken Breast", "22 kg", "15 kg", "25 kg", "Good"],
-                ["Olive Oil", "5 L", "8 L", "12 L", "Low stock"],
-                ["Parmesan Cheese", "3 kg", "4 kg", "6 kg", "Reorder"],
-                ["Fresh Basil", "2 kg", "2 kg", "3 kg", "Warning"],
-              ].map((row, idx) => (
-                <div key={row[0]} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
-                  <span className="font-medium text-foreground">{row[0]}</span>
-                  <span className="text-foreground">{row[1]}</span>
-                  <span className="text-foreground">{row[2]}</span>
-                  <span className="text-foreground">{row[3]}</span>
+              {t.raw("inventorySection.table.rows").map((row: any, idx: number) => (
+                <div key={row.ingredient} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
+                  <span className="font-medium text-foreground">{row.ingredient}</span>
+                  <span className="text-foreground">{row.onHand}</span>
+                  <span className="text-foreground">{row.minStock}</span>
+                  <span className="text-foreground">{row.orderQty}</span>
                   <span>
                     <span className={`rounded-full px-2 py-1 text-xs font-semibold ${
-                      row[4] === "Good" ? "bg-accent/20 text-accent-foreground" :
-                      row[4] === "Reorder" ? "bg-destructive/20 text-destructive" :
+                      row.status === "Good" || row.status === "ভাল" ? "bg-accent/20 text-accent-foreground" :
+                      row.status === "Reorder" || row.status === "পুনর্বিন্যাস" ? "bg-destructive/20 text-destructive" :
+                      row.status === "Warning" || row.status === "সতর্কতা" ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400" :
                       "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
                     }`}>
-                      {row[4]}
+                      {row.status}
                     </span>
                   </span>
                 </div>
@@ -433,22 +394,21 @@ export default function RestaurantPage() {
             <div className="order-1 md:order-2">
               <div className="mb-4 text-5xl">🕒</div>
               <ScriptHeading>
-                Plan your services
+                {t("planningSection.title")}
                 <br />
-                like a pro
+                {t("planningSection.subtitle")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Schedule staff, organize shifts, manage planning and keep your
-                restaurant team aligned every day.
+                {t("planningSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Clock className="h-4 w-4 text-primary" />
-                  Shift planning
+                  {t("planningSection.badges.shiftPlanning")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Users className="h-4 w-4 text-primary" />
-                  Team management
+                  {t("planningSection.badges.teamManagement")}
                 </div>
               </div>
             </div>
@@ -462,18 +422,17 @@ export default function RestaurantPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Smart restaurant tools for service, reservations, stock management, and
-              team coordination from one platform.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -494,18 +453,16 @@ export default function RestaurantPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your restaurant operation,
-            inventory, reservations, and team management.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -513,7 +470,7 @@ export default function RestaurantPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -531,7 +488,7 @@ export default function RestaurantPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -539,7 +496,7 @@ export default function RestaurantPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -575,11 +532,10 @@ export default function RestaurantPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              restaurants and hospitality.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -592,26 +548,26 @@ export default function RestaurantPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your restaurant"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a restaurant management workflow that helps your team serve
-            faster, manage reservations, and scale from one location to many.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

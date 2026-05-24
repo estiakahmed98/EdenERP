@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "title": "Beverage Distributor | AdonERP",
+    "description": "AI-powered beverage distribution and liquor store management platform for all your operations — from point of sale and inventory management to B2B/B2C eCommerce and bottle return workflows."
+  },
+  "hero": {
+    "eyebrowIcon": "Beer",
+    "eyebrowLabel": "Beverage industry template",
+    "industriesLabel": "Industries / Beverage Distributor",
+    "preHeading": "All you need to digitize your",
+    "title": "🍺 Liquor Store",
+    "description": "AdonERP allows you to manage the entire sales cycle of your beverage distribution business, from inventory to point of sale, custom features, craft drinks and bottle returns.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "The processing time for accounting documents prior to analysis is now reduced from 2 days to only 5 hours, allowing us to focus on reporting and counseling.",
+    "testimonialName": "Marco Rossi",
+    "testimonialRole": "Owner, Vintage Wines & Spirits"
+  },
+  "posSection": {
+    "title": "PoS optimized for",
+    "titleHighlight": "beverages",
+    "description": "Run a beverage store with B2B pricelists, multiple packaging, fast product creation, consignments, and bottle return workflows.",
+    "badges": {
+      "bottleReturn": "Bottle return",
+      "multiplePackaging": "Multiple packaging"
+    }
+  },
+  "ecommerceSection": {
+    "title": "B2B and",
+    "titleHighlight": "B2C",
+    "titleEnd": "online shop",
+    "description": "Restaurants and cafés work with your B2B account, while customers can browse products, pick up in store, or order delivery.",
+    "cart": {
+      "title": "Your Cart",
+      "items": {
+        "craftBeer": "Craft Beer Pack",
+        "redWine": "Red Wine Bottle"
+      },
+      "total": "Total",
+      "checkout": "Checkout"
+    }
+  },
+  "inventorySection": {
+    "title": "Modern",
+    "titleHighlight": "inventory",
+    "titleEnd": "management",
+    "description": "Receive, store and deliver faster with barcode scanning. Buy pallets, sell by boxes, and handle packaging smoothly.",
+    "badges": {
+      "batchTracking": "Batch tracking",
+      "multiUnitSelling": "Multi-unit selling"
+    }
+  },
+  "accountingSection": {
+    "title": "Integrated Accounting",
+    "description": "Imagine having all your data in real-time, from inventory to sales. Everything becomes easier with inventory valuation, customer statements, and more.",
+    "badges": {
+      "realTimeValuation": "Real-time valuation",
+      "customerStatements": "Customer statements"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Smart tools for beverage retail, inventory management, logistics, events, team management, and customer loyalty.",
+    "list": [
+      {
+        "title": "Easy Material renting",
+        "description": "Manage keg and equipment rentals for events and bars with ease."
+      },
+      {
+        "title": "HR Apps",
+        "description": "Track employee schedules, payroll, and performance from one place."
+      },
+      {
+        "title": "Organize Events",
+        "description": "Plan tastings, launches, and promotions directly from your platform."
+      },
+      {
+        "title": "Marketing Apps",
+        "description": "Launch email campaigns and loyalty programs to boost repeat business."
+      },
+      {
+        "title": "Transport Management System",
+        "description": "Optimize delivery routes and manage fleet operations efficiently."
+      },
+      {
+        "title": "Customer Loyalty tools",
+        "description": "Reward repeat customers with points, discounts, and exclusive offers."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your beverage distribution operation, inventory, logistics, and customer management.",
+    "apps": [
+      {
+        "title": "Point of Sale",
+        "subtitle": "Fast in-store checkout",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Real-time stock tracking",
+        "icon": "Package"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Smart supplier orders",
+        "icon": "Box"
+      },
+      {
+        "title": "Planning",
+        "subtitle": "Delivery route optimization",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Employees",
+        "subtitle": "Staff management",
+        "icon": "Users"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Event management",
+        "icon": "Calendar"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Marco Rossi",
+        "role": "Owner, Vintage Wines & Spirits",
+        "content": "The processing time for accounting documents prior to analysis is now reduced from 2 days to only 5 hours, allowing us to focus on reporting and counseling.",
+        "rating": 5
+      },
+      {
+        "name": "Lisa Chen",
+        "role": "Operations Director, Craft Beer Collective",
+        "content": "AdonERP transformed our beverage distribution. From keg tracking to B2B ordering, everything runs smoothly. Our customers love the online shop.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for beverage distributors and liquor stores."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your business",
+    "title": "The #1 Brewery",
+    "subtitle": "and liquor store apps",
+    "description": "Launch a beverage distribution workflow that helps you manage inventory, streamline B2B/B2C sales, and scale from one location to many.",
+    "button": "Start now"
+  }
+}

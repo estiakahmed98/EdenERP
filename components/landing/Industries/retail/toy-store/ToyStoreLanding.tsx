@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -21,6 +22,7 @@ import {
   Users,
   Wallet,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Toy Store | AdonERP Industries",
@@ -28,100 +30,27 @@ export const metadata: Metadata = {
     "A toy store industry landing page for AdonERP with point of sale, inventory management, loyalty programs, and multi-channel sales.",
 };
 
-const features = [
-  {
-    title: "All devices welcome",
-    description: "Works perfectly on tablets, laptops, desktops, and industrial scanners.",
-  },
-  {
-    title: "Website domain name",
-    description: "Get a professional domain name included with your online store.",
-  },
-  {
-    title: "Multiple cashiers",
-    description: "Manage several cashier accounts with badges or PIN codes.",
-  },
-  {
-    title: "Click and collect",
-    description: "Let customers shop online and pick up orders at your store.",
-  },
-  {
-    title: "All payment methods",
-    description: "Accept cash, cards, e-wallets, and contactless payments.",
-  },
-  {
-    title: "Shipping integration",
-    description: "Connect with major carriers for seamless delivery management.",
-  },
-  {
-    title: "Physical inventory",
-    description: "Conduct cycle counts and full inventory audits with ease.",
-  },
-];
-
-const apps = [
-  { title: "Point of Sale", subtitle: "Fast in-store checkout", icon: ShoppingBag },
-  { title: "eCommerce", subtitle: "Sell toys online", icon: ShoppingCart },
-  { title: "Invoicing", subtitle: "Professional billing", icon: ReceiptText },
-  { title: "Inventory", subtitle: "Real-time stock tracking", icon: Package },
-  { title: "Purchase", subtitle: "Smart supplier orders", icon: Box },
-  { title: "Email Marketing", subtitle: "Launch customer campaigns", icon: Mail },
-  { title: "Planning", subtitle: "Optimize staff schedules", icon: Calendar },
-];
-
-const rewards = ["Coupons", "Loyalty cards", "Promotions", "eWallet", "Gift cards"];
-
-const testimonials = [
-  {
-    name: "Emma Watson",
-    role: "Owner, Wonder Toys",
-    content:
-      "Working with AdonERP allowed us to digitize all our internal processes. We were able to be more efficient and finally reach full traceability on our products lifecycle.",
-    rating: 5,
-  },
-  {
-    name: "James Wilson",
-    role: "Store Manager, Kid's Joy",
-    content:
-      "The intuitive POS and multi-channel capabilities transformed our toy store. Our team mastered it in minutes and sales have never been better.",
-    rating: 5,
-  },
-];
-
-function ScriptHeading({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
-      style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-      }}
-    >
-      {children}
-    </h2>
-  );
-}
-
-function SectionEyebrow({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
-    </div>
-  );
-}
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Gift,
+  };
+  return icons[iconName] || Gift;
+};
 
 // Mail icon component
 function Mail(props: any) {
@@ -144,7 +73,48 @@ function Mail(props: any) {
   );
 }
 
+function ScriptHeading({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <h2
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
+      style={{
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function SectionEyebrow({
+  iconName,
+  labelKey,
+  t,
+}: {
+  iconName: string;
+  labelKey: string;
+  t: any;
+}) {
+  const IconComponent = getIconComponent(iconName);
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
+    </div>
+  );
+}
+
 export default function ToyStorePage() {
+  const t = useTranslations("pages.toystore");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -153,12 +123,13 @@ export default function ToyStorePage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Gift className="h-4 w-4" />}
-              label="Toy industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Toy Store
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -168,7 +139,7 @@ export default function ToyStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The #1 software suite for your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -177,12 +148,11 @@ export default function ToyStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Toy Store
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP allows you to maximize sales across multiple channels, manage
-                inventory, track purchases, and run your toy store from one platform.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -191,27 +161,27 @@ export default function ToyStorePage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                Working with AdonERP allowed us to digitize all our internal processes.
-                We were able to be more efficient and finally reach full traceability
-                on our products lifecycle.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Emma Watson</p>
-                  <p className="text-sm text-muted-foreground">Owner, Wonder Toys</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -267,9 +237,9 @@ export default function ToyStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <div className="mb-4 text-6xl">🌀</div>
         <ScriptHeading>
-          Play with the intuitive
+          {t("posSection.title")}
           <br />
-          point-of-sale interface
+          {t("posSection.subtitle")}
         </ScriptHeading>
 
         <div className="relative mx-auto mt-12 max-w-5xl">
@@ -299,22 +269,22 @@ export default function ToyStorePage() {
             <div>
               <div className="mb-4 text-5xl">🧺</div>
               <ScriptHeading>
-                <span className="bg-primary/20 px-2 rounded">Thousands</span> of products?
+                <span className="bg-primary/20 px-2 rounded">{t("productsSection.titlePrefix")}</span>{" "}
+                {t("productsSection.titleHighlight")}
                 <br />
-                Don't be puzzled!
+                {t("productsSection.titleEnd")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Product configuration, stock tracking, purchasing and sales tools
-                keep your toy inventory easy to manage.
+                {t("productsSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Tag className="h-4 w-4 text-primary" />
-                  Variants
+                  {t("productsSection.badges.variants")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Package className="h-4 w-4 text-primary" />
-                  Stock tracking
+                  {t("productsSection.badges.stockTracking")}
                 </div>
               </div>
             </div>
@@ -322,9 +292,11 @@ export default function ToyStorePage() {
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-xl">
               <div className="aspect-video rounded-xl bg-gradient-to-br from-primary/20 to-muted" />
               <div className="mt-4 grid grid-cols-3 gap-3">
-                <div className="rounded-lg bg-muted/30 p-2 text-center text-xs text-foreground">Teddy Bears</div>
-                <div className="rounded-lg bg-muted/30 p-2 text-center text-xs text-foreground">Action Figures</div>
-                <div className="rounded-lg bg-muted/30 p-2 text-center text-xs text-foreground">Board Games</div>
+                {t.raw("productsSection.categories").map((category: string) => (
+                  <div key={category} className="rounded-lg bg-muted/30 p-2 text-center text-xs text-foreground">
+                    {category}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -337,43 +309,39 @@ export default function ToyStorePage() {
           <div className="order-2 md:order-1">
             <div className="mb-3 text-5xl">🏆</div>
             <ScriptHeading>
-              Game-changing{" "}
+              {t("rewardsSection.title")}{" "}
               <span className="underline decoration-primary underline-offset-8">
-                rewards
+                {t("rewardsSection.titleHighlight")}
               </span>
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Reward your customers with coupons, loyalty cards, promotions, gift
-              cards and eWallet options. Keep them coming back for more toys.
+              {t("rewardsSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Heart className="h-4 w-4" />
-                Points system
+                {t("rewardsSection.badges.pointsSystem")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Wallet className="h-4 w-4" />
-                Digital wallet
+                {t("rewardsSection.badges.digitalWallet")}
               </div>
             </div>
           </div>
 
           <div className="order-1 grid grid-cols-2 gap-6 sm:grid-cols-3 md:order-2">
-            {rewards.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
-              >
-                <div className="text-4xl">
-                  {item === "Coupons" && "🎫"}
-                  {item === "Loyalty cards" && "💳"}
-                  {item === "Promotions" && "🔥"}
-                  {item === "eWallet" && "📱"}
-                  {item === "Gift cards" && "🎁"}
+            {t.raw("rewardsSection.rewards").map((item: string) => {
+              const iconsMap = t.raw("rewardsSection.rewardIcons");
+              return (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
+                >
+                  <div className="text-4xl">{iconsMap[item] || "🎁"}</div>
+                  <p className="mt-2 font-semibold text-foreground">{item}</p>
                 </div>
-                <p className="mt-2 font-semibold text-foreground">{item}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -384,15 +352,14 @@ export default function ToyStorePage() {
           <div className="mb-10 max-w-xl">
             <div className="mb-4 text-5xl">🧪</div>
             <ScriptHeading>
-              Building blocks to{" "}
+              {t("onlineStoreSection.title")}{" "}
               <span className="text-primary underline decoration-primary underline-offset-8">
-                create
+                {t("onlineStoreSection.titleHighlight")}
               </span>{" "}
-              your online store
+              {t("onlineStoreSection.titleEnd")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Use ready-made website blocks to create a beautiful toy store
-              online and sell through ecommerce. No coding required.
+              {t("onlineStoreSection.description")}
             </p>
           </div>
 
@@ -402,7 +369,7 @@ export default function ToyStorePage() {
                 <div className="h-3 w-3 rounded-full bg-red-400" />
                 <div className="h-3 w-3 rounded-full bg-yellow-400" />
                 <div className="h-3 w-3 rounded-full bg-green-400" />
-                <div className="ml-2 text-sm text-muted-foreground">drag & drop builder</div>
+                <div className="ml-2 text-sm text-muted-foreground">{t("onlineStoreSection.builderLabel")}</div>
               </div>
             </div>
             <div className="p-6">
@@ -425,18 +392,17 @@ export default function ToyStorePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Everything you need to run toy sales, stock management, payments, and
-              online orders from one platform.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -457,18 +423,16 @@ export default function ToyStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your toy retail operation,
-            finance, supplier flows, and customer communication.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = app.icon === "Mail" ? Mail : getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -476,7 +440,7 @@ export default function ToyStorePage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -494,7 +458,7 @@ export default function ToyStorePage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -502,7 +466,7 @@ export default function ToyStorePage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -538,11 +502,10 @@ export default function ToyStorePage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              toy retailers.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -555,26 +518,26 @@ export default function ToyStorePage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your store"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a toy store workflow that helps your team sell faster,
-            manage inventory smarter, and create magical shopping experiences.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground"></p>

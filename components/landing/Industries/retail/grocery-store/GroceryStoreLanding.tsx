@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -28,60 +29,26 @@ export const metadata: Metadata = {
     "A grocery store industry landing page for AdonERP with point of sale, inventory management, loyalty programs, and expiration tracking.",
 };
 
-const rewards = ["Coupon", "Loyalty cards", "Promotions", "Discount", "Gift card"];
-
-const features = [
-  {
-    title: "Payment providers",
-    description: "Accept multiple payment methods including cards, e-wallets, and contactless.",
-  },
-  {
-    title: "Multiple cashiers",
-    description: "Manage several cashier accounts with badges or PIN codes.",
-  },
-  {
-    title: "Integrated accounting",
-    description: "Seamless accounting integration for real-time financial tracking.",
-  },
-  {
-    title: "Bills reloading",
-    description: "Easily reload and manage utility bill payments for customers.",
-  },
-  {
-    title: "Loyalty programs",
-    description: "Reward returning customers with points and exclusive discounts.",
-  },
-  {
-    title: "Reporting",
-    description: "Track sales trends, bestsellers, and stock performance in one place.",
-  },
-];
-
-const apps = [
-  { title: "Point of Sale", subtitle: "Fast in-store checkout", icon: ShoppingBag },
-  { title: "Sales", subtitle: "Manage orders and quotations", icon: ShoppingCart },
-  { title: "Inventory", subtitle: "Real-time stock tracking", icon: Package },
-  { title: "Employees", subtitle: "Staff management and scheduling", icon: Users },
-  { title: "Accounting", subtitle: "Professional financial management", icon: CreditCard },
-  { title: "Purchase", subtitle: "Smart supplier orders", icon: Box },
-];
-
-const testimonials = [
-  {
-    name: "Sarah Johnson",
-    role: "Owner, FreshMart",
-    content:
-      "I have used other programs before, but AdonERP has a variety of layers that make it easier to work. From expiration tracking to loyalty programs, everything just works.",
-    rating: 5,
-  },
-  {
-    name: "Michael Chen",
-    role: "Store Manager, GreenGrocers",
-    content:
-      "The integrated POS and inventory management saved us hours of manual work. Our perishable waste reduced by 30% since we started tracking expiration dates.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+  };
+  return icons[iconName] || ShoppingBag;
+};
 
 function ScriptHeading({
   children,
@@ -103,21 +70,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function GroceryStorePage() {
+  const t = useTranslations("pages.grocerystore");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -126,12 +100,13 @@ export default function GroceryStorePage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<ShoppingBag className="h-4 w-4" />}
-              label="Grocery industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Grocery Store
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -141,7 +116,7 @@ export default function GroceryStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  All-in-one software for
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -150,13 +125,11 @@ export default function GroceryStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Grocery Stores
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP contains an intuitive, easy-to-set-up Point of Sale, and
-                allows you to streamline purchasing, sales, inventory
-                management, accounting, and B2C/B2B sales from one platform.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -165,27 +138,27 @@ export default function GroceryStorePage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                I have used other programs before, but AdonERP has a variety of
-                layers that make it easier to work. From expiration tracking to
-                loyalty programs, everything just works.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Sarah Johnson</p>
-                  <p className="text-sm text-muted-foreground">Owner, FreshMart</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -241,17 +214,18 @@ export default function GroceryStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="text-center">
           <SectionEyebrow
-            icon={<ShoppingBag className="h-4 w-4" />}
-            label="Point of sale"
+            iconName={t("posSection.eyebrowIcon")}
+            labelKey="posSection.eyebrowLabel"
+            t={t}
           />
         </div>
         <div className="mx-auto mt-8 max-w-4xl text-center">
           <ScriptHeading>
-            A{" "}
+            {t("posSection.title")}{" "}
             <span className="underline decoration-primary underline-offset-8">
-              reliable
+              {t("posSection.titleHighlight")}
             </span>{" "}
-            Point of Sale
+            {t("posSection.titleEnd")}
           </ScriptHeading>
         </div>
 
@@ -274,43 +248,39 @@ export default function GroceryStorePage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Convenient shopping to boost{" "}
+              {t("loyaltySection.title")}{" "}
               <span className="underline decoration-secondary underline-offset-8">
-                loyalty
+                {t("loyaltySection.titleHighlight")}
               </span>
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Promotions and discounts offer customers flexible shopping
-              experiences, while loyalty programs help them keep coming back.
+              {t("loyaltySection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Heart className="h-4 w-4" />
-                Member pricing
+                {t("loyaltySection.badges.memberPricing")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Tag className="h-4 w-4" />
-                Weekly specials
+                {t("loyaltySection.badges.weeklySpecials")}
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-            {rewards.map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
-              >
-                <div className="text-4xl">
-                  {item === "Coupon" && "🎫"}
-                  {item === "Loyalty cards" && "💳"}
-                  {item === "Promotions" && "🔥"}
-                  {item === "Discount" && "🏷️"}
-                  {item === "Gift card" && "🎁"}
+            {t.raw("loyaltySection.rewards").map((item: string) => {
+              const iconsMap = t.raw("loyaltySection.rewardIcons");
+              return (
+                <div
+                  key={item}
+                  className="rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition hover:shadow-md"
+                >
+                  <div className="text-4xl">{iconsMap[item] || "🎁"}</div>
+                  <p className="mt-2 font-semibold text-foreground">{item}</p>
                 </div>
-                <p className="mt-2 font-semibold text-foreground">{item}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -320,30 +290,23 @@ export default function GroceryStorePage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="order-2 md:order-1">
             <div className="mb-3 text-5xl">📅</div>
-            <ScriptHeading>Expiration dates</ScriptHeading>
+            <ScriptHeading>{t("expirationSection.title")}</ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Track product expiration dates, manage lots and serial numbers,
-              and reduce waste with better inventory visibility. Never sell
-              expired products again.
+              {t("expirationSection.description")}
             </p>
             <div className="mt-6 flex gap-3">
               <div className="rounded-full bg-destructive/20 px-4 py-2 text-sm text-destructive">
-                ⚠️ Expiry alerts
+                {t("expirationSection.badges.expiryAlerts")}
               </div>
               <div className="rounded-full bg-accent/20 px-4 py-2 text-sm text-accent-foreground">
-                ✓ Lot tracking
+                {t("expirationSection.badges.lotTracking")}
               </div>
             </div>
           </div>
 
           <div className="order-1 rounded-[2rem] border border-border bg-card p-6 shadow-xl md:order-2">
             <div className="space-y-1">
-              {[
-                { name: "Organic Apples", date: "12/2026", status: "fresh" },
-                { name: "Whole Wheat Bread", date: "11/2026", status: "fresh" },
-                { name: "Fresh Milk", date: "09/2026", status: "warning" },
-                { name: "Fresh Dates", date: "02/2027", status: "fresh" },
-              ].map((item) => (
+              {t.raw("expirationSection.demo.items").map((item: any) => (
                 <div
                   key={item.name}
                   className="flex items-center justify-between border-b border-border py-4"
@@ -367,10 +330,9 @@ export default function GroceryStorePage() {
 
       {/* Flawless Replenishment Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
-        <ScriptHeading>Flawless Replenishment</ScriptHeading>
+        <ScriptHeading>{t("replenishmentSection.title")}</ScriptHeading>
         <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
-          Never run out of stock with automated purchase orders and smart
-          replenishment rules.
+          {t("replenishmentSection.description")}
         </p>
 
         <div className="relative mx-auto mt-12 max-w-4xl">
@@ -386,16 +348,16 @@ export default function GroceryStorePage() {
             <div className="p-6 text-left">
               <div className="grid grid-cols-3 gap-4 text-sm">
                 <div className="rounded-xl bg-muted/30 p-3">
-                  <p className="text-xs text-muted-foreground">Auto reorder point</p>
-                  <p className="font-semibold text-foreground">When stock &lt; 50</p>
+                  <p className="text-xs text-muted-foreground">{t("replenishmentSection.demo.autoReorder")}</p>
+                  <p className="font-semibold text-foreground">{t("replenishmentSection.demo.autoReorderValue")}</p>
                 </div>
                 <div className="rounded-xl bg-muted/30 p-3">
-                  <p className="text-xs text-muted-foreground">Order quantity</p>
-                  <p className="font-semibold text-foreground">200 units</p>
+                  <p className="text-xs text-muted-foreground">{t("replenishmentSection.demo.orderQuantity")}</p>
+                  <p className="font-semibold text-foreground">{t("replenishmentSection.demo.orderQuantityValue")}</p>
                 </div>
                 <div className="rounded-xl bg-muted/30 p-3">
-                  <p className="text-xs text-muted-foreground">Supplier lead time</p>
-                  <p className="font-semibold text-foreground">2 days</p>
+                  <p className="text-xs text-muted-foreground">{t("replenishmentSection.demo.supplierLeadTime")}</p>
+                  <p className="font-semibold text-foreground">{t("replenishmentSection.demo.supplierLeadTimeValue")}</p>
                 </div>
               </div>
             </div>
@@ -412,25 +374,24 @@ export default function GroceryStorePage() {
                 <Barcode className="h-10 w-10" />
               </div>
               <ScriptHeading>
-                <span className="bg-primary/20 px-2 rounded">Scan</span> it, that's it
+                <span className="bg-primary/20 px-2 rounded">{t("scanSection.titlePrefix")}</span>{" "}
+                {t("scanSection.titleHighlight")}, {t("scanSection.titleEnd")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Scan products to speed up inventory transfers, receiving,
-                checkout, and product traceability. Works with any barcode
-                scanner.
+                {t("scanSection.description")}
               </p>
               <div className="mt-6 flex gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Barcode className="h-4 w-4" />
-                  Receiving
+                  {t("scanSection.badges.receiving")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Barcode className="h-4 w-4" />
-                  Checkout
+                  {t("scanSection.badges.checkout")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Barcode className="h-4 w-4" />
-                  Transfers
+                  {t("scanSection.badges.transfers")}
                 </div>
               </div>
             </div>
@@ -466,18 +427,17 @@ export default function GroceryStorePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Powerful grocery tools for daily sales, stock management, and
-              reporting.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -498,19 +458,19 @@ export default function GroceryStorePage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One <HandUnderline color="bg-primary">need</HandUnderline>, one{" "}
-            <HandUnderline color="bg-primary">app</HandUnderline>.
+            {t("appsSection.title")}{" "}
+            <HandUnderline color="bg-primary">{t("appsSection.titleHighlight")}</HandUnderline>
+            , {t("appsSection.titleMiddle")}{" "}
+            <HandUnderline color="bg-primary">{t("appsSection.titleHighlight2")}</HandUnderline>.
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your grocery operation,
-            finance, supplier flows, and customer communication.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -518,7 +478,7 @@ export default function GroceryStorePage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -536,7 +496,7 @@ export default function GroceryStorePage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -544,7 +504,7 @@ export default function GroceryStorePage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -580,11 +540,10 @@ export default function GroceryStorePage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              grocery retailers.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -597,26 +556,26 @@ export default function GroceryStorePage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your store"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a grocery store workflow that helps your team sell faster,
-            manage inventory smarter, and reduce waste with expiration tracking.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
           <p className="mt-4 text-xs text-muted-foreground"></p>
