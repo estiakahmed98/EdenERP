@@ -1,3 +1,5 @@
+// app/[locale]/pricing/PricingClient.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -149,7 +151,8 @@ export default function PricingClient() {
   const addOns = t.raw("addons") as AddOn[];
   const faqs = t.raw("faqs") as FaqItem[];
   const previewMetrics = t.raw("hero.preview.metrics") as PreviewMetric[];
-  const featuredPlan = plans.find((plan) => plan.id === "professional") ?? plans[0];
+  const featuredPlan =
+    plans.find((plan) => plan.id === "professional") ?? plans[0];
 
   function formatCurrency(amount: number) {
     return new Intl.NumberFormat(locale, {
@@ -165,7 +168,9 @@ export default function PricingClient() {
   }
 
   function formatMetricValue(value: number | string) {
-    return typeof value === "number" ? new Intl.NumberFormat(locale).format(value) : value;
+    return typeof value === "number"
+      ? new Intl.NumberFormat(locale).format(value)
+      : value;
   }
 
   function renderFeatureValue(value: string | boolean) {
@@ -176,7 +181,9 @@ export default function PricingClient() {
           {stateT("included")}
         </span>
       ) : (
-        <span className="text-slate-400 dark:text-slate-500">{stateT("notIncluded")}</span>
+        <span className="text-slate-400 dark:text-slate-500">
+          {stateT("notIncluded")}
+        </span>
       );
     }
 
@@ -265,7 +272,9 @@ export default function PricingClient() {
                   <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     {t("hero.badges.bestValueTitle")}
                   </p>
-                  <p className="text-xs text-slate-500">{t("hero.badges.bestValuePlan")}</p>
+                  <p className="text-xs text-slate-500">
+                    {t("hero.badges.bestValuePlan")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -334,7 +343,9 @@ export default function PricingClient() {
                     <div className="rounded-2xl bg-white/10 p-4">
                       <CircleDollarSign className="h-5 w-5 text-emerald-300" />
                       <p className="mt-3 text-lg font-bold">{previewPrice}</p>
-                      <p className="text-xs text-white/50">{t("hero.preview.cards.monthlyCostNote")}</p>
+                      <p className="text-xs text-white/50">
+                        {t("hero.preview.cards.monthlyCostNote")}
+                      </p>
                     </div>
                     <div className="rounded-2xl bg-white/10 p-4">
                       <Clock3 className="h-5 w-5 text-amber-300" />
@@ -472,7 +483,9 @@ export default function PricingClient() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-sm font-semibold text-primary">{plan.badge}</p>
+                      <p className="text-sm font-semibold text-primary">
+                        {plan.badge}
+                      </p>
                       <h3 className="mt-3 text-2xl font-bold text-slate-950 dark:text-slate-100">
                         {plan.name}
                       </h3>
@@ -492,7 +505,9 @@ export default function PricingClient() {
                   <div className="mt-7">
                     <div className="flex items-end gap-1">
                       <span className="text-5xl font-bold tracking-tight text-slate-950 dark:text-slate-100">
-                        {formatPlanPrice(isAnnual ? plan.annualPrice : plan.monthlyPrice)}
+                        {formatPlanPrice(
+                          isAnnual ? plan.annualPrice : plan.monthlyPrice,
+                        )}
                       </span>
 
                       <span className="pb-2 text-base font-medium text-slate-500 dark:text-slate-400">

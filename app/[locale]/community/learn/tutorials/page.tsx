@@ -1,3 +1,5 @@
+// app/[locale]/community/learn/tutorials/page.tsx
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -521,7 +523,9 @@ export default function TutorialsPage() {
               className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-colors hover:border-primary/30"
             >
               <h3 className="font-semibold text-foreground">{faq.q}</h3>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">{faq.a}</p>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                {faq.a}
+              </p>
             </div>
           ))}
         </div>
