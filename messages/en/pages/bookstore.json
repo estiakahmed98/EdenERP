@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "title": "Book Store | AdonERP",
+    "description": "AI-powered bookstore management platform for all your retail operations - from point of sale and inventory to loyalty programs and real-time reporting."
+  },
+  "hero": {
+    "eyebrowIcon": "ShoppingBag",
+    "eyebrowLabel": "Retail industry template",
+    "industriesLabel": "Retail industry",
+    "preHeading": "Made for modern",
+    "title": "Book Store",
+    "description": "Organize ISBN codes, simplify bookstore checkout, keep stock accurate, and deliver better customer service from one unified AdonERP workspace.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP gives bookstore teams the kind of visibility that makes daily decisions faster. From bestseller trends to shelf-level stock control, every move feels simpler and more precise.",
+    "testimonialName": "Lana Habib",
+    "testimonialRole": "Co-founder, independent bookstore"
+  },
+  "posSection": {
+    "eyebrowIcon": "ShoppingBag",
+    "eyebrowLabel": "Reader-friendly POS",
+    "title": "An efficient Point of Sale?",
+    "subtitle": "No longer a fiction.",
+    "demo": {
+      "cartItems": {
+        "harryPotter": "Harry Potter",
+        "atomicHabits": "Atomic Habits",
+        "giftCard": "Gift Card",
+        "bookmark": "Bookmark"
+      },
+      "subtotal": "Subtotal",
+      "keypad": {
+        "pay": "Pay"
+      },
+      "booksTab": "Books",
+      "itemsCount": "items",
+      "categories": {
+        "atomicHabits": "Atomic Habits",
+        "dune": "Dune",
+        "giftCards": "Gift Cards",
+        "sapiens": "Sapiens",
+        "literaryFiction": "Literary Fiction",
+        "children": "Children"
+      },
+      "tapToAdd": "Tap to add",
+      "footerMessage": "Fast checkout, loyalty perks, and live stock in one bookstore flow."
+    }
+  },
+  "scanSection": {
+    "title": "Scan it, that's it",
+    "description": "Speed matters. Scan your book's ISBN code to create new products instantly, fetch references from distributors, and manage editions faster in a catalog that stays accurate.",
+    "demo": {
+      "inventoryBadge": "Inventory lookup",
+      "inStock": "In stock",
+      "fields": {
+        "author": "Author",
+        "isbn": "ISBN",
+        "category": "Category",
+        "onHand": "On hand",
+        "publisher": "Publisher",
+        "location": "Location"
+      }
+    }
+  },
+  "inventorySection": {
+    "eyebrowIcon": "Library",
+    "eyebrowLabel": "Shelf control",
+    "title": "Shelf control is the key to success",
+    "description": "Maintain optimal stock levels by generating smart replenishment orders when a title drops below threshold, so fast-moving books never leave your shelves empty.",
+    "table": {
+      "headers": [
+        "Product",
+        "Location",
+        "On hand",
+        "Forecast",
+        "Min",
+        "Status"
+      ],
+      "rows": [
+        {
+          "product": "Harry Potter Box Set",
+          "location": "Front display",
+          "onHand": "6",
+          "forecast": "14",
+          "min": "10",
+          "status": "Reorder now"
+        },
+        {
+          "product": "Atomic Habits",
+          "location": "Aisle B2",
+          "onHand": "18",
+          "forecast": "9",
+          "min": "8",
+          "status": "Healthy"
+        },
+        {
+          "product": "The Alchemist",
+          "location": "Counter shelf",
+          "onHand": "5",
+          "forecast": "7",
+          "min": "6",
+          "status": "Watch closely"
+        },
+        {
+          "product": "Children's Activity Pack",
+          "location": "Kids corner",
+          "onHand": "22",
+          "forecast": "12",
+          "min": "10",
+          "status": "Healthy"
+        }
+      ]
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Everything you need to manage your bookstore in one place - from checkout to replenishment.",
+    "list": [
+      {
+        "title": "Reporting",
+        "description": "Track your sales trends, bestsellers, and stock performance in one place."
+      },
+      {
+        "title": "Multiple cashiers",
+        "description": "Assign secure cashier profiles with badges or PINs for every shift."
+      },
+      {
+        "title": "Loyalty programs",
+        "description": "Reward returning readers with points, tiered perks, and member pricing."
+      },
+      {
+        "title": "Sell consignment products",
+        "description": "Receive, store, and settle consignment books with clear partner visibility."
+      },
+      {
+        "title": "Gift cards",
+        "description": "Create, top up, and redeem physical or digital gift cards in seconds."
+      },
+      {
+        "title": "Pricelists",
+        "description": "Set flexible pricing by customer type, channel, event, or campaign."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One app for",
+    "titleHighlight": "checkout",
+    "titleMiddle": "another for",
+    "titleHighlight2": "everything else",
+    "description": "Expand as you grow with connected apps for your retail operation, finance, supplier flows, and customer communication.",
+    "apps": [
+      {
+        "title": "Point of Sale",
+        "subtitle": "Ring up orders at checkout",
+        "icon": "ShoppingBag"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Create and follow invoices",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Restock from suppliers faster",
+        "icon": "Library"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Keep every shelf in sync",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "eCommerce",
+        "subtitle": "Sell books online too",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Email Marketing",
+        "subtitle": "Launch reader campaigns",
+        "icon": "Mail"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "ctaSection": {
+    "title": "Grow your bookstore with clearer operations",
+    "description": "Bring sales, stock, and team coordination into one workflow that is easier to scale across every branch."
+  },
+  "footerCta": {
+    "eyebrowIcon": "BadgeCheck",
+    "eyebrowLabel": "Get started",
+    "title": "Open your next chapter",
+    "subtitle": "with AdonERP",
+    "description": "Launch a bookstore workflow that helps your team sell faster, stock smarter, and scale from one branch to many without adding chaos.",
+    "button": "Start now"
+  }
+}

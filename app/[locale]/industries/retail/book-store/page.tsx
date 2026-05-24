@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -19,59 +20,50 @@ import {
 } from "lucide-react";
 import { HandUnderline } from "@/components/ui/headunderline";
 
+// Note: Metadata generation for dynamic locales would typically be handled in layout.tsx or using generateMetadata.
+// For a static page like this, we'll keep it simple. In a real app, you'd use generateMetadata with params.
 export const metadata: Metadata = {
   title: "Book Store | AdonERP Industries",
   description:
     "A bookstore industry landing page for AdonERP with point of sale, inventory, and retail workflow sections.",
 };
 
-const features = [
-  {
-    title: "Reporting",
-    description: "Track your sales trends, bestsellers, and stock performance in one place.",
-  },
-  {
-    title: "Multiple cashiers",
-    description: "Assign secure cashier profiles with badges or PINs for every shift.",
-  },
-  {
-    title: "Loyalty programs",
-    description: "Reward returning readers with points, tiered perks, and member pricing.",
-  },
-  {
-    title: "Sell consignment products",
-    description: "Receive, store, and settle consignment books with clear partner visibility.",
-  },
-  {
-    title: "Gift cards",
-    description: "Create, top up, and redeem physical or digital gift cards in seconds.",
-  },
-  {
-    title: "Pricelists",
-    description: "Set flexible pricing by customer type, channel, event, or campaign.",
-  },
+// Helper component to get icon by name (since icons can't be stored directly in JSON)
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ReceiptText,
+    Library,
+    BookOpen,
+    Sparkles,
+    Mail,
+    SmilePlus,
+    BadgeCheck,
+    Barcode,
+    Users,
+  };
+  return icons[iconName] || BookOpen;
+};
+
+const featuresList = [
+  { key: "reporting", titleKey: "Reporting", descKey: "Track your sales trends, bestsellers, and stock performance in one place." },
+  { key: "cashiers", titleKey: "Multiple cashiers", descKey: "Assign secure cashier profiles with badges or PINs for every shift." },
+  { key: "loyalty", titleKey: "Loyalty programs", descKey: "Reward returning readers with points, tiered perks, and member pricing." },
+  { key: "consignment", titleKey: "Sell consignment products", descKey: "Receive, store, and settle consignment books with clear partner visibility." },
+  { key: "giftcards", titleKey: "Gift cards", descKey: "Create, top up, and redeem physical or digital gift cards in seconds." },
+  { key: "pricelists", titleKey: "Pricelists", descKey: "Set flexible pricing by customer type, channel, event, or campaign." },
 ];
 
-const apps = [
-  { title: "Point of Sale", subtitle: "Ring up orders at checkout", icon: ShoppingBag },
-  { title: "Invoicing", subtitle: "Create and follow invoices", icon: ReceiptText },
-  { title: "Purchase", subtitle: "Restock from suppliers faster", icon: Library },
-  { title: "Inventory", subtitle: "Keep every shelf in sync", icon: BookOpen },
-  { title: "eCommerce", subtitle: "Sell books online too", icon: Sparkles },
-  { title: "Email Marketing", subtitle: "Launch reader campaigns", icon: Mail },
+const appsList = [
+  { key: "pos", titleKey: "Point of Sale", subtitleKey: "Ring up orders at checkout", icon: "ShoppingBag" },
+  { key: "invoicing", titleKey: "Invoicing", subtitleKey: "Create and follow invoices", icon: "ReceiptText" },
+  { key: "purchase", titleKey: "Purchase", subtitleKey: "Restock from suppliers faster", icon: "Library" },
+  { key: "inventory", titleKey: "Inventory", subtitleKey: "Keep every shelf in sync", icon: "BookOpen" },
+  { key: "ecommerce", titleKey: "eCommerce", subtitleKey: "Sell books online too", icon: "Sparkles" },
+  { key: "email", titleKey: "Email Marketing", subtitleKey: "Launch reader campaigns", icon: "Mail" },
 ];
 
-const people = [
-  { name: "Laila", top: "4%", left: "17%" },
-  { name: "Harrison", top: "12%", left: "68%" },
-  { name: "Nadia", top: "32%", left: "7%" },
-  { name: "Andre", top: "36%", left: "84%" },
-  { name: "Mina", top: "62%", left: "18%" },
-  { name: "Omar", top: "70%", left: "76%" },
-  { name: "Jules", top: "80%", left: "39%" },
-  { name: "Iris", top: "18%", left: "42%" },
-];
-
+// Helper component for the script heading
 function ScriptHeading({
   children,
   className = "",
@@ -92,34 +84,43 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function BookStorePage() {
+  const t = useTranslations("pages.bookstore");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
+      {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_15%_12%,rgba(139,92,246,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<BookOpen className="h-4 w-4" />}
-              label="Retail industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Book Store
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -129,7 +130,7 @@ export default function BookStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The ideal software for managing your
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -138,13 +139,11 @@ export default function BookStorePage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Book Store
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Organize ISBN codes, simplify bookstore checkout, keep stock
-                accurate, and deliver better customer service from one unified
-                AdonERP workspace.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -153,28 +152,26 @@ export default function BookStorePage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                AdonERP gives bookstore teams the kind of visibility that makes
-                daily decisions faster. From bestseller trends to shelf-level
-                stock control, every move feels simpler and more precise.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Lana Habib</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
                   <p className="text-sm text-muted-foreground">
-                    Co-founder, independent bookstore
+                    {t("hero.testimonialRole")}
                   </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
@@ -227,18 +224,20 @@ export default function BookStorePage() {
         </div>
       </section>
 
+      {/* POS Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-20">
         <div className="text-center">
           <SectionEyebrow
-            icon={<SmilePlus className="h-4 w-4" />}
-            label="Reader-friendly point of sale"
+            iconName={t("posSection.eyebrowIcon")}
+            labelKey="posSection.eyebrowLabel"
+            t={t}
           />
         </div>
         <div className="mx-auto mt-8 max-w-4xl text-center">
           <ScriptHeading>
-            An efficient Point of Sale?
+            {t("posSection.title")}
             <br />
-            No longer a fiction.
+            {t("posSection.subtitle")}
           </ScriptHeading>
         </div>
 
@@ -248,13 +247,13 @@ export default function BookStorePage() {
               <div className="rounded-[1.5rem] bg-muted/30 p-4">
                 <div className="space-y-3">
                   {[
-                    ["Harry Potter", "$24.00"],
-                    ["Atomic Habits", "$18.50"],
-                    ["Gift Card", "$30.00"],
-                    ["Bookmark", "$4.50"],
+                    [t("posSection.demo.cartItems.harryPotter"), "$24.00"],
+                    [t("posSection.demo.cartItems.atomicHabits"), "$18.50"],
+                    [t("posSection.demo.cartItems.giftCard"), "$30.00"],
+                    [t("posSection.demo.cartItems.bookmark"), "$4.50"],
                   ].map(([title, value]) => (
                     <div
-                      key={title}
+                      key={title as string}
                       className="flex items-center justify-between rounded-2xl bg-card px-4 py-3 shadow-sm"
                     >
                       <span className="font-medium text-foreground">{title}</span>
@@ -264,7 +263,7 @@ export default function BookStorePage() {
                 </div>
                 <div className="mt-4 rounded-2xl bg-primary px-4 py-4 text-primary-foreground">
                   <div className="flex items-center justify-between text-sm opacity-90">
-                    <span>Subtotal</span>
+                    <span>{t("posSection.demo.subtotal")}</span>
                     <span>$77.00</span>
                   </div>
                   <div className="mt-3 text-2xl font-semibold">$82.39</div>
@@ -273,12 +272,12 @@ export default function BookStorePage() {
 
               <div className="rounded-[1.5rem] bg-primary/5 p-4">
                 <div className="grid grid-cols-3 gap-2">
-                  {["1", "2", "3", "4", "5", "6", "7", "8", "9", "%", "0", "Pay"].map(
+                  {["1", "2", "3", "4", "5", "6", "7", "8", "9", "%", "0", t("posSection.demo.keypad.pay")].map(
                     (key) => (
                       <div
                         key={key}
                         className={`flex aspect-square items-center justify-center rounded-2xl text-sm font-semibold ${
-                          key === "Pay"
+                          key === t("posSection.demo.keypad.pay")
                             ? "bg-primary text-primary-foreground"
                             : "bg-card text-foreground shadow-sm"
                         }`}
@@ -293,20 +292,20 @@ export default function BookStorePage() {
               <div className="rounded-[1.5rem] bg-muted/30 p-4">
                 <div className="mb-4 flex items-center justify-between">
                   <span className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    Books
+                    {t("posSection.demo.booksTab")}
                   </span>
                   <span className="rounded-full bg-card px-3 py-1 text-xs font-medium text-foreground shadow-sm">
-                    24 items
+                    24 {t("posSection.demo.itemsCount")}
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                   {[
-                    "Atomic Habits",
-                    "Dune",
-                    "Gift Cards",
-                    "Sapiens",
-                    "Literary Fiction",
-                    "Children",
+                    t("posSection.demo.categories.atomicHabits"),
+                    t("posSection.demo.categories.dune"),
+                    t("posSection.demo.categories.giftCards"),
+                    t("posSection.demo.categories.sapiens"),
+                    t("posSection.demo.categories.literaryFiction"),
+                    t("posSection.demo.categories.children"),
                   ].map((item, index) => (
                     <div
                       key={item}
@@ -326,7 +325,7 @@ export default function BookStorePage() {
                       />
                       <div className="space-y-1 p-3">
                         <p className="text-sm font-semibold text-foreground">{item}</p>
-                        <p className="text-xs text-muted-foreground">Tap to add</p>
+                        <p className="text-xs text-muted-foreground">{t("posSection.demo.tapToAdd")}</p>
                       </div>
                     </div>
                   ))}
@@ -337,12 +336,13 @@ export default function BookStorePage() {
           <div className="mx-auto mt-8 flex max-w-fit items-center gap-3 rounded-full border border-border bg-card px-5 py-2 shadow-lg shadow-black/5">
             <div className="h-7 w-7 rounded-full bg-muted" />
             <span className="text-sm text-muted-foreground">
-              Keep track of your books.
+              {t("posSection.demo.footerMessage")}
             </span>
           </div>
         </div>
       </section>
 
+      {/* Scan Section */}
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8 lg:py-20">
         <div className="space-y-5 self-center">
           <div className="flex items-center gap-3 text-foreground">
@@ -350,12 +350,10 @@ export default function BookStorePage() {
             <div className="h-1 w-24 rounded-full bg-primary/50" />
           </div>
           <ScriptHeading className="text-3xl sm:text-4xl">
-            Scan it, that&apos;s it
+            {t("scanSection.title")}
           </ScriptHeading>
           <p className="max-w-md text-base leading-7 text-muted-foreground">
-            Speed matters. Scan your book&apos;s ISBN code to create new
-            products instantly, fetch references from distributors, and manage
-            editions faster in a catalog that stays accurate.
+            {t("scanSection.description")}
           </p>
         </div>
 
@@ -365,26 +363,26 @@ export default function BookStorePage() {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                  Inventory card
+                  {t("scanSection.demo.inventoryBadge")}
                 </p>
                 <h3 className="mt-3 text-2xl font-semibold text-foreground">
                   Harry Potter and the Philosopher&apos;s Stone
                 </h3>
               </div>
               <div className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                In stock
+                {t("scanSection.demo.inStock")}
               </div>
             </div>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {[
-                ["Author", "J.K. Rowling"],
-                ["ISBN", "9780747532699"],
-                ["Category", "Fantasy / Children"],
-                ["On hand", "18 units"],
-                ["Publisher", "Bloomsbury"],
-                ["Location", "Shelf A3"],
+                [t("scanSection.demo.fields.author"), "J.K. Rowling"],
+                [t("scanSection.demo.fields.isbn"), "9780747532699"],
+                [t("scanSection.demo.fields.category"), "Fantasy / Children"],
+                [t("scanSection.demo.fields.onHand"), "18 units"],
+                [t("scanSection.demo.fields.publisher"), "Bloomsbury"],
+                [t("scanSection.demo.fields.location"), "Shelf A3"],
               ].map(([label, value]) => (
-                <div key={label} className="rounded-2xl bg-muted/30 px-4 py-3">
+                <div key={label as string} className="rounded-2xl bg-muted/30 px-4 py-3">
                   <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
                     {label}
                   </p>
@@ -396,18 +394,18 @@ export default function BookStorePage() {
         </div>
       </section>
 
+      {/* Inventory Section */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
         <div className="text-center">
           <SectionEyebrow
-            icon={<BadgeCheck className="h-4 w-4" />}
-            label="Inventory discipline"
+            iconName={t("inventorySection.eyebrowIcon")}
+            labelKey="inventorySection.eyebrowLabel"
+            t={t}
           />
           <div className="mx-auto mt-8 max-w-4xl">
-            <ScriptHeading>Shelf control is the key to success</ScriptHeading>
+            <ScriptHeading>{t("inventorySection.title")}</ScriptHeading>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              Maintain optimal stock levels by generating smart replenishment
-              orders when a title drops below threshold, so fast-moving books
-              never leave your shelves empty.
+              {t("inventorySection.description")}
             </p>
           </div>
         </div>
@@ -416,44 +414,32 @@ export default function BookStorePage() {
           <div className="absolute inset-x-14 top-8 h-72 rounded-full bg-muted" />
           <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card shadow-[0_35px_90px_rgba(0,0,0,0.12)]">
             <div className="grid grid-cols-[1.2fr_0.7fr_0.6fr_0.6fr_0.6fr_0.7fr] gap-2 border-b border-border bg-muted/30 px-6 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              <span>Product</span>
-              <span>Location</span>
-              <span>On hand</span>
-              <span>Forecast</span>
-              <span>Min</span>
-              <span>Status</span>
+              {t.raw("inventorySection.table.headers").map((header: string) => (
+                <span key={header}>{header}</span>
+              ))}
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["The Silent Patient", "Warehouse 01", "3", "1", "5", "Restock now"],
-                ["Why Fish Don't Exist", "Shelf B4", "14", "9", "6", "Healthy"],
-                ["The Kite Runner", "Warehouse 01", "5", "2", "4", "Low stock"],
-                ["The Book Thief", "Shelf C2", "8", "5", "5", "Healthy"],
-              ].map((row, rowIndex) => (
+              {t.raw("inventorySection.table.rows").map((row: any, rowIndex: number) => (
                 <div
-                  key={row[0]}
+                  key={row.product}
                   className="grid grid-cols-[1.2fr_0.7fr_0.6fr_0.6fr_0.6fr_0.7fr] gap-2 px-6 py-4 text-sm text-foreground"
                 >
-                  {row.map((cell, cellIndex) => (
-                    <div
-                      key={`${row[0]}-${cellIndex}`}
-                      className={
-                        cellIndex === 5
-                          ? `inline-flex max-w-fit rounded-full px-3 py-1 text-xs font-semibold ${
-                              rowIndex === 0
-                                ? "bg-destructive/20 text-destructive"
-                                : rowIndex === 2
-                                  ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                                  : "bg-accent/20 text-accent-foreground"
-                            }`
-                          : cellIndex === 0
-                            ? "font-semibold text-foreground"
-                            : ""
-                      }
-                    >
-                      {cell}
-                    </div>
-                  ))}
+                  <div className="font-semibold text-foreground">{row.product}</div>
+                  <div>{row.location}</div>
+                  <div>{row.onHand}</div>
+                  <div>{row.forecast}</div>
+                  <div>{row.min}</div>
+                  <div
+                    className={`inline-flex max-w-fit rounded-full px-3 py-1 text-xs font-semibold ${
+                      rowIndex === 0
+                        ? "bg-destructive/20 text-destructive"
+                        : rowIndex === 2
+                          ? "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
+                          : "bg-accent/20 text-accent-foreground"
+                    }`}
+                  >
+                    {row.status}
+                  </div>
                 </div>
               ))}
             </div>
@@ -461,23 +447,23 @@ export default function BookStorePage() {
         </div>
       </section>
 
+      {/* Features Section */}
       <section className="relative overflow-hidden rounded-t-[4rem] bg-muted/30 py-16 lg:py-24">
         <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.06),transparent_68%)]" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Retail workflows stay practical when every part of the bookstore
-              stack works together from checkout to replenishment.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm"
@@ -494,22 +480,23 @@ export default function BookStorePage() {
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One <HandUnderline color="bg-primary">need</HandUnderline>, one{" "}
-            <HandUnderline color="bg-primary">app</HandUnderline>.
+            {t("appsSection.title")}{" "}
+            <HandUnderline color="bg-primary">{t("appsSection.titleHighlight")}</HandUnderline>
+            , {t("appsSection.titleMiddle")}{" "}
+            <HandUnderline color="bg-primary">{t("appsSection.titleHighlight2")}</HandUnderline>.
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your retail operation,
-            finance, supplier flows, and customer communication.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -517,7 +504,7 @@ export default function BookStorePage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -535,15 +522,25 @@ export default function BookStorePage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
 
+      {/* CTA Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
         <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-background via-primary/5 to-muted px-6 py-16 shadow-[0_35px_90px_rgba(0,0,0,0.08)] sm:px-10">
           <div className="absolute inset-0 opacity-50">
-            {people.map((person, index) => (
+            {[
+              { name: "Laila", top: "4%", left: "17%" },
+              { name: "Harrison", top: "12%", left: "68%" },
+              { name: "Nadia", top: "32%", left: "7%" },
+              { name: "Andre", top: "36%", left: "84%" },
+              { name: "Mina", top: "62%", left: "18%" },
+              { name: "Omar", top: "70%", left: "76%" },
+              { name: "Jules", top: "80%", left: "39%" },
+              { name: "Iris", top: "18%", left: "42%" },
+            ].map((person, index) => (
               <div
                 key={person.name}
                 className={`absolute h-14 w-14 overflow-hidden rounded-full border-4 border-background shadow-lg ${
@@ -565,42 +562,42 @@ export default function BookStorePage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 75 million users
+              {t("ctaSection.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with software that feels simple from day
-              one.
+              {t("ctaSection.description")}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Footer CTA Section */}
       <section
         id="get-started"
         className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24"
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Growth-ready retail stack"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a bookstore workflow that helps your team sell faster, stock
-            smarter, and scale from one branch to many without adding chaos.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>
