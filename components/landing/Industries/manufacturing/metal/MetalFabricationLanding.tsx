@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -41,6 +42,7 @@ import {
   Cog,
   Layers,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Metal Fabrication | AdonERP Industries",
@@ -48,93 +50,47 @@ export const metadata: Metadata = {
     "A metal fabrication landing page for AdonERP with CRM, quote calculator, procurement automation, inventory, and project management.",
 };
 
-const features = [
-  {
-    title: "CRM pipeline",
-    description: "Track leads, quotes, and projects through every sales stage.",
-  },
-  {
-    title: "Clear traceability",
-    description: "Follow materials from raw stock to finished fabricated parts.",
-  },
-  {
-    title: "Quote Calculator",
-    description: "Calculate accurate quotes based on materials, labor, and complexity.",
-  },
-  {
-    title: "Automate procurement",
-    description: "Auto-create purchase orders when raw materials run low.",
-  },
-  {
-    title: "Project top bar",
-    description: "Visualize project progress, deadlines, and key metrics at a glance.",
-  },
-  {
-    title: "Flexible invoicing",
-    description: "Invoice based on milestones, partial deliveries, or custom terms.",
-  },
-];
-
-const apps = [
-  { title: "CRM", subtitle: "Lead and quote management", icon: Users },
-  { title: "Manufacturing", subtitle: "Production planning", icon: Factory },
-  { title: "Inventory", subtitle: "Raw material stock", icon: Warehouse },
-  { title: "Invoicing", subtitle: "Customer billing", icon: ReceiptText },
-  { title: "Purchase", subtitle: "Supplier orders", icon: Package },
-  { title: "Project", subtitle: "Order tracking", icon: HardDrive },
-];
-
-const testimonials = [
-  {
-    name: "Mike Thompson",
-    role: "Operations Director, Precision Metals Inc.",
-    content:
-      "I am the first to admit, after all of that cussing and badmouthing because we were just a mess at the beginning, now that it's functioning, it is a fantastic program.",
-    rating: 5,
-  },
-  {
-    name: "Elena Vasquez",
-    role: "Owner, Superior Fabrication",
-    content:
-      "AdonERP transformed our metal fabrication business. The quote calculator alone saved us hours, and the procurement automation keeps our shop running smoothly.",
-    rating: 5,
-  },
-];
-
-function ScriptHeading({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
-      style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-      }}
-    >
-      {children}
-    </h2>
-  );
-}
-
-function SectionEyebrow({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
-    </div>
-  );
-}
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+    Ruler,
+    HardDrive,
+    Hammer,
+    ClipboardList,
+    Warehouse,
+    Shirt,
+    Scissors,
+    Factory,
+    Wrench,
+    Cog,
+    Layers,
+  };
+  return icons[iconName] || Cog;
+};
 
 // Calculator icon component
 function Calculator(props: any) {
@@ -162,7 +118,48 @@ function Calculator(props: any) {
   );
 }
 
+function ScriptHeading({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <h2
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
+      style={{
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+      }}
+    >
+      {children}
+    </h2>
+  );
+}
+
+function SectionEyebrow({
+  iconName,
+  labelKey,
+  t,
+}: {
+  iconName: string;
+  labelKey: string;
+  t: any;
+}) {
+  const IconComponent = getIconComponent(iconName);
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
+    </div>
+  );
+}
+
 export default function MetalFabricationPage() {
+  const t = useTranslations("pages.metalfab");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -171,12 +168,13 @@ export default function MetalFabricationPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Cog className="h-4 w-4" />}
-              label="Metal fabrication industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Metal Fabrication
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -186,7 +184,7 @@ export default function MetalFabricationPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The All-in-One Software for
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -195,12 +193,11 @@ export default function MetalFabricationPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Metal Fabrication
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Manage customer relationships, create accurate quotes, and handle
-                everything from simple sales orders to complex projects.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -209,27 +206,27 @@ export default function MetalFabricationPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                I am the first to admit, after all of that cussing and badmouthing
-                because we were just a mess at the beginning, now that it's
-                functioning, it is a fantastic program.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Mike Thompson</p>
-                  <p className="text-sm text-muted-foreground">Operations Director, Precision Metals Inc.</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -312,22 +309,21 @@ export default function MetalFabricationPage() {
 
             <div>
               <ScriptHeading>
-                Craft custom
+                {t("quotesSection.title")}
                 <br />
-                <span className="bg-primary/20 px-2 rounded">quotes</span>
+                <span className="bg-primary/20 px-2 rounded">{t("quotesSection.titleHighlight")}</span>
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Generate quotations and define the most accurate price for clients
-                with a built-in quote calculator.
+                {t("quotesSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Calculator className="h-4 w-4 text-primary" />
-                  Material costing
+                  {t("quotesSection.badges.materialCosting")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Clock className="h-4 w-4 text-primary" />
-                  Labor estimation
+                  {t("quotesSection.badges.laborEstimation")}
                 </div>
               </div>
             </div>
@@ -338,45 +334,36 @@ export default function MetalFabricationPage() {
       {/* Timely delivery starts with timely replenishment Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Timely delivery{" "}
+          {t("replenishmentSection.title")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            starts
+            {t("replenishmentSection.titleHighlight")}
           </span>{" "}
-          with timely replenishment
+          {t("replenishmentSection.titleEnd")}
         </ScriptHeading>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-          Get a complete overview of production processes and manage everything
-          from cost estimation to final delivery.
+          {t("replenishmentSection.description")}
         </p>
 
         <div className="relative mx-auto mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
           <div className="border-b border-border bg-muted/30 px-6 py-4">
             <div className="grid grid-cols-5 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              <span>Material</span>
-              <span>On Hand</span>
-              <span>Min Stock</span>
-              <span>Order Qty</span>
-              <span>Status</span>
+              {t.raw("replenishmentSection.table.headers").map((header: string) => (
+                <span key={header}>{header}</span>
+              ))}
             </div>
           </div>
           <div className="divide-y divide-border">
-            {[
-              ["Steel Sheet 3mm", "2,500 kg", "1,000 kg", "3,000 kg", "Good"],
-              ["Aluminum Bar", "850 kg", "500 kg", "1,000 kg", "Reorder"],
-              ["Stainless Rod", "320 kg", "300 kg", "500 kg", "Low stock"],
-              ["Brass Plate", "1,200 kg", "800 kg", "1,500 kg", "Good"],
-              ["Copper Wire", "180 kg", "200 kg", "300 kg", "Reorder"],
-            ].map((row) => (
-              <div key={row[0]} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
-                <span className="font-medium text-foreground">{row[0]}</span>
-                <span className="text-foreground">{row[1]}</span>
-                <span className="text-foreground">{row[2]}</span>
-                <span className="text-foreground">{row[3]}</span>
+            {t.raw("replenishmentSection.table.rows").map((row: any) => (
+              <div key={row.material} className="grid grid-cols-5 gap-3 px-6 py-4 text-sm">
+                <span className="font-medium text-foreground">{row.material}</span>
+                <span className="text-foreground">{row.onHand}</span>
+                <span className="text-foreground">{row.minStock}</span>
+                <span className="text-foreground">{row.orderQty}</span>
                 <span className={`inline-flex w-fit rounded-full px-2 py-1 text-xs font-semibold ${
-                  row[4] === "Good" ? "bg-accent/20 text-accent-foreground" :
-                  row[4] === "Reorder" ? "bg-destructive/20 text-destructive" :
+                  row.status === "Good" || row.status === "ভাল" ? "bg-accent/20 text-accent-foreground" :
+                  row.status === "Reorder" || row.status === "পুনর্বিন্যাস" ? "bg-destructive/20 text-destructive" :
                   "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                }`}>{row[4]}</span>
+                }`}>{row.status}</span>
               </div>
             ))}
           </div>
@@ -387,45 +374,36 @@ export default function MetalFabricationPage() {
       <section className="bg-primary/5 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
-            Track your{" "}
+            {t("purchaseSection.title")}{" "}
             <span className="underline decoration-primary underline-offset-8">
-              purchase
+              {t("purchaseSection.titleHighlight")}
             </span>
           </ScriptHeading>
           <p className="mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-            Manage, group, compare and validate your purchases while automating the
-            creation process.
+            {t("purchaseSection.description")}
           </p>
 
           <div className="relative mx-auto mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
             <div className="border-b border-border bg-muted/30 px-6 py-4">
               <div className="grid grid-cols-6 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                <span>PO #</span>
-                <span>Supplier</span>
-                <span>Material</span>
-                <span>Qty</span>
-                <span>Unit Price</span>
-                <span>Status</span>
+                {t.raw("purchaseSection.table.headers").map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["PO-2451", "Metal Supply Co.", "Steel Sheet", "500 kg", "$2.50/kg", "Delivered"],
-                ["PO-2452", "Alloy Distributors", "Aluminum Bar", "300 kg", "$4.20/kg", "Processing"],
-                ["PO-2453", "Fastener World", "Bolts M8", "1,000 pcs", "$0.15/pc", "Shipped"],
-                ["PO-2454", "Metal Depot", "Stainless Rod", "200 kg", "$5.80/kg", "Processing"],
-              ].map((row) => (
-                <div key={row[0]} className="grid grid-cols-6 gap-3 px-6 py-4 text-sm">
-                  <span className="font-medium text-foreground">{row[0]}</span>
-                  <span className="text-foreground">{row[1]}</span>
-                  <span className="text-foreground">{row[2]}</span>
-                  <span className="text-foreground">{row[3]}</span>
-                  <span className="text-foreground">{row[4]}</span>
+              {t.raw("purchaseSection.table.rows").map((row: any) => (
+                <div key={row.po} className="grid grid-cols-6 gap-3 px-6 py-4 text-sm">
+                  <span className="font-medium text-foreground">{row.po}</span>
+                  <span className="text-foreground">{row.supplier}</span>
+                  <span className="text-foreground">{row.material}</span>
+                  <span className="text-foreground">{row.qty}</span>
+                  <span className="text-foreground">{row.unitPrice}</span>
                   <span className={`inline-flex w-fit rounded-full px-2 py-1 text-xs font-semibold ${
-                    row[5] === "Delivered" ? "bg-accent/20 text-accent-foreground" :
-                    row[5] === "Shipped" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400" :
+                    row.status === "Delivered" || row.status === "ডেলিভারি দেওয়া হয়েছে" ? "bg-accent/20 text-accent-foreground" :
+                    row.status === "Shipped" || row.status === "পাঠানো হয়েছে" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400" :
                     "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                  }`}>{row[5]}</span>
+                  }`}>{row.status}</span>
                 </div>
               ))}
             </div>
@@ -438,29 +416,28 @@ export default function MetalFabricationPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Effortless project
+              {t("projectSection.title")}
               <br />
-              management
+              {t("projectSection.subtitle")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Customize your project overview, track only the essential information,
-              and keep the right details visible without overload.
+              {t("projectSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Layers className="h-4 w-4" />
-                Custom views
+                {t("projectSection.badges.customViews")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Calendar className="h-4 w-4" />
-                Timeline tracking
+                {t("projectSection.badges.timelineTracking")}
               </div>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
             <div className="grid gap-4 md:grid-cols-3">
-              {["To Do", "In Progress", "Done"].map((stage, idx) => (
+              {t.raw("projectSection.stages").map((stage: string) => (
                 <div key={stage} className="rounded-xl bg-muted/30 p-4">
                   <div className="mb-3 text-xs font-semibold text-primary">{stage}</div>
                   <div className="space-y-2">
@@ -480,18 +457,17 @@ export default function MetalFabricationPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Complete tools for fabrication quotes, production, purchasing,
-              traceability, invoicing and project management.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -512,18 +488,16 @@ export default function MetalFabricationPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your metal fabrication
-            operation, CRM, production, and inventory.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -531,7 +505,7 @@ export default function MetalFabricationPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -549,7 +523,7 @@ export default function MetalFabricationPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -557,7 +531,7 @@ export default function MetalFabricationPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -593,11 +567,10 @@ export default function MetalFabricationPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              metal fabrication shops and manufacturers.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -610,26 +583,26 @@ export default function MetalFabricationPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your fabrication shop"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a metal fabrication workflow that helps you create accurate quotes,
-            manage production, and deliver quality products on time.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

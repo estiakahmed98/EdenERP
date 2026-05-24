@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -38,6 +39,7 @@ import {
   Scissors,
   Factory,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Textile Manufacturing | AdonERP Industries",
@@ -45,58 +47,44 @@ export const metadata: Metadata = {
     "A textile manufacturing landing page for AdonERP with CRM, production management, inventory tracking, purchasing, and subcontracting.",
 };
 
-const features = [
-  {
-    title: "CRM pipeline",
-    description: "Track leads, samples, and quotations through every sales stage.",
-  },
-  {
-    title: "Clear traceability",
-    description: "Follow materials from raw goods to finished products with lot tracking.",
-  },
-  {
-    title: "Subcontracting Management",
-    description: "Coordinate with external partners for dyeing, printing, and finishing.",
-  },
-  {
-    title: "Automate workflow",
-    description: "Auto-create manufacturing orders when sales are confirmed.",
-  },
-  {
-    title: "Project top bar",
-    description: "Visualize project progress, deadlines, and key metrics at a glance.",
-  },
-  {
-    title: "Flexible invoicing",
-    description: "Invoice based on milestones, quantities, or custom terms.",
-  },
-];
-
-const apps = [
-  { title: "CRM", subtitle: "Lead and sample management", icon: Users },
-  { title: "Manufacturing", subtitle: "Production planning", icon: Factory },
-  { title: "Inventory", subtitle: "Raw material stock", icon: Warehouse },
-  { title: "Website", subtitle: "Product showcase", icon: Home },
-  { title: "Purchase", subtitle: "Supplier orders", icon: Package },
-  { title: "Project", subtitle: "Order tracking", icon: HardDrive },
-];
-
-const testimonials = [
-  {
-    name: "Sarah Chen",
-    role: "Production Director, Silk Road Textiles",
-    content:
-      "It's very good and detailed. Each module has so many things, you are never out of control. From raw material to finished goods, everything is traceable.",
-    rating: 5,
-  },
-  {
-    name: "Ahmed Malik",
-    role: "Owner, Crescent Fabrics",
-    content:
-      "AdonERP transformed our textile manufacturing workflow. The integration between CRM, production, and inventory is seamless. Our lead times have improved dramatically.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+    Ruler,
+    HardDrive,
+    Hammer,
+    ClipboardList,
+    Warehouse,
+    Shirt,
+    Scissors,
+    Factory,
+  };
+  return icons[iconName] || Shirt;
+};
 
 function ScriptHeading({
   children,
@@ -109,8 +97,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -119,21 +106,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function TextileManufacturingPage() {
+  const t = useTranslations("pages.textile");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -142,12 +136,13 @@ export default function TextileManufacturingPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Shirt className="h-4 w-4" />}
-              label="Textile industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Textile Manufacturing
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -157,7 +152,7 @@ export default function TextileManufacturingPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  The All-in-One Software for
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -166,12 +161,11 @@ export default function TextileManufacturingPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Textile Manufacturing
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Manage customer relationships, create accurate quotes, and handle
-                every step of production from product design to shipping.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -180,27 +174,27 @@ export default function TextileManufacturingPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                It's very good and detailed. Each module has so many things, you
-                are never out of control. From raw material to finished goods,
-                everything is traceable.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Sarah Chen</p>
-                  <p className="text-sm text-muted-foreground">Production Director, Silk Road Textiles</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -255,26 +249,24 @@ export default function TextileManufacturingPage() {
       {/* Efficient client communication Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Efficient client{" "}
+          {t("communicationSection.title")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            communication
+            {t("communicationSection.titleHighlight")}
           </span>
         </ScriptHeading>
 
         <div className="mt-8 grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            The CRM qualifies leads, allowing immediate creation of project
-            samples and quotations.
+            {t("communicationSection.cards.crm")}
           </div>
           <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-            Allow customers to easily request a quote using predefined templates
-            on your website.
+            {t("communicationSection.cards.quoteRequest")}
           </div>
         </div>
 
         <div className="mt-12 rounded-2xl border border-border bg-card p-6 shadow-xl">
           <div className="grid gap-4 md:grid-cols-4">
-            {["New Leads", "Samples", "Quotations", "Production"].map((stage, idx) => (
+            {t.raw("communicationSection.stages").map((stage: string) => (
               <div key={stage} className="rounded-xl bg-muted/30 p-4">
                 <div className="mb-3 text-xs font-semibold text-primary">{stage}</div>
                 <div className="space-y-2">
@@ -284,7 +276,7 @@ export default function TextileManufacturingPage() {
               </div>
             ))}
           </div>
-          <div className="mt-3 text-center text-xs text-muted-foreground">CRM pipeline • Lead to production</div>
+          <div className="mt-3 text-center text-xs text-muted-foreground">{t("communicationSection.pipelineLabel")}</div>
         </div>
       </section>
 
@@ -293,18 +285,17 @@ export default function TextileManufacturingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
             <span className="underline decoration-primary underline-offset-8">
-              Streamlined
+              {t("stockSection.title")}
             </span>{" "}
-            stock management
+            {t("stockSection.titleHighlight")}
           </ScriptHeading>
 
           <div className="mt-8 grid gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
             <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-              Delivery orders are automatically created in inventory when sales
-              operations are confirmed.
+              {t("stockSection.cards.deliveryOrders")}
             </div>
             <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-              Lots and package tracking allows full traceability of your inventory.
+              {t("stockSection.cards.traceability")}
             </div>
           </div>
 
@@ -312,7 +303,7 @@ export default function TextileManufacturingPage() {
             <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
               <div className="mb-5 h-8 rounded-xl bg-muted" />
               <div className="grid grid-cols-2 gap-5">
-                {["Cotton Rolls", "Dyed Fabric", "Zippers", "Threads"].map((item, idx) => (
+                {t.raw("stockSection.materials").map((item: string, idx: number) => (
                   <div key={item} className="rounded-xl bg-muted/30 p-5">
                     <div className="mb-4 h-20 rounded-xl bg-gradient-to-br from-primary/20 to-muted" />
                     <div className="h-8 rounded-xl bg-primary/20" />
@@ -324,7 +315,7 @@ export default function TextileManufacturingPage() {
             <div className="rounded-2xl border border-border bg-card p-5 shadow-xl">
               <div className="mb-5 h-8 rounded-xl bg-card" />
               <div className="space-y-3">
-                {["Order #TX-101", "Order #TX-102", "Order #TX-103", "Order #TX-104"].map((order, idx) => (
+                {t.raw("stockSection.orders").map((order: string, idx: number) => (
                   <div key={order} className="flex items-center gap-3 rounded-xl bg-muted/30 p-3">
                     <div className="h-8 w-8 rounded-full bg-card" />
                     <div className="h-3 flex-1 rounded-full bg-muted" />
@@ -342,22 +333,21 @@ export default function TextileManufacturingPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Smooth production
+              {t("productionSection.title")}
               <br />
-              workflow
+              {t("productionSection.subtitle")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Create predefined or custom bills of material, procure components
-              automatically, and track production with shop floor operations.
+              {t("productionSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Scissors className="h-4 w-4" />
-                BOM management
+                {t("productionSection.badges.bomManagement")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Factory className="h-4 w-4" />
-                Shop floor control
+                {t("productionSection.badges.shopFloorControl")}
               </div>
             </div>
           </div>
@@ -380,45 +370,36 @@ export default function TextileManufacturingPage() {
       <section className="bg-primary/5 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>
-            Track your{" "}
+            {t("purchaseSection.title")}{" "}
             <span className="underline decoration-primary underline-offset-8">
-              purchase
+              {t("purchaseSection.titleHighlight")}
             </span>
           </ScriptHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-            Handle purchasing, dropshipping, and subcontracting to keep your
-            inventory perfectly stocked.
+            {t("purchaseSection.description")}
           </p>
 
           <div className="relative mx-auto mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
             <div className="border-b border-border bg-muted/30 px-6 py-4">
               <div className="grid grid-cols-6 gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                <span>PO #</span>
-                <span>Supplier</span>
-                <span>Material</span>
-                <span>Qty</span>
-                <span>Status</span>
-                <span>ETA</span>
+                {t.raw("purchaseSection.table.headers").map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
             </div>
             <div className="divide-y divide-border">
-              {[
-                ["PO-1001", "Fabric Supply Co.", "Cotton Blend", "500 m", "Shipped", "May 28"],
-                ["PO-1002", "Thread Masters", "Polyester Thread", "100 spools", "Processing", "Jun 02"],
-                ["PO-1003", "Dye Solutions", "Reactive Dyes", "50 kg", "Delivered", "May 25"],
-                ["PO-1004", "Zipper World", "Metal Zippers", "200 pcs", "Processing", "Jun 05"],
-              ].map((row) => (
-                <div key={row[0]} className="grid grid-cols-6 gap-3 px-6 py-4 text-sm">
-                  <span className="font-medium text-foreground">{row[0]}</span>
-                  <span className="text-foreground">{row[1]}</span>
-                  <span className="text-foreground">{row[2]}</span>
-                  <span className="text-foreground">{row[3]}</span>
+              {t.raw("purchaseSection.table.rows").map((row: any) => (
+                <div key={row.po} className="grid grid-cols-6 gap-3 px-6 py-4 text-sm">
+                  <span className="font-medium text-foreground">{row.po}</span>
+                  <span className="text-foreground">{row.supplier}</span>
+                  <span className="text-foreground">{row.material}</span>
+                  <span className="text-foreground">{row.qty}</span>
                   <span className={`inline-flex w-fit rounded-full px-2 py-1 text-xs font-semibold ${
-                    row[4] === "Delivered" ? "bg-accent/20 text-accent-foreground" :
-                    row[4] === "Shipped" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400" :
+                    row.status === "Delivered" || row.status === "ডেলিভারি দেওয়া হয়েছে" ? "bg-accent/20 text-accent-foreground" :
+                    row.status === "Shipped" || row.status === "পাঠানো হয়েছে" ? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400" :
                     "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400"
-                  }`}>{row[4]}</span>
-                  <span className="text-foreground">{row[5]}</span>
+                  }`}>{row.status}</span>
+                  <span className="text-foreground">{row.eta}</span>
                 </div>
               ))}
             </div>
@@ -432,18 +413,17 @@ export default function TextileManufacturingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Smart tools for textile production, inventory, quotations,
-              traceability, purchasing and invoicing.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -464,18 +444,16 @@ export default function TextileManufacturingPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your textile manufacturing
-            operation, CRM, production, and inventory.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -483,7 +461,7 @@ export default function TextileManufacturingPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -501,7 +479,7 @@ export default function TextileManufacturingPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -509,7 +487,7 @@ export default function TextileManufacturingPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -545,11 +523,10 @@ export default function TextileManufacturingPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              textile manufacturers and apparel producers.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -562,26 +539,26 @@ export default function TextileManufacturingPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your production"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch a textile manufacturing workflow that helps you manage
-            production, track materials, and deliver quality products on time.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

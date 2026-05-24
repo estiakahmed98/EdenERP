@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "title": "Textile Manufacturing | AdonERP",
+    "description": "AI-powered textile manufacturing platform for all your production operations — from CRM and production management to inventory tracking, purchasing, and subcontracting."
+  },
+  "hero": {
+    "eyebrowIcon": "Shirt",
+    "eyebrowLabel": "Textile industry template",
+    "industriesLabel": "Industries / Textile Manufacturing",
+    "preHeading": "The All-in-One Software for",
+    "title": "Textile Manufacturing",
+    "description": "Manage customer relationships, create accurate quotes, and handle every step of production from product design to shipping.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "It's very good and detailed. Each module has so many things, you are never out of control. From raw material to finished goods, everything is traceable.",
+    "testimonialName": "Sarah Chen",
+    "testimonialRole": "Production Director, Silk Road Textiles"
+  },
+  "communicationSection": {
+    "title": "Efficient client",
+    "titleHighlight": "communication",
+    "cards": {
+      "crm": "The CRM qualifies leads, allowing immediate creation of project samples and quotations.",
+      "quoteRequest": "Allow customers to easily request a quote using predefined templates on your website."
+    },
+    "pipelineLabel": "CRM pipeline • Lead to production",
+    "stages": ["New Leads", "Samples", "Quotations", "Production"]
+  },
+  "stockSection": {
+    "title": "Streamlined",
+    "titleHighlight": "stock management",
+    "cards": {
+      "deliveryOrders": "Delivery orders are automatically created in inventory when sales operations are confirmed.",
+      "traceability": "Lots and package tracking allows full traceability of your inventory."
+    },
+    "materials": ["Cotton Rolls", "Dyed Fabric", "Zippers", "Threads"],
+    "orders": ["Order #TX-101", "Order #TX-102", "Order #TX-103", "Order #TX-104"]
+  },
+  "productionSection": {
+    "title": "Smooth production",
+    "subtitle": "workflow",
+    "description": "Create predefined or custom bills of material, procure components automatically, and track production with shop floor operations.",
+    "badges": {
+      "bomManagement": "BOM management",
+      "shopFloorControl": "Shop floor control"
+    }
+  },
+  "purchaseSection": {
+    "title": "Track your",
+    "titleHighlight": "purchase",
+    "description": "Handle purchasing, dropshipping, and subcontracting to keep your inventory perfectly stocked.",
+    "table": {
+      "headers": ["PO #", "Supplier", "Material", "Qty", "Status", "ETA"],
+      "rows": [
+        {
+          "po": "PO-1001",
+          "supplier": "Fabric Supply Co.",
+          "material": "Cotton Blend",
+          "qty": "500 m",
+          "status": "Shipped",
+          "eta": "May 28"
+        },
+        {
+          "po": "PO-1002",
+          "supplier": "Thread Masters",
+          "material": "Polyester Thread",
+          "qty": "100 spools",
+          "status": "Processing",
+          "eta": "Jun 02"
+        },
+        {
+          "po": "PO-1003",
+          "supplier": "Dye Solutions",
+          "material": "Reactive Dyes",
+          "qty": "50 kg",
+          "status": "Delivered",
+          "eta": "May 25"
+        },
+        {
+          "po": "PO-1004",
+          "supplier": "Zipper World",
+          "material": "Metal Zippers",
+          "qty": "200 pcs",
+          "status": "Processing",
+          "eta": "Jun 05"
+        }
+      ]
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Smart tools for textile production, inventory, quotations, traceability, purchasing and invoicing.",
+    "list": [
+      {
+        "title": "CRM pipeline",
+        "description": "Track leads, samples, and quotations through every sales stage."
+      },
+      {
+        "title": "Clear traceability",
+        "description": "Follow materials from raw goods to finished products with lot tracking."
+      },
+      {
+        "title": "Subcontracting Management",
+        "description": "Coordinate with external partners for dyeing, printing, and finishing."
+      },
+      {
+        "title": "Automate workflow",
+        "description": "Auto-create manufacturing orders when sales are confirmed."
+      },
+      {
+        "title": "Project top bar",
+        "description": "Visualize project progress, deadlines, and key metrics at a glance."
+      },
+      {
+        "title": "Flexible invoicing",
+        "description": "Invoice based on milestones, quantities, or custom terms."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your textile manufacturing operation, CRM, production, and inventory.",
+    "apps": [
+      {
+        "title": "CRM",
+        "subtitle": "Lead and sample management",
+        "icon": "Users"
+      },
+      {
+        "title": "Manufacturing",
+        "subtitle": "Production planning",
+        "icon": "Factory"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Raw material stock",
+        "icon": "Warehouse"
+      },
+      {
+        "title": "Website",
+        "subtitle": "Product showcase",
+        "icon": "Home"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Supplier orders",
+        "icon": "Package"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Order tracking",
+        "icon": "HardDrive"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Sarah Chen",
+        "role": "Production Director, Silk Road Textiles",
+        "content": "It's very good and detailed. Each module has so many things, you are never out of control. From raw material to finished goods, everything is traceable.",
+        "rating": 5
+      },
+      {
+        "name": "Ahmed Malik",
+        "role": "Owner, Crescent Fabrics",
+        "content": "AdonERP transformed our textile manufacturing workflow. The integration between CRM, production, and inventory is seamless. Our lead times have improved dramatically.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for textile manufacturers and apparel producers."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your production",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a textile manufacturing workflow that helps you manage production, track materials, and deliver quality products on time.",
+    "button": "Start now"
+  }
+}

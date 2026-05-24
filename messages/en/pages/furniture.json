@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "title": "Custom Furniture Production | AdonERP",
+    "description": "AI-powered custom furniture production platform for all your manufacturing operations — from CRM and quotation builder to product variants, quality control, and project management."
+  },
+  "hero": {
+    "eyebrowIcon": "Sofa",
+    "eyebrowLabel": "Furniture manufacturing template",
+    "industriesLabel": "Industries / Custom Furniture Production",
+    "preHeading": "Software toolkit for your",
+    "title": "🛋️ Furniture business",
+    "description": "AdonERP lets you send custom quotations, manage sales, handle production, plan custom work, and provide after-sales support.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "The best part is how everything is connected in AdonERP. It is not just about handling tasks, it is about making every part of our business work together seamlessly.",
+    "testimonialName": "Jonathan Miller",
+    "testimonialRole": "Owner, Miller Custom Woodworks"
+  },
+  "salesSection": {
+    "title": "Flexible sales",
+    "titleHighlight": "for solid",
+    "titleEnd": "profit",
+    "description": "Sell products and services, manage projects and tasks, build winning quotations, and present your products in the best possible light.",
+    "badges": {
+      "customQuotes": "Custom quotes",
+      "productVariants": "Product variants"
+    }
+  },
+  "projectSection": {
+    "title": "Project management is",
+    "titleHighlight": "a craft",
+    "description": "Create, schedule, and follow up on tasks from one dashboard. Track sales orders, purchase orders, and project progress easily.",
+    "badges": {
+      "taskTracking": "Task tracking",
+      "timelineView": "Timeline view"
+    },
+    "stages": ["To Do", "In Progress", "Done"]
+  },
+  "materialsSection": {
+    "title": "Turn raw",
+    "titleHighlight": "materials",
+    "titleEnd": "into masterpieces",
+    "cards": {
+      "bom": "Flexible bills of materials support custom products, extra options, variants, and material needs.",
+      "manufacturing": "Easy manufacturing and purchasing keep production forecasts, costs and stock under control."
+    },
+    "table": {
+      "headers": ["Material", "BOM Qty", "On Hand", "Required", "Status"],
+      "rows": [
+        {
+          "material": "Oak Wood",
+          "bomQty": "10 bd ft",
+          "onHand": "250 bd ft",
+          "required": "50 bd ft",
+          "status": "Good"
+        },
+        {
+          "material": "Walnut Veneer",
+          "bomQty": "8 sq ft",
+          "onHand": "120 sq ft",
+          "required": "40 sq ft",
+          "status": "Good"
+        },
+        {
+          "material": "Brass Handles",
+          "bomQty": "4 pcs",
+          "onHand": "45 pcs",
+          "required": "20 pcs",
+          "status": "Good"
+        },
+        {
+          "material": "Cushion Foam",
+          "bomQty": "2 sheets",
+          "onHand": "8 sheets",
+          "required": "10 sheets",
+          "status": "Reorder"
+        },
+        {
+          "material": "Wood Glue",
+          "bomQty": "0.5 L",
+          "onHand": "12 L",
+          "required": "3 L",
+          "status": "Low stock"
+        }
+      ]
+    }
+  },
+  "inventorySection": {
+    "title": "Optimized",
+    "titleHighlight": "inventory",
+    "description": "Simplified procurement, smart replenishment and real-time inventory tools help you always get the best deal on materials.",
+    "badges": {
+      "barcodeScanning": "Barcode scanning",
+      "autoReplenishment": "Auto replenishment"
+    },
+    "items": ["Hardwood", "Plywood", "Veneer", "Hardware"]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Useful tools for custom furniture sales, production, inventory, quotations, quality and project tracking.",
+    "list": [
+      {
+        "title": "CRM pipeline",
+        "description": "Track leads, custom quotes, and projects through every sales stage."
+      },
+      {
+        "title": "Clear traceability",
+        "description": "Follow materials from raw stock to finished furniture pieces."
+      },
+      {
+        "title": "Quotation builder",
+        "description": "Create detailed quotes with materials, labor, and custom options."
+      },
+      {
+        "title": "Product variants",
+        "description": "Offer sizes, colors, wood types, and fabric options for each design."
+      },
+      {
+        "title": "Quality control",
+        "description": "Inspect finished pieces and track quality metrics."
+      },
+      {
+        "title": "Automate procurement",
+        "description": "Auto-create purchase orders when materials run low."
+      },
+      {
+        "title": "Project top bar",
+        "description": "Visualize project progress, deadlines, and key metrics at a glance."
+      },
+      {
+        "title": "Worksheets",
+        "description": "Create detailed production worksheets for shop floor workers."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your furniture business, CRM, production, inventory, and project management.",
+    "apps": [
+      {
+        "title": "CRM",
+        "subtitle": "Lead and quote management",
+        "icon": "Users"
+      },
+      {
+        "title": "Manufacturing",
+        "subtitle": "Production planning",
+        "icon": "Factory"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Raw material stock",
+        "icon": "Warehouse"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Customer billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Supplier orders",
+        "icon": "Package"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Order tracking",
+        "icon": "HardDrive"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Jonathan Miller",
+        "role": "Owner, Miller Custom Woodworks",
+        "content": "The best part is how everything is connected in AdonERP. It is not just about handling tasks, it is about making every part of our business work together seamlessly.",
+        "rating": 5
+      },
+      {
+        "name": "Sophia Chen",
+        "role": "Production Manager, Artisan Furniture Co.",
+        "content": "From custom quotes to quality control, AdonERP transformed our furniture business. Our clients love the detailed proposals and we love the production tracking.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for custom furniture makers and manufacturers."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your furniture business",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a custom furniture production workflow that helps you create beautiful pieces, manage materials, and deliver quality on time.",
+    "button": "Start now"
+  }
+}
