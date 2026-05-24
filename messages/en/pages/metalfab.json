@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "title": "Metal Fabrication | AdonERP",
+    "description": "AI-powered metal fabrication platform for all your manufacturing operations — from CRM and quote calculator to procurement automation, inventory, and project management."
+  },
+  "hero": {
+    "eyebrowIcon": "Cog",
+    "eyebrowLabel": "Metal fabrication industry template",
+    "industriesLabel": "Industries / Metal Fabrication",
+    "preHeading": "The All-in-One Software for",
+    "title": "Metal Fabrication",
+    "description": "Manage customer relationships, create accurate quotes, and handle everything from simple sales orders to complex projects.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "I am the first to admit, after all of that cussing and badmouthing because we were just a mess at the beginning, now that it's functioning, it is a fantastic program.",
+    "testimonialName": "Mike Thompson",
+    "testimonialRole": "Operations Director, Precision Metals Inc."
+  },
+  "quotesSection": {
+    "title": "Craft custom",
+    "titleHighlight": "quotes",
+    "description": "Generate quotations and define the most accurate price for clients with a built-in quote calculator.",
+    "badges": {
+      "materialCosting": "Material costing",
+      "laborEstimation": "Labor estimation"
+    }
+  },
+  "replenishmentSection": {
+    "title": "Timely delivery",
+    "titleHighlight": "starts",
+    "titleEnd": "with timely replenishment",
+    "description": "Get a complete overview of production processes and manage everything from cost estimation to final delivery.",
+    "table": {
+      "headers": ["Material", "On Hand", "Min Stock", "Order Qty", "Status"],
+      "rows": [
+        {
+          "material": "Steel Sheet 3mm",
+          "onHand": "2,500 kg",
+          "minStock": "1,000 kg",
+          "orderQty": "3,000 kg",
+          "status": "Good"
+        },
+        {
+          "material": "Aluminum Bar",
+          "onHand": "850 kg",
+          "minStock": "500 kg",
+          "orderQty": "1,000 kg",
+          "status": "Reorder"
+        },
+        {
+          "material": "Stainless Rod",
+          "onHand": "320 kg",
+          "minStock": "300 kg",
+          "orderQty": "500 kg",
+          "status": "Low stock"
+        },
+        {
+          "material": "Brass Plate",
+          "onHand": "1,200 kg",
+          "minStock": "800 kg",
+          "orderQty": "1,500 kg",
+          "status": "Good"
+        },
+        {
+          "material": "Copper Wire",
+          "onHand": "180 kg",
+          "minStock": "200 kg",
+          "orderQty": "300 kg",
+          "status": "Reorder"
+        }
+      ]
+    }
+  },
+  "purchaseSection": {
+    "title": "Track your",
+    "titleHighlight": "purchase",
+    "description": "Manage, group, compare and validate your purchases while automating the creation process.",
+    "table": {
+      "headers": ["PO #", "Supplier", "Material", "Qty", "Unit Price", "Status"],
+      "rows": [
+        {
+          "po": "PO-2451",
+          "supplier": "Metal Supply Co.",
+          "material": "Steel Sheet",
+          "qty": "500 kg",
+          "unitPrice": "$2.50/kg",
+          "status": "Delivered"
+        },
+        {
+          "po": "PO-2452",
+          "supplier": "Alloy Distributors",
+          "material": "Aluminum Bar",
+          "qty": "300 kg",
+          "unitPrice": "$4.20/kg",
+          "status": "Processing"
+        },
+        {
+          "po": "PO-2453",
+          "supplier": "Fastener World",
+          "material": "Bolts M8",
+          "qty": "1,000 pcs",
+          "unitPrice": "$0.15/pc",
+          "status": "Shipped"
+        },
+        {
+          "po": "PO-2454",
+          "supplier": "Metal Depot",
+          "material": "Stainless Rod",
+          "qty": "200 kg",
+          "unitPrice": "$5.80/kg",
+          "status": "Processing"
+        }
+      ]
+    }
+  },
+  "projectSection": {
+    "title": "Effortless project",
+    "subtitle": "management",
+    "description": "Customize your project overview, track only the essential information, and keep the right details visible without overload.",
+    "badges": {
+      "customViews": "Custom views",
+      "timelineTracking": "Timeline tracking"
+    },
+    "stages": ["To Do", "In Progress", "Done"]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Complete tools for fabrication quotes, production, purchasing, traceability, invoicing and project management.",
+    "list": [
+      {
+        "title": "CRM pipeline",
+        "description": "Track leads, quotes, and projects through every sales stage."
+      },
+      {
+        "title": "Clear traceability",
+        "description": "Follow materials from raw stock to finished fabricated parts."
+      },
+      {
+        "title": "Quote Calculator",
+        "description": "Calculate accurate quotes based on materials, labor, and complexity."
+      },
+      {
+        "title": "Automate procurement",
+        "description": "Auto-create purchase orders when raw materials run low."
+      },
+      {
+        "title": "Project top bar",
+        "description": "Visualize project progress, deadlines, and key metrics at a glance."
+      },
+      {
+        "title": "Flexible invoicing",
+        "description": "Invoice based on milestones, partial deliveries, or custom terms."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your metal fabrication operation, CRM, production, and inventory.",
+    "apps": [
+      {
+        "title": "CRM",
+        "subtitle": "Lead and quote management",
+        "icon": "Users"
+      },
+      {
+        "title": "Manufacturing",
+        "subtitle": "Production planning",
+        "icon": "Factory"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Raw material stock",
+        "icon": "Warehouse"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Customer billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Supplier orders",
+        "icon": "Package"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Order tracking",
+        "icon": "HardDrive"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Mike Thompson",
+        "role": "Operations Director, Precision Metals Inc.",
+        "content": "I am the first to admit, after all of that cussing and badmouthing because we were just a mess at the beginning, now that it's functioning, it is a fantastic program.",
+        "rating": 5
+      },
+      {
+        "name": "Elena Vasquez",
+        "role": "Owner, Superior Fabrication",
+        "content": "AdonERP transformed our metal fabrication business. The quote calculator alone saved us hours, and the procurement automation keeps our shop running smoothly.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for metal fabrication shops and manufacturers."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your fabrication shop",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a metal fabrication workflow that helps you create accurate quotes, manage production, and deliver quality products on time.",
+    "button": "Start now"
+  }
+}

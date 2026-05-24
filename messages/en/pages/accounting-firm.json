@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "title": "Accounting Firm | AdonERP",
+    "description": "AI-powered accounting firm management platform for all your professional services — from CRM and project management to electronic invoicing, timesheets, and document management."
+  },
+  "hero": {
+    "eyebrowIcon": "Calculator",
+    "eyebrowLabel": "Professional services template",
+    "industriesLabel": "Industries / Accounting Firm",
+    "preHeading": "#1 Software for",
+    "title": "Accounting Firms",
+    "description": "Manage your accounting firm's activities, from acquiring clients to handling projects and invoicing, in one integrated system.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "A VAT closing that used to take 4 days is now done in 3 hours with AdonERP, with a better service for our clients.",
+    "testimonialName": "Jennifer Walsh",
+    "testimonialRole": "Managing Partner, Walsh & Associates"
+  },
+  "pipelineSection": {
+    "title": "From the",
+    "titleHighlightLead": "lead",
+    "titleMiddle": "to the",
+    "titleHighlightInvoice": "invoice",
+    "stages": ["New Leads", "Proposals", "Clients"]
+  },
+  "serviceSection": {
+    "title": "Smart service management",
+    "description": "Keep track of each request with project tasks, schedules, contacts, documents and client activities.",
+    "tasks": [
+      {
+        "name": "Tax Filing - Q1 2026",
+        "due": "May 30"
+      },
+      {
+        "name": "Annual Audit Prep",
+        "due": "Jun 15"
+      },
+      {
+        "name": "Payroll Review",
+        "due": "May 25"
+      },
+      {
+        "name": "Financial Statement",
+        "due": "Jun 05"
+      }
+    ]
+  },
+  "accountingSection": {
+    "title": "Next-level",
+    "subtitle": "accounting",
+    "description": "Automate reconciliation, manage documents, gain real-time reporting, and keep accounting operations accurate and fast.",
+    "badges": {
+      "autoReconciliation": "Auto-reconciliation",
+      "realTimeReporting": "Real-time reporting"
+    }
+  },
+  "documentsSection": {
+    "title": "Secure",
+    "titleHighlight": "document",
+    "subtitle": "workspace",
+    "description": "Keep accounting documents, client files, invoices and approvals in one secure workspace with clear collaboration flows.",
+    "badges": {
+      "secureStorage": "Secure storage",
+      "teamCollaboration": "Team collaboration"
+    },
+    "button": "Find out more"
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Tools for accounting firms to manage clients, tasks, documents, invoicing, projects and reporting all in one place.",
+    "list": [
+      {
+        "title": "All-in-one sales management",
+        "description": "Track leads, proposals, and client onboarding from one dashboard."
+      },
+      {
+        "title": "Compliant e-signatures",
+        "description": "Collect legally binding signatures on engagement letters and contracts."
+      },
+      {
+        "title": "Project dashboard",
+        "description": "Visualize client projects, deadlines, and team workload at a glance."
+      },
+      {
+        "title": "Integrated timesheets",
+        "description": "Track billable hours by client, project, and service type."
+      },
+      {
+        "title": "Electronic invoicing",
+        "description": "Generate and send compliant invoices with payment tracking."
+      },
+      {
+        "title": "CRM pipeline",
+        "description": "Manage prospects, clients, and renewal opportunities effectively."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your accounting firm, client management, projects, and billing.",
+    "apps": [
+      {
+        "title": "CRM",
+        "subtitle": "Client and lead management",
+        "icon": "Users"
+      },
+      {
+        "title": "Project",
+        "subtitle": "Client project tracking",
+        "icon": "HardDrive"
+      },
+      {
+        "title": "Accounting",
+        "subtitle": "Financial management",
+        "icon": "Calculator"
+      },
+      {
+        "title": "Documents",
+        "subtitle": "Secure file storage",
+        "icon": "FileText"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Client billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Helpdesk",
+        "subtitle": "Client support tickets",
+        "icon": "Briefcase"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Jennifer Walsh",
+        "role": "Managing Partner, Walsh & Associates",
+        "content": "A VAT closing that used to take 4 days is now done in 3 hours with AdonERP, with a better service for our clients.",
+        "rating": 5
+      },
+      {
+        "name": "David Kim",
+        "role": "Director, Precision Accounting Group",
+        "content": "The integrated timesheets and invoicing transformed our workflow. We now track every billable minute and invoice accurately.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for accounting firms and professional services."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your firm",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch an accounting firm workflow that helps you manage clients, track billable hours, and deliver exceptional service.",
+    "button": "Start now"
+  }
+}

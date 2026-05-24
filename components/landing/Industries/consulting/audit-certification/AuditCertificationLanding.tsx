@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -52,6 +53,7 @@ import {
   MapPin,
   Smartphone,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Audit & Certification | AdonERP Industries",
@@ -59,58 +61,58 @@ export const metadata: Metadata = {
     "An audit and certification landing page for AdonERP with website builder, CRM pipeline, field service, timesheets, and invoicing.",
 };
 
-const features = [
-  {
-    title: "CRM pipeline",
-    description: "Track leads, audits, and certifications through every stage.",
-  },
-  {
-    title: "Website builder",
-    description: "Create professional websites with AI-generated content and forms.",
-  },
-  {
-    title: "Service invoicing",
-    description: "Generate invoices for audit services and certification fees.",
-  },
-  {
-    title: "Timesheets",
-    description: "Track billable hours by client, audit type, and certification level.",
-  },
-  {
-    title: "Custom worksheets",
-    description: "Create detailed audit checklists and certification forms.",
-  },
-  {
-    title: "Free domain name",
-    description: "Get a professional domain name included with your website.",
-  },
-];
-
-const apps = [
-  { title: "Website", subtitle: "Professional online presence", icon: Home },
-  { title: "Sign", subtitle: "Electronic signatures", icon: FileSignature },
-  { title: "Invoicing", subtitle: "Client billing", icon: ReceiptText },
-  { title: "CRM", subtitle: "Lead management", icon: Users },
-  { title: "Appointments", subtitle: "Onsite visit scheduling", icon: Calendar },
-  { title: "Project", subtitle: "Audit task tracking", icon: HardDrive },
-];
-
-const testimonials = [
-  {
-    name: "Robert Chen",
-    role: "Managing Director, Assurance Plus",
-    content:
-      "Our client base has increased by 40%, and AdonERP's advanced technology and tools have reduced operational efforts by 80%.",
-    rating: 5,
-  },
-  {
-    name: "Lisa Thompson",
-    role: "Operations Manager, Global Certifications",
-    content:
-      "The mobile audit solution transformed our field operations. Auditors can now complete certifications onsite and get signatures instantly.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+    Ruler,
+    HardDrive,
+    Hammer,
+    ClipboardList,
+    Warehouse,
+    Shirt,
+    Scissors,
+    Factory,
+    Wrench,
+    Cog,
+    Layers,
+    Sofa,
+    Armchair,
+    Calculator,
+    Briefcase,
+    FileCheck,
+    Megaphone,
+    TrendingUp,
+    BarChart,
+    ClipboardCheck,
+    MapPin,
+    Smartphone,
+  };
+  return icons[iconName] || ClipboardCheck;
+};
 
 function ScriptHeading({
   children,
@@ -123,8 +125,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -133,21 +134,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function AuditCertificationPage() {
+  const t = useTranslations("pages.audit");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -156,12 +164,13 @@ export default function AuditCertificationPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<ClipboardCheck className="h-4 w-4" />}
-              label="Audit industry template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Audit & Certification
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -171,7 +180,7 @@ export default function AuditCertificationPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  #1 software for
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -180,13 +189,11 @@ export default function AuditCertificationPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Audit and Certification businesses
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                AdonERP contains an AI-based website builder, an intuitive CRM pipeline
-                to manage leads, and a complete Field Service solution to handle your
-                onsite visits.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -195,26 +202,27 @@ export default function AuditCertificationPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                Our client base has increased by 40%, and AdonERP's advanced
-                technology and tools have reduced operational efforts by 80%.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Robert Chen</p>
-                  <p className="text-sm text-muted-foreground">Managing Director, Assurance Plus</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -274,24 +282,23 @@ export default function AuditCertificationPage() {
               <div className="mb-4 text-5xl">💡</div>
               <ScriptHeading>
                 <span className="underline decoration-primary underline-offset-8">
-                  AI-based
+                  {t("websiteSection.title")}
                 </span>{" "}
-                website
+                {t("websiteSection.titleHighlight")}
                 <br />
-                builder
+                {t("websiteSection.titleEnd")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Build a professional website using AI-generated content, templates,
-                picture libraries and drag-and-drop elements.
+                {t("websiteSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Sparkles className="h-4 w-4 text-primary" />
-                  AI content generation
+                  {t("websiteSection.badges.aiContent")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Home className="h-4 w-4 text-primary" />
-                  Free domain included
+                  {t("websiteSection.badges.freeDomain")}
                 </div>
               </div>
             </div>
@@ -311,11 +318,10 @@ export default function AuditCertificationPage() {
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 text-base leading-7 text-muted-foreground md:grid-cols-2">
             <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-              Set up contact forms that automatically create leads, appointments or
-              onsite audit tasks.
+              {t("websiteSection.cards.forms")}
             </div>
             <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-              Enjoy a free domain plan connected to your database and business site.
+              {t("websiteSection.cards.domain")}
             </div>
           </div>
         </div>
@@ -326,30 +332,28 @@ export default function AuditCertificationPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Easy lead
+              {t("leadsSection.title")}
               <br />
-              management
+              {t("leadsSection.subtitle")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Centralize leads from your website, email, phone and direct contact in
-              one intuitive pipeline. Schedule activities and turn leads into sales
-              with ease.
+              {t("leadsSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Users className="h-4 w-4" />
-                Lead tracking
+                {t("leadsSection.badges.leadTracking")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Calendar className="h-4 w-4" />
-                Activity scheduling
+                {t("leadsSection.badges.activityScheduling")}
               </div>
             </div>
           </div>
 
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
             <div className="grid gap-4 md:grid-cols-3">
-              {["New Leads", "Qualified", "Won"].map((stage) => (
+              {t.raw("leadsSection.stages").map((stage: string) => (
                 <div key={stage} className="rounded-xl bg-muted/30 p-4">
                   <div className="mb-3 text-xs font-semibold text-primary">{stage}</div>
                   <div className="space-y-2">
@@ -369,18 +373,16 @@ export default function AuditCertificationPage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mb-4 text-5xl">📱</div>
           <ScriptHeading>
-            <span className="text-primary">Mobile</span> solution for onsite
-            audits
+            <span className="text-primary">{t("mobileSection.title")}</span>
+            {t("mobileSection.titleHighlight")}
           </ScriptHeading>
 
           <div className="mx-auto mt-8 grid max-w-5xl gap-6 text-left text-base leading-7 text-muted-foreground md:grid-cols-2">
             <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-              Streamline services. Once a sale is finalized, a task containing all
-              visit information is automatically created.
+              {t("mobileSection.cards.streamline")}
             </div>
             <div className="rounded-xl bg-card border border-border p-5 shadow-sm">
-              Auditors can navigate to the client location, verify information, fill
-              certification data and get signatures.
+              {t("mobileSection.cards.auditors")}
             </div>
           </div>
 
@@ -389,7 +391,7 @@ export default function AuditCertificationPage() {
               <div className="aspect-[3/5] rounded-xl bg-gradient-to-br from-primary/20 to-muted flex items-center justify-center">
                 <MapPin className="h-12 w-12 text-primary" />
               </div>
-              <p className="mt-4 text-center text-sm font-semibold text-foreground">Navigate to location</p>
+              <p className="mt-4 text-center text-sm font-semibold text-foreground">{t("mobileSection.features.navigate")}</p>
             </div>
 
             <div className="mx-auto max-w-xs rounded-2xl border border-border bg-card p-5 shadow-xl">
@@ -400,7 +402,7 @@ export default function AuditCertificationPage() {
                 <div className="h-10 rounded-xl bg-primary/30" />
                 <div className="h-8 rounded-xl bg-accent/20" />
               </div>
-              <p className="mt-4 text-center text-sm font-semibold text-foreground">Fill in certification data</p>
+              <p className="mt-4 text-center text-sm font-semibold text-foreground">{t("mobileSection.features.fillData")}</p>
             </div>
           </div>
         </div>
@@ -412,18 +414,17 @@ export default function AuditCertificationPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Tools for audit and certification teams to manage leads, websites,
-              visits, timesheets, worksheets and invoicing.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -444,18 +445,16 @@ export default function AuditCertificationPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your audit and certification
-            business, lead management, field service, and billing.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -463,7 +462,7 @@ export default function AuditCertificationPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -481,7 +480,7 @@ export default function AuditCertificationPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -489,7 +488,7 @@ export default function AuditCertificationPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -525,11 +524,10 @@ export default function AuditCertificationPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              audit firms and certification bodies.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -542,26 +540,26 @@ export default function AuditCertificationPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your firm"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch an audit and certification workflow that helps you manage leads,
-            conduct onsite visits, and deliver professional certifications.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

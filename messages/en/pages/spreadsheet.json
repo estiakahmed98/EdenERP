@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "title": "Spreadsheet | AdonERP",
+    "description": "AI-powered spreadsheet platform integrated with your ERP — from collaborative sheets and smart formulas to live dashboards and real-time ERP data sync."
+  },
+  "hero": {
+    "eyebrowIcon": "Table2",
+    "eyebrowLabel": "Smart spreadsheets for Adon ERP",
+    "title": "Decisions,",
+    "titleHighlight": "not just data.",
+    "description": "Adon ERP Spreadsheet turns business data into live reports, collaborative planning sheets, and real-time dashboards without endless copy-paste.",
+    "startButton": "Start Free Trial",
+    "demoButton": "Watch Demo",
+    "spreadsheet": {
+      "title": "Adon Spreadsheet",
+      "live": "Live",
+      "headers": ["Metric", "Jan", "Feb", "Mar", "Apr", "Total"],
+      "rows": [
+        ["Revenue", "$12.4k", "$18.7k", "$21.9k", "$28.2k", "$81.2k"],
+        ["Expenses", "$4.8k", "$6.1k", "$7.3k", "$8.9k", "$27.1k"],
+        ["Profit", "$7.6k", "$12.6k", "$14.6k", "$19.3k", "$54.1k"],
+        ["Growth", "12%", "18%", "21%", "32%", "24%"]
+      ],
+      "revenueTrend": "Revenue trend",
+      "smartInsights": "Smart insights",
+      "insights": [
+        "Sales increased by 32%",
+        "Marketing cost is stable",
+        "Cashflow forecast is healthy"
+      ]
+    },
+    "badges": {
+      "realTimeSync": "Real-time sync",
+      "noCopyPaste": "No copy-paste"
+    }
+  },
+  "connectSection": {
+    "title": "No more copy/paste.",
+    "subtitle": "Real-time data.",
+    "description": "Connect your ERP modules directly to spreadsheets and build live business views from CRM, projects, inventory, finance, and sales.",
+    "modules": [
+      { "title": "CRM pipeline", "icon": "Users" },
+      { "title": "Project data", "icon": "Grid3X3" },
+      { "title": "Sales orders", "icon": "BarChart3" },
+      { "title": "Inventory values", "icon": "Database" }
+    ]
+  },
+  "pivotSection": {
+    "eyebrowIcon": "PieChart",
+    "eyebrowLabel": "Business pivot intelligence",
+    "title": "Your business’s pivot",
+    "titleHighlight": "moment",
+    "description": "Create dynamic pivot tables from ERP records and instantly reveal what matters: profitability, stock movement, sales performance, and team productivity.",
+    "features": [
+      "Group data by customer, product, region, or team",
+      "Refresh reports without exporting CSV files",
+      "Share protected views with managers"
+    ],
+    "demo": {
+      "title": "Pivot analysis",
+      "rows": [
+        ["North Region", "Sales", "$42,900", "32%"],
+        ["South Region", "Inventory", "$21,400", "18%"],
+        ["Online Store", "Orders", "$59,120", "41%"],
+        ["Corporate", "Projects", "$33,700", "24%"]
+      ]
+    }
+  },
+  "visualizeSection": {
+    "title": "Visualize, decide,",
+    "titleHighlight": "succeed",
+    "description": "Build beautiful dashboards from spreadsheet data and keep every report connected to your live Adon ERP workspace.",
+    "stats": [
+      { "label": "Leads", "value": "1,240", "change": "+18%" },
+      { "label": "Revenue", "value": "$92.4k", "change": "+32%" },
+      { "label": "Orders", "value": "846", "change": "+21%" },
+      { "label": "Profit", "value": "$41.8k", "change": "+27%" }
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "list": [
+      {
+        "title": "Collaborative sheets",
+        "description": "Work with your team in real time with controlled access and shared views.",
+        "icon": "Users"
+      },
+      {
+        "title": "Smart formulas",
+        "description": "Create calculations faster with formula suggestions and reusable logic.",
+        "icon": "WandSparkles"
+      },
+      {
+        "title": "Live dashboards",
+        "description": "Turn spreadsheet data into reports, charts, and business dashboards.",
+        "icon": "BarChart3"
+      },
+      {
+        "title": "Data validation",
+        "description": "Keep every cell clean with dropdowns, rules, and approval-ready checks.",
+        "icon": "CheckCircle2"
+      },
+      {
+        "title": "ERP data sync",
+        "description": "Connect sales, inventory, finance, and projects without copy-paste.",
+        "icon": "RefreshCw"
+      },
+      {
+        "title": "Secure sharing",
+        "description": "Share reports safely with role-based access and protected ranges.",
+        "icon": "Lock"
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "apps": [
+      { "title": "Sales", "description": "Pipeline and revenue sheets", "icon": "BarChart3" },
+      { "title": "Inventory", "description": "Stock planning and forecasts", "icon": "Database" },
+      { "title": "Accounting", "description": "Budgets and cash tracking", "icon": "FileSpreadsheet" },
+      { "title": "Projects", "description": "Task planning and workload", "icon": "Grid3X3" },
+      { "title": "CRM", "description": "Customer analysis", "icon": "Users" },
+      { "title": "Reports", "description": "Live dashboards", "icon": "PieChart" }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "ctaBanner": {
+    "title": "Join growing teams",
+    "description": "Finance, sales, and operations teams use Adon ERP Spreadsheet to plan faster and report smarter.",
+    "rating": 5
+  },
+  "footerCta": {
+    "title": "Unleash your",
+    "subtitle": "growth potential",
+    "description": "Replace disconnected sheets with live ERP-powered spreadsheets built for smarter decisions.",
+    "trialButton": "Start Free Trial",
+    "salesButton": "Contact Sales"
+  }
+}

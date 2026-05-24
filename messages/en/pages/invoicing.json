@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "title": "Invoicing | AdonERP",
+    "description": "AI-powered invoicing platform for all your billing operations — from creation and delivery to payments, reconciliation, and global tax compliance."
+  },
+  "hero": {
+    "eyebrowIcon": "Receipt",
+    "eyebrowLabel": "Intelligent Invoicing",
+    "title": "Invoicing made",
+    "titleHighlight": "effortlessly simple",
+    "description": "Automate your entire billing workflow — from creation to payment. Save hours every week with smart templates, auto-reminders, and instant reconciliation.",
+    "startButton": "Start Free Trial",
+    "demoButton": "Watch Demo",
+    "rating": "from 15,000+ businesses",
+    "invoice": {
+      "title": "INVOICE",
+      "number": "INV-2024-00123",
+      "billTo": "Bill To",
+      "company": "Acme Corporation",
+      "address1": "123 Business Ave",
+      "address2": "San Francisco, CA 94105",
+      "invoiceDate": "Invoice Date",
+      "date": "March 15, 2024",
+      "dueDate": "Due Date",
+      "due": "April 14, 2024",
+      "items": [
+        { "name": "Enterprise Plan - Annual", "qty": 1, "price": "$2,400.00" },
+        { "name": "Implementation Fee", "qty": 1, "price": "$500.00" },
+        { "name": "Premium Support", "qty": 12, "price": "$600.00" }
+      ],
+      "total": "Total",
+      "totalAmount": "$3,500.00",
+      "sendButton": "Send Invoice",
+      "instantDelivery": "Instant delivery",
+      "dueIn": "Due in 30 days"
+    }
+  },
+  "clickSendSection": {
+    "eyebrowIcon": "Send",
+    "eyebrowLabel": "One-click billing",
+    "title": "Click. Invoice sent.",
+    "description": "Send professional invoices in seconds. Our intelligent system automates email delivery, payment reminders, and PDF generation — all with a single click.",
+    "features": [
+      { "text": "Instant email delivery", "color": "emerald" },
+      { "text": "Automated payment reminders", "color": "cyan" },
+      { "text": "Beautiful PDF generation", "color": "purple" },
+      { "text": "Real-time open tracking", "color": "blue" }
+    ],
+    "demo": {
+      "title": "Delivery Status",
+      "sentTo": "Invoice sent to client@acme.com",
+      "sentDate": "March 15, 2024 • 10:32 AM",
+      "opened": "Email opened",
+      "openedTime": "2 minutes ago",
+      "viewed": "Invoice viewed",
+      "viewedTime": "5 minutes ago",
+      "reminder": "✨ Smart reminder scheduled in 7 days"
+    }
+  },
+  "mobileSection": {
+    "eyebrowIcon": "Smartphone",
+    "eyebrowLabel": "Mobile-first",
+    "title": "Your invoices in your",
+    "titleHighlight": "pocket",
+    "description": "Manage your entire invoicing workflow from anywhere. Create, send, and track invoices on the go with our native mobile apps.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "demo": {
+      "appName": "Adon Mobile",
+      "newInvoice": "New Invoice",
+      "invoicePreview": "Acme Corp • $3,500",
+      "reviewButton": "Review & Send",
+      "pendingInvoices": "Pending Invoices",
+      "pendingCount": "3",
+      "paidThisMonth": "Paid This Month",
+      "paidAmount": "$12,450"
+    }
+  },
+  "paymentSection": {
+    "eyebrowIcon": "CreditCard",
+    "eyebrowLabel": "Fast payments",
+    "title": "Get paid",
+    "titleHighlight": "in a flash",
+    "description": "Accept payments from anywhere in the world. Seamless integration with major payment gateways, automatic reconciliation, and real-time payment tracking.",
+    "features": [
+      "Instant payment confirmation",
+      "Automatic reconciliation",
+      "Multi-currency support",
+      "Recurring billing"
+    ],
+    "gateways": ["Stripe", "PayPal", "Razorpay", "Square"],
+    "demo": {
+      "totalDue": "Total Due",
+      "amount": "$3,500.00",
+      "cardNumber": "Card Number",
+      "cardNumberValue": "**** **** **** 4242",
+      "expiry": "Expiry",
+      "expiryValue": "12/26",
+      "cvc": "CVC",
+      "cvcValue": "***",
+      "payButton": "Pay $3,500.00"
+    }
+  },
+  "bankSection": {
+    "eyebrowIcon": "RefreshCw",
+    "eyebrowLabel": "Smart sync",
+    "title": "Connect your bank.",
+    "subtitle": "Automate follow-ups.",
+    "description": "Never chase payments again. Smart bank synchronization combined with automated follow-ups ensures you get paid faster.",
+    "features": [
+      { "title": "28,000+ banks supported", "description": "Global coverage across 50+ countries" },
+      { "title": "95% auto-matching rate", "description": "AI-powered transaction matching" }
+    ],
+    "demo": {
+      "title": "Bank Reconciliation",
+      "syncButton": "Sync Now",
+      "transactions": [
+        { "name": "Acme Corp", "amount": "$3,500.00", "status": "pending", "date": "Today" },
+        { "name": "TechStart Inc", "amount": "$1,200.00", "status": "matched", "date": "Yesterday" },
+        { "name": "Global Solutions", "amount": "$890.00", "status": "overdue", "date": "3 days ago" }
+      ],
+      "followup": "Auto-follow-up scheduled"
+    }
+  },
+  "featuresSection": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Enterprise-grade",
+    "title": "All the features done right.",
+    "description": "Everything you need to manage invoicing, payments, and reconciliation in one place.",
+    "list": [
+      {
+        "title": "Global Tax Support",
+        "description": "Pre-configured for 180+ countries with local tax requirements",
+        "gradient": "from-emerald-500 to-cyan-500"
+      },
+      {
+        "title": "Smart Reminders",
+        "description": "Automated follow-ups via email and SMS",
+        "gradient": "from-purple-500 to-pink-500"
+      },
+      {
+        "title": "Recurring Billing",
+        "description": "Set and forget subscription invoicing",
+        "gradient": "from-cyan-500 to-blue-500"
+      },
+      {
+        "title": "Sales Analytics",
+        "description": "Real-time insights and performance metrics",
+        "gradient": "from-emerald-500 to-teal-500"
+      },
+      {
+        "title": "Multi-Currency",
+        "description": "Invoice in 100+ currencies automatically",
+        "gradient": "from-orange-500 to-red-500"
+      },
+      {
+        "title": "Custom Branding",
+        "description": "Brand your invoices with custom designs",
+        "gradient": "from-indigo-500 to-purple-500"
+      },
+      {
+        "title": "Revenue Analytics",
+        "description": "Visualize your business performance",
+        "gradient": "from-emerald-500 to-green-500"
+      },
+      {
+        "title": "Auto-Tax Calculation",
+        "description": "Smart tax engine for perfect accuracy",
+        "gradient": "from-cyan-500 to-emerald-500"
+      }
+    ]
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Sarah Johnson",
+        "role": "CEO, TechFlow Solutions",
+        "content": "Adon ERP transformed our invoicing workflow. We've reduced payment collection time by 60% and eliminated manual data entry entirely.",
+        "rating": 5,
+        "avatar": "https://randomuser.me/api/portraits/women/1.jpg"
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Finance Director, Innovate Corp",
+        "content": "The automated reconciliation feature alone saved us 20+ hours per month. Best invoicing platform we've ever used.",
+        "rating": 5,
+        "avatar": "https://randomuser.me/api/portraits/men/2.jpg"
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Unleash your growth potential",
+    "description": "Join thousands of businesses already saving hours every week with intelligent invoicing.",
+    "trialButton": "Start Free Trial",
+    "salesButton": "Contact Sales"
+  }
+}

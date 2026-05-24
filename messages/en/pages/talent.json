@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "title": "Talent Acquisition | AdonERP",
+    "description": "AI-powered talent acquisition platform for all your recruitment operations — from job posting and candidate tracking to interview scheduling and document management."
+  },
+  "hero": {
+    "eyebrowIcon": "UserPlus",
+    "eyebrowLabel": "HR & recruitment template",
+    "industriesLabel": "Industries / Talent Acquisition",
+    "preHeading": "All-in-one solution for successful",
+    "title": "⭐ Talent Acquisition",
+    "description": "AdonERP is a dedicated solution for talent acquisition, supporting every step from building job pages to managing candidates and hiring.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP saved us plenty of web development time, allowing us to focus on individual strengths which is immensely helpful for start-ups.",
+    "testimonialName": "Sarah Johnson",
+    "testimonialRole": "HR Director, TalentFinders"
+  },
+  "pipelineSection": {
+    "title": "From your website to your",
+    "titleHighlight": "pipeline",
+    "description": "Smart contact forms turn website visitors into applicants and push their information directly into your recruitment pipeline.",
+    "applyForm": {
+      "title": "Apply Now"
+    },
+    "applicantCard": {
+      "title": "New Applicant"
+    }
+  },
+  "talentSection": {
+    "title": "Efficiently manage your",
+    "titleHighlight": "talent pool",
+    "description": "Track applications, candidates and documents in one place so your team can evaluate the right people faster.",
+    "table": {
+      "headers": ["Name", "Position", "Stage", "Applied"],
+      "rows": [
+        {
+          "name": "Emma Watson",
+          "position": "Frontend Developer",
+          "stage": "Screening",
+          "applied": "May 15"
+        },
+        {
+          "name": "James Chen",
+          "position": "Product Manager",
+          "stage": "Interview",
+          "applied": "May 14"
+        },
+        {
+          "name": "Sophia Lee",
+          "position": "UX Designer",
+          "stage": "New",
+          "applied": "May 13"
+        },
+        {
+          "name": "Michael Brown",
+          "position": "Backend Engineer",
+          "stage": "Technical Test",
+          "applied": "May 12"
+        }
+      ]
+    }
+  },
+  "workflowSection": {
+    "title": "Tailor-made pipeline to",
+    "subtitle": "fit your workflow",
+    "description": "Candidates progress automatically through recruitment stages, while your team keeps full control of every step.",
+    "badges": {
+      "automatedStages": "Automated stages",
+      "teamCollaboration": "Team collaboration"
+    }
+  },
+  "schedulingSection": {
+    "title": "Less scheduling, more",
+    "titleHighlight": "interviewing!",
+    "description": "Send interview links, sync calendars, and let candidates pick suitable interview slots without manual scheduling.",
+    "badges": {
+      "calendarSync": "Calendar sync",
+      "autoReminders": "Auto-reminders"
+    }
+  },
+  "documentsSection": {
+    "title": "Never lose track of another document",
+    "documents": ["Resumes", "Cover Letters", "Portfolios", "Certificates"]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Tools to streamline hiring, job pages, candidate tracking, interviews, documents and communication.",
+    "list": [
+      {
+        "title": "Stay on target",
+        "description": "Track recruitment metrics and hiring goals in real-time."
+      },
+      {
+        "title": "Personalized website",
+        "description": "Create custom career pages that reflect your employer brand."
+      },
+      {
+        "title": "Mobile friendly",
+        "description": "Candidates can apply from any device, anywhere."
+      },
+      {
+        "title": "Make the most of your time",
+        "description": "Automate repetitive tasks and focus on interviewing."
+      },
+      {
+        "title": "Professional communication",
+        "description": "Send automated updates and personalized messages to candidates."
+      },
+      {
+        "title": "Automated data importing",
+        "description": "Import candidate data from job boards and career sites automatically."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your recruitment process, candidate management, and HR operations.",
+    "apps": [
+      {
+        "title": "Online Jobs",
+        "subtitle": "Job posting management",
+        "icon": "Briefcase"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Recruitment billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Employees Referral",
+        "subtitle": "Referral program tracking",
+        "icon": "UserPlus"
+      },
+      {
+        "title": "Employees",
+        "subtitle": "HR and staff management",
+        "icon": "Users"
+      },
+      {
+        "title": "Documents",
+        "subtitle": "Candidate file storage",
+        "icon": "FileText"
+      },
+      {
+        "title": "Social Marketing",
+        "subtitle": "Job promotion",
+        "icon": "Megaphone"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Sarah Johnson",
+        "role": "HR Director, TalentFinders",
+        "content": "AdonERP saved us plenty of web development time, allowing us to focus on individual strengths which is immensely helpful for start-ups.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Recruitment Manager, Global Hire",
+        "content": "The automated pipeline and interview scheduling transformed our hiring process. We reduced time-to-hire by 60%.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for talent acquisition and recruitment."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to transform your hiring",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a talent acquisition workflow that helps you attract top talent, streamline interviews, and build your dream team.",
+    "button": "Start now"
+  }
+}

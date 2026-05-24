@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -46,6 +47,7 @@ import {
   Briefcase,
   FileCheck,
 } from "lucide-react";
+import { HandUnderline } from "@/components/ui/headunderline";
 
 export const metadata: Metadata = {
   title: "Accounting Firm | AdonERP Industries",
@@ -53,58 +55,52 @@ export const metadata: Metadata = {
     "An accounting firm landing page for AdonERP with CRM, project management, electronic invoicing, timesheets, and document management.",
 };
 
-const features = [
-  {
-    title: "All-in-one sales management",
-    description: "Track leads, proposals, and client onboarding from one dashboard.",
-  },
-  {
-    title: "Compliant e-signatures",
-    description: "Collect legally binding signatures on engagement letters and contracts.",
-  },
-  {
-    title: "Project dashboard",
-    description: "Visualize client projects, deadlines, and team workload at a glance.",
-  },
-  {
-    title: "Integrated timesheets",
-    description: "Track billable hours by client, project, and service type.",
-  },
-  {
-    title: "Electronic invoicing",
-    description: "Generate and send compliant invoices with payment tracking.",
-  },
-  {
-    title: "CRM pipeline",
-    description: "Manage prospects, clients, and renewal opportunities effectively.",
-  },
-];
-
-const apps = [
-  { title: "CRM", subtitle: "Client and lead management", icon: Users },
-  { title: "Project", subtitle: "Client project tracking", icon: HardDrive },
-  { title: "Accounting", subtitle: "Financial management", icon: Calculator },
-  { title: "Documents", subtitle: "Secure file storage", icon: FileText },
-  { title: "Invoicing", subtitle: "Client billing", icon: ReceiptText },
-  { title: "Helpdesk", subtitle: "Client support tickets", icon: Briefcase },
-];
-
-const testimonials = [
-  {
-    name: "Jennifer Walsh",
-    role: "Managing Partner, Walsh & Associates",
-    content:
-      "A VAT closing that used to take 4 days is now done in 3 hours with AdonERP, with a better service for our clients.",
-    rating: 5,
-  },
-  {
-    name: "David Kim",
-    role: "Director, Precision Accounting Group",
-    content:
-      "The integrated timesheets and invoicing transformed our workflow. We now track every billable minute and invoice accurately.",
-    rating: 5,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    ShoppingBag,
+    ShoppingCart,
+    Users,
+    ReceiptText,
+    Package,
+    Box,
+    CreditCard,
+    Sparkles,
+    BadgeCheck,
+    Heart,
+    Tag,
+    Truck,
+    Wallet,
+    Calendar,
+    Clock,
+    Utensils,
+    Gift,
+    Home,
+    Building,
+    Hotel,
+    Key,
+    PenTool,
+    FileSignature,
+    FileText,
+    Ruler,
+    HardDrive,
+    Hammer,
+    ClipboardList,
+    Warehouse,
+    Shirt,
+    Scissors,
+    Factory,
+    Wrench,
+    Cog,
+    Layers,
+    Sofa,
+    Armchair,
+    Calculator,
+    Briefcase,
+    FileCheck,
+  };
+  return icons[iconName] || Calculator;
+};
 
 function ScriptHeading({
   children,
@@ -117,8 +113,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
     >
       {children}
@@ -127,21 +122,28 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function AccountingFirmPage() {
+  const t = useTranslations("pages.accounting-firm");
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* Hero Section */}
@@ -150,12 +152,13 @@ export default function AccountingFirmPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
-              icon={<Calculator className="h-4 w-4" />}
-              label="Professional services template"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Industries / Accounting Firm
+                {t("hero.industriesLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -165,7 +168,7 @@ export default function AccountingFirmPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  #1 Software for
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -174,12 +177,11 @@ export default function AccountingFirmPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Accounting Firms
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Manage your accounting firm's activities, from acquiring clients
-                to handling projects and invoicing, in one integrated system.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -188,26 +190,27 @@ export default function AccountingFirmPage() {
                 href="#get-started"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start now
+                {t("hero.startButton")}
               </Link>
               <Link
                 href="#advisor"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Meet an advisor
+                {t("hero.advisorButton")}
               </Link>
             </div>
 
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">"</div>
               <p className="text-base leading-7 text-card-foreground">
-                A VAT closing that used to take 4 days is now done in 3 hours with
-                AdonERP, with a better service for our clients.
+                {t("hero.testimonialQuote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
-                  <p className="font-semibold text-foreground">Jennifer Walsh</p>
-                  <p className="text-sm text-muted-foreground">Managing Partner, Walsh & Associates</p>
+                  <p className="font-semibold text-foreground">{t("hero.testimonialName")}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t("hero.testimonialRole")}
+                  </p>
                 </div>
                 <div className="flex items-center gap-1 text-amber-400">
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -262,20 +265,20 @@ export default function AccountingFirmPage() {
       {/* From the lead to the invoice Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          From the{" "}
+          {t("pipelineSection.title")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            lead
+            {t("pipelineSection.titleHighlightLead")}
           </span>{" "}
-          to the{" "}
+          {t("pipelineSection.titleMiddle")}{" "}
           <span className="underline decoration-primary underline-offset-8">
-            invoice
+            {t("pipelineSection.titleHighlightInvoice")}
           </span>
         </ScriptHeading>
 
         <div className="mt-12 grid items-start gap-8 md:grid-cols-[1fr_320px]">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
             <div className="grid gap-4 md:grid-cols-3">
-              {["New Leads", "Proposals", "Clients"].map((stage, idx) => (
+              {t.raw("pipelineSection.stages").map((stage: string, idx: number) => (
                 <div key={stage} className="rounded-xl bg-muted/30 p-4">
                   <div className="mb-3 text-xs font-semibold text-primary">{stage}</div>
                   <div className="space-y-2">
@@ -305,23 +308,21 @@ export default function AccountingFirmPage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>
             <span className="rounded-full border-4 border-secondary px-2">
-              Smart
-            </span>{" "}
-            service management
+              {t("serviceSection.title")}
+            </span>
           </ScriptHeading>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-muted-foreground">
-            Keep track of each request with project tasks, schedules, contacts,
-            documents and client activities.
+            {t("serviceSection.description")}
           </p>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-xl">
               <div className="space-y-3">
-                {["Tax Filing - Q1 2026", "Annual Audit Prep", "Payroll Review", "Financial Statement"].map((task, idx) => (
-                  <div key={task} className="flex items-center gap-3 rounded-xl bg-muted/30 p-4">
+                {t.raw("serviceSection.tasks").map((task: any, idx: number) => (
+                  <div key={task.name} className="flex items-center gap-3 rounded-xl bg-muted/30 p-4">
                     <div className={`h-3 w-3 rounded-full ${idx % 2 === 0 ? "bg-accent" : "bg-secondary"}`} />
                     <div className="h-4 flex-1 rounded-full bg-muted" />
-                    <div className="text-xs text-muted-foreground">Due: {idx === 0 ? "May 30" : idx === 1 ? "Jun 15" : idx === 2 ? "May 25" : "Jun 05"}</div>
+                    <div className="text-xs text-muted-foreground">Due: {task.due}</div>
                   </div>
                 ))}
               </div>
@@ -344,22 +345,21 @@ export default function AccountingFirmPage() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <ScriptHeading>
-              Next-level
+              {t("accountingSection.title")}
               <br />
-              accounting
+              {t("accountingSection.subtitle")}
             </ScriptHeading>
             <p className="mt-6 text-base leading-7 text-muted-foreground">
-              Automate reconciliation, manage documents, gain real-time reporting,
-              and keep accounting operations accurate and fast.
+              {t("accountingSection.description")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <FileCheck className="h-4 w-4" />
-                Auto-reconciliation
+                {t("accountingSection.badges.autoReconciliation")}
               </div>
               <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
                 <Clock className="h-4 w-4" />
-                Real-time reporting
+                {t("accountingSection.badges.realTimeReporting")}
               </div>
             </div>
           </div>
@@ -413,28 +413,27 @@ export default function AccountingFirmPage() {
             <div className="order-1 md:order-2">
               <ScriptHeading>
                 <span className="underline decoration-primary underline-offset-8">
-                  Secure
+                  {t("documentsSection.title")}
                 </span>{" "}
-                document
+                {t("documentsSection.titleHighlight")}
                 <br />
-                workspace
+                {t("documentsSection.subtitle")}
               </ScriptHeading>
               <p className="mt-6 text-base leading-7 text-muted-foreground">
-                Keep accounting documents, client files, invoices and approvals in one
-                secure workspace with clear collaboration flows.
+                {t("documentsSection.description")}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <FileText className="h-4 w-4 text-primary" />
-                  Secure storage
+                  {t("documentsSection.badges.secureStorage")}
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm shadow-sm">
                   <Users className="h-4 w-4 text-primary" />
-                  Team collaboration
+                  {t("documentsSection.badges.teamCollaboration")}
                 </div>
               </div>
               <button className="mt-6 inline-flex items-center gap-2 rounded-xl bg-card px-5 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-primary/10">
-                Find out more
+                {t("documentsSection.button")}
                 <ArrowRight className="h-4 w-4" />
               </button>
             </div>
@@ -448,18 +447,17 @@ export default function AccountingFirmPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <ScriptHeading>
-              All the features
+              {t("featuresSection.title")}
               <br />
-              done right.
+              {t("featuresSection.subtitle")}
             </ScriptHeading>
             <p className="max-w-xl text-base leading-7 text-muted-foreground">
-              Tools for accounting firms to manage clients, tasks, documents,
-              invoicing, projects and reporting all in one place.
+              {t("featuresSection.description")}
             </p>
           </div>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => (
+            {t.raw("featuresSection.list").map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-[1.6rem] border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md"
@@ -480,18 +478,16 @@ export default function AccountingFirmPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="max-w-3xl space-y-4">
           <ScriptHeading>
-            One need, one app.
+            {t("appsSection.title")}
           </ScriptHeading>
           <p className="max-w-xl text-base leading-7 text-muted-foreground">
-            Expand as you grow with connected apps for your accounting firm,
-            client management, projects, and billing.
+            {t("appsSection.description")}
           </p>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
-            const Icon = app.icon;
-
+          {t.raw("appsSection.apps").map((app: any) => {
+            const IconComponent = getIconComponent(app.icon);
             return (
               <div
                 key={app.title}
@@ -499,7 +495,7 @@ export default function AccountingFirmPage() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" />
+                    <IconComponent className="h-6 w-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground">{app.title}</h3>
@@ -517,7 +513,7 @@ export default function AccountingFirmPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
         >
-          See all apps
+          {t("appsSection.seeAllLink")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -525,7 +521,7 @@ export default function AccountingFirmPage() {
       {/* Testimonials Section */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
-          {testimonials.map((testimonial, idx) => (
+          {t.raw("testimonialsSection.testimonials").map((testimonial: any, idx: number) => (
             <div
               key={idx}
               className="rounded-[2rem] border border-border bg-card p-8 shadow-[0_20px_60px_rgba(0,0,0,0.08)]"
@@ -561,11 +557,10 @@ export default function AccountingFirmPage() {
               <Users className="h-7 w-7" />
             </div>
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join 15 million happy users
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-3 text-base text-muted-foreground">
-              who grow their business with AdonERP — the complete solution for
-              accounting firms and professional services.
+              {t("ctaBanner.description")}
             </p>
           </div>
         </div>
@@ -578,26 +573,26 @@ export default function AccountingFirmPage() {
       >
         <div className="mx-auto max-w-2xl">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Ready to scale your firm"
+            iconName={t("footerCta.eyebrowIcon")}
+            labelKey="footerCta.eyebrowLabel"
+            t={t}
           />
           <div className="mt-8">
             <ScriptHeading>
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your growth potential
+              {t("footerCta.subtitle")}
             </ScriptHeading>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-            Launch an accounting firm workflow that helps you manage clients,
-            track billable hours, and deliver exceptional service.
+            {t("footerCta.description")}
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/pricing"
               className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>
