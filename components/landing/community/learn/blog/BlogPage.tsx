@@ -1,112 +1,32 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   Search,
   ChevronRight,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const posts = [
-  {
-    title: "Access Management Suite",
-    image: "/Assets/apps/Access Management Suite.jpg",
-    category: "Security",
-    date: "May 24, 2026",
-  },
-  {
-    title: "Accounting Suite for Modern Businesses",
-    image: "/Assets/apps/Accounting Suite.jpg",
-    category: "Accounting",
-    date: "May 24, 2026",
-  },
-  {
-    title: "AI Business Dashboard Analytics",
-    image: "/Assets/apps/AI Business Dashboard.jpg",
-    category: "Analytics",
-    date: "May 23, 2026",
-  },
-  {
-    title: "Advanced BI Dashboard Reporting",
-    image: "/Assets/apps/BI Dashboard.png",
-    category: "Business Intelligence",
-    date: "May 23, 2026",
-  },
-  {
-    title: "Contact Field Validation System",
-    image: "/Assets/apps/Contact Field Validation.jpg",
-    category: "CRM",
-    date: "May 22, 2026",
-  },
-  {
-    title: "Customer Follow-ups Automation",
-    image: "/Assets/apps/Customer Follow-ups.webp",
-    category: "Customer Success",
-    date: "May 22, 2026",
-  },
-  {
-    title: "Delivery Shipping Connector",
-    image: "/Assets/apps/Delivery Shipping Connector.avif",
-    category: "Logistics",
-    date: "May 21, 2026",
-  },
-  {
-    title: "Direct Print Pro Solution",
-    image: "/Assets/apps/Direct Print Pro.jpg",
-    category: "Printing",
-    date: "May 21, 2026",
-  },
-  {
-    title: "Export Manager for Enterprises",
-    image: "/Assets/apps/Export Manager.jpg",
-    category: "Finance",
-    date: "May 20, 2026",
-  },
-  {
-    title: "IT Hardware & Support Services",
-    image: "/Assets/apps/IT Hardware & Support.jpg",
-    category: "IT Services",
-    date: "May 20, 2026",
-  },
-  {
-    title: "Multi Currency Financial Reports",
-    image: "/Assets/apps/Multi Currency Reports.jpg",
-    category: "Accounting",
-    date: "May 19, 2026",
-  },
-  {
-    title: "Shopify Connector Integration",
-    image: "/Assets/apps/Shopify-Connector.jpg",
-    category: "eCommerce",
-    date: "May 19, 2026",
-  },
-];
-
-const tags = [
-  "Accounting",
-  "CRM",
-  "Analytics",
-  "Security",
-  "Manufacturing",
-  "Finance",
-  "eCommerce",
-  "Logistics",
-  "Marketing",
-  "Technology",
-  "ERP",
-  "Business",
-  "Automation",
-  "Dashboard",
-  "IT Services",
-  "Customer Success",
-];
+type BlogPost = {
+  title: string;
+  image: string;
+  category: string;
+  date: string;
+};
 
 export default function BlogPage() {
+  const t = useTranslations("pages.community.blog");
+  const posts = t.raw("posts") as BlogPost[];
+  const categories = t.raw("hero.categories") as string[];
+  const tags = t.raw("tags") as string[];
+  const dates = t.raw("pagination.dates") as string[];
+  const lastPage = t("pagination.lastPage");
+
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <h1 className="text-center text-5xl font-bold tracking-tight text-foreground">
-            Our Latest Posts
+            {t("hero.title")}
           </h1>
 
           <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_320px]">
@@ -114,12 +34,18 @@ export default function BlogPage() {
             <div>
               {/* Categories Filter */}
               <div className="mb-10 flex flex-wrap gap-4 text-sm font-medium text-muted-foreground">
-                <button className="text-primary font-semibold">All</button>
-                <button className="hover:text-primary transition-colors">Customer Reviews</button>
-                <button className="hover:text-primary transition-colors">Employee Testimonials</button>
-                <button className="hover:text-primary transition-colors">Partner Stories</button>
-                <button className="hover:text-primary transition-colors">Adon News</button>
-                <button className="hover:text-primary transition-colors">Business Hacks</button>
+                {categories.map((category, index) => (
+                  <button
+                    key={category}
+                    className={
+                      index === 0
+                        ? "text-primary font-semibold"
+                        : "transition-colors hover:text-primary"
+                    }
+                  >
+                    {category}
+                  </button>
+                ))}
               </div>
 
               {/* Posts Grid */}
@@ -153,13 +79,11 @@ export default function BlogPage() {
                       </h2>
 
                       <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                        Discover how modern businesses use smart ERP, CRM,
-                        automation, analytics, and integrations to scale
-                        operations efficiently.
+                        {t("description")}
                       </p>
 
                       <button className="mt-5 flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80">
-                        Read More
+                        {t("readMore")}
                         <ChevronRight size={16} />
                       </button>
                     </div>
@@ -182,7 +106,7 @@ export default function BlogPage() {
                   4
                 </button>
                 <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">
-                  133
+                  {lastPage}
                 </button>
                 <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">
                   <ChevronRight size={18} />
@@ -197,7 +121,7 @@ export default function BlogPage() {
                 <div className="flex items-center rounded-lg border border-input px-4 py-3">
                   <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder={t("sidebar.search")}
                     className="w-full bg-transparent text-sm outline-none text-foreground placeholder:text-muted-foreground"
                   />
                   <Search size={18} className="text-muted-foreground" />
@@ -206,19 +130,20 @@ export default function BlogPage() {
                 {/* Archives */}
                 <div className="mt-8">
                   <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-foreground">
-                    Archives
+                    {t("sidebar.archives")}
                   </h3>
                   <select className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm outline-none text-foreground focus:border-primary/40 focus:ring-1 focus:ring-primary/20">
-                    <option>All dates</option>
-                    <option>2026</option>
-                    <option>2025</option>
+                    <option>{t("sidebar.allDates")}</option>
+                    {dates.map((date) => (
+                      <option key={date}>{date}</option>
+                    ))}
                   </select>
                 </div>
 
                 {/* Tags */}
                 <div className="mt-8">
                   <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-foreground">
-                    Tags
+                    {t("sidebar.tags")}
                   </h3>
                   <div className="flex flex-wrap gap-3">
                     {tags.map((tag) => (

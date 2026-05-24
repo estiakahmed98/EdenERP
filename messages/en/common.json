@@ -7,10 +7,13 @@
     }
   },
   "theme": {
+    "label": "Theme",
     "switchToLight": "Switch to light mode",
     "switchToDark": "Switch to dark mode",
     "light": "Light",
-    "dark": "Dark"
+    "dark": "Dark",
+    "green": "Green",
+    "oceanBlue": "Ocean Blue"
   },
   "actions": {
     "watchDemo": "Watch Demo",

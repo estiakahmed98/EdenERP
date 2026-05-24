@@ -1,0 +1,537 @@
+{
+  "communityRoot": {
+    "eyebrow": "Community hub",
+    "title": "Explore the Adon ERP community",
+    "description": "Find practical learning resources, implementation support, collaboration spaces, and software access points from one place.",
+    "highlights": [
+      "Start with guided tutorials, documentation, and training paths.",
+      "Connect with partners, advisors, and support channels when you need execution help.",
+      "Join forum, GitHub, event, and translation spaces to contribute back to the ecosystem."
+    ],
+    "primaryAction": {
+      "label": "Browse Tutorials",
+      "href": "/community/learn/tutorials"
+    },
+    "secondaryAction": {
+      "label": "Find a Partner",
+      "href": "/community/get-services/find-partner"
+    },
+    "sections": [
+      {
+        "title": "Learn",
+        "links": [
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Step-by-step lessons for business teams and implementers."
+          },
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Product guides, workflows, and reference material."
+          },
+          {
+            "label": "Training",
+            "href": "/community/learn/training",
+            "description": "Structured programs for consultants, developers, and users."
+          },
+          {
+            "label": "Blog",
+            "href": "/community/learn/blog",
+            "description": "Updates, insights, and customer-facing stories from the ecosystem."
+          }
+        ]
+      },
+      {
+        "title": "Get Services",
+        "links": [
+          {
+            "label": "Find a Partner",
+            "href": "/community/get-services/find-partner",
+            "description": "Connect with implementation and consulting partners."
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Book an advisory session around your rollout plan."
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Compare success packs and delivery support options."
+          },
+          {
+            "label": "Customer Stories",
+            "href": "/community/get-services/customer-stories",
+            "description": "See how real organizations adopted Adon ERP."
+          }
+        ]
+      },
+      {
+        "title": "Collaborate",
+        "links": [
+          {
+            "label": "GitHub",
+            "href": "/community/collaborate/github",
+            "description": "Contribute code, fixes, and ideas to the open ecosystem."
+          },
+          {
+            "label": "Forum",
+            "href": "/community/collaborate/forum",
+            "description": "Ask questions and learn from other users and builders."
+          },
+          {
+            "label": "Events",
+            "href": "/community/collaborate/events",
+            "description": "Join webinars, workshops, and meetup sessions."
+          },
+          {
+            "label": "Translations",
+            "href": "/community/collaborate/translations",
+            "description": "Help localize the platform for more teams."
+          }
+        ]
+      }
+    ]
+  },
+  "collaborate": {
+    "eyebrow": "Collaborate",
+    "title": "Work with the Adon ERP community",
+    "description": "Join the collaboration layer of the ecosystem to contribute code, share ideas, attend events, and help the platform reach more teams.",
+    "highlights": [
+      "Use GitHub for code, issues, and contribution workflows.",
+      "Use the forum to exchange product and implementation knowledge.",
+      "Use events and translations to extend reach beyond code."
+    ],
+    "primaryAction": {
+      "label": "Open GitHub",
+      "href": "/community/collaborate/github"
+    },
+    "secondaryAction": {
+      "label": "Join the Forum",
+      "href": "/community/collaborate/forum"
+    },
+    "sections": [
+      {
+        "title": "Contribution Paths",
+        "links": [
+          {
+            "label": "GitHub",
+            "href": "/community/collaborate/github",
+            "description": "Ship pull requests, review changes, and track roadmap work."
+          },
+          {
+            "label": "Forum",
+            "href": "/community/collaborate/forum",
+            "description": "Discuss implementation questions, product ideas, and best practices."
+          },
+          {
+            "label": "Events",
+            "href": "/community/collaborate/events",
+            "description": "Meet the core team and peers in live sessions."
+          },
+          {
+            "label": "Translations",
+            "href": "/community/collaborate/translations",
+            "description": "Make Adon ERP accessible in more languages."
+          },
+          {
+            "label": "Become a Partner",
+            "href": "/community/collaborate/become-a-partner",
+            "description": "Grow a practice around implementation, consulting, or resale."
+          }
+        ]
+      }
+    ]
+  },
+  "learn": {
+    "eyebrow": "Learn",
+    "title": "Build Adon ERP knowledge faster",
+    "description": "Choose the right learning format for your team, whether you need quick tutorials, deep documentation, scheduled training, or ongoing content.",
+    "highlights": [
+      "Start with tutorials for guided product workflows.",
+      "Use documentation when you need structured reference material.",
+      "Layer training, certifications, blog posts, and podcast content as your team matures."
+    ],
+    "primaryAction": {
+      "label": "Start Tutorials",
+      "href": "/community/learn/tutorials"
+    },
+    "secondaryAction": {
+      "label": "Read Documentation",
+      "href": "/community/learn/documentation"
+    },
+    "sections": [
+      {
+        "title": "Learning Paths",
+        "links": [
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Task-based walkthroughs for teams and implementers."
+          },
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Reference guides, workflow docs, and developer information."
+          },
+          {
+            "label": "Training",
+            "href": "/community/learn/training",
+            "description": "Instructor-led and program-based learning tracks."
+          },
+          {
+            "label": "Certifications",
+            "href": "/community/learn/certifications",
+            "description": "Validate skills for delivery, product, and implementation roles."
+          },
+          {
+            "label": "Blog",
+            "href": "/community/learn/blog",
+            "description": "Discover product updates and ecosystem insights."
+          },
+          {
+            "label": "Podcast",
+            "href": "/community/learn/podcast",
+            "description": "Listen to product, operations, and growth conversations."
+          }
+        ]
+      }
+    ]
+  },
+  "learnPodcast": {
+    "eyebrow": "Podcast",
+    "title": "Listen to Adon ERP conversations",
+    "description": "Follow product thinking, operations stories, and ecosystem updates in audio format while your team stays close to the platform roadmap.",
+    "highlights": [
+      "Track recurring themes around implementation, growth, and product strategy.",
+      "Use episodes as lightweight enablement content for leadership and operations teams.",
+      "Pair podcast listening with blog posts and tutorials for deeper context."
+    ],
+    "primaryAction": {
+      "label": "Read the Blog",
+      "href": "/community/learn/blog"
+    },
+    "secondaryAction": {
+      "label": "Browse Tutorials",
+      "href": "/community/learn/tutorials"
+    },
+    "sections": [
+      {
+        "title": "Keep Learning",
+        "links": [
+          {
+            "label": "Blog",
+            "href": "/community/learn/blog",
+            "description": "Read companion updates and product explainers."
+          },
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Turn ideas from episodes into practical workflows."
+          },
+          {
+            "label": "Training",
+            "href": "/community/learn/training",
+            "description": "Move from passive learning to structured team training."
+          }
+        ]
+      }
+    ]
+  },
+  "getServices": {
+    "eyebrow": "Get services",
+    "title": "Choose the right support path",
+    "description": "Move from product evaluation to execution with partner, advisory, implementation, support, and upgrade help from the Adon ERP ecosystem.",
+    "highlights": [
+      "Use partners for implementation, customization, and delivery capacity.",
+      "Use advisors to shape rollout decisions before committing to execution.",
+      "Use support, upgrades, and accounting services to reduce operational friction."
+    ],
+    "primaryAction": {
+      "label": "Find a Partner",
+      "href": "/community/get-services/find-partner"
+    },
+    "secondaryAction": {
+      "label": "Meet an Advisor",
+      "href": "/community/get-services/meet-advisor"
+    },
+    "sections": [
+      {
+        "title": "Service Options",
+        "links": [
+          {
+            "label": "Find a Partner",
+            "href": "/community/get-services/find-partner",
+            "description": "Discover certified partners aligned with your business needs."
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Review priorities and rollout choices with an expert."
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Compare implementation packs and scoped support."
+          },
+          {
+            "label": "Support",
+            "href": "/community/get-services/support",
+            "description": "Reach the right support channel for current issues."
+          },
+          {
+            "label": "Find an Accountant",
+            "href": "/community/get-services/find-an-accountant",
+            "description": "Connect with finance professionals familiar with ERP workflows."
+          },
+          {
+            "label": "Upgrades",
+            "href": "/community/get-services/upgrades",
+            "description": "Plan version upgrades with less migration risk."
+          }
+        ]
+      }
+    ]
+  },
+  "getServicesFindAccountant": {
+    "eyebrow": "Find an accountant",
+    "title": "Connect finance expertise to your ERP setup",
+    "description": "Work with accountants who understand operational workflows, reporting, compliance, and the finance side of ERP adoption.",
+    "highlights": [
+      "Reduce finance process gaps during implementation and post-go-live work.",
+      "Use domain-aware accountants for tax, reporting, and reconciliation workflows.",
+      "Pair finance review with implementation or upgrade support when needed."
+    ],
+    "primaryAction": {
+      "label": "Meet an Advisor",
+      "href": "/community/get-services/meet-advisor"
+    },
+    "secondaryAction": {
+      "label": "Find a Partner",
+      "href": "/community/get-services/find-partner"
+    },
+    "sections": [
+      {
+        "title": "Related Services",
+        "links": [
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Clarify finance and rollout priorities before choosing support."
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Combine accounting guidance with scoped delivery support."
+          },
+          {
+            "label": "Customer Stories",
+            "href": "/community/get-services/customer-stories",
+            "description": "See how other teams handled finance transformation."
+          }
+        ]
+      }
+    ]
+  },
+  "getServicesUpgrades": {
+    "eyebrow": "Upgrades",
+    "title": "Plan upgrades with less disruption",
+    "description": "Prepare your next Adon ERP version move with the right mix of technical review, rollout planning, and operational safeguards.",
+    "highlights": [
+      "Review breaking points before committing to a migration timeline.",
+      "Coordinate technical, process, and training changes around one upgrade plan.",
+      "Use partners or advisors when internal teams need extra migration capacity."
+    ],
+    "primaryAction": {
+      "label": "Find a Partner",
+      "href": "/community/get-services/find-partner"
+    },
+    "secondaryAction": {
+      "label": "Customer Stories",
+      "href": "/community/get-services/customer-stories"
+    },
+    "sections": [
+      {
+        "title": "Upgrade Support",
+        "links": [
+          {
+            "label": "Find a Partner",
+            "href": "/community/get-services/find-partner",
+            "description": "Bring in external delivery support for migration-heavy work."
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Validate the scope and readiness of your upgrade plan."
+          },
+          {
+            "label": "Support",
+            "href": "/community/get-services/support",
+            "description": "Escalate issues that surface during post-upgrade stabilization."
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftware": {
+    "eyebrow": "Get the software",
+    "title": "Choose, download, and track Adon ERP releases",
+    "description": "Use this area to compare editions, download the software, and understand how releases evolve before you commit to a deployment path.",
+    "highlights": [
+      "Compare editions before selecting the right operating model.",
+      "Download the software when your team is ready to evaluate or deploy.",
+      "Track release notes and version changes to plan adoption more safely."
+    ],
+    "primaryAction": {
+      "label": "Compare Editions",
+      "href": "/community/get-the-software/compare-editions"
+    },
+    "secondaryAction": {
+      "label": "Download",
+      "href": "/community/get-the-software/download"
+    },
+    "sections": [
+      {
+        "title": "Software Access",
+        "links": [
+          {
+            "label": "Compare Editions",
+            "href": "/community/get-the-software/compare-editions",
+            "description": "Understand feature fit before selecting an edition."
+          },
+          {
+            "label": "Download",
+            "href": "/community/get-the-software/download",
+            "description": "Get the software for evaluation, testing, or rollout."
+          },
+          {
+            "label": "Releases",
+            "href": "/community/get-the-software/releases",
+            "description": "Follow version notes, changes, and release progress."
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftwareCompareEditions": {
+    "eyebrow": "Compare editions",
+    "title": "Compare the paths before you deploy",
+    "description": "Use edition comparison to decide which operating model, feature coverage, and support path align with your current stage.",
+    "highlights": [
+      "Review edition fit against business complexity and delivery capacity.",
+      "Use implementation and advisory services when the comparison uncovers gaps.",
+      "Pair the decision with release awareness before starting rollout."
+    ],
+    "primaryAction": {
+      "label": "Download",
+      "href": "/community/get-the-software/download"
+    },
+    "secondaryAction": {
+      "label": "View Releases",
+      "href": "/community/get-the-software/releases"
+    },
+    "sections": [
+      {
+        "title": "Next Steps",
+        "links": [
+          {
+            "label": "Download",
+            "href": "/community/get-the-software/download",
+            "description": "Move from comparison into hands-on evaluation."
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Scope the delivery effort after selecting an edition."
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Validate the choice with someone who can review tradeoffs."
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftwareDownload": {
+    "eyebrow": "Download",
+    "title": "Download Adon ERP and start evaluating",
+    "description": "Use the download path when your team is ready to test the product directly, validate workflows, or prepare a deployment plan.",
+    "highlights": [
+      "Move quickly from software access into structured evaluation work.",
+      "Keep edition and release context close before starting deployment decisions.",
+      "Use tutorials, documentation, and implementation support to reduce ramp-up time."
+    ],
+    "primaryAction": {
+      "label": "Read Documentation",
+      "href": "/community/learn/documentation"
+    },
+    "secondaryAction": {
+      "label": "View Releases",
+      "href": "/community/get-the-software/releases"
+    },
+    "sections": [
+      {
+        "title": "Recommended Next Steps",
+        "links": [
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Set up the product and understand core workflows faster."
+          },
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Walk through practical scenarios after initial setup."
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Bring in scoped delivery support when evaluation becomes rollout."
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftwareReleases": {
+    "eyebrow": "Releases",
+    "title": "Track versions before you commit",
+    "description": "Use release visibility to understand version movement, adoption timing, and when your team should prepare for changes.",
+    "highlights": [
+      "Plan upgrades and fresh deployments with better version awareness.",
+      "Use release context to guide edition choice and implementation timing.",
+      "Coordinate documentation, training, and support around major changes."
+    ],
+    "primaryAction": {
+      "label": "Compare Editions",
+      "href": "/community/get-the-software/compare-editions"
+    },
+    "secondaryAction": {
+      "label": "Plan Upgrades",
+      "href": "/community/get-services/upgrades"
+    },
+    "sections": [
+      {
+        "title": "Release Planning",
+        "links": [
+          {
+            "label": "Upgrades",
+            "href": "/community/get-services/upgrades",
+            "description": "Turn release awareness into a practical migration plan."
+          },
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Review workflow and setup references alongside release changes."
+          },
+          {
+            "label": "Support",
+            "href": "/community/get-services/support",
+            "description": "Reach help when release adoption creates blockers."
+          }
+        ]
+      }
+    ]
+  }
+}

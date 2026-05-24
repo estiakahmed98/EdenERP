@@ -1,7 +1,4 @@
-// app/[locale]/community/learn/tutorials/page.tsx
-
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
@@ -22,118 +19,33 @@ import {
   Users,
   Video,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Tutorials | AdonERP Community",
-  description:
-    "Learn AdonERP step by step with practical tutorials, guided learning paths, videos, and role-based business workflows.",
+import { Link } from "@/i18n/navigation";
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+type Category = {
+  title: string;
+  description: string;
+  lessons: string;
+  icon: keyof typeof categoryIcons;
 };
 
-const tutorialCategories = [
-  {
-    title: "Getting Started",
-    description:
-      "Set up your workspace, users, company profile, apps, and basic access rules.",
-    lessons: "12 tutorials",
-    icon: Compass,
-  },
-  {
-    title: "Sales & CRM",
-    description:
-      "Manage leads, customers, quotations, pipelines, follow-ups, and sales reports.",
-    lessons: "18 tutorials",
-    icon: Users,
-  },
-  {
-    title: "Inventory & Purchase",
-    description:
-      "Track products, stock moves, vendors, purchase orders, and replenishment rules.",
-    lessons: "16 tutorials",
-    icon: LibraryBig,
-  },
-  {
-    title: "Accounting & Invoicing",
-    description:
-      "Create invoices, track payments, review taxes, and monitor financial activity.",
-    lessons: "14 tutorials",
-    icon: BadgeCheck,
-  },
-  {
-    title: "Project & Tasks",
-    description:
-      "Organize tasks, teams, approvals, deadlines, and performance dashboards.",
-    lessons: "20 tutorials",
-    icon: LayoutDashboard,
-  },
-  {
-    title: "Developer Guides",
-    description:
-      "Learn API usage, customization patterns, modules, automation, and integrations.",
-    lessons: "10 tutorials",
-    icon: Code2,
-  },
-];
+type FeaturedTutorial = {
+  title: string;
+  level: string;
+  time: string;
+  tag: string;
+};
 
-const featuredTutorials = [
-  {
-    title: "Create your first company workspace",
-    level: "Beginner",
-    time: "18 min",
-    tag: "Setup",
-  },
-  {
-    title: "Build a complete sales pipeline",
-    level: "Beginner",
-    time: "24 min",
-    tag: "CRM",
-  },
-  {
-    title: "Configure roles and permissions",
-    level: "Intermediate",
-    time: "32 min",
-    tag: "Security",
-  },
-  {
-    title: "Automate purchase replenishment",
-    level: "Intermediate",
-    time: "28 min",
-    tag: "Inventory",
-  },
-];
-
-const learningPath = [
-  "Choose your business app",
-  "Watch guided tutorials",
-  "Practice with sample data",
-  "Apply it to your workflow",
-  "Track progress and improve",
-];
-
-const stats = [
-  ["90+", "practical tutorials"],
-  ["12", "business workflows"],
-  ["15 min", "average lesson"],
-  ["24/7", "self-paced access"],
-];
-
-const faqs = [
-  {
-    q: "Are the tutorials beginner friendly?",
-    a: "Yes. Each tutorial starts from the basics and then moves into practical business use cases.",
-  },
-  {
-    q: "Do I need technical knowledge?",
-    a: "Most business tutorials require no coding. Developer tutorials are clearly marked separately.",
-  },
-  {
-    q: "Can my team follow the same learning path?",
-    a: "Yes. Teams can use the tutorials to train sales, inventory, finance, support, and operations users.",
-  },
-  {
-    q: "Are tutorials connected with documentation?",
-    a: "Tutorials explain the practical flow, while documentation can be used for deeper reference.",
-  },
-];
+const categoryIcons = {
+  Compass,
+  Users,
+  LibraryBig,
+  BadgeCheck,
+  LayoutDashboard,
+  Code2,
+};
 
 function ScriptHeading({
   children,
@@ -169,10 +81,27 @@ function SectionEyebrow({
   );
 }
 
-export default function TutorialsPage() {
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("pages.community.metadata.learnTutorials");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/learn/tutorials"),
+  };
+}
+
+export default async function TutorialsPage() {
+  const t = await getTranslations("pages.community.tutorials");
+  const stats = t.raw("stats") as Array<{ value: string; label: string }>;
+  const categories = t.raw("categories") as Category[];
+  const featuredTutorials = t.raw("featuredTutorials") as FeaturedTutorial[];
+  const learningPath = t.raw("learningPath") as string[];
+  const faqs = t.raw("faqs") as Array<{ q: string; a: string }>;
+  const playerSteps = t.raw("player.steps") as string[];
+
   return (
     <main className="overflow-hidden bg-background text-foreground">
-      {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-[42rem] bg-[radial-gradient(circle_at_15%_12%,rgba(139,92,246,0.06),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.04),transparent_24%)]" />
 
@@ -180,12 +109,12 @@ export default function TutorialsPage() {
           <div className="max-w-xl space-y-8">
             <SectionEyebrow
               icon={<GraduationCap className="h-4 w-4" />}
-              label="Community learning center"
+              label={t("hero.eyebrow")}
             />
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Community / Learn / Tutorials
+                {t("hero.breadcrumb")}
               </p>
               <div className="space-y-3">
                 <p
@@ -195,7 +124,7 @@ export default function TutorialsPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Learn AdonERP with practical
+                  {t("hero.lead")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -204,13 +133,11 @@ export default function TutorialsPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Tutorials
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Master every AdonERP workflow through short, practical, and
-                business-focused tutorials designed for owners, managers,
-                operators, accountants, and developers.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -219,27 +146,27 @@ export default function TutorialsPage() {
                 href="#tutorials"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Start learning
+                {t("hero.primaryCta")}
               </Link>
               <Link
                 href="#learning-path"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                View learning path
+                {t("hero.secondaryCta")}
               </Link>
             </div>
 
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {stats.map(([value, label]) => (
+              {stats.map((stat) => (
                 <div
-                  key={label}
+                  key={stat.label}
                   className="rounded-2xl border border-border bg-card/90 p-4 text-center shadow-sm"
                 >
                   <p className="text-2xl font-semibold text-foreground">
-                    {value}
+                    {stat.value}
                   </p>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                    {label}
+                    {stat.label}
                   </p>
                 </div>
               ))}
@@ -255,10 +182,10 @@ export default function TutorialsPage() {
                 <div className="mb-5 flex items-center justify-between">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                      Tutorial player
+                      {t("player.label")}
                     </p>
                     <h3 className="mt-2 text-xl font-semibold text-foreground">
-                      Sales pipeline basics
+                      {t("player.title")}
                     </h3>
                   </div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-card text-primary shadow-md">
@@ -276,7 +203,7 @@ export default function TutorialsPage() {
                 </div>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                  {["Watch", "Practice", "Apply"].map((item, index) => (
+                  {playerSteps.map((item, index) => (
                     <div
                       key={item}
                       className="rounded-2xl bg-card px-4 py-3 shadow-sm"
@@ -296,7 +223,6 @@ export default function TutorialsPage() {
         </div>
       </section>
 
-      {/* Browse by business workflow Section */}
       <section
         id="tutorials"
         className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20"
@@ -304,17 +230,16 @@ export default function TutorialsPage() {
         <div className="text-center">
           <SectionEyebrow
             icon={<BookOpen className="h-4 w-4" />}
-            label="Browse by business workflow"
+            label={t("categoriesSection.eyebrow")}
           />
           <div className="mx-auto mt-8 max-w-4xl">
             <ScriptHeading>
-              Everything you need
+              {t("categoriesSection.titleLine1")}
               <br />
-              to learn faster.
+              {t("categoriesSection.titleLine2")}
             </ScriptHeading>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
-              Pick a topic, follow the guided lesson, and apply the workflow to
-              your real business process immediately.
+              {t("categoriesSection.description")}
             </p>
           </div>
         </div>
@@ -322,13 +247,13 @@ export default function TutorialsPage() {
         <div className="mx-auto mt-10 flex max-w-2xl items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm">
           <Search className="h-5 w-5 text-muted-foreground" />
           <span className="text-sm text-muted-foreground">
-            Search tutorials by app, workflow, role, or difficulty...
+            {t("categoriesSection.searchPlaceholder")}
           </span>
         </div>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {tutorialCategories.map((category) => {
-            const Icon = category.icon;
+          {categories.map((category) => {
+            const Icon = categoryIcons[category.icon];
 
             return (
               <div
@@ -358,7 +283,6 @@ export default function TutorialsPage() {
         </div>
       </section>
 
-      {/* Featured lessons Section */}
       <section className="relative overflow-hidden rounded-t-[4rem] bg-muted/30 py-16 lg:py-24">
         <div className="absolute inset-y-0 left-0 w-40 bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.06),transparent_68%)]" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -366,22 +290,21 @@ export default function TutorialsPage() {
             <div className="space-y-5 self-center">
               <SectionEyebrow
                 icon={<Sparkles className="h-4 w-4" />}
-                label="Featured lessons"
+                label={t("featuredSection.eyebrow")}
               />
               <ScriptHeading>
-                Start with the
+                {t("featuredSection.titleLine1")}
                 <br />
-                most useful flows.
+                {t("featuredSection.titleLine2")}
               </ScriptHeading>
               <p className="max-w-md text-base leading-7 text-muted-foreground">
-                These tutorials are selected for new teams who want to launch
-                faster and understand the core AdonERP workflow from day one.
+                {t("featuredSection.description")}
               </p>
               <Link
                 href="#learning-path"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
               >
-                See recommended path
+                {t("featuredSection.link")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -422,7 +345,6 @@ export default function TutorialsPage() {
         </div>
       </section>
 
-      {/* Guided learning path Section */}
       <section
         id="learning-path"
         className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-24"
@@ -430,16 +352,15 @@ export default function TutorialsPage() {
         <div className="space-y-5 self-center">
           <SectionEyebrow
             icon={<ListChecks className="h-4 w-4" />}
-            label="Guided learning path"
+            label={t("learningPathSection.eyebrow")}
           />
           <ScriptHeading>
-            Learn it once.
+            {t("learningPathSection.titleLine1")}
             <br />
-            Use it every day.
+            {t("learningPathSection.titleLine2")}
           </ScriptHeading>
           <p className="max-w-md text-base leading-7 text-muted-foreground">
-            Follow a clear path from setup to daily operation. Each lesson is
-            built around real business actions, not theory only.
+            {t("learningPathSection.description")}
           </p>
         </div>
 
@@ -458,8 +379,7 @@ export default function TutorialsPage() {
                   <div className="flex-1">
                     <p className="font-semibold text-foreground">{step}</p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      Complete this step and move to the next recommended
-                      workflow.
+                      {t("learningPathSection.stepDescription")}
                     </p>
                   </div>
                   <Check className="h-5 w-5 text-accent" />
@@ -470,7 +390,6 @@ export default function TutorialsPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
         <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-background via-primary/5 to-muted px-6 py-16 shadow-[0_35px_90px_rgba(0,0,0,0.08)] sm:px-10">
           <div className="absolute -left-12 top-10 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
@@ -480,40 +399,38 @@ export default function TutorialsPage() {
               <Star className="h-7 w-7 fill-current" />
             </div>
             <ScriptHeading className="mt-6">
-              Built for teams who
+              {t("ctaSection.titleLine1")}
               <br />
-              want to learn by doing.
+              {t("ctaSection.titleLine2")}
             </ScriptHeading>
             <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-muted-foreground">
-              Train your team with tutorials that connect learning, practice,
-              and real operational workflows inside one business platform.
+              {t("ctaSection.description")}
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 href="#tutorials"
                 className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Browse tutorials
+                {t("ctaSection.primaryCta")}
               </Link>
               <Link
                 href="/community/learn/documentation"
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
-                Read documentation
+                {t("ctaSection.secondaryCta")}
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="text-center">
           <SectionEyebrow
             icon={<BookOpen className="h-4 w-4" />}
-            label="Common questions"
+            label={t("faqSection.eyebrow")}
           />
-          <ScriptHeading className="mt-8">Tutorial FAQ</ScriptHeading>
+          <ScriptHeading className="mt-8">{t("faqSection.title")}</ScriptHeading>
         </div>
 
         <div className="mt-10 space-y-4">

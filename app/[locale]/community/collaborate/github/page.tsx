@@ -1,10 +1,18 @@
-import GithubPage from "./GithubPage";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-  title: "GitHub | AdonERP Collaborate",
-  description:
-    "Contribute to Adon ERP on GitHub — fork the repo, ship pull requests, review code, and build the platform alongside thousands of developers.",
-};
+import GithubPage from "./GithubPage";
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("pages.community.metadata.collaborateGithub");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/collaborate/github"),
+  };
+}
 
 export default function Page() {
   return <GithubPage />;

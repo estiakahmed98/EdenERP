@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "root": {
+      "title": "কমিউনিটি | Adon ERP",
+      "description": "Adon ERP কমিউনিটির learning, service, collaboration এবং software access path এক্সপ্লোর করুন।"
+    },
+    "collaborate": {
+      "title": "সহযোগিতা | Adon ERP কমিউনিটি",
+      "description": "ফোরাম, ইভেন্ট, ট্রান্সলেশন, GitHub এবং পার্টনার প্রোগ্রামের মাধ্যমে Adon ERP কমিউনিটির সাথে সহযোগিতা করুন।"
+    },
+    "collaborateEvents": {
+      "title": "ইভেন্টস | Adon ERP Collaborate",
+      "description": "Adon ERP কমিউনিটি ইভেন্টে অংশ নিন — ওয়েবিনার, ওয়ার্কশপ, মিটআপ এবং কনফারেন্স।"
+    },
+    "collaborateForum": {
+      "title": "ফোরাম | Adon ERP Collaborate",
+      "description": "প্রশ্ন করুন, অভিজ্ঞতা শেয়ার করুন এবং ব্যবহারকারী ও ডেভেলপারদের সাথে যুক্ত হন।"
+    },
+    "collaborateGithub": {
+      "title": "GitHub | Adon ERP Collaborate",
+      "description": "Pull request, code review এবং collaboration-এর মাধ্যমে Adon ERP-এ অবদান রাখুন।"
+    },
+    "collaborateTranslations": {
+      "title": "কমিউনিটি ট্রান্সলেশনস | Adon ERP Collaborate",
+      "description": "Adon ERP ট্রান্সলেশন কমিউনিটিতে যোগ দিয়ে প্ল্যাটফর্মকে বহুভাষিক করতে সাহায্য করুন।"
+    },
+    "collaborateBecomePartner": {
+      "title": "পার্টনার হোন | Adon ERP কমিউনিটি",
+      "description": "Adon ERP Partner Program-এ যোগ দিয়ে implementation, consulting বা reseller business বাড়ান।"
+    },
+    "empowerEducation": {
+      "title": "Empower Education | Adon ERP কমিউনিটি",
+      "description": "Adon ERP শিক্ষা উদ্যোগ, লার্নিং প্রোগ্রাম এবং প্র্যাকটিক্যাল বিজনেস লার্নিং অভিজ্ঞতা দেখুন।"
+    },
+    "empowerEducationProgram": {
+      "title": "এডুকেশন প্রোগ্রাম | Adon ERP কমিউনিটি",
+      "description": "শিক্ষার্থী, পেশাজীবী এবং টিমের জন্য সাজানো শিক্ষা প্রোগ্রামগুলো দেখুন।"
+    },
+    "empowerScaleUpGame": {
+      "title": "Scale Up Business Game | Adon ERP কমিউনিটি",
+      "description": "ইন্টারঅ্যাকটিভ business game-এর মাধ্যমে বাস্তব ব্যবসায়িক পরিস্থিতি প্র্যাকটিস করুন।"
+    },
+    "empowerVisit": {
+      "title": "Visit Adon ERP | Adon ERP কমিউনিটি",
+      "description": "Adon ERP ভিজিট করে প্রোডাক্ট, ইকোসিস্টেম এবং কমিউনিটি সংস্কৃতি জানুন।"
+    },
+    "getServices": {
+      "title": "সার্ভিস নিন | Adon ERP কমিউনিটি",
+      "description": "পার্টনার, implementation help, advisor, support এবং customer stories এক জায়গায় পান।"
+    },
+    "getServicesFindPartner": {
+      "title": "পার্টনার খুঁজুন | Adon ERP কমিউনিটি",
+      "description": "Implementation, consulting এবং transformation-এর জন্য সার্টিফাইড Adon ERP পার্টনার খুঁজুন।"
+    },
+    "getServicesMeetAdvisor": {
+      "title": "অ্যাডভাইজারের সাথে কথা বলুন | Adon ERP কমিউনিটি",
+      "description": "আপনার ব্যবসার চাহিদা রিভিউ করে সঠিক Adon ERP rollout plan করুন।"
+    },
+    "getServicesImplementation": {
+      "title": "Implementation Services | Adon ERP কমিউনিটি",
+      "description": "আত্মবিশ্বাসের সাথে Adon ERP চালু করতে implementation package এবং expert support বেছে নিন।"
+    },
+    "getServicesCustomerStories": {
+      "title": "Customer Stories | Adon ERP কমিউনিটি",
+      "description": "Adon ERP ব্যবহার করা ব্যবসাগুলোর যাচাইকৃত customer stories পড়ুন।"
+    },
+    "getServicesSupport": {
+      "title": "সাপোর্ট | Adon ERP",
+      "description": "আমাদের বিশেষজ্ঞ টিম থেকে সাপোর্ট নিন এবং সঠিক যোগাযোগ দ্রুত খুঁজে নিন।"
+    },
+    "getServicesFindAccountant": {
+      "title": "অ্যাকাউন্ট্যান্ট খুঁজুন | Adon ERP কমিউনিটি",
+      "description": "Adon ERP workflow এবং compliance জানেন এমন অ্যাকাউন্ট্যান্টের সাথে যুক্ত হন।"
+    },
+    "getServicesUpgrades": {
+      "title": "Upgrades | Adon ERP কমিউনিটি",
+      "description": "Expert guidance নিয়ে Adon ERP version upgrade পরিকল্পনা ও বাস্তবায়ন করুন।"
+    },
+    "getSoftware": {
+      "title": "সফটওয়্যার নিন | Adon ERP কমিউনিটি",
+      "description": "Edition তুলনা করুন, release download করুন এবং আপনার ব্যবসার জন্য সঠিক অপশন বেছে নিন।"
+    },
+    "getSoftwareCompareEditions": {
+      "title": "Editions তুলনা | Adon ERP কমিউনিটি",
+      "description": "Adon ERP editions তুলনা করে আপনার জন্য উপযুক্ত feature set বেছে নিন।"
+    },
+    "getSoftwareDownload": {
+      "title": "ডাউনলোড | Adon ERP কমিউনিটি",
+      "description": "Adon ERP ডাউনলোড করে সর্বশেষ stable version দিয়ে শুরু করুন।"
+    },
+    "getSoftwareReleases": {
+      "title": "Releases | Adon ERP কমিউনিটি",
+      "description": "Adon ERP releases, version notes এবং upgrade highlights দেখুন।"
+    },
+    "learn": {
+      "title": "শিখুন | Adon ERP কমিউনিটি",
+      "description": "Tutorials, documentation, training, certifications এবং community content দিয়ে Adon ERP শিখুন।"
+    },
+    "learnBlog": {
+      "title": "ব্লগ | Adon ERP কমিউনিটি",
+      "description": "Adon ERP community blog পোস্ট, product updates এবং practical business insights পড়ুন।"
+    },
+    "learnDocumentation": {
+      "title": "ডকুমেন্টেশন | Adon ERP কমিউনিটি",
+      "description": "টিম এবং ডেভেলপারদের জন্য Adon ERP documentation, guides এবং API reference দেখুন।"
+    },
+    "learnTutorials": {
+      "title": "টিউটোরিয়ালস | Adon ERP কমিউনিটি",
+      "description": "Practical tutorials এবং guided learning path দিয়ে ধাপে ধাপে Adon ERP শিখুন।"
+    },
+    "learnTraining": {
+      "title": "ট্রেনিং | Adon ERP কমিউনিটি",
+      "description": "Consultant, developer এবং business users-এর জন্য Adon ERP training program-এ যোগ দিন।"
+    },
+    "learnCertifications": {
+      "title": "সার্টিফিকেশন | Adon ERP কমিউনিটি",
+      "description": "Structured certification track দিয়ে Adon ERP দক্ষতা যাচাই করুন।"
+    },
+    "learnPodcast": {
+      "title": "পডকাস্ট | Adon ERP কমিউনিটি",
+      "description": "Product, operations এবং growth নিয়ে Adon ERP community podcast শুনুন।"
+    }
+  },
+  "placeholder": {
+    "collaborate": "Collaborate পেজ",
+    "collaborateForum": "Forum পেজ",
+    "collaborateEvents": "Events পেজ",
+    "collaborateGithub": "GitHub পেজ",
+    "collaborateTranslations": "Translations পেজ",
+    "collaborateBecomePartner": "Partner হওয়ার পেজ",
+    "empowerEducation": "Empower Education পেজ",
+    "empowerEducationProgram": "Education Program পেজ",
+    "empowerScaleUpGame": "Scale Up! Business Game পেজ",
+    "empowerVisit": "Visit Adon পেজ",
+    "getServices": "Get Services পেজ",
+    "getServicesImplementation": "Implementation পেজ",
+    "getServicesMeetAdvisor": "Meet an Advisor পেজ",
+    "getServicesCustomerStories": "Customer Stories পেজ",
+    "getServicesFindAccountant": "Find an Accountant পেজ",
+    "getServicesSupport": "Support পেজ",
+    "getServicesUpgrades": "Upgrades পেজ",
+    "getSoftware": "Get The Software পেজ",
+    "getSoftwareCompareEditions": "Compare Editions পেজ",
+    "getSoftwareDownload": "Download পেজ",
+    "getSoftwareReleases": "Releases পেজ",
+    "learn": "Learn পেজ",
+    "learnDocumentation": "Documentation পেজ",
+    "learnTutorials": "Tutorials পেজ",
+    "learnTraining": "Training পেজ",
+    "learnCertifications": "Certifications পেজ",
+    "learnBlog": "Blog পেজ",
+    "learnPodcast": "Podcast পেজ"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "metadata": {
+    "root": {
+      "title": "Community | Adon ERP",
+      "description": "Explore learning, services, collaboration, and software access paths across the Adon ERP community."
+    },
+    "collaborate": {
+      "title": "Collaborate | Adon ERP Community",
+      "description": "Collaborate with the Adon ERP community through forum discussions, events, translations, GitHub, and partner programs."
+    },
+    "collaborateEvents": {
+      "title": "Events | Adon ERP Collaborate",
+      "description": "Join Adon ERP community events — webinars, workshops, meetups, and conferences."
+    },
+    "collaborateForum": {
+      "title": "Forum | Adon ERP Collaborate",
+      "description": "Join the Adon ERP community forum to ask questions, share insights, and connect with users and developers."
+    },
+    "collaborateGithub": {
+      "title": "GitHub | Adon ERP Collaborate",
+      "description": "Contribute to Adon ERP on GitHub by shipping pull requests, reviewing code, and collaborating with developers."
+    },
+    "collaborateTranslations": {
+      "title": "Community Translations | Adon ERP Collaborate",
+      "description": "Join the Adon ERP translation community and help make the platform accessible in every language."
+    },
+    "collaborateBecomePartner": {
+      "title": "Become a Partner | Adon ERP Community",
+      "description": "Join the Adon ERP Partner Program and grow your implementation, consulting, or reseller business."
+    },
+    "empowerEducation": {
+      "title": "Empower Education | Adon ERP Community",
+      "description": "Discover Adon ERP education initiatives, learning programs, and practical business learning experiences."
+    },
+    "empowerEducationProgram": {
+      "title": "Education Program | Adon ERP Community",
+      "description": "Explore structured education programs built for students, professionals, and business teams."
+    },
+    "empowerScaleUpGame": {
+      "title": "Scale Up Business Game | Adon ERP Community",
+      "description": "Practice real business scenarios through the Scale Up! interactive community business game."
+    },
+    "empowerVisit": {
+      "title": "Visit Adon ERP | Adon ERP Community",
+      "description": "Visit Adon ERP and discover the product, ecosystem, and global community culture."
+    },
+    "getServices": {
+      "title": "Get Services | Adon ERP Community",
+      "description": "Find partners, implementation help, advisors, support, and success stories from the Adon ERP ecosystem."
+    },
+    "getServicesFindPartner": {
+      "title": "Find a Partner | Adon ERP Community",
+      "description": "Find certified Adon ERP partners to support implementation, consulting, and business transformation."
+    },
+    "getServicesMeetAdvisor": {
+      "title": "Meet an Advisor | Adon ERP Community",
+      "description": "Book an advisor session to review your business needs and plan the right Adon ERP rollout."
+    },
+    "getServicesImplementation": {
+      "title": "Implementation Services | Adon ERP Community",
+      "description": "Choose implementation packages and expert support to launch Adon ERP with confidence."
+    },
+    "getServicesCustomerStories": {
+      "title": "Customer Stories | Adon ERP Community",
+      "description": "Read verified customer stories and outcomes from businesses using Adon ERP."
+    },
+    "getServicesSupport": {
+      "title": "Support | Adon ERP",
+      "description": "Get support from our team of experts and reach the right Adon ERP contact quickly."
+    },
+    "getServicesFindAccountant": {
+      "title": "Find an Accountant | Adon ERP Community",
+      "description": "Connect with accountants familiar with Adon ERP workflows and compliance requirements."
+    },
+    "getServicesUpgrades": {
+      "title": "Upgrades | Adon ERP Community",
+      "description": "Plan and execute smooth upgrades across Adon ERP versions with expert guidance."
+    },
+    "getSoftware": {
+      "title": "Get the Software | Adon ERP Community",
+      "description": "Compare editions, download releases, and evaluate the right Adon ERP option for your organization."
+    },
+    "getSoftwareCompareEditions": {
+      "title": "Compare Editions | Adon ERP Community",
+      "description": "Compare Adon ERP editions and choose the feature set that fits your business."
+    },
+    "getSoftwareDownload": {
+      "title": "Download | Adon ERP Community",
+      "description": "Download Adon ERP and get started with the latest stable version."
+    },
+    "getSoftwareReleases": {
+      "title": "Releases | Adon ERP Community",
+      "description": "Track Adon ERP releases, version notes, and upgrade highlights."
+    },
+    "learn": {
+      "title": "Learn | Adon ERP Community",
+      "description": "Learn Adon ERP through tutorials, documentation, training, certifications, and community content."
+    },
+    "learnBlog": {
+      "title": "Blog | Adon ERP Community",
+      "description": "Read Adon ERP community blog posts, product updates, and practical business insights."
+    },
+    "learnDocumentation": {
+      "title": "Documentation | Adon ERP Community",
+      "description": "Access Adon ERP documentation, guides, and API references for teams and developers."
+    },
+    "learnTutorials": {
+      "title": "Tutorials | Adon ERP Community",
+      "description": "Learn Adon ERP step by step with practical tutorials and guided learning paths."
+    },
+    "learnTraining": {
+      "title": "Training | Adon ERP Community",
+      "description": "Join Adon ERP training programs for consultants, developers, and business users."
+    },
+    "learnCertifications": {
+      "title": "Certifications | Adon ERP Community",
+      "description": "Validate your Adon ERP expertise with structured certification tracks."
+    },
+    "learnPodcast": {
+      "title": "Podcast | Adon ERP Community",
+      "description": "Listen to Adon ERP community podcast episodes on product, operations, and growth."
+    }
+  },
+  "placeholder": {
+    "collaborate": "Collaborate Page",
+    "collaborateForum": "Forum Page",
+    "collaborateEvents": "Events Page",
+    "collaborateGithub": "GitHub Page",
+    "collaborateTranslations": "Translations Page",
+    "collaborateBecomePartner": "Become a Partner Page",
+    "empowerEducation": "Empower Education Page",
+    "empowerEducationProgram": "Education Program Page",
+    "empowerScaleUpGame": "Scale Up! Business Game Page",
+    "empowerVisit": "Visit Adon Page",
+    "getServices": "Get Services Page",
+    "getServicesImplementation": "Implementation Page",
+    "getServicesMeetAdvisor": "Meet an Advisor Page",
+    "getServicesCustomerStories": "Customer Stories Page",
+    "getServicesFindAccountant": "Find an Accountant Page",
+    "getServicesSupport": "Support Page",
+    "getServicesUpgrades": "Upgrades Page",
+    "getSoftware": "Get The Software Page",
+    "getSoftwareCompareEditions": "Compare Editions Page",
+    "getSoftwareDownload": "Download Page",
+    "getSoftwareReleases": "Releases Page",
+    "learn": "Learn Page",
+    "learnDocumentation": "Documentation Page",
+    "learnTutorials": "Tutorials Page",
+    "learnTraining": "Training Page",
+    "learnCertifications": "Certifications Page",
+    "learnBlog": "Blog Page",
+    "learnPodcast": "Podcast Page"
+  }
+}

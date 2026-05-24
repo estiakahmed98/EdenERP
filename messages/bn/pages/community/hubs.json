@@ -1,0 +1,537 @@
+{
+  "communityRoot": {
+    "eyebrow": "কমিউনিটি হাব",
+    "title": "Adon ERP কমিউনিটি এক্সপ্লোর করুন",
+    "description": "এক জায়গা থেকে learning resources, implementation support, collaboration space এবং software access path খুঁজে নিন।",
+    "highlights": [
+      "Guided tutorial, documentation এবং training path দিয়ে শুরু করুন।",
+      "Execution help লাগলে partner, advisor এবং support channel ব্যবহার করুন।",
+      "Forum, GitHub, event এবং translation space-এ যুক্ত হয়ে ecosystem-এ অবদান রাখুন।"
+    ],
+    "primaryAction": {
+      "label": "Tutorials দেখুন",
+      "href": "/community/learn/tutorials"
+    },
+    "secondaryAction": {
+      "label": "Partner খুঁজুন",
+      "href": "/community/get-services/find-partner"
+    },
+    "sections": [
+      {
+        "title": "Learn",
+        "links": [
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Business team এবং implementer-দের জন্য step-by-step lesson।"
+          },
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Product guide, workflow এবং reference material।"
+          },
+          {
+            "label": "Training",
+            "href": "/community/learn/training",
+            "description": "Consultant, developer এবং user-দের জন্য structured program।"
+          },
+          {
+            "label": "Blog",
+            "href": "/community/learn/blog",
+            "description": "Ecosystem update, insight এবং customer-facing content।"
+          }
+        ]
+      },
+      {
+        "title": "Get Services",
+        "links": [
+          {
+            "label": "Find a Partner",
+            "href": "/community/get-services/find-partner",
+            "description": "Implementation এবং consulting partner-এর সাথে যুক্ত হোন।"
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Rollout plan নিয়ে advisory session বুক করুন।"
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Success pack এবং delivery support option তুলনা করুন।"
+          },
+          {
+            "label": "Customer Stories",
+            "href": "/community/get-services/customer-stories",
+            "description": "বাস্তব organization কীভাবে Adon ERP adopt করেছে দেখুন।"
+          }
+        ]
+      },
+      {
+        "title": "Collaborate",
+        "links": [
+          {
+            "label": "GitHub",
+            "href": "/community/collaborate/github",
+            "description": "Code, fix এবং idea দিয়ে contribution করুন।"
+          },
+          {
+            "label": "Forum",
+            "href": "/community/collaborate/forum",
+            "description": "অন্য user ও builder-দের সাথে প্রশ্নোত্তর করুন।"
+          },
+          {
+            "label": "Events",
+            "href": "/community/collaborate/events",
+            "description": "Webinar, workshop এবং meetup-এ যুক্ত হন।"
+          },
+          {
+            "label": "Translations",
+            "href": "/community/collaborate/translations",
+            "description": "Platform-কে আরও বেশি ভাষায় পৌঁছে দিতে সাহায্য করুন।"
+          }
+        ]
+      }
+    ]
+  },
+  "collaborate": {
+    "eyebrow": "Collaborate",
+    "title": "Adon ERP কমিউনিটির সাথে কাজ করুন",
+    "description": "Code contribute করা, idea শেয়ার করা, event-এ যোগ দেওয়া এবং platform-কে আরও বড় audience-এ পৌঁছানোর জন্য ecosystem-এর collaboration layer ব্যবহার করুন।",
+    "highlights": [
+      "Code, issue এবং contribution workflow-এর জন্য GitHub ব্যবহার করুন।",
+      "Product ও implementation knowledge exchange-এর জন্য forum ব্যবহার করুন।",
+      "Code-এর বাইরে reach বাড়াতে event এবং translation ব্যবহার করুন।"
+    ],
+    "primaryAction": {
+      "label": "GitHub খুলুন",
+      "href": "/community/collaborate/github"
+    },
+    "secondaryAction": {
+      "label": "Forum-এ যান",
+      "href": "/community/collaborate/forum"
+    },
+    "sections": [
+      {
+        "title": "Contribution Paths",
+        "links": [
+          {
+            "label": "GitHub",
+            "href": "/community/collaborate/github",
+            "description": "Pull request, review এবং roadmap work track করুন।"
+          },
+          {
+            "label": "Forum",
+            "href": "/community/collaborate/forum",
+            "description": "Implementation question, idea এবং best practice আলোচনা করুন।"
+          },
+          {
+            "label": "Events",
+            "href": "/community/collaborate/events",
+            "description": "Core team এবং peer-দের সাথে live session-এ মিলিত হোন।"
+          },
+          {
+            "label": "Translations",
+            "href": "/community/collaborate/translations",
+            "description": "Adon ERP-কে আরও বেশি ভাষায় accessible করুন।"
+          },
+          {
+            "label": "Become a Partner",
+            "href": "/community/collaborate/become-a-partner",
+            "description": "Implementation, consulting বা resale practice গড়ে তুলুন।"
+          }
+        ]
+      }
+    ]
+  },
+  "learn": {
+    "eyebrow": "Learn",
+    "title": "Adon ERP knowledge দ্রুত তৈরি করুন",
+    "description": "আপনার টিমের জন্য সঠিক learning format বেছে নিন, সেটা quick tutorial, documentation, scheduled training বা ongoing content যাই হোক।",
+    "highlights": [
+      "Guided product workflow-এর জন্য tutorial দিয়ে শুরু করুন।",
+      "Structured reference material দরকার হলে documentation ব্যবহার করুন।",
+      "Team mature হওয়ার সঙ্গে training, certification, blog এবং podcast layer করুন।"
+    ],
+    "primaryAction": {
+      "label": "Tutorials শুরু করুন",
+      "href": "/community/learn/tutorials"
+    },
+    "secondaryAction": {
+      "label": "Documentation পড়ুন",
+      "href": "/community/learn/documentation"
+    },
+    "sections": [
+      {
+        "title": "Learning Paths",
+        "links": [
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Task-based walkthrough for team এবং implementer।"
+          },
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Reference guide, workflow doc এবং developer info।"
+          },
+          {
+            "label": "Training",
+            "href": "/community/learn/training",
+            "description": "Instructor-led এবং structured team learning track।"
+          },
+          {
+            "label": "Certifications",
+            "href": "/community/learn/certifications",
+            "description": "Delivery, product এবং implementation skill validate করুন।"
+          },
+          {
+            "label": "Blog",
+            "href": "/community/learn/blog",
+            "description": "Product update এবং ecosystem insight পড়ুন।"
+          },
+          {
+            "label": "Podcast",
+            "href": "/community/learn/podcast",
+            "description": "Product, operations এবং growth conversation শুনুন।"
+          }
+        ]
+      }
+    ]
+  },
+  "learnPodcast": {
+    "eyebrow": "Podcast",
+    "title": "Adon ERP conversation শুনুন",
+    "description": "Audio format-এ product thinking, operations story এবং ecosystem update follow করুন, যাতে আপনার টিম roadmap-এর কাছাকাছি থাকে।",
+    "highlights": [
+      "Implementation, growth এবং product strategy-এর recurring theme follow করুন।",
+      "Leadership এবং operations team-এর জন্য এটিকে lightweight enablement content হিসেবে ব্যবহার করুন।",
+      "আরও context-এর জন্য blog এবং tutorial-এর সাথে pair করুন।"
+    ],
+    "primaryAction": {
+      "label": "Blog পড়ুন",
+      "href": "/community/learn/blog"
+    },
+    "secondaryAction": {
+      "label": "Tutorials দেখুন",
+      "href": "/community/learn/tutorials"
+    },
+    "sections": [
+      {
+        "title": "Keep Learning",
+        "links": [
+          {
+            "label": "Blog",
+            "href": "/community/learn/blog",
+            "description": "Companion update এবং product explainer পড়ুন।"
+          },
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Episode-এর idea-কে practical workflow-এ রূপ দিন।"
+          },
+          {
+            "label": "Training",
+            "href": "/community/learn/training",
+            "description": "Passive learning থেকে structured team training-এ যান।"
+          }
+        ]
+      }
+    ]
+  },
+  "getServices": {
+    "eyebrow": "Get Services",
+    "title": "সঠিক support path বেছে নিন",
+    "description": "Product evaluation থেকে execution-এ যেতে partner, advisory, implementation, support এবং upgrade help ব্যবহার করুন।",
+    "highlights": [
+      "Implementation, customization এবং delivery capacity-এর জন্য partner ব্যবহার করুন।",
+      "Execution শুরুর আগে rollout decision shape করতে advisor ব্যবহার করুন।",
+      "Operational friction কমাতে support, upgrade এবং accounting service ব্যবহার করুন।"
+    ],
+    "primaryAction": {
+      "label": "Partner খুঁজুন",
+      "href": "/community/get-services/find-partner"
+    },
+    "secondaryAction": {
+      "label": "Advisor-এর সাথে কথা বলুন",
+      "href": "/community/get-services/meet-advisor"
+    },
+    "sections": [
+      {
+        "title": "Service Options",
+        "links": [
+          {
+            "label": "Find a Partner",
+            "href": "/community/get-services/find-partner",
+            "description": "আপনার business need অনুযায়ী certified partner খুঁজুন।"
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Priority এবং rollout option expert-এর সাথে রিভিউ করুন।"
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Implementation pack এবং scoped support option তুলনা করুন।"
+          },
+          {
+            "label": "Support",
+            "href": "/community/get-services/support",
+            "description": "চলমান সমস্যার জন্য সঠিক support channel-এ পৌঁছান।"
+          },
+          {
+            "label": "Find an Accountant",
+            "href": "/community/get-services/find-an-accountant",
+            "description": "ERP workflow বোঝেন এমন finance professional-এর সাথে যুক্ত হোন।"
+          },
+          {
+            "label": "Upgrades",
+            "href": "/community/get-services/upgrades",
+            "description": "Version upgrade কম risk-এ পরিকল্পনা করুন।"
+          }
+        ]
+      }
+    ]
+  },
+  "getServicesFindAccountant": {
+    "eyebrow": "Find an Accountant",
+    "title": "আপনার ERP setup-এর সঙ্গে finance expertise যুক্ত করুন",
+    "description": "এমন accountant-এর সাথে কাজ করুন যারা operational workflow, reporting, compliance এবং ERP adoption-এর finance side বোঝেন।",
+    "highlights": [
+      "Implementation এবং go-live-এর পর finance process gap কমান।",
+      "Tax, reporting এবং reconciliation workflow-এর জন্য domain-aware accountant ব্যবহার করুন।",
+      "প্রয়োজনে এটিকে implementation বা upgrade support-এর সঙ্গে pair করুন।"
+    ],
+    "primaryAction": {
+      "label": "Advisor-এর সাথে কথা বলুন",
+      "href": "/community/get-services/meet-advisor"
+    },
+    "secondaryAction": {
+      "label": "Partner খুঁজুন",
+      "href": "/community/get-services/find-partner"
+    },
+    "sections": [
+      {
+        "title": "Related Services",
+        "links": [
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Support বেছে নেওয়ার আগে finance এবং rollout priority clear করুন।"
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Accounting guidance-কে delivery support-এর সঙ্গে combine করুন।"
+          },
+          {
+            "label": "Customer Stories",
+            "href": "/community/get-services/customer-stories",
+            "description": "অন্য টিম কীভাবে finance transformation করেছে দেখুন।"
+          }
+        ]
+      }
+    ]
+  },
+  "getServicesUpgrades": {
+    "eyebrow": "Upgrades",
+    "title": "কম disruption-এ upgrade plan করুন",
+    "description": "পরবর্তী Adon ERP version move-এর জন্য technical review, rollout planning এবং operational safeguard-এর সঠিক mix তৈরি করুন।",
+    "highlights": [
+      "Migration timeline সেট করার আগে breaking point review করুন।",
+      "Technical, process এবং training change-কে এক upgrade plan-এ আনুন।",
+      "Internal team capacity কম হলে partner বা advisor ব্যবহার করুন।"
+    ],
+    "primaryAction": {
+      "label": "Partner খুঁজুন",
+      "href": "/community/get-services/find-partner"
+    },
+    "secondaryAction": {
+      "label": "Customer Stories দেখুন",
+      "href": "/community/get-services/customer-stories"
+    },
+    "sections": [
+      {
+        "title": "Upgrade Support",
+        "links": [
+          {
+            "label": "Find a Partner",
+            "href": "/community/get-services/find-partner",
+            "description": "Migration-heavy কাজের জন্য external delivery support আনুন।"
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Upgrade scope এবং readiness validate করুন।"
+          },
+          {
+            "label": "Support",
+            "href": "/community/get-services/support",
+            "description": "Post-upgrade stabilization issue হলে help নিন।"
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftware": {
+    "eyebrow": "Get the Software",
+    "title": "Adon ERP edition বেছে নিন, download করুন এবং release track করুন",
+    "description": "Edition তুলনা, software download এবং release evolution বোঝার জন্য এই area ব্যবহার করুন, যাতে deployment path আরও পরিষ্কার হয়।",
+    "highlights": [
+      "সঠিক operating model বেছে নিতে edition তুলনা করুন।",
+      "টিম প্রস্তুত হলে evaluation বা deployment-এর জন্য software download করুন।",
+      "Release note এবং version change track করে adoption plan করুন।"
+    ],
+    "primaryAction": {
+      "label": "Editions তুলনা করুন",
+      "href": "/community/get-the-software/compare-editions"
+    },
+    "secondaryAction": {
+      "label": "Download",
+      "href": "/community/get-the-software/download"
+    },
+    "sections": [
+      {
+        "title": "Software Access",
+        "links": [
+          {
+            "label": "Compare Editions",
+            "href": "/community/get-the-software/compare-editions",
+            "description": "Feature fit বোঝার পরে edition বেছে নিন।"
+          },
+          {
+            "label": "Download",
+            "href": "/community/get-the-software/download",
+            "description": "Evaluation, testing বা rollout-এর জন্য software নিন।"
+          },
+          {
+            "label": "Releases",
+            "href": "/community/get-the-software/releases",
+            "description": "Version note, change এবং release progress follow করুন।"
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftwareCompareEditions": {
+    "eyebrow": "Compare Editions",
+    "title": "Deploy করার আগে path তুলনা করুন",
+    "description": "Edition comparison ব্যবহার করে operating model, feature coverage এবং support path-এর সঠিক match বেছে নিন।",
+    "highlights": [
+      "Business complexity এবং delivery capacity-এর সাথে edition fit review করুন।",
+      "Gap ধরা পড়লে implementation বা advisory service ব্যবহার করুন।",
+      "Rollout শুরুর আগে release context-ও বিবেচনায় রাখুন।"
+    ],
+    "primaryAction": {
+      "label": "Download",
+      "href": "/community/get-the-software/download"
+    },
+    "secondaryAction": {
+      "label": "Releases দেখুন",
+      "href": "/community/get-the-software/releases"
+    },
+    "sections": [
+      {
+        "title": "Next Steps",
+        "links": [
+          {
+            "label": "Download",
+            "href": "/community/get-the-software/download",
+            "description": "Comparison থেকে hands-on evaluation-এ যান।"
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Edition select করার পরে delivery effort scope করুন।"
+          },
+          {
+            "label": "Meet an Advisor",
+            "href": "/community/get-services/meet-advisor",
+            "description": "Tradeoff review করে choice validate করুন।"
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftwareDownload": {
+    "eyebrow": "Download",
+    "title": "Adon ERP download করে evaluation শুরু করুন",
+    "description": "টিম যখন product test, workflow validate বা deployment plan তৈরি করতে প্রস্তুত, তখন এই path ব্যবহার করুন।",
+    "highlights": [
+      "Software access থেকে structured evaluation-এ দ্রুত যান।",
+      "Deployment decision-এর আগে edition এবং release context মাথায় রাখুন।",
+      "Ramp-up time কমাতে tutorial, documentation এবং implementation support ব্যবহার করুন।"
+    ],
+    "primaryAction": {
+      "label": "Documentation পড়ুন",
+      "href": "/community/learn/documentation"
+    },
+    "secondaryAction": {
+      "label": "Releases দেখুন",
+      "href": "/community/get-the-software/releases"
+    },
+    "sections": [
+      {
+        "title": "Recommended Next Steps",
+        "links": [
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Setup এবং core workflow দ্রুত বুঝুন।"
+          },
+          {
+            "label": "Tutorials",
+            "href": "/community/learn/tutorials",
+            "description": "Initial setup-এর পর practical scenario walkthrough করুন।"
+          },
+          {
+            "label": "Implementation",
+            "href": "/community/get-services/implementation",
+            "description": "Evaluation rollout-এ গেলে scoped delivery support নিন।"
+          }
+        ]
+      }
+    ]
+  },
+  "getSoftwareReleases": {
+    "eyebrow": "Releases",
+    "title": "Commit করার আগে version track করুন",
+    "description": "Release visibility ব্যবহার করে version movement, adoption timing এবং change preparation আরও পরিষ্কারভাবে বুঝুন।",
+    "highlights": [
+      "Version awareness দিয়ে upgrade এবং fresh deployment plan করুন।",
+      "Release context ব্যবহার করে edition choice এবং implementation timing ঠিক করুন।",
+      "Documentation, training এবং support-কে major change-এর সঙ্গে coordinate করুন।"
+    ],
+    "primaryAction": {
+      "label": "Editions তুলনা করুন",
+      "href": "/community/get-the-software/compare-editions"
+    },
+    "secondaryAction": {
+      "label": "Upgrade plan করুন",
+      "href": "/community/get-services/upgrades"
+    },
+    "sections": [
+      {
+        "title": "Release Planning",
+        "links": [
+          {
+            "label": "Upgrades",
+            "href": "/community/get-services/upgrades",
+            "description": "Release awareness-কে practical migration plan-এ রূপ দিন।"
+          },
+          {
+            "label": "Documentation",
+            "href": "/community/learn/documentation",
+            "description": "Release change-এর সঙ্গে workflow reference review করুন।"
+          },
+          {
+            "label": "Support",
+            "href": "/community/get-services/support",
+            "description": "Release adoption blocker হলে help নিন।"
+          }
+        ]
+      }
+    ]
+  }
+}

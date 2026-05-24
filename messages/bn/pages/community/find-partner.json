@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "eyebrow": "বিশ্বস্ত পার্টনার",
+    "title": "Implementation Partners",
+    "description": "সার্টিফাইড expert-দের সাথে যুক্ত হোন, যারা region জুড়ে business ও government organization-এ Eden ERP solution পৌঁছে দিচ্ছেন।",
+    "cta": "সেরা match খুঁজুন"
+  },
+  "filters": {
+    "searchPlaceholder": "পার্টনার খুঁজুন...",
+    "allLevels": "সব",
+    "levelSuffix": "লেভেল",
+    "allIndustries": "সব ইন্ডাস্ট্রি",
+    "industries": ["Government", "Technology", "Healthcare", "ERP Solutions", "AI & Marketing"]
+  },
+  "stats": {
+    "reviews": "রিভিউ",
+    "projects": "প্রজেক্ট",
+    "experts": "এক্সপার্ট",
+    "experience": "অভিজ্ঞতা",
+    "contact": "পার্টনারের সাথে যোগাযোগ করুন"
+  },
+  "empty": {
+    "title": "কোনো পার্টনার পাওয়া যায়নি",
+    "description": "Search বা filter পরিবর্তন করে আবার চেষ্টা করুন"
+  },
+  "banner": {
+    "title": "শীর্ষ প্রতিষ্ঠানগুলোর আস্থা",
+    "description": "১৫ মিলিয়ন+ user-এর সাথে যুক্ত হন, যারা সফল digital transformation-এর জন্য Eden ERP এবং certified partner-দের ওপর নির্ভর করেন।"
+  },
+  "partners": [
+    {
+      "name": "Ann-nahl Software",
+      "level": "Silver",
+      "industry": "ERP & Business Solutions",
+      "logo": "/Assets/apps/ann-nahl.png",
+      "logoAlt": "Ann-nahl Software",
+      "reviews": "২৮",
+      "projects": "২৪+",
+      "experts": "৬+",
+      "experience": "৫ বছর"
+    },
+    {
+      "name": "Reputation Prime",
+      "level": "Silver",
+      "industry": "AI & Digital Marketing",
+      "logo": "/Assets/apps/repuprime.jpeg",
+      "logoAlt": "Reputation Prime",
+      "reviews": "১৯",
+      "projects": "১৭+",
+      "experts": "৪+",
+      "experience": "৩ বছর"
+    },
+    {
+      "name": "Government of Bangladesh",
+      "level": "Platinum",
+      "industry": "Public Sector",
+      "logo": "/Assets/apps/bangovt.png",
+      "logoAlt": "Bangladesh Government",
+      "reviews": "৩১",
+      "projects": "৩৪+",
+      "experts": "৮+",
+      "experience": "৯ বছর"
+    },
+    {
+      "name": "Ministry of Health",
+      "level": "Gold",
+      "industry": "Healthcare",
+      "logo": "/Assets/apps/moh.png",
+      "logoAlt": "Ministry of Health",
+      "reviews": "২২",
+      "projects": "২০+",
+      "experts": "৫+",
+      "experience": "৪ বছর"
+    },
+    {
+      "name": "SDAIA",
+      "level": "Platinum",
+      "industry": "Data & AI Authority",
+      "logo": "/Assets/apps/sdaia.png",
+      "logoAlt": "SDAIA",
+      "reviews": "২৬",
+      "projects": "২৯+",
+      "experts": "৭+",
+      "experience": "৬ বছর"
+    },
+    {
+      "name": "Ministry of Human Resources & Social Development",
+      "level": "Platinum",
+      "industry": "Government & HR Services",
+      "logo": "/Assets/apps/HRSD.png",
+      "logoAlt": "Ministry of Human Resources",
+      "reviews": "২৪",
+      "projects": "২৭+",
+      "experts": "৭+",
+      "experience": "৬ বছর"
+    }
+  ]
+}

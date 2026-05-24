@@ -1,0 +1,123 @@
+{
+  "hero": {
+    "eyebrow": "কমিউনিটি লার্নিং সেন্টার",
+    "breadcrumb": "কমিউনিটি / Learn / Tutorials",
+    "lead": "প্র্যাকটিক্যাল উপায়ে শিখুন",
+    "title": "টিউটোরিয়ালস",
+    "description": "Owner, manager, operator, accountant এবং developer-দের জন্য তৈরি ছোট, practical এবং business-focused tutorial দিয়ে AdonERP workflow আয়ত্ত করুন।",
+    "primaryCta": "শুরু করুন",
+    "secondaryCta": "লার্নিং পাথ দেখুন"
+  },
+  "stats": [
+    { "value": "৯০+", "label": "প্র্যাকটিক্যাল টিউটোরিয়াল" },
+    { "value": "১২", "label": "বিজনেস ওয়ার্কফ্লো" },
+    { "value": "১৫ মিনিট", "label": "গড় লেসন সময়" },
+    { "value": "২৪/৭", "label": "সেলফ-পেসড অ্যাক্সেস" }
+  ],
+  "player": {
+    "label": "টিউটোরিয়াল প্লেয়ার",
+    "title": "Sales pipeline basics",
+    "steps": ["দেখুন", "প্র্যাকটিস করুন", "প্রয়োগ করুন"]
+  },
+  "categoriesSection": {
+    "eyebrow": "বিজনেস ওয়ার্কফ্লো অনুযায়ী দেখুন",
+    "titleLine1": "দ্রুত শেখার জন্য",
+    "titleLine2": "যা যা দরকার সবই এখানে।",
+    "description": "একটি topic বেছে নিন, guided lesson অনুসরণ করুন, তারপর সরাসরি আপনার business process-এ apply করুন।",
+    "searchPlaceholder": "App, workflow, role বা difficulty দিয়ে টিউটোরিয়াল খুঁজুন..."
+  },
+  "categories": [
+    {
+      "title": "Getting Started",
+      "description": "Workspace, user, company profile, app এবং basic access rule সেটআপ করুন।",
+      "lessons": "১২টি টিউটোরিয়াল",
+      "icon": "Compass"
+    },
+    {
+      "title": "Sales & CRM",
+      "description": "Lead, customer, quotation, pipeline, follow-up এবং sales report ম্যানেজ করুন।",
+      "lessons": "১৮টি টিউটোরিয়াল",
+      "icon": "Users"
+    },
+    {
+      "title": "Inventory & Purchase",
+      "description": "Product, stock move, vendor, purchase order এবং replenishment rule track করুন।",
+      "lessons": "১৬টি টিউটোরিয়াল",
+      "icon": "LibraryBig"
+    },
+    {
+      "title": "Accounting & Invoicing",
+      "description": "Invoice তৈরি, payment tracking, tax review এবং financial activity monitor করুন।",
+      "lessons": "১৪টি টিউটোরিয়াল",
+      "icon": "BadgeCheck"
+    },
+    {
+      "title": "Project & Tasks",
+      "description": "Task, team, approval, deadline এবং performance dashboard organize করুন।",
+      "lessons": "২০টি টিউটোরিয়াল",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "title": "Developer Guides",
+      "description": "API usage, customization pattern, module, automation এবং integration শিখুন।",
+      "lessons": "১০টি টিউটোরিয়াল",
+      "icon": "Code2"
+    }
+  ],
+  "featuredSection": {
+    "eyebrow": "নির্বাচিত লেসন",
+    "titleLine1": "সবচেয়ে দরকারি",
+    "titleLine2": "workflow দিয়ে শুরু করুন।",
+    "description": "নতুন টিম যেন দ্রুত launch করতে পারে এবং day one থেকেই AdonERP core workflow বুঝতে পারে, সেই জন্য এই tutorial গুলো বেছে নেওয়া হয়েছে।",
+    "link": "প্রস্তাবিত path দেখুন"
+  },
+  "featuredTutorials": [
+    { "title": "আপনার প্রথম company workspace তৈরি করুন", "level": "Beginner", "time": "১৮ মিনিট", "tag": "Setup" },
+    { "title": "সম্পূর্ণ sales pipeline তৈরি করুন", "level": "Beginner", "time": "২৪ মিনিট", "tag": "CRM" },
+    { "title": "Role এবং permission configure করুন", "level": "Intermediate", "time": "৩২ মিনিট", "tag": "Security" },
+    { "title": "Purchase replenishment automate করুন", "level": "Intermediate", "time": "২৮ মিনিট", "tag": "Inventory" }
+  ],
+  "learningPathSection": {
+    "eyebrow": "Guided learning path",
+    "titleLine1": "একবার শিখুন।",
+    "titleLine2": "প্রতিদিন কাজে লাগান।",
+    "description": "Setup থেকে daily operation পর্যন্ত একটি পরিষ্কার path অনুসরণ করুন। প্রতিটি lesson বাস্তব business action ঘিরে তৈরি।",
+    "stepDescription": "এই ধাপ সম্পন্ন করে পরের recommended workflow-এ যান।"
+  },
+  "learningPath": [
+    "আপনার business app বেছে নিন",
+    "Guided tutorial দেখুন",
+    "Sample data দিয়ে প্র্যাকটিস করুন",
+    "নিজের workflow-এ apply করুন",
+    "Progress track করে improve করুন"
+  ],
+  "ctaSection": {
+    "titleLine1": "যেসব টিম",
+    "titleLine2": "কাজের মধ্যে শিখতে চায়, তাদের জন্য তৈরি।",
+    "description": "Learning, practice এবং real operational workflow-কে একসাথে যুক্ত করে এমন tutorial দিয়ে আপনার টিমকে train করুন।",
+    "primaryCta": "টিউটোরিয়াল দেখুন",
+    "secondaryCta": "ডকুমেন্টেশন পড়ুন"
+  },
+  "faqSection": {
+    "eyebrow": "সাধারণ প্রশ্ন",
+    "title": "টিউটোরিয়াল FAQ"
+  },
+  "faqs": [
+    {
+      "q": "টিউটোরিয়াল কি beginner-friendly?",
+      "a": "হ্যাঁ। প্রতিটি tutorial basic থেকে শুরু করে practical business use case পর্যন্ত নিয়ে যায়।"
+    },
+    {
+      "q": "Technical knowledge লাগবে?",
+      "a": "বেশিরভাগ business tutorial-এ coding লাগে না। Developer tutorial আলাদা করে চিহ্নিত করা আছে।"
+    },
+    {
+      "q": "আমার টিম কি একই learning path follow করতে পারবে?",
+      "a": "হ্যাঁ। Sales, inventory, finance, support এবং operations user-দের train করতে একই tutorial path ব্যবহার করা যাবে।"
+    },
+    {
+      "q": "Tutorial কি documentation-এর সাথে connected?",
+      "a": "Tutorial practical flow দেখায়, আর documentation deeper reference হিসেবে ব্যবহার করা যায়।"
+    }
+  ]
+}

@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Award,
@@ -16,6 +15,21 @@ import {
   Trophy,
   Users,
 } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations(
+    "pages.community.metadata.learnCertifications",
+  );
+
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: getLocaleAlternates("/community/learn/certifications"),
+  };
+}
 
 const certifications = [
   {

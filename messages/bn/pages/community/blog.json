@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "title": "আমাদের সর্বশেষ পোস্ট",
+    "categories": [
+      "সব",
+      "গ্রাহক রিভিউ",
+      "কর্মীদের অভিজ্ঞতা",
+      "পার্টনার স্টোরিজ",
+      "Adon নিউজ",
+      "বিজনেস হ্যাকস"
+    ]
+  },
+  "posts": [
+    {
+      "title": "Access Management Suite",
+      "image": "/Assets/apps/Access Management Suite.jpg",
+      "category": "নিরাপত্তা",
+      "date": "২৪ মে, ২০২৬"
+    },
+    {
+      "title": "Accounting Suite for Modern Businesses",
+      "image": "/Assets/apps/Accounting Suite.jpg",
+      "category": "অ্যাকাউন্টিং",
+      "date": "২৪ মে, ২০২৬"
+    },
+    {
+      "title": "AI Business Dashboard Analytics",
+      "image": "/Assets/apps/AI Business Dashboard.jpg",
+      "category": "অ্যানালিটিক্স",
+      "date": "২৩ মে, ২০২৬"
+    },
+    {
+      "title": "Advanced BI Dashboard Reporting",
+      "image": "/Assets/apps/BI Dashboard.png",
+      "category": "বিজনেস ইন্টেলিজেন্স",
+      "date": "২৩ মে, ২০২৬"
+    },
+    {
+      "title": "Contact Field Validation System",
+      "image": "/Assets/apps/Contact Field Validation.jpg",
+      "category": "CRM",
+      "date": "২২ মে, ২০২৬"
+    },
+    {
+      "title": "Customer Follow-ups Automation",
+      "image": "/Assets/apps/Customer Follow-ups.webp",
+      "category": "গ্রাহক সাফল্য",
+      "date": "২২ মে, ২০২৬"
+    },
+    {
+      "title": "Delivery Shipping Connector",
+      "image": "/Assets/apps/Delivery Shipping Connector.avif",
+      "category": "লজিস্টিকস",
+      "date": "২১ মে, ২০২৬"
+    },
+    {
+      "title": "Direct Print Pro Solution",
+      "image": "/Assets/apps/Direct Print Pro.jpg",
+      "category": "প্রিন্টিং",
+      "date": "২১ মে, ২০২৬"
+    },
+    {
+      "title": "Export Manager for Enterprises",
+      "image": "/Assets/apps/Export Manager.jpg",
+      "category": "ফাইন্যান্স",
+      "date": "২০ মে, ২০২৬"
+    },
+    {
+      "title": "IT Hardware & Support Services",
+      "image": "/Assets/apps/IT Hardware & Support.jpg",
+      "category": "আইটি সার্ভিসেস",
+      "date": "২০ মে, ২০২৬"
+    },
+    {
+      "title": "Multi Currency Financial Reports",
+      "image": "/Assets/apps/Multi Currency Reports.jpg",
+      "category": "অ্যাকাউন্টিং",
+      "date": "১৯ মে, ২০২৬"
+    },
+    {
+      "title": "Shopify Connector Integration",
+      "image": "/Assets/apps/Shopify-Connector.jpg",
+      "category": "eCommerce",
+      "date": "১৯ মে, ২০২৬"
+    }
+  ],
+  "description": "আধুনিক ব্যবসাগুলো কীভাবে ERP, CRM, automation, analytics এবং integration ব্যবহার করে কার্যক্রম দক্ষভাবে বাড়ায় তা দেখুন।",
+  "readMore": "আরও পড়ুন",
+  "pagination": {
+    "dates": ["২০২৬", "২০২৫"],
+    "lastPage": "১৩৩",
+    "aria": "পৃষ্ঠা বিভাজন"
+  },
+  "sidebar": {
+    "search": "খুঁজুন...",
+    "archives": "আর্কাইভ",
+    "tags": "ট্যাগ",
+    "allDates": "সব তারিখ"
+  },
+  "tags": [
+    "অ্যাকাউন্টিং",
+    "CRM",
+    "অ্যানালিটিক্স",
+    "নিরাপত্তা",
+    "ম্যানুফ্যাকচারিং",
+    "ফাইন্যান্স",
+    "eCommerce",
+    "লজিস্টিকস",
+    "মার্কেটিং",
+    "টেকনোলজি",
+    "ERP",
+    "বিজনেস",
+    "অটোমেশন",
+    "ড্যাশবোর্ড",
+    "আইটি সার্ভিসেস",
+    "গ্রাহক সাফল্য"
+  ]
+}

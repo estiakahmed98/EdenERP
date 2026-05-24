@@ -1,0 +1,108 @@
+{
+  "hero": {
+    "eyebrow": "AdonERP Training Academy",
+    "breadcrumb": "Community / Learn / Training",
+    "titleLine1": "Learn AdonERP",
+    "titleLine2": "the practical way",
+    "description": "Build real ERP confidence with guided courses, live workshops, hands-on labs, and role-based training for business users, consultants, and developers.",
+    "primaryCta": "Explore training paths",
+    "secondaryCta": "View schedule"
+  },
+  "stats": [
+    { "value": "12k+", "label": "learners trained" },
+    { "value": "96%", "label": "completion satisfaction" },
+    { "value": "40+", "label": "practical labs" },
+    { "value": "24/7", "label": "academy access" }
+  ],
+  "liveClass": {
+    "label": "Live class",
+    "title": "ERP Foundations",
+    "items": [
+      { "title": "12 modules", "text": "Structured learning", "icon": "BookOpenCheck" },
+      { "title": "4h 30m", "text": "Total video time", "icon": "Clock3" },
+      { "title": "Certificate", "text": "After completion", "icon": "BadgeCheck" }
+    ],
+    "quote": "The training helped our team understand the full workflow, not just individual screens.",
+    "author": "Ariyan Rahman"
+  },
+  "pathsSection": {
+    "eyebrow": "Role-based learning paths",
+    "title": "Choose the path that fits your role",
+    "description": "Every course path is designed around practical implementation work, so learners can apply the concepts immediately in real business scenarios.",
+    "popular": "Most popular",
+    "cta": "Start this path"
+  },
+  "learningPaths": [
+    {
+      "title": "Functional Consultant",
+      "level": "Beginner to advanced",
+      "duration": "6 weeks",
+      "lessons": "42 lessons",
+      "description": "Master business workflows, app configuration, implementation planning, and client-facing ERP delivery.",
+      "topics": ["CRM", "Sales", "Inventory", "Accounting", "Implementation"]
+    },
+    {
+      "title": "Developer Bootcamp",
+      "level": "Intermediate",
+      "duration": "8 weeks",
+      "lessons": "56 lessons",
+      "description": "Build modules, customize workflows, connect APIs, and prepare production-ready AdonERP extensions.",
+      "topics": ["Next.js", "API", "Prisma", "Automation", "Deployment"]
+    },
+    {
+      "title": "Business User Training",
+      "level": "Team friendly",
+      "duration": "3 weeks",
+      "lessons": "24 lessons",
+      "description": "Train daily users to manage customers, quotations, invoices, tasks, reports, and approvals confidently.",
+      "topics": ["Dashboard", "Tasks", "Reports", "Approvals", "Productivity"]
+    }
+  ],
+  "formatsSection": {
+    "titleLine1": "Training formats",
+    "titleLine2": "for every team.",
+    "description": "Learn live, on-site, or at your own pace. Mix formats to build a training plan that works for your team and implementation stage."
+  },
+  "formats": [
+    {
+      "title": "Live Online Classes",
+      "description": "Join instructor-led sessions with real-time Q&A, demos, and guided exercises.",
+      "icon": "MonitorPlay"
+    },
+    {
+      "title": "On-site Team Training",
+      "description": "Bring AdonERP experts to your organization for role-based hands-on workshops.",
+      "icon": "Users"
+    },
+    {
+      "title": "Self-paced Academy",
+      "description": "Learn anytime through structured videos, checkpoints, quizzes, and downloadable resources.",
+      "icon": "Video"
+    },
+    {
+      "title": "Certification Prep",
+      "description": "Practice implementation cases and prepare for consultant or developer certification.",
+      "icon": "Trophy"
+    }
+  ],
+  "scheduleSection": {
+    "eyebrow": "Upcoming sessions",
+    "title": "Join the next live training",
+    "description": "Reserve a seat for upcoming classes and workshops. Each session includes downloadable resources, recordings, and exercises.",
+    "cta": "Reserve a seat",
+    "enroll": "Enroll"
+  },
+  "schedule": [
+    { "title": "ERP Foundations Workshop", "type": "Live online", "date": "Mar 12", "time": "10:00 AM", "location": "Remote" },
+    { "title": "Inventory & Sales Masterclass", "type": "Advanced", "date": "Mar 18", "time": "02:00 PM", "location": "Remote" },
+    { "title": "Developer Customization Lab", "type": "Hands-on", "date": "Mar 25", "time": "06:00 PM", "location": "Dhaka / Online" }
+  ],
+  "ctaSection": {
+    "eyebrow": "Start learning today",
+    "titleLine1": "Build stronger teams",
+    "titleLine2": "with AdonERP training",
+    "description": "Give your users, consultants, and developers a clear learning path so adoption becomes faster, cleaner, and easier to scale.",
+    "primaryCta": "Start now",
+    "badge": "Includes certificate option"
+  }
+}
