@@ -1,7 +1,7 @@
 {
   "header": {
     "nav": {
-      "apps": "ইআরপি",
+      "apps": "ERP",
       "industries": "ইন্ডাস্ট্রিজ",
       "community": "কমিউনিটি",
       "pricing": "প্রাইসিং",
@@ -118,7 +118,7 @@
       "legal": "লিগ্যাল"
     },
     "links": {
-      "apps": "ইআরপি",
+      "apps": "ERP",
       "industries": "ইন্ডাস্ট্রিজ",
       "pricing": "প্রাইসিং",
       "help": "সহায়তা",
