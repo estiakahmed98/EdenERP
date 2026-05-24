@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "title": "Accounting | Adon ERP",
+    "description": "AI-powered accounting platform for all your financial operations — from reconciliation and expenses to tax returns and real-time reporting."
+  },
+  "hero": {
+    "eyebrow": "Intelligent Accounting",
+    "title": "Accounting made effortlessly simple",
+    "description": "AI-native accounting platform for all your financial operations — from reconciliation and expenses to tax returns and real-time reporting. Fast, complete, and simple.",
+    "watchDemo": "Watch Demo",
+    "rating": "from 15,000+ businesses"
+  },
+  "performance": {
+    "eyebrow": "Lightning fast",
+    "title": "Unlock true performance",
+    "description": "Speed matters. All operations are processed in less than 90 milliseconds, faster than the blink of an eye. It helps accountants do much more in less time.",
+    "metrics": {
+      "loginToBill": "From login to vendor bill",
+      "processing": "Processing speed",
+      "monthEndClose": "Faster month-end close"
+    }
+  },
+  "automation": {
+    "eyebrow": "No data entry",
+    "title": "Just automation",
+    "description": "Experience zero data entry. Our advanced AI-powered invoice data capture has a 98% recognition rate. All you have to do is to validate the invoice.",
+    "metrics": {
+      "recognitionRate": "Recognition Rate",
+      "autoMatching": "Auto-Matching"
+    }
+  },
+  "mobile": {
+    "eyebrow": "Mobile companion",
+    "title": "Your finances in your pocket",
+    "description": "Take pictures of your expenses, and let the Artificial Intelligence do the rest. Snap, scan, and sync — all from your phone.",
+    "features": {
+      "receiptCapture": "Instant receipt capture",
+      "expenseTracking": "Real-time expense tracking",
+      "cloudSync": "Automatic cloud sync"
+    },
+    "appStore": "App Store",
+    "googlePlay": "Google Play"
+  },
+  "bankReconciliation": {
+    "eyebrow": "Smart sync",
+    "title": "Smart bank reconciliation",
+    "description": "Never import bank statements manually again. Adon ERP integrates with 28,000+ banks from all around the world with smart AI matching.",
+    "features": {
+      "banksSupported": "28,000+ banks supported",
+      "autoMatching": "95% auto-matching rate"
+    }
+  },
+  "expenseCategories": {
+    "eyebrow": "Track spending",
+    "title": "All your expenses in one place",
+    "description": "Categorize and track every transaction automatically."
+  },
+  "features": {
+    "eyebrow": "Enterprise-grade",
+    "title": "All the features done right.",
+    "description": "Everything you need to manage your business finances in one place.",
+    "items": {
+      "globalTax": "Global Tax Compliance",
+      "globalTaxDesc": "Pre-configured for 180+ countries with local tax rules",
+      "smartAlerts": "Smart Alerts",
+      "smartAlertsDesc": "Automated notifications for unusual activity",
+      "recurring": "Recurring Transactions",
+      "recurringDesc": "Set up automated journal entries",
+      "analytics": "Financial Analytics",
+      "analyticsDesc": "Real-time P&L, balance sheets, and cash flow",
+      "multiCurrency": "Multi-Currency",
+      "multiCurrencyDesc": "Handle 100+ currencies with auto-conversion",
+      "auditTrail": "Audit Trail",
+      "auditTrailDesc": "Complete visibility into every transaction",
+      "budget": "Budget Management",
+      "budgetDesc": "Track actuals against budgets in real-time",
+      "autoReconciliation": "Auto-Reconciliation",
+      "autoReconciliationDesc": "95% of transactions matched automatically"
+    }
+  },
+  "testimonial": {
+    "quote": "A VAT closing that used to take 4 days is now done in 3 hours with Adon ERP, with a better service for our clients: real-time accounting.",
+    "name": "Wim Van den Brande",
+    "role": "Head of Accounting, KPMG"
+  },
+  "cta": {
+    "title": "Unleash your growth potential",
+    "description": "Join 15 million users who grow their business with Adon ERP. Start your 30-day free trial today.",
+    "trial": "Start Free Trial",
+    "sales": "Contact Sales"
+  }
+}
