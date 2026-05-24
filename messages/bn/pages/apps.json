@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "অ্যাপস | Adon ERP",
+    "title": "ইআরপি | Adon ERP",
     "description": "Adon ERP-এর জন্য সেরা অ্যাপ, নতুন রিলিজ এবং জনপ্রিয় বিজনেস এক্সটেনশনগুলো দেখুন।"
   },
   "filterBar": {
@@ -17,8 +17,8 @@
     }
   },
   "sections": {
-    "topApps": "সেরা অ্যাপস",
-    "newApps": "নতুন অ্যাপস",
+    "topApps": "সেরা ইআরপি",
+    "newApps": "নতুন ইআরপি",
     "mostDownloaded": "সবচেয়ে বেশি ডাউনলোড"
   }
 }

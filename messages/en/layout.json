@@ -1,7 +1,7 @@
 {
   "header": {
     "nav": {
-      "apps": "Apps",
+      "apps": "ERP",
       "industries": "Industries",
       "community": "Community",
       "pricing": "Pricing",
@@ -10,7 +10,7 @@
       "tryFree": "Try it free"
     },
     "menu": {
-      "explore": "Explore Adon ERP {label}",
+      "explore": "Explore Adon {label} Apps",
       "description": "Premium business tools connected in one unified ERP platform.",
       "apps": {
         "finance": "Finance",
