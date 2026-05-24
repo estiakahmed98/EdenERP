@@ -1,0 +1,162 @@
+{
+  "metadata": {
+    "title": "Expenses | AdonERP",
+    "description": "AI-powered expense management platform for all your spending operations — from company cards and receipt capture to approval workflows and real-time insights."
+  },
+  "hero": {
+    "eyebrowIcon": "Receipt",
+    "eyebrowLabel": "Smart Expense Management",
+    "title": "Stop chasing",
+    "titleHighlight": "paper receipts",
+    "description": "Centralize and manage your expenses with company cards, spending controls, and approvals. Capture bills, sync with accounting, and streamline customer invoicing.",
+    "startButton": "Start Free Trial",
+    "demoButton": "Watch Demo",
+    "rating": "from 15,000+ businesses",
+    "dashboard": {
+      "title": "Expense Dashboard",
+      "totalSpent": "Total Spent This Month",
+      "totalAmount": "$23,847.50",
+      "trend": "+12.5% from last month",
+      "cardsInUse": "Cards in Use",
+      "cardsCount": "24",
+      "pendingApprovals": "Pending Approvals",
+      "pendingCount": "8",
+      "autoMatched": "Auto-Matched",
+      "matchedPercent": "94%",
+      "recentExpenses": "Recent Expenses",
+      "recentExpensesList": [
+        { "name": "Starbucks Coffee", "amount": "$12.50", "date": "Today", "status": "approved" },
+        { "name": "Uber Ride", "amount": "$24.00", "date": "Yesterday", "status": "pending" },
+        { "name": "Adobe Creative Cloud", "amount": "$52.99", "date": "Mar 12, 2024", "status": "approved" }
+      ]
+    },
+    "badges": {
+      "realTimeSync": "Real-time sync",
+      "autoCategorized": "Auto-categorized"
+    }
+  },
+  "cardsSection": {
+    "eyebrowIcon": "CreditCard",
+    "eyebrowLabel": "Company Cards",
+    "title": "Spending control at your fingertips",
+    "description": "Issue virtual and physical cards with custom spending limits. Control where and how your team spends, with real-time notifications and automatic reconciliation.",
+    "features": [
+      { "text": "Set custom spending limits per card", "color": "emerald" },
+      { "text": "Real-time transaction alerts", "color": "cyan" },
+      { "text": "Merchant category controls", "color": "purple" },
+      { "text": "Auto-reconciliation with receipts", "color": "blue" }
+    ],
+    "demo": {
+      "cardTitle": "Company Card",
+      "cardSubtitle": "Adon ERP • Marketing",
+      "cardNumber": "**** **** **** 4242",
+      "limit": "Limit",
+      "limitAmount": "$5,000/month",
+      "spent": "Spent",
+      "spentAmount": "$3,247/5,000"
+    }
+  },
+  "captureSection": {
+    "eyebrowIcon": "Camera",
+    "eyebrowLabel": "Smart Capture",
+    "title": "Scan. Snap. Submit.",
+    "description": "Take a photo of any receipt and our AI automatically extracts merchant, amount, date, and category. No more manual data entry or lost receipts.",
+    "metrics": {
+      "recognitionRate": "98%",
+      "recognitionLabel": "Recognition Rate",
+      "processingTime": "3s",
+      "processingLabel": "Processing Time"
+    },
+    "demo": {
+      "title": "Smart Receipt Capture",
+      "dragText": "Drag & drop or click to upload",
+      "supportText": "Supports PDF, PNG, JPG up to 10MB",
+      "uploadButton": "Upload Receipt",
+      "aiFeature": "AI-powered data extraction",
+      "accuracyFeature": "98% recognition accuracy"
+    }
+  },
+  "approvalSection": {
+    "eyebrowIcon": "Users",
+    "eyebrowLabel": "Approval Workflow",
+    "title": "Smart approvals, zero delays",
+    "description": "Set up custom approval rules based on amount, department, or category. Managers get instant notifications and can approve or reject in one click.",
+    "features": [
+      "Multi-level approval chains",
+      "Auto-approve for low amounts",
+      "Real-time notifications",
+      "Audit trail for every expense"
+    ],
+    "demo": {
+      "title": "Pending Approvals",
+      "teamMembers": [
+        { "name": "Sarah Johnson", "role": "CEO", "pending": 3 },
+        { "name": "Michael Chen", "role": "Finance", "pending": 2 },
+        { "name": "Emily Davis", "role": "Marketing", "pending": 1 },
+        { "name": "James Wilson", "role": "Sales", "pending": 4 }
+      ],
+      "reviewButton": "Review"
+    }
+  },
+  "categoriesSection": {
+    "eyebrowIcon": "PieChart",
+    "eyebrowLabel": "Spending Insights",
+    "title": "See where your money goes",
+    "description": "Auto-categorized expenses with visual breakdowns and trends.",
+    "categories": [
+      { "name": "Rent & Utilities", "amount": "$2,500", "percentage": 28, "color": "emerald" },
+      { "name": "Salaries", "amount": "$15,000", "percentage": 42, "color": "purple" },
+      { "name": "Office Supplies", "amount": "$450", "percentage": 5, "color": "cyan" },
+      { "name": "Travel", "amount": "$1,200", "percentage": 8, "color": "orange" },
+      { "name": "Marketing", "amount": "$3,000", "percentage": 12, "color": "pink" },
+      { "name": "Software", "amount": "$800", "percentage": 5, "color": "blue" }
+    ]
+  },
+  "mobileSection": {
+    "eyebrowIcon": "Smartphone",
+    "eyebrowLabel": "Mobile App",
+    "title": "Expenses on the",
+    "titleHighlight": "go",
+    "description": "Capture receipts, track mileage, and submit expenses from anywhere. Our mobile app makes expense reporting effortless.",
+    "appStore": "App Store",
+    "googlePlay": "Google Play",
+    "demo": {
+      "appName": "Expense Tracker",
+      "scannedLabel": "Receipt scanned",
+      "items": [
+        { "name": "Starbucks Coffee", "amount": "$12.50" },
+        { "name": "Uber Ride", "amount": "$24.00" }
+      ],
+      "total": "Total",
+      "totalAmount": "$36.50",
+      "submitButton": "Submit for Approval"
+    }
+  },
+  "integrationsSection": {
+    "eyebrowIcon": "RefreshCw",
+    "eyebrowLabel": "Integrations",
+    "title": "Connect with your stack",
+    "description": "Seamless integration with your favorite tools and accounting software.",
+    "integrations": [
+      { "name": "QuickBooks", "color": "emerald" },
+      { "name": "Xero", "color": "cyan" },
+      { "name": "Stripe", "color": "purple" },
+      { "name": "Slack", "color": "blue" },
+      { "name": "Expensify", "color": "orange" },
+      { "name": "SAP", "color": "indigo" }
+    ]
+  },
+  "testimonialSection": {
+    "quote": "Adon ERP transformed how we manage expenses. We've cut processing time by 75% and eliminated paper receipts entirely. The AI capture is incredibly accurate.",
+    "name": "Sarah Johnson",
+    "role": "CFO, TechFlow Solutions",
+    "rating": 5
+  },
+  "ctaBanner": {
+    "title": "Free, forever, with unlimited cards",
+    "description": "Join thousands of businesses that have simplified their expense management. Start your journey today.",
+    "trialButton": "Start Free Trial",
+    "salesButton": "Contact Sales",
+    "footerText": "• Free forever plan • Cancel anytime"
+  }
+}

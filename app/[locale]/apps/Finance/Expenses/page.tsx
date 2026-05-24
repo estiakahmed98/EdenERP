@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   Receipt,
@@ -121,7 +122,6 @@ import {
   Thermometer,
   Compass,
   Navigation,
-  Map,
   MapPinIcon,
   Locate,
   Globe2,
@@ -195,115 +195,21 @@ import {
   FileLineChartIcon,
 } from "lucide-react";
 
-const expenseCategories = [
-  {
-    icon: Home,
-    name: "Rent & Utilities",
-    amount: "$2,500",
-    percentage: 28,
-    color: "emerald",
-  },
-  {
-    icon: Briefcase,
-    name: "Salaries",
-    amount: "$15,000",
-    percentage: 42,
-    color: "purple",
-  },
-  {
-    icon: Coffee,
-    name: "Office Supplies",
-    amount: "$450",
-    percentage: 5,
-    color: "cyan",
-  },
-  {
-    icon: Car,
-    name: "Travel",
-    amount: "$1,200",
-    percentage: 8,
-    color: "orange",
-  },
-  {
-    icon: Gift,
-    name: "Marketing",
-    amount: "$3,000",
-    percentage: 12,
-    color: "pink",
-  },
-  {
-    icon: BookOpen,
-    name: "Software",
-    amount: "$800",
-    percentage: 5,
-    color: "blue",
-  },
-];
-
-const recentExpenses = [
-  {
-    name: "Starbucks Coffee",
-    amount: "$12.50",
-    date: "Today",
-    status: "approved",
-    category: "Meals",
-  },
-  {
-    name: "Uber Ride",
-    amount: "$24.00",
-    date: "Yesterday",
-    status: "pending",
-    category: "Travel",
-  },
-  {
-    name: "Adobe Creative Cloud",
-    amount: "$52.99",
-    date: "Mar 12, 2024",
-    status: "approved",
-    category: "Software",
-  },
-  {
-    name: "Amazon Office Supplies",
-    amount: "$89.00",
-    date: "Mar 10, 2024",
-    status: "approved",
-    category: "Supplies",
-  },
-  {
-    name: "WeWork Meeting Room",
-    amount: "$150.00",
-    date: "Mar 8, 2024",
-    status: "rejected",
-    category: "Rent",
-  },
-];
-
-const teamMembers = [
-  {
-    name: "Sarah Johnson",
-    role: "CEO",
-    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
-    pending: 3,
-  },
-  {
-    name: "Michael Chen",
-    role: "Finance",
-    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
-    pending: 2,
-  },
-  {
-    name: "Emily Davis",
-    role: "Marketing",
-    avatar: "https://randomuser.me/api/portraits/women/3.jpg",
-    pending: 1,
-  },
-  {
-    name: "James Wilson",
-    role: "Sales",
-    avatar: "https://randomuser.me/api/portraits/men/4.jpg",
-    pending: 4,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    Receipt, CreditCard, Wallet, Building2, RefreshCw, CheckCircle2, Clock,
+    AlertCircle, BarChart3, FileText, DollarSign, PieChart, LineChart, Shield,
+    Globe, Bell, Repeat, Palette, Sparkles, Star, Users, Play, Download, Eye,
+    Send, Smartphone, Camera, Zap, BookOpen, Briefcase, Home, Car, Coffee, Gift,
+    TrendingUp, Calendar, Filter, Lock, Rocket, Heart, MessageCircle, Apple,
+    Database, Cloud, Server, BadgeCheck, Trophy, Medal, Leaf, SunMedium,
+    Compass, Navigation, MapPinIcon, Locate, Earth, Plane, Train, Bus,
+    CarIcon, Bike, Footprints, Ship, Truck, Package, Box, Archive, Folder, File,
+    FileTextIcon, FileCheck,
+  };
+  return icons[iconName] || Receipt;
+};
 
 function ScriptHeading({
   children,
@@ -314,7 +220,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -325,26 +231,65 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-semibold text-emerald-700 dark:text-emerald-300 shadow-sm ring-1 ring-emerald-100 dark:ring-emerald-800">
-      <span className="text-emerald-500 dark:text-emerald-400">{icon}</span>
-      {label}
+      <span className="text-emerald-500 dark:text-emerald-400">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
 
 export default function ExpensesPage() {
+  const t = useTranslations("pages.expenses");
   const [activeTab, setActiveTab] = useState("all");
   const [selectedPeriod, setSelectedPeriod] = useState("month");
+  const fallbackRecentExpenses = [
+    { name: "Starbucks Coffee", amount: "$12.50", date: "Today", status: "approved" },
+    { name: "Uber Ride", amount: "$24.00", date: "Yesterday", status: "pending" },
+    { name: "Adobe Creative Cloud", amount: "$52.99", date: "Mar 12, 2024", status: "approved" },
+  ];
+
+  const categoriesList = t.raw("categoriesSection.categories");
+  const integrationsList = t.raw("integrationsSection.integrations");
+  const teamMembersList = t.raw("approvalSection.demo.teamMembers");
+  let recentExpensesData: unknown = fallbackRecentExpenses;
+
+  try {
+    recentExpensesData = t.raw("hero.dashboard.recentExpensesList");
+  } catch {
+    recentExpensesData = fallbackRecentExpenses;
+  }
+
+  const recentExpensesList = Array.isArray(recentExpensesData)
+    ? recentExpensesData
+    : fallbackRecentExpenses;
+
+  const getColorClass = (color: string) => {
+    const colorMap: Record<string, string> = {
+      emerald: "emerald",
+      cyan: "cyan",
+      purple: "purple",
+      blue: "blue",
+      orange: "orange",
+      pink: "pink",
+      indigo: "indigo",
+    };
+    return colorMap[color] || "emerald";
+  };
 
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
@@ -354,13 +299,14 @@ export default function ExpensesPage() {
             {/* Left Content */}
             <div className="max-w-xl space-y-8">
               <SectionEyebrow
-                icon={<Receipt className="h-4 w-4" />}
-                label="Smart Expense Management"
+                iconName={t("hero.eyebrowIcon")}
+                labelKey="hero.eyebrowLabel"
+                t={t}
               />
 
               <div className="space-y-5">
-                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
-                  Stop chasing
+                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl">
+                  {t("hero.title")}
                   <br />
                   <span
                     className="text-emerald-600 dark:text-emerald-400"
@@ -369,56 +315,46 @@ export default function ExpensesPage() {
                         '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                     }}
                   >
-                    paper receipts
+                    {t("hero.titleHighlight")}
                   </span>
                 </h1>
                 <p className="max-w-lg text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-                  Centralize and manage your expenses with company cards,
-                  spending controls, and approvals. Capture bills, sync with
-                  accounting, and streamline customer invoicing.
+                  {t("hero.description")}
                 </p>
               </div>
 
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="#get-started"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-emerald-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl dark:shadow-emerald-500/30"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-emerald-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                 >
-                  Start Free Trial
+                  {t("hero.startButton")}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="#demo"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
                 >
                   <Play className="h-4 w-4" />
-                  Watch Demo
+                  {t("hero.demoButton")}
                 </Link>
               </div>
 
               <div className="flex items-center gap-4 pt-4">
                 <div className="flex -space-x-2">
-                  {teamMembers.slice(0, 4).map((member, i) => (
+                  {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
                       className="h-8 w-8 rounded-full border-2 border-white dark:border-slate-700 bg-slate-200 dark:bg-slate-700 overflow-hidden"
-                    >
-                      <img
-                        src={member.avatar}
-                        alt={member.name}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
+                    />
                   ))}
                 </div>
                 <div className="flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400">
-                    from 15,000+ businesses
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                  <span className="ml-2 text-sm text-slate-600 dark:text-slate-400">
+                    {t("hero.rating")}
                   </span>
                 </div>
               </div>
@@ -430,14 +366,11 @@ export default function ExpensesPage() {
               <div className="absolute -bottom-10 -left-8 h-36 w-36 rounded-full bg-purple-100 dark:bg-purple-900/30 blur-3xl" />
 
               <div className="relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-2xl overflow-hidden">
-                {/* Dashboard Header */}
                 <div className="bg-linear-to-r from-emerald-600 to-cyan-600 px-5 py-3">
                   <div className="flex items-center justify-between text-white">
                     <div className="flex items-center gap-2">
                       <Wallet className="h-4 w-4" />
-                      <span className="text-sm font-semibold">
-                        Expense Dashboard
-                      </span>
+                      <span className="text-sm font-semibold">{t("hero.dashboard.title")}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <button className="text-white/80 hover:text-white transition">
@@ -450,106 +383,70 @@ export default function ExpensesPage() {
                   </div>
                 </div>
 
-                {/* Dashboard Content */}
                 <div className="p-5">
-                  {/* Total Spent Card */}
                   <div className="bg-linear-to-br from-emerald-50 to-cyan-50 dark:from-emerald-950/30 dark:to-cyan-950/30 rounded-xl p-4 mb-4 text-center">
-                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400 mb-1">
-                      Total Spent This Month
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                      {t("hero.dashboard.totalSpent")}
                     </p>
-                    <p className="text-3xl font-bold text-slate-900 dark:text-slate-100 dark:text-white">
-                      $23,847.50
+                    <p className="text-3xl font-bold text-slate-900 dark:text-slate-100">
+                      {t("hero.dashboard.totalAmount")}
                     </p>
                     <div className="flex items-center justify-center gap-2 mt-2">
                       <TrendingUp className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
                       <span className="text-sm text-emerald-600 dark:text-emerald-400">
-                        +12.5% from last month
+                        {t("hero.dashboard.trend")}
                       </span>
                     </div>
                   </div>
 
-                  {/* Stats Grid */}
                   <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                        Cards in Use
-                      </p>
-                      <p className="text-xl font-bold text-slate-900 dark:text-slate-100 dark:text-white">
-                        24
-                      </p>
+                    <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-3 text-center">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">{t("hero.dashboard.cardsInUse")}</p>
+                      <p className="text-xl font-bold text-slate-900 dark:text-slate-100">{t("hero.dashboard.cardsCount")}</p>
                     </div>
-                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                        Pending Approvals
-                      </p>
-                      <p className="text-xl font-bold text-amber-600 dark:text-amber-400">
-                        8
-                      </p>
+                    <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-3 text-center">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">{t("hero.dashboard.pendingApprovals")}</p>
+                      <p className="text-xl font-bold text-amber-600 dark:text-amber-400">{t("hero.dashboard.pendingCount")}</p>
                     </div>
-                    <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                        Auto-Matched
-                      </p>
-                      <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">
-                        94%
-                      </p>
+                    <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-3 text-center">
+                      <p className="text-xs text-slate-500 dark:text-slate-400">{t("hero.dashboard.autoMatched")}</p>
+                      <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">{t("hero.dashboard.matchedPercent")}</p>
                     </div>
                   </div>
 
-                  {/* Recent Expenses */}
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold text-slate-400 dark:text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-                      Recent Expenses
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      {t("hero.dashboard.recentExpenses")}
                     </p>
-                    {recentExpenses.slice(0, 3).map((expense, idx) => (
+                    {recentExpensesList.slice(0, 3).map((expense: any, idx: number) => (
                       <div
                         key={idx}
-                        className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-slate-800/60 dark:bg-slate-800/40 dark:hover:bg-slate-800/50 rounded-lg transition"
+                        className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-slate-800/60 rounded-lg transition"
                       >
                         <div className="flex items-center gap-2">
-                          <div
-                            className={`h-8 w-8 rounded-lg ${
-                              expense.status === "approved"
-                                ? "bg-emerald-100 dark:bg-emerald-900/40"
-                                : expense.status === "pending"
-                                  ? "bg-amber-100 dark:bg-amber-900/40"
-                                  : "bg-red-100 dark:bg-red-900/40"
-                            } flex items-center justify-center`}
-                          >
-                            <Receipt
-                              className={`h-4 w-4 ${
-                                expense.status === "approved"
-                                  ? "text-emerald-600 dark:text-emerald-400"
-                                  : expense.status === "pending"
-                                    ? "text-amber-600 dark:text-amber-400"
-                                    : "text-red-600 dark:text-red-400"
-                              }`}
-                            />
+                          <div className={`h-8 w-8 rounded-lg ${
+                            expense.status === "approved" ? "bg-emerald-100 dark:bg-emerald-900/40" :
+                            expense.status === "pending" ? "bg-amber-100 dark:bg-amber-900/40" :
+                            "bg-red-100 dark:bg-red-900/40"
+                          } flex items-center justify-center`}>
+                            <Receipt className={`h-4 w-4 ${
+                              expense.status === "approved" ? "text-emerald-600" :
+                              expense.status === "pending" ? "text-amber-600" :
+                              "text-red-600"
+                            }`} />
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-slate-900 dark:text-slate-100 dark:text-white">
-                              {expense.name}
-                            </p>
-                            <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                              {expense.date}
-                            </p>
+                            <p className="text-sm font-medium text-slate-900 dark:text-slate-100">{expense.name}</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{expense.date}</p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                            {expense.amount}
-                          </p>
-                          <p
-                            className={`text-xs ${
-                              expense.status === "approved"
-                                ? "text-emerald-600 dark:text-emerald-400"
-                                : expense.status === "pending"
-                                  ? "text-amber-600 dark:text-amber-400"
-                                  : "text-red-600 dark:text-red-400"
-                            }`}
-                          >
-                            {expense.status}
-                          </p>
+                          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{expense.amount}</p>
+                          <p className={`text-xs ${
+                            expense.status === "approved" ? "text-emerald-600" :
+                            expense.status === "pending" ? "text-amber-600" :
+                            "text-red-600"
+                          }`}>{expense.status}</p>
                         </div>
                       </div>
                     ))}
@@ -557,18 +454,13 @@ export default function ExpensesPage() {
                 </div>
               </div>
 
-              {/* Floating badges */}
-              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
-                <Zap className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                  Real-time sync
-                </span>
+              <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-900 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                <Zap className="h-4 w-4 text-emerald-600" />
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">{t("hero.badges.realTimeSync")}</span>
               </div>
-              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-900 dark:bg-slate-800 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
-                <RefreshCw className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                  Auto-categorized
-                </span>
+              <div className="absolute -bottom-3 -left-4 bg-white dark:bg-slate-900 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
+                <RefreshCw className="h-4 w-4 text-cyan-600" />
+                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">{t("hero.badges.autoCategorized")}</span>
               </div>
             </div>
           </div>
@@ -585,54 +477,31 @@ export default function ExpensesPage() {
             viewport={{ once: true }}
           >
             <SectionEyebrow
-              icon={<CreditCard className="h-4 w-4" />}
-              label="Company Cards"
+              iconName={t("cardsSection.eyebrowIcon")}
+              labelKey="cardsSection.eyebrowLabel"
+              t={t}
             />
             <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
-              Spending control at your fingertips
+              {t("cardsSection.title")}
             </ScriptHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Issue virtual and physical cards with custom spending limits.
-              Control where and how your team spends, with real-time
-              notifications and automatic reconciliation.
+              {t("cardsSection.description")}
             </p>
 
             <div className="mt-6 space-y-4">
-              {[
-                {
-                  icon: Lock,
-                  text: "Set custom spending limits per card",
-                  color: "emerald",
-                },
-                {
-                  icon: Clock,
-                  text: "Real-time transaction alerts",
-                  color: "cyan",
-                },
-                {
-                  icon: Shield,
-                  text: "Merchant category controls",
-                  color: "purple",
-                },
-                {
-                  icon: RefreshCw,
-                  text: "Auto-reconciliation with receipts",
-                  color: "blue",
-                },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <div
-                    className={`h-6 w-6 rounded-full bg-${item.color}-100 dark:bg-${item.color}-900/40 flex items-center justify-center`}
-                  >
-                    <item.icon
-                      className={`h-3 w-3 text-${item.color}-600 dark:text-${item.color}-400`}
-                    />
+              {t.raw("cardsSection.features").map((item: any, idx: number) => {
+                const IconComponent = getIconComponent(item.text.includes("limit") ? "Lock" : 
+                  item.text.includes("Real-time") ? "Clock" :
+                  item.text.includes("Merchant") ? "Shield" : "RefreshCw");
+                return (
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className={`h-6 w-6 rounded-full bg-${item.color}-100 dark:bg-${item.color}-900/40 flex items-center justify-center`}>
+                      <IconComponent className={`h-3 w-3 text-${item.color}-600 dark:text-${item.color}-400`} />
+                    </div>
+                    <span className="text-slate-700 dark:text-slate-300">{item.text}</span>
                   </div>
-                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                    {item.text}
-                  </span>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 
@@ -648,29 +517,23 @@ export default function ExpensesPage() {
               <div className="relative bg-linear-to-br from-slate-800 to-slate-900 dark:from-slate-900 dark:to-slate-950 rounded-2xl p-6 shadow-2xl">
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <p className="text-white/60 text-xs">Company Card</p>
-                    <p className="text-white font-semibold text-lg mt-1">
-                      Adon ERP • Marketing
-                    </p>
+                    <p className="text-white/60 text-xs">{t("cardsSection.demo.cardTitle")}</p>
+                    <p className="text-white font-semibold text-lg mt-1">{t("cardsSection.demo.cardSubtitle")}</p>
                   </div>
                   <CreditCard className="h-8 w-8 text-white/40" />
                 </div>
                 <div className="mb-8">
                   <p className="text-white/60 text-xs">Card Number</p>
-                  <p className="text-white font-mono text-lg">
-                    **** **** **** 4242
-                  </p>
+                  <p className="text-white font-mono text-lg">{t("cardsSection.demo.cardNumber")}</p>
                 </div>
                 <div className="flex justify-between">
                   <div>
-                    <p className="text-white/60 text-xs">Limit</p>
-                    <p className="text-white font-semibold">$5,000/month</p>
+                    <p className="text-white/60 text-xs">{t("cardsSection.demo.limit")}</p>
+                    <p className="text-white font-semibold">{t("cardsSection.demo.limitAmount")}</p>
                   </div>
                   <div>
-                    <p className="text-white/60 text-xs">Spent</p>
-                    <p className="text-emerald-400 font-semibold">
-                      $3,247/5,000
-                    </p>
+                    <p className="text-white/60 text-xs">{t("cardsSection.demo.spent")}</p>
+                    <p className="text-emerald-400 font-semibold">{t("cardsSection.demo.spentAmount")}</p>
                   </div>
                 </div>
                 <div className="mt-4 h-1.5 bg-white/10 rounded-full overflow-hidden">
@@ -678,13 +541,12 @@ export default function ExpensesPage() {
                 </div>
               </div>
             </div>
-            <div className="absolute -right-3 -top-3 h-20 w-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full blur-2xl -z-10" />
           </motion.div>
         </div>
       </section>
 
       {/* Smart Capture Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 rounded-3xl my-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -694,41 +556,31 @@ export default function ExpensesPage() {
             className="order-2 lg:order-1"
           >
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
+              <div className="bg-slate-50 dark:bg-slate-800/40 border-b dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center gap-2">
-                  <Scan className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                    Smart Receipt Capture
-                  </span>
+                  <Scan className="h-4 w-4 text-emerald-600" />
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{t("captureSection.demo.title")}</span>
                 </div>
               </div>
               <div className="p-5">
                 <div className="border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-xl p-8 text-center">
                   <div className="h-16 w-16 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mb-4">
-                    <Camera className="h-8 w-8 text-emerald-600 dark:text-emerald-400" />
+                    <Camera className="h-8 w-8 text-emerald-600" />
                   </div>
-                  <p className="text-slate-600 dark:text-slate-300 mb-2">
-                    Drag & drop or click to upload
-                  </p>
-                  <p className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">
-                    Supports PDF, PNG, JPG up to 10MB
-                  </p>
+                  <p className="text-slate-600 dark:text-slate-300 mb-2">{t("captureSection.demo.dragText")}</p>
+                  <p className="text-xs text-slate-400">{t("captureSection.demo.supportText")}</p>
                   <button className="mt-4 text-sm bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
-                    Upload Receipt
+                    {t("captureSection.demo.uploadButton")}
                   </button>
                 </div>
                 <div className="mt-4 space-y-2">
                   <div className="flex items-center gap-3 p-2 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                    <span className="text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                      AI-powered data extraction
-                    </span>
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600" />
+                    <span className="text-sm text-slate-700 dark:text-slate-300">{t("captureSection.demo.aiFeature")}</span>
                   </div>
                   <div className="flex items-center gap-3 p-2 bg-cyan-50 dark:bg-cyan-950/30 rounded-lg">
-                    <Sparkles className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                    <span className="text-sm text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                      98% recognition accuracy
-                    </span>
+                    <Sparkles className="h-4 w-4 text-cyan-600" />
+                    <span className="text-sm text-slate-700 dark:text-slate-300">{t("captureSection.demo.accuracyFeature")}</span>
                   </div>
                 </div>
               </div>
@@ -743,34 +595,25 @@ export default function ExpensesPage() {
             className="order-1 lg:order-2"
           >
             <SectionEyebrow
-              icon={<Camera className="h-4 w-4" />}
-              label="Smart Capture"
+              iconName={t("captureSection.eyebrowIcon")}
+              labelKey="captureSection.eyebrowLabel"
+              t={t}
             />
             <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
-              Scan. Snap. Submit.
+              {t("captureSection.title")}
             </ScriptHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Take a photo of any receipt and our AI automatically extracts
-              merchant, amount, date, and category. No more manual data entry or
-              lost receipts.
+              {t("captureSection.description")}
             </p>
 
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="text-center p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">
-                <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
-                  98%
-                </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                  Recognition Rate
-                </div>
+                <div className="text-2xl font-bold text-emerald-600">{t("captureSection.metrics.recognitionRate")}</div>
+                <div className="text-xs text-slate-500">{t("captureSection.metrics.recognitionLabel")}</div>
               </div>
               <div className="text-center p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">
-                <div className="text-2xl font-bold text-cyan-600 dark:text-cyan-400">
-                  3s
-                </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                  Processing Time
-                </div>
+                <div className="text-2xl font-bold text-cyan-600">{t("captureSection.metrics.processingTime")}</div>
+                <div className="text-xs text-slate-500">{t("captureSection.metrics.processingLabel")}</div>
               </div>
             </div>
           </motion.div>
@@ -787,30 +630,22 @@ export default function ExpensesPage() {
             viewport={{ once: true }}
           >
             <SectionEyebrow
-              icon={<Users className="h-4 w-4" />}
-              label="Approval Workflow"
+              iconName={t("approvalSection.eyebrowIcon")}
+              labelKey="approvalSection.eyebrowLabel"
+              t={t}
             />
             <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
-              Smart approvals, zero delays
+              {t("approvalSection.title")}
             </ScriptHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Set up custom approval rules based on amount, department, or
-              category. Managers get instant notifications and can approve or
-              reject in one click.
+              {t("approvalSection.description")}
             </p>
 
             <div className="mt-6 space-y-3">
-              {[
-                "Multi-level approval chains",
-                "Auto-approve for low amounts",
-                "Real-time notifications",
-                "Audit trail for every expense",
-              ].map((feature, idx) => (
+              {t.raw("approvalSection.features").map((feature: string, idx: number) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                    {feature}
-                  </span>
+                  <CheckCircle2 className="h-5 w-5 text-emerald-600" />
+                  <span className="text-slate-700 dark:text-slate-300">{feature}</span>
                 </div>
               ))}
             </div>
@@ -823,43 +658,31 @@ export default function ExpensesPage() {
             viewport={{ once: true }}
           >
             <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-              <div className="bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800 border-b dark:border-slate-700 px-5 py-3">
+              <div className="bg-slate-50 dark:bg-slate-800/40 border-b dark:border-slate-700 px-5 py-3">
                 <div className="flex items-center gap-2">
-                  <Bell className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                    Pending Approvals
-                  </span>
+                  <Bell className="h-4 w-4 text-emerald-600" />
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{t("approvalSection.demo.title")}</span>
                 </div>
               </div>
               <div className="divide-y divide-slate-100 dark:divide-slate-800">
-                {teamMembers.map((member, idx) => (
+                {teamMembersList.map((member: any, idx: number) => (
                   <div
                     key={idx}
-                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/60 dark:bg-slate-800/40 dark:hover:bg-slate-800/50 transition"
+                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/60 transition"
                   >
                     <div className="flex items-center gap-3">
                       <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                        <img
-                          src={member.avatar}
-                          alt={member.name}
-                          className="h-full w-full object-cover"
-                        />
+                        <div className="h-full w-full bg-slate-300 dark:bg-slate-600" />
                       </div>
                       <div>
-                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100 dark:text-white">
-                          {member.name}
-                        </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                          {member.role}
-                        </p>
+                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100">{member.name}</p>
+                        <p className="text-xs text-slate-500">{member.role}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-sm font-semibold text-amber-600 dark:text-amber-400">
-                        {member.pending} pending
-                      </span>
+                      <span className="text-sm font-semibold text-amber-600">{member.pending} pending</span>
                       <button className="text-xs bg-emerald-600 text-white px-3 py-1 rounded-lg hover:bg-emerald-700 transition">
-                        Review
+                        {t("approvalSection.demo.reviewButton")}
                       </button>
                     </div>
                   </div>
@@ -871,22 +694,19 @@ export default function ExpensesPage() {
       </section>
 
       {/* Expense Categories Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 rounded-3xl my-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <SectionEyebrow
-            icon={<PieChart className="h-4 w-4" />}
-            label="Spending Insights"
+            iconName={t("categoriesSection.eyebrowIcon")}
+            labelKey="categoriesSection.eyebrowLabel"
+            t={t}
           />
-          <ScriptHeading className="mt-4">
-            See where your money goes
-          </ScriptHeading>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-            Auto-categorized expenses with visual breakdowns and trends.
-          </p>
+          <ScriptHeading className="mt-4">{t("categoriesSection.title")}</ScriptHeading>
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{t("categoriesSection.description")}</p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {expenseCategories.map((category, idx) => (
+          {categoriesList.map((category: any, idx: number) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -897,30 +717,25 @@ export default function ExpensesPage() {
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <div
-                    className={`h-10 w-10 rounded-xl bg-${category.color}-100 dark:bg-${category.color}-900/40 flex items-center justify-center`}
-                  >
-                    <category.icon
-                      className={`h-5 w-5 text-${category.color}-600 dark:text-${category.color}-400`}
-                    />
+                  <div className={`h-10 w-10 rounded-xl bg-${category.color}-100 dark:bg-${category.color}-900/40 flex items-center justify-center`}>
+                    {(() => {
+                      const IconComponent = getIconComponent(category.name === "Rent & Utilities" ? "Home" :
+                        category.name === "Salaries" ? "Users" :
+                        category.name === "Office Supplies" ? "Coffee" :
+                        category.name === "Travel" ? "Car" :
+                        category.name === "Marketing" ? "Megaphone" : "BookOpen");
+                      return <IconComponent className={`h-5 w-5 text-${category.color}-600`} />;
+                    })()}
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                      {category.name}
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                      {category.amount}
-                    </p>
+                    <p className="font-semibold text-slate-900 dark:text-slate-100">{category.name}</p>
+                    <p className="text-xs text-slate-500">{category.amount}</p>
                   </div>
                 </div>
-                <span className="text-sm font-semibold text-slate-600 dark:text-slate-300 dark:text-slate-400">
-                  {category.percentage}%
-                </span>
+                <span className="text-sm font-semibold text-slate-600">{category.percentage}%</span>
               </div>
               <div className="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                <div
-                  className={`h-full w-[${category.percentage}%] bg-${category.color}-500 rounded-full`}
-                />
+                <div className={`h-full w-[${category.percentage}%] bg-${category.color}-500 rounded-full`} />
               </div>
             </motion.div>
           ))}
@@ -944,49 +759,31 @@ export default function ExpensesPage() {
                   <div className="bg-linear-to-r from-emerald-600 to-cyan-600 p-4">
                     <div className="flex items-center justify-between text-white">
                       <Smartphone className="h-5 w-5" />
-                      <span className="text-sm font-semibold">
-                        Expense Tracker
-                      </span>
+                      <span className="text-sm font-semibold">{t("mobileSection.demo.appName")}</span>
                       <Bell className="h-5 w-5" />
                     </div>
                   </div>
                   <div className="p-4 space-y-3">
                     <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-xl p-3">
                       <div className="flex items-center gap-2 mb-2">
-                        <Camera className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                        <span className="text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                          Receipt scanned
-                        </span>
+                        <Camera className="h-4 w-4 text-emerald-600" />
+                        <span className="text-sm font-medium text-slate-700">{t("mobileSection.demo.scannedLabel")}</span>
                       </div>
                       <div className="space-y-1">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
-                            Starbucks Coffee
-                          </span>
-                          <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                            $12.50
-                          </span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
-                            Uber Ride
-                          </span>
-                          <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                            $24.00
-                          </span>
-                        </div>
+                        {t.raw("mobileSection.demo.items").map((item: any, idx: number) => (
+                          <div key={idx} className="flex justify-between text-sm">
+                            <span className="text-slate-600">{item.name}</span>
+                            <span className="text-slate-700">{item.amount}</span>
+                          </div>
+                        ))}
                         <div className="border-t dark:border-slate-800 pt-1 flex justify-between font-semibold text-sm">
-                          <span className="text-slate-900 dark:text-slate-100 dark:text-white">
-                            Total
-                          </span>
-                          <span className="text-slate-900 dark:text-slate-100 dark:text-white">
-                            $36.50
-                          </span>
+                          <span className="text-slate-900">{t("mobileSection.demo.total")}</span>
+                          <span className="text-slate-900">{t("mobileSection.demo.totalAmount")}</span>
                         </div>
                       </div>
                     </div>
                     <button className="w-full bg-emerald-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition">
-                      Submit for Approval
+                      {t("mobileSection.demo.submitButton")}
                     </button>
                   </div>
                 </div>
@@ -1002,26 +799,26 @@ export default function ExpensesPage() {
             className="order-1 lg:order-2"
           >
             <SectionEyebrow
-              icon={<Smartphone className="h-4 w-4" />}
-              label="Mobile App"
+              iconName={t("mobileSection.eyebrowIcon")}
+              labelKey="mobileSection.eyebrowLabel"
+              t={t}
             />
             <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
-              Expenses on the{" "}
-              <span className="text-emerald-600 dark:text-emerald-400">go</span>
+              {t("mobileSection.title")}{" "}
+              <span className="text-emerald-600">{t("mobileSection.titleHighlight")}</span>
             </ScriptHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Capture receipts, track mileage, and submit expenses from
-              anywhere. Our mobile app makes expense reporting effortless.
+              {t("mobileSection.description")}
             </p>
 
             <div className="mt-6 flex gap-3">
-              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 dark:hover:bg-slate-700 transition text-sm">
-                <Apple className="h-4 w-4" />
-                App Store
-              </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 dark:hover:bg-slate-700 transition text-sm">
+              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 transition text-sm">
                 <Smartphone className="h-4 w-4" />
-                Google Play
+                {t("mobileSection.appStore")}
+              </button>
+              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 transition text-sm">
+                <Smartphone className="h-4 w-4" />
+                {t("mobileSection.googlePlay")}
               </button>
             </div>
           </motion.div>
@@ -1029,50 +826,40 @@ export default function ExpensesPage() {
       </section>
 
       {/* Integrations Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/30 rounded-3xl my-8">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-800/40 rounded-3xl my-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <SectionEyebrow
-            icon={<RefreshCw className="h-4 w-4" />}
-            label="Integrations"
+            iconName={t("integrationsSection.eyebrowIcon")}
+            labelKey="integrationsSection.eyebrowLabel"
+            t={t}
           />
-          <ScriptHeading className="mt-4">
-            Connect with your stack
-          </ScriptHeading>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-            Seamless integration with your favorite tools and accounting
-            software.
-          </p>
+          <ScriptHeading className="mt-4">{t("integrationsSection.title")}</ScriptHeading>
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">{t("integrationsSection.description")}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {[
-            { name: "QuickBooks", icon: Database, color: "emerald" },
-            { name: "Xero", icon: Cloud, color: "cyan" },
-            { name: "Stripe", icon: CreditCard, color: "purple" },
-            { name: "Slack", icon: MessageCircle, color: "blue" },
-            { name: "Expensify", icon: Receipt, color: "orange" },
-            { name: "SAP", icon: Server, color: "indigo" },
-          ].map((integration, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-slate-900 rounded-xl p-4 text-center border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all hover:-translate-y-1"
-            >
-              <div
-                className={`h-12 w-12 mx-auto rounded-xl bg-${integration.color}-100 dark:bg-${integration.color}-900/40 flex items-center justify-center mb-3`}
+          {integrationsList.map((integration: any, idx: number) => {
+            const IconComponent = integration.name === "QuickBooks" ? Database :
+              integration.name === "Xero" ? Cloud :
+              integration.name === "Stripe" ? CreditCard :
+              integration.name === "Slack" ? MessageCircle :
+              integration.name === "Expensify" ? Receipt : Server;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-slate-900 rounded-xl p-4 text-center border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all hover:-translate-y-1"
               >
-                <integration.icon
-                  className={`h-6 w-6 text-${integration.color}-600 dark:text-${integration.color}-400`}
-                />
-              </div>
-              <p className="font-semibold text-sm text-slate-900 dark:text-slate-100 dark:text-white">
-                {integration.name}
-              </p>
-            </motion.div>
-          ))}
+                <div className={`h-12 w-12 mx-auto rounded-xl bg-${integration.color}-100 dark:bg-${integration.color}-900/40 flex items-center justify-center mb-3`}>
+                  <IconComponent className={`h-6 w-6 text-${integration.color}-600`} />
+                </div>
+                <p className="font-semibold text-sm text-slate-900 dark:text-slate-100">{integration.name}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
@@ -1086,35 +873,20 @@ export default function ExpensesPage() {
 
           <div className="relative">
             <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-5 w-5 fill-yellow-400 text-yellow-400"
-                />
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-
             <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-200 leading-relaxed max-w-3xl mx-auto mb-6">
-              "Adon ERP transformed how we manage expenses. We've cut processing
-              time by 75% and eliminated paper receipts entirely. The AI capture
-              is incredibly accurate."
+              "{t("testimonialSection.quote")}"
             </p>
-
             <div className="flex items-center justify-center gap-4">
               <div className="h-12 w-12 rounded-full bg-linear-to-br from-emerald-500 to-cyan-500 overflow-hidden">
-                <img
-                  src="https://randomuser.me/api/portraits/women/1.jpg"
-                  alt="Sarah"
-                  className="h-full w-full object-cover"
-                />
+                <div className="h-full w-full bg-slate-300" />
               </div>
               <div className="text-left">
-                <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                  Sarah Johnson
-                </p>
-                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                  CFO, TechFlow Solutions
-                </p>
+                <p className="font-semibold text-slate-900 dark:text-slate-100">{t("testimonialSection.name")}</p>
+                <p className="text-sm text-slate-500">{t("testimonialSection.role")}</p>
               </div>
             </div>
           </div>
@@ -1122,10 +894,7 @@ export default function ExpensesPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section
-        id="get-started"
-        className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"
-      >
+      <section id="get-started" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-slate-900 via-emerald-900 to-cyan-900 px-6 py-16 text-center shadow-2xl sm:px-10">
           <div className="absolute inset-0 bg-noise opacity-5" />
           <div className="absolute -top-20 -right-20 h-64 w-64 bg-emerald-500 rounded-full blur-3xl opacity-20" />
@@ -1134,36 +903,32 @@ export default function ExpensesPage() {
           <div className="relative">
             <Rocket className="h-12 w-12 text-emerald-400 mx-auto mb-6" />
             <ScriptHeading className="text-white text-4xl sm:text-5xl">
-              Free, forever, with unlimited cards
+              {t("ctaBanner.title")}
             </ScriptHeading>
             <p className="mt-4 text-lg text-emerald-100 max-w-2xl mx-auto">
-              Join thousands of businesses that have simplified their expense
-              management. Start your journey today.
+              {t("ctaBanner.description")}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5 dark:bg-slate-950 dark:text-slate-100"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-900 text-slate-900 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
               >
-                Start Free Trial
+                {t("ctaBanner.trialButton")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="#"
                 className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm text-white px-6 py-3 font-semibold border border-white/20 hover:bg-white/20 transition"
               >
-                Contact Sales
+                {t("ctaBanner.salesButton")}
               </Link>
             </div>
 
-            <p className="mt-6 text-sm text-emerald-200/80">
-               • Free forever plan • Cancel anytime
-            </p>
+            <p className="mt-6 text-sm text-emerald-200/80">{t("ctaBanner.footerText")}</p>
           </div>
         </div>
       </section>
     </main>
   );
 }
-
