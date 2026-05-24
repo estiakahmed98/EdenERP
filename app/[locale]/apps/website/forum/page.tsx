@@ -96,16 +96,18 @@ const avatars = [
 
 export default function ForumLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Connect with{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="text-[#02a6a6]">your community</span>
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                your community
+              </span>
             </HandUnderline>
           </h1>
 
@@ -117,48 +119,44 @@ export default function ForumLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400">
-            Free, forever, with unlimited users
-          </p>
-
           <div className="relative mx-auto mt-16 max-w-4xl">
-            <div className="absolute -left-10 -top-10 hidden text-rose-400 sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
-              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-5 py-4">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4">
                 <div className="flex items-center gap-3">
                   <span
-                    className="text-xl font-bold text-orange-700"
+                    className="text-xl font-bold text-orange-700 dark:text-orange-400"
                     style={{ fontFamily: handwrittenFont }}
                   >
                     Monkey Coffee Lab
                   </span>
-                  <span className="hidden text-xs text-slate-400 sm:block">
+                  <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
                     Home / Shop / Forum / About
                   </span>
                 </div>
 
-                <button className="rounded-md bg-orange-600 px-4 py-2 text-xs font-bold text-white">
+                <button className="rounded-md bg-orange-600 dark:bg-orange-700 px-4 py-2 text-xs font-bold text-white hover:bg-orange-700 transition">
                   Contact us
                 </button>
               </div>
 
-              <div className="grid min-h-[420px] lg:grid-cols-[230px_1fr]">
+              <div className="grid min-h-105 lg:grid-cols-[230px_1fr]">
                 <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
                   <div className="flex items-center gap-3">
                     <img
@@ -167,7 +165,7 @@ export default function ForumLandingSections() {
                       className="h-10 w-10 rounded-full object-cover"
                     />
                     <div>
-                      <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      <p className="text-sm font-bold text-slate-900 dark:text-white">
                         Robin Cole
                       </p>
                       <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -188,7 +186,7 @@ export default function ForumLandingSections() {
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
                           index === 0
-                            ? "bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
+                            ? "bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
                             : "text-slate-500 dark:text-slate-400"
                         }`}
                       >
@@ -205,7 +203,7 @@ export default function ForumLandingSections() {
                       {["Help", "Tips", "Support"].map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 px-3 py-1 text-[11px] font-bold text-slate-500 dark:text-slate-400"
+                          className="rounded-full bg-white dark:bg-slate-800 px-3 py-1 text-[11px] font-bold text-slate-500 dark:text-slate-400"
                         >
                           {tag}
                         </span>
@@ -214,10 +212,10 @@ export default function ForumLandingSections() {
                   </div>
                 </aside>
 
-                <div className="bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 text-left">
+                <div className="bg-white dark:bg-slate-900 p-6 text-left">
                   <div className="mb-5 flex items-center justify-between gap-4">
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                         The coffee lovers corner
                       </h3>
                       <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
@@ -225,14 +223,14 @@ export default function ForumLandingSections() {
                       </p>
                     </div>
 
-                    <button className="rounded-md bg-orange-600 px-4 py-2 text-xs font-bold text-white">
+                    <button className="rounded-md bg-orange-600 dark:bg-orange-700 px-4 py-2 text-xs font-bold text-white hover:bg-orange-700 transition">
                       New Post
                     </button>
                   </div>
 
-                  <div className="mb-5 flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3">
-                    <Search className="h-4 w-4 text-slate-400" />
-                    <span className="text-sm text-slate-400">
+                  <div className="mb-5 flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3">
+                    <Search className="h-4 w-4 text-slate-400 dark:text-slate-500" />
+                    <span className="text-sm text-slate-400 dark:text-slate-500">
                       Search discussions...
                     </span>
                   </div>
@@ -270,18 +268,18 @@ export default function ForumLandingSections() {
                     ].map((post, index) => (
                       <div
                         key={post.title}
-                        className="grid gap-4 rounded-lg border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-sm sm:grid-cols-[1fr_90px_90px_120px]"
+                        className="grid gap-4 rounded-lg border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm sm:grid-cols-[1fr_90px_90px_120px]"
                       >
                         <div>
-                          <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                          <p className="font-bold text-slate-900 dark:text-white">
                             {post.title}
                           </p>
                           <div className="mt-2 flex items-center gap-2">
                             <span
                               className={`rounded-full px-2 py-1 text-[10px] font-bold ${
                                 index === 0
-                                  ? "bg-emerald-50 text-emerald-600"
-                                  : "bg-slate-100 text-slate-500 dark:text-slate-400"
+                                  ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
+                                  : "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400"
                               }`}
                             >
                               {post.tag}
@@ -292,7 +290,7 @@ export default function ForumLandingSections() {
                                   key={avatar}
                                   src={avatar}
                                   alt="User"
-                                  className="h-6 w-6 rounded-full border-2 border-white object-cover"
+                                  className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 object-cover"
                                 />
                               ))}
                             </div>
@@ -300,20 +298,20 @@ export default function ForumLandingSections() {
                         </div>
 
                         <div className="text-sm text-slate-500 dark:text-slate-400">
-                          <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                          <span className="font-bold text-slate-900 dark:text-white">
                             {post.replies}
                           </span>{" "}
                           replies
                         </div>
 
                         <div className="text-sm text-slate-500 dark:text-slate-400">
-                          <span className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                          <span className="font-bold text-slate-900 dark:text-white">
                             {post.views}
                           </span>{" "}
                           views
                         </div>
 
-                        <div className="text-sm text-slate-400">
+                        <div className="text-sm text-slate-400 dark:text-slate-500">
                           {post.time}
                         </div>
                       </div>
@@ -325,20 +323,20 @@ export default function ForumLandingSections() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-[#f3f4f7] py-20">
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-center text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl lg:text-left"
+              className="text-center text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-left"
               style={{ fontFamily: handwrittenFont }}
             >
               By and for the{" "}
               <span className="relative inline-block">
                 <span className="relative z-10">community</span>
-                <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[5px] border-orange-300" />
+                <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[5px] border-orange-300 dark:border-orange-600" />
               </span>
             </h2>
 
@@ -348,15 +346,15 @@ export default function ForumLandingSections() {
               problem-solving discussions.
             </p>
 
-            <div className="mt-10 flex max-w-xs items-center gap-3 rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100">
-              <MessageCircle className="h-4 w-4 text-rose-500" />
+            <div className="mt-10 flex max-w-xs items-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
+              <MessageCircle className="h-4 w-4 text-rose-500 dark:text-rose-400" />
               Get customer service
             </div>
           </div>
 
           <div className="relative">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                 The best brushes for pottery?
               </h3>
 
@@ -365,17 +363,17 @@ export default function ForumLandingSections() {
                   {
                     name: "Alex Martin",
                     text: "Which brush is best for smooth details?",
-                    bg: "bg-white dark:bg-slate-950 dark:bg-slate-900",
+                    bg: "bg-white dark:bg-slate-800",
                   },
                   {
                     name: "Kate Rowan",
                     text: "I recommend soft natural brushes for clean strokes.",
-                    bg: "bg-emerald-50",
+                    bg: "bg-emerald-50 dark:bg-emerald-950/30",
                   },
                   {
                     name: "Thomas Joseph",
                     text: "Thanks! This was super helpful.",
-                    bg: "bg-white dark:bg-slate-950 dark:bg-slate-900",
+                    bg: "bg-white dark:bg-slate-800",
                   },
                 ].map((item, index) => (
                   <div
@@ -389,10 +387,12 @@ export default function ForumLandingSections() {
                         className="h-9 w-9 rounded-full object-cover"
                       />
                       <div>
-                        <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                        <p className="text-sm font-bold text-slate-900 dark:text-white">
                           {item.name}
                         </p>
-                        <p className="text-xs text-slate-400">Community user</p>
+                        <p className="text-xs text-slate-400 dark:text-slate-500">
+                          Community user
+                        </p>
                       </div>
                     </div>
                     <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
@@ -406,17 +406,17 @@ export default function ForumLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <Trophy className="mx-auto h-12 w-12 text-amber-500" />
+          <Trophy className="mx-auto h-12 w-12 text-amber-500 dark:text-amber-400" />
 
           <h2
-            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Gamification drives{" "}
-            <HandUnderline color="bg-rose-300">
-              <span>motivation</span>
+            <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+              <span className="dark:text-rose-200">motivation</span>
             </HandUnderline>
           </h2>
 
@@ -426,12 +426,12 @@ export default function ForumLandingSections() {
             features and responsibilities.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
-            <div className="bg-[#714b67] px-6 py-5 text-left text-white">
+          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <div className="bg-[#714b67] dark:bg-[#8a5a7e] px-6 py-5 text-left text-white">
               <p className="text-xl font-bold">All Users</p>
             </div>
 
-            <div className="grid gap-5 bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 sm:grid-cols-3">
+            <div className="grid gap-5 bg-white dark:bg-slate-900 p-6 sm:grid-cols-3">
               {[
                 ["Robin Bineau", "2877 XP", avatars[0]],
                 ["Marine Duvelle", "1791 XP", avatars[1]],
@@ -439,14 +439,14 @@ export default function ForumLandingSections() {
               ].map(([name, score, avatar]) => (
                 <div
                   key={name}
-                  className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5 text-center ring-1 ring-slate-100"
+                  className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-5 text-center ring-1 ring-slate-100 dark:ring-slate-700"
                 >
                   <img
                     src={avatar}
                     alt={name}
                     className="mx-auto h-20 w-20 rounded-full object-cover"
                   />
-                  <p className="mt-4 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <p className="mt-4 font-bold text-slate-900 dark:text-white">
                     {name}
                   </p>
                   <p className="mt-1 text-sm text-[#714b67] dark:text-[#9b6a8f]">
@@ -477,22 +477,22 @@ export default function ForumLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
-        <div className="absolute right-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] lg:block" />
+      <section className="relative bg-white dark:bg-slate-950 py-20">
+        <div className="absolute right-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#02cfc3] dark:bg-[#02cfc3]/30 text-slate-900 dark:text-white dark:text-slate-100 shadow-[8px_8px_0_rgba(15,23,42,0.9)]">
+            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#02cfc3] dark:bg-[#02cfc3]/30 text-slate-900 dark:text-white shadow-[8px_8px_0_rgba(15,23,42,0.9)] dark:shadow-[8px_8px_0_rgba(0,0,0,0.5)]">
               <Palette className="h-9 w-9" />
             </div>
 
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <span className="relative inline-block">
                 <span className="relative z-10">Customize</span>
-                <span className="absolute bottom-2 left-0 h-5 w-full rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
+                <span className="absolute bottom-2 left-0 h-5 w-full rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/40" />
               </span>{" "}
               your
               <br />
@@ -506,20 +506,22 @@ export default function ForumLandingSections() {
           </div>
 
           <div className="relative">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-4 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="font-bold text-slate-900 dark:text-white">
                   Your Answer
                 </p>
-                <span className="text-sm text-slate-400">•••</span>
+                <span className="text-sm text-slate-400 dark:text-slate-500">
+                  •••
+                </span>
               </div>
 
-              <div className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-4">
+              <div className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4">
                 <div className="mb-4 flex gap-2">
                   {["B", "I", "U", "Link", "Image", "Code"].map((tool) => (
                     <span
                       key={tool}
-                      className="rounded bg-white dark:bg-slate-950 dark:bg-slate-900 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400"
+                      className="rounded bg-white dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400"
                     >
                       {tool}
                     </span>
@@ -527,22 +529,22 @@ export default function ForumLandingSections() {
                 </div>
 
                 <div className="space-y-3">
-                  <div className="h-3 w-full rounded bg-slate-200" />
-                  <div className="h-3 w-11/12 rounded bg-slate-200" />
-                  <div className="h-3 w-4/5 rounded bg-slate-200" />
-                  <div className="h-24 rounded bg-white dark:bg-slate-950 dark:bg-slate-900 ring-1 ring-slate-100" />
+                  <div className="h-3 w-full rounded bg-slate-200 dark:bg-slate-700" />
+                  <div className="h-3 w-11/12 rounded bg-slate-200 dark:bg-slate-700" />
+                  <div className="h-3 w-4/5 rounded bg-slate-200 dark:bg-slate-700" />
+                  <div className="h-24 rounded bg-white dark:bg-slate-800 ring-1 ring-slate-100 dark:ring-slate-700" />
                 </div>
               </div>
             </div>
 
-            <div className="absolute -bottom-16 left-8 hidden w-56 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-4 shadow-xl lg:block">
+            <div className="absolute -bottom-16 left-8 hidden w-56 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-xl lg:block">
               {["Bold text", "Upload image", "Embed video", "Insert quote"].map(
                 (item) => (
                   <div
                     key={item}
                     className="mb-2 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 last:mb-0"
                   >
-                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
                     {item}
                   </div>
                 ),
@@ -554,22 +556,22 @@ export default function ForumLandingSections() {
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
+              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>right.</span>
+              <span className="dark:text-[#02cfc3]">right.</span>
             </HandUnderline>
           </h2>
 
@@ -577,17 +579,17 @@ export default function ForumLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
 
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -600,26 +602,26 @@ export default function ForumLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span>need</span>
+              <span className="dark:text-[#02cfc3]">need</span>
             </HandUnderline>
             , one{" "}
-            <HandUnderline color="bg-sky-300">
-              <span>app.</span>
+            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
+              <span className="dark:text-sky-200">app.</span>
             </HandUnderline>
           </h2>
 
@@ -634,14 +636,14 @@ export default function ForumLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -655,14 +657,14 @@ export default function ForumLandingSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all Apps <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -670,7 +672,7 @@ export default function ForumLandingSections() {
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -681,7 +683,7 @@ export default function ForumLandingSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -692,7 +694,7 @@ export default function ForumLandingSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -700,9 +702,9 @@ export default function ForumLandingSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -713,12 +715,14 @@ export default function ForumLandingSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">“</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                “
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   Adon ensures product quality and triples production without
                   extra hiring.
                 </p>
@@ -731,7 +735,7 @@ export default function ForumLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Mark Anderson
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -744,31 +748,33 @@ export default function ForumLandingSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
               <br />
               your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400"></p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>

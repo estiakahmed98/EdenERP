@@ -99,11 +99,11 @@ const avatars = [
 
 export default function LiveChatLandingSections() {
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 pt-16">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-900 dark:text-white dark:bg-slate-950 dark:text-slate-100">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Every chat{" "}
@@ -128,7 +128,7 @@ export default function LiveChatLandingSections() {
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
@@ -143,7 +143,7 @@ export default function LiveChatLandingSections() {
               <Sparkles className="h-12 w-12 rotate-[-20deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
               <div className="relative min-h-[440px] bg-[url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1400&auto=format&fit=crop')] bg-cover bg-center">
                 <div className="absolute inset-0 bg-black/45" />
 
@@ -193,7 +193,7 @@ export default function LiveChatLandingSections() {
                     ].map((chat) => (
                       <div
                         key={chat.name}
-                        className="overflow-hidden rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-2xl"
+                        className="overflow-hidden rounded-xl bg-white dark:bg-slate-950 shadow-2xl"
                       >
                         <div
                           className={`flex items-center justify-between px-4 py-3 text-white ${chat.color}`}
@@ -228,10 +228,10 @@ export default function LiveChatLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-rose-300">
@@ -264,7 +264,7 @@ export default function LiveChatLandingSections() {
             ].map((chat, index) => (
               <div
                 key={chat.name}
-                className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]"
+                className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)]"
               >
                 <div
                   className={`flex items-center justify-between px-5 py-4 text-white ${chat.color}`}
@@ -315,14 +315,14 @@ export default function LiveChatLandingSections() {
         </div>
       </section>
 
-      <section className="relative bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="absolute left-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] lg:block" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="grid gap-5 lg:grid-cols-[1fr_180px]">
               <div className="text-left">
-                <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <p className="font-bold text-slate-900 dark:text-white">
                   Opportunity
                 </p>
                 <div className="mt-5 space-y-3">
@@ -365,7 +365,7 @@ export default function LiveChatLandingSections() {
 
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <span className="relative inline-block">
@@ -387,11 +387,11 @@ export default function LiveChatLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2
-              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Help is just a click away
@@ -404,14 +404,14 @@ export default function LiveChatLandingSections() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
             <div className="mb-5 grid gap-4 sm:grid-cols-3">
               {["Open", "Pending", "Solved"].map((status, index) => (
                 <div
                   key={status}
                   className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-center"
                 >
-                  <p className="text-2xl font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <p className="text-2xl font-bold text-slate-900 dark:text-white">
                     {[24, 11, 87][index]}
                   </p>
                   <p className="mt-1 text-xs font-bold text-slate-500 dark:text-slate-400">
@@ -454,7 +454,7 @@ export default function LiveChatLandingSections() {
                   Latest conversation
                 </p>
                 <div className="mt-4 space-y-2">
-                  <div className="rounded-xl bg-white dark:bg-slate-950 dark:bg-slate-900 px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
+                  <div className="rounded-xl bg-white dark:bg-slate-950 px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
                     Can I update my order?
                   </div>
                   <div className="rounded-xl bg-emerald-50 px-3 py-2 text-xs text-emerald-700">
@@ -467,10 +467,10 @@ export default function LiveChatLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Turn “visitor” into{" "}
@@ -485,7 +485,7 @@ export default function LiveChatLandingSections() {
             automatic lead creation, customer records, and sales follow-up.
           </p>
 
-          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
             <div className="border-b border-slate-100 dark:border-slate-700 bg-[#714b67] px-6 py-4 text-left text-white">
               <p className="font-bold">Audrey Peterson&apos;s opportunity</p>
             </div>
@@ -506,7 +506,7 @@ export default function LiveChatLandingSections() {
                       <p className="text-xs font-bold text-slate-400">
                         {label}
                       </p>
-                      <p className="mt-2 font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                      <p className="mt-2 font-bold text-slate-900 dark:text-white">
                         {value}
                       </p>
                     </div>
@@ -514,7 +514,7 @@ export default function LiveChatLandingSections() {
                 </div>
 
                 <div className="mt-6 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
-                  <p className="text-sm font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <p className="text-sm font-bold text-slate-900 dark:text-white">
                     Notes
                   </p>
                   <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
@@ -555,7 +555,7 @@ export default function LiveChatLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <div className="mb-6 flex justify-end lg:hidden">
@@ -563,7 +563,7 @@ export default function LiveChatLandingSections() {
             </div>
 
             <h2
-              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
               <span className="relative inline-block">
@@ -584,13 +584,13 @@ export default function LiveChatLandingSections() {
           <div className="relative">
             <UserPlus className="absolute -right-8 -top-16 hidden h-16 w-16 text-amber-400 lg:block" />
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
+            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)]">
               <div className="mb-5 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#714b67] text-white">
                   <Bot className="h-7 w-7" />
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                  <p className="font-bold text-slate-900 dark:text-white">
                     Chatbot flows
                   </p>
                   <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -638,7 +638,7 @@ export default function LiveChatLandingSections() {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl"
+            className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
@@ -657,7 +657,7 @@ export default function LiveChatLandingSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white bg-white dark:bg-slate-950 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
@@ -667,7 +667,7 @@ export default function LiveChatLandingSections() {
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
 
@@ -687,10 +687,10 @@ export default function LiveChatLandingSections() {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-slate-950 dark:bg-slate-900 py-20 sm:py-28">
+      <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
-            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+            className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
@@ -714,14 +714,14 @@ export default function LiveChatLandingSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 dark:bg-slate-900 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 dark:bg-slate-900 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 text-[#02a6a6] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
@@ -742,7 +742,7 @@ export default function LiveChatLandingSections() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white dark:bg-slate-950 dark:bg-slate-900 py-20">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
@@ -782,7 +782,7 @@ export default function LiveChatLandingSections() {
 
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white dark:bg-slate-950/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
@@ -812,7 +812,7 @@ export default function LiveChatLandingSections() {
                   />
 
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Mike Hills
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -830,7 +830,7 @@ export default function LiveChatLandingSections() {
             </div>
 
             <h2
-              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-5xl"
+              className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
               Unleash
@@ -886,7 +886,7 @@ function DashedArrow({ className = "" }: { className?: string }) {
 function FloatingNote({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 dark:bg-slate-900 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-950 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 ${className}`}
     >
       <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-rose-400" />
       <img
@@ -894,8 +894,9 @@ function FloatingNote({ className = "" }: { className?: string }) {
         alt="User"
         className="absolute left-3 h-12 w-12 rounded-full object-cover"
       />
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white dark:text-slate-100" />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
       Share information and make connections
     </div>
   );
 }
+

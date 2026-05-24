@@ -107,9 +107,7 @@ export default function PlanningLandingPage() {
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-            Free, forever, with unlimited users. See why
-          </p>
+          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">

@@ -65,7 +65,7 @@ const AdminSidebar = ({ onNavigate, collapsed, onToggleCollapse }: Props) => {
             <div>
               <h2 className="text-lg font-bold leading-none">Admin Panel</h2>
               <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                Birds Of Eden
+                Adon ERP
               </p>
             </div>
           )}

@@ -45,25 +45,27 @@ const builderSteps = [
     title: "Site",
     description: "Your first page",
     icon: Compass,
-    color: "bg-rose-100 text-rose-600",
+    color: "bg-rose-100 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
   },
   {
     title: "Add",
     description: "Your apps",
     icon: Layers3,
-    color: "bg-amber-100 text-amber-600",
+    color:
+      "bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
   },
   {
     title: "Adjust",
     description: "Your features",
     icon: Settings2,
-    color: "bg-sky-100 text-sky-600",
+    color: "bg-sky-100 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
   },
   {
     title: "Grow",
     description: "Your business",
     icon: Rocket,
-    color: "bg-emerald-100 text-emerald-600",
+    color:
+      "bg-emerald-100 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
   },
 ];
 
@@ -148,16 +150,18 @@ const avatarImages = [
 
 export default function WebsiteBuilderSections() {
   return (
-    <main className="overflow-hidden bg-white text-slate-900 dark:text-white dark:bg-slate-950 dark:text-slate-100">
-      <section className="relative overflow-hidden bg-white pt-16 dark:bg-slate-950">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
-            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white dark:text-slate-100 sm:text-6xl lg:text-7xl"
+            className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
             Scale your brand{" "}
-            <HandUnderline color="bg-orange-300">
-              <span className="text-orange-500">online</span>
+            <HandUnderline color="bg-orange-300 dark:bg-orange-800">
+              <span className="text-orange-500 dark:text-orange-400">
+                online
+              </span>
             </HandUnderline>
           </h1>
 
@@ -169,34 +173,30 @@ export default function WebsiteBuilderSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
             <Link
               href="#features"
-              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white px-6 py-3 text-sm font-bold text-slate-700 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:text-[#9b6a8f] dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200"
+              className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
               Watch a demo
             </Link>
           </div>
 
-          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-            Free, forever, with unlimited users
-          </p>
-
           <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="absolute -left-10 -top-10 hidden text-[#ff5c78] sm:block">
+            <div className="absolute -left-10 -top-10 hidden text-[#ff5c78] dark:text-[#ff7a8e] sm:block">
               <Sparkles className="h-12 w-12 rotate-[-25deg]" />
             </div>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:border-slate-800 dark:bg-slate-950 dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
-              <div className="grid bg-[#11121b] lg:grid-cols-[1fr_260px]">
-                <div className="relative min-h-[430px] bg-[url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop')] bg-cover bg-center">
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="grid bg-[#11121b] dark:bg-[#0a0a14] lg:grid-cols-[1fr_260px]">
+                <div className="relative min-h-107 bg-[url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1200&auto=format&fit=crop')] bg-cover bg-center">
                   <div className="absolute inset-0 bg-black/35" />
 
-                  <div className="relative flex h-full min-h-[430px] flex-col justify-between p-8 text-left text-white">
+                  <div className="relative flex h-full min-h-107 flex-col justify-between p-8 text-left text-white">
                     <div>
                       <p className="text-sm font-bold tracking-wide">
                         Monday Coffee Lab
@@ -207,25 +207,25 @@ export default function WebsiteBuilderSections() {
                       <p className="mt-4 max-w-sm text-sm leading-6 text-white/80">
                         Fresh coffee, crafted with care for your morning energy.
                       </p>
-                      <button className="mt-8 rounded-md bg-orange-500 px-5 py-3 text-sm font-bold text-white">
+                      <button className="mt-8 rounded-md bg-orange-500 dark:bg-orange-600 px-5 py-3 text-sm font-bold text-white hover:bg-orange-600 transition">
                         Order now
                       </button>
                     </div>
 
-                    <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
+                    <div className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
                       <Play className="ml-1 h-7 w-7 fill-current" />
                     </div>
 
-                    <div className="absolute bottom-8 left-10 w-64 rounded-lg bg-white dark:bg-slate-950 p-4 text-slate-900 dark:text-white shadow-2xl">
-                      <div className="mb-3 h-3 w-24 rounded bg-slate-200" />
+                    <div className="absolute bottom-8 left-10 w-64 rounded-lg bg-white dark:bg-slate-800 p-4 text-slate-900 dark:text-white shadow-2xl">
+                      <div className="mb-3 h-3 w-24 rounded bg-slate-200 dark:bg-slate-700" />
                       <div className="space-y-2">
                         {["Hero image", "Main button", "Product card"].map(
                           (item) => (
                             <div
                               key={item}
-                              className="flex items-center gap-2 text-xs text-slate-500"
+                              className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400"
                             >
-                              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
                               {item}
                             </div>
                           ),
@@ -235,10 +235,10 @@ export default function WebsiteBuilderSections() {
                   </div>
                 </div>
 
-                <div className="border-l border-white/10 bg-[#171824] p-5 text-left text-white">
+                <div className="border-l border-white/10 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
                   <div className="mb-5 flex items-center justify-between">
                     <p className="text-sm font-bold">Theme</p>
-                    <div className="h-7 w-7 rounded-full bg-[#714b67]" />
+                    <div className="h-7 w-7 rounded-full bg-[#714b67] dark:bg-[#8a5a7e]" />
                   </div>
 
                   <div className="space-y-4">
@@ -256,9 +256,9 @@ export default function WebsiteBuilderSections() {
                           <span>{item}</span>
                           <span>{index + 1}</span>
                         </div>
-                        <div className="h-2 rounded-full bg-white dark:bg-slate-950/10">
+                        <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
                           <div
-                            className="h-2 rounded-full bg-[#02a6a6]"
+                            className="h-2 rounded-full bg-[#02a6a6] dark:bg-[#02cfc3]"
                             style={{ width: `${45 + index * 6}%` }}
                           />
                         </div>
@@ -266,13 +266,13 @@ export default function WebsiteBuilderSections() {
                     ))}
                   </div>
 
-                  <div className="mt-8 rounded-lg bg-white dark:bg-slate-950/5 p-4">
+                  <div className="mt-8 rounded-lg bg-white/5 dark:bg-white/5 p-4">
                     <p className="text-xs text-white/60">Live preview</p>
                     <div className="mt-3 grid grid-cols-3 gap-2">
                       {Array.from({ length: 6 }).map((_, index) => (
                         <span
                           key={index}
-                          className="h-10 rounded bg-white dark:bg-slate-950/10"
+                          className="h-10 rounded bg-white/10 dark:bg-white/5"
                         />
                       ))}
                     </div>
@@ -283,13 +283,13 @@ export default function WebsiteBuilderSections() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
+        <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mx-auto mb-7 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-950 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100">
-            <MessageCircle className="h-4 w-4 text-[#02a6a6]" />
+          <div className="mx-auto mb-7 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
+            <MessageCircle className="h-4 w-4 text-[#02a6a6] dark:text-[#02cfc3]" />
             What do you want to build?
           </div>
 
@@ -298,8 +298,10 @@ export default function WebsiteBuilderSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             Dream it?{" "}
-            <HandUnderline color="bg-[#02a6a6]">
-              <span className="text-[#02a6a6]">Build it!</span>
+            <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                Build it!
+              </span>
             </HandUnderline>
           </h2>
 
@@ -308,7 +310,7 @@ export default function WebsiteBuilderSections() {
             blocks, apps, and editable designs.
           </p>
 
-          <div className="mx-auto mt-12 grid max-w-4xl gap-5 rounded-xl bg-[#f3f4f7] p-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-12 grid max-w-4xl gap-5 rounded-xl bg-[#f3f4f7] dark:bg-[#0f0f1a] p-8 sm:grid-cols-2 lg:grid-cols-4">
             {builderSteps.map((item) => {
               const Icon = item.icon;
 
@@ -322,7 +324,7 @@ export default function WebsiteBuilderSections() {
                   <h3 className="mt-4 text-base font-bold text-slate-900 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-xs text-slate-500">
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                     {item.description}
                   </p>
                 </div>
@@ -330,7 +332,7 @@ export default function WebsiteBuilderSections() {
             })}
           </div>
 
-          <p className="mx-auto mt-12 max-w-md text-sm leading-7 text-slate-500">
+          <p className="mx-auto mt-12 max-w-md text-sm leading-7 text-slate-500 dark:text-slate-400">
             There is only one way to create a beautiful website:
             <br />
             <span className="font-semibold text-slate-900 dark:text-white">
@@ -338,9 +340,9 @@ export default function WebsiteBuilderSections() {
             </span>
           </p>
 
-          <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
-            <div className="grid min-h-[420px] lg:grid-cols-[220px_1fr]">
-              <aside className="border-r border-slate-100 bg-white dark:bg-slate-950 p-5 text-left">
+          <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <div className="grid min-h-107 lg:grid-cols-[220px_1fr]">
+              <aside className="border-r border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 text-left">
                 <p className="mb-6 text-sm font-bold text-slate-900 dark:text-white">
                   Website
                 </p>
@@ -351,8 +353,8 @@ export default function WebsiteBuilderSections() {
                       key={item}
                       className={`mb-2 rounded-md px-4 py-3 text-sm font-semibold ${
                         index === 3
-                          ? "bg-[#714b67] text-white"
-                          : "text-slate-500 hover:bg-slate-50 dark:bg-slate-800/40"
+                          ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
+                          : "text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
                       }`}
                     >
                       {item}
@@ -361,7 +363,7 @@ export default function WebsiteBuilderSections() {
                 )}
               </aside>
 
-              <div className="bg-[#eef0f4] p-7">
+              <div className="bg-[#eef0f4] dark:bg-[#0f0f1a] p-7">
                 <div className="grid gap-5 md:grid-cols-3">
                   {[
                     {
@@ -397,7 +399,7 @@ export default function WebsiteBuilderSections() {
                   ].map((template) => (
                     <div
                       key={template.title}
-                      className="overflow-hidden rounded-lg bg-white dark:bg-slate-950 shadow-sm"
+                      className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm"
                     >
                       <img
                         src={template.image}
@@ -408,7 +410,7 @@ export default function WebsiteBuilderSections() {
                         <p className="text-xs font-bold text-slate-900 dark:text-white">
                           {template.title}
                         </p>
-                        <div className="mt-2 h-2 w-16 rounded bg-slate-100" />
+                        <div className="mt-2 h-2 w-16 rounded bg-slate-100 dark:bg-slate-700" />
                       </div>
                     </div>
                   ))}
@@ -421,7 +423,7 @@ export default function WebsiteBuilderSections() {
 
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sky-50 text-[#02a6a6]">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-sky-50 dark:bg-sky-950/50 text-[#02a6a6] dark:text-[#02cfc3]">
             <Diamond className="h-8 w-8" />
           </div>
 
@@ -438,10 +440,10 @@ export default function WebsiteBuilderSections() {
           </p>
 
           <div className="relative mx-auto mt-12 max-w-4xl">
-            <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f3f4f7]" />
+            <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-[#0f0715] p-4 shadow-[0_30px_90px_rgba(15,23,42,0.15)]">
-              <div className="grid min-h-[430px] lg:grid-cols-[1fr_260px]">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-[#0f0715] dark:bg-[#0a0a14] p-4 shadow-[0_30px_90px_rgba(15,23,42,0.15)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <div className="grid min-h-107 lg:grid-cols-[1fr_260px]">
                 <div className="flex items-center justify-center p-8">
                   <div className="grid w-full max-w-2xl gap-8 lg:grid-cols-[1fr_260px]">
                     <div className="text-left text-white">
@@ -453,12 +455,12 @@ export default function WebsiteBuilderSections() {
                         Create a beautiful page section with editable content,
                         media, and buttons.
                       </p>
-                      <button className="mt-6 rounded-full bg-white dark:bg-slate-950 px-5 py-2 text-xs font-bold text-slate-900 dark:text-white">
+                      <button className="mt-6 rounded-full bg-white dark:bg-slate-800 px-5 py-2 text-xs font-bold text-slate-900 dark:text-white hover:bg-gray-100 transition">
                         Learn more
                       </button>
                     </div>
 
-                    <div className="relative rounded-2xl border-8 border-[#7c3aed] bg-white dark:bg-slate-950 p-3 shadow-xl">
+                    <div className="relative rounded-2xl border-8 border-[#7c3aed] dark:border-[#9b6a8f] bg-white dark:bg-slate-800 p-3 shadow-xl">
                       <img
                         src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=500&auto=format&fit=crop"
                         alt="Design preview"
@@ -468,7 +470,7 @@ export default function WebsiteBuilderSections() {
                   </div>
                 </div>
 
-                <aside className="border-l border-white/10 bg-[#171824] p-5 text-left text-white">
+                <aside className="border-l border-white/10 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
                   <p className="mb-5 text-sm font-bold">Blocks</p>
 
                   <div className="grid grid-cols-2 gap-3">
@@ -484,7 +486,7 @@ export default function WebsiteBuilderSections() {
                     ].map((Icon, index) => (
                       <div
                         key={index}
-                        className="flex h-16 items-center justify-center rounded-lg bg-white dark:bg-slate-950/5 text-[#02a6a6]"
+                        className="flex h-16 items-center justify-center rounded-lg bg-white/5 dark:bg-white/5 text-[#02a6a6] dark:text-[#02cfc3]"
                       >
                         <Icon className="h-6 w-6" />
                       </div>
@@ -499,9 +501,9 @@ export default function WebsiteBuilderSections() {
                             <span>{item}</span>
                             <span>{index + 2}</span>
                           </div>
-                          <div className="h-2 rounded-full bg-white dark:bg-slate-950/10">
+                          <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
                             <div
-                              className="h-2 rounded-full bg-[#02a6a6]"
+                              className="h-2 rounded-full bg-[#02a6a6] dark:bg-[#02cfc3]"
                               style={{ width: `${55 + index * 8}%` }}
                             />
                           </div>
@@ -514,8 +516,8 @@ export default function WebsiteBuilderSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-950 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100">
-            <MessageCircle className="h-4 w-4 text-[#02a6a6]" />
+          <div className="mx-auto mt-10 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
+            <MessageCircle className="h-4 w-4 text-[#02a6a6] dark:text-[#02cfc3]" />
             Can you help me edit?
           </div>
         </div>
@@ -523,7 +525,7 @@ export default function WebsiteBuilderSections() {
 
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)]">
+          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex gap-2">
                 {["Edit", "SEO", "Style", "Content"].map((item, index) => (
@@ -531,8 +533,8 @@ export default function WebsiteBuilderSections() {
                     key={item}
                     className={`rounded-md px-3 py-1 text-xs font-bold ${
                       index === 0
-                        ? "bg-[#714b67] text-white"
-                        : "bg-slate-100 text-slate-500"
+                        ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
+                        : "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
                     }`}
                   >
                     {item}
@@ -551,7 +553,7 @@ export default function WebsiteBuilderSections() {
               ].map((text) => (
                 <div
                   key={text}
-                  className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4 text-sm leading-6 text-slate-600 dark:text-slate-300"
+                  className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-sm leading-6 text-slate-600 dark:text-slate-300"
                 >
                   {text}
                 </div>
@@ -559,10 +561,10 @@ export default function WebsiteBuilderSections() {
             </div>
 
             <div className="mt-5 flex gap-3">
-              <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+              <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                 Apply
               </button>
-              <button className="rounded-md border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300">
+              <button className="rounded-md border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
                 Cancel
               </button>
             </div>
@@ -603,16 +605,16 @@ export default function WebsiteBuilderSections() {
             </p>
 
             <p
-              className="mt-8 text-lg text-rose-500"
+              className="mt-8 text-lg text-rose-500 dark:text-rose-400"
               style={{ fontFamily: handwrittenFont }}
             >
               Easy peasy!
             </p>
           </div>
 
-          <div className="relative mx-auto h-[360px] w-full max-w-lg">
-            <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-950 shadow-xl ring-1 ring-slate-100">
-              <Boxes className="h-12 w-12 text-[#02a6a6]" />
+          <div className="relative mx-auto h-90 w-full max-w-lg">
+            <div className="absolute left-1/2 top-1/2 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700">
+              <Boxes className="h-12 w-12 text-[#02a6a6] dark:text-[#02cfc3]" />
             </div>
 
             {[
@@ -658,7 +660,7 @@ export default function WebsiteBuilderSections() {
               return (
                 <div
                   key={item.label}
-                  className="absolute flex h-24 w-24 flex-col items-center justify-center rounded-xl bg-white dark:bg-slate-950 text-center shadow-lg ring-1 ring-slate-100"
+                  className="absolute flex h-24 w-24 flex-col items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-center shadow-lg ring-1 ring-slate-100 dark:ring-slate-700"
                   style={{ left: item.left, top: item.top }}
                 >
                   <Icon className="h-7 w-7 text-[#714b67] dark:text-[#9b6a8f]" />
@@ -669,15 +671,15 @@ export default function WebsiteBuilderSections() {
               );
             })}
 
-            <div className="absolute left-1/2 top-1/2 h-px w-[75%] -translate-x-1/2 bg-slate-200" />
-            <div className="absolute left-1/2 top-1/2 h-[75%] w-px -translate-y-1/2 bg-slate-200" />
+            <div className="absolute left-1/2 top-1/2 h-px w-[75%] -translate-x-1/2 bg-slate-200 dark:bg-slate-700" />
+            <div className="absolute left-1/2 top-1/2 h-[75%] w-px -translate-y-1/2 bg-slate-200 dark:bg-slate-700" />
           </div>
         </div>
       </section>
 
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-xl bg-[#7a4d6e] px-8 py-20 text-center text-white shadow-[0_25px_70px_rgba(113,75,103,0.25)]">
+          <div className="rounded-xl bg-[#7a4d6e] dark:bg-[#5a3854] px-8 py-20 text-center text-white shadow-[0_25px_70px_rgba(113,75,103,0.25)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <h2
               className="text-4xl font-bold leading-tight sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
@@ -698,7 +700,7 @@ export default function WebsiteBuilderSections() {
 
       <section
         id="features"
-        className="rounded-t-[4rem] bg-[#f3f4f7] py-20 sm:py-28"
+        className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -706,8 +708,10 @@ export default function WebsiteBuilderSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             All the{" "}
-            <HandUnderline color="bg-[#02a6a6]">
-              <span className="text-[#02a6a6]">features</span>
+            <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                features
+              </span>
             </HandUnderline>
             <br />
             done right.
@@ -717,10 +721,10 @@ export default function WebsiteBuilderSections() {
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="rounded-xl border border-white bg-white dark:bg-slate-950 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] text-[#714b67] dark:text-[#9b6a8f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
@@ -739,7 +743,7 @@ export default function WebsiteBuilderSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all features <ArrowRight className="h-4 w-4" />
           </Link>
@@ -753,8 +757,8 @@ export default function WebsiteBuilderSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             One{" "}
-            <HandUnderline color="bg-[#02a6a6]">
-              <span>need</span>
+            <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
+              <span className="dark:text-[#02cfc3]">need</span>
             </HandUnderline>
             , one app.
           </h2>
@@ -770,9 +774,9 @@ export default function WebsiteBuilderSections() {
               return (
                 <div
                   key={app.title}
-                  className="flex items-center gap-4 rounded-xl border border-slate-100 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:bg-slate-950 hover:shadow-lg"
+                  className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-950 text-[#02a6a6] shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
 
@@ -780,7 +784,7 @@ export default function WebsiteBuilderSections() {
                     <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.description}
                     </p>
                   </div>
@@ -791,7 +795,7 @@ export default function WebsiteBuilderSections() {
 
           <Link
             href="#"
-            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
             See all apps <ArrowRight className="h-4 w-4" />
           </Link>
@@ -806,7 +810,7 @@ export default function WebsiteBuilderSections() {
                 key={avatar}
                 src={avatar}
                 alt="User avatar"
-                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white object-cover shadow-lg dark:border-slate-900"
+                className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
                   top: `${20 + ((index * 29) % 62)}%`,
@@ -817,7 +821,7 @@ export default function WebsiteBuilderSections() {
             {Array.from({ length: 14 }).map((_, index) => (
               <span
                 key={`circle-${index}`}
-                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-900"
+                className="absolute h-12 w-12 rounded-full bg-slate-100 dark:bg-slate-800"
                 style={{
                   left: `${5 + ((index * 13) % 88)}%`,
                   top: `${10 + ((index * 23) % 74)}%`,
@@ -828,7 +832,7 @@ export default function WebsiteBuilderSections() {
             {Array.from({ length: 10 }).map((_, index) => (
               <span
                 key={`square-${index}`}
-                className="absolute h-12 w-12 rounded-md bg-[#714b67]"
+                className="absolute h-12 w-12 rounded-md bg-[#714b67] dark:bg-[#9b6a8f]"
                 style={{
                   left: `${6 + ((index * 19) % 86)}%`,
                   top: `${12 + ((index * 31) % 78)}%`,
@@ -836,25 +840,27 @@ export default function WebsiteBuilderSections() {
               />
             ))}
 
-            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] backdrop-blur dark:bg-slate-950/80 dark:shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
+            <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
-                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white dark:text-slate-100"
+                className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
                 Join 15 million users
               </p>
-              <p className="mt-3 text-sm text-slate-500 dark:text-slate-300">
+              <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
                 who grow their business with Adon
               </p>
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] p-8 text-left shadow-sm dark:bg-slate-900">
+          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="text-5xl text-amber-400">&ldquo;</div>
+              <div className="text-5xl text-amber-400 dark:text-amber-500">
+                &ldquo;
+              </div>
 
               <div>
-                <p className="text-base leading-8 text-slate-700 dark:text-slate-200">
+                <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                   Adon&apos;s flexibility, scalability, and app ecosystem have
                   been crucial for our success and community growth.
                 </p>
@@ -866,7 +872,7 @@ export default function WebsiteBuilderSections() {
                     className="h-12 w-12 rounded-full object-cover"
                   />
                   <div>
-                    <p className="font-bold text-slate-900 dark:text-white dark:text-slate-100">
+                    <p className="font-bold text-slate-900 dark:text-white">
                       Andrew Reed
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -879,7 +885,7 @@ export default function WebsiteBuilderSections() {
           </div>
 
           <div id="start" className="mt-20 text-center">
-            <div className="mx-auto mb-4 flex justify-center text-amber-400">
+            <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
 
@@ -890,20 +896,22 @@ export default function WebsiteBuilderSections() {
               Unleash
               <br />
               your{" "}
-              <HandUnderline color="bg-[#02a6a6]">
-                <span className="text-[#02a6a6]">growth</span>
+              <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  growth
+                </span>
               </HandUnderline>{" "}
               potential
             </h2>
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
               Start now
             </Link>
 
-            <p className="mt-3 text-xs text-slate-400"></p>
+            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
@@ -915,7 +923,7 @@ function XIcon() {
   return (
     <button
       type="button"
-      className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-400"
+      className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
       aria-label="Close"
     >
       ×
