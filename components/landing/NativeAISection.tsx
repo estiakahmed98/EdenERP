@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
-import { useLanguage } from "./LanguageProvider";
 import { SectionTag, TypeWriter } from "./landing-ui";
 
 export default function NativeAISection() {
-  const { t } = useLanguage();
-  const typeWords = t("nativeAi.typeWords") as string[];
+  const t = useTranslations("pages.home");
+  const typeWords = t.raw("nativeAi.typeWords") as string[];
 
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f6f3ff_0%,#eef9ff_45%,#effdfb_100%)] px-6 py-25 text-center dark:bg-[linear-gradient(135deg,#0f172a_0%,#111827_45%,#0b1220_100%)]">

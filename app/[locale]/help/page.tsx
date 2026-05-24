@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { BookOpen, HelpCircle, Mail, MessageSquare, Phone, Search } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
+import { getLocaleAlternates } from "@/i18n/metadata";
+
 type HelpCategoryKey =
   | "documentation"
   | "faq"
@@ -100,16 +102,17 @@ const supportOptions: Array<{
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("HelpPage.metadata");
+  const t = await getTranslations("pages.help.metadata");
 
   return {
     title: t("title"),
-    description: t("description")
+    description: t("description"),
+    alternates: getLocaleAlternates("/help")
   };
 }
 
 export default async function HelpPage() {
-  const t = await getTranslations("HelpPage");
+  const t = await getTranslations("pages.help");
 
   return (
     <main className="min-h-screen flex flex-col">

@@ -102,7 +102,7 @@ function SectionEyebrow({
 }
 
 export default function SupportPage() {
-  const t = useTranslations("SupportPage");
+  const t = useTranslations("pages.support");
   const [searchQuery, setSearchQuery] = useState("");
 
   return (

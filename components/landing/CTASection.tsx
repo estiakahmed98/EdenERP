@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import { useLanguage } from "./LanguageProvider";
+import { useTranslations } from "next-intl";
 
 export default function CTASection() {
-  const { t } = useLanguage();
+  const t = useTranslations("pages.home");
+  const commonT = useTranslations("common.actions");
 
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--purple),#5a3854)] px-6 py-25 text-center dark:bg-[linear-gradient(135deg,#0f172a,#1e293b)]">
@@ -28,7 +29,7 @@ export default function CTASection() {
           </button> */}
 
           <button className="rounded-[10px] border-[1.5px] border-white/25 bg-transparent px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5">
-            {t("common.contactSales")}
+            {commonT("contactSales")}
           </button>
         </div>
 

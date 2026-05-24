@@ -1,14 +1,19 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 import FeatureCard from "./FeatureCard";
-import { useLanguage } from "./LanguageProvider";
-import { FEATURES } from "./landing-data";
 import { Circled } from "./landing-ui";
 
 export default function FeaturesSection() {
-  const { t } = useLanguage();
+  const t = useTranslations("pages.home");
+  const commonT = useTranslations("common.actions");
+  const features = t.raw("features.cards") as Array<{
+    icon: string;
+    title: string;
+    desc: string;
+  }>;
 
   return (
     <section id="features" className="rounded-t-[48px] bg-gray-bg px-6 py-25 dark:bg-slate-900">
@@ -23,7 +28,7 @@ export default function FeaturesSection() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
-          {FEATURES.map((feature, index) => (
+          {features.map((feature, index) => (
             <FeatureCard
               key={feature.title}
               className={`reveal reveal-d${(index % 2) + 1}`}
@@ -51,7 +56,7 @@ export default function FeaturesSection() {
           href="#"
           className="reveal mt-8 inline-flex items-center gap-1.5 font-body text-[13px] font-bold text-purple no-underline"
         >
-          {t("common.seeAllFeatures")}
+          {commonT("seeAllFeatures")}
         </a>
       </div>
     </section>

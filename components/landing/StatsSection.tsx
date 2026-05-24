@@ -1,14 +1,17 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 import FeatureCard from "./FeatureCard";
-import { useLanguage } from "./LanguageProvider";
 import { SectionTag } from "./landing-ui";
 
 export default function StatsSection() {
-  const { t } = useLanguage();
-  const stats = t("stats.items") as any[];
+  const t = useTranslations("pages.home");
+  const stats = t.raw("stats.items") as Array<{
+    value: string;
+    label: string;
+  }>;
 
   return (
     <section className="bg-white px-6 py-22.5 dark:bg-slate-950">

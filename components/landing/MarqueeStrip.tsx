@@ -1,24 +1,11 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export default function MarqueeStrip() {
-  const items = [
-    "Accounting",
-    "CRM",
-    "HR Suite",
-    "Inventory",
-    "eCommerce",
-    "Marketing",
-    "Helpdesk",
-    "AI Studio",
-    "Subscribe",
-    "Sign",
-    "Project",
-    "Knowledge",
-    "Point of Sale",
-    "Website",
-  ];
+  const t = useTranslations("pages.home.marquee");
+  const items = t.raw("items") as string[];
 
   return (
     <div className="overflow-hidden bg-(--purple) py-3">

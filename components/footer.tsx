@@ -80,7 +80,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const t = useTranslations("Footer");
+  const t = useTranslations("layout.footer");
   const currentYear = new Date().getFullYear();
 
   return (

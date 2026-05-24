@@ -1,0 +1,331 @@
+{
+  "metadata": {
+    "title": "প্রাইসিং | Adon ERP",
+    "description": "স্টার্টআপ, গ্রোয়িং টিম এবং এন্টারপ্রাইজ প্রতিষ্ঠানের জন্য সহজ ও স্বচ্ছ Adon ERP প্রাইসিং।"
+  },
+  "hero": {
+    "eyebrow": "আধুনিক টিমের জন্য সহজ প্রাইসিং",
+    "label": "Adon ERP Pricing",
+    "title": "যে প্ল্যান",
+    "titleAccent": "আপনার সাথে বড় হবে সেটি বেছে নিন।",
+    "description": "আজ আপনার টিমের যা দরকার তা দিয়ে শুরু করুন, তারপর একই প্রিমিয়াম ওয়ার্কস্পেস থেকে CRM, tasks, sales, accounting, inventory, ecommerce, automation এবং reporting-এ স্কেল করুন।",
+    "highlights": [
+      "কোনো লুকানো ফি নেই",
+      "যেকোনো সময় বন্ধ করতে পারবেন",
+      "১৪ দিনের ট্রায়াল"
+    ],
+    "badges": {
+      "bestValueTitle": "সেরা ভ্যালু",
+      "bestValuePlan": "Professional প্ল্যান",
+      "scaleReadyTitle": "স্কেল-রেডি",
+      "scaleReadyDescription": "যেকোনো সময় মডিউল যোগ করুন"
+    },
+    "preview": {
+      "windowTitle": "Adon ERP Billing Center",
+      "currentPlanLabel": "বর্তমান প্ল্যান",
+      "currentPlanName": "Professional",
+      "metrics": [
+        {
+          "value": 100,
+          "label": "ব্যবহারকারী"
+        },
+        {
+          "value": 1024,
+          "label": "স্টোরেজ (GB)"
+        },
+        {
+          "value": 24,
+          "label": "ভিজিবিলিটি"
+        }
+      ],
+      "cards": {
+        "monthlyCostLabel": "মাসিক খরচ",
+        "monthlyCostValue": 99,
+        "monthlyCostNote": "পূর্বানুমানযোগ্য খরচ",
+        "secondaryMetricLabel": "ইমপ্লিমেন্টেশন",
+        "secondaryMetricAnnualValue": "২০%",
+        "secondaryMetricTrialValue": "১৪ দিন",
+        "secondaryMetricAnnual": "বার্ষিক সাশ্রয়",
+        "secondaryMetricTrial": "ট্রায়াল উপলব্ধ",
+        "workflowTitle": "অ্যাপ্রুভাল ও ওয়ার্কফ্লো",
+        "workflowDescription": "শেয়ারড ডেটা প্রাইসিং, বিলিং, অ্যাপ্রুভাল এবং সাপোর্টকে একই লাইনে রাখে।"
+      }
+    }
+  },
+  "modules": [
+    "CRM",
+    "Sales",
+    "Inventory",
+    "Accounting",
+    "HRM",
+    "Projects",
+    "Ecommerce",
+    "Client Portal",
+    "Automation",
+    "Helpdesk",
+    "Reports",
+    "API"
+  ],
+  "plansSection": {
+    "eyebrow": "নমনীয় প্ল্যান",
+    "title": "আপনার টিম যেভাবে বাড়ে, সেভাবেই মানানসই প্রাইসিং।",
+    "description": "শুরুতে ছোটভাবে শুরু করুন, workflow প্রস্তুত হলে automation আনলক করুন, তারপর stack না বদলিয়েই enterprise support-এ যান।",
+    "billing": {
+      "monthly": "মাসিক",
+      "annually": "বার্ষিক",
+      "save": "২০% সাশ্রয়"
+    },
+    "popularBadge": "সবচেয়ে জনপ্রিয়",
+    "annualSavings": "বার্ষিক বিলিংয়ে আপনি ২০% সাশ্রয় করবেন",
+    "featuresIncluded": "অন্তর্ভুক্ত ফিচার:"
+  },
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "badge": "স্টার্টআপের জন্য",
+      "monthlyPrice": 29,
+      "annualPrice": 278,
+      "periodMonthly": "/মাস",
+      "periodAnnual": "/বছর",
+      "description": "CRM, tasks, sales এবং basic reporting দিয়ে শুরু করা ছোট টিমের জন্য একটি ফোকাসড ওয়ার্কস্পেস।",
+      "icon": "users",
+      "color": "from-violet-600 to-fuchsia-500",
+      "softBg": "bg-violet-50",
+      "iconText": "text-violet-600",
+      "cta": "শুরু করুন",
+      "href": "/contact",
+      "highlighted": false,
+      "features": [
+        "সর্বোচ্চ ১০ ব্যবহারকারী",
+        "১০GB সিকিউর স্টোরেজ",
+        "CRM এবং ক্লায়েন্ট পাইপলাইন",
+        "টাস্ক ও প্রজেক্ট ম্যানেজমেন্ট",
+        "বেসিক সেলস ট্র্যাকিং",
+        "ইমেইল সাপোর্ট",
+        "বেসিক অ্যানালিটিক্স ড্যাশবোর্ড",
+        "স্ট্যান্ডার্ড রোল অ্যাক্সেস"
+      ]
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "badge": "সবচেয়ে জনপ্রিয়",
+      "monthlyPrice": 99,
+      "annualPrice": 950,
+      "periodMonthly": "/মাস",
+      "periodAnnual": "/বছর",
+      "description": "দ্রুত-বর্ধনশীল অপারেশনের জন্য advanced automation, integrations, reports এবং team visibility।",
+      "icon": "zap",
+      "color": "from-primary via-fuchsia-600 to-amber-500",
+      "softBg": "bg-primary/10",
+      "iconText": "text-primary",
+      "cta": "ফ্রি ট্রায়াল শুরু করুন",
+      "href": "/contact",
+      "highlighted": true,
+      "features": [
+        "সর্বোচ্চ ১০০ ব্যবহারকারী",
+        "১TB সিকিউর স্টোরেজ",
+        "অ্যাডভান্সড CRM ও অটোমেশন",
+        "ইনভেন্টরি ও সেলস রিপোর্ট",
+        "কাস্টম ইন্টিগ্রেশন ও API অ্যাক্সেস",
+        "প্রায়োরিটি সাপোর্ট",
+        "SSO ও SAML অপশন",
+        "কাস্টম ব্র্যান্ডিং",
+        "অ্যাপ্রুভাল ওয়ার্কফ্লো",
+        "অ্যাডভান্সড অ্যাক্টিভিটি লগ"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "badge": "কাস্টম সল্যুশন",
+      "monthlyPrice": null,
+      "annualPrice": null,
+      "periodMonthly": "",
+      "periodAnnual": "",
+      "description": "বড় টিম, জটিল workflow এবং dedicated support-এর জন্য tailored Adon ERP environment।",
+      "icon": "building2",
+      "color": "from-slate-950 via-violet-900 to-primary",
+      "softBg": "bg-slate-100",
+      "iconText": "text-slate-900",
+      "cta": "সেলস টিমের সাথে কথা বলুন",
+      "href": "/contact",
+      "highlighted": false,
+      "features": [
+        "আনলিমিটেড ব্যবহারকারী",
+        "আনলিমিটেড স্টোরেজ",
+        "মাল্টি-কম্পানি ম্যানেজমেন্ট",
+        "ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার",
+        "কাস্টম workflow development",
+        "অন-প্রিমাইস অপশন",
+        "২৪/৭ প্রিমিয়াম সাপোর্ট",
+        "SLA গ্যারান্টি",
+        "অ্যাডভান্সড সিকিউরিটি কন্ট্রোল",
+        "কাস্টম রিপোর্টিং স্যুট"
+      ]
+    }
+  ],
+  "benefitsSection": {
+    "eyebrow": "আত্মবিশ্বাসের সাথে স্কেল করার জন্য তৈরি",
+    "title": "আপনার ব্যবসা বাড়লেও প্রাইসিং থাকে পরিষ্কার।",
+    "description": "Adon ERP আপনার cost structure-কে পূর্বানুমানযোগ্য রাখে, একই সাথে টিমকে modules, users, workflows, storage, reporting এবং enterprise support যোগ করার সুযোগ দেয়।"
+  },
+  "benefits": [
+    {
+      "title": "স্বচ্ছ বিলিং",
+      "description": "স্ট্যান্ডার্ড প্ল্যানের জন্য কোনো লুকানো implementation surprise নেই।",
+      "icon": "creditCard"
+    },
+    {
+      "title": "নিরাপদ ওয়ার্কস্পেস",
+      "description": "Role-based access, activity visibility এবং নিরাপদ business data handling।",
+      "icon": "lockKeyhole"
+    },
+    {
+      "title": "মডিউল ধরে স্কেল করুন",
+      "description": "আজ যা দরকার তাই দিয়ে শুরু করুন, তারপর ব্যবসা বাড়ার সাথে সাথে প্রসারিত করুন।",
+      "icon": "layers3"
+    }
+  ],
+  "comparisonSection": {
+    "eyebrow": "প্ল্যান তুলনা",
+    "title": "প্রতিটি প্ল্যান পরিষ্কারভাবে তুলনা করুন।",
+    "description": "টিমের জন্য সঠিক প্ল্যান বেছে নেওয়ার আগে users, storage, automation, integrations, branding এবং support পর্যালোচনা করুন।",
+    "headers": {
+      "feature": "ফিচার",
+      "starter": "Starter",
+      "professional": "Professional",
+      "enterprise": "Enterprise"
+    }
+  },
+  "comparison": [
+    {
+      "feature": "ব্যবহারকারী",
+      "starter": "10",
+      "professional": "100",
+      "enterprise": "Unlimited"
+    },
+    {
+      "feature": "স্টোরেজ",
+      "starter": "10GB",
+      "professional": "1TB",
+      "enterprise": "Unlimited"
+    },
+    {
+      "feature": "CRM Pipeline",
+      "starter": "Basic",
+      "professional": "Advanced",
+      "enterprise": "Custom"
+    },
+    {
+      "feature": "Task Management",
+      "starter": "Included",
+      "professional": "Advanced",
+      "enterprise": "Advanced"
+    },
+    {
+      "feature": "Inventory Management",
+      "starter": "Basic",
+      "professional": "Included",
+      "enterprise": "Advanced"
+    },
+    {
+      "feature": "Automation",
+      "starter": "Limited",
+      "professional": "Included",
+      "enterprise": "Advanced"
+    },
+    {
+      "feature": "API Access",
+      "starter": false,
+      "professional": true,
+      "enterprise": true
+    },
+    {
+      "feature": "Custom Branding",
+      "starter": false,
+      "professional": true,
+      "enterprise": true
+    },
+    {
+      "feature": "Approval Workflows",
+      "starter": "Basic",
+      "professional": "Advanced",
+      "enterprise": "Custom"
+    },
+    {
+      "feature": "Support",
+      "starter": "Email",
+      "professional": "Priority",
+      "enterprise": "24/7 Dedicated"
+    }
+  ],
+  "addonsSection": {
+    "eyebrow": "ঐচ্ছিক অ্যাড-অন",
+    "title": "প্রয়োজন হলে workspace আরও বাড়ান।",
+    "description": "পুরো প্ল্যান না বদলিয়েই extra capacity, expert implementation help অথবা advanced analytics যোগ করুন।"
+  },
+  "addons": [
+    {
+      "title": "Extra Storage",
+      "amount": 10,
+      "unit": "/ 100GB",
+      "description": "ডকুমেন্ট, ইমেজ, রিপোর্ট এবং অপারেশনাল রেকর্ডের জন্য আরও secure storage যোগ করুন।",
+      "icon": "shieldCheck"
+    },
+    {
+      "title": "Advanced Analytics",
+      "amount": 25,
+      "unit": "/ মাস",
+      "description": "আরও গভীর dashboards, custom exports, business intelligence এবং performance tracking আনলক করুন।",
+      "icon": "barChart3"
+    },
+    {
+      "title": "Implementation Support",
+      "amount": null,
+      "unit": "",
+      "description": "Migration, setup, onboarding, training এবং workflow design-এর জন্য expert help নিন।",
+      "icon": "sparkles"
+    }
+  ],
+  "faqSection": {
+    "eyebrow": "প্রশ্ন ও উত্তর",
+    "title": "প্রায়শই জিজ্ঞাসিত প্রশ্ন।"
+  },
+  "faqs": [
+    {
+      "q": "আমি কি যেকোনো সময় প্ল্যান পরিবর্তন করতে পারি?",
+      "a": "হ্যাঁ। আপনি যেকোনো সময় প্ল্যান আপগ্রেড বা ডাউনগ্রেড করতে পারেন। বিলিং সাইকেল ও workspace requirement অনুযায়ী পরিবর্তন প্রয়োগ করা যাবে।"
+    },
+    {
+      "q": "আপনারা কি ফ্রি ট্রায়াল দেন?",
+      "a": "হ্যাঁ। Professional প্ল্যানে ১৪ দিনের ট্রায়াল থাকতে পারে, যাতে আপনার টিম commit করার আগে workflow পরীক্ষা করতে পারে।"
+    },
+    {
+      "q": "আমি কি শুধু প্রয়োজনীয় মডিউলগুলো যোগ করতে পারি?",
+      "a": "হ্যাঁ। Adon ERP module by module scale করার জন্য তৈরি। আপনার ব্যবসার প্রয়োজন অনুযায়ী CRM, tasks, sales, inventory, HR, ecommerce অথবা analytics দিয়ে শুরু করতে পারেন।"
+    },
+    {
+      "q": "আপনারা কি custom workflow support করেন?",
+      "a": "হ্যাঁ। Enterprise গ্রাহকরা custom workflows, reports, integrations, role permissions এবং deployment options চাইতে পারেন।"
+    },
+    {
+      "q": "আপনারা কোন payment method গ্রহণ করেন?",
+      "a": "স্ট্যান্ডার্ড প্ল্যান common online payment method support করতে পারে। Enterprise গ্রাহকরা bank transfer বা invoice-based payment-এর মতো custom billing ব্যবহার করতে পারেন।"
+    },
+    {
+      "q": "দীর্ঘমেয়াদি contract কি বাধ্যতামূলক?",
+      "a": "Monthly প্ল্যানে long-term contract দরকার নেই। Annual এবং enterprise agreement-ও available আছে, যেসব টিম discounted বা custom terms চায় তাদের জন্য।"
+    }
+  ],
+  "ctaSection": {
+    "title": "আরও স্মার্টভাবে ব্যবসা চালাতে প্রস্তুত?",
+    "description": "আজ যেটা মানানসই সেই প্ল্যান দিয়ে শুরু করুন, তারপর কোম্পানি বড় হওয়ার সাথে সাথে আরও modules, automation, reporting এবং support যোগ করুন।",
+    "points": [
+      "প্রিমিয়াম ERP অভিজ্ঞতা",
+      "নিরাপদ রোল অ্যাক্সেস",
+      "বিশৃঙ্খলা ছাড়া স্কেল করুন"
+    ]
+  }
+}

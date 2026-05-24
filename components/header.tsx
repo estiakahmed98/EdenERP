@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 
-import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import LanguageSwitcher from "@/components/language-switcher";
+import { Link } from "@/i18n/navigation";
 
 type MegaMenuLink = {
   labelKey: string;
@@ -374,10 +375,8 @@ const navItems: NavItem[] = [
 ];
 
 export default function Header() {
-  const t = useTranslations("Header");
-  const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
+  const t = useTranslations("layout.header");
+  const commonT = useTranslations("common.theme");
   const navId = useId();
   const headerRef = useRef<HTMLElement | null>(null);
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
@@ -444,11 +443,6 @@ export default function Header() {
   function toggleTheme() {
     const current = resolvedTheme ?? theme;
     setTheme(current === "dark" ? "light" : "dark");
-  }
-
-  function switchLanguage(nextLocale: "en" | "bn") {
-    if (nextLocale === locale) return;
-    router.replace(pathname, { locale: nextLocale });
   }
 
   const isDark = mounted && (resolvedTheme ?? theme) === "dark";
@@ -586,30 +580,7 @@ export default function Header() {
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <div className="hidden items-center gap-1 rounded-full border border-slate-200 bg-white/90 p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900/90 md:inline-flex">
-            <button
-              type="button"
-              onClick={() => switchLanguage("en")}
-              className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
-                locale === "en"
-                  ? "bg-(--purple) text-white"
-                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-              }`}
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              onClick={() => switchLanguage("bn")}
-              className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
-                locale === "bn"
-                  ? "bg-(--purple) text-white"
-                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-              }`}
-            >
-              বাংলা
-            </button>
-          </div>
+          <LanguageSwitcher variant="desktop" />
 
           <button
             type="button"
@@ -625,7 +596,7 @@ export default function Header() {
               type="button"
               onClick={toggleTheme}
               aria-label={
-                isDark ? "Switch to light mode" : "Switch to dark mode"
+                isDark ? commonT("switchToLight") : commonT("switchToDark")
               }
               className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white p-2 text-slate-700 shadow-xs transition-colors hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200 dark:hover:bg-slate-900/60"
             >
@@ -658,12 +629,12 @@ export default function Header() {
               type="button"
               onClick={toggleTheme}
               aria-label={
-                isDark ? "Switch to light mode" : "Switch to dark mode"
+                isDark ? commonT("switchToLight") : commonT("switchToDark")
               }
               className="flex items-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 px-5 py-3 text-sm font-bold text-slate-800 dark:text-white"
             >
               {isDark ? <Sun size={16} /> : <Moon size={16} />}
-              <span>{isDark ? "Light" : "Dark"}</span>
+              <span>{isDark ? commonT("light") : commonT("dark")}</span>
             </button>
           </div>
 
@@ -841,26 +812,7 @@ export default function Header() {
           </div>
 
           <div className="mt-8 space-y-4">
-            <div className="flex w-full items-center justify-center gap-10 rounded-2xl border border-slate-300 dark:border-slate-800 px-5 py-4">
-              <button
-                type="button"
-                onClick={() => switchLanguage("en")}
-                className={`text-sm font-bold ${
-                  locale === "en" ? "text-slate-900" : "text-slate-500"
-                }`}
-              >
-                EN
-              </button>
-              <button
-                type="button"
-                onClick={() => switchLanguage("bn")}
-                className={`text-sm font-bold ${
-                  locale === "bn" ? "text-slate-900" : "text-slate-500"
-                }`}
-              >
-                বাংলা
-              </button>
-            </div>
+            <LanguageSwitcher variant="mobile" />
 
             <Link
               href="/auth/signin"

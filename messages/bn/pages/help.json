@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "title": "সহায়তা | Adon ERP",
+    "description": "সাপোর্ট নিন এবং আপনার প্রশ্নের উত্তর খুঁজে নিন।"
+  },
+  "hero": {
+    "title": "আমরা কীভাবে <highlight>সাহায্য করতে পারি?</highlight>",
+    "description": "উত্তর খুঁজুন, সাপোর্ট নিন এবং আমাদের প্ল্যাটফর্মের সর্বোচ্চ ব্যবহার শিখুন।",
+    "searchPlaceholder": "হেল্প আর্টিকেল খুঁজুন..."
+  },
+  "categories": {
+    "documentation": {
+      "title": "ডকুমেন্টেশন",
+      "description": "বিস্তৃত গাইড এবং API ডকুমেন্টেশন।",
+      "topics": {
+        "gettingStarted": "শুরু করার গাইড",
+        "apiReference": "API রেফারেন্স",
+        "bestPractices": "বেস্ট প্র্যাকটিসেস",
+        "migrationGuide": "মাইগ্রেশন গাইড"
+      }
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "সাধারণ জিজ্ঞাসার উত্তর।",
+      "topics": {
+        "billing": "বিলিং",
+        "security": "সিকিউরিটি",
+        "features": "ফিচারস",
+        "account": "অ্যাকাউন্ট"
+      }
+    },
+    "communitySupport": {
+      "title": "কমিউনিটি সাপোর্ট",
+      "description": "আমাদের কমিউনিটি থেকে সাহায্য নিন।",
+      "topics": {
+        "forums": "ফোরামস",
+        "discord": "ডিসকর্ড",
+        "communityPosts": "কমিউনিটি পোস্টস",
+        "shareIdeas": "আইডিয়া শেয়ার করুন"
+      }
+    },
+    "contactSupport": {
+      "title": "সাপোর্টে যোগাযোগ করুন",
+      "description": "সরাসরি আমাদের সাপোর্ট টিমের সাথে যোগাযোগ করুন।",
+      "topics": {
+        "emailSupport": "ইমেইল সাপোর্ট",
+        "chat": "চ্যাট",
+        "phone": "ফোন",
+        "ticketSystem": "টিকিট সিস্টেম"
+      }
+    }
+  },
+  "popularTopics": {
+    "title": "জনপ্রিয় বিষয়সমূহ",
+    "items": {
+      "gettingStarted": "Adon ERP দিয়ে শুরু করার গাইড",
+      "apiAuth": "API অথেনটিকেশন গাইড",
+      "billing": "বিলিং এবং সাবস্ক্রিপশন",
+      "integrations": "ইন্টিগ্রেশনস এবং ওয়েবহুকস",
+      "security": "সিকিউরিটি বেস্ট প্র্যাকটিসেস",
+      "troubleshooting": "সাধারণ সমস্যার সমাধান"
+    },
+    "views": {
+      "gettingStarted": "12.5K ভিউ",
+      "apiAuth": "8.3K ভিউ",
+      "billing": "7.1K ভিউ",
+      "integrations": "6.8K ভিউ",
+      "security": "5.9K ভিউ",
+      "troubleshooting": "5.2K ভিউ"
+    }
+  },
+  "supportOptions": {
+    "title": "যোগাযোগ করুন",
+    "liveChat": {
+      "title": "লাইভ চ্যাট",
+      "description": "রিয়েল-টাইমে আমাদের সাপোর্ট টিমের সাথে চ্যাট করুন।",
+      "action": "চ্যাট শুরু করুন",
+      "time": "২৪/৭ উপলব্ধ"
+    },
+    "emailSupport": {
+      "title": "ইমেইল সাপোর্ট",
+      "description": "আমাদের ইমেইল করুন, আমরা ২৪ ঘণ্টার মধ্যে উত্তর দেব।",
+      "action": "ইমেইল পাঠান",
+      "time": "support@adon-erp.com"
+    },
+    "phoneSupport": {
+      "title": "ফোন সাপোর্ট",
+      "description": "জরুরি সমস্যার জন্য আমাদের সাপোর্ট টিমকে কল করুন।",
+      "action": "এখনই কল করুন",
+      "time": "+1 (800) 123-4567"
+    }
+  },
+  "status": {
+    "title": "সিস্টেম স্ট্যাটাস",
+    "description": "সব সিস্টেম সচল আছে। কোনো ইনসিডেন্ট রিপোর্ট হয়নি।",
+    "updated": "সর্বশেষ আপডেট ৫ মিনিট আগে",
+    "action": "স্ট্যাটাস দেখুন"
+  }
+}

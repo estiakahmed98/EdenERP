@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 
-import { useLanguage } from "./LanguageProvider";
+import { Link } from "@/i18n/navigation";
 import { ALTS, APPS } from "./landing-data";
 import { HandText, SectionTag } from "./landing-ui";
 
 export default function AppsSection() {
-  const { t } = useLanguage();
+  const t = useTranslations("pages.home");
+  const commonT = useTranslations("common.actions");
   const [altsOn, setAltsOn] = useState(false);
   const rows = [0, 1, 2, 3].map((rowIndex) =>
     APPS.slice(rowIndex * 6, rowIndex * 6 + 6),
@@ -129,12 +131,12 @@ export default function AppsSection() {
           })}
         </div>
 
-        <a
-          href="apps"
+        <Link
+          href="/apps"
           className="mt-5 inline-block font-body text-[13px] font-bold text-(--purple)] no-underline"
         >
-          {t("common.viewAllApps")}
-        </a>
+          {commonT("viewAllApps")}
+        </Link>
       </div>
     </section>
   );

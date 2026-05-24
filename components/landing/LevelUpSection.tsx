@@ -1,12 +1,26 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
-import { useLanguage } from "./LanguageProvider";
 import { HandText, SectionTag } from "./landing-ui";
 
 export default function LevelUpSection() {
-  const { t } = useLanguage();
+  const t = useTranslations("pages.home");
+  const stats = t.raw("levelUp.stats") as Array<{
+    icon: string;
+    value: string;
+    label: string;
+  }>;
+  const board = t.raw("levelUp.board") as {
+    projectName: string;
+    sprint: string;
+    columns: Array<{
+      title: string;
+      color: string;
+      items: string[];
+    }>;
+  };
 
   return (
     <section className="bg-white px-6 py-25 dark:bg-slate-950">
@@ -27,7 +41,7 @@ export default function LevelUpSection() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3">
-              {(t("levelUp.stats") as any[]).map((stat: any, idx: number) => (
+              {stats.map((stat, idx) => (
                 <div
                   key={idx}
                   className="flex items-center gap-3.5 rounded-[14px] border border-[#eeedf2] bg-cream px-4.5 py-3.5 dark:border-slate-700 dark:bg-slate-900"
@@ -51,35 +65,19 @@ export default function LevelUpSection() {
               <span className="text-base">✅</span>
 
               <span className="font-body text-sm font-bold text-white">
-                Adon Project
+                {board.projectName}
               </span>
 
               <span className="ml-auto rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-semibold text-white">
-                Sprint 4
+                {board.sprint}
               </span>
             </div>
 
             <div className="grid grid-cols-3 gap-2.5 bg-gray-bg p-4">
-              {[
-                {
-                  col: "To Do",
-                  color: "#fef3c7",
-                  items: ["Design mockup", "User research", "API spec"],
-                },
-                {
-                  col: "In Progress",
-                  color: "#dbeafe",
-                  items: ["Auth flow", "Dashboard", "Mobile nav"],
-                },
-                {
-                  col: "Done",
-                  color: "#d1fae5",
-                  items: ["DB schema", "CI/CD", "Staging env"],
-                },
-              ].map((column) => (
-                <div key={column.col}>
+              {board.columns.map((column) => (
+                <div key={column.title}>
                   <div className="mb-2 font-body text-[10px] font-bold uppercase tracking-[1px] text-muted">
-                    {column.col}
+                    {column.title}
                   </div>
 
                   {column.items.map((item) => (

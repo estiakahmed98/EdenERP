@@ -1,0 +1,99 @@
+{
+  "metadata": {
+    "title": "Help | Adon ERP",
+    "description": "Get support and find answers to your questions."
+  },
+  "hero": {
+    "title": "How Can We <highlight>Help You?</highlight>",
+    "description": "Find answers, get support, and learn how to make the most of our platform.",
+    "searchPlaceholder": "Search help articles..."
+  },
+  "categories": {
+    "documentation": {
+      "title": "Documentation",
+      "description": "Comprehensive guides and API documentation.",
+      "topics": {
+        "gettingStarted": "Getting Started",
+        "apiReference": "API Reference",
+        "bestPractices": "Best Practices",
+        "migrationGuide": "Migration Guide"
+      }
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Answers to frequently asked questions.",
+      "topics": {
+        "billing": "Billing",
+        "security": "Security",
+        "features": "Features",
+        "account": "Account"
+      }
+    },
+    "communitySupport": {
+      "title": "Community Support",
+      "description": "Get help from our community.",
+      "topics": {
+        "forums": "Forums",
+        "discord": "Discord",
+        "communityPosts": "Community Posts",
+        "shareIdeas": "Share Ideas"
+      }
+    },
+    "contactSupport": {
+      "title": "Contact Support",
+      "description": "Reach our support team directly.",
+      "topics": {
+        "emailSupport": "Email Support",
+        "chat": "Chat",
+        "phone": "Phone",
+        "ticketSystem": "Ticket System"
+      }
+    }
+  },
+  "popularTopics": {
+    "title": "Popular Topics",
+    "items": {
+      "gettingStarted": "Getting Started with Adon ERP",
+      "apiAuth": "API Authentication Guide",
+      "billing": "Billing and Subscription",
+      "integrations": "Integrations and Webhooks",
+      "security": "Security Best Practices",
+      "troubleshooting": "Troubleshooting Common Issues"
+    },
+    "views": {
+      "gettingStarted": "12.5K views",
+      "apiAuth": "8.3K views",
+      "billing": "7.1K views",
+      "integrations": "6.8K views",
+      "security": "5.9K views",
+      "troubleshooting": "5.2K views"
+    }
+  },
+  "supportOptions": {
+    "title": "Get in Touch",
+    "liveChat": {
+      "title": "Live Chat",
+      "description": "Chat with our support team in real-time.",
+      "action": "Start Chat",
+      "time": "Available 24/7"
+    },
+    "emailSupport": {
+      "title": "Email Support",
+      "description": "Send us an email and we'll respond within 24 hours.",
+      "action": "Send Email",
+      "time": "support@adon-erp.com"
+    },
+    "phoneSupport": {
+      "title": "Phone Support",
+      "description": "Call our support team for urgent issues.",
+      "action": "Call Now",
+      "time": "+1 (800) 123-4567"
+    }
+  },
+  "status": {
+    "title": "System Status",
+    "description": "All systems operational. No incidents reported.",
+    "updated": "Last updated 5 minutes ago",
+    "action": "View Status"
+  }
+}

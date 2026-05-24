@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronDown, HelpCircle, FileText, Users } from "lucide-react";
 
-const filters = ["Categories", "All Prices", "All Platforms", "All Versions"];
-
 export default function FilterBar() {
-  const [activeFilter, setActiveFilter] = useState("Categories");
+  const t = useTranslations("pages.apps");
+  const filters = t.raw("filterBar.filters") as string[];
+  const [activeFilter, setActiveFilter] = useState(filters[0]);
 
   return (
     <div className="border-b border-gray-200 bg-white sticky top-16 z-40 shadow-sm">
@@ -34,15 +35,15 @@ export default function FilterBar() {
           <div className="flex gap-6 text-sm">
             <button className="flex items-center gap-2 text-gray-600 hover:text-purple-700 transition">
               <HelpCircle className="h-4 w-4" />
-              FAQ
+              {t("filterBar.links.faq")}
             </button>
             <button className="flex items-center gap-2 text-gray-600 hover:text-purple-700 transition">
               <FileText className="h-4 w-4" />
-              Sales Conditions
+              {t("filterBar.links.salesConditions")}
             </button>
             <button className="flex items-center gap-2 text-gray-600 hover:text-purple-700 transition">
               <Users className="h-4 w-4" />
-              Vendor Guidelines
+              {t("filterBar.links.vendorGuidelines")}
             </button>
           </div>
         </div>

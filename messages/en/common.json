@@ -1,0 +1,33 @@
+{
+  "languageSwitcher": {
+    "label": "Language",
+    "options": {
+      "en": "EN",
+      "bn": "বাংলা"
+    }
+  },
+  "theme": {
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "actions": {
+    "watchDemo": "Watch Demo",
+    "viewAllApps": "Explore 50+ tools",
+    "seeAllFeatures": "Explore all features",
+    "contactSales": "Talk to Sales",
+    "talkToSales": "Talk to Sales",
+    "viewPlans": "View Plans",
+    "startFreeTrial": "Start Free Trial",
+    "getStarted": "Get Started",
+    "learnMore": "Learn more",
+    "viewAll": "View all"
+  },
+  "states": {
+    "included": "Included",
+    "notIncluded": "Not included",
+    "free": "FREE",
+    "custom": "Custom"
+  }
+}

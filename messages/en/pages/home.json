@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "title": "Home | Adon ERP",
+    "description": "Manage subscriptions, accounting, team operations, and business growth from one connected ERP platform."
+  },
+  "hero": {
+    "tag": "✦ Manage your entire business in one place",
+    "titlePrefix": "Simple, fast,",
+    "typeWords": [
+      "financial management",
+      "subscription handling",
+      "daily operations",
+      "business growth"
+    ],
+    "description": "Set up in minutes with no coding or complicated configuration. Manage your team, sales, accounting, and operations from one connected platform."
+  },
+  "marquee": {
+    "items": [
+      "Accounting",
+      "CRM",
+      "HR Suite",
+      "Inventory",
+      "eCommerce",
+      "Marketing",
+      "Helpdesk",
+      "AI Studio",
+      "Subscribe",
+      "Sign",
+      "Project",
+      "Knowledge",
+      "Point of Sale",
+      "Website"
+    ]
+  },
+  "apps": {
+    "tag": "✦ Built for modern businesses",
+    "title": "Manage everything with",
+    "titleHand": "one",
+    "titleSuffix": "smart Adon ERP",
+    "description": "Keep accounting, sales, customer management, inventory, and team workflows connected in one system. Reduce manual work, avoid mistakes, and make faster business decisions.",
+    "altLabel": "Adon"
+  },
+  "nativeAi": {
+    "tag": "Smart AI Assistance",
+    "title": "AI support across your entire business",
+    "quotePrefix": "Use",
+    "quoteHighlight": "Adon",
+    "quoteSuffix": "to simplify your",
+    "typeWords": [
+      "accounting",
+      "sales",
+      "operations",
+      "HR"
+    ],
+    "description": "Generate reports, understand data, automate tasks, and make faster decisions with built-in AI assistance."
+  },
+  "levelUp": {
+    "tag": "✦ Fast & reliable",
+    "titlePrefix": "Built to improve",
+    "titleHand": "productivity",
+    "description": "Enjoy fast workflows, clean interfaces, and smart suggestions that help your team complete more work in less time.",
+    "stats": [
+      {
+        "icon": "⚡",
+        "value": "Fast workflows",
+        "label": "Smooth daily operations"
+      },
+      {
+        "icon": "🧠",
+        "value": "AI-powered",
+        "label": "Smart assistance where needed"
+      },
+      {
+        "icon": "🔒",
+        "value": "Secure platform",
+        "label": "Protect your business data"
+      }
+    ],
+    "board": {
+      "projectName": "Adon Project",
+      "sprint": "Sprint 4",
+      "columns": [
+        {
+          "title": "To Do",
+          "color": "#fef3c7",
+          "items": [
+            "Design mockup",
+            "User research",
+            "API spec"
+          ]
+        },
+        {
+          "title": "In Progress",
+          "color": "#dbeafe",
+          "items": [
+            "Auth flow",
+            "Dashboard",
+            "Mobile nav"
+          ]
+        },
+        {
+          "title": "Done",
+          "color": "#d1fae5",
+          "items": [
+            "DB schema",
+            "CI/CD",
+            "Staging env"
+          ]
+        }
+      ]
+    }
+  },
+  "features": {
+    "titlePrefix": "Everything your business",
+    "titleHand": "needs",
+    "titleSuffix": "in one platform.",
+    "cards": [
+      {
+        "icon": "⚡",
+        "title": "Automated renewals",
+        "desc": "Renew contracts and invoices automatically without manual tracking."
+      },
+      {
+        "icon": "👤",
+        "title": "Customer portal",
+        "desc": "Let customers view plans, invoices, and payment history securely."
+      },
+      {
+        "icon": "📄",
+        "title": "Recurring invoices",
+        "desc": "Generate invoices based on billing cycles and contract rules."
+      },
+      {
+        "icon": "💳",
+        "title": "Payment automation",
+        "desc": "Collect payments, retry failed charges, keep billing updated."
+      },
+      {
+        "icon": "📊",
+        "title": "Revenue analytics",
+        "desc": "Track MRR, ARR, churn, renewals, and lifetime value in real time."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Retention flows",
+        "desc": "Trigger smart follow-ups before renewals or cancellation risks."
+      }
+    ]
+  },
+  "enterprise": {
+    "tag": "✦ Powerful business solution",
+    "titlePrefix": "Modern",
+    "titleCircled": "business",
+    "titleSuffix": "management software",
+    "cards": [
+      {
+        "icon": "🌍",
+        "title": "Flexible for every business",
+        "desc": "Whether you're a startup or a large company, Adon adapts to the way your team works.",
+        "badge": "Flexible"
+      },
+      {
+        "icon": "🔒",
+        "title": "Your data stays yours",
+        "desc": "Keep your business data secure with full control. Use our cloud or host it on your own infrastructure.",
+        "badge": "Secure"
+      },
+      {
+        "icon": "🤖",
+        "title": "AI that helps you work smarter",
+        "desc": "Use AI assistance for reporting, analysis, automation, and faster decision-making across your business.",
+        "badge": "AI Ready"
+      },
+      {
+        "icon": "💰",
+        "title": "Simple pricing",
+        "desc": "No hidden fees or complicated plans. Transparent pricing designed for growing businesses.",
+        "badge": "Transparent"
+      }
+    ]
+  },
+  "stats": {
+    "tag": "✦ Built for growing businesses",
+    "title": "Start small, grow with confidence",
+    "items": [
+      {
+        "value": "100+",
+        "label": "Early users"
+      },
+      {
+        "value": "50+",
+        "label": "Business tools"
+      },
+      {
+        "value": "Reliable",
+        "label": "Stable daily workflows"
+      },
+      {
+        "value": "Simple",
+        "label": "Easy for every team"
+      }
+    ]
+  },
+  "testimonials": {
+    "tag": "✦ Customer stories",
+    "title": "Teams love using Adon",
+    "items": [
+      {
+        "name": "Nazmus Sadat",
+        "role": "Project Manager, Net Reputation",
+        "quote": "Adon ERP cut our billing time by 70%. Every invoice runs itself now.",
+        "avatar": "🌸",
+        "score": 5
+      },
+      {
+        "name": "David Rayan",
+        "role": "CEO, Reputation Prime",
+        "quote": "The accounting module alone replaced three separate tools we used.",
+        "avatar": "🎯",
+        "score": 5
+      },
+      {
+        "name": "Md Mosarouf Hossain",
+        "role": "CFO, Gravionne",
+        "quote": "We grew 3× without hiring extra finance staff. That says it all.",
+        "avatar": "🌿",
+        "score": 5
+      }
+    ],
+    "extraQuote": "Adon helped us simplify accounting, sales, and team management in one place. Instead of juggling multiple tools, everything is now connected and much easier to manage.",
+    "extraAuthor": "Richard Miles",
+    "extraRole": "Training Manager, Enterprise Corp"
+  },
+  "cta": {
+    "title": "Take your business to the next level",
+    "description": "Manage billing, payments, renewals, customer relationships, and reporting from one unified platform with Adon ERP."
+  }
+}

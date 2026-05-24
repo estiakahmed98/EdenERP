@@ -1,14 +1,20 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 import FeatureCard from "./FeatureCard";
-import { useLanguage } from "./LanguageProvider";
-import { TESTIMONIALS } from "./landing-data";
 import { SectionTag } from "./landing-ui";
 
 export default function TestimonialsSection() {
-  const { t } = useLanguage();
+  const t = useTranslations("pages.home");
+  const testimonials = t.raw("testimonials.items") as Array<{
+    name: string;
+    role: string;
+    quote: string;
+    avatar: string;
+    score: number;
+  }>;
 
   return (
     <section className="bg-gray-bg px-6 py-25 dark:bg-slate-900">
@@ -21,7 +27,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="grid gap-5 lg:grid-cols-3">
-          {TESTIMONIALS.map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <FeatureCard
               key={testimonial.name}
               className={`reveal reveal-d${index + 1} text-left`}

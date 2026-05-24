@@ -1,0 +1,331 @@
+{
+  "metadata": {
+    "title": "Pricing | Adon ERP",
+    "description": "Simple, transparent Adon ERP pricing for startups, growing teams, and enterprise organizations."
+  },
+  "hero": {
+    "eyebrow": "Simple pricing for modern teams",
+    "label": "Adon ERP Pricing",
+    "title": "Choose the plan",
+    "titleAccent": "that grows with you.",
+    "description": "Start with the tools your team needs today, then scale into CRM, tasks, sales, accounting, inventory, ecommerce, automation, and reporting from one premium workspace.",
+    "highlights": [
+      "No hidden fees",
+      "Cancel anytime",
+      "14-day trial"
+    ],
+    "badges": {
+      "bestValueTitle": "Best value",
+      "bestValuePlan": "Professional plan",
+      "scaleReadyTitle": "Scale-ready",
+      "scaleReadyDescription": "Add modules anytime"
+    },
+    "preview": {
+      "windowTitle": "Adon ERP Billing Center",
+      "currentPlanLabel": "Current plan",
+      "currentPlanName": "Professional",
+      "metrics": [
+        {
+          "value": 100,
+          "label": "Users"
+        },
+        {
+          "value": 1024,
+          "label": "Storage (GB)"
+        },
+        {
+          "value": 24,
+          "label": "Visibility"
+        }
+      ],
+      "cards": {
+        "monthlyCostLabel": "Monthly cost",
+        "monthlyCostValue": 99,
+        "monthlyCostNote": "Predictable cost",
+        "secondaryMetricLabel": "Implementation",
+        "secondaryMetricAnnualValue": "20%",
+        "secondaryMetricTrialValue": "14 days",
+        "secondaryMetricAnnual": "Annual saving",
+        "secondaryMetricTrial": "Trial available",
+        "workflowTitle": "Approvals and workflows",
+        "workflowDescription": "Shared data keeps pricing, billing, approvals, and support aligned."
+      }
+    }
+  },
+  "modules": [
+    "CRM",
+    "Sales",
+    "Inventory",
+    "Accounting",
+    "HRM",
+    "Projects",
+    "Ecommerce",
+    "Client Portal",
+    "Automation",
+    "Helpdesk",
+    "Reports",
+    "API"
+  ],
+  "plansSection": {
+    "eyebrow": "Flexible plans",
+    "title": "Pricing that fits the way your team grows.",
+    "description": "Start lean, unlock automation when your workflow is ready, and move into enterprise support without rebuilding your stack.",
+    "billing": {
+      "monthly": "Monthly",
+      "annually": "Annually",
+      "save": "Save 20%"
+    },
+    "popularBadge": "Most Popular",
+    "annualSavings": "You save 20% with annual billing",
+    "featuresIncluded": "Features included:"
+  },
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "badge": "For startups",
+      "monthlyPrice": 29,
+      "annualPrice": 278,
+      "periodMonthly": "/month",
+      "periodAnnual": "/year",
+      "description": "A focused workspace for small teams starting with CRM, tasks, sales, and basic reporting.",
+      "icon": "users",
+      "color": "from-violet-600 to-fuchsia-500",
+      "softBg": "bg-violet-50",
+      "iconText": "text-violet-600",
+      "cta": "Get Started",
+      "href": "/contact",
+      "highlighted": false,
+      "features": [
+        "Up to 10 users",
+        "10GB secure storage",
+        "CRM and client pipeline",
+        "Task and project management",
+        "Basic sales tracking",
+        "Email support",
+        "Basic analytics dashboard",
+        "Standard role access"
+      ]
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "badge": "Most Popular",
+      "monthlyPrice": 99,
+      "annualPrice": 950,
+      "periodMonthly": "/month",
+      "periodAnnual": "/year",
+      "description": "Advanced automation, integrations, reports, and team visibility for fast-growing operations.",
+      "icon": "zap",
+      "color": "from-primary via-fuchsia-600 to-amber-500",
+      "softBg": "bg-primary/10",
+      "iconText": "text-primary",
+      "cta": "Start Free Trial",
+      "href": "/contact",
+      "highlighted": true,
+      "features": [
+        "Up to 100 users",
+        "1TB secure storage",
+        "Advanced CRM and automation",
+        "Inventory and sales reports",
+        "Custom integrations and API access",
+        "Priority support",
+        "SSO and SAML options",
+        "Custom branding",
+        "Approval workflows",
+        "Advanced activity logs"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "badge": "Custom solution",
+      "monthlyPrice": null,
+      "annualPrice": null,
+      "periodMonthly": "",
+      "periodAnnual": "",
+      "description": "A tailored Adon ERP environment for large teams, complex workflows, and dedicated support.",
+      "icon": "building2",
+      "color": "from-slate-950 via-violet-900 to-primary",
+      "softBg": "bg-slate-100",
+      "iconText": "text-slate-900",
+      "cta": "Contact Sales",
+      "href": "/contact",
+      "highlighted": false,
+      "features": [
+        "Unlimited users",
+        "Unlimited storage",
+        "Multi-company management",
+        "Dedicated account manager",
+        "Custom workflow development",
+        "On-premises option",
+        "24/7 premium support",
+        "SLA guarantee",
+        "Advanced security controls",
+        "Custom reporting suite"
+      ]
+    }
+  ],
+  "benefitsSection": {
+    "eyebrow": "Built for confident scaling",
+    "title": "Pricing that stays clear as your business grows.",
+    "description": "Adon ERP keeps your cost structure predictable while giving your team room to add modules, users, workflows, storage, reporting, and enterprise support."
+  },
+  "benefits": [
+    {
+      "title": "Transparent billing",
+      "description": "Clear pricing with no hidden implementation surprises for standard plans.",
+      "icon": "creditCard"
+    },
+    {
+      "title": "Secure workspace",
+      "description": "Role-based access, activity visibility, and secure business data handling.",
+      "icon": "lockKeyhole"
+    },
+    {
+      "title": "Scale module by module",
+      "description": "Start with what you need today and expand as your business grows.",
+      "icon": "layers3"
+    }
+  ],
+  "comparisonSection": {
+    "eyebrow": "Plan comparison",
+    "title": "Compare every plan clearly.",
+    "description": "Review users, storage, automation, integrations, branding, and support before choosing the right plan for your team.",
+    "headers": {
+      "feature": "Feature",
+      "starter": "Starter",
+      "professional": "Professional",
+      "enterprise": "Enterprise"
+    }
+  },
+  "comparison": [
+    {
+      "feature": "Users",
+      "starter": "10",
+      "professional": "100",
+      "enterprise": "Unlimited"
+    },
+    {
+      "feature": "Storage",
+      "starter": "10GB",
+      "professional": "1TB",
+      "enterprise": "Unlimited"
+    },
+    {
+      "feature": "CRM Pipeline",
+      "starter": "Basic",
+      "professional": "Advanced",
+      "enterprise": "Custom"
+    },
+    {
+      "feature": "Task Management",
+      "starter": "Included",
+      "professional": "Advanced",
+      "enterprise": "Advanced"
+    },
+    {
+      "feature": "Inventory Management",
+      "starter": "Basic",
+      "professional": "Included",
+      "enterprise": "Advanced"
+    },
+    {
+      "feature": "Automation",
+      "starter": "Limited",
+      "professional": "Included",
+      "enterprise": "Advanced"
+    },
+    {
+      "feature": "API Access",
+      "starter": false,
+      "professional": true,
+      "enterprise": true
+    },
+    {
+      "feature": "Custom Branding",
+      "starter": false,
+      "professional": true,
+      "enterprise": true
+    },
+    {
+      "feature": "Approval Workflows",
+      "starter": "Basic",
+      "professional": "Advanced",
+      "enterprise": "Custom"
+    },
+    {
+      "feature": "Support",
+      "starter": "Email",
+      "professional": "Priority",
+      "enterprise": "24/7 Dedicated"
+    }
+  ],
+  "addonsSection": {
+    "eyebrow": "Optional add-ons",
+    "title": "Extend your workspace when needed.",
+    "description": "Add extra capacity, expert implementation help, or advanced analytics without changing your whole plan."
+  },
+  "addons": [
+    {
+      "title": "Extra Storage",
+      "amount": 10,
+      "unit": "/ 100GB",
+      "description": "Add more secure storage for documents, images, reports, and operational records.",
+      "icon": "shieldCheck"
+    },
+    {
+      "title": "Advanced Analytics",
+      "amount": 25,
+      "unit": "/ month",
+      "description": "Unlock deeper dashboards, custom exports, business intelligence, and performance tracking.",
+      "icon": "barChart3"
+    },
+    {
+      "title": "Implementation Support",
+      "amount": null,
+      "unit": "",
+      "description": "Get expert help for migration, setup, onboarding, training, and workflow design.",
+      "icon": "sparkles"
+    }
+  ],
+  "faqSection": {
+    "eyebrow": "Questions & answers",
+    "title": "Frequently asked questions."
+  },
+  "faqs": [
+    {
+      "q": "Can I change my plan anytime?",
+      "a": "Yes. You can upgrade or downgrade your plan anytime. Plan changes can be applied based on your billing cycle and workspace requirements."
+    },
+    {
+      "q": "Do you offer a free trial?",
+      "a": "Yes. The Professional plan can include a 14-day trial so your team can explore the workflow before committing."
+    },
+    {
+      "q": "Can I add only the modules I need?",
+      "a": "Yes. Adon ERP is designed to scale module by module. You can start with CRM, tasks, sales, inventory, HR, ecommerce, or analytics depending on your business needs."
+    },
+    {
+      "q": "Do you support custom workflows?",
+      "a": "Yes. Enterprise customers can request custom workflows, reports, integrations, role permissions, and deployment options."
+    },
+    {
+      "q": "What payment methods do you accept?",
+      "a": "Standard plans can support common online payment methods. Enterprise customers can use custom billing such as bank transfer or invoice-based payment."
+    },
+    {
+      "q": "Is there a long-term contract?",
+      "a": "Monthly plans do not require a long-term contract. Annual and enterprise agreements are also available for teams that need discounted or custom terms."
+    }
+  ],
+  "ctaSection": {
+    "title": "Ready to run your business smarter?",
+    "description": "Start with the plan that fits today, then add more modules, automation, reporting, and support as your company grows.",
+    "points": [
+      "Premium ERP experience",
+      "Secure role access",
+      "Scale without chaos"
+    ]
+  }
+}

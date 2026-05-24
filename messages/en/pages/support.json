@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "title": "Support | Adon ERP",
+    "description": "Get support from our team of experts and reach the right Adon ERP contact quickly."
+  },
+  "hero": {
+    "eyebrow": "We're here to help",
+    "title": "Need help?",
+    "description": "Get support from our team of experts. We're available 24/7 to assist you.",
+    "searchPlaceholder": "Ask Adon ERP AI...",
+    "or": "or",
+    "askHuman": "Ask a Human"
+  },
+  "contact": {
+    "title": "Contact us",
+    "description": "Choose the best way to reach out to our team",
+    "advisor": "Meet an advisor",
+    "development": "Request developments",
+    "partner": "Become a partner",
+    "bug": "Report a bug"
+  },
+  "emergency": {
+    "title": "Emergency Lines",
+    "bangladesh": "Bangladesh",
+    "support": "Support",
+    "office": "Office",
+    "available": "24/7 support available"
+  },
+  "offices": {
+    "title": "Adon ERP <accent>Offices</accent>",
+    "description": "Visit us at our headquarters or contact our regional offices",
+    "officeTitle": "Adon ERP Office",
+    "bangladesh": {
+      "city": "Dhaka",
+      "tags": {
+        "sales": "Sales",
+        "services": "Services",
+        "support": "Support"
+      },
+      "address": {
+        "line1": "Tower 71, Flat # 9 A-B, 516/3 South Manikdi",
+        "line2": "Matikata Road, ECB Chattar",
+        "line3": "Dhaka Cantonment, Dhaka - 1206"
+      }
+    }
+  },
+  "trust": {
+    "reviews": "4.9/5 from 500+ reviews",
+    "users": "15M+ happy users",
+    "support": "24/7 support",
+    "response": "Average response: 2min"
+  },
+  "cta": {
+    "title": "Still have questions?",
+    "description": "Our team is ready to help you with any questions about Adon ERP.",
+    "action": "Start a Live Chat"
+  }
+}

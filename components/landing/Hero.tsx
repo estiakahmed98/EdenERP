@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
-import { useLanguage } from "./LanguageProvider";
 import { HandText, SectionTag, ThreeBg, TypeWriter } from "./landing-ui";
 
 export default function Hero() {
-  const { t } = useLanguage();
-  const typeWords = t("hero.typeWords") as string[];
+  const t = useTranslations("pages.home");
+  const commonT = useTranslations("common.actions");
+  const typeWords = t.raw("hero.typeWords") as string[];
 
   return (
     <section className="relative overflow-hidden bg-white pb-20 pt-25 dark:bg-slate-950">
@@ -33,7 +34,7 @@ export default function Hero() {
 
         <div className="reveal reveal-d3 mt-8 flex flex-wrap justify-center gap-3">
           <button className="rounded-[10px] border-[1.5px] border-purple bg-(--purple) text-white px-5.5 py-3 font-body text-[15px] font-semibold text-ink transition hover:-translate-y-0.5 hover:border-purple hover:text-purple">
-            {t("common.watchDemo")}
+            {commonT("watchDemo")}
           </button>
         </div>
 

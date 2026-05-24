@@ -1,4 +1,5 @@
 import { App } from "@/data/apps";
+import { useLocale, useTranslations } from "next-intl";
 import { Star, Download, Building2 } from "lucide-react";
 import Image from "next/image";
 
@@ -7,6 +8,10 @@ interface AppCardProps {
 }
 
 export default function AppCard({ app }: AppCardProps) {
+  const locale = useLocale();
+  const t = useTranslations("common.states");
+  const downloadCount = new Intl.NumberFormat(locale).format(app.downloads);
+
   return (
     <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
       {/* Banner Image Placeholder */}
@@ -42,7 +47,7 @@ export default function AppCard({ app }: AppCardProps) {
         <div className="mb-3">
           {app.price === "FREE" ? (
             <span className="inline-block bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold">
-              FREE
+              {t("free")}
             </span>
           ) : (
             <span className="text-2xl font-bold text-gray-900">{app.price}</span>
@@ -68,7 +73,7 @@ export default function AppCard({ app }: AppCardProps) {
           </div>
           <div className="flex items-center gap-1 text-xs text-gray-500">
             <Download className="h-3 w-3" />
-            <span>{app.downloads.toLocaleString()}</span>
+            <span>{downloadCount}</span>
           </div>
         </div>
       </div>

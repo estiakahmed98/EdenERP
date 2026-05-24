@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "title": "Apps | Adon ERP",
+    "description": "Browse top apps, newly released tools, and popular business extensions for Adon ERP."
+  },
+  "filterBar": {
+    "filters": [
+      "Categories",
+      "All Prices",
+      "All Platforms",
+      "All Versions"
+    ],
+    "links": {
+      "faq": "FAQ",
+      "salesConditions": "Sales Conditions",
+      "vendorGuidelines": "Vendor Guidelines"
+    }
+  },
+  "sections": {
+    "topApps": "Top Apps",
+    "newApps": "New Apps",
+    "mostDownloaded": "Most Downloaded"
+  }
+}

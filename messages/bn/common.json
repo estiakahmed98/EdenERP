@@ -1,0 +1,33 @@
+{
+  "languageSwitcher": {
+    "label": "ভাষা",
+    "options": {
+      "en": "EN",
+      "bn": "বাংলা"
+    }
+  },
+  "theme": {
+    "switchToLight": "লাইট মোডে পরিবর্তন করুন",
+    "switchToDark": "ডার্ক মোডে পরিবর্তন করুন",
+    "light": "লাইট",
+    "dark": "ডার্ক"
+  },
+  "actions": {
+    "watchDemo": "ডেমো দেখুন",
+    "viewAllApps": "সব ৫০+ টুল দেখুন",
+    "seeAllFeatures": "সব সুবিধা দেখুন",
+    "contactSales": "সেলস টিমের সাথে কথা বলুন",
+    "talkToSales": "সেলস টিমের সাথে কথা বলুন",
+    "viewPlans": "প্ল্যান দেখুন",
+    "startFreeTrial": "ফ্রি ট্রায়াল শুরু করুন",
+    "getStarted": "শুরু করুন",
+    "learnMore": "আরও জানুন",
+    "viewAll": "সব দেখুন"
+  },
+  "states": {
+    "included": "অন্তর্ভুক্ত",
+    "notIncluded": "অন্তর্ভুক্ত নয়",
+    "free": "ফ্রি",
+    "custom": "কাস্টম"
+  }
+}

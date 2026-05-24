@@ -1,14 +1,19 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 import FeatureCard from "./FeatureCard";
-import { useLanguage } from "./LanguageProvider";
 import { Circled, SectionTag } from "./landing-ui";
 
 export default function EnterpriseSection() {
-  const { t } = useLanguage();
-  const cards = t("enterprise.cards") as any[];
+  const t = useTranslations("pages.home");
+  const cards = t.raw("enterprise.cards") as Array<{
+    icon: string;
+    title: string;
+    desc: string;
+    badge: string;
+  }>;
 
   return (
     <section className="bg-white px-6 py-25 dark:bg-slate-950">
@@ -27,7 +32,7 @@ export default function EnterpriseSection() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
-          {cards.map((card: any, index: number) => (
+          {cards.map((card, index) => (
             <FeatureCard
               key={card.title}
               className={`reveal reveal-d${(index % 2) + 1}`}

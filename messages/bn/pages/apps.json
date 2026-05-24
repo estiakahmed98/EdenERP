@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "title": "অ্যাপস | Adon ERP",
+    "description": "Adon ERP-এর জন্য সেরা অ্যাপ, নতুন রিলিজ এবং জনপ্রিয় বিজনেস এক্সটেনশনগুলো দেখুন।"
+  },
+  "filterBar": {
+    "filters": [
+      "ক্যাটাগরি",
+      "সব মূল্য",
+      "সব প্ল্যাটফর্ম",
+      "সব ভার্সন"
+    ],
+    "links": {
+      "faq": "FAQ",
+      "salesConditions": "বিক্রয় শর্তাবলী",
+      "vendorGuidelines": "ভেন্ডর গাইডলাইন"
+    }
+  },
+  "sections": {
+    "topApps": "সেরা অ্যাপস",
+    "newApps": "নতুন অ্যাপস",
+    "mostDownloaded": "সবচেয়ে বেশি ডাউনলোড"
+  }
+}
