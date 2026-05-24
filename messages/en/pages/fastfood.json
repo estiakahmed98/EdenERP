@@ -1,0 +1,190 @@
+{
+  "metadata": {
+    "title": "Fast Food | AdonERP",
+    "description": "AI-powered fast food management platform for all your quick service operations — from self-ordering kiosks and kitchen management to inventory and loyalty programs."
+  },
+  "hero": {
+    "eyebrowIcon": "Utensils",
+    "eyebrowLabel": "Fast food industry template",
+    "industriesLabel": "Industries / Fast Food",
+    "preHeading": "The best software for your",
+    "title": "🍔 Fast Food",
+    "description": "AdonERP covers everything from self-ordering kiosks and kitchen management to inventory and staff, all in one seamless platform.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "testimonialQuote": "AdonERP helped us achieve our goals while expanding, by reducing costs by approximately 10%, increasing employee productivity by 50%, and massively improving the decision-making process.",
+    "testimonialName": "Maria Gonzalez",
+    "testimonialRole": "Owner, Burger Palace"
+  },
+  "kioskSection": {
+    "title": "Self-ordering at",
+    "subtitle": "the kiosk",
+    "description": "Let customers place and pay for their orders directly from the kiosk. They can browse meals, choose extras, and enjoy a faster ordering experience.",
+    "badges": {
+      "qrOrdering": "QR ordering",
+      "digitalPayments": "Digital payments"
+    }
+  },
+  "serviceSection": {
+    "title": "Smooth service",
+    "description": "Seamless order preparation and kitchen display keep staff aligned with orders so they can prepare meals exactly on time."
+  },
+  "rewardsSection": {
+    "title": "Tasty rewards",
+    "description": "Keep your customers coming back with loyalty programs, coupons, discounts and promotional rewards.",
+    "badges": {
+      "pointsSystem": "Points system",
+      "digitalWallet": "Digital wallet"
+    },
+    "rewards": ["Coupons", "Loyalty cards", "Promotions"],
+    "rewardIcons": {
+      "Coupons": "🎫",
+      "Loyalty cards": "💳",
+      "Promotions": "🔥"
+    }
+  },
+  "inventorySection": {
+    "title": "Never ever run",
+    "titleHighlight": "out of stock",
+    "description": "Smart replenishment strategies let AdonERP propose or trigger purchase orders automatically.",
+    "table": {
+      "headers": ["Ingredient", "On Hand", "Min Stock", "Order Qty", "Status"],
+      "rows": [
+        {
+          "ingredient": "Burger Patties",
+          "onHand": "120 pcs",
+          "minStock": "100 pcs",
+          "orderQty": "200 pcs",
+          "status": "Good"
+        },
+        {
+          "ingredient": "Buns",
+          "onHand": "85 pcs",
+          "minStock": "100 pcs",
+          "orderQty": "150 pcs",
+          "status": "Reorder"
+        },
+        {
+          "ingredient": "French Fries",
+          "onHand": "45 kg",
+          "minStock": "40 kg",
+          "orderQty": "60 kg",
+          "status": "Warning"
+        },
+        {
+          "ingredient": "Cheese Slices",
+          "onHand": "60 pcs",
+          "minStock": "50 pcs",
+          "orderQty": "100 pcs",
+          "status": "Good"
+        },
+        {
+          "ingredient": "Lettuce",
+          "onHand": "8 kg",
+          "minStock": "10 kg",
+          "orderQty": "15 kg",
+          "status": "Reorder"
+        },
+        {
+          "ingredient": "Tomato Sauce",
+          "onHand": "12 L",
+          "minStock": "10 L",
+          "orderQty": "20 L",
+          "status": "Good"
+        }
+      ]
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "description": "Everything needed to run fast food ordering, payments, stock management, and service from one platform.",
+    "list": [
+      {
+        "title": "Loyalty programs",
+        "description": "Reward repeat customers with points, discounts, and exclusive offers."
+      },
+      {
+        "title": "Combo meals",
+        "description": "Create meal bundles and special offers to increase average order value."
+      },
+      {
+        "title": "Self-ordering",
+        "description": "Let customers place orders directly from kiosks or QR codes."
+      },
+      {
+        "title": "Payment provider",
+        "description": "Accept multiple payment methods including cards and digital wallets."
+      },
+      {
+        "title": "Plan your service",
+        "description": "Schedule staff shifts and optimize kitchen operations."
+      }
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow with connected apps for your fast food operation, inventory, customer management, and financials.",
+    "apps": [
+      {
+        "title": "Sales",
+        "subtitle": "Manage orders and quotations",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Invoicing",
+        "subtitle": "Professional billing",
+        "icon": "ReceiptText"
+      },
+      {
+        "title": "Inventory",
+        "subtitle": "Real-time stock tracking",
+        "icon": "Package"
+      },
+      {
+        "title": "Purchase",
+        "subtitle": "Smart supplier orders",
+        "icon": "Box"
+      },
+      {
+        "title": "CRM",
+        "subtitle": "Customer relationship management",
+        "icon": "Users"
+      },
+      {
+        "title": "Accounting",
+        "subtitle": "Financial management",
+        "icon": "CreditCard"
+      }
+    ],
+    "seeAllLink": "See all apps"
+  },
+  "testimonialsSection": {
+    "testimonials": [
+      {
+        "name": "Maria Gonzalez",
+        "role": "Owner, Burger Palace",
+        "content": "AdonERP helped us achieve our goals while expanding, by reducing costs by approximately 10%, increasing employee productivity by 50%, and massively improving the decision-making process.",
+        "rating": 5
+      },
+      {
+        "name": "David Kim",
+        "role": "Operations Director, QuickBite",
+        "content": "The self-ordering kiosks and kitchen display system transformed our operations. Customers love the speed, and our team stays perfectly synchronized.",
+        "rating": 5
+      }
+    ]
+  },
+  "ctaBanner": {
+    "title": "Join 15 million happy users",
+    "description": "who grow their business with AdonERP — the complete solution for fast food and quick service restaurants."
+  },
+  "footerCta": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Ready to scale your restaurant",
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Launch a fast food management workflow that helps your team serve faster, manage inventory smarter, and scale from one location to many.",
+    "button": "Start now"
+  }
+}
