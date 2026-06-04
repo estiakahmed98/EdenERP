@@ -24,7 +24,7 @@ export default function AppsSection() {
       .join("");
 
   return (
-    <section className="relative overflow-hidden bg-(--cream) px-6 py-25 dark:bg-slate-950">
+    <section className="relative overflow-hidden bg-(--cream) px-6 py-25">
       <div className="pointer-events-none absolute inset-0 opacity-35">
         <svg width="100%" height="100%" preserveAspectRatio="none">
           <path
@@ -41,11 +41,11 @@ export default function AppsSection() {
       <div className="mx-auto max-w-230 text-center">
         <div className="reveal">
           <SectionTag>{t("apps.tag")}</SectionTag>
-          <h2 className="mt-4 mb-2.5 font-hand text-[clamp(36px,5vw,62px)] font-bold leading-[1.1] text-[#1a1a2e] dark:text-slate-100">
+          <h2 className="mt-4 mb-2.5 font-hand text-[clamp(36px,5vw,62px)] font-bold leading-[1.1] text-(--ink)">
             {t("apps.title")} <HandText>{t("apps.titleHand")}</HandText>{" "}
             {t("apps.titleSuffix")}
           </h2>
-          <p className="mx-auto mb-12 max-w-115 font-body text-[15px] leading-[1.7] text-muted)">
+          <p className="mx-auto mb-12 max-w-115 font-body text-[15px] leading-[1.7] text-[var(--muted)]">
             {t("apps.description")}
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function AppsSection() {
             return (
               <div
                 key={rowIndex}
-                className="mb-3 overflow-hidden rounded-[14px] border border-dashed border-[#d8cbbe] bg-white/50 dark:border-slate-700 dark:bg-slate-900/50"
+                className="mb-3 overflow-hidden rounded-[14px] border border-dashed border-border bg-card/60"
               >
                 <div className={`flex w-max gap-3 p-2 ${direction}`}>
                   {track.map((app, cardIndex) => {
@@ -71,17 +71,17 @@ export default function AppsSection() {
                     return (
                       <div
                         key={`${rowIndex}-${app.name}-${cardIndex}`}
-                        className="relative min-w-33 cursor-pointer overflow-visible rounded-2xl border-[1.5px] border-[#f0edf4] bg-white px-3 py-4.5 text-center transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.04] hover:border-[#714b6733] hover:shadow-[0_16px_40px_#714b6715] dark:border-slate-700 dark:bg-slate-900"
+                        className="relative min-w-33 cursor-pointer overflow-visible rounded-2xl border-[1.5px] border-border bg-card px-3 py-4.5 text-center transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.04] hover:border-primary/20 hover:shadow-[0_16px_40px_rgba(15,23,42,0.10)]"
                       >
                         {alt && altsOn && (
-                          <div className="absolute -top-10 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md border border-[#714b6733] bg-white px-2 py-1 font-hand text-[10px] italic text-(--purple)]">
+                          <div className="absolute -top-10 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md border border-primary/20 bg-card px-2 py-1 font-hand text-[10px] italic text-(--purple)">
                             {alt}
-                            <div className="absolute -bottom-1.5 left-1/2 h-1.5 w-px -translate-x-1/2 bg-(--purple)]" />
+                            <div className="absolute -bottom-1.5 left-1/2 h-1.5 w-px -translate-x-1/2 bg-(--purple)" />
                           </div>
                         )}
 
                         <div
-                          className="relative mx-auto mb-2.5 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-[0_14px_28px_#0000000a] dark:bg-slate-900"
+                          className="relative mx-auto mb-2.5 grid h-14 w-14 place-items-center rounded-2xl bg-card shadow-[0_14px_28px_rgba(0,0,0,0.06)]"
                           style={{ border: `1px solid ${app.color}` }}
                         >
                           <svg
@@ -110,13 +110,13 @@ export default function AppsSection() {
                           </div>
                         </div>
 
-                        <span className="font-body text-xs font-extrabold uppercase tracking-[0.4px] text-[#55637a] dark:text-slate-300">
+                        <span className="font-body text-xs font-extrabold uppercase tracking-[0.4px] text-[var(--muted)]">
                           {app.name}
                         </span>
                         <div
                           className={`mt-1.5 min-h-5 font-hand text-sm ${
                             altsOn && alt
-                              ? "text-(--purple)] opacity-100"
+                              ? "text-(--purple) opacity-100"
                               : "text-[#8f8688] opacity-90"
                           }`}
                         >
@@ -133,7 +133,7 @@ export default function AppsSection() {
 
         <Link
           href="/apps"
-          className="mt-5 inline-block font-body text-[13px] font-bold text-(--purple)] no-underline"
+          className="mt-5 inline-block font-body text-[13px] font-bold text-(--purple) no-underline"
         >
           {commonT("viewAllApps")}
         </Link>

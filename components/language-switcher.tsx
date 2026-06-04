@@ -25,7 +25,7 @@ export default function LanguageSwitcher({
     return (
       <div
         aria-label={t("label")}
-        className="flex w-full items-center justify-center gap-10 rounded-2xl border border-slate-300 px-5 py-4 dark:border-slate-800"
+        className="flex w-full items-center justify-center gap-10 rounded-2xl border border-border bg-card px-5 py-4 text-card-foreground"
       >
         {(["en", "bn"] as const).map((nextLocale) => (
           <button
@@ -33,7 +33,7 @@ export default function LanguageSwitcher({
             type="button"
             onClick={() => switchLanguage(nextLocale)}
             className={`text-sm font-bold ${
-              locale === nextLocale ? "text-slate-900 dark:text-white" : "text-slate-500"
+              locale === nextLocale ? "text-foreground" : "text-muted-foreground"
             }`}
           >
             {t(`options.${nextLocale}`)}
@@ -46,7 +46,7 @@ export default function LanguageSwitcher({
   return (
     <div
       aria-label={t("label")}
-      className="hidden items-center gap-1 rounded-full border border-slate-200 bg-white/90 p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900/90 md:inline-flex"
+      className="hidden items-center gap-1 rounded-full border border-border bg-card/90 p-1 shadow-sm md:inline-flex"
     >
       {(["en", "bn"] as const).map((nextLocale) => (
         <button
@@ -55,8 +55,8 @@ export default function LanguageSwitcher({
           onClick={() => switchLanguage(nextLocale)}
           className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
             locale === nextLocale
-              ? "bg-(--purple) text-white"
-              : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
           }`}
         >
           {t(`options.${nextLocale}`)}

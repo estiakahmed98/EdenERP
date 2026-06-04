@@ -21,6 +21,26 @@ export const GLOBAL_CSS = `
 body { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 html[lang^='bn'] { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
 .dark { --cream: #0b1120; --gray-bg: #111827; --ink: #e5e7eb; --muted: #94a3b8; --purple-light: #1f1521; }
+.green, .theme-green {
+  --purple: #238b5a;
+  --purple-light: #e8f6ee;
+  --purple-dark: #176c45;
+  --teal: #16b38a;
+  --cream: #f5fbf7;
+  --gray-bg: #edf7f0;
+  --ink: #133321;
+  --muted: #4f6b5d;
+}
+.ocean, .theme-ocean {
+  --purple: #2563eb;
+  --purple-light: #e8f2ff;
+  --purple-dark: #1d4ed8;
+  --teal: #06b6d4;
+  --cream: #f5fbff;
+  --gray-bg: #ecf7fb;
+  --ink: #08263d;
+  --muted: #557086;
+}
 
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
@@ -233,7 +253,7 @@ export function TypeWriter({ words }: { words: string[] }) {
   }, [wordIndex, words]);
 
   return (
-    <span className="font-hand text--purple">
+    <span className="font-hand text-(--purple)">
       {text}
       <span className="animate-[blink_1s_infinite] font-light">|</span>
     </span>
@@ -252,7 +272,7 @@ export function SectionTag({
       className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 font-body text-xs font-bold tracking-[0.5px] ${
         light
           ? "border-white/20 bg-white/10 text-white"
-          : "border-[#714b6722] bg-(--purple-light) text-(--purple) dark:text-white"
+          : "border-border bg-(--purple-light) text-(--purple)"
       }`}
     >
       {children}

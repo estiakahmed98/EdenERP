@@ -16,10 +16,10 @@ export default function FeaturesSection() {
   }>;
 
   return (
-    <section id="features" className="rounded-t-[48px] bg-gray-bg px-6 py-25 dark:bg-slate-900">
+    <section id="features" className="rounded-t-[48px] bg-(--gray-bg) px-6 py-25">
       <div className="mx-auto max-w-240">
         <div className="reveal mb-12">
-          <h2 className="max-w-125 font-hand text-[clamp(40px,6vw,68px)] font-bold leading-[1.1] text-[#1a1a2e] dark:text-slate-100">
+          <h2 className="max-w-125 font-hand text-[clamp(40px,6vw,68px)] font-bold leading-[1.1] text-(--ink)">
             {t("features.titlePrefix")}{" "}
             <Circled color="var(--teal)">{t("features.titleHand")}</Circled>
             <br />
@@ -34,18 +34,18 @@ export default function FeaturesSection() {
               className={`reveal reveal-d${(index % 2) + 1}`}
             >
               <div className="flex items-start justify-between">
-                <div className="flex h-11.5 w-11.5 items-center justify-center rounded-[14px] bg-purple-light text-[22px]">
+                <div className="flex h-11.5 w-11.5 items-center justify-center rounded-[14px] bg-(--purple-light) text-[22px]">
                   {feature.icon}
                 </div>
 
                 <span className="text-base text-[#fbbf24]">★</span>
               </div>
 
-              <h3 className="mt-4.5 mb-2 font-body text-base font-bold text-[#1a1a2e] dark:text-slate-100">
+              <h3 className="mt-4.5 mb-2 font-body text-base font-bold text-foreground">
                 {feature.title}
               </h3>
 
-              <p className="font-body text-[13px] leading-[1.7] text-muted">
+              <p className="font-body text-[13px] leading-[1.7] text-[var(--muted)]">
                 {feature.desc}
               </p>
             </FeatureCard>
@@ -54,7 +54,7 @@ export default function FeaturesSection() {
 
         <a
           href="#"
-          className="reveal mt-8 inline-flex items-center gap-1.5 font-body text-[13px] font-bold text-purple no-underline"
+          className="reveal mt-8 inline-flex items-center gap-1.5 font-body text-[13px] font-bold text-(--purple) no-underline"
         >
           {commonT("seeAllFeatures")}
         </a>

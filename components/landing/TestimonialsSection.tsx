@@ -17,11 +17,11 @@ export default function TestimonialsSection() {
   }>;
 
   return (
-    <section className="bg-gray-bg px-6 py-25 dark:bg-slate-900">
+    <section className="bg-(--gray-bg) px-6 py-25">
       <div className="mx-auto max-w-240">
         <div className="reveal mb-8">
           <SectionTag>{t("testimonials.tag")}</SectionTag>
-          <h2 className="mt-3.5 font-hand text-[clamp(34px,5vw,58px)] font-bold leading-[1.1] text-[#1a1a2e] dark:text-slate-100">
+          <h2 className="mt-3.5 font-hand text-[clamp(34px,5vw,58px)] font-bold leading-[1.1] text-(--ink)">
             {t("testimonials.title")}
           </h2>
         </div>
@@ -40,36 +40,36 @@ export default function TestimonialsSection() {
                   </span>
                 ))}
               </div>
-              <p className="mb-5 font-body text-sm italic leading-[1.8] text-[#475569]">
+              <p className="mb-5 font-body text-sm italic leading-[1.8] text-[var(--muted)]">
                 "{testimonial.quote}"
               </p>
-              <div className="font-body text-[13px] font-bold text-purple">
+              <div className="font-body text-[13px] font-bold text-(--purple)">
                 {testimonial.name}
               </div>
-              <div className="mt-0.5 font-body text-xs text-muted">
+              <div className="mt-0.5 font-body text-xs text-[var(--muted)]">
                 {testimonial.role}
               </div>
             </FeatureCard>
           ))}
         </div>
 
-        <div className="reveal shadow-float mt-6 flex items-start gap-6 rounded-[20px] bg-white px-6 py-9 text-left sm:px-10 dark:bg-slate-900">
+        <div className="reveal shadow-float mt-6 flex items-start gap-6 rounded-[20px] border border-border bg-card px-6 py-9 text-left sm:px-10">
           <div className="shrink-0 font-serif text-[60px] leading-none text-[#fbbf24]">
             "
           </div>
           <div>
-            <p className="font-body text-base leading-[1.8] text-[#475569]">
+            <p className="font-body text-base leading-[1.8] text-[var(--muted)]">
               {t("testimonials.extraQuote")}
             </p>
             <div className="mt-5 flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-purple-light text-xl">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-(--purple-light) text-xl">
                 👤
               </div>
               <div>
-                <div className="font-body text-[13px] font-bold text-[#1a1a2e] dark:text-slate-100">
+                <div className="font-body text-[13px] font-bold text-foreground">
                   {t("testimonials.extraAuthor")}
                 </div>
-                <div className="font-body text-xs text-muted">
+                <div className="font-body text-xs text-[var(--muted)]">
                   {t("testimonials.extraRole")}
                 </div>
               </div>

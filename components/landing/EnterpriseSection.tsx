@@ -16,12 +16,12 @@ export default function EnterpriseSection() {
   }>;
 
   return (
-    <section className="bg-white px-6 py-25 dark:bg-slate-950">
+    <section className="bg-background px-6 py-25">
       <div className="mx-auto max-w-240">
         <div className="reveal mb-14">
           <SectionTag>{t("enterprise.tag")}</SectionTag>
 
-          <h2 className="mt-4 font-hand text-[clamp(36px,5vw,60px)] font-bold leading-[1.15] text-[#1a1a2e] dark:text-slate-100">
+          <h2 className="mt-4 font-hand text-[clamp(36px,5vw,60px)] font-bold leading-[1.15] text-(--ink)">
             {t("enterprise.titlePrefix")}{" "}
             <Circled color="var(--teal)">
               {t("enterprise.titleCircled")}
@@ -49,7 +49,7 @@ export default function EnterpriseSection() {
                 {card.title}
               </h3>
 
-              <p className="font-body text-[13px] leading-[1.7] text--muted">
+              <p className="font-body text-[13px] leading-[1.7] text-[var(--muted)]">
                 {card.desc}
               </p>
             </FeatureCard>

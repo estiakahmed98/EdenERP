@@ -40,11 +40,11 @@ export default function CommunityHubPage({
   return (
     <main className="overflow-hidden bg-background text-foreground">
       <section className="relative isolate">
-        <div className="absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_14%_16%,rgba(34,211,238,0.10),transparent_25%),radial-gradient(circle_at_85%_12%,rgba(59,130,246,0.08),transparent_24%),linear-gradient(180deg,rgba(15,23,42,0.03),transparent)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(circle_at_14%_16%,rgba(99,102,241,0.10),transparent_25%),radial-gradient(circle_at_85%_12%,rgba(16,185,129,0.08),transparent_24%),linear-gradient(180deg,rgba(15,23,42,0.03),transparent)]" />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
-              <div className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-700 dark:text-cyan-300">
+              <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] text-primary">
                 {eyebrow}
               </div>
               <h1 className="mt-6 max-w-3xl text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl">

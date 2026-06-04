@@ -11,7 +11,7 @@ export default function FeatureCard({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[20px] border-[1.5px] border-[#eeedf2] bg-white p-7 transition hover:-translate-y-1 hover:border-[#714b6722] hover:shadow-[0_20px_60px_#714b6712] dark:border-slate-700 dark:bg-slate-900 ${className}`}
+      className={`relative overflow-hidden rounded-[20px] border-[1.5px] border-border bg-card p-7 transition hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_20px_60px_rgba(15,23,42,0.10)] ${className}`}
     >
       {children}
     </div>
