@@ -1,0 +1,250 @@
+{
+    "metadata": {
+        "title": "Sales Quotations | Adon ERP",
+        "description": "Adon ERP Sales helps your team create polished quotes, manage pricing, close deals faster, and convert opportunities into orders."
+    },
+    "hero": {
+        "eyebrow": {
+            "icon": "FileText",
+            "label": "Smart sales quotations"
+        },
+        "title": "Quotations",
+        "titleHighlight": "that convert",
+        "description": "Adon ERP Sales helps your team create polished quotes, manage pricing, close deals faster, and convert opportunities into orders.",
+        "buttons": {
+            "startTrial": "Start Free Trial",
+            "watchDemo": "Watch Demo"
+        }
+    },
+    "dashboard": {
+        "appName": "Quotation · SO0319",
+        "status": "Ready to send",
+        "dealSummary": {
+            "title": "Deal summary",
+            "quoteValue": "Quote value",
+            "expectedMargin": "Expected margin",
+            "paymentTerm": "Payment term",
+            "validUntil": "Valid until"
+        },
+        "proposal": {
+            "title": "Proposal",
+            "name": "Business automation package",
+            "description": "Prepared for Green Valley Trading with implementation, onboarding, support, and optional add-ons.",
+            "status": "Status",
+            "statusValue": "Draft"
+        },
+        "table": {
+            "product": "Product",
+            "qty": "Qty",
+            "unitPrice": "Unit price",
+            "total": "Total",
+            "rows": {
+                "erpImplementation": "ERP Implementation",
+                "teamTraining": "Team Training",
+                "premiumSupport": "Premium Support"
+            }
+        },
+        "buttons": {
+            "preview": "Preview",
+            "sendQuote": "Send quote"
+        },
+        "badges": {
+            "fasterProposals": "Faster proposals",
+            "readyToApprove": "Ready to approve"
+        }
+    },
+    "productsSection": {
+        "eyebrow": {
+            "icon": "ShoppingCart",
+            "label": "Manage products and pricing"
+        },
+        "title": "Manage your products,",
+        "subtitle": "pricing, and discounts",
+        "description": "Build accurate quotations from a connected product catalog. Add bundles, optional items, discounts, taxes, and delivery costs without manual calculation.",
+        "priceList": {
+            "title": "Price list",
+            "items": {
+                "starter": "Starter Plan",
+                "business": "Business Plan",
+                "enterprise": "Enterprise Add-on"
+            }
+        },
+        "productCatalog": {
+            "title": "Product catalog",
+            "items": {
+                "crm": "CRM",
+                "erp": "ERP",
+                "support": "Support",
+                "training": "Training"
+            }
+        }
+    },
+    "templatesSection": {
+        "eyebrow": {
+            "icon": "Layers3",
+            "label": "Quote templates"
+        },
+        "title": "Use quote templates",
+        "highlight": "to automate common orders",
+        "description": "Save your best sales structures as reusable templates. Your team can prepare consistent, branded, and accurate quotations in seconds.",
+        "templateCard": {
+            "title": "Template",
+            "name": "Monthly service package",
+            "button": "Use template",
+            "items": {
+                "implementation": "Implementation",
+                "support": "Support",
+                "training": "Training"
+            }
+        }
+    },
+    "portalSection": {
+        "eyebrow": {
+            "icon": "Globe2",
+            "label": "Customer portal"
+        },
+        "title": "Close deals faster with",
+        "subtitle": "the customer portal",
+        "description": "Let customers review quotations, ask questions, accept terms, sign documents, and pay online through a clean branded portal.",
+        "features": {
+            "onlineAcceptance": "Online quote acceptance",
+            "integratedPayment": "Integrated payment option",
+            "automaticConfirmation": "Automatic confirmation and order creation"
+        },
+        "portalSteps": {
+            "title": "Customer portal",
+            "steps": {
+                "review": "Review quote",
+                "comment": "Add comment",
+                "sign": "Accept & sign",
+                "pay": "Pay online"
+            }
+        }
+    },
+    "leadsSection": {
+        "eyebrow": {
+            "icon": "ShieldCheck",
+            "label": "Qualified leads"
+        },
+        "title": "Only focus on",
+        "highlight": "qualified leads",
+        "description": "Score opportunities automatically using deal value, engagement, customer history, and probability so your sales team focuses on what matters most.",
+        "stats": {
+            "leadScore": "Lead score",
+            "winProbability": "Win probability",
+            "expectedRevenue": "Expected revenue",
+            "nextAction": "Next action"
+        }
+    },
+    "strategiesSection": {
+        "title": "Create custom",
+        "subtitle": "pricing strategies",
+        "items": {
+            "loyaltyPrograms": "Loyalty programs",
+            "coupons": "Coupons",
+            "giftCards": "Gift cards",
+            "eWallet": "eWallet"
+        }
+    },
+    "productControlSection": {
+        "eyebrow": {
+            "icon": "Palette",
+            "label": "Product control"
+        },
+        "title": "Complete product",
+        "subtitle": "control",
+        "description": "Configure variants, optional products, discounts, packages, and customer-specific price rules without breaking your sales workflow.",
+        "configCard": {
+            "title": "Product configuration",
+            "items": {
+                "seats": "Seats",
+                "supportLevel": "Support level",
+                "implementationSpeed": "Implementation speed",
+                "paymentTerm": "Payment term"
+            },
+            "values": {
+                "seats": "25 users",
+                "supportLevel": "Premium",
+                "implementationSpeed": "Fast",
+                "paymentTerm": "Net 15"
+            }
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "reporting": {
+                "title": "Reporting and forecasting",
+                "description": "Track quotation value, expected revenue, conversion rate, and team performance."
+            },
+            "shippingIntegration": {
+                "title": "Shipping integration",
+                "description": "Connect quotations with delivery costs, carriers, and fulfilment workflows."
+            },
+            "invoicing": {
+                "title": "Invoicing",
+                "description": "Convert approved quotations into invoices with products, taxes, and terms."
+            },
+            "upselling": {
+                "title": "Upselling",
+                "description": "Recommend related products and bundles directly inside the sales flow."
+            },
+            "quotationTemplates": {
+                "title": "Quotation templates",
+                "description": "Reuse polished templates for different services, packages, and customer types."
+            },
+            "customerCommunication": {
+                "title": "Customer communication",
+                "description": "Send quotes, reminders, and revisions while keeping the customer timeline clean."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand your sales workflow across the Adon ERP ecosystem.",
+        "apps": {
+            "crm": {
+                "title": "CRM",
+                "desc": "Convert leads into quotes"
+            },
+            "invoicing": {
+                "title": "Invoicing",
+                "desc": "Bill approved orders"
+            },
+            "sign": {
+                "title": "Sign",
+                "desc": "Approve documents online"
+            },
+            "accounting": {
+                "title": "Accounting",
+                "desc": "Track revenue and taxes"
+            },
+            "onlinePayment": {
+                "title": "Online Payment",
+                "desc": "Get paid faster"
+            },
+            "inventory": {
+                "title": "Inventory",
+                "desc": "Reserve products instantly"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join modern sales teams",
+        "description": "Teams use Adon Sales to create better quotes, close faster, and grow revenue with confidence."
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "subtitle": "your growth potential",
+        "description": "Build premium quotations, automate approvals, and turn more opportunities into confirmed orders with Adon ERP.",
+        "buttons": {
+            "contactSales": "Contact Sales"
+        }
+    }
+}

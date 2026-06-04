@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -9,7 +10,6 @@ import {
   Bell,
   CheckCircle2,
   CirclePlay,
-  Clock,
   FileText,
   Grid3X3,
   Headphones,
@@ -18,15 +18,12 @@ import {
   MessageCircle,
   Phone,
   PieChart,
-  Plane,
   Play,
-  Repeat,
   Send,
   ShieldCheck,
   Sparkles,
   Star,
   Target,
-  TrendingUp,
   Users,
   Workflow,
   Zap,
@@ -37,62 +34,6 @@ const scriptFont = {
   fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
 };
 
-const features = [
-  {
-    title: "Pipeline automation",
-    description:
-      "Move leads through your sales process automatically with smart stages, actions, and reminders.",
-    icon: Workflow,
-  },
-  {
-    title: "AI lead scoring",
-    description:
-      "Prioritize the right opportunities using engagement, activity, source, and deal value.",
-    icon: Sparkles,
-  },
-  {
-    title: "Follow-up reminders",
-    description:
-      "Never miss a customer conversation with automated alerts, tasks, and next-step planning.",
-    icon: Bell,
-  },
-  {
-    title: "Quotation builder",
-    description:
-      "Create polished proposals and quotations from CRM opportunities in just a few clicks.",
-    icon: FileText,
-  },
-  {
-    title: "Customer timeline",
-    description:
-      "Track emails, calls, meetings, notes, deals, and activities in one complete customer profile.",
-    icon: Users,
-  },
-  {
-    title: "Sales analytics",
-    description:
-      "Visualize revenue, win rate, team performance, and forecasts with live dashboards.",
-    icon: BarChart3,
-  },
-];
-
-const apps = [
-  { title: "Sales", desc: "Convert leads into orders", icon: TrendingUp },
-  { title: "Invoicing", desc: "Bill customers faster", icon: FileText },
-  { title: "Email Marketing", desc: "Nurture your leads", icon: Mail },
-  { title: "Helpdesk", desc: "Support every customer", icon: Headphones },
-  { title: "Projects", desc: "Deliver after closing", icon: Grid3X3 },
-  { title: "Analytics", desc: "Measure performance", icon: PieChart },
-];
-
-const followUps = [
-  { title: "New lead", icon: Target, time: "0 min" },
-  { title: "Qualify", icon: BadgeCheck, time: "2 min" },
-  { title: "Schedule call", icon: Phone, time: "1 day" },
-  { title: "Send offer", icon: Send, time: "2 days" },
-  { title: "Win deal", icon: CheckCircle2, time: "3 days" },
-];
-
 function ScriptHeading({
   children,
   className = "",
@@ -102,7 +43,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 sm:text-5xl ${className}`}
       style={scriptFont}
     >
       {children}
@@ -125,71 +66,82 @@ function SectionEyebrow({
   );
 }
 
-function CrmDashboard() {
+function CrmDashboard({ t }: { t: any }) {
+  const columns = [
+    {
+      key: "new",
+      label: t("dashboard.columns.new"),
+      bg: "bg-cyan-50 dark:bg-cyan-950/30",
+      text: "text-cyan-700 dark:text-cyan-400",
+    },
+    {
+      key: "qualified",
+      label: t("dashboard.columns.qualified"),
+      bg: "bg-emerald-50 dark:bg-emerald-950/30",
+      text: "text-emerald-700 dark:text-emerald-400",
+    },
+    {
+      key: "proposal",
+      label: t("dashboard.columns.proposal"),
+      bg: "bg-amber-50 dark:bg-amber-950/30",
+      text: "text-amber-700 dark:text-amber-400",
+    },
+    {
+      key: "won",
+      label: t("dashboard.columns.won"),
+      bg: "bg-violet-50 dark:bg-violet-950/30",
+      text: "text-violet-700 dark:text-violet-400",
+    },
+  ];
+
+  const deals = [
+    t("dashboard.deals.websiteRedesign"),
+    t("dashboard.deals.retailErp"),
+    t("dashboard.deals.marketingAutomation"),
+  ];
+  const dealValues = [5200, 8400, 12600];
+
   return (
     <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
         <div className="flex items-center gap-2">
           <Users className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
-            Adon CRM Pipeline
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+            {t("dashboard.appName")}
           </span>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-            Live
+            {t("dashboard.status")}
           </span>
-          <Bell className="h-4 w-4 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
+          <Bell className="h-4 w-4 text-slate-400 dark:text-slate-500" />
         </div>
       </div>
 
       <div className="grid min-h-92 gap-4 p-5 md:grid-cols-4">
-        {[
-          [
-            "New",
-            "bg-cyan-50 dark:bg-cyan-950/30",
-            "text-cyan-700 dark:text-cyan-400",
-          ],
-          [
-            "Qualified",
-            "bg-emerald-50 dark:bg-emerald-950/30",
-            "text-emerald-700 dark:text-emerald-400",
-          ],
-          [
-            "Proposal",
-            "bg-amber-50 dark:bg-amber-950/30",
-            "text-amber-700 dark:text-amber-400",
-          ],
-          [
-            "Won",
-            "bg-violet-50 dark:bg-violet-950/30",
-            "text-violet-700 dark:text-violet-400",
-          ],
-        ].map(([column, bg, text], index) => (
-          <div key={column} className={`rounded-2xl ${bg} p-4`}>
+        {columns.map((column, index) => (
+          <div key={column.key} className={`rounded-2xl ${column.bg} p-4`}>
             <div className="mb-4 flex items-center justify-between">
-              <p className={`text-sm font-bold ${text}`}>{column}</p>
-              <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
+              <p className={`text-sm font-bold ${column.text}`}>
+                {column.label}
+              </p>
+              <span className="rounded-full bg-white dark:bg-slate-900 px-2 py-1 text-xs text-slate-500 dark:text-slate-400">
                 {index + 4}
               </span>
             </div>
 
             <div className="space-y-3">
-              {[
-                "Website redesign",
-                "Retail ERP setup",
-                "Marketing automation",
-              ].map((item, itemIndex) => (
+              {deals.map((item, itemIndex) => (
                 <div
-                  key={`${column}-${item}`}
-                  className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-3 text-left shadow-sm"
+                  key={`${column.key}-${item}`}
+                  className="rounded-xl bg-white dark:bg-slate-900 p-3 text-left shadow-sm"
                 >
-                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
+                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
                     {item}
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                    ${[5200, 8400, 12600][itemIndex].toLocaleString()} deal
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                    ${dealValues[itemIndex].toLocaleString()} deal
                   </p>
                   <div className="mt-3 flex items-center justify-between">
                     <div className="flex -space-x-2">
@@ -200,7 +152,7 @@ function CrmDashboard() {
                         />
                       ))}
                     </div>
-                    <span className="rounded-full bg-slate-100 dark:bg-slate-700 px-2 py-1 text-[10px] font-semibold text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                    <span className="rounded-full bg-slate-100 dark:bg-slate-700 px-2 py-1 text-[10px] font-semibold text-slate-500 dark:text-slate-400">
                       Today
                     </span>
                   </div>
@@ -211,7 +163,7 @@ function CrmDashboard() {
         ))}
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
@@ -219,31 +171,151 @@ function CrmDashboard() {
 }
 
 export default function CrmPage() {
+  const t = useTranslations("pages.crm");
+
+  // Get translated features
+  const featuresList = [
+    {
+      title: t("featuresSection.features.pipelineAutomation.title"),
+      description: t("featuresSection.features.pipelineAutomation.description"),
+      icon: Workflow,
+    },
+    {
+      title: t("featuresSection.features.aiLeadScoring.title"),
+      description: t("featuresSection.features.aiLeadScoring.description"),
+      icon: Sparkles,
+    },
+    {
+      title: t("featuresSection.features.followupReminders.title"),
+      description: t("featuresSection.features.followupReminders.description"),
+      icon: Bell,
+    },
+    {
+      title: t("featuresSection.features.quotationBuilder.title"),
+      description: t("featuresSection.features.quotationBuilder.description"),
+      icon: FileText,
+    },
+    {
+      title: t("featuresSection.features.customerTimeline.title"),
+      description: t("featuresSection.features.customerTimeline.description"),
+      icon: Users,
+    },
+    {
+      title: t("featuresSection.features.salesAnalytics.title"),
+      description: t("featuresSection.features.salesAnalytics.description"),
+      icon: BarChart3,
+    },
+  ];
+
+  // Get translated apps
+  const appsList = [
+    {
+      title: t("appsSection.apps.sales.title"),
+      desc: t("appsSection.apps.sales.desc"),
+      icon: TrendingUpIcon,
+    },
+    {
+      title: t("appsSection.apps.invoicing.title"),
+      desc: t("appsSection.apps.invoicing.desc"),
+      icon: FileText,
+    },
+    {
+      title: t("appsSection.apps.emailMarketing.title"),
+      desc: t("appsSection.apps.emailMarketing.desc"),
+      icon: Mail,
+    },
+    {
+      title: t("appsSection.apps.helpdesk.title"),
+      desc: t("appsSection.apps.helpdesk.desc"),
+      icon: Headphones,
+    },
+    {
+      title: t("appsSection.apps.projects.title"),
+      desc: t("appsSection.apps.projects.desc"),
+      icon: Grid3X3,
+    },
+    {
+      title: t("appsSection.apps.analytics.title"),
+      desc: t("appsSection.apps.analytics.desc"),
+      icon: PieChart,
+    },
+  ];
+
+  const followUps = [
+    { title: t("followupSection.steps.newLead"), icon: Target, time: "0 min" },
+    {
+      title: t("followupSection.steps.qualify"),
+      icon: BadgeCheck,
+      time: "2 min",
+    },
+    {
+      title: t("followupSection.steps.scheduleCall"),
+      icon: Phone,
+      time: "1 day",
+    },
+    { title: t("followupSection.steps.sendOffer"), icon: Send, time: "2 days" },
+    {
+      title: t("followupSection.steps.winDeal"),
+      icon: CheckCircle2,
+      time: "3 days",
+    },
+  ];
+
+  const pipelineFeatures = [
+    t("pipelineSection.features.dragDeals"),
+    t("pipelineSection.features.nextActivity"),
+    t("pipelineSection.features.customerNotes"),
+  ];
+
+  const communicationChannels = [
+    { label: t("communicationSection.channels.email"), icon: Mail },
+    { label: t("communicationSection.channels.liveChat"), icon: MessageCircle },
+    { label: t("communicationSection.channels.sms"), icon: Bell },
+    { label: t("communicationSection.channels.voip"), icon: Phone },
+  ];
+
+  const analyticsStats = [
+    {
+      label: t("analyticsSection.stats.leads"),
+      value: "1,284",
+      change: "+24%",
+    },
+    {
+      label: t("analyticsSection.stats.wonDeals"),
+      value: "342",
+      change: "+18%",
+    },
+    {
+      label: t("analyticsSection.stats.revenue"),
+      value: "$94.8k",
+      change: "+31%",
+    },
+  ];
+
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.07),transparent_25%)]" />
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <SectionEyebrow
-            label="Intelligent customer management"
+            label={t("hero.eyebrow.label")}
             icon={<Users className="h-4 w-4" />}
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
-              Customer Relationship{" "}
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 sm:text-6xl lg:text-7xl">
+              {t("hero.title")}{" "}
               <span
                 className="text-cyan-600 dark:text-cyan-400"
                 style={scriptFont}
               >
-                Magic
+                {t("hero.titleHighlight")}
               </span>
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Adon ERP CRM helps your team capture leads, manage pipelines,
-              automate follow-ups, and turn every opportunity into revenue.
+              {t("hero.description")}
             </p>
           </div>
 
@@ -253,7 +325,7 @@ export default function CrmPage() {
               className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
             >
               <Play className="h-4 w-4 -rotate-6" />
-              Watch Demo
+              {t("hero.buttons.watchDemo")}
             </Link>
           </div>
 
@@ -263,16 +335,16 @@ export default function CrmPage() {
             transition={{ duration: 0.7 }}
             className="relative mx-auto mt-14 max-w-5xl"
           >
-            <CrmDashboard />
+            <CrmDashboard t={t} />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-              Real-time pipeline
+              {t("dashboard.badges.realTimePipeline")}
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-              Smart follow-ups
+              {t("dashboard.badges.smartFollowups")}
             </div>
           </motion.div>
         </div>
@@ -281,31 +353,25 @@ export default function CrmPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <SectionEyebrow
-            label="Sales pipeline"
+            label={t("pipelineSection.eyebrow.label")}
             icon={<Target className="h-4 w-4" />}
           />
 
           <ScriptHeading className="mt-5">
-            Track opportunities
+            {t("pipelineSection.title")}
             <br />
-            easily in the sales software
+            {t("pipelineSection.subtitle")}
           </ScriptHeading>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Keep every deal visible from first contact to close. Adon CRM gives
-            your sales team a clean pipeline, next actions, deal values, and
-            customer context in one place.
+            {t("pipelineSection.description")}
           </p>
 
           <div className="mt-8 space-y-4">
-            {[
-              "Drag deals between customizable stages",
-              "See next activity and deal value instantly",
-              "Keep all customer notes attached to the opportunity",
-            ].map((item) => (
+            {pipelineFeatures.map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
+                <span className="text-slate-700 dark:text-slate-300">
                   {item}
                 </span>
               </div>
@@ -315,24 +381,32 @@ export default function CrmPage() {
 
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
           <div className="grid gap-4 sm:grid-cols-3">
-            {["Leads", "Qualified", "Won"].map((stage, index) => (
+            {[
+              t("pipelineSection.demoStages.leads"),
+              t("pipelineSection.demoStages.qualified"),
+              t("pipelineSection.demoStages.won"),
+            ].map((stage, index) => (
               <div
                 key={stage}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4"
               >
-                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                   {stage}
                 </p>
                 <div className="mt-4 space-y-3">
-                  {["Apex Ltd", "Bright Co", "Nova Group"].map((client) => (
+                  {[
+                    t("pipelineSection.clients.apex"),
+                    t("pipelineSection.clients.bright"),
+                    t("pipelineSection.clients.nova"),
+                  ].map((client) => (
                     <div
                       key={client}
-                      className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-3 shadow-sm"
+                      className="rounded-xl bg-white dark:bg-slate-900 p-3 shadow-sm"
                     >
-                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
+                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
                         {client}
                       </p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                         ${[3200, 4800, 6900][index].toLocaleString()}
                       </p>
                     </div>
@@ -347,15 +421,14 @@ export default function CrmPage() {
       <section className="bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>
-            Never miss out on a{" "}
+            {t("followupSection.title")}{" "}
             <span className="rounded-xl bg-amber-100 dark:bg-amber-950/50 px-2 text-amber-600 dark:text-amber-400">
-              follow-up
+              {t("followupSection.highlight")}
             </span>
           </ScriptHeading>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Schedule calls, emails, meetings, and reminders so every lead gets
-            attention at the right time.
+            {t("followupSection.description")}
           </p>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-5">
@@ -370,10 +443,10 @@ export default function CrmPage() {
                   <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-50 dark:bg-cyan-950/40 text-cyan-600 dark:text-cyan-400">
                     <Icon className="h-7 w-7" />
                   </div>
-                  <p className="mt-4 font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                  <p className="mt-4 font-semibold text-slate-900 dark:text-slate-100">
                     {item.title}
                   </p>
-                  <p className="mt-1 text-xs font-medium text-slate-400 dark:text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-xs font-medium text-slate-400 dark:text-slate-500">
                     {item.time}
                   </p>
                 </div>
@@ -385,40 +458,51 @@ export default function CrmPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Customer management with{" "}
+          {t("communicationSection.title")}{" "}
           <span className="rounded-xl bg-emerald-100 dark:bg-emerald-950/50 px-2 text-emerald-600 dark:text-emerald-400">
-            effortless
+            {t("communicationSection.highlight")}
           </span>
           <br />
-          communication
+          {t("communicationSection.subtitle")}
         </ScriptHeading>
 
         <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-          Centralize calls, emails, live chat, SMS, and notes inside the
-          customer timeline so your team always knows what happened last.
+          {t("communicationSection.description")}
         </p>
 
         <div className="mx-auto mt-12 max-w-5xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
           <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5 text-left">
-              <p className="font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
-                Customer profile
+            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
+              <p className="font-semibold text-slate-950 dark:text-slate-100">
+                {t("communicationSection.customerProfile.title")}
               </p>
               <div className="mt-5 space-y-3">
                 {[
-                  ["Company", "Green Valley Trading"],
-                  ["Stage", "Proposal sent"],
-                  ["Deal value", "$18,450"],
-                  ["Next action", "Call tomorrow"],
+                  [
+                    t("communicationSection.customerProfile.company"),
+                    t("communicationSection.customerProfile.values.company"),
+                  ],
+                  [
+                    t("communicationSection.customerProfile.stage"),
+                    t("communicationSection.customerProfile.values.stage"),
+                  ],
+                  [
+                    t("communicationSection.customerProfile.dealValue"),
+                    t("communicationSection.customerProfile.values.dealValue"),
+                  ],
+                  [
+                    t("communicationSection.customerProfile.nextAction"),
+                    t("communicationSection.customerProfile.values.nextAction"),
+                  ],
                 ].map(([label, value]) => (
                   <div
                     key={label}
-                    className="flex items-center justify-between rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
+                    className="flex items-center justify-between rounded-xl bg-white dark:bg-slate-900 px-4 py-3 text-sm shadow-sm"
                   >
-                    <span className="text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                    <span className="text-slate-500 dark:text-slate-400">
                       {label}
                     </span>
-                    <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                    <span className="font-semibold text-slate-900 dark:text-slate-100">
                       {value}
                     </span>
                   </div>
@@ -427,23 +511,32 @@ export default function CrmPage() {
             </div>
 
             <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/30 p-5 text-left">
-              <p className="font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
-                Communication
+              <p className="font-semibold text-slate-950 dark:text-slate-100">
+                {t("communicationSection.communication.title")}
               </p>
               <div className="mt-5 space-y-3">
                 {[
-                  ["Email sent", "Quotation details shared"],
-                  ["Call completed", "Client requested timeline"],
-                  ["Meeting booked", "Product demo scheduled"],
+                  [
+                    t("communicationSection.communication.emailSent"),
+                    t("communicationSection.communication.emailDesc"),
+                  ],
+                  [
+                    t("communicationSection.communication.callCompleted"),
+                    t("communicationSection.communication.callDesc"),
+                  ],
+                  [
+                    t("communicationSection.communication.meetingBooked"),
+                    t("communicationSection.communication.meetingDesc"),
+                  ],
                 ].map(([title, desc]) => (
                   <div
                     key={title}
-                    className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-4 shadow-sm"
+                    className="rounded-xl bg-white dark:bg-slate-900 p-4 shadow-sm"
                   >
-                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                       {title}
                     </p>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                       {desc}
                     </p>
                   </div>
@@ -453,78 +546,76 @@ export default function CrmPage() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-3xl gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5 sm:grid-cols-4">
-          {[
-            ["Email", Mail],
-            ["Live chat", MessageCircle],
-            ["SMS", Bell],
-            ["VoIP", Phone],
-          ].map(([label, Icon]) => {
-            const LucideIcon = Icon as typeof Mail;
-
-            return (
-              <div
-                key={label as string}
-                className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-4"
-              >
-                <LucideIcon className="mx-auto h-6 w-6 text-cyan-600 dark:text-cyan-400" />
-                <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                  {label as string}
-                </p>
-              </div>
-            );
-          })}
+        <div className="mx-auto mt-10 grid max-w-3xl gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5 sm:grid-cols-4">
+          {communicationChannels.map(({ label, icon: Icon }) => (
+            <div
+              key={label}
+              className="rounded-2xl bg-white dark:bg-slate-900 p-4"
+            >
+              <Icon className="mx-auto h-6 w-6 text-cyan-600 dark:text-cyan-400" />
+              <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                {label}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <SectionEyebrow
-            label="Quotation builder"
+            label={t("quotationSection.eyebrow.label")}
             icon={<FileText className="h-4 w-4" />}
           />
 
           <ScriptHeading className="mt-5">
-            Attractive quotations
+            {t("quotationSection.title")}
             <br />
-            in{" "}
             <span className="text-amber-600 dark:text-amber-400">
-              two clicks
+              {t("quotationSection.highlight")}
             </span>
           </ScriptHeading>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Convert opportunities into polished quotations with products,
-            pricing, taxes, discounts, and terms already connected to your ERP.
+            {t("quotationSection.description")}
           </p>
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
-            <div className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-5 shadow-sm">
+          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
+            <div className="rounded-2xl bg-white dark:bg-slate-900 p-5 shadow-sm">
               <div className="flex items-center justify-between">
-                <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                  Quotation
+                <p className="font-semibold text-slate-900 dark:text-slate-100">
+                  {t("quotationSection.quotationCard.title")}
                 </p>
                 <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-                  Ready
+                  {t("quotationSection.quotationCard.status")}
                 </span>
               </div>
 
               <div className="mt-5 space-y-3">
                 {[
-                  ["ERP Implementation", "$8,500"],
-                  ["Training Session", "$1,200"],
-                  ["Support Package", "$950"],
+                  [
+                    t("quotationSection.quotationCard.items.erpImplementation"),
+                    "$8,500",
+                  ],
+                  [
+                    t("quotationSection.quotationCard.items.trainingSession"),
+                    "$1,200",
+                  ],
+                  [
+                    t("quotationSection.quotationCard.items.supportPackage"),
+                    "$950",
+                  ],
                 ].map(([name, price]) => (
                   <div
                     key={name}
-                    className="flex justify-between rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3 text-sm"
+                    className="flex justify-between rounded-xl bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
                   >
-                    <span className="text-slate-600 dark:text-slate-300 dark:text-slate-400">
+                    <span className="text-slate-600 dark:text-slate-400">
                       {name}
                     </span>
-                    <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                    <span className="font-semibold text-slate-900 dark:text-slate-100">
                       {price}
                     </span>
                   </div>
@@ -532,7 +623,7 @@ export default function CrmPage() {
               </div>
 
               <button className="mt-5 w-full rounded-xl bg-cyan-600 py-3 text-sm font-semibold text-white hover:bg-cyan-700 transition">
-                Send quotation
+                {t("quotationSection.quotationCard.button")}
               </button>
             </div>
           </div>
@@ -542,19 +633,15 @@ export default function CrmPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="order-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)] lg:order-1">
           <div className="mb-5 grid gap-4 sm:grid-cols-3">
-            {[
-              ["Leads", "1,284", "+24%"],
-              ["Won deals", "342", "+18%"],
-              ["Revenue", "$94.8k", "+31%"],
-            ].map(([label, value, change]) => (
+            {analyticsStats.map(({ label, value, change }) => (
               <div
                 key={label}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4"
               >
-                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   {label}
                 </p>
-                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-slate-100 dark:text-white">
+                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-slate-100">
                   {value}
                 </p>
                 <p className="mt-1 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
@@ -577,19 +664,18 @@ export default function CrmPage() {
 
         <div className="order-1 lg:order-2">
           <SectionEyebrow
-            label="Revenue analytics"
+            label={t("analyticsSection.eyebrow.label")}
             icon={<LineChart className="h-4 w-4" />}
           />
 
           <ScriptHeading className="mt-5">
-            Turn reporting data
+            {t("analyticsSection.title")}
             <br />
-            into money
+            {t("analyticsSection.subtitle")}
           </ScriptHeading>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            See where revenue comes from, which activities convert best, and
-            where your team should focus next.
+            {t("analyticsSection.description")}
           </p>
         </div>
       </section>
@@ -597,13 +683,13 @@ export default function CrmPage() {
       <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
-            All the features
+            {t("featuresSection.title")}
             <br />
-            done right.
+            {t("featuresSection.subtitle")}
           </ScriptHeading>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => {
+            {featuresList.map((feature) => {
               const Icon = feature.icon;
 
               return (
@@ -615,7 +701,7 @@ export default function CrmPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                     {feature.title}
                   </h3>
 
@@ -631,7 +717,7 @@ export default function CrmPage() {
             href="/features"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
           >
-            See all features
+            {t("featuresSection.seeAllFeatures")}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -639,17 +725,22 @@ export default function CrmPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          One{" "}
-          <HandUnderline color="bg-sky-400 dark:bg-sky-900">need</HandUnderline>
-          , one{" "}
-          <HandUnderline color="bg-sky-400 dark:bg-sky-900">app</HandUnderline>.
+          {t("appsSection.title")}{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-900">
+            {t("appsSection.needHighlight")}
+          </HandUnderline>
+          ,{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-900">
+            {t("appsSection.appHighlight")}
+          </HandUnderline>
+          .
         </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600 dark:text-slate-300">
-          Expand your CRM workflow across the Adon ERP ecosystem.
+          {t("appsSection.description")}
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
+          {appsList.map((app) => {
             const Icon = app.icon;
 
             return (
@@ -663,10 +754,10 @@ export default function CrmPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -680,7 +771,7 @@ export default function CrmPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
         >
-          See all apps
+          {t("appsSection.seeAllApps")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -706,18 +797,17 @@ export default function CrmPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
 
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join modern sales teams
+              {t("ctaSection.title")}
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              Teams use Adon CRM to manage leads, communicate better, close
-              faster, and grow revenue with confidence.
+              {t("ctaSection.description")}
             </p>
 
             <div className="mt-6 flex justify-center gap-1 text-amber-400">
@@ -736,14 +826,13 @@ export default function CrmPage() {
         <Sparkles className="mx-auto mb-6 h-10 w-10 text-cyan-600 dark:text-cyan-400" />
 
         <ScriptHeading>
-          Unleash
+          {t("getStartedSection.title")}
           <br />
-          your growth potential
+          {t("getStartedSection.subtitle")}
         </ScriptHeading>
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-          Build stronger customer relationships with a CRM that connects your
-          sales, marketing, service, and operations.
+          {t("getStartedSection.description")}
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -751,15 +840,37 @@ export default function CrmPage() {
             href="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
           >
-            Contact Sales
+            {t("getStartedSection.buttons.contactSales")}
           </Link>
         </div>
 
-        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
-          Free trial available · No credit card required · Instant access
+        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
+          {t("getStartedSection.footer.freeTrial")} ·{" "}
+          {t("getStartedSection.footer.noCreditCard")} ·{" "}
+          {t("getStartedSection.footer.instantAccess")}
         </p>
       </section>
     </main>
   );
 }
 
+// Helper component for TrendingUp icon since it wasn't imported
+function TrendingUpIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" />
+      <polyline points="17 18 23 18 23 12" />
+    </svg>
+  );
+}
