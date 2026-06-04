@@ -1,0 +1,208 @@
+{
+  "metadata": {
+    "title": "Events | AdonERP",
+    "description": "Join Adon ERP community events — webinars, workshops, meetups, and conferences. Learn from core team members and top contributors, network with peers, and stay updated on the latest features."
+  },
+  "hero": {
+    "eyebrowIcon": "Calendar",
+    "eyebrowLabel": "Community events",
+    "communityLabel": "Community / Collaborate / Events",
+    "preHeading": "Learn together,",
+    "title": "grow",
+    "titleHighlight": "together",
+    "description": "Webinars, workshops, meetups, and conferences — both online and in-person. Join the Adon ERP community wherever you are in the world.",
+    "seeEventsButton": "See upcoming events",
+    "hostButton": "Host a meetup",
+    "stats": [
+      { "value": "60+", "label": "Events hosted" },
+      { "value": "12K+", "label": "Total attendees" },
+      { "value": "180+", "label": "Countries reached" },
+      { "value": "4.8/5", "label": "Avg rating" }
+    ],
+    "calendar": {
+      "title": "June 2026",
+      "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "events": [
+        { "day": "Jun 25", "event": "v17 Release Deep Dive — Webinar" },
+        { "day": "Jul 2", "event": "Custom Module Workshop" },
+        { "day": "Jul 18", "event": "Berlin Community Meetup" }
+      ]
+    }
+  },
+  "upcomingSection": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Upcoming",
+    "title": "Mark your calendar",
+    "description": "Live events every month — webinars, workshops, meetups, and lightning sessions. Register for free.",
+    "events": [
+      {
+        "type": "Webinar",
+        "title": "Adon ERP 17 Release Deep Dive",
+        "date": "Jun 25, 2026",
+        "time": "14:00 UTC",
+        "speakers": ["Omar Yousef", "Aisha Karim"],
+        "attendees": 840,
+        "tags": ["release", "v17"],
+        "color": "from-blue-500 to-indigo-600"
+      },
+      {
+        "type": "Workshop",
+        "title": "Build Your First Custom Module in 90 Minutes",
+        "date": "Jul 2, 2026",
+        "time": "10:00 UTC",
+        "speakers": ["Jules P.", "Lena K."],
+        "attendees": 530,
+        "tags": ["workshop", "development"],
+        "color": "from-emerald-500 to-teal-600"
+      },
+      {
+        "type": "Meetup",
+        "title": "AdonERP Community Meetup — Berlin",
+        "date": "Jul 18, 2026",
+        "time": "18:00 CET",
+        "speakers": ["Community Team"],
+        "attendees": 120,
+        "tags": ["meetup", "in-person"],
+        "color": "from-violet-500 to-purple-600"
+      },
+      {
+        "type": "Webinar",
+        "title": "Multi-currency & Compliance: A Practical Guide",
+        "date": "Aug 5, 2026",
+        "time": "11:00 UTC",
+        "speakers": ["Rajesh M.", "Nadia R."],
+        "attendees": 610,
+        "tags": ["accounting", "compliance"],
+        "color": "from-amber-500 to-orange-600"
+      }
+    ],
+    "registerButton": "Register free"
+  },
+  "formatsSection": {
+    "eyebrowIcon": "Star",
+    "eyebrowLabel": "Events format",
+    "title": "Four ways to meet the community",
+    "description": "Whether you prefer deep dives, quick learning, or real-world networking — there is an event format for you.",
+    "features": [
+      {
+        "title": "Live webinars",
+        "description": "Join the core team and community experts for deep-dive sessions on new features, best practices, and migration paths.",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Hands-on workshops",
+        "description": "Code alongside the instructors. Each workshop ships with a ready-to-run sandbox and post-event lab exercises.",
+        "icon": "Code2"
+      },
+      {
+        "title": "Community meetups",
+        "description": "In-person gatherings in major cities around the world — from Berlin to Nairobi. Host your own local meetup with our kit.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Recorded library",
+        "description": "Missed a session? Every event is recorded and added to the on-demand library within 24 hours of going live.",
+        "icon": "Video"
+      }
+    ]
+  },
+  "speakersSection": {
+    "eyebrowIcon": "Crown",
+    "eyebrowLabel": "Featured speakers",
+    "title": "Learn from the best",
+    "description": "Core team members and top community contributors share their expertise in every session.",
+    "speakers": [
+      { "name": "Omar Yousef", "topic": "Adon ERP Core", "avatar": "OY" },
+      { "name": "Aisha Karim", "topic": "Product Roadmap", "avatar": "AK" },
+      { "name": "Lena Kowalska", "topic": "Addon Development", "avatar": "LK" },
+      { "name": "Rajesh M.", "topic": "Accounting & Tax", "avatar": "RM" }
+    ]
+  },
+  "agendaSection": {
+    "eyebrowIcon": "BookOpen",
+    "eyebrowLabel": "A typical session",
+    "title": "What to expect",
+    "description": "A 90-minute format designed to maximise learning and minimise meeting-fatigue.",
+    "schedule": [
+      {
+        "time": "14:00",
+        "label": "Opening Keynote",
+        "speaker": "Omar Y.",
+        "description": "State of Adon ERP: what shipped, what is next, and how you can help."
+      },
+      {
+        "time": "14:30",
+        "label": "Hands-on demo",
+        "speaker": "Aisha K.",
+        "description": "Building a purchasing workflow from scratch in the live sandbox."
+      },
+      {
+        "time": "15:15",
+        "label": "Lightning talks",
+        "speaker": "Community",
+        "description": "Five 5-minute talks from first-time and repeat contributors."
+      },
+      {
+        "time": "15:45",
+        "label": "Open Q&A",
+        "speaker": "Core team",
+        "description": "Ask anything — roadmap, architecture, licensing, or career paths."
+      }
+    ]
+  },
+  "pastEventsSection": {
+    "eyebrowIcon": "BookOpen",
+    "eyebrowLabel": "On demand",
+    "title": "Missed something? Watch it",
+    "description": "Every session is recorded and added to the on-demand library so you can catch up at your own pace.",
+    "events": [
+      {
+        "type": "Conference",
+        "title": "Adon ERP Open Source Conference 2026",
+        "attendees": 2100,
+        "recordings": true
+      },
+      {
+        "type": "Workshop",
+        "title": "Migrating from v16 to v17",
+        "attendees": 890,
+        "recordings": true
+      },
+      {
+        "type": "Webinar",
+        "title": "Inventory: Advanced Stock Control",
+        "attendees": 670,
+        "recordings": true
+      }
+    ],
+    "watchButton": "Watch recording"
+  },
+  "testimonialsSection": {
+    "eyebrowIcon": "Users",
+    "eyebrowLabel": "Member voices",
+    "title": "From the",
+    "subtitle": "event community",
+    "testimonials": [
+      {
+        "quote": "The v17 Release Deep Dive answered every question I had about migration. Being able to ask the core team directly saved us weeks of uncertainty.",
+        "name": "Adèle Moreau",
+        "role": "Operations Lead · France",
+        "avatar": "AM"
+      },
+      {
+        "quote": "The Berlin meetup was incredible. I met three people I now work with daily. These events are where the real networking happens.",
+        "name": "Fritz Lehmann",
+        "role": "Tech Lead · Germany",
+        "avatar": "FL"
+      }
+    ]
+  },
+  "ctaSection": {
+    "title": "Your seat is",
+    "subtitle": "waiting",
+    "description": "From quick 30-minute webinars to full-day hands-on workshops — there is always something happening in the Adon ERP community.",
+    "browseButton": "Browse all events",
+    "newsletterButton": "Join the newsletter",
+    "footerText": "Free attendance · Recordings on demand · Open to everyone"
+  }
+}

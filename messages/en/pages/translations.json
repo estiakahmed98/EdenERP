@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "title": "Translations | AdonERP",
+    "description": "Join our global community of translators and make Adon ERP accessible to users in their native language. Help translate Adon ERP into 70+ languages and reach millions of users worldwide."
+  },
+  "hero": {
+    "eyebrowIcon": "Languages",
+    "eyebrowLabel": "Community Translations",
+    "communityLabel": "Community / Collaborate / Translations",
+    "preHeading": "Help us make Adon ERP",
+    "title": "Speak Every",
+    "titleHighlight": "Language",
+    "description": "Join our global community of translators and make Adon ERP accessible to users in their native language — one string at a time.",
+    "startButton": "Start Translating",
+    "howItWorksButton": "How It Works",
+    "testimonial": {
+      "quote": "The translation platform has been a joy to use. Clear context, helpful glossary, and a welcoming community — it feels like the project actually cares about quality.",
+      "name": "Carlos Mendez",
+      "role": "Spanish Language Lead"
+    },
+    "stats": [
+      { "value": "70+", "label": "Languages supported" },
+      { "value": "800+", "label": "Community translators" },
+      { "value": "1,400+", "label": "Strings translated" }
+    ]
+  },
+  "whyTranslateSection": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Why translate",
+    "title": "Make Adon ERP",
+    "subtitle": "speak your language",
+    "description": "Every translation goes directly into production. Your words help thousands of businesses around the world use Adon ERP with confidence.",
+    "benefits": [
+      {
+        "title": "Reach a global audience",
+        "description": "Make Adon ERP accessible to users in their native language, opening doors to markets around the world.",
+        "icon": "Globe2",
+        "gradient": "from-primary/80 to-primary"
+      },
+      {
+        "title": "Join a vibrant community",
+        "description": "Collaborate with hundreds of passionate translators who share knowledge, best practices, and encouragement.",
+        "icon": "Users",
+        "gradient": "from-secondary/80 to-secondary"
+      },
+      {
+        "title": "Earn contributor recognition",
+        "description": "Qualified contributors receive official badges, community shoutouts, and invitations to translator events.",
+        "icon": "BadgeCheck",
+        "gradient": "from-accent/80 to-accent"
+      },
+      {
+        "title": "Improve user experience",
+        "description": "High-quality translations directly impact how intuitive and delightful Adon ERP feels for non-English speakers.",
+        "icon": "Rocket",
+        "gradient": "from-primary/80 to-secondary"
+      }
+    ]
+  },
+  "howItWorksSection": {
+    "eyebrowIcon": "Lightbulb",
+    "eyebrowLabel": "Getting started",
+    "title": "From zero to",
+    "subtitle": "published in four steps",
+    "description": "Our guided workflow makes contributing translations simple for first-timers and efficient for seasoned editors alike.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Pick your language",
+        "description": "Browse available language teams and find one that needs your expertise — or start a new one.",
+        "icon": "Search"
+      },
+      {
+        "step": "02",
+        "title": "Translate & review",
+        "description": "Use the web-based editor to work on strings, consult the glossary, and collaborate with fellow translators.",
+        "icon": "Languages"
+      },
+      {
+        "step": "03",
+        "title": "Get it validated",
+        "description": "Community validators and language leads review merged strings before they ship to production.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "step": "04",
+        "title": "Ship to the world",
+        "description": "Once validated, your translations go live with every Adon ERP release — reaching millions of users.",
+        "icon": "Globe2"
+      }
+    ]
+  },
+  "platformFeatures": {
+    "eyebrowIcon": "Rocket",
+    "eyebrowLabel": "Built for contributors",
+    "title": "A platform that",
+    "subtitle": "respects your time",
+    "features": [
+      "Built-in translation editor",
+      "Real-time string updates",
+      "Terminology glossary",
+      "Plural & gender-aware",
+      "Community voting system",
+      "Continuous quality checks"
+    ],
+    "editor": {
+      "title": "Translation Editor",
+      "autoSave": "Auto-save on",
+      "rows": [
+        { "label": "English (Source)", "text": "Start your free trial today.", "flag": "🇺🇸" },
+        { "label": "Spanish", "text": "Empieza tu prueba gratuita hoy.", "flag": "🇪🇸" },
+        { "label": "French", "text": "Commencez votre essai gratuit aujourd'hui.", "flag": "🇫🇷" },
+        { "label": "German", "text": "Starten Sie noch heute Ihre kostenlose Testversion.", "flag": "🇩🇪" }
+      ]
+    }
+  },
+  "languagesSection": {
+    "eyebrowIcon": "Globe2",
+    "eyebrowLabel": "Language coverage",
+    "title": "Every language",
+    "subtitle": "matters",
+    "description": "See how far each language team has come. Pick a language and contribute to bring it to 100%.",
+    "languages": [
+      { "name": "English", "progress": 100, "flag": "🇺🇸" },
+      { "name": "Spanish", "progress": 94, "flag": "🇪🇸" },
+      { "name": "French", "progress": 88, "flag": "🇫🇷" },
+      { "name": "German", "progress": 82, "flag": "🇩🇪" },
+      { "name": "Portuguese", "progress": 78, "flag": "🇵🇹" },
+      { "name": "Italian", "progress": 74, "flag": "🇮🇹" },
+      { "name": "Chinese (Simplified)", "progress": 68, "flag": "🇨🇳" },
+      { "name": "Japanese", "progress": 62, "flag": "🇯🇵" },
+      { "name": "Dutch", "progress": 57, "flag": "🇳🇱" },
+      { "name": "Russian", "progress": 52, "flag": "🇷🇺" },
+      { "name": "Arabic", "progress": 47, "flag": "🇸🇦" },
+      { "name": "Turkish", "progress": 41, "flag": "🇹🇷" }
+    ]
+  },
+  "contributorsSection": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Community leaders",
+    "title": "Our top contributors",
+    "description": "These amazing community members have led their language teams to some of the highest completion rates across the platform.",
+    "contributors": [
+      { "name": "Rafi Hossain", "role": "Bengali Lead", "strings": 284, "badge": "gold" },
+      { "name": "Lena Kowalska", "role": "Polish Lead", "strings": 221, "badge": "gold" },
+      { "name": "Tiago Nascimento", "role": "Portuguese Lead", "strings": 198, "badge": "gold" },
+      { "name": "Yuki Tanaka", "role": "Japanese Lead", "strings": 176, "badge": "silver" },
+      { "name": "Sam Kipchirchir", "role": "Swahili Lead", "strings": 143, "badge": "silver" },
+      { "name": "Ana López", "role": "Spanish Lead", "strings": 131, "badge": "silver" }
+    ]
+  },
+  "testimonialsSection": {
+    "eyebrowIcon": "Users",
+    "eyebrowLabel": "Translator voices",
+    "title": "Voices from",
+    "subtitle": "the community",
+    "testimonials": [
+      {
+        "quote": "Translating Adon ERP into Bengali has been one of the most rewarding open-source contributions I've ever made. The tooling makes it genuinely enjoyable.",
+        "name": "Rafi Hossain",
+        "role": "Bengali Language Team Lead",
+        "avatar": "RH"
+      },
+      {
+        "quote": "The community is welcoming, the editor is excellent, and knowing our work is used daily by thousands makes every session feel worth it.",
+        "name": "Lena Kowalska",
+        "role": "Polish Translator & Reviewer",
+        "avatar": "LK"
+      }
+    ]
+  },
+  "ctaSection": {
+    "title": "Your language is",
+    "subtitle": "waiting to be heard",
+    "description": "Join the Adon ERP translation community and help millions of users experience the platform in their own voice.",
+    "translateButton": "Start translating",
+    "findLeadButton": "Find a Language Lead",
+    "footerText": "Free to join · No experience needed · Community-driven"
+  }
+}
