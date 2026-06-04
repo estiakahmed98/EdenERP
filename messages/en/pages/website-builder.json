@@ -1,0 +1,220 @@
+{
+    "metadata": {
+        "title": "Website Builder | Adon ERP",
+        "description": "Build more than a website. Build a business. Design beautiful pages, sell products, manage customers, and grow from one integrated app."
+    },
+    "hero": {
+        "title": "Scale your brand",
+        "titleHighlight": "online",
+        "description": "Build more than a website. Build a business. Design beautiful pages, sell products, manage customers, and grow from one integrated app.",
+        "buttons": {
+            "startNow": "Start now",
+            "watchDemo": "Watch a demo"
+        },
+        "dashboard": {
+            "siteTitle": "Monday Coffee Lab",
+            "heroTitle": "Superior Sips",
+            "heroDescription": "Fresh coffee, crafted with care for your morning energy.",
+            "orderButton": "Order now",
+            "themePanel": {
+                "title": "Theme",
+                "items": {
+                    "colorPalette": "Color palette",
+                    "typography": "Typography",
+                    "spacing": "Spacing",
+                    "buttons": "Buttons",
+                    "sections": "Sections",
+                    "animation": "Animation",
+                    "mobile": "Mobile"
+                },
+                "livePreview": "Live preview"
+            },
+            "editorLabels": {
+                "heroImage": "Hero image",
+                "mainButton": "Main button",
+                "productCard": "Product card"
+            }
+        }
+    },
+    "builderSection": {
+        "badge": "What do you want to build?",
+        "title": "Dream it?",
+        "titleHighlight": "Build it!",
+        "description": "Let the builder guide your website from idea to launch with smart blocks, apps, and editable designs.",
+        "steps": {
+            "site": {
+                "title": "Site",
+                "description": "Your first page"
+            },
+            "add": {
+                "title": "Add",
+                "description": "Your apps"
+            },
+            "adjust": {
+                "title": "Adjust",
+                "description": "Your features"
+            },
+            "grow": {
+                "title": "Grow",
+                "description": "Your business"
+            }
+        },
+        "quote": "There is only one way to create a beautiful website:",
+        "quoteHighlight": "Anywhere and at full speed.",
+        "sidebar": {
+            "website": "Website",
+            "pages": "Pages",
+            "blocks": "Blocks",
+            "theme": "Theme",
+            "style": "Style",
+            "media": "Media",
+            "settings": "Settings"
+        },
+        "templates": {
+            "studio": "Studio",
+            "portfolio": "Portfolio",
+            "agency": "Agency",
+            "startup": "Startup",
+            "shop": "Shop",
+            "landing": "Landing"
+        }
+    },
+    "designerSection": {
+        "badgeIcon": "Diamond",
+        "title": "Craft your site like a designer",
+        "description": "Drag and drop building blocks. Take full creative control with layouts, colors, images, fonts, spacing, and responsive design.",
+        "blockPreview": {
+            "sectionBlock": "Section block",
+            "subtitle": "A Section Subtitle",
+            "description": "Create a beautiful page section with editable content, media, and buttons.",
+            "button": "Learn more"
+        },
+        "sidebar": {
+            "blocks": "Blocks",
+            "width": "Width",
+            "radius": "Radius",
+            "shadow": "Shadow",
+            "spacing": "Spacing"
+        },
+        "chatBadge": "Can you help me edit?"
+    },
+    "aiSection": {
+        "tabs": {
+            "edit": "Edit",
+            "seo": "SEO",
+            "style": "Style",
+            "content": "Content"
+        },
+        "suggestions": {
+            "headline": "Generate a landing page headline for my furniture store.",
+            "rewrite": "Rewrite this product description in a friendly tone.",
+            "seo": "Create SEO meta title and description.",
+            "cta": "Suggest a stronger call-to-action button."
+        },
+        "buttons": {
+            "apply": "Apply",
+            "cancel": "Cancel"
+        },
+        "title": "Your AI sidekick",
+        "description": "Build great pages faster with smart AI assistance. Ask for headlines, product text, SEO content, translations, and layout ideas while you work."
+    },
+    "integrationSection": {
+        "title": "Scalable and fully",
+        "subtitle": "integrated",
+        "description": "Plug your website into sales, inventory, marketing, CRM, appointments, accounting, and everything else your business needs.",
+        "happyText": "Easy peasy!",
+        "apps": {
+            "accounting": "Accounting",
+            "crm": "CRM",
+            "inventory": "Inventory",
+            "calendar": "Calendar",
+            "marketing": "Marketing",
+            "website": "Website"
+        }
+    },
+    "freeSection": {
+        "title": "It's free.",
+        "subtitle": "For real.",
+        "description": "Your website builder is included with your apps. Build your website, connect your tools, and manage your business without jumping between platforms."
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "mobileResponsive": {
+                "title": "Mobile responsive",
+                "description": "Your website automatically adapts to every screen size, from desktop to mobile."
+            },
+            "translation": {
+                "title": "Translation",
+                "description": "Translate pages, products, and content to reach customers around the world."
+            },
+            "themeCustomization": {
+                "title": "Theme customization",
+                "description": "Choose colors, fonts, layouts, and blocks to match your brand identity."
+            },
+            "seo": {
+                "title": "SEO",
+                "description": "Optimize pages and product content to help customers find you online."
+            },
+            "shapesAnimations": {
+                "title": "Shapes and animations",
+                "description": "Give your website visual movement with modern sections, shapes, and effects."
+            },
+            "analytics": {
+                "title": "Analytics",
+                "description": "Learn where your visitors come from and understand what works best."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand as you grow with integrated apps that work together.",
+        "apps": {
+            "ecommerce": {
+                "title": "eCommerce",
+                "desc": "Sell online"
+            },
+            "events": {
+                "title": "Events",
+                "desc": "Promote events"
+            },
+            "elearning": {
+                "title": "eLearning",
+                "desc": "Create courses"
+            },
+            "crm": {
+                "title": "CRM",
+                "desc": "Track leads"
+            },
+            "appointments": {
+                "title": "Appointments",
+                "desc": "Book meetings"
+            },
+            "marketing": {
+                "title": "Marketing",
+                "desc": "Grow audience"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with Adon",
+        "testimonial": {
+            "quote": "Adon's flexibility, scalability, and app ecosystem have been crucial for our success and community growth.",
+            "name": "Andrew Reed",
+            "title": "Digital business owner"
+        }
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "titleHighlight": "growth",
+        "subtitle": "your growth potential",
+        "button": "Start now"
+    }
+}

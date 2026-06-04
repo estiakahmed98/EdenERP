@@ -1,0 +1,192 @@
+{
+    "metadata": {
+        "title": "Blog | Adon ERP",
+        "description": "Create beautiful blog posts, connect with your audience, improve SEO, and turn your knowledge into a powerful growth channel."
+    },
+    "hero": {
+        "title": "Share your",
+        "titleHighlight": "expertise",
+        "description": "Create beautiful blog posts, connect with your audience, improve SEO, and turn your knowledge into a powerful growth channel.",
+        "buttons": {
+            "startNow": "Start now",
+            "watchDemo": "Watch a demo"
+        },
+        "featuredPost": {
+            "category": "Travel / Adventure / Blog",
+            "title": "Buying a Telescope"
+        },
+        "blogPosts": {
+            "post1": {
+                "category": "Marketing",
+                "title": "How to build a creative blog strategy"
+            },
+            "post2": {
+                "category": "Tutorial",
+                "title": "A beginner guide to publishing content"
+            },
+            "post3": {
+                "category": "Travel",
+                "title": "Travel writing that converts readers"
+            },
+            "post4": {
+                "category": "Design",
+                "title": "Visual storytelling for modern brands"
+            },
+            "post5": {
+                "category": "Business",
+                "title": "Content ideas for business growth"
+            },
+            "post6": {
+                "category": "SEO",
+                "title": "SEO tips for your next article"
+            }
+        },
+        "postDescription": "Share your thoughts, stories, and useful ideas with a clean reading experience."
+    },
+    "editorSection": {
+        "badge": "Write your next story faster",
+        "title": "Explore our text",
+        "titleHighlight": "editor's",
+        "subtitle": "magic",
+        "description": "Write, format, structure, and publish your articles visually with a beautiful editor made for creators and businesses.",
+        "blogTools": {
+            "title": "Blog Tools",
+            "text": "Text",
+            "image": "Image",
+            "quote": "Quote",
+            "ctaButton": "CTA button",
+            "gallery": "Gallery",
+            "socialShare": "Social share",
+            "seoPreview": "SEO preview"
+        },
+        "design": {
+            "title": "Design",
+            "typography": "Typography",
+            "paragraph": "Paragraph",
+            "imageRadius": "Image radius",
+            "spacing": "Spacing",
+            "colors": "Colors",
+            "mobile": "Mobile"
+        },
+        "dragDropText": "Drag and drop any block here"
+    },
+    "convertSection": {
+        "icon": "Zap",
+        "title": "Effortlessly",
+        "titleHighlight": "convert",
+        "subtitle": "your audience",
+        "plans": {
+            "starter": {
+                "name": "Starter Plan",
+                "price": "$9.00",
+                "button": "Choose"
+            },
+            "premium": {
+                "name": "Premium Plan",
+                "price": "$29.00",
+                "button": "Choose"
+            }
+        },
+        "analyzeBox": {
+            "title": "Analyze this",
+            "description": "Add forms, lead magnets, offers, and call-to-action sections directly inside your articles."
+        },
+        "features": {
+            "title": "Engaging user experience",
+            "description": "Build articles that guide readers toward a next step: subscribe, contact you, download a resource, or purchase your offer.",
+            "ctaBlocks": "Smart CTA blocks",
+            "leadForms": "Lead capture forms",
+            "relatedPosts": "Related posts",
+            "newsletter": "Newsletter signup"
+        }
+    },
+    "seoSection": {
+        "icon": "TrendingUp",
+        "title": "Maximize your",
+        "titleHighlight": "SEO",
+        "description": "Improve discoverability with metadata, snippets, search previews, internal links, and structured content.",
+        "settings": {
+            "title": "SEO settings",
+            "metaTitle": "Meta title",
+            "metaDescription": "Meta description",
+            "urlSlug": "URL slug",
+            "socialImage": "Social image",
+            "focusKeyword": "Focus keyword"
+        },
+        "searchPreview": {
+            "title": "Search preview",
+            "siteName": "Your Blog Article | Website",
+            "articleTitle": "Buying a Telescope: Complete Guide",
+            "description": "Learn how to choose the right telescope, understand key features, and start exploring the sky."
+        },
+        "badge": "SEO score improved"
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "buildingBlocks": {
+                "title": "Building blocks",
+                "description": "Drag, drop, and customize beautiful content blocks to create articles, landing pages, and stories faster."
+            },
+            "translation": {
+                "title": "Translation",
+                "description": "Create multilingual blog content and connect with readers across different regions."
+            },
+            "boostPlatform": {
+                "title": "Boost in one platform",
+                "description": "Publish your blog articles and manage SEO, social sharing, email campaigns, and analytics in one place."
+            },
+            "domainName": {
+                "title": "Domain Name",
+                "description": "Use your own domain name and make your blog feel professional and branded."
+            },
+            "analytics": {
+                "title": "Analytics",
+                "description": "Track views, audience behavior, and performance so you know what content works."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand as you grow with integrated apps that work together.",
+        "apps": {
+            "website": {
+                "title": "Website",
+                "desc": "Create amazing website"
+            },
+            "commerce": {
+                "title": "Commerce",
+                "desc": "Sell online"
+            },
+            "socialMarketing": {
+                "title": "Social Marketing",
+                "desc": "Share content"
+            },
+            "emailMarketing": {
+                "title": "Email Marketing",
+                "desc": "Send newsletters"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with Adon",
+        "testimonial": {
+            "quote": "Adon replaced multiple applications in one. With better productivity, powerful easy access to centralized information, and simplified processes.",
+            "name": "Robert Chen",
+            "title": "Content strategist"
+        }
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "titleHighlight": "growth",
+        "subtitle": "your growth potential",
+        "button": "Start now"
+    }
+}

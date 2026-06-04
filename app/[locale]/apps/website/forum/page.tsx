@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -26,75 +27,177 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
-  {
-    title: "Sort content",
-    description:
-      "Organize by relevance, latest activity, date, newest, most answered, most voted.",
-  },
-  {
-    title: "Enrich discussion",
-    description:
-      "Embed videos and images directly into your community messages.",
-  },
-  {
-    title: "Theme selection",
-    description: "Select the best theme for your business and community style.",
-  },
-  {
-    title: "Notifications",
-    description:
-      "Subscribe to interesting content and get email alerts when a new answer is posted.",
-  },
-  {
-    title: "Categories",
-    description:
-      "Provide well-organized and easily accessible content with topic categories.",
-  },
-];
-
-const apps = [
-  {
-    title: "Website",
-    description: "Create amazing websites",
-    icon: MonitorSmartphone,
-  },
-  {
-    title: "eCommerce",
-    description: "Manage your online store",
-    icon: LayoutGrid,
-  },
-  {
-    title: "Blog",
-    description: "Share interesting content",
-    icon: MessageCircle,
-  },
-  {
-    title: "Live Chat",
-    description: "Engage your visitors",
-    icon: MessageCircle,
-  },
-  {
-    title: "Helpdesk",
-    description: "Help your customers",
-    icon: HelpCircle,
-  },
-];
-
-const avatars = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
-];
-
 export default function ForumLandingSections() {
+  const t = useTranslations("pages.forum");
+
+  // Sidebar menu items
+  const sidebarMenuItems = [
+    t("hero.sidebar.posts"),
+    t("hero.sidebar.myProfile"),
+    t("hero.sidebar.popularAnswers"),
+    t("hero.sidebar.favorites"),
+    t("hero.sidebar.categories"),
+  ];
+
+  // Tags
+  const tags = [
+    t("hero.sidebar.tagHelp"),
+    t("hero.sidebar.tagTips"),
+    t("hero.sidebar.tagSupport"),
+  ];
+
+  // Forum posts
+  const forumPosts = [
+    {
+      title: t("hero.forumContent.posts.post1.title"),
+      tag: t("hero.forumContent.posts.post1.tag"),
+      replies: t("hero.forumContent.posts.post1.replies"),
+      views: t("hero.forumContent.posts.post1.views"),
+      time: t("hero.forumContent.posts.post1.time"),
+    },
+    {
+      title: t("hero.forumContent.posts.post2.title"),
+      tag: t("hero.forumContent.posts.post2.tag"),
+      replies: t("hero.forumContent.posts.post2.replies"),
+      views: t("hero.forumContent.posts.post2.views"),
+      time: t("hero.forumContent.posts.post2.time"),
+    },
+    {
+      title: t("hero.forumContent.posts.post3.title"),
+      tag: t("hero.forumContent.posts.post3.tag"),
+      replies: t("hero.forumContent.posts.post3.replies"),
+      views: t("hero.forumContent.posts.post3.views"),
+      time: t("hero.forumContent.posts.post3.time"),
+    },
+    {
+      title: t("hero.forumContent.posts.post4.title"),
+      tag: t("hero.forumContent.posts.post4.tag"),
+      replies: t("hero.forumContent.posts.post4.replies"),
+      views: t("hero.forumContent.posts.post4.views"),
+      time: t("hero.forumContent.posts.post4.time"),
+    },
+  ];
+
+  // Comments data
+  const comments = [
+    {
+      name: t("communitySection.discussion.comments.0.name"),
+      text: t("communitySection.discussion.comments.0.text"),
+      role: t("communitySection.discussion.comments.0.role"),
+    },
+    {
+      name: t("communitySection.discussion.comments.1.name"),
+      text: t("communitySection.discussion.comments.1.text"),
+      role: t("communitySection.discussion.comments.1.role"),
+    },
+    {
+      name: t("communitySection.discussion.comments.2.name"),
+      text: t("communitySection.discussion.comments.2.text"),
+      role: t("communitySection.discussion.comments.2.role"),
+    },
+  ];
+
+  // Leaderboard users
+  const leaderboardUsers = [
+    {
+      name: t("gamificationSection.leaderboard.users.0.name"),
+      xp: t("gamificationSection.leaderboard.users.0.xp"),
+    },
+    {
+      name: t("gamificationSection.leaderboard.users.1.name"),
+      xp: t("gamificationSection.leaderboard.users.1.xp"),
+    },
+    {
+      name: t("gamificationSection.leaderboard.users.2.name"),
+      xp: t("gamificationSection.leaderboard.users.2.xp"),
+    },
+  ];
+
+  // Activities
+  const activities = [
+    t("gamificationSection.activities.newBadge"),
+    t("gamificationSection.activities.answerAccepted"),
+    t("gamificationSection.activities.topContributor"),
+  ];
+
+  // Editor tools
+  const editorTools = t.raw("customizeSection.editor.tools");
+
+  // Editor features
+  const editorFeatures = [
+    t("customizeSection.editor.features.boldText"),
+    t("customizeSection.editor.features.uploadImage"),
+    t("customizeSection.editor.features.embedVideo"),
+    t("customizeSection.editor.features.insertQuote"),
+  ];
+
+  // Features list
+  const featuresList = [
+    {
+      title: t("featuresSection.features.sortContent.title"),
+      description: t("featuresSection.features.sortContent.description"),
+    },
+    {
+      title: t("featuresSection.features.enrichDiscussion.title"),
+      description: t("featuresSection.features.enrichDiscussion.description"),
+    },
+    {
+      title: t("featuresSection.features.themeSelection.title"),
+      description: t("featuresSection.features.themeSelection.description"),
+    },
+    {
+      title: t("featuresSection.features.notifications.title"),
+      description: t("featuresSection.features.notifications.description"),
+    },
+    {
+      title: t("featuresSection.features.categories.title"),
+      description: t("featuresSection.features.categories.description"),
+    },
+  ];
+
+  // Apps list
+  const appsList = [
+    {
+      title: t("appsSection.apps.website.title"),
+      desc: t("appsSection.apps.website.desc"),
+      icon: MonitorSmartphone,
+    },
+    {
+      title: t("appsSection.apps.ecommerce.title"),
+      desc: t("appsSection.apps.ecommerce.desc"),
+      icon: LayoutGrid,
+    },
+    {
+      title: t("appsSection.apps.blog.title"),
+      desc: t("appsSection.apps.blog.desc"),
+      icon: MessageCircle,
+    },
+    {
+      title: t("appsSection.apps.liveChat.title"),
+      desc: t("appsSection.apps.liveChat.desc"),
+      icon: MessageCircle,
+    },
+    {
+      title: t("appsSection.apps.helpdesk.title"),
+      desc: t("appsSection.apps.helpdesk.desc"),
+      icon: HelpCircle,
+    },
+  ];
+
+  // Avatar images
+  const avatars = [
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
+  ];
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
@@ -103,17 +206,16 @@ export default function ForumLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Connect with{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                your community
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Create a community, foster collaboration, improve support, and give
-            users a simple place to ask, answer, vote, and share knowledge.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -121,14 +223,14 @@ export default function ForumLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.buttons.startNow")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("hero.buttons.watchDemo")}
             </Link>
           </div>
 
@@ -144,15 +246,15 @@ export default function ForumLandingSections() {
                     className="text-xl font-bold text-orange-700 dark:text-orange-400"
                     style={{ fontFamily: handwrittenFont }}
                   >
-                    Monkey Coffee Lab
+                    {t("hero.forumHeader.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Home / Shop / Forum / About
+                    {t("hero.forumHeader.breadcrumb")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-orange-600 dark:bg-orange-700 px-4 py-2 text-xs font-bold text-white hover:bg-orange-700 transition">
-                  Contact us
+                  {t("hero.forumHeader.contactButton")}
                 </button>
               </div>
 
@@ -166,22 +268,16 @@ export default function ForumLandingSections() {
                     />
                     <div>
                       <p className="text-sm font-bold text-slate-900 dark:text-white">
-                        Robin Cole
+                        {t("hero.sidebar.profileName")}
                       </p>
                       <p className="text-xs text-slate-500 dark:text-slate-400">
-                        Top user
+                        {t("hero.sidebar.profileRole")}
                       </p>
                     </div>
                   </div>
 
                   <div className="mt-7 space-y-2">
-                    {[
-                      "Posts",
-                      "My profile",
-                      "Popular answers",
-                      "Favorites",
-                      "Categories",
-                    ].map((item, index) => (
+                    {sidebarMenuItems.map((item, index) => (
                       <div
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
@@ -197,10 +293,10 @@ export default function ForumLandingSections() {
 
                   <div className="mt-8">
                     <p className="text-xs font-bold text-slate-500 dark:text-slate-400">
-                      Tags
+                      {t("hero.sidebar.tags")}
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
-                      {["Help", "Tips", "Support"].map((tag) => (
+                      {tags.map((tag) => (
                         <span
                           key={tag}
                           className="rounded-full bg-white dark:bg-slate-800 px-3 py-1 text-[11px] font-bold text-slate-500 dark:text-slate-400"
@@ -216,56 +312,27 @@ export default function ForumLandingSections() {
                   <div className="mb-5 flex items-center justify-between gap-4">
                     <div>
                       <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                        The coffee lovers corner
+                        {t("hero.forumContent.title")}
                       </h3>
                       <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                        Ask questions, share tips, and help each other.
+                        {t("hero.forumContent.description")}
                       </p>
                     </div>
 
                     <button className="rounded-md bg-orange-600 dark:bg-orange-700 px-4 py-2 text-xs font-bold text-white hover:bg-orange-700 transition">
-                      New Post
+                      {t("hero.forumContent.newPost")}
                     </button>
                   </div>
 
                   <div className="mb-5 flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3">
                     <Search className="h-4 w-4 text-slate-400 dark:text-slate-500" />
                     <span className="text-sm text-slate-400 dark:text-slate-500">
-                      Search discussions...
+                      {t("hero.forumContent.searchPlaceholder")}
                     </span>
                   </div>
 
                   <div className="space-y-3">
-                    {[
-                      {
-                        title: "Which espresso machine should I buy?",
-                        tag: "Solved",
-                        replies: 12,
-                        views: 45,
-                        time: "4 minutes ago",
-                      },
-                      {
-                        title: "New blend suggestions",
-                        tag: "New",
-                        replies: 8,
-                        views: 31,
-                        time: "2 hours ago",
-                      },
-                      {
-                        title: "What is the best French press?",
-                        tag: "Popular",
-                        replies: 14,
-                        views: 82,
-                        time: "1 day ago",
-                      },
-                      {
-                        title: "How long to roast beans?",
-                        tag: "Help",
-                        replies: 5,
-                        views: 22,
-                        time: "3 days ago",
-                      },
-                    ].map((post, index) => (
+                    {forumPosts.map((post, index) => (
                       <div
                         key={post.title}
                         className="grid gap-4 rounded-lg border border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm sm:grid-cols-[1fr_90px_90px_120px]"
@@ -333,52 +400,40 @@ export default function ForumLandingSections() {
               className="text-center text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-left"
               style={{ fontFamily: handwrittenFont }}
             >
-              By and for the{" "}
+              {t("communitySection.title")}{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">community</span>
+                <span className="relative z-10">
+                  {t("communitySection.titleHighlight")}
+                </span>
                 <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[5px] border-orange-300 dark:border-orange-600" />
               </span>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Enable users to help each other. Boost collective knowledge and
-              anticipate your customer&apos;s needs with valuable insights and
-              problem-solving discussions.
+              {t("communitySection.description")}
             </p>
 
             <div className="mt-10 flex max-w-xs items-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
               <MessageCircle className="h-4 w-4 text-rose-500 dark:text-rose-400" />
-              Get customer service
+              {t("communitySection.badge")}
             </div>
           </div>
 
           <div className="relative">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                The best brushes for pottery?
+                {t("communitySection.discussion.title")}
               </h3>
 
               <div className="mt-6 space-y-5">
-                {[
-                  {
-                    name: "Alex Martin",
-                    text: "Which brush is best for smooth details?",
-                    bg: "bg-white dark:bg-slate-800",
-                  },
-                  {
-                    name: "Kate Rowan",
-                    text: "I recommend soft natural brushes for clean strokes.",
-                    bg: "bg-emerald-50 dark:bg-emerald-950/30",
-                  },
-                  {
-                    name: "Thomas Joseph",
-                    text: "Thanks! This was super helpful.",
-                    bg: "bg-white dark:bg-slate-800",
-                  },
-                ].map((item, index) => (
+                {comments.map((item, index) => (
                   <div
                     key={item.name}
-                    className={`rounded-xl border border-slate-100 dark:border-slate-700 p-4 text-left ${item.bg}`}
+                    className={`rounded-xl border border-slate-100 dark:border-slate-700 p-4 text-left ${
+                      index === 1
+                        ? "bg-emerald-50 dark:bg-emerald-950/30"
+                        : "bg-white dark:bg-slate-800"
+                    }`}
                   >
                     <div className="flex items-center gap-3">
                       <img
@@ -391,7 +446,7 @@ export default function ForumLandingSections() {
                           {item.name}
                         </p>
                         <p className="text-xs text-slate-400 dark:text-slate-500">
-                          Community user
+                          {item.role}
                         </p>
                       </div>
                     </div>
@@ -414,64 +469,60 @@ export default function ForumLandingSections() {
             className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Gamification drives{" "}
+            {t("gamificationSection.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="dark:text-rose-200">motivation</span>
+              <span className="dark:text-rose-200">
+                {t("gamificationSection.titleHighlight")}
+              </span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Motivate, engage, and drive actions. Set up a reward system with
-            karma points to give your most active members more moderation
-            features and responsibilities.
+            {t("gamificationSection.description")}
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
             <div className="bg-[#714b67] dark:bg-[#8a5a7e] px-6 py-5 text-left text-white">
-              <p className="text-xl font-bold">All Users</p>
+              <p className="text-xl font-bold">
+                {t("gamificationSection.leaderboard.title")}
+              </p>
             </div>
 
             <div className="grid gap-5 bg-white dark:bg-slate-900 p-6 sm:grid-cols-3">
-              {[
-                ["Robin Bineau", "2877 XP", avatars[0]],
-                ["Marine Duvelle", "1791 XP", avatars[1]],
-                ["Joel Willis", "1657 XP", avatars[2]],
-              ].map(([name, score, avatar]) => (
+              {leaderboardUsers.map((user, index) => (
                 <div
-                  key={name}
+                  key={user.name}
                   className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-5 text-center ring-1 ring-slate-100 dark:ring-slate-700"
                 >
                   <img
-                    src={avatar}
-                    alt={name}
+                    src={avatars[index]}
+                    alt={user.name}
                     className="mx-auto h-20 w-20 rounded-full object-cover"
                   />
                   <p className="mt-4 font-bold text-slate-900 dark:text-white">
-                    {name}
+                    {user.name}
                   </p>
                   <p className="mt-1 text-sm text-[#714b67] dark:text-[#9b6a8f]">
-                    {score}
+                    {user.xp}
                   </p>
                 </div>
               ))}
             </div>
 
             <div className="border-t border-slate-100 dark:border-slate-700 p-5">
-              {["New badge unlocked", "Answer accepted", "Top contributor"].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 py-3 text-sm last:border-0"
-                  >
-                    <span className="text-slate-600 dark:text-slate-300">
-                      {item}
-                    </span>
-                    <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                      +25 Karma
-                    </span>
-                  </div>
-                ),
-              )}
+              {activities.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 py-3 text-sm last:border-0"
+                >
+                  <span className="text-slate-600 dark:text-slate-300">
+                    {item}
+                  </span>
+                  <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                    {t("gamificationSection.activities.karmaPoints")}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -491,17 +542,16 @@ export default function ForumLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <span className="relative inline-block">
-                <span className="relative z-10">Customize</span>
+                <span className="relative z-10">
+                  {t("customizeSection.title")}
+                </span>
                 <span className="absolute bottom-2 left-0 h-5 w-full rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/40" />
               </span>{" "}
-              your
-              <br />
-              content&apos;s design
+              {t("customizeSection.subtitle")}
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              User-friendly and advanced text editor. Enable users to edit and
-              structure their content with plenty of helpful features.
+              {t("customizeSection.description")}
             </p>
           </div>
 
@@ -509,7 +559,7 @@ export default function ForumLandingSections() {
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-4 flex items-center justify-between">
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Your Answer
+                  {t("customizeSection.editor.title")}
                 </p>
                 <span className="text-sm text-slate-400 dark:text-slate-500">
                   •••
@@ -518,14 +568,15 @@ export default function ForumLandingSections() {
 
               <div className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4">
                 <div className="mb-4 flex gap-2">
-                  {["B", "I", "U", "Link", "Image", "Code"].map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded bg-white dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400"
-                    >
-                      {tool}
-                    </span>
-                  ))}
+                  {Array.isArray(editorTools) &&
+                    editorTools.map((tool) => (
+                      <span
+                        key={tool}
+                        className="rounded bg-white dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400"
+                      >
+                        {tool}
+                      </span>
+                    ))}
                 </div>
 
                 <div className="space-y-3">
@@ -538,17 +589,15 @@ export default function ForumLandingSections() {
             </div>
 
             <div className="absolute -bottom-16 left-8 hidden w-56 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-xl lg:block">
-              {["Bold text", "Upload image", "Embed video", "Insert quote"].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="mb-2 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 last:mb-0"
-                  >
-                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
-                    {item}
-                  </div>
-                ),
-              )}
+              {editorFeatures.map((item) => (
+                <div
+                  key={item}
+                  className="mb-2 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 last:mb-0"
+                >
+                  <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -563,20 +612,24 @@ export default function ForumLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">features</span>
+              <span className="relative z-10">
+                {t("featuresSection.highlight")}
+              </span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
-            done{" "}
+            {t("featuresSection.subtitle")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("featuresSection.subtitle")}
+              </span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -604,7 +657,8 @@ export default function ForumLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllFeatures")}{" "}
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -615,22 +669,21 @@ export default function ForumLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("appsSection.needHighlight")}
+              </span>
             </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
-            </HandUnderline>
+            , {t("appsSection.appHighlight")}
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {apps.map((app) => {
+            {appsList.map((app) => {
               const Icon = app.icon;
 
               return (
@@ -647,7 +700,7 @@ export default function ForumLandingSections() {
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {app.description}
+                      {app.desc}
                     </p>
                   </div>
                 </div>
@@ -659,7 +712,7 @@ export default function ForumLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllApps")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -707,10 +760,10 @@ export default function ForumLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaSection.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaSection.description")}
               </p>
             </div>
           </div>
@@ -718,13 +771,12 @@ export default function ForumLandingSections() {
           <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
               <div className="text-5xl text-amber-400 dark:text-amber-500">
-                “
+                &ldquo;
               </div>
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon ensures product quality and triples production without
-                  extra hiring.
+                  {t("ctaSection.testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -736,10 +788,10 @@ export default function ForumLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Mark Anderson
+                      {t("ctaSection.testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      CEO & Founder
+                      {t("ctaSection.testimonial.title")}
                     </p>
                   </div>
                 </div>
@@ -756,25 +808,22 @@ export default function ForumLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("getStartedSection.title")}
               <br />
-              your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("getStartedSection.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("getStartedSection.subtitle")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("getStartedSection.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>

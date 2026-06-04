@@ -1,0 +1,233 @@
+{
+    "metadata": {
+        "title": "Live Chat | Adon ERP",
+        "description": "Turn visitors into leads, customers, and loyal fans. Answer questions, solve problems, and build better relationships from one simple chat workspace."
+    },
+    "hero": {
+        "title": "Every chat",
+        "titleHighlight": "has potential",
+        "description": "Turn visitors into leads, customers, and loyal fans. Answer questions, solve problems, and build better relationships from one simple chat workspace.",
+        "buttons": {
+            "startNow": "Start now",
+            "watchDemo": "Watch a demo"
+        },
+        "freeNote": "Free, forever, with unlimited users",
+        "chatPreview": {
+            "storeName": "Monkey Coffee Lab",
+            "title": "Superior Sips",
+            "description": "Give visitors instant answers while they browse your store.",
+            "button": "Ask us anything",
+            "admin": {
+                "name": "Admin Peterson",
+                "messages": [
+                    "Hi! Are you looking for coffee beans?",
+                    "I can recommend our best blend.",
+                    "Would you like help placing an order?"
+                ]
+            },
+            "visitor": {
+                "name": "Visitor #87",
+                "messages": [
+                    "Hello, do you ship internationally?",
+                    "What is your best seller?",
+                    "Thanks, that helped!"
+                ]
+            }
+        }
+    },
+    "answerSection": {
+        "title": "Answer",
+        "titleHighlight": "questions, nurture leads, and",
+        "titleHighlight2": "solve",
+        "subtitle": "problems instantly",
+        "description": "Manage multiple conversations at once. Keep customer history, product context, and support information visible while chatting.",
+        "chats": {
+            "admin": {
+                "name": "Admin Peterson",
+                "messages": [
+                    "Do you have a recommendation for this product?",
+                    "Yes, this option is best for your use case.",
+                    "Great, I will order now!"
+                ]
+            },
+            "visitor": {
+                "name": "Visitor #87",
+                "messages": [
+                    "Do you have a recommendation for this product?",
+                    "Yes, this option is best for your use case.",
+                    "Great, I will order now!"
+                ]
+            }
+        },
+        "replyPlaceholder": "Type your reply..."
+    },
+    "neverMissSection": {
+        "title": "Never miss",
+        "subtitle": "a message again",
+        "description": "Get real-time notifications, route conversations to the right team, and keep every visitor request connected to your business records.",
+        "opportunityCard": {
+            "title": "Opportunity",
+            "fields": {
+                "customer": "Customer",
+                "email": "Email",
+                "phone": "Phone",
+                "product": "Product",
+                "priority": "Priority"
+            },
+            "chatTitle": "Chat",
+            "messages": [
+                "Hello!",
+                "Can you help?",
+                "Sure, one moment."
+            ]
+        }
+    },
+    "helpSection": {
+        "title": "Help is just a click away",
+        "description": "Transform chats into support tickets instantly. Keep customer requests, internal notes, team collaboration, and resolution status in one clear workflow.",
+        "ticketStats": {
+            "open": "Open",
+            "pending": "Pending",
+            "solved": "Solved"
+        },
+        "tickets": {
+            "login": "Customer cannot login",
+            "payment": "Payment failed",
+            "shipping": "Shipping question",
+            "recommendation": "Product recommendation"
+        },
+        "priority": {
+            "urgent": "Urgent",
+            "normal": "Normal"
+        },
+        "latestConversation": {
+            "title": "Latest conversation",
+            "messages": [
+                "Can I update my order?",
+                "Yes, I can help."
+            ]
+        }
+    },
+    "visitorToCustomerSection": {
+        "title": "Turn \"visitor\" into",
+        "titleHighlight": "\"customer\"",
+        "description": "Convert website visitors into opportunities with live chat, automatic lead creation, customer records, and sales follow-up.",
+        "opportunity": {
+            "title": "Audrey Peterson's opportunity",
+            "fields": {
+                "expectedRevenue": "Expected Revenue",
+                "probability": "Probability",
+                "customer": "Customer",
+                "stage": "Stage"
+            },
+            "values": {
+                "expectedRevenue": "$50,000",
+                "probability": "37.00%",
+                "customer": "Audrey Peterson",
+                "stage": "Qualified"
+            },
+            "notes": {
+                "title": "Notes",
+                "text": "Customer asked about pricing, delivery time, and product recommendations."
+            },
+            "chatTitle": "Live Chat",
+            "messages": [
+                "I want to become a customer.",
+                "Great! I can create an opportunity.",
+                "Please send the proposal."
+            ]
+        }
+    },
+    "chatbotSection": {
+        "title": "Meet Chatbot, your new teammate",
+        "description": "From greeting visitors to answering common questions, your chatbot can guide users, qualify leads, and escalate important conversations to your team.",
+        "card": {
+            "title": "Chatbot flows",
+            "subtitle": "Automated conversation paths",
+            "steps": {
+                "welcome": "Welcome message",
+                "askGoal": "Ask visitor goal",
+                "collectEmail": "Collect email",
+                "recommend": "Recommend product",
+                "createTicket": "Create ticket",
+                "routeAgent": "Route to agent"
+            }
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "cannedResponses": {
+                "title": "Canned responses",
+                "description": "Replace frequent replies with reusable answers and reply faster."
+            },
+            "thirdPartyIntegration": {
+                "title": "3rd Party Integration",
+                "description": "Connect Live Chat to website, ecommerce, CRM, helpdesk, and more."
+            },
+            "searchTickets": {
+                "title": "Search for tickets",
+                "description": "Find previous conversations and tickets without losing context."
+            },
+            "routeAnalyze": {
+                "title": "Route and analyze performance",
+                "description": "Measure response time, satisfaction, and agent productivity."
+            },
+            "multiChannel": {
+                "title": "Multi channel management",
+                "description": "Centralize chat, website conversations, support messages, and leads."
+            },
+            "smartChat": {
+                "title": "Smart chat requests",
+                "description": "Assign conversations to the right team members automatically."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand as you grow.",
+        "apps": {
+            "website": {
+                "title": "Website",
+                "desc": "Create amazing websites"
+            },
+            "crm": {
+                "title": "CRM",
+                "desc": "Track leads and customers"
+            },
+            "onlineAppointment": {
+                "title": "Online Appointment",
+                "desc": "Book meetings online"
+            },
+            "helpdesk": {
+                "title": "Helpdesk",
+                "desc": "Help your customers"
+            },
+            "chatVisitor": {
+                "title": "Chat Visitor",
+                "desc": "Track website conversations"
+            }
+        },
+        "seeAllApps": "See all Apps"
+    },
+    "ctaSection": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with Adon",
+        "testimonial": {
+            "quote": "From what I have seen so far, Adon solved our intent problem better than any information workflow. It helped our team understand customers and continue the conversation smoothly.",
+            "name": "Mike Hills",
+            "title": "Sales lead"
+        }
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "titleHighlight": "growth",
+        "subtitle": "your growth potential",
+        "button": "Start now"
+    }
+}
