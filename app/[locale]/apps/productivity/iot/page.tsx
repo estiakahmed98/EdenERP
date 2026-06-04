@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import type { Metadata } from "next";
+import { useTranslations } from "next-intl";
 import { siteConfig } from "@/lib/site";
 
 const title = "Eden Defence IoT Platform";
@@ -29,7 +30,46 @@ export const metadata: Metadata = {
   },
 };
 
+function SparklesIcon() {
+  return (
+    <svg viewBox="0 0 80 80" className="h-12 w-12" fill="none">
+      <path
+        d="M40 5V25"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M40 55V75"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M5 40H25"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <path
+        d="M55 40H75"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export default function IoTDefencePage() {
+  const t = useTranslations("pages.iotdefence");
+
+  const dashboardCards = t.raw("hero.dashboard.cards");
+  const missionFeatures = t.raw("missionSection.features");
+  const defenceCards = t.raw("defenceCardsSection.cards");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -43,6 +83,16 @@ export default function IoTDefencePage() {
     },
   };
 
+  const getColorClasses = (color: string) => {
+    const colorMap: Record<string, { bg: string; text: string }> = {
+      sky: { bg: "bg-sky-100 dark:bg-sky-950/50", text: "text-sky-700 dark:text-sky-400" },
+      emerald: { bg: "bg-emerald-100 dark:bg-emerald-950/50", text: "text-emerald-700 dark:text-emerald-400" },
+      amber: { bg: "bg-amber-100 dark:bg-amber-950/50", text: "text-amber-700 dark:text-amber-400" },
+      rose: { bg: "bg-rose-100 dark:bg-rose-950/50", text: "text-rose-700 dark:text-rose-400" },
+    };
+    return colorMap[color] || colorMap.sky;
+  };
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <Script
@@ -52,6 +102,7 @@ export default function IoTDefencePage() {
       >
         {JSON.stringify(jsonLd)}
       </Script>
+
       {/* HERO */}
       <section className="relative bg-white dark:bg-slate-950 pt-20 text-center">
         <div className="mx-auto max-w-7xl px-4 pb-24">
@@ -62,26 +113,24 @@ export default function IoTDefencePage() {
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
             }}
           >
-            Easily connect to the{" "}
+            {t("hero.title")}{" "}
             <span className="relative inline-block text-sky-500 dark:text-sky-400">
-              Internet of Things
+              {t("hero.titleHighlight")}
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-300 dark:bg-sky-600" />
             </span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-            Build connected drone systems, autonomous robots, missile
-            monitoring, and air defence command operations with one intelligent
-            IoT platform.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <button className="rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#5d3f57] dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-              Start now
+              {t("hero.startButton")}
             </button>
 
             <button className="rounded-md bg-slate-100 dark:bg-slate-800 px-7 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 transition hover:bg-slate-200 dark:hover:bg-slate-700">
-              Meet an advisor
+              {t("hero.advisorButton")}
             </button>
           </div>
 
@@ -95,78 +144,56 @@ export default function IoTDefencePage() {
                 <div className="flex flex-wrap items-center justify-between gap-5">
                   <div>
                     <p className="text-sm font-bold uppercase tracking-[0.3em] text-sky-300 dark:text-sky-400">
-                      Eden Defence IoT
+                      {t("hero.dashboard.title")}
                     </p>
 
                     <h2 className="mt-4 text-4xl font-black leading-tight">
-                      Unified Defence Operations Console
+                      {t("hero.dashboard.subtitle")}
                     </h2>
                   </div>
 
                   <div className="rounded-2xl bg-white/10 dark:bg-white/5 px-5 py-3 text-xs font-bold tracking-[0.2em] text-white backdrop-blur">
-                    LIVE SYSTEM
+                    {t("hero.dashboard.liveBadge")}
                   </div>
                 </div>
               </div>
 
               <div className="grid gap-5 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 lg:grid-cols-4">
-                {[
-                  [
-                    "Drone Fleet",
-                    "42 Active",
-                    "bg-sky-100 text-sky-700 dark:bg-sky-950/50 dark:text-sky-400",
-                    "/Assets/apps/Drones.avif",
-                  ],
-                  [
-                    "Robotics Units",
-                    "18 Online",
-                    "bg-emerald-100 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400",
-                    "/Assets/apps/Robots.jpg",
-                  ],
-                  [
-                    "Missile Defence",
-                    "7 Systems",
-                    "bg-amber-100 text-amber-700 dark:bg-amber-950/50 dark:text-amber-400",
-                    "/Assets/apps/Air Defence.webp",
-                  ],
-                  [
-                    "Secure Signals",
-                    "99.9% Stable",
-                    "bg-rose-100 text-rose-700 dark:bg-rose-950/50 dark:text-rose-400",
-                    "/Assets/apps/AI Business Dashboard.jpg",
-                  ],
-                ].map(([title, value, color, image]) => (
-                  <div
-                    key={title}
-                    className="overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm"
-                  >
-                    <div className="h-36 overflow-hidden">
-                      <Image
-                        src={image}
-                        alt={title}
-                        width={500}
-                        height={300}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-
-                    <div className="p-5">
-                      <div
-                        className={`mb-4 inline-flex rounded-xl px-4 py-2 text-xs font-bold ${color}`}
-                      >
-                        LIVE
+                {dashboardCards.map((card: any) => {
+                  const colors = getColorClasses(card.color);
+                  return (
+                    <div
+                      key={card.title}
+                      className="overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm"
+                    >
+                      <div className="h-36 overflow-hidden">
+                        <Image
+                          src={card.image}
+                          alt={card.title}
+                          width={500}
+                          height={300}
+                          className="h-full w-full object-cover"
+                        />
                       </div>
 
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                        {title}
-                      </h3>
+                      <div className="p-5">
+                        <div
+                          className={`mb-4 inline-flex rounded-xl px-4 py-2 text-xs font-bold ${colors.bg} ${colors.text}`}
+                        >
+                          {t("hero.dashboard.liveText")}
+                        </div>
 
-                      <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                        {value}
-                      </p>
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                          {card.title}
+                        </h3>
+
+                        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                          {card.value}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               <button className="absolute left-1/2 top-1/2 z-30 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-[0_10px_40px_rgba(0,0,0,0.25)]">
@@ -203,26 +230,19 @@ export default function IoTDefencePage() {
                     '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                 }}
               >
-                Mission-ready{" "}
+                {t("missionSection.title")}{" "}
                 <span className="relative inline-block">
-                  <span className="relative z-10">technology</span>
+                  <span className="relative z-10">{t("missionSection.titleHighlight")}</span>
                   <span className="absolute bottom-1 left-0 h-5 w-full rounded-lg bg-[#02cfc3] dark:bg-[#02cfc3]/40" />
                 </span>
               </h2>
 
               <p className="mt-7 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                Coordinate drone fleets, robotic systems, missile defence
-                monitoring, radar communication, and IoT sensors from one secure
-                intelligent platform.
+                {t("missionSection.description")}
               </p>
 
               <div className="mt-10 space-y-4">
-                {[
-                  "Real-time telemetry & battlefield monitoring",
-                  "Drone & robotics fleet management",
-                  "Secure defence-grade IoT communication",
-                  "AI-powered threat analysis dashboards",
-                ].map((item) => (
+                {missionFeatures.map((item: string) => (
                   <div
                     key={item}
                     className="flex items-center gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 px-5 py-4"
@@ -257,28 +277,7 @@ export default function IoTDefencePage() {
       <section className="bg-white dark:bg-slate-950 py-28">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-4">
-            {[
-              {
-                title: "Autonomous Drones",
-                desc: "Long-range aerial surveillance, mapping, and autonomous missions.",
-                image: "/Assets/apps/Drones.avif",
-              },
-              {
-                title: "Combat Robotics",
-                desc: "Industrial & tactical robotics with intelligent field operations.",
-                image: "/Assets/apps/Robots.jpg",
-              },
-              {
-                title: "Air Defence Systems",
-                desc: "Track missile alerts, radar activity, and defence readiness.",
-                image: "/Assets/apps/Air Defence.webp",
-              },
-              {
-                title: "AI Command Center",
-                desc: "AI-driven analysis, telemetry, and secure command visualization.",
-                image: "/Assets/apps/AI Business Dashboard.jpg",
-              },
-            ].map((item) => (
+            {defenceCards.map((item: any) => (
               <div
                 key={item.title}
                 className="group overflow-hidden rounded-[28px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 transition duration-300 hover:-translate-y-2 hover:shadow-[0_25px_90px_rgba(15,23,42,0.14)] dark:hover:shadow-[0_25px_90px_rgba(0,0,0,0.3)]"
@@ -299,7 +298,7 @@ export default function IoTDefencePage() {
                   </h3>
 
                   <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                    {item.desc}
+                    {item.description}
                   </p>
                 </div>
               </div>
@@ -318,64 +317,35 @@ export default function IoTDefencePage() {
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
             }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
-
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
             done{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">right.</span>
-
+              <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
 
           <div className="mt-16 grid gap-5 lg:grid-cols-2">
-            {[
-              [
-                "Drone Telemetry",
-                "Live location, speed, battery, altitude, and route monitoring.",
-              ],
-              [
-                "Robot Operations",
-                "Track robotics diagnostics, workflow, and field performance.",
-              ],
-              [
-                "Missile Defence Alerts",
-                "Receive real-time defence notifications and monitoring updates.",
-              ],
-              [
-                "AI Analytics",
-                "Predictive intelligence, insights, and operational reporting.",
-              ],
-              [
-                "Secure Connectivity",
-                "Encrypted communication across field devices and systems.",
-              ],
-              [
-                "Command Dashboards",
-                "Unified visualization for defence & industrial operations.",
-              ],
-            ].map(([title, desc]) => (
+            {featuresList.map((feature: any) => (
               <div
-                key={title}
+                key={feature.title}
                 className="rounded-2xl bg-white dark:bg-slate-800 p-7 shadow-sm"
               >
                 <div className="flex items-start justify-between gap-5">
                   <h3 className="text-lg font-black text-slate-900 dark:text-white">
-                    {title}
+                    {feature.title}
                   </h3>
-
                   <div className="text-xl text-amber-400 dark:text-amber-500">
                     ★
                   </div>
                 </div>
-
                 <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                  {desc}
+                  {feature.description}
                 </p>
               </div>
             ))}
@@ -385,7 +355,7 @@ export default function IoTDefencePage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features →
+            {t("featuresSection.seeAllLink")} →
           </Link>
         </div>
       </section>
@@ -400,7 +370,7 @@ export default function IoTDefencePage() {
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
             }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <span className="border-b-4 border-sky-300 dark:border-sky-600">
               need
             </span>
@@ -411,29 +381,21 @@ export default function IoTDefencePage() {
           </h2>
 
           <p className="mt-4 text-slate-600 dark:text-slate-300">
-            Expand as your defence grows.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {[
-              "Manufacturing",
-              "Point of Sale",
-              "Sales",
-              "Inventory",
-              "Purchase",
-            ].map((app) => (
+            {appsList.map((app: any) => (
               <div
-                key={app}
+                key={app.title}
                 className="rounded-2xl bg-slate-50 dark:bg-slate-800/50 p-6 shadow-sm"
               >
                 <div className="mb-4 h-12 w-12 rounded-xl bg-white dark:bg-slate-800 shadow-sm" />
-
                 <h3 className="font-bold text-slate-900 dark:text-white">
-                  {app}
+                  {app.title}
                 </h3>
-
                 <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                  Connected operations
+                  {app.description}
                 </p>
               </div>
             ))}
@@ -451,51 +413,20 @@ export default function IoTDefencePage() {
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
             }}
           >
-            Unleash
+            {t("ctaSection.title")}
             <br />
-            your{" "}
+            {t("ctaSection.subtitle")}{" "}
             <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-              growth
+              {t("ctaSection.titleHighlight")}
             </span>{" "}
-            potential
+            {t("ctaSection.titleEnd")}
           </h2>
 
           <button className="mt-10 rounded-md bg-[#714b67] px-8 py-4 text-sm font-bold text-white transition hover:bg-[#5d3f57] dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-            Start now
+            {t("ctaSection.button")}
           </button>
         </div>
       </section>
     </main>
-  );
-}
-
-function SparklesIcon() {
-  return (
-    <svg viewBox="0 0 80 80" className="h-12 w-12" fill="none">
-      <path
-        d="M40 5V25"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M40 55V75"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M5 40H25"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M55 40H75"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-    </svg>
   );
 }

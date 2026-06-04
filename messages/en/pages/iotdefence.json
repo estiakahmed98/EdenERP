@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "title": "Eden Defence IoT Platform",
+    "description": "Build connected drone systems, autonomous robots, missile monitoring, and air defence command operations with one intelligent IoT platform."
+  },
+  "hero": {
+    "title": "Easily connect to the",
+    "titleHighlight": "Internet of Things",
+    "description": "Build connected drone systems, autonomous robots, missile monitoring, and air defence command operations with one intelligent IoT platform.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "dashboard": {
+      "title": "Eden Defence IoT",
+      "subtitle": "Unified Defence Operations Console",
+      "liveBadge": "LIVE SYSTEM",
+      "cards": [
+        {
+          "title": "Drone Fleet",
+          "value": "42 Active",
+          "color": "sky",
+          "image": "/Assets/apps/Drones.avif"
+        },
+        {
+          "title": "Robotics Units",
+          "value": "18 Online",
+          "color": "emerald",
+          "image": "/Assets/apps/Robots.jpg"
+        },
+        {
+          "title": "Missile Defence",
+          "value": "7 Systems",
+          "color": "amber",
+          "image": "/Assets/apps/Air Defence.webp"
+        },
+        {
+          "title": "Secure Signals",
+          "value": "99.9% Stable",
+          "color": "rose",
+          "image": "/Assets/apps/AI Business Dashboard.jpg"
+        }
+      ],
+      "liveText": "LIVE"
+    }
+  },
+  "missionSection": {
+    "title": "Mission-ready",
+    "titleHighlight": "technology",
+    "description": "Coordinate drone fleets, robotic systems, missile defence monitoring, radar communication, and IoT sensors from one secure intelligent platform.",
+    "features": [
+      "Real-time telemetry & battlefield monitoring",
+      "Drone & robotics fleet management",
+      "Secure defence-grade IoT communication",
+      "AI-powered threat analysis dashboards"
+    ]
+  },
+  "defenceCardsSection": {
+    "cards": [
+      {
+        "title": "Autonomous Drones",
+        "description": "Long-range aerial surveillance, mapping, and autonomous missions.",
+        "image": "/Assets/apps/Drones.avif"
+      },
+      {
+        "title": "Combat Robotics",
+        "description": "Industrial & tactical robotics with intelligent field operations.",
+        "image": "/Assets/apps/Robots.jpg"
+      },
+      {
+        "title": "Air Defence Systems",
+        "description": "Track missile alerts, radar activity, and defence readiness.",
+        "image": "/Assets/apps/Air Defence.webp"
+      },
+      {
+        "title": "AI Command Center",
+        "description": "AI-driven analysis, telemetry, and secure command visualization.",
+        "image": "/Assets/apps/AI Business Dashboard.jpg"
+      }
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Drone Telemetry",
+        "description": "Live location, speed, battery, altitude, and route monitoring."
+      },
+      {
+        "title": "Robot Operations",
+        "description": "Track robotics diagnostics, workflow, and field performance."
+      },
+      {
+        "title": "Missile Defence Alerts",
+        "description": "Receive real-time defence notifications and monitoring updates."
+      },
+      {
+        "title": "AI Analytics",
+        "description": "Predictive intelligence, insights, and operational reporting."
+      },
+      {
+        "title": "Secure Connectivity",
+        "description": "Encrypted communication across field devices and systems."
+      },
+      {
+        "title": "Command Dashboards",
+        "description": "Unified visualization for defence & industrial operations."
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as your defence grows.",
+    "apps": [
+      { "title": "Manufacturing", "description": "Connected operations", "icon": "" },
+      { "title": "Point of Sale", "description": "Connected operations", "icon": "" },
+      { "title": "Sales", "description": "Connected operations", "icon": "" },
+      { "title": "Inventory", "description": "Connected operations", "icon": "" },
+      { "title": "Purchase", "description": "Connected operations", "icon": "" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaSection": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}
