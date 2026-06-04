@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -27,71 +28,208 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
-  {
-    title: "Quizzes",
-    description:
-      "Evaluate and challenge your students with beautiful quizzes and assessments.",
-  },
-  {
-    title: "Reviews",
-    description:
-      "Collect feedback on your content, lessons, courses, and learning paths.",
-  },
-  {
-    title: "Prerequisites",
-    description:
-      "Create learning paths and make courses available in the right order.",
-  },
-  {
-    title: "Sell your courses",
-    description:
-      "Monetize your knowledge with paid courses, checkout, and subscriptions.",
-  },
-  {
-    title: "Forum",
-    description:
-      "Create discussion spaces and let students ask questions and share ideas.",
-  },
-];
+function FloatingNote({ className = "", t }: { className?: string; t: any }) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-amber-400 dark:bg-amber-700" />
+      <img
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
+        alt="User"
+        className="absolute left-3 h-12 w-12 rounded-full object-cover"
+      />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
+      {t("floatingNote.text")}
+    </div>
+  );
+}
 
-const apps = [
-  {
-    title: "Forum",
-    description: "Create a community",
-    icon: MessageSquareText,
-  },
-  {
-    title: "Survey",
-    description: "Get student feedback",
-    icon: ClipboardCheck,
-  },
-  {
-    title: "eCommerce",
-    description: "Sell courses online",
-    icon: ShoppingBag,
-  },
-  {
-    title: "Website",
-    description: "Create professional pages",
-    icon: MonitorSmartphone,
-  },
-];
-
-const avatars = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
-];
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function ELearningLandingSections() {
+  const t = useTranslations("pages.elearning");
+
+  // Sidebar items
+  const sidebarItems = [
+    t("hero.sidebar.introduction"),
+    t("hero.sidebar.lessons"),
+    t("hero.sidebar.exercises"),
+    t("hero.sidebar.quiz"),
+    t("hero.sidebar.certificate"),
+  ];
+
+  // Lessons
+  const lessons = [
+    {
+      number: t("hero.lessons.lesson1.number"),
+      title: t("hero.lessons.lesson1.title"),
+      status: t("hero.lessons.lesson1.status"),
+    },
+    {
+      number: t("hero.lessons.lesson2.number"),
+      title: t("hero.lessons.lesson2.title"),
+      status: t("hero.lessons.lesson2.status"),
+    },
+    {
+      number: t("hero.lessons.lesson3.number"),
+      title: t("hero.lessons.lesson3.title"),
+      status: t("hero.lessons.lesson3.status"),
+    },
+    {
+      number: t("hero.lessons.lesson4.number"),
+      title: t("hero.lessons.lesson4.title"),
+      status: t("hero.lessons.lesson4.status"),
+    },
+  ];
+
+  // Editor items
+  const editorItems = [
+    t("easyLearnSection.editor.courseLayout"),
+    t("easyLearnSection.editor.lessonCard"),
+    t("easyLearnSection.editor.progressBar"),
+    t("easyLearnSection.editor.buttonColor"),
+    t("easyLearnSection.editor.mobileView"),
+    t("easyLearnSection.editor.quizOptions"),
+  ];
+
+  // Course cards
+  const courseCards = [
+    {
+      title: t("easyLearnSection.courseCards.treeCare.title"),
+      description: t("easyLearnSection.courseCards.treeCare.description"),
+      image:
+        "https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=700&auto=format&fit=crop",
+    },
+    {
+      title: t("easyLearnSection.courseCards.indoorPlants.title"),
+      description: t("easyLearnSection.courseCards.indoorPlants.description"),
+      image:
+        "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=700&auto=format&fit=crop",
+    },
+  ];
+
+  // Student activities
+  const studentActivities = [
+    t("learningJourneySection.activities.completedLesson"),
+    t("learningJourneySection.activities.unlockedBadge"),
+    t("learningJourneySection.activities.passedQuiz"),
+    t("learningJourneySection.activities.startedCourse"),
+  ];
+
+  // Course results sidebar
+  const courseResultsItems = [
+    t("trainSection.sidebar.attendance"),
+    t("trainSection.sidebar.quizAnswers"),
+    t("trainSection.sidebar.certificates"),
+    t("trainSection.sidebar.reports"),
+    t("trainSection.sidebar.students"),
+  ];
+
+  // Quiz questions
+  const quizQuestions = [
+    {
+      text: t("trainSection.quiz.question1.text"),
+      answers: [
+        t("trainSection.quiz.question1.answers.0"),
+        t("trainSection.quiz.question1.answers.1"),
+      ],
+    },
+    {
+      text: t("trainSection.quiz.question2.text"),
+      answers: [
+        t("trainSection.quiz.question2.answers.0"),
+        t("trainSection.quiz.question2.answers.1"),
+      ],
+    },
+  ];
+
+  // Features list
+  const featuresList = [
+    {
+      title: t("featuresSection.features.quizzes.title"),
+      description: t("featuresSection.features.quizzes.description"),
+    },
+    {
+      title: t("featuresSection.features.reviews.title"),
+      description: t("featuresSection.features.reviews.description"),
+    },
+    {
+      title: t("featuresSection.features.prerequisites.title"),
+      description: t("featuresSection.features.prerequisites.description"),
+    },
+    {
+      title: t("featuresSection.features.sellCourses.title"),
+      description: t("featuresSection.features.sellCourses.description"),
+    },
+    {
+      title: t("featuresSection.features.forum.title"),
+      description: t("featuresSection.features.forum.description"),
+    },
+  ];
+
+  // Apps list
+  const appsList = [
+    {
+      title: t("appsSection.apps.forum.title"),
+      desc: t("appsSection.apps.forum.desc"),
+      icon: MessageSquareText,
+    },
+    {
+      title: t("appsSection.apps.survey.title"),
+      desc: t("appsSection.apps.survey.desc"),
+      icon: ClipboardCheck,
+    },
+    {
+      title: t("appsSection.apps.ecommerce.title"),
+      desc: t("appsSection.apps.ecommerce.desc"),
+      icon: ShoppingBag,
+    },
+    {
+      title: t("appsSection.apps.website.title"),
+      desc: t("appsSection.apps.website.desc"),
+      icon: MonitorSmartphone,
+    },
+  ];
+
+  // Avatar images
+  const avatars = [
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
+  ];
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
@@ -100,16 +238,16 @@ export default function ELearningLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Keep your learners{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="text-rose-500 dark:text-rose-400">engaged</span>
+              <span className="text-rose-500 dark:text-rose-400">
+                {t("hero.titleHighlight")}
+              </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Create online courses, publish lessons, track progress, measure
-            results, and help your students reach success with a beautiful
-            learning platform.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -117,14 +255,14 @@ export default function ELearningLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.buttons.startNow")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("hero.buttons.watchDemo")}
             </Link>
           </div>
 
@@ -137,9 +275,7 @@ export default function ELearningLandingSections() {
               className="absolute -right-10 top-8 hidden rotate-12 text-lg font-bold text-rose-400 dark:text-rose-500 lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Available
-              <br />
-              for any device
+              {t("hero.availableText")}
             </p>
 
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
@@ -148,7 +284,7 @@ export default function ELearningLandingSections() {
                   className="text-xl font-bold text-[#714b67] dark:text-[#9b6a8f]"
                   style={{ fontFamily: handwrittenFont }}
                 >
-                  Learn Academy
+                  {t("hero.courseHeader.title")}
                 </span>
               </div>
 
@@ -156,13 +292,13 @@ export default function ELearningLandingSections() {
                 <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5 text-left">
                   <div className="rounded-lg bg-white dark:bg-slate-800 p-4 shadow-sm">
                     <p className="text-sm font-bold text-slate-900 dark:text-white">
-                      Course progress
+                      {t("hero.courseHeader.courseProgress")}
                     </p>
 
                     <div className="mt-4">
                       <div className="mb-2 flex justify-between text-xs font-bold text-slate-500 dark:text-slate-400">
-                        <span>Completed</span>
-                        <span>47%</span>
+                        <span>{t("hero.courseHeader.completed")}</span>
+                        <span>{t("hero.courseHeader.percent")}</span>
                       </div>
                       <div className="h-2 rounded-full bg-slate-100 dark:bg-slate-700">
                         <div className="h-2 w-[47%] rounded-full bg-[#714b67] dark:bg-[#8a5a7e]" />
@@ -171,13 +307,7 @@ export default function ELearningLandingSections() {
                   </div>
 
                   <div className="mt-5 space-y-2">
-                    {[
-                      "Introduction",
-                      "Lessons",
-                      "Exercises",
-                      "Quiz",
-                      "Certificate",
-                    ].map((item, index) => (
+                    {sidebarItems.map((item, index) => (
                       <div
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
@@ -197,43 +327,35 @@ export default function ELearningLandingSections() {
                     <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-white/10 dark:bg-white/5" />
 
                     <p className="text-sm font-bold text-white/70">
-                      Gardening Course
+                      {t("hero.featuredCourse.category")}
                     </p>
 
                     <h2 className="mt-3 text-4xl font-bold">
-                      Taking care of Trees
+                      {t("hero.featuredCourse.title")}
                     </h2>
 
                     <p className="mt-4 max-w-xl text-sm leading-7 text-white/75">
-                      Learn how to grow, care, and protect beautiful trees
-                      through structured lessons and interactive activities.
+                      {t("hero.featuredCourse.description")}
                     </p>
 
                     <button className="mt-6 flex items-center gap-2 rounded-md bg-white dark:bg-slate-800 px-5 py-3 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
                       <Play className="h-4 w-4 fill-current" />
-                      Continue
+                      {t("hero.featuredCourse.continue")}
                     </button>
                   </div>
 
                   <div className="mt-6 space-y-3">
-                    {[
-                      ["01", "Why trees matter", "Complete"],
-                      ["02", "Soil and watering", "In progress"],
-                      ["03", "Pruning basics", "Locked"],
-                      ["04", "Final quiz", "Locked"],
-                    ].map(([number, title, status], index) => (
+                    {lessons.map((lesson, index) => (
                       <div
-                        key={title}
+                        key={lesson.title}
                         className="grid grid-cols-[44px_1fr_110px] items-center rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3"
                       >
                         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800/50 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                          {number}
+                          {lesson.number}
                         </span>
-
                         <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                          {title}
+                          {lesson.title}
                         </span>
-
                         <span
                           className={`rounded-full px-3 py-1 text-center text-[10px] font-bold ${
                             index === 0
@@ -243,7 +365,7 @@ export default function ELearningLandingSections() {
                                 : "bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500"
                           }`}
                         >
-                          {status}
+                          {lesson.status}
                         </span>
                       </div>
                     ))}
@@ -252,7 +374,7 @@ export default function ELearningLandingSections() {
               </div>
             </div>
 
-            <FloatingNote className="mx-auto mt-12 z-30" />
+            <FloatingNote className="mx-auto mt-12 z-30" t={t} />
           </div>
         </div>
 
@@ -269,15 +391,16 @@ export default function ELearningLandingSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Easy to use, fun to{" "}
+            {t("easyLearnSection.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="dark:text-rose-200">learn</span>
+              <span className="dark:text-rose-200">
+                {t("easyLearnSection.titleHighlight")}
+              </span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Create engaging courses with lessons, videos, quizzes, text blocks,
-            images, downloadable files, and interactive learning content.
+            {t("easyLearnSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
@@ -285,22 +408,13 @@ export default function ELearningLandingSections() {
               <div className="grid lg:grid-cols-[1fr_250px]">
                 <div className="bg-white dark:bg-slate-900 p-7">
                   <div className="mb-5 rounded-lg bg-[#714b67] dark:bg-[#8a5a7e] px-5 py-4 text-left text-white">
-                    <p className="text-sm font-bold">Taking care of Trees</p>
+                    <p className="text-sm font-bold">
+                      {t("hero.featuredCourse.title")}
+                    </p>
                   </div>
 
                   <div className="grid gap-5 sm:grid-cols-2">
-                    {[
-                      {
-                        title: "Tree care basics",
-                        image:
-                          "https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=700&auto=format&fit=crop",
-                      },
-                      {
-                        title: "Indoor plants",
-                        image:
-                          "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=700&auto=format&fit=crop",
-                      },
-                    ].map((item, index) => (
+                    {courseCards.map((item, index) => (
                       <div
                         key={item.title}
                         className={`overflow-hidden rounded-xl border ${
@@ -314,14 +428,12 @@ export default function ELearningLandingSections() {
                           alt={item.title}
                           className="h-48 w-full object-cover"
                         />
-
                         <div className="p-5 text-left">
                           <h3 className="font-bold text-slate-900 dark:text-white">
                             {item.title}
                           </h3>
                           <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                            Learn with beautiful content blocks and simple
-                            course structure.
+                            {item.description}
                           </p>
                         </div>
                       </div>
@@ -330,22 +442,16 @@ export default function ELearningLandingSections() {
                 </div>
 
                 <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
-                  <p className="mb-5 text-sm font-bold">Editor</p>
+                  <p className="mb-5 text-sm font-bold">
+                    {t("easyLearnSection.editor.title")}
+                  </p>
 
-                  {[
-                    "Course layout",
-                    "Lesson card",
-                    "Progress bar",
-                    "Button color",
-                    "Mobile view",
-                    "Quiz options",
-                  ].map((item, index) => (
+                  {editorItems.map((item, index) => (
                     <div key={item} className="mb-4">
                       <div className="mb-2 flex items-center justify-between text-xs text-white/60">
                         <span>{item}</span>
                         <span>{index + 1}</span>
                       </div>
-
                       <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
                         <div
                           className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/50"
@@ -369,17 +475,15 @@ export default function ELearningLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="text-sky-600 dark:text-sky-400">Learning</span>
+                <span className="text-sky-600 dark:text-sky-400">
+                  {t("learningJourneySection.title")}
+                </span>
               </HandUnderline>{" "}
-              is a journey,
-              <br />
-              not a destination
+              {t("learningJourneySection.titleHighlight")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Engage students. Keep them motivated with points, badges,
-              profiles, progress tracking, and achievement milestones that make
-              learning feel rewarding.
+              {t("learningJourneySection.description")}
             </p>
 
             <DashedArrow className="mt-10 h-36 w-36 rotate-180 translate-x-100 rotate-x-180 text-rose-300 dark:text-rose-600" />
@@ -397,8 +501,12 @@ export default function ELearningLandingSections() {
                     className="h-20 w-20 rounded-full border-4 border-white dark:border-slate-800 object-cover"
                   />
                   <div>
-                    <h3 className="text-2xl font-bold">Joel Willis</h3>
-                    <p className="text-sm text-white/70">Top learner</p>
+                    <h3 className="text-2xl font-bold">
+                      {t("learningJourneySection.student.name")}
+                    </h3>
+                    <p className="text-sm text-white/70">
+                      {t("learningJourneySection.student.role")}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -407,20 +515,15 @@ export default function ELearningLandingSections() {
                 <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-5 text-center">
                   <Trophy className="mx-auto h-12 w-12 text-amber-400 dark:text-amber-500" />
                   <p className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">
-                    3,407
+                    {t("learningJourneySection.student.xpPoints")}
                   </p>
                   <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
-                    XP POINTS
+                    {t("learningJourneySection.student.xpLabel")}
                   </p>
                 </div>
 
                 <div className="space-y-3">
-                  {[
-                    "Completed lesson: Plant care",
-                    "Unlocked badge: Fast learner",
-                    "Passed quiz: Soil basics",
-                    "Started course: Tree growth",
-                  ].map((item) => (
+                  {studentActivities.map((item) => (
                     <div
                       key={item}
                       className="flex items-center justify-between rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3 text-sm"
@@ -445,18 +548,21 @@ export default function ELearningLandingSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-              <span className="dark:text-amber-200">Train</span>
+              <span className="dark:text-amber-200">
+                {t("trainSection.title")}
+              </span>
             </HandUnderline>{" "}
-            people. Measure results.
+            {t("trainSection.titleHighlight1")}
             <br />
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="dark:text-rose-200">Drive growth.</span>
+              <span className="dark:text-rose-200">
+                {t("trainSection.titleHighlight2")}
+              </span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Evaluate attendance, progress, answers, grades, and participation.
-            Use insights to improve learning and support students better.
+            {t("trainSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
@@ -465,16 +571,12 @@ export default function ELearningLandingSections() {
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid min-h-105 lg:grid-cols-[220px_1fr]">
                 <aside className="bg-[#1f2937] dark:bg-[#0f0f1a] p-5 text-left text-white">
-                  <p className="text-sm font-bold">Course results</p>
+                  <p className="text-sm font-bold">
+                    {t("trainSection.sidebar.title")}
+                  </p>
 
                   <div className="mt-6 space-y-2">
-                    {[
-                      "Attendance",
-                      "Quiz answers",
-                      "Certificates",
-                      "Reports",
-                      "Students",
-                    ].map((item, index) => (
+                    {courseResultsItems.map((item, index) => (
                       <div
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
@@ -492,31 +594,22 @@ export default function ELearningLandingSections() {
                 <div className="p-7 text-left">
                   <div className="mb-6 flex items-center justify-between">
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                      Survey and quiz feedback
+                      {t("trainSection.quiz.title")}
                     </h3>
 
                     <span className="rounded-full bg-amber-50 dark:bg-amber-950/50 px-3 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
-                      In progress
+                      {t("trainSection.quiz.inProgress")}
                     </span>
                   </div>
 
                   <div className="space-y-5">
-                    {[
-                      {
-                        question: "What is photosynthesis?",
-                        answers: ["Energy from sunlight", "Plant watering"],
-                      },
-                      {
-                        question: "What is the best soil for young trees?",
-                        answers: ["Loose and rich soil", "Dry sand"],
-                      },
-                    ].map((item) => (
+                    {quizQuestions.map((item) => (
                       <div
-                        key={item.question}
+                        key={item.text}
                         className="rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5"
                       >
                         <p className="font-bold text-slate-900 dark:text-white">
-                          {item.question}
+                          {item.text}
                         </p>
 
                         <div className="mt-4 space-y-2">
@@ -538,7 +631,7 @@ export default function ELearningLandingSections() {
                   </div>
 
                   <button className="mt-6 rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                    See evaluation
+                    {t("trainSection.button")}
                   </button>
                 </div>
               </div>
@@ -556,20 +649,24 @@ export default function ELearningLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">features</span>
+              <span className="relative z-10">
+                {t("featuresSection.highlight")}
+              </span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
-            done{" "}
+            {t("featuresSection.subtitle")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("featuresSection.subtitle")}
+              </span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -578,14 +675,11 @@ export default function ELearningLandingSections() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
-
                 <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
                   {feature.title}
                 </h3>
-
                 <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
                   {feature.description}
                 </p>
@@ -597,7 +691,8 @@ export default function ELearningLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllFeatures")}{" "}
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -608,22 +703,21 @@ export default function ELearningLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("appsSection.needHighlight")}
+              </span>
             </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
-            </HandUnderline>
+            , {t("appsSection.appHighlight")}
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {apps.map((app) => {
+            {appsList.map((app) => {
               const Icon = app.icon;
 
               return (
@@ -634,13 +728,12 @@ export default function ELearningLandingSections() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
                     <Icon className="h-6 w-6" />
                   </div>
-
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {app.description}
+                      {app.desc}
                     </p>
                   </div>
                 </div>
@@ -652,7 +745,7 @@ export default function ELearningLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllApps")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -700,10 +793,10 @@ export default function ELearningLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaSection.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaSection.description")}
               </p>
             </div>
           </div>
@@ -713,27 +806,22 @@ export default function ELearningLandingSections() {
               <div className="text-5xl text-amber-400 dark:text-amber-500">
                 “
               </div>
-
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon is so full of a software Army Knife. You can tailor it to
-                  your business requirements. This is one of the key reasons
-                  that has helped us implement Adon.
+                  {t("ctaSection.testimonial.quote")}
                 </p>
-
                 <div className="mt-6 flex items-center gap-3">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face"
                     alt="Customer"
                     className="h-12 w-12 rounded-full object-cover"
                   />
-
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Richard Miles
+                      {t("ctaSection.testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Training manager
+                      {t("ctaSection.testimonial.title")}
                     </p>
                   </div>
                 </div>
@@ -745,76 +833,28 @@ export default function ELearningLandingSections() {
             <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
               <Sparkles className="h-12 w-12" />
             </div>
-
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("getStartedSection.title")}
               <br />
-              your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("getStartedSection.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("getStartedSection.subtitle")}
             </h2>
-
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("getStartedSection.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({ className = "" }: { className?: string }) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-amber-400 dark:bg-amber-700" />
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt="User"
-        className="absolute left-3 h-12 w-12 rounded-full object-cover"
-      />
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
-      Create courses and help learners grow
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

@@ -1,0 +1,218 @@
+{
+    "metadata": {
+        "title": "Community Forum | Adon ERP",
+        "description": "Create a community, foster collaboration, improve support, and give users a simple place to ask, answer, vote, and share knowledge."
+    },
+    "hero": {
+        "title": "Connect with",
+        "titleHighlight": "your community",
+        "description": "Create a community, foster collaboration, improve support, and give users a simple place to ask, answer, vote, and share knowledge.",
+        "buttons": {
+            "startNow": "Start now",
+            "watchDemo": "Watch a demo"
+        },
+        "forumHeader": {
+            "title": "Monkey Coffee Lab",
+            "breadcrumb": "Home / Shop / Forum / About",
+            "contactButton": "Contact us"
+        },
+        "sidebar": {
+            "profileName": "Robin Cole",
+            "profileRole": "Top user",
+            "posts": "Posts",
+            "myProfile": "My profile",
+            "popularAnswers": "Popular answers",
+            "favorites": "Favorites",
+            "categories": "Categories",
+            "tags": "Tags",
+            "tagHelp": "Help",
+            "tagTips": "Tips",
+            "tagSupport": "Support"
+        },
+        "forumContent": {
+            "title": "The coffee lovers corner",
+            "description": "Ask questions, share tips, and help each other.",
+            "newPost": "New Post",
+            "searchPlaceholder": "Search discussions...",
+            "posts": {
+                "post1": {
+                    "title": "Which espresso machine should I buy?",
+                    "tag": "Solved",
+                    "replies": 12,
+                    "views": 45,
+                    "time": "4 minutes ago"
+                },
+                "post2": {
+                    "title": "New blend suggestions",
+                    "tag": "New",
+                    "replies": 8,
+                    "views": 31,
+                    "time": "2 hours ago"
+                },
+                "post3": {
+                    "title": "What is the best French press?",
+                    "tag": "Popular",
+                    "replies": 14,
+                    "views": 82,
+                    "time": "1 day ago"
+                },
+                "post4": {
+                    "title": "How long to roast beans?",
+                    "tag": "Help",
+                    "replies": 5,
+                    "views": 22,
+                    "time": "3 days ago"
+                }
+            }
+        }
+    },
+    "communitySection": {
+        "title": "By and for the",
+        "titleHighlight": "community",
+        "description": "Enable users to help each other. Boost collective knowledge and anticipate your customer's needs with valuable insights and problem-solving discussions.",
+        "badge": "Get customer service",
+        "discussion": {
+            "title": "The best brushes for pottery?",
+            "comments": [
+                {
+                    "name": "Alex Martin",
+                    "text": "Which brush is best for smooth details?",
+                    "role": "Community user"
+                },
+                {
+                    "name": "Kate Rowan",
+                    "text": "I recommend soft natural brushes for clean strokes.",
+                    "role": "Community user"
+                },
+                {
+                    "name": "Thomas Joseph",
+                    "text": "Thanks! This was super helpful.",
+                    "role": "Community user"
+                }
+            ]
+        }
+    },
+    "gamificationSection": {
+        "icon": "Trophy",
+        "title": "Gamification drives",
+        "titleHighlight": "motivation",
+        "description": "Motivate, engage, and drive actions. Set up a reward system with karma points to give your most active members more moderation features and responsibilities.",
+        "leaderboard": {
+            "title": "All Users",
+            "users": [
+                {
+                    "name": "Robin Bineau",
+                    "xp": "2877 XP"
+                },
+                {
+                    "name": "Marine Duvelle",
+                    "xp": "1791 XP"
+                },
+                {
+                    "name": "Joel Willis",
+                    "xp": "1657 XP"
+                }
+            ]
+        },
+        "activities": {
+            "newBadge": "New badge unlocked",
+            "answerAccepted": "Answer accepted",
+            "topContributor": "Top contributor",
+            "karmaPoints": "+25 Karma"
+        }
+    },
+    "customizeSection": {
+        "title": "Customize",
+        "subtitle": "your content's design",
+        "description": "User-friendly and advanced text editor. Enable users to edit and structure their content with plenty of helpful features.",
+        "editor": {
+            "title": "Your Answer",
+            "tools": [
+                "B",
+                "I",
+                "U",
+                "Link",
+                "Image",
+                "Code"
+            ],
+            "features": {
+                "boldText": "Bold text",
+                "uploadImage": "Upload image",
+                "embedVideo": "Embed video",
+                "insertQuote": "Insert quote"
+            }
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "sortContent": {
+                "title": "Sort content",
+                "description": "Organize by relevance, latest activity, date, newest, most answered, most voted."
+            },
+            "enrichDiscussion": {
+                "title": "Enrich discussion",
+                "description": "Embed videos and images directly into your community messages."
+            },
+            "themeSelection": {
+                "title": "Theme selection",
+                "description": "Select the best theme for your business and community style."
+            },
+            "notifications": {
+                "title": "Notifications",
+                "description": "Subscribe to interesting content and get email alerts when a new answer is posted."
+            },
+            "categories": {
+                "title": "Categories",
+                "description": "Provide well-organized and easily accessible content with topic categories."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand as you grow.",
+        "apps": {
+            "website": {
+                "title": "Website",
+                "desc": "Create amazing websites"
+            },
+            "ecommerce": {
+                "title": "eCommerce",
+                "desc": "Manage your online store"
+            },
+            "blog": {
+                "title": "Blog",
+                "desc": "Share interesting content"
+            },
+            "liveChat": {
+                "title": "Live Chat",
+                "desc": "Engage your visitors"
+            },
+            "helpdesk": {
+                "title": "Helpdesk",
+                "desc": "Help your customers"
+            }
+        },
+        "seeAllApps": "See all Apps"
+    },
+    "ctaSection": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with Adon",
+        "testimonial": {
+            "quote": "Adon ensures product quality and triples production without extra hiring.",
+            "name": "Mark Anderson",
+            "title": "CEO & Founder"
+        }
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "titleHighlight": "growth",
+        "subtitle": "your growth potential",
+        "button": "Start now"
+    }
+}

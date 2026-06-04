@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -32,110 +33,149 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const blogPosts = [
-  {
-    title: "How to build a creative blog strategy",
-    category: "Marketing",
-    image:
-      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&auto=format&fit=crop",
-  },
-  {
-    title: "A beginner guide to publishing content",
-    category: "Tutorial",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&auto=format&fit=crop",
-  },
-  {
-    title: "Travel writing that converts readers",
-    category: "Travel",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&auto=format&fit=crop",
-  },
-  {
-    title: "Visual storytelling for modern brands",
-    category: "Design",
-    image:
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=900&auto=format&fit=crop",
-  },
-  {
-    title: "Content ideas for business growth",
-    category: "Business",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&auto=format&fit=crop",
-  },
-  {
-    title: "SEO tips for your next article",
-    category: "SEO",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop",
-  },
-];
-
-const features = [
-  {
-    title: "Building blocks",
-    description:
-      "Drag, drop, and customize beautiful content blocks to create articles, landing pages, and stories faster.",
-  },
-  {
-    title: "Translation",
-    description:
-      "Create multilingual blog content and connect with readers across different regions.",
-  },
-  {
-    title: "Boost in one platform",
-    description:
-      "Publish your blog articles and manage SEO, social sharing, email campaigns, and analytics in one place.",
-  },
-  {
-    title: "Domain Name",
-    description:
-      "Use your own domain name and make your blog feel professional and branded.",
-  },
-  {
-    title: "Analytics",
-    description:
-      "Track views, audience behavior, and performance so you know what content works.",
-  },
-];
-
-const apps = [
-  {
-    title: "Website",
-    description: "Create amazing website",
-    icon: MonitorSmartphone,
-  },
-  {
-    title: "Commerce",
-    description: "Sell online",
-    icon: Globe2,
-  },
-  {
-    title: "Social Marketing",
-    description: "Share content",
-    icon: Megaphone,
-  },
-  {
-    title: "Email Marketing",
-    description: "Send newsletters",
-    icon: Share2,
-  },
-];
-
-const avatars = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
-];
-
 export default function BlogLandingSections() {
+  const t = useTranslations("pages.blog");
+
+  // Blog posts data
+  const blogPosts = [
+    {
+      title: t("hero.blogPosts.post1.title"),
+      category: t("hero.blogPosts.post1.category"),
+      image:
+        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&auto=format&fit=crop",
+    },
+    {
+      title: t("hero.blogPosts.post2.title"),
+      category: t("hero.blogPosts.post2.category"),
+      image:
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&auto=format&fit=crop",
+    },
+    {
+      title: t("hero.blogPosts.post3.title"),
+      category: t("hero.blogPosts.post3.category"),
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&auto=format&fit=crop",
+    },
+    {
+      title: t("hero.blogPosts.post4.title"),
+      category: t("hero.blogPosts.post4.category"),
+      image:
+        "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=900&auto=format&fit=crop",
+    },
+    {
+      title: t("hero.blogPosts.post5.title"),
+      category: t("hero.blogPosts.post5.category"),
+      image:
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&auto=format&fit=crop",
+    },
+    {
+      title: t("hero.blogPosts.post6.title"),
+      category: t("hero.blogPosts.post6.category"),
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop",
+    },
+  ];
+
+  // Blog tools
+  const blogTools = [
+    t("editorSection.blogTools.text"),
+    t("editorSection.blogTools.image"),
+    t("editorSection.blogTools.quote"),
+    t("editorSection.blogTools.ctaButton"),
+    t("editorSection.blogTools.gallery"),
+    t("editorSection.blogTools.socialShare"),
+    t("editorSection.blogTools.seoPreview"),
+  ];
+
+  // Design items
+  const designItems = [
+    t("editorSection.design.typography"),
+    t("editorSection.design.paragraph"),
+    t("editorSection.design.imageRadius"),
+    t("editorSection.design.spacing"),
+    t("editorSection.design.colors"),
+    t("editorSection.design.mobile"),
+  ];
+
+  // Convert features
+  const convertFeatures = [
+    t("convertSection.features.ctaBlocks"),
+    t("convertSection.features.leadForms"),
+    t("convertSection.features.relatedPosts"),
+    t("convertSection.features.newsletter"),
+  ];
+
+  // SEO settings
+  const seoSettings = [
+    t("seoSection.settings.metaTitle"),
+    t("seoSection.settings.metaDescription"),
+    t("seoSection.settings.urlSlug"),
+    t("seoSection.settings.socialImage"),
+    t("seoSection.settings.focusKeyword"),
+  ];
+
+  // Features list
+  const featuresList = [
+    {
+      title: t("featuresSection.features.buildingBlocks.title"),
+      description: t("featuresSection.features.buildingBlocks.description"),
+    },
+    {
+      title: t("featuresSection.features.translation.title"),
+      description: t("featuresSection.features.translation.description"),
+    },
+    {
+      title: t("featuresSection.features.boostPlatform.title"),
+      description: t("featuresSection.features.boostPlatform.description"),
+    },
+    {
+      title: t("featuresSection.features.domainName.title"),
+      description: t("featuresSection.features.domainName.description"),
+    },
+    {
+      title: t("featuresSection.features.analytics.title"),
+      description: t("featuresSection.features.analytics.description"),
+    },
+  ];
+
+  // Apps list
+  const appsList = [
+    {
+      title: t("appsSection.apps.website.title"),
+      desc: t("appsSection.apps.website.desc"),
+      icon: MonitorSmartphone,
+    },
+    {
+      title: t("appsSection.apps.commerce.title"),
+      desc: t("appsSection.apps.commerce.desc"),
+      icon: Globe2,
+    },
+    {
+      title: t("appsSection.apps.socialMarketing.title"),
+      desc: t("appsSection.apps.socialMarketing.desc"),
+      icon: Megaphone,
+    },
+    {
+      title: t("appsSection.apps.emailMarketing.title"),
+      desc: t("appsSection.apps.emailMarketing.desc"),
+      icon: Share2,
+    },
+  ];
+
+  // Avatar images
+  const avatars = [
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
+  ];
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
@@ -144,17 +184,16 @@ export default function BlogLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Share your{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
               <span className="text-rose-500 dark:text-rose-400">
-                expertise
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Create beautiful blog posts, connect with your audience, improve
-            SEO, and turn your knowledge into a powerful growth channel.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -162,14 +201,14 @@ export default function BlogLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.buttons.startNow")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("hero.buttons.watchDemo")}
             </Link>
           </div>
 
@@ -184,14 +223,14 @@ export default function BlogLandingSections() {
 
                 <div className="relative flex h-full flex-col items-center justify-center text-white">
                   <p className="rounded-full bg-white/20 dark:bg-slate-800/50 px-4 py-1 text-xs font-bold backdrop-blur">
-                    Travel / Adventure / Blog
+                    {t("hero.featuredPost.category")}
                   </p>
 
                   <h2
                     className="mt-5 text-4xl font-bold sm:text-5xl"
                     style={{ fontFamily: handwrittenFont }}
                   >
-                    Buying a Telescope
+                    {t("hero.featuredPost.title")}
                   </h2>
 
                   <button className="mt-6 flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
@@ -201,7 +240,7 @@ export default function BlogLandingSections() {
               </div>
 
               <div className="grid gap-5 bg-white dark:bg-slate-900 p-6 md:grid-cols-3">
-                {blogPosts.slice(0, 6).map((post) => (
+                {blogPosts.map((post) => (
                   <article
                     key={post.title}
                     className="overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800/50 text-left ring-1 ring-slate-100 dark:ring-slate-700 transition hover:-translate-y-1 hover:shadow-lg"
@@ -222,8 +261,7 @@ export default function BlogLandingSections() {
                       </h3>
 
                       <p className="mt-2 line-clamp-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
-                        Share your thoughts, stories, and useful ideas with a
-                        clean reading experience.
+                        {t("hero.postDescription")}
                       </p>
                     </div>
                   </article>
@@ -240,25 +278,24 @@ export default function BlogLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto mb-7 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
             <MessageCircle className="h-4 w-4 text-[#02a6a6] dark:text-[#02cfc3]" />
-            Write your next story faster
+            {t("editorSection.badge")}
           </div>
 
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Explore our text{" "}
+            {t("editorSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                editor&apos;s
+                {t("editorSection.titleHighlight")}
               </span>
             </HandUnderline>{" "}
-            magic
+            {t("editorSection.subtitle")}
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Write, format, structure, and publish your articles visually with a
-            beautiful editor made for creators and businesses.
+            {t("editorSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
@@ -266,18 +303,10 @@ export default function BlogLandingSections() {
               <div className="grid lg:grid-cols-[220px_1fr_230px]">
                 <aside className="border-r border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left">
                   <p className="mb-5 text-sm font-bold text-slate-900 dark:text-white">
-                    Blog Tools
+                    {t("editorSection.blogTools.title")}
                   </p>
 
-                  {[
-                    "Text",
-                    "Image",
-                    "Quote",
-                    "CTA button",
-                    "Gallery",
-                    "Social share",
-                    "SEO preview",
-                  ].map((item, index) => (
+                  {blogTools.map((item, index) => (
                     <div
                       key={item}
                       className={`mb-2 rounded-md px-3 py-2 text-xs font-semibold ${
@@ -299,7 +328,7 @@ export default function BlogLandingSections() {
                         className="text-4xl font-bold"
                         style={{ fontFamily: handwrittenFont }}
                       >
-                        Buying a Telescope
+                        {t("hero.featuredPost.title")}
                       </h3>
                     </div>
                   </div>
@@ -315,21 +344,16 @@ export default function BlogLandingSections() {
                     className="mt-8 rotate-[-8deg] text-lg text-[#714b67] dark:text-[#9b6a8f]"
                     style={{ fontFamily: handwrittenFont }}
                   >
-                    Drag and drop any block here
+                    {t("editorSection.dragDropText")}
                   </div>
                 </div>
 
                 <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
-                  <p className="mb-5 text-sm font-bold">Design</p>
+                  <p className="mb-5 text-sm font-bold">
+                    {t("editorSection.design.title")}
+                  </p>
 
-                  {[
-                    "Typography",
-                    "Paragraph",
-                    "Image radius",
-                    "Spacing",
-                    "Colors",
-                    "Mobile",
-                  ].map((item, index) => (
+                  {designItems.map((item, index) => (
                     <div key={item} className="mb-4">
                       <div className="mb-2 flex items-center justify-between text-xs text-white/60">
                         <span>{item}</span>
@@ -361,19 +385,30 @@ export default function BlogLandingSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Effortlessly{" "}
+            {t("convertSection.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-              <span className="dark:text-amber-200">convert</span>
+              <span className="dark:text-amber-200">
+                {t("convertSection.titleHighlight")}
+              </span>
             </HandUnderline>{" "}
-            your audience
+            {t("convertSection.subtitle")}
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-12 lg:grid-cols-2">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
               <div className="grid gap-5 sm:grid-cols-2">
-                {["Starter Plan", "Premium Plan"].map((plan, index) => (
+                {[
+                  {
+                    name: t("convertSection.plans.starter.name"),
+                    price: t("convertSection.plans.starter.price"),
+                  },
+                  {
+                    name: t("convertSection.plans.premium.name"),
+                    price: t("convertSection.plans.premium.price"),
+                  },
+                ].map((plan, index) => (
                   <div
-                    key={plan}
+                    key={plan.name}
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5 text-left"
                   >
                     <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-sm">
@@ -381,14 +416,16 @@ export default function BlogLandingSections() {
                     </div>
 
                     <h3 className="mt-5 font-bold text-slate-900 dark:text-white">
-                      {plan}
+                      {plan.name}
                     </h3>
                     <p className="mt-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                      ${index === 0 ? "9" : "29"}.00
+                      {plan.price}
                     </p>
 
                     <button className="mt-5 rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                      Choose
+                      {index === 0
+                        ? t("convertSection.plans.starter.button")
+                        : t("convertSection.plans.premium.button")}
                     </button>
                   </div>
                 ))}
@@ -396,32 +433,25 @@ export default function BlogLandingSections() {
 
               <div className="mt-5 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5 text-left">
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Analyze this
+                  {t("convertSection.analyzeBox.title")}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                  Add forms, lead magnets, offers, and call-to-action sections
-                  directly inside your articles.
+                  {t("convertSection.analyzeBox.description")}
                 </p>
               </div>
             </div>
 
             <div className="text-left">
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                Engaging user experience
+                {t("convertSection.features.title")}
               </h3>
 
               <p className="mt-4 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-300">
-                Build articles that guide readers toward a next step: subscribe,
-                contact you, download a resource, or purchase your offer.
+                {t("convertSection.features.description")}
               </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {[
-                  "Smart CTA blocks",
-                  "Lead capture forms",
-                  "Related posts",
-                  "Newsletter signup",
-                ].map((item) => (
+                {convertFeatures.map((item) => (
                   <div
                     key={item}
                     className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-sm font-semibold text-slate-600 dark:text-slate-300"
@@ -446,32 +476,28 @@ export default function BlogLandingSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Maximize your{" "}
+            {t("seoSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">SEO</span>
-            </HandUnderline>
+              <span className="dark:text-sky-200">
+                {t("seoSection.titleHighlight")}
+              </span>
+            </HandUnderline>{" "}
+            {t("seoSection.subtitle")}
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Improve discoverability with metadata, snippets, search previews,
-            internal links, and structured content.
+            {t("seoSection.description")}
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
             <div className="grid lg:grid-cols-2">
               <div className="border-r border-slate-100 dark:border-slate-700 p-6 text-left">
                 <p className="text-sm font-bold text-slate-900 dark:text-white">
-                  SEO settings
+                  {t("seoSection.settings.title")}
                 </p>
 
                 <div className="mt-5 space-y-4">
-                  {[
-                    "Meta title",
-                    "Meta description",
-                    "URL slug",
-                    "Social image",
-                    "Focus keyword",
-                  ].map((item) => (
+                  {seoSettings.map((item) => (
                     <div key={item}>
                       <label className="text-xs font-bold text-slate-500 dark:text-slate-400">
                         {item}
@@ -484,19 +510,18 @@ export default function BlogLandingSections() {
 
               <div className="p-6 text-left">
                 <p className="text-sm font-bold text-slate-900 dark:text-white">
-                  Search preview
+                  {t("seoSection.searchPreview.title")}
                 </p>
 
                 <div className="mt-5 rounded-lg border border-slate-200 dark:border-slate-700 p-5">
                   <p className="text-sm text-blue-600 dark:text-blue-400">
-                    Your Blog Article | Website
+                    {t("seoSection.searchPreview.siteName")}
                   </p>
                   <p className="mt-2 text-lg font-bold text-slate-900 dark:text-white">
-                    Buying a Telescope: Complete Guide
+                    {t("seoSection.searchPreview.articleTitle")}
                   </p>
                   <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                    Learn how to choose the right telescope, understand key
-                    features, and start exploring the sky.
+                    {t("seoSection.searchPreview.description")}
                   </p>
 
                   <img
@@ -511,7 +536,7 @@ export default function BlogLandingSections() {
 
           <div className="mx-auto mt-10 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
             <MessageCircle className="h-4 w-4 text-sky-500 dark:text-sky-400" />
-            SEO score improved
+            {t("seoSection.badge")}
           </div>
         </div>
       </section>
@@ -525,18 +550,18 @@ export default function BlogLandingSections() {
             className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                features
+                {t("featuresSection.highlight")}
               </span>
             </HandUnderline>
             <br />
-            done right.
+            {t("featuresSection.subtitle")}
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -564,7 +589,8 @@ export default function BlogLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllFeatures")}{" "}
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -575,19 +601,21 @@ export default function BlogLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("appsSection.needHighlight")}
+              </span>
             </HandUnderline>
-            , one app.
+            , {t("appsSection.appHighlight")}.
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow with integrated apps that work together.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {apps.map((app) => {
+            {appsList.map((app) => {
               const Icon = app.icon;
 
               return (
@@ -604,7 +632,7 @@ export default function BlogLandingSections() {
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {app.description}
+                      {app.desc}
                     </p>
                   </div>
                 </div>
@@ -616,7 +644,7 @@ export default function BlogLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllApps")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -664,10 +692,10 @@ export default function BlogLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaSection.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaSection.description")}
               </p>
             </div>
           </div>
@@ -675,14 +703,12 @@ export default function BlogLandingSections() {
           <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
               <div className="text-5xl text-amber-400 dark:text-amber-500">
-                “
+                &ldquo;
               </div>
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon replaced multiple applications in one. With better
-                  productivity, powerful easy access to centralized information,
-                  and simplified processes.
+                  {t("ctaSection.testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -694,10 +720,10 @@ export default function BlogLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Robert Chen
+                      {t("ctaSection.testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Content strategist
+                      {t("ctaSection.testimonial.title")}
                     </p>
                   </div>
                 </div>
@@ -714,25 +740,22 @@ export default function BlogLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("getStartedSection.title")}
               <br />
-              your{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("getStartedSection.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("getStartedSection.subtitle")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("getStartedSection.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>

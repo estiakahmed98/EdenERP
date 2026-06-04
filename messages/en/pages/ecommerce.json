@@ -1,0 +1,243 @@
+{
+    "metadata": {
+        "title": "eCommerce | Adon ERP",
+        "description": "Sell anything, anywhere, with everything connected in one app. Create your store, manage products, accept orders, and grow your brand beautifully."
+    },
+    "hero": {
+        "preTitle": "The best",
+        "title": "Open source",
+        "titleHighlight": "eCommerce",
+        "description": "Sell anything, anywhere, with everything connected in one app. Create your store, manage products, accept orders, and grow your brand beautifully.",
+        "buttons": {
+            "startNow": "Start now",
+            "watchDemo": "Watch a demo"
+        },
+        "sidebar": {
+            "categories": "Categories",
+            "all": "All",
+            "chairs": "Chairs",
+            "tables": "Tables",
+            "lighting": "Lighting",
+            "storage": "Storage",
+            "decor": "Decor",
+            "filter": "Filter",
+            "inStock": "In stock",
+            "newArrivals": "New arrivals",
+            "onSale": "On sale"
+        },
+        "storeHeader": {
+            "title": "Furniture Store",
+            "productsFound": "products found",
+            "customize": "Customize"
+        },
+        "products": {
+            "oakChair": {
+                "title": "Oak Chair",
+                "price": "$149.00"
+            },
+            "blueSofa": {
+                "title": "Blue Sofa",
+                "price": "$499.00"
+            },
+            "woodTable": {
+                "title": "Wood Table",
+                "price": "$249.00"
+            },
+            "modernLamp": {
+                "title": "Modern Lamp",
+                "price": "$89.00"
+            },
+            "storageBox": {
+                "title": "Storage Box",
+                "price": "$39.00"
+            },
+            "sideStool": {
+                "title": "Side Stool",
+                "price": "$129.00"
+            }
+        },
+        "newBadge": "NEW"
+    },
+    "noCodeSection": {
+        "title": "No code Mode",
+        "description": "Build your online store visually. Add products, edit pages, manage checkout, customize layouts, and publish without writing code.",
+        "productPage": {
+            "title": "Sugar Bloom Box",
+            "price": "$29.00",
+            "description": "A beautiful product page with images, reviews, product options, and quick checkout.",
+            "addToCart": "Add to cart",
+            "features": {
+                "reviews": "Customer reviews",
+                "checkout": "Secure checkout",
+                "inventory": "Inventory tracking"
+            }
+        },
+        "editPanel": {
+            "title": "Edit panel",
+            "productLayout": "Product layout",
+            "imageGallery": "Image gallery",
+            "priceStyle": "Price style",
+            "buttonColor": "Button color",
+            "reviews": "Reviews",
+            "mobileView": "Mobile view"
+        },
+        "freePhotos": "+ 3 million free photos"
+    },
+    "productKingSection": {
+        "icon": "Crown",
+        "title": "Product",
+        "titleHighlight": "is king",
+        "subtitle": "Adaptable products",
+        "description": "Build simple products, variants, digital products, services, bundles, and subscriptions. Every product can include images, inventory rules, pricing, descriptions, and promotions.",
+        "features": {
+            "stockManagement": {
+                "title": "Advanced stock management",
+                "description": "Manage your store with connected data and smart actions."
+            },
+            "productOptions": {
+                "title": "Flexible product options",
+                "description": "Manage your store with connected data and smart actions."
+            },
+            "upselling": {
+                "title": "Upsells and cross-selling",
+                "description": "Manage your store with connected data and smart actions."
+            }
+        },
+        "productCard": {
+            "badge": "CUSTOMIZABLE DESK",
+            "title": "Modern Oak Chair",
+            "price": "$149.00",
+            "colors": {
+                "oak": "Oak",
+                "black": "Black",
+                "white": "White",
+                "blue": "Blue"
+            },
+            "addToCart": "Add to cart"
+        }
+    },
+    "loyaltySection": {
+        "title": "Bump up",
+        "titleHighlight": "loyalty",
+        "subtitle": "maximize revenues",
+        "description": "Encourage conversations, collect customer feedback, create rewards, send promotions, and keep your buyers coming back.",
+        "messages": {
+            "title": "Messages",
+            "message1": "Hi! Do you have this chair in black?",
+            "message2": "Yes, it is available for delivery today.",
+            "message3": "Perfect, I will place the order now!"
+        },
+        "loyaltyFeed": {
+            "title": "Loyalty feed",
+            "freeShipping": {
+                "title": "Free shipping",
+                "description": "Reward customers after 3 orders"
+            },
+            "exclusiveCoupon": {
+                "title": "Exclusive coupon",
+                "description": "Send personalized discount codes"
+            },
+            "socialSharing": {
+                "title": "Social sharing",
+                "description": "Turn happy buyers into promoters"
+            }
+        }
+    },
+    "analyticsSection": {
+        "title": "Your store in the",
+        "titleHighlight": "spotlight",
+        "description": "Understand visitors, revenue, conversion, products, and campaign performance with visual ecommerce analytics.",
+        "chartTitle": "Revenue analytics",
+        "changeBadge": "+28%",
+        "integration": "Integrated with Google Analytics"
+    },
+    "builtWithSection": {
+        "title": "Built using our apps",
+        "items": {
+            "onlineShop": {
+                "title": "Online shop",
+                "description": "Built with ecommerce, website, inventory, and marketing."
+            },
+            "agencySite": {
+                "title": "Agency site",
+                "description": "Built with ecommerce, website, inventory, and marketing."
+            },
+            "gamingBrand": {
+                "title": "Gaming brand",
+                "description": "Built with ecommerce, website, inventory, and marketing."
+            }
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "mobileAdaptive": {
+                "title": "Mobile adaptive",
+                "description": "Your online store looks clean, fast, and professional on every screen size."
+            },
+            "clickCollect": {
+                "title": "Click and collect",
+                "description": "Let customers order online and collect products directly from your shop."
+            },
+            "integration": {
+                "title": "Integration",
+                "description": "Connect ecommerce with inventory, invoicing, marketing, CRM, and analytics."
+            },
+            "shippingOption": {
+                "title": "Shipping option",
+                "description": "Create delivery methods, shipping zones, and flexible checkout options."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand as you grow with integrated apps that work together.",
+        "apps": {
+            "website": {
+                "title": "Website",
+                "desc": "Build your site"
+            },
+            "sales": {
+                "title": "Sales",
+                "desc": "Sell smarter"
+            },
+            "crm": {
+                "title": "CRM",
+                "desc": "Track customers"
+            },
+            "rental": {
+                "title": "Rental",
+                "desc": "Rent products"
+            },
+            "inventory": {
+                "title": "Inventory",
+                "desc": "Manage stock"
+            },
+            "emailMarketing": {
+                "title": "Email Marketing",
+                "desc": "Grow audience"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with Adon",
+        "testimonial": {
+            "quote": "Adon transformed our operations by integrating ecommerce functions, simplifying product management, and offering cost-effective maintenance.",
+            "name": "Noah Carter",
+            "title": "eCommerce Founder"
+        }
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "titleHighlight": "growth",
+        "subtitle": "your growth potential",
+        "button": "Start now"
+    }
+}

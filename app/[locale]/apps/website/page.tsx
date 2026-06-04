@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -40,115 +41,261 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const builderSteps = [
-  {
-    title: "Site",
-    description: "Your first page",
-    icon: Compass,
-    color: "bg-rose-100 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
-  },
-  {
-    title: "Add",
-    description: "Your apps",
-    icon: Layers3,
-    color:
-      "bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
-  },
-  {
-    title: "Adjust",
-    description: "Your features",
-    icon: Settings2,
-    color: "bg-sky-100 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
-  },
-  {
-    title: "Grow",
-    description: "Your business",
-    icon: Rocket,
-    color:
-      "bg-emerald-100 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
-  },
-];
+function XIcon() {
+  return (
+    <button
+      type="button"
+      className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
+      aria-label="Close"
+    >
+      ×
+    </button>
+  );
+}
 
-const features = [
-  {
-    title: "Mobile responsive",
-    description:
-      "Your website automatically adapts to every screen size, from desktop to mobile.",
-  },
-  {
-    title: "Translation",
-    description:
-      "Translate pages, products, and content to reach customers around the world.",
-  },
-  {
-    title: "Theme customization",
-    description:
-      "Choose colors, fonts, layouts, and blocks to match your brand identity.",
-  },
-  {
-    title: "SEO",
-    description:
-      "Optimize pages and product content to help customers find you online.",
-  },
-  {
-    title: "Shapes and animations",
-    description:
-      "Give your website visual movement with modern sections, shapes, and effects.",
-  },
-  {
-    title: "Analytics",
-    description:
-      "Learn where your visitors come from and understand what works best.",
-  },
-];
-
-const apps = [
-  {
-    title: "eCommerce",
-    description: "Sell online",
-    icon: ShoppingBag,
-  },
-  {
-    title: "Events",
-    description: "Promote events",
-    icon: Sparkles,
-  },
-  {
-    title: "eLearning",
-    description: "Create courses",
-    icon: GraduationCap,
-  },
-  {
-    title: "CRM",
-    description: "Track leads",
-    icon: Diamond,
-  },
-  {
-    title: "Appointments",
-    description: "Book meetings",
-    icon: CheckCircle2,
-  },
-  {
-    title: "Marketing",
-    description: "Grow audience",
-    icon: WandSparkles,
-  },
-];
-
-const avatarImages = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
-  "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
-];
+function ReceiptIcon({ className }: { className?: string }) {
+  return <FileText className={className} />;
+}
 
 export default function WebsiteBuilderSections() {
+  const t = useTranslations("pages.website-builder");
+
+  // Build steps from translations
+  const builderSteps = [
+    {
+      title: t("builderSection.steps.site.title"),
+      description: t("builderSection.steps.site.description"),
+      icon: Compass,
+      color: "bg-rose-100 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
+    },
+    {
+      title: t("builderSection.steps.add.title"),
+      description: t("builderSection.steps.add.description"),
+      icon: Layers3,
+      color:
+        "bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
+    },
+    {
+      title: t("builderSection.steps.adjust.title"),
+      description: t("builderSection.steps.adjust.description"),
+      icon: Settings2,
+      color: "bg-sky-100 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
+    },
+    {
+      title: t("builderSection.steps.grow.title"),
+      description: t("builderSection.steps.grow.description"),
+      icon: Rocket,
+      color:
+        "bg-emerald-100 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
+    },
+  ];
+
+  // Sidebar items
+  const sidebarItems = [
+    t("builderSection.sidebar.pages"),
+    t("builderSection.sidebar.blocks"),
+    t("builderSection.sidebar.theme"),
+    t("builderSection.sidebar.style"),
+    t("builderSection.sidebar.media"),
+    t("builderSection.sidebar.settings"),
+  ];
+
+  // Templates
+  const templates = [
+    {
+      image:
+        "https://images.unsplash.com/photo-1524758631624-e2822e304c36c?w=500&auto=format&fit=crop",
+      title: t("builderSection.templates.studio"),
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=500&auto=format&fit=crop",
+      title: t("builderSection.templates.portfolio"),
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=500&auto=format&fit=crop",
+      title: t("builderSection.templates.agency"),
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop",
+      title: t("builderSection.templates.startup"),
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&auto=format&fit=crop",
+      title: t("builderSection.templates.shop"),
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&auto=format&fit=crop",
+      title: t("builderSection.templates.landing"),
+    },
+  ];
+
+  // Theme items
+  const themeItems = [
+    t("hero.dashboard.themePanel.items.colorPalette"),
+    t("hero.dashboard.themePanel.items.typography"),
+    t("hero.dashboard.themePanel.items.spacing"),
+    t("hero.dashboard.themePanel.items.buttons"),
+    t("hero.dashboard.themePanel.items.sections"),
+    t("hero.dashboard.themePanel.items.animation"),
+    t("hero.dashboard.themePanel.items.mobile"),
+  ];
+
+  // Editor labels
+  const editorLabels = [
+    t("hero.dashboard.editorLabels.heroImage"),
+    t("hero.dashboard.editorLabels.mainButton"),
+    t("hero.dashboard.editorLabels.productCard"),
+  ];
+
+  // AI suggestions
+  const aiSuggestions = [
+    t("aiSection.suggestions.headline"),
+    t("aiSection.suggestions.rewrite"),
+    t("aiSection.suggestions.seo"),
+    t("aiSection.suggestions.cta"),
+  ];
+
+  // AI tabs
+  const aiTabs = [
+    t("aiSection.tabs.edit"),
+    t("aiSection.tabs.seo"),
+    t("aiSection.tabs.style"),
+    t("aiSection.tabs.content"),
+  ];
+
+  // Integration apps
+  const integrationApps = [
+    {
+      label: t("integrationSection.apps.accounting"),
+      icon: ReceiptIcon,
+      left: "16%",
+      top: "18%",
+    },
+    {
+      label: t("integrationSection.apps.crm"),
+      icon: Diamond,
+      left: "68%",
+      top: "15%",
+    },
+    {
+      label: t("integrationSection.apps.inventory"),
+      icon: PackageCheck,
+      left: "13%",
+      top: "68%",
+    },
+    {
+      label: t("integrationSection.apps.calendar"),
+      icon: CheckCircle2,
+      left: "69%",
+      top: "69%",
+    },
+    {
+      label: t("integrationSection.apps.marketing"),
+      icon: WandSparkles,
+      left: "42%",
+      top: "3%",
+    },
+    {
+      label: t("integrationSection.apps.website"),
+      icon: Globe2,
+      left: "42%",
+      top: "82%",
+    },
+  ];
+
+  // Features list
+  const featuresList = [
+    {
+      title: t("featuresSection.features.mobileResponsive.title"),
+      description: t("featuresSection.features.mobileResponsive.description"),
+    },
+    {
+      title: t("featuresSection.features.translation.title"),
+      description: t("featuresSection.features.translation.description"),
+    },
+    {
+      title: t("featuresSection.features.themeCustomization.title"),
+      description: t("featuresSection.features.themeCustomization.description"),
+    },
+    {
+      title: t("featuresSection.features.seo.title"),
+      description: t("featuresSection.features.seo.description"),
+    },
+    {
+      title: t("featuresSection.features.shapesAnimations.title"),
+      description: t("featuresSection.features.shapesAnimations.description"),
+    },
+    {
+      title: t("featuresSection.features.analytics.title"),
+      description: t("featuresSection.features.analytics.description"),
+    },
+  ];
+
+  // Apps list
+  const appsList = [
+    {
+      title: t("appsSection.apps.ecommerce.title"),
+      desc: t("appsSection.apps.ecommerce.desc"),
+      icon: ShoppingBag,
+    },
+    {
+      title: t("appsSection.apps.events.title"),
+      desc: t("appsSection.apps.events.desc"),
+      icon: Sparkles,
+    },
+    {
+      title: t("appsSection.apps.elearning.title"),
+      desc: t("appsSection.apps.elearning.desc"),
+      icon: GraduationCap,
+    },
+    {
+      title: t("appsSection.apps.crm.title"),
+      desc: t("appsSection.apps.crm.desc"),
+      icon: Diamond,
+    },
+    {
+      title: t("appsSection.apps.appointments.title"),
+      desc: t("appsSection.apps.appointments.desc"),
+      icon: CheckCircle2,
+    },
+    {
+      title: t("appsSection.apps.marketing.title"),
+      desc: t("appsSection.apps.marketing.desc"),
+      icon: WandSparkles,
+    },
+  ];
+
+  // Avatar images
+  const avatarImages = [
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=96&h=96&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
+  ];
+
+  // Block icons
+  const blockIcons = [
+    LayoutGrid,
+    ImageIcon,
+    FileText,
+    MousePointerClick,
+    Palette,
+    Code2,
+    Store,
+    Search,
+  ];
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
@@ -157,17 +304,16 @@ export default function WebsiteBuilderSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Scale your brand{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-orange-300 dark:bg-orange-800">
               <span className="text-orange-500 dark:text-orange-400">
-                online
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Build more than a website. Build a business. Design beautiful pages,
-            sell products, manage customers, and grow from one integrated app.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -175,14 +321,14 @@ export default function WebsiteBuilderSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.buttons.startNow")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("hero.buttons.watchDemo")}
             </Link>
           </div>
 
@@ -199,16 +345,16 @@ export default function WebsiteBuilderSections() {
                   <div className="relative flex h-full min-h-107 flex-col justify-between p-8 text-left text-white">
                     <div>
                       <p className="text-sm font-bold tracking-wide">
-                        Monday Coffee Lab
+                        {t("hero.dashboard.siteTitle")}
                       </p>
                       <h2 className="mt-10 max-w-xs text-5xl font-bold leading-none">
-                        Superior Sips
+                        {t("hero.dashboard.heroTitle")}
                       </h2>
                       <p className="mt-4 max-w-sm text-sm leading-6 text-white/80">
-                        Fresh coffee, crafted with care for your morning energy.
+                        {t("hero.dashboard.heroDescription")}
                       </p>
                       <button className="mt-8 rounded-md bg-orange-500 dark:bg-orange-600 px-5 py-3 text-sm font-bold text-white hover:bg-orange-600 transition">
-                        Order now
+                        {t("hero.dashboard.orderButton")}
                       </button>
                     </div>
 
@@ -219,17 +365,15 @@ export default function WebsiteBuilderSections() {
                     <div className="absolute bottom-8 left-10 w-64 rounded-lg bg-white dark:bg-slate-800 p-4 text-slate-900 dark:text-white shadow-2xl">
                       <div className="mb-3 h-3 w-24 rounded bg-slate-200 dark:bg-slate-700" />
                       <div className="space-y-2">
-                        {["Hero image", "Main button", "Product card"].map(
-                          (item) => (
-                            <div
-                              key={item}
-                              className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400"
-                            >
-                              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
-                              {item}
-                            </div>
-                          ),
-                        )}
+                        {editorLabels.map((item) => (
+                          <div
+                            key={item}
+                            className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400"
+                          >
+                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 dark:text-emerald-400" />
+                            {item}
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -237,20 +381,14 @@ export default function WebsiteBuilderSections() {
 
                 <div className="border-l border-white/10 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
                   <div className="mb-5 flex items-center justify-between">
-                    <p className="text-sm font-bold">Theme</p>
+                    <p className="text-sm font-bold">
+                      {t("hero.dashboard.themePanel.title")}
+                    </p>
                     <div className="h-7 w-7 rounded-full bg-[#714b67] dark:bg-[#8a5a7e]" />
                   </div>
 
                   <div className="space-y-4">
-                    {[
-                      "Color palette",
-                      "Typography",
-                      "Spacing",
-                      "Buttons",
-                      "Sections",
-                      "Animation",
-                      "Mobile",
-                    ].map((item, index) => (
+                    {themeItems.map((item, index) => (
                       <div key={item}>
                         <div className="mb-2 flex items-center justify-between text-xs text-white/60">
                           <span>{item}</span>
@@ -267,7 +405,9 @@ export default function WebsiteBuilderSections() {
                   </div>
 
                   <div className="mt-8 rounded-lg bg-white/5 dark:bg-white/5 p-4">
-                    <p className="text-xs text-white/60">Live preview</p>
+                    <p className="text-xs text-white/60">
+                      {t("hero.dashboard.themePanel.livePreview")}
+                    </p>
                     <div className="mt-3 grid grid-cols-3 gap-2">
                       {Array.from({ length: 6 }).map((_, index) => (
                         <span
@@ -290,24 +430,23 @@ export default function WebsiteBuilderSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto mb-7 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
             <MessageCircle className="h-4 w-4 text-[#02a6a6] dark:text-[#02cfc3]" />
-            What do you want to build?
+            {t("builderSection.badge")}
           </div>
 
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Dream it?{" "}
+            {t("builderSection.title")}{" "}
             <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                Build it!
+                {t("builderSection.titleHighlight")}
               </span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Let the builder guide your website from idea to launch with smart
-            blocks, apps, and editable designs.
+            {t("builderSection.description")}
           </p>
 
           <div className="mx-auto mt-12 grid max-w-4xl gap-5 rounded-xl bg-[#f3f4f7] dark:bg-[#0f0f1a] p-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -333,10 +472,10 @@ export default function WebsiteBuilderSections() {
           </div>
 
           <p className="mx-auto mt-12 max-w-md text-sm leading-7 text-slate-500 dark:text-slate-400">
-            There is only one way to create a beautiful website:
+            {t("builderSection.quote")}
             <br />
             <span className="font-semibold text-slate-900 dark:text-white">
-              Anywhere and at full speed.
+              {t("builderSection.quoteHighlight")}
             </span>
           </p>
 
@@ -344,59 +483,26 @@ export default function WebsiteBuilderSections() {
             <div className="grid min-h-107 lg:grid-cols-[220px_1fr]">
               <aside className="border-r border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 text-left">
                 <p className="mb-6 text-sm font-bold text-slate-900 dark:text-white">
-                  Website
+                  {t("builderSection.sidebar.website")}
                 </p>
 
-                {["Pages", "Blocks", "Theme", "Style", "Media", "Settings"].map(
-                  (item, index) => (
-                    <div
-                      key={item}
-                      className={`mb-2 rounded-md px-4 py-3 text-sm font-semibold ${
-                        index === 3
-                          ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
-                          : "text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
-                      }`}
-                    >
-                      {item}
-                    </div>
-                  ),
-                )}
+                {sidebarItems.map((item, index) => (
+                  <div
+                    key={item}
+                    className={`mb-2 rounded-md px-4 py-3 text-sm font-semibold ${
+                      index === 2
+                        ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
+                        : "text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+                    }`}
+                  >
+                    {item}
+                  </div>
+                ))}
               </aside>
 
               <div className="bg-[#eef0f4] dark:bg-[#0f0f1a] p-7">
                 <div className="grid gap-5 md:grid-cols-3">
-                  {[
-                    {
-                      image:
-                        "https://images.unsplash.com/photo-1524758631624-e2822e304c36c?w=500&auto=format&fit=crop",
-                      title: "Studio",
-                    },
-                    {
-                      image:
-                        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=500&auto=format&fit=crop",
-                      title: "Portfolio",
-                    },
-                    {
-                      image:
-                        "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=500&auto=format&fit=crop",
-                      title: "Agency",
-                    },
-                    {
-                      image:
-                        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=500&auto=format&fit=crop",
-                      title: "Startup",
-                    },
-                    {
-                      image:
-                        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&auto=format&fit=crop",
-                      title: "Shop",
-                    },
-                    {
-                      image:
-                        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=500&auto=format&fit=crop",
-                      title: "Landing",
-                    },
-                  ].map((template) => (
+                  {templates.map((template) => (
                     <div
                       key={template.title}
                       className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm"
@@ -431,12 +537,11 @@ export default function WebsiteBuilderSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Craft your site like a designer
+            {t("designerSection.title")}
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Drag and drop building blocks. Take full creative control with
-            layouts, colors, images, fonts, spacing, and responsive design.
+            {t("designerSection.description")}
           </p>
 
           <div className="relative mx-auto mt-12 max-w-4xl">
@@ -447,16 +552,17 @@ export default function WebsiteBuilderSections() {
                 <div className="flex items-center justify-center p-8">
                   <div className="grid w-full max-w-2xl gap-8 lg:grid-cols-[1fr_260px]">
                     <div className="text-left text-white">
-                      <p className="text-sm text-white/50">Section block</p>
+                      <p className="text-sm text-white/50">
+                        {t("designerSection.blockPreview.sectionBlock")}
+                      </p>
                       <h3 className="mt-4 text-3xl font-bold">
-                        A Section Subtitle
+                        {t("designerSection.blockPreview.subtitle")}
                       </h3>
                       <p className="mt-4 text-sm leading-7 text-white/60">
-                        Create a beautiful page section with editable content,
-                        media, and buttons.
+                        {t("designerSection.blockPreview.description")}
                       </p>
                       <button className="mt-6 rounded-full bg-white dark:bg-slate-800 px-5 py-2 text-xs font-bold text-slate-900 dark:text-white hover:bg-gray-100 transition">
-                        Learn more
+                        {t("designerSection.blockPreview.button")}
                       </button>
                     </div>
 
@@ -471,19 +577,12 @@ export default function WebsiteBuilderSections() {
                 </div>
 
                 <aside className="border-l border-white/10 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
-                  <p className="mb-5 text-sm font-bold">Blocks</p>
+                  <p className="mb-5 text-sm font-bold">
+                    {t("designerSection.sidebar.blocks")}
+                  </p>
 
                   <div className="grid grid-cols-2 gap-3">
-                    {[
-                      LayoutGrid,
-                      ImageIcon,
-                      FileText,
-                      MousePointerClick,
-                      Palette,
-                      Code2,
-                      Store,
-                      Search,
-                    ].map((Icon, index) => (
+                    {blockIcons.map((Icon, index) => (
                       <div
                         key={index}
                         className="flex h-16 items-center justify-center rounded-lg bg-white/5 dark:bg-white/5 text-[#02a6a6] dark:text-[#02cfc3]"
@@ -494,22 +593,25 @@ export default function WebsiteBuilderSections() {
                   </div>
 
                   <div className="mt-8 space-y-4">
-                    {["Width", "Radius", "Shadow", "Spacing"].map(
-                      (item, index) => (
-                        <div key={item}>
-                          <div className="mb-2 flex items-center justify-between text-xs text-white/60">
-                            <span>{item}</span>
-                            <span>{index + 2}</span>
-                          </div>
-                          <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
-                            <div
-                              className="h-2 rounded-full bg-[#02a6a6] dark:bg-[#02cfc3]"
-                              style={{ width: `${55 + index * 8}%` }}
-                            />
-                          </div>
+                    {[
+                      t("designerSection.sidebar.width"),
+                      t("designerSection.sidebar.radius"),
+                      t("designerSection.sidebar.shadow"),
+                      t("designerSection.sidebar.spacing"),
+                    ].map((item, index) => (
+                      <div key={item}>
+                        <div className="mb-2 flex items-center justify-between text-xs text-white/60">
+                          <span>{item}</span>
+                          <span>{index + 2}</span>
                         </div>
-                      ),
-                    )}
+                        <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
+                          <div
+                            className="h-2 rounded-full bg-[#02a6a6] dark:bg-[#02cfc3]"
+                            style={{ width: `${55 + index * 8}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </aside>
               </div>
@@ -518,7 +620,7 @@ export default function WebsiteBuilderSections() {
 
           <div className="mx-auto mt-10 flex max-w-xs items-center justify-center gap-3 rounded-full bg-white dark:bg-slate-800 px-4 py-3 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
             <MessageCircle className="h-4 w-4 text-[#02a6a6] dark:text-[#02cfc3]" />
-            Can you help me edit?
+            {t("designerSection.chatBadge")}
           </div>
         </div>
       </section>
@@ -528,7 +630,7 @@ export default function WebsiteBuilderSections() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex gap-2">
-                {["Edit", "SEO", "Style", "Content"].map((item, index) => (
+                {aiTabs.map((item, index) => (
                   <span
                     key={item}
                     className={`rounded-md px-3 py-1 text-xs font-bold ${
@@ -545,12 +647,7 @@ export default function WebsiteBuilderSections() {
             </div>
 
             <div className="space-y-3 text-left">
-              {[
-                "Generate a landing page headline for my furniture store.",
-                "Rewrite this product description in a friendly tone.",
-                "Create SEO meta title and description.",
-                "Suggest a stronger call-to-action button.",
-              ].map((text) => (
+              {aiSuggestions.map((text) => (
                 <div
                   key={text}
                   className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-sm leading-6 text-slate-600 dark:text-slate-300"
@@ -562,10 +659,10 @@ export default function WebsiteBuilderSections() {
 
             <div className="mt-5 flex gap-3">
               <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                Apply
+                {t("aiSection.buttons.apply")}
               </button>
               <button className="rounded-md border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                Cancel
+                {t("aiSection.buttons.cancel")}
               </button>
             </div>
           </div>
@@ -575,13 +672,11 @@ export default function WebsiteBuilderSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Your AI sidekick
+              {t("aiSection.title")}
             </h2>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-slate-300">
-              Build great pages faster with smart AI assistance. Ask for
-              headlines, product text, SEO content, translations, and layout
-              ideas while you work.
+              {t("aiSection.description")}
             </p>
           </div>
         </div>
@@ -594,21 +689,20 @@ export default function WebsiteBuilderSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Scalable and fully
+              {t("integrationSection.title")}
               <br />
-              integrated
+              {t("integrationSection.subtitle")}
             </h2>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 dark:text-slate-300">
-              Plug your website into sales, inventory, marketing, CRM,
-              appointments, accounting, and everything else your business needs.
+              {t("integrationSection.description")}
             </p>
 
             <p
               className="mt-8 text-lg text-rose-500 dark:text-rose-400"
               style={{ fontFamily: handwrittenFont }}
             >
-              Easy peasy!
+              {t("integrationSection.happyText")}
             </p>
           </div>
 
@@ -617,44 +711,7 @@ export default function WebsiteBuilderSections() {
               <Boxes className="h-12 w-12 text-[#02a6a6] dark:text-[#02cfc3]" />
             </div>
 
-            {[
-              {
-                label: "Accounting",
-                icon: ReceiptIcon,
-                left: "16%",
-                top: "18%",
-              },
-              {
-                label: "CRM",
-                icon: Diamond,
-                left: "68%",
-                top: "15%",
-              },
-              {
-                label: "Inventory",
-                icon: PackageCheck,
-                left: "13%",
-                top: "68%",
-              },
-              {
-                label: "Calendar",
-                icon: CheckCircle2,
-                left: "69%",
-                top: "69%",
-              },
-              {
-                label: "Marketing",
-                icon: WandSparkles,
-                left: "42%",
-                top: "3%",
-              },
-              {
-                label: "Website",
-                icon: Globe2,
-                left: "42%",
-                top: "82%",
-              },
-            ].map((item) => {
+            {integrationApps.map((item) => {
               const Icon = item.icon;
 
               return (
@@ -684,15 +741,13 @@ export default function WebsiteBuilderSections() {
               className="text-4xl font-bold leading-tight sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              It&apos;s free.
+              {t("freeSection.title")}
               <br />
-              For real.
+              {t("freeSection.subtitle")}
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/80">
-              Your website builder is included with your apps. Build your
-              website, connect your tools, and manage your business without
-              jumping between platforms.
+              {t("freeSection.description")}
             </p>
           </div>
         </div>
@@ -707,18 +762,18 @@ export default function WebsiteBuilderSections() {
             className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                features
+                {t("featuresSection.highlight")}
               </span>
             </HandUnderline>
             <br />
-            done right.
+            {t("featuresSection.subtitle")}
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -745,7 +800,8 @@ export default function WebsiteBuilderSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllFeatures")}{" "}
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -756,19 +812,21 @@ export default function WebsiteBuilderSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("appsSection.needHighlight")}
+              </span>
             </HandUnderline>
-            , one app.
+            , {t("appsSection.appHighlight")}.
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow with integrated apps that work together.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {apps.map((app) => {
+            {appsList.map((app) => {
               const Icon = app.icon;
 
               return (
@@ -785,7 +843,7 @@ export default function WebsiteBuilderSections() {
                       {app.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {app.description}
+                      {app.desc}
                     </p>
                   </div>
                 </div>
@@ -797,7 +855,7 @@ export default function WebsiteBuilderSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllApps")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -845,10 +903,10 @@ export default function WebsiteBuilderSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaSection.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaSection.description")}
               </p>
             </div>
           </div>
@@ -861,8 +919,7 @@ export default function WebsiteBuilderSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon&apos;s flexibility, scalability, and app ecosystem have
-                  been crucial for our success and community growth.
+                  {t("ctaSection.testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -873,10 +930,10 @@ export default function WebsiteBuilderSections() {
                   />
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Andrew Reed
+                      {t("ctaSection.testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Digital business owner
+                      {t("ctaSection.testimonial.title")}
                     </p>
                   </div>
                 </div>
@@ -893,44 +950,25 @@ export default function WebsiteBuilderSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("getStartedSection.title")}
               <br />
-              your{" "}
               <HandUnderline color="bg-[#02a6a6] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("getStartedSection.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("getStartedSection.subtitle")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("getStartedSection.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
     </main>
   );
-}
-
-function XIcon() {
-  return (
-    <button
-      type="button"
-      className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 transition"
-      aria-label="Close"
-    >
-      ×
-    </button>
-  );
-}
-
-function ReceiptIcon({ className }: { className?: string }) {
-  return <FileText className={className} />;
 }

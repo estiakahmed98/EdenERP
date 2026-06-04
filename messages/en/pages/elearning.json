@@ -1,0 +1,203 @@
+{
+    "metadata": {
+        "title": "eLearning | Adon ERP",
+        "description": "Create online courses, publish lessons, track progress, measure results, and help your students reach success with a beautiful learning platform."
+    },
+    "hero": {
+        "title": "Keep your learners",
+        "titleHighlight": "engaged",
+        "description": "Create online courses, publish lessons, track progress, measure results, and help your students reach success with a beautiful learning platform.",
+        "buttons": {
+            "startNow": "Start now",
+            "watchDemo": "Watch a demo"
+        },
+        "availableText": "Available for any device",
+        "courseHeader": {
+            "title": "Learn Academy",
+            "courseProgress": "Course progress",
+            "completed": "Completed",
+            "percent": "47%"
+        },
+        "sidebar": {
+            "introduction": "Introduction",
+            "lessons": "Lessons",
+            "exercises": "Exercises",
+            "quiz": "Quiz",
+            "certificate": "Certificate"
+        },
+        "featuredCourse": {
+            "category": "Gardening Course",
+            "title": "Taking care of Trees",
+            "description": "Learn how to grow, care, and protect beautiful trees through structured lessons and interactive activities.",
+            "continue": "Continue"
+        },
+        "lessons": {
+            "lesson1": {
+                "number": "01",
+                "title": "Why trees matter",
+                "status": "Complete"
+            },
+            "lesson2": {
+                "number": "02",
+                "title": "Soil and watering",
+                "status": "In progress"
+            },
+            "lesson3": {
+                "number": "03",
+                "title": "Pruning basics",
+                "status": "Locked"
+            },
+            "lesson4": {
+                "number": "04",
+                "title": "Final quiz",
+                "status": "Locked"
+            }
+        }
+    },
+    "easyLearnSection": {
+        "badgeIcon": "CheckCircle2",
+        "title": "Easy to use, fun to",
+        "titleHighlight": "learn",
+        "description": "Create engaging courses with lessons, videos, quizzes, text blocks, images, downloadable files, and interactive learning content.",
+        "editor": {
+            "title": "Editor",
+            "courseLayout": "Course layout",
+            "lessonCard": "Lesson card",
+            "progressBar": "Progress bar",
+            "buttonColor": "Button color",
+            "mobileView": "Mobile view",
+            "quizOptions": "Quiz options"
+        },
+        "courseCards": {
+            "treeCare": {
+                "title": "Tree care basics",
+                "description": "Learn with beautiful content blocks and simple course structure."
+            },
+            "indoorPlants": {
+                "title": "Indoor plants",
+                "description": "Learn with beautiful content blocks and simple course structure."
+            }
+        }
+    },
+    "learningJourneySection": {
+        "title": "Learning",
+        "titleHighlight": "is a journey, not a destination",
+        "description": "Engage students. Keep them motivated with points, badges, profiles, progress tracking, and achievement milestones that make learning feel rewarding.",
+        "student": {
+            "name": "Joel Willis",
+            "role": "Top learner",
+            "xpPoints": "3,407",
+            "xpLabel": "XP POINTS"
+        },
+        "activities": {
+            "completedLesson": "Completed lesson: Plant care",
+            "unlockedBadge": "Unlocked badge: Fast learner",
+            "passedQuiz": "Passed quiz: Soil basics",
+            "startedCourse": "Started course: Tree growth"
+        }
+    },
+    "trainSection": {
+        "title": "Train",
+        "titleHighlight1": "people. Measure results.",
+        "titleHighlight2": "Drive growth.",
+        "description": "Evaluate attendance, progress, answers, grades, and participation. Use insights to improve learning and support students better.",
+        "sidebar": {
+            "title": "Course results",
+            "attendance": "Attendance",
+            "quizAnswers": "Quiz answers",
+            "certificates": "Certificates",
+            "reports": "Reports",
+            "students": "Students"
+        },
+        "quiz": {
+            "title": "Survey and quiz feedback",
+            "inProgress": "In progress",
+            "question1": {
+                "text": "What is photosynthesis?",
+                "answers": [
+                    "Energy from sunlight",
+                    "Plant watering"
+                ]
+            },
+            "question2": {
+                "text": "What is the best soil for young trees?",
+                "answers": [
+                    "Loose and rich soil",
+                    "Dry sand"
+                ]
+            }
+        },
+        "button": "See evaluation"
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "quizzes": {
+                "title": "Quizzes",
+                "description": "Evaluate and challenge your students with beautiful quizzes and assessments."
+            },
+            "reviews": {
+                "title": "Reviews",
+                "description": "Collect feedback on your content, lessons, courses, and learning paths."
+            },
+            "prerequisites": {
+                "title": "Prerequisites",
+                "description": "Create learning paths and make courses available in the right order."
+            },
+            "sellCourses": {
+                "title": "Sell your courses",
+                "description": "Monetize your knowledge with paid courses, checkout, and subscriptions."
+            },
+            "forum": {
+                "title": "Forum",
+                "description": "Create discussion spaces and let students ask questions and share ideas."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand as you grow.",
+        "apps": {
+            "forum": {
+                "title": "Forum",
+                "desc": "Create a community"
+            },
+            "survey": {
+                "title": "Survey",
+                "desc": "Get student feedback"
+            },
+            "ecommerce": {
+                "title": "eCommerce",
+                "desc": "Sell courses online"
+            },
+            "website": {
+                "title": "Website",
+                "desc": "Create professional pages"
+            }
+        },
+        "seeAllApps": "See all Apps"
+    },
+    "ctaSection": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with Adon",
+        "testimonial": {
+            "quote": "Adon is so full of a software Army Knife. You can tailor it to your business requirements. This is one of the key reasons that has helped us implement Adon.",
+            "name": "Richard Miles",
+            "title": "Training manager"
+        }
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "titleHighlight": "growth",
+        "subtitle": "your growth potential",
+        "button": "Start now"
+    },
+    "floatingNote": {
+        "text": "Create courses and help learners grow"
+    }
+}
