@@ -602,8 +602,7 @@ export default function RestaurantPosPage() {
             <HandCircle color="border-teal-400 dark:border-teal-500">
               {t("featuresSection.highlight")}
             </HandCircle>
-            <br />
-            {t("featuresSection.subtitle")}{" "}
+            <br />  
             <HandUnderline color="bg-sky-400">
               {t("featuresSection.subtitle")}
             </HandUnderline>
