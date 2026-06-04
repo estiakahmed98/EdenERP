@@ -1,0 +1,188 @@
+{
+    "metadata": {
+        "title": "Rental Management | Adon ERP",
+        "description": "Adon Rental is now inventory, ecommerce, sales, accounting, and signatures in one app. Get organized, reduce manual work, and make every rental process faster."
+    },
+    "hero": {
+        "subtitle": "Rental management software for modern businesses",
+        "title": "Rent it.",
+        "titleHighlight": "Track it.",
+        "description": "Adon Rental is now inventory, ecommerce, sales, accounting, and signatures in one app. Get organized, reduce manual work, and make every rental process faster.",
+        "buttons": {
+            "watchDemo": "Watch a demo"
+        },
+        "dashboard": {
+            "menuItems": {
+                "rentalOrders": "Rental Orders",
+                "quotations": "Quotations",
+                "products": "Products",
+                "calendar": "Calendar"
+            },
+            "calendarDays": {
+                "mon": "Mon",
+                "tue": "Tue",
+                "wed": "Wed",
+                "thu": "Thu",
+                "fri": "Fri",
+                "sat": "Sat",
+                "sun": "Sun"
+            },
+            "rentalItems": {
+                "cameraKit": "Camera Kit",
+                "meetingRoom": "Meeting Room",
+                "deliveryVan": "Delivery Van",
+                "projector": "Projector"
+            }
+        }
+    },
+    "onlineRentalSection": {
+        "badgeIcon": "Wifi",
+        "title": "Save time,",
+        "titleHighlight": "rent online",
+        "description": "Publish products, let customers select dates, validate availability, and confirm rental requests directly through your website.",
+        "demoCard": {
+            "productTitle": "Working Space",
+            "selectDates": "Select available dates",
+            "bookNow": "Book now",
+            "steps": {
+                "pickDates": "Pick dates",
+                "confirmProduct": "Confirm product",
+                "payOnline": "Pay online"
+            },
+            "stepDesc": "Fast rental checkout"
+        }
+    },
+    "timeMoneySection": {
+        "title": "Time is money...",
+        "subtitle": "literally",
+        "description": "Automate quotations, invoices, confirmations, and follow-ups so your team spends less time on repetitive tasks and more time serving customers.",
+        "quotationCard": {
+            "customer": "Customer",
+            "rentalPeriod": "Rental Period",
+            "subtotal": "Subtotal",
+            "taxes": "Taxes",
+            "total": "Total",
+            "values": {
+                "customer": "Premium Office",
+                "rentalPeriod": "12 days",
+                "subtotal": "$2,400.00",
+                "taxes": "$120.00",
+                "total": "$2,520.00"
+            },
+            "sendButton": "Send"
+        }
+    },
+    "signatureSection": {
+        "title": "Signature requests",
+        "subtitle": "on request",
+        "description": "Upload rental agreements, insurance forms, contracts, and waiver documents. Request customer signatures digitally before every rental starts.",
+        "flow": "Quotation → Agreement → Signature → Confirmed",
+        "signatureLabel": "Signed"
+    },
+    "todoSection": {
+        "title": "Automate your",
+        "titleHighlight": "to-do-list",
+        "description": "From pickup to return, Adon can automatically create tasks for your team so nothing gets missed.",
+        "tasks": {
+            "prepareProduct": {
+                "name": "Prepare product",
+                "priority": "High",
+                "date": "Today",
+                "status": "Ready"
+            },
+            "sendAgreement": {
+                "name": "Send agreement",
+                "priority": "Medium",
+                "date": "Today",
+                "status": "In progress"
+            },
+            "confirmPayment": {
+                "name": "Confirm payment",
+                "priority": "High",
+                "date": "Tomorrow",
+                "status": "Waiting"
+            },
+            "schedulePickup": {
+                "name": "Schedule pickup",
+                "priority": "Low",
+                "date": "Friday",
+                "status": "Planned"
+            }
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "unavailableDays": {
+                "title": "Unavailable days",
+                "description": "Select days when specific products, rooms, vehicles, or equipment are not available."
+            },
+            "minimalRentalTime": {
+                "title": "Minimal rental time",
+                "description": "Set a minimum rental duration so your products are booked only within valid time slots."
+            },
+            "paddingInOut": {
+                "title": "Padding in & out",
+                "description": "Add preparation time before and after each rental to keep your workflow smooth."
+            },
+            "delayCosts": {
+                "title": "Delay costs",
+                "description": "Apply automatic extra charges when rented products are returned late."
+            },
+            "defaultPaddingTime": {
+                "title": "Default padding time",
+                "description": "Schedule buffer time between bookings to prepare, clean, or inspect products."
+            },
+            "easyQuotations": {
+                "title": "Easy quotations",
+                "description": "Create and send professional quotations directly from the rental request."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand as you grow with integrated apps that work together.",
+        "apps": {
+            "sign": {
+                "title": "Sign",
+                "desc": "Request online signatures"
+            },
+            "inventory": {
+                "title": "Inventory",
+                "desc": "Track products and stock"
+            },
+            "invoicing": {
+                "title": "Invoicing",
+                "desc": "Bill customers easily"
+            },
+            "ecommerce": {
+                "title": "eCommerce",
+                "desc": "Sell and rent online"
+            },
+            "maintenance": {
+                "title": "Maintenance",
+                "desc": "Manage equipment services"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join 15 million users",
+        "description": "who grow their business with Adon",
+        "testimonial": {
+            "quote": "After renting hundreds of products, Adon helped us manage every contract, invoice, signature, and delivery from one simple platform. The best part is that our team finally knows what to do next.",
+            "name": "Marc Robinson",
+            "title": "Rental manager"
+        }
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "subtitle": "your growth potential",
+        "button": "Start now"
+    }
+}

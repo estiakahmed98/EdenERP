@@ -1,0 +1,218 @@
+{
+    "metadata": {
+        "title": "Subscriptions | Adon ERP",
+        "description": "From subscription quotes and renewals to automated billing and retention workflows, Adon ERP keeps recurring revenue predictable."
+    },
+    "hero": {
+        "eyebrow": {
+            "icon": "Repeat",
+            "label": "Subscription management"
+        },
+        "title": "Recurring revenues.",
+        "titleHighlight": "Simplified.",
+        "description": "From subscription quotes and renewals to automated billing and retention workflows, Adon ERP keeps recurring revenue predictable.",
+        "buttons": {
+            "meetAdvisor": "Meet an advisor"
+        }
+    },
+    "dashboard": {
+        "appName": "Adon Subscriptions",
+        "status": "Active billing",
+        "tableHeaders": {
+            "id": "ID",
+            "customer": "Customer",
+            "nextBill": "Next bill",
+            "revenue": "Revenue",
+            "status": "Status"
+        },
+        "rows": {
+            "row1": {
+                "id": "S00016",
+                "customer": "Sophia Thomas",
+                "nextBill": "09/25/2026",
+                "revenue": "$350/mo",
+                "status": "In Progress"
+            },
+            "row2": {
+                "id": "S00017",
+                "customer": "Bright Studio",
+                "nextBill": "10/12/2026",
+                "revenue": "$1,250/mo",
+                "status": "Quotation"
+            },
+            "row3": {
+                "id": "S00018",
+                "customer": "Green Valley",
+                "nextBill": "10/20/2026",
+                "revenue": "$650/mo",
+                "status": "In Progress"
+            },
+            "row4": {
+                "id": "S00019",
+                "customer": "Nova Retail",
+                "nextBill": "11/01/2026",
+                "revenue": "$2,400/mo",
+                "status": "In Progress"
+            },
+            "row5": {
+                "id": "S00020",
+                "customer": "Urban Works",
+                "nextBill": "11/15/2026",
+                "revenue": "$980/mo",
+                "status": "Quotation"
+            }
+        },
+        "badges": {
+            "autoRenewals": "Auto renewals",
+            "revenueSynced": "Revenue synced"
+        }
+    },
+    "focusSection": {
+        "title": "Focus on selling",
+        "subtitle": "great services",
+        "description": "Simple features to manage subscriptions automatically.",
+        "paragraph": "Concentrate on customer relationships while Adon ERP handles contract creation, automated invoices, recurring renewals, payment reminders, and plan upgrades according to your settings.",
+        "subscriptionCard": {
+            "title": "Office cleaning monthly",
+            "status": "Active",
+            "planLabel": "Plan",
+            "planValue": "Business Service",
+            "billingLabel": "Billing",
+            "billingValue": "Monthly",
+            "renewalLabel": "Renewal",
+            "renewalValue": "Automatic",
+            "nextInvoiceLabel": "Next Invoice",
+            "nextInvoiceValue": "$850.00"
+        }
+    },
+    "visitorsSection": {
+        "title": "From happy visitors to satisfied customers",
+        "description": "Create great long lasting relations with your subscribers.",
+        "cards": {
+            "easySignup": {
+                "title": "No login required and easy signup",
+                "description": "Let customers subscribe quickly without friction or long account creation steps."
+            },
+            "userPortal": {
+                "title": "User-friendly portal",
+                "description": "Give subscribers a clean portal to review contracts, invoices, and renewals."
+            },
+            "autoPayments": {
+                "title": "Automatic payments",
+                "description": "Save time with automated collection, payment retries, and invoice creation."
+            }
+        }
+    },
+    "salesForceSection": {
+        "title": "Get a more efficient sales force",
+        "description": "Save time on routine tasks and focus on growing revenue.",
+        "cards": {
+            "templates": {
+                "title": "Reusable templates",
+                "description": "Speed up sales with contract templates for your most frequent subscription scenarios."
+            },
+            "reasonTracking": {
+                "title": "Smart reason tracking",
+                "description": "Understand why customers cancel, pause, downgrade, or renew their subscription."
+            },
+            "focusedSales": {
+                "title": "Focused sales activity",
+                "description": "Help sales teams focus on acquiring new customers and upgrading existing ones."
+            }
+        }
+    },
+    "analysisSection": {
+        "title": "Analysis tools to optimize your business",
+        "description": "Find out what metrics to act on in a click.",
+        "cards": {
+            "salesPerformance": {
+                "title": "Improved sales performance",
+                "description": "Analyze individual and team performance to improve subscription growth."
+            },
+            "revenueAnalytics": {
+                "title": "Revenue analytics",
+                "description": "Track MRR, ARR, churn, upgrades, downgrades, renewals, and lifetime value."
+            },
+            "forecasting": {
+                "title": "Future forecasting",
+                "description": "Forecast recurring revenue and compare growth against your targets."
+            }
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "autoRenewals": {
+                "title": "Automated renewals",
+                "description": "Renew contracts, invoices, and payment schedules automatically without manual tracking."
+            },
+            "customerPortal": {
+                "title": "Customer portal",
+                "description": "Let customers view plans, invoices, renewals, and payment history from a secure portal."
+            },
+            "recurringInvoices": {
+                "title": "Recurring invoices",
+                "description": "Generate subscription invoices based on billing cycles, plans, and contract rules."
+            },
+            "paymentAutomation": {
+                "title": "Payment automation",
+                "description": "Collect payments, retry failed charges, and keep customer billing updated."
+            },
+            "revenueAnalytics": {
+                "title": "Revenue analytics",
+                "description": "Track MRR, ARR, churn, renewals, lifetime value, and growth opportunities."
+            },
+            "retentionWorkflows": {
+                "title": "Retention workflows",
+                "description": "Trigger smart follow-ups before renewals, failed payments, or cancellation risks."
+            }
+        }
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand subscription workflows across the Adon ERP ecosystem.",
+        "apps": {
+            "crm": {
+                "title": "CRM",
+                "desc": "Manage renewals"
+            },
+            "sales": {
+                "title": "Sales",
+                "desc": "Upsell subscriptions"
+            },
+            "invoicing": {
+                "title": "Invoicing",
+                "desc": "Recurring billing"
+            },
+            "accounting": {
+                "title": "Accounting",
+                "desc": "Revenue reporting"
+            },
+            "payments": {
+                "title": "Payments",
+                "desc": "Auto collection"
+            },
+            "analytics": {
+                "title": "Analytics",
+                "desc": "Subscription insights"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join modern subscription teams",
+        "description": "Teams use Adon Subscriptions to manage renewals, automate billing, and grow predictable revenue."
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "subtitle": "your growth potential",
+        "description": "Build recurring revenue workflows with automated billing, renewals, payments, and customer retention inside Adon ERP.",
+        "buttons": {
+            "contactSales": "Contact Sales"
+        }
+    }
+}
