@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -30,129 +31,15 @@ import {
 } from "lucide-react";
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const benefits = [
-  {
-    icon: Target,
-    title: "Reach new customers",
-    description:
-      "Showcase your expertise and grow your business by connecting with clients searching for solutions on AdonERP's growing platform.",
-    gradient: "from-purple-500 to-violet-600",
-  },
-  {
-    icon: Handshake,
-    title: "Earn industry recognition",
-    description:
-      "Build a trusted reputation as an AdonERP certified partner — a mark that signals quality and reliability across markets and industries.",
-    gradient: "from-violet-500 to-purple-600",
-  },
-  {
-    icon: Rocket,
-    title: "Fast-trackyour growth",
-    description:
-      "Access exclusive tools, training, and co-marketing opportunities to shorten your sales cycle and accelerate business outcomes.",
-    gradient: "from-purple-600 to-violet-700",
-  },
-  {
-    icon: Globe2,
-    title: "Go global with confidence",
-    description:
-      "Tap into international leads and expand your reach with AdonERP's presence in more than 180 countries worldwide.",
-    gradient: "from-indigo-500 to-purple-500",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Formal certification path",
-    description:
-      "Earn platinum, gold, or silver partner credentials with structured exams, supervised training, and official accreditation milestones.",
-    gradient: "from-emerald-500 to-teal-600",
-  },
-  {
-    icon: Headphones,
-    title: "Dedicated partner support",
-    description:
-      "Your personal account manager ensures you always have priority access to resources, technical guidance, and sales enablement.",
-    gradient: "from-sky-500 to-blue-600",
-  },
-];
-
-const steps = [
-  {
-    step: "01",
-    title: "Apply to join",
-    description:
-      "Fill out our partner application form with your company details, market focus, and professional references.",
-    icon: Search,
-    color: "purple",
-  },
-  {
-    step: "02",
-    title: "Attend training",
-    description:
-      "Complete our onboarding curriculum — product fundamentals, best practices, and tools — at your own pace.",
-    icon: Lightbulb,
-    color: "violet",
-  },
-  {
-    step: "03",
-    title: "Complete certification",
-    description:
-      "Pass the exam to earn your official partner certificate and unlock tier bonuses and partner-only resources.",
-    icon: ShieldCheck,
-    color: "indigo",
-  },
-  {
-    step: "04",
-    title: "Start growing",
-    description:
-      "Connect with leads, co-market together, and start delivering AdonERP solutions to your clients.",
-    icon: TrendingUp,
-    color: "emerald",
-  },
-];
-
-const partnerTypes = [
-  {
-    title: "Implementation",
-    description:
-      "Deploy and customize AdonERP, guide clients through the full setup, and manage long-term upgrades and integrations.",
-    icon: Building2,
-    accent: "from-violet-100 to-purple-100",
-    tags: ["ERP Setup", "Customization", "Integration"],
-  },
-  {
-    title: "Reseller",
-    description:
-      "Sell AdonERP subscriptions and complementary services to your customer base, supported by full training and materials.",
-    icon: Megaphone,
-    accent: "from-purple-100 to-violet-100",
-    tags: ["Subscription Sales", "B2B Outreach", "Channel Growth"],
-  },
-  {
-    title: "Consulting",
-    description:
-      "Lead digital transformation projects, conduct business process engineering, and deliver AdonERP-accelerated consulting engagements.",
-    icon: Users,
-    accent: "from-indigo-100 to-purple-100",
-    tags: ["Strategy", "Digital Transformation", "Process Engineering"],
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Becoming an AdonERP partner more than doubled our consulting pipelines the first year. The partner team is world-class, and the certification gives real credibility.",
-    name: "Carlos Mendez",
-    role: "Director, Mendez Consulting",
-    avatar: "CM",
-  },
-  {
-    quote:
-      "The structured partner path and certification tracking made it simple to scale. Our team now serves clients across three countries from one unified hub.",
-    name: "Aisha Karim",
-    role: "CEO, Karim Technologies",
-    avatar: "AK",
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    Target, Handshake, Rocket, Globe2, BadgeCheck, Headphones, Search,
+    Lightbulb, ShieldCheck, TrendingUp, Building2, Megaphone, Users,
+    Sparkles, Star, ArrowRight, Play, Calendar,
+  };
+  return icons[iconName] || Handshake;
+};
 
 function ScriptHeading({
   children,
@@ -174,16 +61,21 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
@@ -192,10 +84,18 @@ function StepCard({
   step,
   title,
   description,
-  icon: Icon,
-  color,
+  iconName,
   index,
-}: (typeof steps)[number] & { index: number }) {
+  t,
+}: {
+  step: string;
+  title: string;
+  description: string;
+  iconName: string;
+  index: number;
+  t: any;
+}) {
+  const Icon = getIconComponent(iconName);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -207,15 +107,9 @@ function StepCard({
       transition={{ duration: 0.55, delay: index * 0.1 }}
       className="relative group"
     >
-      {/* Connector line */}
-      {index < steps.length - 1 && (
-        <div className="hidden lg:block absolute left-[2.75rem] top-[7.25rem] h-[calc(100%-7rem)] w-0.5 bg-gradient-to-b from-primary/20 to-primary/5" />
-      )}
       <div className="relative flex gap-6 rounded-3xl border border-border bg-card p-7 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
         {index % 2 === 0 && (
-          <div
-            className={`mt-1 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-sm`}
-          >
+          <div className="mt-1 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-sm">
             <Icon className="h-6 w-6 text-primary" />
           </div>
         )}
@@ -227,9 +121,7 @@ function StepCard({
           <p className="text-sm leading-7 text-muted-foreground">{description}</p>
         </div>
         {index % 2 === 1 && (
-          <div
-            className={`mt-1 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-sm`}
-          >
+          <div className="mt-1 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary shadow-sm">
             <Icon className="h-6 w-6 text-primary" />
           </div>
         )}
@@ -239,17 +131,22 @@ function StepCard({
 }
 
 export default function BecomeAPartnerPage() {
+  const t = useTranslations("pages.partner");
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true, margin: "-80px" });
-
   const footerRef = useRef(null);
   const footerInView = useInView(footerRef, { once: true, margin: "-60px" });
+
+  const benefitsList = t.raw("benefitsSection.benefits");
+  const journeySteps = t.raw("journeySection.steps");
+  const partnerTypesList = t.raw("partnerTypesSection.types");
+  const testimonialsList = t.raw("testimonialsSection.testimonials");
+  const statsList = t.raw("statsSection.stats");
 
   return (
     <main className="overflow-hidden bg-background text-foreground">
       {/* ═════════════════════ HERO ═════════════════════ */}
       <section className="relative isolate" ref={heroRef}>
-        {/* Background gradients */}
         <div className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-[radial-gradient(circle_at_15%_12%,rgba(139,92,246,0.08),transparent_28%),radial-gradient(circle_at_85%_8%,rgba(139,92,246,0.06),transparent_26%)]" />
 
         <div className="mx-auto grid max-w-7xl gap-16 px-4 py-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
@@ -261,13 +158,14 @@ export default function BecomeAPartnerPage() {
             transition={{ duration: 0.65, ease: "easeOut" }}
           >
             <SectionEyebrow
-              icon={<Handshake className="h-4 w-4" />}
-              label="Join the Partner Program"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Community / Collaborate / Become a Partner
+                {t("hero.communityLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -277,7 +175,7 @@ export default function BecomeAPartnerPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Grow as a
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -286,13 +184,11 @@ export default function BecomeAPartnerPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Partner
+                  {t("hero.title")}
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                Collaborate with Adon ERP — join a network of trusted
-                professionals who deliver world-class solutions, amplify their
-                brands, and unlock new revenue streams together.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -301,7 +197,7 @@ export default function BecomeAPartnerPage() {
                 href="#benefits"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
-                Become a Partner
+                {t("hero.becomeButton")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -309,7 +205,7 @@ export default function BecomeAPartnerPage() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 <Play className="h-4 w-4" />
-                Watch Overview
+                {t("hero.watchButton")}
               </Link>
             </div>
 
@@ -317,18 +213,15 @@ export default function BecomeAPartnerPage() {
             <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 text-4xl leading-none text-primary">&quot;</div>
               <p className="text-base leading-7 text-card-foreground">
-                Joining AdonERP as a partner transformed our business. The
-                recognition, resources, and community are unmatched — we&apos;ve
-                expanded our reach to more than 15 new clients in just one
-                quarter.
+                {t("hero.testimonial.quote")}
               </p>
               <div className="mt-6 flex items-center justify-between gap-4 border-t border-border pt-5">
                 <div>
                   <p className="font-semibold text-foreground">
-                    Sofia Rodriguez
+                    {t("hero.testimonial.name")}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Head of Partnerships, TechPartner Ltd.
+                    {t("hero.testimonial.role")}
                   </p>
                 </div>
                 <div className="flex items-center gap-1 text-primary">
@@ -382,7 +275,6 @@ export default function BecomeAPartnerPage() {
                 <div className="absolute bottom-16 left-16 h-24 w-24 rounded-[2rem] rounded-b-lg bg-secondary shadow-xl" />
                 <div className="absolute bottom-14 left-[8.5rem] h-28 w-24 rounded-t-[2rem] rounded-b-[2rem] bg-primary shadow-2xl" />
                 <div className="absolute bottom-8 left-36 h-16 w-12 rounded-full bg-primary/40 shadow-lg" />
-
                 <div className="absolute bottom-6 left-[13.5rem] h-12 w-12 rounded-full bg-card shadow-md" />
                 <div className="absolute bottom-6 right-[8.5rem] h-14 w-14 rounded-full bg-secondary/30 shadow-lg" />
                 <div className="absolute bottom-16 right-[5.5rem] h-20 w-20 rounded-[2rem] bg-primary/30 shadow-xl" />
@@ -402,30 +294,26 @@ export default function BecomeAPartnerPage() {
       </section>
 
       {/* ═════════════════════ BENEFITS ═════════════════════ */}
-      <section
-        id="benefits"
-        className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
-      >
+      <section id="benefits" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label="Why join"
+            iconName={t("benefitsSection.eyebrowIcon")}
+            labelKey="benefitsSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Build something worth
+            {t("benefitsSection.title")}
             <br />
-            talking about
+            {t("benefitsSection.subtitle")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            By joining the Adon ERP Partner Program, you gain access to
-            resources, recognition, and opportunities that help you stand out
-            and thrive.
+            {t("benefitsSection.description")}
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
+          {benefitsList.map((benefit: any, index: number) => {
+            const Icon = getIconComponent(benefit.icon);
             return (
               <motion.div
                 key={benefit.title}
@@ -465,50 +353,55 @@ export default function BecomeAPartnerPage() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <SectionEyebrow
-              icon={<Rocket className="h-4 w-4" />}
-              label="Your journey"
+              iconName={t("journeySection.eyebrowIcon")}
+              labelKey="journeySection.eyebrowLabel"
+              t={t}
             />
             <ScriptHeading className="mt-6">
-              Become a partner in four easy steps
+              {t("journeySection.title")}
             </ScriptHeading>
             <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-              Our streamlined process ensures you can go from application to
-              delivering value to clients as quickly as possible.
+              {t("journeySection.description")}
             </p>
           </div>
 
           <div className="flex flex-col gap-8 lg:gap-12">
-            {steps.map((item, index) => (
-              <StepCard key={item.step} {...item} index={index} />
+            {journeySteps.map((step: any, index: number) => (
+              <StepCard
+                key={step.step}
+                step={step.step}
+                title={step.title}
+                description={step.description}
+                iconName={step.icon}
+                index={index}
+                t={t}
+              />
             ))}
           </div>
         </div>
       </section>
 
       {/* ═════════════════════ PARTNER TYPES ═════════════════════ */}
-      <section
-        id="partner-types"
-        className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
-      >
+      <section id="partner-types" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<BadgeCheck className="h-4 w-4" />}
-            label="Partnership models"
+            iconName={t("partnerTypesSection.eyebrowIcon")}
+            labelKey="partnerTypesSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Choose the path
+            {t("partnerTypesSection.title")}
             <br />
-            that fits you
+            {t("partnerTypesSection.subtitle")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            No matter your focus, there&apos;s a partnership tier designed to
-            help you deliver value and grow your business with AdonERP.
+            {t("partnerTypesSection.description")}
           </p>
         </div>
 
         <div className="grid gap-7 lg:grid-cols-3">
-          {partnerTypes.map((type, index) => {
-            const Icon = type.icon;
+          {partnerTypesList.map((type: any, index: number) => {
+            const Icon = getIconComponent(type.icon);
             return (
               <motion.div
                 key={type.title}
@@ -516,15 +409,13 @@ export default function BecomeAPartnerPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true, amount: 0.15 }}
-                className="group relative overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 dark:border-white/10 dark:bg-slate-950/45 dark:shadow-[0_20px_80px_rgba(0,0,0,0.55)]"
+                className="group relative overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-[0_20px_80px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${type.accent} opacity-30 group-hover:opacity-40 transition-opacity dark:hidden`}
-                />
+                <div className={`absolute inset-0 bg-gradient-to-br ${type.accent} opacity-30 group-hover:opacity-40 transition-opacity dark:hidden`} />
                 <div className="absolute inset-0 hidden bg-gradient-to-br from-white/10 via-white/5 to-transparent opacity-40 transition-opacity group-hover:opacity-60 dark:block" />
 
                 <div className="relative space-y-5">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border/60 bg-card/90 shadow-sm dark:border-white/10 dark:bg-white/5">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border/60 bg-card/90 shadow-sm">
                     <Icon className="h-7 w-7 text-primary" />
                   </div>
 
@@ -536,7 +427,7 @@ export default function BecomeAPartnerPage() {
                   </p>
 
                   <div className="flex flex-wrap gap-2">
-                    {type.tags.map((tag) => (
+                    {type.tags.map((tag: string) => (
                       <span
                         key={tag}
                         className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
@@ -547,7 +438,7 @@ export default function BecomeAPartnerPage() {
                   </div>
 
                   <button className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                    Apply now
+                    {t("partnerTypesSection.applyButton")}
                     <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
@@ -561,18 +452,19 @@ export default function BecomeAPartnerPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Users className="h-4 w-4" />}
-            label="Partner stories"
+            iconName={t("testimonialsSection.eyebrowIcon")}
+            labelKey="testimonialsSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Partners who trust us,
+            {t("testimonialsSection.title")}
             <br />
-            grow with us
+            {t("testimonialsSection.subtitle")}
           </ScriptHeading>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2">
-          {testimonials.map((t, index) => (
+          {testimonialsList.map((tItem: any, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -583,24 +475,21 @@ export default function BecomeAPartnerPage() {
             >
               <div className="absolute -top-14 -right-14 h-48 w-48 rounded-full bg-primary/10 blur-3xl" />
               <div className="relative space-y-5">
-                {/* Quote */}
-                <p className="text-base leading-8 text-card-foreground">&quot;{t.quote}&quot;</p>
-
-                {/* Star */}
+                <p className="text-base leading-8 text-card-foreground">
+                  &quot;{tItem.quote}&quot;
+                </p>
                 <div className="flex items-center gap-1 text-primary">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" />
                   ))}
                 </div>
-
-                {/* Author */}
                 <div className="flex items-center gap-4 border-t border-border pt-5">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-sm font-black text-primary-foreground">
-                    {t.avatar}
+                    {tItem.avatar}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.role}</p>
+                    <p className="font-semibold text-foreground">{tItem.name}</p>
+                    <p className="text-sm text-muted-foreground">{tItem.role}</p>
                   </div>
                 </div>
               </div>
@@ -613,11 +502,7 @@ export default function BecomeAPartnerPage() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
         <div className="overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 shadow-sm sm:p-10">
           <div className="grid gap-8 sm:grid-cols-3 lg:gap-12">
-            {[
-              { value: "180+", label: "Countries with active partners" },
-              { value: "3,000+", label: "Certified partners worldwide" },
-              { value: "$500M+", label: "Combined client GMV" },
-            ].map((stat) => (
+            {statsList.map((stat: any) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
@@ -637,18 +522,13 @@ export default function BecomeAPartnerPage() {
       </section>
 
       {/* ═════════════════════ CTA ═════════════════════ */}
-      <section
-        id="get-started"
-        className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
-        ref={footerRef}
-      >
+      <section id="get-started" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28" ref={footerRef}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-primary/90 to-primary/70 px-6 py-16 text-center shadow-[0_50px_130px_rgba(0,0,0,0.22)] sm:px-10 sm:py-20"
         >
-          {/* Background blobs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 h-60 w-60 rounded-full bg-primary/30 blur-3xl" />
             <div className="absolute -bottom-28 -left-28 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
@@ -661,12 +541,11 @@ export default function BecomeAPartnerPage() {
             </div>
 
             <ScriptHeading className="text-white text-4xl sm:text-5xl lg:text-6xl">
-              Ready to grow together?
+              {t("ctaSection.title")}
             </ScriptHeading>
 
             <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
-              Join the Adon ERP Partner Program and start unlocking new
-              opportunities today. Your next chapter starts here.
+              {t("ctaSection.description")}
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -674,7 +553,7 @@ export default function BecomeAPartnerPage() {
                 href="#"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-primary shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5"
               >
-                Apply now
+                {t("ctaSection.applyButton")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -682,12 +561,12 @@ export default function BecomeAPartnerPage() {
                 className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white/40"
               >
                 <Calendar className="h-4 w-4" />
-                Book a call
+                {t("ctaSection.callButton")}
               </Link>
             </div>
 
             <p className="mt-6 text-sm text-primary-foreground/60">
-              Free to apply · No commitment required · Fast review process
+              {t("ctaSection.footerText")}
             </p>
           </div>
         </motion.div>

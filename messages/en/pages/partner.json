@@ -1,0 +1,167 @@
+{
+  "metadata": {
+    "title": "Become a Partner | AdonERP",
+    "description": "Join the Adon ERP Partner Program. Collaborate with a network of trusted professionals, grow your business, and unlock new revenue streams. Choose from implementation, reseller, or consulting partnership models."
+  },
+  "hero": {
+    "eyebrowIcon": "Handshake",
+    "eyebrowLabel": "Join the Partner Program",
+    "communityLabel": "Community / Collaborate / Become a Partner",
+    "preHeading": "Grow as a",
+    "title": "Partner",
+    "description": "Collaborate with Adon ERP — join a network of trusted professionals who deliver world-class solutions, amplify their brands, and unlock new revenue streams together.",
+    "becomeButton": "Become a Partner",
+    "watchButton": "Watch Overview",
+    "testimonial": {
+      "quote": "Joining AdonERP as a partner transformed our business. The recognition, resources, and community are unmatched — we've expanded our reach to more than 15 new clients in just one quarter.",
+      "name": "Sofia Rodriguez",
+      "role": "Head of Partnerships, TechPartner Ltd."
+    }
+  },
+  "benefitsSection": {
+    "eyebrowIcon": "Sparkles",
+    "eyebrowLabel": "Why join",
+    "title": "Build something worth",
+    "subtitle": "talking about",
+    "description": "By joining the Adon ERP Partner Program, you gain access to resources, recognition, and opportunities that help you stand out and thrive.",
+    "benefits": [
+      {
+        "title": "Reach new customers",
+        "description": "Showcase your expertise and grow your business by connecting with clients searching for solutions on AdonERP's growing platform.",
+        "icon": "Target",
+        "gradient": "from-purple-500 to-violet-600"
+      },
+      {
+        "title": "Earn industry recognition",
+        "description": "Build a trusted reputation as an AdonERP certified partner — a mark that signals quality and reliability across markets and industries.",
+        "icon": "Handshake",
+        "gradient": "from-violet-500 to-purple-600"
+      },
+      {
+        "title": "Fast-track your growth",
+        "description": "Access exclusive tools, training, and co-marketing opportunities to shorten your sales cycle and accelerate business outcomes.",
+        "icon": "Rocket",
+        "gradient": "from-purple-600 to-violet-700"
+      },
+      {
+        "title": "Go global with confidence",
+        "description": "Tap into international leads and expand your reach with AdonERP's presence in more than 180 countries worldwide.",
+        "icon": "Globe2",
+        "gradient": "from-indigo-500 to-purple-500"
+      },
+      {
+        "title": "Formal certification path",
+        "description": "Earn platinum, gold, or silver partner credentials with structured exams, supervised training, and official accreditation milestones.",
+        "icon": "BadgeCheck",
+        "gradient": "from-emerald-500 to-teal-600"
+      },
+      {
+        "title": "Dedicated partner support",
+        "description": "Your personal account manager ensures you always have priority access to resources, technical guidance, and sales enablement.",
+        "icon": "Headphones",
+        "gradient": "from-sky-500 to-blue-600"
+      }
+    ]
+  },
+  "journeySection": {
+    "eyebrowIcon": "Rocket",
+    "eyebrowLabel": "Your journey",
+    "title": "Become a partner in four easy steps",
+    "description": "Our streamlined process ensures you can go from application to delivering value to clients as quickly as possible.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Apply to join",
+        "description": "Fill out our partner application form with your company details, market focus, and professional references.",
+        "icon": "Search",
+        "color": "purple"
+      },
+      {
+        "step": "02",
+        "title": "Attend training",
+        "description": "Complete our onboarding curriculum — product fundamentals, best practices, and tools — at your own pace.",
+        "icon": "Lightbulb",
+        "color": "violet"
+      },
+      {
+        "step": "03",
+        "title": "Complete certification",
+        "description": "Pass the exam to earn your official partner certificate and unlock tier bonuses and partner-only resources.",
+        "icon": "ShieldCheck",
+        "color": "indigo"
+      },
+      {
+        "step": "04",
+        "title": "Start growing",
+        "description": "Connect with leads, co-market together, and start delivering AdonERP solutions to your clients.",
+        "icon": "TrendingUp",
+        "color": "emerald"
+      }
+    ]
+  },
+  "partnerTypesSection": {
+    "eyebrowIcon": "BadgeCheck",
+    "eyebrowLabel": "Partnership models",
+    "title": "Choose the path",
+    "subtitle": "that fits you",
+    "description": "No matter your focus, there's a partnership tier designed to help you deliver value and grow your business with AdonERP.",
+    "types": [
+      {
+        "title": "Implementation",
+        "description": "Deploy and customize AdonERP, guide clients through the full setup, and manage long-term upgrades and integrations.",
+        "icon": "Building2",
+        "accent": "from-violet-100 to-purple-100",
+        "tags": ["ERP Setup", "Customization", "Integration"]
+      },
+      {
+        "title": "Reseller",
+        "description": "Sell AdonERP subscriptions and complementary services to your customer base, supported by full training and materials.",
+        "icon": "Megaphone",
+        "accent": "from-purple-100 to-violet-100",
+        "tags": ["Subscription Sales", "B2B Outreach", "Channel Growth"]
+      },
+      {
+        "title": "Consulting",
+        "description": "Lead digital transformation projects, conduct business process engineering, and deliver AdonERP-accelerated consulting engagements.",
+        "icon": "Users",
+        "accent": "from-indigo-100 to-purple-100",
+        "tags": ["Strategy", "Digital Transformation", "Process Engineering"]
+      }
+    ],
+    "applyButton": "Apply now"
+  },
+  "testimonialsSection": {
+    "eyebrowIcon": "Users",
+    "eyebrowLabel": "Partner stories",
+    "title": "Partners who trust us,",
+    "subtitle": "grow with us",
+    "testimonials": [
+      {
+        "quote": "Becoming an AdonERP partner more than doubled our consulting pipelines the first year. The partner team is world-class, and the certification gives real credibility.",
+        "name": "Carlos Mendez",
+        "role": "Director, Mendez Consulting",
+        "avatar": "CM"
+      },
+      {
+        "quote": "The structured partner path and certification tracking made it simple to scale. Our team now serves clients across three countries from one unified hub.",
+        "name": "Aisha Karim",
+        "role": "CEO, Karim Technologies",
+        "avatar": "AK"
+      }
+    ]
+  },
+  "statsSection": {
+    "stats": [
+      { "value": "180+", "label": "Countries with active partners" },
+      { "value": "3,000+", "label": "Certified partners worldwide" },
+      { "value": "$500M+", "label": "Combined client GMV" }
+    ]
+  },
+  "ctaSection": {
+    "title": "Ready to grow together?",
+    "description": "Join the Adon ERP Partner Program and start unlocking new opportunities today. Your next chapter starts here.",
+    "applyButton": "Apply now",
+    "callButton": "Book a call",
+    "footerText": "Free to apply · No commitment required · Fast review process"
+  }
+}
