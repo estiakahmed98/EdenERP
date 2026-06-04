@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "title": "Planning | AdonERP",
+    "description": "AI-powered workforce planning platform for all your scheduling operations — from shift management and resource allocation to conflict avoidance and pivot table analysis."
+  },
+  "hero": {
+    "title": "Smart planning.",
+    "titleHighlight": "No surprises.",
+    "description": "Adon Planning optimizes scheduling through automation. Schedule shifts and resources, manage onsite work, and enjoy the simplicity of integrated timesheets and invoices.",
+    "startButton": "Start now",
+    "dashboard": {
+      "title": "Planning",
+      "subtitle": "Schedule / My Planning / Reporting / Configuration",
+      "newButton": "New",
+      "employees": [
+        "Anita Oliver",
+        "Audrey Peterson",
+        "Beth Evans",
+        "Deco Cola",
+        "Mitchell Admin"
+      ],
+      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "shiftTypes": ["Consultant", "7:00 AM", "Body ME"]
+    }
+  },
+  "schedulingSection": {
+    "title": "Step up",
+    "titleHighlight": "your scheduling game",
+    "description": "Visualize and optimize your schedule. Gain clarity and efficiency with a stunning Gantt chart tool, templates, auto-planning, and recurrent tasks simplify your agenda management.",
+    "labels": {
+      "allocation": "Allocation of hours\nremaining hours"
+    },
+    "demo": {
+      "title": "Add Shift",
+      "shifts": [
+        "8 AM - HR Management",
+        "9 AM - Project Manager",
+        "10 AM - HR Management",
+        "11 AM - CEO"
+      ],
+      "fields": [
+        { "label": "Resource", "value": "Open Shift" },
+        { "label": "Role", "value": "Consultant" },
+        { "label": "Project", "value": "Planning" },
+        { "label": "Repeat", "value": "Weekly" }
+      ],
+      "buttons": {
+        "save": "Save",
+        "publishSave": "Publish & Save",
+        "autoPlan": "Auto Plan"
+      }
+    },
+    "floatingNote": "We cannot wait for you to use this"
+  },
+  "coverShiftSection": {
+    "title": "Cover",
+    "titleHighlight": "my shift?",
+    "description": "Control your planning. Create shifts and reassign them effortlessly using a user-friendly drag-and-drop interface. With collaboration options, allow everyone on the team to see open shifts and switch them among one another.",
+    "demo": {
+      "employee": "Anita Oliver - Developer",
+      "message": "This shift needs to be covered by another team member.",
+      "button": "Unassign shift"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Open shifts",
+        "description": "Leave shifts unassigned and assign them with a simple drag and drop.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Schedule",
+        "description": "Manage all shifts by organizing them by role, employee, or project.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Avoid conflicts",
+        "description": "Get a warning if multiple shifts are scheduled simultaneously for an employee.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Pivot table analysis",
+        "description": "Create advanced pivot tables and export the data in .xls files.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Sales", "description": "Plan from sales orders", "icon": "BarChart3" },
+      { "title": "Project", "description": "Forecast deadlines accurately", "icon": "CheckCircle2" },
+      { "title": "Time Off", "description": "Plan around employees' leave", "icon": "Timer" },
+      { "title": "Payroll", "description": "Security is key", "icon": "BriefcaseBusiness" },
+      { "title": "Timesheet", "description": "Compare with effective hours", "icon": "Clock3" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Adon improved resource management, making planning and invoicing more efficient, enhancing communication and collaboration.",
+    "name": "Cédric Lesaux",
+    "role": "CEO of XLG"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

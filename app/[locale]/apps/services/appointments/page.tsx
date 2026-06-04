@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -25,6 +26,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, Bell, CalendarDays, CheckCircle2, Clock3,
+    Globe2, Mail, MessageCircle, MonitorPlay, Play, Sparkles, Star,
+    Users, Video, ArrowRight,
+  };
+  return icons[iconName] || CalendarDays;
+};
+
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -34,70 +46,64 @@ const avatars = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
 ];
 
-const features = [
-  {
-    title: "Plan and select",
-    description: "Online appointments from any compatible device.",
-  },
-  {
-    title: "Manage time with ease",
-    description: "Set employee schedules and manage resources like rooms.",
-  },
-  {
-    title: "Calendar integration",
-    description: "Fully integrated with the Adon Calendar app.",
-  },
-  {
-    title: "Leads / Opportunities",
-    description: "Create records in your CRM from scheduled meetings.",
-  },
-  {
-    title: "Professional communication",
-    description: "Use clear confirmation and reminder emails.",
-  },
-  {
-    title: "Customer choices",
-    description: "Let customers choose options that fit their needs.",
-  },
-];
-
-const apps = [
-  { title: "Website", description: "Create appointment pages", icon: Globe2 },
-  { title: "Contacts", description: "Manage customer bookings", icon: Users },
-  {
-    title: "WhatsApp",
-    description: "Send booking reminders",
-    icon: MessageCircle,
-  },
-  { title: "SMS Marketing", description: "Reach clients quickly", icon: Mail },
-  {
-    title: "CRM",
-    description: "Convert meetings into opportunities",
-    icon: BarChart3,
-  },
-];
+function FloatingNote({
+  className = "",
+  text = "Project note",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
+}: {
+  className?: string;
+  text?: string;
+  color?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span
+        className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
+      />
+      <img
+        src={avatars[1]}
+        alt=""
+        className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
+      />
+      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white" />
+      <span className="relative z-10">{text}</span>
+    </div>
+  );
+}
 
 export default function AppointmentSchedulingPage() {
+  const t = useTranslations("pages.appointments");
+
+  const appointmentTypes = t.raw("hero.dashboard.appointmentTypes");
+  const availabilityDays = t.raw("availabilitySection.demo.days");
+  const availabilityTimes = t.raw("availabilitySection.demo.times");
+  const availabilityItems = t.raw("setupSection.availabilityItems");
+  const scheduleFields = t.raw("onlineSchedulingSection.demo.fields");
+  const optionsFields = t.raw("optionsSection.demo.fields");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Scheduling{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
               <span className="text-amber-500 dark:text-amber-400">
-                for businesses
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Generate appointments, schedule resources, manage meetings,
-            reminders, video calls, and customer booking pages from one smart
-            system.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -105,18 +111,16 @@ export default function AppointmentSchedulingPage() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
-
-          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div className="absolute -left-10 -top-10 hidden text-rose-400 dark:text-rose-500 sm:block">
@@ -128,41 +132,36 @@ export default function AppointmentSchedulingPage() {
                 <div className="flex items-center gap-3">
                   <CalendarDays className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Appointments
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Slots / Bookings / Availability / Reporting
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  New
+                  {t("hero.dashboard.newButton")}
                 </button>
               </div>
 
               <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
                 <p className="mb-5 text-left font-bold text-slate-900 dark:text-white">
-                  Choose your appointments
+                  {t("hero.dashboard.chooseText")}
                 </p>
 
                 <div className="grid gap-4 md:grid-cols-4">
-                  {[
-                    ["Consultation", "Book a discovery meeting"],
-                    ["Demo Call", "See the product live"],
-                    ["Onsite Meeting", "Meet with an expert"],
-                    ["Support Session", "Get help from our team"],
-                  ].map(([title, desc], index) => (
+                  {appointmentTypes.map((type: any, index: number) => (
                     <div
-                      key={title}
+                      key={type.title}
                       className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
                     >
                       <div
                         className={`h-28 ${
-                          index === 0
+                          type.bgColor === "slate"
                             ? "bg-slate-200 dark:bg-slate-700"
-                            : index === 1
+                            : type.bgColor === "emerald"
                               ? "bg-emerald-100 dark:bg-emerald-900/50"
-                              : index === 2
+                              : type.bgColor === "rose"
                                 ? "bg-rose-100 dark:bg-rose-900/50"
                                 : "bg-amber-100 dark:bg-amber-900/50"
                         }`}
@@ -170,14 +169,14 @@ export default function AppointmentSchedulingPage() {
 
                       <div className="p-4">
                         <h3 className="font-bold text-slate-900 dark:text-white">
-                          {title}
+                          {type.title}
                         </h3>
                         <p className="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
-                          {desc}
+                          {type.description}
                         </p>
 
                         <button className="mt-4 rounded-md bg-[#714b67] px-3 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                          Book now
+                          {t("hero.dashboard.bookButton")}
                         </button>
                       </div>
                     </div>
@@ -195,6 +194,7 @@ export default function AppointmentSchedulingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Appointments at your customers fingertips Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -202,29 +202,28 @@ export default function AppointmentSchedulingPage() {
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Appointments, at your
+              {t("availabilitySection.title")}
               <br />
-              customers fingertips{" "}
+              {t("availabilitySection.subtitle")}{" "}
               <span className="text-amber-500 dark:text-amber-400">👌</span>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Scheduling made easy. Access a free platform to schedule, discuss,
-              and share availabilities with your customers.
+              {t("availabilitySection.description")}
             </p>
           </div>
 
           <div className="mx-auto w-full max-w-xs rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex items-center justify-between">
               <p className="font-bold text-slate-900 dark:text-white">
-                Select a date & time
+                {t("availabilitySection.demo.title")}
               </p>
               <span className="text-slate-400 dark:text-slate-500">×</span>
             </div>
 
             <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
-              {["M", "T", "W", "T", "F", "S", "S"].map((day, index) => (
-                <span key={index}>{day}</span>
+              {availabilityDays.map((day: string, idx: number) => (
+                <span key={idx}>{day}</span>
               ))}
             </div>
 
@@ -246,7 +245,7 @@ export default function AppointmentSchedulingPage() {
             </div>
 
             <div className="mt-5 grid grid-cols-2 gap-2">
-              {["09:00", "10:30", "14:00", "16:30"].map((time) => (
+              {availabilityTimes.map((time: string) => (
                 <button
                   key={time}
                   className="rounded-md border border-slate-200 dark:border-slate-700 px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition"
@@ -259,24 +258,24 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
+      {/* Set availabilities, get your link, and connect your calendar Section */}
       <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Set{" "}
+            {t("setupSection.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-              <span className="dark:text-amber-200">availabilities</span>
+              <span className="dark:text-amber-200">{t("setupSection.titleHighlight")}</span>
             </HandUnderline>
-            , get your link,
+            , {t("setupSection.titleMiddle")}
             <br />
-            and connect your calendar
+            {t("setupSection.titleEnd")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Configure templates, upload availability, publish your booking page,
-            and sync it with your Google Calendar, Outlook, and more.
+            {t("setupSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_80px_1fr]">
@@ -285,11 +284,7 @@ export default function AppointmentSchedulingPage() {
                 Availability
               </p>
 
-              {[
-                "Monday 9:00 - 17:00",
-                "Tuesday 9:00 - 17:00",
-                "Wednesday 10:00 - 16:00",
-              ].map((item) => (
+              {availabilityItems.map((item: string) => (
                 <div
                   key={item}
                   className="mb-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300"
@@ -303,8 +298,8 @@ export default function AppointmentSchedulingPage() {
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
               <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
-                {["M", "T", "W", "T", "F", "S", "S"].map((day, index) => (
-                  <span key={index}>{day}</span>
+                {availabilityDays.map((day: string, idx: number) => (
+                  <span key={idx}>{day}</span>
                 ))}
               </div>
 
@@ -327,6 +322,7 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
+      {/* Never miss out on an opportunity Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -334,16 +330,15 @@ export default function AppointmentSchedulingPage() {
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Never miss out on an
+              {t("opportunitySection.title")}
               <br />
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">opportunity!</span>
+                <span className="dark:text-sky-200">{t("opportunitySection.titleHighlight")}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Use appointment scheduling to transform every conversation into an
-              opportunity, meeting, lead, or customer relationship.
+              {t("opportunitySection.description")}
             </p>
           </div>
 
@@ -359,7 +354,6 @@ export default function AppointmentSchedulingPage() {
                     alt=""
                     className="h-40 w-full object-cover"
                   />
-
                   <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-xs font-bold text-white">
                     {index === 0 ? "Sales call" : "Meeting"}
                   </span>
@@ -369,12 +363,13 @@ export default function AppointmentSchedulingPage() {
 
             <div className="mt-4 flex items-center justify-center gap-3 rounded-lg bg-slate-900 dark:bg-slate-800 p-4 text-white">
               <Video className="h-5 w-5" />
-              <span className="text-sm font-bold">Video meeting ready</span>
+              <span className="text-sm font-bold">{t("opportunitySection.demo.videoReady")}</span>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Online appointment scheduling made easy Section */}
       <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <CalendarDays className="mx-auto h-12 w-12 text-[#02a6a6] dark:text-[#02cfc3]" />
@@ -383,32 +378,26 @@ export default function AppointmentSchedulingPage() {
             className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Online appointment{" "}
+            {t("onlineSchedulingSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">scheduling</span>
+              <span className="dark:text-[#02cfc3]">{t("onlineSchedulingSection.titleHighlight")}</span>
             </HandUnderline>
             <br />
-            made easy
+            {t("onlineSchedulingSection.titleEnd")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Manage appointment scheduling with automated forms, custom
-            questions, and a simple booking experience for customers.
+            {t("onlineSchedulingSection.description")}
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-slate-900/70 dark:bg-slate-800/70 p-12 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
             <div className="mx-auto max-w-xl rounded-lg bg-white dark:bg-slate-900 p-7 text-left">
               <p className="mb-5 font-bold text-slate-900 dark:text-white">
-                Schedule meeting
+                {t("onlineSchedulingSection.demo.title")}
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  ["Appointment type", "Business Consultation"],
-                  ["Contact", "Customer name"],
-                  ["Date", "July 24, 2026"],
-                  ["Time", "10:30 AM"],
-                ].map(([label, value]) => (
+                {scheduleFields.map(([label, value]: [string, string]) => (
                   <div key={label}>
                     <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
                       {label}
@@ -421,13 +410,14 @@ export default function AppointmentSchedulingPage() {
               </div>
 
               <button className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                Confirm appointment
+                {t("onlineSchedulingSection.demo.button")}
               </button>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Reporting - Analyze your bookings Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -436,23 +426,22 @@ export default function AppointmentSchedulingPage() {
               style={{ fontFamily: handwrittenFont }}
             >
               <span className="relative inline-block px-2">
-                <span className="relative z-10">Reporting:</span>
+                <span className="relative z-10">{t("reportingSection.title")}</span>
                 <span className="absolute inset-x-0 bottom-2 h-6 rounded-lg bg-amber-300 dark:bg-amber-700" />
               </span>{" "}
-              Analyze your
+              {t("reportingSection.titleHighlight")}
               <br />
-              bookings
+              {t("reportingSection.titleEnd")}
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Optimize your resources based on time constraints and discover how
-              customers interact with your booking flow.
+              {t("reportingSection.description")}
             </p>
 
             <FloatingNote
               className="mt-10 z-30"
               color="bg-sky-400 dark:bg-sky-800"
-              text="Appointment reporting has never been easier"
+              text={t("reportingSection.floatingNote")}
             />
           </div>
 
@@ -474,29 +463,22 @@ export default function AppointmentSchedulingPage() {
         </div>
       </section>
 
+      {/* Appointments loaded with options Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex items-center justify-between">
               <p className="font-bold text-slate-900 dark:text-white">
-                Appointment
+                {t("optionsSection.demo.title")}
               </p>
               <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                Confirmed
+                {t("optionsSection.demo.status")}
               </span>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                ["Customer", "Anita Oliver"],
-                ["Meeting", "Business consultation"],
-                ["Date", "July 24, 2026"],
-                ["Options", "Video call + Reminder"],
-              ].map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
-                >
+              {optionsFields.map(([label, value]: [string, string]) => (
+                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
                   <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
                     {label}
                   </p>
@@ -513,23 +495,21 @@ export default function AppointmentSchedulingPage() {
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Appointments loaded
+              {t("optionsSection.title")}
               <br />
-              with{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="dark:text-[#02cfc3]">options</span>
+                <span className="dark:text-[#02cfc3]">{t("optionsSection.titleHighlight")}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Set your schedule, manage appointment configuration, and
-              communication messages. Each booking can include extra options and
-              custom questions.
+              {t("optionsSection.description")}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Send calendar alarms or reminders Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -537,16 +517,14 @@ export default function AppointmentSchedulingPage() {
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Send calendar alarms
+              {t("remindersSection.title")}
               <br />
-              or reminders{" "}
+              {t("remindersSection.subtitle")}{" "}
               <span className="text-amber-500 dark:text-amber-400">🔔</span>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Get into contact reminders using customized text messages,
-              WhatsApp notifications, and email reminders so everyone shows up
-              on time.
+              {t("remindersSection.description")}
             </p>
           </div>
 
@@ -562,31 +540,31 @@ export default function AppointmentSchedulingPage() {
 
               <div>
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Reminder message
+                  {t("remindersSection.demo.title")}
                 </p>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Sent 24 hours before
+                  {t("remindersSection.demo.subtitle")}
                 </p>
               </div>
             </div>
 
             <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Hi Anita, this is a reminder for your appointment tomorrow at
-              10:30 AM. Reply CONFIRM to keep your booking.
+              {t("remindersSection.demo.message")}
             </div>
 
             <div className="mt-5 flex gap-3">
               <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                Send reminder
+                {t("remindersSection.demo.sendButton")}
               </button>
               <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                Preview
+                {t("remindersSection.demo.previewButton")}
               </button>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -596,7 +574,7 @@ export default function AppointmentSchedulingPage() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
@@ -604,13 +582,13 @@ export default function AppointmentSchedulingPage() {
             <br />
             done{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">right.</span>
+              <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -619,7 +597,6 @@ export default function AppointmentSchedulingPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -638,35 +615,28 @@ export default function AppointmentSchedulingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
+            
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
+              <span className="dark:text-sky-200">{t("appsSection.description")}</span>
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
-          </p>
-
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -693,11 +663,12 @@ export default function AppointmentSchedulingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -741,10 +712,10 @@ export default function AppointmentSchedulingPage() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -757,8 +728,7 @@ export default function AppointmentSchedulingPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  By improving CRM-related features, Enadysim estimates
-                  management and efficiency in the appointment process.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -770,10 +740,10 @@ export default function AppointmentSchedulingPage() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Milan Ayala
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      CEO
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -790,58 +760,26 @@ export default function AppointmentSchedulingPage() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Project note",
-  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt=""
-        className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
-      />
-
-      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white" />
-
-      <span className="relative z-10">{text}</span>
-    </div>
   );
 }

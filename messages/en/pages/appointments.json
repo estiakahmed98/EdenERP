@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "title": "Appointment Scheduling | AdonERP",
+    "description": "AI-powered appointment scheduling platform for all your booking operations — from online appointments and calendar integration to reminders, video calls, and customer booking pages."
+  },
+  "hero": {
+    "title": "Scheduling",
+    "titleHighlight": "for businesses",
+    "description": "Generate appointments, schedule resources, manage meetings, reminders, video calls, and customer booking pages from one smart system.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "dashboard": {
+      "title": "Appointments",
+      "subtitle": "Slots / Bookings / Availability / Reporting",
+      "newButton": "New",
+      "chooseText": "Choose your appointments",
+      "appointmentTypes": [
+        { "title": "Consultation", "description": "Book a discovery meeting", "bgColor": "slate" },
+        { "title": "Demo Call", "description": "See the product live", "bgColor": "emerald" },
+        { "title": "Onsite Meeting", "description": "Meet with an expert", "bgColor": "rose" },
+        { "title": "Support Session", "description": "Get help from our team", "bgColor": "amber" }
+      ],
+      "bookButton": "Book now"
+    }
+  },
+  "availabilitySection": {
+    "title": "Appointments, at your",
+    "subtitle": "customers fingertips",
+    "description": "Scheduling made easy. Access a free platform to schedule, discuss, and share availabilities with your customers.",
+    "demo": {
+      "title": "Select a date & time",
+      "days": ["M", "T", "W", "T", "F", "S", "S"],
+      "times": ["09:00", "10:30", "14:00", "16:30"]
+    }
+  },
+  "setupSection": {
+    "title": "Set",
+    "titleHighlight": "availabilities",
+    "titleMiddle": "get your link,",
+    "titleEnd": "and connect your calendar",
+    "description": "Configure templates, upload availability, publish your booking page, and sync it with your Google Calendar, Outlook, and more.",
+    "availabilityItems": [
+      "Monday 9:00 - 17:00",
+      "Tuesday 9:00 - 17:00",
+      "Wednesday 10:00 - 16:00"
+    ]
+  },
+  "opportunitySection": {
+    "title": "Never miss out on an",
+    "titleHighlight": "opportunity!",
+    "description": "Use appointment scheduling to transform every conversation into an opportunity, meeting, lead, or customer relationship.",
+    "demo": {
+      "videoReady": "Video meeting ready"
+    }
+  },
+  "onlineSchedulingSection": {
+    "title": "Online appointment",
+    "titleHighlight": "scheduling",
+    "titleEnd": "made easy",
+    "description": "Manage appointment scheduling with automated forms, custom questions, and a simple booking experience for customers.",
+    "demo": {
+      "title": "Schedule meeting",
+      "fields": [
+        ["Appointment type", "Business Consultation"],
+        ["Contact", "Customer name"],
+        ["Date", "July 24, 2026"],
+        ["Time", "10:30 AM"]
+      ],
+      "button": "Confirm appointment"
+    }
+  },
+  "reportingSection": {
+    "title": "Reporting:",
+    "titleHighlight": "Analyze your",
+    "titleEnd": "bookings",
+    "description": "Optimize your resources based on time constraints and discover how customers interact with your booking flow.",
+    "floatingNote": "Appointment reporting has never been easier"
+  },
+  "optionsSection": {
+    "title": "Appointments loaded",
+    "titleHighlight": "with options",
+    "description": "Set your schedule, manage appointment configuration, and communication messages. Each booking can include extra options and custom questions.",
+    "demo": {
+      "title": "Appointment",
+      "status": "Confirmed",
+      "fields": [
+        ["Customer", "Anita Oliver"],
+        ["Meeting", "Business consultation"],
+        ["Date", "July 24, 2026"],
+        ["Options", "Video call + Reminder"]
+      ]
+    }
+  },
+  "remindersSection": {
+    "title": "Send calendar alarms",
+    "subtitle": "or reminders",
+    "description": "Get into contact reminders using customized text messages, WhatsApp notifications, and email reminders so everyone shows up on time.",
+    "demo": {
+      "title": "Reminder message",
+      "subtitle": "Sent 24 hours before",
+      "message": "Hi Anita, this is a reminder for your appointment tomorrow at 10:30 AM. Reply CONFIRM to keep your booking.",
+      "sendButton": "Send reminder",
+      "previewButton": "Preview"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Plan and select",
+        "description": "Online appointments from any compatible device.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Manage time with ease",
+        "description": "Set employee schedules and manage resources like rooms.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Calendar integration",
+        "description": "Fully integrated with the Adon Calendar app.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Leads / Opportunities",
+        "description": "Create records in your CRM from scheduled meetings.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Professional communication",
+        "description": "Use clear confirmation and reminder emails.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Customer choices",
+        "description": "Let customers choose options that fit their needs.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Website", "description": "Create appointment pages", "icon": "Globe2" },
+      { "title": "Contacts", "description": "Manage customer bookings", "icon": "Users" },
+      { "title": "WhatsApp", "description": "Send booking reminders", "icon": "MessageCircle" },
+      { "title": "SMS Marketing", "description": "Reach clients quickly", "icon": "Mail" },
+      { "title": "CRM", "description": "Convert meetings into opportunities", "icon": "BarChart3" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "By improving CRM-related features, Enadysim estimates management and efficiency in the appointment process.",
+    "name": "Milan Ayala",
+    "role": "CEO"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}
