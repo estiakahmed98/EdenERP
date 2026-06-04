@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "title": "Forum | AdonERP",
+    "description": "Join the Adon ERP community forum. Ask questions, share insights, discuss development, and have a say in the product roadmap. Connect with developers, users, and partners from 180+ countries."
+  },
+  "hero": {
+    "eyebrowIcon": "MessageSquareText",
+    "eyebrowLabel": "Join the conversation",
+    "communityLabel": "Community / Collaborate / Forum",
+    "preHeading": "Questions, tips,",
+    "title": "discussions",
+    "description": "The Adon ERP community forum is where developers, users, and partners connect. Ask questions, share insights, and have a say in the product roadmap.",
+    "browseButton": "Browse categories",
+    "startButton": "Start a thread",
+    "stats": [
+      { "value": "50K+", "label": "Posts" },
+      { "value": "12K+", "label": "Members" },
+      { "value": "180+", "label": "Countries" },
+      { "value": "< 2hrs", "label": "Avg response" }
+    ],
+    "recentThreads": [
+      { "title": "How to extend Purchase module with custom fields", "meta": "Sofia L. · 5 replies · 10m ago", "hot": true },
+      { "title": "Feature request: webhook for stock notifications", "meta": "Lena K. · 12 replies · 25m ago", "hot": true },
+      { "title": "v17: multi-currency journal entry best practices", "meta": "Rajesh M. · 8 replies · 1h ago", "hot": false },
+      { "title": "Beginner: first module — need help", "meta": "Jules P. · 3 replies · 2h ago", "hot": false },
+      { "title": "Bug report — inventory reconciliation quirk", "meta": "Omar Y. · 1h ago", "hot": false }
+    ]
+  },
+  "categoriesSection": {
+    "eyebrowIcon": "BookOpen",
+    "eyebrowLabel": "Forum desks",
+    "title": "Find the right place to ask",
+    "description": "Every topic has a home. Browse categories and jump into the conversation that matters most to you.",
+    "categories": [
+      {
+        "title": "General Discussion",
+        "description": "Chat about anything Adon ERP — from quick tips to deep architectural debates.",
+        "count": "2.4K threads",
+        "icon": "MessageSquareText",
+        "gradient": "from-blue-500 to-indigo-600"
+      },
+      {
+        "title": "Getting Started",
+        "description": "New to Adon ERP? Ask setup questions, browse tutorials, and connect with mentors.",
+        "count": "1.8K threads",
+        "icon": "BookOpen",
+        "gradient": "from-emerald-500 to-teal-600"
+      },
+      {
+        "title": "Development & API",
+        "description": "Dive into the codebase, discuss API endpoints, and share integration patterns.",
+        "count": "3.1K threads",
+        "icon": "Code2",
+        "gradient": "from-violet-500 to-purple-600"
+      },
+      {
+        "title": "Feature Requests",
+        "description": "Propose new features, vote on what the community wants next, and shape the roadmap.",
+        "count": "965 threads",
+        "icon": "Zap",
+        "gradient": "from-amber-500 to-orange-600"
+      },
+      {
+        "title": "Bug Reports",
+        "description": "Found something unexpected? File a bug report here and get triage from the team.",
+        "count": "760 threads",
+        "icon": "ShieldCheck",
+        "gradient": "from-rose-500 to-pink-600"
+      },
+      {
+        "title": "Ideas & Show & Tell",
+        "description": "Share what you have built, demo your modules, and inspire the next contributor.",
+        "count": "540 threads",
+        "icon": "Lightbulb",
+        "gradient": "from-cyan-500 to-sky-600"
+      }
+    ]
+  },
+  "whyForumSection": {
+    "eyebrowIcon": "Rocket",
+    "eyebrowLabel": "Why a forum",
+    "title": "Built for answers, not noise",
+    "description": "Reddit-style chaos has no place here. Our forum is curated, voted, and moderated — so the good stuff rises to the top.",
+    "features": [
+      {
+        "title": "Search everything",
+        "description": "Full-text search across all threads, replies, and attachments — find the answer before you ask.",
+        "icon": "Search"
+      },
+      {
+        "title": "Vote on answers",
+        "description": "Upvote helpful replies so the best solution rises to the top. Accepted answers get a green check.",
+        "icon": "ThumbsUp"
+      },
+      {
+        "title": "Community-led support",
+        "description": "Active contributors and maintainers answer questions daily. Average first response is under 2 hours.",
+        "icon": "Headphones"
+      },
+      {
+        "title": "Trending topics",
+        "description": "Hot threads are surfaced on the home page so you never miss a topic the community is buzzing about.",
+        "icon": "TrendingUp"
+      }
+    ]
+  },
+  "recentThreadsSection": {
+    "eyebrowIcon": "Flame",
+    "eyebrowLabel": "Trending now",
+    "title": "Hot threads from this week",
+    "description": "Catch up on what the community is talking about right now.",
+    "threads": [
+      {
+        "title": "How to extend the Purchase module with custom fields?",
+        "category": "Development & API",
+        "author": "Sofia L.",
+        "replies": 14,
+        "views": 312,
+        "lastActive": "2 hours ago",
+        "tags": ["purchase", "custom-fields"]
+      },
+      {
+        "title": "Best practices for multi-currency reporting in v17?",
+        "category": "General Discussion",
+        "author": "Rajesh M.",
+        "replies": 8,
+        "views": 189,
+        "lastActive": "5 hours ago",
+        "tags": ["multi-currency", "reporting"]
+      },
+      {
+        "title": "Feature request: webhook notifications for stock transfers",
+        "category": "Feature Requests",
+        "author": "Lena K.",
+        "replies": 34,
+        "views": 721,
+        "lastActive": "30 minutes ago",
+        "tags": ["webhook", "inventory", "feature-request"]
+      },
+      {
+        "title": "Getting Started guide for Windows dev setup",
+        "category": "Getting Started",
+        "author": "Jules P.",
+        "replies": 21,
+        "views": 540,
+        "lastActive": "1 hour ago",
+        "tags": ["windows", "setup", "dev"]
+      },
+      {
+        "title": "Bug: stock reconciliation produces negative qty on partial picks",
+        "category": "Bug Reports",
+        "author": "Omar Y.",
+        "replies": 6,
+        "views": 134,
+        "lastActive": "12 hours ago",
+        "tags": ["inventory", "bug", "stock"]
+      },
+      {
+        "title": "Show & Tell: our custom CRM module for service firms",
+        "category": "Ideas & Show & Tell",
+        "author": "Nadia R.",
+        "replies": 18,
+        "views": 445,
+        "lastActive": "3 hours ago",
+        "tags": ["crm", "module", "show-and-tell"]
+      }
+    ],
+    "viewAllButton": "View all threads"
+  },
+  "contributorsSection": {
+    "eyebrowIcon": "Star",
+    "eyebrowLabel": "Hall of voices",
+    "title": "Our top forum contributors",
+    "description": "Members who consistently help others, welcome newcomers, and keep the conversation constructive.",
+    "contributors": [
+      { "name": "Omar Yousef", "posts": 382, "badges": 12, "role": "Moderator" },
+      { "name": "Aisha Karim", "posts": 291, "badges": 9, "role": "Top Contributor" },
+      { "name": "Lena Kowalska", "posts": 245, "badges": 8, "role": "Top Contributor" },
+      { "name": "Tiago Nascimento", "posts": 198, "badges": 6, "role": "Contributor" }
+    ]
+  },
+  "guidelinesSection": {
+    "eyebrowIcon": "ShieldCheck",
+    "eyebrowLabel": "Community guidelines",
+    "title": "Keep it welcoming",
+    "description": "A great community starts with great behaviour. Follow these simple rules and help us keep Adon ERP a safe, inclusive place.",
+    "rules": [
+      {
+        "title": "Be respectful",
+        "description": "Treat every member with kindness. Constructive debate is welcome; personal attacks are not.",
+        "icon": "CheckCircle2"
+      },
+      {
+        "title": "Search before posting",
+        "description": "Chances are someone has already asked your question. A quick search saves everyone time.",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "Stay on topic",
+        "description": "Keep discussions relevant to Adon ERP. Off-topic posts dilute the signal for everyone.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Match the tone",
+        "description": "Jargon-free when helping beginners. Detailed and precise when discussing maintainer-level topics.",
+        "icon": "ShieldCheck"
+      }
+    ]
+  },
+  "testimonialsSection": {
+    "eyebrowIcon": "Users",
+    "eyebrowLabel": "Member voices",
+    "title": "From the",
+    "subtitle": "community forum",
+    "testimonials": [
+      {
+        "quote": "I asked a question about custom reports at 9 pm and had three excellent answers before I went to bed. This forum is genuinely the best developer community I have joined.",
+        "name": "Julia Saab",
+        "role": "ERP Consultant · Lebanon",
+        "avatar": "JS"
+      },
+      {
+        "quote": "The search is so good that I rarely even need to post. Being able to upvote the right answer means the next person with the same problem gets instant help.",
+        "name": "Kwame Osei",
+        "role": "Full-stack Developer · Ghana",
+        "avatar": "KO"
+      }
+    ]
+  },
+  "ctaSection": {
+    "title": "Ready to join the conversation?",
+    "description": "Whether you are here to ask, answer, or just lurk — the Adon ERP community forum welcomes you.",
+    "createButton": "Create an account",
+    "guidelinesButton": "Read the guidelines",
+    "footerText": "Free & open to everyone · No spam · Community-moderated"
+  }
+}

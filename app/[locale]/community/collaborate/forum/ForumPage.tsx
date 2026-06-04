@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import { useMessages } from "next-intl";
 import {
   ArrowRight,
   BarChart3,
@@ -28,166 +29,52 @@ import {
 } from "lucide-react";
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const CATEGORIES = [
-  {
-    icon: MessageSquareText,
-    title: "General Discussion",
-    description:
-      "Chat about anything Adon ERP — from quick tips to deep architectural debates.",
-    count: "2.4K threads",
-    color: "text-blue-600",
-    bg: "bg-blue-50",
-    gradient: "from-blue-500 to-indigo-600",
-  },
-  {
-    icon: BookOpen,
-    title: "Getting Started",
-    description:
-      "New to Adon ERP? Ask setup questions, browse tutorials, and connect with mentors.",
-    count: "1.8K threads",
-    color: "text-emerald-600",
-    bg: "bg-emerald-50",
-    gradient: "from-emerald-500 to-teal-600",
-  },
-  {
-    icon: Code2,
-    title: "Development & API",
-    description:
-      "Dive into the codebase, discuss API endpoints, and share integration patterns.",
-    count: "3.1K threads",
-    color: "text-violet-600",
-    bg: "bg-violet-50",
-    gradient: "from-violet-500 to-purple-600",
-  },
-  {
-    icon: Zap,
-    title: "Feature Requests",
-    description:
-      "Propose new features, vote on what the community wants next, and shape the roadmap.",
-    count: "965 threads",
-    color: "text-amber-600",
-    bg: "bg-amber-50",
-    gradient: "from-amber-500 to-orange-600",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Bug Reports",
-    description:
-      "Found something unexpected? File a bug report here and get triage from the team.",
-    count: "760 threads",
-    color: "text-rose-600",
-    bg: "bg-rose-50",
-    gradient: "from-rose-500 to-pink-600",
-  },
-  {
-    icon: Lightbulb,
-    title: "Ideas & Show & Tell",
-    description:
-      "Share what you have built, demo your modules, and inspire the next contributor.",
-    count: "540 threads",
-    color: "text-cyan-600",
-    bg: "bg-cyan-50",
-    gradient: "from-cyan-500 to-sky-600",
-  },
-];
+type MessageRecord = Record<string, unknown>;
+type ScopedTranslator = ((key: string) => string) & {
+  raw: (key: string) => unknown;
+};
 
-const FEATURES = [
-  {
-    icon: Search,
-    title: "Search everything",
-    description:
-      "Full-text search across all threads, replies, and attachments — find the answer before you ask.",
-  },
-  {
-    icon: ThumbsUp,
-    title: "Vote on answers",
-    description:
-      "Upvote helpful replies so the best solution rises to the top. Accepted answers get a green check.",
-  },
-  {
-    icon: Headphones,
-    title: "Community-led support",
-    description:
-      "Active contributors and maintainers answer questions daily. Average first response is under 2 hours.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Trending topics",
-    description:
-      "Hot threads are surfaced on the home page so you never miss a topic the community is buzzing about.",
-  },
-];
+function isRecord(value: unknown): value is MessageRecord {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
 
-const RECENT_THREADS = [
-  {
-    title: "How to extend the Purchase module with custom fields?",
-    category: "Development & API",
-    author: "Sofia L.",
-    replies: 14,
-    views: 312,
-    lastActive: "2 hours ago",
-    tags: ["purchase", "custom-fields"],
-  },
-  {
-    title: "Best practices for multi-currency reporting in v17?",
-    category: "General Discussion",
-    author: "Rajesh M.",
-    replies: 8,
-    views: 189,
-    lastActive: "5 hours ago",
-    tags: ["multi-currency", "reporting"],
-  },
-  {
-    title: "Feature request: webhook notifications for stock transfers",
-    category: "Feature Requests",
-    author: "Lena K.",
-    replies: 34,
-    views: 721,
-    lastActive: "30 minutes ago",
-    tags: ["webhook", "inventory", "feature-request"],
-  },
-  {
-    title: "Getting Started guide for Windows dev setup",
-    category: "Getting Started",
-    author: "Jules P.",
-    replies: 21,
-    views: 540,
-    lastActive: "1 hour ago",
-    tags: ["windows", "setup", "dev"],
-  },
-  {
-    title: "Bug: stock reconciliation produces negative qty on partial picks",
-    category: "Bug Reports",
-    author: "Omar Y.",
-    replies: 6,
-    views: 134,
-    lastActive: "12 hours ago",
-    tags: ["inventory", "bug", "stock"],
-  },
-  {
-    title: "Show & Tell: our custom CRM module for service firms",
-    category: "Ideas & Show & Tell",
-    author: "Nadia R.",
-    replies: 18,
-    views: 445,
-    lastActive: "3 hours ago",
-    tags: ["crm", "module", "show-and-tell"],
-  },
-];
+function getByPath(source: unknown, keyPath: string): unknown {
+  return keyPath.split(".").reduce<unknown>((currentValue, key) => {
+    if (!isRecord(currentValue)) {
+      return undefined;
+    }
 
-const TOP_CONTRIBUTORS = [
-  { name: "Omar Yousef", posts: 382, badges: 12, role: "Moderator" },
-  { name: "Aisha Karim", posts: 291, badges: 9, role: "Top Contributor" },
-  { name: "Lena Kowalska", posts: 245, badges: 8, role: "Top Contributor" },
-  { name: "Tiago Nascimento", posts: 198, badges: 6, role: "Contributor" },
-];
+    return currentValue[key];
+  }, source);
+}
 
-const STATS = [
-  { value: "50K+", label: "Posts" },
-  { value: "12K+", label: "Members" },
-  { value: "180+", label: "Countries" },
-  { value: "< 2hrs", label: "Avg response" },
-];
+function createTranslator(scope: unknown): ScopedTranslator {
+  const translator = ((key: string) => {
+    const value = getByPath(scope, key);
+
+    return typeof value === "string" || typeof value === "number"
+      ? String(value)
+      : key;
+  }) as ScopedTranslator;
+
+  translator.raw = (key: string) => getByPath(scope, key);
+
+  return translator;
+}
+
+function asArray(value: unknown): unknown[] {
+  return Array.isArray(value) ? value : [];
+}
+
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    MessageSquareText, BookOpen, Code2, Zap, ShieldCheck, Lightbulb,
+    Search, ThumbsUp, Headphones, TrendingUp, CheckCircle2, Sparkles,
+    Rocket, Star, Users, Flame, BarChart3, ArrowRight, PlusCircle,
+  };
+  return icons[iconName] || MessageSquareText;
+};
 
 function ScriptHeading({
   children,
@@ -209,16 +96,21 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
   );
 }
@@ -252,8 +144,22 @@ function HandUnderlineText({
 }
 
 export default function ForumPage() {
+  const messages = useMessages();
+  const forumMessages =
+    getByPath(messages, "pages.collaborate.forum") ??
+    getByPath(messages, "pages.community.forum");
+  const t = createTranslator(forumMessages);
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true, margin: "-80px" });
+
+  const heroStats = asArray(t.raw("hero.stats"));
+  const heroThreads = asArray(t.raw("hero.recentThreads"));
+  const categoriesList = asArray(t.raw("categoriesSection.categories"));
+  const whyFeatures = asArray(t.raw("whyForumSection.features"));
+  const recentThreadsList = asArray(t.raw("recentThreadsSection.threads"));
+  const contributorsList = asArray(t.raw("contributorsSection.contributors"));
+  const guidelinesRules = asArray(t.raw("guidelinesSection.rules"));
+  const testimonialsList = asArray(t.raw("testimonialsSection.testimonials"));
 
   return (
     <main className="overflow-hidden bg-background text-foreground">
@@ -270,13 +176,14 @@ export default function ForumPage() {
             transition={{ duration: 0.65, ease: "easeOut" }}
           >
             <SectionEyebrow
-              icon={<MessageSquareText className="h-4 w-4" />}
-              label="Join the conversation"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Community / Collaborate / Forum
+                {t("hero.communityLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -286,7 +193,7 @@ export default function ForumPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  Questions, tips,
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -295,13 +202,11 @@ export default function ForumPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  <span className="text-primary">discussions</span>
+                  <span className="text-primary">{t("hero.title")}</span>
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                The Adon ERP community forum is where developers, users, and
-                partners connect. Ask questions, share insights, and have a say
-                in the product roadmap.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -311,20 +216,20 @@ export default function ForumPage() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
                 <MessageSquareText className="h-4 w-4" />
-                Browse categories
+                {t("hero.browseButton")}
               </Link>
               <a
                 href="#"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 <PlusCircle className="h-4 w-4" />
-                Start a thread
+                {t("hero.startButton")}
               </a>
             </div>
 
             {/* Stats strip */}
             <div className="grid grid-cols-4 gap-3 rounded-2xl border border-primary/20 bg-card/80 p-5 backdrop-blur-sm shadow-sm">
-              {STATS.map((s) => (
+              {heroStats.map((s: any) => (
                 <div key={s.label} className="text-center">
                   <p className="text-xl font-black text-primary">{s.value}</p>
                   <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -362,33 +267,7 @@ export default function ForumPage() {
                 </div>
               </div>
               <div className="p-5 space-y-3">
-                {[
-                  {
-                    title: "How to extend Purchase module with custom fields",
-                    meta: "Sofia L. · 5 replies · 10m ago",
-                    hot: true,
-                  },
-                  {
-                    title: "Feature request: webhook for stock notifications",
-                    meta: "Lena K. · 12 replies · 25m ago",
-                    hot: true,
-                  },
-                  {
-                    title: "v17: multi-currency journal entry best practices",
-                    meta: "Rajesh M. · 8 replies · 1h ago",
-                    hot: false,
-                  },
-                  {
-                    title: "Beginner: first module — need help",
-                    meta: "Jules P. · 3 replies · 2h ago",
-                    hot: false,
-                  },
-                  {
-                    title: "Bug report — inventory reconciliation quirk",
-                    meta: "Omar Y. · 1h ago",
-                    hot: false,
-                  },
-                ].map((thread, i) => (
+                {heroThreads.map((thread: any, i: number) => (
                   <div
                     key={i}
                     className="flex items-center gap-3 rounded-xl border border-border px-4 py-3 transition-colors hover:bg-primary/5"
@@ -421,21 +300,21 @@ export default function ForumPage() {
       <section id="categories" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<BookOpen className="h-4 w-4" />}
-            label="Forum desks"
+            iconName={t("categoriesSection.eyebrowIcon")}
+            labelKey="categoriesSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Find the right place to ask
+            {t("categoriesSection.title")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Every topic has a home. Browse categories and jump into the
-            conversation that matters most to you.
+            {t("categoriesSection.description")}
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {CATEGORIES.map((cat, index) => {
-            const Icon = cat.icon;
+          {categoriesList.map((cat: any, index: number) => {
+            const Icon = getIconComponent(cat.icon);
             return (
               <motion.div
                 key={cat.title}
@@ -486,21 +365,21 @@ export default function ForumPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Rocket className="h-4 w-4" />}
-            label="Why a forum"
+            iconName={t("whyForumSection.eyebrowIcon")}
+            labelKey="whyForumSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Built for <HandUnderlineText>answers</HandUnderlineText>, not noise
+            {t("whyForumSection.title")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Reddit-style chaos has no place here. Our forum is curated, voted, and
-            moderated — so the good stuff rises to the top.
+            {t("whyForumSection.description")}
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {FEATURES.map((feature, index) => {
-            const Icon = feature.icon;
+          {whyFeatures.map((feature: any, index: number) => {
+            const Icon = getIconComponent(feature.icon);
             return (
               <motion.div
                 key={feature.title}
@@ -534,19 +413,20 @@ export default function ForumPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Flame className="h-4 w-4" />}
-            label="Trending now"
+            iconName={t("recentThreadsSection.eyebrowIcon")}
+            labelKey="recentThreadsSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Hot threads from this week
+            {t("recentThreadsSection.title")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Catch up on what the community is talking about right now.
+            {t("recentThreadsSection.description")}
           </p>
         </div>
 
         <div className="space-y-3">
-          {RECENT_THREADS.map((thread, index) => (
+          {recentThreadsList.map((thread: any, index: number) => (
             <motion.div
               key={thread.title}
               initial={{ opacity: 0, x: -16 }}
@@ -567,14 +447,12 @@ export default function ForumPage() {
                     {thread.category}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    by {thread.author} &middot;{" "}
-                    {thread.replies} replies &middot; {thread.views + " views"} &middot;{" "}
-                    {thread.lastActive}
+                    by {thread.author} &middot; {thread.replies} replies &middot; {thread.views} views &middot; {thread.lastActive}
                   </span>
                 </div>
               </div>
               <div className="shrink-0 flex gap-2">
-                {thread.tags.map((tag) => (
+                {thread.tags.map((tag: string) => (
                   <span
                     key={tag}
                     className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground bg-muted/30 px-2 py-0.5 rounded-full"
@@ -595,7 +473,7 @@ export default function ForumPage() {
             href="#"
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary/30 hover:text-primary"
           >
-            View all threads
+            {t("recentThreadsSection.viewAllButton")}
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
@@ -605,20 +483,20 @@ export default function ForumPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Star className="h-4 w-4" />}
-            label="Hall of voices"
+            iconName={t("contributorsSection.eyebrowIcon")}
+            labelKey="contributorsSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Our top forum contributors
+            {t("contributorsSection.title")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Members who consistently help others, welcome newcomers, and keep
-            the conversation constructive.
+            {t("contributorsSection.description")}
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {TOP_CONTRIBUTORS.map((c, index) => (
+          {contributorsList.map((c: any, index: number) => (
             <motion.div
               key={c.name}
               initial={{ opacity: 0, y: 20 }}
@@ -629,10 +507,7 @@ export default function ForumPage() {
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-sm font-black text-primary-foreground">
-                  {c.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
+                  {c.name.split(" ").map((n: string) => n[0]).join("")}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
@@ -650,11 +525,15 @@ export default function ForumPage() {
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-xl bg-muted/30 p-3 text-center">
                   <p className="text-lg font-black text-primary">{c.posts}</p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Posts</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">
+                    Posts
+                  </p>
                 </div>
                 <div className="rounded-xl bg-muted/30 p-3 text-center">
                   <p className="text-lg font-black text-secondary-foreground">{c.badges}</p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">Badges</p>
+                  <p className="text-[10px] text-muted-foreground uppercase tracking-widest mt-0.5">
+                    Badges
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -666,46 +545,21 @@ export default function ForumPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<ShieldCheck className="h-4 w-4" />}
-            label="Community guidelines"
+            iconName={t("guidelinesSection.eyebrowIcon")}
+            labelKey="guidelinesSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Keep it welcoming
+            {t("guidelinesSection.title")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            A great community starts with great behaviour. Follow these simple
-            rules and help us keep Adon ERP a safe, inclusive place.
+            {t("guidelinesSection.description")}
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: CheckCircle2,
-              title: "Be respectful",
-              description:
-                "Treat every member with kindness. Constructive debate is welcome; personal attacks are not.",
-            },
-            {
-              icon: BookOpen,
-              title: "Search before posting",
-              description:
-                "Chances are someone has already asked your question. A quick search saves everyone time.",
-            },
-            {
-              icon: Sparkles,
-              title: "Stay on topic",
-              description:
-                "Keep discussions relevant to Adon ERP. Off-topic posts dilute the signal for everyone.",
-            },
-            {
-              icon: ShieldCheck,
-              title: "Match the tone",
-              description:
-                "Jargon-free when helping beginners. Detailed and precise when discussing maintainer-level topics.",
-            },
-          ].map((rule, index) => {
-            const Icon = rule.icon;
+          {guidelinesRules.map((rule: any, index: number) => {
+            const Icon = getIconComponent(rule.icon);
             return (
               <motion.div
                 key={rule.title}
@@ -734,33 +588,19 @@ export default function ForumPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Users className="h-4 w-4" />}
-            label="Member voices"
+            iconName={t("testimonialsSection.eyebrowIcon")}
+            labelKey="testimonialsSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            From the
+            {t("testimonialsSection.title")}
             <br />
-            community forum
+            {t("testimonialsSection.subtitle")}
           </ScriptHeading>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2">
-          {[
-            {
-              quote:
-                "I asked a question about custom reports at 9 pm and had three excellent answers before I went to bed. This forum is genuinely the best developer community I have joined.",
-              name: "Julia Saab",
-              role: "ERP Consultant · Lebanon",
-              avatar: "JS",
-            },
-            {
-              quote:
-                "The search is so good that I rarely even need to post. Being able to upvote the right answer means the next person with the same problem gets instant help.",
-              name: "Kwame Osei",
-              role: "Full-stack Developer · Ghana",
-              avatar: "KO",
-            },
-          ].map((t, index) => (
+          {testimonialsList.map((tItem: any, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -778,7 +618,7 @@ export default function ForumPage() {
                   </span>
                 </div>
                 <p className="text-base leading-8 text-foreground/80">
-                  &quot;{t.quote}&quot;
+                  &quot;{tItem.quote}&quot;
                 </p>
                 <div className="flex items-center gap-1 text-primary/60">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -787,11 +627,11 @@ export default function ForumPage() {
                 </div>
                 <div className="flex items-center gap-4 border-t border-border pt-5">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-sm font-black text-primary-foreground">
-                    {t.avatar}
+                    {tItem.avatar}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.role}</p>
+                    <p className="font-semibold text-foreground">{tItem.name}</p>
+                    <p className="text-sm text-muted-foreground">{tItem.role}</p>
                   </div>
                 </div>
               </div>
@@ -820,13 +660,11 @@ export default function ForumPage() {
             </div>
 
             <ScriptHeading className="text-white text-4xl sm:text-5xl lg:text-6xl">
-              Ready to join the&nbsp;
-              <HandUnderlineText>conversation</HandUnderlineText>?
+              {t("ctaSection.title")}
             </ScriptHeading>
 
             <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
-              Whether you are here to ask, answer, or just lurk — the Adon ERP
-              community forum welcomes you.
+              {t("ctaSection.description")}
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -835,19 +673,19 @@ export default function ForumPage() {
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-primary shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5"
               >
                 <PlusCircle className="h-4 w-4" />
-                Create an account
+                {t("ctaSection.createButton")}
               </a>
               <a
                 href="#"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white/40"
               >
                 <BookOpen className="h-4 w-4" />
-                Read the guidelines
+                {t("ctaSection.guidelinesButton")}
               </a>
             </div>
 
             <p className="mt-6 text-sm text-primary-foreground/60">
-              Free &amp; open to everyone &middot; No spam &middot; Community-moderated
+              {t("ctaSection.footerText")}
             </p>
           </div>
         </motion.div>
