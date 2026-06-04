@@ -1,0 +1,168 @@
+{
+  "metadata": {
+    "title": "Payroll | AdonERP",
+    "description": "AI-powered payroll management platform for all your compensation operations — from salary rules and payslip batches to work entries, accounting integration, and employee portal."
+  },
+  "hero": {
+    "title": "Payroll",
+    "titleHighlight": "without the headache",
+    "description": "Automate payslips, contracts, work entries, deductions, benefits, and salary payments from one accurate payroll system.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "freeText": "Free, forever, with unlimited users",
+    "dashboard": {
+      "title": "Payroll",
+      "subtitle": "Payslips / Contracts / Work Entries / Reporting",
+      "newButton": "New Batch",
+      "stats": {
+        "payslips": "Payslips",
+        "payslipsValue": "42",
+        "ready": "Ready",
+        "readyValue": "18",
+        "draft": "Draft",
+        "draftValue": "09",
+        "netPay": "Net Pay",
+        "netPayValue": "$82k"
+      },
+      "tableHeaders": ["Employee", "Structure", "Gross", "Deductions", "Net Pay", "Status"],
+      "rows": [
+        { "employee": "Marc Demo", "structure": "Basic Salary", "gross": "$4,200", "deductions": "$620", "netPay": "$3,580", "status": "Done" },
+        { "employee": "Anita Oliver", "structure": "Monthly Wage", "gross": "$5,100", "deductions": "$740", "netPay": "$4,360", "status": "Done" },
+        { "employee": "Beth Evans", "structure": "Hourly Wage", "gross": "$3,880", "deductions": "$410", "netPay": "$3,470", "status": "Draft" },
+        { "employee": "Audrey Peterson", "structure": "Monthly Wage", "gross": "$6,400", "deductions": "$920", "netPay": "$5,480", "status": "Ready" },
+        { "employee": "Joel Willis", "structure": "Contract", "gross": "$4,950", "deductions": "$680", "netPay": "$4,270", "status": "Done" },
+        { "employee": "Jennie Fletcher", "structure": "Monthly Wage", "gross": "$5,750", "deductions": "$810", "netPay": "$4,940", "status": "Ready" }
+      ]
+    },
+    "floatingNote": "Payroll done right, every month"
+  },
+  "generateSection": {
+    "title": "Generate payslips",
+    "titleHighlight": "in one click",
+    "description": "Create payslips from employee contracts, work entries, attendance, time off, and salary rules without manual calculation.",
+    "demo": {
+      "title": "Payslip Batch",
+      "batchLabel": "July Payroll",
+      "stats": [
+        ["Employees", "42"],
+        ["Gross Pay", "$102k"],
+        ["Net Pay", "$82k"]
+      ],
+      "steps": [
+        "Compute work entries",
+        "Apply salary rules",
+        "Generate payslips",
+        "Post accounting entries"
+      ],
+      "button": "Generate Payslips"
+    }
+  },
+  "salaryRulesSection": {
+    "title": "Flexible",
+    "titleHighlight": "salary rules",
+    "description": "Build payroll structures with basic wage, allowances, deductions, tax rules, reimbursements, benefits, and employer contributions.",
+    "stats": [
+      { "title": "Basic Salary", "amount": "$4,200", "icon": "Banknote" },
+      { "title": "Allowances", "amount": "$650", "icon": "HandCoins" },
+      { "title": "Deductions", "amount": "-$420", "icon": "ReceiptText" }
+    ]
+  },
+  "workEntriesSection": {
+    "title": "Work entries",
+    "titleHighlight": "that make sense",
+    "description": "Connect contracts, attendance, planning, and time off to create accurate payroll inputs before payslips are calculated.",
+    "entries": [
+      { "name": "Regular Work", "hours": "160h", "status": "Validated", "color": "emerald" },
+      { "name": "Paid Time Off", "hours": "16h", "status": "Approved", "color": "sky" },
+      { "name": "Sick Leave", "hours": "8h", "status": "To Review", "color": "amber" },
+      { "name": "Unpaid Leave", "hours": "4h", "status": "Deducted", "color": "rose" }
+    ],
+    "summary": "Payroll Input Summary",
+    "summaryValue": "172h calculated"
+  },
+  "payslipSection": {
+    "title": "Clear payslips,",
+    "titleHighlight": "happy employees",
+    "description": "Give employees transparent payslips with earnings, deductions, benefits, worked time, and net salary clearly explained.",
+    "demo": {
+      "employee": "Audrey Peterson",
+      "month": "July 2026 Payslip",
+      "status": "Ready",
+      "items": [
+        ["Basic Salary", "$5,200"],
+        ["Transport Allowance", "$300"],
+        ["Meal Allowance", "$180"],
+        ["Tax Deduction", "-$620"],
+        ["Insurance", "-$210"]
+      ],
+      "netSalary": "$4,850"
+    }
+  },
+  "reportingSection": {
+    "title": "Payroll reporting",
+    "titleHighlight": "without confusion",
+    "description": "Understand salary cost, taxes, departments, deductions, and payroll trends with clean visual reporting.",
+    "analysisTitle": "Payroll Analysis",
+    "badge": "Monthly",
+    "months": ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5"]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Salary rules",
+        "description": "Create flexible salary structures, allowances, deductions, benefits, and country-specific payroll rules.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Payslip batches",
+        "description": "Generate payslips for teams, departments, or the whole company in a clean batch workflow.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Work entries",
+        "description": "Connect attendance, time off, planning, and contracts to calculate accurate payroll inputs.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Accounting integration",
+        "description": "Post salary expenses, liabilities, and journal entries directly to your accounting system.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Employee portal",
+        "description": "Let employees access payslips, contracts, benefits, and payroll documents securely.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Employees", "description": "Manage employee contracts", "icon": "Users" },
+      { "title": "Attendance", "description": "Track worked hours", "icon": "Clock3" },
+      { "title": "Time Off", "description": "Calculate absences", "icon": "CalendarCheck" },
+      { "title": "Accounting", "description": "Post payroll entries", "icon": "ReceiptText" },
+      { "title": "Sign", "description": "Approve documents", "icon": "FileSignature" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Payroll used to take days of spreadsheet checks. Now payslips, deductions, work entries, and salary reports are generated in one place.",
+    "name": "Laura Johnson",
+    "role": "HR director"
+  },
+  "footerCta": {
+    "title": "Pay your team",
+    "subtitle": "with",
+    "titleHighlight": "confidence",
+    "button": "Start now"
+  }
+}

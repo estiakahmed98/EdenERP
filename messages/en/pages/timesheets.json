@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "title": "Timesheets | AdonERP",
+    "description": "AI-powered timesheet management platform for all your time tracking operations — from automated time tracking and validation to invoicing, reporting, and billable hours optimization."
+  },
+  "hero": {
+    "title": "Don't waste time.",
+    "titleHighlight": "Track it.",
+    "description": "Adon Timesheets allows you to automate time tracking, eliminate leakage, and boost billable hours. All with an interface powered by smart recommendations.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "dashboard": {
+      "title": "Timesheets",
+      "subtitle": "Timesheets / To Validate / Reporting / Configuration",
+      "newButton": "New",
+      "tableHeaders": ["Description", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Total"],
+      "rows": [
+        { "description": "SO001 - Website Design", "mon": "0:00", "tue": "3:00", "wed": "2:00", "thu": "4:00", "fri": "1:00", "sat": "0:00", "total": "10:00" },
+        { "description": "Office Design", "mon": "2:30", "tue": "1:00", "wed": "0:30", "thu": "3:00", "fri": "2:00", "sat": "0:00", "total": "9:00" },
+        { "description": "Research & Development", "mon": "1:00", "tue": "2:00", "wed": "4:00", "thu": "2:00", "fri": "1:30", "sat": "0:00", "total": "10:30" },
+        { "description": "Support - Subscription", "mon": "0:30", "tue": "1:30", "wed": "2:00", "thu": "1:00", "fri": "0:30", "sat": "0:00", "total": "5:30" },
+        { "description": "Internal Meeting", "mon": "1:00", "tue": "0:30", "wed": "1:00", "thu": "0:30", "fri": "1:00", "sat": "0:00", "total": "4:00" },
+        { "description": "Training", "mon": "0:00", "tue": "0:00", "wed": "2:00", "thu": "2:00", "fri": "0:00", "sat": "0:00", "total": "4:00" }
+      ]
+    },
+    "floatingNote": "Everything time by team has been auto suggested already"
+  },
+  "hoursSection": {
+    "title": "Where did all those hours go?",
+    "titleHighlight": "Stop wondering",
+    "description": "Smart time tracking. Launch a timer on the fly, and ensure that timesheets are always linked to the correct project, task, or sales order. No more missing data.",
+    "demo": {
+      "tabs": ["Day", "Week", "Month"],
+      "infoText": "SO001 / Project Check Code",
+      "labels": {
+        "timer": "Timer ↗",
+        "projects": "Projects and tasks ↘",
+        "salesOrders": "Sales orders and invoices",
+        "totalHours": "Total hours worked",
+        "overtime": "Overtime ↗"
+      },
+      "tableHeaders": ["Day", "Task Time", "Hours"],
+      "rows": [
+        { "day": "Total Task - Web app validation", "taskTime": "2:20", "hours": "2:30" },
+        { "day": "Internal Meeting", "taskTime": "3:15", "hours": "3:15" },
+        { "day": "Support / Sales Demo", "taskTime": "0:45", "hours": "0:45" },
+        { "day": "SEO Changes", "taskTime": "4:20", "hours": "4:20" }
+      ]
+    }
+  },
+  "productivitySection": {
+    "title": "Make every minute count",
+    "description": "Keep it profitable. Get an overview of your billable time by team member, project, task, and billing type."
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Views",
+        "description": "Switch between 5 different views as per your needs.",
+        "icon": "Clock3"
+      },
+      {
+        "title": "Reminders",
+        "description": "Send reminders to users that have timesheets to encode or validate.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Validation",
+        "description": "Validate entries in one click.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Sales orders",
+        "description": "Link sales orders or services to timesheets.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Invoicing",
+        "description": "Start and stop the timer from anywhere using keyboard shortcuts. Save time immediately with a task log.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Access rights",
+        "description": "Grant or restrict your team's access.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features",
+    "viewsDemo": {
+      "title": "Views",
+      "description": "Switch between 5 different views as per your needs.",
+      "tabs": ["Day", "Week", "Month"],
+      "entries": [
+        { "employee": "Audrey Peterson", "task": "Research", "hours": "2:30" },
+        { "employee": "Mitchell Admin", "task": "Website", "hours": "4:00" },
+        { "employee": "Joel Willis", "task": "Support", "hours": "1:15" },
+        { "employee": "Jennie Fletcher", "task": "Planning", "hours": "3:30" }
+      ]
+    }
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Project", "description": "Track time on tasks", "icon": "Clock3" },
+      { "title": "Helpdesk", "description": "Track time on tickets", "icon": "HelpCircle" },
+      { "title": "Field Service", "description": "Track time on interventions", "icon": "Zap" },
+      { "title": "Accounting", "description": "Connect invoicing and payments", "icon": "BarChart3" },
+      { "title": "Time Off", "description": "Create timesheets for days off", "icon": "Timer" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Our day-to-day tasks have become simpler, and we have been able to complete them in less time. Thanks to Adon automation and integration features, our work efficiency has grown significantly.",
+    "name": "Martins Carvalho",
+    "role": "Operations and reporting director"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

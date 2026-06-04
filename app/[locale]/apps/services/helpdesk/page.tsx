@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -29,6 +30,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, CalendarDays, CheckCircle2, ClipboardList,
+    FileText, HelpCircle, Map, MapPin, MessageCircle, Play, Rocket,
+    Sparkles, Star, Timer, Truck, Users, Wrench, Zap, ArrowRight,
+  };
+  return icons[iconName] || Wrench;
+};
+
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -40,87 +52,89 @@ const avatars = [
   "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=96&h=96&fit=crop&crop=face",
 ];
 
-const features = [
-  {
-    title: "Calendar view",
-    description:
-      "Simplify planning, drag and drop appointments, and manage every technician’s schedule.",
-  },
-  {
-    title: "Map view",
-    description:
-      "Plan routes, group nearby interventions, and reduce unnecessary travel.",
-  },
-  {
-    title: "Quote view",
-    description:
-      "Manage customer needs, generate quotes, and track related services.",
-  },
-  {
-    title: "Mobile availability",
-    description:
-      "Workers get everything they need on-site from a mobile-friendly interface.",
-  },
-  {
-    title: "Time tracking",
-    description:
-      "Launch timers, track exact intervention time, and invoice service hours.",
-  },
-  {
-    title: "Invoice from Sales orders",
-    description:
-      "Attach products, services, timesheets, and generate invoices quickly.",
-  },
-];
+function FloatingNote({
+  className = "",
+  text = "Project note",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
+}: {
+  className?: string;
+  text?: string;
+  color?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span
+        className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
+      />
+      <img
+        src={avatars[1]}
+        alt=""
+        className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
+      />
+      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white" />
+      <span className="relative z-10">{text}</span>
+    </div>
+  );
+}
 
-const apps = [
-  {
-    title: "Project",
-    description: "Manage work tasks",
-    icon: CheckCircle2,
-  },
-  {
-    title: "Tracking",
-    description: "Track field operations",
-    icon: MapPin,
-  },
-  {
-    title: "Sales",
-    description: "Create service quotes",
-    icon: BarChart3,
-  },
-  {
-    title: "Inventory",
-    description: "Use spare parts",
-    icon: ClipboardList,
-  },
-  {
-    title: "Helpdesk",
-    description: "Turn tickets into tasks",
-    icon: HelpCircle,
-  },
-];
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function FieldServiceLandingPage() {
+  const t = useTranslations("pages.fieldservice");
+
+  const dashboardColumns = t.raw("hero.dashboard.columns");
+  const weekDays = t.raw("planSection.days");
+  const taskDetailItems = t.raw("planSection.taskDetail.items");
+  const mobileDemoItems = t.raw("mobileSection.demo.items");
+  const invoiceItems = t.raw("invoicingSection.demo.items");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Field service.{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                Simplified
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Optimize routes, schedule, dispatch, invoice, and manage field teams
-            with one integrated timesheets and billing flow.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -128,14 +142,14 @@ export default function FieldServiceLandingPage() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
 
@@ -149,45 +163,20 @@ export default function FieldServiceLandingPage() {
                 <div className="flex items-center gap-3">
                   <Wrench className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Field Service
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    My Tasks / All Tasks / Planning / Reporting
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  New
+                  {t("hero.dashboard.newButton")}
                 </button>
               </div>
 
               <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-3">
-                {[
-                  {
-                    title: "9:30 AM",
-                    cards: [
-                      "Repair office AC",
-                      "Install smart lock",
-                      "Fix printer issue",
-                    ],
-                  },
-                  {
-                    title: "11:30 AM",
-                    cards: [
-                      "Measurement update",
-                      "Customer follow-up",
-                      "Maintenance check",
-                    ],
-                  },
-                  {
-                    title: "2:00 PM",
-                    cards: [
-                      "Solar panel setup",
-                      "Router inspection",
-                      "Final validation",
-                    ],
-                  },
-                ].map((column, columnIndex) => (
+                {dashboardColumns.map((column: any, columnIndex: number) => (
                   <div
                     key={column.title}
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
@@ -202,7 +191,7 @@ export default function FieldServiceLandingPage() {
                     </div>
 
                     <div className="space-y-3">
-                      {column.cards.map((card, cardIndex) => (
+                      {column.cards.map((card: string, cardIndex: number) => (
                         <div
                           key={card}
                           className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
@@ -212,8 +201,7 @@ export default function FieldServiceLandingPage() {
                           </p>
 
                           <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                            Customer #{columnIndex + 1}
-                            {cardIndex + 1}
+                            Customer #{columnIndex + 1}{cardIndex + 1}
                           </p>
 
                           <div className="mt-3 flex items-center justify-between">
@@ -222,11 +210,7 @@ export default function FieldServiceLandingPage() {
                             </span>
 
                             <img
-                              src={
-                                avatars[
-                                  (columnIndex + cardIndex) % avatars.length
-                                ]
-                              }
+                              src={avatars[(columnIndex + cardIndex) % avatars.length]}
                               alt=""
                               className="h-6 w-6 rounded-full object-cover"
                             />
@@ -269,7 +253,7 @@ export default function FieldServiceLandingPage() {
             <FloatingNote
               className="mx-auto mt-12 z-30"
               color="bg-sky-400 dark:bg-sky-800"
-              text="Drag and drop your day on the map"
+              text={t("hero.floatingNote")}
             />
           </div>
         </div>
@@ -277,6 +261,7 @@ export default function FieldServiceLandingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Great plan = great execution Section */}
       <section className="relative bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex justify-center gap-8">
@@ -295,29 +280,20 @@ export default function FieldServiceLandingPage() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Great plan = great{" "}
+            {t("planSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">execution</span>
+              <span className="dark:text-[#02cfc3]">{t("planSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Planning operations, work orders, and tasks is much easier when your
-            team knows where to go, what to do, and what comes next.
+            {t("planSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
             <div className="relative z-20 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
-                {[
-                  "Sunday",
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                ].map((day) => (
+                {weekDays.map((day: string) => (
                   <span key={day}>{day}</span>
                 ))}
               </div>
@@ -348,30 +324,29 @@ export default function FieldServiceLandingPage() {
 
             <div className="absolute -right-8 bottom-8 z-30 hidden w-64 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left shadow-2xl lg:block">
               <p className="font-bold text-slate-900 dark:text-white">
-                Task detail
+                {t("planSection.taskDetail.title")}
               </p>
               <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                Install solar panel
+                {t("planSection.taskDetail.task")}
               </p>
 
               <div className="mt-5 space-y-3">
-                {["Customer ready", "Route optimized", "Parts available"].map(
-                  (item) => (
-                    <div
-                      key={item}
-                      className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300"
-                    >
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-                      {item}
-                    </div>
-                  ),
-                )}
+                {taskDetailItems.map((item: string) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-xs font-bold text-slate-600 dark:text-slate-300"
+                  >
+                    <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* All-in-one mobile app Section */}
       <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -379,14 +354,13 @@ export default function FieldServiceLandingPage() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">All-in-one</span>
+              <span className="dark:text-[#02cfc3]">{t("mobileSection.title")}</span>
             </HandUnderline>{" "}
-            mobile app
+            {t("mobileSection.titleHighlight")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Everything you need in your pocket. Access powerful mobile tools to
-            manage tasks, track time, capture signatures, and invoice on-site.
+            {t("mobileSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
@@ -394,21 +368,21 @@ export default function FieldServiceLandingPage() {
               className="absolute left-0 top-12 hidden rotate-15 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Cool features and clear steps
+              {t("mobileSection.labels.features")}
             </p>
 
             <p
               className="absolute right-0 top-8 hidden rotate-12 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Record time spent on each appointment
+              {t("mobileSection.labels.recordTime")}
             </p>
 
             <p
               className="absolute bottom-12 right-8 hidden rotate-10 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Keep track of your parts and manage invoices
+              {t("mobileSection.labels.trackParts")}
             </p>
 
             <DashedArrow className="absolute left-20 top-20 hidden h-24 w-24 rotate-80 text-slate-300 dark:text-slate-600 lg:block" />
@@ -419,19 +393,14 @@ export default function FieldServiceLandingPage() {
                 <div className="mx-auto mb-5 h-2 w-20 rounded-full bg-slate-200 dark:bg-slate-700" />
 
                 <p className="text-xl font-bold text-slate-900 dark:text-white">
-                  Field Task
+                  {t("mobileSection.demo.title")}
                 </p>
                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                  Customer intervention
+                  {t("mobileSection.demo.subtitle")}
                 </p>
 
                 <div className="mt-6 space-y-3">
-                  {[
-                    "Route confirmed",
-                    "Parts checked",
-                    "Timer running",
-                    "Signature required",
-                  ].map((item) => (
+                  {mobileDemoItems.map((item: string) => (
                     <div
                       key={item}
                       className="rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs font-bold text-slate-600 dark:text-slate-300"
@@ -443,18 +412,18 @@ export default function FieldServiceLandingPage() {
 
                 <div className="mt-6 rounded-lg border border-slate-200 dark:border-slate-700 p-4">
                   <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
-                    Signature
+                    {t("mobileSection.demo.signature")}
                   </p>
                   <div
                     className="mt-3 text-2xl text-slate-900 dark:text-white"
                     style={{ fontFamily: handwrittenFont }}
                   >
-                    J. Customer
+                    {t("mobileSection.demo.signatureValue")}
                   </div>
                 </div>
 
                 <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  Validate task
+                  {t("mobileSection.demo.button")}
                 </button>
               </div>
             </div>
@@ -464,7 +433,7 @@ export default function FieldServiceLandingPage() {
                 Timer
               </p>
               <p className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">
-                00:43
+                {t("mobileSection.demo.timer")}
               </p>
             </div>
 
@@ -473,13 +442,14 @@ export default function FieldServiceLandingPage() {
                 Invoice
               </p>
               <p className="mt-1 text-sm font-bold text-slate-900 dark:text-white">
-                2 products added
+                {t("mobileSection.demo.invoice")}
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Carefree invoicing Section */}
       <section className="relative bg-white dark:bg-slate-950 py-24">
         <div className="absolute bottom-0 right-0 z-0 hidden h-72 w-1/2 bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
@@ -491,21 +461,20 @@ export default function FieldServiceLandingPage() {
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Carefree{" "}
+              {t("invoicingSection.title")}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">invoicing</span>
+                <span className="dark:text-sky-200">{t("invoicingSection.titleHighlight")}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Invoice customers, add products, track timesheets, and turn field
-              service work into billable revenue.
+              {t("invoicingSection.description")}
             </p>
 
             <FloatingNote
               className="mt-10 z-30"
               color="bg-sky-400 dark:bg-sky-800"
-              text="Create invoices directly from the task"
+              text={t("invoicingSection.floatingNote")}
             />
           </div>
 
@@ -514,25 +483,20 @@ export default function FieldServiceLandingPage() {
               Invoice
             </p>
             <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">
-              INV/2026/00038
+              {t("invoicingSection.demo.invoiceNumber")}
             </h3>
 
             <div className="mt-8 space-y-4">
-              {[
-                ["Installation service", "$350.00"],
-                ["Maintenance", "$120.00"],
-                ["External battery", "$240.00"],
-                ["Travel fee", "$45.00"],
-              ].map(([label, price]) => (
+              {invoiceItems.map((item: any) => (
                 <div
-                  key={label}
+                  key={item.label}
                   className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 text-sm"
                 >
                   <span className="font-semibold text-slate-600 dark:text-slate-300">
-                    {label}
+                    {item.label}
                   </span>
                   <span className="font-bold text-slate-900 dark:text-white">
-                    {price}
+                    {item.price}
                   </span>
                 </div>
               ))}
@@ -543,13 +507,14 @@ export default function FieldServiceLandingPage() {
                 Total
               </span>
               <span className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">
-                $755.00
+                {t("invoicingSection.demo.total")}
               </span>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -559,7 +524,7 @@ export default function FieldServiceLandingPage() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
@@ -567,7 +532,7 @@ export default function FieldServiceLandingPage() {
             <br />
             done{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">right.</span>
+              <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
@@ -578,17 +543,15 @@ export default function FieldServiceLandingPage() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                   <CalendarDays className="h-5 w-5" />
                 </div>
-
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
               <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
-                Calendar view
+                {t("featuresSection.calendarDemo.title")}
               </h3>
 
               <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Simplify planning and drag appointments directly in your
-                calendar.
+                {t("featuresSection.calendarDemo.description")}
               </p>
 
               <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
@@ -607,7 +570,7 @@ export default function FieldServiceLandingPage() {
               </div>
             </div>
 
-            {features.slice(1).map((feature) => (
+            {featuresList.slice(1).map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -616,7 +579,6 @@ export default function FieldServiceLandingPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -635,35 +597,28 @@ export default function FieldServiceLandingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
+           
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
+              <span className="dark:text-sky-200">{t("appsSection.description")}</span>
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
-          </p>
-
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -690,11 +645,12 @@ export default function FieldServiceLandingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -738,10 +694,10 @@ export default function FieldServiceLandingPage() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -754,8 +710,7 @@ export default function FieldServiceLandingPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  The purchasing time for accounting documents prior to analysis
-                  is now reduced from 2 days to only 5 hours.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -767,10 +722,10 @@ export default function FieldServiceLandingPage() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Arthur Green
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Field service director
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -787,22 +742,22 @@ export default function FieldServiceLandingPage() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
 
             <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
@@ -810,61 +765,5 @@ export default function FieldServiceLandingPage() {
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Project note",
-  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt=""
-        className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
-      />
-
-      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white" />
-
-      <span className="relative z-10">{text}</span>
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

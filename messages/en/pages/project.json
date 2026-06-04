@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "title": "Project Management | AdonERP",
+    "description": "AI-powered project management platform for all your team operations — from task planning and milestones to timesheets, collaboration, and real-time reporting."
+  },
+  "hero": {
+    "title": "Modern",
+    "titleHighlight": "teamwork",
+    "description": "The AI-powered project management software to plan, track, and deliver faster.",
+    "button": "Meet an advisor",
+    "dashboard": {
+      "title": "Project",
+      "subtitle": "Tasks / Gantt / Calendar / Reporting / Configuration",
+      "newButton": "New",
+      "columns": [
+        {
+          "title": "To Do",
+          "cards": ["App Design", "Website Wireframe", "SEO Setup"]
+        },
+        {
+          "title": "In Progress",
+          "cards": ["User Story", "Dashboard UI", "Landing Page"]
+        },
+        {
+          "title": "Development",
+          "cards": ["API Integration", "Testing", "Bug Fixing"]
+        },
+        {
+          "title": "Done",
+          "cards": ["Client Brief", "Brand Assets", "Planning"]
+        }
+      ],
+      "tasksText": "tasks",
+      "daysLeftText": "days left"
+    }
+  },
+  "viewsSection": {
+    "title": "Different",
+    "titleHighlight": "needs",
+    "titleMiddle": "different",
+    "titleHighlight2": "views",
+    "items": [
+      {
+        "title": "Spreadsheet view.",
+        "description": "The powerful spreadsheet-like list view keeps every task organized."
+      },
+      {
+        "title": "Planner schedule.",
+        "description": "Plan tasks and milestones with a flexible timeline view."
+      },
+      {
+        "title": "Flexible flow.",
+        "description": "Calendar, kanban, and task stages keep every team aligned."
+      }
+    ],
+    "demo": {
+      "title": "Project Schedule",
+      "badge": "Timeline",
+      "rows": ["Design", "Development", "Review", "Launch"]
+    }
+  },
+  "dashboardSection": {
+    "title": "Enjoy a comprehensive dashboard",
+    "labels": {
+      "statusView": "Status view",
+      "tags": "Tags",
+      "kanbanView": "Kanban view",
+      "allActivities": "All activities"
+    },
+    "columns": ["In Progress", "Final Checks"],
+    "tasks": [
+      "Kitchen drawings",
+      "Appliances choice",
+      "Design Definition"
+    ]
+  },
+  "collaborationSection": {
+    "title": "Foster",
+    "titleHighlight": "collaboration",
+    "titleEnd": "to boost efficiency",
+    "description": "Involve your customers. Decide what parts of your project stakeholders can view and edit. Manage all your communication on one simple interface.",
+    "demo": {
+      "title": "Project Discussion",
+      "messages": [
+        { "name": "Audrey Peterson", "text": "Can you review the kitchen layout?" },
+        { "name": "Mitchell Admin", "text": "Approved, looks good to me." },
+        { "name": "Joel Willis", "text": "I added a new document for the client." }
+      ]
+    }
+  },
+  "timesheetSection": {
+    "title": "Time is money",
+    "description": "Timesheets and analytics help you know exactly where the money is going and how your team is spending billable hours.",
+    "stageButton": "Stage 1",
+    "recordButton": "Record",
+    "timerButton": "00:42:00",
+    "checklist": {
+      "title": "Check List",
+      "subtitle": "Project Task Details",
+      "headers": ["Date", "Employee", "Description", "Hours", "Billable"],
+      "rows": [
+        { "date": "7/10/2025", "employee": "Lii Lambert", "description": "Design review", "hours": "2.5h", "billable": "Yes" },
+        { "date": "7/11/2025", "employee": "Marc Demo", "description": "Development", "hours": "4h", "billable": "Yes" },
+        { "date": "7/12/2025", "employee": "Audrey", "description": "Client call", "hours": "1h", "billable": "No" }
+      ]
+    }
+  },
+  "progressSection": {
+    "title": "Always know where your",
+    "subtitle": "project stands",
+    "description": "Project updates are generated in real-time and give quick access to important statistics, invoices, costs, revenue, and progress.",
+    "floatingNote": "Your client can follow along",
+    "stats": [
+      { "title": "Tasks", "value": "48", "trend": "+12%" },
+      { "title": "Milestones", "value": "7", "trend": "On track" },
+      { "title": "Costs", "value": "$8,420", "trend": "-3%" }
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Document management",
+        "description": "Dedicate workspace for each project.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Templates",
+        "description": "Create repeatable workflows and project structures.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Milestones",
+        "description": "Track major project goals that must be reached on time.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Reporting",
+        "description": "Get project profitability, tasks, workload, and progress.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Track costs and revenues",
+        "description": "Integrate timesheets, invoicing, purchases, and sales.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features",
+    "planningDemo": {
+      "title": "Project planning",
+      "description": "Plan tasks, deadlines, resources, and activities from one visual workspace."
+    }
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Timesheet", "description": "Record time on tasks", "icon": "Timer" },
+      { "title": "Sales", "description": "Sell tasks and services", "icon": "BarChart3" },
+      { "title": "Field Service", "description": "Manage onsite work", "icon": "BriefcaseBusiness" },
+      { "title": "Accounting", "description": "Invoice projects", "icon": "ClipboardList" },
+      { "title": "Documents", "description": "Centralize files", "icon": "FileText" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Adon is the backbone of Kick & Rush, fostering collaboration, providing consistency, and adapting to unique requirements.",
+    "name": "Tyrone Miller",
+    "role": "Project director"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}
