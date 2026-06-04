@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "title": "Recruitment ATS | AdonERP",
+    "description": "AI-powered recruitment platform for all your hiring operations — from job posting and candidate tracking to interview scheduling, pipeline management, and onboarding."
+  },
+  "hero": {
+    "title": "Next-Gen",
+    "titleHighlight": "ATS",
+    "description": "Source, track, interview, and hire candidates from one beautiful recruitment pipeline.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "freeText": "Free, forever, with unlimited users",
+    "dashboard": {
+      "title": "Recruitment",
+      "subtitle": "Jobs / Applications / Interviews / Reporting",
+      "newButton": "New Job",
+      "columns": [
+        {
+          "title": "New Applications",
+          "cards": ["Graphic Designer", "Sales Executive", "QA Engineer"]
+        },
+        {
+          "title": "Initial Qualification",
+          "cards": ["Frontend Developer", "Marketing Manager", "HR Officer"]
+        },
+        {
+          "title": "First Interview",
+          "cards": ["Product Designer", "Account Manager", "UX Researcher"]
+        },
+        {
+          "title": "Contract Proposal",
+          "cards": ["Senior Developer", "Operations Lead", "SEO Specialist"]
+        }
+      ],
+      "applicationsText": "applications"
+    }
+  },
+  "pipelineSection": {
+    "title": "Never wonder about a",
+    "titleHighlight": "job's status",
+    "description": "Get full pipeline visibility from application to offer, so your team always knows what comes next.",
+    "columns": ["Open Jobs", "In Progress", "Hired"],
+    "candidatesCount": "candidates"
+  },
+  "visualizeSection": {
+    "title": "Visualize the",
+    "titleHighlight": "pipeline",
+    "description": "Move applicants through your recruitment stages with a clean kanban view, interview status, tags, activities, and notes.",
+    "stages": ["Qualified", "Interview", "Contract"],
+    "starsText": "stars",
+    "interviewText": "Interview",
+    "candidates": [
+      { "name": "Joel Willis", "role": "Product Designer" },
+      { "name": "Audrey Peterson", "role": "Frontend Developer" },
+      { "name": "Ronald Lewis", "role": "Sales Manager" },
+      { "name": "Jennie Fletcher", "role": "Marketing Officer" }
+    ]
+  },
+  "automationSection": {
+    "title": "Don't",
+    "titleHighlight": "waste time",
+    "subtitle": "typing",
+    "description": "Automate descriptions using templates and AI. Generate job posts, interview invitations, and candidate messages quickly.",
+    "jobDescription": "Job Description",
+    "fields": [
+      ["Programmer", "Software development and web applications"],
+      ["Requirements", "React, Next.js, TypeScript, REST API"],
+      ["Location", "Remote / Hybrid"],
+      ["Experience", "3+ years"]
+    ],
+    "button": "Generate description"
+  },
+  "pipelinesSection": {
+    "title": "Tailor-made",
+    "titleHighlight": "pipelines",
+    "description": "Create custom recruitment steps for every department, job role, and hiring process.",
+    "builderTitle": "Pipeline Builder",
+    "steps": [
+      "New Application",
+      "Initial Qualification",
+      "First Interview",
+      "Technical Test",
+      "Contract Proposal"
+    ],
+    "stageText": "Stage"
+  },
+  "schedulingSection": {
+    "title": "Less scheduling,",
+    "subtitle": "more interviewing!",
+    "description": "Schedule interviews, send calendar invitations, coordinate with hiring teams, and keep candidates updated automatically.",
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "interviewText": "Interview"
+  },
+  "reportingSection": {
+    "title": "Reporting",
+    "titleHighlight": "that makes sense",
+    "description": "Look at your hiring data and understand where your candidates come from, how your pipeline performs, and where your team can improve.",
+    "analysisTitle": "Recruitment Analysis",
+    "stages": ["Stage 1", "Stage 2", "Stage 3", "Stage 4"]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "AI in for decision",
+        "description": "Create smart hiring workflows and keep every recruitment step clear."
+      },
+      {
+        "title": "Stay on target",
+        "description": "Set hiring goals, interview stages, and follow-up activities for each role."
+      },
+      {
+        "title": "Thin the pool",
+        "description": "Score candidates, filter applications, and shortlist the best people faster."
+      },
+      {
+        "title": "You're hired!",
+        "description": "Turn a successful applicant into an employee with smooth onboarding."
+      },
+      {
+        "title": "Get Feedback",
+        "description": "Send and collect interview feedback from your recruitment team."
+      },
+      {
+        "title": "Quick communication",
+        "description": "Contact candidates directly and keep every message attached to the job."
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Employees", "description": "Create employee records", "icon": "Users" },
+      { "title": "Employee Referral", "description": "Invite team referrals", "icon": "UserSearch" },
+      { "title": "Fleet", "description": "Assign company assets", "icon": "BriefcaseBusiness" },
+      { "title": "Time Off", "description": "Manage leave after hiring", "icon": "CalendarDays" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Adon saved us plenty of web development time, allowing us to focus on individual strengths, which is immensely helpful for start-ups.",
+    "name": "Daphne Wright",
+    "role": "HR manager"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

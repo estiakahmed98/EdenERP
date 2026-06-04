@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
@@ -44,11 +45,13 @@ export default function IoTDefencePage() {
 
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
-      <script
+      <Script
+        id="iot-defence-json-ld"
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(jsonLd)}
+      </Script>
       {/* HERO */}
       <section className="relative bg-white dark:bg-slate-950 pt-20 text-center">
         <div className="mx-auto max-w-7xl px-4 pb-24">
