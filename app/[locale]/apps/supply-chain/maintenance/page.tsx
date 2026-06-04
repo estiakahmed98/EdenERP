@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BarChart3,
@@ -26,24 +27,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const apps = [
-  {
-    title: "Manufacturing",
-    description: "Track workcenter control and quality",
-    icon: Factory,
-  },
-  {
-    title: "Quality",
-    description: "Define quality control points",
-    icon: ShieldCheck,
-  },
-  {
-    title: "PLM",
-    description: "Manage engineering changes",
-    icon: PackageCheck,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    Factory, ShieldCheck, PackageCheck, Wrench, Sparkles, Star, Users,
+    ArrowRight, Play, CalendarDays, ClipboardList, BarChart3, LineChart,
+    MonitorSmartphone, Settings2, CheckCircle2, TrendingUp,
+  };
+  return icons[iconName] || Wrench;
+};
 
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -58,25 +52,34 @@ const avatars = [
 ];
 
 export default function MaintenanceLandingSections() {
+  const t = useTranslations("pages.maintenance");
+
+  const dashboardColumns = t.raw("hero.dashboard.columns");
+  const preventiveDays = t.raw("preventiveSection.days");
+  const requestStages = t.raw("requestsSection.stages");
+  const equipmentList = t.raw("equipmentSection.equipment");
+  const dashboardStats = t.raw("dashboardSection.stats");
+  const appsList = t.raw("appsSection.apps");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Plan Maintenance.{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
               <span className="text-rose-500 dark:text-rose-400">
-                Not Emergencies.
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Manage preventive and corrective maintenance in one place, so issues
-            are handled early and emergencies stay off the schedule.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -84,14 +87,14 @@ export default function MaintenanceLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
 
@@ -105,49 +108,20 @@ export default function MaintenanceLandingSections() {
                 <div className="flex items-center gap-3">
                   <Wrench className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Maintenance
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Dashboard / Requests / Equipment / Reporting
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  New
+                  {t("hero.dashboard.newButton")}
                 </button>
               </div>
 
               <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
-                {[
-                  {
-                    title: "New Request",
-                    cards: [
-                      "Screen not working",
-                      "Printer",
-                      "Some keys are not working",
-                    ],
-                  },
-                  {
-                    title: "In Progress",
-                    cards: [
-                      "Touchpad not working",
-                      "Battery drains fast",
-                      "Motherboard failed",
-                    ],
-                  },
-                  {
-                    title: "Repaired",
-                    cards: [
-                      "Keyboard not working",
-                      "Resolution is bad",
-                      "Fan noise issue",
-                    ],
-                  },
-                  {
-                    title: "Scrap",
-                    cards: ["Old laptop", "Broken monitor", "Damaged printer"],
-                  },
-                ].map((column, columnIndex) => (
+                {dashboardColumns.map((column: any, columnIndex: number) => (
                   <div
                     key={column.title}
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
@@ -162,7 +136,7 @@ export default function MaintenanceLandingSections() {
                     </div>
 
                     <div className="space-y-3">
-                      {column.cards.map((card, cardIndex) => (
+                      {column.cards.map((card: string, cardIndex: number) => (
                         <div
                           key={card}
                           className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
@@ -171,26 +145,18 @@ export default function MaintenanceLandingSections() {
                             {card}
                           </p>
                           <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                            Request #{columnIndex + 1}
-                            {cardIndex + 1} / Equipment
+                            Request #{columnIndex + 1}{cardIndex + 1} / Equipment
                           </p>
 
                           <div className="mt-3 flex items-center justify-between">
                             <div className="flex gap-1 text-amber-400 dark:text-amber-500">
-                              {Array.from({ length: 3 }).map((_, index) => (
-                                <Star
-                                  key={index}
-                                  className="h-3.5 w-3.5 fill-current"
-                                />
+                              {Array.from({ length: 3 }).map((_, idx) => (
+                                <Star key={idx} className="h-3.5 w-3.5 fill-current" />
                               ))}
                             </div>
 
                             <img
-                              src={
-                                avatars[
-                                  (columnIndex + cardIndex) % avatars.length
-                                ]
-                              }
+                              src={avatars[(columnIndex + cardIndex) % avatars.length]}
                               alt="Assignee"
                               className="h-6 w-6 rounded-full object-cover"
                             />
@@ -212,6 +178,7 @@ export default function MaintenanceLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Automate preventive maintenance Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
@@ -219,11 +186,9 @@ export default function MaintenanceLandingSections() {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
               <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
-                {["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"].map(
-                  (day) => (
-                    <span key={day}>{day}</span>
-                  ),
-                )}
+                {preventiveDays.map((day: string) => (
+                  <span key={day}>{day}</span>
+                ))}
               </div>
 
               <div className="mt-4 grid grid-cols-7 gap-2">
@@ -253,92 +218,80 @@ export default function MaintenanceLandingSections() {
 
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-              Automate preventive
+              {t("preventiveSection.title")}
               <br />
-              maintenance
+              {t("preventiveSection.subtitle")}
             </h2>
 
             <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
-              to keep your line running.
+              {t("preventiveSection.description")}
             </p>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Use computed statistics, scheduling rules, expected next failure
-              dates, and IoT data to automate metrology and preventive
-              maintenance.
+              {t("preventiveSection.text")}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Organize your maintenance requests Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-              Organize your
+              {t("requestsSection.title")}
               <br />
-              maintenance requests
+              {t("requestsSection.subtitle")}
             </h2>
 
             <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
-              with great kanban and calendar views.
+              {t("requestsSection.description")}
             </p>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Easily track maintenance requests with kanban view. Use the
-              maintenance calendar to organize activities and manage team
-              workload in a clean drag-and-drop interface.
+              {t("requestsSection.text")}
             </p>
           </div>
 
           <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="grid gap-4 md:grid-cols-3">
-              {["New Request", "In Progress", "Repaired"].map(
-                (column, columnIndex) => (
-                  <div
-                    key={column}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
-                  >
-                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white">
-                      {column}
-                    </p>
+              {requestStages.map((stage: string, stageIndex: number) => (
+                <div key={stage} className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+                  <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white">
+                    {stage}
+                  </p>
 
-                    <div className="space-y-3">
-                      {Array.from({ length: 2 }).map((_, index) => (
-                        <div
-                          key={index}
-                          className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm"
-                        >
-                          <div className="h-3 w-3/4 rounded bg-slate-200 dark:bg-slate-700" />
-                          <div className="mt-2 h-2 w-full rounded bg-slate-100 dark:bg-slate-700/50" />
-                          <div className="mt-3 flex items-center justify-between">
-                            <div className="flex gap-1 text-amber-400 dark:text-amber-500">
-                              {Array.from({ length: 3 }).map((_, starIndex) => (
-                                <Star
-                                  key={starIndex}
-                                  className="h-3 w-3 fill-current"
-                                />
-                              ))}
-                            </div>
-                            <img
-                              src={
-                                avatars[(columnIndex + index) % avatars.length]
-                              }
-                              alt="User"
-                              className="h-6 w-6 rounded-full object-cover"
-                            />
+                  <div className="space-y-3">
+                    {Array.from({ length: 2 }).map((_, idx) => (
+                      <div
+                        key={idx}
+                        className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm"
+                      >
+                        <div className="h-3 w-3/4 rounded bg-slate-200 dark:bg-slate-700" />
+                        <div className="mt-2 h-2 w-full rounded bg-slate-100 dark:bg-slate-700/50" />
+                        <div className="mt-3 flex items-center justify-between">
+                          <div className="flex gap-1 text-amber-400 dark:text-amber-500">
+                            {Array.from({ length: 3 }).map((_, starIdx) => (
+                              <Star key={starIdx} className="h-3 w-3 fill-current" />
+                            ))}
                           </div>
+                          <img
+                            src={avatars[(stageIndex + idx) % avatars.length]}
+                            alt="User"
+                            className="h-6 w-6 rounded-full object-cover"
+                          />
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
-                ),
-              )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
+      {/* Increase overall equipment effectiveness Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div className="flex justify-center">
@@ -351,14 +304,7 @@ export default function MaintenanceLandingSections() {
                 </div>
 
                 <div className="mt-5 space-y-3">
-                  {[
-                    "Compressor",
-                    "Conveyor Belt",
-                    "Laser Printer",
-                    "Tablet Scanner",
-                    "AC System",
-                    "CNC Machine",
-                  ].map((item, index) => (
+                  {equipmentList.map((item: string, index: number) => (
                     <div
                       key={item}
                       className="rounded-lg border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-3"
@@ -387,94 +333,56 @@ export default function MaintenanceLandingSections() {
 
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-              Increase overall equipment
+              {t("equipmentSection.title")}
               <br />
-              effectiveness.
+              {t("equipmentSection.subtitle")}
             </h2>
 
             <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
-              with efficient maintenance.
+              {t("equipmentSection.description")}
             </p>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Manufacturing teams can trigger maintenance requests directly from
-              work centers. When the team acts, the right people are updated in
-              real time.
+              {t("equipmentSection.text1")}
             </p>
 
             <p className="mt-5 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Better communication reduces downtime and makes your manufacturing
-              operation more efficient.
+              {t("equipmentSection.text2")}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Dashboard & Statistics Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl">
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
-              Dashboard & Statistics
+              {t("dashboardSection.title")}
             </h2>
 
             <p className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
-              to optimize your performance.
+              {t("dashboardSection.subtitle")}
             </p>
 
             <p className="mt-6 text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Use automatically computed statistics including MTBF and MTBR to
-              fine tune preventive maintenance rules and reduce risk of
-              equipment failure.
+              {t("dashboardSection.description")}
             </p>
           </div>
 
           <div className="mt-16 flex h-107 items-end justify-center gap-6">
-            {[
-              {
-                name: "Camille Watkins",
-                orange: 90,
-                blue: 65,
-                light: 80,
-              },
-              {
-                name: "Frances Pierce",
-                orange: 0,
-                blue: 92,
-                light: 40,
-              },
-              {
-                name: "Toni Buchanan",
-                orange: 105,
-                blue: 90,
-                light: 85,
-              },
-              {
-                name: "Judy Garza",
-                orange: 140,
-                blue: 190,
-                light: 105,
-              },
-              {
-                name: "Andrew Hill",
-                orange: 0,
-                blue: 90,
-                light: 170,
-              },
-            ].map((bar) => (
-              <div
-                key={bar.name}
-                className="relative flex w-36 flex-col items-center"
-              >
+            {dashboardStats.map((bar: any) => (
+              <div key={bar.name} className="relative flex w-36 flex-col items-center">
                 <div className="absolute -top-12 z-10 rounded-md bg-white dark:bg-slate-800 px-4 py-2 text-xs shadow-lg ring-1 ring-slate-100 dark:ring-slate-700">
                   <p className="font-bold text-slate-900 dark:text-white">
                     {bar.name}
                   </p>
                   <p className="mt-1 text-slate-400 dark:text-slate-500">
-                    New request
+                    {t("dashboardSection.label")}
                   </p>
                 </div>
 
-                {bar.orange > 0 && (
+                {bar.hasOrange && bar.orange > 0 && (
                   <div
                     className="w-full bg-orange-300 dark:bg-orange-600"
                     style={{ height: `${bar.orange}px` }}
@@ -494,30 +402,20 @@ export default function MaintenanceLandingSections() {
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
-            </HandUnderline>
+            {t("appsSection.title")}{" "}
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
-          </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -544,11 +442,12 @@ export default function MaintenanceLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -592,10 +491,10 @@ export default function MaintenanceLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -609,25 +508,23 @@ export default function MaintenanceLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>

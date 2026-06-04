@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "title": "Maintenance | AdonERP",
+    "description": "AI-powered maintenance management platform for all your equipment operations — from preventive and corrective maintenance to work orders, scheduling, and equipment effectiveness tracking."
+  },
+  "hero": {
+    "title": "Plan Maintenance.",
+    "titleHighlight": "Not Emergencies.",
+    "description": "Manage preventive and corrective maintenance in one place, so issues are handled early and emergencies stay off the schedule.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "dashboard": {
+      "title": "Maintenance",
+      "subtitle": "Dashboard / Requests / Equipment / Reporting",
+      "newButton": "New",
+      "columns": [
+        {
+          "title": "New Request",
+          "cards": ["Screen not working", "Printer", "Some keys are not working"]
+        },
+        {
+          "title": "In Progress",
+          "cards": ["Touchpad not working", "Battery drains fast", "Motherboard failed"]
+        },
+        {
+          "title": "Repaired",
+          "cards": ["Keyboard not working", "Resolution is bad", "Fan noise issue"]
+        },
+        {
+          "title": "Scrap",
+          "cards": ["Old laptop", "Broken monitor", "Damaged printer"]
+        }
+      ]
+    }
+  },
+  "preventiveSection": {
+    "title": "Automate preventive",
+    "subtitle": "maintenance",
+    "description": "to keep your line running.",
+    "text": "Use computed statistics, scheduling rules, expected next failure dates, and IoT data to automate metrology and preventive maintenance.",
+    "days": ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
+  },
+  "requestsSection": {
+    "title": "Organize your",
+    "subtitle": "maintenance requests",
+    "description": "with great kanban and calendar views.",
+    "text": "Easily track maintenance requests with kanban view. Use the maintenance calendar to organize activities and manage team workload in a clean drag-and-drop interface.",
+    "stages": ["New Request", "In Progress", "Repaired"]
+  },
+  "equipmentSection": {
+    "title": "Increase overall equipment",
+    "subtitle": "effectiveness.",
+    "description": "with efficient maintenance.",
+    "text1": "Manufacturing teams can trigger maintenance requests directly from work centers. When the team acts, the right people are updated in real time.",
+    "text2": "Better communication reduces downtime and makes your manufacturing operation more efficient.",
+    "equipment": ["Compressor", "Conveyor Belt", "Laser Printer", "Tablet Scanner", "AC System", "CNC Machine"]
+  },
+  "dashboardSection": {
+    "title": "Dashboard & Statistics",
+    "subtitle": "to optimize your performance.",
+    "description": "Use automatically computed statistics including MTBF and MTBR to fine tune preventive maintenance rules and reduce risk of equipment failure.",
+    "stats": [
+      { "name": "Camille Watkins", "orange": 90, "blue": 65, "light": 80, "hasOrange": true },
+      { "name": "Frances Pierce", "orange": 0, "blue": 92, "light": 40, "hasOrange": false },
+      { "name": "Toni Buchanan", "orange": 105, "blue": 90, "light": 85, "hasOrange": true },
+      { "name": "Judy Garza", "orange": 140, "blue": 190, "light": 105, "hasOrange": true },
+      { "name": "Andrew Hill", "orange": 0, "blue": 90, "light": 170, "hasOrange": false }
+    ],
+    "label": "New request"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Manufacturing", "description": "Track workcenter control and quality", "icon": "Factory" },
+      { "title": "Quality", "description": "Define quality control points", "icon": "ShieldCheck" },
+      { "title": "PLM", "description": "Manage engineering changes", "icon": "PackageCheck" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

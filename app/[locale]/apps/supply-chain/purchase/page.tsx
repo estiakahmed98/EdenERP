@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -30,57 +31,18 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
-  {
-    title: "More companies, less problems",
-    description:
-      "Create companies, manage suppliers, centralize purchases, and keep every procurement record organized.",
-  },
-  {
-    title: "Built for any device",
-    description:
-      "Approve requests, compare offers, and track purchase orders from desktop, tablet, or mobile.",
-  },
-  {
-    title: "Stats that actually make sense",
-    description:
-      "Understand vendor performance, product costs, lead times, and purchase trends with clear reports.",
-  },
-  {
-    title: "Smarter purchasing decisions",
-    description:
-      "Compare prices, quantities, vendor terms, and delivery promises before confirming a purchase.",
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, Boxes, Building2, CheckCircle2, ClipboardList,
+    FileCheck2, FileText, HandCoins, PackageCheck, Play, ReceiptText,
+    RefreshCcw, ShoppingCart, Sparkles, Star, Tags, Truck, Users, WalletCards,
+    ArrowRight,
+  };
+  return icons[iconName] || ShoppingCart;
+};
 
-const apps = [
-  {
-    title: "Inventory",
-    description: "Control stock levels",
-    icon: Boxes,
-  },
-  {
-    title: "Sales",
-    description: "Forecast customer needs",
-    icon: BarChart3,
-  },
-  {
-    title: "Field Service",
-    description: "Source materials on time",
-    icon: Truck,
-  },
-  {
-    title: "Accounting",
-    description: "Manage vendor bills",
-    icon: ReceiptText,
-  },
-  {
-    title: "Manufacturing",
-    description: "Buy components",
-    icon: PackageCheck,
-  },
-];
-
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -94,26 +56,120 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
+function FloatingNote({
+  className = "",
+  text = "Share information and make connections",
+  color = "bg-amber-400",
+}: {
+  className?: string;
+  text?: string;
+  color?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span
+        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
+      />
+      <img
+        src={avatars[1]}
+        alt="User"
+        className="absolute left-3 h-12 w-12 rounded-full object-cover"
+      />
+      {text}
+    </div>
+  );
+}
+
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function PurchaseLandingSections() {
+  const t = useTranslations("pages.purchase");
+
+  const dashboardStats = t.raw("hero.dashboard.stats");
+  const dashboardRows = t.raw("hero.dashboard.rows");
+  const tableHeaders = t.raw("hero.dashboard.tableHeaders");
+  const rfqStats = t.raw("rfqSection.stats");
+  const replenishmentItems = t.raw("rfqSection.replenishmentItems");
+  const rfqItems = t.raw("rfqSection.rfqItems");
+  const smartActions = t.raw("rfqSection.smartActions");
+  const agreementItems = t.raw("agreementSection.agreement.items");
+  const agreementOrders = t.raw("agreementSection.orders");
+  const paymentTerms = t.raw("vendorSection.paymentTerms");
+  const vendorBills = t.raw("vendorSection.vendorBills");
+  const settingsCards = t.raw("settingsSection.cards");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
+  const getStatusColor = (status: string) => {
+    const colorMap: Record<string, string> = {
+      Received: "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
+      Ordered: "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
+      Approved: "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
+      RFQ: "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400",
+    };
+    return colorMap[status] || colorMap.RFQ;
+  };
+
+  const getVendorBillColor = (status: string) => {
+    const colorMap: Record<string, string> = {
+      Paid: "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
+      "To Pay": "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
+      Draft: "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400",
+    };
+    return colorMap[status] || colorMap.Draft;
+  };
+
+  const getPaymentTermColor = (index: number) => {
+    return index < 2
+      ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
+      : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400";
+  };
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Restock on time{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
               <span className="text-rose-500 dark:text-rose-400">
-                without overbuying
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Automate RFQs, compare vendors, control costs, avoid stockouts, and
-            purchase exactly what your business needs.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -121,14 +177,14 @@ export default function PurchaseLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("hero.demoButton")}
             </Link>
           </div>
 
@@ -145,150 +201,74 @@ export default function PurchaseLandingSections() {
                       className="text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
                       style={{ fontFamily: handwrittenFont }}
                     >
-                      Purchase
+                      {t("hero.dashboard.title")}
                     </span>
                     <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                      RFQ / Purchase Orders / Vendors / Products / Bills
+                      {t("hero.dashboard.subtitle")}
                     </p>
                   </div>
 
                   <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                    New RFQ
+                    {t("hero.dashboard.newButton")}
                   </button>
                 </div>
               </div>
 
               <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
                 <div className="mb-5 grid gap-3 sm:grid-cols-4">
-                  {[
-                    ["RFQs", "16", "bg-[#714b67] text-white dark:bg-[#8a5a7e]"],
-                    [
-                      "To Approve",
-                      "09",
-                      "bg-[#7f5f78] text-white dark:bg-[#9b6a8f] dark:text-white",
-                    ],
-                    [
-                      "Orders",
-                      "34",
-                      "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200",
-                    ],
-                    [
-                      "Late",
-                      "03",
-                      "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
-                    ],
-                  ].map(([label, value, color]) => (
+                  {dashboardStats.map((stat: any) => (
                     <div
-                      key={label}
-                      className={`rounded-lg p-4 text-left ${color}`}
+                      key={stat.label}
+                      className={`rounded-lg p-4 text-left ${
+                        stat.color === "primary"
+                          ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
+                          : stat.color === "secondary"
+                            ? "bg-[#7f5f78] text-white dark:bg-[#9b6a8f] dark:text-white"
+                            : stat.color === "slate"
+                              ? "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200"
+                              : "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400"
+                      }`}
                     >
-                      <p className="text-xs font-bold opacity-80">{label}</p>
-                      <p className="mt-2 text-2xl font-bold">{value}</p>
+                      <p className="text-xs font-bold opacity-80">{stat.label}</p>
+                      <p className="mt-2 text-2xl font-bold">{stat.value}</p>
                     </div>
                   ))}
                 </div>
 
                 <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                   <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                    <span>Reference</span>
-                    <span>Vendor</span>
-                    <span>Buyer</span>
-                    <span>Product</span>
-                    <span>Expected</span>
-                    <span>Total</span>
-                    <span>Status</span>
+                    {tableHeaders.map((header: string) => (
+                      <span key={header}>{header}</span>
+                    ))}
                   </div>
 
-                  {[
-                    [
-                      "P00023",
-                      "Azure Interior",
-                      "Mitchell",
-                      "Desk",
-                      "Today",
-                      "$4,250",
-                      "RFQ",
-                    ],
-                    [
-                      "P00024",
-                      "Ready Mat",
-                      "Marc",
-                      "Chairs",
-                      "Tomorrow",
-                      "$1,840",
-                      "Approved",
-                    ],
-                    [
-                      "P00025",
-                      "Wood Corner",
-                      "Audrey",
-                      "Table",
-                      "Friday",
-                      "$2,400",
-                      "Ordered",
-                    ],
-                    [
-                      "P00026",
-                      "Office Plus",
-                      "Mitchell",
-                      "Lamp",
-                      "Monday",
-                      "$620",
-                      "Received",
-                    ],
-                    [
-                      "P00027",
-                      "Stock Lab",
-                      "Joel",
-                      "Storage",
-                      "Tuesday",
-                      "$3,950",
-                      "Approved",
-                    ],
-                    [
-                      "P00028",
-                      "Global Supply",
-                      "Marc",
-                      "Monitor",
-                      "Next week",
-                      "$7,100",
-                      "RFQ",
-                    ],
-                  ].map((row) => (
+                  {dashboardRows.map((row: any) => (
                     <div
-                      key={row[0]}
+                      key={row.reference}
                       className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
                       <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                        {row[0]}
+                        {row.reference}
                       </span>
                       <span className="text-slate-700 dark:text-slate-200">
-                        {row[1]}
+                        {row.vendor}
                       </span>
                       <span className="text-slate-500 dark:text-slate-400">
-                        {row[2]}
+                        {row.buyer}
                       </span>
                       <span className="text-slate-500 dark:text-slate-400">
-                        {row[3]}
+                        {row.product}
                       </span>
                       <span className="text-slate-500 dark:text-slate-400">
-                        {row[4]}
+                        {row.expected}
                       </span>
                       <span className="font-bold text-slate-900 dark:text-white">
-                        {row[5]}
+                        {row.total}
                       </span>
                       <span
-                        className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                          row[6] === "Received"
-                            ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
-                            : row[6] === "Ordered"
-                              ? "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400"
-                              : row[6] === "Approved"
-                                ? "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
-                                : "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400"
-                        }`}
+                        className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${getStatusColor(row.status)}`}
                       >
-                        {row[6]}
+                        {row.status}
                       </span>
                     </div>
                   ))}
@@ -303,7 +283,7 @@ export default function PurchaseLandingSections() {
             <FloatingNote
               className="mx-auto mt-12 z-30"
               color="bg-amber-400 dark:bg-amber-700"
-              text="Never run out, never overbuy"
+              text={t("hero.floatingNote")}
             />
           </div>
         </div>
@@ -311,6 +291,7 @@ export default function PurchaseLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Automated RFQs Section */}
       <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
@@ -318,16 +299,15 @@ export default function PurchaseLandingSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">Automated</span>
+              <span className="dark:text-[#02cfc3]">{t("rfqSection.title")}</span>
             </HandUnderline>{" "}
-            RFQs
+            {t("rfqSection.titleHighlight")}
             <br />
-            for the busy bee
+            {t("rfqSection.subtitle")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Automatically trigger RFQs from replenishment rules, compare vendor
-            offers, and confirm the best purchase at the right time.
+            {t("rfqSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
@@ -337,17 +317,13 @@ export default function PurchaseLandingSections() {
               <div className="space-y-6">
                 <div className="rounded-xl bg-white dark:bg-slate-800 p-6 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                   <div className="grid grid-cols-3 gap-4">
-                    {[
-                      ["RFQ", "12"],
-                      ["To Send", "08"],
-                      ["Late", "02"],
-                    ].map(([label, value]) => (
+                    {rfqStats.map((stat: any) => (
                       <div
-                        key={label}
+                        key={stat.label}
                         className="rounded-lg bg-[#714b67] dark:bg-[#8a5a7e] p-4 text-white"
                       >
-                        <p className="text-xs font-bold opacity-80">{label}</p>
-                        <p className="mt-2 text-2xl font-bold">{value}</p>
+                        <p className="text-xs font-bold opacity-80">{stat.label}</p>
+                        <p className="mt-2 text-2xl font-bold">{stat.value}</p>
                       </div>
                     ))}
                   </div>
@@ -359,12 +335,7 @@ export default function PurchaseLandingSections() {
                   </p>
 
                   <div className="mt-5 space-y-3">
-                    {[
-                      "Laptop stand",
-                      "Office chair",
-                      "Wooden table",
-                      "Desk lamp",
-                    ].map((item) => (
+                    {replenishmentItems.map((item: string) => (
                       <div
                         key={item}
                         className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
@@ -388,28 +359,22 @@ export default function PurchaseLandingSections() {
                   </p>
 
                   <div className="mt-5 space-y-3">
-                    {[
-                      ["5 x 500", "Purchased"],
-                      ["7 x 350", "Purchased"],
-                      ["8 x 700", "Purchased"],
-                      ["6 x 400", "RFQ"],
-                      ["5 x 350", "RFQ"],
-                    ].map(([qty, status]) => (
+                    {rfqItems.map((item: any) => (
                       <div
-                        key={qty}
+                        key={item.qty}
                         className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
                       >
                         <span className="font-bold text-slate-700 dark:text-slate-200">
-                          {qty}
+                          {item.qty}
                         </span>
                         <span
                           className={`rounded-full px-3 py-1 text-[10px] font-bold ${
-                            status === "Purchased"
+                            item.status === "Purchased" || item.status === "ক্রয় করা হয়েছে"
                               ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
                               : "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400"
                           }`}
                         >
-                          {status}
+                          {item.status}
                         </span>
                       </div>
                     ))}
@@ -422,17 +387,15 @@ export default function PurchaseLandingSections() {
                   </p>
 
                   <div className="mt-5 space-y-3">
-                    {["Order once", "Automate", "Confirm", "Receive"].map(
-                      (item) => (
-                        <div
-                          key={item}
-                          className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300"
-                        >
-                          <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-                          {item}
-                        </div>
-                      ),
-                    )}
+                    {smartActions.map((action: string) => (
+                      <div
+                        key={action}
+                        className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300"
+                      >
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
+                        {action}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -441,20 +404,20 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
+      {/* Flexible purchase agreements Section */}
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Flexible purchase agreements,
+            {t("agreementSection.title")}
             <br />
-            for every situation
+            {t("agreementSection.subtitle")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Optimize procurement with blanket orders, vendor agreements, prices,
-            delivery schedules, and purchase conditions.
+            {t("agreementSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
@@ -464,10 +427,10 @@ export default function PurchaseLandingSections() {
               <div className="flex flex-col justify-between gap-5 border-b border-slate-100 dark:border-slate-800 pb-5 md:flex-row">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-slate-500">
-                    Purchase Agreement
+                    {t("agreementSection.agreement.title")}
                   </p>
                   <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">
-                    P00023
+                    {t("agreementSection.agreement.reference")}
                   </h3>
                 </div>
 
@@ -477,7 +440,7 @@ export default function PurchaseLandingSections() {
                       Vendor
                     </p>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Azure Interior
+                      {t("agreementSection.agreement.vendor")}
                     </p>
                   </div>
                   <div>
@@ -485,7 +448,7 @@ export default function PurchaseLandingSections() {
                       Agreement Type
                     </p>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Blanket Order
+                      {t("agreementSection.agreement.type")}
                     </p>
                   </div>
                 </div>
@@ -500,28 +463,26 @@ export default function PurchaseLandingSections() {
                   <span>Price</span>
                 </div>
 
-                {[
-                  ["Office Chair", "OFF-442", "2026-03-14", "120", "$89.00"],
-                  ["Desk Lamp", "LMP-930", "2026-03-22", "250", "$18.00"],
-                  ["Wood Table", "TBL-610", "2026-04-01", "75", "$144.00"],
-                  ["Storage Box", "BOX-119", "2026-04-08", "400", "$7.00"],
-                ].map((row) => (
+                {agreementItems.map((item: any) => (
                   <div
-                    key={row[0]}
+                    key={item.product}
                     className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-sm last:border-0"
                   >
-                    {row.map((cell, index) => (
-                      <span
-                        key={cell}
-                        className={
-                          index === 0
-                            ? "font-bold text-slate-900 dark:text-white"
-                            : "text-slate-500 dark:text-slate-400"
-                        }
-                      >
-                        {cell}
-                      </span>
-                    ))}
+                    <span className="font-bold text-slate-900 dark:text-white">
+                      {item.product}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {item.vendorRef}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {item.scheduled}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {item.qty}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {item.price}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -539,29 +500,29 @@ export default function PurchaseLandingSections() {
                 <span>Status</span>
               </div>
 
-              {[
-                ["P00024", "Office Chair", "Azure", "40", "$89.00", "Order"],
-                ["P00025", "Desk Lamp", "Azure", "80", "$18.00", "Draft"],
-                ["P00026", "Wood Table", "Azure", "20", "$144.00", "Order"],
-              ].map((row) => (
+              {agreementOrders.map((order: any) => (
                 <div
-                  key={row[0]}
+                  key={order.order}
                   className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-left text-xs last:border-0"
                 >
-                  {row.map((cell, index) => (
-                    <span
-                      key={cell}
-                      className={
-                        index === 0
-                          ? "font-bold text-[#714b67] dark:text-[#9b6a8f]"
-                          : index === 5
-                            ? "w-fit rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400"
-                            : "text-slate-500 dark:text-slate-400"
-                      }
-                    >
-                      {cell}
-                    </span>
-                  ))}
+                  <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
+                    {order.order}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {order.product}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {order.vendor}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {order.qty}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400">
+                    {order.price}
+                  </span>
+                  <span className="w-fit rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                    {order.status}
+                  </span>
                 </div>
               ))}
             </div>
@@ -569,12 +530,13 @@ export default function PurchaseLandingSections() {
             <FloatingNote
               className="mx-auto mt-12 z-30"
               color="bg-amber-400 dark:bg-amber-700"
-              text="Agreements make purchasing smooth"
+              text={t("agreementSection.floatingNote")}
             />
           </div>
         </div>
       </section>
 
+      {/* Charge vendors on your terms Section */}
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="absolute right-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
@@ -584,17 +546,15 @@ export default function PurchaseLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Charge vendors on
+              {t("vendorSection.title")}
               <br />
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="dark:text-rose-200">your terms</span>
+                <span className="dark:text-rose-200">{t("vendorSection.titleHighlight")}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Create vendor price lists, payment terms, delivery agreements, and
-              approval flows. Keep every supplier aligned with your purchasing
-              rules.
+              {t("vendorSection.description")}
             </p>
           </div>
 
@@ -607,27 +567,21 @@ export default function PurchaseLandingSections() {
                   Payment terms
                 </p>
 
-                {["30 days", "45 days", "Prepaid", "Milestone", "Credit"].map(
-                  (item, index) => (
-                    <div
-                      key={item}
-                      className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs"
+                {paymentTerms.map((term: string, index: number) => (
+                  <div
+                    key={term}
+                    className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs"
+                  >
+                    <span className="font-bold text-slate-700 dark:text-slate-200">
+                      {term}
+                    </span>
+                    <span
+                      className={`rounded-full px-2 py-1 text-[10px] font-bold ${getPaymentTermColor(index)}`}
                     >
-                      <span className="font-bold text-slate-700 dark:text-slate-200">
-                        {item}
-                      </span>
-                      <span
-                        className={`rounded-full px-2 py-1 text-[10px] font-bold ${
-                          index < 2
-                            ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
-                            : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
-                        }`}
-                      >
-                        Active
-                      </span>
-                    </div>
-                  ),
-                )}
+                      Active
+                    </span>
+                  </div>
+                ))}
               </div>
 
               <div className="rounded-xl bg-white dark:bg-slate-800 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)] ring-1 ring-slate-100 dark:ring-slate-700">
@@ -635,32 +589,21 @@ export default function PurchaseLandingSections() {
                   Vendor bills
                 </p>
 
-                {[
-                  ["Azure Interior", "$4,250", "Paid"],
-                  ["Wood Corner", "$2,400", "To Pay"],
-                  ["Office Plus", "$620", "Draft"],
-                  ["Stock Lab", "$3,950", "Paid"],
-                ].map(([vendor, amount, status]) => (
+                {vendorBills.map((bill: any) => (
                   <div
-                    key={vendor}
+                    key={bill.vendor}
                     className="mb-3 grid grid-cols-[1fr_70px_70px] items-center gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs"
                   >
                     <span className="font-bold text-slate-700 dark:text-slate-200">
-                      {vendor}
+                      {bill.vendor}
                     </span>
                     <span className="text-slate-500 dark:text-slate-400">
-                      {amount}
+                      {bill.amount}
                     </span>
                     <span
-                      className={`rounded-full px-2 py-1 text-center text-[10px] font-bold ${
-                        status === "Paid"
-                          ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
-                          : status === "To Pay"
-                            ? "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
-                            : "bg-slate-100 text-slate-500 dark:bg-slate-700 dark:text-slate-400"
-                      }`}
+                      className={`rounded-full px-2 py-1 text-center text-[10px] font-bold ${getVendorBillColor(bill.status)}`}
                     >
-                      {status}
+                      {bill.status}
                     </span>
                   </div>
                 ))}
@@ -670,46 +613,36 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
+      {/* All the small things Section */}
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the small things that make
+            {t("settingsSection.title")}
             <br />
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">procurement</span>
+              <span className="dark:text-[#02cfc3]">{t("settingsSection.titleHighlight")}</span>
             </HandUnderline>{" "}
-            possible
+            {t("settingsSection.titleEnd")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Manage purchase approvals, vendor references, product variants,
-            taxes, landed costs, and every detail that keeps procurement clean.
+            {t("settingsSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-3xl">
-            {[
-              {
-                title: "Purchase settings",
-                tags: ["RFQ", "Approval", "Vendor"],
-                offset: "translate-x-0",
-              },
-              {
-                title: "Vendor rules",
-                tags: ["Terms", "Taxes", "Currency"],
-                offset: "translate-x-8 -translate-y-4",
-              },
-              {
-                title: "Product options",
-                tags: ["UoM", "Routes", "Lead time"],
-                offset: "-translate-x-8 -translate-y-8",
-              },
-            ].map((card, index) => (
+            {settingsCards.map((card: any, index: number) => (
               <div
                 key={card.title}
-                className={`relative mx-auto mb-0 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.10)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)] ${card.offset}`}
+                className={`relative mx-auto mb-0 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.10)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)] ${
+                  index === 0
+                    ? "translate-x-0"
+                    : index === 1
+                      ? "translate-x-8 -translate-y-4"
+                      : "-translate-x-8 -translate-y-8"
+                }`}
                 style={{ zIndex: 10 - index }}
               >
                 <p className="font-bold text-slate-900 dark:text-white">
@@ -717,7 +650,7 @@ export default function PurchaseLandingSections() {
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {card.tags.map((tag, tagIndex) => (
+                  {card.tags.map((tag: string, tagIndex: number) => (
                     <span
                       key={tag}
                       className={`rounded-full px-3 py-1 text-xs font-bold ${
@@ -738,6 +671,7 @@ export default function PurchaseLandingSections() {
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -747,7 +681,7 @@ export default function PurchaseLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
@@ -755,12 +689,12 @@ export default function PurchaseLandingSections() {
             <br />
             done{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">{t("featuresSection.subtitle")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -769,7 +703,6 @@ export default function PurchaseLandingSections() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -788,35 +721,28 @@ export default function PurchaseLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
-            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
-            </HandUnderline>
+            {t("appsSection.title")}{" "}
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -843,11 +769,12 @@ export default function PurchaseLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -891,10 +818,10 @@ export default function PurchaseLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -907,8 +834,7 @@ export default function PurchaseLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  We successfully supply 70 restaurants through 1,000 orders a
-                  day thanks to Adon Purchase.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -920,10 +846,10 @@ export default function PurchaseLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Arthur King
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Procurement director
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -940,82 +866,26 @@ export default function PurchaseLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Share information and make connections",
-  color = "bg-amber-400",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt="User"
-        className="absolute left-3 h-12 w-12 rounded-full object-cover"
-      />
-
-      {text}
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

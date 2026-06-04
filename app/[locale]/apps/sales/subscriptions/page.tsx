@@ -548,7 +548,6 @@ export default function SubscriptionsPage() {
               {t("featuresSection.highlight")}
             </HandCircle>
             <br />
-            {t("featuresSection.subtitle")}{" "}
             <HandUnderline color="bg-sky-400">
               {t("featuresSection.subtitle")}
             </HandUnderline>

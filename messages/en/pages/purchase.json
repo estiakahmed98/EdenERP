@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "title": "Purchase | AdonERP",
+    "description": "AI-powered purchase management platform for all your procurement operations — from RFQs and vendor management to purchase orders, agreements, and cost control."
+  },
+  "hero": {
+    "title": "Restock on time",
+    "titleHighlight": "without overbuying",
+    "description": "Automate RFQs, compare vendors, control costs, avoid stockouts, and purchase exactly what your business needs.",
+    "startButton": "Start now",
+    "demoButton": "Watch a demo",
+    "dashboard": {
+      "title": "Purchase",
+      "subtitle": "RFQ / Purchase Orders / Vendors / Products / Bills",
+      "newButton": "New RFQ",
+      "stats": [
+        { "label": "RFQs", "value": "16", "color": "primary" },
+        { "label": "To Approve", "value": "09", "color": "secondary" },
+        { "label": "Orders", "value": "34", "color": "slate" },
+        { "label": "Late", "value": "03", "color": "rose" }
+      ],
+      "tableHeaders": ["Reference", "Vendor", "Buyer", "Product", "Expected", "Total", "Status"],
+      "rows": [
+        { "reference": "P00023", "vendor": "Azure Interior", "buyer": "Mitchell", "product": "Desk", "expected": "Today", "total": "$4,250", "status": "RFQ" },
+        { "reference": "P00024", "vendor": "Ready Mat", "buyer": "Marc", "product": "Chairs", "expected": "Tomorrow", "total": "$1,840", "status": "Approved" },
+        { "reference": "P00025", "vendor": "Wood Corner", "buyer": "Audrey", "product": "Table", "expected": "Friday", "total": "$2,400", "status": "Ordered" },
+        { "reference": "P00026", "vendor": "Office Plus", "buyer": "Mitchell", "product": "Lamp", "expected": "Monday", "total": "$620", "status": "Received" },
+        { "reference": "P00027", "vendor": "Stock Lab", "buyer": "Joel", "product": "Storage", "expected": "Tuesday", "total": "$3,950", "status": "Approved" },
+        { "reference": "P00028", "vendor": "Global Supply", "buyer": "Marc", "product": "Monitor", "expected": "Next week", "total": "$7,100", "status": "RFQ" }
+      ]
+    },
+    "floatingNote": "Never run out, never overbuy"
+  },
+  "rfqSection": {
+    "title": "Automated",
+    "titleHighlight": "RFQs",
+    "subtitle": "for the busy bee",
+    "description": "Automatically trigger RFQs from replenishment rules, compare vendor offers, and confirm the best purchase at the right time.",
+    "stats": [
+      { "label": "RFQ", "value": "12" },
+      { "label": "To Send", "value": "08" },
+      { "label": "Late", "value": "02" }
+    ],
+    "replenishmentItems": ["Laptop stand", "Office chair", "Wooden table", "Desk lamp"],
+    "rfqItems": [
+      { "qty": "5 x 500", "status": "Purchased" },
+      { "qty": "7 x 350", "status": "Purchased" },
+      { "qty": "8 x 700", "status": "Purchased" },
+      { "qty": "6 x 400", "status": "RFQ" },
+      { "qty": "5 x 350", "status": "RFQ" }
+    ],
+    "smartActions": ["Order once", "Automate", "Confirm", "Receive"]
+  },
+  "agreementSection": {
+    "title": "Flexible purchase agreements,",
+    "subtitle": "for every situation",
+    "description": "Optimize procurement with blanket orders, vendor agreements, prices, delivery schedules, and purchase conditions.",
+    "agreement": {
+      "title": "Purchase Agreement",
+      "reference": "P00023",
+      "vendor": "Azure Interior",
+      "type": "Blanket Order",
+      "items": [
+        { "product": "Office Chair", "vendorRef": "OFF-442", "scheduled": "2026-03-14", "qty": "120", "price": "$89.00" },
+        { "product": "Desk Lamp", "vendorRef": "LMP-930", "scheduled": "2026-03-22", "qty": "250", "price": "$18.00" },
+        { "product": "Wood Table", "vendorRef": "TBL-610", "scheduled": "2026-04-01", "qty": "75", "price": "$144.00" },
+        { "product": "Storage Box", "vendorRef": "BOX-119", "scheduled": "2026-04-08", "qty": "400", "price": "$7.00" }
+      ]
+    },
+    "orders": [
+      { "order": "P00024", "product": "Office Chair", "vendor": "Azure", "qty": "40", "price": "$89.00", "status": "Order" },
+      { "order": "P00025", "product": "Desk Lamp", "vendor": "Azure", "qty": "80", "price": "$18.00", "status": "Draft" },
+      { "order": "P00026", "product": "Wood Table", "vendor": "Azure", "qty": "20", "price": "$144.00", "status": "Order" }
+    ],
+    "floatingNote": "Agreements make purchasing smooth"
+  },
+  "vendorSection": {
+    "title": "Charge vendors on",
+    "titleHighlight": "your terms",
+    "description": "Create vendor price lists, payment terms, delivery agreements, and approval flows. Keep every supplier aligned with your purchasing rules.",
+    "paymentTerms": ["30 days", "45 days", "Prepaid", "Milestone", "Credit"],
+    "vendorBills": [
+      { "vendor": "Azure Interior", "amount": "$4,250", "status": "Paid" },
+      { "vendor": "Wood Corner", "amount": "$2,400", "status": "To Pay" },
+      { "vendor": "Office Plus", "amount": "$620", "status": "Draft" },
+      { "vendor": "Stock Lab", "amount": "$3,950", "status": "Paid" }
+    ]
+  },
+  "settingsSection": {
+    "title": "All the small things that make",
+    "titleHighlight": "procurement",
+    "titleEnd": "possible",
+    "description": "Manage purchase approvals, vendor references, product variants, taxes, landed costs, and every detail that keeps procurement clean.",
+    "cards": [
+      { "title": "Purchase settings", "tags": ["RFQ", "Approval", "Vendor"] },
+      { "title": "Vendor rules", "tags": ["Terms", "Taxes", "Currency"] },
+      { "title": "Product options", "tags": ["UoM", "Routes", "Lead time"] }
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "More companies, less problems",
+        "description": "Create companies, manage suppliers, centralize purchases, and keep every procurement record organized.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Built for any device",
+        "description": "Approve requests, compare offers, and track purchase orders from desktop, tablet, or mobile.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Stats that actually make sense",
+        "description": "Understand vendor performance, product costs, lead times, and purchase trends with clear reports.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Smarter purchasing decisions",
+        "description": "Compare prices, quantities, vendor terms, and delivery promises before confirming a purchase.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Inventory", "description": "Control stock levels", "icon": "Boxes" },
+      { "title": "Sales", "description": "Forecast customer needs", "icon": "BarChart3" },
+      { "title": "Field Service", "description": "Source materials on time", "icon": "Truck" },
+      { "title": "Accounting", "description": "Manage vendor bills", "icon": "ReceiptText" },
+      { "title": "Manufacturing", "description": "Buy components", "icon": "PackageCheck" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "We successfully supply 70 restaurants through 1,000 orders a day thanks to Adon Purchase.",
+    "name": "Arthur King",
+    "role": "Procurement director"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}
