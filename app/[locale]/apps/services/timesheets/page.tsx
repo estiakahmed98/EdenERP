@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -26,6 +27,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, BriefcaseBusiness, CheckCircle2, Clock3,
+    FileText, HelpCircle, MessageCircle, Play, Rocket, Sparkles,
+    Star, Timer, Users, X, Zap, ArrowRight,
+  };
+  return icons[iconName] || Clock3;
+};
+
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -39,84 +51,62 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
-const features = [
-  {
-    title: "Views",
-    description: "Switch between different views as per your needs.",
-  },
-  {
-    title: "Reminders",
-    description:
-      "Send reminders to users that have timesheets to encode or validate.",
-  },
-  {
-    title: "Validation",
-    description: "Validate entries in one click.",
-  },
-  {
-    title: "Sales orders",
-    description: "Link sales orders or services to timesheets.",
-  },
-  {
-    title: "Invoicing",
-    description:
-      "Start and stop the timer from anywhere using keyboard shortcuts. Save time immediately with a task log.",
-  },
-  {
-    title: "Access rights",
-    description: "Grant or restrict your team’s access.",
-  },
-];
-
-const apps = [
-  {
-    title: "Project",
-    description: "Track time on tasks",
-    icon: Clock3,
-  },
-  {
-    title: "Helpdesk",
-    description: "Track time on tickets",
-    icon: HelpCircle,
-  },
-  {
-    title: "Field Service",
-    description: "Track time on interventions",
-    icon: Zap,
-  },
-  {
-    title: "Accounting",
-    description: "Connect invoicing and payments",
-    icon: BarChart3,
-  },
-  {
-    title: "Time Off",
-    description: "Create timesheets for days off",
-    icon: Timer,
-  },
-];
+function FloatingNote({
+  className = "",
+  text = "Project note",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
+}: {
+  className?: string;
+  text?: string;
+  color?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span
+        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
+      />
+      <img
+        src={avatars[1]}
+        alt=""
+        className="absolute left-3 h-12 w-12 rounded-full object-cover"
+      />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
+      {text}
+    </div>
+  );
+}
 
 export default function TimesheetsLandingPage() {
+  const t = useTranslations("pages.timesheets");
+  const dashboardRows = t.raw("hero.dashboard.rows");
+  const tableHeaders = t.raw("hero.dashboard.tableHeaders");
+  const hoursRows = t.raw("hoursSection.demo.rows");
+  const hoursTableHeaders = t.raw("hoursSection.demo.tableHeaders");
+  const viewsEntries = t.raw("featuresSection.viewsDemo.entries");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Don&apos;t waste time.{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                Track it.
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Adon Timesheets allows you to automate time tracking, eliminate
-            leakage, and boost billable hours. All with an interface powered by
-            smart recommendations.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -124,14 +114,14 @@ export default function TimesheetsLandingPage() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
 
@@ -145,118 +135,54 @@ export default function TimesheetsLandingPage() {
                 <div className="flex items-center gap-3">
                   <Clock3 className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Timesheets
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Timesheets / To Validate / Reporting / Configuration
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  New
+                  {t("hero.dashboard.newButton")}
                 </button>
               </div>
 
               <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
                 <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                   <div className="grid grid-cols-[1.4fr_repeat(7,80px)] border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                    <span>Description</span>
-                    {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Total"].map(
-                      (day) => (
-                        <span key={day} className="text-center">
-                          {day}
-                        </span>
-                      ),
-                    )}
+                    {tableHeaders.map((header: string, idx: number) => (
+                      <span key={header} className={idx === 0 ? "" : "text-center"}>
+                        {header}
+                      </span>
+                    ))}
                   </div>
 
-                  {[
-                    [
-                      "SO001 - Website Design",
-                      "0:00",
-                      "3:00",
-                      "2:00",
-                      "4:00",
-                      "1:00",
-                      "0:00",
-                      "10:00",
-                    ],
-                    [
-                      "Office Design",
-                      "2:30",
-                      "1:00",
-                      "0:30",
-                      "3:00",
-                      "2:00",
-                      "0:00",
-                      "9:00",
-                    ],
-                    [
-                      "Research & Development",
-                      "1:00",
-                      "2:00",
-                      "4:00",
-                      "2:00",
-                      "1:30",
-                      "0:00",
-                      "10:30",
-                    ],
-                    [
-                      "Support - Subscription",
-                      "0:30",
-                      "1:30",
-                      "2:00",
-                      "1:00",
-                      "0:30",
-                      "0:00",
-                      "5:30",
-                    ],
-                    [
-                      "Internal Meeting",
-                      "1:00",
-                      "0:30",
-                      "1:00",
-                      "0:30",
-                      "1:00",
-                      "0:00",
-                      "4:00",
-                    ],
-                    [
-                      "Training",
-                      "0:00",
-                      "0:00",
-                      "2:00",
-                      "2:00",
-                      "0:00",
-                      "0:00",
-                      "4:00",
-                    ],
-                  ].map((row, rowIndex) => (
+                  {dashboardRows.map((row: any, rowIndex: number) => (
                     <div
-                      key={row[0]}
+                      key={row.description}
                       className="grid grid-cols-[1.4fr_repeat(7,80px)] items-center border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
                       <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
                         <img
-                          src={avatars[rowIndex]}
+                          src={avatars[rowIndex % avatars.length]}
                           alt=""
                           className="h-7 w-7 rounded-full object-cover"
                         />
-                        {row[0]}
+                        {row.description}
                       </span>
 
-                      {row.slice(1).map((cell, index) => (
+                      {["mon", "tue", "wed", "thu", "fri", "sat", "total"].map((key, colIndex) => (
                         <span
-                          key={index}
+                          key={key}
                           className={`text-center ${
-                            index === 5
+                            colIndex === 5
                               ? "bg-[#b9eef0]/80 dark:bg-[#02cfc3]/30 py-3 font-bold text-slate-900 dark:text-white"
-                              : index === 6
+                              : colIndex === 6
                                 ? "bg-slate-200 dark:bg-slate-700 py-3 font-bold text-slate-900 dark:text-white"
                                 : "text-slate-500 dark:text-slate-400"
                           }`}
                         >
-                          {cell}
+                          {row[key]}
                         </span>
                       ))}
                     </div>
@@ -272,7 +198,7 @@ export default function TimesheetsLandingPage() {
             <FloatingNote
               className="mx-auto mt-12 z-30"
               color="bg-amber-400 dark:bg-amber-700"
-              text="Everything time by team has been auto suggested already"
+              text={t("hero.floatingNote")}
             />
           </div>
         </div>
@@ -280,6 +206,7 @@ export default function TimesheetsLandingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Where did all those hours go? Section */}
       <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8 flex justify-center gap-8 text-2xl">
@@ -297,32 +224,29 @@ export default function TimesheetsLandingPage() {
             className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Where did all those hours go?
+            {t("hoursSection.title")}
             <br />
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-              <span className="dark:text-amber-200">Stop wondering</span>
+              <span className="dark:text-amber-200">{t("hoursSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Smart time tracking. Launch a timer on the fly, and ensure that
-            timesheets are always linked to the correct project, task, or sales
-            order. No more missing data.
+            {t("hoursSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="mb-4 rounded-lg bg-white dark:bg-slate-800 px-5 py-3 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
-              <span className="rounded bg-[#714b67] px-3 py-1 text-xs font-bold text-white dark:bg-[#8a5a7e]">
-                Day
-              </span>
-              <span className="ml-4 text-xs font-bold text-slate-500 dark:text-slate-400">
-                Week
-              </span>
-              <span className="ml-4 text-xs font-bold text-slate-500 dark:text-slate-400">
-                Month
-              </span>
+              {t.raw("hoursSection.demo.tabs").map((tab: string, idx: number) => (
+                <span
+                  key={tab}
+                  className={`${idx === 0 ? "rounded bg-[#714b67] px-3 py-1 text-xs font-bold text-white dark:bg-[#8a5a7e]" : "ml-4 text-xs font-bold text-slate-500 dark:text-slate-400"}`}
+                >
+                  {tab}
+                </span>
+              ))}
               <span className="ml-6 text-xs text-slate-400 dark:text-slate-500">
-                SO001 / Project Check Code
+                {t("hoursSection.demo.infoText")}
               </span>
             </div>
 
@@ -330,41 +254,38 @@ export default function TimesheetsLandingPage() {
               className="absolute -left-4 top-14 hidden rotate-[-8deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Timer ↗
+              {t("hoursSection.demo.labels.timer")}
             </p>
 
             <p
               className="absolute left-44 top-12 hidden rotate-[4deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Projects and tasks ↘
+              {t("hoursSection.demo.labels.projects")}
             </p>
 
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid grid-cols-[1fr_1fr_90px] border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs font-bold uppercase text-slate-400 dark:text-slate-500">
-                <span>Day</span>
-                <span className="text-center">Task Time</span>
-                <span className="text-center">Hours</span>
+                {hoursTableHeaders.map((header: string) => (
+                  <span key={header} className={header === "Task Time" ? "text-center" : ""}>
+                    {header}
+                  </span>
+                ))}
               </div>
 
-              {[
-                ["Total Task - Web app validation", "2:20", "2:30"],
-                ["Internal Meeting", "3:15", "3:15"],
-                ["Support / Sales Demo", "0:45", "0:45"],
-                ["SEO Changes", "4:20", "4:20"],
-              ].map((row, index) => (
+              {hoursRows.map((row: any) => (
                 <div
-                  key={row[0]}
+                  key={row.day}
                   className="grid grid-cols-[1fr_1fr_90px] border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-left text-xs last:border-0"
                 >
                   <span className="font-bold text-slate-800 dark:text-white">
-                    {row[0]}
+                    {row.day}
                   </span>
                   <span className="bg-[#b9eef0]/70 dark:bg-[#02cfc3]/30 py-2 text-center font-bold text-slate-800 dark:text-white">
-                    {row[1]}
+                    {row.taskTime}
                   </span>
                   <span className="text-center text-slate-500 dark:text-slate-400">
-                    {row[2]}
+                    {row.hours}
                   </span>
                 </div>
               ))}
@@ -382,20 +303,21 @@ export default function TimesheetsLandingPage() {
               className="mt-3 flex justify-center gap-24 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
               style={{ fontFamily: handwrittenFont }}
             >
-              <span>Sales orders and invoices</span>
-              <span>Total hours worked</span>
+              <span>{t("hoursSection.demo.labels.salesOrders")}</span>
+              <span>{t("hoursSection.demo.labels.totalHours")}</span>
             </div>
 
             <p
               className="mt-4 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
               style={{ fontFamily: handwrittenFont }}
             >
-              Overtime ↗
+              {t("hoursSection.demo.labels.overtime")}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Make every minute count Section */}
       <section className="relative bg-white dark:bg-slate-950 py-24">
         <div className="absolute left-1/2 top-1/2 hidden h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
@@ -405,12 +327,11 @@ export default function TimesheetsLandingPage() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Make every minute count
+              {t("productivitySection.title")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Keep it profitable. Get an overview of your billable time by team
-              member, project, task, and billing type.
+              {t("productivitySection.description")}
             </p>
           </div>
 
@@ -422,10 +343,7 @@ export default function TimesheetsLandingPage() {
             </div>
 
             <div className="flex h-64 items-end gap-3">
-              {[
-                65, 92, 88, 70, 110, 220, 85, 76, 95, 130, 230, 92, 97, 105, 82,
-                75, 68, 110, 80,
-              ].map((height, index) => (
+              {[65, 92, 88, 70, 110, 220, 85, 76, 95, 130, 230, 92, 97, 105, 82, 75, 68, 110, 80].map((height, index) => (
                 <div key={index} className="flex flex-1 flex-col items-center">
                   <div
                     className="w-full bg-sky-600/80 dark:bg-sky-500/80"
@@ -439,6 +357,7 @@ export default function TimesheetsLandingPage() {
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -448,7 +367,7 @@ export default function TimesheetsLandingPage() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
@@ -456,7 +375,7 @@ export default function TimesheetsLandingPage() {
             <br />
             done{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">right.</span>
+              <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
@@ -467,55 +386,48 @@ export default function TimesheetsLandingPage() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                   <Clock3 className="h-5 w-5" />
                 </div>
-
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
               <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
-                Views
+                {t("featuresSection.viewsDemo.title")}
               </h3>
               <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Switch between 5 different views as per your needs.
+                {t("featuresSection.viewsDemo.description")}
               </p>
 
               <div className="mt-8 overflow-hidden rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 ring-1 ring-slate-100 dark:ring-slate-700">
                 <div className="mb-3 flex gap-2">
-                  <span className="rounded bg-[#714b67] px-3 py-1 text-xs font-bold text-white dark:bg-[#8a5a7e]">
-                    Day
-                  </span>
-                  <span className="rounded bg-white dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400">
-                    Week
-                  </span>
-                  <span className="rounded bg-white dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400">
-                    Month
-                  </span>
+                  {t.raw("featuresSection.viewsDemo.tabs").map((tab: string, idx: number) => (
+                    <span
+                      key={tab}
+                      className={`rounded ${idx === 0 ? "bg-[#714b67] px-3 py-1 text-xs font-bold text-white dark:bg-[#8a5a7e]" : "bg-white dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400"}`}
+                    >
+                      {tab}
+                    </span>
+                  ))}
                 </div>
 
-                {[
-                  ["Audrey Peterson", "Research", "2:30"],
-                  ["Mitchell Admin", "Website", "4:00"],
-                  ["Joel Willis", "Support", "1:15"],
-                  ["Jennie Fletcher", "Planning", "3:30"],
-                ].map((row, index) => (
+                {viewsEntries.map((entry: any) => (
                   <div
-                    key={row[0]}
+                    key={entry.employee}
                     className="grid grid-cols-[1fr_1fr_60px] border-b border-white dark:border-slate-700 px-3 py-3 text-xs last:border-0"
                   >
                     <span className="font-bold text-slate-800 dark:text-white">
-                      {row[0]}
+                      {entry.employee}
                     </span>
                     <span className="text-slate-500 dark:text-slate-400">
-                      {row[1]}
+                      {entry.task}
                     </span>
                     <span className="font-bold text-slate-800 dark:text-white">
-                      {row[2]}
+                      {entry.hours}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {features.slice(1).map((feature) => (
+            {featuresList.slice(1).map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -524,7 +436,6 @@ export default function TimesheetsLandingPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -543,35 +454,28 @@ export default function TimesheetsLandingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
+            
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
+              <span className="dark:text-sky-200">{t("appsSection.description")}</span>
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
-          </p>
-
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -598,11 +502,12 @@ export default function TimesheetsLandingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -646,10 +551,10 @@ export default function TimesheetsLandingPage() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -662,10 +567,7 @@ export default function TimesheetsLandingPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Our day-to-day tasks have become simpler, and we have been
-                  able to complete them in less time. Thanks to Adon automation
-                  and integration features, our work efficiency has grown
-                  significantly.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -677,10 +579,10 @@ export default function TimesheetsLandingPage() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Martins Carvalho
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Operations and reporting director
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -697,56 +599,26 @@ export default function TimesheetsLandingPage() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Project note",
-  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt=""
-        className="absolute left-3 h-12 w-12 rounded-full object-cover"
-      />
-
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
-
-      {text}
-    </div>
   );
 }

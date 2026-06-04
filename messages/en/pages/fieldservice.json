@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "title": "Field Service | AdonERP",
+    "description": "AI-powered field service management platform for all your field operations — from route optimization and scheduling to dispatch, invoicing, and mobile workforce management."
+  },
+  "hero": {
+    "title": "Field service.",
+    "titleHighlight": "Simplified",
+    "description": "Optimize routes, schedule, dispatch, invoice, and manage field teams with one integrated timesheets and billing flow.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "dashboard": {
+      "title": "Field Service",
+      "subtitle": "My Tasks / All Tasks / Planning / Reporting",
+      "newButton": "New",
+      "columns": [
+        {
+          "title": "9:30 AM",
+          "cards": ["Repair office AC", "Install smart lock", "Fix printer issue"]
+        },
+        {
+          "title": "11:30 AM",
+          "cards": ["Measurement update", "Customer follow-up", "Maintenance check"]
+        },
+        {
+          "title": "2:00 PM",
+          "cards": ["Solar panel setup", "Router inspection", "Final validation"]
+        }
+      ]
+    },
+    "floatingNote": "Drag and drop your day on the map"
+  },
+  "planSection": {
+    "title": "Great plan = great",
+    "titleHighlight": "execution",
+    "description": "Planning operations, work orders, and tasks is much easier when your team knows where to go, what to do, and what comes next.",
+    "days": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "taskDetail": {
+      "title": "Task detail",
+      "task": "Install solar panel",
+      "items": ["Customer ready", "Route optimized", "Parts available"]
+    }
+  },
+  "mobileSection": {
+    "title": "All-in-one",
+    "titleHighlight": "mobile app",
+    "description": "Everything you need in your pocket. Access powerful mobile tools to manage tasks, track time, capture signatures, and invoice on-site.",
+    "labels": {
+      "features": "Cool features and clear steps",
+      "recordTime": "Record time spent on each appointment",
+      "trackParts": "Keep track of your parts and manage invoices"
+    },
+    "demo": {
+      "title": "Field Task",
+      "subtitle": "Customer intervention",
+      "items": ["Route confirmed", "Parts checked", "Timer running", "Signature required"],
+      "signature": "Signature",
+      "signatureValue": "J. Customer",
+      "button": "Validate task",
+      "timer": "00:43",
+      "invoice": "2 products added"
+    }
+  },
+  "invoicingSection": {
+    "title": "Carefree",
+    "titleHighlight": "invoicing",
+    "description": "Invoice customers, add products, track timesheets, and turn field service work into billable revenue.",
+    "floatingNote": "Create invoices directly from the task",
+    "demo": {
+      "invoiceNumber": "INV/2026/00038",
+      "items": [
+        { "label": "Installation service", "price": "$350.00" },
+        { "label": "Maintenance", "price": "$120.00" },
+        { "label": "External battery", "price": "$240.00" },
+        { "label": "Travel fee", "price": "$45.00" }
+      ],
+      "total": "$755.00"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Calendar view",
+        "description": "Simplify planning, drag and drop appointments, and manage every technician's schedule.",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Map view",
+        "description": "Plan routes, group nearby interventions, and reduce unnecessary travel.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Quote view",
+        "description": "Manage customer needs, generate quotes, and track related services.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Mobile availability",
+        "description": "Workers get everything they need on-site from a mobile-friendly interface.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Time tracking",
+        "description": "Launch timers, track exact intervention time, and invoice service hours.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Invoice from Sales orders",
+        "description": "Attach products, services, timesheets, and generate invoices quickly.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features",
+    "calendarDemo": {
+      "title": "Calendar view",
+      "description": "Simplify planning and drag appointments directly in your calendar."
+    }
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Project", "description": "Manage work tasks", "icon": "CheckCircle2" },
+      { "title": "Tracking", "description": "Track field operations", "icon": "MapPin" },
+      { "title": "Sales", "description": "Create service quotes", "icon": "BarChart3" },
+      { "title": "Inventory", "description": "Use spare parts", "icon": "ClipboardList" },
+      { "title": "Helpdesk", "description": "Turn tickets into tasks", "icon": "HelpCircle" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "The purchasing time for accounting documents prior to analysis is now reduced from 2 days to only 5 hours.",
+    "name": "Arthur Green",
+    "role": "Field service director"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

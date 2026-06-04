@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -27,6 +28,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, BriefcaseBusiness, CalendarDays, CheckCircle2,
+    ClipboardList, FileText, FolderKanban, MessageCircle, Play, Rocket,
+    Sparkles, Star, Timer, Users, Workflow, X, ArrowRight,
+  };
+  return icons[iconName] || FolderKanban;
+};
+
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -40,60 +52,77 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
-const features = [
-  {
-    title: "Document management",
-    description: "Dedicate workspace for each project.",
-  },
-  {
-    title: "Templates",
-    description: "Create repeatable workflows and project structures.",
-  },
-  {
-    title: "Milestones",
-    description: "Track major project goals that must be reached on time.",
-  },
-  {
-    title: "Reporting",
-    description: "Get project profitability, tasks, workload, and progress.",
-  },
-  {
-    title: "Track costs and revenues",
-    description: "Integrate timesheets, invoicing, purchases, and sales.",
-  },
-];
+function FloatingNote({
+  className = "",
+  text = "Project note",
+  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
+}: {
+  className?: string;
+  text?: string;
+  color?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span
+        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
+      />
+      <img
+        src={avatars[1]}
+        alt="User"
+        className="absolute left-3 h-12 w-12 rounded-full object-cover"
+      />
+      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
+      {text}
+    </div>
+  );
+}
 
-const apps = [
-  {
-    title: "Timesheet",
-    description: "Record time on tasks",
-    icon: Timer,
-  },
-  {
-    title: "Sales",
-    description: "Sell tasks and services",
-    icon: BarChart3,
-  },
-  {
-    title: "Field Service",
-    description: "Manage onsite work",
-    icon: BriefcaseBusiness,
-  },
-  {
-    title: "Accounting",
-    description: "Invoice projects",
-    icon: ClipboardList,
-  },
-  {
-    title: "Documents",
-    description: "Centralize files",
-    icon: FileText,
-  },
-];
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function ProjectLandingSections() {
+  const t = useTranslations("pages.project");
+
+  const dashboardColumns = t.raw("hero.dashboard.columns");
+  const viewItems = t.raw("viewsSection.items");
+  const demoRows = t.raw("viewsSection.demo.rows");
+  const dashboardColumnsList = t.raw("dashboardSection.columns");
+  const dashboardTasksList = t.raw("dashboardSection.tasks");
+  const collaborationMessages = t.raw("collaborationSection.demo.messages");
+  const timesheetRows = t.raw("timesheetSection.checklist.rows");
+  const timesheetHeaders = t.raw("timesheetSection.checklist.headers");
+  const progressStats = t.raw("progressSection.stats");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
@@ -101,14 +130,15 @@ export default function ProjectLandingSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="text-sky-500 dark:text-sky-400">Modern</span>
+              <span className="text-sky-500 dark:text-sky-400">
+                {t("hero.title")}
+              </span>
             </HandUnderline>{" "}
-            teamwork
+            {t("hero.titleHighlight")}
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            The AI-powered project management software to plan, track, and
-            deliver faster.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -116,7 +146,7 @@ export default function ProjectLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Meet an advisor
+              {t("hero.button")}
             </Link>
           </div>
 
@@ -130,37 +160,20 @@ export default function ProjectLandingSections() {
                 <div className="flex items-center gap-3">
                   <FolderKanban className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Project
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Tasks / Gantt / Calendar / Reporting / Configuration
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  New
+                  {t("hero.dashboard.newButton")}
                 </button>
               </div>
 
               <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
-                {[
-                  {
-                    title: "To Do",
-                    cards: ["App Design", "Website Wireframe", "SEO Setup"],
-                  },
-                  {
-                    title: "In Progress",
-                    cards: ["User Story", "Dashboard UI", "Landing Page"],
-                  },
-                  {
-                    title: "Development",
-                    cards: ["API Integration", "Testing", "Bug Fixing"],
-                  },
-                  {
-                    title: "Done",
-                    cards: ["Client Brief", "Brand Assets", "Planning"],
-                  },
-                ].map((column, columnIndex) => (
+                {dashboardColumns.map((column: any, columnIndex: number) => (
                   <div
                     key={column.title}
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
@@ -175,7 +188,7 @@ export default function ProjectLandingSections() {
                     </div>
 
                     <div className="space-y-3">
-                      {column.cards.map((card, cardIndex) => (
+                      {column.cards.map((card: string, cardIndex: number) => (
                         <div
                           key={card}
                           className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
@@ -185,7 +198,7 @@ export default function ProjectLandingSections() {
                           </p>
 
                           <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                            {cardIndex + 2} tasks · {columnIndex + 1} days left
+                            {cardIndex + 2} {t("hero.dashboard.tasksText")} · {columnIndex + 1} {t("hero.dashboard.daysLeftText")}
                           </p>
 
                           <div className="mt-3 flex items-center justify-between">
@@ -195,21 +208,12 @@ export default function ProjectLandingSections() {
 
                             <div className="flex -space-x-2">
                               <img
-                                src={
-                                  avatars[
-                                    (columnIndex + cardIndex) % avatars.length
-                                  ]
-                                }
+                                src={avatars[(columnIndex + cardIndex) % avatars.length]}
                                 alt="Member"
                                 className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 object-cover"
                               />
                               <img
-                                src={
-                                  avatars[
-                                    (columnIndex + cardIndex + 2) %
-                                      avatars.length
-                                  ]
-                                }
+                                src={avatars[(columnIndex + cardIndex + 2) % avatars.length]}
                                 alt="Member"
                                 className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 object-cover"
                               />
@@ -232,26 +236,20 @@ export default function ProjectLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Different needs, different views Section */}
       <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <DashedArrow className="mx-auto mb-8 h-24 w-24 rotate-90 text-slate-300 dark:text-slate-600" />
 
           <div className="mb-8 flex justify-center gap-6">
             {[
-              {
-                icon: CalendarDays,
-                color: "text-amber-500 dark:text-amber-400",
-              },
+              { icon: CalendarDays, color: "text-amber-500 dark:text-amber-400" },
               { icon: ClipboardList, color: "text-sky-500 dark:text-sky-400" },
               { icon: Workflow, color: "text-[#02a6a6] dark:text-[#02cfc3]" },
-            ].map((item, index) => {
+            ].map((item, idx) => {
               const Icon = item.icon;
-
               return (
-                <div
-                  key={index}
-                  className="flex h-14 w-14 items-center justify-center rounded-xl bg-white dark:bg-slate-800 shadow-sm"
-                >
+                <div key={idx} className="flex h-14 w-14 items-center justify-center rounded-xl bg-white dark:bg-slate-800 shadow-sm">
                   <Icon className={`h-7 w-7 ${item.color}`} />
                 </div>
               );
@@ -262,34 +260,26 @@ export default function ProjectLandingSections() {
             className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Different{" "}
+            {t("viewsSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">needs</span>
+              <span className="dark:text-[#02cfc3]">{t("viewsSection.titleHighlight")}</span>
             </HandUnderline>
-            , different{" "}
+            , {t("viewsSection.titleMiddle")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">views</span>
+              <span className="dark:text-[#02cfc3]">{t("viewsSection.titleHighlight2")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="space-y-6 text-left">
-              {[
-                "The powerful spreadsheet-like list view keeps every task organized.",
-                "Plan tasks and milestones with a flexible timeline view.",
-                "Calendar, kanban, and task stages keep every team aligned.",
-              ].map((text, index) => (
-                <div key={text} className="flex gap-4">
+              {viewItems.map((item: any, index: number) => (
+                <div key={item.description} className="flex gap-4">
                   <Sparkles className="mt-1 h-5 w-5 flex-none text-[#02cfc3]" />
                   <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">
                     <span className="font-bold text-slate-900 dark:text-white">
-                      {index === 0
-                        ? "Spreadsheet view."
-                        : index === 1
-                          ? "Planner schedule."
-                          : "Flexible flow."}
+                      {item.title}
                     </span>{" "}
-                    {text}
+                    {item.description}
                   </p>
                 </div>
               ))}
@@ -298,44 +288,42 @@ export default function ProjectLandingSections() {
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-5 flex items-center justify-between">
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Project Schedule
+                  {t("viewsSection.demo.title")}
                 </p>
                 <span className="rounded-full bg-sky-50 dark:bg-sky-950/50 px-3 py-1 text-xs font-bold text-sky-600 dark:text-sky-400">
-                  Timeline
+                  {t("viewsSection.demo.badge")}
                 </span>
               </div>
 
               <div className="grid grid-cols-[130px_1fr] gap-3 text-left">
-                {["Design", "Development", "Review", "Launch"].map(
-                  (row, rowIndex) => (
-                    <div key={row} className="contents">
-                      <p className="py-3 text-sm font-bold text-slate-600 dark:text-slate-300">
-                        {row}
-                      </p>
-
-                      <div className="grid grid-cols-5 gap-2 py-2">
-                        {Array.from({ length: 5 }).map((_, index) => (
-                          <div
-                            key={index}
-                            className={`h-10 rounded-md ${
-                              index >= rowIndex && index <= rowIndex + 1
-                                ? "bg-[#714b67]/20 dark:bg-[#9b6a8f]/20"
-                                : index === rowIndex + 2
-                                  ? "bg-amber-100 dark:bg-amber-950/50"
-                                  : "bg-slate-50 dark:bg-slate-800/50"
-                            }`}
-                          />
-                        ))}
-                      </div>
+                {demoRows.map((row: string, rowIndex: number) => (
+                  <div key={row} className="contents">
+                    <p className="py-3 text-sm font-bold text-slate-600 dark:text-slate-300">
+                      {row}
+                    </p>
+                    <div className="grid grid-cols-5 gap-2 py-2">
+                      {Array.from({ length: 5 }).map((_, index) => (
+                        <div
+                          key={index}
+                          className={`h-10 rounded-md ${
+                            index >= rowIndex && index <= rowIndex + 1
+                              ? "bg-[#714b67]/20 dark:bg-[#9b6a8f]/20"
+                              : index === rowIndex + 2
+                                ? "bg-amber-100 dark:bg-amber-950/50"
+                                : "bg-slate-50 dark:bg-slate-800/50"
+                          }`}
+                        />
+                      ))}
                     </div>
-                  ),
-                )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Enjoy a comprehensive dashboard Section */}
       <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-500 dark:text-amber-400">
@@ -346,7 +334,7 @@ export default function ProjectLandingSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Enjoy a comprehensive dashboard
+            {t("dashboardSection.title")}
           </h2>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
@@ -354,32 +342,25 @@ export default function ProjectLandingSections() {
               className="absolute -left-10 top-20 hidden rotate-[-15deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Status view
+              {t("dashboardSection.labels.statusView")}
             </p>
 
             <p
               className="absolute -right-10 top-28 hidden rotate-15 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Tags
+              {t("dashboardSection.labels.tags")}
             </p>
 
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid gap-5 md:grid-cols-2">
-                {["In Progress", "Final Checks"].map((column, columnIndex) => (
-                  <div
-                    key={column}
-                    className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4"
-                  >
+                {dashboardColumnsList.map((column: string, columnIndex: number) => (
+                  <div key={column} className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
                     <p className="mb-4 text-left font-bold text-slate-900 dark:text-white">
                       {column}
                     </p>
 
-                    {[
-                      "Kitchen drawings",
-                      "Appliances choice",
-                      "Design Definition",
-                    ].map((task, index) => (
+                    {dashboardTasksList.map((task: string, index: number) => (
                       <div
                         key={`${column}-${task}`}
                         className="mb-3 rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm"
@@ -392,8 +373,7 @@ export default function ProjectLandingSections() {
                         </div>
 
                         <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
-                          Task #{columnIndex + 1}
-                          {index + 1}
+                          Task #{columnIndex + 1}{index + 1}
                         </p>
 
                         <div className="mt-3 flex items-center gap-2">
@@ -415,12 +395,13 @@ export default function ProjectLandingSections() {
               className="mt-5 text-center text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
               style={{ fontFamily: handwrittenFont }}
             >
-              Kanban view &nbsp;&nbsp;&nbsp;&nbsp; All activities
+              {t("dashboardSection.labels.kanbanView")} &nbsp;&nbsp;&nbsp;&nbsp; {t("dashboardSection.labels.allActivities")}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Foster collaboration Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
@@ -431,22 +412,19 @@ export default function ProjectLandingSections() {
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Foster{" "}
+              {t("collaborationSection.title")}{" "}
               <span className="relative inline-block px-2">
-                <span className="relative z-10">collaboration</span>
+                <span className="relative z-10">{t("collaborationSection.titleHighlight")}</span>
                 <span className="absolute inset-x-0 bottom-2 h-7 rounded-lg bg-amber-300 dark:bg-amber-700" />
               </span>{" "}
-              to
-              <br />
-              boost efficiency
+              {t("collaborationSection.titleEnd")}
             </h2>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               <span className="font-bold text-slate-700 dark:text-slate-200">
                 Involve your customers.
               </span>{" "}
-              Decide what parts of your project stakeholders can view and edit.
-              Manage all your communication on one simple interface.
+              {t("collaborationSection.description")}
             </p>
           </div>
 
@@ -454,31 +432,27 @@ export default function ProjectLandingSections() {
             <div className="mb-5 flex items-center gap-3">
               <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
               <p className="font-bold text-slate-900 dark:text-white">
-                Project Discussion
+                {t("collaborationSection.demo.title")}
               </p>
             </div>
 
             <div className="space-y-4">
-              {[
-                ["Audrey Peterson", "Can you review the kitchen layout?"],
-                ["Mitchell Admin", "Approved, looks good to me."],
-                ["Joel Willis", "I added a new document for the client."],
-              ].map(([name, message], index) => (
+              {collaborationMessages.map((msg: any, index: number) => (
                 <div
-                  key={message}
+                  key={msg.text}
                   className="flex gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-left"
                 >
                   <img
-                    src={avatars[index]}
-                    alt={name}
+                    src={avatars[index % avatars.length]}
+                    alt={msg.name}
                     className="h-10 w-10 rounded-full object-cover"
                   />
                   <div>
                     <p className="text-sm font-bold text-slate-900 dark:text-white">
-                      {name}
+                      {msg.name}
                     </p>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {message}
+                      {msg.text}
                     </p>
                   </div>
                 </div>
@@ -488,6 +462,7 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
+      {/* Time is money Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-50 dark:bg-rose-950/50 text-rose-500 dark:text-rose-400">
@@ -498,23 +473,22 @@ export default function ProjectLandingSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Time is money
+            {t("timesheetSection.title")}
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Timesheets and analytics help you know exactly where the money is
-            going and how your team is spending billable hours.
+            {t("timesheetSection.description")}
           </p>
 
           <div className="mx-auto mt-8 flex w-fit rounded-lg bg-slate-100 dark:bg-slate-800 p-1">
             <button className="rounded-md bg-[#714b67] px-5 py-2 text-xs font-bold text-white dark:bg-[#8a5a7e]">
-              Stage 1
+              {t("timesheetSection.stageButton")}
             </button>
             <button className="px-5 py-2 text-xs font-bold text-slate-500 dark:text-slate-400">
-              Record
+              {t("timesheetSection.recordButton")}
             </button>
             <button className="px-5 py-2 text-xs font-bold text-slate-500 dark:text-slate-400">
-              00:42:00
+              {t("timesheetSection.timerButton")}
             </button>
           </div>
 
@@ -522,42 +496,29 @@ export default function ProjectLandingSections() {
 
           <div className="relative mx-auto max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-              Check List
+              {t("timesheetSection.checklist.title")}
             </h3>
             <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Project Task Details
+              {t("timesheetSection.checklist.subtitle")}
             </p>
 
             <div className="mt-6 overflow-hidden rounded-lg ring-1 ring-slate-100 dark:ring-slate-800">
               <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-xs font-bold uppercase text-slate-400 dark:text-slate-500">
-                <span>Date</span>
-                <span>Employee</span>
-                <span>Description</span>
-                <span>Hours</span>
-                <span>Billable</span>
+                {timesheetHeaders.map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
 
-              {[
-                ["7/10/2025", "Lii Lambert", "Design review", "2.5h", "Yes"],
-                ["7/11/2025", "Marc Demo", "Development", "4h", "Yes"],
-                ["7/12/2025", "Audrey", "Client call", "1h", "No"],
-              ].map((row) => (
+              {timesheetRows.map((row: any) => (
                 <div
-                  key={row[0]}
+                  key={row.date}
                   className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-800 px-4 py-4 text-xs last:border-0"
                 >
-                  {row.map((cell, index) => (
-                    <span
-                      key={cell}
-                      className={
-                        index === 1
-                          ? "font-bold text-slate-900 dark:text-white"
-                          : "text-slate-500 dark:text-slate-400"
-                      }
-                    >
-                      {cell}
-                    </span>
-                  ))}
+                  <span className="text-slate-500 dark:text-slate-400">{row.date}</span>
+                  <span className="font-bold text-slate-900 dark:text-white">{row.employee}</span>
+                  <span className="text-slate-500 dark:text-slate-400">{row.description}</span>
+                  <span className="text-slate-500 dark:text-slate-400">{row.hours}</span>
+                  <span className="text-slate-500 dark:text-slate-400">{row.billable}</span>
                 </div>
               ))}
             </div>
@@ -568,6 +529,7 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
+      {/* Always know where your project stands Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
@@ -576,47 +538,42 @@ export default function ProjectLandingSections() {
                 className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Always know where your
+                {t("progressSection.title")}
                 <br />
-                project stands
+                {t("progressSection.subtitle")}
               </h2>
 
               <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-                Project updates are generated in real-time and give quick access
-                to important statistics, invoices, costs, revenue, and progress.
+                {t("progressSection.description")}
               </p>
             </div>
 
             <FloatingNote
               className="justify-self-center lg:justify-self-end"
               color="bg-[#02cfc3] dark:bg-[#02cfc3]/30"
-              text="Your client can follow along"
+              text={t("progressSection.floatingNote")}
             />
           </div>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
             <div className="absolute inset-0 translate-y-8 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            {[
-              ["Tasks", "48", "+12%"],
-              ["Milestones", "7", "On track"],
-              ["Costs", "$8,420", "-3%"],
-            ].map(([title, value, trend], index) => (
+            {progressStats.map((stat: any, index: number) => (
               <div
-                key={title}
+                key={stat.title}
                 className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
               >
                 <span className="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-rose-50 dark:bg-rose-950/50 text-xs font-bold text-rose-500 dark:text-rose-400">
                   {index + 1}
                 </span>
                 <p className="text-sm font-bold text-slate-500 dark:text-slate-400">
-                  {title}
+                  {stat.title}
                 </p>
                 <p className="mt-3 text-3xl font-bold text-slate-900 dark:text-white">
-                  {value}
+                  {stat.value}
                 </p>
                 <p className="mt-2 text-sm font-bold text-emerald-600 dark:text-emerald-400">
-                  {trend}
+                  {stat.trend}
                 </p>
               </div>
             ))}
@@ -624,6 +581,7 @@ export default function ProjectLandingSections() {
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -633,7 +591,7 @@ export default function ProjectLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
@@ -641,7 +599,7 @@ export default function ProjectLandingSections() {
             <br />
             done{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">right.</span>
+              <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
@@ -652,17 +610,15 @@ export default function ProjectLandingSections() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                   <CalendarDays className="h-5 w-5" />
                 </div>
-
                 <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
               </div>
 
               <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
-                Project planning
+                {t("featuresSection.planningDemo.title")}
               </h3>
 
               <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Plan tasks, deadlines, resources, and activities from one visual
-                workspace.
+                {t("featuresSection.planningDemo.description")}
               </p>
 
               <div className="mt-8 grid grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
@@ -681,7 +637,7 @@ export default function ProjectLandingSections() {
               </div>
             </div>
 
-            {features.map((feature) => (
+            {featuresList.map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -690,7 +646,6 @@ export default function ProjectLandingSections() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -709,35 +664,27 @@ export default function ProjectLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
+              <span className="dark:text-sky-200">{t("appsSection.description")}</span>
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
-          </p>
-
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -764,11 +711,12 @@ export default function ProjectLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -812,10 +760,10 @@ export default function ProjectLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -828,8 +776,7 @@ export default function ProjectLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon is the backbone of Kick & Rush, fostering collaboration,
-                  providing consistency, and adapting to unique requirements.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -841,10 +788,10 @@ export default function ProjectLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Tyrone Miller
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Project director
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -861,22 +808,22 @@ export default function ProjectLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
 
             <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
@@ -884,61 +831,5 @@ export default function ProjectLandingSections() {
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Project note",
-  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt="User"
-        className="absolute left-3 h-12 w-12 rounded-full object-cover"
-      />
-
-      <MessageCircle className="absolute -top-9 left-9 h-8 w-8 text-slate-900 dark:text-white" />
-
-      {text}
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }
