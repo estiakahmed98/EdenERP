@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -27,62 +28,37 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
-  {
-    title: "AI in for decision",
-    description:
-      "Create smart hiring workflows and keep every recruitment step clear.",
-  },
-  {
-    title: "Stay on target",
-    description:
-      "Set hiring goals, interview stages, and follow-up activities for each role.",
-  },
-  {
-    title: "Thin the pool",
-    description:
-      "Score candidates, filter applications, and shortlist the best people faster.",
-  },
-  {
-    title: "You're hired!",
-    description:
-      "Turn a successful applicant into an employee with smooth onboarding.",
-  },
-  {
-    title: "Get Feedback",
-    description:
-      "Send and collect interview feedback from your recruitment team.",
-  },
-  {
-    title: "Quick communication",
-    description:
-      "Contact candidates directly and keep every message attached to the job.",
-  },
-];
+type DashboardColumn = {
+  title: string;
+  cards: string[];
+};
 
-const apps = [
-  {
-    title: "Employees",
-    description: "Create employee records",
-    icon: Users,
-  },
-  {
-    title: "Employee Referral",
-    description: "Invite team referrals",
-    icon: UserSearch,
-  },
-  {
-    title: "Fleet",
-    description: "Assign company assets",
-    icon: BriefcaseBusiness,
-  },
-  {
-    title: "Time Off",
-    description: "Manage leave after hiring",
-    icon: CalendarDays,
-  },
-];
+type Candidate = {
+  name: string;
+  role: string;
+};
 
+type IconItem = {
+  title: string;
+  description: string;
+  icon?: string;
+};
+
+const asArray = <T,>(value: unknown): T[] => {
+  return Array.isArray(value) ? (value as T[]) : [];
+};
+
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    Users, UserSearch, BriefcaseBusiness, CalendarDays, BadgeCheck,
+    BarChart3, Target, Sparkles, Star, ArrowRight, Play, WandSparkles,
+    FileText, MailCheck, MessageCircle, SearchCheck, ClipboardCheck, CheckCircle2,
+  };
+  return icons[iconName] || Target;
+};
+
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -96,34 +72,20 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
-const candidates = [
-  {
-    name: "Joel Willis",
-    role: "Product Designer",
-    stage: "First Interview",
-    image: avatars[0],
-  },
-  {
-    name: "Audrey Peterson",
-    role: "Frontend Developer",
-    stage: "Contract Proposal",
-    image: avatars[1],
-  },
-  {
-    name: "Ronald Lewis",
-    role: "Sales Manager",
-    stage: "Qualified",
-    image: avatars[2],
-  },
-  {
-    name: "Jennie Fletcher",
-    role: "Marketing Officer",
-    stage: "New",
-    image: avatars[3],
-  },
-];
-
 export default function RecruitmentATSPage() {
+  const t = useTranslations("pages.recruitment");
+
+  const dashboardColumns = asArray<DashboardColumn>(t.raw("hero.dashboard.columns"));
+  const pipelineColumns = asArray<string>(t.raw("pipelineSection.columns"));
+  const visualizeStages = asArray<string>(t.raw("visualizeSection.stages"));
+  const visualizeCandidates = asArray<Candidate>(t.raw("visualizeSection.candidates"));
+  const automationFields = asArray<[string, string]>(t.raw("automationSection.fields"));
+  const pipelineSteps = asArray<string>(t.raw("pipelinesSection.steps"));
+  const scheduleDays = asArray<string>(t.raw("schedulingSection.days"));
+  const reportingStages = asArray<string>(t.raw("reportingSection.stages"));
+  const featuresList = asArray<IconItem>(t.raw("featuresSection.features"));
+  const appsList = asArray<IconItem>(t.raw("appsSection.apps"));
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
@@ -134,15 +96,14 @@ export default function RecruitmentATSPage() {
           >
             <HandUnderline color="bg-[#02cfc3]">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                Next-Gen
+                {t("hero.title")}
               </span>
             </HandUnderline>{" "}
-            ATS
+            {t("hero.titleHighlight")}
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Source, track, interview, and hire candidates from one beautiful
-            recruitment pipeline.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -150,19 +111,19 @@ export default function RecruitmentATSPage() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
 
           <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-            Free, forever, with unlimited users
+            {t("hero.freeText")}
           </p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
@@ -175,53 +136,20 @@ export default function RecruitmentATSPage() {
                 <div className="flex items-center gap-3">
                   <BriefcaseBusiness className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Recruitment
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Jobs / Applications / Interviews / Reporting
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  New Job
+                  {t("hero.dashboard.newButton")}
                 </button>
               </div>
 
               <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
-                {[
-                  {
-                    title: "New Applications",
-                    cards: [
-                      "Graphic Designer",
-                      "Sales Executive",
-                      "QA Engineer",
-                    ],
-                  },
-                  {
-                    title: "Initial Qualification",
-                    cards: [
-                      "Frontend Developer",
-                      "Marketing Manager",
-                      "HR Officer",
-                    ],
-                  },
-                  {
-                    title: "First Interview",
-                    cards: [
-                      "Product Designer",
-                      "Account Manager",
-                      "UX Researcher",
-                    ],
-                  },
-                  {
-                    title: "Contract Proposal",
-                    cards: [
-                      "Senior Developer",
-                      "Operations Lead",
-                      "SEO Specialist",
-                    ],
-                  },
-                ].map((column, columnIndex) => (
+                {dashboardColumns.map((column, columnIndex) => (
                   <div
                     key={column.title}
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
@@ -236,7 +164,7 @@ export default function RecruitmentATSPage() {
                     </div>
 
                     <div className="space-y-3">
-                      {column.cards.map((card, cardIndex) => (
+                      {asArray<string>(column.cards).map((card, cardIndex) => (
                         <div
                           key={card}
                           className="rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-800"
@@ -245,7 +173,7 @@ export default function RecruitmentATSPage() {
                             {card}
                           </p>
                           <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                            {cardIndex + 2} applications
+                            {cardIndex + 2} {t("hero.dashboard.applicationsText")}
                           </p>
 
                           <div className="mt-3 flex items-center justify-between">
@@ -253,11 +181,7 @@ export default function RecruitmentATSPage() {
                               Interview
                             </span>
                             <img
-                              src={
-                                avatars[
-                                  (columnIndex + cardIndex) % avatars.length
-                                ]
-                              }
+                              src={avatars[(columnIndex + cardIndex) % avatars.length]}
                               alt="Candidate"
                               className="h-6 w-6 rounded-full object-cover"
                             />
@@ -285,46 +209,40 @@ export default function RecruitmentATSPage() {
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Never wonder about a{" "}
+            {t("pipelineSection.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="dark:text-rose-200">job&apos;s status</span>
+              <span className="dark:text-rose-200">{t("pipelineSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Get full pipeline visibility from application to offer, so your team
-            always knows what comes next.
+            {t("pipelineSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 md:grid-cols-3">
-                {["Open Jobs", "In Progress", "Hired"].map(
-                  (column, columnIndex) => (
-                    <div
-                      key={column}
-                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
-                    >
-                      <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-white">
-                        {column}
-                      </p>
+                {pipelineColumns.map((column, columnIndex) => (
+                  <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-white">
+                      {column}
+                    </p>
 
-                      {Array.from({ length: 3 }).map((_, index) => (
-                        <div
-                          key={index}
-                          className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
-                        >
-                          <div className="h-3 w-3/4 rounded bg-[#714b67] dark:bg-[#8a5a7e]" />
-                          <div className="mt-2 h-2 w-full rounded bg-slate-100 dark:bg-slate-800" />
-                          <div className="mt-2 h-2 w-2/3 rounded bg-slate-100 dark:bg-slate-800" />
-                          <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-                            {columnIndex + index + 2} candidates
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  ),
-                )}
+                    {Array.from({ length: 3 }).map((_, index) => (
+                      <div
+                        key={index}
+                        className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
+                      >
+                        <div className="h-3 w-3/4 rounded bg-[#714b67] dark:bg-[#8a5a7e]" />
+                        <div className="mt-2 h-2 w-full rounded bg-slate-100 dark:bg-slate-800" />
+                        <div className="mt-2 h-2 w-2/3 rounded bg-slate-100 dark:bg-slate-800" />
+                        <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
+                          {columnIndex + index + 2} {t("pipelineSection.candidatesCount")}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -337,15 +255,14 @@ export default function RecruitmentATSPage() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Visualize the{" "}
+            {t("visualizeSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3]">
-              <span className="dark:text-[#02cfc3]">pipeline</span>
+              <span className="dark:text-[#02cfc3]">{t("visualizeSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Move applicants through your recruitment stages with a clean kanban
-            view, interview status, tags, activities, and notes.
+            {t("visualizeSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
@@ -353,51 +270,46 @@ export default function RecruitmentATSPage() {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 md:grid-cols-3">
-                {["Qualified", "Interview", "Contract"].map(
-                  (stage, stageIndex) => (
-                    <div
-                      key={stage}
-                      className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
-                    >
-                      <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-white">
-                        {stage}
-                      </p>
+                {visualizeStages.map((stage, stageIndex) => (
+                  <div key={stage} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
+                    <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-white">
+                      {stage}
+                    </p>
 
-                      {candidates.slice(0, 3).map((candidate, index) => (
-                        <div
-                          key={`${stage}-${candidate.name}`}
-                          className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
-                        >
-                          <div className="flex gap-3">
-                            <img
-                              src={candidate.image}
-                              alt={candidate.name}
-                              className="h-10 w-10 rounded-full object-cover"
-                            />
+                    {visualizeCandidates.slice(0, 3).map((candidate, index) => (
+                      <div
+                        key={`${stage}-${candidate.name}`}
+                        className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
+                      >
+                        <div className="flex gap-3">
+                          <img
+                            src={avatars[index % avatars.length]}
+                            alt={candidate.name}
+                            className="h-10 w-10 rounded-full object-cover"
+                          />
 
-                            <div>
-                              <p className="text-sm font-bold text-slate-900 dark:text-white">
-                                {candidate.name}
-                              </p>
-                              <p className="text-xs text-slate-400 dark:text-slate-500">
-                                {candidate.role}
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="mt-3 flex items-center gap-2">
-                            <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                              {stageIndex + index + 1} stars
-                            </span>
-                            <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white dark:bg-[#8a5a7e]">
-                              Interview
-                            </span>
+                          <div>
+                            <p className="text-sm font-bold text-slate-900 dark:text-white">
+                              {candidate.name}
+                            </p>
+                            <p className="text-xs text-slate-400 dark:text-slate-500">
+                              {candidate.role}
+                            </p>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  ),
-                )}
+
+                        <div className="mt-3 flex items-center gap-2">
+                          <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                            {stageIndex + index + 1} {t("visualizeSection.starsText")}
+                          </span>
+                          <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white dark:bg-[#8a5a7e]">
+                            {t("visualizeSection.interviewText")}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -414,38 +326,29 @@ export default function RecruitmentATSPage() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="dark:text-rose-200">Don&apos;t</span>
+                <span className="dark:text-rose-200">{t("automationSection.title")}</span>
               </HandUnderline>{" "}
-              waste time
+              {t("automationSection.titleHighlight")}
               <br />
-              typing
+              {t("automationSection.subtitle")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Automate descriptions using templates and AI. Generate job posts,
-              interview invitations, and candidate messages quickly.
+              {t("automationSection.description")}
             </p>
           </div>
 
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex items-center justify-between">
               <p className="font-bold text-slate-900 dark:text-white">
-                Job Description
+                {t("automationSection.jobDescription")}
               </p>
               <WandSparkles className="h-5 w-5 text-amber-500 dark:text-amber-400" />
             </div>
 
             <div className="space-y-4 text-left">
-              {[
-                ["Programmer", "Software development and web applications"],
-                ["Requirements", "React, Next.js, TypeScript, REST API"],
-                ["Location", "Remote / Hybrid"],
-                ["Experience", "3+ years"],
-              ].map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4"
-                >
+              {automationFields.map(([label, value]) => (
+                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
                   <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
                     {label}
                   </p>
@@ -457,7 +360,7 @@ export default function RecruitmentATSPage() {
             </div>
 
             <button className="mt-6 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-              Generate description
+              {t("automationSection.button")}
             </button>
           </div>
         </div>
@@ -469,15 +372,14 @@ export default function RecruitmentATSPage() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Tailor-made{" "}
+            {t("pipelinesSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3]">
-              <span className="dark:text-[#02cfc3]">pipelines</span>
+              <span className="dark:text-[#02cfc3]">{t("pipelinesSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Create custom recruitment steps for every department, job role, and
-            hiring process.
+            {t("pipelinesSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-3xl">
@@ -486,18 +388,12 @@ export default function RecruitmentATSPage() {
             <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-5 flex items-center justify-between">
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Pipeline Builder
+                  {t("pipelinesSection.builderTitle")}
                 </p>
                 <span className="text-slate-400 dark:text-slate-500">×</span>
               </div>
 
-              {[
-                "New Application",
-                "Initial Qualification",
-                "First Interview",
-                "Technical Test",
-                "Contract Proposal",
-              ].map((step, index) => (
+              {pipelineSteps.map((step, index) => (
                 <div
                   key={step}
                   className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
@@ -512,7 +408,7 @@ export default function RecruitmentATSPage() {
                         : "bg-[#714b67]/10 text-[#714b67] dark:bg-[#9b6a8f]/20 dark:text-[#9b6a8f]"
                     }`}
                   >
-                    Stage {index + 1}
+                    {t("pipelinesSection.stageText")} {index + 1}
                   </span>
                 </div>
               ))}
@@ -527,7 +423,7 @@ export default function RecruitmentATSPage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-3 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
-              {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((day) => (
+              {scheduleDays.map((day) => (
                 <span key={day}>{day}</span>
               ))}
             </div>
@@ -546,7 +442,7 @@ export default function RecruitmentATSPage() {
                 >
                   <span>{index + 1}</span>
                   {[3, 8, 16, 22, 29].includes(index) && (
-                    <p className="mt-1 font-bold">Interview</p>
+                    <p className="mt-1 font-bold">{t("schedulingSection.interviewText")}</p>
                   )}
                 </div>
               ))}
@@ -558,14 +454,13 @@ export default function RecruitmentATSPage() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Less scheduling,
+              {t("schedulingSection.title")}
               <br />
-              more interviewing!
+              {t("schedulingSection.subtitle")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Schedule interviews, send calendar invitations, coordinate with
-              hiring teams, and keep candidates updated automatically.
+              {t("schedulingSection.description")}
             </p>
           </div>
         </div>
@@ -578,31 +473,27 @@ export default function RecruitmentATSPage() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="dark:text-rose-200">Reporting</span>
+              <span className="dark:text-rose-200">{t("reportingSection.title")}</span>
             </HandUnderline>{" "}
-            that makes sense
+            {t("reportingSection.titleHighlight")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Look at your hiring data and understand where your candidates come
-            from, how your pipeline performs, and where your team can improve.
+            {t("reportingSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-5 flex items-center justify-between">
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Recruitment Analysis
+                  {t("reportingSection.analysisTitle")}
                 </p>
                 <BarChart3 className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
               </div>
 
               <div className="flex h-72 items-end gap-5 rounded-lg bg-slate-50 dark:bg-slate-800/40 p-5">
                 {[35, 58, 80, 130].map((height, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-1 flex-col items-center"
-                  >
+                  <div key={index} className="flex flex-1 flex-col items-center">
                     <div
                       className="w-full bg-emerald-300 dark:bg-emerald-700"
                       style={{ height: `${height * 0.35}px` }}
@@ -616,7 +507,7 @@ export default function RecruitmentATSPage() {
                       style={{ height: `${height}px` }}
                     />
                     <p className="mt-3 text-xs font-bold text-slate-400 dark:text-slate-500">
-                      Stage {index + 1}
+                      {reportingStages[index]}
                     </p>
                   </div>
                 ))}
@@ -635,7 +526,7 @@ export default function RecruitmentATSPage() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
@@ -643,12 +534,12 @@ export default function RecruitmentATSPage() {
             <br />
             done{" "}
             <HandUnderline color="bg-[#02cfc3]">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">{t("featuresSection.subtitle")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white/70 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -676,7 +567,7 @@ export default function RecruitmentATSPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -687,7 +578,7 @@ export default function RecruitmentATSPage() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
               <span className="dark:text-sky-200">need</span>
             </HandUnderline>
@@ -698,13 +589,12 @@ export default function RecruitmentATSPage() {
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app) => {
+              const Icon = getIconComponent(app.icon ?? "Target");
               return (
                 <div
                   key={app.title}
@@ -731,7 +621,7 @@ export default function RecruitmentATSPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -779,10 +669,10 @@ export default function RecruitmentATSPage() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -795,9 +685,7 @@ export default function RecruitmentATSPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon saved us plenty of web development time, allowing us to
-                  focus on individual strengths, which is immensely helpful for
-                  start-ups.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -809,10 +697,10 @@ export default function RecruitmentATSPage() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Daphne Wright
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      HR manager
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -829,22 +717,22 @@ export default function RecruitmentATSPage() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3]">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
 
             <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
