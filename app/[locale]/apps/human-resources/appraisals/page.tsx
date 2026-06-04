@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -23,24 +24,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const apps = [
-  {
-    title: "Employees",
-    description: "Allow employees to request appraisals",
-    icon: Users,
-  },
-  {
-    title: "Recruitment",
-    description: "Streamline your recruitment process",
-    icon: Target,
-  },
-  {
-    title: "Survey",
-    description: "Create and customize 360 feedback survey",
-    icon: ClipboardCheck,
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, CalendarCheck, CheckCircle2, ClipboardCheck,
+    FileText, MessageSquareText, Play, Sparkles, Star, Target, Trophy, Users,
+    ArrowRight,
+  };
+  return icons[iconName] || Trophy;
+};
 
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -55,6 +49,17 @@ const avatars = [
 ];
 
 export default function PerformanceLandingSections() {
+  const t = useTranslations("pages.performance");
+
+  const evaluationFeatures = t.raw("evaluationSection.features");
+  const appraisalTableHeaders = t.raw("appraisalSection.tableHeaders");
+  const appraisalsList = t.raw("appraisalSection.appraisals");
+  const surveyFormItems = t.raw("surveySection.formItems");
+  const automationSteps = t.raw("automationSection.demo.steps");
+  const appsList = t.raw("appsSection.apps");
+  const employeeQuestions = t.raw("hero.dashboard.appraisal.employeeQuestions");
+  const evaluationCriteria = t.raw("hero.dashboard.appraisal.evaluation");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
       {/* Hero Section */}
@@ -64,15 +69,16 @@ export default function PerformanceLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Performance{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-              <span className="text-amber-500 dark:text-amber-400">magic</span>
+              <span className="text-amber-500 dark:text-amber-400">
+                {t("hero.titleHighlight")}
+              </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Unlock your team&apos;s full potential with 360° feedback, real-time
-            goals, and automated appraisal cycles.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -80,19 +86,19 @@ export default function PerformanceLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:text-[#714b67]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
 
           <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-            Free, forever, with unlimited users
+            {t("hero.freeText")}
           </p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
@@ -105,15 +111,15 @@ export default function PerformanceLandingSections() {
                 <div className="flex items-center gap-3">
                   <Trophy className="h-5 w-5 text-[#714b67]" />
                   <span className="font-bold text-slate-900 dark:text-slate-100">
-                    Appraisals
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Appraisals / Goals / Reporting / Configuration
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
-                  New
+                  {t("hero.dashboard.newButton")}
                 </button>
               </div>
 
@@ -129,16 +135,16 @@ export default function PerformanceLandingSections() {
                         />
                         <div>
                           <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                            Anita Oliver
+                            {t("hero.dashboard.appraisal.employee")}
                           </h3>
                           <p className="text-sm text-slate-500 dark:text-slate-400">
-                            Product Manager
+                            {t("hero.dashboard.appraisal.role")}
                           </p>
                         </div>
                       </div>
 
                       <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 w-fit">
-                        To Confirm
+                        {t("hero.dashboard.appraisal.status")}
                       </span>
                     </div>
                   </div>
@@ -146,15 +152,11 @@ export default function PerformanceLandingSections() {
                   <div className="grid gap-0 lg:grid-cols-2">
                     <div className="border-r border-slate-100 dark:border-slate-700 p-6 text-left">
                       <p className="font-bold text-slate-900 dark:text-slate-100">
-                        Employee&apos;s Feedback
+                        Employee's Feedback
                       </p>
 
                       <div className="mt-5 space-y-5">
-                        {[
-                          "What was my best achievement?",
-                          "What has been the most challenging aspect?",
-                          "What would I need to improve my work?",
-                        ].map((question) => (
+                        {employeeQuestions.map((question: string) => (
                           <div key={question}>
                             <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
                               {question}
@@ -169,7 +171,7 @@ export default function PerformanceLandingSections() {
                     <div className="bg-slate-50 dark:bg-slate-800/40 p-6 text-left">
                       <div className="mb-5 flex items-center justify-between">
                         <p className="font-bold text-slate-900 dark:text-slate-100">
-                          Manager&apos;s Feedback
+                          Manager's Feedback
                         </p>
                         <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
                       </div>
@@ -179,8 +181,7 @@ export default function PerformanceLandingSections() {
                           Feedback
                         </p>
                         <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                          She can provide achievement that convinced you of the
-                          employee&apos;s value.
+                          {t("hero.dashboard.appraisal.managerFeedback")}
                         </p>
                       </div>
 
@@ -189,21 +190,16 @@ export default function PerformanceLandingSections() {
                           Evaluation
                         </p>
 
-                        {[
-                          ["Stress Resistance", 4],
-                          ["Time Management", 5],
-                          ["Teamwork", 4],
-                          ["Autonomy", 5],
-                        ].map(([label, score]) => (
+                        {evaluationCriteria.map(([label, score]: [string, number]) => (
                           <div
-                            key={String(label)}
+                            key={label}
                             className="mb-3 flex items-center justify-between text-sm"
                           >
                             <span className="font-medium text-slate-600 dark:text-slate-300">
                               {label}
                             </span>
                             <span className="text-amber-400 dark:text-amber-500">
-                              {"★".repeat(Number(score))}
+                              {"★".repeat(score)}
                             </span>
                           </div>
                         ))}
@@ -227,42 +223,20 @@ export default function PerformanceLandingSections() {
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-            Set up periodical employee evaluation
+            {t("evaluationSection.title")}
           </h2>
 
           <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
-            Strengthen your company&apos;s key asset : employees
+            {t("evaluationSection.subtitle")}
           </p>
 
           <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Maintain the motivational process in your company by doing
-            periodical evaluations of your employees&apos; performance.
-            Regularly assess your human resources to bring benefits for your
-            people as well as for your organization.
+            {t("evaluationSection.description")}
           </p>
 
           <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {[
-              {
-                title: "Easy follow-up",
-                icon: CheckCircle2,
-                description:
-                  "Clearly see the appraisal status for each employee or for the whole company.",
-              },
-              {
-                title: "Clear calendar view",
-                icon: CalendarCheck,
-                description:
-                  "Keep track of upcoming evaluations and send reminders to respondents.",
-              },
-              {
-                title: "Exportable answers",
-                icon: FileText,
-                description: "Turn every evaluation into a printable PDF form.",
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-
+            {evaluationFeatures.map((item: any, index: number) => {
+              const Icon = getIconComponent(item.icon);
               return (
                 <div key={item.title} className="text-center">
                   <p className="mb-5 font-bold text-slate-900 dark:text-slate-100">
@@ -273,7 +247,7 @@ export default function PerformanceLandingSections() {
                     {index === 0 && (
                       <div className="space-y-3 text-left">
                         <div className="rounded-lg bg-[#02cfc3]/20 dark:bg-[#02cfc3]/10 p-4 text-sm font-bold text-[#02a6a6] dark:text-[#02cfc3]">
-                          Appraisal planned
+                          {item.demo}
                         </div>
                         <div className="h-3 rounded bg-slate-100 dark:bg-slate-700" />
                         <div className="h-3 w-3/4 rounded bg-slate-100 dark:bg-slate-700" />
@@ -328,18 +302,15 @@ export default function PerformanceLandingSections() {
       <section className="bg-[#f3f4f7] dark:bg-slate-800/30 py-24">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-            Build the right appraisal
+            {t("appraisalSection.title")}
           </h2>
 
           <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
-            Ask the right questions and collect insightful information
+            {t("appraisalSection.subtitle")}
           </p>
 
           <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Create the right survey to collect your employees answers. Prepare
-            your own templates or choose from existing ones. Manage several
-            types of evaluations: bottom-up, top-down, self-evaluations, and
-            final evaluation by the manager.
+            {t("appraisalSection.description")}
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
@@ -350,50 +321,34 @@ export default function PerformanceLandingSections() {
             <div className="overflow-x-auto">
               <div className="min-w-[600px]">
                 <div className="grid grid-cols-6 bg-slate-50 dark:bg-slate-800/60 px-5 py-3 text-left text-xs font-bold uppercase text-slate-400 dark:text-slate-500">
-                  <span>Employee</span>
-                  <span>Department</span>
-                  <span>Appraisal Deadline</span>
-                  <span>Final Interview</span>
-                  <span>Status</span>
-                  <span>Answers</span>
+                  {appraisalTableHeaders.map((header: string) => (
+                    <span key={header}>{header}</span>
+                  ))}
                 </div>
 
-                {[
-                  [
-                    "Anita Oliver",
-                    "Management",
-                    "07/24/2026",
-                    "Planned",
-                    "To Confirm",
-                    "12",
-                  ],
-                  [
-                    "Mitchell Admin",
-                    "HR",
-                    "08/03/2026",
-                    "Done",
-                    "Confirmed",
-                    "9",
-                  ],
-                ].map((row) => (
+                {appraisalsList.map((row: any) => (
                   <div
-                    key={row[0]}
+                    key={row.employee}
                     className="grid grid-cols-6 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                   >
-                    {row.map((cell, index) => (
-                      <span
-                        key={cell}
-                        className={
-                          index === 0
-                            ? "font-bold text-slate-900 dark:text-slate-100"
-                            : index === 4
-                              ? "w-fit rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400"
-                              : "text-slate-500 dark:text-slate-400"
-                        }
-                      >
-                        {cell}
-                      </span>
-                    ))}
+                    <span className="font-bold text-slate-900 dark:text-slate-100">
+                      {row.employee}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {row.department}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {row.deadline}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {row.interview}
+                    </span>
+                    <span className="w-fit rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                      {row.status}
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400">
+                      {row.answers}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -407,34 +362,25 @@ export default function PerformanceLandingSections() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-              Design your own survey
+              {t("surveySection.title")}
             </h2>
 
             <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
-              Use templates or create them your way
+              {t("surveySection.subtitle")}
             </p>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Create your own surveys to gather important information and
-              opinions from your employees. Quickly add questions, edit pages,
-              and draft a useful survey using great built-in templates or making
-              your own design from scratch.
+              {t("surveySection.description")}
             </p>
           </div>
 
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <p className="mb-5 text-left text-xl font-bold text-slate-900 dark:text-slate-100">
-              Employee Appraisal Form
+              {t("surveySection.formTitle")}
             </p>
 
             <div className="space-y-4">
-              {[
-                "Employee satisfaction",
-                "Manager feedback",
-                "Goal achievement",
-                "Communication",
-                "Teamwork",
-              ].map((item, index) => (
+              {surveyFormItems.map((item: string, index: number) => (
                 <div
                   key={item}
                   className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/60 px-4 py-3 text-sm"
@@ -458,54 +404,50 @@ export default function PerformanceLandingSections() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex flex-wrap items-center justify-between gap-2">
               <span className="rounded bg-[#02cfc3]/20 dark:bg-[#02cfc3]/10 px-3 py-1 text-xs font-bold text-[#02a6a6] dark:text-[#02cfc3]">
-                AUTOMATED APPRAISAL PLAN
+                {t("automationSection.demo.badge")}
               </span>
               <span className="rounded bg-[#714b67] px-3 py-1 text-xs font-bold text-white">
-                Done
+                {t("automationSection.demo.status")}
               </span>
             </div>
 
             <div className="text-left">
               <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                Mitchell Admin
+                {t("automationSection.demo.employee")}
               </p>
               <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                Appraisal plan generated automatically
+                {t("automationSection.demo.description")}
               </p>
             </div>
 
             <div className="mt-6 space-y-3">
-              {["Self evaluation", "Manager review", "Final validation"].map(
-                (item) => (
-                  <div
-                    key={item}
-                    className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/60 px-4 py-3"
-                  >
-                    <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                      {item}
-                    </span>
-                    <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
-                  </div>
-                ),
-              )}
+              {automationSteps.map((step: string) => (
+                <div
+                  key={step}
+                  className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/60 px-4 py-3"
+                >
+                  <span className="text-sm font-bold text-slate-700 dark:text-slate-200">
+                    {step}
+                  </span>
+                  <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
+                </div>
+              ))}
             </div>
           </div>
 
           <div>
             <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
-              Automate the evaluation
+              {t("automationSection.title")}
               <br />
-              process
+              {t("automationSection.subtitle")}
             </h2>
 
             <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
-              Make sure evaluations stick to the schedule
+              {t("automationSection.description")}
             </p>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Create evaluation plans with a clear schedule to automatically
-              generate interview requests. Specify the employee, department or
-              level in the hierarchy which can answer your surveys.
+              {t("automationSection.explanation")}
             </p>
           </div>
         </div>
@@ -518,7 +460,7 @@ export default function PerformanceLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
               <span className="text-sky-600 dark:text-sky-400">need</span>
             </HandUnderline>
@@ -529,13 +471,12 @@ export default function PerformanceLandingSections() {
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -562,7 +503,7 @@ export default function PerformanceLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] hover:text-[#5f3d56] dark:hover:text-[#8b5e7e]"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -611,10 +552,10 @@ export default function PerformanceLandingSections() {
                 className="text-2xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -628,20 +569,20 @@ export default function PerformanceLandingSections() {
               className="text-3xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6]">growth</span>
+                <span className="text-[#02a6a6]">{t("footerCta.titleHighlight")}</span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>

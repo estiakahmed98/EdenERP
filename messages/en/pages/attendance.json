@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "title": "Attendance | AdonERP",
+    "description": "AI-powered attendance management platform for all your workforce operations — from smart check-in and attendance analysis to extra hours tracking, manager approvals, and real-time reporting."
+  },
+  "hero": {
+    "title": "Attendance",
+    "titleHighlight": "made effortless",
+    "description": "Track check-ins, check-outs, working hours, late arrivals, and overtime in one simple HR attendance system.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "freeText": "Free, forever, with unlimited users",
+    "dashboard": {
+      "title": "Attendance",
+      "subtitle": "Overview / Check In / Management / Reporting",
+      "checkInButton": "Check In",
+      "stats": {
+        "present": "Present",
+        "presentValue": "38",
+        "late": "Late",
+        "lateValue": "06",
+        "missing": "Missing",
+        "missingValue": "03",
+        "extraHours": "Extra Hours",
+        "extraHoursValue": "21h"
+      },
+      "tableHeaders": ["Employee", "Check In", "Check Out", "Worked", "Location", "Status"],
+      "rows": [
+        { "employee": "Marc Demo", "checkIn": "08:57", "checkOut": "17:35", "worked": "8h 38m", "location": "Office", "status": "On time" },
+        { "employee": "Anita Oliver", "checkIn": "09:18", "checkOut": "18:02", "worked": "8h 44m", "location": "Office", "status": "Late" },
+        { "employee": "Beth Evans", "checkIn": "08:45", "checkOut": "17:20", "worked": "8h 35m", "location": "Office", "status": "On time" },
+        { "employee": "Audrey Peterson", "checkIn": "09:02", "checkOut": "17:55", "worked": "8h 53m", "location": "Office", "status": "On time" },
+        { "employee": "Joel Willis", "checkIn": "08:50", "checkOut": "18:30", "worked": "9h 40m", "location": "Office", "status": "Extra" },
+        { "employee": "Jennie Fletcher", "checkIn": "—", "checkOut": "—", "worked": "0h", "location": "Office", "status": "Missing" }
+      ]
+    },
+    "floatingNote": "Check in, work smart, go home happy"
+  },
+  "clockInSection": {
+    "title": "Clock in with",
+    "titleHighlight": "one tap",
+    "description": "Employees can check in from a kiosk, browser, or mobile device. Keep attendance fast, clear, and easy for the whole team.",
+    "demo": {
+      "employeeName": "Anita Oliver",
+      "employeeRole": "Frontend Developer",
+      "checkInTime": "Today · 08:57 AM · Office",
+      "button": "Check In"
+    }
+  },
+  "workingHoursSection": {
+    "title": "Never lose track of",
+    "titleHighlight": "working hours",
+    "description": "Monitor work time, breaks, check-in history, and exceptions without chasing spreadsheets or manual reports.",
+    "stats": [
+      { "title": "Worked Today", "value": "8h 42m", "icon": "Clock3" },
+      { "title": "Extra Hours", "value": "1h 12m", "icon": "TimerReset" },
+      { "title": "Approved", "value": "96%", "icon": "CheckCircle2" }
+    ]
+  },
+  "liveStatusSection": {
+    "title": "Know who is",
+    "titleHighlight": "present",
+    "titleEnd": "right now",
+    "description": "See live attendance status across departments. Quickly understand who is checked in, working remotely, late, or missing.",
+    "filters": ["Office", "Remote", "Late", "Missing", "Extra Hours"],
+    "employees": [
+      { "name": "Audrey Peterson", "status": "Checked in", "location": "Office" },
+      { "name": "Mitchell Admin", "status": "Remote", "location": "Home" },
+      { "name": "Joel Willis", "status": "Late", "location": "Office" },
+      { "name": "Jennie Fletcher", "status": "Missing", "location": "—" }
+    ]
+  },
+  "correctionsSection": {
+    "title": "Review exceptions,",
+    "titleHighlight": "approve",
+    "titleEnd": "corrections",
+    "description": "Managers can review missing check-outs, late arrivals, unusual hours, and correction requests before they impact payroll or reports.",
+    "demo": {
+      "title": "Attendance Correction",
+      "badge": "To Review",
+      "fields": [
+        ["Employee", "Marc Demo"],
+        ["Missing Check Out", "Yesterday"],
+        ["Suggested Time", "17:45"],
+        ["Reason", "Forgot to check out"]
+      ],
+      "approveButton": "Approve",
+      "refuseButton": "Refuse"
+    }
+  },
+  "reportingSection": {
+    "title": "Reporting that",
+    "titleHighlight": "makes sense",
+    "description": "Analyze attendance by employee, department, week, month, work location, and approval status.",
+    "analysisTitle": "Attendance Analysis",
+    "badge": "Monthly",
+    "weeks": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Smart check-in",
+        "description": "Let employees check in and out from kiosk, browser, mobile, or RFID-style flows.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Attendance analysis",
+        "description": "Review working hours, late arrivals, overtime, missing check-outs, and attendance trends.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Extra hours",
+        "description": "Automatically calculate extra hours and compare attendance with planned working time.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Manager approval",
+        "description": "Let managers review exceptions, validate corrections, and approve attendance records.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Connected HR",
+        "description": "Connect attendance with employees, time off, payroll, planning, and reporting.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Employees", "description": "Manage employee records", "icon": "Users" },
+      { "title": "Time Off", "description": "Track absence", "icon": "CalendarCheck" },
+      { "title": "Payroll", "description": "Calculate work time", "icon": "BriefcaseBusiness" },
+      { "title": "Sign", "description": "Approve documents", "icon": "FileSignature" },
+      { "title": "Planning", "description": "Schedule shifts", "icon": "Clock3" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Attendance used to be scattered across spreadsheets. Now we know who is present, who needs approval, and how many hours our team worked in real time.",
+    "name": "Laura Johnson",
+    "role": "HR director"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

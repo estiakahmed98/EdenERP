@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "title": "Performance Appraisals | AdonERP",
+    "description": "AI-powered performance management platform for all your appraisal operations — from 360° feedback and real-time goals to automated appraisal cycles and survey design."
+  },
+  "hero": {
+    "title": "Performance",
+    "titleHighlight": "magic",
+    "description": "Unlock your team's full potential with 360° feedback, real-time goals, and automated appraisal cycles.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "freeText": "Free, forever, with unlimited users",
+    "dashboard": {
+      "title": "Appraisals",
+      "subtitle": "Appraisals / Goals / Reporting / Configuration",
+      "newButton": "New",
+      "appraisal": {
+        "employee": "Anita Oliver",
+        "role": "Product Manager",
+        "status": "To Confirm",
+        "employeeQuestions": [
+          "What was my best achievement?",
+          "What has been the most challenging aspect?",
+          "What would I need to improve my work?"
+        ],
+        "managerFeedback": "She can provide achievement that convinced you of the employee's value.",
+        "evaluation": [
+          ["Stress Resistance", 4],
+          ["Time Management", 5],
+          ["Teamwork", 4],
+          ["Autonomy", 5]
+        ]
+      }
+    }
+  },
+  "evaluationSection": {
+    "title": "Set up periodical employee evaluation",
+    "subtitle": "Strengthen your company's key asset : employees",
+    "description": "Maintain the motivational process in your company by doing periodical evaluations of your employees' performance. Regularly assess your human resources to bring benefits for your people as well as for your organization.",
+    "features": [
+      {
+        "title": "Easy follow-up",
+        "description": "Clearly see the appraisal status for each employee or for the whole company.",
+        "icon": "CheckCircle2",
+        "demo": "Appraisal planned"
+      },
+      {
+        "title": "Clear calendar view",
+        "description": "Keep track of upcoming evaluations and send reminders to respondents.",
+        "icon": "CalendarCheck"
+      },
+      {
+        "title": "Exportable answers",
+        "description": "Turn every evaluation into a printable PDF form.",
+        "icon": "FileText"
+      }
+    ]
+  },
+  "appraisalSection": {
+    "title": "Build the right appraisal",
+    "subtitle": "Ask the right questions and collect insightful information",
+    "description": "Create the right survey to collect your employees answers. Prepare your own templates or choose from existing ones. Manage several types of evaluations: bottom-up, top-down, self-evaluations, and final evaluation by the manager.",
+    "tableHeaders": ["Employee", "Department", "Appraisal Deadline", "Final Interview", "Status", "Answers"],
+    "appraisals": [
+      { "employee": "Anita Oliver", "department": "Management", "deadline": "07/24/2026", "interview": "Planned", "status": "To Confirm", "answers": "12" },
+      { "employee": "Mitchell Admin", "department": "HR", "deadline": "08/03/2026", "interview": "Done", "status": "Confirmed", "answers": "9" }
+    ]
+  },
+  "surveySection": {
+    "title": "Design your own survey",
+    "subtitle": "Use templates or create them your way",
+    "description": "Create your own surveys to gather important information and opinions from your employees. Quickly add questions, edit pages, and draft a useful survey using great built-in templates or making your own design from scratch.",
+    "formTitle": "Employee Appraisal Form",
+    "formItems": [
+      "Employee satisfaction",
+      "Manager feedback",
+      "Goal achievement",
+      "Communication",
+      "Teamwork"
+    ]
+  },
+  "automationSection": {
+    "title": "Automate the evaluation",
+    "subtitle": "process",
+    "description": "Make sure evaluations stick to the schedule",
+    "explanation": "Create evaluation plans with a clear schedule to automatically generate interview requests. Specify the employee, department or level in the hierarchy which can answer your surveys.",
+    "demo": {
+      "badge": "AUTOMATED APPRAISAL PLAN",
+      "status": "Done",
+      "employee": "Mitchell Admin",
+      "description": "Appraisal plan generated automatically",
+      "steps": ["Self evaluation", "Manager review", "Final validation"]
+    }
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Employees", "description": "Allow employees to request appraisals", "icon": "Users" },
+      { "title": "Recruitment", "description": "Streamline your recruitment process", "icon": "Target" },
+      { "title": "Survey", "description": "Create and customize 360 feedback survey", "icon": "ClipboardCheck" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

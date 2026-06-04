@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "title": "Time Off | AdonERP",
+    "description": "AI-powered time off management platform for all your leave operations — from accrual plans and time off analysis to multi-step approvals and team availability tracking."
+  },
+  "hero": {
+    "title": "Time off",
+    "titleHighlight": "without the hassle",
+    "description": "Manage leave requests, approvals, allocations, holidays, and team availability in one simple HR workspace.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "freeText": "Free, forever, with unlimited users",
+    "dashboard": {
+      "title": "Time Off",
+      "subtitle": "My Time Off / Management / Reporting / Configuration",
+      "newButton": "New",
+      "stats": {
+        "requests": "Requests",
+        "requestsValue": "42",
+        "approved": "Approved",
+        "approvedValue": "31",
+        "pending": "Pending",
+        "pendingValue": "08",
+        "refused": "Refused",
+        "refusedValue": "03"
+      },
+      "tableHeaders": ["Employee", "Type", "Start", "End", "Duration", "Approver", "Status"],
+      "requests": [
+        { "employee": "Marc Demo", "type": "Paid Time Off", "start": "Jul 04", "end": "Jul 09", "duration": "5 days", "approver": "Mitchell", "status": "Approved" },
+        { "employee": "Anita Oliver", "type": "Sick Leave", "start": "Jul 11", "end": "Jul 12", "duration": "2 days", "approver": "Audrey", "status": "To Approve" },
+        { "employee": "Beth Evans", "type": "Remote Work", "start": "Jul 15", "end": "Jul 15", "duration": "1 day", "approver": "Marc", "status": "Approved" },
+        { "employee": "Audrey Peterson", "type": "Vacation", "start": "Jul 20", "end": "Jul 28", "duration": "8 days", "approver": "Mitchell", "status": "Pending" },
+        { "employee": "Joel Willis", "type": "Paid Time Off", "start": "Aug 01", "end": "Aug 03", "duration": "3 days", "approver": "Audrey", "status": "Approved" },
+        { "employee": "Jennie Fletcher", "type": "Sick Leave", "start": "Aug 05", "end": "Aug 06", "duration": "2 days", "approver": "Marc", "status": "Refused" }
+      ]
+    }
+  },
+  "readySection": {
+    "title": "Always be ready",
+    "titleHighlight": "for every request",
+    "description": "Customize leave types and absence forms so every request collects the right information from the start.",
+    "timeOffTypes": ["Paid Time Off", "Sick Leave", "Remote Work", "Unpaid Leave", "Training", "Compensatory Days"],
+    "selectedType": {
+      "title": "Training Time Off",
+      "fields": [
+        ["Requires allocation", "Yes"],
+        ["Approval", "Manager + HR"],
+        ["Responsible", "Marc Demo"],
+        ["Validity", "Current year"]
+      ],
+      "tags": ["Vacation", "Sick", "Remote", "Training", "Custom"]
+    }
+  },
+  "availabilitySection": {
+    "title": "See the breakdown of your available days",
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    "ptoText": "PTO",
+    "subtitle": "Do you have",
+    "subtitleHighlight": "the time?",
+    "description": "Know exactly how many days are available, planned, taken, and pending before an employee submits a request."
+  },
+  "freedomSection": {
+    "title": "Freedom",
+    "titleHighlight": "is only a few clicks away",
+    "description": "Employees can submit a leave request in seconds. Managers get the context they need to approve or refuse without confusion.",
+    "requestLabel": "Track your time on request move",
+    "request": {
+      "name": "Anita Oliver",
+      "type": "Paid Time Off Request",
+      "fields": [
+        ["Time Off Type", "Paid Time Off"],
+        ["Duration", "5 days"],
+        ["From", "July 15"],
+        ["To", "July 20"],
+        ["Approver", "Marc Demo"],
+        ["Status", "To Approve"]
+      ],
+      "approveButton": "Approve",
+      "refuseButton": "Refuse"
+    }
+  },
+  "reviewSection": {
+    "title": "Review,",
+    "titleHighlight": "approve",
+    "titleEnd": "done",
+    "description": "Managers can review all requests from one dashboard, approve quickly, and keep the team calendar accurate.",
+    "columns": ["Absent", "Present", "To Approve"],
+    "floatingNote": "Approved in one click"
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Accrual plans",
+        "description": "Customize accrual levels, allocation rules, and yearly leave calculations for your team.",
+        "icon": "CalendarDays"
+      },
+      {
+        "title": "Time off analysis",
+        "description": "Analyze absences, balances, approvals, and team availability with clear reports.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Stress days",
+        "description": "Configure company holidays, weekends, and unavailable days for better planning.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Multi-step approvals",
+        "description": "Route requests through managers, HR teams, or custom approval flows.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features",
+    "accrualDemo": [
+      ["Monthly accrual", "1.5 days"],
+      ["Yearly allocation", "18 days"],
+      ["Carryover", "5 days"]
+    ]
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Sign", "description": "Approve documents", "icon": "FileSignature" },
+      { "title": "Manufacturing", "description": "Plan workforce", "icon": "BriefcaseBusiness" },
+      { "title": "Invoicing", "description": "Track paid time", "icon": "WalletCards" },
+      { "title": "eCommerce", "description": "Manage your team", "icon": "ShieldCheck" },
+      { "title": "Maintenance", "description": "Plan availability", "icon": "CalendarCheck" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "After realizing that our configured spreadsheets were not looking for an HR application, we found exactly what we needed with Adon Time Off.",
+    "name": "Laura Johnson",
+    "role": "HR director"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

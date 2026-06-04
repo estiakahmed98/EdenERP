@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -26,62 +27,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
-  {
-    title: "Smart check-in",
-    description:
-      "Let employees check in and out from kiosk, browser, mobile, or RFID-style flows.",
-  },
-  {
-    title: "Attendance analysis",
-    description:
-      "Review working hours, late arrivals, overtime, missing check-outs, and attendance trends.",
-  },
-  {
-    title: "Extra hours",
-    description:
-      "Automatically calculate extra hours and compare attendance with planned working time.",
-  },
-  {
-    title: "Manager approval",
-    description:
-      "Let managers review exceptions, validate corrections, and approve attendance records.",
-  },
-  {
-    title: "Connected HR",
-    description:
-      "Connect attendance with employees, time off, payroll, planning, and reporting.",
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, BriefcaseBusiness, CalendarCheck, CheckCircle2,
+    Clock3, FileSignature, Fingerprint, MapPin, Play, ShieldCheck, Sparkles,
+    Star, TimerReset, Users, Wifi, ArrowRight,
+  };
+  return icons[iconName] || Clock3;
+};
 
-const apps = [
-  {
-    title: "Employees",
-    description: "Manage employee records",
-    icon: Users,
-  },
-  {
-    title: "Time Off",
-    description: "Track absence",
-    icon: CalendarCheck,
-  },
-  {
-    title: "Payroll",
-    description: "Calculate work time",
-    icon: BriefcaseBusiness,
-  },
-  {
-    title: "Sign",
-    description: "Approve documents",
-    icon: FileSignature,
-  },
-  {
-    title: "Planning",
-    description: "Schedule shifts",
-    icon: Clock3,
-  },
-];
-
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -95,16 +51,71 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
-const attendanceRows = [
-  ["Marc Demo", "08:57", "17:35", "8h 38m", "On time"],
-  ["Anita Oliver", "09:18", "18:02", "8h 44m", "Late"],
-  ["Beth Evans", "08:45", "17:20", "8h 35m", "On time"],
-  ["Audrey Peterson", "09:02", "17:55", "8h 53m", "On time"],
-  ["Joel Willis", "08:50", "18:30", "9h 40m", "Extra"],
-  ["Jennie Fletcher", "—", "—", "0h", "Missing"],
-];
+function FloatingNote({
+  className = "",
+  text = "Check in, work smart, go home happy",
+  color = "bg-[#02cfc3]",
+}: {
+  className?: string;
+  text?: string;
+  color?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span
+        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color} dark:opacity-60`}
+      />
+      <img
+        src={avatars[1]}
+        alt="User"
+        className="absolute left-3 h-12 w-12 rounded-full object-cover"
+      />
+      {text}
+    </div>
+  );
+}
+
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function AttendanceLandingSections() {
+  const t = useTranslations("pages.attendance");
+
+  const dashboardRows = t.raw("hero.dashboard.rows");
+  const tableHeaders = t.raw("hero.dashboard.tableHeaders");
+  const workingHoursStats = t.raw("workingHoursSection.stats");
+  const liveStatusFilters = t.raw("liveStatusSection.filters");
+  const liveStatusEmployees = t.raw("liveStatusSection.employees");
+  const correctionFields = t.raw("correctionsSection.demo.fields");
+  const reportingWeeks = t.raw("reportingSection.weeks");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
       {/* Hero Section */}
@@ -114,17 +125,16 @@ export default function AttendanceLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Attendance{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                made effortless
+                {t("hero.titleHighlight")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Track check-ins, check-outs, working hours, late arrivals, and
-            overtime in one simple HR attendance system.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -132,19 +142,19 @@ export default function AttendanceLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:text-[#714b67]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
 
           <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-            Free, forever, with unlimited users
+            {t("hero.freeText")}
           </p>
 
           <div className="relative mx-auto mt-16 max-w-5xl">
@@ -157,85 +167,74 @@ export default function AttendanceLandingSections() {
                 <div className="flex items-center gap-3">
                   <Clock3 className="h-5 w-5 text-[#714b67]" />
                   <span className="font-bold text-slate-900 dark:text-slate-100">
-                    Attendance
+                    {t("hero.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Overview / Check In / Management / Reporting
+                    {t("hero.dashboard.subtitle")}
                   </span>
                 </div>
 
                 <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
-                  Check In
+                  {t("hero.dashboard.checkInButton")}
                 </button>
               </div>
 
               <div className="bg-[#f7f8fb] dark:bg-slate-800/50 p-6">
                 <div className="mb-5 grid gap-3 sm:grid-cols-4">
                   <div className="rounded-lg bg-emerald-50 dark:bg-emerald-950/40 p-4 text-left text-emerald-600 dark:text-emerald-400">
-                    <p className="text-xs font-bold opacity-80">Present</p>
-                    <p className="mt-2 text-2xl font-bold">38</p>
+                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.present")}</p>
+                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.presentValue")}</p>
                   </div>
                   <div className="rounded-lg bg-amber-50 dark:bg-amber-950/40 p-4 text-left text-amber-600 dark:text-amber-400">
-                    <p className="text-xs font-bold opacity-80">Late</p>
-                    <p className="mt-2 text-2xl font-bold">06</p>
+                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.late")}</p>
+                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.lateValue")}</p>
                   </div>
                   <div className="rounded-lg bg-rose-50 dark:bg-rose-950/40 p-4 text-left text-rose-600 dark:text-rose-400">
-                    <p className="text-xs font-bold opacity-80">Missing</p>
-                    <p className="mt-2 text-2xl font-bold">03</p>
+                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.missing")}</p>
+                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.missingValue")}</p>
                   </div>
                   <div className="rounded-lg bg-sky-50 dark:bg-sky-950/40 p-4 text-left text-sky-600 dark:text-sky-400">
-                    <p className="text-xs font-bold opacity-80">Extra Hours</p>
-                    <p className="mt-2 text-2xl font-bold">21h</p>
+                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.extraHours")}</p>
+                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.extraHoursValue")}</p>
                   </div>
                 </div>
 
                 <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                   <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                    <span>Employee</span>
-                    <span>Check In</span>
-                    <span>Check Out</span>
-                    <span>Worked</span>
-                    <span>Location</span>
-                    <span>Status</span>
+                    {tableHeaders.map((header: string) => (
+                      <span key={header}>{header}</span>
+                    ))}
                   </div>
 
-                  {attendanceRows.map((row, index) => (
+                  {dashboardRows.map((row: any, index: number) => (
                     <div
-                      key={row[0]}
+                      key={row.employee}
                       className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
                       <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-slate-100">
                         <img
-                          src={avatars[index]}
-                          alt={row[0]}
+                          src={avatars[index % avatars.length]}
+                          alt={row.employee}
                           className="h-7 w-7 rounded-full object-cover"
                         />
-                        {row[0]}
+                        {row.employee}
                       </span>
-                      <span className="text-slate-600 dark:text-slate-300">
-                        {row[1]}
-                      </span>
-                      <span className="text-slate-600 dark:text-slate-300">
-                        {row[2]}
-                      </span>
-                      <span className="font-bold text-slate-900 dark:text-slate-100">
-                        {row[3]}
-                      </span>
-                      <span className="text-slate-500 dark:text-slate-400">
-                        Office
-                      </span>
+                      <span className="text-slate-600 dark:text-slate-300">{row.checkIn}</span>
+                      <span className="text-slate-600 dark:text-slate-300">{row.checkOut}</span>
+                      <span className="font-bold text-slate-900 dark:text-slate-100">{row.worked}</span>
+                      <span className="text-slate-500 dark:text-slate-400">{row.location}</span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                          row[4] === "On time"
+                          row.status === "On time" || row.status === "সময়মতো"
                             ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400"
-                            : row[4] === "Late"
+                            : row.status === "Late" || row.status === "দেরি"
                               ? "bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400"
-                              : row[4] === "Extra"
+                              : row.status === "Extra" || row.status === "অতিরিক্ত"
                                 ? "bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400"
                                 : "bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400"
                         }`}
                       >
-                        {row[4]}
+                        {row.status}
                       </span>
                     </div>
                   ))}
@@ -250,7 +249,7 @@ export default function AttendanceLandingSections() {
             <FloatingNote
               className="mx-auto mt-12 z-30"
               color="bg-[#02cfc3] dark:bg-[#02cfc3]/50"
-              text="Check in, work smart, go home happy"
+              text={t("hero.floatingNote")}
             />
           </div>
         </div>
@@ -266,15 +265,14 @@ export default function AttendanceLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Clock in with{" "}
+              {t("clockInSection.title")}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="text-sky-600 dark:text-sky-400">one tap</span>
+                <span className="text-sky-600 dark:text-sky-400">{t("clockInSection.titleHighlight")}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Employees can check in from a kiosk, browser, or mobile device.
-              Keep attendance fast, clear, and easy for the whole team.
+              {t("clockInSection.description")}
             </p>
 
             <DashedArrow className="mt-10 h-28 w-28 rotate-[-18deg] text-slate-300 dark:text-slate-600" />
@@ -294,11 +292,11 @@ export default function AttendanceLandingSections() {
                 />
 
                 <h3 className="mt-5 text-2xl font-bold text-slate-900 dark:text-slate-100">
-                  Anita Oliver
+                  {t("clockInSection.demo.employeeName")}
                 </h3>
 
                 <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                  Frontend Developer
+                  {t("clockInSection.demo.employeeRole")}
                 </p>
 
                 <div className="mx-auto mt-8 flex h-24 w-24 items-center justify-center rounded-full bg-[#714b67] text-white shadow-lg shadow-[#714b67]/30">
@@ -306,11 +304,11 @@ export default function AttendanceLandingSections() {
                 </div>
 
                 <button className="mt-8 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white">
-                  Check In
+                  {t("clockInSection.demo.button")}
                 </button>
 
                 <p className="mt-4 text-xs text-slate-400 dark:text-slate-500">
-                  Today · 08:57 AM · Office
+                  {t("clockInSection.demo.checkInTime")}
                 </p>
               </div>
             </div>
@@ -327,57 +325,29 @@ export default function AttendanceLandingSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Never lose track of{" "}
+            {t("workingHoursSection.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-              <span className="text-amber-600 dark:text-amber-400">
-                working hours
-              </span>
+              <span className="text-amber-600 dark:text-amber-400">{t("workingHoursSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Monitor work time, breaks, check-in history, and exceptions without
-            chasing spreadsheets or manual reports.
+            {t("workingHoursSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
             <div className="absolute inset-0 translate-y-12 rounded-full bg-[#f3f4f7] dark:bg-slate-800/30" />
 
             <div className="relative grid gap-6 md:grid-cols-3">
-              {[
-                {
-                  title: "Worked Today",
-                  value: "8h 42m",
-                  icon: Clock3,
-                  color:
-                    "bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400",
-                },
-                {
-                  title: "Extra Hours",
-                  value: "1h 12m",
-                  icon: TimerReset,
-                  color:
-                    "bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400",
-                },
-                {
-                  title: "Approved",
-                  value: "96%",
-                  icon: CheckCircle2,
-                  color:
-                    "bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400",
-                },
-              ].map((item) => {
-                const Icon = item.icon;
-
+              {workingHoursStats.map((item: any) => {
+                const Icon = getIconComponent(item.icon);
                 return (
                   <div
                     key={item.title}
                     className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-center shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.3)]"
                   >
-                    <div
-                      className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${item.color}`}
-                    >
-                      <Icon className="h-8 w-8" />
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-100 dark:bg-slate-800/60">
+                      <Icon className="h-8 w-8 text-slate-600 dark:text-slate-400" />
                     </div>
 
                     <p className="mt-5 text-sm font-bold text-slate-500 dark:text-slate-400">
@@ -408,73 +378,63 @@ export default function AttendanceLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Know who is{" "}
+              {t("liveStatusSection.title")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  present
-                </span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">{t("liveStatusSection.titleHighlight")}</span>
               </HandUnderline>
               <br />
-              right now
+              {t("liveStatusSection.titleEnd")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              See live attendance status across departments. Quickly understand
-              who is checked in, working remotely, late, or missing.
+              {t("liveStatusSection.description")}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {["Office", "Remote", "Late", "Missing", "Extra Hours"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-slate-50 dark:bg-slate-800/60 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 ring-1 ring-slate-100 dark:ring-slate-700"
-                  >
-                    {item}
-                  </span>
-                ),
-              )}
+              {liveStatusFilters.map((item: string) => (
+                <span
+                  key={item}
+                  className="rounded-full bg-slate-50 dark:bg-slate-800/60 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 ring-1 ring-slate-100 dark:ring-slate-700"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
           <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                ["Audrey Peterson", "Checked in", "Office", avatars[0]],
-                ["Mitchell Admin", "Remote", "Home", avatars[1]],
-                ["Joel Willis", "Late", "Office", avatars[2]],
-                ["Jennie Fletcher", "Missing", "—", avatars[3]],
-              ].map(([name, status, location, avatar]) => (
+              {liveStatusEmployees.map((employee: any, idx: number) => (
                 <div
-                  key={name}
+                  key={employee.name}
                   className="flex gap-4 rounded-lg bg-slate-50 dark:bg-slate-800/60 p-4 text-left"
                 >
                   <img
-                    src={avatar}
-                    alt={name}
+                    src={avatars[idx % avatars.length]}
+                    alt={employee.name}
                     className="h-14 w-14 rounded-xl object-cover"
                   />
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-slate-100">
-                      {name}
+                      {employee.name}
                     </p>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {location}
+                      {employee.location}
                     </p>
 
                     <span
                       className={`mt-3 inline-block rounded-full px-3 py-1 text-[10px] font-bold ${
-                        status === "Checked in"
+                        employee.status === "Checked in" || employee.status === "চেক ইন করেছেন"
                           ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400"
-                          : status === "Remote"
+                          : employee.status === "Remote" || employee.status === "রিমোট"
                             ? "bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400"
-                            : status === "Late"
+                            : employee.status === "Late" || employee.status === "দেরি"
                               ? "bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400"
                               : "bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400"
                       }`}
                     >
-                      {status}
+                      {employee.status}
                     </span>
                   </div>
                 </div>
@@ -490,24 +450,16 @@ export default function AttendanceLandingSections() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex items-center justify-between">
               <p className="font-bold text-slate-900 dark:text-slate-100">
-                Attendance Correction
+                {t("correctionsSection.demo.title")}
               </p>
               <span className="rounded-full bg-amber-50 dark:bg-amber-950/60 px-3 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
-                To Review
+                {t("correctionsSection.demo.badge")}
               </span>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              {[
-                ["Employee", "Marc Demo"],
-                ["Missing Check Out", "Yesterday"],
-                ["Suggested Time", "17:45"],
-                ["Reason", "Forgot to check out"],
-              ].map(([label, value]) => (
-                <div
-                  key={label}
-                  className="rounded-lg bg-slate-50 dark:bg-slate-800/60 p-4"
-                >
+              {correctionFields.map(([label, value]: [string, string]) => (
+                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/60 p-4">
                   <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
                     {label}
                   </p>
@@ -520,10 +472,10 @@ export default function AttendanceLandingSections() {
 
             <div className="mt-6 flex gap-3">
               <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
-                Approve
+                {t("correctionsSection.demo.approveButton")}
               </button>
               <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
-                Refuse
+                {t("correctionsSection.demo.refuseButton")}
               </button>
             </div>
           </div>
@@ -535,20 +487,16 @@ export default function AttendanceLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Review exceptions,
+              {t("correctionsSection.title")}
               <br />
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="text-rose-600 dark:text-rose-400">
-                  approve
-                </span>
+                <span className="text-rose-600 dark:text-rose-400">{t("correctionsSection.titleHighlight")}</span>
               </HandUnderline>{" "}
-              corrections
+              {t("correctionsSection.titleEnd")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Managers can review missing check-outs, late arrivals, unusual
-              hours, and correction requests before they impact payroll or
-              reports.
+              {t("correctionsSection.description")}
             </p>
           </div>
         </div>
@@ -563,26 +511,23 @@ export default function AttendanceLandingSections() {
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Reporting that{" "}
+            {t("reportingSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="text-sky-600 dark:text-sky-400">
-                makes sense
-              </span>
+              <span className="text-sky-600 dark:text-sky-400">{t("reportingSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Analyze attendance by employee, department, week, month, work
-            location, and approval status.
+            {t("reportingSection.description")}
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
             <div className="mb-5 flex items-center justify-between">
               <p className="font-bold text-slate-900 dark:text-slate-100">
-                Attendance Analysis
+                {t("reportingSection.analysisTitle")}
               </p>
               <span className="rounded-full bg-sky-50 dark:bg-sky-950/60 px-3 py-1 text-xs font-bold text-sky-600 dark:text-sky-400">
-                Monthly
+                {t("reportingSection.badge")}
               </span>
             </div>
 
@@ -602,7 +547,7 @@ export default function AttendanceLandingSections() {
                     style={{ height: `${height}px` }}
                   />
                   <p className="mt-3 text-xs font-bold text-slate-400 dark:text-slate-500">
-                    Week {index + 1}
+                    {reportingWeeks[index]}
                   </p>
                 </div>
               ))}
@@ -621,7 +566,7 @@ export default function AttendanceLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/50" />
@@ -629,12 +574,12 @@ export default function AttendanceLandingSections() {
             <br />
             done{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="text-[#02a6a6] dark:text-[#02cfc3]">right.</span>
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">{t("featuresSection.subtitle")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white/70 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -643,7 +588,6 @@ export default function AttendanceLandingSections() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#714b67]/20 text-[#714b67]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -662,7 +606,7 @@ export default function AttendanceLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] hover:text-[#5f3d56] dark:hover:text-[#8b5e7e]"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -674,7 +618,7 @@ export default function AttendanceLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
               <span className="text-sky-600 dark:text-sky-400">need</span>
             </HandUnderline>
@@ -685,13 +629,12 @@ export default function AttendanceLandingSections() {
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -718,7 +661,7 @@ export default function AttendanceLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] hover:text-[#5f3d56] dark:hover:text-[#8b5e7e]"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -767,10 +710,10 @@ export default function AttendanceLandingSections() {
                 className="text-2xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -783,9 +726,7 @@ export default function AttendanceLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Attendance used to be scattered across spreadsheets. Now we
-                  know who is present, who needs approval, and how many hours
-                  our team worked in real time.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -797,10 +738,10 @@ export default function AttendanceLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-slate-100">
-                      Laura Johnson
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      HR director
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -817,80 +758,24 @@ export default function AttendanceLandingSections() {
               className="text-3xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
-                </span>
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">{t("footerCta.titleHighlight")}</span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Check in, work smart, go home happy",
-  color = "bg-[#02cfc3]",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color} dark:opacity-60`}
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt="User"
-        className="absolute left-3 h-12 w-12 rounded-full object-cover"
-      />
-
-      {text}
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }
