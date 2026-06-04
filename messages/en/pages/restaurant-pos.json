@@ -1,0 +1,192 @@
+{
+    "metadata": {
+        "title": "Restaurant POS | Adon ERP",
+        "description": "Adon ERP Restaurant POS connects your tables, orders, kitchen, payments, inventory, and accounting in one seamless workflow."
+    },
+    "hero": {
+        "eyebrow": {
+            "icon": "Utensils",
+            "label": "Restaurant point of sale"
+        },
+        "titlePrefix": "All-in-one",
+        "titleHighlight": "restaurant PoS",
+        "description": "Adon ERP Restaurant POS connects your tables, orders, kitchen, payments, inventory, and accounting in one seamless workflow.",
+        "buttons": {
+            "watchDemo": "Watch Demo"
+        }
+    },
+    "dashboard": {
+        "appName": "Adon Restaurant POS",
+        "tableNumber": "Table 12",
+        "currentOrder": {
+            "title": "Current order",
+            "item1": "Chicken Burger",
+            "item1Price": "$12.50",
+            "item2": "French Fries",
+            "item2Price": "$4.20",
+            "item3": "Fresh Juice",
+            "item3Price": "$3.80",
+            "total": "Total",
+            "totalAmount": "$20.50",
+            "payButton": "Pay order"
+        },
+        "menu": {
+            "title": "Menu",
+            "itemsCount": "items",
+            "item1": "Burger",
+            "item2": "Pizza",
+            "item3": "Pasta",
+            "item4": "Tacos",
+            "item5": "Salad",
+            "item6": "Coffee",
+            "tapToAdd": "Tap to add"
+        },
+        "badges": {
+            "fasterService": "Faster service",
+            "kitchenSynced": "Kitchen synced"
+        }
+    },
+    "serviceSection": {
+        "title": "One",
+        "highlight": "interface",
+        "subtitle": "for seamless service",
+        "description": "From floor orders to kitchen preparation and payment collection, every restaurant workflow stays connected.",
+        "features": {
+            "floorPlan": "Floor plan control",
+            "loyalty": "Loyalty programs",
+            "kitchenRouting": "Kitchen routing",
+            "splitPayments": "Split payments"
+        },
+        "menuItems": {
+            "burger": "Burger",
+            "pizza": "Pizza",
+            "pasta": "Pasta",
+            "rice": "Rice",
+            "coffee": "Coffee",
+            "juice": "Juice"
+        }
+    },
+    "selfOrderingSection": {
+        "eyebrow": {
+            "icon": "MonitorSmartphone",
+            "label": "Self ordering"
+        },
+        "title": "Self ordering is the",
+        "subtitle": "future",
+        "description": "Let guests order from QR menus, kiosks, or tablets. Orders go straight to the kitchen and sync with your table management.",
+        "qrMenu": {
+            "title": "QR menu",
+            "meal": "Meal",
+            "drink": "Drink",
+            "dessert": "Dessert",
+            "addon": "Add-on"
+        },
+        "orderCard": {
+            "orderNumber": "Order #482",
+            "status": "Waiting for payment",
+            "payNow": "Pay now"
+        }
+    },
+    "floorPlanSection": {
+        "title": "Custom",
+        "highlight": "floor plans",
+        "description": "Design your dining room, manage table availability, move guests between areas, and follow every order from seat to kitchen."
+    },
+    "orderPreparationSection": {
+        "title": "Seamless",
+        "highlight": "order",
+        "subtitle": "preparation",
+        "description": "Send items to the right kitchen station, track preparation status, and serve faster during busy hours.",
+        "kitchenDisplay": {
+            "title": "Kitchen display",
+            "newOrders": "New orders",
+            "preparing": "Preparing",
+            "ready": "Ready",
+            "served": "Served"
+        },
+        "preparationWorkflow": {
+            "title": "Preparation workflow",
+            "step1": "Order received",
+            "step2": "Sent to kitchen",
+            "step3": "Chef preparing",
+            "step4": "Ready to serve"
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "compatibleDevice": {
+                "title": "Compatible with any device",
+                "description": "Run your restaurant POS on tablets, phones, laptops, or touch screens."
+            },
+            "offlinePayments": {
+                "title": "Offline payments",
+                "description": "Keep taking orders and payments even when your connection drops."
+            },
+            "integratedPayments": {
+                "title": "Integrated payments",
+                "description": "Accept cards, cash, mobile wallet, and online payments from one screen."
+            },
+            "splitBills": {
+                "title": "Split bills & tips",
+                "description": "Split orders, collect tips, and manage shared tables with ease."
+            },
+            "kitchenPrinting": {
+                "title": "Kitchen printing",
+                "description": "Send food items directly to the kitchen with status tracking."
+            },
+            "customerLoyalty": {
+                "title": "Customer loyalty",
+                "description": "Reward repeat guests with points, coupons, and personalized offers."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand your restaurant workflow across the Adon ERP ecosystem.",
+        "apps": {
+            "website": {
+                "title": "Website",
+                "desc": "Online menu and ordering"
+            },
+            "ecommerce": {
+                "title": "eCommerce",
+                "desc": "Sell food online"
+            },
+            "inventory": {
+                "title": "Inventory",
+                "desc": "Track ingredients"
+            },
+            "emailMarketing": {
+                "title": "Email Marketing",
+                "desc": "Bring guests back"
+            },
+            "crm": {
+                "title": "CRM",
+                "desc": "Guest relationships"
+            },
+            "accounting": {
+                "title": "Accounting",
+                "desc": "Restaurant finance"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join modern restaurants",
+        "description": "Restaurant teams use Adon POS to serve faster, reduce errors, and keep every order connected from table to accounting."
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "subtitle": "your growth potential",
+        "description": "Build a connected restaurant operation with POS, kitchen display, table management, payments, inventory, and accounting.",
+        "buttons": {
+            "contactSales": "Contact Sales"
+        }
+    }
+}
