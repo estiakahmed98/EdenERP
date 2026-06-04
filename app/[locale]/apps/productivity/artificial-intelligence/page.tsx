@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -26,6 +27,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, Bot, Brain, CheckCircle2, ClipboardList,
+    FileText, Globe2, Mail, MessageCircle, Play, Sparkles, Star,
+    Users, WandSparkles, Zap, ArrowRight,
+  };
+  return icons[iconName] || Brain;
+};
+
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -35,76 +47,61 @@ const avatars = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
 ];
 
-const features = [
-  {
-    title: "Voice Transcription",
-    description:
-      "Effortlessly record, transcribe, summarize, and organize conversations.",
-  },
-  {
-    title: "AI fields",
-    description:
-      "Create summaries, tags, and smart labels from text records instantly.",
-  },
-  {
-    title: "AI chatter assistant",
-    description:
-      "Chat with AI inside Adon, preparing replies, summaries, and next steps.",
-  },
-  {
-    title: "Email template",
-    description:
-      "Transform AI-written drafts into professional emails in seconds.",
-  },
-  {
-    title: "Web page content",
-    description:
-      "Generate website copy, product descriptions, and marketing text.",
-  },
-  {
-    title: "Livechat",
-    description: "Answer website visitors faster with AI-assisted responses.",
-  },
-];
-
-const apps = [
-  { title: "CRM", description: "Smart sales recommendations", icon: Brain },
-  { title: "Website", description: "AI content creation", icon: Globe2 },
-  {
-    title: "Documents",
-    description: "AI-powered document analysis",
-    icon: FileText,
-  },
-  {
-    title: "Project",
-    description: "Generate project summaries",
-    icon: ClipboardList,
-  },
-  {
-    title: "Sales",
-    description: "AI pricing and forecasting",
-    icon: BarChart3,
-  },
-];
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export default function AIPoweredAppsLandingPage() {
+  const t = useTranslations("pages.ai");
+
+  const automationMetrics = t.raw("automationSection.metrics");
+  const agentsSteps = t.raw("agentsSection.steps");
+  const nextMoveItems = t.raw("nextMoveSection.demo.items");
+  const organizationSteps = t.raw("organizationSection.steps");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Your apps.{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="text-sky-500 dark:text-sky-400">AI-powered</span>
+              <span className="text-sky-500 dark:text-sky-400">
+                {t("hero.titleHighlight")}
+              </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Adon Artificial Intelligence turns your everyday data into smarter
-            decisions, faster workflows, and better results.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -112,14 +109,14 @@ export default function AIPoweredAppsLandingPage() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Meet an advisor
+              {t("hero.advisorButton")}
             </Link>
           </div>
 
@@ -155,6 +152,7 @@ export default function AIPoweredAppsLandingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Automate the work that slows you down Section */}
       <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -162,27 +160,20 @@ export default function AIPoweredAppsLandingPage() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">Automate</span>
+              <span className="dark:text-[#02cfc3]">{t("automationSection.title")}</span>
             </HandUnderline>{" "}
-            the work that slows you down
+            {t("automationSection.titleHighlight")}
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl gap-5 md:grid-cols-3">
-            {[
-              ["Data entry", "-75%", "time wasted on paperwork"],
-              ["Email replies", "-60%", "manual follow-ups"],
-              ["Invoice matching", "-85%", "processing time"],
-              ["Lead scoring", "+90%", "sales team efficiency"],
-              ["Document search", "25%", "less admin workload"],
-              ["Data quality", "15%", "reduction in errors"],
-            ].map(([label, value, description], index) => (
+            {automationMetrics.map((metric: any, index: number) => (
               <div
-                key={label}
+                key={metric.label}
                 className="relative rounded-xl bg-white dark:bg-slate-900 p-6 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
               >
                 <div className="mb-5 flex items-center justify-between">
                   <span className="rounded-full bg-slate-50 dark:bg-slate-800/50 px-3 py-1 text-xs font-bold text-slate-500 dark:text-slate-400">
-                    {label}
+                    {metric.label}
                   </span>
 
                   {index % 3 === 0 ? (
@@ -195,11 +186,11 @@ export default function AIPoweredAppsLandingPage() {
                 </div>
 
                 <p className="text-center text-4xl font-black text-slate-900 dark:text-white">
-                  {value}
+                  {metric.value}
                 </p>
 
                 <p className="mt-2 text-center text-sm font-bold text-slate-500 dark:text-slate-400">
-                  {description}
+                  {metric.description}
                 </p>
               </div>
             ))}
@@ -207,6 +198,7 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
+      {/* Agents on your terms Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -214,45 +206,32 @@ export default function AIPoweredAppsLandingPage() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="dark:text-rose-200">Agents</span>
+              <span className="dark:text-rose-200">{t("agentsSection.title")}</span>
             </HandUnderline>{" "}
-            on your terms
+            {t("agentsSection.titleHighlight")}
           </h2>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Set up your AI assistant, define tasks, configure permissions, and
-            let it work inside your apps.
+            {t("agentsSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
-              <div className="mb-10 flex gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 dark:border-rose-600 text-lg font-bold text-rose-500 dark:text-rose-400">
-                  1
-                </span>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-white">
-                    Create your agent
-                  </p>
-                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                    Define role, tools, access, and what this assistant can do.
-                  </p>
+              {agentsSteps.slice(0, 2).map((step: any) => (
+                <div key={step.number} className="mb-10 flex gap-4">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 dark:border-rose-600 text-lg font-bold text-rose-500 dark:text-rose-400">
+                    {step.number}
+                  </span>
+                  <div>
+                    <p className="font-bold text-slate-900 dark:text-white">
+                      {step.title}
+                    </p>
+                    <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-
-              <div className="mb-10 flex gap-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-rose-400 dark:border-rose-600 text-lg font-bold text-rose-500 dark:text-rose-400">
-                  2
-                </span>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-white">
-                    Configure it
-                  </p>
-                  <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                    Train it with documents, workflow rules, and business data.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
@@ -261,26 +240,24 @@ export default function AIPoweredAppsLandingPage() {
               </span>
 
               <p className="mb-5 font-bold text-slate-900 dark:text-white">
-                Get tailored responses
+                {agentsSteps[2]?.title}
               </p>
 
               <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
                 <p className="text-sm font-bold text-slate-900 dark:text-white">
-                  Compliance Assistant
+                  {t("agentsSection.demo.compliance.title")}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                  I found the required policy, summarized the risk, and prepared
-                  a reply for approval.
+                  {t("agentsSection.demo.compliance.message")}
                 </p>
               </div>
 
               <div className="mt-5 rounded-lg bg-[#e9fbf8] dark:bg-[#0a2a2d] p-4">
                 <p className="text-sm font-bold text-slate-900 dark:text-white">
-                  AI generated answer
+                  {t("agentsSection.demo.generated.title")}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                  Based on your company rules, this customer request can be
-                  accepted with a manager validation.
+                  {t("agentsSection.demo.generated.message")}
                 </p>
               </div>
             </div>
@@ -290,6 +267,7 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
+      {/* Let AI drive the next move Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -297,24 +275,23 @@ export default function AIPoweredAppsLandingPage() {
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Let AI drive the{" "}
+              {t("nextMoveSection.title")}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">next move</span>
+                <span className="dark:text-sky-200">{t("nextMoveSection.titleHighlight")}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              From everyday manual work to smart business recommendations, AI
-              can suggest actions, summarize records, and move work forward.
+              {t("nextMoveSection.description")}
             </p>
 
             <p
               className="mt-10 text-2xl font-bold text-sky-500 dark:text-sky-400"
               style={{ fontFamily: handwrittenFont }}
             >
-              Use case
+              {t("nextMoveSection.useCase")}
               <br />
-              Prep a quote for a big client
+              {t("nextMoveSection.useCaseSubtitle")}
             </p>
           </div>
 
@@ -329,16 +306,12 @@ export default function AIPoweredAppsLandingPage() {
                   </span>
                 </span>
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Draft sales proposal
+                  {t("nextMoveSection.demo.title")}
                 </p>
               </div>
 
               <div className="space-y-3">
-                {[
-                  "Customer context analyzed",
-                  "Quote items suggested",
-                  "Email draft prepared",
-                ].map((item) => (
+                {nextMoveItems.map((item: string) => (
                   <div
                     key={item}
                     className="flex items-center gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-bold text-slate-600 dark:text-slate-300"
@@ -350,7 +323,7 @@ export default function AIPoweredAppsLandingPage() {
               </div>
 
               <button className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                Apply suggestion
+                {t("nextMoveSection.demo.button")}
               </button>
             </div>
 
@@ -360,6 +333,7 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
+      {/* Instant business insights Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Zap className="mb-6 h-12 w-12 text-amber-500 dark:text-amber-400" />
@@ -369,15 +343,14 @@ export default function AIPoweredAppsLandingPage() {
             style={{ fontFamily: handwrittenFont }}
           >
             <span className="relative inline-block px-2">
-              <span className="relative z-10">Instant</span>
+              <span className="relative z-10">{t("insightsSection.title")}</span>
               <span className="absolute inset-x-0 bottom-2 h-6 rounded-lg bg-amber-300 dark:bg-amber-700" />
             </span>{" "}
-            business insights
+            {t("insightsSection.titleHighlight")}
           </h2>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Ask your data what matters. AI turns business questions into instant
-            reporting and visual analytics.
+            {t("insightsSection.description")}
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl rounded-xl bg-white dark:bg-slate-900 p-8">
@@ -406,23 +379,22 @@ export default function AIPoweredAppsLandingPage() {
         </div>
       </section>
 
+      {/* Next-level organization Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Next-level organization.
+            {t("organizationSection.title")}
             <br />
-            Next-level{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">organization</span>
+              <span className="dark:text-[#02cfc3]">{t("organizationSection.subtitle")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Documents, tasks, emails, and records become searchable, organized,
-            and easier to act on with AI.
+            {t("organizationSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[300px_1fr]">
@@ -435,22 +407,18 @@ export default function AIPoweredAppsLandingPage() {
                 className="mt-5 text-xl font-bold text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Upload files
+                {t("organizationSection.uploadText")}
               </p>
             </div>
 
             <div className="space-y-4">
-              {[
-                "AI detected document type",
-                "AI extracted important fields",
-                "AI suggested next action",
-              ].map((item) => (
+              {organizationSteps.map((step: string) => (
                 <div
-                  key={item}
+                  key={step}
                   className="flex items-center justify-between rounded-xl bg-slate-50 dark:bg-slate-800/50 px-5 py-4"
                 >
                   <span className="font-bold text-slate-700 dark:text-slate-200">
-                    {item}
+                    {step}
                   </span>
                   <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
                 </div>
@@ -464,11 +432,12 @@ export default function AIPoweredAppsLandingPage() {
             className="mt-12 text-center text-lg font-bold text-amber-500 dark:text-amber-400"
             style={{ fontFamily: handwrittenFont }}
           >
-            Be useful! There is work!!!
+            {t("organizationSection.footerText")}
           </p>
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -478,7 +447,7 @@ export default function AIPoweredAppsLandingPage() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">features</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
@@ -486,13 +455,13 @@ export default function AIPoweredAppsLandingPage() {
             <br />
             done{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">right.</span>
+              <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -501,7 +470,6 @@ export default function AIPoweredAppsLandingPage() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -520,35 +488,28 @@ export default function AIPoweredAppsLandingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("appsSection.title")}{" "}
+           
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
+              <span className="dark:text-sky-200">{t("appsSection.description")}</span>
             </HandUnderline>
           </h2>
 
-          <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
-          </p>
-
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -575,11 +536,12 @@ export default function AIPoweredAppsLandingPage() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -623,10 +585,10 @@ export default function AIPoweredAppsLandingPage() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -639,8 +601,7 @@ export default function AIPoweredAppsLandingPage() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  The processing time for accounting documents prior to analysis
-                  is now reduced dramatically with AI automation.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -652,10 +613,10 @@ export default function AIPoweredAppsLandingPage() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Mike Solutions
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Operations manager
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -672,54 +633,26 @@ export default function AIPoweredAppsLandingPage() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

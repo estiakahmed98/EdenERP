@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "title": "Discuss | AdonERP",
+    "description": "AI-powered communication platform for all your team collaboration — from direct messages and channels to voice & video calls, notifications, and integrated business conversations."
+  },
+  "hero": {
+    "title": "Discuss",
+    "titleHighlight": "where work happens",
+    "description": "Adon Discuss is the fully integrated communication hub for messages, channels, calls, notifications, and business conversations.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "dashboard": {
+      "title": "Discuss",
+      "subtitle": "Inbox / Channels / Messages / Meetings",
+      "newButton": "New",
+      "channels": ["General", "Marketing", "Sales", "Support", "Project"],
+      "messages": [
+        { "name": "Audrey Peterson", "text": "The new dashboard is ready for review." },
+        { "name": "Mitchell Admin", "text": "Great work! Please share it with sales." },
+        { "name": "Joel Willis", "text": "I added the report and screenshots." }
+      ],
+      "companyUpdate": {
+        "title": "Company updates",
+        "description": "Share information, project progress, files, and decisions in one place."
+      }
+    }
+  },
+  "integratedSection": {
+    "title": "Adon Discuss: a fully",
+    "titleHighlight": "integrated",
+    "titleEnd": "communication hub",
+    "description": "Bring channels, messages, meetings, notifications, and business records together without switching between different tools.",
+    "items": [
+      "General company updates",
+      "Marketing campaign",
+      "Customer request",
+      "Project discussion",
+      "Support escalation"
+    ]
+  },
+  "channelsSection": {
+    "title": "Create message",
+    "subtitle": "channels to reach",
+    "titleHighlight": "the masses",
+    "description": "Group everyone into channels for company-wide announcements, focused project updates, or customer-facing communication.",
+    "demo": {
+      "channel": "#general",
+      "post": "New office launch",
+      "content": "We are excited to share photos from our new workspace."
+    }
+  },
+  "integratedAppsSection": {
+    "title": "Adon Discuss is integrated throughout all",
+    "titleHighlight": "the Adon apps",
+    "description": "Communicate with every single Adon app.",
+    "demo": {
+      "title": "Sales Order",
+      "badge": "Discuss",
+      "fields": ["Customer", "Quotation", "Total", "Status"],
+      "thread": {
+        "title": "Discuss thread",
+        "description": "Ask questions, mention team members, and keep decisions attached to the document."
+      }
+    }
+  },
+  "centralHubSection": {
+    "title": "The Discuss app is the central",
+    "titleHighlight": "communications",
+    "titleEnd": "hub in Adon",
+    "description": "Access your conversations from every business workflow and keep every team connected around shared records.",
+    "apps": ["Sales", "Inventory", "Project", "Accounting", "Website", "CRM"]
+  },
+  "videoSection": {
+    "title": "Video meetings for internal",
+    "subtitle": "and external users!",
+    "description": "Meet with colleagues, partners, customers, and teams without leaving the communication workspace.",
+    "demo": {
+      "videoLabel": "Video meeting"
+    }
+  },
+  "messageChannelsSection": {
+    "title": "#Message_channels for targeted",
+    "titleHighlight": "group",
+    "titleEnd": "communications!",
+    "description": "Organize communication around teams, topics, announcements, and customer groups.",
+    "demo": {
+      "channel": "#coffee-lovers",
+      "post": "Team update",
+      "content": "Here is the latest campaign concept. Please review and share your comments before tomorrow."
+    }
+  },
+  "notificationsSection": {
+    "title": "Notifications all in",
+    "titleHighlight": "one place",
+    "description": "Never lose track of important messages, mentions, assignments, and updates from every Adon app.",
+    "demo": {
+      "title": "Inbox",
+      "items": [
+        "You were mentioned in Sales Order",
+        "New message in Marketing",
+        "Customer replied to your thread"
+      ]
+    }
+  },
+  "successSection": {
+    "title": "Effective communication",
+    "subtitle": "drives business success",
+    "description": "Collaborate naturally with colleagues whether you are discussing a project, a sale, a customer request, or a company announcement.",
+    "demo": [
+      { "name": "Audrey Peterson", "message": "Can we validate this quote today?" },
+      { "name": "Joel Willis", "message": "Yes, I attached the latest file." },
+      { "name": "Mitchell Admin", "message": "Approved. Please notify the customer." }
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Direct messages",
+        "description": "Private 1-to-1 message channels.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "WhatsApp",
+        "description": "Exchange messages with customers in one place.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Channel communication",
+        "description": "Broadcast company updates, projects, and team news.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Voice & live chat",
+        "description": "Keep external and internal users connected.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Video conferencing",
+        "description": "Video calls directly from conversations.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Notifications",
+        "description": "Never miss important messages or mentions.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Inventory", "description": "Discuss stock updates", "icon": "BarChart3" },
+      { "title": "Website", "description": "Live chat with visitors", "icon": "Globe2" },
+      { "title": "Accounting", "description": "Talk about invoices", "icon": "Mail" },
+      { "title": "SMS", "description": "Send quick messages", "icon": "MessageCircle" },
+      { "title": "Marketing", "description": "Plan campaigns", "icon": "Zap" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "The easy to use interface lets users discuss tasks and projects while keeping business communication organized.",
+    "name": "Nicolas Martin",
+    "role": "Operations manager"
+  },
+  "footerCta": {
+    "title": "Reignite the spark",
+    "subtitle": "of accomplishment",
+    "button": "Start now"
+  }
+}

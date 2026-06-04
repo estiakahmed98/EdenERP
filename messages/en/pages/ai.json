@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "title": "AI-Powered Apps | AdonERP",
+    "description": "AI-powered platform for all your business operations — from voice transcription and AI fields to intelligent assistants, email templates, and instant business insights."
+  },
+  "hero": {
+    "title": "Your apps.",
+    "titleHighlight": "AI-powered",
+    "description": "Adon Artificial Intelligence turns your everyday data into smarter decisions, faster workflows, and better results.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor"
+  },
+  "automationSection": {
+    "title": "Automate",
+    "titleHighlight": "the work that slows you down",
+    "metrics": [
+      { "label": "Data entry", "value": "-75%", "description": "time wasted on paperwork" },
+      { "label": "Email replies", "value": "-60%", "description": "manual follow-ups" },
+      { "label": "Invoice matching", "value": "-85%", "description": "processing time" },
+      { "label": "Lead scoring", "value": "+90%", "description": "sales team efficiency" },
+      { "label": "Document search", "value": "25%", "description": "less admin workload" },
+      { "label": "Data quality", "value": "15%", "description": "reduction in errors" }
+    ]
+  },
+  "agentsSection": {
+    "title": "Agents",
+    "titleHighlight": "on your terms",
+    "description": "Set up your AI assistant, define tasks, configure permissions, and let it work inside your apps.",
+    "steps": [
+      { "number": 1, "title": "Create your agent", "description": "Define role, tools, access, and what this assistant can do." },
+      { "number": 2, "title": "Configure it", "description": "Train it with documents, workflow rules, and business data." },
+      { "number": 3, "title": "Get tailored responses", "description": "Get tailored responses from your AI assistant." }
+    ],
+    "demo": {
+      "compliance": {
+        "title": "Compliance Assistant",
+        "message": "I found the required policy, summarized the risk, and prepared a reply for approval."
+      },
+      "generated": {
+        "title": "AI generated answer",
+        "message": "Based on your company rules, this customer request can be accepted with a manager validation."
+      }
+    }
+  },
+  "nextMoveSection": {
+    "title": "Let AI drive the",
+    "titleHighlight": "next move",
+    "description": "From everyday manual work to smart business recommendations, AI can suggest actions, summarize records, and move work forward.",
+    "useCase": "Use case",
+    "useCaseSubtitle": "Prep a quote for a big client",
+    "demo": {
+      "title": "Draft sales proposal",
+      "items": [
+        "Customer context analyzed",
+        "Quote items suggested",
+        "Email draft prepared"
+      ],
+      "button": "Apply suggestion"
+    }
+  },
+  "insightsSection": {
+    "title": "Instant",
+    "titleHighlight": "business insights",
+    "description": "Ask your data what matters. AI turns business questions into instant reporting and visual analytics."
+  },
+  "organizationSection": {
+    "title": "Next-level organization.",
+    "subtitle": "Next-level organization",
+    "description": "Documents, tasks, emails, and records become searchable, organized, and easier to act on with AI.",
+    "uploadText": "Upload files",
+    "steps": [
+      "AI detected document type",
+      "AI extracted important fields",
+      "AI suggested next action"
+    ],
+    "footerText": "Be useful! There is work!!!"
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Voice Transcription",
+        "description": "Effortlessly record, transcribe, summarize, and organize conversations.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "AI fields",
+        "description": "Create summaries, tags, and smart labels from text records instantly.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "AI chatter assistant",
+        "description": "Chat with AI inside Adon, preparing replies, summaries, and next steps.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Email template",
+        "description": "Transform AI-written drafts into professional emails in seconds.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Web page content",
+        "description": "Generate website copy, product descriptions, and marketing text.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Livechat",
+        "description": "Answer website visitors faster with AI-assisted responses.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "CRM", "description": "Smart sales recommendations", "icon": "Brain" },
+      { "title": "Website", "description": "AI content creation", "icon": "Globe2" },
+      { "title": "Documents", "description": "AI-powered document analysis", "icon": "FileText" },
+      { "title": "Project", "description": "Generate project summaries", "icon": "ClipboardList" },
+      { "title": "Sales", "description": "AI pricing and forecasting", "icon": "BarChart3" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "The processing time for accounting documents prior to analysis is now reduced dramatically with AI automation.",
+    "name": "Mike Solutions",
+    "role": "Operations manager"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}
