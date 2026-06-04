@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BarChart3,
@@ -26,135 +27,15 @@ import {
 } from "lucide-react";
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const STORIES = [
-  {
-    quote:
-      "Adon ERP replaced five separate tools we were paying for. The inventory and accounting modules alone saved us 18 hours a week in reconciliation work.",
-    name: "Sofia Larsson",
-    role: "CFO · Nordic Abrasives Group",
-    country: "Sweden",
-    results: ["40% fewer tools", "18 hrs/week saved"],
-    avatar: "SL",
-    color: "from-blue-500 to-indigo-600",
-    tier: "Enterprise",
-  },
-  {
-    quote:
-      "We went from a patchwork of spreadsheets to a single live dashboard in six weeks. Our warehouse team now tracks stock in real time — no more end-of-day surprises.",
-    name: "Rajesh Menon",
-    role: "Operations Director · IndoPacific Logistics",
-    country: "India",
-    results: ["6-week go-live", "99% stock accuracy"],
-    avatar: "RM",
-    color: "from-emerald-500 to-teal-600",
-    tier: "Mid-market",
-  },
-  {
-    quote:
-      "As a fast-growing startup, we needed a system that would grow with us. Adon ERP scales without adding a consulting bill every time we add a module.",
-    name: "Adèle Moreau",
-    role: "Founder & CEO · GreenLoop Commerce",
-    country: "France",
-    results: ["Zero-touch scaling", "3× faster close"],
-    avatar: "AM",
-    color: "from-amber-500 to-orange-600",
-    tier: "Startup",
-  },
-  {
-    quote:
-      "The POS and restaurant modules work seamlessly together. Table turnover is up 22%, and our staff finally have one system to learn instead of three.",
-    name: "Kwame Osei",
-    role: "GM · Accra Kitchen Co.",
-    country: "Ghana",
-    results: ["22% faster turnover", "1 unified system"],
-    avatar: "KO",
-    color: "from-rose-500 to-pink-600",
-    tier: "Retail",
-  },
-  {
-    quote:
-      "Implementation took 10 days, not 10 weeks. The partner we worked with knew the software inside out and our industry at the same time.",
-    name: "Julia Saab",
-    role: "Head of Finance · Saab Holdings",
-    country: "Lebanon",
-    results: ["10-day go-live", "Zero downtime"],
-    avatar: "JS",
-    color: "from-violet-500 to-purple-600",
-    tier: "Enterprise",
-  },
-  {
-    quote:
-      "We migrated from a legacy ERP in record time. The Adon ERP team and our partner worked shoulder to shoulder with our IT team through every milestone.",
-    name: "Fritz Lehmann",
-    role: "CTO · RheinTech GmbH",
-    country: "Germany",
-    results: ["3-week migration", "Zero data loss"],
-    avatar: "FL",
-    color: "from-cyan-500 to-sky-600",
-    tier: "Enterprise",
-  },
-];
-
-const INDUSTRIES = [
-  {
-    icon: Building2,
-    label: "Manufacturing",
-    count: "340+ companies",
-    color: "bg-blue-50 text-blue-600",
-  },
-  {
-    icon: Globe2,
-    label: "Retail & E-commerce",
-    count: "290+ companies",
-    color: "bg-emerald-50 text-emerald-600",
-  },
-  {
-    icon: Rocket,
-    label: "Technology & SaaS",
-    count: "210+ companies",
-    color: "bg-amber-50 text-amber-600",
-  },
-  {
-    icon: Handshake,
-    label: "Services & Consulting",
-    count: "175+ companies",
-    color: "bg-violet-50 text-violet-600",
-  },
-];
-
-const FEATURES = [
-  {
-    icon: Search,
-    title: "Relevant match-making",
-    description:
-      "Every story is tagged by industry, company size, and use case — so you can find the one closest to yours.",
-  },
-  {
-    icon: ThumbsUp,
-    title: "Peer-voted stories",
-    description:
-      "Stories get rated by their readers. The most useful and relatable rise to the top so you spend less time browsing.",
-  },
-  {
-    icon: Video,
-    title: "On-demand recordings",
-    description:
-      "Every featured customer story comes with a 5-minute video summary — available immediately on any device.",
-  },
-  {
-    icon: MessageSquareText,
-    title: "Q&A with customers",
-    description:
-      "Ask follow-up questions directly to the technology or operations lead behind each story.",
-  },
-];
-
-const STATS = [
-  { value: "600+", label: "Verified references" },
-  { value: "45+", label: "Industries" },
-  { value: "180+", label: "Countries" },
-  { value: "96%", label: "Satisfaction score" },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    Search, ThumbsUp, Video, MessageSquareText, Building2, Globe2, Rocket,
+    Handshake, TrendingUp, Zap, Sparkles, Star, Users, ArrowRight, CheckCircle2,
+    Play, Lightbulb, BarChart3, ShieldCheck,
+  };
+  return icons[iconName] || Sparkles;
+};
 
 function ScriptHeading({
   children,
@@ -176,45 +57,22 @@ function ScriptHeading({
 }
 
 function SectionEyebrow({
-  icon,
-  label,
+  iconName,
+  labelKey,
+  t,
 }: {
-  icon: React.ReactNode;
-  label: string;
+  iconName: string;
+  labelKey: string;
+  t: any;
 }) {
+  const IconComponent = getIconComponent(iconName);
   return (
     <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-primary/20">
-      <span className="text-primary">{icon}</span>
-      {label}
+      <span className="text-primary">
+        <IconComponent className="h-4 w-4" />
+      </span>
+      {t(labelKey)}
     </div>
-  );
-}
-
-function HandUnderlineText({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <span className={`relative ${className}`}>
-      {children}
-      <svg
-        className="absolute -bottom-2 left-0 w-full"
-        height="12"
-        viewBox="0 0 200 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M1 9C40 3 80 2 120 3.5C160 5 180 8 201 2.5"
-          stroke="#0284c7"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-      </svg>
-    </span>
   );
 }
 
@@ -243,8 +101,16 @@ function BadgeTag({
 }
 
 export default function CustomerStoriesPage() {
+  const t = useTranslations("pages.customerstories");
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true, margin: "-80px" });
+
+  const heroStats = t.raw("hero.stats");
+  const featuresList = t.raw("featuresSection.features");
+  const industriesList = t.raw("industriesSection.industries");
+  const storiesList = t.raw("storiesSection.stories");
+  const impactStatsList = t.raw("impactSection.stats");
+  const testimonialsList = t.raw("testimonialsSection.testimonials");
 
   return (
     <main className="overflow-hidden bg-background text-foreground">
@@ -261,13 +127,14 @@ export default function CustomerStoriesPage() {
             transition={{ duration: 0.65, ease: "easeOut" }}
           >
             <SectionEyebrow
-              icon={<Sparkles className="h-4 w-4" />}
-              label="Customer Stories"
+              iconName={t("hero.eyebrowIcon")}
+              labelKey="hero.eyebrowLabel"
+              t={t}
             />
 
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary/70">
-                Community / Get Services / Customer Stories
+                {t("hero.communityLabel")}
               </p>
               <div className="space-y-3">
                 <p
@@ -277,7 +144,7 @@ export default function CustomerStoriesPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  See how real teams
+                  {t("hero.preHeading")}
                 </p>
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
@@ -286,14 +153,13 @@ export default function CustomerStoriesPage() {
                       '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                   }}
                 >
-                  use Adon ERP to
+                  {t("hero.title")}
                   <br />
-                  <span className="text-primary">scale</span>
+                  <span className="text-primary">{t("hero.titleHighlight")}</span>
                 </h1>
               </div>
               <p className="max-w-lg text-lg leading-8 text-muted-foreground">
-                From startups to enterprise groups — hear how hundreds of
-                organisations transformed their operations with Adon ERP.
+                {t("hero.description")}
               </p>
             </div>
 
@@ -303,20 +169,20 @@ export default function CustomerStoriesPage() {
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
               >
                 <Sparkles className="h-4 w-4" />
-                Read stories
+                {t("hero.readButton")}
               </Link>
               <a
                 href="#"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 <Play className="h-4 w-4" />
-                Watch video compilations
+                {t("hero.watchButton")}
               </a>
             </div>
 
             {/* Stats strip */}
             <div className="grid grid-cols-4 gap-3 rounded-2xl border border-primary/20 bg-card/80 p-5 backdrop-blur-sm shadow-sm">
-              {STATS.map((s) => (
+              {heroStats.map((s: any) => (
                 <div key={s.label} className="text-center">
                   <p className="text-xl font-black text-primary">{s.value}</p>
                   <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -361,19 +227,25 @@ export default function CustomerStoriesPage() {
                     <Play className="h-6 w-6 text-primary-foreground ml-0.5" />
                   </div>
                   <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-card/70 backdrop-blur-sm px-2.5 py-1">
-                    <span className="text-[10px] font-semibold text-foreground">5 min</span>
+                    <span className="text-[10px] font-semibold text-foreground">
+                      {t("hero.featuredStory.duration")}
+                    </span>
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-primary mb-1">Featured Story</p>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary mb-1">
+                    {t("hero.featuredStory.badge")}
+                  </p>
                   <p className="text-sm font-semibold text-foreground">
-                    How IndoPacific Logistics cut 18 hrs/week in reconciliation
+                    {t("hero.featuredStory.title")}
                   </p>
                   <div className="mt-2 flex items-center gap-2">
                     <div className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-[9px] font-black text-white">
                       RM
                     </div>
-                    <span className="text-xs text-muted-foreground">Rajesh Menon — Operations Director</span>
+                    <span className="text-xs text-muted-foreground">
+                      {t("hero.featuredStory.name")} — {t("hero.featuredStory.role")}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -386,21 +258,21 @@ export default function CustomerStoriesPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Lightbulb className="h-4 w-4" />}
-            label="Why read stories"
+            iconName={t("featuresSection.eyebrowIcon")}
+            labelKey="featuresSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Learn from those who have been there
+            {t("featuresSection.title")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Customer stories are more than marketing. They are honest accounts
-            of decisions, trade-offs, and outcomes — from teams that chose Adon ERP.
+            {t("featuresSection.description")}
           </p>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {FEATURES.map((feature, index) => {
-            const Icon = feature.icon;
+          {featuresList.map((feature: any, index: number) => {
+            const Icon = getIconComponent(feature.icon);
             return (
               <motion.div
                 key={feature.title}
@@ -434,17 +306,18 @@ export default function CustomerStoriesPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<BarChart3 className="h-4 w-4" />}
-            label="By industry"
+            iconName={t("industriesSection.eyebrowIcon")}
+            labelKey="industriesSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Stories across 45+ industries
+            {t("industriesSection.title")}
           </ScriptHeading>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {INDUSTRIES.map((ind, index) => {
-            const Icon = ind.icon;
+          {industriesList.map((ind: any, index: number) => {
+            const Icon = getIconComponent(ind.icon);
             return (
               <motion.div
                 key={ind.label}
@@ -454,9 +327,7 @@ export default function CustomerStoriesPage() {
                 viewport={{ once: true, amount: 0.2 }}
                 className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
               >
-                <div
-                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${ind.color}`}
-                >
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -476,20 +347,20 @@ export default function CustomerStoriesPage() {
       <section id="stories" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Star className="h-4 w-4" />}
-            label="Featured references"
+            iconName={t("storiesSection.eyebrowIcon")}
+            labelKey="storiesSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            Real results, real companies
+            {t("storiesSection.title")}
           </ScriptHeading>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Every story is verified. Numbers and quotes come directly from
-            the customer — no editing, no spin.
+            {t("storiesSection.description")}
           </p>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
-          {STORIES.map((story, index) => (
+          {storiesList.map((story: any, index: number) => (
             <motion.div
               key={story.name}
               initial={{ opacity: 0, y: 30 }}
@@ -503,9 +374,7 @@ export default function CustomerStoriesPage() {
                 {/* Header */}
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-3">
-                    <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br text-sm font-black text-white shadow-md shadow-primary/10`}
-                    >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/80 text-sm font-black text-primary-foreground shadow-md shadow-primary/10">
                       {story.avatar}
                     </div>
                     <div>
@@ -525,7 +394,7 @@ export default function CustomerStoriesPage() {
 
                 {/* Results */}
                 <div className="flex flex-wrap gap-2">
-                  {story.results.map((r) => (
+                  {story.results.map((r: string) => (
                     <span
                       key={r}
                       className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20"
@@ -561,42 +430,18 @@ export default function CustomerStoriesPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<TrendingUp className="h-4 w-4" />}
-            label="Impact"
+            iconName={t("impactSection.eyebrowIcon")}
+            labelKey="impactSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            The numbers speak for themselves
+            {t("impactSection.title")}
           </ScriptHeading>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: TrendingUp,
-              title: "Average efficiency gain",
-              stat: "34%",
-              description: "reported across all customer stories after their first year on Adon ERP.",
-            },
-            {
-              icon: Rocket,
-              title: "Faster go-live",
-              stat: "3×",
-              description: "shorter implementation cycles compared to traditional ERPs, on average.",
-            },
-            {
-              icon: Zap,
-              title: "User adoption",
-              stat: "91%",
-              description: "of end-users choose to stay on Adon ERP when given the option to switch.",
-            },
-            {
-              icon: Globe2,
-              title: "Countries growing",
-              stat: "180+",
-              description: "companies around the world trust Adon ERP for critical business operations.",
-            },
-          ].map((item, index) => {
-            const Icon = item.icon;
+          {impactStatsList.map((item: any, index: number) => {
+            const Icon = getIconComponent(item.icon);
             return (
               <motion.div
                 key={item.title}
@@ -626,33 +471,19 @@ export default function CustomerStoriesPage() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
-            icon={<Users className="h-4 w-4" />}
-            label="In their words"
+            iconName={t("testimonialsSection.eyebrowIcon")}
+            labelKey="testimonialsSection.eyebrowLabel"
+            t={t}
           />
           <ScriptHeading className="mt-6">
-            From the
+            {t("testimonialsSection.title")}
             <br />
-            customer community
+            {t("testimonialsSection.subtitle")}
           </ScriptHeading>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2">
-          {[
-            {
-              quote:
-                "Choosing Adon ERP was the best software decision our company has ever made. The migration was painless, and the ROI started showing in the first month.",
-              name: "Erik Lindqvist",
-              role: "CTO · Nordic Abrasives",
-              avatar: "EL",
-            },
-            {
-              quote:
-                "We evaluated eight ERP systems. Adon ERP was the only one our finance team actually enjoyed using. That says it all.",
-              name: "Nadia Rossi",
-              role: "Finance Lead · RomaTech",
-              avatar: "NR",
-            },
-          ].map((t, index) => (
+          {testimonialsList.map((tItem: any, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -670,7 +501,7 @@ export default function CustomerStoriesPage() {
                   </span>
                 </div>
                 <p className="text-base leading-8 text-foreground/80">
-                  &ldquo;{t.quote}&rdquo;
+                  &ldquo;{tItem.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-1 text-primary/60">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -679,11 +510,11 @@ export default function CustomerStoriesPage() {
                 </div>
                 <div className="flex items-center gap-4 border-t border-border pt-5">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-sm font-black text-primary-foreground">
-                    {t.avatar}
+                    {tItem.avatar}
                   </div>
                   <div>
-                    <p className="font-semibold text-foreground">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.role}</p>
+                    <p className="font-semibold text-foreground">{tItem.name}</p>
+                    <p className="text-sm text-muted-foreground">{tItem.role}</p>
                   </div>
                 </div>
               </div>
@@ -712,14 +543,13 @@ export default function CustomerStoriesPage() {
             </div>
 
             <ScriptHeading className="text-white text-4xl sm:text-5xl lg:text-6xl">
-              Your story could
+              {t("ctaSection.title")}
               <br />
-              be next
+              {t("ctaSection.subtitle")}
             </ScriptHeading>
 
             <p className="mx-auto mt-4 max-w-2xl text-lg text-primary-foreground/80">
-              Hundreds of companies have already shared their journey. Whether
-              you are a startup or a large enterprise — we would love to hear yours.
+              {t("ctaSection.description")}
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -728,19 +558,19 @@ export default function CustomerStoriesPage() {
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-primary shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5"
               >
                 <Sparkles className="h-4 w-4" />
-                Submit your story
+                {t("ctaSection.submitButton")}
               </a>
               <a
                 href="#"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 hover:border-white/40"
               >
                 <Video className="h-4 w-4" />
-                Record a video story
+                {t("ctaSection.videoButton")}
               </a>
             </div>
 
             <p className="mt-6 text-sm text-primary-foreground/60">
-              Verified &amp; unedited &middot; Free to submit &middot; SaaS, retail, services &amp; more
+              {t("ctaSection.footerText")}
             </p>
           </div>
         </motion.div>

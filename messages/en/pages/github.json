@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "title": "GitHub | AdonERP",
+    "description": "Join our open-source community on GitHub. Contribute code, review pull requests, and shape the roadmap alongside developers from more than 180 countries."
+  },
+  "hero": {
+    "eyebrowIcon": "GitBranch",
+    "eyebrowLabel": "Collaborate on GitHub",
+    "communityLabel": "Community / Collaborate / GitHub",
+    "preHeading": "Build Adon ERP",
+    "title": "Together, on",
+    "titleHighlight": "GitHub",
+    "description": "Adon ERP is open-source. Fork the repo, contribute code, review pull requests, and shape the roadmap alongside developers from more than 180 countries.",
+    "viewRepoButton": "View Repository",
+    "guideButton": "Contributing Guide",
+    "latestCommit": {
+      "title": "Latest commit",
+      "time": "main · 3 minutes ago",
+      "message": "feat(purchase): add multi-currency PO matching",
+      "reviewed": "Reviewed by 2 maintainers · 14 files changed",
+      "added": "+412",
+      "removed": "-89"
+    },
+    "stats": [
+      { "value": "12K+", "label": "GitHub Stars" },
+      { "value": "3K+", "label": "Contributors" },
+      { "value": "180+", "label": "Countries" }
+    ]
+  },
+  "whyContributeSection": {
+    "eyebrowIcon": "Rocket",
+    "eyebrowLabel": "Why contribute",
+    "title": "Your code,",
+    "subtitle": "shipped worldwide",
+    "description": "Every contribution goes into production. Fix a bug, ship a feature, improve docs — and watch your work land in the hands of tens of thousands of businesses.",
+    "features": [
+      {
+        "title": "Open-source codebase",
+        "description": "Browse the full source code under a permissive license. Understand exactly how things work and propose improvements.",
+        "icon": "Code2",
+        "gradient": "from-emerald-500 to-teal-600"
+      },
+      {
+        "title": "Fork & build freely",
+        "description": "Clone, fork, and tailor the platform to your needs — whether you are building a module, an integration, or an entire vertical.",
+        "icon": "GitFork",
+        "gradient": "from-teal-500 to-cyan-600"
+      },
+      {
+        "title": "Power the community",
+        "description": "Your patches and features ship to thousands of businesses. Every line of code you contribute has real-world impact.",
+        "icon": "Users",
+        "gradient": "from-rose-500 to-pink-600"
+      },
+      {
+        "title": "Ship faster together",
+        "description": "Collaborate with developers, designers, and product folks on issues, RFCs, and pull requests — with tooling built for async teamwork.",
+        "icon": "Sparkles",
+        "gradient": "from-violet-500 to-purple-600"
+      }
+    ]
+  },
+  "howItWorksSection": {
+    "eyebrowIcon": "Lightbulb",
+    "eyebrowLabel": "Getting started",
+    "title": "Four steps to your first pull request",
+    "description": "Our open-source workflow is documented, automated, and welcoming to first-time contributors.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Browse open issues",
+        "description": "Find an issue tagged good-first-issue or feature-request. Our curated issue boards make discovery fast.",
+        "icon": "Search"
+      },
+      {
+        "step": "02",
+        "title": "Fork & branch",
+        "description": "Fork the repo, create a focused branch, and start building. Our CONTRIBUTING guide covers every step.",
+        "icon": "GitBranch"
+      },
+      {
+        "step": "03",
+        "title": "Open a pull request",
+        "description": "Share your changes with the maintainer team. Clear PR templates and automated CI checks keep reviews smooth.",
+        "icon": "ForkKnife"
+      },
+      {
+        "step": "04",
+        "title": "Ship & celebrate",
+        "description": "Once merged, your code ships to users worldwide. Earn contributor badges, changelog mentions, and community recognition.",
+        "icon": "Rocket"
+      }
+    ]
+  },
+  "activePRsSection": {
+    "eyebrowIcon": "BarChart3",
+    "eyebrowLabel": "Recent activity",
+    "title": "Active pull requests",
+    "description": "See what collaborators are working on right now.",
+    "prs": [
+      {
+        "summary": "Inventory: barcode lookahead validation",
+        "tags": ["in-progress", "review"],
+        "author": "Omar Y.",
+        "comments": 4
+      },
+      {
+        "summary": "Accounting: auto-reconciliation engine",
+        "tags": ["approved"],
+        "author": "Aisha K.",
+        "comments": 12
+      },
+      {
+        "summary": "Website: new elearning course player",
+        "tags": ["in-progress"],
+        "author": "Jules P.",
+        "comments": 8
+      },
+      {
+        "summary": "CRM: bulk-import lead scoring",
+        "tags": ["draft"],
+        "author": "Nadia R.",
+        "comments": 2
+      }
+    ],
+    "cli": {
+      "title": "CLI: your first commit in 2 minutes",
+      "description": "Install the AdonERP CLI, authenticate with your GitHub account, and push your first patch — all without leaving the terminal.",
+      "commands": [
+        "$ npx adonerp-cli init",
+        "● Cloning adonerp/server ...",
+        "✔ Ready at ~/Code/adonerp",
+        "$ cd adonerp && npm run dev",
+        "✔ AdonERP running at http://localhost:8069",
+        "$ npx adonerp-cli pr",
+        "✔ PR template ready — add your description and push!"
+      ]
+    }
+  },
+  "contributorsSection": {
+    "eyebrowIcon": "Star",
+    "eyebrowLabel": "Hall of contributors",
+    "title": "Our top contributors",
+    "description": "Developers who go above and beyond deserve the spotlight. These contributors have shaped the most active areas of the codebase this year.",
+    "contributors": [
+      { "name": "Omar Yousef", "commits": 342, "prs": 47, "badge": "gold" },
+      { "name": "Aisha Karim", "commits": 289, "prs": 38, "badge": "gold" },
+      { "name": "Lena Kowalska", "commits": 204, "prs": 31, "badge": "silver" },
+      { "name": "Tiago Nascimento", "commits": 176, "prs": 24, "badge": "silver" }
+    ]
+  },
+  "milestonesSection": {
+    "eyebrowIcon": "BadgeCheck",
+    "eyebrowLabel": "Recognition levels",
+    "title": "Earn your place",
+    "subtitle": "in the hall of fame",
+    "description": "As you contribute, you unlock increasingly prestigious contributor tiers — each with its own badge, perks, and community privileges.",
+    "milestones": [
+      { "label": "Reviewer", "need": "5 merged PRs" },
+      { "label": "Author", "need": "20 merged PRs" },
+      { "label": "Maintainer", "need": "50 merged PRs + 6 months" },
+      { "label": "Core committer", "need": "100 merged PRs + naming rights" }
+    ]
+  },
+  "testimonialsSection": {
+    "eyebrowIcon": "Users",
+    "eyebrowLabel": "Contributor voices",
+    "title": "From the",
+    "subtitle": "developer community",
+    "testimonials": [
+      {
+        "quote": "Contributing to Adon ERP gave me a real sense of ownership. I shipped features that thousands of companies now use daily. The review process is genuinely friendly and thorough.",
+        "name": "Omar Yousef",
+        "role": "Top Contributor · Egypt",
+        "avatar": "OY"
+      },
+      {
+        "quote": "The open-source docs alone convinced me this is special. I started with a typo fix, ended up owning the inventory barcode module. Best collaboration experience I have had.",
+        "name": "Lena Kowalska",
+        "role": "Maintainer · Poland",
+        "avatar": "LK"
+      }
+    ]
+  },
+  "ctaSection": {
+    "title": "Ready to ship your first PR?",
+    "description": "Adon ERP is open-source — built by a global community of developers, product people, and designers. Your code matters here.",
+    "forkButton": "Fork on GitHub",
+    "callButton": "Join dev call",
+    "footerText": "Open-source · MIT Licensed · Welcoming to first-timers"
+  }
+}
