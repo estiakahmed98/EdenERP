@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "title": "CRM | Adon ERP",
+    "description": "Adon ERP CRM helps your team capture leads, manage pipelines, automate follow-ups, and turn every opportunity into revenue."
+  },
+  "hero": {
+    "eyebrow": {
+      "icon": "Users",
+      "label": "Intelligent customer management"
+    },
+    "title": "Customer Relationship",
+    "titleHighlight": "Magic",
+    "description": "Adon ERP CRM helps your team capture leads, manage pipelines, automate follow-ups, and turn every opportunity into revenue.",
+    "buttons": {
+      "watchDemo": "Watch Demo"
+    }
+  },
+  "dashboard": {
+    "appName": "Adon CRM Pipeline",
+    "status": "Live",
+    "columns": {
+      "new": "New",
+      "qualified": "Qualified",
+      "proposal": "Proposal",
+      "won": "Won"
+    },
+    "deals": {
+      "websiteRedesign": "Website redesign",
+      "retailErp": "Retail ERP setup",
+      "marketingAutomation": "Marketing automation"
+    },
+    "badges": {
+      "realTimePipeline": "Real-time pipeline",
+      "smartFollowups": "Smart follow-ups"
+    }
+  },
+  "pipelineSection": {
+    "eyebrow": {
+      "icon": "Target",
+      "label": "Sales pipeline"
+    },
+    "title": "Track opportunities",
+    "subtitle": "easily in the sales software",
+    "description": "Keep every deal visible from first contact to close. Adon CRM gives your sales team a clean pipeline, next actions, deal values, and customer context in one place.",
+    "features": {
+      "dragDeals": "Drag deals between customizable stages",
+      "nextActivity": "See next activity and deal value instantly",
+      "customerNotes": "Keep all customer notes attached to the opportunity"
+    },
+    "demoStages": {
+      "leads": "Leads",
+      "qualified": "Qualified",
+      "won": "Won"
+    },
+    "clients": {
+      "apex": "Apex Ltd",
+      "bright": "Bright Co",
+      "nova": "Nova Group"
+    }
+  },
+  "followupSection": {
+    "title": "Never miss out on a",
+    "highlight": "follow-up",
+    "description": "Schedule calls, emails, meetings, and reminders so every lead gets attention at the right time.",
+    "steps": {
+      "newLead": "New lead",
+      "qualify": "Qualify",
+      "scheduleCall": "Schedule call",
+      "sendOffer": "Send offer",
+      "winDeal": "Win deal"
+    }
+  },
+  "communicationSection": {
+    "title": "Customer management with",
+    "highlight": "effortless",
+    "subtitle": "communication",
+    "description": "Centralize calls, emails, live chat, SMS, and notes inside the customer timeline so your team always knows what happened last.",
+    "customerProfile": {
+      "title": "Customer profile",
+      "company": "Company",
+      "stage": "Stage",
+      "dealValue": "Deal value",
+      "nextAction": "Next action",
+      "values": {
+        "company": "Green Valley Trading",
+        "stage": "Proposal sent",
+        "dealValue": "$18,450",
+        "nextAction": "Call tomorrow"
+      }
+    },
+    "communication": {
+      "title": "Communication",
+      "emailSent": "Email sent",
+      "emailDesc": "Quotation details shared",
+      "callCompleted": "Call completed",
+      "callDesc": "Client requested timeline",
+      "meetingBooked": "Meeting booked",
+      "meetingDesc": "Product demo scheduled"
+    },
+    "channels": {
+      "email": "Email",
+      "liveChat": "Live chat",
+      "sms": "SMS",
+      "voip": "VoIP"
+    }
+  },
+  "quotationSection": {
+    "eyebrow": {
+      "icon": "FileText",
+      "label": "Quotation builder"
+    },
+    "title": "Attractive quotations",
+    "highlight": "in two clicks",
+    "description": "Convert opportunities into polished quotations with products, pricing, taxes, discounts, and terms already connected to your ERP.",
+    "quotationCard": {
+      "title": "Quotation",
+      "status": "Ready",
+      "items": {
+        "erpImplementation": "ERP Implementation",
+        "trainingSession": "Training Session",
+        "supportPackage": "Support Package"
+      },
+      "button": "Send quotation"
+    }
+  },
+  "analyticsSection": {
+    "eyebrow": {
+      "icon": "LineChart",
+      "label": "Revenue analytics"
+    },
+    "title": "Turn reporting data",
+    "subtitle": "into money",
+    "description": "See where revenue comes from, which activities convert best, and where your team should focus next.",
+    "stats": {
+      "leads": "Leads",
+      "wonDeals": "Won deals",
+      "revenue": "Revenue"
+    }
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "done right.",
+    "features": {
+      "pipelineAutomation": {
+        "title": "Pipeline automation",
+        "description": "Move leads through your sales process automatically with smart stages, actions, and reminders."
+      },
+      "aiLeadScoring": {
+        "title": "AI lead scoring",
+        "description": "Prioritize the right opportunities using engagement, activity, source, and deal value."
+      },
+      "followupReminders": {
+        "title": "Follow-up reminders",
+        "description": "Never miss a customer conversation with automated alerts, tasks, and next-step planning."
+      },
+      "quotationBuilder": {
+        "title": "Quotation builder",
+        "description": "Create polished proposals and quotations from CRM opportunities in just a few clicks."
+      },
+      "customerTimeline": {
+        "title": "Customer timeline",
+        "description": "Track emails, calls, meetings, notes, deals, and activities in one complete customer profile."
+      },
+      "salesAnalytics": {
+        "title": "Sales analytics",
+        "description": "Visualize revenue, win rate, team performance, and forecasts with live dashboards."
+      }
+    },
+    "seeAllFeatures": "See all features"
+  },
+  "appsSection": {
+    "title": "One",
+    "needHighlight": "need",
+    "appHighlight": "app",
+    "description": "Expand your CRM workflow across the Adon ERP ecosystem.",
+    "apps": {
+      "sales": {
+        "title": "Sales",
+        "desc": "Convert leads into orders"
+      },
+      "invoicing": {
+        "title": "Invoicing",
+        "desc": "Bill customers faster"
+      },
+      "emailMarketing": {
+        "title": "Email Marketing",
+        "desc": "Nurture your leads"
+      },
+      "helpdesk": {
+        "title": "Helpdesk",
+        "desc": "Support every customer"
+      },
+      "projects": {
+        "title": "Projects",
+        "desc": "Deliver after closing"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "desc": "Measure performance"
+      }
+    },
+    "seeAllApps": "See all apps"
+  },
+  "ctaSection": {
+    "title": "Join modern sales teams",
+    "description": "Teams use Adon CRM to manage leads, communicate better, close faster, and grow revenue with confidence."
+  },
+  "getStartedSection": {
+    "title": "Unleash",
+    "subtitle": "your growth potential",
+    "description": "Build stronger customer relationships with a CRM that connects your sales, marketing, service, and operations.",
+    "buttons": {
+      "contactSales": "Contact Sales"
+    },
+    "footer": {
+      "freeTrial": "Free trial available",
+      "noCreditCard": "No credit card required",
+      "instantAccess": "Instant access"
+    }
+  }
+}

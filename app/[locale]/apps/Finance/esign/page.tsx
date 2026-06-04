@@ -2,22 +2,17 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
   Bell,
   CheckCircle2,
   CirclePlay,
-  Clock,
   FileCheck2,
   FileSignature,
-  Fingerprint,
-  Grid3X3,
-  KeyRound,
   Lock,
-  Mail,
   PenLine,
-  Repeat,
   Send,
   ShieldCheck,
   Smartphone,
@@ -29,64 +24,24 @@ import {
 } from "lucide-react";
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const features = [
-  {
-    title: "Draw or upload signature",
-    description:
-      "Let signers draw, type, or upload their signature with a clean guided experience.",
-    icon: PenLine,
-  },
-  {
-    title: "Cryptographic traceability",
-    description:
-      "Every action is logged securely with IP, timestamp, signer identity, and audit trail.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "SMS authentication",
-    description:
-      "Verify signers with one-time codes before they access sensitive agreements.",
-    icon: Smartphone,
-  },
-  {
-    title: "Signing order",
-    description:
-      "Define who signs first, second, and last with automatic workflow routing.",
-    icon: Workflow,
-  },
-  {
-    title: "Automatic reminders",
-    description:
-      "Send polite follow-ups to pending signers without manual tracking.",
-    icon: Bell,
-  },
-  {
-    title: "Legal validation",
-    description:
-      "Keep completed documents archived with proof-ready signing evidence.",
-    icon: BadgeCheck,
-  },
-];
+// Feature icons mapping
+const featureIcons = {
+  "Draw or upload signature": PenLine,
+  "Cryptographic traceability": ShieldCheck,
+  "SMS authentication": Smartphone,
+  "Signing order": Workflow,
+  "Automatic reminders": Bell,
+  "Legal validation": BadgeCheck,
+};
 
-const apps = [
-  {
-    title: "Accounting",
-    desc: "Sign vendor and client documents",
-    icon: FileCheck2,
-  },
-  { title: "Sales", desc: "Close contracts faster", icon: Send },
-  { title: "Recruitment", desc: "Sign hiring documents", icon: Users },
-  {
-    title: "Documents",
-    desc: "Archive signed agreements",
-    icon: FileSignature,
-  },
-  {
-    title: "Field Service",
-    desc: "Collect signatures on-site",
-    icon: Smartphone,
-  },
-];
+// App icons mapping
+const appIcons = {
+  Accounting: FileCheck2,
+  Sales: Send,
+  Recruitment: Users,
+  Documents: FileSignature,
+  "Field Service": Smartphone,
+};
 
 function ScriptHeading({
   children,
@@ -97,7 +52,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 sm:text-5xl ${className}`}
       style={{
         fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
       }}
@@ -122,81 +77,93 @@ function SectionEyebrow({
   );
 }
 
-function EsignDashboard() {
+function EsignDashboard({ t }: { t: any }) {
   return (
     <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
         <div className="flex items-center gap-2">
           <FileSignature className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
-            Adon Sign
+          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+            {t("dashboard.appName")}
           </span>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="rounded-full bg-cyan-100 dark:bg-cyan-950/50 px-2 py-1 text-xs font-semibold text-cyan-700 dark:text-cyan-400">
-            Live
+            {t("dashboard.status")}
           </span>
-          <Lock className="h-4 w-4 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
+          <Lock className="h-4 w-4 text-slate-400 dark:text-slate-500" />
         </div>
       </div>
 
       <div className="grid min-h-90 md:grid-cols-[210px_1fr]">
-        <aside className="border-r border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
-          {["Dashboard", "To Sign", "Waiting", "Completed", "Templates"].map(
-            (item, index) => (
-              <div
-                key={item}
-                className={`mb-2 rounded-xl px-3 py-2 text-sm ${
-                  index === 1
-                    ? "bg-cyan-100 dark:bg-cyan-950/50 font-semibold text-cyan-700 dark:text-cyan-300"
-                    : "text-slate-600 dark:text-slate-300"
-                }`}
-              >
-                {item}
-              </div>
-            ),
-          )}
+        <aside className="border-r border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-4">
+          {[
+            t("dashboard.menu.dashboard"),
+            t("dashboard.menu.toSign"),
+            t("dashboard.menu.waiting"),
+            t("dashboard.menu.completed"),
+            t("dashboard.menu.templates"),
+          ].map((item, index) => (
+            <div
+              key={item}
+              className={`mb-2 rounded-xl px-3 py-2 text-sm ${
+                index === 1
+                  ? "bg-cyan-100 dark:bg-cyan-950/50 font-semibold text-cyan-700 dark:text-cyan-300"
+                  : "text-slate-600 dark:text-slate-300"
+              }`}
+            >
+              {item}
+            </div>
+          ))}
         </aside>
 
         <div className="grid gap-4 p-5 md:grid-cols-3">
-          {["Draft", "Waiting Signature", "Signed"].map((column, index) => (
+          {[
+            t("dashboard.columns.draft"),
+            t("dashboard.columns.waitingSignature"),
+            t("dashboard.columns.signed"),
+          ].map((column, index) => (
             <div
               key={column}
-              className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4"
+              className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4"
             >
               <div className="mb-4 flex items-center justify-between">
-                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                   {column}
                 </p>
-                <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-2 py-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                <span className="rounded-full bg-white dark:bg-slate-900 px-2 py-1 text-xs text-slate-500 dark:text-slate-400">
                   {index + 3}
                 </span>
               </div>
 
               <div className="space-y-3">
-                {["Service Agreement", "NDA Contract", "Offer Letter"].map(
-                  (item, i) => (
-                    <div
-                      key={`${column}-${item}-${i}`}
-                      className="rounded-xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-3 text-left shadow-sm"
-                    >
-                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
-                        {item}
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                        {index === 2 ? "Completed" : "Needs action"}
-                      </p>
-                    </div>
-                  ),
-                )}
+                {[
+                  t("dashboard.documents.serviceAgreement"),
+                  t("dashboard.documents.ndaContract"),
+                  t("dashboard.documents.offerLetter"),
+                ].map((item, i) => (
+                  <div
+                    key={`${column}-${item}-${i}`}
+                    className="rounded-xl bg-white dark:bg-slate-900 p-3 text-left shadow-sm"
+                  >
+                    <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+                      {item}
+                    </p>
+                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                      {index === 2
+                        ? t("dashboard.statuses.completed")
+                        : t("dashboard.statuses.needsAction")}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
@@ -204,14 +171,101 @@ function EsignDashboard() {
 }
 
 export default function EsignPage() {
+  const t = useTranslations("pages.eSign");
+
+  // Get translated features
+  const featuresList = [
+    {
+      title: t("featuresSection.features.drawSignature.title"),
+      description: t("featuresSection.features.drawSignature.description"),
+      icon: PenLine,
+    },
+    {
+      title: t("featuresSection.features.cryptographicTraceability.title"),
+      description: t(
+        "featuresSection.features.cryptographicTraceability.description",
+      ),
+      icon: ShieldCheck,
+    },
+    {
+      title: t("featuresSection.features.smsAuth.title"),
+      description: t("featuresSection.features.smsAuth.description"),
+      icon: Smartphone,
+    },
+    {
+      title: t("featuresSection.features.signingOrder.title"),
+      description: t("featuresSection.features.signingOrder.description"),
+      icon: Workflow,
+    },
+    {
+      title: t("featuresSection.features.automaticReminders.title"),
+      description: t("featuresSection.features.automaticReminders.description"),
+      icon: Bell,
+    },
+    {
+      title: t("featuresSection.features.legalValidation.title"),
+      description: t("featuresSection.features.legalValidation.description"),
+      icon: BadgeCheck,
+    },
+  ];
+
+  // Get translated apps
+  const appsList = [
+    {
+      title: t("appsSection.apps.accounting.title"),
+      desc: t("appsSection.apps.accounting.desc"),
+      icon: FileCheck2,
+    },
+    {
+      title: t("appsSection.apps.sales.title"),
+      desc: t("appsSection.apps.sales.desc"),
+      icon: Send,
+    },
+    {
+      title: t("appsSection.apps.recruitment.title"),
+      desc: t("appsSection.apps.recruitment.desc"),
+      icon: Users,
+    },
+    {
+      title: t("appsSection.apps.documents.title"),
+      desc: t("appsSection.apps.documents.desc"),
+      icon: FileSignature,
+    },
+    {
+      title: t("appsSection.apps.fieldService.title"),
+      desc: t("appsSection.apps.fieldService.desc"),
+      icon: Smartphone,
+    },
+  ];
+
+  const simplifyFeatures = [
+    t("simplifySection.features.templates"),
+    t("simplifySection.features.notify"),
+    t("simplifySection.features.archive"),
+  ];
+
+  const mobileFeatures = [
+    t("mobileSection.features.mobileReady"),
+    t("mobileSection.features.oneClick"),
+    t("mobileSection.features.secureIdentity"),
+    t("mobileSection.features.instantConfirmation"),
+  ];
+
+  const controlStats = [
+    [t("controlSection.stats.waiting"), "12", "cyan"],
+    [t("controlSection.stats.reminderSent"), "7", "amber"],
+    [t("controlSection.stats.completed"), "42", "emerald"],
+    [t("controlSection.stats.expired"), "2", "rose"],
+  ];
+
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.07),transparent_25%)]" />
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <SectionEyebrow
-            label="Secure digital signature"
+            label={t("hero.eyebrow.label")}
             icon={<FileSignature className="h-4 w-4" />}
           />
 
@@ -221,9 +275,9 @@ export default function EsignPage() {
                 fontFamily:
                   '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
               }}
-              className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl"
+              className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             >
-              eSign.{" "}
+              {t("hero.title")}{" "}
               <span
                 className="text-cyan-600 dark:text-cyan-400"
                 style={{
@@ -231,14 +285,12 @@ export default function EsignPage() {
                     '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                 }}
               >
-                Reinvented.
+                {t("hero.titleHighlight")}
               </span>
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Send, sign, and manage business agreements inside Adon ERP with
-              secure workflows, reminders, audit trails, and one-click
-              approvals.
+              {t("hero.description")}
             </p>
           </div>
 
@@ -247,15 +299,15 @@ export default function EsignPage() {
               href="#get-started"
               className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
             >
-              Start Free Trial
+              {t("hero.buttons.startTrial")}
               <ArrowRight className="h-4 w-4" />
             </Link>
 
             <Link
               href="#advisor"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
             >
-              Meet an advisor
+              {t("hero.buttons.meetAdvisor")}
             </Link>
           </div>
 
@@ -265,16 +317,16 @@ export default function EsignPage() {
             transition={{ duration: 0.7 }}
             className="relative mx-auto mt-14 max-w-5xl"
           >
-            <EsignDashboard />
+            <EsignDashboard t={t} />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-              Instant workflow
+              {t("dashboard.badges.instantWorkflow")}
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <ShieldCheck className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-              Legally traceable
+              {t("dashboard.badges.legallyTraceable")}
             </div>
           </motion.div>
         </div>
@@ -283,28 +335,24 @@ export default function EsignPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <ScriptHeading>
-            Simplify it,
+            {t("simplifySection.title")}
             <br />
-            automate it,
+            {t("simplifySection.subtitle")}
             <br />
-            <span className="text-cyan-600 dark:text-cyan-400">sign it</span>
+            <span className="text-cyan-600 dark:text-cyan-400">
+              {t("simplifySection.highlight")}
+            </span>
           </ScriptHeading>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Drag and drop signature fields, assign recipients, set signing
-            order, and let Adon ERP handle reminders, tracking, and final
-            archiving.
+            {t("simplifySection.description")}
           </p>
 
           <div className="mt-8 space-y-4">
-            {[
-              "Prepare agreements with reusable templates",
-              "Automatically notify every signer",
-              "Archive signed documents in the right workspace",
-            ].map((item) => (
+            {simplifyFeatures.map((item) => (
               <div key={item} className="flex items-center gap-3">
                 <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                <span className="text-slate-700 dark:text-slate-200 dark:text-slate-300">
+                <span className="text-slate-700 dark:text-slate-300">
                   {item}
                 </span>
               </div>
@@ -313,10 +361,10 @@ export default function EsignPage() {
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
+          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
             <div className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
-              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                Service agreement
+              <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
+                {t("simplifySection.demoCard.title")}
               </p>
               <div className="space-y-3">
                 <div className="h-3 rounded bg-slate-200 dark:bg-slate-700" />
@@ -326,10 +374,10 @@ export default function EsignPage() {
 
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div className="rounded-xl border border-dashed border-cyan-300 dark:border-cyan-700 bg-cyan-50 dark:bg-cyan-950/30 p-4 text-center text-sm font-semibold text-cyan-700 dark:text-cyan-400">
-                  Signature 1
+                  {t("simplifySection.demoCard.signature1")}
                 </div>
                 <div className="rounded-xl border border-dashed border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-950/30 p-4 text-center text-sm font-semibold text-emerald-700 dark:text-emerald-400">
-                  Signature 2
+                  {t("simplifySection.demoCard.signature2")}
                 </div>
               </div>
             </div>
@@ -340,19 +388,19 @@ export default function EsignPage() {
       <section className="bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800" />
+            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-800" />
             <div className="relative mx-auto max-w-xs rounded-[2.5rem] border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-              <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
-                <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                  Adopt your signature
+              <div className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
+                <p className="mb-4 text-sm font-semibold text-slate-900 dark:text-slate-100">
+                  {t("mobileSection.signatureCard.title")}
                 </p>
 
                 <div className="rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
-                  <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-400">
-                    Full name
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    {t("mobileSection.signatureCard.fullName")}
                   </p>
-                  <p className="mt-2 font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                    Katie Cole
+                  <p className="mt-2 font-semibold text-slate-900 dark:text-slate-100">
+                    {t("mobileSection.signatureCard.name")}
                   </p>
 
                   <div
@@ -362,12 +410,12 @@ export default function EsignPage() {
                         '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
                     }}
                   >
-                    Katie Cole
+                    {t("mobileSection.signatureCard.name")}
                   </div>
                 </div>
 
                 <button className="mt-4 w-full rounded-xl bg-cyan-600 py-3 text-sm font-semibold text-white hover:bg-cyan-700 transition">
-                  Sign
+                  {t("mobileSection.signatureCard.button")}
                 </button>
               </div>
             </div>
@@ -375,31 +423,25 @@ export default function EsignPage() {
 
           <div>
             <SectionEyebrow
-              label="Sign from anywhere"
+              label={t("mobileSection.eyebrow.label")}
               icon={<Smartphone className="h-4 w-4" />}
             />
 
             <ScriptHeading className="mt-5">
-              Whenever,
+              {t("mobileSection.title")}
               <br />
-              wherever
+              {t("mobileSection.subtitle")}
             </ScriptHeading>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-              Clients and teammates can review and sign agreements from any
-              device. No printing, scanning, or back-and-forth email chaos.
+              {t("mobileSection.description")}
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                "Mobile ready",
-                "One-click signing",
-                "Secure identity check",
-                "Instant confirmation",
-              ].map((item) => (
+              {mobileFeatures.map((item) => (
                 <div
                   key={item}
-                  className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300 shadow-sm"
+                  className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 text-sm font-semibold text-slate-700 dark:text-slate-300 shadow-sm"
                 >
                   {item}
                 </div>
@@ -412,36 +454,31 @@ export default function EsignPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div>
           <SectionEyebrow
-            label="Signing control"
+            label={t("controlSection.eyebrow.label")}
             icon={<Workflow className="h-4 w-4" />}
           />
 
           <ScriptHeading className="mt-5">
-            Your signing process
+            {t("controlSection.title")}
             <br />
-            under{" "}
-            <span className="text-cyan-600 dark:text-cyan-400">control</span>
+            <span className="text-cyan-600 dark:text-cyan-400">
+              {t("controlSection.titleHighlight")}
+            </span>
           </ScriptHeading>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Track every request, recipient, deadline, reminder, and completion
-            status from one clean signing dashboard.
+            {t("controlSection.description")}
           </p>
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
           <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              ["Waiting for signature", "12", "cyan"],
-              ["Reminder sent", "7", "amber"],
-              ["Completed", "42", "emerald"],
-              ["Expired", "2", "rose"],
-            ].map(([label, count, color]) => (
+            {controlStats.map(([label, count, color]) => (
               <div
                 key={label}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5"
+                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-5"
               >
-                <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   {label}
                 </p>
                 <p
@@ -466,13 +503,13 @@ export default function EsignPage() {
       <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
-            All the features
+            {t("featuresSection.title")}
             <br />
-            done right.
+            {t("featuresSection.subtitle")}
           </ScriptHeading>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => {
+            {featuresList.map((feature) => {
               const Icon = feature.icon;
 
               return (
@@ -484,7 +521,7 @@ export default function EsignPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
                     {feature.title}
                   </h3>
 
@@ -500,7 +537,7 @@ export default function EsignPage() {
             href="/features"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
           >
-            See all features
+            {t("featuresSection.seeAllFeatures")}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -508,17 +545,22 @@ export default function EsignPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          One{" "}
-          <HandUnderline color="bg-sky-400 dark:bg-sky-900">need</HandUnderline>
-          , one{" "}
-          <HandUnderline color="bg-sky-400 dark:bg-sky-900">app</HandUnderline>.
+          {t("appsSection.title")}{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-900">
+            {t("appsSection.needHighlight")}
+          </HandUnderline>
+          ,{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-900">
+            {t("appsSection.appHighlight")}
+          </HandUnderline>
+          .
         </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600 dark:text-slate-300">
-          Expand your signing workflow across the Adon ERP ecosystem.
+          {t("appsSection.description")}
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
+          {appsList.map((app) => {
             const Icon = app.icon;
 
             return (
@@ -532,10 +574,10 @@ export default function EsignPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-slate-100">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -549,7 +591,7 @@ export default function EsignPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
         >
-          See all apps
+          {t("appsSection.seeAllApps")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
@@ -575,18 +617,17 @@ export default function EsignPage() {
             ))}
           </div>
 
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
 
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join modern teams
+              {t("ctaSection.title")}
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              Teams use Adon Sign to close agreements faster, reduce paperwork,
-              and keep every signature traceable.
+              {t("ctaSection.description")}
             </p>
 
             <div className="mt-6 flex justify-center gap-1 text-amber-400">
@@ -605,14 +646,13 @@ export default function EsignPage() {
         <Sparkles className="mx-auto mb-6 h-10 w-10 text-cyan-600 dark:text-cyan-400" />
 
         <ScriptHeading>
-          Unleash
+          {t("getStartedSection.title")}
           <br />
-          your growth potential
+          {t("getStartedSection.subtitle")}
         </ScriptHeading>
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-          Replace manual signing with a secure, automated, and beautifully
-          simple agreement workflow inside Adon ERP.
+          {t("getStartedSection.description")}
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -620,24 +660,24 @@ export default function EsignPage() {
             href="/pricing"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
           >
-            Start Free Trial
+            {t("getStartedSection.buttons.startTrial")}
             <ArrowRight className="h-4 w-4" />
           </Link>
 
           <Link
             href="/contact"
             id="advisor"
-            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
+            className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
           >
-            Contact Sales
+            {t("getStartedSection.buttons.contactSales")}
           </Link>
         </div>
 
-        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
-          Free trial available ·  · Instant access
+        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
+          {t("getStartedSection.footer.freeTrial")} ·{" "}
+          {t("getStartedSection.footer.instantAccess")}
         </p>
       </section>
     </main>
   );
 }
-

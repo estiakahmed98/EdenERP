@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgePercent,
@@ -31,82 +32,6 @@ const scriptFont = {
   fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
 };
 
-const features = [
-  {
-    title: "AI checkout assistance",
-    description:
-      "Speed up billing with smart product search, shortcut actions, and instant cart suggestions.",
-    icon: Sparkles,
-  },
-  {
-    title: "Offline payments",
-    description:
-      "Continue selling even when the internet drops, then sync everything automatically.",
-    icon: CreditCard,
-  },
-  {
-    title: "Loyalty programs",
-    description:
-      "Reward repeat customers with points, coupons, memberships, and custom benefits.",
-    icon: HandCoins,
-  },
-  {
-    title: "Integrated payments",
-    description:
-      "Accept cards, wallets, cash, and bank payments directly from your Adon ERP POS.",
-    icon: WalletCards,
-  },
-  {
-    title: "Multiple cashiers",
-    description:
-      "Manage shifts, cashier permissions, opening balances, and closing reports.",
-    icon: Users,
-  },
-  {
-    title: "Flexible invoicing",
-    description:
-      "Print receipts, send invoices by email, or convert POS orders into accounting entries.",
-    icon: ReceiptText,
-  },
-];
-
-const apps = [
-  { title: "Website", desc: "Sell online and offline", icon: Globe2 },
-  { title: "eCommerce", desc: "Sync storefront orders", icon: ShoppingBag },
-  { title: "Inventory", desc: "Keep stock accurate", icon: PackageCheck },
-  { title: "Email Marketing", desc: "Bring customers back", icon: Tags },
-  { title: "CRM", desc: "Know every customer", icon: Users },
-  { title: "Accounting", desc: "Close books faster", icon: BarChart3 },
-];
-
-const loyaltyTools = [
-  {
-    title: "Coupons",
-    icon: BadgePercent,
-    color: "text-amber-500",
-    bg: "bg-amber-50",
-  },
-  {
-    title: "Loyalty cards",
-    icon: Star,
-    color: "text-rose-500",
-    bg: "bg-rose-50",
-  },
-  {
-    title: "Promotions",
-    icon: Gift,
-    color: "text-orange-500",
-    bg: "bg-orange-50",
-  },
-  { title: "Discounts", icon: Tags, color: "text-cyan-500", bg: "bg-cyan-50" },
-  {
-    title: "Gift cards",
-    icon: WalletCards,
-    color: "text-emerald-500",
-    bg: "bg-emerald-50",
-  },
-];
-
 function ScriptHeading({
   children,
   className = "",
@@ -116,7 +41,7 @@ function ScriptHeading({
 }) {
   return (
     <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-5xl ${className}`}
+      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-5xl ${className}`}
       style={scriptFont}
     >
       {children}
@@ -173,42 +98,46 @@ function SectionEyebrow({
   );
 }
 
-function PosPreview() {
+function PosPreview({ t }: { t: any }) {
+  const orderItems = [
+    { name: t("dashboard.order.items.officeChair"), price: "$120.00" },
+    { name: t("dashboard.order.items.deskLamp"), price: "$38.00" },
+    { name: t("dashboard.order.items.storageBox"), price: "$22.00" },
+  ];
+
+  const productItems = t.raw("dashboard.products.items");
+
   return (
     <div className="relative overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
         <div className="flex items-center gap-2">
           <Store className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-          <span className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
-            Adon POS · Retail Counter
+          <span className="text-sm font-semibold text-slate-800 dark:text-white">
+            {t("dashboard.appName")}
           </span>
         </div>
 
         <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-2 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-          Online
+          {t("dashboard.status")}
         </span>
       </div>
 
       <div className="grid gap-5 p-5 lg:grid-cols-[0.8fr_1.2fr_0.55fr]">
-        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
-          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-            Order
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 p-4">
+          <p className="text-sm font-semibold text-slate-900 dark:text-white">
+            {t("dashboard.order.title")}
           </p>
 
           <div className="mt-4 space-y-3">
-            {[
-              ["Office chair", "$120.00"],
-              ["Desk lamp", "$38.00"],
-              ["Storage box", "$22.00"],
-            ].map(([item, price]) => (
+            {orderItems.map(({ name, price }) => (
               <div
-                key={item}
-                className="flex items-center justify-between rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
+                key={name}
+                className="flex items-center justify-between rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm shadow-sm"
               >
-                <span className="font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300">
-                  {item}
+                <span className="font-medium text-slate-700 dark:text-slate-300">
+                  {name}
                 </span>
-                <span className="font-bold text-slate-950 dark:text-slate-100 dark:text-white">
+                <span className="font-bold text-slate-950 dark:text-white">
                   {price}
                 </span>
               </div>
@@ -217,31 +146,31 @@ function PosPreview() {
 
           <div className="mt-4 rounded-2xl bg-cyan-600 p-4 text-white">
             <div className="flex items-center justify-between text-sm opacity-90">
-              <span>Total</span>
+              <span>{t("dashboard.order.total")}</span>
               <span>$180.00</span>
             </div>
-            <button className="mt-4 w-full rounded-xl bg-white dark:bg-slate-900 py-2 text-sm font-bold text-cyan-700 dark:text-cyan-600">
-              Payment
+            <button className="mt-4 w-full rounded-xl bg-white dark:bg-slate-900 py-2 text-sm font-bold text-cyan-700">
+              {t("dashboard.order.payment")}
             </button>
           </div>
         </div>
 
-        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 p-4">
           <div className="mb-4 flex items-center justify-between">
-            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-              Products
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
+              {t("dashboard.products.title")}
             </p>
-            <span className="rounded-full bg-white dark:bg-slate-900 dark:bg-slate-700 px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400 dark:text-slate-400">
-              32 items
+            <span className="rounded-full bg-white dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+              32 {t("dashboard.products.itemsCount")}
             </span>
           </div>
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {["Chair", "Table", "Sofa", "Lamp", "Shelf", "Cabinet"].map(
-              (item, index) => (
+            {Array.isArray(productItems) &&
+              productItems.map((item: string, index: number) => (
                 <div
                   key={item}
-                  className="overflow-hidden rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-sm"
+                  className="overflow-hidden rounded-2xl bg-white dark:bg-slate-800 shadow-sm"
                 >
                   <div
                     className={`h-20 ${
@@ -252,29 +181,30 @@ function PosPreview() {
                         "bg-linear-to-br from-rose-100 to-pink-200 dark:from-rose-900/50 dark:to-pink-900/50",
                         "bg-linear-to-br from-violet-100 to-purple-200 dark:from-violet-900/50 dark:to-purple-900/50",
                         "bg-linear-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700",
-                      ][index]
+                      ][index % 6]
                     }`}
                   />
                   <div className="p-3 text-left">
-                    <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 dark:text-white">
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white">
                       {item}
                     </p>
-                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">
-                      Tap to add
+                    <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
+                      {t("dashboard.products.tapToAdd")}
                     </p>
                   </div>
                 </div>
-              ),
-            )}
+              ))}
           </div>
         </div>
 
-        <div className="rounded-3xl bg-slate-950 dark:bg-slate-900 p-4 text-white">
-          <p className="text-sm font-semibold">Card terminal</p>
+        <div className="rounded-3xl bg-slate-950 dark:bg-slate-800 p-4 text-white">
+          <p className="text-sm font-semibold">
+            {t("dashboard.cardTerminal.title")}
+          </p>
           <div className="mt-4 rounded-2xl bg-white/10 p-4">
             <CreditCard className="mx-auto h-10 w-10 text-cyan-300" />
             <p className="mt-3 text-center text-xs text-white/70">
-              Tap, swipe, or scan
+              {t("dashboard.cardTerminal.description")}
             </p>
           </div>
 
@@ -291,7 +221,7 @@ function PosPreview() {
         </div>
       </div>
 
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
+      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
         <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
       </button>
     </div>
@@ -299,31 +229,136 @@ function PosPreview() {
 }
 
 export default function PosRetailPage() {
+  const t = useTranslations("pages.pos-retail");
+
+  const featuresList = [
+    {
+      title: t("featuresSection.features.aiCheckout.title"),
+      description: t("featuresSection.features.aiCheckout.description"),
+      icon: Sparkles,
+    },
+    {
+      title: t("featuresSection.features.offlinePayments.title"),
+      description: t("featuresSection.features.offlinePayments.description"),
+      icon: CreditCard,
+    },
+    {
+      title: t("featuresSection.features.loyaltyPrograms.title"),
+      description: t("featuresSection.features.loyaltyPrograms.description"),
+      icon: HandCoins,
+    },
+    {
+      title: t("featuresSection.features.integratedPayments.title"),
+      description: t("featuresSection.features.integratedPayments.description"),
+      icon: WalletCards,
+    },
+    {
+      title: t("featuresSection.features.multipleCashiers.title"),
+      description: t("featuresSection.features.multipleCashiers.description"),
+      icon: Users,
+    },
+    {
+      title: t("featuresSection.features.flexibleInvoicing.title"),
+      description: t("featuresSection.features.flexibleInvoicing.description"),
+      icon: ReceiptText,
+    },
+  ];
+
+  const appsList = [
+    {
+      title: t("appsSection.apps.website.title"),
+      desc: t("appsSection.apps.website.desc"),
+      icon: Globe2,
+    },
+    {
+      title: t("appsSection.apps.ecommerce.title"),
+      desc: t("appsSection.apps.ecommerce.desc"),
+      icon: ShoppingBag,
+    },
+    {
+      title: t("appsSection.apps.inventory.title"),
+      desc: t("appsSection.apps.inventory.desc"),
+      icon: PackageCheck,
+    },
+    {
+      title: t("appsSection.apps.emailMarketing.title"),
+      desc: t("appsSection.apps.emailMarketing.desc"),
+      icon: Tags,
+    },
+    {
+      title: t("appsSection.apps.crm.title"),
+      desc: t("appsSection.apps.crm.desc"),
+      icon: Users,
+    },
+    {
+      title: t("appsSection.apps.accounting.title"),
+      desc: t("appsSection.apps.accounting.desc"),
+      icon: BarChart3,
+    },
+  ];
+
+  const loyaltyTools = [
+    {
+      title: t("loyaltySection.tools.coupons"),
+      icon: BadgePercent,
+      color: "text-amber-500",
+      bg: "bg-amber-50",
+    },
+    {
+      title: t("loyaltySection.tools.loyaltyCards"),
+      icon: Star,
+      color: "text-rose-500",
+      bg: "bg-rose-50",
+    },
+    {
+      title: t("loyaltySection.tools.promotions"),
+      icon: Gift,
+      color: "text-orange-500",
+      bg: "bg-orange-50",
+    },
+    {
+      title: t("loyaltySection.tools.discounts"),
+      icon: Tags,
+      color: "text-cyan-500",
+      bg: "bg-cyan-50",
+    },
+    {
+      title: t("loyaltySection.tools.giftCards"),
+      icon: WalletCards,
+      color: "text-emerald-500",
+      bg: "bg-emerald-50",
+    },
+  ];
+
+  const complexFeatures = t.raw("complexSection.features");
+  const selfOrderingSteps = t.raw("selfOrderingSection.card.steps");
+  const onlineOrderSteps = t.raw("crossChannelSection.onlineOrder.steps");
+  const storeWorkflowSteps = t.raw("crossChannelSection.storeWorkflow.steps");
+
   return (
-    <main className="overflow-hidden bg-white dark:bg-slate-900 dark:bg-slate-950 text-slate-800 dark:text-slate-100 dark:bg-slate-950 dark:text-slate-100">
+    <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.15),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.12),transparent_25%)] dark:bg-[radial-gradient(circle_at_16%_12%,rgba(6,182,212,0.08),transparent_26%),radial-gradient(circle_at_86%_16%,rgba(16,185,129,0.07),transparent_25%)]" />
 
         <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <SectionEyebrow
-            label="Modern point of sale"
+            label={t("hero.eyebrow.label")}
             icon={<Store className="h-4 w-4" />}
           />
 
           <div className="mx-auto mt-8 max-w-4xl">
-            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 dark:text-white sm:text-6xl lg:text-7xl">
-              <HandUnderline>PoS</HandUnderline>{" "}
+            <h1 className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
+              <HandUnderline>{t("hero.title")}</HandUnderline>{" "}
               <span
                 className="text-emerald-500 dark:text-emerald-400"
                 style={scriptFont}
               >
-                made for retail
+                {t("hero.titleHighlight")}
               </span>
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Adon ERP POS helps your team sell faster, manage inventory, reward
-              loyal customers, and sync every transaction with accounting.
+              {t("hero.description")}
             </p>
           </div>
 
@@ -332,15 +367,15 @@ export default function PosRetailPage() {
               href="#get-started"
               className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
             >
-              Start Free Trial
+              {t("hero.buttons.startTrial")}
               <ArrowRight className="h-4 w-4" />
             </Link>
 
             <Link
               href="#demo"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
             >
-              Watch Demo
+              {t("hero.buttons.watchDemo")}
             </Link>
           </div>
 
@@ -350,16 +385,16 @@ export default function PosRetailPage() {
             transition={{ duration: 0.7 }}
             className="relative mx-auto mt-14 max-w-5xl"
           >
-            <PosPreview />
+            <PosPreview t={t} />
 
-            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -left-4 top-10 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <Zap className="mr-2 h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-              Fast checkout
+              {t("dashboard.badges.fastCheckout")}
             </div>
 
-            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
+            <div className="absolute -bottom-5 right-8 hidden rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 shadow-lg md:flex">
               <CheckCircle2 className="mr-2 h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-              Synced with ERP
+              {t("dashboard.badges.syncedWithErp")}
             </div>
           </motion.div>
         </div>
@@ -367,36 +402,31 @@ export default function PosRetailPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <ScriptHeading>
-          Complex{" "}
+          {t("complexSection.title")}{" "}
           <HandCircle color="border-teal-400 dark:border-teal-500">
-            meets
+            {t("complexSection.highlight1")}
           </HandCircle>{" "}
           <HandCircle color="border-cyan-400 dark:border-cyan-500">
-            intuitive
+            {t("complexSection.highlight2")}
           </HandCircle>
         </ScriptHeading>
 
         <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-          Handle advanced retail operations with a clean interface your cashier
-          can understand in minutes.
+          {t("complexSection.description")}
         </p>
 
         <div className="mx-auto mt-12 max-w-5xl rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
           <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-5 text-left">
-              {[
-                "Customer account",
-                "Loyalty program",
-                "Multi-price rules",
-                "Multiple payment methods",
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="mb-3 rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-200 dark:text-slate-300 shadow-sm"
-                >
-                  {item}
-                </div>
-              ))}
+            <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
+              {Array.isArray(complexFeatures) &&
+                complexFeatures.map((item: string) => (
+                  <div
+                    key={item}
+                    className="mb-3 rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm font-medium text-slate-700 dark:text-slate-300 shadow-sm"
+                  >
+                    {item}
+                  </div>
+                ))}
             </div>
 
             <div className="rounded-3xl bg-linear-to-br from-cyan-50 to-emerald-50 dark:from-cyan-950/30 dark:to-emerald-950/30 p-5">
@@ -405,10 +435,10 @@ export default function PosRetailPage() {
                   (item) => (
                     <div
                       key={item}
-                      className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 p-4 shadow-sm"
+                      className="rounded-2xl bg-white dark:bg-slate-800 p-4 shadow-sm"
                     >
                       <ShoppingBag className="mx-auto h-6 w-6 text-cyan-600 dark:text-cyan-400" />
-                      <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300">
+                      <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
                         {item}
                       </p>
                     </div>
@@ -423,35 +453,36 @@ export default function PosRetailPage() {
       <section className="bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-900 dark:bg-slate-800" />
+            <div className="absolute inset-0 rounded-full bg-white dark:bg-slate-800" />
             <div className="relative rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 p-4">
-                  <p className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
-                    Self ordering
+                <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/40 p-4">
+                  <p className="font-semibold text-slate-900 dark:text-white">
+                    {t("selfOrderingSection.card.title")}
                   </p>
                   <div className="mt-4 space-y-3">
-                    {["Select product", "Choose options", "Pay securely"].map(
-                      (item) => (
+                    {Array.isArray(selfOrderingSteps) &&
+                      selfOrderingSteps.map((item: string) => (
                         <div
                           key={item}
-                          className="rounded-2xl bg-white dark:bg-slate-900 dark:bg-slate-800 px-4 py-3 text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400 shadow-sm"
+                          className="rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 text-sm text-slate-600 dark:text-slate-400 shadow-sm"
                         >
                           {item}
                         </div>
-                      ),
-                    )}
+                      ))}
                   </div>
                 </div>
 
                 <div className="rounded-3xl bg-cyan-600 p-4 text-white">
                   <Smartphone className="h-8 w-8" />
-                  <p className="mt-4 text-2xl font-bold">Order #248</p>
-                  <p className="mt-2 text-sm text-white/80">
-                    Ready for payment
+                  <p className="mt-4 text-2xl font-bold">
+                    {t("selfOrderingSection.card.orderNumber")}
                   </p>
-                  <button className="mt-6 w-full rounded-xl bg-white dark:bg-slate-900 py-2 text-sm font-bold text-cyan-700 dark:text-cyan-600">
-                    Pay now
+                  <p className="mt-2 text-sm text-white/80">
+                    {t("selfOrderingSection.card.readyMessage")}
+                  </p>
+                  <button className="mt-6 w-full rounded-xl bg-white dark:bg-slate-900 py-2 text-sm font-bold text-cyan-700">
+                    {t("selfOrderingSection.card.payNow")}
                   </button>
                 </div>
               </div>
@@ -460,19 +491,18 @@ export default function PosRetailPage() {
 
           <div>
             <SectionEyebrow
-              label="Self ordering"
+              label={t("selfOrderingSection.eyebrow.label")}
               icon={<MonitorSmartphone className="h-4 w-4" />}
             />
 
             <ScriptHeading className="mt-5">
-              Self ordering
+              {t("selfOrderingSection.title")}
               <br />
-              for the win
+              {t("selfOrderingSection.subtitle")}
             </ScriptHeading>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-              Let customers order from a kiosk, QR menu, tablet, or mobile page.
-              Orders flow directly into your POS and inventory.
+              {t("selfOrderingSection.description")}
             </p>
           </div>
         </div>
@@ -481,14 +511,13 @@ export default function PosRetailPage() {
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <ScriptHeading>
-            Reward loyal
+            {t("loyaltySection.title")}
             <br />
-            customers
+            {t("loyaltySection.subtitle")}
           </ScriptHeading>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Keep customers coming back with points, memberships, coupons,
-            birthday rewards, and targeted retail promotions.
+            {t("loyaltySection.description")}
           </p>
         </div>
 
@@ -504,7 +533,7 @@ export default function PosRetailPage() {
                   <Icon className="h-10 w-10" />
                 </div>
                 <p
-                  className="mt-5 text-2xl font-semibold text-slate-950 dark:text-slate-100 dark:text-white"
+                  className="mt-5 text-2xl font-semibold text-slate-950 dark:text-white"
                   style={scriptFont}
                 >
                   {item.title}
@@ -519,50 +548,47 @@ export default function PosRetailPage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <ScriptHeading>
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              Cross-channel
+              {t("crossChannelSection.title")}
             </HandUnderline>{" "}
-            selling
+            {t("crossChannelSection.subtitle")}
           </ScriptHeading>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Sell from your store, website, social channels, and mobile orders
-            while keeping stock and accounting perfectly connected.
+            {t("crossChannelSection.description")}
           </p>
 
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-2">
             <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-              <p className="text-left font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
-                Online order
+              <p className="text-left font-semibold text-slate-950 dark:text-white">
+                {t("crossChannelSection.onlineOrder.title")}
               </p>
               <div className="mt-5 space-y-3">
-                {[
-                  "Customer checkout",
-                  "Payment confirmed",
-                  "Stock reserved",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 dark:bg-slate-800/50 px-4 py-3 text-left text-sm text-slate-600 dark:text-slate-300 dark:text-slate-400"
-                  >
-                    {item}
-                  </div>
-                ))}
+                {Array.isArray(onlineOrderSteps) &&
+                  onlineOrderSteps.map((item: string) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-left text-sm text-slate-600 dark:text-slate-400"
+                    >
+                      {item}
+                    </div>
+                  ))}
               </div>
             </div>
 
             <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-              <p className="text-left font-semibold text-slate-950 dark:text-slate-100 dark:text-white">
-                Store workflow
+              <p className="text-left font-semibold text-slate-950 dark:text-white">
+                {t("crossChannelSection.storeWorkflow.title")}
               </p>
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {["Pick", "Pack", "Ship", "Invoice"].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl bg-linear-to-br from-cyan-50 to-emerald-50 dark:from-cyan-950/30 dark:to-emerald-950/30 px-4 py-5 text-sm font-semibold text-slate-700 dark:text-slate-200 dark:text-slate-300"
-                  >
-                    {item}
-                  </div>
-                ))}
+                {Array.isArray(storeWorkflowSteps) &&
+                  storeWorkflowSteps.map((item: string) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl bg-linear-to-br from-cyan-50 to-emerald-50 dark:from-cyan-950/30 dark:to-emerald-950/30 px-4 py-5 text-sm font-semibold text-slate-700 dark:text-slate-300"
+                    >
+                      {item}
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
@@ -572,19 +598,18 @@ export default function PosRetailPage() {
       <section className="relative overflow-hidden rounded-t-[4rem] bg-[#f5f7fb] dark:bg-slate-900/50 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScriptHeading>
-            All the{" "}
+            {t("featuresSection.title")}{" "}
             <HandCircle color="border-teal-400 dark:border-teal-500">
-              features
+              {t("featuresSection.highlight")}
             </HandCircle>
             <br />
-            done{" "}
             <HandUnderline color="bg-sky-400 dark:bg-sky-500">
-              right.
+              {t("featuresSection.subtitle")}
             </HandUnderline>
           </ScriptHeading>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {features.map((feature) => {
+            {featuresList.map((feature) => {
               const Icon = feature.icon;
 
               return (
@@ -596,7 +621,7 @@ export default function PosRetailPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                     {feature.title}
                   </h3>
 
@@ -612,7 +637,7 @@ export default function PosRetailPage() {
             href="/features"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
           >
-            See all features
+            {t("featuresSection.seeAllFeatures")}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -620,17 +645,22 @@ export default function PosRetailPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <ScriptHeading>
-          One{" "}
-          <HandUnderline color="bg-sky-400 dark:bg-sky-500">need</HandUnderline>
-          , one{" "}
-          <HandUnderline color="bg-sky-400 dark:bg-sky-500">app</HandUnderline>.
+          {t("appsSection.title")}{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-500">
+            {t("appsSection.needHighlight")}
+          </HandUnderline>
+          ,{" "}
+          <HandUnderline color="bg-sky-400 dark:bg-sky-500">
+            {t("appsSection.appHighlight")}
+          </HandUnderline>
+          .
         </ScriptHeading>
         <p className="mt-3 max-w-xl text-slate-600 dark:text-slate-300">
-          Expand your retail workflow across the Adon ERP ecosystem.
+          {t("appsSection.description")}
         </p>
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {apps.map((app) => {
+          {appsList.map((app) => {
             const Icon = app.icon;
 
             return (
@@ -644,10 +674,10 @@ export default function PosRetailPage() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-slate-900 dark:text-slate-100 dark:text-white">
+                    <h3 className="font-semibold text-slate-900 dark:text-white">
                       {app.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 dark:text-slate-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       {app.desc}
                     </p>
                   </div>
@@ -661,25 +691,24 @@ export default function PosRetailPage() {
           href="/apps"
           className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 dark:text-cyan-400 hover:text-cyan-800 dark:hover:text-cyan-300"
         >
-          See all apps
+          {t("appsSection.seeAllApps")}
           <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[3rem] bg-linear-to-br from-white via-cyan-50 to-emerald-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 px-6 py-16 text-center shadow-[0_35px_90px_rgba(15,23,42,0.08)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.2)]">
-          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white dark:bg-slate-900/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
+          <div className="relative mx-auto max-w-xl rounded-[2.5rem] bg-white/85 dark:bg-slate-900/70 px-8 py-10 shadow-xl backdrop-blur-sm">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-950/50 text-cyan-600 dark:text-cyan-400">
               <Users className="h-7 w-7" />
             </div>
 
             <ScriptHeading className="mt-6 text-3xl sm:text-4xl">
-              Join modern retailers
+              {t("ctaSection.title")}
             </ScriptHeading>
 
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              Retail teams use Adon POS to sell faster, manage stock, and serve
-              customers with a connected business system.
+              {t("ctaSection.description")}
             </p>
 
             <div className="mt-6 flex justify-center gap-1 text-amber-400">
@@ -698,14 +727,13 @@ export default function PosRetailPage() {
         <Sparkles className="mx-auto mb-6 h-10 w-10 text-cyan-600 dark:text-cyan-400" />
 
         <ScriptHeading>
-          Unleash
+          {t("getStartedSection.title")}
           <br />
-          your growth potential
+          {t("getStartedSection.subtitle")}
         </ScriptHeading>
 
         <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-          Build a connected retail operation with POS, inventory, customer
-          loyalty, ecommerce, and accounting in one Adon ERP workspace.
+          {t("getStartedSection.description")}
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -713,7 +741,7 @@ export default function PosRetailPage() {
             href="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
           >
-            Contact Sales
+            {t("getStartedSection.buttons.contactSales")}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -721,4 +749,3 @@ export default function PosRetailPage() {
     </main>
   );
 }
-

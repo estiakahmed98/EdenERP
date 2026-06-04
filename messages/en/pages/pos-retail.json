@@ -1,0 +1,197 @@
+{
+    "metadata": {
+        "title": "POS Retail | Adon ERP",
+        "description": "Adon ERP POS helps your team sell faster, manage inventory, reward loyal customers, and sync every transaction with accounting."
+    },
+    "hero": {
+        "eyebrow": {
+            "icon": "Store",
+            "label": "Modern point of sale"
+        },
+        "title": "PoS",
+        "titleHighlight": "made for retail",
+        "description": "Adon ERP POS helps your team sell faster, manage inventory, reward loyal customers, and sync every transaction with accounting.",
+        "buttons": {
+            "startTrial": "Start Free Trial",
+            "watchDemo": "Watch Demo"
+        }
+    },
+    "dashboard": {
+        "appName": "Adon POS · Retail Counter",
+        "status": "Online",
+        "order": {
+            "title": "Order",
+            "items": {
+                "officeChair": "Office chair",
+                "deskLamp": "Desk lamp",
+                "storageBox": "Storage box"
+            },
+            "total": "Total",
+            "payment": "Payment"
+        },
+        "products": {
+            "title": "Products",
+            "itemsCount": "items",
+            "items": [
+                "Chair",
+                "Table",
+                "Sofa",
+                "Lamp",
+                "Shelf",
+                "Cabinet"
+            ],
+            "tapToAdd": "Tap to add"
+        },
+        "cardTerminal": {
+            "title": "Card terminal",
+            "description": "Tap, swipe, or scan"
+        },
+        "badges": {
+            "fastCheckout": "Fast checkout",
+            "syncedWithErp": "Synced with ERP"
+        }
+    },
+    "complexSection": {
+        "title": "Complex",
+        "highlight1": "meets",
+        "highlight2": "intuitive",
+        "description": "Handle advanced retail operations with a clean interface your cashier can understand in minutes.",
+        "features": [
+            "Customer account",
+            "Loyalty program",
+            "Multi-price rules",
+            "Multiple payment methods"
+        ]
+    },
+    "selfOrderingSection": {
+        "eyebrow": {
+            "icon": "MonitorSmartphone",
+            "label": "Self ordering"
+        },
+        "title": "Self ordering",
+        "subtitle": "for the win",
+        "description": "Let customers order from a kiosk, QR menu, tablet, or mobile page. Orders flow directly into your POS and inventory.",
+        "card": {
+            "title": "Self ordering",
+            "steps": [
+                "Select product",
+                "Choose options",
+                "Pay securely"
+            ],
+            "orderNumber": "Order #248",
+            "readyMessage": "Ready for payment",
+            "payNow": "Pay now"
+        }
+    },
+    "loyaltySection": {
+        "title": "Reward loyal",
+        "subtitle": "customers",
+        "description": "Keep customers coming back with points, memberships, coupons, birthday rewards, and targeted retail promotions.",
+        "tools": {
+            "coupons": "Coupons",
+            "loyaltyCards": "Loyalty cards",
+            "promotions": "Promotions",
+            "discounts": "Discounts",
+            "giftCards": "Gift cards"
+        }
+    },
+    "crossChannelSection": {
+        "title": "Cross-channel",
+        "subtitle": "selling",
+        "description": "Sell from your store, website, social channels, and mobile orders while keeping stock and accounting perfectly connected.",
+        "onlineOrder": {
+            "title": "Online order",
+            "steps": [
+                "Customer checkout",
+                "Payment confirmed",
+                "Stock reserved"
+            ]
+        },
+        "storeWorkflow": {
+            "title": "Store workflow",
+            "steps": [
+                "Pick",
+                "Pack",
+                "Ship",
+                "Invoice"
+            ]
+        }
+    },
+    "featuresSection": {
+        "title": "All the",
+        "highlight": "features",
+        "subtitle": "done right.",
+        "features": {
+            "aiCheckout": {
+                "title": "AI checkout assistance",
+                "description": "Speed up billing with smart product search, shortcut actions, and instant cart suggestions."
+            },
+            "offlinePayments": {
+                "title": "Offline payments",
+                "description": "Continue selling even when the internet drops, then sync everything automatically."
+            },
+            "loyaltyPrograms": {
+                "title": "Loyalty programs",
+                "description": "Reward repeat customers with points, coupons, memberships, and custom benefits."
+            },
+            "integratedPayments": {
+                "title": "Integrated payments",
+                "description": "Accept cards, wallets, cash, and bank payments directly from your Adon ERP POS."
+            },
+            "multipleCashiers": {
+                "title": "Multiple cashiers",
+                "description": "Manage shifts, cashier permissions, opening balances, and closing reports."
+            },
+            "flexibleInvoicing": {
+                "title": "Flexible invoicing",
+                "description": "Print receipts, send invoices by email, or convert POS orders into accounting entries."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand your retail workflow across the Adon ERP ecosystem.",
+        "apps": {
+            "website": {
+                "title": "Website",
+                "desc": "Sell online and offline"
+            },
+            "ecommerce": {
+                "title": "eCommerce",
+                "desc": "Sync storefront orders"
+            },
+            "inventory": {
+                "title": "Inventory",
+                "desc": "Keep stock accurate"
+            },
+            "emailMarketing": {
+                "title": "Email Marketing",
+                "desc": "Bring customers back"
+            },
+            "crm": {
+                "title": "CRM",
+                "desc": "Know every customer"
+            },
+            "accounting": {
+                "title": "Accounting",
+                "desc": "Close books faster"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join modern retailers",
+        "description": "Retail teams use Adon POS to sell faster, manage stock, and serve customers with a connected business system."
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "subtitle": "your growth potential",
+        "description": "Build a connected retail operation with POS, inventory, customer loyalty, ecommerce, and accounting in one Adon ERP workspace.",
+        "buttons": {
+            "contactSales": "Contact Sales"
+        }
+    }
+}

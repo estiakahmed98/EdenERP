@@ -1,0 +1,177 @@
+{
+    "metadata": {
+        "title": "eSign | Adon ERP",
+        "description": "Send, sign, and manage business agreements inside Adon ERP with secure workflows, reminders, audit trails, and one-click approvals."
+    },
+    "hero": {
+        "eyebrow": {
+            "icon": "FileSignature",
+            "label": "Secure digital signature"
+        },
+        "title": "eSign.",
+        "titleHighlight": "Reinvented.",
+        "description": "Send, sign, and manage business agreements inside Adon ERP with secure workflows, reminders, audit trails, and one-click approvals.",
+        "buttons": {
+            "startTrial": "Start Free Trial",
+            "meetAdvisor": "Meet an advisor"
+        }
+    },
+    "dashboard": {
+        "appName": "Adon Sign",
+        "status": "Live",
+        "menu": {
+            "dashboard": "Dashboard",
+            "toSign": "To Sign",
+            "waiting": "Waiting",
+            "completed": "Completed",
+            "templates": "Templates"
+        },
+        "columns": {
+            "draft": "Draft",
+            "waitingSignature": "Waiting Signature",
+            "signed": "Signed"
+        },
+        "documents": {
+            "serviceAgreement": "Service Agreement",
+            "ndaContract": "NDA Contract",
+            "offerLetter": "Offer Letter"
+        },
+        "statuses": {
+            "completed": "Completed",
+            "needsAction": "Needs action"
+        },
+        "badges": {
+            "instantWorkflow": "Instant workflow",
+            "legallyTraceable": "Legally traceable"
+        }
+    },
+    "simplifySection": {
+        "title": "Simplify it,",
+        "subtitle": "automate it,",
+        "highlight": "sign it",
+        "description": "Drag and drop signature fields, assign recipients, set signing order, and let Adon ERP handle reminders, tracking, and final archiving.",
+        "features": {
+            "templates": "Prepare agreements with reusable templates",
+            "notify": "Automatically notify every signer",
+            "archive": "Archive signed documents in the right workspace"
+        },
+        "demoCard": {
+            "title": "Service agreement",
+            "signature1": "Signature 1",
+            "signature2": "Signature 2"
+        }
+    },
+    "mobileSection": {
+        "eyebrow": {
+            "icon": "Smartphone",
+            "label": "Sign from anywhere"
+        },
+        "title": "Whenever,",
+        "subtitle": "wherever",
+        "description": "Clients and teammates can review and sign agreements from any device. No printing, scanning, or back-and-forth email chaos.",
+        "features": {
+            "mobileReady": "Mobile ready",
+            "oneClick": "One-click signing",
+            "secureIdentity": "Secure identity check",
+            "instantConfirmation": "Instant confirmation"
+        },
+        "signatureCard": {
+            "title": "Adopt your signature",
+            "fullName": "Full name",
+            "name": "Katie Cole",
+            "button": "Sign"
+        }
+    },
+    "controlSection": {
+        "eyebrow": {
+            "icon": "Workflow",
+            "label": "Signing control"
+        },
+        "title": "Your signing process",
+        "titleHighlight": "under control",
+        "description": "Track every request, recipient, deadline, reminder, and completion status from one clean signing dashboard.",
+        "stats": {
+            "waiting": "Waiting for signature",
+            "reminderSent": "Reminder sent",
+            "completed": "Completed",
+            "expired": "Expired"
+        }
+    },
+    "featuresSection": {
+        "title": "All the features",
+        "subtitle": "done right.",
+        "features": {
+            "drawSignature": {
+                "title": "Draw or upload signature",
+                "description": "Let signers draw, type, or upload their signature with a clean guided experience."
+            },
+            "cryptographicTraceability": {
+                "title": "Cryptographic traceability",
+                "description": "Every action is logged securely with IP, timestamp, signer identity, and audit trail."
+            },
+            "smsAuth": {
+                "title": "SMS authentication",
+                "description": "Verify signers with one-time codes before they access sensitive agreements."
+            },
+            "signingOrder": {
+                "title": "Signing order",
+                "description": "Define who signs first, second, and last with automatic workflow routing."
+            },
+            "automaticReminders": {
+                "title": "Automatic reminders",
+                "description": "Send polite follow-ups to pending signers without manual tracking."
+            },
+            "legalValidation": {
+                "title": "Legal validation",
+                "description": "Keep completed documents archived with proof-ready signing evidence."
+            }
+        },
+        "seeAllFeatures": "See all features"
+    },
+    "appsSection": {
+        "title": "One",
+        "needHighlight": "need",
+        "appHighlight": "app",
+        "description": "Expand your signing workflow across the Adon ERP ecosystem.",
+        "apps": {
+            "accounting": {
+                "title": "Accounting",
+                "desc": "Sign vendor and client documents"
+            },
+            "sales": {
+                "title": "Sales",
+                "desc": "Close contracts faster"
+            },
+            "recruitment": {
+                "title": "Recruitment",
+                "desc": "Sign hiring documents"
+            },
+            "documents": {
+                "title": "Documents",
+                "desc": "Archive signed agreements"
+            },
+            "fieldService": {
+                "title": "Field Service",
+                "desc": "Collect signatures on-site"
+            }
+        },
+        "seeAllApps": "See all apps"
+    },
+    "ctaSection": {
+        "title": "Join modern teams",
+        "description": "Teams use Adon Sign to close agreements faster, reduce paperwork, and keep every signature traceable."
+    },
+    "getStartedSection": {
+        "title": "Unleash",
+        "subtitle": "your growth potential",
+        "description": "Replace manual signing with a secure, automated, and beautifully simple agreement workflow inside Adon ERP.",
+        "buttons": {
+            "startTrial": "Start Free Trial",
+            "contactSales": "Contact Sales"
+        },
+        "footer": {
+            "freeTrial": "Free trial available",
+            "instantAccess": "Instant access"
+        }
+    }
+}
