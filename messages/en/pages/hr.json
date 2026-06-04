@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "title": "Human Resources | AdonERP",
+    "description": "AI-powered HR management platform for all your people operations — from recruitment and onboarding to attendance, performance appraisals, payroll, and employee self-service."
+  },
+  "hero": {
+    "title": "Human Resources",
+    "titleHighlight": "Magic",
+    "description": "Streamline hiring, onboarding, attendance, performance, payroll, and employee self-service in one AI-powered people platform.",
+    "startButton": "Start now",
+    "advisorButton": "Meet an advisor",
+    "freeText": "Free, forever, with unlimited users",
+    "dashboard": {
+      "title": "Employees",
+      "directory": "Directory / Departments / Contracts / Planning",
+      "newButton": "New",
+      "departments": ["All", "Administration", "Sales", "Research & Development", "Human Resources", "Marketing"],
+      "employees": [
+        { "name": "Audrey Peterson", "role": "Consultant", "status": "Online" },
+        { "name": "Alicia Nelson", "role": "Software Engineer", "status": "Away" },
+        { "name": "Mitchell Admin", "role": "HR Manager", "status": "Online" },
+        { "name": "Joel Willis", "role": "Product Designer", "status": "Online" },
+        { "name": "Jennie Fletcher", "role": "Recruitment Officer", "status": "Away" },
+        { "name": "Ronald Lewis", "role": "Account Executive", "status": "Online" }
+      ]
+    }
+  },
+  "allInOneSection": {
+    "title": "All of your people.",
+    "subtitle": "All in one place.",
+    "description": "Get a detailed view of every department and employee. Sort by role, team, skill, manager, contract status, and attendance details.",
+    "searchPlaceholder": "Search...",
+    "pagination": "1-12 / 42",
+    "filters": ["Department", "Job Position", "Manager", "Tags", "Contract Type"],
+    "groupBy": ["Manager", "Department", "Job Position", "Skills"],
+    "favorites": ["Save current search", "My team", "New hires"]
+  },
+  "privacySection": {
+    "title": "Keep the",
+    "titleHighlight": "private",
+    "titleEnd": "stuff private",
+    "description": "Restricted access settings protect employee contracts, wages, private information, emergency contacts, visa information, and sensitive HR records.",
+    "demo": {
+      "name": "Audrey Peterson",
+      "confidential": "Confidential",
+      "fields": [
+        ["Private Address", "Restricted"],
+        ["Wage", "Manager only"],
+        ["Emergency Contact", "Private"],
+        ["Contract", "HR only"],
+        ["Visa", "Protected"],
+        ["Bank Account", "Hidden"]
+      ],
+      "footer": "Only authorized users can view this profile."
+    }
+  },
+  "skillsSection": {
+    "title": "Show off",
+    "titleHighlight": "those skills",
+    "description": "Record every employee's skill set so the next time you need a French-speaking JavaScript expert, you know exactly who to call.",
+    "skills": ["React", "French", "JavaScript", "Design", "Sales"]
+  },
+  "timeOffSection": {
+    "title": "Take control of",
+    "titleHighlight": "time off",
+    "titleEnd": "",
+    "description": "Stay on top of PTO requests with integrated time off tracking. Use absence reports to monitor attendance and quickly approve vacation requests.",
+    "columns": ["Absent", "Present", "To Define"],
+    "leaveTypes": ["Paid Time Off", "Sick Leave"]
+  },
+  "documentsSection": {
+    "title": "Never lose track of another document",
+    "description": "Upload every contract, request signature, then store them all in one secure location.",
+    "items": [
+      { "title": "Share", "icon": "Target" },
+      { "title": "PDFs", "icon": "FileText" },
+      { "title": "Docs", "icon": "ShieldCheck" },
+      { "title": "And more...", "icon": "FileSignature" }
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Performance appraisals",
+        "description": "Schedule employee appraisals and measure skills development.",
+        "icon": "Trophy"
+      },
+      {
+        "title": "Onboarding plans",
+        "description": "Assign activities for newly hired employees and track their progress.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Org chart",
+        "description": "Set teams and view company hierarchy on every employee profile.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Attendance monitoring",
+        "description": "Track attendance, check-ins, working hours, and time management.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Recruitment management",
+        "description": "Create job openings and manage applications from one place.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features",
+    "appraisal": {
+      "name": "Jennie Fletcher",
+      "role": "Manager's Feedback",
+      "criteria": [
+        ["Job knowledge", 5],
+        ["Time management", 4],
+        ["Teamwork", 5],
+        ["Autonomy", 4]
+      ]
+    }
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Recruitment", "description": "Track applications", "icon": "Target" },
+      { "title": "Appraisals", "description": "Evaluate performance", "icon": "Trophy" },
+      { "title": "Sign", "description": "Approve documents", "icon": "FileSignature" },
+      { "title": "Expenses", "description": "Manage reimbursements", "icon": "BriefcaseBusiness" },
+      { "title": "Time Off", "description": "Approve leave requests", "icon": "CalendarClock" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "footerCta": {
+    "title": "Build a better",
+    "titleHighlight": "people",
+    "titleEnd": "experience",
+    "button": "Start now"
+  }
+}
