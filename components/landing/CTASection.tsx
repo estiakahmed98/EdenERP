@@ -8,7 +8,7 @@ export default function CTASection() {
   const commonT = useTranslations("common.actions");
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--purple),#5a3854)] px-6 py-25 text-center dark:bg-[linear-gradient(135deg,#0f172a,#1e293b)]">
+    <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--purple),var(--purple-dark))] px-6 py-25 text-center">
       <div className="pointer-events-none absolute -left-25 -top-25 h-75 w-75 rounded-full bg-white/5" />
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-65 w-65 rounded-full bg-white/5" />
 

@@ -225,13 +225,13 @@ export default async function TrainingPage() {
                   })}
                 </div>
 
-                <div className="mt-6 rounded-[1.6rem] bg-gradient-to-br from-slate-800 to-slate-900 p-5 text-white">
-                  <div className="flex items-center gap-1 text-amber-300">
+                <div className="mt-6 rounded-[1.6rem] bg-primary p-5 text-primary-foreground">
+                  <div className="flex items-center gap-1 text-primary-foreground/80">
                     {Array.from({ length: 5 }).map((_, index) => (
                       <Star key={index} className="h-4 w-4 fill-current" />
                     ))}
                   </div>
-                  <p className="mt-4 text-sm leading-6 text-slate-200">
+                  <p className="mt-4 text-sm leading-6 text-primary-foreground/80">
                     &quot;{t("liveClass.quote")}&quot;
                   </p>
                   <p className="mt-4 text-sm font-semibold">

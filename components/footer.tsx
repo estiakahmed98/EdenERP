@@ -84,9 +84,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bn-content bg-linear-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-100">
+    <footer className="bn-content border-t border-border bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
-        <div className="rounded-3xl bg-slate-900/35 p-5 shadow-2xl shadow-cyan-950/20 sm:p-6 lg:p-8">
+        <div className="rounded-3xl border border-border bg-card/95 p-5 shadow-2xl shadow-primary/10 sm:p-6 lg:p-8">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_2fr] lg:gap-12">
             {/* Brand Area */}
             <div className="text-center lg:text-left">
@@ -124,7 +124,7 @@ export default function Footer() {
                 </span>
               </Link>
 
-              <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-slate-300 lg:mx-0">
+              <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-muted-foreground lg:mx-0">
                 {t("description")}
               </p>
 
@@ -137,7 +137,7 @@ export default function Footer() {
                       key={item.label}
                       href={item.href}
                       aria-label={item.label}
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-950/60 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-400/10 hover:text-cyan-300"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/70 text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
                     >
                       <Icon size={18} />
                     </a>
@@ -151,9 +151,9 @@ export default function Footer() {
               {footerSections.map((section) => (
                 <div
                   key={section.titleKey}
-                  className="rounded-2xl bg-slate-950/35 p-4 sm:bg-transparent sm:p-0"
+                  className="rounded-2xl bg-background/60 p-4 sm:bg-transparent sm:p-0"
                 >
-                  <h3 className="mb-3 text-[11px] font-black uppercase tracking-[0.18em] text-white">
+                  <h3 className="mb-3 text-[11px] font-black uppercase tracking-[0.18em] text-foreground">
                     {t(section.titleKey)}
                   </h3>
 
@@ -162,7 +162,7 @@ export default function Footer() {
                       <li key={`${section.titleKey}:${link.labelKey}`}>
                         <Link
                           href={link.href}
-                          className="inline-flex text-sm font-medium leading-5 text-slate-300 transition-colors hover:text-cyan-300"
+                          className="inline-flex text-sm font-medium leading-5 text-muted-foreground transition-colors hover:text-primary"
                         >
                           {t(link.labelKey)}
                         </Link>
@@ -174,16 +174,16 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="my-6 h-px bg-linear-to-r from-transparent via-slate-700/60 to-transparent" />
+          <div className="my-6 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
           <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
-            <p className="text-xs leading-6 text-slate-400 sm:text-sm">
+            <p className="text-xs leading-6 text-muted-foreground sm:text-sm">
               {t("copyright", { year: currentYear })}
             </p>
 
             <Link
               href="/"
-              className="rounded-full bg-slate-950/60 px-4 py-2 text-xs font-bold text-slate-300 transition-colors hover:bg-cyan-400/10 hover:text-cyan-300"
+              className="rounded-full border border-border bg-background/70 px-4 py-2 text-xs font-bold text-muted-foreground transition-colors hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
             >
               Adon ERP
             </Link>
