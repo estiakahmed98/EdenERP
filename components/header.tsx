@@ -144,7 +144,6 @@ const appsMegaMenu: MegaMenuColumn[] = [
     accentClass: "text-primary",
     underlineClass: "bg-primary/20",
     links: [
-      { labelKey: "menu.apps.discuss", href: "/apps/productivity/discuss" },
       {
         labelKey: "menu.apps.artificialIntelligence",
         href: "/apps/productivity/artificial-intelligence",
