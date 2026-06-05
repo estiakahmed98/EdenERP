@@ -171,18 +171,6 @@ const industriesMegaMenu: MegaMenuColumn[] = [
         labelKey: "menu.industries.furnitureStore",
         href: "/industries/retail/furniture-store",
       },
-      {
-        labelKey: "menu.industries.groceryStore",
-        href: "/industries/retail/grocery-store",
-      },
-      {
-        labelKey: "menu.industries.hardwareStore",
-        href: "/industries/retail/hardware-store",
-      },
-      {
-        labelKey: "menu.industries.toyStore",
-        href: "/industries/retail/toy-store",
-      },
     ],
   },
   {
@@ -202,14 +190,7 @@ const industriesMegaMenu: MegaMenuColumn[] = [
         labelKey: "menu.industries.guestHouse",
         href: "/industries/food&hospitality/guest-house",
       },
-      {
-        labelKey: "menu.industries.beverageDistributor",
-        href: "/industries/food&hospitality/beverage-distributor",
-      },
-      {
-        labelKey: "menu.industries.hotel",
-        href: "/industries/food&hospitality/hotel",
-      },
+      
     ],
   },
   {
@@ -241,10 +222,6 @@ const industriesMegaMenu: MegaMenuColumn[] = [
         href: "/industries/consulting/accounting-firm",
       },
       {
-        labelKey: "menu.industries.marketingAgency",
-        href: "/industries/consulting/marketing-agency",
-      },
-      {
         labelKey: "menu.industries.auditCertification",
         href: "/industries/consulting/audit-certification",
       },
@@ -266,10 +243,6 @@ const industriesMegaMenu: MegaMenuColumn[] = [
       {
         labelKey: "menu.industries.metal",
         href: "/industries/manufacturing/metal",
-      },
-      {
-        labelKey: "menu.industries.furniture",
-        href: "/industries/manufacturing/furniture",
       },
     ],
   },
