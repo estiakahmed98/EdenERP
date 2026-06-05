@@ -222,10 +222,6 @@ const industriesMegaMenu: MegaMenuColumn[] = [
         href: "/industries/consulting/accounting-firm",
       },
       {
-        labelKey: "menu.industries.marketingAgency",
-        href: "/industries/consulting/marketing-agency",
-      },
-      {
         labelKey: "menu.industries.auditCertification",
         href: "/industries/consulting/audit-certification",
       },
