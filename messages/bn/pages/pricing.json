@@ -97,11 +97,7 @@
           "note": "Setup charge এবং প্রথম quarter billingসহ"
         }
       ],
-      "features": [
-        "অ্যাকাউন্টিং",
-        "পেরোল",
-        "ইনভেন্টরি"
-      ]
+      "features": ["অ্যাকাউন্টিং", "পেরোল", "ইনভেন্টরি"]
     },
     {
       "id": "professional",
@@ -244,10 +240,7 @@
           "amountBdt": 1500
         }
       ],
-      "features": [
-        "রিপোর্টিং সার্ভিস",
-        "এন্টারপ্রাইজ setup support"
-      ]
+      "features": ["রিপোর্টিং সার্ভিস", "এন্টারপ্রাইজ setup support"]
     }
   ],
   "benefitsSection": {
