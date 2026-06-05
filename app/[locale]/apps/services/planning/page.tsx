@@ -370,12 +370,6 @@ export default function PlanningLandingPage() {
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
-            </span>
-            <br />
-            done{" "}
-            <span className="relative inline-block">
               <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
@@ -422,10 +416,6 @@ export default function PlanningLandingPage() {
             style={{ fontFamily: handwrittenFont }}
           >
             {t("appsSection.title")}{" "}
-            
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">{t("appsSection.description")}</span>
-            </HandUnderline>
           </h2>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
