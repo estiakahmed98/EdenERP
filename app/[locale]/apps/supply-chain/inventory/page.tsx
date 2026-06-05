@@ -540,12 +540,6 @@ export default function InventoryLandingSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             {t("featuresSection.title")}{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
-            </span>
-            <br />
-            done{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="dark:text-[#02cfc3]">{t("featuresSection.subtitle")}</span>
             </HandUnderline>
