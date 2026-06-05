@@ -523,7 +523,7 @@ export default function PricingClient() {
                   />
 
                   <div className="flex items-start justify-between gap-4">
-                    <div className="min-h-24">
+                    <div className="min-h-[5.5rem]">
                       <p
                         className={`font-semibold leading-snug text-primary ${
                           isBangla ? "text-base" : "text-sm"
@@ -553,15 +553,15 @@ export default function PricingClient() {
                   </div>
 
                   <p
-                    className={`mt-5 min-h-32 text-slate-600 dark:text-slate-300 ${
+                    className={`mt-4 min-h-[10rem] text-slate-600 dark:text-slate-300 ${
                       isBangla ? "text-[15px] leading-8" : "text-sm leading-7"
                     }`}
                   >
                     {plan.description}
                   </p>
 
-                  <div className="mt-7 min-h-28">
-                    <div className="flex flex-col items-start gap-2">
+                  <div className="mt-6">
+                    <div className="flex flex-col items-start gap-1.5">
                       <div className="flex flex-wrap items-end gap-x-2 gap-y-1">
                       <span
                         className={`leading-none font-bold tracking-tight text-slate-950 dark:text-slate-100 ${
@@ -595,7 +595,7 @@ export default function PricingClient() {
                     {isAnnual &&
                       plan.annualPrice !== null &&
                       plan.monthlyPrice !== null && (
-                      <p className="mt-3 text-sm font-semibold text-emerald-600">
+                      <p className="mt-3 max-w-[16rem] text-sm font-semibold leading-6 text-emerald-600">
                         {t("plansSection.annualSavings")}
                       </p>
                     )}
@@ -603,7 +603,7 @@ export default function PricingClient() {
 
                   <Link
                     href={plan.href}
-                    className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm font-semibold transition-all duration-300 ${
+                    className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm font-semibold transition-all duration-300 ${
                       isFeatured
                         ? "bg-primary text-white shadow-xl shadow-primary/20 hover:-translate-y-0.5 hover:shadow-2xl"
                         : "border border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-lg dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200"
@@ -613,7 +613,7 @@ export default function PricingClient() {
                     <ArrowRight className="h-4 w-4" />
                   </Link>
 
-                  <div className="mt-8 flex-1 border-t border-slate-100 pt-7 dark:border-slate-800">
+                  <div className="mt-7 flex-1 border-t border-slate-100 pt-6 dark:border-slate-800">
                     <p className="text-sm font-semibold text-slate-950 dark:text-slate-100">
                       {t("plansSection.featuresIncluded")}
                     </p>
