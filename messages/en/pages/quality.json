@@ -1,0 +1,186 @@
+{
+  "metadata": {
+    "title": "Quality Control | Adon ERP",
+    "description": "Advanced quality control solution - detect defects easily, manage inspections, and keep production running."
+  },
+  "header": {
+    "title": "Quality",
+    "subtitle": "without the complexity",
+    "description": "Build smart quality checks, catch defects early, manage inspections, and keep production moving without adding unnecessary complexity.",
+    "buttons": {
+      "startNow": "Start now",
+      "meetAdvisor": "Meet an advisor"
+    }
+  },
+  "features": {
+    "worksWithProcess": {
+      "title": "Works with your process",
+      "description": "Add quality checks inside manufacturing, inventory, and delivery operations without slowing your team."
+    },
+    "centralizeInspections": {
+      "title": "Centralize inspections",
+      "description": "Create control points, quality alerts, corrective actions, and inspection history in one place."
+    },
+    "kanbanView": {
+      "title": "Kanban view",
+      "description": "Manage quality alerts by status using a clean drag-and-drop workflow."
+    },
+    "orderIntegration": {
+      "title": "Order integration",
+      "description": "Trigger checks directly from manufacturing orders, transfers, receipts, and deliveries."
+    }
+  },
+  "apps": {
+    "manufacturing": {
+      "title": "Manufacturing",
+      "description": "Manage production checks"
+    },
+    "inventory": {
+      "title": "Inventory",
+      "description": "Inspect receipts and deliveries"
+    },
+    "plm": {
+      "title": "PLM",
+      "description": "Improve engineering quality"
+    }
+  },
+  "section1": {
+    "title": "Quality",
+    "subtitle": "inspections",
+    "description": "that won't interrupt manufacturing",
+    "controlPoint": {
+      "title": "Quality control point",
+      "fields": {
+        "product": "Product",
+        "manufacturingStep": "Manufacturing step",
+        "controlType": "Control type",
+        "passFail": "Pass - Fail",
+        "team": "Team"
+      },
+      "buttons": {
+        "pass": "Pass",
+        "fail": "Fail"
+      }
+    },
+    "descriptionText": "Maintain product consistency and quality by configuring checks directly on manufacturing orders, work centers, receipts, and delivery flows."
+  },
+  "section2": {
+    "title": "Zero in on",
+    "subtitle": "defects",
+    "description": "before they cost you",
+    "qualityAlert": {
+      "title": "Quality Alert",
+      "id": "QA00079",
+      "critical": "Critical",
+      "product": "Product",
+      "productValue": "Customizable Desk",
+      "rootCause": "Root Cause",
+      "rootCauseValue": "Supplier material defect",
+      "team": "Team",
+      "teamValue": "Quality Team",
+      "priority": "Priority",
+      "priorityValue": "High",
+      "correctiveAction": "Corrective action",
+      "correctiveActionText": "Block the faulty batch, notify supplier, and re-check components before production continues."
+    }
+  },
+  "section3": {
+    "title": "No product",
+    "subtitle": "left unchecked",
+    "description": "",
+    "inspectionWorksheet": {
+      "title": "Inspection worksheet",
+      "operatorNote": "Operator note",
+      "operatorNoteText": "Add measurement, attach image, and validate the inspection."
+    },
+    "descriptionText": "Choose product-specific checks and inspection worksheets. Track photos, measurements, pass/fail answers, and comments for every important operation."
+  },
+  "section4": {
+    "title": "Put your",
+    "subtitle": "quality",
+    "description": "teams in control",
+    "descriptionText": "Create unlimited quality teams dedicated to specific products, operations, or issues. Assign alerts and make sure every concern reaches the right person.",
+    "columns": {
+      "new": "New",
+      "inProgress": "In Progress",
+      "done": "Done"
+    }
+  },
+  "section5": {
+    "title": "Worksheets make",
+    "subtitle": "custom checks",
+    "description": "effortless",
+    "checklist": {
+      "title": "Quality control checklist",
+      "items": [
+        "Visual check",
+        "Measurement value",
+        "Attach product photo",
+        "Confirm packaging",
+        "Operator signature",
+        "Final validation"
+      ]
+    },
+    "buttons": {
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "featuresSection": {
+    "title": "All the",
+    "subtitle1": "features",
+    "subtitle2": "done",
+    "done": "right.",
+    "seeAllFeatures": "See all features",
+    "qualityStats": {
+      "title": "Quality statistics",
+      "description": "Track defects, inspections, teams, and corrective actions with easy-to-read reporting."
+    }
+  },
+  "appsSection": {
+    "title": "One",
+    "subtitle1": "need",
+    "subtitle2": "one",
+    "subtitle3": "app.",
+    "description": "Expand as you grow.",
+    "seeAllApps": "See all Apps"
+  },
+  "testimonialSection": {
+    "joinTitle": "Join 15 million users",
+    "joinSubtitle": "who grow their business with Adon",
+    "testimonial": {
+      "text": "Quality checks became easier to follow, and our teams now catch issues before they reach customers.",
+      "name": "Robert Hayes",
+      "role": "Quality manager"
+    }
+  },
+  "ctaSection": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "subtitle2": "growth",
+    "subtitle3": "potential",
+    "button": "Start now"
+  },
+  "kanbanBoard": {
+    "columns": {
+      "new": "New",
+      "confirmed": "Confirmed",
+      "inProgress": "In Progress",
+      "correctiveAction": "Corrective Action"
+    },
+    "cards": {
+      "checkComponents": "Check received components",
+      "visualInspection": "Visual inspection",
+      "packagingReview": "Packaging review",
+      "dimensionMismatch": "Dimension mismatch",
+      "paintColorVerification": "Paint color verification",
+      "assemblyTolerance": "Assembly tolerance",
+      "supplierDefect": "Supplier defect report",
+      "workshopCheck": "Workshop check",
+      "productValidation": "Product validation",
+      "fixBatch": "Fix product batch",
+      "replaceParts": "Replace damaged parts",
+      "updateControlPoint": "Update control point"
+    }
+  }
+}
