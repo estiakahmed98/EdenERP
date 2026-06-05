@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "title": "Inventory | AdonERP",
+    "description": "AI-powered inventory management platform for all your warehouse operations — from barcode scanning and stock tracking to replenishment, quality control, and warehouse optimization."
+  },
+  "hero": {
+    "title": "Modern",
+    "titleHighlight": "inventory system",
+    "description": "Track every product movement, automate stock operations, optimize warehouse flows, and manage your inventory with complete visibility.",
+    "startButton": "Start now",
+    "demoButton": "Watch a demo",
+    "dashboard": {
+      "title": "Inventory",
+      "subtitle": "Operations / Receipts / Delivery Orders / Stock Moves",
+      "createButton": "Create",
+      "stats": [
+        { "label": "Receipts", "value": "42", "color": "emerald" },
+        { "label": "Delivery", "value": "18", "color": "sky" },
+        { "label": "Internal", "value": "27", "color": "amber" },
+        { "label": "Waiting", "value": "09", "color": "rose" }
+      ],
+      "tableHeaders": ["Reference", "Product", "Source", "Destination", "Qty", "Status", "Date"],
+      "rows": [
+        { "reference": "WH/IN/00034", "product": "Office Chair", "source": "Vendor", "destination": "Stock", "qty": "28", "status": "Ready", "date": "Today" },
+        { "reference": "WH/OUT/00129", "product": "Laptop Stand", "source": "Stock", "destination": "Customer", "qty": "12", "status": "Waiting", "date": "Today" },
+        { "reference": "WH/INT/00011", "product": "Desk Lamp", "source": "Aisle A", "destination": "Aisle B", "qty": "40", "status": "Done", "date": "Yesterday" },
+        { "reference": "WH/IN/00035", "product": "Storage Box", "source": "Vendor", "destination": "Stock", "qty": "64", "status": "Ready", "date": "Tomorrow" },
+        { "reference": "WH/OUT/00130", "product": "Wood Table", "source": "Stock", "destination": "Customer", "qty": "07", "status": "Ready", "date": "Friday" },
+        { "reference": "WH/INT/00012", "product": "Blue Sofa", "source": "Zone 1", "destination": "Zone 3", "qty": "09", "status": "Done", "date": "Monday" }
+      ]
+    },
+    "metrics": {
+      "forecasted": "Forecasted",
+      "forecastedValue": "12,400 units",
+      "available": "Available",
+      "availableValue": "9,800 units",
+      "replenishment": "Replenishment",
+      "replenishmentValue": "Auto rules",
+      "traceability": "Traceability",
+      "traceabilityValue": "Lots / serials"
+    }
+  },
+  "replenishmentSection": {
+    "title": "Flawless",
+    "titleHighlight": "replenishments",
+    "description": "Never run out of stock again. Forecast needs, automate purchase rules, replenish based on minimum quantities, and keep the right product available at the right time.",
+    "features": [
+      { "title": "Replenishment", "icon": "Truck", "color": "sky" },
+      { "title": "Quality control", "icon": "ShieldCheck", "color": "amber" },
+      { "title": "Storage", "icon": "Warehouse", "color": "rose" }
+    ]
+  },
+  "qualitySection": {
+    "title": "Speed up receipt,",
+    "titleHighlight": "quality",
+    "titleEnd": "control and storage",
+    "description": "Barcode scanning and smart routes let your warehouse team receive products, verify quality, and put items away quickly and accurately.",
+    "floatingNote": "Scan faster. Move smarter."
+  },
+  "warehouseSection": {
+    "title": "Optimize your warehouse",
+    "description": "Build clean warehouse operations with locations, routes, putaway rules, replenishment rules, picking flows, and transfer management.",
+    "stages": ["Receipts", "Pick", "Pack"]
+  },
+  "pickingSection": {
+    "title": "Minimize",
+    "titleHighlight": "picking movements",
+    "description": "Use smart routes, batches, waves, zones, and optimized pick paths to reduce walking time and speed up warehouse operations.",
+    "types": [
+      { "title": "Wave picking", "description": "Reduce unnecessary walking and pick items in smarter groups." },
+      { "title": "Cluster picking", "description": "Group similar orders together for faster fulfillment." },
+      { "title": "Batch picking", "description": "Pick multiple orders simultaneously to maximize efficiency." }
+    ]
+  },
+  "packingSection": {
+    "title": "Packing",
+    "titleHighlight": "has never been easier",
+    "description": "Validate transfers, prepare packages, print labels, scan products, and make sure every delivery is accurate before it leaves your warehouse."
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Fast barcode scanner",
+        "description": "Manage products and warehouse movements with barcode scanning and quick validation.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Clear reservation mechanisms",
+        "description": "Track reserved quantities, incoming goods, outgoing goods, and available stock.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Reduce distances with smart routes",
+        "description": "Optimize warehouse paths and reduce unnecessary picking and packing movement.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Clear traceability",
+        "description": "Track every product movement with lots, serial numbers, transfers, and history.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Inventory valuation",
+        "description": "Follow stock value with reliable inventory costing and accounting integration.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Sales", "description": "Sell your products", "icon": "BarChart3" },
+      { "title": "Manufacturing", "description": "Plan production", "icon": "Layers3" },
+      { "title": "Purchase", "description": "Buy from suppliers", "icon": "ShoppingCart" },
+      { "title": "Accounting", "description": "Track stock value", "icon": "FileBarChart" },
+      { "title": "Quality", "description": "Control operations", "icon": "ClipboardCheck" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Adon inventory reduced our logistics spreadsheet work while making our warehouse easier to manage. The biggest benefit is real-time stock visibility and fewer manual mistakes.",
+    "name": "Andrew Ross",
+    "role": "Warehouse manager"
+  },
+  "footerCta": {
+    "title": "Being organized",
+    "subtitle": "never felt so good",
+    "button": "Start now"
+  }
+}

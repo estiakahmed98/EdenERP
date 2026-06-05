@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -30,41 +31,34 @@ const handwrittenFont =
 
 const features = [
   {
-    title: "Works with your process",
-    description:
-      "Add quality checks inside manufacturing, inventory, and delivery operations without slowing your team.",
+    key: "worksWithProcess",
+    icon: BadgeCheck,
   },
   {
-    title: "Centralize inspections",
-    description:
-      "Create control points, quality alerts, corrective actions, and inspection history in one place.",
+    key: "centralizeInspections",
+    icon: BadgeCheck,
   },
   {
-    title: "Kanban view",
-    description:
-      "Manage quality alerts by status using a clean drag-and-drop workflow.",
+    key: "kanbanView",
+    icon: BadgeCheck,
   },
   {
-    title: "Order integration",
-    description:
-      "Trigger checks directly from manufacturing orders, transfers, receipts, and deliveries.",
+    key: "orderIntegration",
+    icon: BadgeCheck,
   },
 ];
 
 const apps = [
   {
-    title: "Manufacturing",
-    description: "Manage production checks",
+    key: "manufacturing",
     icon: Factory,
   },
   {
-    title: "Inventory",
-    description: "Inspect receipts and deliveries",
+    key: "inventory",
     icon: PackageCheck,
   },
   {
-    title: "PLM",
-    description: "Improve engineering quality",
+    key: "plm",
     icon: Layers3,
   },
 ];
@@ -83,6 +77,44 @@ const avatars = [
 ];
 
 export default function QualityLandingSections() {
+  const t = useTranslations("pages.quality");
+
+  // Kanban board columns data
+  const kanbanColumns = [
+    {
+      key: "new",
+      cards: [
+        "checkComponents",
+        "visualInspection",
+        "packagingReview",
+      ],
+    },
+    {
+      key: "confirmed",
+      cards: [
+        "dimensionMismatch",
+        "paintColorVerification",
+        "assemblyTolerance",
+      ],
+    },
+    {
+      key: "inProgress",
+      cards: [
+        "supplierDefect",
+        "workshopCheck",
+        "productValidation",
+      ],
+    },
+    {
+      key: "correctiveAction",
+      cards: [
+        "fixBatch",
+        "replaceParts",
+        "updateControlPoint",
+      ],
+    },
+  ];
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
@@ -91,17 +123,16 @@ export default function QualityLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Quality{" "}
+            {t('header.title')}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
               <span className="text-sky-500 dark:text-sky-400">
-                without the complexity
+                {t('header.subtitle')}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Build smart quality checks, catch defects early, manage inspections,
-            and keep production moving without adding unnecessary complexity.
+            {t('header.description')}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -109,14 +140,14 @@ export default function QualityLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t('header.buttons.startNow')}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Meet an advisor
+              {t('header.buttons.meetAdvisor')}
             </Link>
           </div>
 
@@ -143,47 +174,14 @@ export default function QualityLandingSections() {
               </div>
 
               <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
-                {[
-                  {
-                    title: "New",
-                    cards: [
-                      "Check received components",
-                      "Visual inspection",
-                      "Packaging review",
-                    ],
-                  },
-                  {
-                    title: "Confirmed",
-                    cards: [
-                      "Dimension mismatch",
-                      "Paint color verification",
-                      "Assembly tolerance",
-                    ],
-                  },
-                  {
-                    title: "In Progress",
-                    cards: [
-                      "Supplier defect report",
-                      "Workshop check",
-                      "Product validation",
-                    ],
-                  },
-                  {
-                    title: "Corrective Action",
-                    cards: [
-                      "Fix product batch",
-                      "Replace damaged parts",
-                      "Update control point",
-                    ],
-                  },
-                ].map((column, columnIndex) => (
+                {kanbanColumns.map((column, columnIndex) => (
                   <div
-                    key={column.title}
+                    key={column.key}
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
                   >
                     <div className="mb-3 flex items-center justify-between">
                       <p className="text-sm font-bold text-slate-900 dark:text-white">
-                        {column.title}
+                        {t(`kanbanBoard.columns.${column.key}`)}
                       </p>
                       <span className="text-lg font-bold text-slate-400 dark:text-slate-500">
                         +
@@ -197,7 +195,7 @@ export default function QualityLandingSections() {
                           className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
                         >
                           <p className="text-sm font-bold text-slate-900 dark:text-white">
-                            {card}
+                            {t(`kanbanBoard.cards.${card}`)}
                           </p>
 
                           <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
@@ -248,13 +246,11 @@ export default function QualityLandingSections() {
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Quality{" "}
+            {t('section1.title')}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">inspections</span>
+              <span className="dark:text-[#02cfc3]">{t('section1.subtitle')}</span>
             </HandUnderline>{" "}
-            that won&apos;t interrupt
-            <br />
-            manufacturing
+            {t('section1.description')}
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-12 lg:grid-cols-2">
@@ -270,43 +266,51 @@ export default function QualityLandingSections() {
               <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
                 <div className="mb-5 flex items-center justify-between">
                   <p className="font-bold text-slate-900 dark:text-white">
-                    Quality control point
+                    {t('section1.controlPoint.title')}
                   </p>
                   <span className="text-slate-400 dark:text-slate-500">×</span>
                 </div>
 
                 <div className="space-y-4">
                   {[
-                    ["Product", "Manufacturing step"],
-                    ["Control type", "Pass - Fail"],
-                    ["Team", "Quality Team"],
-                  ].map(([label, value]) => (
-                    <div key={label}>
+                    ["product", t('section1.controlPoint.fields.product')],
+                    ["manufacturingStep", t('section1.controlPoint.fields.manufacturingStep')],
+                    ["controlType", t('section1.controlPoint.fields.controlType')],
+                  ].map(([key, label]) => (
+                    <div key={key}>
                       <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
                         {label}
                       </p>
                       <div className="mt-2 rounded-md bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 ring-1 ring-slate-100 dark:ring-slate-700">
-                        {value}
+                        {key === "product" && t('section1.controlPoint.fields.product')}
+                        {key === "manufacturingStep" && t('section1.controlPoint.fields.manufacturingStep')}
+                        {key === "controlType" && t('section1.controlPoint.fields.passFail')}
                       </div>
                     </div>
                   ))}
+                  <div>
+                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                      {t('section1.controlPoint.fields.team')}
+                    </p>
+                    <div className="mt-2 rounded-md bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 ring-1 ring-slate-100 dark:ring-slate-700">
+                      Quality Team
+                    </div>
+                  </div>
                 </div>
 
                 <div className="mt-6 flex gap-3">
                   <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                    Pass
+                    {t('section1.controlPoint.buttons.pass')}
                   </button>
                   <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                    Fail
+                    {t('section1.controlPoint.buttons.fail')}
                   </button>
                 </div>
               </div>
             </div>
 
             <p className="mx-auto max-w-md text-left text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Maintain product consistency and quality by configuring checks
-              directly on manufacturing orders, work centers, receipts, and
-              delivery flows.
+              {t('section1.descriptionText')}
             </p>
           </div>
         </div>
@@ -321,18 +325,16 @@ export default function QualityLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Zero in on{" "}
+              {t('section2.title')}{" "}
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="dark:text-rose-200">defects</span>
+                <span className="dark:text-rose-200">{t('section2.subtitle')}</span>
               </HandUnderline>
               <br />
-              before they cost you
+              {t('section2.description')}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Create quality alerts, isolate problems, assign responsibility,
-              and take corrective action before defects affect customers or
-              production schedules.
+              {t('section2.qualityAlert.correctiveActionText')}
             </p>
           </div>
 
@@ -363,46 +365,59 @@ export default function QualityLandingSections() {
               <div className="mb-5 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-slate-400 dark:text-slate-500">
-                    Quality Alert
+                    {t('section2.qualityAlert.title')}
                   </p>
                   <h3 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">
-                    QA00079
+                    {t('section2.qualityAlert.id')}
                   </h3>
                 </div>
 
                 <span className="rounded-full bg-rose-50 dark:bg-rose-950/50 px-3 py-1 text-xs font-bold text-rose-600 dark:text-rose-400">
-                  Critical
+                  {t('section2.qualityAlert.critical')}
                 </span>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  ["Product", "Customizable Desk"],
-                  ["Root Cause", "Supplier material defect"],
-                  ["Team", "Quality Team"],
-                  ["Priority", "High"],
-                ].map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
-                  >
-                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
-                      {label}
-                    </p>
-                    <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white">
-                      {value}
-                    </p>
-                  </div>
-                ))}
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                    {t('section2.qualityAlert.product')}
+                  </p>
+                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white">
+                    {t('section2.qualityAlert.productValue')}
+                  </p>
+                </div>
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                    {t('section2.qualityAlert.rootCause')}
+                  </p>
+                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white">
+                    {t('section2.qualityAlert.rootCauseValue')}
+                  </p>
+                </div>
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                    {t('section2.qualityAlert.team')}
+                  </p>
+                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white">
+                    {t('section2.qualityAlert.teamValue')}
+                  </p>
+                </div>
+                <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
+                    {t('section2.qualityAlert.priority')}
+                  </p>
+                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white">
+                    {t('section2.qualityAlert.priorityValue')}
+                  </p>
+                </div>
               </div>
 
               <div className="mt-5 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
                 <p className="text-sm font-bold text-slate-900 dark:text-white">
-                  Corrective action
+                  {t('section2.qualityAlert.correctiveAction')}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                  Block the faulty batch, notify supplier, and re-check
-                  components before production continues.
+                  {t('section2.qualityAlert.correctiveActionText')}
                 </p>
               </div>
             </div>
@@ -415,7 +430,7 @@ export default function QualityLandingSections() {
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex items-center justify-between">
               <p className="font-bold text-slate-900 dark:text-white">
-                Inspection worksheet
+                {t('section3.inspectionWorksheet.title')}
               </p>
               <span className="text-slate-400 dark:text-slate-500">×</span>
             </div>
@@ -427,10 +442,10 @@ export default function QualityLandingSections() {
                 <div className="h-3 w-5/6 rounded bg-slate-100 dark:bg-slate-700/50" />
                 <div className="mt-6 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
                   <p className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                    Operator note
+                    {t('section3.inspectionWorksheet.operatorNote')}
                   </p>
                   <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                    Add measurement, attach image, and validate the inspection.
+                    {t('section3.inspectionWorksheet.operatorNoteText')}
                   </p>
                 </div>
               </div>
@@ -456,10 +471,10 @@ export default function QualityLandingSections() {
 
             <div className="mt-6 flex gap-3">
               <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                Pass
+                {t('section1.controlPoint.buttons.pass')}
               </button>
               <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                Fail
+                {t('section1.controlPoint.buttons.fail')}
               </button>
             </div>
           </div>
@@ -469,17 +484,15 @@ export default function QualityLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              No product left
+              {t('section3.title')}
               <br />
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="dark:text-rose-200">unchecked</span>
+                <span className="dark:text-rose-200">{t('section3.subtitle')}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Choose product-specific checks and inspection worksheets. Track
-              photos, measurements, pass/fail answers, and comments for every
-              important operation.
+              {t('section3.descriptionText')}
             </p>
           </div>
         </div>
@@ -492,29 +505,27 @@ export default function QualityLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Put your{" "}
+              {t('section4.title')}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">quality</span>
+                <span className="dark:text-sky-200">{t('section4.subtitle')}</span>
               </HandUnderline>{" "}
-              teams in control
+              {t('section4.description')}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Create unlimited quality teams dedicated to specific products,
-              operations, or issues. Assign alerts and make sure every concern
-              reaches the right person.
+              {t('section4.descriptionText')}
             </p>
           </div>
 
           <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="grid gap-4 md:grid-cols-3">
-              {["New", "In Progress", "Done"].map((column, columnIndex) => (
+              {["new", "inProgress", "done"].map((column, columnIndex) => (
                 <div
                   key={column}
                   className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
                 >
                   <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white">
-                    {column}
+                    {t(`section4.columns.${column}`)}
                   </p>
 
                   <div className="space-y-3">
@@ -561,16 +572,15 @@ export default function QualityLandingSections() {
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Worksheets make{" "}
+            {t('section5.title')}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-              <span className="dark:text-amber-200">custom checks</span>
+              <span className="dark:text-amber-200">{t('section5.subtitle')}</span>
             </HandUnderline>{" "}
-            effortless
+            {t('section5.description')}
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Create interactive worksheets for operators to fill out when
-            performing quality checks.
+            {t('section5.description')}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-4xl">
@@ -583,21 +593,14 @@ export default function QualityLandingSections() {
                     Worksheet
                   </p>
                   <h3 className="mt-2 text-xl font-bold text-slate-900 dark:text-white">
-                    Quality control checklist
+                    {t('section5.checklist.title')}
                   </h3>
                 </div>
                 <span className="text-slate-400 dark:text-slate-500">×</span>
               </div>
 
               <div className="grid gap-5 lg:grid-cols-2">
-                {[
-                  "Visual check",
-                  "Measurement value",
-                  "Attach product photo",
-                  "Confirm packaging",
-                  "Operator signature",
-                  "Final validation",
-                ].map((item, index) => (
+                {t.raw('section5.checklist.items').map((item: string, index: number) => (
                   <div
                     key={item}
                     className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/50 px-4 py-4"
@@ -621,10 +624,10 @@ export default function QualityLandingSections() {
 
               <div className="mt-6 flex gap-3">
                 <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  Save
+                  {t('section5.buttons.save')}
                 </button>
                 <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                  Cancel
+                  {t('section5.buttons.cancel')}
                 </button>
               </div>
             </div>
@@ -641,15 +644,15 @@ export default function QualityLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t('featuresSection.title')}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">features</span>
+              <span className="relative z-10">{t('featuresSection.subtitle1')}</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
-            done{" "}
+            {t('featuresSection.subtitle2')}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">{t('featuresSection.done')}</span>
             </HandUnderline>
           </h2>
 
@@ -664,12 +667,11 @@ export default function QualityLandingSections() {
               </div>
 
               <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
-                Quality statistics
+                {t('featuresSection.qualityStats.title')}
               </h3>
 
               <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                Track defects, inspections, teams, and corrective actions with
-                easy-to-read reporting.
+                {t('featuresSection.qualityStats.description')}
               </p>
 
               <div className="mt-8 flex h-64 items-end gap-5 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
@@ -695,35 +697,38 @@ export default function QualityLandingSections() {
               </div>
             </div>
 
-            {features.slice(1).map((feature) => (
-              <div
-                key={feature.title}
-                className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
-                    <BadgeCheck className="h-5 w-5" />
+            {features.slice(1).map((feature) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={feature.key}
+                  className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+
+                    <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                   </div>
 
-                  <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
+                  <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
+                    {t(`features.${feature.key}.title`)}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    {t(`features.${feature.key}.description`)}
+                  </p>
                 </div>
-
-                <h3 className="mt-5 text-lg font-bold text-slate-900 dark:text-white">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           <Link
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t('featuresSection.seeAllFeatures')} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -734,18 +739,18 @@ export default function QualityLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t('appsSection.title')}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">need</span>
+              <span className="dark:text-sky-200">{t('appsSection.subtitle1')}</span>
             </HandUnderline>
-            , one{" "}
+            , {t('appsSection.subtitle2')}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
+              <span className="dark:text-sky-200">{t('appsSection.subtitle3')}</span>
             </HandUnderline>
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t('appsSection.description')}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -754,7 +759,7 @@ export default function QualityLandingSections() {
 
               return (
                 <div
-                  key={app.title}
+                  key={app.key}
                   className="flex items-center gap-4 rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-5 transition hover:bg-white dark:hover:bg-slate-800 hover:shadow-lg"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white dark:bg-slate-800 text-[#02a6a6] dark:text-[#02cfc3] shadow-sm">
@@ -763,10 +768,10 @@ export default function QualityLandingSections() {
 
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-white">
-                      {app.title}
+                      {t(`apps.${app.key}.title`)}
                     </h3>
                     <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {app.description}
+                      {t(`apps.${app.key}.description`)}
                     </p>
                   </div>
                 </div>
@@ -778,7 +783,7 @@ export default function QualityLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t('appsSection.seeAllApps')} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -826,10 +831,10 @@ export default function QualityLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t('testimonialSection.joinTitle')}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t('testimonialSection.joinSubtitle')}
               </p>
             </div>
           </div>
@@ -842,8 +847,7 @@ export default function QualityLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Quality checks became easier to follow, and our teams now
-                  catch issues before they reach customers.
+                  {t('testimonialSection.testimonial.text')}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -855,10 +859,10 @@ export default function QualityLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Robert Hayes
+                      {t('testimonialSection.testimonial.name')}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Quality manager
+                      {t('testimonialSection.testimonial.role')}
                     </p>
                   </div>
                 </div>
@@ -875,22 +879,22 @@ export default function QualityLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t('ctaSection.title')}
               <br />
-              your{" "}
+              {t('ctaSection.subtitle')}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t('ctaSection.subtitle2')}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t('ctaSection.subtitle3')}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t('ctaSection.button')}
             </Link>
 
             <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>

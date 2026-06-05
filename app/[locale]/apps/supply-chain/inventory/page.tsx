@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -28,62 +29,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
-  {
-    title: "Fast barcode scanner",
-    description:
-      "Manage products and warehouse movements with barcode scanning and quick validation.",
-  },
-  {
-    title: "Clear reservation mechanisms",
-    description:
-      "Track reserved quantities, incoming goods, outgoing goods, and available stock.",
-  },
-  {
-    title: "Reduce distances with smart routes",
-    description:
-      "Optimize warehouse paths and reduce unnecessary picking and packing movement.",
-  },
-  {
-    title: "Clear traceability",
-    description:
-      "Track every product movement with lots, serial numbers, transfers, and history.",
-  },
-  {
-    title: "Inventory valuation",
-    description:
-      "Follow stock value with reliable inventory costing and accounting integration.",
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, Layers3, ShoppingCart, FileBarChart, ClipboardCheck,
+    Truck, ShieldCheck, Warehouse, Boxes, QrCode, ScanLine, Sparkles, Star,
+    Users, ArrowRight, Play, PackageCheck, Database,
+  };
+  return icons[iconName] || Warehouse;
+};
 
-const apps = [
-  {
-    title: "Sales",
-    description: "Sell your products",
-    icon: BarChart3,
-  },
-  {
-    title: "Manufacturing",
-    description: "Plan production",
-    icon: Layers3,
-  },
-  {
-    title: "Purchase",
-    description: "Buy from suppliers",
-    icon: ShoppingCart,
-  },
-  {
-    title: "Accounting",
-    description: "Track stock value",
-    icon: FileBarChart,
-  },
-  {
-    title: "Quality",
-    description: "Control operations",
-    icon: ClipboardCheck,
-  },
-];
-
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -97,9 +53,79 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
+function FloatingNote({
+  className = "",
+  text = "Share information and make connections",
+}: {
+  className?: string;
+  text?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
+      <img
+        src={avatars[1]}
+        alt="User"
+        className="absolute left-3 h-12 w-12 rounded-full object-cover"
+      />
+      {text}
+    </div>
+  );
+}
+
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function InventoryLandingSections() {
+  const t = useTranslations("pages.inventory");
+
+  const dashboardStats = t.raw("hero.dashboard.stats");
+  const dashboardRows = t.raw("hero.dashboard.rows");
+  const tableHeaders = t.raw("hero.dashboard.tableHeaders");
+  const replenishmentFeatures = t.raw("replenishmentSection.features");
+  const warehouseStages = t.raw("warehouseSection.stages");
+  const pickingTypes = t.raw("pickingSection.types");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
+  const getColorClass = (color: string) => {
+    const colorMap: Record<string, string> = {
+      emerald: "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
+      sky: "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
+      amber: "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
+      rose: "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
+    };
+    return colorMap[color] || colorMap.sky;
+  };
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
@@ -107,14 +133,15 @@ export default function InventoryLandingSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="text-[#02a6a6] dark:text-[#02cfc3]">Modern</span>
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                {t("hero.title")}
+              </span>
             </HandUnderline>{" "}
-            inventory system
+           
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Track every product movement, automate stock operations, optimize
-            warehouse flows, and manage your inventory with complete visibility.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -122,14 +149,14 @@ export default function InventoryLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("hero.demoButton")}
             </Link>
           </div>
 
@@ -146,152 +173,72 @@ export default function InventoryLandingSections() {
                       className="text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
                       style={{ fontFamily: handwrittenFont }}
                     >
-                      Inventory
+                      {t("hero.dashboard.title")}
                     </span>
                     <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                      Operations / Receipts / Delivery Orders / Stock Moves
+                      {t("hero.dashboard.subtitle")}
                     </p>
                   </div>
 
                   <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                    Create
+                    {t("hero.dashboard.createButton")}
                   </button>
                 </div>
               </div>
 
               <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
                 <div className="mb-5 grid gap-3 sm:grid-cols-4">
-                  {[
-                    [
-                      "Receipts",
-                      "42",
-                      "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
-                    ],
-                    [
-                      "Delivery",
-                      "18",
-                      "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
-                    ],
-                    [
-                      "Internal",
-                      "27",
-                      "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
-                    ],
-                    [
-                      "Waiting",
-                      "09",
-                      "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
-                    ],
-                  ].map(([label, value, color]) => (
+                  {dashboardStats.map((stat: any) => (
                     <div
-                      key={label}
-                      className={`rounded-lg p-4 text-left ${color}`}
+                      key={stat.label}
+                      className={`rounded-lg p-4 text-left ${getColorClass(stat.color)}`}
                     >
-                      <p className="text-xs font-bold">{label}</p>
-                      <p className="mt-2 text-2xl font-bold">{value}</p>
+                      <p className="text-xs font-bold">{stat.label}</p>
+                      <p className="mt-2 text-2xl font-bold">{stat.value}</p>
                     </div>
                   ))}
                 </div>
 
                 <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                   <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                    <span>Reference</span>
-                    <span>Product</span>
-                    <span>Source</span>
-                    <span>Destination</span>
-                    <span>Qty</span>
-                    <span>Status</span>
-                    <span>Date</span>
+                    {tableHeaders.map((header: string) => (
+                      <span key={header}>{header}</span>
+                    ))}
                   </div>
 
-                  {[
-                    [
-                      "WH/IN/00034",
-                      "Office Chair",
-                      "Vendor",
-                      "Stock",
-                      "28",
-                      "Ready",
-                      "Today",
-                    ],
-                    [
-                      "WH/OUT/00129",
-                      "Laptop Stand",
-                      "Stock",
-                      "Customer",
-                      "12",
-                      "Waiting",
-                      "Today",
-                    ],
-                    [
-                      "WH/INT/00011",
-                      "Desk Lamp",
-                      "Aisle A",
-                      "Aisle B",
-                      "40",
-                      "Done",
-                      "Yesterday",
-                    ],
-                    [
-                      "WH/IN/00035",
-                      "Storage Box",
-                      "Vendor",
-                      "Stock",
-                      "64",
-                      "Ready",
-                      "Tomorrow",
-                    ],
-                    [
-                      "WH/OUT/00130",
-                      "Wood Table",
-                      "Stock",
-                      "Customer",
-                      "07",
-                      "Ready",
-                      "Friday",
-                    ],
-                    [
-                      "WH/INT/00012",
-                      "Blue Sofa",
-                      "Zone 1",
-                      "Zone 3",
-                      "09",
-                      "Done",
-                      "Monday",
-                    ],
-                  ].map((row) => (
+                  {dashboardRows.map((row: any) => (
                     <div
-                      key={row[0]}
+                      key={row.reference}
                       className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
                     >
                       <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                        {row[0]}
+                        {row.reference}
                       </span>
                       <span className="text-slate-700 dark:text-slate-200">
-                        {row[1]}
+                        {row.product}
                       </span>
                       <span className="text-slate-500 dark:text-slate-400">
-                        {row[2]}
+                        {row.source}
                       </span>
                       <span className="text-slate-500 dark:text-slate-400">
-                        {row[3]}
+                        {row.destination}
                       </span>
                       <span className="font-bold text-slate-900 dark:text-white">
-                        {row[4]}
+                        {row.qty}
                       </span>
                       <span
                         className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                          row[5] === "Done"
+                          row.status === "Done" || row.status === "সম্পন্ন"
                             ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
-                            : row[5] === "Ready"
+                            : row.status === "Ready" || row.status === "প্রস্তুত"
                               ? "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400"
                               : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
                         }`}
                       >
-                        {row[5]}
+                        {row.status}
                       </span>
                       <span className="text-slate-400 dark:text-slate-500">
-                        {row[6]}
+                        {row.date}
                       </span>
                     </div>
                   ))}
@@ -307,34 +254,34 @@ export default function InventoryLandingSections() {
               <div className="grid grid-cols-2 gap-4 text-left text-xs">
                 <div>
                   <p className="font-bold text-slate-900 dark:text-white">
-                    Forecasted
+                    {t("hero.metrics.forecasted")}
                   </p>
                   <p className="mt-1 text-slate-500 dark:text-slate-400">
-                    12,400 units
+                    {t("hero.metrics.forecastedValue")}
                   </p>
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 dark:text-white">
-                    Available
+                    {t("hero.metrics.available")}
                   </p>
                   <p className="mt-1 text-slate-500 dark:text-slate-400">
-                    9,800 units
+                    {t("hero.metrics.availableValue")}
                   </p>
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 dark:text-white">
-                    Replenishment
+                    {t("hero.metrics.replenishment")}
                   </p>
                   <p className="mt-1 text-slate-500 dark:text-slate-400">
-                    Auto rules
+                    {t("hero.metrics.replenishmentValue")}
                   </p>
                 </div>
                 <div>
                   <p className="font-bold text-slate-900 dark:text-white">
-                    Traceability
+                    {t("hero.metrics.traceability")}
                   </p>
                   <p className="mt-1 text-slate-500 dark:text-slate-400">
-                    Lots / serials
+                    {t("hero.metrics.traceabilityValue")}
                   </p>
                 </div>
               </div>
@@ -345,6 +292,7 @@ export default function InventoryLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Flawless replenishments Section */}
       <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <DashedArrow className="mx-auto mb-8 h-24 w-24 rotate-[-20deg] text-slate-300 dark:text-slate-600" />
@@ -353,47 +301,23 @@ export default function InventoryLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Flawless{" "}
+            {t("replenishmentSection.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-              <span className="dark:text-rose-200">replenishments</span>
+              <span className="dark:text-rose-200">{t("replenishmentSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Never run out of stock again. Forecast needs, automate purchase
-            rules, replenish based on minimum quantities, and keep the right
-            product available at the right time.
+            {t("replenishmentSection.description")}
           </p>
 
           <div className="mx-auto mt-12 max-w-4xl rounded-xl bg-white dark:bg-slate-900 p-8 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
             <div className="grid items-center gap-8 md:grid-cols-3">
-              {[
-                {
-                  title: "Replenishment",
-                  icon: Truck,
-                  color:
-                    "bg-sky-100 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
-                },
-                {
-                  title: "Quality control",
-                  icon: ShieldCheck,
-                  color:
-                    "bg-amber-100 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
-                },
-                {
-                  title: "Storage",
-                  icon: Warehouse,
-                  color:
-                    "bg-rose-100 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
-                },
-              ].map((item, index) => {
-                const Icon = item.icon;
-
+              {replenishmentFeatures.map((item: any, index: number) => {
+                const Icon = getIconComponent(item.icon);
                 return (
                   <div key={item.title} className="relative text-center">
-                    <div
-                      className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${item.color}`}
-                    >
+                    <div className={`mx-auto flex h-16 w-16 items-center justify-center rounded-2xl ${getColorClass(item.color)}`}>
                       <Icon className="h-8 w-8" />
                     </div>
 
@@ -415,6 +339,7 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
+      {/* Speed up receipt, quality control and storage Section */}
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="absolute left-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
@@ -445,28 +370,27 @@ export default function InventoryLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Speed up receipt,{" "}
+              {t("qualitySection.title")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-                <span className="dark:text-amber-200">quality</span>
+                <span className="dark:text-amber-200">{t("qualitySection.titleHighlight")}</span>
               </HandUnderline>
               <br />
-              control and storage
+              {t("qualitySection.titleEnd")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Barcode scanning and smart routes let your warehouse team receive
-              products, verify quality, and put items away quickly and
-              accurately.
+              {t("qualitySection.description")}
             </p>
 
             <FloatingNote
               className="mt-10 z-30"
-              text="Scan faster. Move smarter."
+              text={t("qualitySection.floatingNote")}
             />
           </div>
         </div>
       </section>
 
+      {/* Optimize your warehouse Section */}
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -476,13 +400,11 @@ export default function InventoryLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Optimize your warehouse
+              {t("warehouseSection.title")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Build clean warehouse operations with locations, routes, putaway
-              rules, replenishment rules, picking flows, and transfer
-              management.
+              {t("warehouseSection.description")}
             </p>
           </div>
 
@@ -491,21 +413,15 @@ export default function InventoryLandingSections() {
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 sm:grid-cols-3">
-                {["Receipts", "Pick", "Pack"].map((title, columnIndex) => (
-                  <div
-                    key={title}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
-                  >
+                {warehouseStages.map((title: string, columnIndex: number) => (
+                  <div key={title} className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
                     <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white">
                       {title}
                     </p>
 
                     <div className="space-y-3">
                       {Array.from({ length: 4 }).map((_, index) => (
-                        <div
-                          key={index}
-                          className="rounded-lg bg-white dark:bg-slate-800 p-3 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
-                        >
+                        <div key={index} className="rounded-lg bg-white dark:bg-slate-800 p-3 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                           <p className="text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
                             WH/{columnIndex + 1}0{index + 1}
                           </p>
@@ -524,6 +440,7 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
+      {/* Minimize picking movements Section */}
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <DashedArrow className="mx-auto mb-8 h-24 w-24 -rotate-90 text-slate-300 dark:text-slate-600" />
@@ -533,57 +450,53 @@ export default function InventoryLandingSections() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                Minimize
-              </span>
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">{t("pickingSection.title")}</span>
             </HandUnderline>{" "}
-            picking movements
+            {t("pickingSection.titleHighlight")}
           </h2>
 
           <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Use smart routes, batches, waves, zones, and optimized pick paths to
-            reduce walking time and speed up warehouse operations.
+            {t("pickingSection.description")}
           </p>
 
           <div className="mx-auto mt-14 grid max-w-5xl gap-6 md:grid-cols-3">
-            {["Wave picking", "Cluster picking", "Batch picking"].map(
-              (title, cardIndex) => (
-                <div
-                  key={title}
-                  className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
-                >
-                  <div className="grid h-52 grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
-                    {Array.from({ length: 20 }).map((_, index) => (
-                      <div
-                        key={index}
-                        className={`rounded ${
-                          [2, 8, 13, 17].includes(index + cardIndex)
-                            ? "bg-[#02cfc3] dark:bg-[#02cfc3]/50"
-                            : [4, 11, 18].includes(index + cardIndex)
-                              ? "bg-amber-300 dark:bg-amber-700"
-                              : "bg-slate-200 dark:bg-slate-700"
-                        }`}
-                      />
-                    ))}
-                  </div>
-
-                  <h3
-                    className="mt-5 text-xl font-bold text-slate-900 dark:text-white"
-                    style={{ fontFamily: handwrittenFont }}
-                  >
-                    {title}
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                    Reduce unnecessary walking and pick items in smarter groups.
-                  </p>
+            {pickingTypes.map((type: any, cardIndex: number) => (
+              <div
+                key={type.title}
+                className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
+              >
+                <div className="grid h-52 grid-cols-5 gap-2 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
+                  {Array.from({ length: 20 }).map((_, index) => (
+                    <div
+                      key={index}
+                      className={`rounded ${
+                        [2, 8, 13, 17].includes(index + cardIndex)
+                          ? "bg-[#02cfc3] dark:bg-[#02cfc3]/50"
+                          : [4, 11, 18].includes(index + cardIndex)
+                            ? "bg-amber-300 dark:bg-amber-700"
+                            : "bg-slate-200 dark:bg-slate-700"
+                      }`}
+                    />
+                  ))}
                 </div>
-              ),
-            )}
+
+                <h3
+                  className="mt-5 text-xl font-bold text-slate-900 dark:text-white"
+                  style={{ fontFamily: handwrittenFont }}
+                >
+                  {type.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
+                  {type.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* Packing has never been easier Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
           <div>
@@ -592,15 +505,13 @@ export default function InventoryLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="dark:text-rose-200">Packing</span>
+                <span className="dark:text-rose-200">{t("packingSection.title")}</span>
               </HandUnderline>{" "}
-              has never been easier
+              {t("packingSection.titleHighlight")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Validate transfers, prepare packages, print labels, scan products,
-              and make sure every delivery is accurate before it leaves your
-              warehouse.
+              {t("packingSection.description")}
             </p>
           </div>
 
@@ -618,6 +529,7 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -627,20 +539,14 @@ export default function InventoryLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
-            </span>
-            <br />
-            done{" "}
+            {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">{t("featuresSection.subtitle")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -649,7 +555,6 @@ export default function InventoryLandingSections() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -668,35 +573,28 @@ export default function InventoryLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
-            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
-            </HandUnderline>
+            {t("appsSection.title")}{" "}
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -723,11 +621,12 @@ export default function InventoryLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -771,10 +670,10 @@ export default function InventoryLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -787,9 +686,7 @@ export default function InventoryLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon inventory reduced our logistics spreadsheet work while
-                  making our warehouse easier to manage. The biggest benefit is
-                  real-time stock visibility and fewer manual mistakes.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -801,10 +698,10 @@ export default function InventoryLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Andrew Ross
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Warehouse manager
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -821,72 +718,20 @@ export default function InventoryLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Being organized
+              {t("footerCta.title")}
               <br />
-              never felt so good
+              {t("footerCta.subtitle")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Share information and make connections",
-}: {
-  className?: string;
-  text?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span className="absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] bg-[#02cfc3] dark:bg-[#02cfc3]/30" />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt="User"
-        className="absolute left-3 h-12 w-12 rounded-full object-cover"
-      />
-
-      {text}
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

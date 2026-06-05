@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
@@ -29,62 +30,17 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
-  {
-    title: "Master production schedule",
-    description:
-      "Plan demand, production, components, and expected stock with a clear manufacturing schedule.",
-  },
-  {
-    title: "Powerful yet simple",
-    description:
-      "Manage manufacturing orders, work orders, planning, and quality from one clean interface.",
-  },
-  {
-    title: "Leverage by-products",
-    description:
-      "Produce finished goods and by-products with accurate costing and inventory tracking.",
-  },
-  {
-    title: "Up/down stream traceability",
-    description:
-      "Track components, lots, serial numbers, and finished products across every production step.",
-  },
-  {
-    title: "IoT integrations",
-    description:
-      "Connect shop floor devices, scanners, quality tools, and machines to your manufacturing flow.",
-  },
-];
+// Helper component to get icon by name
+const getIconComponent = (iconName: string) => {
+  const icons: Record<string, React.ElementType> = {
+    BadgeCheck, BarChart3, Warehouse, ClipboardCheck, GitBranch, ShieldCheck,
+    Factory, Recycle, ScanLine, Sparkles, Star, Users, ArrowRight, Play,
+    Boxes, Layers3, PackageCheck, TrendingUp, Zap, FileText,
+  };
+  return icons[iconName] || Factory;
+};
 
-const apps = [
-  {
-    title: "Sales",
-    description: "Forecast customer demand",
-    icon: BarChart3,
-  },
-  {
-    title: "Inventory",
-    description: "Control components",
-    icon: Warehouse,
-  },
-  {
-    title: "Project",
-    description: "Coordinate work",
-    icon: ClipboardCheck,
-  },
-  {
-    title: "PLM",
-    description: "Manage engineering changes",
-    icon: GitBranch,
-  },
-  {
-    title: "Maintenance",
-    description: "Keep equipment running",
-    icon: ShieldCheck,
-  },
-];
-
+// Avatar images array (kept as static since these are image URLs)
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=face",
@@ -98,25 +54,117 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
+function FloatingNote({
+  className = "",
+  text = "Share information and make connections",
+  color = "bg-sky-400",
+}: {
+  className?: string;
+  text?: string;
+  color?: string;
+}) {
+  return (
+    <div
+      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
+    >
+      <span
+        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
+      />
+      <img
+        src={avatars[1]}
+        alt="User"
+        className="absolute left-3 h-12 w-12 rounded-full object-cover"
+      />
+      {text}
+    </div>
+  );
+}
+
+function DashedArrow({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 160 160"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeDasharray="10 14"
+      />
+      <path
+        d="M37 130L57 116M37 130L52 151"
+        stroke="currentColor"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function MRPLandingSections() {
+  const t = useTranslations("pages.mrp");
+
+  const dashboardMenu = t.raw("hero.dashboard.menu");
+  const dashboardStats = t.raw("hero.dashboard.stats");
+  const dashboardOrders = t.raw("hero.dashboard.orders");
+  const simulationRows = t.raw("simulationSection.table.rows");
+  const simulationHeaders = t.raw("simulationSection.table.headers");
+  const planningDays = t.raw("planningSection.days");
+  const planningOps = t.raw("planningSection.operations");
+  const productionSteps = t.raw("productionSection.steps");
+  const paperlessMenu = t.raw("paperlessSection.menuItems");
+  const paperlessComponents = t.raw("paperlessSection.components");
+  const qualityCategories = t.raw("qualitySection.categories");
+  const kaizenSteps = t.raw("kaizenSection.steps");
+  const featuresList = t.raw("featuresSection.features");
+  const appsList = t.raw("appsSection.apps");
+
+  const getStatusColor = (color: string) => {
+    const colorMap: Record<string, string> = {
+      emerald: "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
+      sky: "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
+      amber: "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
+      rose: "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
+    };
+    return colorMap[color] || colorMap.sky;
+  };
+
+  const getBlockColor = (color: string) => {
+    const colorMap: Record<string, string> = {
+      amber: "bg-amber-200 dark:bg-amber-800/50",
+      rose: "bg-rose-200 dark:bg-rose-800/50",
+      sky: "bg-sky-200 dark:bg-sky-800/50",
+      purple: "bg-purple-200 dark:bg-purple-800/50",
+      emerald: "bg-emerald-200 dark:bg-emerald-800/50",
+    };
+    return colorMap[color] || colorMap.sky;
+  };
+
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            The{" "}
+            {t("hero.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="text-sky-500 dark:text-sky-400">future</span>
+              <span className="text-sky-500 dark:text-sky-400">
+                {t("hero.titleHighlight")}
+              </span>
             </HandUnderline>{" "}
-            of MRP
+            {t("hero.titleEnd")}
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Plan, manufacture, control quality, manage shop floor operations,
-            and improve production with a simple modern MRP system.
+            {t("hero.description")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -124,14 +172,14 @@ export default function MRPLandingSections() {
               href="#start"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("hero.startButton")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("hero.demoButton")}
             </Link>
           </div>
 
@@ -148,15 +196,15 @@ export default function MRPLandingSections() {
                       className="text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
                       style={{ fontFamily: handwrittenFont }}
                     >
-                      Manufacturing
+                      {t("hero.dashboard.title")}
                     </span>
                     <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                      Orders / Work Centers / Planning / Quality / Shop Floor
+                      {t("hero.dashboard.subtitle")}
                     </p>
                   </div>
 
                   <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                    Create
+                    {t("hero.dashboard.createButton")}
                   </button>
                 </div>
               </div>
@@ -168,13 +216,7 @@ export default function MRPLandingSections() {
                   </p>
 
                   <div className="mt-5 space-y-2">
-                    {[
-                      "Overview",
-                      "Manufacturing",
-                      "Planning",
-                      "Quality",
-                      "Reporting",
-                    ].map((item, index) => (
+                    {dashboardMenu.map((item: string, index: number) => (
                       <div
                         key={item}
                         className={`rounded-md px-3 py-2 text-xs font-semibold ${
@@ -191,60 +233,19 @@ export default function MRPLandingSections() {
 
                 <div className="mt-5 lg:ml-5 lg:mt-0">
                   <div className="grid gap-4 md:grid-cols-3">
-                    {[
-                      [
-                        "To Produce",
-                        "42",
-                        "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
-                      ],
-                      [
-                        "Waiting",
-                        "18",
-                        "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
-                      ],
-                      [
-                        "Blocked",
-                        "04",
-                        "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
-                      ],
-                    ].map(([label, value, color]) => (
+                    {dashboardStats.map((stat: any) => (
                       <div
-                        key={label}
-                        className={`rounded-lg p-4 text-left ${color}`}
+                        key={stat.label}
+                        className={`rounded-lg p-4 text-left ${getStatusColor(stat.color)}`}
                       >
-                        <p className="text-xs font-bold">{label}</p>
-                        <p className="mt-2 text-2xl font-bold">{value}</p>
+                        <p className="text-xs font-bold">{stat.label}</p>
+                        <p className="mt-2 text-2xl font-bold">{stat.value}</p>
                       </div>
                     ))}
                   </div>
 
                   <div className="mt-5 grid gap-4 md:grid-cols-2">
-                    {[
-                      {
-                        title: "Sofa Assembly",
-                        status: "Ready",
-                        color:
-                          "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
-                      },
-                      {
-                        title: "Wood Cutting",
-                        status: "In Progress",
-                        color:
-                          "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
-                      },
-                      {
-                        title: "Quality Check",
-                        status: "Waiting",
-                        color:
-                          "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
-                      },
-                      {
-                        title: "Final Packaging",
-                        status: "Blocked",
-                        color:
-                          "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
-                      },
-                    ].map((item) => (
+                    {dashboardOrders.map((item: any) => (
                       <div
                         key={item.title}
                         className="rounded-lg bg-white dark:bg-slate-800 p-5 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
@@ -254,7 +255,7 @@ export default function MRPLandingSections() {
                             {item.title}
                           </p>
                           <span
-                            className={`rounded-full px-3 py-1 text-[10px] font-bold ${item.color}`}
+                            className={`rounded-full px-3 py-1 text-[10px] font-bold ${getStatusColor(item.statusColor)}`}
                           >
                             {item.status}
                           </span>
@@ -285,7 +286,7 @@ export default function MRPLandingSections() {
             <FloatingNote
               className="mx-auto mt-12 z-30"
               color="bg-sky-400 dark:bg-sky-800"
-              text="Check all operations in real time"
+              text={t("hero.floatingNote")}
             />
           </div>
         </div>
@@ -293,6 +294,7 @@ export default function MRPLandingSections() {
         <div className="absolute bottom-0 left-0 z-0 h-40 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_45%,100%_0,100%_100%,0_100%)]" />
       </section>
 
+      {/* Real-time simulated operations Section */}
       <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -303,69 +305,58 @@ export default function MRPLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">Real-time</span>
+                <span className="dark:text-sky-200">{t("simulationSection.title")}</span>
               </HandUnderline>{" "}
-              simulated
-              <br />
-              operations
+              {t("simulationSection.titleHighlight")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Simulate manufacturing orders with real-time capacity, inventory,
-              components, work centers, and schedule constraints before
-              execution.
+              {t("simulationSection.description")}
             </p>
           </div>
 
           <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
             <div className="mb-5 flex items-center justify-between">
               <p className="font-bold text-slate-900 dark:text-white">
-                Simulation result
+                {t("simulationSection.table.title")}
               </p>
               <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                Feasible
+                {t("simulationSection.table.badge")}
               </span>
             </div>
 
             <div className="overflow-hidden rounded-lg ring-1 ring-slate-100 dark:ring-slate-700">
               <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                <span>Order</span>
-                <span>Material</span>
-                <span>Stock</span>
-                <span>Time</span>
-                <span>Status</span>
+                {simulationHeaders.map((header: string) => (
+                  <span key={header}>{header}</span>
+                ))}
               </div>
 
-              {[
-                ["MO/1042", "Wood", "Available", "2h", "Ready"],
-                ["MO/1043", "Fabric", "Low", "4h", "Warning"],
-                ["MO/1044", "Foam", "Available", "3h", "Ready"],
-                ["MO/1045", "Paint", "Available", "1h", "Ready"],
-              ].map((row) => (
+              {simulationRows.map((row: any) => (
                 <div
-                  key={row[0]}
+                  key={row.order}
                   className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-left text-xs last:border-0"
                 >
                   <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                    {row[0]}
+                    {row.order}
                   </span>
                   <span className="text-slate-600 dark:text-slate-300">
-                    {row[1]}
+                    {row.material}
                   </span>
                   <span className="text-slate-500 dark:text-slate-400">
-                    {row[2]}
+                    {row.stock}
                   </span>
                   <span className="text-slate-500 dark:text-slate-400">
-                    {row[3]}
+                    {row.time}
                   </span>
                   <span
                     className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                      row[4] === "Ready"
+                      row.status === "Ready" || row.status === "প্রস্তুত"
                         ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
                         : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
                     }`}
                   >
-                    {row[4]}
+                    {row.status}
                   </span>
                 </div>
               ))}
@@ -374,6 +365,7 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
+      {/* Planning that puts you ahead of schedule Section */}
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Factory className="mx-auto h-12 w-12 text-amber-500 dark:text-amber-400" />
@@ -382,79 +374,40 @@ export default function MRPLandingSections() {
             className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Planning that puts you ahead of schedule
+            {t("planningSection.title")}
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Schedule manufacturing orders, reserve components, balance work
-            centers, and see production timing before problems happen.
+            {t("planningSection.description")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-4 text-xs font-bold text-slate-400 dark:text-slate-500">
-                {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
-                  (day) => (
-                    <div key={day}>{day}</div>
-                  ),
-                )}
+                {planningDays.map((day: string) => (
+                  <div key={day}>{day}</div>
+                ))}
               </div>
 
               <div className="mt-5 space-y-4 text-left">
-                {[
-                  {
-                    line: "Wood cutting",
-                    blocks: [
-                      "bg-amber-200 dark:bg-amber-800/50",
-                      "bg-rose-200 dark:bg-rose-800/50",
-                      "bg-sky-200 dark:bg-sky-800/50",
-                    ],
-                  },
-                  {
-                    line: "Assembly",
-                    blocks: [
-                      "bg-sky-200 dark:bg-sky-800/50",
-                      "bg-purple-200 dark:bg-purple-800/50",
-                      "bg-emerald-200 dark:bg-emerald-800/50",
-                    ],
-                  },
-                  {
-                    line: "Quality control",
-                    blocks: [
-                      "bg-emerald-200 dark:bg-emerald-800/50",
-                      "bg-amber-200 dark:bg-amber-800/50",
-                      "bg-rose-200 dark:bg-rose-800/50",
-                    ],
-                  },
-                  {
-                    line: "Packing",
-                    blocks: [
-                      "bg-purple-200 dark:bg-purple-800/50",
-                      "bg-sky-200 dark:bg-sky-800/50",
-                      "bg-amber-200 dark:bg-amber-800/50",
-                    ],
-                  },
-                ].map((row, rowIndex) => (
+                {planningOps.map((op: any, rowIndex: number) => (
                   <div
-                    key={row.line}
+                    key={op.name}
                     className="grid grid-cols-[140px_1fr] items-center gap-4"
                   >
                     <p className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                      {row.line}
+                      {op.name}
                     </p>
 
                     <div className="grid grid-cols-7 gap-2">
                       {Array.from({ length: 7 }).map((_, index) => (
                         <div
                           key={index}
-                          className={`h-12 rounded-md ${
-                            row.blocks[(index + rowIndex) % row.blocks.length]
-                          }`}
+                          className={`h-12 rounded-md ${getBlockColor(op.blocks[(index + rowIndex) % op.blocks.length])}`}
                         >
                           {index % 2 === 0 && (
                             <div className="p-2 text-[10px] font-bold text-slate-700 dark:text-slate-200">
-                              MO/{rowIndex + 1}
-                              {index + 1}
+                              MO/{rowIndex + 1}{index + 1}
                             </div>
                           )}
                         </div>
@@ -468,6 +421,7 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
+      {/* Record production and components Section */}
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="absolute right-0 top-1/2 hidden h-72 w-72 -translate-y-1/2 rounded-l-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
 
@@ -478,23 +432,21 @@ export default function MRPLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">Record</span>
+                <span className="dark:text-sky-200">{t("productionSection.title")}</span>
               </HandUnderline>{" "}
-              production and
+              {t("productionSection.titleHighlight")}
               <br />
-              components
+              {t("productionSection.titleEnd")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Register each production operation, consume components, record
-              finished products, print labels, and keep traceability clean from
-              start to finish.
+              {t("productionSection.description")}
             </p>
 
             <FloatingNote
               className="mt-10 z-30"
               color="bg-sky-400 dark:bg-sky-800"
-              text="Scan, produce, and validate"
+              text={t("productionSection.floatingNote")}
             />
           </div>
 
@@ -503,7 +455,7 @@ export default function MRPLandingSections() {
               className="absolute -top-10 right-4 hidden rotate-[-10deg] text-lg font-bold text-sky-500 dark:text-sky-400 lg:block"
               style={{ fontFamily: handwrittenFont }}
             >
-              Mobile barcode app
+              {t("productionSection.mobileLabel")}
             </p>
 
             <div className="mx-auto max-w-xs rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-[0_30px_90px_rgba(15,23,42,0.16)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
@@ -517,22 +469,18 @@ export default function MRPLandingSections() {
                 </p>
 
                 <div className="mt-5 space-y-3">
-                  {[
-                    "Scan component",
-                    "Start operation",
-                    "Validate quantity",
-                  ].map((item) => (
+                  {productionSteps.map((step: string) => (
                     <div
-                      key={item}
+                      key={step}
                       className="rounded-lg bg-white dark:bg-slate-800 px-4 py-3 text-center text-xs font-bold text-slate-600 dark:text-slate-300 shadow-sm"
                     >
-                      {item}
+                      {step}
                     </div>
                   ))}
                 </div>
 
                 <button className="mt-5 w-full rounded-md bg-[#714b67] px-4 py-3 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  Validate
+                  {t("productionSection.validateButton")}
                 </button>
               </div>
             </div>
@@ -540,6 +488,7 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
+      {/* Become a paperless company Section */}
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative">
@@ -548,7 +497,7 @@ export default function MRPLandingSections() {
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 sm:grid-cols-[180px_1fr]">
                 <div className="space-y-3">
-                  {["BOM", "Routing", "Work order", "Quality"].map((item) => (
+                  {paperlessMenu.map((item: string) => (
                     <div
                       key={item}
                       className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-sm font-bold text-slate-600 dark:text-slate-300"
@@ -561,13 +510,13 @@ export default function MRPLandingSections() {
                 <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
                   <div className="mb-4 h-4 w-40 rounded bg-slate-200 dark:bg-slate-700" />
                   <div className="space-y-3">
-                    {Array.from({ length: 7 }).map((_, index) => (
+                    {paperlessComponents.map((comp: string, idx: number) => (
                       <div
-                        key={index}
+                        key={comp}
                         className="flex items-center justify-between rounded-lg bg-white dark:bg-slate-800 px-4 py-3 shadow-sm"
                       >
                         <span className="text-xs font-bold text-slate-600 dark:text-slate-300">
-                          Component {index + 1}
+                          {comp}
                         </span>
                         <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
                           Ready
@@ -585,25 +534,24 @@ export default function MRPLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Become a{" "}
+              {t("paperlessSection.title")}{" "}
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
                 <span className="text-rose-500 dark:text-rose-400">
-                  paperless
+                  {t("paperlessSection.titleHighlight")}
                 </span>
               </HandUnderline>
               <br />
-              company
+              {t("paperlessSection.titleEnd")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Give operators everything they need directly on screen:
-              instructions, components, checks, drawings, notes, and validation
-              actions.
+              {t("paperlessSection.description")}
             </p>
           </div>
         </div>
       </section>
 
+      {/* Get ready for Six-Sigma level 6 Section */}
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Recycle className="mx-auto h-12 w-12 text-[#02a6a6] dark:text-[#02cfc3]" />
@@ -612,23 +560,21 @@ export default function MRPLandingSections() {
             className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Get ready for{" "}
+            {t("qualitySection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">Six-Sigma</span>
+              <span className="dark:text-[#02cfc3]">{t("qualitySection.titleHighlight")}</span>
             </HandUnderline>{" "}
-            level 6!
+            {t("qualitySection.titleEnd")}
           </h2>
 
           <div className="mx-auto mt-14 grid max-w-5xl items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
             <p className="text-left text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Cut costs, reduce waste, detect quality issues, and ensure every
-              product meets your standards. Track checks directly inside your
-              production process.
+              {t("qualitySection.description")}
             </p>
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="grid gap-4 md:grid-cols-3">
-                {["Checks", "Control Points", "Alerts"].map((title, col) => (
+                {qualityCategories.map((title: string, col: number) => (
                   <div
                     key={title}
                     className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
@@ -667,38 +613,28 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
+      {/* The perfect tool for Kaizen Section */}
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            The perfect tool for{" "}
+            {t("kaizenSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">Kaizen</span>
+              <span className="dark:text-sky-200">{t("kaizenSection.titleHighlight")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mx-auto mt-14 max-w-5xl">
             <div className="grid items-center gap-5 md:grid-cols-5">
-              {[
-                "Work order",
-                "Quality check",
-                "Improvement",
-                "Engineering change",
-                "New flow",
-                "Root cause",
-                "Corrective action",
-                "Validation",
-                "New standard",
-                "Feedback",
-              ].map((item, index) => (
+              {kaizenSteps.map((item: string, index: number) => (
                 <div key={item} className="relative">
                   <div className="rounded-lg bg-white dark:bg-slate-800 p-4 text-sm font-bold text-slate-600 dark:text-slate-300 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                     {item}
                   </div>
 
-                  {index < 9 && (
+                  {index < kaizenSteps.length - 1 && (
                     <ArrowRight className="absolute -right-4 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-slate-300 dark:text-slate-600 md:block" />
                   )}
                 </div>
@@ -708,6 +644,7 @@ export default function MRPLandingSections() {
         </div>
       </section>
 
+      {/* Features Grid Section */}
       <section
         id="features"
         className="rounded-t-[4rem] bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20 sm:py-28"
@@ -717,20 +654,14 @@ export default function MRPLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
-            </span>
-            <br />
-            done{" "}
+            {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">{t("featuresSection.subtitle")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {featuresList.map((feature: any) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -739,7 +670,6 @@ export default function MRPLandingSections() {
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
                     <BadgeCheck className="h-5 w-5" />
                   </div>
-
                   <Star className="h-5 w-5 fill-amber-400 text-amber-400" />
                 </div>
 
@@ -758,35 +688,28 @@ export default function MRPLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("featuresSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* Apps Section */}
       <section className="bg-white dark:bg-slate-950 py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
-            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
-            </HandUnderline>
-            , one{" "}
-            <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
-            </HandUnderline>
+            {t("appsSection.title")}{" "}
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("appsSection.description")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
-              const Icon = app.icon;
-
+            {appsList.map((app: any) => {
+              const Icon = getIconComponent(app.icon);
               return (
                 <div
                   key={app.title}
@@ -813,11 +736,12 @@ export default function MRPLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("appsSection.seeAllLink")} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
           <div className="relative mx-auto min-h-90">
@@ -861,10 +785,10 @@ export default function MRPLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("ctaBanner.title")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("ctaBanner.description")}
               </p>
             </div>
           </div>
@@ -877,8 +801,7 @@ export default function MRPLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Adon allowed our company to efficiently manage a growth from a
-                  turnover of $2.4M to $10M in 4 years.
+                  {t("testimonial.quote")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
@@ -890,10 +813,10 @@ export default function MRPLandingSections() {
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Andrew Morgan
+                      {t("testimonial.name")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Manufacturing director
+                      {t("testimonial.role")}
                     </p>
                   </div>
                 </div>
@@ -910,82 +833,26 @@ export default function MRPLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Unleash
+              {t("footerCta.title")}
               <br />
-              your{" "}
+              {t("footerCta.subtitle")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  growth
+                  {t("footerCta.titleHighlight")}
                 </span>
               </HandUnderline>{" "}
-              potential
+              {t("footerCta.titleEnd")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              Start now
+              {t("footerCta.button")}
             </Link>
-
-            <p className="mt-3 text-xs text-slate-400 dark:text-slate-500"></p>
           </div>
         </div>
       </section>
     </main>
-  );
-}
-
-function FloatingNote({
-  className = "",
-  text = "Share information and make connections",
-  color = "bg-sky-400",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 -z-10 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt="User"
-        className="absolute left-3 h-12 w-12 rounded-full object-cover"
-      />
-
-      {text}
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
   );
 }

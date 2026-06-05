@@ -1,80 +1,80 @@
 {
     "metadata": {
-        "title": "Blog | Adon ERP",
-        "description": "Create beautiful blog posts, connect with your audience, improve SEO, and turn your knowledge into a powerful growth channel."
+        "title": "Smart Blogging & Content Marketing Platform | Adon ERP",
+        "description": "Create beautiful blog posts, connect with your audience, improve SEO, and turn your knowledge into a powerful growth channel for your business."
     },
     "hero": {
-        "title": "Share your",
-        "titleHighlight": "expertise",
-        "description": "Create beautiful blog posts, connect with your audience, improve SEO, and turn your knowledge into a powerful growth channel.",
+        "title": "Share your perfect",
+        "titleHighlight": "business ideas",
+        "description": "Create beautiful blog posts, connect with your audience, improve SEO, and turn your knowledge into a powerful growth channel for your business.",
         "buttons": {
-            "startNow": "Start now",
-            "watchDemo": "Watch a demo"
+            "startNow": "Start for free",
+            "watchDemo": "Watch live demo"
         },
         "featuredPost": {
-            "category": "Travel / Adventure / Blog",
-            "title": "Buying a Telescope"
+            "category": "Business / Growth / Content Marketing",
+            "title": "Modern Ways to Attract Customers in the Digital Age"
         },
         "blogPosts": {
             "post1": {
                 "category": "Marketing",
-                "title": "How to build a creative blog strategy"
+                "title": "How to build a high-converting content strategy"
             },
             "post2": {
                 "category": "Tutorial",
-                "title": "A beginner guide to publishing content"
+                "title": "A beginner's guide to publishing blog content effortlessly"
             },
             "post3": {
-                "category": "Travel",
-                "title": "Travel writing that converts readers"
+                "category": "Business Growth",
+                "title": "How blog writing converts your visitors into customers"
             },
             "post4": {
                 "category": "Design",
-                "title": "Visual storytelling for modern brands"
+                "title": "The role of visual storytelling in modern brand success"
             },
             "post5": {
                 "category": "Business",
-                "title": "Content ideas for business growth"
+                "title": "Effective content ideas to boost sales and revenue fast"
             },
             "post6": {
                 "category": "SEO",
-                "title": "SEO tips for your next article"
+                "title": "10 easy SEO tips to rank first on Google search"
             }
         },
-        "postDescription": "Share your thoughts, stories, and useful ideas with a clean reading experience."
+        "postDescription": "Share your thoughts, business stories, and actionable ideas with a clean and amazing reading experience."
     },
     "editorSection": {
-        "badge": "Write your next story faster",
-        "title": "Explore our text",
-        "titleHighlight": "editor's",
+        "badge": "Write your next article even faster",
+        "title": "Explore the magic of our",
+        "titleHighlight": "advanced text editor",
         "subtitle": "magic",
-        "description": "Write, format, structure, and publish your articles visually with a beautiful editor made for creators and businesses.",
+        "description": "Specially built for content creators and modern businesses. Write, format, structure, and publish your articles visually with our beautiful editor.",
         "blogTools": {
-            "title": "Blog Tools",
-            "text": "Text",
-            "image": "Image",
-            "quote": "Quote",
-            "ctaButton": "CTA button",
-            "gallery": "Gallery",
-            "socialShare": "Social share",
-            "seoPreview": "SEO preview"
+            "title": "Smart Blogging Tools",
+            "text": "Text formatting",
+            "image": "Images & media",
+            "quote": "Engaging quotes",
+            "ctaButton": "High-converting CTA button",
+            "gallery": "Image gallery",
+            "socialShare": "Social media share",
+            "seoPreview": "Instant SEO preview"
         },
         "design": {
-            "title": "Design",
-            "typography": "Typography",
-            "paragraph": "Paragraph",
-            "imageRadius": "Image radius",
-            "spacing": "Spacing",
-            "colors": "Colors",
-            "mobile": "Mobile"
+            "title": "Layout Design",
+            "typography": "Typography (Fonts)",
+            "paragraph": "Paragraph style",
+            "imageRadius": "Image corner radius",
+            "spacing": "Padding & spacing",
+            "colors": "Color palette",
+            "mobile": "Mobile view optimization"
         },
-        "dragDropText": "Drag and drop any block here"
+        "dragDropText": "Drag and drop any content block here"
     },
     "convertSection": {
         "icon": "Zap",
         "title": "Effortlessly",
         "titleHighlight": "convert",
-        "subtitle": "your audience",
+        "subtitle": "your casual readers into customers",
         "plans": {
             "starter": {
                 "name": "Starter Plan",
@@ -88,105 +88,106 @@
             }
         },
         "analyzeBox": {
-            "title": "Analyze this",
-            "description": "Add forms, lead magnets, offers, and call-to-action sections directly inside your articles."
+            "title": "Smart Content Analytics",
+            "description": "Add signup forms, lead magnets, special offers, and attractive call-to-action (CTA) sections directly inside your articles."
         },
         "features": {
-            "title": "Engaging user experience",
-            "description": "Build articles that guide readers toward a next step: subscribe, contact you, download a resource, or purchase your offer.",
+            "title": "Unique User Experience",
+            "description": "Build articles that guide readers toward the next step: subscribe to a newsletter, get in touch, download a free resource, or purchase your product.",
             "ctaBlocks": "Smart CTA blocks",
-            "leadForms": "Lead capture forms",
-            "relatedPosts": "Related posts",
-            "newsletter": "Newsletter signup"
+            "leadForms": "High-converting lead capture forms",
+            "relatedPosts": "Suggested related posts",
+            "newsletter": "Newsletter signup option"
         }
     },
     "seoSection": {
         "icon": "TrendingUp",
-        "title": "Maximize your",
+        "title": "Maximize your site's",
         "titleHighlight": "SEO",
-        "description": "Improve discoverability with metadata, snippets, search previews, internal links, and structured content.",
+        "subtitle": "stronger than ever",
+        "description": "Improve your blog's visibility on Google with accurate metadata, custom snippets, search engine previews, internal linking, and structured content.",
         "settings": {
-            "title": "SEO settings",
-            "metaTitle": "Meta title",
+            "title": "Advanced SEO Settings",
+            "metaTitle": "SEO meta title",
             "metaDescription": "Meta description",
-            "urlSlug": "URL slug",
-            "socialImage": "Social image",
-            "focusKeyword": "Focus keyword"
+            "urlSlug": "SEO-friendly URL slug",
+            "socialImage": "Social media thumbnail",
+            "focusKeyword": "Main focus keyword"
         },
         "searchPreview": {
-            "title": "Search preview",
-            "siteName": "Your Blog Article | Website",
-            "articleTitle": "Buying a Telescope: Complete Guide",
-            "description": "Learn how to choose the right telescope, understand key features, and start exploring the sky."
+            "title": "Google Search Preview",
+            "siteName": "Your Business Blog | Official Website",
+            "articleTitle": "Content Marketing Guide: Easy Ways to Grow Your Business",
+            "description": "Learn how to choose the right content marketing strategy, understand the core features, and start the digital growth of your brand."
         },
-        "badge": "SEO score improved"
+        "badge": "Excellent SEO score!"
     },
     "featuresSection": {
-        "title": "All the",
-        "highlight": "features",
-        "subtitle": "done right.",
+        "title": "All the necessary",
+        "highlight": "advanced features",
+        "subtitle": "done perfectly.",
         "features": {
             "buildingBlocks": {
-                "title": "Building blocks",
-                "description": "Drag, drop, and customize beautiful content blocks to create articles, landing pages, and stories faster."
+                "title": "Easy drag & drop blocks",
+                "description": "Drag, drop, and customize beautiful content blocks to create professional blog posts and landing pages faster."
             },
             "translation": {
-                "title": "Translation",
-                "description": "Create multilingual blog content and connect with readers across different regions."
+                "title": "Multi-language translation",
+                "description": "Create multilingual blog content to easily reach readers in different languages across the globe."
             },
             "boostPlatform": {
-                "title": "Boost in one platform",
-                "description": "Publish your blog articles and manage SEO, social sharing, email campaigns, and analytics in one place."
+                "title": "All-in-one growth platform",
+                "description": "Publish blog articles and manage SEO, social sharing, email campaigns, and customer analytics all from one centralized place."
             },
             "domainName": {
-                "title": "Domain Name",
-                "description": "Use your own domain name and make your blog feel professional and branded."
+                "title": "Custom domain connection",
+                "description": "Use your own branded domain name to give your blog a 100% professional and trusted look."
             },
             "analytics": {
-                "title": "Analytics",
-                "description": "Track views, audience behavior, and performance so you know what content works."
+                "title": "Real-time visitor analytics",
+                "description": "Track total views, reader behavior, and content performance to understand which content brings more sales to your business."
             }
         },
-        "seeAllFeatures": "See all features"
+        "seeAllFeatures": "Explore all features"
     },
     "appsSection": {
-        "title": "One",
-        "needHighlight": "need",
-        "appHighlight": "app",
-        "description": "Expand as you grow with integrated apps that work together.",
+        "title": "Just one",
+        "needHighlight": "all-in-one",
+        "appHighlight": "super app",
+        "description": "As your business expands, add powerful integrated apps with just a single click.",
         "apps": {
             "website": {
-                "title": "Website",
-                "desc": "Create amazing website"
+                "title": "Website Builder",
+                "desc": "Create stunning custom sites"
             },
             "commerce": {
-                "title": "Commerce",
-                "desc": "Sell online"
+                "title": "Ecommerce Platform",
+                "desc": "Sell your products online"
             },
             "socialMarketing": {
                 "title": "Social Marketing",
-                "desc": "Share content"
+                "desc": "Auto-share content on social media"
             },
             "emailMarketing": {
                 "title": "Email Marketing",
-                "desc": "Send newsletters"
+                "desc": "Send newsletters & promotional emails"
             }
         },
         "seeAllApps": "See all apps"
     },
     "ctaSection": {
-        "title": "Join 15 million users",
-        "description": "who grow their business with Adon",
+        "title": "Join over 15 million successful entrepreneurs",
+        "description": "who trust Adon ERP to grow their brand awareness and content marketing.",
         "testimonial": {
-            "quote": "Adon replaced multiple applications in one. With better productivity, powerful easy access to centralized information, and simplified processes.",
+            "quote": "Adon saved us the cost of maintaining multiple separate software applications. Its centralized content system and seamless email-SEO integration have multiplied our marketing team's productivity.",
             "name": "Robert Chen",
-            "title": "Content strategist"
+            "title": "Content Strategist"
         }
     },
     "getStartedSection": {
-        "title": "Unleash",
-        "titleHighlight": "growth",
-        "subtitle": "your growth potential",
-        "button": "Start now"
+        "title": "Unlock your business",
+        "titleHighlight": "digital growth",
+        "subtitle": "Ensure a gateway to new possibilities today!",
+        "button": "Start now for free"
     }
 }

@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "title": "Manufacturing MRP | AdonERP",
+    "description": "AI-powered manufacturing and MRP platform for all your production operations — from master production scheduling and work orders to quality control, shop floor management, and traceability."
+  },
+  "hero": {
+    "title": "The",
+    "titleHighlight": "future",
+    "titleEnd": "of MRP",
+    "description": "Plan, manufacture, control quality, manage shop floor operations, and improve production with a simple modern MRP system.",
+    "startButton": "Start now",
+    "demoButton": "Watch a demo",
+    "dashboard": {
+      "title": "Manufacturing",
+      "subtitle": "Orders / Work Centers / Planning / Quality / Shop Floor",
+      "createButton": "Create",
+      "menu": ["Overview", "Manufacturing", "Planning", "Quality", "Reporting"],
+      "stats": [
+        { "label": "To Produce", "value": "42", "color": "sky" },
+        { "label": "Waiting", "value": "18", "color": "amber" },
+        { "label": "Blocked", "value": "04", "color": "rose" }
+      ],
+      "orders": [
+        { "title": "Sofa Assembly", "status": "Ready", "statusColor": "emerald" },
+        { "title": "Wood Cutting", "status": "In Progress", "statusColor": "sky" },
+        { "title": "Quality Check", "status": "Waiting", "statusColor": "amber" },
+        { "title": "Final Packaging", "status": "Blocked", "statusColor": "rose" }
+      ]
+    },
+    "floatingNote": "Check all operations in real time"
+  },
+  "simulationSection": {
+    "title": "Real-time",
+    "titleHighlight": "simulated operations",
+    "description": "Simulate manufacturing orders with real-time capacity, inventory, components, work centers, and schedule constraints before execution.",
+    "table": {
+      "title": "Simulation result",
+      "badge": "Feasible",
+      "headers": ["Order", "Material", "Stock", "Time", "Status"],
+      "rows": [
+        { "order": "MO/1042", "material": "Wood", "stock": "Available", "time": "2h", "status": "Ready" },
+        { "order": "MO/1043", "material": "Fabric", "stock": "Low", "time": "4h", "status": "Warning" },
+        { "order": "MO/1044", "material": "Foam", "stock": "Available", "time": "3h", "status": "Ready" },
+        { "order": "MO/1045", "material": "Paint", "stock": "Available", "time": "1h", "status": "Ready" }
+      ]
+    }
+  },
+  "planningSection": {
+    "title": "Planning that puts you ahead of schedule",
+    "description": "Schedule manufacturing orders, reserve components, balance work centers, and see production timing before problems happen.",
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "operations": [
+      { "name": "Wood cutting", "blocks": ["amber", "rose", "sky"] },
+      { "name": "Assembly", "blocks": ["sky", "purple", "emerald"] },
+      { "name": "Quality control", "blocks": ["emerald", "amber", "rose"] },
+      { "name": "Packing", "blocks": ["purple", "sky", "amber"] }
+    ]
+  },
+  "productionSection": {
+    "title": "Record",
+    "titleHighlight": "production and",
+    "titleEnd": "components",
+    "description": "Register each production operation, consume components, record finished products, print labels, and keep traceability clean from start to finish.",
+    "floatingNote": "Scan, produce, and validate",
+    "mobileLabel": "Mobile barcode app",
+    "steps": ["Scan component", "Start operation", "Validate quantity"],
+    "validateButton": "Validate"
+  },
+  "paperlessSection": {
+    "title": "Become a",
+    "titleHighlight": "paperless",
+    "titleEnd": "company",
+    "description": "Give operators everything they need directly on screen: instructions, components, checks, drawings, notes, and validation actions.",
+    "menuItems": ["BOM", "Routing", "Work order", "Quality"],
+    "components": ["Component 1", "Component 2", "Component 3", "Component 4", "Component 5", "Component 6", "Component 7"]
+  },
+  "qualitySection": {
+    "title": "Get ready for",
+    "titleHighlight": "Six-Sigma",
+    "titleEnd": "level 6!",
+    "description": "Cut costs, reduce waste, detect quality issues, and ensure every product meets your standards. Track checks directly inside your production process.",
+    "categories": ["Checks", "Control Points", "Alerts"]
+  },
+  "kaizenSection": {
+    "title": "The perfect tool for",
+    "titleHighlight": "Kaizen",
+    "steps": [
+      "Work order", "Quality check", "Improvement", "Engineering change",
+      "New flow", "Root cause", "Corrective action", "Validation", "New standard", "Feedback"
+    ]
+  },
+  "featuresSection": {
+    "title": "All the features",
+    "subtitle": "right.",
+    "features": [
+      {
+        "title": "Master production schedule",
+        "description": "Plan demand, production, components, and expected stock with a clear manufacturing schedule.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Powerful yet simple",
+        "description": "Manage manufacturing orders, work orders, planning, and quality from one clean interface.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Leverage by-products",
+        "description": "Produce finished goods and by-products with accurate costing and inventory tracking.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "Up/down stream traceability",
+        "description": "Track components, lots, serial numbers, and finished products across every production step.",
+        "icon": "BadgeCheck"
+      },
+      {
+        "title": "IoT integrations",
+        "description": "Connect shop floor devices, scanners, quality tools, and machines to your manufacturing flow.",
+        "icon": "BadgeCheck"
+      }
+    ],
+    "seeAllLink": "See all features"
+  },
+  "appsSection": {
+    "title": "One need, one app.",
+    "description": "Expand as you grow.",
+    "apps": [
+      { "title": "Sales", "description": "Forecast customer demand", "icon": "BarChart3" },
+      { "title": "Inventory", "description": "Control components", "icon": "Warehouse" },
+      { "title": "Project", "description": "Coordinate work", "icon": "ClipboardCheck" },
+      { "title": "PLM", "description": "Manage engineering changes", "icon": "GitBranch" },
+      { "title": "Maintenance", "description": "Keep equipment running", "icon": "ShieldCheck" }
+    ],
+    "seeAllLink": "See all Apps"
+  },
+  "ctaBanner": {
+    "title": "Join 15 million users",
+    "description": "who grow their business with Adon"
+  },
+  "testimonial": {
+    "quote": "Adon allowed our company to efficiently manage a growth from a turnover of $2.4M to $10M in 4 years.",
+    "name": "Andrew Morgan",
+    "role": "Manufacturing director"
+  },
+  "footerCta": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "titleHighlight": "growth",
+    "titleEnd": "potential",
+    "button": "Start now"
+  }
+}

@@ -97,7 +97,6 @@ const appsMegaMenu: MegaMenuColumn[] = [
         href: "/apps/supply-chain/maintenance",
       },
       { labelKey: "menu.apps.quality", href: "/apps/supply-chain/quality" },
-      { labelKey: "menu.apps.barcode", href: "/apps/supply-chain/barcode" },
     ],
   },
   {
