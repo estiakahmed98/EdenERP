@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -418,7 +416,7 @@ export default function Header() {
     function onResize() {
       updateMobileDrawerTop();
 
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1280) {
         setMobileMenuOpen(false);
         setMobileOpenMenu(null);
       }
@@ -440,19 +438,10 @@ export default function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group inline-flex min-w-0 items-center gap-1 transition-transform duration-300 hover:scale-105"
+          className="group inline-flex min-w-0 shrink items-center gap-1 transition-transform duration-300"
         >
-          <Image
-            src="/icon.svg"
-            alt="Adon ERP icon"
-            width={30}
-            height={30}
-            className="mr-1.5 h-8 w-8 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105 sm:mr-2 sm:h-10 sm:w-10"
-            priority
-          />
-
           <span
-            className="relative inline-block whitespace-nowrap bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-2xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105 sm:text-3xl"
+            className="relative inline-block whitespace-nowrap bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 sm:text-2xl xl:text-3xl"
             style={{
               fontFamily:
                 '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
@@ -462,7 +451,7 @@ export default function Header() {
           </span>
 
           <span
-            className="relative inline-block whitespace-nowrap bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-3xl font-black uppercase tracking-wide text-transparent sm:text-4xl"
+            className="relative inline-block whitespace-nowrap bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-2xl font-black uppercase tracking-wide text-transparent sm:text-3xl xl:text-4xl"
             style={{
               fontFamily:
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
@@ -472,7 +461,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <div ref={desktopNavRef} className="hidden items-center gap-7 md:flex">
+        <div ref={desktopNavRef} className="hidden items-center gap-6 xl:flex">
           {navItems.map((item) => (
             <div key={item.href} className="relative">
               {item.megaMenu ? (
@@ -565,18 +554,17 @@ export default function Header() {
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <LanguageSwitcher variant="desktop" />
-
           <button
             type="button"
             aria-label={t("mobileMenuLabel")}
-            className="rounded-xl p-2 text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground md:hidden"
+            className="rounded-xl p-2 text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground xl:hidden"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
 
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 xl:flex">
+            <LanguageSwitcher variant="desktop" />
             <ThemeSwitcher variant="desktop" />
 
             <div className="flex items-center gap-3 rounded-xl bg-primary text-primary-foreground">
@@ -593,7 +581,7 @@ export default function Header() {
 
       {mobileMenuOpen && (
         <div
-          className="fixed inset-x-0 z-50 overflow-x-hidden overflow-y-auto border-t border-border bg-background px-4 py-5 md:hidden"
+          className="fixed inset-x-0 z-50 overflow-x-hidden overflow-y-auto border-t border-border bg-background px-4 py-5 xl:hidden"
           style={{
             top: mobileDrawerTop,
             maxHeight:
