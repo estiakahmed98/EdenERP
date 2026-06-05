@@ -16,7 +16,7 @@
     ],
     "badges": {
       "bestValueTitle": "Best value",
-      "bestValuePlan": "Professional plan",
+      "bestValuePlan": "Growth plan",
       "scaleReadyTitle": "Scale-ready",
       "scaleReadyDescription": "Add modules anytime"
     },
@@ -26,16 +26,16 @@
       "currentPlanName": "Professional",
       "metrics": [
         {
-          "value": 100,
+          "value": 25,
           "label": "Users"
         },
         {
-          "value": 1024,
+          "value": 500,
           "label": "Storage (GB)"
         },
         {
-          "value": 24,
-          "label": "Visibility"
+          "value": 12,
+          "label": "Automation Rules"
         }
       ],
       "cards": {
@@ -77,45 +77,73 @@
     },
     "popularBadge": "Most Popular",
     "annualSavings": "You save 20% with annual billing",
-    "featuresIncluded": "Features included:"
+    "featuresIncluded": "Features included:",
+    "moreFeatures": "+{count} more included"
   },
   "plans": [
     {
-      "id": "starter",
-      "name": "Starter",
-      "badge": "For startups",
-      "monthlyPrice": 29,
-      "annualPrice": 278,
+      "id": "launch",
+      "name": "Launch",
+      "badge": "For lean teams",
+      "monthlyPrice": 49,
+      "annualPrice": 470,
       "periodMonthly": "/month",
       "periodAnnual": "/year",
-      "description": "A focused workspace for small teams starting with CRM, tasks, sales, and basic reporting.",
+      "description": "A clean starting point for small businesses that need core CRM, sales, invoicing, and daily collaboration in one workspace.",
       "icon": "users",
-      "color": "from-violet-600 to-fuchsia-500",
-      "softBg": "bg-violet-50",
-      "iconText": "text-violet-600",
+      "color": "from-cyan-500 to-sky-500",
+      "softBg": "bg-cyan-50",
+      "iconText": "text-cyan-600",
+      "cta": "Start Now",
+      "href": "/contact",
+      "highlighted": false,
+      "spotlight": "4 users included",
+      "features": [
+        "Up to 4 users",
+        "20GB secure storage",
+        "CRM contacts and pipeline",
+        "Tasks, calendar, and follow-ups",
+        "Quotations and invoices",
+        "Basic finance dashboard",
+        "Email support"
+      ]
+    },
+    {
+      "id": "starter",
+      "name": "Starter",
+      "badge": "For growing teams",
+      "monthlyPrice": 99,
+      "annualPrice": 950,
+      "periodMonthly": "/month",
+      "periodAnnual": "/year",
+      "description": "Designed for teams that need more users, deeper visibility, and stronger day-to-day execution across sales and operations.",
+      "icon": "layers3",
+      "color": "from-emerald-500 to-teal-500",
+      "softBg": "bg-emerald-50",
+      "iconText": "text-emerald-600",
       "cta": "Get Started",
       "href": "/contact",
       "highlighted": false,
       "features": [
         "Up to 10 users",
-        "10GB secure storage",
-        "CRM and client pipeline",
+        "100GB secure storage",
+        "CRM and sales pipeline",
         "Task and project management",
-        "Basic sales tracking",
-        "Email support",
-        "Basic analytics dashboard",
-        "Standard role access"
+        "Sales orders and invoice flow",
+        "Standard reports",
+        "Email and chat support",
+        "Role-based access"
       ]
     },
     {
-      "id": "professional",
-      "name": "Professional",
-      "badge": "Most Popular",
-      "monthlyPrice": 99,
-      "annualPrice": 950,
+      "id": "growth",
+      "name": "Growth",
+      "badge": "Best value",
+      "monthlyPrice": 149,
+      "annualPrice": 1430,
       "periodMonthly": "/month",
       "periodAnnual": "/year",
-      "description": "Advanced automation, integrations, reports, and team visibility for fast-growing operations.",
+      "description": "Built for ambitious teams that want automation, stronger reporting, and connected workflows without jumping to enterprise pricing.",
       "icon": "zap",
       "color": "from-primary via-fuchsia-600 to-amber-500",
       "softBg": "bg-primary/10",
@@ -124,16 +152,44 @@
       "href": "/contact",
       "highlighted": true,
       "features": [
-        "Up to 100 users",
-        "1TB secure storage",
+        "Up to 25 users",
+        "500GB secure storage",
         "Advanced CRM and automation",
-        "Inventory and sales reports",
-        "Custom integrations and API access",
+        "Inventory and purchase workflows",
+        "Sales, stock, and finance reports",
+        "API and webhooks access",
         "Priority support",
-        "SSO and SAML options",
         "Custom branding",
         "Approval workflows",
         "Advanced activity logs"
+      ]
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "badge": "For scaling operations",
+      "monthlyPrice": 249,
+      "annualPrice": 2390,
+      "periodMonthly": "/month",
+      "periodAnnual": "/year",
+      "description": "For teams running multiple departments, heavier approvals, deeper reporting, and more operational complexity every day.",
+      "icon": "rocket",
+      "color": "from-indigo-600 via-primary to-amber-500",
+      "softBg": "bg-indigo-50",
+      "iconText": "text-indigo-600",
+      "cta": "Scale With Adon",
+      "href": "/contact",
+      "highlighted": false,
+      "features": [
+        "Up to 60 users",
+        "1TB secure storage",
+        "Advanced CRM, sales, and inventory",
+        "Multi-warehouse operations",
+        "Advanced dashboards and exports",
+        "Custom integrations",
+        "Priority onboarding support",
+        "SSO and audit visibility",
+        "Approval chains and permissions"
       ]
     },
     {
@@ -193,72 +249,109 @@
     "title": "Compare every plan clearly.",
     "description": "Review users, storage, automation, integrations, branding, and support before choosing the right plan for your team.",
     "headers": {
-      "feature": "Feature",
-      "starter": "Starter",
-      "professional": "Professional",
-      "enterprise": "Enterprise"
+      "feature": "Feature"
     }
   },
   "comparison": [
     {
       "feature": "Users",
-      "starter": "10",
-      "professional": "100",
-      "enterprise": "Unlimited"
+      "values": {
+        "launch": "4",
+        "starter": "10",
+        "growth": "25",
+        "professional": "60",
+        "enterprise": "Unlimited"
+      }
     },
     {
       "feature": "Storage",
-      "starter": "10GB",
-      "professional": "1TB",
-      "enterprise": "Unlimited"
+      "values": {
+        "launch": "20GB",
+        "starter": "100GB",
+        "growth": "500GB",
+        "professional": "1TB",
+        "enterprise": "Unlimited"
+      }
     },
     {
       "feature": "CRM Pipeline",
-      "starter": "Basic",
-      "professional": "Advanced",
-      "enterprise": "Custom"
+      "values": {
+        "launch": "Essential",
+        "starter": "Standard",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "Task Management",
-      "starter": "Included",
-      "professional": "Advanced",
-      "enterprise": "Advanced"
+      "values": {
+        "launch": "Included",
+        "starter": "Included",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Advanced"
+      }
     },
     {
       "feature": "Inventory Management",
-      "starter": "Basic",
-      "professional": "Included",
-      "enterprise": "Advanced"
+      "values": {
+        "launch": "Basic",
+        "starter": "Standard",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "Automation",
-      "starter": "Limited",
-      "professional": "Included",
-      "enterprise": "Advanced"
+      "values": {
+        "launch": "Basic",
+        "starter": "Standard",
+        "growth": "Included",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "API Access",
-      "starter": false,
-      "professional": true,
-      "enterprise": true
+      "values": {
+        "launch": false,
+        "starter": false,
+        "growth": true,
+        "professional": true,
+        "enterprise": true
+      }
     },
     {
       "feature": "Custom Branding",
-      "starter": false,
-      "professional": true,
-      "enterprise": true
+      "values": {
+        "launch": false,
+        "starter": false,
+        "growth": true,
+        "professional": true,
+        "enterprise": true
+      }
     },
     {
       "feature": "Approval Workflows",
-      "starter": "Basic",
-      "professional": "Advanced",
-      "enterprise": "Custom"
+      "values": {
+        "launch": "Basic",
+        "starter": "Standard",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "Support",
-      "starter": "Email",
-      "professional": "Priority",
-      "enterprise": "24/7 Dedicated"
+      "values": {
+        "launch": "Email",
+        "starter": "Email + Chat",
+        "growth": "Priority",
+        "professional": "Priority + Onboarding",
+        "enterprise": "24/7 Dedicated"
+      }
     }
   ],
   "addonsSection": {

@@ -16,7 +16,7 @@
     ],
     "badges": {
       "bestValueTitle": "সেরা ভ্যালু",
-      "bestValuePlan": "Professional প্ল্যান",
+      "bestValuePlan": "Growth প্ল্যান",
       "scaleReadyTitle": "স্কেল-রেডি",
       "scaleReadyDescription": "যেকোনো সময় মডিউল যোগ করুন"
     },
@@ -26,16 +26,16 @@
       "currentPlanName": "Professional",
       "metrics": [
         {
-          "value": 100,
+          "value": 25,
           "label": "ব্যবহারকারী"
         },
         {
-          "value": 1024,
+          "value": 500,
           "label": "স্টোরেজ (GB)"
         },
         {
-          "value": 24,
-          "label": "ভিজিবিলিটি"
+          "value": 12,
+          "label": "অটোমেশন রুল"
         }
       ],
       "cards": {
@@ -77,45 +77,73 @@
     },
     "popularBadge": "সবচেয়ে জনপ্রিয়",
     "annualSavings": "বার্ষিক বিলিংয়ে আপনি ২০% সাশ্রয় করবেন",
-    "featuresIncluded": "অন্তর্ভুক্ত ফিচার:"
+    "featuresIncluded": "অন্তর্ভুক্ত ফিচার:",
+    "moreFeatures": "+আরও {count}টি অন্তর্ভুক্ত"
   },
   "plans": [
     {
-      "id": "starter",
-      "name": "Starter",
-      "badge": "স্টার্টআপের জন্য",
-      "monthlyPrice": 29,
-      "annualPrice": 278,
+      "id": "launch",
+      "name": "Launch",
+      "badge": "ছোট টিমের জন্য",
+      "monthlyPrice": 49,
+      "annualPrice": 470,
       "periodMonthly": "/মাস",
       "periodAnnual": "/বছর",
-      "description": "CRM, tasks, sales এবং basic reporting দিয়ে শুরু করা ছোট টিমের জন্য একটি ফোকাসড ওয়ার্কস্পেস।",
+      "description": "যেসব ছোট ব্যবসা CRM, sales, invoicing এবং দৈনন্দিন collaboration একসাথে শুরু করতে চায়, তাদের জন্য পরিষ্কার একটি শুরু।",
       "icon": "users",
-      "color": "from-violet-600 to-fuchsia-500",
-      "softBg": "bg-violet-50",
-      "iconText": "text-violet-600",
+      "color": "from-cyan-500 to-sky-500",
+      "softBg": "bg-cyan-50",
+      "iconText": "text-cyan-600",
+      "cta": "এখনই শুরু করুন",
+      "href": "/contact",
+      "highlighted": false,
+      "spotlight": "৪ users অন্তর্ভুক্ত",
+      "features": [
+        "সর্বোচ্চ ৪ ব্যবহারকারী",
+        "২০GB সিকিউর স্টোরেজ",
+        "CRM contacts ও pipeline",
+        "Tasks, calendar ও follow-ups",
+        "Quotations ও invoices",
+        "বেসিক finance dashboard",
+        "ইমেইল সাপোর্ট"
+      ]
+    },
+    {
+      "id": "starter",
+      "name": "Starter",
+      "badge": "বর্ধনশীল টিমের জন্য",
+      "monthlyPrice": 99,
+      "annualPrice": 950,
+      "periodMonthly": "/মাস",
+      "periodAnnual": "/বছর",
+      "description": "যেসব টিম বেশি ব্যবহারকারী, ভালো visibility এবং sales ও operations-এর জন্য শক্তিশালী daily workflow চায় তাদের জন্য তৈরি।",
+      "icon": "layers3",
+      "color": "from-emerald-500 to-teal-500",
+      "softBg": "bg-emerald-50",
+      "iconText": "text-emerald-600",
       "cta": "শুরু করুন",
       "href": "/contact",
       "highlighted": false,
       "features": [
         "সর্বোচ্চ ১০ ব্যবহারকারী",
-        "১০GB সিকিউর স্টোরেজ",
-        "CRM এবং ক্লায়েন্ট পাইপলাইন",
+        "১০০GB সিকিউর স্টোরেজ",
+        "CRM ও sales pipeline",
         "টাস্ক ও প্রজেক্ট ম্যানেজমেন্ট",
-        "বেসিক সেলস ট্র্যাকিং",
-        "ইমেইল সাপোর্ট",
-        "বেসিক অ্যানালিটিক্স ড্যাশবোর্ড",
-        "স্ট্যান্ডার্ড রোল অ্যাক্সেস"
+        "Sales orders ও invoice flow",
+        "স্ট্যান্ডার্ড রিপোর্ট",
+        "ইমেইল ও chat support",
+        "Role-based access"
       ]
     },
     {
-      "id": "professional",
-      "name": "Professional",
-      "badge": "সবচেয়ে জনপ্রিয়",
-      "monthlyPrice": 99,
-      "annualPrice": 950,
+      "id": "growth",
+      "name": "Growth",
+      "badge": "সেরা ভ্যালু",
+      "monthlyPrice": 149,
+      "annualPrice": 1430,
       "periodMonthly": "/মাস",
       "periodAnnual": "/বছর",
-      "description": "দ্রুত-বর্ধনশীল অপারেশনের জন্য advanced automation, integrations, reports এবং team visibility।",
+      "description": "যেসব টিম automation, শক্তিশালী reporting এবং connected workflow চায় কিন্তু enterprise pricing-এ যেতে চায় না, তাদের জন্য উপযুক্ত।",
       "icon": "zap",
       "color": "from-primary via-fuchsia-600 to-amber-500",
       "softBg": "bg-primary/10",
@@ -124,16 +152,44 @@
       "href": "/contact",
       "highlighted": true,
       "features": [
-        "সর্বোচ্চ ১০০ ব্যবহারকারী",
-        "১TB সিকিউর স্টোরেজ",
+        "সর্বোচ্চ ২৫ ব্যবহারকারী",
+        "৫০০GB সিকিউর স্টোরেজ",
         "অ্যাডভান্সড CRM ও অটোমেশন",
-        "ইনভেন্টরি ও সেলস রিপোর্ট",
-        "কাস্টম ইন্টিগ্রেশন ও API অ্যাক্সেস",
+        "Inventory ও purchase workflows",
+        "Sales, stock ও finance reports",
+        "API ও webhooks access",
         "প্রায়োরিটি সাপোর্ট",
-        "SSO ও SAML অপশন",
         "কাস্টম ব্র্যান্ডিং",
         "অ্যাপ্রুভাল ওয়ার্কফ্লো",
         "অ্যাডভান্সড অ্যাক্টিভিটি লগ"
+      ]
+    },
+    {
+      "id": "professional",
+      "name": "Professional",
+      "badge": "স্কেলিং অপারেশনের জন্য",
+      "monthlyPrice": 249,
+      "annualPrice": 2390,
+      "periodMonthly": "/মাস",
+      "periodAnnual": "/বছর",
+      "description": "যেসব টিম multiple departments, heavier approvals, deeper reporting এবং আরও complex operations চালায়, তাদের জন্য।",
+      "icon": "rocket",
+      "color": "from-indigo-600 via-primary to-amber-500",
+      "softBg": "bg-indigo-50",
+      "iconText": "text-indigo-600",
+      "cta": "Adon-এর সাথে স্কেল করুন",
+      "href": "/contact",
+      "highlighted": false,
+      "features": [
+        "সর্বোচ্চ ৬০ ব্যবহারকারী",
+        "১TB সিকিউর স্টোরেজ",
+        "অ্যাডভান্সড CRM, sales ও inventory",
+        "Multi-warehouse operations",
+        "অ্যাডভান্সড dashboards ও exports",
+        "Custom integrations",
+        "Priority onboarding support",
+        "SSO ও audit visibility",
+        "Approval chains ও permissions"
       ]
     },
     {
@@ -193,72 +249,109 @@
     "title": "প্রতিটি প্ল্যান পরিষ্কারভাবে তুলনা করুন।",
     "description": "টিমের জন্য সঠিক প্ল্যান বেছে নেওয়ার আগে users, storage, automation, integrations, branding এবং support পর্যালোচনা করুন।",
     "headers": {
-      "feature": "ফিচার",
-      "starter": "Starter",
-      "professional": "Professional",
-      "enterprise": "Enterprise"
+      "feature": "ফিচার"
     }
   },
   "comparison": [
     {
       "feature": "ব্যবহারকারী",
-      "starter": "10",
-      "professional": "100",
-      "enterprise": "Unlimited"
+      "values": {
+        "launch": "4",
+        "starter": "10",
+        "growth": "25",
+        "professional": "60",
+        "enterprise": "Unlimited"
+      }
     },
     {
       "feature": "স্টোরেজ",
-      "starter": "10GB",
-      "professional": "1TB",
-      "enterprise": "Unlimited"
+      "values": {
+        "launch": "20GB",
+        "starter": "100GB",
+        "growth": "500GB",
+        "professional": "1TB",
+        "enterprise": "Unlimited"
+      }
     },
     {
       "feature": "CRM Pipeline",
-      "starter": "Basic",
-      "professional": "Advanced",
-      "enterprise": "Custom"
+      "values": {
+        "launch": "Essential",
+        "starter": "Standard",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "Task Management",
-      "starter": "Included",
-      "professional": "Advanced",
-      "enterprise": "Advanced"
+      "values": {
+        "launch": "Included",
+        "starter": "Included",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Advanced"
+      }
     },
     {
       "feature": "Inventory Management",
-      "starter": "Basic",
-      "professional": "Included",
-      "enterprise": "Advanced"
+      "values": {
+        "launch": "Basic",
+        "starter": "Standard",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "Automation",
-      "starter": "Limited",
-      "professional": "Included",
-      "enterprise": "Advanced"
+      "values": {
+        "launch": "Basic",
+        "starter": "Standard",
+        "growth": "Included",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "API Access",
-      "starter": false,
-      "professional": true,
-      "enterprise": true
+      "values": {
+        "launch": false,
+        "starter": false,
+        "growth": true,
+        "professional": true,
+        "enterprise": true
+      }
     },
     {
       "feature": "Custom Branding",
-      "starter": false,
-      "professional": true,
-      "enterprise": true
+      "values": {
+        "launch": false,
+        "starter": false,
+        "growth": true,
+        "professional": true,
+        "enterprise": true
+      }
     },
     {
       "feature": "Approval Workflows",
-      "starter": "Basic",
-      "professional": "Advanced",
-      "enterprise": "Custom"
+      "values": {
+        "launch": "Basic",
+        "starter": "Standard",
+        "growth": "Advanced",
+        "professional": "Advanced",
+        "enterprise": "Custom"
+      }
     },
     {
       "feature": "Support",
-      "starter": "Email",
-      "professional": "Priority",
-      "enterprise": "24/7 Dedicated"
+      "values": {
+        "launch": "Email",
+        "starter": "Email + Chat",
+        "growth": "Priority",
+        "professional": "Priority + Onboarding",
+        "enterprise": "24/7 Dedicated"
+      }
     }
   ],
   "addonsSection": {
