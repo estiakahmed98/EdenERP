@@ -779,7 +779,6 @@ export default function LiveChatLandingSections() {
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3]" />
             </span>
             <br />
-            {t("featuresSection.subtitle")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span>{t("featuresSection.subtitle")}</span>
             </HandUnderline>
