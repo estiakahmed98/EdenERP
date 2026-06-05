@@ -319,12 +319,6 @@ export default function IoTDefencePage() {
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">features</span>
-              <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
-            </span>
-            <br />
-            done{" "}
-            <span className="relative inline-block">
               <span className="relative z-10">{t("featuresSection.subtitle")}</span>
               <span className="absolute -bottom-2 left-0 h-2 w-full rounded-full bg-sky-400 dark:bg-sky-500" />
             </span>
@@ -371,13 +365,6 @@ export default function IoTDefencePage() {
             }}
           >
             {t("appsSection.title")}{" "}
-            <span className="border-b-4 border-sky-300 dark:border-sky-600">
-              need
-            </span>
-            , one{" "}
-            <span className="border-b-4 border-sky-300 dark:border-sky-600">
-              app.
-            </span>
           </h2>
 
           <p className="mt-4 text-slate-600 dark:text-slate-300">
