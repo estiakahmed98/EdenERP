@@ -83,6 +83,11 @@ type PreviewMetric = {
   label: string;
 };
 
+type PriceDisplay = {
+  value: string;
+  currencyLabel: string;
+};
+
 const planIcons = {
   users: Users,
   zap: Zap,
@@ -143,6 +148,7 @@ export default function PricingClient() {
   const actionT = useTranslations("common.actions");
   const stateT = useTranslations("common.states");
   const locale = useLocale();
+  const isBangla = locale === "bn";
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
 
   const isAnnual = billingCycle === "annually";
@@ -158,17 +164,36 @@ export default function PricingClient() {
     plans.find((plan) => plan.id === "professional") ??
     plans[0];
 
-  function formatCurrency(amount: number) {
+  function formatAmount(amount: number) {
     return new Intl.NumberFormat(locale, {
-      style: "currency",
-      currency: "USD",
       minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
       maximumFractionDigits: Number.isInteger(amount) ? 0 : 2,
     }).format(amount);
   }
 
-  function formatPlanPrice(amount: number | null) {
-    return amount === null ? stateT("custom") : formatCurrency(amount);
+  function getPriceDisplay(amount: number | null): PriceDisplay {
+    if (amount === null) {
+      return { value: stateT("custom"), currencyLabel: "" };
+    }
+
+    if (isBangla) {
+      return {
+        value: formatAmount(amount),
+        currencyLabel: "ডলার",
+      };
+    }
+
+    return {
+      value: `$${formatAmount(amount)}`,
+      currencyLabel: "",
+    };
+  }
+
+  function formatCurrency(amount: number) {
+    const price = getPriceDisplay(amount);
+    return price.currencyLabel
+      ? `${price.value} ${price.currencyLabel}`
+      : price.value;
   }
 
   function formatMetricValue(value: number | string) {
@@ -201,8 +226,8 @@ export default function PricingClient() {
   const previewPrice =
     featuredPlan.annualPrice !== null && featuredPlan.monthlyPrice !== null
       ? isAnnual
-        ? `${formatCurrency(featuredPlan.annualPrice)}${featuredPlan.periodAnnual}`
-        : `${formatCurrency(featuredPlan.monthlyPrice)}${featuredPlan.periodMonthly}`
+        ? `${formatCurrency(featuredPlan.annualPrice)} ${featuredPlan.periodAnnual}`.trim()
+        : `${formatCurrency(featuredPlan.monthlyPrice)} ${featuredPlan.periodMonthly}`.trim()
       : stateT("custom");
 
   return (
@@ -465,6 +490,9 @@ export default function PricingClient() {
             const visibleFeatures = getVisibleFeatures(plan);
             const remainingFeatures = plan.features.length - visibleFeatures.length;
             const isFeatured = plan.highlighted;
+            const priceDisplay = getPriceDisplay(
+              isAnnual ? plan.annualPrice : plan.monthlyPrice,
+            );
 
             return (
               <div
@@ -496,14 +524,22 @@ export default function PricingClient() {
 
                   <div className="flex items-start justify-between gap-4">
                     <div className="min-h-24">
-                      <p className="text-sm font-semibold text-primary">
+                      <p
+                        className={`font-semibold leading-snug text-primary ${
+                          isBangla ? "text-base" : "text-sm"
+                        }`}
+                      >
                         {plan.badge}
                       </p>
                       <h3 className="mt-3 text-2xl font-bold text-slate-950 dark:text-slate-100">
                         {plan.name}
                       </h3>
                       {plan.spotlight ? (
-                        <p className="mt-3 inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                        <p
+                          className={`mt-3 inline-flex rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary ${
+                            isBangla ? "text-sm leading-snug" : "text-xs"
+                          }`}
+                        >
                           {plan.spotlight}
                         </p>
                       ) : null}
@@ -516,19 +552,42 @@ export default function PricingClient() {
                     </div>
                   </div>
 
-                  <p className="mt-5 min-h-36 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                  <p
+                    className={`mt-5 min-h-32 text-slate-600 dark:text-slate-300 ${
+                      isBangla ? "text-[15px] leading-8" : "text-sm leading-7"
+                    }`}
+                  >
                     {plan.description}
                   </p>
 
-                  <div className="mt-7 min-h-24">
-                    <div className="flex items-end gap-1">
-                      <span className="text-5xl font-bold tracking-tight text-slate-950 dark:text-slate-100">
-                        {formatPlanPrice(
-                          isAnnual ? plan.annualPrice : plan.monthlyPrice,
-                        )}
+                  <div className="mt-7 min-h-28">
+                    <div className="flex flex-col items-start gap-2">
+                      <div className="flex flex-wrap items-end gap-x-2 gap-y-1">
+                      <span
+                        className={`leading-none font-bold tracking-tight text-slate-950 dark:text-slate-100 ${
+                          plan.monthlyPrice === null
+                            ? isBangla
+                              ? "text-5xl sm:text-6xl"
+                              : "text-5xl"
+                            : isBangla
+                              ? "text-[2.85rem] sm:text-5xl"
+                              : "text-5xl"
+                        }`}
+                      >
+                        {priceDisplay.value}
                       </span>
+                      {priceDisplay.currencyLabel ? (
+                        <span className="pb-1 text-lg font-semibold text-slate-500 dark:text-slate-400">
+                          {priceDisplay.currencyLabel}
+                        </span>
+                      ) : null}
+                      </div>
 
-                      <span className="pb-2 text-base font-medium text-slate-500 dark:text-slate-400">
+                      <span
+                        className={`font-medium text-slate-500 dark:text-slate-400 ${
+                          isBangla ? "text-sm leading-none" : "text-base"
+                        }`}
+                      >
                         {isAnnual ? plan.periodAnnual : plan.periodMonthly}
                       </span>
                     </div>
