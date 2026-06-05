@@ -409,17 +409,17 @@ export default function Header() {
           className="group inline-flex min-w-0 shrink items-center gap-1 transition-transform duration-300"
         >
           <span
-            className="relative inline-block whitespace-nowrap bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 sm:text-2xl xl:text-3xl"
+            className="relative inline-block whitespace-nowrap bg-linear-to-r from-violet-700 via-sky-600 to-cyan-500 bg-clip-text text-xl font-black text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.16)] transition-all duration-300 sm:text-2xl xl:text-3xl dark:from-violet-400 dark:via-cyan-300 dark:to-amber-300 dark:drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)]"
             style={{
               fontFamily:
                 '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
             }}
           >
-            Adon<span className="mx-1 text-muted-foreground/70 sm:mx-1.5">|</span>
+            Adon<span className="mx-1 text-slate-500/90 sm:mx-1.5 dark:text-muted-foreground/70">|</span>
           </span>
 
           <span
-            className="relative inline-block whitespace-nowrap bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-2xl font-black uppercase tracking-wide text-transparent sm:text-3xl xl:text-4xl"
+            className="relative inline-block whitespace-nowrap bg-linear-to-r from-emerald-600 via-teal-500 to-sky-500 bg-clip-text text-2xl font-black uppercase tracking-wide text-transparent sm:text-3xl xl:text-4xl dark:from-emerald-300 dark:to-cyan-300"
             style={{
               fontFamily:
                 '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
