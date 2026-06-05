@@ -1,108 +1,108 @@
 {
   "hero": {
-    "eyebrow": "AdonERP Training Academy",
-    "breadcrumb": "কমিউনিটি / Learn / Training",
-    "titleLine1": "AdonERP শিখুন",
-    "titleLine2": "প্র্যাকটিক্যাল উপায়ে",
-    "description": "Business user, consultant এবং developer-দের জন্য guided course, live workshop, hands-on lab এবং role-based training দিয়ে বাস্তব ERP confidence তৈরি করুন।",
-    "primaryCta": "ট্রেনিং পাথ দেখুন",
-    "secondaryCta": "সিডিউল দেখুন"
+    "eyebrow": "অ্যাডন ইআরপি ট্রেনিং একাডেমি",
+    "breadcrumb": "কমিউনিটি / লার্নিং সেন্টার / প্রফেশনাল ট্রেনিং",
+    "titleLine1": "অ্যাডন ইআরপি শিখুন",
+    "titleLine2": "প্র্যাক্টিক্যাল উপায়ে",
+    "description": "বিজনেস ইউজার, কনসালটেন্ট এবং সফটওয়্যার ডেভেলপারদের জন্য নির্দেশিত কোর্স, লাইভ ওয়ার্কশপ, হ্যান্ডস-অন ল্যাব এবং রোল-ভিত্তিক ট্রেনিং-এর মাধ্যমে রিয়েল-ওয়ার্ল্ড ইআরপি ইমপ্লিমেন্টেশনের আত্মবিশ্বাস তৈরি করুন।",
+    "primaryCta": "লার্নিং কারিকুলাম দেখুন",
+    "secondaryCta": "ক্লাস শিডিউল দেখুন"
   },
   "stats": [
-    { "value": "১২k+", "label": "শিক্ষার্থী প্রশিক্ষিত" },
-    { "value": "৯৬%", "label": "completion satisfaction" },
-    { "value": "৪০+", "label": "প্র্যাকটিক্যাল ল্যাব" },
-    { "value": "২৪/৭", "label": "academy access" }
+    { "value": "১২,০০০+", "label": "প্রশিক্ষিত শিক্ষার্থী" },
+    { "value": "৯৬%", "label": "কোর্স সম্পন্নকরণের সন্তুষ্টি" },
+    { "value": "৪০+", "label": "হ্যান্ডস-অন প্র্যাক্টিক্যাল ল্যাব" },
+    { "value": "২৪/৭", "label": "একাডেমি লাইফটাইম অ্যাক্সেস" }
   ],
   "liveClass": {
-    "label": "লাইভ ক্লাস",
-    "title": "ERP Foundations",
+    "label": "লাইভ মাস্টারক্লাস",
+    "title": "ইআরপি ফাউন্ডেশনস (ERP Foundations)",
     "items": [
-      { "title": "১২টি মডিউল", "text": "Structured learning", "icon": "BookOpenCheck" },
-      { "title": "৪ ঘন্টা ৩০ মিনিট", "text": "মোট ভিডিও সময়", "icon": "Clock3" },
-      { "title": "Certificate", "text": "সম্পন্ন করার পরে", "icon": "BadgeCheck" }
+      { "title": "১২টি কোর মডিউল", "text": "সুশৃঙ্খল লার্নিং স্ট্রাকচার", "icon": "BookOpenCheck" },
+      { "title": "৪ ঘণ্টা ৩০ মিনিট", "text": "মোট ভিডিও টিউটোরিয়াল", "icon": "Clock3" },
+      { "title": "প্রফেশনাল সার্টিফিকেট", "text": "কোর্স সফলভাবে সম্পন্ন করার পর", "icon": "BadgeCheck" }
     ],
-    "quote": "এই training আমাদের টিমকে শুধু screen নয়, পুরো workflow বুঝতে সাহায্য করেছে।",
-    "author": "Ariyan Rahman"
+    "quote": "এই প্রফেশনাল ট্রেনিংটি আমাদের টিমকে শুধু সফটওয়্যার স্ক্রিন চালানোই শেখায়নি, বরং আমাদের পুরো বিজনেস ওয়ার্কফ্লোকে অপ্টিমাইজ করতে সাহায্য করেছে।",
+    "author": "আরিয়ান রহমান"
   },
   "pathsSection": {
-    "eyebrow": "Role-based learning path",
-    "title": "আপনার role অনুযায়ী path বেছে নিন",
-    "description": "প্রতিটি course path practical implementation work ঘিরে তৈরি, যাতে learner সঙ্গে সঙ্গে concept apply করতে পারে।",
-    "popular": "সবচেয়ে জনপ্রিয়",
-    "cta": "এই path শুরু করুন"
+    "eyebrow": "রোল-ভিত্তিক প্রফেশনাল লার্নিং কারিকুলাম",
+    "title": "আপনার প্রাতিষ্ঠানিক দায়িত্ব অনুযায়ী কোর্স বেছে নিন",
+    "description": "আমাদের প্রতিটি লার্নিং পাথ বাস্তবমুখী ইমপ্লিমেন্টেশন প্রজেক্টকে কেন্দ্র করে তৈরি, যাতে প্রশিক্ষণার্থীরা ক্লাসে শেখা কনসেপ্টগুলো সরাসরি কর্মক্ষেত্রে প্রয়োগ করতে পারেন।",
+    "popular": "সর্বাধিক জনপ্রিয় কোর্স",
+    "cta": "এই কারিকুলামটি শুরু করুন"
   },
   "learningPaths": [
     {
-      "title": "Functional Consultant",
-      "level": "Beginner থেকে advanced",
+      "title": "ফাংশনাল কনসালটেন্ট (Functional Consultant)",
+      "level": "শিক্ষানবিস থেকে অ্যাডভান্সড",
       "duration": "৬ সপ্তাহ",
-      "lessons": "৪২টি lesson",
-      "description": "Business workflow, app configuration, implementation planning এবং client-facing ERP delivery আয়ত্ত করুন।",
-      "topics": ["CRM", "Sales", "Inventory", "Accounting", "Implementation"]
+      "lessons": "৪২টি বিশেষ লেসন",
+      "description": "বিজনেস ওয়ার্কফ্লো ডিজাইন, কোর অ্যাপ কনফিগারেশন, ইমপ্লিমেন্টেশন প্ল্যানিং এবং ক্লায়েন্ট-ফেসিং ইআরপি ডেলিভারি নিখুঁতভাবে আয়ত্ত করুন।",
+      "topics": ["সিআরএম (CRM)", "সেলস ও ডিস্ট্রিবিউশন", "ইনভেন্টরি অ্যান্ড স্টক", "অ্যাকাউন্টিং", "প্রজেক্ট ইমপ্লিমেন্টেশন"]
     },
     {
-      "title": "Developer Bootcamp",
-      "level": "Intermediate",
+      "title": "ডেভেলপার বুটক্যাম্প (Developer Bootcamp)",
+      "level": "ইন্টারমিডিয়েট থেকে এক্সপার্ট",
       "duration": "৮ সপ্তাহ",
-      "lessons": "৫৬টি lesson",
-      "description": "Module build, workflow customize, API connect এবং production-ready AdonERP extension তৈরি করুন।",
-      "topics": ["Next.js", "API", "Prisma", "Automation", "Deployment"]
+      "lessons": "৫৬টি কারিগরি লেসন",
+      "description": "কাস্টম মডিউল ডেভেলপমেন্ট, ওয়ার্কফ্লো কাস্টমাইজেশন, এপিআই (API) ইন্টিগ্রেশন এবং প্রোডাকশন-রেডি অ্যাডন ইআরপি এক্সটেনশন তৈরি করা শিখুন।",
+      "topics": ["Next.js", "REST API", "Prisma ORM", "বিজনেস অটোমেশন", "ক্লাউড ডেপ্লয়মেন্ট"]
     },
     {
-      "title": "Business User Training",
-      "level": "Team friendly",
+      "title": "বিজনেস ইউজার ট্রেনিং",
+      "level": "কর্পোরেট টিম ফ্রেন্ডলি",
       "duration": "৩ সপ্তাহ",
-      "lessons": "২৪টি lesson",
-      "description": "Daily user-দের customer, quotation, invoice, task, report এবং approval আত্মবিশ্বাসের সাথে চালাতে train করুন।",
-      "topics": ["Dashboard", "Tasks", "Reports", "Approvals", "Productivity"]
+      "lessons": "২৪টি প্র্যাক্টিক্যাল লেসন",
+      "description": "আপনার প্রাতিষ্ঠানিক টিমকে কাস্টমার ডেটাবেজ, কস্ট কোটেশন, ইনভয়েসিং, টাস্ক ট্র্যাকিং, রিপোর্টিং এবং মাল্টি-লেভেল অ্যাপ্রুভাল প্রসেস নিখুঁতভাবে পরিচালনা করতে প্রশিক্ষিত করুন।",
+      "topics": ["অ্যানালিটিক্যাল ড্যাশবোর্ড", "টাস্ক ম্যানেজমেন্ট", "বিজনেস রিপোর্টস", "অ্যাপ্রুভাল ওয়ার্কফ্লো", "টিম প্রোডাক্টিভিটি"]
     }
   ],
   "formatsSection": {
-    "titleLine1": "প্রতিটি টিমের জন্য",
-    "titleLine2": "সঠিক training format।",
-    "description": "Live, on-site অথবা self-paced format-এ শিখুন। আপনার team ও implementation stage অনুযায়ী mix করে plan তৈরি করুন।"
+    "titleLine1": "প্রতিটি কর্পোরেট টিমের জন্য",
+    "titleLine2": "উপযুক্ত ট্রেনিং ফরম্যাট।",
+    "description": "লাইভ অনলাইন, অন-সাইট কর্পোরেট অথবা সেলফ-পেসড ফরম্যাটে শিখুন। আপনার টিমের কর্মদক্ষতা এবং সফটওয়্যার ইমপ্লিমেন্টেশনের ধাপ অনুযায়ী কাস্টমাইজড প্ল্যান তৈরি করুন।"
   },
   "formats": [
     {
-      "title": "Live Online Classes",
-      "description": "Real-time Q&A, demo এবং guided exercise সহ instructor-led session-এ যোগ দিন।",
+      "title": "লাইভ অনলাইন ক্লাসেস",
+      "description": "রিয়েল-টাইমে প্রশ্নোত্তর (Q&A), প্র্যাক্টিক্যাল ডেমো এবং গাইডেড এক্সারসাইজসহ ইন্সট্রাক্টর-লেড সেশনে অংশ নিন।",
       "icon": "MonitorPlay"
     },
     {
-      "title": "On-site Team Training",
-      "description": "Role-based hands-on workshop-এর জন্য AdonERP expert-দের আপনার organization-এ আনুন।",
+      "title": "অন-সাইট কর্পোরেট ট্রেনিং",
+      "description": "আপনার প্রতিষ্ঠানে রোল-ভিত্তিক হ্যান্ডস-অন ওয়ার্কশপ পরিচালনার জন্য অ্যাডন ইআরপি এক্সপার্টদের সরাসরি আমন্ত্রণ জানান।",
       "icon": "Users"
     },
     {
-      "title": "Self-paced Academy",
-      "description": "Structured video, checkpoint, quiz এবং downloadable resource দিয়ে নিজের গতিতে শিখুন।",
+      "title": "সেলফ-পেসড একাডেমি",
+      "description": "সুশৃঙ্খল ভিডিও টিউটোরিয়াল, নলেজ চেকিং পয়েন্ট, কুইজ এবং ডাউনলোডযোগ্য রিসোর্স ফাইল দিয়ে নিজের সুবিধাজনক গতিতে শিখুন।",
       "icon": "Video"
     },
     {
-      "title": "Certification Prep",
-      "description": "Implementation case practice করুন এবং consultant বা developer certification-এর প্রস্তুতি নিন।",
+      "title": "সার্টিফিকেশন প্রিপারেশন",
+      "description": "বাস্তব ইমপ্লিমেন্টেশনের কেস স্টাডি প্র্যাক্টিস করুন এবং সার্টিফাইড কনসালটেন্ট বা অফিশিয়াল ডেভেলপার সার্টিফিকেশনের প্রস্তুতি নিন।",
       "icon": "Trophy"
     }
   ],
   "scheduleSection": {
-    "eyebrow": "আসন্ন সেশন",
-    "title": "পরবর্তী live training-এ যোগ দিন",
-    "description": "আসন্ন class ও workshop-এর জন্য seat reserve করুন। প্রতিটি session-এ downloadable resource, recording এবং exercise থাকে।",
-    "cta": "Seat reserve করুন",
-    "enroll": "Enroll করুন"
+    "eyebrow": "আসন্ন ট্রেনিং শিডিউল",
+    "title": "পরবর্তী লাইভ মাস্টারক্লাসে অংশগ্রহণ করুন",
+    "description": "আমাদের আসন্ন ক্লাসের জন্য আপনার আসন নিশ্চিত করুন। প্রতিটি সেশনের সাথে ডাউনলোডযোগ্য রিসোর্স, রেকর্ডিং এবং প্র্যাক্টিস এক্সারসাইজ ফাইল অন্তর্ভুক্ত থাকবে।",
+    "cta": "আসন নিশ্চিত করুন",
+    "enroll": "এনরোল করুন"
   },
   "schedule": [
-    { "title": "ERP Foundations Workshop", "type": "Live online", "date": "১২ মার্চ", "time": "১০:০০ AM", "location": "Remote" },
-    { "title": "Inventory & Sales Masterclass", "type": "Advanced", "date": "১৮ মার্চ", "time": "০২:০০ PM", "location": "Remote" },
-    { "title": "Developer Customization Lab", "type": "Hands-on", "date": "২৫ মার্চ", "time": "০৬:০০ PM", "location": "ঢাকা / Online" }
+    { "title": "ইআরপি ফাউন্ডেশনস ওয়ার্কশপ", "type": "লাইভ অনলাইন", "date": "১২ মার্চ", "time": "সকাল ১০:০০ টা", "location": "রিমোট / অনলাইন" },
+    { "title": "ইনভেন্টরি অ্যান্ড সেলস মাস্টারক্লাস", "type": "অ্যাডভান্সড লেভেল", "date": "১৮ মার্চ", "time": "দুপুর ০২:০০ টা", "location": "রিমোট / অনলাইন" },
+    { "title": "ডেভেলপার কাস্টমাইজেশন ল্যাব", "type": "হ্যান্ডস-অন প্র্যাক্টিক্যাল", "date": "২৫ মার্চ", "time": "সন্ধ্যা ০৬:০০ টা", "location": "ঢাকা / হাইব্রিড অনলাইন" }
   ],
   "ctaSection": {
-    "eyebrow": "আজই শেখা শুরু করুন",
-    "titleLine1": "আরও শক্তিশালী টিম তৈরি করুন",
-    "titleLine2": "AdonERP training দিয়ে",
-    "description": "আপনার user, consultant এবং developer-দের একটি clear learning path দিন, যাতে adoption দ্রুত, clean এবং scalable হয়।",
-    "primaryCta": "এখনই শুরু করুন",
-    "badge": "Certificate option অন্তর্ভুক্ত"
+    "eyebrow": "আজই দক্ষতা উন্নয়ন শুরু করুন",
+    "titleLine1": "কর্পোরেট টিমকে আরও দক্ষ করে তুলুন",
+    "titleLine2": "অ্যাডন ইআরপি অফিশিয়াল ট্রেনিংয়ের মাধ্যমে",
+    "description": "আপনার ইউজার, কনসালটেন্ট এবং ডেভেলপারদের একটি সুনির্দিষ্ট লার্নিং পাথ প্রদান করুন, যাতে সফটওয়্যার অ্যাডপশন দ্রুত, নির্ভুল এবং স্কেলযোগ্য হয়।",
+    "primaryCta": "এখনই এনরোল করুন",
+    "badge": "অফিশিয়াল সার্টিফিকেশন সুবিধা অন্তর্ভুক্ত"
   }
 }

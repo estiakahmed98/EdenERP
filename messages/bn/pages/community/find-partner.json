@@ -1,97 +1,97 @@
 {
   "hero": {
-    "eyebrow": "বিশ্বস্ত পার্টনার",
-    "title": "Implementation Partners",
-    "description": "সার্টিফাইড expert-দের সাথে যুক্ত হোন, যারা region জুড়ে business ও government organization-এ Eden ERP solution পৌঁছে দিচ্ছেন।",
-    "cta": "সেরা match খুঁজুন"
+    "eyebrow": "বিশ্বস্ত স্ট্র্যাটেজিক পার্টনার",
+    "title": "অফিশিয়াল ইমপ্লিমেন্টেশন পার্টনার্স",
+    "description": "আমাদের সার্টিফাইড ইআরপি এক্সপার্টদের সাথে যুক্ত হোন, যারা বিশ্বজুড়ে বিভিন্ন স্বনামধন্য বেসরকারি প্রতিষ্ঠান এবং সরকারি সংস্থায় ইডেন ইআরপি (Eden ERP) সলিউশন সফলভাবে বাস্তবায়ন করছেন।",
+    "cta": "উপযুক্ত পার্টনার খুঁজুন"
   },
   "filters": {
-    "searchPlaceholder": "পার্টনার খুঁজুন...",
-    "allLevels": "সব",
+    "searchPlaceholder": "নির্দিষ্ট পার্টনার বা এজেন্সি খুঁজুন...",
+    "allLevels": "সব পার্টনারশিপ লেভেল",
     "levelSuffix": "লেভেল",
-    "allIndustries": "সব ইন্ডাস্ট্রি",
-    "industries": ["Government", "Technology", "Healthcare", "ERP Solutions", "AI & Marketing"]
+    "allIndustries": "সব ইন্ডাস্ট্রি ও খাত",
+    "industries": ["সরকারি খাত (Government)", "তথ্যপ্রযুক্তি (Technology)", "স্বাস্থ্যসেবা (Healthcare)", "ইআরপি সলিউশনস (ERP)", "এআই ও ডিজিটাল মার্কেটিং"]
   },
   "stats": {
-    "reviews": "রিভিউ",
-    "projects": "প্রজেক্ট",
-    "experts": "এক্সপার্ট",
-    "experience": "অভিজ্ঞতা",
+    "reviews": "কাস্টমার রিভিউ",
+    "projects": "সফল প্রজেক্ট",
+    "experts": "সার্টিফাইড এক্সপার্ট",
+    "experience": "শিল্পে অভিজ্ঞতা",
     "contact": "পার্টনারের সাথে যোগাযোগ করুন"
   },
   "empty": {
-    "title": "কোনো পার্টনার পাওয়া যায়নি",
-    "description": "Search বা filter পরিবর্তন করে আবার চেষ্টা করুন"
+    "title": "কোনো পার্টনার খুঁজে পাওয়া যায়নি",
+    "description": "আপনার সার্চ কি-ওয়ার্ড অথবা ফিল্টার পরিবর্তন করে আবার চেষ্টা করুন।"
   },
   "banner": {
-    "title": "শীর্ষ প্রতিষ্ঠানগুলোর আস্থা",
-    "description": "১৫ মিলিয়ন+ user-এর সাথে যুক্ত হন, যারা সফল digital transformation-এর জন্য Eden ERP এবং certified partner-দের ওপর নির্ভর করেন।"
+    "title": "শীর্ষস্থানীয় বৈশ্বিক প্রতিষ্ঠানগুলোর আস্থা",
+    "description": "বিশ্বব্যাপী ১.৫ কোটিরও বেশি সক্রিয় ব্যবহারকারীর বিশাল নেটওয়ার্কে যুক্ত হন, যারা সফল ডিজিটাল ট্রান্সফরমেশন ও ব্যবসায়িক আধুনিকায়নের জন্য ইডেন ইআরপি এবং আমাদের সার্টিফাইড পার্টনারদের ওপর আস্থা রাখেন।"
   },
   "partners": [
     {
-      "name": "Ann-nahl Software",
-      "level": "Silver",
-      "industry": "ERP & Business Solutions",
+      "name": "আন্‌-নাহল সফটওয়্যার (Ann-nahl Software)",
+      "level": "সিলভার (Silver)",
+      "industry": "ইআরপি ও বিজনেস সলিউশনস",
       "logo": "/Assets/apps/ann-nahl.png",
       "logoAlt": "Ann-nahl Software",
-      "reviews": "২৮",
-      "projects": "২৪+",
-      "experts": "৬+",
+      "reviews": "২৮টি",
+      "projects": "২৪টি+",
+      "experts": "৬ জন+",
       "experience": "৫ বছর"
     },
     {
-      "name": "Reputation Prime",
-      "level": "Silver",
-      "industry": "AI & Digital Marketing",
+      "name": "রেপুটেশন প্রাইম (Reputation Prime)",
+      "level": "সিলভার (Silver)",
+      "industry": "এআই ও ডিজিটাল মার্কেটিং",
       "logo": "/Assets/apps/repuprime.jpeg",
       "logoAlt": "Reputation Prime",
-      "reviews": "১৯",
-      "projects": "১৭+",
-      "experts": "৪+",
+      "reviews": "১৯টি",
+      "projects": "১৭টি+",
+      "experts": "৪ জন+",
       "experience": "৩ বছর"
     },
     {
-      "name": "Government of Bangladesh",
-      "level": "Platinum",
-      "industry": "Public Sector",
+      "name": "গণপ্রজাতন্ত্রী বাংলাদেশ সরকার",
+      "level": "প্লাটিনাম (Platinum)",
+      "industry": "পাবলিক সেক্টর ও সরকারি সেবা",
       "logo": "/Assets/apps/bangovt.png",
       "logoAlt": "Bangladesh Government",
-      "reviews": "৩১",
-      "projects": "৩৪+",
-      "experts": "৮+",
+      "reviews": "৩১টি",
+      "projects": "৩৪টি+",
+      "experts": "৮ জন+",
       "experience": "৯ বছর"
     },
     {
-      "name": "Ministry of Health",
-      "level": "Gold",
-      "industry": "Healthcare",
+      "name": "সৌদি স্বাস্থ্য ও পরিবার কল্যাণ মন্ত্রণালয় (Saudi Ministry of Health)",
+      "level": "গোল্ড (Gold)",
+      "industry": "হেলথকেয়ার ও চিকিৎসা সেবা",
       "logo": "/Assets/apps/moh.png",
       "logoAlt": "Ministry of Health",
-      "reviews": "২২",
-      "projects": "২০+",
-      "experts": "৫+",
+      "reviews": "২২টি",
+      "projects": "২০টি+",
+      "experts": "৫ জন+",
       "experience": "৪ বছর"
     },
     {
-      "name": "SDAIA",
-      "level": "Platinum",
-      "industry": "Data & AI Authority",
+      "name": "এসডিএআইএ (SDAIA)",
+      "level": "প্লাটিনাম (Platinum)",
+      "industry": "ডেটা অ্যান্ড এআই অথরিটি",
       "logo": "/Assets/apps/sdaia.png",
       "logoAlt": "SDAIA",
-      "reviews": "২৬",
-      "projects": "২৯+",
-      "experts": "৭+",
+      "reviews": "২৬টি",
+      "projects": "২৯টি+",
+      "experts": "৭ জন+",
       "experience": "৬ বছর"
     },
     {
-      "name": "Ministry of Human Resources & Social Development",
-      "level": "Platinum",
-      "industry": "Government & HR Services",
+      "name": "মানবসম্পদ ও সামাজিক উন্নয়ন মন্ত্রণালয়",
+      "level": "প্লাটিনাম (Platinum)",
+      "industry": "সরকারি ও এইচআর সার্ভিসেস",
       "logo": "/Assets/apps/HRSD.png",
       "logoAlt": "Ministry of Human Resources",
-      "reviews": "২৪",
-      "projects": "২৭+",
-      "experts": "৭+",
+      "reviews": "২৪টি",
+      "projects": "২৭টি+",
+      "experts": "৭ জন+",
       "experience": "৬ বছর"
     }
   ]

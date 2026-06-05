@@ -1,99 +1,99 @@
 {
   "hero": {
-    "eyebrow": "কমিউনিটি / Learn / Documentation",
-    "kicker": "AdonERP Documentation",
-    "lead": "AdonERP আয়ত্ত করতে",
-    "title": "যা দরকার সব",
-    "description": "Clear guide, product documentation, developer reference এবং workflow example দেখে আপনার টিমকে দ্রুত launch করতে এবং আত্মবিশ্বাসের সাথে process চালাতে সাহায্য করুন।",
-    "searchPlaceholder": "Documentation, guide, API খুঁজুন...",
-    "primaryCta": "ডকস দেখুন",
-    "secondaryCta": "Developer reference"
+    "eyebrow": "কমিউনিটি / লার্নিং সেন্টার / অফিশিয়াল ডকুমেন্টেশন",
+    "kicker": "অ্যাডন ইআরপি ডকুমেন্টেশন পোর্টাল",
+    "lead": "অ্যাডন ইআরপি ইকোসিস্টেম আয়ত্ত করতে",
+    "title": "প্রয়োজনীয় সব রিসোর্স এক জায়গায়",
+    "description": "সহজ ইউজার গাইড, প্রোডাক্ট ডকুমেন্টেশন, ডেভেলপার রেফারেন্স এবং রিয়েল-ওয়ার্ল্ড ওয়ার্কফ্লো এক্সাম্পল দেখে আপনার টিমকে দ্রুত অনবোর্ড করুন এবং আত্মবিশ্বাসের সাথে বিজনেস প্রসেস পরিচালনা করুন।",
+    "searchPlaceholder": "ডকুমেন্টেশন, ইউজার গাইড, বা এপিআই (API) খুঁজুন...",
+    "primaryCta": "ডকুমেন্টেশন ব্রাউজ করুন",
+    "secondaryCta": "ডেভেলপার রেফারেন্স গাইড"
   },
   "preview": {
     "domain": "docs.adon-erp.com",
-    "cardTitle": "Setup Guide",
-    "cardDescription": "Company, app, user এবং workflow basics",
-    "items": ["CRM configuration", "Inventory rules", "Invoice workflow"]
+    "cardTitle": "ইনস্টলেশন ও সেটআপ গাইড",
+    "cardDescription": "কোম্পানি প্রোফাইল, অ্যাপস ইন্টিগ্রেশন, ইউজার ম্যানেজমেন্ট এবং ওয়ার্কফ্লো বেসিকস",
+    "items": ["সিআরএম (CRM) কনফিগারেশন", "ইনভেন্টরি অ্যান্ড স্টক রুলস", "অটোমেটেড ইনভয়েস ওয়ার্কফ্লো"]
   },
   "categoriesSection": {
-    "eyebrow": "প্রোডাক্ট নলেজ বেস",
-    "title": "সঠিক উত্তর দ্রুত খুঁজে নিন।",
-    "description": "Documentation-কে workflow অনুযায়ী সাজানো হয়েছে, যাতে business team, manager এবং developer সহজে problem থেকে solution-এ যেতে পারে।",
-    "browseLabel": "আর্টিকেল দেখুন"
+    "eyebrow": "সেন্ট্রাল প্রোডাক্ট নলেজ বেস",
+    "title": "যেকোনো কারিগরি সমস্যার সঠিক সমাধান, দ্রুত ও সহজে।",
+    "description": "আমাদের অফিশিয়াল ডকুমেন্টেশনকে এমনভাবে সাজানো হয়েছে, যাতে বিজনেস টিম, অপারেশনাল ম্যানেজার এবং সফটওয়্যার ডেভেলপাররা যেকোনো জটিলতার সহজ সমাধান মুহূর্তেই খুঁজে পান।",
+    "browseLabel": "সব গাইড ও আর্টিকেল দেখুন"
   },
   "categories": [
     {
-      "title": "Getting Started",
-      "description": "Guided setup step দিয়ে আপনার AdonERP workspace install, configure এবং launch করুন।",
+      "title": "কুইক স্টার্ট গাইড (Getting Started)",
+      "description": "ধাপ-ভিত্তিক নির্দেশনাসহ আপনার অ্যাডন ইআরপি ওয়ার্কস্পেস ইনস্টল, ইনিশিয়াল কনফিগারেশন এবং সাকসেসফুল লঞ্চ করুন।",
       "icon": "Sparkles",
-      "articles": "১৮টি আর্টিকেল"
+      "articles": "১৮টি টেকনিক্যাল আর্টিকেল"
     },
     {
-      "title": "Apps & Modules",
-      "description": "CRM, Sales, Inventory, Accounting, HR এবং Project কীভাবে একসাথে কাজ করে তা জানুন।",
+      "title": "অ্যাপস ও কোর মডিউলস",
+      "description": "সিআরএম, সেলস, ইনভেন্টরি, অ্যাকাউন্টিং, এইচআর এবং প্রজেক্ট ম্যানেজমেন্ট মডিউল কীভাবে একসাথে কাজ করে তা জানুন।",
       "icon": "Workflow",
-      "articles": "৪২টি আর্টিকেল"
+      "articles": "৪২টি কারিগরি গাইড"
     },
     {
-      "title": "User Management",
-      "description": "Team, role, access right, approval এবং secure collaboration rule configure করুন।",
+      "title": "ইউজার ও টিম ম্যানেজমেন্ট",
+      "description": "টিম মেম্বার, রোল-ভিত্তিক অ্যাক্সেস রাইটস, মাল্টি-লেভেল অ্যাপ্রুভাল এবং সিকিউরড কোলাবোরেশন রুলস কনফিগার করুন।",
       "icon": "Users",
-      "articles": "১৬টি আর্টিকেল"
+      "articles": "১৬টি সিকিউরিটি গাইড"
     },
     {
-      "title": "Developer Docs",
-      "description": "API, webhook, custom field, integration এবং automation workflow ব্যবহার শিখুন।",
+      "title": "ডেভেলপার ডকুমেন্টেশন",
+      "description": "অ্যাডন REST API, ওয়েবহুক (Webhook), কাস্টম ফিল্ড ডেভেলপমেন্ট, থার্ড-পার্টি ইন্টিগ্রেশন এবং অটোমেশন স্ক্রিপ্ট ব্যবহার শিখুন।",
       "icon": "Code2",
-      "articles": "৩১টি আর্টিকেল"
+      "articles": "৩১টি ডেভেলপার গাইড"
     },
     {
-      "title": "Security & Compliance",
-      "description": "Authentication, permission, audit log, backup এবং data governance বুঝুন।",
+      "title": "সিকিউরিটি ও কমপ্লায়েন্স",
+      "description": "মাল্টি-ফ্যাক্টর অথেনটিকেশন, ডাটা পারমিশন মেট্রিক্স, সিস্টেম অডিট লগ, অটো-ব্যাকআপ এবং ডেটা গভর্ন্যান্স পলিসি বুঝুন।",
       "icon": "ShieldCheck",
-      "articles": "১২টি আর্টিকেল"
+      "articles": "১২টি সিকিউরিটি কমপ্লায়েন্স"
     },
     {
-      "title": "Support Center",
-      "description": "Common issue troubleshoot করুন এবং support team-এর best-practice answer খুঁজে নিন।",
+      "title": "হেল্প ও সাপোর্ট সেন্টার",
+      "description": "সাধারণ টেকনিক্যাল ইস্যুগুলো ট্রাবলশুট করুন এবং আমাদের গ্লোবাল সাপোর্ট টিমের বেস্ট-প্র্যাকটিস সলিউশনগুলো দেখে নিন।",
       "icon": "LifeBuoy",
-      "articles": "২৫টি আর্টিকেল"
+      "articles": "২৫টি সলিউশন আর্টিকেল"
     }
   ],
   "popularSection": {
-    "eyebrow": "জনপ্রিয় গাইড",
-    "titleLine1": "যা দরকার,",
-    "titleLine2": "ঠিক সময়ে তা শিখুন।",
-    "description": "Daily setup, team operation, reporting এবং system administration-এর সবচেয়ে ব্যবহৃত documentation topic দিয়ে শুরু করুন।"
+    "eyebrow": "সর্বাধিক পঠিত গাইড",
+    "titleLine1": "প্রয়োজনীয় নলেজ বেস,",
+    "titleLine2": "খুঁজে নিন আপনার সুবিধাজনক সময়ে।",
+    "description": "ডেইলি সেটআপ, টিম অপারেশন, কাস্টমাইজড রিপোর্টিং এবং সিস্টেম অ্যাডমিনিস্ট্রেশনের জন্য সবচেয়ে বেশি ব্যবহৃত ডকুমেন্টেশন টপিক দিয়ে আপনার কাজ শুরু করুন।"
   },
   "popularDocs": [
-    "Company profile এবং workspace সেটআপ করুন",
-    "User invite করে role-based permission দিন",
-    "Product, variant এবং inventory rule তৈরি করুন",
-    "Sales order-এর সাথে invoice ও payment connect করুন",
-    "আপনার টিমের জন্য approval workflow তৈরি করুন",
-    "Dashboard এবং reporting view configure করুন"
+    "কোম্পানি প্রোফাইল এবং গ্লোবাল ওয়ার্কস্পেস কনফিগারেশন",
+    "নতুন ইউজার ইনভাইটেশন এবং রোল-ভিত্তিক পারমিশন সেটআপ",
+    "প্রোডাক্ট ক্যাটালগ, ভ্যারিয়েন্ট এবং ইনভেন্টরি রি-অর্ডার রুল তৈরি",
+    "সেলস অর্ডারের (SO) সাথে স্বয়ংক্রিয় ইনভয়েস ও পেমেন্ট গেটওয়ে কানেক্ট",
+    "আপনার প্রাতিষ্ঠানিক পলিসি অনুযায়ী মাল্টি-স্টেজ অ্যাপ্রুভাল ওয়ার্কফ্লো তৈরি",
+    "অ্যানালিটিক্যাল ড্যাশবোর্ড এবং কাস্টমাইজড রিপোর্টিং ভিউ কনফিগারেশন"
   ],
   "developerSection": {
-    "eyebrow": "Developer-friendly integration",
-    "title": "নিজের tool-এর সাথে AdonERP connect করুন।",
-    "description": "Accounting, ecommerce, logistics, analytics এবং internal automation system integrate করতে practical example ও clean reference ব্যবহার করুন।",
-    "label": "API Reference"
+    "eyebrow": "ডেভেলপার-ফ্রেন্ডলি থার্ড-পার্টি ইন্টিগ্রেশন",
+    "title": "আপনার বর্তমান টুলসের সাথে অ্যাডন ইআরপি কানেক্ট করুন।",
+    "description": "এক্সটার্নাল অ্যাকাউন্টিং সফটওয়্যার, ই-কমার্স প্ল্যাটফর্ম, লজিস্টিকস পোর্টাল, অ্যানালিটিক্স ইঞ্জিন কিংবা ইন্টারনাল অটোমেশন সিস্টেমের সাথে ইন্টিগ্রেশনের জন্য প্র্যাক্টিক্যাল কোড এক্সাম্পল ও ক্লিন রেফারেন্স ব্যবহার করুন।",
+    "label": "অফিশিয়াল এপিআই (API) রেফারেন্স"
   },
   "developerSteps": [
-    "Admin settings থেকে API key তৈরি করুন",
-    "REST endpoint বা webhook event বেছে নিন",
-    "AdonERP object-কে external system-এর সাথে map করুন",
-    "Sandbox workspace-এ request নিরাপদভাবে test করুন"
+    "অ্যাডমিন সেটিংস প্যানেল থেকে ইউনিক সিকিউরড এপিআই কি (API Key) জেনারেট করুন",
+    "আপনার রিকোয়ার্ড REST এন্ডপয়েন্ট (Endpoint) অথবা ওয়েবহুক ইভেন্ট বেছে নিন",
+    "অ্যাডন ইআরপি ডেটা অবজেক্টের সাথে আপনার এক্সটার্নাল সিস্টেমের ফিল্ড ম্যাপ করুন",
+    "আমাদের আইসোলেটেড স্যান্ডবক্স ওয়ার্কস্পেসে (Sandbox Workspace) নিরাপদে রিকোয়েস্ট টেস্ট করুন"
   ],
   "continueSection": {
-    "eyebrow": "শেখা চালিয়ে যান",
-    "title": "এক প্ল্যাটফর্ম, শেখার অনেক পথ।",
-    "description": "যখন deeper support দরকার হবে, তখন documentation থেকে guided lesson, training resource এবং community knowledge-এ move করুন।"
+    "eyebrow": "শেখার পরিধি বাড়ান",
+    "title": "একটি একক প্ল্যাটফর্ম, দক্ষতার একাধিক মাধ্যম।",
+    "description": "যেকোনো গভীর বা অ্যাডভান্সড সাপোর্টের প্রয়োজনে সরাসরি ডকুমেন্টেশন থেকে আমাদের ভিডিও টিউটোরিয়াল, প্রাতিষ্ঠানিক ট্রেনিং রিসোর্স এবং গ্লোবাল কমিউনিটি নলেজ বেসে প্রবেশ করুন।"
   },
   "quickLinks": [
-    { "label": "Tutorials", "href": "/community/learn/tutorials" },
-    { "label": "Certifications", "href": "/community/learn/certifications" },
-    { "label": "Training", "href": "/community/learn/training" },
-    { "label": "Blog", "href": "/community/learn/blog" }
+    { "label": "ভিডিও টিউটোরিয়ালস", "href": "/community/learn/tutorials" },
+    { "label": "প্রফেশনাল সার্টিফিকেশনস", "href": "/community/learn/certifications" },
+    { "label": "কর্পোরেট ট্রেনিং", "href": "/community/learn/training" },
+    { "label": "টেকনিক্যাল ব্লগ", "href": "/community/learn/blog" }
   ]
 }

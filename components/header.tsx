@@ -302,10 +302,6 @@ const communityMegaMenu: MegaMenuColumn[] = [
     underlineClass: "bg-primary/20",
     links: [
       {
-        labelKey: "menu.community.github",
-        href: "/community/collaborate/github",
-      },
-      {
         labelKey: "menu.community.forum",
         href: "/community/collaborate/forum",
       },
