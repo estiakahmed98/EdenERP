@@ -1,206 +1,227 @@
 {
   "metadata": {
     "title": "Pricing | Adon ERP",
-    "description": "Simple, transparent Adon ERP pricing for startups, growing teams, and enterprise organizations."
+    "description": "Spreadsheet-aligned Adon ERP package pricing in BDT with optional USD conversion."
   },
   "hero": {
-    "eyebrow": "Simple pricing for modern teams",
+    "eyebrow": "Package pricing in BDT",
     "label": "Adon ERP Pricing",
-    "title": "Choose the plan",
-    "titleAccent": "that grows with you.",
-    "description": "Start with the tools your team needs today, then scale into CRM, tasks, sales, accounting, inventory, ecommerce, automation, and reporting from one premium workspace.",
+    "title": "Choose the package",
+    "titleAccent": "that matches your operation.",
+    "description": "BDT is the primary pricing currency. Start with the package that fits your team, then switch to USD anytime for an approximate converted view.",
     "highlights": [
-      "No hidden fees",
-      "Cancel anytime",
-      "14-day trial"
+      "Source pricing follows the current package sheet",
+      "Charges are broken down clearly",
+      "USD view available anytime"
     ],
     "badges": {
       "bestValueTitle": "Best value",
-      "bestValuePlan": "Growth plan",
-      "scaleReadyTitle": "Scale-ready",
-      "scaleReadyDescription": "Add modules anytime"
+      "bestValuePlan": "Star package",
+      "scaleReadyTitle": "Operational fit",
+      "scaleReadyDescription": "Choose by users and modules"
     },
     "preview": {
-      "windowTitle": "Adon ERP Billing Center",
-      "currentPlanLabel": "Current plan",
-      "currentPlanName": "Professional",
+      "windowTitle": "Adon ERP Pricing Sheet",
+      "currentPlanLabel": "Highlighted package",
+      "currentPlanName": "Star",
       "metrics": [
         {
-          "value": 25,
+          "value": 10,
           "label": "Users"
         },
         {
-          "value": 500,
-          "label": "Storage (GB)"
+          "value": 7,
+          "label": "Included apps"
         },
         {
-          "value": 12,
-          "label": "Automation Rules"
+          "value": "Quarterly",
+          "label": "Renewal"
         }
       ],
       "cards": {
-        "monthlyCostLabel": "Monthly cost",
-        "monthlyCostValue": 99,
-        "monthlyCostNote": "Predictable cost",
-        "secondaryMetricLabel": "Implementation",
-        "secondaryMetricAnnualValue": "20%",
-        "secondaryMetricTrialValue": "14 days",
-        "secondaryMetricAnnual": "Annual saving",
-        "secondaryMetricTrial": "Trial available",
-        "workflowTitle": "Approvals and workflows",
-        "workflowDescription": "Shared data keeps pricing, billing, approvals, and support aligned."
+        "workflowTitle": "Clear commercial structure",
+        "workflowDescription": "Each card shows setup cost, recurring charge, and package coverage without hidden pricing logic."
       }
     }
   },
   "modules": [
-    "CRM",
-    "Sales",
-    "Inventory",
     "Accounting",
-    "HRM",
-    "Projects",
-    "Ecommerce",
-    "Client Portal",
-    "Automation",
-    "Helpdesk",
-    "Reports",
-    "API"
+    "Payroll",
+    "Inventory",
+    "Manufacturing",
+    "Supply Chain",
+    "CRM",
+    "Trade & Finance (LC Management)",
+    "Sales & Distribution Management",
+    "Reporting Service"
   ],
   "plansSection": {
-    "eyebrow": "Flexible plans",
-    "title": "Pricing that fits the way your team grows.",
-    "description": "Start lean, unlock automation when your workflow is ready, and move into enterprise support without rebuilding your stack.",
-    "billing": {
-      "monthly": "Monthly",
-      "annually": "Annually",
-      "save": "Save 20%"
+    "eyebrow": "Package pricing",
+    "title": "Spreadsheet-aligned pricing for core packages and enterprise service.",
+    "description": "Each package follows the source sheet with one-time setup, recurring billing, and enterprise service charges shown clearly.",
+    "currency": {
+      "bdt": "BDT",
+      "usd": "USD",
+      "note": "USD prices are approximate and use 1 USD = {rate} BDT."
     },
-    "popularBadge": "Most Popular",
-    "annualSavings": "You save 20% with annual billing",
-    "featuresIncluded": "Features included:",
+    "popularBadge": "Most Requested",
+    "featuresIncluded": "Included modules:",
     "moreFeatures": "+{count} more included"
   },
   "plans": [
     {
-      "id": "launch",
-      "name": "Launch",
-      "badge": "For lean teams",
-      "monthlyPrice": 49,
-      "annualPrice": 470,
-      "periodMonthly": "/month",
-      "periodAnnual": "/year",
-      "description": "A clean starting point for small businesses that need core CRM, sales, invoicing, and daily collaboration in one workspace.",
+      "id": "basic",
+      "name": "Basic",
+      "badge": "5 users",
+      "description": "Accounting, payroll, and inventory coverage for smaller teams that need a straightforward ERP setup.",
       "icon": "users",
       "color": "from-cyan-500 to-sky-500",
       "softBg": "bg-cyan-50",
       "iconText": "text-cyan-600",
-      "cta": "Start Now",
+      "cta": "Talk to Sales",
       "href": "/contact",
       "highlighted": false,
-      "spotlight": "4 users included",
+      "usersLabel": "Up to 5 users",
+      "charges": [
+        {
+          "label": "One-time setup charge",
+          "amountBdt": 60000
+        },
+        {
+          "label": "Every 3 months",
+          "amountBdt": 20000
+        },
+        {
+          "label": "Starting total",
+          "amountBdt": 80000,
+          "note": "Setup charge plus first quarter billing"
+        }
+      ],
       "features": [
-        "Up to 4 users",
-        "20GB secure storage",
-        "CRM contacts and pipeline",
-        "Tasks, calendar, and follow-ups",
-        "Quotations and invoices",
-        "Basic finance dashboard",
-        "Email support"
-      ]
-    },
-    {
-      "id": "starter",
-      "name": "Starter",
-      "badge": "For growing teams",
-      "monthlyPrice": 99,
-      "annualPrice": 950,
-      "periodMonthly": "/month",
-      "periodAnnual": "/year",
-      "description": "Designed for teams that need more users, deeper visibility, and stronger day-to-day execution across sales and operations.",
-      "icon": "layers3",
-      "color": "from-emerald-500 to-teal-500",
-      "softBg": "bg-emerald-50",
-      "iconText": "text-emerald-600",
-      "cta": "Get Started",
-      "href": "/contact",
-      "highlighted": false,
-      "features": [
-        "Up to 10 users",
-        "100GB secure storage",
-        "CRM and sales pipeline",
-        "Task and project management",
-        "Sales orders and invoice flow",
-        "Standard reports",
-        "Email and chat support",
-        "Role-based access"
-      ]
-    },
-    {
-      "id": "growth",
-      "name": "Growth",
-      "badge": "Best value",
-      "monthlyPrice": 149,
-      "annualPrice": 1430,
-      "periodMonthly": "/month",
-      "periodAnnual": "/year",
-      "description": "Built for ambitious teams that want automation, stronger reporting, and connected workflows without jumping to enterprise pricing.",
-      "icon": "zap",
-      "color": "from-primary via-fuchsia-600 to-amber-500",
-      "softBg": "bg-primary/10",
-      "iconText": "text-primary",
-      "cta": "Start Free Trial",
-      "href": "/contact",
-      "highlighted": true,
-      "features": [
-        "Up to 25 users",
-        "500GB secure storage",
-        "Advanced CRM and automation",
-        "Inventory and purchase workflows",
-        "Sales, stock, and finance reports",
-        "API and webhooks access",
-        "Priority support",
-        "Custom branding",
-        "Approval workflows",
-        "Advanced activity logs"
+        "Accounting",
+        "Payroll",
+        "Inventory"
       ]
     },
     {
       "id": "professional",
       "name": "Professional",
-      "badge": "For scaling operations",
-      "monthlyPrice": 249,
-      "annualPrice": 2390,
-      "periodMonthly": "/month",
-      "periodAnnual": "/year",
-      "description": "For teams running multiple departments, heavier approvals, deeper reporting, and more operational complexity every day.",
+      "badge": "6 users",
+      "description": "Adds manufacturing, supply chain, and LC management for operations that need broader execution coverage.",
+      "icon": "layers3",
+      "color": "from-emerald-500 to-teal-500",
+      "softBg": "bg-emerald-50",
+      "iconText": "text-emerald-600",
+      "cta": "Talk to Sales",
+      "href": "/contact",
+      "highlighted": false,
+      "usersLabel": "Up to 6 users",
+      "charges": [
+        {
+          "label": "One-time setup charge",
+          "amountBdt": 120000
+        },
+        {
+          "label": "Every 3 months",
+          "amountBdt": 40000
+        },
+        {
+          "label": "Starting total",
+          "amountBdt": 160000,
+          "note": "Setup charge plus first quarter billing"
+        }
+      ],
+      "features": [
+        "Accounting",
+        "Payroll",
+        "Manufacturing",
+        "Supply Chain",
+        "Inventory",
+        "Trade & Finance (LC Management)"
+      ]
+    },
+    {
+      "id": "star",
+      "name": "Star",
+      "badge": "10 users",
+      "description": "Combines CRM with finance and supply chain tools for teams that need wider commercial visibility.",
+      "icon": "zap",
+      "color": "from-primary via-fuchsia-600 to-amber-500",
+      "softBg": "bg-primary/10",
+      "iconText": "text-primary",
+      "cta": "Talk to Sales",
+      "href": "/contact",
+      "highlighted": true,
+      "usersLabel": "Up to 10 users",
+      "charges": [
+        {
+          "label": "One-time setup charge",
+          "amountBdt": 325000
+        },
+        {
+          "label": "Every 3 months",
+          "amountBdt": 75000
+        },
+        {
+          "label": "Starting total",
+          "amountBdt": 400000,
+          "note": "Setup charge plus first quarter billing"
+        }
+      ],
+      "features": [
+        "Accounting",
+        "Payroll",
+        "Manufacturing",
+        "Supply Chain",
+        "Inventory",
+        "CRM",
+        "Trade & Finance (LC Management)"
+      ]
+    },
+    {
+      "id": "platinum",
+      "name": "Platinum",
+      "badge": "20 users",
+      "description": "The broadest package in the sheet, adding sales distribution on top of the Star operational stack.",
       "icon": "rocket",
       "color": "from-indigo-600 via-primary to-amber-500",
       "softBg": "bg-indigo-50",
       "iconText": "text-indigo-600",
-      "cta": "Scale With Adon",
+      "cta": "Talk to Sales",
       "href": "/contact",
       "highlighted": false,
+      "usersLabel": "Up to 20 users",
+      "charges": [
+        {
+          "label": "One-time setup charge",
+          "amountBdt": 820000
+        },
+        {
+          "label": "Every 3 months",
+          "amountBdt": 180000
+        },
+        {
+          "label": "Starting total",
+          "amountBdt": 1000000,
+          "note": "Setup charge plus first quarter billing"
+        }
+      ],
       "features": [
-        "Up to 60 users",
-        "1TB secure storage",
-        "Advanced CRM, sales, and inventory",
-        "Multi-warehouse operations",
-        "Advanced dashboards and exports",
-        "Custom integrations",
-        "Priority onboarding support",
-        "SSO and audit visibility",
-        "Approval chains and permissions"
+        "Accounting",
+        "Payroll",
+        "Manufacturing",
+        "Supply Chain",
+        "Inventory",
+        "CRM",
+        "Trade & Finance (LC Management)",
+        "Sales & Distribution Management"
       ]
     },
     {
       "id": "enterprise",
       "name": "Enterprise",
-      "badge": "Custom solution",
-      "monthlyPrice": null,
-      "annualPrice": null,
-      "periodMonthly": "",
-      "periodAnnual": "",
-      "description": "A tailored Adon ERP environment for large teams, complex workflows, and dedicated support.",
+      "badge": "99 users",
+      "description": "Enterprise reporting service with separate onboarding, monthly service, and server maintenance charges.",
       "icon": "building2",
       "color": "from-slate-950 via-violet-900 to-primary",
       "softBg": "bg-slate-100",
@@ -208,46 +229,53 @@
       "cta": "Contact Sales",
       "href": "/contact",
       "highlighted": false,
+      "usersLabel": "Up to 99 users",
+      "charges": [
+        {
+          "label": "One-time setup charge",
+          "amountBdt": 50000
+        },
+        {
+          "label": "Monthly charge",
+          "amountBdt": 2500
+        },
+        {
+          "label": "Server maintenance",
+          "amountBdt": 1500
+        }
+      ],
       "features": [
-        "Unlimited users",
-        "Unlimited storage",
-        "Multi-company management",
-        "Dedicated account manager",
-        "Custom workflow development",
-        "On-premises option",
-        "24/7 premium support",
-        "SLA guarantee",
-        "Advanced security controls",
-        "Custom reporting suite"
+        "Reporting Service",
+        "Enterprise setup support"
       ]
     }
   ],
   "benefitsSection": {
-    "eyebrow": "Built for confident scaling",
-    "title": "Pricing that stays clear as your business grows.",
-    "description": "Adon ERP keeps your cost structure predictable while giving your team room to add modules, users, workflows, storage, reporting, and enterprise support."
+    "eyebrow": "Built for commercial clarity",
+    "title": "Pricing that stays readable for teams and enterprise buyers.",
+    "description": "Adon ERP pricing is shown as source-based package data so setup, recurring fees, user coverage, and included modules remain easy to review."
   },
   "benefits": [
     {
-      "title": "Transparent billing",
-      "description": "Clear pricing with no hidden implementation surprises for standard plans.",
+      "title": "Source-based pricing",
+      "description": "Package values follow the current spreadsheet structure instead of abstract marketing tiers.",
       "icon": "creditCard"
     },
     {
-      "title": "Secure workspace",
-      "description": "Role-based access, activity visibility, and secure business data handling.",
+      "title": "Clear charge breakdown",
+      "description": "Setup, recurring, and enterprise maintenance costs are shown separately for easier planning.",
       "icon": "lockKeyhole"
     },
     {
-      "title": "Scale module by module",
-      "description": "Start with what you need today and expand as your business grows.",
+      "title": "Operational fit",
+      "description": "Choose a package by user count and included modules without guessing what is bundled.",
       "icon": "layers3"
     }
   ],
   "comparisonSection": {
     "eyebrow": "Plan comparison",
-    "title": "Compare every plan clearly.",
-    "description": "Review users, storage, automation, integrations, branding, and support before choosing the right plan for your team.",
+    "title": "Compare every package clearly.",
+    "description": "Review user limits, setup charges, recurring fees, and included modules from the source pricing sheet before choosing.",
     "headers": {
       "feature": "Feature"
     }
@@ -256,130 +284,142 @@
     {
       "feature": "Users",
       "values": {
-        "launch": "4",
-        "starter": "10",
-        "growth": "25",
-        "professional": "60",
-        "enterprise": "Unlimited"
+        "basic": "5",
+        "professional": "6",
+        "star": "10",
+        "platinum": "20",
+        "enterprise": "99"
       }
     },
     {
-      "feature": "Storage",
+      "feature": "One-time setup charge",
       "values": {
-        "launch": "20GB",
-        "starter": "100GB",
-        "growth": "500GB",
-        "professional": "1TB",
-        "enterprise": "Unlimited"
+        "basic": "৳60,000",
+        "professional": "৳120,000",
+        "star": "৳325,000",
+        "platinum": "৳820,000",
+        "enterprise": "৳50,000"
       }
     },
     {
-      "feature": "CRM Pipeline",
+      "feature": "Recurring charge",
       "values": {
-        "launch": "Essential",
-        "starter": "Standard",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Custom"
+        "basic": "৳20,000",
+        "professional": "৳40,000",
+        "star": "৳75,000",
+        "platinum": "৳180,000",
+        "enterprise": "৳2,500"
       }
     },
     {
-      "feature": "Task Management",
+      "feature": "Recurring cycle",
       "values": {
-        "launch": "Included",
-        "starter": "Included",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Advanced"
+        "basic": "Every 3 months",
+        "professional": "Every 3 months",
+        "star": "Every 3 months",
+        "platinum": "Every 3 months",
+        "enterprise": "Monthly"
       }
     },
     {
-      "feature": "Inventory Management",
+      "feature": "Server maintenance",
       "values": {
-        "launch": "Basic",
-        "starter": "Standard",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Custom"
+        "basic": false,
+        "professional": false,
+        "star": false,
+        "platinum": false,
+        "enterprise": "৳1,500 / month"
       }
     },
     {
-      "feature": "Automation",
+      "feature": "Accounting",
       "values": {
-        "launch": "Basic",
-        "starter": "Standard",
-        "growth": "Included",
-        "professional": "Advanced",
-        "enterprise": "Custom"
-      }
-    },
-    {
-      "feature": "API Access",
-      "values": {
-        "launch": false,
-        "starter": false,
-        "growth": true,
+        "basic": true,
         "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "Payroll",
+      "values": {
+        "basic": true,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "Manufacturing",
+      "values": {
+        "basic": false,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "Supply Chain",
+      "values": {
+        "basic": false,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "Inventory",
+      "values": {
+        "basic": true,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "CRM",
+      "values": {
+        "basic": false,
+        "professional": false,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "Trade & Finance (LC Management)",
+      "values": {
+        "basic": false,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "Sales & Distribution Management",
+      "values": {
+        "basic": false,
+        "professional": false,
+        "star": false,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "Reporting Service",
+      "values": {
+        "basic": false,
+        "professional": false,
+        "star": false,
+        "platinum": false,
         "enterprise": true
       }
-    },
-    {
-      "feature": "Custom Branding",
-      "values": {
-        "launch": false,
-        "starter": false,
-        "growth": true,
-        "professional": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Approval Workflows",
-      "values": {
-        "launch": "Basic",
-        "starter": "Standard",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Custom"
-      }
-    },
-    {
-      "feature": "Support",
-      "values": {
-        "launch": "Email",
-        "starter": "Email + Chat",
-        "growth": "Priority",
-        "professional": "Priority + Onboarding",
-        "enterprise": "24/7 Dedicated"
-      }
-    }
-  ],
-  "addonsSection": {
-    "eyebrow": "Optional add-ons",
-    "title": "Extend your workspace when needed.",
-    "description": "Add extra capacity, expert implementation help, or advanced analytics without changing your whole plan."
-  },
-  "addons": [
-    {
-      "title": "Extra Storage",
-      "amount": 10,
-      "unit": "/ 100GB",
-      "description": "Add more secure storage for documents, images, reports, and operational records.",
-      "icon": "shieldCheck"
-    },
-    {
-      "title": "Advanced Analytics",
-      "amount": 25,
-      "unit": "/ month",
-      "description": "Unlock deeper dashboards, custom exports, business intelligence, and performance tracking.",
-      "icon": "barChart3"
-    },
-    {
-      "title": "Implementation Support",
-      "amount": null,
-      "unit": "",
-      "description": "Get expert help for migration, setup, onboarding, training, and workflow design.",
-      "icon": "sparkles"
     }
   ],
   "faqSection": {
@@ -388,37 +428,33 @@
   },
   "faqs": [
     {
-      "q": "Can I change my plan anytime?",
-      "a": "Yes. You can upgrade or downgrade your plan anytime. Plan changes can be applied based on your billing cycle and workspace requirements."
+      "q": "Is BDT the default pricing currency?",
+      "a": "Yes. The source package sheet is maintained in BDT, so the pricing page defaults to BDT."
     },
     {
-      "q": "Do you offer a free trial?",
-      "a": "Yes. The Professional plan can include a 14-day trial so your team can explore the workflow before committing."
+      "q": "Can I view the same prices in USD?",
+      "a": "Yes. The USD toggle gives an approximate converted view using the configured exchange rate shown on the page."
     },
     {
-      "q": "Can I add only the modules I need?",
-      "a": "Yes. Adon ERP is designed to scale module by module. You can start with CRM, tasks, sales, inventory, HR, ecommerce, or analytics depending on your business needs."
+      "q": "Why do some packages show every 3 months while enterprise shows monthly?",
+      "a": "That follows the structure in the source sheet. Core packages use quarterly recurring charges, while the enterprise reporting service includes monthly charges and monthly server maintenance."
     },
     {
-      "q": "Do you support custom workflows?",
-      "a": "Yes. Enterprise customers can request custom workflows, reports, integrations, role permissions, and deployment options."
+      "q": "What does the starting total represent?",
+      "a": "For the core packages, the starting total combines the one-time setup charge with the first recurring billing cycle shown in the sheet."
     },
     {
-      "q": "What payment methods do you accept?",
-      "a": "Standard plans can support common online payment methods. Enterprise customers can use custom billing such as bank transfer or invoice-based payment."
-    },
-    {
-      "q": "Is there a long-term contract?",
-      "a": "Monthly plans do not require a long-term contract. Annual and enterprise agreements are also available for teams that need discounted or custom terms."
+      "q": "Can users or modules be customized later?",
+      "a": "Yes. Contact the sales team if you need a package recommendation, custom rollout scope, or enterprise reporting support."
     }
   ],
   "ctaSection": {
-    "title": "Ready to run your business smarter?",
-    "description": "Start with the plan that fits today, then add more modules, automation, reporting, and support as your company grows.",
+    "title": "Ready to review the right package with your team?",
+    "description": "Start from the package that matches your users and modules, then confirm the rollout scope with Adon ERP sales.",
     "points": [
-      "Premium ERP experience",
-      "Secure role access",
-      "Scale without chaos"
+      "BDT-first pricing",
+      "USD view available",
+      "Clear charge breakdown"
     ]
   }
 }

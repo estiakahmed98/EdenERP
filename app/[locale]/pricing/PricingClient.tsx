@@ -11,7 +11,6 @@ import {
   Check,
   CheckCircle2,
   CircleDollarSign,
-  Clock3,
   CreditCard,
   Crown,
   Gem,
@@ -32,16 +31,14 @@ import { useLocale, useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
-type BillingCycle = "monthly" | "annually";
+type Currency = "bdt" | "usd";
+
+const USD_EXCHANGE_RATE = 122;
 
 type Plan = {
   id: string;
   name: string;
   badge: string;
-  monthlyPrice: number | null;
-  annualPrice: number | null;
-  periodMonthly: string;
-  periodAnnual: string;
   description: string;
   icon: "users" | "zap" | "building2" | "layers3" | "rocket" | "crown";
   color: string;
@@ -51,6 +48,12 @@ type Plan = {
   href: string;
   highlighted: boolean;
   spotlight?: string;
+  usersLabel: string;
+  charges: {
+    label: string;
+    amountBdt: number | null;
+    note?: string;
+  }[];
   features: string[];
 };
 
@@ -65,14 +68,6 @@ type ComparisonRow = {
   values: Record<string, string | boolean>;
 };
 
-type AddOn = {
-  title: string;
-  amount: number | null;
-  unit: string;
-  description: string;
-  icon: "shieldCheck" | "barChart3" | "sparkles";
-};
-
 type FaqItem = {
   q: string;
   a: string;
@@ -85,7 +80,6 @@ type PreviewMetric = {
 
 type PriceDisplay = {
   value: string;
-  currencyLabel: string;
 };
 
 const planIcons = {
@@ -101,12 +95,6 @@ const benefitIcons = {
   creditCard: CreditCard,
   lockKeyhole: LockKeyhole,
   layers3: Layers3,
-} as const;
-
-const addOnIcons = {
-  shieldCheck: ShieldCheck,
-  barChart3: BarChart3,
-  sparkles: Sparkles,
 } as const;
 
 function ScriptHeading({
@@ -149,51 +137,52 @@ export default function PricingClient() {
   const stateT = useTranslations("common.states");
   const locale = useLocale();
   const isBangla = locale === "bn";
-  const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
-
-  const isAnnual = billingCycle === "annually";
+  const [currency, setCurrency] = useState<Currency>("bdt");
   const plans = t.raw("plans") as Plan[];
   const modules = t.raw("modules") as string[];
   const benefits = t.raw("benefits") as Benefit[];
   const comparison = t.raw("comparison") as ComparisonRow[];
-  const addOns = t.raw("addons") as AddOn[];
   const faqs = t.raw("faqs") as FaqItem[];
   const previewMetrics = t.raw("hero.preview.metrics") as PreviewMetric[];
   const featuredPlan =
     plans.find((plan) => plan.highlighted) ??
-    plans.find((plan) => plan.id === "professional") ??
+    plans.find((plan) => plan.id === "star") ??
     plans[0];
+  const primaryPreviewCharge = featuredPlan.charges[0];
+  const secondaryPreviewCharge = featuredPlan.charges[1] ?? featuredPlan.charges[0];
 
-  function formatAmount(amount: number) {
+  function formatAmount(amount: number, minimumFractionDigits = 0, maximumFractionDigits = 0) {
     return new Intl.NumberFormat(locale, {
-      minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
-      maximumFractionDigits: Number.isInteger(amount) ? 0 : 2,
+      minimumFractionDigits,
+      maximumFractionDigits,
     }).format(amount);
   }
 
-  function getPriceDisplay(amount: number | null): PriceDisplay {
-    if (amount === null) {
-      return { value: stateT("custom"), currencyLabel: "" };
+  function getPriceDisplay(amountBdt: number | null): PriceDisplay {
+    if (amountBdt === null) {
+      return { value: stateT("custom") };
     }
 
-    if (isBangla) {
+    if (currency === "bdt") {
       return {
-        value: formatAmount(amount),
-        currencyLabel: "ডলার",
+        value: `৳${formatAmount(amountBdt)}`,
       };
     }
 
+    const amountUsd = amountBdt / USD_EXCHANGE_RATE;
+    const showDecimals = amountUsd < 100;
+
     return {
-      value: `$${formatAmount(amount)}`,
-      currencyLabel: "",
+      value: `$${formatAmount(
+        amountUsd,
+        showDecimals ? 2 : 0,
+        showDecimals ? 2 : 0,
+      )}`,
     };
   }
 
-  function formatCurrency(amount: number) {
-    const price = getPriceDisplay(amount);
-    return price.currencyLabel
-      ? `${price.value} ${price.currencyLabel}`
-      : price.value;
+  function formatCurrency(amountBdt: number | null) {
+    return getPriceDisplay(amountBdt).value;
   }
 
   function formatMetricValue(value: number | string) {
@@ -222,13 +211,6 @@ export default function PricingClient() {
 
     return <span>{value}</span>;
   }
-
-  const previewPrice =
-    featuredPlan.annualPrice !== null && featuredPlan.monthlyPrice !== null
-      ? isAnnual
-        ? `${formatCurrency(featuredPlan.annualPrice)} ${featuredPlan.periodAnnual}`.trim()
-        : `${formatCurrency(featuredPlan.monthlyPrice)} ${featuredPlan.periodMonthly}`.trim()
-      : stateT("custom");
 
   return (
     <main className="min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#ffffff_0%,_#fbf7ff_22%,_#ffffff_55%,_#fff8ed_100%)] text-slate-800 dark:bg-[linear-gradient(180deg,_#020617_0%,_#0b1220_35%,_#020617_70%,_#020617_100%)] dark:text-slate-100">
@@ -375,22 +357,20 @@ export default function PricingClient() {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-2xl bg-white/10 p-4">
                       <CircleDollarSign className="h-5 w-5 text-emerald-300" />
-                      <p className="mt-3 text-lg font-bold">{previewPrice}</p>
+                      <p className="mt-3 text-lg font-bold">
+                        {formatCurrency(primaryPreviewCharge?.amountBdt ?? null)}
+                      </p>
                       <p className="text-xs text-white/50">
-                        {t("hero.preview.cards.monthlyCostNote")}
+                        {primaryPreviewCharge?.label}
                       </p>
                     </div>
                     <div className="rounded-2xl bg-white/10 p-4">
-                      <Clock3 className="h-5 w-5 text-amber-300" />
+                      <Sparkles className="h-5 w-5 text-amber-300" />
                       <p className="mt-3 text-lg font-bold">
-                        {isAnnual
-                          ? t("hero.preview.cards.secondaryMetricAnnualValue")
-                          : t("hero.preview.cards.secondaryMetricTrialValue")}
+                        {formatCurrency(secondaryPreviewCharge?.amountBdt ?? null)}
                       </p>
                       <p className="text-xs text-white/50">
-                        {isAnnual
-                          ? t("hero.preview.cards.secondaryMetricAnnual")
-                          : t("hero.preview.cards.secondaryMetricTrial")}
+                        {secondaryPreviewCharge?.label}
                       </p>
                     </div>
                   </div>
@@ -451,37 +431,32 @@ export default function PricingClient() {
           <div className="mt-8 inline-flex rounded-2xl border border-slate-200 bg-white p-1 shadow-sm dark:border-slate-800 dark:bg-slate-950">
             <button
               type="button"
-              onClick={() => setBillingCycle("monthly")}
+              onClick={() => setCurrency("bdt")}
               className={`rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
-                billingCycle === "monthly"
+                currency === "bdt"
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
                   : "text-slate-600 hover:text-primary dark:text-slate-300"
               }`}
             >
-              {t("plansSection.billing.monthly")}
+              {t("plansSection.currency.bdt")}
             </button>
 
             <button
               type="button"
-              onClick={() => setBillingCycle("annually")}
+              onClick={() => setCurrency("usd")}
               className={`rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
-                billingCycle === "annually"
+                currency === "usd"
                   ? "bg-primary text-white shadow-lg shadow-primary/20"
                   : "text-slate-600 hover:text-primary dark:text-slate-300"
               }`}
             >
-              {t("plansSection.billing.annually")}
-              <span
-                className={`ml-2 rounded-full px-2 py-1 text-xs ${
-                  billingCycle === "annually"
-                    ? "bg-white/20 text-white"
-                    : "bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-200"
-                }`}
-              >
-                {t("plansSection.billing.save")}
-              </span>
+              {t("plansSection.currency.usd")}
             </button>
           </div>
+
+          <p className="mt-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+            {t("plansSection.currency.note", { rate: USD_EXCHANGE_RATE })}
+          </p>
         </div>
 
         <div className="mt-14 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-5">
@@ -490,9 +465,6 @@ export default function PricingClient() {
             const visibleFeatures = getVisibleFeatures(plan);
             const remainingFeatures = plan.features.length - visibleFeatures.length;
             const isFeatured = plan.highlighted;
-            const priceDisplay = getPriceDisplay(
-              isAnnual ? plan.annualPrice : plan.monthlyPrice,
-            );
 
             return (
               <div
@@ -534,13 +506,13 @@ export default function PricingClient() {
                       <h3 className="mt-3 text-2xl font-bold text-slate-950 dark:text-slate-100">
                         {plan.name}
                       </h3>
-                      {plan.spotlight ? (
+                      {plan.usersLabel ? (
                         <p
                           className={`mt-3 inline-flex rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary ${
                             isBangla ? "text-sm leading-snug" : "text-xs"
                           }`}
                         >
-                          {plan.spotlight}
+                          {plan.usersLabel}
                         </p>
                       ) : null}
                     </div>
@@ -553,52 +525,47 @@ export default function PricingClient() {
                   </div>
 
                   <p
-                    className={`mt-4 min-h-[10rem] text-slate-600 dark:text-slate-300 ${
+                    className={`mt-4 min-h-[7.5rem] text-slate-600 dark:text-slate-300 ${
                       isBangla ? "text-[15px] leading-8" : "text-sm leading-7"
                     }`}
                   >
                     {plan.description}
                   </p>
 
-                  <div className="mt-6">
-                    <div className="flex flex-col items-start gap-1.5">
-                      <div className="flex flex-wrap items-end gap-x-2 gap-y-1">
-                      <span
-                        className={`leading-none font-bold tracking-tight text-slate-950 dark:text-slate-100 ${
-                          plan.monthlyPrice === null
-                            ? isBangla
-                              ? "text-5xl sm:text-6xl"
-                              : "text-5xl"
-                            : isBangla
-                              ? "text-[2.85rem] sm:text-5xl"
-                              : "text-5xl"
-                        }`}
-                      >
-                        {priceDisplay.value}
-                      </span>
-                      {priceDisplay.currencyLabel ? (
-                        <span className="pb-1 text-lg font-semibold text-slate-500 dark:text-slate-400">
-                          {priceDisplay.currencyLabel}
-                        </span>
-                      ) : null}
-                      </div>
+                  <div className="mt-6 rounded-[1.6rem] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-800 dark:bg-slate-900/50">
+                    <div className="space-y-3">
+                      {plan.charges.map((charge, index) => (
+                        <div
+                          key={`${plan.id}:${charge.label}`}
+                          className={`flex items-start justify-between gap-4 ${
+                            index !== plan.charges.length - 1
+                              ? "border-b border-slate-200/80 pb-3 dark:border-slate-800"
+                              : ""
+                          }`}
+                        >
+                          <div className="min-w-0">
+                            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                              {charge.label}
+                            </p>
+                            {charge.note ? (
+                              <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">
+                                {charge.note}
+                              </p>
+                            ) : null}
+                          </div>
 
-                      <span
-                        className={`font-medium text-slate-500 dark:text-slate-400 ${
-                          isBangla ? "text-sm leading-none" : "text-base"
-                        }`}
-                      >
-                        {isAnnual ? plan.periodAnnual : plan.periodMonthly}
-                      </span>
+                          <div className="shrink-0 text-right">
+                            <p
+                              className={`font-bold tracking-tight text-slate-950 dark:text-slate-100 ${
+                                index === 0 ? "text-2xl" : "text-lg"
+                              }`}
+                            >
+                              {formatCurrency(charge.amountBdt)}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-
-                    {isAnnual &&
-                      plan.annualPrice !== null &&
-                      plan.monthlyPrice !== null && (
-                      <p className="mt-3 max-w-[16rem] text-sm font-semibold leading-6 text-emerald-600">
-                        {t("plansSection.annualSavings")}
-                      </p>
-                    )}
                   </div>
 
                   <Link
@@ -746,53 +713,6 @@ export default function PricingClient() {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-white py-16 lg:py-24 dark:bg-slate-950">
-        <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,#fbf7ff_0%,transparent_100%)] dark:bg-[linear-gradient(180deg,#0b1220_0%,transparent_100%)]" />
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <SectionEyebrow
-              icon={<Sparkles className="h-4 w-4" />}
-              label={t("addonsSection.eyebrow")}
-            />
-            <div className="mt-8">
-              <ScriptHeading>{t("addonsSection.title")}</ScriptHeading>
-            </div>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-              {t("addonsSection.description")}
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {addOns.map((item) => {
-              const Icon = addOnIcons[item.icon];
-
-              return (
-                <div
-                  key={item.title}
-                  className="group rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <h3 className="mt-6 text-xl font-semibold text-slate-950 dark:text-slate-100">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-2xl font-bold text-primary">
-                    {item.amount === null
-                      ? stateT("custom")
-                      : `${formatCurrency(item.amount)}${item.unit}`}
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

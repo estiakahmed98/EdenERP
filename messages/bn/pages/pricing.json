@@ -1,206 +1,227 @@
 {
   "metadata": {
     "title": "প্রাইসিং | Adon ERP",
-    "description": "স্টার্টআপ, গ্রোয়িং টিম এবং এন্টারপ্রাইজ প্রতিষ্ঠানের জন্য সহজ ও স্বচ্ছ Adon ERP প্রাইসিং।"
+    "description": "BDT-ভিত্তিক Adon ERP প্যাকেজ প্রাইসিং, সাথে USD-তে আনুমানিক ভিউ।"
   },
   "hero": {
-    "eyebrow": "আধুনিক টিমের জন্য সহজ প্রাইসিং",
+    "eyebrow": "BDT-ভিত্তিক প্যাকেজ প্রাইসিং",
     "label": "Adon ERP Pricing",
-    "title": "যে প্ল্যান",
-    "titleAccent": "আপনার সাথে বড় হবে সেটি বেছে নিন।",
-    "description": "আজ আপনার টিমের যা দরকার তা দিয়েই শুরু করুন, তারপর একই প্রিমিয়াম ওয়ার্কস্পেস থেকে CRM, সেলস, অ্যাকাউন্টিং, ইনভেন্টরি, অটোমেশন ও রিপোর্টিংয়ে স্কেল করুন।",
+    "title": "যে প্যাকেজ",
+    "titleAccent": "আপনার অপারেশনের সাথে মানানসই, সেটি বেছে নিন।",
+    "description": "প্রাইমারি প্রাইসিং BDT-তে দেখানো হয়। টিম ও মডিউল অনুযায়ী সঠিক প্যাকেজ বেছে নিন, তারপর চাইলে USD-তে আনুমানিক কনভার্টেড ভিউ দেখুন।",
     "highlights": [
-      "কোনো লুকানো ফি নেই",
-      "যেকোনো সময় বন্ধ করতে পারবেন",
-      "১৪ দিনের ট্রায়াল"
+      "সোর্স প্রাইসিং বর্তমান শিট অনুযায়ী",
+      "প্রতি চার্জ আলাদা করে দেখানো",
+      "চাইলে সঙ্গে সঙ্গে USD ভিউ"
     ],
     "badges": {
       "bestValueTitle": "সেরা ভ্যালু",
-      "bestValuePlan": "Growth প্ল্যান",
-      "scaleReadyTitle": "স্কেল-রেডি",
-      "scaleReadyDescription": "যেকোনো সময় মডিউল যোগ করুন"
+      "bestValuePlan": "Star প্যাকেজ",
+      "scaleReadyTitle": "অপারেশন ফিট",
+      "scaleReadyDescription": "ইউজার ও মডিউল দেখে বেছে নিন"
     },
     "preview": {
-      "windowTitle": "Adon ERP Billing Center",
-      "currentPlanLabel": "বর্তমান প্ল্যান",
-      "currentPlanName": "Professional",
+      "windowTitle": "Adon ERP Pricing Sheet",
+      "currentPlanLabel": "হাইলাইটেড প্যাকেজ",
+      "currentPlanName": "Star",
       "metrics": [
         {
-          "value": 25,
+          "value": 10,
           "label": "ব্যবহারকারী"
         },
         {
-          "value": 500,
-          "label": "স্টোরেজ (GB)"
+          "value": 7,
+          "label": "অন্তর্ভুক্ত অ্যাপ"
         },
         {
-          "value": 12,
-          "label": "অটোমেশন রুল"
+          "value": "ত্রৈমাসিক",
+          "label": "রিনিউয়াল"
         }
       ],
       "cards": {
-        "monthlyCostLabel": "মাসিক খরচ",
-        "monthlyCostValue": 99,
-        "monthlyCostNote": "পূর্বানুমানযোগ্য খরচ",
-        "secondaryMetricLabel": "ইমপ্লিমেন্টেশন",
-        "secondaryMetricAnnualValue": "২০%",
-        "secondaryMetricTrialValue": "১৪ দিন",
-        "secondaryMetricAnnual": "বার্ষিক সাশ্রয়",
-        "secondaryMetricTrial": "ট্রায়াল উপলব্ধ",
-        "workflowTitle": "অ্যাপ্রুভাল ও ওয়ার্কফ্লো",
-        "workflowDescription": "শেয়ারড ডেটা প্রাইসিং, বিলিং, অ্যাপ্রুভাল এবং সাপোর্টকে একই লাইনে রাখে।"
+        "workflowTitle": "পরিষ্কার বাণিজ্যিক স্ট্রাকচার",
+        "workflowDescription": "প্রতিটি কার্ডে setup cost, recurring charge এবং package coverage পরিষ্কারভাবে দেখানো হয়।"
       }
     }
   },
   "modules": [
+    "অ্যাকাউন্টিং",
+    "পেরোল",
+    "ইনভেন্টরি",
+    "ম্যানুফ্যাকচারিং",
+    "সাপ্লাই চেইন",
     "CRM",
-    "Sales",
-    "Inventory",
-    "Accounting",
-    "HRM",
-    "Projects",
-    "Ecommerce",
-    "Client Portal",
-    "Automation",
-    "Helpdesk",
-    "Reports",
-    "API"
+    "ট্রেড অ্যান্ড ফাইন্যান্স (LC ম্যানেজমেন্ট)",
+    "সেলস অ্যান্ড ডিস্ট্রিবিউশন ম্যানেজমেন্ট",
+    "রিপোর্টিং সার্ভিস"
   ],
   "plansSection": {
-    "eyebrow": "নমনীয় প্ল্যান",
-    "title": "আপনার টিম যেভাবে বাড়ে, সেভাবেই মানানসই প্রাইসিং।",
-    "description": "শুরুতে ছোটভাবে শুরু করুন, ওয়ার্কফ্লো প্রস্তুত হলে অটোমেশন আনলক করুন, তারপর স্ট্যাক না বদলিয়েই এন্টারপ্রাইজ সাপোর্টে যান।",
-    "billing": {
-      "monthly": "মাসিক",
-      "annually": "বার্ষিক",
-      "save": "২০% সাশ্রয়"
+    "eyebrow": "প্যাকেজ প্রাইসিং",
+    "title": "কোর প্যাকেজ ও এন্টারপ্রাইজ সার্ভিসের শিট-অ্যালাইন্ড প্রাইসিং।",
+    "description": "প্রতিটি প্যাকেজে one-time setup, recurring billing এবং enterprise service charge শিট অনুযায়ী পরিষ্কারভাবে দেখানো হয়েছে।",
+    "currency": {
+      "bdt": "BDT",
+      "usd": "USD",
+      "note": "USD ভিউ আনুমানিক, ১ USD = {rate} BDT হারে দেখানো হয়।"
     },
-    "popularBadge": "সবচেয়ে জনপ্রিয়",
-    "annualSavings": "বার্ষিকে ২০% সাশ্রয়",
-    "featuresIncluded": "অন্তর্ভুক্ত ফিচার:",
+    "popularBadge": "সবচেয়ে চাহিদাসম্পন্ন",
+    "featuresIncluded": "অন্তর্ভুক্ত মডিউল:",
     "moreFeatures": "+আরও {count}টি অন্তর্ভুক্ত"
   },
   "plans": [
     {
-      "id": "launch",
-      "name": "Launch",
-      "badge": "ছোট টিমের জন্য",
-      "monthlyPrice": 49,
-      "annualPrice": 470,
-      "periodMonthly": "/মাস",
-      "periodAnnual": "/বছর",
-      "description": "ছোট ব্যবসার জন্য CRM, সেলস, ইনভয়েসিং ও দৈনন্দিন সহযোগিতার সহজ শুরু।",
+      "id": "basic",
+      "name": "Basic",
+      "badge": "৫ ব্যবহারকারী",
+      "description": "ছোট টিমের জন্য অ্যাকাউন্টিং, পেরোল ও ইনভেন্টরির সহজ ERP সেটআপ।",
       "icon": "users",
       "color": "from-cyan-500 to-sky-500",
       "softBg": "bg-cyan-50",
       "iconText": "text-cyan-600",
-      "cta": "এখনই শুরু",
+      "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": false,
-      "spotlight": "৪ ব্যবহারকারী অন্তর্ভুক্ত",
+      "usersLabel": "সর্বোচ্চ ৫ ব্যবহারকারী",
+      "charges": [
+        {
+          "label": "ওয়ান-টাইম setup charge",
+          "amountBdt": 60000
+        },
+        {
+          "label": "প্রতি ৩ মাসে",
+          "amountBdt": 20000
+        },
+        {
+          "label": "শুরুর মোট খরচ",
+          "amountBdt": 80000,
+          "note": "Setup charge এবং প্রথম quarter billingসহ"
+        }
+      ],
       "features": [
-        "সর্বোচ্চ ৪ ব্যবহারকারী",
-        "২০GB সিকিউর স্টোরেজ",
-        "CRM কনট্যাক্ট ও পাইপলাইন",
-        "টাস্ক, ক্যালেন্ডার ও ফলো-আপ",
-        "কোটেশন ও ইনভয়েস",
-        "বেসিক ফাইন্যান্স ড্যাশবোর্ড",
-        "ইমেইল সাপোর্ট"
-      ]
-    },
-    {
-      "id": "starter",
-      "name": "Starter",
-      "badge": "বর্ধনশীল টিমের জন্য",
-      "monthlyPrice": 99,
-      "annualPrice": 950,
-      "periodMonthly": "/মাস",
-      "periodAnnual": "/বছর",
-      "description": "বেশি ব্যবহারকারী, ভালো দৃশ্যমানতা ও শক্তিশালী দৈনন্দিন অপারেশনের জন্য তৈরি।",
-      "icon": "layers3",
-      "color": "from-emerald-500 to-teal-500",
-      "softBg": "bg-emerald-50",
-      "iconText": "text-emerald-600",
-      "cta": "শুরু করুন",
-      "href": "/contact",
-      "highlighted": false,
-      "features": [
-        "সর্বোচ্চ ১০ ব্যবহারকারী",
-        "১০০GB সিকিউর স্টোরেজ",
-        "CRM ও সেলস পাইপলাইন",
-        "টাস্ক ও প্রজেক্ট ম্যানেজমেন্ট",
-        "সেলস অর্ডার ও ইনভয়েস ফ্লো",
-        "স্ট্যান্ডার্ড রিপোর্ট",
-        "ইমেইল ও চ্যাট সাপোর্ট",
-        "রোল-ভিত্তিক অ্যাক্সেস"
-      ]
-    },
-    {
-      "id": "growth",
-      "name": "Growth",
-      "badge": "সেরা ভ্যালু",
-      "monthlyPrice": 149,
-      "annualPrice": 1430,
-      "periodMonthly": "/মাস",
-      "periodAnnual": "/বছর",
-      "description": "অটোমেশন, শক্তিশালী রিপোর্টিং ও সংযুক্ত ওয়ার্কফ্লো চাওয়া টিমের জন্য আদর্শ।",
-      "icon": "zap",
-      "color": "from-primary via-fuchsia-600 to-amber-500",
-      "softBg": "bg-primary/10",
-      "iconText": "text-primary",
-      "cta": "ফ্রি ট্রায়াল শুরু",
-      "href": "/contact",
-      "highlighted": true,
-      "features": [
-        "সর্বোচ্চ ২৫ ব্যবহারকারী",
-        "৫০০GB সিকিউর স্টোরেজ",
-        "অ্যাডভান্সড CRM ও অটোমেশন",
-        "ইনভেন্টরি ও পারচেজ ওয়ার্কফ্লো",
-        "সেলস, স্টক ও ফাইন্যান্স রিপোর্ট",
-        "API ও ওয়েবহুক অ্যাক্সেস",
-        "প্রায়োরিটি সাপোর্ট",
-        "কাস্টম ব্র্যান্ডিং",
-        "অ্যাপ্রুভাল ওয়ার্কফ্লো",
-        "অ্যাডভান্সড অ্যাক্টিভিটি লগ"
+        "অ্যাকাউন্টিং",
+        "পেরোল",
+        "ইনভেন্টরি"
       ]
     },
     {
       "id": "professional",
       "name": "Professional",
-      "badge": "স্কেলিং অপারেশনের জন্য",
-      "monthlyPrice": 249,
-      "annualPrice": 2390,
-      "periodMonthly": "/মাস",
-      "periodAnnual": "/বছর",
-      "description": "একাধিক বিভাগ, জটিল অনুমোদন ও গভীর রিপোর্টিং সামলানো টিমের জন্য।",
+      "badge": "৬ ব্যবহারকারী",
+      "description": "বর্ধনশীল অপারেশনের জন্য ম্যানুফ্যাকচারিং, সাপ্লাই চেইন ও LC ম্যানেজমেন্টসহ বিস্তৃত কাভারেজ।",
+      "icon": "layers3",
+      "color": "from-emerald-500 to-teal-500",
+      "softBg": "bg-emerald-50",
+      "iconText": "text-emerald-600",
+      "cta": "সেলসের সাথে কথা বলুন",
+      "href": "/contact",
+      "highlighted": false,
+      "usersLabel": "সর্বোচ্চ ৬ ব্যবহারকারী",
+      "charges": [
+        {
+          "label": "ওয়ান-টাইম setup charge",
+          "amountBdt": 120000
+        },
+        {
+          "label": "প্রতি ৩ মাসে",
+          "amountBdt": 40000
+        },
+        {
+          "label": "শুরুর মোট খরচ",
+          "amountBdt": 160000,
+          "note": "Setup charge এবং প্রথম quarter billingসহ"
+        }
+      ],
+      "features": [
+        "অ্যাকাউন্টিং",
+        "পেরোল",
+        "ম্যানুফ্যাকচারিং",
+        "সাপ্লাই চেইন",
+        "ইনভেন্টরি",
+        "ট্রেড অ্যান্ড ফাইন্যান্স (LC ম্যানেজমেন্ট)"
+      ]
+    },
+    {
+      "id": "star",
+      "name": "Star",
+      "badge": "১০ ব্যবহারকারী",
+      "description": "CRM, ফাইন্যান্স ও সাপ্লাই চেইন একসাথে দরকার এমন টিমের জন্য ভারসাম্যপূর্ণ প্যাকেজ।",
+      "icon": "zap",
+      "color": "from-primary via-fuchsia-600 to-amber-500",
+      "softBg": "bg-primary/10",
+      "iconText": "text-primary",
+      "cta": "সেলসের সাথে কথা বলুন",
+      "href": "/contact",
+      "highlighted": true,
+      "usersLabel": "সর্বোচ্চ ১০ ব্যবহারকারী",
+      "charges": [
+        {
+          "label": "ওয়ান-টাইম setup charge",
+          "amountBdt": 325000
+        },
+        {
+          "label": "প্রতি ৩ মাসে",
+          "amountBdt": 75000
+        },
+        {
+          "label": "শুরুর মোট খরচ",
+          "amountBdt": 400000,
+          "note": "Setup charge এবং প্রথম quarter billingসহ"
+        }
+      ],
+      "features": [
+        "অ্যাকাউন্টিং",
+        "পেরোল",
+        "ম্যানুফ্যাকচারিং",
+        "সাপ্লাই চেইন",
+        "ইনভেন্টরি",
+        "CRM",
+        "ট্রেড অ্যান্ড ফাইন্যান্স (LC ম্যানেজমেন্ট)"
+      ]
+    },
+    {
+      "id": "platinum",
+      "name": "Platinum",
+      "badge": "২০ ব্যবহারকারী",
+      "description": "Star stack-এর উপর sales distribution যোগ করা সবচেয়ে বিস্তৃত package coverage।",
       "icon": "rocket",
       "color": "from-indigo-600 via-primary to-amber-500",
       "softBg": "bg-indigo-50",
       "iconText": "text-indigo-600",
-      "cta": "Adon-এর সাথে স্কেল করুন",
+      "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": false,
+      "usersLabel": "সর্বোচ্চ ২০ ব্যবহারকারী",
+      "charges": [
+        {
+          "label": "ওয়ান-টাইম setup charge",
+          "amountBdt": 820000
+        },
+        {
+          "label": "প্রতি ৩ মাসে",
+          "amountBdt": 180000
+        },
+        {
+          "label": "শুরুর মোট খরচ",
+          "amountBdt": 1000000,
+          "note": "Setup charge এবং প্রথম quarter billingসহ"
+        }
+      ],
       "features": [
-        "সর্বোচ্চ ৬০ ব্যবহারকারী",
-        "১TB সিকিউর স্টোরেজ",
-        "অ্যাডভান্সড CRM, সেলস ও ইনভেন্টরি",
-        "মাল্টি-ওয়্যারহাউস অপারেশন",
-        "অ্যাডভান্সড ড্যাশবোর্ড ও এক্সপোর্ট",
-        "কাস্টম ইন্টিগ্রেশন",
-        "প্রায়োরিটি অনবোর্ডিং সাপোর্ট",
-        "SSO ও অডিট ভিজিবিলিটি",
-        "অ্যাপ্রুভাল চেইন ও পারমিশন"
+        "অ্যাকাউন্টিং",
+        "পেরোল",
+        "ম্যানুফ্যাকচারিং",
+        "সাপ্লাই চেইন",
+        "ইনভেন্টরি",
+        "CRM",
+        "ট্রেড অ্যান্ড ফাইন্যান্স (LC ম্যানেজমেন্ট)",
+        "সেলস অ্যান্ড ডিস্ট্রিবিউশন ম্যানেজমেন্ট"
       ]
     },
     {
       "id": "enterprise",
       "name": "Enterprise",
-      "badge": "কাস্টম সল্যুশন",
-      "monthlyPrice": null,
-      "annualPrice": null,
-      "periodMonthly": "",
-      "periodAnnual": "",
-      "description": "বড় টিম, জটিল ওয়ার্কফ্লো ও ডেডিকেটেড সাপোর্টের জন্য কাস্টম Adon ERP।",
+      "badge": "৯৯ ব্যবহারকারী",
+      "description": "রিপোর্টিং সার্ভিসসহ enterprise setup, monthly service এবং server maintenance charge-এর আলাদা কাঠামো।",
       "icon": "building2",
       "color": "from-slate-950 via-violet-900 to-primary",
       "softBg": "bg-slate-100",
@@ -208,46 +229,53 @@
       "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": false,
+      "usersLabel": "সর্বোচ্চ ৯৯ ব্যবহারকারী",
+      "charges": [
+        {
+          "label": "ওয়ান-টাইম setup charge",
+          "amountBdt": 50000
+        },
+        {
+          "label": "মাসিক চার্জ",
+          "amountBdt": 2500
+        },
+        {
+          "label": "সার্ভার মেইনটেন্যান্স",
+          "amountBdt": 1500
+        }
+      ],
       "features": [
-        "আনলিমিটেড ব্যবহারকারী",
-        "আনলিমিটেড স্টোরেজ",
-        "মাল্টি-কম্পানি ম্যানেজমেন্ট",
-        "ডেডিকেটেড অ্যাকাউন্ট ম্যানেজার",
-        "কাস্টম ওয়ার্কফ্লো ডেভেলপমেন্ট",
-        "অন-প্রিমাইস অপশন",
-        "২৪/৭ প্রিমিয়াম সাপোর্ট",
-        "SLA গ্যারান্টি",
-        "অ্যাডভান্সড সিকিউরিটি কন্ট্রোল",
-        "কাস্টম রিপোর্টিং স্যুট"
+        "রিপোর্টিং সার্ভিস",
+        "এন্টারপ্রাইজ setup support"
       ]
     }
   ],
   "benefitsSection": {
-    "eyebrow": "আত্মবিশ্বাসের সাথে স্কেল করার জন্য তৈরি",
-    "title": "আপনার ব্যবসা বাড়লেও প্রাইসিং থাকে পরিষ্কার।",
-    "description": "Adon ERP আপনার cost structure-কে পূর্বানুমানযোগ্য রাখে, একই সাথে টিমকে modules, users, workflows, storage, reporting এবং enterprise support যোগ করার সুযোগ দেয়।"
+    "eyebrow": "স্পষ্ট বাণিজ্যিক কাঠামো",
+    "title": "টিম ও এন্টারপ্রাইজ উভয়ের জন্য সহজে বোঝা যায় এমন প্রাইসিং।",
+    "description": "Adon ERP package data এমনভাবে দেখানো হয়েছে যাতে setup cost, recurring fee, user coverage এবং included module দ্রুত রিভিউ করা যায়।"
   },
   "benefits": [
     {
-      "title": "স্বচ্ছ বিলিং",
-      "description": "স্ট্যান্ডার্ড প্ল্যানের জন্য কোনো লুকানো implementation surprise নেই।",
+      "title": "সোর্স-ভিত্তিক প্রাইসিং",
+      "description": "মার্কেটিং tier নয়, বর্তমান spreadsheet structure অনুযায়ী package value দেখানো হয়েছে।",
       "icon": "creditCard"
     },
     {
-      "title": "নিরাপদ ওয়ার্কস্পেস",
-      "description": "Role-based access, activity visibility এবং নিরাপদ business data handling।",
+      "title": "স্পষ্ট charge breakdown",
+      "description": "Setup, recurring ও enterprise maintenance আলাদা করে দেখানো হয়েছে যেন planning সহজ হয়।",
       "icon": "lockKeyhole"
     },
     {
-      "title": "মডিউল ধরে স্কেল করুন",
-      "description": "আজ যা দরকার তাই দিয়ে শুরু করুন, তারপর ব্যবসা বাড়ার সাথে সাথে প্রসারিত করুন।",
+      "title": "অপারেশন অনুযায়ী fit",
+      "description": "User count এবং module coverage দেখে package বেছে নেওয়া যায়, অনুমান করতে হয় না।",
       "icon": "layers3"
     }
   ],
   "comparisonSection": {
-    "eyebrow": "প্ল্যান তুলনা",
-    "title": "প্রতিটি প্ল্যান পরিষ্কারভাবে তুলনা করুন।",
-    "description": "টিমের জন্য সঠিক প্ল্যান বেছে নেওয়ার আগে users, storage, automation, integrations, branding এবং support পর্যালোচনা করুন।",
+    "eyebrow": "প্যাকেজ তুলনা",
+    "title": "প্রতিটি প্যাকেজ পরিষ্কারভাবে তুলনা করুন।",
+    "description": "User limit, setup charge, recurring fee এবং included module দেখে source pricing sheet অনুযায়ী সিদ্ধান্ত নিন।",
     "headers": {
       "feature": "ফিচার"
     }
@@ -256,169 +284,177 @@
     {
       "feature": "ব্যবহারকারী",
       "values": {
-        "launch": "4",
-        "starter": "10",
-        "growth": "25",
-        "professional": "60",
-        "enterprise": "Unlimited"
+        "basic": "৫",
+        "professional": "৬",
+        "star": "১০",
+        "platinum": "২০",
+        "enterprise": "৯৯"
       }
     },
     {
-      "feature": "স্টোরেজ",
+      "feature": "ওয়ান-টাইম setup charge",
       "values": {
-        "launch": "20GB",
-        "starter": "100GB",
-        "growth": "500GB",
-        "professional": "1TB",
-        "enterprise": "Unlimited"
+        "basic": "৳৬০,০০০",
+        "professional": "৳১,২০,০০০",
+        "star": "৳৩,২৫,০০০",
+        "platinum": "৳৮,২০,০০০",
+        "enterprise": "৳৫০,০০০"
       }
     },
     {
-      "feature": "CRM Pipeline",
+      "feature": "Recurring charge",
       "values": {
-        "launch": "Essential",
-        "starter": "Standard",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Custom"
+        "basic": "৳২০,০০০",
+        "professional": "৳৪০,০০০",
+        "star": "৳৭৫,০০০",
+        "platinum": "৳১,৮০,০০০",
+        "enterprise": "৳২,৫০০"
       }
     },
     {
-      "feature": "Task Management",
+      "feature": "Recurring cycle",
       "values": {
-        "launch": "Included",
-        "starter": "Included",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Advanced"
+        "basic": "প্রতি ৩ মাসে",
+        "professional": "প্রতি ৩ মাসে",
+        "star": "প্রতি ৩ মাসে",
+        "platinum": "প্রতি ৩ মাসে",
+        "enterprise": "মাসিক"
       }
     },
     {
-      "feature": "Inventory Management",
+      "feature": "সার্ভার মেইনটেন্যান্স",
       "values": {
-        "launch": "Basic",
-        "starter": "Standard",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Custom"
+        "basic": false,
+        "professional": false,
+        "star": false,
+        "platinum": false,
+        "enterprise": "৳১,৫০০ / মাস"
       }
     },
     {
-      "feature": "Automation",
+      "feature": "অ্যাকাউন্টিং",
       "values": {
-        "launch": "Basic",
-        "starter": "Standard",
-        "growth": "Included",
-        "professional": "Advanced",
-        "enterprise": "Custom"
-      }
-    },
-    {
-      "feature": "API Access",
-      "values": {
-        "launch": false,
-        "starter": false,
-        "growth": true,
+        "basic": true,
         "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "পেরোল",
+      "values": {
+        "basic": true,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "ম্যানুফ্যাকচারিং",
+      "values": {
+        "basic": false,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "সাপ্লাই চেইন",
+      "values": {
+        "basic": false,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "ইনভেন্টরি",
+      "values": {
+        "basic": true,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "CRM",
+      "values": {
+        "basic": false,
+        "professional": false,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "ট্রেড অ্যান্ড ফাইন্যান্স (LC ম্যানেজমেন্ট)",
+      "values": {
+        "basic": false,
+        "professional": true,
+        "star": true,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "সেলস অ্যান্ড ডিস্ট্রিবিউশন ম্যানেজমেন্ট",
+      "values": {
+        "basic": false,
+        "professional": false,
+        "star": false,
+        "platinum": true,
+        "enterprise": false
+      }
+    },
+    {
+      "feature": "রিপোর্টিং সার্ভিস",
+      "values": {
+        "basic": false,
+        "professional": false,
+        "star": false,
+        "platinum": false,
         "enterprise": true
       }
-    },
-    {
-      "feature": "Custom Branding",
-      "values": {
-        "launch": false,
-        "starter": false,
-        "growth": true,
-        "professional": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Approval Workflows",
-      "values": {
-        "launch": "Basic",
-        "starter": "Standard",
-        "growth": "Advanced",
-        "professional": "Advanced",
-        "enterprise": "Custom"
-      }
-    },
-    {
-      "feature": "Support",
-      "values": {
-        "launch": "Email",
-        "starter": "Email + Chat",
-        "growth": "Priority",
-        "professional": "Priority + Onboarding",
-        "enterprise": "24/7 Dedicated"
-      }
-    }
-  ],
-  "addonsSection": {
-    "eyebrow": "ঐচ্ছিক অ্যাড-অন",
-    "title": "প্রয়োজন হলে workspace আরও বাড়ান।",
-    "description": "পুরো প্ল্যান না বদলিয়েই extra capacity, expert implementation help অথবা advanced analytics যোগ করুন।"
-  },
-  "addons": [
-    {
-      "title": "Extra Storage",
-      "amount": 10,
-      "unit": "/ 100GB",
-      "description": "ডকুমেন্ট, ইমেজ, রিপোর্ট এবং অপারেশনাল রেকর্ডের জন্য আরও secure storage যোগ করুন।",
-      "icon": "shieldCheck"
-    },
-    {
-      "title": "Advanced Analytics",
-      "amount": 25,
-      "unit": "/ মাস",
-      "description": "আরও গভীর dashboards, custom exports, business intelligence এবং performance tracking আনলক করুন।",
-      "icon": "barChart3"
-    },
-    {
-      "title": "Implementation Support",
-      "amount": null,
-      "unit": "",
-      "description": "Migration, setup, onboarding, training এবং workflow design-এর জন্য expert help নিন।",
-      "icon": "sparkles"
     }
   ],
   "faqSection": {
     "eyebrow": "প্রশ্ন ও উত্তর",
-    "title": "প্রায়শই জিজ্ঞাসিত প্রশ্ন।"
+    "title": "সাধারণ জিজ্ঞাসা।"
   },
   "faqs": [
     {
-      "q": "আমি কি যেকোনো সময় প্ল্যান পরিবর্তন করতে পারি?",
-      "a": "হ্যাঁ। আপনি যেকোনো সময় প্ল্যান আপগ্রেড বা ডাউনগ্রেড করতে পারেন। বিলিং সাইকেল ও workspace requirement অনুযায়ী পরিবর্তন প্রয়োগ করা যাবে।"
+      "q": "BDT কি ডিফল্ট প্রাইসিং কারেন্সি?",
+      "a": "হ্যাঁ। সোর্স package sheet BDT-তে রক্ষণাবেক্ষণ করা হয়, তাই pricing page ডিফল্টভাবে BDT-তে খোলে।"
     },
     {
-      "q": "আপনারা কি ফ্রি ট্রায়াল দেন?",
-      "a": "হ্যাঁ। Professional প্ল্যানে ১৪ দিনের ট্রায়াল থাকতে পারে, যাতে আপনার টিম commit করার আগে workflow পরীক্ষা করতে পারে।"
+      "q": "আমি কি একই দাম USD-তে দেখতে পারি?",
+      "a": "হ্যাঁ। USD toggle-এ configured exchange rate অনুযায়ী আনুমানিক converted view দেখানো হয়।"
     },
     {
-      "q": "আমি কি শুধু প্রয়োজনীয় মডিউলগুলো যোগ করতে পারি?",
-      "a": "হ্যাঁ। Adon ERP module by module scale করার জন্য তৈরি। আপনার ব্যবসার প্রয়োজন অনুযায়ী CRM, tasks, sales, inventory, HR, ecommerce অথবা analytics দিয়ে শুরু করতে পারেন।"
+      "q": "কিছু package-এ প্রতি ৩ মাসে, আর enterprise-এ মাসিক charge কেন?",
+      "a": "এটা source sheet-এর structure অনুসারে। Core package-গুলো quarterly recurring charge ব্যবহার করে, আর enterprise reporting service-এ monthly charge ও monthly server maintenance আছে।"
     },
     {
-      "q": "আপনারা কি custom workflow support করেন?",
-      "a": "হ্যাঁ। Enterprise গ্রাহকরা custom workflows, reports, integrations, role permissions এবং deployment options চাইতে পারেন।"
+      "q": "শুরুর মোট খরচ বলতে কী বোঝায়?",
+      "a": "Core package-গুলোর জন্য এটি one-time setup charge এবং sheet-এ দেখানো প্রথম recurring billing cycle-এর যোগফল।"
     },
     {
-      "q": "আপনারা কোন payment method গ্রহণ করেন?",
-      "a": "স্ট্যান্ডার্ড প্ল্যান common online payment method support করতে পারে। Enterprise গ্রাহকরা bank transfer বা invoice-based payment-এর মতো custom billing ব্যবহার করতে পারেন।"
-    },
-    {
-      "q": "দীর্ঘমেয়াদি contract কি বাধ্যতামূলক?",
-      "a": "Monthly প্ল্যানে long-term contract দরকার নেই। Annual এবং enterprise agreement-ও available আছে, যেসব টিম discounted বা custom terms চায় তাদের জন্য।"
+      "q": "পরে কি user বা module scope পরিবর্তন করা যাবে?",
+      "a": "হ্যাঁ। Package recommendation, custom rollout scope বা enterprise reporting support-এর জন্য sales team-এর সাথে যোগাযোগ করতে পারেন।"
     }
   ],
   "ctaSection": {
-    "title": "আরও স্মার্টভাবে ব্যবসা চালাতে প্রস্তুত?",
-    "description": "আজ যেটা মানানসই সেই প্ল্যান দিয়ে শুরু করুন, তারপর কোম্পানি বড় হওয়ার সাথে সাথে আরও modules, automation, reporting এবং support যোগ করুন।",
+    "title": "আপনার টিমের জন্য সঠিক প্যাকেজ রিভিউ করতে প্রস্তুত?",
+    "description": "User ও module অনুযায়ী সঠিক package shortlist করুন, তারপর Adon ERP sales-এর সাথে rollout scope confirm করুন।",
     "points": [
-      "প্রিমিয়াম ERP অভিজ্ঞতা",
-      "নিরাপদ রোল অ্যাক্সেস",
-      "বিশৃঙ্খলা ছাড়া স্কেল করুন"
+      "BDT-ভিত্তিক প্রাইসিং",
+      "USD ভিউ উপলব্ধ",
+      "পরিষ্কার charge breakdown"
     ]
   }
 }
