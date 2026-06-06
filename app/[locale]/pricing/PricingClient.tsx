@@ -26,6 +26,10 @@ import {
   Users,
   Workflow,
   Zap,
+  TrendingUp,
+  Calendar,
+  Clock,
+  DollarSign,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -291,197 +295,59 @@ export default function PricingClient() {
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[linear-gradient(180deg,_#ffffff_0%,_#fbf7ff_22%,_#ffffff_55%,_#fff8ed_100%)] text-slate-800 dark:bg-[linear-gradient(180deg,_#020617_0%,_#0b1220_35%,_#020617_70%,_#020617_100%)] dark:text-slate-100">
-      <section className="relative isolate overflow-hidden rounded-b-[3rem] sm:rounded-b-[5rem] lg:rounded-b-[7rem]">
-        <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_12%,rgba(124,58,237,0.18),transparent_28%),radial-gradient(circle_at_85%_18%,rgba(245,158,11,0.16),transparent_26%),linear-gradient(180deg,#ffffff_0%,#fbf7ff_62%,#ffffff_100%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(124,58,237,0.22),transparent_32%),radial-gradient(circle_at_85%_18%,rgba(245,158,11,0.18),transparent_30%),linear-gradient(180deg,#020617_0%,#0b1220_62%,#020617_100%)]" />
-        <div className="absolute left-10 top-28 -z-10 hidden h-24 w-24 rounded-[2rem] bg-white/80 shadow-xl backdrop-blur-xl lg:block dark:bg-slate-950/50 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]" />
-        <div className="absolute right-20 top-32 -z-10 hidden h-36 w-36 rounded-full bg-primary/10 blur-3xl lg:block" />
-        <div className="absolute bottom-12 left-1/2 -z-10 hidden h-56 w-56 -translate-x-1/2 rounded-full bg-amber-200/30 blur-3xl lg:block" />
+    <main className="min-h-screen overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-amber-50/20 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+      {/* Hero Section with Glass Morphism */}
+      <section className="relative isolate overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-amber-500/5 blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-purple-500/5 blur-3xl" />
+        </div>
 
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_0.9fr] lg:px-8 lg:py-24">
-          <div className="flex max-w-3xl flex-col justify-center space-y-8">
-            <SectionEyebrow
-              icon={<Sparkles className="h-4 w-4" />}
-              label={t("hero.eyebrow")}
-            />
-
-            <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.34em] text-primary/70">
-                {t("hero.label")}
-              </p>
-
-              <h1
-                className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl dark:text-slate-100"
-                style={{
-                  fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
-                }}
-              >
-                {t("hero.title")}
-                <span className="block bg-[linear-gradient(90deg,_#6d28d9,_#db2777,_#f59e0b)] bg-clip-text text-transparent">
-                  {t("hero.titleAccent")}
-                </span>
-              </h1>
-
-              <p className="max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-                {t("hero.description")}
-              </p>
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary backdrop-blur-sm">
+              <Sparkles className="h-4 w-4" />
+              {t("hero.eyebrow")}
             </div>
-
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <h1 className="mt-6 text-5xl font-bold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl dark:text-slate-100">
+              {t("hero.title")}
+              <span className="block bg-gradient-to-r from-primary via-purple-600 to-amber-500 bg-clip-text text-transparent">
+                {t("hero.titleAccent")}
+              </span>
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 dark:text-slate-300">
+              {t("hero.description")}
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
                 href="#plans"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-7 py-4 text-sm font-semibold text-white shadow-xl shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl"
+                className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/30 transition-all hover:-translate-y-0.5 hover:shadow-xl"
               >
                 {actionT("viewPlans")}
                 <ArrowRight className="h-4 w-4" />
               </a>
-
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/20 bg-white/80 px-7 py-4 text-sm font-semibold text-primary shadow-sm backdrop-blur-xl transition-all duration-300 hover:border-primary/40 hover:bg-white dark:bg-slate-950/60 dark:hover:bg-slate-950/80"
+                className="inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-white/80 px-6 py-3 font-semibold text-primary backdrop-blur-sm transition-all hover:border-primary/40 hover:bg-white dark:bg-slate-900/80 dark:hover:bg-slate-900"
               >
                 {actionT("talkToSales")}
                 <MessageSquareText className="h-4 w-4" />
               </Link>
             </div>
-
-            <div className="flex flex-wrap gap-4 text-sm font-medium text-slate-600 dark:text-slate-300">
-              {(t.raw("hero.highlights") as string[]).map((item) => (
-                <span key={item} className="inline-flex items-center gap-2">
-                  <Check className="h-4 w-4 text-emerald-600" />
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative mx-auto flex w-full max-w-xl items-center justify-center lg:justify-end">
-            <div className="absolute -left-4 top-8 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block dark:border-slate-800/70 dark:bg-slate-950/60 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
-                  <BadgeCheck className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                    {t("hero.badges.bestValueTitle")}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    {t("hero.badges.bestValuePlan")}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -right-2 bottom-12 z-10 hidden rounded-2xl border border-white/80 bg-white/90 p-4 shadow-xl backdrop-blur-xl sm:block dark:border-slate-800/70 dark:bg-slate-950/60 dark:shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-600">
-                  <Rocket className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                    {t("hero.badges.scaleReadyTitle")}
-                  </p>
-                  <p className="text-xs text-slate-500">
-                    {t("hero.badges.scaleReadyDescription")}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative w-full overflow-hidden rounded-[2.5rem] border border-white/80 bg-white/75 p-4 shadow-[0_40px_120px_rgba(15,23,42,0.16)] backdrop-blur-2xl dark:border-slate-800/70 dark:bg-slate-950/55 dark:shadow-[0_40px_120px_rgba(0,0,0,0.65)]">
-              <div className="overflow-hidden rounded-[2rem] bg-slate-950 text-white">
-                <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
-                  <span className="h-3 w-3 rounded-full bg-rose-400" />
-                  <span className="h-3 w-3 rounded-full bg-amber-400" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                  <span className="ml-3 text-xs font-medium text-white/50">
-                    {t("hero.preview.windowTitle")}
-                  </span>
-                </div>
-
-                <div className="space-y-5 p-5">
-                  <div className="rounded-2xl bg-white p-5 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm font-semibold text-slate-500">
-                          {t("hero.preview.currentPlanLabel")}
-                        </p>
-                        <h3 className="mt-1 text-2xl font-bold">
-                          {featuredPlan.name}
-                        </h3>
-                      </div>
-                      <div className="rounded-2xl bg-primary/10 p-3 text-primary">
-                        <Crown className="h-6 w-6" />
-                      </div>
-                    </div>
-
-                    <div className="mt-6 grid grid-cols-3 gap-3">
-                      {previewMetrics.map((metric) => (
-                        <div
-                          key={metric.label}
-                          className="rounded-2xl bg-slate-50 p-3 text-center dark:bg-slate-800/60"
-                        >
-                          <p className="font-bold text-slate-950 dark:text-slate-100">
-                            {formatMetricValue(metric.value)}
-                          </p>
-                          <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
-                            {metric.label}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-2xl bg-white/10 p-4">
-                      <CircleDollarSign className="h-5 w-5 text-emerald-300" />
-                      <p className="mt-3 text-lg font-bold">
-                        {previewCharges.primaryValue}
-                      </p>
-                      <p className="text-xs text-white/50">
-                        {previewCharges.primaryLabel}
-                      </p>
-                    </div>
-                    <div className="rounded-2xl bg-white/10 p-4">
-                      <Sparkles className="h-5 w-5 text-amber-300" />
-                      <p className="mt-3 text-lg font-bold">
-                        {previewCharges.secondaryValue}
-                      </p>
-                      <p className="text-xs text-white/50">
-                        {previewCharges.secondaryLabel}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="rounded-2xl bg-[linear-gradient(135deg,_rgba(124,58,237,0.35),_rgba(245,158,11,0.22))] p-5">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/15">
-                        <Workflow className="h-6 w-6" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold">
-                          {t("hero.preview.cards.workflowTitle")}
-                        </p>
-                        <p className="text-xs text-white/60">
-                          {t("hero.preview.cards.workflowDescription")}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white/70 py-8 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/35">
+      {/* Module Tags */}
+      <section className="border-y border-slate-200 bg-white/50 py-6 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-950/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             {modules.map((module) => (
               <span
                 key={module}
-                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-md dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300"
+                className="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-600 shadow-sm transition-all hover:bg-primary/5 hover:text-primary dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-primary/10"
               >
                 {module}
               </span>
@@ -490,234 +356,179 @@ export default function PricingClient() {
         </div>
       </section>
 
-      {/* Professional Pricing Table Section - Redesigned based on image */}
-      <section
-        id="plans"
-        className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
-      >
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionEyebrow
-            icon={<Gem className="h-4 w-4" />}
-            label={t("plansSection.eyebrow")}
-          />
-          <div className="mt-8">
-            <ScriptHeading>{t("plansSection.title")}</ScriptHeading>
+      {/* Currency Toggle */}
+      <section id="plans" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+            <Gem className="h-4 w-4" />
+            {t("plansSection.eyebrow")}
           </div>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+          <h2 className="mt-6 text-4xl font-bold text-slate-950 sm:text-5xl dark:text-slate-100">
+            {t("plansSection.title")}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-300">
             {t("plansSection.description")}
           </p>
 
-          <div className="mt-8 inline-flex rounded-2xl border border-slate-200 bg-white p-1 shadow-sm dark:border-slate-800 dark:bg-slate-950">
+          <div className="mt-8 inline-flex rounded-xl border border-slate-200 bg-white p-1 shadow-sm dark:border-slate-700 dark:bg-slate-900">
             <button
-              type="button"
               onClick={() => setCurrency("bdt")}
-              className={`rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
+              className={`rounded-lg px-6 py-2 text-sm font-semibold transition-all ${
                 currency === "bdt"
-                  ? "bg-primary text-white shadow-lg shadow-primary/20"
+                  ? "bg-primary text-white shadow-md"
                   : "text-slate-600 hover:text-primary dark:text-slate-300"
               }`}
             >
               {t("plansSection.currency.bdt")}
             </button>
-
             <button
-              type="button"
               onClick={() => setCurrency("usd")}
-              className={`rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
+              className={`rounded-lg px-6 py-2 text-sm font-semibold transition-all ${
                 currency === "usd"
-                  ? "bg-primary text-white shadow-lg shadow-primary/20"
+                  ? "bg-primary text-white shadow-md"
                   : "text-slate-600 hover:text-primary dark:text-slate-300"
               }`}
             >
               {t("plansSection.currency.usd")}
             </button>
           </div>
-
-          <p className="mt-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+          <p className="mt-3 text-sm text-slate-500">
             {t("plansSection.currency.note", { rate: USD_EXCHANGE_RATE })}
           </p>
         </div>
 
-        {/* Redesigned Pricing Cards - Clean & Professional */}
-        <div className="mt-16 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {plans.map((plan, idx) => {
+        {/* Pricing Cards - Professional Grid */}
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {plans.map((plan) => {
             const Icon = planIcons[plan.icon];
             const features = getVisibleFeatures(plan);
             const isFeatured = plan.highlighted;
             const corePricing = isCorePlan(plan) ? getCorePlanPricing(plan) : null;
             const primaryCharge = findCharge(plan, "monthly") ?? plan.charges[0];
-            const enterpriseExtraCharges = plan.charges.filter(
-              (charge) => charge.kind !== primaryCharge?.kind,
-            );
 
             return (
               <div
-                key={plan.name}
-                className={`group relative h-full transition-all duration-300 hover:-translate-y-1 ${
-                  idx === 2 ? "md:scale-105" : ""
+                key={plan.id}
+                className={`group relative rounded-2xl transition-all duration-300 hover:-translate-y-2 ${
+                  isFeatured ? "lg:scale-105" : ""
                 }`}
               >
-                {/* Featured Badge */}
-                {plan.spotlight && (
-                  <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
-                    {plan.spotlight}
-                  </div>
+                {/* Featured Glow */}
+                {isFeatured && (
+                  <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-primary via-purple-600 to-amber-500 opacity-30 blur-xl transition-opacity group-hover:opacity-50" />
                 )}
 
-                {isFeatured && !plan.spotlight && (
-                  <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-purple-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
-                    {t("plansSection.popularBadge")}
+                {/* Popular Badge */}
+                {(isFeatured || plan.spotlight) && (
+                  <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-purple-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+                    {plan.spotlight || t("plansSection.popularBadge")}
                   </div>
                 )}
 
                 <div
-                  className={`relative flex h-full min-h-[32rem] flex-col overflow-hidden rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-slate-950 ${
-                    isFeatured || plan.spotlight
-                      ? "border-primary/30 shadow-xl shadow-primary/5"
+                  className={`relative h-full rounded-2xl border bg-white p-6 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:shadow-xl dark:bg-slate-950 ${
+                    isFeatured
+                      ? "border-primary/30 shadow-primary/10"
                       : "border-slate-200 hover:border-primary/20 dark:border-slate-800"
                   }`}
                 >
-                  {/* Plan Name & Icon */}
+                  {/* Header */}
                   <div className="flex items-start justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+                      <h3 className="text-xl font-bold text-slate-950 dark:text-slate-100">
                         {plan.name}
                       </h3>
+                      <p className="mt-1 text-xs text-slate-500">{plan.usersLabel}</p>
                     </div>
                     <div
-                      className={`flex h-10 w-10 items-center justify-center rounded-xl ${plan.softBg} ${plan.iconText}`}
+                      className={`flex h-12 w-12 items-center justify-center rounded-xl ${plan.softBg} transition-transform group-hover:scale-110`}
                     >
-                      <Icon className="h-5 w-5" />
+                      <Icon className={`h-6 w-6 ${plan.iconText}`} />
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                  <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
                     {plan.description}
                   </p>
 
+                  {/* Pricing Section */}
                   {corePricing ? (
-                    <>
-                      <div className="mt-5 rounded-2xl bg-slate-50 px-4 py-5 text-center dark:bg-slate-900/70">
-                        <p className="text-4xl font-black tracking-tight text-slate-950 dark:text-slate-100">
-                          {formatMetricValue(plan.userCount)}
-                        </p>
-                        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
-                          {t("plansSection.usersUnit")}
-                        </p>
-                        <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">
-                          {plan.usersLabel}
-                        </p>
-                      </div>
-
-                      <div className="mt-5 space-y-4">
-                        <div>
-                          <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">
-                            {t("plansSection.perUserLabel")}
-                          </p>
-                          <p className="mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
-                            {formatPriceFromBdt(corePricing.perUserAmountBdt).value}
-                          </p>
-                        </div>
-
-                        <div className="rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 dark:border-slate-800 dark:bg-slate-900/50">
-                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-                            {t("plansSection.monthlyLabel")}
-                          </p>
-                          <p className="mt-1 text-xl font-bold text-slate-900 dark:text-slate-100">
-                            {formatPriceFromBdt(corePricing.monthlyAmountBdt).value}
-                          </p>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="mt-5">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">
-                          {primaryCharge ? formatCurrency(primaryCharge) : stateT("custom")}
-                        </span>
-                        {primaryCharge && (
-                          <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                            {primaryCharge.label}
+                    <div className="mt-6 space-y-4">
+                      <div className="rounded-xl bg-gradient-to-br from-slate-50 to-white p-4 text-center dark:from-slate-900/50 dark:to-slate-950">
+                        <div className="flex items-baseline justify-center gap-1">
+                          <span className="text-3xl font-bold">
+                            {formatMetricValue(plan.userCount)}
                           </span>
+                          <span className="text-sm text-slate-500">
+                            {t("plansSection.usersUnit")}
+                          </span>
+                        </div>
+                        <div className="mt-3 flex items-baseline justify-center gap-1">
+                          <span className="text-2xl font-bold">
+                            {formatPriceFromBdt(corePricing.perUserAmountBdt).value}
+                          </span>
+                          <span className="text-xs text-slate-500">/user/month</span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2 dark:bg-slate-900/50">
+                          <span className="text-xs text-slate-500">
+                            {t("plansSection.monthlyLabel")}
+                          </span>
+                          <span className="font-semibold">
+                            {formatPriceFromBdt(corePricing.monthlyAmountBdt).value}
+                          </span>
+                        </div>
+                        {corePricing.setupCharge && (
+                          <div className="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2 dark:bg-slate-900/50">
+                            <span className="text-xs text-slate-500">
+                              {corePricing.setupCharge.label}
+                            </span>
+                            <span className="font-semibold">
+                              {formatCurrency(corePricing.setupCharge)}
+                            </span>
+                          </div>
                         )}
                       </div>
+                    </div>
+                  ) : (
+                    <div className="mt-6 rounded-xl bg-gradient-to-br from-slate-50 to-white p-4 text-center dark:from-slate-900/50 dark:to-slate-950">
+                      <div className="flex items-baseline justify-center gap-1">
+                        <span className="text-3xl font-bold">
+                          {primaryCharge ? formatCurrency(primaryCharge) : stateT("custom")}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-xs text-slate-500">
+                        {primaryCharge?.label}
+                      </p>
                     </div>
                   )}
 
                   {/* CTA Button */}
                   <Link
                     href={plan.href}
-                    className={`mt-5 inline-flex w-full items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-300 ${
-                      isFeatured || plan.spotlight
-                        ? "bg-primary text-white shadow-md hover:bg-primary/90 hover:shadow-lg"
+                    className={`mt-6 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+                      isFeatured
+                        ? "bg-gradient-to-r from-primary to-purple-600 text-white shadow-lg shadow-primary/30 hover:shadow-xl"
                         : "border border-slate-200 bg-white text-slate-700 hover:border-primary/30 hover:bg-primary/5 hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
                     }`}
                   >
                     {plan.cta}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                   </Link>
 
-                  {/* Features Section */}
-                  <div className="mt-6 flex-1">
-                    {corePricing && (
-                      <div className="mb-5 rounded-2xl border border-dashed border-slate-200 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-900/50">
-                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-                          {t("plansSection.breakdownLabel")}
-                        </p>
-                        <div className="mt-3 space-y-3">
-                          {[corePricing.quarterlyCharge, corePricing.setupCharge]
-                            .filter((charge): charge is Plan["charges"][number] => Boolean(charge))
-                            .map((charge) => (
-                              <div
-                                key={`${plan.id}:${charge.kind}`}
-                                className="flex items-center justify-between gap-3 text-sm"
-                              >
-                                <span className="text-slate-600 dark:text-slate-300">
-                                  {charge.label}
-                                </span>
-                                <span className="font-semibold text-slate-900 dark:text-slate-100">
-                                  {formatCurrency(charge)}
-                                </span>
-                              </div>
-                            ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {!corePricing && enterpriseExtraCharges.length > 0 && (
-                      <div className="mb-5 rounded-2xl border border-dashed border-slate-200 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-900/50">
-                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-                          {t("plansSection.breakdownLabel")}
-                        </p>
-                        <div className="mt-3 space-y-3">
-                          {enterpriseExtraCharges.map((charge) => (
-                            <div
-                              key={`${plan.id}:${charge.kind}`}
-                              className="flex items-center justify-between gap-3 text-sm"
-                            >
-                              <span className="text-slate-600 dark:text-slate-300">
-                                {charge.label}
-                              </span>
-                              <span className="font-semibold text-slate-900 dark:text-slate-100">
-                                {formatCurrency(charge)}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
+                  {/* Features */}
+                  <div className="mt-6 border-t border-slate-100 pt-5 dark:border-slate-800">
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                       {t("plansSection.featuresIncluded")}
                     </p>
-                    <ul className="mt-4 space-y-3">
+                    <ul className="mt-4 space-y-2.5">
                       {features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-start gap-2.5 text-sm"
-                        >
+                        <li key={feature} className="flex items-start gap-2">
                           <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
-                          <span className="text-slate-600 dark:text-slate-300">
+                          <span className="text-sm text-slate-600 dark:text-slate-300">
                             {feature}
                           </span>
                         </li>
@@ -731,79 +542,75 @@ export default function PricingClient() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#f6f5f8] py-16 lg:py-24 dark:bg-slate-950">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.08),transparent_26%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.12),transparent_30%)] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.16),transparent_30%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.16),transparent_34%)]" />
-
+      {/* Benefits Section with Cards */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white py-20 dark:from-slate-900/50 dark:to-slate-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(124,58,237,0.05),transparent_50%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="self-center">
-              <SectionEyebrow
-                icon={<ShieldCheck className="h-4 w-4" />}
-                label={t("benefitsSection.eyebrow")}
-              />
-              <div className="mt-8">
-                <ScriptHeading>{t("benefitsSection.title")}</ScriptHeading>
-              </div>
-              <p className="mt-5 max-w-xl text-base leading-8 text-slate-600 dark:text-slate-300">
-                {t("benefitsSection.description")}
-              </p>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+              <ShieldCheck className="h-4 w-4" />
+              {t("benefitsSection.eyebrow")}
             </div>
+            <h2 className="mt-6 text-4xl font-bold text-slate-950 sm:text-5xl dark:text-slate-100">
+              {t("benefitsSection.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-300">
+              {t("benefitsSection.description")}
+            </p>
+          </div>
 
-            <div className="grid gap-5 md:grid-cols-3">
-              {benefits.map((item) => {
-                const Icon = benefitIcons[item.icon];
-
-                return (
-                  <div
-                    key={item.title}
-                    className="rounded-[2rem] border border-white bg-white/85 p-6 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-800/70 dark:bg-slate-950/60"
-                  >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                      <Icon className="h-6 w-6" />
-                    </div>
-                    <h3 className="mt-5 text-lg font-semibold text-slate-950 dark:text-slate-100">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                      {item.description}
-                    </p>
+          <div className="mt-16 grid gap-6 md:grid-cols-3">
+            {benefits.map((item) => {
+              const Icon = benefitIcons[item.icon];
+              return (
+                <div
+                  key={item.title}
+                  className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                    <Icon className="h-6 w-6" />
                   </div>
-                );
-              })}
-            </div>
+                  <h3 className="mt-4 text-lg font-semibold text-slate-950 dark:text-slate-100">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <SectionEyebrow
-            icon={<BarChart3 className="h-4 w-4" />}
-            label={t("comparisonSection.eyebrow")}
-          />
-          <div className="mt-8">
-            <ScriptHeading>{t("comparisonSection.title")}</ScriptHeading>
+      {/* Comparison Table */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+            <BarChart3 className="h-4 w-4" />
+            {t("comparisonSection.eyebrow")}
           </div>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
+          <h2 className="mt-6 text-4xl font-bold text-slate-950 sm:text-5xl dark:text-slate-100">
+            {t("comparisonSection.title")}
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-slate-600 dark:text-slate-300">
             {t("comparisonSection.description")}
           </p>
         </div>
 
-        <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950">
+        <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950">
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[1100px] text-sm">
+            <table className="w-full min-w-[900px]">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/40">
-                  <th className="px-6 py-5 text-left font-bold text-slate-950 dark:text-slate-100">
+                <tr className="border-b border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/50">
+                  <th className="px-6 py-4 text-left font-semibold text-slate-950 dark:text-slate-100">
                     {t("comparisonSection.headers.feature")}
                   </th>
                   {plans.map((plan) => (
                     <th
                       key={plan.id}
-                      className={`px-6 py-5 text-left font-bold ${
-                        plan.highlighted
-                          ? "text-primary"
-                          : "text-slate-950 dark:text-slate-100"
+                      className={`px-6 py-4 text-left font-semibold ${
+                        plan.highlighted ? "text-primary" : "text-slate-950 dark:text-slate-100"
                       }`}
                     >
                       {plan.name}
@@ -811,21 +618,17 @@ export default function PricingClient() {
                   ))}
                 </tr>
               </thead>
-
               <tbody>
                 {comparison.map((row) => (
                   <tr
                     key={row.feature}
-                    className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900/30"
+                    className="border-b border-slate-100 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-900/30"
                   >
-                    <td className="px-6 py-5 font-semibold text-slate-950 dark:text-slate-100">
+                    <td className="px-6 py-4 font-medium text-slate-950 dark:text-slate-100">
                       {row.feature}
                     </td>
                     {plans.map((plan) => (
-                      <td
-                        key={`${row.feature}:${plan.id}`}
-                        className="px-6 py-5 text-slate-600 dark:text-slate-300"
-                      >
+                      <td key={`${row.feature}:${plan.id}`} className="px-6 py-4">
                         {renderFeatureValue(row.values[plan.id])}
                       </td>
                     ))}
@@ -837,28 +640,29 @@ export default function PricingClient() {
         </div>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,_#fff8ed_0%,_#ffffff_100%)] py-16 lg:py-24 dark:bg-[linear-gradient(180deg,_#020617_0%,_#0b1220_65%,_#020617_100%)]">
+      {/* FAQ Section */}
+      <section className="bg-gradient-to-b from-slate-50 to-white py-20 dark:from-slate-900/50 dark:to-slate-950">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <SectionEyebrow
-              icon={<HelpCircle className="h-4 w-4" />}
-              label={t("faqSection.eyebrow")}
-            />
-            <div className="mt-8">
-              <ScriptHeading>{t("faqSection.title")}</ScriptHeading>
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+              <HelpCircle className="h-4 w-4" />
+              {t("faqSection.eyebrow")}
             </div>
+            <h2 className="mt-6 text-4xl font-bold text-slate-950 sm:text-5xl dark:text-slate-100">
+              {t("faqSection.title")}
+            </h2>
           </div>
 
-          <div className="mt-12 grid gap-5">
+          <div className="mt-12 space-y-4">
             {faqs.map((faq) => (
               <div
                 key={faq.q}
-                className="group rounded-[1.7rem] border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg dark:border-slate-800 dark:bg-slate-950"
+                className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
               >
-                <h3 className="text-base font-semibold text-slate-950 transition-colors group-hover:text-primary dark:text-slate-100">
+                <h3 className="font-semibold text-slate-950 dark:text-slate-100">
                   {faq.q}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                   {faq.a}
                 </p>
               </div>
@@ -867,59 +671,35 @@ export default function PricingClient() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-28">
-        <div className="relative overflow-hidden rounded-[3rem] bg-[linear-gradient(135deg,_#111827_0%,_#4c1d95_55%,_#f59e0b_140%)] px-6 py-14 text-center text-white shadow-[0_35px_90px_rgba(15,23,42,0.18)] sm:px-10 lg:py-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.18),transparent_24%),radial-gradient(circle_at_82%_80%,rgba(255,255,255,0.14),transparent_26%)]" />
-
-          <div className="relative mx-auto max-w-3xl">
-            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-xl">
+      {/* CTA Section */}
+      <section className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-purple-900 to-amber-800 px-6 py-16 text-center text-white sm:px-10 lg:py-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_60%)]" />
+          <div className="relative">
+            <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
               <Headphones className="h-8 w-8" />
             </div>
-
-            <h2
-              className="mt-8 text-4xl font-semibold leading-tight sm:text-5xl"
-              style={{
-                fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
-              }}
-            >
+            <h2 className="mt-6 text-4xl font-bold sm:text-5xl">
               {t("ctaSection.title")}
             </h2>
-
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/75">
+            <p className="mx-auto mt-4 max-w-2xl text-white/80">
               {t("ctaSection.description")}
             </p>
-
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-4 text-sm font-semibold text-slate-950 transition-transform duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-slate-900 transition-all hover:-translate-y-0.5 hover:shadow-xl"
               >
                 {actionT("startFreeTrial")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
-
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-xl transition-colors duration-300 hover:bg-white/15"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
               >
                 {actionT("talkToSales")}
                 <MessageSquareText className="h-4 w-4" />
               </Link>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm text-white/70">
-              {(t.raw("ctaSection.points") as string[]).map((point, index) => (
-                <span key={point} className="inline-flex items-center gap-2">
-                  {index === 0 ? (
-                    <Star className="h-4 w-4 fill-amber-300 text-amber-300" />
-                  ) : index === 1 ? (
-                    <ShieldCheck className="h-4 w-4 text-emerald-300" />
-                  ) : (
-                    <Rocket className="h-4 w-4 text-amber-300" />
-                  )}
-                  {point}
-                </span>
-              ))}
             </div>
           </div>
         </div>
