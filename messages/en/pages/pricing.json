@@ -435,7 +435,7 @@
   "faqs": [
     {
       "q": "Is BDT the default pricing currency?",
-      "a": "Yes. The source package sheet is maintained in BDT, so the pricing page defaults to BDT."
+      "a": "Yes. Pricing is maintained in BDT, so the pricing page defaults to BDT."
     },
     {
       "q": "Can I view the same prices in USD?",
@@ -443,7 +443,7 @@
     },
     {
       "q": "Why do some packages show every 3 months while enterprise shows monthly?",
-      "a": "That follows the structure in the source sheet. Core packages use quarterly recurring charges, while the enterprise reporting service includes monthly charges and monthly server maintenance."
+      "a": "Core packages follow a quarterly recurring billing model, while the Enterprise Reporting Service includes monthly subscription fees along with monthly server maintenance charges."
     },
     {
       "q": "How are the per-month and per-user prices calculated?",
