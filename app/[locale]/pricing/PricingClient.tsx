@@ -583,9 +583,6 @@ export default function PricingClient() {
                       <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                         {plan.name}
                       </h3>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                        {plan.badge}
-                      </p>
                     </div>
                     <div
                       className={`flex h-10 w-10 items-center justify-center rounded-xl ${plan.softBg} ${plan.iconText}`}
