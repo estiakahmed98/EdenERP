@@ -252,22 +252,22 @@
   "benefitsSection": {
     "eyebrow": "স্পষ্ট বাণিজ্যিক কাঠামো",
     "title": "আপনার ব্যবসার আকার ও চাহিদার সাথে মানানসই মূল্য পরিকল্পনা।",
-    "description": "Adon ERP package data এমনভাবে দেখানো হয়েছে যাতে setup cost, recurring fee, user coverage এবং included module দ্রুত রিভিউ করা যায়।"
+    "description": "Adon ERP-এর প্যাকেজগুলো এমনভাবে উপস্থাপন করা হয়েছে, যাতে সেটআপ খরচ, নিয়মিত ফি, ব্যবহারকারী সংখ্যা এবং অন্তর্ভুক্ত মডিউলগুলো দ্রুত ও সহজে পর্যালোচনা করা যায়।"
   },
   "benefits": [
     {
       "title": "সোর্স-ভিত্তিক প্রাইসিং",
-      "description": "মার্কেটিং tier নয়, বর্তমান spreadsheet structure অনুযায়ী package value দেখানো হয়েছে।",
+      "description": "মার্কেটিং-নির্ভর টিয়ার নয়, প্রতিটি প্যাকেজের প্রকৃত মূল্য ও অন্তর্ভুক্ত সুবিধাগুলো স্পষ্টভাবে উপস্থাপন করা হয়েছে।",
       "icon": "creditCard"
     },
     {
       "title": "স্পষ্ট charge breakdown",
-      "description": "Setup, recurring ও enterprise maintenance আলাদা করে দেখানো হয়েছে যেন planning সহজ হয়।",
+      "description": "সেটআপ, নিয়মিত সাবস্ক্রিপশন ও এন্টারপ্রাইজ মেইনটেন্যান্স খরচ আলাদাভাবে উপস্থাপন করা হয়েছে, যাতে পরিকল্পনা ও বাজেট নির্ধারণ সহজ হয়।",
       "icon": "lockKeyhole"
     },
     {
       "title": "অপারেশন অনুযায়ী fit",
-      "description": "User count এবং module coverage দেখে package বেছে নেওয়া যায়, অনুমান করতে হয় না।",
+      "description": "প্রতিটি প্যাকেজের ব্যবহারকারী সংখ্যা ও মডিউল কভারেজ স্পষ্টভাবে উপস্থাপন করা হয়েছে, যাতে সঠিক সিদ্ধান্ত নিতে কোনো অনুমানের প্রয়োজন না হয়।",
       "icon": "layers3"
     }
   ],
@@ -428,15 +428,15 @@
   "faqs": [
     {
       "q": "BDT কি ডিফল্ট প্রাইসিং কারেন্সি?",
-      "a": "হ্যাঁ। সোর্স package sheet BDT-তে রক্ষণাবেক্ষণ করা হয়, তাই pricing page ডিফল্টভাবে BDT-তে খোলে।"
+      "a": "হ্যাঁ। প্যাকেজ মূল্যতথ্য BDT-ভিত্তিক হওয়ায়, প্রাইসিং পেজ ডিফল্টভাবে BDT মুদ্রায় প্রদর্শিত হয়।"
     },
     {
       "q": "আমি কি একই দাম USD-তে দেখতে পারি?",
-      "a": "হ্যাঁ। USD toggle-এ configured exchange rate অনুযায়ী আনুমানিক converted view দেখানো হয়।"
+      "a": "হ্যাঁ। USD টগলে কনফিগার করা বিনিময় হার অনুযায়ী মূল্য তথ্যের একটি আনুমানিক USD ভিউ প্রদর্শন করা হয়।"
     },
     {
       "q": "কিছু package-এ প্রতি ৩ মাসে, আর enterprise-এ মাসিক charge কেন?",
-      "a": "এটা source sheet-এর structure অনুসারে। Core package-গুলো quarterly recurring charge ব্যবহার করে, আর enterprise reporting service-এ monthly charge ও monthly server maintenance আছে।"
+      "a": "কোর প্যাকেজগুলো Quarterly Recurring Charge ভিত্তিক, আর Enterprise Reporting Service-এ Monthly Charge-এর পাশাপাশি Server Maintenance ফি অন্তর্ভুক্ত রয়েছে।"
     },
     {
       "q": "প্রতি মাসে ও প্রতি ব্যবহারকারী হিসাব কীভাবে বের করা হয়েছে?",
