@@ -251,10 +251,10 @@ export default function PricingClient() {
 
       if (corePricing) {
         return {
-          primaryValue: formatPriceFromBdt(corePricing.monthlyAmountBdt).value,
-          primaryLabel: t("plansSection.monthlyLabel"),
-          secondaryValue: formatPriceFromBdt(corePricing.perUserAmountBdt).value,
-          secondaryLabel: t("plansSection.perUserLabel"),
+          primaryValue: formatPriceFromBdt(corePricing.perUserAmountBdt).value,
+          primaryLabel: t("plansSection.perUserLabel"),
+          secondaryValue: formatPriceFromBdt(corePricing.monthlyAmountBdt).value,
+          secondaryLabel: t("plansSection.monthlyLabel"),
         };
       }
     }
@@ -613,19 +613,19 @@ export default function PricingClient() {
                       <div className="mt-5 space-y-4">
                         <div>
                           <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">
-                            {t("plansSection.monthlyLabel")}
+                            {t("plansSection.perUserLabel")}
                           </p>
                           <p className="mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
-                            {formatPriceFromBdt(corePricing.monthlyAmountBdt).value}
+                            {formatPriceFromBdt(corePricing.perUserAmountBdt).value}
                           </p>
                         </div>
 
                         <div className="rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 dark:border-slate-800 dark:bg-slate-900/50">
                           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
-                            {t("plansSection.perUserLabel")}
+                            {t("plansSection.monthlyLabel")}
                           </p>
                           <p className="mt-1 text-xl font-bold text-slate-900 dark:text-slate-100">
-                            {formatPriceFromBdt(corePricing.perUserAmountBdt).value}
+                            {formatPriceFromBdt(corePricing.monthlyAmountBdt).value}
                           </p>
                         </div>
                       </div>
