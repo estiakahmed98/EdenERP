@@ -7,7 +7,7 @@
     "eyebrow": "BDT-ভিত্তিক প্যাকেজ প্রাইসিং",
     "label": "Adon ERP Pricing",
     "title": "যে প্যাকেজ",
-    "titleAccent": "আপনার অপারেশনের সাথে মানানসই, সেটি বেছে নিন।",
+    "titleAccent": "আপনার ব্যবসার সাথে মানানসই, সেটি বেছে নিন।",
     "description": "প্রাইমারি প্রাইসিং BDT-তে দেখানো হয়। টিম ও মডিউল অনুযায়ী সঠিক প্যাকেজ বেছে নিন, তারপর চাইলে USD-তে আনুমানিক কনভার্টেড ভিউ দেখুন।",
     "highlights": [
       "সোর্স প্রাইসিং বর্তমান শিট অনুযায়ী",
@@ -57,7 +57,7 @@
   ],
   "plansSection": {
     "eyebrow": "প্যাকেজ প্রাইসিং",
-    "title": "কোর প্যাকেজ ও এন্টারপ্রাইজ সার্ভিসের শিট-অ্যালাইন্ড প্রাইসিং।",
+    "title": "আপনার ব্যবসার চাহিদা অনুযায়ী কোর ও এন্টারপ্রাইজ প্যাকেজের মূল্য নির্ধারণ।",
     "description": "প্রতিটি প্যাকেজে one-time setup, recurring billing এবং enterprise service charge শিট অনুযায়ী পরিষ্কারভাবে দেখানো হয়েছে।",
     "currency": {
       "bdt": "BDT",
@@ -229,15 +229,18 @@
       "charges": [
         {
           "label": "ওয়ান-টাইম setup charge",
-          "amountBdt": 50000
+          "amountBdt": 6100000,
+          "usdOnly": true
         },
         {
           "label": "মাসিক চার্জ",
-          "amountBdt": 2500
+          "amountBdt": 305000,
+          "usdOnly": true
         },
         {
           "label": "সার্ভার মেইনটেন্যান্স",
-          "amountBdt": 1500
+          "amountBdt": 183000,
+          "usdOnly": true
         }
       ],
       "features": ["রিপোর্টিং সার্ভিস", "এন্টারপ্রাইজ setup support"]
@@ -291,7 +294,7 @@
         "professional": "৳১,২০,০০০",
         "star": "৳৩,২৫,০০০",
         "platinum": "৳৮,২০,০০০",
-        "enterprise": "৳৫০,০০০"
+        "enterprise": "$50,000"
       }
     },
     {
@@ -301,7 +304,7 @@
         "professional": "৳৪০,০০০",
         "star": "৳৭৫,০০০",
         "platinum": "৳১,৮০,০০০",
-        "enterprise": "৳২,৫০০"
+        "enterprise": "$2500"
       }
     },
     {
@@ -321,7 +324,7 @@
         "professional": false,
         "star": false,
         "platinum": false,
-        "enterprise": "৳১,৫০০ / মাস"
+        "enterprise": "$1500"
       }
     },
     {
@@ -331,7 +334,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -341,7 +344,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -351,7 +354,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -361,7 +364,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -371,7 +374,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -381,7 +384,7 @@
         "professional": false,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -391,7 +394,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -401,7 +404,7 @@
         "professional": false,
         "star": false,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {

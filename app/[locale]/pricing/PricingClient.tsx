@@ -52,6 +52,7 @@ type Plan = {
   charges: {
     label: string;
     amountBdt: number | null;
+    usdOnly?: boolean;
     note?: string;
   }[];
   features: string[];
@@ -158,18 +159,31 @@ export default function PricingClient() {
     }).format(amount);
   }
 
-  function getPriceDisplay(amountBdt: number | null): PriceDisplay {
-    if (amountBdt === null) {
+  function getPriceDisplay(charge: { amountBdt: number | null; usdOnly?: boolean }): PriceDisplay {
+    if (charge.amountBdt === null) {
       return { value: stateT("custom") };
+    }
+
+    // For Enterprise plan with usdOnly flag
+    if (charge.usdOnly) {
+      const amountUsd = charge.amountBdt / USD_EXCHANGE_RATE;
+      const showDecimals = amountUsd < 100;
+      return {
+        value: `$${formatAmount(
+          amountUsd,
+          showDecimals ? 2 : 0,
+          showDecimals ? 2 : 0,
+        )}`,
+      };
     }
 
     if (currency === "bdt") {
       return {
-        value: `৳${formatAmount(amountBdt)}`,
+        value: `৳${formatAmount(charge.amountBdt)}`,
       };
     }
 
-    const amountUsd = amountBdt / USD_EXCHANGE_RATE;
+    const amountUsd = charge.amountBdt / USD_EXCHANGE_RATE;
     const showDecimals = amountUsd < 100;
 
     return {
@@ -181,8 +195,8 @@ export default function PricingClient() {
     };
   }
 
-  function formatCurrency(amountBdt: number | null) {
-    return getPriceDisplay(amountBdt).value;
+  function formatCurrency(charge: { amountBdt: number | null; usdOnly?: boolean }) {
+    return getPriceDisplay(charge).value;
   }
 
   function formatMetricValue(value: number | string) {
@@ -192,7 +206,7 @@ export default function PricingClient() {
   }
 
   function getVisibleFeatures(plan: Plan) {
-    return plan.features.slice(0, 4);
+    return plan.features;
   }
 
   function renderFeatureValue(value: string | boolean) {
@@ -358,7 +372,7 @@ export default function PricingClient() {
                     <div className="rounded-2xl bg-white/10 p-4">
                       <CircleDollarSign className="h-5 w-5 text-emerald-300" />
                       <p className="mt-3 text-lg font-bold">
-                        {formatCurrency(primaryPreviewCharge?.amountBdt ?? null)}
+                        {formatCurrency(primaryPreviewCharge)}
                       </p>
                       <p className="text-xs text-white/50">
                         {primaryPreviewCharge?.label}
@@ -367,7 +381,7 @@ export default function PricingClient() {
                     <div className="rounded-2xl bg-white/10 p-4">
                       <Sparkles className="h-5 w-5 text-amber-300" />
                       <p className="mt-3 text-lg font-bold">
-                        {formatCurrency(secondaryPreviewCharge?.amountBdt ?? null)}
+                        {formatCurrency(secondaryPreviewCharge)}
                       </p>
                       <p className="text-xs text-white/50">
                         {secondaryPreviewCharge?.label}
@@ -412,6 +426,7 @@ export default function PricingClient() {
         </div>
       </section>
 
+      {/* Professional Pricing Table Section - Redesigned based on image */}
       <section
         id="plans"
         className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
@@ -459,150 +474,107 @@ export default function PricingClient() {
           </p>
         </div>
 
-        <div className="mt-14 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-5">
-          {plans.map((plan) => {
+        {/* Redesigned Pricing Cards - Clean & Professional */}
+        <div className="mt-16 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {plans.map((plan, idx) => {
             const Icon = planIcons[plan.icon];
-            const visibleFeatures = getVisibleFeatures(plan);
-            const remainingFeatures = plan.features.length - visibleFeatures.length;
+            const features = getVisibleFeatures(plan);
             const isFeatured = plan.highlighted;
+            const mainCharge = plan.charges[0];
+            const billingNote = plan.charges[0]?.note;
 
             return (
               <div
                 key={plan.name}
-                className="group relative h-full rounded-[2.2rem] transition-all duration-300 hover:-translate-y-1"
+                className={`group relative h-full transition-all duration-300 hover:-translate-y-1 ${
+                  idx === 2 ? "md:scale-105" : ""
+                }`}
               >
-                {isFeatured && (
-                  <div className="absolute -top-5 left-1/2 z-20 -translate-x-1/2 rounded-full bg-[linear-gradient(90deg,_#6d28d9,_#db2777,_#f59e0b)] px-5 py-2 text-sm font-semibold text-white shadow-xl">
-                    {t("plansSection.popularBadge")}
+                {/* Featured Badge */}
+                {plan.spotlight && (
+                  <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+                    {plan.spotlight}
+                  </div>
+                )}
+
+                {isFeatured && !plan.spotlight && (
+                  <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-purple-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+                    Most Popular
                   </div>
                 )}
 
                 <div
-                  className={`absolute inset-0 rounded-[2.2rem] bg-gradient-to-br ${plan.color} opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-20 ${
-                    isFeatured ? "opacity-20" : ""
-                  }`}
-                />
-
-                <div
-                  className={`relative flex h-full min-h-[40rem] flex-col overflow-hidden rounded-[2.2rem] border bg-white p-7 shadow-sm transition-all duration-300 group-hover:shadow-2xl dark:border-slate-800 dark:bg-slate-950 ${
-                    isFeatured
-                      ? "border-primary/40 shadow-[0_35px_90px_rgba(124,58,237,0.18)]"
-                      : "border-slate-200"
+                  className={`relative flex h-full min-h-[32rem] flex-col overflow-hidden rounded-2xl border bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-slate-950 ${
+                    isFeatured || plan.spotlight
+                      ? "border-primary/30 shadow-xl shadow-primary/5"
+                      : "border-slate-200 hover:border-primary/20 dark:border-slate-800"
                   }`}
                 >
-                  <div
-                    className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${plan.color}`}
-                  />
-
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="min-h-[5.5rem]">
-                      <p
-                        className={`font-semibold leading-snug text-primary ${
-                          isBangla ? "text-base" : "text-sm"
-                        }`}
-                      >
-                        {plan.badge}
-                      </p>
-                      <h3 className="mt-3 text-2xl font-bold text-slate-950 dark:text-slate-100">
+                  {/* Plan Name & Icon */}
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
                         {plan.name}
                       </h3>
-                      {plan.usersLabel ? (
-                        <p
-                          className={`mt-3 inline-flex rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary ${
-                            isBangla ? "text-sm leading-snug" : "text-xs"
-                          }`}
-                        >
-                          {plan.usersLabel}
-                        </p>
-                      ) : null}
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                        {plan.badge}
+                      </p>
                     </div>
-
                     <div
-                      className={`flex h-14 w-14 items-center justify-center rounded-2xl ${plan.softBg} ${plan.iconText}`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-xl ${plan.softBg} ${plan.iconText}`}
                     >
-                      <Icon className="h-7 w-7" />
+                      <Icon className="h-5 w-5" />
                     </div>
                   </div>
 
-                  <p
-                    className={`mt-4 min-h-[7.5rem] text-slate-600 dark:text-slate-300 ${
-                      isBangla ? "text-[15px] leading-8" : "text-sm leading-7"
-                    }`}
-                  >
+                  {/* Description */}
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                     {plan.description}
                   </p>
 
-                  <div className="mt-6 rounded-[1.6rem] border border-slate-200 bg-slate-50/80 p-4 dark:border-slate-800 dark:bg-slate-900/50">
-                    <div className="space-y-3">
-                      {plan.charges.map((charge, index) => (
-                        <div
-                          key={`${plan.id}:${charge.label}`}
-                          className={`flex items-start justify-between gap-4 ${
-                            index !== plan.charges.length - 1
-                              ? "border-b border-slate-200/80 pb-3 dark:border-slate-800"
-                              : ""
-                          }`}
-                        >
-                          <div className="min-w-0">
-                            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                              {charge.label}
-                            </p>
-                            {charge.note ? (
-                              <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">
-                                {charge.note}
-                              </p>
-                            ) : null}
-                          </div>
-
-                          <div className="shrink-0 text-right">
-                            <p
-                              className={`font-bold tracking-tight text-slate-950 dark:text-slate-100 ${
-                                index === 0 ? "text-2xl" : "text-lg"
-                              }`}
-                            >
-                              {formatCurrency(charge.amountBdt)}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+                  {/* Price */}
+                  <div className="mt-5">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">
+                        {formatCurrency(mainCharge)}
+                      </span>
+                      <span className="text-sm text-slate-500">/month</span>
                     </div>
+                    {billingNote && (
+                      <p className="mt-1 text-xs text-slate-500">{billingNote}</p>
+                    )}
                   </div>
 
+                  {/* CTA Button */}
                   <Link
                     href={plan.href}
-                    className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 text-sm font-semibold transition-all duration-300 ${
-                      isFeatured
-                        ? "bg-primary text-white shadow-xl shadow-primary/20 hover:-translate-y-0.5 hover:shadow-2xl"
-                        : "border border-slate-200 bg-white text-slate-700 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary hover:shadow-lg dark:border-slate-800 dark:bg-slate-950 dark:text-slate-200"
+                    className={`mt-5 inline-flex w-full items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                      isFeatured || plan.spotlight
+                        ? "bg-primary text-white shadow-md hover:bg-primary/90 hover:shadow-lg"
+                        : "border border-slate-200 bg-white text-slate-700 hover:border-primary/30 hover:bg-primary/5 hover:text-primary dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
                     }`}
                   >
                     {plan.cta}
-                    <ArrowRight className="h-4 w-4" />
                   </Link>
 
-                  <div className="mt-7 flex-1 border-t border-slate-100 pt-6 dark:border-slate-800">
-                    <p className="text-sm font-semibold text-slate-950 dark:text-slate-100">
-                      {t("plansSection.featuresIncluded")}
+                  {/* Features Section */}
+                  <div className="mt-6 flex-1">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                      FEATURES
                     </p>
-
-                    <ul className="mt-5 space-y-3">
-                      {visibleFeatures.map((feature) => (
-                        <li key={feature} className="flex items-start gap-3">
-                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-                            <Check className="h-3.5 w-3.5" />
-                          </span>
-                          <span className="text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    <ul className="mt-4 space-y-3">
+                      {features.map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-start gap-2.5 text-sm"
+                        >
+                          <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                          <span className="text-slate-600 dark:text-slate-300">
                             {feature}
                           </span>
                         </li>
                       ))}
                     </ul>
-
-                    {remainingFeatures > 0 ? (
-                      <p className="mt-5 text-sm font-semibold text-primary">
-                        {t("plansSection.moreFeatures", { count: remainingFeatures })}
-                      </p>
-                    ) : null}
                   </div>
                 </div>
               </div>

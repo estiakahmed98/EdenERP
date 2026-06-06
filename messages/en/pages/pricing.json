@@ -233,15 +233,21 @@
       "charges": [
         {
           "label": "One-time setup charge",
-          "amountBdt": 50000
+          "amountBdt": 6100000,
+          "usdOnly": true,
+          "isPureUsd": true
         },
         {
           "label": "Monthly charge",
-          "amountBdt": 2500
+          "amountBdt": 305000,
+          "usdOnly": true,
+          "isPureUsd": true
         },
         {
           "label": "Server maintenance",
-          "amountBdt": 1500
+          "amountBdt": 183000,
+          "usdOnly": true,
+          "isPureUsd": true
         }
       ],
       "features": [
@@ -298,7 +304,7 @@
         "professional": "৳120,000",
         "star": "৳325,000",
         "platinum": "৳820,000",
-        "enterprise": "৳50,000"
+        "enterprise": "$50,000"
       }
     },
     {
@@ -308,7 +314,7 @@
         "professional": "৳40,000",
         "star": "৳75,000",
         "platinum": "৳180,000",
-        "enterprise": "৳2,500"
+        "enterprise": "$2,500"
       }
     },
     {
@@ -328,7 +334,7 @@
         "professional": false,
         "star": false,
         "platinum": false,
-        "enterprise": "৳1,500 / month"
+        "enterprise": "$1,500 / month"
       }
     },
     {
@@ -338,7 +344,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -348,7 +354,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -358,7 +364,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -368,7 +374,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -378,7 +384,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -388,7 +394,7 @@
         "professional": false,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -398,7 +404,7 @@
         "professional": true,
         "star": true,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
@@ -408,7 +414,7 @@
         "professional": false,
         "star": false,
         "platinum": true,
-        "enterprise": false
+        "enterprise": true
       }
     },
     {
