@@ -1,0 +1,33 @@
+
+> adon-erp@0.1.0 dev
+> next dev --webpack
+
+▲ Next.js 16.2.6 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.234:3000
+- Environments: .env
+✓ Ready in 978ms
+
+○ Compiling /api/analytics/collect ...
+ POST /api/analytics/collect 200 in 7.0s (next.js: 6.1s, application-code: 926ms)
+○ Compiling /[locale]/pricing ...
+ POST /api/analytics/collect 200 in 9.1s (next.js: 8.9s, application-code: 257ms)
+ POST /api/analytics/collect 200 in 191ms (next.js: 3ms, application-code: 189ms)
+ GET /en/pricing 200 in 17.6s (next.js: 14.5s, proxy.ts: 1582ms, generate-params: 1489ms, application-code: 1542ms)
+ GET /bn/pricing 200 in 18.0s (next.js: 14.2s, proxy.ts: 1581ms, generate-params: 1278ms, application-code: 2.2s)
+ POST /api/analytics/collect 200 in 252ms (next.js: 181ms, application-code: 71ms)
+ GET /en/apps 200 in 5.4s (next.js: 3.8s, proxy.ts: 163ms, generate-params: 1644ms, application-code: 1513ms)
+ POST /api/analytics/collect 200 in 105ms (next.js: 6ms, application-code: 99ms)
+ POST /api/analytics/collect 200 in 78ms (next.js: 6ms, application-code: 72ms)
+ POST /api/analytics/collect 200 in 56ms (next.js: 6ms, application-code: 51ms)
+ POST /api/analytics/collect 200 in 192ms (next.js: 3ms, application-code: 189ms)
+ POST /api/analytics/collect 200 in 197ms (next.js: 4ms, application-code: 193ms)
+ GET /bn/pricing 200 in 979ms (next.js: 65ms, proxy.ts: 17ms, generate-params: 17ms, application-code: 897ms)
+ POST /api/analytics/collect 200 in 32ms (next.js: 6ms, application-code: 27ms)
+ POST /api/analytics/collect 200 in 17ms (next.js: 2ms, application-code: 15ms)
+ POST /api/analytics/collect 200 in 28ms (next.js: 4ms, application-code: 23ms)
+ POST /api/analytics/collect 200 in 21ms (next.js: 5ms, application-code: 16ms)
+ POST /api/analytics/collect 200 in 19ms (next.js: 4ms, application-code: 14ms)
+ POST /api/analytics/collect 200 in 19ms (next.js: 3ms, application-code: 16ms)
+ GET /bn/pricing 200 in 749ms (next.js: 78ms, proxy.ts: 22ms, generate-params: 20ms, application-code: 649ms)
+[?25h

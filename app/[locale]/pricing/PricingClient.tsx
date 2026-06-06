@@ -149,8 +149,17 @@ export default function PricingClient() {
     plans.find((plan) => plan.highlighted) ??
     plans.find((plan) => plan.id === "star") ??
     plans[0];
-  const primaryPreviewCharge = featuredPlan.charges[0];
-  const secondaryPreviewCharge = featuredPlan.charges[1] ?? featuredPlan.charges[0];
+
+  function getPrimaryDisplayCharge(plan: Plan) {
+    return plan.charges[1] ?? plan.charges[0];
+  }
+
+  function getSecondaryDisplayCharge(plan: Plan) {
+    return plan.charges[2] ?? plan.charges[1] ?? plan.charges[0];
+  }
+
+  const primaryPreviewCharge = getPrimaryDisplayCharge(featuredPlan);
+  const secondaryPreviewCharge = getSecondaryDisplayCharge(featuredPlan);
 
   function formatAmount(amount: number, minimumFractionDigits = 0, maximumFractionDigits = 0) {
     return new Intl.NumberFormat(locale, {
@@ -480,8 +489,8 @@ export default function PricingClient() {
             const Icon = planIcons[plan.icon];
             const features = getVisibleFeatures(plan);
             const isFeatured = plan.highlighted;
-            const mainCharge = plan.charges[0];
-            const billingNote = plan.charges[0]?.note;
+            const mainCharge = getPrimaryDisplayCharge(plan);
+            const billingNote = mainCharge.note;
 
             return (
               <div
@@ -534,11 +543,13 @@ export default function PricingClient() {
 
                   {/* Price */}
                   <div className="mt-5">
-                    <div className="flex items-baseline gap-1">
+                    <div className="flex items-baseline gap-2">
                       <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">
                         {formatCurrency(mainCharge)}
                       </span>
-                      <span className="text-sm text-slate-500">/month</span>
+                      <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                        {mainCharge.label}
+                      </span>
                     </div>
                     {billingNote && (
                       <p className="mt-1 text-xs text-slate-500">{billingNote}</p>

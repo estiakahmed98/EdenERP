@@ -1,0 +1,40 @@
+▲ Next.js 16.2.6 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.234:3000
+- Environments: .env
+✓ Ready in 842ms
+
+○ Compiling /[locale]/pricing ...
+ GET /en/pricing 200 in 13.2s (next.js: 12.0s, proxy.ts: 325ms, generate-params: 872ms, application-code: 894ms)
+ GET /en/pricing 200 in 1388ms (next.js: 36ms, proxy.ts: 182ms, generate-params: 12ms, application-code: 1170ms)
+○ Compiling /[locale]/apps ...
+ GET /en/apps 200 in 7.2s (next.js: 5.9s, proxy.ts: 15ms, generate-params: 1843ms, application-code: 1331ms)
+ POST /api/analytics/collect 200 in 3.2s (next.js: 2.4s, application-code: 851ms)
+ POST /api/analytics/collect 200 in 4.5s (next.js: 3.6s, application-code: 896ms)
+ POST /api/analytics/collect 200 in 17ms (next.js: 4ms, application-code: 13ms)
+ GET /bn/pricing 200 in 987ms (next.js: 111ms, proxy.ts: 14ms, generate-params: 14ms, application-code: 862ms)
+ POST /api/analytics/collect 200 in 35ms (next.js: 6ms, application-code: 29ms)
+ POST /api/analytics/collect 200 in 25ms (next.js: 6ms, application-code: 19ms)
+ POST /api/analytics/collect 200 in 28ms (next.js: 7ms, application-code: 20ms)
+ GET /en/pricing 200 in 853ms (next.js: 25ms, proxy.ts: 11ms, generate-params: 12ms, application-code: 817ms)
+ POST /api/analytics/collect 200 in 38ms (next.js: 8ms, application-code: 30ms)
+ POST /api/analytics/collect 200 in 33ms (next.js: 6ms, application-code: 26ms)
+ POST /api/analytics/collect 200 in 21ms (next.js: 4ms, application-code: 17ms)
+ GET /en/industries/food&hospitality/restaurant 200 in 3.2s (next.js: 2.7s, proxy.ts: 15ms, generate-params: 1065ms, application-code: 527ms)
+ POST /api/analytics/collect 200 in 135ms (next.js: 10ms, application-code: 125ms)
+ POST /api/analytics/collect 200 in 492ms (next.js: 211ms, application-code: 281ms)
+ GET /favicon.ico 404 in 6.5s (next.js: 4.4s, generate-params: 2.4s, application-code: 2.0s)
+ GET /bn/industries/food&hospitality/restaurant 200 in 1943ms (next.js: 420ms, proxy.ts: 355ms, generate-params: 11ms, application-code: 1168ms)
+ GET /bn/industries/food&hospitality/restaurant 200 in 978ms (next.js: 17ms, proxy.ts: 15ms, generate-params: 57µs, application-code: 947ms)
+ POST /api/analytics/collect 200 in 241ms (next.js: 203ms, application-code: 38ms)
+ POST /api/analytics/collect 200 in 26ms (next.js: 4ms, application-code: 23ms)
+ POST /api/analytics/collect 200 in 20ms (next.js: 3ms, application-code: 17ms)
+ GET /bn/pricing 200 in 486ms (next.js: 34ms, proxy.ts: 25ms, generate-params: 10ms, application-code: 427ms)
+ POST /api/analytics/collect 200 in 22ms (next.js: 5ms, application-code: 17ms)
+ GET /bn 200 in 427ms (next.js: 19ms, proxy.ts: 7ms, generate-params: 9ms, application-code: 401ms)
+ POST /api/analytics/collect 200 in 28ms (next.js: 5ms, application-code: 23ms)
+ GET /bn/pricing 200 in 1040ms (next.js: 55ms, proxy.ts: 30ms, generate-params: 25ms, application-code: 955ms)
+ POST /api/analytics/collect 200 in 39ms (next.js: 6ms, application-code: 33ms)
+ GET /favicon.ico 404 in 860ms (next.js: 32ms, generate-params: 23ms, application-code: 827ms)
+ POST /api/analytics/collect 200 in 28ms (next.js: 4ms, application-code: 24ms)
+[?25h
