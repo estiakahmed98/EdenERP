@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "title": "Contact Us | Adon ERP",
+    "description": "Get in touch with Adon ERP team for sales, support, or implementation inquiries."
+  },
+  "hero": {
+    "eyebrowLabel": "Get in Touch",
+    "title": "Let's talk about",
+    "titleAccent": "your ERP journey",
+    "description": "Whether you have a question about pricing, need implementation support, or want to discuss a custom solution — our team is ready to help."
+  },
+  "contactInfo": {
+    "phone": {
+      "title": "Call Us",
+      "number1": "+880 1234-567890",
+      "number2": "+880 9876-543210",
+      "action": "Call now"
+    },
+    "email": {
+      "title": "Email Us",
+      "sales": "sales@adonerp.com",
+      "support": "support@adonerp.com",
+      "action": "Send email"
+    },
+    "address": {
+      "title": "Visit Us",
+      "line1": "Tower 71, Flat # 9 A-B, 516/3 South Manikdi",
+      "line2": "Matikata Road, ECB Chattar, Dhaka Cantonment",
+      "line3": "Dhaka - 1206, Bangladesh"
+    },
+    "hours": {
+      "title": "Business Hours",
+      "weekdays": "Sunday - Thursday: 9AM - 6PM",
+      "weekend": "Friday - Saturday: Closed"
+    }
+  },
+  "map": {
+    "eyebrow": "Our Location",
+    "title": "Find us on the map",
+    "description": "Visit our office for meetings, consultations, or just to say hello. We'd love to meet you in person."
+  },
+  "office": {
+    "fullAddress": "Corporate Headquarters"
+  },
+  "whyChoose": {
+    "title": "Why choose Adon ERP?",
+    "items": [
+      "24/7 dedicated support team",
+      "Custom implementation roadmap",
+      "30+ enterprise modules",
+      "ISO certified security"
+    ]
+  },
+  "social": {
+    "title": "Connect with us"
+  },
+  "stats": [
+    { "value": "500+", "label": "Happy Clients", "icon": "Users" },
+    { "value": "50+", "label": "Expert Team", "icon": "Briefcase" },
+    { "value": "30+", "label": "Modules", "icon": "Building2" },
+    { "value": "10+", "label": "Countries", "icon": "Globe" }
+  ],
+  "cta": {
+    "title": "Ready to transform your business?",
+    "description": "Join 500+ businesses already using Adon ERP to streamline their operations.",
+    "viewPricing": "View Pricing",
+    "scheduleCall": "Schedule a Call",
+    "freeConsultation": "Free consultation",
+    "support": "24/7 support",
+    "customSolutions": "Custom solutions"
+  }
+}
