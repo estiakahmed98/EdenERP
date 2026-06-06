@@ -183,10 +183,10 @@ export default function ContactClient() {
         </div>
       </section>
 
-      {/* Map & Office Location Section */}
+      {/* Office Location Section - Without Map */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2">
-          {/* Map */}
+          {/* Office Address */}
           <div>
             <SectionEyebrow
               icon={<MapPin className="h-4 w-4" />}
@@ -199,26 +199,7 @@ export default function ContactClient() {
               {t("map.description")}
             </p>
 
-            <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg dark:border-slate-800 dark:bg-slate-950">
-              <div className="aspect-[4/3] w-full">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.577890257258!2d90.41552031536585!3d23.86709108913688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c5d05e7074dd%3A0xd1c58803049f00c7!2sGulshan%20Circle!5e0!3m2!1sen!2sbd!4v1699999999999!5m2!1sen!2sbd"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale transition-all duration-300 hover:grayscale-0"
-                  title={t("map.title")}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Office Details & Why Choose Us */}
-          <div className="space-y-8">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-lg dark:border-slate-800 dark:bg-slate-950">
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-lg dark:border-slate-800 dark:bg-slate-950">
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <Building2 className="h-6 w-6" />
@@ -227,15 +208,36 @@ export default function ContactClient() {
                   <h3 className="text-lg font-semibold text-slate-950 dark:text-slate-100">
                     {t("office.fullAddress")}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     Tower 71, Flat # 9 A-B, 516/3 South Manikdi<br />
                     Matikata Road, ECB Chattar, Dhaka Cantonment<br />
                     Dhaka - 1206, Bangladesh
                   </p>
+                  <div className="mt-3 flex items-center gap-2 text-xs text-primary">
+                    <MapPin className="h-3 w-3" />
+                    <span>📍 Landmark: Beside ECB Chattar Circle</span>
+                  </div>
                 </div>
               </div>
             </div>
 
+            {/* Direction Button */}
+            <div className="mt-4 rounded-xl bg-primary/5 p-4 text-center dark:bg-primary/10">
+              <a
+                href="https://maps.google.com/?q=Tower+71+ECB+Chattar+Dhaka+Cantonment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"
+              >
+                <MapPin className="h-4 w-4" />
+                Get Directions to Tower 71, ECB Chattar
+                <ChevronRight className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Why Choose Us & Social Links */}
+          <div className="space-y-8">
             <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-primary/5 to-transparent p-6 dark:border-slate-800">
               <h3 className="text-lg font-semibold text-slate-950 dark:text-slate-100">
                 {t("whyChoose.title")}
