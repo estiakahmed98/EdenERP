@@ -65,6 +65,10 @@
       "note": "USD ভিউ আনুমানিক, ১ USD = {rate} BDT হারে দেখানো হয়।"
     },
     "popularBadge": "সবচেয়ে চাহিদাসম্পন্ন",
+    "monthlyLabel": "প্রতি মাসে",
+    "perUserLabel": "প্রতি ব্যবহারকারী / মাস",
+    "usersUnit": "ব্যবহারকারী",
+    "breakdownLabel": "প্রাইসিং ব্রেকডাউন",
     "featuresIncluded": "অন্তর্ভুক্ত মডিউল:",
     "moreFeatures": "+আরও {count}টি অন্তর্ভুক্ত"
   },
@@ -81,20 +85,18 @@
       "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 5,
       "usersLabel": "সর্বোচ্চ ৫ ব্যবহারকারী",
       "charges": [
         {
+          "kind": "setup",
           "label": "ওয়ান-টাইম setup charge",
           "amountBdt": 60000
         },
         {
+          "kind": "quarterly",
           "label": "প্রতি ৩ মাসে",
           "amountBdt": 20000
-        },
-        {
-          "label": "শুরুর মোট খরচ",
-          "amountBdt": 80000,
-          "note": "Setup charge এবং প্রথম quarter billingসহ"
         }
       ],
       "features": ["অ্যাকাউন্টিং", "পেরোল", "ইনভেন্টরি"]
@@ -111,20 +113,18 @@
       "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 6,
       "usersLabel": "সর্বোচ্চ ৬ ব্যবহারকারী",
       "charges": [
         {
+          "kind": "setup",
           "label": "ওয়ান-টাইম setup charge",
           "amountBdt": 120000
         },
         {
+          "kind": "quarterly",
           "label": "প্রতি ৩ মাসে",
           "amountBdt": 40000
-        },
-        {
-          "label": "শুরুর মোট খরচ",
-          "amountBdt": 160000,
-          "note": "Setup charge এবং প্রথম quarter billingসহ"
         }
       ],
       "features": [
@@ -148,20 +148,18 @@
       "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": true,
+      "userCount": 10,
       "usersLabel": "সর্বোচ্চ ১০ ব্যবহারকারী",
       "charges": [
         {
+          "kind": "setup",
           "label": "ওয়ান-টাইম setup charge",
           "amountBdt": 325000
         },
         {
+          "kind": "quarterly",
           "label": "প্রতি ৩ মাসে",
           "amountBdt": 75000
-        },
-        {
-          "label": "শুরুর মোট খরচ",
-          "amountBdt": 400000,
-          "note": "Setup charge এবং প্রথম quarter billingসহ"
         }
       ],
       "features": [
@@ -186,20 +184,18 @@
       "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 20,
       "usersLabel": "সর্বোচ্চ ২০ ব্যবহারকারী",
       "charges": [
         {
+          "kind": "setup",
           "label": "ওয়ান-টাইম setup charge",
           "amountBdt": 820000
         },
         {
+          "kind": "quarterly",
           "label": "প্রতি ৩ মাসে",
           "amountBdt": 180000
-        },
-        {
-          "label": "শুরুর মোট খরচ",
-          "amountBdt": 1000000,
-          "note": "Setup charge এবং প্রথম quarter billingসহ"
         }
       ],
       "features": [
@@ -225,22 +221,29 @@
       "cta": "সেলসের সাথে কথা বলুন",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 99,
       "usersLabel": "সর্বোচ্চ ৯৯ ব্যবহারকারী",
       "charges": [
         {
+          "kind": "setup",
           "label": "ওয়ান-টাইম setup charge",
           "amountBdt": 6100000,
-          "usdOnly": true
+          "usdOnly": true,
+          "isPureUsd": true
         },
         {
+          "kind": "monthly",
           "label": "মাসিক চার্জ",
           "amountBdt": 305000,
-          "usdOnly": true
+          "usdOnly": true,
+          "isPureUsd": true
         },
         {
+          "kind": "maintenance",
           "label": "সার্ভার মেইনটেন্যান্স",
           "amountBdt": 183000,
-          "usdOnly": true
+          "usdOnly": true,
+          "isPureUsd": true
         }
       ],
       "features": ["রিপোর্টিং সার্ভিস", "এন্টারপ্রাইজ setup support"]
@@ -436,8 +439,8 @@
       "a": "এটা source sheet-এর structure অনুসারে। Core package-গুলো quarterly recurring charge ব্যবহার করে, আর enterprise reporting service-এ monthly charge ও monthly server maintenance আছে।"
     },
     {
-      "q": "শুরুর মোট খরচ বলতে কী বোঝায়?",
-      "a": "Core package-গুলোর জন্য এটি one-time setup charge এবং sheet-এ দেখানো প্রথম recurring billing cycle-এর যোগফল।"
+      "q": "প্রতি মাসে ও প্রতি ব্যবহারকারী হিসাব কীভাবে বের করা হয়েছে?",
+      "a": "প্রতিটি core package-এর প্রতি ৩ মাসের recurring charge কে ৩ দিয়ে ভাগ করে মাসিক amount দেখানো হয়েছে, তারপর সেই amount package-এর user limit দিয়ে ভাগ করে per-user monthly cost দেখানো হয়েছে।"
     },
     {
       "q": "পরে কি user বা module scope পরিবর্তন করা যাবে?",

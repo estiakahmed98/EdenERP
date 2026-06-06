@@ -65,6 +65,10 @@
       "note": "USD prices are approximate and use 1 USD = {rate} BDT."
     },
     "popularBadge": "Most Requested",
+    "monthlyLabel": "Per month",
+    "perUserLabel": "Per user / month",
+    "usersUnit": "users",
+    "breakdownLabel": "Pricing breakdown",
     "featuresIncluded": "Included modules:",
     "moreFeatures": "+{count} more included"
   },
@@ -81,20 +85,18 @@
       "cta": "Talk to Sales",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 5,
       "usersLabel": "Up to 5 users",
       "charges": [
         {
+          "kind": "setup",
           "label": "One-time setup charge",
           "amountBdt": 60000
         },
         {
+          "kind": "quarterly",
           "label": "Every 3 months",
           "amountBdt": 20000
-        },
-        {
-          "label": "Starting total",
-          "amountBdt": 80000,
-          "note": "Setup charge plus first quarter billing"
         }
       ],
       "features": [
@@ -115,20 +117,18 @@
       "cta": "Talk to Sales",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 6,
       "usersLabel": "Up to 6 users",
       "charges": [
         {
+          "kind": "setup",
           "label": "One-time setup charge",
           "amountBdt": 120000
         },
         {
+          "kind": "quarterly",
           "label": "Every 3 months",
           "amountBdt": 40000
-        },
-        {
-          "label": "Starting total",
-          "amountBdt": 160000,
-          "note": "Setup charge plus first quarter billing"
         }
       ],
       "features": [
@@ -152,20 +152,18 @@
       "cta": "Talk to Sales",
       "href": "/contact",
       "highlighted": true,
+      "userCount": 10,
       "usersLabel": "Up to 10 users",
       "charges": [
         {
+          "kind": "setup",
           "label": "One-time setup charge",
           "amountBdt": 325000
         },
         {
+          "kind": "quarterly",
           "label": "Every 3 months",
           "amountBdt": 75000
-        },
-        {
-          "label": "Starting total",
-          "amountBdt": 400000,
-          "note": "Setup charge plus first quarter billing"
         }
       ],
       "features": [
@@ -190,20 +188,18 @@
       "cta": "Talk to Sales",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 20,
       "usersLabel": "Up to 20 users",
       "charges": [
         {
+          "kind": "setup",
           "label": "One-time setup charge",
           "amountBdt": 820000
         },
         {
+          "kind": "quarterly",
           "label": "Every 3 months",
           "amountBdt": 180000
-        },
-        {
-          "label": "Starting total",
-          "amountBdt": 1000000,
-          "note": "Setup charge plus first quarter billing"
         }
       ],
       "features": [
@@ -229,21 +225,25 @@
       "cta": "Contact Sales",
       "href": "/contact",
       "highlighted": false,
+      "userCount": 99,
       "usersLabel": "Up to 99 users",
       "charges": [
         {
+          "kind": "setup",
           "label": "One-time setup charge",
           "amountBdt": 6100000,
           "usdOnly": true,
           "isPureUsd": true
         },
         {
+          "kind": "monthly",
           "label": "Monthly charge",
           "amountBdt": 305000,
           "usdOnly": true,
           "isPureUsd": true
         },
         {
+          "kind": "maintenance",
           "label": "Server maintenance",
           "amountBdt": 183000,
           "usdOnly": true,
@@ -446,8 +446,8 @@
       "a": "That follows the structure in the source sheet. Core packages use quarterly recurring charges, while the enterprise reporting service includes monthly charges and monthly server maintenance."
     },
     {
-      "q": "What does the starting total represent?",
-      "a": "For the core packages, the starting total combines the one-time setup charge with the first recurring billing cycle shown in the sheet."
+      "q": "How are the per-month and per-user prices calculated?",
+      "a": "For each core package, the every-3-months charge is divided by 3 to show the monthly amount, then divided again by that package's user limit to show the per-user monthly cost."
     },
     {
       "q": "Can users or modules be customized later?",

@@ -32,6 +32,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 type Currency = "bdt" | "usd";
+type ChargeKind = "setup" | "quarterly" | "monthly" | "maintenance";
 
 const USD_EXCHANGE_RATE = 122;
 
@@ -48,8 +49,10 @@ type Plan = {
   href: string;
   highlighted: boolean;
   spotlight?: string;
+  userCount: number;
   usersLabel: string;
   charges: {
+    kind: ChargeKind;
     label: string;
     amountBdt: number | null;
     usdOnly?: boolean;
@@ -137,7 +140,6 @@ export default function PricingClient() {
   const actionT = useTranslations("common.actions");
   const stateT = useTranslations("common.states");
   const locale = useLocale();
-  const isBangla = locale === "bn";
   const [currency, setCurrency] = useState<Currency>("bdt");
   const plans = t.raw("plans") as Plan[];
   const modules = t.raw("modules") as string[];
@@ -150,16 +152,13 @@ export default function PricingClient() {
     plans.find((plan) => plan.id === "star") ??
     plans[0];
 
-  function getPrimaryDisplayCharge(plan: Plan) {
-    return plan.charges[1] ?? plan.charges[0];
+  function isCorePlan(plan: Plan) {
+    return plan.id !== "enterprise";
   }
 
-  function getSecondaryDisplayCharge(plan: Plan) {
-    return plan.charges[2] ?? plan.charges[1] ?? plan.charges[0];
+  function findCharge(plan: Plan, kind: ChargeKind) {
+    return plan.charges.find((charge) => charge.kind === kind);
   }
-
-  const primaryPreviewCharge = getPrimaryDisplayCharge(featuredPlan);
-  const secondaryPreviewCharge = getSecondaryDisplayCharge(featuredPlan);
 
   function formatAmount(amount: number, minimumFractionDigits = 0, maximumFractionDigits = 0) {
     return new Intl.NumberFormat(locale, {
@@ -168,15 +167,18 @@ export default function PricingClient() {
     }).format(amount);
   }
 
-  function getPriceDisplay(charge: { amountBdt: number | null; usdOnly?: boolean }): PriceDisplay {
-    if (charge.amountBdt === null) {
+  function hasFraction(amount: number) {
+    return Math.abs(amount - Math.round(amount)) > 0.001;
+  }
+
+  function formatPriceFromBdt(amountBdt: number | null, usdOnly = false): PriceDisplay {
+    if (amountBdt === null) {
       return { value: stateT("custom") };
     }
 
-    // For Enterprise plan with usdOnly flag
-    if (charge.usdOnly) {
-      const amountUsd = charge.amountBdt / USD_EXCHANGE_RATE;
-      const showDecimals = amountUsd < 100;
+    if (usdOnly) {
+      const amountUsd = amountBdt / USD_EXCHANGE_RATE;
+      const showDecimals = hasFraction(amountUsd) || amountUsd < 100;
       return {
         value: `$${formatAmount(
           amountUsd,
@@ -187,13 +189,14 @@ export default function PricingClient() {
     }
 
     if (currency === "bdt") {
+      const showDecimals = hasFraction(amountBdt);
       return {
-        value: `৳${formatAmount(charge.amountBdt)}`,
+        value: `৳${formatAmount(amountBdt, showDecimals ? 2 : 0, showDecimals ? 2 : 0)}`,
       };
     }
 
-    const amountUsd = charge.amountBdt / USD_EXCHANGE_RATE;
-    const showDecimals = amountUsd < 100;
+    const amountUsd = amountBdt / USD_EXCHANGE_RATE;
+    const showDecimals = hasFraction(amountUsd) || amountUsd < 100;
 
     return {
       value: `$${formatAmount(
@@ -202,6 +205,10 @@ export default function PricingClient() {
         showDecimals ? 2 : 0,
       )}`,
     };
+  }
+
+  function getPriceDisplay(charge: { amountBdt: number | null; usdOnly?: boolean }): PriceDisplay {
+    return formatPriceFromBdt(charge.amountBdt, charge.usdOnly);
   }
 
   function formatCurrency(charge: { amountBdt: number | null; usdOnly?: boolean }) {
@@ -217,6 +224,54 @@ export default function PricingClient() {
   function getVisibleFeatures(plan: Plan) {
     return plan.features;
   }
+
+  function getCorePlanPricing(plan: Plan) {
+    const quarterlyCharge = findCharge(plan, "quarterly");
+    const setupCharge = findCharge(plan, "setup");
+
+    if (!quarterlyCharge || quarterlyCharge.amountBdt === null) {
+      return null;
+    }
+
+    const monthlyAmountBdt = quarterlyCharge.amountBdt / 3;
+    const perUserAmountBdt =
+      plan.userCount > 0 ? monthlyAmountBdt / plan.userCount : null;
+
+    return {
+      monthlyAmountBdt,
+      perUserAmountBdt,
+      quarterlyCharge,
+      setupCharge,
+    };
+  }
+
+  function getPreviewCharges(plan: Plan) {
+    if (isCorePlan(plan)) {
+      const corePricing = getCorePlanPricing(plan);
+
+      if (corePricing) {
+        return {
+          primaryValue: formatPriceFromBdt(corePricing.monthlyAmountBdt).value,
+          primaryLabel: t("plansSection.monthlyLabel"),
+          secondaryValue: formatPriceFromBdt(corePricing.perUserAmountBdt).value,
+          secondaryLabel: t("plansSection.perUserLabel"),
+        };
+      }
+    }
+
+    const primaryCharge = findCharge(plan, "monthly") ?? plan.charges[0];
+    const secondaryCharge =
+      findCharge(plan, "maintenance") ?? findCharge(plan, "setup") ?? plan.charges[1];
+
+    return {
+      primaryValue: primaryCharge ? formatCurrency(primaryCharge) : stateT("custom"),
+      primaryLabel: primaryCharge?.label ?? "",
+      secondaryValue: secondaryCharge ? formatCurrency(secondaryCharge) : stateT("custom"),
+      secondaryLabel: secondaryCharge?.label ?? "",
+    };
+  }
+
+  const previewCharges = getPreviewCharges(featuredPlan);
 
   function renderFeatureValue(value: string | boolean) {
     if (typeof value === "boolean") {
@@ -381,19 +436,19 @@ export default function PricingClient() {
                     <div className="rounded-2xl bg-white/10 p-4">
                       <CircleDollarSign className="h-5 w-5 text-emerald-300" />
                       <p className="mt-3 text-lg font-bold">
-                        {formatCurrency(primaryPreviewCharge)}
+                        {previewCharges.primaryValue}
                       </p>
                       <p className="text-xs text-white/50">
-                        {primaryPreviewCharge?.label}
+                        {previewCharges.primaryLabel}
                       </p>
                     </div>
                     <div className="rounded-2xl bg-white/10 p-4">
                       <Sparkles className="h-5 w-5 text-amber-300" />
                       <p className="mt-3 text-lg font-bold">
-                        {formatCurrency(secondaryPreviewCharge)}
+                        {previewCharges.secondaryValue}
                       </p>
                       <p className="text-xs text-white/50">
-                        {secondaryPreviewCharge?.label}
+                        {previewCharges.secondaryLabel}
                       </p>
                     </div>
                   </div>
@@ -489,8 +544,11 @@ export default function PricingClient() {
             const Icon = planIcons[plan.icon];
             const features = getVisibleFeatures(plan);
             const isFeatured = plan.highlighted;
-            const mainCharge = getPrimaryDisplayCharge(plan);
-            const billingNote = mainCharge.note;
+            const corePricing = isCorePlan(plan) ? getCorePlanPricing(plan) : null;
+            const primaryCharge = findCharge(plan, "monthly") ?? plan.charges[0];
+            const enterpriseExtraCharges = plan.charges.filter(
+              (charge) => charge.kind !== primaryCharge?.kind,
+            );
 
             return (
               <div
@@ -508,7 +566,7 @@ export default function PricingClient() {
 
                 {isFeatured && !plan.spotlight && (
                   <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-gradient-to-r from-primary to-purple-600 px-4 py-1.5 text-xs font-bold text-white shadow-lg">
-                    Most Popular
+                    {t("plansSection.popularBadge")}
                   </div>
                 )}
 
@@ -541,20 +599,54 @@ export default function PricingClient() {
                     {plan.description}
                   </p>
 
-                  {/* Price */}
-                  <div className="mt-5">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">
-                        {formatCurrency(mainCharge)}
-                      </span>
-                      <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                        {mainCharge.label}
-                      </span>
+                  {corePricing ? (
+                    <>
+                      <div className="mt-5 rounded-2xl bg-slate-50 px-4 py-5 text-center dark:bg-slate-900/70">
+                        <p className="text-4xl font-black tracking-tight text-slate-950 dark:text-slate-100">
+                          {formatMetricValue(plan.userCount)}
+                        </p>
+                        <p className="mt-1 text-xs font-semibold uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">
+                          {t("plansSection.usersUnit")}
+                        </p>
+                        <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">
+                          {plan.usersLabel}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 space-y-4">
+                        <div>
+                          <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">
+                            {t("plansSection.monthlyLabel")}
+                          </p>
+                          <p className="mt-1 text-3xl font-bold text-slate-900 dark:text-slate-100">
+                            {formatPriceFromBdt(corePricing.monthlyAmountBdt).value}
+                          </p>
+                        </div>
+
+                        <div className="rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 dark:border-slate-800 dark:bg-slate-900/50">
+                          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+                            {t("plansSection.perUserLabel")}
+                          </p>
+                          <p className="mt-1 text-xl font-bold text-slate-900 dark:text-slate-100">
+                            {formatPriceFromBdt(corePricing.perUserAmountBdt).value}
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="mt-5">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">
+                          {primaryCharge ? formatCurrency(primaryCharge) : stateT("custom")}
+                        </span>
+                        {primaryCharge && (
+                          <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
+                            {primaryCharge.label}
+                          </span>
+                        )}
+                      </div>
                     </div>
-                    {billingNote && (
-                      <p className="mt-1 text-xs text-slate-500">{billingNote}</p>
-                    )}
-                  </div>
+                  )}
 
                   {/* CTA Button */}
                   <Link
@@ -570,8 +662,56 @@ export default function PricingClient() {
 
                   {/* Features Section */}
                   <div className="mt-6 flex-1">
+                    {corePricing && (
+                      <div className="mb-5 rounded-2xl border border-dashed border-slate-200 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-900/50">
+                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+                          {t("plansSection.breakdownLabel")}
+                        </p>
+                        <div className="mt-3 space-y-3">
+                          {[corePricing.quarterlyCharge, corePricing.setupCharge]
+                            .filter((charge): charge is Plan["charges"][number] => Boolean(charge))
+                            .map((charge) => (
+                              <div
+                                key={`${plan.id}:${charge.kind}`}
+                                className="flex items-center justify-between gap-3 text-sm"
+                              >
+                                <span className="text-slate-600 dark:text-slate-300">
+                                  {charge.label}
+                                </span>
+                                <span className="font-semibold text-slate-900 dark:text-slate-100">
+                                  {formatCurrency(charge)}
+                                </span>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {!corePricing && enterpriseExtraCharges.length > 0 && (
+                      <div className="mb-5 rounded-2xl border border-dashed border-slate-200 bg-slate-50/70 p-4 dark:border-slate-800 dark:bg-slate-900/50">
+                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400">
+                          {t("plansSection.breakdownLabel")}
+                        </p>
+                        <div className="mt-3 space-y-3">
+                          {enterpriseExtraCharges.map((charge) => (
+                            <div
+                              key={`${plan.id}:${charge.kind}`}
+                              className="flex items-center justify-between gap-3 text-sm"
+                            >
+                              <span className="text-slate-600 dark:text-slate-300">
+                                {charge.label}
+                              </span>
+                              <span className="font-semibold text-slate-900 dark:text-slate-100">
+                                {formatCurrency(charge)}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                      FEATURES
+                      {t("plansSection.featuresIncluded")}
                     </p>
                     <ul className="mt-4 space-y-3">
                       {features.map((feature) => (
