@@ -96,7 +96,7 @@
         {
           "kind": "quarterly",
           "label": "Every 3 months",
-          "amountBdt": 20000
+          "amountBdt": 12000
         }
       ],
       "features": [

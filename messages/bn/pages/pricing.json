@@ -96,7 +96,7 @@
         {
           "kind": "quarterly",
           "label": "প্রতি ৩ মাসে",
-          "amountBdt": 20000
+          "amountBdt": 12000
         }
       ],
       "features": ["অ্যাকাউন্টিং", "পেরোল", "ইনভেন্টরি"]
