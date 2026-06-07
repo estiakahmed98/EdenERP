@@ -1,104 +1,133 @@
 {
   "metadata": {
     "title": "Pricing | Adon ERP",
-    "description": "Spreadsheet-aligned Adon ERP package pricing in BDT with optional USD conversion."
+    "description": "Simple, transparent, and flexible pricing plans for Adon ERP. Choose the right plan for your business size and needs."
   },
   "hero": {
-    "eyebrow": "Package pricing in BDT",
-    "label": "Adon ERP Pricing",
-    "title": "Choose the package",
-    "titleAccent": "that matches your operation.",
-    "description": "BDT is the primary pricing currency. Start with the package that fits your team, then switch to USD anytime for an approximate converted view.",
-    "highlights": [
-      "Source pricing follows the current package sheet",
-      "Charges are broken down clearly",
-      "USD view available anytime"
-    ],
-    "badges": {
-      "bestValueTitle": "Best value",
-      "bestValuePlan": "Star package",
-      "scaleReadyTitle": "Operational fit",
-      "scaleReadyDescription": "Choose by users and modules"
-    },
-    "preview": {
-      "windowTitle": "Adon ERP Pricing Sheet",
-      "currentPlanLabel": "Highlighted package",
-      "currentPlanName": "Star",
-      "metrics": [
-        {
-          "value": 10,
-          "label": "Users"
-        },
-        {
-          "value": 7,
-          "label": "Included apps"
-        },
-        {
-          "value": "Quarterly",
-          "label": "Renewal"
-        }
-      ],
-      "cards": {
-        "workflowTitle": "Clear commercial structure",
-        "workflowDescription": "Each card shows setup cost, recurring charge, and package coverage without hidden pricing logic."
+    "eyebrow": "Transparent Pricing",
+    "title": "Simple Plans.",
+    "titleHighlight": "Powerful Software.",
+    "description": "Everything your business needs. Choose your plan, set your team size, and get started today.",
+    "billingToggle": {
+      "yearly": "Yearly",
+      "monthly": "Monthly",
+      "yearlyDiscount": "20% off"
+    }
+  },
+  "userTier": {
+    "label": "Select your team size",
+    "tiers": {
+      "1-10": {
+        "label": "1–10",
+        "desc": "Small team"
+      },
+      "11-20": {
+        "label": "11–20",
+        "desc": "Growing team"
+      },
+      "21-40": {
+        "label": "21–40",
+        "desc": "Mid-size"
+      },
+      "41-60": {
+        "label": "41–60",
+        "desc": "Large"
+      },
+      "61+": {
+        "label": "61+",
+        "desc": "Enterprise",
+        "contactCta": "Contact us"
       }
     }
   },
-  "modules": [
-    "Accounting",
-    "Payroll",
-    "Inventory",
-    "Manufacturing",
-    "Supply Chain",
-    "CRM",
-    "Trade & Finance (LC Management)",
-    "Sales & Distribution Management",
-    "Reporting Service"
-  ],
-  "plansSection": {
-    "eyebrow": "Package pricing",
-    "title": "Spreadsheet-aligned pricing for core packages and enterprise service.",
-    "description": "Each package follows the source sheet with one-time setup, recurring billing, and enterprise service charges shown clearly.",
-    "currency": {
-      "bdt": "BDT",
-      "usd": "USD",
-      "note": "USD prices are approximate and use 1 USD = {rate} BDT."
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "tagline": "Start fast",
+      "cta": "Get started",
+      "features": [
+        "Up to 10 core modules",
+        "Basic reporting & dashboard",
+        "Email support (48hrs)",
+        "Single company setup",
+        "Cloud hosting",
+        "Standard data import"
+      ]
     },
-    "popularBadge": "Most Requested",
-    "monthlyLabel": "Per month",
-    "perUserLabel": "Per user / month",
-    "usersUnit": "users",
-    "breakdownLabel": "Pricing breakdown",
-    "featuresIncluded": "Included modules:",
-    "moreFeatures": "+{count} more included"
+    "standard": {
+      "name": "Standard",
+      "tagline": "Most popular",
+      "badge": "Most popular",
+      "cta": "Buy now",
+      "features": [
+        "All modules included",
+        "Advanced analytics & BI",
+        "Priority support (8hrs)",
+        "Multi-company support",
+        "Cloud + Odoo.sh hosting",
+        "External API access",
+        "Custom workflows",
+        "Data migration assistance"
+      ]
+    },
+    "professional": {
+      "name": "Professional",
+      "tagline": "For growing businesses",
+      "cta": "Get started",
+      "features": [
+        "Everything in Standard",
+        "Dedicated account manager",
+        "4-hour SLA support",
+        "Custom integrations",
+        "On-premise / Cloud",
+        "Multi-company + Studio",
+        "Advanced customization",
+        "Performance optimization"
+      ]
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "tagline": "For large organizations",
+      "cta": "Contact sales",
+      "contactLabel": "Custom",
+      "contactDesc": "Contact us for quote",
+      "features": [
+        "Everything in Professional",
+        "Unlimited customization",
+        "Dedicated infra team",
+        "Custom SLA agreement",
+        "On-premise deployment",
+        "White-label option",
+        "Training programs",
+        "24/7 premium support"
+      ]
+    }
   },
-  "plans": [
+  "packagePricing": {
+    "currencyRate": "USD rate: 1 USD = 122 BDT",
+    "perMonth": "Per month",
+    "perUser": "per user / month",
+    "everyThreeMonths": "Every 3 months",
+    "oneTimeSetup": "Implemention Charges",
+    "monthlyCharge": "Monthly charge",
+    "serverMaintenance": "Server maintenance",
+    "usersLabel": "users",
+    "customQuote": "Custom",
+    "contactForQuote": "Contact for quote"
+  },
+  "erpPackages": [
     {
       "id": "basic",
       "name": "Basic",
-      "badge": "5 users",
-      "description": "Accounting, payroll, and inventory coverage for smaller teams that need a straightforward ERP setup.",
-      "icon": "users",
-      "color": "from-cyan-500 to-sky-500",
-      "softBg": "bg-cyan-50",
-      "iconText": "text-cyan-600",
-      "cta": "Talk to Sales",
-      "href": "/contact",
-      "highlighted": false,
-      "userCount": 5,
-      "usersLabel": "Up to 5 users",
-      "charges": [
-        {
-          "kind": "setup",
-          "label": "One-time setup charge",
-          "amountBdt": 60000
-        },
-        {
-          "kind": "quarterly",
-          "label": "Every 3 months",
-          "amountBdt": 12000
-        }
-      ],
+      "tagline": "Accounting, Payroll, Inventory",
+      "badge": null,
+      "icon": "🌱",
+      "accent": "#6c757d",
+      "users": 5,
+      "currency": "BDT",
+      "setupFee": 60000,
+      "quarterlyFee": 20000,
+      "cta": "Get started",
       "features": [
         "Accounting",
         "Payroll",
@@ -108,29 +137,15 @@
     {
       "id": "professional",
       "name": "Professional",
-      "badge": "6 users",
-      "description": "Adds manufacturing, supply chain, and LC management for operations that need broader execution coverage.",
-      "icon": "layers3",
-      "color": "from-emerald-500 to-teal-500",
-      "softBg": "bg-emerald-50",
-      "iconText": "text-emerald-600",
-      "cta": "Talk to Sales",
-      "href": "/contact",
-      "highlighted": false,
-      "userCount": 6,
-      "usersLabel": "Up to 6 users",
-      "charges": [
-        {
-          "kind": "setup",
-          "label": "One-time setup charge",
-          "amountBdt": 120000
-        },
-        {
-          "kind": "quarterly",
-          "label": "Every 3 months",
-          "amountBdt": 40000
-        }
-      ],
+      "tagline": "Manufacturing, supply chain, LC management",
+      "badge": "Most popular",
+      "icon": "⚡",
+      "accent": "#e06b5d",
+      "users": 6,
+      "currency": "BDT",
+      "setupFee": 120000,
+      "quarterlyFee": 25000,
+      "cta": "Buy now",
       "features": [
         "Accounting",
         "Payroll",
@@ -143,29 +158,15 @@
     {
       "id": "star",
       "name": "Star",
-      "badge": "10 users",
-      "description": "Combines CRM with finance and supply chain tools for teams that need wider commercial visibility.",
-      "icon": "zap",
-      "color": "from-primary via-fuchsia-600 to-amber-500",
-      "softBg": "bg-primary/10",
-      "iconText": "text-primary",
-      "cta": "Talk to Sales",
-      "href": "/contact",
-      "highlighted": true,
-      "userCount": 10,
-      "usersLabel": "Up to 10 users",
-      "charges": [
-        {
-          "kind": "setup",
-          "label": "One-time setup charge",
-          "amountBdt": 325000
-        },
-        {
-          "kind": "quarterly",
-          "label": "Every 3 months",
-          "amountBdt": 75000
-        }
-      ],
+      "tagline": "CRM and trade-focused package",
+      "badge": null,
+      "icon": "🚀",
+      "accent": "#3aafa9",
+      "users": 10,
+      "currency": "BDT",
+      "setupFee": 325000,
+      "quarterlyFee": 75000,
+      "cta": "Get started",
       "features": [
         "Accounting",
         "Payroll",
@@ -179,29 +180,15 @@
     {
       "id": "platinum",
       "name": "Platinum",
-      "badge": "20 users",
-      "description": "The broadest package in the sheet, adding sales distribution on top of the Star operational stack.",
-      "icon": "rocket",
-      "color": "from-indigo-600 via-primary to-amber-500",
-      "softBg": "bg-indigo-50",
-      "iconText": "text-indigo-600",
-      "cta": "Talk to Sales",
-      "href": "/contact",
-      "highlighted": false,
-      "userCount": 20,
-      "usersLabel": "Up to 20 users",
-      "charges": [
-        {
-          "kind": "setup",
-          "label": "One-time setup charge",
-          "amountBdt": 820000
-        },
-        {
-          "kind": "quarterly",
-          "label": "Every 3 months",
-          "amountBdt": 180000
-        }
-      ],
+      "tagline": "Sales distribution with full coverage",
+      "badge": null,
+      "icon": "🏢",
+      "accent": "#534AB7",
+      "users": 20,
+      "currency": "BDT",
+      "setupFee": 820000,
+      "quarterlyFee": 180000,
+      "cta": "Contact sales",
       "features": [
         "Accounting",
         "Payroll",
@@ -216,251 +203,194 @@
     {
       "id": "enterprise",
       "name": "Enterprise",
-      "badge": "99 users",
-      "description": "Enterprise reporting service with separate onboarding, monthly service, and server maintenance charges.",
-      "icon": "building2",
-      "color": "from-slate-950 via-violet-900 to-primary",
-      "softBg": "bg-slate-100",
-      "iconText": "text-slate-900",
-      "cta": "Contact Sales",
-      "href": "/contact",
-      "highlighted": false,
-      "userCount": 99,
-      "usersLabel": "Up to 99 users",
-      "charges": [
-        {
-          "kind": "setup",
-          "label": "One-time setup charge",
-          "amountBdt": 6100000,
-          "usdOnly": true,
-          "isPureUsd": true
-        },
-        {
-          "kind": "monthly",
-          "label": "Monthly charge",
-          "amountBdt": 305000,
-          "usdOnly": true,
-          "isPureUsd": true
-        },
-        {
-          "kind": "maintenance",
-          "label": "Server maintenance",
-          "amountBdt": 183000,
-          "usdOnly": true,
-          "isPureUsd": true
-        }
-      ],
+      "tagline": "Reporting service for large teams",
+      "badge": null,
+      "icon": "🏬",
+      "accent": "#3aafa9",
+      "users": 99,
+      "currency": "USD",
+      "setupFee": 50000,
+      "monthlyFee": 2500,
+      "serverFee": 1500,
+      "cta": "Contact sales",
       "features": [
         "Reporting Service",
-        "Enterprise setup support"
+        "Dedicated enterprise support",
+        "Monthly service charge",
+        "Server maintenance"
       ]
     }
   ],
-  "benefitsSection": {
-    "eyebrow": "Built for commercial clarity",
-    "title": "Pricing that stays readable for teams and enterprise buyers.",
-    "description": "Adon ERP pricing is shown as source-based package data so setup, recurring fees, user coverage, and included modules remain easy to review."
-  },
-  "benefits": [
-    {
-      "title": "Source-based pricing",
-      "description": "Package values follow the current spreadsheet structure instead of abstract marketing tiers.",
-      "icon": "creditCard"
-    },
-    {
-      "title": "Clear charge breakdown",
-      "description": "Setup, recurring, and enterprise maintenance costs are shown separately for easier planning.",
-      "icon": "lockKeyhole"
-    },
-    {
-      "title": "Operational fit",
-      "description": "Choose a package by user count and included modules without guessing what is bundled.",
-      "icon": "layers3"
-    }
-  ],
-  "comparisonSection": {
-    "eyebrow": "Plan comparison",
-    "title": "Compare every package clearly.",
-    "description": "Review user limits, setup charges, recurring fees, and included modules from the source pricing sheet before choosing.",
-    "headers": {
-      "feature": "Feature"
+  "includedFeaturesHeading": "Included features",
+  "bottomNote": {
+    "text": "All plans include **unlimited support, hosting & maintenance**. No hidden fees, no limits on features or data.",
+    "buttons": {
+      "successPacks": "📦 View Success Packs & Implementation",
+      "contactSales": "💬 Talk to sales team"
     }
   },
-  "comparison": [
-    {
-      "feature": "Users",
-      "values": {
-        "basic": "5",
-        "professional": "6",
-        "star": "10",
-        "platinum": "20",
-        "enterprise": "99"
-      }
-    },
-    {
-      "feature": "One-time setup charge",
-      "values": {
-        "basic": "৳60,000",
-        "professional": "৳120,000",
-        "star": "৳325,000",
-        "platinum": "৳820,000",
-        "enterprise": "$50,000"
-      }
-    },
-    {
-      "feature": "Recurring charge",
-      "values": {
-        "basic": "৳20,000",
-        "professional": "৳40,000",
-        "star": "৳75,000",
-        "platinum": "৳180,000",
-        "enterprise": "$2,500"
-      }
-    },
-    {
-      "feature": "Recurring cycle",
-      "values": {
-        "basic": "Every 3 months",
-        "professional": "Every 3 months",
-        "star": "Every 3 months",
-        "platinum": "Every 3 months",
-        "enterprise": "Monthly"
-      }
-    },
-    {
-      "feature": "Server maintenance",
-      "values": {
-        "basic": false,
-        "professional": false,
-        "star": false,
-        "platinum": false,
-        "enterprise": "$1,500 / month"
-      }
-    },
-    {
-      "feature": "Accounting",
-      "values": {
-        "basic": true,
-        "professional": true,
-        "star": true,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Payroll",
-      "values": {
-        "basic": true,
-        "professional": true,
-        "star": true,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Manufacturing",
-      "values": {
-        "basic": false,
-        "professional": true,
-        "star": true,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Supply Chain",
-      "values": {
-        "basic": false,
-        "professional": true,
-        "star": true,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Inventory",
-      "values": {
-        "basic": true,
-        "professional": true,
-        "star": true,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "CRM",
-      "values": {
-        "basic": false,
-        "professional": false,
-        "star": true,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Trade & Finance (LC Management)",
-      "values": {
-        "basic": false,
-        "professional": true,
-        "star": true,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Sales & Distribution Management",
-      "values": {
-        "basic": false,
-        "professional": false,
-        "star": false,
-        "platinum": true,
-        "enterprise": true
-      }
-    },
-    {
-      "feature": "Reporting Service",
-      "values": {
-        "basic": false,
-        "professional": false,
-        "star": false,
-        "platinum": false,
-        "enterprise": true
-      }
-    }
-  ],
-  "faqSection": {
-    "eyebrow": "Questions & answers",
-    "title": "Frequently asked questions."
-  },
-  "faqs": [
-    {
-      "q": "Is BDT the default pricing currency?",
-      "a": "Yes. Pricing is maintained in BDT, so the pricing page defaults to BDT."
-    },
-    {
-      "q": "Can I view the same prices in USD?",
-      "a": "Yes. The USD toggle gives an approximate converted view using the configured exchange rate shown on the page."
-    },
-    {
-      "q": "Why do some packages show every 3 months while enterprise shows monthly?",
-      "a": "Core packages follow a quarterly recurring billing model, while the Enterprise Reporting Service includes monthly subscription fees along with monthly server maintenance charges."
-    },
-    {
-      "q": "How are the per-month and per-user prices calculated?",
-      "a": "For each core package, the every-3-months charge is divided by 3 to show the monthly amount, then divided again by that package's user limit to show the per-user monthly cost."
-    },
-    {
-      "q": "Can users or modules be customized later?",
-      "a": "Yes. Contact the sales team if you need a package recommendation, custom rollout scope, or enterprise reporting support."
-    }
-  ],
-  "ctaSection": {
-    "title": "Ready to review the right package with your team?",
-    "description": "Start from the package that matches your users and modules, then confirm the rollout scope with Adon ERP sales.",
-    "points": [
-      "BDT-first pricing",
-      "USD view available",
-      "Clear charge breakdown"
+  "modules": {
+    "title": "All modules included in Standard & Professional plans",
+    "list": [
+      "Sales",
+      "eCommerce",
+      "Accounting",
+      "CRM",
+      "Inventory",
+      "HR",
+      "Project",
+      "POS",
+      "Manufacturing",
+      "Purchase",
+      "Timesheet",
+      "Helpdesk",
+      "Expenses",
+      "Sign",
+      "Website",
+      "Email Marketing",
+      "Events",
+      "Planning",
+      "Rental",
+      "MRP"
     ]
+  },
+  "faq": {
+    "title": "Any questions?",
+    "description": "Contact our account managers if you don't find answers here",
+    "items": [
+      {
+        "question": "Do I really get hundreds of apps at a single price?",
+        "answer": "Yes. All Odoo apps are included in a single subscription fee for Standard and Professional plans. No module-level add-ons."
+      },
+      {
+        "question": "What's included in the subscription?",
+        "answer": "Hosting, maintenance, unlimited support, automatic upgrades, and updates for all apps are included."
+      },
+      {
+        "question": "How does user-based pricing work?",
+        "answer": "You pay based on the number of active users in your organization. You can increase or decrease user count at any time."
+      },
+      {
+        "question": "Can I change my plan later?",
+        "answer": "Absolutely. You can upgrade to a higher plan or change user count at any time. Downgrades take effect in the next billing cycle."
+      },
+      {
+        "question": "What's the difference between yearly and monthly billing?",
+        "answer": "Yearly billing saves you about 20% compared to monthly. With yearly billing, you're billed once for the entire year."
+      },
+      {
+        "question": "What payment methods do you support?",
+        "answer": "We support bank transfer, bKash, Nagad, Rocket, and credit cards."
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to digitize your business?",
+    "description": "Book a free consultation today and get expert assistance",
+    "button": "Book free consultation →"
+  },
+  "standardPlanPage": {
+    "backButton": "Back to pricing",
+    "title": "Standard Plan",
+    "description": "All apps included. Everything you need to grow.",
+    "userCountLabel": "Number of users",
+    "implementationLabel": "Implementation service",
+    "implementationOptions": {
+      "self": "Self service",
+      "successPack": "AdonERP Success Pack",
+      "successPackSublabel": "Recommended for 50 users",
+      "partner": "With local partner",
+      "partnerSublabel": "Recommended for 50+ users"
+    },
+    "successPackMessage": {
+      "text": "With a Success Pack, you're assigned an expert who provides personalized assistance to customize your solution and optimize your workflows.",
+      "configureButton": "⚙ Configure",
+      "readMoreButton": "Read more"
+    },
+    "priceSummary": {
+      "totalPerMonth": "Total / month",
+      "yearlyBillNote": "(*) Yearly bill:",
+      "yearlySavings": "🎉 You save {amount} with yearly billing",
+      "buyNow": "Buy now →",
+      "firstYearDiscount": "First year discount",
+      "quotaPrint": "Print quote"
+    },
+    "includedTitle": "What's included",
+    "includedList": [
+      "All Odoo apps & modules",
+      "Cloud hosting",
+      "Unlimited support",
+      "Odoo.sh access",
+      "External API",
+      "Multi-company",
+      "Advanced reports",
+      "Data import tools",
+      "Priority updates"
+    ]
+  },
+  "successPacksPage": {
+    "backButton": "Back to pricing",
+    "title": "AdonERP Success Packs",
+    "description": "**98% implementation success rate**, 65% without Success Pack (self)",
+    "estimatorBadge": "📊 Project estimator",
+    "packCard": {
+      "hours": "hours",
+      "returning": "Returning",
+      "new": "New (15% off)"
+    },
+    "features": {
+      "projectManagement": "Project management",
+      "emailPhoneSupport": "Email & phone support",
+      "trainingCoaching": "Training & coaching",
+      "configuration": "Configuration",
+      "dataImport": "Data import",
+      "onsiteConsulting": "On-site consulting",
+      "customization": "Customization",
+      "development": "Development",
+      "performanceIssues": "Performance issues"
+    },
+    "packs": {
+      "starter": "Starter",
+      "basic": "Basic",
+      "standard": "Standard",
+      "custom": "Custom",
+      "pro": "Pro"
+    },
+    "recommended": {
+      "starter": "Best for quick setup",
+      "basic": "Best for small teams",
+      "standard": "Best for growing businesses",
+      "custom": "Best for advanced needs",
+      "pro": "Best for large deployments"
+    },
+    "comparisonTable": {
+      "featureHeader": "Feature"
+    },
+    "notes": [
+      "* Travel time is billable; travel costs are separate.",
+      "** Additional monthly charges apply for extra module/code maintenance.",
+      "*** New customers automatically get 15% discount, only for the first pack."
+    ],
+    "faq": {
+      "title": "Any questions?",
+      "items": [
+        {
+          "question": "What's included in Success Packs?",
+          "answer": "Each pack includes dedicated consultant hours, email & phone support, training & coaching, and configuration assistance — more advanced packs add customization, development, and on-site consulting."
+        },
+        {
+          "question": "What does a dedicated customer success consultant do?",
+          "answer": "Your consultant analyzes your business needs, configures the system, trains your team, imports your data, and customizes workflows to match how your business operates."
+        },
+        {
+          "question": "What if I need custom development and integration?",
+          "answer": "Standard, Custom, and Pro packs all include development hours. Your consultant will scope the work within your pack."
+        },
+        {
+          "question": "What if I have performance issues?",
+          "answer": "Standard, Custom, and Pro packs include performance issue support. Our consultants diagnose and resolve bottlenecks in your Odoo configuration."
+        }
+      ]
+    }
   }
 }

@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import LanguageSwitcher from "@/components/language-switcher";
 import ThemeSwitcher from "@/components/theme-switcher";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 
 type MegaMenuLink = {
   labelKey: string;
@@ -341,6 +341,7 @@ const navItems: NavItem[] = [
 
 export default function Header() {
   const t = useTranslations("layout.header");
+  const pathname = usePathname();
   const navId = useId();
   const headerRef = useRef<HTMLElement | null>(null);
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
@@ -349,6 +350,13 @@ export default function Header() {
   const [openDesktopMenu, setOpenDesktopMenu] = useState<MenuId | null>(null);
   const [mobileOpenMenu, setMobileOpenMenu] = useState<MenuId | null>(null);
   const [mobileDrawerTop, setMobileDrawerTop] = useState(0);
+
+  const isActivePath = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
+  const isActiveMenu = (item: NavItem) => isActivePath(item.href);
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
@@ -444,8 +452,8 @@ export default function Header() {
                         prev === item.id ? null : item.id,
                       )
                     }
-                    className={`group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
-                      openDesktopMenu === item.id
+                    className={`group relative inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
+                      openDesktopMenu === item.id || isActiveMenu(item)
                         ? "text-primary"
                         : "text-muted-foreground hover:text-primary"
                     }`}
@@ -454,6 +462,13 @@ export default function Header() {
                     <ChevronDown
                       className={`h-4 w-4 transition-transform ${
                         openDesktopMenu === item.id ? "rotate-180" : ""
+                      }`}
+                    />
+                    <span
+                      className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-primary transition-all duration-300 ${
+                        isActiveMenu(item) || openDesktopMenu === item.id
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
                       }`}
                     />
                   </button>
@@ -494,7 +509,11 @@ export default function Header() {
                                     <Link
                                       href={link.href}
                                       onClick={() => setOpenDesktopMenu(null)}
-                                      className="block rounded-xl px-2 py-1.5 text-sm font-medium text-muted-foreground transition-all hover:bg-accent/10 hover:text-primary"
+                                      className={`block rounded-xl px-2 py-1.5 text-sm font-medium transition-all ${
+                                        isActivePath(link.href)
+                                          ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                          : "text-muted-foreground hover:bg-accent/10 hover:text-primary"
+                                      }`}
                                     >
                                       {t(link.labelKey)}
                                     </Link>
@@ -511,10 +530,20 @@ export default function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="group relative text-sm font-semibold text-muted-foreground transition-colors hover:text-primary"
+                  className={`group relative text-sm font-semibold transition-colors ${
+                    isActivePath(item.href)
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                  }`}
                 >
                   {t(item.labelKey)}
-                  <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-primary transition-all duration-300 group-hover:w-full" />
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-primary transition-all duration-300 ${
+                      isActivePath(item.href)
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  />
                 </Link>
               )}
             </div>
@@ -594,7 +623,11 @@ export default function Header() {
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className="block rounded-lg px-2 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+                                className={`block rounded-lg px-2 py-2 text-sm font-semibold transition-colors ${
+                                  isActivePath(link.href)
+                                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                    : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
+                                }`}
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMenu(null);
@@ -646,7 +679,11 @@ export default function Header() {
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className="block break-words rounded-lg px-2 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+                                className={`block break-words rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
+                                  isActivePath(link.href)
+                                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                    : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
+                                }`}
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMenu(null);
@@ -698,7 +735,11 @@ export default function Header() {
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className="block break-words rounded-lg px-2 py-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent/10 hover:text-foreground"
+                                className={`block break-words rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
+                                  isActivePath(link.href)
+                                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                    : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
+                                }`}
                                 onClick={() => {
                                   setMobileMenuOpen(false);
                                   setMobileOpenMenu(null);
@@ -718,7 +759,11 @@ export default function Header() {
 
             <Link
               href="/pricing"
-              className="block rounded-xl px-4 py-3 text-base font-bold text-foreground hover:bg-accent/10"
+              className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                isActivePath("/pricing")
+                  ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                  : "text-foreground hover:bg-accent/10"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.pricing")}
@@ -726,7 +771,11 @@ export default function Header() {
 
             <Link
               href="/help"
-              className="block rounded-xl px-4 py-3 text-base font-bold text-foreground hover:bg-accent/10"
+              className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                isActivePath("/help")
+                  ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                  : "text-foreground hover:bg-accent/10"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("nav.help")}
