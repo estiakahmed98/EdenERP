@@ -30,8 +30,8 @@
     },
     "hours": {
       "title": "Business Hours",
-      "weekdays": "Sunday - Thursday: 9AM - 6PM",
-      "weekend": "Friday - Saturday: Closed"
+      "weekdays": "Saturday - Thursday: 11AM - 8PM",
+      "weekend": "Friday: Closed"
     }
   },
   "map": {
