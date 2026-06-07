@@ -36,7 +36,7 @@ export default function LevelUpSection() {
               </HandText>
             </h2>
 
-            <p className="mt-5 font-body text-[15px] leading-[1.8] text-[var(--muted)]">
+            <p className="mt-5 font-body text-[15px] leading-[1.8] text--muted">
               {t("levelUp.description")}
             </p>
 
@@ -52,7 +52,7 @@ export default function LevelUpSection() {
                     {stat.value}
                   </span>
 
-                  <span className="font-body text-[13px] text-[var(--muted)]">
+                  <span className="font-body text-[13px] text-muted">
                     {stat.label}
                   </span>
                 </div>
@@ -76,19 +76,29 @@ export default function LevelUpSection() {
             <div className="grid grid-cols-3 gap-2.5 bg-(--gray-bg) p-4">
               {board.columns.map((column) => (
                 <div key={column.title}>
-                  <div className="mb-2 font-body text-[10px] font-bold uppercase tracking-[1px] text-[var(--muted)]">
+                  <div className="mb-2 font-body text-[10px] font-bold uppercase tracking-[1px] text-gray-500">
                     {column.title}
                   </div>
 
-                  {column.items.map((item) => (
-                    <div
-                      key={item}
-                      className="mb-2 rounded-lg px-2.5 py-2 text-[11px] font-medium text-(--ink)"
-                      style={{ background: column.color }}
-                    >
-                      {item}
-                    </div>
-                  ))}
+                  <div className="space-y-2">
+                    {column.items.map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-lg px-2.5 py-2 text-[11px] font-medium"
+                        style={{
+                          background: column.color,
+                          color:
+                            column.title === "TODO"
+                              ? "#991B1B"
+                              : column.title === "IN PROGRESS"
+                                ? "#92400E"
+                                : "#065F46",
+                        }}
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
