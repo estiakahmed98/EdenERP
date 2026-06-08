@@ -37,9 +37,6 @@ export function StandardPlanPage({
 
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white lg:text-5xl">
-            <span className="text-emerald-600 dark:text-emerald-400">
-              {t("plans.standard.name")}
-            </span>{" "}
             {tStandard("title")}
           </h1>
           <p className="mt-2 text-slate-500 dark:text-slate-400">
