@@ -272,14 +272,6 @@
     "description": "Contact our account managers if you don't find answers here",
     "items": [
       {
-        "question": "Do I really get hundreds of apps at a single price?",
-        "answer": "Yes. All Adon ERP apps are included in a single subscription fee for Standard and Professional plans. No module-level add-ons."
-      },
-      {
-        "question": "What's included in the subscription?",
-        "answer": "Hosting, maintenance, unlimited support, automatic upgrades, and updates for all apps are included."
-      },
-      {
         "question": "How does user-based pricing work?",
         "answer": "You pay based on the number of active users in your organization. You can increase or decrease user count at any time."
       },
