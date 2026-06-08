@@ -117,6 +117,7 @@
     "totalPerMonth": "Total / month",
     "totalPerQuarter": "Total / quarter",
     "totalPerYear": "Total / year",
+    "youSave": "You save {amount} / month",
     "everyThreeMonths": "Every 3 months",
     "oneTimeSetup": "Implemention Charges",
     "monthlyCharge": "Monthly charge",
