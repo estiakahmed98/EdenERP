@@ -274,7 +274,7 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
       </div>
 
       <button
-        onClick={() => onBuyNow()}
+        onClick={onBuyNow}
         className={`mt-6 w-full rounded-xl py-3 text-sm font-semibold transition-all ${
           isHighlighted
             ? "bg-emerald-600 text-white hover:bg-emerald-700"

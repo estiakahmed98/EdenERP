@@ -13,11 +13,13 @@ import { formatCurrency, getPerUserMonthly } from "./utils";
 import { useRouter } from "next/navigation";
 
 interface StandardPlanPageProps {
+  selectedPlanId?: string;
   onBack: () => void;
   onReadMore: () => void;
 }
 
 export function StandardPlanPage({
+  selectedPlanId,
   onBack,
   onReadMore,
 }: StandardPlanPageProps) {
@@ -26,28 +28,32 @@ export function StandardPlanPage({
   const packages = t.raw("erpPackages") as ERPPlan[];
   const router = useRouter();
   const pricingPlan =
-    packages.find((plan) => plan.id === "professional") ??
+    packages.find((plan) => plan.id === selectedPlanId) ??
     packages.find((plan) => plan.quarterlyFee) ??
     packages[0];
+  const isEnterprise = pricingPlan.id === "enterprise";
 
   const [billing, setBilling] = useState<BillingCycle>("yearly");
   const [userCount, setUserCount] = useState(pricingPlan.users);
 
-  const basePerUserMonthly = getPerUserMonthly(
-    pricingPlan.quarterlyFee ?? 0,
-    pricingPlan.users,
-  );
-  const pricePerUser =
-    billing === "yearly"
+  const basePerUserMonthly = isEnterprise
+    ? 0
+    : getPerUserMonthly(pricingPlan.quarterlyFee ?? 0, pricingPlan.users);
+  const pricePerUser = isEnterprise
+    ? 0
+    : billing === "yearly"
       ? basePerUserMonthly * YEARLY_DISCOUNT_MULTIPLIER
       : billing === "semiannual"
         ? basePerUserMonthly * SEMIANNUAL_DISCOUNT_MULTIPLIER
       : billing === "quarterly"
         ? basePerUserMonthly * QUARTERLY_DISCOUNT_MULTIPLIER
         : basePerUserMonthly;
-  const originalMonthly = userCount * basePerUserMonthly;
-  const monthly = userCount * pricePerUser;
+  const originalMonthly = isEnterprise
+    ? (pricingPlan.monthlyFee ?? 0) + (pricingPlan.serverFee ?? 0)
+    : userCount * basePerUserMonthly;
+  const monthly = isEnterprise ? originalMonthly : userCount * pricePerUser;
   const monthlySavings = originalMonthly - monthly;
+  const displayCurrency = pricingPlan.currency;
 
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950">
@@ -149,7 +155,7 @@ export function StandardPlanPage({
                   {userCount} {tStandard("userCountLabel")}, {pricingPlan.name}
                 </span>
                 <span className="text-sm font-medium text-slate-900 dark:text-white">
-                  {formatCurrency(originalMonthly, "BDT")}
+                  {formatCurrency(originalMonthly, displayCurrency)}
                 </span>
               </div>
               {monthlySavings > 0 && (
@@ -158,7 +164,7 @@ export function StandardPlanPage({
                     {tStandard("priceSummary.firstYearDiscount")}
                   </span>
                   <span className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">
-                    -{formatCurrency(monthlySavings, "BDT")}
+                    -{formatCurrency(monthlySavings, displayCurrency)}
                   </span>
                 </div>
               )}
@@ -167,13 +173,15 @@ export function StandardPlanPage({
                   <span className="font-semibold text-slate-900 dark:text-white">
                     {tStandard("priceSummary.totalPerMonth")}
                   </span>
-                  <div className="text-xs text-slate-400">
-                    {tStandard("priceSummary.perUserNote")}{" "}
-                    {formatCurrency(pricePerUser, "BDT")}
-                  </div>
+                  {!isEnterprise && (
+                    <div className="text-xs text-slate-400">
+                      {tStandard("priceSummary.perUserNote")}{" "}
+                      {formatCurrency(pricePerUser, displayCurrency)}
+                    </div>
+                  )}
                 </div>
                 <span className="text-xl font-bold text-slate-900 dark:text-white">
-                  {formatCurrency(monthly, "BDT")}
+                  {formatCurrency(monthly, displayCurrency)}
                 </span>
               </div>
             </div>
@@ -181,7 +189,7 @@ export function StandardPlanPage({
             {monthlySavings > 0 && (
               <div className="mt-4 rounded-lg bg-emerald-50 p-3 text-center text-sm font-semibold text-emerald-700 dark:bg-emerald-950/30 dark:text-emerald-400">
                 {t("packagePricing.youSave", {
-                  amount: formatCurrency(monthlySavings, "BDT"),
+                  amount: formatCurrency(monthlySavings, displayCurrency),
                 })}
               </div>
             )}

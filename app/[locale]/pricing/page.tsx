@@ -10,10 +10,12 @@ import {
 
 export default function PricingPageRoot() {
   const [page, setPage] = useState<PageType>("pricing");
+  const [selectedPlanId, setSelectedPlanId] = useState<string>();
 
   if (page === "standard") {
     return (
       <StandardPlanPage
+        selectedPlanId={selectedPlanId}
         onBack={() => setPage("pricing")}
         onReadMore={() => setPage("success-packs")}
       />
@@ -24,7 +26,10 @@ export default function PricingPageRoot() {
   }
   return (
     <PricingPage
-      onBuyNow={() => setPage("standard")}
+      onBuyNow={(planId) => {
+        setSelectedPlanId(planId);
+        setPage("standard");
+      }}
       onSuccessPacks={() => setPage("success-packs")}
     />
   );

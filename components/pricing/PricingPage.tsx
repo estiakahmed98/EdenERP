@@ -9,7 +9,7 @@ import { FaqItem } from "./FaqItem";
 import { PlanCard } from "./PlanCard";
 
 interface PricingPageProps {
-  onBuyNow: () => void;
+  onBuyNow: (planId: string) => void;
   onSuccessPacks: () => void;
 }
 
@@ -123,7 +123,7 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
                 plan={plan}
                 billing={billing}
                 currency={currency}
-                onBuyNow={onBuyNow}
+                onBuyNow={() => onBuyNow(plan.id)}
               />
             ))}
           </div>
