@@ -322,8 +322,9 @@
       "totalPerMonth": "Total / month",
       "yearlyBillNote": "(*) Yearly bill:",
       "yearlySavings": "🎉 You save {amount} with yearly billing",
-      "buyNow": "Buy now →",
+      "buyNow": "Contact sales",
       "firstYearDiscount": "First year discount",
+      "perUserNote": "Per user:",
       "quotaPrint": "Print quote"
     },
     "includedTitle": "What's included",
@@ -341,9 +342,9 @@
   },
   "successPacksPage": {
     "backButton": "Back to pricing",
-    "title": "AdonERP Success Packs",
-    "description": "**98% implementation success rate**, 65% without Success Pack (self)",
-    "estimatorBadge": "📊 Project estimator",
+    "title": "Adon ERP Success Packs",
+    "description": "98% implementation success rate",
+    "estimatorBadge": "Meet With Sales",
     "packCard": {
       "hours": "hours",
       "returning": "Returning",
