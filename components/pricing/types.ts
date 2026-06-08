@@ -33,9 +33,9 @@ export interface ERPPlan {
   badge?: string | null;
   icon: string;
   accent: string;
-  users: number;
-  currency: CurrencyCode;
-  setupFee: number;
+  users?: number | string;
+  currency?: CurrencyCode;
+  setupFee?: number;
   quarterlyFee?: number;
   monthlyFee?: number;
   serverFee?: number;

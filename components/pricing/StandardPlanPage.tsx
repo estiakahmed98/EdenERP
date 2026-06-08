@@ -32,14 +32,17 @@ export function StandardPlanPage({
     packages.find((plan) => plan.quarterlyFee) ??
     packages[0];
   const isEnterprise = pricingPlan.id === "enterprise";
+  const isMonthlyPricedPlan = Boolean(pricingPlan.monthlyFee);
+  const initialUserCount =
+    typeof pricingPlan.users === "number" ? pricingPlan.users : 1;
 
   const [billing, setBilling] = useState<BillingCycle>("yearly");
-  const [userCount, setUserCount] = useState(pricingPlan.users);
+  const [userCount, setUserCount] = useState(initialUserCount);
 
-  const basePerUserMonthly = isEnterprise
+  const basePerUserMonthly = isEnterprise || isMonthlyPricedPlan
     ? 0
-    : getPerUserMonthly(pricingPlan.quarterlyFee ?? 0, pricingPlan.users);
-  const pricePerUser = isEnterprise
+    : getPerUserMonthly(pricingPlan.quarterlyFee ?? 0, initialUserCount);
+  const pricePerUser = isEnterprise || isMonthlyPricedPlan
     ? 0
     : billing === "yearly"
       ? basePerUserMonthly * YEARLY_DISCOUNT_MULTIPLIER
@@ -48,12 +51,17 @@ export function StandardPlanPage({
       : billing === "quarterly"
         ? basePerUserMonthly * QUARTERLY_DISCOUNT_MULTIPLIER
         : basePerUserMonthly;
-  const originalMonthly = isEnterprise
-    ? (pricingPlan.monthlyFee ?? 0) + (pricingPlan.serverFee ?? 0)
+  const fixedMonthlyPrice =
+    (pricingPlan.monthlyFee ?? 0) + (pricingPlan.serverFee ?? 0);
+  const originalMonthly = isEnterprise || isMonthlyPricedPlan
+    ? fixedMonthlyPrice
     : userCount * basePerUserMonthly;
-  const monthly = isEnterprise ? originalMonthly : userCount * pricePerUser;
+  const monthly =
+    isEnterprise || isMonthlyPricedPlan
+      ? fixedMonthlyPrice
+      : userCount * pricePerUser;
   const monthlySavings = originalMonthly - monthly;
-  const displayCurrency = pricingPlan.currency;
+  const displayCurrency = pricingPlan.currency ?? "BDT";
 
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950">
@@ -173,7 +181,7 @@ export function StandardPlanPage({
                   <span className="font-semibold text-slate-900 dark:text-white">
                     {tStandard("priceSummary.totalPerMonth")}
                   </span>
-                  {!isEnterprise && (
+                  {!isEnterprise && !isMonthlyPricedPlan && (
                     <div className="text-xs text-slate-400">
                       {tStandard("priceSummary.perUserNote")}{" "}
                       {formatCurrency(pricePerUser, displayCurrency)}

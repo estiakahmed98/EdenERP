@@ -139,7 +139,7 @@
       "users": 6,
       "currency": "BDT",
       "setupFee": 60000,
-      "quarterlyFee": 20000,
+      "quarterlyFee": 18375,
       "cta": "Get started",
       "features": [
         "Accounting",
@@ -214,13 +214,13 @@
       ]
     },
     {
-      "id": "enterprise",
-      "name": "Enterprise",
+      "id": "enterpriselite",
+      "name": "Enterprise Lite",
       "tagline": "Reporting service for large teams",
       "badge": null,
       "icon": "🏬",
       "accent": "#3aafa9",
-      "users": 99,
+      "users": 49,
       "currency": "USD",
       "setupFee": 50000,
       "monthlyFee": 2500,
@@ -231,6 +231,31 @@
         "Dedicated enterprise support",
         "Monthly service charge",
         "Server maintenance"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "tagline": "Reporting service for large teams",
+      "badge": "Custom Quote",
+      "users": "99 +",
+      "icon": "🏬",
+      "accent": "#3aafa9",
+      "cta": "Contact sales",
+      "features": [
+        "Accounting",
+        "Payroll",
+        "Manufacturing",
+        "Supply Chain",
+        "Inventory",
+        "CRM",
+        "Trade & Finance (LC Management)",
+        "Sales & Distribution Management",
+        "Reporting Service",
+        "Dedicated enterprise support",
+        "Monthly service charge",
+        "Server maintenance",
+        "Custom integrations"
       ]
     }
   ],

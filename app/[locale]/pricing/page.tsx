@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   PricingPage,
   StandardPlanPage,
@@ -9,6 +10,7 @@ import {
 } from "@/components/pricing";
 
 export default function PricingPageRoot() {
+  const router = useRouter();
   const [page, setPage] = useState<PageType>("pricing");
   const [selectedPlanId, setSelectedPlanId] = useState<string>();
 
@@ -27,6 +29,11 @@ export default function PricingPageRoot() {
   return (
     <PricingPage
       onBuyNow={(planId) => {
+        if (planId === "enterprise") {
+          router.push("/contact");
+          return;
+        }
+
         setSelectedPlanId(planId);
         setPage("standard");
       }}
