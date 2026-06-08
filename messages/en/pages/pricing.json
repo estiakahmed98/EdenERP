@@ -136,7 +136,7 @@
       "badge": null,
       "icon": "🌱",
       "accent": "#6c757d",
-      "users": 5,
+      "users": 6,
       "currency": "BDT",
       "setupFee": 60000,
       "quarterlyFee": 20000,
@@ -157,7 +157,7 @@
       "users": 10,
       "currency": "BDT",
       "setupFee": 120000,
-      "quarterlyFee": 25000,
+      "quarterlyFee": 40000,
       "cta": "Buy now",
       "features": [
         "Accounting",
