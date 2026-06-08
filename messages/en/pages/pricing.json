@@ -229,14 +229,13 @@
       "features": [
         "Reporting Service",
         "Dedicated enterprise support",
-        "Monthly service charge",
         "Server maintenance"
       ]
     },
     {
       "id": "enterprise",
       "name": "Enterprise",
-      "tagline": "Reporting service for large teams",
+      "tagline": "Custom service for large organizations",
       "badge": "Custom Quote",
       "users": "99 +",
       "icon": "🏬",
@@ -253,7 +252,6 @@
         "Sales & Distribution Management",
         "Reporting Service",
         "Dedicated enterprise support",
-        "Monthly service charge",
         "Server maintenance",
         "Custom integrations"
       ]

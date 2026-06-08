@@ -34,11 +34,12 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
   };
   const [billing, setBilling] = useState<BillingCycle>("yearly");
   const [currency, setCurrency] = useState<CurrencyCode>("BDT");
-  
+
   return (
     <>
-      <main className="min-h-screen bg-linear-to-br from-white via-slate-50 to-emerald-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-        <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
+      <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.16),transparent_34%),radial-gradient(circle_at_top_right,rgba(6,182,212,0.16),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fafc_46%,#ecfdf5_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_34%),radial-gradient(circle_at_top_right,rgba(6,182,212,0.10),transparent_30%),linear-gradient(180deg,#020617_0%,#0f172a_55%,#020617_100%)]">
+        <div className="pointer-events-none absolute left-1/2 top-24 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-200/30 blur-3xl dark:bg-emerald-500/10" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
           <SectionEyebrow
             icon={<Sparkles className="h-4 w-4" />}
             label={t("hero.eyebrow")}
@@ -57,7 +58,7 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start">
-            <div className="relative inline-flex items-center rounded-2xl border border-slate-200 bg-white p-1.5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+            <div className="relative inline-flex flex-wrap items-center justify-center rounded-2xl border border-white/70 bg-white/90 p-1.5 shadow-xl shadow-emerald-900/5 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80">
               <button
                 onClick={() => setBilling("yearly")}
                 className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "yearly"
@@ -106,7 +107,7 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
               </button>
             </div>
             <div className="flex flex-col items-center">
-              <div className="inline-flex rounded-xl border border-slate-200 bg-white p-1 dark:border-slate-700 dark:bg-slate-900">
+              <div className="inline-flex rounded-xl border border-white/70 bg-white/90 p-1 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80">
                 {(["BDT", "USD"] as const).map((nextCurrency) => (
                   <button
                     key={nextCurrency}
@@ -127,7 +128,7 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
           </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {packages.map((plan) => (
               <PlanCard
@@ -140,23 +141,23 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
             ))}
           </div>
 
-          <div className="mt-14 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
-            <div className="border-b border-slate-200 bg-slate-50 px-5 py-4 dark:border-slate-700 dark:bg-slate-800">
-              <h2 className="text-left text-xl font-bold text-slate-900 dark:text-white">
+          <div className="mt-16 overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none">
+            <div className="border-b border-slate-200 bg-linear-to-r from-emerald-50 via-white to-cyan-50 px-6 py-5 dark:border-slate-700 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+              <h2 className="text-left text-2xl font-bold text-slate-900 dark:text-white">
                 {t("includedFeaturesHeading")}
               </h2>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full min-w-[900px] border-collapse">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
-                    <th className="p-4 text-left text-sm font-semibold text-slate-900 dark:text-white">
+                  <tr className="border-b border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900">
+                    <th className="p-5 text-left text-base font-semibold text-slate-900 dark:text-white">
                       {t("successPacksPage.comparisonTable.featureHeader")}
                     </th>
                     {packages.map((pack) => (
                       <th
                         key={pack.id}
-                        className="p-4 text-center text-sm font-semibold"
+                        className="p-5 text-center text-base font-semibold"
                         style={{ color: pack.badge ? pack.accent : undefined }}
                       >
                         <span
@@ -182,14 +183,14 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
                           : "bg-slate-50 dark:bg-slate-800/50"
                       }`}
                     >
-                      <td className="p-4 text-sm text-slate-700 dark:text-slate-300">
+                      <td className="p-5 text-base font-medium text-slate-700 dark:text-slate-300">
                         {feature}
                       </td>
                       {packages.map((pack) => (
-                        <td key={pack.id} className="p-4 text-center">
+                        <td key={pack.id} className="p-5 text-center">
                           {hasPackageFeature(pack, feature) ? (
                             <CheckCircle2
-                              className="mx-auto h-5 w-5"
+                              className="mx-auto h-6 w-6"
                               style={{ color: pack.accent }}
                             />
                           ) : (
@@ -207,14 +208,14 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="mb-4 text-xs font-bold uppercase tracking-wide text-slate-400">
+            <div className="mb-4 text-sm font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
               {t("modules.title")}
             </div>
             <div className="flex flex-wrap justify-center gap-2">
               {t.raw("modules.list").map((module: string) => (
                 <span
                   key={module}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-400"
+                  className="rounded-full border border-emerald-100 bg-white/90 px-4 py-1.5 text-sm font-medium text-slate-700 shadow-sm shadow-emerald-900/5 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
                 >
                   {module}
                 </span>
@@ -242,7 +243,7 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
             </div>
           </div>
 
-          <div className="mt-16 rounded-2xl bg-linear-to-r from-slate-900 to-slate-800 p-8 text-center text-white dark:from-slate-950 dark:to-slate-900">
+          <div className="mt-16 rounded-3xl bg-linear-to-r from-slate-950 via-slate-900 to-emerald-950 p-8 text-center text-white shadow-2xl shadow-slate-900/20 dark:from-slate-950 dark:to-slate-900">
             <h2 className="text-2xl font-bold">{t("finalCta.title")}</h2>
             <p className="mt-2 text-slate-300">{t("finalCta.description")}</p>
             <button

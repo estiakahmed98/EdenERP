@@ -22,7 +22,7 @@ export function SuccessPacksPage({ onBack }: SuccessPacksPageProps) {
   );
 
   return (
-    <main className="min-h-screen bg-white dark:bg-slate-950">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_32%),linear-gradient(180deg,#ffffff_0%,#f8fafc_52%,#ecfdf5_100%)] dark:bg-slate-950">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="mb-12">
           <button
@@ -52,7 +52,7 @@ export function SuccessPacksPage({ onBack }: SuccessPacksPageProps) {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+        <div className="overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900">
           <div className="overflow-x-auto">
             <table className="w-full min-w-[175] border-collapse">
               <thead>

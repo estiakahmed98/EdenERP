@@ -63,8 +63,8 @@ export function StandardPlanPage({
   const displayCurrency = pricingPlan.currency ?? "BDT";
 
   return (
-    <main className="min-h-screen bg-white dark:bg-slate-950">
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_32%),linear-gradient(180deg,#ffffff_0%,#f8fafc_52%,#ecfdf5_100%)] dark:bg-slate-950">
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <button
           onClick={onBack}
           className="mb-8 flex items-center gap-2 text-sm text-slate-500 transition hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400"
@@ -83,7 +83,7 @@ export function StandardPlanPage({
 
         <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
           <div className="space-y-6">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+            <div className="rounded-2xl border border-white/80 bg-white/90 p-6 shadow-xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900">
               <label className="mb-3 block text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 {tStandard("userCountLabel")}
               </label>
@@ -112,7 +112,7 @@ export function StandardPlanPage({
               </div>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+            <div className="rounded-2xl border border-white/80 bg-white/90 p-6 shadow-xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900">
               <label className="mb-4 block text-xs font-bold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                 {tStandard("implementationLabel")}
               </label>
@@ -139,7 +139,7 @@ export function StandardPlanPage({
             </div>
           </div>
 
-          <div className="sticky top-6 h-fit rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+          <div className="sticky top-6 h-fit rounded-2xl border border-white/80 bg-white/95 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900">
             <div className="mb-6 grid grid-cols-2 gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1 dark:border-slate-700 dark:bg-slate-800/70 sm:grid-cols-4">
               {(["yearly", "semiannual", "quarterly", "monthly"] as const).map((cycle) => (
                 <button
