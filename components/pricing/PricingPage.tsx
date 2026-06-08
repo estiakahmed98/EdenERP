@@ -7,6 +7,8 @@ import { BillingCycle, CurrencyCode } from "./types";
 import { SectionEyebrow } from "./SectionEyebrow";
 import { FaqItem } from "./FaqItem";
 import { PlanCard } from "./PlanCard";
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 
 interface PricingPageProps {
   onBuyNow: (planId: string) => void;
@@ -14,10 +16,11 @@ interface PricingPageProps {
 }
 
 export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
+  const router = useRouter();
   const t = useTranslations("pages.pricing");
   const [billing, setBilling] = useState<BillingCycle>("yearly");
   const [currency, setCurrency] = useState<CurrencyCode>("BDT");
-
+  
   return (
     <>
       <main className="min-h-screen bg-linear-to-br from-white via-slate-50 to-emerald-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
@@ -43,11 +46,10 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
             <div className="relative inline-flex items-center rounded-2xl border border-slate-200 bg-white p-1.5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
               <button
                 onClick={() => setBilling("yearly")}
-                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${
-                  billing === "yearly"
+                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "yearly"
                     ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
                     : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 {t("hero.billingToggle.yearly")}
                 <span className="absolute -right-2 -top-2 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
@@ -57,11 +59,10 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
 
               <button
                 onClick={() => setBilling("semiannual")}
-                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${
-                  billing === "semiannual"
+                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "semiannual"
                     ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
                     : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 {t("hero.billingToggle.semiannual")}
                 <span className="absolute -right-2 -top-2 rounded-full bg-teal-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
@@ -70,11 +71,10 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
               </button>
               <button
                 onClick={() => setBilling("quarterly")}
-                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${
-                  billing === "quarterly"
+                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "quarterly"
                     ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
                     : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 {t("hero.billingToggle.quarterly")}
                 <span className="absolute -right-2 -top-2 rounded-full bg-cyan-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
@@ -83,11 +83,10 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
               </button>
               <button
                 onClick={() => setBilling("monthly")}
-                className={`rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${
-                  billing === "monthly"
+                className={`rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "monthly"
                     ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
                     : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 {t("hero.billingToggle.monthly")}
               </button>
@@ -98,11 +97,10 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
                   <button
                     key={nextCurrency}
                     onClick={() => setCurrency(nextCurrency)}
-                    className={`rounded-lg px-5 py-2 text-sm font-semibold transition-all ${
-                      currency === nextCurrency
+                    className={`rounded-lg px-5 py-2 text-sm font-semibold transition-all ${currency === nextCurrency
                         ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
                         : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                    }`}
+                      }`}
                   >
                     {nextCurrency}
                   </button>
@@ -167,7 +165,10 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
           <div className="mt-16 rounded-2xl bg-linear-to-r from-slate-900 to-slate-800 p-8 text-center text-white dark:from-slate-950 dark:to-slate-900">
             <h2 className="text-2xl font-bold">{t("finalCta.title")}</h2>
             <p className="mt-2 text-slate-300">{t("finalCta.description")}</p>
-            <button className="mt-5 rounded-lg bg-emerald-600 px-6 py-2.5 font-semibold transition hover:bg-emerald-700">
+            <button
+              onClick={() => router.push("/contact")}
+              className="mt-5 rounded-lg bg-emerald-600 px-6 py-2.5 font-semibold transition hover:bg-emerald-700"
+            >
               {t("finalCta.button")}
             </button>
           </div>
