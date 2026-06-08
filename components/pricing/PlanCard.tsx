@@ -10,6 +10,7 @@ import {
 } from "./utils";
 import {
   QUARTERLY_DISCOUNT_MULTIPLIER,
+  SEMIANNUAL_DISCOUNT_MULTIPLIER,
   YEARLY_DISCOUNT_MULTIPLIER,
 } from "./constants";
 
@@ -74,12 +75,16 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
     const perUserMonthly = getPerUserMonthly(quarterlyFee, usersCount);
     const discountedPerUserQuarterly =
       perUserMonthly * QUARTERLY_DISCOUNT_MULTIPLIER;
+    const discountedPerUserSemiannual =
+      perUserMonthly * SEMIANNUAL_DISCOUNT_MULTIPLIER;
     const discountedPerUserYearly =
       perUserMonthly * YEARLY_DISCOUNT_MULTIPLIER;
 
     mainPrice =
       billing === "yearly"
         ? discountedPerUserYearly
+        : billing === "semiannual"
+          ? discountedPerUserSemiannual
         : billing === "quarterly"
           ? discountedPerUserQuarterly
           : perUserMonthly;
@@ -87,10 +92,12 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
     secondaryPrice = mainPrice * usersCount;
     secondaryPriceLabel = totalMonthLabel;
     originalMainPrice =
-      billing === "yearly" || billing === "quarterly" ? perUserMonthly : null;
+      billing === "yearly" || billing === "semiannual" || billing === "quarterly"
+        ? perUserMonthly
+        : null;
     originalSecondaryPrice = null;
     savingsAmount =
-      billing === "yearly" || billing === "quarterly"
+      billing === "yearly" || billing === "semiannual" || billing === "quarterly"
         ? perUserMonthly * usersCount - secondaryPrice
         : null;
 

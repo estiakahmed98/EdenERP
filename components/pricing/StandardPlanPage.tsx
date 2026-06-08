@@ -6,6 +6,7 @@ import { CheckCircle2 } from "lucide-react";
 import { BillingCycle, ERPPlan } from "./types";
 import {
   QUARTERLY_DISCOUNT_MULTIPLIER,
+  SEMIANNUAL_DISCOUNT_MULTIPLIER,
   YEARLY_DISCOUNT_MULTIPLIER,
 } from "./constants";
 import { formatCurrency, getPerUserMonthly } from "./utils";
@@ -39,6 +40,8 @@ export function StandardPlanPage({
   const pricePerUser =
     billing === "yearly"
       ? basePerUserMonthly * YEARLY_DISCOUNT_MULTIPLIER
+      : billing === "semiannual"
+        ? basePerUserMonthly * SEMIANNUAL_DISCOUNT_MULTIPLIER
       : billing === "quarterly"
         ? basePerUserMonthly * QUARTERLY_DISCOUNT_MULTIPLIER
         : basePerUserMonthly;
@@ -124,8 +127,8 @@ export function StandardPlanPage({
           </div>
 
           <div className="sticky top-6 h-fit rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
-            <div className="mb-6 grid grid-cols-3 gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1 dark:border-slate-700 dark:bg-slate-800/70">
-              {(["yearly", "quarterly", "monthly"] as const).map((cycle) => (
+            <div className="mb-6 grid grid-cols-2 gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1 dark:border-slate-700 dark:bg-slate-800/70 sm:grid-cols-4">
+              {(["yearly", "semiannual", "quarterly", "monthly"] as const).map((cycle) => (
                 <button
                   key={cycle}
                   onClick={() => setBilling(cycle)}

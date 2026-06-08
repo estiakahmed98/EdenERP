@@ -7,7 +7,8 @@ export const PRICING_CURRENCY = {
 
 export const BDT_PER_USD = 122;
 export const YEARLY_DISCOUNT_MULTIPLIER = 0.65;
-export const QUARTERLY_DISCOUNT_MULTIPLIER = 0.75;
+export const SEMIANNUAL_DISCOUNT_MULTIPLIER = 0.8;
+export const QUARTERLY_DISCOUNT_MULTIPLIER = 0.9;
 
 export const SUCCESS_PACKS: SuccessPack[] = [
   {
