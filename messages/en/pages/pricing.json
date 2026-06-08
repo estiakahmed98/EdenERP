@@ -10,8 +10,10 @@
     "description": "Everything your business needs. Choose your plan, set your team size, and get started today.",
     "billingToggle": {
       "yearly": "Yearly",
+      "quarterly": "Quarterly",
       "monthly": "Monthly",
-      "yearlyDiscount": "20% off"
+      "yearlyDiscount": "35% off",
+      "quarterlyDiscount": "25% off"
     }
   },
   "userTier": {
@@ -106,7 +108,15 @@
   "packagePricing": {
     "currencyRate": "USD rate: 1 USD = 122 BDT",
     "perMonth": "Per month",
+    "perQuarter": "Per quarter",
+    "perYear": "Per year",
     "perUser": "per user / month",
+    "perUserPerMonth": "per user / month",
+    "perUserPerQuarter": "per user / quarter",
+    "perUserPerYear": "per user / year",
+    "totalPerMonth": "Total / month",
+    "totalPerQuarter": "Total / quarter",
+    "totalPerYear": "Total / year",
     "everyThreeMonths": "Every 3 months",
     "oneTimeSetup": "Implemention Charges",
     "monthlyCharge": "Monthly charge",
@@ -276,7 +286,7 @@
       },
       {
         "question": "What's the difference between yearly and monthly billing?",
-        "answer": "Yearly billing saves you about 20% compared to monthly. With yearly billing, you're billed once for the entire year."
+        "answer": "Yearly billing saves you about 35% compared to monthly, and quarterly billing saves you about 25%. With yearly billing, you're billed once for the entire year."
       },
       {
         "question": "What payment methods do you support?",

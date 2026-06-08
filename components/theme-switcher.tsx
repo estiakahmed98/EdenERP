@@ -3,9 +3,9 @@
 import { Check, ChevronDown, Leaf, Moon, Palette, Sun, Waves } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
 
 import { type AppTheme, THEME_OPTIONS, resolveAppTheme } from "@/lib/themes";
+import { useTheme } from "@/components/theme-provider";
 
 type ThemeSwitcherProps = {
   variant: "desktop" | "mobile";

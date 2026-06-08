@@ -9,7 +9,10 @@ import {
   getMonthlyEquivalent,
   getPerUserMonthly,
 } from "./utils";
-import { YEARLY_DISCOUNT_MULTIPLIER, YEARLY_DISCOUNT_RATE } from "./constants";
+import {
+  QUARTERLY_DISCOUNT_MULTIPLIER,
+  YEARLY_DISCOUNT_MULTIPLIER,
+} from "./constants";
 
 interface PlanCardProps {
   plan: ERPPlan;
@@ -21,9 +24,9 @@ interface PlanCardProps {
 export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
   const t = useTranslations("pages.pricing");
   const tPackage = useTranslations("pages.pricing.packagePricing");
-  const perYearLabel = t.raw("packagePricing").perYear ?? "Per year";
-  const savePerUserMonthLabel =
-    t.raw("packagePricing").savePerUserMonth ?? "Save {amount} / user / month";
+  const perYearLabel = tPackage("perYear");
+  const perMonthUserLabel = tPackage("perUserPerMonth");
+  const totalMonthLabel = tPackage("totalPerMonth");
 
   const isEnterprise = plan.id === "enterprise";
   const isHighlighted =
@@ -36,7 +39,6 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
   let secondaryPriceLabel: string | null = null;
   let originalMainPrice: number | null = null;
   let originalSecondaryPrice: number | null = null;
-  let savingsPerUserMonthly: number | null = null;
   let details: { label: string; amount: number; currency: string }[] = [];
   let displayCurrency: CurrencyCode = isEnterprise ? "USD" : currency;
 
@@ -48,7 +50,6 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
     secondaryPriceLabel = null;
     originalMainPrice = null;
     originalSecondaryPrice = null;
-    savingsPerUserMonthly = null;
 
     details = [
       {
@@ -71,23 +72,23 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
     const quarterlyFee = plan.quarterlyFee!;
     const monthlyEquivalent = getMonthlyEquivalent(quarterlyFee);
     const perUserMonthly = getPerUserMonthly(quarterlyFee, usersCount);
-    const discountedPerUserMonthly =
+    const discountedPerUserQuarterly =
+      perUserMonthly * QUARTERLY_DISCOUNT_MULTIPLIER;
+    const discountedPerUserYearly =
       perUserMonthly * YEARLY_DISCOUNT_MULTIPLIER;
-    const yearlyEquivalent =
-      monthlyEquivalent * 12 * YEARLY_DISCOUNT_MULTIPLIER;
 
     mainPrice =
-      billing === "yearly" ? discountedPerUserMonthly : perUserMonthly;
-    mainPriceLabel = tPackage("perUser");
-    secondaryPrice =
-      billing === "yearly" ? yearlyEquivalent : monthlyEquivalent;
-    secondaryPriceLabel =
-      billing === "yearly" ? perYearLabel : tPackage("perMonth");
-    originalMainPrice = billing === "yearly" ? perUserMonthly : null;
-    originalSecondaryPrice =
-      billing === "yearly" ? monthlyEquivalent * 12 : null;
-    savingsPerUserMonthly =
-      billing === "yearly" ? perUserMonthly * YEARLY_DISCOUNT_RATE : null;
+      billing === "yearly"
+        ? discountedPerUserYearly
+        : billing === "quarterly"
+          ? discountedPerUserQuarterly
+          : perUserMonthly;
+    mainPriceLabel = perMonthUserLabel;
+    secondaryPrice = monthlyEquivalent;
+    secondaryPriceLabel = totalMonthLabel;
+    originalMainPrice =
+      billing === "yearly" || billing === "quarterly" ? perUserMonthly : null;
+    originalSecondaryPrice = null;
 
     details = [
       {
@@ -206,14 +207,6 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
         >
           {mainPriceLabel}
         </p>
-        {savingsPerUserMonthly !== null && (
-          <p className="mt-2 text-sm font-medium text-emerald-500">
-            {savePerUserMonthLabel.replace(
-              "{amount}",
-              formatCurrency(savingsPerUserMonthly, displayCurrency, "BDT"),
-            )}
-          </p>
-        )}
       </div>
 
       {secondaryPrice !== null && secondaryPriceLabel && (

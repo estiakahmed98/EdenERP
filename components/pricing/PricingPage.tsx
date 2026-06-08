@@ -55,6 +55,19 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
                 </span>
               </button>
               <button
+                onClick={() => setBilling("quarterly")}
+                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${
+                  billing === "quarterly"
+                    ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
+                    : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                }`}
+              >
+                {t("hero.billingToggle.quarterly")}
+                <span className="absolute -right-2 -top-2 rounded-full bg-cyan-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
+                  {t("hero.billingToggle.quarterlyDiscount")}
+                </span>
+              </button>
+              <button
                 onClick={() => setBilling("monthly")}
                 className={`rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${
                   billing === "monthly"

@@ -1,4 +1,4 @@
-export type BillingCycle = "yearly" | "monthly";
+export type BillingCycle = "yearly" | "quarterly" | "monthly";
 export type CurrencyCode = "BDT" | "USD";
 export type PageType = "pricing" | "standard" | "success-packs";
 
