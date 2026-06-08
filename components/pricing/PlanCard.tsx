@@ -6,7 +6,6 @@ import { CheckCircle2 } from "lucide-react";
 import { BillingCycle, CurrencyCode, ERPPlan } from "./types";
 import {
   formatCurrency,
-  getMonthlyEquivalent,
   getPerUserMonthly,
 } from "./utils";
 import {
@@ -39,6 +38,7 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
   let secondaryPriceLabel: string | null = null;
   let originalMainPrice: number | null = null;
   let originalSecondaryPrice: number | null = null;
+  let savingsAmount: number | null = null;
   let details: { label: string; amount: number; currency: string }[] = [];
   let displayCurrency: CurrencyCode = isEnterprise ? "USD" : currency;
 
@@ -50,6 +50,7 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
     secondaryPriceLabel = null;
     originalMainPrice = null;
     originalSecondaryPrice = null;
+    savingsAmount = null;
 
     details = [
       {
@@ -70,7 +71,6 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
     ];
   } else {
     const quarterlyFee = plan.quarterlyFee!;
-    const monthlyEquivalent = getMonthlyEquivalent(quarterlyFee);
     const perUserMonthly = getPerUserMonthly(quarterlyFee, usersCount);
     const discountedPerUserQuarterly =
       perUserMonthly * QUARTERLY_DISCOUNT_MULTIPLIER;
@@ -84,18 +84,17 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
           ? discountedPerUserQuarterly
           : perUserMonthly;
     mainPriceLabel = perMonthUserLabel;
-    secondaryPrice = monthlyEquivalent;
+    secondaryPrice = mainPrice * usersCount;
     secondaryPriceLabel = totalMonthLabel;
     originalMainPrice =
       billing === "yearly" || billing === "quarterly" ? perUserMonthly : null;
     originalSecondaryPrice = null;
+    savingsAmount =
+      billing === "yearly" || billing === "quarterly"
+        ? perUserMonthly * usersCount - secondaryPrice
+        : null;
 
     details = [
-      {
-        label: tPackage("everyThreeMonths"),
-        amount: quarterlyFee,
-        currency: "BDT",
-      },
       {
         label: tPackage("oneTimeSetup"),
         amount: plan.setupFee,
@@ -236,6 +235,13 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
             )}{" "}
             {secondaryPriceLabel}
           </p>
+          {savingsAmount !== null && savingsAmount > 0 && (
+            <p className="mt-1 text-sm font-semibold text-emerald-500">
+              {tPackage("youSave", {
+                amount: formatCurrency(savingsAmount, displayCurrency, "BDT"),
+              })}
+            </p>
+          )}
         </div>
       )}
 
