@@ -283,10 +283,6 @@ const communityMegaMenu: MegaMenuColumn[] = [
         href: "/community/get-services/meet-advisor",
       },
       {
-        labelKey: "menu.community.implementation",
-        href: "/community/get-services/implementation",
-      },
-      {
         labelKey: "menu.community.support",
         href: "/community/get-services/support",
       },
