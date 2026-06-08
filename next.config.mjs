@@ -10,6 +10,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    optimizePackageImports: ["lucide-react", "react-icons"],
+  },
 };
 
 export default withNextIntl(nextConfig);
