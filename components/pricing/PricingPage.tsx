@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Sparkles } from "lucide-react";
-import { BillingCycle, CurrencyCode } from "./types";
+import { CheckCircle2, Sparkles } from "lucide-react";
+import { BillingCycle, CurrencyCode, ERPPlan } from "./types";
 import { SectionEyebrow } from "./SectionEyebrow";
 import { FaqItem } from "./FaqItem";
 import { PlanCard } from "./PlanCard";
-import { Router } from "next/router";
 import { useRouter } from "next/navigation";
 
 interface PricingPageProps {
@@ -18,6 +17,21 @@ interface PricingPageProps {
 export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
   const router = useRouter();
   const t = useTranslations("pages.pricing");
+  const packages = t.raw("erpPackages") as ERPPlan[];
+  const packageFeatures = Array.from(
+    new Set(packages.flatMap((pack) => pack.features)),
+  );
+  const enterprisePlan = packages.find((plan) => plan.id === "enterprise");
+  const enterpriseCustomIntegrationFeature =
+    enterprisePlan?.features[enterprisePlan.features.length - 1];
+  const hasPackageFeature = (pack: ERPPlan, feature: string) => {
+    if (pack.id === "enterprise") return true;
+    if (pack.id === "enterpriselite") {
+      return feature !== enterpriseCustomIntegrationFeature;
+    }
+
+    return pack.features.includes(feature);
+  };
   const [billing, setBilling] = useState<BillingCycle>("yearly");
   const [currency, setCurrency] = useState<CurrencyCode>("BDT");
   
@@ -115,7 +129,7 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
 
         <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {t.raw("erpPackages").map((plan: any) => (
+            {packages.map((plan) => (
               <PlanCard
                 key={plan.id}
                 plan={plan}
@@ -124,6 +138,72 @@ export function PricingPage({ onBuyNow, onSuccessPacks }: PricingPageProps) {
                 onBuyNow={() => onBuyNow(plan.id)}
               />
             ))}
+          </div>
+
+          <div className="mt-14 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
+            <div className="border-b border-slate-200 bg-slate-50 px-5 py-4 dark:border-slate-700 dark:bg-slate-800">
+              <h2 className="text-left text-xl font-bold text-slate-900 dark:text-white">
+                {t("includedFeaturesHeading")}
+              </h2>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[900px] border-collapse">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+                    <th className="p-4 text-left text-sm font-semibold text-slate-900 dark:text-white">
+                      {t("successPacksPage.comparisonTable.featureHeader")}
+                    </th>
+                    {packages.map((pack) => (
+                      <th
+                        key={pack.id}
+                        className="p-4 text-center text-sm font-semibold"
+                        style={{ color: pack.badge ? pack.accent : undefined }}
+                      >
+                        <span
+                          className={
+                            pack.badge
+                              ? ""
+                              : "text-slate-600 dark:text-slate-300"
+                          }
+                        >
+                          {pack.name}
+                        </span>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {packageFeatures.map((feature, idx) => (
+                    <tr
+                      key={feature}
+                      className={`border-b border-slate-100 dark:border-slate-700 ${
+                        idx % 2 === 0
+                          ? "bg-white dark:bg-slate-900"
+                          : "bg-slate-50 dark:bg-slate-800/50"
+                      }`}
+                    >
+                      <td className="p-4 text-sm text-slate-700 dark:text-slate-300">
+                        {feature}
+                      </td>
+                      {packages.map((pack) => (
+                        <td key={pack.id} className="p-4 text-center">
+                          {hasPackageFeature(pack, feature) ? (
+                            <CheckCircle2
+                              className="mx-auto h-5 w-5"
+                              style={{ color: pack.accent }}
+                            />
+                          ) : (
+                            <span className="text-slate-300 dark:text-slate-600">
+                              —
+                            </span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <div className="mt-12 text-center">

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { CheckCircle2 } from "lucide-react";
 import { BillingCycle, ERPPlan } from "./types";
 import {
   QUARTERLY_DISCOUNT_MULTIPLIER,
