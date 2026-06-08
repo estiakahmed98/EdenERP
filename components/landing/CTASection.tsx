@@ -2,10 +2,12 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 export default function CTASection() {
   const t = useTranslations("pages.home");
   const commonT = useTranslations("common.actions");
+  const router = useRouter();
 
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--purple),var(--purple-dark))] px-6 py-25 text-center">
@@ -28,7 +30,9 @@ export default function CTASection() {
             {t("common.tryFree")}
           </button> */}
 
-          <button className="rounded-[10px] border-[1.5px] border-white/25 bg-transparent px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5">
+          <button 
+           onClick={() => router.push("/contact")}
+          className="rounded-[10px] border-[1.5px] border-white/25 bg-transparent px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5">
             {commonT("contactSales")}
           </button>
         </div>
