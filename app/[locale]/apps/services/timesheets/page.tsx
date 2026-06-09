@@ -80,6 +80,7 @@ function FloatingNote({
 
 export default function TimesheetsLandingPage() {
   const t = useTranslations("pages.timesheets");
+  const commonT = useTranslations("common.actions");
   const dashboardRows = t.raw("hero.dashboard.rows");
   const tableHeaders = t.raw("hero.dashboard.tableHeaders");
   const hoursRows = t.raw("hoursSection.demo.rows");
@@ -111,10 +112,10 @@ export default function TimesheetsLandingPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="#start"
+              href="/contact"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              {t("hero.startButton")}
+              {commonT("contactSales")}
             </Link>
 
             <Link

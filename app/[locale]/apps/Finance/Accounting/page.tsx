@@ -1010,14 +1010,7 @@ export default function AccountingPage() {
 
             <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
               <Link
-                href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-slate-900 transition-all hover:-translate-y-0.5 hover:shadow-xl dark:bg-slate-950 dark:text-slate-100"
-              >
-                {t("cta.trial")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="#"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
               >
                 {t("cta.sales")}

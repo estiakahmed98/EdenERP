@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   ArrowDown,
@@ -44,6 +45,7 @@ const avatars = [
 ];
 
 export default function RentalPage() {
+  const router = useRouter();
   const t = useTranslations("pages.rental");
 
   const featuresList = [
@@ -337,7 +339,10 @@ export default function RentalPage() {
                   ))}
                 </div>
 
-                <button className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
+                <button
+                  onClick={() => router.push("/contact")}
+                  className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-xs font-bold text-white transition hover:bg-[#5f3d56] dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]"
+                >
                   {t("onlineRentalSection.demoCard.bookNow")}
                 </button>
               </div>

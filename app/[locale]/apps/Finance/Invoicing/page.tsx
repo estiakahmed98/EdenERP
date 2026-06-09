@@ -165,13 +165,6 @@ export default function InvoicingPage() {
 
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="#get-started"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-emerald-600 to-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl dark:shadow-emerald-500/30"
-                >
-                  {t("hero.startButton")}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link
                   href="#demo"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:border-emerald-300 hover:text-emerald-600 dark:hover:border-emerald-600 dark:hover:text-emerald-400"
                 >
@@ -840,14 +833,7 @@ export default function InvoicingPage() {
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 px-6 py-3 font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
-              >
-                {t("ctaBanner.trialButton")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="#"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm text-white px-6 py-3 font-semibold border border-white/20 hover:bg-white/20 transition"
               >
                 {t("ctaBanner.salesButton")}

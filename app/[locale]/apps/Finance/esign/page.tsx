@@ -296,14 +296,6 @@ export default function EsignPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="#get-started"
-              className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
-            >
-              {t("hero.buttons.startTrial")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-
-            <Link
               href="#advisor"
               className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-cyan-300 hover:text-cyan-700 dark:hover:border-cyan-600 dark:hover:text-cyan-400"
             >
@@ -656,14 +648,6 @@ export default function EsignPage() {
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <Link
-            href="/pricing"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-cyan-600 to-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition-all hover:-translate-y-0.5 dark:shadow-cyan-500/30"
-          >
-            {t("getStartedSection.buttons.startTrial")}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-
           <Link
             href="/contact"
             id="advisor"

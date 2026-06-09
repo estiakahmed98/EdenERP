@@ -114,6 +114,7 @@ function DashedArrow({ className = "" }: { className?: string }) {
 
 export default function HumanResourcesLandingSections() {
   const t = useTranslations("pages.hr");
+  const commonT = useTranslations("common.actions");
 
   const employeesList = asArray<Employee>(t.raw("hero.dashboard.employees"));
   const departmentsList = asArray<string>(t.raw("hero.dashboard.departments"));
@@ -150,10 +151,10 @@ export default function HumanResourcesLandingSections() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="#start"
+              href="/contact"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
             >
-              {t("hero.startButton")}
+              {commonT("contactSales")}
             </Link>
 
             <Link

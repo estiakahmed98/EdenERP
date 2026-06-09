@@ -201,6 +201,7 @@ function DocumentDashboard({
 
 export default function DocumentsPage() {
   const t = useTranslations("pages");
+  const commonT = useTranslations("common.actions");
   const tr = (key: string) => t(`documents.${key}`);
   const raw = (key: string) => {
     try {
@@ -322,10 +323,10 @@ export default function DocumentsPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="#get-started"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-orange-600 to-amber-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:-translate-y-0.5"
             >
-              {tr("hero.startButton")}
+              {commonT("contactSales")}
               <ArrowRight className="h-4 w-4" />
             </Link>
 
@@ -785,14 +786,6 @@ export default function DocumentsPage() {
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <Link
-            href="/pricing"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-linear-to-r from-orange-600 to-amber-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-500/20 transition-all hover:-translate-y-0.5"
-          >
-            {tr("footerCta.trialButton")}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-
           <Link
             href="/contact"
             className="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-orange-300 hover:text-orange-700 dark:hover:border-orange-600 dark:hover:text-orange-400"

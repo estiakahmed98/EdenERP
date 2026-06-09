@@ -446,14 +446,6 @@ export default function SalesQuotationPage() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="#get-started"
-              className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-rose-600 to-orange-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 transition-all hover:-translate-y-0.5 dark:shadow-rose-500/30"
-            >
-              {t("hero.buttons.startTrial")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-
-            <Link
               href="#demo"
               className="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 shadow-sm transition-all hover:border-rose-300 hover:text-rose-700 dark:hover:border-rose-600 dark:hover:text-rose-400"
             >

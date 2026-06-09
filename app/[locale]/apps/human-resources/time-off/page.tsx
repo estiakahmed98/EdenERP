@@ -79,6 +79,7 @@ function FloatingNote({
 
 export default function TimeOffLandingSections() {
   const t = useTranslations("pages.timeoff");
+  const commonT = useTranslations("common.actions");
 
   const timeOffTypesList = t.raw("readySection.timeOffTypes");
   const selectedTypeFields = t.raw("readySection.selectedType.fields");
@@ -114,10 +115,10 @@ export default function TimeOffLandingSections() {
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
-              href="#start"
+              href="/contact"
               className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
             >
-              {t("hero.startButton")}
+              {commonT("contactSales")}
             </Link>
 
             <Link

@@ -25,9 +25,24 @@
       "matchedPercent": "94%",
       "recentExpenses": "Recent Expenses",
       "recentExpensesList": [
-        { "name": "Starbucks Coffee", "amount": "$12.50", "date": "Today", "status": "approved" },
-        { "name": "Uber Ride", "amount": "$24.00", "date": "Yesterday", "status": "pending" },
-        { "name": "Adobe Creative Cloud", "amount": "$52.99", "date": "Mar 12, 2024", "status": "approved" }
+        {
+          "name": "Starbucks Coffee",
+          "amount": "$12.50",
+          "date": "Today",
+          "status": "approved"
+        },
+        {
+          "name": "Uber Ride",
+          "amount": "$24.00",
+          "date": "Yesterday",
+          "status": "pending"
+        },
+        {
+          "name": "Adobe Creative Cloud",
+          "amount": "$52.99",
+          "date": "Mar 12, 2024",
+          "status": "approved"
+        }
       ]
     },
     "badges": {
@@ -41,10 +56,22 @@
     "title": "Spending control at your fingertips",
     "description": "Issue virtual and physical cards with custom spending limits. Control where and how your team spends, with real-time notifications and automatic reconciliation.",
     "features": [
-      { "text": "Set custom spending limits per card", "color": "emerald" },
-      { "text": "Real-time transaction alerts", "color": "cyan" },
-      { "text": "Merchant category controls", "color": "purple" },
-      { "text": "Auto-reconciliation with receipts", "color": "blue" }
+      {
+        "text": "Set custom spending limits per card",
+        "color": "emerald"
+      },
+      {
+        "text": "Real-time transaction alerts",
+        "color": "cyan"
+      },
+      {
+        "text": "Merchant category controls",
+        "color": "purple"
+      },
+      {
+        "text": "Auto-reconciliation with receipts",
+        "color": "blue"
+      }
     ],
     "demo": {
       "cardTitle": "Company Card",
@@ -90,10 +117,26 @@
     "demo": {
       "title": "Pending Approvals",
       "teamMembers": [
-        { "name": "Sarah Johnson", "role": "CEO", "pending": 3 },
-        { "name": "Michael Chen", "role": "Finance", "pending": 2 },
-        { "name": "Emily Davis", "role": "Marketing", "pending": 1 },
-        { "name": "James Wilson", "role": "Sales", "pending": 4 }
+        {
+          "name": "Sarah Johnson",
+          "role": "CEO",
+          "pending": 3
+        },
+        {
+          "name": "Michael Chen",
+          "role": "Finance",
+          "pending": 2
+        },
+        {
+          "name": "Emily Davis",
+          "role": "Marketing",
+          "pending": 1
+        },
+        {
+          "name": "James Wilson",
+          "role": "Sales",
+          "pending": 4
+        }
       ],
       "reviewButton": "Review"
     }
@@ -104,12 +147,42 @@
     "title": "See where your money goes",
     "description": "Auto-categorized expenses with visual breakdowns and trends.",
     "categories": [
-      { "name": "Rent & Utilities", "amount": "$2,500", "percentage": 28, "color": "emerald" },
-      { "name": "Salaries", "amount": "$15,000", "percentage": 42, "color": "purple" },
-      { "name": "Office Supplies", "amount": "$450", "percentage": 5, "color": "cyan" },
-      { "name": "Travel", "amount": "$1,200", "percentage": 8, "color": "orange" },
-      { "name": "Marketing", "amount": "$3,000", "percentage": 12, "color": "pink" },
-      { "name": "Software", "amount": "$800", "percentage": 5, "color": "blue" }
+      {
+        "name": "Rent & Utilities",
+        "amount": "$2,500",
+        "percentage": 28,
+        "color": "emerald"
+      },
+      {
+        "name": "Salaries",
+        "amount": "$15,000",
+        "percentage": 42,
+        "color": "purple"
+      },
+      {
+        "name": "Office Supplies",
+        "amount": "$450",
+        "percentage": 5,
+        "color": "cyan"
+      },
+      {
+        "name": "Travel",
+        "amount": "$1,200",
+        "percentage": 8,
+        "color": "orange"
+      },
+      {
+        "name": "Marketing",
+        "amount": "$3,000",
+        "percentage": 12,
+        "color": "pink"
+      },
+      {
+        "name": "Software",
+        "amount": "$800",
+        "percentage": 5,
+        "color": "blue"
+      }
     ]
   },
   "mobileSection": {
@@ -124,8 +197,14 @@
       "appName": "Expense Tracker",
       "scannedLabel": "Receipt scanned",
       "items": [
-        { "name": "Starbucks Coffee", "amount": "$12.50" },
-        { "name": "Uber Ride", "amount": "$24.00" }
+        {
+          "name": "Starbucks Coffee",
+          "amount": "$12.50"
+        },
+        {
+          "name": "Uber Ride",
+          "amount": "$24.00"
+        }
       ],
       "total": "Total",
       "totalAmount": "$36.50",
@@ -138,12 +217,30 @@
     "title": "Connect with your stack",
     "description": "Seamless integration with your favorite tools and accounting software.",
     "integrations": [
-      { "name": "QuickBooks", "color": "emerald" },
-      { "name": "Xero", "color": "cyan" },
-      { "name": "Stripe", "color": "purple" },
-      { "name": "Slack", "color": "blue" },
-      { "name": "Expensify", "color": "orange" },
-      { "name": "SAP", "color": "indigo" }
+      {
+        "name": "QuickBooks",
+        "color": "emerald"
+      },
+      {
+        "name": "Xero",
+        "color": "cyan"
+      },
+      {
+        "name": "Stripe",
+        "color": "purple"
+      },
+      {
+        "name": "Slack",
+        "color": "blue"
+      },
+      {
+        "name": "Expensify",
+        "color": "orange"
+      },
+      {
+        "name": "SAP",
+        "color": "indigo"
+      }
     ]
   },
   "testimonialSection": {
@@ -157,6 +254,6 @@
     "description": "Join thousands of businesses that have simplified their expense management. Start your journey today.",
     "trialButton": "Start Free Trial",
     "salesButton": "Contact Sales",
-    "footerText": "• Free forever plan • Cancel anytime"
+    "footerText": "• Forever plan • Cancel anytime"
   }
 }
