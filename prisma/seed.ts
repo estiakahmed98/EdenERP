@@ -17,7 +17,7 @@ async function seedAdminUser() {
     await db.user.create({
       data: {
         email,
-        name: "Admin Gravionne",
+        name: "Admin",
         role: "ADMIN",
         passwordHash,
         emailVerified: new Date(),
