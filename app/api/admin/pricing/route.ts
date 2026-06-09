@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
+import { revalidatePath } from "next/cache";
 
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
@@ -247,6 +248,10 @@ export async function PUT(request: NextRequest) {
         });
       }
     });
+
+    revalidatePath(`/${payload.locale}/pricing`);
+    revalidatePath(`/${payload.locale}`);
+    revalidatePath(`/${payload.locale}`, "layout");
 
     const data = await getPricingAdminData(payload.locale);
     return NextResponse.json({

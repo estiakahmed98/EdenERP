@@ -109,7 +109,6 @@ export default function Footer({
                 width={44}
                 height={44}
                 className="h-11 w-11 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
-                priority
               />
 
               <span

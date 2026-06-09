@@ -148,6 +148,11 @@ export async function getPricingPageData(
   const modules = moduleRows
     .filter((item) => item.enabled)
     .map((item) => item.label);
+  const hasStoredPricingData =
+    contentRows.length > 0 ||
+    faqRows.length > 0 ||
+    moduleRows.length > 0 ||
+    planRows.length > 0;
 
   return {
     locale,
@@ -156,7 +161,7 @@ export async function getPricingPageData(
     packagePricing:
       (content.packagePricing as PricingPageData["packagePricing"]) ??
       defaultData.packagePricing,
-    erpPackages: planRows.length > 0 ? mapPlans(planRows) : defaultData.erpPackages,
+    erpPackages: hasStoredPricingData ? mapPlans(planRows) : defaultData.erpPackages,
     includedFeaturesHeading:
       (content.includedFeaturesHeading as string | undefined) ??
       defaultData.includedFeaturesHeading,
@@ -165,13 +170,13 @@ export async function getPricingPageData(
     modules: {
       title:
         (content.modulesTitle as string | undefined) ?? defaultData.modules.title,
-      list: modules.length > 0 ? modules : defaultData.modules.list,
+      list: hasStoredPricingData ? modules : defaultData.modules.list,
     },
     faq: {
       title: (content.faqMeta as any)?.title ?? defaultData.faq.title,
       description:
         (content.faqMeta as any)?.description ?? defaultData.faq.description,
-      items: pricingFaq.length > 0 ? pricingFaq : defaultData.faq.items,
+      items: hasStoredPricingData ? pricingFaq : defaultData.faq.items,
     },
     finalCta:
       (content.finalCta as PricingPageData["finalCta"]) ?? defaultData.finalCta,
@@ -185,7 +190,9 @@ export async function getPricingPageData(
         title:
           (content.successPacksFaqMeta as any)?.title ??
           defaultData.successPacksPage.faq.title,
-        items: successFaq.length > 0 ? successFaq : defaultData.successPacksPage.faq.items,
+        items: hasStoredPricingData
+          ? successFaq
+          : defaultData.successPacksPage.faq.items,
       },
     },
   };
