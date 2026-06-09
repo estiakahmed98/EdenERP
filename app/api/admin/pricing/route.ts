@@ -4,7 +4,10 @@ import { revalidatePath } from "next/cache";
 
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { ensurePricingSettings, getPricingAdminData } from "@/lib/pricing/service";
+import {
+  ensurePricingSettings,
+  getPricingAdminData,
+} from "@/lib/pricing/service";
 import {
   pricingAdminPayloadSchema,
   pricingAdminQuerySchema,
@@ -41,10 +44,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(data);
   } catch (error) {
     console.error("Error loading admin pricing data:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 },
-    );
+    const message =
+      process.env.DEBUG_API === "true"
+        ? String((error as any)?.message ?? error)
+        : "Internal server error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
 
@@ -260,9 +264,10 @@ export async function PUT(request: NextRequest) {
     });
   } catch (error) {
     console.error("Error saving admin pricing data:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 },
-    );
+    const message =
+      process.env.DEBUG_API === "true"
+        ? String((error as any)?.message ?? error)
+        : "Internal server error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
