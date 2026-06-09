@@ -12,6 +12,7 @@ import {
   UserCog,
   Shield,
   BookOpen,
+  BadgeDollarSign,
 } from "lucide-react";
 
 interface Props {
@@ -43,6 +44,7 @@ const AdminSidebar = ({ onNavigate, collapsed, onToggleCollapse }: Props) => {
   const navItems = [
     { name: "Dashboard", href: "/admin", icon: Home },
     { name: "Blog", href: "/admin/blog", icon: BookOpen },
+    { name: "Pricing", href: "/admin/pricing", icon: BadgeDollarSign },
   ];
 
   return (

@@ -69,7 +69,7 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
 
         {/* Main Content */}
         <div
-          className="min-h-screen flex-1 transition-all duration-300 md:pl-[var(--sidebar-width)]"
+          className="min-h-screen flex-1 transition-all duration-300 md:pl-(--sidebar-width)"
           style={
             {
               "--sidebar-width": `${desktopSidebarWidth}px`,
@@ -82,7 +82,7 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
             user={user}
           />
 
-          <main className="p-4 md:p-6">{children}</main>
+          <main>{children}</main>
         </div>
       </div>
     </div>

@@ -170,3 +170,95 @@ model GeoIpCache {
   @@index([updatedAt])
   @@map("geo_ip_cache")
 }
+
+model PricingSettings {
+  id                 Int      @id
+  pricingPageEnabled Boolean  @default(true) @map("pricing_page_enabled")
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  @@map("pricing_settings")
+}
+
+model PricingPageContent {
+  id         Int      @id @default(autoincrement())
+  locale     String
+  pageType   String   @map("page_type")
+  sectionKey String   @map("section_key")
+  content    Json
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@unique([locale, pageType, sectionKey])
+  @@index([locale, pageType])
+  @@map("pricing_page_contents")
+}
+
+model PricingPlan {
+  id           String               @id @default(cuid())
+  locale       String
+  planKey      String               @map("plan_key")
+  order        Int                  @default(0)
+  enabled      Boolean              @default(true)
+  name         String
+  tagline      String
+  badge        String?
+  icon         String
+  accent       String
+  usersLabel   String?              @map("users_label")
+  usersCount   Int?                 @map("users_count")
+  currency     String?
+  setupFee     Decimal?             @map("setup_fee") @db.Decimal(12, 2)
+  monthlyFee   Decimal?             @map("monthly_fee") @db.Decimal(12, 2)
+  quarterlyFee Decimal?             @map("quarterly_fee") @db.Decimal(12, 2)
+  serverFee    Decimal?             @map("server_fee") @db.Decimal(12, 2)
+  cta          String
+  createdAt    DateTime             @default(now()) @map("created_at")
+  updatedAt    DateTime             @updatedAt @map("updated_at")
+  features     PricingPlanFeature[]
+
+  @@unique([locale, planKey])
+  @@index([locale, order])
+  @@map("pricing_plans")
+}
+
+model PricingPlanFeature {
+  id        String      @id @default(cuid())
+  planId    String      @map("plan_id")
+  order     Int         @default(0)
+  text      String
+  createdAt DateTime    @default(now()) @map("created_at")
+  updatedAt DateTime    @updatedAt @map("updated_at")
+  plan      PricingPlan @relation(fields: [planId], references: [id], onDelete: Cascade)
+
+  @@index([planId, order])
+  @@map("pricing_plan_features")
+}
+
+model PricingFaq {
+  id        String   @id @default(cuid())
+  locale    String
+  pageType  String   @map("page_type")
+  order     Int      @default(0)
+  enabled   Boolean  @default(true)
+  question  String
+  answer    String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([locale, pageType, order])
+  @@map("pricing_faqs")
+}
+
+model PricingModule {
+  id        String   @id @default(cuid())
+  locale    String
+  order     Int      @default(0)
+  enabled   Boolean  @default(true)
+  label     String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([locale, order])
+  @@map("pricing_modules")
+}

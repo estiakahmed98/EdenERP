@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
 import { CheckCircle2 } from "lucide-react";
+
+import type { PricingPageData } from "@/lib/pricing/types";
+
 import { BillingCycle, CurrencyCode, ERPPlan } from "./types";
 import { formatCurrency, getPerUserMonthly } from "./utils";
 import {
@@ -15,15 +17,22 @@ interface PlanCardProps {
   plan: ERPPlan;
   billing: BillingCycle;
   currency: CurrencyCode;
+  labels: PricingPageData["packagePricing"];
+  includedFeaturesHeading?: string;
   onBuyNow: () => void;
 }
 
-export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
-  const t = useTranslations("pages.pricing");
-  const tPackage = useTranslations("pages.pricing.packagePricing");
-  const perYearLabel = tPackage("perYear");
-  const perMonthUserLabel = tPackage("perUserPerMonth");
-  const totalMonthLabel = tPackage("totalPerMonth");
+export function PlanCard({
+  plan,
+  billing,
+  currency,
+  labels,
+  includedFeaturesHeading,
+  onBuyNow,
+}: PlanCardProps) {
+  const perYearLabel = labels.perYear ?? "Per year";
+  const perMonthUserLabel = labels.perUserPerMonth ?? "per user / month";
+  const totalMonthLabel = labels.totalPerMonth ?? "Total / month";
 
   const isEnterprise = plan.id === "enterprise";
   const hasPricing = Boolean(plan.quarterlyFee || plan.monthlyFee);
@@ -40,33 +49,30 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
   let originalSecondaryPrice: number | null = null;
   let savingsAmount: number | null = null;
   let details: { label: string; amount: number; currency: string }[] = [];
-  let displayCurrency: CurrencyCode =
+  const displayCurrency: CurrencyCode =
     plan.currency ?? (isEnterprise ? "USD" : currency);
   const sourceCurrency: CurrencyCode = plan.currency ?? "BDT";
 
   if (plan.monthlyFee) {
     mainPrice = billing === "yearly" ? plan.monthlyFee * 12 : plan.monthlyFee;
     mainPriceLabel =
-      billing === "yearly" ? perYearLabel : tPackage("monthlyCharge");
-    secondaryPrice = null;
-    secondaryPriceLabel = null;
-    originalMainPrice = null;
-    originalSecondaryPrice = null;
-    savingsAmount = null;
+      billing === "yearly"
+        ? perYearLabel
+        : (labels.monthlyCharge ?? "Monthly charge");
 
     details = [
       {
-        label: tPackage("monthlyCharge"),
+        label: labels.monthlyCharge ?? "Monthly charge",
         amount: plan.monthlyFee,
         currency: "USD",
       },
       {
-        label: tPackage("serverMaintenance"),
+        label: labels.serverMaintenance ?? "Server maintenance",
         amount: plan.serverFee ?? 0,
         currency: "USD",
       },
       {
-        label: tPackage("oneTimeSetup"),
+        label: labels.oneTimeSetup ?? "One-time setup",
         amount: plan.setupFee ?? 0,
         currency: "USD",
       },
@@ -97,7 +103,6 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
       billing === "quarterly"
         ? perUserMonthly
         : null;
-    originalSecondaryPrice = null;
     savingsAmount =
       billing === "yearly" ||
       billing === "semiannual" ||
@@ -107,7 +112,7 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
 
     details = [
       {
-        label: tPackage("oneTimeSetup"),
+        label: labels.oneTimeSetup ?? "One-time setup",
         amount: plan.setupFee ?? 0,
         currency: "BDT",
       },
@@ -133,7 +138,7 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
         />
       )}
       {plan.badge && (
-        <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-emerald-600 px-5 py-1.5 text-xs font-bold text-white shadow-lg shadow-emerald-900/20 whitespace-nowrap">
+        <div className="absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-emerald-600 px-5 py-1.5 text-xs font-bold whitespace-nowrap text-white shadow-lg shadow-emerald-900/20">
           {plan.badge}
         </div>
       )}
@@ -188,7 +193,7 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
                 : "text-slate-500 dark:text-slate-400"
             }`}
           >
-            {tPackage("usersLabel")}
+            {labels.usersLabel ?? "users"}
           </div>
         </div>
       )}
@@ -250,9 +255,10 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
           </p>
           {savingsAmount !== null && savingsAmount > 0 && (
             <p className="mt-1 text-sm font-semibold text-emerald-500">
-              {tPackage("youSave", {
-                amount: formatCurrency(savingsAmount, displayCurrency, "BDT"),
-              })}
+              {(labels.youSave ?? "You save {amount} / month").replace(
+                "{amount}",
+                formatCurrency(savingsAmount, displayCurrency, "BDT"),
+              )}
             </p>
           )}
         </div>
@@ -320,7 +326,7 @@ export function PlanCard({ plan, billing, currency, onBuyNow }: PlanCardProps) {
               isHighlighted ? "text-slate-500" : "text-slate-400"
             }`}
           >
-            {t("includedFeaturesHeading")}
+            {includedFeaturesHeading ?? "Included features"}
           </div>
           <div className="space-y-3">
             {plan.features.map((feature: string, idx: number) => (

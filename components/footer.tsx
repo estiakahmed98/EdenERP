@@ -79,9 +79,19 @@ const socialLinks = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({
+  showPricing = true,
+}: {
+  showPricing?: boolean;
+}) {
   const t = useTranslations("layout.footer");
   const currentYear = new Date().getFullYear();
+  const resolvedSections = footerSections.map((section) => ({
+    ...section,
+    links: showPricing
+      ? section.links
+      : section.links.filter((link) => link.href !== "/pricing"),
+  }));
 
   return (
     <footer className="bn-content border-t border-border bg-background text-foreground">
@@ -147,7 +157,7 @@ export default function Footer() {
 
           {/* Links Area */}
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-6">
-            {footerSections.map((section) => (
+            {resolvedSections.map((section) => (
               <div
                 key={section.titleKey}
                 className="rounded-2xl bg-background/60 p-4 sm:bg-transparent sm:p-0"

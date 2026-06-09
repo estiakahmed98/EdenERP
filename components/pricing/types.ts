@@ -1,3 +1,8 @@
+import type {
+  PricingPageData,
+  PricingPlanData,
+} from "@/lib/pricing/types";
+
 export type BillingCycle = "yearly" | "semiannual" | "quarterly" | "monthly";
 export type CurrencyCode = "BDT" | "USD";
 export type PageType = "pricing" | "standard" | "success-packs";
@@ -26,19 +31,5 @@ export interface SuccessPack {
   highlighted?: boolean;
 }
 
-export interface ERPPlan {
-  id: string;
-  name: string;
-  tagline: string;
-  badge?: string | null;
-  icon: string;
-  accent: string;
-  users?: number | string;
-  currency?: CurrencyCode;
-  setupFee?: number;
-  quarterlyFee?: number;
-  monthlyFee?: number;
-  serverFee?: number;
-  cta: string;
-  features: string[];
-}
+export type ERPPlan = PricingPlanData;
+export type PricingContent = PricingPageData;

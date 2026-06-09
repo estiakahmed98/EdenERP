@@ -335,7 +335,11 @@ const navItems: NavItem[] = [
   { labelKey: "nav.help", href: "/help" },
 ];
 
-export default function Header() {
+export default function Header({
+  showPricing = true,
+}: {
+  showPricing?: boolean;
+}) {
   const t = useTranslations("layout.header");
   const pathname = usePathname();
   const navId = useId();
@@ -346,6 +350,9 @@ export default function Header() {
   const [openDesktopMenu, setOpenDesktopMenu] = useState<MenuId | null>(null);
   const [mobileOpenMenu, setMobileOpenMenu] = useState<MenuId | null>(null);
   const [mobileDrawerTop, setMobileDrawerTop] = useState(0);
+  const visibleNavItems = showPricing
+    ? navItems
+    : navItems.filter((item) => item.href !== "/pricing");
 
   const isActivePath = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -434,7 +441,7 @@ export default function Header() {
         </Link>
 
         <div ref={desktopNavRef} className="hidden items-center gap-6 xl:flex">
-          {navItems.map((item) => (
+          {visibleNavItems.map((item) => (
             <div key={item.href} className="relative">
               {item.megaMenu ? (
                 <>
@@ -753,17 +760,19 @@ export default function Header() {
               )}
             </div>
 
-            <Link
-              href="/pricing"
-              className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
-                isActivePath("/pricing")
-                  ? "bg-primary/10 text-primary ring-1 ring-primary/15"
-                  : "text-foreground hover:bg-accent/10"
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t("nav.pricing")}
-            </Link>
+            {showPricing && (
+              <Link
+                href="/pricing"
+                className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
+                  isActivePath("/pricing")
+                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                    : "text-foreground hover:bg-accent/10"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t("nav.pricing")}
+              </Link>
+            )}
 
             <Link
               href="/help"

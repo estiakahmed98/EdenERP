@@ -1,43 +1,36 @@
-"use client";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import {
-  PricingPage,
-  StandardPlanPage,
-  SuccessPacksPage,
-  PageType,
-} from "@/components/pricing";
+import PricingPageClient from "@/components/pricing/PricingPageClient";
+import { getPricingPageData, getPricingSiteConfig } from "@/lib/pricing/service";
+import type { PricingLocale } from "@/lib/pricing/types";
 
-export default function PricingPageRoot() {
-  const router = useRouter();
-  const [page, setPage] = useState<PageType>("pricing");
-  const [selectedPlanId, setSelectedPlanId] = useState<string>();
+interface PricingRouteProps {
+  params: Promise<{ locale: PricingLocale }>;
+}
 
-  if (page === "standard") {
-    return (
-      <StandardPlanPage
-        selectedPlanId={selectedPlanId}
-        onBack={() => setPage("pricing")}
-        onReadMore={() => setPage("success-packs")}
-      />
-    );
+export async function generateMetadata({
+  params,
+}: PricingRouteProps): Promise<Metadata> {
+  const { locale } = await params;
+  const data = await getPricingPageData(locale);
+
+  return {
+    title: data.metadata.title,
+    description: data.metadata.description,
+  };
+}
+
+export default async function PricingPageRoot({ params }: PricingRouteProps) {
+  const { locale } = await params;
+  const [config, data] = await Promise.all([
+    getPricingSiteConfig(),
+    getPricingPageData(locale),
+  ]);
+
+  if (!config.pricingPageEnabled) {
+    notFound();
   }
-  if (page === "success-packs") {
-    return <SuccessPacksPage onBack={() => setPage("pricing")} />;
-  }
-  return (
-    <PricingPage
-      onBuyNow={(planId) => {
-        if (planId === "enterprise") {
-          router.push("/contact");
-          return;
-        }
 
-        setSelectedPlanId(planId);
-        setPage("standard");
-      }}
-      onSuccessPacks={() => setPage("success-packs")}
-    />
-  );
+  return <PricingPageClient data={data} />;
 }
