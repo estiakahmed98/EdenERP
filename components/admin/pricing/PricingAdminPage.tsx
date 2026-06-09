@@ -377,8 +377,12 @@ function SectionCard({
   className?: string;
 }) {
   return (
-    <div className={`rounded-2xl bg-white p-6 shadow-sm ${className}`}>
-      <h2 className="mb-4 text-base font-semibold text-slate-800">{title}</h2>
+    <div
+      className={`rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-800 dark:shadow-none ${className}`}
+    >
+      <h2 className="mb-4 text-base font-semibold text-slate-900 dark:text-slate-200">
+        {title}
+      </h2>
       {children}
     </div>
   );
@@ -393,7 +397,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400">
+      <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-300">
         {label}
       </span>
       {children}
@@ -427,7 +431,7 @@ function PlanCard({
     <div
       onClick={onActivate}
       className={[
-        "w-[280px] shrink-0 cursor-pointer rounded-xl border bg-white p-4 transition-all",
+        "w-[280px] shrink-0 cursor-pointer rounded-xl border bg-white p-4 transition-all dark:bg-slate-800",
         isActive
           ? "border-[2px] shadow-sm"
           : "border-slate-200 opacity-70 hover:opacity-90",
@@ -443,10 +447,10 @@ function PlanCard({
           {plan.icon}
         </div>
         <div className="min-w-0 flex-1">
-          <div className="truncate text-sm font-semibold text-slate-800">
+          <div className="truncate text-sm font-semibold text-slate-800 dark:text-slate-200">
             {plan.name || "Unnamed plan"}
           </div>
-          <div className="truncate text-xs text-slate-400">
+          <div className="truncate text-xs text-slate-400 dark:text-slate-300">
             {plan.tagline || "—"}
           </div>
         </div>
@@ -471,12 +475,14 @@ function PlanCard({
           checked={plan.enabled}
           onCheckedChange={(checked) => update({ enabled: checked })}
         />
-        <span className="ml-1 flex-1 text-xs text-slate-500">Enabled</span>
+        <span className="ml-1 flex-1 text-xs text-slate-500 dark:text-slate-300">
+          Enabled
+        </span>
         <button
           type="button"
           disabled={index === 0}
           onClick={() => onMove(-1)}
-          className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-slate-400 hover:bg-slate-50 disabled:opacity-30"
+          className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-slate-400 hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700"
         >
           ←
         </button>
@@ -484,7 +490,7 @@ function PlanCard({
           type="button"
           disabled={index === totalPlans - 1}
           onClick={() => onMove(1)}
-          className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-slate-400 hover:bg-slate-50 disabled:opacity-30"
+          className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-slate-400 hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700"
         >
           →
         </button>
@@ -588,14 +594,14 @@ function PlanCard({
         </div>
 
         {/* Pricing */}
-        <div className="rounded-lg bg-slate-50 p-2.5">
-          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+        <div className="rounded-lg bg-slate-50 p-2.5 dark:bg-slate-700/30">
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-300">
             Pricing
           </p>
           <div className="grid grid-cols-2 gap-2">
             <Field label="Setup fee">
               <Input
-                className="h-8 text-xs"
+                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
                 value={plan.setupFee}
                 onChange={(e) => update({ setupFee: e.target.value })}
                 placeholder="0"
@@ -603,7 +609,7 @@ function PlanCard({
             </Field>
             <Field label="Monthly fee">
               <Input
-                className="h-8 text-xs"
+                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
                 value={plan.monthlyFee}
                 onChange={(e) => update({ monthlyFee: e.target.value })}
                 placeholder="0"
@@ -611,7 +617,7 @@ function PlanCard({
             </Field>
             <Field label="Quarterly fee">
               <Input
-                className="h-8 text-xs"
+                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
                 value={plan.quarterlyFee}
                 onChange={(e) => update({ quarterlyFee: e.target.value })}
                 placeholder="0"
@@ -619,7 +625,7 @@ function PlanCard({
             </Field>
             <Field label="Server fee">
               <Input
-                className="h-8 text-xs"
+                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
                 value={plan.serverFee}
                 onChange={(e) => update({ serverFee: e.target.value })}
                 placeholder="0"
@@ -988,9 +994,7 @@ export default function PricingAdminPage({
       });
       const result = await response.json();
       if (!response.ok) {
-        const details = result.details
-          ? JSON.stringify(result.details)
-          : null;
+        const details = result.details ? JSON.stringify(result.details) : null;
         setError(
           details
             ? `${result.error ?? "Failed to save pricing data"}: ${details}`
@@ -1014,7 +1018,7 @@ export default function PricingAdminPage({
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F4F8F7] to-[#EEEFE0] p-4 sm:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#F4F8F7] to-[#EEEFE0] dark:from-[#071218] dark:to-[#061217] p-4 sm:p-6">
       <div className="container mx-auto space-y-6">
         {/* ── Header ──────────────────────────────────────────────────────── */}
         <div className="rounded-2xl bg-gradient-to-r from-[#0E4B4B] to-[#086666] p-6 text-white shadow-lg">
@@ -1047,7 +1051,7 @@ export default function PricingAdminPage({
                 asChild
                 type="button"
                 variant="outline"
-                className="rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white"
+                className="rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white hover:text-white"
               >
                 <a href={`/${locale}/pricing`} target="_blank" rel="noreferrer">
                   Preview ↗

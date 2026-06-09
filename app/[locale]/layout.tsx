@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import AnalyticsTracker from "@/components/admin/AnalyticsTracker";
+import AuthSessionProvider from "@/lib/session-provider";
 import { isLocale, locales } from "@/i18n/config";
 import { getPricingSiteConfig } from "@/lib/pricing/service";
 
@@ -14,7 +15,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -31,10 +32,12 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={activeLocale} messages={messages}>
-      <AnalyticsTracker />
-      <Header showPricing={pricingConfig.pricingPageEnabled} />
-      {children}
-      <Footer showPricing={pricingConfig.pricingPageEnabled} />
+      <AuthSessionProvider>
+        <AnalyticsTracker />
+        <Header showPricing={pricingConfig.pricingPageEnabled} />
+        {children}
+        <Footer showPricing={pricingConfig.pricingPageEnabled} />
+      </AuthSessionProvider>
     </NextIntlClientProvider>
   );
 }

@@ -6,6 +6,8 @@ import { useTranslations } from "next-intl";
 import LanguageSwitcher from "@/components/language-switcher";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { Link, usePathname } from "@/i18n/navigation";
+import NextLink from "next/link";
+import { useSession } from "next-auth/react";
 
 type MegaMenuLink = {
   labelKey: string;
@@ -190,7 +192,6 @@ const industriesMegaMenu: MegaMenuColumn[] = [
         labelKey: "menu.industries.guestHouse",
         href: "/industries/food&hospitality/guest-house",
       },
-      
     ],
   },
   {
@@ -342,6 +343,7 @@ export default function Header({
 }) {
   const t = useTranslations("layout.header");
   const pathname = usePathname();
+  const { data: session } = useSession();
   const navId = useId();
   const headerRef = useRef<HTMLElement | null>(null);
   const desktopNavRef = useRef<HTMLDivElement | null>(null);
@@ -426,7 +428,10 @@ export default function Header({
                 '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
             }}
           >
-            Adon<span className="mx-1 text-slate-500/90 sm:mx-1.5 dark:text-muted-foreground/70">|</span>
+            Adon
+            <span className="mx-1 text-slate-500/90 sm:mx-1.5 dark:text-muted-foreground/70">
+              |
+            </span>
           </span>
 
           <span
@@ -567,14 +572,25 @@ export default function Header({
             <LanguageSwitcher variant="desktop" />
             <ThemeSwitcher variant="desktop" />
 
-            <div className="flex items-center gap-3 rounded-xl bg-primary text-primary-foreground">
-              <Link
-                href="/auth/signin"
-                className="rounded-xl px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors"
-              >
-                {t("nav.signIn")}
-              </Link>
-            </div>
+            {session?.user ? (
+              <div className="flex items-center gap-3 rounded-xl bg-primary text-primary-foreground">
+                <NextLink
+                  href="/admin"
+                  className="rounded-xl px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors"
+                >
+                  {session.user.name ?? session.user.email}
+                </NextLink>
+              </div>
+            ) : (
+              <div className="flex items-center gap-3 rounded-xl bg-primary text-primary-foreground">
+                <Link
+                  href="/auth/signin"
+                  className="rounded-xl px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors"
+                >
+                  {t("nav.signIn")}
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </nav>
@@ -585,7 +601,9 @@ export default function Header({
           style={{
             top: mobileDrawerTop,
             maxHeight:
-              mobileDrawerTop > 0 ? `calc(100dvh - ${mobileDrawerTop}px)` : "100dvh",
+              mobileDrawerTop > 0
+                ? `calc(100dvh - ${mobileDrawerTop}px)`
+                : "100dvh",
           }}
         >
           <div className="mb-5">
@@ -790,13 +808,23 @@ export default function Header({
           <div className="mt-8 space-y-4">
             <LanguageSwitcher variant="mobile" />
 
-            <Link
-              href="/auth/signin"
-              className="block w-full rounded-2xl border border-border bg-card px-5 py-4 text-center text-base font-bold text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t("nav.signIn")}
-            </Link>
+            {session?.user ? (
+              <NextLink
+                href="/admin"
+                className="block w-full rounded-2xl border border-border bg-card px-5 py-4 text-center text-base font-bold text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {session.user.name ?? session.user.email}
+              </NextLink>
+            ) : (
+              <Link
+                href="/auth/signin"
+                className="block w-full rounded-2xl border border-border bg-card px-5 py-4 text-center text-base font-bold text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {t("nav.signIn")}
+              </Link>
+            )}
           </div>
         </div>
       )}
