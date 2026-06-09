@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useTransition, useRef, useCallback } from "react";
+import { useState, useTransition, useRef, useCallback, useMemo } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -774,6 +774,15 @@ export default function PricingAdminPage({
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
+  const initialSnapshotRef = useRef<string>(
+    JSON.stringify(buildAdminFormState(initialData)),
+  );
+
+  const isDirty = useMemo(
+    () => JSON.stringify(form) !== initialSnapshotRef.current,
+    [form],
+  );
+
   /* Carousel state */
   const [activePlanIndex, setActivePlanIndex] = useState(0);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -816,7 +825,9 @@ export default function PricingAdminPage({
         setError(payload.error ?? "Failed to load locale data");
         return;
       }
-      setForm(buildAdminFormState(payload));
+      const nextForm = buildAdminFormState(payload);
+      setForm(nextForm);
+      initialSnapshotRef.current = JSON.stringify(nextForm);
       setActivePlanIndex(0);
     });
   }
@@ -1002,7 +1013,9 @@ export default function PricingAdminPage({
         );
         return;
       }
-      setForm(buildAdminFormState(result.data));
+      const savedForm = buildAdminFormState(result.data);
+      setForm(savedForm);
+      initialSnapshotRef.current = JSON.stringify(savedForm);
       setActivePlanIndex(0);
       setStatus("Pricing content saved.");
     });
@@ -1038,15 +1051,7 @@ export default function PricingAdminPage({
                 <option value="en">English</option>
                 <option value="bn">Bangla</option>
               </select>
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={handleSave}
-                disabled={isPending}
-                className="font-medium"
-              >
-                {isPending ? "Saving…" : "Save changes"}
-              </Button>
+              {/* header save removed — using floating save button */}
               <Button
                 asChild
                 type="button"
@@ -1777,6 +1782,22 @@ export default function PricingAdminPage({
             </Field>
           </div>
         </SectionCard>
+      </div>
+
+      {/* Floating Save button (bottom-right). Pulses when there are unsaved changes. */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          type="button"
+          onClick={handleSave}
+          disabled={!isDirty || isPending}
+          className={
+            !isDirty || isPending
+              ? "inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200 text-slate-600 shadow-sm cursor-not-allowed opacity-80"
+              : "inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-600 text-white shadow-lg hover:bg-teal-500 ring-2 ring-teal-400 animate-pulse"
+          }
+        >
+          {isPending ? "Saving…" : "Save changes"}
+        </button>
       </div>
     </div>
   );
