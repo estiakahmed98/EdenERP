@@ -25,9 +25,24 @@
       "matchedPercent": "৯৪%",
       "recentExpenses": "সাম্প্রতিক খরচ",
       "recentExpensesList": [
-        { "name": "Starbucks Coffee", "amount": "$১২.৫০", "date": "আজ", "status": "approved" },
-        { "name": "Uber Ride", "amount": "$২৪.০০", "date": "গতকাল", "status": "pending" },
-        { "name": "Adobe Creative Cloud", "amount": "$৫২.৯৯", "date": "১২ মার্চ, ২০২৪", "status": "approved" }
+        {
+          "name": "Starbucks Coffee",
+          "amount": "$১২.৫০",
+          "date": "আজ",
+          "status": "approved"
+        },
+        {
+          "name": "Uber Ride",
+          "amount": "$২৪.০০",
+          "date": "গতকাল",
+          "status": "pending"
+        },
+        {
+          "name": "Adobe Creative Cloud",
+          "amount": "$৫২.৯৯",
+          "date": "১২ মার্চ, ২০২৪",
+          "status": "approved"
+        }
       ]
     },
     "badges": {
@@ -41,10 +56,22 @@
     "title": "ব্যয়ের সম্পূর্ণ নিয়ন্ত্রণ আপনার হাতে",
     "description": "ভার্চুয়াল ও ফিজিক্যাল কোম্পানি কার্ড ইস্যু করুন, ব্যয় সীমা নির্ধারণ করুন এবং রিয়েল-টাইমে প্রতিটি লেনদেন পর্যবেক্ষণ করুন।",
     "features": [
-      { "text": "প্রতি কার্ডে কাস্টম ব্যয় সীমা নির্ধারণ", "color": "emerald" },
-      { "text": "রিয়েল-টাইম লেনদেন সতর্কতা", "color": "cyan" },
-      { "text": "মার্চেন্ট ক্যাটাগরি নিয়ন্ত্রণ", "color": "purple" },
-      { "text": "রসিদ সহ অটো-পুনর্মিলন", "color": "blue" }
+      {
+        "text": "প্রতি কার্ডে কাস্টম ব্যয় সীমা নির্ধারণ",
+        "color": "emerald"
+      },
+      {
+        "text": "রিয়েল-টাইম লেনদেন সতর্কতা",
+        "color": "cyan"
+      },
+      {
+        "text": "মার্চেন্ট ক্যাটাগরি নিয়ন্ত্রণ",
+        "color": "purple"
+      },
+      {
+        "text": "রসিদ সহ অটো-পুনর্মিলন",
+        "color": "blue"
+      }
     ],
     "demo": {
       "cardTitle": "কোম্পানি কার্ড",
@@ -90,10 +117,26 @@
     "demo": {
       "title": "বাকি অনুমোদন",
       "teamMembers": [
-        { "name": "সারাহ জনসন", "role": "সিইও", "pending": "৩" },
-        { "name": "মাইকেল চেন", "role": "ফাইন্যান্স", "pending": "২" },
-        { "name": "এমিলি ডেভিস", "role": "মার্কেটিং", "pending": "১" },
-        { "name": "জেমস উইলসন", "role": "বিক্রয়", "pending": "৪" }
+        {
+          "name": "সারাহ জনসন",
+          "role": "সিইও",
+          "pending": "৩"
+        },
+        {
+          "name": "মাইকেল চেন",
+          "role": "ফাইন্যান্স",
+          "pending": "২"
+        },
+        {
+          "name": "এমিলি ডেভিস",
+          "role": "মার্কেটিং",
+          "pending": "১"
+        },
+        {
+          "name": "জেমস উইলসন",
+          "role": "বিক্রয়",
+          "pending": "৪"
+        }
       ],
       "reviewButton": "পর্যালোচনা"
     }
@@ -104,12 +147,42 @@
     "title": "আপনার অর্থ কোথায় ব্যয় হচ্ছে জানুন",
     "description": "ভিজুয়াল ব্রেকডাউন এবং ট্রেন্ড সহ অটো-বিভাগীকৃত খরচ।",
     "categories": [
-      { "name": "ভাড়া ও ইউটিলিটি", "amount": "$২,৫০০", "percentage": "২৮", "color": "emerald" },
-      { "name": "বেতন", "amount": "$১৫,০০০", "percentage": "৪২", "color": "purple" },
-      { "name": "অফিস সরবরাহ", "amount": "$৪৫০", "percentage": "৫", "color": "cyan" },
-      { "name": "ভ্রমণ", "amount": "$১,২০০", "percentage": "৮", "color": "orange" },
-      { "name": "মার্কেটিং", "amount": "$৩,০০০", "percentage": "১২", "color": "pink" },
-      { "name": "সফটওয়্যার", "amount": "$৮০০", "percentage": "৫", "color": "blue" }
+      {
+        "name": "ভাড়া ও ইউটিলিটি",
+        "amount": "$২,৫০০",
+        "percentage": "২৮",
+        "color": "emerald"
+      },
+      {
+        "name": "বেতন",
+        "amount": "$১৫,০০০",
+        "percentage": "৪২",
+        "color": "purple"
+      },
+      {
+        "name": "অফিস সরবরাহ",
+        "amount": "$৪৫০",
+        "percentage": "৫",
+        "color": "cyan"
+      },
+      {
+        "name": "ভ্রমণ",
+        "amount": "$১,২০০",
+        "percentage": "৮",
+        "color": "orange"
+      },
+      {
+        "name": "মার্কেটিং",
+        "amount": "$৩,০০০",
+        "percentage": "১২",
+        "color": "pink"
+      },
+      {
+        "name": "সফটওয়্যার",
+        "amount": "$৮০০",
+        "percentage": "৫",
+        "color": "blue"
+      }
     ]
   },
   "mobileSection": {
@@ -124,8 +197,14 @@
       "appName": "খরচ ট্র্যাকার",
       "scannedLabel": "রসিদ স্ক্যান করা হয়েছে",
       "items": [
-        { "name": "স্টারবাকস কফি", "amount": "$১২.৫০" },
-        { "name": "উবার রাইড", "amount": "$২৪.০০" }
+        {
+          "name": "স্টারবাকস কফি",
+          "amount": "$১২.৫০"
+        },
+        {
+          "name": "উবার রাইড",
+          "amount": "$২৪.০০"
+        }
       ],
       "total": "মোট",
       "totalAmount": "$৩৬.৫০",
@@ -138,12 +217,30 @@
     "title": "আপনার স্ট্যাকের সাথে সংযোগ করুন",
     "description": "আপনার প্রিয় টুল এবং অ্যাকাউন্টিং সফটওয়্যারের সাথে নির্বিঘ্ন ইন্টিগ্রেশন।",
     "integrations": [
-      { "name": "কুইকবুকস", "color": "emerald" },
-      { "name": "জিরো", "color": "cyan" },
-      { "name": "স্ট্রাইপ", "color": "purple" },
-      { "name": "স্ল্যাক", "color": "blue" },
-      { "name": "এক্সপেন্সিফাই", "color": "orange" },
-      { "name": "এসএপি", "color": "indigo" }
+      {
+        "name": "কুইকবুকস",
+        "color": "emerald"
+      },
+      {
+        "name": "জিরো",
+        "color": "cyan"
+      },
+      {
+        "name": "স্ট্রাইপ",
+        "color": "purple"
+      },
+      {
+        "name": "স্ল্যাক",
+        "color": "blue"
+      },
+      {
+        "name": "এক্সপেন্সিফাই",
+        "color": "orange"
+      },
+      {
+        "name": "এসএপি",
+        "color": "indigo"
+      }
     ]
   },
   "testimonialSection": {
@@ -157,6 +254,6 @@
     "description": "কোনো মাসিক ফি নয়, কোনো লুকানো খরচ নয়। আনলিমিটেড কার্ড সুবিধাসহ সম্পূর্ণ বিনামূল্যে ব্যবহার করুন, যতদিন ইচ্ছা।",
     "trialButton": "বিনামূল্যে ট্রায়াল শুরু করুন",
     "salesButton": "বিক্রয়ের সাথে যোগাযোগ করুন",
-    "footerText": "• চিরকাল বিনামূল্যে পরিকল্পনা • যেকোনো সময় বাতিল করুন"
+    "footerText": "• যেকোনো সময় বাতিল করুন"
   }
 }
