@@ -431,9 +431,9 @@ function PlanCard({
     <div
       onClick={onActivate}
       className={[
-        "w-70 shrink-0 cursor-pointer rounded-xl border bg-white p-4 transition-all dark:bg-slate-800",
+        "w-[280px] shrink-0 cursor-pointer rounded-xl border bg-white p-4 transition-all dark:bg-slate-800",
         isActive
-          ? "border-70 shadow-sm"
+          ? "border-[2px] shadow-sm"
           : "border-slate-200 opacity-70 hover:opacity-90",
       ].join(" ")}
       style={isActive ? { borderColor: plan.accent } : {}}
@@ -1018,10 +1018,10 @@ export default function PricingAdminPage({
   );
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#F4F8F7] to-[#EEEFE0] dark:from-[#071218] dark:to-[#061217] p-4 sm:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#F4F8F7] to-[#EEEFE0] dark:from-[#071218] dark:to-[#061217] p-4 sm:p-6">
       <div className="container mx-auto space-y-6">
         {/* ── Header ──────────────────────────────────────────────────────── */}
-        <div className="rounded-2xl bg-linear-to-r from-[#0E4B4B] to-[#086666] p-6 text-white shadow-lg">
+        <div className="rounded-2xl bg-gradient-to-r from-[#0E4B4B] to-[#086666] p-6 text-white shadow-lg">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h1 className="text-2xl font-semibold">Pricing management</h1>
