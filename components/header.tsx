@@ -486,7 +486,7 @@ export default function Header({
                       id={`${navId}-${item.id}-panel`}
                       role="dialog"
                       aria-label={`${t(item.labelKey)} menu`}
-                      className="fixed left-1/2 top-[92px] z-50 w-[min(calc(100vw-2rem),1120px)] -translate-x-1/2 overflow-hidden rounded-2xl border border-border bg-popover shadow-2xl"
+                      className="fixed left-1/2 top-23 z-50 w-[min(calc(100vw-2rem),1120px)] -translate-x-1/2 overflow-hidden rounded-2xl border border-border bg-popover shadow-2xl"
                     >
                       <div className="border-b border-border bg-linear-to-r from-background via-background to-muted/20 px-6 py-4">
                         <p className="text-sm font-semibold text-popover-foreground">
@@ -700,7 +700,7 @@ export default function Header({
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className={`block break-words rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
+                                className={`block wrap-break-word rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
                                   isActivePath(link.href)
                                     ? "bg-primary/10 text-primary ring-1 ring-primary/15"
                                     : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
@@ -756,7 +756,7 @@ export default function Header({
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
-                                className={`block break-words rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
+                                className={`block wrap-break-word rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
                                   isActivePath(link.href)
                                     ? "bg-primary/10 text-primary ring-1 ring-primary/15"
                                     : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
