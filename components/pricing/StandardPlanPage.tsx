@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 import { BillingCycle, PricingContent } from "./types";
 import {
@@ -10,6 +9,7 @@ import {
   YEARLY_DISCOUNT_MULTIPLIER,
 } from "./constants";
 import { formatCurrency, getPerUserMonthly } from "./utils";
+import { useRouter } from "@/i18n/navigation";
 
 interface StandardPlanPageProps {
   data: PricingContent;
@@ -27,6 +27,7 @@ export function StandardPlanPage({
   const tStandard = data.standardPlanPage;
   const packages = data.erpPackages;
   const router = useRouter();
+  const isBengali = data.locale === "bn";
   const pricingPlan =
     packages.find((plan) => plan.id === selectedPlanId) ??
     packages.find((plan) => plan.quarterlyFee) ??
@@ -65,9 +66,50 @@ export function StandardPlanPage({
       : userCount * pricePerUser;
   const monthlySavings = originalMonthly - monthly;
   const displayCurrency = pricingPlan.currency ?? "BDT";
+  const buyNowLabel = (() => {
+    const label = tStandard.priceSummary?.buyNow?.trim();
+    if (!label) {
+      return isBengali
+        ? "বিলিং সহ চেকআউট করুন"
+        : "Checkout with billing";
+    }
+
+    if (
+      label === "Contact sales" ||
+      label === "সেলসে যোগাযোগ করুন"
+    ) {
+      return isBengali
+        ? "বিলিং সহ চেকআউট করুন"
+        : "Checkout with billing";
+    }
+
+    return label;
+  })();
+
+  const handleCheckout = () => {
+    const checkoutPlanData = {
+      id: pricingPlan.id,
+      name: pricingPlan.name,
+      monthlyPrice: Number(monthly.toFixed(2)),
+      currency: displayCurrency,
+      userCount,
+      billingCycle: billing,
+      originalPrice: Number(originalMonthly.toFixed(2)),
+      savings: Number(monthlySavings.toFixed(2)),
+    };
+
+    localStorage.setItem("checkoutPlanData", JSON.stringify(checkoutPlanData));
+
+    router.push({
+      pathname: "/checkout",
+      query: {
+        plan: encodeURIComponent(JSON.stringify(checkoutPlanData)),
+      },
+    });
+  };
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_32%),linear-gradient(180deg,#ffffff_0%,#f8fafc_52%,#ecfdf5_100%)] dark:bg-slate-950">
+    <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_32%),linear-gradient(180deg,#ffffff_0%,#f8fafc_52%,#ecfdf5_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(20,184,166,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.10),transparent_30%),linear-gradient(180deg,#020617_0%,#0f172a_48%,#111827_100%)]">
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <button
           onClick={onBack}
@@ -145,21 +187,21 @@ export function StandardPlanPage({
 
           <div className="sticky top-6 h-fit rounded-2xl border border-white/80 bg-white/95 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900">
             <div className="mb-6 grid grid-cols-2 gap-2 rounded-xl border border-slate-200 bg-slate-50 p-1 dark:border-slate-700 dark:bg-slate-800/70 sm:grid-cols-4">
-              {(
-                ["yearly", "semiannual", "quarterly", "monthly"] as const
-              ).map((cycle) => (
-                <button
-                  key={cycle}
-                  onClick={() => setBilling(cycle)}
-                  className={`rounded-lg px-3 py-2 text-xs font-semibold transition-all ${
-                    billing === cycle
-                      ? "bg-slate-900 text-white shadow-sm dark:bg-emerald-600"
-                      : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                  }`}
-                >
-                  {data.hero.billingToggle?.[cycle]}
-                </button>
-              ))}
+              {(["yearly", "semiannual", "quarterly", "monthly"] as const).map(
+                (cycle) => (
+                  <button
+                    key={cycle}
+                    onClick={() => setBilling(cycle)}
+                    className={`rounded-lg px-3 py-2 text-xs font-semibold transition-all ${
+                      billing === cycle
+                        ? "bg-slate-900 text-white shadow-sm dark:bg-emerald-600"
+                        : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                    }`}
+                  >
+                    {data.hero.billingToggle?.[cycle]}
+                  </button>
+                ),
+              )}
             </div>
 
             <div className="border-t border-slate-200 pt-4 dark:border-slate-700">
@@ -209,10 +251,10 @@ export function StandardPlanPage({
             )}
 
             <button
-              onClick={() => router.push("/contact")}
+              onClick={handleCheckout}
               className="mt-5 w-full rounded-lg bg-slate-900 py-3 font-semibold text-white transition hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700"
             >
-              {tStandard.priceSummary?.buyNow}
+              {buyNowLabel}
             </button>
             <button className="mt-3 w-full rounded-lg border border-slate-200 py-2 text-sm font-medium text-slate-500 transition hover:bg-slate-50 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800">
               {tStandard.priceSummary?.quotaPrint}
