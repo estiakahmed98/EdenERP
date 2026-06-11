@@ -1,0 +1,41 @@
+{
+    "metadata": {
+        "title": "চেকআউট | Adon ERP",
+        "description": "আপনার অর্ডার নিরাপদে সম্পন্ন করুন। পেমেন্ট ও ডেলিভারির তথ্য দিন।"
+    },
+    "checkoutPage": {
+        "title": "নিরাপদ চেকআউট",
+        "subtitle": "আত্মবিশ্বাসের সাথে আপনার কেনাকাটা সম্পূর্ণ করুন",
+        "billingShipping": "বিলিং ও শিপিং",
+        "fullName": "পুরো নাম",
+        "phone": "ফোন",
+        "email": "ই-মেইল (ঐচ্ছিক)",
+        "district": "জেলা নির্বাচন করুন",
+        "areaCity": "এলাকা/শহর",
+        "deliveryAddress": "ডেলিভারি ঠিকানা",
+        "streetAddress": "রাস্তার ঠিকানা",
+        "createAccount": "একাউন্ট তৈরি করবেন?",
+        "orderNotes": "অর্ডার নোট (ঐচ্ছিক)",
+        "orderNotesPlaceholder": "যদি কোনো নির্দেশনা থাকে",
+        "yourOrder": "আপনার অর্ডার",
+        "items": "আইটেম",
+        "shipping": "ডেলিভারি চার্জ",
+        "free": "বিনামূল্যে",
+        "total": "মোট",
+        "priceDetails": "মূল্যের বিবরণ",
+        "billingCycleLabel": "বিলিং সাইকেল",
+        "cashOnDelivery": "ডেলিভারির সময় নগদে পেমেন্ট",
+        "cashOnDeliveryDesc": "ডেলিভারির সময় নগদে পেমেন্ট করুন।",
+        "sslcommerz": "SSLCOMMERZ এ পেমেন্ট করুন",
+        "sslcommerzDesc": "পাওয়ার্ড বাই SSLCOMMERZ",
+        "bkash": "বিক্যাশ এ পেমেন্ট করুন",
+        "bkashDesc": "বিক্যাশ এ পেমেন্ট করুন",
+        "termsAndConditions": "আমি ওয়েবসাইটের শর্তাবলী পড়েছি এবং সম্মতি জানাচ্ছি",
+        "continueShopping": "শপিং চালিয়ে যান",
+        "placeOrder": "অর্ডার করুন",
+        "backButton": "প্ল্যানে ফিরুন",
+        "orderSummary": "অর্ডার সামারি",
+        "perMonth": "/মাস",
+        "securePaymentText": "🔒 SSLCOMMERZ দ্বারা সুরক্ষিত পেমেন্ট"
+    }
+}

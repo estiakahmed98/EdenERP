@@ -1,0 +1,41 @@
+{
+    "metadata": {
+        "title": "Checkout | Adon ERP",
+        "description": "Complete your purchase securely. Provide payment and delivery information."
+    },
+    "checkoutPage": {
+        "title": "Secure Checkout",
+        "subtitle": "Complete your purchase with confidence",
+        "billingShipping": "Billing & Shipping",
+        "fullName": "Full Name",
+        "phone": "Phone",
+        "email": "E-mail (Optional)",
+        "district": "Choose District",
+        "areaCity": "Area/City",
+        "deliveryAddress": "Delivery Address",
+        "streetAddress": "Street Address",
+        "createAccount": "Create an account?",
+        "orderNotes": "Order Notes (optional)",
+        "orderNotesPlaceholder": "If you have any instruction",
+        "yourOrder": "Your order",
+        "items": "items",
+        "shipping": "Shipping",
+        "free": "Free",
+        "total": "Total",
+        "priceDetails": "Price Details",
+        "billingCycleLabel": "Billing Cycle",
+        "cashOnDelivery": "Cash on delivery",
+        "cashOnDeliveryDesc": "Pay with cash upon delivery.",
+        "sslcommerz": "Pay with SSLCOMMERZ",
+        "sslcommerzDesc": "Powered by SSLCOMMERZ",
+        "bkash": "Pay with bKash",
+        "bkashDesc": "Pay with bKash",
+        "termsAndConditions": "I have read and agree to the website terms and conditions",
+        "continueShopping": "Continue Shopping",
+        "placeOrder": "Place Order",
+        "backButton": "Back to Plans",
+        "orderSummary": "Order Summary",
+        "perMonth": "/month",
+        "securePaymentText": "🔒 Secure payment powered by SSLCOMMERZ"
+    }
+}
