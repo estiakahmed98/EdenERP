@@ -7,6 +7,7 @@ import LanguageSwitcher from "@/components/language-switcher";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { Link, usePathname } from "@/i18n/navigation";
 import NextLink from "next/link";
+import Image from "next/image";
 import { useSession } from "next-auth/react";
 
 type MegaMenuLink = {
@@ -419,8 +420,17 @@ export default function Header({
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-4 py-3 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="group inline-flex min-w-0 shrink items-center gap-1 transition-transform duration-300"
+          className="group inline-flex min-w-0 shrink items-center gap-2 transition-transform duration-300"
         >
+          <Image
+            src="/icon.svg"
+            alt="Adon ERP logo"
+            width={36}
+            height={36}
+            className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"
+            priority
+          />
+
           <span
             className="relative inline-block whitespace-nowrap bg-linear-to-r from-violet-700 via-sky-600 to-cyan-500 bg-clip-text text-xl font-black text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.16)] transition-all duration-300 sm:text-2xl xl:text-3xl dark:from-violet-400 dark:via-cyan-300 dark:to-amber-300 dark:drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)]"
             style={{

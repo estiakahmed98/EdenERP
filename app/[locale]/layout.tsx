@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import FloatingActions from "@/components/floating-actions";
 import AnalyticsTracker from "@/components/admin/AnalyticsTracker";
 import AuthSessionProvider from "@/lib/session-provider";
 import { isLocale, locales } from "@/i18n/config";
@@ -37,6 +38,7 @@ export default async function LocaleLayout({
         <Header showPricing={pricingConfig.pricingPageEnabled} />
         {children}
         <Footer showPricing={pricingConfig.pricingPageEnabled} />
+        <FloatingActions />
       </AuthSessionProvider>
     </NextIntlClientProvider>
   );
