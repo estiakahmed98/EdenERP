@@ -181,38 +181,53 @@ export async function PUT(request: NextRequest) {
         ],
       });
 
-      for (const plan of payload.plans) {
-        const createdPlan = await tx.pricingPlan.create({
-          data: {
-            locale: payload.locale,
-            planKey: plan.id,
-            order: plan.order,
-            enabled: plan.enabled,
-            name: plan.name,
-            tagline: plan.tagline,
-            badge: plan.badge ?? null,
-            icon: plan.icon,
-            accent: plan.accent,
-            usersLabel: typeof plan.users === "string" ? plan.users : null,
-            usersCount: typeof plan.users === "number" ? plan.users : null,
-            currency: plan.currency,
-            setupFee: plan.setupFee,
-            monthlyFee: plan.monthlyFee,
-            quarterlyFee: plan.quarterlyFee,
-            serverFee: plan.serverFee,
-            cta: plan.cta,
-          },
-        });
+      const createdPlans =
+        payload.plans.length > 0
+          ? await tx.pricingPlan.createManyAndReturn({
+              data: payload.plans.map((plan) => ({
+                locale: payload.locale,
+                planKey: plan.id,
+                order: plan.order,
+                enabled: plan.enabled,
+                name: plan.name,
+                tagline: plan.tagline,
+                badge: plan.badge ?? null,
+                icon: plan.icon,
+                accent: plan.accent,
+                usersLabel: typeof plan.users === "string" ? plan.users : null,
+                usersCount: typeof plan.users === "number" ? plan.users : null,
+                currency: plan.currency,
+                setupFee: plan.setupFee,
+                monthlyFee: plan.monthlyFee,
+                quarterlyFee: plan.quarterlyFee,
+                serverFee: plan.serverFee,
+                cta: plan.cta,
+              })),
+              select: {
+                id: true,
+                planKey: true,
+              },
+            })
+          : [];
 
-        if (plan.features.length > 0) {
-          await tx.pricingPlanFeature.createMany({
-            data: plan.features.map((feature, index) => ({
-              planId: createdPlan.id,
-              order: index,
-              text: feature,
-            })),
-          });
-        }
+      const planDatabaseIds = new Map(
+        createdPlans.map((plan) => [plan.planKey, plan.id]),
+      );
+      const features = payload.plans.flatMap((plan) => {
+        const planId = planDatabaseIds.get(plan.id);
+        if (!planId) return [];
+
+        return plan.features.map((feature, index) => ({
+          planId,
+          order: index,
+          text: feature,
+        }));
+      });
+
+      if (features.length > 0) {
+        await tx.pricingPlanFeature.createMany({
+          data: features,
+        });
       }
 
       if (payload.pricingFaqs.length > 0) {
@@ -251,6 +266,9 @@ export async function PUT(request: NextRequest) {
           })),
         });
       }
+    }, {
+      maxWait: 10_000,
+      timeout: 30_000,
     });
 
     revalidatePath(`/${payload.locale}/pricing`);
