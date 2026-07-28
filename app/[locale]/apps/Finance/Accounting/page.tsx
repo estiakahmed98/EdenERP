@@ -1,10 +1,11 @@
+//app/%5Blocale%5D/apps/Finance/Accounting/page.tsx
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {
-  ArrowRight,
   Calculator,
   TrendingUp,
   Building2,
@@ -24,7 +25,6 @@ import {
   Star,
   Play,
   Smartphone,
-  Camera,
   Zap,
   BookOpen,
   Briefcase,
@@ -41,44 +41,6 @@ const expenseCategories = [
   { icon: Car, name: "Travel", amount: "$1,200", color: "orange" },
   { icon: Gift, name: "Marketing", amount: "$3,000", color: "pink" },
   { icon: BookOpen, name: "Software", amount: "$800", color: "blue" },
-];
-
-const recentTransactions = [
-  {
-    name: "Acme Corp",
-    amount: "$3,500.00",
-    status: "cleared",
-    date: "Today",
-    type: "payment",
-  },
-  {
-    name: "TechStart Inc",
-    amount: "$1,200.00",
-    status: "pending",
-    date: "Yesterday",
-    type: "payment",
-  },
-  {
-    name: "Global Supplies",
-    amount: "$890.00",
-    status: "cleared",
-    date: "3 days ago",
-    type: "expense",
-  },
-  {
-    name: "Design Studio",
-    amount: "$2,450.00",
-    status: "cleared",
-    date: "5 days ago",
-    type: "payment",
-  },
-  {
-    name: "Office Depot",
-    amount: "$320.00",
-    status: "pending",
-    date: "Yesterday",
-    type: "expense",
-  },
 ];
 
 const colorClasses = {
@@ -297,106 +259,13 @@ export default function AccountingPage() {
                   </div>
                 </div>
 
-                <div className="p-5">
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/50">
-                      <div className="mb-3 flex items-start justify-between">
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
-                          Customer Invoices
-                        </p>
-                        <div className="flex gap-1">
-                          <span className="rounded bg-red-100 px-2 py-0.5 text-xs text-red-600 dark:bg-red-900/40 dark:text-red-400">
-                            5 Unpaid
-                          </span>
-                          <span className="rounded bg-yellow-100 px-2 py-0.5 text-xs text-yellow-600 dark:bg-yellow-900/40 dark:text-yellow-400">
-                            3 Late
-                          </span>
-                        </div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-300">
-                            Unpaid
-                          </span>
-                          <span className="font-semibold text-slate-900 dark:text-white">
-                            $128,657.25
-                          </span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-300">
-                            Late
-                          </span>
-                          <span className="font-semibold text-red-600 dark:text-red-400">
-                            $92,750.00
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="rounded-xl bg-slate-50 p-4 dark:bg-slate-800/50">
-                      <div className="mb-3 flex items-start justify-between">
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
-                          Vendor Bills
-                        </p>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-300">
-                            To Pay
-                          </span>
-                          <span className="font-semibold text-slate-900 dark:text-white">
-                            $652.27
-                          </span>
-                        </div>
-                        <div className="flex justify-between text-sm">
-                          <span className="text-slate-600 dark:text-slate-300">
-                            Late
-                          </span>
-                          <span className="font-semibold text-red-600 dark:text-red-400">
-                            $622.27
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 rounded-xl bg-linear-to-r from-emerald-50 to-cyan-50 p-4 dark:from-emerald-950/30 dark:to-cyan-950/30">
-                    <div className="text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">
-                        Bank Balance
-                      </p>
-                      <p className="text-2xl font-bold text-slate-900 dark:text-white">
-                        $9,944.87
-                      </p>
-                      <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
-                        <div>
-                          <p className="text-slate-500 dark:text-slate-400">
-                            Last Statement
-                          </p>
-                          <p className="font-semibold text-slate-900 dark:text-white">
-                            $6,378.00
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-slate-500 dark:text-slate-400">
-                            Payments
-                          </p>
-                          <p className="font-semibold text-emerald-600 dark:text-emerald-400">
-                            +$8,578.50
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-slate-500 dark:text-slate-400">
-                            Expenses
-                          </p>
-                          <p className="font-semibold text-red-600 dark:text-red-400">
-                            -$2,500.00
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src="/Assets/Accounting/Accounting Dashboard.png"
+                  alt="Accounting Dashboard"
+                  width={1200}
+                  height={900}
+                  className="h-auto w-full"
+                />
               </div>
 
               <div className="absolute -right-4 -top-3 flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-800">
@@ -478,42 +347,13 @@ export default function AccountingPage() {
                   <span className="text-xs opacity-90">BILL/2024/11/0001</span>
                 </div>
               </div>
-              <div className="space-y-3 p-5">
-                <div className="flex justify-between">
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
-                    Vendor
-                  </span>
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                    Azure Interior
-                  </span>
-                </div>
-                <div className="border-t pt-3 dark:border-slate-700">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-slate-600 dark:text-slate-400">
-                      Office Design Software
-                    </span>
-                    <span className="text-slate-700 dark:text-slate-300">
-                      $10.00
-                    </span>
-                  </div>
-                  <div className="mt-2 flex justify-between text-sm">
-                    <span className="text-slate-600 dark:text-slate-400">
-                      Office Chair (x5)
-                    </span>
-                    <span className="text-slate-700 dark:text-slate-300">
-                      $20.00
-                    </span>
-                  </div>
-                  <div className="mt-3 flex justify-between border-t pt-3 font-semibold dark:border-slate-700">
-                    <span className="text-slate-900 dark:text-white">
-                      Total
-                    </span>
-                    <span className="text-emerald-600 dark:text-emerald-400">
-                      $30.00
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/Assets/Accounting/Vendor Bill.png"
+                alt="Vendor Bill"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
             <div className="absolute -right-3 -top-3 -z-10 h-20 w-20 rounded-full bg-emerald-100 blur-2xl dark:bg-emerald-900/30" />
           </motion.div>
@@ -539,54 +379,13 @@ export default function AccountingPage() {
                   </span>
                 </div>
               </div>
-              <div className="space-y-3 p-5">
-                <div className="flex items-center gap-3 rounded-xl bg-emerald-50 p-3 dark:bg-emerald-950/30">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-slate-800">
-                    <Camera className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">
-                      Invoice scanned
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
-                      98% recognition rate
-                    </p>
-                  </div>
-                  <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                </div>
-
-                <div className="flex items-center gap-3 rounded-xl bg-cyan-50 p-3 dark:bg-cyan-950/30">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-slate-800">
-                    <Sparkles className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">
-                      AI processing
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
-                      Auto-extracting data
-                    </p>
-                  </div>
-                  <ArrowRight className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                </div>
-
-                <div className="flex items-center gap-3 rounded-xl bg-emerald-50 p-3 dark:bg-emerald-950/30">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white dark:bg-slate-800">
-                    <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-white">
-                      Ready to validate
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
-                      Zero manual entry
-                    </p>
-                  </div>
-                  <button className="rounded-lg bg-emerald-600 px-3 py-1 text-xs text-white transition hover:bg-emerald-700">
-                    Validate
-                  </button>
-                </div>
-              </div>
+              <Image
+                src="/Assets/Accounting/Smart OCR Processing.png"
+                alt="Smart OCR Processing"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </motion.div>
 
@@ -693,42 +492,13 @@ export default function AccountingPage() {
                       <Bell className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="space-y-3 p-4">
-                    <div className="rounded-xl bg-slate-100 p-3 dark:bg-slate-800">
-                      <div className="mb-2 flex items-center gap-2">
-                        <Camera className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                        <span className="text-sm text-slate-700 dark:text-slate-300">
-                          Receipt scanned
-                        </span>
-                      </div>
-                      <div className="space-y-1 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">
-                            Office Supplies
-                          </span>
-                          <span className="text-slate-700 dark:text-slate-300">
-                            $45.99
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-slate-600 dark:text-slate-400">
-                            Meal Expense
-                          </span>
-                          <span className="text-slate-700 dark:text-slate-300">
-                            $28.50
-                          </span>
-                        </div>
-                        <div className="flex justify-between border-t pt-1 font-semibold dark:border-slate-700">
-                          <span className="text-slate-900 dark:text-white">
-                            Total
-                          </span>
-                          <span className="text-slate-900 dark:text-white">
-                            $74.49
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Image
+                    src="/Assets/Accounting/Expense Tracker.png"
+                    alt="Expense Tracker"
+                    width={800}
+                    height={1200}
+                    className="h-auto w-full"
+                  />
                 </div>
               </div>
             </div>
@@ -761,52 +531,13 @@ export default function AccountingPage() {
                 </div>
               </div>
 
-              <div className="divide-y divide-slate-100 dark:divide-slate-800">
-                {recentTransactions.map((transaction, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between px-5 py-3 transition hover:bg-slate-50 dark:hover:bg-slate-800/50"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`h-1.5 w-1.5 rounded-full ${
-                          transaction.status === "cleared"
-                            ? "bg-emerald-500"
-                            : "bg-yellow-500"
-                        }`}
-                      />
-                      <div>
-                        <p className="text-sm font-medium text-slate-900 dark:text-white">
-                          {transaction.name}
-                        </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
-                          {transaction.date}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
-                        {transaction.amount}
-                      </span>
-                      {transaction.status === "cleared" && (
-                        <CheckCircle2 className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
-                      )}
-                      {transaction.status === "pending" && (
-                        <Clock className="h-3 w-3 text-yellow-600 dark:text-yellow-400" />
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="border-t border-emerald-100 bg-emerald-50 px-5 py-3 dark:border-emerald-900 dark:bg-emerald-950/30">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-emerald-800 dark:text-emerald-300">
-                    95% of transactions matched automatically
-                  </span>
-                  <ArrowRight className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
-                </div>
-              </div>
+              <Image
+                src="/Assets/Accounting/Bank Reconciliation.png"
+                alt="Bank Reconciliation"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </motion.div>
 

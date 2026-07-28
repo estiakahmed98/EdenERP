@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {
@@ -262,7 +263,6 @@ export default function ExpensesPage() {
 
   const categoriesList = t.raw("categoriesSection.categories");
   const integrationsList = t.raw("integrationsSection.integrations");
-  const teamMembersList = t.raw("approvalSection.demo.teamMembers");
   let recentExpensesData: unknown = fallbackRecentExpenses;
 
   try {
@@ -376,75 +376,13 @@ export default function ExpensesPage() {
                   </div>
                 </div>
 
-                <div className="p-5">
-                  <div className="bg-linear-to-br from-emerald-50 to-cyan-50 dark:from-emerald-950/30 dark:to-cyan-950/30 rounded-xl p-4 mb-4 text-center">
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
-                      {t("hero.dashboard.totalSpent")}
-                    </p>
-                    <p className="text-3xl font-bold text-slate-900 dark:text-slate-100">
-                      {t("hero.dashboard.totalAmount")}
-                    </p>
-                    <div className="flex items-center justify-center gap-2 mt-2">
-                      <TrendingUp className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                      <span className="text-sm text-emerald-600 dark:text-emerald-400">
-                        {t("hero.dashboard.trend")}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">{t("hero.dashboard.cardsInUse")}</p>
-                      <p className="text-xl font-bold text-slate-900 dark:text-slate-100">{t("hero.dashboard.cardsCount")}</p>
-                    </div>
-                    <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">{t("hero.dashboard.pendingApprovals")}</p>
-                      <p className="text-xl font-bold text-amber-600 dark:text-amber-400">{t("hero.dashboard.pendingCount")}</p>
-                    </div>
-                    <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-3 text-center">
-                      <p className="text-xs text-slate-500 dark:text-slate-400">{t("hero.dashboard.autoMatched")}</p>
-                      <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">{t("hero.dashboard.matchedPercent")}</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-                      {t("hero.dashboard.recentExpenses")}
-                    </p>
-                    {recentExpensesList.slice(0, 3).map((expense: any, idx: number) => (
-                      <div
-                        key={idx}
-                        className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-slate-800/60 rounded-lg transition"
-                      >
-                        <div className="flex items-center gap-2">
-                          <div className={`h-8 w-8 rounded-lg ${
-                            expense.status === "approved" ? "bg-emerald-100 dark:bg-emerald-900/40" :
-                            expense.status === "pending" ? "bg-amber-100 dark:bg-amber-900/40" :
-                            "bg-red-100 dark:bg-red-900/40"
-                          } flex items-center justify-center`}>
-                            <Receipt className={`h-4 w-4 ${
-                              expense.status === "approved" ? "text-emerald-600" :
-                              expense.status === "pending" ? "text-amber-600" :
-                              "text-red-600"
-                            }`} />
-                          </div>
-                          <div>
-                            <p className="text-sm font-medium text-slate-900 dark:text-slate-100">{expense.name}</p>
-                            <p className="text-xs text-slate-500 dark:text-slate-400">{expense.date}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{expense.amount}</p>
-                          <p className={`text-xs ${
-                            expense.status === "approved" ? "text-emerald-600" :
-                            expense.status === "pending" ? "text-amber-600" :
-                            "text-red-600"
-                          }`}>{expense.status}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <Image
+                  src="/Assets/others/Expense Dashboard.png"
+                  alt="Expense Dashboard"
+                  width={1200}
+                  height={900}
+                  className="h-auto w-full"
+                />
               </div>
 
               <div className="absolute -top-3 -right-4 bg-white dark:bg-slate-900 rounded-full px-3 py-1.5 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center gap-1.5">
@@ -657,30 +595,13 @@ export default function ExpensesPage() {
                   <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{t("approvalSection.demo.title")}</span>
                 </div>
               </div>
-              <div className="divide-y divide-slate-100 dark:divide-slate-800">
-                {teamMembersList.map((member: any, idx: number) => (
-                  <div
-                    key={idx}
-                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/60 transition"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-                        <div className="h-full w-full bg-slate-300 dark:bg-slate-600" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100">{member.name}</p>
-                        <p className="text-xs text-slate-500">{member.role}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-semibold text-amber-600">{member.pending} pending</span>
-                      <button className="text-xs bg-emerald-600 text-white px-3 py-1 rounded-lg hover:bg-emerald-700 transition">
-                        {t("approvalSection.demo.reviewButton")}
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <Image
+                src="/Assets/others/Pending Approvals.png"
+                alt="Pending Approvals"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </motion.div>
         </div>

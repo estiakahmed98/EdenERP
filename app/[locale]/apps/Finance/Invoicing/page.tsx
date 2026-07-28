@@ -1,11 +1,12 @@
+//app/%5Blocale%5D/apps/Finance/Invoicing/page.tsx
 "use client";
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {
-  ArrowRight,
   Send,
   Mail,
   CheckCircle2,
@@ -184,7 +185,10 @@ export default function InvoicingPage() {
                 </div>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: 5 }).map((_, index) => (
-                    <Star key={index} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star
+                      key={index}
+                      className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                    />
                   ))}
                   <span className="ml-2 text-sm text-slate-600 dark:text-slate-400">
                     {t("hero.rating")}
@@ -204,86 +208,23 @@ export default function InvoicingPage() {
                   <div className="flex items-center justify-between text-white">
                     <div className="flex items-center gap-2">
                       <Receipt className="h-5 w-5" />
-                      <span className="font-semibold">{t("hero.invoice.title")}</span>
+                      <span className="font-semibold">
+                        {t("hero.invoice.title")}
+                      </span>
                     </div>
-                    <span className="text-sm opacity-90">{t("hero.invoice.number")}</span>
+                    <span className="text-sm opacity-90">
+                      {t("hero.invoice.number")}
+                    </span>
                   </div>
                 </div>
 
-                {/* Invoice Content */}
-                <div className="p-6">
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <div>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
-                        {t("hero.invoice.billTo")}
-                      </p>
-                      <p className="font-semibold text-slate-900 dark:text-slate-100">
-                        {t("hero.invoice.company")}
-                      </p>
-                      <p className="text-sm text-slate-600 dark:text-slate-300">
-                        {t("hero.invoice.address1")}
-                      </p>
-                      <p className="text-sm text-slate-600 dark:text-slate-300">
-                        {t("hero.invoice.address2")}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
-                        {t("hero.invoice.invoiceDate")}
-                      </p>
-                      <p className="font-semibold text-slate-900 dark:text-slate-100">
-                        {t("hero.invoice.date")}
-                      </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
-                        {t("hero.invoice.dueDate")}
-                      </p>
-                      <p className="font-semibold text-slate-900 dark:text-slate-100">
-                        {t("hero.invoice.due")}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 border-t border-slate-100 dark:border-slate-800 pt-4">
-                    <div className="space-y-3">
-                      {t.raw("hero.invoice.items").map((line: any, idx: number) => (
-                        <div key={idx} className="flex justify-between text-sm">
-                          <div>
-                            <span className="text-slate-900 dark:text-slate-100">
-                              {line.name}
-                            </span>
-                            <span className="text-slate-400 ml-2">
-                              ×{line.qty}
-                            </span>
-                          </div>
-                          <span className="text-slate-900 dark:text-slate-100">
-                            {line.price}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="border-t border-slate-100 dark:border-slate-800 mt-4 pt-4">
-                      <div className="flex justify-between text-lg font-bold">
-                        <span className="text-slate-900 dark:text-slate-100">
-                          {t("hero.invoice.total")}
-                        </span>
-                        <span className="text-emerald-600 dark:text-emerald-400">
-                          {t("hero.invoice.totalAmount")}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 flex gap-3">
-                    <button className="flex-1 bg-emerald-600 text-white py-2 rounded-lg font-medium hover:bg-emerald-700 transition flex items-center justify-center gap-2">
-                      <Send className="h-4 w-4" />
-                      {t("hero.invoice.sendButton")}
-                    </button>
-                    <button className="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 transition">
-                      <Download className="h-4 w-4 text-slate-600 dark:text-slate-400" />
-                    </button>
-                  </div>
-                </div>
+                <Image
+                  src="/Assets/Invoicing/INVOICE.png"
+                  alt="Invoice"
+                  width={1200}
+                  height={900}
+                  className="h-auto w-full"
+                />
               </div>
 
               {/* Floating badges */}
@@ -326,19 +267,25 @@ export default function InvoicingPage() {
             </p>
 
             <div className="mt-6 space-y-3">
-              {t.raw("clickSendSection.features").map((item: any, idx: number) => {
-                const IconComponent = getIconComponent("Send");
-                return (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className={`h-6 w-6 rounded-full bg-${item.color}-100 dark:bg-${item.color}-900/30 flex items-center justify-center`}>
-                      <CheckCircle2 className={`h-3 w-3 text-${item.color}-600 dark:text-${item.color}-400`} />
+              {t
+                .raw("clickSendSection.features")
+                .map((item: any, idx: number) => {
+                  const IconComponent = getIconComponent("Send");
+                  return (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div
+                        className={`h-6 w-6 rounded-full bg-${item.color}-100 dark:bg-${item.color}-900/30 flex items-center justify-center`}
+                      >
+                        <CheckCircle2
+                          className={`h-3 w-3 text-${item.color}-600 dark:text-${item.color}-400`}
+                        />
+                      </div>
+                      <span className="text-slate-700 dark:text-slate-300">
+                        {item.text}
+                      </span>
                     </div>
-                    <span className="text-slate-700 dark:text-slate-300">
-                      {item.text}
-                    </span>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
           </motion.div>
 
@@ -358,45 +305,13 @@ export default function InvoicingPage() {
                   </span>
                 </div>
               </div>
-              <div className="p-5 space-y-4">
-                <div className="flex items-center gap-3 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-xl">
-                  <Send className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                      {t("clickSendSection.demo.sentTo")}
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
-                      {t("clickSendSection.demo.sentDate")}
-                    </p>
-                  </div>
-                  <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                </div>
-
-                <div className="border-t border-slate-100 dark:border-slate-800 pt-3">
-                  <div className="flex justify-between text-sm py-2">
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {t("clickSendSection.demo.opened")}
-                    </span>
-                    <span className="font-medium text-slate-900 dark:text-slate-100">
-                      {t("clickSendSection.demo.openedTime")}
-                    </span>
-                  </div>
-                  <div className="flex justify-between text-sm py-2">
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {t("clickSendSection.demo.viewed")}
-                    </span>
-                    <span className="font-medium text-slate-900 dark:text-slate-100">
-                      {t("clickSendSection.demo.viewedTime")}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-3 text-center">
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    {t("clickSendSection.demo.reminder")}
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/Assets/Invoicing/Delivery Status.png"
+                alt="Delivery Status"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
             <div className="absolute -right-3 -top-3 h-20 w-20 bg-emerald-100 dark:bg-emerald-900/30 rounded-full blur-2xl -z-10" />
           </motion.div>
@@ -420,49 +335,19 @@ export default function InvoicingPage() {
                   <div className="bg-linear-to-r from-emerald-600 to-cyan-600 p-4">
                     <div className="flex items-center justify-between text-white">
                       <Smartphone className="h-5 w-5" />
-                      <span className="text-sm font-semibold">{t("mobileSection.demo.appName")}</span>
+                      <span className="text-sm font-semibold">
+                        {t("mobileSection.demo.appName")}
+                      </span>
                       <Bell className="h-5 w-5" />
                     </div>
                   </div>
-                  <div className="p-4 space-y-3">
-                    <div className="bg-slate-100 dark:bg-slate-800 rounded-xl p-3">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="h-8 w-8 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center">
-                          <Camera className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                            {t("mobileSection.demo.newInvoice")}
-                          </p>
-                          <p className="text-xs text-slate-500 dark:text-slate-400">
-                            {t("mobileSection.demo.invoicePreview")}
-                          </p>
-                        </div>
-                      </div>
-                      <button className="w-full bg-emerald-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition">
-                        {t("mobileSection.demo.reviewButton")}
-                      </button>
-                    </div>
-
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-slate-500 dark:text-slate-400">
-                          {t("mobileSection.demo.pendingInvoices")}
-                        </span>
-                        <span className="font-semibold text-slate-900 dark:text-slate-100">
-                          {t("mobileSection.demo.pendingCount")}
-                        </span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-slate-500 dark:text-slate-400">
-                          {t("mobileSection.demo.paidThisMonth")}
-                        </span>
-                        <span className="font-semibold text-emerald-600 dark:text-emerald-400">
-                          {t("mobileSection.demo.paidAmount")}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <Image
+                    src="/Assets/Invoicing/Adon Mobile.png"
+                    alt="Mobile App"
+                    width={800}
+                    height={1200}
+                    className="h-auto w-full"
+                  />
                 </div>
               </div>
             </div>
@@ -529,14 +414,16 @@ export default function InvoicingPage() {
             </p>
 
             <div className="mt-6 space-y-3">
-              {t.raw("paymentSection.features").map((feature: string, idx: number) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                  <span className="text-slate-700 dark:text-slate-300">
-                    {feature}
-                  </span>
-                </div>
-              ))}
+              {t
+                .raw("paymentSection.features")
+                .map((feature: string, idx: number) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                    <span className="text-slate-700 dark:text-slate-300">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-3">
@@ -559,34 +446,14 @@ export default function InvoicingPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="bg-linear-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 shadow-2xl">
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <p className="text-slate-400 text-sm">{t("paymentSection.demo.totalDue")}</p>
-                  <p className="text-3xl font-bold text-white">{t("paymentSection.demo.amount")}</p>
-                </div>
-                <CreditCard className="h-8 w-8 text-slate-500" />
-              </div>
-
-              <div className="space-y-4">
-                <div className="border-b border-slate-700 pb-3">
-                  <p className="text-sm text-slate-400 mb-1">{t("paymentSection.demo.cardNumber")}</p>
-                  <p className="text-white font-mono">{t("paymentSection.demo.cardNumberValue")}</p>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-sm text-slate-400 mb-1">{t("paymentSection.demo.expiry")}</p>
-                    <p className="text-white">{t("paymentSection.demo.expiryValue")}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-400 mb-1">{t("paymentSection.demo.cvc")}</p>
-                    <p className="text-white">{t("paymentSection.demo.cvcValue")}</p>
-                  </div>
-                </div>
-                <button className="w-full bg-linear-to-r from-emerald-500 to-cyan-500 py-3 rounded-xl font-semibold text-white hover:shadow-lg transition">
-                  {t("paymentSection.demo.payButton")}
-                </button>
-              </div>
+            <div className="bg-linear-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 shadow-2xl overflow-hidden">
+              <Image
+                src="/Assets/Invoicing/Fast payments.png"
+                alt="Fast Payments"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </motion.div>
         </div>
@@ -617,57 +484,13 @@ export default function InvoicingPage() {
                 </div>
               </div>
 
-              <div className="divide-y divide-slate-100 dark:divide-slate-800">
-                {t.raw("bankSection.demo.transactions").map((transaction: any, idx: number) => (
-                  <div
-                    key={idx}
-                    className="px-5 py-3 flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-800/60 transition"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`h-1.5 w-1.5 rounded-full ${
-                          transaction.status === "matched"
-                            ? "bg-emerald-500"
-                            : transaction.status === "pending"
-                              ? "bg-yellow-500"
-                              : "bg-red-500"
-                        }`}
-                      />
-                      <div>
-                        <p className="font-medium text-sm text-slate-900 dark:text-slate-100">
-                          {transaction.name}
-                        </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400">
-                          {transaction.date}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-sm text-slate-700 dark:text-slate-300">
-                        {transaction.amount}
-                      </span>
-                      {transaction.status === "matched" && (
-                        <CheckCircle2 className="h-3 w-3 text-emerald-600" />
-                      )}
-                      {transaction.status === "pending" && (
-                        <Clock className="h-3 w-3 text-yellow-600" />
-                      )}
-                      {transaction.status === "overdue" && (
-                        <AlertCircle className="h-3 w-3 text-red-600" />
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-emerald-50 dark:bg-emerald-950/30 px-5 py-3 border-t border-emerald-100 dark:border-emerald-900">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-emerald-800 dark:text-emerald-300">
-                    {t("bankSection.demo.followup")}
-                  </span>
-                  <ArrowRight className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
-                </div>
-              </div>
+              <Image
+                src="/Assets/Invoicing/Bank Reconciliation.png"
+                alt="Bank Reconciliation"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </motion.div>
 
@@ -693,21 +516,23 @@ export default function InvoicingPage() {
             </p>
 
             <div className="mt-6 space-y-4">
-              {t.raw("bankSection.features").map((feature: any, idx: number) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <div className="h-10 w-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
-                    <Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+              {t
+                .raw("bankSection.features")
+                .map((feature: any, idx: number) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <div className="h-10 w-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+                      <Building2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100">
+                        {feature.title}
+                      </h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-slate-100">
-                      {feature.title}
-                    </h4>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
             </div>
           </motion.div>
         </div>
@@ -747,15 +572,26 @@ export default function InvoicingPage() {
                   className={`h-10 w-10 rounded-xl bg-linear-to-br ${feature.gradient} bg-opacity-10 flex items-center justify-center mb-3`}
                 >
                   {(() => {
-                    const IconComponent = getIconComponent(feature.title === "Global Tax Support" ? "Globe" : 
-                      feature.title === "Smart Reminders" ? "Bell" :
-                      feature.title === "Recurring Billing" ? "Repeat" :
-                      feature.title === "Sales Analytics" ? "BarChart3" :
-                      feature.title === "Multi-Currency" ? "DollarSign" :
-                      feature.title === "Custom Branding" ? "Palette" :
-                      feature.title === "Revenue Analytics" ? "LineChart" :
-                      "Calculator");
-                    return <IconComponent className="h-5 w-5 text-slate-700 dark:text-slate-300" />;
+                    const IconComponent = getIconComponent(
+                      feature.title === "Global Tax Support"
+                        ? "Globe"
+                        : feature.title === "Smart Reminders"
+                          ? "Bell"
+                          : feature.title === "Recurring Billing"
+                            ? "Repeat"
+                            : feature.title === "Sales Analytics"
+                              ? "BarChart3"
+                              : feature.title === "Multi-Currency"
+                                ? "DollarSign"
+                                : feature.title === "Custom Branding"
+                                  ? "Palette"
+                                  : feature.title === "Revenue Analytics"
+                                    ? "LineChart"
+                                    : "Calculator",
+                    );
+                    return (
+                      <IconComponent className="h-5 w-5 text-slate-700 dark:text-slate-300" />
+                    );
                   })()}
                 </div>
                 <h3 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">
@@ -784,7 +620,10 @@ export default function InvoicingPage() {
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  <Star
+                    key={i}
+                    className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                  />
                 ))}
               </div>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
