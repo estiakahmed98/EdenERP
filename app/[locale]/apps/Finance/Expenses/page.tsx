@@ -670,36 +670,13 @@ export default function ExpensesPage() {
               <div className="absolute inset-0 bg-linear-to-r from-emerald-500 to-purple-600 rounded-[3rem] blur-2xl opacity-30" />
               <div className="relative bg-slate-900 rounded-[3rem] p-2 shadow-2xl">
                 <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] overflow-hidden">
-                  <div className="bg-linear-to-r from-emerald-600 to-cyan-600 p-4">
-                    <div className="flex items-center justify-between text-white">
-                      <Smartphone className="h-5 w-5" />
-                      <span className="text-sm font-semibold">{t("mobileSection.demo.appName")}</span>
-                      <Bell className="h-5 w-5" />
-                    </div>
-                  </div>
-                  <div className="p-4 space-y-3">
-                    <div className="bg-emerald-50 dark:bg-emerald-950/30 rounded-xl p-3">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Camera className="h-4 w-4 text-emerald-600" />
-                        <span className="text-sm font-medium text-slate-700">{t("mobileSection.demo.scannedLabel")}</span>
-                      </div>
-                      <div className="space-y-1">
-                        {t.raw("mobileSection.demo.items").map((item: any, idx: number) => (
-                          <div key={idx} className="flex justify-between text-sm">
-                            <span className="text-slate-600">{item.name}</span>
-                            <span className="text-slate-700">{item.amount}</span>
-                          </div>
-                        ))}
-                        <div className="border-t dark:border-slate-800 pt-1 flex justify-between font-semibold text-sm">
-                          <span className="text-slate-900">{t("mobileSection.demo.total")}</span>
-                          <span className="text-slate-900">{t("mobileSection.demo.totalAmount")}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <button className="w-full bg-emerald-600 text-white py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition">
-                      {t("mobileSection.demo.submitButton")}
-                    </button>
-                  </div>
+                  <Image
+                    src="/Assets/Expenses/Expense Tracker.png"
+                    alt="Expense Tracker"
+                    width={800}
+                    height={1200}
+                    className="h-auto w-full"
+                  />
                 </div>
               </div>
             </div>

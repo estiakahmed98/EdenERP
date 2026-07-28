@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import {
@@ -9,7 +10,6 @@ import {
   BarChart3,
   Bell,
   CheckCircle2,
-  CirclePlay,
   FileText,
   Grid3X3,
   Headphones,
@@ -67,43 +67,9 @@ function SectionEyebrow({
 }
 
 function CrmDashboard({ t }: { t: any }) {
-  const columns = [
-    {
-      key: "new",
-      label: t("dashboard.columns.new"),
-      bg: "bg-cyan-50 dark:bg-cyan-950/30",
-      text: "text-cyan-700 dark:text-cyan-400",
-    },
-    {
-      key: "qualified",
-      label: t("dashboard.columns.qualified"),
-      bg: "bg-emerald-50 dark:bg-emerald-950/30",
-      text: "text-emerald-700 dark:text-emerald-400",
-    },
-    {
-      key: "proposal",
-      label: t("dashboard.columns.proposal"),
-      bg: "bg-amber-50 dark:bg-amber-950/30",
-      text: "text-amber-700 dark:text-amber-400",
-    },
-    {
-      key: "won",
-      label: t("dashboard.columns.won"),
-      bg: "bg-violet-50 dark:bg-violet-950/30",
-      text: "text-violet-700 dark:text-violet-400",
-    },
-  ];
-
-  const deals = [
-    t("dashboard.deals.websiteRedesign"),
-    t("dashboard.deals.retailErp"),
-    t("dashboard.deals.marketingAutomation"),
-  ];
-  const dealValues = [5200, 8400, 12600];
-
   return (
     <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
+      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 px-5 py-4">
         <div className="flex items-center gap-2">
           <Users className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
           <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
@@ -119,53 +85,13 @@ function CrmDashboard({ t }: { t: any }) {
         </div>
       </div>
 
-      <div className="grid min-h-92 gap-4 p-5 md:grid-cols-4">
-        {columns.map((column, index) => (
-          <div key={column.key} className={`rounded-2xl ${column.bg} p-4`}>
-            <div className="mb-4 flex items-center justify-between">
-              <p className={`text-sm font-bold ${column.text}`}>
-                {column.label}
-              </p>
-              <span className="rounded-full bg-white dark:bg-slate-900 px-2 py-1 text-xs text-slate-500 dark:text-slate-400">
-                {index + 4}
-              </span>
-            </div>
-
-            <div className="space-y-3">
-              {deals.map((item, itemIndex) => (
-                <div
-                  key={`${column.key}-${item}`}
-                  className="rounded-xl bg-white dark:bg-slate-900 p-3 text-left shadow-sm"
-                >
-                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
-                    {item}
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    ${dealValues[itemIndex].toLocaleString()} deal
-                  </p>
-                  <div className="mt-3 flex items-center justify-between">
-                    <div className="flex -space-x-2">
-                      {[1, 2].map((i) => (
-                        <div
-                          key={i}
-                          className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 bg-linear-to-br from-cyan-200 to-emerald-200 dark:from-cyan-700 dark:to-emerald-700"
-                        />
-                      ))}
-                    </div>
-                    <span className="rounded-full bg-slate-100 dark:bg-slate-700 px-2 py-1 text-[10px] font-semibold text-slate-500 dark:text-slate-400">
-                      Today
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
-        <CirclePlay className="h-7 w-7 fill-cyan-600 text-cyan-600 dark:fill-cyan-500 dark:text-cyan-500" />
-      </button>
+      <Image
+        src="/Assets/CRM/Adon CRM Pipeline.png"
+        alt="Adon CRM Pipeline"
+        width={1200}
+        height={900}
+        className="h-auto w-full"
+      />
     </div>
   );
 }
@@ -274,24 +200,6 @@ export default function CrmPage() {
     { label: t("communicationSection.channels.voip"), icon: Phone },
   ];
 
-  const analyticsStats = [
-    {
-      label: t("analyticsSection.stats.leads"),
-      value: "1,284",
-      change: "+24%",
-    },
-    {
-      label: t("analyticsSection.stats.wonDeals"),
-      value: "342",
-      change: "+18%",
-    },
-    {
-      label: t("analyticsSection.stats.revenue"),
-      value: "$94.8k",
-      change: "+31%",
-    },
-  ];
-
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">
       <section className="relative isolate">
@@ -379,42 +287,14 @@ export default function CrmPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              t("pipelineSection.demoStages.leads"),
-              t("pipelineSection.demoStages.qualified"),
-              t("pipelineSection.demoStages.won"),
-            ].map((stage, index) => (
-              <div
-                key={stage}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4"
-              >
-                <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                  {stage}
-                </p>
-                <div className="mt-4 space-y-3">
-                  {[
-                    t("pipelineSection.clients.apex"),
-                    t("pipelineSection.clients.bright"),
-                    t("pipelineSection.clients.nova"),
-                  ].map((client) => (
-                    <div
-                      key={client}
-                      className="rounded-xl bg-white dark:bg-slate-900 p-3 shadow-sm"
-                    >
-                      <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">
-                        {client}
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                        ${[3200, 4800, 6900][index].toLocaleString()}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+          <Image
+            src="/Assets/CRM/Sales pipeline.png"
+            alt="Sales pipeline"
+            width={1200}
+            height={900}
+            className="h-auto w-full"
+          />
         </div>
       </section>
 
@@ -470,80 +350,14 @@ export default function CrmPage() {
           {t("communicationSection.description")}
         </p>
 
-        <div className="mx-auto mt-12 max-w-5xl rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
-          <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
-            <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-5 text-left">
-              <p className="font-semibold text-slate-950 dark:text-slate-100">
-                {t("communicationSection.customerProfile.title")}
-              </p>
-              <div className="mt-5 space-y-3">
-                {[
-                  [
-                    t("communicationSection.customerProfile.company"),
-                    t("communicationSection.customerProfile.values.company"),
-                  ],
-                  [
-                    t("communicationSection.customerProfile.stage"),
-                    t("communicationSection.customerProfile.values.stage"),
-                  ],
-                  [
-                    t("communicationSection.customerProfile.dealValue"),
-                    t("communicationSection.customerProfile.values.dealValue"),
-                  ],
-                  [
-                    t("communicationSection.customerProfile.nextAction"),
-                    t("communicationSection.customerProfile.values.nextAction"),
-                  ],
-                ].map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="flex items-center justify-between rounded-xl bg-white dark:bg-slate-900 px-4 py-3 text-sm shadow-sm"
-                  >
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {label}
-                    </span>
-                    <span className="font-semibold text-slate-900 dark:text-slate-100">
-                      {value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-cyan-50 dark:bg-cyan-950/30 p-5 text-left">
-              <p className="font-semibold text-slate-950 dark:text-slate-100">
-                {t("communicationSection.communication.title")}
-              </p>
-              <div className="mt-5 space-y-3">
-                {[
-                  [
-                    t("communicationSection.communication.emailSent"),
-                    t("communicationSection.communication.emailDesc"),
-                  ],
-                  [
-                    t("communicationSection.communication.callCompleted"),
-                    t("communicationSection.communication.callDesc"),
-                  ],
-                  [
-                    t("communicationSection.communication.meetingBooked"),
-                    t("communicationSection.communication.meetingDesc"),
-                  ],
-                ].map(([title, desc]) => (
-                  <div
-                    key={title}
-                    className="rounded-xl bg-white dark:bg-slate-900 p-4 shadow-sm"
-                  >
-                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                      {title}
-                    </p>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                      {desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
+          <Image
+            src="/Assets/CRM/Customer management.png"
+            alt="Customer management"
+            width={1200}
+            height={900}
+            className="h-auto w-full"
+          />
         </div>
 
         <div className="mx-auto mt-10 grid max-w-3xl gap-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 p-5 sm:grid-cols-4">
@@ -581,85 +395,26 @@ export default function CrmPage() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4">
-            <div className="rounded-2xl bg-white dark:bg-slate-900 p-5 shadow-sm">
-              <div className="flex items-center justify-between">
-                <p className="font-semibold text-slate-900 dark:text-slate-100">
-                  {t("quotationSection.quotationCard.title")}
-                </p>
-                <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/50 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
-                  {t("quotationSection.quotationCard.status")}
-                </span>
-              </div>
-
-              <div className="mt-5 space-y-3">
-                {[
-                  [
-                    t("quotationSection.quotationCard.items.erpImplementation"),
-                    "$8,500",
-                  ],
-                  [
-                    t("quotationSection.quotationCard.items.trainingSession"),
-                    "$1,200",
-                  ],
-                  [
-                    t("quotationSection.quotationCard.items.supportPackage"),
-                    "$950",
-                  ],
-                ].map(([name, price]) => (
-                  <div
-                    key={name}
-                    className="flex justify-between rounded-xl bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
-                  >
-                    <span className="text-slate-600 dark:text-slate-400">
-                      {name}
-                    </span>
-                    <span className="font-semibold text-slate-900 dark:text-slate-100">
-                      {price}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <button className="mt-5 w-full rounded-xl bg-cyan-600 py-3 text-sm font-semibold text-white hover:bg-cyan-700 transition">
-                {t("quotationSection.quotationCard.button")}
-              </button>
-            </div>
-          </div>
+        <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+          <Image
+            src="/Assets/CRM/Quotation.png"
+            alt="Quotation"
+            width={1200}
+            height={900}
+            className="h-auto w-full"
+          />
         </div>
       </section>
 
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-        <div className="order-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)] lg:order-1">
-          <div className="mb-5 grid gap-4 sm:grid-cols-3">
-            {analyticsStats.map(({ label, value, change }) => (
-              <div
-                key={label}
-                className="rounded-2xl bg-slate-50 dark:bg-slate-800/40 p-4"
-              >
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  {label}
-                </p>
-                <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-slate-100">
-                  {value}
-                </p>
-                <p className="mt-1 text-sm font-semibold text-emerald-600 dark:text-emerald-400">
-                  {change}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex h-56 items-end gap-4 rounded-2xl bg-linear-to-br from-cyan-50 to-emerald-50 dark:from-cyan-950/30 dark:to-emerald-950/30 p-6">
-            {[38, 62, 80, 55, 92, 71].map((height, index) => (
-              <div
-                key={index}
-                className="flex-1 rounded-t-2xl bg-linear-to-t from-cyan-600 to-emerald-400"
-                style={{ height: `${height}%` }}
-              />
-            ))}
-          </div>
+        <div className="order-2 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)] lg:order-1">
+          <Image
+            src="/Assets/CRM/Revenue analytics.png"
+            alt="Revenue analytics"
+            width={1200}
+            height={900}
+            className="h-auto w-full"
+          />
         </div>
 
         <div className="order-1 lg:order-2">

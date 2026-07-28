@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import {
@@ -248,12 +249,6 @@ export default function SpreadsheetPage() {
     { label: "Orders", value: "846", change: "+21%" },
     { label: "Profit", value: "$41.8k", change: "+27%" },
   ];
-  const fallbackPivotRowsList = [
-    ["North Region", "Sales", "$42,900", "32%"],
-    ["South Region", "Inventory", "$21,400", "18%"],
-    ["Online Store", "Orders", "$59,120", "41%"],
-    ["Corporate", "Projects", "$33,700", "24%"],
-  ];
   const fallbackPivotFeatures = [
     "Group data by customer, product, region, or team",
     "Refresh reports without exporting CSV files",
@@ -264,7 +259,6 @@ export default function SpreadsheetPage() {
   const appsData = raw("appsSection.apps");
   const modulesData = raw("connectSection.modules");
   const statsData = raw("visualizeSection.stats");
-  const pivotRowsData = raw("pivotSection.demo.rows");
   const pivotFeaturesData = raw("pivotSection.features");
   const ctaRating = raw("ctaBanner.rating");
 
@@ -272,7 +266,6 @@ export default function SpreadsheetPage() {
   const appsList = Array.isArray(appsData) ? appsData : fallbackAppsList;
   const modulesList = Array.isArray(modulesData) ? modulesData : fallbackModulesList;
   const statsList = Array.isArray(statsData) ? statsData : fallbackStatsList;
-  const pivotRowsList = Array.isArray(pivotRowsData) ? pivotRowsData : fallbackPivotRowsList;
   const pivotFeaturesList = Array.isArray(pivotFeaturesData) ? pivotFeaturesData : fallbackPivotFeatures;
   const ratingCount = typeof ctaRating === "number" ? ctaRating : 5;
 
@@ -401,35 +394,21 @@ export default function SpreadsheetPage() {
             </div>
           </div>
 
-          <div className="relative rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-            <div className="mb-4 flex items-center justify-between">
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-5 py-4">
               <span className="font-semibold text-slate-900 dark:text-slate-100">
                 {tr("pivotSection.demo.title")}
               </span>
               <RefreshCw className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
             </div>
 
-            <div className="space-y-3">
-              {pivotRowsList.map((row: string[]) => (
-                <div
-                  key={row[0]}
-                  className="grid grid-cols-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 px-4 py-3 text-sm"
-                >
-                  <span className="font-medium text-slate-900 dark:text-slate-100">
-                    {row[0]}
-                  </span>
-                  <span className="text-slate-500 dark:text-slate-400">
-                    {row[1]}
-                  </span>
-                  <span className="font-semibold text-slate-800 dark:text-slate-100">
-                    {row[2]}
-                  </span>
-                  <span className="text-emerald-600 dark:text-emerald-400">
-                    {row[3]}
-                  </span>
-                </div>
-              ))}
-            </div>
+            <Image
+              src="/Assets/Spreadsheet/Pivot analysis.png"
+              alt="Pivot analysis"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
           </div>
         </div>
       </section>

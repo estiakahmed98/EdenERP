@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import {
@@ -102,34 +103,6 @@ function SectionEyebrow({
 }
 
 function QuotationPreview({ t }: { t: any }) {
-  const dealSummaryItems = [
-    { label: t("dashboard.dealSummary.quoteValue"), value: "$12,650.00" },
-    { label: t("dashboard.dealSummary.expectedMargin"), value: "38%" },
-    { label: t("dashboard.dealSummary.paymentTerm"), value: "Net 15" },
-    { label: t("dashboard.dealSummary.validUntil"), value: "30 days" },
-  ];
-
-  const tableRows = [
-    {
-      product: t("dashboard.table.rows.erpImplementation"),
-      qty: "1",
-      unitPrice: "$8,500",
-      total: "$8,500",
-    },
-    {
-      product: t("dashboard.table.rows.teamTraining"),
-      qty: "3",
-      unitPrice: "$450",
-      total: "$1,350",
-    },
-    {
-      product: t("dashboard.table.rows.premiumSupport"),
-      qty: "1",
-      unitPrice: "$2,800",
-      total: "$2,800",
-    },
-  ];
-
   return (
     <div className="relative overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_40px_100px_rgba(15,23,42,0.14)] dark:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
       <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-5 py-4">
@@ -144,98 +117,13 @@ function QuotationPreview({ t }: { t: any }) {
         </span>
       </div>
 
-      <div className="grid gap-6 p-6 md:grid-cols-[0.8fr_1.2fr]">
-        <aside className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5">
-          <p className="text-sm font-semibold text-slate-900 dark:text-white">
-            {t("dashboard.dealSummary.title")}
-          </p>
-
-          <div className="mt-5 space-y-4">
-            {dealSummaryItems.map(({ label, value }) => (
-              <div
-                key={label}
-                className="rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 shadow-sm"
-              >
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  {label}
-                </p>
-                <p className="mt-1 font-bold text-slate-950 dark:text-white">
-                  {value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </aside>
-
-        <div>
-          <div className="mb-5 flex items-start justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-rose-500 dark:text-rose-400">
-                {t("dashboard.proposal.title")}
-              </p>
-              <h3 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">
-                {t("dashboard.proposal.name")}
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                {t("dashboard.proposal.description")}
-              </p>
-            </div>
-            <div className="rounded-2xl bg-rose-50 dark:bg-rose-950/30 px-4 py-3 text-right">
-              <p className="text-xs text-rose-500 dark:text-rose-400">
-                {t("dashboard.proposal.status")}
-              </p>
-              <p className="font-bold text-rose-700 dark:text-rose-300">
-                {t("dashboard.proposal.statusValue")}
-              </p>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-3xl border border-slate-100 dark:border-slate-800">
-            <div className="grid grid-cols-[1fr_60px_90px_90px] gap-3 bg-slate-100 dark:bg-slate-800/50 px-4 py-3 text-xs font-semibold uppercase text-slate-500 dark:text-slate-400">
-              <span>{t("dashboard.table.product")}</span>
-              <span>{t("dashboard.table.qty")}</span>
-              <span>{t("dashboard.table.unitPrice")}</span>
-              <span>{t("dashboard.table.total")}</span>
-            </div>
-            {tableRows.map((row, index) => (
-              <div
-                key={row.product}
-                className={`grid grid-cols-[1fr_60px_90px_90px] gap-3 px-4 py-3 text-sm ${
-                  index % 2 === 0
-                    ? "bg-white dark:bg-slate-900"
-                    : "bg-slate-50 dark:bg-slate-800/50"
-                }`}
-              >
-                <span className="font-medium text-slate-800 dark:text-white">
-                  {row.product}
-                </span>
-                <span className="text-slate-500 dark:text-slate-400">
-                  {row.qty}
-                </span>
-                <span className="text-slate-500 dark:text-slate-400">
-                  {row.unitPrice}
-                </span>
-                <span className="font-semibold text-slate-900 dark:text-white">
-                  {row.total}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 flex flex-wrap justify-end gap-3">
-            <button className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
-              {t("dashboard.buttons.preview")}
-            </button>
-            <button className="rounded-xl bg-linear-to-r from-rose-600 to-orange-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-rose-500/20 dark:shadow-rose-500/30">
-              {t("dashboard.buttons.sendQuote")}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700">
-        <CirclePlay className="h-7 w-7 fill-rose-600 text-rose-600 dark:fill-rose-500 dark:text-rose-500" />
-      </button>
+      <Image
+        src="/Assets/Sales/Smart sales quotations.png"
+        alt="Smart sales quotations"
+        width={1200}
+        height={900}
+        className="h-auto w-full"
+      />
     </div>
   );
 }
@@ -347,23 +235,6 @@ export default function SalesQuotationPage() {
     t("portalSection.features.onlineAcceptance"),
     t("portalSection.features.integratedPayment"),
     t("portalSection.features.automaticConfirmation"),
-  ];
-
-  const portalSteps = [
-    t("portalSection.portalSteps.steps.review"),
-    t("portalSection.portalSteps.steps.comment"),
-    t("portalSection.portalSteps.steps.sign"),
-    t("portalSection.portalSteps.steps.pay"),
-  ];
-
-  const leadStats = [
-    { label: t("leadsSection.stats.leadScore"), value: "92%" },
-    { label: t("leadsSection.stats.winProbability"), value: "74%" },
-    { label: t("leadsSection.stats.expectedRevenue"), value: "$18.4k" },
-    {
-      label: t("leadsSection.stats.nextAction"),
-      value: t("portalSection.portalSteps.steps.sign"),
-    },
   ];
 
   const configItems = [
@@ -493,46 +364,14 @@ export default function SalesQuotationPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.1)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-              <p className="font-semibold text-slate-950 dark:text-white">
-                {t("productsSection.priceList.title")}
-              </p>
-              <div className="mt-4 space-y-3">
-                {priceListItems.map((item) => (
-                  <div
-                    key={item.name}
-                    className="flex items-center justify-between rounded-2xl bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm"
-                  >
-                    <span className="font-medium text-slate-700 dark:text-slate-300">
-                      {item.name}
-                    </span>
-                    <span className="font-bold text-rose-600 dark:text-rose-400">
-                      {item.price}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.1)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-              <p className="font-semibold text-slate-950 dark:text-white">
-                {t("productsSection.productCatalog.title")}
-              </p>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                {productCatalogItems.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-2xl bg-linear-to-br from-rose-50 to-orange-50 dark:from-rose-950/30 dark:to-orange-950/30 p-4 text-center"
-                  >
-                    <PackageCheck className="mx-auto h-6 w-6 text-rose-600 dark:text-rose-400" />
-                    <p className="mt-2 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.1)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <Image
+              src="/Assets/Sales/Manage products and pricing.png"
+              alt="Manage products and pricing"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
           </div>
         </div>
       </section>
@@ -565,8 +404,8 @@ export default function SalesQuotationPage() {
           {t("templatesSection.description")}
         </p>
 
-        <div className="mx-auto mt-12 max-w-5xl rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
-          <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-5">
+        <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_35px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_35px_90px_rgba(0,0,0,0.3)]">
+          <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-6 py-5 text-left">
             <div>
               <p className="text-sm font-semibold text-rose-600 dark:text-rose-400">
                 {t("templatesSection.templateCard.title")}
@@ -580,21 +419,13 @@ export default function SalesQuotationPage() {
             </button>
           </div>
 
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {templateItems.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5"
-              >
-                <p className="font-semibold text-slate-900 dark:text-white">
-                  {item.title}
-                </p>
-                <p className="mt-2 text-2xl font-bold text-rose-600 dark:text-rose-400">
-                  {item.price}
-                </p>
-              </div>
-            ))}
-          </div>
+          <Image
+            src="/Assets/Sales/Use quote templates.png"
+            alt="Use quote templates"
+            width={1200}
+            height={900}
+            className="h-auto w-full"
+          />
         </div>
       </section>
 
@@ -627,28 +458,14 @@ export default function SalesQuotationPage() {
           </div>
         </div>
 
-        <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-          <div className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5">
-            <p className="font-semibold text-slate-950 dark:text-white">
-              {t("portalSection.portalSteps.title")}
-            </p>
-
-            <div className="mt-5 space-y-3">
-              {portalSteps.map((item, index) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 rounded-2xl bg-white dark:bg-slate-800 px-4 py-3 shadow-sm"
-                >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-950/50 text-sm font-bold text-rose-700 dark:text-rose-300">
-                    {index + 1}
-                  </span>
-                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+          <Image
+            src="/Assets/Sales/Customer portal.png"
+            alt="Customer portal"
+            width={1200}
+            height={900}
+            className="h-auto w-full"
+          />
         </div>
       </section>
 
@@ -673,22 +490,14 @@ export default function SalesQuotationPage() {
             </p>
           </div>
 
-          <div className="rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {leadStats.map(({ label, value }) => (
-                <div
-                  key={label}
-                  className="rounded-3xl bg-slate-50 dark:bg-slate-800/50 p-5"
-                >
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
-                    {label}
-                  </p>
-                  <p className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="overflow-hidden rounded-4xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.1)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+            <Image
+              src="/Assets/Sales/Qualified leads.png"
+              alt="Qualified leads"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
           </div>
         </div>
       </section>
