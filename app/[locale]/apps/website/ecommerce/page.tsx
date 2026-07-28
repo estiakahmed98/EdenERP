@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   BadgeCheck,
   BarChart3,
   Boxes,
-  CheckCircle2,
   Crown,
   Gift,
   Heart,
@@ -18,7 +18,6 @@ import {
   Palette,
   Play,
   Search,
-  ShoppingBag,
   Sparkles,
   Star,
   Store,
@@ -36,86 +35,6 @@ const handwrittenFont =
 export default function EcommerceArtisticSections() {
   const t = useTranslations("pages.ecommerce");
 
-  // Sidebar categories
-  const categories = [
-    t("hero.sidebar.all"),
-    t("hero.sidebar.chairs"),
-    t("hero.sidebar.tables"),
-    t("hero.sidebar.lighting"),
-    t("hero.sidebar.storage"),
-    t("hero.sidebar.decor"),
-  ];
-
-  // Filter items
-  const filterItems = [
-    t("hero.sidebar.inStock"),
-    t("hero.sidebar.newArrivals"),
-    t("hero.sidebar.onSale"),
-  ];
-
-  // Products
-  const products = [
-    {
-      title: t("hero.products.oakChair.title"),
-      price: t("hero.products.oakChair.price"),
-      image:
-        "https://images.unsplash.com/photo-1503602642458-232111445657?w=500&auto=format&fit=crop",
-      isNew: false,
-    },
-    {
-      title: t("hero.products.blueSofa.title"),
-      price: t("hero.products.blueSofa.price"),
-      image:
-        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop",
-      isNew: true,
-    },
-    {
-      title: t("hero.products.woodTable.title"),
-      price: t("hero.products.woodTable.price"),
-      image:
-        "https://images.unsplash.com/photo-1549497538-303791108f95?w=500&auto=format&fit=crop",
-      isNew: false,
-    },
-    {
-      title: t("hero.products.modernLamp.title"),
-      price: t("hero.products.modernLamp.price"),
-      image:
-        "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&auto=format&fit=crop",
-      isNew: false,
-    },
-    {
-      title: t("hero.products.storageBox.title"),
-      price: t("hero.products.storageBox.price"),
-      image:
-        "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=500&auto=format&fit=crop",
-      isNew: false,
-    },
-    {
-      title: t("hero.products.sideStool.title"),
-      price: t("hero.products.sideStool.price"),
-      image:
-        "https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=500&auto=format&fit=crop",
-      isNew: false,
-    },
-  ];
-
-  // Edit panel items
-  const editPanelItems = [
-    t("noCodeSection.editPanel.productLayout"),
-    t("noCodeSection.editPanel.imageGallery"),
-    t("noCodeSection.editPanel.priceStyle"),
-    t("noCodeSection.editPanel.buttonColor"),
-    t("noCodeSection.editPanel.reviews"),
-    t("noCodeSection.editPanel.mobileView"),
-  ];
-
-  // Product features
-  const productFeatures = [
-    t("noCodeSection.productPage.features.reviews"),
-    t("noCodeSection.productPage.features.checkout"),
-    t("noCodeSection.productPage.features.inventory"),
-  ];
-
   // Product king features
   const productKingFeatures = [
     {
@@ -130,14 +49,6 @@ export default function EcommerceArtisticSections() {
       title: t("productKingSection.features.upselling.title"),
       description: t("productKingSection.features.upselling.description"),
     },
-  ];
-
-  // Product colors
-  const productColors = [
-    t("productKingSection.productCard.colors.oak"),
-    t("productKingSection.productCard.colors.black"),
-    t("productKingSection.productCard.colors.white"),
-    t("productKingSection.productCard.colors.blue"),
   ];
 
   // Messages
@@ -302,101 +213,13 @@ export default function EcommerceArtisticSections() {
             </div>
 
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
-              <div className="grid bg-white dark:bg-slate-900 lg:grid-cols-[220px_1fr]">
-                <aside className="border-r border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 text-left">
-                  <p className="text-sm font-bold text-slate-900 dark:text-white">
-                    {t("hero.sidebar.categories")}
-                  </p>
-
-                  <div className="mt-5 space-y-3">
-                    {categories.map((item, index) => (
-                      <div
-                        key={item}
-                        className={`rounded-md px-3 py-2 text-xs font-semibold ${
-                          index === 0
-                            ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
-                            : "bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400"
-                        }`}
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-8">
-                    <p className="text-xs font-bold text-slate-500 dark:text-slate-400">
-                      {t("hero.sidebar.filter")}
-                    </p>
-                    <div className="mt-3 space-y-2">
-                      {filterItems.map((item) => (
-                        <div
-                          key={item}
-                          className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400"
-                        >
-                          <span className="h-3 w-3 rounded border border-slate-300 dark:border-slate-600" />
-                          {item}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </aside>
-
-                <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
-                  <div className="mb-5 flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-bold text-slate-900 dark:text-white">
-                        {t("hero.storeHeader.title")}
-                      </p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                        8 {t("hero.storeHeader.productsFound")}
-                      </p>
-                    </div>
-
-                    <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                      {t("hero.storeHeader.customize")}
-                    </button>
-                  </div>
-
-                  <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    {products.map((product, index) => (
-                      <div
-                        key={product.title}
-                        className="group overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700 transition hover:-translate-y-1 hover:shadow-xl"
-                      >
-                        <div className="relative">
-                          <img
-                            src={product.image}
-                            alt={product.title}
-                            className="h-36 w-full object-cover"
-                          />
-
-                          {product.isNew && (
-                            <span className="absolute left-3 top-3 rounded-full bg-emerald-500 dark:bg-emerald-600 px-2 py-1 text-[10px] font-bold text-white">
-                              {t("hero.newBadge")}
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="p-4 text-left">
-                          <h3 className="text-sm font-bold text-slate-900 dark:text-white">
-                            {product.title}
-                          </h3>
-
-                          <div className="mt-2 flex items-center justify-between">
-                            <p className="text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                              {product.price}
-                            </p>
-
-                            <button className="rounded-md bg-slate-100 dark:bg-slate-700 p-2 text-slate-500 dark:text-slate-300 transition group-hover:bg-[#714b67] group-hover:text-white dark:group-hover:bg-[#8a5a7e]">
-                              <ShoppingBag className="h-4 w-4" />
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/Assets/Ecommarce/eCommerce.png"
+                alt="eCommerce storefront"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
@@ -424,82 +247,13 @@ export default function EcommerceArtisticSections() {
 
           <div className="relative mx-auto mt-12 max-w-4xl">
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid lg:grid-cols-[1fr_250px]">
-                <div className="bg-white dark:bg-slate-900 p-7">
-                  <div className="mb-5 flex items-center justify-between">
-                    <div className="h-4 w-40 rounded bg-slate-100 dark:bg-slate-800" />
-                    <div className="flex gap-2">
-                      <span className="h-8 w-8 rounded bg-slate-100 dark:bg-slate-800" />
-                      <span className="h-8 w-20 rounded bg-[#714b67] dark:bg-[#8a5a7e]" />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
-                    <img
-                      src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700&auto=format&fit=crop"
-                      alt="Cake product"
-                      className="h-80 w-full rounded-lg object-cover"
-                    />
-
-                    <div className="text-left">
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        {t("noCodeSection.productPage.title")}
-                      </h3>
-
-                      <div className="mt-3 flex gap-1 text-amber-400 dark:text-amber-500">
-                        {Array.from({ length: 5 }).map((_, index) => (
-                          <Star key={index} className="h-4 w-4 fill-current" />
-                        ))}
-                      </div>
-
-                      <p className="mt-4 text-2xl font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                        {t("noCodeSection.productPage.price")}
-                      </p>
-
-                      <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                        {t("noCodeSection.productPage.description")}
-                      </p>
-
-                      <button className="mt-6 rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                        {t("noCodeSection.productPage.addToCart")}
-                      </button>
-
-                      <div className="mt-8 space-y-3">
-                        {productFeatures.map((item) => (
-                          <div
-                            key={item}
-                            className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300"
-                          >
-                            <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
-                  <p className="mb-5 text-sm font-bold">
-                    {t("noCodeSection.editPanel.title")}
-                  </p>
-
-                  {editPanelItems.map((item, index) => (
-                    <div key={item} className="mb-4">
-                      <div className="mb-2 flex items-center justify-between text-xs text-white/60">
-                        <span>{item}</span>
-                        <span>{index + 1}</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
-                        <div
-                          className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/50"
-                          style={{ width: `${45 + index * 8}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </aside>
-              </div>
+              <Image
+                src="/Assets/Ecommarce/No code Mode.png"
+                alt="No-code website editor"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
 
             <div className="mt-10 text-center">
@@ -563,62 +317,14 @@ export default function EcommerceArtisticSections() {
             <div className="relative">
               <div className="absolute inset-0 translate-x-10 translate-y-10 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-              <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
-                <div className="grid gap-6 sm:grid-cols-[1fr_1fr]">
-                  <img
-                    src="https://images.unsplash.com/photo-1503602642458-232111445657?w=600&auto=format&fit=crop"
-                    alt="Product"
-                    className="h-72 w-full rounded-lg object-cover"
-                  />
-
-                  <div className="text-left">
-                    <p className="text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                      {t("productKingSection.productCard.badge")}
-                    </p>
-
-                    <h3 className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">
-                      {t("productKingSection.productCard.title")}
-                    </h3>
-
-                    <div className="mt-3 flex gap-1 text-amber-400 dark:text-amber-500">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <Star key={index} className="h-4 w-4 fill-current" />
-                      ))}
-                    </div>
-
-                    <p className="mt-4 text-2xl font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                      {t("productKingSection.productCard.price")}
-                    </p>
-
-                    <div className="mt-5 grid grid-cols-4 gap-2">
-                      {productColors.map((item, index) => (
-                        <span
-                          key={item}
-                          className={`rounded-md border px-2 py-2 text-center text-xs font-bold ${
-                            index === 0
-                              ? "border-[#714b67] text-[#714b67] dark:border-[#9b6a8f] dark:text-[#9b6a8f]"
-                              : "border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-500"
-                          }`}
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-
-                    <button className="mt-6 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                      {t("productKingSection.productCard.addToCart")}
-                    </button>
-                  </div>
-                </div>
-
-                <div className="mt-5 grid grid-cols-4 gap-3">
-                  {Array.from({ length: 4 }).map((_, index) => (
-                    <div
-                      key={index}
-                      className="h-16 rounded-md bg-slate-100 dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700"
-                    />
-                  ))}
-                </div>
+              <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_80px_rgba(0,0,0,0.3)]">
+                <Image
+                  src="/Assets/Ecommarce/Product is king.png"
+                  alt="Product is king"
+                  width={1200}
+                  height={900}
+                  className="h-auto w-full"
+                />
               </div>
             </div>
           </div>
