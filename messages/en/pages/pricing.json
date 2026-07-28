@@ -136,14 +136,14 @@
       "badge": null,
       "icon": "🌱",
       "accent": "#6c757d",
-      "users": 6,
+      "users": 4,
       "currency": "BDT",
       "setupFee": 0,
       "quarterlyFee": 0,
       "cta": "Get started",
       "features": [
         "Accounting",
-        "Payroll",
+        "HR & Payroll",
         "Inventory"
       ]
     },
@@ -161,7 +161,7 @@
       "cta": "Buy now",
       "features": [
         "Accounting",
-        "Payroll",
+        "HR & Payroll",
         "Manufacturing",
         "Supply Chain",
         "Inventory",
@@ -182,7 +182,7 @@
       "cta": "Get started",
       "features": [
         "Accounting",
-        "Payroll",
+        "HR & Payroll",
         "Manufacturing",
         "Supply Chain",
         "Inventory",
@@ -204,7 +204,7 @@
       "cta": "Contact sales",
       "features": [
         "Accounting",
-        "Payroll",
+        "HR & Payroll",
         "Manufacturing",
         "Supply Chain",
         "Inventory",
@@ -243,7 +243,7 @@
       "cta": "Contact sales",
       "features": [
         "Accounting",
-        "Payroll",
+        "HR & Payroll",
         "Manufacturing",
         "Supply Chain",
         "Inventory",
