@@ -50,6 +50,46 @@
       { "title": "Storage", "icon": "Warehouse", "color": "rose" }
     ]
   },
+  "demandForecastSection": {
+    "title": "Predict demand",
+    "titleHighlight": "before it happens",
+    "description": "Analyze historical sales, seasonality, and lead times to forecast future demand — so you buy and produce the right quantity at the right time.",
+    "features": [
+      "AI-driven demand predictions by product and location",
+      "Seasonal trend and sales velocity analysis",
+      "Automatic reorder suggestions from forecasted demand"
+    ]
+  },
+  "inventorySummarySection": {
+    "title": "One view,",
+    "titleHighlight": "every stock level",
+    "description": "See on-hand, reserved, incoming, and forecasted quantities for every product and warehouse location in a single live summary.",
+    "features": [
+      "Real-time stock levels across all warehouses",
+      "Breakdown by on-hand, reserved, and incoming",
+      "Filter by product, category, or location instantly"
+    ]
+  },
+  "gatePassesSection": {
+    "title": "Track every",
+    "titleHighlight": "vehicle in and out",
+    "description": "Issue digital gate passes for every truck, driver, and shipment — with entry and exit timestamps, linked purchase or delivery orders, and full audit history.",
+    "features": [
+      "Digital gate pass creation and approval",
+      "Linked to purchase orders, deliveries, and transfers",
+      "Entry/exit timestamps with full vehicle history"
+    ]
+  },
+  "weighbridgeSection": {
+    "title": "Weighbridge &",
+    "titleHighlight": "scales, connected",
+    "description": "Capture gross, tare, and net weights directly from weighbridge and scale devices, auto-attached to the right gate pass or transfer.",
+    "features": [
+      "Direct integration with weighbridge & scale hardware",
+      "Automatic gross, tare, and net weight capture",
+      "Weight tickets linked to gate passes and transfers"
+    ]
+  },
   "qualitySection": {
     "title": "Speed up receipt,",
     "titleHighlight": "quality",

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import {
   ArrowRight,
@@ -10,10 +11,8 @@ import {
   GraduationCap,
   MessageCircle,
   MonitorSmartphone,
-  Play,
   Star,
   Sparkles,
-  Trophy,
   Users,
   ClipboardCheck,
   BarChart3,
@@ -73,100 +72,6 @@ function DashedArrow({ className = "" }: { className?: string }) {
 
 export default function ELearningLandingSections() {
   const t = useTranslations("pages.elearning");
-
-  // Sidebar items
-  const sidebarItems = [
-    t("hero.sidebar.introduction"),
-    t("hero.sidebar.lessons"),
-    t("hero.sidebar.exercises"),
-    t("hero.sidebar.quiz"),
-    t("hero.sidebar.certificate"),
-  ];
-
-  // Lessons
-  const lessons = [
-    {
-      number: t("hero.lessons.lesson1.number"),
-      title: t("hero.lessons.lesson1.title"),
-      status: t("hero.lessons.lesson1.status"),
-    },
-    {
-      number: t("hero.lessons.lesson2.number"),
-      title: t("hero.lessons.lesson2.title"),
-      status: t("hero.lessons.lesson2.status"),
-    },
-    {
-      number: t("hero.lessons.lesson3.number"),
-      title: t("hero.lessons.lesson3.title"),
-      status: t("hero.lessons.lesson3.status"),
-    },
-    {
-      number: t("hero.lessons.lesson4.number"),
-      title: t("hero.lessons.lesson4.title"),
-      status: t("hero.lessons.lesson4.status"),
-    },
-  ];
-
-  // Editor items
-  const editorItems = [
-    t("easyLearnSection.editor.courseLayout"),
-    t("easyLearnSection.editor.lessonCard"),
-    t("easyLearnSection.editor.progressBar"),
-    t("easyLearnSection.editor.buttonColor"),
-    t("easyLearnSection.editor.mobileView"),
-    t("easyLearnSection.editor.quizOptions"),
-  ];
-
-  // Course cards
-  const courseCards = [
-    {
-      title: t("easyLearnSection.courseCards.treeCare.title"),
-      description: t("easyLearnSection.courseCards.treeCare.description"),
-      image:
-        "https://images.unsplash.com/photo-1466781783364-36c955e42a7f?w=700&auto=format&fit=crop",
-    },
-    {
-      title: t("easyLearnSection.courseCards.indoorPlants.title"),
-      description: t("easyLearnSection.courseCards.indoorPlants.description"),
-      image:
-        "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=700&auto=format&fit=crop",
-    },
-  ];
-
-  // Student activities
-  const studentActivities = [
-    t("learningJourneySection.activities.completedLesson"),
-    t("learningJourneySection.activities.unlockedBadge"),
-    t("learningJourneySection.activities.passedQuiz"),
-    t("learningJourneySection.activities.startedCourse"),
-  ];
-
-  // Course results sidebar
-  const courseResultsItems = [
-    t("trainSection.sidebar.attendance"),
-    t("trainSection.sidebar.quizAnswers"),
-    t("trainSection.sidebar.certificates"),
-    t("trainSection.sidebar.reports"),
-    t("trainSection.sidebar.students"),
-  ];
-
-  // Quiz questions
-  const quizQuestions = [
-    {
-      text: t("trainSection.quiz.question1.text"),
-      answers: [
-        t("trainSection.quiz.question1.answers.0"),
-        t("trainSection.quiz.question1.answers.1"),
-      ],
-    },
-    {
-      text: t("trainSection.quiz.question2.text"),
-      answers: [
-        t("trainSection.quiz.question2.answers.0"),
-        t("trainSection.quiz.question2.answers.1"),
-      ],
-    },
-  ];
 
   // Features list
   const featuresList = [
@@ -288,90 +193,13 @@ export default function ELearningLandingSections() {
                 </span>
               </div>
 
-              <div className="grid bg-white dark:bg-slate-900 lg:grid-cols-[230px_1fr]">
-                <aside className="border-r border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5 text-left">
-                  <div className="rounded-lg bg-white dark:bg-slate-800 p-4 shadow-sm">
-                    <p className="text-sm font-bold text-slate-900 dark:text-white">
-                      {t("hero.courseHeader.courseProgress")}
-                    </p>
-
-                    <div className="mt-4">
-                      <div className="mb-2 flex justify-between text-xs font-bold text-slate-500 dark:text-slate-400">
-                        <span>{t("hero.courseHeader.completed")}</span>
-                        <span>{t("hero.courseHeader.percent")}</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-slate-100 dark:bg-slate-700">
-                        <div className="h-2 w-[47%] rounded-full bg-[#714b67] dark:bg-[#8a5a7e]" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-5 space-y-2">
-                    {sidebarItems.map((item, index) => (
-                      <div
-                        key={item}
-                        className={`rounded-md px-3 py-2 text-xs font-semibold ${
-                          index === 1
-                            ? "bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
-                            : "text-slate-500 dark:text-slate-400"
-                        }`}
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </aside>
-
-                <div className="bg-white dark:bg-slate-900 p-6 text-left">
-                  <div className="relative overflow-hidden rounded-lg bg-[#7a4d6e] dark:bg-[#5a3854] p-8 text-white">
-                    <div className="absolute right-6 top-6 h-24 w-24 rounded-full bg-white/10 dark:bg-white/5" />
-
-                    <p className="text-sm font-bold text-white/70">
-                      {t("hero.featuredCourse.category")}
-                    </p>
-
-                    <h2 className="mt-3 text-4xl font-bold">
-                      {t("hero.featuredCourse.title")}
-                    </h2>
-
-                    <p className="mt-4 max-w-xl text-sm leading-7 text-white/75">
-                      {t("hero.featuredCourse.description")}
-                    </p>
-
-                    <button className="mt-6 flex items-center gap-2 rounded-md bg-white dark:bg-slate-800 px-5 py-3 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                      <Play className="h-4 w-4 fill-current" />
-                      {t("hero.featuredCourse.continue")}
-                    </button>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {lessons.map((lesson, index) => (
-                      <div
-                        key={lesson.title}
-                        className="grid grid-cols-[44px_1fr_110px] items-center rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3"
-                      >
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 dark:bg-slate-800/50 text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                          {lesson.number}
-                        </span>
-                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
-                          {lesson.title}
-                        </span>
-                        <span
-                          className={`rounded-full px-3 py-1 text-center text-[10px] font-bold ${
-                            index === 0
-                              ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
-                              : index === 1
-                                ? "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
-                                : "bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500"
-                          }`}
-                        >
-                          {lesson.status}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/Assets/elearning/fun to learn.png"
+                alt="Fun to learn course dashboard"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
 
             <FloatingNote className="mx-auto mt-12 z-30" t={t} />
@@ -405,63 +233,13 @@ export default function ELearningLandingSections() {
 
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid lg:grid-cols-[1fr_250px]">
-                <div className="bg-white dark:bg-slate-900 p-7">
-                  <div className="mb-5 rounded-lg bg-[#714b67] dark:bg-[#8a5a7e] px-5 py-4 text-left text-white">
-                    <p className="text-sm font-bold">
-                      {t("hero.featuredCourse.title")}
-                    </p>
-                  </div>
-
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    {courseCards.map((item, index) => (
-                      <div
-                        key={item.title}
-                        className={`overflow-hidden rounded-xl border ${
-                          index === 1
-                            ? "border-[#02cfc3] dark:border-[#02cfc3]/50"
-                            : "border-slate-100 dark:border-slate-700"
-                        } bg-slate-50 dark:bg-slate-800/50`}
-                      >
-                        <img
-                          src={item.image}
-                          alt={item.title}
-                          className="h-48 w-full object-cover"
-                        />
-                        <div className="p-5 text-left">
-                          <h3 className="font-bold text-slate-900 dark:text-white">
-                            {item.title}
-                          </h3>
-                          <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <aside className="border-l border-slate-200 dark:border-slate-700 bg-[#171824] dark:bg-[#0f0f1a] p-5 text-left text-white">
-                  <p className="mb-5 text-sm font-bold">
-                    {t("easyLearnSection.editor.title")}
-                  </p>
-
-                  {editorItems.map((item, index) => (
-                    <div key={item} className="mb-4">
-                      <div className="mb-2 flex items-center justify-between text-xs text-white/60">
-                        <span>{item}</span>
-                        <span>{index + 1}</span>
-                      </div>
-                      <div className="h-2 rounded-full bg-white/10 dark:bg-white/5">
-                        <div
-                          className="h-2 rounded-full bg-[#02cfc3] dark:bg-[#02cfc3]/50"
-                          style={{ width: `${45 + index * 8}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </aside>
-              </div>
+              <Image
+                src="/Assets/elearning/learners engaged.png"
+                alt="Keep learners engaged"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
@@ -493,49 +271,13 @@ export default function ELearningLandingSections() {
             <div className="absolute inset-0 translate-x-10 translate-y-8 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="bg-[#714b67] dark:bg-[#8a5a7e] px-6 py-5 text-white">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={avatars[2]}
-                    alt="Student"
-                    className="h-20 w-20 rounded-full border-4 border-white dark:border-slate-800 object-cover"
-                  />
-                  <div>
-                    <h3 className="text-2xl font-bold">
-                      {t("learningJourneySection.student.name")}
-                    </h3>
-                    <p className="text-sm text-white/70">
-                      {t("learningJourneySection.student.role")}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid gap-5 p-6 sm:grid-cols-[180px_1fr]">
-                <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-5 text-center">
-                  <Trophy className="mx-auto h-12 w-12 text-amber-400 dark:text-amber-500" />
-                  <p className="mt-3 text-2xl font-bold text-slate-900 dark:text-white">
-                    {t("learningJourneySection.student.xpPoints")}
-                  </p>
-                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
-                    {t("learningJourneySection.student.xpLabel")}
-                  </p>
-                </div>
-
-                <div className="space-y-3">
-                  {studentActivities.map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-center justify-between rounded-lg border border-slate-100 dark:border-slate-700 px-4 py-3 text-sm"
-                    >
-                      <span className="font-semibold text-slate-700 dark:text-slate-200">
-                        {item}
-                      </span>
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500 dark:text-emerald-400" />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Image
+                src="/Assets/elearning/Learning is a journey.png"
+                alt="Learning is a journey"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
@@ -569,72 +311,13 @@ export default function ELearningLandingSections() {
             <div className="absolute inset-0 translate-y-10 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid min-h-105 lg:grid-cols-[220px_1fr]">
-                <aside className="bg-[#1f2937] dark:bg-[#0f0f1a] p-5 text-left text-white">
-                  <p className="text-sm font-bold">
-                    {t("trainSection.sidebar.title")}
-                  </p>
-
-                  <div className="mt-6 space-y-2">
-                    {courseResultsItems.map((item, index) => (
-                      <div
-                        key={item}
-                        className={`rounded-md px-3 py-2 text-xs font-semibold ${
-                          index === 1
-                            ? "bg-white/15 dark:bg-white/10 text-white"
-                            : "text-white/60"
-                        }`}
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </aside>
-
-                <div className="p-7 text-left">
-                  <div className="mb-6 flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-                      {t("trainSection.quiz.title")}
-                    </h3>
-
-                    <span className="rounded-full bg-amber-50 dark:bg-amber-950/50 px-3 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
-                      {t("trainSection.quiz.inProgress")}
-                    </span>
-                  </div>
-
-                  <div className="space-y-5">
-                    {quizQuestions.map((item) => (
-                      <div
-                        key={item.text}
-                        className="rounded-xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-5"
-                      >
-                        <p className="font-bold text-slate-900 dark:text-white">
-                          {item.text}
-                        </p>
-
-                        <div className="mt-4 space-y-2">
-                          {item.answers.map((answer, index) => (
-                            <div
-                              key={answer}
-                              className={`rounded-lg px-4 py-3 text-sm ${
-                                index === 0
-                                  ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-400"
-                                  : "bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400"
-                              }`}
-                            >
-                              {answer}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <button className="mt-6 rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                    {t("trainSection.button")}
-                  </button>
-                </div>
-              </div>
+              <Image
+                src="/Assets/elearning/Survey and quiz feedback.png"
+                alt="Survey and quiz feedback"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>

@@ -41,6 +41,7 @@
         "inventory": "Inventory",
         "manufacturing": "Manufacturing",
         "purchase": "Purchase",
+        "procurement": "Procurement",
         "maintenance": "Maintenance",
         "quality": "Quality",
         "barcode": "Barcode",

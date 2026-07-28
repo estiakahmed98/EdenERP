@@ -96,6 +96,10 @@ const appsMegaMenu: MegaMenuColumn[] = [
       },
       { labelKey: "menu.apps.purchase", href: "/apps/supply-chain/purchase" },
       {
+        labelKey: "menu.apps.procurement",
+        href: "/apps/supply-chain/procurement",
+      },
+      {
         labelKey: "menu.apps.maintenance",
         href: "/apps/supply-chain/maintenance",
       },

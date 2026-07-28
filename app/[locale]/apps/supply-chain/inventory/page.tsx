@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import {
   ArrowRight,
@@ -105,11 +106,7 @@ export default function InventoryLandingSections() {
   const t = useTranslations("pages.inventory");
   const commonT = useTranslations("common.actions");
 
-  const dashboardStats = t.raw("hero.dashboard.stats");
-  const dashboardRows = t.raw("hero.dashboard.rows");
-  const tableHeaders = t.raw("hero.dashboard.tableHeaders");
   const replenishmentFeatures = t.raw("replenishmentSection.features");
-  const warehouseStages = t.raw("warehouseSection.stages");
   const pickingTypes = t.raw("pickingSection.types");
   const featuresList = t.raw("featuresSection.features");
   const appsList = t.raw("appsSection.apps");
@@ -187,68 +184,13 @@ export default function InventoryLandingSections() {
                 </div>
               </div>
 
-              <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
-                <div className="mb-5 grid gap-3 sm:grid-cols-4">
-                  {dashboardStats.map((stat: any) => (
-                    <div
-                      key={stat.label}
-                      className={`rounded-lg p-4 text-left ${getColorClass(stat.color)}`}
-                    >
-                      <p className="text-xs font-bold">{stat.label}</p>
-                      <p className="mt-2 text-2xl font-bold">{stat.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
-                  <div className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                    {tableHeaders.map((header: string) => (
-                      <span key={header}>{header}</span>
-                    ))}
-                  </div>
-
-                  {dashboardRows.map((row: any) => (
-                    <div
-                      key={row.reference}
-                      className="grid grid-cols-7 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
-                    >
-                      <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                        {row.reference}
-                      </span>
-                      <span className="text-slate-700 dark:text-slate-200">
-                        {row.product}
-                      </span>
-                      <span className="text-slate-500 dark:text-slate-400">
-                        {row.source}
-                      </span>
-                      <span className="text-slate-500 dark:text-slate-400">
-                        {row.destination}
-                      </span>
-                      <span className="font-bold text-slate-900 dark:text-white">
-                        {row.qty}
-                      </span>
-                      <span
-                        className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                          row.status === "Done" || row.status === "সম্পন্ন"
-                            ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
-                            : row.status === "Ready" || row.status === "প্রস্তুত"
-                              ? "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400"
-                              : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
-                        }`}
-                      >
-                        {row.status}
-                      </span>
-                      <span className="text-slate-400 dark:text-slate-500">
-                        {row.date}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
-                <Play className="ml-1 h-6 w-6 fill-current" />
-              </button>
+              <Image
+                src="/Assets/inventory/Inventory.png"
+                alt="Inventory dashboard"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
 
             <div className="relative z-50 mx-auto mt-10 max-w-md rounded-xl bg-white dark:bg-slate-800 p-5 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700">
@@ -340,6 +282,190 @@ export default function InventoryLandingSections() {
         </div>
       </section>
 
+      {/* Demand Forecast Section */}
+      <section className="relative bg-white dark:bg-slate-950 py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h2
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              {t("demandForecastSection.title")}{" "}
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  {t("demandForecastSection.titleHighlight")}
+                </span>
+              </HandUnderline>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t("demandForecastSection.description")}
+            </p>
+
+            <div className="mt-8 space-y-4">
+              {t.raw("demandForecastSection.features").map((item: string) => (
+                <div key={item} className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
+                    <BarChart3 className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <Image
+              src="/Assets/inventory/Demand Forecast.png"
+              alt="Demand Forecast"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Inventory Summary Section */}
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)] lg:order-1">
+            <Image
+              src="/Assets/inventory/Inventory Summary.png"
+              alt="Inventory Summary"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
+          </div>
+
+          <div className="order-2">
+            <h2
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              {t("inventorySummarySection.title")}{" "}
+              <HandUnderline color="bg-amber-300 dark:bg-amber-800">
+                <span className="dark:text-amber-200">
+                  {t("inventorySummarySection.titleHighlight")}
+                </span>
+              </HandUnderline>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t("inventorySummarySection.description")}
+            </p>
+
+            <div className="mt-8 space-y-4">
+              {t.raw("inventorySummarySection.features").map((item: string) => (
+                <div key={item} className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
+                    <ClipboardCheck className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gate Passes Section */}
+      <section className="relative bg-white dark:bg-slate-950 py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h2
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              {t("gatePassesSection.title")}{" "}
+              <HandUnderline color="bg-rose-300 dark:bg-rose-800">
+                <span className="dark:text-rose-200">
+                  {t("gatePassesSection.titleHighlight")}
+                </span>
+              </HandUnderline>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t("gatePassesSection.description")}
+            </p>
+
+            <div className="mt-8 space-y-4">
+              {t.raw("gatePassesSection.features").map((item: string) => (
+                <div key={item} className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
+                    <Truck className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <Image
+              src="/Assets/inventory/Gate Passes.png"
+              alt="Gate Passes"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Weighbridge & Scales Section */}
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)] lg:order-1">
+            <Image
+              src="/Assets/inventory/Weigh Tickets.png"
+              alt="Weighbridge and Scales"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
+          </div>
+
+          <div className="order-2">
+            <h2
+              className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              {t("weighbridgeSection.title")}{" "}
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+                <span className="text-[#02a6a6] dark:text-[#02cfc3]">
+                  {t("weighbridgeSection.titleHighlight")}
+                </span>
+              </HandUnderline>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t("weighbridgeSection.description")}
+            </p>
+
+            <div className="mt-8 space-y-4">
+              {t.raw("weighbridgeSection.features").map((item: string) => (
+                <div key={item} className="flex items-center gap-3">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#f8eff6] dark:bg-[#2a1a24] text-[#714b67] dark:text-[#9b6a8f]">
+                    <ShieldCheck className="h-4 w-4" />
+                  </div>
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Speed up receipt, quality control and storage Section */}
       <section className="relative bg-white dark:bg-slate-950 py-20">
         <div className="absolute left-0 top-1/2 hidden h-80 w-80 -translate-y-1/2 rounded-r-full bg-[#f3f4f7] dark:bg-[#0f0f1a] lg:block" />
@@ -412,28 +538,14 @@ export default function InventoryLandingSections() {
           <div className="relative">
             <div className="absolute inset-0 translate-x-10 translate-y-10 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid gap-4 sm:grid-cols-3">
-                {warehouseStages.map((title: string, columnIndex: number) => (
-                  <div key={title} className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4">
-                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white">
-                      {title}
-                    </p>
-
-                    <div className="space-y-3">
-                      {Array.from({ length: 4 }).map((_, index) => (
-                        <div key={index} className="rounded-lg bg-white dark:bg-slate-800 p-3 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
-                          <p className="text-xs font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                            WH/{columnIndex + 1}0{index + 1}
-                          </p>
-                          <div className="mt-2 h-2 rounded bg-slate-100 dark:bg-slate-700" />
-                          <div className="mt-2 h-2 w-3/4 rounded bg-slate-100 dark:bg-slate-700" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <Image
+                src="/Assets/inventory/Optimize your warehouse.png"
+                alt="Optimize your warehouse"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
 
             <Boxes className="absolute -bottom-8 right-8 h-14 w-14 text-amber-500 dark:text-amber-400" />
