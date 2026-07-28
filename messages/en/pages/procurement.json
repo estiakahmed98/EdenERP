@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "title": "Procurement & Tender Management | Adon ERP",
+    "description": "Run purchase requisitions, comparative statements, landed cost allocation, and tender management in one connected procurement workflow."
+  },
+  "header": {
+    "title": "Procurement",
+    "subtitle": "without the guesswork",
+    "description": "From purchase requisition to comparative statement to PO, from shipment to landed-cost allocation, and from tender publish to award — one workflow, fully traceable.",
+    "buttons": {
+      "startNow": "Start now",
+      "meetAdvisor": "Meet an advisor"
+    }
+  },
+  "landedCostSection": {
+    "eyebrow": "Supply Chain & Landed Cost",
+    "title": "True landed",
+    "subtitle": "unit cost",
+    "description": "Track every shipment from goods receipt to landed-cost allocation — freight, duty, and insurance split automatically across received items so your unit cost is always accurate.",
+    "features": [
+      "Shipments linked to goods receipts automatically",
+      "Allocate freight, duty & insurance across line items",
+      "True landed unit cost flows straight into inventory valuation"
+    ]
+  },
+  "procurementSection": {
+    "eyebrow": "Procurement",
+    "title": "Requisition to",
+    "subtitle": "bill, connected",
+    "description": "Purchase requisition, comparative statement, purchase order, goods receipt note, and bill — every step traceable back to the original request.",
+    "features": [
+      "Purchase requisitions with multi-level approval",
+      "Side-by-side comparative statements across vendors",
+      "PO, GRN, and bill matching in one workflow"
+    ]
+  },
+  "requisitionsSection": {
+    "eyebrow": "Purchase Requisitions",
+    "title": "Start every purchase",
+    "subtitle": "with a request",
+    "description": "Departments raise a requisition, procurement reviews and approves it, and it becomes the source of truth for every quotation, comparison, and order that follows.",
+    "features": [
+      "Department-wise requisition raising and tracking",
+      "Approval routing by amount, category, or department",
+      "One-click conversion into an RFQ or comparative statement"
+    ]
+  },
+  "comparativeSection": {
+    "eyebrow": "Comparative Statements",
+    "title": "Compare vendors",
+    "subtitle": "side by side",
+    "description": "Pull quotations from multiple vendors into one comparison sheet — price, lead time, and terms side by side — before you commit to a purchase order.",
+    "features": [
+      "Multi-vendor quotation comparison in one sheet",
+      "Highlight lowest price, fastest lead time, best terms",
+      "Award directly into a purchase order"
+    ]
+  },
+  "tenderSection": {
+    "eyebrow": "Tender Management",
+    "title": "Publish, evaluate,",
+    "subtitle": "and award",
+    "description": "Publish tenders, collect bids, run the opening sheet plus technical and financial evaluation, and award — optionally raising a draft PO straight from the winning bid.",
+    "stats": [
+      { "label": "Open (published)", "value": "0" },
+      { "label": "Under evaluation", "value": "1" },
+      { "label": "Awarded", "value": "1" },
+      { "label": "Total bids", "value": "3" }
+    ],
+    "features": [
+      "Publish tenders and collect bids from vendors",
+      "Opening sheet with technical & financial evaluation",
+      "Award and raise a draft PO from the winning bid"
+    ]
+  },
+  "workflowSection": {
+    "title": "One workflow,",
+    "highlight": "fully connected",
+    "description": "Requisition, comparison, tender, purchase order, goods receipt, and landed cost all feed the same procurement record — nothing gets re-entered twice.",
+    "steps": [
+      { "title": "1. Requisition", "description": "A department raises what it needs." },
+      { "title": "2. Compare / Tender", "description": "Quotations or bids are compared and evaluated." },
+      { "title": "3. Purchase order", "description": "The winning vendor is confirmed on a PO." },
+      { "title": "4. Receipt & landed cost", "description": "Goods arrive; freight and duty are allocated." }
+    ]
+  },
+  "featuresSection": {
+    "title": "All the",
+    "subtitle1": "features",
+    "subtitle2": "done",
+    "done": "right.",
+    "seeAllFeatures": "See all features"
+  },
+  "features": {
+    "multiVendor": {
+      "title": "Multi-vendor comparison",
+      "description": "Compare quotations from any number of vendors in a single, structured comparative statement."
+    },
+    "landedCost": {
+      "title": "Landed cost allocation",
+      "description": "Split freight, duty, and insurance across received line items automatically."
+    },
+    "tenderWorkflow": {
+      "title": "Tender workflow",
+      "description": "Publish, collect bids, evaluate, and award — with a full audit trail at every step."
+    },
+    "approvalRouting": {
+      "title": "Approval routing",
+      "description": "Route requisitions and POs through the right approvers automatically."
+    }
+  },
+  "appsSection": {
+    "title": "One",
+    "subtitle1": "need",
+    "subtitle2": "one",
+    "subtitle3": "app.",
+    "description": "Expand as you grow.",
+    "seeAllApps": "See all Apps"
+  },
+  "apps": {
+    "purchase": {
+      "title": "Purchase",
+      "description": "Purchase orders and vendor bills"
+    },
+    "inventory": {
+      "title": "Inventory",
+      "description": "Goods receipts and stock moves"
+    },
+    "quality": {
+      "title": "Quality",
+      "description": "Inspect incoming shipments"
+    }
+  },
+  "testimonialSection": {
+    "joinTitle": "Join 15 million users",
+    "joinSubtitle": "who grow their business with Adon",
+    "testimonial": {
+      "text": "The comparative statement and tender module cut our procurement cycle time in half, and landed cost finally matches what we actually paid.",
+      "name": "Farid Chowdhury",
+      "role": "Procurement manager"
+    }
+  },
+  "ctaSection": {
+    "title": "Unleash",
+    "subtitle": "your",
+    "subtitle2": "procurement",
+    "subtitle3": "potential",
+    "button": "Start now"
+  }
+}
