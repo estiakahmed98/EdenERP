@@ -11,7 +11,6 @@ import {
   BarChart3,
   Boxes,
   CheckCircle2,
-  CirclePlay,
   CreditCard,
   FileCheck2,
   FileText,
@@ -257,34 +256,6 @@ export default function SalesQuotationPage() {
       label: t("productControlSection.configCard.items.paymentTerm"),
       value: t("productControlSection.configCard.values.paymentTerm"),
       width: 90,
-    },
-  ];
-
-  const priceListItems = [
-    { name: t("productsSection.priceList.items.starter"), price: "$499" },
-    { name: t("productsSection.priceList.items.business"), price: "$1,299" },
-    { name: t("productsSection.priceList.items.enterprise"), price: "$2,899" },
-  ];
-
-  const productCatalogItems = [
-    t("productsSection.productCatalog.items.crm"),
-    t("productsSection.productCatalog.items.erp"),
-    t("productsSection.productCatalog.items.support"),
-    t("productsSection.productCatalog.items.training"),
-  ];
-
-  const templateItems = [
-    {
-      title: t("templatesSection.templateCard.items.implementation"),
-      price: "$4,500",
-    },
-    {
-      title: t("templatesSection.templateCard.items.support"),
-      price: "$950/mo",
-    },
-    {
-      title: t("templatesSection.templateCard.items.training"),
-      price: "$1,250",
     },
   ];
 
