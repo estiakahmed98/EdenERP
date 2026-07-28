@@ -90,10 +90,6 @@ const appsMegaMenu: MegaMenuColumn[] = [
     underlineClass: "bg-indigo-200",
     links: [
       { labelKey: "menu.apps.inventory", href: "/apps/supply-chain/inventory" },
-      {
-        labelKey: "menu.apps.manufacturing",
-        href: "/apps/supply-chain/manufacturing",
-      },
       { labelKey: "menu.apps.purchase", href: "/apps/supply-chain/purchase" },
       {
         labelKey: "menu.apps.procurement",
@@ -104,6 +100,41 @@ const appsMegaMenu: MegaMenuColumn[] = [
         href: "/apps/supply-chain/maintenance",
       },
       { labelKey: "menu.apps.quality", href: "/apps/supply-chain/quality" },
+    ],
+  },
+  {
+    titleKey: "menu.apps.manufacturing",
+    accentClass: "text-amber-500",
+    underlineClass: "bg-amber-200",
+    links: [
+      {
+        labelKey: "menu.apps.manufacturingOverview",
+        href: "/apps/manufacturing",
+      },
+      {
+        labelKey: "menu.apps.workCenters",
+        href: "/apps/manufacturing/work-centers",
+      },
+      {
+        labelKey: "menu.apps.routings",
+        href: "/apps/manufacturing/routings",
+      },
+      {
+        labelKey: "menu.apps.billOfMaterials",
+        href: "/apps/manufacturing/bill-of-materials",
+      },
+      {
+        labelKey: "menu.apps.productionOrders",
+        href: "/apps/manufacturing/production-orders",
+      },
+      {
+        labelKey: "menu.apps.qualityControl",
+        href: "/apps/manufacturing/quality-control",
+      },
+      {
+        labelKey: "menu.apps.standardCosting",
+        href: "/apps/manufacturing/standard-costing",
+      },
     ],
   },
   {

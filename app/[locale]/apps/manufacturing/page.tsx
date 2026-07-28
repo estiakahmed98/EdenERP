@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import {
   ArrowRight,
@@ -33,9 +34,26 @@ const handwrittenFont =
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
   const icons: Record<string, React.ElementType> = {
-    BadgeCheck, BarChart3, Warehouse, ClipboardCheck, GitBranch, ShieldCheck,
-    Factory, Recycle, ScanLine, Sparkles, Star, Users, ArrowRight, Play,
-    Boxes, Layers3, PackageCheck, TrendingUp, Zap, FileText,
+    BadgeCheck,
+    BarChart3,
+    Warehouse,
+    ClipboardCheck,
+    GitBranch,
+    ShieldCheck,
+    Factory,
+    Recycle,
+    ScanLine,
+    Sparkles,
+    Star,
+    Users,
+    ArrowRight,
+    Play,
+    Boxes,
+    Layers3,
+    PackageCheck,
+    TrendingUp,
+    Zap,
+    FileText,
   };
   return icons[iconName] || Factory;
 };
@@ -113,35 +131,19 @@ export default function MRPLandingSections() {
   const dashboardMenu = t.raw("hero.dashboard.menu");
   const dashboardStats = t.raw("hero.dashboard.stats");
   const dashboardOrders = t.raw("hero.dashboard.orders");
-  const simulationRows = t.raw("simulationSection.table.rows");
-  const simulationHeaders = t.raw("simulationSection.table.headers");
-  const planningDays = t.raw("planningSection.days");
-  const planningOps = t.raw("planningSection.operations");
   const productionSteps = t.raw("productionSection.steps");
-  const paperlessMenu = t.raw("paperlessSection.menuItems");
-  const paperlessComponents = t.raw("paperlessSection.components");
-  const qualityCategories = t.raw("qualitySection.categories");
   const kaizenSteps = t.raw("kaizenSection.steps");
   const featuresList = t.raw("featuresSection.features");
   const appsList = t.raw("appsSection.apps");
 
   const getStatusColor = (color: string) => {
     const colorMap: Record<string, string> = {
-      emerald: "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
+      emerald:
+        "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
       sky: "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
-      amber: "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
+      amber:
+        "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
       rose: "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
-    };
-    return colorMap[color] || colorMap.sky;
-  };
-
-  const getBlockColor = (color: string) => {
-    const colorMap: Record<string, string> = {
-      amber: "bg-amber-200 dark:bg-amber-800/50",
-      rose: "bg-rose-200 dark:bg-rose-800/50",
-      sky: "bg-sky-200 dark:bg-sky-800/50",
-      purple: "bg-purple-200 dark:bg-purple-800/50",
-      emerald: "bg-emerald-200 dark:bg-emerald-800/50",
     };
     return colorMap[color] || colorMap.sky;
   };
@@ -306,7 +308,9 @@ export default function MRPLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">{t("simulationSection.title")}</span>
+                <span className="dark:text-sky-200">
+                  {t("simulationSection.title")}
+                </span>
               </HandUnderline>{" "}
               {t("simulationSection.titleHighlight")}
             </h2>
@@ -316,52 +320,14 @@ export default function MRPLandingSections() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-            <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-white">
-                {t("simulationSection.table.title")}
-              </p>
-              <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                {t("simulationSection.table.badge")}
-              </span>
-            </div>
-
-            <div className="overflow-hidden rounded-lg ring-1 ring-slate-100 dark:ring-slate-700">
-              <div className="grid grid-cols-5 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                {simulationHeaders.map((header: string) => (
-                  <span key={header}>{header}</span>
-                ))}
-              </div>
-
-              {simulationRows.map((row: any) => (
-                <div
-                  key={row.order}
-                  className="grid grid-cols-5 border-b border-slate-100 dark:border-slate-700 px-4 py-4 text-left text-xs last:border-0"
-                >
-                  <span className="font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                    {row.order}
-                  </span>
-                  <span className="text-slate-600 dark:text-slate-300">
-                    {row.material}
-                  </span>
-                  <span className="text-slate-500 dark:text-slate-400">
-                    {row.stock}
-                  </span>
-                  <span className="text-slate-500 dark:text-slate-400">
-                    {row.time}
-                  </span>
-                  <span
-                    className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                      row.status === "Ready" || row.status === "প্রস্তুত"
-                        ? "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400"
-                        : "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400"
-                    }`}
-                  >
-                    {row.status}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <Image
+              src="/Assets/Manufacturing/Work Centers/Simulation result.png"
+              alt="Simulation result"
+              width={1200}
+              height={900}
+              className="h-auto w-full"
+            />
           </div>
         </div>
       </section>
@@ -383,40 +349,14 @@ export default function MRPLandingSections() {
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid grid-cols-7 gap-2 border-b border-slate-100 dark:border-slate-800 pb-4 text-xs font-bold text-slate-400 dark:text-slate-500">
-                {planningDays.map((day: string) => (
-                  <div key={day}>{day}</div>
-                ))}
-              </div>
-
-              <div className="mt-5 space-y-4 text-left">
-                {planningOps.map((op: any, rowIndex: number) => (
-                  <div
-                    key={op.name}
-                    className="grid grid-cols-[140px_1fr] items-center gap-4"
-                  >
-                    <p className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                      {op.name}
-                    </p>
-
-                    <div className="grid grid-cols-7 gap-2">
-                      {Array.from({ length: 7 }).map((_, index) => (
-                        <div
-                          key={index}
-                          className={`h-12 rounded-md ${getBlockColor(op.blocks[(index + rowIndex) % op.blocks.length])}`}
-                        >
-                          {index % 2 === 0 && (
-                            <div className="p-2 text-[10px] font-bold text-slate-700 dark:text-slate-200">
-                              MO/{rowIndex + 1}{index + 1}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <Image
+                src="/Assets/Manufacturing/Work Centers/Planning.png"
+                alt="Planning"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
@@ -433,7 +373,9 @@ export default function MRPLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">{t("productionSection.title")}</span>
+                <span className="dark:text-sky-200">
+                  {t("productionSection.title")}
+                </span>
               </HandUnderline>{" "}
               {t("productionSection.titleHighlight")}
               <br />
@@ -495,38 +437,14 @@ export default function MRPLandingSections() {
           <div className="relative">
             <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid gap-4 sm:grid-cols-[180px_1fr]">
-                <div className="space-y-3">
-                  {paperlessMenu.map((item: string) => (
-                    <div
-                      key={item}
-                      className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-sm font-bold text-slate-600 dark:text-slate-300"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-5">
-                  <div className="mb-4 h-4 w-40 rounded bg-slate-200 dark:bg-slate-700" />
-                  <div className="space-y-3">
-                    {paperlessComponents.map((comp: string, idx: number) => (
-                      <div
-                        key={comp}
-                        className="flex items-center justify-between rounded-lg bg-white dark:bg-slate-800 px-4 py-3 shadow-sm"
-                      >
-                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">
-                          {comp}
-                        </span>
-                        <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                          Ready
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <Image
+                src="/Assets/Manufacturing/Work Centers/Become a paperless.png"
+                alt="Become a paperless company"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </div>
 
@@ -563,7 +481,9 @@ export default function MRPLandingSections() {
           >
             {t("qualitySection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">{t("qualitySection.titleHighlight")}</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("qualitySection.titleHighlight")}
+              </span>
             </HandUnderline>{" "}
             {t("qualitySection.titleEnd")}
           </h2>
@@ -573,42 +493,14 @@ export default function MRPLandingSections() {
               {t("qualitySection.description")}
             </p>
 
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid gap-4 md:grid-cols-3">
-                {qualityCategories.map((title: string, col: number) => (
-                  <div
-                    key={title}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4"
-                  >
-                    <p className="mb-4 text-sm font-bold text-slate-900 dark:text-white">
-                      {title}
-                    </p>
-
-                    <div className="space-y-3">
-                      {Array.from({ length: 4 }).map((_, index) => (
-                        <div
-                          key={index}
-                          className="rounded-lg bg-white dark:bg-slate-800 p-3 text-left shadow-sm"
-                        >
-                          <div className="flex items-center gap-2">
-                            <span
-                              className={`h-2 w-2 rounded-full ${
-                                (index + col) % 2 === 0
-                                  ? "bg-emerald-400 dark:bg-emerald-500"
-                                  : "bg-amber-400 dark:bg-amber-500"
-                              }`}
-                            />
-                            <span className="text-xs font-bold text-slate-600 dark:text-slate-300">
-                              QC Step {index + 1}
-                            </span>
-                          </div>
-                          <div className="mt-2 h-2 rounded bg-slate-100 dark:bg-slate-700" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <Image
+                src="/Assets/Manufacturing/Work Centers/Six-Sigma level 6.png"
+                alt="Six-Sigma level 6"
+                width={1200}
+                height={900}
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
@@ -623,7 +515,9 @@ export default function MRPLandingSections() {
           >
             {t("kaizenSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">{t("kaizenSection.titleHighlight")}</span>
+              <span className="dark:text-sky-200">
+                {t("kaizenSection.titleHighlight")}
+              </span>
             </HandUnderline>
           </h2>
 
@@ -657,7 +551,9 @@ export default function MRPLandingSections() {
           >
             {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">{t("featuresSection.subtitle")}</span>
+              <span className="dark:text-[#02cfc3]">
+                {t("featuresSection.subtitle")}
+              </span>
             </HandUnderline>
           </h2>
 
