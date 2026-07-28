@@ -25,7 +25,8 @@ export default function BillOfMaterialsPage() {
           title: <>Product, Type, Output & Yield — one recipe per row</>,
           description:
             "Every BOM shows its target Product, Type (Standard / Kit / Subcontracting), Output quantity, Yield percentage, and line count. A product can have several BOMs, but exactly one Default is used by Production Orders unless overridden.",
-          imageSrc: "/Assets/Manufacturing/Bill of Materials/BOM List.png",
+          imageSrc:
+            "/Assets/Manufacturing/Bill of Materials/Bill of Materials list screen.png",
           imageAlt: "Bill of Materials list screen",
         },
         {
@@ -35,7 +36,7 @@ export default function BillOfMaterialsPage() {
           description:
             "Milling 100 kg of paddy doesn't produce only rice — it also yields Broken Rice (Co-Product), Rice Bran and Rice Husk (By-Products), and process loss (Scrap). Each output line is typed correctly so costing and inventory posting split value appropriately.",
           imageSrc:
-            "/Assets/Manufacturing/Bill of Materials/Co-Product By-Product Scrap.png",
+            "/Assets/Manufacturing/Bill of Materials/Co-product, by-product, and scrap entry forms.png",
           imageAlt: "Co-product, by-product, and scrap entry forms",
           reversed: true,
           tint: "muted",
@@ -52,7 +53,7 @@ export default function BillOfMaterialsPage() {
           description:
             "Input: 100 kg Paddy. Output: 65 kg Rice (main), 5 kg Broken Rice (co-product), 8 kg Rice Bran + 20 kg Rice Husk (by-products) — 98 kg listed, with a 2 kg unallocated difference recorded as process loss. Every gram is accounted for.",
           imageSrc:
-            "/Assets/Manufacturing/Bill of Materials/Quantity Reconciliation Example.png",
+            "/Assets/Manufacturing/Bill of Materials/BOM quantity reconciliation example.png",
           imageAlt: "BOM quantity reconciliation example",
         },
       ]}

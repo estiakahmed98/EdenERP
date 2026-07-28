@@ -26,7 +26,7 @@ export default function ProductionOrdersPage() {
           description:
             "Draft, Confirmed, In Progress, and Done orders are tracked with their linked BOM, Routing, target quantity, and completion percentage — so a Production Planner can see exactly where every job stands without walking the floor.",
           imageSrc:
-            "/Assets/Manufacturing/Production Orders/Production Orders List.png",
+            "/Assets/Manufacturing/Production Orders/Production orders list dashboard.png",
           imageAlt: "Production orders list dashboard",
         },
         {
@@ -36,7 +36,7 @@ export default function ProductionOrdersPage() {
           description:
             "Selecting the product auto-suggests its Default BOM and Routing. Material components are reserved from the source warehouse (Paddy Godown → Milling Floor WIP) the moment the order is confirmed.",
           imageSrc:
-            "/Assets/Manufacturing/Production Orders/New Production Order Form.png",
+            "/Assets/Manufacturing/Production Orders/New production order form.png",
           imageAlt: "New production order form",
           reversed: true,
           tint: "muted",
@@ -53,7 +53,7 @@ export default function ProductionOrdersPage() {
           description:
             "Each Routing operation is validated on the shop floor as it completes — main output, co-products, by-products, and scrap are all posted against the order, moving stock from WIP into the Finished Goods warehouse.",
           imageSrc:
-            "/Assets/Manufacturing/Production Orders/Shop Floor Execution.png",
+            "/Assets/Manufacturing/Production Orders/Shop floor execution screen.png",
           imageAlt: "Shop floor execution screen",
         },
       ]}

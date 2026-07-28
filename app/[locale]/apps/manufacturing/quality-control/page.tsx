@@ -26,7 +26,7 @@ export default function QualityControlPage() {
           description:
             "Incoming Inspection checks raw material on receipt. In-Process catches issues mid-production. Final Inspection gates finished goods before release. Patrol/Random handles routine shop-floor spot checks — each with its own template and parameter set.",
           imageSrc:
-            "/Assets/Manufacturing/Quality Control/QC Templates List.png",
+            "/Assets/Manufacturing/Quality Control/QC templates list.png",
           imageAlt: "QC templates list",
           bullets: [
             "Incoming: raw material moisture, foreign matter, variety match",
@@ -40,7 +40,8 @@ export default function QualityControlPage() {
           title: <>Numeric, Pass/Fail, Text, or Rating — with real limits</>,
           description:
             "Each parameter has a Type, Unit, and — for numeric checks — a Min/Target/Max range plus an Inspection Method describing exactly how it's measured. Mandatory parameters block inspection completion until recorded.",
-          imageSrc: "/Assets/Manufacturing/Quality Control/Add Parameter Form.png",
+          imageSrc:
+            "/Assets/Manufacturing/Quality Control/Add QC parameter form.png",
           imageAlt: "Add QC parameter form",
           reversed: true,
           tint: "muted",
@@ -52,12 +53,12 @@ export default function QualityControlPage() {
         },
         {
           icon: <ShieldAlert className="h-4 w-4" />,
-          eyebrow: "Rice Mill Standard",
+          eyebrow: "Mill  Factory Standard",
           title: <>A real inspection plan, stage by stage</>,
           description:
             "Incoming Paddy: Moisture 12–14%, Foreign Matter max limit, Variety match. In-Process: Husking Efficiency target, Broken Rice max %. Final Rice: Moisture range, Color/Whiteness grade, Net Weight tolerance at Packing.",
           imageSrc:
-            "/Assets/Manufacturing/Quality Control/Rice Mill QC Standard.png",
+            "/Assets/Manufacturing/Quality Control/Rice mill QC standard table.png",
           imageAlt: "Rice mill QC standard table",
         },
       ]}
@@ -79,7 +80,8 @@ export default function QualityControlPage() {
         },
         {
           title: "4. Record results",
-          description: "Inspectors log results against the same fixed standard.",
+          description:
+            "Inspectors log results against the same fixed standard.",
         },
       ]}
       featuresTitle="Consistent standards, every shift"

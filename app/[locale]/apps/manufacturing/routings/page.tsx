@@ -18,7 +18,7 @@ export default function RoutingsPage() {
           title: <>Sequenced operations, one Work Center at a time</>,
           description:
             "Every Routing shows its Code, number of Operations, linked BOM count, and Default status. Sequence numbers are kept in steps of 10 (10, 20, 30…) so a new operation can be inserted later without renumbering everything.",
-          imageSrc: "/Assets/Manufacturing/Routings/Routing List.png",
+          imageSrc: "/Assets/Manufacturing/Routings/Routing list screen.png",
           imageAlt: "Routing list screen",
           bullets: [
             "Sequence gaps (10, 20, 30) leave room to insert operations later",
@@ -33,7 +33,7 @@ export default function RoutingsPage() {
           description:
             "Seq 10 Paddy Intake & Pre-Cleaning → Seq 20 Husking → Seq 30 Whitening & Polishing → Seq 40 Grading & Sorting → Seq 50 Weighing & Packing. Each operation names its purpose and the exact Work Center responsible.",
           imageSrc:
-            "/Assets/Manufacturing/Routings/Milling Route Example.png",
+            "/Assets/Manufacturing/Routings/Milling route example.png",
           imageAlt: "Milling route example",
           reversed: true,
           tint: "muted",
@@ -44,7 +44,7 @@ export default function RoutingsPage() {
           title: <>Setup, run & teardown time — modeled separately</>,
           description:
             "Setup Time (prep before the operation starts), Op Time (actual processing), and Teardown Time (cleaning/changeover) are tracked independently, plus a Time Mode — Per Unit, Per Batch, or Fixed — so capacity and cost calculations match how the operation actually behaves.",
-          imageSrc: "/Assets/Manufacturing/Routings/Add Operation Form.png",
+          imageSrc: "/Assets/Manufacturing/Routings/Add operation form.png",
           imageAlt: "Add operation form",
         },
       ]}

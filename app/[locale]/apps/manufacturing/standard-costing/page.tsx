@@ -26,7 +26,7 @@ export default function StandardCostingPage() {
           description:
             "Choose any finished product and the system pulls its Default BOM and Routing to calculate a per-unit Material, Labor, Machine, and Overhead cost — the same formula, every time, no manual spreadsheet.",
           imageSrc:
-            "/Assets/Manufacturing/Standard Costing/Standard Costing Main Screen.png",
+            "/Assets/Manufacturing/Standard Costing/Standard costing main screen.png",
           imageAlt: "Standard costing main screen",
         },
         {
@@ -36,7 +36,7 @@ export default function StandardCostingPage() {
           description:
             "Material cost comes from BOM standard quantity × item rate. Labor and Machine cost come from Routing operation time × the Work Center's hourly rates. Overhead applies the Work Center's overhead rate per hour of processing.",
           imageSrc:
-            "/Assets/Manufacturing/Standard Costing/Cost Component Preview.png",
+            "/Assets/Manufacturing/Standard Costing/Cost component preview breakdown.png",
           imageAlt: "Cost component preview breakdown",
           reversed: true,
           tint: "muted",
@@ -53,7 +53,7 @@ export default function StandardCostingPage() {
           description:
             "Freezing Standard creates a versioned, effective-dated cost card. When material rates, yield, routing time, or Work Center rates change, a new version is frozen — the old version stays for historical comparison and variance analysis.",
           imageSrc:
-            "/Assets/Manufacturing/Standard Costing/Frozen Cost Card Version.png",
+            "/Assets/Manufacturing/Standard Costing/Frozen standard cost card version.png",
           imageAlt: "Frozen standard cost card version",
         },
       ]}
