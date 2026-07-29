@@ -86,43 +86,12 @@ const avatars = [
   "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=96&h=96&fit=crop&crop=face",
 ];
 
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function HumanResourcesLandingSections() {
   const t = useTranslations("pages.hr");
   const commonT = useTranslations("common.actions");
 
   const employeesList = asArray<Employee>(t.raw("hero.dashboard.employees"));
-  const departmentsList = asArray<string>(t.raw("hero.dashboard.departments"));
-  const filtersList = asArray<string>(t.raw("allInOneSection.filters"));
-  const groupByList = asArray<string>(t.raw("allInOneSection.groupBy"));
-  const favoritesList = asArray<string>(t.raw("allInOneSection.favorites"));
   const privacyFieldsList = asArray<[string, string]>(t.raw("privacySection.demo.fields"));
-  const skillsList = asArray<string>(t.raw("skillsSection.skills"));
   const timeOffColumnsList = asArray<string>(t.raw("timeOffSection.columns"));
   const leaveTypesList = asArray<string>(t.raw("timeOffSection.leaveTypes"));
   const documentsItemsList = asArray<IconItem>(t.raw("documentsSection.items"));
@@ -191,69 +160,11 @@ export default function HumanResourcesLandingSections() {
                 </button>
               </div>
 
-              <div className="grid bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 lg:grid-cols-[230px_1fr]">
-                <aside className="rounded-xl bg-white dark:bg-[#11111f] p-5 text-left shadow-sm ring-1 ring-gray-100 dark:ring-gray-800">
-                  <p className="text-sm font-bold text-gray-900 dark:text-white">
-                    Departments
-                  </p>
-
-                  <div className="mt-5 space-y-2">
-                    {departmentsList.map((item: string, index: number) => (
-                      <div
-                        key={item}
-                        className={`rounded-md px-3 py-2 text-xs font-semibold ${
-                          index === 0
-                            ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
-                            : "bg-gray-50 dark:bg-[#1a1a2a] text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#22223a] transition cursor-pointer"
-                        }`}
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </aside>
-
-                <div className="mt-5 grid gap-4 lg:ml-5 lg:mt-0 sm:grid-cols-2">
-                  {employeesList.map((employee) => (
-                    <div
-                      key={employee.name}
-                      className="flex items-center gap-4 rounded-xl bg-white dark:bg-[#11111f] p-4 text-left shadow-sm ring-1 ring-gray-100 dark:ring-gray-800"
-                    >
-                      <img
-                        src={`https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&h=120&fit=crop&crop=face`}
-                        alt={employee.name}
-                        className="h-16 w-16 rounded-xl object-cover"
-                      />
-
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate font-bold text-gray-900 dark:text-white">
-                          {employee.name}
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                          {employee.role}
-                        </p>
-
-                        <div className="mt-3 flex items-center gap-2">
-                          <span
-                            className={`h-2.5 w-2.5 rounded-full ${
-                              employee.status === "Online" ? "bg-emerald-500" : "bg-amber-400"
-                            }`}
-                          />
-                          <span className="text-xs font-bold text-gray-400 dark:text-gray-500">
-                            {employee.status}
-                          </span>
-                        </div>
-                      </div>
-
-                      <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-[#11111f] text-[#714b67] dark:text-[#9b6a8f] shadow-xl hover:scale-105 transition">
-                <Play className="ml-1 h-6 w-6 fill-current" />
-              </button>
+              <img
+                src="/Assets/Human Resources/Employees/Employees.png"
+                alt={t("hero.dashboard.title")}
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -277,68 +188,40 @@ export default function HumanResourcesLandingSections() {
             {t("allInOneSection.description")}
           </p>
 
-          <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="rounded-xl bg-white dark:bg-[#11111f] p-5 shadow-sm ring-1 ring-gray-100 dark:ring-gray-800">
-              <div className="flex items-center gap-3">
-                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
-                  Employees
-                </button>
-                <div className="flex-1 rounded-md bg-gray-50 dark:bg-[#1a1a2a] px-4 py-2 text-left text-sm text-gray-400 dark:text-gray-500">
-                  {t("allInOneSection.searchPlaceholder")}
-                </div>
-                <span className="text-xs text-gray-400 dark:text-gray-500">
-                  {t("allInOneSection.pagination")}
-                </span>
-              </div>
-            </div>
+          <div className="relative mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#11111f] shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Employees/All of your people.png"
+              alt={t("allInOneSection.title")}
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
 
-            <DashedArrow className="mx-auto my-10 h-24 w-24 rotate-90 text-gray-300 dark:text-gray-700" />
+      {/* Departments */}
+      <section className="bg-white dark:bg-[#0a0a1a] py-24">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <h2
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
+            style={{ fontFamily: handwrittenFont }}
+          >
+            Organize every
+            <br />
+            <HandUnderline color="bg-emerald-300 dark:bg-emerald-900">
+              <span className="dark:text-emerald-300">department</span>
+            </HandUnderline>
+          </h2>
 
-            <div className="mx-auto max-w-3xl rounded-xl bg-white dark:bg-[#11111f] p-7 text-left shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)] ring-1 ring-gray-100 dark:ring-gray-800">
-              <div className="grid gap-8 md:grid-cols-3">
-                <div>
-                  <p className="mb-4 text-sm font-bold text-gray-900 dark:text-white">
-                    Filters
-                  </p>
-                  {filtersList.map((item: string) => (
-                    <div
-                      key={item}
-                      className="mb-3 rounded-md bg-gray-50 dark:bg-[#1a1a2a] px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-gray-600 dark:text-gray-400">
+            Keep every department, cost center, and headcount organized and up to date in one place.
+          </p>
 
-                <div>
-                  <p className="mb-4 text-sm font-bold text-gray-900 dark:text-white">
-                    Group By
-                  </p>
-                  {groupByList.map((item: string) => (
-                    <div
-                      key={item}
-                      className="mb-3 rounded-md bg-gray-50 dark:bg-[#1a1a2a] px-3 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-
-                <div>
-                  <p className="mb-4 text-sm font-bold text-gray-900 dark:text-white">
-                    Favorites
-                  </p>
-                  {favoritesList.map((item: string) => (
-                    <div
-                      key={item}
-                      className="mb-3 rounded-md bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-xs font-semibold text-amber-600 dark:text-amber-400"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="relative mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#11111f] shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Employees/Departments.png"
+              alt="Departments"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
@@ -406,44 +289,45 @@ export default function HumanResourcesLandingSections() {
         </div>
       </section>
 
+      {/* Designations */}
+      <section className="bg-white dark:bg-[#0a0a1a] py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h2
+              className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              Define clear
+              <br />
+              <HandUnderline color="bg-indigo-300 dark:bg-indigo-900">
+                <span className="dark:text-indigo-300">designations</span>
+              </HandUnderline>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-gray-600 dark:text-gray-400">
+              Set up job titles, levels, and default grades so every employee has a clear place in the hierarchy.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#11111f] shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Employees/Designations.png"
+              alt="Designations"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Show off those skills */}
       <section className="bg-white dark:bg-[#0a0a1a] py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#11111f] p-5 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {employeesList.slice(0, 4).map((employee, index) => (
-                <div
-                  key={employee.name}
-                  className="flex gap-4 rounded-lg bg-gray-50 dark:bg-[#1a1a2a] p-4 text-left"
-                >
-                  <img
-                    src={avatars[index]}
-                    alt={employee.name}
-                    className="h-16 w-16 rounded-xl object-cover"
-                  />
-
-                  <div>
-                    <p className="font-bold text-gray-900 dark:text-white">
-                      {employee.name}
-                    </p>
-                    <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                      {employee.role}
-                    </p>
-
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {["React", "Sales", "Design"].slice(0, index + 1).map((skill) => (
-                        <span
-                          key={skill}
-                          className="rounded-full bg-white dark:bg-[#11111f] px-2 py-1 text-[10px] font-bold text-[#714b67] dark:text-[#9b6a8f] shadow-sm"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#11111f] shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Employees/Grades and Pay Scale.png"
+              alt="Grades & Pay Scale"
+              className="w-full"
+            />
           </div>
 
           <div>
@@ -451,27 +335,16 @@ export default function HumanResourcesLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              {t("skillsSection.title")}
+              Grades that
               <br />
               <HandUnderline color="bg-amber-300 dark:bg-amber-900">
-                <span className="dark:text-amber-300">{t("skillsSection.titleHighlight")}</span>
+                <span className="dark:text-amber-300">scale with pay</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-gray-600 dark:text-gray-400">
-              {t("skillsSection.description")}
+              Configure grades and step-wise pay scales so compensation stays consistent as your team grows.
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {skillsList.map((skill: string) => (
-                <span
-                  key={skill}
-                  className="rounded-full bg-gray-50 dark:bg-[#1a1a2a] px-4 py-2 text-xs font-bold text-gray-600 dark:text-gray-400 ring-1 ring-gray-100 dark:ring-gray-800"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -538,6 +411,34 @@ export default function HumanResourcesLandingSections() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Salary Components */}
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <h2
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
+            style={{ fontFamily: handwrittenFont }}
+          >
+            Build flexible
+            <br />
+            <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+              <span className="text-[#02a6a6] dark:text-[#02cfc3]">salary components</span>
+            </HandUnderline>
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-gray-600 dark:text-gray-400">
+            Configure earnings, deductions, and employer contributions once, then apply them automatically across payroll.
+          </p>
+
+          <div className="relative mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-[#11111f] shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Employees/Salary Components.png"
+              alt="Salary Components"
+              className="w-full"
+            />
           </div>
         </div>
       </section>

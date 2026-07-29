@@ -28,16 +28,6 @@ import { HandUnderline } from "@/components/ui/headunderline";
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-type DashboardColumn = {
-  title: string;
-  cards: string[];
-};
-
-type Candidate = {
-  name: string;
-  role: string;
-};
-
 type IconItem = {
   title: string;
   description: string;
@@ -76,11 +66,6 @@ export default function RecruitmentATSPage() {
   const t = useTranslations("pages.recruitment");
   const commonT = useTranslations("common.actions");
 
-  const dashboardColumns = asArray<DashboardColumn>(t.raw("hero.dashboard.columns"));
-  const pipelineColumns = asArray<string>(t.raw("pipelineSection.columns"));
-  const visualizeStages = asArray<string>(t.raw("visualizeSection.stages"));
-  const visualizeCandidates = asArray<Candidate>(t.raw("visualizeSection.candidates"));
-  const automationFields = asArray<[string, string]>(t.raw("automationSection.fields"));
   const pipelineSteps = asArray<string>(t.raw("pipelinesSection.steps"));
   const scheduleDays = asArray<string>(t.raw("schedulingSection.days"));
   const reportingStages = asArray<string>(t.raw("reportingSection.stages"));
@@ -149,54 +134,11 @@ export default function RecruitmentATSPage() {
                 </button>
               </div>
 
-              <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
-                {dashboardColumns.map((column, columnIndex) => (
-                  <div
-                    key={column.title}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
-                  >
-                    <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white">
-                        {column.title}
-                      </p>
-                      <span className="text-lg font-bold text-slate-400 dark:text-slate-500">
-                        +
-                      </span>
-                    </div>
-
-                    <div className="space-y-3">
-                      {asArray<string>(column.cards).map((card, cardIndex) => (
-                        <div
-                          key={card}
-                          className="rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-800"
-                        >
-                          <p className="text-sm font-bold text-slate-900 dark:text-white">
-                            {card}
-                          </p>
-                          <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                            {cardIndex + 2} {t("hero.dashboard.applicationsText")}
-                          </p>
-
-                          <div className="mt-3 flex items-center justify-between">
-                            <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white dark:bg-[#8a5a7e]">
-                              Interview
-                            </span>
-                            <img
-                              src={avatars[(columnIndex + cardIndex) % avatars.length]}
-                              alt="Candidate"
-                              className="h-6 w-6 rounded-full object-cover"
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
-                <Play className="ml-1 h-6 w-6 fill-current" />
-              </button>
+              <img
+                src="/Assets/Human Resources/Recruitment/Recruitment.png"
+                alt={t("hero.dashboard.title")}
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -220,32 +162,12 @@ export default function RecruitmentATSPage() {
             {t("pipelineSection.description")}
           </p>
 
-          <div className="relative mx-auto mt-14 max-w-4xl">
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid gap-4 md:grid-cols-3">
-                {pipelineColumns.map((column, columnIndex) => (
-                  <div key={column} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
-                    <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-white">
-                      {column}
-                    </p>
-
-                    {Array.from({ length: 3 }).map((_, index) => (
-                      <div
-                        key={index}
-                        className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
-                      >
-                        <div className="h-3 w-3/4 rounded bg-[#714b67] dark:bg-[#8a5a7e]" />
-                        <div className="mt-2 h-2 w-full rounded bg-slate-100 dark:bg-slate-800" />
-                        <div className="mt-2 h-2 w-2/3 rounded bg-slate-100 dark:bg-slate-800" />
-                        <p className="mt-3 text-xs text-slate-400 dark:text-slate-500">
-                          {columnIndex + index + 2} {t("pipelineSection.candidatesCount")}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
+          <div className="relative mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Recruitment/Applicants Pipeline.png"
+              alt={t("pipelineSection.title")}
+              className="w-full"
+            />
           </div>
         </div>
       </section>
@@ -269,49 +191,12 @@ export default function RecruitmentATSPage() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <div className="absolute inset-0 translate-y-12 rounded-full bg-[#f3f4f7] dark:bg-[#0f0f1a]" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid gap-4 md:grid-cols-3">
-                {visualizeStages.map((stage, stageIndex) => (
-                  <div key={stage} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
-                    <p className="mb-4 text-left text-sm font-bold text-slate-900 dark:text-white">
-                      {stage}
-                    </p>
-
-                    {visualizeCandidates.slice(0, 3).map((candidate, index) => (
-                      <div
-                        key={`${stage}-${candidate.name}`}
-                        className="mb-3 rounded-lg bg-white dark:bg-slate-900 p-4 text-left shadow-sm"
-                      >
-                        <div className="flex gap-3">
-                          <img
-                            src={avatars[index % avatars.length]}
-                            alt={candidate.name}
-                            className="h-10 w-10 rounded-full object-cover"
-                          />
-
-                          <div>
-                            <p className="text-sm font-bold text-slate-900 dark:text-white">
-                              {candidate.name}
-                            </p>
-                            <p className="text-xs text-slate-400 dark:text-slate-500">
-                              {candidate.role}
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="mt-3 flex items-center gap-2">
-                          <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                            {stageIndex + index + 1} {t("visualizeSection.starsText")}
-                          </span>
-                          <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white dark:bg-[#8a5a7e]">
-                            {t("visualizeSection.interviewText")}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <img
+                src="/Assets/Human Resources/Recruitment/Move Stage.png"
+                alt={t("visualizeSection.title")}
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -339,30 +224,39 @@ export default function RecruitmentATSPage() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-            <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-white">
-                {t("automationSection.jobDescription")}
-              </p>
-              <WandSparkles className="h-5 w-5 text-amber-500 dark:text-amber-400" />
-            </div>
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Recruitment/Job Description.png"
+              alt={t("automationSection.jobDescription")}
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
 
-            <div className="space-y-4 text-left">
-              {automationFields.map(([label, value]) => (
-                <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-4">
-                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
-                    {label}
-                  </p>
-                  <p className="mt-2 text-sm font-bold text-slate-900 dark:text-white">
-                    {value}
-                  </p>
-                </div>
-              ))}
-            </div>
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <h2
+            className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
+            style={{ fontFamily: handwrittenFont }}
+          >
+            From offer to
+            <br />
+            <HandUnderline color="bg-emerald-300 dark:bg-emerald-800">
+              <span className="dark:text-emerald-200">onboarded</span>
+            </HandUnderline>
+          </h2>
 
-            <button className="mt-6 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-              {t("automationSection.button")}
-            </button>
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+            Send offers, track acceptance, and onboard accepted candidates directly into the employee master.
+          </p>
+
+          <div className="relative mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Recruitment/Offers.png"
+              alt="Offers"
+              className="w-full"
+            />
           </div>
         </div>
       </section>

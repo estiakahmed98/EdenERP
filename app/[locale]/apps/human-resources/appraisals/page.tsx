@@ -53,13 +53,8 @@ export default function PerformanceLandingSections() {
   const commonT = useTranslations("common.actions");
 
   const evaluationFeatures = t.raw("evaluationSection.features");
-  const appraisalTableHeaders = t.raw("appraisalSection.tableHeaders");
-  const appraisalsList = t.raw("appraisalSection.appraisals");
-  const surveyFormItems = t.raw("surveySection.formItems");
   const automationSteps = t.raw("automationSection.demo.steps");
   const appsList = t.raw("appsSection.apps");
-  const employeeQuestions = t.raw("hero.dashboard.appraisal.employeeQuestions");
-  const evaluationCriteria = t.raw("hero.dashboard.appraisal.evaluation");
 
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
@@ -124,95 +119,11 @@ export default function PerformanceLandingSections() {
                 </button>
               </div>
 
-              <div className="bg-[#f7f8fb] dark:bg-slate-800/50 p-6">
-                <div className="overflow-hidden rounded-xl bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
-                  <div className="border-b border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900 px-6 py-4 text-left">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        <img
-                          src={avatars[0]}
-                          alt="Anita Oliver"
-                          className="h-14 w-14 rounded-xl object-cover"
-                        />
-                        <div>
-                          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                            {t("hero.dashboard.appraisal.employee")}
-                          </h3>
-                          <p className="text-sm text-slate-500 dark:text-slate-400">
-                            {t("hero.dashboard.appraisal.role")}
-                          </p>
-                        </div>
-                      </div>
-
-                      <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 w-fit">
-                        {t("hero.dashboard.appraisal.status")}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-0 lg:grid-cols-2">
-                    <div className="border-r border-slate-100 dark:border-slate-700 p-6 text-left">
-                      <p className="font-bold text-slate-900 dark:text-slate-100">
-                        Employee's Feedback
-                      </p>
-
-                      <div className="mt-5 space-y-5">
-                        {employeeQuestions.map((question: string) => (
-                          <div key={question}>
-                            <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
-                              {question}
-                            </p>
-                            <div className="mt-2 h-3 w-full rounded bg-slate-100 dark:bg-slate-700" />
-                            <div className="mt-2 h-3 w-4/5 rounded bg-slate-100 dark:bg-slate-700" />
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-slate-50 dark:bg-slate-800/40 p-6 text-left">
-                      <div className="mb-5 flex items-center justify-between">
-                        <p className="font-bold text-slate-900 dark:text-slate-100">
-                          Manager's Feedback
-                        </p>
-                        <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
-                      </div>
-
-                      <div className="rounded-lg bg-white dark:bg-slate-900 p-5 shadow-sm">
-                        <p className="text-sm font-bold text-slate-900 dark:text-slate-100">
-                          Feedback
-                        </p>
-                        <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                          {t("hero.dashboard.appraisal.managerFeedback")}
-                        </p>
-                      </div>
-
-                      <div className="mt-5 rounded-lg bg-white dark:bg-slate-900 p-5 shadow-sm">
-                        <p className="mb-4 text-sm font-bold text-slate-900 dark:text-slate-100">
-                          Evaluation
-                        </p>
-
-                        {evaluationCriteria.map(([label, score]: [string, number]) => (
-                          <div
-                            key={label}
-                            className="mb-3 flex items-center justify-between text-sm"
-                          >
-                            <span className="font-medium text-slate-600 dark:text-slate-300">
-                              {label}
-                            </span>
-                            <span className="text-amber-400 dark:text-amber-500">
-                              {"★".repeat(score)}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] shadow-xl">
-                <Play className="ml-1 h-6 w-6 fill-current" />
-              </button>
+              <img
+                src="/Assets/Human Resources/Appraisals/Appraisals.png"
+                alt={t("hero.dashboard.title")}
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -315,45 +226,36 @@ export default function PerformanceLandingSections() {
           </p>
 
           <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
-            <div className="bg-[#714b67] px-6 py-4 text-left text-white">
-              <p className="font-bold">Appraisal</p>
-            </div>
+            <img
+              src="/Assets/Human Resources/Appraisals/Build the right appraisal.png"
+              alt={t("appraisalSection.title")}
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
 
-            <div className="overflow-x-auto">
-              <div className="min-w-[600px]">
-                <div className="grid grid-cols-6 bg-slate-50 dark:bg-slate-800/60 px-5 py-3 text-left text-xs font-bold uppercase text-slate-400 dark:text-slate-500">
-                  {appraisalTableHeaders.map((header: string) => (
-                    <span key={header}>{header}</span>
-                  ))}
-                </div>
+      {/* Appraisal Cycles Section */}
+      <section className="bg-white dark:bg-slate-950 py-24">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl">
+            Run appraisal
+          </h2>
 
-                {appraisalsList.map((row: any) => (
-                  <div
-                    key={row.employee}
-                    className="grid grid-cols-6 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
-                  >
-                    <span className="font-bold text-slate-900 dark:text-slate-100">
-                      {row.employee}
-                    </span>
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {row.department}
-                    </span>
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {row.deadline}
-                    </span>
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {row.interview}
-                    </span>
-                    <span className="w-fit rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                      {row.status}
-                    </span>
-                    <span className="text-slate-500 dark:text-slate-400">
-                      {row.answers}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <p className="mt-3 text-lg font-bold text-slate-900 dark:text-slate-100">
+            cycles on autopilot
+          </p>
+
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+            Define a review cycle once, then generate every employee appraisal in a single click.
+          </p>
+
+          <div className="mx-auto mt-14 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.12)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+            <img
+              src="/Assets/Human Resources/Appraisals/Appraisal Cycles.png"
+              alt="Appraisal Cycles"
+              className="w-full"
+            />
           </div>
         </div>
       </section>
@@ -375,26 +277,12 @@ export default function PerformanceLandingSections() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-            <p className="mb-5 text-left text-xl font-bold text-slate-900 dark:text-slate-100">
-              {t("surveySection.formTitle")}
-            </p>
-
-            <div className="space-y-4">
-              {surveyFormItems.map((item: string, index: number) => (
-                <div
-                  key={item}
-                  className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/60 px-4 py-3 text-sm"
-                >
-                  <span className="font-semibold text-slate-700 dark:text-slate-200">
-                    {item}
-                  </span>
-                  <span className="text-xs font-bold text-slate-400 dark:text-slate-500">
-                    {index + 1} answer
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Appraisals/Employee Appraisal Form.png"
+              alt={t("surveySection.formTitle")}
+              className="w-full"
+            />
           </div>
         </div>
       </section>

@@ -110,13 +110,8 @@ export default function PayrollLandingSections() {
   const t = useTranslations("pages.payroll");
   const commonT = useTranslations("common.actions");
 
-  const dashboardRows = t.raw("hero.dashboard.rows");
-  const tableHeaders = t.raw("hero.dashboard.tableHeaders");
-  const generateStats = t.raw("generateSection.demo.stats");
-  const generateSteps = t.raw("generateSection.demo.steps");
   const salaryRulesStats = t.raw("salaryRulesSection.stats");
   const workEntriesList = t.raw("workEntriesSection.entries");
-  const payslipItems = t.raw("payslipSection.demo.items");
   const reportingMonths = t.raw("reportingSection.months");
   const featuresList = t.raw("featuresSection.features");
   const appsList = t.raw("appsSection.apps");
@@ -184,69 +179,11 @@ export default function PayrollLandingSections() {
                 </button>
               </div>
 
-              <div className="bg-[#f7f8fb] dark:bg-slate-800/50 p-6">
-                <div className="mb-5 grid gap-3 sm:grid-cols-4">
-                  <div className="rounded-lg bg-[#714b67] p-4 text-left text-white">
-                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.payslips")}</p>
-                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.payslipsValue")}</p>
-                  </div>
-                  <div className="rounded-lg bg-emerald-50 dark:bg-emerald-950/40 p-4 text-left text-emerald-600 dark:text-emerald-400">
-                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.ready")}</p>
-                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.readyValue")}</p>
-                  </div>
-                  <div className="rounded-lg bg-amber-50 dark:bg-amber-950/40 p-4 text-left text-amber-600 dark:text-amber-400">
-                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.draft")}</p>
-                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.draftValue")}</p>
-                  </div>
-                  <div className="rounded-lg bg-sky-50 dark:bg-sky-950/40 p-4 text-left text-sky-600 dark:text-sky-400">
-                    <p className="text-xs font-bold opacity-80">{t("hero.dashboard.stats.netPay")}</p>
-                    <p className="mt-2 text-2xl font-bold">{t("hero.dashboard.stats.netPayValue")}</p>
-                  </div>
-                </div>
-
-                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
-                  <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/60 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                    {tableHeaders.map((header: string) => (
-                      <span key={header}>{header}</span>
-                    ))}
-                  </div>
-
-                  {dashboardRows.map((row: any, index: number) => (
-                    <div
-                      key={row.employee}
-                      className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 px-5 py-4 text-left text-xs last:border-0"
-                    >
-                      <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-slate-100">
-                        <img
-                          src={avatars[index % avatars.length]}
-                          alt={row.employee}
-                          className="h-7 w-7 rounded-full object-cover"
-                        />
-                        {row.employee}
-                      </span>
-                      <span className="text-slate-600 dark:text-slate-300">{row.structure}</span>
-                      <span className="font-bold text-slate-900 dark:text-slate-100">{row.gross}</span>
-                      <span className="text-slate-500 dark:text-slate-400">{row.deductions}</span>
-                      <span className="font-bold text-emerald-600 dark:text-emerald-400">{row.netPay}</span>
-                      <span
-                        className={`w-fit rounded-full px-2 py-1 text-[10px] font-bold ${
-                          row.status === "Done" || row.status === "সম্পন্ন"
-                            ? "bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400"
-                            : row.status === "Ready" || row.status === "প্রস্তুত"
-                              ? "bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400"
-                              : "bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400"
-                        }`}
-                      >
-                        {row.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] shadow-xl">
-                <Play className="ml-1 h-6 w-6 fill-current" />
-              </button>
+              <img
+                src="/Assets/Human Resources/Payroll/Payroll.png"
+                alt={t("hero.dashboard.title")}
+                className="w-full"
+              />
             </div>
 
             <FloatingNote
@@ -285,37 +222,12 @@ export default function PayrollLandingSections() {
           <div className="relative">
             <div className="absolute inset-0 translate-x-8 translate-y-8 rounded-full bg-white dark:bg-slate-800" />
 
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
-              <div className="mb-5 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-slate-100">
-                  {t("generateSection.demo.title")}
-                </p>
-                <span className="rounded-full bg-sky-50 dark:bg-sky-950/60 px-3 py-1 text-xs font-bold text-sky-600 dark:text-sky-400">
-                  {t("generateSection.demo.batchLabel")}
-                </span>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-3">
-                {generateStats.map(([label, value]: [string, string]) => (
-                  <div key={label} className="rounded-lg bg-slate-50 dark:bg-slate-800/60 p-4">
-                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">{label}</p>
-                    <p className="mt-2 text-2xl font-bold text-slate-900 dark:text-slate-100">{value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 space-y-3">
-                {generateSteps.map((step: string) => (
-                  <div key={step} className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/60 px-4 py-3">
-                    <span className="text-sm font-bold text-slate-700 dark:text-slate-200">{step}</span>
-                    <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-emerald-400" />
-                  </div>
-                ))}
-              </div>
-
-              <button className="mt-6 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white">
-                {t("generateSection.demo.button")}
-              </button>
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
+              <img
+                src="/Assets/Human Resources/Payroll/New Payroll Run.png"
+                alt={t("generateSection.demo.title")}
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -435,54 +347,12 @@ export default function PayrollLandingSections() {
       {/* Payslip Preview Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-            <div className="mb-5 flex items-center justify-between">
-              <p className="font-bold text-slate-900 dark:text-slate-100">
-                Employee Payslip
-              </p>
-              <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                {t("payslipSection.demo.status")}
-              </span>
-            </div>
-
-            <div className="mb-6 flex items-center gap-4">
-              <img
-                src={avatars[3]}
-                alt="Audrey Peterson"
-                className="h-14 w-14 rounded-xl object-cover"
-              />
-              <div>
-                <p className="text-xl font-bold text-slate-900 dark:text-slate-100">
-                  {t("payslipSection.demo.employee")}
-                </p>
-                <p className="text-sm text-slate-500 dark:text-slate-400">
-                  {t("payslipSection.demo.month")}
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              {payslipItems.map(([label, value]: [string, string]) => (
-                <div
-                  key={label}
-                  className="flex items-center justify-between rounded-lg bg-slate-50 dark:bg-slate-800/60 px-4 py-3 text-sm"
-                >
-                  <span className="font-semibold text-slate-700 dark:text-slate-200">{label}</span>
-                  <span className={`font-bold ${value.startsWith("-") ? "text-rose-500 dark:text-rose-400" : "text-slate-900 dark:text-slate-100"}`}>
-                    {value}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 px-4 py-4">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-emerald-700 dark:text-emerald-400">Net Salary</span>
-                <span className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">
-                  {t("payslipSection.demo.netSalary")}
-                </span>
-              </div>
-            </div>
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Human Resources/Payroll/Employee Payslip.png"
+              alt={t("payslipSection.title")}
+              className="w-full"
+            />
           </div>
 
           <div>
