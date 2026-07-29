@@ -8,10 +8,10 @@ import {
   BarChart3,
   BriefcaseBusiness,
   CalendarDays,
+  Calculator,
   CheckCircle2,
   ClipboardList,
   FileText,
-  FolderKanban,
   MessageCircle,
   Play,
   Rocket,
@@ -32,10 +32,10 @@ const handwrittenFont =
 const getIconComponent = (iconName: string) => {
   const icons: Record<string, React.ElementType> = {
     BadgeCheck, BarChart3, BriefcaseBusiness, CalendarDays, CheckCircle2,
-    ClipboardList, FileText, FolderKanban, MessageCircle, Play, Rocket,
+    ClipboardList, FileText, Calculator, MessageCircle, Play, Rocket,
     Sparkles, Star, Timer, Users, Workflow, X, ArrowRight,
   };
-  return icons[iconName] || FolderKanban;
+  return icons[iconName] || Calculator;
 };
 
 // Avatar images array (kept as static since these are image URLs)
@@ -108,12 +108,7 @@ function DashedArrow({ className = "" }: { className?: string }) {
 export default function ProjectLandingSections() {
   const t = useTranslations("pages.project");
 
-  const dashboardColumns = t.raw("hero.dashboard.columns");
   const viewItems = t.raw("viewsSection.items");
-  const demoRows = t.raw("viewsSection.demo.rows");
-  const dashboardColumnsList = t.raw("dashboardSection.columns");
-  const dashboardTasksList = t.raw("dashboardSection.tasks");
-  const collaborationMessages = t.raw("collaborationSection.demo.messages");
   const timesheetRows = t.raw("timesheetSection.checklist.rows");
   const timesheetHeaders = t.raw("timesheetSection.checklist.headers");
   const progressStats = t.raw("progressSection.stats");
@@ -158,7 +153,7 @@ export default function ProjectLandingSections() {
             <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.14)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.4)]">
               <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <div className="flex items-center gap-3">
-                  <FolderKanban className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
+                  <Calculator className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
                     {t("hero.dashboard.title")}
                   </span>
@@ -172,63 +167,11 @@ export default function ProjectLandingSections() {
                 </button>
               </div>
 
-              <div className="grid gap-4 bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 md:grid-cols-4">
-                {dashboardColumns.map((column: any, columnIndex: number) => (
-                  <div
-                    key={column.title}
-                    className="rounded-lg bg-slate-50 dark:bg-slate-800/40 p-3"
-                  >
-                    <div className="mb-3 flex items-center justify-between">
-                      <p className="text-sm font-bold text-slate-900 dark:text-white">
-                        {column.title}
-                      </p>
-                      <span className="text-lg font-bold text-slate-400 dark:text-slate-500">
-                        +
-                      </span>
-                    </div>
-
-                    <div className="space-y-3">
-                      {column.cards.map((card: string, cardIndex: number) => (
-                        <div
-                          key={card}
-                          className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700"
-                        >
-                          <p className="text-sm font-bold text-slate-900 dark:text-white">
-                            {card}
-                          </p>
-
-                          <p className="mt-1 text-xs text-slate-400 dark:text-slate-500">
-                            {cardIndex + 2} {t("hero.dashboard.tasksText")} · {columnIndex + 1} {t("hero.dashboard.daysLeftText")}
-                          </p>
-
-                          <div className="mt-3 flex items-center justify-between">
-                            <span className="rounded-full bg-[#714b67] px-2 py-1 text-[10px] font-bold text-white dark:bg-[#8a5a7e]">
-                              Project
-                            </span>
-
-                            <div className="flex -space-x-2">
-                              <img
-                                src={avatars[(columnIndex + cardIndex) % avatars.length]}
-                                alt="Member"
-                                className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 object-cover"
-                              />
-                              <img
-                                src={avatars[(columnIndex + cardIndex + 2) % avatars.length]}
-                                alt="Member"
-                                className="h-6 w-6 rounded-full border-2 border-white dark:border-slate-800 object-cover"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
-                <Play className="ml-1 h-6 w-6 fill-current" />
-              </button>
+              <img
+                src="/Assets/Services/Project/Project accounting.png"
+                alt={t("hero.dashboard.title")}
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -295,29 +238,11 @@ export default function ProjectLandingSections() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-[130px_1fr] gap-3 text-left">
-                {demoRows.map((row: string, rowIndex: number) => (
-                  <div key={row} className="contents">
-                    <p className="py-3 text-sm font-bold text-slate-600 dark:text-slate-300">
-                      {row}
-                    </p>
-                    <div className="grid grid-cols-5 gap-2 py-2">
-                      {Array.from({ length: 5 }).map((_, index) => (
-                        <div
-                          key={index}
-                          className={`h-10 rounded-md ${
-                            index >= rowIndex && index <= rowIndex + 1
-                              ? "bg-[#714b67]/20 dark:bg-[#9b6a8f]/20"
-                              : index === rowIndex + 2
-                                ? "bg-amber-100 dark:bg-amber-950/50"
-                                : "bg-slate-50 dark:bg-slate-800/50"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <img
+                src="/Assets/Services/Project/Budget vs Actual.png"
+                alt={t("viewsSection.demo.title")}
+                className="w-full rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -352,43 +277,12 @@ export default function ProjectLandingSections() {
               {t("dashboardSection.labels.tags")}
             </p>
 
-            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="grid gap-5 md:grid-cols-2">
-                {dashboardColumnsList.map((column: string, columnIndex: number) => (
-                  <div key={column} className="rounded-xl bg-slate-50 dark:bg-slate-800/40 p-4">
-                    <p className="mb-4 text-left font-bold text-slate-900 dark:text-white">
-                      {column}
-                    </p>
-
-                    {dashboardTasksList.map((task: string, index: number) => (
-                      <div
-                        key={`${column}-${task}`}
-                        className="mb-3 rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm"
-                      >
-                        <div className="flex items-center justify-between">
-                          <p className="font-bold text-slate-900 dark:text-white">
-                            {task}
-                          </p>
-                          <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-                        </div>
-
-                        <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
-                          Task #{columnIndex + 1}{index + 1}
-                        </p>
-
-                        <div className="mt-3 flex items-center gap-2">
-                          <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                            Client
-                          </span>
-                          <span className="rounded-full bg-[#714b67]/10 dark:bg-[#9b6a8f]/20 px-2 py-1 text-[10px] font-bold text-[#714b67] dark:text-[#9b6a8f]">
-                            Internal
-                          </span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
+            <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <img
+                src="/Assets/Services/Project/Cost Ledger.png"
+                alt={t("dashboardSection.title")}
+                className="w-full"
+              />
             </div>
 
             <p
@@ -422,42 +316,18 @@ export default function ProjectLandingSections() {
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               <span className="font-bold text-slate-700 dark:text-slate-200">
-                Involve your customers.
+                Automate the billing.
               </span>{" "}
               {t("collaborationSection.description")}
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
-            <div className="mb-5 flex items-center gap-3">
-              <MessageCircle className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
-              <p className="font-bold text-slate-900 dark:text-white">
-                {t("collaborationSection.demo.title")}
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {collaborationMessages.map((msg: any, index: number) => (
-                <div
-                  key={msg.text}
-                  className="flex gap-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 p-4 text-left"
-                >
-                  <img
-                    src={avatars[index % avatars.length]}
-                    alt={msg.name}
-                    className="h-10 w-10 rounded-full object-cover"
-                  />
-                  <div>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white">
-                      {msg.name}
-                    </p>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                      {msg.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Services/Project/Progress billing.png"
+              alt={t("collaborationSection.demo.title")}
+              className="w-full"
+            />
           </div>
         </div>
       </section>
@@ -577,6 +447,14 @@ export default function ProjectLandingSections() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_25px_70px_rgba(15,23,42,0.10)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Services/Project/Revenue and Cost.png"
+              alt={t("progressSection.title")}
+              className="w-full"
+            />
           </div>
         </div>
       </section>

@@ -1,119 +1,119 @@
 {
   "metadata": {
-    "title": "Project Management | AdonERP",
-    "description": "AI-powered project management platform for all your team operations — from task planning and milestones to timesheets, collaboration, and real-time reporting."
+    "title": "Project Accounting | AdonERP",
+    "description": "AI-powered project accounting platform — track budgets, costs, milestone billing, and profitability for every project in real time."
   },
   "hero": {
-    "title": "Modern",
-    "titleHighlight": "teamwork",
-    "description": "The AI-powered project management software to plan, track, and deliver faster.",
+    "title": "Project",
+    "titleHighlight": "accounting",
+    "description": "Plan project budgets, track real costs as they happen, and bill clients accurately — all from one connected workspace.",
     "button": "Meet an advisor",
     "dashboard": {
-      "title": "Project",
-      "subtitle": "Tasks / Gantt / Calendar / Reporting / Configuration",
-      "newButton": "New",
+      "title": "Project Accounting",
+      "subtitle": "Budgets / Costs / Billing / Profitability",
+      "newButton": "New Project",
       "columns": [
         {
-          "title": "To Do",
-          "cards": ["App Design", "Website Wireframe", "SEO Setup"]
+          "title": "Budgeted",
+          "cards": ["Warehouse Fit-out", "Kitchen Renovation", "Solar Rollout"]
         },
         {
           "title": "In Progress",
-          "cards": ["User Story", "Dashboard UI", "Landing Page"]
+          "cards": ["Office Build-out", "Client Website", "Factory Line B"]
         },
         {
-          "title": "Development",
-          "cards": ["API Integration", "Testing", "Bug Fixing"]
+          "title": "Ready to Bill",
+          "cards": ["Phase 2 Milestone", "March Retainer", "Change Order #3"]
         },
         {
-          "title": "Done",
-          "cards": ["Client Brief", "Brand Assets", "Planning"]
+          "title": "Closed",
+          "cards": ["Q1 Consulting", "Brand Refresh", "Site Survey"]
         }
       ],
-      "tasksText": "tasks",
-      "daysLeftText": "days left"
+      "tasksText": "cost lines",
+      "daysLeftText": "days to bill"
     }
   },
   "viewsSection": {
-    "title": "Different",
-    "titleHighlight": "needs",
-    "titleMiddle": "different",
-    "titleHighlight2": "views",
+    "title": "Every",
+    "titleHighlight": "cost",
+    "titleMiddle": "under",
+    "titleHighlight2": "control",
     "items": [
       {
-        "title": "Spreadsheet view.",
-        "description": "The powerful spreadsheet-like list view keeps every task organized."
+        "title": "Budget vs. actual.",
+        "description": "Set a budget per project, then watch actual labor, material, and overhead costs post against it live."
       },
       {
-        "title": "Planner schedule.",
-        "description": "Plan tasks and milestones with a flexible timeline view."
+        "title": "Cost breakdown.",
+        "description": "See exactly where spend is going — timesheets, purchases, expenses, and subcontractor bills, all in one ledger."
       },
       {
-        "title": "Flexible flow.",
-        "description": "Calendar, kanban, and task stages keep every team aligned."
+        "title": "Flexible billing.",
+        "description": "Bill fixed-price, time & material, or milestone-based — whatever fits the contract."
       }
     ],
     "demo": {
-      "title": "Project Schedule",
-      "badge": "Timeline",
-      "rows": ["Design", "Development", "Review", "Launch"]
+      "title": "Budget vs Actual",
+      "badge": "Live",
+      "rows": ["Labor", "Material", "Overhead", "Subcontract"]
     }
   },
   "dashboardSection": {
-    "title": "Enjoy a comprehensive dashboard",
+    "title": "Track costs the moment they happen",
     "labels": {
-      "statusView": "Status view",
-      "tags": "Tags",
-      "kanbanView": "Kanban view",
-      "allActivities": "All activities"
+      "statusView": "Cost view",
+      "tags": "Categories",
+      "kanbanView": "Ledger view",
+      "allActivities": "All transactions"
     },
-    "columns": ["In Progress", "Final Checks"],
+    "columns": ["Committed Costs", "Actual Costs"],
     "tasks": [
-      "Kitchen drawings",
-      "Appliances choice",
-      "Design Definition"
+      "Steel purchase order",
+      "Site labor - Week 12",
+      "Equipment rental"
     ]
   },
   "collaborationSection": {
-    "title": "Foster",
-    "titleHighlight": "collaboration",
-    "titleEnd": "to boost efficiency",
-    "description": "Involve your customers. Decide what parts of your project stakeholders can view and edit. Manage all your communication on one simple interface.",
+    "title": "Bill clients",
+    "titleHighlight": "on time",
+    "titleEnd": "every time",
+    "description": "Trigger invoices automatically when a milestone is reached, a percentage of completion is hit, or a billing period closes.",
     "demo": {
-      "title": "Project Discussion",
+      "title": "Milestone Billing",
       "messages": [
-        { "name": "Audrey Peterson", "text": "Can you review the kitchen layout?" },
-        { "name": "Mitchell Admin", "text": "Approved, looks good to me." },
-        { "name": "Joel Willis", "text": "I added a new document for the client." }
+        { "name": "Foundation Complete", "text": "Invoice #INV-2031 sent · $24,500" },
+        { "name": "Phase 2 - 50% Complete", "text": "Invoice #INV-2032 sent · $38,200" },
+        { "name": "Final Handover", "text": "Draft invoice ready · $19,800" }
       ]
     }
   },
   "timesheetSection": {
     "title": "Time is money",
-    "description": "Timesheets and analytics help you know exactly where the money is going and how your team is spending billable hours.",
-    "stageButton": "Stage 1",
-    "recordButton": "Record",
+    "description": "Timesheets, expenses, and purchases post straight to project costs, so billable hours and reimbursable spend never get lost.",
+    "stageButton": "Cost Entry",
+    "recordButton": "Expense",
     "timerButton": "00:42:00",
     "checklist": {
-      "title": "Check List",
-      "subtitle": "Project Task Details",
+      "title": "Cost Ledger",
+      "subtitle": "Project Cost Details",
       "headers": ["Date", "Employee", "Description", "Hours", "Billable"],
       "rows": [
-        { "date": "7/10/2025", "employee": "Lii Lambert", "description": "Design review", "hours": "2.5h", "billable": "Yes" },
-        { "date": "7/11/2025", "employee": "Marc Demo", "description": "Development", "hours": "4h", "billable": "Yes" },
-        { "date": "7/12/2025", "employee": "Audrey", "description": "Client call", "hours": "1h", "billable": "No" }
+        { "date": "7/10/2025", "employee": "Lii Lambert", "description": "Site supervision", "hours": "2.5h", "billable": "Yes" },
+        { "date": "7/11/2025", "employee": "Marc Demo", "description": "Structural work", "hours": "4h", "billable": "Yes" },
+        { "date": "7/12/2025", "employee": "Audrey", "description": "Client walkthrough", "hours": "1h", "billable": "No" }
       ]
     }
   },
   "progressSection": {
-    "title": "Always know where your",
-    "subtitle": "project stands",
-    "description": "Project updates are generated in real-time and give quick access to important statistics, invoices, costs, revenue, and progress.",
+    "title": "Always know a",
+    "subtitle": "project's margin",
+    "description": "Profitability updates in real time — revenue billed, costs incurred, and margin per project, without waiting for month-end close.",
     "floatingNote": "Your client can follow along",
     "stats": [
-      { "title": "Tasks", "value": "48", "trend": "+12%" },
-      { "title": "Milestones", "value": "7", "trend": "On track" },
-      { "title": "Costs", "value": "$8,420", "trend": "-3%" }
+      { "title": "Revenue Billed", "value": "$82,600", "trend": "+12%" },
+      { "title": "Costs to Date", "value": "$54,180", "trend": "On budget" },
+      { "title": "Margin", "value": "34.4%", "trend": "+3%" }
     ]
   },
   "featuresSection": {
@@ -121,46 +121,46 @@
     "subtitle": "right.",
     "features": [
       {
-        "title": "Document management",
-        "description": "Dedicate workspace for each project.",
+        "title": "Budget management",
+        "description": "Set and revise budgets by cost category for each project.",
         "icon": "BadgeCheck"
       },
       {
-        "title": "Templates",
-        "description": "Create repeatable workflows and project structures.",
+        "title": "Cost allocation",
+        "description": "Automatically post timesheets, purchases, and expenses to the right project.",
         "icon": "BadgeCheck"
       },
       {
-        "title": "Milestones",
-        "description": "Track major project goals that must be reached on time.",
+        "title": "Milestone billing",
+        "description": "Invoice on completion percentage, fixed milestones, or time & material.",
         "icon": "BadgeCheck"
       },
       {
-        "title": "Reporting",
-        "description": "Get project profitability, tasks, workload, and progress.",
+        "title": "Profitability reporting",
+        "description": "Get real-time margin, WIP, and variance reports per project.",
         "icon": "BadgeCheck"
       },
       {
-        "title": "Track costs and revenues",
-        "description": "Integrate timesheets, invoicing, purchases, and sales.",
+        "title": "Revenue recognition",
+        "description": "Recognize revenue against billed and unbilled work automatically.",
         "icon": "BadgeCheck"
       }
     ],
     "seeAllLink": "See all features",
     "planningDemo": {
-      "title": "Project planning",
-      "description": "Plan tasks, deadlines, resources, and activities from one visual workspace."
+      "title": "Budget planning",
+      "description": "Plan project budgets, cost categories, and billing milestones from one visual workspace."
     }
   },
   "appsSection": {
     "title": "One need, one app.",
     "description": "Expand as you grow.",
     "apps": [
-      { "title": "Timesheet", "description": "Record time on tasks", "icon": "Timer" },
-      { "title": "Sales", "description": "Sell tasks and services", "icon": "BarChart3" },
-      { "title": "Field Service", "description": "Manage onsite work", "icon": "BriefcaseBusiness" },
-      { "title": "Accounting", "description": "Invoice projects", "icon": "ClipboardList" },
-      { "title": "Documents", "description": "Centralize files", "icon": "FileText" }
+      { "title": "Timesheet", "description": "Record billable hours", "icon": "Timer" },
+      { "title": "Invoicing", "description": "Bill projects and milestones", "icon": "BarChart3" },
+      { "title": "Purchasing", "description": "Track project purchase costs", "icon": "BriefcaseBusiness" },
+      { "title": "Accounting", "description": "Post costs to the ledger", "icon": "ClipboardList" },
+      { "title": "Documents", "description": "Centralize contracts and files", "icon": "FileText" }
     ],
     "seeAllLink": "See all Apps"
   },
@@ -169,7 +169,7 @@
     "description": "who grow their business with Adon"
   },
   "testimonial": {
-    "quote": "Adon is the backbone of Kick & Rush, fostering collaboration, providing consistency, and adapting to unique requirements.",
+    "quote": "Adon gives us real-time visibility into project margins — we stopped finding out we lost money until it was too late.",
     "name": "Tyrone Miller",
     "role": "Project director"
   },
