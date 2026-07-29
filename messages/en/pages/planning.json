@@ -1,89 +1,75 @@
 {
   "metadata": {
-    "title": "Planning | AdonERP",
-    "description": "AI-powered workforce planning platform for all your scheduling operations — from shift management and resource allocation to conflict avoidance and pivot table analysis."
+    "title": "Budget Planning | AdonERP",
+    "description": "A complete budget management platform — version control, departmental requisitions, multi-stage approvals, variance tracking, and formal re-budget requests."
   },
   "hero": {
-    "title": "Smart planning.",
-    "titleHighlight": "No surprises.",
-    "description": "Adon Planning optimizes scheduling through automation. Schedule shifts and resources, manage onsite work, and enjoy the simplicity of integrated timesheets and invoices.",
+    "title": "Budget planning.",
+    "titleHighlight": "Fully controlled.",
+    "description": "Adon Planning gives finance teams a single place to build budgets, track requisitions, enforce multi-stage approvals, and stay on top of variance — all with full version control.",
     "startButton": "Start now",
     "dashboard": {
-      "title": "Planning",
-      "subtitle": "Schedule / My Planning / Reporting / Configuration",
-      "newButton": "New",
-      "employees": [
-        "Anita Oliver",
-        "Audrey Peterson",
-        "Beth Evans",
-        "Deco Cola",
-        "Mitchell Admin"
-      ],
-      "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "shiftTypes": ["Consultant", "7:00 AM", "Body ME"]
+      "title": "Budget Management",
+      "subtitle": "Version control · departmental requisitions · multi-stage approval · variance & enforcement",
+      "newButton": "New budget version",
+      "image": "/Assets/Budget/Planning.png"
     }
   },
-  "schedulingSection": {
-    "title": "Step up",
-    "titleHighlight": "your scheduling game",
-    "description": "Visualize and optimize your schedule. Gain clarity and efficiency with a stunning Gantt chart tool, templates, auto-planning, and recurrent tasks simplify your agenda management.",
-    "labels": {
-      "allocation": "Allocation of hours\nremaining hours"
-    },
-    "demo": {
-      "title": "Add Shift",
-      "shifts": [
-        "8 AM - HR Management",
-        "9 AM - Project Manager",
-        "10 AM - HR Management",
-        "11 AM - CEO"
-      ],
-      "fields": [
-        { "label": "Resource", "value": "Open Shift" },
-        { "label": "Role", "value": "Consultant" },
-        { "label": "Project", "value": "Planning" },
-        { "label": "Repeat", "value": "Weekly" }
-      ],
-      "buttons": {
-        "save": "Save",
-        "publishSave": "Publish & Save",
-        "autoPlan": "Auto Plan"
-      }
-    },
-    "floatingNote": "We cannot wait for you to use this"
+  "budgetTabsSection": {
+    "title": "Budget",
+    "titleHighlight": "under control",
+    "description": "Plan budgets, track requisitions, and stay ahead of variance with a full approval workflow and a rolling budget review and forecast that keeps every stakeholder aligned.",
+    "tabs": [
+      { "label": "Overview", "image": "/Assets/Budget/Planning.png" },
+      { "label": "Lines", "image": "/Assets/Budget/Line.png" },
+      { "label": "Requisitions", "image": "/Assets/Budget/Requisitions.png" },
+      { "label": "Variance", "image": "/Assets/Budget/Variance.png" },
+      { "label": "Approvals", "image": "/Assets/Budget/Approvals.png" },
+      { "label": "RBRF", "image": "/Assets/Budget/RBRF.png" }
+    ]
   },
-  "coverShiftSection": {
-    "title": "Cover",
-    "titleHighlight": "my shift?",
-    "description": "Control your planning. Create shifts and reassign them effortlessly using a user-friendly drag-and-drop interface. With collaboration options, allow everyone on the team to see open shifts and switch them among one another.",
-    "demo": {
-      "employee": "Anita Oliver - Developer",
-      "message": "This shift needs to be covered by another team member.",
-      "button": "Unassign shift"
-    }
+  "lineSection": {
+    "title": "Budget",
+    "titleHighlight": "lines",
+    "description": "Break every budget version into clean, categorized lines — track budget vs actual per line, assign it to a month, and edit or remove lines as plans evolve."
+  },
+  "varianceSection": {
+    "title": "Budget vs",
+    "titleHighlight": "Actual variance",
+    "description": "See exactly where spend is diverging from plan. Every category rolls up into a clear budget vs actual chart and table, with variance and utilisation calculated automatically."
+  },
+  "approvalSection": {
+    "title": "Multi-stage",
+    "titleHighlight": "approvals",
+    "description": "Every budget version moves through a clear approval chain — Finance, Compliance, Management, and CEO — with a full decision log so nothing gets approved in the dark."
+  },
+  "rbrfSection": {
+    "title": "Formal",
+    "titleHighlight": "re-budget requests",
+    "description": "Need to revise a budget line mid-cycle? Raise a formal Re-Budget Request (RBRF) — propose a new amount with justification and impact assessment, and let the approval chain review it before the line is revised."
   },
   "featuresSection": {
     "title": "All the features",
     "subtitle": "right.",
     "features": [
       {
-        "title": "Open shifts",
-        "description": "Leave shifts unassigned and assign them with a simple drag and drop.",
+        "title": "Version control",
+        "description": "Keep every budget version — draft, submitted, approved — with a full history you can always open again.",
         "icon": "BadgeCheck"
       },
       {
-        "title": "Schedule",
-        "description": "Manage all shifts by organizing them by role, employee, or project.",
+        "title": "Departmental requisitions",
+        "description": "Let departments raise and track their own requisitions against the active budget version.",
         "icon": "BadgeCheck"
       },
       {
-        "title": "Avoid conflicts",
-        "description": "Get a warning if multiple shifts are scheduled simultaneously for an employee.",
+        "title": "Variance tracking",
+        "description": "Compare budget vs actual by category and catch overruns before they become a problem.",
         "icon": "BadgeCheck"
       },
       {
-        "title": "Pivot table analysis",
-        "description": "Create advanced pivot tables and export the data in .xls files.",
+        "title": "Re-budget requests",
+        "description": "Formally propose, justify, and approve changes to budget lines mid-cycle with RBRF.",
         "icon": "BadgeCheck"
       }
     ],
@@ -93,11 +79,11 @@
     "title": "One need, one app.",
     "description": "Expand as you grow.",
     "apps": [
-      { "title": "Sales", "description": "Plan from sales orders", "icon": "BarChart3" },
-      { "title": "Project", "description": "Forecast deadlines accurately", "icon": "CheckCircle2" },
-      { "title": "Time Off", "description": "Plan around employees' leave", "icon": "Timer" },
-      { "title": "Payroll", "description": "Security is key", "icon": "BriefcaseBusiness" },
-      { "title": "Timesheet", "description": "Compare with effective hours", "icon": "Clock3" }
+      { "title": "Sales", "description": "Plan budgets from sales forecasts", "icon": "BarChart3" },
+      { "title": "Project", "description": "Track project budgets accurately", "icon": "CheckCircle2" },
+      { "title": "Accounting", "description": "Reconcile actuals automatically", "icon": "Timer" },
+      { "title": "Payroll", "description": "Keep payroll budgets in check", "icon": "BriefcaseBusiness" },
+      { "title": "Purchase", "description": "Compare requisitions with budget", "icon": "Clock3" }
     ],
     "seeAllLink": "See all Apps"
   },
@@ -106,7 +92,7 @@
     "description": "who grow their business with Adon"
   },
   "testimonial": {
-    "quote": "Adon improved resource management, making planning and invoicing more efficient, enhancing communication and collaboration.",
+    "quote": "Adon improved budget management, making planning, requisitions, and approvals more efficient, enhancing communication and collaboration.",
     "name": "Cédric Lesaux",
     "role": "CEO of XLG"
   },

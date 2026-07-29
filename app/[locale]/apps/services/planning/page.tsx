@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {
@@ -10,8 +11,6 @@ import {
   CalendarDays,
   CheckCircle2,
   Clock3,
-  MessageCircle,
-  Play,
   Sparkles,
   Star,
   Timer,
@@ -28,7 +27,7 @@ const handwrittenFont =
 const getIconComponent = (iconName: string) => {
   const icons: Record<string, React.ElementType> = {
     BadgeCheck, BarChart3, BriefcaseBusiness, CalendarDays, CheckCircle2,
-    Clock3, MessageCircle, Play, Sparkles, Star, Timer, Users, Zap, ArrowRight,
+    Clock3, Sparkles, Star, Timer, Users, Zap, ArrowRight,
   };
   return icons[iconName] || CalendarDays;
 };
@@ -43,70 +42,14 @@ const avatars = [
   "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=96&h=96&fit=crop&crop=face",
 ];
 
-function FloatingNote({
-  className = "",
-  text = "Project note",
-  color = "bg-[#02cfc3] dark:bg-[#02cfc3]/30",
-}: {
-  className?: string;
-  text?: string;
-  color?: string;
-}) {
-  return (
-    <div
-      className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
-    >
-      <span
-        className={`absolute -left-10 z-0 h-20 w-32 rotate-[-14deg] rounded-[35%] ${color}`}
-      />
-      <img
-        src={avatars[1]}
-        alt=""
-        className="absolute left-3 z-10 h-12 w-12 rounded-full object-cover"
-      />
-      <MessageCircle className="absolute -top-9 left-9 z-10 h-8 w-8 text-slate-900 dark:text-white" />
-      <span className="relative z-10">{text}</span>
-    </div>
-  );
-}
-
-function DashedArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 160"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M25 25C75 30 105 58 102 91C99 120 70 138 36 130"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeDasharray="10 14"
-      />
-      <path
-        d="M37 130L57 116M37 130L52 151"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function PlanningLandingPage() {
   const t = useTranslations("pages.planning");
   const commonT = useTranslations("common.actions");
 
-  const employeesList = t.raw("hero.dashboard.employees");
-  const daysList = t.raw("hero.dashboard.days");
-  const shiftTypesList = t.raw("hero.dashboard.shiftTypes");
-  const schedulingShifts = t.raw("schedulingSection.demo.shifts");
-  const schedulingFields = t.raw("schedulingSection.demo.fields");
+  const budgetTabs = t.raw("budgetTabsSection.tabs");
   const featuresList = t.raw("featuresSection.features");
   const appsList = t.raw("appsSection.apps");
+  const [activeBudgetTab, setActiveBudgetTab] = useState(0);
 
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
@@ -160,58 +103,11 @@ export default function PlanningLandingPage() {
                 </button>
               </div>
 
-              <div className="bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6">
-                <div className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
-                  <div className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                    <span>Employee</span>
-                    {daysList.map((day: string) => (
-                      <span key={day} className="text-center">
-                        {day}
-                      </span>
-                    ))}
-                  </div>
-
-                  {employeesList.map((name: string, rowIndex: number) => (
-                    <div
-                      key={name}
-                      className="grid grid-cols-[150px_repeat(6,1fr)] border-b border-slate-100 dark:border-slate-700 px-4 py-3 text-xs last:border-0"
-                    >
-                      <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
-                        <img
-                          src={avatars[rowIndex % avatars.length]}
-                          alt=""
-                          className="h-7 w-7 rounded-full object-cover"
-                        />
-                        {name}
-                      </span>
-
-                      {Array.from({ length: 6 }).map((_, colIndex) => {
-                        const shiftIndex = (colIndex + rowIndex) % 3;
-                        return (
-                          <span
-                            key={colIndex}
-                            className={`mx-1 rounded px-2 py-3 text-center font-bold ${
-                              (colIndex + rowIndex) % 4 === 0
-                                ? "bg-[#02cfc3] dark:bg-[#02cfc3]/40 text-[#027f7c] dark:text-[#02cfc3]"
-                                : (colIndex + rowIndex) % 4 === 1
-                                  ? "bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400"
-                                  : (colIndex + rowIndex) % 4 === 2
-                                    ? "bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400"
-                                    : "bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-400"
-                            }`}
-                          >
-                            {shiftTypesList[shiftIndex]}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <button className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white dark:bg-slate-800 text-[#714b67] dark:text-[#9b6a8f] shadow-xl">
-                <Play className="ml-1 h-6 w-6 fill-current" />
-              </button>
+              <img
+                src={t("hero.dashboard.image")}
+                alt={t("hero.dashboard.title")}
+                className="w-full"
+              />
             </div>
           </div>
         </div>
@@ -219,7 +115,7 @@ export default function PlanningLandingPage() {
         <div className="absolute bottom-0 left-0 z-0 h-44 w-full bg-[#f3f4f7] dark:bg-[#0f0f1a] [clip-path:polygon(0_42%,100%_0,100%_100%,0_100%)]" />
       </section>
 
-      {/* Step up your scheduling game Section */}
+      {/* Budget Section */}
       <section className="bg-white dark:bg-slate-950 py-24 text-center">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
@@ -227,80 +123,42 @@ export default function PlanningLandingPage() {
             style={{ fontFamily: handwrittenFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">{t("schedulingSection.title")}</span>
+              <span className="dark:text-[#02cfc3]">{t("budgetTabsSection.title")}</span>
             </HandUnderline>{" "}
-            {t("schedulingSection.titleHighlight")}
+            {t("budgetTabsSection.titleHighlight")}
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            {t("schedulingSection.description")}
+            {t("budgetTabsSection.description")}
           </p>
 
-          <div className="relative mx-auto mt-14 max-w-4xl">
-            <p
-              className="absolute -right-14 top-10 hidden rotate-28 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
-              style={{ fontFamily: handwrittenFont }}
-            >
-              {t("schedulingSection.labels.allocation")}
-            </p>
+          <div className="mx-auto mt-10 flex w-fit flex-wrap justify-center gap-1 rounded-lg bg-slate-100 dark:bg-slate-800 p-1">
+            {budgetTabs.map((tab: any, index: number) => (
+              <button
+                key={tab.label}
+                onClick={() => setActiveBudgetTab(index)}
+                className={`rounded-md px-5 py-2 text-xs font-bold transition ${
+                  activeBudgetTab === index
+                    ? "bg-[#714b67] text-white dark:bg-[#8a5a7e]"
+                    : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-            <DashedArrow className="absolute -right-4 top-28 hidden h-24 w-24 rotate-140 text-slate-300 dark:text-slate-600 lg:block" />
-
-            <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-7 text-left shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-              <div className="mb-6 flex items-center justify-between">
-                <p className="font-bold text-slate-900 dark:text-white">
-                  {t("schedulingSection.demo.title")}
-                </p>
-                <span className="text-slate-400 dark:text-slate-500">×</span>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-4">
-                {schedulingShifts.map((item: string) => (
-                  <span
-                    key={item}
-                    className="rounded-md bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-xs font-bold text-slate-500 dark:text-slate-400"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-7 grid gap-5 sm:grid-cols-2">
-                {schedulingFields.map((field: any) => (
-                  <div key={field.label}>
-                    <p className="text-xs font-bold text-slate-400 dark:text-slate-500">
-                      {field.label}
-                    </p>
-                    <div className="mt-2 rounded-md bg-slate-50 dark:bg-slate-800/50 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200">
-                      {field.value}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
-                  {t("schedulingSection.demo.buttons.save")}
-                </button>
-                <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                  {t("schedulingSection.demo.buttons.publishSave")}
-                </button>
-                <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
-                  {t("schedulingSection.demo.buttons.autoPlan")}
-                </button>
-              </div>
-            </div>
-
-            <FloatingNote
-              className="mx-auto mt-12 z-30"
-              color="bg-[#02cfc3] dark:bg-[#02cfc3]/30"
-              text={t("schedulingSection.floatingNote")}
+          <div className="relative mx-auto mt-10 max-w-5xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <img
+              src={budgetTabs[activeBudgetTab].image}
+              alt={budgetTabs[activeBudgetTab].label}
+              className="w-full"
             />
           </div>
         </div>
       </section>
 
-      {/* Cover my shift? Section */}
+      {/* Budget lines Section */}
       <section className="bg-white dark:bg-slate-950 py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
@@ -309,52 +167,109 @@ export default function PlanningLandingPage() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="dark:text-[#02cfc3]">{t("coverShiftSection.title")}</span>
+                <span className="dark:text-[#02cfc3]">{t("lineSection.title")}</span>
               </HandUnderline>{" "}
-              {t("coverShiftSection.titleHighlight")}
+              {t("lineSection.titleHighlight")}
             </h2>
 
             <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              {t("coverShiftSection.description")}
+              {t("lineSection.description")}
             </p>
           </div>
 
-          <div className="relative mx-auto w-full max-w-lg rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-900 dark:bg-slate-800 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
-            <div className="rounded-lg bg-white dark:bg-slate-900 p-5">
-              <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-slate-400 dark:text-slate-500">
-                {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-                  <span key={day}>{day}</span>
-                ))}
-              </div>
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Budget/Line.png"
+              alt={t("lineSection.title")}
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
 
-              <div className="mt-4 grid grid-cols-7 gap-2">
-                {Array.from({ length: 35 }).map((_, index) => (
-                  <div
-                    key={index}
-                    className={`h-12 rounded ${
-                      [8, 14, 20].includes(index)
-                        ? "bg-[#02cfc3] dark:bg-[#02cfc3]/40"
-                        : [10, 16, 24].includes(index)
-                          ? "bg-[#714b67]/40 dark:bg-[#9b6a8f]/40"
-                          : "bg-slate-50 dark:bg-slate-800/50"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+      {/* Variance Section */}
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="order-2 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)] lg:order-1">
+            <img
+              src="/Assets/Budget/Variance.png"
+              alt={t("varianceSection.title")}
+              className="w-full"
+            />
+          </div>
 
-            <div className="absolute left-1/2 top-1/2 w-80 -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white dark:bg-slate-900 p-6 text-left shadow-2xl">
-              <p className="font-bold text-slate-900 dark:text-white">
-                {t("coverShiftSection.demo.employee")}
-              </p>
-              <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-                {t("coverShiftSection.demo.message")}
-              </p>
+          <div className="order-1 lg:order-2">
+            <h2
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+                <span className="dark:text-[#02cfc3]">{t("varianceSection.title")}</span>
+              </HandUnderline>{" "}
+              {t("varianceSection.titleHighlight")}
+            </h2>
 
-              <button className="mt-5 rounded-md border border-rose-200 dark:border-rose-800 px-4 py-2 text-sm font-bold text-rose-500 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition">
-                {t("coverShiftSection.demo.button")}
-              </button>
-            </div>
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t("varianceSection.description")}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Multi-stage approvals Section */}
+      <section className="bg-white dark:bg-slate-950 py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h2
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+                <span className="dark:text-[#02cfc3]">{t("approvalSection.title")}</span>
+              </HandUnderline>{" "}
+              {t("approvalSection.titleHighlight")}
+            </h2>
+
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t("approvalSection.description")}
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+            <img
+              src="/Assets/Budget/Approvals.png"
+              alt={t("approvalSection.title")}
+              className="w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* RBRF Section */}
+      <section className="bg-[#f3f4f7] dark:bg-[#0f0f1a] py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div className="order-2 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)] lg:order-1">
+            <img
+              src="/Assets/Budget/RBRF.png"
+              alt={t("rbrfSection.title")}
+              className="w-full"
+            />
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <h2
+              className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
+              style={{ fontFamily: handwrittenFont }}
+            >
+              <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
+                <span className="dark:text-[#02cfc3]">{t("rbrfSection.title")}</span>
+              </HandUnderline>{" "}
+              {t("rbrfSection.titleHighlight")}
+            </h2>
+
+            <p className="mt-8 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              {t("rbrfSection.description")}
+            </p>
           </div>
         </div>
       </section>
