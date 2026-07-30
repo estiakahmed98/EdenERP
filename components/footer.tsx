@@ -108,35 +108,16 @@ export default function Footer({
           <div className="text-center lg:text-left">
             <Link
               href="/"
-              className="group inline-flex items-center justify-center gap-1 transition-transform duration-300 hover:scale-105 lg:justify-start"
+              className="group inline-flex min-w-0 shrink items-center gap-2 transition-transform duration-300"
             >
               <Image
-                src="/icon.svg"
-                alt="Adon ERP icon"
-                width={44}
-                height={44}
-                className="h-11 w-11 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
+                src="/adon_erp_logo.png"
+                alt="Adon ERP logo"
+                width={140}
+                height={50}
+                className="h-9 w-auto shrink-0 sm:h-24 xl:h-24"
+                priority
               />
-
-              <span
-                className="relative inline-block bg-linear-to-r from-violet-400 via-cyan-300 to-amber-300 bg-clip-text text-3xl font-black text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)] transition-all duration-300 group-hover:scale-105 sm:text-4xl"
-                style={{
-                  fontFamily:
-                    '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
-                }}
-              >
-                Adon<span className="mx-1.5 text-slate-500">|</span>
-              </span>
-
-              <span
-                className="relative inline-block bg-linear-to-r from-emerald-300 to-cyan-300 bg-clip-text text-4xl font-black uppercase tracking-wide text-transparent sm:text-5xl"
-                style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                }}
-              >
-                ERP
-              </span>
             </Link>
 
             <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-muted-foreground lg:mx-0">
@@ -198,9 +179,16 @@ export default function Footer({
 
           <Link
             href="/"
-            className="rounded-full border border-border bg-background/70 px-4 py-2 text-xs font-bold text-muted-foreground transition-colors hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
+            className="group inline-flex min-w-0 shrink items-center gap-2 transition-transform duration-300"
           >
-            Adon ERP
+            <Image
+              src="/adon_erp_logo.png"
+              alt="Adon ERP logo"
+              width={140}
+              height={50}
+              className="h-9 w-auto shrink-0 sm:h-14 xl:h-16"
+              priority
+            />
           </Link>
         </div>
       </div>
