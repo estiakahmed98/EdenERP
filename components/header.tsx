@@ -458,36 +458,13 @@ export default function Header({
           className="group inline-flex min-w-0 shrink items-center gap-2 transition-transform duration-300"
         >
           <Image
-            src="/icon.svg"
+            src="/adon_erp_logo.png"
             alt="Adon ERP logo"
-            width={36}
-            height={36}
-            className="h-8 w-8 shrink-0 sm:h-9 sm:w-9"
+            width={140}
+            height={50}
+            className="h-9 w-auto shrink-0 sm:h-14 xl:h-16"
             priority
           />
-
-          <span
-            className="relative inline-block whitespace-nowrap bg-linear-to-r from-violet-700 via-sky-600 to-cyan-500 bg-clip-text text-xl font-black text-transparent drop-shadow-[0_2px_8px_rgba(59,130,246,0.16)] transition-all duration-300 sm:text-2xl xl:text-3xl dark:from-violet-400 dark:via-cyan-300 dark:to-amber-300 dark:drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)]"
-            style={{
-              fontFamily:
-                '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
-            }}
-          >
-            Adon
-            <span className="mx-1 text-slate-500/90 sm:mx-1.5 dark:text-muted-foreground/70">
-              |
-            </span>
-          </span>
-
-          <span
-            className="relative inline-block whitespace-nowrap bg-linear-to-r from-emerald-600 via-teal-500 to-sky-500 bg-clip-text text-2xl font-black uppercase tracking-wide text-transparent sm:text-3xl xl:text-4xl dark:from-emerald-300 dark:to-cyan-300"
-            style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-            }}
-          >
-            ERP
-          </span>
         </Link>
 
         <div ref={desktopNavRef} className="hidden items-center gap-6 xl:flex">
@@ -505,7 +482,7 @@ export default function Header({
                         prev === item.id ? null : item.id,
                       )
                     }
-                    className={`group relative inline-flex items-center gap-1.5 text-sm font-semibold transition-colors ${
+                    className={`group relative inline-flex items-center gap-1.5 text-md font-semibold transition-colors ${
                       openDesktopMenu === item.id || isActiveMenu(item)
                         ? "text-primary"
                         : "text-muted-foreground hover:text-primary"
@@ -583,7 +560,7 @@ export default function Header({
               ) : (
                 <Link
                   href={item.href}
-                  className={`group relative text-sm font-semibold transition-colors ${
+                  className={`group relative text-md font-semibold transition-colors ${
                     isActivePath(item.href)
                       ? "text-primary"
                       : "text-muted-foreground hover:text-primary"
