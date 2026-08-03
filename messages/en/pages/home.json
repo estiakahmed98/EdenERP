@@ -40,7 +40,11 @@
     "titleHand": "one",
     "titleSuffix": "smart Adon ERP",
     "description": "Keep accounting, sales, customer management, inventory, and team workflows connected in one system. Reduce manual work, avoid mistakes, and make faster business decisions.",
-    "altLabel": "Adon"
+    "altLabel": "Adon",
+    "ecosystemLabel": "{count} native business apps",
+    "ecosystemHint": "Built in, fully connected, and ready from day one",
+    "readyLabel": "All systems ready",
+    "appBadge": "Native app"
   },
   "nativeAi": {
     "tag": "Smart AI Assistance",
