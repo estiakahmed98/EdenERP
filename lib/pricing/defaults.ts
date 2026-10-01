@@ -1,6 +1,9 @@
 import enMessages from "@/messages/en.json";
 import bnMessages from "@/messages/bn.json";
 import arMessages from "@/messages/ar.json";
+import jaMessages from "@/messages/ja.json";
+import neMessages from "@/messages/ne.json";
+import viMessages from "@/messages/vi.json";
 import { mergeMessages } from "@/i18n/messages";
 
 import type {
@@ -66,6 +69,9 @@ const defaults = {
   en: normalizePricingData("en", enPricing),
   bn: normalizePricingData("bn", bnPricing),
   ar: normalizePricingData("ar", arPricing),
+  ja: normalizePricingData("ja", mergeMessages(enMessages, jaMessages).pages.pricing),
+  ne: normalizePricingData("ne", mergeMessages(enMessages, neMessages).pages.pricing),
+  vi: normalizePricingData("vi", mergeMessages(enMessages, viMessages).pages.pricing),
 } satisfies Record<PricingLocale, PricingPageData>;
 
 export function getDefaultPricingData(locale: PricingLocale): PricingPageData {

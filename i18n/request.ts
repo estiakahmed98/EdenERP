@@ -4,22 +4,21 @@ import { getRequestConfig } from "next-intl/server";
 import { defaultLocale, isLocale, type AppLocale } from "@/i18n/config";
 import { mergeMessages } from "@/i18n/messages";
 
-async function getMessages(locale: AppLocale) {
-  switch (locale) {
-    case "ar": {
-      const [english, arabic] = await Promise.all([
-        import("../messages/en.json"),
-        import("../messages/ar.json"),
-      ]);
-      return mergeMessages(english.default, arabic.default);
-    }
-    case "bn":
-      return (await import("../messages/bn.json")).default;
+const messageLoaders = {
+  en: () => import("../messages/en.json"),
+  bn: () => import("../messages/bn.json"),
+  ar: () => import("../messages/ar.json"),
+  ja: () => import("../messages/ja.json"),
+  ne: () => import("../messages/ne.json"),
+  vi: () => import("../messages/vi.json"),
+} satisfies Record<AppLocale, () => Promise<{ default: Record<string, unknown> }>>;
 
-    case "en":
-    default:
-      return (await import("../messages/en.json")).default;
-  }
+async function getMessages(locale: AppLocale) {
+  const [english, translated] = await Promise.all([
+    messageLoaders.en(),
+    messageLoaders[locale](),
+  ]);
+  return mergeMessages(english.default, translated.default);
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {

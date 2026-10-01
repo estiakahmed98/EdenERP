@@ -1,9 +1,16 @@
 "use client";
 
+import { Check, ChevronDown, Languages } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { locales, type AppLocale } from "@/i18n/config";
+import { isLocale, languageNames, locales, type AppLocale } from "@/i18n/config";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 type LanguageSwitcherProps = {
   variant: "desktop" | "mobile";
@@ -16,57 +23,54 @@ export default function LanguageSwitcher({
   const pathname = usePathname();
   const router = useRouter();
   const t = useTranslations("common.languageSwitcher");
+  const activeLocale = isLocale(locale) ? locale : "en";
 
   function switchLanguage(nextLocale: AppLocale) {
     if (nextLocale === locale) return;
-    router.replace(pathname, { locale: nextLocale });
-  }
-
-  if (variant === "mobile") {
-    return (
-      <div
-        aria-label={t("label")}
-        className="flex w-full items-center justify-center gap-10 rounded-2xl border border-border bg-card px-5 py-4 text-card-foreground"
-      >
-        {locales.map((nextLocale) => (
-          <button
-            key={nextLocale}
-            type="button"
-            lang={nextLocale}
-            aria-pressed={locale === nextLocale}
-            onClick={() => switchLanguage(nextLocale)}
-            className={`text-sm font-bold ${
-              locale === nextLocale ? "text-foreground" : "text-muted-foreground"
-            }`}
-          >
-            {t(`options.${nextLocale}`)}
-          </button>
-        ))}
-      </div>
-    );
+    router.replace(`${pathname}${window.location.search}${window.location.hash}`, {
+      locale: nextLocale,
+    });
   }
 
   return (
-    <div
-      aria-label={t("label")}
-      className="hidden items-center gap-1 rounded-full border border-border bg-card/90 p-1 shadow-sm md:inline-flex"
-    >
-      {locales.map((nextLocale) => (
+    <DropdownMenu dir={locale === "ar" ? "rtl" : "ltr"}>
+      <DropdownMenuTrigger asChild>
         <button
-          key={nextLocale}
           type="button"
-          lang={nextLocale}
-          aria-pressed={locale === nextLocale}
-          onClick={() => switchLanguage(nextLocale)}
-          className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${
-            locale === nextLocale
-              ? "bg-primary text-primary-foreground"
-              : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
-          }`}
+          aria-label={`${t("label")}: ${languageNames[activeLocale]}`}
+          className={
+            variant === "mobile"
+              ? "flex w-full items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold text-card-foreground transition-colors hover:bg-accent/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              : "hidden items-center gap-2 rounded-full border border-border bg-card/90 px-3 py-2 text-sm font-semibold text-foreground shadow-sm transition-colors hover:bg-accent/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:inline-flex"
+          }
         >
-          {t(`options.${nextLocale}`)}
+          <Languages className="size-4 shrink-0" aria-hidden="true" />
+          {variant === "mobile" && <span>{t("label")}</span>}
+          <span lang={activeLocale} className={variant === "mobile" ? "ms-auto" : undefined}>
+            {languageNames[activeLocale]}
+          </span>
+          <ChevronDown className="size-4 shrink-0" aria-hidden="true" />
         </button>
-      ))}
-    </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        align="end"
+        sideOffset={8}
+        aria-label={t("label")}
+        className="z-[60] min-w-48 rounded-xl p-1.5"
+      >
+        {locales.map((nextLocale) => (
+          <DropdownMenuItem
+            key={nextLocale}
+            role="menuitemradio"
+            aria-checked={locale === nextLocale}
+            onSelect={() => switchLanguage(nextLocale)}
+            className="cursor-pointer justify-between gap-6 rounded-lg px-3 py-2.5"
+          >
+            <span lang={nextLocale}>{languageNames[nextLocale]}</span>
+            {locale === nextLocale && <Check className="size-4 text-primary" aria-hidden="true" />}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import type { PricingLocale, PricingPageData, PricingSiteConfig } from "@/lib/pricing/types";
+import { languageNames, locales } from "@/i18n/config";
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 
@@ -1048,9 +1049,9 @@ export default function PricingAdminPage({
                 onChange={(e) => loadLocale(e.target.value as PricingLocale)}
                 className="rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white"
               >
-                <option value="en">English</option>
-                <option value="bn">Bangla</option>
-                <option value="ar">Arabic</option>
+                {locales.map((option) => (
+                  <option key={option} value={option}>{languageNames[option]}</option>
+                ))}
               </select>
               {/* header save removed — using floating save button */}
               <Button

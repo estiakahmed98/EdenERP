@@ -1,0 +1,449 @@
+{
+    "common": {
+        "languageSwitcher": {
+            "label": "言語",
+            "options": {
+                "en": "EN",
+                "bn": "বাংলা",
+                "ar": "العربية"
+            }
+        },
+        "theme": {
+            "label": "テーマ",
+            "switchToLight": "ライトモードに切り替え",
+            "switchToDark": "ダークモードに切り替え",
+            "light": "ライト",
+            "dark": "ダーク",
+            "green": "グリーン",
+            "oceanBlue": "オーシャンブルー"
+        },
+        "actions": {
+            "watchDemo": "デモを見る",
+            "viewAllApps": "50以上のツールを探す",
+            "seeAllFeatures": "すべての機能を見る",
+            "contactSales": "営業に相談",
+            "talkToSales": "営業に相談",
+            "viewPlans": "プランを見る",
+            "startFreeTrial": "無料トライアルを開始",
+            "getStarted": "始める",
+            "learnMore": "詳しく見る",
+            "viewAll": "すべて見る"
+        },
+        "states": {
+            "included": "含まれる",
+            "notIncluded": "含まれない",
+            "free": "無料",
+            "custom": "カスタム"
+        }
+    },
+    "layout": {
+        "header": {
+            "nav": {
+                "apps": "ERP",
+                "industries": "業界",
+                "community": "コミュニティ",
+                "pricing": "料金",
+                "help": "ヘルプ",
+                "signIn": "サインイン",
+                "tryFree": "無料で試す"
+            },
+            "menu": {
+                "explore": "Adon {label} アプリを探す",
+                "description": "統合された1つのERPプラットフォームに接続されたプレミアムビジネスツール。",
+                "apps": {
+                    "finance": "財務",
+                    "sales": "営業",
+                    "websites": "ウェブサイト",
+                    "supplyChain": "サプライチェーン",
+                    "humanResources": "人事",
+                    "services": "サービス",
+                    "productivity": "生産性",
+                    "accounting": "会計",
+                    "invoicing": "請求",
+                    "expenses": "経費",
+                    "spreadsheet": "スプレッドシート",
+                    "documents": "ドキュメント",
+                    "sign": "署名",
+                    "crm": "CRM",
+                    "salesApp": "営業",
+                    "posShop": "POSショップ",
+                    "posRestaurant": "POSレストラン",
+                    "subscriptions": "サブスクリプション",
+                    "rental": "レンタル",
+                    "websiteBuilder": "ウェブサイトビルダー",
+                    "ecommerce": "eコマース",
+                    "blog": "ブログ",
+                    "forum": "フォーラム",
+                    "liveChat": "ライブチャット",
+                    "elearning": "eラーニング",
+                    "inventory": "在庫",
+                    "manufacturing": "製造",
+                    "manufacturingOverview": "概要",
+                    "workCenters": "ワークセンター",
+                    "routings": "工順",
+                    "billOfMaterials": "部品表",
+                    "productionOrders": "製造オーダー",
+                    "qualityControl": "品質管理",
+                    "standardCosting": "標準原価計算",
+                    "purchase": "購買",
+                    "procurement": "調達",
+                    "maintenance": "メンテナンス",
+                    "quality": "品質",
+                    "barcode": "バーコード",
+                    "employees": "従業員",
+                    "recruitment": "採用",
+                    "timeOff": "休暇",
+                    "appraisals": "評価",
+                    "attendance": "勤怠",
+                    "payroll": "給与",
+                    "project": "プロジェクト会計",
+                    "timesheets": "タイムシート",
+                    "helpdesk": "ヘルプデスク",
+                    "planning": "計画",
+                    "appointments": "予約",
+                    "discuss": "ディスカッション",
+                    "artificialIntelligence": "人工知能",
+                    "iot": "IoT"
+                },
+                "industries": {
+                    "retail": "小売",
+                    "foodHospitality": "食品・ホスピタリティ",
+                    "realEstate": "不動産",
+                    "consulting": "コンサルティング",
+                    "manufacturing": "製造",
+                    "bookStore": "書店",
+                    "clothingStore": "衣料品店",
+                    "furnitureStore": "家具店",
+                    "groceryStore": "食料品店",
+                    "hardwareStore": "金物店",
+                    "toyStore": "おもちゃ店",
+                    "restaurant": "レストラン",
+                    "fastFood": "ファストフード",
+                    "guestHouse": "ゲストハウス",
+                    "beverageDistributor": "飲料卸売",
+                    "hotel": "ホテル",
+                    "realEstateAgency": "不動産代理店",
+                    "architectureFirm": "建築事務所",
+                    "construction": "建設",
+                    "accountingFirm": "会計事務所",
+                    "marketingAgency": "マーケティング代理店",
+                    "auditCertification": "監査・認証",
+                    "talentAcquisition": "人材獲得",
+                    "textile": "繊維",
+                    "metal": "金属",
+                    "furniture": "家具"
+                },
+                "community": {
+                    "learn": "学ぶ",
+                    "getServices": "サービスを取得",
+                    "collaborate": "コラボレーション",
+                    "tutorials": "チュートリアル",
+                    "documentation": "ドキュメント",
+                    "training": "トレーニング",
+                    "blog": "ブログ",
+                    "findPartner": "パートナーを探す",
+                    "meetAdvisor": "アドバイザーに会う",
+                    "implementation": "導入",
+                    "support": "サポート",
+                    "customerStories": "顧客事例",
+                    "github": "GitHub",
+                    "forum": "フォーラム",
+                    "events": "イベント",
+                    "translations": "翻訳",
+                    "becomePartner": "パートナーになる"
+                }
+            },
+            "mobileMenuLabel": "メニューを切り替え"
+        },
+        "footer": {
+            "description": "財務、営業、運用、成長のための統合アプリを1つの接続されたERPプラットフォームで。",
+            "sections": {
+                "product": "製品",
+                "company": "会社",
+                "support": "サポート",
+                "legal": "法務"
+            },
+            "links": {
+                "apps": "アプリ",
+                "industries": "業界",
+                "pricing": "料金",
+                "help": "ヘルプ",
+                "community": "コミュニティ",
+                "learn": "学ぶ",
+                "getServices": "サービスを取得",
+                "collaborate": "コラボレーション",
+                "helpCenter": "ヘルプセンター",
+                "documentation": "ドキュメント",
+                "tutorials": "チュートリアル",
+                "training": "トレーニング",
+                "privacy": "プライバシー",
+                "terms": "利用規約",
+                "cookies": "Cookie",
+                "gdpr": "GDPR"
+            },
+            "copyright": "© {year} Adon ERP. 全著作権所有。"
+        }
+    },
+    "pages": {
+        "accounting-firm": {
+            "metadata": {
+                "title": "会計事務所 | AdonERP",
+                "description": "あらゆるプロフェッショナルサービス向けのAI搭載会計事務所管理プラットフォーム — CRMとプロジェクト管理から電子請求、タイムシート、ドキュメント管理まで。"
+            },
+            "hero": {
+                "eyebrowIcon": "Calculator",
+                "eyebrowLabel": "プロフェッショナルサービス テンプレート",
+                "industriesLabel": "業界 / 会計事務所",
+                "preHeading": "第1位のソフトウェア",
+                "title": "会計事務所向け",
+                "description": "顧客獲得からプロジェクト処理、請求まで、会計事務所の活動を1つの統合システムで管理。",
+                "startButton": "今すぐ開始",
+                "advisorButton": "アドバイザーに会う",
+                "testimonialQuote": "以前は4日かかっていたVAT決算が、AdonERPでは3時間で完了し、お客様へのサービスも向上しました。",
+                "testimonialName": "ジェニファー・ウォルシュ",
+                "testimonialRole": "マネージングパートナー、Walsh & Associates"
+            },
+            "pipelineSection": {
+                "title": "リードから",
+                "titleHighlightLead": "リード",
+                "titleMiddle": "から",
+                "titleHighlightInvoice": "請求書",
+                "stages": [
+                    "新規リード",
+                    "提案",
+                    "顧客"
+                ]
+            },
+            "serviceSection": {
+                "title": "スマートサービス管理",
+                "description": "プロジェクトタスク、スケジュール、連絡先、ドキュメント、顧客アクティビティで各リクエストを追跡。",
+                "tasks": [
+                    {
+                        "name": "税務申告 - 2026年第1四半期",
+                        "due": "5月30日"
+                    },
+                    {
+                        "name": "年次監査準備",
+                        "due": "6月15日"
+                    },
+                    {
+                        "name": "給与レビュー",
+                        "due": "5月25日"
+                    },
+                    {
+                        "name": "財務諸表",
+                        "due": "6月05日"
+                    }
+                ]
+            },
+            "accountingSection": {
+                "title": "次世代の",
+                "subtitle": "会計",
+                "description": "照合を自動化し、ドキュメントを管理し、リアルタイムレポートを取得し、会計業務を正確かつ迅速に保ちます。",
+                "badges": {
+                    "autoReconciliation": "自動照合",
+                    "realTimeReporting": "リアルタイムレポート"
+                }
+            },
+            "documentsSection": {
+                "title": "安全な",
+                "titleHighlight": "ドキュメント",
+                "subtitle": "ワークスペース",
+                "description": "会計ドキュメント、顧客ファイル、請求書、承認を明確なコラボレーションフローで1つの安全なワークスペースに保管。",
+                "badges": {
+                    "secureStorage": "安全なストレージ",
+                    "teamCollaboration": "チームコラボレーション"
+                },
+                "button": "詳細を見る"
+            },
+            "featuresSection": {
+                "title": "すべての機能を",
+                "subtitle": "正しく。",
+                "description": "会計事務所が顧客、タスク、ドキュメント、請求、プロジェクト、レポートを1か所で管理するためのツール。",
+                "list": [
+                    {
+                        "title": "オールインワン営業管理",
+                        "description": "1つのダッシュボードからリード、提案、顧客オンボーディングを追跡。"
+                    },
+                    {
+                        "title": "準拠した電子署名",
+                        "description": "契約書やエンゲージメントレターに法的拘束力のある署名を収集。"
+                    },
+                    {
+                        "title": "プロジェクトダッシュボード",
+                        "description": "顧客プロジェクト、締め切り、チームの作業負荷を一目で可視化。"
+                    },
+                    {
+                        "title": "統合タイムシート",
+                        "description": "顧客、プロジェクト、サービスタイプ別に請求可能時間を追跡。"
+                    },
+                    {
+                        "title": "電子請求",
+                        "description": "支払い追跡付きの準拠した請求書を生成・送信。"
+                    },
+                    {
+                        "title": "CRMパイプライン",
+                        "description": "見込み客、顧客、更新の機会を効果的に管理。"
+                    }
+                ]
+            },
+            "appsSection": {
+                "title": "1つのニーズ、1つのアプリ。",
+                "description": "会計事務所、顧客管理、プロジェクト、請求のための接続されたアプリで成長に合わせて拡張。",
+                "apps": [
+                    {
+                        "title": "CRM",
+                        "subtitle": "顧客とリードの管理",
+                        "icon": "Users"
+                    },
+                    {
+                        "title": "プロジェクト",
+                        "subtitle": "顧客プロジェクトの追跡",
+                        "icon": "HardDrive"
+                    },
+                    {
+                        "title": "会計",
+                        "subtitle": "財務管理",
+                        "icon": "Calculator"
+                    },
+                    {
+                        "title": "ドキュメント",
+                        "subtitle": "安全なファイル保管",
+                        "icon": "FileText"
+                    },
+                    {
+                        "title": "請求",
+                        "subtitle": "顧客への請求",
+                        "icon": "ReceiptText"
+                    },
+                    {
+                        "title": "ヘルプデスク",
+                        "subtitle": "顧客サポートチケット",
+                        "icon": "Briefcase"
+                    }
+                ],
+                "seeAllLink": "すべてのアプリを見る"
+            },
+            "testimonialsSection": {
+                "testimonials": [
+                    {
+                        "name": "ジェニファー・ウォルシュ",
+                        "role": "マネージングパートナー、Walsh & Associates",
+                        "content": "以前は4日かかっていたVAT決算が、AdonERPでは3時間で完了し、お客様へのサービスも向上しました。",
+                        "rating": 5
+                    },
+                    {
+                        "name": "デビッド・キム",
+                        "role": "ディレクター、Precision Accounting Group",
+                        "content": "統合タイムシートと請求がワークフローを変えました。すべての請求可能な分を追跡し、正確に請求できるようになりました。",
+                        "rating": 5
+                    }
+                ]
+            },
+            "ctaBanner": {
+                "title": "1,500万人の満足ユーザーに参加",
+                "description": "AdonERPでビジネスを成長させる — 会計事務所とプロフェッショナルサービスのための完全なソリューション。"
+            },
+            "footerCta": {
+                "eyebrowIcon": "Sparkles",
+                "eyebrowLabel": "事務所を拡大する準備はできましたか",
+                "title": "解き放つ",
+                "subtitle": "成長の可能性を",
+                "description": "顧客管理、請求可能時間の追跡、卓越したサービスの提供を支援する会計事務所ワークフローを開始。",
+                "button": "今すぐ開始"
+            }
+        },
+        "accounting": {
+            "metadata": {
+                "title": "会計 | Adon ERP",
+                "description": "すべての財務業務のためのAI搭載会計プラットフォーム — 照合と経費から確定申告とリアルタイムレポートまで。"
+            },
+            "hero": {
+                "eyebrow": "インテリジェント会計",
+                "title": "会計を簡単に",
+                "description": "すべての財務業務のためのAIネイティブ会計プラットフォーム — 照合と経費から確定申告とリアルタイムレポートまで。高速、完全、シンプル。",
+                "watchDemo": "デモを見る",
+                "rating": "15,000以上の企業から"
+            },
+            "performance": {
+                "eyebrow": "電光石火",
+                "title": "真のパフォーマンスを解き放つ",
+                "description": "スピードは重要です。すべての操作は90ミリ秒未満で処理され、瞬きよりも速いです。会計士がより少ない時間でより多くを行うのに役立ちます。",
+                "metrics": {
+                    "loginToBill": "ログインからベンダー請求書まで",
+                    "processing": "処理速度",
+                    "monthEndClose": "より速い月末締め"
+                }
+            },
+            "automation": {
+                "eyebrow": "データ入力不要",
+                "title": "ただの自動化",
+                "description": "ゼロデータ入力を体験。高度なAI搭載の請求書データキャプチャは98%の認識率を誇ります。必要なのは請求書を検証することだけ。",
+                "metrics": {
+                    "recognitionRate": "認識率",
+                    "autoMatching": "自動マッチング"
+                }
+            },
+            "mobile": {
+                "eyebrow": "モバイルコンパニオン",
+                "title": "ポケットの中に財務を",
+                "description": "経費の写真を撮るだけで、AIが残りを処理。スナップ、スキャン、同期 — すべてスマートフォンから。",
+                "features": {
+                    "receiptCapture": "即時レシートキャプチャ",
+                    "expenseTracking": "リアルタイム経費追跡",
+                    "cloudSync": "自動クラウド同期"
+                },
+                "appStore": "App Store",
+                "googlePlay": "Google Play"
+            },
+            "bankReconciliation": {
+                "eyebrow": "スマート同期",
+                "title": "スマート銀行照合",
+                "description": "銀行明細を手動でインポートする必要はもうありません。Adon ERPはスマートAIマッチングで世界中の28,000以上の銀行と統合。",
+                "features": {
+                    "banksSupported": "28,000以上の銀行をサポート",
+                    "autoMatching": "95%の自動マッチング率"
+                }
+            },
+            "expenseCategories": {
+                "eyebrow": "支出を追跡",
+                "title": "すべての経費を1か所に",
+                "description": "すべてのトランザクションを自動で分類・追跡。"
+            },
+            "features": {
+                "eyebrow": "エンタープライズグレード",
+                "title": "すべての機能を正しく。",
+                "description": "ビジネス財務を1か所で管理するために必要なすべて。",
+                "items": {
+                    "globalTax": "グローバル税務コンプライアンス",
+                    "globalTaxDesc": "180以上の国向けに現地税務ルールで事前設定",
+                    "smartAlerts": "スマートアラート",
+                    "smartAlertsDesc": "異常なアクティビティの自動通知",
+                    "recurring": "定期トランザクション",
+                    "recurringDesc": "自動仕訳の設定",
+                    "analytics": "財務分析",
+                    "analyticsDesc": "リアルタイムの損益計算書、貸借対照表、キャッシュフロー",
+                    "multiCurrency": "多通貨",
+                    "multiCurrencyDesc": "100以上の通貨を自動変換で処理",
+                    "auditTrail": "監査証跡",
+                    "auditTrailDesc": "すべてのトランザクションの完全な可視性",
+                    "budget": "予算管理",
+                    "budgetDesc": "予算に対する実績をリアルタイムで追跡",
+                    "autoReconciliation": "自動照合",
+                    "autoReconciliationDesc": "トランザクションの95%を自動マッチング"
+                }
+            },
+            "testimonial": {
+                "quote": "以前は4日かかっていたVAT決算が、Adon ERPでは3時間で完了し、お客様へのサービスも向上しました：リアルタイム会計。",
+                "name": "ヴィム・ファン・デン・ブランデ",
+                "role": "会計責任者、KPMG"
+            },
+            "cta": {
+                "title": "成長の可能性を解き放つ",
+                "description": "Adon ERPでビジネスを成長させる1,500万人のユーザーに参加。今日から30日間の無料トライアルを開始。",
+                "trial": "無料トライアルを開始",
+                "sales": "営業に相談"
+            }
+        }
+    }
+}

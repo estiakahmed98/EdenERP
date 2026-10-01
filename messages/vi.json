@@ -1,0 +1,449 @@
+{
+    "common": {
+        "languageSwitcher": {
+            "label": "Ngôn ngữ",
+            "options": {
+                "en": "EN",
+                "bn": "বাংলা",
+                "ar": "العربية"
+            }
+        },
+        "theme": {
+            "label": "Chủ đề",
+            "switchToLight": "Chuyển sang chế độ sáng",
+            "switchToDark": "Chuyển sang chế độ tối",
+            "light": "Sáng",
+            "dark": "Tối",
+            "green": "Xanh lá",
+            "oceanBlue": "Xanh đại dương"
+        },
+        "actions": {
+            "watchDemo": "Xem bản demo",
+            "viewAllApps": "Khám phá hơn 50 công cụ",
+            "seeAllFeatures": "Khám phá tất cả tính năng",
+            "contactSales": "Liên hệ kinh doanh",
+            "talkToSales": "Liên hệ kinh doanh",
+            "viewPlans": "Xem các gói",
+            "startFreeTrial": "Bắt đầu dùng thử miễn phí",
+            "getStarted": "Bắt đầu",
+            "learnMore": "Tìm hiểu thêm",
+            "viewAll": "Xem tất cả"
+        },
+        "states": {
+            "included": "Đã bao gồm",
+            "notIncluded": "Không bao gồm",
+            "free": "MIỄN PHÍ",
+            "custom": "Tùy chỉnh"
+        }
+    },
+    "layout": {
+        "header": {
+            "nav": {
+                "apps": "ERP",
+                "industries": "Ngành",
+                "community": "Cộng đồng",
+                "pricing": "Giá",
+                "help": "Trợ giúp",
+                "signIn": "Đăng nhập",
+                "tryFree": "Dùng thử miễn phí"
+            },
+            "menu": {
+                "explore": "Khám phá ứng dụng Adon {label}",
+                "description": "Các công cụ kinh doanh cao cấp được kết nối trong một nền tảng ERP thống nhất.",
+                "apps": {
+                    "finance": "Tài chính",
+                    "sales": "Bán hàng",
+                    "websites": "Trang web",
+                    "supplyChain": "Chuỗi cung ứng",
+                    "humanResources": "Nhân sự",
+                    "services": "Dịch vụ",
+                    "productivity": "Năng suất",
+                    "accounting": "Kế toán",
+                    "invoicing": "Hóa đơn",
+                    "expenses": "Chi phí",
+                    "spreadsheet": "Bảng tính",
+                    "documents": "Tài liệu",
+                    "sign": "Chữ ký",
+                    "crm": "CRM",
+                    "salesApp": "Bán hàng",
+                    "posShop": "POS Cửa hàng",
+                    "posRestaurant": "POS Nhà hàng",
+                    "subscriptions": "Đăng ký",
+                    "rental": "Cho thuê",
+                    "websiteBuilder": "Trình tạo trang web",
+                    "ecommerce": "Thương mại điện tử",
+                    "blog": "Blog",
+                    "forum": "Diễn đàn",
+                    "liveChat": "Chat trực tiếp",
+                    "elearning": "Học trực tuyến",
+                    "inventory": "Kho hàng",
+                    "manufacturing": "Sản xuất",
+                    "manufacturingOverview": "Tổng quan",
+                    "workCenters": "Trung tâm làm việc",
+                    "routings": "Quy trình",
+                    "billOfMaterials": "Định mức nguyên vật liệu",
+                    "productionOrders": "Lệnh sản xuất",
+                    "qualityControl": "Kiểm soát chất lượng",
+                    "standardCosting": "Chi phí tiêu chuẩn",
+                    "purchase": "Mua hàng",
+                    "procurement": "Thu mua",
+                    "maintenance": "Bảo trì",
+                    "quality": "Chất lượng",
+                    "barcode": "Mã vạch",
+                    "employees": "Nhân viên",
+                    "recruitment": "Tuyển dụng",
+                    "timeOff": "Nghỉ phép",
+                    "appraisals": "Đánh giá",
+                    "attendance": "Chấm công",
+                    "payroll": "Bảng lương",
+                    "project": "Kế toán dự án",
+                    "timesheets": "Bảng chấm công",
+                    "helpdesk": "Trung tâm hỗ trợ",
+                    "planning": "Lập kế hoạch",
+                    "appointments": "Lịch hẹn",
+                    "discuss": "Thảo luận",
+                    "artificialIntelligence": "Trí tuệ nhân tạo",
+                    "iot": "IoT"
+                },
+                "industries": {
+                    "retail": "Bán lẻ",
+                    "foodHospitality": "Thực phẩm & Khách sạn",
+                    "realEstate": "Bất động sản",
+                    "consulting": "Tư vấn",
+                    "manufacturing": "Sản xuất",
+                    "bookStore": "Hiệu sách",
+                    "clothingStore": "Cửa hàng quần áo",
+                    "furnitureStore": "Cửa hàng nội thất",
+                    "groceryStore": "Cửa hàng tạp hóa",
+                    "hardwareStore": "Cửa hàng kim khí",
+                    "toyStore": "Cửa hàng đồ chơi",
+                    "restaurant": "Nhà hàng",
+                    "fastFood": "Đồ ăn nhanh",
+                    "guestHouse": "Nhà nghỉ",
+                    "beverageDistributor": "Nhà phân phối đồ uống",
+                    "hotel": "Khách sạn",
+                    "realEstateAgency": "Công ty bất động sản",
+                    "architectureFirm": "Công ty kiến trúc",
+                    "construction": "Xây dựng",
+                    "accountingFirm": "Công ty kế toán",
+                    "marketingAgency": "Công ty marketing",
+                    "auditCertification": "Kiểm toán & Chứng nhận",
+                    "talentAcquisition": "Thu hút nhân tài",
+                    "textile": "Dệt may",
+                    "metal": "Kim loại",
+                    "furniture": "Nội thất"
+                },
+                "community": {
+                    "learn": "Học",
+                    "getServices": "Nhận dịch vụ",
+                    "collaborate": "Cộng tác",
+                    "tutorials": "Hướng dẫn",
+                    "documentation": "Tài liệu",
+                    "training": "Đào tạo",
+                    "blog": "Blog",
+                    "findPartner": "Tìm đối tác",
+                    "meetAdvisor": "Gặp cố vấn",
+                    "implementation": "Triển khai",
+                    "support": "Hỗ trợ",
+                    "customerStories": "Câu chuyện khách hàng",
+                    "github": "GitHub",
+                    "forum": "Diễn đàn",
+                    "events": "Sự kiện",
+                    "translations": "Bản dịch",
+                    "becomePartner": "Trở thành đối tác"
+                }
+            },
+            "mobileMenuLabel": "Chuyển đổi menu"
+        },
+        "footer": {
+            "description": "Các ứng dụng thống nhất cho tài chính, bán hàng, vận hành và tăng trưởng trong một nền tảng ERP được kết nối.",
+            "sections": {
+                "product": "Sản phẩm",
+                "company": "Công ty",
+                "support": "Hỗ trợ",
+                "legal": "Pháp lý"
+            },
+            "links": {
+                "apps": "Ứng dụng",
+                "industries": "Ngành",
+                "pricing": "Giá",
+                "help": "Trợ giúp",
+                "community": "Cộng đồng",
+                "learn": "Học",
+                "getServices": "Nhận dịch vụ",
+                "collaborate": "Cộng tác",
+                "helpCenter": "Trung tâm trợ giúp",
+                "documentation": "Tài liệu",
+                "tutorials": "Hướng dẫn",
+                "training": "Đào tạo",
+                "privacy": "Quyền riêng tư",
+                "terms": "Điều khoản",
+                "cookies": "Cookie",
+                "gdpr": "GDPR"
+            },
+            "copyright": "© {year} Adon ERP. Bảo lưu mọi quyền."
+        }
+    },
+    "pages": {
+        "accounting-firm": {
+            "metadata": {
+                "title": "Công ty Kế toán | AdonERP",
+                "description": "Nền tảng quản lý công ty kế toán được hỗ trợ bởi AI cho mọi dịch vụ chuyên nghiệp của bạn — từ CRM và quản lý dự án đến hóa đơn điện tử, bảng chấm công và quản lý tài liệu."
+            },
+            "hero": {
+                "eyebrowIcon": "Calculator",
+                "eyebrowLabel": "Mẫu dịch vụ chuyên nghiệp",
+                "industriesLabel": "Ngành / Công ty Kế toán",
+                "preHeading": "Phần mềm số 1 cho",
+                "title": "Công ty Kế toán",
+                "description": "Quản lý hoạt động của công ty kế toán của bạn, từ việc thu hút khách hàng đến xử lý dự án và xuất hóa đơn, trong một hệ thống tích hợp.",
+                "startButton": "Bắt đầu ngay",
+                "advisorButton": "Gặp cố vấn",
+                "testimonialQuote": "Việc chốt VAT trước đây mất 4 ngày giờ chỉ còn 3 giờ với AdonERP, với dịch vụ tốt hơn cho khách hàng của chúng tôi.",
+                "testimonialName": "Jennifer Walsh",
+                "testimonialRole": "Đối tác điều hành, Walsh & Associates"
+            },
+            "pipelineSection": {
+                "title": "Từ",
+                "titleHighlightLead": "khách hàng tiềm năng",
+                "titleMiddle": "đến",
+                "titleHighlightInvoice": "hóa đơn",
+                "stages": [
+                    "Khách hàng tiềm năng mới",
+                    "Đề xuất",
+                    "Khách hàng"
+                ]
+            },
+            "serviceSection": {
+                "title": "Quản lý dịch vụ thông minh",
+                "description": "Theo dõi từng yêu cầu với nhiệm vụ dự án, lịch trình, liên hệ, tài liệu và hoạt động của khách hàng.",
+                "tasks": [
+                    {
+                        "name": "Khai thuế - Quý 1 2026",
+                        "due": "30 tháng 5"
+                    },
+                    {
+                        "name": "Chuẩn bị kiểm toán hàng năm",
+                        "due": "15 tháng 6"
+                    },
+                    {
+                        "name": "Xem xét bảng lương",
+                        "due": "25 tháng 5"
+                    },
+                    {
+                        "name": "Báo cáo tài chính",
+                        "due": "05 tháng 6"
+                    }
+                ]
+            },
+            "accountingSection": {
+                "title": "Kế toán",
+                "subtitle": "cấp độ tiếp theo",
+                "description": "Tự động hóa đối chiếu, quản lý tài liệu, nhận báo cáo thời gian thực và giữ hoạt động kế toán chính xác và nhanh chóng.",
+                "badges": {
+                    "autoReconciliation": "Đối chiếu tự động",
+                    "realTimeReporting": "Báo cáo thời gian thực"
+                }
+            },
+            "documentsSection": {
+                "title": "Không gian làm việc",
+                "titleHighlight": "tài liệu",
+                "subtitle": "an toàn",
+                "description": "Lưu giữ tài liệu kế toán, hồ sơ khách hàng, hóa đơn và phê duyệt trong một không gian làm việc an toàn với quy trình cộng tác rõ ràng.",
+                "badges": {
+                    "secureStorage": "Lưu trữ an toàn",
+                    "teamCollaboration": "Cộng tác nhóm"
+                },
+                "button": "Tìm hiểu thêm"
+            },
+            "featuresSection": {
+                "title": "Tất cả các tính năng",
+                "subtitle": "được làm đúng.",
+                "description": "Công cụ cho công ty kế toán để quản lý khách hàng, nhiệm vụ, tài liệu, hóa đơn, dự án và báo cáo ở một nơi.",
+                "list": [
+                    {
+                        "title": "Quản lý bán hàng tất cả trong một",
+                        "description": "Theo dõi khách hàng tiềm năng, đề xuất và onboarding khách hàng từ một bảng điều khiển."
+                    },
+                    {
+                        "title": "Chữ ký điện tử tuân thủ",
+                        "description": "Thu thập chữ ký ràng buộc pháp lý trên thư mời và hợp đồng."
+                    },
+                    {
+                        "title": "Bảng điều khiển dự án",
+                        "description": "Hình dung dự án khách hàng, thời hạn và khối lượng công việc của nhóm trong nháy mắt."
+                    },
+                    {
+                        "title": "Bảng chấm công tích hợp",
+                        "description": "Theo dõi giờ có thể thanh toán theo khách hàng, dự án và loại dịch vụ."
+                    },
+                    {
+                        "title": "Hóa đơn điện tử",
+                        "description": "Tạo và gửi hóa đơn tuân thủ với theo dõi thanh toán."
+                    },
+                    {
+                        "title": "Pipeline CRM",
+                        "description": "Quản lý khách hàng tiềm năng, khách hàng và cơ hội gia hạn hiệu quả."
+                    }
+                ]
+            },
+            "appsSection": {
+                "title": "Một nhu cầu, một ứng dụng.",
+                "description": "Mở rộng khi bạn phát triển với các ứng dụng được kết nối cho công ty kế toán, quản lý khách hàng, dự án và thanh toán.",
+                "apps": [
+                    {
+                        "title": "CRM",
+                        "subtitle": "Quản lý khách hàng và khách hàng tiềm năng",
+                        "icon": "Users"
+                    },
+                    {
+                        "title": "Dự án",
+                        "subtitle": "Theo dõi dự án khách hàng",
+                        "icon": "HardDrive"
+                    },
+                    {
+                        "title": "Kế toán",
+                        "subtitle": "Quản lý tài chính",
+                        "icon": "Calculator"
+                    },
+                    {
+                        "title": "Tài liệu",
+                        "subtitle": "Lưu trữ tệp an toàn",
+                        "icon": "FileText"
+                    },
+                    {
+                        "title": "Hóa đơn",
+                        "subtitle": "Thanh toán khách hàng",
+                        "icon": "ReceiptText"
+                    },
+                    {
+                        "title": "Helpdesk",
+                        "subtitle": "Phiếu hỗ trợ khách hàng",
+                        "icon": "Briefcase"
+                    }
+                ],
+                "seeAllLink": "Xem tất cả ứng dụng"
+            },
+            "testimonialsSection": {
+                "testimonials": [
+                    {
+                        "name": "Jennifer Walsh",
+                        "role": "Đối tác điều hành, Walsh & Associates",
+                        "content": "Việc chốt VAT trước đây mất 4 ngày giờ chỉ còn 3 giờ với AdonERP, với dịch vụ tốt hơn cho khách hàng của chúng tôi.",
+                        "rating": 5
+                    },
+                    {
+                        "name": "David Kim",
+                        "role": "Giám đốc, Precision Accounting Group",
+                        "content": "Bảng chấm công và hóa đơn tích hợp đã thay đổi quy trình làm việc của chúng tôi. Giờ chúng tôi theo dõi từng phút có thể thanh toán và xuất hóa đơn chính xác.",
+                        "rating": 5
+                    }
+                ]
+            },
+            "ctaBanner": {
+                "title": "Tham gia cùng 15 triệu người dùng hài lòng",
+                "description": "những người phát triển doanh nghiệp của họ với AdonERP — giải pháp hoàn chỉnh cho công ty kế toán và dịch vụ chuyên nghiệp."
+            },
+            "footerCta": {
+                "eyebrowIcon": "Sparkles",
+                "eyebrowLabel": "Sẵn sàng mở rộng công ty của bạn",
+                "title": "Giải phóng",
+                "subtitle": "tiềm năng tăng trưởng của bạn",
+                "description": "Khởi động quy trình công ty kế toán giúp bạn quản lý khách hàng, theo dõi giờ có thể thanh toán và cung cấp dịch vụ xuất sắc.",
+                "button": "Bắt đầu ngay"
+            }
+        },
+        "accounting": {
+            "metadata": {
+                "title": "Kế toán | Adon ERP",
+                "description": "Nền tảng kế toán được hỗ trợ bởi AI cho mọi hoạt động tài chính của bạn — từ đối chiếu và chi phí đến khai thuế và báo cáo thời gian thực."
+            },
+            "hero": {
+                "eyebrow": "Kế toán thông minh",
+                "title": "Kế toán trở nên dễ dàng",
+                "description": "Nền tảng kế toán gốc AI cho mọi hoạt động tài chính của bạn — từ đối chiếu và chi phí đến khai thuế và báo cáo thời gian thực. Nhanh, đầy đủ và đơn giản.",
+                "watchDemo": "Xem bản demo",
+                "rating": "từ hơn 15.000 doanh nghiệp"
+            },
+            "performance": {
+                "eyebrow": "Nhanh như chớp",
+                "title": "Mở khóa hiệu suất thực sự",
+                "description": "Tốc độ quan trọng. Mọi thao tác được xử lý trong chưa đầy 90 mili giây, nhanh hơn một cái chớp mắt. Giúp kế toán viên làm được nhiều hơn trong ít thời gian hơn.",
+                "metrics": {
+                    "loginToBill": "Từ đăng nhập đến hóa đơn nhà cung cấp",
+                    "processing": "Tốc độ xử lý",
+                    "monthEndClose": "Chốt cuối tháng nhanh hơn"
+                }
+            },
+            "automation": {
+                "eyebrow": "Không nhập dữ liệu",
+                "title": "Chỉ tự động hóa",
+                "description": "Trải nghiệm không nhập dữ liệu. Tính năng chụp dữ liệu hóa đơn được hỗ trợ bởi AI tiên tiến của chúng tôi có tỷ lệ nhận dạng 98%. Tất cả những gì bạn phải làm là xác thực hóa đơn.",
+                "metrics": {
+                    "recognitionRate": "Tỷ lệ nhận dạng",
+                    "autoMatching": "Tự động khớp"
+                }
+            },
+            "mobile": {
+                "eyebrow": "Bạn đồng hành di động",
+                "title": "Tài chính của bạn trong túi",
+                "description": "Chụp ảnh chi phí của bạn và để Trí tuệ nhân tạo làm phần còn lại. Chụp, quét và đồng bộ — tất cả từ điện thoại của bạn.",
+                "features": {
+                    "receiptCapture": "Chụp biên lai tức thì",
+                    "expenseTracking": "Theo dõi chi phí thời gian thực",
+                    "cloudSync": "Đồng bộ đám mây tự động"
+                },
+                "appStore": "App Store",
+                "googlePlay": "Google Play"
+            },
+            "bankReconciliation": {
+                "eyebrow": "Đồng bộ thông minh",
+                "title": "Đối chiếu ngân hàng thông minh",
+                "description": "Không bao giờ nhập sao kê ngân hàng thủ công nữa. Adon ERP tích hợp với hơn 28.000 ngân hàng trên toàn thế giới với khớp AI thông minh.",
+                "features": {
+                    "banksSupported": "Hỗ trợ hơn 28.000 ngân hàng",
+                    "autoMatching": "Tỷ lệ tự động khớp 95%"
+                }
+            },
+            "expenseCategories": {
+                "eyebrow": "Theo dõi chi tiêu",
+                "title": "Tất cả chi phí của bạn ở một nơi",
+                "description": "Phân loại và theo dõi mọi giao dịch tự động."
+            },
+            "features": {
+                "eyebrow": "Cấp doanh nghiệp",
+                "title": "Tất cả các tính năng được làm đúng.",
+                "description": "Mọi thứ bạn cần để quản lý tài chính doanh nghiệp ở một nơi.",
+                "items": {
+                    "globalTax": "Tuân thủ thuế toàn cầu",
+                    "globalTaxDesc": "Được cấu hình trước cho hơn 180 quốc gia với quy tắc thuế địa phương",
+                    "smartAlerts": "Cảnh báo thông minh",
+                    "smartAlertsDesc": "Thông báo tự động cho hoạt động bất thường",
+                    "recurring": "Giao dịch định kỳ",
+                    "recurringDesc": "Thiết lập bút toán tự động",
+                    "analytics": "Phân tích tài chính",
+                    "analyticsDesc": "P&L, bảng cân đối và dòng tiền thời gian thực",
+                    "multiCurrency": "Đa tiền tệ",
+                    "multiCurrencyDesc": "Xử lý hơn 100 loại tiền tệ với tự động chuyển đổi",
+                    "auditTrail": "Dấu vết kiểm toán",
+                    "auditTrailDesc": "Khả năng hiển thị hoàn toàn mọi giao dịch",
+                    "budget": "Quản lý ngân sách",
+                    "budgetDesc": "Theo dõi thực tế so với ngân sách theo thời gian thực",
+                    "autoReconciliation": "Đối chiếu tự động",
+                    "autoReconciliationDesc": "95% giao dịch được khớp tự động"
+                }
+            },
+            "testimonial": {
+                "quote": "Việc chốt VAT trước đây mất 4 ngày giờ chỉ còn 3 giờ với Adon ERP, với dịch vụ tốt hơn cho khách hàng của chúng tôi: kế toán thời gian thực.",
+                "name": "Wim Van den Brande",
+                "role": "Trưởng phòng Kế toán, KPMG"
+            },
+            "cta": {
+                "title": "Giải phóng tiềm năng tăng trưởng của bạn",
+                "description": "Tham gia cùng 15 triệu người dùng phát triển doanh nghiệp với Adon ERP. Bắt đầu dùng thử miễn phí 30 ngày ngay hôm nay.",
+                "trial": "Bắt đầu dùng thử miễn phí",
+                "sales": "Liên hệ kinh doanh"
+            }
+        }
+    }
+}
