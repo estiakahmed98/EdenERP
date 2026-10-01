@@ -7582,29 +7582,29 @@
             "post1": {
               "title": "Which espresso machine should I buy?",
               "tag": "Solved",
-              "replies": 12,
-              "views": 45,
+              "replies": "12",
+              "views": "45",
               "time": "4 minutes ago"
             },
             "post2": {
               "title": "New blend suggestions",
               "tag": "New",
-              "replies": 8,
-              "views": 31,
+              "replies": "8",
+              "views": "31",
               "time": "2 hours ago"
             },
             "post3": {
               "title": "What is the best French press?",
               "tag": "Popular",
-              "replies": 14,
-              "views": 82,
+              "replies": "14",
+              "views": "82",
               "time": "1 day ago"
             },
             "post4": {
               "title": "How long to roast beans?",
               "tag": "Help",
-              "replies": 5,
-              "views": 22,
+              "replies": "5",
+              "views": "22",
               "time": "3 days ago"
             }
           }
@@ -10820,6 +10820,80 @@
         "titleHighlight": "growth",
         "titleEnd": "potential",
         "button": "Start now"
+      }
+    },
+    "manufacturingDetails": {
+      "workCenters": {
+        "moduleLabel": "Manufacturing / Work Centers", "heroTitle": "Where every", "heroTitleHighlight": "production step happens", "heroDescription": "A Work Center is a machine, labor group, production line, or external resource where a routing operation is carried out. Its capacity, hours, efficiency, and rates drive planning and costing.",
+        "sections": [
+          { "eyebrow": "Work Centers List", "title": "Name, code, type, capacity and operations — at a glance", "description": "See every Work Center with its type, rated capacity, efficiency, and linked routing operations, so planners know exactly which resource they are scheduling.", "imageAlt": "Work Centers list screen", "bullets": ["Machine, labor group, production line, or external resource", "Unique short code for fast lookup", "Operation count shows resource usage"] },
+          { "eyebrow": "New Work Center", "title": "Capacity, hours and rates that feed planning", "description": "Capacity, operating hours, and efficiency determine practical output. Labor, machine, and overhead rates flow directly into Standard Costing.", "imageAlt": "New Work Center form", "bullets": ["Practical capacity = rated capacity × hours × efficiency", "Labor and machine rates drive conversion cost", "Overhead rate allocates indirect factory cost"] },
+          { "eyebrow": "Example — Rice Mill", "title": "Five Work Centers, one milling line", "description": "Paddy intake, husking, polishing, grading, and packing each run in their own Work Center, making bottlenecks visible before they delay the batch.", "imageAlt": "Rice mill Work Centers example" }
+        ],
+        "workflowTitle": "Set up a", "workflowHighlight": "Work Center in 4 steps", "workflowDescription": "Define each resource correctly once, and every routing, production order, and cost card that references it stays accurate.",
+        "workflowSteps": [{"title":"1. Define the resource","description":"Enter its name, unique code, and type."},{"title":"2. Set capacity","description":"Set capacity, unit, operating hours, and efficiency."},{"title":"3. Set rates","description":"Enter hourly labor, machine, and overhead rates."},{"title":"4. Link to Routing","description":"Make the Work Center available to routing operations."}],
+        "featuresTitle": "Built for real factory floors", "features": [{"title":"Capacity-aware planning","description":"Practical capacity feeds MPS, MRP, and capacity planning automatically."},{"title":"Cost-driving rates","description":"Labor, machine, and overhead rates flow into costing and variance analysis."},{"title":"External and subcontracted resources","description":"Keep vendor-performed operations inside the same production routing."},{"title":"One resource, many operations","description":"Reuse one Work Center across multiple routings and BOMs."}],
+        "ctaTitle": "Set up your first Work Center", "ctaDescription": "Add every machine, line, and labor group before building your production routes.", "ctaButton": "Start now"
+      },
+      "routings": {
+        "moduleLabel": "Manufacturing / Routings", "heroTitle": "The recipe for", "heroTitleHighlight": "how, where and how long", "heroDescription": "A Routing is the ordered list of operations needed to make a product. It defines which Work Center runs each step and how long it takes.",
+        "sections": [
+          {"eyebrow":"Routing List","title":"Sequenced operations, one Work Center at a time","description":"Each Routing shows its code, operation count, linked BOMs, and default status. Sequence gaps let you insert new operations later.","imageAlt":"Routing list screen","bullets":["Sequence gaps leave room for later operations","Default Routing marks the standard process","Operation count and linked BOMs at a glance"]},
+          {"eyebrow":"Example — Milling Route","title":"Five operations, five Work Centers, one flow","description":"Paddy intake, husking, polishing, grading, and packing follow a clear sequence, with an exact Work Center responsible for each step.","imageAlt":"Milling route example"},
+          {"eyebrow":"Add Operation","title":"Setup, run and teardown time — modeled separately","description":"Track preparation, processing, and changeover time independently, using per-unit, per-batch, or fixed timing for accurate capacity and cost.","imageAlt":"Add operation form"}
+        ],
+        "workflowTitle":"Build a","workflowHighlight":"Routing step by step","workflowDescription":"A Routing connects directly to BOM and Standard Costing, so define the sequence and timing correctly once.",
+        "workflowSteps":[{"title":"1. Create the Routing","description":"Enter a name, code, description, and default status."},{"title":"2. Add operations","description":"Sequence each operation and assign its Work Center."},{"title":"3. Set time and mode","description":"Set setup, operation, and teardown time by unit, batch, or fixed mode."},{"title":"4. Flag QC steps","description":"Mark operations that require quality inspection."}],
+        "featuresTitle":"Time modeled the way your process runs","features":[{"title":"Sequence with room to grow","description":"Insert new operations without renumbering the entire route."},{"title":"Per unit, per batch, or fixed","description":"Match time calculation to the real behavior of each operation."},{"title":"QC checkpoints built in","description":"Keep quality inspection connected to the production flow."},{"title":"Subcontracted operations","description":"Link externally performed operations to vendor Work Centers."}],
+        "ctaTitle":"Map your production process","ctaDescription":"Turn the factory sequence into a Routing that drives planning, capacity, and cost together.","ctaButton":"Start now"
+      },
+      "billOfMaterials": {
+        "moduleLabel":"Manufacturing / Bill of Materials","heroTitle":"What goes in,","heroTitleHighlight":"what comes out","heroDescription":"A Bill of Materials defines the inputs and outputs of production, including co-products, by-products, and scrap.",
+        "sections":[
+          {"eyebrow":"BOM List","title":"Product, type, output and yield — one recipe per row","description":"See the target product, BOM type, output quantity, yield, and line count. One default BOM is used by Production Orders unless overridden.","imageAlt":"Bill of Materials list screen"},
+          {"eyebrow":"Co-Products, By-Products and Scrap","title":"One process, multiple outputs","description":"Record every main product, co-product, by-product, and process loss correctly so inventory and production cost are distributed accurately.","imageAlt":"Co-product, by-product, and scrap forms","bullets":["Co-product: another significant output","By-product: a secondary output with recoverable value","Scrap: process loss, waste, or rejected material"]},
+          {"eyebrow":"Rice Mill Example","title":"100 kg paddy — reconciled to the kilogram","description":"Account for rice, broken rice, bran, husk, and process loss so every kilogram of input is reconciled with the outputs.","imageAlt":"BOM quantity reconciliation example"}
+        ],
+        "workflowTitle":"Build a","workflowHighlight":"BOM that reconciles","workflowDescription":"Reconcile every input and output before the BOM goes live to keep inventory and costing accurate.",
+        "workflowSteps":[{"title":"1. Set the main output","description":"Enter product, BOM code, type, output quantity, and yield."},{"title":"2. Link the Routing","description":"Attach the production route the output will follow."},{"title":"3. Add input lines","description":"Add every raw material and quantity consumed."},{"title":"4. Add outputs and reconcile","description":"Add co-products, by-products, scrap, and process loss."}],
+        "featuresTitle":"Costing-aware from the first line","features":[{"title":"Standard, Kit, or Subcontracting","description":"Model production recipes, kits, and vendor-processed outputs."},{"title":"Cost share for joint outputs","description":"Allocate joint cost across co-products and by-products."},{"title":"Feeds Production Orders directly","description":"The default BOM automatically fills material requirements."},{"title":"Yield-aware quantity planning","description":"Adjust material needs according to real process yield."}],
+        "ctaTitle":"Define your product recipes","ctaDescription":"Reconcile inputs, outputs, and yield once for accurate orders and costing.","ctaButton":"Start now"
+      },
+      "productionOrders": {
+        "moduleLabel":"Manufacturing / Production Orders","heroTitle":"From plan","heroTitleHighlight":"to shop floor reality","heroDescription":"A Production Order turns a BOM and Routing into an executable job, reserving components, sequencing operations, and recording every output.",
+        "sections":[
+          {"eyebrow":"Production Order Dashboard","title":"Every order, status, and progress — in one view","description":"Track draft, confirmed, in-progress, and completed orders with their BOM, Routing, target quantity, and completion percentage.","imageAlt":"Production Orders dashboard"},
+          {"eyebrow":"New Production Order","title":"Product, BOM, Routing and quantity — locked at creation","description":"Selecting a product suggests its default BOM and Routing, while confirmation reserves components from the source warehouse.","imageAlt":"New Production Order form","bullets":["Default BOM and Routing fill automatically","Component reservation moves stock to WIP","Quantity and due date drive capacity planning"]},
+          {"eyebrow":"Shop Floor Execution","title":"Operation by operation, output recorded as it is made","description":"Validate each operation and post the main product, co-products, by-products, and scrap as stock moves from WIP to finished goods.","imageAlt":"Shop floor execution screen"}
+        ],
+        "workflowTitle":"From order","workflowHighlight":"to finished goods","workflowDescription":"A Production Order connects planning, shop floor execution, quality, and cost.",
+        "workflowSteps":[{"title":"1. Create and confirm","description":"Select product, quantity, BOM, and Routing; reserve components."},{"title":"2. Execute operations","description":"Run and validate each Routing step at its Work Center."},{"title":"3. Record output","description":"Post the main product, co-products, by-products, and scrap."},{"title":"4. Close and cost","description":"Complete the order and compare actual cost with standard cost."}],
+        "featuresTitle":"Connected to every surrounding module","features":[{"title":"BOM and Routing driven","description":"Requirements and operation sequence come from linked records."},{"title":"Quality checkpoints inline","description":"Required inspections appear directly in shop floor execution."},{"title":"Subcontracted operations tracked","description":"External processing remains visible on the same timeline."},{"title":"Real-time WIP visibility","description":"See every active order, Work Center, and completion level."}],
+        "ctaTitle":"Turn plans into production","ctaDescription":"Confirm an order and let materials, operations, and outputs update automatically.","ctaButton":"Start now"
+      },
+      "qualityControl": {
+        "moduleLabel":"Manufacturing / Quality Control","heroTitle":"One standard,","heroTitleHighlight":"every inspection","heroDescription":"Reusable QC templates keep every inspection consistent with defined parameters, limits, and result types.",
+        "sections":[
+          {"eyebrow":"QC Templates List","title":"Incoming, in-process, final and patrol — by inspection type","description":"Use separate templates for incoming materials, production checks, final release, and routine shop-floor inspections.","imageAlt":"QC templates list","bullets":["Incoming: moisture, foreign matter, and variety","In-process: efficiency and mid-run checks","Final: moisture, color, and net weight"]},
+          {"eyebrow":"Add Parameter","title":"Numeric, pass/fail, text, or rating — with real limits","description":"Define a type, unit, inspection method, and minimum, target, and maximum limits. Mandatory parameters must be recorded before completion.","imageAlt":"Add QC parameter form","bullets":["Numeric: measurable acceptance range","Pass/Fail: clear compliance result","Text or Rating: grades and remarks"]},
+          {"eyebrow":"Mill and Factory Standard","title":"A real inspection plan, stage by stage","description":"Define practical standards for incoming material, in-process efficiency, final appearance, moisture, and packing weight.","imageAlt":"Rice mill QC standard table"}
+        ],
+        "workflowTitle":"Inspection that is","workflowHighlight":"never subjective","workflowDescription":"Build a template once and apply the same standard wherever the product or stage recurs.",
+        "workflowSteps":[{"title":"1. Define the stage","description":"Choose incoming, in-process, final, or patrol inspection."},{"title":"2. Add parameters","description":"Set type, unit, and acceptance range."},{"title":"3. Link to Routing","description":"Mark the relevant operation as QC Required."},{"title":"4. Record results","description":"Log every result against the same standard."}],
+        "featuresTitle":"Consistent standards, every shift","features":[{"title":"Mandatory parameter enforcement","description":"Inspections cannot finish until required values are recorded."},{"title":"Four inspection types","description":"Cover every point where a defect can enter."},{"title":"Routing-linked checkpoints","description":"QC templates appear automatically during execution."},{"title":"Numeric range validation","description":"Detect out-of-spec results immediately."}],
+        "ctaTitle":"Standardize your inspections","ctaDescription":"Create QC templates once so every inspector follows the same standard.","ctaButton":"Start now"
+      },
+      "standardCosting": {
+        "moduleLabel":"Manufacturing / Standard Costing","heroTitle":"Freeze the cost","heroTitleHighlight":"before production starts","heroDescription":"Standard Cost combines material, labor, machine, and overhead cost from the BOM, Routing, and Work Center rates.",
+        "sections":[
+          {"eyebrow":"Standard Costing Main Screen","title":"Select a product and see its full cost rollup","description":"Use the default BOM and Routing to calculate per-unit material, labor, machine, and overhead cost automatically.","imageAlt":"Standard Costing main screen"},
+          {"eyebrow":"Cost Component Preview","title":"Material, labor, machine and overhead — broken down","description":"Material cost comes from BOM quantities and rates; conversion and overhead cost come from operation time and Work Center rates.","imageAlt":"Cost component breakdown","bullets":["Material = standard quantity × unit rate","Labor and machine = operation time × rate","Overhead = overhead rate × processing hours"]},
+          {"eyebrow":"Freeze and Version","title":"A cost card that stays fixed once frozen","description":"Freeze a dated cost version. When rates, yield, or operation time changes, create a new version while preserving history.","imageAlt":"Frozen Standard Cost version"}
+        ],
+        "workflowTitle":"From BOM and Routing","workflowHighlight":"to a frozen cost card","workflowDescription":"Verify the BOM, Routing, and Work Center rates before freezing the Standard Cost.",
+        "workflowSteps":[{"title":"1. Confirm BOM and Routing","description":"Verify material quantities and operation times."},{"title":"2. Set Work Center rates","description":"Enter hourly labor, machine, and overhead rates."},{"title":"3. Preview the rollup","description":"Review every cost component before freezing."},{"title":"4. Freeze and compare","description":"Lock the version and compare actual cost later."}],
+        "featuresTitle":"Cost control that stays honest","features":[{"title":"Versioned cost cards","description":"Every freeze creates a dated version without overwriting history."},{"title":"Standard vs. actual variance","description":"Compare completed order cost with the frozen standard."},{"title":"Co-product and by-product cost share","description":"Allocate joint production cost using an approved policy."},{"title":"No spreadsheet re-entry","description":"Roll cost up from the same data used for planning and execution."}],
+        "ctaTitle":"Freeze your first Standard Cost","ctaDescription":"Turn the BOM and Routing into a trustworthy per-unit cost and track actual performance.","ctaButton":"Start now"
       }
     },
     "manufacturingSubnav": {

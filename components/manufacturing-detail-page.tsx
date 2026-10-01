@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, Star, type LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
@@ -78,6 +79,7 @@ export function ManufacturingDetailPage({
   features,
   ctaTitle,
   ctaDescription,
+  ctaButton,
 }: {
   moduleLabel: string;
   heroTitle: string;
@@ -92,6 +94,7 @@ export function ManufacturingDetailPage({
   features: FeatureCard[];
   ctaTitle: string;
   ctaDescription: string;
+  ctaButton: string;
 }) {
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
@@ -275,10 +278,66 @@ export function ManufacturingDetailPage({
             href="/pricing"
             className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
           >
-            Start now
+            {ctaButton}
           </Link>
         </div>
       </section>
     </main>
+  );
+}
+
+type SectionVisual = {
+  icon: React.ReactNode;
+  imageSrc: string;
+  reversed?: boolean;
+  tint?: "white" | "muted";
+};
+
+export function TranslatedManufacturingDetailPage({
+  namespace,
+  sectionVisuals,
+  featureIcons,
+}: {
+  namespace: string;
+  sectionVisuals: SectionVisual[];
+  featureIcons: LucideIcon[];
+}) {
+  const t = useTranslations(namespace as never);
+  const translatedSections = t.raw("sections") as Array<{
+    eyebrow: string;
+    title: string;
+    description: string;
+    imageAlt: string;
+    bullets?: string[];
+  }>;
+  const translatedSteps = t.raw("workflowSteps") as WorkflowStep[];
+  const translatedFeatures = t.raw("features") as Array<{
+    title: string;
+    description: string;
+  }>;
+
+  return (
+    <ManufacturingDetailPage
+      moduleLabel={t("moduleLabel")}
+      heroTitle={t("heroTitle")}
+      heroTitleHighlight={t("heroTitleHighlight")}
+      heroDescription={t("heroDescription")}
+      sections={translatedSections.map((section, index) => ({
+        ...section,
+        ...sectionVisuals[index],
+      }))}
+      workflowTitle={t("workflowTitle")}
+      workflowHighlight={t("workflowHighlight")}
+      workflowDescription={t("workflowDescription")}
+      workflowSteps={translatedSteps}
+      featuresTitle={t("featuresTitle")}
+      features={translatedFeatures.map((feature, index) => ({
+        ...feature,
+        icon: featureIcons[index],
+      }))}
+      ctaTitle={t("ctaTitle")}
+      ctaDescription={t("ctaDescription")}
+      ctaButton={t("ctaButton")}
+    />
   );
 }
