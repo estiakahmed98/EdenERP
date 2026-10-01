@@ -495,7 +495,7 @@ export default function Header({
                       }`}
                     />
                     <span
-                      className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-primary transition-all duration-300 ${
+                      className={`absolute -bottom-1 start-0 h-0.5 rounded-full bg-primary transition-all duration-300 ${
                         isActiveMenu(item) || openDesktopMenu === item.id
                           ? "w-full"
                           : "w-0 group-hover:w-full"
@@ -568,7 +568,7 @@ export default function Header({
                 >
                   {t(item.labelKey)}
                   <span
-                    className={`absolute -bottom-1 left-0 h-0.5 rounded-full bg-primary transition-all duration-300 ${
+                    className={`absolute -bottom-1 start-0 h-0.5 rounded-full bg-primary transition-all duration-300 ${
                       isActivePath(item.href)
                         ? "w-full"
                         : "w-0 group-hover:w-full"
@@ -640,7 +640,7 @@ export default function Header({
                 onClick={() =>
                   setMobileOpenMenu(mobileOpenMenu === "apps" ? null : "apps")
                 }
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-foreground hover:bg-accent/10"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-start text-base font-bold text-foreground hover:bg-accent/10"
               >
                 {t("nav.apps")}
                 <ChevronDown
@@ -697,7 +697,7 @@ export default function Header({
                     mobileOpenMenu === "industries" ? null : "industries",
                   )
                 }
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-foreground hover:bg-accent/10"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-start text-base font-bold text-foreground hover:bg-accent/10"
               >
                 {t("nav.industries")}
                 <ChevronDown
@@ -717,7 +717,7 @@ export default function Header({
                         >
                           {t(column.titleKey)}
                         </div>
-                        <ul className="ml-2 space-y-1">
+                        <ul className="ms-2 space-y-1">
                           {column.links.map((link) => (
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
@@ -753,7 +753,7 @@ export default function Header({
                     mobileOpenMenu === "community" ? null : "community",
                   )
                 }
-                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-base font-bold text-foreground hover:bg-accent/10"
+                className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-start text-base font-bold text-foreground hover:bg-accent/10"
               >
                 {t("nav.community")}
                 <ChevronDown
@@ -773,7 +773,7 @@ export default function Header({
                         >
                           {t(column.titleKey)}
                         </div>
-                        <ul className="ml-2 space-y-1">
+                        <ul className="ms-2 space-y-1">
                           {column.links.map((link) => (
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link

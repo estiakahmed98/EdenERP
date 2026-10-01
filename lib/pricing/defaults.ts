@@ -1,5 +1,7 @@
 import enMessages from "@/messages/en.json";
 import bnMessages from "@/messages/bn.json";
+import arMessages from "@/messages/ar.json";
+import { mergeMessages } from "@/i18n/messages";
 
 import type {
   PricingLocale,
@@ -9,6 +11,7 @@ import type {
 
 const enPricing = enMessages.pages.pricing;
 const bnPricing = bnMessages.pages.pricing;
+const arPricing = mergeMessages(enMessages, arMessages).pages.pricing;
 
 type RawPricingSource = typeof enPricing;
 
@@ -62,6 +65,7 @@ function normalizePricingData(
 const defaults = {
   en: normalizePricingData("en", enPricing),
   bn: normalizePricingData("bn", bnPricing),
+  ar: normalizePricingData("ar", arPricing),
 } satisfies Record<PricingLocale, PricingPageData>;
 
 export function getDefaultPricingData(locale: PricingLocale): PricingPageData {

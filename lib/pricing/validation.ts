@@ -1,6 +1,7 @@
 import { z } from "zod";
+import { locales } from "@/i18n/config";
 
-const localeSchema = z.enum(["en", "bn"]);
+const localeSchema = z.enum(locales);
 const currencySchema = z.enum(["BDT", "USD"]).optional();
 
 export const pricingSettingsSchema = z.object({

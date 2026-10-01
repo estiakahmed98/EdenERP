@@ -105,7 +105,7 @@ export default function Footer({
       <div className="relative z-10 mx-auto max-w-[90vw] px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-8 lg:grid-cols-[1.2fr_2fr] lg:gap-12">
           {/* Brand Area */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-start">
             <Link
               href="/"
               className="group inline-flex min-w-0 shrink items-center gap-2 transition-transform duration-300"
@@ -172,7 +172,7 @@ export default function Footer({
 
         <div className="my-6 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
-        <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+        <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-start">
           <p className="text-xs leading-6 text-muted-foreground sm:text-sm">
             {t("copyright", { year: currentYear })}
           </p>

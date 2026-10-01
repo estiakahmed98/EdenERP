@@ -1,4 +1,6 @@
-export type PricingLocale = "en" | "bn";
+import type { AppLocale } from "@/i18n/config";
+
+export type PricingLocale = AppLocale;
 export type PricingPageType = "pricing" | "standard" | "success-packs";
 
 export type PricingHeroContent = {

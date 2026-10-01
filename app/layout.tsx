@@ -172,6 +172,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${tiroBangla.variable}`}
     >

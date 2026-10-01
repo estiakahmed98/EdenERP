@@ -3,6 +3,7 @@ import { getLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import Footer from "@/components/footer";
+import LocaleDocument from "@/components/locale-document";
 import Header from "@/components/header";
 import FloatingActions from "@/components/floating-actions";
 import AnalyticsTracker from "@/components/admin/AnalyticsTracker";
@@ -33,6 +34,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={activeLocale} messages={messages}>
+      <LocaleDocument />
       <AuthSessionProvider>
         <AnalyticsTracker />
         <Header showPricing={pricingConfig.pricingPageEnabled} />

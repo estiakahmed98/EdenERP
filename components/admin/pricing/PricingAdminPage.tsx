@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
-import type { PricingPageData, PricingSiteConfig } from "@/lib/pricing/types";
+import type { PricingLocale, PricingPageData, PricingSiteConfig } from "@/lib/pricing/types";
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 
@@ -766,7 +766,7 @@ function FaqList({
 export default function PricingAdminPage({
   initialData,
 }: PricingAdminPageProps) {
-  const [locale, setLocale] = useState<"en" | "bn">(
+  const [locale, setLocale] = useState<PricingLocale>(
     initialData.pageData.locale,
   );
   const [form, setForm] = useState<FormState>(buildAdminFormState(initialData));
@@ -814,7 +814,7 @@ export default function PricingAdminPage({
     );
   }
 
-  async function loadLocale(nextLocale: "en" | "bn") {
+  async function loadLocale(nextLocale: PricingLocale) {
     setLocale(nextLocale);
     setStatus(null);
     setError(null);
@@ -1045,11 +1045,12 @@ export default function PricingAdminPage({
             <div className="flex flex-wrap items-center gap-2.5">
               <select
                 value={locale}
-                onChange={(e) => loadLocale(e.target.value as "en" | "bn")}
+                onChange={(e) => loadLocale(e.target.value as PricingLocale)}
                 className="rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white"
               >
                 <option value="en">English</option>
                 <option value="bn">Bangla</option>
+                <option value="ar">Arabic</option>
               </select>
               {/* header save removed — using floating save button */}
               <Button
