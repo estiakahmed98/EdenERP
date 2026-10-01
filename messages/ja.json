@@ -14247,6 +14247,102 @@
         "meetAdvisor": "アドバイザーに相談"
       }
     },
+    "advancedSections": {
+      "dashboard": {
+        "title": "品質ダッシュボード",
+        "description": "過去90日間の不適合、CAPA、検査品質をひと目で確認",
+        "refresh": "更新",
+        "imageAlt": "品質ダッシュボード"
+      },
+      "nonConformance": {
+        "eyebrow": "不適合管理",
+        "titleStart": "すべての",
+        "titleHighlight": "品質不良を",
+        "titleEnd": "完了まで追跡",
+        "description": "検査、製造、顧客からの苦情など、発生元を問わず、各不良にNC記録、重大度、処置を設定し、起票から完了まで追跡します。",
+        "panelTitle": "不適合",
+        "panelDescription": "検査、製造、苦情で見つかった品質不良を、処置の決定から完了まで追跡します。",
+        "button": "NCを起票",
+        "imageAlt": "不適合管理",
+        "highlights": {
+          "severity": { "title": "重大度レベル", "description": "軽微、重大、致命的に分類。致命的とは、顧客の安全リスク、リコール、出荷停止につながる状態です。" },
+          "rootCause": { "title": "根本原因分析手法", "description": "問題に応じて、なぜなぜ分析、特性要因図（石川ダイアグラム）、8D、パレート分析を使い分けます。" },
+          "traceability": { "title": "完全なトレーサビリティ", "description": "各NCを、関連するCAPA、検査、発生元の出荷に紐付けます。" }
+        }
+      },
+      "capa": {
+        "eyebrow": "CAPA",
+        "titleStart": "是正処置と",
+        "titleHighlight": "予防処置",
+        "description": "根本原因、アクション項目、検証、完了を通じて、すべての不適合を検証済みの有効な解決へ導きます。一度直すだけでなく、再発しない状態を実現します。",
+        "panelTitle": "CAPA—是正処置・予防処置",
+        "panelDescription": "根本原因、アクション項目、検証、完了を通じて、すべての不適合を有効な解決へ導きます。",
+        "button": "CAPAを開く",
+        "imageAlt": "CAPA是正処置・予防処置",
+        "methodsTitle": "組み込みの根本原因分析手法",
+        "methods": {
+          "fiveWhys": { "title": "なぜなぜ分析—", "description": "「なぜ？」を繰り返し、通常は5回問いかけて、不良の真の原因まで掘り下げます。" },
+          "fishbone": { "title": "特性要因図（石川ダイアグラム）—", "description": "機械、材料、方法、人、測定、環境の観点から原因を整理します。" },
+          "eightD": { "title": "8D—", "description": "重大な顧客苦情や輸出出荷に、8つの規律に基づく問題解決プロセスを適用します。" },
+          "pareto": { "title": "パレート分析—", "description": "不良を発生頻度順に並べ、最も大きな問題から改善します。" }
+        },
+        "lifecycleTitle": "CAPAライフサイクル",
+        "lifecycle": {
+          "raiseNc": "NCを起票",
+          "containment": "封じ込め処置",
+          "rootCause": "根本原因分析",
+          "openCapa": "CAPAを開き担当者を割り当て",
+          "corrective": "是正処置",
+          "preventive": "予防処置",
+          "verification": "有効性の検証",
+          "close": "QA承認と完了"
+        }
+      },
+      "aql": {
+        "eyebrow": "AQL抜取検査",
+        "titleStart": "ISO 2859-1",
+        "titleHighlight": "合否判定抜取検査",
+        "description": "ロットサイズ、AQL、検査水準を入力すると、サンプルサイズと合格・不合格判定数を自動算出します。H&M、Zara、Primark、Walmart、Targetなどのバイヤー監査に対応します。",
+        "panelTitle": "AQL抜取検査（ISO 2859-1）",
+        "panelDescription": "バイヤー監査向けの合否判定抜取検査：ロットサイズ + AQL + 検査水準 → サンプルサイズと合格/不合格判定。",
+        "button": "評価",
+        "imageAlt": "ISO 2859-1に基づくAQL抜取検査",
+        "exampleTitle": "計算例",
+        "example": {
+          "lotSize": { "label": "ロットサイズ", "value": "1,200個" },
+          "sampleSize": { "label": "サンプルサイズ", "value": "80個" },
+          "acceptReject": { "label": "合格 / 不合格", "value": "10 / 11" },
+          "defectsFound": { "label": "検出不良数", "value": "6 → 合格" }
+        },
+        "exampleDescription": "80サンプル中の不良が6個で、合格判定数10以内のため、このロットは合格して出荷できます。不良が不合格判定数（11個以上）に達するとロットは不合格となり、NCとCAPAが自動で起票されます。"
+      },
+      "spc": {
+        "eyebrow": "SPC—早期警告システム",
+        "titleStart": "工程のずれを",
+        "titleHighlight": "不良になる前に検出",
+        "description": "統計的工程管理は、完成品だけでなく製造中の工程を監視します。QC測定値から個別値・移動範囲管理図と工程能力（Cp/Cpk）を確認できます。",
+        "panelTitle": "SPC—統計的工程管理",
+        "panelDescription": "QC測定値に基づく個別値・移動範囲管理図と工程能力（Cp/Cpk）。",
+        "imageAlt": "SPC統計的工程管理",
+        "highlights": {
+          "capability": { "title": "Cp / Cpk", "description": "Cpは規格に対する工程のばらつきを示し、Cpkは工程が中心にあるかを示します。1未満の場合は改善が必要です。" },
+          "limits": { "title": "UCL / LCLとUSL / LSL", "description": "統計的な管理限界と顧客要求の規格限界は異なります。SPCはその両方を監視します。" },
+          "alerts": { "title": "管理外アラート", "description": "測定値が管理限界を超えた時点で、不良品が発生する前に製造を停止して調査します。" }
+        }
+      },
+      "workflow": {
+        "titleStart": "一つのシステムで、",
+        "titleHighlight": "再発不良をゼロに",
+        "titleEnd": "",
+        "description": "NC、CAPA、AQL、SPCは相互に連携します。検査不合格からNCを起票し、NCからCAPAを開始し、SPCで次の不良を発生前に防ぎます。",
+        "steps": {
+          "inspect": { "title": "1. 検査", "description": "QC検査またはAQL抜取検査で不良を発見します。" },
+          "raiseNc": { "title": "2. NC起票", "description": "重大度と発生元を含めて不適合を記録します。" },
+          "capa": { "title": "3. CAPA", "description": "根本原因を特定し、是正処置と予防処置を割り当てます。" },
+          "spc": { "title": "4. SPC監視", "description": "同じ不良が再発しないよう工程を監視します。" }
+        }
+      }
+    },
     "features": {
       "worksWithProcess": {
         "title": "プロセスと連携",

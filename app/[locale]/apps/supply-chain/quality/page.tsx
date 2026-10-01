@@ -119,21 +119,21 @@ export default function QualityLandingSections() {
                 <div className="flex items-center gap-3">
                   <Gauge className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Quality Dashboard
+                    {t("advancedSections.dashboard.title")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Non-conformance, CAPA and inspection quality at a glance — last 90 days
+                    {t("advancedSections.dashboard.description")}
                   </span>
                 </div>
                 <button className="flex items-center gap-1.5 rounded-md border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-xs font-bold text-slate-500 dark:text-slate-400">
                   <RefreshCw className="h-3.5 w-3.5" />
-                  Refresh
+                  {t("advancedSections.dashboard.refresh")}
                 </button>
               </div>
 
               <img
                 src="/Assets/Quality/Quality Dashboard.png"
-                alt="Quality Dashboard"
+                alt={t("advancedSections.dashboard.imageAlt")}
                 className="w-full"
               />
             </div>
@@ -149,19 +149,19 @@ export default function QualityLandingSections() {
           <div className="mx-auto max-w-3xl text-center">
             <SectionEyebrow
               icon={<ShieldAlert className="h-4 w-4" />}
-              label="Non-Conformance"
+              label={t("advancedSections.nonConformance.eyebrow")}
             />
             <ScriptHeading className="mt-4">
-              Track every{" "}
+              {t("advancedSections.nonConformance.titleStart")}{" "}
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="dark:text-rose-200">quality defect</span>
+                <span className="dark:text-rose-200">
+                  {t("advancedSections.nonConformance.titleHighlight")}
+                </span>
               </HandUnderline>{" "}
-              to closure
+              {t("advancedSections.nonConformance.titleEnd")}
             </ScriptHeading>
             <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
-              From inspections, production, or customer complaints — every
-              defect gets an NC record, a severity, and a disposition, from
-              raise to close.
+              {t("advancedSections.nonConformance.description")}
             </p>
           </div>
 
@@ -169,22 +169,21 @@ export default function QualityLandingSections() {
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-5 py-4">
               <div>
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Non-Conformance
+                  {t("advancedSections.nonConformance.panelTitle")}
                 </p>
                 <p className="text-xs text-slate-400 dark:text-slate-500">
-                  Track every quality defect to a disposition and closure — from
-                  inspections, production or complaints.
+                  {t("advancedSections.nonConformance.panelDescription")}
                 </p>
               </div>
               <button className="flex items-center gap-1.5 rounded-md bg-rose-600 px-4 py-2 text-xs font-bold text-white hover:bg-rose-700 transition">
                 <Plus className="h-3.5 w-3.5" />
-                Raise NC
+                {t("advancedSections.nonConformance.button")}
               </button>
             </div>
 
             <img
               src="/Assets/Quality/Non-Conformance.png"
-              alt="Non-Conformance"
+              alt={t("advancedSections.nonConformance.imageAlt")}
               className="w-full"
             />
           </div>
@@ -192,16 +191,16 @@ export default function QualityLandingSections() {
           <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-3">
             {[
               {
-                title: "Severity levels",
-                desc: "Minor, Major, and Critical — Critical means customer safety risk, recall, or shipment hold.",
+                title: t("advancedSections.nonConformance.highlights.severity.title"),
+                desc: t("advancedSections.nonConformance.highlights.severity.description"),
               },
               {
-                title: "Root-cause methods",
-                desc: "5 Whys, Fishbone (Ishikawa), 8D, or Pareto — pick the method that fits the problem.",
+                title: t("advancedSections.nonConformance.highlights.rootCause.title"),
+                desc: t("advancedSections.nonConformance.highlights.rootCause.description"),
               },
               {
-                title: "Full traceability",
-                desc: "Every NC links to the CAPA, inspection, and shipment it came from.",
+                title: t("advancedSections.nonConformance.highlights.traceability.title"),
+                desc: t("advancedSections.nonConformance.highlights.traceability.description"),
               },
             ].map((item) => (
               <div
@@ -228,19 +227,18 @@ export default function QualityLandingSections() {
           <div className="mx-auto max-w-3xl text-center">
             <SectionEyebrow
               icon={<ClipboardList className="h-4 w-4" />}
-              label="CAPA"
+              label={t("advancedSections.capa.eyebrow")}
             />
             <ScriptHeading className="mt-4">
-              Corrective &{" "}
+              {t("advancedSections.capa.titleStart")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="dark:text-[#02cfc3]">Preventive Action</span>
+                <span className="dark:text-[#02cfc3]">
+                  {t("advancedSections.capa.titleHighlight")}
+                </span>
               </HandUnderline>
             </ScriptHeading>
             <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
-              Drive every non-conformance to a verified, effective fix — root
-              cause, action items, verification, and closure. Not just
-              &quot;fix it once&quot;, but &quot;make sure it never happens
-              again&quot;.
+              {t("advancedSections.capa.description")}
             </p>
           </div>
 
@@ -248,22 +246,21 @@ export default function QualityLandingSections() {
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-5 py-4">
               <div>
                 <p className="font-bold text-slate-900 dark:text-white">
-                  CAPA — Corrective &amp; Preventive Action
+                  {t("advancedSections.capa.panelTitle")}
                 </p>
                 <p className="text-xs text-slate-400 dark:text-slate-500">
-                  Drive every non-conformance to a verified, effective fix —
-                  root cause, action items, verification, closure.
+                  {t("advancedSections.capa.panelDescription")}
                 </p>
               </div>
               <button className="flex items-center gap-1.5 rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                 <Plus className="h-3.5 w-3.5" />
-                Open CAPA
+                {t("advancedSections.capa.button")}
               </button>
             </div>
 
             <img
               src="/Assets/Quality/CAPA.png"
-              alt="CAPA - Corrective and Preventive Action"
+              alt={t("advancedSections.capa.imageAlt")}
               className="w-full"
             />
           </div>
@@ -271,54 +268,50 @@ export default function QualityLandingSections() {
           <div className="mx-auto mt-10 grid max-w-5xl gap-6 lg:grid-cols-2">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-sm">
               <p className="font-bold text-slate-900 dark:text-white">
-                Root-cause methods built in
+                {t("advancedSections.capa.methodsTitle")}
               </p>
               <div className="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
                 <p>
                   <strong className="text-slate-900 dark:text-white">
-                    5 Whys —
+                    {t("advancedSections.capa.methods.fiveWhys.title")}
                   </strong>{" "}
-                  ask &quot;why?&quot; repeatedly (usually 5 times) to trace a
-                  defect back to its true cause.
+                  {t("advancedSections.capa.methods.fiveWhys.description")}
                 </p>
                 <p>
                   <strong className="text-slate-900 dark:text-white">
-                    Fishbone (Ishikawa) —
+                    {t("advancedSections.capa.methods.fishbone.title")}
                   </strong>{" "}
-                  maps causes across Machine, Material, Method, Man,
-                  Measurement, Environment.
+                  {t("advancedSections.capa.methods.fishbone.description")}
                 </p>
                 <p>
                   <strong className="text-slate-900 dark:text-white">
-                    8D —
+                    {t("advancedSections.capa.methods.eightD.title")}
                   </strong>{" "}
-                  eight-discipline process for major customer complaints and
-                  export shipments.
+                  {t("advancedSections.capa.methods.eightD.description")}
                 </p>
                 <p>
                   <strong className="text-slate-900 dark:text-white">
-                    Pareto —
+                    {t("advancedSections.capa.methods.pareto.title")}
                   </strong>{" "}
-                  ranks defects by frequency so you fix the biggest problem
-                  first.
+                  {t("advancedSections.capa.methods.pareto.description")}
                 </p>
               </div>
             </div>
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 text-left shadow-sm">
               <p className="font-bold text-slate-900 dark:text-white">
-                CAPA lifecycle
+                {t("advancedSections.capa.lifecycleTitle")}
               </p>
               <div className="mt-4 space-y-2.5">
                 {[
-                  "Raise NC",
-                  "Containment action",
-                  "Root cause analysis",
-                  "Open CAPA & assign owner",
-                  "Corrective action",
-                  "Preventive action",
-                  "Effectiveness verification",
-                  "QA approval & close",
+                  t("advancedSections.capa.lifecycle.raiseNc"),
+                  t("advancedSections.capa.lifecycle.containment"),
+                  t("advancedSections.capa.lifecycle.rootCause"),
+                  t("advancedSections.capa.lifecycle.openCapa"),
+                  t("advancedSections.capa.lifecycle.corrective"),
+                  t("advancedSections.capa.lifecycle.preventive"),
+                  t("advancedSections.capa.lifecycle.verification"),
+                  t("advancedSections.capa.lifecycle.close"),
                 ].map((step, index) => (
                   <div
                     key={step}
@@ -344,21 +337,18 @@ export default function QualityLandingSections() {
           <div className="mx-auto max-w-3xl text-center">
             <SectionEyebrow
               icon={<Calculator className="h-4 w-4" />}
-              label="AQL Sampling"
+              label={t("advancedSections.aql.eyebrow")}
             />
             <ScriptHeading className="mt-4">
-              ISO 2859-1{" "}
+              {t("advancedSections.aql.titleStart")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
                 <span className="dark:text-amber-200">
-                  acceptance sampling
+                  {t("advancedSections.aql.titleHighlight")}
                 </span>
               </HandUnderline>
             </ScriptHeading>
             <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
-              Give the lot size, AQL, and inspection level — the calculator
-              tells you the sample size and the accept/reject numbers.
-              Trusted by H&amp;M, Zara, Primark, Walmart, and Target buyer
-              audits.
+              {t("advancedSections.aql.description")}
             </p>
           </div>
 
@@ -366,22 +356,21 @@ export default function QualityLandingSections() {
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-5 py-4">
               <div>
                 <p className="font-bold text-slate-900 dark:text-white">
-                  AQL Sampling (ISO 2859-1)
+                  {t("advancedSections.aql.panelTitle")}
                 </p>
                 <p className="text-xs text-slate-400 dark:text-slate-500">
-                  Acceptance sampling for buyer audits — lot size + AQL + level
-                  → sample size and accept/reject.
+                  {t("advancedSections.aql.panelDescription")}
                 </p>
               </div>
               <button className="flex items-center gap-1.5 rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
                 <RefreshCw className="h-3.5 w-3.5" />
-                Evaluate
+                {t("advancedSections.aql.button")}
               </button>
             </div>
 
             <img
               src="/Assets/Quality/AQL Sampling.png"
-              alt="AQL Sampling - ISO 2859-1"
+              alt={t("advancedSections.aql.imageAlt")}
               className="w-full"
             />
           </div>
@@ -389,14 +378,26 @@ export default function QualityLandingSections() {
           <div className="mx-auto mt-10 max-w-4xl">
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/40 p-6 text-left">
               <p className="font-bold text-slate-900 dark:text-white">
-                Worked example
+                {t("advancedSections.aql.exampleTitle")}
               </p>
               <div className="mt-4 grid gap-4 text-sm sm:grid-cols-4">
                 {[
-                  { label: "Lot size", value: "1,200 pcs" },
-                  { label: "Sample size", value: "80 pcs" },
-                  { label: "Accept / Reject", value: "10 / 11" },
-                  { label: "Defects found", value: "6 → PASS" },
+                  {
+                    label: t("advancedSections.aql.example.lotSize.label"),
+                    value: t("advancedSections.aql.example.lotSize.value"),
+                  },
+                  {
+                    label: t("advancedSections.aql.example.sampleSize.label"),
+                    value: t("advancedSections.aql.example.sampleSize.value"),
+                  },
+                  {
+                    label: t("advancedSections.aql.example.acceptReject.label"),
+                    value: t("advancedSections.aql.example.acceptReject.value"),
+                  },
+                  {
+                    label: t("advancedSections.aql.example.defectsFound.label"),
+                    value: t("advancedSections.aql.example.defectsFound.value"),
+                  },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -412,9 +413,7 @@ export default function QualityLandingSections() {
                 ))}
               </div>
               <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
-                6 defects out of 80 sampled ≤ accept number 10, so the lot
-                passes and ships. If defects exceed the reject number (11+),
-                the lot fails and an NC + CAPA is raised automatically.
+                {t("advancedSections.aql.exampleDescription")}
               </p>
             </div>
           </div>
@@ -429,36 +428,34 @@ export default function QualityLandingSections() {
           <div className="mx-auto max-w-3xl text-center">
             <SectionEyebrow
               icon={<TrendingUp className="h-4 w-4" />}
-              label="SPC — Early Warning System"
+              label={t("advancedSections.spc.eyebrow")}
             />
             <ScriptHeading className="mt-4">
-              Catch drift{" "}
+              {t("advancedSections.spc.titleStart")}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-                <span className="dark:text-sky-200">before it's a defect</span>
+                <span className="dark:text-sky-200">
+                  {t("advancedSections.spc.titleHighlight")}
+                </span>
               </HandUnderline>
             </ScriptHeading>
             <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
-              Statistical Process Control watches your process while
-              production runs — not just the finished product. Individuals
-              &amp; moving-range charts plus process capability (Cp/Cpk) from
-              QC readings.
+              {t("advancedSections.spc.description")}
             </p>
           </div>
 
           <div className="mx-auto mt-12 max-w-5xl overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
             <div className="border-b border-slate-100 dark:border-slate-800 px-5 py-4">
               <p className="font-bold text-slate-900 dark:text-white">
-                SPC — Statistical Process Control
+                {t("advancedSections.spc.panelTitle")}
               </p>
               <p className="text-xs text-slate-400 dark:text-slate-500">
-                Individuals &amp; moving-range control charts and process
-                capability (Cp/Cpk) from QC readings.
+                {t("advancedSections.spc.panelDescription")}
               </p>
             </div>
 
             <img
               src="/Assets/Quality/SPC.png"
-              alt="SPC - Statistical Process Control"
+              alt={t("advancedSections.spc.imageAlt")}
               className="w-full"
             />
           </div>
@@ -466,16 +463,16 @@ export default function QualityLandingSections() {
           <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:grid-cols-3">
             {[
               {
-                title: "Cp / Cpk",
-                desc: "Cp shows process width vs spec. Cpk shows whether the process is centered — below 1 means it needs attention.",
+                title: t("advancedSections.spc.highlights.capability.title"),
+                desc: t("advancedSections.spc.highlights.capability.description"),
               },
               {
-                title: "UCL / LCL vs USL / LSL",
-                desc: "Control limits (statistical) are not the same as spec limits (customer requirement) — SPC watches both.",
+                title: t("advancedSections.spc.highlights.limits.title"),
+                desc: t("advancedSections.spc.highlights.limits.description"),
               },
               {
-                title: "Out-of-control alerts",
-                desc: "The moment a reading crosses the control limit, production stops for investigation — before parts are rejected.",
+                title: t("advancedSections.spc.highlights.alerts.title"),
+                desc: t("advancedSections.spc.highlights.alerts.description"),
               },
             ].map((item) => (
               <div
@@ -504,41 +501,41 @@ export default function QualityLandingSections() {
             className="max-w-2xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One system,{" "}
+            {t("advancedSections.workflow.titleStart")}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">zero</span>
+              <span className="relative z-10">
+                {t("advancedSections.workflow.titleHighlight")}
+              </span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>{" "}
-            repeat defects
+            {t("advancedSections.workflow.titleEnd")}
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            NC, CAPA, AQL, and SPC are connected — a failed inspection raises
-            an NC, an NC opens a CAPA, and SPC prevents the next one before it
-            starts.
+            {t("advancedSections.workflow.description")}
           </p>
 
           <div className="mt-12 grid gap-4 md:grid-cols-4">
             {[
               {
                 icon: ShieldAlert,
-                title: "1. Inspect",
-                desc: "QC inspection or AQL sampling finds a defect.",
+                title: t("advancedSections.workflow.steps.inspect.title"),
+                desc: t("advancedSections.workflow.steps.inspect.description"),
               },
               {
                 icon: Bell,
-                title: "2. Raise NC",
-                desc: "Non-conformance recorded with severity and source.",
+                title: t("advancedSections.workflow.steps.raiseNc.title"),
+                desc: t("advancedSections.workflow.steps.raiseNc.description"),
               },
               {
                 icon: ClipboardList,
-                title: "3. CAPA",
-                desc: "Root cause found, corrective + preventive action assigned.",
+                title: t("advancedSections.workflow.steps.capa.title"),
+                desc: t("advancedSections.workflow.steps.capa.description"),
               },
               {
                 icon: TrendingUp,
-                title: "4. SPC watch",
-                desc: "Process monitored so the same defect can't recur.",
+                title: t("advancedSections.workflow.steps.spc.title"),
+                desc: t("advancedSections.workflow.steps.spc.description"),
               },
             ].map((step) => {
               const Icon = step.icon;

@@ -13865,6 +13865,102 @@
           "meetAdvisor": "Meet an advisor"
         }
       },
+      "advancedSections": {
+        "dashboard": {
+          "title": "Quality Dashboard",
+          "description": "Non-conformance, CAPA, and inspection quality at a glance — last 90 days",
+          "refresh": "Refresh",
+          "imageAlt": "Quality dashboard"
+        },
+        "nonConformance": {
+          "eyebrow": "Non-Conformance",
+          "titleStart": "Track every",
+          "titleHighlight": "quality defect",
+          "titleEnd": "to closure",
+          "description": "From inspections, production, or customer complaints — every defect gets an NC record, a severity, and a disposition, from raising it through closure.",
+          "panelTitle": "Non-Conformance",
+          "panelDescription": "Track every quality defect through disposition and closure — from inspections, production, or complaints.",
+          "button": "Raise NC",
+          "imageAlt": "Non-conformance management",
+          "highlights": {
+            "severity": { "title": "Severity levels", "description": "Minor, Major, and Critical — Critical indicates a customer safety risk, recall, or shipment hold." },
+            "rootCause": { "title": "Root-cause methods", "description": "Use 5 Whys, Fishbone (Ishikawa), 8D, or Pareto — whichever method fits the problem." },
+            "traceability": { "title": "Full traceability", "description": "Every NC links to the CAPA, inspection, and shipment from which it originated." }
+          }
+        },
+        "capa": {
+          "eyebrow": "CAPA",
+          "titleStart": "Corrective &",
+          "titleHighlight": "Preventive Action",
+          "description": "Drive every non-conformance to a verified, effective fix — root cause, action items, verification, and closure. Do not just fix it once; make sure it never happens again.",
+          "panelTitle": "CAPA — Corrective & Preventive Action",
+          "panelDescription": "Drive every non-conformance to a verified, effective fix — root cause, action items, verification, and closure.",
+          "button": "Open CAPA",
+          "imageAlt": "CAPA corrective and preventive action",
+          "methodsTitle": "Built-in root-cause methods",
+          "methods": {
+            "fiveWhys": { "title": "5 Whys —", "description": "ask why repeatedly (usually five times) to trace a defect back to its true cause." },
+            "fishbone": { "title": "Fishbone (Ishikawa) —", "description": "map causes across Machine, Material, Method, People, Measurement, and Environment." },
+            "eightD": { "title": "8D —", "description": "use an eight-discipline process for major customer complaints and export shipments." },
+            "pareto": { "title": "Pareto —", "description": "rank defects by frequency so you address the biggest problem first." }
+          },
+          "lifecycleTitle": "CAPA lifecycle",
+          "lifecycle": {
+            "raiseNc": "Raise NC",
+            "containment": "Containment action",
+            "rootCause": "Root-cause analysis",
+            "openCapa": "Open CAPA and assign an owner",
+            "corrective": "Corrective action",
+            "preventive": "Preventive action",
+            "verification": "Effectiveness verification",
+            "close": "QA approval and closure"
+          }
+        },
+        "aql": {
+          "eyebrow": "AQL Sampling",
+          "titleStart": "ISO 2859-1",
+          "titleHighlight": "acceptance sampling",
+          "description": "Enter the lot size, AQL, and inspection level — the calculator gives you the sample size and acceptance and rejection numbers. Suitable for buyer audits by H&M, Zara, Primark, Walmart, and Target.",
+          "panelTitle": "AQL Sampling (ISO 2859-1)",
+          "panelDescription": "Acceptance sampling for buyer audits — lot size + AQL + level → sample size and acceptance/rejection.",
+          "button": "Evaluate",
+          "imageAlt": "AQL sampling based on ISO 2859-1",
+          "exampleTitle": "Worked example",
+          "example": {
+            "lotSize": { "label": "Lot size", "value": "1,200 pcs" },
+            "sampleSize": { "label": "Sample size", "value": "80 pcs" },
+            "acceptReject": { "label": "Accept / Reject", "value": "10 / 11" },
+            "defectsFound": { "label": "Defects found", "value": "6 → PASS" }
+          },
+          "exampleDescription": "Six defects among 80 samples are within the acceptance number of 10, so the lot passes and ships. If defects reach the rejection number (11 or more), the lot fails and an NC and CAPA are raised automatically."
+        },
+        "spc": {
+          "eyebrow": "SPC — Early Warning System",
+          "titleStart": "Catch drift",
+          "titleHighlight": "before it becomes a defect",
+          "description": "Statistical Process Control monitors your process while production is running — not only the finished product. Use individual and moving-range charts plus process capability (Cp/Cpk) from QC readings.",
+          "panelTitle": "SPC — Statistical Process Control",
+          "panelDescription": "Individual and moving-range control charts and process capability (Cp/Cpk) from QC readings.",
+          "imageAlt": "SPC statistical process control",
+          "highlights": {
+            "capability": { "title": "Cp / Cpk", "description": "Cp shows process width versus specification. Cpk shows whether the process is centered — below 1 means it needs attention." },
+            "limits": { "title": "UCL / LCL vs USL / LSL", "description": "Statistical control limits differ from customer specification limits — SPC monitors both." },
+            "alerts": { "title": "Out-of-control alerts", "description": "When a reading crosses a control limit, production stops for investigation before parts are rejected." }
+          }
+        },
+        "workflow": {
+          "titleStart": "One system,",
+          "titleHighlight": "zero",
+          "titleEnd": "repeat defects",
+          "description": "NC, CAPA, AQL, and SPC are connected — a failed inspection raises an NC, an NC opens a CAPA, and SPC prevents the next defect before it starts.",
+          "steps": {
+            "inspect": { "title": "1. Inspect", "description": "A QC inspection or AQL sample identifies a defect." },
+            "raiseNc": { "title": "2. Raise NC", "description": "The non-conformance is recorded with its severity and source." },
+            "capa": { "title": "3. CAPA", "description": "The root cause is found and corrective and preventive actions are assigned." },
+            "spc": { "title": "4. SPC monitoring", "description": "The process is monitored so the same defect cannot recur." }
+          }
+        }
+      },
       "features": {
         "worksWithProcess": {
           "title": "Works with your process",
