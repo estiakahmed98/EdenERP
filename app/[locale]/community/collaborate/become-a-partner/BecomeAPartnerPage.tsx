@@ -115,7 +115,7 @@ function StepCard({
         )}
         <div className="space-y-3">
           <span className="text-xs font-black uppercase tracking-[0.2em] text-muted-foreground">
-            Step {step}
+            {t("journeySection.stepLabel")} {step}
           </span>
           <h3 className="text-xl font-semibold text-foreground">{title}</h3>
           <p className="text-sm leading-7 text-muted-foreground">{description}</p>

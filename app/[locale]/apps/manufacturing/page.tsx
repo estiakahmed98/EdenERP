@@ -215,7 +215,7 @@ export default function MRPLandingSections() {
               <div className="grid bg-[#f7f8fb] dark:bg-[#0f0f1a] p-6 lg:grid-cols-[210px_1fr]">
                 <aside className="rounded-lg bg-white dark:bg-slate-800 p-4 text-left shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                   <p className="text-sm font-bold text-slate-900 dark:text-white">
-                    MRP Menu
+                    {t("hero.dashboard.menuLabel")}
                   </p>
 
                   <div className="mt-5 space-y-2">
@@ -270,9 +270,9 @@ export default function MRPLandingSections() {
                           </div>
 
                           <div className="grid grid-cols-3 gap-2 text-xs text-slate-400 dark:text-slate-500">
-                            <span>Components</span>
-                            <span>Work center</span>
-                            <span>Deadline</span>
+                            <span>{t("hero.dashboard.componentsLabel")}</span>
+                            <span>{t("hero.dashboard.workCenterLabel")}</span>
+                            <span>{t("hero.dashboard.deadlineLabel")}</span>
                           </div>
                         </div>
                       </div>
@@ -408,7 +408,7 @@ export default function MRPLandingSections() {
                 <ScanLine className="mx-auto h-16 w-16 text-[#714b67] dark:text-[#9b6a8f]" />
 
                 <p className="mt-6 text-center text-sm font-bold text-slate-900 dark:text-white">
-                  Active work order
+                  {t("productionSection.activeWorkOrder")}
                 </p>
 
                 <div className="mt-5 space-y-3">

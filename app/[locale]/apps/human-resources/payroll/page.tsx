@@ -72,7 +72,7 @@ function FloatingNote({
       />
       <img
         src={avatars[1]}
-        alt="User"
+        alt=""
         className="absolute left-3 h-12 w-12 rounded-full object-cover"
       />
       {text}
@@ -536,7 +536,7 @@ export default function PayrollLandingSections() {
               <img
                 key={avatar}
                 src={avatar}
-                alt="User avatar"
+                alt=""
                 className="absolute z-10 h-12 w-12 sm:h-14 sm:w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
@@ -594,7 +594,7 @@ export default function PayrollLandingSections() {
                 <div className="mt-6 flex items-center gap-3">
                   <img
                     src={avatars[4]}
-                    alt="Customer"
+                    alt={t("testimonial.name")}
                     className="h-12 w-12 rounded-full object-cover"
                   />
 

@@ -11252,6 +11252,10 @@
         "dashboard": {
           "title": "Manufacturing",
           "subtitle": "Orders / Work Centers / Planning / Quality / Shop Floor",
+          "menuLabel": "MRP Menu",
+          "componentsLabel": "Components",
+          "workCenterLabel": "Work center",
+          "deadlineLabel": "Deadline",
           "createButton": "Create",
           "menu": [
             "Overview",
@@ -11402,6 +11406,7 @@
         "description": "Register each production operation, consume components, record finished products, print labels, and keep traceability clean from start to finish.",
         "floatingNote": "Scan, produce, and validate",
         "mobileLabel": "Mobile barcode app",
+        "activeWorkOrder": "Active work order",
         "steps": [
           "Scan component",
           "Start operation",
@@ -11608,6 +11613,7 @@
         "eyebrowLabel": "Your journey",
         "title": "Become a partner in four easy steps",
         "description": "Our streamlined process ensures you can go from application to delivering value to clients as quickly as possible.",
+        "stepLabel": "Step",
         "steps": [
           {
             "step": "01",
