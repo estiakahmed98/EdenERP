@@ -10,7 +10,10 @@
     "build:turbo": "next build --turbopack",
     "start": "next start",
     "lint": "eslint .",
-    "i18n:check": "node scripts/check-i18n-keys.mjs"
+    "i18n:check": "node scripts/check-i18n-keys.mjs",
+    "i18n:merge": "node scripts/merge-translations.mjs",
+    "i18n:fix-missing": "node scripts/fix-i18n-missing-keys.mjs",
+    "i18n:fix-types": "node scripts/fix-i18n-types.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

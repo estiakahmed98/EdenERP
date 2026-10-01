@@ -1,11 +1,14 @@
-import enPricing from "@/messages/en/pages/pricing.json";
-import bnPricing from "@/messages/bn/pages/pricing.json";
+import enMessages from "@/messages/en.json";
+import bnMessages from "@/messages/bn.json";
 
 import type {
   PricingLocale,
   PricingPageData,
   PricingPlanData,
 } from "@/lib/pricing/types";
+
+const enPricing = enMessages.pages.pricing;
+const bnPricing = bnMessages.pages.pricing;
 
 type RawPricingSource = typeof enPricing;
 
