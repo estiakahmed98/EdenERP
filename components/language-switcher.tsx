@@ -56,7 +56,7 @@ export default function LanguageSwitcher({
         align="end"
         sideOffset={8}
         aria-label={t("label")}
-        className="z-[60] min-w-48 rounded-xl p-1.5"
+        className="z-60 min-w-48 rounded-xl p-1.5"
       >
         {locales.map((nextLocale) => (
           <DropdownMenuItem
