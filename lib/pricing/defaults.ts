@@ -1,5 +1,6 @@
 import enMessages from "@/messages/en.json";
 import bnMessages from "@/messages/bn.json";
+import zhMessages from "@/messages/zh.json";
 import arMessages from "@/messages/ar.json";
 import jaMessages from "@/messages/ja.json";
 import neMessages from "@/messages/ne.json";
@@ -68,6 +69,7 @@ function normalizePricingData(
 const defaults = {
   en: normalizePricingData("en", enPricing),
   bn: normalizePricingData("bn", bnPricing),
+  zh: normalizePricingData("zh", mergeMessages(enMessages, zhMessages).pages.pricing),
   ar: normalizePricingData("ar", arPricing),
   ja: normalizePricingData("ja", mergeMessages(enMessages, jaMessages).pages.pricing),
   ne: normalizePricingData("ne", mergeMessages(enMessages, neMessages).pages.pricing),

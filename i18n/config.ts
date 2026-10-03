@@ -7,6 +7,7 @@ export type AppLocale = (typeof locales)[number];
 export const languageNames = {
   en: "English",
   bn: "বাংলা",
+  zh: "中文",
   ar: "العربية",
   ja: "日本語",
   ne: "नेपाली",

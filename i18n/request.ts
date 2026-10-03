@@ -7,6 +7,7 @@ import { mergeMessages } from "@/i18n/messages";
 const messageLoaders = {
   en: () => import("../messages/en.json"),
   bn: () => import("../messages/bn.json"),
+  zh: () => import("../messages/zh.json"),
   ar: () => import("../messages/ar.json"),
   ja: () => import("../messages/ja.json"),
   ne: () => import("../messages/ne.json"),
