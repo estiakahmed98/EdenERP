@@ -8,6 +8,7 @@ const messageLoaders = {
   en: () => import("../messages/en.json"),
   bn: () => import("../messages/bn.json"),
   zh: () => import("../messages/zh.json"),
+  tr: () => import("../messages/tr.json"),
   ar: () => import("../messages/ar.json"),
   ja: () => import("../messages/ja.json"),
   ne: () => import("../messages/ne.json"),
