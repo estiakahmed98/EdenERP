@@ -19,11 +19,30 @@ import {
   AlertCircle,
 } from "lucide-react";
 
+function sanitizeCallbackUrl(value: string | null | undefined, fallback = "/admin") {
+  const candidate = value?.trim();
+
+  if (!candidate || candidate.startsWith("//") || !candidate.startsWith("/")) {
+    return fallback;
+  }
+
+  try {
+    const parsed = new URL(candidate, "http://localhost");
+    if (parsed.origin !== "http://localhost") {
+      return fallback;
+    }
+
+    return `${parsed.pathname}${parsed.search}${parsed.hash}` || "/";
+  } catch {
+    return fallback;
+  }
+}
+
 export default function SignInPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const message = searchParams.get("message");
-  const callbackUrl = searchParams.get("callbackUrl") || "/admin";
+  const callbackUrl = sanitizeCallbackUrl(searchParams.get("callbackUrl"));
 
   const { data: session, status } = useSession();
   const [form, setForm] = useState({ email: "", password: "" });

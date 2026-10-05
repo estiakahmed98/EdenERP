@@ -22,6 +22,41 @@ interface Blog {
   updatedAt: string | Date;
 }
 
+function sanitizeBlogHtml(value: string) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(value, "text/html");
+
+  ["script", "iframe", "object", "embed", "svg", "math", "style", "link"].forEach(
+    (tag) => {
+      doc.querySelectorAll(tag).forEach((node) => node.remove());
+    },
+  );
+
+  doc.querySelectorAll("*").forEach((element) => {
+    Array.from(element.attributes).forEach((attribute) => {
+      const name = attribute.name.toLowerCase();
+
+      if (name.startsWith("on")) {
+        element.removeAttribute(attribute.name);
+        return;
+      }
+
+      if (["href", "src", "xlink:href", "action", "formaction"].includes(name)) {
+        const nextValue = attribute.value.trim().toLowerCase();
+        if (
+          nextValue.startsWith("javascript:") ||
+          nextValue.startsWith("vbscript:") ||
+          nextValue.startsWith("data:text/html")
+        ) {
+          element.removeAttribute(attribute.name);
+        }
+      }
+    });
+  });
+
+  return doc.body.innerHTML;
+}
+
 /* =================== RELATED CARD =================== */
 const RelatedBlogsCard = () => (
   <div className="sticky top-6 rounded-2xl border border-[#be923c]/20 bg-white/80 backdrop-blur-sm shadow-sm overflow-hidden">
@@ -93,6 +128,7 @@ export default function BlogDetails() {
   const [loading, setLoading] = useState(true);
   const [cache] = useState<Map<string, Blog>>(new Map());
   const [imageLoading, setImageLoading] = useState(true);
+  const safeContent = blog ? sanitizeBlogHtml(blog.content) : "";
 
   const fetchBlog = useCallback(
     async (slug: string) => {
@@ -211,7 +247,7 @@ export default function BlogDetails() {
                 className="prose prose-slate max-w-none
                   prose-headings:font-semibold
                   prose-p:leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: blog.content }}
+                dangerouslySetInnerHTML={{ __html: safeContent }}
               />
             </article>
           </div>
@@ -238,7 +274,7 @@ export default function BlogDetails() {
 
           <div
             className="prose prose-slate max-w-none"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
+            dangerouslySetInnerHTML={{ __html: safeContent }}
           />
 
           <RecentBlogs />

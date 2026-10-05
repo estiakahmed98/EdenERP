@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
 import { revalidatePath } from "next/cache";
 
+import { isLocale } from "@/i18n/config";
 import { authOptions } from "@/lib/auth";
 import { db } from "@/lib/db";
 import {
@@ -28,8 +29,12 @@ export async function GET(request: NextRequest) {
   if (unauthorized) return unauthorized;
 
   try {
+    const rawLocale = new URL(request.url).searchParams.get("locale");
+    const locale = rawLocale ? rawLocale.trim().toLowerCase() : "en";
+    const safeLocale = isLocale(locale) ? locale : "en";
+
     const result = pricingAdminQuerySchema.safeParse({
-      locale: new URL(request.url).searchParams.get("locale") ?? "en",
+      locale: safeLocale,
     });
 
     if (!result.success) {

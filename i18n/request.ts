@@ -24,7 +24,7 @@ async function getMessages(locale: AppLocale) {
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  const requestedLocale = await requestLocale;
+  const requestedLocale = (await requestLocale)?.trim().toLowerCase();
 
   const locale: AppLocale =
     requestedLocale && isLocale(requestedLocale)

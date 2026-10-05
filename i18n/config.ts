@@ -18,5 +18,6 @@ export const languageNames = {
 export const defaultLocale = routing.defaultLocale;
 
 export function isLocale(value: string): value is AppLocale {
-  return locales.includes(value as AppLocale);
+  const normalized = value.trim().toLowerCase();
+  return locales.some((locale) => locale.toLowerCase() === normalized);
 }

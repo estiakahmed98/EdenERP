@@ -4,14 +4,25 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { generateSlug } from '@/lib/utils';
 
+function sanitizeHtmlFragment(value: string) {
+  return value
+    .replace(/<\s*script[^>]*>.*?<\s*\/\s*script\s*>/gi, ' ')
+    .replace(/<\s*(iframe|object|embed|svg|math|style|link)[^>]*>.*?<\s*\/\s*\1\s*>/gi, ' ')
+    .replace(/on\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, ' ')
+    .replace(/href\s*=\s*(?:"\s*javascript:|"\s*vbscript:|\s*javascript:|\s*vbscript:)/gi, ' ')
+    .replace(/src\s*=\s*(?:"\s*javascript:|"\s*vbscript:|\s*javascript:|\s*vbscript:)/gi, ' ');
+}
+
 // GET all blogs - Public access
 export async function GET(request: NextRequest) {
   try {
 
     const { searchParams } = new URL(request.url);
-    const page = parseInt(searchParams.get('page') || '1');
-    const limit = parseInt(searchParams.get('limit') || '10');
-    const search = searchParams.get('search') || '';
+    const rawPage = Number.parseInt(searchParams.get('page') || '1', 10);
+    const rawLimit = Number.parseInt(searchParams.get('limit') || '10', 10);
+    const page = Number.isFinite(rawPage) && rawPage > 0 ? Math.min(rawPage, 1000) : 1;
+    const limit = Number.isFinite(rawLimit) && rawLimit > 0 ? Math.min(rawLimit, 50) : 10;
+    const search = (searchParams.get('search') || '').trim().slice(0, 100);
 
     const skip = (page - 1) * limit;
 
@@ -70,6 +81,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const safeTitle = String(title).trim().slice(0, 200);
+    const safeAuthor = String(author).trim().slice(0, 200);
+
+    if (!safeTitle || !safeAuthor) {
+      return NextResponse.json(
+        { error: 'Title and author are required' },
+        { status: 400 }
+      );
+    }
+    const safeSummary = typeof summary === 'string' ? sanitizeHtmlFragment(summary).trim().slice(0, 2000) : '';
+    const safeContent = typeof content === 'string' ? sanitizeHtmlFragment(content).slice(0, 250000) : '';
+    const safeImage = typeof image === 'string' ? image.trim().slice(0, 500) : '';
+    const safeAds = typeof ads === 'string' ? ads.trim().slice(0, 500) : null;
+
     function cleanSummary(text: string, maxLength: number = 300) {
       if (!text) return "";
 
@@ -95,12 +120,12 @@ export async function POST(request: NextRequest) {
     }
 
     const computedSummary =
-      summary && summary.trim().length > 0
-        ? summary.trim()
-        : cleanSummary(content || "");
+      safeSummary && safeSummary.length > 0
+        ? safeSummary
+        : cleanSummary(safeContent || "");
 
     // Generate unique slug
-    let slug = generateSlug(title);
+    let slug = generateSlug(safeTitle);
     
     // Check if slug already exists and make it unique
     const existingBlog = await prisma.blog.findUnique({ where: { slug } });
@@ -117,13 +142,13 @@ export async function POST(request: NextRequest) {
     const blog = await prisma.blog.create({
       data: {
         slug,
-        title,
+        title: safeTitle,
         summary: computedSummary,
-        content: content || '',
+        content: safeContent,
         date: new Date(date),
-        author,
-        image: image || '',
-        ads: ads ?? null,
+        author: safeAuthor,
+        image: safeImage,
+        ads: safeAds,
       }
     });
 
