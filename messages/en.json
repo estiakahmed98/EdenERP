@@ -98,6 +98,7 @@
           "payroll": "Payroll",
           "budgetManagement": "Budget Management",
           "analytics": "Analytics",
+          "engineeringMaintenance": "Engineering Maintenance",
           "biAnalyticsReporting": "BI Analytics & Reporting",
           "fundAccounting": "Fund Accounting",
           "fundDashboard": "Fund Dashboard",
@@ -450,6 +451,266 @@
         "titleHighlight": "more clearly.",
         "description": "Explore how EdenERP can bring reporting and business intelligence together for your teams.",
         "button": "Request a demonstration"
+      }
+    },
+    "engineeringMaintenance": {
+      "metadata": {
+        "title": "Engineering Maintenance | EdenERP",
+        "description": "Explore an illustrative engineering maintenance showcase for equipment, preventive schedules, work orders, spare parts, downtime, and calibration."
+      },
+      "hero": {
+        "eyebrow": "Industrial maintenance, in one view",
+        "title": "Keep critical assets",
+        "titleHighlight": "running reliably.",
+        "description": "Connect equipment records, planned maintenance, work orders, spare parts, downtime, and calibration in a clear maintenance workspace for industrial teams.",
+        "primaryCta": "Request a demonstration",
+        "secondaryCta": "Explore the showcase",
+        "sampleNotice": "All records and metrics are illustrative examples — no live equipment data is connected.",
+        "previewTitle": "Maintenance overview",
+        "previewSubtitle": "Elenga steel works · illustrative workspace",
+        "previewAccessible": "Illustrative maintenance dashboard with six sample KPIs and equipment health visualizations",
+        "healthTitle": "Equipment health overview",
+        "healthCaption": "Sample operational status across registered assets",
+        "healthChartAccessible": "Illustrative equipment health trend",
+        "chartStart": "May",
+        "chartEnd": "Oct",
+        "workloadTitle": "Maintenance workload",
+        "workOrderOpen": "Open / in progress",
+        "workOrderOverdue": "Overdue PM schedules",
+        "workOrderCompleted": "Completed work orders",
+        "previewNote": "Demo figures only · October 2026"
+      },
+      "metrics": {
+        "equipment": "Total equipment",
+        "assetsRegistered": "Sample assets registered",
+        "openWorkOrders": "Open work orders",
+        "activeWork": "Open and in progress",
+        "pmDue": "Preventive maintenance due",
+        "dueNext30Days": "Overdue or due in 30 days",
+        "lowStock": "Low-stock spare parts",
+        "reorderAlerts": "Sample reorder alerts",
+        "downtime": "Downtime hours (MTD)",
+        "thisMonth": "October sample total",
+        "calibrationDue": "Calibration due ≤30 days"
+      },
+      "features": {
+        "eyebrow": "Connected maintenance capabilities",
+        "title": "From asset register to reliable operations.",
+        "description": "Explore the maintenance records and planning concepts that help industrial teams stay ahead of service needs.",
+        "items": [
+          { "title": "Equipment management", "description": "Keep equipment identities, locations, custodians, criticality, and operating context together." },
+          { "title": "Preventive maintenance", "description": "Review recurring service schedules, due dates, and maintenance planning at a glance." },
+          { "title": "Work order coordination", "description": "Illustrate priority, assignment, estimated cost, and lifecycle status for maintenance work." },
+          { "title": "Spare parts visibility", "description": "Monitor sample stock levels, reorder points, storage locations, and inventory value." },
+          { "title": "Downtime insight", "description": "Summarize sample stoppages and maintenance performance indicators for discussion." },
+          { "title": "Calibration tracking", "description": "Preview instrument dates, results, certificate references, and upcoming reminders." }
+        ]
+      },
+      "showcase": {
+        "eyebrow": "A closer look",
+        "title": "Explore the maintenance workspace.",
+        "description": "Switch between six illustrative areas. Search and tab navigation run locally in your browser; no records are saved.",
+        "tabsLabel": "Engineering maintenance showcase sections"
+      },
+      "tabs": {
+        "equipment": "Equipment",
+        "schedules": "PM Schedules",
+        "workOrders": "Work Orders",
+        "spareParts": "Spare Parts",
+        "downtime": "Downtime",
+        "calibration": "Calibration"
+      },
+      "panels": {
+        "equipment": "A searchable sample register showing equipment identity, location, criticality, operating hours, custodian, and status.",
+        "equipmentNote": "A consolidated equipment register supports asset visibility and lifecycle conversations across plant locations.",
+        "schedules": "Review recurring maintenance plans, due dates, frequency, and sample schedule status.",
+        "workOrders": "A demonstration work queue with industrial maintenance scenarios, ownership, priority, estimated cost, and status.",
+        "spareParts": "A sample parts register that connects stock on hand, reorder levels, storage locations, and calculated inventory value.",
+        "partsNote": "Low-stock flags are calculated from the displayed on-hand and reorder quantities. Receive, adjust, and ledger actions are preview concepts only.",
+        "downtime": "Review illustrative equipment stoppages alongside a short trend and sample maintenance performance metrics.",
+        "calibration": "An instrument register preview for planned dates, example outcomes, certificate references, and upcoming reminders."
+      },
+      "table": {
+        "sampleData": "Illustrative sample data",
+        "demoBadge": "Demo preview",
+        "previewOnly": "Preview only",
+        "rowCount": "{count} sample rows",
+        "noResults": "No matching sample equipment.",
+        "searchEquipment": "Search equipment...",
+        "code": "Code",
+        "equipment": "Equipment",
+        "location": "Location",
+        "criticality": "Criticality",
+        "runningHours": "Running hours",
+        "custodian": "Custodian",
+        "status": "Status",
+        "category": "Category",
+        "schedule": "Schedule",
+        "type": "Type",
+        "frequency": "Frequency",
+        "nextDue": "Next due",
+        "workOrderNumber": "WO #",
+        "title": "Title",
+        "priority": "Priority",
+        "estimatedCost": "Estimated cost",
+        "technician": "Assigned technician",
+        "part": "Part",
+        "uom": "UOM",
+        "onHand": "On hand",
+        "reorderLevel": "Reorder",
+        "unitCost": "Unit cost",
+        "inventoryValue": "Inventory value",
+        "storageLocation": "Storage location",
+        "stockStatus": "Stock status",
+        "downtimeNumber": "Downtime #",
+        "failureReason": "Failure reason",
+        "startDate": "Start date / time",
+        "duration": "Duration",
+        "calibrationNumber": "Calibration #",
+        "instrument": "Equipment / instrument",
+        "calibrationDate": "Calibration date",
+        "nextDueDate": "Next due date",
+        "certificate": "Certificate #",
+        "result": "Result",
+        "cost": "Cost",
+        "calibrationStatus": "Calibration status",
+        "workflowLabel": "Illustrative workflow:",
+        "export": "Export"
+      },
+      "schedule": {
+        "overdue": "Overdue schedule",
+        "upcoming": "Upcoming this month",
+        "scheduled": "Scheduled later",
+        "workflow": "Schedule creation → upcoming maintenance → work order → inspection → completion. Work order generation is shown as a concept; nothing is created or persisted."
+      },
+      "workOrders": {
+        "workflow": "Reported issue → triage and priority → assigned technician → work in progress → review and close. This is a sample lifecycle, not operational work order processing.",
+        "historyTitle": "Sample work order history",
+        "history": [
+          { "date": "Oct 26, 2026 · WO-0006", "title": "Work started", "detail": "Burner fault assigned to A. Hossain for inspection." },
+          { "date": "Oct 26, 2026 · WO-0006", "title": "Parts reviewed", "detail": "Sample parts need and estimated repair cost recorded for preview." },
+          { "date": "Oct 27, 2026 · WO-0006", "title": "Follow-up planned", "detail": "Illustrative next step pending technician review." }
+        ]
+      },
+      "parts": {
+        "lowStockMetric": "Parts at or below reorder level",
+        "items": "items",
+        "inventoryValue": "Sample inventory value on hand",
+        "concepts": [
+          { "title": "Stock receiving", "description": "Preview an inbound parts receipt." },
+          { "title": "Parts consumption", "description": "Illustrate parts used on maintenance work." },
+          { "title": "Inventory adjustment", "description": "Review a sample quantity correction." },
+          { "title": "Spare parts ledger", "description": "See the concept of item-level movement history." }
+        ]
+      },
+      "downtime": {
+        "trendTitle": "Monthly unplanned downtime",
+        "trendCaption": "Illustrative hours · sample period",
+        "availability": "Illustrative availability",
+        "availabilityNote": "7,200 run hours ÷ (7,200 + 13 downtime hours)",
+        "unplannedLabel": "Unplanned",
+        "plannedLabel": "Planned",
+        "failureCategories": "Illustrative breakdown categories",
+        "mttr": "Mean time to repair · MTTR",
+        "mttrNote": "Average for {count} resolved sample incidents",
+        "mtbf": "Mean time between failures · MTBF",
+        "mtbfNote": "Illustrative 7,200 run hours ÷ 4 sample failures",
+        "calculationNote": "The October sample rows total {hours} downtime hours. MTTR is calculated from these resolved examples; the MTBF value uses the explicitly illustrative run-hour basis above.",
+        "aug": "Aug",
+        "sep": "Sep",
+        "oct": "Oct"
+      },
+      "calibration": {
+        "upcomingTitle": "Upcoming within 30 days:",
+        "upcomingDescription": "3 illustrative instruments have November dates; 1 failed result has a follow-up due in the same period.",
+        "note": "Certificate references and outcomes are demonstration examples only. This preview does not claim regulatory certification or verified instrument traceability."
+      },
+      "values": {
+        "Critical": "Critical",
+        "High": "High",
+        "Medium": "Medium",
+        "Low": "Low",
+        "Operational": "Operational",
+        "Maintenance": "Maintenance",
+        "Standby": "Standby",
+        "Coating": "Coating",
+        "Thermal": "Thermal",
+        "Process": "Process",
+        "Rolling": "Rolling",
+        "Lifting": "Lifting",
+        "Utilities": "Utilities",
+        "Measurement": "Measurement",
+        "Preventive": "Preventive",
+        "Inspection": "Inspection",
+        "90 days": "90 days",
+        "30 days": "30 days",
+        "Quarterly": "Quarterly",
+        "500 run hrs": "500 run hrs",
+        "Monthly": "Monthly",
+        "Annual": "Annual",
+        "Overdue": "Overdue",
+        "Due soon": "Due soon",
+        "Scheduled": "Scheduled",
+        "Corrective": "Corrective",
+        "Breakdown": "Breakdown",
+        "Urgent": "Urgent",
+        "Open": "Open",
+        "In progress": "In progress",
+        "Completed": "Completed",
+        "Cancelled": "Cancelled",
+        "Mechanical": "Mechanical",
+        "Electrical": "Electrical",
+        "Closed": "Closed",
+        "Pass": "Pass",
+        "Review": "Review",
+        "Fail": "Fail",
+        "Current": "Current",
+        "Action required": "Action required",
+        "Low stock": "Low stock",
+        "In stock": "In stock"
+      },
+      "workflow": {
+        "eyebrow": "A connected maintenance cycle",
+        "title": "Plan the work. Learn from every event.",
+        "description": "Illustrate a coordinated path from asset records and scheduled care to completed work and operational insight.",
+        "steps": [
+          { "title": "Equipment registration", "description": "Capture asset identity, location, criticality, and operating context." },
+          { "title": "Maintenance scheduling", "description": "Plan service intervals and surface upcoming inspections." },
+          { "title": "Work order coordination", "description": "Triage work, clarify priority, and identify an assigned technician." },
+          { "title": "Parts and completion", "description": "Connect example parts needs with completion notes and downtime review." }
+        ]
+      },
+      "benefits": {
+        "eyebrow": "Why maintenance visibility matters",
+        "title": "Give teams a clearer view of reliability.",
+        "items": [
+          { "title": "Reduce avoidable downtime", "description": "Use planned work and recurring insights to discuss interruption risks." },
+          { "title": "Improve asset visibility", "description": "Keep equipment details, locations, status, and ownership easier to find." },
+          { "title": "Plan maintenance earlier", "description": "See overdue and upcoming schedules before the work queue gets crowded." },
+          { "title": "Respond to breakdowns faster", "description": "Make priority, assignment, and status visible across maintenance work." },
+          { "title": "Control spare parts costs", "description": "Review stock thresholds and illustrative inventory value in context." },
+          { "title": "Strengthen calibration tracking", "description": "Bring dates, example results, and certificate references into one view." }
+        ]
+      },
+      "industries": {
+        "eyebrow": "Designed for asset-intensive teams",
+        "title": "Built around industrial operations.",
+        "description": "A maintenance showcase for teams that coordinate equipment, people, and parts across complex facilities.",
+        "items": [
+          { "title": "Manufacturing plants", "description": "Production lines and process equipment" },
+          { "title": "Steel mills", "description": "Furnaces, cranes, and rolling assets" },
+          { "title": "Textile facilities", "description": "Machinery, utilities, and service cycles" },
+          { "title": "Energy & utilities", "description": "Generators and critical plant equipment" },
+          { "title": "Engineering organizations", "description": "Multi-site equipment and service teams" }
+        ]
+      },
+      "cta": {
+        "eyebrow": "Explore EdenERP",
+        "title": "Make maintenance",
+        "titleHighlight": "more visible.",
+        "description": "See how EdenERP can bring equipment, maintenance planning, and operational context into one connected experience.",
+        "button": "Request a demonstration",
+        "note": "Showcase only · no operational maintenance records are created"
       }
     },
     "accounting-firm": {

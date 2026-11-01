@@ -75,6 +75,17 @@ const appsMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
+    titleKey: "menu.apps.engineeringMaintenance",
+    accentClass: "text-indigo-600",
+    underlineClass: "bg-indigo-200",
+    links: [
+      {
+        labelKey: "menu.apps.engineeringMaintenance",
+        href: "/apps/engineering-maintenance",
+      },
+    ],
+  },
+  {
     titleKey: "menu.apps.fundAccounting",
     accentClass: "text-emerald-700",
     underlineClass: "bg-emerald-200",
