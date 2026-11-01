@@ -64,6 +64,17 @@ const appsMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
+    titleKey: "menu.apps.analytics",
+    accentClass: "text-emerald-600",
+    underlineClass: "bg-emerald-200",
+    links: [
+      {
+        labelKey: "menu.apps.biAnalyticsReporting",
+        href: "/apps/analytics/bi-analytics-reporting",
+      },
+    ],
+  },
+  {
     titleKey: "menu.apps.fundAccounting",
     accentClass: "text-emerald-700",
     underlineClass: "bg-emerald-200",
