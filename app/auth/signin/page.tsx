@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { signIn, useSession } from "next-auth/react";
 import {
   ArrowRight,
@@ -89,10 +90,14 @@ export default function SignInPage() {
         <div className="w-full max-w-md">
           {/* Logo */}
           <div className="mb-8 text-center">
-            <div className="inline-flex items-center gap-2">
-              <span className="text-3xl font-black tracking-tight text-indigo-800">Adon</span>
-              <span className="text-3xl font-semibold text-teal-600">ERP</span>
-            </div>
+            <Image
+              src="/adon_erp_logo.png"
+              alt="Adon ERP logo"
+              width={1801}
+              height={1000}
+              className="mx-auto h-20 w-auto"
+              priority
+            />
             <p className="mt-2 text-sm text-slate-500">Sign in to your account</p>
           </div>
 
