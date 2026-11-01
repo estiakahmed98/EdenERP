@@ -96,7 +96,16 @@
           "appraisals": "Appraisals",
           "attendance": "Attendance",
           "payroll": "Payroll",
+          "budgetManagement": "Budget Management",
+          "fundAccounting": "Fund Accounting",
+          "fundDashboard": "Fund Dashboard",
+          "grants": "Grants",
+          "donorsFunds": "Donors & Funds",
+          "fundReports": "Fund Reports",
+          "beneficiariesME": "Beneficiaries & M&E",
+          "costAllocation": "Cost Allocation",
           "project": "Project Accounting",
+          "projects": "Projects",
           "timesheets": "Timesheets",
           "helpdesk": "Helpdesk",
           "planning": "Planning",
@@ -643,6 +652,7 @@
         "titleEnd": "potential",
         "button": "Start now"
       }
+
     },
     "appointments": {
       "metadata": {
@@ -13210,10 +13220,943 @@
         "button": "Start now"
       }
     },
+    "budgetManagement": {
+      "metadata": {
+        "title": "Budget Management | EdenERP",
+        "description": "Plan departmental budgets, review versions, coordinate approvals, and monitor spending with the EdenERP Budget Management showcase."
+      },
+      "hero": {
+        "eyebrow": "Budget Management",
+        "title": "Plan with confidence.",
+        "titleHighlight": "Spend with clarity.",
+        "description": "Bring every department, budget version, and approval into one clear planning story. Give finance teams the visibility to guide spending before it becomes a surprise.",
+        "primaryCta": "Request a demo",
+        "secondaryCta": "Explore the workflow",
+        "highlights": [
+          "Version-ready planning",
+          "Clear approval paths",
+          "Illustrative demo data"
+        ],
+        "preview": {
+          "accessibleLabel": "Illustrative budget overview dashboard",
+          "title": "Annual budget overview",
+          "period": "FY 2025 · Consolidated plan",
+          "demoBadge": "Demo preview",
+          "metrics": [
+            {
+              "label": "Approved budget",
+              "value": "$2.48M",
+              "change": "FY plan"
+            },
+            {
+              "label": "Actual spend",
+              "value": "$1.79M",
+              "change": "72% of plan"
+            },
+            {
+              "label": "Remaining",
+              "value": "$690K",
+              "change": "Within target"
+            },
+            {
+              "label": "Variance",
+              "value": "+2.4%",
+              "change": "Needs review"
+            }
+          ],
+          "chartTitle": "Budget utilization",
+          "chartPeriod": "FY 2025",
+          "chartLabels": [
+            "Jan",
+            "Mar",
+            "May",
+            "Jul",
+            "Sep",
+            "Dec"
+          ],
+          "remainingLabel": "Available this year",
+          "remainingValue": "$690,000",
+          "utilizationLabel": "Budget utilized",
+          "utilizationValue": "72%",
+          "utilizationAccessible": "{value} of the illustrative budget utilized",
+          "footnote": "Illustrative figures only — no live financial data."
+        }
+      },
+      "versions": {
+        "eyebrow": "Version control",
+        "title": "Every revision, clearly accounted for.",
+        "description": "Compare the annual plan with proposed changes, preserve a clear history, and make the approved version easy to recognize.",
+        "currentBadge": "Current plan",
+        "cards": [
+          {
+            "name": "FY 2025 · Approved plan",
+            "state": "Approved",
+            "date": "Effective Jan 01, 2025",
+            "amount": "$2,480,000",
+            "note": "Consolidated annual budget"
+          },
+          {
+            "name": "FY 2025 · Revised forecast",
+            "state": "In review",
+            "date": "Submitted Aug 14, 2025",
+            "amount": "$2,540,000",
+            "note": "Proposed change +2.4%"
+          },
+          {
+            "name": "FY 2024 · Final",
+            "state": "Archived",
+            "date": "Closed Dec 31, 2024",
+            "amount": "$2,310,000",
+            "note": "Previous year reference"
+          }
+        ],
+        "emptyStateTitle": "A clean starting point for the next plan.",
+        "emptyStateDescription": "An illustrative new-version state, ready for a team to begin planning.",
+        "emptyStateBadge": "Empty-state preview",
+        "footnote": "Review draft, revised, approved, and archived plans side by side."
+      },
+      "planning": {
+        "eyebrow": "Departmental planning",
+        "title": "Bring every team into the plan.",
+        "description": "Collect departmental requests, map them to cost centers, and consolidate proposals into a single organization-wide view.",
+        "utilizationLabel": "Request progress",
+        "departments": [
+          {
+            "name": "Product & Engineering",
+            "owner": "Cost center · ENG-01",
+            "allocation": "$620K",
+            "utilization": 78
+          },
+          {
+            "name": "Sales & Marketing",
+            "owner": "Cost center · GTM-02",
+            "allocation": "$480K",
+            "utilization": 64
+          },
+          {
+            "name": "Operations",
+            "owner": "Cost center · OPS-03",
+            "allocation": "$390K",
+            "utilization": 91
+          },
+          {
+            "name": "People & Culture",
+            "owner": "Cost center · PPL-04",
+            "allocation": "$275K",
+            "utilization": 52
+          }
+        ],
+        "footerPoints": [
+          "Department requests",
+          "Cost-center allocation",
+          "Consolidated planning"
+        ]
+      },
+      "workflow": {
+        "eyebrow": "Multi-stage approval",
+        "title": "A thoughtful path from request to approved plan.",
+        "description": "Give each stakeholder a clear review point, with the right context before a budget moves forward.",
+        "steps": [
+          {
+            "title": "Budget creation",
+            "description": "Departments prepare their plans and supporting notes."
+          },
+          {
+            "title": "Department review",
+            "description": "Leads check priorities and cost-center alignment."
+          },
+          {
+            "title": "Finance review",
+            "description": "Finance consolidates requests and checks variances."
+          },
+          {
+            "title": "Management approval",
+            "description": "Leaders review the complete organization-wide plan."
+          },
+          {
+            "title": "Final budget",
+            "description": "Teams align to a clear, approved plan."
+          }
+        ],
+        "footnote": "Approval stages shown as a product illustration. No approvals are processed on this page."
+      },
+      "monitoring": {
+        "eyebrow": "Budget monitoring",
+        "title": "Know what is planned, spent, and still available.",
+        "description": "Compare actuals with plan, spot unusual movement, and understand variance by department before it affects the wider forecast.",
+        "alertTitle": "Variance to review",
+        "alertDescription": "Operations is approaching its illustrative allocation. A timely review can keep the forecast on track.",
+        "panelTitle": "Budget vs. actual",
+        "panelSubtitle": "Illustrative consolidated view · FY 2025",
+        "demoBadge": "Sample data",
+        "plannedLabel": "Planned",
+        "plannedValue": "$2,480,000",
+        "actualLabel": "Actual",
+        "actualValue": "$1,790,000",
+        "remainingLabel": "Remaining",
+        "remainingValue": "$690,000",
+        "departments": [
+          {
+            "name": "Product & Engineering",
+            "planned": "$620K",
+            "actual": "$484K",
+            "utilization": 78,
+            "variance": "−22%"
+          },
+          {
+            "name": "Sales & Marketing",
+            "planned": "$480K",
+            "actual": "$307K",
+            "utilization": 64,
+            "variance": "−36%"
+          },
+          {
+            "name": "Operations",
+            "planned": "$390K",
+            "actual": "$355K",
+            "utilization": 91,
+            "variance": "−9%"
+          },
+          {
+            "name": "People & Culture",
+            "planned": "$275K",
+            "actual": "$143K",
+            "utilization": 52,
+            "variance": "−48%"
+          }
+        ]
+      },
+      "table": {
+        "eyebrow": "Budget version preview",
+        "title": "A version register that is easy to scan.",
+        "description": "See fiscal year, revision, review status, and approval at a glance. Example records below are demonstration data, not live budgets.",
+        "demoBadge": "Example data",
+        "panelTitle": "Budget versions",
+        "headers": [
+          "Fiscal year",
+          "Budget version",
+          "Version no.",
+          "Status",
+          "Approval"
+        ],
+        "actionsHeader": "Actions",
+        "newVersionLabel": "New budget version",
+        "rows": [
+          {
+            "year": "FY 2025",
+            "name": "Annual operating budget",
+            "number": "V3.0",
+            "status": "Approved",
+            "approval": "Approved · Jan 08"
+          },
+          {
+            "year": "FY 2025",
+            "name": "Mid-year forecast",
+            "number": "V2.1",
+            "status": "In review",
+            "approval": "Finance review"
+          },
+          {
+            "year": "FY 2025",
+            "name": "Initial proposal",
+            "number": "V1.0",
+            "status": "Draft",
+            "approval": "Not submitted"
+          },
+          {
+            "year": "FY 2024",
+            "name": "Annual operating budget",
+            "number": "V2.0",
+            "status": "Archived",
+            "approval": "Approved · Jan 12"
+          }
+        ],
+        "printLabel": "Print",
+        "previewAction": "Decorative actions preview",
+        "footerNote": "Showcase preview only · No live budgets or actions",
+        "rowsCount": "{count, plural, one {# example version} other {# example versions}}"
+      },
+      "reports": {
+        "eyebrow": "Reports & exports",
+        "title": "Turn budget detail into a clear story.",
+        "description": "Bring the right view to every conversation, from a quick summary to a focused variance review.",
+        "items": [
+          {
+            "title": "Budget summary",
+            "description": "A concise view of approved plans, requests, and remaining balances."
+          },
+          {
+            "title": "Departmental reports",
+            "description": "Review allocations and spending patterns by team or cost center."
+          },
+          {
+            "title": "Budget vs. actual",
+            "description": "Compare planned amounts with illustrative actual spending."
+          },
+          {
+            "title": "Variance analysis",
+            "description": "Highlight meaningful differences and areas that need attention."
+          }
+        ],
+        "exportLabel": "Example report formats",
+        "printLabel": "Print",
+        "showcaseOnly": "CSV, Excel, and print controls are visual examples only."
+      },
+      "benefits": {
+        "eyebrow": "Business benefits",
+        "title": "More confidence in every budget decision.",
+        "description": "Connect planning discipline with a shared view of progress, approvals, and accountability.",
+        "items": [
+          {
+            "title": "Better financial planning",
+            "description": "Build forecasts from clear, consolidated departmental inputs."
+          },
+          {
+            "title": "Improved spending control",
+            "description": "See how actual spend compares with planned allocations."
+          },
+          {
+            "title": "Transparent approvals",
+            "description": "Make ownership and review stages visible to every stakeholder."
+          },
+          {
+            "title": "Faster coordination",
+            "description": "Bring departments and finance together around one plan."
+          },
+          {
+            "title": "Budget accountability",
+            "description": "Keep cost centers aligned with agreed budgets and priorities."
+          },
+          {
+            "title": "Better management decisions",
+            "description": "Give leaders timely context for thoughtful trade-offs."
+          }
+        ]
+      },
+      "finalCta": {
+        "title": "Make your next budget a shared success.",
+        "description": "See how EdenERP can bring version control, departmental planning, approvals, and budget visibility into a connected experience.",
+        "button": "Talk to our team",
+        "caption": "A guided product demonstration, tailored to your planning process."
+      }
+    },
+    "fundAccounting": {
+      "dashboard": {
+        "metadata": {
+          "title": "Fund Dashboard | EdenERP",
+          "description": "Explore a sample fund dashboard for grant visibility, donor oversight, restricted funding, and nonprofit accountability."
+        },
+        "hero": {
+          "eyebrow": "Fund Accounting · Fund Dashboard",
+          "title": "Every fund, in",
+          "titleHighlight": "clear view.",
+          "description": "Give nonprofit finance teams a connected view of donor commitments, restricted funds, grant spending, and upcoming funding milestones.",
+          "primaryCta": "Request a demonstration",
+          "secondaryCta": "Explore the dashboard",
+          "sampleNote": "All figures are illustrative BDT examples, not live financial data.",
+          "metrics": [
+            { "label": "Active grants", "value": "4", "detail": "Across programmes" },
+            { "label": "Total donors", "value": "5", "detail": "Illustrative portfolio" },
+            { "label": "Grant awards", "value": "৳142.42M", "detail": "Sample commitments" },
+            { "label": "Total spending", "value": "৳26.913M", "detail": "Sample actuals" },
+            { "label": "Burn rate", "value": "18.9%", "detail": "Spent against awards" },
+            { "label": "Available funds", "value": "৳115.507M", "detail": "Award less spending" },
+            { "label": "Pending tranches", "value": "৳44.136M", "detail": "Expected funding" }
+          ]
+        },
+        "previewSection": {
+          "eyebrow": "Illustrative dashboard",
+          "title": "A trustworthy overview across every funding stream.",
+          "description": "Review restriction balances, donor concentration, grant utilization, and items that may need a closer look.",
+          "note": "The dashboard is a visual product concept populated with demonstration figures only."
+        },
+        "preview": {
+          "title": "Organization fund overview",
+          "subtitle": "Consolidated programme portfolio · FY 2025",
+          "sampleLabel": "Sample data",
+          "period": "FY 2025",
+          "restrictionTitle": "Funds by restriction",
+          "restrictionHeaders": ["Restriction", "Received", "Spent", "Available"],
+          "restrictions": [
+            { "name": "Temporarily restricted", "received": "৳91.784M", "spent": "৳19.979M", "available": "৳71.805M" },
+            { "name": "Permanently restricted", "received": "৳12.000M", "spent": "৳0", "available": "৳12.000M" },
+            { "name": "Unrestricted", "received": "৳38.636M", "spent": "৳6.934M", "available": "৳31.702M" }
+          ],
+          "availableTitle": "Illustrative available balance",
+          "availableValue": "৳115.507M",
+          "availableCaption": "Awards less sample spending",
+          "donorTitle": "Donor portfolio overview",
+          "donorHeaders": ["Donor", "Grants", "Award", "Spent"],
+          "donors": [
+            { "name": "UNICEF", "grantCount": "1", "award": "৳31.2M", "spent": "৳9.896M" },
+            { "name": "FCDO", "grantCount": "1", "award": "৳47.12M", "spent": "৳3.229M" },
+            { "name": "World Bank", "grantCount": "1", "award": "৳57.6M", "spent": "৳6.854M" },
+            { "name": "Corporate CSR Fund", "grantCount": "1", "award": "৳6.5M", "spent": "৳6.934M" },
+            { "name": "Regional Relief Trust", "grantCount": "0", "award": "৳0", "spent": "৳0" }
+          ],
+          "attentionTitle": "Grants needing attention",
+          "attentionCaption": "Sample utilization indicators for follow-up and review.",
+          "burnLabel": "utilized",
+          "attentionGrants": [
+            { "code": "GR-CSR-2026", "title": "Community Enterprise Support", "donor": "Corporate CSR Fund", "burn": 106.68, "status": "Overspent" },
+            { "code": "GR-EDU-2026", "title": "Education Access Programme", "donor": "UNICEF", "burn": 31.72, "status": "In progress" },
+            { "code": "GR-WASH-2026", "title": "Safe Water Access", "donor": "World Bank", "burn": 11.9, "status": "In progress" }
+          ],
+          "portfolio": [
+            { "label": "Temporarily restricted", "value": "64.5%" },
+            { "label": "Permanently restricted", "value": "8.4%" },
+            { "label": "Unrestricted", "value": "27.1%" },
+            { "label": "Funding due", "value": "৳44.136M" }
+          ]
+        },
+        "features": {
+          "eyebrow": "At-a-glance oversight",
+          "title": "Connect the financial signals that matter.",
+          "description": "Bring a portfolio-level view together with the grant and restriction detail behind it.",
+          "items": [
+            { "title": "Grant portfolio", "description": "See active awards, programme coverage, and grant status in one overview." },
+            { "title": "Restriction visibility", "description": "Distinguish unrestricted, temporarily restricted, and permanently restricted balances." },
+            { "title": "Spending progress", "description": "Compare illustrative spending with awards and track utilization over time." },
+            { "title": "Donor overview", "description": "Understand funding sources, donor mix, and portfolio concentration." },
+            { "title": "Funding milestones", "description": "Highlight pending tranches and upcoming grant dates for review." },
+            { "title": "Attention indicators", "description": "Bring forecast pressure and follow-up items into the finance team's view." }
+          ]
+        },
+        "workflow": {
+          "eyebrow": "Connected oversight",
+          "title": "From donor commitment to accountable impact.",
+          "description": "A shared overview helps teams connect incoming funding with delivery, monitoring, and transparent reporting.",
+          "steps": [
+            { "title": "Record commitments", "description": "Organize sample donor awards and funding restrictions." },
+            { "title": "Map to grants", "description": "Connect commitments with funded programmes and timelines." },
+            { "title": "Monitor spending", "description": "Review utilization, balances, and expected tranches." },
+            { "title": "Review results", "description": "Bring programme and finance signals into context." },
+            { "title": "Report clearly", "description": "Prepare a consistent view for organizational stakeholders." }
+          ]
+        },
+        "benefits": {
+          "eyebrow": "Why fund visibility matters",
+          "title": "Build confidence through a shared financial picture.",
+          "description": "A clear overview supports better stewardship across finance, programme, and leadership teams.",
+          "items": [
+            { "title": "Stronger stewardship", "description": "Keep donor commitments and fund purposes visible in planning conversations." },
+            { "title": "Earlier awareness", "description": "Surface utilization trends and upcoming funding events sooner." },
+            { "title": "Clearer accountability", "description": "Give teams a consistent way to discuss programme resources." },
+            { "title": "Connected teams", "description": "Align finance and programme colleagues around a shared portfolio view." },
+            { "title": "Better donor communication", "description": "Use consistent information when preparing donor updates and reports." },
+            { "title": "More informed decisions", "description": "Help leaders understand available resources and funding conditions." }
+          ]
+        },
+        "finalCta": {
+          "title": "Bring greater clarity to every funding conversation.",
+          "description": "Explore how EdenERP can support a connected view of grants, donors, restrictions, and programme outcomes.",
+          "button": "Talk to our team"
+        }
+      },
+      "grants": {
+        "metadata": {
+          "title": "Grants | EdenERP",
+          "description": "Explore a sample grant register with donor awards, spending progress, funding tranches, monitoring, and grant lifecycle visibility."
+        },
+        "hero": {
+          "eyebrow": "Fund Accounting · Grants",
+          "title": "Every grant,",
+          "titleHighlight": "accountable.",
+          "description": "Connect grant awards, donor expectations, budgets, funding tranches, and delivery milestones with one clear grant portfolio view.",
+          "primaryCta": "Request a demonstration",
+          "secondaryCta": "View the grant register",
+          "sampleNote": "Illustrative grant records and BDT amounts for product demonstration only.",
+          "metrics": [
+            { "label": "Active grants", "value": "4", "detail": "Current sample portfolio" },
+            { "label": "Total awards", "value": "৳142.42M", "detail": "Illustrative commitments" },
+            { "label": "Sample expenditure", "value": "৳26.913M", "detail": "Across preview rows" },
+            { "label": "Funding tranches", "value": "07", "detail": "Upcoming milestones" }
+          ]
+        },
+        "previewSection": {
+          "eyebrow": "Grant register preview",
+          "title": "A practical view of awards, status, and burn rate.",
+          "description": "Scan grant codes, donor details, dates, spending progress, and lifecycle status from one register."
+        },
+        "preview": {
+          "title": "Grant register",
+          "subtitle": "Award portfolio · Illustrative records",
+          "sampleLabel": "Demonstration",
+          "registerCaption": "Example grant records · base-currency values shown in BDT",
+          "allStatuses": "All statuses",
+          "addGrantPreview": "New grant",
+          "headers": ["Grant code", "Grant title", "Donor", "Status", "Award", "Spent", "Burn rate", "End date"],
+          "rows": [
+            { "code": "GR-DRR-2027", "title": "Flood Preparedness Programme", "donor": "Regional Relief Trust", "status": "Pipeline", "award": "৳9.8M", "spent": "৳0", "burn": 0, "dates": "Jun 2027" , "endDate": "Dec 2028" },
+            { "code": "GR-CSR-2026", "title": "Community Enterprise Support", "donor": "Corporate CSR Fund", "status": "Active", "award": "৳6.5M", "spent": "৳6.934M", "burn": 106.68, "dates": "Jan 2026 – Dec 2026", "endDate": "Dec 2026" },
+            { "code": "GR-EDU-2026", "title": "Education Access Programme", "donor": "UNICEF", "status": "Active", "award": "৳31.2M · USD 260k", "spent": "৳9.896M", "burn": 31.72, "dates": "Jan 2026 – Dec 2027", "endDate": "Dec 2027" },
+            { "code": "GR-WASH-2026", "title": "Safe Water Access", "donor": "World Bank", "status": "Active", "award": "৳57.6M · USD 480k", "spent": "৳6.854M", "burn": 11.9, "dates": "Jan 2026 – Dec 2028", "endDate": "Dec 2028" },
+            { "code": "GR-LIV-2026", "title": "Livelihoods Programme", "donor": "FCDO", "status": "Active", "award": "৳47.12M · GBP 310k", "spent": "৳3.229M", "burn": 6.85, "dates": "Apr 2026 – Mar 2028", "endDate": "Mar 2028" }
+          ],
+          "tranches": [
+            { "title": "Tranche schedule", "detail": "Illustrative milestones and expected donor disbursement dates." },
+            { "title": "Budget vs. actual", "detail": "Compare grant allocations with sample expenditure by period." },
+            { "title": "Grant monitoring", "detail": "Keep review dates, deliverables, and reporting moments visible." }
+          ]
+        },
+        "features": {
+          "eyebrow": "Grant oversight",
+          "title": "Keep award details connected to delivery.",
+          "description": "Use a grant-centric view to follow the lifecycle from proposal through reporting and closure.",
+          "items": [
+            { "title": "Grant register", "description": "Organize grant codes, titles, donors, dates, statuses, and award values." },
+            { "title": "Budget vs. actual", "description": "Compare budget categories with sample expenditures and remaining balances." },
+            { "title": "Funding tranches", "description": "Visualize expected funding milestones and disbursement timing." },
+            { "title": "Burn-rate monitoring", "description": "Review spending progress alongside grant timelines and planned delivery." },
+            { "title": "Lifecycle visibility", "description": "Distinguish pipeline, active, completed, and closed grant records." },
+            { "title": "Monitoring context", "description": "Keep donor reports, review dates, and programme milestones in view." }
+          ]
+        },
+        "workflow": {
+          "eyebrow": "Grant lifecycle",
+          "title": "Follow each award from proposal to closure.",
+          "description": "A consistent lifecycle view makes funding milestones and reporting responsibilities easier to coordinate.",
+          "steps": [
+            { "title": "Grant proposal", "description": "Capture the proposed programme and funding request." },
+            { "title": "Award", "description": "Record the sample award terms, donor, and dates." },
+            { "title": "Funding tranches", "description": "Map expected disbursements to milestone timing." },
+            { "title": "Spending & monitoring", "description": "Review grant budget progress and delivery indicators." },
+            { "title": "Closure", "description": "Bring final reporting and grant close-out into view." }
+          ]
+        },
+        "benefits": {
+          "eyebrow": "Grant management value",
+          "title": "Make grant oversight easier to coordinate.",
+          "description": "Give finance and programme colleagues shared context for managing donor-funded work.",
+          "items": [
+            { "title": "Clear award status", "description": "Understand which grants are being proposed, delivered, or closed." },
+            { "title": "Funding foresight", "description": "Keep expected tranches and donor milestones visible." },
+            { "title": "Budget awareness", "description": "Review grant expenditure against agreed award plans." },
+            { "title": "Better monitoring", "description": "Connect financial progress with programme review points." },
+            { "title": "Donor readiness", "description": "Keep grant information organized for periodic updates." },
+            { "title": "Consistent close-out", "description": "Make key dates and reporting expectations easier to follow." }
+          ]
+        },
+        "finalCta": {
+          "title": "Bring your grant portfolio into clearer focus.",
+          "description": "See how EdenERP can connect grant records, donor commitments, spending visibility, and monitoring context.",
+          "button": "Explore a guided demo"
+        }
+      },
+      "donorsFunds": {
+        "metadata": {
+          "title": "Donors & Funds | EdenERP",
+          "description": "Explore donor portfolio and fund restriction previews for nonprofit organizations managing donor-supported programmes."
+        },
+        "hero": {
+          "eyebrow": "Fund Accounting · Donors & Funds",
+          "title": "Honor every",
+          "titleHighlight": "funding purpose.",
+          "description": "Bring donor relationships and fund restrictions into view, so teams can understand where resources came from and how they are designated.",
+          "primaryCta": "Request a demonstration",
+          "secondaryCta": "Explore donors and funds",
+          "sampleNote": "Sample organizations, classifications, and balances are illustrative only.",
+          "metrics": [
+            { "label": "Donor partners", "value": "5", "detail": "Illustrative directory" },
+            { "label": "Donor categories", "value": "04", "detail": "Foundation to multilateral" },
+            { "label": "Tracked funds", "value": "4", "detail": "Across sample programmes" },
+            { "label": "Available balance", "value": "৳115.507M", "detail": "Across preview fund rows" }
+          ]
+        },
+        "previewSection": {
+          "eyebrow": "Donor & fund registers",
+          "title": "Understand the relationship between donors and resources.",
+          "description": "Review donor profiles alongside fund restriction, receipts, spending, and balances."
+        },
+        "preview": {
+          "title": "Donor and fund overview",
+          "subtitle": "Example donor directory and fund register",
+          "sampleLabel": "Sample records",
+          "foreignLabel": "Foreign",
+          "donorsTitle": "Donor portfolio",
+          "donorHeaders": ["Donor code", "Donor", "Type", "Country"],
+          "donors": [
+            { "code": "DN-0104", "name": "UNICEF", "type": "UN Agency", "country": "United States", "foreign": true },
+            { "code": "DN-0088", "name": "FCDO", "type": "Bilateral", "country": "United Kingdom", "foreign": true },
+            { "code": "DN-0152", "name": "World Bank", "type": "Multilateral", "country": "United States", "foreign": true },
+            { "code": "DN-0021", "name": "Corporate CSR Fund", "type": "Corporate", "country": "Bangladesh", "foreign": false },
+            { "code": "DN-0177", "name": "Regional Relief Trust", "type": "Foundation", "country": "Bangladesh", "foreign": false }
+          ],
+          "fundsTitle": "Fund balances by restriction",
+          "fundHeaders": ["Fund code / name", "Restriction", "Received", "Spent", "Available"],
+          "funds": [
+            { "code": "FD-101", "name": "Climate Resilience", "restriction": "Temporary", "received": "৳45.000M", "spent": "৳10.000M", "balance": "৳35.000M" },
+            { "code": "FD-108", "name": "Community Health", "restriction": "Temporary", "received": "৳46.784M", "spent": "৳9.979M", "balance": "৳36.805M" },
+            { "code": "FD-115", "name": "Endowment Fund", "restriction": "Permanent", "received": "৳12.000M", "spent": "৳0", "balance": "৳12.000M" },
+            { "code": "FD-122", "name": "Core Operations", "restriction": "Unrestricted", "received": "৳38.636M", "spent": "৳6.934M", "balance": "৳31.702M" }
+          ],
+          "restrictionNote": "A restriction describes the designated purpose of a fund. These preview records do not represent live donor accounts or balances."
+        },
+        "features": {
+          "eyebrow": "Relationships & restrictions",
+          "title": "Keep the source and purpose of funds in context.",
+          "description": "A connected donor and fund view helps teams follow commitments while respecting designated use.",
+          "items": [
+            { "title": "Donor directory", "description": "Keep donor codes, names, locations, and relationship details organized." },
+            { "title": "Donor classification", "description": "Group foundation, corporate, bilateral, and multilateral partners." },
+            { "title": "Portfolio overview", "description": "Understand the scale and mix of illustrative donor commitments." },
+            { "title": "Fund restriction", "description": "Distinguish unrestricted, temporarily restricted, and permanently restricted funds." },
+            { "title": "Balance visibility", "description": "Compare illustrative receipts, spending, and remaining availability." },
+            { "title": "Purpose awareness", "description": "Keep funding designations visible when teams plan programme resources." }
+          ]
+        },
+        "workflow": {
+          "eyebrow": "Donor-to-fund context",
+          "title": "Connect who contributed with what the fund supports.",
+          "description": "A clear relationship between donor records, designated funds, and funded work supports responsible stewardship.",
+          "steps": [
+            { "title": "Know the donor", "description": "Organize partner details and donor classification." },
+            { "title": "Record the commitment", "description": "Keep award and contribution context together." },
+            { "title": "Designate the fund", "description": "Clarify restrictions and intended programme purpose." },
+            { "title": "Review activity", "description": "Follow illustrative receipts, spending, and balances." },
+            { "title": "Share the story", "description": "Prepare consistent context for internal and donor updates." }
+          ]
+        },
+        "benefits": {
+          "eyebrow": "Responsible stewardship",
+          "title": "Build a more complete picture of funding relationships.",
+          "description": "Connect relationship management with financial context and designated purpose.",
+          "items": [
+            { "title": "Clear donor records", "description": "Keep partner details in a consistent, accessible structure." },
+            { "title": "Purpose-aware planning", "description": "Help teams recognize restrictions when reviewing resources." },
+            { "title": "Balance transparency", "description": "Make sample receipts, spending, and availability easier to understand." },
+            { "title": "Partner visibility", "description": "Understand the portfolio mix across donor types." },
+            { "title": "Better coordination", "description": "Connect finance, partnerships, and programme conversations." },
+            { "title": "Stronger accountability", "description": "Support clear discussions about funding intent and use." }
+          ]
+        },
+        "finalCta": {
+          "title": "Make donor and fund context easier to share.",
+          "description": "Explore a connected view of donor partners, funding designations, and programme resources.",
+          "button": "Talk to our team"
+        }
+      },
+      "reports": {
+        "metadata": {
+          "title": "Fund Reports | EdenERP",
+          "description": "Explore nonprofit fund reporting concepts, sample fund statements, and an informational overview of NGOAB-related reporting topics."
+        },
+        "hero": {
+          "eyebrow": "Fund Accounting · Fund Reports",
+          "title": "Make every report",
+          "titleHighlight": "tell the whole story.",
+          "description": "Bring fund balances, income, expenditure, grant utilization, and donor reporting into a clear financial narrative for nonprofit stakeholders.",
+          "primaryCta": "Request a demonstration",
+          "secondaryCta": "Explore report examples",
+          "sampleNote": "Illustrative reporting previews only. No official filings are generated.",
+          "metrics": [
+            { "label": "Funds received", "value": "৳142.420M", "detail": "Illustrative income" },
+            { "label": "Released", "value": "৳26.913M", "detail": "Illustrative expenditure" },
+            { "label": "Deferred / available", "value": "৳115.507M", "detail": "Received less expenditure" }
+          ]
+        },
+        "previewSection": {
+          "eyebrow": "Reporting showcase",
+          "title": "From fund activity to stakeholder-ready insight.",
+          "description": "Explore example reporting concepts, a sample statement of activities, and Bangladesh NGOAB-related topics."
+        },
+        "preview": {
+          "reports": [
+            { "title": "Statement of Activities by Fund", "detail": "Summarize fund income and expenditure by designation." },
+            { "title": "Fund Income & Expenditure", "detail": "Review sample funding received and programme spending." },
+            { "title": "Restricted Fund Reporting", "detail": "Present designated resources and related activity." },
+            { "title": "Donor Financial Reports", "detail": "Organize finance context for donor update conversations." },
+            { "title": "Grant Utilization", "detail": "Compare sample grant spending with award amounts." },
+            { "title": "Fund Balances", "detail": "Show illustrative receipts, expenditure, and remaining funds." },
+            { "title": "Deferred Funding", "detail": "Highlight funding received for future periods or milestones." },
+            { "title": "Budget vs. Actual", "detail": "Compare planning figures with sample financial activity." },
+            { "title": "Periodic Summaries", "detail": "Bring period-based fund movements into one view." }
+          ],
+          "summaryTitle": "Statement of activities by fund",
+          "summarySubtitle": "Illustrative period summary · BDT",
+          "sampleLabel": "Sample data",
+          "summaryHeaders": ["Fund", "Restriction", "Income", "Expenditure", "Net change"],
+          "summaryRows": [
+            { "fund": "Climate Resilience", "restriction": "Temporary", "income": "৳45.000M", "expense": "৳10.000M", "netChange": "৳35.000M" },
+            { "fund": "Community Health", "restriction": "Temporary", "income": "৳46.784M", "expense": "৳9.979M", "netChange": "৳36.805M" },
+            { "fund": "Endowment Fund", "restriction": "Permanent", "income": "৳12.000M", "expense": "৳0", "netChange": "৳12.000M" },
+            { "fund": "Core Operations", "restriction": "Unrestricted", "income": "৳38.636M", "expense": "৳6.934M", "netChange": "৳31.702M" }
+          ],
+          "summaryMetrics": [
+            { "label": "Received", "value": "৳142.420M", "detail": "Illustrative income" },
+            { "label": "Released", "value": "৳26.913M", "detail": "Illustrative expenditure" },
+            { "label": "Deferred / available", "value": "৳115.507M", "detail": "Received less expenditure" }
+          ],
+          "totalsLabel": "Total",
+          "totalIncome": "৳142.420M",
+          "totalExpense": "৳26.913M",
+          "totalNetChange": "৳115.507M",
+          "complianceTitle": "Bangladesh NGOAB reporting concepts",
+          "complianceNote": "FD-6, FD-7, foreign donation reporting, project approval documentation, and donor compliance are shown as informational concepts only. This showcase does not generate officially compliant filings and is not legal or compliance advice. Requirements should be confirmed with the appropriate authorities and qualified advisors.",
+          "regulatoryReports": [
+            { "code": "FD-6", "title": "Project proposal", "detail": "Illustrative concept for foreign-funded project approval documentation." },
+            { "code": "FD-7", "title": "Foreign donation receipt", "detail": "Illustrative concept for reporting foreign contributions and related details." }
+          ]
+        },
+        "features": {
+          "eyebrow": "Financial reporting",
+          "title": "Bring fund-level detail into focus.",
+          "description": "Present the information finance teams and funders commonly need to review.",
+          "items": [
+            { "title": "Activities by fund", "description": "Summarize income, expenditure, and balances for each fund." },
+            { "title": "Restricted-fund context", "description": "Keep designated funding and programme purpose visible in reporting." },
+            { "title": "Donor reporting", "description": "Organize sample financial information for donor conversations." },
+            { "title": "Grant utilization", "description": "Compare sample grant expenditures with award values." },
+            { "title": "Deferred funding", "description": "Bring future-period receipts and funding milestones into context." },
+            { "title": "Periodic summaries", "description": "Review fund movements over monthly or other reporting periods." }
+          ]
+        },
+        "workflow": {
+          "eyebrow": "Reporting journey",
+          "title": "Move from organized activity to clear reporting.",
+          "description": "Illustrate a thoughtful reporting sequence without generating live financial statements or filings.",
+          "steps": [
+            { "title": "Organize funds", "description": "Group sample activity by fund and restriction." },
+            { "title": "Review activity", "description": "Bring illustrative income and expenditure together." },
+            { "title": "Compare plans", "description": "Review budget and actual concepts side by side." },
+            { "title": "Prepare summaries", "description": "Arrange finance context for internal and donor review." },
+            { "title": "Confirm requirements", "description": "Validate any external reporting with qualified advisors." }
+          ]
+        },
+        "benefits": {
+          "eyebrow": "Reporting with context",
+          "title": "Help stakeholders understand how funds move.",
+          "description": "Clear report concepts help finance and programme teams communicate with confidence.",
+          "items": [
+            { "title": "Fund transparency", "description": "Present sample income, spending, and balances in one clear view." },
+            { "title": "Donor communication", "description": "Organize consistent finance context for funding partners." },
+            { "title": "Better comparisons", "description": "Bring budget, actuals, and utilization together for review." },
+            { "title": "Period awareness", "description": "Understand how funding activity changes across reporting periods." },
+            { "title": "Compliance awareness", "description": "Keep external reporting concepts visible for informed review." },
+            { "title": "Decision support", "description": "Give leadership a clearer summary of fund activity." }
+          ]
+        },
+        "finalCta": {
+          "title": "Bring a clearer story to your fund reporting.",
+          "description": "Explore how connected fund information can support thoughtful internal and donor reporting.",
+          "button": "Request a product demo"
+        }
+      },
+      "beneficiaries": {
+        "metadata": {
+          "title": "Beneficiaries & M&E | EdenERP",
+          "description": "Explore an illustrative beneficiary and monitoring and evaluation showcase with programme indicators, baselines, targets, and progress."
+        },
+        "hero": {
+          "eyebrow": "Fund Accounting · Beneficiaries & M&E",
+          "title": "Connect programme",
+          "titleHighlight": "spending to outcomes.",
+          "description": "Bring beneficiary reach and monitoring indicators into context with the funding supporting each programme.",
+          "primaryCta": "Request a demonstration",
+          "secondaryCta": "View programme indicators",
+          "sampleNote": "All beneficiary figures are synthetic examples; no personal records are shown.",
+          "metrics": [
+            { "label": "People reached", "value": "1,073", "detail": "Illustrative programme total" },
+            { "label": "Registered beneficiaries", "value": "250", "detail": "Synthetic aggregate" },
+            { "label": "Active beneficiaries", "value": "237", "detail": "Current sample period" },
+            { "label": "Female beneficiaries", "value": "145", "detail": "58% of registered total" },
+            { "label": "Male beneficiaries", "value": "105", "detail": "42% of registered total" }
+          ]
+        },
+        "previewSection": {
+          "eyebrow": "Monitoring & evaluation preview",
+          "title": "See baseline, target, and progress together.",
+          "description": "Connect programme reach with output and outcome indicators, while making indicators at risk easier to notice."
+        },
+        "preview": {
+          "title": "Programme results & indicators",
+          "subtitle": "Community health access · Sample monitoring period",
+          "sampleLabel": "Synthetic data",
+          "demographics": [
+            { "label": "People reached", "value": "5,200", "percent": 100 },
+            { "label": "Female beneficiaries", "value": "2,770", "percent": 53 },
+            { "label": "Male beneficiaries", "value": "2,430", "percent": 47 }
+          ],
+          "indicatorTitle": "Illustrative logical framework",
+          "indicatorSubtitle": "Output and outcome measures · No personal data",
+          "logframeBadge": "Logframe preview",
+          "indicatorSummary": [
+            { "label": "On track", "value": "08", "detail": "Sample indicators" },
+            { "label": "At risk", "value": "02", "detail": "Follow-up suggested" },
+            { "label": "No data", "value": "01", "detail": "Awaiting a report" }
+          ],
+          "indicatorHeaders": ["Indicator", "Type", "Baseline", "Target", "Achieved", "Progress", "Status"],
+          "atRiskLabel": "At risk",
+          "baselineLabel": "Baseline",
+          "targetLabel": "Target",
+          "achievedLabel": "Achieved",
+          "indicators": [
+            { "name": "Women completing community health training", "kind": "Output indicator", "baseline": "0", "target": "1,000", "achieved": "720", "progress": 72, "state": "On track" },
+            { "name": "Households reporting improved health access", "kind": "Outcome indicator", "baseline": "180", "target": "650", "achieved": "390", "progress": 60, "state": "At risk" },
+            { "name": "Community clinics meeting service standards", "kind": "Output indicator", "baseline": "12", "target": "30", "achieved": "24", "progress": 80, "state": "On track" }
+          ],
+          "privacyNote": "Illustrative aggregate metrics only. No real beneficiary identities or records are included."
+        },
+        "features": {
+          "eyebrow": "Programme monitoring",
+          "title": "Keep results and indicators in a shared view.",
+          "description": "Show programme teams how reach, targets, and achievements can be presented alongside funding context.",
+          "items": [
+            { "title": "Beneficiary overview", "description": "Summarize people reached, active participants, and programme coverage." },
+            { "title": "Disaggregated reach", "description": "Present illustrative beneficiary totals by relevant demographic group." },
+            { "title": "Logical framework", "description": "Organize output, outcome, and impact indicators in a familiar structure." },
+            { "title": "Baseline and targets", "description": "Compare starting values with planned targets and achievements." },
+            { "title": "Progress visibility", "description": "Show example completion percentages and progress bars." },
+            { "title": "At-risk indicators", "description": "Highlight measures that may need programme review or follow-up." }
+          ]
+        },
+        "workflow": {
+          "eyebrow": "Monitoring & evaluation",
+          "title": "Plan for outcomes and learn as programmes progress.",
+          "description": "A visible results sequence helps connect intended change with evidence and reporting.",
+          "steps": [
+            { "title": "Programme planning", "description": "Clarify intended participants and programme outcomes." },
+            { "title": "Indicator setup", "description": "Define baseline values, targets, and measurement periods." },
+            { "title": "Beneficiary tracking", "description": "Review aggregate reach and participation over time." },
+            { "title": "Results monitoring", "description": "Compare achievements with targets and spot risks." },
+            { "title": "Impact reporting", "description": "Share programme progress and learning with stakeholders." }
+          ]
+        },
+        "benefits": {
+          "eyebrow": "Better programme insight",
+          "title": "Make progress easier to understand and discuss.",
+          "description": "A clear monitoring view supports learning, transparency, and programme accountability.",
+          "items": [
+            { "title": "Visible reach", "description": "Understand who programmes aim to serve through aggregate metrics." },
+            { "title": "Outcome focus", "description": "Keep indicators connected to intended programme results." },
+            { "title": "Earlier course correction", "description": "Bring at-risk targets to attention before reporting milestones." },
+            { "title": "Shared language", "description": "Align programme and finance teams around progress measures." },
+            { "title": "Evidence-led learning", "description": "Use baseline and achievement comparisons to inform discussion." },
+            { "title": "Responsible reporting", "description": "Present illustrative aggregate results without exposing personal data." }
+          ]
+        },
+        "finalCta": {
+          "title": "Bring programme progress into the funding conversation.",
+          "description": "Explore how finance and programme teams can review resources and results in a connected experience.",
+          "button": "Talk with our team"
+        }
+      },
+      "costAllocation": {
+        "metadata": {
+          "title": "Cost Allocation | EdenERP",
+          "description": "Explore a sample shared-cost allocation preview across donor-funded grants, including allocation bases, distribution, review status, and history."
+        },
+        "hero": {
+          "eyebrow": "Fund Accounting · Cost Allocation",
+          "title": "Make shared costs",
+          "titleHighlight": "easier to explain.",
+          "description": "Illustrate how shared operational expenses may be attributed across donor-funded grants using a documented allocation basis and review trail.",
+          "primaryCta": "Request a demonstration",
+          "secondaryCta": "Explore allocation preview",
+          "sampleNote": "Example attribution only. No cost allocation or accounting entries are performed.",
+          "metrics": [
+            { "label": "Allocation period", "value": "Q3 FY25", "detail": "Illustrative quarter" },
+            { "label": "Allocation amount", "value": "৳1.20M", "detail": "Shared sample costs" },
+            { "label": "Allocation basis", "value": "Personnel", "detail": "Illustrative method" },
+            { "label": "Grants included", "value": "04", "detail": "Sample distribution" },
+            { "label": "Review status", "value": "Reviewed", "detail": "Preview status only" }
+          ]
+        },
+        "previewSection": {
+          "eyebrow": "Shared-cost distribution",
+          "title": "See how a documented basis explains each share.",
+          "description": "Review the sample period, allocation method, proportional distribution, and approval status in one illustrative view."
+        },
+        "preview": {
+          "title": "Shared operations allocation",
+          "subtitle": "Illustrative allocation register · Q3 FY25",
+          "sampleLabel": "Attribution preview",
+          "formTitle": "New allocation preview",
+          "formSubtitle": "Illustrative form layout · no allocation is performed",
+          "previewOnlyLabel": "Demonstration only · controls are not active",
+          "descriptionLabel": "Description",
+          "descriptionValue": "Shared programme support",
+          "cancelPreview": "Cancel",
+          "suggestSplitPreview": "Suggest split",
+          "historyTitle": "Allocation history",
+          "historyHeaders": ["Allocation code", "Period", "Basis", "Amount", "Grants", "Status"],
+          "historyRows": [
+            { "code": "ALLOC-2025-009", "period": "Sep 2025", "basis": "Personnel effort", "amount": "৳420,000", "grants": "4", "status": "Reviewed" },
+            { "code": "ALLOC-2025-008", "period": "Aug 2025", "basis": "Direct cost", "amount": "৳380,000", "grants": "3", "status": "Reviewed" },
+            { "code": "ALLOC-2025-007", "period": "Jul 2025", "basis": "Personnel effort", "amount": "৳400,000", "grants": "4", "status": "Draft" }
+          ],
+          "totalLabel": "Shared cost pool",
+          "totalValue": "৳1,200,000",
+          "periodLabel": "Allocation period",
+          "periodValue": "Q3 FY25",
+          "basisLabel": "Allocation basis",
+          "basisValue": "Personnel effort",
+          "distributionTitle": "Illustrative distribution by grant",
+          "headers": ["Grant code", "Grant / programme", "Basis", "Share", "Amount", "Review"],
+          "allocations": [
+            { "code": "GR-2048", "name": "Coastal Resilience", "basis": "Personnel effort", "share": 40, "amount": "৳480,000", "status": "Reviewed" },
+            { "code": "GR-2031", "name": "Community Health", "basis": "Personnel effort", "share": 30, "amount": "৳360,000", "status": "Reviewed" },
+            { "code": "GR-2012", "name": "Girls in STEM", "basis": "Personnel effort", "share": 20, "amount": "৳240,000", "status": "Reviewed" },
+            { "code": "GR-2095", "name": "Livelihoods Pilot", "basis": "Personnel effort", "share": 10, "amount": "৳120,000", "status": "Reviewed" }
+          ],
+          "methodLabel": "Method {number}",
+          "methods": [
+            { "title": "Direct cost basis", "detail": "Attribute a cost using a clearly documented direct driver." },
+            { "title": "Personnel basis", "detail": "Illustrate allocation in proportion to eligible staff effort." },
+            { "title": "Percentage allocation", "detail": "Show an agreed percentage applied across selected grants." },
+            { "title": "Configurable basis", "detail": "Describe another approved organizational allocation rationale." }
+          ],
+          "accountingNote": "Cost attribution is a planning and reporting concept. This showcase does not allocate real costs, create journal entries, or post accounting transactions."
+        },
+        "features": {
+          "eyebrow": "Cost allocation concepts",
+          "title": "Make shared-cost rationale easy to follow.",
+          "description": "Present the allocation period, basis, distribution, and review context together.",
+          "items": [
+            { "title": "Allocation period", "description": "Make the reporting period for a sample allocation clear." },
+            { "title": "Documented basis", "description": "Explain whether a share is based on personnel, direct cost, or percentage." },
+            { "title": "Distribution view", "description": "Visualize how an illustrative shared amount is spread across grants." },
+            { "title": "Review status", "description": "Show sample review labels and a conceptual allocation history." },
+            { "title": "Grant context", "description": "Keep grant codes and programme names visible beside sample shares." },
+            { "title": "Accounting distinction", "description": "Separate cost attribution concepts from posting journal entries." }
+          ]
+        },
+        "workflow": {
+          "eyebrow": "Allocation review",
+          "title": "Explain the basis before reviewing the distribution.",
+          "description": "A documented sequence supports consistent conversations about shared operational costs.",
+          "steps": [
+            { "title": "Choose a period", "description": "Set the illustrative timeframe under review." },
+            { "title": "Select a basis", "description": "State the rationale behind proportional attribution." },
+            { "title": "Review the shares", "description": "Compare the proposed distribution across sample grants." },
+            { "title": "Document review", "description": "Show an example status and allocation history." },
+            { "title": "Keep records distinct", "description": "Separate attribution from actual accounting entries." }
+          ]
+        },
+        "benefits": {
+          "eyebrow": "Transparent shared costs",
+          "title": "Make allocation assumptions visible to stakeholders.",
+          "description": "Clear context helps teams understand how shared operating expenses relate to funded programmes.",
+          "items": [
+            { "title": "Consistent rationale", "description": "State the basis used to explain an illustrative allocation." },
+            { "title": "Grant-level visibility", "description": "See example shares alongside programme and grant identifiers." },
+            { "title": "Review context", "description": "Keep period and approval status visible in discussions." },
+            { "title": "Clearer reporting", "description": "Help stakeholders understand shared operational cost concepts." },
+            { "title": "Better coordination", "description": "Give finance and programme teams a common allocation view." },
+            { "title": "Accounting clarity", "description": "Keep attribution previews separate from financial posting workflows." }
+          ]
+        },
+        "finalCta": {
+          "title": "Make funding cost context easier to communicate.",
+          "description": "Explore how a clear allocation preview can support transparent conversations across funded programmes.",
+          "button": "Request a guided demo"
+        }
+      }
+    },
     "project": {
       "metadata": {
         "title": "Project Accounting | AdonERP",
-        "description": "AI-powered project accounting platform — track budgets, costs, milestone billing, and profitability for every project in real time."
+        "description": "Project accounting for construction and project-driven teams — connect budgets, job costs, WIP, progress billing, and profitability in one showcase."
       },
       "hero": {
         "title": "Project",
@@ -13480,6 +14423,304 @@
         "titleHighlight": "growth",
         "titleEnd": "potential",
         "button": "Start now"
+      },
+      "showcase": {
+        "hero": {
+          "eyebrow": "Project Accounting",
+          "title": "Project accounting",
+          "titleHighlight": "without blind spots.",
+          "description": "Bring project delivery and financial control together. Plan scope, follow every cost, manage change, and understand work in progress across construction, engineering, and other project-led teams.",
+          "primaryCta": "Talk to our team",
+          "secondaryCta": "Explore the WIP view",
+          "highlights": [
+            "Project-to-profit visibility",
+            "Cost-to-complete forecasting",
+            "WIP and billing clarity"
+          ]
+        },
+        "dashboard": {
+          "workspace": "Adon ERP",
+          "project": "Project Accounting",
+          "projectCode": "PRJ-OB-VAN",
+          "status": "In progress",
+          "menu": [
+            "Projects",
+            "Overview",
+            "Cost codes",
+            "Budgets"
+          ],
+          "tabs": [
+            "Overview",
+            "Cost codes",
+            "Budgets",
+            "Job cost",
+            "Change orders",
+            "WIP",
+            "Progress billing",
+            "Schedule",
+            "Risks & issues",
+            "Documents",
+            "Milestones",
+            "BOQ",
+            "Bill allocations",
+            "P&L"
+          ],
+          "activeTab": "WIP",
+          "projectName": "Second OB Van Commissioning",
+          "previewLabel": "Concept preview",
+          "metrics": [
+            {
+              "label": "Contract value (revised)",
+              "value": "BDT 2,40,00,000",
+              "caption": "Current approved value"
+            },
+            {
+              "label": "Estimated total cost (EAC)",
+              "value": "BDT 1,85,00,000",
+              "caption": "Forecast at completion"
+            },
+            {
+              "label": "Estimated gross profit",
+              "value": "BDT 55,00,000",
+              "caption": "Forecast margin 22.9%"
+            },
+            {
+              "label": "% Complete (cost-to-cost)",
+              "value": "68.4%",
+              "caption": "Cost to date ÷ EAC"
+            }
+          ],
+          "revenueTitle": "Revenue recognition",
+          "revenueRows": [
+            {
+              "label": "Earned revenue (recognized)",
+              "value": "BDT 1,64,16,000"
+            },
+            {
+              "label": "Billed to date",
+              "value": "BDT 1,48,00,000"
+            },
+            {
+              "label": "Over-billing (billed > earned)",
+              "value": "BDT 0"
+            },
+            {
+              "label": "Under-billing (earned > billed)",
+              "value": "BDT 16,16,000",
+              "emphasis": true,
+              "tone": "negative"
+            }
+          ],
+          "costTitle": "Cost to complete",
+          "costRows": [
+            {
+              "label": "Cost to date (actual)",
+              "value": "BDT 1,26,54,000"
+            },
+            {
+              "label": "Estimated cost to complete (ETC)",
+              "value": "BDT 58,46,000"
+            },
+            {
+              "label": "Estimated total cost (EAC)",
+              "value": "BDT 1,85,00,000",
+              "emphasis": true,
+              "tone": "positive"
+            }
+          ],
+          "note": "Illustrative interface and sample figures — not live project data."
+        },
+        "modulesEyebrow": "One connected project view",
+        "modulesTitle": "Every moving part, working together.",
+        "modulesDescription": "From first estimate to final margin, keep the financial, operational, and delivery details of each project connected.",
+        "modules": [
+          {
+            "title": "Projects",
+            "description": "Organize project scope, teams, customers, and delivery status in one place."
+          },
+          {
+            "title": "Overview",
+            "description": "Get a concise view of progress, financial health, milestones, and open actions."
+          },
+          {
+            "title": "Cost Codes",
+            "description": "Structure labor, materials, equipment, and subcontract costs consistently."
+          },
+          {
+            "title": "Budgets",
+            "description": "Set a baseline and compare planned, committed, and actual project costs."
+          },
+          {
+            "title": "Job Cost",
+            "description": "Trace posted and committed costs back to the project and cost code."
+          },
+          {
+            "title": "Change Orders",
+            "description": "Make scope and contract revisions visible in project forecasts."
+          },
+          {
+            "title": "WIP",
+            "description": "Compare earned revenue with billing and understand over- or under-billing."
+          },
+          {
+            "title": "Progress Billing",
+            "description": "Shape billing around contract terms, milestones, or measured progress."
+          },
+          {
+            "title": "Schedule",
+            "description": "Connect delivery timelines with the work and financial checkpoints ahead."
+          },
+          {
+            "title": "Risks & Issues",
+            "description": "Surface blockers and exposures before they affect delivery or margin."
+          },
+          {
+            "title": "Documents",
+            "description": "Keep drawings, contracts, approvals, and project records easy to find."
+          },
+          {
+            "title": "Milestones",
+            "description": "Make key commitments and completion points easy to track."
+          },
+          {
+            "title": "BOQ",
+            "description": "Connect bill-of-quantities items to estimates and progress measurement."
+          },
+          {
+            "title": "Bill Allocations",
+            "description": "Allocate supplier and subcontractor bills to relevant project costs."
+          },
+          {
+            "title": "P&L",
+            "description": "Review project revenue, cost, and margin in a clear financial view."
+          }
+        ],
+        "wip": {
+          "eyebrow": "Work in progress",
+          "title": "Know what is earned, billed, and still to come.",
+          "description": "A cost-to-cost view helps teams compare the value of work performed with invoices issued, while keeping estimated cost to complete and forecast margin in sight.",
+          "formulaTitle": "A clearer WIP conversation",
+          "formula": "% complete = cost to date ÷ estimated total cost (EAC). Earned revenue = % complete × revised contract value.",
+          "disclaimer": "Shown for demonstration only. Recognition policies and project figures should be reviewed against your contracts and accounting standards.",
+          "projectLabel": "Illustrative project",
+          "projectName": "Second OB Van Commissioning",
+          "forecastLabel": "WIP forecast",
+          "completionLabel": "cost complete",
+          "completionValue": "68.4%",
+          "earnedLabel": "Earned revenue",
+          "earnedValue": "BDT 1,64,16,000",
+          "billedLabel": "Billed to date",
+          "billedValue": "BDT 1,48,00,000",
+          "underbillingLabel": "Under-billing · earned exceeds billed",
+          "underbillingValue": "BDT 16,16,000",
+          "costToDateLabel": "Cost to date",
+          "costToDateValue": "BDT 1,26,54,000",
+          "costToCompleteLabel": "Cost to complete (ETC)",
+          "costToCompleteValue": "BDT 58,46,000",
+          "eacLabel": "Estimated total cost (EAC)",
+          "eacValue": "BDT 1,85,00,000"
+        },
+        "workflow": {
+          "eyebrow": "A connected value flow",
+          "title": "From project setup to a clearer margin.",
+          "description": "Keep each handoff connected so delivery teams and finance can work from the same project context.",
+          "startLabel": "Plan",
+          "endLabel": "Understand",
+          "steps": [
+            {
+              "title": "Project setup",
+              "description": "Define scope, ownership, contract terms, and delivery structure."
+            },
+            {
+              "title": "Budgeting",
+              "description": "Set budgets by cost code and establish the project baseline."
+            },
+            {
+              "title": "Cost tracking",
+              "description": "Follow actual and committed costs as project work progresses."
+            },
+            {
+              "title": "Progress billing",
+              "description": "Align invoices with measured progress, terms, and milestones."
+            },
+            {
+              "title": "WIP monitoring",
+              "description": "Compare earned revenue, billings, and forecast cost to complete."
+            },
+            {
+              "title": "Profitability",
+              "description": "Review project revenue, cost, and expected margin together."
+            }
+          ]
+        },
+        "benefits": {
+          "eyebrow": "Built for better decisions",
+          "title": "Control the details. Protect the outcome.",
+          "description": "Bring project financial signals into focus early, so teams can act with context instead of waiting for a close-out surprise.",
+          "items": [
+            {
+              "title": "Better cost visibility",
+              "description": "Understand actual and committed spend by project and cost code."
+            },
+            {
+              "title": "Improved billing control",
+              "description": "Keep progress, contract terms, and billing checkpoints aligned."
+            },
+            {
+              "title": "Profitability insight",
+              "description": "See forecast revenue, cost, and margin before project close."
+            },
+            {
+              "title": "Stronger WIP management",
+              "description": "Spot billing gaps by comparing earned revenue with billed amounts."
+            },
+            {
+              "title": "Milestone and document clarity",
+              "description": "Keep delivery commitments and supporting records connected."
+            },
+            {
+              "title": "Fewer cost overruns",
+              "description": "Use cost-to-complete signals to flag emerging variance sooner."
+            }
+          ]
+        },
+        "industries": {
+          "eyebrow": "Designed for project-led work",
+          "title": "Complex projects. Clearer financial control.",
+          "description": "A useful fit for teams coordinating long timelines, changing scopes, multiple cost streams, and milestone-based delivery.",
+          "items": [
+            {
+              "title": "Construction",
+              "description": "Track site costs, subcontractors, and contract progress."
+            },
+            {
+              "title": "Engineering firms",
+              "description": "Connect technical delivery phases with budgets and billing."
+            },
+            {
+              "title": "EPC companies",
+              "description": "Coordinate project commitments across engineering, procurement, and construction."
+            },
+            {
+              "title": "Contractors",
+              "description": "Follow change orders, job costs, and progress claims."
+            },
+            {
+              "title": "Infrastructure projects",
+              "description": "Keep long-range milestones, funding, and cost forecasts visible."
+            },
+            {
+              "title": "Project-based organizations",
+              "description": "Compare performance consistently across a portfolio of work."
+            }
+          ]
+        },
+        "cta": {
+          "eyebrow": "Make every project more visible",
+          "title": "Build a better view of project performance.",
+          "description": "See how connected project accounting can support the way your teams plan, deliver, bill, and review project work.",
+          "button": "Talk to our team"
+        }
       }
     },
     "purchase": {

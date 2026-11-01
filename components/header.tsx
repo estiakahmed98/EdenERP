@@ -53,6 +53,48 @@ const appsMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
+    titleKey: "menu.apps.budgetManagement",
+    accentClass: "text-teal-600",
+    underlineClass: "bg-teal-200",
+    links: [
+      {
+        labelKey: "menu.apps.budgetManagement",
+        href: "/apps/Finance/budget-management",
+      },
+    ],
+  },
+  {
+    titleKey: "menu.apps.fundAccounting",
+    accentClass: "text-emerald-700",
+    underlineClass: "bg-emerald-200",
+    links: [
+      {
+        labelKey: "menu.apps.fundDashboard",
+        href: "/apps/fund-accounting/dashboard",
+      },
+      {
+        labelKey: "menu.apps.grants",
+        href: "/apps/fund-accounting/grants",
+      },
+      {
+        labelKey: "menu.apps.donorsFunds",
+        href: "/apps/fund-accounting/donors-funds",
+      },
+      {
+        labelKey: "menu.apps.fundReports",
+        href: "/apps/fund-accounting/reports",
+      },
+      {
+        labelKey: "menu.apps.beneficiariesME",
+        href: "/apps/fund-accounting/beneficiaries-me",
+      },
+      {
+        labelKey: "menu.apps.costAllocation",
+        href: "/apps/fund-accounting/cost-allocation",
+      },
+    ],
+  },
+  {
     titleKey: "menu.apps.sales",
     accentClass: "text-rose-500",
     underlineClass: "bg-rose-200",
@@ -163,11 +205,21 @@ const appsMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
+    titleKey: "menu.apps.project",
+    accentClass: "text-violet-600",
+    underlineClass: "bg-violet-200",
+    links: [
+      {
+        labelKey: "menu.apps.projects",
+        href: "/apps/project-accounting/projects",
+      },
+    ],
+  },
+  {
     titleKey: "menu.apps.services",
     accentClass: "text-primary",
     underlineClass: "bg-primary/20",
     links: [
-      { labelKey: "menu.apps.project", href: "/apps/services/project" },
       { labelKey: "menu.apps.timesheets", href: "/apps/services/timesheets" },
       { labelKey: "menu.apps.helpdesk", href: "/apps/services/helpdesk" },
       { labelKey: "menu.apps.planning", href: "/apps/services/planning" },
