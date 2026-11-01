@@ -18,7 +18,7 @@ export default function LandingPage() {
   useReveal();
 
   return (
-    <main className="bn-content min-h-screen bg-(--cream) text-(--ink)">
+    <main className="landing-page bn-content min-h-screen bg-(--cream) text-(--ink)">
       <style>{GLOBAL_CSS}</style>
       <Hero />
       <MarqueeStrip />
