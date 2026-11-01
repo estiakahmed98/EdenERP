@@ -86,6 +86,17 @@ const appsMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
+    titleKey: "menu.apps.transportPool",
+    accentClass: "text-sky-600",
+    underlineClass: "bg-sky-200",
+    links: [
+      {
+        labelKey: "menu.apps.transportPool",
+        href: "/apps/transport-pool/transport-pool",
+      },
+    ],
+  },
+  {
     titleKey: "menu.apps.fundAccounting",
     accentClass: "text-emerald-700",
     underlineClass: "bg-emerald-200",

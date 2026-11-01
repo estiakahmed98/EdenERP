@@ -99,6 +99,7 @@
           "budgetManagement": "Budget Management",
           "analytics": "Analytics",
           "engineeringMaintenance": "Engineering Maintenance",
+          "transportPool": "Transport Pool",
           "biAnalyticsReporting": "BI Analytics & Reporting",
           "fundAccounting": "Fund Accounting",
           "fundDashboard": "Fund Dashboard",
@@ -711,6 +712,244 @@
         "description": "See how EdenERP can bring equipment, maintenance planning, and operational context into one connected experience.",
         "button": "Request a demonstration",
         "note": "Showcase only · no operational maintenance records are created"
+      }
+    },
+    "transportPool": {
+      "metadata": {
+        "title": "Transport Pool | EdenERP",
+        "description": "Explore fleet registration, trip planning, fuel and mileage summaries, and vehicle maintenance with the EdenERP Transport Pool showcase."
+      },
+      "hero": {
+        "eyebrow": "Fleet operations, connected",
+        "title": "Keep every journey",
+        "titleHighlight": "moving forward.",
+        "description": "Bring owned and rented vehicles, delivery trips, fuel records, mileage, maintenance, and renewal schedules into one clear transport workspace.",
+        "primaryCta": "Request a demonstration",
+        "secondaryCta": "Explore the fleet",
+        "sampleNotice": "Every vehicle, route, and figure is illustrative demo data — no live fleet information is connected.",
+        "previewTitle": "Transport Pool overview",
+        "previewSubtitle": "Shukran F.M Agro Rice Mill · sample fleet",
+        "previewAccessible": "Illustrative fleet dashboard with five sample KPIs and fleet composition",
+        "fleetComposition": "Fleet composition",
+        "ownedRented": "Ownership mix · example",
+        "compositionAccessible": "Five owned vehicles and three rented vehicles",
+        "owned": "Owned",
+        "rented": "Rented",
+        "truckCount": "Trucks",
+        "pickupCount": "Pickup",
+        "readinessTitle": "Fleet readiness",
+        "vehiclesAvailable": "Vehicles available",
+        "maintenanceScheduled": "Maintenance scheduled",
+        "documentsCurrent": "Documents in date",
+        "previewNote": "Illustrative records only"
+      },
+      "metrics": {
+        "activeVehicles": "Active vehicles",
+        "fleetRegistered": "8 sample fleet vehicles",
+        "ongoingTrips": "Ongoing trips",
+        "noLiveTrips": "No live dispatch in demo",
+        "fuelCost": "Fuel cost (MTD)",
+        "currentMonth": "November",
+        "mtdNoEntries": "No sample fuel logs in {month} 2026",
+        "maintenanceDue": "Maintenance due",
+        "maintenanceSchedule": "6 sample service records",
+        "documentsExpiring": "Docs expiring ≤30d",
+        "documentsCurrent": "0 sample renewals due"
+      },
+      "features": {
+        "eyebrow": "A clearer view of transport operations",
+        "title": "One fleet view, four connected capabilities.",
+        "description": "Explore sample fleet records and planning concepts built for organizations moving goods and teams.",
+        "items": [
+          { "title": "Vehicle register", "description": "See owned and rented vehicles, type, registration, odometer, assignment, and location." },
+          { "title": "Trip coordination", "description": "Preview delivery routes, assigned vehicles, trip distances, and dispatch status." },
+          { "title": "Fuel & mileage", "description": "Understand fuel quantities, spend, odometer movement, and calculated efficiency." },
+          { "title": "Maintenance planning", "description": "Review service schedules, due dates, cost examples, and document-renewal reminders." }
+        ]
+      },
+      "showcase": {
+        "eyebrow": "Explore the transport workspace",
+        "title": "From vehicle register to service history.",
+        "description": "Switch between four illustrative panels. Search and filters run locally; no operational fleet records are created.",
+        "tabsLabel": "Transport Pool showcase sections"
+      },
+      "tabs": {
+        "vehicles": "Vehicles",
+        "trips": "Trips",
+        "fuelLog": "Fuel Log",
+        "maintenance": "Maintenance"
+      },
+      "panels": {
+        "vehicles": "A searchable fleet register for vehicle codes, names, registration numbers, ownership, assignment, odometer, status, and location.",
+        "vehiclesNote": "A shared fleet register makes owned and rented assets easier to identify and coordinate across depots.",
+        "trips": "Review sample Bangladesh delivery routes with vehicle, driver, origin, destination, distance, date, and trip status.",
+        "fuel": "Example fuel entries connect liters and rate to fuel amount, odometer readings, distance since refuel, and calculated km/L.",
+        "maintenance": "Preview vehicle service records, upcoming and overdue maintenance, cost, service history, and document renewal concepts."
+      },
+      "table": {
+        "demoData": "Illustrative demo data",
+        "demoBadge": "Demo preview",
+        "previewOnly": "Preview only",
+        "rowCount": "{count} sample rows",
+        "print": "Print",
+        "searchVehicles": "Search vehicles...",
+        "noVehicles": "No matching sample vehicles.",
+        "code": "Code",
+        "vehicle": "Vehicle",
+        "registration": "Registration no.",
+        "type": "Type",
+        "ownership": "Ownership",
+        "driver": "Driver",
+        "odometer": "Odometer",
+        "status": "Status",
+        "location": "Location",
+        "tripNumber": "Trip #",
+        "origin": "Origin",
+        "destination": "Destination",
+        "distance": "Distance",
+        "startDate": "Start date",
+        "completionDate": "Completion date",
+        "fuelDate": "Date",
+        "liters": "Liters",
+        "ratePerLiter": "Rate / L",
+        "fuelAmount": "Amount",
+        "maintenanceNumber": "Maint #",
+        "maintenanceType": "Type",
+        "maintenanceDate": "Date",
+        "cost": "Cost",
+        "nextDueDate": "Next due"
+      },
+      "values": {
+        "Truck": "Truck",
+        "Pickup": "Pickup",
+        "Owned": "Owned",
+        "Rented": "Rented",
+        "Active": "Active",
+        "Available": "Available",
+        "Completed": "Completed",
+        "Scheduled": "Scheduled",
+        "Ongoing": "Ongoing",
+        "Cancelled": "Cancelled",
+        "In progress": "In progress",
+        "Overdue": "Overdue",
+        "Routine servicing": "Routine servicing",
+        "Engine maintenance": "Engine maintenance",
+        "Brake inspection": "Brake inspection",
+        "Oil and filter change": "Oil and filter change",
+        "Tire replacement": "Tire replacement",
+        "Corrective repair": "Corrective repair",
+        "Naogaon Mill": "Naogaon Mill",
+        "Dhaka Depot": "Dhaka Depot",
+        "Rajshahi Depot": "Rajshahi Depot",
+        "Rangpur Depot": "Rangpur Depot",
+        "Khulna Depot": "Khulna Depot",
+        "Dhaka depot": "Dhaka depot",
+        "Naogaon mill": "Naogaon mill",
+        "Rajshahi depot": "Rajshahi depot"
+      },
+      "vehicles": {
+        "fleetTotal": "Fleet vehicles",
+        "ownedVehicles": "Company-owned",
+        "rentedVehicles": "Rented fleet"
+      },
+      "trips": {
+        "completedTrips": "Completed sample trips",
+        "ongoingTrips": "Ongoing trips",
+        "sampleDistance": "Distance in shown trips",
+        "filterLabel": "Filter sample trips by status",
+        "filters": [
+          { "value": "All", "label": "All trips" },
+          { "value": "Completed", "label": "Completed" },
+          { "value": "Ongoing", "label": "Ongoing" },
+          { "value": "Scheduled", "label": "Scheduled" },
+          { "value": "Cancelled", "label": "Cancelled" }
+        ],
+        "historyTitle": "Sample trip history",
+        "history": [
+          { "date": "Aug 24, 2026 · TRIP-0024", "title": "Trip dispatched", "detail": "Rented vehicle assigned for the Naogaon to Rajshahi depot route." },
+          { "date": "Aug 24, 2026 · TRIP-0024", "title": "Delivery completed", "detail": "Illustrative 243 km route closed with a completed sample status." },
+          { "date": "Aug 24, 2026 · TRIP-0024", "title": "Odometer recorded", "detail": "Sample trip record retained for mileage and route review." }
+        ],
+        "workflowLabel": "Illustrative workflow:",
+        "workflow": "Trip planning → vehicle assignment → dispatch → trip monitoring → completion. No live dispatch or GPS tracking is connected."
+      },
+      "fuel": {
+        "sampleSpend": "Fuel cost · MTD",
+        "currentMonthNote": "November 2026 · no sample entries",
+        "historicalSpend": "Historical log total",
+        "historicalNote": "August demo entries",
+        "totalVolume": "Fuel volume",
+        "sampleVolume": "Across shown entries",
+        "avgEfficiency": "Average efficiency",
+        "calculatedMileage": "Calculated from sample distance",
+        "trendTitle": "Fuel log amount by vehicle",
+        "trendDescription": "Historical demo entries · BDT",
+        "chartAccessible": "Sample fuel expense chart, one bar per vehicle log",
+        "notAvailable": "N/A",
+        "accuracyNote": "Each amount equals liters × rate. Distance is the increase from the previous odometer reading, and km/L is calculated from that distance and fuel quantity. November has no sample entries, so MTD fuel cost is BDT 0; historical rows are from August."
+      },
+      "maintenance": {
+        "upcoming": "Upcoming this month",
+        "overdue": "Overdue sample service",
+        "documentRenewals": "Documents expiring within 30 days",
+        "expiring": "due",
+        "historyTitle": "Sample service history",
+        "history": [
+          { "date": "Jul 09, 2026", "label": "Routine service · TRK-002", "detail": "Illustrative service record · BDT 3,000" },
+          { "date": "Jul 05, 2026", "label": "Engine check · TRK-003", "detail": "Illustrative service record · BDT 11,000" },
+          { "date": "Jun 19, 2026", "label": "Brake inspection · TRK-R03", "detail": "Illustrative service record · BDT 14,000" }
+        ],
+        "workflowTitle": "Service lifecycle",
+        "workflow": "Maintenance schedule → service request → inspection → maintenance completion → next service.",
+        "documentsNote": "Document expiry and renewal reminders are conceptual previews only. No documents are checked or renewed."
+      },
+      "workflow": {
+        "eyebrow": "Keep each handoff visible",
+        "title": "Move from vehicle registration to fleet reporting.",
+        "description": "Connect the steps that help transport teams prepare trips, monitor costs, and plan service.",
+        "steps": [
+          { "title": "Vehicle registration", "description": "Record vehicle identity, type, ownership, odometer, and home depot." },
+          { "title": "Trip planning", "description": "Choose an illustrative route and coordinate a suitable fleet vehicle." },
+          { "title": "Dispatch & monitoring", "description": "Follow a trip's example status from planned dispatch through completion." },
+          { "title": "Fuel tracking", "description": "Compare fuel amount, odometer movement, and calculated mileage." },
+          { "title": "Maintenance planning", "description": "Review upcoming service needs and illustrative renewal reminders." },
+          { "title": "Fleet reporting", "description": "Bring sample trip, cost, and vehicle status into one operational view." }
+        ]
+      },
+      "benefits": {
+        "eyebrow": "Benefits for fleet teams",
+        "title": "Give every journey more context.",
+        "items": [
+          { "title": "Better fleet visibility", "description": "Understand owned and rented vehicle availability across locations." },
+          { "title": "Control transport costs", "description": "Review example fuel, mileage, and maintenance costs in context." },
+          { "title": "Improve vehicle utilization", "description": "Coordinate trip plans with fleet availability and status." },
+          { "title": "Monitor fuel expenses", "description": "Connect liters, rate, odometer changes, and mileage calculations." },
+          { "title": "Coordinate trips faster", "description": "Keep route, vehicle, date, and trip status together." },
+          { "title": "Reduce maintenance delays", "description": "Highlight upcoming service and overdue maintenance examples." },
+          { "title": "Strengthen fleet accountability", "description": "Make sample fleet assignments and cost context easier to review." }
+        ]
+      },
+      "industries": {
+        "eyebrow": "Transport for every operation",
+        "title": "Built for moving goods and people.",
+        "description": "A fleet-management showcase for operators coordinating vehicles across routes, depots, and facilities.",
+        "items": [
+          { "title": "Logistics & distribution", "description": "Coordinate deliveries across a regional route network." },
+          { "title": "Manufacturing", "description": "Support plant transfers and finished-goods distribution." },
+          { "title": "Agro-industrial operations", "description": "Connect collection routes, mills, and market depots." },
+          { "title": "Rice mills", "description": "Coordinate grain sourcing and outbound deliveries." },
+          { "title": "Construction", "description": "Keep commercial vehicles and site transport visible." },
+          { "title": "Corporate transport", "description": "Organize assigned vehicles and scheduled journeys." },
+          { "title": "Commercial fleets", "description": "Manage a mixed pool of owned and rented vehicles." }
+        ]
+      },
+      "cta": {
+        "eyebrow": "Explore EdenERP",
+        "title": "Bring your fleet",
+        "titleHighlight": "into clearer view.",
+        "description": "See how EdenERP can connect vehicle records, trips, fuel visibility, and maintenance planning for your team.",
+        "button": "Request a demonstration",
+        "note": "Showcase only · no live vehicle or trip records are connected"
       }
     },
     "accounting-firm": {
