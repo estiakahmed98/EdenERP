@@ -29,6 +29,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { ShowcaseHeading, ShowcaseHighlight } from "@/components/showcase-typography";
 
 type DashboardMetric = {
   label: string;
@@ -308,19 +309,16 @@ export default function ProjectAccountingShowcase() {
               <Sparkles className="h-3.5 w-3.5 text-violet-500" />
               {t("hero.eyebrow")}
             </div>
-            <h1
-              className="mt-6 text-balance text-4xl font-bold leading-[1.12] tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[3.55rem]"
-              style={{
-                fontFamily:
-                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-              }}
+            <ShowcaseHeading
+              as="h1"
+              className="mt-6 text-balance text-4xl leading-[1.12] tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[3.55rem]"
             >
               {t("hero.title")}{" "}
-              <span className="relative inline-block text-violet-700 dark:text-violet-300">
+              <ShowcaseHighlight className="relative inline-block text-violet-700 dark:text-violet-300">
                 {t("hero.titleHighlight")}
                 <span className="absolute -bottom-1 left-0 -z-10 h-3 w-full rounded-full bg-sky-200/80 dark:bg-sky-500/25" />
-              </span>
-            </h1>
+              </ShowcaseHighlight>
+            </ShowcaseHeading>
             <p className="mt-6 w-full min-w-0 max-w-xl break-words text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
               {t("hero.description")}
             </p>
@@ -362,15 +360,9 @@ export default function ProjectAccountingShowcase() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">
               {t("modulesEyebrow")}
             </p>
-            <h2
-              className="mt-4 text-balance text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
-              style={{
-                fontFamily:
-                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-              }}
-            >
+            <ShowcaseHeading className="mt-4 text-balance text-3xl tracking-tight text-slate-950 dark:text-white sm:text-4xl">
               {t("modulesTitle")}
-            </h2>
+            </ShowcaseHeading>
             <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
               {t("modulesDescription")}
             </p>
@@ -415,15 +407,9 @@ export default function ProjectAccountingShowcase() {
               <PieChart className="h-3.5 w-3.5" />
               {t("wip.eyebrow")}
             </div>
-            <h2
-              className="mt-5 text-balance text-3xl font-bold leading-tight tracking-tight text-slate-950 dark:text-white sm:text-4xl"
-              style={{
-                fontFamily:
-                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-              }}
-            >
+            <ShowcaseHeading className="mt-5 text-balance text-3xl leading-tight tracking-tight text-slate-950 dark:text-white sm:text-4xl">
               {t("wip.title")}
-            </h2>
+            </ShowcaseHeading>
             <p className="mt-5 text-base leading-7 text-slate-600 dark:text-slate-300">
               {t("wip.description")}
             </p>
@@ -512,15 +498,9 @@ export default function ProjectAccountingShowcase() {
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">
               {t("workflow.eyebrow")}
             </p>
-            <h2
-              className="mt-4 text-balance text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
-              style={{
-                fontFamily:
-                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-              }}
-            >
+            <ShowcaseHeading className="mt-4 text-balance text-3xl tracking-tight text-slate-950 dark:text-white sm:text-4xl">
               {t("workflow.title")}
-            </h2>
+            </ShowcaseHeading>
             <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
               {t("workflow.description")}
             </p>
@@ -561,15 +541,9 @@ export default function ProjectAccountingShowcase() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
                 {t("benefits.eyebrow")}
               </p>
-              <h2
-                className="mt-4 text-balance text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
-                style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                }}
-              >
+              <ShowcaseHeading className="mt-4 text-balance text-3xl tracking-tight text-slate-950 dark:text-white sm:text-4xl">
                 {t("benefits.title")}
-              </h2>
+              </ShowcaseHeading>
               <p className="mt-4 max-w-md text-base leading-7 text-slate-600 dark:text-slate-300">
                 {t("benefits.description")}
               </p>
@@ -608,15 +582,9 @@ export default function ProjectAccountingShowcase() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-sky-700 dark:text-sky-300">
                 {t("industries.eyebrow")}
               </p>
-              <h2
-                className="mt-4 text-balance text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl"
-                style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                }}
-              >
+              <ShowcaseHeading className="mt-4 text-balance text-3xl tracking-tight text-slate-950 dark:text-white sm:text-4xl">
                 {t("industries.title")}
-              </h2>
+              </ShowcaseHeading>
               <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
                 {t("industries.description")}
               </p>
@@ -658,15 +626,9 @@ export default function ProjectAccountingShowcase() {
           <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-violet-200">
             {t("cta.eyebrow")}
           </p>
-          <h2
-            className="mt-4 text-balance text-3xl font-bold tracking-tight sm:text-5xl"
-            style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-            }}
-          >
+          <ShowcaseHeading className="mt-4 text-balance text-3xl tracking-tight text-white sm:text-5xl">
             {t("cta.title")}
-          </h2>
+          </ShowcaseHeading>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300">
             {t("cta.description")}
           </p>

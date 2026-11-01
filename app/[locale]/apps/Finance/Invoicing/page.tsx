@@ -39,6 +39,10 @@ import {
   Eye,
   MessageCircle,
 } from "lucide-react";
+import {
+  ShowcaseHeading,
+  ShowcaseHighlight,
+} from "@/components/showcase-typography";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -77,25 +81,6 @@ const getIconComponent = (iconName: string) => {
   };
   return icons[iconName] || Sparkles;
 };
-
-function ScriptHeading({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <h2
-      className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl ${className}`}
-      style={{
-        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-      }}
-    >
-      {children}
-    </h2>
-  );
-}
 
 function SectionEyebrow({
   iconName,
@@ -146,19 +131,16 @@ export default function InvoicingPage() {
               />
 
               <div className="space-y-5">
-                <h1 className="text-5xl font-semibold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl">
+                <ShowcaseHeading
+                  as="h1"
+                  className="text-5xl leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
+                >
                   {t("hero.title")}
                   <br />
-                  <span
-                    className="text-emerald-600 dark:text-emerald-400"
-                    style={{
-                      fontFamily:
-                        '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
-                    }}
-                  >
+                  <ShowcaseHighlight className="text-emerald-600 dark:text-emerald-400">
                     {t("hero.titleHighlight")}
-                  </span>
-                </h1>
+                  </ShowcaseHighlight>
+                </ShowcaseHeading>
                 <p className="max-w-lg text-lg leading-relaxed text-slate-600 dark:text-slate-300">
                   {t("hero.description")}
                 </p>
@@ -259,9 +241,9 @@ export default function InvoicingPage() {
               labelKey="clickSendSection.eyebrowLabel"
               t={t}
             />
-            <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
+            <ShowcaseHeading className="mt-4 text-3xl sm:text-4xl">
               {t("clickSendSection.title")}
-            </ScriptHeading>
+            </ShowcaseHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               {t("clickSendSection.description")}
             </p>
@@ -365,12 +347,12 @@ export default function InvoicingPage() {
               labelKey="mobileSection.eyebrowLabel"
               t={t}
             />
-            <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
+            <ShowcaseHeading className="mt-4 text-3xl sm:text-4xl">
               {t("mobileSection.title")}{" "}
-              <span className="text-emerald-600 dark:text-emerald-400">
+              <ShowcaseHighlight className="text-emerald-600 dark:text-emerald-400">
                 {t("mobileSection.titleHighlight")}
-              </span>
-            </ScriptHeading>
+              </ShowcaseHighlight>
+            </ShowcaseHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               {t("mobileSection.description")}
             </p>
@@ -403,12 +385,12 @@ export default function InvoicingPage() {
               labelKey="paymentSection.eyebrowLabel"
               t={t}
             />
-            <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
+            <ShowcaseHeading className="mt-4 text-3xl sm:text-4xl">
               {t("paymentSection.title")}{" "}
-              <span className="text-emerald-600 dark:text-emerald-400">
+              <ShowcaseHighlight className="text-emerald-600 dark:text-emerald-400">
                 {t("paymentSection.titleHighlight")}
-              </span>
-            </ScriptHeading>
+              </ShowcaseHighlight>
+            </ShowcaseHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               {t("paymentSection.description")}
             </p>
@@ -506,11 +488,11 @@ export default function InvoicingPage() {
               labelKey="bankSection.eyebrowLabel"
               t={t}
             />
-            <ScriptHeading className="mt-4 text-3xl sm:text-4xl">
+            <ShowcaseHeading className="mt-4 text-3xl sm:text-4xl">
               {t("bankSection.title")}
               <br />
-              {t("bankSection.subtitle")}
-            </ScriptHeading>
+              <ShowcaseHighlight>{t("bankSection.subtitle")}</ShowcaseHighlight>
+            </ShowcaseHeading>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               {t("bankSection.description")}
             </p>
@@ -546,9 +528,9 @@ export default function InvoicingPage() {
             labelKey="featuresSection.eyebrowLabel"
             t={t}
           />
-          <ScriptHeading className="mt-4">
+          <ShowcaseHeading className="mt-4">
             {t("featuresSection.title")}
-          </ScriptHeading>
+          </ShowcaseHeading>
           <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
             {t("featuresSection.description")}
           </p>
@@ -663,9 +645,9 @@ export default function InvoicingPage() {
 
           <div className="relative">
             <Sparkles className="h-12 w-12 text-emerald-400 mx-auto mb-6" />
-            <ScriptHeading className="text-white text-4xl sm:text-5xl">
+            <ShowcaseHeading className="text-white text-4xl sm:text-5xl">
               {t("ctaBanner.title")}
-            </ScriptHeading>
+            </ShowcaseHeading>
             <p className="mt-4 text-lg text-emerald-100 max-w-2xl mx-auto">
               {t("ctaBanner.description")}
             </p>

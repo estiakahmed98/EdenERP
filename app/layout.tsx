@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono, Rubik, Tiro_Bangla } from "next/font/google";
+import { Caveat, Geist, Geist_Mono, Rubik, Tiro_Bangla } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { getLocale } from "next-intl/server";
 
@@ -22,6 +22,12 @@ const geistMono = Geist_Mono({
 const rubik = Rubik({
   subsets: ["latin"],
   variable: "--font-rubik",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-caveat",
 });
 
 const tiroBangla = Tiro_Bangla({
@@ -174,7 +180,7 @@ export default async function RootLayout({
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
-      className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${tiroBangla.variable}`}
+      className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${caveat.variable} ${tiroBangla.variable}`}
     >
       <body className="bg-background font-sans antialiased" suppressHydrationWarning>
         <Script

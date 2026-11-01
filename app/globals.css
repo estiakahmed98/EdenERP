@@ -208,6 +208,18 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+.showcase-heading {
+  font-family: var(--font-rubik), var(--font-tiro-bangla), ui-sans-serif,
+    system-ui, sans-serif;
+  font-weight: 700;
+}
+
+.showcase-heading-highlight {
+  font-family: var(--font-caveat), "Segoe Print", "Bradley Hand",
+    "Comic Sans MS", cursive;
+  font-weight: 600;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -225,4 +237,10 @@ html[lang^='bn'] body {
 html[lang^='bn'] .bn-content {
   font-family: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif,
     system-ui, sans-serif;
+}
+
+html[lang^='bn'] .showcase-heading-highlight {
+  font-family: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif,
+    system-ui, sans-serif;
+  font-style: italic;
 }

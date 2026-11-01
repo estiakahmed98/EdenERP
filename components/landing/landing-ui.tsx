@@ -3,9 +3,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export const GLOBAL_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-:root {
+.bn-content {
   --purple: #714b67;
   --purple-light: #f3eef1;
   --purple-dark: #5a3854;
@@ -14,14 +14,14 @@ export const GLOBAL_CSS = `
   --gray-bg: #f3f4f7;
   --ink: #1a1a2e;
   --muted: #64748b;
-  --hand: 'Caveat', 'Segoe Print', cursive;
+  --hand: var(--font-caveat), 'Segoe Print', cursive;
   --body: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
-body { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
-html[lang^='bn'] { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
-.dark { --cream: #0b1120; --gray-bg: #111827; --ink: #e5e7eb; --muted: #94a3b8; --purple-light: #1f1521; }
-.green, .theme-green {
+.bn-content { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
+html[lang^='bn'] .bn-content { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
+.dark .bn-content { --cream: #0b1120; --gray-bg: #111827; --ink: #e5e7eb; --muted: #94a3b8; --purple-light: #1f1521; }
+.bn-content.green, .bn-content.theme-green, .green .bn-content, .theme-green .bn-content {
   --purple: #238b5a;
   --purple-light: #e8f6ee;
   --purple-dark: #176c45;
@@ -31,7 +31,7 @@ html[lang^='bn'] { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-s
   --ink: #133321;
   --muted: #4f6b5d;
 }
-.ocean, .theme-ocean {
+.bn-content.ocean, .bn-content.theme-ocean, .ocean .bn-content, .theme-ocean .bn-content {
   --purple: #2563eb;
   --purple-light: #e8f2ff;
   --purple-dark: #1d4ed8;
@@ -48,17 +48,17 @@ html[lang^='bn'] { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-s
 @keyframes marqueeLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes marqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
-.reveal { opacity:0; transform:translateY(28px); transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1); }
-.reveal.in { opacity:1; transform:translateY(0); }
-.reveal-d1 { transition-delay:.1s; }
-.reveal-d2 { transition-delay:.2s; }
-.reveal-d3 { transition-delay:.3s; }
+.bn-content .reveal { opacity:0; transform:translateY(28px); transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1); }
+.bn-content .reveal.in { opacity:1; transform:translateY(0); }
+.bn-content .reveal-d1 { transition-delay:.1s; }
+.bn-content .reveal-d2 { transition-delay:.2s; }
+.bn-content .reveal-d3 { transition-delay:.3s; }
 
-.font-hand { font-family: var(--hand); }
-.font-body { font-family: var(--body); }
-.shadow-float { box-shadow: 0 30px 80px rgba(15,23,42,.10), 0 0 0 1px rgba(15,23,42,.04); }
-.marquee-left { animation: marqueeLeft 20s linear infinite; }
-.marquee-right { animation: marqueeRight 20s linear infinite; }
+.bn-content .font-hand { font-family: var(--hand); }
+.bn-content .font-body { font-family: var(--body); }
+.bn-content .shadow-float { box-shadow: 0 30px 80px rgba(15,23,42,.10), 0 0 0 1px rgba(15,23,42,.04); }
+.bn-content .marquee-left { animation: marqueeLeft 20s linear infinite; }
+.bn-content .marquee-right { animation: marqueeRight 20s linear infinite; }
 `;
 
 declare global {

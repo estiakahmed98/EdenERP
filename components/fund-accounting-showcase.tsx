@@ -26,6 +26,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
+import { ShowcaseHeading, ShowcaseHighlight } from "@/components/showcase-typography";
 
 type FundPage =
   | "dashboard"
@@ -88,9 +89,9 @@ function SectionHeading({
       <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl">
+      <ShowcaseHeading className="mt-4 text-balance text-3xl tracking-tight text-slate-950 dark:text-white sm:text-4xl">
         {title}
-      </h2>
+      </ShowcaseHeading>
       <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
         {description}
       </p>
@@ -1142,12 +1143,15 @@ export default function FundAccountingShowcase({ page }: { page: FundPage }) {
               <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
               {t("hero.eyebrow")}
             </div>
-            <h1 className="mt-6 text-balance text-4xl font-bold leading-[1.12] tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[3.55rem]">
+            <ShowcaseHeading
+              as="h1"
+              className="mt-6 text-balance text-4xl leading-[1.12] tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[3.55rem]"
+            >
               {t("hero.title")}{" "}
-              <span className="text-emerald-700 dark:text-emerald-300">
+              <ShowcaseHighlight className="text-emerald-700 dark:text-emerald-300">
                 {t("hero.titleHighlight")}
-              </span>
-            </h1>
+              </ShowcaseHighlight>
+            </ShowcaseHeading>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
               {t("hero.description")}
             </p>
@@ -1354,9 +1358,9 @@ export default function FundAccountingShowcase({ page }: { page: FundPage }) {
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-emerald-100">
             <HeartHandshake className="h-6 w-6" />
           </div>
-          <h2 className="mt-5 text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <ShowcaseHeading className="mt-5 text-balance text-3xl tracking-tight text-white sm:text-4xl">
             {t("finalCta.title")}
-          </h2>
+          </ShowcaseHeading>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-emerald-50/80">
             {t("finalCta.description")}
           </p>
