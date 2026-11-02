@@ -166,7 +166,385 @@
           "becomePartner": "Become a Partner"
         }
       },
+      "modules": {
+        "accounting": {
+          "title": "Accounting",
+          "links": {
+            "accountingHub": "Accounting Hub",
+            "chartOfAccounts": "Chart of Accounts",
+            "journalEntries": "Journal Entries",
+            "ledgers": "Ledgers",
+            "invoicesAr": "Invoices (AR)",
+            "billsAp": "Bills (AP)",
+            "purchaseOrders": "Purchase Orders",
+            "itemsProducts": "Items / Products",
+            "customers": "Customers",
+            "vendors": "Vendors",
+            "bankAccounts": "Bank Accounts",
+            "receipts": "Receipts",
+            "deliveryChallans": "Delivery Challans",
+            "pettyCash": "Petty Cash",
+            "chequeRegister": "Cheque Register",
+            "closingFy": "Closing & FY",
+            "financialReports": "Financial Reports",
+            "vatRegister": "VAT Register",
+            "discountsCoupons": "Discounts & Coupons",
+            "loanManagement": "Loan Management",
+            "fixedAssetRegister": "Fixed Asset Register",
+            "exchangeRates": "Exchange Rates",
+            "arApAging": "AR / AP Aging",
+            "bankReconciliation": "Bank Reconciliation"
+          }
+        },
+        "projectAccounting": {
+          "title": "Project Accounting",
+          "links": {
+            "overview": "Overview",
+            "costCodes": "Cost Codes",
+            "budgets": "Budgets",
+            "jobCost": "Job Cost",
+            "changeOrders": "Change Orders",
+            "wip": "WIP",
+            "progressBilling": "Progress Billing",
+            "schedule": "Schedule",
+            "risksIssues": "Risks & Issues",
+            "documents": "Documents",
+            "milestones": "Milestones",
+            "boq": "BOQ",
+            "billAllocations": "Bill Allocations",
+            "pAndL": "P&L"
+          }
+        },
+        "budgetManagement": {
+          "title": "Budget Management",
+          "links": {
+            "overview": "Overview",
+            "lines": "Lines",
+            "requisitions": "Requisitions",
+            "variance": "Variance",
+            "approvals": "Approvals",
+            "rbrf": "RBRF"
+          }
+        },
+        "supplyChain": {
+          "title": "Supply Chain",
+          "links": {
+            "overview": "Overview",
+            "goodsReceipts": "Goods Receipts",
+            "landedCost": "Landed Cost",
+            "procurement": "Procurement",
+            "purchaseRequisitions": "Purchase Requisitions",
+            "comparativeStatements": "Comparative Statements",
+            "tenderManagement": "Tender Management"
+          }
+        },
+        "inventory": {
+          "title": "Inventory",
+          "links": {
+            "demandForecast": "Demand Forecast",
+            "warehouses": "Warehouses",
+            "stockMovements": "Stock Movements",
+            "inventorySummary": "Inventory Summary",
+            "gatePasses": "Gate Passes",
+            "weighbridgeScales": "Weighbridge & Scales"
+          }
+        },
+        "openPlatform": {
+          "title": "Open Platform",
+          "links": {
+            "taxRates": "Tax Rates",
+            "migrationStudio": "Migration Studio",
+            "exportTakeout": "Export / Takeout"
+          }
+        },
+        "manufacturing": {
+          "title": "Manufacturing",
+          "links": {
+            "workCenters": "Work Centers",
+            "routings": "Routings",
+            "billOfMaterials": "Bill of Materials",
+            "mrpPlanning": "MRP Planning",
+            "capacityPlanning": "Capacity Planning",
+            "masterScheduleMps": "Master Schedule (MPS)",
+            "schedulingAps": "Scheduling (APS)",
+            "linePlanningBoard": "Line Planning Board",
+            "orderAllocation": "Order Allocation",
+            "shopFloor": "Shop Floor",
+            "productionOrders": "Production Orders",
+            "batchesLots": "Batches / Lots",
+            "serialNumbers": "Serial Numbers",
+            "qcTemplates": "QC Templates",
+            "qualityControl": "Quality Control",
+            "scrapWaste": "Scrap / Waste",
+            "subcontracting": "Subcontracting",
+            "standardCosting": "Standard Costing",
+            "productionCosting": "Production Costing"
+          }
+        },
+        "quality": {
+          "title": "Quality (QMS)",
+          "links": {
+            "qualityDashboard": "Quality Dashboard",
+            "nonConformance": "Non-Conformance",
+            "capa": "CAPA",
+            "aqlSampling": "AQL Sampling",
+            "spc": "SPC"
+          }
+        },
+        "hrPayroll": {
+          "title": "HR & Payroll",
+          "links": {
+            "departments": "Departments",
+            "designations": "Designations",
+            "gradesSteps": "Grades & Steps",
+            "salaryComponents": "Salary Components",
+            "salaryStructures": "Salary Structures",
+            "employees": "Employees",
+            "payrollRuns": "Payroll Runs",
+            "approvalsInbox": "Approvals Inbox",
+            "taxBracketsNbr": "Tax Brackets (NBR)",
+            "form108Annual": "Form 108 (Annual)",
+            "hrPolicyPfGratuity": "HR Policy (PF/Gratuity)",
+            "shifts": "Shifts",
+            "holidayCalendar": "Holiday Calendar",
+            "leaveTypes": "Leave Types",
+            "leaveApplications": "Leave Applications",
+            "attendance": "Attendance",
+            "projects": "Projects",
+            "finalSettlements": "Final Settlements",
+            "serviceRecords": "Service Records",
+            "recruitment": "Recruitment",
+            "appraisals": "Appraisals",
+            "wppfWelfare": "WPPF & Welfare",
+            "salaryBudgets": "Salary Budgets",
+            "hrReports": "HR Reports"
+          }
+        },
+        "employeePortal": {
+          "title": "Employee Portal",
+          "links": {
+            "myProfile": "My Profile",
+            "myPayslips": "My Payslips",
+            "myLeaves": "My Leaves",
+            "myAttendance": "My Attendance",
+            "myPfGratuity": "My PF & Gratuity"
+          }
+        },
+        "engineeringMaintenance": {
+          "title": "Engineering Maintenance",
+          "links": {
+            "engineeringMaintenance": "Engineering Maintenance",
+            "equipment": "Equipment",
+            "pmSchedules": "PM Schedules",
+            "workOrders": "Work Orders",
+            "spareParts": "Spare Parts",
+            "downtime": "Downtime",
+            "calibration": "Calibration"
+          }
+        },
+        "medicalCentre": {
+          "title": "Medical Centre",
+          "links": {
+            "medicalCentre": "Medical Centre",
+            "clinicVisits": "Clinic Visits",
+            "pharmacy": "Pharmacy",
+            "healthCheckups": "Health Checkups"
+          }
+        },
+        "tradeFinance": {
+          "title": "Trade Finance",
+          "links": {
+            "salesContracts": "Sales Contracts",
+            "lettersOfCredit": "Letters of Credit",
+            "ttRemittances": "TT Remittances",
+            "exportShipments": "Export Shipments",
+            "bdExportPapers": "BD Export Papers"
+          }
+        },
+        "salesCrm": {
+          "title": "Sales & CRM",
+          "groups": {
+            "pipeline": "Pipeline",
+            "activities": "Activities",
+            "orders": "Orders",
+            "accounts": "Accounts",
+            "distribution": "Distribution",
+            "finance": "Finance",
+            "engageAi": "Engage & AI",
+            "dms": "DMS",
+            "tradePromo": "Trade Promo",
+            "vanSales": "Van Sales",
+            "insights": "Insights"
+          },
+          "links": {
+            "crm": "CRM",
+            "pipeline": "Pipeline",
+            "leads": "Leads",
+            "contacts": "Contacts",
+            "deals": "Deals",
+            "tasks": "Tasks",
+            "visitLog": "Visit Log",
+            "quotes": "Quotes",
+            "salesOrders": "Sales Orders",
+            "returns": "Returns",
+            "customer360": "Customer 360",
+            "accountPlans": "Account Plans",
+            "objections": "Objections",
+            "playbook": "Playbook",
+            "pricing": "Pricing",
+            "schemes": "Schemes",
+            "dealers": "Dealers",
+            "field": "Field",
+            "orgAccess": "Org & Access",
+            "dispatch": "Dispatch",
+            "commissions": "Commissions",
+            "credit": "Credit",
+            "collections": "Collections",
+            "capture": "Capture",
+            "sequences": "Sequences",
+            "askAi": "Ask AI",
+            "secondarySales": "Secondary Sales",
+            "distributorStock": "Distributor Stock",
+            "marketReturns": "Market Returns",
+            "sellThrough": "Sell-Through",
+            "secondaryTargets": "Secondary Targets",
+            "promotions": "Promotions",
+            "claims": "Claims",
+            "rebates": "Rebates",
+            "vans": "Vans",
+            "trips": "Trips",
+            "vanSales": "Van Sales",
+            "vanStock": "Van Stock",
+            "dashboard": "Dashboard",
+            "targets": "Targets",
+            "forecast": "Forecast",
+            "relationships": "Relationships",
+            "amScorecard": "AM Scorecard"
+          }
+        },
+        "transportPool": {
+          "title": "Transport Pool",
+          "links": {
+            "transportPool": "Transport Pool",
+            "vehicles": "Vehicles",
+            "trips": "Trips",
+            "fuelLog": "Fuel Log",
+            "maintenance": "Maintenance"
+          }
+        },
+        "analytics": {
+          "title": "Analytics",
+          "links": {
+            "biAnalyticsReporting": "BI Analytics & Reporting",
+            "executiveDashboard": "Executive Dashboard",
+            "financialReports": "Financial Reports",
+            "hrPayroll": "HR & Payroll",
+            "demandForecast": "Demand Forecast",
+            "exportTakeout": "Export / Takeout"
+          }
+        },
+        "realEstate": {
+          "title": "Real Estate",
+          "links": {
+            "salesDashboard": "Sales Dashboard",
+            "properties": "Properties",
+            "units": "Units",
+            "bookings": "Bookings",
+            "collections": "Collections",
+            "handover": "Handover",
+            "revenueRecognition": "Revenue Recognition",
+            "leases": "Leases",
+            "brokers": "Brokers",
+            "buyerPortal": "Buyer Portal"
+          }
+        },
+        "education": {
+          "title": "Education",
+          "links": {
+            "educationDashboard": "Education Dashboard",
+            "admissions": "Admissions",
+            "students": "Students",
+            "academics": "Academics",
+            "studentAttendance": "Student Attendance",
+            "timetable": "Timetable",
+            "examsResults": "Exams & Results",
+            "promotionCertificates": "Promotion & Certificates",
+            "hifz": "Hifz",
+            "boardingMess": "Boarding & Mess",
+            "welfareFunds": "Welfare Funds",
+            "notices": "Notices",
+            "onlinePayments": "Online Payments",
+            "library": "Library",
+            "schoolBus": "School Bus",
+            "storeIssues": "Store Issues",
+            "rooms": "Rooms",
+            "fees": "Fees",
+            "feeReports": "Fee Reports",
+            "institutionSettings": "Institution Settings"
+          }
+        },
+        "pos": {
+          "title": "Point of Sale (POS)",
+          "links": {
+            "registerTill": "Register (Till)",
+            "shifts": "Shifts",
+            "receipts": "Receipts",
+            "daySummaryZ": "Day Summary (Z)",
+            "outletDashboard": "Outlet Dashboard",
+            "loyaltyVouchers": "Loyalty & Vouchers",
+            "transfers": "Transfers",
+            "stockLots": "Stock Lots",
+            "outletStock": "Outlet Stock",
+            "outletsRegisters": "Outlets & Registers"
+          }
+        },
+        "merchandising": {
+          "title": "Merchandising",
+          "links": {
+            "merchandisingDashboard": "Merchandising Dashboard",
+            "stylesCosting": "Styles & Costing",
+            "tnaCalendar": "TNA Calendar",
+            "materialBooking": "Material Booking",
+            "productionFollowUp": "Production Follow-up",
+            "factories": "Factories",
+            "inHouseReceipts": "In-house Receipts",
+            "profitability": "Profitability",
+            "buyerPortal": "Buyer Portal"
+          }
+        },
+        "fundAccounting": {
+          "title": "Fund Accounting",
+          "links": {
+            "fundDashboard": "Fund Dashboard",
+            "grants": "Grants",
+            "donorsFunds": "Donors & Funds",
+            "fundReports": "Fund Reports",
+            "beneficiariesME": "Beneficiaries & M&E",
+            "costAllocation": "Cost Allocation"
+          }
+        },
+        "university": {
+          "title": "University",
+          "links": {
+            "universityDashboard": "University Dashboard",
+            "universityAdmissions": "University Admissions",
+            "universityStudents": "University Students",
+            "facultiesProgrammes": "Faculties & Programmes",
+            "coursesCurriculum": "Courses & Curriculum",
+            "classSchedule": "Class Schedule",
+            "registration": "Registration",
+            "studentAccounts": "Student Accounts",
+            "terms": "Terms",
+            "universitySettings": "University Settings"
+          }
+        }
+      },
       "mobileMenuLabel": "Toggle menu"
+    },
+    "comingSoon": {
+      "title": "Coming Soon",
+      "description": "We are building this page. Check back soon.",
+      "back": "Back to all apps"
     },
     "footer": {
       "description": "Unified apps for finance, sales, operations, and growth in one connected ERP platform.",

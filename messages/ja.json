@@ -164,6 +164,11 @@
             },
             "mobileMenuLabel": "メニューを切り替え"
         },
+        "comingSoon": {
+          "title": "近日公開",
+          "description": "このページは現在準備中です。もうしばらくお待ちください。",
+          "back": "すべてのアプリに戻る"
+        },
         "footer": {
             "description": "財務、営業、運用、成長のための統合アプリを1つの接続されたERPプラットフォームで。",
             "sections": {

@@ -164,6 +164,11 @@
       },
       "mobileMenuLabel": "Menüyü aç/kapat"
     },
+    "comingSoon": {
+      "title": "Çok Yakında",
+      "description": "Bu sayfa üzerinde çalışıyoruz. Yakında tekrar kontrol edin.",
+      "back": "Tüm uygulamalara dön"
+    },
     "footer": {
       "description": "Finans, satış, operasyonlar ve büyüme için tek bir bağlantılı ERP platformunda birleşik uygulamalar.",
       "sections": {

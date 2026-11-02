@@ -6,21 +6,10 @@ import { useTranslations } from "next-intl";
 import LanguageSwitcher from "@/components/language-switcher";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { Link, usePathname } from "@/i18n/navigation";
+import { appsMegaMenu, type MegaMenuColumn } from "@/lib/apps-menu";
 import NextLink from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-
-type MegaMenuLink = {
-  labelKey: string;
-  href: string;
-};
-
-type MegaMenuColumn = {
-  titleKey: string;
-  accentClass: string;
-  underlineClass: string;
-  links: MegaMenuLink[];
-};
 
 type MenuId = "apps" | "industries" | "community";
 
@@ -37,244 +26,6 @@ type NavItem =
       id?: never;
       megaMenu?: never;
     };
-
-const appsMegaMenu: MegaMenuColumn[] = [
-  {
-    titleKey: "menu.apps.finance",
-    accentClass: "text-emerald-600",
-    underlineClass: "bg-emerald-200",
-    links: [
-      { labelKey: "menu.apps.accounting", href: "/apps/Finance/Accounting" },
-      { labelKey: "menu.apps.invoicing", href: "/apps/Finance/Invoicing" },
-      { labelKey: "menu.apps.expenses", href: "/apps/Finance/Expenses" },
-      { labelKey: "menu.apps.spreadsheet", href: "/apps/Finance/Spreadsheet" },
-      { labelKey: "menu.apps.documents", href: "/apps/Finance/Documents" },
-      { labelKey: "menu.apps.sign", href: "/apps/Finance/esign" },
-    ],
-  },
-  {
-    titleKey: "menu.apps.budgetManagement",
-    accentClass: "text-teal-600",
-    underlineClass: "bg-teal-200",
-    links: [
-      {
-        labelKey: "menu.apps.budgetManagement",
-        href: "/apps/Finance/budget-management",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.analytics",
-    accentClass: "text-emerald-600",
-    underlineClass: "bg-emerald-200",
-    links: [
-      {
-        labelKey: "menu.apps.biAnalyticsReporting",
-        href: "/apps/analytics/bi-analytics-reporting",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.engineeringMaintenance",
-    accentClass: "text-indigo-600",
-    underlineClass: "bg-indigo-200",
-    links: [
-      {
-        labelKey: "menu.apps.engineeringMaintenance",
-        href: "/apps/engineering-maintenance",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.transportPool",
-    accentClass: "text-sky-600",
-    underlineClass: "bg-sky-200",
-    links: [
-      {
-        labelKey: "menu.apps.transportPool",
-        href: "/apps/transport-pool/transport-pool",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.fundAccounting",
-    accentClass: "text-emerald-700",
-    underlineClass: "bg-emerald-200",
-    links: [
-      {
-        labelKey: "menu.apps.fundDashboard",
-        href: "/apps/fund-accounting/dashboard",
-      },
-      {
-        labelKey: "menu.apps.grants",
-        href: "/apps/fund-accounting/grants",
-      },
-      {
-        labelKey: "menu.apps.donorsFunds",
-        href: "/apps/fund-accounting/donors-funds",
-      },
-      {
-        labelKey: "menu.apps.fundReports",
-        href: "/apps/fund-accounting/reports",
-      },
-      {
-        labelKey: "menu.apps.beneficiariesME",
-        href: "/apps/fund-accounting/beneficiaries-me",
-      },
-      {
-        labelKey: "menu.apps.costAllocation",
-        href: "/apps/fund-accounting/cost-allocation",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.sales",
-    accentClass: "text-rose-500",
-    underlineClass: "bg-rose-200",
-    links: [
-      { labelKey: "menu.apps.crm", href: "/apps/sales/crm" },
-      { labelKey: "menu.apps.salesApp", href: "/apps/sales" },
-      { labelKey: "menu.apps.posShop", href: "/apps/sales/pos" },
-      {
-        labelKey: "menu.apps.posRestaurant",
-        href: "/apps/sales/pos-restaurant",
-      },
-      {
-        labelKey: "menu.apps.subscriptions",
-        href: "/apps/sales/subscriptions",
-      },
-      { labelKey: "menu.apps.rental", href: "/apps/sales/rental" },
-    ],
-  },
-  {
-    titleKey: "menu.apps.websites",
-    accentClass: "text-sky-600",
-    underlineClass: "bg-sky-200",
-    links: [
-      { labelKey: "menu.apps.websiteBuilder", href: "/apps/website" },
-      { labelKey: "menu.apps.ecommerce", href: "/apps/website/ecommerce" },
-      { labelKey: "menu.apps.blog", href: "/apps/website/blog" },
-      { labelKey: "menu.apps.forum", href: "/apps/website/forum" },
-      { labelKey: "menu.apps.liveChat", href: "/apps/website/live-chat" },
-      { labelKey: "menu.apps.elearning", href: "/apps/website/elearning" },
-    ],
-  },
-  {
-    titleKey: "menu.apps.supplyChain",
-    accentClass: "text-indigo-500",
-    underlineClass: "bg-indigo-200",
-    links: [
-      { labelKey: "menu.apps.inventory", href: "/apps/supply-chain/inventory" },
-      { labelKey: "menu.apps.purchase", href: "/apps/supply-chain/purchase" },
-      {
-        labelKey: "menu.apps.procurement",
-        href: "/apps/supply-chain/procurement",
-      },
-      {
-        labelKey: "menu.apps.maintenance",
-        href: "/apps/supply-chain/maintenance",
-      },
-      { labelKey: "menu.apps.quality", href: "/apps/supply-chain/quality" },
-    ],
-  },
-  {
-    titleKey: "menu.apps.manufacturing",
-    accentClass: "text-amber-500",
-    underlineClass: "bg-amber-200",
-    links: [
-      {
-        labelKey: "menu.apps.manufacturingOverview",
-        href: "/apps/manufacturing",
-      },
-      {
-        labelKey: "menu.apps.workCenters",
-        href: "/apps/manufacturing/work-centers",
-      },
-      {
-        labelKey: "menu.apps.routings",
-        href: "/apps/manufacturing/routings",
-      },
-      {
-        labelKey: "menu.apps.billOfMaterials",
-        href: "/apps/manufacturing/bill-of-materials",
-      },
-      {
-        labelKey: "menu.apps.productionOrders",
-        href: "/apps/manufacturing/production-orders",
-      },
-      {
-        labelKey: "menu.apps.qualityControl",
-        href: "/apps/manufacturing/quality-control",
-      },
-      {
-        labelKey: "menu.apps.standardCosting",
-        href: "/apps/manufacturing/standard-costing",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.humanResources",
-    accentClass: "text-primary",
-    underlineClass: "bg-primary/20",
-    links: [
-      {
-        labelKey: "menu.apps.employees",
-        href: "/apps/human-resources/employees",
-      },
-      {
-        labelKey: "menu.apps.recruitment",
-        href: "/apps/human-resources/recruitment",
-      },
-      { labelKey: "menu.apps.timeOff", href: "/apps/human-resources/time-off" },
-      {
-        labelKey: "menu.apps.appraisals",
-        href: "/apps/human-resources/appraisals",
-      },
-      {
-        labelKey: "menu.apps.attendance",
-        href: "/apps/human-resources/attendance",
-      },
-      { labelKey: "menu.apps.payroll", href: "/apps/human-resources/payroll" },
-    ],
-  },
-  {
-    titleKey: "menu.apps.project",
-    accentClass: "text-violet-600",
-    underlineClass: "bg-violet-200",
-    links: [
-      {
-        labelKey: "menu.apps.projects",
-        href: "/apps/project-accounting/projects",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.services",
-    accentClass: "text-primary",
-    underlineClass: "bg-primary/20",
-    links: [
-      { labelKey: "menu.apps.timesheets", href: "/apps/services/timesheets" },
-      { labelKey: "menu.apps.helpdesk", href: "/apps/services/helpdesk" },
-      { labelKey: "menu.apps.planning", href: "/apps/services/planning" },
-      {
-        labelKey: "menu.apps.appointments",
-        href: "/apps/services/appointments",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.apps.productivity",
-    accentClass: "text-primary",
-    underlineClass: "bg-primary/20",
-    links: [
-      {
-        labelKey: "menu.apps.artificialIntelligence",
-        href: "/apps/productivity/artificial-intelligence",
-      },
-      { labelKey: "menu.apps.iot", href: "/apps/productivity/iot" },
-    ],
-  },
-];
 
 const industriesMegaMenu: MegaMenuColumn[] = [
   {
@@ -604,7 +355,7 @@ export default function Header({
                         </p>
                       </div>
 
-                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5 scrollbar-thin">
+                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5 [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]">
                         <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                           {item.megaMenu.map((column) => (
                             <div key={column.titleKey}>
@@ -618,9 +369,14 @@ export default function Header({
                                 className={`mt-2 h-px w-full ${column.underlineClass}`}
                               />
 
-                              <ul className="mt-3 space-y-2">
+                              <ul className="mt-3 max-h-58 space-y-2 overflow-y-auto px-px pe-1 [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]">
                                 {column.links.map((link) => (
                                   <li key={`${column.titleKey}:${link.href}`}>
+                                    {link.groupKey && (
+                                      <p className="mb-2 px-2 text-[11px] font-bold uppercase tracking-wider text-foreground/70">
+                                        {t(link.groupKey)}
+                                      </p>
+                                    )}
                                     <Link
                                       href={link.href}
                                       onClick={() => setOpenDesktopMenu(null)}
@@ -746,9 +502,14 @@ export default function Header({
                           {t(column.titleKey)}
                         </div>
 
-                        <ul className="space-y-2">
+                        <ul className="max-h-64 space-y-2 overflow-y-auto px-px pe-1 [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]">
                           {column.links.map((link) => (
                             <li key={`${column.titleKey}:${link.href}`}>
+                              {link.groupKey && (
+                                <p className="mb-2 px-2 text-[11px] font-bold uppercase tracking-wider text-foreground/70">
+                                  {t(link.groupKey)}
+                                </p>
+                              )}
                               <Link
                                 href={link.href}
                                 className={`block rounded-lg px-2 py-2 text-sm font-semibold transition-colors ${

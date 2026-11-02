@@ -166,7 +166,385 @@
           "becomePartner": "পার্টনার হোন"
         }
       },
+      "modules": {
+        "accounting": {
+          "title": "অ্যাকাউন্টিং",
+          "links": {
+            "accountingHub": "অ্যাকাউন্টিং হাব",
+            "chartOfAccounts": "হিসাবের তালিকা",
+            "journalEntries": "জার্নাল এন্ট্রি",
+            "ledgers": "লেজার",
+            "invoicesAr": "ইনভয়েস (AR)",
+            "billsAp": "বিল (AP)",
+            "purchaseOrders": "ক্রয় আদেশ",
+            "itemsProducts": "আইটেম / পণ্য",
+            "customers": "গ্রাহক",
+            "vendors": "সরবরাহকারী",
+            "bankAccounts": "ব্যাংক হিসাব",
+            "receipts": "রসিদ",
+            "deliveryChallans": "ডেলিভারি চালান",
+            "pettyCash": "পেটি ক্যাশ",
+            "chequeRegister": "চেক রেজিস্টার",
+            "closingFy": "ক্লোজিং ও অর্থবছর",
+            "financialReports": "আর্থিক প্রতিবেদন",
+            "vatRegister": "ভ্যাট রেজিস্টার",
+            "discountsCoupons": "ছাড় ও কুপন",
+            "loanManagement": "ঋণ ব্যবস্থাপনা",
+            "fixedAssetRegister": "স্থায়ী সম্পদ রেজিস্টার",
+            "exchangeRates": "বিনিময় হার",
+            "arApAging": "AR / AP এজিং",
+            "bankReconciliation": "ব্যাংক সমন্বয়"
+          }
+        },
+        "projectAccounting": {
+          "title": "প্রজেক্ট অ্যাকাউন্টিং",
+          "links": {
+            "overview": "ওভারভিউ",
+            "costCodes": "কস্ট কোড",
+            "budgets": "বাজেট",
+            "jobCost": "জব কস্ট",
+            "changeOrders": "চেঞ্জ অর্ডার",
+            "wip": "চলমান কাজ (WIP)",
+            "progressBilling": "অগ্রগতি বিলিং",
+            "schedule": "সময়সূচি",
+            "risksIssues": "ঝুঁকি ও সমস্যা",
+            "documents": "ডকুমেন্ট",
+            "milestones": "মাইলস্টোন",
+            "boq": "BOQ",
+            "billAllocations": "বিল বরাদ্দ",
+            "pAndL": "লাভ-ক্ষতি"
+          }
+        },
+        "budgetManagement": {
+          "title": "বাজেট ব্যবস্থাপনা",
+          "links": {
+            "overview": "ওভারভিউ",
+            "lines": "বাজেট লাইন",
+            "requisitions": "রিকুইজিশন",
+            "variance": "ভ্যারিয়েন্স",
+            "approvals": "অনুমোদন",
+            "rbrf": "RBRF"
+          }
+        },
+        "supplyChain": {
+          "title": "সাপ্লাই চেইন",
+          "links": {
+            "overview": "ওভারভিউ",
+            "goodsReceipts": "পণ্য গ্রহণ",
+            "landedCost": "ল্যান্ডেড কস্ট",
+            "procurement": "প্রকিউরমেন্ট",
+            "purchaseRequisitions": "ক্রয় রিকুইজিশন",
+            "comparativeStatements": "তুলনামূলক বিবরণী",
+            "tenderManagement": "টেন্ডার ব্যবস্থাপনা"
+          }
+        },
+        "inventory": {
+          "title": "ইনভেন্টরি",
+          "links": {
+            "demandForecast": "চাহিদা পূর্বাভাস",
+            "warehouses": "গুদাম",
+            "stockMovements": "স্টক মুভমেন্ট",
+            "inventorySummary": "ইনভেন্টরি সারাংশ",
+            "gatePasses": "গেট পাস",
+            "weighbridgeScales": "ওয়েব্রিজ ও স্কেল"
+          }
+        },
+        "openPlatform": {
+          "title": "ওপেন প্ল্যাটফর্ম",
+          "links": {
+            "taxRates": "করের হার",
+            "migrationStudio": "মাইগ্রেশন স্টুডিও",
+            "exportTakeout": "এক্সপোর্ট / টেকআউট"
+          }
+        },
+        "manufacturing": {
+          "title": "ম্যানুফ্যাকচারিং",
+          "links": {
+            "workCenters": "ওয়ার্ক সেন্টার",
+            "routings": "রাউটিং",
+            "billOfMaterials": "বিল অব ম্যাটেরিয়ালস",
+            "mrpPlanning": "MRP পরিকল্পনা",
+            "capacityPlanning": "সক্ষমতা পরিকল্পনা",
+            "masterScheduleMps": "মাস্টার শিডিউল (MPS)",
+            "schedulingAps": "শিডিউলিং (APS)",
+            "linePlanningBoard": "লাইন প্ল্যানিং বোর্ড",
+            "orderAllocation": "অর্ডার বরাদ্দ",
+            "shopFloor": "শপ ফ্লোর",
+            "productionOrders": "উৎপাদন আদেশ",
+            "batchesLots": "ব্যাচ / লট",
+            "serialNumbers": "সিরিয়াল নম্বর",
+            "qcTemplates": "QC টেমপ্লেট",
+            "qualityControl": "মান নিয়ন্ত্রণ",
+            "scrapWaste": "স্ক্র্যাপ / বর্জ্য",
+            "subcontracting": "সাবকন্ট্রাক্টিং",
+            "standardCosting": "স্ট্যান্ডার্ড কস্টিং",
+            "productionCosting": "উৎপাদন ব্যয়"
+          }
+        },
+        "quality": {
+          "title": "মান ব্যবস্থাপনা (QMS)",
+          "links": {
+            "qualityDashboard": "কোয়ালিটি ড্যাশবোর্ড",
+            "nonConformance": "নন-কনফরম্যান্স",
+            "capa": "CAPA",
+            "aqlSampling": "AQL স্যাম্পলিং",
+            "spc": "SPC"
+          }
+        },
+        "hrPayroll": {
+          "title": "এইচআর ও পেরোল",
+          "links": {
+            "departments": "বিভাগ",
+            "designations": "পদবি",
+            "gradesSteps": "গ্রেড ও ধাপ",
+            "salaryComponents": "বেতনের উপাদান",
+            "salaryStructures": "বেতন কাঠামো",
+            "employees": "কর্মচারী",
+            "payrollRuns": "পেরোল রান",
+            "approvalsInbox": "অনুমোদন ইনবক্স",
+            "taxBracketsNbr": "কর স্তর (NBR)",
+            "form108Annual": "ফর্ম ১০৮ (বার্ষিক)",
+            "hrPolicyPfGratuity": "এইচআর নীতি (PF/গ্র্যাচুইটি)",
+            "shifts": "শিফট",
+            "holidayCalendar": "ছুটির ক্যালেন্ডার",
+            "leaveTypes": "ছুটির ধরন",
+            "leaveApplications": "ছুটির আবেদন",
+            "attendance": "উপস্থিতি",
+            "projects": "প্রজেক্ট",
+            "finalSettlements": "চূড়ান্ত নিষ্পত্তি",
+            "serviceRecords": "সার্ভিস রেকর্ড",
+            "recruitment": "নিয়োগ",
+            "appraisals": "কর্মক্ষমতা মূল্যায়ন",
+            "wppfWelfare": "WPPF ও কল্যাণ",
+            "salaryBudgets": "বেতন বাজেট",
+            "hrReports": "এইচআর প্রতিবেদন"
+          }
+        },
+        "employeePortal": {
+          "title": "কর্মচারী পোর্টাল",
+          "links": {
+            "myProfile": "আমার প্রোফাইল",
+            "myPayslips": "আমার পে-স্লিপ",
+            "myLeaves": "আমার ছুটি",
+            "myAttendance": "আমার উপস্থিতি",
+            "myPfGratuity": "আমার PF ও গ্র্যাচুইটি"
+          }
+        },
+        "engineeringMaintenance": {
+          "title": "ইঞ্জিনিয়ারিং রক্ষণাবেক্ষণ",
+          "links": {
+            "engineeringMaintenance": "ইঞ্জিনিয়ারিং রক্ষণাবেক্ষণ",
+            "equipment": "সরঞ্জাম",
+            "pmSchedules": "PM সময়সূচি",
+            "workOrders": "ওয়ার্ক অর্ডার",
+            "spareParts": "খুচরা যন্ত্রাংশ",
+            "downtime": "ডাউনটাইম",
+            "calibration": "ক্যালিব্রেশন"
+          }
+        },
+        "medicalCentre": {
+          "title": "মেডিকেল সেন্টার",
+          "links": {
+            "medicalCentre": "মেডিকেল সেন্টার",
+            "clinicVisits": "ক্লিনিক ভিজিট",
+            "pharmacy": "ফার্মেসি",
+            "healthCheckups": "স্বাস্থ্য পরীক্ষা"
+          }
+        },
+        "tradeFinance": {
+          "title": "ট্রেড ফাইন্যান্স",
+          "links": {
+            "salesContracts": "বিক্রয় চুক্তি",
+            "lettersOfCredit": "ঋণপত্র (LC)",
+            "ttRemittances": "TT রেমিট্যান্স",
+            "exportShipments": "রপ্তানি শিপমেন্ট",
+            "bdExportPapers": "BD রপ্তানি নথি"
+          }
+        },
+        "salesCrm": {
+          "title": "বিক্রয় ও CRM",
+          "groups": {
+            "pipeline": "পাইপলাইন",
+            "activities": "কার্যক্রম",
+            "orders": "অর্ডার",
+            "accounts": "অ্যাকাউন্ট",
+            "distribution": "ডিস্ট্রিবিউশন",
+            "finance": "ফাইন্যান্স",
+            "engageAi": "এনগেজ ও AI",
+            "dms": "DMS",
+            "tradePromo": "ট্রেড প্রোমো",
+            "vanSales": "ভ্যান সেলস",
+            "insights": "ইনসাইটস"
+          },
+          "links": {
+            "crm": "CRM",
+            "pipeline": "পাইপলাইন",
+            "leads": "লিড",
+            "contacts": "কন্টাক্ট",
+            "deals": "ডিল",
+            "tasks": "টাস্ক",
+            "visitLog": "ভিজিট লগ",
+            "quotes": "কোটেশন",
+            "salesOrders": "বিক্রয় আদেশ",
+            "returns": "রিটার্ন",
+            "customer360": "কাস্টমার ৩৬০",
+            "accountPlans": "অ্যাকাউন্ট পরিকল্পনা",
+            "objections": "আপত্তি",
+            "playbook": "প্লেবুক",
+            "pricing": "মূল্য নির্ধারণ",
+            "schemes": "স্কিম",
+            "dealers": "ডিলার",
+            "field": "ফিল্ড",
+            "orgAccess": "অর্গ ও অ্যাক্সেস",
+            "dispatch": "ডিসপ্যাচ",
+            "commissions": "কমিশন",
+            "credit": "ক্রেডিট",
+            "collections": "সংগ্রহ",
+            "capture": "ক্যাপচার",
+            "sequences": "সিকোয়েন্স",
+            "askAi": "AI-কে জিজ্ঞাসা",
+            "secondarySales": "সেকেন্ডারি সেলস",
+            "distributorStock": "ডিস্ট্রিবিউটর স্টক",
+            "marketReturns": "মার্কেট রিটার্ন",
+            "sellThrough": "সেল-থ্রু",
+            "secondaryTargets": "সেকেন্ডারি টার্গেট",
+            "promotions": "প্রমোশন",
+            "claims": "ক্লেইম",
+            "rebates": "রিবেট",
+            "vans": "ভ্যান",
+            "trips": "ট্রিপ",
+            "vanSales": "ভ্যান সেলস",
+            "vanStock": "ভ্যান স্টক",
+            "dashboard": "ড্যাশবোর্ড",
+            "targets": "টার্গেট",
+            "forecast": "পূর্বাভাস",
+            "relationships": "সম্পর্ক",
+            "amScorecard": "AM স্কোরকার্ড"
+          }
+        },
+        "transportPool": {
+          "title": "ট্রান্সপোর্ট পুল",
+          "links": {
+            "transportPool": "ট্রান্সপোর্ট পুল",
+            "vehicles": "যানবাহন",
+            "trips": "ট্রিপ",
+            "fuelLog": "জ্বালানি লগ",
+            "maintenance": "রক্ষণাবেক্ষণ"
+          }
+        },
+        "analytics": {
+          "title": "অ্যানালিটিক্স",
+          "links": {
+            "biAnalyticsReporting": "BI অ্যানালিটিক্স ও রিপোর্টিং",
+            "executiveDashboard": "এক্সিকিউটিভ ড্যাশবোর্ড",
+            "financialReports": "আর্থিক প্রতিবেদন",
+            "hrPayroll": "এইচআর ও পেরোল",
+            "demandForecast": "চাহিদা পূর্বাভাস",
+            "exportTakeout": "এক্সপোর্ট / টেকআউট"
+          }
+        },
+        "realEstate": {
+          "title": "রিয়েল এস্টেট",
+          "links": {
+            "salesDashboard": "বিক্রয় ড্যাশবোর্ড",
+            "properties": "সম্পত্তি",
+            "units": "ইউনিট",
+            "bookings": "বুকিং",
+            "collections": "সংগ্রহ",
+            "handover": "হস্তান্তর",
+            "revenueRecognition": "রাজস্ব স্বীকৃতি",
+            "leases": "লিজ",
+            "brokers": "ব্রোকার",
+            "buyerPortal": "ক্রেতা পোর্টাল"
+          }
+        },
+        "education": {
+          "title": "শিক্ষা",
+          "links": {
+            "educationDashboard": "শিক্ষা ড্যাশবোর্ড",
+            "admissions": "ভর্তি",
+            "students": "শিক্ষার্থী",
+            "academics": "একাডেমিক",
+            "studentAttendance": "শিক্ষার্থী উপস্থিতি",
+            "timetable": "সময়সূচি",
+            "examsResults": "পরীক্ষা ও ফলাফল",
+            "promotionCertificates": "উত্তীর্ণ ও সনদ",
+            "hifz": "হিফজ",
+            "boardingMess": "বোর্ডিং ও মেস",
+            "welfareFunds": "কল্যাণ তহবিল",
+            "notices": "নোটিশ",
+            "onlinePayments": "অনলাইন পেমেন্ট",
+            "library": "লাইব্রেরি",
+            "schoolBus": "স্কুল বাস",
+            "storeIssues": "স্টোর ইস্যু",
+            "rooms": "কক্ষ",
+            "fees": "ফি",
+            "feeReports": "ফি প্রতিবেদন",
+            "institutionSettings": "প্রতিষ্ঠান সেটিংস"
+          }
+        },
+        "pos": {
+          "title": "পয়েন্ট অব সেল (POS)",
+          "links": {
+            "registerTill": "রেজিস্টার (টিল)",
+            "shifts": "শিফট",
+            "receipts": "রসিদ",
+            "daySummaryZ": "দৈনিক সারাংশ (Z)",
+            "outletDashboard": "আউটলেট ড্যাশবোর্ড",
+            "loyaltyVouchers": "লয়্যালটি ও ভাউচার",
+            "transfers": "ট্রান্সফার",
+            "stockLots": "স্টক লট",
+            "outletStock": "আউটলেট স্টক",
+            "outletsRegisters": "আউটলেট ও রেজিস্টার"
+          }
+        },
+        "merchandising": {
+          "title": "মার্চেন্ডাইজিং",
+          "links": {
+            "merchandisingDashboard": "মার্চেন্ডাইজিং ড্যাশবোর্ড",
+            "stylesCosting": "স্টাইল ও কস্টিং",
+            "tnaCalendar": "TNA ক্যালেন্ডার",
+            "materialBooking": "ম্যাটেরিয়াল বুকিং",
+            "productionFollowUp": "উৎপাদন ফলো-আপ",
+            "factories": "কারখানা",
+            "inHouseReceipts": "ইন-হাউস রসিদ",
+            "profitability": "লাভজনকতা",
+            "buyerPortal": "ক্রেতা পোর্টাল"
+          }
+        },
+        "fundAccounting": {
+          "title": "ফান্ড অ্যাকাউন্টিং",
+          "links": {
+            "fundDashboard": "ফান্ড ড্যাশবোর্ড",
+            "grants": "অনুদান",
+            "donorsFunds": "দাতা ও তহবিল",
+            "fundReports": "ফান্ড রিপোর্ট",
+            "beneficiariesME": "উপকারভোগী ও M&E",
+            "costAllocation": "ব্যয় বরাদ্দ"
+          }
+        },
+        "university": {
+          "title": "বিশ্ববিদ্যালয়",
+          "links": {
+            "universityDashboard": "বিশ্ববিদ্যালয় ড্যাশবোর্ড",
+            "universityAdmissions": "বিশ্ববিদ্যালয় ভর্তি",
+            "universityStudents": "বিশ্ববিদ্যালয় শিক্ষার্থী",
+            "facultiesProgrammes": "অনুষদ ও প্রোগ্রাম",
+            "coursesCurriculum": "কোর্স ও পাঠ্যক্রম",
+            "classSchedule": "ক্লাস সময়সূচি",
+            "registration": "রেজিস্ট্রেশন",
+            "studentAccounts": "শিক্ষার্থী হিসাব",
+            "terms": "টার্ম",
+            "universitySettings": "বিশ্ববিদ্যালয় সেটিংস"
+          }
+        }
+      },
       "mobileMenuLabel": "মেনু টগল করুন"
+    },
+    "comingSoon": {
+      "title": "শীঘ্রই আসছে",
+      "description": "আমরা এই পেজটি তৈরি করছি। শীঘ্রই আবার দেখুন।",
+      "back": "সব অ্যাপে ফিরে যান"
     },
     "footer": {
       "description": "ফিন্যান্স, সেলস, অপারেশনস এবং গ্রোথের জন্য এক প্ল্যাটফর্মে ইউনিফাইড ইআরপি।",
