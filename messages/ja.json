@@ -117,6 +117,7 @@
                 "industries": {
                     "garmentsTextile": "アパレル・繊維",
                     "others": "その他",
+                    "education": "教育",
                     "retail": "小売",
                     "foodHospitality": "食品・ホスピタリティ",
                     "realEstate": "不動産",

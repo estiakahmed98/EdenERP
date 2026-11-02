@@ -121,6 +121,7 @@
         "industries": {
           "garmentsTextile": "গার্মেন্টস ও টেক্সটাইল",
           "others": "অন্যান্য",
+          "education": "শিক্ষা",
           "retail": "রিটেইল",
           "foodHospitality": "ফুড অ্যান্ড হসপিটালিটি",
           "realEstate": "রিয়েল এস্টেট",
@@ -174,6 +175,8 @@
           "links": {
             "buyingHouse": "বায়িং হাউস",
             "accessories": "এক্সেসরিজ",
+            "ecommerce": "ই-কমার্স",
+            "lms": "LMS",
             "school": "স্কুল",
             "college": "কলেজ",
             "university": "বিশ্ববিদ্যালয়",

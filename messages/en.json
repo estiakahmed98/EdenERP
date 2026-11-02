@@ -121,6 +121,7 @@
         "industries": {
           "garmentsTextile": "Garments & Textile",
           "others": "Others",
+          "education": "Education",
           "retail": "Retail",
           "foodHospitality": "Food & Hospitality",
           "realEstate": "Real Estate",
@@ -174,6 +175,8 @@
           "links": {
             "buyingHouse": "Buying House",
             "accessories": "Accessories",
+            "ecommerce": "E-commerce",
+            "lms": "LMS",
             "school": "School",
             "college": "College",
             "university": "University",
@@ -221,7 +224,7 @@
           "title": "Project Accounting",
           "links": {
             "overview": "Overview",
-            "costCodes": "",
+            "costCodes": "Cost Codes",
             "budgets": "Budgets",
             "jobCost": "Job Cost",
             "changeOrders": "Change Orders",

@@ -117,6 +117,7 @@
         "industries": {
           "garmentsTextile": "الملابس والنسيج",
           "others": "أخرى",
+          "education": "التعليم",
           "retail": "التجزئة",
           "foodHospitality": "الطعام والضيافة",
           "realEstate": "العقارات",

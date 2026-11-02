@@ -180,8 +180,8 @@ const industriesMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
-    titleKey: "menu.industries.others",
-    accentClass: "text-primary",
+    titleKey: "menu.industries.education",
+    accentClass: "text-emerald-600",
     underlineClass: "bg-border",
     links: [
       {
@@ -195,6 +195,18 @@ const industriesMegaMenu: MegaMenuColumn[] = [
       {
         labelKey: "modules.industries.links.university",
         href: "/industries/university",
+      },
+      { labelKey: "modules.industries.links.lms", href: "/industries/lms" },
+    ],
+  },
+  {
+    titleKey: "menu.industries.others",
+    accentClass: "text-primary",
+    underlineClass: "bg-border",
+    links: [
+      {
+        labelKey: "modules.industries.links.ecommerce",
+        href: "/industries/ecommerce",
       },
       { labelKey: "modules.industries.links.ngo", href: "/industries/ngo" },
       { labelKey: "modules.industries.links.tv", href: "/industries/tv" },
