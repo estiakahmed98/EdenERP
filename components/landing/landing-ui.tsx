@@ -20,7 +20,7 @@ export const GLOBAL_CSS = `
 
 .landing-page { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
-.dark .landing-page { --purple: #714b67; --purple-dark: #5a3854; --teal: #02cfc3; --cream: #0b1120; --gray-bg: #111827; --ink: #e5e7eb; --muted: #94a3b8; --purple-light: #1f1521; }
+.dark .landing-page { --purple: #2f7fe0; --purple-dark: #0d5fbf; --teal: #4cc744; --cream: #0a1424; --gray-bg: #0f1c30; --ink: #eaf1fa; --muted: #9fb2cc; --purple-light: #12263f; }
 .landing-page.green, .landing-page.theme-green, .green .landing-page, .theme-green .landing-page {
   --purple: #238b5a;
   --purple-light: #e8f6ee;
@@ -42,8 +42,9 @@ html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rub
   --muted: #557086;
 }
 
-/* Light theme only: section accents follow the logo blue and green. */
-.light .landing-page {
+/* Light and dark themes: section accents follow the logo blue and green. */
+.light .landing-page,
+.dark .landing-page {
   --wavy: #9bdc95;
   --color-violet-50: #e8f1fb;
   --color-violet-100: #d7e7f8;
