@@ -119,7 +119,8 @@
           "iot": "IoT"
         },
         "industries": {
-          "sectors": "সেক্টর",
+          "garmentsTextile": "গার্মেন্টস ও টেক্সটাইল",
+          "others": "অন্যান্য",
           "retail": "রিটেইল",
           "foodHospitality": "ফুড অ্যান্ড হসপিটালিটি",
           "realEstate": "রিয়েল এস্টেট",
@@ -173,7 +174,11 @@
           "links": {
             "buyingHouse": "বায়িং হাউস",
             "accessories": "এক্সেসরিজ",
-            "schoolCollege": "স্কুল ও কলেজ",
+            "school": "স্কুল",
+            "college": "কলেজ",
+            "university": "বিশ্ববিদ্যালয়",
+            "merchandising": "মার্চেন্ডাইজিং",
+            "travelAgency": "ট্রাভেল এজেন্সি",
             "textile": "টেক্সটাইল",
             "garments": "গার্মেন্টস",
             "ngo": "এনজিও",

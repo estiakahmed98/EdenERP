@@ -115,6 +115,8 @@
           "iot": "IoT"
         },
         "industries": {
+          "garmentsTextile": "Hazır Giyim ve Tekstil",
+          "others": "Diğer",
           "retail": "Perakende",
           "foodHospitality": "Yiyecek ve Konaklama",
           "realEstate": "Gayrimenkul",

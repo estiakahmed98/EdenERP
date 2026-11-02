@@ -115,6 +115,8 @@
                     "iot": "IoT"
                 },
                 "industries": {
+                    "garmentsTextile": "アパレル・繊維",
+                    "others": "その他",
                     "retail": "小売",
                     "foodHospitality": "食品・ホスピタリティ",
                     "realEstate": "不動産",

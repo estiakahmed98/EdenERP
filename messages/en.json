@@ -119,7 +119,8 @@
           "iot": "IoT"
         },
         "industries": {
-          "sectors": "Sectors",
+          "garmentsTextile": "Garments & Textile",
+          "others": "Others",
           "retail": "Retail",
           "foodHospitality": "Food & Hospitality",
           "realEstate": "Real Estate",
@@ -173,7 +174,11 @@
           "links": {
             "buyingHouse": "Buying House",
             "accessories": "Accessories",
-            "schoolCollege": "School & College",
+            "school": "School",
+            "college": "College",
+            "university": "University",
+            "merchandising": "Merchandising",
+            "travelAgency": "Travel Agency",
             "textile": "Textile",
             "garments": "Garments",
             "ngo": "NGO",

@@ -115,6 +115,8 @@
           "iot": "IoT"
         },
         "industries": {
+          "garmentsTextile": "May mặc và Dệt may",
+          "others": "Khác",
           "retail": "Bán lẻ",
           "foodHospitality": "Ẩm thực & Khách sạn",
           "realEstate": "Bất động sản",

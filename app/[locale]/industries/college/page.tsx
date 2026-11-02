@@ -8,16 +8,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("layout.header.modules.industries");
 
   return {
-    title: t("links.schoolCollege"),
-    alternates: getLocaleAlternates("/industries/school-college"),
+    title: t("links.college"),
+    alternates: getLocaleAlternates("/industries/college"),
   };
 }
 
-export default function IndustriesSchoolCollegePage() {
+export default function IndustriesCollegePage() {
   return (
     <ComingSoonPage
       moduleKey="industries"
-      linkKey="schoolCollege"
+      linkKey="college"
       backHref="/industries"
       backKey="backIndustries"
     />

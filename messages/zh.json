@@ -115,6 +115,8 @@
           "iot": "IoT"
         },
         "industries": {
+          "garmentsTextile": "服装与纺织",
+          "others": "其他",
           "retail": "零售",
           "foodHospitality": "餐饮与酒店",
           "realEstate": "房地产",

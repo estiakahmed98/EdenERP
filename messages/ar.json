@@ -115,6 +115,8 @@
           "iot": "إنترنت الأشياء"
         },
         "industries": {
+          "garmentsTextile": "الملابس والنسيج",
+          "others": "أخرى",
           "retail": "التجزئة",
           "foodHospitality": "الطعام والضيافة",
           "realEstate": "العقارات",

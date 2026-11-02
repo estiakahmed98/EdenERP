@@ -29,47 +29,9 @@ type NavItem =
 
 const industriesMegaMenu: MegaMenuColumn[] = [
   {
-    titleKey: "menu.industries.sectors",
-    accentClass: "text-amber-500",
-    underlineClass: "bg-amber-200",
-    links: [
-      {
-        labelKey: "modules.industries.links.buyingHouse",
-        href: "/industries/buying-house",
-      },
-      {
-        labelKey: "modules.industries.links.accessories",
-        href: "/industries/accessories",
-      },
-      {
-        labelKey: "modules.industries.links.schoolCollege",
-        href: "/industries/school-college",
-      },
-      {
-        labelKey: "modules.industries.links.textile",
-        href: "/industries/manufacturing/textile",
-      },
-      {
-        labelKey: "modules.industries.links.garments",
-        href: "/industries/garments",
-      },
-      { labelKey: "modules.industries.links.ngo", href: "/industries/ngo" },
-      {
-        labelKey: "modules.industries.links.realEstate",
-        href: "/industries/realestate/real-estate-agency",
-      },
-      {
-        labelKey: "modules.industries.links.agroRice",
-        href: "/industries/agro-rice",
-      },
-      { labelKey: "modules.industries.links.tv", href: "/industries/tv" },
-      { labelKey: "modules.industries.links.steel", href: "/industries/steel" },
-    ],
-  },
-  {
     titleKey: "menu.industries.retail",
-    accentClass: "text-emerald-600",
-    underlineClass: "bg-emerald-200",
+    accentClass: "text-teal-600",
+    underlineClass: "bg-border",
     links: [
       {
         labelKey: "menu.industries.bookStore",
@@ -83,12 +45,24 @@ const industriesMegaMenu: MegaMenuColumn[] = [
         labelKey: "menu.industries.furnitureStore",
         href: "/industries/retail/furniture-store",
       },
+      {
+        labelKey: "menu.industries.groceryStore",
+        href: "/industries/retail/grocery-store",
+      },
+      {
+        labelKey: "menu.industries.hardwareStore",
+        href: "/industries/retail/hardware-store",
+      },
+      {
+        labelKey: "menu.industries.toyStore",
+        href: "/industries/retail/toy-store",
+      },
     ],
   },
   {
     titleKey: "menu.industries.foodHospitality",
     accentClass: "text-sky-600",
-    underlineClass: "bg-sky-200",
+    underlineClass: "bg-border",
     links: [
       {
         labelKey: "menu.industries.restaurant",
@@ -102,12 +76,20 @@ const industriesMegaMenu: MegaMenuColumn[] = [
         labelKey: "menu.industries.guestHouse",
         href: "/industries/food&hospitality/guest-house",
       },
+      {
+        labelKey: "menu.industries.beverageDistributor",
+        href: "/industries/food&hospitality/beverage-distributor",
+      },
+      {
+        labelKey: "menu.industries.hotel",
+        href: "/industries/food&hospitality/hotel",
+      },
     ],
   },
   {
     titleKey: "menu.industries.realEstate",
     accentClass: "text-rose-500",
-    underlineClass: "bg-rose-200",
+    underlineClass: "bg-border",
     links: [
       {
         labelKey: "menu.industries.realEstateAgency",
@@ -126,35 +108,96 @@ const industriesMegaMenu: MegaMenuColumn[] = [
   {
     titleKey: "menu.industries.consulting",
     accentClass: "text-indigo-500",
-    underlineClass: "bg-indigo-200",
+    underlineClass: "bg-border",
     links: [
       {
         labelKey: "menu.industries.accountingFirm",
         href: "/industries/consulting/accounting-firm",
       },
       {
-        labelKey: "menu.industries.auditCertification",
-        href: "/industries/consulting/audit-certification",
+        labelKey: "menu.industries.marketingAgency",
+        href: "/industries/consulting/marketing-agency",
       },
       {
         labelKey: "menu.industries.talentAcquisition",
         href: "/industries/consulting/talent-acquisition",
       },
+      {
+        labelKey: "menu.industries.auditCertification",
+        href: "/industries/consulting/audit-certification",
+      },
+      {
+        labelKey: "modules.industries.links.travelAgency",
+        href: "/industries/consulting/travel-agency",
+      },
     ],
   },
   {
-    titleKey: "menu.industries.manufacturing",
-    accentClass: "text-primary",
-    underlineClass: "bg-primary/20",
+    titleKey: "menu.industries.garmentsTextile",
+    accentClass: "text-violet-500",
+    underlineClass: "bg-border",
     links: [
       {
         labelKey: "menu.industries.textile",
         href: "/industries/manufacturing/textile",
       },
       {
+        labelKey: "modules.industries.links.garments",
+        href: "/industries/garments",
+      },
+      {
+        labelKey: "modules.industries.links.accessories",
+        href: "/industries/accessories",
+      },
+      {
+        labelKey: "modules.industries.links.buyingHouse",
+        href: "/industries/buying-house",
+      },
+      {
+        labelKey: "modules.industries.links.merchandising",
+        href: "/industries/merchandising",
+      },
+    ],
+  },
+  {
+    titleKey: "menu.industries.manufacturing",
+    accentClass: "text-orange-500",
+    underlineClass: "bg-border",
+    links: [
+      { labelKey: "modules.industries.links.steel", href: "/industries/steel" },
+      {
         labelKey: "menu.industries.metal",
         href: "/industries/manufacturing/metal",
       },
+      {
+        labelKey: "menu.industries.furniture",
+        href: "/industries/manufacturing/furniture",
+      },
+      {
+        labelKey: "modules.industries.links.agroRice",
+        href: "/industries/agro-rice",
+      },
+    ],
+  },
+  {
+    titleKey: "menu.industries.others",
+    accentClass: "text-primary",
+    underlineClass: "bg-border",
+    links: [
+      {
+        labelKey: "modules.industries.links.school",
+        href: "/industries/school",
+      },
+      {
+        labelKey: "modules.industries.links.college",
+        href: "/industries/college",
+      },
+      {
+        labelKey: "modules.industries.links.university",
+        href: "/industries/university",
+      },
+      { labelKey: "modules.industries.links.ngo", href: "/industries/ngo" },
+      { labelKey: "modules.industries.links.tv", href: "/industries/tv" },
     ],
   },
 ];
@@ -398,7 +441,11 @@ export default function Header({
                           {item.megaMenu.map((column) => (
                             <div key={column.titleKey}>
                               <div
-                                className={`text-xs font-black uppercase tracking-[0.22em] ${column.accentClass}`}
+                                className={`uppercase ${
+                                  item.id === "industries"
+                                    ? "ps-2 text-base font-semibold"
+                                    : "text-xs font-black tracking-[0.22em]"
+                                } ${column.accentClass}`}
                               >
                                 {t(column.titleKey)}
                               </div>
