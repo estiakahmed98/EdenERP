@@ -67,9 +67,9 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-background pb-20 pt-25">
       <ThreeBg />
 
-      <div className="pointer-events-none absolute -left-20 -top-30 h-105 w-105 rounded-full bg-[#f3eef122] blur-[60px]" />
+      <div className="pointer-events-none absolute -left-20 -top-30 h-105 w-105 rounded-full bg-(--purple-light)/13 blur-[60px]" />
 
-      <div className="pointer-events-none absolute -right-25 top-15 h-80 w-80 rounded-full bg-[#02cfc30a] blur-[60px]" />
+      <div className="pointer-events-none absolute -right-25 top-15 h-80 w-80 rounded-full bg-(--teal)/4 blur-[60px]" />
 
       <div className="relative z-10 mx-auto max-w-225 px-6 text-center">
         <SectionTag>{t("hero.tag")}</SectionTag>
@@ -113,7 +113,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden bg-[radial-gradient(circle_at_15%_0%,rgba(6,182,212,0.10),transparent_32%),radial-gradient(circle_at_90%_12%,rgba(139,92,246,0.12),transparent_34%)] p-4 sm:p-6">
+          <div className="relative overflow-hidden bg-[radial-gradient(circle_at_15%_0%,color-mix(in_srgb,var(--color-cyan-500)_10%,transparent),transparent_32%),radial-gradient(circle_at_90%_12%,color-mix(in_srgb,var(--color-violet-500)_12%,transparent),transparent_34%)] p-4 sm:p-6">
             <div className="pointer-events-none absolute -left-16 top-20 h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
             <div className="pointer-events-none absolute -right-16 bottom-0 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl" />
 

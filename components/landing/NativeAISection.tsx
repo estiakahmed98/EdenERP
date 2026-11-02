@@ -11,8 +11,8 @@ export default function NativeAISection() {
 
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(135deg,var(--purple-light)_0%,color-mix(in_srgb,var(--color-background)_88%,var(--teal)_12%)_45%,color-mix(in_srgb,var(--color-background)_92%,white_8%)_100%)] px-6 py-25 text-center">
-      <div className="pointer-events-none absolute -left-20 -top-20 h-85 w-85 rounded-full bg-[#714b6718] blur-[60px]" />
-      <div className="pointer-events-none absolute -bottom-15 -right-20 h-80 w-80 rounded-full bg-[#02cfc318] blur-[60px]" />
+      <div className="pointer-events-none absolute -left-20 -top-20 h-85 w-85 rounded-full bg-(--purple)/9 blur-[60px]" />
+      <div className="pointer-events-none absolute -bottom-15 -right-20 h-80 w-80 rounded-full bg-(--teal)/9 blur-[60px]" />
 
       <div className="relative z-10">
         <SectionTag>{t("nativeAi.tag")}</SectionTag>

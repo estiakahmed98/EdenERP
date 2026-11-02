@@ -6,21 +6,21 @@ export const GLOBAL_CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 .landing-page {
-  --purple: #714b67;
-  --purple-light: #f3eef1;
-  --purple-dark: #5a3854;
-  --teal: #02cfc3;
-  --cream: #faf9f7;
-  --gray-bg: #f3f4f7;
-  --ink: #1a1a2e;
-  --muted: #64748b;
+  --purple: #0d5fbf;
+  --purple-light: #e8f1fb;
+  --purple-dark: #0a3a8c;
+  --teal: #22a81a;
+  --cream: #f7fafd;
+  --gray-bg: #eef3f9;
+  --ink: #14233b;
+  --muted: #556a85;
   --hand: var(--font-caveat), 'Segoe Print', cursive;
   --body: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 .landing-page { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
-.dark .landing-page { --cream: #0b1120; --gray-bg: #111827; --ink: #e5e7eb; --muted: #94a3b8; --purple-light: #1f1521; }
+.dark .landing-page { --purple: #714b67; --purple-dark: #5a3854; --teal: #02cfc3; --cream: #0b1120; --gray-bg: #111827; --ink: #e5e7eb; --muted: #94a3b8; --purple-light: #1f1521; }
 .landing-page.green, .landing-page.theme-green, .green .landing-page, .theme-green .landing-page {
   --purple: #238b5a;
   --purple-light: #e8f6ee;
@@ -40,6 +40,29 @@ html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rub
   --gray-bg: #ecf7fb;
   --ink: #08263d;
   --muted: #557086;
+}
+
+/* Light theme only: section accents follow the logo blue and green. */
+.light .landing-page {
+  --wavy: #9bdc95;
+  --color-violet-50: #e8f1fb;
+  --color-violet-100: #d7e7f8;
+  --color-violet-200: #b7d4f3;
+  --color-violet-300: #86b8ec;
+  --color-violet-400: #4c95e3;
+  --color-violet-500: #1e88e5;
+  --color-violet-600: #0d5fbf;
+  --color-violet-700: #0b4fa8;
+  --color-violet-800: #0a3a8c;
+  --color-fuchsia-300: #86d982;
+  --color-fuchsia-500: #22a81a;
+  --color-cyan-300: #86b8ec;
+  --color-cyan-400: #1e88e5;
+  --color-cyan-500: #1e88e5;
+  --color-cyan-600: #0d5fbf;
+  --color-cyan-700: #0b4fa8;
+  --color-teal-300: #86d982;
+  --color-teal-500: #22a81a;
 }
 
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -112,6 +135,10 @@ export function ThreeBg() {
       const cam = new THREE.PerspectiveCamera(60, width / height, 0.1, 500);
       cam.position.z = 60;
 
+      const styles = getComputedStyle(ref.current);
+      const purple = new THREE.Color(styles.getPropertyValue("--purple").trim());
+      const teal = new THREE.Color(styles.getPropertyValue("--teal").trim());
+
       const geo = new THREE.BufferGeometry();
       const particleCount = 220;
       const pos = new Float32Array(particleCount * 3);
@@ -124,13 +151,13 @@ export function ThreeBg() {
 
         const tone = Math.random();
         if (tone > 0.7) {
-          col[index * 3] = 0.44;
-          col[index * 3 + 1] = 0.3;
-          col[index * 3 + 2] = 0.4;
+          col[index * 3] = purple.r;
+          col[index * 3 + 1] = purple.g;
+          col[index * 3 + 2] = purple.b;
         } else if (tone > 0.4) {
-          col[index * 3] = 0.02;
-          col[index * 3 + 1] = 0.81;
-          col[index * 3 + 2] = 0.76;
+          col[index * 3] = teal.r;
+          col[index * 3 + 1] = teal.g;
+          col[index * 3 + 2] = teal.b;
         } else {
           col[index * 3] = 0.92;
           col[index * 3 + 1] = 0.91;
@@ -153,7 +180,7 @@ export function ThreeBg() {
       const tor = new THREE.Mesh(
         new THREE.TorusGeometry(24, 0.8, 16, 80),
         new THREE.MeshBasicMaterial({
-          color: 0x714b67,
+          color: purple,
           transparent: true,
           opacity: 0.05,
         }),
@@ -163,7 +190,7 @@ export function ThreeBg() {
       const tor2 = new THREE.Mesh(
         new THREE.TorusGeometry(36, 0.4, 16, 80),
         new THREE.MeshBasicMaterial({
-          color: 0x02cfc3,
+          color: teal,
           transparent: true,
           opacity: 0.04,
         }),
@@ -280,7 +307,7 @@ export function SectionTag({
   );
 }
 
-function Wavy({ color = "#fde68a" }: { color?: string }) {
+function Wavy({ color = "var(--wavy, #fde68a)" }: { color?: string }) {
   return (
     <svg
       width="100%"
@@ -302,7 +329,7 @@ function Wavy({ color = "#fde68a" }: { color?: string }) {
 
 export function HandText({
   children,
-  color = "#fde68a",
+  color = "var(--wavy, #fde68a)",
   className = "",
 }: {
   children: React.ReactNode;
@@ -319,7 +346,7 @@ export function HandText({
 
 export function Circled({
   children,
-  color = "#02cfc3",
+  color = "var(--teal)",
 }: {
   children: React.ReactNode;
   color?: string;
