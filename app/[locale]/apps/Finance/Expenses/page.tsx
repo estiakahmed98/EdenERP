@@ -500,7 +500,7 @@ export default function ExpensesPage() {
                   </div>
                   <p className="text-slate-600 dark:text-slate-300 mb-2">{t("captureSection.demo.dragText")}</p>
                   <p className="text-xs text-slate-400">{t("captureSection.demo.supportText")}</p>
-                  <button className="mt-4 text-sm bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                  <button className="mt-4 text-sm btn-gradient text-white px-4 py-2 rounded-lg transition">
                     {t("captureSection.demo.uploadButton")}
                   </button>
                 </div>
@@ -703,11 +703,11 @@ export default function ExpensesPage() {
             </p>
 
             <div className="mt-6 flex gap-3">
-              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 transition text-sm">
+              <button className="flex items-center gap-2 px-4 py-2 btn-gradient text-white rounded-xl transition text-sm">
                 <Smartphone className="h-4 w-4" />
                 {t("mobileSection.appStore")}
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 transition text-sm">
+              <button className="flex items-center gap-2 px-4 py-2 btn-gradient text-white rounded-xl transition text-sm">
                 <Smartphone className="h-4 w-4" />
                 {t("mobileSection.googlePlay")}
               </button>

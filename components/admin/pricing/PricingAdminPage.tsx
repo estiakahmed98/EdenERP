@@ -1418,7 +1418,7 @@ export default function PricingAdminPage({
                   updateField("plans", resequence([...form.plans, newPlan]));
                   setActivePlanIndex(form.plans.length);
                 }}
-                className="bg-[#0E4B4B] text-white hover:bg-[#086666]"
+                className="btn-gradient text-white"
               >
                 + Add plan
               </Button>
@@ -1795,7 +1795,7 @@ export default function PricingAdminPage({
           className={
             !isDirty || isPending
               ? "inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200 text-slate-600 shadow-sm cursor-not-allowed opacity-80"
-              : "inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-600 text-white shadow-lg hover:bg-teal-500 ring-2 ring-teal-400 animate-pulse"
+              : "inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-gradient text-white shadow-lg ring-2 ring-teal-400 animate-pulse"
           }
         >
           {isPending ? "Saving…" : "Save changes"}

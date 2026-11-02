@@ -291,7 +291,7 @@ export function PlanCard({
         onClick={onBuyNow}
         className={`mt-6 w-full rounded-xl py-3.5 text-base font-semibold transition-all ${
           isHighlighted
-            ? "bg-emerald-600 text-white hover:bg-emerald-700"
+            ? "btn-gradient text-white"
             : "border bg-white/60 hover:bg-slate-50 dark:bg-transparent dark:hover:bg-slate-800"
         }`}
         style={

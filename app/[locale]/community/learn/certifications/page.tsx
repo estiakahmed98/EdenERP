@@ -109,7 +109,7 @@ export default function CertificationsPage() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Get Certified
               </Link>
@@ -233,7 +233,7 @@ export default function CertificationsPage() {
                 </div>
               </div>
 
-              <button className="mt-7 w-full rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary">
+              <button className="mt-7 w-full rounded-xl btn-gradient px-4 py-3 text-sm font-semibold text-white transition-colors">
                 View Certification
               </button>
             </div>
@@ -313,7 +313,7 @@ export default function CertificationsPage() {
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/pricing"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Start Certification
               </Link>

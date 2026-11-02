@@ -440,7 +440,7 @@ export default function BlogForm({ blog, onSuccess }: BlogFormProps) {
           <button
             type="submit"
             disabled={loading}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50"
+            className="px-4 py-2 btn-gradient text-white rounded-lg disabled:opacity-50"
           >
             {loading ? "Saving..." : blog ? "Update Blog" : "Create Blog"}
           </button>

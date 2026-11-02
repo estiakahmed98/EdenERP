@@ -948,7 +948,7 @@ function ExportCenter({ t }: { t: ReturnType<typeof useTranslations<"pages.analy
             <p className="mt-2 text-[10px] font-semibold text-emerald-800 dark:text-emerald-200">{t("takeout.demoOnlyNotice")}</p>
           </div>
         </div>
-        <button type="button" onClick={() => downloadSample(true)} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:bg-emerald-500 dark:text-slate-950 dark:hover:bg-emerald-400">
+        <button type="button" onClick={() => downloadSample(true)} className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg btn-gradient px-4 py-2.5 text-sm font-bold text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-slate-950">
           <Download className="h-4 w-4" />{t("takeout.downloadBundle", { format: format.toUpperCase() })}
         </button>
       </section>
@@ -974,7 +974,7 @@ function ExportCenter({ t }: { t: ReturnType<typeof useTranslations<"pages.analy
         </div>
         <div className="lg:col-span-2">
           <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">{t("takeout.formatNote")}</p>
-          <button type="button" onClick={() => downloadSample()} className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:bg-emerald-500 dark:text-slate-950 dark:hover:bg-emerald-400">
+          <button type="button" onClick={() => downloadSample()} className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg btn-gradient px-4 py-2.5 text-sm font-bold text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-slate-950">
             {format === "excel" ? <FileSpreadsheet className="h-4 w-4" /> : format === "json" ? <FileJson2 className="h-4 w-4" /> : <Download className="h-4 w-4" />}
             {t("takeout.exportDataset", { dataset: datasets.find((item) => item.id === dataset)?.name ?? "" , format: format.toUpperCase()})}
           </button>
@@ -1022,7 +1022,7 @@ export default function AnalyticsShowcase() {
             </ShowcaseHeading>
             <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">{t("hero.description")}</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-700 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-700/20 transition hover:-translate-y-0.5 hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:bg-emerald-500 dark:text-slate-950 dark:hover:bg-emerald-400">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-lg btn-gradient px-5 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-slate-950">
                 {t("hero.primaryCta")}<ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="#analytics-tabs" className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-emerald-500/50 dark:hover:bg-emerald-500/10">

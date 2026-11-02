@@ -142,7 +142,7 @@ export default function AppointmentPage() {
                   </ul>
                 </div>
 
-                <button className="mt-8 w-full rounded-xl bg-primary py-3.5 font-semibold text-primary-foreground transition hover:bg-primary/90">
+                <button className="mt-8 w-full rounded-xl btn-gradient py-3.5 font-semibold text-white transition">
                   {t("card.book")}
                 </button>
               </div>

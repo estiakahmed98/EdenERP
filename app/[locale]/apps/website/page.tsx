@@ -319,7 +319,7 @@ export default function WebsiteBuilderSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
+              className="rounded-md btn-gradient px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
               {t("hero.buttons.startNow")}
             </Link>
@@ -353,7 +353,7 @@ export default function WebsiteBuilderSections() {
                       <p className="mt-4 max-w-sm text-sm leading-6 text-white/80">
                         {t("hero.dashboard.heroDescription")}
                       </p>
-                      <button className="mt-8 rounded-md bg-orange-500 dark:bg-orange-600 px-5 py-3 text-sm font-bold text-white hover:bg-orange-600 transition">
+                      <button className="mt-8 rounded-md btn-gradient px-5 py-3 text-sm font-bold text-white transition">
                         {t("hero.dashboard.orderButton")}
                       </button>
                     </div>
@@ -658,7 +658,7 @@ export default function WebsiteBuilderSections() {
             </div>
 
             <div className="mt-5 flex gap-3">
-              <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
+              <button className="rounded-md btn-gradient px-4 py-2 text-xs font-bold text-white transition">
                 {t("aiSection.buttons.apply")}
               </button>
               <button className="rounded-md border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition">
@@ -962,7 +962,7 @@ export default function WebsiteBuilderSections() {
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
+              className="mt-8 inline-flex rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
               {t("getStartedSection.button")}
             </Link>

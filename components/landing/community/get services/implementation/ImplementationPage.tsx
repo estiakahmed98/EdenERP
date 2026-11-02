@@ -114,7 +114,7 @@ export default function PricingPacksPage() {
                 <span className="italic">(self-implemented)</span>.
               </p>
             </div>
-            <button className="inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-4 font-bold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/90" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <button className="inline-flex items-center gap-2 rounded-xl btn-gradient px-8 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
               {t("hero.cta")}
               <ArrowRight className="h-5 w-5" />
             </button>
@@ -245,7 +245,7 @@ export default function PricingPacksPage() {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <button className="inline-flex items-center gap-2 rounded-xl bg-primary px-10 py-4 font-bold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/90" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <button className="inline-flex items-center gap-2 rounded-xl btn-gradient px-10 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
             {t("faqSection.contact")}
             <ArrowRight className="h-5 w-5" />
           </button>

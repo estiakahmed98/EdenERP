@@ -152,7 +152,7 @@ export default async function TrainingPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#paths"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
+                className="inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 {t("hero.primaryCta")}
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -371,7 +371,7 @@ export default async function TrainingPage() {
             </p>
             <Link
               href="#get-started"
-              className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
+              className="inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
             >
               {t("scheduleSection.cta")}
             </Link>
@@ -437,7 +437,7 @@ export default async function TrainingPage() {
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href="/pricing"
-            className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
           >
             {t("ctaSection.primaryCta")}
           </Link>

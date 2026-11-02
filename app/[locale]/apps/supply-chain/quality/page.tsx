@@ -95,7 +95,7 @@ export default function QualityLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
+              className="rounded-md btn-gradient px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
               {t("header.buttons.startNow")}
             </Link>
@@ -252,7 +252,7 @@ export default function QualityLandingSections() {
                   {t("advancedSections.capa.panelDescription")}
                 </p>
               </div>
-              <button className="flex items-center gap-1.5 rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
+              <button className="flex items-center gap-1.5 rounded-md btn-gradient px-4 py-2 text-xs font-bold text-white transition">
                 <Plus className="h-3.5 w-3.5" />
                 {t("advancedSections.capa.button")}
               </button>
@@ -362,7 +362,7 @@ export default function QualityLandingSections() {
                   {t("advancedSections.aql.panelDescription")}
                 </p>
               </div>
-              <button className="flex items-center gap-1.5 rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
+              <button className="flex items-center gap-1.5 rounded-md btn-gradient px-4 py-2 text-xs font-bold text-white transition">
                 <RefreshCw className="h-3.5 w-3.5" />
                 {t("advancedSections.aql.button")}
               </button>
@@ -672,7 +672,7 @@ export default function QualityLandingSections() {
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
+              className="mt-8 inline-flex rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
               {t("ctaSection.button")}
             </Link>

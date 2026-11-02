@@ -61,7 +61,7 @@ const AdminHeader = ({
           <Link
             href="/"
             target="_blank"
-            className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:opacity-90 md:flex"
+            className="hidden items-center gap-2 rounded-full btn-gradient px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:opacity-90 md:flex"
           >
             <ExternalLink size={16} />
             View Site

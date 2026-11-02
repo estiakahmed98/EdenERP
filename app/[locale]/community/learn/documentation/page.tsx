@@ -147,7 +147,7 @@ export default async function DocumentationPage() {
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#categories"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-primary/90"
+                className="inline-flex items-center justify-center rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
               >
                 {t("hero.primaryCta")}
               </Link>

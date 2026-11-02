@@ -128,7 +128,7 @@ export default function IoTDefencePage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#5d3f57] dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]"
+              className="rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white transition"
             >
               {commonT("contactSales")}
             </Link>
@@ -413,7 +413,7 @@ export default function IoTDefencePage() {
             {t("ctaSection.titleEnd")}
           </h2>
 
-          <button className="mt-10 rounded-md bg-[#714b67] px-8 py-4 text-sm font-bold text-white transition hover:bg-[#5d3f57] dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
+          <button className="mt-10 rounded-md btn-gradient px-8 py-4 text-sm font-bold text-white transition">
             {t("ctaSection.button")}
           </button>
         </div>

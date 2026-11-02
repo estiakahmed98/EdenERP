@@ -195,7 +195,7 @@ export default function BlogCard() {
           </div>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-[#C0704D] hover:bg-[#A85D3F] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 border border-[#C0704D] hover:border-[#A85D3F] flex items-center space-x-2"
+            className="btn-gradient text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 border border-[#C0704D] hover:border-[#A85D3F] flex items-center space-x-2"
           >
             <svg
               className="w-5 h-5"
@@ -420,7 +420,7 @@ export default function BlogCard() {
           </p>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-[#C0704D] hover:bg-[#A85D3F] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 border border-[#C0704D] hover:border-[#A85D3F]"
+            className="btn-gradient text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 border border-[#C0704D] hover:border-[#A85D3F]"
           >
             Create Blog Post
           </button>

@@ -52,7 +52,7 @@ export default function NotFound() {
           <div className="relative z-10 grid gap-4 sm:grid-cols-2">
             <Link
               href="/"
-              className="group flex items-center justify-center gap-3 rounded-xl bg-[#714b67] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-1 hover:bg-[#5f3d56]"
+              className="group flex items-center justify-center gap-3 rounded-xl btn-gradient px-6 py-4 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-1"
             >
               <Home className="h-5 w-5" />
               Go Home

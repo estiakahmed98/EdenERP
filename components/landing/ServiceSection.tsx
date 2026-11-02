@@ -274,7 +274,7 @@ export default function AdonAppsSection() {
 
             <a
               href="#all-apps"
-              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-2xl btn-gradient px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5"
             >
               View all apps
               <ArrowRight className="h-4 w-4" />

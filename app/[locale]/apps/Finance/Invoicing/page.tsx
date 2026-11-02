@@ -358,11 +358,11 @@ export default function InvoicingPage() {
             </p>
 
             <div className="mt-6 flex gap-3">
-              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 dark:hover:bg-slate-700 transition text-sm">
+              <button className="flex items-center gap-2 px-4 py-2 btn-gradient text-white rounded-xl transition text-sm">
                 <Smartphone className="h-4 w-4" />
                 {t("mobileSection.appStore")}
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-xl hover:bg-slate-800 dark:hover:bg-slate-700 transition text-sm">
+              <button className="flex items-center gap-2 px-4 py-2 btn-gradient text-white rounded-xl transition text-sm">
                 <Play className="h-4 w-4" />
                 {t("mobileSection.googlePlay")}
               </button>

@@ -108,7 +108,7 @@ export default function AIPoweredAppsLandingPage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
+              className="rounded-md btn-gradient px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
               {commonT("contactSales")}
             </Link>
@@ -323,7 +323,7 @@ export default function AIPoweredAppsLandingPage() {
                 ))}
               </div>
 
-              <button className="mt-6 rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white hover:bg-[#5f3d56] transition dark:bg-[#8a5a7e] dark:hover:bg-[#7a4a6e]">
+              <button className="mt-6 rounded-md btn-gradient px-5 py-2 text-sm font-bold text-white transition">
                 {t("nextMoveSection.demo.button")}
               </button>
             </div>
@@ -638,7 +638,7 @@ export default function AIPoweredAppsLandingPage() {
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/40"
+              className="mt-8 inline-flex rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
               {t("footerCta.button")}
             </Link>

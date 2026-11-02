@@ -54,7 +54,7 @@ export default function FeaturesSection() {
 
         <a
           href="#"
-          className="reveal mt-8 inline-flex items-center gap-1.5 font-body text-[13px] font-bold text-(--purple) no-underline"
+          className="reveal mt-8 inline-flex items-center gap-1.5 rounded-[10px] btn-gradient px-5.5 py-3 font-body text-[15px] font-semibold text-white no-underline transition hover:-translate-y-0.5"
         >
           {commonT("seeAllFeatures")}
         </a>

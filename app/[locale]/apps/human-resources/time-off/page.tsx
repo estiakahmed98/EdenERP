@@ -116,7 +116,7 @@ export default function TimeOffLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
+              className="rounded-md btn-gradient px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/10"
             >
               {commonT("contactSales")}
             </Link>
@@ -150,7 +150,7 @@ export default function TimeOffLandingSections() {
                   </span>
                 </div>
 
-                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+                <button className="rounded-md btn-gradient px-4 py-2 text-xs font-bold text-white">
                   {t("hero.dashboard.newButton")}
                 </button>
               </div>
@@ -420,7 +420,7 @@ export default function TimeOffLandingSections() {
               </div>
 
               <div className="mt-6 flex gap-3">
-                <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
+                <button className="rounded-md btn-gradient px-5 py-2 text-sm font-bold text-white">
                   {t("freedomSection.request.approveButton")}
                 </button>
                 <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
@@ -739,7 +739,7 @@ export default function TimeOffLandingSections() {
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56]"
+              className="mt-8 inline-flex rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5"
             >
               {t("footerCta.button")}
             </Link>

@@ -32,7 +32,7 @@ export default function CTASection() {
 
           <button 
            onClick={() => router.push("/contact")}
-          className="rounded-[10px] border-[1.5px] border-white/25 bg-transparent px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5">
+          className="rounded-[10px] border-[1.5px] border-white/25 btn-gradient px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5">
             {commonT("contactSales")}
           </button>
         </div>

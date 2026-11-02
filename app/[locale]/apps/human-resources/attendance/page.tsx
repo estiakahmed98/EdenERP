@@ -141,7 +141,7 @@ export default function AttendanceLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-md bg-[#714b67] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
+              className="rounded-md btn-gradient px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/10"
             >
               {commonT("contactSales")}
             </Link>
@@ -175,7 +175,7 @@ export default function AttendanceLandingSections() {
                   </span>
                 </div>
 
-                <button className="rounded-md bg-[#714b67] px-4 py-2 text-xs font-bold text-white">
+                <button className="rounded-md btn-gradient px-4 py-2 text-xs font-bold text-white">
                   {t("hero.dashboard.checkInButton")}
                 </button>
               </div>
@@ -304,7 +304,7 @@ export default function AttendanceLandingSections() {
                   <Fingerprint className="h-12 w-12" />
                 </div>
 
-                <button className="mt-8 w-full rounded-md bg-[#714b67] px-5 py-3 text-sm font-bold text-white">
+                <button className="mt-8 w-full rounded-md btn-gradient px-5 py-3 text-sm font-bold text-white">
                   {t("clockInSection.demo.button")}
                 </button>
 
@@ -472,7 +472,7 @@ export default function AttendanceLandingSections() {
             </div>
 
             <div className="mt-6 flex gap-3">
-              <button className="rounded-md bg-[#714b67] px-5 py-2 text-sm font-bold text-white">
+              <button className="rounded-md btn-gradient px-5 py-2 text-sm font-bold text-white">
                 {t("correctionsSection.demo.approveButton")}
               </button>
               <button className="rounded-md border border-slate-200 dark:border-slate-700 px-5 py-2 text-sm font-bold text-slate-600 dark:text-slate-300">
@@ -757,7 +757,7 @@ export default function AttendanceLandingSections() {
 
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-[#714b67] px-7 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] dark:shadow-[#714b67]/10"
+              className="mt-8 inline-flex rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/10"
             >
               {t("footerCta.button")}
             </Link>

@@ -199,7 +199,7 @@ export default function AllBlogs() {
             <button
               onClick={() => setPage(page - 1)}
               disabled={page === 1}
-              className="px-6 py-3 rounded-xl bg-emerald-600 text-white disabled:opacity-50"
+              className="px-6 py-3 rounded-xl btn-gradient text-white disabled:opacity-50"
             >
               Previous
             </button>
@@ -207,7 +207,7 @@ export default function AllBlogs() {
             <button
               onClick={() => setPage(page + 1)}
               disabled={page === totalPages}
-              className="px-6 py-3 rounded-xl bg-emerald-600 text-white disabled:opacity-50"
+              className="px-6 py-3 rounded-xl btn-gradient text-white disabled:opacity-50"
             >
               Next
             </button>

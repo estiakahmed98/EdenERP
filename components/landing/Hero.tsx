@@ -86,7 +86,7 @@ export default function Hero() {
         </p>
 
         <div className="reveal reveal-d3 mt-8 flex flex-wrap justify-center gap-3">
-          <button className="rounded-[10px] border-[1.5px] border-transparent bg-(--purple) px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-95">
+          <button className="rounded-[10px] border-[1.5px] border-transparent btn-gradient px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-95">
             {commonT("watchDemo")}
           </button>
         </div>

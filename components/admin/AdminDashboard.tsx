@@ -1585,7 +1585,7 @@ const AdminDashboard: React.FC = () => {
               </button>
               <button
                 onClick={() => handleEditSave(editBlogData)}
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90"
+                className="px-4 py-2 btn-gradient text-white rounded-lg hover:opacity-90"
               >
                 Save Changes
               </button>

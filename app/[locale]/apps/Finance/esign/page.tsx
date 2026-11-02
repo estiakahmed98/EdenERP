@@ -406,7 +406,7 @@ export default function EsignPage() {
                   </div>
                 </div>
 
-                <button className="mt-4 w-full rounded-xl bg-cyan-600 py-3 text-sm font-semibold text-white hover:bg-cyan-700 transition">
+                <button className="mt-4 w-full rounded-xl btn-gradient py-3 text-sm font-semibold text-white transition">
                   {t("mobileSection.signatureCard.button")}
                 </button>
               </div>

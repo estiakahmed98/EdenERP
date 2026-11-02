@@ -461,11 +461,11 @@ export default function AccountingPage() {
             </div>
 
             <div className="mt-6 flex gap-3">
-              <button className="flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm text-white transition hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700">
+              <button className="flex items-center gap-2 rounded-xl btn-gradient px-4 py-2 text-sm text-white transition">
                 <Smartphone className="h-4 w-4" />
                 {t("mobile.appStore")}
               </button>
-              <button className="flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm text-white transition hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700">
+              <button className="flex items-center gap-2 rounded-xl btn-gradient px-4 py-2 text-sm text-white transition">
                 <Play className="h-4 w-4" />
                 {t("mobile.googlePlay")}
               </button>

@@ -533,19 +533,19 @@ export default function Header({
             <ThemeSwitcher variant="desktop" />
 
             {session?.user ? (
-              <div className="flex items-center gap-3 rounded-xl bg-primary text-primary-foreground">
+              <div className="flex items-center gap-3 rounded-xl btn-gradient text-white">
                 <NextLink
                   href="/admin"
-                  className="rounded-xl px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors"
+                  className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
                 >
                   {session.user.name ?? session.user.email}
                 </NextLink>
               </div>
             ) : (
-              <div className="flex items-center gap-3 rounded-xl bg-primary text-primary-foreground">
+              <div className="flex items-center gap-3 rounded-xl btn-gradient text-white">
                 <Link
                   href="/auth/signin"
-                  className="rounded-xl px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors"
+                  className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
                 >
                   {t("nav.signIn")}
                 </Link>
@@ -784,7 +784,7 @@ export default function Header({
             ) : (
               <Link
                 href="/auth/signin"
-                className="block w-full rounded-2xl border border-border bg-card px-5 py-4 text-center text-base font-bold text-foreground"
+                className="block w-full rounded-2xl btn-gradient px-5 py-4 text-center text-base font-bold text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {t("nav.signIn")}

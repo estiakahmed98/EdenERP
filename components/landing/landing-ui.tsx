@@ -6,10 +6,10 @@ export const GLOBAL_CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 .landing-page {
-  --purple: #0d5fbf;
+  --purple: #1088ef;
   --purple-light: #e8f1fb;
-  --purple-dark: #0a3a8c;
-  --teal: #22a81a;
+  --purple-dark: #003180;
+  --teal: #21a816;
   --cream: #f7fafd;
   --gray-bg: #eef3f9;
   --ink: #14233b;
@@ -20,7 +20,7 @@ export const GLOBAL_CSS = `
 
 .landing-page { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
 html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
-.dark .landing-page { --purple: #2f7fe0; --purple-dark: #0d5fbf; --teal: #4cc744; --cream: #0a1424; --gray-bg: #0f1c30; --ink: #eaf1fa; --muted: #9fb2cc; --purple-light: #12263f; }
+.dark .landing-page { --purple: #1088ef; --purple-dark: #003180; --teal: #21a816; --cream: #0a1424; --gray-bg: #0f1c30; --ink: #eaf1fa; --muted: #9fb2cc; --purple-light: #12263f; }
 .landing-page.green, .landing-page.theme-green, .green .landing-page, .theme-green .landing-page {
   --purple: #238b5a;
   --purple-light: #e8f6ee;
@@ -51,19 +51,19 @@ html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rub
   --color-violet-200: #b7d4f3;
   --color-violet-300: #86b8ec;
   --color-violet-400: #4c95e3;
-  --color-violet-500: #1e88e5;
-  --color-violet-600: #0d5fbf;
-  --color-violet-700: #0b4fa8;
-  --color-violet-800: #0a3a8c;
+  --color-violet-500: #1088ef;
+  --color-violet-600: #1088ef;
+  --color-violet-700: #0860b8;
+  --color-violet-800: #003180;
   --color-fuchsia-300: #86d982;
-  --color-fuchsia-500: #22a81a;
+  --color-fuchsia-500: #21a816;
   --color-cyan-300: #86b8ec;
-  --color-cyan-400: #1e88e5;
-  --color-cyan-500: #1e88e5;
-  --color-cyan-600: #0d5fbf;
-  --color-cyan-700: #0b4fa8;
+  --color-cyan-400: #1088ef;
+  --color-cyan-500: #1088ef;
+  --color-cyan-600: #1088ef;
+  --color-cyan-700: #0860b8;
   --color-teal-300: #86d982;
-  --color-teal-500: #22a81a;
+  --color-teal-500: #21a816;
 }
 
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

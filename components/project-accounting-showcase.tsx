@@ -325,7 +325,7 @@ export default function ProjectAccountingShowcase() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#714b67] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-[#714b67]/20 transition hover:-translate-y-0.5 hover:bg-[#5f3d56] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 dark:shadow-[#714b67]/30"
+                className="inline-flex items-center justify-center gap-2 rounded-lg btn-gradient px-5 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 dark:shadow-primary/30"
               >
                 {t("hero.primaryCta")}
                 <ArrowRight className="h-4 w-4" />

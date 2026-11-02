@@ -90,7 +90,7 @@ export default function PartnersPage() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             {t("hero.description")}
           </p>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/90">
+          <button className="mt-8 inline-flex items-center gap-2 rounded-xl btn-gradient px-6 py-3 font-semibold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5">
             {t("hero.cta")}
             <ArrowRight className="h-4 w-4" />
           </button>

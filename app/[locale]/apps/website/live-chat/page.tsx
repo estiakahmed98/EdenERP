@@ -266,7 +266,7 @@ export default function LiveChatLandingSections() {
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="#start"
-              className="rounded-md bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/80"
+              className="rounded-md btn-gradient px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5"
             >
               {t("hero.buttons.startNow")}
             </Link>
@@ -307,7 +307,7 @@ export default function LiveChatLandingSections() {
                       {t("hero.chatPreview.description")}
                     </p>
 
-                    <button className="mt-8 w-fit rounded-md bg-orange-500 px-5 py-3 text-sm font-bold text-white">
+                    <button className="mt-8 w-fit rounded-md btn-gradient px-5 py-3 text-sm font-bold text-white">
                       {t("hero.chatPreview.button")}
                     </button>
                   </div>
@@ -963,7 +963,7 @@ export default function LiveChatLandingSections() {
             </h2>
             <Link
               href="/pricing"
-              className="mt-8 inline-flex rounded-md bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/80"
+              className="mt-8 inline-flex rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5"
             >
               {t("getStartedSection.button")}
             </Link>

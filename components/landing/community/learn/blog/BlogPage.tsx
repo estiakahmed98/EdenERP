@@ -93,7 +93,7 @@ export default function BlogPage() {
 
               {/* Pagination */}
               <div className="mt-12 flex items-center gap-3">
-                <button className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                <button className="flex h-10 w-10 items-center justify-center rounded-md btn-gradient text-primary-foreground">
                   1
                 </button>
                 <button className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card text-foreground hover:bg-muted/30 transition">

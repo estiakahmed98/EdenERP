@@ -252,7 +252,7 @@ export function StandardPlanPage({
 
             <button
               onClick={handleCheckout}
-              className="mt-5 w-full rounded-lg bg-slate-900 py-3 font-semibold text-white transition hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700"
+              className="mt-5 w-full rounded-lg btn-gradient py-3 font-semibold text-white transition"
             >
               {buyNowLabel}
             </button>

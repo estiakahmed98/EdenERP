@@ -140,7 +140,7 @@ export default function SupportPage() {
 
               <span className="text-center text-muted-foreground">{t("hero.or")}</span>
 
-              <button className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-primary px-8 font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:bg-primary/90">
+              <button className="inline-flex h-14 items-center justify-center gap-2 rounded-xl btn-gradient px-8 font-semibold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5">
                 <MessageCircle className="h-5 w-5" />
                 {t("hero.askHuman")}
               </button>

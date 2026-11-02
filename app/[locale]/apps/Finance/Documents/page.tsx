@@ -453,7 +453,7 @@ export default function DocumentsPage() {
                   {tr("signingSection.demo.signatureLabel")}
                 </div>
               </div>
-              <button className="mt-4 w-full rounded-xl bg-orange-600 py-3 text-sm font-semibold text-white hover:bg-orange-700 transition">
+              <button className="mt-4 w-full rounded-xl btn-gradient py-3 text-sm font-semibold text-white transition">
                 Sign & Send
               </button>
             </div>

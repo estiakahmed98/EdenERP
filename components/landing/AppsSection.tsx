@@ -237,7 +237,7 @@ export default function AppsSection() {
 
         <Link
           href="/apps"
-          className="group mt-7 inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/[0.06] px-5 py-2.5 font-body text-[12px] font-extrabold text-(--purple) no-underline transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:bg-primary/10 hover:shadow-[0_12px_30px_-18px_color-mix(in_srgb,var(--purple)_60%,transparent)]"
+          className="group mt-7 inline-flex items-center gap-2 rounded-full btn-gradient px-5 py-2.5 font-body text-[12px] font-extrabold text-white no-underline transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-18px_color-mix(in_srgb,var(--purple)_60%,transparent)]"
         >
           {commonT("viewAllApps")}
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -174,7 +174,7 @@ export default function SignInPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-700 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-700/20 transition hover:-translate-y-0.5 hover:bg-purple-800 disabled:opacity-50 disabled:hover:translate-y-0"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl btn-gradient px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-700/20 transition hover:-translate-y-0.5 disabled:opacity-50 disabled:hover:translate-y-0"
               >
                 {loading ? (
                   <>
