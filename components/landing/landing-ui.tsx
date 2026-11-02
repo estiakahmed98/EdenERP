@@ -45,7 +45,7 @@ html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rub
 /* Light and dark themes: section accents follow the logo blue and green. */
 .light .landing-page,
 .dark .landing-page {
-  --wavy: #9bdc95;
+  --wavy: #21a816;
   --color-violet-50: #e8f1fb;
   --color-violet-100: #d7e7f8;
   --color-violet-200: #b7d4f3;
@@ -281,7 +281,7 @@ export function TypeWriter({ words }: { words: string[] }) {
   }, [wordIndex, words]);
 
   return (
-    <span className="font-hand text-(--purple)">
+    <span className="font-hand text-(--teal)">
       {text}
       <span className="animate-[blink_1s_infinite] font-light">|</span>
     </span>
