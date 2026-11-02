@@ -204,6 +204,464 @@
   },
   "pages": {
     "accountingShowcase": {
+      "bills": {
+        "meta": {
+          "title": "Alış Faturaları (AP): Taka ile Tedarikçi Faturaları, KDV ve Ödemeler | Adon ERP",
+          "description": "Her satırda KDV’li tedarikçi faturalarını kaydedin, her tedarikçiye ne kadar borcunuz olduğunu ve vadesini görün, kısmi ve tam ödemeleri izleyin. Bangladeş’teki şirketler için geliştirildi.",
+          "keywords": [
+            "Bangladeş tedarikçi faturası yazılımı",
+            "Bangladeş borç hesapları yazılımı",
+            "alışlarda KDV Bangladeş",
+            "tedarikçi ödeme takibi",
+            "Bangladeş muhasebe yazılımı",
+            "Adon ERP alış faturaları"
+          ]
+        },
+        "hero": {
+          "title": "Alış faturaları: tedarikçinin istediğini kaydedin, vadeyi görün, zamanında ödeyin",
+          "lead": "Tedarikçinin faturasını her satırda KDV hesaplanmış olarak girin, onaylayın ve taslaktan ödendiye kadar izleyin. Kısmi ödemeler faturaya işlenir; böylece kime ne kadar borcunuz kaldığını hep bilirsiniz.",
+          "secondaryCta": "Bir faturanın hayatına bakın"
+        },
+        "sample": {
+          "count": "98 kayıttan 25’i",
+          "terms": "Teslimde",
+          "lineItem": "Plastik",
+          "notes": [
+            "taslak, onaylı, ödendi tek bakışta",
+            "şimdiye kadar ne ödediniz",
+            "satırdan açın, yazdırın veya eşleştirin"
+          ]
+        },
+        "status": {
+          "draft": "taslak",
+          "approved": "onaylı",
+          "paid": "ödendi",
+          "void": "geçersiz"
+        },
+        "ui": {
+          "newBill": "Yeni Fatura",
+          "thBill": "Fatura #",
+          "thVendor": "Tedarikçi",
+          "thStatus": "Durum",
+          "thAmount": "Tutar",
+          "thPaid": "Ödenen",
+          "view": "Görüntüle",
+          "print": "Yazdır",
+          "allocate": "Eşleştir",
+          "detailTitle": "Fatura {no}",
+          "vendor": "Tedarikçi",
+          "status": "Durum",
+          "terms": "Koşullar",
+          "amountDue": "Ödenecek tutar",
+          "amountPaid": "Ödenen tutar",
+          "dueDate": "Vade tarihi",
+          "lineItems": "Kalemler",
+          "thItem": "Kalem",
+          "thQty": "Miktar",
+          "thUnitCost": "Birim fiyat",
+          "thVat": "KDV %",
+          "thVatAmt": "KDV tutarı",
+          "thTotal": "Toplam",
+          "recordPayment": "Ödeme Kaydet",
+          "voidBill": "Geçersiz kıl",
+          "printBill": "Faturayı Yazdır",
+          "caption": "Adon ERP’deki Alış Faturaları (AP) ekranının kısmi önizlemesi. Şirket, tedarikçiler ve rakamlar örnek verilerdir."
+        },
+        "lifecycle": {
+          "title": "Bir faturanın hayatı, dört kelimeyle",
+          "intro": "Listedeki her faturanın bir durumu vardır. Sütunu yukarıdan aşağı okuyun: hangi faturalar hâlâ kontrol ediliyor, hangileri ödeme bekliyor, hangileri kapandı, hemen anlarsınız.",
+          "steps": [
+            {
+              "question": "Hâlâ kontrol ediliyor",
+              "body": "Fatura girildi ama henüz kabul edilmedi. Taslakken miktarları gelen malla, fiyatları satın alma siparişiyle karşılaştırın."
+            },
+            {
+              "question": "Kabul edildi, borç var",
+              "body": "Tedarikçiye bu tutarı borçlusunuz. Bir kısmını ödediyseniz Ödenen sütunu ne kadar olduğunu gösterir; böylece 1,38,000 takalık bir faturada 70,000 ödenmesi kolayca fark edilir."
+            },
+            {
+              "question": "Tamamen ödendi",
+              "body": "Ödenen, Tutar’a eşit. Ödenecek başka bir şey yok. Fatura kayıt ve denetim için listede durur."
+            }
+          ],
+          "aside": {
+            "body": "Yanlışlıkla girildi ya da düzeltilmiş bir faturayla değiştirildi. Geçersiz kılınan fatura numarasıyla listede kalır; böylece numaralamada denetçinin soracağı bir boşluk olmaz."
+          },
+          "formTitle": "Yeni faturada neleri doldurursunuz",
+          "form": [
+            {
+              "label": "Proje (isteğe bağlı)",
+              "body": "Maliyet bir projeye veya işe aitse faturayı etiketleyin."
+            },
+            {
+              "label": "Tedarikçi",
+              "body": "Tedarikçiyi arayıp seçin. Bilgileri faturayla birlikte gelir."
+            },
+            {
+              "label": "Kasa hesabı",
+              "body": "Ödemenin çıkacağı yer. Başka birini seçmezseniz sizin için doldurulur (hesap 1010)."
+            },
+            {
+              "label": "Borç hesapları",
+              "body": "Ödeyene kadar borcunuzu tutan hesap. Sizin için doldurulur (hesap 2010)."
+            },
+            {
+              "label": "Koşullar",
+              "body": "Teslimde veya Net 30 gibi ödeme koşulları. Listedeki vade tarihi bundan çıkar."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Fatura, satın alma ile ödeme arasında durur",
+          "intro": "Bir tedarikçi ve kapınıza gelen malla başlar, bankadan çıkan parayla biter. Her adımın kendi aracı vardır ve birbirlerinden okurlar.",
+          "groups": {
+            "before": "Faturadan önce",
+            "after": "Faturadan sonra",
+            "shows": "Nerede görünür"
+          },
+          "items": {
+            "vendors": "Tedarikçinin adı, adresi ve koşulları, her faturada seçilir.",
+            "purchaseOrders": "Satın almayı kararlaştırdığınız şeyler; fatura bununla karşılaştırılabilir.",
+            "itemsProducts": "Satın aldıklarınız; fatura satırları için birim ve fiyatlarıyla.",
+            "chequeRegister": "Çekle ödediğinizde tarihiyle birlikte, hiçbiri unutulmasın.",
+            "bankAccounts": "Ödemenin çıktığı yer ve kontrol edilecek bakiye.",
+            "pettyCash": "Kasa kutusundan ödenen küçük alımlar, faturalardan ayrı tutulur.",
+            "vatRegister": "Her fatura satırındaki KDV, aylık beyanname için hazır.",
+            "accountingHub": "Ödenmemiş faturalar AP rakamını oluşturur.",
+            "financialReports": "Tablolarınızdaki alışlar ve borçlar."
+          }
+        },
+        "local": {
+          "title": "Bangladeş’te tedarikçilerin ödenme biçimini izleyen faturalar",
+          "intro": "Buradaki tedarikçiler çoğu zaman alıcının nakit akışına göre belirlenen tarihlerde parça parça ödenir. Fatura, bakiye sıfıra inene kadar bu ödemelerin hepsini görünür tutar.",
+          "points": [
+            {
+              "title": "Alışlarda KDV, satır satır",
+              "body": "Her fatura satırının kendi KDV oranı ve tutarı vardır. KDV Defteri’ne düşer; aylık beyanname zamanı geldiğinde alış KDV’si hazırdır."
+            },
+            {
+              "title": "Kısmi ödemeler gözün önünde",
+              "body": "Tedarikçiye iki ya da üç taksitle ödeyin. Ödenen sütunu her taksitle büyür ve bakiye hep faturanın üzerindedir."
+            },
+            {
+              "title": "Ödemeyi doğru faturaya eşleştirin",
+              "body": "Tek bir ödeme birkaç faturayı kapatıyorsa satırdan eşleştirin; her fatura tam olarak neyin kapandığını gösterir."
+            },
+            {
+              "title": "Tedarikçiye uygun koşullar",
+              "body": "Çimento tedarikçisi için teslimde, ambalaj tedarikçisi için Net 30. Vade tarihi seçtiğiniz koşulu izler."
+            }
+          ],
+          "story": {
+            "title": "Bir tedarikçi faturası, kapıdan ödemeye",
+            "intro": "Plastik hammadde için örnek bir fatura, genellikle işlediği gibi.",
+            "steps": [
+              {
+                "time": "15 Eyl",
+                "text": "40 birim plastik, tedarikçinin faturasıyla birlikte kapıya gelir."
+              },
+              {
+                "time": "16 Eyl",
+                "text": "Fatura taslak olarak girilir. Miktar satın alma siparişiyle, KDV faturayla kontrol edilir."
+              },
+              {
+                "time": "17 Eyl",
+                "text": "Onaylandı. Tam 1,38,000 taka artık tedarikçiye borç olarak görünür."
+              },
+              {
+                "time": "5 Eki",
+                "text": "70,000’lik kısmi ödeme çıkar. Ödenen bunu gösterir ve 68,000 vadesi gelmeden kalır."
+              },
+              {
+                "time": "19 Eki",
+                "text": "Bakiye vade gününde ödenir. Ödenen, Tutar’la eşleşir ve fatura ödendi olur."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Farklı sektörler alış faturalarını nasıl kullanır",
+          "angles": {
+            "retail": "Haftada çok sayıda, vadeli stok tedarikçi faturası.",
+            "food-hospitality": "Günlük taze ürün ve aylık faturalar, her birinin kendi faturası.",
+            "real-estate": "Projeye bağlı müteahhit ve malzeme faturaları.",
+            "consulting": "Ay sonunda yazılım, kira ve taşeron faturaları.",
+            "manufacturing": "Uzun vadeli, kısmi ödemeli hammadde faturaları.",
+            "health-fitness": "Takvime göre ödenen ekipman, malzeme ve kira.",
+            "trades": "Her iş için alınan parçalar, projeye faturalanır.",
+            "others": "Tedarikçi faturalarına karşı harcanan hibeler, kullanılana kadar ayrı tutulur."
+          }
+        },
+        "faq": {
+          "title": "Alış faturaları hakkında sık sorulan sorular",
+          "items": [
+            {
+              "q": "Adon ERP’de alış faturası nedir?",
+              "a": "Kaydettiğiniz bir tedarikçi faturasıdır: bir tedarikçi, varsa bir proje, KDV’li kalemler ve ödeme koşulları. Onaylandıktan sonra ödeyene kadar borcunuzu gösterir."
+            },
+            {
+              "q": "Taslak, onaylı, ödendi ve geçersiz ne demek?",
+              "a": "Taslak, hâlâ kontrol ediliyor demektir. Onaylı, bu tutarı borçlu olduğunuz anlamına gelir. Ödendi, tutarın tamamının ödendiği anlamına gelir. Geçersiz faturalar kayıt için numaralarıyla listede kalır."
+            },
+            {
+              "q": "Tedarikçiye parça parça ödeyebilir miyim?",
+              "a": "Evet. Faturada “Ödeme Kaydet”i kullanın. Ödenen sütunu, tam tutarın yanında şimdiye kadar ne kadarının çıktığını gösterir."
+            },
+            {
+              "q": "Eşleştir ne işe yarar?",
+              "a": "Bir ödemeyi kapattığı faturaya bağlar. Bir ödeme birden fazla faturayı kapattığında eşleştirme her faturanın bakiyesini doğru tutar."
+            },
+            {
+              "q": "Faturada KDV nasıl işlenir?",
+              "a": "Her satırın kendi KDV oranı vardır. Fatura her satır için KDV tutarını gösterir ve satır toplamına ekler; KDV, KDV Defteri’ne gider."
+            },
+            {
+              "q": "Her seferinde hesap seçmem gerekir mi?",
+              "a": "Hayır. Kasa hesabı (1010) ve borç hesabı (2010) otomatik doldurulur. Gerekirse belirli bir fatura için değiştirebilirsiniz."
+            },
+            {
+              "q": "Faturaları yazdırıp dışa aktarabilir miyim?",
+              "a": "Evet. Faturayı satırından ya da kendi ekranından yazdırın, listeyi CSV veya Excel’e aktarın."
+            },
+            {
+              "q": "Adon ERP nerede kullanılabilir?",
+              "a": "Şu anda Dakka’daki şirketleri sisteme alıyoruz. Demo planlayın, sizinle birlikte örnek bir fatura ve kısmi ödeme girelim."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Takibi zor bir tedarikçi faturası getirin. Demoda girelim ve ödeyelim."
+        }
+      },
+      "purchaseOrders": {
+        "meta": {
+          "title": "Satın Alma Siparişleri: Mal Gelmeden Önce Fiyat ve Miktarı Kararlaştırın | Adon ERP",
+          "description": "Satın alma siparişi oluşturun, onaylayın, gelenleri kaydedin ve siparişi tek tıkla tedarikçi faturasına çevirin. Bangladeş’teki şirketler için geliştirildi.",
+          "keywords": [
+            "Bangladeş satın alma siparişi yazılımı",
+            "Bangladeş tedarik yazılımı",
+            "siparişten faturaya",
+            "tedarikçi sipariş takibi",
+            "Bangladeş muhasebe yazılımı",
+            "Adon ERP satın alma siparişleri"
+          ]
+        },
+        "hero": {
+          "title": "Satın alma siparişleri: mal gelmeden önce fiyatı kararlaştırın",
+          "lead": "Başlık, tedarikçi ve ihtiyacınız olan kalemlerle bir satın alma siparişi oluşturun. Onaylayın, gelenleri kaydedin ve tek tıkla tedarikçi faturasına çevirin; fatura gerçekten sipariş ettiğinizle karşılaştırılsın.",
+          "secondaryCta": "Siparişin nasıl ilerlediğine bakın"
+        },
+        "sample": {
+          "count": "12 satır",
+          "titles": [
+            "Kurta kumaşı",
+            "Plastik granül"
+          ],
+          "notes": [
+            "her siparişin kendi numarası var",
+            "şimdiye kadar ne geldi",
+            "tek tıkla faturaya çevirin"
+          ]
+        },
+        "status": {
+          "draft": "taslak",
+          "approved": "onaylı",
+          "received": "Teslim alındı",
+          "void": "geçersiz"
+        },
+        "ui": {
+          "newPo": "Yeni Satın Alma Siparişi",
+          "thPo": "Sipariş #",
+          "thTitle": "Başlık",
+          "thStatus": "Durum",
+          "thAmount": "Tutar",
+          "thReceived": "Teslim alınan",
+          "thDate": "Tarih",
+          "view": "Görüntüle",
+          "detailTitle": "Sipariş {no}",
+          "title": "Başlık",
+          "status": "Durum",
+          "estimate": "Tahmin",
+          "poAmount": "Sipariş Tutarı",
+          "amountReceived": "Teslim Alınan Tutar",
+          "approved": "Onay tarihi",
+          "lineItems": "Kalemler",
+          "thItem": "Kalem",
+          "thQty": "Miktar",
+          "thUnitCost": "Birim fiyat",
+          "thVat": "KDV %",
+          "thVatAmt": "KDV tutarı",
+          "thTotal": "Toplam",
+          "noItems": "Henüz kalem yok. Sipariş tutarını belirlemek için kalem ekleyin.",
+          "convert": "Faturaya Çevir",
+          "voidPo": "Geçersiz kıl",
+          "caption": "Adon ERP’deki Satın Alma Siparişleri ekranının kısmi önizlemesi. Şirket, tedarikçiler ve rakamlar örnek verilerdir."
+        },
+        "lifecycle": {
+          "title": "Bir satın alma siparişi nasıl ilerler, üç adımda",
+          "intro": "Listedeki her siparişin bir durumu vardır ve Teslim alınan sütunu bunun ne kadarının geldiğini gösterir. İkisi birlikte tedarikçide neyin hâlâ beklediğini söyler.",
+          "steps": [
+            {
+              "question": "Hâlâ hazırlanıyor",
+              "body": "Sipariş var ama onaylanmadı. Taslakken kalemleri, miktarları ve fiyatları belirleyin."
+            },
+            {
+              "question": "Onaylandı, mal bekleniyor",
+              "body": "Tedarikçi artık teslimat yapabilir. Sipariş tutarı ödemeyi kabul ettiğiniz rakamdır ve mal gelene kadar Teslim alınan sıfırda kalır."
+            },
+            {
+              "question": "Teslim alındı, faturaya hazır",
+              "body": "Teslim alınan tutar sipariş tutarıyla eşleşir. Siparişi faturaya çevirin; fatura sipariş ettiğinizle karşılaştırılır."
+            }
+          ],
+          "aside": {
+            "body": "Yanlışlıkla oluşturuldu ya da yeni bir siparişle değiştirildi. Numarasıyla listede kalır; böylece numaralamada denetçinin soracağı bir boşluk olmaz."
+          },
+          "formTitle": "Yeni siparişte neleri doldurursunuz",
+          "form": [
+            {
+              "label": "Sipariş başlığı",
+              "body": "Ekibinizin tanıyacağı kısa bir ad, örneğin “1. çeyrek ekipman alımı”. Zorunlu tek alan budur."
+            },
+            {
+              "label": "Tedarikçi",
+              "body": "Sipariş verdiğiniz tedarikçiyi arayıp seçin."
+            },
+            {
+              "label": "Sipariş tarihi",
+              "body": "Bugünün tarihiyle doldurulur. Daha önce verilmiş bir sipariş için değiştirin."
+            },
+            {
+              "label": "Referans",
+              "body": "Kendi referansınız veya tedarikçinin teklif numarası; sipariş sonradan eşleştirilebilsin."
+            },
+            {
+              "label": "Kalemler (2. adım)",
+              "body": "Üst bilgiden sonra miktar ve birim fiyatlı kalemleri ekleyin. Sipariş tutarı bunlardan hesaplanır."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Satın alma siparişi, alımın başında durur",
+          "intro": "Bir ihtiyaç ve bir tedarikçiyle başlar, bir fatura ve bir ödemeyle biter. Her adımın kendi aracı vardır ve birbirlerinden okurlar.",
+          "groups": {
+            "before": "Siparişten önce",
+            "after": "Siparişten sonra",
+            "shows": "Nerede görünür"
+          },
+          "items": {
+            "vendors": "Tedarikçinin adı ve koşulları, her siparişte seçilir.",
+            "itemsProducts": "Satın aldıklarınız; sipariş satırları için birim ve fiyatlarıyla.",
+            "billsAp": "Siparişi faturaya çevirin, sonra ödeyin.",
+            "chequeRegister": "Çekle ödediğinizde tarihiyle birlikte, hiçbiri unutulmasın.",
+            "bankAccounts": "Ödemenin sonunda çıktığı yer.",
+            "accountingHub": "Onaylı siparişler ve ödenmemiş faturalar borçlarda görünür.",
+            "financialReports": "Tablolarınızdaki alışlar ve borçlar.",
+            "vatRegister": "Alışlardaki KDV, aylık beyanname için hazır."
+          }
+        },
+        "local": {
+          "title": "Bangladeş şirketlerinin satın aldığı biçimde sipariş vermek",
+          "intro": "Fiyatlar döviz kuru ve mevsimle oynar, teslimatlar çoğu zaman parça parça gelir. Satın alma siparişi neyin kararlaştırıldığını ve gerçekte neyin geldiğini kaydeder.",
+          "points": [
+            {
+              "title": "Teslimattan önce kararlaştırılan fiyat",
+              "body": "Önce fiyat ve miktarı tedarikçiyle sabitleyin. Fatura geldiğinde karşılaştıracak bir şey olur."
+            },
+            {
+              "title": "Kısmi teslimatlar, takipte",
+              "body": "Bugün bir kamyon kâğıt, gelecek hafta bir tane daha. Teslim alınan her teslimatla büyür ve bakiye hep görünür."
+            },
+            {
+              "title": "Faturaya tek tık",
+              "body": "Mal geldiğinde siparişi faturaya çevirin. Kalemler, miktarlar ve KDV aktarılır; hiçbir şey iki kez yazılmaz."
+            },
+            {
+              "title": "Tarihli onaylar",
+              "body": "Onay tarihi sipariş üzerinde tutulur; kimin neyi ne zaman kabul ettiğini gösterebilirsiniz."
+            }
+          ],
+          "story": {
+            "title": "Bir sipariş, talepten faturaya",
+            "intro": "Baskı mürekkebi için örnek bir sipariş, genellikle işlediği gibi.",
+            "steps": [
+              {
+                "time": "1 Eyl",
+                "text": "Üretim müdürü önümüzdeki iki ay için mürekkep ister."
+              },
+              {
+                "time": "2 Eyl",
+                "text": "Tedarikçi, kalemler ve kararlaştırılan fiyatla bir satın alma siparişi taslak olarak oluşturulur."
+              },
+              {
+                "time": "4 Eyl",
+                "text": "Onaylandı. Sipariş tedarikçiye gider ve tarihi üzerinde kalır."
+              },
+              {
+                "time": "10 Eyl",
+                "text": "Mürekkep gelir. Teslim alınan, siparişe karşı tam 3,82,000 takayı gösterir."
+              },
+              {
+                "time": "12 Eyl",
+                "text": "Sipariş faturaya çevrilir, teslimatla karşılaştırılır ve ödemeye gönderilir."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Farklı sektörler satın alma siparişlerini nasıl kullanır",
+          "angles": {
+            "retail": "Çok sayıda tedarikçiden, çoğu zaman vadeli sipariş edilen stok.",
+            "food-hospitality": "Taze ürün ve malzeme için haftalık siparişler, parça parça teslim.",
+            "real-estate": "Projeye bağlı malzeme ve müteahhit siparişleri.",
+            "consulting": "Bütçeye karşı sipariş edilen ekipman ve yazılım.",
+            "manufacturing": "Önceden sipariş edilen hammadde, kısmi teslimatlarla.",
+            "health-fitness": "Planlı partiler hâlinde sipariş edilen ekipman ve malzeme.",
+            "trades": "Her iş için sipariş edilen parçalar, teslimde faturaya çevrilir.",
+            "others": "Hibeyle finanse edilen alımlar, bir şey harcanmadan önce onaylanır."
+          }
+        },
+        "faq": {
+          "title": "Satın alma siparişleri hakkında sık sorulan sorular",
+          "items": [
+            {
+              "q": "Adon ERP’de satın alma siparişi nedir?",
+              "a": "Bir tedarikçiden satın almayı kabul ettiklerinizin kaydıdır: bir başlık, bir tedarikçi, bir tarih ve miktar ile birim fiyatlı kalemler. Onaylandıktan sonra neyi alıp neye ödeme yapmayı beklediğinizi gösterir."
+            },
+            {
+              "q": "Taslak, onaylı ve teslim alındı ne demek?",
+              "a": "Taslak, hâlâ hazırlanıyor demektir. Onaylı, siparişin tedarikçiye gittiği anlamına gelir. Teslim alındı, malın geldiği anlamına gelir; Teslim alınan sütunu ne kadarının geldiğini gösterir."
+            },
+            {
+              "q": "Sipariş oluşturmak için neleri doldurmam gerekir?",
+              "a": "Yalnızca sipariş başlığı zorunludur. Tedarikçiyi, sipariş tarihini ve bir referans ekleyin, sonra ikinci adımda kalemleri ekleyin. Sipariş tutarı kalemlerden hesaplanır."
+            },
+            {
+              "q": "Siparişi faturaya nasıl çeviririm?",
+              "a": "Onaylı siparişi açın ve “Faturaya Çevir”e tıklayın. Kalemler, miktarlar ve KDV faturaya aktarılır."
+            },
+            {
+              "q": "Mal parça parça gelebilir mi?",
+              "a": "Evet. Teslim alınan sütunu, sipariş tutarının yanında şimdiye kadar ne kadarının geldiğini gösterir; kısmi teslimatlar kolayca izlenir."
+            },
+            {
+              "q": "Siparişi iptal edebilir miyim?",
+              "a": "Evet. “Geçersiz kıl”ı kullanın. Geçersiz kılınan sipariş kayıt için numarasıyla listede kalır."
+            },
+            {
+              "q": "Satın alma siparişlerini dışa aktarabilir miyim?",
+              "a": "Evet. Listede arama yapın, sonra CSV veya Excel’e aktarın ya da yazdırın."
+            },
+            {
+              "q": "Adon ERP nerede kullanılabilir?",
+              "a": "Şu anda Dakka’daki şirketleri sisteme alıyoruz. Demo planlayın, sizinle birlikte örnek bir sipariş oluşturup faturaya çevirelim."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Vermek üzere olduğunuz bir siparişi getirin. Demoda oluşturalım ve faturaya çevirelim."
+        }
+      },
       "common": {
         "bookDemo": "Demo planlayın",
         "onboardingNote": "Şu anda Dakka’daki şirketleri sisteme alıyoruz.",

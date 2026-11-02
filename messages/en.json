@@ -602,6 +602,464 @@
   },
   "pages": {
     "accountingShowcase": {
+      "bills": {
+        "meta": {
+          "title": "Bills (AP): Supplier Bills, VAT and Payments in Taka | Adon ERP",
+          "description": "Record supplier bills with VAT on every line, see what you owe each vendor and when it falls due, and track part and full payments. Built for companies in Bangladesh.",
+          "keywords": [
+            "supplier bill software Bangladesh",
+            "accounts payable software Bangladesh",
+            "purchase VAT Bangladesh",
+            "vendor payment tracking",
+            "accounting software Bangladesh",
+            "Adon ERP bills"
+          ]
+        },
+        "hero": {
+          "title": "Bills: record what suppliers charge, see what is due, pay on time",
+          "lead": "Enter a supplier’s bill with VAT worked out on every line, approve it, and follow it from draft to paid. Part payments are tracked against the bill, so you always know what you still owe, and to whom.",
+          "secondaryCta": "See the life of a bill"
+        },
+        "sample": {
+          "count": "25 of 98",
+          "terms": "On receipt",
+          "lineItem": "Plastics",
+          "notes": [
+            "draft, approved, paid at a glance",
+            "what you have paid so far",
+            "open, print or allocate from the row"
+          ]
+        },
+        "status": {
+          "draft": "draft",
+          "approved": "approved",
+          "paid": "paid",
+          "void": "void"
+        },
+        "ui": {
+          "newBill": "New Bill",
+          "thBill": "Bill #",
+          "thVendor": "Vendor",
+          "thStatus": "Status",
+          "thAmount": "Amount",
+          "thPaid": "Paid",
+          "view": "View",
+          "print": "Print",
+          "allocate": "Allocate",
+          "detailTitle": "Bill {no}",
+          "vendor": "Vendor",
+          "status": "Status",
+          "terms": "Terms",
+          "amountDue": "Amount due",
+          "amountPaid": "Amount paid",
+          "dueDate": "Due date",
+          "lineItems": "Line items",
+          "thItem": "Item",
+          "thQty": "Qty",
+          "thUnitCost": "Unit cost",
+          "thVat": "VAT %",
+          "thVatAmt": "VAT amt",
+          "thTotal": "Total",
+          "recordPayment": "Record Payment",
+          "voidBill": "Void",
+          "printBill": "Print Bill",
+          "caption": "A partial preview of Bills (AP) in Adon ERP. Company, vendors and figures are sample data."
+        },
+        "lifecycle": {
+          "title": "The life of a bill, in four words",
+          "intro": "Every bill in the list carries a status. Read the column top to bottom and you know which bills are still being checked, which are waiting to be paid, and which are settled.",
+          "steps": [
+            {
+              "question": "Still being checked",
+              "body": "The bill is entered but not yet accepted. Compare quantities with what arrived and prices with the purchase order while it is still a draft."
+            },
+            {
+              "question": "Accepted, and money is owed",
+              "body": "You owe the vendor this amount. When you pay part of it, the Paid column shows how much, so a 1,38,000 taka bill with 70,000 paid is easy to spot."
+            },
+            {
+              "question": "Fully paid",
+              "body": "Paid equals Amount. Nothing more to pay. The bill stays in the list for the record and the audit."
+            }
+          ],
+          "aside": {
+            "body": "Entered by mistake, or replaced by a corrected bill. A voided bill stays in the list with its number, so the numbering has no gaps an auditor would ask about."
+          },
+          "formTitle": "What you fill in on a new bill",
+          "form": [
+            {
+              "label": "Project (optional)",
+              "body": "Tag the bill to a project or job if the cost belongs to one."
+            },
+            {
+              "label": "Vendor",
+              "body": "Search and pick the supplier. Their details come with the bill."
+            },
+            {
+              "label": "Cash account",
+              "body": "Where the payment will come from. Filled in for you (account 1010) unless you choose another."
+            },
+            {
+              "label": "Accounts payable",
+              "body": "The account that holds what you owe until you pay. Filled in for you (account 2010)."
+            },
+            {
+              "label": "Terms",
+              "body": "Payment terms such as On receipt or Net 30. The due date in the list follows from it."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A bill sits between buying and paying",
+          "intro": "It starts with a supplier and goods at your gate, and ends with money leaving the bank. Each step has its own tool, and they read from each other.",
+          "groups": {
+            "before": "Before the bill",
+            "after": "After the bill",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "vendors": "The supplier’s name, address and terms, picked on every bill.",
+            "purchaseOrders": "What you agreed to buy, so the bill can be checked against it.",
+            "itemsProducts": "What you buy, with units and prices for the bill lines.",
+            "chequeRegister": "When you pay by cheque, with its date, so none is forgotten.",
+            "bankAccounts": "Where the payment leaves from, and the balance to check.",
+            "pettyCash": "Small purchases paid from the cash box, kept apart from bills.",
+            "vatRegister": "The VAT on every bill line, ready for the monthly return.",
+            "accountingHub": "Unpaid bills make up the AP figure.",
+            "financialReports": "Purchases and payables in your statements."
+          }
+        },
+        "local": {
+          "title": "Bills that follow how suppliers are paid in Bangladesh",
+          "intro": "Suppliers here are often paid in parts, on dates that follow the buyer’s cash flow. The bill keeps every one of those payments in view until the balance reaches zero.",
+          "points": [
+            {
+              "title": "VAT on purchases, line by line",
+              "body": "Each bill line carries its own VAT rate and amount. It lands in the VAT Register, so purchase VAT is ready when the monthly return is due."
+            },
+            {
+              "title": "Part payments, kept in view",
+              "body": "Pay a supplier in two or three instalments. The Paid column grows with each one and the balance is always on the bill."
+            },
+            {
+              "title": "Allocate a payment to the right bill",
+              "body": "When one payment covers several bills, allocate it from the row, so each bill shows exactly what was settled."
+            },
+            {
+              "title": "Terms that match the supplier",
+              "body": "On receipt for the cement supplier, Net 30 for the packaging vendor. The due date follows the terms you choose."
+            }
+          ],
+          "story": {
+            "title": "One supplier bill, from the gate to paid",
+            "intro": "A sample bill for plastic raw material, the way it usually runs.",
+            "steps": [
+              {
+                "time": "15 Sep",
+                "text": "40 units of plastic arrive at the gate with the supplier’s bill."
+              },
+              {
+                "time": "16 Sep",
+                "text": "The bill is entered as a draft. The quantity is checked against the purchase order and the VAT against the bill."
+              },
+              {
+                "time": "17 Sep",
+                "text": "Approved. The full 1,38,000 taka now shows as owed to the vendor."
+              },
+              {
+                "time": "5 Oct",
+                "text": "A part payment of 70,000 goes out. Paid shows it, and 68,000 stays due."
+              },
+              {
+                "time": "19 Oct",
+                "text": "The balance is paid on the due date. Paid matches Amount, and the bill turns to paid."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use bills",
+          "angles": {
+            "retail": "Many supplier bills a week for stock, paid on credit.",
+            "food-hospitality": "Daily produce and monthly utilities, each with its own bill.",
+            "real-estate": "Contractor and material bills tied to a project.",
+            "consulting": "Software, rent and subcontractor bills at month-end.",
+            "manufacturing": "Raw material bills with long terms and part payments.",
+            "health-fitness": "Equipment, supplies and rent paid on a schedule.",
+            "trades": "Parts bought for each job, billed to a project.",
+            "others": "Grants spent against supplier bills, kept apart until used."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about bills",
+          "items": [
+            {
+              "q": "What is a bill in Adon ERP?",
+              "a": "It is a supplier’s invoice that you record: a vendor, a project if there is one, line items with VAT, and payment terms. Once approved, it shows what you owe until you pay it."
+            },
+            {
+              "q": "What do draft, approved, paid and void mean?",
+              "a": "Draft is still being checked. Approved means you owe the amount. Paid means the full amount has been paid. Void bills stay in the list with their number, for the record."
+            },
+            {
+              "q": "Can I pay a supplier in parts?",
+              "a": "Yes. Use “Record Payment” on the bill. The Paid column shows how much has gone out so far, next to the full amount."
+            },
+            {
+              "q": "What does Allocate do?",
+              "a": "It sets a payment against the bill it settles. When one payment covers more than one bill, allocating keeps each bill’s balance right."
+            },
+            {
+              "q": "How is VAT handled on a bill?",
+              "a": "Each line has its own VAT rate. The bill shows the VAT amount for every line and adds it to the line total, and the VAT goes to the VAT Register."
+            },
+            {
+              "q": "Do I need to choose accounts every time?",
+              "a": "No. The cash account (1010) and the accounts payable account (2010) are filled in automatically. You can change them for a particular bill."
+            },
+            {
+              "q": "Can I print and export bills?",
+              "a": "Yes. Print a bill from its row or from the bill itself, and export the list to CSV or Excel."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will enter a sample bill and a part payment with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a supplier bill that is hard to track. We will enter it and pay it in the demo."
+        }
+      },
+      "purchaseOrders": {
+        "meta": {
+          "title": "Purchase Orders: Agree Price and Quantity Before Goods Arrive | Adon ERP",
+          "description": "Raise purchase orders, approve them, record what arrives, and turn an order into a supplier bill with one click. Built for companies in Bangladesh.",
+          "keywords": [
+            "purchase order software Bangladesh",
+            "procurement software Bangladesh",
+            "PO to bill",
+            "supplier order tracking",
+            "accounting software Bangladesh",
+            "Adon ERP purchase orders"
+          ]
+        },
+        "hero": {
+          "title": "Purchase orders: agree the price before the goods arrive",
+          "lead": "Raise a purchase order with a title, a vendor and the items you need. Approve it, record what arrives, and turn it into a supplier bill in one click, so the bill is checked against what you actually ordered.",
+          "secondaryCta": "See how an order moves"
+        },
+        "sample": {
+          "count": "12 rows",
+          "titles": [
+            "Fabric for kurtas",
+            "Plastic granules"
+          ],
+          "notes": [
+            "every order has its own number",
+            "what has arrived so far",
+            "turn it into a bill in one click"
+          ]
+        },
+        "status": {
+          "draft": "draft",
+          "approved": "approved",
+          "received": "Received",
+          "void": "void"
+        },
+        "ui": {
+          "newPo": "New Purchase Order",
+          "thPo": "PO #",
+          "thTitle": "Title",
+          "thStatus": "Status",
+          "thAmount": "Amount",
+          "thReceived": "Received",
+          "thDate": "Date",
+          "view": "View",
+          "detailTitle": "PO {no}",
+          "title": "Title",
+          "status": "Status",
+          "estimate": "Estimate",
+          "poAmount": "PO Amount",
+          "amountReceived": "Amount Received",
+          "approved": "Approved",
+          "lineItems": "Line items",
+          "thItem": "Item",
+          "thQty": "Qty",
+          "thUnitCost": "Unit cost",
+          "thVat": "VAT %",
+          "thVatAmt": "VAT amt",
+          "thTotal": "Total",
+          "noItems": "No line items yet. Add items to set the PO amount.",
+          "convert": "Convert to Bill",
+          "voidPo": "Void",
+          "caption": "A partial preview of Purchase Orders in Adon ERP. Company, vendors and figures are sample data."
+        },
+        "lifecycle": {
+          "title": "How a purchase order moves, in three steps",
+          "intro": "Every order in the list carries a status, and the Received column shows how much of it has arrived. Together they tell you what is still waiting on a supplier.",
+          "steps": [
+            {
+              "question": "Still being drawn up",
+              "body": "The order exists but has not been approved. Set the items, quantities and prices while it is still a draft."
+            },
+            {
+              "question": "Approved, goods expected",
+              "body": "The supplier can now deliver. The PO amount is what you have agreed to pay, and Received stays at zero until goods arrive."
+            },
+            {
+              "question": "Received, ready to bill",
+              "body": "Received matches the PO amount. Convert the order to a bill, and the bill is checked against what you ordered."
+            }
+          ],
+          "aside": {
+            "body": "Raised by mistake, or replaced by a new order. It stays in the list with its number, so the numbering has no gaps an auditor would ask about."
+          },
+          "formTitle": "What you fill in on a new order",
+          "form": [
+            {
+              "label": "PO title",
+              "body": "A short name your team will recognise, for example “Q1 equipment purchase”. It is the only required field."
+            },
+            {
+              "label": "Vendor",
+              "body": "Search and pick the supplier you are ordering from."
+            },
+            {
+              "label": "Order date",
+              "body": "Filled in with today’s date. Change it for an order raised earlier."
+            },
+            {
+              "label": "Reference",
+              "body": "Your own reference or the supplier’s quotation number, so the order can be matched later."
+            },
+            {
+              "label": "Items (step 2)",
+              "body": "After the header, add the items with quantity and unit cost. The PO amount is worked out from them."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A purchase order sits at the start of buying",
+          "intro": "It begins with a need and a supplier, and ends as a bill and a payment. Each step has its own tool, and they read from each other.",
+          "groups": {
+            "before": "Before the order",
+            "after": "After the order",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "vendors": "The supplier’s name and terms, picked on every order.",
+            "itemsProducts": "What you buy, with units and prices for the order lines.",
+            "billsAp": "Convert an order to a bill, then pay it.",
+            "chequeRegister": "When you pay by cheque, with its date, so none is forgotten.",
+            "bankAccounts": "Where the payment finally leaves from.",
+            "accountingHub": "Approved orders and unpaid bills show in the payables.",
+            "financialReports": "Purchases and payables in your statements.",
+            "vatRegister": "The VAT on purchases, ready for the monthly return."
+          }
+        },
+        "local": {
+          "title": "Ordering the way Bangladeshi companies buy",
+          "intro": "Prices move with the exchange rate and the season, and deliveries often arrive in parts. A purchase order records what was agreed, and what has actually come.",
+          "points": [
+            {
+              "title": "Price agreed before delivery",
+              "body": "Fix the price and quantity with the supplier first. When the bill arrives there is something to check it against."
+            },
+            {
+              "title": "Part deliveries, tracked",
+              "body": "A truck of paper today and another next week. Received grows with each delivery, and the balance is always visible."
+            },
+            {
+              "title": "One click to a bill",
+              "body": "When goods arrive, convert the order to a bill. Items, quantities and VAT come across, with nothing typed twice."
+            },
+            {
+              "title": "Approvals with a date",
+              "body": "The approval date is kept on the order, so you can show who agreed what, and when."
+            }
+          ],
+          "story": {
+            "title": "One order, from request to bill",
+            "intro": "A sample order for printing ink, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Sep",
+                "text": "The production head asks for ink for the next two months."
+              },
+              {
+                "time": "2 Sep",
+                "text": "A purchase order is raised as a draft with the vendor, the items and the agreed price."
+              },
+              {
+                "time": "4 Sep",
+                "text": "Approved. The order goes to the supplier, and the date is kept on it."
+              },
+              {
+                "time": "10 Sep",
+                "text": "The ink arrives. Received shows the full 3,82,000 taka against the order."
+              },
+              {
+                "time": "12 Sep",
+                "text": "The order is converted to a bill, checked against the delivery and sent for payment."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use purchase orders",
+          "angles": {
+            "retail": "Stock ordered from many suppliers, often on credit.",
+            "food-hospitality": "Weekly orders for produce and supplies, delivered in parts.",
+            "real-estate": "Materials and contractor orders tied to a project.",
+            "consulting": "Equipment and software ordered against a budget.",
+            "manufacturing": "Raw material ordered ahead, with part deliveries.",
+            "health-fitness": "Equipment and supplies ordered in planned batches.",
+            "trades": "Parts ordered for each job, converted to a bill on receipt.",
+            "others": "Grant-funded purchases approved before anything is spent."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about purchase orders",
+          "items": [
+            {
+              "q": "What is a purchase order in Adon ERP?",
+              "a": "It is a record of what you have agreed to buy from a supplier: a title, a vendor, a date and the items with quantity and unit cost. Once approved, it shows what you expect to receive and pay for."
+            },
+            {
+              "q": "What do draft, approved and received mean?",
+              "a": "Draft is still being drawn up. Approved means the order has gone to the supplier. Received means the goods have arrived, and the Received column shows how much."
+            },
+            {
+              "q": "What do I need to fill in to create an order?",
+              "a": "Only the PO title is required. Add the vendor, the order date and a reference, then add the items in the second step. The PO amount is worked out from the items."
+            },
+            {
+              "q": "How do I turn an order into a bill?",
+              "a": "Open the approved order and click “Convert to Bill”. The items, quantities and VAT come across to the bill."
+            },
+            {
+              "q": "Can goods arrive in parts?",
+              "a": "Yes. The Received column shows how much has arrived so far, next to the PO amount, so part deliveries are easy to follow."
+            },
+            {
+              "q": "Can I cancel an order?",
+              "a": "Yes. Use “Void”. A voided order stays in the list with its number, for the record."
+            },
+            {
+              "q": "Can I export purchase orders?",
+              "a": "Yes. Search the list, then export to CSV or Excel, or print it."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will raise a sample order and convert it to a bill with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring an order you are about to place. We will raise it and convert it to a bill in the demo."
+        }
+      },
       "common": {
         "bookDemo": "Book a demo",
         "onboardingNote": "Now onboarding companies in Dhaka.",
