@@ -223,6 +223,18 @@
   filter: brightness(1.12);
 }
 
+.hover-gradient:hover,
+.hover-gradient[data-highlighted] {
+  background-image: linear-gradient(100deg, #1088ef, #003180);
+  border-color: #1088ef;
+  color: #fff;
+}
+
+.hover-gradient:hover svg,
+.hover-gradient[data-highlighted] svg {
+  color: #fff;
+}
+
 .showcase-heading {
   font-family: var(--font-rubik), var(--font-tiro-bangla), ui-sans-serif,
     system-ui, sans-serif;

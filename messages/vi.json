@@ -203,6 +203,1025 @@
     }
   },
   "pages": {
+    "accountingShowcase": {
+      "common": {
+        "bookDemo": "Đặt lịch demo",
+        "onboardingNote": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka.",
+        "bookLiveDemo": "Đặt lịch demo trực tiếp",
+        "closingBody": "Demo trực tiếp bằng tiếng Anh hoặc tiếng Bengal, dùng sổ sách mẫu gần với ngành của bạn, có thời gian dành cho câu hỏi của kế toán viên.",
+        "exploreAccounting": "Khám phá ứng dụng Kế toán",
+        "refresh": "Làm mới",
+        "search": "Tìm kiếm…",
+        "csv": "CSV",
+        "excel": "Excel",
+        "print": "In",
+        "cancel": "Hủy",
+        "tools": {
+          "accountingHub": "Trung tâm Kế toán",
+          "chartOfAccounts": "Hệ thống tài khoản",
+          "journalEntries": "Bút toán nhật ký",
+          "ledgers": "Sổ cái",
+          "invoicesAr": "Hóa đơn bán hàng (AR)",
+          "billsAp": "Hóa đơn mua hàng (AP)",
+          "purchaseOrders": "Đơn mua hàng",
+          "customers": "Khách hàng",
+          "vendors": "Nhà cung cấp",
+          "bankAccounts": "Tài khoản ngân hàng",
+          "deliveryChallans": "Phiếu giao hàng",
+          "pettyCash": "Quỹ tiền mặt nhỏ",
+          "closingFy": "Khóa sổ và năm tài chính",
+          "financialReports": "Báo cáo tài chính",
+          "vatRegister": "Sổ thuế GTGT",
+          "receipts": "Phiếu thu",
+          "chequeRegister": "Sổ séc",
+          "itemsProducts": "Mặt hàng / Sản phẩm"
+        },
+        "industryGroups": {
+          "retail": "Bán lẻ",
+          "food-hospitality": "Ẩm thực và Khách sạn",
+          "real-estate": "Bất động sản",
+          "consulting": "Tư vấn",
+          "manufacturing": "Sản xuất",
+          "health-fitness": "Sức khỏe và Thể hình",
+          "trades": "Dịch vụ kỹ thuật",
+          "others": "Khác"
+        },
+        "industryItems": {
+          "book-store": "Hiệu sách",
+          "clothing-store": "Cửa hàng quần áo",
+          "furniture-store": "Cửa hàng nội thất",
+          "grocery-store": "Cửa hàng tạp hóa",
+          "hardware-store": "Cửa hàng vật liệu",
+          "toy-store": "Cửa hàng đồ chơi",
+          "bar-and-pub": "Quán bar và pub",
+          "restaurant": "Nhà hàng",
+          "fast-food": "Thức ăn nhanh",
+          "guest-house": "Nhà khách",
+          "beverage-distributor": "Nhà phân phối đồ uống",
+          "hotel": "Khách sạn",
+          "real-estate-agency": "Công ty môi giới bất động sản",
+          "architecture-firm": "Công ty kiến trúc",
+          "construction": "Xây dựng",
+          "property-management": "Quản lý bất động sản",
+          "gardening": "Làm vườn",
+          "property-owner-association": "Hội chủ sở hữu bất động sản",
+          "accounting-firm": "Công ty kế toán",
+          "it-consultancy": "Tư vấn CNTT",
+          "marketing-agency": "Công ty tiếp thị",
+          "law-firm": "Công ty luật",
+          "talent-acquisition": "Tuyển dụng nhân tài",
+          "audit-and-certification": "Kiểm toán và chứng nhận",
+          "textile": "Dệt may",
+          "metal": "Kim loại",
+          "furnitures": "Nội thất",
+          "food": "Thực phẩm",
+          "brewery": "Nhà máy bia",
+          "corporate-gifts": "Quà tặng doanh nghiệp",
+          "sports-club": "Câu lạc bộ thể thao",
+          "eyewear-store": "Cửa hàng mắt kính",
+          "fitness-center": "Trung tâm thể hình",
+          "wellness-practitioners": "Chuyên gia chăm sóc sức khỏe",
+          "pharmacy": "Nhà thuốc",
+          "hair-salon": "Tiệm làm tóc",
+          "handyman": "Thợ sửa chữa",
+          "it-hardware-and-support": "Phần cứng và hỗ trợ CNTT",
+          "solar-energy-systems": "Hệ thống điện mặt trời",
+          "electronic-store": "Cửa hàng điện tử",
+          "cleaning-services": "Dịch vụ vệ sinh",
+          "hvac-services": "Dịch vụ điều hòa không khí",
+          "nonprofit-organization": "Tổ chức phi lợi nhuận",
+          "environmental-agency": "Cơ quan môi trường",
+          "billboard-rental": "Cho thuê bảng quảng cáo",
+          "photography": "Nhiếp ảnh",
+          "bike-leasing": "Cho thuê xe máy",
+          "software-reseller": "Đại lý phần mềm"
+        }
+      },
+      "ledgers": {
+        "meta": {
+          "title": "Sổ cái: Tách riêng từng dòng bút toán | Adon ERP",
+          "description": "Tạo sổ cái riêng cho bán hàng, lương, tài sản hoặc dự án, xem mỗi sổ có bao nhiêu bút toán nhật ký và giữ sổ sách dễ đọc. Xây dựng cho doanh nghiệp tại Bangladesh.",
+          "keywords": [
+            "phần mềm sổ cái Bangladesh",
+            "phần mềm kế toán sổ cái tổng hợp",
+            "sổ cái kế toán ERP",
+            "sổ nhật ký sổ cái",
+            "phần mềm kế toán Bangladesh",
+            "Sổ cái Adon ERP"
+          ]
+        },
+        "hero": {
+          "title": "Sổ cái: một chỗ riêng cho mỗi dòng bút toán trong sổ sách của bạn",
+          "lead": "Bán hàng trong nước một sổ cái, xuất khẩu một sổ khác, lương một sổ thứ ba. Mỗi bút toán nhật ký được ghi vào một sổ cái, nên khi mở một sổ bạn chỉ thấy công việc thuộc về nó, và nhiều đến mức nào.",
+          "secondaryCta": "Xem ý tưởng về sổ cái"
+        },
+        "sample": {
+          "ledgerNames": [
+            "Meghla Agro Foods — Sổ cái tổng hợp",
+            "Bán hàng trong nước",
+            "Bán hàng xuất khẩu",
+            "Lương",
+            "Tài sản cố định",
+            "Dự án kho Gazipur"
+          ],
+          "newName": "Hoa hồng đại lý",
+          "notes": [
+            "đặt tên theo cách đội ngũ bạn vẫn gọi",
+            "mỗi sổ có bao nhiêu bút toán",
+            "tạo mới chỉ cần một ô"
+          ]
+        },
+        "ui": {
+          "showDocLedgers": "Hiện sổ cái chứng từ",
+          "newLedger": "Sổ cái mới",
+          "colName": "Tên",
+          "colJes": "Bút toán",
+          "colCreated": "Ngày tạo",
+          "colActions": "Thao tác",
+          "edit": "Sửa",
+          "delete": "Xóa",
+          "createLedger": "Tạo sổ cái",
+          "caption": "Bản xem trước một phần màn hình Sổ cái trong Adon ERP. Công ty, tên sổ cái và số liệu là dữ liệu mẫu."
+        },
+        "explain": {
+          "title": "Sổ cái dùng để làm gì",
+          "intro": "Công ty chỉ có một sổ cái vẫn vận hành được. Nhưng hai mươi nghìn bút toán dồn vào một sổ thì rất khó đọc. Sổ cái cho phép bạn nhóm bút toán theo đúng cách doanh nghiệp vận hành.",
+          "rows": [
+            {
+              "label": "Tên",
+              "question": "Sổ cái này chứa gì?",
+              "body": "Dùng tên mà ai trong bộ phận kế toán cũng hiểu mà không cần hỏi: “Bán hàng xuất khẩu”, đừng đặt “Sổ cái 3”. Đây là tên đội ngũ bạn sẽ chọn trong mỗi bút toán nhật ký mới."
+            },
+            {
+              "label": "Bút toán",
+              "question": "Nó bận rộn đến đâu?",
+              "body": "Số bút toán nhật ký đã ghi vào sổ cái cho đến nay. Sổ có hàng nghìn bút toán là con ngựa thồ hằng ngày. Sổ vẫn ở mức không có lẽ được lập cho việc chưa bắt đầu."
+            },
+            {
+              "label": "Ngày tạo",
+              "question": "Nó được lập khi nào?",
+              "body": "Hữu ích khi cuối năm và lúc kiểm toán, khi ai đó hỏi vì sao có một sổ cái và từ khi nào."
+            },
+            {
+              "label": "Thao tác",
+              "question": "Sau này có đổi được không?",
+              "body": "Đổi tên sổ cái bất cứ lúc nào. Sổ không có bút toán nào cũng có thể xóa, nên lỗi khi thiết lập không nằm lại trong sổ sách của bạn."
+            }
+          ],
+          "ideasTitle": "Những ý tưởng sổ cái hoạt động tốt ở đây",
+          "ideasIntro": "Không có một bộ đúng duy nhất. Đây là những cách chia chúng tôi gặp nhiều nhất ở các công ty Bangladesh.",
+          "ideas": [
+            {
+              "title": "Bán hàng trong nước và bán hàng xuất khẩu",
+              "body": "Ngân hàng và kiểm toán viên xử lý thu nhập xuất khẩu khác nhau. Tách riêng từ ngày đầu giúp tiết kiệm nhiều công phân loại vào tháng Sáu."
+            },
+            {
+              "title": "Lương",
+              "body": "Tiền lương, thưởng lễ và khoản trích trước của chúng gom về một nơi, tách khỏi bút toán kinh doanh."
+            },
+            {
+              "title": "Tài sản cố định",
+              "body": "Máy móc, phương tiện và khấu hao hằng tháng, để câu chuyện tài sản dễ theo dõi."
+            },
+            {
+              "title": "Mỗi dự án một sổ cái",
+              "body": "Một kho mới, một khu nhà xưởng, một hợp đồng khách hàng lớn. Hãy lập trước khi tiêu đồng taka đầu tiên."
+            },
+            {
+              "title": "Sổ cái tổng hợp của từng công ty thành viên",
+              "body": "Đặt tên theo công ty mà nó thuộc về, để không ai vô tình ghi nhầm vào sổ khác."
+            },
+            {
+              "title": "Thu nhập từ phí hoặc đăng ký",
+              "body": "Trường học, câu lạc bộ và trung tâm đào tạo thường để khoản thu ở sổ cái riêng vì số lượng rất lớn."
+            }
+          ]
+        },
+        "related": {
+          "journalEntries": "Mỗi bút toán đều được ghi vào một trong các sổ cái của bạn.",
+          "chartOfAccounts": "Các tài khoản mà mỗi dòng bút toán chuyển tiền qua lại.",
+          "financialReports": "Báo cáo lãi lỗ và bảng cân đối kế toán trên toàn bộ sổ sách.",
+          "accountingHub": "Toàn cảnh trên một màn hình."
+        },
+        "faq": {
+          "title": "Những câu hỏi thường gặp về sổ cái",
+          "items": [
+            {
+              "q": "Sổ cái trong Adon ERP là gì?",
+              "a": "Đó là một cuốn sổ có tên, nơi các bút toán nhật ký được ghi vào. Bạn chọn sổ cái ở mỗi bút toán nhật ký mới, và màn hình Sổ cái hiển thị từng sổ cùng số bút toán và ngày tạo."
+            },
+            {
+              "q": "Chúng tôi nên có bao nhiêu sổ cái?",
+              "a": "Hãy bắt đầu nhỏ. Một sổ cái tổng hợp cộng thêm một sổ cho mỗi dòng việc đội ngũ xử lý riêng, như bán hàng, lương hoặc một dự án lớn, là đủ cho hầu hết công ty. Bạn có thể thêm bất cứ lúc nào."
+            },
+            {
+              "q": "Làm sao tạo sổ cái mới?",
+              "a": "Bấm “Sổ cái mới”, nhập tên rồi bấm “Tạo sổ cái”. Toàn bộ biểu mẫu chỉ có vậy."
+            },
+            {
+              "q": "Sau này có đổi tên sổ cái được không?",
+              "a": "Được. Dùng thao tác sửa bên cạnh sổ cái. Các bút toán đã ghi vào sổ vẫn nằm nguyên chỗ cũ."
+            },
+            {
+              "q": "Có xóa được sổ cái không?",
+              "a": "Sổ cái không có bút toán nào có thể xóa. Khi đã có bút toán ghi vào, hãy giữ lại và đổi tên nếu cần, để dấu vết kiểm toán luôn đầy đủ."
+            },
+            {
+              "q": "Sổ cái có giống các công ty riêng biệt không?",
+              "a": "Không. Sổ cái chia bút toán bên trong một công ty. Nếu bạn điều hành các pháp nhân riêng, hãy thiết lập mỗi pháp nhân thành một công ty riêng và chuyển qua lại từ thanh trên cùng."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Chưa chắc nên chia sổ sách thế nào? Chúng tôi sẽ phác thảo sổ cái cùng bạn."
+        }
+      },
+      "invoices": {
+        "meta": {
+          "title": "Hóa đơn bán hàng (AR): Hóa đơn GTGT và Mushak-6.3 bằng taka | Adon ERP",
+          "description": "Lập hóa đơn khách hàng với thuế GTGT trên từng dòng, in hóa đơn thương mại hoặc Mushak-6.3 song ngữ, và xem mỗi bên mua còn nợ bao nhiêu. Xây dựng cho doanh nghiệp tại Bangladesh.",
+          "keywords": [
+            "phần mềm hóa đơn Bangladesh",
+            "phần mềm Mushak 6.3",
+            "hóa đơn GTGT Bangladesh",
+            "phần mềm công nợ phải thu",
+            "phần mềm lập hóa đơn Bangladesh",
+            "Hóa đơn Adon ERP"
+          ]
+        },
+        "hero": {
+          "title": "Hóa đơn: lập hóa đơn cho bên mua, in Mushak-6.3, biết còn nợ bao nhiêu",
+          "lead": "Lập hóa đơn cho khách hàng với thuế GTGT tính trên từng dòng. In hóa đơn thương mại gọn gàng hoặc hóa đơn thuế Mushak-6.3 từ cùng một bản ghi, và theo dõi từ nháp đến đã thanh toán mà không phải mở bảng tính.",
+          "secondaryCta": "Xem Mushak-6.3"
+        },
+        "sample": {
+          "count": "25 trên 120",
+          "terms": "Net 30",
+          "lineItems": [
+            "Túi nhựa, 12 × 16 inch",
+            "Nhãn thùng carton in sẵn"
+          ],
+          "notes": [
+            "nháp, đã duyệt, đã thanh toán nhìn là biết",
+            "đã thu về bao nhiêu",
+            "thuế GTGT tính từng dòng"
+          ]
+        },
+        "status": {
+          "draft": "nháp",
+          "approved": "đã duyệt",
+          "paid": "đã thanh toán",
+          "canceled": "đã hủy"
+        },
+        "ui": {
+          "crumb": "Kế toán",
+          "listTitle": "Hóa đơn",
+          "newInvoice": "Hóa đơn mới",
+          "thInvoiceNo": "Số hóa đơn",
+          "thCustomer": "Khách hàng",
+          "thStatus": "Trạng thái",
+          "thAmount": "Số tiền",
+          "thPaid": "Đã trả",
+          "detailTitle": "Hóa đơn {no}",
+          "customer": "Khách hàng",
+          "status": "Trạng thái",
+          "terms": "Điều khoản",
+          "amountDue": "Số tiền phải trả",
+          "amountPaid": "Số tiền đã trả",
+          "dueDate": "Ngày đến hạn",
+          "thItem": "Mặt hàng",
+          "thQty": "SL",
+          "thVat": "GTGT",
+          "thVatAmt": "Tiền GTGT",
+          "thTotal": "Tổng",
+          "printBill": "In hóa đơn",
+          "mushak": "Mushak 6.3",
+          "caption": "Bản xem trước một phần màn hình Hóa đơn bán hàng (AR) trong Adon ERP. Công ty, bên mua và số liệu là dữ liệu giả.",
+          "mushakCaption": "Mushak-6.3 in từ hóa đơn mẫu ở trên. Công ty, bên mua và BIN đều là giả.",
+          "preparedUnder": "Lập theo Luật GTGT 2012 và Quy tắc GTGT 2016."
+        },
+        "lifecycle": {
+          "title": "Vòng đời một hóa đơn, trong bốn từ",
+          "intro": "Mỗi hóa đơn trong danh sách đều có trạng thái. Đọc cột này từ trên xuống, bạn biết hóa đơn nào đang soạn, hóa đơn nào đang chờ tiền, và hóa đơn nào đã xong.",
+          "steps": [
+            {
+              "question": "Đang soạn",
+              "body": "Hóa đơn đã có nhưng chưa gửi cho bên mua. Hãy đối chiếu số lượng với phiếu giao hàng và giá với đơn đặt hàng khi còn ở trạng thái nháp."
+            },
+            {
+              "question": "Đã gửi, còn nợ tiền",
+              "body": "Bên mua còn nợ khoản này. Nếu đã thu một phần, cột Đã trả cho biết bao nhiêu, nên hóa đơn 2,56,000 taka mới thu 1,50,000 rất dễ nhận ra."
+            },
+            {
+              "question": "Đã thu đủ",
+              "body": "Đã trả bằng Số tiền. Không còn gì để đòi nữa. Hóa đơn vẫn nằm trong danh sách để lưu hồ sơ và phục vụ kiểm toán."
+            }
+          ],
+          "aside": {
+            "body": "Lập nhầm hoặc được thay bằng hóa đơn mới. Nó vẫn nằm trong danh sách cùng số của mình, nên dãy số không có khoảng trống nào để kiểm toán viên phải hỏi."
+          },
+          "formTitle": "Những gì bạn điền trên hóa đơn mới",
+          "form": [
+            {
+              "label": "Khách hàng",
+              "body": "Tìm và chọn bên mua. Thông tin của họ được đưa vào hóa đơn in và Mushak-6.3."
+            },
+            {
+              "label": "Dự án (tùy chọn)",
+              "body": "Gắn hóa đơn với dự án hoặc hợp đồng nếu nó thuộc về một dự án."
+            },
+            {
+              "label": "Tài khoản tiền mặt",
+              "body": "Nơi tiền về khi được thanh toán. Tự điền sẵn cho bạn (tài khoản 1010) trừ khi bạn chọn tài khoản khác."
+            },
+            {
+              "label": "Phải thu khách hàng",
+              "body": "Tài khoản ghi nhận số bên mua còn nợ cho đến khi họ trả. Tự điền sẵn cho bạn (tài khoản 1100)."
+            },
+            {
+              "label": "Điều khoản",
+              "body": "Điều khoản thanh toán như Net 30. Ngày đến hạn trong danh sách được suy ra từ đây."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Hóa đơn nằm ở giữa quá trình bán hàng",
+          "intro": "Nó bắt đầu từ một khách hàng và hàng hóa rời cổng, và kết thúc bằng tiền trong ngân hàng. Mỗi bước có công cụ riêng, và chúng đọc dữ liệu từ nhau.",
+          "groups": {
+            "before": "Trước hóa đơn",
+            "after": "Sau hóa đơn",
+            "shows": "Hiển thị ở đâu"
+          },
+          "items": {
+            "customers": "Tên, địa chỉ và BIN của bên mua, được chọn trên mỗi hóa đơn.",
+            "itemsProducts": "Những gì bạn bán, kèm đơn vị và giá cho các dòng hóa đơn.",
+            "deliveryChallans": "Hàng thực sự đã rời cổng, làm căn cứ lập hóa đơn.",
+            "receipts": "Tiền thu vào, đối trừ với hóa đơn mà nó thanh toán.",
+            "chequeRegister": "Khi bên mua trả bằng séc, ghi ngày hôm nay hoặc sau đó.",
+            "bankAccounts": "Nơi khoản thanh toán cuối cùng về tới.",
+            "vatRegister": "Thuế GTGT trên từng dòng hóa đơn, sẵn sàng cho tờ khai hằng tháng.",
+            "accountingHub": "Các hóa đơn chưa thanh toán tạo nên số AR.",
+            "financialReports": "Doanh thu và khoản phải thu trong báo cáo của bạn."
+          }
+        },
+        "local": {
+          "title": "Hóa đơn thuế mà cả bên mua lẫn cơ quan thuế đều chấp nhận",
+          "intro": "Từ cùng một hóa đơn, bạn có thể in hai chứng từ: hóa đơn thương mại cho bên mua, và hóa đơn thuế Mushak-6.3 song ngữ Bengal và Anh, trình bày đúng như mẫu của Cục Thuế Quốc gia yêu cầu.",
+          "points": [
+            {
+              "title": "Mushak-6.3, chỉ một cú nhấp",
+              "body": "Mở bất kỳ hóa đơn nào và bấm “Mushak 6.3”. Nhà cung cấp, bên mua, thuế suất GTGT và số tiền thuế được điền từ hóa đơn."
+            },
+            {
+              "title": "BIN trên mọi hóa đơn thuế",
+              "body": "Mã số định danh doanh nghiệp của bạn và của bên mua, nếu có, được in vào các ô mà thanh tra thường tìm."
+            },
+            {
+              "title": "Tiếng Bengal và tiếng Anh, song song",
+              "body": "Mọi tiêu đề trên Mushak-6.3 đều in bằng cả hai ngôn ngữ, như trên mẫu chính thức."
+            },
+            {
+              "title": "Số tiền bằng chữ, theo lakh",
+              "body": "“Taka One Lakh Fifteen Thousand Only”, chữ số nhóm theo kiểu 1,15,000.00. Giờ không còn ai viết tay nữa."
+            }
+          ],
+          "words": "Taka One Lakh Fifteen Thousand Only",
+          "story": {
+            "title": "Một đơn hàng, từ cổng đến khi thanh toán",
+            "intro": "Một đơn hàng mẫu của bên mua ngành may mặc, thường diễn ra như thế này.",
+            "steps": [
+              {
+                "time": "13 Th10",
+                "text": "10.000 túi nhựa và 5.000 nhãn rời cổng theo một phiếu giao hàng."
+              },
+              {
+                "time": "13 Th10",
+                "text": "Chiều cùng ngày hóa đơn được lập ở dạng nháp, số lượng đối chiếu với phiếu giao hàng."
+              },
+              {
+                "time": "14 Th10",
+                "text": "Đã duyệt. Hóa đơn thương mại và Mushak-6.3 được gửi đến bên mua cùng giấy tờ hàng hóa."
+              },
+              {
+                "time": "28 Th10",
+                "text": "Bên mua gửi séc cho một phần số tiền. Cột Đã trả hiện phần đã nhận, phần còn lại vẫn là nợ."
+              },
+              {
+                "time": "12 Th11",
+                "text": "Số dư về đúng ngày đến hạn. Đã trả khớp với Số tiền, và trạng thái chuyển thành đã thanh toán."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Các ngành khác nhau dùng hóa đơn như thế nào",
+          "angles": {
+            "retail": "Nhiều hóa đơn nhỏ mỗi ngày cho khách vãng lai và khách có tài khoản.",
+            "food-hospitality": "Tiệc sự kiện và suất ăn doanh nghiệp được lập hóa đơn theo điều khoản.",
+            "real-estate": "Các đợt thanh toán lập hóa đơn theo lịch thanh toán.",
+            "consulting": "Phí duy trì hằng tháng và hóa đơn theo mốc.",
+            "manufacturing": "Bên mua lớn, kỳ hạn dài, mỗi lần giao hàng kèm một Mushak-6.3.",
+            "health-fitness": "Thẻ hội viên doanh nghiệp lập hóa đơn cho người sử dụng lao động.",
+            "trades": "Mỗi công việc một hóa đơn, phụ tùng và nhân công ở các dòng riêng.",
+            "others": "Cho thuê, studio và đại lý lập hóa đơn theo lịch."
+          }
+        },
+        "faq": {
+          "title": "Những câu hỏi thường gặp về hóa đơn",
+          "items": [
+            {
+              "q": "Adon ERP có in được Mushak-6.3 không?",
+              "a": "Có. Mở bất kỳ hóa đơn nào và bấm “Mushak 6.3” để in hóa đơn thuế bằng tiếng Bengal và tiếng Anh, kèm thông tin nhà cung cấp và bên mua, BIN, thuế suất GTGT, số tiền thuế và tổng bằng chữ."
+            },
+            {
+              "q": "Thuế GTGT trên hóa đơn được tính thế nào?",
+              "a": "Mỗi dòng có thuế suất riêng. Hóa đơn hiển thị số tiền thuế của từng dòng và cộng vào tổng dòng, nên các mặt hàng hỗn hợp được xử lý đúng."
+            },
+            {
+              "q": "Nháp, đã duyệt, đã thanh toán và đã hủy nghĩa là gì?",
+              "a": "Nháp là vẫn đang soạn. Đã duyệt nghĩa là bên mua còn nợ khoản đó. Đã thanh toán nghĩa là đã nhận đủ. Hóa đơn đã hủy vẫn nằm trong danh sách cùng số của nó để lưu hồ sơ."
+            },
+            {
+              "q": "Bên mua có thể trả một phần hóa đơn không?",
+              "a": "Có. Cột Đã trả hiển thị số đã thu cho đến nay bên cạnh toàn bộ số tiền, nên hóa đơn trả một phần rất dễ nhận ra."
+            },
+            {
+              "q": "Tôi có phải chọn tài khoản mỗi lần không?",
+              "a": "Không. Tài khoản tiền mặt và tài khoản phải thu được điền tự động. Bạn có thể đổi cho một hóa đơn cụ thể nếu cần."
+            },
+            {
+              "q": "Tôi có in được hóa đơn thường bên cạnh hóa đơn thuế không?",
+              "a": "Được. “In hóa đơn” cho ra hóa đơn thương mại có đầu thư của bạn, các dòng hàng, tổng cộng và số tiền bằng chữ."
+            },
+            {
+              "q": "Tôi có xuất hóa đơn ra file được không?",
+              "a": "Được. Tìm trong danh sách rồi xuất sang CSV hoặc Excel, hoặc in ra."
+            },
+            {
+              "q": "Adon ERP có ở đâu?",
+              "a": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka. Hãy đặt lịch demo, chúng tôi sẽ lập cùng bạn một hóa đơn mẫu và Mushak-6.3."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Gửi cho chúng tôi một hóa đơn của bạn. Chúng tôi sẽ lập và in Mushak-6.3 ngay trong buổi demo."
+        }
+      },
+      "journal": {
+        "meta": {
+          "title": "Bút toán nhật ký bằng taka, tự cân khi bạn gõ | Adon ERP",
+          "description": "Ghi khấu hao, trích trước lương, dự phòng và điều chỉnh thành bút toán kép. Tổng nợ và tổng có tự kiểm tra, và mỗi bút toán đều được đánh số và tìm kiếm được.",
+          "keywords": [
+            "phần mềm bút toán nhật ký Bangladesh",
+            "phần mềm kế toán ghi sổ kép",
+            "bút toán nhật ký trích trước",
+            "bút toán nhật ký khấu hao",
+            "phần mềm kế toán Bangladesh",
+            "Bút toán nhật ký Adon ERP"
+          ]
+        },
+        "hero": {
+          "title": "Bút toán nhật ký: cho mọi thứ mà hóa đơn hay chứng từ mua hàng không ghi được",
+          "lead": "Khấu hao, lương đã phải trả nhưng chưa chi, hóa đơn điện đến vào tháng sau, khoản điều chỉnh kiểm toán viên yêu cầu. Viết bút toán từng dòng, xem tổng nợ và tổng có tự kiểm tra, và tìm lại trong vài giây.",
+          "secondaryCta": "Xem các bút toán cuối tháng thường gặp"
+        },
+        "sample": {
+          "total": "25 trên 418",
+          "entries": [
+            "Khấu hao máy móc, tháng 10",
+            "Trích trước lương tháng 10, chi trong tháng 11",
+            "Hóa đơn DESCO tháng 10, nhận ngày 3 tháng 11",
+            "Dự phòng thưởng lễ Eid, phần tháng 10",
+            "Hoàn: tiền thuê nhà bị ghi nhầm vào sửa chữa",
+            "Tiền thuê tháng 10, đúng tài khoản",
+            "Thuế tem ngân hàng trên sổ tiết kiệm có kỳ hạn"
+          ],
+          "form": {
+            "description": "Khấu hao máy móc, tháng 10",
+            "ledger": "Chung",
+            "project": "Không có dự án",
+            "accounts": [
+              "Chi phí khấu hao",
+              "Hao mòn lũy kế: máy móc"
+            ]
+          },
+          "notes": [
+            "mỗi bút toán có số riêng",
+            "nợ và có nằm cạnh nhau",
+            "tổng tự kiểm tra khi bạn gõ"
+          ]
+        },
+        "ui": {
+          "newEntry": "Bút toán mới",
+          "thJe": "Số BT",
+          "thDescription": "Diễn giải",
+          "thDebits": "Nợ",
+          "thCredits": "Có",
+          "thPosted": "Đã ghi sổ",
+          "posted": "Đã ghi sổ",
+          "formTitle": "Bút toán nhật ký mới",
+          "description": "Diễn giải",
+          "ledger": "Sổ cái",
+          "project": "Dự án (tùy chọn)",
+          "lines": "Các dòng",
+          "addLine": "Thêm dòng",
+          "dr": "Nợ",
+          "cr": "Có",
+          "drTotal": "Nợ: BDT {total}",
+          "crTotal": "Có: BDT {total}",
+          "balanced": "Đã cân",
+          "createJe": "Tạo bút toán",
+          "previewNote": "Bạn đang xem bản xem trước. Hãy ghi một bút toán thật trong buổi demo.",
+          "caption": "Bản xem trước một phần màn hình Bút toán nhật ký trong Adon ERP. Công ty, bút toán và số liệu là dữ liệu mẫu."
+        },
+        "explain": {
+          "title": "Từng phần của bút toán, và vì sao nó có mặt",
+          "intro": "Bút toán nhật ký là một biểu mẫu ngắn, nhưng mỗi ô trả lời một câu hỏi mà sau này sẽ có người hỏi: bạn vào tháng sau, kiểm toán viên vào năm sau, hoặc cán bộ ngân hàng kiểm tra sổ sách của bạn.",
+          "rows": [
+            {
+              "label": "Diễn giải",
+              "question": "Một năm nữa có còn hiểu được không?",
+              "body": "Hãy viết cho người chưa từng thấy nó. “Trích trước lương tháng 10, chi trong tháng 11” thì hữu ích. “Điều chỉnh” thì không. Sau này bạn sẽ tìm theo diễn giải, nên hãy nêu tháng và lý do."
+            },
+            {
+              "label": "Sổ cái",
+              "question": "Bút toán này nên nằm ở đâu?",
+              "body": "Chọn sổ cái mà bút toán thuộc về, để nó hiện ở nơi đội ngũ bạn mong đợi, cạnh các bút toán cùng loại."
+            },
+            {
+              "label": "Dự án (tùy chọn)",
+              "question": "Chi phí này có thuộc một công việc không?",
+              "body": "Nếu bút toán thuộc một dự án cụ thể, như dây chuyền sản xuất mới hoặc hợp đồng khách hàng, hãy gắn nhãn. Nếu không, để ở “Không có dự án”."
+            },
+            {
+              "label": "Các dòng",
+              "question": "Tài khoản nào biến động, theo chiều nào?",
+              "body": "Mỗi dòng gồm một tài khoản, một số tiền và một bên: Nợ hoặc Có. Hai dòng là đủ cho hầu hết bút toán. Cần thêm? Thêm một dòng, ví dụ để chia một khoản trích lương cho nhà máy, văn phòng và bán hàng."
+            },
+            {
+              "label": "Tổng dưới các dòng",
+              "question": "Nó có cân không?",
+              "body": "Tổng nợ và tổng có nằm dưới các dòng và cập nhật khi bạn gõ. Khi chúng khớp nhau, một dấu tích xuất hiện. Trong ghi sổ kép, mỗi đồng taka vào một bên đều phải ra ở bên kia."
+            },
+            {
+              "label": "Danh sách sau khi ghi sổ",
+              "question": "Có tìm lại được không?",
+              "body": "Các bút toán đã ghi sổ được đánh số theo năm (JE-2026-…) và liệt kê cùng tổng. Tìm theo diễn giải, rồi xuất sang CSV hoặc Excel, hoặc in ra khi kiểm toán viên yêu cầu nhật ký của tháng."
+            }
+          ],
+          "refresher": {
+            "title": "Ôn nhanh hai phút về nợ và có",
+            "intro": "Dành cho chủ doanh nghiệp ký duyệt cuối tháng và muốn đọc được bút toán mà không phải gọi kế toán.",
+            "head": [
+              "Loại tài khoản",
+              "Ghi nợ",
+              "Ghi có",
+              "Ví dụ"
+            ],
+            "rows": [
+              [
+                "Tài sản",
+                "tăng",
+                "giảm",
+                "Tiền mặt, ngân hàng, hàng tồn kho, máy móc"
+              ],
+              [
+                "Chi phí",
+                "tăng",
+                "giảm",
+                "Lương, tiền thuê, điện"
+              ],
+              [
+                "Nợ phải trả",
+                "giảm",
+                "tăng",
+                "Lương phải trả, nợ nhà cung cấp, các khoản vay"
+              ],
+              [
+                "Thu nhập",
+                "giảm",
+                "tăng",
+                "Doanh thu, lãi nhận được"
+              ],
+              [
+                "Vốn chủ sở hữu",
+                "giảm",
+                "tăng",
+                "Vốn, lợi nhuận giữ lại"
+              ]
+            ],
+            "tip": "Vì vậy “Nợ Chi phí khấu hao, Có Hao mòn lũy kế” đọc là: chi phí tháng này tăng, và giá trị sổ sách của máy móc giảm đúng bấy nhiêu."
+          }
+        },
+        "connect": {
+          "title": "Phần lớn bút toán tự viết. Nhật ký dành cho phần còn lại.",
+          "intro": "Bán hàng, mua hàng, thanh toán và thu tiền đều có công cụ riêng, và chúng ghi sổ giúp bạn. Chỉ dùng bút toán nhật ký cho những gì còn lại, để không có gì bị ghi hai lần.",
+          "groups": {
+            "setUp": "Thiết lập trước",
+            "recorded": "Đã ghi nhận ở nơi khác",
+            "shows": "Bút toán của bạn hiển thị ở đâu"
+          },
+          "items": {
+            "chartOfAccounts": "Mọi tài khoản bạn có thể chọn trên dòng bút toán đều đến từ đây.",
+            "invoicesAr": "Bán hàng cho khách. Hãy lập hóa đơn, đừng dùng nhật ký.",
+            "receipts": "Tiền thu vào theo một hóa đơn.",
+            "billsAp": "Hóa đơn nhà cung cấp mà bạn đã chấp nhận.",
+            "pettyCash": "Các khoản chi nhỏ hằng ngày từ hộp tiền mặt.",
+            "ledgers": "Mở bất kỳ tài khoản nào, dòng bút toán nằm ở đó, kèm số dư lũy kế.",
+            "financialReports": "Báo cáo lãi lỗ và bảng cân đối kế toán có tính đến nó.",
+            "accountingHub": "Thu nhập ròng và tổng tài sản thay đổi theo nó.",
+            "closingFy": "Bút toán cuối tháng và cuối năm diễn ra trước khi khóa sổ."
+          }
+        },
+        "local": {
+          "title": "Các bút toán cuối tháng mà kế toán nào ở Bangladesh cũng biết",
+          "intro": "Những khoản này xuất hiện hằng tháng ở hầu hết công ty tại đây. Không khoản nào đến từ hóa đơn hay chứng từ mua hàng, nên mỗi khoản đều là một bút toán nhật ký.",
+          "points": [
+            {
+              "title": "Lương còn nợ cuối tháng",
+              "body": "Công nhân được trả vào tuần đầu của tháng sau, nhưng chi phí thuộc về tháng này. Hãy ghi vào tháng phát sinh.",
+              "entry": "Nợ Chi phí lương · Có Lương phải trả"
+            },
+            {
+              "title": "Thưởng Eid, mỗi tháng một ít",
+              "body": "Hai đợt thưởng lễ mỗi năm là một khoản chi lớn. Trích trước một phần mỗi tháng giúp lợi nhuận của một tháng không sụp đổ trước dịp Eid.",
+              "entry": "Nợ Chi phí thưởng · Có Dự phòng thưởng"
+            },
+            {
+              "title": "Hóa đơn điện đến muộn",
+              "body": "Hóa đơn DESCO hoặc DPDC của tháng 10 đến vào tháng 11. Hãy đưa chi phí về tháng 10, nơi nó đã được sử dụng.",
+              "entry": "Nợ Điện · Có Chi phí phải trả"
+            },
+            {
+              "title": "Phí ngân hàng chỉ thấy trên sao kê",
+              "body": "Thuế tem, phí SMS và phí tài khoản do ngân hàng trừ trực tiếp. Hãy ghi nhận khi sao kê đến để số dư ngân hàng khớp.",
+              "entry": "Nợ Phí ngân hàng · Có Tài khoản ngân hàng"
+            },
+            {
+              "title": "Khấu hao máy móc và phương tiện",
+              "body": "Giá trị của một cỗ máy được phân bổ qua các năm nó hoạt động. Một bút toán mỗi tháng giữ cho lợi nhuận trung thực và bảng cân đối thực tế.",
+              "entry": "Nợ Khấu hao · Có Hao mòn lũy kế"
+            },
+            {
+              "title": "Sửa một bút toán sai",
+              "body": "Tiền thuê nhà bị ghi vào sửa chữa? Thói quen sạch là hoàn bút toán sai rồi ghi bút toán đúng, cả hai đều có diễn giải rõ ràng, để dấu vết dễ hiểu với kiểm toán viên.",
+              "entry": "Hoàn, rồi ghi lại"
+            }
+          ],
+          "day": {
+            "title": "Khóa sổ tháng 10 tại một công ty chế biến thực phẩm",
+            "intro": "Một kế toán ở Dhaka có thể làm việc thế nào trong tuần đầu tháng 11.",
+            "steps": [
+              {
+                "time": "31 Th10",
+                "text": "Khấu hao tháng 10 được ghi cho máy móc và xe giao hàng, mỗi loại một bút toán."
+              },
+              {
+                "time": "1 Th11",
+                "text": "Lương tháng 10 được trích trước cho nhà máy, văn phòng và bán hàng trên một bút toán bốn dòng. Dấu tích chuyển sang xanh ngay lần đầu."
+              },
+              {
+                "time": "3 Th11",
+                "text": "Hóa đơn DESCO tháng 10 đến. Nó được trích trước về tháng 10, kèm ngày hóa đơn trong diễn giải."
+              },
+              {
+                "time": "5 Th11",
+                "text": "Tìm kiếm “tiền thuê” cho thấy tiền thuê tháng 10 bị ghi vào sửa chữa. Bút toán sai được hoàn và bút toán đúng được ghi, nằm cạnh nhau trong danh sách."
+              },
+              {
+                "time": "6 Th11",
+                "text": "Sao kê ngân hàng cho thấy thuế tem trên khoản tiền gửi có kỳ hạn. Một bút toán ngắn, và số dư ngân hàng khớp."
+              },
+              {
+                "time": "7 Th11",
+                "text": "Nhật ký của tháng được xuất sang Excel cho chủ doanh nghiệp và hồ sơ kiểm toán. Tháng 10 sẵn sàng khóa sổ."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Bút toán nhật ký thay đổi theo ngành",
+          "intro": "Một khách sạn và một nhà máy may đều ghi nhật ký cuối tháng, nhưng không phải cùng những bút toán. Hãy chọn ngành của bạn để xem những bút toán nó thường cần.",
+          "angles": {
+            "retail": "Hàng kiểm kê thiếu, chiết khấu nhà cung cấp, hàng hư hỏng được xóa sổ.",
+            "food-hospitality": "Hàng hỏng, phí dịch vụ chia cho nhân viên, đặt chỗ trả trước.",
+            "real-estate": "Các đợt trả góp của người mua giữ ở dạng ứng trước cho đến khi bàn giao căn hộ.",
+            "consulting": "Công việc làm trong tháng này nhưng lập hóa đơn tháng sau.",
+            "manufacturing": "Khấu hao, dự phòng thưởng và hàng còn trên sàn nhà xưởng.",
+            "health-fitness": "Thẻ hội viên một năm trả hôm nay, ghi nhận doanh thu từng tháng.",
+            "trades": "Chi phí bảo hành dành riêng cho các việc đã làm xong.",
+            "others": "Tài trợ và quyên góp được giữ riêng cho đến khi chi tiêu."
+          }
+        },
+        "faq": {
+          "title": "Những câu hỏi thường gặp về bút toán nhật ký",
+          "items": [
+            {
+              "q": "Bút toán nhật ký trong Adon ERP là gì?",
+              "a": "Đó là bản ghi ghi sổ kép thủ công: một diễn giải, một sổ cái, dự án tùy chọn, và từ hai dòng trở lên, mỗi dòng có tài khoản, số tiền và bên nợ hoặc có. Bạn dùng nó cho mọi thứ không đến từ hóa đơn, chứng từ mua hàng, phiếu thu hay công cụ khác."
+            },
+            {
+              "q": "Khi nào tôi nên dùng bút toán nhật ký thay vì hóa đơn?",
+              "a": "Dùng hóa đơn, chứng từ mua hàng, phiếu thu và quỹ tiền mặt nhỏ cho việc mua, bán và thanh toán hằng ngày. Dùng bút toán nhật ký cho khấu hao, trích trước, dự phòng, phí ngân hàng chỉ thấy trên sao kê và các khoản điều chỉnh."
+            },
+            {
+              "q": "Làm sao biết bút toán đã cân?",
+              "a": "Tổng nợ và tổng có hiển thị dưới các dòng và cập nhật khi bạn gõ. Dấu tích xuất hiện khi hai số bằng nhau."
+            },
+            {
+              "q": "Một bút toán có thể có nhiều hơn hai dòng không?",
+              "a": "Có. Dùng “Thêm dòng” để thêm bao nhiêu tùy ý, ví dụ để chia một khoản trích lương cho nhiều phòng ban."
+            },
+            {
+              "q": "Tôi có thể gắn bút toán với một dự án không?",
+              "a": "Có. Biểu mẫu có ô Dự án tùy chọn. Để ở “Không có dự án” khi bút toán không gắn với dự án nào."
+            },
+            {
+              "q": "Bút toán nhật ký được đánh số thế nào?",
+              "a": "Mỗi bút toán nhận một số có kèm năm, như JE-2026-004318, và xuất hiện trong danh sách Bút toán nhật ký cùng tổng nợ, tổng có và trạng thái."
+            },
+            {
+              "q": "Tôi có đưa nhật ký cho kiểm toán viên được không?",
+              "a": "Được. Bạn có thể tìm kiếm trong danh sách, xuất sang CSV hoặc Excel, hoặc in ra."
+            },
+            {
+              "q": "Adon ERP có ở đâu?",
+              "a": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka. Hãy đặt lịch demo, chúng tôi sẽ cùng bạn xem các bút toán cuối tháng của chính bạn."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Hãy mang đến bút toán khiến bạn đau đầu mỗi tháng. Chúng tôi sẽ ghi sổ cùng bạn."
+        }
+      },
+      "hub": {
+        "meta": {
+          "title": "Trung tâm Kế toán: Bảng điều khiển kế toán trực tiếp cho doanh nghiệp Bangladesh | Adon ERP",
+          "description": "Xem doanh thu, thu nhập ròng, phải thu, phải trả và tổng tài sản trên một màn hình trực tiếp, bằng taka, lakh và crore. Trung tâm Kế toán của Adon ERP, xây dựng cho doanh nghiệp tại Bangladesh.",
+          "keywords": [
+            "bảng điều khiển kế toán Bangladesh",
+            "phần mềm kế toán Bangladesh",
+            "mô-đun kế toán ERP",
+            "bảng điều khiển công nợ phải thu",
+            "sổ thuế GTGT Bangladesh",
+            "Kế toán Adon ERP"
+          ]
+        },
+        "hero": {
+          "title": "Trung tâm Kế toán: toàn bộ tình hình sổ sách của bạn, trên một màn hình",
+          "lead": "Doanh thu, lợi nhuận, khách hàng nợ bạn bao nhiêu, bạn nợ nhà cung cấp bao nhiêu và công ty sở hữu gì. Năm con số, đọc trực tiếp từ sổ cái của bạn, hiển thị bằng taka theo cách bạn vẫn nói về tiền: lakh và crore.",
+          "secondaryCta": "Xem tất cả công cụ kế toán"
+        },
+        "units": {
+          "cr": "Cr",
+          "lakh": "L"
+        },
+        "sample": {
+          "language": "Tiếng Việt",
+          "kpis": {
+            "revenue": {
+              "label": "Doanh thu (từ đầu năm)",
+              "note": "doanh số từ đầu năm"
+            },
+            "net": {
+              "label": "Thu nhập ròng",
+              "note": "phần còn lại sau mọi chi phí"
+            },
+            "ar": {
+              "label": "Phải thu còn lại",
+              "note": "vẫn nằm ở khách hàng. Hãy đòi"
+            },
+            "ap": {
+              "label": "Phải trả còn lại",
+              "note": "bạn nợ nhà cung cấp"
+            },
+            "assets": {
+              "label": "Tổng tài sản",
+              "note": "mọi thứ công ty đang nắm giữ"
+            }
+          },
+          "statement": {
+            "revenue": "Doanh thu",
+            "cogs": "Giá vốn",
+            "grossProfit": "Lợi nhuận gộp",
+            "opex": "Chi phí hoạt động",
+            "netIncome": "Thu nhập ròng"
+          },
+          "opex": {
+            "salaries": "Lương",
+            "utilities": "Tiện ích",
+            "transport": "Vận chuyển",
+            "other": "Khác"
+          }
+        },
+        "ui": {
+          "sidebarAria": "Các công cụ kế toán trong sản phẩm",
+          "subtitle": "Dữ liệu trực tiếp từ hệ thống kế toán của bạn",
+          "incomeStatement": "Báo cáo kết quả kinh doanh (từ đầu năm)",
+          "grossMargin": "Biên lợi nhuận gộp:",
+          "opexTitle": "Cơ cấu chi phí hoạt động",
+          "total": "Tổng",
+          "previewNote": "Bạn đang xem bản xem trước. Toàn bộ Trung tâm đang chờ bạn khám phá.",
+          "caption": "Bản xem trước một phần Trung tâm Kế toán. Công ty, khách hàng và số liệu là dữ liệu mẫu."
+        },
+        "numbers": {
+          "title": "Năm con số, năm câu hỏi mà chủ doanh nghiệp thực sự đặt ra",
+          "intro": "Bảng điều khiển chỉ hữu ích khi bạn biết làm gì với những gì nó hiển thị. Dưới đây là ý nghĩa của từng con số trên Trung tâm, nó đến từ đâu, và khi nào nên nhấc điện thoại lên.",
+          "comesFrom": "Nguồn:",
+          "rows": [
+            {
+              "label": "Doanh thu (từ đầu năm)",
+              "question": "Chúng ta có đang bán nhiều hơn trước không?",
+              "body": "Mọi thứ đã lập hóa đơn từ đầu năm tài chính của bạn. Hầu hết công ty ở đây chạy từ tháng Bảy đến tháng Sáu, nên đến tháng Mười hai đây là khoảng sáu tháng doanh số. Hãy so với cùng thời điểm năm ngoái, đừng so với tháng trước.",
+              "source": "Hóa đơn bán hàng (AR)"
+            },
+            {
+              "label": "Thu nhập ròng",
+              "question": "Sau mọi chi phí, chúng ta có lãi không?",
+              "body": "Doanh thu, trừ giá vốn hàng bán, trừ lương, tiền thuê, nhiên liệu và mọi thứ cần để vận hành. Khi con số này âm, Trung tâm hiển thị màu đỏ. Nó không làm nhẹ tin xấu.",
+              "source": "Sổ cái và Bút toán nhật ký"
+            },
+            {
+              "label": "Phải thu còn lại",
+              "question": "Bao nhiêu tiền của chúng ta đang nằm ở bên mua?",
+              "body": "Các hóa đơn đã gửi nhưng chưa được thanh toán. Với nhà máy bán cho các bên mua lớn theo kỳ hạn 60 hoặc 90 ngày, con số này thường lớn hơn số dư ngân hàng, và nó quyết định lương có được trả đúng hạn hay không.",
+              "source": "Hóa đơn bán hàng (AR) và Phiếu thu"
+            },
+            {
+              "label": "Phải trả còn lại",
+              "question": "Chúng ta đang để ai chờ?",
+              "body": "Hóa đơn nhà cung cấp bạn đã chấp nhận nhưng chưa trả. Khoản phải trả nhỏ bên cạnh khoản phải thu lớn nghĩa là bạn đang tài trợ cho khách hàng. Đáng biết trước khi xin ngân hàng vốn lưu động.",
+              "source": "Hóa đơn mua hàng (AP)"
+            },
+            {
+              "label": "Tổng tài sản",
+              "question": "Doanh nghiệp này thực sự lớn đến đâu?",
+              "body": "Tiền mặt, số dư ngân hàng, hàng tồn kho, khoản phải thu, máy móc và bất động sản, cộng từ bảng cân đối kế toán. Đây là con số mà bên cho vay hay nhà đầu tư nhìn trước tiên.",
+              "source": "các tài khoản tài sản trong Hệ thống tài khoản của bạn"
+            }
+          ],
+          "chartsTitle": "Và bốn biểu đồ bên dưới",
+          "charts": [
+            {
+              "title": "Báo cáo kết quả kinh doanh trong năm cột",
+              "body": "Doanh thu, giá vốn, lợi nhuận gộp, chi phí vận hành và thu nhập ròng, đặt cạnh nhau. Biên lợi nhuận gộp nằm ở góc, nên bạn thấy ngay khi giá nguyên liệu bắt đầu ăn vào lợi nhuận."
+            },
+            {
+              "title": "Chi phí vận hành đi đâu",
+              "body": "Chi phí hoạt động chia theo loại. Ở nhà máy, lương thường là phần lớn nhất. Khi nhiên liệu hay vận chuyển bắt đầu tăng, bạn thấy ở đây trước khi thấy trong sổ sách cuối năm."
+            },
+            {
+              "title": "Năm khách hàng nợ nhiều nhất",
+              "body": "Danh sách cần gọi điện trong tuần của bạn. Nếu một cái tên giữ một phần ba tổng số phải thu, đó là rủi ro tập trung, và tốt hơn là thấy nó vào sáng thứ Hai thay vì khi kiểm toán."
+            },
+            {
+              "title": "Năm nhà cung cấp bạn nợ nhiều nhất",
+              "body": "Trả cho ai trước, và có thể bàn điều khoản với ai một cách hợp lý. Hữu ích trong tuần trước lễ Eid, khi mọi nhà cung cấp đều muốn được trả cùng lúc."
+            }
+          ]
+        },
+        "tools": {
+          "title": "Mười bảy công cụ cung cấp dữ liệu cho Trung tâm. Bạn không bao giờ phải gõ một con số hai lần.",
+          "intro": "Trung tâm không tự lưu số liệu nào. Mọi con số trên đó được đọc từ công việc mà đội ngũ của bạn đã làm trong các công cụ dưới đây: một hóa đơn được lập, một tờ séc được nộp, một hóa đơn mua được duyệt.",
+          "groups": {
+            "keep": "Ghi sổ sách",
+            "sell": "Bán và thu tiền",
+            "buy": "Mua và thanh toán",
+            "cash": "Tiền mặt và ngân hàng",
+            "close": "Khóa sổ và tuân thủ"
+          },
+          "items": {
+            "chartOfAccounts": "Danh sách mọi tài khoản mà tiền đi qua. Thiết lập một lần; mọi báo cáo đọc từ đây.",
+            "journalEntries": "Cho các bút toán không đến từ hóa đơn hay chứng từ mua hàng: khấu hao, trích trước, điều chỉnh.",
+            "ledgers": "Mở bất kỳ tài khoản nào và xem từng đồng taka ra vào, kèm số dư lũy kế.",
+            "customers": "Mọi bên mua, và hôm nay mỗi bên nợ bạn bao nhiêu.",
+            "deliveryChallans": "Hàng rời cổng được ghi lại để có thể đối chiếu giao hàng với lập hóa đơn.",
+            "invoicesAr": "Lập hóa đơn khách hàng kèm GTGT. Hóa đơn chưa thanh toán tạo nên con số AR trên Trung tâm.",
+            "receipts": "Tiền thu vào bằng tiền mặt, séc hoặc chuyển khoản, đối trừ với hóa đơn mà nó thanh toán.",
+            "vendors": "Nhà cung cấp của bạn, và bạn nợ mỗi bên bao nhiêu.",
+            "purchaseOrders": "Thỏa thuận giá và số lượng trước khi hàng về, để có thể kiểm tra hóa đơn.",
+            "billsAp": "Hóa đơn nhà cung cấp chờ thanh toán. Cộng lại thành con số AP.",
+            "itemsProducts": "Những gì bạn mua và bán, kèm đơn vị và giá.",
+            "bankAccounts": "Mọi tài khoản công ty nắm giữ, kèm số dư để đối chiếu với sao kê.",
+            "chequeRegister": "Séc đã nhận và đã phát hành, kèm ngày, để không tờ nào bị quên trong ngăn kéo.",
+            "pettyCash": "Trà nước, tiền xe lam, chuyển phát nhanh. Những khoản nhỏ cộng dồn đến tháng Sáu.",
+            "vatRegister": "Thuế GTGT đầu ra và đầu vào, đặt cạnh nhau cho tờ khai hằng tháng.",
+            "financialReports": "Báo cáo lãi lỗ, bảng cân đối kế toán và các báo cáo mà ngân hàng hay kiểm toán viên yêu cầu.",
+            "closingFy": "Khóa tháng, khóa năm, mở năm tiếp theo với số dư sạch."
+          }
+        },
+        "local": {
+          "title": "Xây dựng cho cách sổ sách được ghi chép ở Bangladesh",
+          "intro": "Phần lớn phần mềm kế toán được viết ở nơi khác rồi điều chỉnh cho chúng ta sau. Adon ERP bắt đầu từ đây, nên giấy tờ bạn xử lý mỗi ngày đều có chỗ đúng trong đó.",
+          "points": [
+            {
+              "title": "GTGT ngay từ hóa đơn đầu tiên",
+              "body": "Thuế GTGT được ghi nhận trên mọi giao dịch bán và mua khi phát sinh, và đổ vào Sổ thuế GTGT. Đến hạn nộp tờ khai hằng tháng, số liệu của bạn đã nằm sẵn một chỗ."
+            },
+            {
+              "title": "Séc, kể cả séc ghi ngày sau",
+              "body": "Bên mua vẫn trả bằng séc, thường ghi ngày vài tuần sau. Sổ séc lưu từng tờ cùng ngày của nó, để bạn biết hôm nay có thể nộp tờ nào."
+            },
+            {
+              "title": "Lakh và crore, không phải triệu",
+              "body": "Trung tâm hiển thị 2.92 Cr và 58 L, với số taka đầy đủ ở bên dưới. Không ai phải quy đổi con số trong đầu trước cuộc họp."
+            },
+            {
+              "title": "Tiếng Anh hoặc tiếng Bengal",
+              "body": "Đổi ngôn ngữ từ thanh trên cùng. Chủ doanh nghiệp có thể đọc bằng tiếng Bengal trong khi kế toán làm việc bằng tiếng Anh, trên cùng một bộ sổ."
+            },
+            {
+              "title": "Nhiều hơn một công ty",
+              "body": "Một nhà máy và một nhánh thương mại, hay ba công ty thành viên? Chuyển công ty từ thanh trên cùng. Mỗi công ty giữ sổ sách riêng."
+            },
+            {
+              "title": "Năm tài chính của bạn, ngày tháng của bạn",
+              "body": "Khóa năm khi công ty bạn khóa, dù là tháng Sáu như hầu hết công ty ở đây hay tháng Mười hai cho công ty mẹ nước ngoài."
+            }
+          ],
+          "day": {
+            "title": "Một ngày thứ Ba bình thường cùng Trung tâm",
+            "intro": "Cách một nhóm kế toán ở nhà máy bao bì cỡ vừa có thể sử dụng nó.",
+            "steps": [
+              {
+                "time": "9:30 sáng",
+                "text": "Trưởng phòng kế toán mở Trung tâm. Khoản phải thu tăng so với tuần trước, và danh sách năm đầu cho thấy chính xác bên mua nào đứng sau."
+              },
+              {
+                "time": "11:00 sáng",
+                "text": "Sổ séc hiển thị hai tờ séc ghi ngày hôm nay. Một tờ đưa vào ngân hàng. Bên mua kia xin một tuần, và cuộc gọi được ghi lại."
+              },
+              {
+                "time": "2:30 chiều",
+                "text": "Kho gửi phiếu giao hàng cho các cuộn màng đã rời cổng. Hóa đơn được lập ngay chiều đó, đã gồm GTGT."
+              },
+              {
+                "time": "4:00 chiều",
+                "text": "Hóa đơn của nhà cung cấp hạt nhựa đến và được đối chiếu với đơn mua hàng trước khi chấp nhận."
+              },
+              {
+                "time": "6:15 chiều",
+                "text": "Quỹ tiền mặt nhỏ được kiểm đếm và khóa. Khi chủ doanh nghiệp xem Trung tâm từ nhà, số liệu hôm nay đã có sẵn trong đó."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Cùng một Trung tâm, thiết lập cho ngành của bạn",
+          "intro": "Một nhà hàng và một nhà máy dệt đọc cùng năm con số này theo cách rất khác nhau. Hãy chọn ngành của bạn để xem sổ sách thường được thiết lập ra sao.",
+          "angles": {
+            "retail": "Doanh số hằng ngày, tín dụng nhà cung cấp và hàng tồn kho luân chuyển nhanh.",
+            "food-hospitality": "Những ngày nhiều tiền mặt, hàng dễ hỏng, thuế GTGT trên mọi hóa đơn.",
+            "real-estate": "Dự án dài hạn, thanh toán theo giai đoạn, tiền ứng trước giữ hàng tháng.",
+            "consulting": "Thời gian là sản phẩm, nên hóa đơn và khoản phải thu là tất cả.",
+            "manufacturing": "Nguyên liệu vào, thành phẩm ra, bên mua lớn trả chậm.",
+            "health-fitness": "Hội viên, hóa đơn nhỏ và rất nhiều phiếu thu.",
+            "trades": "Công việc, phụ tùng, và tiền thu ngay tại chỗ.",
+            "others": "Tổ chức phi lợi nhuận, cho thuê, studio. Sổ sách vẫn phải cân."
+          }
+        },
+        "faq": {
+          "title": "Những câu hỏi thường gặp về Trung tâm Kế toán",
+          "items": [
+            {
+              "q": "Trung tâm Kế toán trong Adon ERP là gì?",
+              "a": "Đó là màn hình đầu tiên của ứng dụng Kế toán. Nó hiển thị doanh thu từ đầu năm, thu nhập ròng, phải thu, phải trả và tổng tài sản, cùng biểu đồ báo cáo kết quả kinh doanh, cơ cấu chi phí và các khách hàng, nhà cung cấp hàng đầu theo số dư. Mọi thứ trên đó đều là dữ liệu trực tiếp."
+            },
+            {
+              "q": "Các con số trên Trung tâm đến từ đâu?",
+              "a": "Từ công việc mà đội ngũ của bạn đã ghi nhận: hóa đơn, phiếu thu, hóa đơn mua hàng, bút toán nhật ký, hồ sơ ngân hàng và séc. Trung tâm đọc chúng từ sổ cái. Không có gì để gõ vào chính Trung tâm, nên nó không thể lệch khỏi sổ sách."
+            },
+            {
+              "q": "Nó có xử lý thuế GTGT ở Bangladesh không?",
+              "a": "Có. Thuế GTGT được ghi nhận trên hóa đơn và chứng từ mua hàng, và tập hợp trong Sổ thuế GTGT, nên thuế đầu ra và đầu vào của tháng nằm một chỗ khi đến hạn khai thuế."
+            },
+            {
+              "q": "Chúng tôi có xem được số tiền theo lakh và crore không?",
+              "a": "Có. Các con số chính được hiển thị theo Cr và L, với số taka đầy đủ in bên dưới mỗi số."
+            },
+            {
+              "q": "Một tài khoản đăng nhập có quản lý được nhiều công ty không?",
+              "a": "Có. Các công ty trong tập đoàn có thể chuyển giữa các công ty từ thanh trên cùng, và mỗi công ty giữ hệ thống tài khoản, sổ cái và báo cáo riêng."
+            },
+            {
+              "q": "Phần mềm có tiếng Bengal không?",
+              "a": "Có. Bạn có thể chuyển giữa tiếng Anh và tiếng Bengal từ thanh trên cùng bất cứ lúc nào."
+            },
+            {
+              "q": "Chúng tôi có cần kế toán để sử dụng không?",
+              "a": "Người hiểu nợ và có nên thiết lập hệ thống tài khoản và ghi bút toán nhật ký. Bản thân Trung tâm được viết cho chủ doanh nghiệp và quản lý, không cần được đào tạo kế toán để đọc."
+            },
+            {
+              "q": "Adon ERP có ở đâu?",
+              "a": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka. Hãy đặt lịch demo, chúng tôi sẽ dẫn bạn xem Trung tâm bằng những con số giống doanh nghiệp của bạn."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Hãy cho chúng tôi biết doanh nghiệp của bạn vận hành ra sao. Chúng tôi sẽ cho bạn xem màn hình này được thiết lập đúng như thế."
+        }
+      }
+    },
     "accounting-firm": {
       "metadata": {
         "title": "Công ty kế toán | AdonERP",

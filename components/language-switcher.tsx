@@ -40,8 +40,8 @@ export default function LanguageSwitcher({
           aria-label={`${t("label")}: ${languageNames[activeLocale]}`}
           className={
             variant === "mobile"
-              ? "flex w-full items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold text-card-foreground transition-colors hover:bg-accent/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              : "hidden items-center gap-2 rounded-full border border-border bg-card/90 px-3 py-2 text-sm font-semibold text-foreground shadow-sm transition-colors hover:bg-accent/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:inline-flex"
+              ? "flex w-full items-center gap-3 rounded-2xl border border-border bg-card px-5 py-4 text-sm font-semibold text-card-foreground transition-colors hover-gradient focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              : "hidden items-center gap-2 rounded-full border border-border bg-card/90 px-3 py-2 text-sm font-semibold text-foreground shadow-sm transition-colors hover-gradient focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:inline-flex"
           }
         >
           <Languages className="size-4 shrink-0" aria-hidden="true" />
@@ -64,7 +64,7 @@ export default function LanguageSwitcher({
             role="menuitemradio"
             aria-checked={locale === nextLocale}
             onSelect={() => switchLanguage(nextLocale)}
-            className="cursor-pointer justify-between gap-6 rounded-lg px-3 py-2.5"
+            className="hover-gradient cursor-pointer justify-between gap-6 rounded-lg px-3 py-2.5"
           >
             <span lang={nextLocale}>{languageNames[nextLocale]}</span>
             {locale === nextLocale && <Check className="size-4 text-primary" aria-hidden="true" />}

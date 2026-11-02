@@ -601,6 +601,1025 @@
     }
   },
   "pages": {
+    "accountingShowcase": {
+      "common": {
+        "bookDemo": "Book a demo",
+        "onboardingNote": "Now onboarding companies in Dhaka.",
+        "bookLiveDemo": "Book a live demo",
+        "closingBody": "A live demo in English or Bangla, using sample books close to your own trade, with time for your accountant’s questions.",
+        "exploreAccounting": "Explore the Accounting app",
+        "refresh": "Refresh",
+        "search": "Search…",
+        "csv": "CSV",
+        "excel": "Excel",
+        "print": "Print",
+        "cancel": "Cancel",
+        "tools": {
+          "accountingHub": "Accounting Hub",
+          "chartOfAccounts": "Chart of Accounts",
+          "journalEntries": "Journal Entries",
+          "ledgers": "Ledgers",
+          "invoicesAr": "Invoices (AR)",
+          "billsAp": "Bills (AP)",
+          "purchaseOrders": "Purchase Orders",
+          "customers": "Customers",
+          "vendors": "Vendors",
+          "bankAccounts": "Bank Accounts",
+          "deliveryChallans": "Delivery Challans",
+          "pettyCash": "Petty Cash",
+          "closingFy": "Closing & FY",
+          "financialReports": "Financial Reports",
+          "vatRegister": "VAT Register",
+          "receipts": "Receipts",
+          "chequeRegister": "Cheque Register",
+          "itemsProducts": "Items / Products"
+        },
+        "industryGroups": {
+          "retail": "Retail",
+          "food-hospitality": "Food & Hospitality",
+          "real-estate": "Real Estate",
+          "consulting": "Consulting",
+          "manufacturing": "Manufacturing",
+          "health-fitness": "Health & Fitness",
+          "trades": "Trades",
+          "others": "Others"
+        },
+        "industryItems": {
+          "book-store": "Book Store",
+          "clothing-store": "Clothing Store",
+          "furniture-store": "Furniture Store",
+          "grocery-store": "Grocery Store",
+          "hardware-store": "Hardware Store",
+          "toy-store": "Toy Store",
+          "bar-and-pub": "Bar and Pub",
+          "restaurant": "Restaurant",
+          "fast-food": "Fast Food",
+          "guest-house": "Guest House",
+          "beverage-distributor": "Beverage Distributor",
+          "hotel": "Hotel",
+          "real-estate-agency": "Real Estate Agency",
+          "architecture-firm": "Architecture Firm",
+          "construction": "Construction",
+          "property-management": "Property Management",
+          "gardening": "Gardening",
+          "property-owner-association": "Property Owner Association",
+          "accounting-firm": "Accounting Firm",
+          "it-consultancy": "IT Consultancy",
+          "marketing-agency": "Marketing Agency",
+          "law-firm": "Law Firm",
+          "talent-acquisition": "Talent Acquisition",
+          "audit-and-certification": "Audit & Certification",
+          "textile": "Textile",
+          "metal": "Metal",
+          "furnitures": "Furnitures",
+          "food": "Food",
+          "brewery": "Brewery",
+          "corporate-gifts": "Corporate Gifts",
+          "sports-club": "Sports Club",
+          "eyewear-store": "Eyewear Store",
+          "fitness-center": "Fitness Center",
+          "wellness-practitioners": "Wellness Practitioners",
+          "pharmacy": "Pharmacy",
+          "hair-salon": "Hair Salon",
+          "handyman": "Handyman",
+          "it-hardware-and-support": "IT Hardware & Support",
+          "solar-energy-systems": "Solar Energy Systems",
+          "electronic-store": "Electronic Store",
+          "cleaning-services": "Cleaning Services",
+          "hvac-services": "HVAC Services",
+          "nonprofit-organization": "Nonprofit Organization",
+          "environmental-agency": "Environmental Agency",
+          "billboard-rental": "Billboard Rental",
+          "photography": "Photography",
+          "bike-leasing": "Bike Leasing",
+          "software-reseller": "Software Reseller"
+        }
+      },
+      "ledgers": {
+        "meta": {
+          "title": "Ledgers: Keep Every Stream of Entries Apart | Adon ERP",
+          "description": "Create separate ledgers for sales, payroll, assets or projects, see how many journal entries each one holds, and keep your books easy to read. Built for companies in Bangladesh.",
+          "keywords": [
+            "ledger software Bangladesh",
+            "general ledger accounting software",
+            "accounting ledgers ERP",
+            "journal ledger",
+            "accounting software Bangladesh",
+            "Adon ERP ledgers"
+          ]
+        },
+        "hero": {
+          "title": "Ledgers: one place for each stream of entries in your books",
+          "lead": "Local sales in one ledger, export in another, payroll in a third. Every journal entry is posted to a ledger, so when you open one you see only the work that belongs there, and how much of it there is.",
+          "secondaryCta": "See ledger ideas"
+        },
+        "sample": {
+          "ledgerNames": [
+            "Meghla Agro Foods — General Ledger",
+            "Local Sales",
+            "Export Sales",
+            "Payroll",
+            "Fixed Assets",
+            "Gazipur Warehouse Project"
+          ],
+          "newName": "Dealer Commission",
+          "notes": [
+            "name it the way your team talks",
+            "how many entries each one holds",
+            "a new one takes one field"
+          ]
+        },
+        "ui": {
+          "showDocLedgers": "Show Doc Ledgers",
+          "newLedger": "New Ledger",
+          "colName": "Name",
+          "colJes": "JEs",
+          "colCreated": "Created",
+          "colActions": "Actions",
+          "edit": "Edit",
+          "delete": "Delete",
+          "createLedger": "Create Ledger",
+          "caption": "A partial preview of Ledgers in Adon ERP. Company, ledger names and figures are sample data."
+        },
+        "explain": {
+          "title": "What a ledger is for",
+          "intro": "A company with one ledger works. A company with twenty thousand entries in one ledger is hard to read. Ledgers let you group entries the way your business actually runs.",
+          "rows": [
+            {
+              "label": "Name",
+              "question": "What does this ledger hold?",
+              "body": "Use a name anyone in accounts would understand without asking: “Export Sales”, not “Ledger 3”. It is the name your team will pick on every new journal entry."
+            },
+            {
+              "label": "JEs",
+              "question": "How busy is it?",
+              "body": "The number of journal entries posted to the ledger so far. A ledger with thousands of entries is a daily workhorse. One still at zero was probably set up for something that hasn’t started yet."
+            },
+            {
+              "label": "Created",
+              "question": "When was it set up?",
+              "body": "Useful at year-end and during an audit, when someone asks why a ledger exists and since when."
+            },
+            {
+              "label": "Actions",
+              "question": "Can we change it later?",
+              "body": "Rename a ledger whenever you need to. A ledger with no entries in it can also be removed, so a mistake made during setup doesn’t stay in your books."
+            }
+          ],
+          "ideasTitle": "Ledger ideas that work well here",
+          "ideasIntro": "There is no single right set. These are the splits we see most often in Bangladeshi companies.",
+          "ideas": [
+            {
+              "title": "Local sales and export sales",
+              "body": "Export earnings are handled differently by the bank and the auditor. Keeping them apart from day one saves a lot of sorting in June."
+            },
+            {
+              "title": "Payroll",
+              "body": "Salaries, festival bonuses and their accruals in one place, separate from trading entries."
+            },
+            {
+              "title": "Fixed assets",
+              "body": "Machinery, vehicles and their monthly depreciation, so the asset story is easy to follow."
+            },
+            {
+              "title": "One ledger per project",
+              "body": "A new warehouse, a factory floor, a large client contract. Set it up before the first taka is spent."
+            },
+            {
+              "title": "Each sister concern’s general ledger",
+              "body": "Name it after the company it belongs to, so nobody posts to the wrong one by accident."
+            },
+            {
+              "title": "Fee or subscription income",
+              "body": "Schools, clubs and training centres often keep collections in a ledger of their own because the volume is so high."
+            }
+          ]
+        },
+        "related": {
+          "journalEntries": "Every entry is posted to one of your ledgers.",
+          "chartOfAccounts": "The accounts each journal line moves money between.",
+          "financialReports": "Profit and loss and the balance sheet across your books.",
+          "accountingHub": "The whole picture on one screen."
+        },
+        "faq": {
+          "title": "Questions we get about ledgers",
+          "items": [
+            {
+              "q": "What is a ledger in Adon ERP?",
+              "a": "It is a named book that journal entries are posted to. You choose the ledger on every new journal entry, and the Ledgers screen shows each one with how many entries it holds and when it was created."
+            },
+            {
+              "q": "How many ledgers should we have?",
+              "a": "Start small. A general ledger plus one for each stream your team handles separately, such as sales, payroll or a large project, is enough for most companies. You can add more at any time."
+            },
+            {
+              "q": "How do I create a new ledger?",
+              "a": "Click “New Ledger”, type a name and click “Create Ledger”. That is the whole form."
+            },
+            {
+              "q": "Can we rename a ledger later?",
+              "a": "Yes. Use the edit action next to the ledger. The entries already posted to it stay where they are."
+            },
+            {
+              "q": "Can we delete a ledger?",
+              "a": "A ledger with no entries can be deleted. Once entries have been posted to it, keep it and rename it if needed, so your audit trail stays complete."
+            },
+            {
+              "q": "Are ledgers the same as separate companies?",
+              "a": "No. Ledgers split entries inside one company. If you run separate legal companies, set each one up as its own company and switch between them from the top bar."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Not sure how to split your books? We will sketch your ledgers with you."
+        }
+      },
+      "invoices": {
+        "meta": {
+          "title": "Invoices (AR): VAT Invoices and Mushak-6.3 in Taka | Adon ERP",
+          "description": "Raise customer invoices with VAT on every line, print a commercial bill or a bilingual Mushak-6.3, and see what each buyer still owes. Built for companies in Bangladesh.",
+          "keywords": [
+            "invoice software Bangladesh",
+            "Mushak 6.3 software",
+            "VAT invoice Bangladesh",
+            "accounts receivable software",
+            "billing software Bangladesh",
+            "Adon ERP invoices"
+          ]
+        },
+        "hero": {
+          "title": "Invoices: bill the buyer, print the Mushak-6.3, know what’s still owed",
+          "lead": "Raise an invoice for a customer, with VAT worked out on every line. Print a clean commercial bill or the Mushak-6.3 tax invoice from the same record, and follow it from draft to paid without opening a spreadsheet.",
+          "secondaryCta": "See the Mushak-6.3"
+        },
+        "sample": {
+          "count": "25 of 120",
+          "terms": "Net 30",
+          "lineItems": [
+            "Poly bag, 12 × 16 in",
+            "Printed carton label"
+          ],
+          "notes": [
+            "draft, approved, paid at a glance",
+            "what has come in so far",
+            "VAT worked out line by line"
+          ]
+        },
+        "status": {
+          "draft": "draft",
+          "approved": "approved",
+          "paid": "paid",
+          "canceled": "canceled"
+        },
+        "ui": {
+          "crumb": "Accounting",
+          "listTitle": "Invoices",
+          "newInvoice": "New Invoice",
+          "thInvoiceNo": "Invoice #",
+          "thCustomer": "Customer",
+          "thStatus": "Status",
+          "thAmount": "Amount",
+          "thPaid": "Paid",
+          "detailTitle": "Invoice {no}",
+          "customer": "Customer",
+          "status": "Status",
+          "terms": "Terms",
+          "amountDue": "Amount due",
+          "amountPaid": "Amount paid",
+          "dueDate": "Due date",
+          "thItem": "Item",
+          "thQty": "Qty",
+          "thVat": "VAT",
+          "thVatAmt": "VAT amt",
+          "thTotal": "Total",
+          "printBill": "Print Bill",
+          "mushak": "Mushak 6.3",
+          "caption": "A partial preview of Invoices (AR) in Adon ERP. Company, buyers and figures are dummy data.",
+          "mushakCaption": "A Mushak-6.3 printed from the sample invoice above. Dummy company, buyer and BIN.",
+          "preparedUnder": "Prepared under VAT Act 2012 and VAT Rules 2016."
+        },
+        "lifecycle": {
+          "title": "The life of an invoice, in four words",
+          "intro": "Every invoice in the list carries a status. Read the column top to bottom and you know which bills are still being prepared, which are waiting for money, and which are done.",
+          "steps": [
+            {
+              "question": "Still being prepared",
+              "body": "The invoice exists but hasn’t gone to the buyer. Check quantities against the delivery challan and prices against the order while it is still a draft."
+            },
+            {
+              "question": "Sent, and money is owed",
+              "body": "The buyer owes this amount. If part of it has come in, the Paid column shows how much, so a 2,56,000 taka bill with 1,50,000 received is easy to spot."
+            },
+            {
+              "question": "Fully collected",
+              "body": "Paid equals Amount. Nothing more to chase. The invoice stays in the list for the record and the audit."
+            }
+          ],
+          "aside": {
+            "body": "Raised by mistake or replaced by a new one. It stays in the list with its number, so the numbering has no gaps an auditor would ask about."
+          },
+          "formTitle": "What you fill in on a new invoice",
+          "form": [
+            {
+              "label": "Customer",
+              "body": "Search and pick the buyer. Their details flow onto the printed bill and the Mushak-6.3."
+            },
+            {
+              "label": "Project (optional)",
+              "body": "Tag the invoice to a project or contract if it belongs to one."
+            },
+            {
+              "label": "Cash account",
+              "body": "Where the money lands when it is paid. Filled in for you (account 1010) unless you choose another."
+            },
+            {
+              "label": "Accounts receivable",
+              "body": "The account that holds what the buyer owes until they pay. Filled in for you (account 1100)."
+            },
+            {
+              "label": "Terms",
+              "body": "Payment terms such as Net 30. The due date in the list follows from it."
+            }
+          ]
+        },
+        "connect": {
+          "title": "An invoice sits in the middle of the sale",
+          "intro": "It starts with a customer and goods leaving the gate, and ends with money in the bank. Each step has its own tool, and they read from each other.",
+          "groups": {
+            "before": "Before the invoice",
+            "after": "After the invoice",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "customers": "The buyer’s name, address and BIN, picked on every invoice.",
+            "itemsProducts": "What you sell, with units and prices for the invoice lines.",
+            "deliveryChallans": "What actually left the gate, to bill against.",
+            "receipts": "Money in, set against the invoice it pays.",
+            "chequeRegister": "When the buyer pays by cheque, dated today or later.",
+            "bankAccounts": "Where the payment finally lands.",
+            "vatRegister": "The VAT on every invoice line, ready for the monthly return.",
+            "accountingHub": "Unpaid invoices make up the AR figure.",
+            "financialReports": "Sales and receivables in your statements."
+          }
+        },
+        "local": {
+          "title": "A tax invoice your buyer and the VAT office both accept",
+          "intro": "From the same invoice you can print two documents: a commercial bill for the buyer, and a Mushak-6.3 tax invoice in Bangla and English, laid out the way the National Board of Revenue form expects.",
+          "points": [
+            {
+              "title": "Mushak-6.3, one click away",
+              "body": "Open any invoice and press “Mushak 6.3”. Supplier, buyer, VAT rate and VAT amount are filled in from the invoice."
+            },
+            {
+              "title": "BIN on every tax invoice",
+              "body": "Your Business Identification Number and the buyer’s, if they have one, print in the boxes where an inspector looks for them."
+            },
+            {
+              "title": "Bangla and English, side by side",
+              "body": "Every heading on the Mushak-6.3 is printed in both languages, as on the official form."
+            },
+            {
+              "title": "Amount in words, in lakh",
+              "body": "“Taka One Lakh Fifteen Thousand Only”, with figures grouped as 1,15,000.00. Nobody writes it by hand any more."
+            }
+          ],
+          "words": "Taka One Lakh Fifteen Thousand Only",
+          "story": {
+            "title": "One order, from the gate to paid",
+            "intro": "A sample order from a garments buyer, the way it usually runs.",
+            "steps": [
+              {
+                "time": "13 Oct",
+                "text": "10,000 poly bags and 5,000 labels leave the gate on a delivery challan."
+              },
+              {
+                "time": "13 Oct",
+                "text": "The invoice is raised as a draft the same afternoon, quantities checked against the challan."
+              },
+              {
+                "time": "14 Oct",
+                "text": "Approved. The commercial bill and the Mushak-6.3 go to the buyer with the goods’ paperwork."
+              },
+              {
+                "time": "28 Oct",
+                "text": "The buyer sends a cheque for part of the amount. Paid shows the part received, and the rest stays owed."
+              },
+              {
+                "time": "12 Nov",
+                "text": "The balance arrives on the due date. Paid matches Amount, and the status turns to paid."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use invoices",
+          "angles": {
+            "retail": "Many small bills a day to walk-in and account customers.",
+            "food-hospitality": "Event and corporate catering billed on terms.",
+            "real-estate": "Instalments billed against a payment schedule.",
+            "consulting": "Monthly retainers and milestone bills.",
+            "manufacturing": "Large buyers, long terms, a Mushak-6.3 with every delivery.",
+            "health-fitness": "Corporate memberships billed to the employer.",
+            "trades": "A bill for each job, with parts and labour on separate lines.",
+            "others": "Rentals, studios and resellers billing on a schedule."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about invoices",
+          "items": [
+            {
+              "q": "Can Adon ERP print a Mushak-6.3?",
+              "a": "Yes. Open any invoice and click “Mushak 6.3” to print the tax invoice in Bangla and English, with supplier and buyer details, BIN, VAT rate, VAT amount and the total in words."
+            },
+            {
+              "q": "How is VAT calculated on an invoice?",
+              "a": "Each line has its own VAT rate. The invoice shows the VAT amount for every line and adds it to the line total, so mixed items are handled correctly."
+            },
+            {
+              "q": "What do draft, approved, paid and canceled mean?",
+              "a": "Draft is still being prepared. Approved means the buyer owes the amount. Paid means the full amount has been received. Canceled invoices stay in the list with their number, for the record."
+            },
+            {
+              "q": "Can a buyer pay part of an invoice?",
+              "a": "Yes. The Paid column shows how much has come in so far, next to the full amount, so part-paid invoices are easy to spot."
+            },
+            {
+              "q": "Do I need to choose accounts every time?",
+              "a": "No. The cash account and the accounts receivable account are filled in automatically. You can change them for a particular invoice if you need to."
+            },
+            {
+              "q": "Can I print a normal bill as well as the tax invoice?",
+              "a": "Yes. “Print Bill” gives a commercial invoice with your letterhead, line items, total and the amount in words."
+            },
+            {
+              "q": "Can I export invoices?",
+              "a": "Yes. Search the list, then export to CSV or Excel, or print it."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will raise a sample invoice and Mushak-6.3 with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Send us one of your invoices. We will raise it and print the Mushak-6.3 in the demo."
+        }
+      },
+      "journal": {
+        "meta": {
+          "title": "Journal Entries in Taka, Balanced as You Type | Adon ERP",
+          "description": "Post depreciation, salary accruals, provisions and corrections as double-entry journals. Debit and credit totals check themselves, and every entry is numbered and searchable.",
+          "keywords": [
+            "journal entry software Bangladesh",
+            "double entry accounting software",
+            "accrual journal entry",
+            "depreciation journal entry",
+            "accounting software Bangladesh",
+            "Adon ERP journal entries"
+          ]
+        },
+        "hero": {
+          "title": "Journal Entries: for everything an invoice or bill can’t record",
+          "lead": "Depreciation, salaries owed but not yet paid, the electricity bill that arrives next month, the correction your auditor asked for. Write the entry line by line, watch the debit and credit totals check themselves, and find it again in seconds.",
+          "secondaryCta": "See common month-end entries"
+        },
+        "sample": {
+          "total": "25 of 418",
+          "entries": [
+            "Machinery depreciation, October",
+            "October salaries accrued, paid in November",
+            "DESCO bill for October, received 3 Nov",
+            "Eid bonus provision, October share",
+            "Reversal: rent posted to repairs by mistake",
+            "Rent for October, correct account",
+            "Bank excise duty on FDR"
+          ],
+          "form": {
+            "description": "Machinery depreciation, October",
+            "ledger": "General",
+            "project": "No project",
+            "accounts": [
+              "Depreciation expense",
+              "Accumulated depreciation: machinery"
+            ]
+          },
+          "notes": [
+            "every entry gets its own number",
+            "debits and credits, side by side",
+            "totals check themselves as you type"
+          ]
+        },
+        "ui": {
+          "newEntry": "New Entry",
+          "thJe": "JE #",
+          "thDescription": "Description",
+          "thDebits": "Debits",
+          "thCredits": "Credits",
+          "thPosted": "Posted",
+          "posted": "Posted",
+          "formTitle": "New Journal Entry",
+          "description": "Description",
+          "ledger": "Ledger",
+          "project": "Project (optional)",
+          "lines": "Lines",
+          "addLine": "Add Line",
+          "dr": "Dr",
+          "cr": "Cr",
+          "drTotal": "Dr: BDT {total}",
+          "crTotal": "Cr: BDT {total}",
+          "balanced": "Balanced",
+          "createJe": "Create JE",
+          "previewNote": "You’re seeing a preview. Post a real entry in the demo.",
+          "caption": "A partial preview of Journal Entries in Adon ERP. Company, entries and figures are sample data."
+        },
+        "explain": {
+          "title": "Every part of the entry, and why it is there",
+          "intro": "A journal entry is a short form, but each field answers a question someone will ask later: you next month, your auditor next year, or a bank officer checking your accounts.",
+          "rows": [
+            {
+              "label": "Description",
+              "question": "Will this still make sense in a year?",
+              "body": "Write it for the person who has never seen it. “October salaries accrued, paid in November” is useful. “Adj” is not. The description is what you will search for later, so name the month and the reason."
+            },
+            {
+              "label": "Ledger",
+              "question": "Where should this entry live?",
+              "body": "Choose the ledger the entry belongs to, so it shows up where your team expects to find it, next to the other entries of its kind."
+            },
+            {
+              "label": "Project (optional)",
+              "question": "Does this cost belong to a job?",
+              "body": "If the entry is part of a particular project, such as a new production line or a client contract, tag it. If not, leave it on “No project”."
+            },
+            {
+              "label": "Lines",
+              "question": "Which accounts move, and which way?",
+              "body": "Each line is an account, an amount and a side: Dr or Cr. Two lines cover most entries. Need more? Add a line, for example to split one salary accrual across factory, office and sales."
+            },
+            {
+              "label": "The totals under the lines",
+              "question": "Does it balance?",
+              "body": "Debit and credit totals sit under the lines and update as you type. When they match, a tick appears. In double entry, every taka that goes in one side has to come out of the other."
+            },
+            {
+              "label": "The list after posting",
+              "question": "Can we find it again?",
+              "body": "Posted entries are numbered by year (JE-2026-…) and listed with their totals. Search by description, then export to CSV or Excel, or print, when the auditor asks for the month’s journal."
+            }
+          ],
+          "refresher": {
+            "title": "A two-minute refresher on debit and credit",
+            "intro": "For owners who sign off the month and want to read an entry without calling the accountant.",
+            "head": [
+              "Type of account",
+              "A debit",
+              "A credit",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Assets",
+                "increases it",
+                "decreases it",
+                "Cash, bank, stock, machinery"
+              ],
+              [
+                "Expenses",
+                "increases it",
+                "decreases it",
+                "Salaries, rent, electricity"
+              ],
+              [
+                "Liabilities",
+                "decreases it",
+                "increases it",
+                "Salaries payable, supplier dues, loans"
+              ],
+              [
+                "Income",
+                "decreases it",
+                "increases it",
+                "Sales, interest earned"
+              ],
+              [
+                "Owner’s equity",
+                "decreases it",
+                "increases it",
+                "Capital, retained earnings"
+              ]
+            ],
+            "tip": "So “Dr Depreciation expense, Cr Accumulated depreciation” reads as: this month’s cost goes up, and the book value of the machines goes down by the same amount."
+          }
+        },
+        "connect": {
+          "title": "Most entries write themselves. Journals are for the rest.",
+          "intro": "Sales, purchases, payments and receipts each have their own tool, and they post to the books for you. Use a journal entry only for what is left, so nothing is recorded twice.",
+          "groups": {
+            "setUp": "Set up first",
+            "recorded": "Already recorded elsewhere",
+            "shows": "Where your entry shows up"
+          },
+          "items": {
+            "chartOfAccounts": "Every account you can pick on a journal line comes from here.",
+            "invoicesAr": "Sales to customers. Raise an invoice, not a journal.",
+            "receipts": "Money coming in against an invoice.",
+            "billsAp": "Supplier bills you have accepted.",
+            "pettyCash": "Small daily spending from the cash box.",
+            "ledgers": "Open any account and the journal line is there, with the running balance.",
+            "financialReports": "Profit and loss and the balance sheet include it.",
+            "accountingHub": "Net income and total assets move with it.",
+            "closingFy": "Month-end and year-end entries come before the close."
+          }
+        },
+        "local": {
+          "title": "The month-end entries every accountant in Bangladesh knows",
+          "intro": "These come up every month in most companies here. None of them comes from an invoice or a bill, so each one is a journal entry.",
+          "points": [
+            {
+              "title": "Salaries owed at month-end",
+              "body": "Workers are paid in the first week of the next month, but the cost belongs to this one. Record it in the month it was earned.",
+              "entry": "Dr Salaries expense · Cr Salaries payable"
+            },
+            {
+              "title": "Eid bonus, a little every month",
+              "body": "Two festival bonuses a year are a large cost. Setting aside a share each month stops one month’s profit from collapsing before Eid.",
+              "entry": "Dr Bonus expense · Cr Bonus provision"
+            },
+            {
+              "title": "The electricity bill that comes late",
+              "body": "The DESCO or DPDC bill for October arrives in November. Put the cost back in October, where it was used.",
+              "entry": "Dr Electricity · Cr Accrued expenses"
+            },
+            {
+              "title": "Bank charges you only see on the statement",
+              "body": "Excise duty, SMS charges and account fees are taken directly by the bank. Record them when the statement arrives so the bank balance matches.",
+              "entry": "Dr Bank charges · Cr Bank account"
+            },
+            {
+              "title": "Depreciation on machinery and vehicles",
+              "body": "The cost of a machine is spread across the years it works. One entry a month keeps profit honest and the balance sheet realistic.",
+              "entry": "Dr Depreciation · Cr Accumulated depreciation"
+            },
+            {
+              "title": "Fixing a wrong posting",
+              "body": "Rent booked to repairs? The clean habit is to reverse the wrong entry and post a correct one, both with clear descriptions, so the trail makes sense to an auditor.",
+              "entry": "Reverse, then re-post"
+            }
+          ],
+          "day": {
+            "title": "Closing October at a food processing company",
+            "intro": "How one accountant in Dhaka might work through the first week of November.",
+            "steps": [
+              {
+                "time": "31 Oct",
+                "text": "Depreciation for October is posted for machinery and delivery vans, one entry each."
+              },
+              {
+                "time": "1 Nov",
+                "text": "October salaries are accrued across factory, office and sales on one entry with four lines. The tick turns green on the first try."
+              },
+              {
+                "time": "3 Nov",
+                "text": "The DESCO bill for October arrives. It is accrued back to October, with the bill date in the description."
+              },
+              {
+                "time": "5 Nov",
+                "text": "A search for “rent” shows October rent was posted to repairs. The wrong entry is reversed and the correct one posted, side by side in the list."
+              },
+              {
+                "time": "6 Nov",
+                "text": "The bank statement shows excise duty on the fixed deposit. One short entry, and the bank balance matches."
+              },
+              {
+                "time": "7 Nov",
+                "text": "The month’s journal is exported to Excel for the owner and the audit file. October is ready to close."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "The journal entries change with the trade",
+          "intro": "A hotel and a garment factory both post journals at month-end, but not the same ones. Pick your industry to see the entries it usually needs.",
+          "angles": {
+            "retail": "Stock counted short, supplier rebates, damaged goods written off.",
+            "food-hospitality": "Spoiled stock, service charge shared with staff, advance bookings.",
+            "real-estate": "Buyer instalments held as advances until a flat is handed over.",
+            "consulting": "Work done this month but billed next month.",
+            "manufacturing": "Depreciation, bonus provisions and stock still on the floor.",
+            "health-fitness": "A year’s membership paid today, earned month by month.",
+            "trades": "Warranty work set aside for jobs already done.",
+            "others": "Grants and donations kept apart until they are spent."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about journal entries",
+          "items": [
+            {
+              "q": "What is a journal entry in Adon ERP?",
+              "a": "It is a manual double-entry record: a description, a ledger, an optional project, and two or more lines, each with an account, an amount and a debit or credit side. You use it for anything that does not come from an invoice, bill, receipt or other tool."
+            },
+            {
+              "q": "When should I use a journal entry instead of an invoice or bill?",
+              "a": "Use invoices, bills, receipts and petty cash for everyday buying, selling and paying. Use a journal entry for depreciation, accruals, provisions, bank charges you only see on the statement, and corrections."
+            },
+            {
+              "q": "How do I know the entry balances?",
+              "a": "The debit total and the credit total are shown under the lines and update as you type. A tick appears when the two are equal."
+            },
+            {
+              "q": "Can one entry have more than two lines?",
+              "a": "Yes. Use “Add line” to add as many as you need, for example to split one salary accrual across several departments."
+            },
+            {
+              "q": "Can I link an entry to a project?",
+              "a": "Yes. The form has an optional Project field. Leave it on “No project” when the entry is not tied to one."
+            },
+            {
+              "q": "How are journal entries numbered?",
+              "a": "Each entry gets a number with the year in it, such as JE-2026-004318, and appears in the Journal Entries list with its debit and credit totals and its status."
+            },
+            {
+              "q": "Can I give the journal to my auditor?",
+              "a": "Yes. You can search the list, export it to CSV or Excel, or print it."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through your own month-end entries with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring the entry that gives you trouble every month. We will post it with you."
+        }
+      },
+      "hub": {
+        "meta": {
+          "title": "Accounting Hub: Live Accounting Dashboard for Bangladeshi Businesses | Adon ERP",
+          "description": "See revenue, net income, receivables, payables and total assets on one live screen, in taka, lakh and crore. The Accounting Hub of Adon ERP, built for companies in Bangladesh.",
+          "keywords": [
+            "accounting dashboard Bangladesh",
+            "accounting software Bangladesh",
+            "ERP accounting module",
+            "accounts receivable dashboard",
+            "VAT register Bangladesh",
+            "Adon ERP accounting"
+          ]
+        },
+        "hero": {
+          "title": "Accounting Hub: the whole state of your books, on one screen",
+          "lead": "Sales, profit, what customers owe you, what you owe suppliers and what the company owns. Five figures, read live from your ledgers, shown in taka the way you already talk about money: in lakh and crore.",
+          "secondaryCta": "See all accounting tools"
+        },
+        "units": {
+          "cr": "Cr",
+          "lakh": "L"
+        },
+        "sample": {
+          "language": "English",
+          "kpis": {
+            "revenue": {
+              "label": "Revenue (YTD)",
+              "note": "sales since the year began"
+            },
+            "net": {
+              "label": "Net income",
+              "note": "what is left after every cost"
+            },
+            "ar": {
+              "label": "AR outstanding",
+              "note": "still with customers. Chase this"
+            },
+            "ap": {
+              "label": "AP outstanding",
+              "note": "what you owe suppliers"
+            },
+            "assets": {
+              "label": "Total assets",
+              "note": "everything the company holds"
+            }
+          },
+          "statement": {
+            "revenue": "Revenue",
+            "cogs": "COGS",
+            "grossProfit": "Gross profit",
+            "opex": "Op expense",
+            "netIncome": "Net income"
+          },
+          "opex": {
+            "salaries": "Salaries",
+            "utilities": "Utilities",
+            "transport": "Transport",
+            "other": "Other"
+          }
+        },
+        "ui": {
+          "sidebarAria": "Accounting tools in the product",
+          "subtitle": "Live data from your accounting engine",
+          "incomeStatement": "Income Statement (YTD)",
+          "grossMargin": "Gross margin:",
+          "opexTitle": "Operating Expense Breakdown",
+          "total": "Total",
+          "previewNote": "You’re seeing a preview. The full hub is yours to explore.",
+          "caption": "A partial preview of the Accounting Hub. Company, customers and figures are sample data."
+        },
+        "numbers": {
+          "title": "Five numbers, five questions an owner actually asks",
+          "intro": "A dashboard is only useful if you know what to do with what it shows. Here is what each figure on the hub means, where it comes from, and when it should make you pick up the phone.",
+          "comesFrom": "Comes from",
+          "rows": [
+            {
+              "label": "Revenue (YTD)",
+              "question": "Are we selling more than we were?",
+              "body": "Everything invoiced since your fiscal year started. Most companies here run July to June, so by December this is about six months of sales. Compare it with the same point last year, not with last month.",
+              "source": "Invoices (AR)"
+            },
+            {
+              "label": "Net income",
+              "question": "After every cost, did we make money?",
+              "body": "Revenue, minus the cost of what you sold, minus salaries, rent, fuel and everything else it takes to run. When this goes negative the hub shows it in red. It does not soften bad news.",
+              "source": "Ledgers and Journal Entries"
+            },
+            {
+              "label": "AR outstanding",
+              "question": "How much of our money is sitting with buyers?",
+              "body": "Invoices sent and not yet paid. For a factory selling to large buyers on 60 or 90 days, this is often bigger than the bank balance, and it is the figure that decides whether salaries go out on time.",
+              "source": "Invoices (AR) and Receipts"
+            },
+            {
+              "label": "AP outstanding",
+              "question": "Who are we holding up?",
+              "body": "Supplier bills you have accepted and not paid. A small AP next to a large AR means you are financing your customers. Worth knowing before you ask the bank for working capital.",
+              "source": "Bills (AP)"
+            },
+            {
+              "label": "Total assets",
+              "question": "How big is this business, really?",
+              "body": "Cash, bank balances, stock, receivables, machinery and property, added up from the balance sheet. It is the number a lender or investor will look at first.",
+              "source": "the asset accounts in your Chart of Accounts"
+            }
+          ],
+          "chartsTitle": "And the four charts underneath",
+          "charts": [
+            {
+              "title": "The income statement in five bars",
+              "body": "Revenue, cost of goods, gross profit, running costs and net income, side by side. Gross margin sits in the corner, so you can see at a glance when raw material prices start eating into it."
+            },
+            {
+              "title": "Where the running costs go",
+              "body": "Operating expenses split by type. In a factory, salaries are usually the biggest slice. When fuel or transport starts to grow, you see it here before you see it in the year-end accounts."
+            },
+            {
+              "title": "Top five customers by what they owe",
+              "body": "Your call list for the week. If one name holds a third of all receivables, that is a concentration risk, and it is better to see it on a Monday morning than in an audit."
+            },
+            {
+              "title": "Top five vendors by what you owe",
+              "body": "Who to pay first, and who you can reasonably talk to about terms. Useful the week before Eid, when every supplier wants to be paid at once."
+            }
+          ]
+        },
+        "tools": {
+          "title": "Seventeen tools feed the hub. You never type a number twice.",
+          "intro": "The hub does not hold figures of its own. Every number on it is read from the work your team already does in the tools below: an invoice raised, a cheque deposited, a bill approved.",
+          "groups": {
+            "keep": "Keep the books",
+            "sell": "Sell and collect",
+            "buy": "Buy and pay",
+            "cash": "Cash and bank",
+            "close": "Close and comply"
+          },
+          "items": {
+            "chartOfAccounts": "The list of every account money moves through. Set it up once; every report reads from it.",
+            "journalEntries": "For entries that do not come from an invoice or bill: depreciation, accruals, corrections.",
+            "ledgers": "Open any account and see every taka in and out, with the running balance.",
+            "customers": "Every buyer, and what each of them owes you today.",
+            "deliveryChallans": "Goods leaving the gate, recorded so delivery and billing can be matched.",
+            "invoicesAr": "Bill customers with VAT. Unpaid invoices make up the AR figure on the hub.",
+            "receipts": "Money in by cash, cheque or bank transfer, set against the invoice it pays.",
+            "vendors": "Your suppliers, and what you owe each one.",
+            "purchaseOrders": "Agree price and quantity before goods arrive, so the bill can be checked.",
+            "billsAp": "Supplier bills waiting for payment. Together they make the AP figure.",
+            "itemsProducts": "What you buy and sell, with units and prices.",
+            "bankAccounts": "Every account the company holds, with balances to check against the statement.",
+            "chequeRegister": "Cheques received and issued, with their dates, so none is forgotten in a drawer.",
+            "pettyCash": "Tea, rickshaw fare, courier. Small amounts that add up by June.",
+            "vatRegister": "VAT on sales and VAT on purchases, side by side for the monthly return.",
+            "financialReports": "Profit and loss, balance sheet and the statements a bank or auditor asks for.",
+            "closingFy": "Close the month, lock the year, open the next one with clean balances."
+          }
+        },
+        "local": {
+          "title": "Made for the way books are kept in Bangladesh",
+          "intro": "Most accounting software is written somewhere else and adjusted for us later. Adon ERP started here, so the paperwork you actually handle every day has a proper place in it.",
+          "points": [
+            {
+              "title": "VAT from the first invoice",
+              "body": "VAT is recorded on every sale and purchase as it happens, and lands in the VAT Register. When the monthly return is due, your figures are already in one place."
+            },
+            {
+              "title": "Cheques, including post-dated ones",
+              "body": "Buyers still pay by cheque, often dated weeks ahead. The Cheque Register keeps each one with its date, so you know what can be deposited today."
+            },
+            {
+              "title": "Lakh and crore, not millions",
+              "body": "The hub shows 2.92 Cr and 58 L, with the full taka amount underneath. Nobody has to convert numbers in their head before a meeting."
+            },
+            {
+              "title": "English or Bangla",
+              "body": "Switch the language from the top bar. The owner can read in Bangla while the accountant works in English, on the same books."
+            },
+            {
+              "title": "More than one company",
+              "body": "A factory and a trading arm, or three sister concerns? Switch company from the top bar. Each keeps its own books."
+            },
+            {
+              "title": "Your fiscal year, your dates",
+              "body": "Close the year when your company closes it, whether that is June like most firms here or December for a foreign parent."
+            }
+          ],
+          "day": {
+            "title": "A normal Tuesday with the hub",
+            "intro": "How an accounts team at a mid-sized packaging factory might use it.",
+            "steps": [
+              {
+                "time": "9:30 am",
+                "text": "The accounts head opens the hub. Receivables are up since last week, and the top-five list shows exactly which buyer is behind it."
+              },
+              {
+                "time": "11:00 am",
+                "text": "The Cheque Register shows two cheques dated today. One goes to the bank. The other buyer asks for a week, and the call is noted."
+              },
+              {
+                "time": "2:30 pm",
+                "text": "The store sends a delivery challan for film rolls that left the gate. The invoice goes out the same afternoon, VAT included."
+              },
+              {
+                "time": "4:00 pm",
+                "text": "A resin supplier’s bill arrives and is checked against the purchase order before it is accepted."
+              },
+              {
+                "time": "6:15 pm",
+                "text": "Petty cash is counted and closed. When the owner checks the hub from home, today’s numbers are already in it."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Same hub, set up for your trade",
+          "intro": "A restaurant and a textile mill read the same five numbers very differently. Pick your industry to see how the books are usually set up for it.",
+          "angles": {
+            "retail": "Daily sales, supplier credit and stock that moves fast.",
+            "food-hospitality": "Cash-heavy days, perishable stock, VAT on every bill.",
+            "real-estate": "Long projects, staged payments, advances held for months.",
+            "consulting": "Time is the product, so invoices and receivables are everything.",
+            "manufacturing": "Raw material in, finished goods out, large buyers who pay late.",
+            "health-fitness": "Memberships, small tickets and a lot of receipts.",
+            "trades": "Jobs, parts, and payment collected on site.",
+            "others": "Nonprofits, rentals, studios. The books still have to balance."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the Accounting Hub",
+          "items": [
+            {
+              "q": "What is the Accounting Hub in Adon ERP?",
+              "a": "It is the first screen of the Accounting app. It shows revenue for the year so far, net income, receivables, payables and total assets, along with an income statement chart, an expense breakdown and your top customers and vendors by balance. Everything on it is live."
+            },
+            {
+              "q": "Where do the numbers on the hub come from?",
+              "a": "From the work your team already records: invoices, receipts, bills, journal entries, bank and cheque records. The hub reads them from the ledgers. There is nothing to type into the hub itself, so it cannot fall out of step with the books."
+            },
+            {
+              "q": "Does it handle VAT in Bangladesh?",
+              "a": "Yes. VAT is captured on invoices and bills and collected in the VAT Register, so sales VAT and purchase VAT for the month are in one place when your return is due."
+            },
+            {
+              "q": "Can we see amounts in lakh and crore?",
+              "a": "Yes. Headline figures are shown in Cr and L, with the full taka amount printed underneath each one."
+            },
+            {
+              "q": "Can one login manage more than one company?",
+              "a": "Yes. Group companies can switch between companies from the top bar, and each company keeps its own chart of accounts, ledgers and reports."
+            },
+            {
+              "q": "Is the software available in Bangla?",
+              "a": "Yes. You can switch between English and Bangla from the top bar at any time."
+            },
+            {
+              "q": "Do we need an accountant to use it?",
+              "a": "Someone who understands debits and credits should set up the chart of accounts and post journal entries. The hub itself is written for owners and managers, and does not need accounting training to read."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through the hub using numbers that look like your business."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Tell us how your business runs. We will show you this screen set up like it."
+        }
+      }
+    },
     "analytics": {
       "metadata": {
         "title": "BI Analytics & Reporting | EdenERP",

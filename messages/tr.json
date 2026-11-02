@@ -203,6 +203,1025 @@
     }
   },
   "pages": {
+    "accountingShowcase": {
+      "common": {
+        "bookDemo": "Demo planlayın",
+        "onboardingNote": "Şu anda Dakka’daki şirketleri sisteme alıyoruz.",
+        "bookLiveDemo": "Canlı demo planlayın",
+        "closingBody": "İngilizce veya Bengalce canlı demo; sektörünüze yakın örnek defterlerle ve muhasebecinizin soruları için ayrılmış zamanla.",
+        "exploreAccounting": "Muhasebe uygulamasını keşfedin",
+        "refresh": "Yenile",
+        "search": "Ara…",
+        "csv": "CSV",
+        "excel": "Excel",
+        "print": "Yazdır",
+        "cancel": "İptal",
+        "tools": {
+          "accountingHub": "Muhasebe Merkezi",
+          "chartOfAccounts": "Hesap Planı",
+          "journalEntries": "Yevmiye Kayıtları",
+          "ledgers": "Defter-i Kebir",
+          "invoicesAr": "Satış Faturaları (AR)",
+          "billsAp": "Alış Faturaları (AP)",
+          "purchaseOrders": "Satın Alma Siparişleri",
+          "customers": "Müşteriler",
+          "vendors": "Tedarikçiler",
+          "bankAccounts": "Banka Hesapları",
+          "deliveryChallans": "Sevk İrsaliyeleri",
+          "pettyCash": "Küçük Kasa",
+          "closingFy": "Kapanış ve Mali Yıl",
+          "financialReports": "Mali Raporlar",
+          "vatRegister": "KDV Defteri",
+          "receipts": "Tahsilatlar",
+          "chequeRegister": "Çek Defteri",
+          "itemsProducts": "Kalemler / Ürünler"
+        },
+        "industryGroups": {
+          "retail": "Perakende",
+          "food-hospitality": "Yiyecek ve Konaklama",
+          "real-estate": "Gayrimenkul",
+          "consulting": "Danışmanlık",
+          "manufacturing": "Üretim",
+          "health-fitness": "Sağlık ve Fitness",
+          "trades": "Teknik Hizmetler",
+          "others": "Diğer"
+        },
+        "industryItems": {
+          "book-store": "Kitabevi",
+          "clothing-store": "Giyim Mağazası",
+          "furniture-store": "Mobilya Mağazası",
+          "grocery-store": "Market",
+          "hardware-store": "Nalbur",
+          "toy-store": "Oyuncak Mağazası",
+          "bar-and-pub": "Bar ve Pub",
+          "restaurant": "Restoran",
+          "fast-food": "Fast Food",
+          "guest-house": "Misafirhane",
+          "beverage-distributor": "İçecek Dağıtıcısı",
+          "hotel": "Otel",
+          "real-estate-agency": "Emlak Ofisi",
+          "architecture-firm": "Mimarlık Ofisi",
+          "construction": "İnşaat",
+          "property-management": "Mülk Yönetimi",
+          "gardening": "Bahçecilik",
+          "property-owner-association": "Mülk Sahipleri Derneği",
+          "accounting-firm": "Muhasebe Bürosu",
+          "it-consultancy": "BT Danışmanlığı",
+          "marketing-agency": "Pazarlama Ajansı",
+          "law-firm": "Hukuk Bürosu",
+          "talent-acquisition": "Yetenek Kazanımı",
+          "audit-and-certification": "Denetim ve Sertifikasyon",
+          "textile": "Tekstil",
+          "metal": "Metal",
+          "furnitures": "Mobilya",
+          "food": "Gıda",
+          "brewery": "Bira Fabrikası",
+          "corporate-gifts": "Kurumsal Hediyeler",
+          "sports-club": "Spor Kulübü",
+          "eyewear-store": "Gözlükçü",
+          "fitness-center": "Fitness Merkezi",
+          "wellness-practitioners": "Sağlıklı Yaşam Uzmanları",
+          "pharmacy": "Eczane",
+          "hair-salon": "Kuaför",
+          "handyman": "Tamirci",
+          "it-hardware-and-support": "BT Donanım ve Destek",
+          "solar-energy-systems": "Güneş Enerjisi Sistemleri",
+          "electronic-store": "Elektronik Mağazası",
+          "cleaning-services": "Temizlik Hizmetleri",
+          "hvac-services": "Isıtma-Soğutma Hizmetleri",
+          "nonprofit-organization": "Kâr Amacı Gütmeyen Kuruluş",
+          "environmental-agency": "Çevre Kurumu",
+          "billboard-rental": "Reklam Panosu Kiralama",
+          "photography": "Fotoğrafçılık",
+          "bike-leasing": "Bisiklet Kiralama",
+          "software-reseller": "Yazılım Bayisi"
+        }
+      },
+      "ledgers": {
+        "meta": {
+          "title": "Defter-i Kebir: Her Kayıt Akışını Ayrı Tutun | Adon ERP",
+          "description": "Satış, bordro, varlık veya projeler için ayrı defterler oluşturun, her birinde kaç yevmiye kaydı olduğunu görün ve kayıtlarınızı okunaklı tutun. Bangladeş’teki şirketler için geliştirildi.",
+          "keywords": [
+            "Bangladeş defter yazılımı",
+            "büyük defter muhasebe yazılımı",
+            "muhasebe defterleri ERP",
+            "yevmiye defteri",
+            "Bangladeş muhasebe yazılımı",
+            "Adon ERP defterler"
+          ]
+        },
+        "hero": {
+          "title": "Defter-i Kebir: kayıtlarınızdaki her akış için ayrı bir yer",
+          "lead": "Yurt içi satışlar bir defterde, ihracat başka bir defterde, bordro üçüncüsünde. Her yevmiye kaydı bir deftere işlenir; böylece birini açtığınızda yalnızca ona ait işi ve ne kadar olduğunu görürsünüz.",
+          "secondaryCta": "Defter fikirlerine göz atın"
+        },
+        "sample": {
+          "ledgerNames": [
+            "Meghla Agro Foods — Genel Defter",
+            "Yurt İçi Satışlar",
+            "İhracat Satışları",
+            "Bordro",
+            "Sabit Kıymetler",
+            "Gazipur Depo Projesi"
+          ],
+          "newName": "Bayi Komisyonu",
+          "notes": [
+            "ekibinizin konuştuğu gibi adlandırın",
+            "her birinde kaç kayıt var",
+            "yenisi tek bir alan ister"
+          ]
+        },
+        "ui": {
+          "showDocLedgers": "Belge Defterlerini Göster",
+          "newLedger": "Yeni Defter",
+          "colName": "Ad",
+          "colJes": "Kayıt",
+          "colCreated": "Oluşturma",
+          "colActions": "İşlemler",
+          "edit": "Düzenle",
+          "delete": "Sil",
+          "createLedger": "Defter Oluştur",
+          "caption": "Adon ERP’deki Defterler ekranının kısmi önizlemesi. Şirket, defter adları ve rakamlar örnek verilerdir."
+        },
+        "explain": {
+          "title": "Defter ne işe yarar",
+          "intro": "Tek defterli bir şirket de çalışır. Ama tek bir defterde yirmi bin kaydı olan şirkette okumak zorlaşır. Defterler, kayıtları işinizin gerçekte işleyişine göre gruplamanıza olanak verir.",
+          "rows": [
+            {
+              "label": "Ad",
+              "question": "Bu defterde ne var?",
+              "body": "Muhasebede herkesin sormadan anlayacağı bir ad kullanın: “Defter 3” değil, “İhracat Satışları”. Ekibiniz her yeni yevmiye kaydında bu adı seçecek."
+            },
+            {
+              "label": "Kayıt",
+              "question": "Ne kadar yoğun?",
+              "body": "Deftere şu ana kadar işlenen yevmiye kaydı sayısı. Binlerce kaydı olan defter günlük iş atıdır. Hâlâ sıfırda olan, muhtemelen henüz başlamamış bir iş için açılmıştır."
+            },
+            {
+              "label": "Oluşturma",
+              "question": "Ne zaman açıldı?",
+              "body": "Yıl sonunda ve denetimde, biri bir defterin neden var olduğunu ve ne zamandan beri var olduğunu sorduğunda işe yarar."
+            },
+            {
+              "label": "İşlemler",
+              "question": "Sonradan değiştirebilir miyiz?",
+              "body": "Defterin adını istediğiniz zaman değiştirin. İçinde kayıt olmayan bir defter silinebilir de; böylece kurulum sırasında yapılan bir hata kayıtlarınızda kalmaz."
+            }
+          ],
+          "ideasTitle": "Burada iyi çalışan defter fikirleri",
+          "ideasIntro": "Tek bir doğru takım yoktur. Bangladeş şirketlerinde en sık gördüğümüz ayrımlar şunlar.",
+          "ideas": [
+            {
+              "title": "Yurt içi satışlar ve ihracat satışları",
+              "body": "İhracat gelirini banka ve denetçi farklı ele alır. İlk günden ayrı tutmak, haziranda çok ayıklama işinden kurtarır."
+            },
+            {
+              "title": "Bordro",
+              "body": "Maaşlar, bayram ikramiyeleri ve tahakkukları tek yerde, ticari kayıtlardan ayrı."
+            },
+            {
+              "title": "Sabit kıymetler",
+              "body": "Makineler, araçlar ve aylık amortismanları; varlık hikâyesi kolayca izlensin."
+            },
+            {
+              "title": "Proje başına bir defter",
+              "body": "Yeni bir depo, bir fabrika katı, büyük bir müşteri sözleşmesi. İlk taka harcanmadan önce kurun."
+            },
+            {
+              "title": "Her kardeş şirketin genel defteri",
+              "body": "Ait olduğu şirketin adını verin, böylece kimse yanlışlıkla başka deftere işlemez."
+            },
+            {
+              "title": "Ücret veya abonelik geliri",
+              "body": "Okullar, kulüpler ve eğitim merkezleri hacim çok yüksek olduğu için tahsilatları çoğunlukla ayrı bir defterde tutar."
+            }
+          ]
+        },
+        "related": {
+          "journalEntries": "Her kayıt defterlerinizden birine işlenir.",
+          "chartOfAccounts": "Her yevmiye satırının parayı hangi hesaplar arasında taşıdığı.",
+          "financialReports": "Tüm kayıtlarınız boyunca gelir tablosu ve bilanço.",
+          "accountingHub": "Bütün tablo tek ekranda."
+        },
+        "faq": {
+          "title": "Defterler hakkında sık sorulan sorular",
+          "items": [
+            {
+              "q": "Adon ERP’de defter nedir?",
+              "a": "Yevmiye kayıtlarının işlendiği adlandırılmış bir kitaptır. Her yeni yevmiye kaydında defteri siz seçersiniz; Defterler ekranı her birini kayıt sayısı ve oluşturulma tarihiyle gösterir."
+            },
+            {
+              "q": "Kaç defterimiz olmalı?",
+              "a": "Küçük başlayın. Bir genel defter ile ekibinizin ayrı yürüttüğü her akış için bir defter, örneğin satış, bordro veya büyük bir proje, çoğu şirkete yeter. İstediğiniz zaman daha fazlasını ekleyebilirsiniz."
+            },
+            {
+              "q": "Yeni defteri nasıl oluştururum?",
+              "a": "“Yeni Defter”e tıklayın, bir ad yazın ve “Defter Oluştur”a tıklayın. Form bundan ibaret."
+            },
+            {
+              "q": "Defterin adını sonradan değiştirebilir miyiz?",
+              "a": "Evet. Defterin yanındaki düzenleme işlemini kullanın. Daha önce işlenen kayıtlar olduğu yerde kalır."
+            },
+            {
+              "q": "Defteri silebilir miyiz?",
+              "a": "Kaydı olmayan bir defter silinebilir. Üzerine kayıt işlendikten sonra defteri tutun ve gerekirse adını değiştirin; denetim izi eksiksiz kalsın."
+            },
+            {
+              "q": "Defterler ayrı şirketlerle aynı mı?",
+              "a": "Hayır. Defterler kayıtları tek bir şirketin içinde ayırır. Ayrı tüzel kişilikleriniz varsa her birini kendi şirketi olarak kurun ve üst çubuktan aralarında geçiş yapın."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Kayıtlarınızı nasıl böleceğinizden emin değil misiniz? Defterlerinizi sizinle birlikte kurgulayalım."
+        }
+      },
+      "invoices": {
+        "meta": {
+          "title": "Satış Faturaları (AR): Taka ile KDV’li Faturalar ve Mushak-6.3 | Adon ERP",
+          "description": "Her satırda KDV’li müşteri faturaları kesin, ticari fatura veya iki dilli Mushak-6.3 yazdırın ve her alıcının hâlâ ne kadar borçlu olduğunu görün. Bangladeş’teki şirketler için geliştirildi.",
+          "keywords": [
+            "Bangladeş fatura yazılımı",
+            "Mushak 6.3 yazılımı",
+            "Bangladeş KDV faturası",
+            "alacak hesapları yazılımı",
+            "Bangladeş faturalama yazılımı",
+            "Adon ERP faturalar"
+          ]
+        },
+        "hero": {
+          "title": "Faturalar: alıcıya fatura kesin, Mushak-6.3’ü yazdırın, ne kadar borç kaldığını bilin",
+          "lead": "Müşteri için KDV’si her satırda hesaplanmış bir fatura kesin. Aynı kayıttan temiz bir ticari fatura veya Mushak-6.3 vergi faturası yazdırın ve taslaktan ödenmişe kadar elektronik tablo açmadan izleyin.",
+          "secondaryCta": "Mushak-6.3’e bakın"
+        },
+        "sample": {
+          "count": "120 kayıttan 25’i",
+          "terms": "Net 30",
+          "lineItems": [
+            "Poşet, 12 × 16 inç",
+            "Baskılı koli etiketi"
+          ],
+          "notes": [
+            "taslak, onaylı, ödendi tek bakışta",
+            "şimdiye kadar ne geldi",
+            "KDV satır satır hesaplanır"
+          ]
+        },
+        "status": {
+          "draft": "taslak",
+          "approved": "onaylı",
+          "paid": "ödendi",
+          "canceled": "iptal"
+        },
+        "ui": {
+          "crumb": "Muhasebe",
+          "listTitle": "Faturalar",
+          "newInvoice": "Yeni Fatura",
+          "thInvoiceNo": "Fatura #",
+          "thCustomer": "Müşteri",
+          "thStatus": "Durum",
+          "thAmount": "Tutar",
+          "thPaid": "Ödenen",
+          "detailTitle": "Fatura {no}",
+          "customer": "Müşteri",
+          "status": "Durum",
+          "terms": "Koşullar",
+          "amountDue": "Ödenecek tutar",
+          "amountPaid": "Ödenen tutar",
+          "dueDate": "Vade tarihi",
+          "thItem": "Kalem",
+          "thQty": "Miktar",
+          "thVat": "KDV",
+          "thVatAmt": "KDV tutarı",
+          "thTotal": "Toplam",
+          "printBill": "Faturayı Yazdır",
+          "mushak": "Mushak 6.3",
+          "caption": "Adon ERP’deki Satış Faturaları (AR) ekranının kısmi önizlemesi. Şirket, alıcılar ve rakamlar kurgusal verilerdir.",
+          "mushakCaption": "Yukarıdaki örnek faturadan yazdırılmış bir Mushak-6.3. Şirket, alıcı ve BIN kurgusaldır.",
+          "preparedUnder": "2012 tarihli KDV Kanunu ve 2016 tarihli KDV Yönetmeliği uyarınca hazırlanmıştır."
+        },
+        "lifecycle": {
+          "title": "Bir faturanın hayatı, dört kelimeyle",
+          "intro": "Listedeki her faturanın bir durumu vardır. Sütunu yukarıdan aşağı okuyun: hangi faturalar hâlâ hazırlanıyor, hangileri para bekliyor, hangileri bitti, hemen anlarsınız.",
+          "steps": [
+            {
+              "question": "Hâlâ hazırlanıyor",
+              "body": "Fatura var ama alıcıya gitmedi. Taslakken miktarları sevk irsaliyesiyle, fiyatları siparişle karşılaştırın."
+            },
+            {
+              "question": "Gönderildi, para bekleniyor",
+              "body": "Alıcı bu tutarı borçlu. Bir kısmı geldiyse Ödenen sütunu ne kadar geldiğini gösterir; böylece 2,56,000 takalık bir faturaya 1,50,000 gelmesi kolayca fark edilir."
+            },
+            {
+              "question": "Tamamen tahsil edildi",
+              "body": "Ödenen, Tutar’a eşit. Peşinden koşacak bir şey kalmadı. Fatura kayıt ve denetim için listede durur."
+            }
+          ],
+          "aside": {
+            "body": "Yanlışlıkla kesildi ya da yenisiyle değiştirildi. Numarasıyla listede kalır; böylece numaralamada denetçinin soracağı bir boşluk olmaz."
+          },
+          "formTitle": "Yeni faturada neleri doldurursunuz",
+          "form": [
+            {
+              "label": "Müşteri",
+              "body": "Alıcıyı arayıp seçin. Bilgileri basılı faturaya ve Mushak-6.3’e akar."
+            },
+            {
+              "label": "Proje (isteğe bağlı)",
+              "body": "Fatura bir projeye veya sözleşmeye aitse etiketleyin."
+            },
+            {
+              "label": "Kasa hesabı",
+              "body": "Ödeme yapıldığında paranın düştüğü yer. Başka birini seçmezseniz sizin için doldurulur (hesap 1010)."
+            },
+            {
+              "label": "Alacak hesapları",
+              "body": "Alıcı ödeyene kadar borcunu tutan hesap. Sizin için doldurulur (hesap 1100)."
+            },
+            {
+              "label": "Koşullar",
+              "body": "Net 30 gibi ödeme koşulları. Listedeki vade tarihi bundan çıkar."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Fatura, satışın tam ortasında durur",
+          "intro": "Bir müşteri ve kapıdan çıkan malla başlar, bankadaki parayla biter. Her adımın kendi aracı vardır ve birbirlerinden okurlar.",
+          "groups": {
+            "before": "Faturadan önce",
+            "after": "Faturadan sonra",
+            "shows": "Nerede görünür"
+          },
+          "items": {
+            "customers": "Alıcının adı, adresi ve BIN’i, her faturada seçilir.",
+            "itemsProducts": "Sattıklarınız; fatura satırları için birim ve fiyatlarıyla.",
+            "deliveryChallans": "Kapıdan gerçekte ne çıktı; faturalanacak olan bu.",
+            "receipts": "Gelen para, ödediği faturayla eşleştirilir.",
+            "chequeRegister": "Alıcı çekle ödediğinde, bugünün veya sonraki bir tarihin.",
+            "bankAccounts": "Ödemenin sonunda düştüğü yer.",
+            "vatRegister": "Her fatura satırındaki KDV, aylık beyanname için hazır.",
+            "accountingHub": "Ödenmemiş faturalar AR rakamını oluşturur.",
+            "financialReports": "Tablolarınızdaki satışlar ve alacaklar."
+          }
+        },
+        "local": {
+          "title": "Alıcınızın da vergi dairesinin de kabul ettiği bir vergi faturası",
+          "intro": "Aynı faturadan iki belge yazdırabilirsiniz: alıcı için ticari bir fatura ve Ulusal Gelir Kurulu formunun beklediği düzende, Bengalce ve İngilizce bir Mushak-6.3 vergi faturası.",
+          "points": [
+            {
+              "title": "Mushak-6.3, bir tık uzakta",
+              "body": "Herhangi bir faturayı açın ve “Mushak 6.3”e basın. Tedarikçi, alıcı, KDV oranı ve KDV tutarı faturadan doldurulur."
+            },
+            {
+              "title": "Her vergi faturasında BIN",
+              "body": "İşletme Kimlik Numaranız ve varsa alıcınınki, müfettişin baktığı kutulara basılır."
+            },
+            {
+              "title": "Bengalce ve İngilizce yan yana",
+              "body": "Resmî formda olduğu gibi Mushak-6.3’teki her başlık iki dilde basılır."
+            },
+            {
+              "title": "Yazıyla tutar, lakh düzeninde",
+              "body": "“Taka One Lakh Fifteen Thousand Only”, rakamlar 1,15,000.00 şeklinde gruplanır. Artık kimse elle yazmıyor."
+            }
+          ],
+          "words": "Taka One Lakh Fifteen Thousand Only",
+          "story": {
+            "title": "Bir sipariş, kapıdan ödemeye",
+            "intro": "Bir hazır giyim alıcısından örnek sipariş, genellikle işlediği gibi.",
+            "steps": [
+              {
+                "time": "13 Eki",
+                "text": "10.000 poşet ve 5.000 etiket sevk irsaliyesiyle kapıdan çıkar."
+              },
+              {
+                "time": "13 Eki",
+                "text": "Fatura aynı öğleden sonra taslak olarak kesilir, miktarlar irsaliyeyle kontrol edilir."
+              },
+              {
+                "time": "14 Eki",
+                "text": "Onaylandı. Ticari fatura ve Mushak-6.3, malın evraklarıyla birlikte alıcıya gider."
+              },
+              {
+                "time": "28 Eki",
+                "text": "Alıcı tutarın bir kısmı için çek gönderir. Ödenen, gelen kısmı gösterir; kalanı borç olarak durur."
+              },
+              {
+                "time": "12 Kas",
+                "text": "Bakiye vade gününde gelir. Ödenen, Tutar’la eşleşir ve durum ödendi olur."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Farklı sektörler faturaları nasıl kullanır",
+          "angles": {
+            "retail": "Gelip geçen ve cari müşterilere günde çok sayıda küçük fatura.",
+            "food-hospitality": "Etkinlik ve kurumsal yemek hizmeti, vadeli faturalanır.",
+            "real-estate": "Ödeme planına göre taksit faturaları.",
+            "consulting": "Aylık danışmanlık ücretleri ve kilometre taşı faturaları.",
+            "manufacturing": "Büyük alıcılar, uzun vadeler, her sevkiyatla bir Mushak-6.3.",
+            "health-fitness": "İşverene faturalanan kurumsal üyelikler.",
+            "trades": "Her iş için bir fatura, parçalar ve işçilik ayrı satırlarda.",
+            "others": "Kiralama, stüdyo ve bayiler takvime göre faturalar."
+          }
+        },
+        "faq": {
+          "title": "Faturalar hakkında sık sorulan sorular",
+          "items": [
+            {
+              "q": "Adon ERP Mushak-6.3 yazdırabilir mi?",
+              "a": "Evet. Herhangi bir faturayı açıp “Mushak 6.3”e tıklayın; tedarikçi ve alıcı bilgileri, BIN, KDV oranı, KDV tutarı ve yazıyla toplamla birlikte vergi faturası Bengalce ve İngilizce yazdırılır."
+            },
+            {
+              "q": "Faturada KDV nasıl hesaplanır?",
+              "a": "Her satırın kendi KDV oranı vardır. Fatura her satır için KDV tutarını gösterir ve satır toplamına ekler; karışık kalemler doğru işlenir."
+            },
+            {
+              "q": "Taslak, onaylı, ödendi ve iptal ne demek?",
+              "a": "Taslak, hâlâ hazırlanıyor demektir. Onaylı, alıcının bu tutarı borçlu olduğu anlamına gelir. Ödendi, tutarın tamamının alındığı anlamına gelir. İptal edilen faturalar kayıt için numaralarıyla listede kalır."
+            },
+            {
+              "q": "Alıcı faturanın bir kısmını ödeyebilir mi?",
+              "a": "Evet. Ödenen sütunu, tam tutarın yanında şimdiye kadar ne kadar geldiğini gösterir; kısmen ödenmiş faturalar kolayca fark edilir."
+            },
+            {
+              "q": "Her seferinde hesap seçmem gerekir mi?",
+              "a": "Hayır. Kasa hesabı ve alacak hesabı otomatik doldurulur. Gerekirse belirli bir fatura için değiştirebilirsiniz."
+            },
+            {
+              "q": "Vergi faturasının yanında normal fatura da yazdırabilir miyim?",
+              "a": "Evet. “Faturayı Yazdır”, antetli kâğıdınız, kalemler, toplam ve yazıyla tutarı içeren bir ticari fatura verir."
+            },
+            {
+              "q": "Faturaları dışa aktarabilir miyim?",
+              "a": "Evet. Listede arama yapın, sonra CSV veya Excel’e aktarın ya da yazdırın."
+            },
+            {
+              "q": "Adon ERP nerede kullanılabilir?",
+              "a": "Şu anda Dakka’daki şirketleri sisteme alıyoruz. Demo planlayın, sizinle birlikte örnek bir fatura ve Mushak-6.3 düzenleyelim."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Faturalarınızdan birini bize gönderin. Demoda onu keselim ve Mushak-6.3’ü yazdıralım."
+        }
+      },
+      "journal": {
+        "meta": {
+          "title": "Taka ile Yevmiye Kayıtları, Yazdıkça Dengelenir | Adon ERP",
+          "description": "Amortisman, maaş tahakkukları, karşılıklar ve düzeltmeleri çift girişli yevmiye olarak kaydedin. Borç ve alacak toplamları kendini kontrol eder; her kayıt numaralıdır ve aranabilir.",
+          "keywords": [
+            "Bangladeş yevmiye kaydı yazılımı",
+            "çift girişli muhasebe yazılımı",
+            "tahakkuk yevmiye kaydı",
+            "amortisman yevmiye kaydı",
+            "Bangladeş muhasebe yazılımı",
+            "Adon ERP yevmiye kayıtları"
+          ]
+        },
+        "hero": {
+          "title": "Yevmiye Kayıtları: fatura veya alış faturasının kaydedemediği her şey için",
+          "lead": "Amortisman, borçlu olunan ama henüz ödenmemiş maaşlar, gelecek ay gelen elektrik faturası, denetçinizin istediği düzeltme. Kaydı satır satır yazın, borç ve alacak toplamlarının kendini kontrol ettiğini izleyin ve saniyeler içinde yeniden bulun.",
+          "secondaryCta": "Yaygın ay sonu kayıtlarına bakın"
+        },
+        "sample": {
+          "total": "418 kayıttan 25’i",
+          "entries": [
+            "Makine amortismanı, Ekim",
+            "Ekim maaşları tahakkuk, Kasım’da ödendi",
+            "Ekim DESCO faturası, 3 Kasım’da geldi",
+            "Bayram ikramiyesi karşılığı, Ekim payı",
+            "Düzeltme: kira yanlışlıkla onarıma işlendi",
+            "Ekim kirası, doğru hesap",
+            "Vadeli mevduatta banka damga vergisi"
+          ],
+          "form": {
+            "description": "Makine amortismanı, Ekim",
+            "ledger": "Genel",
+            "project": "Proje yok",
+            "accounts": [
+              "Amortisman gideri",
+              "Birikmiş amortisman: makineler"
+            ]
+          },
+          "notes": [
+            "her kaydın kendi numarası var",
+            "borç ve alacak yan yana",
+            "toplamlar siz yazdıkça kendini kontrol eder"
+          ]
+        },
+        "ui": {
+          "newEntry": "Yeni Kayıt",
+          "thJe": "Kayıt #",
+          "thDescription": "Açıklama",
+          "thDebits": "Borç",
+          "thCredits": "Alacak",
+          "thPosted": "İşlendi",
+          "posted": "İşlendi",
+          "formTitle": "Yeni Yevmiye Kaydı",
+          "description": "Açıklama",
+          "ledger": "Defter",
+          "project": "Proje (isteğe bağlı)",
+          "lines": "Satırlar",
+          "addLine": "Satır Ekle",
+          "dr": "Borç",
+          "cr": "Alacak",
+          "drTotal": "Borç: BDT {total}",
+          "crTotal": "Alacak: BDT {total}",
+          "balanced": "Dengeli",
+          "createJe": "Kayıt Oluştur",
+          "previewNote": "Bir önizleme görüyorsunuz. Demoda gerçek bir kayıt işleyin.",
+          "caption": "Adon ERP’deki Yevmiye Kayıtları ekranının kısmi önizlemesi. Şirket, kayıtlar ve rakamlar örnek verilerdir."
+        },
+        "explain": {
+          "title": "Kaydın her parçası ve neden orada olduğu",
+          "intro": "Yevmiye kaydı kısa bir formdur ama her alan, birinin sonra soracağı bir soruyu yanıtlar: gelecek ay siz, gelecek yıl denetçiniz ya da hesaplarınızı inceleyen bir banka yetkilisi.",
+          "rows": [
+            {
+              "label": "Açıklama",
+              "question": "Bir yıl sonra da anlamlı olacak mı?",
+              "body": "Onu hiç görmemiş kişi için yazın. “Ekim maaşları tahakkuk, Kasım’da ödendi” işe yarar. “Düzeltme” yaramaz. Daha sonra açıklamayla arama yapacaksınız; bu yüzden ayı ve nedeni yazın."
+            },
+            {
+              "label": "Defter",
+              "question": "Bu kayıt nerede durmalı?",
+              "body": "Kaydın ait olduğu defteri seçin; ekibinizin bulmayı beklediği yerde, aynı türdeki diğer kayıtların yanında görünsün."
+            },
+            {
+              "label": "Proje (isteğe bağlı)",
+              "question": "Bu maliyet bir işe mi ait?",
+              "body": "Kayıt yeni bir üretim hattı veya müşteri sözleşmesi gibi belirli bir projenin parçasıysa etiketleyin. Değilse “Proje yok” olarak bırakın."
+            },
+            {
+              "label": "Satırlar",
+              "question": "Hangi hesaplar hareket ediyor, hangi yöne?",
+              "body": "Her satır bir hesap, bir tutar ve bir yöndür: Borç veya Alacak. Çoğu kayıt için iki satır yeter. Daha fazlası mı lazım? Satır ekleyin; örneğin bir maaş tahakkukunu fabrika, ofis ve satış arasında bölmek için."
+            },
+            {
+              "label": "Satırların altındaki toplamlar",
+              "question": "Dengeli mi?",
+              "body": "Borç ve alacak toplamları satırların altında durur ve yazdıkça güncellenir. Eşleştiklerinde bir onay işareti çıkar. Çift girişte bir tarafa giren her taka diğer taraftan çıkmak zorundadır."
+            },
+            {
+              "label": "İşlendikten sonraki liste",
+              "question": "Yeniden bulabilir miyiz?",
+              "body": "İşlenen kayıtlar yıla göre numaralanır (JE-2026-…) ve toplamlarıyla listelenir. Açıklamaya göre arayın; denetçi ayın yevmiyesini istediğinde CSV veya Excel’e aktarın ya da yazdırın."
+            }
+          ],
+          "refresher": {
+            "title": "Borç ve alacak için iki dakikalık hatırlatma",
+            "intro": "Ayı onaylayan ve muhasebeciyi aramadan bir kaydı okumak isteyen işletme sahipleri için.",
+            "head": [
+              "Hesap türü",
+              "Borç",
+              "Alacak",
+              "Örnek"
+            ],
+            "rows": [
+              [
+                "Varlıklar",
+                "artırır",
+                "azaltır",
+                "Kasa, banka, stok, makineler"
+              ],
+              [
+                "Giderler",
+                "artırır",
+                "azaltır",
+                "Maaşlar, kira, elektrik"
+              ],
+              [
+                "Yükümlülükler",
+                "azaltır",
+                "artırır",
+                "Ödenecek maaşlar, tedarikçi borçları, krediler"
+              ],
+              [
+                "Gelirler",
+                "azaltır",
+                "artırır",
+                "Satışlar, kazanılan faiz"
+              ],
+              [
+                "Özkaynaklar",
+                "azaltır",
+                "artırır",
+                "Sermaye, geçmiş yıl kârları"
+              ]
+            ],
+            "tip": "Yani “Borç Amortisman gideri, Alacak Birikmiş amortisman” şöyle okunur: bu ayın maliyeti artar ve makinelerin defter değeri aynı tutarda azalır."
+          }
+        },
+        "connect": {
+          "title": "Çoğu kayıt kendiliğinden yazılır. Yevmiye geri kalanlar için.",
+          "intro": "Satışların, alışların, ödemelerin ve tahsilatların her birinin kendi aracı vardır ve sizin yerinize kayıtlara işlenirler. Yevmiye kaydını yalnızca geriye kalanlar için kullanın; böylece hiçbir şey iki kez kaydedilmez.",
+          "groups": {
+            "setUp": "Önce kurun",
+            "recorded": "Başka yerde zaten kayıtlı",
+            "shows": "Kaydınızın göründüğü yer"
+          },
+          "items": {
+            "chartOfAccounts": "Yevmiye satırında seçebileceğiniz her hesap buradan gelir.",
+            "invoicesAr": "Müşterilere satışlar. Yevmiye değil, fatura kesin.",
+            "receipts": "Bir faturaya karşılık gelen para.",
+            "billsAp": "Kabul ettiğiniz tedarikçi faturaları.",
+            "pettyCash": "Kasa kutusundan yapılan küçük günlük harcamalar.",
+            "ledgers": "Herhangi bir hesabı açın; yevmiye satırı bakiyeyle birlikte orada.",
+            "financialReports": "Gelir tablosu ve bilanço bunu içerir.",
+            "accountingHub": "Net gelir ve toplam varlıklar onunla birlikte hareket eder.",
+            "closingFy": "Ay sonu ve yıl sonu kayıtları kapanıştan önce gelir."
+          }
+        },
+        "local": {
+          "title": "Bangladeş’teki her muhasebecinin bildiği ay sonu kayıtları",
+          "intro": "Buradaki çoğu şirkette bunlar her ay karşımıza çıkar. Hiçbiri bir faturadan ya da alış faturasından gelmez; bu yüzden her biri bir yevmiye kaydıdır.",
+          "points": [
+            {
+              "title": "Ay sonunda borçlu olunan maaşlar",
+              "body": "İşçiler ertesi ayın ilk haftasında ödenir ama maliyet bu aya aittir. Hak edildiği ayda kaydedin.",
+              "entry": "Borç Maaş gideri · Alacak Ödenecek maaşlar"
+            },
+            {
+              "title": "Bayram ikramiyesi, her ay biraz",
+              "body": "Yılda iki bayram ikramiyesi büyük bir maliyettir. Her ay bir pay ayırmak, bayramdan önce bir ayın kârının çökmesini önler.",
+              "entry": "Borç İkramiye gideri · Alacak İkramiye karşılığı"
+            },
+            {
+              "title": "Geç gelen elektrik faturası",
+              "body": "Ekim’in DESCO veya DPDC faturası Kasım’da gelir. Maliyeti kullanıldığı Ekim’e geri koyun.",
+              "entry": "Borç Elektrik · Alacak Tahakkuk eden giderler"
+            },
+            {
+              "title": "Yalnızca ekstrede görülen banka masrafları",
+              "body": "Damga vergisi, SMS ücretleri ve hesap ücretleri doğrudan bankaca alınır. Ekstre geldiğinde kaydedin ki banka bakiyesi tutsun.",
+              "entry": "Borç Banka masrafları · Alacak Banka hesabı"
+            },
+            {
+              "title": "Makine ve araçların amortismanı",
+              "body": "Bir makinenin maliyeti çalıştığı yıllara yayılır. Ayda bir kayıt kârı dürüst, bilançoyu gerçekçi tutar.",
+              "entry": "Borç Amortisman · Alacak Birikmiş amortisman"
+            },
+            {
+              "title": "Yanlış bir kaydı düzeltme",
+              "body": "Kira onarıma mı yazıldı? Temiz alışkanlık, yanlış kaydı ters çevirip doğrusunu işlemektir; ikisi de açık açıklamalı olsun ki iz denetçi için anlamlı kalsın.",
+              "entry": "Ters çevir, sonra yeniden işle"
+            }
+          ],
+          "day": {
+            "title": "Bir gıda işleme şirketinde Ekim’i kapatmak",
+            "intro": "Dakka’daki bir muhasebecinin Kasım’ın ilk haftasını nasıl geçirebileceği.",
+            "steps": [
+              {
+                "time": "31 Eki",
+                "text": "Makineler ve dağıtım minibüsleri için Ekim amortismanı, birer kayıtla işlenir."
+              },
+              {
+                "time": "1 Kas",
+                "text": "Ekim maaşları fabrika, ofis ve satışa dört satırlı tek kayıtla tahakkuk ettirilir. Onay işareti ilk seferde yeşile döner."
+              },
+              {
+                "time": "3 Kas",
+                "text": "Ekim DESCO faturası gelir. Fatura tarihi açıklamaya yazılarak Ekim’e geri tahakkuk ettirilir."
+              },
+              {
+                "time": "5 Kas",
+                "text": "“Kira” araması, Ekim kirasının onarıma işlendiğini gösterir. Yanlış kayıt ters çevrilir, doğrusu işlenir; ikisi listede yan yana durur."
+              },
+              {
+                "time": "6 Kas",
+                "text": "Banka ekstresinde vadeli mevduat üzerinde damga vergisi görünür. Kısa bir kayıt ve banka bakiyesi tutar."
+              },
+              {
+                "time": "7 Kas",
+                "text": "Ayın yevmiyesi, işletme sahibi ve denetim dosyası için Excel’e aktarılır. Ekim kapanışa hazır."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Yevmiye kayıtları sektöre göre değişir",
+          "intro": "Bir otel de bir konfeksiyon fabrikası da ay sonunda yevmiye işler ama aynılarını değil. Sektörünüzü seçin, genellikle hangi kayıtlara ihtiyaç duyduğunu görün.",
+          "angles": {
+            "retail": "Eksik sayılan stok, tedarikçi iskontoları, hurdaya çıkarılan hasarlı mallar.",
+            "food-hospitality": "Bozulan stok, personelle paylaşılan servis ücreti, ön rezervasyonlar.",
+            "real-estate": "Daire teslim edilene kadar avans olarak tutulan alıcı taksitleri.",
+            "consulting": "Bu ay yapılan ama gelecek ay faturalanan iş.",
+            "manufacturing": "Amortisman, ikramiye karşılıkları ve hâlâ atölyede duran stok.",
+            "health-fitness": "Bugün ödenen bir yıllık üyelik, ay ay kazanılır.",
+            "trades": "Zaten yapılmış işler için ayrılan garanti işi.",
+            "others": "Hibeler ve bağışlar, harcanana kadar ayrı tutulur."
+          }
+        },
+        "faq": {
+          "title": "Yevmiye kayıtları hakkında sık sorulan sorular",
+          "items": [
+            {
+              "q": "Adon ERP’de yevmiye kaydı nedir?",
+              "a": "Elle girilen çift girişli bir kayıttır: bir açıklama, bir defter, isteğe bağlı bir proje ve her biri hesap, tutar ile borç ya da alacak yönü taşıyan iki veya daha fazla satır. Fatura, alış faturası, tahsilat veya başka bir araçtan gelmeyen her şey için kullanılır."
+            },
+            {
+              "q": "Fatura veya alış faturası yerine ne zaman yevmiye kaydı kullanmalıyım?",
+              "a": "Günlük alım, satım ve ödemeler için faturaları, tahsilatları ve küçük kasayı kullanın. Amortisman, tahakkuklar, karşılıklar, yalnızca ekstrede görülen banka masrafları ve düzeltmeler için yevmiye kaydı kullanın."
+            },
+            {
+              "q": "Kaydın dengeli olduğunu nasıl anlarım?",
+              "a": "Borç ve alacak toplamı satırların altında görünür ve yazdıkça güncellenir. İkisi eşit olduğunda bir onay işareti çıkar."
+            },
+            {
+              "q": "Bir kayıt ikiden fazla satır içerebilir mi?",
+              "a": "Evet. Gerektiği kadar eklemek için “Satır ekle”yi kullanın; örneğin bir maaş tahakkukunu birkaç departmana bölmek için."
+            },
+            {
+              "q": "Bir kaydı projeye bağlayabilir miyim?",
+              "a": "Evet. Formda isteğe bağlı bir Proje alanı var. Kayıt bir projeye bağlı değilse “Proje yok” olarak bırakın."
+            },
+            {
+              "q": "Yevmiye kayıtları nasıl numaralanır?",
+              "a": "Her kayıt, JE-2026-004318 gibi yılı içeren bir numara alır ve Yevmiye Kayıtları listesinde borç ve alacak toplamları ile durumuyla görünür."
+            },
+            {
+              "q": "Yevmiyeyi denetçime verebilir miyim?",
+              "a": "Evet. Listede arama yapabilir, CSV veya Excel’e aktarabilir ya da yazdırabilirsiniz."
+            },
+            {
+              "q": "Adon ERP nerede kullanılabilir?",
+              "a": "Şu anda Dakka’daki şirketleri sisteme alıyoruz. Demo planlayın, kendi ay sonu kayıtlarınızı sizinle birlikte inceleyelim."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Her ay sizi uğraştıran kaydı getirin. Birlikte işleyelim."
+        }
+      },
+      "hub": {
+        "meta": {
+          "title": "Muhasebe Merkezi: Bangladeşli İşletmeler için Canlı Muhasebe Panosu | Adon ERP",
+          "description": "Gelir, net gelir, alacaklar, borçlar ve toplam varlıkları tek bir canlı ekranda görün; taka, lakh ve crore cinsinden. Bangladeş’teki şirketler için geliştirilen Adon ERP Muhasebe Merkezi.",
+          "keywords": [
+            "Bangladeş muhasebe panosu",
+            "Bangladeş muhasebe yazılımı",
+            "ERP muhasebe modülü",
+            "alacak hesapları panosu",
+            "Bangladeş KDV defteri",
+            "Adon ERP muhasebe"
+          ]
+        },
+        "hero": {
+          "title": "Muhasebe Merkezi: defterlerinizin bütün durumu tek ekranda",
+          "lead": "Satışlar, kâr, müşterilerin size borcu, sizin tedarikçilere borcunuz ve şirketin sahip olduğu her şey. Defterlerinizden canlı okunan beş rakam, parayı zaten konuştuğunuz gibi gösterilir: lakh ve crore ile taka.",
+          "secondaryCta": "Tüm muhasebe araçlarına bakın"
+        },
+        "units": {
+          "cr": "Cr",
+          "lakh": "L"
+        },
+        "sample": {
+          "language": "Türkçe",
+          "kpis": {
+            "revenue": {
+              "label": "Gelir (YBB)",
+              "note": "yılbaşından beri satışlar"
+            },
+            "net": {
+              "label": "Net gelir",
+              "note": "tüm maliyetlerden sonra kalan"
+            },
+            "ar": {
+              "label": "Bekleyen AR",
+              "note": "hâlâ müşterilerde. Peşine düşün"
+            },
+            "ap": {
+              "label": "Bekleyen AP",
+              "note": "tedarikçilere borcunuz"
+            },
+            "assets": {
+              "label": "Toplam varlıklar",
+              "note": "şirketin sahip olduğu her şey"
+            }
+          },
+          "statement": {
+            "revenue": "Gelir",
+            "cogs": "SMM",
+            "grossProfit": "Brüt kâr",
+            "opex": "Faaliyet gideri",
+            "netIncome": "Net gelir"
+          },
+          "opex": {
+            "salaries": "Maaşlar",
+            "utilities": "Faturalar",
+            "transport": "Ulaşım",
+            "other": "Diğer"
+          }
+        },
+        "ui": {
+          "sidebarAria": "Üründeki muhasebe araçları",
+          "subtitle": "Muhasebe motorunuzdan canlı veriler",
+          "incomeStatement": "Gelir Tablosu (YBB)",
+          "grossMargin": "Brüt marj:",
+          "opexTitle": "Faaliyet Gideri Dağılımı",
+          "total": "Toplam",
+          "previewNote": "Bir önizleme görüyorsunuz. Merkezin tamamı sizin keşfinize açık.",
+          "caption": "Muhasebe Merkezi’nin kısmi önizlemesi. Şirket, müşteriler ve rakamlar örnek verilerdir."
+        },
+        "numbers": {
+          "title": "Beş rakam, bir işletme sahibinin gerçekten sorduğu beş soru",
+          "intro": "Bir pano, gösterdiğiyle ne yapacağınızı bilirseniz işe yarar. Merkezdeki her rakamın ne anlama geldiği, nereden geldiği ve ne zaman telefona sarılmanız gerektiği burada.",
+          "comesFrom": "Kaynağı:",
+          "rows": [
+            {
+              "label": "Gelir (YBB)",
+              "question": "Eskisinden daha çok mu satıyoruz?",
+              "body": "Mali yılınızın başından beri faturalanan her şey. Buradaki şirketlerin çoğu Temmuz–Haziran döneminde çalışır; yani Aralık’ta bu yaklaşık altı aylık satıştır. Geçen ayla değil, geçen yılın aynı noktasıyla karşılaştırın.",
+              "source": "Satış Faturaları (AR)"
+            },
+            {
+              "label": "Net gelir",
+              "question": "Tüm maliyetlerden sonra para kazandık mı?",
+              "body": "Gelir, eksi sattığınız malın maliyeti, eksi maaşlar, kira, yakıt ve işi yürütmenin geri kalan her şeyi. Bu eksiye düştüğünde merkez kırmızıyla gösterir. Kötü haberi yumuşatmaz.",
+              "source": "Defterler ve Yevmiye Kayıtları"
+            },
+            {
+              "label": "Bekleyen AR",
+              "question": "Paramızın ne kadarı alıcılarda duruyor?",
+              "body": "Gönderilmiş ama henüz ödenmemiş faturalar. Büyük alıcılara 60 veya 90 gün vadeyle satan bir fabrika için bu çoğu zaman banka bakiyesinden büyüktür ve maaşların zamanında çıkıp çıkmayacağını belirleyen rakamdır.",
+              "source": "Satış Faturaları (AR) ve Tahsilatlar"
+            },
+            {
+              "label": "Bekleyen AP",
+              "question": "Kimi bekletiyoruz?",
+              "body": "Kabul ettiğiniz ve henüz ödemediğiniz tedarikçi faturaları. Büyük bir AR’nin yanında küçük bir AP, müşterilerinizi finanse ettiğiniz anlamına gelir. Bankadan işletme sermayesi istemeden önce bilmeye değer.",
+              "source": "Alış Faturaları (AP)"
+            },
+            {
+              "label": "Toplam varlıklar",
+              "question": "Bu işletme gerçekte ne kadar büyük?",
+              "body": "Nakit, banka bakiyeleri, stok, alacaklar, makineler ve mülk; bilançodan toplanır. Bir kredi veren ya da yatırımcının ilk bakacağı rakam budur.",
+              "source": "Hesap Planınızdaki varlık hesapları"
+            }
+          ],
+          "chartsTitle": "Ve altındaki dört grafik",
+          "charts": [
+            {
+              "title": "Gelir tablosu beş çubukta",
+              "body": "Gelir, satılan malın maliyeti, brüt kâr, işletme maliyetleri ve net gelir yan yana. Brüt marj köşede durur; hammadde fiyatlarının ne zaman onu yemeye başladığını bir bakışta görürsünüz."
+            },
+            {
+              "title": "İşletme maliyetleri nereye gidiyor",
+              "body": "Türüne göre bölünmüş faaliyet giderleri. Bir fabrikada en büyük dilim genellikle maaşlardır. Yakıt veya ulaşım artmaya başladığında bunu yıl sonu hesaplarından önce burada görürsünüz."
+            },
+            {
+              "title": "Borca göre ilk beş müşteri",
+              "body": "Haftanın arama listeniz. Tek bir isim tüm alacakların üçte birini tutuyorsa bu bir yoğunlaşma riskidir ve bunu denetimde değil Pazartesi sabahı görmek daha iyidir."
+            },
+            {
+              "title": "Borca göre ilk beş tedarikçi",
+              "body": "Kime önce ödeyeceğiniz ve kiminle vade konuşabileceğiniz. Her tedarikçinin aynı anda ödeme istediği bayramdan önceki hafta işe yarar."
+            }
+          ]
+        },
+        "tools": {
+          "title": "On yedi araç merkezi besler. Hiçbir rakamı iki kez yazmazsınız.",
+          "intro": "Merkezin kendine ait rakamı yoktur. Üzerindeki her sayı, ekibinizin aşağıdaki araçlarda zaten yaptığı işten okunur: kesilen bir fatura, yatırılan bir çek, onaylanan bir alış faturası.",
+          "groups": {
+            "keep": "Kayıtları tutun",
+            "sell": "Satın ve tahsil edin",
+            "buy": "Satın alın ve ödeyin",
+            "cash": "Nakit ve banka",
+            "close": "Kapatın ve uyum sağlayın"
+          },
+          "items": {
+            "chartOfAccounts": "Paranın içinden geçtiği her hesabın listesi. Bir kez kurun; her rapor buradan okur.",
+            "journalEntries": "Fatura veya alış faturasından gelmeyen kayıtlar için: amortisman, tahakkuklar, düzeltmeler.",
+            "ledgers": "Herhangi bir hesabı açın ve bakiyeyle birlikte her takanın giriş ve çıkışını görün.",
+            "customers": "Her alıcı ve bugün her birinin size borcu.",
+            "deliveryChallans": "Kapıdan çıkan mallar, teslimat ve faturalama eşleştirilebilsin diye kaydedilir.",
+            "invoicesAr": "Müşterilere KDV’li fatura kesin. Ödenmemiş faturalar merkezdeki AR rakamını oluşturur.",
+            "receipts": "Nakit, çek veya havaleyle gelen para, ödediği faturayla eşleştirilir.",
+            "vendors": "Tedarikçileriniz ve her birine borcunuz.",
+            "purchaseOrders": "Mal gelmeden önce fiyat ve miktarı anlaşın; fatura kontrol edilebilsin.",
+            "billsAp": "Ödeme bekleyen tedarikçi faturaları. Birlikte AP rakamını oluşturur.",
+            "itemsProducts": "Satın aldıklarınız ve sattıklarınız; birim ve fiyatlarıyla.",
+            "bankAccounts": "Şirketin sahip olduğu her hesap, ekstreyle karşılaştırılacak bakiyelerle.",
+            "chequeRegister": "Alınan ve verilen çekler, tarihleriyle; hiçbiri çekmecede unutulmasın.",
+            "pettyCash": "Çay, rikşa ücreti, kurye. Haziran’a kadar birikip toplanan küçük tutarlar.",
+            "vatRegister": "Satış KDV’si ve alış KDV’si, aylık beyanname için yan yana.",
+            "financialReports": "Gelir tablosu, bilanço ve bankanın ya da denetçinin istediği tablolar.",
+            "closingFy": "Ayı kapatın, yılı kilitleyin, bir sonrakini temiz bakiyelerle açın."
+          }
+        },
+        "local": {
+          "title": "Bangladeş’te defterlerin tutulma biçimine göre yapıldı",
+          "intro": "Çoğu muhasebe yazılımı başka bir yerde yazılır, sonradan bize uyarlanır. Adon ERP burada başladı; bu yüzden her gün elinizden geçen evrak içinde gerçek bir yer bulur.",
+          "points": [
+            {
+              "title": "İlk faturadan itibaren KDV",
+              "body": "KDV her satış ve alışta oluştuğu anda kaydedilir ve KDV Defteri’ne düşer. Aylık beyanname zamanı geldiğinde rakamlarınız zaten tek yerde."
+            },
+            {
+              "title": "İleri tarihli olanlar dâhil çekler",
+              "body": "Alıcılar hâlâ çekle öder, çoğu zaman haftalar sonrasına tarihli. Çek Defteri her çeki tarihiyle tutar; bugün neyin bankaya yatırılabileceğini bilirsiniz."
+            },
+            {
+              "title": "Milyon değil, lakh ve crore",
+              "body": "Merkez 2.92 Cr ve 58 L gösterir, altında tam taka tutarıyla. Toplantı öncesi kimsenin rakamları kafasında çevirmesine gerek kalmaz."
+            },
+            {
+              "title": "İngilizce veya Bengalce",
+              "body": "Dili üst çubuktan değiştirin. İşletme sahibi Bengalce okurken muhasebeci aynı defterlerde İngilizce çalışabilir."
+            },
+            {
+              "title": "Birden fazla şirket",
+              "body": "Bir fabrika ve bir ticaret kolu, ya da üç kardeş şirket mi? Şirketi üst çubuktan değiştirin. Her biri kendi defterlerini tutar."
+            },
+            {
+              "title": "Sizin mali yılınız, sizin tarihleriniz",
+              "body": "Yılı şirketiniz ne zaman kapatıyorsa o zaman kapatın; buradaki çoğu firma gibi Haziran olsun, yabancı bir ana şirket için Aralık olsun."
+            }
+          ],
+          "day": {
+            "title": "Merkezle sıradan bir Salı",
+            "intro": "Orta ölçekli bir ambalaj fabrikasının muhasebe ekibi bunu nasıl kullanabilir.",
+            "steps": [
+              {
+                "time": "09:30",
+                "text": "Muhasebe müdürü merkezi açar. Alacaklar geçen haftadan bu yana arttı ve ilk beş listesi bunun hangi alıcıdan kaynaklandığını tam olarak gösterir."
+              },
+              {
+                "time": "11:00",
+                "text": "Çek Defteri bugünün tarihli iki çekini gösterir. Biri bankaya gider. Diğer alıcı bir hafta ister ve görüşme not edilir."
+              },
+              {
+                "time": "14:30",
+                "text": "Depo, kapıdan çıkan film rulolarının sevk irsaliyesini gönderir. Fatura aynı öğleden sonra KDV dâhil çıkar."
+              },
+              {
+                "time": "16:00",
+                "text": "Bir reçine tedarikçisinin faturası gelir ve kabul edilmeden önce satın alma siparişiyle karşılaştırılır."
+              },
+              {
+                "time": "18:15",
+                "text": "Küçük kasa sayılır ve kapatılır. İşletme sahibi evden merkeze baktığında bugünün rakamları zaten içinde."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Aynı merkez, işinize göre kurulmuş",
+          "intro": "Bir restoran ve bir tekstil fabrikası aynı beş rakamı çok farklı okur. Sektörünüzü seçin, defterlerin genellikle nasıl kurulduğunu görün.",
+          "angles": {
+            "retail": "Günlük satışlar, tedarikçi kredisi ve hızlı dönen stok.",
+            "food-hospitality": "Nakit ağırlıklı günler, çabuk bozulan stok, her faturada KDV.",
+            "real-estate": "Uzun projeler, aşamalı ödemeler, aylarca tutulan avanslar.",
+            "consulting": "Ürün zamandır; bu yüzden faturalar ve alacaklar her şeydir.",
+            "manufacturing": "Hammadde girer, mamul çıkar, geç ödeyen büyük alıcılar.",
+            "health-fitness": "Üyelikler, küçük fişler ve çok sayıda makbuz.",
+            "trades": "İşler, parçalar ve yerinde tahsil edilen ödeme.",
+            "others": "Kâr amacı gütmeyenler, kiralamalar, stüdyolar. Defterler yine de tutmak zorunda."
+          }
+        },
+        "faq": {
+          "title": "Muhasebe Merkezi hakkında sık sorulan sorular",
+          "items": [
+            {
+              "q": "Adon ERP’de Muhasebe Merkezi nedir?",
+              "a": "Muhasebe uygulamasının ilk ekranıdır. Yılbaşından bugüne geliri, net geliri, alacakları, borçları ve toplam varlıkları; bir gelir tablosu grafiğini, gider dağılımını ve bakiyeye göre en büyük müşteri ve tedarikçilerinizi gösterir. Üzerindeki her şey canlıdır."
+            },
+            {
+              "q": "Merkezdeki rakamlar nereden geliyor?",
+              "a": "Ekibinizin zaten kaydettiği işlerden: faturalar, tahsilatlar, alış faturaları, yevmiye kayıtları, banka ve çek kayıtları. Merkez bunları defterlerden okur. Merkezin kendisine yazılacak bir şey yoktur; bu yüzden kayıtlarla uyumsuzluğa düşemez."
+            },
+            {
+              "q": "Bangladeş KDV’sini işler mi?",
+              "a": "Evet. KDV faturalarda ve alış faturalarında yakalanır ve KDV Defteri’nde toplanır; beyanname zamanı geldiğinde ayın satış KDV’si ve alış KDV’si tek yerde olur."
+            },
+            {
+              "q": "Tutarları lakh ve crore olarak görebilir miyiz?",
+              "a": "Evet. Başlık rakamları Cr ve L olarak gösterilir; her birinin altında tam taka tutarı basılıdır."
+            },
+            {
+              "q": "Tek bir girişle birden fazla şirket yönetilebilir mi?",
+              "a": "Evet. Grup şirketleri üst çubuktan şirketler arasında geçiş yapabilir ve her şirket kendi hesap planını, defterlerini ve raporlarını tutar."
+            },
+            {
+              "q": "Yazılım Bengalce olarak mevcut mu?",
+              "a": "Evet. İstediğiniz zaman üst çubuktan İngilizce ile Bengalce arasında geçiş yapabilirsiniz."
+            },
+            {
+              "q": "Kullanmak için muhasebeciye ihtiyacımız var mı?",
+              "a": "Borç ve alacağı bilen biri hesap planını kurmalı ve yevmiye kayıtlarını işlemeli. Merkezin kendisi işletme sahipleri ve yöneticiler için yazılmıştır; okumak için muhasebe eğitimi gerekmez."
+            },
+            {
+              "q": "Adon ERP nerede kullanılabilir?",
+              "a": "Şu anda Dakka’daki şirketleri sisteme alıyoruz. Demo planlayın, merkezi işletmenize benzeyen rakamlarla birlikte gezelim."
+            }
+          ]
+        },
+        "closing": {
+          "title": "İşinizin nasıl yürüdüğünü anlatın. Bu ekranı tam öyle kurulmuş hâliyle gösterelim."
+        }
+      }
+    },
     "accounting-firm": {
       "metadata": {
         "title": "Muhasebe Firması | AdonERP",

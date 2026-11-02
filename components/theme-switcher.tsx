@@ -88,7 +88,7 @@ export default function ThemeSwitcher({ variant }: ThemeSwitcherProps) {
             className={`flex items-center gap-3 rounded-2xl border px-3 py-3 text-left transition-all ${
               isActive
                 ? "border-primary bg-primary/10 text-foreground shadow-sm"
-                : "border-border bg-card text-card-foreground hover:border-primary/40 hover:bg-accent/10"
+                : "border-border bg-card text-card-foreground hover-gradient"
             }`}
           >
             <span
@@ -134,7 +134,7 @@ export default function ThemeSwitcher({ variant }: ThemeSwitcherProps) {
         aria-controls={panelId}
         aria-label={t("label")}
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 text-sm font-semibold text-card-foreground shadow-xs transition-colors hover:bg-accent/10"
+        className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 text-sm font-semibold text-card-foreground shadow-xs transition-colors hover-gradient"
       >
         <ActiveIcon size={16} />
         <span>{t(activeTheme === "ocean" ? "oceanBlue" : activeTheme)}</span>
