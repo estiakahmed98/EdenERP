@@ -29,6 +29,44 @@ type NavItem =
 
 const industriesMegaMenu: MegaMenuColumn[] = [
   {
+    titleKey: "menu.industries.sectors",
+    accentClass: "text-amber-500",
+    underlineClass: "bg-amber-200",
+    links: [
+      {
+        labelKey: "modules.industries.links.buyingHouse",
+        href: "/industries/buying-house",
+      },
+      {
+        labelKey: "modules.industries.links.accessories",
+        href: "/industries/accessories",
+      },
+      {
+        labelKey: "modules.industries.links.schoolCollege",
+        href: "/industries/school-college",
+      },
+      {
+        labelKey: "modules.industries.links.textile",
+        href: "/industries/manufacturing/textile",
+      },
+      {
+        labelKey: "modules.industries.links.garments",
+        href: "/industries/garments",
+      },
+      { labelKey: "modules.industries.links.ngo", href: "/industries/ngo" },
+      {
+        labelKey: "modules.industries.links.realEstate",
+        href: "/industries/realestate/real-estate-agency",
+      },
+      {
+        labelKey: "modules.industries.links.agroRice",
+        href: "/industries/agro-rice",
+      },
+      { labelKey: "modules.industries.links.tv", href: "/industries/tv" },
+      { labelKey: "modules.industries.links.steel", href: "/industries/steel" },
+    ],
+  },
+  {
     titleKey: "menu.industries.retail",
     accentClass: "text-emerald-600",
     underlineClass: "bg-emerald-200",
@@ -563,7 +601,7 @@ export default function Header({
                         >
                           {t(column.titleKey)}
                         </div>
-                        <ul className="ms-2 space-y-1">
+                        <ul className="ms-2 max-h-53 space-y-1 overflow-y-auto px-px pe-1 [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]">
                           {column.links.map((link) => (
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link

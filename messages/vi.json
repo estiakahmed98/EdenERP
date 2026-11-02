@@ -167,7 +167,8 @@
     "comingSoon": {
       "title": "Sắp ra mắt",
       "description": "Chúng tôi đang xây dựng trang này. Hãy quay lại sau nhé.",
-      "back": "Quay lại tất cả ứng dụng"
+      "back": "Quay lại tất cả ứng dụng",
+      "backIndustries": "Quay lại tất cả ngành"
     },
     "footer": {
       "description": "Các ứng dụng hợp nhất cho tài chính, bán hàng, vận hành và tăng trưởng trên một nền tảng ERP được kết nối.",

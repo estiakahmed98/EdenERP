@@ -6,9 +6,13 @@ import { Link } from "@/i18n/navigation";
 export default async function ComingSoonPage({
   moduleKey,
   linkKey,
+  backHref = "/apps",
+  backKey = "back",
 }: {
   moduleKey: string;
   linkKey: string;
+  backHref?: string;
+  backKey?: "back" | "backIndustries";
 }) {
   const t = await getTranslations("layout");
 
@@ -32,11 +36,11 @@ export default async function ComingSoonPage({
       </p>
 
       <Link
-        href="/apps"
+        href={backHref}
         className="mt-8 inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-muted-foreground transition-colors hover:bg-accent/10 hover:text-primary"
       >
         <ArrowLeft className="h-4 w-4 rtl:rotate-180" />
-        {t("comingSoon.back")}
+        {t(`comingSoon.${backKey}`)}
       </Link>
     </main>
   );

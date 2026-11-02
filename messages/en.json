@@ -119,6 +119,7 @@
           "iot": "IoT"
         },
         "industries": {
+          "sectors": "Sectors",
           "retail": "Retail",
           "foodHospitality": "Food & Hospitality",
           "realEstate": "Real Estate",
@@ -167,6 +168,21 @@
         }
       },
       "modules": {
+        "industries": {
+          "title": "Industries",
+          "links": {
+            "buyingHouse": "Buying House",
+            "accessories": "Accessories",
+            "schoolCollege": "School & College",
+            "textile": "Textile",
+            "garments": "Garments",
+            "ngo": "NGO",
+            "realEstate": "Real Estate",
+            "agroRice": "Agro Rice",
+            "tv": "TV",
+            "steel": "Steel"
+          }
+        },
         "accounting": {
           "title": "Accounting",
           "links": {
@@ -200,7 +216,7 @@
           "title": "Project Accounting",
           "links": {
             "overview": "Overview",
-            "costCodes": "Cost Codes",
+            "costCodes": "",
             "budgets": "Budgets",
             "jobCost": "Job Cost",
             "changeOrders": "Change Orders",
@@ -544,7 +560,8 @@
     "comingSoon": {
       "title": "Coming Soon",
       "description": "We are building this page. Check back soon.",
-      "back": "Back to all apps"
+      "back": "Back to all apps",
+      "backIndustries": "Back to all industries"
     },
     "footer": {
       "description": "Unified apps for finance, sales, operations, and growth in one connected ERP platform.",
@@ -15582,12 +15599,12 @@
           "menu": [
             "Projects",
             "Overview",
-            "Cost codes",
+            "",
             "Budgets"
           ],
           "tabs": [
             "Overview",
-            "Cost codes",
+            "",
             "Budgets",
             "Job cost",
             "Change orders",
@@ -15679,7 +15696,7 @@
             "description": "Get a concise view of progress, financial health, milestones, and open actions."
           },
           {
-            "title": "Cost Codes",
+            "title": "",
             "description": "Structure labor, materials, equipment, and subcontract costs consistently."
           },
           {

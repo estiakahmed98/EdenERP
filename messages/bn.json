@@ -119,6 +119,7 @@
           "iot": "IoT"
         },
         "industries": {
+          "sectors": "সেক্টর",
           "retail": "রিটেইল",
           "foodHospitality": "ফুড অ্যান্ড হসপিটালিটি",
           "realEstate": "রিয়েল এস্টেট",
@@ -167,6 +168,21 @@
         }
       },
       "modules": {
+        "industries": {
+          "title": "ইন্ডাস্ট্রি",
+          "links": {
+            "buyingHouse": "বায়িং হাউস",
+            "accessories": "এক্সেসরিজ",
+            "schoolCollege": "স্কুল ও কলেজ",
+            "textile": "টেক্সটাইল",
+            "garments": "গার্মেন্টস",
+            "ngo": "এনজিও",
+            "realEstate": "রিয়েল এস্টেট",
+            "agroRice": "অ্যাগ্রো রাইস",
+            "tv": "টিভি",
+            "steel": "স্টিল"
+          }
+        },
         "accounting": {
           "title": "অ্যাকাউন্টিং",
           "links": {
@@ -544,7 +560,8 @@
     "comingSoon": {
       "title": "শীঘ্রই আসছে",
       "description": "আমরা এই পেজটি তৈরি করছি। শীঘ্রই আবার দেখুন।",
-      "back": "সব অ্যাপে ফিরে যান"
+      "back": "সব অ্যাপে ফিরে যান",
+      "backIndustries": "সব ইন্ডাস্ট্রিতে ফিরে যান"
     },
     "footer": {
       "description": "ফিন্যান্স, সেলস, অপারেশনস এবং গ্রোথের জন্য এক প্ল্যাটফর্মে ইউনিফাইড ইআরপি।",

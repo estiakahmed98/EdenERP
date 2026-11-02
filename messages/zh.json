@@ -167,7 +167,8 @@
     "comingSoon": {
       "title": "即将推出",
       "description": "我们正在建设此页面，敬请期待。",
-      "back": "返回所有应用"
+      "back": "返回所有应用",
+      "backIndustries": "返回所有行业"
     },
     "footer": {
       "description": "将财务、销售、运营和增长应用整合在一个互联的 ERP 平台中。",
