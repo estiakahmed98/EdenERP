@@ -38236,12 +38236,11 @@
       },
       "hero": {
         "tag": "✦ Manage your entire business in one place",
-        "titlePrefix": "Simple, fast,",
+        "titlePrefix": "Adon ERP: simple, fast,",
         "typeWords": [
-          "financial management",
-          "subscription handling",
-          "daily operations",
-          "business growth"
+          "Features like SAP",
+          "Better than Odoo",
+          "Monday like Monday CRM"
         ],
         "description": "Set up in minutes with no coding or complicated configuration. Manage your team, sales, accounting, and operations from one connected platform."
       },

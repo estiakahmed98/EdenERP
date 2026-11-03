@@ -10563,12 +10563,11 @@
       },
       "hero": {
         "tag": "✦ Tüm işletmenizi tek yerde yönetin",
-        "titlePrefix": "Basit, hızlı,",
+        "titlePrefix": "Adon ERP: basit, hızlı,",
         "typeWords": [
-          "finans yönetimi",
-          "abonelik yönetimi",
-          "günlük operasyonlar",
-          "iş büyümesi"
+          "SAP gibi özelliklerle",
+          "Odoo'dan daha iyi",
+          "Monday gibi bir CRM"
         ],
         "description": "Kodlama veya karmaşık yapılandırma olmadan dakikalar içinde kurun. Ekibinizi, satışlarınızı, muhasebenizi ve operasyonlarınızı tek bir bağlantılı platformdan yönetin."
       },
