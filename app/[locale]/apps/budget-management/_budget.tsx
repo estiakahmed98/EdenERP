@@ -10,6 +10,7 @@ import {
   useTemplateContent,
   type Tone,
 } from "../accounting/_template";
+import { AppShell, designFor } from "../accounting/_designs";
 
 /*
  * Shared pieces for the Budget Management showcase pages.
@@ -194,10 +195,32 @@ export function Chip({ tone, children }: { tone: Tone; children: ReactNode }) {
 /* Shell: object header, status bar, segmented tabs                    */
 /* ------------------------------------------------------------------ */
 
-function BudgetShell({ active, children }: { active: ToolKey; children: ReactNode }) {
+function BudgetShell({ path, active, children }: { path: string; active: ToolKey; children: ReactNode }) {
   const { t: common, tools } = useCommon();
   const steps = [common("stDraft"), common("stSubmitted"), common("stApproved"), common("stActive")];
   const current = 1;
+  const design = designFor(path);
+
+  if (design.shell !== 0) {
+    return (
+      <AppShell
+        variant={design.shell}
+        accent={design.accent}
+        moduleName={tools.bmOverview}
+        title={`${BUDGET_NAME} · FY 2026 · v2`}
+        meta={<Chip tone="amber">{steps[current]}</Chip>}
+        nav={sections.map(({ key, icon }) => ({
+          key,
+          icon,
+          label: key === "bmOverview" ? common("tabOverview") : tools[key],
+          badge: key === "bmApprovals" ? "2" : undefined,
+        }))}
+        active={active}
+      >
+        {children}
+      </AppShell>
+    );
+  }
 
   return (
     <div>
@@ -288,7 +311,7 @@ export function BudgetPage({
           content={content}
           cols={[]}
           rows={[]}
-          body={<BudgetShell active={tool}>{render(content.ui)}</BudgetShell>}
+          body={<BudgetShell path={path} active={tool}>{render(content.ui)}</BudgetShell>}
         />
       }
     />

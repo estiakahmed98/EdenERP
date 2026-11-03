@@ -77,7 +77,7 @@ export default function StockMovementsPage() {
               </thead>
               <tbody>
                 {moves.map((m) => (
-                  <tr key={m[1]} className="border-b border-border/60">
+                  <tr key={`${m[1]}-${m[3]}`} className="border-b border-border/60">
                     <td className="py-1.5 tabular-nums text-muted-foreground">{m[0]}</td>
                     <td className="py-1.5 font-mono text-[10px] text-foreground">{m[1]}</td>
                     <td className="py-1.5"><Chip tone={tone[m[2]]}>{ui[m[2]]}</Chip></td>

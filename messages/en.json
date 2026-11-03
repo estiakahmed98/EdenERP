@@ -11608,6 +11608,7 @@
         "exploreInventory": "Explore Inventory",
         "explorePlatform": "Explore Open Platform",
         "scModule": "Supply Chain",
+        "pjModule": "Project Accounting",
         "stDraft": "Draft",
         "stSubmitted": "Submitted",
         "stApproved": "Approved",

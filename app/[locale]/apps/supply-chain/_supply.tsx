@@ -10,6 +10,7 @@ import {
   useTemplateContent,
   type Tone,
 } from "../accounting/_template";
+import { AppShell, designFor } from "../accounting/_designs";
 
 /*
  * Shared pieces for the Supply Chain showcase pages. Every preview has a
@@ -39,8 +40,26 @@ export function Field({ label, value, select = false, area = false }: { label: s
   );
 }
 
-function SupplyShell({ active, title, children }: { active: ToolKey; title: string; children: ReactNode }) {
+function SupplyShell({ path, active, title, children }: { path: string; active: ToolKey; title: string; children: ReactNode }) {
   const { t: common, tools } = useCommon();
+  const design = designFor(path);
+  if (design.shell !== 0) {
+    return (
+      <AppShell
+        variant={design.shell}
+        accent={design.accent}
+        moduleName={common("scModule")}
+        title={title}
+        nav={[
+          { key: "scOverview", label: common("tabOverview") },
+          ...flowSteps.map((key, i) => ({ key, label: `${i + 1}. ${tools[key]}` })),
+        ]}
+        active={active}
+      >
+        {children}
+      </AppShell>
+    );
+  }
   return (
     <div>
       <p className="text-[10.5px] text-muted-foreground">
@@ -116,7 +135,7 @@ export function SupplyPage({
           cols={[]}
           rows={[]}
           body={
-            <SupplyShell active={tool} title={content.ui.title}>
+            <SupplyShell path={path} active={tool} title={content.ui.title}>
               {render(content.ui)}
             </SupplyShell>
           }

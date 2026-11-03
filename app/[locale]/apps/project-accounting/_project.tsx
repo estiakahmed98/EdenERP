@@ -11,6 +11,7 @@ import {
   useTemplateContent,
   type Tone,
 } from "../accounting/_template";
+import { AppShell, designFor } from "../accounting/_designs";
 
 /*
  * Shared pieces for the Project Accounting showcase pages. Every page shows the
@@ -178,9 +179,49 @@ export type ProjectRender = {
   dialog?: { title: string; fields: ReactNode; wide?: boolean; noFooter?: boolean };
 };
 
-function ProjectBody({ active, render }: { active: ToolKey; render: ProjectRender }) {
+function ProjectBody({ path, active, render }: { path: string; active: ToolKey; render: ProjectRender }) {
   const { t: common, tools } = useCommon();
   const { main, dialog } = render;
+  const design = designFor(path);
+
+  const content = (
+    <div className={`mt-3 grid gap-4 ${dialog ? "lg:grid-cols-12" : ""}`}>
+      <div className={`min-w-0 space-y-3 ${dialog ? "lg:col-span-7" : ""}`}>{main}</div>
+      {dialog && (
+        <div className="order-first lg:order-none lg:col-span-5">
+          <div className="rounded-xl border border-border bg-card shadow-[0_20px_40px_-24px_oklch(0.3_0.08_257/0.45)]">
+            <div className="flex items-center justify-between px-4 pt-3.5">
+              <p className="text-[14px] font-semibold text-foreground">{dialog.title}</p>
+              <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
+            </div>
+            <div className={`grid gap-x-3 gap-y-2.5 px-4 py-3 ${dialog.wide ? "grid-cols-2" : ""}`}>{dialog.fields}</div>
+            {!dialog.noFooter && (
+              <div className="flex justify-end gap-2 px-4 pb-3.5 text-[11px] font-medium">
+                <span className="rounded-md border border-border bg-card px-2.5 py-1 text-primary">{common("cancel")}</span>
+                <span className="btn-gradient rounded-md px-2.5 py-1">{common("save")}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+
+  if (design.shell !== 0) {
+    return (
+      <AppShell
+        variant={design.shell}
+        accent={design.accent}
+        moduleName={common("pjModule")}
+        title={`${PROJECT_CODE} · ${PROJECT_NAME}`}
+        meta={<span className="rounded-full bg-emerald-600 px-1.5 py-0.5 text-[9.5px] font-semibold text-white">{common("active")}</span>}
+        nav={projectTabs.map((key) => ({ key, label: key === "pjOverview" ? common("tabOverview") : tools[key] }))}
+        active={active}
+      >
+        {content}
+      </AppShell>
+    );
+  }
 
   return (
     <div>
@@ -212,26 +253,7 @@ function ProjectBody({ active, render }: { active: ToolKey; render: ProjectRende
         ))}
       </div>
 
-      <div className={`mt-3 grid gap-4 ${dialog ? "lg:grid-cols-12" : ""}`}>
-        <div className={`min-w-0 space-y-3 ${dialog ? "lg:col-span-7" : ""}`}>{main}</div>
-        {dialog && (
-          <div className="order-first lg:order-none lg:col-span-5">
-            <div className="rounded-xl border border-border bg-card shadow-[0_20px_40px_-24px_oklch(0.3_0.08_257/0.45)]">
-              <div className="flex items-center justify-between px-4 pt-3.5">
-                <p className="text-[14px] font-semibold text-foreground">{dialog.title}</p>
-                <X className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
-              </div>
-              <div className={`grid gap-x-3 gap-y-2.5 px-4 py-3 ${dialog.wide ? "grid-cols-2" : ""}`}>{dialog.fields}</div>
-              {!dialog.noFooter && (
-                <div className="flex justify-end gap-2 px-4 pb-3.5 text-[11px] font-medium">
-                  <span className="rounded-md border border-border bg-card px-2.5 py-1 text-primary">{common("cancel")}</span>
-                  <span className="btn-gradient rounded-md px-2.5 py-1">{common("save")}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
+      {content}
     </div>
   );
 }
@@ -281,7 +303,7 @@ export function ProjectPage({
           content={content}
           cols={[]}
           rows={[]}
-          body={<ProjectBody active={tool} render={render(content.ui)} />}
+          body={<ProjectBody path={`/apps/project-accounting/${slug}`} active={tool} render={render(content.ui)} />}
         />
       }
     />

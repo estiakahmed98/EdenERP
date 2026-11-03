@@ -10,6 +10,7 @@ import {
   useTemplateContent,
   type Tone,
 } from "./accounting/_template";
+import { AppShell, designFor } from "./accounting/_designs";
 
 /*
  * Wrapper for the Inventory and Open Platform showcase pages. The preview has a
@@ -23,12 +24,14 @@ export function moduleMetadata(section: string, path: string): Promise<Metadata>
 }
 
 function ModuleShell({
+  path,
   moduleKey,
   tabs,
   active,
   title,
   children,
 }: {
+  path: string;
   moduleKey: string;
   tabs: ToolKey[];
   active: ToolKey;
@@ -36,6 +39,21 @@ function ModuleShell({
   children: ReactNode;
 }) {
   const { t: common, tools } = useCommon();
+  const design = designFor(path);
+  if (design.shell !== 0) {
+    return (
+      <AppShell
+        variant={design.shell}
+        accent={design.accent}
+        moduleName={common(moduleKey)}
+        title={title}
+        nav={tabs.map((key) => ({ key, label: tools[key] }))}
+        active={active}
+      >
+        {children}
+      </AppShell>
+    );
+  }
   return (
     <div>
       <p className="text-[10.5px] text-muted-foreground">
@@ -111,7 +129,7 @@ export function ModulePage({
           cols={[]}
           rows={[]}
           body={
-            <ModuleShell moduleKey={moduleKey} tabs={tabs} active={tool} title={content.ui.title}>
+            <ModuleShell path={path} moduleKey={moduleKey} tabs={tabs} active={tool} title={content.ui.title}>
               {render(content.ui)}
             </ModuleShell>
           }
