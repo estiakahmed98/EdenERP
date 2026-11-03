@@ -50,6 +50,13 @@ export const toolSlugs = {
   pjBoq: "/apps/project-accounting/boq",
   pjBillAllocations: "/apps/project-accounting/bill-allocations",
   pjPnl: "/apps/project-accounting/p-and-l",
+  /** Budget Management tools. */
+  bmOverview: "/apps/Finance/budget-management",
+  bmLines: "/apps/budget-management/lines",
+  bmRequisitions: "/apps/budget-management/requisitions",
+  bmVariance: "/apps/budget-management/variance",
+  bmApprovals: "/apps/budget-management/approvals",
+  bmRbrf: "/apps/budget-management/rbrf",
 } as const;
 
 export type ToolKey = keyof typeof toolSlugs;

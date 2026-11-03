@@ -7463,6 +7463,1160 @@
           "title": "Bring a finished project. We will build its P&L in the demo."
         }
       },
+      "bmOverview": {
+        "meta": {
+          "title": "Budget Management: Versions, Requisitions, Approval and Variance | Adon ERP",
+          "description": "Plan the year with versioned budgets, collect departmental requisitions, route them through four approvals and watch variance as you spend. Built for companies in Bangladesh.",
+          "keywords": [
+            "budget management software Bangladesh",
+            "annual budget software",
+            "departmental budget requisition",
+            "budget approval workflow",
+            "budget variance control",
+            "Adon ERP budget management"
+          ]
+        },
+        "hero": {
+          "title": "Budget management: plan the year, then hold the year to the plan",
+          "lead": "One budget per fiscal year, kept in versions. Departments send requisitions, the budget travels through four approvals, and variance shows how much of each line is already spent, before it is too late to act.",
+          "secondaryCta": "See how a budget is controlled"
+        },
+        "sample": {
+          "count": "1 active version",
+          "notes": [
+            "one budget, versioned",
+            "how much is already used",
+            "approval stage always visible"
+          ]
+        },
+        "ui": {
+          "total": "Total budget",
+          "actual": "Actual to date",
+          "remaining": "Remaining",
+          "utilisation": "74% of the budget used",
+          "pending": "Pending approvals",
+          "nextUp": "Next: Management",
+          "fiscal": "FY 2026 · v2",
+          "monthly": "Spend by month",
+          "elapsed": "Share of the year gone",
+          "byDept": "Utilisation by department",
+          "caption": "A partial preview of Budget Management in Adon ERP. Company, departments and figures are sample data."
+        },
+        "flow": {
+          "title": "A budget year, in three moves",
+          "intro": "The module is built around one cycle: build the budget, get it approved, and watch it as the year runs.",
+          "steps": [
+            {
+              "tag": "Build",
+              "question": "Lines by department",
+              "body": "Add budget lines for each department and category, as annual amounts or for a single month."
+            },
+            {
+              "tag": "Approve",
+              "question": "Four stages",
+              "body": "The budget goes through Finance, Compliance, Management and the CEO, one after the other, with a log of each decision."
+            },
+            {
+              "tag": "Control",
+              "question": "Variance as you spend",
+              "body": "Actual is compared with budget as the year runs, and a re-budget request is the formal way to change a line."
+            }
+          ],
+          "formTitle": "What the overview shows",
+          "form": [
+            {
+              "label": "Active version",
+              "body": "The budget in force, with its fiscal year and version number."
+            },
+            {
+              "label": "Total, actual and remaining",
+              "body": "The three numbers an owner asks for first."
+            },
+            {
+              "label": "Utilisation",
+              "body": "How much of the budget is used, as a share, with the stage the budget has reached."
+            },
+            {
+              "label": "By department",
+              "body": "A bar for each department, so the one near its limit stands out."
+            },
+            {
+              "label": "Pending approvals",
+              "body": "How many decisions are waiting on someone."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A budget sits on top of the books",
+          "intro": "It reads the chart of accounts for its categories, and the ledgers for its actuals.",
+          "groups": {
+            "before": "Before the budget",
+            "after": "Inside the budget",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "chartOfAccounts": "The accounts and categories budget lines use.",
+            "bmLines": "The budget, line by line.",
+            "bmRequisitions": "Departments ask to spend.",
+            "bmApprovals": "The route a budget travels.",
+            "bmRbrf": "The formal way to change a line.",
+            "bmVariance": "Budget against actual.",
+            "financialReports": "Budget against actual in your statements.",
+            "accountingHub": "Headline numbers at a glance."
+          }
+        },
+        "local": {
+          "title": "Budgets for companies that spend in many places",
+          "intro": "Factories, trading houses and groups have several departments, each with its own wishes. A budget is how the owner says no, politely and early.",
+          "points": [
+            {
+              "title": "Versions, not overwrites",
+              "body": "A new version keeps the old one, so you can see what changed."
+            },
+            {
+              "title": "Departments in one list",
+              "body": "Production, logistics, sales and administration side by side."
+            },
+            {
+              "title": "Four approvals",
+              "body": "Finance, Compliance, Management and the CEO, in that order."
+            },
+            {
+              "title": "A number for the owner",
+              "body": "Utilisation tells you in one figure how the year is going."
+            }
+          ],
+          "story": {
+            "title": "One year, from first draft to variance",
+            "intro": "A sample operating budget, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Nov",
+                "text": "Departments send their lines, and the budget is drafted as version 1."
+              },
+              {
+                "time": "Dec",
+                "text": "It is submitted and travels through the four approvals."
+              },
+              {
+                "time": "Jan",
+                "text": "Version 2 becomes the active budget."
+              },
+              {
+                "time": "Jun",
+                "text": "Requisitions are checked against the lines as spending begins."
+              },
+              {
+                "time": "Sep",
+                "text": "Utilisation is 74%, and IT is close to its limit."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use budget management",
+          "angles": {
+            "retail": "Store and category budgets, set before the season.",
+            "food-hospitality": "Outlet budgets for food, staff and rent.",
+            "real-estate": "Project and overhead budgets for developments.",
+            "consulting": "Budgets for practice costs and growth.",
+            "manufacturing": "Plant budgets by department and cost type.",
+            "health-fitness": "Clinic and club budgets by site.",
+            "trades": "Budgets for crews, vehicles and parts.",
+            "others": "Budgets by programme and funder."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about budget management",
+          "items": [
+            {
+              "q": "What is a budget version?",
+              "a": "A saved copy of the budget for a fiscal year, with a number such as v2. Only one version is active."
+            },
+            {
+              "q": "What is utilisation?",
+              "a": "The share of the total budget already spent."
+            },
+            {
+              "q": "Who approves a budget?",
+              "a": "It goes through Finance, Compliance, Management and the CEO, in that order."
+            },
+            {
+              "q": "How do departments ask for money?",
+              "a": "With requisitions, which are checked against the budget."
+            },
+            {
+              "q": "How do I change a line after approval?",
+              "a": "With a re-budget request (RBRF), which revises the line when approved."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample budget with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last year’s budget file. We will turn it into a versioned budget in the demo."
+        }
+      },
+      "bmLines": {
+        "meta": {
+          "title": "Budget Lines: Plan Every Department, Category by Category | Adon ERP",
+          "description": "Add budget lines by department and category, annual or by month, with notes. Built for companies in Bangladesh.",
+          "keywords": [
+            "budget lines by department",
+            "annual budget lines",
+            "monthly budget phasing",
+            "departmental budget Bangladesh",
+            "Adon ERP budget lines"
+          ]
+        },
+        "hero": {
+          "title": "Budget lines: every department, every category, one amount each",
+          "lead": "A budget line says how much a department may spend on one kind of cost. Put them in, annual or month by month, and the total is the budget.",
+          "secondaryCta": "See how a line is added"
+        },
+        "sample": {
+          "count": "8 lines",
+          "notes": [
+            "grouped by department",
+            "annual or one month",
+            "the total adds up for you"
+          ]
+        },
+        "ui": {
+          "colCategory": "Category",
+          "colDesc": "Description",
+          "colPeriod": "Period",
+          "colAmount": "Budget",
+          "annual": "Annual",
+          "monthly": "Monthly",
+          "addLine": "Add a line",
+          "total": "Total",
+          "caption": "A partial preview of Budget Lines in Adon ERP. Company, departments and figures are sample data."
+        },
+        "flow": {
+          "title": "A budget line, in three choices",
+          "intro": "Each line answers three questions: what kind of cost, how much, and when.",
+          "steps": [
+            {
+              "tag": "Category",
+              "question": "What kind of cost",
+              "body": "Pick a category, such as materials, utilities or marketing, or leave it as other."
+            },
+            {
+              "tag": "Amount",
+              "question": "How much",
+              "body": "The budget amount for the line, with a short description of what it covers."
+            },
+            {
+              "tag": "Period",
+              "question": "When",
+              "body": "Leave the month blank for an annual amount, or enter 1 to 12 for a single month."
+            }
+          ],
+          "formTitle": "What you fill in on a new line",
+          "form": [
+            {
+              "label": "Category",
+              "body": "Chosen from a list."
+            },
+            {
+              "label": "Description",
+              "body": "A plain note on what the line is for."
+            },
+            {
+              "label": "Budget amount",
+              "body": "The amount in taka."
+            },
+            {
+              "label": "Period month",
+              "body": "1 to 12, or blank for the whole year."
+            },
+            {
+              "label": "Notes",
+              "body": "Anything else the approvers should know."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Lines are the base of the whole budget",
+          "intro": "Everything else in the module either asks to spend against a line, compares a line with actuals, or changes a line.",
+          "groups": {
+            "before": "Before the lines",
+            "after": "What uses them",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "bmOverview": "The budget the lines belong to.",
+            "chartOfAccounts": "The accounts each category maps to.",
+            "bmRequisitions": "Requests to spend against a line.",
+            "bmVariance": "Each line against its actual.",
+            "bmRbrf": "The formal way to change a line.",
+            "financialReports": "Budget in your statements.",
+            "ledgers": "The actuals behind each line."
+          }
+        },
+        "local": {
+          "title": "Lines that match how departments think",
+          "intro": "A production head thinks in raw material and power, a sales head in fairs and field visits. Lines let each describe their year in their own terms.",
+          "points": [
+            {
+              "title": "Grouped by department",
+              "body": "Each department sees its own lines and its own total."
+            },
+            {
+              "title": "Annual or monthly",
+              "body": "Seasonal spend, like an Eid campaign, can sit in its own month."
+            },
+            {
+              "title": "Notes for the approver",
+              "body": "A line can carry the reason for the amount."
+            },
+            {
+              "title": "Totals that add up",
+              "body": "The department and company totals are worked out for you."
+            }
+          ],
+          "story": {
+            "title": "One line, from draft to approved",
+            "intro": "A sample software line, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Nov",
+                "text": "IT adds a line for ERP and licences, 30,00,000 taka, annual."
+              },
+              {
+                "time": "Nov",
+                "text": "Another line covers servers and laptops, due in July."
+              },
+              {
+                "time": "Dec",
+                "text": "The lines go forward with the budget for approval."
+              },
+              {
+                "time": "Jan",
+                "text": "Once approved, they become the limit for the year."
+              },
+              {
+                "time": "Sep",
+                "text": "Actuals are compared line by line in Variance."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use budget lines",
+          "angles": {
+            "retail": "Lines by category and season.",
+            "food-hospitality": "Lines by outlet, food cost and staff.",
+            "real-estate": "Lines by project and overhead.",
+            "consulting": "Lines by practice and cost type.",
+            "manufacturing": "Lines by plant, department and cost type.",
+            "health-fitness": "Lines by site and department.",
+            "trades": "Lines by crew and vehicle.",
+            "others": "Lines by programme."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about budget lines",
+          "items": [
+            {
+              "q": "What is a budget line?",
+              "a": "An amount planned for one category of cost in one department."
+            },
+            {
+              "q": "What do I need to fill in?",
+              "a": "A category, a description and an amount. The month and notes are optional."
+            },
+            {
+              "q": "Can a line be for one month?",
+              "a": "Yes. Enter a month from 1 to 12. Leave it blank for an annual line."
+            },
+            {
+              "q": "Can I change a line after approval?",
+              "a": "Through a re-budget request, which records the reason."
+            },
+            {
+              "q": "Where do the lines add up?",
+              "a": "On the overview and in Variance."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample budget with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring one department’s budget sheet. We will enter it as lines in the demo."
+        }
+      },
+      "bmRequisitions": {
+        "meta": {
+          "title": "Requisitions: Departments Ask, the Budget Answers | Adon ERP",
+          "description": "Departments raise opex and capex requisitions that move from draft to submitted to approved. Built for companies in Bangladesh.",
+          "keywords": [
+            "departmental requisition software",
+            "opex capex requisition",
+            "purchase requisition budget",
+            "spending request approval",
+            "Adon ERP requisitions"
+          ]
+        },
+        "hero": {
+          "title": "Requisitions: ask to spend before the money goes",
+          "lead": "A department writes down what it wants to buy, as an operating cost or as a capital item, and who prepared it. The request moves from draft to submitted to approved, and nothing is spent in between.",
+          "secondaryCta": "See how a requisition moves"
+        },
+        "sample": {
+          "count": "5 requisitions",
+          "notes": [
+            "draft, submitted, approved",
+            "opex or capex",
+            "the preparer on every card"
+          ]
+        },
+        "ui": {
+          "title": "Departmental requisitions",
+          "add": "Add requisition",
+          "colDraft": "Draft",
+          "colSubmitted": "Submitted",
+          "colApproved": "Approved",
+          "by": "by",
+          "caption": "A partial preview of Requisitions in Adon ERP. Company, departments and figures are sample data."
+        },
+        "flow": {
+          "title": "A requisition, in three columns",
+          "intro": "It starts as a draft, goes for decision, and ends as an approval to spend.",
+          "steps": [
+            {
+              "tag": "Draft",
+              "question": "Being written",
+              "body": "The department sets the type, who prepared it and the total, with notes."
+            },
+            {
+              "tag": "Submitted",
+              "question": "Waiting for a decision",
+              "body": "The requisition is submitted and checked against the budget line it would use."
+            },
+            {
+              "tag": "Approved",
+              "question": "Cleared to spend",
+              "body": "Once approved, the department can raise the order or the payment."
+            }
+          ],
+          "formTitle": "What you fill in on a new requisition",
+          "form": [
+            {
+              "label": "Type",
+              "body": "Opex for running costs, or capex for assets."
+            },
+            {
+              "label": "Prepared by",
+              "body": "The person writing the request."
+            },
+            {
+              "label": "Status",
+              "body": "Draft, submitted or approved."
+            },
+            {
+              "label": "Notes",
+              "body": "Why it is needed and what it covers."
+            },
+            {
+              "label": "Total",
+              "body": "The amount requested, as a sum of its lines."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Requisitions sit between the budget and the order",
+          "intro": "They read the lines to see what is left, and, once approved, they lead to a purchase.",
+          "groups": {
+            "before": "Before the requisition",
+            "after": "After the requisition",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "bmLines": "The line the spend would come out of.",
+            "bmOverview": "What is left in the budget.",
+            "bmApprovals": "The route a request travels.",
+            "purchaseOrders": "The order raised once approved.",
+            "bmVariance": "The effect on actuals.",
+            "financialReports": "Spending in your statements."
+          }
+        },
+        "local": {
+          "title": "Requisitions that keep spending honest",
+          "intro": "Money is often spent first and explained later. A requisition reverses that, which is exactly what an owner wants.",
+          "points": [
+            {
+              "title": "Opex and capex apart",
+              "body": "Running costs and asset purchases are told apart from the start."
+            },
+            {
+              "title": "A name on each",
+              "body": "Every requisition says who prepared it."
+            },
+            {
+              "title": "Seen in columns",
+              "body": "Draft, submitted and approved, so nothing is lost in an inbox."
+            },
+            {
+              "title": "Against the line",
+              "body": "A request is checked against what is left in its budget line."
+            }
+          ],
+          "story": {
+            "title": "One requisition, from need to purchase order",
+            "intro": "A sample forklift request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "2 Jun",
+                "text": "Logistics drafts a capex requisition for a forklift, 22,00,000 taka."
+              },
+              {
+                "time": "3 Jun",
+                "text": "It is submitted, and the budget line is checked."
+              },
+              {
+                "time": "10 Jun",
+                "text": "It moves through approval."
+              },
+              {
+                "time": "12 Jun",
+                "text": "It is approved."
+              },
+              {
+                "time": "14 Jun",
+                "text": "A purchase order is raised against it."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use requisitions",
+          "angles": {
+            "retail": "Store fixtures and stock requests.",
+            "food-hospitality": "Kitchen equipment and supplies.",
+            "real-estate": "Site equipment and materials.",
+            "consulting": "Software and equipment requests.",
+            "manufacturing": "Spares, tooling and machinery requests.",
+            "health-fitness": "Equipment and supply requests.",
+            "trades": "Tools and vehicle requests.",
+            "others": "Programme purchases."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about requisitions",
+          "items": [
+            {
+              "q": "What is a requisition?",
+              "a": "A request to spend, raised by a department before the spending happens."
+            },
+            {
+              "q": "What is the difference between opex and capex?",
+              "a": "Opex is running cost. Capex is the purchase of assets."
+            },
+            {
+              "q": "What are the statuses?",
+              "a": "Draft, submitted and approved."
+            },
+            {
+              "q": "Does a requisition spend money?",
+              "a": "No. It asks permission. The purchase follows once it is approved."
+            },
+            {
+              "q": "Can I see who prepared it?",
+              "a": "Yes. Each requisition names the person."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample budget with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring three recent spending requests. We will run them through requisitions in the demo."
+        }
+      },
+      "bmVariance": {
+        "meta": {
+          "title": "Budget Variance: See How Much of Each Category Is Used | Adon ERP",
+          "description": "Compare budget with actual by category, see variance in taka and percent used, and spot overspend early. Built for companies in Bangladesh.",
+          "keywords": [
+            "budget variance report",
+            "budget vs actual Bangladesh",
+            "variance analysis",
+            "budget utilisation",
+            "Adon ERP variance"
+          ]
+        },
+        "hero": {
+          "title": "Variance: where the budget is tight, before it is gone",
+          "lead": "Each category shows a bar for how much of its budget is used, the money left, and the share spent. Amber means close to the limit, red means past it.",
+          "secondaryCta": "See how variance is read"
+        },
+        "sample": {
+          "count": "8 categories",
+          "notes": [
+            "a bar for each category",
+            "money left, in taka",
+            "amber as it nears the limit"
+          ]
+        },
+        "ui": {
+          "title": "Budget vs actual",
+          "asOf": "As of this month",
+          "budget": "Budget",
+          "actual": "Actual",
+          "variance": "Variance (left)",
+          "composition": "Budget composition",
+          "others": "Other categories",
+          "elapsed": "Share of the year gone",
+          "caption": "A partial preview of Variance in Adon ERP. Company, categories and figures are sample data."
+        },
+        "flow": {
+          "title": "Reading variance, in three states",
+          "intro": "Each bar shows how much of the category is used. A thin marker shows how much of the year has gone, so you can tell whether the spend is ahead of the calendar.",
+          "steps": [
+            {
+              "tag": "On track",
+              "question": "Within budget",
+              "body": "Less than 90% used. There is room, and nothing to do."
+            },
+            {
+              "tag": "Near the limit",
+              "question": "Amber",
+              "body": "Ninety per cent or more used. Time to look at what is still to be spent."
+            },
+            {
+              "tag": "Over budget",
+              "question": "Red",
+              "body": "More than the budget is spent. A re-budget request or a cut is needed."
+            }
+          ],
+          "formTitle": "What the page shows",
+          "form": [
+            {
+              "label": "Composition ring",
+              "body": "How the budget is split across the biggest categories."
+            },
+            {
+              "label": "Category bars",
+              "body": "Budget used by category, with a marker for the share of the year gone."
+            },
+            {
+              "label": "Variance",
+              "body": "Budget less actual, in taka."
+            },
+            {
+              "label": "Percent used",
+              "body": "Shown at the end of each bar."
+            },
+            {
+              "label": "Totals",
+              "body": "Budget, actual and variance for the whole budget."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Variance compares the plan with the books",
+          "intro": "It holds no figures of its own. It lines up the budget lines with what the ledgers show.",
+          "groups": {
+            "before": "What feeds it",
+            "after": "What to do about it",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "bmLines": "The Budget column.",
+            "bmRequisitions": "Spending that is asked for.",
+            "bmRbrf": "Change a line formally.",
+            "bmApprovals": "Approve the change.",
+            "financialReports": "Budget against actual in statements.",
+            "accountingHub": "Headline utilisation.",
+            "ledgers": "The actuals, account by account."
+          }
+        },
+        "local": {
+          "title": "Variance for owners who want to know now, not at year end",
+          "intro": "The usual surprise is a category that quietly used its whole year in nine months. A bar for each one makes it hard to miss.",
+          "points": [
+            {
+              "title": "Close to the limit, flagged",
+              "body": "Ninety per cent and above turns amber."
+            },
+            {
+              "title": "Money left, in taka",
+              "body": "The figure you can actually still spend."
+            },
+            {
+              "title": "Totals for the company",
+              "body": "Budget, actual and variance on one line."
+            },
+            {
+              "title": "From the same books",
+              "body": "Actuals come from the ledgers, not a separate sheet."
+            }
+          ],
+          "story": {
+            "title": "One quarter end, from bars to decision",
+            "intro": "A sample review, the way it usually runs.",
+            "steps": [
+              {
+                "time": "30 Sep",
+                "text": "The finance manager opens Variance."
+              },
+              {
+                "time": "30 Sep",
+                "text": "Software & IT shows 95% used, in amber."
+              },
+              {
+                "time": "30 Sep",
+                "text": "Raw materials is at 70%, with room to spare."
+              },
+              {
+                "time": "1 Oct",
+                "text": "IT raises a re-budget request."
+              },
+              {
+                "time": "5 Oct",
+                "text": "Management approves it."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use variance",
+          "angles": {
+            "retail": "Category spend against the season plan.",
+            "food-hospitality": "Food cost and staff cost against budget.",
+            "real-estate": "Project cost against the development budget.",
+            "consulting": "Practice cost against the plan.",
+            "manufacturing": "Plant cost by cost type.",
+            "health-fitness": "Site cost against budget.",
+            "trades": "Job cost against the plan.",
+            "others": "Programme spend against funded budget."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about variance",
+          "items": [
+            {
+              "q": "What is variance?",
+              "a": "Budget less actual. A positive number is money still available."
+            },
+            {
+              "q": "What do the colours mean?",
+              "a": "Amber is 90% or more used. Red is over budget."
+            },
+            {
+              "q": "Where do actuals come from?",
+              "a": "From the ledgers, so they match your statements."
+            },
+            {
+              "q": "Can I see variance by department?",
+              "a": "Yes. The overview shows utilisation by department."
+            },
+            {
+              "q": "What if a category is over budget?",
+              "a": "Raise a re-budget request, or cut the spend."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample budget with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring this year’s budget and the latest actuals. We will read the variance in the demo."
+        }
+      },
+      "bmApprovals": {
+        "meta": {
+          "title": "Budget Approvals: A Four-Stage Route With a Decision Log | Adon ERP",
+          "description": "Route a budget through Finance, Compliance, Management and the CEO, with approve, return and reject at each stage. Built for companies in Bangladesh.",
+          "keywords": [
+            "budget approval workflow",
+            "multi-stage approval",
+            "approval decision log",
+            "budget sign-off",
+            "Adon ERP budget approvals"
+          ]
+        },
+        "hero": {
+          "title": "Approvals: four signatures, in order, on the record",
+          "lead": "A submitted budget goes to Finance, then Compliance, then Management, then the CEO. Whoever is waiting can approve, return or reject, and every decision is logged with who and when.",
+          "secondaryCta": "See how the route works"
+        },
+        "sample": {
+          "count": "4 stages",
+          "notes": [
+            "one stage at a time",
+            "approve, return or reject",
+            "the activity feed keeps every step"
+          ]
+        },
+        "ui": {
+          "awaiting": "awaiting",
+          "queued": "queued",
+          "approve": "Approve",
+          "ret": "Return",
+          "reject": "Reject",
+          "current": "Current stage",
+          "waitingFor": "Waiting for a decision from",
+          "feed": "Activity",
+          "submittedMsg": "submitted the budget for approval",
+          "approvedMsg": "approved the budget at",
+          "caption": "A partial preview of Approvals in Adon ERP. Company, approvers and dates are sample data."
+        },
+        "flow": {
+          "title": "How the route works, in three decisions",
+          "intro": "Only one stage is awaiting at a time. The ones after it are queued, and the ones before it are done.",
+          "steps": [
+            {
+              "tag": "Approve",
+              "question": "It moves on",
+              "body": "The stage is marked approved, with the name and date, and the next stage becomes the one awaiting."
+            },
+            {
+              "tag": "Return",
+              "question": "Sent back",
+              "body": "The approver returns it with a comment, and the preparer reworks it."
+            },
+            {
+              "tag": "Reject",
+              "question": "Stopped",
+              "body": "The budget is rejected at that stage, with the reason in the activity feed."
+            }
+          ],
+          "formTitle": "What you see on the page",
+          "form": [
+            {
+              "label": "Route",
+              "body": "The four stages in a row, with the one awaiting highlighted."
+            },
+            {
+              "label": "Buttons",
+              "body": "Approve, Return and Reject, shown for the stage that is waiting."
+            },
+            {
+              "label": "Activity feed",
+              "body": "Who did what, and when, newest first."
+            },
+            {
+              "label": "Queued stages",
+              "body": "Stages after the current one cannot act yet."
+            },
+            {
+              "label": "Done stages",
+              "body": "Show the date they were approved."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Approvals protect the numbers the rest of the module uses",
+          "intro": "A budget only becomes the active one when the last stage approves.",
+          "groups": {
+            "before": "Before approval",
+            "after": "After approval",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "bmRequisitions": "Requests that travel the same route.",
+            "bmLines": "The lines being approved.",
+            "bmOverview": "The active version, once approved.",
+            "bmRbrf": "Changes after approval.",
+            "bmVariance": "Control against the approved budget.",
+            "financialReports": "The approved budget in reports."
+          }
+        },
+        "local": {
+          "title": "Approvals the way Bangladeshi groups sign off",
+          "intro": "A budget often needs the finance head, the compliance officer, the management committee and the chief executive. The order matters, and so does the record.",
+          "points": [
+            {
+              "title": "Fixed order",
+              "body": "Finance, Compliance, Management, then the CEO."
+            },
+            {
+              "title": "A name and a date",
+              "body": "Every approval carries both, in the log."
+            },
+            {
+              "title": "Return with comments",
+              "body": "A budget can go back for work without being rejected."
+            },
+            {
+              "title": "Seen by everyone",
+              "body": "The state of each stage is visible, so nobody has to ask."
+            }
+          ],
+          "story": {
+            "title": "One budget, through four stages",
+            "intro": "A sample submission, the way it usually runs.",
+            "steps": [
+              {
+                "time": "3 Nov",
+                "text": "Finance approves the submitted budget."
+              },
+              {
+                "time": "4 Nov",
+                "text": "Compliance checks and approves."
+              },
+              {
+                "time": "5 Nov",
+                "text": "Management is now awaiting a decision."
+              },
+              {
+                "time": "6 Nov",
+                "text": "Management approves, and the CEO is awaiting."
+              },
+              {
+                "time": "7 Nov",
+                "text": "The CEO approves, and the version becomes active."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use approvals",
+          "angles": {
+            "retail": "Season budgets signed off by management.",
+            "food-hospitality": "Outlet budgets approved by the owner.",
+            "real-estate": "Development budgets approved in stages.",
+            "consulting": "Firm budgets approved by partners.",
+            "manufacturing": "Plant budgets approved by the board.",
+            "health-fitness": "Clinic budgets approved by management.",
+            "trades": "Company budgets approved by the owner.",
+            "others": "Programme budgets approved by trustees."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about approvals",
+          "items": [
+            {
+              "q": "Who approves a budget?",
+              "a": "Finance, Compliance, Management and the CEO, in that order."
+            },
+            {
+              "q": "What can an approver do?",
+              "a": "Approve, return or reject."
+            },
+            {
+              "q": "What does return mean?",
+              "a": "The budget goes back to the preparer for changes."
+            },
+            {
+              "q": "Can a later stage approve first?",
+              "a": "No. Later stages stay queued until the earlier one approves."
+            },
+            {
+              "q": "Is there a record?",
+              "a": "Yes. The decision log shows the stage, decision, person, date and comments."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample budget with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your approval policy. We will set up the route in the demo."
+        }
+      },
+      "bmRbrf": {
+        "meta": {
+          "title": "RBRF: Re-Budget Requests With a Reason and an Approval | Adon ERP",
+          "description": "Propose a new amount for a budget line with a justification, and revise the line only when the request is approved. Built for companies in Bangladesh.",
+          "keywords": [
+            "re-budget request",
+            "budget revision workflow",
+            "RBRF",
+            "budget amendment",
+            "Adon ERP RBRF"
+          ]
+        },
+        "hero": {
+          "title": "RBRF: change a budget line, with the reason in writing",
+          "lead": "When a line turns out wrong, pick it, propose a new amount and say why. The request is approved or returned, and only on approval is the line revised, so the budget never changes quietly.",
+          "secondaryCta": "See how a re-budget works"
+        },
+        "sample": {
+          "count": "3 requests",
+          "notes": [
+            "before and after as two bars",
+            "a reason on every request",
+            "revised only when approved"
+          ]
+        },
+        "ui": {
+          "add": "New RBRF",
+          "note": "A formal re-budget: pick a line and propose a new amount with justification. On approval the line is revised.",
+          "before": "Before",
+          "after": "After",
+          "approve": "Approve",
+          "ret": "Return",
+          "pending": "pending",
+          "approved": "approved",
+          "returned": "returned",
+          "caption": "A partial preview of RBRF in Adon ERP. Company, lines and figures are sample data."
+        },
+        "flow": {
+          "title": "A re-budget request, in three steps",
+          "intro": "It is deliberately a little formal. Changing an approved number should take a sentence of explanation.",
+          "steps": [
+            {
+              "tag": "Propose",
+              "question": "A new amount",
+              "body": "Pick the budget line, enter the new amount and write the justification."
+            },
+            {
+              "tag": "Decide",
+              "question": "Approved or returned",
+              "body": "The request is approved, or returned with a comment for more work."
+            },
+            {
+              "tag": "Revise",
+              "question": "Only on approval",
+              "body": "When it is approved, the line is revised. Until then, the old amount stands."
+            }
+          ],
+          "formTitle": "What each request holds",
+          "form": [
+            {
+              "label": "The line",
+              "body": "The department and category being changed."
+            },
+            {
+              "label": "Before and after",
+              "body": "Two bars, the old amount and the new one, with the change beneath them."
+            },
+            {
+              "label": "Reason",
+              "body": "The justification, in the preparer’s words."
+            },
+            {
+              "label": "Prepared by",
+              "body": "Who asked for the change."
+            },
+            {
+              "label": "Status",
+              "body": "Pending, approved or returned."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A re-budget links variance to approval",
+          "intro": "It is usually raised because Variance showed a line running out, and it goes through the same approval.",
+          "groups": {
+            "before": "Before the request",
+            "after": "After the request",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "bmLines": "The line being revised.",
+            "bmVariance": "Shows the line running out.",
+            "bmApprovals": "The route the request takes.",
+            "bmOverview": "The revised totals.",
+            "financialReports": "The revised budget in reports.",
+            "accountingHub": "Headline numbers after the change."
+          }
+        },
+        "local": {
+          "title": "Re-budgeting the way companies actually need to",
+          "intro": "Prices move and plans change in the middle of the year. A formal way to change a line is better than a quiet spreadsheet edit.",
+          "points": [
+            {
+              "title": "The old amount stays visible",
+              "body": "Before and after are shown together."
+            },
+            {
+              "title": "A reason is required",
+              "body": "Every request carries a justification."
+            },
+            {
+              "title": "Approved before it counts",
+              "body": "The line does not change until it is approved."
+            },
+            {
+              "title": "A history of changes",
+              "body": "Each request stays in the list, whatever happened to it."
+            }
+          ],
+          "story": {
+            "title": "One request, from overrun to revised line",
+            "intro": "A sample software re-budget, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Oct",
+                "text": "Variance shows software at 95% used."
+              },
+              {
+                "time": "2 Oct",
+                "text": "IT raises an RBRF from 12,00,000 to 15,50,000."
+              },
+              {
+                "time": "2 Oct",
+                "text": "The reason is added: seats for new plant users."
+              },
+              {
+                "time": "5 Oct",
+                "text": "The request is approved."
+              },
+              {
+                "time": "5 Oct",
+                "text": "The line is revised, and the totals update."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use RBRF",
+          "angles": {
+            "retail": "Seasonal lines revised after a poor or strong month.",
+            "food-hospitality": "Food and staff lines revised as prices move.",
+            "real-estate": "Project lines revised as scope changes.",
+            "consulting": "Practice lines revised as clients change.",
+            "manufacturing": "Plant lines revised as orders change.",
+            "health-fitness": "Clinic lines revised as demand changes.",
+            "trades": "Job lines revised as costs move.",
+            "others": "Programme lines revised as funding changes."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about RBRF",
+          "items": [
+            {
+              "q": "What is an RBRF?",
+              "a": "A re-budget request: a formal proposal to change a budget line, with a justification."
+            },
+            {
+              "q": "When does the line change?",
+              "a": "Only when the request is approved."
+            },
+            {
+              "q": "What if it is returned?",
+              "a": "The preparer reworks it and submits again. The old amount stands meanwhile."
+            },
+            {
+              "q": "Why not just edit the line?",
+              "a": "A request keeps the old amount, the new amount and the reason on record."
+            },
+            {
+              "q": "Who can raise one?",
+              "a": "Anyone who prepares a department’s budget."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample budget with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a line that has run out. We will re-budget it in the demo."
+        }
+      },
       "common": {
         "bookDemo": "Book a demo",
         "onboardingNote": "Now onboarding companies in Dhaka.",
@@ -7482,6 +8636,13 @@
         "backToList": "← Back to list",
         "tabOverview": "Overview",
         "exploreProject": "Explore Project Accounting",
+        "exploreBudget": "Explore Budget Management",
+        "stDraft": "Draft",
+        "stSubmitted": "Submitted",
+        "stApproved": "Approved",
+        "stActive": "Active",
+        "activeVersion": "Active version",
+        "submitted": "submitted",
         "tools": {
           "accountingHub": "Accounting Hub",
           "chartOfAccounts": "Chart of Accounts",
@@ -7520,7 +8681,13 @@
           "pjMilestones": "Milestones",
           "pjBoq": "BOQ",
           "pjBillAllocations": "Bill Allocations",
-          "pjPnl": "P&L"
+          "pjPnl": "P&L",
+          "bmOverview": "Budget Management",
+          "bmLines": "Lines",
+          "bmRequisitions": "Requisitions",
+          "bmVariance": "Variance",
+          "bmApprovals": "Approvals",
+          "bmRbrf": "RBRF"
         },
         "industryGroups": {
           "retail": "Retail",
