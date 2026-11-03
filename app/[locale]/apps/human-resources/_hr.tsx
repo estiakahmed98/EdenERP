@@ -48,6 +48,8 @@ export const hrGroups = {
   crPromoG: ["crPromotions", "crClaims", "crRebates"],
   crVanG: ["crVans", "crTrips", "crVanSales", "crVanStock"],
   crInsightsG: ["crDashboard", "crTargets", "crForecast", "crRelationships", "crScorecard"],
+  tp: ["tpVehicles", "tpTrips", "tpFuel", "tpMaint"],
+  an: ["anExec", "anFinancial", "anHr", "anDemand", "anExport"],
 } satisfies Record<string, ToolKey[]>;
 
 type Group = keyof typeof hrGroups;
@@ -75,6 +77,8 @@ const groupMeta: Record<Group, { moduleKey: string; exploreKey: string; exploreH
   crPromoG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
   crVanG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
   crInsightsG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  tp: { moduleKey: "tpModule", exploreKey: "exploreTp", exploreHref: "/apps/transport-pool/transport-pool", appPrefix: "Transport Pool" },
+  an: { moduleKey: "anModule", exploreKey: "exploreAn", exploreHref: "/apps/analytics/bi-analytics-reporting", appPrefix: "BI Analytics" },
 };
 
 /* ------------------------------------------------------------------ */

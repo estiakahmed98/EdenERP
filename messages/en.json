@@ -11621,6 +11621,10 @@
         "crModule": "Sales & CRM",
         "exploreTf": "Explore Trade Finance",
         "exploreCrm": "Explore Sales & CRM",
+        "tpModule": "Transport Pool",
+        "anModule": "BI Analytics",
+        "exploreTp": "Explore Transport Pool",
+        "exploreAn": "Explore BI Analytics",
         "crGroups": {"crPipelineG": "Pipeline", "crActivitiesG": "Activities", "crOrdersG": "Orders", "crAccountsG": "Accounts", "crDistributionG": "Distribution", "crFinanceG": "Finance", "crEngageG": "Engage & AI", "crDmsG": "DMS", "crPromoG": "Trade Promo", "crVanG": "Van Sales", "crInsightsG": "Insights"},
         "stDraft": "Draft",
         "stSubmitted": "Submitted",
@@ -11776,7 +11780,18 @@
           "crTargets": "Targets",
           "crForecast": "Forecast",
           "crRelationships": "Relationships",
-          "crScorecard": "AM Scorecard"
+          "crScorecard": "AM Scorecard",
+          "tpHub": "Transport Pool",
+          "anHub": "BI Analytics",
+          "tpVehicles": "Vehicles",
+          "tpTrips": "Trips",
+          "tpFuel": "Fuel Log",
+          "tpMaint": "Maintenance",
+          "anExec": "Executive Dashboard",
+          "anFinancial": "Financial Reports",
+          "anHr": "HR & Payroll",
+          "anDemand": "Demand Forecast",
+          "anExport": "Export / Takeout"
         },
         "industryGroups": {
           "retail": "Retail",
@@ -28596,6 +28611,1756 @@
         "closing": {
           "title": "Tell us how you review account managers. We will build the scorecard in the demo."
         }
+      },
+      "tpVehiclesPage": {
+        "meta": {
+          "title": "Fleet Register: Vehicles, Odometers and Document Expiry | Adon ERP Transport Pool",
+          "description": "Keep every owned and rented vehicle with plate, type, odometer and driver, and the tax token, fitness, route permit and insurance dates that keep it on the road. Built for companies in Bangladesh.",
+          "keywords": [
+            "fleet management software Bangladesh",
+            "vehicle register",
+            "tax token fitness expiry",
+            "transport pool",
+            "Adon ERP vehicles"
+          ]
+        },
+        "hero": {
+          "title": "Vehicles: every truck, van and car, and the papers that keep it legal",
+          "lead": "Owned and rented vehicles sit in one register with plate, type, odometer and driver. Tax token, fitness, route permit and insurance dates are kept, and anything due in 30 days is flagged.",
+          "secondaryCta": "See the fleet"
+        },
+        "sample": {
+          "count": "7 vehicles",
+          "notes": [
+            "the fleet in four numbers",
+            "owned and rented",
+            "papers due or expired"
+          ]
+        },
+        "ui": {
+          "title": "Vehicles",
+          "active": "Active vehicles",
+          "owned": "Owned",
+          "rented": "2 rented",
+          "docsDue": "Papers due ≤ 30 days",
+          "docsExpired": "Papers expired",
+          "thCode": "Code",
+          "thVehicle": "Vehicle",
+          "thType": "Type",
+          "thOdo": "Odometer",
+          "thDocs": "Papers",
+          "rentedTag": "Rented",
+          "tTruck": "Truck",
+          "tVan": "Covered van",
+          "tPickup": "Pickup",
+          "tMicrobus": "Microbus",
+          "dOk": "In date",
+          "dDue": "Due",
+          "dExpired": "Expired",
+          "caption": "A partial preview of Vehicles in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A vehicle record, in three parts",
+          "intro": "What it is, where it stands, what it needs.",
+          "steps": [
+            {
+              "tag": "Identity",
+              "question": "Plate and type",
+              "body": "Make, model, plate, type and whether owned or rented."
+            },
+            {
+              "tag": "Reading",
+              "question": "Odometer",
+              "body": "Updated by every trip, so service and fuel use are measured."
+            },
+            {
+              "tag": "Papers",
+              "question": "Expiry dates",
+              "body": "Tax token, fitness, route permit and insurance, each with a reminder."
+            }
+          ],
+          "formTitle": "What you fill in for a vehicle",
+          "form": [
+            {
+              "label": "Plate and model",
+              "body": "As on the registration."
+            },
+            {
+              "label": "Type and capacity",
+              "body": "Truck, van, pickup, microbus."
+            },
+            {
+              "label": "Owner",
+              "body": "Owned, or rented from whom."
+            },
+            {
+              "label": "Papers",
+              "body": "Each with its expiry date."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The register is the base of the transport pool",
+          "intro": "Trips, fuel and maintenance all point at a vehicle.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "fixedAssetRegister": "Cost and depreciation of each vehicle.",
+            "hrEmployees": "Drivers as employees.",
+            "tpTrips": "Trips with odometer readings.",
+            "tpFuel": "Fills and km per litre.",
+            "tpMaint": "Services and renewals.",
+            "tpHub": "The Transport Pool overview.",
+            "anExec": "The company on one page."
+          }
+        },
+        "local": {
+          "title": "Fleets the way companies here run them",
+          "intro": "A few owned trucks, a staff microbus, and rented vehicles for busy weeks.",
+          "points": [
+            {
+              "title": "Owned and rented",
+              "body": "In one register."
+            },
+            {
+              "title": "Papers in date",
+              "body": "No fines at a checkpoint."
+            },
+            {
+              "title": "Odometer from trips",
+              "body": "Not a guess."
+            },
+            {
+              "title": "Driver on record",
+              "body": "Who has which vehicle."
+            }
+          ],
+          "story": {
+            "title": "One fitness renewal, not missed",
+            "intro": "A sample reminder, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Nov",
+                "text": "VEH-002 shows fitness due in 18 days."
+              },
+              {
+                "time": "2 Nov",
+                "text": "The transport officer books the test."
+              },
+              {
+                "time": "10 Nov",
+                "text": "The vehicle passes."
+              },
+              {
+                "time": "10 Nov",
+                "text": "The new expiry date is entered."
+              },
+              {
+                "time": "10 Nov",
+                "text": "The flag clears."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the fleet register",
+          "angles": {
+            "retail": "Delivery vans for stores.",
+            "food-hospitality": "Vans for catering.",
+            "real-estate": "Trucks for sites.",
+            "consulting": "Cars for client visits.",
+            "manufacturing": "Trucks, pickups and staff buses.",
+            "health-fitness": "Ambulances and staff vans.",
+            "trades": "Service vans.",
+            "others": "Field vehicles."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about vehicles",
+          "items": [
+            {
+              "q": "Can rented vehicles be added?",
+              "a": "Yes, with the owner."
+            },
+            {
+              "q": "How is the odometer updated?",
+              "a": "From trips, or by hand."
+            },
+            {
+              "q": "Which papers are tracked?",
+              "a": "Tax token, fitness, route permit, insurance and any you add."
+            },
+            {
+              "q": "Is a reminder sent?",
+              "a": "Yes, before each expiry."
+            },
+            {
+              "q": "Is it linked to fixed assets?",
+              "a": "Yes, for owned vehicles."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your vehicle list and their papers. We will set up the register in the demo."
+        }
+      },
+      "tpTripsPage": {
+        "meta": {
+          "title": "Vehicle Trip Log: Odometer-Driven Trips by Driver and Purpose | Adon ERP Transport Pool",
+          "description": "Log every trip with vehicle, driver, from, to and purpose, with odometer out and in, so distance is measured and charged to the right department or project. Built for companies in Bangladesh.",
+          "keywords": [
+            "vehicle trip log",
+            "odometer log",
+            "transport management Bangladesh",
+            "fleet trips",
+            "Adon ERP trips"
+          ]
+        },
+        "hero": {
+          "title": "Trips: where every vehicle went, how far, and for what",
+          "lead": "Each trip has a vehicle, a driver, a start, an end and a purpose. The odometer is read going out and coming back, so the distance is measured and the vehicle's reading stays right.",
+          "secondaryCta": "See the trip log"
+        },
+        "sample": {
+          "count": "4 trips",
+          "notes": [
+            "one trip still out",
+            "from and to",
+            "distance measured"
+          ]
+        },
+        "ui": {
+          "title": "Trips",
+          "listTitle": "Trip log",
+          "newTrip": "+ New trip",
+          "outAt": "out at",
+          "sOut": "Ongoing",
+          "sDone": "Completed",
+          "pDelivery": "Delivery",
+          "pStaff": "Staff transport",
+          "pExport": "Export to port",
+          "pOffice": "Office errand",
+          "caption": "A partial preview of Trips in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A trip, in three readings",
+          "intro": "Out, back, charged.",
+          "steps": [
+            {
+              "tag": "Out",
+              "question": "Leaving",
+              "body": "Vehicle, driver, destination, purpose and odometer out."
+            },
+            {
+              "tag": "Back",
+              "question": "Returning",
+              "body": "Odometer in; the distance and the vehicle's reading update."
+            },
+            {
+              "tag": "Charged",
+              "question": "To someone",
+              "body": "The department, project or delivery it was for."
+            }
+          ],
+          "formTitle": "What a trip records",
+          "form": [
+            {
+              "label": "Vehicle and driver",
+              "body": "Who and what."
+            },
+            {
+              "label": "From and to",
+              "body": "Where."
+            },
+            {
+              "label": "Purpose",
+              "body": "Delivery, staff, export, errand."
+            },
+            {
+              "label": "Odometer",
+              "body": "Out and in."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Trips move the odometer that everything else reads",
+          "intro": "Fuel and service are measured from it.",
+          "groups": {
+            "before": "Uses",
+            "after": "Feeds",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "tpVehicles": "The fleet register.",
+            "hrEmployees": "Drivers.",
+            "tpFuel": "Fills and km per litre.",
+            "deliveryChallans": "Deliveries the trip carried.",
+            "tpHub": "The Transport Pool overview.",
+            "pjJobCost": "Transport charged to projects."
+          }
+        },
+        "local": {
+          "title": "Trips the way vehicles here are used",
+          "intro": "Deliveries to buyers, staff transport and runs to the port, often on the same day.",
+          "points": [
+            {
+              "title": "Measured",
+              "body": "Odometer, not memory."
+            },
+            {
+              "title": "Charged fairly",
+              "body": "To the right department."
+            },
+            {
+              "title": "Out vehicles",
+              "body": "Visible until back."
+            },
+            {
+              "title": "Driver history",
+              "body": "Who drove what."
+            }
+          ],
+          "story": {
+            "title": "One delivery trip",
+            "intro": "A sample trip, the way it usually runs.",
+            "steps": [
+              {
+                "time": "08:00",
+                "text": "VEH-001 leaves at 61,148 km."
+              },
+              {
+                "time": "10:30",
+                "text": "Goods delivered at Ashulia."
+              },
+              {
+                "time": "13:00",
+                "text": "It returns at 61,200 km."
+              },
+              {
+                "time": "13:00",
+                "text": "52 km is recorded."
+              },
+              {
+                "time": "Month end",
+                "text": "The trip is charged to Sales."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use trip logs",
+          "angles": {
+            "retail": "Store deliveries.",
+            "food-hospitality": "Catering deliveries.",
+            "real-estate": "Site runs.",
+            "consulting": "Client visits.",
+            "manufacturing": "Deliveries and staff transport.",
+            "health-fitness": "Patient and staff transport.",
+            "trades": "Service calls.",
+            "others": "Field trips."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about trips",
+          "items": [
+            {
+              "q": "Is the odometer required?",
+              "a": "Out and in, so distance is measured."
+            },
+            {
+              "q": "Can trips be charged to projects?",
+              "a": "Yes."
+            },
+            {
+              "q": "Can a driver start a trip on a phone?",
+              "a": "Yes."
+            },
+            {
+              "q": "Are ongoing trips shown?",
+              "a": "Until the vehicle is back."
+            },
+            {
+              "q": "Does the vehicle's reading update?",
+              "a": "Yes, at trip end."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a week of trip slips. We will log them in the demo."
+        }
+      },
+      "tpFuelPage": {
+        "meta": {
+          "title": "Fuel Log: Fills, Cost and Kilometres per Litre | Adon ERP Transport Pool",
+          "description": "Record every fuel fill with litres, rate, amount and odometer, work out kilometres per litre from fill to fill, and flag vehicles using more than normal. Built for companies in Bangladesh.",
+          "keywords": [
+            "fuel log software",
+            "km per litre",
+            "fuel cost tracking Bangladesh",
+            "fleet fuel",
+            "Adon ERP fuel log"
+          ]
+        },
+        "hero": {
+          "title": "Fuel log: what each vehicle burns, and which one is burning too much",
+          "lead": "Each fill records litres, rate and the odometer. Kilometres per litre is worked out from fill to fill, and a vehicle that drops below its normal range is flagged.",
+          "secondaryCta": "See the fuel log"
+        },
+        "sample": {
+          "count": "3 vehicles",
+          "notes": [
+            "km per litre over time",
+            "a drop flagged",
+            "recent fills"
+          ]
+        },
+        "ui": {
+          "title": "Fuel Log",
+          "effTitle": "Km per litre · last six fills",
+          "flagged": "1 below normal",
+          "effNote": "Shaded band: the vehicle's normal range. Red bars: below it.",
+          "fillsTitle": "Recent fills",
+          "mtd": "Fuel cost, month to date",
+          "caption": "A partial preview of Fuel Log in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Fuel, in three readings",
+          "intro": "Fill, distance, efficiency.",
+          "steps": [
+            {
+              "tag": "Fill",
+              "question": "Litres and rate",
+              "body": "Every fill, with the pump slip."
+            },
+            {
+              "tag": "Distance",
+              "question": "From the odometer",
+              "body": "Kilometres since the last fill."
+            },
+            {
+              "tag": "Efficiency",
+              "question": "Km per litre",
+              "body": "Against the vehicle's normal range."
+            }
+          ],
+          "formTitle": "What each fill records",
+          "form": [
+            {
+              "label": "Vehicle",
+              "body": "Which one."
+            },
+            {
+              "label": "Litres and rate",
+              "body": "And the amount."
+            },
+            {
+              "label": "Odometer",
+              "body": "At the pump."
+            },
+            {
+              "label": "Paid by",
+              "body": "Cash, card or account."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Fuel ties the fleet to the books",
+          "intro": "Every litre is a cost somewhere.",
+          "groups": {
+            "before": "Measured from",
+            "after": "Paid through",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "tpVehicles": "The fleet register.",
+            "tpTrips": "Trips with odometer readings.",
+            "pettyCash": "Fuel paid in cash.",
+            "journalEntries": "Entries posted to the books.",
+            "tpHub": "The Transport Pool overview.",
+            "anExec": "The company on one page."
+          }
+        },
+        "local": {
+          "title": "Fuel the way it goes missing here",
+          "intro": "A falling km per litre is often a leak, a fault, or fuel that never reached the tank.",
+          "points": [
+            {
+              "title": "Drops flagged",
+              "body": "Within one fill."
+            },
+            {
+              "title": "Slips kept",
+              "body": "With each fill."
+            },
+            {
+              "title": "Cost by vehicle",
+              "body": "And by department."
+            },
+            {
+              "title": "Cash fills",
+              "body": "Through petty cash."
+            }
+          ],
+          "story": {
+            "title": "One drop, found in a week",
+            "intro": "A sample check, the way it usually runs.",
+            "steps": [
+              {
+                "time": "25 Oct",
+                "text": "VEH-003 shows 6.1 km/L, below its 7.6."
+              },
+              {
+                "time": "2 Nov",
+                "text": "The next fill shows 5.8."
+              },
+              {
+                "time": "2 Nov",
+                "text": "The vehicle is sent for a check."
+              },
+              {
+                "time": "4 Nov",
+                "text": "An injector fault is found."
+              },
+              {
+                "time": "Later",
+                "text": "Km per litre is back to 8.3."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use fuel logs",
+          "angles": {
+            "retail": "Delivery van fuel.",
+            "food-hospitality": "Catering van fuel.",
+            "real-estate": "Site vehicle fuel.",
+            "consulting": "Company car fuel.",
+            "manufacturing": "Truck and generator fuel.",
+            "health-fitness": "Ambulance fuel.",
+            "trades": "Service van fuel.",
+            "others": "Field vehicle fuel."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the fuel log",
+          "items": [
+            {
+              "q": "How is km per litre worked out?",
+              "a": "Distance since the last fill over litres."
+            },
+            {
+              "q": "What is the normal range?",
+              "a": "Set per vehicle, or learned from history."
+            },
+            {
+              "q": "Can fuel be paid in cash?",
+              "a": "Yes, through petty cash."
+            },
+            {
+              "q": "Is fuel cost posted?",
+              "a": "Yes, to the vehicle's cost."
+            },
+            {
+              "q": "Can I attach the slip?",
+              "a": "Yes."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a month of fuel slips. We will work out km per litre in the demo."
+        }
+      },
+      "tpMaintPage": {
+        "meta": {
+          "title": "Fleet Maintenance and Renewals: Services, Tax Token, Fitness and Insurance | Adon ERP Transport Pool",
+          "description": "Plan vehicle servicing by kilometres or date, and tax token, fitness, insurance and route permit renewals on a six-month schedule, with cost and bills kept. Built for companies in Bangladesh.",
+          "keywords": [
+            "vehicle maintenance schedule",
+            "fleet service planning",
+            "vehicle document renewal Bangladesh",
+            "transport pool",
+            "Adon ERP fleet maintenance"
+          ]
+        },
+        "hero": {
+          "title": "Maintenance: every service and renewal for the next six months, on one grid",
+          "lead": "Services fall due by kilometres or by date, and papers by their expiry. The grid shows each vehicle across six months, so nothing is serviced late or driven with an expired paper.",
+          "secondaryCta": "See the schedule"
+        },
+        "sample": {
+          "count": "5 vehicles",
+          "notes": [
+            "this month first",
+            "services and renewals",
+            "by vehicle"
+          ]
+        },
+        "ui": {
+          "title": "Maintenance",
+          "planTitle": "Next six months",
+          "thisMonth": "3 due this month",
+          "kService": "Service",
+          "kTax": "Tax token",
+          "kFitness": "Fitness",
+          "kInsurance": "Insurance",
+          "kPermit": "Route permit",
+          "caption": "A partial preview of Maintenance in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Fleet upkeep, in three kinds",
+          "intro": "Service, renew, record.",
+          "steps": [
+            {
+              "tag": "Service",
+              "question": "By km or date",
+              "body": "Oil, filters and checks at the interval you set."
+            },
+            {
+              "tag": "Renew",
+              "question": "The papers",
+              "body": "Tax token, fitness, insurance and route permit."
+            },
+            {
+              "tag": "Record",
+              "question": "Cost and bill",
+              "body": "What was done, by whom, and what it cost."
+            }
+          ],
+          "formTitle": "What a maintenance record holds",
+          "form": [
+            {
+              "label": "Vehicle",
+              "body": "Which one."
+            },
+            {
+              "label": "Type",
+              "body": "Service or a renewal."
+            },
+            {
+              "label": "Cost",
+              "body": "With the bill."
+            },
+            {
+              "label": "Next due",
+              "body": "By km or date."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Maintenance reads trips and writes to the books",
+          "intro": "The odometer sets the next service.",
+          "groups": {
+            "before": "Planned from",
+            "after": "Paid through",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "tpVehicles": "The fleet register.",
+            "tpTrips": "Trips with odometer readings.",
+            "billsAp": "Workshop and renewal bills.",
+            "journalEntries": "Entries posted to the books.",
+            "tpHub": "The Transport Pool overview.",
+            "fixedAssetRegister": "Cost added to the vehicle."
+          }
+        },
+        "local": {
+          "title": "Fleet upkeep the way it is done here",
+          "intro": "Papers expire on different dates for every vehicle, and checkpoints fine on the spot.",
+          "points": [
+            {
+              "title": "Six months ahead",
+              "body": "No surprise renewals."
+            },
+            {
+              "title": "By km",
+              "body": "Services from the odometer."
+            },
+            {
+              "title": "Bills kept",
+              "body": "For every job."
+            },
+            {
+              "title": "Cost by vehicle",
+              "body": "Which ones to replace."
+            }
+          ],
+          "story": {
+            "title": "One month of upkeep",
+            "intro": "A sample month, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Nov",
+                "text": "Three items are due this month."
+              },
+              {
+                "time": "5 Nov",
+                "text": "VEH-001 is serviced at 61,200 km."
+              },
+              {
+                "time": "8 Nov",
+                "text": "VEH-004's tax token is renewed."
+              },
+              {
+                "time": "15 Nov",
+                "text": "VEH-002 passes its fitness test."
+              },
+              {
+                "time": "30 Nov",
+                "text": "December's plan is ready."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use fleet maintenance",
+          "angles": {
+            "retail": "Delivery van servicing.",
+            "food-hospitality": "Catering van upkeep.",
+            "real-estate": "Site vehicle upkeep.",
+            "consulting": "Company car servicing.",
+            "manufacturing": "Truck and bus upkeep.",
+            "health-fitness": "Ambulance upkeep.",
+            "trades": "Service van upkeep.",
+            "others": "Field vehicle upkeep."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about fleet maintenance",
+          "items": [
+            {
+              "q": "Can services be by kilometres?",
+              "a": "Yes, from the odometer."
+            },
+            {
+              "q": "Are renewals included?",
+              "a": "Tax token, fitness, insurance and permits."
+            },
+            {
+              "q": "Can I attach bills?",
+              "a": "Yes."
+            },
+            {
+              "q": "Is cost posted?",
+              "a": "Yes, through payables."
+            },
+            {
+              "q": "Is next due worked out?",
+              "a": "Yes, after each service."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your vehicles' service book. We will build the schedule in the demo."
+        }
+      },
+      "anExecPage": {
+        "meta": {
+          "title": "Executive Dashboard: Revenue, Cash, Stock, Receivables and Production on One Page | Adon ERP Analytics",
+          "description": "See revenue, net income, cash, inventory, receivables, payables, pipeline and headcount for any period, with the financial position and line utilisation as charts. Built for companies in Bangladesh.",
+          "keywords": [
+            "executive dashboard ERP",
+            "company KPIs",
+            "BI dashboard Bangladesh",
+            "management dashboard",
+            "Adon ERP executive dashboard"
+          ]
+        },
+        "hero": {
+          "title": "Executive dashboard: the whole company, in the time it takes to read one page",
+          "lead": "Revenue, profit, cash, stock, what customers owe and what you owe, the sales pipeline and headcount for the period you choose. Below them, the financial position and how busy the lines are.",
+          "secondaryCta": "See the dashboard"
+        },
+        "sample": {
+          "count": "8 figures",
+          "notes": [
+            "the period at the top",
+            "eight figures",
+            "position and utilisation"
+          ]
+        },
+        "ui": {
+          "title": "Executive Dashboard",
+          "period": "Period:",
+          "mtd": "Month to date",
+          "kRevenue": "Revenue",
+          "kRevenueSub": "+12% on last month",
+          "kNet": "Net income",
+          "kNetSub": "12.7% margin",
+          "kCash": "Cash on hand",
+          "kCashSub": "All bank and cash accounts",
+          "kInventory": "Inventory value",
+          "kInventorySub": "At cost",
+          "kAr": "Receivables",
+          "kArSub": "43 overdue",
+          "kAp": "Payables",
+          "kApSub": "Due this month",
+          "kPipeline": "Open pipeline",
+          "kPipelineSub": "Weighted 44.2 L",
+          "kHeadcount": "Headcount",
+          "kHeadcountSub": "2 active projects",
+          "position": "Financial position",
+          "pAssets": "Assets",
+          "pLiabilities": "Liabilities",
+          "pEquity": "Equity",
+          "utilisation": "Line utilisation by week",
+          "caption": "A partial preview of Executive Dashboard in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "The dashboard, in three bands",
+          "intro": "Money, operations, position.",
+          "steps": [
+            {
+              "tag": "Money",
+              "question": "Eight figures",
+              "body": "Revenue, profit, cash, stock, receivables, payables, pipeline, headcount."
+            },
+            {
+              "tag": "Operations",
+              "question": "Production",
+              "body": "On-time against plan and how busy the lines are."
+            },
+            {
+              "tag": "Position",
+              "question": "The balance sheet",
+              "body": "Assets, liabilities and equity as bars."
+            }
+          ],
+          "formTitle": "What you can choose",
+          "form": [
+            {
+              "label": "Period",
+              "body": "Month, quarter, year or custom."
+            },
+            {
+              "label": "Company",
+              "body": "If you run several."
+            },
+            {
+              "label": "Export",
+              "body": "CSV, Excel or print."
+            },
+            {
+              "label": "Drill",
+              "body": "Open any figure."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The dashboard reads every module",
+          "intro": "Nothing is entered here.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Leads to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "financialReports": "The books behind the figures.",
+            "crDashboard": "The sales figures.",
+            "anFinancial": "Every financial report.",
+            "anExport": "Data out, any format.",
+            "anHub": "The BI Analytics overview.",
+            "bmVariance": "Budget against actual."
+          }
+        },
+        "local": {
+          "title": "Dashboards the way owners here use them",
+          "intro": "Owners want the bank balance, the receivables and the order book before the first call of the day.",
+          "points": [
+            {
+              "title": "Cash first",
+              "body": "Every bank and cash account."
+            },
+            {
+              "title": "Receivables",
+              "body": "With what is overdue."
+            },
+            {
+              "title": "Production",
+              "body": "If the lines are full."
+            },
+            {
+              "title": "Board pack",
+              "body": "Printed in a click."
+            }
+          ],
+          "story": {
+            "title": "One board meeting, prepared in minutes",
+            "intro": "A sample month end, the way it usually runs.",
+            "steps": [
+              {
+                "time": "30 Nov",
+                "text": "The CFO sets the period to November."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Revenue and margin are checked."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Overdue receivables are opened."
+              },
+              {
+                "time": "1 Dec",
+                "text": "The page is exported to Excel."
+              },
+              {
+                "time": "2 Dec",
+                "text": "It goes into the board pack."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the executive dashboard",
+          "angles": {
+            "retail": "Store and sales figures.",
+            "food-hospitality": "Outlet figures.",
+            "real-estate": "Project and cash figures.",
+            "consulting": "Billing and utilisation.",
+            "manufacturing": "Production and cash.",
+            "health-fitness": "Clinic and cash figures.",
+            "trades": "Jobs and cash.",
+            "others": "Funds and spending."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the executive dashboard",
+          "items": [
+            {
+              "q": "Is it live?",
+              "a": "Yes, from posted records."
+            },
+            {
+              "q": "Can I choose the period?",
+              "a": "Yes."
+            },
+            {
+              "q": "Can I export it?",
+              "a": "To CSV, Excel or print."
+            },
+            {
+              "q": "Can a figure be opened?",
+              "a": "Yes, to the records behind it."
+            },
+            {
+              "q": "Who can see it?",
+              "a": "Roles you choose."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Tell us the numbers you check every morning. We will put them on the page in the demo."
+        }
+      },
+      "anFinancialPage": {
+        "meta": {
+          "title": "Financial Reports Library: Trial Balance to Product Profitability | Adon ERP Analytics",
+          "description": "Run the trial balance, balance sheet, income statement, cash flow, ledgers, receivables by customer, payables by vendor and product profitability from one place. Built for companies in Bangladesh.",
+          "keywords": [
+            "financial reports software",
+            "trial balance",
+            "balance sheet income statement",
+            "accounting reports Bangladesh",
+            "Adon ERP financial reports"
+          ]
+        },
+        "hero": {
+          "title": "Financial reports: every report the accountant and the auditor ask for",
+          "lead": "Ten reports sit in a row. Pick one, search an account, and open the entries behind any figure. Debits and credits are shown agreeing before anything is exported.",
+          "secondaryCta": "See the reports"
+        },
+        "sample": {
+          "count": "10 reports",
+          "notes": [
+            "ten reports in a row",
+            "the trial balance",
+            "balanced, and shown so"
+          ]
+        },
+        "ui": {
+          "title": "Financial Reports",
+          "rTb": "Trial balance",
+          "rBs": "Balance sheet",
+          "rIs": "Income statement",
+          "rCf": "Cash flow",
+          "rLedger": "Account ledger",
+          "rArCust": "AR by customer",
+          "rApVend": "AP by vendor",
+          "rSalesProd": "Sales by product",
+          "rProfit": "Product profitability",
+          "rInvSummary": "Inventory summary",
+          "tbTitle": "Trial balance · as at 3 Nov 2026",
+          "balanced": "Balanced",
+          "off": "Not balanced",
+          "thAccount": "Account",
+          "thDebit": "Debit",
+          "thCredit": "Credit",
+          "total": "Total",
+          "caption": "A partial preview of Financial Reports in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "The reports, in three groups",
+          "intro": "Statements, ledgers, analysis.",
+          "steps": [
+            {
+              "tag": "Statements",
+              "question": "The big four",
+              "body": "Trial balance, balance sheet, income statement and cash flow."
+            },
+            {
+              "tag": "Ledgers",
+              "question": "The detail",
+              "body": "Any account's entries, receivables by customer, payables by vendor."
+            },
+            {
+              "tag": "Analysis",
+              "question": "By product",
+              "body": "Sales, purchases and profitability by item."
+            }
+          ],
+          "formTitle": "What every report offers",
+          "form": [
+            {
+              "label": "Period or date",
+              "body": "As you choose."
+            },
+            {
+              "label": "Search",
+              "body": "Any account or name."
+            },
+            {
+              "label": "Drill-down",
+              "body": "Open the entries."
+            },
+            {
+              "label": "Export",
+              "body": "CSV, Excel or print."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Reports read the books",
+          "intro": "Nothing is typed in again.",
+          "groups": {
+            "before": "Built from",
+            "after": "Leads to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "journalEntries": "Entries posted to the books.",
+            "ledgers": "Every account's entries.",
+            "chartOfAccounts": "The accounts reported on.",
+            "anExport": "Data out, any format.",
+            "closingFy": "Year-end close.",
+            "anExec": "The company on one page.",
+            "financialReports": "The Accounting reports page."
+          }
+        },
+        "local": {
+          "title": "Financial reports the way accountants here need them",
+          "intro": "Monthly for the owner, quarterly for the bank, yearly for the auditor and tax.",
+          "points": [
+            {
+              "title": "Always balanced",
+              "body": "Shown before export."
+            },
+            {
+              "title": "Auditor ready",
+              "body": "With the entries behind."
+            },
+            {
+              "title": "For the bank",
+              "body": "Statements on request."
+            },
+            {
+              "title": "By product",
+              "body": "Which items make money."
+            }
+          ],
+          "story": {
+            "title": "One bank request, answered the same day",
+            "intro": "A sample request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "10:00",
+                "text": "The bank asks for September statements."
+              },
+              {
+                "time": "10:05",
+                "text": "The period is set to July–September."
+              },
+              {
+                "time": "10:10",
+                "text": "Balance sheet and income statement are checked."
+              },
+              {
+                "time": "10:15",
+                "text": "Both are exported to PDF."
+              },
+              {
+                "time": "10:20",
+                "text": "They are sent to the bank."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use financial reports",
+          "angles": {
+            "retail": "Store profitability.",
+            "food-hospitality": "Outlet profitability.",
+            "real-estate": "Project accounts.",
+            "consulting": "Practice accounts.",
+            "manufacturing": "Factory accounts by product.",
+            "health-fitness": "Clinic accounts.",
+            "trades": "Job profitability.",
+            "others": "Fund accounts."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about financial reports",
+          "items": [
+            {
+              "q": "Are reports live?",
+              "a": "Yes, from posted entries."
+            },
+            {
+              "q": "Can I open the entries behind a figure?",
+              "a": "Yes."
+            },
+            {
+              "q": "Can I export?",
+              "a": "CSV, Excel or print."
+            },
+            {
+              "q": "Is cash flow included?",
+              "a": "Yes."
+            },
+            {
+              "q": "Can I see by product?",
+              "a": "Sales, purchases and profitability."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last year's statements. We will rebuild them from sample books in the demo."
+        }
+      },
+      "anHrPage": {
+        "meta": {
+          "title": "HR & Payroll Reports: Salary Register, PF, Gratuity and Leave Liability | Adon ERP Analytics",
+          "description": "Run project cost, salary register, PF statement, gratuity liability, leave liability and headcount reports, with liabilities as at any date. Built for companies in Bangladesh.",
+          "keywords": [
+            "HR reports",
+            "gratuity liability report",
+            "leave liability",
+            "payroll reports Bangladesh",
+            "Adon ERP HR analytics"
+          ]
+        },
+        "hero": {
+          "title": "HR & payroll reports: what you owe your people, worked out for every employee",
+          "lead": "Salary register, PF statement, project cost and headcount sit beside the two numbers auditors ask for: gratuity liability and leave liability, as at any date.",
+          "secondaryCta": "See the HR reports"
+        },
+        "sample": {
+          "count": "6 reports",
+          "notes": [
+            "six reports in a row",
+            "the liability today",
+            "by years of service"
+          ]
+        },
+        "ui": {
+          "title": "HR & Payroll",
+          "tProject": "Project cost",
+          "tSalary": "Salary register",
+          "tPf": "PF statement",
+          "tGratuity": "Gratuity liability",
+          "tLeave": "Leave liability",
+          "tHeadcount": "Headcount",
+          "liability": "Gratuity liability",
+          "asOf": "As at 3 Nov 2026",
+          "employees": "Employees",
+          "eligible": "In the scheme",
+          "accrual": "Monthly accrual",
+          "accrualSub": "Provided each month",
+          "byService": "Liability by years of service",
+          "yrs": "yrs",
+          "notYet": "Not yet eligible",
+          "note": "Sample rule: liability starts after 3 years of service. Use the rule in your gratuity policy.",
+          "caption": "A partial preview of HR & Payroll in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "HR reports, in three groups",
+          "intro": "Pay, liabilities, people.",
+          "steps": [
+            {
+              "tag": "Pay",
+              "question": "What was paid",
+              "body": "Salary register, PF statement and project cost."
+            },
+            {
+              "tag": "Liabilities",
+              "question": "What is owed",
+              "body": "Gratuity and leave, worked out for every employee."
+            },
+            {
+              "tag": "People",
+              "question": "Who is here",
+              "body": "Headcount by department, grade and location."
+            }
+          ],
+          "formTitle": "What every report offers",
+          "form": [
+            {
+              "label": "As-of date",
+              "body": "For liabilities."
+            },
+            {
+              "label": "Filters",
+              "body": "Department, grade, location."
+            },
+            {
+              "label": "Per employee",
+              "body": "Behind every total."
+            },
+            {
+              "label": "Export",
+              "body": "CSV, Excel or print."
+            }
+          ]
+        },
+        "connect": {
+          "title": "HR reports read payroll and policy",
+          "intro": "One set of numbers for HR, accounts and the auditor.",
+          "groups": {
+            "before": "Built from",
+            "after": "Leads to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPayrollRuns": "Paid with the salary.",
+            "hrPolicy": "PF and gratuity rules.",
+            "hrServiceRecords": "Years of service.",
+            "anExport": "Data out, any format.",
+            "journalEntries": "Liability provisions.",
+            "anExec": "The company on one page.",
+            "hrReports": "Monthly HR reports."
+          }
+        },
+        "local": {
+          "title": "HR reports the way auditors here ask for them",
+          "intro": "Gratuity and leave liabilities must be provided in the accounts at year end.",
+          "points": [
+            {
+              "title": "Per employee",
+              "body": "Not one rough figure."
+            },
+            {
+              "title": "As at any date",
+              "body": "Year end or today."
+            },
+            {
+              "title": "Policy rules",
+              "body": "Applied the same way."
+            },
+            {
+              "title": "Provision ready",
+              "body": "For the journal."
+            }
+          ],
+          "story": {
+            "title": "One year-end provision",
+            "intro": "A sample year end, the way it usually runs.",
+            "steps": [
+              {
+                "time": "30 Jun",
+                "text": "The as-of date is set to year end."
+              },
+              {
+                "time": "30 Jun",
+                "text": "Gratuity liability is worked out for 48 employees."
+              },
+              {
+                "time": "1 Jul",
+                "text": "Leave liability is added."
+              },
+              {
+                "time": "2 Jul",
+                "text": "The provision journal is posted."
+              },
+              {
+                "time": "Audit",
+                "text": "The auditor gets the per-employee list."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use HR reports",
+          "angles": {
+            "retail": "Store staff liabilities.",
+            "food-hospitality": "Outlet staff reports.",
+            "real-estate": "Site staff cost.",
+            "consulting": "Consultant cost by project.",
+            "manufacturing": "Worker liabilities.",
+            "health-fitness": "Clinical staff reports.",
+            "trades": "Technician cost.",
+            "others": "Programme staff cost."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about HR reports",
+          "items": [
+            {
+              "q": "Is gratuity worked out per employee?",
+              "a": "Yes, from service and basic."
+            },
+            {
+              "q": "Can I choose the date?",
+              "a": "Yes, any as-of date."
+            },
+            {
+              "q": "Is leave liability included?",
+              "a": "Yes."
+            },
+            {
+              "q": "Can I see project cost?",
+              "a": "Salary by project."
+            },
+            {
+              "q": "Can I export?",
+              "a": "CSV, Excel or print."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your gratuity policy. We will work out the liability in the demo."
+        }
+      },
+      "anDemandPage": {
+        "meta": {
+          "title": "Demand Forecast: Item Demand from Your Own Sales, with Reorder Suggestions | Adon ERP Analytics",
+          "description": "Project demand for every item from approved and paid sales by moving average or trend, see next month and the next three, and get reorder suggestions against stock on hand. Built for companies in Bangladesh.",
+          "keywords": [
+            "demand forecasting software",
+            "moving average forecast",
+            "reorder suggestion",
+            "inventory planning Bangladesh",
+            "Adon ERP demand forecast"
+          ]
+        },
+        "hero": {
+          "title": "Demand forecast: what you will sell next month, item by item",
+          "lead": "Choose a method, the months of history and the horizon. Demand is projected from your own approved and paid sales, and items whose stock will not cover it are marked for reorder.",
+          "secondaryCta": "See the forecast"
+        },
+        "sample": {
+          "count": "11 items",
+          "notes": [
+            "the settings",
+            "history and forecast",
+            "what to reorder"
+          ]
+        },
+        "ui": {
+          "title": "Demand Forecast",
+          "method": "Method",
+          "ma": "Moving average",
+          "history": "History (months)",
+          "horizon": "Horizon (months)",
+          "recompute": "Recompute",
+          "chartTitle": "Total demand · thousand pieces",
+          "actual": "Actual",
+          "forecast": "Forecast",
+          "byItem": "By item",
+          "reorder": "Reorder",
+          "ok": "OK",
+          "avg": "avg/mo",
+          "next": "next",
+          "onHand": "on hand",
+          "caption": "A partial preview of Demand Forecast in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A forecast, in three settings",
+          "intro": "How, how far back, how far ahead.",
+          "steps": [
+            {
+              "tag": "Method",
+              "question": "Moving average or trend",
+              "body": "Average of recent months, or a line through them."
+            },
+            {
+              "tag": "History",
+              "question": "How far back",
+              "body": "Six, twelve or more months of sales."
+            },
+            {
+              "tag": "Horizon",
+              "question": "How far ahead",
+              "body": "Next month, or the next three."
+            }
+          ],
+          "formTitle": "What each item shows",
+          "form": [
+            {
+              "label": "Average per month",
+              "body": "From history."
+            },
+            {
+              "label": "Next month",
+              "body": "The forecast."
+            },
+            {
+              "label": "Trend",
+              "body": "Up or down."
+            },
+            {
+              "label": "Reorder",
+              "body": "Against stock on hand."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The forecast reads sales and stock",
+          "intro": "And hands off to purchasing.",
+          "groups": {
+            "before": "Built from",
+            "after": "Leads to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "invoicesAr": "Approved and paid sales.",
+            "invSummary": "Stock on hand.",
+            "scRequisitions": "Requisitions to buy more.",
+            "invForecast": "Inventory reorder planning.",
+            "anExec": "The company on one page.",
+            "crForecast": "The sales team's forecast."
+          }
+        },
+        "local": {
+          "title": "Forecasting the way demand moves here",
+          "intro": "Seasons, Eid and buyer cycles move demand more than anything else.",
+          "points": [
+            {
+              "title": "Your own sales",
+              "body": "Not a market guess."
+            },
+            {
+              "title": "Seasonal swings",
+              "body": "Seen in the history."
+            },
+            {
+              "title": "Reorder early",
+              "body": "Before lead times bite."
+            },
+            {
+              "title": "One click",
+              "body": "Recompute when things change."
+            }
+          ],
+          "story": {
+            "title": "One reorder, raised from the forecast",
+            "intro": "A sample month, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Nov",
+                "text": "The forecast is recomputed."
+              },
+              {
+                "time": "1 Nov",
+                "text": "Poly bags: 54,200 next month, 38,400 on hand."
+              },
+              {
+                "time": "1 Nov",
+                "text": "They are marked for reorder."
+              },
+              {
+                "time": "2 Nov",
+                "text": "A requisition is raised."
+              },
+              {
+                "time": "20 Nov",
+                "text": "Stock arrives before it runs out."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use demand forecasts",
+          "angles": {
+            "retail": "Store item demand.",
+            "food-hospitality": "Ingredient demand.",
+            "real-estate": "Material demand by season.",
+            "consulting": "Service demand.",
+            "manufacturing": "Packaging demand by buyer.",
+            "health-fitness": "Medicine demand.",
+            "trades": "Spare part demand.",
+            "others": "Supply demand."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about demand forecasts",
+          "items": [
+            {
+              "q": "Which sales are used?",
+              "a": "Approved and paid sales."
+            },
+            {
+              "q": "Which methods are there?",
+              "a": "Moving average and trend."
+            },
+            {
+              "q": "Can I change the history?",
+              "a": "Yes, in months."
+            },
+            {
+              "q": "Are reorders suggested?",
+              "a": "Against stock on hand."
+            },
+            {
+              "q": "Is it the same as Inventory's forecast?",
+              "a": "It uses the same sales; this view is for analysis across items."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a year of sales by item. We will forecast it in the demo."
+        }
+      },
+      "anExportPage": {
+        "meta": {
+          "title": "Data Export and Takeout: CSV, Excel, QuickBooks IIF or JSON | Adon ERP Analytics",
+          "description": "Export any dataset to CSV, Excel, QuickBooks IIF or JSON, or take everything out at once as a workbook or a JSON bundle. Your data is yours. Built for companies in Bangladesh.",
+          "keywords": [
+            "data export ERP",
+            "full data takeout",
+            "CSV Excel export",
+            "QuickBooks IIF export",
+            "Adon ERP export"
+          ]
+        },
+        "hero": {
+          "title": "Export / takeout: your data is yours, in any format, at any time",
+          "lead": "Pick a dataset and a format and export it, or take everything out in one file: a multi-sheet Excel workbook or a single JSON bundle. Nothing is locked in.",
+          "secondaryCta": "See the export centre"
+        },
+        "sample": {
+          "count": "5 datasets shown",
+          "notes": [
+            "everything in one click",
+            "pick a dataset",
+            "pick a format"
+          ]
+        },
+        "ui": {
+          "title": "Export / Takeout",
+          "fullTitle": "Full data takeout",
+          "fullSub": "Every dataset in one file",
+          "workbook": "Excel workbook",
+          "bundle": "JSON bundle",
+          "datasets": "Datasets",
+          "rows": "rows",
+          "dTb": "Trial balance",
+          "dCustomers": "Customers",
+          "dInvoices": "Invoices",
+          "dItems": "Items",
+          "dEmployees": "Employees",
+          "exportTitle": "Export trial balance",
+          "fCsv": "for Excel and Sheets",
+          "fXlsx": "formatted workbook",
+          "fIif": "for QuickBooks",
+          "fJson": "for developers",
+          "asOf": "As of date",
+          "exportBtn": "Export as CSV",
+          "bomNote": "CSV with BOM, so Bangla text opens cleanly in Excel.",
+          "caption": "A partial preview of Export / Takeout in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Export, in three ways",
+          "intro": "One dataset, everything, or back in.",
+          "steps": [
+            {
+              "tag": "One",
+              "question": "A dataset",
+              "body": "Any list or report, in the format you need."
+            },
+            {
+              "tag": "All",
+              "question": "A full takeout",
+              "body": "Every dataset, as a workbook or a JSON bundle."
+            },
+            {
+              "tag": "Back",
+              "question": "Re-import",
+              "body": "Exported files load again through the Migration Studio."
+            }
+          ],
+          "formTitle": "What you choose",
+          "form": [
+            {
+              "label": "Dataset",
+              "body": "Any list or report."
+            },
+            {
+              "label": "Format",
+              "body": "CSV, Excel, IIF or JSON."
+            },
+            {
+              "label": "As-of date",
+              "body": "For balances."
+            },
+            {
+              "label": "Columns",
+              "body": "All or the ones you pick."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Export sits at the end of everything",
+          "intro": "Whatever you put in, you can take out.",
+          "groups": {
+            "before": "Exports from",
+            "after": "Re-imports through",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "anFinancial": "Every financial report.",
+            "anHr": "HR reports and liabilities.",
+            "opMigration": "Re-import files you export.",
+            "opExport": "Export from Open Platform.",
+            "anHub": "The BI Analytics overview."
+          }
+        },
+        "local": {
+          "title": "Data ownership the way companies here want it",
+          "intro": "Owners worry about being locked in. This is the answer.",
+          "points": [
+            {
+              "title": "No lock-in",
+              "body": "Everything out, any time."
+            },
+            {
+              "title": "Bangla safe",
+              "body": "Opens cleanly in Excel."
+            },
+            {
+              "title": "For your accountant",
+              "body": "In Excel or QuickBooks format."
+            },
+            {
+              "title": "For your developer",
+              "body": "As JSON."
+            }
+          ],
+          "story": {
+            "title": "One auditor's request, sent in minutes",
+            "intro": "A sample request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Mon",
+                "text": "The auditor asks for all invoices for the year."
+              },
+              {
+                "time": "Mon",
+                "text": "Invoices are picked, as Excel."
+              },
+              {
+                "time": "Mon",
+                "text": "The as-of date is 30 June."
+              },
+              {
+                "time": "Mon",
+                "text": "The file is exported."
+              },
+              {
+                "time": "Mon",
+                "text": "It is sent the same morning."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use export",
+          "angles": {
+            "retail": "Sales data to an accountant.",
+            "food-hospitality": "Outlet data to head office.",
+            "real-estate": "Project data to clients.",
+            "consulting": "Billing data to clients.",
+            "manufacturing": "Accounts data to auditors.",
+            "health-fitness": "Clinic data to the owner.",
+            "trades": "Job data to partners.",
+            "others": "Programme data to donors."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about export",
+          "items": [
+            {
+              "q": "Can I export everything?",
+              "a": "Yes, in one file."
+            },
+            {
+              "q": "Which formats?",
+              "a": "CSV, Excel, QuickBooks IIF and JSON."
+            },
+            {
+              "q": "Will Bangla text work in Excel?",
+              "a": "Yes, CSV is saved with a BOM."
+            },
+            {
+              "q": "Can I re-import?",
+              "a": "Through the Migration Studio."
+            },
+            {
+              "q": "Can I export one company only?",
+              "a": "Yes, choose the company first."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Ask us for a full takeout of the demo company. We will send it during the demo."
+        }
       }
     },
     "analytics": {
@@ -38236,7 +40001,7 @@
       },
       "hero": {
         "tag": "✦ Manage your entire business in one place",
-        "titlePrefix": "Adon ERP: simple, fast,",
+        "titlePrefix": "Adon ERP: Simple & Fast,",
         "typeWords": [
           "Features like SAP",
           "Better than Odoo",
