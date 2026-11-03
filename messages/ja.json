@@ -18,6 +18,7 @@
             "oceanBlue": "オーシャンブルー"
         },
         "actions": {
+          "liveDemo": "ライブデモ付きでアドバイザーに相談する",
             "watchDemo": "デモを見る",
             "viewAllApps": "50以上のツールを探す",
             "seeAllFeatures": "すべての機能を見る",
@@ -663,9 +664,7 @@
                 }
             },
             "common": {
-                "bookDemo": "デモを予約",
                 "onboardingNote": "現在、ダッカの企業の導入を受け付けています。",
-                "bookLiveDemo": "ライブデモを予約",
                 "closingBody": "英語またはベンガル語のライブデモ。お客様の業種に近いサンプル帳簿を使い、経理担当者のご質問にもお答えする時間を設けます。",
                 "exploreAccounting": "会計アプリを見る",
                 "refresh": "更新",

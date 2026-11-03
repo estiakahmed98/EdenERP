@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import {
@@ -139,9 +140,7 @@ export default function UniversityDashboardPage() {
               Students, faculties, intake trends, and academic progress. Five numbers, read live from your ERP systems, show you the exact health of your institution in real-time.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <button className="btn-gradient rounded-lg px-6 py-3 text-[13px] font-bold shadow-lg transition-transform hover:-translate-y-0.5">
-                Book a demo
-              </button>
+              <LiveDemoButton />
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
                 See all modules
               </button>
@@ -272,9 +271,7 @@ export default function UniversityDashboardPage() {
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/60 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
                         You're seeing a preview. The full hub is yours to explore.
                       </p>
-                      <button className="btn-gradient rounded-lg px-8 py-2.5 text-[13px] font-bold shadow-xl transition-transform hover:-translate-y-0.5">
-                        Book a live demo
-                      </button>
+                      <LiveDemoButton />
                     </div>
                   </div>
                 </div>
@@ -446,9 +443,7 @@ export default function UniversityDashboardPage() {
                 A live demo in English or Bangla, using sample data close to your own, with time for your academic questions.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                <button className="rounded-lg bg-card px-6 py-3 text-[13px] font-bold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-muted shadow-lg">
-                  Book a demo
-                </button>
+                <LiveDemoButton />
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
                   Explore the dashboard
                 </button>

@@ -18,6 +18,7 @@
       "oceanBlue": "Xanh đại dương"
     },
     "actions": {
+      "liveDemo": "Gặp cố vấn và xem bản demo trực tiếp",
       "watchDemo": "Xem bản demo",
       "viewAllApps": "Khám phá hơn 50 công cụ",
       "seeAllFeatures": "Khám phá tất cả tính năng",
@@ -663,9 +664,7 @@
         }
       },
       "common": {
-        "bookDemo": "Đặt lịch demo",
         "onboardingNote": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka.",
-        "bookLiveDemo": "Đặt lịch demo trực tiếp",
         "closingBody": "Demo trực tiếp bằng tiếng Anh hoặc tiếng Bengal, dùng sổ sách mẫu gần với ngành của bạn, có thời gian dành cho câu hỏi của kế toán viên.",
         "exploreAccounting": "Khám phá ứng dụng Kế toán",
         "refresh": "Làm mới",

@@ -18,6 +18,7 @@
       "oceanBlue": "Ocean Blue"
     },
     "actions": {
+      "liveDemo": "Meet an Advisor with Live Demo",
       "watchDemo": "Watch Demo",
       "viewAllApps": "Explore 50+ tools",
       "seeAllFeatures": "Explore all features",
@@ -11583,9 +11584,7 @@
         }
       },
       "common": {
-        "bookDemo": "Book a demo",
         "onboardingNote": "Now onboarding companies in Dhaka.",
-        "bookLiveDemo": "Book a live demo",
         "closingBody": "A live demo in English or Bangla, using sample books close to your own trade, with time for your accountant’s questions.",
         "exploreAccounting": "Explore the Accounting app",
         "refresh": "Refresh",
@@ -41765,7 +41764,6 @@
       "productionOrder": "Production order",
       "eyebrow": "Manufacturing · Production control",
       "breadcrumb": "Breadcrumb",
-      "bookDemo": "Book a live demo",
       "explorePreview": "Explore the workspace",
       "bomDriven": "BOM-driven planning",
       "qualityBuiltIn": "Built-in quality checks",

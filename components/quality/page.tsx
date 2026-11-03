@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
+import english from "@/messages/en.json";
 import { getLocaleAlternates } from "@/i18n/metadata";
 import { qualityPages, type QualitySlug } from "./data";
 import QualityHero from "./heroes";
@@ -27,7 +28,12 @@ const workspaces = {
 export function QualityPage({ slug }: { slug: QualitySlug }) {
   const SelectedWorkspace = workspaces[slug];
   return (
-    <NextIntlClientProvider locale="en" messages={{}}>
+    <NextIntlClientProvider
+      locale="en"
+      messages={{
+        common: { actions: { liveDemo: english.common.actions.liveDemo } },
+      }}
+    >
       <main lang="en" dir="ltr" className={css.quality} data-qms-page={slug}>
         <QualityHero slug={slug} />
         <SelectedWorkspace />

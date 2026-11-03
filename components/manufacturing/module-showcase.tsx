@@ -1,5 +1,7 @@
 "use client";
 
+import LiveDemoButton from "@/components/live-demo-button";
+
 import {
   ArrowRight,
   ArrowUpRight,
@@ -26,7 +28,6 @@ import {
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
-  ManufacturingDemoButton,
   ManufacturingCallout,
   ManufacturingEyebrow,
   ManufacturingMarker,
@@ -290,7 +291,7 @@ export default function ManufacturingModuleShowcase({
               how it fits your operation.
             </p>
           </div>
-          <ManufacturingDemoButton />
+          <LiveDemoButton />
         </div>
       </section>
     </main>

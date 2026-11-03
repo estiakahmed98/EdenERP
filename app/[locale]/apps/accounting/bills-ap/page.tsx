@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 /**
  * Adon ERP public site: /[locale]/apps/accounting/bills-ap
  * Single-file page. All copy lives in messages/*.json under
@@ -27,7 +28,7 @@ import {
   X,
 } from "lucide-react";
 
-import { Link } from "@/i18n/navigation";
+
 
 import {
   SITE_URL,
@@ -35,22 +36,7 @@ import {
   useCommon,
   type ToolKey,
 } from "../_shared";
-import {
-  ConnectSection,
-  FinalSection,
-  HandNotes,
-  JsonLd,
-  PrimaryButton,
-  SecondaryButton,
-  StorySteps,
-  faqSchema,
-  h2,
-  lead,
-  ruled,
-  useSection,
-  wrap,
-  type Faq,
-} from "../_showcase";
+import { ConnectSection, FinalSection, HandNotes, JsonLd, SecondaryButton, StorySteps, faqSchema, h2, lead, ruled, useSection, wrap, type Faq } from "../_showcase";
 
 /* ================================================================== */
 /* 1. CONTENT                                                         */
@@ -457,12 +443,7 @@ function BillsPreview() {
             aria-hidden="true"
           />
           <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 px-6 pb-6 pt-10">
-            <Link
-              href="/demo"
-              className="inline-flex items-center gap-2 rounded-lg btn-gradient px-5 py-2.5 text-[14px] font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-            >
-              {common("bookLiveDemo")}
-            </Link>
+            <LiveDemoButton />
           </div>
         </div>
       </div>
@@ -542,7 +523,7 @@ export default function BillsApPage() {
             <div className="lg:col-span-5 lg:pb-2">
               <p className={lead}>{hero.lead}</p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <PrimaryButton href="/demo">{common("bookDemo")}</PrimaryButton>
+                <LiveDemoButton />
                 <SecondaryButton href="#life">
                   {hero.secondaryCta}
                 </SecondaryButton>

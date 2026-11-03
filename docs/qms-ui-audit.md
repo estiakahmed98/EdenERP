@@ -26,7 +26,7 @@ made pages look repetitive; QMS therefore starts with five separate compositions
 | SPC               | Navy process-control observatory with a modeled capability curve     | Supplied summary plus separate simulated/custom readings, I/MR charts, capability metrics and point inspection |
 
 Shared foundations are brand colors, typography, spacing, focus treatment and
-the existing `ManufacturingDemoButton`. Heroes do not share a layout template.
+the global `LiveDemoButton`. Heroes do not share a layout template.
 Local workspaces stay usable, with no production mutations or automatic NC/CAPA
 claims. All source excerpts and illustrative additions are explicitly identified.
 
@@ -73,12 +73,12 @@ The NC and CAPA forms create clearly marked session-only demo records. CAPA
 checklists are illustrative and do not change the supplied case status. SPC can
 switch between the supplied summary, simulated readings and pasted local input;
 chart inspection also supports arrow keys and a native point-selection slider.
-The original raw readings are not reconstructed. All demo CTAs reuse the existing
-Manufacturing button, including its styling and destination.
+The original raw readings are not reconstructed. All demo CTAs now reuse the
+global `LiveDemoButton`, including its translated label, styling and destination.
 
 Each QMS workspace now uses the shared Manufacturing `DemoPreview`: the upper
 half stays clear, while the lower half has the existing responsive blur and a
-centered "Book a live demo" invitation. Its existing focus management makes
+centered "Meet an Advisor with Live Demo" invitation. Its existing focus management makes
 covered controls inert. The hero, preview invitation and closing section use the
 same button component. The preview wrapper owns the border and shadow, avoiding
 stacked frames around the QMS workspace.

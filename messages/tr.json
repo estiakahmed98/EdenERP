@@ -18,6 +18,7 @@
       "oceanBlue": "Okyanus Mavisi"
     },
     "actions": {
+      "liveDemo": "Canlı Demo ile Bir Danışmanla Görüşün",
       "watchDemo": "Demoyu İzle",
       "viewAllApps": "50+ aracı keşfedin",
       "seeAllFeatures": "Tüm özellikleri keşfedin",
@@ -663,9 +664,7 @@
         }
       },
       "common": {
-        "bookDemo": "Demo planlayın",
         "onboardingNote": "Şu anda Dakka’daki şirketleri sisteme alıyoruz.",
-        "bookLiveDemo": "Canlı demo planlayın",
         "closingBody": "İngilizce veya Bengalce canlı demo; sektörünüze yakın örnek defterlerle ve muhasebecinizin soruları için ayrılmış zamanla.",
         "exploreAccounting": "Muhasebe uygulamasını keşfedin",
         "refresh": "Yenile",

@@ -1,5 +1,7 @@
 "use client";
 
+import LiveDemoButton from "@/components/live-demo-button";
+
 import { useTranslations } from "next-intl";
 import {
   ArrowUpRight,
@@ -16,7 +18,6 @@ import {
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
-  ManufacturingDemoButton,
   ManufacturingCallout,
   ManufacturingEyebrow,
   ManufacturingMarker,
@@ -277,7 +278,7 @@ export default function ManufacturingProductionOrders() {
               {t("ctaDescription")}
             </p>
           </div>
-          <ManufacturingDemoButton />
+          <LiveDemoButton />
         </div>
       </section>
     </main>
