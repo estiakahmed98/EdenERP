@@ -217,6 +217,16 @@ const pageOrder = [
   "/apps/sales/crm/insights/forecast",
   "/apps/sales/crm/insights/relationships",
   "/apps/sales/crm/insights/am-scorecard",
+  // Transport Pool, then BI Analytics
+  "/apps/transport-pool/vehicles",
+  "/apps/transport-pool/trips",
+  "/apps/transport-pool/fuel-log",
+  "/apps/transport-pool/maintenance",
+  "/apps/analytics/executive-dashboard",
+  "/apps/analytics/financial-reports",
+  "/apps/analytics/hr-payroll",
+  "/apps/analytics/demand-forecast",
+  "/apps/analytics/export-takeout",
 ];
 
 /**

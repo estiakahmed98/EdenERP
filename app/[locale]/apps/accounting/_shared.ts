@@ -166,6 +166,18 @@ export const toolSlugs = {
   crForecast: "/apps/sales/crm/insights/forecast",
   crRelationships: "/apps/sales/crm/insights/relationships",
   crScorecard: "/apps/sales/crm/insights/am-scorecard",
+  /** Transport Pool and BI Analytics tools. */
+  tpHub: "/apps/transport-pool/transport-pool",
+  anHub: "/apps/analytics/bi-analytics-reporting",
+  tpVehicles: "/apps/transport-pool/vehicles",
+  tpTrips: "/apps/transport-pool/trips",
+  tpFuel: "/apps/transport-pool/fuel-log",
+  tpMaint: "/apps/transport-pool/maintenance",
+  anExec: "/apps/analytics/executive-dashboard",
+  anFinancial: "/apps/analytics/financial-reports",
+  anHr: "/apps/analytics/hr-payroll",
+  anDemand: "/apps/analytics/demand-forecast",
+  anExport: "/apps/analytics/export-takeout",
 } as const;
 
 export type ToolKey = keyof typeof toolSlugs;
