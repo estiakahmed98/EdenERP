@@ -18,7 +18,7 @@ export function useDemoBooking() {
   if (!context) throw new Error("LiveDemoButton requires DemoBookingProvider.");
   return context;
 }
-/** One dialog per application surface; drafts stay only in component memory. */
+/** One request form per surface; unsent fields stay only in component memory. */
 export default function DemoBookingProvider({
   children,
 }: {

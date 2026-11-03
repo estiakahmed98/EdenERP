@@ -1,27 +1,17 @@
 "use client";
 
+import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import {
-  useEffect,
-  useId,
-  useMemo,
-  useRef,
-  useState,
-  type FormEvent,
-} from "react";
-import {
-  ArrowLeft,
   ArrowRight,
-  CalendarDays,
+  Building2,
   Check,
-  Clock3,
-  Download,
-  FileText,
-  Globe2,
-  Layers3,
-  Pencil,
-  ShieldCheck,
+  CheckCircle2,
+  Loader2,
+  Phone,
+  UserRound,
   X,
 } from "lucide-react";
+import { useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   Dialog,
@@ -30,25 +20,14 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Calendar } from "@/components/ui/calendar";
-import { cn } from "@/lib/utils";
+import { isLocale } from "@/i18n/config";
 import {
-  EMPTY_PLANNER_DETAILS,
-  ERP_MODULES,
-  addCalendarDays,
-  calendarKey,
-  keyToCalendarDate,
-  localCalendarKey,
-  minuteLabel,
-  plannerDetailsSchema,
-  preferenceTimes,
-  requestSummary,
-  timezones,
-  validTimezone,
-  type PlannerDetails,
-  type PreferredTime,
-} from "@/lib/live-demo-planner";
-import { usePlannerSettings } from "./use-planner-settings";
+  DEMO_MODULES,
+  EMPTY_DEMO_DETAILS,
+  demoDetailsSchema,
+  demoReceiptSchema,
+  type DemoDetails,
+} from "@/lib/demo-requests/validation";
 import css from "./booking.module.css";
 
 type Props = {
@@ -56,205 +35,262 @@ type Props = {
   onOpenChange: (open: boolean) => void;
   returnFocus: () => void;
 };
-type Errors = Partial<Record<keyof PlannerDetails, string>>;
-export default function BookingDialog({
+type Errors = Partial<Record<keyof DemoDetails, string>>;
+
+/** A conversation motif, not a product screenshot or a trust endorsement. */
+function ConversationIllustration() {
+  return (
+    <svg viewBox="0 0 152 132" fill="none" aria-hidden="true" focusable="false">
+      <ellipse cx="78" cy="117" rx="51" ry="7" fill="#003180" opacity=".035" />
+      <path
+        d="M19 96C5 79 10 56 32 47M119 19C136 26 142 45 132 61"
+        stroke="#1088EF"
+        strokeOpacity=".27"
+        strokeDasharray="3 5"
+        strokeLinecap="round"
+      />
+      <g transform="rotate(9 88 53)">
+        <rect
+          x="45"
+          y="18"
+          width="88"
+          height="65"
+          rx="14"
+          fill="white"
+          fillOpacity=".9"
+          stroke="#DCEAF5"
+        />
+        <path
+          d="M64 38H113M64 47H100"
+          stroke="#CFDDEB"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+        <path
+          d="M108 77L115 91L118 77"
+          fill="white"
+          stroke="#DCEAF5"
+          strokeLinejoin="round"
+        />
+      </g>
+      <g transform="rotate(-7 65 77)">
+        <rect
+          x="17"
+          y="47"
+          width="95"
+          height="63"
+          rx="15"
+          fill="white"
+          stroke="#D9E6F1"
+        />
+        <path
+          d="M34 105L29 118L46 109"
+          fill="white"
+          stroke="#D9E6F1"
+          strokeLinejoin="round"
+        />
+        <rect
+          x="30"
+          y="61"
+          width="25"
+          height="25"
+          rx="8"
+          fill="#1088EF"
+          fillOpacity=".075"
+        />
+        <path
+          d="M37 72H49M43 66V78"
+          stroke="#1088EF"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M64 66H97M64 74H89M31 96H85"
+          stroke="#D3E0ED"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+      </g>
+      <circle cx="122" cy="99" r="10" fill="#F2FAEF" stroke="#E0EEDB" />
+      <path
+        d="M118 103C116 97 120 94 127 94C127 101 123 105 118 103ZM119 102L124 97"
+        stroke="#21A816"
+        strokeWidth="1.35"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M27 25L29 30L34 32L29 34L27 39L25 34L20 32L25 30L27 25Z"
+        fill="#1088EF"
+        fillOpacity=".25"
+      />
+      <circle cx="139" cy="78" r="2" fill="#21A816" fillOpacity=".4" />
+    </svg>
+  );
+}
+export default function DemoRequestDialog({
   open,
   onOpenChange,
   returnFocus,
 }: Props) {
-  const t = useTranslations("common.demoBooking");
-  const settings = usePlannerSettings();
+  const t = useTranslations("common.demoRequest");
+  const params = useParams();
   const uid = useId();
-  const [step, setStep] = useState(0);
-  const [details, setDetails] = useState<PlannerDetails>({
-    ...EMPTY_PLANNER_DETAILS,
+  const formId = uid + "-demo-request";
+  const [details, setDetails] = useState<DemoDetails>({
+    ...EMPTY_DEMO_DETAILS,
     modules: [],
   });
   const [errors, setErrors] = useState<Errors>({});
-  const [day, setDay] = useState<string | null>(null);
-  const [time, setTime] = useState<PreferredTime | null>(null);
-  const [timezone, setTimezone] = useState("Asia/Dhaka");
-  const [now, setNow] = useState(() => new Date());
-  const [consent, setConsent] = useState(false);
   const [error, setError] = useState("");
-  const [ready, setReady] = useState(false);
-  const [downloadStatus, setDownloadStatus] = useState("");
-  const heading = useRef<HTMLHeadingElement>(null);
+  const [submitting, setSubmitting] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [website, setWebsite] = useState("");
+  const pending = useRef(false);
+  const attempt = useRef<{ signature: string; key: string } | null>(null);
   const dialogElement = useRef<HTMLDivElement>(null);
-  const scrollArea = useRef<HTMLDivElement>(null);
-  const formId = `${uid}-request-form`;
-  const detectedTimezone = useRef(false);
-  const zones = useMemo(timezones, []);
-  const zoneChoices = useMemo(
-    () => [...new Set([timezone, ...zones])],
-    [timezone, zones],
-  );
-  const today = calendarKey(now, settings.timezone),
-    last = addCalendarDays(today, settings.horizonDays);
-  const times = useMemo(
-    () => (day ? preferenceTimes(day, settings, now) : []),
-    [day, settings, now],
-  );
-  const active =
-    time && times.some((value) => value.startsAt === time.startsAt)
-      ? time
-      : null;
-  useEffect(() => {
-    if (!open) return;
-    setNow(new Date());
-    if (!detectedTimezone.current) {
-      try {
-        const detected = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        if (validTimezone(detected)) setTimezone(detected);
-      } catch {
-        /* Keep the explicit default. */
-      }
-      detectedTimezone.current = true;
-    }
-    const id = window.setInterval(() => setNow(new Date()), 30000);
-    return () => window.clearInterval(id);
-  }, [open]);
-  useEffect(() => {
-    if (!open) return;
-    scrollArea.current?.scrollTo({ top: 0, behavior: "auto" });
-    if (step > 0 || ready) heading.current?.focus({ preventScroll: true });
-  }, [open, step, ready]);
+  const body = useRef<HTMLDivElement>(null);
+  const successHeading = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (!open) return;
     const viewport = window.visualViewport;
-    const updateViewport = () => {
-      const element = dialogElement.current;
-      if (!element) return;
-      const height = viewport?.height ?? window.innerHeight;
-      element.style.setProperty("--booking-viewport-height", `${height}px`);
-      element.style.setProperty(
-        "--booking-viewport-top",
-        `${viewport?.offsetTop ?? 0}px`,
+    const update = () => {
+      const el = dialogElement.current;
+      if (!el) return;
+      const height = viewport?.height || window.innerHeight;
+      el.style.setProperty("--demo-viewport-height", height + "px");
+      el.style.setProperty(
+        "--demo-viewport-top",
+        (viewport?.offsetTop ?? 0) + "px",
       );
-      element.dataset.compactViewport = String(height < 500);
+      el.dataset.compactViewport = String(height < 500);
     };
-    updateViewport();
-    const frame = window.requestAnimationFrame(updateViewport);
-    viewport?.addEventListener("resize", updateViewport);
-    viewport?.addEventListener("scroll", updateViewport);
-    window.addEventListener("resize", updateViewport);
+    update();
+    const frame = window.requestAnimationFrame(update);
+    viewport?.addEventListener("resize", update);
+    viewport?.addEventListener("scroll", update);
+    window.addEventListener("resize", update);
     return () => {
       window.cancelAnimationFrame(frame);
-      viewport?.removeEventListener("resize", updateViewport);
-      viewport?.removeEventListener("scroll", updateViewport);
-      window.removeEventListener("resize", updateViewport);
+      viewport?.removeEventListener("resize", update);
+      viewport?.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
     };
   }, [open]);
-  function update(key: keyof Omit<PlannerDetails, "modules">, value: string) {
+  useEffect(() => {
+    if (saved && open) {
+      body.current?.scrollTo({ top: 0 });
+      successHeading.current?.focus({ preventScroll: true });
+    }
+  }, [saved, open]);
+  useEffect(() => {
+    if (open || !saved) return;
+    const timer = window.setTimeout(() => {
+      setSaved(false);
+      setDetails({ ...EMPTY_DEMO_DETAILS, modules: [] });
+      setErrors({});
+      setError("");
+      setWebsite("");
+      attempt.current = null;
+    }, 200);
+    return () => window.clearTimeout(timer);
+  }, [open, saved]);
+  function update(
+    key: "fullName" | "companyName" | "phone" | "email" | "message",
+    value: string,
+  ) {
     setDetails((current) => ({ ...current, [key]: value }));
     setErrors((current) => ({ ...current, [key]: undefined }));
     setError("");
   }
-  function validateDetails() {
-    const result = plannerDetailsSchema.safeParse(details);
-    if (!result.success) {
+  function shareMore(value: boolean) {
+    setDetails((current) => ({
+      ...current,
+      shareMore: value,
+      ...(!value ? { email: "", modules: [], message: "" } : {}),
+    }));
+    setErrors((current) => ({
+      fullName: current.fullName,
+      companyName: current.companyName,
+      phone: current.phone,
+    }));
+    setError("");
+  }
+  async function submit(event: FormEvent) {
+    event.preventDefault();
+    if (pending.current) return;
+    const parsed = demoDetailsSchema.safeParse(details);
+    if (!parsed.success) {
       const next: Errors = {};
-      for (const issue of result.error.issues) {
-        const key = issue.path[0] as keyof PlannerDetails;
+      for (const issue of parsed.error.issues) {
+        const key = issue.path[0] as keyof DemoDetails;
         if (!next[key]) next[key] = issue.message;
       }
       setErrors(next);
-      setError(t("fixErrors"));
-      const first = result.error.issues[0]?.path[0];
+      setError(t("invalid"));
       window.requestAnimationFrame(() =>
-        document.getElementById(`${uid}-${String(first)}`)?.focus(),
+        document
+          .getElementById(uid + "-" + String(parsed.error.issues[0]?.path[0]))
+          ?.focus(),
       );
-      return false;
+      return;
     }
-    setDetails(result.data);
+    pending.current = true;
+    setSubmitting(true);
     setErrors({});
     setError("");
-    return true;
-  }
-  function validateTime() {
-    if (
-      !day ||
-      !time ||
-      !preferenceTimes(day, settings, new Date()).some(
-        (value) => value.startsAt === time.startsAt,
-      )
-    ) {
-      setNow(new Date());
-      setTime(null);
-      setError(t("staleTime"));
-      setStep(1);
-      return false;
-    }
-    return true;
-  }
-  function next(event: FormEvent) {
-    event.preventDefault();
-    setError("");
-    if (step === 0 && validateDetails()) setStep(1);
-    else if (step === 1) {
-      if (!time) {
-        setError(t("selectTime"));
-        return;
-      }
-      if (validateTime()) setStep(2);
-    } else if (step === 2) {
-      if (!validateDetails()) {
-        setStep(0);
-        return;
-      }
-      if (!validateTime()) return;
-      if (!consent) {
-        setError(t("consentError"));
-        return;
-      }
-      setReady(true);
-    }
-  }
-  function reset() {
-    setDetails({ ...EMPTY_PLANNER_DETAILS, modules: [] });
-    setStep(0);
-    setReady(false);
-    setDay(null);
-    setTime(null);
-    setConsent(false);
-    setError("");
-    setErrors({});
-    setDownloadStatus("");
-    window.requestAnimationFrame(() =>
-      document.getElementById(`${uid}-fullName`)?.focus(),
-    );
-  }
-  function download() {
-    if (!time) return;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 15000);
     try {
-      const blob = new Blob([requestSummary(details, time, timezone)], {
-        type: "text/plain;charset=utf-8",
+      const signature = JSON.stringify(parsed.data);
+      if (attempt.current?.signature !== signature)
+        attempt.current = { signature, key: crypto.randomUUID() };
+      const locale =
+        typeof params?.locale === "string" && isLocale(params.locale)
+          ? params.locale
+          : "en";
+      const response = await fetch("/api/demo-requests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          details: parsed.data,
+          requestKey: attempt.current.key,
+          locale,
+          website,
+        }),
+        signal: controller.signal,
       });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "EdenERP-demo-request-draft.txt";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-      setDownloadStatus(t("downloaded"));
+      const data: unknown = await response.json();
+      if (!response.ok) {
+        const code =
+          typeof data === "object" && data !== null && "code" in data
+            ? String(data.code)
+            : "";
+        if (code === "REQUEST_CHANGED") attempt.current = null;
+        setError(
+          response.status === 429
+            ? t("rateLimited")
+            : code === "REQUEST_CHANGED"
+              ? t("changed")
+              : t("failed"),
+        );
+        return;
+      }
+      if (!demoReceiptSchema.safeParse(data).success) {
+        setError(t("failed"));
+        return;
+      }
+      setSaved(true);
+      setDetails({ ...EMPTY_DEMO_DETAILS, modules: [] });
+      window.dispatchEvent(new Event("eden-demo-request-created"));
     } catch {
-      setDownloadStatus(t("downloadError"));
+      setError(t("failed"));
+    } finally {
+      window.clearTimeout(timeout);
+      pending.current = false;
+      setSubmitting(false);
     }
   }
-  const dateLabel = (value: string, zone = timezone) =>
-    new Intl.DateTimeFormat("en", { timeZone: zone, dateStyle: "full" }).format(
-      new Date(value),
-    );
-  const timeLabel = (value: string) =>
-    new Intl.DateTimeFormat("en", {
-      timeZone: timezone,
-      hour: "numeric",
-      minute: "2-digit",
-      timeZoneName: "short",
-    }).format(new Date(value));
-  const titles = [t("detailsTitle"), t("timeTitle"), t("reviewTitle")];
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -263,226 +299,229 @@ export default function BookingDialog({
         dir="ltr"
         showCloseButton={false}
         className={css.dialog}
+        data-expanded={details.shareMore}
+        data-saved={saved}
         onOpenAutoFocus={(event) => {
           event.preventDefault();
-          window.requestAnimationFrame(() =>
-            heading.current?.focus({ preventScroll: true }),
-          );
+          document
+            .getElementById(uid + "-fullName")
+            ?.focus({ preventScroll: true });
         }}
         onCloseAutoFocus={(event) => {
           event.preventDefault();
           returnFocus();
         }}
       >
-        <header className={css.header} data-booking-region="header">
-          <div className={css.headerTop}>
-            <div className={css.brand}>
-              <span className={css.brandIcon}>
-                <Layers3 size={18} aria-hidden="true" />
+        <header className={css.header}>
+          <div className={css.headerGlow} aria-hidden="true" />
+          <div className={css.brandRow}>
+            <span className={css.brand}>
+              <svg
+                className={css.brandSymbol}
+                viewBox="0 0 22 22"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect
+                  x="1"
+                  y="1"
+                  width="20"
+                  height="20"
+                  rx="6"
+                  stroke="currentColor"
+                  strokeOpacity=".18"
+                />
+                <path
+                  d="M7 6H15M7 11H13M7 16H15M7 6V16"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+              </svg>
+              <span>
+                Eden<span>ERP</span>
               </span>
-              <strong>EdenERP</strong>
-              <span className={css.brandDivider} />
-              <span>{t("liveDemoLabel")}</span>
-            </div>
-            <DialogClose className={css.close} aria-label={t("closeLabel")}>
-              <X size={18} aria-hidden="true" />
+            </span>
+            <DialogClose className={css.close} aria-label={t("close")}>
+              <X size={17} aria-hidden="true" />
             </DialogClose>
           </div>
-          <div className={css.titleRow}>
-            <div>
-              <DialogTitle className={css.title}>{t("title")}</DialogTitle>
-              <DialogDescription className={css.intro}>
-                {t("description")}
+          <div className={css.hero}>
+            <div className={css.heroCopy}>
+              <span className={css.eyebrow}>{t("eyebrow")}</span>
+              <DialogTitle className={css.title}>
+                {saved ? t("successTitle") : t("title")}
+              </DialogTitle>
+              <DialogDescription className={css.description}>
+                {saved ? t("successCaption") : t("description")}
               </DialogDescription>
             </div>
-            <span className={css.duration}>
-              <Clock3 size={14} aria-hidden="true" />
-              {t("duration", { minutes: settings.durationMinutes })}
-            </span>
-          </div>
-          {!ready ? (
-            <ol className={css.steps} aria-label={t("stepProgressLabel")}>
-              {[t("stepDetails"), t("stepTime"), t("stepReview")].map(
-                (label, index) => (
-                  <li
-                    key={label}
-                    data-current={step === index}
-                    data-complete={step > index}
-                    aria-current={step === index ? "step" : undefined}
-                  >
-                    <span>
-                      {step > index ? (
-                        <Check size={13} aria-hidden="true" />
-                      ) : (
-                        index + 1
-                      )}
-                    </span>
-                    <strong>{label}</strong>
-                  </li>
-                ),
-              )}
-            </ol>
-          ) : (
-            <div className={css.preparedProgress}>
-              <Check size={14} aria-hidden="true" />
-              {t("readyEyebrow")}
-              <span>{t("notSubmitted")}</span>
-            </div>
-          )}
-        </header>
-        <div
-          ref={scrollArea}
-          className={css.body}
-          data-booking-region="body"
-          role="region"
-          aria-labelledby={uid + "-step-heading"}
-          tabIndex={0}
-        >
-          <div className={css.content} key={ready ? "ready" : step}>
-            <div className={css.sectionIntro}>
-              <h3
-                id={uid + "-step-heading"}
-                ref={heading}
-                tabIndex={-1}
-                className={css.stepHeading}
-              >
-                {ready ? t("readyTitle") : titles[step]}
-              </h3>
-              <p className={css.stepDescription}>
-                {ready
-                  ? t("readyBody")
-                  : [
-                      t("detailsDescription"),
-                      t("timeDescription"),
-                      t("reviewDescription"),
-                    ][step]}
-              </p>
-            </div>
-            {!ready && (
-              <div className={css.disclosure}>
-                <ShieldCheck size={16} aria-hidden="true" />
-                <div>
-                  <strong>{t("unconnected")}</strong>
-                  <p>{t("unconnectedBody")}</p>
-                </div>
+            {!saved && (
+              <div className={css.illustration}>
+                <ConversationIllustration />
               </div>
             )}
-            {ready ? (
-              <div className={css.ready}>
-                <div className={css.readyIcon}>
-                  <FileText size={27} aria-hidden="true" />
-                </div>
-                <span className={css.draftBadge}>{t("notSubmitted")}</span>
-                {time && (
-                  <div className={css.preferredSummary}>
-                    <CalendarDays size={21} aria-hidden="true" />
-                    <div>
-                      <strong>{dateLabel(time.startsAt)}</strong>
-                      <span>
-                        {timeLabel(time.startsAt)} – {timeLabel(time.endsAt)}
-                      </span>
-                      <small>
-                        {timezone} · {details.companyName}
-                      </small>
-                    </div>
-                  </div>
-                )}
-                <div className={css.nextSteps}>
-                  <h4>{t("nextStepsTitle")}</h4>
-                  <p>{t("nextStepsBody")}</p>
-                  <p>{t("noEmail")}</p>
-                </div>
-                {downloadStatus && (
-                  <p role="status" className={css.feedback}>
-                    {downloadStatus}
-                  </p>
-                )}
-                <button
-                  type="button"
-                  className={css.textButton}
-                  onClick={reset}
-                >
-                  {t("startOver")}
-                </button>
+          </div>
+          <svg
+            className={css.headerCurve}
+            viewBox="0 0 500 18"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 15C110 2 168 7 263 12C359 18 420 1 500 7"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1"
+            />
+          </svg>
+        </header>
+        <div
+          ref={body}
+          className={css.body}
+          role="region"
+          aria-label={t("title")}
+          tabIndex={0}
+        >
+          {saved ? (
+            <div className={css.success}>
+              <div className={css.successIcon}>
+                <CheckCircle2 size={31} aria-hidden="true" />
               </div>
-            ) : (
-              <form id={formId} onSubmit={next} noValidate>
-                {step === 0 && (
-                  <>
-                    <div className={css.fields}>
-                      {(
-                        [
-                          ["fullName", "name", "text"],
-                          ["companyName", "organization", "text"],
-                          ["email", "email", "email"],
-                          ["phone", "tel", "tel"],
-                          ["country", "country-name", "text"],
-                        ] as const
-                      ).map(([key, autoComplete, type]) => (
-                        <label
-                          className={cn(
-                            css.field,
-                            key === "country" && css.fullWidth,
-                          )}
-                          key={key}
-                          htmlFor={`${uid}-${key}`}
+              <h3 className={css.srOnly} ref={successHeading} tabIndex={-1}>
+                {t("successTitle")}
+              </h3>
+              <p role="status">{t("success")}</p>
+            </div>
+          ) : (
+            <form
+              id={formId}
+              onSubmit={submit}
+              noValidate
+              aria-busy={submitting}
+            >
+              <fieldset disabled={submitting} className={css.fields}>
+                <div className={css.contactCard}>
+                  {(
+                    [
+                      ["fullName", "name", "text", 120],
+                      ["companyName", "organization", "text", 160],
+                      ["phone", "tel", "tel", 40],
+                    ] as const
+                  ).map(([key, autoComplete, type, max]) => (
+                    <label
+                      className={css.field}
+                      data-invalid={!!errors[key]}
+                      key={key}
+                      htmlFor={uid + "-" + key}
+                    >
+                      <span className={css.fieldIcon} aria-hidden="true">
+                        {key === "fullName" ? (
+                          <UserRound size={18} />
+                        ) : key === "companyName" ? (
+                          <Building2 size={18} />
+                        ) : (
+                          <Phone size={18} />
+                        )}
+                      </span>
+                      <span className={css.fieldControl}>
+                        <span className={css.fieldLabel}>
+                          {t(key)}
+                          <small aria-hidden="true">*</small>
+                        </span>
+                        <input
+                          id={uid + "-" + key}
+                          type={type}
+                          autoComplete={autoComplete}
+                          required
+                          maxLength={max}
+                          value={details[key]}
+                          placeholder={t(key + "Placeholder")}
+                          onChange={(event) => update(key, event.target.value)}
+                          aria-invalid={!!errors[key]}
+                          aria-describedby={
+                            errors[key] ? uid + "-" + key + "-error" : undefined
+                          }
+                        />
+                      </span>
+                      {errors[key] && (
+                        <span
+                          className={css.fieldError}
+                          id={uid + "-" + key + "-error"}
                         >
-                          <span>
-                            {t(key)} <small>*</small>
-                          </span>
-                          <input
-                            id={`${uid}-${key}`}
-                            type={type}
-                            autoComplete={autoComplete}
-                            value={details[key]}
-                            required
-                            maxLength={
-                              key === "email"
-                                ? 254
-                                : key === "phone"
-                                  ? 40
-                                  : key === "country"
-                                    ? 80
-                                    : key === "fullName"
-                                      ? 120
-                                      : 160
-                            }
-                            aria-invalid={!!errors[key]}
-                            aria-describedby={
-                              errors[key] ? `${uid}-${key}-error` : undefined
-                            }
-                            onChange={(event) =>
-                              update(key, event.target.value)
-                            }
-                          />
-                          {errors[key] && (
-                            <span
-                              className={css.fieldError}
-                              id={`${uid}-${key}-error`}
-                            >
-                              {errors[key]}
-                            </span>
+                          {errors[key]}
+                        </span>
+                      )}
+                    </label>
+                  ))}
+                </div>
+                <fieldset className={css.question}>
+                  <legend>{t("additionalQuestion")}</legend>
+                  <div className={css.choices}>
+                    {[true, false].map((value) => (
+                      <label key={String(value)}>
+                        <input
+                          type="radio"
+                          name={uid + "-more"}
+                          checked={details.shareMore === value}
+                          onChange={() => shareMore(value)}
+                        />
+                        <span>
+                          {value ? t("yes") : t("no")}
+                          {details.shareMore === value && (
+                            <Check size={12} aria-hidden="true" />
                           )}
-                        </label>
-                      ))}
-                    </div>
-                    <fieldset className={css.moduleField}>
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+                {details.shareMore && (
+                  <div className={css.optional}>
+                    <label
+                      className={css.optionalField}
+                      htmlFor={uid + "-email"}
+                    >
+                      <span>
+                        {t("email")}
+                        <em>{t("optional")}</em>
+                      </span>
+                      <input
+                        id={uid + "-email"}
+                        type="email"
+                        autoComplete="email"
+                        placeholder={t("emailPlaceholder")}
+                        maxLength={254}
+                        value={details.email}
+                        onChange={(event) =>
+                          update("email", event.target.value)
+                        }
+                        aria-invalid={!!errors.email}
+                        aria-describedby={
+                          errors.email ? uid + "-email-error" : undefined
+                        }
+                      />
+                      {errors.email && (
+                        <span
+                          className={css.fieldError}
+                          id={uid + "-email-error"}
+                        >
+                          {errors.email}
+                        </span>
+                      )}
+                    </label>
+                    <fieldset className={css.modules}>
                       <legend>
-                        {t("modules")} <small>*</small>
+                        {t("modules")}
+                        <em>{t("optional")}</em>
                       </legend>
                       <div
                         className={css.moduleChoices}
-                        id={`${uid}-modules`}
+                        id={uid + "-modules"}
                         tabIndex={-1}
-                        role="group"
-                        aria-label={t("modules")}
-                        aria-invalid={!!errors.modules}
-                        aria-describedby={
-                          errors.modules ? `${uid}-modules-error` : undefined
-                        }
                       >
-                        {ERP_MODULES.map((module) => (
-                          <label key={module} className={css.moduleChoice}>
+                        {DEMO_MODULES.map((module) => (
+                          <label key={module}>
                             <input
                               type="checkbox"
                               checked={details.modules.includes(module)}
@@ -496,40 +535,34 @@ export default function BookingDialog({
                                         (value) => value !== module,
                                       ),
                                 }));
-                                setErrors((current) => ({
-                                  ...current,
-                                  modules: undefined,
-                                }));
                                 setError("");
                               }}
                             />
                             <span>
-                              <Check size={12} />
+                              <Check size={11} aria-hidden="true" />
                               {module}
                             </span>
                           </label>
                         ))}
                       </div>
                       {errors.modules && (
-                        <p
-                          className={css.fieldError}
-                          id={`${uid}-modules-error`}
-                        >
-                          {errors.modules}
-                        </p>
+                        <p className={css.fieldError}>{errors.modules}</p>
                       )}
                     </fieldset>
-                    <label className={css.field} htmlFor={`${uid}-message`}>
+                    <label
+                      className={css.optionalField}
+                      htmlFor={uid + "-message"}
+                    >
                       <span>
-                        {t("message")} <em>{t("optional")}</em>
+                        {t("message")}
+                        <em>{t("optional")}</em>
                       </span>
                       <textarea
-                        id={`${uid}-message`}
+                        id={uid + "-message"}
                         rows={3}
                         maxLength={2000}
+                        placeholder={t("messagePlaceholder")}
                         value={details.message}
-                        placeholder={t("messageHint")}
-                        aria-invalid={!!errors.message}
                         onChange={(event) =>
                           update("message", event.target.value)
                         }
@@ -537,285 +570,61 @@ export default function BookingDialog({
                       <small className={css.counter}>
                         {details.message.length}/2000
                       </small>
-                      {errors.message && (
-                        <span className={css.fieldError}>{errors.message}</span>
-                      )}
-                    </label>
-                  </>
-                )}
-                {step === 1 && (
-                  <>
-                    <label className={cn(css.field, css.zoneField)}>
-                      <span>
-                        <Globe2 size={14} />
-                        {t("yourTimezone")}
-                      </span>
-                      <select
-                        value={timezone}
-                        onChange={(event) => setTimezone(event.target.value)}
-                      >
-                        {zoneChoices.map((zone) => (
-                          <option key={zone} value={zone}>
-                            {zone.replaceAll("_", " ")}
-                          </option>
-                        ))}
-                      </select>
-                      <small>
-                        {t("timezoneHint", { timezone: settings.timezone })}
-                      </small>
-                    </label>
-                    <div className={css.dateGrid}>
-                      <section
-                        className={css.calendarPanel}
-                        aria-label={t("advisorCalendar")}
-                      >
-                        <div className={css.panelLabel}>
-                          <CalendarDays size={14} />
-                          <strong>{t("advisorCalendar")}</strong>
-                        </div>
-                        <p className={css.scheduleLabel}>
-                          {t("schedule", {
-                            start: minuteLabel(settings.startMinute),
-                            end: minuteLabel(settings.endMinute),
-                            timezone: settings.timezone,
-                          })}
-                        </p>
-                        <Calendar
-                          className={css.calendar}
-                          mode="single"
-                          selected={day ? keyToCalendarDate(day) : undefined}
-                          startMonth={keyToCalendarDate(today)}
-                          endMonth={keyToCalendarDate(last)}
-                          defaultMonth={keyToCalendarDate(day ?? today)}
-                          showOutsideDays={false}
-                          fixedWeeks
-                          disabled={(date) => {
-                            const key = localCalendarKey(date);
-                            return (
-                              key < today ||
-                              key > last ||
-                              !settings.workingDays.includes(date.getDay())
-                            );
-                          }}
-                          onSelect={(date) => {
-                            setDay(date ? localCalendarKey(date) : null);
-                            setTime(null);
-                            setError("");
-                            setConsent(false);
-                          }}
-                        />
-                      </section>
-                      <section
-                        className={css.timePanel}
-                        aria-label={t("preferenceTimes")}
-                      >
-                        <div className={css.panelLabel}>
-                          <Clock3 size={14} />
-                          <strong>{t("preferenceTimes")}</strong>
-                        </div>
-                        <p className={css.notAvailability}>
-                          {t("notAvailability")}
-                        </p>
-                        {times.length ? (
-                          <div
-                            className={css.times}
-                            role="group"
-                            aria-label={t("preferenceTimes")}
-                          >
-                            {times.map((value) => (
-                              <button
-                                key={value.startsAt}
-                                type="button"
-                                aria-pressed={
-                                  active?.startsAt === value.startsAt
-                                }
-                                onClick={() => {
-                                  setTime(value);
-                                  setError("");
-                                  setConsent(false);
-                                }}
-                              >
-                                <span>{timeLabel(value.startsAt)}</span>
-                                <small>
-                                  {new Intl.DateTimeFormat("en", {
-                                    timeZone: timezone,
-                                    month: "short",
-                                    day: "numeric",
-                                  }).format(new Date(value.startsAt))}
-                                </small>
-                                {active?.startsAt === value.startsAt && (
-                                  <Check size={13} />
-                                )}
-                              </button>
-                            ))}
-                          </div>
-                        ) : (
-                          <div className={css.timeEmpty}>
-                            <Clock3 size={23} />
-                            <strong>
-                              {day ? t("noTimes") : t("pickDate")}
-                            </strong>
-                            <p>{day ? t("noTimesBody") : t("pickDateBody")}</p>
-                          </div>
-                        )}
-                      </section>
-                    </div>
-                  </>
-                )}
-                {step === 2 && (
-                  <div className={css.review}>
-                    <section>
-                      <div className={css.reviewHeading}>
-                        <h4>
-                          <CalendarDays size={15} />
-                          {t("preferredSession")}
-                        </h4>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setStep(1);
-                            setError("");
-                          }}
-                        >
-                          <Pencil size={12} />
-                          {t("edit")}
-                        </button>
-                      </div>
-                      {time && (
-                        <>
-                          <strong className={css.reviewDate}>
-                            {dateLabel(time.startsAt)}
-                          </strong>
-                          <p>
-                            {timeLabel(time.startsAt)} –{" "}
-                            {timeLabel(time.endsAt)}
-                          </p>
-                          <small>
-                            {timezone} · {settings.durationMinutes} minutes
-                          </small>
-                        </>
-                      )}
-                      <span className={css.draftBadge}>
-                        {t("notAvailability")}
-                      </span>
-                    </section>
-                    <section>
-                      <div className={css.reviewHeading}>
-                        <h4>{t("businessDetails")}</h4>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setStep(0);
-                            setError("");
-                          }}
-                        >
-                          <Pencil size={12} />
-                          {t("edit")}
-                        </button>
-                      </div>
-                      <dl className={css.reviewDetails}>
-                        {(
-                          [
-                            "fullName",
-                            "companyName",
-                            "email",
-                            "phone",
-                            "country",
-                          ] as const
-                        ).map((key) => (
-                          <div key={key}>
-                            <dt>{t(key)}</dt>
-                            <dd>{details[key]}</dd>
-                          </div>
-                        ))}
-                        <div>
-                          <dt>{t("modules")}</dt>
-                          <dd>{details.modules.join(", ")}</dd>
-                        </div>
-                        <div>
-                          <dt>{t("message")}</dt>
-                          <dd>{details.message || t("emptyMessage")}</dd>
-                        </div>
-                      </dl>
-                    </section>
-                    <label className={css.consent}>
-                      <input
-                        type="checkbox"
-                        checked={consent}
-                        onChange={(event) => {
-                          setConsent(event.target.checked);
-                          setError("");
-                        }}
-                      />
-                      <span>{t("consent")}</span>
                     </label>
                   </div>
                 )}
-              </form>
-            )}
-          </div>
+                <div className={css.honeypot} aria-hidden="true">
+                  <label htmlFor={uid + "-website"}>Website</label>
+                  <input
+                    id={uid + "-website"}
+                    name="website"
+                    autoComplete="off"
+                    tabIndex={-1}
+                    value={website}
+                    onChange={(event) => setWebsite(event.target.value)}
+                  />
+                </div>
+              </fieldset>
+            </form>
+          )}
         </div>
-        <footer className={css.footer} data-booking-region="footer">
-          {!ready && error && (
-            <p role="alert" className={css.error}>
+        <footer className={css.footer}>
+          {error && (
+            <p className={css.error} role="alert">
               {error}
             </p>
           )}
-          <div className={css.actions}>
-            <div className={css.footerStart}>
-              {ready ? (
-                <button
-                  type="button"
-                  className={css.back}
-                  onClick={() => {
-                    setReady(false);
-                    setDownloadStatus("");
-                  }}
-                >
-                  <ArrowLeft size={15} aria-hidden="true" />
-                  {t("editDraft")}
-                </button>
-              ) : step > 0 ? (
-                <button
-                  type="button"
-                  className={css.back}
-                  onClick={() => {
-                    setStep((current) => current - 1);
-                    setError("");
-                  }}
-                >
-                  <ArrowLeft size={15} aria-hidden="true" />
-                  {t("back")}
-                </button>
-              ) : (
-                <span className={css.requiredNote}>* {t("required")}</span>
-              )}
-              {!ready && (
-                <span className={css.stepCount}>
-                  {t("stepCount", { current: step + 1, total: 3 })}
-                </span>
-              )}
-            </div>
-            {ready ? (
-              <button type="button" className={css.primary} onClick={download}>
-                <Download size={16} aria-hidden="true" />
-                {t("download")}
+          {saved ? (
+            <DialogClose className={css.submit}>{t("done")}</DialogClose>
+          ) : (
+            <>
+              <button
+                form={formId}
+                type="submit"
+                className={css.submit}
+                disabled={submitting}
+              >
+                {submitting ? (
+                  <Loader2
+                    size={16}
+                    className={css.spinner}
+                    aria-hidden="true"
+                  />
+                ) : null}
+                {submitting ? t("submitting") : t("submit")}
+                {!submitting && (
+                  <span className={css.submitIcon}>
+                    <ArrowRight size={16} aria-hidden="true" />
+                  </span>
+                )}
               </button>
-            ) : (
-              <button className={css.primary} type="submit" form={formId}>
-                {step === 0
-                  ? t("nextTime")
-                  : step === 1
-                    ? t("nextReview")
-                    : t("prepare")}
-                <ArrowRight size={15} aria-hidden="true" />
-              </button>
-            )}
-          </div>
-          <p className={css.footerNote}>
-            <ShieldCheck size={12} aria-hidden="true" />
-            {t("calendarNote")}
-          </p>
+              {submitting && (
+                <p className={css.srOnly} role="status">
+                  {t("loading")}
+                </p>
+              )}
+            </>
+          )}
         </footer>
       </DialogContent>
     </Dialog>

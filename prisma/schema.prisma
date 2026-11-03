@@ -17,6 +17,46 @@ enum Role {
   ADMIN
 }
 
+enum DemoRequestStatus {
+  NEW
+  CONTACTED
+  SCHEDULED
+  CLOSED
+}
+
+model DemoRequest {
+  id          String            @id @default(uuid()) @db.Uuid
+  requestKey  String            @unique @db.Uuid
+  dedupeKey   String            @unique @db.VarChar(64)
+  payloadHash String            @db.VarChar(64)
+  fullName    String            @db.VarChar(120)
+  companyName String            @db.VarChar(160)
+  phone       String            @db.VarChar(40)
+  shareMore   Boolean           @default(false)
+  email       String?           @db.VarChar(254)
+  modules     String[]          @default([])
+  message     String?           @db.Text
+  locale      String            @default("en") @db.VarChar(8)
+  status      DemoRequestStatus @default(NEW)
+  adminNotes  String            @default("") @db.Text
+  version     Int               @default(0)
+  createdAt   DateTime          @default(now()) @db.Timestamptz(3)
+  updatedAt   DateTime          @updatedAt @db.Timestamptz(3)
+
+  @@index([createdAt])
+  @@index([status, createdAt])
+  @@map("demo_requests")
+}
+
+model DemoRequestRateLimit {
+  key       String   @id @db.VarChar(64)
+  count     Int      @default(1)
+  expiresAt DateTime @db.Timestamptz(3)
+
+  @@index([expiresAt])
+  @@map("demo_request_rate_limits")
+}
+
 model User {
   id            String    @id @default(cuid())
   email         String    @unique

@@ -1,5 +1,5 @@
-import AdminDemoPlanner from "@/components/demo-booking/admin-planner";
+import AdminDemoRequests from "@/components/demo-booking/admin-requests";
 
-export default function DemoPlannerSettingsPage() {
-  return <AdminDemoPlanner />;
+export default function DemoRequestsPage() {
+  return <AdminDemoRequests />;
 }
