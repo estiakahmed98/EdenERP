@@ -21,7 +21,7 @@ import {
   type PlannerSettings,
 } from "@/lib/live-demo-planner";
 import { usePlannerSettings } from "./use-planner-settings";
-import css from "./booking.module.css";
+import css from "./admin-planner.module.css";
 
 export default function AdminDemoPlanner() {
   const saved = usePlannerSettings();

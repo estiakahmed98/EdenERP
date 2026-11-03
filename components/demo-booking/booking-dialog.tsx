@@ -13,7 +13,6 @@ import {
   ArrowRight,
   CalendarDays,
   Check,
-  CheckCheck,
   Clock3,
   Download,
   FileText,
@@ -21,7 +20,6 @@ import {
   Layers3,
   Pencil,
   ShieldCheck,
-  Sparkles,
   X,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -82,6 +80,9 @@ export default function BookingDialog({
   const [ready, setReady] = useState(false);
   const [downloadStatus, setDownloadStatus] = useState("");
   const heading = useRef<HTMLHeadingElement>(null);
+  const dialogElement = useRef<HTMLDivElement>(null);
+  const scrollArea = useRef<HTMLDivElement>(null);
+  const formId = `${uid}-request-form`;
   const detectedTimezone = useRef(false);
   const zones = useMemo(timezones, []);
   const zoneChoices = useMemo(
@@ -114,8 +115,36 @@ export default function BookingDialog({
     return () => window.clearInterval(id);
   }, [open]);
   useEffect(() => {
-    if (open && (step > 0 || ready)) heading.current?.focus();
+    if (!open) return;
+    scrollArea.current?.scrollTo({ top: 0, behavior: "auto" });
+    if (step > 0 || ready) heading.current?.focus({ preventScroll: true });
   }, [open, step, ready]);
+  useEffect(() => {
+    if (!open) return;
+    const viewport = window.visualViewport;
+    const updateViewport = () => {
+      const element = dialogElement.current;
+      if (!element) return;
+      const height = viewport?.height ?? window.innerHeight;
+      element.style.setProperty("--booking-viewport-height", `${height}px`);
+      element.style.setProperty(
+        "--booking-viewport-top",
+        `${viewport?.offsetTop ?? 0}px`,
+      );
+      element.dataset.compactViewport = String(height < 500);
+    };
+    updateViewport();
+    const frame = window.requestAnimationFrame(updateViewport);
+    viewport?.addEventListener("resize", updateViewport);
+    viewport?.addEventListener("scroll", updateViewport);
+    window.addEventListener("resize", updateViewport);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      viewport?.removeEventListener("resize", updateViewport);
+      viewport?.removeEventListener("scroll", updateViewport);
+      window.removeEventListener("resize", updateViewport);
+    };
+  }, [open]);
   function update(key: keyof Omit<PlannerDetails, "modules">, value: string) {
     setDetails((current) => ({ ...current, [key]: value }));
     setErrors((current) => ({ ...current, [key]: undefined }));
@@ -229,84 +258,50 @@ export default function BookingDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
+        ref={dialogElement}
         lang="en"
         dir="ltr"
         showCloseButton={false}
         className={css.dialog}
+        onOpenAutoFocus={(event) => {
+          event.preventDefault();
+          window.requestAnimationFrame(() =>
+            heading.current?.focus({ preventScroll: true }),
+          );
+        }}
         onCloseAutoFocus={(event) => {
           event.preventDefault();
           returnFocus();
         }}
       >
-        <DialogClose className={css.close} aria-label={t("closeLabel")}>
-          <X size={18} />
-        </DialogClose>
-        <aside className={css.story}>
-          <div className={css.brand}>
-            <span className={css.brandIcon}>
-              <Layers3 size={20} />
-            </span>
-            <strong>EdenERP</strong>
-            <span>LIVE DEMO</span>
-          </div>
-          <div className={css.storyCopy}>
-            <span className={css.overline}>
-              <Sparkles size={13} />
-              {t("eyebrow")}
-            </span>
-            <h2>{t("sidebarTitle")}</h2>
-            <p>{t("sidebarBody")}</p>
-          </div>
-          <div className={css.orbit} aria-hidden="true">
-            <span className={css.orbitRing} />
-            <div className={css.orbitCore}>
-              <CalendarDays size={31} />
-              <span>
-                {settings.durationMinutes}
-                <small>MIN</small>
+        <header className={css.header} data-booking-region="header">
+          <div className={css.headerTop}>
+            <div className={css.brand}>
+              <span className={css.brandIcon}>
+                <Layers3 size={18} aria-hidden="true" />
               </span>
+              <strong>EdenERP</strong>
+              <span className={css.brandDivider} />
+              <span>{t("liveDemoLabel")}</span>
             </div>
-            <span className={css.orbitChip}>
-              <Check size={12} /> Your workflow
-            </span>
-            <span className={css.orbitDot} />
+            <DialogClose className={css.close} aria-label={t("closeLabel")}>
+              <X size={18} aria-hidden="true" />
+            </DialogClose>
           </div>
-          <ul className={css.storyPoints}>
-            {[t("sidebarPoint1"), t("sidebarPoint2"), t("sidebarPoint3")].map(
-              (point) => (
-                <li key={point}>
-                  <CheckCheck size={16} />
-                  {point}
-                </li>
-              ),
-            )}
-          </ul>
-          <p className={css.privacy}>
-            <ShieldCheck size={16} />
-            {t("private")}
-          </p>
-        </aside>
-        <div className={css.main}>
-          <header className={css.header}>
-            <span className={css.overline}>
-              {ready
-                ? t("readyEyebrow")
-                : t("duration", { minutes: settings.durationMinutes })}
-            </span>
-            <DialogTitle className={css.title}>{t("title")}</DialogTitle>
-            <DialogDescription className={css.intro}>
-              {t("description")}
-            </DialogDescription>
-          </header>
-          <div className={css.disclosure}>
-            <span className={css.statusDot} />
+          <div className={css.titleRow}>
             <div>
-              <strong>{t("unconnected")}</strong>
-              <p>{t("unconnectedBody")}</p>
+              <DialogTitle className={css.title}>{t("title")}</DialogTitle>
+              <DialogDescription className={css.intro}>
+                {t("description")}
+              </DialogDescription>
             </div>
+            <span className={css.duration}>
+              <Clock3 size={14} aria-hidden="true" />
+              {t("duration", { minutes: settings.durationMinutes })}
+            </span>
           </div>
-          {!ready && (
-            <ol className={css.steps} aria-label="Request planning steps">
+          {!ready ? (
+            <ol className={css.steps} aria-label={t("stepProgressLabel")}>
               {[t("stepDetails"), t("stepTime"), t("stepReview")].map(
                 (label, index) => (
                   <li
@@ -316,36 +311,71 @@ export default function BookingDialog({
                     aria-current={step === index ? "step" : undefined}
                   >
                     <span>
-                      {step > index ? <Check size={13} /> : index + 1}
+                      {step > index ? (
+                        <Check size={13} aria-hidden="true" />
+                      ) : (
+                        index + 1
+                      )}
                     </span>
-                    {label}
+                    <strong>{label}</strong>
                   </li>
                 ),
               )}
             </ol>
+          ) : (
+            <div className={css.preparedProgress}>
+              <Check size={14} aria-hidden="true" />
+              {t("readyEyebrow")}
+              <span>{t("notSubmitted")}</span>
+            </div>
           )}
+        </header>
+        <div
+          ref={scrollArea}
+          className={css.body}
+          data-booking-region="body"
+          role="region"
+          aria-labelledby={uid + "-step-heading"}
+          tabIndex={0}
+        >
           <div className={css.content} key={ready ? "ready" : step}>
-            <h3 ref={heading} tabIndex={-1} className={css.stepHeading}>
-              {ready ? t("readyTitle") : titles[step]}
-            </h3>
-            <p className={css.stepDescription}>
-              {ready
-                ? t("readyBody")
-                : [
-                    t("detailsDescription"),
-                    t("timeDescription"),
-                    t("reviewDescription"),
-                  ][step]}
-            </p>
+            <div className={css.sectionIntro}>
+              <h3
+                id={uid + "-step-heading"}
+                ref={heading}
+                tabIndex={-1}
+                className={css.stepHeading}
+              >
+                {ready ? t("readyTitle") : titles[step]}
+              </h3>
+              <p className={css.stepDescription}>
+                {ready
+                  ? t("readyBody")
+                  : [
+                      t("detailsDescription"),
+                      t("timeDescription"),
+                      t("reviewDescription"),
+                    ][step]}
+              </p>
+            </div>
+            {!ready && (
+              <div className={css.disclosure}>
+                <ShieldCheck size={16} aria-hidden="true" />
+                <div>
+                  <strong>{t("unconnected")}</strong>
+                  <p>{t("unconnectedBody")}</p>
+                </div>
+              </div>
+            )}
             {ready ? (
               <div className={css.ready}>
                 <div className={css.readyIcon}>
-                  <FileText size={25} />
+                  <FileText size={27} aria-hidden="true" />
                 </div>
                 <span className={css.draftBadge}>{t("notSubmitted")}</span>
                 {time && (
                   <div className={css.preferredSummary}>
-                    <CalendarDays size={20} />
+                    <CalendarDays size={21} aria-hidden="true" />
                     <div>
                       <strong>{dateLabel(time.startsAt)}</strong>
                       <span>
@@ -362,36 +392,21 @@ export default function BookingDialog({
                   <p>{t("nextStepsBody")}</p>
                   <p>{t("noEmail")}</p>
                 </div>
-                <button
-                  type="button"
-                  className={css.primary}
-                  onClick={download}
-                >
-                  <Download size={16} />
-                  {t("download")}
-                </button>
                 {downloadStatus && (
                   <p role="status" className={css.feedback}>
                     {downloadStatus}
                   </p>
                 )}
-                <div className={css.readyActions}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setReady(false);
-                      setDownloadStatus("");
-                    }}
-                  >
-                    {t("editDraft")}
-                  </button>
-                  <button type="button" onClick={reset}>
-                    {t("startOver")}
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className={css.textButton}
+                  onClick={reset}
+                >
+                  {t("startOver")}
+                </button>
               </div>
             ) : (
-              <form onSubmit={next} noValidate>
+              <form id={formId} onSubmit={next} noValidate>
                 {step === 0 && (
                   <>
                     <div className={css.fields}>
@@ -736,44 +751,72 @@ export default function BookingDialog({
                     </label>
                   </div>
                 )}
-                {error && (
-                  <p role="alert" className={css.error}>
-                    {error}
-                  </p>
-                )}
-                <footer className={css.actions}>
-                  {step > 0 ? (
-                    <button
-                      type="button"
-                      className={css.back}
-                      onClick={() => {
-                        setStep((current) => current - 1);
-                        setError("");
-                      }}
-                    >
-                      <ArrowLeft size={15} />
-                      {t("back")}
-                    </button>
-                  ) : (
-                    <span className={css.requiredNote}>* {t("required")}</span>
-                  )}
-                  <button className={css.primary} type="submit">
-                    {step === 0
-                      ? t("nextTime")
-                      : step === 1
-                        ? t("nextReview")
-                        : t("prepare")}
-                    <ArrowRight size={15} />
-                  </button>
-                </footer>
               </form>
             )}
           </div>
-          <p className={css.footer}>
-            <ShieldCheck size={12} />
+        </div>
+        <footer className={css.footer} data-booking-region="footer">
+          {!ready && error && (
+            <p role="alert" className={css.error}>
+              {error}
+            </p>
+          )}
+          <div className={css.actions}>
+            <div className={css.footerStart}>
+              {ready ? (
+                <button
+                  type="button"
+                  className={css.back}
+                  onClick={() => {
+                    setReady(false);
+                    setDownloadStatus("");
+                  }}
+                >
+                  <ArrowLeft size={15} aria-hidden="true" />
+                  {t("editDraft")}
+                </button>
+              ) : step > 0 ? (
+                <button
+                  type="button"
+                  className={css.back}
+                  onClick={() => {
+                    setStep((current) => current - 1);
+                    setError("");
+                  }}
+                >
+                  <ArrowLeft size={15} aria-hidden="true" />
+                  {t("back")}
+                </button>
+              ) : (
+                <span className={css.requiredNote}>* {t("required")}</span>
+              )}
+              {!ready && (
+                <span className={css.stepCount}>
+                  {t("stepCount", { current: step + 1, total: 3 })}
+                </span>
+              )}
+            </div>
+            {ready ? (
+              <button type="button" className={css.primary} onClick={download}>
+                <Download size={16} aria-hidden="true" />
+                {t("download")}
+              </button>
+            ) : (
+              <button className={css.primary} type="submit" form={formId}>
+                {step === 0
+                  ? t("nextTime")
+                  : step === 1
+                    ? t("nextReview")
+                    : t("prepare")}
+                <ArrowRight size={15} aria-hidden="true" />
+              </button>
+            )}
+          </div>
+          <p className={css.footerNote}>
+            <ShieldCheck size={12} aria-hidden="true" />
             {t("calendarNote")}
           </p>
-        </div>
+        </footer>
       </DialogContent>
     </Dialog>
   );

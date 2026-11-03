@@ -14,11 +14,38 @@ translated label, EdenERP gradient, hover lift, focus outline and responsive tex
 The locale layout owns one public popup. The existing protected Admin layout has
 a separate preview of the same implementation.
 
-The popup has an editorial navy illustration panel, a three-step progress
-indicator, responsive form panels, a keyboard-operable calendar, timezone-aware
-time choices, a review screen and an animated draft-ready state. It supports
-light/dark themes, reduced motion, inline validation, error announcements,
-step-heading focus and return focus to the originating CTA when closed.
+The popup has a minimal white surface, a compact brand header, three-step
+progress, spacious form fields, a keyboard-operable calendar, timezone-aware
+time choices, a review screen and a restrained draft-ready state. Brand blue is
+reserved for primary actions, active selections and focus. The popup stays white
+inside either site theme using locally scoped light tokens; it does not change
+the surrounding theme. Reduced motion, inline validation, error announcements,
+step-heading focus and return focus to the originating CTA are retained.
+
+### Scrolling and responsive layout
+
+The earlier outer grid used an implicit row, a maximum height and hidden
+overflow, with header, long content and actions nested inside the same panel.
+This made the layout depend on intrinsic content sizing and put the action row
+inside the scrolling content. The replacement has an explicit viewport-bounded
+height and three direct rows: `auto minmax(0, 1fr) auto`.
+
+- Header and footer remain outside the scroll owner. Both have opaque white
+  surfaces and sticky positioning.
+- The body has `min-height: 0`, vertical overflow, keyboard focus, a visible
+  scrollbar, overscroll containment and touch scrolling with pinch zoom.
+- Footer submit controls use the native `form` attribute to submit the validated
+  body form. Back, edit and download actions stay accessible outside the body.
+- The time list no longer creates a nested scroll area. Calendar width is bounded
+  so it fits narrow screens.
+- Dynamic viewport units provide a CSS fallback. Visual Viewport resize/scroll
+  events update the visible height and offset for mobile keyboards; short visible
+  viewports receive compact header/footer spacing.
+- Step changes reset the body scroll and focus the new heading without moving
+  the outer dialog. Existing booking and download handlers are unchanged.
+
+The Admin settings stylesheet is now separate, preserving its existing design
+and behavior while the public popup adopts the white layout.
 
 1. **Client details:** name, company, business email, phone, country, ERP module
    choices and an optional message. Required values, email syntax, phone digits
@@ -82,9 +109,14 @@ collection or fake integration toggle.
   draft disclosures, copy coverage and no booking API/database dependency.
 - `node scripts/check-live-demo.mjs`: shared-component usage and label audit.
 
-Focused TypeScript and ESLint checks cover the changed/new frontend files and
-their imports. Representative HTTP renders cover the homepage, Accounting,
-Manufacturing, QMS and University CTAs; the Admin route retains its existing
-sign-in redirect. Browser visual and click verification could not run because
-the browser access host is unavailable. HTTP/source checks do not substitute for
-interactive viewport or keyboard testing.
+Focused TypeScript and ESLint checks cover the changed dialog and Admin settings
+components and their imports. The planner and shared CTA tests pass. Additional
+source checks confirm three direct layout rows, external footer form association,
+complete CSS references and identical validation/draft/download handlers before
+and after the redesign. Primary-button white-text contrast is 4.77:1; secondary
+text colors were checked against the white surface.
+
+Browser access was attempted again for this redesign. The browser access host
+is unavailable, so all-step click, keyboard, software-keyboard and desktop/tablet/
+mobile visual testing remain unverified. HTTP/source checks do not substitute
+for those tests; production readiness is not claimed from source checks alone.
