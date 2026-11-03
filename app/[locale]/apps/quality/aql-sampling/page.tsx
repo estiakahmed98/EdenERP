@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { QualityPage, qualityMetadata } from "@/components/quality/page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = qualityMetadata("aql-sampling");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.quality");
-
-  return {
-    title: t("links.aqlSampling"),
-    alternates: getLocaleAlternates("/apps/quality/aql-sampling"),
-  };
-}
-
-export default function QualityAqlSamplingPage() {
-  return <ComingSoonPage moduleKey="quality" linkKey="aqlSampling" />;
+export default function QualitySubpage() {
+  return <QualityPage slug="aql-sampling" />;
 }
