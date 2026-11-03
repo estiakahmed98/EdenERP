@@ -389,8 +389,8 @@ export default function Header({
           <Image
             src="/adon_erp_logo.png"
             alt="Adon ERP logo"
-            width={140}
-            height={50}
+            width={180}
+            height={60}
             className="h-9 w-auto shrink-0 sm:h-14 xl:h-16"
             priority
           />

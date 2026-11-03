@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
 
   title: {
-    default: "Adon ERP - Transform Your Business",
+    default: "Adon ERP - Enterprise Solution",
     template: "%s | Adon ERP",
   },
 
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
 
-    title: "Adon ERP - Transform Your Business",
+    title: "Adon ERP - Enterprise Solution",
 
     description: siteConfig.description,
 
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Adon ERP - Transform Your Business",
+    title: "Adon ERP - Enterprise Solution",
 
     description: siteConfig.description,
 

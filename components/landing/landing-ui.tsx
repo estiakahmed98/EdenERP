@@ -91,6 +91,30 @@ declare global {
   }
 }
 
+let threeScriptPromise: Promise<void> | undefined;
+
+function loadThreeScript() {
+  if (window.THREE) {
+    return Promise.resolve();
+  }
+
+  if (!threeScriptPromise) {
+    threeScriptPromise = new Promise<void>((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
+      script.onload = () => resolve();
+      script.onerror = () => {
+        threeScriptPromise = undefined;
+        reject(new Error("Failed to load the Three.js landing background."));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  return threeScriptPromise;
+}
+
 export function useReveal() {
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -111,14 +135,12 @@ export function ThreeBg() {
   const ref = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    let disposed = false;
+    let cleanup: (() => void) | undefined;
 
-    const script = document.createElement("script");
-    script.src =
-      "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
-    script.onload = () => {
-      if (!ref.current || !window.THREE) return;
-
+    void loadThreeScript()
+      .then(() => {
+        if (disposed || !ref.current || !window.THREE) return;
       const THREE = window.THREE;
       const width = ref.current.offsetWidth;
       const height = ref.current.offsetHeight;
@@ -219,20 +241,19 @@ export function ThreeBg() {
       };
 
       rafId = requestAnimationFrame(tick);
-      (ref.current as HTMLCanvasElement & { _cleanup?: () => void })._cleanup =
-        () => {
+        cleanup = () => {
           cancelAnimationFrame(rafId);
           renderer.dispose();
           window.removeEventListener("mousemove", onMouse);
         };
-    };
-
-    document.head.appendChild(script);
+      })
+      .catch((error: unknown) => {
+        console.error("Unable to initialize the Three.js landing background.", error);
+      });
 
     return () => {
-      (
-        ref.current as (HTMLCanvasElement & { _cleanup?: () => void }) | null
-      )?._cleanup?.();
+      disposed = true;
+      cleanup?.();
     };
   }, []);
 
