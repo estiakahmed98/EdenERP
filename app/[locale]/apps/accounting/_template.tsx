@@ -1,32 +1,19 @@
 import type { Metadata } from "next";
 import { useLocale } from "next-intl";
 import { ChevronDown, Download, Plus, Printer, RefreshCw, Search, X, type LucideIcon } from "lucide-react";
-import type { ReactNode } from "react";
+import { cloneElement, isValidElement, type ReactElement, type ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
 
 import { SITE_URL, accountingMetadata, useCommon, type ToolKey } from "./_shared";
-import {
-  ConnectSection,
-  FinalSection,
-  HandNotes,
-  JsonLd,
-  PrimaryButton,
-  SecondaryButton,
-  StorySteps,
-  faqSchema,
-  h2,
-  lead,
-  ruled,
-  useSection,
-  wrap,
-  type Faq,
-} from "./_showcase";
+import { Connect, Final, Flow, Hero, Local, PreviewFrame, designFor, type Accent } from "./_designs";
+import { HandNotes, JsonLd, faqSchema, useSection, type Faq } from "./_showcase";
 
 /*
  * Template for the master-data and register showcase pages (Items, Customers,
  * Vendors, Bank Accounts, Receipts, Delivery Challans). Each page file supplies
- * its own product preview; the sections around it are the same.
+ * its own product preview; the sections around it come from _designs, and
+ * every page slug gets its own combination of section layouts and accent.
  * All copy lives in messages/*.json under pages.accountingShowcase.<section>.
  * ALL DATA ON THESE PAGES IS DUMMY.
  */
@@ -137,6 +124,8 @@ export function SectionLabel({ children }: { children: ReactNode }) {
 /* Preview frame                                                       */
 /* ------------------------------------------------------------------ */
 
+const defaultAccent: Accent = designFor("").accent;
+
 export function TemplatePreview({
   prefix,
   toolKey,
@@ -154,6 +143,9 @@ export function TemplatePreview({
   emptyText,
   body,
   above,
+  frame = 0,
+  accent,
+  hideNotes = false,
 }: {
   prefix: string;
   toolKey: ToolKey;
@@ -175,6 +167,10 @@ export function TemplatePreview({
   body?: ReactNode;
   /** Content between the header and the table, such as a note or summary cards. */
   above?: ReactNode;
+  /** Set by TemplatePage from the page's design. */
+  frame?: number;
+  accent?: Accent;
+  hideNotes?: boolean;
 }) {
   const hasPanel = Boolean(dialog || side);
   const { sample, ui } = content;
@@ -182,14 +178,16 @@ export function TemplatePreview({
 
   return (
     <figure className="relative">
-      <HandNotes
-        prefix={prefix}
-        notes={sample.notes}
-        cols={["lg:col-span-4", "lg:col-span-4", "lg:col-span-4"]}
-        itemClass={(i) => (i === 0 ? "items-start" : i === 1 ? "items-end pe-10" : "items-start ps-16")}
-      />
+      {!hideNotes && (
+        <HandNotes
+          prefix={prefix}
+          notes={sample.notes}
+          cols={["lg:col-span-4", "lg:col-span-4", "lg:col-span-4"]}
+          itemClass={(i) => (i === 0 ? "items-start" : i === 1 ? "items-end pe-10" : "items-start ps-16")}
+        />
+      )}
 
-      <div className="relative overflow-hidden rounded-[14px] border border-border bg-background shadow-[0_1px_0_0_var(--border),0_30px_60px_-30px_oklch(0.3_0.08_257/0.35)]">
+      <PreviewFrame variant={frame} accent={accent ?? defaultAccent}>
         <div className="relative max-h-[600px] overflow-hidden sm:max-h-[500px]">
           <div className="flex items-center justify-between gap-3 border-b border-border bg-card px-4 py-2.5 sm:px-5">
             <div className="flex shrink-0 items-center gap-2 text-[13px]">
@@ -333,7 +331,7 @@ export function TemplatePreview({
             </Link>
           </div>
         </div>
-      </div>
+      </PreviewFrame>
 
       <figcaption className="mt-3 text-[12.5px] text-muted-foreground">{ui.caption}</figcaption>
     </figure>
@@ -370,7 +368,6 @@ export function TemplatePage({
   exploreLabel?: string;
 }) {
   const locale = useLocale();
-  const { t: common } = useCommon();
   const { hero, flow, connect, local, industries, faq, closing, description } = content;
 
   const softwareSchema = {
@@ -388,122 +385,47 @@ export function TemplatePage({
     publisher: { "@type": "Organization", name: "Adon ERP", url: SITE_URL },
   };
 
+  const design = designFor(slug);
+  const { accent } = design;
+  // Hand-drawn notes clash with the dark band (2) and the side-by-side hero (3).
+  const framed = isValidElement(preview)
+    ? cloneElement(preview as ReactElement<{ frame?: number; accent?: Accent; hideNotes?: boolean }>, {
+        frame: design.frame,
+        accent,
+        hideNotes: design.hero === 2 || design.hero === 3,
+      })
+    : preview;
+
   return (
     <main className="bg-background text-foreground">
       <JsonLd data={[softwareSchema, faqSchema(faq.items)]} />
 
-      <section aria-labelledby={`${prefix}-title`} className="relative overflow-hidden bg-[var(--cream)] pb-16 pt-8 sm:pb-24">
-        <div className="absolute inset-x-0 bottom-0 top-[46%] opacity-80" style={ruled} aria-hidden="true" />
-        <div className={`${wrap} relative`}>
-          <div className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-12 lg:items-end lg:gap-12">
-            <h1
-              id={`${prefix}-title`}
-              className="showcase-heading text-[2.4rem] leading-[1.04] tracking-[-0.03em] text-[var(--ink)] sm:text-[3.4rem] lg:col-span-7 lg:text-[4rem]"
-            >
-              {hero.title}
-            </h1>
-            <div className="lg:col-span-5 lg:pb-2">
-              <p className={lead}>{hero.lead}</p>
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <PrimaryButton href="/demo">{common("bookDemo")}</PrimaryButton>
-                <SecondaryButton href="#flow">{hero.secondaryCta}</SecondaryButton>
-              </div>
-              <p className="mt-4 text-[13px] text-muted-foreground">{common("onboardingNote")}</p>
-            </div>
-          </div>
-          <div className="mt-12 lg:mt-16">{preview}</div>
-        </div>
-      </section>
+      <Hero
+        variant={design.hero}
+        accent={accent}
+        prefix={prefix}
+        appName={appName}
+        title={hero.title}
+        leadText={hero.lead}
+        secondaryCta={hero.secondaryCta}
+        features={features}
+        preview={framed}
+      />
 
-      <section id="flow" aria-labelledby="flow-title" className="scroll-mt-20 py-20 sm:py-28">
-        <div className={`${wrap} grid gap-12 lg:grid-cols-12`}>
-          <div className="lg:col-span-4">
-            <div className="lg:sticky lg:top-24">
-              <h2 id="flow-title" className={h2}>
-                {flow.title}
-              </h2>
-              <p className={`${lead} mt-5`}>{flow.intro}</p>
-            </div>
-          </div>
+      <Flow
+        variant={design.flow}
+        accent={accent}
+        flow={flow}
+        pill={(i, tag) => <Pill tone={stepTones[i] ?? "teal"}>{tag}</Pill>}
+      />
 
-          <div className="lg:col-span-8">
-            <ol className="border-b border-border">
-              {flow.steps.map((s, i) => (
-                <li key={s.question} className="grid gap-x-10 gap-y-3 border-t border-border py-8 md:grid-cols-[1fr_1.15fr]">
-                  <div>
-                    <Pill tone={stepTones[i] ?? "teal"}>{s.tag}</Pill>
-                    <h3 className="mt-2.5 text-[1.45rem] font-semibold leading-snug tracking-[-0.01em] text-foreground">
-                      {s.question}
-                    </h3>
-                  </div>
-                  <p className="text-[15.5px] leading-[1.7] text-muted-foreground">{s.body}</p>
-                </li>
-              ))}
-            </ol>
-            {flow.aside && (
-              <p className="mt-6 flex max-w-[62ch] items-start gap-3 text-[15px] leading-[1.65] text-muted-foreground">
-                <Pill tone="red">{flow.aside.tag}</Pill>
-                <span>{flow.aside.body}</span>
-              </p>
-            )}
+      <Connect variant={design.connect} accent={accent} copy={connect} structure={connectStructure} />
 
-            <h3 className="mt-16 text-[1.25rem] font-semibold text-foreground">{flow.formTitle}</h3>
-            <dl className="mt-6 grid gap-x-10 gap-y-7 sm:grid-cols-2">
-              {flow.form.map((f) => (
-                <div key={f.label} className="border-s-2 border-primary/25 ps-5">
-                  <dt className="text-[16px] font-semibold text-foreground">{f.label}</dt>
-                  <dd className="mt-1.5 text-[15px] leading-[1.65] text-muted-foreground">{f.body}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
+      <Local variant={design.local} accent={accent} local={local} icons={localIcons} />
 
-      <ConnectSection copy={connect} structure={connectStructure} />
-
-      <section aria-labelledby="local-title" className="py-20 sm:py-28">
-        <div className={wrap}>
-          <div className="max-w-[46rem]">
-            <h2 id="local-title" className={h2}>
-              {local.title}
-            </h2>
-            <p className={`${lead} mt-5`}>{local.intro}</p>
-          </div>
-
-          <div className="mt-14 grid gap-14 lg:grid-cols-12">
-            <ul className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:col-span-7">
-              {local.points.map((p, i) => {
-                const Icon = localIcons[i];
-                return (
-                  <li key={p.title}>
-                    <span
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--purple-light)] text-primary"
-                      aria-hidden="true"
-                    >
-                      <Icon className="h-[18px] w-[18px]" />
-                    </span>
-                    <h3 className="mt-4 text-[17px] font-semibold text-foreground">{p.title}</h3>
-                    <p className="mt-2 text-[15px] leading-[1.65] text-muted-foreground">{p.body}</p>
-                  </li>
-                );
-              })}
-            </ul>
-
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl border border-border bg-[var(--cream)] p-6 sm:p-8 lg:sticky lg:top-24">
-                <h3 className="text-[1.3rem] font-semibold text-foreground">{local.story.title}</h3>
-                <p className="mt-1.5 text-[14px] text-muted-foreground">{local.story.intro}</p>
-                <div className="mt-6">
-                  <StorySteps steps={local.story.steps} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <FinalSection
+      <Final
+        variant={design.final}
+        accent={accent}
         industries={industries}
         faq={faq}
         closingTitle={closing.title}
@@ -513,4 +435,3 @@ export function TemplatePage({
     </main>
   );
 }
-

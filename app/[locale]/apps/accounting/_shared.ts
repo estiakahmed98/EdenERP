@@ -57,6 +57,24 @@ export const toolSlugs = {
   bmVariance: "/apps/budget-management/variance",
   bmApprovals: "/apps/budget-management/approvals",
   bmRbrf: "/apps/budget-management/rbrf",
+  /** Supply Chain tools. */
+  scOverview: "/apps/supply-chain/overview",
+  scRequisitions: "/apps/supply-chain/procurement/purchase-requisitions",
+  scComparative: "/apps/supply-chain/procurement/comparative-statements",
+  scTender: "/apps/supply-chain/tender-management",
+  scGoodsReceipts: "/apps/supply-chain/goods-receipts",
+  scLandedCost: "/apps/supply-chain/landed-cost",
+  scProcurement: "/apps/supply-chain/procurement",
+  /** Inventory and Open Platform tools. */
+  invForecast: "/apps/inventory/demand-forecast",
+  invWarehouses: "/apps/inventory/warehouses",
+  invMovements: "/apps/inventory/stock-movements",
+  invSummary: "/apps/inventory/inventory-summary",
+  invGatePasses: "/apps/inventory/gate-passes",
+  invWeighbridge: "/apps/inventory/weighbridge-scales",
+  opTaxRates: "/apps/open-platform/tax-rates",
+  opMigration: "/apps/open-platform/migration-studio",
+  opExport: "/apps/open-platform/export-takeout",
 } as const;
 
 export type ToolKey = keyof typeof toolSlugs;

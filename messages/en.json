@@ -8617,6 +8617,2971 @@
           "title": "Bring a line that has run out. We will re-budget it in the demo."
         }
       },
+      "scOverview": {
+        "meta": {
+          "title": "Supply Chain: From Requisition to Landed Cost in One Flow | Adon ERP",
+          "description": "Follow every purchase from the first requisition through comparison, tender, goods receipt and landed cost. Built for companies in Bangladesh.",
+          "keywords": [
+            "supply chain software Bangladesh",
+            "procurement workflow",
+            "purchase to receipt",
+            "landed cost software",
+            "import purchasing Bangladesh",
+            "Adon ERP supply chain"
+          ]
+        },
+        "hero": {
+          "title": "Supply chain: every purchase, from the first request to the final cost",
+          "lead": "A department asks for something. Suppliers are compared, or a tender is run. The goods arrive and are counted, and the freight and duty are added to what they really cost. One flow, one record, and no purchase lost between desks.",
+          "secondaryCta": "See the whole flow"
+        },
+        "sample": {
+          "count": "5 steps",
+          "notes": [
+            "five steps, one flow",
+            "what needs attention today",
+            "spend by supplier"
+          ]
+        },
+        "ui": {
+          "title": "Supply chain overview",
+          "sReq": "Open requisitions",
+          "sReqSub": "2 awaiting approval",
+          "sCmp": "Comparisons",
+          "sCmpSub": "1 ready to decide",
+          "sTnd": "Tenders",
+          "sTndSub": "1 closing this week",
+          "sGrn": "Receipts this month",
+          "sGrnSub": "1 partly received",
+          "sLc": "Landed cost",
+          "sLcSub": "1 shipment to allocate",
+          "attention": "Needs attention",
+          "needsApproval": "needs approval",
+          "closingSoon": "closing soon",
+          "shortReceived": "short received",
+          "notAllocated": "not allocated",
+          "spend": "Spend by supplier",
+          "quarter": "this quarter",
+          "caption": "A partial preview of the Supply Chain overview in Adon ERP. Company, suppliers and figures are sample data."
+        },
+        "flow": {
+          "title": "The purchasing flow, in five steps",
+          "intro": "The strip at the top of every supply chain page is the same flow. Each step has its own page, and each hands over to the next.",
+          "steps": [
+            {
+              "tag": "1–2",
+              "question": "Ask, then compare",
+              "body": "A purchase requisition records the need. A comparative statement puts several quotations side by side."
+            },
+            {
+              "tag": "3",
+              "question": "Or run a tender",
+              "body": "For larger or regular buying, a tender collects bids and scores them on technical merit and price."
+            },
+            {
+              "tag": "4–5",
+              "question": "Receive, then cost",
+              "body": "Goods receipts record what actually arrived. Landed cost adds freight, duty and charges to give the true cost of each item."
+            }
+          ],
+          "formTitle": "What the overview shows",
+          "form": [
+            {
+              "label": "Step counts",
+              "body": "How many requisitions, comparisons, tenders, receipts and shipments are open."
+            },
+            {
+              "label": "Needs attention",
+              "body": "The documents that are waiting on someone, with who and why."
+            },
+            {
+              "label": "Spend by supplier",
+              "body": "Where this quarter’s purchasing went."
+            },
+            {
+              "label": "The same flow everywhere",
+              "body": "Each step is one click away from the strip."
+            },
+            {
+              "label": "Linked to the books",
+              "body": "Orders, bills and stock use the same suppliers and items."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Supply chain connects buying to stock and to the books",
+          "intro": "It starts from the item and supplier lists and ends in payables, stock value and the reports.",
+          "groups": {
+            "before": "Before purchasing",
+            "after": "The five steps",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "itemsProducts": "What you buy, with units and costs.",
+            "vendors": "Whom you buy from.",
+            "scRequisitions": "The need, written down.",
+            "scComparative": "Quotations side by side.",
+            "scTender": "Bids scored and ranked.",
+            "scGoodsReceipts": "What actually arrived.",
+            "scLandedCost": "The true cost of each item.",
+            "billsAp": "Pay for what was received.",
+            "financialReports": "Purchases and stock in your statements.",
+            "accountingHub": "Payables and spend at a glance."
+          }
+        },
+        "local": {
+          "title": "Supply chains with imports, credit and long lead times",
+          "intro": "Raw material arrives by sea, suppliers want letters of credit, and a late shipment stops a line. The flow has to be clear at every step.",
+          "points": [
+            {
+              "title": "Imports and local buying together",
+              "body": "The same flow covers a container from abroad and a truck from Gazipur."
+            },
+            {
+              "title": "Credit terms on the record",
+              "body": "Payment terms and delivery days are compared with the price."
+            },
+            {
+              "title": "Part deliveries expected",
+              "body": "A receipt can be partial, and the order stays open for the rest."
+            },
+            {
+              "title": "True cost, not invoice price",
+              "body": "Freight, duty and port charges are added before stock is valued."
+            }
+          ],
+          "story": {
+            "title": "One purchase, through the whole flow",
+            "intro": "A sample raw material order, the way it usually runs.",
+            "steps": [
+              {
+                "time": "2 Nov",
+                "text": "Production raises a requisition for PP granules and masterbatch."
+              },
+              {
+                "time": "5 Nov",
+                "text": "Three suppliers are compared, and the lowest total is recommended."
+              },
+              {
+                "time": "20 Nov",
+                "text": "The order is placed, and the goods arrive in two parts."
+              },
+              {
+                "time": "21 Nov",
+                "text": "A goods receipt records what was accepted and what was short."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Landed cost spreads freight and duty, and stock is valued at the true cost."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the supply chain",
+          "angles": {
+            "retail": "Stock bought from many suppliers, some imported.",
+            "food-hospitality": "Weekly produce and supply orders.",
+            "real-estate": "Materials and equipment bought for each project.",
+            "consulting": "Equipment and software bought against budget.",
+            "manufacturing": "Raw material imported and packing bought locally.",
+            "health-fitness": "Equipment and consumables bought in batches.",
+            "trades": "Parts bought for each job.",
+            "others": "Supplies bought against grants."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the supply chain",
+          "items": [
+            {
+              "q": "What does the supply chain module cover?",
+              "a": "Purchase requisitions, comparative statements, tenders, goods receipts and landed cost."
+            },
+            {
+              "q": "Do I have to use every step?",
+              "a": "No. A small purchase can go straight from a requisition to an order. Larger ones use the full flow."
+            },
+            {
+              "q": "Does it connect to payables?",
+              "a": "Yes. Orders, receipts and bills use the same suppliers and items."
+            },
+            {
+              "q": "Does it handle imports?",
+              "a": "Yes. Landed cost adds freight, duty and charges to the item cost."
+            },
+            {
+              "q": "Can goods arrive in parts?",
+              "a": "Yes. A goods receipt can be partial."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample purchase with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a recent purchase, from request to receipt. We will follow it through the flow in the demo."
+        }
+      },
+      "scRequisitions": {
+        "meta": {
+          "title": "Purchase Requisitions: Ask Before You Buy | Adon ERP",
+          "description": "Departments raise numbered requisitions with items, quantities, a needed-by date and a priority, and approved ones move on to buying. Built for companies in Bangladesh.",
+          "keywords": [
+            "purchase requisition software Bangladesh",
+            "department requisition",
+            "purchase request approval",
+            "requisition to PO",
+            "Adon ERP purchase requisitions"
+          ]
+        },
+        "hero": {
+          "title": "Purchase requisitions: no buying without a written need",
+          "lead": "A department writes down what it needs, how much, and by when. The request is numbered, approved, and then turned into a comparison, a tender or an order, so nobody is buying on a phone call.",
+          "secondaryCta": "See how a requisition works"
+        },
+        "sample": {
+          "count": "6 requisitions",
+          "notes": [
+            "numbered and dated",
+            "priority and status on each",
+            "approved ones move on"
+          ]
+        },
+        "ui": {
+          "title": "Purchase requisitions",
+          "thNo": "PR #",
+          "thItems": "Items",
+          "thDept": "Department",
+          "thNeeded": "Needed by",
+          "thStatus": "Status",
+          "draft": "draft",
+          "submitted": "submitted",
+          "approved": "approved",
+          "converted": "converted",
+          "newTitle": "New requisition",
+          "fDept": "Department",
+          "fNeeded": "Needed by",
+          "fItem": "Item",
+          "fQty": "Quantity",
+          "fUnit": "Unit",
+          "fPurpose": "Purpose",
+          "addLine": "Add a line",
+          "caption": "A partial preview of Purchase Requisitions in Adon ERP. Company, staff and items are sample data."
+        },
+        "flow": {
+          "title": "A requisition, in four statuses",
+          "intro": "It starts as a draft and ends as a purchase. The status shows where it is.",
+          "steps": [
+            {
+              "tag": "draft",
+              "question": "Being written",
+              "body": "The requester picks the items, quantities and the date they are needed."
+            },
+            {
+              "tag": "submitted",
+              "question": "Waiting for approval",
+              "body": "It goes to the approver, with its priority and purpose."
+            },
+            {
+              "tag": "approved",
+              "question": "Cleared to buy",
+              "body": "Purchasing can now compare quotations, run a tender or raise an order. Once it has, the status is converted."
+            }
+          ],
+          "formTitle": "What you fill in on a new requisition",
+          "form": [
+            {
+              "label": "Department and needed-by date",
+              "body": "Who is asking, and when the goods must be there."
+            },
+            {
+              "label": "Item and quantity",
+              "body": "Picked from the item list, with its unit."
+            },
+            {
+              "label": "Purpose",
+              "body": "Why it is needed, for the approver."
+            },
+            {
+              "label": "More lines",
+              "body": "Add a line for each further item."
+            },
+            {
+              "label": "Priority",
+              "body": "One to three stars, so urgent needs are seen first."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A requisition is where buying begins",
+          "intro": "It uses the item and supplier lists, and hands over to the buying steps.",
+          "groups": {
+            "before": "Before the requisition",
+            "after": "After approval",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "itemsProducts": "What can be requested.",
+            "vendors": "Whom the purchase may go to.",
+            "scComparative": "Compare quotations for the need.",
+            "scTender": "Run a tender for larger needs.",
+            "purchaseOrders": "Raise the order directly.",
+            "scOverview": "Open requisitions at a glance.",
+            "financialReports": "Purchasing in your statements."
+          }
+        },
+        "local": {
+          "title": "Requisitions that stop ad hoc buying",
+          "intro": "In many companies a supervisor phones a supplier and the paperwork follows. A requisition puts the paper first, which is what the auditor wants.",
+          "points": [
+            {
+              "title": "Numbered in a series",
+              "body": "PR-2026-0042, so every request can be found."
+            },
+            {
+              "title": "Needed-by dates",
+              "body": "Purchasing can plan around the date, not the shouting."
+            },
+            {
+              "title": "Priority shown",
+              "body": "Three stars for a stopped line, one for stationery."
+            },
+            {
+              "title": "Converted, not forgotten",
+              "body": "The status shows when a requisition has become an order."
+            }
+          ],
+          "story": {
+            "title": "One requisition, from need to order",
+            "intro": "A sample raw material request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "2 Nov",
+                "text": "Production drafts a requisition for PP granules and masterbatch."
+              },
+              {
+                "time": "3 Nov",
+                "text": "It is submitted, with three stars of priority."
+              },
+              {
+                "time": "4 Nov",
+                "text": "It is approved."
+              },
+              {
+                "time": "5 Nov",
+                "text": "Purchasing compares three suppliers."
+              },
+              {
+                "time": "20 Nov",
+                "text": "The order is raised, and the requisition shows converted."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use requisitions",
+          "angles": {
+            "retail": "Store and stock requests.",
+            "food-hospitality": "Kitchen and supply requests.",
+            "real-estate": "Site and materials requests.",
+            "consulting": "Equipment and software requests.",
+            "manufacturing": "Raw material and spares requests.",
+            "health-fitness": "Equipment and consumable requests.",
+            "trades": "Parts and tools requests.",
+            "others": "Programme purchase requests."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about purchase requisitions",
+          "items": [
+            {
+              "q": "What is a purchase requisition?",
+              "a": "An internal request to buy something, raised before any buying happens."
+            },
+            {
+              "q": "What do I fill in?",
+              "a": "The department, the needed-by date, and the items with quantity and unit. Purpose is optional."
+            },
+            {
+              "q": "What are the statuses?",
+              "a": "Draft, submitted, approved and converted."
+            },
+            {
+              "q": "What does converted mean?",
+              "a": "The requisition has become a comparison, a tender or an order."
+            },
+            {
+              "q": "Can I set a priority?",
+              "a": "Yes, from one to three stars."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample purchase with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring this week’s buying requests. We will turn them into requisitions in the demo."
+        }
+      },
+      "scComparative": {
+        "meta": {
+          "title": "Comparative Statements: Compare Supplier Quotations Fairly | Adon ERP",
+          "description": "Put quotations from several suppliers side by side, see the lowest rate for each item, and record the decision with the reason. Built for companies in Bangladesh.",
+          "keywords": [
+            "comparative statement software",
+            "supplier quotation comparison",
+            "CS purchase Bangladesh",
+            "vendor comparison",
+            "Adon ERP comparative statements"
+          ]
+        },
+        "hero": {
+          "title": "Comparative statements: three quotations, one fair table",
+          "lead": "Enter what each supplier quoted for each item. The lowest rate is marked, the totals are worked out, and the payment terms and delivery days sit underneath, so the choice is made on more than price.",
+          "secondaryCta": "See how a comparison is read"
+        },
+        "sample": {
+          "count": "3 suppliers",
+          "notes": [
+            "lowest rate marked",
+            "terms beside the price",
+            "a recommendation, with a reason"
+          ]
+        },
+        "ui": {
+          "title": "Comparative statement",
+          "thItem": "Item",
+          "recommended": "recommended",
+          "total": "Total",
+          "payment": "Payment terms",
+          "delivery": "Delivery",
+          "decisionLabel": "Recommended supplier",
+          "decisionWhy": "Lowest total, and within the credit terms the company can accept. Delivery in 25 days fits the production plan.",
+          "approveRaise": "Approve and raise order",
+          "sendTender": "Send for tender",
+          "caption": "A partial preview of a Comparative Statement in Adon ERP. Company, suppliers and rates are sample data."
+        },
+        "flow": {
+          "title": "A comparison, in three reads",
+          "intro": "Read the table down for price, across for terms, and then at the bottom for the decision.",
+          "steps": [
+            {
+              "tag": "Rates",
+              "question": "Item by item",
+              "body": "For each item, the quoted rate from each supplier. The lowest is marked in green."
+            },
+            {
+              "tag": "Totals",
+              "question": "Worked out for you",
+              "body": "Quantity times rate, added up for each supplier, so the total decides, not one item."
+            },
+            {
+              "tag": "Terms",
+              "question": "Beyond price",
+              "body": "Payment terms and delivery days sit under the totals, and the decision records why one supplier was chosen."
+            }
+          ],
+          "formTitle": "What the statement holds",
+          "form": [
+            {
+              "label": "Suppliers",
+              "body": "One column for each, with the name at the top."
+            },
+            {
+              "label": "Items and quantities",
+              "body": "One row for each, with the quantity from the requisition."
+            },
+            {
+              "label": "Totals",
+              "body": "The sum for each supplier."
+            },
+            {
+              "label": "Payment terms and delivery",
+              "body": "Such as 60 days LC and 25 days."
+            },
+            {
+              "label": "Decision",
+              "body": "The recommended supplier, with the reason, and the next step: raise the order or send it for tender."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A comparison sits between the need and the order",
+          "intro": "It starts from an approved requisition and ends as an order, or as a tender if the choice is too big.",
+          "groups": {
+            "before": "Before the comparison",
+            "after": "After the comparison",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "scRequisitions": "The need being compared.",
+            "vendors": "The suppliers who quoted.",
+            "scTender": "Escalate to a formal tender.",
+            "purchaseOrders": "The order for the chosen supplier.",
+            "scGoodsReceipts": "Receive what was ordered.",
+            "scOverview": "Comparisons waiting for a decision.",
+            "billsAp": "Payment on the agreed terms."
+          }
+        },
+        "local": {
+          "title": "Comparisons for the way Bangladeshi buyers negotiate",
+          "intro": "The cheapest quotation is not always the best. Credit days, delivery time and the letter of credit all change what a rate really means.",
+          "points": [
+            {
+              "title": "Price per item and in total",
+              "body": "Both are shown, so one cheap item does not hide an expensive order."
+            },
+            {
+              "title": "Credit and delivery beside it",
+              "body": "Sixty days’ credit can be worth more than a lower rate."
+            },
+            {
+              "title": "Local and foreign together",
+              "body": "A Dhaka trader and an overseas supplier sit in one table."
+            },
+            {
+              "title": "A reason on file",
+              "body": "The recommendation is written, for the auditor and the owner."
+            }
+          ],
+          "story": {
+            "title": "One comparison, from quotations to decision",
+            "intro": "A sample raw material comparison, the way it usually runs.",
+            "steps": [
+              {
+                "time": "5 Nov",
+                "text": "Three suppliers send their quotations for PP and masterbatch."
+              },
+              {
+                "time": "5 Nov",
+                "text": "The rates are entered, and the totals come to 27,84,000, 28,76,000 and 28,30,000 taka."
+              },
+              {
+                "time": "5 Nov",
+                "text": "Gulf Petrochem is lowest, with 60 days’ credit."
+              },
+              {
+                "time": "6 Nov",
+                "text": "The recommendation is written and approved."
+              },
+              {
+                "time": "20 Nov",
+                "text": "The order is raised to the chosen supplier."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use comparative statements",
+          "angles": {
+            "retail": "Comparing stock suppliers by rate and credit.",
+            "food-hospitality": "Comparing produce and supply quotations.",
+            "real-estate": "Comparing material and contractor quotations.",
+            "consulting": "Comparing software and equipment quotations.",
+            "manufacturing": "Comparing raw material by rate, credit and lead time.",
+            "health-fitness": "Comparing equipment quotations.",
+            "trades": "Comparing parts suppliers.",
+            "others": "Comparing quotations for programme purchases."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about comparative statements",
+          "items": [
+            {
+              "q": "What is a comparative statement?",
+              "a": "A table that puts quotations from several suppliers side by side."
+            },
+            {
+              "q": "How is the best supplier chosen?",
+              "a": "By the total, and by the terms: payment days and delivery."
+            },
+            {
+              "q": "What does the green mark mean?",
+              "a": "It marks the lowest rate for that item."
+            },
+            {
+              "q": "Can I record why a supplier was chosen?",
+              "a": "Yes. The recommendation carries the reason."
+            },
+            {
+              "q": "What happens after approval?",
+              "a": "You can raise the order, or send the purchase for tender."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample purchase with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring three real quotations. We will compare them in the demo."
+        }
+      },
+      "scTender": {
+        "meta": {
+          "title": "Tender Management: Run Tenders and Score Bids | Adon ERP",
+          "description": "Run tenders with a number, closing date and status, record the bids, and rank them on technical and price scores. Built for companies in Bangladesh.",
+          "keywords": [
+            "tender management software Bangladesh",
+            "tender evaluation",
+            "bid scoring",
+            "procurement tender",
+            "Adon ERP tender management"
+          ]
+        },
+        "hero": {
+          "title": "Tender management: open, evaluate and award, on the record",
+          "lead": "Open a tender, record the bids that come in, and score them on technical merit and price. The ranking is worked out, the winner is awarded, and the file shows how the decision was made.",
+          "secondaryCta": "See how bids are ranked"
+        },
+        "sample": {
+          "count": "3 tenders",
+          "notes": [
+            "open, evaluating, awarded",
+            "bids counted for each",
+            "ranked by weighted score"
+          ]
+        },
+        "ui": {
+          "title": "Tender management",
+          "open": "open",
+          "evaluating": "evaluating",
+          "awarded": "awarded",
+          "bids": "bids",
+          "evaluation": "Bid evaluation",
+          "weights": "Technical 60% · Price 40%",
+          "caption": "A partial preview of Tender Management in Adon ERP. Company, bidders and figures are sample data."
+        },
+        "flow": {
+          "title": "A tender, in three statuses",
+          "intro": "Every tender is in one of three states, and the list shows which.",
+          "steps": [
+            {
+              "tag": "open",
+              "question": "Taking bids",
+              "body": "The tender is published with a closing date. Bids are recorded as they arrive."
+            },
+            {
+              "tag": "evaluating",
+              "question": "Being scored",
+              "body": "After closing, each bid gets a technical score. Price is scored against the lowest bid."
+            },
+            {
+              "tag": "awarded",
+              "question": "Winner chosen",
+              "body": "The top-ranked bid is awarded, and the purchase order follows."
+            }
+          ],
+          "formTitle": "How the ranking works",
+          "form": [
+            {
+              "label": "Technical score",
+              "body": "Out of 100, from the evaluation committee."
+            },
+            {
+              "label": "Price score",
+              "body": "The lowest bid scores 100, and others score in proportion."
+            },
+            {
+              "label": "Weights",
+              "body": "For example 60% technical and 40% price."
+            },
+            {
+              "label": "Weighted score",
+              "body": "The two combined, shown as a bar, and the bids ranked."
+            },
+            {
+              "label": "Record",
+              "body": "Every score is kept, so the decision can be explained later."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A tender sits between the requisition and the order",
+          "intro": "It is used when a purchase is large, regular or needs a formal process.",
+          "groups": {
+            "before": "Before the tender",
+            "after": "After the award",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "scRequisitions": "The need that starts a tender.",
+            "scComparative": "A simpler comparison for smaller buys.",
+            "vendors": "The bidders.",
+            "purchaseOrders": "The order for the winning bid.",
+            "scGoodsReceipts": "Receive what was awarded.",
+            "scOverview": "Tenders closing soon.",
+            "financialReports": "Awarded spend in your statements."
+          }
+        },
+        "local": {
+          "title": "Tenders the way Bangladeshi organisations run them",
+          "intro": "Larger companies, NGOs and funded programmes all need to show that a purchase was fair. A scored tender is the evidence.",
+          "points": [
+            {
+              "title": "Closing dates in view",
+              "body": "A tender closing in three days stands out."
+            },
+            {
+              "title": "Scores on the record",
+              "body": "Technical and price, for every bidder."
+            },
+            {
+              "title": "Transparent ranking",
+              "body": "The weighted score is worked out, not argued."
+            },
+            {
+              "title": "From award to order",
+              "body": "The winner becomes a purchase order without retyping."
+            }
+          ],
+          "story": {
+            "title": "One tender, from opening to award",
+            "intro": "A sample packaging tender, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Oct",
+                "text": "TND-2026-007 is opened for annual packaging supply."
+              },
+              {
+                "time": "28 Oct",
+                "text": "It closes with five bids."
+              },
+              {
+                "time": "29 Oct",
+                "text": "Each bid is scored on technical merit."
+              },
+              {
+                "time": "30 Oct",
+                "text": "Price is scored against the lowest bid, and Shapla Packaging ranks first with 88.3."
+              },
+              {
+                "time": "1 Nov",
+                "text": "It is awarded, and an order is raised."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use tenders",
+          "angles": {
+            "retail": "Supplier tenders for the season’s range.",
+            "food-hospitality": "Annual supply tenders for chains.",
+            "real-estate": "Contractor and material tenders.",
+            "consulting": "Equipment and services tenders.",
+            "manufacturing": "Annual raw material and packaging tenders.",
+            "health-fitness": "Equipment tenders for clinics and clubs.",
+            "trades": "Fleet and tool tenders.",
+            "others": "Donor-funded procurement tenders."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about tender management",
+          "items": [
+            {
+              "q": "What is a tender?",
+              "a": "A formal request for bids, with a closing date, followed by an evaluation and an award."
+            },
+            {
+              "q": "How are bids ranked?",
+              "a": "By a weighted score of technical merit and price."
+            },
+            {
+              "q": "How is the price score worked out?",
+              "a": "The lowest bid scores 100, and the others in proportion to it."
+            },
+            {
+              "q": "Can I change the weights?",
+              "a": "Yes. A common split is 60% technical and 40% price."
+            },
+            {
+              "q": "What happens after the award?",
+              "a": "A purchase order is raised for the winning bid."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample purchase with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a purchase you would tender. We will score its bids in the demo."
+        }
+      },
+      "scGoodsReceipts": {
+        "meta": {
+          "title": "Goods Receipts: Record What Actually Arrived | Adon ERP",
+          "description": "Record goods receipt notes against purchase orders with ordered, received and accepted quantities, and handle partial deliveries and rejections. Built for companies in Bangladesh.",
+          "keywords": [
+            "goods receipt note software Bangladesh",
+            "GRN against purchase order",
+            "partial delivery tracking",
+            "receiving and quality hold",
+            "Adon ERP goods receipts"
+          ]
+        },
+        "hero": {
+          "title": "Goods receipts: the truck arrived, here is what was on it",
+          "lead": "Count the goods at the gate against the order. Record what was received and what was accepted, and mark what was short or rejected. Stock goes up by what was accepted, and the bill is matched to the same record.",
+          "secondaryCta": "See how a receipt is recorded"
+        },
+        "sample": {
+          "count": "4 receipts",
+          "notes": [
+            "one GRN for each delivery",
+            "received against ordered",
+            "short and rejected shown"
+          ]
+        },
+        "ui": {
+          "title": "Goods receipts",
+          "partial": "partial",
+          "complete": "complete",
+          "qcHold": "QC hold",
+          "accepted": "accepted",
+          "short": "short",
+          "rejected": "rejected",
+          "confirm": "Confirm receipt",
+          "qcHoldBtn": "Put on QC hold",
+          "caption": "A partial preview of Goods Receipts in Adon ERP. Company, suppliers and quantities are sample data."
+        },
+        "flow": {
+          "title": "A receipt, in three outcomes",
+          "intro": "Every delivery ends up in one of three states.",
+          "steps": [
+            {
+              "tag": "complete",
+              "question": "All of it arrived",
+              "body": "Received matches ordered, and the accepted quantity goes into stock."
+            },
+            {
+              "tag": "partial",
+              "question": "Some of it arrived",
+              "body": "The receipt records what came, the order stays open for the rest, and the shortfall is shown."
+            },
+            {
+              "tag": "QC hold",
+              "question": "Waiting for quality",
+              "body": "The goods are held until inspected, and nothing goes into usable stock until they pass."
+            }
+          ],
+          "formTitle": "What each receipt holds",
+          "form": [
+            {
+              "label": "Purchase order and supplier",
+              "body": "What the receipt is against."
+            },
+            {
+              "label": "Ordered, received, accepted",
+              "body": "Three quantities for every line."
+            },
+            {
+              "label": "Rejected quantity",
+              "body": "What was turned away at the gate."
+            },
+            {
+              "label": "Short quantity",
+              "body": "What is still to come."
+            },
+            {
+              "label": "Confirm",
+              "body": "Posts the receipt, updates stock and makes the bill matchable."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A receipt is the proof that the goods came",
+          "intro": "It reads from the order and feeds stock, the supplier bill and landed cost.",
+          "groups": {
+            "before": "Before the receipt",
+            "after": "After the receipt",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "purchaseOrders": "What was ordered.",
+            "scTender": "The tender behind the order.",
+            "vendors": "Who delivered.",
+            "billsAp": "Match the bill to what arrived.",
+            "scLandedCost": "Add freight and duty to the received goods.",
+            "scOverview": "Short and held receipts.",
+            "itemsProducts": "Stock by item.",
+            "financialReports": "Stock value in your statements."
+          }
+        },
+        "local": {
+          "title": "Receiving the way Bangladeshi factories do it",
+          "intro": "Deliveries arrive in parts, trucks are weighed, and something is always short or damaged. A receipt that records all of that protects both sides.",
+          "points": [
+            {
+              "title": "Part deliveries",
+              "body": "The order stays open until it is fully received."
+            },
+            {
+              "title": "Short and rejected, apart",
+              "body": "Missing goods and damaged goods are told apart."
+            },
+            {
+              "title": "Quality hold",
+              "body": "Goods can wait for inspection before they count."
+            },
+            {
+              "title": "Bill matched to the receipt",
+              "body": "You pay for what was accepted, not what was invoiced."
+            }
+          ],
+          "story": {
+            "title": "One delivery, from gate to stock",
+            "intro": "A sample raw material delivery, the way it usually runs.",
+            "steps": [
+              {
+                "time": "3 Nov",
+                "text": "A truck arrives with PP granules and masterbatch."
+              },
+              {
+                "time": "3 Nov",
+                "text": "Black masterbatch is 600 kg short, so the receipt is partial."
+              },
+              {
+                "time": "3 Nov",
+                "text": "150 kg of PP granules fail inspection and are rejected."
+              },
+              {
+                "time": "3 Nov",
+                "text": "The receipt is confirmed, and stock rises by the accepted quantity."
+              },
+              {
+                "time": "12 Nov",
+                "text": "The remaining 600 kg arrive on a second receipt."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use goods receipts",
+          "angles": {
+            "retail": "Stock received into shops and stores.",
+            "food-hospitality": "Produce received and checked daily.",
+            "real-estate": "Materials received on site.",
+            "consulting": "Equipment received and signed for.",
+            "manufacturing": "Raw material received, weighed and inspected.",
+            "health-fitness": "Equipment and consumables received.",
+            "trades": "Parts received for jobs.",
+            "others": "Supplies received for programmes."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about goods receipts",
+          "items": [
+            {
+              "q": "What is a goods receipt note?",
+              "a": "A record of what arrived against a purchase order."
+            },
+            {
+              "q": "What if only part arrived?",
+              "a": "Record what came. The receipt is partial, and the order stays open."
+            },
+            {
+              "q": "What if some goods are damaged?",
+              "a": "Record the rejected quantity. Only the accepted quantity goes into stock."
+            },
+            {
+              "q": "What is a QC hold?",
+              "a": "A state where goods wait for inspection before they count."
+            },
+            {
+              "q": "Does it update stock?",
+              "a": "Yes. Confirming a receipt raises stock by the accepted quantity."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample purchase with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a delivery note from this week. We will record it as a receipt in the demo."
+        }
+      },
+      "scLandedCost": {
+        "meta": {
+          "title": "Landed Cost: The True Cost of Imported Goods | Adon ERP",
+          "description": "Add freight, insurance, customs duty, clearing and port charges to the goods value and spread them over the items, giving a landed unit cost. Built for companies in Bangladesh.",
+          "keywords": [
+            "landed cost software Bangladesh",
+            "import costing",
+            "customs duty allocation",
+            "landed unit cost",
+            "import purchase costing",
+            "Adon ERP landed cost"
+          ]
+        },
+        "hero": {
+          "title": "Landed cost: what the goods really cost, once they are in the store",
+          "lead": "The supplier invoiced 118 taka a kilo, but freight, insurance, duty and port charges came on top. Landed cost adds them up, spreads them across the items, and gives you the cost you should price and value stock on.",
+          "secondaryCta": "See how cost is spread"
+        },
+        "sample": {
+          "count": "1 shipment",
+          "notes": [
+            "every charge on one bar",
+            "spread over the items by value",
+            "landed unit cost, not invoice rate"
+          ]
+        },
+        "ui": {
+          "title": "Landed cost",
+          "build": "Cost build-up",
+          "cGoods": "Goods value",
+          "cFreight": "Freight",
+          "cInsurance": "Insurance",
+          "cDuty": "Customs duty",
+          "cClearing": "Clearing and handling",
+          "cPort": "Port charges",
+          "allocation": "Allocation to items",
+          "byValue": "by value",
+          "thItem": "Item",
+          "thInvoice": "Invoice value",
+          "thExtra": "Extra cost",
+          "thLanded": "Landed total",
+          "thUnit": "Landed / invoice per kg",
+          "caption": "A partial preview of Landed Cost in Adon ERP. Company, shipment and figures are sample data."
+        },
+        "flow": {
+          "title": "From invoice price to landed cost, in three steps",
+          "intro": "The method is simple, and the page shows each step.",
+          "steps": [
+            {
+              "tag": "Add",
+              "question": "Every charge",
+              "body": "Freight, insurance, customs duty, clearing and handling, and port charges are added to the goods value."
+            },
+            {
+              "tag": "Spread",
+              "question": "Across the items",
+              "body": "The extra cost is shared among the items in proportion to their value."
+            },
+            {
+              "tag": "Unit cost",
+              "question": "Per kilo, landed",
+              "body": "Each item’s landed total is divided by its quantity, giving the real cost per unit."
+            }
+          ],
+          "formTitle": "What you see on the page",
+          "form": [
+            {
+              "label": "Cost build-up",
+              "body": "One bar for the whole shipment, split by charge."
+            },
+            {
+              "label": "Charges",
+              "body": "Each with its amount, so the duty and freight are visible."
+            },
+            {
+              "label": "Allocation method",
+              "body": "By value here. Quantity or weight are the other common choices."
+            },
+            {
+              "label": "Invoice and landed",
+              "body": "Each item’s invoice value, extra cost and landed total."
+            },
+            {
+              "label": "Landed unit cost",
+              "body": "Beside the invoice rate, so the difference is plain."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Landed cost turns a receipt into a true stock value",
+          "intro": "It reads the goods that arrived and the charges that came with them, and it feeds the item cost and the books.",
+          "groups": {
+            "before": "Before the allocation",
+            "after": "After the allocation",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "scGoodsReceipts": "The goods that arrived.",
+            "purchaseOrders": "The order and its prices.",
+            "exchangeRates": "The rate used for foreign invoices.",
+            "itemsProducts": "Item cost updated to the landed cost.",
+            "billsAp": "Freight and duty bills.",
+            "journalEntries": "The entry that adds the charges to stock.",
+            "scOverview": "Shipments waiting to be allocated.",
+            "financialReports": "Stock value in your statements.",
+            "ledgers": "The inventory account, line by line."
+          }
+        },
+        "local": {
+          "title": "Landed cost for companies that import",
+          "intro": "Garment and plastics makers import raw material, and duty and freight can add a third to the invoice. Pricing on the invoice rate alone loses money.",
+          "points": [
+            {
+              "title": "Customs duty on the record",
+              "body": "Duty is a visible line, not buried in an expense."
+            },
+            {
+              "title": "Freight and port charges",
+              "body": "Sea freight, C&F and port charges all counted."
+            },
+            {
+              "title": "By value, quantity or weight",
+              "body": "Choose how the extra cost is shared."
+            },
+            {
+              "title": "Costing that matches the stock",
+              "body": "Stock is valued at the landed cost, so margins are honest."
+            }
+          ],
+          "story": {
+            "title": "One shipment, from invoice to landed cost",
+            "intro": "A sample import of raw material, the way it usually runs.",
+            "steps": [
+              {
+                "time": "21 Nov",
+                "text": "The shipment arrives, and the goods value is 27,84,000 taka."
+              },
+              {
+                "time": "22 Nov",
+                "text": "Freight, insurance, duty, clearing and port charges come to 10,26,000."
+              },
+              {
+                "time": "22 Nov",
+                "text": "The extra cost is spread over three items by value."
+              },
+              {
+                "time": "22 Nov",
+                "text": "PP granules cost about 161.5 taka per kg landed, against 118 on the invoice."
+              },
+              {
+                "time": "22 Nov",
+                "text": "Stock is valued at the landed cost."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use landed cost",
+          "angles": {
+            "retail": "Imported stock costed before it is priced.",
+            "food-hospitality": "Imported ingredients and equipment.",
+            "real-estate": "Imported fittings and materials.",
+            "consulting": "Imported equipment for clients.",
+            "manufacturing": "Imported raw material costed per kilo.",
+            "health-fitness": "Imported equipment and supplies.",
+            "trades": "Imported parts and tools.",
+            "others": "Imported supplies for programmes."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about landed cost",
+          "items": [
+            {
+              "q": "What is landed cost?",
+              "a": "The invoice price plus everything it cost to bring the goods to your store: freight, insurance, duty, clearing and port charges."
+            },
+            {
+              "q": "How is the extra cost shared?",
+              "a": "In proportion to each item’s value. Quantity or weight can be used instead."
+            },
+            {
+              "q": "What is the landed unit cost?",
+              "a": "An item’s landed total divided by its quantity."
+            },
+            {
+              "q": "Does it change my stock value?",
+              "a": "Yes. Stock is valued at the landed cost."
+            },
+            {
+              "q": "Does it handle foreign currency?",
+              "a": "Yes. Foreign invoices use the exchange rate for their date."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through a sample purchase with you."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring an import file with its duty and freight bills. We will work out the landed cost in the demo."
+        }
+      },
+      "invForecast": {
+        "meta": {
+          "title": "Demand Forecast: Know What to Reorder Before You Run Out | Adon ERP",
+          "description": "Forecast demand from past issues, see days of cover for each item, and get a list of what to reorder now. Built for companies in Bangladesh.",
+          "keywords": [
+            "demand forecast software Bangladesh",
+            "inventory forecasting",
+            "reorder planning",
+            "days of cover",
+            "Adon ERP demand forecast"
+          ]
+        },
+        "hero": {
+          "title": "Demand forecast: reorder when the numbers say so, not when the shelf is empty",
+          "lead": "Adon ERP looks at how much of each item you used in past months, projects the next three, and compares that with what is on hand. The items running out first are at the top, with an estimate of what ordering them will cost.",
+          "secondaryCta": "See how cover is worked out"
+        },
+        "sample": {
+          "count": "5 items",
+          "notes": [
+            "past use, then the forecast",
+            "days of cover for each item",
+            "an order value to plan with"
+          ]
+        },
+        "ui": {
+          "title": "Demand forecast",
+          "accuracy": "Forecast accuracy",
+          "accuracySub": "last 6 months",
+          "atRisk": "Items to reorder now",
+          "atRiskSub": "under 20 days of cover",
+          "horizon": "Forecast horizon",
+          "horizonValue": "90 days",
+          "horizonSub": "next three months",
+          "suggested": "Estimated order value",
+          "suggestedSub": "for items to reorder now",
+          "chart": "PP granules, monthly use (tonnes)",
+          "actual": "actual",
+          "forecast": "forecast",
+          "chartNote": "Past use is solid. The dashed bars are the next three months, projected from the trend.",
+          "cover": "Days of cover",
+          "days": "days",
+          "orderNow": "order now",
+          "soon": "soon",
+          "ok": "ok",
+          "caption": "A partial preview of Demand Forecast in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "From past use to a reorder list, in three steps",
+          "intro": "The method is deliberately plain, so a store keeper can check it with a pencil.",
+          "steps": [
+            {
+              "tag": "Past use",
+              "question": "What you actually used",
+              "body": "Monthly issues for each item, taken from the stock movements already recorded."
+            },
+            {
+              "tag": "Forecast",
+              "question": "What you will probably need",
+              "body": "The trend is projected forward for the next three months, so seasonal growth is not missed."
+            },
+            {
+              "tag": "Cover",
+              "question": "How long the stock lasts",
+              "body": "On-hand stock divided by the forecast use gives days of cover. Under 20 days is order now, under 30 is soon."
+            }
+          ],
+          "formTitle": "What the page shows",
+          "form": [
+            {
+              "label": "Accuracy",
+              "body": "How close past forecasts came to real use."
+            },
+            {
+              "label": "Items to reorder",
+              "body": "How many are under 20 days of cover."
+            },
+            {
+              "label": "The chart",
+              "body": "Past use as solid bars, forecast as dashed bars."
+            },
+            {
+              "label": "Days of cover",
+              "body": "A bar for each item, with a marker at 30 days."
+            },
+            {
+              "label": "Estimated order value",
+              "body": "Shortfall times the last rate, for the items to reorder now."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A forecast turns stock history into a buying plan",
+          "intro": "It reads what was issued, and it ends in a requisition.",
+          "groups": {
+            "before": "Before the forecast",
+            "after": "After the forecast",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "itemsProducts": "Reorder points and units.",
+            "invMovements": "The history the forecast is built on.",
+            "scRequisitions": "Raise a requisition for what is short.",
+            "purchaseOrders": "Order directly if the need is clear.",
+            "invSummary": "Stock value and turnover.",
+            "scOverview": "Open requisitions at a glance.",
+            "financialReports": "Purchasing in your statements."
+          }
+        },
+        "local": {
+          "title": "Forecasting for long lead times",
+          "intro": "Raw material from abroad takes weeks, and a missed reorder stops a line. Cover in days is the number a plant manager can act on.",
+          "points": [
+            {
+              "title": "Cover, not just quantity",
+              "body": "Two thousand kilos is a lot or a little depending on use."
+            },
+            {
+              "title": "Lead time in mind",
+              "body": "Items with short cover and long lead time are the first to see."
+            },
+            {
+              "title": "Seasonal demand",
+              "body": "Eid and export peaks show up in the trend."
+            },
+            {
+              "title": "An order value",
+              "body": "Finance sees what the reorder will cost before it is raised."
+            }
+          ],
+          "story": {
+            "title": "One forecast, from trend to requisition",
+            "intro": "A sample raw material review, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Nov",
+                "text": "PP granules use has risen for five months running."
+              },
+              {
+                "time": "1 Nov",
+                "text": "The forecast for December is 51 tonnes."
+              },
+              {
+                "time": "1 Nov",
+                "text": "On-hand stock covers 15 days, so the item shows order now."
+              },
+              {
+                "time": "2 Nov",
+                "text": "A requisition is raised for the shortfall."
+              },
+              {
+                "time": "20 Nov",
+                "text": "The goods arrive before the stock runs out."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the demand forecast",
+          "angles": {
+            "retail": "Stock by season and sales trend.",
+            "food-hospitality": "Ingredients and supplies by weekly use.",
+            "real-estate": "Materials by project phase.",
+            "consulting": "Consumables by headcount.",
+            "manufacturing": "Raw material and packing by production plan.",
+            "health-fitness": "Consumables and retail items by usage.",
+            "trades": "Parts by job volume.",
+            "others": "Supplies by programme calendar."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about demand forecast",
+          "items": [
+            {
+              "q": "How is demand forecast?",
+              "a": "From past monthly use of each item, projected forward as a trend."
+            },
+            {
+              "q": "What is days of cover?",
+              "a": "How many days the stock on hand will last at the forecast rate."
+            },
+            {
+              "q": "When does an item show order now?",
+              "a": "When it has under 20 days of cover."
+            },
+            {
+              "q": "Does it raise orders by itself?",
+              "a": "No. It shows what to reorder, and you raise a requisition."
+            },
+            {
+              "q": "How far ahead does it look?",
+              "a": "Ninety days."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your top ten items and last year’s use. We will forecast them in the demo."
+        }
+      },
+      "invWarehouses": {
+        "meta": {
+          "title": "Warehouses: Every Store, Zone and Bin in One Place | Adon ERP",
+          "description": "Keep several warehouses with zones and bins, see how full each one is, and what the stock in it is worth. Built for companies in Bangladesh.",
+          "keywords": [
+            "warehouse management software Bangladesh",
+            "multi warehouse inventory",
+            "bin location",
+            "warehouse capacity",
+            "Adon ERP warehouses"
+          ]
+        },
+        "hero": {
+          "title": "Warehouses: know what is where, and how full it is",
+          "lead": "Add each warehouse and divide it into zones and bins. See how much of the space is used, how many items it holds, and what the stock is worth, so a transfer is a decision and not a guess.",
+          "secondaryCta": "See how a warehouse is laid out"
+        },
+        "sample": {
+          "count": "3 warehouses",
+          "notes": [
+            "one card for each warehouse",
+            "capacity used at a glance",
+            "a heat grid of bins"
+          ]
+        },
+        "ui": {
+          "title": "Warehouses",
+          "capacity": "Capacity used",
+          "skus": "items",
+          "bins": "Bin occupancy, Gazipur Main",
+          "empty": "empty",
+          "full": "full",
+          "zoneA": "Zone A · Raw material",
+          "zoneB": "Zone B · Finished goods",
+          "zoneC": "Zone C · Consumables",
+          "zoneD": "Zone D · Spares",
+          "caption": "A partial preview of Warehouses in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "A warehouse, in three levels",
+          "intro": "Stock is located at the finest level you choose to keep.",
+          "steps": [
+            {
+              "tag": "Warehouse",
+              "question": "The building",
+              "body": "A name, a location and a capacity. Each warehouse has its own stock and its own value."
+            },
+            {
+              "tag": "Zone",
+              "question": "An area inside it",
+              "body": "Raw material, finished goods, consumables and spares can each have a zone."
+            },
+            {
+              "tag": "Bin",
+              "question": "A place on a rack",
+              "body": "Bins let a store keeper find an item in seconds, and the grid shows which are full."
+            }
+          ],
+          "formTitle": "What the page shows",
+          "form": [
+            {
+              "label": "Capacity used",
+              "body": "A bar for each warehouse."
+            },
+            {
+              "label": "Item count",
+              "body": "How many different items it holds."
+            },
+            {
+              "label": "Stock value",
+              "body": "What the stock in it is worth, in taka."
+            },
+            {
+              "label": "Bin heat grid",
+              "body": "Darker means fuller, by zone."
+            },
+            {
+              "label": "Transfers",
+              "body": "Moving stock between warehouses is recorded as a movement."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Warehouses are where receipts land and issues leave",
+          "intro": "Every receipt is booked into one, and every issue comes out of one.",
+          "groups": {
+            "before": "Before the warehouse",
+            "after": "After the warehouse",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "itemsProducts": "What is stored.",
+            "scGoodsReceipts": "Goods booked in.",
+            "invMovements": "Transfers and issues.",
+            "invGatePasses": "Vehicles entering and leaving.",
+            "invSummary": "Stock value by warehouse.",
+            "financialReports": "Inventory in your statements.",
+            "scOverview": "Receipts and shipments."
+          }
+        },
+        "local": {
+          "title": "Warehouses for factories, depots and port stores",
+          "intro": "A plant in Gazipur, a depot in Narayanganj and a store at the port is a common set-up. Each needs its own stock and its own count.",
+          "points": [
+            {
+              "title": "Several sites",
+              "body": "Factory, depot and port store, side by side."
+            },
+            {
+              "title": "Zones for how you work",
+              "body": "Raw material apart from finished goods."
+            },
+            {
+              "title": "Space used",
+              "body": "See when a warehouse is close to full."
+            },
+            {
+              "title": "Value by site",
+              "body": "What each location holds, in taka."
+            }
+          ],
+          "story": {
+            "title": "One transfer, from depot to factory",
+            "intro": "A sample stock move, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Nov",
+                "text": "Gazipur Main shows 78% full, and Narayanganj 54%."
+              },
+              {
+                "time": "2 Nov",
+                "text": "Cartons are needed at the factory."
+              },
+              {
+                "time": "2 Nov",
+                "text": "A transfer of 1,500 cartons is recorded."
+              },
+              {
+                "time": "2 Nov",
+                "text": "Both warehouses update, and the bins show the change."
+              },
+              {
+                "time": "3 Nov",
+                "text": "The factory has what it needs."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use warehouses",
+          "angles": {
+            "retail": "Stores and a distribution centre.",
+            "food-hospitality": "Kitchens, cold rooms and dry stores.",
+            "real-estate": "Site stores for materials.",
+            "consulting": "A single store for equipment.",
+            "manufacturing": "Factory, depot and port store.",
+            "health-fitness": "Clinic stores and a central pharmacy.",
+            "trades": "A van store and a main store.",
+            "others": "Programme stores and partner sites."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about warehouses",
+          "items": [
+            {
+              "q": "Can I have several warehouses?",
+              "a": "Yes. Each has its own stock and value."
+            },
+            {
+              "q": "What are zones and bins?",
+              "a": "Zones are areas inside a warehouse, and bins are places on a rack."
+            },
+            {
+              "q": "How is capacity shown?",
+              "a": "As a share of the warehouse’s capacity that is used."
+            },
+            {
+              "q": "How do I move stock between warehouses?",
+              "a": "Record a transfer in Stock Movements."
+            },
+            {
+              "q": "Can I see the value of each warehouse?",
+              "a": "Yes. It is on each card."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a sketch of your stores. We will set up the warehouses and zones in the demo."
+        }
+      },
+      "invMovements": {
+        "meta": {
+          "title": "Stock Movements: A Ledger of Every Receipt, Issue and Transfer | Adon ERP",
+          "description": "See every stock movement with its reference, item, warehouse, quantity and running balance. Built for companies in Bangladesh.",
+          "keywords": [
+            "stock movement ledger",
+            "inventory transactions Bangladesh",
+            "stock transfer",
+            "stock adjustment",
+            "Adon ERP stock movements"
+          ]
+        },
+        "hero": {
+          "title": "Stock movements: every kilo in, every kilo out, in one list",
+          "lead": "Receipts, issues to production, transfers between warehouses and count adjustments all land in one ledger. Each line shows what moved, where, how much, and the balance after it.",
+          "secondaryCta": "See how movements are read"
+        },
+        "sample": {
+          "count": "7 movements",
+          "notes": [
+            "a reference on every line",
+            "receipts, issues, transfers",
+            "the balance after each move"
+          ]
+        },
+        "ui": {
+          "title": "Stock movements",
+          "fAll": "All",
+          "fReceipt": "Receipts",
+          "fIssue": "Issues",
+          "fTransfer": "Transfers",
+          "fAdjust": "Adjustments",
+          "count": "7 rows",
+          "thDate": "Date",
+          "thRef": "Reference",
+          "thType": "Type",
+          "thItem": "Item",
+          "thWhere": "Warehouse",
+          "thQty": "Qty",
+          "thBalance": "Balance",
+          "receipt": "receipt",
+          "issue": "issue",
+          "transfer": "transfer",
+          "adjustment": "adjustment",
+          "caption": "A partial preview of Stock Movements in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "Four kinds of movement",
+          "intro": "The type tells you why the quantity changed.",
+          "steps": [
+            {
+              "tag": "receipt",
+              "question": "Stock comes in",
+              "body": "A goods receipt raises stock by the accepted quantity, and the line carries the GRN number."
+            },
+            {
+              "tag": "issue",
+              "question": "Stock goes out",
+              "body": "An issue to production or a delivery lowers stock, and carries its own reference."
+            },
+            {
+              "tag": "transfer",
+              "question": "Stock moves",
+              "body": "A transfer lowers one warehouse and raises another, and the line shows both."
+            }
+          ],
+          "formTitle": "What each line holds",
+          "form": [
+            {
+              "label": "Date and reference",
+              "body": "When it happened, and the document behind it."
+            },
+            {
+              "label": "Type",
+              "body": "Receipt, issue, transfer or adjustment."
+            },
+            {
+              "label": "Item and warehouse",
+              "body": "What moved, and where."
+            },
+            {
+              "label": "Quantity",
+              "body": "Green for in, amber for out."
+            },
+            {
+              "label": "Balance",
+              "body": "The stock of that item after the movement. An adjustment records a count difference."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Movements are the trail behind every stock number",
+          "intro": "Everything that changes stock is written here, so any balance can be explained.",
+          "groups": {
+            "before": "What creates movements",
+            "after": "What reads them",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "scGoodsReceipts": "Receipts raise stock.",
+            "invWarehouses": "Where stock sits and moves.",
+            "invSummary": "Totals built from movements.",
+            "invForecast": "Past use for the forecast.",
+            "ledgers": "The inventory account.",
+            "financialReports": "Stock value in statements.",
+            "scOverview": "Receipts and issues at a glance."
+          }
+        },
+        "local": {
+          "title": "A trail that stands up to an audit",
+          "intro": "Stock is the easiest asset to lose track of. A ledger where every change has a reference is what an auditor asks for.",
+          "points": [
+            {
+              "title": "A reference on every line",
+              "body": "GRN, issue, transfer or adjustment number."
+            },
+            {
+              "title": "Balance after each move",
+              "body": "No arithmetic to redo."
+            },
+            {
+              "title": "Adjustments visible",
+              "body": "A count difference is recorded as its own type."
+            },
+            {
+              "title": "Filter by type",
+              "body": "See only receipts, or only issues."
+            }
+          ],
+          "story": {
+            "title": "One day of movements",
+            "intro": "A sample day, the way it usually runs.",
+            "steps": [
+              {
+                "time": "2 Nov",
+                "text": "2,400 kg of PP granules are issued to production."
+              },
+              {
+                "time": "2 Nov",
+                "text": "1,500 cartons are transferred from Narayanganj to Gazipur."
+              },
+              {
+                "time": "1 Nov",
+                "text": "A stock count finds 5 kg of ink short, and an adjustment is recorded."
+              },
+              {
+                "time": "3 Nov",
+                "text": "A delivery is received, and stock rises."
+              },
+              {
+                "time": "3 Nov",
+                "text": "Each balance is already updated."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use stock movements",
+          "angles": {
+            "retail": "Receipts, sales and returns.",
+            "food-hospitality": "Daily receipts and kitchen issues.",
+            "real-estate": "Materials in and issued to sites.",
+            "consulting": "Equipment out and back.",
+            "manufacturing": "Raw material in, issues to production.",
+            "health-fitness": "Consumables in, and issues to rooms.",
+            "trades": "Parts in, and issues to jobs.",
+            "others": "Supplies in, and issues to programmes."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about stock movements",
+          "items": [
+            {
+              "q": "What is a stock movement?",
+              "a": "Any change in the quantity of an item: a receipt, an issue, a transfer or an adjustment."
+            },
+            {
+              "q": "Where does the reference come from?",
+              "a": "From the document behind it, such as a goods receipt."
+            },
+            {
+              "q": "What is an adjustment?",
+              "a": "A correction after a stock count."
+            },
+            {
+              "q": "Can I filter the list?",
+              "a": "Yes. By type, or by searching."
+            },
+            {
+              "q": "Can I export it?",
+              "a": "Yes. To CSV or Excel."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a week of stock records. We will enter them as movements in the demo."
+        }
+      },
+      "invSummary": {
+        "meta": {
+          "title": "Inventory Summary: Stock Value, Turnover and Dead Stock | Adon ERP",
+          "description": "See the total stock value, how it splits by category, the top items and how fast stock turns over. Built for companies in Bangladesh.",
+          "keywords": [
+            "inventory summary report Bangladesh",
+            "stock valuation",
+            "inventory turnover",
+            "dead stock report",
+            "Adon ERP inventory summary"
+          ]
+        },
+        "hero": {
+          "title": "Inventory summary: what you hold, what it is worth, how fast it moves",
+          "lead": "One page for the owner: the total value of stock, how it divides by category, the items that hold the most money, and the stock that has not moved for months.",
+          "secondaryCta": "See what the summary shows"
+        },
+        "sample": {
+          "count": "27 items",
+          "notes": [
+            "total value and trend",
+            "split by category",
+            "top items by value"
+          ]
+        },
+        "ui": {
+          "title": "Inventory summary",
+          "value": "Stock value",
+          "valueSub": "all warehouses, landed cost",
+          "skus": "Items in stock",
+          "skusSub": "across 3 warehouses",
+          "turnover": "Inventory turnover",
+          "turnoverSub": "times a year",
+          "dead": "Dead stock",
+          "deadSub": "no movement in 180 days",
+          "byCategory": "Value by category",
+          "inStock": "in stock",
+          "catRaw": "Raw material",
+          "catFinished": "Finished goods",
+          "catConsumable": "Consumables",
+          "catOther": "Other",
+          "top": "Top items by value (BDT)",
+          "caption": "A partial preview of Inventory Summary in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "Reading the summary, in three questions",
+          "intro": "The page answers what an owner asks first.",
+          "steps": [
+            {
+              "tag": "How much",
+              "question": "Total value",
+              "body": "The four tiles give value, item count, turnover and dead stock. The small chart shows the trend."
+            },
+            {
+              "tag": "Of what",
+              "question": "Category and item",
+              "body": "The ring splits value by category, and the list shows the items that hold the most of it."
+            },
+            {
+              "tag": "How fast",
+              "question": "Turnover and dead stock",
+              "body": "Turnover says how often stock is used up in a year, and dead stock is what is sitting still."
+            }
+          ],
+          "formTitle": "What the page shows",
+          "form": [
+            {
+              "label": "Stock value",
+              "body": "Quantity times landed cost, summed over all warehouses."
+            },
+            {
+              "label": "Items in stock",
+              "body": "How many different items have stock."
+            },
+            {
+              "label": "Turnover",
+              "body": "How many times stock is used and replaced in a year."
+            },
+            {
+              "label": "Dead stock",
+              "body": "Value of items with no movement for 180 days."
+            },
+            {
+              "label": "Top items",
+              "body": "Quantity, cost and value, largest first."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The summary is built from receipts, costs and movements",
+          "intro": "It holds nothing of its own. It adds up what the rest of the module records.",
+          "groups": {
+            "before": "What feeds it",
+            "after": "What follows it",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "scGoodsReceipts": "Quantities received.",
+            "scLandedCost": "The true cost of each item.",
+            "invMovements": "Issues and transfers.",
+            "invForecast": "What to reorder.",
+            "scRequisitions": "Raise a requisition.",
+            "financialReports": "Inventory in the balance sheet.",
+            "ledgers": "The inventory account.",
+            "accountingHub": "Stock value at a glance."
+          }
+        },
+        "local": {
+          "title": "Stock valued the way it really cost",
+          "intro": "Imported material carries duty and freight. A summary that values stock at the invoice price understates it, and flatters the margin.",
+          "points": [
+            {
+              "title": "Landed cost values",
+              "body": "Stock is valued at what it cost to bring in."
+            },
+            {
+              "title": "A ring by category",
+              "body": "See how much is tied up in raw material."
+            },
+            {
+              "title": "Dead stock named",
+              "body": "What has not moved is listed, not hidden."
+            },
+            {
+              "title": "A trend",
+              "body": "Stock value over the last months."
+            }
+          ],
+          "story": {
+            "title": "One month end, from summary to action",
+            "intro": "A sample review, the way it usually runs.",
+            "steps": [
+              {
+                "time": "30 Nov",
+                "text": "The owner opens the summary."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Stock is worth 3,52,40,000 taka, up from last month."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Raw material is 58% of it."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Three items have not moved in 180 days."
+              },
+              {
+                "time": "1 Dec",
+                "text": "A plan is made to use or sell them."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the inventory summary",
+          "angles": {
+            "retail": "Stock value by category and season.",
+            "food-hospitality": "Stock by kitchen and store.",
+            "real-estate": "Materials on hand across sites.",
+            "consulting": "Consumables on hand.",
+            "manufacturing": "Raw material, packing and finished goods.",
+            "health-fitness": "Supplies and consumables.",
+            "trades": "Parts and tools on hand.",
+            "others": "Supplies on hand for programmes."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the inventory summary",
+          "items": [
+            {
+              "q": "How is stock valued?",
+              "a": "Quantity times landed cost."
+            },
+            {
+              "q": "What is turnover?",
+              "a": "How many times in a year the stock is used and replaced."
+            },
+            {
+              "q": "What is dead stock?",
+              "a": "Stock with no movement for a long time, here 180 days."
+            },
+            {
+              "q": "Does it cover all warehouses?",
+              "a": "Yes, with the value split by warehouse available too."
+            },
+            {
+              "q": "Does it match the balance sheet?",
+              "a": "Yes. It reads the same inventory account."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your stock count sheet. We will build the summary from it in the demo."
+        }
+      },
+      "invGatePasses": {
+        "meta": {
+          "title": "Gate Passes: Control Every Vehicle In and Out | Adon ERP",
+          "description": "Issue numbered gate passes for inward and outward vehicles with driver, party, purpose and times. Built for companies in Bangladesh.",
+          "keywords": [
+            "gate pass software Bangladesh",
+            "vehicle gate register",
+            "inward outward gate pass",
+            "factory gate management",
+            "Adon ERP gate passes"
+          ]
+        },
+        "hero": {
+          "title": "Gate passes: nothing enters or leaves without a number",
+          "lead": "Every truck at the gate gets a pass: inward or outward, with the vehicle, the driver, who it is for and why. The list shows which vehicles are on site right now, and which have left.",
+          "secondaryCta": "See how a gate pass works"
+        },
+        "sample": {
+          "count": "4 passes",
+          "notes": [
+            "inward and outward",
+            "on site right now",
+            "a number for every vehicle"
+          ]
+        },
+        "ui": {
+          "title": "Gate passes",
+          "onSite": "on site",
+          "exited": "exited",
+          "pending": "pending",
+          "newTitle": "New gate pass",
+          "fType": "Type",
+          "inward": "Inward",
+          "fVehicle": "Vehicle number",
+          "fDriver": "Driver",
+          "fParty": "Party",
+          "fPurpose": "Purpose",
+          "caption": "A partial preview of Gate Passes in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "A gate pass, in three states",
+          "intro": "A pass moves from the gate office to the yard and out again.",
+          "steps": [
+            {
+              "tag": "pending",
+              "question": "Waiting for approval",
+              "body": "An outward pass waits for a release from stores before the vehicle can leave."
+            },
+            {
+              "tag": "on site",
+              "question": "Inside the gate",
+              "body": "The vehicle has entered, and its time in is recorded."
+            },
+            {
+              "tag": "exited",
+              "question": "Left the premises",
+              "body": "The time out is recorded, and the pass is closed."
+            }
+          ],
+          "formTitle": "What you fill in on a new pass",
+          "form": [
+            {
+              "label": "Type",
+              "body": "Inward for arrivals, outward for dispatches."
+            },
+            {
+              "label": "Vehicle number",
+              "body": "As on the plate."
+            },
+            {
+              "label": "Driver",
+              "body": "Name and phone."
+            },
+            {
+              "label": "Party",
+              "body": "The supplier or the customer."
+            },
+            {
+              "label": "Purpose",
+              "body": "What it carries, such as PP granules, 15 tonnes."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A gate pass is the first and last record of a load",
+          "intro": "It sits at the gate, in front of the receipt and behind the delivery.",
+          "groups": {
+            "before": "Before the gate",
+            "after": "At the gate",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "scGoodsReceipts": "Receive what arrived.",
+            "deliveryChallans": "The challan that goes out with the load.",
+            "invWeighbridge": "Weigh the vehicle in and out.",
+            "invMovements": "Stock changes after the gate.",
+            "invWarehouses": "Where the load goes.",
+            "scOverview": "Vehicles and receipts at a glance."
+          }
+        },
+        "local": {
+          "title": "Gate control for factories and depots",
+          "intro": "Trucks queue at the gate, drivers carry papers, and a load leaving without a challan is a loss. A pass for each is the simplest control.",
+          "points": [
+            {
+              "title": "A number for every vehicle",
+              "body": "GP-IN and GP-OUT series."
+            },
+            {
+              "title": "Who is on site",
+              "body": "The list shows vehicles still inside."
+            },
+            {
+              "title": "Times in and out",
+              "body": "For demurrage and disputes."
+            },
+            {
+              "title": "Linked to papers",
+              "body": "The pass names the receipt or the challan it belongs to."
+            }
+          ],
+          "story": {
+            "title": "One truck, from gate to gate",
+            "intro": "A sample inward load, the way it usually runs.",
+            "steps": [
+              {
+                "time": "09:40",
+                "text": "A truck arrives with PP granules, and an inward pass is issued."
+              },
+              {
+                "time": "09:50",
+                "text": "It is weighed in."
+              },
+              {
+                "time": "10:30",
+                "text": "It is unloaded and the goods receipt is made."
+              },
+              {
+                "time": "11:05",
+                "text": "It is weighed out."
+              },
+              {
+                "time": "11:10",
+                "text": "The pass is closed, and the time out recorded."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use gate passes",
+          "angles": {
+            "retail": "Delivery vans in and out.",
+            "food-hospitality": "Supplier vehicles at the kitchen.",
+            "real-estate": "Material trucks at the site gate.",
+            "consulting": "Visitor and courier log.",
+            "manufacturing": "Raw material in, finished goods out.",
+            "health-fitness": "Supplier and ambulance vehicles.",
+            "trades": "Service vehicles in and out.",
+            "others": "Partner vehicles at the store."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about gate passes",
+          "items": [
+            {
+              "q": "What is a gate pass?",
+              "a": "A numbered record of a vehicle entering or leaving the premises."
+            },
+            {
+              "q": "What is the difference between inward and outward?",
+              "a": "Inward is for arrivals. Outward is for dispatches."
+            },
+            {
+              "q": "What do the statuses mean?",
+              "a": "Pending is waiting for release, on site is inside, exited has left."
+            },
+            {
+              "q": "What do I fill in?",
+              "a": "The type, vehicle number, driver, party and purpose."
+            },
+            {
+              "q": "Can I see who is on site?",
+              "a": "Yes. Filter by on site."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your gate register. We will turn a day of it into gate passes in the demo."
+        }
+      },
+      "invWeighbridge": {
+        "meta": {
+          "title": "Weighbridge & Scales: Weighment Tickets Tied to the Order | Adon ERP",
+          "description": "Record gross, tare and net weight for each vehicle and compare the net with the purchase order quantity. Built for companies in Bangladesh.",
+          "keywords": [
+            "weighbridge software Bangladesh",
+            "weighment ticket",
+            "truck scale integration",
+            "gross tare net weight",
+            "Adon ERP weighbridge"
+          ]
+        },
+        "hero": {
+          "title": "Weighbridge: the weight on the ticket becomes the weight in the books",
+          "lead": "A truck is weighed in loaded and out empty. The ticket shows gross, tare and net, compares the net with what was ordered, and passes it to the goods receipt, so nobody retypes a weight.",
+          "secondaryCta": "See how a weighment works"
+        },
+        "sample": {
+          "count": "4 tickets",
+          "notes": [
+            "gross, tare, net",
+            "compared with the order",
+            "passed to the receipt"
+          ]
+        },
+        "ui": {
+          "title": "Weighbridge and scales",
+          "live": "Weighment WB-2026-0507",
+          "stable": "stable",
+          "gross": "Gross",
+          "tare": "Tare",
+          "netLabel": "Net",
+          "ordered": "Ordered",
+          "difference": "Difference",
+          "tolerance": "within the 2% tolerance",
+          "print": "Print ticket",
+          "toGrn": "Send to goods receipt",
+          "recent": "Recent weighments",
+          "caption": "A partial preview of Weighbridge & Scales in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "A weighment, in three readings",
+          "intro": "Two readings and a subtraction.",
+          "steps": [
+            {
+              "tag": "Gross",
+              "question": "Loaded",
+              "body": "The vehicle is weighed in with the load."
+            },
+            {
+              "tag": "Tare",
+              "question": "Empty",
+              "body": "The vehicle is weighed out after unloading."
+            },
+            {
+              "tag": "Net",
+              "question": "The load",
+              "body": "Net is gross less tare. It is compared with the order, within a tolerance."
+            }
+          ],
+          "formTitle": "What the ticket holds",
+          "form": [
+            {
+              "label": "Ticket number",
+              "body": "A series like WB-2026-0507."
+            },
+            {
+              "label": "Vehicle and party",
+              "body": "From the gate pass."
+            },
+            {
+              "label": "Material",
+              "body": "What the load is."
+            },
+            {
+              "label": "Gross, tare and net",
+              "body": "Three weights, with net worked out."
+            },
+            {
+              "label": "Difference from the order",
+              "body": "In kilos and per cent, against a tolerance."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The weighbridge sits between the gate and the store",
+          "intro": "It reads the pass and the order, and passes its net weight on.",
+          "groups": {
+            "before": "Before the weighment",
+            "after": "After the weighment",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "invGatePasses": "The vehicle at the gate.",
+            "purchaseOrders": "The quantity ordered.",
+            "scGoodsReceipts": "Receive the net weight.",
+            "invMovements": "Stock rises by what was accepted.",
+            "invSummary": "Stock in weight.",
+            "scOverview": "Receipts in progress."
+          }
+        },
+        "local": {
+          "title": "Weighing bulk goods honestly",
+          "intro": "Raw material, paper and scrap are bought by weight. A few hundred kilos either way is real money, and a ticket on both sides settles it.",
+          "points": [
+            {
+              "title": "Net worked out",
+              "body": "No hand calculation."
+            },
+            {
+              "title": "Tolerance",
+              "body": "A small difference passes, a big one is flagged."
+            },
+            {
+              "title": "A ticket to print",
+              "body": "For the driver and the file."
+            },
+            {
+              "title": "Weights flow on",
+              "body": "The net goes to the receipt without retyping."
+            }
+          ],
+          "story": {
+            "title": "One truck, from scale to receipt",
+            "intro": "A sample PP granules load, the way it usually runs.",
+            "steps": [
+              {
+                "time": "09:50",
+                "text": "The truck is weighed in at 28,450 kg."
+              },
+              {
+                "time": "10:35",
+                "text": "It is weighed out empty at 13,200 kg."
+              },
+              {
+                "time": "10:35",
+                "text": "Net is 15,250 kg, 250 kg over the order, 1.7%."
+              },
+              {
+                "time": "10:36",
+                "text": "That is within the 2% tolerance, so the ticket is printed."
+              },
+              {
+                "time": "10:40",
+                "text": "The net weight goes to the goods receipt."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the weighbridge",
+          "angles": {
+            "retail": "Bulk goods and scrap.",
+            "food-hospitality": "Produce and ingredients in bulk.",
+            "real-estate": "Sand, stone, rod and cement.",
+            "consulting": "Rarely used.",
+            "manufacturing": "Raw material, scrap and finished goods.",
+            "health-fitness": "Rarely used.",
+            "trades": "Scrap and metal.",
+            "others": "Agricultural goods and waste."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the weighbridge",
+          "items": [
+            {
+              "q": "What is a weighment ticket?",
+              "a": "A record of a vehicle’s gross, tare and net weight."
+            },
+            {
+              "q": "How is net worked out?",
+              "a": "Gross less tare."
+            },
+            {
+              "q": "What is the tolerance?",
+              "a": "The difference from the order that is accepted, such as 2%."
+            },
+            {
+              "q": "Does the weight go to the receipt?",
+              "a": "Yes. You can send it to the goods receipt."
+            },
+            {
+              "q": "Can I print the ticket?",
+              "a": "Yes."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a weighment slip. We will enter it and match it to an order in the demo."
+        }
+      },
+      "opTaxRates": {
+        "meta": {
+          "title": "Tax Rates: VAT, AIT and VDS, Set Up Once | Adon ERP",
+          "description": "Keep VAT at 15%, 10%, 7.5% and 5%, tax deducted at source and other rates, each with its account and effective date. Built for companies in Bangladesh.",
+          "keywords": [
+            "tax rates software Bangladesh",
+            "VAT 15% setup",
+            "AIT VDS rates",
+            "tax configuration",
+            "Adon ERP tax rates"
+          ]
+        },
+        "hero": {
+          "title": "Tax rates: set them up once, and every document uses the right one",
+          "lead": "Keep each tax as a named rate with a percentage, the documents it applies to, and the account it posts to. Invoices, bills and orders pick from the list, and the VAT register reads the same rates.",
+          "secondaryCta": "See how a rate is set up"
+        },
+        "sample": {
+          "count": "6 rates",
+          "notes": [
+            "a code for each rate",
+            "sales, purchase or both",
+            "the account it posts to"
+          ]
+        },
+        "ui": {
+          "title": "Tax rates",
+          "thName": "Tax",
+          "thRate": "Rate",
+          "thApplies": "Applies to",
+          "thAccount": "Account",
+          "thStatus": "Status",
+          "both": "sales and purchase",
+          "sales": "sales",
+          "purchase": "purchase",
+          "active": "active",
+          "newTitle": "New tax rate",
+          "fName": "Name",
+          "fRate": "Rate %",
+          "fApplies": "Applies to",
+          "fAccount": "Account",
+          "fFrom": "Effective from",
+          "caption": "A partial preview of Tax Rates in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "A tax rate, in three decisions",
+          "intro": "Every rate answers where it applies and where it posts.",
+          "steps": [
+            {
+              "tag": "Rate",
+              "question": "How much",
+              "body": "A percentage, such as 15% for standard VAT or 6% for AIT."
+            },
+            {
+              "tag": "Applies to",
+              "question": "Which documents",
+              "body": "Sales, purchase or both. Tax at source usually applies to purchases."
+            },
+            {
+              "tag": "Account",
+              "question": "Where it posts",
+              "body": "The payable account the tax is collected in, so the return and the ledger agree."
+            }
+          ],
+          "formTitle": "What you fill in on a new rate",
+          "form": [
+            {
+              "label": "Name",
+              "body": "What it is called on documents."
+            },
+            {
+              "label": "Rate",
+              "body": "The percentage."
+            },
+            {
+              "label": "Applies to",
+              "body": "Sales, purchase or both."
+            },
+            {
+              "label": "Account",
+              "body": "The account it posts to."
+            },
+            {
+              "label": "Effective from",
+              "body": "The date it starts, so old documents keep old rates."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Tax rates sit under every priced document",
+          "intro": "A rate is chosen on a line, and its effect flows to the register and the return.",
+          "groups": {
+            "before": "Before the rate",
+            "after": "Where rates are used",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "chartOfAccounts": "The accounts taxes post to.",
+            "invoicesAr": "Sales with VAT.",
+            "billsAp": "Purchases with VAT and tax at source.",
+            "purchaseOrders": "VAT on orders.",
+            "vatRegister": "VAT charged and paid.",
+            "financialReports": "Taxes in your statements.",
+            "accountingHub": "Tax payable at a glance."
+          }
+        },
+        "local": {
+          "title": "Bangladeshi taxes, ready to use",
+          "intro": "VAT comes in more than one rate, and AIT and VDS are deducted at source. Having them as named rates stops the wrong one being typed.",
+          "points": [
+            {
+              "title": "VAT at several rates",
+              "body": "15%, 10%, 7.5% and 5% as separate rates."
+            },
+            {
+              "title": "Tax at source",
+              "body": "AIT and VDS as purchase-side rates."
+            },
+            {
+              "title": "Effective dates",
+              "body": "A rate change does not rewrite old documents."
+            },
+            {
+              "title": "One list for every document",
+              "body": "Invoices, bills and orders pick from it."
+            }
+          ],
+          "story": {
+            "title": "One rate change, from budget to invoice",
+            "intro": "A sample rate update, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Jul",
+                "text": "A new rate is announced."
+              },
+              {
+                "time": "2 Jul",
+                "text": "It is added with an effective date."
+              },
+              {
+                "time": "3 Jul",
+                "text": "Invoices dated on or after it use the new rate."
+              },
+              {
+                "time": "3 Jul",
+                "text": "Older invoices keep the old one."
+              },
+              {
+                "time": "15 Jul",
+                "text": "The VAT register shows both correctly."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use tax rates",
+          "angles": {
+            "retail": "Standard VAT on most sales.",
+            "food-hospitality": "VAT on food and services.",
+            "real-estate": "VAT on rent and construction.",
+            "consulting": "VAT and AIT on fees.",
+            "manufacturing": "VAT, AIT and VDS on supplies.",
+            "health-fitness": "VAT on goods and services.",
+            "trades": "VAT and tax at source.",
+            "others": "Exempt and taxable lines side by side."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about tax rates",
+          "items": [
+            {
+              "q": "Which rates can I keep?",
+              "a": "Any. Common ones are VAT at 15%, 10%, 7.5% and 5%, AIT and VDS."
+            },
+            {
+              "q": "What does applies to mean?",
+              "a": "Whether a rate is used on sales, purchases or both."
+            },
+            {
+              "q": "What happens when a rate changes?",
+              "a": "Add the new one with an effective date. Older documents keep the old rate."
+            },
+            {
+              "q": "Where does tax post?",
+              "a": "To the account you choose for the rate."
+            },
+            {
+              "q": "Does the VAT register use these rates?",
+              "a": "Yes."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your current tax setup. We will enter the rates in the demo."
+        }
+      },
+      "opMigration": {
+        "meta": {
+          "title": "Migration Studio: Bring Your Data Over, Checked First | Adon ERP",
+          "description": "Import from Excel, CSV or another system with column mapping, row checks and an import summary. Built for companies in Bangladesh.",
+          "keywords": [
+            "data migration software Bangladesh",
+            "import from Excel",
+            "Tally migration",
+            "ERP data import",
+            "Adon ERP migration studio"
+          ]
+        },
+        "hero": {
+          "title": "Migration studio: your old data, in the new system, checked before it lands",
+          "lead": "Upload a spreadsheet or an export. Adon ERP matches your columns to its fields, checks every row, and tells you how many are good, before it writes anything.",
+          "secondaryCta": "See how an import runs"
+        },
+        "sample": {
+          "count": "1,248 rows",
+          "notes": [
+            "columns matched for you",
+            "every row checked",
+            "nothing written until you say"
+          ]
+        },
+        "ui": {
+          "title": "Migration studio",
+          "sUpload": "Upload",
+          "sMap": "Map columns",
+          "sCheck": "Check",
+          "sImport": "Import",
+          "mapping": "Column mapping",
+          "check": "Row check",
+          "read": "Rows read",
+          "valid": "Valid",
+          "flagged": "Flagged",
+          "checkNote": "Flagged rows are listed with the reason, such as a missing name or a duplicate reference. Fix them, or import the valid rows and keep the rest for later.",
+          "importBtn": "Import valid rows",
+          "download": "Download flagged rows",
+          "caption": "A partial preview of Migration Studio in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "An import, in four steps",
+          "intro": "The path is short, and you can stop at any step.",
+          "steps": [
+            {
+              "tag": "Upload",
+              "question": "Bring the file",
+              "body": "Excel, CSV or an export from another accounting system."
+            },
+            {
+              "tag": "Map",
+              "question": "Match the columns",
+              "body": "Each column in your file is matched to a field, with a confidence. Low matches are for you to confirm."
+            },
+            {
+              "tag": "Check",
+              "question": "Then import",
+              "body": "Every row is checked. Valid rows can be imported, and flagged rows are returned with the reason."
+            }
+          ],
+          "formTitle": "What the page shows",
+          "form": [
+            {
+              "label": "The steps",
+              "body": "Upload, map columns, check and import, with the current one highlighted."
+            },
+            {
+              "label": "Column mapping",
+              "body": "Your column, the field it maps to, and the confidence."
+            },
+            {
+              "label": "Row check",
+              "body": "Rows read, valid and flagged."
+            },
+            {
+              "label": "The reasons",
+              "body": "Why a row was flagged."
+            },
+            {
+              "label": "Download",
+              "body": "A file of flagged rows to correct."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Migration fills the lists the rest of the system uses",
+          "intro": "It writes customers, vendors, items and opening balances, and nothing else changes.",
+          "groups": {
+            "before": "What it needs",
+            "after": "What it fills",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "chartOfAccounts": "Accounts for opening balances.",
+            "itemsProducts": "Imported items.",
+            "customers": "Imported customers.",
+            "vendors": "Imported vendors.",
+            "journalEntries": "Opening entries.",
+            "financialReports": "Opening balances in reports.",
+            "opExport": "Take data out when you need to."
+          }
+        },
+        "local": {
+          "title": "Moving from spreadsheets and older systems",
+          "intro": "Most companies arrive with Excel sheets, and some with an older package. The studio is built for messy columns and half-clean data.",
+          "points": [
+            {
+              "title": "Excel and CSV first",
+              "body": "The file you already have."
+            },
+            {
+              "title": "Messy columns tolerated",
+              "body": "A column called Addr maps to Billing address."
+            },
+            {
+              "title": "Checked before written",
+              "body": "Nothing is imported until the rows pass."
+            },
+            {
+              "title": "Done in stages",
+              "body": "Customers today, items tomorrow."
+            }
+          ],
+          "story": {
+            "title": "One import, from file to list",
+            "intro": "A sample customer import, the way it usually runs.",
+            "steps": [
+              {
+                "time": "10 Nov",
+                "text": "A customer sheet with 1,248 rows is uploaded."
+              },
+              {
+                "time": "10 Nov",
+                "text": "Columns are matched, and Credit Days needs a confirmation."
+              },
+              {
+                "time": "10 Nov",
+                "text": "1,231 rows are valid and 17 are flagged."
+              },
+              {
+                "time": "10 Nov",
+                "text": "The valid rows are imported."
+              },
+              {
+                "time": "11 Nov",
+                "text": "The 17 are corrected and imported on a second pass."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the migration studio",
+          "angles": {
+            "retail": "Item and customer lists from spreadsheets.",
+            "food-hospitality": "Menu and supplier lists.",
+            "real-estate": "Projects and tenants.",
+            "consulting": "Clients and engagements.",
+            "manufacturing": "Items, BOMs and suppliers.",
+            "health-fitness": "Members and stock.",
+            "trades": "Customers and parts.",
+            "others": "Donors and programmes."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about migration",
+          "items": [
+            {
+              "q": "What can I import?",
+              "a": "Customers, vendors, items, accounts and opening balances, from Excel, CSV or another system."
+            },
+            {
+              "q": "Does it write anything before I confirm?",
+              "a": "No. It checks first."
+            },
+            {
+              "q": "What if some rows are wrong?",
+              "a": "They are flagged with the reason. Import the valid ones and fix the rest."
+            },
+            {
+              "q": "Do I need to rename my columns?",
+              "a": "No. They are matched for you."
+            },
+            {
+              "q": "Can I import in stages?",
+              "a": "Yes."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your current customer or item sheet. We will import it in the demo."
+        }
+      },
+      "opExport": {
+        "meta": {
+          "title": "Export / Takeout: Your Data, Whenever You Want It | Adon ERP",
+          "description": "Export any dataset as CSV, Excel, JSON or PDF, or take a full copy of your data. Built for companies in Bangladesh.",
+          "keywords": [
+            "data export software Bangladesh",
+            "data takeout",
+            "export accounting data CSV",
+            "no lock-in ERP",
+            "Adon ERP export"
+          ]
+        },
+        "hero": {
+          "title": "Export and takeout: your data stays yours",
+          "lead": "Pick the datasets you want, choose a format and a date range, and download. A full takeout bundles everything in portable files, so leaving or auditing never depends on anyone’s goodwill.",
+          "secondaryCta": "See how an export is made"
+        },
+        "sample": {
+          "count": "5 datasets",
+          "notes": [
+            "pick what you want",
+            "CSV, Excel, JSON or PDF",
+            "a history of exports"
+          ]
+        },
+        "ui": {
+          "title": "Export / takeout",
+          "datasets": "Datasets",
+          "range": "FY 2026",
+          "create": "Create export",
+          "full": "Full takeout",
+          "history": "Export history",
+          "running": "running",
+          "ready": "ready",
+          "caption": "A partial preview of Export / Takeout in Adon ERP. Company and figures are sample data."
+        },
+        "flow": {
+          "title": "An export, in three steps",
+          "intro": "Choose, wait, download.",
+          "steps": [
+            {
+              "tag": "Choose",
+              "question": "The datasets",
+              "body": "Tick the datasets you want. Each shows how many records it holds and the formats it comes in."
+            },
+            {
+              "tag": "Create",
+              "question": "The export",
+              "body": "Large exports run in the background, and show progress in the history."
+            },
+            {
+              "tag": "Download",
+              "question": "When ready",
+              "body": "A finished export stays in the history with its size, ready to download."
+            }
+          ],
+          "formTitle": "What the page shows",
+          "form": [
+            {
+              "label": "Datasets",
+              "body": "Accounts, journals, documents, items and parties."
+            },
+            {
+              "label": "Formats",
+              "body": "CSV, Excel, JSON or PDF for each."
+            },
+            {
+              "label": "Date range",
+              "body": "For transactional data."
+            },
+            {
+              "label": "Full takeout",
+              "body": "Everything in one bundle."
+            },
+            {
+              "label": "History",
+              "body": "Name, date, size and status of past exports."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Export reaches everything the system holds",
+          "intro": "It reads the same data as the rest of Adon ERP, in files you can open anywhere.",
+          "groups": {
+            "before": "What it exports",
+            "after": "Coming back in",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "chartOfAccounts": "Accounts and structure.",
+            "itemsProducts": "Items and prices.",
+            "opMigration": "Bring data back in.",
+            "financialReports": "Reports as files.",
+            "accountingHub": "Headline numbers."
+          }
+        },
+        "local": {
+          "title": "Exports for auditors, banks and peace of mind",
+          "intro": "Auditors want journals in Excel, banks want statements in PDF, and owners want to know they can leave.",
+          "points": [
+            {
+              "title": "Excel for the auditor",
+              "body": "Journals and ledgers in a sheet."
+            },
+            {
+              "title": "PDF for the bank",
+              "body": "Statements ready to send."
+            },
+            {
+              "title": "JSON for developers",
+              "body": "A clean copy for other systems."
+            },
+            {
+              "title": "No lock-in",
+              "body": "A full takeout whenever you ask."
+            }
+          ],
+          "story": {
+            "title": "One audit request, from ask to file",
+            "intro": "A sample export, the way it usually runs.",
+            "steps": [
+              {
+                "time": "31 Oct",
+                "text": "The auditor asks for the FY 2026 journals."
+              },
+              {
+                "time": "31 Oct",
+                "text": "The accountant ticks Journal entries and picks Excel."
+              },
+              {
+                "time": "31 Oct",
+                "text": "The export runs in the background."
+              },
+              {
+                "time": "31 Oct",
+                "text": "It appears in the history, 4.2 MB."
+              },
+              {
+                "time": "31 Oct",
+                "text": "The file is downloaded and sent."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use export and takeout",
+          "angles": {
+            "retail": "Sales and stock exports for analysis.",
+            "food-hospitality": "Cost and sales exports.",
+            "real-estate": "Project and tenant exports.",
+            "consulting": "Time and billing exports.",
+            "manufacturing": "Production and stock exports.",
+            "health-fitness": "Member and billing exports.",
+            "trades": "Job and invoice exports.",
+            "others": "Donor and grant reports."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about export",
+          "items": [
+            {
+              "q": "What can I export?",
+              "a": "Accounts, journal entries, documents, items, customers and vendors, and more."
+            },
+            {
+              "q": "Which formats are there?",
+              "a": "CSV, Excel, JSON and PDF, depending on the dataset."
+            },
+            {
+              "q": "What is a full takeout?",
+              "a": "A bundle of all your data in portable files."
+            },
+            {
+              "q": "Do large exports slow me down?",
+              "a": "No. They run in the background."
+            },
+            {
+              "q": "Can I download an old export again?",
+              "a": "Yes, from the history."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring the data request you last struggled with. We will export it in the demo."
+        }
+      },
       "common": {
         "bookDemo": "Book a demo",
         "onboardingNote": "Now onboarding companies in Dhaka.",
@@ -8637,6 +11602,12 @@
         "tabOverview": "Overview",
         "exploreProject": "Explore Project Accounting",
         "exploreBudget": "Explore Budget Management",
+        "exploreSupply": "Explore Supply Chain",
+        "invModule": "Inventory",
+        "opModule": "Open Platform",
+        "exploreInventory": "Explore Inventory",
+        "explorePlatform": "Explore Open Platform",
+        "scModule": "Supply Chain",
         "stDraft": "Draft",
         "stSubmitted": "Submitted",
         "stApproved": "Approved",
@@ -8687,7 +11658,23 @@
           "bmRequisitions": "Requisitions",
           "bmVariance": "Variance",
           "bmApprovals": "Approvals",
-          "bmRbrf": "RBRF"
+          "bmRbrf": "RBRF",
+          "scOverview": "Supply Chain Overview",
+          "scRequisitions": "Purchase Requisitions",
+          "scComparative": "Comparative Statements",
+          "scTender": "Tender Management",
+          "scGoodsReceipts": "Goods Receipts",
+          "scLandedCost": "Landed Cost",
+          "scProcurement": "Procurement",
+          "invForecast": "Demand Forecast",
+          "invWarehouses": "Warehouses",
+          "invMovements": "Stock Movements",
+          "invSummary": "Inventory Summary",
+          "invGatePasses": "Gate Passes",
+          "invWeighbridge": "Weighbridge & Scales",
+          "opTaxRates": "Tax Rates",
+          "opMigration": "Migration Studio",
+          "opExport": "Export / Takeout"
         },
         "industryGroups": {
           "retail": "Retail",
