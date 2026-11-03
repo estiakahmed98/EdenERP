@@ -184,7 +184,7 @@ export function ConnectSection({
                 {g.tools.map((key) => (
                   <li key={key} className="border-b border-border/80 py-4 last:border-b-0">
                     <Link
-                      href={`/apps/accounting/${toolSlugs[key]}`}
+                      href={toolSlugs[key].startsWith("/") ? toolSlugs[key] : `/apps/accounting/${toolSlugs[key]}`}
                       className={`${link} text-[15px] font-medium text-foreground`}
                     >
                       {tools[key]}
@@ -236,10 +236,14 @@ export function FinalSection({
   industries,
   faq,
   closingTitle,
+  exploreHref = "/apps/accounting",
+  exploreLabel,
 }: {
   industries: { title: string; angles: Record<string, string> };
   faq: { title: string; items: Faq[] };
   closingTitle: string;
+  exploreHref?: string;
+  exploreLabel?: string;
 }) {
   const { t: common, groups } = useCommon();
   return (
@@ -293,8 +297,8 @@ export function FinalSection({
               <PrimaryButton href="/demo" inverted>
                 {common("bookDemo")}
               </PrimaryButton>
-              <SecondaryButton href="/apps/accounting" inverted>
-                {common("exploreAccounting")}
+              <SecondaryButton href={exploreHref} inverted>
+                {exploreLabel ?? common("exploreAccounting")}
               </SecondaryButton>
             </div>
           </div>
