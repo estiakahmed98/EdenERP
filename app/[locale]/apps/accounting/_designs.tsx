@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Check, type LucideIcon } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, ChevronDown, type LucideIcon } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
@@ -40,15 +40,19 @@ export type Accent = {
   raw: string;
 };
 
+/** Only colours from app/globals.css, so the theme classes recolour them too. */
 const accents: Accent[] = [
   { text: "text-primary", solid: "bg-primary", soft: "bg-primary/10", border: "border-primary", raw: "var(--primary)" },
   { text: "text-[var(--teal)]", solid: "bg-[var(--teal)]", soft: "bg-[var(--teal)]/10", border: "border-[var(--teal)]", raw: "var(--teal)" },
-  { text: "text-amber-600 dark:text-amber-400", solid: "bg-amber-500", soft: "bg-amber-500/10", border: "border-amber-500", raw: "#f59e0b" },
-  { text: "text-rose-600 dark:text-rose-400", solid: "bg-rose-500", soft: "bg-rose-500/10", border: "border-rose-500", raw: "#f43f5e" },
-  { text: "text-violet-600 dark:text-violet-400", solid: "bg-violet-500", soft: "bg-violet-500/10", border: "border-violet-500", raw: "#8b5cf6" },
-  { text: "text-cyan-600 dark:text-cyan-400", solid: "bg-cyan-500", soft: "bg-cyan-500/10", border: "border-cyan-500", raw: "#06b6d4" },
-  { text: "text-emerald-600 dark:text-emerald-400", solid: "bg-emerald-500", soft: "bg-emerald-500/10", border: "border-emerald-500", raw: "#10b981" },
-  { text: "text-orange-600 dark:text-orange-400", solid: "bg-orange-500", soft: "bg-orange-500/10", border: "border-orange-500", raw: "#f97316" },
+  {
+    text: "text-[var(--secondary)] dark:text-[var(--chart-3)]",
+    solid: "bg-[var(--secondary)]",
+    soft: "bg-[var(--secondary)]/10 dark:bg-[var(--chart-3)]/10",
+    border: "border-[var(--secondary)] dark:border-[var(--chart-3)]",
+    raw: "var(--secondary)",
+  },
+  { text: "text-[var(--chart-5)]", solid: "bg-[var(--chart-5)]", soft: "bg-[var(--chart-5)]/10", border: "border-[var(--chart-5)]", raw: "var(--chart-5)" },
+  { text: "text-[var(--chart-4)]", solid: "bg-[var(--chart-4)]", soft: "bg-[var(--chart-4)]/10", border: "border-[var(--chart-4)]", raw: "var(--chart-4)" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -62,6 +66,8 @@ export type Design = {
   local: number;
   final: number;
   frame: number;
+  /** Layout of the in-app navigation inside the preview. */
+  shell: number;
   accent: Accent;
 };
 
@@ -71,6 +77,7 @@ export const CONNECT_VARIANTS = 4;
 export const LOCAL_VARIANTS = 4;
 export const FINAL_VARIANTS = 4;
 export const FRAME_VARIANTS = 3;
+export const SHELL_VARIANTS = 3;
 
 /** Template pages in sidebar order. The position picks the combination. */
 const pageOrder = [
@@ -131,6 +138,33 @@ const pageOrder = [
   "/apps/open-platform/tax-rates",
   "/apps/open-platform/migration-studio",
   "/apps/open-platform/export-takeout",
+  // HR & Payroll
+  "/apps/human-resources/departments",
+  "/apps/human-resources/designations",
+  "/apps/human-resources/grades-steps",
+  "/apps/human-resources/salary-components",
+  "/apps/human-resources/salary-structures",
+  "/apps/human-resources/payroll-runs",
+  "/apps/human-resources/approvals-inbox",
+  "/apps/human-resources/tax-brackets-nbr",
+  "/apps/human-resources/form-108-annual",
+  "/apps/human-resources/hr-policy-pf-gratuity",
+  "/apps/human-resources/shifts",
+  "/apps/human-resources/holiday-calendar",
+  "/apps/human-resources/leave-types",
+  "/apps/human-resources/leave-applications",
+  "/apps/human-resources/projects",
+  "/apps/human-resources/final-settlements",
+  "/apps/human-resources/service-records",
+  "/apps/human-resources/wppf-welfare",
+  "/apps/human-resources/salary-budgets",
+  "/apps/human-resources/hr-reports",
+  // Employee Portal
+  "/apps/employee-portal/my-profile",
+  "/apps/employee-portal/my-payslips",
+  "/apps/employee-portal/my-leaves",
+  "/apps/employee-portal/my-attendance",
+  "/apps/employee-portal/my-pf-gratuity",
 ];
 
 /**
@@ -147,7 +181,8 @@ export function designFor(slug: string): Design {
     local: (i + 2 + Math.floor(i / 4)) % LOCAL_VARIANTS,
     final: (i * 3 + Math.floor(i / 5)) % FINAL_VARIANTS,
     frame: (i + Math.floor(i / 3)) % FRAME_VARIANTS,
-    accent: accents[(i * 5 + Math.floor(i / 8)) % accents.length],
+    shell: i % SHELL_VARIANTS,
+    accent: accents[(i * 2 + Math.floor(i / 8)) % accents.length],
   };
 }
 
@@ -1332,4 +1367,111 @@ export function Final({
         </section>
       );
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* In-app shell                                                        */
+/* ------------------------------------------------------------------ */
+
+export type ShellNavItem = { key: string; label: string; icon?: LucideIcon; badge?: string };
+
+/**
+ * The module navigation inside a preview, in one of two alternative layouts:
+ * 1 is a left sidebar, 2 is a coloured header bar with the tabs in a
+ * dropdown and as compact pills. Variant 0 is drawn by each module's own shell.
+ */
+export function AppShell({
+  variant,
+  accent,
+  moduleName,
+  title,
+  meta,
+  nav,
+  active,
+  children,
+}: {
+  variant: number;
+  accent: Accent;
+  moduleName: string;
+  title: string;
+  /** Small content beside the title, such as a status. */
+  meta?: ReactNode;
+  nav: ShellNavItem[];
+  active: string;
+  children: ReactNode;
+}) {
+  const current = nav.find((n) => n.key === active);
+
+  if (variant === 1) {
+    return (
+      <div className="grid gap-4 sm:grid-cols-[10.5rem_1fr]">
+        <nav className="hidden rounded-xl border border-border bg-[var(--gray-bg)] p-2 sm:block" aria-hidden="true">
+          <p className="px-2 pb-2 pt-1 text-[9.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">{moduleName}</p>
+          <ul className="space-y-0.5">
+            {nav.map(({ key, label, icon: Icon, badge }) => {
+              const on = key === active;
+              return (
+                <li
+                  key={key}
+                  className={`flex items-center gap-2 rounded-lg px-2 py-1.5 text-[11px] ${
+                    on ? `${accent.solid} font-semibold text-white` : "text-muted-foreground"
+                  }`}
+                >
+                  {Icon ? <Icon className="h-3 w-3 shrink-0" /> : <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${on ? "bg-white" : "bg-border"}`} />}
+                  <span className="truncate">{label}</span>
+                  {badge && <span className="ms-auto rounded-full bg-amber-500 px-1.5 text-[9px] font-semibold text-white">{badge}</span>}
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border pb-2.5">
+            <div className="min-w-0">
+              <p className="text-[10px] text-muted-foreground">
+                {moduleName} / <span className="text-foreground">{current?.label}</span>
+              </p>
+              <p className="mt-0.5 truncate text-[15px] font-semibold text-foreground sm:text-[17px]">{title}</p>
+            </div>
+            {meta}
+          </div>
+          <div className="mt-3 space-y-3">{children}</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div
+        className="-mx-4 -mt-4 flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-white sm:-mx-5 sm:-mt-5 sm:px-5"
+        style={{ background: `linear-gradient(90deg, color-mix(in oklch, ${accent.raw} 85%, var(--purple-dark)), var(--purple-dark))` }}
+      >
+        <div className="min-w-0">
+          <p className="text-[10px] uppercase tracking-[0.12em] text-white/70">{moduleName}</p>
+          <p className="mt-0.5 truncate text-[15px] font-semibold sm:text-[17px]">{title}</p>
+        </div>
+        <span className="inline-flex items-center gap-1.5 rounded-md bg-white/15 px-2.5 py-1 text-[11px] font-medium" aria-hidden="true">
+          {current?.icon && <current.icon className="h-3 w-3" />}
+          {current?.label}
+          <ChevronDown className="h-3 w-3" />
+        </span>
+      </div>
+      <div className="mt-3 flex flex-wrap items-center gap-1.5" aria-hidden="true">
+        {nav.map(({ key, label, badge }) => (
+          <span
+            key={key}
+            className={`rounded-full border px-2 py-0.5 text-[10px] ${
+              key === active ? `${accent.border} ${accent.soft} font-semibold ${accent.text}` : "border-border text-muted-foreground"
+            }`}
+          >
+            {label}
+            {badge && <span className="ms-1 font-semibold text-amber-600">{badge}</span>}
+          </span>
+        ))}
+        {meta && <span className="ms-auto">{meta}</span>}
+      </div>
+      <div className="mt-3.5 space-y-3">{children}</div>
+    </div>
+  );
 }
