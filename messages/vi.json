@@ -204,6 +204,464 @@
   },
   "pages": {
     "accountingShowcase": {
+      "bills": {
+        "meta": {
+          "title": "Hóa đơn mua hàng (AP): Hóa đơn nhà cung cấp, GTGT và thanh toán bằng taka | Adon ERP",
+          "description": "Ghi hóa đơn nhà cung cấp với thuế GTGT trên từng dòng, xem bạn nợ mỗi nhà cung cấp bao nhiêu và khi nào đến hạn, theo dõi thanh toán một phần và toàn bộ. Xây dựng cho doanh nghiệp tại Bangladesh.",
+          "keywords": [
+            "phần mềm hóa đơn nhà cung cấp Bangladesh",
+            "phần mềm công nợ phải trả Bangladesh",
+            "GTGT đầu vào Bangladesh",
+            "theo dõi thanh toán nhà cung cấp",
+            "phần mềm kế toán Bangladesh",
+            "Hóa đơn mua hàng Adon ERP"
+          ]
+        },
+        "hero": {
+          "title": "Hóa đơn mua hàng: ghi lại những gì nhà cung cấp tính, biết khoản nào đến hạn, trả đúng hạn",
+          "lead": "Nhập hóa đơn của nhà cung cấp với thuế GTGT tính trên từng dòng, duyệt nó, và theo dõi từ nháp đến đã thanh toán. Các khoản trả một phần được theo dõi ngay trên hóa đơn, nên bạn luôn biết mình còn nợ ai bao nhiêu.",
+          "secondaryCta": "Xem vòng đời một hóa đơn"
+        },
+        "sample": {
+          "count": "25 trên 98",
+          "terms": "Khi nhận hàng",
+          "lineItem": "Nhựa",
+          "notes": [
+            "nháp, đã duyệt, đã thanh toán nhìn là biết",
+            "bạn đã trả bao nhiêu",
+            "mở, in hoặc đối trừ ngay từ dòng"
+          ]
+        },
+        "status": {
+          "draft": "nháp",
+          "approved": "đã duyệt",
+          "paid": "đã thanh toán",
+          "void": "đã hủy"
+        },
+        "ui": {
+          "newBill": "Hóa đơn mới",
+          "thBill": "Số hóa đơn",
+          "thVendor": "Nhà cung cấp",
+          "thStatus": "Trạng thái",
+          "thAmount": "Số tiền",
+          "thPaid": "Đã trả",
+          "view": "Xem",
+          "print": "In",
+          "allocate": "Đối trừ",
+          "detailTitle": "Hóa đơn {no}",
+          "vendor": "Nhà cung cấp",
+          "status": "Trạng thái",
+          "terms": "Điều khoản",
+          "amountDue": "Số tiền phải trả",
+          "amountPaid": "Số tiền đã trả",
+          "dueDate": "Ngày đến hạn",
+          "lineItems": "Các dòng hàng",
+          "thItem": "Mặt hàng",
+          "thQty": "SL",
+          "thUnitCost": "Đơn giá",
+          "thVat": "GTGT %",
+          "thVatAmt": "Tiền GTGT",
+          "thTotal": "Tổng",
+          "recordPayment": "Ghi thanh toán",
+          "voidBill": "Hủy",
+          "printBill": "In hóa đơn",
+          "caption": "Bản xem trước một phần màn hình Hóa đơn mua hàng (AP) trong Adon ERP. Công ty, nhà cung cấp và số liệu là dữ liệu mẫu."
+        },
+        "lifecycle": {
+          "title": "Vòng đời một hóa đơn, trong bốn từ",
+          "intro": "Mỗi hóa đơn trong danh sách đều có trạng thái. Đọc cột này từ trên xuống, bạn biết hóa đơn nào còn đang kiểm tra, hóa đơn nào đang chờ thanh toán, và hóa đơn nào đã tất toán.",
+          "steps": [
+            {
+              "question": "Đang kiểm tra",
+              "body": "Hóa đơn đã nhập nhưng chưa được chấp nhận. Hãy đối chiếu số lượng với hàng thực nhận và giá với đơn mua hàng khi còn ở trạng thái nháp."
+            },
+            {
+              "question": "Đã chấp nhận, còn nợ tiền",
+              "body": "Bạn nợ nhà cung cấp khoản này. Nếu đã trả một phần, cột Đã trả cho biết bao nhiêu, nên hóa đơn 1,38,000 taka mới trả 70,000 rất dễ nhận ra."
+            },
+            {
+              "question": "Đã trả đủ",
+              "body": "Đã trả bằng Số tiền. Không còn gì phải trả nữa. Hóa đơn vẫn nằm trong danh sách để lưu hồ sơ và phục vụ kiểm toán."
+            }
+          ],
+          "aside": {
+            "body": "Nhập nhầm hoặc được thay bằng hóa đơn đã chỉnh sửa. Hóa đơn đã hủy vẫn nằm trong danh sách cùng số của mình, nên dãy số không có khoảng trống nào để kiểm toán viên phải hỏi."
+          },
+          "formTitle": "Những gì bạn điền trên hóa đơn mới",
+          "form": [
+            {
+              "label": "Dự án (tùy chọn)",
+              "body": "Gắn hóa đơn với dự án hoặc công việc nếu chi phí thuộc về một dự án."
+            },
+            {
+              "label": "Nhà cung cấp",
+              "body": "Tìm và chọn nhà cung cấp. Thông tin của họ đi kèm hóa đơn."
+            },
+            {
+              "label": "Tài khoản tiền mặt",
+              "body": "Nơi khoản thanh toán xuất đi. Tự điền sẵn cho bạn (tài khoản 1010) trừ khi bạn chọn tài khoản khác."
+            },
+            {
+              "label": "Phải trả người bán",
+              "body": "Tài khoản ghi nhận số bạn còn nợ cho đến khi trả. Tự điền sẵn cho bạn (tài khoản 2010)."
+            },
+            {
+              "label": "Điều khoản",
+              "body": "Điều khoản thanh toán như Khi nhận hàng hoặc Net 30. Ngày đến hạn trong danh sách được suy ra từ đây."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Hóa đơn nằm giữa mua hàng và thanh toán",
+          "intro": "Nó bắt đầu từ một nhà cung cấp và hàng hóa đến cổng của bạn, và kết thúc bằng tiền rời khỏi ngân hàng. Mỗi bước có công cụ riêng, và chúng đọc dữ liệu từ nhau.",
+          "groups": {
+            "before": "Trước hóa đơn",
+            "after": "Sau hóa đơn",
+            "shows": "Hiển thị ở đâu"
+          },
+          "items": {
+            "vendors": "Tên, địa chỉ và điều khoản của nhà cung cấp, được chọn trên mỗi hóa đơn.",
+            "purchaseOrders": "Những gì bạn đã thỏa thuận mua, để có thể đối chiếu hóa đơn.",
+            "itemsProducts": "Những gì bạn mua, kèm đơn vị và giá cho các dòng hóa đơn.",
+            "chequeRegister": "Khi trả bằng séc, kèm ngày, để không tờ nào bị quên.",
+            "bankAccounts": "Nơi khoản thanh toán xuất đi, và số dư để đối chiếu.",
+            "pettyCash": "Các khoản mua nhỏ trả từ hộp tiền mặt, tách khỏi hóa đơn.",
+            "vatRegister": "Thuế GTGT trên từng dòng hóa đơn, sẵn sàng cho tờ khai hằng tháng.",
+            "accountingHub": "Các hóa đơn chưa thanh toán tạo nên số AP.",
+            "financialReports": "Hàng mua và khoản phải trả trong báo cáo của bạn."
+          }
+        },
+        "local": {
+          "title": "Hóa đơn theo cách nhà cung cấp được trả tiền ở Bangladesh",
+          "intro": "Nhà cung cấp ở đây thường được trả theo từng đợt, vào những ngày theo dòng tiền của bên mua. Hóa đơn giữ mọi khoản thanh toán đó trong tầm mắt cho đến khi số dư về không.",
+          "points": [
+            {
+              "title": "GTGT đầu vào, từng dòng",
+              "body": "Mỗi dòng hóa đơn có thuế suất và số tiền thuế riêng. Nó đổ vào Sổ thuế GTGT, nên thuế đầu vào đã sẵn sàng khi đến hạn tờ khai hằng tháng."
+            },
+            {
+              "title": "Trả một phần, luôn trong tầm mắt",
+              "body": "Trả nhà cung cấp làm hai hoặc ba đợt. Cột Đã trả tăng theo từng đợt và số dư luôn nằm trên hóa đơn."
+            },
+            {
+              "title": "Đối trừ khoản trả vào đúng hóa đơn",
+              "body": "Khi một khoản thanh toán chi trả nhiều hóa đơn, hãy đối trừ từ dòng, để mỗi hóa đơn hiện chính xác đã tất toán bao nhiêu."
+            },
+            {
+              "title": "Điều khoản phù hợp từng nhà cung cấp",
+              "body": "Khi nhận hàng cho nhà cung cấp xi măng, Net 30 cho nhà cung cấp bao bì. Ngày đến hạn theo điều khoản bạn chọn."
+            }
+          ],
+          "story": {
+            "title": "Một hóa đơn nhà cung cấp, từ cổng đến khi thanh toán",
+            "intro": "Một hóa đơn mẫu cho nguyên liệu nhựa, thường diễn ra như thế này.",
+            "steps": [
+              {
+                "time": "15 Th9",
+                "text": "40 đơn vị nhựa đến cổng cùng hóa đơn của nhà cung cấp."
+              },
+              {
+                "time": "16 Th9",
+                "text": "Hóa đơn được nhập ở dạng nháp. Số lượng được đối chiếu với đơn mua hàng và thuế GTGT với hóa đơn."
+              },
+              {
+                "time": "17 Th9",
+                "text": "Đã duyệt. Toàn bộ 1,38,000 taka giờ hiện là khoản nợ nhà cung cấp."
+              },
+              {
+                "time": "5 Th10",
+                "text": "Một khoản trả 70,000 được chi ra. Cột Đã trả hiện nó, và 68,000 vẫn còn nợ."
+              },
+              {
+                "time": "19 Th10",
+                "text": "Số dư được trả đúng ngày đến hạn. Đã trả khớp với Số tiền, và hóa đơn chuyển thành đã thanh toán."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Các ngành khác nhau dùng hóa đơn mua hàng như thế nào",
+          "angles": {
+            "retail": "Nhiều hóa đơn nhà cung cấp mỗi tuần cho hàng tồn kho, trả chậm.",
+            "food-hospitality": "Nông sản hằng ngày và tiện ích hằng tháng, mỗi thứ một hóa đơn.",
+            "real-estate": "Hóa đơn nhà thầu và vật liệu gắn với dự án.",
+            "consulting": "Hóa đơn phần mềm, tiền thuê và nhà thầu phụ cuối tháng.",
+            "manufacturing": "Hóa đơn nguyên liệu với kỳ hạn dài và trả từng phần.",
+            "health-fitness": "Thiết bị, vật tư và tiền thuê trả theo lịch.",
+            "trades": "Phụ tùng mua cho từng công việc, tính vào dự án.",
+            "others": "Tài trợ chi theo hóa đơn nhà cung cấp, giữ riêng cho đến khi dùng."
+          }
+        },
+        "faq": {
+          "title": "Những câu hỏi thường gặp về hóa đơn mua hàng",
+          "items": [
+            {
+              "q": "Hóa đơn mua hàng trong Adon ERP là gì?",
+              "a": "Đó là hóa đơn của nhà cung cấp mà bạn ghi lại: một nhà cung cấp, dự án nếu có, các dòng hàng kèm thuế GTGT và điều khoản thanh toán. Sau khi được duyệt, nó cho biết bạn nợ bao nhiêu cho đến khi trả."
+            },
+            {
+              "q": "Nháp, đã duyệt, đã thanh toán và đã hủy nghĩa là gì?",
+              "a": "Nháp là vẫn đang kiểm tra. Đã duyệt nghĩa là bạn nợ khoản đó. Đã thanh toán nghĩa là đã trả đủ. Hóa đơn đã hủy vẫn nằm trong danh sách cùng số của nó để lưu hồ sơ."
+            },
+            {
+              "q": "Tôi có thể trả nhà cung cấp từng phần không?",
+              "a": "Có. Dùng “Ghi thanh toán” trên hóa đơn. Cột Đã trả hiển thị số đã chi cho đến nay bên cạnh toàn bộ số tiền."
+            },
+            {
+              "q": "Đối trừ để làm gì?",
+              "a": "Nó gắn một khoản thanh toán với hóa đơn mà nó tất toán. Khi một khoản thanh toán chi trả nhiều hóa đơn, đối trừ giữ số dư từng hóa đơn luôn đúng."
+            },
+            {
+              "q": "Thuế GTGT trên hóa đơn được xử lý thế nào?",
+              "a": "Mỗi dòng có thuế suất riêng. Hóa đơn hiển thị số tiền thuế của từng dòng và cộng vào tổng dòng, còn thuế đi vào Sổ thuế GTGT."
+            },
+            {
+              "q": "Tôi có phải chọn tài khoản mỗi lần không?",
+              "a": "Không. Tài khoản tiền mặt (1010) và tài khoản phải trả (2010) được điền tự động. Bạn có thể đổi cho một hóa đơn cụ thể nếu cần."
+            },
+            {
+              "q": "Tôi có in và xuất hóa đơn được không?",
+              "a": "Được. In hóa đơn từ dòng của nó hoặc từ chính hóa đơn, và xuất danh sách sang CSV hoặc Excel."
+            },
+            {
+              "q": "Adon ERP có ở đâu?",
+              "a": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka. Hãy đặt lịch demo, chúng tôi sẽ cùng bạn nhập một hóa đơn mẫu và một khoản trả một phần."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Hãy mang đến một hóa đơn nhà cung cấp khó theo dõi. Chúng tôi sẽ nhập và thanh toán nó ngay trong buổi demo."
+        }
+      },
+      "purchaseOrders": {
+        "meta": {
+          "title": "Đơn mua hàng: Thỏa thuận giá và số lượng trước khi hàng đến | Adon ERP",
+          "description": "Lập đơn mua hàng, duyệt, ghi nhận hàng đã nhận, và chuyển đơn thành hóa đơn nhà cung cấp chỉ với một cú nhấp. Xây dựng cho doanh nghiệp tại Bangladesh.",
+          "keywords": [
+            "phần mềm đơn mua hàng Bangladesh",
+            "phần mềm mua sắm Bangladesh",
+            "từ đơn mua hàng sang hóa đơn",
+            "theo dõi đơn đặt hàng nhà cung cấp",
+            "phần mềm kế toán Bangladesh",
+            "Đơn mua hàng Adon ERP"
+          ]
+        },
+        "hero": {
+          "title": "Đơn mua hàng: thỏa thuận giá trước khi hàng đến",
+          "lead": "Lập đơn mua hàng với tiêu đề, nhà cung cấp và các mặt hàng bạn cần. Duyệt nó, ghi nhận hàng đã đến, rồi chuyển thành hóa đơn nhà cung cấp chỉ với một cú nhấp, để hóa đơn được đối chiếu với những gì bạn thực sự đã đặt.",
+          "secondaryCta": "Xem đơn hàng vận hành ra sao"
+        },
+        "sample": {
+          "count": "12 dòng",
+          "titles": [
+            "Vải may áo kurta",
+            "Hạt nhựa"
+          ],
+          "notes": [
+            "mỗi đơn có số riêng",
+            "đã nhận được bao nhiêu",
+            "chuyển thành hóa đơn chỉ một cú nhấp"
+          ]
+        },
+        "status": {
+          "draft": "nháp",
+          "approved": "đã duyệt",
+          "received": "Đã nhận",
+          "void": "đã hủy"
+        },
+        "ui": {
+          "newPo": "Đơn mua hàng mới",
+          "thPo": "Số đơn",
+          "thTitle": "Tiêu đề",
+          "thStatus": "Trạng thái",
+          "thAmount": "Số tiền",
+          "thReceived": "Đã nhận",
+          "thDate": "Ngày",
+          "view": "Xem",
+          "detailTitle": "Đơn {no}",
+          "title": "Tiêu đề",
+          "status": "Trạng thái",
+          "estimate": "Ước tính",
+          "poAmount": "Giá trị đơn",
+          "amountReceived": "Giá trị đã nhận",
+          "approved": "Ngày duyệt",
+          "lineItems": "Các dòng hàng",
+          "thItem": "Mặt hàng",
+          "thQty": "SL",
+          "thUnitCost": "Đơn giá",
+          "thVat": "GTGT %",
+          "thVatAmt": "Tiền GTGT",
+          "thTotal": "Tổng",
+          "noItems": "Chưa có dòng hàng nào. Thêm mặt hàng để xác định giá trị đơn.",
+          "convert": "Chuyển thành hóa đơn",
+          "voidPo": "Hủy",
+          "caption": "Bản xem trước một phần màn hình Đơn mua hàng trong Adon ERP. Công ty, nhà cung cấp và số liệu là dữ liệu mẫu."
+        },
+        "lifecycle": {
+          "title": "Một đơn mua hàng vận hành thế nào, trong ba bước",
+          "intro": "Mỗi đơn trong danh sách đều có trạng thái, và cột Đã nhận cho biết bao nhiêu đã đến. Hai thông tin này cho bạn biết còn gì đang chờ nhà cung cấp.",
+          "steps": [
+            {
+              "question": "Đang soạn",
+              "body": "Đơn đã có nhưng chưa được duyệt. Xác định mặt hàng, số lượng và giá khi còn ở trạng thái nháp."
+            },
+            {
+              "question": "Đã duyệt, chờ hàng đến",
+              "body": "Nhà cung cấp giờ có thể giao hàng. Giá trị đơn là số bạn đã đồng ý trả, và Đã nhận giữ ở mức không cho đến khi hàng đến."
+            },
+            {
+              "question": "Đã nhận, sẵn sàng lập hóa đơn",
+              "body": "Giá trị đã nhận khớp với giá trị đơn. Chuyển đơn thành hóa đơn, và hóa đơn sẽ được đối chiếu với những gì bạn đã đặt."
+            }
+          ],
+          "aside": {
+            "body": "Lập nhầm hoặc được thay bằng đơn mới. Nó vẫn nằm trong danh sách cùng số của mình, nên dãy số không có khoảng trống nào để kiểm toán viên phải hỏi."
+          },
+          "formTitle": "Những gì bạn điền trên đơn mới",
+          "form": [
+            {
+              "label": "Tiêu đề đơn",
+              "body": "Một cái tên ngắn mà đội ngũ bạn nhận ra, ví dụ “Mua thiết bị quý 1”. Đây là ô bắt buộc duy nhất."
+            },
+            {
+              "label": "Nhà cung cấp",
+              "body": "Tìm và chọn nhà cung cấp bạn đặt hàng."
+            },
+            {
+              "label": "Ngày đặt hàng",
+              "body": "Được điền sẵn ngày hôm nay. Đổi lại cho đơn lập từ trước."
+            },
+            {
+              "label": "Tham chiếu",
+              "body": "Số tham chiếu của bạn hoặc số báo giá của nhà cung cấp, để sau này đối chiếu đơn."
+            },
+            {
+              "label": "Mặt hàng (bước 2)",
+              "body": "Sau phần đầu, thêm các mặt hàng kèm số lượng và đơn giá. Giá trị đơn được tính từ đó."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Đơn mua hàng nằm ở đầu quy trình mua",
+          "intro": "Nó bắt đầu từ một nhu cầu và một nhà cung cấp, và kết thúc thành một hóa đơn và một khoản thanh toán. Mỗi bước có công cụ riêng, và chúng đọc dữ liệu từ nhau.",
+          "groups": {
+            "before": "Trước đơn hàng",
+            "after": "Sau đơn hàng",
+            "shows": "Hiển thị ở đâu"
+          },
+          "items": {
+            "vendors": "Tên và điều khoản của nhà cung cấp, được chọn trên mỗi đơn.",
+            "itemsProducts": "Những gì bạn mua, kèm đơn vị và giá cho các dòng đơn hàng.",
+            "billsAp": "Chuyển đơn thành hóa đơn, rồi thanh toán.",
+            "chequeRegister": "Khi trả bằng séc, kèm ngày, để không tờ nào bị quên.",
+            "bankAccounts": "Nơi khoản thanh toán cuối cùng xuất đi.",
+            "accountingHub": "Đơn đã duyệt và hóa đơn chưa thanh toán hiện trong khoản phải trả.",
+            "financialReports": "Hàng mua và khoản phải trả trong báo cáo của bạn.",
+            "vatRegister": "Thuế GTGT trên hàng mua, sẵn sàng cho tờ khai hằng tháng."
+          }
+        },
+        "local": {
+          "title": "Đặt hàng theo cách các công ty Bangladesh mua",
+          "intro": "Giá biến động theo tỷ giá và mùa vụ, và hàng thường đến theo từng đợt. Đơn mua hàng ghi lại những gì đã thỏa thuận và những gì thực sự đã đến.",
+          "points": [
+            {
+              "title": "Chốt giá trước khi giao hàng",
+              "body": "Thống nhất giá và số lượng với nhà cung cấp trước. Khi hóa đơn đến, có cái để đối chiếu."
+            },
+            {
+              "title": "Giao từng phần, có theo dõi",
+              "body": "Hôm nay một xe giấy, tuần sau một xe nữa. Cột Đã nhận tăng theo mỗi lần giao và phần còn lại luôn hiện rõ."
+            },
+            {
+              "title": "Một cú nhấp thành hóa đơn",
+              "body": "Khi hàng đến, chuyển đơn thành hóa đơn. Mặt hàng, số lượng và thuế GTGT được chuyển sang, không phải gõ hai lần."
+            },
+            {
+              "title": "Duyệt có ngày tháng",
+              "body": "Ngày duyệt được lưu trên đơn, nên bạn có thể cho thấy ai đã đồng ý điều gì và khi nào."
+            }
+          ],
+          "story": {
+            "title": "Một đơn hàng, từ yêu cầu đến hóa đơn",
+            "intro": "Một đơn mẫu cho mực in, thường diễn ra như thế này.",
+            "steps": [
+              {
+                "time": "1 Th9",
+                "text": "Trưởng bộ phận sản xuất đề nghị mua mực cho hai tháng tới."
+              },
+              {
+                "time": "2 Th9",
+                "text": "Một đơn mua hàng được lập ở dạng nháp với nhà cung cấp, các mặt hàng và mức giá đã thỏa thuận."
+              },
+              {
+                "time": "4 Th9",
+                "text": "Đã duyệt. Đơn được gửi cho nhà cung cấp, và ngày duyệt được lưu trên đơn."
+              },
+              {
+                "time": "10 Th9",
+                "text": "Mực đã đến. Cột Đã nhận hiện đủ 3,82,000 taka so với đơn."
+              },
+              {
+                "time": "12 Th9",
+                "text": "Đơn được chuyển thành hóa đơn, đối chiếu với lần giao hàng và chuyển đi thanh toán."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Các ngành khác nhau dùng đơn mua hàng như thế nào",
+          "angles": {
+            "retail": "Hàng tồn kho đặt từ nhiều nhà cung cấp, thường trả chậm.",
+            "food-hospitality": "Đơn hàng tuần cho nông sản và vật tư, giao từng đợt.",
+            "real-estate": "Đơn vật liệu và nhà thầu gắn với dự án.",
+            "consulting": "Thiết bị và phần mềm đặt theo ngân sách.",
+            "manufacturing": "Nguyên liệu đặt trước, giao từng phần.",
+            "health-fitness": "Thiết bị và vật tư đặt theo từng lô có kế hoạch.",
+            "trades": "Phụ tùng đặt cho từng công việc, chuyển thành hóa đơn khi nhận.",
+            "others": "Mua sắm bằng nguồn tài trợ được duyệt trước khi chi bất cứ khoản nào."
+          }
+        },
+        "faq": {
+          "title": "Những câu hỏi thường gặp về đơn mua hàng",
+          "items": [
+            {
+              "q": "Đơn mua hàng trong Adon ERP là gì?",
+              "a": "Đó là bản ghi những gì bạn đã đồng ý mua từ một nhà cung cấp: tiêu đề, nhà cung cấp, ngày và các mặt hàng kèm số lượng và đơn giá. Sau khi được duyệt, nó cho thấy bạn dự kiến nhận gì và trả cho gì."
+            },
+            {
+              "q": "Nháp, đã duyệt và đã nhận nghĩa là gì?",
+              "a": "Nháp là vẫn đang soạn. Đã duyệt nghĩa là đơn đã gửi cho nhà cung cấp. Đã nhận nghĩa là hàng đã đến, và cột Đã nhận cho biết bao nhiêu."
+            },
+            {
+              "q": "Tôi cần điền gì để tạo đơn?",
+              "a": "Chỉ tiêu đề đơn là bắt buộc. Thêm nhà cung cấp, ngày đặt hàng và tham chiếu, rồi thêm mặt hàng ở bước thứ hai. Giá trị đơn được tính từ các mặt hàng."
+            },
+            {
+              "q": "Làm sao chuyển đơn thành hóa đơn?",
+              "a": "Mở đơn đã duyệt và bấm “Chuyển thành hóa đơn”. Mặt hàng, số lượng và thuế GTGT được chuyển sang hóa đơn."
+            },
+            {
+              "q": "Hàng có thể đến từng phần không?",
+              "a": "Có. Cột Đã nhận hiển thị số đã đến cho đến nay bên cạnh giá trị đơn, nên các lần giao từng phần rất dễ theo dõi."
+            },
+            {
+              "q": "Tôi có hủy đơn được không?",
+              "a": "Được. Dùng “Hủy”. Đơn đã hủy vẫn nằm trong danh sách cùng số của nó để lưu hồ sơ."
+            },
+            {
+              "q": "Tôi có xuất đơn mua hàng ra file được không?",
+              "a": "Được. Tìm trong danh sách rồi xuất sang CSV hoặc Excel, hoặc in ra."
+            },
+            {
+              "q": "Adon ERP có ở đâu?",
+              "a": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka. Hãy đặt lịch demo, chúng tôi sẽ cùng bạn lập một đơn mẫu và chuyển nó thành hóa đơn."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Hãy mang đến một đơn bạn sắp đặt. Chúng tôi sẽ lập và chuyển nó thành hóa đơn ngay trong buổi demo."
+        }
+      },
       "common": {
         "bookDemo": "Đặt lịch demo",
         "onboardingNote": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka.",

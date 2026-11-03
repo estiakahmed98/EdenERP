@@ -29,6 +29,34 @@ export const toolSlugs = {
   receipts: "receipts",
   chequeRegister: "cheque-register",
   itemsProducts: "items-products",
+  discountsCoupons: "discounts-coupons",
+  loanManagement: "loan-management",
+  fixedAssetRegister: "fixed-asset-register",
+  exchangeRates: "exchange-rates",
+  arApAging: "ar-ap-aging",
+  bankReconciliation: "bank-reconciliation",
+  /** Project Accounting tools. A leading slash means a full path. */
+  pjOverview: "/apps/project-accounting/projects",
+  pjCostCodes: "/apps/project-accounting/cost-codes",
+  pjBudgets: "/apps/project-accounting/budgets",
+  pjJobCost: "/apps/project-accounting/job-cost",
+  pjChangeOrders: "/apps/project-accounting/change-orders",
+  pjWip: "/apps/project-accounting/wip",
+  pjProgressBilling: "/apps/project-accounting/progress-billing",
+  pjSchedule: "/apps/project-accounting/schedule",
+  pjRisks: "/apps/project-accounting/risks-issues",
+  pjDocuments: "/apps/project-accounting/documents",
+  pjMilestones: "/apps/project-accounting/milestones",
+  pjBoq: "/apps/project-accounting/boq",
+  pjBillAllocations: "/apps/project-accounting/bill-allocations",
+  pjPnl: "/apps/project-accounting/p-and-l",
+  /** Budget Management tools. */
+  bmOverview: "/apps/Finance/budget-management",
+  bmLines: "/apps/budget-management/lines",
+  bmRequisitions: "/apps/budget-management/requisitions",
+  bmVariance: "/apps/budget-management/variance",
+  bmApprovals: "/apps/budget-management/approvals",
+  bmRbrf: "/apps/budget-management/rbrf",
 } as const;
 
 export type ToolKey = keyof typeof toolSlugs;
@@ -67,7 +95,8 @@ export async function accountingMetadata(
   ]);
   const title = t("title");
   const description = t("description");
-  const alternates = getLocaleAlternates(`/apps/accounting/${slug}`);
+  const path = slug.startsWith("/") ? slug : `/apps/accounting/${slug}`;
+  const alternates = getLocaleAlternates(path);
 
   return {
     title,
@@ -76,7 +105,7 @@ export async function accountingMetadata(
     alternates,
     openGraph: {
       type: "website",
-      url: `/${locale}/apps/accounting/${slug}`,
+      url: `/${locale}${path}`,
       siteName: "Adon ERP",
       title,
       description,
