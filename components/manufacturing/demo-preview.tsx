@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import { ArrowUpRight, Presentation } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { Presentation } from "lucide-react";
+import { ManufacturingDemoButton } from "./design-system";
 import css from "./demo-preview.module.css";
 
 /** A visual product teaser; booking opens the existing demo page. */
@@ -85,10 +85,9 @@ export default function DemoPreview({
             Book a guided demo to explore the full workspace, records and
             production process.
           </p>
-          <Link href="/demo" className={css.bookingLink}>
-            Book a live demo
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </Link>
+          <div className={css.bookingAction}>
+            <ManufacturingDemoButton />
+          </div>
         </div>
       </div>
     </div>

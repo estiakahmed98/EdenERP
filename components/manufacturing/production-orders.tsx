@@ -16,7 +16,7 @@ import {
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
-  ManufacturingAction,
+  ManufacturingDemoButton,
   ManufacturingCallout,
   ManufacturingEyebrow,
   ManufacturingMarker,
@@ -277,9 +277,7 @@ export default function ManufacturingProductionOrders() {
               {t("ctaDescription")}
             </p>
           </div>
-          <ManufacturingAction href="/demo">
-            {ui("bookDemo")}
-          </ManufacturingAction>
+          <ManufacturingDemoButton />
         </div>
       </section>
     </main>

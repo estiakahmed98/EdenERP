@@ -2,7 +2,7 @@ import type { ReactNode, SVGProps } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { ManufacturingAction } from "../design-system";
+import { ManufacturingAction, ManufacturingDemoButton } from "../design-system";
 import type {
   ManufacturingModuleContent,
   ManufacturingSlug,
@@ -62,7 +62,7 @@ export function Description({ copy }: HeroProps) {
 export function Actions({ target = "sample-workspace" }: { target?: string }) {
   return (
     <div className={css.actions}>
-      <ManufacturingAction href="/demo">Book a live demo</ManufacturingAction>
+      <ManufacturingDemoButton />
       <ManufacturingAction href={`#${target}`} secondary>
         Explore the workspace
       </ManufacturingAction>
