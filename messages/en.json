@@ -35960,7 +35960,7 @@
         }
       ],
       "cta": {
-        "title": "Ready to transform your business?",
+        "title": "Ready to Enterprise Solution?",
         "description": "Join 500+ businesses already using Adon ERP to streamline their operations.",
         "viewPricing": "View Pricing",
         "scheduleCall": "Schedule a Call",
@@ -40036,11 +40036,13 @@
       },
       "hero": {
         "tag": "✦ Manage your entire business in one place",
-        "titlePrefix": "Adon ERP: Simple & Fast,",
+        "titlePrefix": "Adon ERP : Affordable & Fast ",
         "typeWords": [
+          "Enterprise Solution",
           "Features like SAP",
           "Better than Odoo",
-          "Monday like Monday CRM"
+          "Monday like CRM",
+          "Salesforce like CRM"
         ],
         "description": "Set up in minutes with no coding or complicated configuration. Manage your team, sales, accounting, and operations from one connected platform."
       },
@@ -40083,10 +40085,14 @@
         "quoteHighlight": "Adon",
         "quoteSuffix": "to simplify your",
         "typeWords": [
-          "accounting",
-          "sales",
-          "operations",
-          "HR"
+          "Accounting",
+          "Sales",
+          "Operations",
+          "HR",
+          "Manufacturing",
+          "Education",
+          "Merchandising"
+
         ],
         "description": "Generate reports, understand data, automate tasks, and make faster decisions with built-in AI assistance."
       },
