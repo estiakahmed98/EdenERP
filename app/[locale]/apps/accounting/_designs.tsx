@@ -40,15 +40,19 @@ export type Accent = {
   raw: string;
 };
 
+/** Only colours from app/globals.css, so the theme classes recolour them too. */
 const accents: Accent[] = [
   { text: "text-primary", solid: "bg-primary", soft: "bg-primary/10", border: "border-primary", raw: "var(--primary)" },
   { text: "text-[var(--teal)]", solid: "bg-[var(--teal)]", soft: "bg-[var(--teal)]/10", border: "border-[var(--teal)]", raw: "var(--teal)" },
-  { text: "text-amber-600 dark:text-amber-400", solid: "bg-amber-500", soft: "bg-amber-500/10", border: "border-amber-500", raw: "#f59e0b" },
-  { text: "text-rose-600 dark:text-rose-400", solid: "bg-rose-500", soft: "bg-rose-500/10", border: "border-rose-500", raw: "#f43f5e" },
-  { text: "text-violet-600 dark:text-violet-400", solid: "bg-violet-500", soft: "bg-violet-500/10", border: "border-violet-500", raw: "#8b5cf6" },
-  { text: "text-cyan-600 dark:text-cyan-400", solid: "bg-cyan-500", soft: "bg-cyan-500/10", border: "border-cyan-500", raw: "#06b6d4" },
-  { text: "text-emerald-600 dark:text-emerald-400", solid: "bg-emerald-500", soft: "bg-emerald-500/10", border: "border-emerald-500", raw: "#10b981" },
-  { text: "text-orange-600 dark:text-orange-400", solid: "bg-orange-500", soft: "bg-orange-500/10", border: "border-orange-500", raw: "#f97316" },
+  {
+    text: "text-[var(--secondary)] dark:text-[var(--chart-3)]",
+    solid: "bg-[var(--secondary)]",
+    soft: "bg-[var(--secondary)]/10 dark:bg-[var(--chart-3)]/10",
+    border: "border-[var(--secondary)] dark:border-[var(--chart-3)]",
+    raw: "var(--secondary)",
+  },
+  { text: "text-[var(--chart-5)]", solid: "bg-[var(--chart-5)]", soft: "bg-[var(--chart-5)]/10", border: "border-[var(--chart-5)]", raw: "var(--chart-5)" },
+  { text: "text-[var(--chart-4)]", solid: "bg-[var(--chart-4)]", soft: "bg-[var(--chart-4)]/10", border: "border-[var(--chart-4)]", raw: "var(--chart-4)" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -134,6 +138,33 @@ const pageOrder = [
   "/apps/open-platform/tax-rates",
   "/apps/open-platform/migration-studio",
   "/apps/open-platform/export-takeout",
+  // HR & Payroll
+  "/apps/human-resources/departments",
+  "/apps/human-resources/designations",
+  "/apps/human-resources/grades-steps",
+  "/apps/human-resources/salary-components",
+  "/apps/human-resources/salary-structures",
+  "/apps/human-resources/payroll-runs",
+  "/apps/human-resources/approvals-inbox",
+  "/apps/human-resources/tax-brackets-nbr",
+  "/apps/human-resources/form-108-annual",
+  "/apps/human-resources/hr-policy-pf-gratuity",
+  "/apps/human-resources/shifts",
+  "/apps/human-resources/holiday-calendar",
+  "/apps/human-resources/leave-types",
+  "/apps/human-resources/leave-applications",
+  "/apps/human-resources/projects",
+  "/apps/human-resources/final-settlements",
+  "/apps/human-resources/service-records",
+  "/apps/human-resources/wppf-welfare",
+  "/apps/human-resources/salary-budgets",
+  "/apps/human-resources/hr-reports",
+  // Employee Portal
+  "/apps/employee-portal/my-profile",
+  "/apps/employee-portal/my-payslips",
+  "/apps/employee-portal/my-leaves",
+  "/apps/employee-portal/my-attendance",
+  "/apps/employee-portal/my-pf-gratuity",
 ];
 
 /**
@@ -151,7 +182,7 @@ export function designFor(slug: string): Design {
     final: (i * 3 + Math.floor(i / 5)) % FINAL_VARIANTS,
     frame: (i + Math.floor(i / 3)) % FRAME_VARIANTS,
     shell: i % SHELL_VARIANTS,
-    accent: accents[(i * 5 + Math.floor(i / 8)) % accents.length],
+    accent: accents[(i * 2 + Math.floor(i / 8)) % accents.length],
   };
 }
 

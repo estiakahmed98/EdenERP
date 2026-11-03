@@ -11609,6 +11609,10 @@
         "explorePlatform": "Explore Open Platform",
         "scModule": "Supply Chain",
         "pjModule": "Project Accounting",
+        "hrModule": "HR & Payroll",
+        "epModule": "Employee Portal",
+        "exploreHr": "Explore HR & Payroll",
+        "explorePortal": "Explore Employee Portal",
         "stDraft": "Draft",
         "stSubmitted": "Submitted",
         "stApproved": "Approved",
@@ -11675,7 +11679,36 @@
           "invWeighbridge": "Weighbridge & Scales",
           "opTaxRates": "Tax Rates",
           "opMigration": "Migration Studio",
-          "opExport": "Export / Takeout"
+          "opExport": "Export / Takeout",
+          "hrDepartments": "Departments",
+          "hrDesignations": "Designations",
+          "hrGrades": "Grades & Steps",
+          "hrComponents": "Salary Components",
+          "hrStructures": "Salary Structures",
+          "hrEmployees": "Employees",
+          "hrPayrollRuns": "Payroll Runs",
+          "hrApprovals": "Approvals Inbox",
+          "hrTax": "Tax Brackets (NBR)",
+          "hrForm108": "Form 108 (Annual)",
+          "hrPolicy": "HR Policy (PF/Gratuity)",
+          "hrShifts": "Shifts",
+          "hrHolidays": "Holiday Calendar",
+          "hrLeaveTypes": "Leave Types",
+          "hrLeaveApps": "Leave Applications",
+          "hrAttendance": "Attendance",
+          "hrProjects": "Projects",
+          "hrSettlements": "Final Settlements",
+          "hrServiceRecords": "Service Records",
+          "hrRecruitment": "Recruitment",
+          "hrAppraisals": "Appraisals",
+          "hrWppf": "WPPF & Welfare",
+          "hrSalaryBudgets": "Salary Budgets",
+          "hrReports": "HR Reports",
+          "epProfile": "My Profile",
+          "epPayslips": "My Payslips",
+          "epLeaves": "My Leaves",
+          "epAttendance": "My Attendance",
+          "epPf": "My PF & Gratuity"
         },
         "industryGroups": {
           "retail": "Retail",
@@ -12660,6 +12693,4831 @@
         },
         "closing": {
           "title": "Tell us how your business runs. We will show you this screen set up like it."
+        }
+      },
+      "hrDept": {
+        "meta": {
+          "title": "Departments: Your Organisation as a Tree | Adon ERP",
+          "description": "Set up departments and sub-departments with a head, a headcount and a cost centre, so approvals and salary cost go to the right place. Built for companies in Bangladesh.",
+          "keywords": [
+            "department management software Bangladesh",
+            "organisation chart HR",
+            "cost centre payroll",
+            "HR software Dhaka",
+            "Adon ERP departments"
+          ]
+        },
+        "hero": {
+          "title": "Departments: the shape of the company, with a cost centre on every branch",
+          "lead": "Draw the company as it really runs: departments, the sub-departments inside them, and the person who heads each one. Headcount and salary cost follow the same tree.",
+          "secondaryCta": "See how a department is set up"
+        },
+        "sample": {
+          "count": "6 departments",
+          "notes": [
+            "the company at the top",
+            "a head for approvals",
+            "people in each"
+          ]
+        },
+        "ui": {
+          "title": "Departments",
+          "people": "people",
+          "departments": "departments",
+          "subTitle": "Sub-departments",
+          "newSub": "+ Sub-department",
+          "caption": "A partial preview of Departments in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A department, in three parts",
+          "intro": "Each part decides something later on: who approves, where salary is booked, and who belongs where.",
+          "steps": [
+            {
+              "tag": "Name",
+              "question": "Where it sits",
+              "body": "A department can sit under the company or under another department, as deep as you need."
+            },
+            {
+              "tag": "Head",
+              "question": "Who approves",
+              "body": "The head of department is the first approver for leave, overtime and advances from the team."
+            },
+            {
+              "tag": "Cost centre",
+              "question": "Where the money goes",
+              "body": "Salary of everyone in the department is booked to its cost centre, so the P&L shows it by department."
+            }
+          ],
+          "formTitle": "What you fill in for a department",
+          "form": [
+            {
+              "label": "Name and code",
+              "body": "Such as Production, PRD."
+            },
+            {
+              "label": "Parent",
+              "body": "The company, or another department."
+            },
+            {
+              "label": "Head",
+              "body": "An employee who approves for the team."
+            },
+            {
+              "label": "Cost centre",
+              "body": "Where its salary cost is booked."
+            },
+            {
+              "label": "Location",
+              "body": "Factory, depot or head office."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Departments sit under everything else in HR",
+          "intro": "People, posts, approvals and budgets all hang off the department tree.",
+          "groups": {
+            "before": "Set up alongside",
+            "after": "Uses the department",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrDesignations": "Job titles belong to a department.",
+            "hrGrades": "Pay scale used across departments.",
+            "hrEmployees": "Each person is in one department.",
+            "hrPayrollRuns": "Salary split by department.",
+            "hrApprovals": "Requests go to the head first.",
+            "hrSalaryBudgets": "A budget for each department.",
+            "hrReports": "Headcount and cost by department.",
+            "ledgers": "Salary cost by cost centre."
+          }
+        },
+        "local": {
+          "title": "Departments the way factories and offices are run here",
+          "intro": "A plant has lines and shifts, a head office has sections. The tree can hold both.",
+          "points": [
+            {
+              "title": "As deep as you need",
+              "body": "Production, then Moulding line, then Crew 1."
+            },
+            {
+              "title": "A head for every level",
+              "body": "Approvals go up the tree, one step at a time."
+            },
+            {
+              "title": "Cost by department",
+              "body": "Salary lands on the right cost centre without a spreadsheet."
+            },
+            {
+              "title": "Several locations",
+              "body": "Factory, depot and head office in one company."
+            }
+          ],
+          "story": {
+            "title": "One new line, set up in a morning",
+            "intro": "A sample change to the tree, the way it usually runs.",
+            "steps": [
+              {
+                "time": "09:00",
+                "text": "A printing line is added under Production."
+              },
+              {
+                "time": "09:10",
+                "text": "Kamal Uddin is made its head."
+              },
+              {
+                "time": "09:20",
+                "text": "Cost centre CC-112 is linked to it."
+              },
+              {
+                "time": "10:30",
+                "text": "38 operators are moved to the new line."
+              },
+              {
+                "time": "Month end",
+                "text": "Payroll books their salary to CC-112."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use departments",
+          "angles": {
+            "retail": "Stores, warehouse and head office.",
+            "food-hospitality": "Kitchen, service and housekeeping.",
+            "real-estate": "Sites, design and sales.",
+            "consulting": "Practice areas and support.",
+            "manufacturing": "Lines, quality, stores and maintenance.",
+            "health-fitness": "Clinics, pharmacy and front desk.",
+            "trades": "Field crews and the office.",
+            "others": "Programmes and support functions."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about departments",
+          "items": [
+            {
+              "q": "How deep can the tree go?",
+              "a": "As many levels as you need."
+            },
+            {
+              "q": "Can a department have no head?",
+              "a": "Yes, then requests go to the next head above it."
+            },
+            {
+              "q": "Can I move people between departments?",
+              "a": "Yes. The move is kept in their service record with a date."
+            },
+            {
+              "q": "Is a cost centre required?",
+              "a": "No, but without one salary is booked to the company as a whole."
+            },
+            {
+              "q": "Can I close a department?",
+              "a": "Yes, once nobody is left in it. Its history stays."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your organogram. We will set up the departments in the demo."
+        }
+      },
+      "hrDesig": {
+        "meta": {
+          "title": "Designations: Job Titles, Grade Bands and Vacant Posts | Adon ERP",
+          "description": "Keep every job title with its department, its grade band and the number of approved posts, so vacancies are visible before hiring starts. Built for companies in Bangladesh.",
+          "keywords": [
+            "designation list HR",
+            "job title management",
+            "approved posts vacancy",
+            "HR software Bangladesh",
+            "Adon ERP designations"
+          ]
+        },
+        "hero": {
+          "title": "Designations: every job title, the grade it pays, and how many posts are open",
+          "lead": "A designation says what a person does and what band they are paid in. Set the approved number of posts and the gap to the people in them shows itself.",
+          "secondaryCta": "See the designation list"
+        },
+        "sample": {
+          "count": "7 designations",
+          "notes": [
+            "a band for every title",
+            "vacant posts in red",
+            "a new post in seconds"
+          ]
+        },
+        "ui": {
+          "title": "Designations",
+          "listTitle": "All designations",
+          "count": "7 of 38",
+          "thTitle": "Designation",
+          "thDept": "Department",
+          "thBand": "Grade band",
+          "thPeople": "People",
+          "thVacant": "Vacant",
+          "formTitle": "New designation",
+          "fTitle": "Title",
+          "fDept": "Department",
+          "fBand": "Grade band",
+          "fPosts": "Approved posts",
+          "cancel": "Cancel",
+          "save": "Save",
+          "caption": "A partial preview of Designations in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A designation, in three answers",
+          "intro": "What the job is, what it pays, and how many of them you mean to have.",
+          "steps": [
+            {
+              "tag": "Title",
+              "question": "What the job is called",
+              "body": "One title for the same job everywhere, so reports add up."
+            },
+            {
+              "tag": "Grade band",
+              "question": "What it pays",
+              "body": "A band of grades, such as G2 to G3, keeps offers inside the pay scale."
+            },
+            {
+              "tag": "Posts",
+              "question": "How many there should be",
+              "body": "Approved posts against people in them gives the vacancies."
+            }
+          ],
+          "formTitle": "What you fill in for a designation",
+          "form": [
+            {
+              "label": "Title",
+              "body": "Such as Line Supervisor."
+            },
+            {
+              "label": "Department",
+              "body": "Where the post sits."
+            },
+            {
+              "label": "Grade band",
+              "body": "The lowest and highest grade allowed."
+            },
+            {
+              "label": "Approved posts",
+              "body": "How many people this title should have."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Designations link the tree to the pay scale",
+          "intro": "They sit between departments and grades, and every employee has one.",
+          "groups": {
+            "before": "Set up before",
+            "after": "Uses the designation",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrDepartments": "The department each post sits in.",
+            "hrGrades": "The grades a title can be paid in.",
+            "hrEmployees": "Each person has one designation.",
+            "hrRecruitment": "Vacant posts become openings.",
+            "hrServiceRecords": "Title changes with a date.",
+            "hrReports": "Headcount by designation."
+          }
+        },
+        "local": {
+          "title": "Titles the way companies here use them",
+          "intro": "Operators, supervisors, officers and managers, often across several sites.",
+          "points": [
+            {
+              "title": "One list for all sites",
+              "body": "The same title means the same job at every factory."
+            },
+            {
+              "title": "Bands, not single grades",
+              "body": "Room to grow without a new title."
+            },
+            {
+              "title": "Vacancies in plain sight",
+              "body": "Approved posts minus people in them."
+            },
+            {
+              "title": "Clean promotion history",
+              "body": "Every title change kept with a date."
+            }
+          ],
+          "story": {
+            "title": "One vacancy, from gap to opening",
+            "intro": "A sample post being filled, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Nov",
+                "text": "Line Supervisor shows 9 people against 10 posts."
+              },
+              {
+                "time": "2 Nov",
+                "text": "The plant manager asks HR to fill it."
+              },
+              {
+                "time": "2 Nov",
+                "text": "An opening is created in Recruitment from the post."
+              },
+              {
+                "time": "20 Nov",
+                "text": "A candidate is hired in grade G3."
+              },
+              {
+                "time": "1 Dec",
+                "text": "The vacancy column shows 0."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use designations",
+          "angles": {
+            "retail": "Cashiers, store managers and pickers.",
+            "food-hospitality": "Chefs, servers and supervisors.",
+            "real-estate": "Engineers, site managers and agents.",
+            "consulting": "Associates, managers and partners.",
+            "manufacturing": "Operators, supervisors and technicians.",
+            "health-fitness": "Nurses, technicians and pharmacists.",
+            "trades": "Technicians, helpers and team leads.",
+            "others": "Officers and field staff."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about designations",
+          "items": [
+            {
+              "q": "What is a grade band?",
+              "a": "The lowest and highest grade a title can be paid in."
+            },
+            {
+              "q": "Do I have to set approved posts?",
+              "a": "No, but then vacancies are not shown."
+            },
+            {
+              "q": "Can a title be used in two departments?",
+              "a": "Yes. Each department has its own posts for it."
+            },
+            {
+              "q": "What happens when someone is promoted?",
+              "a": "Their designation changes and the change is kept in the service record."
+            },
+            {
+              "q": "Can I rename a designation?",
+              "a": "Yes. Everyone in it gets the new title."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your list of job titles. We will set them up with grade bands in the demo."
+        }
+      },
+      "hrGradesPage": {
+        "meta": {
+          "title": "Grades & Steps: A Pay Scale Everyone Can Read | Adon ERP",
+          "description": "Build a pay scale of grades and steps with a basic salary for each, a fixed increment between steps, and promotions that move people up a grade. Built for companies in Bangladesh.",
+          "keywords": [
+            "pay scale software",
+            "grade and step salary",
+            "annual increment payroll",
+            "HR software Bangladesh",
+            "Adon ERP grades"
+          ]
+        },
+        "hero": {
+          "title": "Grades & steps: a pay scale where every basic salary has a reason",
+          "lead": "Each grade has steps, and each step has a basic salary. An annual increment moves a person one step to the right. A promotion moves them up a grade.",
+          "secondaryCta": "See a pay scale"
+        },
+        "sample": {
+          "count": "7 grades · 5 steps",
+          "notes": [
+            "grades down the side",
+            "steps across the top",
+            "one person's place"
+          ]
+        },
+        "ui": {
+          "title": "Grades & Steps",
+          "scaleTitle": "Pay scale · basic salary in taka",
+          "increment": "+5% per step",
+          "effective": "From 1 Jul 2026",
+          "grade": "Grade",
+          "step": "Step",
+          "note": "The highlighted cell is G3, step 3. Each step is 5% above the one before it.",
+          "caption": "A partial preview of Grades & Steps in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "How a pay scale is built, in three choices",
+          "intro": "A grade, the steps in it, and the rule that moves people between them.",
+          "steps": [
+            {
+              "tag": "Grade",
+              "question": "Set the levels",
+              "body": "From operator grades to management, each with a starting basic salary."
+            },
+            {
+              "tag": "Step",
+              "question": "Set the steps in a grade",
+              "body": "A fixed amount or a percentage between steps, applied the same way to everyone."
+            },
+            {
+              "tag": "Movement",
+              "question": "Increments and promotions",
+              "body": "An increment moves one step. A promotion moves to a new grade, at the nearest step above the current salary."
+            }
+          ],
+          "formTitle": "What you fill in for a grade",
+          "form": [
+            {
+              "label": "Grade code",
+              "body": "Such as G4."
+            },
+            {
+              "label": "Starting basic",
+              "body": "Basic salary at step 1."
+            },
+            {
+              "label": "Number of steps",
+              "body": "How far a person can grow in the grade."
+            },
+            {
+              "label": "Step increment",
+              "body": "A fixed amount or a percentage."
+            },
+            {
+              "label": "Effective date",
+              "body": "When the scale starts to apply."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The pay scale feeds every salary",
+          "intro": "Basic salary comes from the scale, and most allowances are a share of basic.",
+          "groups": {
+            "before": "Set up before",
+            "after": "Uses the scale",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrDesignations": "Each title has a band of grades.",
+            "hrStructures": "Allowances worked out from basic.",
+            "hrEmployees": "Each person sits on a grade and step.",
+            "hrPayrollRuns": "Basic salary for the month.",
+            "hrServiceRecords": "Each increment and promotion.",
+            "hrSalaryBudgets": "Cost of the next increment."
+          }
+        },
+        "local": {
+          "title": "Pay scales the way companies here set them",
+          "intro": "Annual increments in July are common, and so are a few grades for workers and more for officers.",
+          "points": [
+            {
+              "title": "One scale, every site",
+              "body": "The same basic for the same grade everywhere."
+            },
+            {
+              "title": "Increments in one go",
+              "body": "Move everyone eligible one step on the same date."
+            },
+            {
+              "title": "New scale, same history",
+              "body": "A revised scale starts on a date; the old one stays for records."
+            },
+            {
+              "title": "Cost before you decide",
+              "body": "See what an increment adds to the salary bill."
+            }
+          ],
+          "story": {
+            "title": "One annual increment, for the whole company",
+            "intro": "A sample increment round, the way it usually runs.",
+            "steps": [
+              {
+                "time": "15 Jun",
+                "text": "HR lists everyone who is due an increment."
+              },
+              {
+                "time": "18 Jun",
+                "text": "The cost is checked against the salary budget."
+              },
+              {
+                "time": "25 Jun",
+                "text": "The increment is approved."
+              },
+              {
+                "time": "1 Jul",
+                "text": "196 people move one step to the right."
+              },
+              {
+                "time": "31 Jul",
+                "text": "July payroll uses the new basic salaries."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use grades and steps",
+          "angles": {
+            "retail": "Store staff and managers on separate grades.",
+            "food-hospitality": "Kitchen and service grades.",
+            "real-estate": "Site and office grades.",
+            "consulting": "Consultant levels with steps.",
+            "manufacturing": "Worker and officer grades in one scale.",
+            "health-fitness": "Clinical and support grades.",
+            "trades": "Technician grades by skill.",
+            "others": "Grades set by donor rules."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about grades and steps",
+          "items": [
+            {
+              "q": "Can steps be a fixed amount?",
+              "a": "Yes, a fixed amount or a percentage."
+            },
+            {
+              "q": "What happens at the last step?",
+              "a": "The person stays there until promoted."
+            },
+            {
+              "q": "Can I have two pay scales?",
+              "a": "Yes, for example one for workers and one for officers."
+            },
+            {
+              "q": "How is a promotion priced?",
+              "a": "At the step of the new grade nearest above the current basic."
+            },
+            {
+              "q": "Can I revise the scale?",
+              "a": "Yes. A new scale starts on a date and the old one is kept."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your current pay scale. We will load it with grades and steps in the demo."
+        }
+      },
+      "hrComp": {
+        "meta": {
+          "title": "Salary Components: Earnings and Deductions, Each with a Rule | Adon ERP",
+          "description": "Define every earning and deduction once, as a fixed amount, a share of basic or a formula, with a tax flag and a ledger account. Built for companies in Bangladesh.",
+          "keywords": [
+            "salary components payroll",
+            "earnings and deductions",
+            "house rent allowance basic",
+            "payroll software Bangladesh",
+            "Adon ERP salary components"
+          ]
+        },
+        "hero": {
+          "title": "Salary components: every line on a payslip, defined once",
+          "lead": "Basic, house rent, medical, conveyance, overtime, bonus, provident fund, tax. Each gets a code, a rule, a tax flag and a ledger account, and every structure reuses it.",
+          "secondaryCta": "See the components"
+        },
+        "sample": {
+          "count": "10 components",
+          "notes": [
+            "earnings on the left",
+            "deductions on the right",
+            "a rule for each"
+          ]
+        },
+        "ui": {
+          "title": "Salary Components",
+          "earnings": "Earnings",
+          "deductions": "Deductions",
+          "ruleGrade": "From the pay scale",
+          "rule50": "50% of basic",
+          "ruleFixedMed": "10% of basic",
+          "ruleFixedCon": "Fixed amount by grade",
+          "ruleOt": "Hours × 2 × basic ÷ 208",
+          "ruleBonus": "Basic, twice a year",
+          "taxable": "taxable",
+          "rulePf": "10% of basic",
+          "ruleTax": "From the tax slabs",
+          "ruleAdv": "Instalment set on the advance",
+          "ruleAbs": "Gross ÷ 30 per day",
+          "deduct": "deduction",
+          "ledgerNote": "Each component posts to its own ledger account when the payroll is paid.",
+          "caption": "A partial preview of Salary Components in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A component, in three decisions",
+          "intro": "What it adds or takes away, how it is worked out, and where it is booked.",
+          "steps": [
+            {
+              "tag": "Earning",
+              "question": "What is paid",
+              "body": "Basic, allowances, overtime and bonus are earnings. Each one says whether it is taxable."
+            },
+            {
+              "tag": "Deduction",
+              "question": "What is taken back",
+              "body": "Provident fund, tax, advances and absence come off gross pay."
+            },
+            {
+              "tag": "Rule",
+              "question": "How it is worked out",
+              "body": "A fixed amount, a share of basic or of gross, or a formula using hours and days."
+            }
+          ],
+          "formTitle": "What you fill in for a component",
+          "form": [
+            {
+              "label": "Code and name",
+              "body": "Such as HRA, House rent allowance."
+            },
+            {
+              "label": "Type",
+              "body": "Earning or deduction."
+            },
+            {
+              "label": "Rule",
+              "body": "Fixed, percentage or formula."
+            },
+            {
+              "label": "Taxable",
+              "body": "Whether it counts for income tax."
+            },
+            {
+              "label": "Ledger account",
+              "body": "Where it is booked when paid."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Components are the bricks of every payslip",
+          "intro": "Structures are made of them, and payroll works them out every month.",
+          "groups": {
+            "before": "Set up before",
+            "after": "Uses the components",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "chartOfAccounts": "An account for each component.",
+            "hrTax": "Which components are taxed.",
+            "hrStructures": "Built from components.",
+            "hrPayrollRuns": "Each component worked out monthly.",
+            "epPayslips": "One line per component.",
+            "journalEntries": "Salary posted by component."
+          }
+        },
+        "local": {
+          "title": "Components the way salaries are paid here",
+          "intro": "Basic plus house rent, medical and conveyance is the usual shape, with two festival bonuses a year.",
+          "points": [
+            {
+              "title": "The usual allowances ready",
+              "body": "House rent, medical and conveyance as a share of basic."
+            },
+            {
+              "title": "Overtime by the hour",
+              "body": "Worked out from basic and the hours from attendance."
+            },
+            {
+              "title": "Festival bonuses",
+              "body": "Paid on the months you choose."
+            },
+            {
+              "title": "Booked properly",
+              "body": "Each component lands on its own ledger account."
+            }
+          ],
+          "story": {
+            "title": "One new allowance, added mid-year",
+            "intro": "A sample change, the way it usually runs.",
+            "steps": [
+              {
+                "time": "3 Aug",
+                "text": "Management approves a night shift allowance."
+              },
+              {
+                "time": "4 Aug",
+                "text": "HR adds component NSA, fixed BDT 1,500, taxable."
+              },
+              {
+                "time": "4 Aug",
+                "text": "It is added to the Worker structure."
+              },
+              {
+                "time": "31 Aug",
+                "text": "Payroll pays it to everyone on Shift C."
+              },
+              {
+                "time": "31 Aug",
+                "text": "It shows on payslips and in the ledger."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use salary components",
+          "angles": {
+            "retail": "Sales incentives as an earning.",
+            "food-hospitality": "Service charge shared as an earning.",
+            "real-estate": "Site allowance for field staff.",
+            "consulting": "Billable bonus each quarter.",
+            "manufacturing": "Overtime, night shift and attendance bonus.",
+            "health-fitness": "Duty allowance for night shifts.",
+            "trades": "Tool and travel allowance.",
+            "others": "Project allowances by donor rules."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about salary components",
+          "items": [
+            {
+              "q": "Can a component be a share of gross?",
+              "a": "Yes, of basic or of gross."
+            },
+            {
+              "q": "Can I use a formula?",
+              "a": "Yes, with basic, gross, days and hours."
+            },
+            {
+              "q": "Is tax worked out automatically?",
+              "a": "Yes, from the taxable components and the tax slabs."
+            },
+            {
+              "q": "Can I stop a component?",
+              "a": "Yes. It stops from the next run and stays in history."
+            },
+            {
+              "q": "Where is each component booked?",
+              "a": "On the ledger account you set on it."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a payslip you use today. We will set up the same components in the demo."
+        }
+      },
+      "hrStruct": {
+        "meta": {
+          "title": "Salary Structures: One Shape of Pay for Many People | Adon ERP",
+          "description": "Build salary structures from components, show how gross breaks down into basic and allowances, and assign one structure to many employees. Built for companies in Bangladesh.",
+          "keywords": [
+            "salary structure software",
+            "gross to basic breakdown",
+            "payroll structure Bangladesh",
+            "HR software Dhaka",
+            "Adon ERP salary structures"
+          ]
+        },
+        "hero": {
+          "title": "Salary structures: how a gross salary breaks into its parts",
+          "lead": "A structure says what share of gross is basic, house rent, medical and conveyance. Assign it to everyone on the same terms, and every payslip breaks down the same way.",
+          "secondaryCta": "See a structure"
+        },
+        "sample": {
+          "count": "4 structures",
+          "notes": [
+            "one structure, many people",
+            "gross split into parts",
+            "the parts in taka"
+          ]
+        },
+        "ui": {
+          "title": "Salary Structures",
+          "listTitle": "Structures",
+          "people": "people",
+          "structure": "Structure",
+          "example": "Example gross",
+          "assigned": "Assigned to",
+          "caption": "A partial preview of Salary Structures in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A structure, in three steps",
+          "intro": "Pick the parts, set their shares, then give it to the people it is for.",
+          "steps": [
+            {
+              "tag": "Components",
+              "question": "Pick the parts",
+              "body": "Basic, house rent, medical, conveyance and anything else the group is paid."
+            },
+            {
+              "tag": "Shares",
+              "question": "Set the split",
+              "body": "Each part as a share of gross or of basic. The total always comes to the gross."
+            },
+            {
+              "tag": "Assign",
+              "question": "Give it to people",
+              "body": "Everyone on the same terms gets the same structure. Their gross is the only number that differs."
+            }
+          ],
+          "formTitle": "What you fill in for a structure",
+          "form": [
+            {
+              "label": "Name",
+              "body": "Such as Officer."
+            },
+            {
+              "label": "Components",
+              "body": "The parts that make up gross."
+            },
+            {
+              "label": "Share of each",
+              "body": "A percentage of gross or of basic."
+            },
+            {
+              "label": "Deductions",
+              "body": "PF and others that apply."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Structures connect components to people",
+          "intro": "They are built from components and used by every payroll run.",
+          "groups": {
+            "before": "Built from",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrComponents": "The parts of a structure.",
+            "hrGrades": "Basic salary for the grade.",
+            "hrEmployees": "Each person has one structure.",
+            "hrPayrollRuns": "Gross split by structure.",
+            "epPayslips": "The breakdown each month.",
+            "hrSalaryBudgets": "Cost by structure."
+          }
+        },
+        "local": {
+          "title": "Structures the way pay is agreed here",
+          "intro": "Offers are usually made as a gross figure, and the split into basic and allowances follows a fixed rule.",
+          "points": [
+            {
+              "title": "Offer in gross",
+              "body": "Enter the gross; the parts follow."
+            },
+            {
+              "title": "Workers and officers apart",
+              "body": "Different shares for different groups."
+            },
+            {
+              "title": "Change once",
+              "body": "Edit the structure and everyone on it follows from the next run."
+            },
+            {
+              "title": "Copy to start",
+              "body": "A new structure from an existing one."
+            }
+          ],
+          "story": {
+            "title": "One new hire, from offer to first payslip",
+            "intro": "A sample hire, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Oct",
+                "text": "An offer is made at a gross of BDT 50,250."
+              },
+              {
+                "time": "10 Oct",
+                "text": "The new officer joins and gets the Officer structure."
+              },
+              {
+                "time": "10 Oct",
+                "text": "Basic is set at 60%, house rent at 30%."
+              },
+              {
+                "time": "31 Oct",
+                "text": "Payroll pays 21 days of the month."
+              },
+              {
+                "time": "31 Oct",
+                "text": "The payslip shows each part in taka."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use salary structures",
+          "angles": {
+            "retail": "Store staff and managers apart.",
+            "food-hospitality": "Kitchen and front-of-house apart.",
+            "real-estate": "Site and office staff apart.",
+            "consulting": "Consultants on a simple structure.",
+            "manufacturing": "Workers, officers and managers apart.",
+            "health-fitness": "Doctors, nurses and support apart.",
+            "trades": "Technicians and helpers apart.",
+            "others": "Programme staff by donor rules."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about salary structures",
+          "items": [
+            {
+              "q": "Can shares be of basic, not gross?",
+              "a": "Yes, either way."
+            },
+            {
+              "q": "Can one person have their own structure?",
+              "a": "Yes, though most share one."
+            },
+            {
+              "q": "What if I change a structure?",
+              "a": "It applies from the next payroll run."
+            },
+            {
+              "q": "Do the parts always add up to gross?",
+              "a": "Yes. The last part takes what is left."
+            },
+            {
+              "q": "Can I see who is on a structure?",
+              "a": "Yes, on the structure itself."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring two or three offer letters. We will build the structures behind them in the demo."
+        }
+      },
+      "hrRuns": {
+        "meta": {
+          "title": "Payroll Runs: Compute, Approve and Pay Each Month | Adon ERP",
+          "description": "Run payroll once a month: pull in attendance, leave and overtime, compute gross and net for every employee, approve, and pay with a bank advice and a journal entry. Built for companies in Bangladesh.",
+          "keywords": [
+            "payroll software Bangladesh",
+            "monthly payroll run",
+            "salary processing",
+            "bank advice payroll",
+            "Adon ERP payroll runs"
+          ]
+        },
+        "hero": {
+          "title": "Payroll runs: one month's salary, from attendance to the bank",
+          "lead": "A run takes the month's attendance, leave and overtime, works out every employee's gross, deductions and net, waits for approval, then produces the bank advice and the journal entry.",
+          "secondaryCta": "See a payroll run"
+        },
+        "sample": {
+          "count": "4 runs",
+          "notes": [
+            "where this run stands",
+            "the month in four figures",
+            "every run kept"
+          ]
+        },
+        "ui": {
+          "title": "Payroll Runs",
+          "stDraft": "Draft",
+          "stComputed": "Computed",
+          "stApproved": "Approved",
+          "stPaid": "Paid",
+          "employees": "Employees",
+          "october": "October 2026",
+          "gross": "Gross",
+          "deductions": "Deductions",
+          "net": "Net pay",
+          "thMonth": "Month",
+          "thPeople": "People",
+          "thGross": "Gross",
+          "thDed": "Deductions",
+          "thNet": "Net",
+          "thStatus": "Status",
+          "caption": "A partial preview of Payroll Runs in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A payroll run, in three stops",
+          "intro": "Nothing is paid until the figures have been looked at and approved.",
+          "steps": [
+            {
+              "tag": "Draft",
+              "question": "Gather the month",
+              "body": "Attendance, approved leave, overtime hours, joiners and leavers are pulled in."
+            },
+            {
+              "tag": "Computed",
+              "question": "Work out every payslip",
+              "body": "Gross, each deduction and net pay for every employee, checked against last month."
+            },
+            {
+              "tag": "Paid",
+              "question": "Approve and pay",
+              "body": "After approval the bank advice is produced and the journal entry is posted."
+            }
+          ],
+          "formTitle": "What a run shows",
+          "form": [
+            {
+              "label": "Employees",
+              "body": "Everyone paid this month."
+            },
+            {
+              "label": "Gross",
+              "body": "Total earnings before deductions."
+            },
+            {
+              "label": "Deductions",
+              "body": "PF, tax, advances and absence."
+            },
+            {
+              "label": "Net pay",
+              "body": "What goes to the bank."
+            },
+            {
+              "label": "Change from last month",
+              "body": "Joiners, leavers and increments explained."
+            }
+          ],
+          "aside": {
+            "tag": "Locked",
+            "body": "Once a run is paid it cannot be edited. A correction goes into next month's run."
+          }
+        },
+        "connect": {
+          "title": "Payroll gathers from HR and hands off to accounts",
+          "intro": "It reads the month's time records and writes the bank file and the entry.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Hands off to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrAttendance": "Days present and overtime.",
+            "hrLeaveApps": "Approved leave, paid or unpaid.",
+            "hrStructures": "How each gross is split.",
+            "hrApprovals": "Sign-off before payment.",
+            "bankAccounts": "The account salary is paid from.",
+            "journalEntries": "Salary cost posted.",
+            "epPayslips": "Each employee's payslip.",
+            "hrReports": "Payroll cost over time.",
+            "hrForm108": "The year's twelve runs added up."
+          }
+        },
+        "local": {
+          "title": "Payroll the way companies here pay",
+          "intro": "Salary by bank transfer in the first week, overtime for workers, and two festival bonuses a year.",
+          "points": [
+            {
+              "title": "Bank advice ready",
+              "body": "A file or a letter for the bank, by account."
+            },
+            {
+              "title": "Overtime included",
+              "body": "Hours from attendance, at the rate in the component."
+            },
+            {
+              "title": "Bonus months",
+              "body": "Festival bonus added in the months you choose."
+            },
+            {
+              "title": "Explained changes",
+              "body": "Why this month differs from the last."
+            }
+          ],
+          "story": {
+            "title": "One month's payroll, in four days",
+            "intro": "A sample run for October, the way it usually runs.",
+            "steps": [
+              {
+                "time": "31 Oct",
+                "text": "The run is opened and attendance is pulled in."
+              },
+              {
+                "time": "1 Nov",
+                "text": "212 payslips are computed; 4 joiners are checked."
+              },
+              {
+                "time": "2 Nov",
+                "text": "The run goes to the approvals inbox."
+              },
+              {
+                "time": "3 Nov",
+                "text": "Finance approves; the bank advice is sent."
+              },
+              {
+                "time": "4 Nov",
+                "text": "Salary reaches accounts and payslips go out."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use payroll runs",
+          "angles": {
+            "retail": "Store staff with sales incentives.",
+            "food-hospitality": "Service charge added to the run.",
+            "real-estate": "Site and office staff in one run.",
+            "consulting": "A simple monthly run.",
+            "manufacturing": "Workers with overtime and night allowance.",
+            "health-fitness": "Shift allowances for clinical staff.",
+            "trades": "Daily-rated helpers and monthly staff.",
+            "others": "Programme staff charged to grants."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about payroll runs",
+          "items": [
+            {
+              "q": "Can I run payroll twice a month?",
+              "a": "Yes, a run can cover any period."
+            },
+            {
+              "q": "Can I correct a paid run?",
+              "a": "No. A correction goes into the next run."
+            },
+            {
+              "q": "Are joiners paid for part of the month?",
+              "a": "Yes, by days worked."
+            },
+            {
+              "q": "What does the bank receive?",
+              "a": "A bank advice with each account and amount."
+            },
+            {
+              "q": "Is the entry posted automatically?",
+              "a": "Yes, when the run is marked paid."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last month's salary sheet. We will run the same month in the demo."
+        }
+      },
+      "hrInbox": {
+        "meta": {
+          "title": "Approvals Inbox: Every HR Request in One List | Adon ERP",
+          "description": "Approve payroll, leave, advances, overtime and settlements from one inbox, with the details beside the list and a comment on every decision. Built for companies in Bangladesh.",
+          "keywords": [
+            "HR approval workflow",
+            "leave approval software",
+            "payroll approval",
+            "HR software Bangladesh",
+            "Adon ERP approvals"
+          ]
+        },
+        "hero": {
+          "title": "Approvals inbox: everything waiting for you, and what it is for",
+          "lead": "Payroll, leave, salary advances, overtime and final settlements arrive in one list. Open one and the figures are right there. Approve, return or reject with a comment.",
+          "secondaryCta": "See the inbox"
+        },
+        "sample": {
+          "count": "5 waiting",
+          "notes": [
+            "oldest at the bottom",
+            "the figures beside it",
+            "a comment with every decision"
+          ]
+        },
+        "ui": {
+          "title": "Approvals Inbox",
+          "tPayroll": "Payroll",
+          "tLeave": "Leave",
+          "tAdvance": "Advance",
+          "tOvertime": "Overtime",
+          "tSettlement": "Settlement",
+          "detailTitle": "Payroll · October 2026",
+          "waiting": "Waiting for you",
+          "detailSub": "Computed by Farhana Akter on 1 Nov · 212 employees",
+          "net": "Net pay",
+          "comment": "Add a comment (optional)",
+          "reject": "Reject",
+          "return": "Return",
+          "approve": "Approve",
+          "caption": "A partial preview of Approvals Inbox in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "An approval, in three outcomes",
+          "intro": "Each request goes to the right person, in order, and ends one of three ways.",
+          "steps": [
+            {
+              "tag": "Approve",
+              "question": "It moves on",
+              "body": "The next approver gets it, or it is done and the requester is told."
+            },
+            {
+              "tag": "Return",
+              "question": "It goes back",
+              "body": "The requester fixes what is asked for in the comment and sends it again."
+            },
+            {
+              "tag": "Reject",
+              "question": "It stops",
+              "body": "The request is closed with the reason kept on it."
+            }
+          ],
+          "formTitle": "What an approver sees",
+          "form": [
+            {
+              "label": "Requester",
+              "body": "Who sent it and when."
+            },
+            {
+              "label": "Type",
+              "body": "Payroll, leave, advance, overtime or settlement."
+            },
+            {
+              "label": "Details",
+              "body": "Figures and dates, without opening another page."
+            },
+            {
+              "label": "History",
+              "body": "Who has approved it already."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The inbox collects requests from across HR",
+          "intro": "Anything that needs a yes before it happens lands here.",
+          "groups": {
+            "before": "Requests come from",
+            "after": "Decisions reach",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPayrollRuns": "A run waiting for sign-off.",
+            "hrLeaveApps": "Leave waiting for the manager.",
+            "hrSettlements": "A settlement waiting for payment.",
+            "epPayslips": "Payslips after payroll is approved.",
+            "epLeaves": "The employee sees the decision.",
+            "hrServiceRecords": "Approved changes kept on file.",
+            "hrReports": "How long approvals take."
+          }
+        },
+        "local": {
+          "title": "Approvals the way decisions are made here",
+          "intro": "A line manager first, then HR, then finance for anything with money in it.",
+          "points": [
+            {
+              "title": "The right order",
+              "body": "Manager, HR, finance, as your policy says."
+            },
+            {
+              "title": "From a phone",
+              "body": "Approve on the way to the factory."
+            },
+            {
+              "title": "Nothing lost",
+              "body": "No request waits in someone's email."
+            },
+            {
+              "title": "A clear record",
+              "body": "Who said yes, when, and why."
+            }
+          ],
+          "story": {
+            "title": "One salary advance, from request to payment",
+            "intro": "A sample request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Mon 10:05",
+                "text": "Nusrat asks for an advance of BDT 20,000."
+              },
+              {
+                "time": "Mon 11:30",
+                "text": "Her manager approves it."
+              },
+              {
+                "time": "Tue 09:15",
+                "text": "HR returns it: the instalment is missing."
+              },
+              {
+                "time": "Tue 09:40",
+                "text": "She adds 4 monthly instalments and sends it again."
+              },
+              {
+                "time": "Tue 12:00",
+                "text": "Finance approves; recovery starts next payroll."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the approvals inbox",
+          "angles": {
+            "retail": "Shift swaps and leave in busy seasons.",
+            "food-hospitality": "Overtime before an event.",
+            "real-estate": "Site advances and travel.",
+            "consulting": "Leave and expense advances.",
+            "manufacturing": "Overtime, payroll and settlements.",
+            "health-fitness": "Shift cover and leave.",
+            "trades": "Advances for tools and travel.",
+            "others": "Approvals set by donor rules."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the approvals inbox",
+          "items": [
+            {
+              "q": "Who decides the approval order?",
+              "a": "Your policy, set once by type of request."
+            },
+            {
+              "q": "Can someone approve for me when I am away?",
+              "a": "Yes, a delegate for a set period."
+            },
+            {
+              "q": "Is the requester told?",
+              "a": "Yes, at each step."
+            },
+            {
+              "q": "Can I approve several at once?",
+              "a": "Yes, for leave and overtime."
+            },
+            {
+              "q": "Is a comment required?",
+              "a": "Only when returning or rejecting."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Tell us who approves what today. We will set up the same order in the demo."
+        }
+      },
+      "hrTaxSlabs": {
+        "meta": {
+          "title": "Tax Brackets (NBR): Income Tax Slabs and Monthly TDS | Adon ERP",
+          "description": "Keep the income tax slabs for each income year, work out each employee's annual tax and deduct it monthly as TDS, with the figures carried to the annual return. Built for companies in Bangladesh.",
+          "keywords": [
+            "income tax slab Bangladesh",
+            "TDS on salary",
+            "NBR tax payroll",
+            "salary tax calculation",
+            "Adon ERP tax brackets"
+          ]
+        },
+        "hero": {
+          "title": "Tax brackets: the slabs once a year, the right TDS every month",
+          "lead": "Enter the slabs from the Finance Act for the income year. Adon ERP works out each employee's annual tax from taxable pay, spreads it over the months left, and deducts it in payroll.",
+          "secondaryCta": "See the slabs"
+        },
+        "sample": {
+          "count": "6 slabs",
+          "notes": [
+            "the slabs for the year",
+            "one worked example",
+            "the monthly deduction"
+          ]
+        },
+        "ui": {
+          "title": "Tax Brackets (NBR)",
+          "slabsTitle": "Income tax slabs",
+          "year": "Income year 2026-27",
+          "first": "First",
+          "next": "Next",
+          "rest": "On the rest",
+          "sampleNote": "Sample slabs. Set the rates from the Finance Act in force for the income year.",
+          "calcTitle": "Worked example",
+          "taxable": "Taxable income for the year",
+          "annual": "Tax for the year",
+          "monthly": "TDS each month",
+          "caption": "A partial preview of Tax Brackets in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Tax on salary, in three steps",
+          "intro": "Slabs set once a year, then the same steps for every employee every month.",
+          "steps": [
+            {
+              "tag": "Slabs",
+              "question": "Enter the year's rates",
+              "body": "Each slab with its size and rate, plus separate tax-free limits where the law sets them."
+            },
+            {
+              "tag": "Annual tax",
+              "question": "Work out the year",
+              "body": "Expected taxable pay for the year, less allowed exemptions and rebates, run through the slabs."
+            },
+            {
+              "tag": "TDS",
+              "question": "Deduct each month",
+              "body": "Tax for the year, less what has been deducted, spread over the months left."
+            }
+          ],
+          "formTitle": "What you fill in for an income year",
+          "form": [
+            {
+              "label": "Income year",
+              "body": "Such as 2026-27."
+            },
+            {
+              "label": "Slabs",
+              "body": "Size and rate of each band."
+            },
+            {
+              "label": "Tax-free limits",
+              "body": "Separate limits where the law sets them."
+            },
+            {
+              "label": "Minimum tax",
+              "body": "If one applies."
+            },
+            {
+              "label": "Rebate rule",
+              "body": "How investment rebate is worked out."
+            }
+          ],
+          "aside": {
+            "tag": "Check",
+            "body": "Tax rules change with each Finance Act. Review the slabs with your tax adviser before the first payroll of the year."
+          }
+        },
+        "connect": {
+          "title": "Tax reads pay and writes to the return",
+          "intro": "Taxable components feed it, payroll deducts it, and the annual return adds it up.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrComponents": "Which earnings are taxable.",
+            "hrStructures": "Expected pay for the year.",
+            "hrPayrollRuns": "TDS deducted monthly.",
+            "hrForm108": "The year's tax per employee.",
+            "epPayslips": "TDS on each payslip.",
+            "financialReports": "Tax payable in the books."
+          }
+        },
+        "local": {
+          "title": "Tax on salary the way it works here",
+          "intro": "An income year from July to June, slabs set by the Finance Act, and tax deducted at source every month.",
+          "points": [
+            {
+              "title": "July to June",
+              "body": "The income year the slabs apply to."
+            },
+            {
+              "title": "Spread evenly",
+              "body": "No large deduction in June."
+            },
+            {
+              "title": "Mid-year joiners",
+              "body": "Tax worked out on the months they are paid."
+            },
+            {
+              "title": "Ready for the return",
+              "body": "The same figures carried to Form 108."
+            }
+          ],
+          "story": {
+            "title": "One employee's tax, through the year",
+            "intro": "A sample year for a taxable income of BDT 9,60,000.",
+            "steps": [
+              {
+                "time": "1 Jul",
+                "text": "The year's slabs are entered."
+              },
+              {
+                "time": "31 Jul",
+                "text": "July payroll deducts BDT 5,125."
+              },
+              {
+                "time": "1 Jan",
+                "text": "An increment raises the expected pay."
+              },
+              {
+                "time": "31 Jan",
+                "text": "TDS is worked out again for the months left."
+              },
+              {
+                "time": "30 Jun",
+                "text": "The year's tax is fully deducted."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use tax brackets",
+          "angles": {
+            "retail": "Store managers above the tax-free limit.",
+            "food-hospitality": "Service charge counted as taxable.",
+            "real-estate": "Site allowances checked for tax.",
+            "consulting": "Senior consultants with rebates.",
+            "manufacturing": "Officers taxed, most workers below the limit.",
+            "health-fitness": "Doctors with several allowances.",
+            "trades": "Technicians with overtime counted.",
+            "others": "Expatriate staff on separate rules."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about tax brackets",
+          "items": [
+            {
+              "q": "Are the slabs built in?",
+              "a": "You enter them for each income year, so they match the law in force."
+            },
+            {
+              "q": "How is TDS worked out?",
+              "a": "Tax for the year, less tax deducted so far, over the months left."
+            },
+            {
+              "q": "Is investment rebate included?",
+              "a": "Yes, from the investment the employee declares."
+            },
+            {
+              "q": "What about employees who join mid-year?",
+              "a": "Tax is worked out on what they will be paid this year."
+            },
+            {
+              "q": "Can I check one person's tax?",
+              "a": "Yes, with the worked example on their record."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last year's tax workings. We will set up this year's slabs in the demo."
+        }
+      },
+      "hrF108": {
+        "meta": {
+          "title": "Form 108 (Annual): The Return of Salaried Employees | Adon ERP",
+          "description": "Prepare the annual return of salaried employees from the year's payroll: salary paid and tax deducted for each employee, with missing TINs flagged before filing. Built for companies in Bangladesh.",
+          "keywords": [
+            "Form 108 Bangladesh",
+            "annual salary return",
+            "employee tax return NBR",
+            "payroll tax report",
+            "Adon ERP Form 108"
+          ]
+        },
+        "hero": {
+          "title": "Form 108: the year's salary and tax, ready to file",
+          "lead": "The return of salaried employees is made from the twelve payroll runs. Every employee's salary and tax are listed, totals agree with payroll, and anyone without a TIN is flagged first.",
+          "secondaryCta": "See the return"
+        },
+        "sample": {
+          "count": "212 employees",
+          "notes": [
+            "filled from payroll",
+            "TIN masked on screen",
+            "ready to export"
+          ]
+        },
+        "ui": {
+          "title": "Form 108 (Annual)",
+          "formName": "Return of salaried employees",
+          "formSub": "Prepared from payroll · sample layout",
+          "year": "Income year 2025-26",
+          "thName": "Employee",
+          "thTin": "TIN",
+          "thSalary": "Salary paid",
+          "thTax": "Tax deducted",
+          "total": "Total for 212 employees",
+          "readiness": "Ready to file?",
+          "withTin": "Employees with a TIN",
+          "runsMatched": "Payroll runs matched",
+          "missingTin": "TIN missing",
+          "generate": "Generate return",
+          "caption": "A partial preview of Form 108 in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "The annual return, in three steps",
+          "intro": "Most of the work is already done by payroll. What is left is checking.",
+          "steps": [
+            {
+              "tag": "Gather",
+              "question": "Add up the year",
+              "body": "Salary paid and tax deducted for each employee, from July to June."
+            },
+            {
+              "tag": "Check",
+              "question": "Fix the gaps",
+              "body": "Missing TINs and runs that do not agree are listed before anything is filed."
+            },
+            {
+              "tag": "File",
+              "question": "Export and keep",
+              "body": "Export the return in the layout required, and keep a copy against the year."
+            }
+          ],
+          "formTitle": "What the return lists for each employee",
+          "form": [
+            {
+              "label": "Name and designation",
+              "body": "From the employee record."
+            },
+            {
+              "label": "TIN",
+              "body": "From the employee record."
+            },
+            {
+              "label": "Salary paid",
+              "body": "Total for the income year."
+            },
+            {
+              "label": "Tax deducted",
+              "body": "Total TDS for the year."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The return is the year's payroll, added up",
+          "intro": "It reads twelve runs and the tax slabs, and nothing is typed in again.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Hands off to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPayrollRuns": "Twelve months of salary.",
+            "hrTax": "Tax deducted each month.",
+            "financialReports": "Tax paid agrees with the books.",
+            "epPayslips": "The same figures per month.",
+            "hrReports": "Salary and tax by employee."
+          }
+        },
+        "local": {
+          "title": "The annual return the way it is filed here",
+          "intro": "After the income year closes in June, the return of salaried employees is due from the employer.",
+          "points": [
+            {
+              "title": "From payroll",
+              "body": "No separate spreadsheet to build."
+            },
+            {
+              "title": "TINs checked",
+              "body": "Missing numbers flagged early."
+            },
+            {
+              "title": "Totals that agree",
+              "body": "Return, payroll and books show one figure."
+            },
+            {
+              "title": "Kept by year",
+              "body": "Last year's return is a click away."
+            }
+          ],
+          "story": {
+            "title": "One annual return, in a week",
+            "intro": "A sample year end, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Jul",
+                "text": "June payroll is paid and the year closes."
+              },
+              {
+                "time": "3 Jul",
+                "text": "The return is generated from twelve runs."
+              },
+              {
+                "time": "4 Jul",
+                "text": "9 employees without a TIN are listed."
+              },
+              {
+                "time": "8 Jul",
+                "text": "Their TINs are added from the portal."
+              },
+              {
+                "time": "10 Jul",
+                "text": "The return is exported and filed."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use Form 108",
+          "angles": {
+            "retail": "Several stores in one return.",
+            "food-hospitality": "Seasonal staff included for months worked.",
+            "real-estate": "Site and office staff together.",
+            "consulting": "A short list, done in minutes.",
+            "manufacturing": "Hundreds of workers checked for TIN.",
+            "health-fitness": "Clinical staff with several allowances.",
+            "trades": "Field staff across locations.",
+            "others": "Programme staff in one return."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about Form 108",
+          "items": [
+            {
+              "q": "Is the layout exactly as required?",
+              "a": "The export follows the layout you set; check it against the current requirement before filing."
+            },
+            {
+              "q": "What about people who left during the year?",
+              "a": "They are included for the months they were paid."
+            },
+            {
+              "q": "What if a TIN is missing?",
+              "a": "The employee is flagged; you can add it before generating."
+            },
+            {
+              "q": "Do totals agree with payroll?",
+              "a": "Yes, they are made from the same runs."
+            },
+            {
+              "q": "Can I see past years?",
+              "a": "Yes, each year's return is kept."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last year's return. We will produce the same from sample payroll in the demo."
+        }
+      },
+      "hrPolicyPage": {
+        "meta": {
+          "title": "HR Policy (PF/Gratuity): Provident Fund and Gratuity Rules | Adon ERP",
+          "description": "Set provident fund rates, the vesting schedule for the employer's share and gratuity rules by length of service, used the same way by payroll and final settlements. Built for companies in Bangladesh.",
+          "keywords": [
+            "provident fund policy",
+            "gratuity calculation Bangladesh",
+            "PF vesting schedule",
+            "HR policy software",
+            "Adon ERP PF gratuity"
+          ]
+        },
+        "hero": {
+          "title": "PF and gratuity policy: written once, applied the same way to everyone",
+          "lead": "Set what employees and the company put into the provident fund, when the company's share becomes the employee's, and how gratuity grows with service. Payroll and settlements use the same rules.",
+          "secondaryCta": "See the policy"
+        },
+        "sample": {
+          "count": "2 policies",
+          "notes": [
+            "10% from each side",
+            "the employer share vests",
+            "gratuity by service"
+          ]
+        },
+        "ui": {
+          "title": "HR Policy (PF/Gratuity)",
+          "pfTitle": "Provident fund",
+          "employee": "Employee",
+          "employer": "Employer",
+          "ofBasic": "of basic",
+          "vesting": "Employer share kept on leaving",
+          "yrs": "yrs",
+          "gratuityTitle": "Gratuity",
+          "formula": "1 month's basic × years of service",
+          "formulaSub": "Last basic salary drawn",
+          "rule1": "Eligible after 5 years of service",
+          "rule2": "Part years counted by months",
+          "rule3": "Paid on dismissal for misconduct",
+          "effective": "Effective 1 Jul 2026",
+          "version": "Version 3 · approved by the board",
+          "caption": "A partial preview of HR Policy in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A benefits policy, in three settings",
+          "intro": "Contributions, vesting and gratuity. Change them on a date, and the old rules stay for the past.",
+          "steps": [
+            {
+              "tag": "Contribution",
+              "question": "What goes in",
+              "body": "A share of basic from the employee and a matching or different share from the company."
+            },
+            {
+              "tag": "Vesting",
+              "question": "What is kept",
+              "body": "How much of the company's share an employee keeps on leaving, by years of service."
+            },
+            {
+              "tag": "Gratuity",
+              "question": "What is earned",
+              "body": "A number of days' or months' basic for each year of service, after a minimum period."
+            }
+          ],
+          "formTitle": "What you fill in",
+          "form": [
+            {
+              "label": "PF rates",
+              "body": "Employee and employer, as a share of basic."
+            },
+            {
+              "label": "Eligibility",
+              "body": "From joining, confirmation or a number of months."
+            },
+            {
+              "label": "Vesting schedule",
+              "body": "Share kept by years of service."
+            },
+            {
+              "label": "Gratuity rate",
+              "body": "Days or months of basic per year."
+            },
+            {
+              "label": "Effective date",
+              "body": "When this version starts."
+            }
+          ],
+          "aside": {
+            "tag": "Note",
+            "body": "Rates shown are sample settings. Use the rules in your approved fund trust deed and gratuity policy."
+          }
+        },
+        "connect": {
+          "title": "The policy decides what payroll deducts and what leavers receive",
+          "intro": "Set here, used every month and on every exit.",
+          "groups": {
+            "before": "Set up with",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrComponents": "PF as a deduction.",
+            "hrGrades": "Basic salary it is based on.",
+            "hrPayrollRuns": "PF deducted every month.",
+            "hrSettlements": "PF and gratuity paid on leaving.",
+            "epPf": "Each employee's balance.",
+            "hrReports": "Fund and gratuity liability."
+          }
+        },
+        "local": {
+          "title": "PF and gratuity the way companies here run them",
+          "intro": "A recognised provident fund with matching contributions, and gratuity after a set number of years.",
+          "points": [
+            {
+              "title": "Matching contributions",
+              "body": "Employee and company shares side by side."
+            },
+            {
+              "title": "Vesting by service",
+              "body": "The company share kept in steps."
+            },
+            {
+              "title": "Gratuity liability",
+              "body": "What is owed if everyone left today."
+            },
+            {
+              "title": "Versions with dates",
+              "body": "A new policy never rewrites the past."
+            }
+          ],
+          "story": {
+            "title": "One policy change, approved by the board",
+            "intro": "A sample revision, the way it usually runs.",
+            "steps": [
+              {
+                "time": "10 May",
+                "text": "The board approves raising employer PF to 10%."
+              },
+              {
+                "time": "15 May",
+                "text": "HR creates version 3 from 1 July."
+              },
+              {
+                "time": "20 May",
+                "text": "The added cost is checked in Salary Budgets."
+              },
+              {
+                "time": "31 Jul",
+                "text": "July payroll deducts and matches at 10%."
+              },
+              {
+                "time": "31 Jul",
+                "text": "Balances in the portal show the new rate."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use PF and gratuity policy",
+          "angles": {
+            "retail": "PF for store managers and staff.",
+            "food-hospitality": "Gratuity for long-serving kitchen staff.",
+            "real-estate": "PF for site and office staff.",
+            "consulting": "PF from confirmation.",
+            "manufacturing": "PF and gratuity for workers and officers.",
+            "health-fitness": "Gratuity for clinical staff.",
+            "trades": "PF for technicians after probation.",
+            "others": "Benefits set by donor rules."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about PF and gratuity policy",
+          "items": [
+            {
+              "q": "Can the employer rate differ from the employee rate?",
+              "a": "Yes, each is set on its own."
+            },
+            {
+              "q": "How is vesting applied?",
+              "a": "On leaving, by completed years of service."
+            },
+            {
+              "q": "Is gratuity on the last basic?",
+              "a": "Yes, by default; it can be set otherwise."
+            },
+            {
+              "q": "Can I have different rules for workers and officers?",
+              "a": "Yes, a policy for each group."
+            },
+            {
+              "q": "What happens to the old rules?",
+              "a": "They stay for the dates they applied."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your PF trust deed and gratuity policy. We will set them up in the demo."
+        }
+      },
+      "hrShiftsPage": {
+        "meta": {
+          "title": "Shifts: Working Hours, Night Shifts and Weekly Rosters | Adon ERP",
+          "description": "Set shifts with a start, an end and a grace period, run night shifts past midnight, and roster crews by week, so lateness and overtime are measured fairly. Built for companies in Bangladesh.",
+          "keywords": [
+            "shift management software",
+            "shift roster factory",
+            "night shift attendance",
+            "HR software Bangladesh",
+            "Adon ERP shifts"
+          ]
+        },
+        "hero": {
+          "title": "Shifts: who works when, and what counts as late",
+          "lead": "Each shift has a start, an end and a few minutes of grace. Crews are rostered by week, night shifts run past midnight, and attendance measures everyone against their own shift.",
+          "secondaryCta": "See a roster"
+        },
+        "sample": {
+          "count": "4 shifts",
+          "notes": [
+            "the day in shifts",
+            "night runs past midnight",
+            "a week for each crew"
+          ]
+        },
+        "ui": {
+          "title": "Shifts",
+          "dayTitle": "Today's shifts",
+          "people": "people",
+          "rosterTitle": "Roster · Moulding line",
+          "week": "Week 45",
+          "caption": "A partial preview of Shifts in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Shift working, in three parts",
+          "intro": "Define the shifts, roster the crews, then let attendance measure against them.",
+          "steps": [
+            {
+              "tag": "Shift",
+              "question": "Define the hours",
+              "body": "Start, end, break and a grace period. A night shift can end the next morning."
+            },
+            {
+              "tag": "Roster",
+              "question": "Assign the crews",
+              "body": "Which crew works which shift each day, with each crew's weekly day off."
+            },
+            {
+              "tag": "Measure",
+              "question": "Late and overtime",
+              "body": "Attendance compares punches with the person's shift, not with office hours."
+            }
+          ],
+          "formTitle": "What you fill in for a shift",
+          "form": [
+            {
+              "label": "Name",
+              "body": "Such as Shift A."
+            },
+            {
+              "label": "Start and end",
+              "body": "End can be the next day."
+            },
+            {
+              "label": "Break",
+              "body": "Paid or unpaid."
+            },
+            {
+              "label": "Grace",
+              "body": "Minutes before someone is late."
+            },
+            {
+              "label": "Overtime after",
+              "body": "When extra hours start to count."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Shifts set the clock that attendance is measured against",
+          "intro": "Without a shift, nobody can be late or on overtime.",
+          "groups": {
+            "before": "Set up with",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrDepartments": "Crews belong to a department.",
+            "hrHolidays": "Days nobody is rostered.",
+            "hrAttendance": "Punches compared with the shift.",
+            "hrPayrollRuns": "Overtime and night allowance.",
+            "epAttendance": "Each person's own shift.",
+            "hrReports": "Lateness by shift."
+          }
+        },
+        "local": {
+          "title": "Shifts the way factories here run",
+          "intro": "Three eight-hour shifts on the line, a general shift in the office, and a weekly day off that differs by crew.",
+          "points": [
+            {
+              "title": "Three shifts on the line",
+              "body": "A, B and C around the clock."
+            },
+            {
+              "title": "Different days off",
+              "body": "Not every crew rests on Friday."
+            },
+            {
+              "title": "Fair lateness",
+              "body": "Measured against the person's own shift."
+            },
+            {
+              "title": "Night allowance",
+              "body": "Paid to whoever worked the night."
+            }
+          ],
+          "story": {
+            "title": "One week's roster, set on Thursday",
+            "intro": "A sample roster, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Thu 14:00",
+                "text": "The line supervisor opens next week's roster."
+              },
+              {
+                "time": "Thu 14:10",
+                "text": "Crews rotate: A to B, B to C, C to A."
+              },
+              {
+                "time": "Thu 14:20",
+                "text": "Days off are checked for each crew."
+              },
+              {
+                "time": "Thu 15:00",
+                "text": "The roster is published to the portal."
+              },
+              {
+                "time": "Sat 06:00",
+                "text": "Crew 1 starts Shift A; attendance measures from 06:00."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use shifts",
+          "angles": {
+            "retail": "Opening and closing shifts in stores.",
+            "food-hospitality": "Split shifts for kitchens.",
+            "real-estate": "Site shifts by season.",
+            "consulting": "A general office shift.",
+            "manufacturing": "Three shifts around the clock.",
+            "health-fitness": "Day, evening and night duty.",
+            "trades": "Field crews on rotating shifts.",
+            "others": "Field staff on flexible hours."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about shifts",
+          "items": [
+            {
+              "q": "Can a shift cross midnight?",
+              "a": "Yes, it ends the next day."
+            },
+            {
+              "q": "Can crews rotate?",
+              "a": "Yes, by week or by any pattern."
+            },
+            {
+              "q": "What is grace time?",
+              "a": "Minutes after the start before someone counts as late."
+            },
+            {
+              "q": "Can one person change shift for a day?",
+              "a": "Yes, with a swap on the roster."
+            },
+            {
+              "q": "Is overtime worked out from the shift?",
+              "a": "Yes, after the shift's end or its overtime start."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring this week's roster. We will set up the shifts and crews in the demo."
+        }
+      },
+      "hrHolidayPage": {
+        "meta": {
+          "title": "Holiday Calendar: National, Public and Company Holidays | Adon ERP",
+          "description": "Keep the year's national, public and company holidays and the weekly holiday in one calendar, used by attendance, leave and payroll. Built for companies in Bangladesh.",
+          "keywords": [
+            "holiday calendar Bangladesh",
+            "public holiday list HR",
+            "weekly holiday",
+            "HR software Dhaka",
+            "Adon ERP holiday calendar"
+          ]
+        },
+        "hero": {
+          "title": "Holiday calendar: one list of days off, used everywhere",
+          "lead": "National days, public holidays, company holidays and the weekly holiday sit in one calendar. Attendance does not mark anyone absent on them, and leave does not count them.",
+          "secondaryCta": "See the calendar"
+        },
+        "sample": {
+          "count": "3 holidays in December",
+          "notes": [
+            "the month at a glance",
+            "Fridays marked",
+            "what is coming up"
+          ]
+        },
+        "ui": {
+          "title": "Holiday Calendar",
+          "month": "December 2026",
+          "friday": "Weekly holiday: Friday",
+          "upcoming": "Upcoming holidays",
+          "add": "+ Holiday",
+          "kindNational": "National",
+          "kindPublic": "Public",
+          "kindCompany": "Company",
+          "caption": "A partial preview of Holiday Calendar in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A holiday calendar, in three layers",
+          "intro": "The weekly holiday, the year's fixed days, and the ones that move.",
+          "steps": [
+            {
+              "tag": "Weekly",
+              "question": "The weekly day off",
+              "body": "Friday for most, or another day for crews that work through the week."
+            },
+            {
+              "tag": "Fixed",
+              "question": "Days with a set date",
+              "body": "Victory Day, Independence Day and the others that fall on the same date each year."
+            },
+            {
+              "tag": "Moving",
+              "question": "Days set by the moon",
+              "body": "Eid and other holidays are added once the date is announced, and can be moved."
+            }
+          ],
+          "formTitle": "What you fill in for a holiday",
+          "form": [
+            {
+              "label": "Date",
+              "body": "One day or a range."
+            },
+            {
+              "label": "Name",
+              "body": "Such as Victory Day."
+            },
+            {
+              "label": "Kind",
+              "body": "National, public or company."
+            },
+            {
+              "label": "Applies to",
+              "body": "Everyone, or chosen locations or crews."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The calendar tells every other HR page which days do not count",
+          "intro": "Attendance, leave and payroll all read it.",
+          "groups": {
+            "before": "Set up with",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrShifts": "Crews and their weekly day off.",
+            "hrAttendance": "No absences on holidays.",
+            "hrLeaveApps": "Holidays left out of leave days.",
+            "hrPayrollRuns": "Holiday work paid at its rate.",
+            "epLeaves": "Holidays shown when applying.",
+            "epAttendance": "Holidays on the month view."
+          }
+        },
+        "local": {
+          "title": "Holidays the way the year runs here",
+          "intro": "Fixed national days, Eid holidays that move with the moon, and a weekly holiday on Friday for most.",
+          "points": [
+            {
+              "title": "Eid dates when known",
+              "body": "Add or move them once they are announced."
+            },
+            {
+              "title": "By location",
+              "body": "A holiday for one site only."
+            },
+            {
+              "title": "Crews that work Fridays",
+              "body": "A different weekly day off for them."
+            },
+            {
+              "title": "Holiday work paid",
+              "body": "At the rate in your policy."
+            }
+          ],
+          "story": {
+            "title": "One Eid holiday, set when the moon is sighted",
+            "intro": "A sample holiday, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Early",
+                "text": "HR enters the expected Eid dates."
+              },
+              {
+                "time": "Moon sighted",
+                "text": "The dates are confirmed and moved by a day."
+              },
+              {
+                "time": "Same day",
+                "text": "Leave that overlaps is recounted."
+              },
+              {
+                "time": "Holiday",
+                "text": "Attendance marks no one absent."
+              },
+              {
+                "time": "Month end",
+                "text": "Anyone who worked is paid holiday rate."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use the holiday calendar",
+          "angles": {
+            "retail": "Stores open on some holidays.",
+            "food-hospitality": "Holiday rosters for kitchens.",
+            "real-estate": "Sites closed on national days.",
+            "consulting": "Office holidays only.",
+            "manufacturing": "Lines that run through holidays.",
+            "health-fitness": "Duty rosters on holidays.",
+            "trades": "Field work paused on holidays.",
+            "others": "Holidays by country office."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the holiday calendar",
+          "items": [
+            {
+              "q": "Are national holidays built in?",
+              "a": "You enter them once a year, so they match the official list."
+            },
+            {
+              "q": "Can I move a holiday?",
+              "a": "Yes, and leave that overlaps is recounted."
+            },
+            {
+              "q": "Can a holiday apply to one site?",
+              "a": "Yes, by location or crew."
+            },
+            {
+              "q": "What if someone works on a holiday?",
+              "a": "Attendance records it and payroll pays the holiday rate."
+            },
+            {
+              "q": "Can crews have different weekly days off?",
+              "a": "Yes, set on their shift."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring this year's holiday notice. We will load it into the calendar in the demo."
+        }
+      },
+      "hrLeaveTypesPage": {
+        "meta": {
+          "title": "Leave Types: Entitlements, Carry Forward and Encashment | Adon ERP",
+          "description": "Set up casual, sick, earned, maternity, festival and unpaid leave with days per year or days earned, carry-forward and encashment rules, and whether payroll deducts it. Built for companies in Bangladesh.",
+          "keywords": [
+            "leave policy software",
+            "earned leave calculation",
+            "casual sick leave Bangladesh",
+            "HR software Dhaka",
+            "Adon ERP leave types"
+          ]
+        },
+        "hero": {
+          "title": "Leave types: what each kind of leave allows, written down once",
+          "lead": "Casual, sick, earned, maternity, festival and unpaid leave each get their days, how those days are earned, whether they carry forward, and whether payroll deducts them.",
+          "secondaryCta": "See the leave types"
+        },
+        "sample": {
+          "count": "6 leave types",
+          "notes": [
+            "days for each type",
+            "how the days are earned",
+            "the rules in chips"
+          ]
+        },
+        "ui": {
+          "title": "Leave Types",
+          "casual": "Casual leave",
+          "sick": "Sick leave",
+          "earned": "Earned leave",
+          "maternity": "Maternity leave",
+          "festival": "Festival holidays",
+          "unpaid": "Unpaid leave",
+          "paid": "Paid",
+          "unpaidTag": "Deducted",
+          "perYear": "days a year",
+          "perDays": "day per days worked",
+          "perEvent": "days per confinement",
+          "onApproval": "as approved",
+          "noCarry": "No carry forward",
+          "max3": "Up to 3 days at once",
+          "certificate": "Certificate over 2 days",
+          "carry": "Carries forward",
+          "encash": "Encashable on leaving",
+          "twoChildren": "For the first two children",
+          "calendar": "From the holiday calendar",
+          "deducted": "Gross ÷ 30 per day",
+          "caption": "A partial preview of Leave Types in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A leave type, in three rules",
+          "intro": "How many days, how they build up, and what happens to the ones not taken.",
+          "steps": [
+            {
+              "tag": "Entitlement",
+              "question": "How many days",
+              "body": "A number of days a year, or days earned for days worked."
+            },
+            {
+              "tag": "Limits",
+              "question": "How it can be taken",
+              "body": "Days at a stretch, notice needed, and whether a certificate is required."
+            },
+            {
+              "tag": "Year end",
+              "question": "What happens to the rest",
+              "body": "Lapse, carry forward up to a limit, or pay out when someone leaves."
+            }
+          ],
+          "formTitle": "What you fill in for a leave type",
+          "form": [
+            {
+              "label": "Name and code",
+              "body": "Such as Earned leave, EL."
+            },
+            {
+              "label": "Entitlement",
+              "body": "Days a year, or earned per days worked."
+            },
+            {
+              "label": "Paid or unpaid",
+              "body": "Whether payroll deducts it."
+            },
+            {
+              "label": "Carry forward",
+              "body": "Up to how many days."
+            },
+            {
+              "label": "Encashment",
+              "body": "Whether it is paid on leaving."
+            }
+          ],
+          "aside": {
+            "tag": "Note",
+            "body": "Entitlements shown are sample settings. Set them from your leave policy and the law that applies to you."
+          }
+        },
+        "connect": {
+          "title": "Leave types decide what every leave request can ask for",
+          "intro": "Balances start here and end in payroll and settlements.",
+          "groups": {
+            "before": "Set up with",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPolicy": "Company rules behind each type.",
+            "hrHolidays": "Days that are not counted.",
+            "hrLeaveApps": "Requests against the balance.",
+            "hrPayrollRuns": "Unpaid leave deducted.",
+            "epLeaves": "Each person's balance.",
+            "hrSettlements": "Earned leave paid out."
+          }
+        },
+        "local": {
+          "title": "Leave the way it is given here",
+          "intro": "Casual and sick leave by the year, earned leave by days worked, and maternity leave by the week.",
+          "points": [
+            {
+              "title": "Earned by days worked",
+              "body": "One day for a set number of days."
+            },
+            {
+              "title": "Certificates when needed",
+              "body": "For sick leave over a few days."
+            },
+            {
+              "title": "Carry forward with a cap",
+              "body": "So balances do not pile up."
+            },
+            {
+              "title": "Paid out on leaving",
+              "body": "Earned leave in the final settlement."
+            }
+          ],
+          "story": {
+            "title": "One year's earned leave, from first day to payout",
+            "intro": "A sample balance, the way it usually builds up.",
+            "steps": [
+              {
+                "time": "Jan",
+                "text": "The balance starts at 6 days carried forward."
+              },
+              {
+                "time": "Each month",
+                "text": "Days worked add to the balance."
+              },
+              {
+                "time": "Jun",
+                "text": "5 days are taken for a family trip."
+              },
+              {
+                "time": "Dec",
+                "text": "The balance is capped and the rest carried."
+              },
+              {
+                "time": "On leaving",
+                "text": "What is left is paid in the settlement."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use leave types",
+          "angles": {
+            "retail": "Leave blocked in festival season.",
+            "food-hospitality": "Leave planned around events.",
+            "real-estate": "Site leave after a project ends.",
+            "consulting": "Study leave as a type.",
+            "manufacturing": "Earned leave for workers by days worked.",
+            "health-fitness": "Leave with duty cover for clinics.",
+            "trades": "Leave for field crews by season.",
+            "others": "Leave types set by donor rules."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about leave types",
+          "items": [
+            {
+              "q": "Can I add my own leave type?",
+              "a": "Yes, such as study or compassionate leave."
+            },
+            {
+              "q": "Can earned leave build up by days worked?",
+              "a": "Yes, one day per the number of days you set."
+            },
+            {
+              "q": "Do holidays count as leave days?",
+              "a": "No, they are left out."
+            },
+            {
+              "q": "Is unpaid leave deducted automatically?",
+              "a": "Yes, in the month it is taken."
+            },
+            {
+              "q": "Can a type be for women only?",
+              "a": "Yes, eligibility can be set by gender or service."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your leave policy. We will set up the leave types in the demo."
+        }
+      },
+      "hrLeaveAppsPage": {
+        "meta": {
+          "title": "Leave Applications: Request, Approve and Track Leave | Adon ERP",
+          "description": "Apply for leave from the portal or through HR, see the balance before sending, route it to the manager and HR, and carry approved leave to attendance and payroll. Built for companies in Bangladesh.",
+          "keywords": [
+            "leave application software",
+            "leave approval workflow",
+            "online leave Bangladesh",
+            "HR software Dhaka",
+            "Adon ERP leave applications"
+          ]
+        },
+        "hero": {
+          "title": "Leave applications: every request on one board, from sent to settled",
+          "lead": "Requests come in from the portal or from HR. Each shows the balance, the dates and any clash with the team. Approved leave goes straight to attendance and payroll.",
+          "secondaryCta": "See the board"
+        },
+        "sample": {
+          "count": "6 applications",
+          "notes": [
+            "waiting for a decision",
+            "approved and on the calendar",
+            "a clash flagged"
+          ]
+        },
+        "ui": {
+          "title": "Leave Applications",
+          "colPending": "Waiting",
+          "colApproved": "Approved",
+          "colRejected": "Not approved",
+          "earned": "Earned leave",
+          "casual": "Casual leave",
+          "sick": "Sick leave",
+          "days": "days",
+          "clash": "2 others on the line are away on 14 Nov",
+          "caption": "A partial preview of Leave Applications in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A leave application, in three moves",
+          "intro": "From the request to the day the person is back.",
+          "steps": [
+            {
+              "tag": "Request",
+              "question": "Ask for the days",
+              "body": "Pick the type and the dates. Holidays are left out and the balance is checked."
+            },
+            {
+              "tag": "Decide",
+              "question": "Manager, then HR",
+              "body": "The manager sees who else is away. HR steps in where policy says."
+            },
+            {
+              "tag": "Record",
+              "question": "Into attendance and payroll",
+              "body": "Approved days show as leave, and unpaid leave is deducted that month."
+            }
+          ],
+          "formTitle": "What a request shows the approver",
+          "form": [
+            {
+              "label": "Type and dates",
+              "body": "With the number of working days."
+            },
+            {
+              "label": "Balance",
+              "body": "Before and after this request."
+            },
+            {
+              "label": "Clashes",
+              "body": "Others away on the same days."
+            },
+            {
+              "label": "Reason and file",
+              "body": "A note and, if needed, a certificate."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Leave requests move between the employee, the manager and payroll",
+          "intro": "They start in the portal, end on the payslip.",
+          "groups": {
+            "before": "Comes from",
+            "after": "Goes to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrLeaveTypes": "Rules for each type.",
+            "epLeaves": "Requests made by employees.",
+            "hrApprovals": "Waiting for a decision.",
+            "hrAttendance": "Days shown as leave.",
+            "hrPayrollRuns": "Unpaid days deducted.",
+            "hrReports": "Leave taken by department."
+          }
+        },
+        "local": {
+          "title": "Leave the way it is approved here",
+          "intro": "A line manager decides first, and HR checks the balance and the paperwork.",
+          "points": [
+            {
+              "title": "Clashes before approval",
+              "body": "Who else is away on the line."
+            },
+            {
+              "title": "No paper forms",
+              "body": "Requests from a phone, decisions too."
+            },
+            {
+              "title": "Holidays left out",
+              "body": "Eid and Fridays are not counted."
+            },
+            {
+              "title": "Straight into payroll",
+              "body": "No list to send at month end."
+            }
+          ],
+          "story": {
+            "title": "One leave request, decided in a morning",
+            "intro": "A sample request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "08:10",
+                "text": "Rafiqul asks for 4 days of earned leave."
+              },
+              {
+                "time": "08:10",
+                "text": "The balance shows 11 days, enough for it."
+              },
+              {
+                "time": "09:30",
+                "text": "His supervisor sees two others away on one day."
+              },
+              {
+                "time": "10:00",
+                "text": "He approves after arranging cover."
+              },
+              {
+                "time": "10:05",
+                "text": "The days show on the attendance calendar."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use leave applications",
+          "angles": {
+            "retail": "Leave limited in busy weeks.",
+            "food-hospitality": "Cover arranged before approval.",
+            "real-estate": "Site leave by project phase.",
+            "consulting": "Leave around client deadlines.",
+            "manufacturing": "Clash checks on every line.",
+            "health-fitness": "Duty cover for every request.",
+            "trades": "Leave by crew and season.",
+            "others": "Leave for field staff by region."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about leave applications",
+          "items": [
+            {
+              "q": "Can HR apply for someone?",
+              "a": "Yes, on their behalf."
+            },
+            {
+              "q": "Can a request be cancelled?",
+              "a": "Yes, before or after approval; the balance is restored."
+            },
+            {
+              "q": "What if the balance is too low?",
+              "a": "The request shows it; policy decides whether it can go ahead as unpaid."
+            },
+            {
+              "q": "Are holidays counted?",
+              "a": "No, only working days."
+            },
+            {
+              "q": "Is a certificate needed?",
+              "a": "Only where the leave type requires it."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a month of leave forms. We will put them on the board in the demo."
+        }
+      },
+      "hrProjectsPage": {
+        "meta": {
+          "title": "HR Projects: People, Time Shares and Salary Cost by Project | Adon ERP",
+          "description": "Assign employees to projects with a share of their time, catch over-allocation, and split salary cost to Project Accounting from the same shares. Built for companies in Bangladesh.",
+          "keywords": [
+            "employee project allocation",
+            "salary cost by project",
+            "resource allocation HR",
+            "HR software Bangladesh",
+            "Adon ERP HR projects"
+          ]
+        },
+        "hero": {
+          "title": "Projects in HR: who works on what, and what their time costs",
+          "lead": "Give each person a share of their time on each project. Over 100% is flagged. Payroll uses the same shares to charge salary cost to each project.",
+          "secondaryCta": "See the allocation"
+        },
+        "sample": {
+          "count": "3 projects · 5 people",
+          "notes": [
+            "each colour a project",
+            "time left for regular work",
+            "busy people flagged"
+          ]
+        },
+        "ui": {
+          "title": "Projects",
+          "allocTitle": "Allocation · November 2026",
+          "regular": "Regular work",
+          "costNote": "At month end, salary is split to each project by these shares and sent to Project Accounting.",
+          "caption": "A partial preview of HR Projects in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "People on projects, in three steps",
+          "intro": "Assign, check, then let payroll carry the cost.",
+          "steps": [
+            {
+              "tag": "Assign",
+              "question": "Give people a share",
+              "body": "A percentage of each person's time for each project, from a date."
+            },
+            {
+              "tag": "Check",
+              "question": "Nobody over 100%",
+              "body": "Shares are added up across projects and anyone over is flagged."
+            },
+            {
+              "tag": "Charge",
+              "question": "Cost follows time",
+              "body": "Payroll splits each person's salary by the same shares."
+            }
+          ],
+          "formTitle": "What you fill in for an assignment",
+          "form": [
+            {
+              "label": "Employee",
+              "body": "Who is assigned."
+            },
+            {
+              "label": "Project",
+              "body": "From Project Accounting."
+            },
+            {
+              "label": "Share of time",
+              "body": "As a percentage."
+            },
+            {
+              "label": "From and to",
+              "body": "When the assignment runs."
+            }
+          ]
+        },
+        "connect": {
+          "title": "HR projects connect people to project cost",
+          "intro": "Time shares here become salary cost there.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Sends to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrEmployees": "Who can be assigned.",
+            "pjOverview": "The projects to assign to.",
+            "hrPayrollRuns": "Salary split by share.",
+            "pjJobCost": "Labour cost by project.",
+            "pjPnl": "Project margin after labour.",
+            "hrReports": "Allocation by person."
+          }
+        },
+        "local": {
+          "title": "Projects the way companies here staff them",
+          "intro": "An engineer on two projects and their regular job is normal. The cost should follow.",
+          "points": [
+            {
+              "title": "Shared people",
+              "body": "One person, several projects."
+            },
+            {
+              "title": "Over-allocation caught",
+              "body": "Before anyone is stretched."
+            },
+            {
+              "title": "Labour cost in the project",
+              "body": "Without a timesheet spreadsheet."
+            },
+            {
+              "title": "History kept",
+              "body": "Past assignments stay on record."
+            }
+          ],
+          "story": {
+            "title": "One engineer, two projects, one month",
+            "intro": "A sample allocation, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Nov",
+                "text": "Arif is put 60% on Line Automation."
+              },
+              {
+                "time": "1 Nov",
+                "text": "And 20% on the ERP roll-out."
+              },
+              {
+                "time": "1 Nov",
+                "text": "He is shown at 80%, with 20% for regular work."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Payroll splits his salary 60 / 20 / 20."
+              },
+              {
+                "time": "30 Nov",
+                "text": "Both projects show his cost."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use HR projects",
+          "angles": {
+            "retail": "Store fit-out teams.",
+            "food-hospitality": "Event teams by event.",
+            "real-estate": "Site staff by building.",
+            "consulting": "Consultants by client engagement.",
+            "manufacturing": "Engineers on improvement projects.",
+            "health-fitness": "Staff on a new clinic set-up.",
+            "trades": "Crews by job.",
+            "others": "Staff by grant."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about HR projects",
+          "items": [
+            {
+              "q": "Where do the projects come from?",
+              "a": "From Project Accounting."
+            },
+            {
+              "q": "Can shares change during a month?",
+              "a": "Yes, by date; cost is split by days."
+            },
+            {
+              "q": "What if someone is over 100%?",
+              "a": "They are flagged; you decide what to change."
+            },
+            {
+              "q": "Is salary split automatically?",
+              "a": "Yes, at the payroll run."
+            },
+            {
+              "q": "Can I see a person's projects?",
+              "a": "Yes, on their record and in the service record."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your project list and who works on what. We will allocate them in the demo."
+        }
+      },
+      "hrSettle": {
+        "meta": {
+          "title": "Final Settlements: Pay Leavers Correctly, on One Sheet | Adon ERP",
+          "description": "Settle resignations, terminations and retirements on one sheet: unpaid salary, leave encashment, gratuity and PF, less notice pay, advances and tax, after clearance from each department. Built for companies in Bangladesh.",
+          "keywords": [
+            "final settlement calculation",
+            "full and final settlement Bangladesh",
+            "gratuity payout",
+            "HR software Dhaka",
+            "Adon ERP final settlement"
+          ]
+        },
+        "hero": {
+          "title": "Final settlements: everything owed both ways, before anyone leaves",
+          "lead": "Salary to the last day, earned leave, gratuity and PF on one side. Notice pay, advances and tax on the other. Each department clears the person before the net is paid.",
+          "secondaryCta": "See a settlement"
+        },
+        "sample": {
+          "count": "1 settlement",
+          "notes": [
+            "what is payable",
+            "what is recovered",
+            "clearance first"
+          ]
+        },
+        "ui": {
+          "title": "Final Settlements",
+          "who": "Area Sales Manager · Sales · last day 31 Oct 2026",
+          "resigned": "Resigned",
+          "payable": "Payable",
+          "recoverable": "Recoverable",
+          "lSalary": "Salary, 1–31 Oct",
+          "lLeave": "Earned leave, 11 days",
+          "lGratuity": "Gratuity, 6 years",
+          "lPf": "PF, own and vested",
+          "lNotice": "Notice short by 30 days",
+          "lAdvance": "Advance outstanding",
+          "lTax": "Income tax",
+          "net": "Net payable",
+          "clearance": "Clearance",
+          "cIt": "IT · laptop returned",
+          "cStore": "Store · samples returned",
+          "cAccounts": "Accounts · no dues",
+          "cAdmin": "Admin · ID card",
+          "waitNote": "Payment is held until every department has cleared.",
+          "caption": "A partial preview of Final Settlements in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A final settlement, in three steps",
+          "intro": "Work it out, clear it, then pay it.",
+          "steps": [
+            {
+              "tag": "Work out",
+              "question": "Both sides of the sheet",
+              "body": "Payable and recoverable amounts from payroll, leave, policy and advances."
+            },
+            {
+              "tag": "Clear",
+              "question": "Every department signs off",
+              "body": "IT, store, accounts and admin confirm nothing is outstanding."
+            },
+            {
+              "tag": "Pay",
+              "question": "Approve and close",
+              "body": "After approval the net is paid and the service record is closed."
+            }
+          ],
+          "formTitle": "What the sheet adds up",
+          "form": [
+            {
+              "label": "Salary to the last day",
+              "body": "Days worked in the final month."
+            },
+            {
+              "label": "Leave encashment",
+              "body": "Earned leave left."
+            },
+            {
+              "label": "Gratuity and PF",
+              "body": "From the policy and the fund."
+            },
+            {
+              "label": "Recoveries",
+              "body": "Notice pay, advances and tax."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A settlement reads from everything HR knows about a person",
+          "intro": "Policy, leave and service all feed one sheet.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Hands off to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPolicy": "Gratuity and PF rules.",
+            "hrLeaveTypes": "Leave that is paid out.",
+            "hrServiceRecords": "Length of service.",
+            "hrApprovals": "Sign-off before payment.",
+            "bankAccounts": "The account it is paid from.",
+            "journalEntries": "Settlement posted.",
+            "hrReports": "Leavers and their cost.",
+            "hrForm108": "Salary and tax for the year."
+          }
+        },
+        "local": {
+          "title": "Settlements the way they are done here",
+          "intro": "Notice periods, gratuity after years of service, and clearance from each section before the cheque.",
+          "points": [
+            {
+              "title": "No missed amounts",
+              "body": "Leave and gratuity always included."
+            },
+            {
+              "title": "Recoveries applied",
+              "body": "Notice, advances and tax deducted."
+            },
+            {
+              "title": "Clearance tracked",
+              "body": "Who still has to sign."
+            },
+            {
+              "title": "Paid on time",
+              "body": "No months of waiting for a leaver."
+            }
+          ],
+          "story": {
+            "title": "One resignation, settled in two weeks",
+            "intro": "A sample exit, the way it usually runs.",
+            "steps": [
+              {
+                "time": "1 Oct",
+                "text": "Mahmud resigns with a last day of 31 Oct."
+              },
+              {
+                "time": "1 Nov",
+                "text": "The settlement sheet is created."
+              },
+              {
+                "time": "3 Nov",
+                "text": "IT, store and accounts clear him."
+              },
+              {
+                "time": "6 Nov",
+                "text": "Admin clears him when the ID card is returned."
+              },
+              {
+                "time": "10 Nov",
+                "text": "Finance approves and BDT 3,02,200 is paid."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use final settlements",
+          "angles": {
+            "retail": "Store staff with stock checks.",
+            "food-hospitality": "Seasonal staff settled quickly.",
+            "real-estate": "Site staff with tool returns.",
+            "consulting": "Consultants with client handover.",
+            "manufacturing": "Workers with gratuity and PF.",
+            "health-fitness": "Clinical staff with equipment return.",
+            "trades": "Technicians with tool and van return.",
+            "others": "Programme staff at grant end."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about final settlements",
+          "items": [
+            {
+              "q": "Is gratuity worked out automatically?",
+              "a": "Yes, from the policy and the service record."
+            },
+            {
+              "q": "Can I add a one-off amount?",
+              "a": "Yes, with a reason."
+            },
+            {
+              "q": "What if notice was not served?",
+              "a": "Notice pay can be recovered as policy says."
+            },
+            {
+              "q": "Can payment wait for clearance?",
+              "a": "Yes, it is held until all departments clear."
+            },
+            {
+              "q": "Is the employee record closed?",
+              "a": "Yes, with the last day and the reason."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a recent settlement you worked out by hand. We will do it in the demo."
+        }
+      },
+      "hrService": {
+        "meta": {
+          "title": "Service Records: An Employee's Working Life, with Dates | Adon ERP",
+          "description": "Keep every joining, confirmation, increment, promotion and transfer with a date, the grade and salary after it, and the letter behind it. Built for companies in Bangladesh.",
+          "keywords": [
+            "service record HR",
+            "employee history software",
+            "promotion and transfer record",
+            "HR software Bangladesh",
+            "Adon ERP service records"
+          ]
+        },
+        "hero": {
+          "title": "Service records: what happened, when, and what it changed",
+          "lead": "Every change in a person's working life is a dated entry: joining, confirmation, increments, promotions, transfers. Each shows the grade and salary after it, with the letter attached.",
+          "secondaryCta": "See a service record"
+        },
+        "sample": {
+          "count": "6 entries",
+          "notes": [
+            "the person at a glance",
+            "newest change on top",
+            "a letter on each"
+          ]
+        },
+        "ui": {
+          "title": "Service Records",
+          "service": "Service",
+          "grade": "Grade · step",
+          "timeline": "Service history",
+          "addEntry": "+ Entry",
+          "evIncrement": "Increment",
+          "evPromotion": "Promotion",
+          "evTransfer": "Transfer",
+          "evConfirm": "Confirmation",
+          "evJoin": "Joined",
+          "caption": "A partial preview of Service Records in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A service record, in three kinds of entry",
+          "intro": "Most entries are made for you when something changes elsewhere.",
+          "steps": [
+            {
+              "tag": "Automatic",
+              "question": "Made by other pages",
+              "body": "Increments, promotions and transfers add their own entry when approved."
+            },
+            {
+              "tag": "Manual",
+              "question": "Added by HR",
+              "body": "Warnings, awards and training can be added with a date and a file."
+            },
+            {
+              "tag": "Read",
+              "question": "Used for decisions",
+              "body": "Length of service for gratuity, and the last increment for the next one."
+            }
+          ],
+          "formTitle": "What each entry holds",
+          "form": [
+            {
+              "label": "Date",
+              "body": "When it took effect."
+            },
+            {
+              "label": "Kind",
+              "body": "Joining, increment, promotion and so on."
+            },
+            {
+              "label": "Before and after",
+              "body": "Grade, step, title or location."
+            },
+            {
+              "label": "Letter",
+              "body": "The order or letter, attached."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Service records collect changes from across HR",
+          "intro": "They are written by other pages and read when a person leaves.",
+          "groups": {
+            "before": "Written by",
+            "after": "Read by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrEmployees": "Joining and personal details.",
+            "hrGrades": "Increments and promotions.",
+            "hrDepartments": "Transfers between departments.",
+            "hrSettlements": "Length of service on leaving.",
+            "hrAppraisals": "Ratings behind increments.",
+            "epProfile": "The employee's own history.",
+            "hrReports": "Promotions and transfers by year."
+          }
+        },
+        "local": {
+          "title": "Service records the way files are kept here",
+          "intro": "A personal file for each employee is common. This is the same file, with dates that add up.",
+          "points": [
+            {
+              "title": "No missing letters",
+              "body": "Each change has its order attached."
+            },
+            {
+              "title": "Service worked out",
+              "body": "Years and months, for gratuity."
+            },
+            {
+              "title": "For audits",
+              "body": "Every change with a date and an approver."
+            },
+            {
+              "title": "Seen by the employee",
+              "body": "Their own history in the portal."
+            }
+          ],
+          "story": {
+            "title": "One promotion, recorded without a file clerk",
+            "intro": "A sample change, the way it usually runs.",
+            "steps": [
+              {
+                "time": "10 Jan",
+                "text": "Shamima's promotion to G4 is approved."
+              },
+              {
+                "time": "15 Jan",
+                "text": "Her grade, step and title change."
+              },
+              {
+                "time": "15 Jan",
+                "text": "A Promotion entry is added with the letter."
+              },
+              {
+                "time": "31 Jan",
+                "text": "Payroll uses the new basic."
+              },
+              {
+                "time": "Later",
+                "text": "Her settlement reads 4 years 8 months of service."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use service records",
+          "angles": {
+            "retail": "Transfers between stores.",
+            "food-hospitality": "Moves between outlets.",
+            "real-estate": "Site postings by project.",
+            "consulting": "Promotions by level.",
+            "manufacturing": "Increments for hundreds of workers.",
+            "health-fitness": "Postings between clinics.",
+            "trades": "Skill upgrades for technicians.",
+            "others": "Postings between country offices."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about service records",
+          "items": [
+            {
+              "q": "Do I have to make entries by hand?",
+              "a": "No, most are made when the change is approved."
+            },
+            {
+              "q": "Can I attach a letter?",
+              "a": "Yes, to any entry."
+            },
+            {
+              "q": "Can an entry be edited?",
+              "a": "Only by HR, and the edit is logged."
+            },
+            {
+              "q": "Can the employee see it?",
+              "a": "Yes, in My Profile."
+            },
+            {
+              "q": "How is length of service worked out?",
+              "a": "From the joining date, less any unpaid breaks."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring one employee's personal file. We will turn it into a service record in the demo."
+        }
+      },
+      "hrWppfPage": {
+        "meta": {
+          "title": "WPPF & Welfare: Workers' Profit Participation Fund | Adon ERP",
+          "description": "Work out the workers' share of net profit at year end, split it between the participation fund, the welfare fund and the foundation, and pay eligible workers equally. Built for companies in Bangladesh.",
+          "keywords": [
+            "WPPF Bangladesh",
+            "workers profit participation fund",
+            "welfare fund calculation",
+            "labour law payroll",
+            "Adon ERP WPPF"
+          ]
+        },
+        "hero": {
+          "title": "WPPF & welfare: the workers' share of profit, worked out and paid",
+          "lead": "At year end, the share of net profit set aside for workers is calculated from the books, split between the participation fund, the welfare fund and the foundation, and divided among eligible workers.",
+          "secondaryCta": "See the fund"
+        },
+        "sample": {
+          "count": "186 eligible workers",
+          "notes": [
+            "from the year's profit",
+            "split three ways",
+            "an equal share each"
+          ]
+        },
+        "ui": {
+          "title": "WPPF & Welfare",
+          "profit": "Net profit",
+          "year": "Year to 30 Jun 2026",
+          "fund": "Set aside for workers",
+          "fivePct": "5% of net profit",
+          "perWorker": "Cash share per worker",
+          "eligible": "eligible",
+          "splitTitle": "How the fund is split",
+          "fundShort": "lakh taka",
+          "participation": "Participation fund",
+          "welfare": "Welfare fund",
+          "foundation": "Workers' welfare foundation",
+          "note": "Sample figures. Check the rates, the split and eligibility with your auditor and the law that applies to you.",
+          "caption": "A partial preview of WPPF & Welfare in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "The workers' fund, in three steps",
+          "intro": "From the profit figure to money in workers' hands.",
+          "steps": [
+            {
+              "tag": "Provide",
+              "question": "Set aside from profit",
+              "body": "The share of net profit is worked out from the year's accounts and booked as a provision."
+            },
+            {
+              "tag": "Split",
+              "question": "Divide the fund",
+              "body": "Into the participation fund, the welfare fund and the foundation, in the shares the law sets."
+            },
+            {
+              "tag": "Distribute",
+              "question": "Pay eligible workers",
+              "body": "Workers who meet the service rule get an equal share, in cash or held, as the trust decides."
+            }
+          ],
+          "formTitle": "What you set for the year",
+          "form": [
+            {
+              "label": "Net profit",
+              "body": "From the year's financial statements."
+            },
+            {
+              "label": "Rate and split",
+              "body": "The share and how it is divided."
+            },
+            {
+              "label": "Eligibility",
+              "body": "Minimum service in the year."
+            },
+            {
+              "label": "Payment",
+              "body": "Cash, held, or both."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The fund starts in the books and ends in workers' accounts",
+          "intro": "Profit comes from accounting; eligibility from HR.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Hands off to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "financialReports": "Net profit for the year.",
+            "hrServiceRecords": "Who meets the service rule.",
+            "bankAccounts": "Transfers to the funds and workers.",
+            "journalEntries": "Provision and payment.",
+            "hrReports": "Fund paid by year.",
+            "epPf": "A worker's own share."
+          }
+        },
+        "local": {
+          "title": "WPPF the way it is handled here",
+          "intro": "Companies that meet the law's tests set aside a share of profit for workers each year and pay it through trustee boards.",
+          "points": [
+            {
+              "title": "From audited profit",
+              "body": "The figure comes from the books."
+            },
+            {
+              "title": "Split the way the law says",
+              "body": "Three parts, in the set shares."
+            },
+            {
+              "title": "Equal shares",
+              "body": "Every eligible worker gets the same."
+            },
+            {
+              "title": "A trail for auditors",
+              "body": "Provision, split and payment, all dated."
+            }
+          ],
+          "story": {
+            "title": "One year's fund, from accounts to workers",
+            "intro": "A sample distribution, the way it usually runs.",
+            "steps": [
+              {
+                "time": "30 Sep",
+                "text": "Audited net profit is final."
+              },
+              {
+                "time": "1 Oct",
+                "text": "The fund is worked out and provided."
+              },
+              {
+                "time": "5 Oct",
+                "text": "186 workers meet the service rule."
+              },
+              {
+                "time": "15 Oct",
+                "text": "The trustee board approves the split."
+              },
+              {
+                "time": "31 Oct",
+                "text": "Cash shares are paid with the salary."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use WPPF",
+          "angles": {
+            "retail": "Large retailers meeting the law's tests.",
+            "food-hospitality": "Hotel groups with many workers.",
+            "real-estate": "Construction companies with site workers.",
+            "consulting": "Larger firms that qualify.",
+            "manufacturing": "Factories with hundreds of workers.",
+            "health-fitness": "Hospitals and diagnostic groups.",
+            "trades": "Service companies with field workers.",
+            "others": "Where it applies by law."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about WPPF",
+          "items": [
+            {
+              "q": "Does every company need WPPF?",
+              "a": "No. It depends on the law's tests; check with your adviser."
+            },
+            {
+              "q": "Where does the profit figure come from?",
+              "a": "From the year's financial statements in Adon ERP."
+            },
+            {
+              "q": "Who is eligible?",
+              "a": "Workers who meet the service rule you set."
+            },
+            {
+              "q": "Can part be held instead of paid?",
+              "a": "Yes, as the trust decides."
+            },
+            {
+              "q": "Is it posted to the books?",
+              "a": "Yes, as a provision and then as payments."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last year's WPPF workings. We will produce the same in the demo."
+        }
+      },
+      "hrBudget": {
+        "meta": {
+          "title": "Salary Budgets: Payroll Cost and Headcount Against Plan | Adon ERP",
+          "description": "Set a salary budget and planned headcount for each department, track spending from payroll runs against where it should be by now, and test increments before approving them. Built for companies in Bangladesh.",
+          "keywords": [
+            "salary budget software",
+            "headcount planning",
+            "payroll cost control",
+            "HR software Bangladesh",
+            "Adon ERP salary budgets"
+          ]
+        },
+        "hero": {
+          "title": "Salary budgets: what each department may spend on people, and how it is going",
+          "lead": "Each department gets a salary budget and a planned headcount for the year. Payroll runs fill in the actuals, and a marker shows where spending should be by now.",
+          "secondaryCta": "See the budgets"
+        },
+        "sample": {
+          "count": "6 departments",
+          "notes": [
+            "spent so far",
+            "where it should be",
+            "heads against plan"
+          ]
+        },
+        "ui": {
+          "title": "Salary Budgets",
+          "tableTitle": "FY 2026-27 · salary spent against budget",
+          "elapsed": "7 of 12 months",
+          "legendBar": "Bar: share of the year's budget spent",
+          "legendMarker": "Line: share of the year gone",
+          "legendHeads": "Chip: people now / planned",
+          "caption": "A partial preview of Salary Budgets in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A salary budget, in three checks",
+          "intro": "Plan it, watch it, and test changes against it.",
+          "steps": [
+            {
+              "tag": "Plan",
+              "question": "Budget and heads",
+              "body": "Salary cost and headcount for each department for the year."
+            },
+            {
+              "tag": "Watch",
+              "question": "Spent against time",
+              "body": "Every payroll run adds to the actual; red means ahead of the year."
+            },
+            {
+              "tag": "Test",
+              "question": "Before you approve",
+              "body": "An increment or a new post shows its effect on the budget first."
+            }
+          ],
+          "formTitle": "What you set for each department",
+          "form": [
+            {
+              "label": "Annual budget",
+              "body": "Salary cost for the year."
+            },
+            {
+              "label": "Planned heads",
+              "body": "How many people."
+            },
+            {
+              "label": "Phasing",
+              "body": "Even, or heavier in bonus months."
+            },
+            {
+              "label": "Owner",
+              "body": "Who answers for it."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Salary budgets sit between HR and Budget Management",
+          "intro": "They read payroll and feed the company budget.",
+          "groups": {
+            "before": "Set up with",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrDepartments": "A budget for each one.",
+            "hrGrades": "Cost of increments.",
+            "bmLines": "Salary lines in the company budget.",
+            "hrPayrollRuns": "Actual cost each month.",
+            "hrRecruitment": "New posts checked first.",
+            "bmVariance": "Salary variance with the rest.",
+            "hrReports": "Cost by department."
+          }
+        },
+        "local": {
+          "title": "Salary budgets the way they are run here",
+          "intro": "A yearly budget from July, two bonus months, and an increment round that has to fit.",
+          "points": [
+            {
+              "title": "Bonus months phased",
+              "body": "So Eid does not look like overspending."
+            },
+            {
+              "title": "Increments tested",
+              "body": "See the cost before approving."
+            },
+            {
+              "title": "Heads and cost together",
+              "body": "A gap in one explains the other."
+            },
+            {
+              "title": "One budget",
+              "body": "The same figures in Budget Management."
+            }
+          ],
+          "story": {
+            "title": "One department running ahead, caught in January",
+            "intro": "A sample month, the way it usually runs.",
+            "steps": [
+              {
+                "time": "31 Jan",
+                "text": "January payroll is paid."
+              },
+              {
+                "time": "1 Feb",
+                "text": "Production shows 76% spent at 58% of the year."
+              },
+              {
+                "time": "2 Feb",
+                "text": "Overtime is found to be the cause."
+              },
+              {
+                "time": "5 Feb",
+                "text": "The plant manager adjusts the shift plan."
+              },
+              {
+                "time": "28 Feb",
+                "text": "Overtime is down by a third."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use salary budgets",
+          "angles": {
+            "retail": "Store staffing by season.",
+            "food-hospitality": "Kitchen and service staff by outlet.",
+            "real-estate": "Site staff by project.",
+            "consulting": "Billable staff against revenue.",
+            "manufacturing": "Overtime watched by line.",
+            "health-fitness": "Clinical staff by unit.",
+            "trades": "Field crews by region.",
+            "others": "Staff cost by grant."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about salary budgets",
+          "items": [
+            {
+              "q": "Where do actuals come from?",
+              "a": "From paid payroll runs."
+            },
+            {
+              "q": "Can the budget be phased?",
+              "a": "Yes, evenly or by month."
+            },
+            {
+              "q": "Can I test an increment?",
+              "a": "Yes, before it is approved."
+            },
+            {
+              "q": "Does it link to Budget Management?",
+              "a": "Yes, salary lines are shared."
+            },
+            {
+              "q": "Can a department see only its own?",
+              "a": "Yes, by access rights."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring this year's salary budget. We will set it up against sample payroll in the demo."
+        }
+      },
+      "hrReportsPage": {
+        "meta": {
+          "title": "HR Reports: Headcount, Payroll Cost, Absence and Turnover | Adon ERP",
+          "description": "See headcount, payroll cost, absence and gender mix on one page, and print the muster roll, bank advice, PF and tax reports. Filter by department, location and month. Built for companies in Bangladesh.",
+          "keywords": [
+            "HR reports software",
+            "payroll reports Bangladesh",
+            "muster roll",
+            "headcount report",
+            "Adon ERP HR reports"
+          ]
+        },
+        "hero": {
+          "title": "HR reports: the numbers people ask HR for, ready before they ask",
+          "lead": "Headcount, payroll cost, absence and the gender mix sit on one page. The monthly reports, from the muster roll to the bank advice, are a click away.",
+          "secondaryCta": "See the reports"
+        },
+        "sample": {
+          "count": "6 reports",
+          "notes": [
+            "the month in four charts",
+            "filters at the top",
+            "every report ready"
+          ]
+        },
+        "ui": {
+          "title": "HR Reports",
+          "fAll": "All departments",
+          "fMonth": "October 2026",
+          "fLocation": "All locations",
+          "headcount": "Headcount",
+          "cost": "Payroll cost",
+          "absence": "Absence rate",
+          "gender": "Gender mix",
+          "women": "women",
+          "library": "Monthly reports",
+          "rMuster": "Muster roll",
+          "rBank": "Bank advice",
+          "rPf": "PF statement",
+          "rTax": "Tax deducted",
+          "rLeave": "Leave register",
+          "rTurnover": "Joiners & leavers",
+          "caption": "A partial preview of HR Reports in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "HR reporting, in three layers",
+          "intro": "A view for the week, reports for the month, figures for the year.",
+          "steps": [
+            {
+              "tag": "Glance",
+              "question": "The dashboard",
+              "body": "Headcount, cost, absence and mix, for the filters you pick."
+            },
+            {
+              "tag": "Print",
+              "question": "The monthly set",
+              "body": "Muster roll, bank advice, PF and tax, in the layouts you file."
+            },
+            {
+              "tag": "Drill",
+              "question": "Behind every number",
+              "body": "Open a figure to see the people in it."
+            }
+          ],
+          "formTitle": "Filters on every report",
+          "form": [
+            {
+              "label": "Department",
+              "body": "One or all."
+            },
+            {
+              "label": "Location",
+              "body": "Factory, depot or office."
+            },
+            {
+              "label": "Period",
+              "body": "A month or a range."
+            },
+            {
+              "label": "Grade",
+              "body": "One or several."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Reports read from every HR page",
+          "intro": "Nothing is entered here; everything comes from the work done elsewhere.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Feeds",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPayrollRuns": "Cost and payslips.",
+            "hrAttendance": "Absence and lateness.",
+            "hrLeaveApps": "Leave taken.",
+            "hrSalaryBudgets": "Cost against plan.",
+            "hrForm108": "The year's salary and tax.",
+            "financialReports": "Staff cost in the statements.",
+            "bmVariance": "Salary variance."
+          }
+        },
+        "local": {
+          "title": "Reports the way they are filed here",
+          "intro": "A muster roll for inspection, a bank advice for salary, and PF and tax for the fund and the return.",
+          "points": [
+            {
+              "title": "Ready to print",
+              "body": "In the layouts you already use."
+            },
+            {
+              "title": "For the board",
+              "body": "Cost and headcount trend."
+            },
+            {
+              "title": "For inspectors",
+              "body": "Muster roll and leave register."
+            },
+            {
+              "title": "Export",
+              "body": "Excel or PDF, any report."
+            }
+          ],
+          "story": {
+            "title": "One board meeting, prepared in ten minutes",
+            "intro": "A sample request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "09:00",
+                "text": "The CFO asks for staff cost by department."
+              },
+              {
+                "time": "09:02",
+                "text": "HR filters the dashboard to the last six months."
+              },
+              {
+                "time": "09:05",
+                "text": "Absence is spotted rising in August."
+              },
+              {
+                "time": "09:08",
+                "text": "The figure is opened to see which line."
+              },
+              {
+                "time": "09:10",
+                "text": "The PDF goes to the board pack."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use HR reports",
+          "angles": {
+            "retail": "Staff cost against sales by store.",
+            "food-hospitality": "Overtime by outlet.",
+            "real-estate": "Site headcount by project.",
+            "consulting": "Utilisation by team.",
+            "manufacturing": "Muster roll and overtime by line.",
+            "health-fitness": "Duty hours by unit.",
+            "trades": "Field crew cost by region.",
+            "others": "Staff cost by grant."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about HR reports",
+          "items": [
+            {
+              "q": "Can I build my own report?",
+              "a": "Yes, from the fields you pick."
+            },
+            {
+              "q": "Are reports live?",
+              "a": "Yes, they read the latest records."
+            },
+            {
+              "q": "Can I export?",
+              "a": "To Excel or PDF."
+            },
+            {
+              "q": "Can a manager see only their team?",
+              "a": "Yes, by access rights."
+            },
+            {
+              "q": "Is the muster roll in the usual layout?",
+              "a": "It follows the layout you set."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring the reports you send every month. We will produce them in the demo."
+        }
+      },
+      "epProfilePage": {
+        "meta": {
+          "title": "My Profile: Employee Self-Service for Personal Details | Adon ERP",
+          "description": "Employees see their personal, job and bank details, send changes to HR for approval, and keep their documents on file, from a phone, in English or Bangla. Built for companies in Bangladesh.",
+          "keywords": [
+            "employee self service portal",
+            "employee profile HR",
+            "ESS Bangladesh",
+            "HR software Dhaka",
+            "Adon ERP my profile"
+          ]
+        },
+        "hero": {
+          "title": "My profile: your own record, kept right by you",
+          "lead": "Personal details, job details, bank account and documents, all in one place. A change is sent to HR to approve, so the record stays correct and nobody types it twice.",
+          "secondaryCta": "See the profile"
+        },
+        "sample": {
+          "count": "1 employee",
+          "notes": [
+            "who you are at work",
+            "details you can update",
+            "documents on file"
+          ]
+        },
+        "ui": {
+          "title": "My Profile",
+          "confirmed": "Confirmed",
+          "joined": "Joined",
+          "manager": "Reports to",
+          "personal": "Personal details",
+          "edit": "Request change",
+          "fDob": "Date of birth",
+          "fNid": "NID",
+          "fBlood": "Blood group",
+          "fPhone": "Mobile",
+          "fAddress": "Present address",
+          "fBank": "Salary account",
+          "documents": "Documents",
+          "dNid": "NID copy",
+          "dCert": "Certificates",
+          "dPhoto": "Photo",
+          "dTin": "TIN certificate",
+          "onFile": "On file",
+          "upload": "Upload",
+          "caption": "A partial preview of My Profile in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Keeping your record right, in three steps",
+          "intro": "You see it, you ask to change it, HR approves it.",
+          "steps": [
+            {
+              "tag": "See",
+              "question": "Your record",
+              "body": "Personal, job and bank details, read from the same record HR uses."
+            },
+            {
+              "tag": "Ask",
+              "question": "Request a change",
+              "body": "A new phone, address or account is sent to HR with any proof needed."
+            },
+            {
+              "tag": "Approved",
+              "question": "It updates everywhere",
+              "body": "Once HR approves, payroll and every other page use the new details."
+            }
+          ],
+          "formTitle": "What an employee can update",
+          "form": [
+            {
+              "label": "Contact details",
+              "body": "Mobile, email and address."
+            },
+            {
+              "label": "Emergency contact",
+              "body": "Name, relation and number."
+            },
+            {
+              "label": "Nominees",
+              "body": "For PF and gratuity."
+            },
+            {
+              "label": "Bank account",
+              "body": "With a cheque leaf or statement."
+            },
+            {
+              "label": "Documents",
+              "body": "NID, certificates and TIN."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The profile is the employee's view of the HR record",
+          "intro": "Same record, two doors: HR's and the employee's.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Sends to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrEmployees": "The full employee record.",
+            "hrServiceRecords": "Job history.",
+            "hrApprovals": "Changes waiting for HR.",
+            "epPayslips": "Paid to the account on file.",
+            "epPf": "Nominees for the fund."
+          }
+        },
+        "local": {
+          "title": "Self-service the way employees here use it",
+          "intro": "Most people will open it on a phone, often in Bangla, and only a few times a year.",
+          "points": [
+            {
+              "title": "Phone first",
+              "body": "Works on any smartphone."
+            },
+            {
+              "title": "English or Bangla",
+              "body": "Each person picks."
+            },
+            {
+              "title": "HR approves",
+              "body": "No change goes straight to payroll."
+            },
+            {
+              "title": "Private",
+              "body": "Each person sees only their own."
+            }
+          ],
+          "story": {
+            "title": "One bank account change, without a form",
+            "intro": "A sample change, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Mon 20:15",
+                "text": "Farhana opens a new salary account."
+              },
+              {
+                "time": "Mon 20:18",
+                "text": "She requests the change and adds a cheque leaf."
+              },
+              {
+                "time": "Tue 10:00",
+                "text": "HR checks and approves it."
+              },
+              {
+                "time": "Tue 10:00",
+                "text": "Her record shows the new account."
+              },
+              {
+                "time": "Month end",
+                "text": "Salary goes to the new account."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use My Profile",
+          "angles": {
+            "retail": "Store staff on their phones.",
+            "food-hospitality": "Shift staff away from a desk.",
+            "real-estate": "Site staff far from the office.",
+            "consulting": "Consultants updating certificates.",
+            "manufacturing": "Workers in Bangla, on a phone.",
+            "health-fitness": "Clinical staff updating licences.",
+            "trades": "Field crews updating contacts.",
+            "others": "Programme staff across districts."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about My Profile",
+          "items": [
+            {
+              "q": "Do changes go straight in?",
+              "a": "No, HR approves each one."
+            },
+            {
+              "q": "Can I see my job history?",
+              "a": "Yes, from the service record."
+            },
+            {
+              "q": "Does it work in Bangla?",
+              "a": "Yes."
+            },
+            {
+              "q": "Can I upload documents?",
+              "a": "Yes, from a phone camera too."
+            },
+            {
+              "q": "Can others see my profile?",
+              "a": "Only HR and people you report to, as set by access rights."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring three employees' details. We will show their profiles in the demo."
+        }
+      },
+      "epPayslipsPage": {
+        "meta": {
+          "title": "My Payslips: Every Payslip, Line by Line, on a Phone | Adon ERP",
+          "description": "Employees see every payslip since joining with earnings and deductions line by line, and download a PDF the day payroll is approved. Built for companies in Bangladesh.",
+          "keywords": [
+            "online payslip",
+            "employee payslip portal",
+            "salary slip download",
+            "ESS Bangladesh",
+            "Adon ERP my payslips"
+          ]
+        },
+        "hero": {
+          "title": "My payslips: what you were paid, and why, every month",
+          "lead": "Each month's payslip is there the day payroll is approved: every earning, every deduction, and net pay. Download a PDF for a bank or keep it on your phone.",
+          "secondaryCta": "See a payslip"
+        },
+        "sample": {
+          "count": "5 payslips",
+          "notes": [
+            "every month listed",
+            "each line explained",
+            "net pay at the bottom"
+          ]
+        },
+        "ui": {
+          "title": "My Payslips",
+          "latest": "Latest",
+          "slipTitle": "Payslip · October 2026",
+          "earnings": "Earnings",
+          "gross": "Gross",
+          "deductions": "Deductions",
+          "totalDed": "Total deductions",
+          "netPay": "Net pay",
+          "caption": "A partial preview of My Payslips in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A payslip, in three parts",
+          "intro": "What you earned, what was taken back, and what reached your account.",
+          "steps": [
+            {
+              "tag": "Earnings",
+              "question": "What was paid",
+              "body": "Basic and each allowance, overtime and bonus for the month."
+            },
+            {
+              "tag": "Deductions",
+              "question": "What was taken",
+              "body": "Provident fund, tax and anything else, line by line."
+            },
+            {
+              "tag": "Net",
+              "question": "What you received",
+              "body": "The amount sent to your salary account."
+            }
+          ],
+          "formTitle": "What each payslip shows",
+          "form": [
+            {
+              "label": "Period",
+              "body": "The month it covers."
+            },
+            {
+              "label": "Days",
+              "body": "Days paid, leave and absence."
+            },
+            {
+              "label": "Earnings and deductions",
+              "body": "Each component."
+            },
+            {
+              "label": "Net pay and account",
+              "body": "Where it was paid."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Payslips are payroll, seen by the person paid",
+          "intro": "They come from the run and carry its figures exactly.",
+          "groups": {
+            "before": "Comes from",
+            "after": "Leads to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPayrollRuns": "The month's run.",
+            "hrStructures": "How gross is split.",
+            "epPf": "PF from each payslip.",
+            "hrTax": "TDS worked out for the year.",
+            "hrForm108": "The year added up."
+          }
+        },
+        "local": {
+          "title": "Payslips the way people here need them",
+          "intro": "For a loan, a visa or a flat, a payslip is often asked for. It should be one tap away.",
+          "points": [
+            {
+              "title": "On the day",
+              "body": "As soon as payroll is approved."
+            },
+            {
+              "title": "PDF for banks",
+              "body": "In the company's layout."
+            },
+            {
+              "title": "Every month",
+              "body": "Since the day of joining."
+            },
+            {
+              "title": "Private",
+              "body": "Only the employee and HR."
+            }
+          ],
+          "story": {
+            "title": "One loan application, with payslips ready",
+            "intro": "A sample request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Sat",
+                "text": "Farhana's bank asks for three months' payslips."
+              },
+              {
+                "time": "Sat",
+                "text": "She opens My Payslips on her phone."
+              },
+              {
+                "time": "Sat",
+                "text": "Downloads August, September and October."
+              },
+              {
+                "time": "Sat",
+                "text": "Sends them to the bank."
+              },
+              {
+                "time": "No call",
+                "text": "HR was not needed at all."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use My Payslips",
+          "angles": {
+            "retail": "Store staff on their phones.",
+            "food-hospitality": "Shift staff with overtime shown.",
+            "real-estate": "Site staff far from the office.",
+            "consulting": "Consultants with bonuses explained.",
+            "manufacturing": "Workers with overtime and attendance bonus.",
+            "health-fitness": "Duty allowances shown line by line.",
+            "trades": "Field crews with travel allowance.",
+            "others": "Programme staff by grant."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about My Payslips",
+          "items": [
+            {
+              "q": "When does a payslip appear?",
+              "a": "When the payroll run is approved."
+            },
+            {
+              "q": "Can I download a PDF?",
+              "a": "Yes, any month."
+            },
+            {
+              "q": "Are old payslips kept?",
+              "a": "Yes, since joining."
+            },
+            {
+              "q": "What if a figure looks wrong?",
+              "a": "Raise a query to HR from the payslip."
+            },
+            {
+              "q": "Who else can see it?",
+              "a": "Only HR, by access rights."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a payslip you issue today. We will show it in the portal in the demo."
+        }
+      },
+      "epLeavesPage": {
+        "meta": {
+          "title": "My Leaves: Balances and Leave Requests from a Phone | Adon ERP",
+          "description": "Employees see their leave balance for every type, apply in under a minute with holidays left out, and follow the request until it is approved. Built for companies in Bangladesh.",
+          "keywords": [
+            "leave app employee",
+            "apply leave online",
+            "leave balance portal",
+            "ESS Bangladesh",
+            "Adon ERP my leaves"
+          ]
+        },
+        "hero": {
+          "title": "My leaves: how many days you have, and a request in under a minute",
+          "lead": "Your balance for every leave type sits at the top. Pick the type and dates, and holidays and weekly days off are left out of the count before you send it.",
+          "secondaryCta": "See my leaves"
+        },
+        "sample": {
+          "count": "3 leave types",
+          "notes": [
+            "days left for each",
+            "past requests",
+            "a new request"
+          ]
+        },
+        "ui": {
+          "title": "My Leaves",
+          "balance": "Days left this year",
+          "casual": "Casual",
+          "sick": "Sick",
+          "earned": "Earned",
+          "history": "My requests",
+          "days": "days",
+          "stApproved": "Approved",
+          "stPending": "Waiting",
+          "applyTitle": "Apply for leave",
+          "fType": "Leave type",
+          "fFrom": "From",
+          "fTo": "To",
+          "fReason": "Reason",
+          "reasonValue": "Family programme",
+          "afterNote": "2 working days · 4 casual days left after this",
+          "send": "Send request",
+          "caption": "A partial preview of My Leaves in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A leave request from the portal, in three taps",
+          "intro": "Pick, check, send. The rest happens without you.",
+          "steps": [
+            {
+              "tag": "Pick",
+              "question": "Type and dates",
+              "body": "Only types you are eligible for are shown."
+            },
+            {
+              "tag": "Check",
+              "question": "Days and balance",
+              "body": "Working days are counted and the balance after is shown."
+            },
+            {
+              "tag": "Send",
+              "question": "And follow it",
+              "body": "Your manager is told; you are told when it is decided."
+            }
+          ],
+          "formTitle": "What the employee fills in",
+          "form": [
+            {
+              "label": "Type",
+              "body": "Casual, sick, earned and so on."
+            },
+            {
+              "label": "Dates",
+              "body": "From and to, or half a day."
+            },
+            {
+              "label": "Reason",
+              "body": "A short note."
+            },
+            {
+              "label": "Attachment",
+              "body": "If the type needs one."
+            }
+          ]
+        },
+        "connect": {
+          "title": "My Leaves is where most leave requests start",
+          "intro": "It reads the rules and the calendar, and sends to the approver.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Sends to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrLeaveTypes": "Your entitlements.",
+            "hrHolidays": "Days that are not counted.",
+            "hrLeaveApps": "The request on HR's board.",
+            "hrApprovals": "Waiting for your manager.",
+            "epAttendance": "Leave on your month.",
+            "epPayslips": "Unpaid days deducted."
+          }
+        },
+        "local": {
+          "title": "Leave the way people here ask for it",
+          "intro": "Often in a hurry, often on a phone, often around Eid.",
+          "points": [
+            {
+              "title": "From a phone",
+              "body": "In under a minute."
+            },
+            {
+              "title": "Holidays left out",
+              "body": "Eid and Fridays are not counted."
+            },
+            {
+              "title": "No guessing",
+              "body": "The balance before you send."
+            },
+            {
+              "title": "Told when decided",
+              "body": "No need to chase."
+            }
+          ],
+          "story": {
+            "title": "One casual leave, asked for in the evening",
+            "intro": "A sample request, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Sun 21:00",
+                "text": "Farhana needs two days for a family programme."
+              },
+              {
+                "time": "Sun 21:01",
+                "text": "She picks casual leave, 10 and 11 Nov."
+              },
+              {
+                "time": "Sun 21:01",
+                "text": "The page shows 4 days left after this."
+              },
+              {
+                "time": "Mon 09:20",
+                "text": "Her manager approves it."
+              },
+              {
+                "time": "Mon 09:20",
+                "text": "She is told, and the days show on her month."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use My Leaves",
+          "angles": {
+            "retail": "Store staff around busy seasons.",
+            "food-hospitality": "Shift staff swapping days.",
+            "real-estate": "Site staff after a project phase.",
+            "consulting": "Consultants around client work.",
+            "manufacturing": "Workers on a phone, in Bangla.",
+            "health-fitness": "Clinical staff with duty cover.",
+            "trades": "Field crews between jobs.",
+            "others": "Programme staff across districts."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about My Leaves",
+          "items": [
+            {
+              "q": "Can I take half a day?",
+              "a": "Yes, if the leave type allows it."
+            },
+            {
+              "q": "Are holidays counted?",
+              "a": "No."
+            },
+            {
+              "q": "Can I cancel a request?",
+              "a": "Yes, and the days return to your balance."
+            },
+            {
+              "q": "Will I be told when it is decided?",
+              "a": "Yes."
+            },
+            {
+              "q": "Can I see my team's leave?",
+              "a": "Managers can, by access rights."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your leave form. We will show the same request from a phone in the demo."
+        }
+      },
+      "epAttendancePage": {
+        "meta": {
+          "title": "My Attendance: Your Month, Your Punches, Your Corrections | Adon ERP",
+          "description": "Employees see every day of the month marked present, late, absent or on leave, with in and out times, and ask for a correction when a punch is missing. Built for companies in Bangladesh.",
+          "keywords": [
+            "employee attendance portal",
+            "attendance self service",
+            "punch correction request",
+            "ESS Bangladesh",
+            "Adon ERP my attendance"
+          ]
+        },
+        "hero": {
+          "title": "My attendance: the same record payroll sees, open to you",
+          "lead": "Every day of the month is marked: present, late, absent, on leave or a holiday. Your in and out times are there, and a missing punch can be corrected before payroll runs.",
+          "secondaryCta": "See my month"
+        },
+        "sample": {
+          "count": "31 days",
+          "notes": [
+            "the month in four numbers",
+            "each day coloured",
+            "in and out times"
+          ]
+        },
+        "ui": {
+          "title": "My Attendance",
+          "present": "Days present",
+          "late": "Late",
+          "absent": "Absent",
+          "leave": "On leave",
+          "month": "October 2026",
+          "punches": "Recent punches",
+          "correction": "+ Request a correction",
+          "caption": "A partial preview of My Attendance in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Your attendance, in three views",
+          "intro": "The month, the day, and what to do when something is wrong.",
+          "steps": [
+            {
+              "tag": "Month",
+              "question": "Every day marked",
+              "body": "Present, late, absent, leave or holiday, by colour."
+            },
+            {
+              "tag": "Day",
+              "question": "In and out times",
+              "body": "From the machine, the phone or a manual entry."
+            },
+            {
+              "tag": "Correct",
+              "question": "Fix a missing punch",
+              "body": "Ask your manager to correct it, with a reason, before month end."
+            }
+          ],
+          "formTitle": "What each day shows",
+          "form": [
+            {
+              "label": "Shift",
+              "body": "The hours you were rostered."
+            },
+            {
+              "label": "In and out",
+              "body": "Your punch times."
+            },
+            {
+              "label": "Late minutes",
+              "body": "Against the shift's grace time."
+            },
+            {
+              "label": "Overtime",
+              "body": "Hours past the shift."
+            }
+          ]
+        },
+        "connect": {
+          "title": "My Attendance shows what HR's attendance holds",
+          "intro": "One record, seen by the person and used by payroll.",
+          "groups": {
+            "before": "Reads from",
+            "after": "Feeds",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrShifts": "Your rostered hours.",
+            "hrHolidays": "Days off.",
+            "hrAttendance": "The full record.",
+            "hrPayrollRuns": "Absence and overtime.",
+            "epPayslips": "Deductions and overtime pay.",
+            "epLeaves": "Leave on your month."
+          }
+        },
+        "local": {
+          "title": "Attendance the way people here want to see it",
+          "intro": "A worker should not find out about an absence on the payslip.",
+          "points": [
+            {
+              "title": "No surprises",
+              "body": "See absences before payroll."
+            },
+            {
+              "title": "Overtime visible",
+              "body": "Hours you will be paid for."
+            },
+            {
+              "title": "Corrections in time",
+              "body": "Before the run closes."
+            },
+            {
+              "title": "From a phone",
+              "body": "In Bangla or English."
+            }
+          ],
+          "story": {
+            "title": "One missing punch, fixed before payroll",
+            "intro": "A sample correction, the way it usually runs.",
+            "steps": [
+              {
+                "time": "26 Oct",
+                "text": "The machine misses Kamal's morning punch."
+              },
+              {
+                "time": "27 Oct",
+                "text": "His month shows 26 Oct as absent."
+              },
+              {
+                "time": "27 Oct",
+                "text": "He asks for a correction: punched at 08:55."
+              },
+              {
+                "time": "27 Oct",
+                "text": "His supervisor confirms it."
+              },
+              {
+                "time": "31 Oct",
+                "text": "Payroll pays him for the day."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use My Attendance",
+          "angles": {
+            "retail": "Store staff checking shifts.",
+            "food-hospitality": "Shift staff checking overtime.",
+            "real-estate": "Site staff punching by phone.",
+            "consulting": "Consultants with flexible hours.",
+            "manufacturing": "Workers checking before payday.",
+            "health-fitness": "Clinical staff on rotating duty.",
+            "trades": "Field crews with location punches.",
+            "others": "Field staff across districts."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about My Attendance",
+          "items": [
+            {
+              "q": "Where do the times come from?",
+              "a": "From the attendance machine, the phone, or HR."
+            },
+            {
+              "q": "Can I correct a punch myself?",
+              "a": "You ask; your manager confirms."
+            },
+            {
+              "q": "Is overtime shown?",
+              "a": "Yes, by day and for the month."
+            },
+            {
+              "q": "When is the month closed?",
+              "a": "When payroll is computed."
+            },
+            {
+              "q": "Does it work on a phone?",
+              "a": "Yes."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a month of attendance. We will show one person's view in the demo."
+        }
+      },
+      "epPfPage": {
+        "meta": {
+          "title": "My PF & Gratuity: Provident Fund Balance and Gratuity Earned | Adon ERP",
+          "description": "Employees see their provident fund balance by own share, employer share and profit, every month's contribution, the vested share, and the gratuity earned so far. Built for companies in Bangladesh.",
+          "keywords": [
+            "provident fund balance employee",
+            "gratuity estimate",
+            "PF statement online",
+            "ESS Bangladesh",
+            "Adon ERP my PF"
+          ]
+        },
+        "hero": {
+          "title": "My PF & gratuity: what you have saved, and what you have earned",
+          "lead": "Your provident fund grows each month from your share, the company's share and the fund's profit. See it by year, see how much of the company's share is already yours, and see your gratuity so far.",
+          "secondaryCta": "See my balance"
+        },
+        "sample": {
+          "count": "5 years",
+          "notes": [
+            "the fund each year end",
+            "three parts of the balance",
+            "gratuity so far"
+          ]
+        },
+        "ui": {
+          "title": "My PF & Gratuity",
+          "growth": "PF balance at each year end",
+          "own": "Own share",
+          "employer": "Employer share",
+          "profit": "Profit",
+          "pfNow": "Balance now",
+          "vested": "Employer share vested",
+          "gratuity": "Gratuity earned so far",
+          "gratuitySub": "4 years × last basic · payable after 5 years",
+          "caption": "A partial preview of My PF & Gratuity in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "Your long-term money, in three figures",
+          "intro": "What you put in, what the company added, and what you have earned by staying.",
+          "steps": [
+            {
+              "tag": "Own share",
+              "question": "Your contributions",
+              "body": "A share of your basic each month, always yours."
+            },
+            {
+              "tag": "Employer share",
+              "question": "The company's",
+              "body": "Matched each month, and yours step by step as years pass."
+            },
+            {
+              "tag": "Gratuity",
+              "question": "For service",
+              "body": "Earned for each year, paid when you leave after the minimum period."
+            }
+          ],
+          "formTitle": "What the statement shows",
+          "form": [
+            {
+              "label": "Contributions",
+              "body": "Each month, both shares."
+            },
+            {
+              "label": "Profit",
+              "body": "Credited by the fund each year."
+            },
+            {
+              "label": "Vested share",
+              "body": "Of the employer's money."
+            },
+            {
+              "label": "Gratuity",
+              "body": "Years of service and last basic."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Your balance comes from payroll and policy",
+          "intro": "Every payslip adds to it; policy decides what is yours.",
+          "groups": {
+            "before": "Comes from",
+            "after": "Leads to",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "hrPolicy": "Rates, vesting and gratuity rules.",
+            "hrPayrollRuns": "Contributions each month.",
+            "hrSettlements": "Paid out when you leave.",
+            "epPayslips": "PF on each payslip.",
+            "epProfile": "Your nominees."
+          }
+        },
+        "local": {
+          "title": "PF and gratuity the way people here plan with them",
+          "intro": "For many, the provident fund is the largest savings they have. They should be able to see it.",
+          "points": [
+            {
+              "title": "Always up to date",
+              "body": "After every payroll."
+            },
+            {
+              "title": "What is yours",
+              "body": "Vested share in plain numbers."
+            },
+            {
+              "title": "Gratuity in taka",
+              "body": "Not just a rule in a policy."
+            },
+            {
+              "title": "Statement any time",
+              "body": "No letter to HR."
+            }
+          ],
+          "story": {
+            "title": "One question about savings, answered in the portal",
+            "intro": "A sample check, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Evening",
+                "text": "Farhana wonders what her PF is worth."
+              },
+              {
+                "time": "Evening",
+                "text": "She opens My PF & Gratuity."
+              },
+              {
+                "time": "Evening",
+                "text": "She sees BDT 3,08,700 in the fund."
+              },
+              {
+                "time": "Evening",
+                "text": "And that 75% of the employer share is vested."
+              },
+              {
+                "time": "Next day",
+                "text": "She downloads a statement for her records."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different trades use My PF & Gratuity",
+          "angles": {
+            "retail": "Long-serving store staff.",
+            "food-hospitality": "Staff who stay for years.",
+            "real-estate": "Site staff between projects.",
+            "consulting": "Consultants planning a move.",
+            "manufacturing": "Workers checking their savings.",
+            "health-fitness": "Clinical staff with long service.",
+            "trades": "Technicians planning ahead.",
+            "others": "Programme staff at grant end."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about My PF & Gratuity",
+          "items": [
+            {
+              "q": "How often does the balance update?",
+              "a": "After every payroll run."
+            },
+            {
+              "q": "What does vested mean?",
+              "a": "The share of the employer's money that is already yours."
+            },
+            {
+              "q": "When is gratuity paid?",
+              "a": "When you leave, after the minimum years of service."
+            },
+            {
+              "q": "Can I download a statement?",
+              "a": "Yes, any time."
+            },
+            {
+              "q": "Can I change my nominee?",
+              "a": "Yes, from My Profile, approved by HR."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your PF statement. We will show the same balance in the portal in the demo."
         }
       }
     },
