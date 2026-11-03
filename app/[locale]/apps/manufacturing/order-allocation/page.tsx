@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  ManufacturingModulePage,
+  manufacturingMetadata,
+} from "@/components/manufacturing/module-page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = manufacturingMetadata("order-allocation");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.manufacturing");
-
-  return {
-    title: t("links.orderAllocation"),
-    alternates: getLocaleAlternates("/apps/manufacturing/order-allocation"),
-  };
-}
-
-export default function ManufacturingOrderAllocationPage() {
-  return <ComingSoonPage moduleKey="manufacturing" linkKey="orderAllocation" />;
+export default function ManufacturingSubpage() {
+  return <ManufacturingModulePage slug="order-allocation" />;
 }

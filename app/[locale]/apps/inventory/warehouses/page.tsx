@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import ComingSoonPage from "@/components/coming-soon-page";
+import InventoryWarehouses from "@/components/inventory-warehouses";
 import { getLocaleAlternates } from "@/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function InventoryWarehousesPage() {
-  return <ComingSoonPage moduleKey="inventory" linkKey="warehouses" />;
+  return <InventoryWarehouses />;
 }

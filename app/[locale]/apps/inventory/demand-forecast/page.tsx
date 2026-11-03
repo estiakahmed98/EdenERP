@@ -1,7 +1,8 @@
+// app/%5Blocale%5D/apps/inventory/demand-forecast/page.tsx
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-import ComingSoonPage from "@/components/coming-soon-page";
+import InventoryDemandForecast from "@/components/inventory-demand-forecast";
 import { getLocaleAlternates } from "@/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,5 +15,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function InventoryDemandForecastPage() {
-  return <ComingSoonPage moduleKey="inventory" linkKey="demandForecast" />;
+  return <InventoryDemandForecast />;
 }

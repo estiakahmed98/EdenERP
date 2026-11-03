@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  ManufacturingModulePage,
+  manufacturingMetadata,
+} from "@/components/manufacturing/module-page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = manufacturingMetadata("mrp-planning");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.manufacturing");
-
-  return {
-    title: t("links.mrpPlanning"),
-    alternates: getLocaleAlternates("/apps/manufacturing/mrp-planning"),
-  };
-}
-
-export default function ManufacturingMrpPlanningPage() {
-  return <ComingSoonPage moduleKey="manufacturing" linkKey="mrpPlanning" />;
+export default function ManufacturingSubpage() {
+  return <ManufacturingModulePage slug="mrp-planning" />;
 }

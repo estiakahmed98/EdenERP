@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  ManufacturingModulePage,
+  manufacturingMetadata,
+} from "@/components/manufacturing/module-page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = manufacturingMetadata("serial-numbers");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.manufacturing");
-
-  return {
-    title: t("links.serialNumbers"),
-    alternates: getLocaleAlternates("/apps/manufacturing/serial-numbers"),
-  };
-}
-
-export default function ManufacturingSerialNumbersPage() {
-  return <ComingSoonPage moduleKey="manufacturing" linkKey="serialNumbers" />;
+export default function ManufacturingSubpage() {
+  return <ManufacturingModulePage slug="serial-numbers" />;
 }

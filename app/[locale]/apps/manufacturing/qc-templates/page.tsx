@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  ManufacturingModulePage,
+  manufacturingMetadata,
+} from "@/components/manufacturing/module-page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = manufacturingMetadata("qc-templates");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.manufacturing");
-
-  return {
-    title: t("links.qcTemplates"),
-    alternates: getLocaleAlternates("/apps/manufacturing/qc-templates"),
-  };
-}
-
-export default function ManufacturingQcTemplatesPage() {
-  return <ComingSoonPage moduleKey="manufacturing" linkKey="qcTemplates" />;
+export default function ManufacturingSubpage() {
+  return <ManufacturingModulePage slug="qc-templates" />;
 }

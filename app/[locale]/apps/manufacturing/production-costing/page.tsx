@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  ManufacturingModulePage,
+  manufacturingMetadata,
+} from "@/components/manufacturing/module-page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = manufacturingMetadata("production-costing");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.manufacturing");
-
-  return {
-    title: t("links.productionCosting"),
-    alternates: getLocaleAlternates("/apps/manufacturing/production-costing"),
-  };
-}
-
-export default function ManufacturingProductionCostingPage() {
-  return <ComingSoonPage moduleKey="manufacturing" linkKey="productionCosting" />;
+export default function ManufacturingSubpage() {
+  return <ManufacturingModulePage slug="production-costing" />;
 }

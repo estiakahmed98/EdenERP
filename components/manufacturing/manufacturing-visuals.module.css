@@ -1,0 +1,243 @@
+.blueprintGrid {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--primary) 10%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--primary) 10%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      color-mix(in srgb, var(--primary) 5%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--primary) 5%, transparent) 1px,
+      transparent 1px
+    );
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+  mask-image: linear-gradient(100deg, transparent 2%, #000 75%);
+}
+
+.blueprintPanel {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--primary) 14%, transparent) 0.7px,
+    transparent 0.7px
+  );
+  background-size: 16px 16px;
+}
+
+.crosshair::before,
+.crosshair::after {
+  content: "";
+  position: absolute;
+  background: var(--primary);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.crosshair::before {
+  width: 15px;
+  height: 1px;
+  inset-inline-start: -7px;
+  top: 0;
+}
+.crosshair::after {
+  height: 15px;
+  width: 1px;
+  inset-inline-start: 0;
+  top: -7px;
+}
+
+.sketchStroke {
+  stroke-dasharray: 1;
+  animation: sketchDraw 900ms ease-out both;
+}
+
+.flowStroke {
+  stroke-dasharray: 4 6;
+  animation: flowTravel 1.2s linear 2;
+}
+
+.callout {
+  transform: rotate(-4deg);
+}
+
+.marker {
+  padding-inline: 0.12em;
+  background-image: linear-gradient(
+    178deg,
+    transparent 57%,
+    color-mix(in srgb, var(--primary) 17%, transparent) 58%,
+    color-mix(in srgb, var(--primary) 11%, transparent) 93%,
+    transparent 95%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.stickyNote {
+  color: #65501c;
+  background: #fff6ce;
+  border: 1px solid #e8dba4;
+  border-radius: 3px 3px 18px 3px;
+  box-shadow: 0 12px 25px -20px #65501c;
+  transform: rotate(2deg);
+}
+
+.stickyNote::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  inset-inline-start: 32%;
+  width: 36%;
+  height: 17px;
+  background: color-mix(in srgb, var(--primary) 12%, var(--card) 75%);
+  border: 1px solid color-mix(in srgb, var(--primary) 13%, transparent);
+  transform: rotate(-5deg);
+}
+
+:global(.dark) .stickyNote {
+  background: #302b1c;
+  color: #eee0ad;
+  border-color: #5d5131;
+}
+
+.heroGlow {
+  background:
+    radial-gradient(
+      ellipse at 83% 21%,
+      color-mix(in srgb, var(--primary) 8%, transparent),
+      transparent 51%
+    ),
+    radial-gradient(
+      ellipse at 18% 80%,
+      color-mix(in srgb, var(--teal) 5%, transparent),
+      transparent 45%
+    );
+}
+
+.cornerRibbon {
+  position: absolute;
+  top: 0;
+  inset-inline-end: 0;
+  padding: 8px 12px 8px 18px;
+  border-end-start-radius: 14px;
+  border-start-end-radius: 14px;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 9%, var(--card));
+  border-inline-start: 1px solid
+    color-mix(in srgb, var(--primary) 15%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.englishContent {
+  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+}
+
+.englishContent.englishContent :global(.showcase-heading-highlight) {
+  font-family: var(--font-caveat), "Segoe Print", "Bradley Hand", cursive;
+  font-style: normal;
+}
+
+.blueprintNode,
+.workflowCard,
+.action,
+.connectionCard {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.orderRow {
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+.orderRow[data-selected="true"] {
+  box-shadow: inset 3px 0 var(--primary);
+}
+.detail {
+  animation: detailReveal 180ms ease-out both;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .blueprintNode:hover,
+  .workflowCard:hover,
+  .connectionCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px -20px var(--primary);
+  }
+  .action:hover {
+    transform: translateY(-2px);
+  }
+  .action:active {
+    transform: translateY(0);
+  }
+}
+
+@keyframes sketchDraw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes flowTravel {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+@keyframes detailReveal {
+  from {
+    opacity: 0.65;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:global([dir="rtl"]) .orderRow[data-selected="true"] {
+  box-shadow: inset -3px 0 var(--primary);
+}
+:global([dir="rtl"]) .directional {
+  transform: scaleX(-1);
+}
+
+.englishContent .directional {
+  transform: none;
+}
+.englishContent .orderRow[data-selected="true"] {
+  box-shadow: inset 3px 0 var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sketchStroke,
+  .flowStroke,
+  .detail {
+    animation: none;
+  }
+  .blueprintNode,
+  .workflowCard,
+  .action,
+  .connectionCard,
+  .orderRow {
+    transition: none;
+  }
+}
