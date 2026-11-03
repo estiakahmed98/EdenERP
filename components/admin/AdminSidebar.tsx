@@ -13,6 +13,7 @@ import {
   Shield,
   BookOpen,
   BadgeDollarSign,
+  CalendarDays,
 } from "lucide-react";
 
 interface Props {
@@ -45,6 +46,7 @@ const AdminSidebar = ({ onNavigate, collapsed, onToggleCollapse }: Props) => {
     { name: "Dashboard", href: "/admin", icon: Home },
     { name: "Blog", href: "/admin/blog", icon: BookOpen },
     { name: "Pricing", href: "/admin/pricing", icon: BadgeDollarSign },
+    { name: "Demo planner", href: "/admin/demo-bookings", icon: CalendarDays },
   ];
 
   return (

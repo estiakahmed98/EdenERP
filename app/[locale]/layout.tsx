@@ -8,6 +8,7 @@ import Header from "@/components/header";
 import FloatingActions from "@/components/floating-actions";
 import AnalyticsTracker from "@/components/admin/AnalyticsTracker";
 import AuthSessionProvider from "@/lib/session-provider";
+import DemoBookingProvider from "@/components/demo-booking/provider";
 import { isLocale, locales } from "@/i18n/config";
 import { getPricingSiteConfig } from "@/lib/pricing/service";
 
@@ -36,11 +37,13 @@ export default async function LocaleLayout({
     <NextIntlClientProvider locale={activeLocale} messages={messages}>
       <LocaleDocument />
       <AuthSessionProvider>
-        <AnalyticsTracker />
-        <Header showPricing={pricingConfig.pricingPageEnabled} />
-        {children}
-        <Footer showPricing={pricingConfig.pricingPageEnabled} />
-        <FloatingActions />
+        <DemoBookingProvider>
+          <AnalyticsTracker />
+          <Header showPricing={pricingConfig.pricingPageEnabled} />
+          {children}
+          <Footer showPricing={pricingConfig.pricingPageEnabled} />
+          <FloatingActions />
+        </DemoBookingProvider>
       </AuthSessionProvider>
     </NextIntlClientProvider>
   );

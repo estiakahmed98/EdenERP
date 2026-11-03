@@ -11,6 +11,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
+import LiveDemoButton from "@/components/live-demo-button";
 
 import { HandText, SectionTag, ThreeBg, TypeWriter } from "./landing-ui";
 
@@ -36,7 +37,6 @@ const PLAN_STYLES = {
 
 export default function Hero() {
   const t = useTranslations("pages.home");
-  const commonT = useTranslations("common.actions");
   const typeWords = t.raw("hero.typeWords") as string[];
   const shouldReduceMotion = useReducedMotion();
   const [isSubscriptionListPaused, setIsSubscriptionListPaused] =
@@ -86,9 +86,7 @@ export default function Hero() {
         </p>
 
         <div className="reveal reveal-d3 mt-8 flex flex-wrap justify-center gap-3">
-          <button className="rounded-[10px] border-[1.5px] border-transparent btn-gradient px-5.5 py-3 font-body text-[15px] font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-95">
-            {commonT("watchDemo")}
-          </button>
+          <LiveDemoButton />
         </div>
 
         {/* <p className="reveal mt-3 font-body text-xs text-[#aaa]">

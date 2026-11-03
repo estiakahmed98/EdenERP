@@ -1,5 +1,12 @@
 # Global live demo button audit
 
+**Current behavior:** the shared component now opens the frontend demo-planning
+popup. The homepage Hero and browser-local Admin preview also use it, bringing
+the total to 39 placements in 20 source files. See
+[the popup scope and validation](live-demo-popup-ui.md). The inventory and HTTP
+navigation results below record the preceding link-based refactor; they are not
+claims that the popup submits bookings or navigates to the advisor page.
+
 ## Findings
 
 The repository audit covered application and component source, shared templates,
