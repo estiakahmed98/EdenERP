@@ -2033,10 +2033,6 @@
   .actions {
     gap: 10px;
   }
-  .actions a {
-    padding-inline: 15px;
-    font-size: 12px;
-  }
   .factoryLayout {
     grid-template-columns: 1fr;
     grid-template-areas: "copy" "map";

@@ -274,6 +274,13 @@ export function ManufacturingAction({
   );
 }
 
+/** One label, destination and visual treatment for every Manufacturing demo CTA. */
+export function ManufacturingDemoButton() {
+  return (
+    <ManufacturingAction href="/demo">Book a live demo</ManufacturingAction>
+  );
+}
+
 export type ManufacturingStatus =
   "draft" | "confirmed" | "inProgress" | "completed";
 const statusStyles: Record<ManufacturingStatus, string> = {

@@ -26,7 +26,7 @@ import {
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
-  ManufacturingAction,
+  ManufacturingDemoButton,
   ManufacturingCallout,
   ManufacturingEyebrow,
   ManufacturingMarker,
@@ -290,9 +290,7 @@ export default function ManufacturingModuleShowcase({
               how it fits your operation.
             </p>
           </div>
-          <ManufacturingAction href="/demo">
-            Book a live demo
-          </ManufacturingAction>
+          <ManufacturingDemoButton />
         </div>
       </section>
     </main>
