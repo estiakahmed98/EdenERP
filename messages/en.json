@@ -40081,7 +40081,8 @@
           "Enterprise Solution",
           "Features like SAP",
           "Better than Odoo",
-          "Monday like CRM"
+          "Monday like CRM",
+          "Salesforce like CRM"
         ],
         "description": "Set up in minutes with no coding or complicated configuration. Manage your team, sales, accounting, and operations from one connected platform."
       },
@@ -40124,10 +40125,14 @@
         "quoteHighlight": "Adon",
         "quoteSuffix": "to simplify your",
         "typeWords": [
-          "accounting",
-          "sales",
-          "operations",
-          "HR"
+          "Accounting",
+          "Sales",
+          "Operations",
+          "HR",
+          "Manufacturing",
+          "Education",
+          "Merchandising"
+
         ],
         "description": "Generate reports, understand data, automate tasks, and make faster decisions with built-in AI assistance."
       },
