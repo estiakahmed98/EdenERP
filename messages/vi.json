@@ -10562,12 +10562,11 @@
       },
       "hero": {
         "tag": "✦ Quản lý toàn bộ doanh nghiệp tại một nơi",
-        "titlePrefix": "Đơn giản, nhanh,",
+        "titlePrefix": "Adon ERP: đơn giản, nhanh,",
         "typeWords": [
-          "quản lý tài chính",
-          "xử lý đăng ký",
-          "vận hành hằng ngày",
-          "tăng trưởng doanh nghiệp"
+          "với tính năng như SAP",
+          "tốt hơn Odoo",
+          "CRM như Monday"
         ],
         "description": "Thiết lập trong vài phút mà không cần code hay cấu hình phức tạp. Quản lý đội ngũ, bán hàng, kế toán và vận hành từ một nền tảng kết nối."
       },

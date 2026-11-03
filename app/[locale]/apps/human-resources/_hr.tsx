@@ -13,7 +13,8 @@ import {
 } from "../accounting/_template";
 
 /*
- * Shared pieces for the HR & Payroll and Employee Portal showcase pages.
+ * Shared pieces for the HR & Payroll, Employee Portal, Engineering Maintenance
+ * and Medical Centre showcase pages.
  * Every widget here uses only the colours from app/globals.css (primary,
  * teal, secondary, the chart colours and destructive), so the theme classes
  * recolour the previews too. Copy lives under pages.accountingShowcase.<section>.
@@ -33,7 +34,48 @@ export const hrGroups = {
   statutory: ["hrTax", "hrForm108", "hrPolicy", "hrWppf", "hrSettlements"],
   time: ["hrShifts", "hrHolidays", "hrLeaveTypes", "hrLeaveApps", "hrAttendance"],
   portal: ["epProfile", "epPayslips", "epLeaves", "epAttendance", "epPf"],
+  maint: ["emOverview", "emEquipment", "emPm", "emWorkOrders", "emSpares", "emDowntime", "emCalibration"],
+  medical: ["mcOverview", "mcVisits", "mcPharmacy", "mcCheckups"],
+  tf: ["tfContracts", "tfLc", "tfTt", "tfShipments", "tfPapers"],
+  crPipelineG: ["crPipeline", "crLeads", "crContacts", "crDeals"],
+  crActivitiesG: ["crTasks", "crVisits"],
+  crOrdersG: ["crQuotes", "crSalesOrders", "crReturns", "cr360"],
+  crAccountsG: ["crPlans", "crObjections", "crPlaybook"],
+  crDistributionG: ["crPricing", "crSchemes", "crDealers", "crField", "crOrg", "crDispatch"],
+  crFinanceG: ["crCommissions", "crCredit", "crCollections"],
+  crEngageG: ["crCapture", "crSequences", "crAskAi"],
+  crDmsG: ["crSecondary", "crDistStock", "crMarketReturns", "crSellThrough", "crSecTargets"],
+  crPromoG: ["crPromotions", "crClaims", "crRebates"],
+  crVanG: ["crVans", "crTrips", "crVanSales", "crVanStock"],
+  crInsightsG: ["crDashboard", "crTargets", "crForecast", "crRelationships", "crScorecard"],
 } satisfies Record<string, ToolKey[]>;
+
+type Group = keyof typeof hrGroups;
+
+const crmGroups = (Object.keys(hrGroups) as Group[]).filter((g) => g.startsWith("cr"));
+
+/** Module name, explore link and schema name for each group. */
+const groupMeta: Record<Group, { moduleKey: string; exploreKey: string; exploreHref: string; appPrefix: string }> = {
+  org: { moduleKey: "hrModule", exploreKey: "exploreHr", exploreHref: "/apps/human-resources/employees", appPrefix: "HR & Payroll" },
+  pay: { moduleKey: "hrModule", exploreKey: "exploreHr", exploreHref: "/apps/human-resources/employees", appPrefix: "HR & Payroll" },
+  statutory: { moduleKey: "hrModule", exploreKey: "exploreHr", exploreHref: "/apps/human-resources/employees", appPrefix: "HR & Payroll" },
+  time: { moduleKey: "hrModule", exploreKey: "exploreHr", exploreHref: "/apps/human-resources/employees", appPrefix: "HR & Payroll" },
+  portal: { moduleKey: "epModule", exploreKey: "explorePortal", exploreHref: "/apps/employee-portal/my-profile", appPrefix: "Employee Portal" },
+  maint: { moduleKey: "emModule", exploreKey: "exploreMaint", exploreHref: "/apps/engineering-maintenance", appPrefix: "Engineering Maintenance" },
+  medical: { moduleKey: "mcModule", exploreKey: "exploreMedical", exploreHref: "/apps/medical-centre/medical-centre", appPrefix: "Medical Centre" },
+  tf: { moduleKey: "tfModule", exploreKey: "exploreTf", exploreHref: "/apps/trade-finance/sales-contracts", appPrefix: "Trade Finance" },
+  crPipelineG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crActivitiesG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crOrdersG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crAccountsG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crDistributionG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crFinanceG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crEngageG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crDmsG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crPromoG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crVanG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+  crInsightsG: { moduleKey: "crModule", exploreKey: "exploreCrm", exploreHref: "/apps/sales/crm", appPrefix: "Sales & CRM" },
+};
 
 /* ------------------------------------------------------------------ */
 /* Widgets                                                             */
@@ -224,14 +266,14 @@ export function bdt(n: number) {
 
 function HrShell({
   path,
-  portal,
+  group,
   nav,
   active,
   title,
   children,
 }: {
   path: string;
-  portal: boolean;
+  group: Group;
   nav: ToolKey[];
   active: ToolKey;
   title: string;
@@ -239,7 +281,8 @@ function HrShell({
 }) {
   const { t: common, tools } = useCommon();
   const design = designFor(path);
-  const moduleName = common(portal ? "epModule" : "hrModule");
+  const moduleName = common(groupMeta[group].moduleKey);
+  const crGroupLabels = common.raw("crGroups") as Record<string, string>;
 
   if (design.shell !== 0) {
     return (
@@ -260,7 +303,7 @@ function HrShell({
     <div>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2.5">
-          {portal && <Avatar name="Farhana Akter" size={30} tone={1} />}
+          {group === "portal" && <Avatar name="Farhana Akter" size={30} tone={1} />}
           <div>
             <p className="text-[10.5px] text-muted-foreground">
               {moduleName} / <span className="text-foreground">{tools[active]}</span>
@@ -270,6 +313,21 @@ function HrShell({
         </div>
         <span className="rounded-md border border-border bg-card px-2 py-1 text-[10.5px] text-muted-foreground">FY 2026-27</span>
       </div>
+      {/* CRM pages also show the row of CRM sections, as the app does. */}
+      {crmGroups.includes(group) && (
+        <div className="mt-3 flex flex-wrap gap-1" aria-hidden="true">
+          {crmGroups.map((g) => (
+            <span
+              key={g}
+              className={`rounded-full border px-2.5 py-0.5 text-[10.5px] font-medium ${
+                g === group ? "border-primary bg-primary text-white" : "border-border bg-card text-muted-foreground"
+              }`}
+            >
+              {crGroupLabels[g]}
+            </span>
+          ))}
+        </div>
+      )}
       <nav className="mt-3 flex flex-wrap gap-x-4 gap-y-1 border-b border-border text-[11px]" aria-hidden="true">
         {nav.map((key) => (
           <span
@@ -304,7 +362,7 @@ export function HrPage({
   appName: string;
   features: string[];
   tool: ToolKey;
-  group: keyof typeof hrGroups;
+  group: Group;
   connectStructure: { key: string; tools: ToolKey[] }[];
   icons: LucideIcon[];
   stepTones?: Tone[];
@@ -312,20 +370,20 @@ export function HrPage({
 }) {
   const content = useTemplateContent(section);
   const { t: common } = useCommon();
-  const portal = group === "portal";
+  const meta = groupMeta[group];
 
   return (
     <TemplatePage
       slug={path}
       prefix={prefix}
-      appName={`${portal ? "Employee Portal" : "HR & Payroll"} ${appName}`}
+      appName={`${meta.appPrefix} ${appName}`}
       features={features}
       content={content}
       stepTones={stepTones}
       connectStructure={connectStructure}
       localIcons={icons}
-      exploreHref={portal ? "/apps/employee-portal/my-profile" : "/apps/human-resources/employees"}
-      exploreLabel={common(portal ? "explorePortal" : "exploreHr")}
+      exploreHref={meta.exploreHref}
+      exploreLabel={common(meta.exploreKey)}
       preview={
         <TemplatePreview
           prefix={prefix}
@@ -334,7 +392,7 @@ export function HrPage({
           cols={[]}
           rows={[]}
           body={
-            <HrShell path={path} portal={portal} nav={hrGroups[group]} active={tool} title={content.ui.title}>
+            <HrShell path={path} group={group} nav={hrGroups[group]} active={tool} title={content.ui.title}>
               {render(content.ui)}
             </HrShell>
           }
