@@ -1,11 +1,13 @@
 "use client";
 
+import LiveDemoButton from "@/components/live-demo-button";
+
 import { useEffect, useRef, type ReactNode } from "react";
 import { Presentation } from "lucide-react";
-import { ManufacturingDemoButton } from "./design-system";
+
 import css from "./demo-preview.module.css";
 
-/** A visual product teaser; booking opens the existing demo page. */
+/** A visual product teaser; booking uses the shared advisor destination. */
 export default function DemoPreview({
   title,
   children,
@@ -86,7 +88,7 @@ export default function DemoPreview({
             production process.
           </p>
           <div className={css.bookingAction}>
-            <ManufacturingDemoButton />
+            <LiveDemoButton />
           </div>
         </div>
       </div>

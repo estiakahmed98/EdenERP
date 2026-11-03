@@ -1,9 +1,10 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import type { Metadata } from "next";
 import { useLocale } from "next-intl";
 import { ChevronDown, Download, Plus, Printer, RefreshCw, Search, X, type LucideIcon } from "lucide-react";
 import { cloneElement, isValidElement, type ReactElement, type ReactNode } from "react";
 
-import { Link } from "@/i18n/navigation";
+
 
 import { SITE_URL, accountingMetadata, useCommon, type ToolKey } from "./_shared";
 import { Connect, Final, Flow, Hero, Local, PreviewFrame, designFor, type Accent } from "./_designs";
@@ -323,12 +324,7 @@ export function TemplatePreview({
             aria-hidden="true"
           />
           <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 px-6 pb-6 pt-10">
-            <Link
-              href="/demo"
-              className="inline-flex items-center gap-2 rounded-lg btn-gradient px-5 py-2.5 text-[14px] font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-            >
-              {common("bookLiveDemo")}
-            </Link>
+            <LiveDemoButton />
           </div>
         </div>
       </PreviewFrame>

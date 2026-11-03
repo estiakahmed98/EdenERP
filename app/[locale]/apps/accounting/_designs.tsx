@@ -1,20 +1,11 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import { ArrowRight, ArrowUpRight, Check, ChevronDown, type LucideIcon } from "lucide-react";
 import type { CSSProperties, ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
 
 import { toolSlugs, useCommon, type ToolKey } from "./_shared";
-import {
-  PrimaryButton,
-  SecondaryButton,
-  StorySteps,
-  h2,
-  lead,
-  link,
-  ruled,
-  wrap,
-  type Faq,
-} from "./_showcase";
+import { SecondaryButton, StorySteps, h2, lead, link, ruled, wrap, type Faq } from "./_showcase";
 
 /*
  * Layout variants for the template showcase pages. A page's look is a
@@ -298,9 +289,7 @@ function HeroCtas({ secondaryCta, light = false, center = false }: { secondaryCt
   return (
     <>
       <div className={`mt-7 flex flex-wrap items-center gap-3 ${center ? "justify-center" : ""}`}>
-        <PrimaryButton href="/demo" inverted={light}>
-          {common("bookDemo")}
-        </PrimaryButton>
+        <LiveDemoButton />
         <SecondaryButton href="#flow" inverted={light}>
           {secondaryCta}
         </SecondaryButton>
@@ -1209,9 +1198,7 @@ export function Final({
               <h2 className="showcase-heading mx-auto max-w-[24ch] text-[1.9rem] leading-[1.12] tracking-[-0.02em] sm:text-[2.6rem]">{closingTitle}</h2>
               <p className="mx-auto mt-4 max-w-[52ch] text-[17px] leading-[1.6] text-white/80">{common("closingBody")}</p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <PrimaryButton href="/demo" inverted>
-                  {common("bookDemo")}
-                </PrimaryButton>
+                <LiveDemoButton />
                 <SecondaryButton href={exploreHref} inverted>
                   {explore}
                 </SecondaryButton>
@@ -1260,9 +1247,7 @@ export function Final({
                 <p className="mt-4 max-w-[46ch] text-[17px] leading-[1.6] text-muted-foreground">{common("closingBody")}</p>
               </div>
               <div className={`flex flex-wrap items-center gap-3 p-8 sm:p-12 ${accent.solid}`}>
-                <PrimaryButton href="/demo" inverted>
-                  {common("bookDemo")}
-                </PrimaryButton>
+                <LiveDemoButton />
                 <SecondaryButton href={exploreHref} inverted>
                   {explore}
                 </SecondaryButton>
@@ -1313,7 +1298,7 @@ export function Final({
                 <p className="mt-2 max-w-[56ch] text-[15.5px] leading-[1.6] opacity-75">{common("closingBody")}</p>
               </div>
               <div className="flex shrink-0 flex-wrap gap-3">
-                <PrimaryButton href="/demo">{common("bookDemo")}</PrimaryButton>
+                <LiveDemoButton />
                 <SecondaryButton href={exploreHref}>{explore}</SecondaryButton>
               </div>
             </div>
@@ -1354,9 +1339,7 @@ export function Final({
                   <p className="mt-4 max-w-[52ch] text-[17px] leading-[1.6] text-white/75">{common("closingBody")}</p>
                 </div>
                 <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
-                  <PrimaryButton href="/demo" inverted>
-                    {common("bookDemo")}
-                  </PrimaryButton>
+                  <LiveDemoButton />
                   <SecondaryButton href={exploreHref} inverted>
                     {explore}
                   </SecondaryButton>

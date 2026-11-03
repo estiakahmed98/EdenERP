@@ -13,6 +13,9 @@ export default function ManufacturingEnglishContent({
     <NextIntlClientProvider
       locale="en"
       messages={{
+        common: {
+          actions: { liveDemo: english.common.actions.liveDemo },
+        },
         pages: {
           manufacturingDetails: english.pages.manufacturingDetails,
           manufacturingShowcase: english.pages.manufacturingShowcase,

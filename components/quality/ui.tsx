@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import {
   ArrowRight,
@@ -8,7 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { ManufacturingDemoButton } from "@/components/manufacturing/design-system";
+
 import DemoPreview from "@/components/manufacturing/demo-preview";
 import {
   qualityCompany,
@@ -18,7 +19,6 @@ import {
 } from "./data";
 import css from "./quality.module.css";
 
-export const DemoButton = ManufacturingDemoButton;
 export { css };
 export function Button({
   children,
@@ -292,7 +292,7 @@ export function QualityClosing() {
             Explore the complete workflow with a guided product walkthrough.
           </p>
         </div>
-        <DemoButton />
+        <LiveDemoButton />
       </div>
     </section>
   );

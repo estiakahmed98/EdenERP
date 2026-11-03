@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { 
@@ -5,7 +6,6 @@ import {
   Layers, 
   Search, 
   ShieldCheck, 
-  ArrowRight,
   TrendingUp,
   FolderTree
 } from 'lucide-react'
@@ -35,12 +35,7 @@ export default function PublicChartOfAccountsPage() {
             Every taka that enters or leaves your business needs a home. The Chart of Accounts is the structured tree that tells your ERP exactly where every transaction belongs.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link 
-              href="/demo" 
-              className="inline-flex items-center justify-center rounded-lg btn-gradient px-6 py-3 text-[15px] font-medium text-white transition-colors"
-            >
-              Book a Demo
-            </Link>
+            <LiveDemoButton />
             <Link 
               href="#how-it-works" 
               className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-6 py-3 text-[15px] font-medium text-foreground transition-colors hover:bg-muted"
@@ -235,12 +230,7 @@ export default function PublicChartOfAccountsPage() {
               <p className="text-lg text-white/75 leading-relaxed mb-8 max-w-lg">
                 See how Adon ERP's Chart of Accounts can bring clarity to your business finances. Book a walkthrough with our team today.
               </p>
-              <Link 
-                href="/demo" 
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-[15px] font-medium text-[var(--purple-dark)] transition-colors hover:bg-white/90"
-              >
-                Book a Demo <ArrowRight className="h-4 w-4" />
-              </Link>
+              <LiveDemoButton />
             </div>
             
             <div className="space-y-6 lg:border-l lg:border-white/20 lg:pl-12">

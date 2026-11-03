@@ -18,6 +18,7 @@
       "oceanBlue": "海洋蓝"
     },
     "actions": {
+      "liveDemo": "与顾问会面并观看实时演示",
       "watchDemo": "观看演示",
       "viewAllApps": "探索 50+ 款工具",
       "seeAllFeatures": "探索所有功能",
@@ -663,9 +664,7 @@
         }
       },
       "common": {
-        "bookDemo": "预约演示",
         "onboardingNote": "目前正在为达卡的企业办理开通。",
-        "bookLiveDemo": "预约现场演示",
         "closingBody": "提供中文、英语或孟加拉语的现场演示，使用贴近您行业的示例账目，并留出时间解答您会计的问题。",
         "exploreAccounting": "了解会计应用",
         "refresh": "刷新",

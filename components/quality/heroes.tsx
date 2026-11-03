@@ -1,5 +1,7 @@
 "use client";
 
+import LiveDemoButton from "@/components/live-demo-button";
+
 import {
   ArrowDown,
   ArrowRight,
@@ -12,12 +14,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import {
-  qualityPages,
-  suppliedSpcSummary,
-  type QualitySlug,
-} from "./data";
-import { DemoButton, Provenance, css } from "./ui";
+import { qualityPages, suppliedSpcSummary, type QualitySlug } from "./data";
+import { Provenance, css } from "./ui";
 
 function Breadcrumb({ slug }: { slug: QualitySlug }) {
   return (
@@ -31,7 +29,7 @@ function Breadcrumb({ slug }: { slug: QualitySlug }) {
 function HeroActions() {
   return (
     <div className={css.heroActions}>
-      <DemoButton />
+      <LiveDemoButton />
       <Link href="#qms-workspace" className={css.exploreLink}>
         Explore the workspace
         <ArrowDown size={14} aria-hidden="true" />

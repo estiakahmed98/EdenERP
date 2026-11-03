@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 /**
  * Adon ERP public site: /[locale]/apps/accounting/ledgers
  * Single-file page. All copy lives in messages/*.json under
@@ -77,17 +78,6 @@ function useLedgersContent() {
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
-
-function PrimaryButton({ href, children, inverted = false }: { href: string; children: ReactNode; inverted?: boolean }) {
-  return (
-    <Link
-      href={href}
-      className={inverted ? `${base} bg-white text-[var(--purple-dark)] hover:bg-white/90` : `${base} btn-gradient text-white`}
-    >
-      {children}
-    </Link>
-  );
-}
 
 function SecondaryButton({ href, children, inverted = false }: { href: string; children: ReactNode; inverted?: boolean }) {
   return (
@@ -274,12 +264,7 @@ function LedgersPreview() {
             aria-hidden="true"
           />
           <div className="absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 px-6 pb-6 pt-10">
-            <Link
-              href="/demo"
-              className="inline-flex items-center gap-2 rounded-lg btn-gradient px-5 py-2.5 text-[14px] font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-            >
-              {common("bookLiveDemo")}
-            </Link>
+            <LiveDemoButton />
           </div>
         </div>
       </div>
@@ -345,7 +330,7 @@ export default function LedgersPage() {
             <div className="lg:col-span-5 lg:pb-2">
               <p className={lead}>{hero.lead}</p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <PrimaryButton href="/demo">{common("bookDemo")}</PrimaryButton>
+                <LiveDemoButton />
                 <SecondaryButton href="#ideas">{hero.secondaryCta}</SecondaryButton>
               </div>
               <p className="mt-4 text-[13px] text-muted-foreground">{common("onboardingNote")}</p>
@@ -445,9 +430,7 @@ export default function LedgersPage() {
                 <p className="mt-4 max-w-[52ch] text-[17px] leading-[1.6] text-white/75">{common("closingBody")}</p>
               </div>
               <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
-                <PrimaryButton href="/demo" inverted>
-                  {common("bookDemo")}
-                </PrimaryButton>
+                <LiveDemoButton />
                 <SecondaryButton href="/apps/accounting" inverted>
                   {common("exploreAccounting")}
                 </SecondaryButton>

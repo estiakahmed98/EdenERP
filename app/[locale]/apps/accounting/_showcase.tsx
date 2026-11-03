@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import { useTranslations } from "next-intl";
 import type { ReactNode } from "react";
 
@@ -27,29 +28,6 @@ export const ruled = {
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
-
-export function PrimaryButton({
-  href,
-  children,
-  inverted = false,
-}: {
-  href: string;
-  children: ReactNode;
-  inverted?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      className={
-        inverted
-          ? `${base} bg-white text-[var(--purple-dark)] hover:bg-white/90`
-          : `${base} btn-gradient text-white`
-      }
-    >
-      {children}
-    </Link>
-  );
-}
 
 export function SecondaryButton({
   href,
@@ -294,9 +272,7 @@ export function FinalSection({
               <p className="mt-4 max-w-[52ch] text-[17px] leading-[1.6] text-white/75">{common("closingBody")}</p>
             </div>
             <div className="flex flex-wrap gap-3 lg:col-span-5 lg:justify-end">
-              <PrimaryButton href="/demo" inverted>
-                {common("bookDemo")}
-              </PrimaryButton>
+              <LiveDemoButton />
               <SecondaryButton href={exploreHref} inverted>
                 {exploreLabel ?? common("exploreAccounting")}
               </SecondaryButton>
