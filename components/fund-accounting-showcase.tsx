@@ -1,13 +1,8 @@
 "use client";
 
 import {
-  ArrowDownRight,
-  ArrowRight,
-  ArrowUpRight,
   Banknote,
   BarChart3,
-  Check,
-  CheckCircle2,
   CircleAlert,
   ClipboardCheck,
   FileCheck2,
@@ -20,41 +15,17 @@ import {
   ShieldCheck,
   Sparkles,
   UsersRound,
-  Wallet,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/navigation";
-import { ShowcaseHeading, ShowcaseHighlight } from "@/components/showcase-typography";
-
-type FundPage =
-  | "dashboard"
-  | "grants"
-  | "donorsFunds"
-  | "reports"
-  | "beneficiaries"
-  | "costAllocation";
+import { FundShell, type FundPage } from "@/components/fund-accounting-shell";
+import { ShowcaseHeading } from "@/components/showcase-typography";
 
 type Metric = {
   label: string;
   value: string;
   detail: string;
-};
-
-type Feature = {
-  title: string;
-  description: string;
-};
-
-type WorkflowStep = {
-  title: string;
-  description: string;
-};
-
-type Benefit = {
-  title: string;
-  description: string;
 };
 
 const iconClasses = [
@@ -63,41 +34,6 @@ const iconClasses = [
   "bg-violet-50 text-violet-700 dark:bg-violet-500/10 dark:text-violet-300",
   "bg-amber-50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-300",
 ];
-
-const featureIcons = [
-  Layers3,
-  ShieldCheck,
-  BarChart3,
-  UsersRound,
-  FileCheck2,
-  HandCoins,
-];
-
-function SectionHeading({
-  eyebrow,
-  title,
-  description,
-  align = "center",
-}: {
-  eyebrow: string;
-  title: string;
-  description: string;
-  align?: "left" | "center";
-}) {
-  return (
-    <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-2xl"}>
-      <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
-        {eyebrow}
-      </p>
-      <ShowcaseHeading className="mt-4 text-balance text-3xl tracking-tight text-slate-950 dark:text-white sm:text-4xl">
-        {title}
-      </ShowcaseHeading>
-      <p className="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300">
-        {description}
-      </p>
-    </div>
-  );
-}
 
 function SampleBadge({ label }: { label: string }) {
   return (
@@ -1121,258 +1057,5 @@ function PagePreview({ page }: { page: FundPage }) {
 }
 
 export default function FundAccountingShowcase({ page }: { page: FundPage }) {
-  const t = useTranslations(`pages.fundAccounting.${page}`);
-  const metrics = t.raw("hero.metrics") as Metric[];
-  const features = t.raw("features.items") as Feature[];
-  const steps = t.raw("workflow.steps") as WorkflowStep[];
-  const benefits = t.raw("benefits.items") as Benefit[];
-
-  return (
-    <main className="overflow-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
-      <section className="relative isolate overflow-hidden bg-gradient-to-b from-emerald-50/80 via-white to-white pt-12 dark:from-emerald-950/30 dark:via-slate-950 dark:to-slate-950 sm:pt-20">
-        <div className="pointer-events-none absolute -right-36 -top-32 -z-10 h-[520px] w-[520px] rounded-full bg-emerald-200/35 blur-3xl dark:bg-emerald-500/10" />
-        <div className="pointer-events-none absolute -left-48 top-64 -z-10 h-[450px] w-[450px] rounded-full bg-sky-200/30 blur-3xl dark:bg-sky-500/10" />
-        <div className="mx-auto max-w-7xl px-4 pb-14 sm:px-6 lg:px-8 lg:pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: "easeOut" }}
-            className="mx-auto max-w-3xl text-center"
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-white/80 px-3.5 py-2 text-xs font-semibold text-emerald-800 shadow-sm dark:border-emerald-500/30 dark:bg-slate-900/80 dark:text-emerald-200">
-              <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
-              {t("hero.eyebrow")}
-            </div>
-            <ShowcaseHeading
-              as="h1"
-              className="mt-6 text-balance text-4xl leading-[1.12] tracking-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[3.55rem]"
-            >
-              {t("hero.title")}{" "}
-              <ShowcaseHighlight className="text-emerald-700 dark:text-emerald-300">
-                {t("hero.titleHighlight")}
-              </ShowcaseHighlight>
-            </ShowcaseHeading>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
-              {t("hero.description")}
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-lg btn-gradient px-5 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 dark:text-slate-950"
-              >
-                {t("hero.primaryCta")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <a
-                href="#showcase"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-emerald-300 hover:bg-emerald-50 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-emerald-500/50 dark:hover:bg-emerald-500/10"
-              >
-                {t("hero.secondaryCta")}
-                <ArrowDownRight className="h-4 w-4" />
-              </a>
-            </div>
-            <p className="mt-4 text-[10px] font-medium text-slate-500 dark:text-slate-400">
-              {t("hero.sampleNote")}
-            </p>
-          </motion.div>
-
-          <div
-            className={`mt-10 grid grid-cols-2 gap-3 ${
-              page === "dashboard"
-                ? "sm:grid-cols-3 xl:grid-cols-7"
-                : page === "reports"
-                  ? "sm:grid-cols-3 lg:grid-cols-3"
-                  : page === "beneficiaries" || page === "costAllocation"
-                    ? "sm:grid-cols-3 lg:grid-cols-5"
-                    : "sm:grid-cols-2 lg:grid-cols-4"
-            }`}
-          >
-            {metrics.map((metric, index) => (
-              <div
-                key={metric.label}
-                className="min-w-0 rounded-xl border border-slate-200/80 bg-white/90 p-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/90 sm:p-4"
-              >
-                <div
-                  className={`flex h-8 w-8 items-center justify-center rounded-lg ${
-                    iconClasses[index % iconClasses.length]
-                  }`}
-                >
-                  {index % 4 === 0 ? (
-                    <Wallet className="h-4 w-4" />
-                  ) : index % 4 === 1 ? (
-                    <UsersRound className="h-4 w-4" />
-                  ) : index % 4 === 2 ? (
-                    <Banknote className="h-4 w-4" />
-                  ) : (
-                    <ArrowUpRight className="h-4 w-4" />
-                  )}
-                </div>
-                <p className="mt-3 truncate text-[9px] font-medium text-slate-500 dark:text-slate-400 sm:text-[10px]">
-                  {metric.label}
-                </p>
-                <p className="mt-1 truncate text-base font-bold text-slate-900 dark:text-white sm:text-lg">
-                  {metric.value}
-                </p>
-                <p className="mt-1 truncate text-[8px] text-slate-500 dark:text-slate-400 sm:text-[9px]">
-                  {metric.detail}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="showcase"
-        className="scroll-mt-20 border-y border-slate-100 bg-slate-50/80 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-20"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow={t("previewSection.eyebrow")}
-            title={t("previewSection.title")}
-            description={t("previewSection.description")}
-          />
-          <div className="mt-10">
-            <PagePreview page={page} />
-          </div>
-          {page === "dashboard" && (
-            <p className="mt-4 text-center text-[10px] text-slate-500 dark:text-slate-400">
-              {t("previewSection.note")}
-            </p>
-          )}
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow={t("features.eyebrow")}
-            title={t("features.title")}
-            description={t("features.description")}
-          />
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => {
-              const Icon = featureIcons[index % featureIcons.length];
-              return (
-                <div
-                  key={feature.title}
-                  className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900"
-                >
-                  <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-xl ${
-                      iconClasses[index % iconClasses.length]
-                    }`}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-4 text-sm font-bold text-slate-900 dark:text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-slate-100 bg-slate-50/80 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow={t("workflow.eyebrow")}
-            title={t("workflow.title")}
-            description={t("workflow.description")}
-          />
-          <div className="relative mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            <div className="absolute left-[10%] right-[10%] top-5 hidden h-px bg-emerald-200 dark:bg-emerald-900 lg:block" />
-            {steps.map((step, index) => (
-              <div key={step.title} className="relative text-center">
-                <div
-                  className={`relative z-10 mx-auto flex h-11 w-11 items-center justify-center rounded-xl border text-xs font-bold shadow-sm ${
-                    index === steps.length - 1
-                      ? "border-emerald-600 bg-emerald-600 text-white dark:border-emerald-400 dark:bg-emerald-400 dark:text-slate-950"
-                      : "border-emerald-200 bg-white text-emerald-800 dark:border-emerald-800 dark:bg-slate-900 dark:text-emerald-200"
-                  }`}
-                >
-                  {index === steps.length - 1 ? (
-                    <Check className="h-5 w-5" />
-                  ) : (
-                    `0${index + 1}`
-                  )}
-                </div>
-                <h3 className="mt-3 text-xs font-bold text-slate-900 dark:text-white">
-                  {step.title}
-                </h3>
-                <p className="mx-auto mt-1.5 max-w-[190px] text-[10px] leading-5 text-slate-500 dark:text-slate-400">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-            <SectionHeading
-              eyebrow={t("benefits.eyebrow")}
-              title={t("benefits.title")}
-              description={t("benefits.description")}
-              align="left"
-            />
-            <div className="grid gap-3 sm:grid-cols-2">
-              {benefits.map((benefit, index) => (
-                <div
-                  key={benefit.title}
-                  className="flex gap-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900"
-                >
-                  <CheckCircle2
-                    className={`mt-0.5 h-4 w-4 shrink-0 ${
-                      index % 2 === 0
-                        ? "text-emerald-600 dark:text-emerald-400"
-                        : "text-sky-600 dark:text-sky-400"
-                    }`}
-                  />
-                  <div>
-                    <h3 className="text-xs font-bold text-slate-900 dark:text-white">
-                      {benefit.title}
-                    </h3>
-                    <p className="mt-1 text-[10px] leading-5 text-slate-500 dark:text-slate-400">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative isolate overflow-hidden bg-[linear-gradient(135deg,#064e3b,#047857_55%,#0f766e)] px-4 py-16 text-center sm:px-6 sm:py-20">
-        <div className="pointer-events-none absolute -left-20 -top-28 -z-10 h-80 w-80 rounded-full bg-white/10 blur-2xl" />
-        <div className="pointer-events-none absolute -bottom-36 -right-16 -z-10 h-96 w-96 rounded-full bg-teal-300/15 blur-3xl" />
-        <div className="mx-auto max-w-3xl">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-emerald-100">
-            <HeartHandshake className="h-6 w-6" />
-          </div>
-          <ShowcaseHeading className="mt-5 text-balance text-3xl tracking-tight text-white sm:text-4xl">
-            {t("finalCta.title")}
-          </ShowcaseHeading>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-emerald-50/80">
-            {t("finalCta.description")}
-          </p>
-          <Link
-            href="/contact"
-            className="mt-7 inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-emerald-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-800"
-          >
-            {t("finalCta.button")}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
-    </main>
-  );
+  return <FundShell page={page} preview={<PagePreview page={page} />} />;
 }

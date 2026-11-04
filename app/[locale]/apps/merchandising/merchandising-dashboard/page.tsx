@@ -1,18 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  MerchandisingPage,
+  merchandisingMetadata,
+} from "@/components/merchandising/page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = merchandisingMetadata("merchandising-dashboard");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.merchandising");
-
-  return {
-    title: t("links.merchandisingDashboard"),
-    alternates: getLocaleAlternates("/apps/merchandising/merchandising-dashboard"),
-  };
-}
-
-export default function MerchandisingMerchandisingDashboardPage() {
-  return <ComingSoonPage moduleKey="merchandising" linkKey="merchandisingDashboard" />;
+export default function MerchandisingSubpage() {
+  return <MerchandisingPage slug="merchandising-dashboard" />;
 }
