@@ -1143,6 +1143,30 @@ export const appsMegaMenu: MegaMenuColumn[] = [
         href: "/apps/university/terms",
       },
       {
+        labelKey: "modules.university.links.gradesResults",
+        href: "/apps/university/grades-results",
+      },
+      {
+        labelKey: "modules.university.links.examsAttendance",
+        href: "/apps/university/exams-attendance",
+      },
+      {
+        labelKey: "modules.university.links.outcomesObe",
+        href: "/apps/university/outcomes-obe",
+      },
+      {
+        labelKey: "modules.university.links.facultyWorkload",
+        href: "/apps/university/faculty-workload",
+      },
+      {
+        labelKey: "modules.university.links.campusServices",
+        href: "/apps/university/campus-services",
+      },
+      {
+        labelKey: "modules.university.links.graduation",
+        href: "/apps/university/graduation",
+      },
+      {
         labelKey: "modules.university.links.universitySettings",
         href: "/apps/university/university-settings",
       },
