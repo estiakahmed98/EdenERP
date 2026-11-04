@@ -596,6 +596,12 @@
             "registration": "Registration",
             "studentAccounts": "Student Accounts",
             "terms": "Terms",
+            "gradesResults": "Grades & Results",
+            "examsAttendance": "Exams & Attendance",
+            "outcomesObe": "Outcomes (OBE)",
+            "facultyWorkload": "Faculty & Workload",
+            "campusServices": "Campus Services",
+            "graduation": "Graduation",
             "universitySettings": "University Settings"
           }
         }
@@ -19764,6 +19770,581 @@
           "title": "Bring your checkup form. We will set up a round in the demo."
         }
       },
+      "uniCommon": {
+        "module": "University",
+        "term": "Autumn 2027",
+        "onboarding": "Now onboarding universities in Dhaka.",
+        "featuresTitle": "What this page does",
+        "caption": "A partial preview of {page} in Adon ERP. University, students and figures are sample data.",
+        "howTitle": "How it works, term by term",
+        "howIntro": "Every University page follows the same short route, so registrars, faculty and students learn it once.",
+        "faqTitle": "Questions registrars and deans ask",
+        "otherTitle": "The rest of the university",
+        "otherIntro": "Every University page reads the same programmes, courses and student records. Nothing is typed twice.",
+        "exploreAll": "See all of University",
+        "stepLabel": "Step"
+      },
+      "uniGradesPage": {
+        "meta": {
+          "title": "University Grades & Results: Marks, GPA, CGPA and Transcripts | Adon ERP",
+          "description": "Enter marks by course section, apply the grading scale, publish results and print transcripts with GPA and CGPA. Built for universities in Bangladesh.",
+          "keywords": [
+            "university result management",
+            "GPA CGPA calculation",
+            "transcript software",
+            "grade sheet",
+            "Adon ERP grades results"
+          ]
+        },
+        "hero": {
+          "title": "Grades & results: marks in, transcripts out",
+          "mark": "transcripts out",
+          "lead": "Teachers enter marks, the grading scale turns them into letter grades and points, and results are checked and published course by course. GPA and CGPA are worked out for you, and a transcript is one click away.",
+          "cta": "See a result sheet"
+        },
+        "features": [
+          "A grading scale of letter grades and grade points",
+          "Marks entered by course section, then locked on submission",
+          "Results reviewed and published by course, department or term",
+          "GPA for the term and CGPA across terms, worked out for you",
+          "Grade sheets and transcripts you can print"
+        ],
+        "steps": [
+          {
+            "tag": "Enter",
+            "title": "Teachers enter marks",
+            "body": "Each teacher enters marks for their course section. Missing marks are easy to spot."
+          },
+          {
+            "tag": "Review",
+            "title": "Check and moderate",
+            "body": "The department reviews the grade spread and moderates before anything is final."
+          },
+          {
+            "tag": "Publish",
+            "title": "Results and transcripts",
+            "body": "Publish by course or by term. GPA and CGPA update, and transcripts are ready."
+          }
+        ],
+        "ui": {
+          "tabSheet": "Result sheet",
+          "tabScale": "Grade scale",
+          "tabModeration": "Moderation",
+          "tabTranscripts": "Transcripts",
+          "course": "CSE 301, Algorithms",
+          "section": "Section A",
+          "kStudents": "Students",
+          "kGpa": "Average GPA",
+          "kPass": "Pass rate",
+          "kPending": "Marks pending",
+          "distTitle": "Grade distribution",
+          "sheetTitle": "Result sheet",
+          "cId": "Student ID",
+          "cName": "Name",
+          "cMarks": "Marks",
+          "cGrade": "Grade",
+          "cPoints": "Points",
+          "cStatus": "Status",
+          "published": "Published",
+          "review": "In review",
+          "publish": "Publish results",
+          "print": "Print grade sheet"
+        },
+        "faq": [
+          {
+            "q": "Can I set my own grading scale?",
+            "a": "Yes. The scale is a table of mark ranges, letter grades and grade points, and you can keep a different one for each programme."
+          },
+          {
+            "q": "How is CGPA worked out?",
+            "a": "From the grade points and credit hours of every course the student has completed, across all terms."
+          },
+          {
+            "q": "Can results be corrected after publishing?",
+            "a": "A published result can be reopened with a reason, and the change is recorded."
+          },
+          {
+            "q": "Can students see their own results?",
+            "a": "Yes, once you publish. Until then results are visible to staff only."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding universities in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring last term's result sheet. We will rebuild it in the demo."
+        }
+      },
+      "uniExamsPage": {
+        "meta": {
+          "title": "University Exams & Attendance: Eligibility, Schedule and Seat Plan | Adon ERP",
+          "description": "Record class attendance, check exam eligibility against the minimum, and build the exam schedule and seat plan from the same registrations. Built for universities in Bangladesh.",
+          "keywords": [
+            "university exam management",
+            "attendance eligibility",
+            "exam seat plan",
+            "exam schedule",
+            "Adon ERP exams attendance"
+          ]
+        },
+        "hero": {
+          "title": "Exams & attendance: only eligible students sit the exam",
+          "mark": "only eligible students",
+          "lead": "Record attendance for every class, see who is below the minimum, and carry that straight into exam eligibility. The exam schedule and seat plan come from the same course registrations, so nobody is missed and nobody is counted twice.",
+          "cta": "See the exam schedule"
+        },
+        "features": [
+          "Attendance recorded for every class meeting",
+          "A minimum attendance rule, with a list of students below it",
+          "Exam eligibility worked out from attendance, with condonation",
+          "An exam schedule that avoids clashes for a student",
+          "A seat plan built from the registrations"
+        ],
+        "steps": [
+          {
+            "tag": "Record",
+            "title": "Attendance each class",
+            "body": "Teachers mark attendance for each meeting. The percentage builds up all term."
+          },
+          {
+            "tag": "Check",
+            "title": "Who is eligible",
+            "body": "Students under the minimum are listed. Approve condonation where the rules allow."
+          },
+          {
+            "tag": "Schedule",
+            "title": "Exams and seats",
+            "body": "Build the schedule and the seat plan for everyone who may sit."
+          }
+        ],
+        "ui": {
+          "tabSchedule": "Exam schedule",
+          "tabAttendance": "Attendance",
+          "tabEligibility": "Eligibility",
+          "tabSeats": "Seat plan",
+          "kExams": "Exams this term",
+          "kAttendance": "Average attendance",
+          "kBelow": "Below 75%",
+          "kSeats": "Seats allotted",
+          "scheduleTitle": "Exam schedule",
+          "cCourse": "Course",
+          "cDate": "Date",
+          "cTime": "Time",
+          "cRoom": "Room",
+          "cSeats": "Seats",
+          "attendanceTitle": "Attendance by course",
+          "eligibilityTitle": "Eligibility",
+          "eligible": "Eligible",
+          "condonation": "Condonation",
+          "barred": "Barred",
+          "minLabel": "Minimum 75%",
+          "cStudent": "Student",
+          "cPercent": "Attendance",
+          "cDecision": "Decision"
+        },
+        "faq": [
+          {
+            "q": "Can the minimum attendance change?",
+            "a": "Yes. You set the percentage, and eligibility follows it."
+          },
+          {
+            "q": "What is condonation?",
+            "a": "A recorded decision to let a student below the minimum sit the exam, with the reason and who approved it."
+          },
+          {
+            "q": "Does the schedule avoid clashes?",
+            "a": "Yes. A student registered for two courses is never given both at the same time."
+          },
+          {
+            "q": "How is the seat plan made?",
+            "a": "From the registrations for each exam and the rooms with their capacity."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding universities in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring one course's attendance sheet. We will work out eligibility in the demo."
+        }
+      },
+      "uniOutcomesPage": {
+        "meta": {
+          "title": "Outcome-Based Education (OBE): Map Courses to Programme Outcomes | Adon ERP",
+          "description": "Map course outcomes to programme outcomes, link assessments and see attainment as a heat map. Built for universities in Bangladesh running outcome-based education.",
+          "keywords": [
+            "OBE software university",
+            "outcome based education",
+            "CLO PLO mapping",
+            "attainment report",
+            "Adon ERP outcomes"
+          ]
+        },
+        "hero": {
+          "title": "Outcomes: show how every course serves the programme",
+          "mark": "every course",
+          "lead": "Map each course outcome to the programme outcomes it supports, link assessments to them, and see attainment as a heat map. The evidence a review panel asks for is built from marks you already hold.",
+          "cta": "See the outcome map"
+        },
+        "features": [
+          "Course outcomes (CLO) and programme outcomes (PLO)",
+          "A mapping matrix with the strength of each link",
+          "Assessments linked to the outcomes they test",
+          "Attainment worked out from marks, against a target",
+          "Reports for programme review, from the same data"
+        ],
+        "steps": [
+          {
+            "tag": "Define",
+            "title": "Outcomes",
+            "body": "Write the programme outcomes, then the outcomes of each course."
+          },
+          {
+            "tag": "Map",
+            "title": "Link and weigh",
+            "body": "Map each course outcome to programme outcomes and say how strongly."
+          },
+          {
+            "tag": "Measure",
+            "title": "Attainment",
+            "body": "Link assessments. Attainment is worked out from the marks and shown against the target."
+          }
+        ],
+        "ui": {
+          "tabMap": "Outcome map",
+          "tabAssess": "Assessments",
+          "tabAttain": "Attainment",
+          "tabReports": "Reports",
+          "course": "CSE 301, Algorithms",
+          "mapTitle": "Course outcomes to programme outcomes",
+          "attainTitle": "Programme outcome attainment",
+          "target": "Target 60%",
+          "clo": "CLO",
+          "plo": "PLO",
+          "strong": "Strong",
+          "medium": "Medium",
+          "weak": "Weak",
+          "none": "No link",
+          "kClos": "Course outcomes",
+          "kPlos": "Programme outcomes",
+          "kMet": "Outcomes met",
+          "kGaps": "Gaps to review"
+        },
+        "faq": [
+          {
+            "q": "What are CLOs and PLOs?",
+            "a": "Course learning outcomes describe what a student can do after one course. Programme learning outcomes describe it for the whole degree."
+          },
+          {
+            "q": "How is attainment calculated?",
+            "a": "From the marks students score on the assessments linked to each outcome, compared with a target you set."
+          },
+          {
+            "q": "Can I use it for a programme review?",
+            "a": "Yes. The same mapping and attainment figures feed the report a review panel reads."
+          },
+          {
+            "q": "Do I have to use OBE?",
+            "a": "No. Programmes that do not use it can simply leave this page unused."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding universities in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring one programme's outcomes. We will map a course in the demo."
+        }
+      },
+      "uniFacultyPage": {
+        "meta": {
+          "title": "Faculty & Workload: Credit Hours, Course Assignment and Load Balance | Adon ERP",
+          "description": "See each teacher's credit hours against the norm, assign courses and sections, and spot overloads before the schedule is final. Built for universities in Bangladesh.",
+          "keywords": [
+            "faculty workload software",
+            "teaching load",
+            "course assignment",
+            "credit hours teacher",
+            "Adon ERP faculty workload"
+          ]
+        },
+        "hero": {
+          "title": "Faculty & workload: fair loads, every section covered",
+          "mark": "fair loads",
+          "lead": "See each teacher's credit hours against the norm, assign courses and sections, and spot overloads before the schedule is final. Sections with no teacher stay on a list until someone takes them.",
+          "cta": "See the load list"
+        },
+        "features": [
+          "Credit hours for every teacher, by term",
+          "A norm for each designation, so over and under load show",
+          "Course and section assignment in one place",
+          "A list of sections still without a teacher",
+          "Workload by department, ready for the dean"
+        ],
+        "steps": [
+          {
+            "tag": "Set",
+            "title": "The norm",
+            "body": "Set the expected credit hours for each designation."
+          },
+          {
+            "tag": "Assign",
+            "title": "Courses and sections",
+            "body": "Give each section a teacher. Load updates as you assign."
+          },
+          {
+            "tag": "Balance",
+            "title": "Over and under",
+            "body": "Fix overloads and fill gaps before the class schedule is published."
+          }
+        ],
+        "ui": {
+          "tabLoad": "Workload",
+          "tabAssign": "Assignments",
+          "tabDept": "By department",
+          "tabVisiting": "Visiting faculty",
+          "kFaculty": "Faculty",
+          "kAvg": "Average load",
+          "kOver": "Overloaded",
+          "kOpen": "Sections without a teacher",
+          "loadTitle": "Teaching load",
+          "openTitle": "Sections still open",
+          "norm": "Norm",
+          "cName": "Teacher",
+          "cDept": "Department",
+          "cCourses": "Courses",
+          "cLoad": "Credit hours",
+          "cStatus": "Load",
+          "over": "Over",
+          "within": "Within norm",
+          "under": "Under"
+        },
+        "faq": [
+          {
+            "q": "Can the norm differ by designation?",
+            "a": "Yes. A professor and a lecturer can each have their own expected load."
+          },
+          {
+            "q": "Does it include visiting faculty?",
+            "a": "Yes. Visiting teachers have their own list and are counted against the courses they take."
+          },
+          {
+            "q": "Can I see load by department?",
+            "a": "Yes. The department view adds up credit hours and shows the spread."
+          },
+          {
+            "q": "Does it feed the class schedule?",
+            "a": "Yes. The class schedule uses the same course and section assignments."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding universities in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring a department's course list. We will balance the load in the demo."
+        }
+      },
+      "uniCampusPage": {
+        "meta": {
+          "title": "Campus Services: Hostel, Transport, Library and Medical in One Queue | Adon ERP",
+          "description": "Handle hostel seats, transport passes, library and medical requests from one queue, with charges that can go to the student account. Built for universities in Bangladesh.",
+          "keywords": [
+            "campus services software",
+            "university hostel management",
+            "transport pass",
+            "student requests",
+            "Adon ERP campus services"
+          ]
+        },
+        "hero": {
+          "title": "Campus services: hostel, transport, library and care in one place",
+          "mark": "in one place",
+          "lead": "Students ask for a seat, a pass or an appointment, and staff work from one queue. A service can charge the student account when it should, so the bill and the service always match.",
+          "cta": "See the request queue"
+        },
+        "features": [
+          "Hostel seats, with beds taken and beds free",
+          "Transport routes and passes",
+          "Library and medical centre requests",
+          "One request queue for staff, with a status on each",
+          "Charges that can go to the student account"
+        ],
+        "steps": [
+          {
+            "tag": "Ask",
+            "title": "A request",
+            "body": "A student asks for a hostel seat, a transport pass or an appointment."
+          },
+          {
+            "tag": "Act",
+            "title": "Staff decide",
+            "body": "The right office approves, allots or schedules, and the status updates."
+          },
+          {
+            "tag": "Charge",
+            "title": "Bill and close",
+            "body": "If the service has a fee, it can be added to the student account."
+          }
+        ],
+        "ui": {
+          "tabServices": "Services",
+          "tabQueue": "Requests",
+          "tabHostel": "Hostel",
+          "tabTransport": "Transport",
+          "hostel": "Hostel",
+          "transport": "Transport",
+          "library": "Library",
+          "medical": "Medical centre",
+          "hostelValue": "412 / 480 beds",
+          "transportValue": "6 routes",
+          "libraryValue": "18,240 titles",
+          "medicalValue": "24 visits today",
+          "queueTitle": "Request queue",
+          "cRequest": "Request",
+          "cStudent": "Student",
+          "cService": "Service",
+          "cDate": "Date",
+          "cStatus": "Status",
+          "r1": "Hostel seat, Block B",
+          "r2": "Bus pass, Route 4",
+          "r3": "Doctor appointment",
+          "r4": "Book renewal, 3 titles",
+          "r5": "Hostel room change",
+          "pending": "Pending",
+          "approved": "Approved",
+          "scheduled": "Scheduled",
+          "done": "Done"
+        },
+        "faq": [
+          {
+            "q": "Which services are covered?",
+            "a": "Hostel, transport, library and the medical centre. Each has its own list and rules."
+          },
+          {
+            "q": "Can a service charge a fee?",
+            "a": "Yes. A fee can be added to the student account, for example a hostel or transport charge."
+          },
+          {
+            "q": "Who sees the queue?",
+            "a": "Each office sees the requests for its own service. A registrar can see all of them."
+          },
+          {
+            "q": "Can students make requests themselves?",
+            "a": "Yes, through the student portal."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding universities in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your hostel and transport lists. We will set up the queue in the demo."
+        }
+      },
+      "uniGraduationPage": {
+        "meta": {
+          "title": "University Graduation: Degree Audit, Clearances and Convocation List | Adon ERP",
+          "description": "Audit credits against programme requirements, track clearances from library, hostel and accounts, and build the convocation list. Built for universities in Bangladesh.",
+          "keywords": [
+            "degree audit software",
+            "graduation clearance",
+            "convocation list",
+            "university graduation management",
+            "Adon ERP graduation"
+          ]
+        },
+        "hero": {
+          "title": "Graduation: audit the credits, clear the dues, issue the degree",
+          "mark": "audit the credits",
+          "lead": "A degree audit checks every student's credits and requirements. Clearances from the library, hostel, accounts and department are tracked in one place, and the convocation list builds itself from those who are ready.",
+          "cta": "See the degree audit"
+        },
+        "features": [
+          "Credits earned against the programme requirement",
+          "Requirement groups: core, elective, thesis and more",
+          "Clearances from library, hostel, accounts and department",
+          "A list of students who are ready, and what is missing for the rest",
+          "A convocation list with CGPA and class of degree"
+        ],
+        "steps": [
+          {
+            "tag": "Audit",
+            "title": "Credits and requirements",
+            "body": "The audit compares what the student has completed with what the programme needs."
+          },
+          {
+            "tag": "Clear",
+            "title": "Dues and departments",
+            "body": "Each office clears the student. Anything outstanding blocks graduation."
+          },
+          {
+            "tag": "Confer",
+            "title": "Convocation list",
+            "body": "Ready students move to the convocation list, with their CGPA."
+          }
+        ],
+        "ui": {
+          "tabAudit": "Degree audit",
+          "tabClearance": "Clearances",
+          "tabConvocation": "Convocation",
+          "tabCertificates": "Certificates",
+          "student": "Nusrat Jahan",
+          "studentId": "2021-1-60-034",
+          "programme": "BSc in Computer Science",
+          "creditsTitle": "Credits earned",
+          "of": "of",
+          "creditsLabel": "credits",
+          "reqTitle": "Requirements",
+          "core": "Core courses",
+          "elective": "Electives",
+          "thesis": "Thesis",
+          "general": "General education",
+          "clearTitle": "Clearances",
+          "library": "Library",
+          "hostel": "Hostel",
+          "accounts": "Accounts",
+          "department": "Department",
+          "cleared": "Cleared",
+          "pending": "Pending",
+          "done": "Done",
+          "inProgress": "In progress",
+          "listTitle": "Convocation list",
+          "cId": "Student ID",
+          "cName": "Name",
+          "cProgramme": "Programme",
+          "cCgpa": "CGPA",
+          "cStatus": "Status",
+          "ready": "Ready",
+          "missing": "Missing credits"
+        },
+        "faq": [
+          {
+            "q": "What does a degree audit check?",
+            "a": "That the student has the credits and the requirement groups the programme needs, such as core courses and electives."
+          },
+          {
+            "q": "What are clearances?",
+            "a": "Confirmations from the library, hostel, accounts and department that the student owes nothing."
+          },
+          {
+            "q": "Can I see why someone is not ready?",
+            "a": "Yes. The audit lists the missing credits or the office that has not cleared them."
+          },
+          {
+            "q": "Does it work out the class of degree?",
+            "a": "It uses the CGPA and the bands you define for your university."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding universities in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring a graduating batch. We will audit it in the demo."
+        }
+      },
       "edCommon": {
         "module": "Education",
         "route": "Education route",
@@ -35746,6 +36327,50 @@
       "metadata": {
         "title": "Apps | Adon ERP",
         "description": "Browse top apps, newly released tools, and popular business extensions for Adon ERP."
+      },
+      "hub": {
+        "eyebrow": "All modules",
+        "title": "Everything your business runs on,",
+        "highlight": "in one place.",
+        "lead": "Adon ERP is a set of modules that share the same data. Pick what you need today, add more as you grow, and nothing has to be typed twice.",
+        "searchLabel": "Search modules and pages",
+        "searchPlaceholder": "Search, e.g. invoices or payroll",
+        "summary": "{modules} modules and {pages} pages",
+        "all": "All",
+        "categories": {
+          "finance": {
+            "title": "Finance & accounting",
+            "blurb": "Books, budgets, funds and trade."
+          },
+          "operations": {
+            "title": "Operations & supply",
+            "blurb": "Buy, make, store, move and maintain."
+          },
+          "people": {
+            "title": "People",
+            "blurb": "Payroll, leave and the staff portal."
+          },
+          "sales": {
+            "title": "Sales & property",
+            "blurb": "Customers, shops and real estate."
+          },
+          "sector": {
+            "title": "Education & care",
+            "blurb": "Schools, universities and medical centres."
+          },
+          "platform": {
+            "title": "Insight & platform",
+            "blurb": "Analytics and open tools that connect it all."
+          }
+        },
+        "pagesCount": "{count} pages",
+        "more": "+{count} more",
+        "open": "Open module",
+        "noResults": "Nothing matches that yet. Try another word, or clear the search.",
+        "clear": "Clear search",
+        "ctaTitle": "Not sure where to start?",
+        "ctaLead": "Tell us how your team works today. We will show you the modules that fit, using your own sample data.",
+        "ctaContact": "Talk to us"
       },
       "filterBar": {
         "filters": [

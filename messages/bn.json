@@ -560,6 +560,12 @@
             "registration": "রেজিস্ট্রেশন",
             "studentAccounts": "শিক্ষার্থী হিসাব",
             "terms": "টার্ম",
+            "gradesResults": "গ্রেড ও ফলাফল",
+            "examsAttendance": "পরীক্ষা ও উপস্থিতি",
+            "outcomesObe": "আউটকাম (OBE)",
+            "facultyWorkload": "শিক্ষক ও কর্মভার",
+            "campusServices": "ক্যাম্পাস সেবা",
+            "graduation": "গ্র্যাজুয়েশন",
             "universitySettings": "বিশ্ববিদ্যালয় সেটিংস"
           }
         }

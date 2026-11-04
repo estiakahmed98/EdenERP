@@ -38,7 +38,7 @@ import {
 } from "./landing-ui";
 
 // Icon per header mega-menu column (keyed by the column's titleKey).
-const MODULE_ICONS: Record<string, LucideIcon> = {
+export const MODULE_ICONS: Record<string, LucideIcon> = {
   "modules.accounting.title": BadgeDollarSign,
   "modules.projectAccounting.title": FolderKanban,
   "modules.budgetManagement.title": PiggyBank,
