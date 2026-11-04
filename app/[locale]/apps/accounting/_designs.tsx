@@ -227,6 +227,17 @@ const pageOrder = [
   "/apps/analytics/hr-payroll",
   "/apps/analytics/demand-forecast",
   "/apps/analytics/export-takeout",
+  // Real Estate
+  "/apps/real-estate/sales-dashboard",
+  "/apps/real-estate/properties",
+  "/apps/real-estate/units",
+  "/apps/real-estate/bookings",
+  "/apps/real-estate/collections",
+  "/apps/real-estate/handover",
+  "/apps/real-estate/revenue-recognition",
+  "/apps/real-estate/leases",
+  "/apps/real-estate/brokers",
+  "/apps/real-estate/buyer-portal",
 ];
 
 /**
