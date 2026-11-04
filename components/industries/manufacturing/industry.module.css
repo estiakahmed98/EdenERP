@@ -1,0 +1,1666 @@
+.industry {
+  --industry-blue: color-mix(in srgb, #1088ef 78%, var(--ink));
+  --industry-green: #187746;
+  --industry-amber: #99631b;
+  --industry-wash: color-mix(in srgb, #1088ef 5%, var(--card));
+  --grain-fill: color-mix(in srgb, #21a816 13%, var(--card));
+  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  overflow: clip;
+}
+.industry[data-production-industry="agro-rice"] {
+  --industry-wash: color-mix(in srgb, #21a816 5%, var(--card));
+}
+:global(.dark) .industry {
+  --industry-blue: #8bcaff;
+  --industry-green: #93dba6;
+  --industry-amber: #e7bd7c;
+}
+.industry * {
+  min-width: 0;
+}
+.industry :is(h1, h2, h3, p, dl, figure) {
+  margin: 0;
+}
+.industry h1 {
+  margin-top: 18px;
+  font-size: clamp(36px, 4.5vw, 62px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+.industry h1 em {
+  color: var(--industry-blue);
+  font-style: normal;
+}
+.industry h2 {
+  font-size: clamp(25px, 2.7vw, 35px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+.industry h3 {
+  color: var(--ink);
+  font-weight: 500;
+}
+.industry :is(button, input, select) {
+  font: inherit;
+}
+.industry button {
+  cursor: pointer;
+}
+.industry :is(a, button, input, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}
+.wrap {
+  max-width: 1240px;
+  padding-inline: 32px;
+  margin-inline: auto;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-block: 24px 8px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.breadcrumb [aria-current] {
+  color: var(--ink);
+}
+.industry > section:first-of-type {
+  padding-block-start: 22px;
+}
+.eyebrow {
+  color: var(--industry-blue);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  line-height: 1.8;
+}
+.lead {
+  max-width: 590px;
+  margin-top: 23px !important;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.9;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 28px;
+}
+.actions > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.actions > a:hover {
+  color: var(--industry-blue);
+}
+.actions > a svg {
+  transition: transform 0.2s;
+}
+.actions > a:hover svg {
+  transform: translateY(3px);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 10px;
+  color: var(--muted-foreground);
+  background: var(--card);
+  font-size: 9px;
+  line-height: 1.7;
+}
+.industry figcaption {
+  font-size: 9px;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Steel: a material passport above an illustrated rolling-line stage. */
+.steelHero {
+  padding-bottom: 65px;
+}
+.steelHeading {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 80px;
+  align-items: start;
+}
+.materialPassport {
+  padding: 22px 25px;
+  border-left: 1px solid var(--border);
+  background: linear-gradient(90deg, var(--industry-wash), transparent);
+}
+.materialPassport header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+.materialPassport > div {
+  padding-top: 22px;
+}
+.materialPassport div > span {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.materialPassport b {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.rollingScene {
+  margin-top: 35px !important;
+  padding: 21px 28px 17px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 22px 55px -40px #00318055;
+}
+.rollingScene > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.rollingScene header > span {
+  color: var(--industry-blue);
+  font-size: 9px;
+  letter-spacing: 0.11em;
+}
+.rollingArt {
+  position: relative;
+  padding-inline: 95px 60px;
+  padding-top: 15px;
+}
+.coilDrawing {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: auto;
+  color: var(--industry-blue);
+}
+.coilLabel {
+  position: absolute;
+  left: 2px;
+  top: 90px;
+  width: 175px;
+  padding: 19px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--card) 95%, transparent);
+  backdrop-filter: blur(8px);
+  transform: rotate(-4deg);
+  box-shadow: 0 15px 30px -23px #00318055;
+}
+.coilLabel > span {
+  color: var(--industry-blue);
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+.coilLabel > b {
+  display: block;
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.coilLabel > small {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.8;
+}
+.netSlip {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 195px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--industry-wash);
+  transform: rotate(3deg);
+}
+.netSlip > svg {
+  color: var(--industry-blue);
+  margin-bottom: 18px;
+}
+.netSlip > span {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: var(--industry-blue);
+}
+.netSlip > b {
+  display: block;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-top: 9px;
+}
+.netSlip > small {
+  display: block;
+  font-size: 8px;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+  margin-top: 8px;
+}
+.steelFlow {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  justify-content: center;
+  padding-block: 10px 21px;
+}
+.steelFlow > span {
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+.steelFlow > i {
+  flex: 1;
+  max-width: 110px;
+  height: 1px;
+  border-top: 1px dashed var(--border);
+}
+.materialFlow {
+  animation: flowLine 18s linear infinite;
+}
+@keyframes flowLine {
+  to {
+    stroke-dashoffset: -90;
+  }
+}
+
+/* Agro Rice: a paddy sheet, loose output tickets and an organic grain halo. */
+.riceHero {
+  padding-bottom: 65px;
+  background: radial-gradient(
+    ellipse at 25% 45%,
+    color-mix(in srgb, #21a816 5%, transparent),
+    transparent 48%
+  );
+}
+.riceLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 75px;
+  align-items: start;
+}
+.grainScene {
+  position: relative;
+  padding: 5px 10px 0;
+}
+.grainHalo {
+  position: absolute;
+  inset: 22px 0 45px;
+  border: 1px dashed color-mix(in srgb, var(--industry-green) 22%, transparent);
+  border-radius: 50%;
+  transform: rotate(15deg);
+}
+.paddySheet {
+  position: relative;
+  max-width: 330px;
+  padding: 23px 24px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 25px 45px -30px #184e2c35;
+  transform: rotate(-4deg);
+  margin-left: 10px;
+}
+.paddySheet > header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--industry-green);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+.paddyDrawing {
+  display: block;
+  color: var(--industry-green);
+  width: 190px;
+  height: 225px;
+  margin: 14px auto 0;
+}
+.lotReference {
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+.lotReference > span {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 7px;
+  letter-spacing: 0.12em;
+}
+.lotReference > b {
+  display: block;
+  color: var(--industry-green);
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+.lotReference > strong {
+  display: block;
+  color: var(--ink);
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  margin-top: 10px;
+}
+.outputTickets {
+  position: absolute;
+  top: 85px;
+  right: -5px;
+  width: 178px;
+  display: grid;
+  gap: 12px;
+}
+.outputTickets > div {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 8px 10px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  box-shadow: 0 12px 22px -20px #00318055;
+  transform: rotate(4deg);
+}
+.outputTickets > div:nth-child(2) {
+  transform: rotate(-2deg);
+  margin-left: -12px;
+}
+.outputTickets > div:nth-child(3) {
+  transform: rotate(3deg);
+}
+.outputTickets svg {
+  grid-row: 1/3;
+  color: var(--industry-green);
+}
+.outputTickets span {
+  color: var(--muted-foreground);
+  font-size: 9px;
+}
+.outputTickets b {
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.balanceNote {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 28px;
+  color: var(--industry-green);
+  font-size: 9px;
+}
+.balanceNote > b {
+  font-weight: 500;
+  color: var(--industry-amber);
+}
+.grainScene figcaption {
+  margin-top: 15px;
+  font-size: 8px;
+}
+.ricePrinciples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 30px;
+}
+.ricePrinciples > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+
+/* Selectable process context. */
+.processSection {
+  padding-block: 62px;
+  border-block: 1px solid var(--border);
+  background: var(--cream);
+}
+.sectionHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
+}
+.sectionHeading h2 {
+  margin-top: 11px;
+}
+.sectionHeading > div > p:last-child:not(.eyebrow) {
+  max-width: 700px;
+  margin-top: 13px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.85;
+}
+.sectionHeading > .badge {
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.stageButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.stageButtons > button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 54px;
+  padding: 16px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--cream);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.stageButtons button > span {
+  color: var(--industry-blue);
+  font-size: 9px;
+}
+.stageButtons button > svg {
+  margin-left: auto;
+  color: var(--industry-blue);
+}
+.stageButtons button[aria-pressed="true"] {
+  background: var(--card);
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+}
+.stageButtons button:hover {
+  background: var(--card);
+}
+.stageDetail {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 50px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: var(--card);
+  margin-top: 18px;
+}
+.stageDetail h3 {
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  max-width: 470px;
+}
+.stageDetail p {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.9;
+  margin-top: 17px;
+}
+.stageDetail dl {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+.stageDetail dl > div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 15px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.stageDetail dt {
+  color: var(--muted-foreground);
+}
+.stageDetail dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+/* Fully usable quantity exercises stay outside the blurred canvas. */
+.workspaceSection {
+  padding-block: 65px;
+  scroll-margin-top: 100px;
+}
+.workspace {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--card);
+  box-shadow: 0 22px 55px -45px #00318055;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 37px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card);
+  color: var(--ink);
+  padding: 9px 12px;
+  font-size: 11px !important;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.button:hover {
+  border-color: var(--primary);
+  background: var(--industry-wash);
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.field > input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 13px;
+}
+.field:focus-within > span {
+  color: var(--industry-blue);
+}
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.metric {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+.metric dt {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.8;
+}
+.metric dd {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.note {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+  margin-top: 23px !important;
+  padding-top: 15px;
+  border-top: 1px dashed var(--border);
+  font-size: 10px !important;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+}
+.note > svg {
+  color: var(--industry-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.steelWorkspace {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+.weighmentFields {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  gap: 18px;
+  align-items: end;
+}
+.weighmentFields > span {
+  padding-block: 14px;
+  color: var(--muted-foreground);
+  text-align: center;
+}
+.netResult {
+  padding: 24px 0;
+  margin-block: 23px;
+  border-block: 1px solid var(--border);
+}
+.netResult > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.netResult > strong {
+  display: block;
+  color: var(--industry-blue);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.05em;
+  margin-top: 10px;
+}
+.allocationFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.allocationPanel {
+  padding: 24px;
+  background: var(--industry-wash);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.allocationPanel > span {
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+.allocationPanel h3 {
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  margin-top: 16px;
+}
+.allocationPanel .metrics {
+  margin-top: 25px;
+}
+.allocationPanel .metric dd {
+  font-size: 24px;
+}
+.allocationTrack {
+  height: 8px;
+  background: var(--card);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 23px;
+}
+.allocationTrack i {
+  display: block;
+  height: 100%;
+  background: #1088ef;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+.feedback {
+  padding-top: 17px;
+  color: var(--industry-green);
+  font-size: 11px;
+  line-height: 1.85;
+}
+.feedback[data-warning="true"] {
+  color: var(--industry-amber);
+}
+.riceWorkspace {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 30px;
+  align-items: start;
+}
+.paddyInput {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--industry-wash);
+}
+.paddyInput > span {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  color: var(--industry-green);
+  margin-top: 13px;
+}
+.outputFields {
+  display: grid;
+  gap: 16px;
+  margin-top: 23px;
+}
+.outputFields > div {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.outputFields > div > span {
+  display: grid;
+  place-items: center;
+  width: 33px;
+  height: 33px;
+  background: var(--industry-wash);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--industry-green);
+  font-size: 9px;
+  flex-shrink: 0;
+}
+.outputFields .field {
+  flex: 1;
+}
+.massPanel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--industry-wash);
+  padding: 25px;
+}
+.massPanel > span {
+  color: var(--industry-green);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+.massPanel h3 {
+  font-size: 27px;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+  margin-top: 16px;
+}
+.massPanel .metrics {
+  margin-top: 25px;
+  gap: 13px;
+}
+.massPanel .metric dd {
+  font-size: 25px;
+}
+.massPanel > .feedback {
+  padding-top: 23px;
+}
+
+/* Product context, illustrative canvas and decision-useful FAQs. */
+.modulesSection {
+  padding-block: 62px;
+  background: var(--cream);
+  border-block: 1px solid var(--border);
+}
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+}
+.moduleGrid > a {
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+.moduleGrid > a:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+.moduleGrid a > span {
+  color: var(--industry-blue);
+  font-size: 7px;
+  letter-spacing: 0.08em;
+}
+.moduleGrid h3 {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  margin-top: 22px;
+}
+.moduleGrid h3 > svg {
+  color: var(--industry-blue);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.moduleGrid p {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.85;
+  margin-top: 15px;
+  flex: 1;
+}
+.moduleGrid small {
+  color: var(--industry-blue);
+  font-size: 9px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.previewSection {
+  padding-block: 65px;
+}
+.productCanvas {
+  min-height: 740px;
+  background: var(--card);
+}
+.productCanvas > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.productCanvas header > b {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+}
+.productCanvas header b > span {
+  color: var(--industry-blue);
+}
+.productCanvas header > span {
+  font-size: 10px;
+  color: var(--muted-foreground);
+  flex: 1;
+}
+.canvasBody {
+  padding: 25px;
+}
+.canvasHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.canvasHeading h3 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.canvasHeading > span {
+  color: var(--industry-blue);
+  font-size: 10px;
+}
+.canvasMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding-block: 23px;
+}
+.canvasMetrics .metric {
+  background: var(--cream);
+}
+.canvasMetrics .metric dd {
+  font-size: 23px;
+}
+.tableScroll {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+.tableScroll table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 11px;
+}
+.tableScroll th {
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--border);
+  background: var(--industry-wash);
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tableScroll td {
+  padding: 18px 15px;
+  border-bottom: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.8;
+}
+.tableScroll td:first-child {
+  color: var(--industry-blue);
+  font-weight: 500;
+}
+.tableScroll tr:last-child td {
+  border-bottom: 0;
+}
+.tableScroll tbody tr:nth-child(even) {
+  background: var(--cream);
+}
+.canvasNote {
+  margin-top: 22px !important;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.85;
+}
+.faqSection {
+  padding-block: 62px;
+  background: var(--cream);
+  border-block: 1px solid var(--border);
+}
+.faqSection > .wrap {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 65px;
+}
+.faqSection h2 {
+  max-width: 350px;
+  margin-top: 12px;
+}
+.otherIndustry {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--industry-blue);
+  font-size: 11px;
+  margin-top: 25px;
+  padding: 3px 0;
+}
+.faqList details {
+  border-bottom: 1px solid var(--border);
+}
+.faqList summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 21px 3px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+.faqList summary > svg {
+  color: var(--industry-blue);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faqList details[open] summary > svg {
+  transform: rotate(45deg);
+}
+.faqList details > p {
+  max-width: 620px;
+  padding: 0 3px 22px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.closing {
+  padding-block: 55px;
+  border-block: 1px solid var(--border);
+  background: var(--industry-wash);
+}
+.closing > .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+.closing h2 {
+  max-width: 650px;
+  margin-top: 12px;
+  font-size: 31px;
+}
+.closing p:last-child {
+  margin-top: 16px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.85;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1050px) {
+  .industry h1 {
+    font-size: 48px;
+  }
+  .steelHeading {
+    gap: 45px;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+  .rollingArt {
+    padding-inline: 60px;
+  }
+  .coilLabel {
+    width: 145px;
+    padding: 16px;
+    top: 80px;
+  }
+  .coilLabel > b {
+    font-size: 14px;
+  }
+  .netSlip {
+    width: 165px;
+    padding: 17px;
+    top: 35px;
+  }
+  .netSlip > b {
+    font-size: 25px;
+  }
+  .riceLayout {
+    gap: 40px;
+  }
+  .paddySheet {
+    max-width: 285px;
+    margin-left: 0;
+    padding-inline: 20px;
+  }
+  .paddyDrawing {
+    width: 170px;
+    height: 210px;
+  }
+  .outputTickets {
+    width: 155px;
+    right: -8px;
+  }
+  .outputTickets > div {
+    padding: 14px;
+    gap: 7px;
+  }
+  .outputTickets b {
+    font-size: 14px;
+  }
+  .balanceNote {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .steelWorkspace,
+  .riceWorkspace {
+    gap: 23px;
+  }
+  .weighmentFields {
+    gap: 12px;
+    grid-template-columns: 1fr 15px 1fr;
+  }
+  .allocationPanel,
+  .massPanel {
+    padding: 21px;
+  }
+  .allocationPanel .metrics {
+    grid-template-columns: 1fr;
+  }
+  .massPanel .metric {
+    padding: 14px;
+  }
+  .massPanel .metric dd {
+    font-size: 23px;
+  }
+  .moduleGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 800px) {
+  .wrap {
+    padding-inline: 24px;
+  }
+  .industry h1 {
+    font-size: clamp(36px, 6.5vw, 53px);
+  }
+  .steelHeading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .materialPassport {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 20px 0;
+    border-left: 0;
+    border-block: 1px solid var(--border);
+  }
+  .materialPassport > header {
+    grid-column: 1 / -1;
+  }
+  .materialPassport > div {
+    padding-top: 0;
+  }
+  .materialPassport b {
+    font-size: 12px;
+  }
+  .rollingArt {
+    padding-inline: 20px;
+    padding-top: 15px;
+  }
+  .coilLabel {
+    top: 65px;
+    width: 135px;
+    left: 0;
+    padding: 14px;
+  }
+  .coilLabel > small {
+    font-size: 8px;
+  }
+  .netSlip {
+    width: 150px;
+    top: 25px;
+    padding: 15px;
+  }
+  .netSlip > svg {
+    width: 18px;
+    margin-bottom: 13px;
+  }
+  .netSlip > b {
+    font-size: 22px;
+  }
+  .steelFlow {
+    gap: 12px;
+    padding-top: 15px;
+  }
+  .steelFlow > span {
+    font-size: 7px;
+  }
+  .riceLayout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .riceLayout > div {
+    grid-row: 1;
+  }
+  .grainScene {
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto !important;
+  }
+  .paddySheet {
+    max-width: 330px;
+    margin-left: 10px;
+  }
+  .paddyDrawing {
+    width: 190px;
+    height: 225px;
+  }
+  .outputTickets {
+    width: 175px;
+    right: 0;
+  }
+  .outputTickets b {
+    font-size: 16px;
+  }
+  .stageDetail {
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+  .stageDetail h3 {
+    max-width: 100%;
+  }
+  .stageDetail dl {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .stageDetail dl > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .sectionHeading {
+    flex-direction: column;
+    align-items: start;
+    gap: 18px;
+  }
+  .steelWorkspace,
+  .riceWorkspace {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .allocationPanel .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+  .massPanel .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+  .faqSection > .wrap {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .faqSection h2 {
+    max-width: 100%;
+  }
+  .otherIndustry {
+    margin-top: 20px;
+  }
+  .closing > .wrap {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 540px) {
+  .wrap {
+    padding-inline: 18px;
+  }
+  .breadcrumb {
+    font-size: 10px;
+    gap: 6px;
+    padding-block: 19px 6px;
+  }
+  .industry > section:first-of-type {
+    padding-block-start: 12px;
+  }
+  .industry h1 {
+    font-size: clamp(32px, 8vw, 43px);
+    letter-spacing: -0.045em;
+    margin-top: 15px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+  .lead {
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 20px !important;
+  }
+  .actions {
+    gap: 17px;
+    margin-top: 25px;
+  }
+  .steelHero,
+  .riceHero {
+    padding-bottom: 45px;
+  }
+  .materialPassport {
+    gap: 15px 12px;
+    padding-block: 18px;
+  }
+  .materialPassport div > span {
+    font-size: 8px;
+  }
+  .materialPassport b {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+  .rollingScene {
+    margin-top: 25px !important;
+    padding: 17px 14px;
+  }
+  .rollingScene header > span {
+    font-size: 8px;
+  }
+  .rollingScene .badge {
+    font-size: 8px;
+  }
+  .rollingArt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 0;
+  }
+  .coilDrawing {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+  }
+  .coilLabel,
+  .netSlip {
+    position: static;
+    inset: auto;
+    width: 100%;
+    transform: none;
+    box-shadow: none;
+  }
+  .coilLabel {
+    padding: 14px;
+  }
+  .coilLabel > span {
+    font-size: 6px;
+  }
+  .coilLabel > b {
+    font-size: 13px;
+  }
+  .netSlip {
+    padding: 14px;
+  }
+  .netSlip > svg {
+    width: 17px;
+    height: 17px;
+    margin-bottom: 10px;
+  }
+  .netSlip > span {
+    font-size: 6px;
+  }
+  .netSlip > b {
+    font-size: 22px;
+  }
+  .netSlip > small {
+    font-size: 7px;
+  }
+  .steelFlow {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-block: 20px 15px;
+  }
+  .steelFlow > span {
+    font-size: 6px;
+    letter-spacing: 0.04em;
+  }
+  .steelFlow > i {
+    max-width: 25px;
+  }
+  .rollingScene figcaption {
+    font-size: 7px;
+  }
+  .grainScene {
+    padding-inline: 0;
+  }
+  .paddySheet {
+    max-width: 260px;
+    padding: 19px;
+    margin-left: 4px;
+  }
+  .paddySheet > header {
+    font-size: 7px;
+    gap: 8px;
+  }
+  .paddyDrawing {
+    width: 155px;
+    height: 200px;
+    margin-top: 10px;
+  }
+  .lotReference {
+    padding-top: 15px;
+  }
+  .lotReference > span {
+    font-size: 6px;
+  }
+  .lotReference > b {
+    font-size: 12px;
+  }
+  .lotReference > strong {
+    font-size: 27px;
+  }
+  .outputTickets {
+    width: 135px;
+    right: -3px;
+    top: 86px;
+    gap: 10px;
+  }
+  .outputTickets > div {
+    padding: 12px 10px;
+    grid-template-columns: 16px 1fr;
+    gap: 7px;
+  }
+  .outputTickets svg {
+    width: 15px;
+  }
+  .outputTickets span {
+    font-size: 8px;
+  }
+  .outputTickets b {
+    font-size: 13px;
+  }
+  .outputTickets > div:nth-child(2) {
+    margin-left: -5px;
+  }
+  .balanceNote {
+    font-size: 8px;
+    gap: 7px;
+    padding-top: 23px;
+  }
+  .grainScene figcaption {
+    font-size: 7px;
+  }
+  .ricePrinciples {
+    gap: 15px;
+    font-size: 9px;
+    margin-top: 25px;
+  }
+  .processSection,
+  .workspaceSection,
+  .modulesSection,
+  .previewSection,
+  .faqSection {
+    padding-block: 45px;
+  }
+  .stageButtons {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+  .stageButtons > button {
+    padding: 13px;
+    min-height: 47px;
+    font-size: 11px;
+    gap: 10px;
+  }
+  .stageButtons button > span {
+    font-size: 8px;
+  }
+  .stageButtons button > svg {
+    width: 14px;
+  }
+  .stageDetail {
+    padding: 20px;
+    gap: 24px;
+  }
+  .stageDetail h3 {
+    font-size: 24px;
+  }
+  .stageDetail p {
+    font-size: 11px;
+  }
+  .stageDetail dl {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .stageDetail dl > div {
+    grid-template-columns: 95px 1fr;
+    gap: 14px;
+    font-size: 10px;
+  }
+  .workspace {
+    padding: 17px;
+    border-radius: 10px;
+  }
+  .weighmentFields {
+    grid-template-columns: 1fr 12px 1fr;
+    gap: 9px;
+  }
+  .field {
+    font-size: 9px;
+  }
+  .field > input {
+    min-height: 44px;
+    font-size: 16px;
+    padding-inline: 9px;
+  }
+  .netResult > strong {
+    font-size: 41px;
+  }
+  .allocationFields {
+    gap: 13px;
+  }
+  .allocationPanel,
+  .massPanel {
+    padding: 19px;
+  }
+  .allocationPanel h3 {
+    font-size: 23px;
+  }
+  .metric {
+    padding: 13px;
+  }
+  .metric dt {
+    font-size: 9px;
+  }
+  .metric dd,
+  .allocationPanel .metric dd,
+  .massPanel .metric dd {
+    font-size: 23px;
+  }
+  .paddyInput {
+    padding: 17px;
+  }
+  .outputFields {
+    gap: 15px;
+  }
+  .outputFields > div {
+    gap: 13px;
+  }
+  .massPanel h3 {
+    font-size: 25px;
+  }
+  .massPanel .metrics {
+    gap: 10px;
+  }
+  .massPanel .metric {
+    padding: 12px;
+  }
+  .massPanel .metric dt {
+    font-size: 8px;
+  }
+  .moduleGrid {
+    gap: 12px;
+  }
+  .moduleGrid > a {
+    padding: 17px;
+  }
+  .moduleGrid a > span {
+    font-size: 6px;
+  }
+  .moduleGrid h3 {
+    font-size: 16px;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .moduleGrid h3 > svg {
+    width: 14px;
+  }
+  .moduleGrid p {
+    font-size: 10px;
+  }
+  .moduleGrid small {
+    font-size: 8px;
+  }
+  .productCanvas > header {
+    padding: 16px;
+    gap: 10px;
+  }
+  .productCanvas header > span {
+    font-size: 9px;
+  }
+  .productCanvas header > .badge {
+    width: 100%;
+    font-size: 8px;
+  }
+  .canvasBody {
+    padding: 17px;
+  }
+  .canvasHeading h3 {
+    font-size: 20px;
+  }
+  .canvasMetrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+  .canvasMetrics .metric:last-child {
+    grid-column: 1 / -1;
+  }
+  .canvasMetrics .metric dd {
+    font-size: 19px;
+  }
+  .productCanvas {
+    min-height: 790px;
+  }
+  .faqList summary {
+    font-size: 12px;
+  }
+  .faqList details > p {
+    font-size: 11px;
+  }
+  .closing {
+    padding-block: 40px;
+  }
+  .closing h2 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 359px) {
+  .moduleGrid {
+    grid-template-columns: 1fr;
+  }
+  .allocationFields {
+    grid-template-columns: 1fr;
+  }
+  .weighmentFields {
+    grid-template-columns: 1fr;
+  }
+  .weighmentFields > span {
+    padding: 0;
+  }
+  .allocationPanel .metrics,
+  .massPanel .metrics {
+    grid-template-columns: 1fr;
+  }
+  .outputTickets {
+    width: 120px;
+  }
+  .paddySheet {
+    max-width: 235px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .industry *,
+  .industry *::before,
+  .industry *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
