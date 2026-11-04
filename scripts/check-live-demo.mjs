@@ -3,6 +3,14 @@ import fs from "node:fs";
 import path from "node:path";
 import ts from "typescript";
 
+const config = ts.readConfigFile("tsconfig.json", ts.sys.readFile);
+const { options } = ts.parseJsonConfigFileContent(
+  config.config,
+  ts.sys,
+  process.cwd(),
+);
+const sharedButton = path.resolve("components/live-demo-button.tsx");
+
 function sourceFiles(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     const file = path.join(directory, entry.name);
@@ -41,8 +49,19 @@ for (const file of [...sourceFiles("app"), ...sourceFiles("components")]) {
         );
         usages.set(file, (usages.get(file) ?? 0) + 1);
         assert(
-          source.includes(
-            'import LiveDemoButton from "@/components/live-demo-button"',
+          ast.statements.some(
+            (statement) =>
+              ts.isImportDeclaration(statement) &&
+              ts.isStringLiteral(statement.moduleSpecifier) &&
+              path.resolve(
+                ts.resolveModuleName(
+                  statement.moduleSpecifier.text,
+                  file,
+                  options,
+                  ts.sys,
+                ).resolvedModule?.resolvedFileName ?? "",
+              ) === sharedButton &&
+              statement.importClause?.name?.text === "LiveDemoButton",
           ),
           `Use the global component directly in ${file}`,
         );

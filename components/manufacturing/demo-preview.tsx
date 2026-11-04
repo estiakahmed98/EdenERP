@@ -11,9 +11,11 @@ import css from "./demo-preview.module.css";
 export default function DemoPreview({
   title,
   children,
+  description = "Book a guided demo to explore the full workspace, records and production process.",
 }: {
   title: string;
   children: ReactNode;
+  description?: string;
 }) {
   const surface = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -83,10 +85,7 @@ export default function DemoPreview({
           </span>
           <p className={css.bookingEyebrow}>{title} · Full walkthrough</p>
           <h3>See the complete workflow.</h3>
-          <p>
-            Book a guided demo to explore the full workspace, records and
-            production process.
-          </p>
+          <p>{description}</p>
           <div className={css.bookingAction}>
             <LiveDemoButton />
           </div>

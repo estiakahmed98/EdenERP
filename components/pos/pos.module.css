@@ -1,0 +1,3542 @@
+.pos {
+  --pos-blue: color-mix(in srgb, #1088ef 78%, var(--ink));
+  --pos-green: #187746;
+  --pos-red: #b7354b;
+  --pos-wash: color-mix(in srgb, #1088ef 5%, var(--card));
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  overflow: clip;
+}
+:global(.dark) .pos {
+  --pos-blue: #83c8ff;
+  --pos-green: #8ed99a;
+  --pos-red: #ff9fae;
+}
+.pos * {
+  min-width: 0;
+}
+.wrap {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+.pos h1,
+.pos h2,
+.pos h3,
+.pos p,
+.pos figure,
+.pos dl {
+  margin: 0;
+}
+.pos h1 {
+  font-size: clamp(36px, 4.35vw, 62px);
+  line-height: 1.1;
+  letter-spacing: -0.052em;
+  font-weight: 500;
+  color: var(--ink);
+}
+.pos h1 em {
+  color: var(--pos-blue);
+  font-style: normal;
+}
+.pos h2 {
+  font-size: clamp(25px, 2.7vw, 36px);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  color: var(--ink);
+}
+.pos h3 {
+  color: var(--ink);
+}
+.pos button,
+.pos input,
+.pos select {
+  font: inherit;
+}
+.pos button {
+  cursor: pointer;
+}
+.pos button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.pos a:focus-visible,
+.pos button:focus-visible,
+.pos input:focus-visible,
+.pos select:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-block: 24px 8px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.pos > section:first-of-type {
+  padding-block-start: 22px;
+}
+.breadcrumb [aria-current] {
+  color: var(--ink);
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--pos-blue);
+}
+.pos h1 {
+  margin-top: 21px;
+}
+.lead {
+  max-width: 480px;
+  margin-top: 24px !important;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin-top: 31px;
+}
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.textLink:hover {
+  color: var(--pos-blue);
+}
+.textLink svg {
+  transition: transform 0.2s;
+}
+.textLink:hover svg {
+  transform: translateY(3px);
+}
+.figureLabel {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.7;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.demoBadge {
+  color: var(--pos-blue);
+  border-color: color-mix(in srgb, var(--primary) 23%, var(--border));
+  background: var(--pos-wash);
+}
+.denim {
+  width: 90px;
+  height: 105px;
+  color: #32669d;
+  flex-shrink: 0;
+}
+.barcode {
+  width: 100%;
+  height: 29px;
+  background: repeating-linear-gradient(
+    90deg,
+    currentColor 0 1px,
+    transparent 1px 3px,
+    currentColor 3px 5px,
+    transparent 5px 7px,
+    currentColor 7px 8px,
+    transparent 8px 12px,
+    currentColor 12px 16px,
+    transparent 16px 18px,
+    currentColor 18px 19px,
+    transparent 19px 22px
+  );
+  opacity: 0.7;
+}
+.sketchArrow {
+  width: 100px;
+  height: 50px;
+}
+.handNote,
+.receiptAnnotation,
+.orbitLabel {
+  color: var(--pos-blue);
+  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+/* Checkout: offset terminal, merchandise and a paper trail. */
+.registerHero {
+  padding-block: 66px 80px;
+  background: radial-gradient(
+    ellipse at 82% 50%,
+    color-mix(in srgb, #1088ef 6%, transparent),
+    transparent 50%
+  );
+}
+.registerLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 32px;
+}
+.quietFeatures {
+  display: flex;
+  gap: 23px;
+  margin-top: 32px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.quietFeatures span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.checkoutScene {
+  position: relative;
+  min-height: 460px;
+  padding: 75px 0 0 35px;
+}
+.sceneHalo {
+  position: absolute;
+  inset: 14px 0 30px;
+  border: 1px solid color-mix(in srgb, var(--primary) 12%, transparent);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+}
+.sceneHalo::after {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px dashed color-mix(in srgb, var(--primary) 14%, transparent);
+  border-radius: 50%;
+}
+.terminal {
+  position: relative;
+  width: 94%;
+  padding: 19px;
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, var(--border));
+  border-radius: 17px;
+  background: var(--card);
+  box-shadow:
+    0 30px 70px -35px #00318055,
+    6px 7px 0 color-mix(in srgb, var(--primary) 7%, var(--card));
+  transform: perspective(1000px) rotateY(-7deg) rotateZ(-2deg);
+}
+.terminal header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+}
+.terminal header > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pos-blue);
+  font-weight: 500;
+}
+.terminal header i {
+  font-size: 9px;
+  font-style: normal;
+  color: var(--muted-foreground);
+}
+.scanBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 12px;
+  margin-top: 22px;
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, var(--border));
+  border-radius: 9px;
+  color: var(--pos-blue);
+  background: var(--pos-wash);
+  font-size: 11px;
+}
+.terminalProduct {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.terminalProduct .denim {
+  width: 36px;
+  height: 51px;
+}
+.terminalProduct div {
+  flex: 1;
+}
+.terminalProduct b {
+  font-size: 12px;
+  font-weight: 500;
+}
+.terminalProduct small {
+  display: block;
+  color: var(--muted-foreground);
+  margin-top: 5px;
+  font-size: 9px;
+}
+.terminalProduct strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.terminalTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 18px;
+}
+.terminalTotal span {
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.terminalTotal strong {
+  font-size: 25px;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.mockAction {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  padding: 13px;
+  border-radius: 7px;
+  background: #003180;
+  color: #fff;
+  font-size: 11px;
+}
+.productFloat {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 13px;
+  width: 125px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 10px 35px -15px #00318030;
+  border-radius: 12px;
+  transform: rotate(7deg);
+}
+.productFloat .denim {
+  display: block;
+  margin: auto;
+  width: 52px;
+  height: 70px;
+}
+.productFloat span,
+.productFloat b {
+  display: block;
+  text-align: center;
+  font-size: 9px;
+  margin-top: 7px;
+}
+.productFloat span {
+  color: var(--pos-blue);
+  letter-spacing: 0.1em;
+}
+.productFloat b {
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+.smallSlip {
+  position: absolute;
+  bottom: 3px;
+  left: 9px;
+  width: 160px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 25px -15px #00318044;
+  transform: rotate(5deg);
+}
+.smallSlip b,
+.smallSlip span {
+  display: block;
+  font-size: 8px;
+  margin-top: 10px;
+  text-align: center;
+}
+.smallSlip span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.handNote {
+  position: absolute;
+  bottom: 40px;
+  right: 7px;
+  transform: rotate(-6deg);
+}
+.handNote svg {
+  display: block;
+  margin-left: 50px;
+  transform: rotate(160deg);
+}
+.checkoutScene > .figureLabel {
+  margin-top: 55px;
+  padding-left: 100px;
+}
+
+/* Shift: a wide ledger and a tangible cash drawer. */
+.shiftsHero {
+  padding-block: 62px 50px;
+}
+.shiftTop {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.drawerScene {
+  position: relative;
+  padding: 12px 20px 5px;
+}
+.drawerTop {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 16px 16px 5px 5px;
+  background: var(--pos-wash);
+}
+.drawerTop svg {
+  color: var(--pos-blue);
+  margin-bottom: 20px;
+}
+.drawerTop span,
+.drawerTop b {
+  display: block;
+}
+.drawerTop span {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+.drawerTop b {
+  margin-top: 8px;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.drawer {
+  display: flex;
+  align-items: stretch;
+  gap: 9px;
+  margin: 8px -14px 0;
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 7px 7px 15px 15px;
+  background: var(--card);
+  box-shadow: 0 18px 30px -25px #00318060;
+  transform: perspective(700px) rotateX(17deg);
+}
+.banknotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 85px;
+  background: color-mix(in srgb, #21a816 8%, var(--card));
+  border: 1px solid color-mix(in srgb, #21a816 22%, var(--border));
+  box-shadow:
+    0 3px var(--card),
+    0 4px var(--border),
+    0 6px var(--card),
+    0 7px var(--border);
+  font-size: 25px;
+  color: var(--pos-green);
+}
+.banknotes span {
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+.coins {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.coins i {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: var(--pos-wash);
+  border: 3px double color-mix(in srgb, var(--primary) 40%, var(--border));
+  box-shadow: 0 4px var(--border);
+}
+.coins i:nth-child(2) {
+  margin-top: -20px;
+}
+.varianceStamp {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: fit-content;
+  margin: 20px auto 12px;
+  padding: 11px 15px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--pos-green);
+  font-size: 10px;
+}
+.varianceStamp span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.shiftRibbon {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 50px 0 0;
+  padding: 22px 0;
+  border-block: 1px solid var(--border);
+}
+.shiftRibbon li {
+  padding-inline: 23px;
+  border-right: 1px dashed var(--border);
+}
+.shiftRibbon li:first-child {
+  padding-left: 0;
+}
+.shiftRibbon li:last-child {
+  border-right: 0;
+}
+.shiftRibbon span,
+.shiftRibbon strong {
+  display: block;
+}
+.shiftRibbon span {
+  font-size: 9px;
+  color: var(--pos-blue);
+  letter-spacing: 0.12em;
+}
+.shiftRibbon strong {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Receipt: paper-led composition, with copy on the opposite side. */
+.receiptsHero {
+  padding-block: 64px 80px;
+}
+.receiptsLayout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 80px;
+  align-items: center;
+}
+.receiptScene {
+  position: relative;
+  min-height: 460px;
+  padding: 18px 50px 40px;
+}
+.receiptBack {
+  position: absolute;
+  inset: 30px 0 40px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    color-mix(in srgb, var(--primary) 11%, transparent),
+    transparent 70%
+  );
+}
+.receiptPaper {
+  position: relative;
+  max-width: 305px;
+  margin-inline: auto;
+  padding: 34px 24px 30px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 20px 55px -25px #00318045;
+  font-family: ui-monospace, monospace;
+}
+.receiptScene .receiptPaper {
+  transform: rotate(-5deg);
+}
+.receiptPaper::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -1px;
+  right: -1px;
+  height: 9px;
+  background:
+    linear-gradient(135deg, var(--card) 25%, transparent 25%) -5px 0/10px 10px,
+    linear-gradient(225deg, var(--card) 25%, transparent 25%) -5px 0/10px 10px;
+}
+.receiptBrand {
+  display: block;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.receiptSubtitle {
+  display: block;
+  font-size: 8px;
+  text-align: center;
+  color: var(--muted-foreground);
+  margin-top: 12px;
+  letter-spacing: 0.035em;
+}
+.paperRule {
+  height: 1px;
+  border-top: 1px dashed var(--border);
+  margin-block: 22px;
+}
+.paperLine {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-block: 15px;
+  font-size: 10px;
+}
+.paperLine strong {
+  font-size: 12px;
+}
+.receiptPaper .barcode {
+  margin-top: 28px;
+}
+.receiptAnnotation {
+  position: absolute;
+  top: 96px;
+  right: -8px;
+  transform: rotate(7deg);
+  font-size: 25px;
+}
+.receiptAnnotation .sketchArrow {
+  display: block;
+  transform: scaleX(-1) rotate(-20deg);
+  margin-left: -35px;
+}
+.receiptScene .figureLabel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.receiptChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 25px;
+}
+.receiptChips span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+
+/* Z summary: a centered statement, rather than a dashboard hero. */
+.summaryHero {
+  padding-block: 52px 70px;
+  background: linear-gradient(180deg, transparent 50%, var(--pos-wash));
+}
+.centerCopy {
+  text-align: center;
+  max-width: 770px;
+  margin-inline: auto;
+}
+.centerCopy .lead {
+  margin-inline: auto !important;
+  max-width: 570px;
+}
+.centerCopy .heroActions {
+  justify-content: center;
+}
+.closeStatement {
+  max-width: 960px;
+  margin: 42px auto 0 !important;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  padding: 22px 30px 15px;
+  box-shadow: 0 20px 55px -40px #00318066;
+}
+.statementLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.statementLabel > span {
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  color: var(--muted-foreground);
+}
+.statementFigure {
+  text-align: center;
+  padding-block: 23px;
+}
+.statementFigure > span {
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+.statementFigure > strong {
+  display: block;
+  font-size: clamp(54px, 8vw, 96px);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.06em;
+  line-height: 1.2;
+}
+.statementFigure strong small {
+  font-size: 35px;
+  color: var(--pos-blue);
+}
+.statementFigure strong span {
+  font-size: 0.55em;
+  color: var(--muted-foreground);
+}
+.statementFigure p {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin-top: 8px;
+}
+.salesBridge {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1.5fr;
+  gap: 20px;
+  align-items: center;
+  border-block: 1px solid var(--border);
+  padding-block: 22px;
+}
+.salesBridge div > span,
+.salesBridge b {
+  display: block;
+}
+.salesBridge div > span {
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.salesBridge b {
+  font-size: 21px;
+  font-weight: 500;
+  margin-top: 6px;
+  letter-spacing: -0.025em;
+}
+.salesBridge > span {
+  color: var(--muted-foreground);
+}
+.bridgeResult b {
+  color: var(--pos-green);
+}
+.closeStatement .figureLabel {
+  padding-top: 13px;
+}
+
+/* Outlet performance: four differently proportioned evidence tiles. */
+.dashboardHero {
+  padding-block: 68px;
+}
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 58px;
+  align-items: center;
+}
+.dashboardFoot {
+  margin-top: 38px !important;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--muted-foreground);
+}
+.dashboardMosaic {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 12px;
+}
+.dashboardMosaic > div {
+  border: 1px solid var(--border);
+  padding: 23px;
+  border-radius: 14px;
+  background: var(--card);
+}
+.dashboardMosaic .mosaicSales {
+  background: #003180;
+  color: #fff;
+  min-height: 242px;
+}
+.mosaicSales > span,
+.mosaicMargin > span {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+.mosaicSales > strong {
+  display: block;
+  font-size: 35px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  margin-top: 19px;
+}
+.singleBar {
+  display: flex;
+  align-items: end;
+  height: 105px;
+  gap: 17px;
+}
+.singleBar i {
+  display: block;
+  width: 45px;
+  height: 75px;
+  background: #6ac7ff;
+  border-radius: 6px 6px 0 0;
+  flex-shrink: 0;
+}
+.singleBar span {
+  font-size: 9px;
+  line-height: 1.7;
+  color: #d2e5ff;
+}
+.mosaicBasket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--pos-wash) !important;
+}
+.mosaicBasket svg {
+  color: var(--pos-blue);
+  margin-bottom: 18px;
+}
+.mosaicBasket strong {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--ink);
+}
+.mosaicBasket > span {
+  margin-top: 6px;
+  font-size: 12px;
+}
+.mosaicBasket small {
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 13px;
+  color: var(--muted-foreground);
+}
+.mosaicMargin {
+  grid-column: 1 / -1;
+}
+.mosaicMargin > span {
+  color: var(--muted-foreground);
+}
+.mosaicMargin strong {
+  display: block;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--pos-green);
+  margin-top: 8px;
+}
+.marginTrack {
+  height: 5px;
+  background: var(--pos-wash);
+  margin-top: 16px;
+  border-radius: 4px;
+}
+.marginTrack i {
+  display: block;
+  height: 100%;
+  width: 58%;
+  background: #21a816;
+  border-radius: 4px;
+}
+.mosaicMargin small {
+  display: block;
+  margin-top: 8px;
+  font-size: 9px;
+  color: var(--muted-foreground);
+}
+.dashboardMosaic .mosaicRegister {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-block: 14px;
+}
+.mosaicRegister svg {
+  color: var(--pos-blue);
+}
+.mosaicRegister > div {
+  flex: 1;
+}
+.mosaicRegister b {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.mosaicRegister span {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.dashboardMosaic .figureLabel {
+  grid-column: 1 / -1;
+}
+
+/* Loyalty: an overlapping membership card and a perforated voucher. */
+.loyaltyHero {
+  padding-block: 52px 55px;
+}
+.loyaltyScene {
+  position: relative;
+  max-width: 770px;
+  min-height: 345px;
+  margin: 35px auto 0 !important;
+  padding: 35px 30px;
+}
+.loyaltyCard {
+  position: relative;
+  z-index: 2;
+  width: 390px;
+  padding: 26px;
+  border-radius: 17px;
+  background: #003180;
+  color: #fff;
+  transform: rotate(-5deg);
+  box-shadow: 0 25px 45px -25px #00318088;
+}
+.loyaltyCard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 33px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.loyaltyCard header span span {
+  color: #74c7ff;
+}
+.loyaltyCard > span {
+  font-size: 9px;
+  letter-spacing: 0.17em;
+  color: #d7eaff;
+}
+.loyaltyCard > strong {
+  display: block;
+  font-size: 53px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.loyaltyCard footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  font-size: 9px;
+  color: #d7eaff;
+}
+.loyaltyCard footer i {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #8cc3fa;
+  border-radius: 50%;
+  box-shadow: 12px 0 0 -1px #1088ef;
+  margin-right: 12px;
+}
+.voucher {
+  position: absolute;
+  z-index: 3;
+  top: 115px;
+  right: 25px;
+  width: 310px;
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 16px;
+  padding: 23px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  box-shadow: 0 20px 35px -20px #00318050;
+  transform: rotate(7deg);
+}
+.voucher > div:first-child {
+  border-right: 1px dashed var(--border);
+  padding-right: 14px;
+}
+.voucher span {
+  display: block;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.voucher b {
+  display: block;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--pos-blue);
+}
+.voucher strong {
+  display: block;
+  margin-top: 13px;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.loyaltyRing {
+  position: absolute;
+  z-index: 0;
+  inset: 45px 0 22px;
+  border: 1px dashed color-mix(in srgb, var(--primary) 22%, transparent);
+  border-radius: 50%;
+  transform: rotate(-10deg);
+}
+.orbitLabel {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  transform: rotate(5deg);
+  font-size: 22px;
+}
+.loyaltyScene .figureLabel {
+  position: absolute;
+  bottom: 0;
+  inset-inline: 0;
+}
+
+/* Transfers: a wide route with an explicit origin and destination. */
+.transfersHero {
+  padding-block: 58px 65px;
+}
+.transferHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+}
+.transferHeading .lead {
+  max-width: 630px;
+}
+.transferHeading .heroActions {
+  max-width: 320px;
+  margin-bottom: 5px;
+  gap: 16px;
+}
+.routeScene {
+  display: grid;
+  grid-template-columns: 220px 1fr 250px;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+  margin-top: 45px !important;
+  padding: 35px 30px 20px;
+  border-block: 1px solid var(--border);
+  background: linear-gradient(90deg, var(--pos-wash), transparent);
+}
+.routeOrigin,
+.routeDestination {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+}
+.routeOrigin svg,
+.routeDestination svg {
+  color: var(--pos-blue);
+  margin-bottom: 23px;
+}
+.routeOrigin span,
+.routeDestination span {
+  display: block;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  letter-spacing: 0.11em;
+}
+.routeOrigin b,
+.routeDestination b {
+  display: block;
+  font-size: 16px;
+  margin-top: 7px;
+  font-weight: 500;
+}
+.routeCaption {
+  font-size: 10px;
+  color: var(--muted-foreground);
+  display: block;
+  text-align: center;
+}
+.routeTrack {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block: 28px;
+}
+.routeTrack i {
+  flex: 1;
+  height: 1px;
+  border-top: 1px dashed var(--primary);
+  position: relative;
+}
+.routeTrack i::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4px;
+  width: 7px;
+  height: 7px;
+  border: solid var(--primary);
+  border-width: 1px 1px 0 0;
+  transform: rotate(45deg);
+}
+.routeTrack > span {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 15px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--pos-blue);
+  animation: parcelBreathe 4s ease-in-out infinite;
+}
+.routeReference {
+  display: block;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  text-align: center;
+  line-height: 1.8;
+}
+.routeScene .figureLabel {
+  grid-column: 1 / -1;
+}
+@keyframes parcelBreathe {
+  50% {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px -13px #1088ef70;
+  }
+}
+
+/* Lots: an editorial unit count with a bale-to-SKU split. */
+.lotsHero {
+  padding-block: 65px;
+}
+.lotsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+.lotSource {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 35px;
+  padding-left: 16px;
+  border-left: 2px solid var(--primary);
+}
+.lotSource span {
+  color: var(--pos-blue);
+  font-size: 8px;
+  letter-spacing: 0.13em;
+}
+.lotSource b {
+  font-size: 12px;
+  font-weight: 500;
+}
+.lotSource small {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.7;
+}
+.lotScene {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding: 15px 5px 5px;
+}
+.lotQuantity {
+  text-align: center;
+}
+.lotQuantity b {
+  display: block;
+  font-weight: 400;
+  font-size: 86px;
+  letter-spacing: -0.07em;
+  line-height: 1;
+  color: var(--ink);
+}
+.lotQuantity span {
+  display: block;
+  font-size: 9px;
+  color: var(--pos-blue);
+  letter-spacing: 0.18em;
+  margin-top: 12px;
+}
+.bale {
+  position: relative;
+  z-index: 1;
+  margin-top: 25px;
+  padding: 18px 26px;
+  width: 200px;
+  background: var(--pos-wash);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, var(--border));
+  border-radius: 13px;
+  transform: rotate(-5deg);
+  box-shadow: 7px 7px 0 color-mix(in srgb, var(--primary) 7%, var(--card));
+}
+.bale > span {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: var(--pos-blue);
+}
+.bale > svg {
+  display: block;
+  margin: 14px auto;
+  color: var(--pos-blue);
+}
+.bale .barcode {
+  height: 16px;
+  opacity: 0.35;
+}
+.sortLine {
+  width: 65%;
+  height: 35px;
+  margin-top: 20px;
+  border: 1px dashed var(--primary);
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+}
+.sortedItems {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 10px;
+}
+.sortedItems > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 18px 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--pos-blue);
+}
+.sortedItems .denim {
+  height: 37px;
+  width: 37px;
+}
+.sortedItems span {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  text-align: center;
+}
+.lotScene .figureLabel {
+  margin-top: 18px;
+}
+
+/* Stock: a broad shelf rather than another two-column card. */
+.stockHero {
+  padding-block: 55px 55px;
+}
+.stockHeading {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: end;
+  gap: 40px;
+}
+.stockHeading .lead {
+  max-width: 590px;
+}
+.stockHeading > div:last-child {
+  padding-bottom: 5px;
+}
+.stockNumber {
+  font-size: 61px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+}
+.stockNumber span {
+  display: inline-block;
+  margin-left: 16px;
+  font-size: 11px;
+  letter-spacing: 0;
+  color: var(--muted-foreground);
+}
+.stockHeading .heroActions {
+  margin-top: 24px;
+  gap: 15px;
+}
+.shelfScene {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 42px !important;
+  padding: 1px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--border);
+  overflow: hidden;
+}
+.shelfItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 24px;
+  background: var(--card);
+}
+.shelfItem > span {
+  align-self: start;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--muted-foreground);
+}
+.shelfItem .denim {
+  height: 120px;
+  width: 100px;
+  margin-block: 15px;
+  transition: transform 0.3s ease;
+}
+.shelfItem:hover .denim {
+  transform: translateY(-5px) rotate(3deg);
+}
+.shelfItem:nth-child(2) .denim {
+  color: #78917d;
+}
+.shelfItem:nth-child(3) .denim {
+  color: #3898c4;
+}
+.shelfItem > div {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  padding-top: 15px;
+}
+.shelfItem b {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+}
+.shelfItem div span {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.shelfBase {
+  grid-column: 1 / -1;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: var(--pos-wash);
+}
+.shelfBase .barcode {
+  width: 80px;
+  height: 23px;
+  color: var(--pos-blue);
+}
+.shelfBase > span {
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  color: var(--muted-foreground);
+  flex: 1;
+}
+.shelfBase b {
+  font-weight: 400;
+  font-size: 12px;
+}
+.shelfScene .figureLabel {
+  grid-column: 1 / -1;
+  background: var(--card);
+  padding: 10px;
+}
+
+/* Network: a schematic hub, connected to two distinct outlet nodes. */
+.outletsHero {
+  padding-block: 72px 66px;
+}
+.outletsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.networkScene {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  grid-template-rows: 140px 140px auto auto;
+  gap: 18px 50px;
+  padding: 20px 10px;
+}
+.networkGrid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--primary) 20%, transparent) 0.8px,
+    transparent 0.8px
+  );
+  background-size: 18px 18px;
+  mask-image: radial-gradient(ellipse, #000, transparent 75%);
+}
+.networkHub {
+  position: relative;
+  z-index: 1;
+  grid-row: 1 / 3;
+  align-self: center;
+  padding: 26px 14px;
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--border));
+  background: var(--pos-wash);
+  border-radius: 12px;
+  text-align: center;
+}
+.networkHub svg {
+  margin: 0 auto 15px;
+  color: var(--pos-blue);
+}
+.networkHub b {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+.networkHub span {
+  display: block;
+  margin-top: 10px;
+  font-size: 8px;
+  color: var(--muted-foreground);
+}
+.networkBranch {
+  position: absolute;
+  top: 83px;
+  left: 25%;
+  width: 35%;
+  height: 158px;
+  border: 1px dashed var(--primary);
+  border-left: 0;
+  border-radius: 0 16px 16px 0;
+}
+.networkOutlet {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 20px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 12px 25px -22px #00318070;
+}
+.networkOutlet svg {
+  color: var(--pos-blue);
+  flex-shrink: 0;
+}
+.networkOutlet span {
+  font-size: 8px;
+  color: var(--pos-blue);
+  letter-spacing: 0.1em;
+}
+.networkOutlet b {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.networkOutlet small {
+  display: block;
+  margin-top: 6px;
+  font-size: 9px;
+  color: var(--muted-foreground);
+}
+.networkTotals {
+  position: relative;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.networkTotals b {
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink);
+}
+.networkTotals span {
+  color: var(--pos-blue);
+  padding-inline: 10px;
+}
+.networkScene .figureLabel {
+  grid-column: 1 / -1;
+}
+.networkCaption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 27px !important;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+
+/* Usable demo workspaces, separate from the lower-half gated source preview. */
+.workspaceSection {
+  padding-block: 70px;
+  background: var(--cream);
+  border-block: 1px solid var(--border);
+  scroll-margin-top: 100px;
+}
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 28px;
+}
+.sectionHeading h2 {
+  margin-top: 11px;
+}
+.sectionHeading > div > p:last-child:not(.eyebrow) {
+  margin-top: 13px;
+  max-width: 670px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.sectionHeading > .badge {
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.lab {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 22px 55px -48px #00318070;
+}
+.lab h3 {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.025em;
+  line-height: 1.5;
+}
+.labToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card);
+  padding: 8px 12px;
+  color: var(--ink);
+  font-size: 11px !important;
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+.button:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--primary) 50%, var(--border));
+  background: var(--pos-wash);
+}
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.button.primaryButton {
+  background: #1088ef;
+  color: #fff;
+  border-color: #1088ef;
+}
+.button.primaryButton:hover:not(:disabled) {
+  background: #003180;
+  border-color: #003180;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 9px;
+  background: var(--pos-wash);
+  color: var(--pos-blue);
+  line-height: 1.5;
+}
+.positiveTag {
+  color: var(--pos-green);
+  background: color-mix(in srgb, #21a816 8%, var(--card));
+}
+.panel {
+  background: var(--pos-wash);
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+.panel h3 {
+  margin-bottom: 19px;
+}
+.panel > p {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.field input,
+.field select {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 12px;
+}
+.field:focus-within > span {
+  color: var(--pos-blue);
+}
+.searchBox {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  padding: 0 13px;
+  color: var(--muted-foreground);
+}
+.searchBox input {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  color: var(--ink);
+}
+.searchBox input:focus-visible {
+  outline-offset: 1px;
+}
+.selection {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--cream);
+  padding: 4px;
+}
+.selection button {
+  min-height: 33px;
+  border: 1px solid transparent;
+  padding: 7px 12px;
+  border-radius: 5px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.selection button[aria-pressed="true"] {
+  color: var(--pos-blue);
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 2px 5px #00318008;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 25px !important;
+}
+.stat {
+  padding-block: 10px;
+}
+.stat dt {
+  font-size: 10px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+.stat dd:not(.statDetail) {
+  margin: 7px 0 0;
+  font-size: clamp(19px, 2.1vw, 25px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+.stat dd.statDetail {
+  margin: 7px 0 0;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.7;
+}
+.note {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+  margin-top: 20px !important;
+  padding-top: 15px;
+  border-top: 1px dashed var(--border);
+  color: var(--muted-foreground);
+  font-size: 10px !important;
+  line-height: 1.8;
+}
+.note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--pos-blue);
+}
+.empty {
+  padding: 25px 10px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.error {
+  color: var(--pos-red) !important;
+  font-size: 11px;
+  line-height: 1.8;
+  margin-block: 10px !important;
+}
+.explainer {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.9;
+  margin-top: 19px !important;
+}
+.checkoutLab {
+  display: grid;
+  grid-template-columns: 1.25fr 0.8fr;
+  gap: 24px;
+}
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.productButton {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+  text-align: left;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.productButton:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+.productArt {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 13px;
+  background: var(--cream);
+  border-radius: 6px;
+}
+.productArt .denim {
+  width: 53px;
+  height: 70px;
+}
+.productArt > span {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--pos-blue);
+}
+.productButton small {
+  margin-top: 12px;
+  font-size: 8px;
+  color: var(--pos-blue);
+}
+.productButton b {
+  font-size: 10px;
+  line-height: 1.65;
+  font-weight: 400;
+  margin-top: 5px;
+  flex: 1;
+}
+.productButton > strong {
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 11px;
+}
+.basketPanel {
+  padding: 20px;
+}
+.basketLines {
+  max-height: 245px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.basketLine {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding-block: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.basketLine > div:first-child {
+  flex: 1;
+  min-width: 130px;
+}
+.basketLine b {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+.basketLine small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  margin-top: 5px;
+}
+.qtyControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.qtyControls .button {
+  min-height: 30px;
+  width: 30px;
+  padding: 5px;
+}
+.qtyControls span {
+  font-size: 12px;
+}
+.totals {
+  margin-block: 15px !important;
+}
+.totals > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-block: 7px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.totals > div:last-child {
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.basketPanel > .labToolbar {
+  margin-block: 12px;
+}
+.basketPanel > .primaryButton {
+  width: 100%;
+}
+.feedback {
+  margin-block: 13px !important;
+  min-height: 36px;
+}
+.reconcileLab,
+.transferLab {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+}
+.shiftIdentity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 13px;
+  margin-top: 25px;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--pos-wash);
+  color: var(--pos-blue);
+  font-size: 16px;
+}
+.shiftIdentity > div {
+  flex: 1;
+  min-width: 170px;
+}
+.shiftIdentity b {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.shiftIdentity div span {
+  display: block;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  margin-top: 5px;
+  line-height: 1.7;
+}
+.varianceResult {
+  margin-top: 27px;
+  padding: 22px 0 5px;
+  border-top: 1px solid var(--border);
+}
+.varianceResult > span {
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.varianceResult strong {
+  display: block;
+  font-size: 37px;
+  font-weight: 400;
+  margin-top: 7px;
+  letter-spacing: -0.05em;
+  color: var(--pos-green);
+}
+.varianceResult[data-negative="true"] strong {
+  color: var(--pos-red);
+}
+.varianceResult > p {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+.receiptLab {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+}
+.receiptLab .searchBox {
+  margin-top: 18px;
+}
+.receiptListItem {
+  display: flex;
+  align-items: start;
+  gap: 25px;
+  margin-top: 25px;
+}
+.compactReceipt {
+  width: 170px;
+  flex-shrink: 0;
+  padding: 22px 13px;
+  box-shadow: 0 10px 25px -15px #00318030;
+}
+.compactReceipt .receiptBrand {
+  font-size: 11px;
+}
+.compactReceipt .receiptSubtitle {
+  font-size: 6px;
+}
+.compactReceipt .paperLine {
+  font-size: 7px;
+}
+.compactReceipt .paperLine strong {
+  font-size: 7px;
+}
+.compactReceipt .paperRule {
+  margin-block: 15px;
+}
+.compactReceipt .barcode {
+  height: 20px;
+  margin-top: 17px;
+}
+.receiptListItem > div:last-child {
+  padding-top: 15px;
+}
+.receiptListItem > div:last-child > span {
+  font-size: 8px;
+  color: var(--pos-blue);
+  letter-spacing: 0.08em;
+}
+.receiptListItem h3 {
+  margin-top: 15px;
+}
+.receiptListItem p {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin-top: 10px;
+}
+.receiptListItem > div:last-child b {
+  display: block;
+  font-size: 22px;
+  margin-top: 15px;
+  font-weight: 500;
+}
+.receiptListItem > div:last-child > small {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.9;
+  margin-top: 18px;
+}
+.receiptLab .panel > .barcode {
+  width: 120px;
+  margin-top: 25px;
+  color: var(--pos-blue);
+}
+.receiptLab .stats {
+  grid-template-columns: 1fr 1fr;
+}
+.summaryStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.summaryStats > div {
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: 9px;
+  background: var(--cream);
+}
+.summaryFoot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 23px;
+  margin-top: 23px;
+  border-top: 1px solid var(--border);
+}
+.summaryFoot > span {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.summaryFoot b {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 12px;
+}
+.waterfall {
+  display: grid;
+  gap: 20px;
+  margin-block: 30px;
+}
+.waterfall > div {
+  display: grid;
+  grid-template-columns: 140px 1fr 130px;
+  align-items: center;
+  gap: 22px;
+  font-size: 11px;
+}
+.waterfall > div > div {
+  height: 32px;
+  background: var(--cream);
+  border-radius: 5px;
+}
+.waterfall i {
+  display: block;
+  height: 100%;
+  background: #1088ef;
+  border-radius: 5px;
+}
+.waterfall i[data-result="true"] {
+  background: #21a816;
+}
+.waterfall b {
+  text-align: right;
+  font-weight: 500;
+}
+.dashboardEvidence {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+.evidenceBar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.evidenceBar i {
+  flex: 1;
+  height: 24px;
+  border-radius: 4px;
+  background: #1088ef;
+}
+.stackedStats {
+  display: grid;
+  gap: 12px;
+}
+.stockCover {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.stockCover .denim {
+  height: 110px;
+}
+.stockCover b {
+  font-weight: 500;
+  font-size: 14px;
+}
+.stockCover p {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin-top: 10px;
+}
+.coverDays {
+  display: block;
+  margin-top: 16px;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  color: var(--pos-green);
+}
+.coverDays small {
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.loyaltyLab {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 35px;
+  align-items: start;
+}
+.loyaltyLab > div > h3 {
+  margin-top: 20px;
+  font-size: 23px;
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 25px;
+}
+.resultEyebrow {
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.largeResult {
+  display: block;
+  font-size: 44px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: var(--pos-blue);
+  margin: 12px 0;
+}
+.transferRoute {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--border);
+}
+.transferRoute > div {
+  flex: 1;
+}
+.transferRoute > svg {
+  color: var(--pos-blue);
+}
+.transferRoute span {
+  display: block;
+  font-size: 9px;
+  color: var(--pos-blue);
+  letter-spacing: 0.1em;
+}
+.transferRoute b {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+.transferRoute small {
+  display: block;
+  margin-top: 9px;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.9;
+}
+.allocationLab {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+}
+.allocationInputs {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+.allocationBar {
+  display: flex;
+  gap: 3px;
+  height: 35px;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-block: 25px;
+}
+.allocationBar span:first-child {
+  background: #1088ef;
+}
+.allocationBar span:last-child {
+  background: #003180;
+}
+.allocationRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  padding-block: 13px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.allocationRow small {
+  display: block;
+  margin-top: 7px;
+  font-size: 9px;
+  color: var(--muted-foreground);
+}
+.allocationRow b {
+  font-weight: 500;
+}
+.allocationTotal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pos-green) !important;
+  margin-top: 15px !important;
+}
+.stockLab {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 25px;
+}
+.stockList {
+  display: grid;
+  margin-top: 12px;
+}
+.stockList button {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  border-radius: 5px;
+}
+.stockList button:hover,
+.stockList button[aria-pressed="true"] {
+  background: var(--pos-wash);
+}
+.stockList b {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--pos-blue);
+}
+.stockList small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 4px;
+}
+.stockList strong {
+  font-size: 19px;
+  font-weight: 500;
+  text-align: right;
+}
+.stockList strong small {
+  font-size: 8px;
+  font-weight: 400;
+}
+.countProduct {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-block: 24px;
+}
+.countProduct .denim {
+  width: 60px;
+  height: 83px;
+}
+.countProduct b {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.8;
+}
+.countProduct p,
+.countProduct small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted-foreground);
+  margin-top: 8px;
+}
+.countVariance {
+  margin-top: 17px !important;
+  font-size: 13px !important;
+  color: var(--pos-blue) !important;
+}
+.outletLab {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 25px;
+}
+.locationList {
+  display: grid;
+  gap: 6px;
+}
+.locationList button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  text-align: left;
+}
+.locationList button[aria-pressed="true"] {
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+  background: var(--pos-wash);
+}
+.locationList button:hover {
+  background: var(--cream);
+}
+.locationCode {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 40px;
+  flex-shrink: 0;
+  font-size: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 6px;
+  color: var(--pos-blue);
+}
+.locationList button > span:nth-child(2) {
+  flex: 1;
+}
+.locationList b {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+}
+.locationList small {
+  display: block;
+  margin-top: 7px;
+  font-size: 9px;
+  color: var(--muted-foreground);
+}
+.locationList svg {
+  color: var(--pos-blue);
+}
+.locationAddress {
+  margin-top: 20px !important;
+  max-width: 340px;
+}
+.registerDetail {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-top: 23px;
+}
+.registerDetail .barcode {
+  width: 70px;
+  height: 24px;
+  color: var(--pos-blue);
+}
+.registerDetail b {
+  font-size: 15px;
+  font-weight: 500;
+}
+.registerDetail > span {
+  width: 100%;
+  font-size: 10px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+
+/* Evidence preview and the surrounding narrative. */
+.workflowSection {
+  padding-block: 64px;
+}
+.workflow {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 0;
+  margin-top: 35px;
+}
+.workflow li {
+  position: relative;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.workflow li > span {
+  color: var(--pos-blue);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.workflow h3 {
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.workflow p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+  margin-top: 11px;
+  max-width: 240px;
+}
+.workflow li > svg {
+  position: absolute;
+  right: 0;
+  top: 19px;
+  color: var(--pos-blue);
+}
+.snapshotSection {
+  padding-block: 64px;
+  background: var(--cream);
+  border-block: 1px solid var(--border);
+}
+.sourceWorkspace {
+  min-height: 740px;
+  background: var(--card);
+}
+.sourceBar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  font-size: 10px;
+  color: var(--muted-foreground);
+}
+.sourceBar > b {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.sourceBar b span {
+  color: var(--pos-blue);
+}
+.sourceBar > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+.sourceContent {
+  padding: 25px;
+}
+.sourceTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+}
+.sourceTitle h3 {
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.sourceStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px 0;
+}
+.sourceStats .stat {
+  padding: 15px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+.sourceStats .stat dd:not(.statDetail) {
+  font-size: 19px;
+}
+.tableScroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.tableScroll table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 10px;
+  text-align: left;
+}
+.tableScroll th {
+  padding: 13px 15px;
+  background: var(--pos-wash);
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+}
+.tableScroll td {
+  padding: 16px 15px;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.9;
+  font-variant-numeric: tabular-nums;
+}
+.tableScroll tr:last-child td {
+  border-bottom: 0;
+}
+.tableScroll tbody tr:nth-child(even) {
+  background: var(--cream);
+}
+.tableScroll td:first-child {
+  color: var(--pos-blue);
+  font-weight: 500;
+  min-width: 135px;
+}
+.tableScroll td small {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  font-weight: 400;
+  min-width: 115px;
+}
+.tableScroll td b {
+  font-weight: 500;
+}
+.sourceNote,
+.evidenceCaption {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.9;
+}
+.sourceNote {
+  margin-top: 20px !important;
+}
+.evidenceCaption {
+  margin-top: 18px !important;
+  max-width: 960px;
+}
+.relatedSection {
+  padding-block: 65px;
+}
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.relatedGrid > a {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 11px;
+  padding: 25px;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+.relatedGrid > a:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+.relatedGrid > a > span {
+  color: var(--pos-blue);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+.relatedGrid h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 22px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.relatedGrid h3 svg {
+  flex-shrink: 0;
+  color: var(--pos-blue);
+}
+.relatedGrid p {
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+  margin-top: 13px;
+}
+.closing {
+  padding-block: 55px;
+  background: var(--pos-wash);
+  border-block: 1px solid var(--border);
+}
+.closing > .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+.closing h2 {
+  max-width: 650px;
+  margin-top: 11px;
+  font-size: 29px;
+}
+.closing div > p:last-child {
+  margin-top: 15px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1050px) {
+  .registerLayout,
+  .shiftTop,
+  .receiptsLayout,
+  .dashboardLayout,
+  .lotsLayout,
+  .outletsLayout {
+    gap: 30px;
+  }
+  .pos h1 {
+    font-size: 45px;
+  }
+  .checkoutScene {
+    padding-left: 0;
+  }
+  .terminal {
+    padding: 15px;
+  }
+  .terminalProduct {
+    flex-wrap: wrap;
+  }
+  .terminalTotal strong {
+    font-size: 22px;
+  }
+  .smallSlip {
+    left: 0;
+    bottom: 0;
+    width: 135px;
+  }
+  .handNote {
+    font-size: 20px;
+    right: 0;
+  }
+  .receiptScene {
+    padding-inline: 25px;
+  }
+  .receiptAnnotation {
+    right: -15px;
+    font-size: 21px;
+  }
+  .routeScene {
+    grid-template-columns: 180px 1fr 205px;
+    gap: 15px;
+    padding-inline: 15px;
+  }
+  .networkScene {
+    column-gap: 25px;
+  }
+  .networkOutlet {
+    gap: 8px;
+    padding-inline: 10px;
+  }
+  .checkoutLab {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stats {
+    gap: 12px;
+  }
+  .stats .stat dd:not(.statDetail) {
+    font-size: 20px;
+  }
+  .receiptListItem {
+    gap: 15px;
+  }
+  .compactReceipt {
+    width: 130px;
+  }
+}
+@media (max-width: 800px) {
+  .wrap {
+    padding-inline: 24px;
+  }
+  .pos h1 {
+    font-size: clamp(36px, 6.5vw, 52px);
+  }
+  .registerLayout,
+  .shiftTop,
+  .receiptsLayout,
+  .dashboardLayout,
+  .lotsLayout,
+  .outletsLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .registerHero,
+  .shiftsHero,
+  .receiptsHero,
+  .dashboardHero,
+  .lotsHero,
+  .outletsHero {
+    padding-block: 45px;
+  }
+  .registerLayout .lead,
+  .shiftTop .lead,
+  .dashboardLayout .lead,
+  .lotsLayout .lead {
+    max-width: 590px;
+  }
+  .checkoutScene {
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto !important;
+  }
+  .terminal {
+    margin-left: 20px;
+    width: 90%;
+  }
+  .checkoutScene > .figureLabel {
+    padding-left: 65px;
+  }
+  .drawerScene {
+    max-width: 530px;
+    width: 100%;
+    margin-inline: auto !important;
+  }
+  .shiftRibbon {
+    margin-top: 25px;
+  }
+  .shiftRibbon li {
+    padding-inline: 15px;
+  }
+  .shiftRibbon strong {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .receiptsLayout > div {
+    grid-row: 1;
+  }
+  .receiptScene {
+    max-width: 500px;
+    width: 100%;
+    margin-inline: auto !important;
+  }
+  .receiptAnnotation {
+    right: 10px;
+  }
+  .salesBridge {
+    gap: 13px;
+  }
+  .salesBridge b {
+    font-size: 18px;
+  }
+  .dashboardMosaic {
+    max-width: 580px;
+    width: 100%;
+    margin-inline: auto !important;
+    grid-template-columns: 1.3fr 1fr;
+  }
+  .mosaicMargin {
+    grid-column: 1;
+  }
+  .dashboardMosaic .mosaicRegister {
+    grid-column: 2;
+    padding-inline: 15px;
+    flex-wrap: wrap;
+  }
+  .dashboardFoot {
+    margin-top: 25px !important;
+  }
+  .loyaltyScene {
+    max-width: 650px;
+  }
+  .loyaltyCard {
+    width: 350px;
+  }
+  .voucher {
+    width: 270px;
+    right: 15px;
+  }
+  .transferHeading {
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
+  }
+  .transferHeading .heroActions {
+    max-width: 100%;
+  }
+  .routeScene {
+    grid-template-columns: 1fr 0.9fr 1fr;
+  }
+  .routeOrigin,
+  .routeDestination {
+    padding: 18px 14px;
+  }
+  .routeOrigin b,
+  .routeDestination b {
+    font-size: 13px;
+  }
+  .routeCaption {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .lotScene {
+    max-width: 500px;
+    width: 100%;
+    margin-inline: auto !important;
+  }
+  .stockHeading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .stockNumber {
+    font-size: 45px;
+  }
+  .networkScene {
+    max-width: 550px;
+    width: 100%;
+    margin-inline: auto !important;
+  }
+  .outletsLayout > div {
+    grid-row: 1;
+  }
+  .sectionHeading {
+    flex-direction: column;
+    align-items: start;
+    gap: 18px;
+  }
+  .checkoutLab,
+  .reconcileLab,
+  .transferLab,
+  .receiptLab,
+  .dashboardEvidence,
+  .loyaltyLab,
+  .allocationLab,
+  .stockLab,
+  .outletLab {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .productGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .basketLines {
+    max-height: 225px;
+  }
+  .receiptListItem {
+    gap: 30px;
+  }
+  .compactReceipt {
+    width: 200px;
+  }
+  .receiptLab .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .workflow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .workflow h3 {
+    margin-top: 16px;
+  }
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .relatedGrid > a {
+    padding: 22px;
+  }
+  .relatedGrid h3 {
+    margin-top: 14px;
+  }
+  .closing > .wrap {
+    flex-direction: column;
+    align-items: start;
+  }
+  .waterfall > div {
+    grid-template-columns: 110px 1fr 110px;
+    gap: 15px;
+  }
+}
+@media (max-width: 540px) {
+  .pos > section:first-of-type {
+    padding-block-start: 12px;
+  }
+  .wrap {
+    padding-inline: 18px;
+  }
+  .breadcrumb {
+    font-size: 10px;
+    gap: 6px;
+    padding-block: 19px 6px;
+  }
+  .pos h1 {
+    font-size: clamp(33px, 8.1vw, 43px);
+    letter-spacing: -0.047em;
+  }
+  .pos h1 {
+    margin-top: 16px;
+  }
+  .eyebrow {
+    font-size: 9px;
+  }
+  .lead {
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 20px !important;
+  }
+  .heroActions {
+    margin-top: 25px;
+    gap: 17px;
+  }
+  .heroActions > button {
+    max-width: 100%;
+  }
+  .quietFeatures {
+    margin-top: 25px;
+    gap: 18px;
+    font-size: 10px;
+  }
+  .registerLayout {
+    gap: 35px;
+  }
+  .checkoutScene {
+    min-height: 420px;
+    padding-top: 65px;
+  }
+  .terminal {
+    width: 94%;
+    margin-left: 4px;
+    padding: 13px;
+  }
+  .productFloat {
+    width: 105px;
+    padding: 9px;
+    right: 0;
+  }
+  .productFloat .denim {
+    height: 58px;
+    width: 45px;
+  }
+  .productFloat b {
+    font-size: 8px;
+  }
+  .terminalProduct {
+    padding-block: 15px;
+  }
+  .terminalProduct strong {
+    font-size: 11px;
+  }
+  .terminalProduct b {
+    font-size: 11px;
+  }
+  .terminalTotal strong {
+    font-size: 21px;
+  }
+  .scanBox {
+    font-size: 10px;
+    margin-top: 17px;
+  }
+  .smallSlip {
+    width: 125px;
+    padding: 12px;
+    bottom: 1px;
+  }
+  .handNote {
+    font-size: 18px;
+    max-width: 160px;
+    right: 0;
+    bottom: 12px;
+  }
+  .handNote svg {
+    width: 70px;
+    height: 40px;
+  }
+  .checkoutScene > .figureLabel {
+    padding-left: 100px;
+    margin-top: 48px;
+    font-size: 8px;
+  }
+  .shiftTop {
+    gap: 25px;
+  }
+  .drawerScene {
+    padding-inline: 14px;
+  }
+  .drawerTop {
+    padding: 22px;
+  }
+  .drawerTop b {
+    font-size: 20px;
+  }
+  .drawer {
+    padding: 13px;
+  }
+  .coins {
+    gap: 1px;
+  }
+  .coins i {
+    width: 20px;
+    height: 20px;
+  }
+  .varianceStamp {
+    padding: 9px;
+    gap: 5px;
+    font-size: 9px;
+  }
+  .shiftRibbon {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+    padding-block: 20px;
+  }
+  .shiftRibbon li {
+    padding-inline: 15px;
+  }
+  .shiftRibbon li:nth-child(odd) {
+    padding-left: 0;
+  }
+  .shiftRibbon li:nth-child(even) {
+    border-right: 0;
+  }
+  .receiptScene {
+    padding-inline: 20px;
+    min-height: 430px;
+  }
+  .receiptScene .receiptPaper {
+    max-width: 260px;
+    padding-inline: 19px;
+  }
+  .receiptAnnotation {
+    font-size: 18px;
+    top: 140px;
+    right: -5px;
+    max-width: 95px;
+  }
+  .receiptAnnotation .sketchArrow {
+    width: 75px;
+  }
+  .summaryHero,
+  .loyaltyHero,
+  .transfersHero,
+  .stockHero {
+    padding-block: 40px;
+  }
+  .closeStatement {
+    padding: 19px 17px 13px;
+    margin-top: 30px !important;
+  }
+  .statementLabel > span {
+    font-size: 8px;
+  }
+  .statementLabel .badge {
+    font-size: 8px;
+    padding: 5px 7px;
+  }
+  .statementFigure > strong {
+    font-size: 61px;
+  }
+  .statementFigure strong small {
+    font-size: 25px;
+  }
+  .salesBridge {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .salesBridge > span {
+    display: none;
+  }
+  .salesBridge .bridgeResult {
+    grid-column: 1 / -1;
+    border-top: 1px dashed var(--border);
+    padding-top: 16px;
+  }
+  .salesBridge div > span {
+    font-size: 9px;
+  }
+  .salesBridge b {
+    font-size: 19px;
+  }
+  .dashboardMosaic {
+    gap: 9px;
+  }
+  .dashboardMosaic > div {
+    padding: 17px;
+  }
+  .mosaicSales > strong {
+    font-size: 27px;
+  }
+  .mosaicSales > span {
+    font-size: 8px;
+  }
+  .singleBar {
+    gap: 10px;
+  }
+  .singleBar span {
+    font-size: 8px;
+  }
+  .mosaicBasket strong {
+    font-size: 39px;
+  }
+  .mosaicMargin strong {
+    font-size: 21px;
+  }
+  .mosaicRegister > svg:last-child {
+    display: none;
+  }
+  .loyaltyScene {
+    padding: 30px 5px;
+    min-height: 390px;
+  }
+  .loyaltyCard {
+    width: 88%;
+    padding: 23px;
+  }
+  .loyaltyCard header {
+    margin-bottom: 27px;
+  }
+  .loyaltyCard footer {
+    font-size: 8px;
+  }
+  .loyaltyCard > strong {
+    font-size: 46px;
+  }
+  .voucher {
+    width: 240px;
+    top: 220px;
+    right: 9px;
+    padding: 15px;
+    gap: 12px;
+  }
+  .voucher strong {
+    font-size: 21px;
+  }
+  .voucher b {
+    font-size: 28px;
+  }
+  .voucher span {
+    font-size: 8px;
+  }
+  .orbitLabel {
+    top: 0;
+    font-size: 18px;
+    right: 3px;
+  }
+  .loyaltyScene .figureLabel {
+    font-size: 8px;
+  }
+  .routeScene {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 30px !important;
+    padding: 23px 12px 16px;
+    gap: 20px;
+  }
+  .routeOrigin,
+  .routeDestination {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 6px 10px;
+    padding: 18px;
+  }
+  .routeOrigin svg,
+  .routeDestination svg {
+    grid-row: 1 / 3;
+    margin: 0;
+    align-self: center;
+  }
+  .routeOrigin b,
+  .routeDestination b {
+    margin: 0;
+  }
+  .routeTransit {
+    width: 80%;
+  }
+  .routeTrack {
+    margin-block: 13px;
+  }
+  .routeTrack > span {
+    width: 50px;
+    height: 50px;
+  }
+  .routeScene .figureLabel {
+    grid-column: 1;
+  }
+  .lotQuantity b {
+    font-size: 75px;
+  }
+  .sortedItems > div {
+    padding-inline: 6px;
+  }
+  .sortedItems span {
+    font-size: 8px;
+  }
+  .stockNumber {
+    font-size: 43px;
+  }
+  .shelfScene {
+    margin-top: 30px !important;
+  }
+  .shelfItem {
+    padding: 15px 10px 17px;
+  }
+  .shelfItem > span {
+    font-size: 6px;
+  }
+  .shelfItem .denim {
+    width: 67px;
+    height: 95px;
+    margin-block: 15px;
+  }
+  .shelfItem b {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  .shelfItem div span {
+    font-size: 8px;
+    line-height: 1.7;
+  }
+  .shelfBase {
+    padding: 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .shelfBase .barcode {
+    width: 48px;
+    height: 19px;
+  }
+  .shelfBase > span {
+    font-size: 7px;
+  }
+  .shelfBase b {
+    width: 100%;
+    font-size: 10px;
+  }
+  .shelfScene .figureLabel {
+    font-size: 8px;
+  }
+  .networkScene {
+    padding: 12px 0;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 15px 25px;
+  }
+  .networkHub {
+    padding-inline: 7px;
+  }
+  .networkHub span {
+    font-size: 7px;
+  }
+  .networkOutlet {
+    padding: 17px 10px;
+  }
+  .networkOutlet > svg {
+    width: 20px;
+  }
+  .networkOutlet b {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .networkOutlet small {
+    font-size: 8px;
+  }
+  .networkTotals {
+    font-size: 10px;
+    gap: 8px;
+  }
+  .networkTotals span {
+    padding-inline: 4px;
+  }
+  .workspaceSection,
+  .workflowSection,
+  .snapshotSection,
+  .relatedSection {
+    padding-block: 45px;
+  }
+  .lab {
+    padding: 17px;
+    border-radius: 12px;
+  }
+  .labToolbar {
+    gap: 12px;
+  }
+  .labToolbar .searchBox {
+    flex-basis: 100%;
+  }
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .productButton {
+    padding: 9px;
+  }
+  .productArt {
+    padding-block: 12px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  .field input,
+  .field select,
+  .searchBox input {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .field > span {
+    font-size: 10px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .stat dd:not(.statDetail),
+  .stats .stat dd:not(.statDetail) {
+    font-size: 21px;
+  }
+  .summaryStats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .summaryStats > div {
+    padding: 14px;
+  }
+  .summaryStats .stat dd:not(.statDetail) {
+    font-size: 20px;
+  }
+  .summaryStats .stat dt {
+    font-size: 9px;
+  }
+  .selection {
+    width: 100%;
+  }
+  .selection button {
+    flex: 1;
+    padding-inline: 7px;
+    font-size: 10px;
+  }
+  .receiptListItem {
+    gap: 16px;
+  }
+  .compactReceipt {
+    width: 122px;
+    padding-inline: 10px;
+  }
+  .compactReceipt .receiptBrand {
+    font-size: 9px;
+  }
+  .compactReceipt .paperLine {
+    font-size: 6px;
+    gap: 5px;
+  }
+  .compactReceipt .receiptSubtitle {
+    font-size: 5px;
+  }
+  .receiptListItem h3 {
+    font-size: 13px;
+  }
+  .receiptListItem > div:last-child > span {
+    font-size: 7px;
+  }
+  .receiptListItem > div:last-child b {
+    font-size: 19px;
+  }
+  .receiptListItem p {
+    font-size: 10px;
+  }
+  .receiptListItem > div:last-child > small {
+    font-size: 9px;
+  }
+  .waterfall > div {
+    grid-template-columns: 1fr 100px;
+    gap: 9px;
+  }
+  .waterfall > div > div {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    height: 25px;
+  }
+  .waterfall b {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 10px;
+  }
+  .evidenceBar {
+    gap: 10px;
+    font-size: 9px;
+  }
+  .evidenceBar i {
+    height: 18px;
+  }
+  .stockCover {
+    gap: 13px;
+  }
+  .stockCover .denim {
+    width: 62px;
+  }
+  .stockCover b {
+    font-size: 12px;
+  }
+  .coverDays {
+    font-size: 27px;
+  }
+  .coverDays small {
+    display: block;
+    margin-top: 5px;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .largeResult {
+    font-size: 37px;
+  }
+  .transferRoute {
+    gap: 10px;
+  }
+  .transferRoute b {
+    font-size: 12px;
+  }
+  .allocationRow {
+    font-size: 10px;
+    gap: 8px;
+  }
+  .locationList button {
+    padding: 11px 8px;
+  }
+  .workflow {
+    gap: 24px 18px;
+  }
+  .workflow h3 {
+    font-size: 14px;
+  }
+  .workflow p {
+    font-size: 10px;
+  }
+  .sourceBar {
+    padding: 16px;
+    gap: 9px;
+    flex-wrap: wrap;
+    font-size: 9px;
+  }
+  .sourceBar > span:last-child {
+    margin-left: 0;
+  }
+  .sourceContent {
+    padding: 16px;
+  }
+  .sourceTitle h3 {
+    font-size: 19px;
+  }
+  .sourceStats {
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .sourceStats .stat {
+    padding: 11px;
+  }
+  .sourceStats .stat dd:not(.statDetail) {
+    font-size: 15px;
+  }
+  .sourceStats .stat dt {
+    font-size: 8px;
+  }
+  .sourceStats .stat:last-child {
+    grid-column: 1 / -1;
+  }
+  .sourceWorkspace {
+    min-height: 790px;
+  }
+  .evidenceCaption {
+    font-size: 9px;
+  }
+  .closing {
+    padding-block: 40px;
+  }
+  .closing h2 {
+    font-size: 26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pos *,
+  .pos *::before,
+  .pos *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
