@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { PosPage, posMetadata } from "@/components/pos/page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = posMetadata("loyalty-vouchers");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.pos");
-
-  return {
-    title: t("links.loyaltyVouchers"),
-    alternates: getLocaleAlternates("/apps/pos/loyalty-vouchers"),
-  };
-}
-
-export default function PosLoyaltyVouchersPage() {
-  return <ComingSoonPage moduleKey="pos" linkKey="loyaltyVouchers" />;
+export default function PosSubpage() {
+  return <PosPage slug="loyalty-vouchers" />;
 }

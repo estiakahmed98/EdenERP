@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { PosPage, posMetadata } from "@/components/pos/page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = posMetadata("transfers");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.pos");
-
-  return {
-    title: t("links.transfers"),
-    alternates: getLocaleAlternates("/apps/pos/transfers"),
-  };
-}
-
-export default function PosTransfersPage() {
-  return <ComingSoonPage moduleKey="pos" linkKey="transfers" />;
+export default function PosSubpage() {
+  return <PosPage slug="transfers" />;
 }
