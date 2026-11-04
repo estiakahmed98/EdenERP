@@ -10841,7 +10841,29 @@
       ],
       "extraQuote": "Adonは会計、営業、チーム管理を一か所で簡素化するのに役立ちました。複数のツールをやりくりする代わりに、すべてが接続され、はるかに管理しやすくなりました。",
       "extraAuthor": "Richard Miles",
-      "extraRole": "トレーニングマネージャー、Enterprise Corp"
+      "extraRole": "トレーニングマネージャー、Enterprise Corp",
+      "moreStories": [
+        {
+          "name": "Farhana Akter",
+          "role": "財務リード、繊維メーカー",
+          "quote": "以前は月末締めに1週間かかっていました。今では誰かに聞かれる前に数字が揃っています。"
+        },
+        {
+          "name": "Tanvir Rahman",
+          "role": "オペレーション責任者、流通企業",
+          "quote": "在庫・購買・販売がようやくつながりました。倉庫チームは独自のスプレッドシートを使わなくなりました。"
+        },
+        {
+          "name": "Sarah Collins",
+          "role": "人事マネージャー、サービス企業",
+          "quote": "給与と勤怠が一か所にまとまり、人事チームは毎月何時間も節約でき、ミスも大幅に減りました。"
+        }
+      ],
+      "carousel": {
+        "previous": "前のストーリー",
+        "next": "次のストーリー",
+        "slide": "ストーリー {current} / {total}"
+      }
     },
     "cta": {
       "title": "ビジネスを次のレベルへ",
