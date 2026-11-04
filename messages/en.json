@@ -19764,6 +19764,1874 @@
           "title": "Bring your checkup form. We will set up a round in the demo."
         }
       },
+      "edCommon": {
+        "module": "Education",
+        "route": "Education route",
+        "year": "Academic year 2027–28",
+        "onboarding": "Now onboarding schools in Dhaka.",
+        "reportCard": "What this page does",
+        "caption": "A partial preview of {page} in Adon ERP. School, students and figures are sample data.",
+        "howTitle": "How it works, stop by stop",
+        "howIntro": "Every Education page follows the same short route, so your staff learn it once and use it everywhere.",
+        "faqTitle": "Questions principals and accountants ask",
+        "otherTitle": "The rest of the school, in one place",
+        "otherIntro": "Every Education page reads the same students, sections and fees. Nothing is typed twice.",
+        "exploreAll": "See all of Education"
+      },
+      "edDashboardPage": {
+        "meta": {
+          "title": "School Dashboard: Enrolment, Seats and Families at a Glance | Adon ERP",
+          "description": "See enrolled students, seats filled, sections, teachers, families and applicants for the whole school in one dashboard. Built for schools in Bangladesh.",
+          "keywords": [
+            "school dashboard software",
+            "enrolment by class",
+            "school management Bangladesh",
+            "seat capacity tracking",
+            "Adon ERP education"
+          ]
+        },
+        "hero": {
+          "title": "Education dashboard: the whole school on one page",
+          "mark": "whole school",
+          "lead": "Open it first thing in the morning. See how many students are enrolled, how full each class is, how many families you serve and how many applicants are waiting, without asking the office.",
+          "cta": "See the dashboard"
+        },
+        "features": [
+          "Enrolled students against the seats you have",
+          "Seats filled, flagged when a class is over capacity",
+          "Sections, teachers assigned and families, counted for you",
+          "Enrolment by class, with a bar for how full each one is",
+          "Boys and girls, and the three terms of the session"
+        ],
+        "steps": [
+          {
+            "tag": "Count",
+            "title": "How many are here",
+            "body": "Enrolled students and families are counted from the student records, not typed in."
+          },
+          {
+            "tag": "Compare",
+            "title": "How full is each class",
+            "body": "Capacity comes from the sections you set up, so an over-full class shows up in red."
+          },
+          {
+            "tag": "Decide",
+            "title": "What to do next",
+            "body": "Open a new section, close a round or chase applicants, all a click from here."
+          }
+        ],
+        "ui": {
+          "sEnrolled": "Enrolled",
+          "sEnrolledSub": "of 440 seats",
+          "sSeats": "Seats filled",
+          "sSections": "Sections",
+          "sTeachers": "Teachers assigned",
+          "sFamilies": "Families",
+          "sFamiliesSub": "41 with more than one child",
+          "sApplicants": "Applicants",
+          "byClass": "Enrolment by class",
+          "cClass": "Class",
+          "cSections": "Sections",
+          "cEnrolled": "Enrolled",
+          "cCapacity": "Capacity",
+          "cPct": "Filled",
+          "termsTitle": "Terms",
+          "term1": "First term",
+          "term2": "Half-yearly",
+          "term3": "Annual",
+          "genderTitle": "Boys and girls",
+          "boys": "Boys",
+          "girls": "Girls",
+          "note": "A student is permanent; class, section, roll and fee category belong to one session. Next session the student is promoted into a new enrolment and the history is kept."
+        },
+        "faq": [
+          {
+            "q": "Does it work for one school or several?",
+            "a": "One institution per account, with a type that sets the classes and subjects. You can add another type, such as a madrasa wing."
+          },
+          {
+            "q": "Where do the numbers come from?",
+            "a": "From students, sections and admissions already in the system. Nothing is typed into the dashboard."
+          },
+          {
+            "q": "Can I see a past session?",
+            "a": "Yes. Pick the academic year and the same dashboard shows that session."
+          },
+          {
+            "q": "What does over capacity mean?",
+            "a": "More students are enrolled in a class than its sections have seats for. The percentage turns red so you can open a section."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your class list. We will build your dashboard in the demo."
+        }
+      },
+      "edAdmissionsPage": {
+        "meta": {
+          "title": "School Admissions: Rounds, Applications, Merit List and Seats | Adon ERP",
+          "description": "Run admission rounds by class with applications, form fees, tests, offers, waitlists and a merit list you can print. Built for schools in Bangladesh.",
+          "keywords": [
+            "school admission software",
+            "admission test merit list",
+            "application management school",
+            "admission round",
+            "Adon ERP admissions"
+          ]
+        },
+        "hero": {
+          "title": "Admissions: from the first form to the last seat",
+          "mark": "last seat",
+          "lead": "Open a round for a class, take applications, collect the form fee, run the test, make offers and fill the seats. Each applicant has a clear status, and the merit list prints in one click.",
+          "cta": "See a round"
+        },
+        "features": [
+          "A round for each class, with method, seats and form fee",
+          "Applications with guardian, quota and form fee status",
+          "Offered, waitlisted and admitted counted for each round",
+          "Siblings already on file are flagged on the application",
+          "A merit list you can print, and a close button when seats are full"
+        ],
+        "steps": [
+          {
+            "tag": "Open",
+            "title": "Start a round",
+            "body": "Choose the class, the method (test, interview or direct) and the number of seats."
+          },
+          {
+            "tag": "Apply",
+            "title": "Take applications",
+            "body": "Each application records the guardian, the quota and whether the form fee is paid."
+          },
+          {
+            "tag": "Admit",
+            "title": "Offer and fill seats",
+            "body": "Offer seats by merit, waitlist the rest, and admit. Seats left are always on screen."
+          }
+        ],
+        "ui": {
+          "newRound": "New admission round",
+          "newApp": "New application",
+          "printMerit": "Print merit list",
+          "closeApps": "Close applications",
+          "cRound": "Round",
+          "cClass": "Class",
+          "cMethod": "Method",
+          "cSeats": "Seats",
+          "cApps": "Applications",
+          "cOffered": "Offered",
+          "cAdmitted": "Admitted",
+          "cStatus": "Status",
+          "stOpen": "Open",
+          "stClosed": "Closed",
+          "mDirect": "Direct admission",
+          "mTest": "Admission test",
+          "mInterview": "Interview",
+          "mApplications": "Applications",
+          "mApplicationsSub": "2 enquiries",
+          "mFormsPaid": "Forms paid",
+          "mTested": "Tested",
+          "mOffered": "Offered",
+          "mWaitlisted": "Waitlisted",
+          "mSeats": "Seats filled",
+          "mSeatsSub": "8 free",
+          "cAppNo": "Application no.",
+          "cApplicant": "Applicant",
+          "cGuardian": "Guardian",
+          "cQuota": "Quota",
+          "cFee": "Form fee",
+          "cScore": "Merit score",
+          "sibling": "Sibling on file",
+          "paid": "Paid",
+          "admitted": "Admitted",
+          "general": "General"
+        },
+        "faq": [
+          {
+            "q": "Can I run a test or an interview?",
+            "a": "Yes. Each round has its own method: admission test, interview or direct admission."
+          },
+          {
+            "q": "How do siblings show up?",
+            "a": "If a guardian already has a child in the school, the application is marked so you can apply your sibling rule."
+          },
+          {
+            "q": "Can I print the merit list?",
+            "a": "Yes, from the round, ranked by merit score."
+          },
+          {
+            "q": "What happens to admitted applicants?",
+            "a": "They become students with a permanent student ID, ready to be placed in a section."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring last year's applicant list. We will load it into a round in the demo."
+        }
+      },
+      "edStudentsPage": {
+        "meta": {
+          "title": "Student Records: ID, Class, Roll and Guardian in One Register | Adon ERP",
+          "description": "Keep every student with a permanent ID, class, section, roll, guardian phone and status. Filter by year, class and section. Built for schools in Bangladesh.",
+          "keywords": [
+            "student information system Bangladesh",
+            "student register software",
+            "student ID card records",
+            "guardian phone",
+            "Adon ERP students"
+          ]
+        },
+        "hero": {
+          "title": "Students: one permanent record for every child",
+          "mark": "permanent record",
+          "lead": "A student gets one ID for life. Class, section, roll and fee category belong to the session, so next year starts a new enrolment and the history stays. Find anyone by name, ID, family or guardian phone.",
+          "cta": "See the register"
+        },
+        "features": [
+          "A permanent student ID, with a new enrolment each session",
+          "Filter by academic year, class, section and status",
+          "Search by name, ID, family or guardian's phone",
+          "Siblings linked, so one family is one account",
+          "Import a whole class from a spreadsheet"
+        ],
+        "steps": [
+          {
+            "tag": "Add",
+            "title": "Create or import",
+            "body": "Add a student, or import a class from a spreadsheet. Admitted applicants arrive already filled in."
+          },
+          {
+            "tag": "Place",
+            "title": "Class, section and roll",
+            "body": "Place each student in a section. Roll numbers can follow merit or alphabetical order."
+          },
+          {
+            "tag": "Follow",
+            "title": "Keep the history",
+            "body": "Attendance, results and fees all hang on the same record, session after session."
+          }
+        ],
+        "ui": {
+          "fYear": "Academic year",
+          "fClass": "Class",
+          "fSection": "Section",
+          "fStatus": "Status",
+          "fSearch": "Search",
+          "all": "All",
+          "searchHint": "Name, ID, family or guardian phone",
+          "import": "Import",
+          "newStudent": "New student",
+          "cId": "Student ID",
+          "cName": "Name",
+          "cClass": "Class",
+          "cSection": "Section",
+          "cRoll": "Roll",
+          "cGuardian": "Guardian",
+          "cStatus": "Status",
+          "active": "Active",
+          "siblings": "sibling(s)"
+        },
+        "faq": [
+          {
+            "q": "What is a permanent student ID?",
+            "a": "One ID that stays with the child through every class, so results and fees always point to the same person."
+          },
+          {
+            "q": "How are brothers and sisters handled?",
+            "a": "They are linked under one family, so a guardian sees one account and a sibling discount can apply."
+          },
+          {
+            "q": "Can I import existing students?",
+            "a": "Yes, from a spreadsheet, with the class and section already placed."
+          },
+          {
+            "q": "Can I see last year's class?",
+            "a": "Yes. Change the academic year filter and the register shows that session."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring a class list. We will import it and show the register in the demo."
+        }
+      },
+      "edAcademicsPage": {
+        "meta": {
+          "title": "Academics Setup: Sessions, Classes, Sections, Subjects and Teaching | Adon ERP",
+          "description": "Set up academic sessions and terms, levels and classes, sections, subjects with board codes, curriculum and teaching loads. Built for schools in Bangladesh.",
+          "keywords": [
+            "academic setup school software",
+            "subject management board code",
+            "class and section setup",
+            "curriculum planning",
+            "Adon ERP academics"
+          ]
+        },
+        "hero": {
+          "title": "Academics: set the school up once, run it all year",
+          "mark": "set the school up once",
+          "lead": "Sessions and terms, levels and classes, sections, subjects and who teaches what, all in one place. Subjects carry their board and board code, in English and in Bangla.",
+          "cta": "See the subject list"
+        },
+        "features": [
+          "Sessions and terms, with dates for each term",
+          "Levels, classes and sections with their capacity",
+          "Subjects with kind, group, board and board code",
+          "Subject names in English and Bangla",
+          "Curriculum and teaching loads for each class"
+        ],
+        "steps": [
+          {
+            "tag": "Frame",
+            "title": "Sessions and classes",
+            "body": "Create the session and its terms, then the levels, classes and sections."
+          },
+          {
+            "tag": "Fill",
+            "title": "Subjects and curriculum",
+            "body": "Add subjects with their board and code, then say which classes study which."
+          },
+          {
+            "tag": "Assign",
+            "title": "Who teaches what",
+            "body": "Give each subject in each section a teacher, so the timetable can use it."
+          }
+        ],
+        "ui": {
+          "tabSessions": "Sessions & terms",
+          "tabLevels": "Levels & classes",
+          "tabSections": "Sections",
+          "tabSubjects": "Subjects",
+          "tabCurriculum": "Curriculum",
+          "tabTeaching": "Teaching",
+          "searchHint": "Search subjects or board codes",
+          "newSubject": "New subject",
+          "cCode": "Code",
+          "cSubject": "Subject",
+          "cKind": "Kind",
+          "cGroup": "Group",
+          "cBoard": "Board",
+          "cBoardCode": "Board code",
+          "edit": "Edit",
+          "elective": "Elective",
+          "compulsory": "Compulsory",
+          "business": "Business studies",
+          "science": "Science"
+        },
+        "faq": [
+          {
+            "q": "Does it support Cambridge and Edexcel?",
+            "a": "Yes. Each subject has a board and a board code, so English-medium classes are set up the way the board names them."
+          },
+          {
+            "q": "Can subjects have Bangla names?",
+            "a": "Yes. Each subject can carry both an English and a Bangla name."
+          },
+          {
+            "q": "What is a subject kind?",
+            "a": "Compulsory or elective, so the right subjects reach the right students and report cards."
+          },
+          {
+            "q": "Can I run national and English-medium together?",
+            "a": "Yes. Add another institution type and its classes and subjects come alongside yours without overwriting what you edited."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your subject list. We will set up a class in the demo."
+        }
+      },
+      "edAttendancePage": {
+        "meta": {
+          "title": "Student Attendance: Take the Register with a Tap, Text the Guardian | Adon ERP",
+          "description": "Take daily attendance by tapping each student: present, late, absent or leave. Guardians of absent students get a text. Built for schools in Bangladesh.",
+          "keywords": [
+            "student attendance software",
+            "school attendance register",
+            "guardian SMS absent",
+            "low attendance report",
+            "Adon ERP attendance"
+          ]
+        },
+        "hero": {
+          "title": "Attendance: everyone is present until you say otherwise",
+          "mark": "everyone is present",
+          "lead": "Open a new register and every student is marked present. Tap only the ones who are not: late, absent or on leave. Guardians of absent students get one text a day, and the month register fills itself.",
+          "cta": "See the register"
+        },
+        "features": [
+          "A register for each section and date, present by default",
+          "One tap cycles present, late, absent and leave",
+          "Guardians of absent students get one text a day",
+          "Today, month register and leave views",
+          "A low-attendance list against your minimum percentage"
+        ],
+        "steps": [
+          {
+            "tag": "Open",
+            "title": "Pick section and date",
+            "body": "A fresh register opens with every student present."
+          },
+          {
+            "tag": "Tap",
+            "title": "Mark the exceptions",
+            "body": "Tap a student to change them to late, absent or leave. The counts update as you go."
+          },
+          {
+            "tag": "Save",
+            "title": "Text and report",
+            "body": "Save the register. Absent guardians are texted, and low attendance lands on a list."
+          }
+        ],
+        "ui": {
+          "tabTake": "Take register",
+          "tabToday": "Today",
+          "tabMonth": "Month register",
+          "tabLeave": "Leave",
+          "tabLow": "Low attendance",
+          "fSection": "Section",
+          "fDate": "Date",
+          "present": "Present",
+          "late": "Late",
+          "absent": "Absent",
+          "leave": "Leave",
+          "allPresent": "All present",
+          "hint": "New register: everyone is present until you change them. Tap a student to change: present, late, absent, leave. Guardians of absent students get one text a day.",
+          "save": "Save register",
+          "sectionValue": "Class 8, A",
+          "dateValue": "04 Nov 2027"
+        },
+        "faq": [
+          {
+            "q": "Do guardians really get a text?",
+            "a": "Yes. When you save, the guardian of each absent student gets one text for the day, not one per period."
+          },
+          {
+            "q": "Can I take attendance by period?",
+            "a": "Attendance is set in Institution Settings: daily, with one register a day, is the default."
+          },
+          {
+            "q": "What is the minimum attendance?",
+            "a": "A percentage you set, for example 75. Students below it appear on the low-attendance list."
+          },
+          {
+            "q": "Can I record leave in advance?",
+            "a": "Yes. Approved leave shows as leave in the register, not as an absence."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring one class. We will take its register on a phone in the demo."
+        }
+      },
+      "edTimetablePage": {
+        "meta": {
+          "title": "School Timetable: Class, Teacher and Bell Schedule Without Clashes | Adon ERP",
+          "description": "Build class timetables period by period, see each teacher's week, set the bell schedule, auto-fill and manage substitutes. Built for schools in Bangladesh.",
+          "keywords": [
+            "school timetable software",
+            "teacher timetable",
+            "bell schedule",
+            "substitute teacher",
+            "Adon ERP timetable"
+          ]
+        },
+        "hero": {
+          "title": "Timetable: every period placed, no room or teacher twice",
+          "mark": "no room or teacher twice",
+          "lead": "Lay out each section's week, or let auto-fill propose it from teaching loads. The timetable refuses a teacher or a room booked twice, so clashes never reach the classroom.",
+          "cta": "See a class timetable"
+        },
+        "features": [
+          "A weekly grid for each section, with tiffin break built in",
+          "A teacher's own week, in the teacher view",
+          "A bell schedule with period times",
+          "Auto-fill from teaching loads, then adjust by hand",
+          "Substitutes recorded when a teacher is away"
+        ],
+        "steps": [
+          {
+            "tag": "Set",
+            "title": "Bell schedule",
+            "body": "Define periods and the tiffin break, with their times."
+          },
+          {
+            "tag": "Place",
+            "title": "Fill the grid",
+            "body": "Tap a cell to place a lesson, or auto-fill from teaching loads."
+          },
+          {
+            "tag": "Cover",
+            "title": "Substitutes",
+            "body": "When a teacher is absent, assign a substitute for the day."
+          }
+        ],
+        "ui": {
+          "tabClass": "Class timetable",
+          "tabTeacher": "Teacher view",
+          "tabBell": "Bell schedule",
+          "tabAuto": "Auto-fill & load",
+          "tabSubs": "Substitutes",
+          "fSection": "Section",
+          "sectionValue": "Class 8, A",
+          "print": "Print",
+          "hint": "Tap a cell to put a lesson in it.",
+          "period": "Period",
+          "tiffin": "Tiffin break",
+          "sun": "Sunday",
+          "mon": "Monday",
+          "tue": "Tuesday",
+          "wed": "Wednesday",
+          "thu": "Thursday",
+          "science": "General Science",
+          "english": "English",
+          "maths": "Mathematics",
+          "bangla": "Bangla",
+          "bgs": "Bangladesh & Global Studies"
+        },
+        "faq": [
+          {
+            "q": "Does it stop double booking?",
+            "a": "Yes. A teacher or a room already placed in that period is refused."
+          },
+          {
+            "q": "Can I print the timetable?",
+            "a": "Yes, for each section."
+          },
+          {
+            "q": "What does auto-fill use?",
+            "a": "The teaching loads you set in Academics: which teacher takes which subject for which section."
+          },
+          {
+            "q": "Where do rooms come from?",
+            "a": "From the Rooms list. Once it exists, the timetable picks a room from it."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring a current timetable. We will rebuild one section in the demo."
+        }
+      },
+      "edExamsPage": {
+        "meta": {
+          "title": "Exams & Results: Marks Entry, Grading and Published Results | Adon ERP",
+          "description": "Set up exams with weights, enter marks by paper, apply grading schemes and publish results with pass rates. Built for schools in Bangladesh.",
+          "keywords": [
+            "exam management software school",
+            "marks entry",
+            "result publication",
+            "grading scheme",
+            "Adon ERP exams results"
+          ]
+        },
+        "hero": {
+          "title": "Exams & results: enter once, publish with confidence",
+          "mark": "publish with confidence",
+          "lead": "Create the term and final exams with their weight, enter marks by paper, and publish when you are ready. Grading schemes turn marks into grades, and the pass rate is worked out for you.",
+          "cta": "See the exam list"
+        },
+        "features": [
+          "Term and final exams, each with a weight and dates",
+          "Marks entry by class and paper",
+          "Grading schemes that turn marks into grades",
+          "Results you publish when they are checked",
+          "Pass rate for each exam and for the year"
+        ],
+        "steps": [
+          {
+            "tag": "Plan",
+            "title": "Set up the exam",
+            "body": "Name it, choose the term, weight and dates, and the classes that sit it."
+          },
+          {
+            "tag": "Enter",
+            "title": "Marks by paper",
+            "body": "Teachers enter marks for their papers. Missing marks are easy to spot."
+          },
+          {
+            "tag": "Publish",
+            "title": "Results and pass rate",
+            "body": "Publish when ready. The annual result decides promotion."
+          }
+        ],
+        "ui": {
+          "tabExams": "Exams",
+          "tabMarks": "Marks entry",
+          "tabResults": "Results",
+          "tabGrading": "Grading schemes",
+          "kExams": "Exams",
+          "kPublished": "Published",
+          "kPassRate": "Annual pass rate",
+          "kPassRateSub": "The annual result is not published yet",
+          "newExam": "New exam",
+          "manage": "Manage",
+          "tableTitle": "Exams, 2027",
+          "cExam": "Exam",
+          "cKind": "Kind",
+          "cTerm": "Term",
+          "cWeight": "Weight",
+          "cClasses": "Classes",
+          "cPapers": "Papers",
+          "cMarks": "Marks",
+          "cStatus": "Status",
+          "cPass": "Pass rate",
+          "termExam": "Term exam",
+          "finalExam": "Final exam",
+          "published": "Published",
+          "setup": "Set-up"
+        },
+        "faq": [
+          {
+            "q": "Can I weight exams differently?",
+            "a": "Yes. Each exam has a weight, for example 25% for each term and 50% for the final."
+          },
+          {
+            "q": "Who can see a result before publishing?",
+            "a": "Only staff. Guardians see it once you publish."
+          },
+          {
+            "q": "How are grades decided?",
+            "a": "By the grading scheme you choose: marks ranges that map to a grade and a point."
+          },
+          {
+            "q": "Does the annual result drive promotion?",
+            "a": "Yes. A promotion run decides on a published result."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring last year's marksheet. We will load it and publish a result in the demo."
+        }
+      },
+      "edPromotionPage": {
+        "meta": {
+          "title": "Promotion & Certificates: Move a Whole Session Up in One Run | Adon ERP",
+          "description": "Promote students into the next session from a published result: pass go up, fail repeat, the last class passes out. Preview first and reverse if needed. Built for schools in Bangladesh.",
+          "keywords": [
+            "student promotion software",
+            "class promotion run",
+            "school certificates",
+            "transfer certificate",
+            "Adon ERP promotion certificates"
+          ]
+        },
+        "hero": {
+          "title": "Promotion: a new session in one preview-first run",
+          "mark": "preview-first",
+          "lead": "At the end of the year, one run moves every student into the next session on a published result. Those who pass go up a class, those who fail repeat it, and the final class passes out. Preview before you commit.",
+          "cta": "See a promotion run"
+        },
+        "features": [
+          "Promotion decided on a published result",
+          "Preview the whole run before it is applied",
+          "Students allowed to fail a set number of subjects",
+          "Missing sections in the next session created for you",
+          "A run can be reversed until the new session starts"
+        ],
+        "steps": [
+          {
+            "tag": "Choose",
+            "title": "From and into",
+            "body": "Pick the session, the next one, and the result that decides."
+          },
+          {
+            "tag": "Preview",
+            "title": "Check before you commit",
+            "body": "See who is promoted, who repeats and who passes out, class by class."
+          },
+          {
+            "tag": "Run",
+            "title": "Apply, or reverse",
+            "body": "Run it. If something was wrong, reverse it before the new session starts for those students."
+          }
+        ],
+        "ui": {
+          "tabPromotion": "Promotion",
+          "tabCertificates": "Certificates",
+          "hint": "A promotion run moves a session's students into the next session on a PUBLISHED result: those who pass go up a class, those who fail repeat it, and the final class passes out. Preview first; a run can be reversed while the new session has not started for those students.",
+          "fFrom": "From session",
+          "fInto": "Into session",
+          "fDecide": "Decide on",
+          "fAllowed": "Subjects allowed to fail",
+          "fRolls": "New rolls",
+          "decideValue": "Annual result",
+          "rollsValue": "By merit (class position)",
+          "optSections": "Create missing sections in the next session",
+          "optWaivers": "Carry approved waivers (as pending, for fresh approval)",
+          "preview": "Preview",
+          "runsTitle": "Promotion runs",
+          "cDate": "Date",
+          "cFrom": "From session",
+          "cInto": "Into session",
+          "cDecide": "Decide on",
+          "cPromoted": "Promoted",
+          "cRetained": "Retained",
+          "cPassed": "Passed out",
+          "cStatus": "Status",
+          "applied": "Applied"
+        },
+        "faq": [
+          {
+            "q": "What if a student fails one subject?",
+            "a": "You can allow a number of failed subjects, and the student is promoted on condition."
+          },
+          {
+            "q": "Can I undo a promotion?",
+            "a": "Yes, until the new session has started for those students."
+          },
+          {
+            "q": "What happens to waivers?",
+            "a": "Approved waivers can be carried over as pending, so they are approved afresh for the new session."
+          },
+          {
+            "q": "Where do certificates come from?",
+            "a": "The Certificates tab issues them from the student record."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring last year's final result. We will preview a promotion in the demo."
+        }
+      },
+      "edHifzPage": {
+        "meta": {
+          "title": "Hifz Tracking: Sabaq, Sabqi and Manzil for Every Student | Adon ERP",
+          "description": "Record each student's daily Hifz: new lesson (Sabaq), recent revision (Sabqi) and old revision (Manzil), with grades and mistakes. Built for madrasas and Hifz sections in Bangladesh.",
+          "keywords": [
+            "hifz management software",
+            "sabaq sabqi manzil",
+            "madrasa software",
+            "quran memorisation tracking",
+            "Adon ERP hifz"
+          ]
+        },
+        "hero": {
+          "title": "Hifz: the daily log, kept the way teachers keep it",
+          "mark": "daily log",
+          "lead": "One row for each student. Enter the page the new lesson ends on and its grade, the revision paras, and the mistakes. A Repeat is heard again tomorrow, so the student does not move on.",
+          "cta": "See the daily log"
+        },
+        "features": [
+          "A daily log for each section, one row per student",
+          "Sabaq: the new lesson, the page it ends on and its grade",
+          "Sabqi and Manzil: revision paras, with a grade each",
+          "Mistakes counted, and Repeat keeps the student on the same page",
+          "A progress board showing where every student is"
+        ],
+        "steps": [
+          {
+            "tag": "Hear",
+            "title": "Sabaq, Sabqi, Manzil",
+            "body": "Record the new lesson and the two kinds of revision for each student heard."
+          },
+          {
+            "tag": "Grade",
+            "title": "Grade and mistakes",
+            "body": "Give a grade for each part and count the mistakes."
+          },
+          {
+            "tag": "Follow",
+            "title": "Progress board",
+            "body": "See each student's para and page, and who needs more revision."
+          }
+        ],
+        "ui": {
+          "tabLog": "Daily log",
+          "tabBoard": "Progress board",
+          "fSection": "Section",
+          "fDate": "Date",
+          "sectionValue": "Hifz, A",
+          "dateValue": "04 Nov 2027",
+          "hint": "One row per student. Sabaq is the new lesson: enter the page it ends on, and its grade (a Repeat is heard again tomorrow, so the student does not move on). Sabqi is revision of recent paras, Manzil is revision of old paras, only paras already memorised. Leave a row blank if the student was not heard.",
+          "cRoll": "Roll",
+          "cStudent": "Student",
+          "cPara": "Para, next page",
+          "cAttendance": "Attendance",
+          "cSabaq": "Sabaq to page",
+          "cGrade": "Grade",
+          "cSabqi": "Sabqi (paras)",
+          "cManzil": "Manzil (paras)",
+          "cMistakes": "Mistakes",
+          "present": "Present",
+          "excellent": "Excellent",
+          "good": "Good",
+          "repeat": "Repeat",
+          "save": "Save the day",
+          "para": "Para",
+          "fromPage": "from page"
+        },
+        "faq": [
+          {
+            "q": "What is Sabaq, Sabqi and Manzil?",
+            "a": "Sabaq is the new lesson, Sabqi is revision of recent paras and Manzil is revision of older paras."
+          },
+          {
+            "q": "What does Repeat do?",
+            "a": "The student is heard on the same page again the next day and does not move on."
+          },
+          {
+            "q": "Can I leave a student out for a day?",
+            "a": "Yes. Leave the row blank if the student was not heard."
+          },
+          {
+            "q": "Can parents see progress?",
+            "a": "Progress can be shared through the guardian portal, as you choose."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring one Hifz register. We will recreate a day's log in the demo."
+        }
+      },
+      "edBoardingPage": {
+        "meta": {
+          "title": "Boarding & Mess: Rooms, Boarders, Meals and Monthly Fees | Adon ERP",
+          "description": "Give boarders a room and bed, charge boarding and mess fees by month held, and record meal-off days. Built for boarding schools and madrasas in Bangladesh.",
+          "keywords": [
+            "boarding school software",
+            "hostel management",
+            "mess fee",
+            "meal off",
+            "Adon ERP boarding mess"
+          ]
+        },
+        "hero": {
+          "title": "Boarding & mess: a seat, a bed and a monthly fee",
+          "mark": "a seat, a bed",
+          "lead": "Give a student a seat and they become a boarder. The boarding fee is charged for every month the seat is held, and the mess fee too when meals are included. Meal-off days are recorded, not guessed.",
+          "cta": "See the boarders"
+        },
+        "features": [
+          "Rooms and beds, with each boarder placed in one",
+          "Boarding fee charged for every month a seat is held",
+          "Mess fee added when meals are included",
+          "Meal-off days recorded against a boarder",
+          "A list of boarders by class, room and bed"
+        ],
+        "steps": [
+          {
+            "tag": "Prepare",
+            "title": "Rooms and beds",
+            "body": "Set up rooms with their beds."
+          },
+          {
+            "tag": "Allot",
+            "title": "Give a seat",
+            "body": "Choose a student, a room and a bed, and whether meals are included."
+          },
+          {
+            "tag": "Bill",
+            "title": "Monthly fees",
+            "body": "The monthly fee run charges boarding, and mess where included."
+          }
+        ],
+        "ui": {
+          "tabRooms": "Rooms",
+          "tabBoarders": "Boarders",
+          "tabMealOff": "Meal-off",
+          "hint": "A seat makes the student a boarder: the boarding fee is charged for every month the seat is held, and the mess fee too when meals are included.",
+          "giveSeat": "Give a seat",
+          "sBoarders": "Boarders",
+          "sFree": "Beds free",
+          "sMealOff": "Meal-off today",
+          "cStudent": "Student",
+          "cClass": "Class",
+          "cRoom": "Room",
+          "cBed": "Bed",
+          "cSince": "Since",
+          "cMess": "Mess",
+          "included": "Included",
+          "notIncluded": "Not included"
+        },
+        "faq": [
+          {
+            "q": "Can a boarder skip meals?",
+            "a": "Yes. Meal-off days are recorded, and the mess charge follows your rule."
+          },
+          {
+            "q": "Is the boarding fee monthly?",
+            "a": "Yes. It is charged for every month the seat is held."
+          },
+          {
+            "q": "Can a student board without the mess?",
+            "a": "Yes. Meals are an option on the seat."
+          },
+          {
+            "q": "Can I see free beds?",
+            "a": "Yes. The boarders view shows how many beds are free."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your hostel list. We will allot a seat in the demo."
+        }
+      },
+      "edWelfarePage": {
+        "meta": {
+          "title": "Welfare Funds: Zakat, Sadaqah and Donations Kept Apart and Accounted For | Adon ERP",
+          "description": "Hold Zakat, Sadaqah and general donation funds in separate accounts, pay student dues from a fund and check Zakat eligibility. Built for madrasas and schools in Bangladesh.",
+          "keywords": [
+            "zakat fund management",
+            "madrasa donation software",
+            "sadaqah fund",
+            "student welfare fund",
+            "Adon ERP welfare funds"
+          ]
+        },
+        "hero": {
+          "title": "Welfare funds: every taka kept for its purpose",
+          "mark": "kept for its purpose",
+          "lead": "Each fund is held for its purpose in its own account. Zakat pays only for students approved as eligible, sadaqah and general donations may pay for any student, and a fund never pays out more than it holds.",
+          "cta": "See the funds"
+        },
+        "features": [
+          "Separate funds for general donations, sadaqah and Zakat",
+          "Zakat limited to students approved as eligible",
+          "Pay a student's dues straight from a fund",
+          "A fund never pays out more than it holds",
+          "A printable statement for every fund"
+        ],
+        "steps": [
+          {
+            "tag": "Receive",
+            "title": "Record donations",
+            "body": "Each donation goes into the fund it was given for."
+          },
+          {
+            "tag": "Approve",
+            "title": "Zakat eligibility",
+            "body": "Mark which students are eligible for Zakat, with a record of who approved."
+          },
+          {
+            "tag": "Pay",
+            "title": "Dues from a fund",
+            "body": "Choose a student and a fund. The fund can only pay what it holds."
+          }
+        ],
+        "ui": {
+          "tabFunds": "Funds",
+          "tabDonations": "Donations",
+          "tabZakat": "Zakat eligibility",
+          "tabPay": "Pay dues from a fund",
+          "hint": "Each fund is held for its purpose in its own account. Zakat may pay only for students approved as eligible; sadaqah and general donations may pay for any student. A fund never pays out more than it holds. Lillah (free) students stay on a 100% waiver.",
+          "general": "General Donation Fund",
+          "sadaqah": "Sadaqah Fund",
+          "zakat": "Zakat Fund",
+          "anyStudent": "Any student",
+          "eligibleOnly": "Eligible students only",
+          "received": "Received",
+          "paidOut": "paid out",
+          "eligible": "eligible",
+          "statement": "Statement"
+        },
+        "faq": [
+          {
+            "q": "Can Zakat pay for any student?",
+            "a": "No. Zakat can pay only for students approved as eligible. Sadaqah and general donations may pay for any student."
+          },
+          {
+            "q": "Can a fund go negative?",
+            "a": "No. A fund never pays out more than it holds."
+          },
+          {
+            "q": "What about free students?",
+            "a": "Lillah students stay on a 100% waiver, separate from the funds."
+          },
+          {
+            "q": "Is each fund a separate account?",
+            "a": "Yes. Each fund is held in its own account, so the books show it separately."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your donor list. We will set up the three funds in the demo."
+        }
+      },
+      "edNoticesPage": {
+        "meta": {
+          "title": "School Notices: Write Once, Send by Portal, SMS and Email | Adon ERP",
+          "description": "Compose a notice once and send it to an audience through the guardian portal, SMS and email, with merge fields, templates, scheduling and a delivery log. Built for schools in Bangladesh.",
+          "keywords": [
+            "school notice SMS",
+            "guardian portal notice",
+            "bulk SMS school Bangladesh",
+            "message templates",
+            "Adon ERP notices"
+          ]
+        },
+        "hero": {
+          "title": "Notices: write once, reach every guardian",
+          "mark": "write once",
+          "lead": "Choose who it is for, write the notice, and send it by guardian portal, SMS and email. Merge fields fill in each child's own details, and the audience is worked out when the notice is sent.",
+          "cta": "See a notice"
+        },
+        "features": [
+          "An audience: the whole school, a class or a section",
+          "Guardian portal, SMS and email in one send",
+          "Merge fields such as student, class, dues and result",
+          "Templates, drafts and scheduled sending",
+          "A delivery log showing what reached whom"
+        ],
+        "steps": [
+          {
+            "tag": "Choose",
+            "title": "Audience and channels",
+            "body": "Pick the class or section and the channels to use."
+          },
+          {
+            "tag": "Write",
+            "title": "Notice and SMS text",
+            "body": "Write once. Merge fields personalise it for each child."
+          },
+          {
+            "tag": "Send",
+            "title": "Now or later",
+            "body": "Preview who it reaches, then send now or schedule it. The log keeps the result."
+          }
+        ],
+        "ui": {
+          "tabCompose": "Compose",
+          "tabNotices": "Notices",
+          "tabTemplates": "Templates",
+          "tabLog": "Delivery log",
+          "tabAuto": "Automatic",
+          "fTemplate": "Start from a template",
+          "fAudience": "Audience",
+          "fClass": "Class",
+          "fSection": "Section",
+          "fTitle": "Title",
+          "fNotice": "Notice (portal and email)",
+          "fSms": "SMS text",
+          "templateValue": "Exam routine",
+          "audienceValue": "A section",
+          "classValue": "Class 8",
+          "sectionValue": "A",
+          "channels": "Channels",
+          "portal": "Guardian portal",
+          "sms": "SMS",
+          "email": "Email",
+          "titleValue": "Half-yearly exam routine",
+          "noticeValue": "Dear {guardian}, the half-yearly examination for {student} of {class} begins on 14 June. Please see the routine on the portal.",
+          "smsCount": "(112/480)",
+          "merge": "Merge fields",
+          "mergeList": "{student} {studentCode} {class} {section} {roll} {guardian} {school} {dues} {overdue} {attendance} {date} {exam} {grade} {gpa} {position} {dueDate}",
+          "preview": "Preview",
+          "saveDraft": "Save draft",
+          "sendAt": "Send at",
+          "schedule": "Schedule",
+          "sendNow": "Send now",
+          "previewTitle": "Preview",
+          "reaches": "Reaches 32 guardians in Class 8, A",
+          "sample": "Dear Rezaul Rahman, the half-yearly examination for Sumaiya Rahman of Class 8 begins on 14 June. Please see the routine on the portal."
+        },
+        "faq": [
+          {
+            "q": "What are merge fields?",
+            "a": "Placeholders like the student's name or dues that are filled in separately for each child when the notice is sent."
+          },
+          {
+            "q": "Can I schedule a notice?",
+            "a": "Yes. Pick a date and time and it goes out then."
+          },
+          {
+            "q": "Do guardians need the portal?",
+            "a": "No. Choose SMS or email and a guardian without the portal still gets it."
+          },
+          {
+            "q": "Can I see who received it?",
+            "a": "Yes. The delivery log shows the result for each channel."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring one notice you sent last month. We will resend it in the demo."
+        }
+      },
+      "edOnlinePage": {
+        "meta": {
+          "title": "Online Fee Payments: Gateway Payments Matched to Receipts and Settled | Adon ERP",
+          "description": "Take fees online through a payment gateway. Each payment becomes an ordinary receipt and sits in a clearing account until the gateway pays you. Built for schools in Bangladesh.",
+          "keywords": [
+            "online school fee payment Bangladesh",
+            "payment gateway reconciliation",
+            "bKash Nagad school fees",
+            "fee receipt online",
+            "Adon ERP online payments"
+          ]
+        },
+        "hero": {
+          "title": "Online payments: paid on a phone, settled on one screen",
+          "mark": "settled on one screen",
+          "lead": "Guardians pay fees online. Each payment becomes an ordinary receipt with the gateway's transaction number, and waits in a clearing account until the gateway pays the school. Settle them here, in a batch.",
+          "cta": "See reconciliation"
+        },
+        "features": [
+          "Every online payment becomes an ordinary receipt",
+          "The gateway's transaction number kept on each one",
+          "A clearing account that ties to the unsettled payments",
+          "Settle many payments in one go",
+          "Failed payments listed, with a way to ask the gateway"
+        ],
+        "steps": [
+          {
+            "tag": "Pay",
+            "title": "Guardian pays online",
+            "body": "A guardian pays a fee on the portal. A receipt is created at once."
+          },
+          {
+            "tag": "Hold",
+            "title": "Clearing account",
+            "body": "The money sits in the gateway clearing account until it reaches the bank."
+          },
+          {
+            "tag": "Settle",
+            "title": "Match the payout",
+            "body": "Select the payments the gateway has paid and settle them together."
+          }
+        ],
+        "ui": {
+          "tabRecon": "Reconciliation",
+          "tabGateways": "Gateways",
+          "kPaid": "paid online",
+          "kPaidSub": "BDT 38,500",
+          "kUnsettled": "Not yet settled",
+          "kUnsettledSub": "9 payments the gateway still owes",
+          "kClearing": "Gateway clearing account",
+          "kClearingSub": "ties to the unsettled payments",
+          "kReview": "need review",
+          "fStatus": "Status",
+          "all": "All",
+          "refresh": "Refresh",
+          "settle": "Settle 0",
+          "cPayment": "Payment",
+          "cDate": "Date",
+          "cFamily": "Family",
+          "cAmount": "Amount",
+          "cStatus": "Status",
+          "cTxn": "Gateway txn",
+          "cReceipt": "Receipt",
+          "paid": "Paid",
+          "settled": "Settled",
+          "failed": "Failed",
+          "askGateway": "Ask the gateway",
+          "closePayment": "Close payment",
+          "testGateway": "Test gateway (demo)"
+        },
+        "faq": [
+          {
+            "q": "What is the clearing account?",
+            "a": "A holding account for money the gateway has collected but not yet paid to the school."
+          },
+          {
+            "q": "Does each payment get a receipt?",
+            "a": "Yes. It is an ordinary receipt, marked online, with the gateway's transaction number."
+          },
+          {
+            "q": "What if a payment fails?",
+            "a": "It is listed as failed. You can ask the gateway for its status or close the payment."
+          },
+          {
+            "q": "Does it tie to the bank?",
+            "a": "Yes. When the gateway pays, you settle the payments and the clearing account clears."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring a gateway statement. We will reconcile it in the demo."
+        }
+      },
+      "edLibraryPage": {
+        "meta": {
+          "title": "School Library: Issue, Return and Fines by Accession Number | Adon ERP",
+          "description": "Lend books by accession number or barcode, track loans and overdue copies, and charge late fines to the pupil's fees. Built for school libraries in Bangladesh.",
+          "keywords": [
+            "school library software",
+            "book issue return",
+            "accession number",
+            "library fine",
+            "Adon ERP library"
+          ]
+        },
+        "hero": {
+          "title": "Library: lend by accession number, fine through the fees",
+          "mark": "fine through the fees",
+          "lead": "Scan or type the accession number to issue or return a book. A late return or a lost book is charged to the pupil's fees as a Library fine, paid at the counter or online like any fee.",
+          "cta": "See issue and return"
+        },
+        "features": [
+          "Issue and return by accession number or barcode",
+          "Titles, copies, copies on the shelf and copies on loan",
+          "Overdue list, with days late",
+          "Late fines worked out after grace days and charged to the pupil",
+          "Pupil or staff borrowers, with staff fines kept on the loan"
+        ],
+        "steps": [
+          {
+            "tag": "Catalogue",
+            "title": "Books and copies",
+            "body": "Add titles and their copies, each with an accession number."
+          },
+          {
+            "tag": "Lend",
+            "title": "Issue and return",
+            "body": "Issue a copy to a pupil or staff member. Return it with one scan."
+          },
+          {
+            "tag": "Charge",
+            "title": "Fines to fees",
+            "body": "Late days after the grace period times the daily fine go onto the pupil's fees."
+          }
+        ],
+        "ui": {
+          "kTitles": "titles",
+          "kCopies": "Copies",
+          "kCopiesSub": "87 on the shelf",
+          "kLoan": "out on loan",
+          "kOverdue": "overdue",
+          "kFines": "fines & lost books this month",
+          "tabIssue": "Issue & return",
+          "tabBooks": "Books",
+          "tabLoans": "Loans",
+          "tabRules": "Rules",
+          "issueTitle": "Issue a book",
+          "returnTitle": "Return a book",
+          "fAccession": "Accession no. / barcode",
+          "accessionHint": "ACC-000123",
+          "pupil": "Pupil",
+          "staff": "Staff",
+          "fPupil": "Pupil",
+          "pupilHint": "Type a name, student ID or guardian's phone",
+          "fWaive": "Waive (BDT)",
+          "issueBtn": "Issue a book",
+          "returnBtn": "Return a book",
+          "returnNote": "Days late after the grace days × the fine a day is charged to the pupil. Staff fines are recorded on the loan only."
+        },
+        "faq": [
+          {
+            "q": "Where do fines go?",
+            "a": "A late return or lost book is charged to the pupil's fees under the Library fine head."
+          },
+          {
+            "q": "Can I waive a fine?",
+            "a": "Yes. Enter the amount to waive when you return the book."
+          },
+          {
+            "q": "Can staff borrow books?",
+            "a": "Yes. Staff fines are recorded on the loan only, not on fees."
+          },
+          {
+            "q": "How do I set the rules?",
+            "a": "In the Rules tab: loan days, grace days and the fine for each day."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your book list. We will issue and return a copy in the demo."
+        }
+      },
+      "edBusPage": {
+        "meta": {
+          "title": "School Bus: Routes, Riders, Boarding Register and Bus Fees | Adon ERP",
+          "description": "Plan school bus routes on Transport Pool vehicles, assign riders and attendants, and bill the bus fee monthly only to pupils on a route. Built for schools in Bangladesh.",
+          "keywords": [
+            "school bus management software",
+            "school transport route",
+            "bus attendant boarding",
+            "bus fee billing",
+            "Adon ERP school bus"
+          ]
+        },
+        "hero": {
+          "title": "School bus: every route, rider and boarding mark",
+          "mark": "every route, rider",
+          "lead": "Routes run on your Transport Pool vehicles. Riders are placed on a route and a stop, the attendant marks boarding on a phone, and the bus fee is billed by the monthly fee run only to pupils who ride.",
+          "cta": "See the routes"
+        },
+        "features": [
+          "Routes with stops, vehicle, driver and attendant",
+          "Riders for each route against the seats on the bus",
+          "A boarding register the attendant fills on a phone",
+          "Bus fee per stop or per zone, billed monthly",
+          "A printable route sheet for each route"
+        ],
+        "steps": [
+          {
+            "tag": "Route",
+            "title": "Plan the stops",
+            "body": "Create a route with its stops, a vehicle from Transport Pool, a driver and an attendant."
+          },
+          {
+            "tag": "Ride",
+            "title": "Place the riders",
+            "body": "Add pupils to a route and stop. The seat count shows what is left."
+          },
+          {
+            "tag": "Bill",
+            "title": "Monthly bus fee",
+            "body": "The monthly fee run charges the bus fee only to pupils on a route that month."
+          }
+        ],
+        "ui": {
+          "kRoutes": "routes",
+          "kRiders": "Riders",
+          "kBoarded": "boarded today",
+          "kAbsent": "absent today",
+          "kFee": "Bus fee",
+          "kFeeValue": "Per stop / zone",
+          "tabRoutes": "Routes",
+          "tabRiders": "Riders",
+          "tabBoarding": "Boarding register",
+          "tabSettings": "Settings",
+          "newRoute": "New route",
+          "cCode": "Code",
+          "cRoute": "Route",
+          "cVehicle": "Vehicle",
+          "cAttendant": "Attendant",
+          "cRiders": "Riders",
+          "cFee": "Route fee (BDT/month)",
+          "morning": "Morning",
+          "stops": "stops",
+          "driver": "Driver",
+          "stopsBtn": "Stops",
+          "edit": "Edit",
+          "routeSheet": "Route sheet"
+        },
+        "faq": [
+          {
+            "q": "Do I need Transport Pool?",
+            "a": "Routes run on Transport Pool vehicles, so vehicles and maintenance are kept in one place."
+          },
+          {
+            "q": "Who marks boarding?",
+            "a": "The attendant, on a phone, through the Employee Portal."
+          },
+          {
+            "q": "Is the fee the same for everyone?",
+            "a": "It can be per stop or per zone, as you set in Settings."
+          },
+          {
+            "q": "What if a pupil stops riding?",
+            "a": "Remove them from the route and the next monthly fee run does not charge the bus fee."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your route list. We will set up one route in the demo."
+        }
+      },
+      "edStorePage": {
+        "meta": {
+          "title": "Store Issues: Uniform, Books and Stationery Issued from Stock | Adon ERP",
+          "description": "Issue uniform, books and stationery to a pupil from stock, charged to the pupil's fees or free. Stock never goes below zero. Built for schools in Bangladesh.",
+          "keywords": [
+            "school store software",
+            "uniform issue",
+            "stationery stock school",
+            "issue to pupil fees",
+            "Adon ERP store issues"
+          ]
+        },
+        "hero": {
+          "title": "Store issues: hand it over, and the fee follows",
+          "mark": "the fee follows",
+          "lead": "Pick the pupil, pick the store, add the items. The price goes on the pupil's fees, or the issue is free. The cost of what you hand over is booked as cost of items issued, and stock never goes below zero.",
+          "cta": "See an issue"
+        },
+        "features": [
+          "Issue from a school store to a pupil",
+          "Charged to the pupil's fees, or free",
+          "Uniform, books and stationery on one issue",
+          "Cost of items issued booked for you",
+          "A list of everything issued, by pupil"
+        ],
+        "steps": [
+          {
+            "tag": "Find",
+            "title": "Pupil and store",
+            "body": "Search the pupil by name, student ID or guardian's phone, and choose the store."
+          },
+          {
+            "tag": "Add",
+            "title": "Items",
+            "body": "Add items. The total is worked out, and stock is checked as you go."
+          },
+          {
+            "tag": "Issue",
+            "title": "Charge or free",
+            "body": "Issue it. The price lands on the fees, and stock falls."
+          }
+        ],
+        "ui": {
+          "tabIssue": "Issue",
+          "tabIssued": "Issued",
+          "fPupil": "Pupil",
+          "pupilHint": "Rafi Chowdhury, STU-2027-000118",
+          "fStore": "Store",
+          "storeValue": "School store",
+          "charged": "Charged",
+          "free": "Free",
+          "chargeHint": "The price goes on the pupil's fees (Uniform, books & stationery); the cost of the items is booked as cost of items issued.",
+          "addItem": "Add item",
+          "fNote": "Note",
+          "noteValue": "Start of session",
+          "item1": "Uniform shirt",
+          "item2": "Exercise book",
+          "item3": "Geometry box",
+          "cItem": "Item",
+          "cQty": "Qty",
+          "cAmount": "Amount",
+          "total": "Charged to fees",
+          "issue": "Issue"
+        },
+        "faq": [
+          {
+            "q": "Can I issue free items?",
+            "a": "Yes. Choose Free and the price is not put on the fees."
+          },
+          {
+            "q": "Can stock go negative?",
+            "a": "No. Stock never goes below zero."
+          },
+          {
+            "q": "Where does the charge appear?",
+            "a": "On the pupil's fees under the head you set, so the guardian pays it with the rest."
+          },
+          {
+            "q": "Is the cost booked?",
+            "a": "Yes. The cost of the items is booked as cost of items issued."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your stock list. We will issue a uniform set in the demo."
+        }
+      },
+      "edRoomsPage": {
+        "meta": {
+          "title": "School Rooms: Classrooms, Labs and Halls with Free-Room Finder | Adon ERP",
+          "description": "Keep a list of classrooms, labs and halls with seats, assign home rooms to sections and find free rooms for any period. Built for schools in Bangladesh.",
+          "keywords": [
+            "school room management",
+            "classroom allocation",
+            "lab booking",
+            "free room finder",
+            "Adon ERP rooms"
+          ]
+        },
+        "hero": {
+          "title": "Rooms: every classroom and lab, and which are free",
+          "mark": "which are free",
+          "lead": "A list of rooms with their type and seats. Sections get a home room, the timetable chooses a room from the list, and a free-room finder shows what is empty in any period.",
+          "cta": "See the room list"
+        },
+        "features": [
+          "Classrooms, labs, halls and libraries with seats",
+          "A home room for each section",
+          "The timetable refuses a room booked twice",
+          "Build the list from the rooms already on sections",
+          "Find free rooms by day and period"
+        ],
+        "steps": [
+          {
+            "tag": "List",
+            "title": "Add the rooms",
+            "body": "Add rooms by code, type, building and seats, or build the list from your sections."
+          },
+          {
+            "tag": "Home",
+            "title": "Give sections a room",
+            "body": "Each section's home room is shown against it."
+          },
+          {
+            "tag": "Find",
+            "title": "Free rooms",
+            "body": "Pick a day and a period and see which rooms are free."
+          }
+        ],
+        "ui": {
+          "newRoom": "New room",
+          "buildFrom": "Build from sections' rooms",
+          "cCode": "Code",
+          "cType": "Type",
+          "cSeats": "Seats",
+          "cHome": "Home of",
+          "edit": "Edit",
+          "lab": "Lab",
+          "hall": "Hall",
+          "library": "Library",
+          "classroom": "Classroom",
+          "mainBuilding": "Main building",
+          "freeTitle": "Free rooms",
+          "fDay": "Day",
+          "fPeriod": "Period",
+          "dayValue": "Tuesday",
+          "periodValue": "Period 4",
+          "find": "Find free rooms",
+          "freeNow": "Free",
+          "periodsWeek": "timetabled periods a week"
+        },
+        "faq": [
+          {
+            "q": "What does a room hold?",
+            "a": "A code, a type, a building and the number of seats."
+          },
+          {
+            "q": "Can I build the list from what I have?",
+            "a": "Yes. One click builds rooms from the rooms already written on sections."
+          },
+          {
+            "q": "What stops double booking?",
+            "a": "The timetable refuses a room that is already used in that period."
+          },
+          {
+            "q": "Can a lab be shared?",
+            "a": "Yes. Labs have no home section and are booked by the timetable."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your room list. We will find free rooms for one period in the demo."
+        }
+      },
+      "edFeesPage": {
+        "meta": {
+          "title": "School Fees: Demand Runs, Fee Structure, Waivers and Late Fines | Adon ERP",
+          "description": "Run monthly fee demands with one journal per run, set fee structure and heads, apply waivers and releases, and take payments at the counter. Built for schools in Bangladesh.",
+          "keywords": [
+            "school fee management Bangladesh",
+            "fee demand run",
+            "fee structure waiver",
+            "accrual school accounting",
+            "Adon ERP fees"
+          ]
+        },
+        "hero": {
+          "title": "Fees: one monthly run, one clean journal",
+          "mark": "one clean journal",
+          "lead": "Each month a demand run raises the fees for every student, applies waivers and uses any advance already held. One journal posts per run, and a run can be reversed if it was wrong.",
+          "cta": "See the demand runs"
+        },
+        "features": [
+          "A monthly demand run for fees, and one for late fines",
+          "Fee structure and fee heads, by class",
+          "Waivers, with approvals, applied automatically",
+          "Advance already held is used against the demand",
+          "A counter for taking payments and issuing receipts"
+        ],
+        "steps": [
+          {
+            "tag": "Set",
+            "title": "Heads and structure",
+            "body": "Define fee heads and the amount for each class."
+          },
+          {
+            "tag": "Run",
+            "title": "Preview and post",
+            "body": "Pick the month and preview. Post it: one journal for the whole run."
+          },
+          {
+            "tag": "Collect",
+            "title": "Counter and online",
+            "body": "Take payments at the counter, or let guardians pay online."
+          }
+        ],
+        "ui": {
+          "tabCounter": "Counter",
+          "tabRuns": "Demand runs",
+          "tabStructure": "Fee structure",
+          "tabHeads": "Fee heads",
+          "tabWaivers": "Waivers",
+          "tabReleases": "Releases & fines",
+          "basis": "Accrual basis",
+          "year": "2027",
+          "hint": "Accrual: one journal per run. Dr receivable, Dr waivers / Cr income by head, session fees spread over the year, board fees, caution money. Advances already held are applied automatically.",
+          "fMonth": "Month",
+          "monthValue": "November 2027",
+          "preview": "Preview",
+          "cMonth": "Month",
+          "cKind": "Kind",
+          "cDemands": "Demands",
+          "cGross": "Gross",
+          "cWaivers": "Waivers",
+          "cNet": "Net",
+          "cAdvance": "Advance applied",
+          "cBasis": "Basis",
+          "cStatus": "Status",
+          "fees": "Fees",
+          "lateFines": "Late fines",
+          "posted": "Posted",
+          "reverse": "Reverse"
+        },
+        "faq": [
+          {
+            "q": "Is it accrual or cash?",
+            "a": "You choose in Institution Settings. Accrual books fees as income for the month they cover."
+          },
+          {
+            "q": "Can I undo a run?",
+            "a": "Yes. A posted run has a Reverse button."
+          },
+          {
+            "q": "How are waivers applied?",
+            "a": "Approved waivers reduce the demand when the run is made, and show in their own column."
+          },
+          {
+            "q": "What about advances?",
+            "a": "An advance already held is used against the demand automatically."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your fee schedule. We will run a month in the demo."
+        }
+      },
+      "edFeeReportsPage": {
+        "meta": {
+          "title": "Fee Reports: Billed, Collected, Outstanding and Defaulters by Class | Adon ERP",
+          "description": "See billed, collected, outstanding, waivers, written off and advance held, with collection by class, defaulters, a student ledger and a tie-out to the books. Built for schools in Bangladesh.",
+          "keywords": [
+            "school fee report",
+            "fee defaulter list",
+            "fee collection report",
+            "student ledger",
+            "Adon ERP fee reports"
+          ]
+        },
+        "hero": {
+          "title": "Fee reports: what was billed, what came in, who owes",
+          "mark": "who owes",
+          "lead": "Six numbers at the top, and the collection for every class below. Open the defaulters, a single student's ledger, or the tie-out that proves the reports match the books.",
+          "cta": "See the summary"
+        },
+        "features": [
+          "Billed, collected, outstanding, waivers, written off and advance held",
+          "Collection percentage for each class",
+          "A defaulter list you can work from",
+          "A student ledger showing every charge and payment",
+          "A tie-out to the books, so the reports can be trusted"
+        ],
+        "steps": [
+          {
+            "tag": "Read",
+            "title": "The summary",
+            "body": "Six figures for the year or for one month."
+          },
+          {
+            "tag": "Drill",
+            "title": "By class and student",
+            "body": "Open a class, a defaulter or one student's ledger."
+          },
+          {
+            "tag": "Prove",
+            "title": "Tie-out",
+            "body": "Check that the report equals the ledger in accounts."
+          }
+        ],
+        "ui": {
+          "tabSummary": "Summary",
+          "tabDefaulters": "Defaulters",
+          "tabCollections": "Collections",
+          "tabLedger": "Student ledger",
+          "tabTie": "Tie-out",
+          "basis": "Accrual basis",
+          "year": "2027",
+          "fMonth": "Month",
+          "kBilled": "Billed",
+          "kCollected": "Collected",
+          "kOutstanding": "Outstanding",
+          "kWaivers": "Waivers",
+          "kWritten": "Written off",
+          "kAdvance": "Advance held",
+          "cClass": "Class",
+          "cBilled": "Billed",
+          "cCollected": "Collected",
+          "cOutstanding": "Outstanding",
+          "cPct": "Collected"
+        },
+        "faq": [
+          {
+            "q": "Do the reports match accounts?",
+            "a": "Yes. The tie-out compares the fee reports with the ledger and shows any difference."
+          },
+          {
+            "q": "Can I filter by month?",
+            "a": "Yes. Pick a month, or leave it blank for the year."
+          },
+          {
+            "q": "Who is a defaulter?",
+            "a": "A student with fees past due. The Defaulters tab lists them with the amount owed."
+          },
+          {
+            "q": "Can I see one student's history?",
+            "a": "Yes. The student ledger lists every charge, waiver and payment."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring last month's collection sheet. We will compare it with the report in the demo."
+        }
+      },
+      "edSettingsPage": {
+        "meta": {
+          "title": "Institution Settings: Type, Revenue Basis, Rolls, Attendance and Off-days | Adon ERP",
+          "description": "Set the institution type, revenue basis, roll numbering, calendar, late fine, attendance rules, weekly off-days and MPO status in one place. Built for schools in Bangladesh.",
+          "keywords": [
+            "school settings software",
+            "accrual or cash school",
+            "MPO listed institution",
+            "roll number rule",
+            "Adon ERP institution settings"
+          ]
+        },
+        "hero": {
+          "title": "Institution settings: set the rules, the rest follows",
+          "mark": "the rest follows",
+          "lead": "Choose the institution type and how it keeps its books. Set how rolls are numbered, what counts as low attendance, the late fine and the weekly off-days. Every other page follows these choices.",
+          "cta": "See the settings"
+        },
+        "features": [
+          "Institution type, with its boards, classes and subjects",
+          "Accrual or cash basis for fee income",
+          "Roll numbers by merit or alphabetically",
+          "Late fine, daily attendance and minimum attendance",
+          "Weekly off-days, MPO status and guardian absence texts"
+        ],
+        "steps": [
+          {
+            "tag": "Choose",
+            "title": "Institution type",
+            "body": "School, madrasa or college, each with its own classes and subjects."
+          },
+          {
+            "tag": "Set",
+            "title": "Rules",
+            "body": "Revenue basis, rolls, attendance, fines and off-days."
+          },
+          {
+            "tag": "Extend",
+            "title": "Add another type",
+            "body": "Add a wing, such as a madrasa section, without overwriting what you edited."
+          }
+        ],
+        "ui": {
+          "typeLabel": "Institution type",
+          "typeValue": "School & college (national curriculum)",
+          "boards": "Boards: Education Boards (NCTB)",
+          "fRevenue": "Revenue basis",
+          "revenueValue": "Accrual: fees are income when due",
+          "fAnnual": "Annual / session fees",
+          "annualValue": "Spread over the session",
+          "fRolls": "Roll numbers",
+          "rollsValue": "By merit (from results)",
+          "fCalendar": "Calendar",
+          "calendarValue": "Gregorian",
+          "fCash": "Counter cash account",
+          "cashValue": "The lowest-code cash account",
+          "fFine": "Late fine (per overdue demand)",
+          "fineValue": "100",
+          "fAttendance": "Attendance",
+          "attendanceValue": "Daily (one register a day)",
+          "fMin": "Minimum attendance (%)",
+          "minValue": "75",
+          "offDays": "Weekly off-days",
+          "sat": "Saturday",
+          "sun": "Sunday",
+          "mon": "Monday",
+          "tue": "Tuesday",
+          "wed": "Wednesday",
+          "thu": "Thursday",
+          "fri": "Friday",
+          "textAbsent": "Text the guardian when a student is absent",
+          "mpo": "MPO-listed (government pays part of teacher salaries)",
+          "mpoNote": "MPO-listed institutions receive the government share of teacher salaries. Payroll will show that share separately from the institution's own share.",
+          "accrualNote": "Accrual is what an auditor expects: a fee is income for the month it covers, and unpaid fees are a receivable. Cash basis books income only when money arrives.",
+          "save": "Save",
+          "addTitle": "Add another institution type",
+          "addHint": "For a School & College (or a school that also runs a madrasa wing): adds that pack's classes and subjects alongside yours. Nothing you have edited is overwritten.",
+          "apply": "Apply"
+        },
+        "faq": [
+          {
+            "q": "Accrual or cash: which should I pick?",
+            "a": "Accrual is what an auditor expects. Cash books income only when money arrives. Dues and defaulter lists work either way."
+          },
+          {
+            "q": "What is MPO-listed?",
+            "a": "Institutions where the government pays part of teacher salaries. Payroll shows that share separately."
+          },
+          {
+            "q": "Can I run a school and a madrasa wing?",
+            "a": "Yes. Add another institution type and its classes and subjects come alongside yours."
+          },
+          {
+            "q": "Does changing a rule rewrite history?",
+            "a": "No. Rules apply to what you do from now on."
+          },
+          {
+            "q": "Where is Adon ERP available?",
+            "a": "We are currently onboarding schools in Dhaka. Book a demo and we will walk through it with sample data."
+          }
+        ],
+        "closing": {
+          "title": "Bring your current rules. We will set them up in the demo."
+        }
+      },
       "reDashboardPage": {
         "meta": {
           "title": "Real Estate Sales Dashboard: Bookings, Collections and Stock in One View | Adon ERP",
