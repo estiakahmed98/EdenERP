@@ -1,25 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  EducationIndustryPage,
+  educationIndustryMetadata,
+} from "@/components/education/industry/page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = educationIndustryMetadata("college");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.industries");
-
-  return {
-    title: t("links.college"),
-    alternates: getLocaleAlternates("/industries/college"),
-  };
-}
-
-export default function IndustriesCollegePage() {
-  return (
-    <ComingSoonPage
-      moduleKey="industries"
-      linkKey="college"
-      backHref="/industries"
-      backKey="backIndustries"
-    />
-  );
+export default function EducationIndustryLanding() {
+  return <EducationIndustryPage industry="college" />;
 }

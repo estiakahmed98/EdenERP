@@ -1,25 +1,10 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  EducationIndustryPage,
+  educationIndustryMetadata,
+} from "@/components/education/industry/page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+export const metadata = educationIndustryMetadata("lms");
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.industries");
-
-  return {
-    title: t("links.lms"),
-    alternates: getLocaleAlternates("/industries/lms"),
-  };
-}
-
-export default function IndustriesLmsPage() {
-  return (
-    <ComingSoonPage
-      moduleKey="industries"
-      linkKey="lms"
-      backHref="/industries"
-      backKey="backIndustries"
-    />
-  );
+export default function EducationIndustryLanding() {
+  return <EducationIndustryPage industry="lms" />;
 }

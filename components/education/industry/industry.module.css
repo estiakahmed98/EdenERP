@@ -1,0 +1,2487 @@
+.industry {
+  --industry-blue: color-mix(in srgb, #1088ef 78%, var(--ink));
+  --industry-green: #187746;
+  --industry-warning: #a36616;
+  --industry-wash: color-mix(in srgb, #1088ef 5%, var(--card));
+  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  overflow: clip;
+}
+:global(.dark) .industry {
+  --industry-blue: #8bceff;
+  --industry-green: #95dca7;
+  --industry-warning: #e8c080;
+}
+.industry * {
+  min-width: 0;
+}
+.industry h1,
+.industry h2,
+.industry h3,
+.industry p,
+.industry figure,
+.industry dl {
+  margin: 0;
+}
+.industry h1 {
+  margin-top: 18px;
+  font-size: clamp(35px, 4.3vw, 59px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+}
+.industry h1 em {
+  font-style: normal;
+  color: var(--industry-blue);
+}
+.industry h2 {
+  color: var(--ink);
+  font-size: clamp(25px, 2.7vw, 35px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+.industry h3 {
+  color: var(--ink);
+  font-weight: 500;
+}
+.industry button,
+.industry input,
+.industry select {
+  font: inherit;
+}
+.industry button {
+  cursor: pointer;
+}
+.industry button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.industry :is(a, button, input, select, summary):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}
+.wrap {
+  max-width: 1240px;
+  padding-inline: 32px;
+  margin-inline: auto;
+}
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-block: 24px 8px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+.breadcrumb [aria-current] {
+  color: var(--ink);
+}
+.industry > section:first-of-type {
+  padding-block-start: 22px;
+}
+.eyebrow {
+  color: var(--industry-blue);
+  font-size: 9px;
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+}
+.lead {
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 520px;
+  margin-top: 23px !important;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+}
+.actions > a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.actions > a:hover {
+  color: var(--industry-blue);
+}
+.actions > a svg {
+  transition: transform 0.2s;
+}
+.actions > a:hover svg {
+  transform: translateY(3px);
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 9px;
+  width: fit-content;
+  background: var(--card);
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.7;
+}
+.industry figcaption {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  text-align: center;
+  line-height: 1.8;
+}
+.curvedArrow {
+  width: 90px;
+  height: 48px;
+}
+
+/* School: an open school-day notebook with a purpose-built campus drawing. */
+.schoolHero {
+  padding-bottom: 66px;
+  background: radial-gradient(
+    ellipse at 80% 50%,
+    color-mix(in srgb, #1088ef 4%, transparent),
+    transparent 55%
+  );
+}
+.schoolLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 65px;
+  align-items: start;
+}
+.schoolPrinciples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 30px;
+}
+.schoolPrinciples span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.schoolNotebook {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 23px 24px 20px 35px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 22px,
+      color-mix(in srgb, #1088ef 15%, transparent) 22px 23px,
+      transparent 23px
+    ),
+    var(--card);
+  box-shadow: 0 23px 55px -38px #00318055;
+  transform: rotate(-1.5deg);
+}
+.schoolNotebook > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.schoolNotebook header > span {
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.09em;
+}
+.bindingDots {
+  position: absolute;
+  left: 7px;
+  top: 28px;
+  bottom: 24px;
+  width: 7px;
+  background: radial-gradient(
+      circle,
+      var(--background) 2px,
+      var(--border) 2px 3px,
+      transparent 3px
+    )
+    center/7px 35px;
+}
+.schoolDrawing {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--industry-blue);
+  margin-top: 26px;
+}
+.dayCards {
+  display: grid;
+  gap: 10px;
+  padding-top: 20px;
+}
+.dayCards > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+}
+.dayIcon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--industry-wash);
+  color: var(--industry-blue);
+  flex-shrink: 0;
+}
+.dayCards > div > div {
+  flex: 1;
+}
+.dayCards b {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.dayCards div div > span {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+.dayCards > div > svg {
+  color: var(--industry-green);
+  flex-shrink: 0;
+}
+.schoolCallout {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  color: var(--industry-blue);
+  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-size: 22px;
+  transform: rotate(-3deg);
+}
+.schoolCallout svg {
+  transform: rotate(180deg);
+  width: 70px;
+}
+.schoolNotebook figcaption {
+  margin-top: 9px;
+  font-size: 8px;
+}
+
+/* College: editorial prospectus, with a horizontal session ribbon. */
+.collegeHero {
+  padding-bottom: 65px;
+}
+.collegeHeading {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 75px;
+  align-items: start;
+}
+.collegeHeading .lead {
+  max-width: 640px;
+}
+.sessionProspectus {
+  padding: 22px 25px;
+  border-left: 1px solid var(--border);
+  background: linear-gradient(90deg, var(--industry-wash), transparent);
+}
+.sessionProspectus header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  margin-bottom: 13px;
+}
+.sessionProspectus > div {
+  display: flex;
+  gap: 17px;
+  padding-top: 22px;
+}
+.sessionProspectus div > span {
+  color: var(--industry-blue);
+  font-size: 9px;
+  padding-top: 3px;
+}
+.sessionProspectus p {
+  font-size: 12px;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+.sessionProspectus b {
+  color: var(--ink);
+  font-weight: 500;
+}
+.collegeRibbon {
+  margin-top: 40px !important;
+  padding: 23px 26px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+}
+.collegeRibbon > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid var(--border);
+  color: var(--industry-blue);
+}
+.collegeRibbon header > span {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  flex: 1;
+}
+.scheduleRibbon {
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+  padding-block: 27px;
+}
+.scheduleRibbon > div:not(.ribbonNote) {
+  position: relative;
+  padding: 18px 20px 22px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--industry-wash);
+  overflow: hidden;
+}
+.scheduleRibbon div > span {
+  font-size: 10px;
+  color: var(--industry-blue);
+}
+.scheduleRibbon b {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  margin-top: 12px;
+}
+.scheduleRibbon small {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  margin-top: 9px;
+}
+.scheduleRibbon i {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 65%;
+  height: 3px;
+  background: #1088ef;
+}
+.scheduleRibbon > div:nth-child(3) i {
+  background: #21a816;
+}
+.scheduleRibbon > svg {
+  color: var(--industry-blue);
+}
+.ribbonNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.ribbonNote > svg {
+  color: var(--industry-blue);
+}
+.scheduleRibbon .ribbonNote span {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* University: a centered academic journey and an architectural campus stage. */
+.universityHero {
+  padding-bottom: 65px;
+}
+.centerCopy {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+.centerCopy .lead {
+  max-width: 660px;
+  margin-inline: auto !important;
+}
+.centerCopy .actions {
+  justify-content: center;
+}
+.campusScene {
+  position: relative;
+  max-width: 1060px;
+  margin: 36px auto 0 !important;
+  padding: 25px 30px 17px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: radial-gradient(
+    ellipse at 50% 80%,
+    var(--industry-wash),
+    var(--card) 70%
+  );
+}
+.academicThread {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.academicThread > span {
+  font-size: 8px;
+  letter-spacing: 0.09em;
+  color: var(--industry-blue);
+}
+.academicThread > i {
+  width: 55px;
+  border-top: 1px dashed var(--border);
+}
+.campusLineArt {
+  max-width: 740px;
+  margin: 20px auto 0;
+  color: var(--industry-blue);
+}
+.campusLineArt svg {
+  width: 100%;
+  height: auto;
+}
+.campusDossier {
+  position: absolute;
+  top: 70px;
+  right: 22px;
+  width: 200px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--card) 95%, transparent);
+  box-shadow: 0 20px 35px -25px #00318055;
+  backdrop-filter: blur(8px);
+  transform: rotate(3deg);
+}
+.campusDossier > svg {
+  color: var(--industry-blue);
+  margin-bottom: 16px;
+}
+.campusDossier > span {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  color: var(--industry-blue);
+}
+.campusDossier > div {
+  margin-top: 17px;
+}
+.campusDossier b {
+  font-weight: 500;
+  font-size: 12px;
+}
+.campusDossier small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+  margin-top: 5px;
+}
+.campusBookmark {
+  position: absolute;
+  left: 24px;
+  top: 150px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  width: 180px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--industry-blue);
+  background: var(--card);
+  transform: rotate(-4deg);
+}
+.campusBookmark > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.8;
+}
+.campusBookmark > svg {
+  flex-shrink: 0;
+}
+.campusScene figcaption {
+  margin-top: 20px;
+}
+
+/* LMS: a studio outline, working reading concept and an independent copy column. */
+.lmsHero {
+  padding-bottom: 65px;
+}
+.lmsLayout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.studioWindow {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 25px 60px -38px #00318055;
+  overflow: hidden;
+}
+.studioWindow > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--cream);
+  color: var(--muted-foreground);
+}
+.studioWindow header > span:nth-child(2) {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  flex: 1;
+}
+.studioWindow .badge {
+  font-size: 8px;
+}
+.windowDots {
+  display: flex;
+  gap: 4px;
+}
+.windowDots i {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.studioBody {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 370px;
+}
+.studioOutline {
+  padding: 25px 18px;
+  border-right: 1px solid var(--border);
+}
+.studioOutline > span {
+  font-size: 7px;
+  color: var(--industry-blue);
+  letter-spacing: 0.11em;
+}
+.studioOutline > h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.studioOutline > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 23px;
+  color: var(--industry-blue);
+}
+.studioOutline div > span {
+  color: var(--muted-foreground);
+  font-size: 8px;
+}
+.studioOutline b {
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+.studioOutline div svg {
+  flex-shrink: 0;
+}
+.lessonCanvas {
+  padding: 25px 20px;
+  background: var(--industry-wash);
+}
+.lessonCanvas > span {
+  font-size: 7px;
+  letter-spacing: 0.07em;
+  color: var(--muted-foreground);
+}
+.learningOrbit {
+  position: relative;
+  padding-block: 25px 20px;
+  text-align: center;
+}
+.learningOrbit > span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  margin: 15px auto;
+  width: 94px;
+  height: 94px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--industry-blue);
+}
+.learningOrbit > i {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  width: 132px;
+  height: 124px;
+  transform: translateX(-50%) rotate(-20deg);
+  border: 1px dashed color-mix(in srgb, var(--primary) 35%, transparent);
+  border-radius: 50%;
+}
+.learningOrbit b {
+  display: block;
+  margin-top: 25px;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 13px;
+}
+.practiceTile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--industry-blue);
+}
+.practiceTile > span {
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.practiceTile > svg {
+  flex-shrink: 0;
+}
+.studioWindow figcaption {
+  padding: 13px 17px;
+  border-top: 1px solid var(--border);
+  font-size: 8px;
+}
+.lmsFootnote {
+  margin-top: 25px !important;
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* Role-aware context, with real button states rather than a decorative tab bar. */
+.perspectiveSection {
+  padding-block: 62px;
+  border-block: 1px solid var(--border);
+  background: var(--cream);
+}
+.sectionHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
+}
+.sectionHeading h2 {
+  margin-top: 11px;
+}
+.sectionHeading > div > p:last-child:not(.eyebrow) {
+  margin-top: 14px;
+  max-width: 690px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  line-height: 1.85;
+}
+.sectionHeading > .badge {
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.perspectiveLayout {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr;
+  gap: 40px;
+}
+.roleChoices {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.roleChoices > button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  text-align: left;
+}
+.roleChoices button > span {
+  font-size: 9px;
+  color: var(--industry-blue);
+}
+.roleChoices button > svg {
+  margin-left: auto;
+  color: var(--industry-blue);
+  flex-shrink: 0;
+}
+.roleChoices button[aria-pressed="true"] {
+  border-color: var(--border);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: 0 5px 15px -12px #00318033;
+}
+.roleChoices button:hover {
+  background: var(--card);
+}
+.roleStory {
+  padding: 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+}
+.roleStory h3 {
+  font-size: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+}
+.roleStory > p {
+  max-width: 650px;
+  margin-top: 15px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  line-height: 1.85;
+}
+.roleStory ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0;
+}
+.roleStory li {
+  position: relative;
+  padding-top: 17px;
+  border-top: 1px solid var(--border);
+}
+.roleStory li > span {
+  display: block;
+  color: var(--industry-blue);
+  font-size: 9px;
+}
+.roleStory li > b {
+  display: block;
+  margin-top: 14px;
+  padding-right: 5px;
+  font-size: 11px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+.roleStory li > svg {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  color: var(--industry-blue);
+}
+
+/* Usable local examples. */
+.demoSection {
+  padding-block: 65px;
+  scroll-margin-top: 100px;
+}
+.demoSurface {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--card);
+  box-shadow: 0 22px 55px -45px #00318055;
+}
+.demoSurface h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+.demoToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 37px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 9px 12px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 11px !important;
+  line-height: 1.6;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.button:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: var(--industry-wash);
+}
+.button.primaryButton {
+  border-color: #1088ef;
+  background: #1088ef;
+  color: #fff;
+}
+.button.primaryButton:hover:not(:disabled) {
+  background: #003180;
+  border-color: #003180;
+}
+.metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.metric {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+.metric dt {
+  font-size: 10px;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.metric dd {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.note {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+  padding-top: 15px;
+  margin-top: 23px !important;
+  border-top: 1px dashed var(--border);
+  color: var(--muted-foreground);
+  font-size: 10px !important;
+  line-height: 1.85;
+}
+.note > svg {
+  color: var(--industry-blue);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.attendanceLayout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 27px;
+  align-items: start;
+}
+.learnerList {
+  display: grid;
+}
+.learnerList > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 19px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.learnerInitial {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--industry-wash);
+  color: var(--industry-blue);
+  border-radius: 10px;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.learnerList > div > div {
+  flex: 1;
+}
+.learnerList b {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.learnerList small {
+  display: block;
+  font-size: 9px;
+  color: var(--muted-foreground);
+  margin-top: 6px;
+}
+.learnerList select {
+  width: 125px;
+  min-height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 8px 10px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 11px;
+}
+.attendanceSummary {
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--industry-wash);
+}
+.attendanceSummary > span {
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+.attendanceSummary h3 {
+  margin-top: 14px;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.attendanceSummary .metrics {
+  margin-top: 24px;
+}
+.collegeDemo {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 30px;
+  align-items: start;
+}
+.exampleSessions {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.exampleSessions > article {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 20px;
+  background: var(--card);
+}
+.exampleSessions article > span {
+  color: var(--industry-blue);
+  font-size: 10px;
+}
+.exampleSessions h3 {
+  font-size: 17px;
+  margin-top: 12px;
+}
+.exampleSessions p {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.85;
+  margin-top: 10px;
+}
+.proposalPanel {
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--industry-wash);
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  margin-top: 25px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.field input,
+.field select {
+  width: 100%;
+  min-height: 43px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 9px 11px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 12px;
+}
+.field:focus-within > span {
+  color: var(--industry-blue);
+}
+.conflictResult {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  margin-top: 25px;
+}
+.conflictResult > strong {
+  color: var(--industry-green);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+.conflictResult[data-warning="true"] > strong {
+  color: var(--industry-warning);
+}
+.conflictResult > p,
+.conflictResult ul {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.85;
+  margin-top: 13px;
+}
+.conflictResult ul {
+  padding-left: 15px;
+}
+.creditDemo {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+.courseList {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+.courseList label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+  cursor: pointer;
+}
+.courseList label[data-selected="true"] {
+  background: var(--industry-wash);
+  border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+}
+.courseList input {
+  width: 16px;
+  height: 16px;
+  accent-color: #1088ef;
+  flex-shrink: 0;
+}
+.courseList label > span {
+  flex: 1;
+}
+.courseList small {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 8px;
+  line-height: 1.8;
+}
+.courseList b {
+  display: block;
+  margin-top: 7px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.courseList strong {
+  color: var(--industry-blue);
+  font-size: 23px;
+  font-weight: 500;
+  text-align: right;
+}
+.courseList strong small {
+  font-weight: 400;
+  font-size: 8px;
+}
+.creditSummary {
+  padding: 25px;
+  background: var(--industry-wash);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.creditDrawing {
+  width: 140px;
+  height: 70px;
+  color: var(--industry-blue);
+  margin-bottom: 20px;
+}
+.creditSummary h3 {
+  font-size: 24px;
+  letter-spacing: -0.035em;
+  margin-bottom: 25px;
+}
+.creditNumber {
+  margin-block: 24px;
+  padding-block: 20px;
+  border-block: 1px solid var(--border);
+}
+.creditNumber > strong {
+  color: var(--industry-blue);
+  font-size: 50px;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  font-weight: 400;
+}
+.creditNumber strong > span {
+  font-size: 27px;
+  color: var(--muted-foreground);
+}
+.creditNumber[data-warning="true"] > strong {
+  color: var(--industry-warning);
+}
+.creditNumber p {
+  margin-top: 12px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.8;
+}
+.learningDemo {
+  display: grid;
+  grid-template-columns: 0.7fr 1.5fr;
+  gap: 35px;
+  align-items: start;
+}
+.lessonSidebar {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--industry-wash);
+}
+.lessonSidebar h3 {
+  margin-top: 22px;
+  font-size: 23px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+.lessonChoices {
+  display: grid;
+  gap: 8px;
+  margin-top: 25px;
+}
+.lessonChoices > button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 14px 10px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+}
+.lessonChoices button[aria-pressed="true"] {
+  border-color: var(--border);
+  background: var(--card);
+}
+.lessonChoices button > span {
+  color: var(--industry-blue);
+  font-size: 9px;
+  width: 20px;
+  flex-shrink: 0;
+}
+.lessonChoices button > b {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.localProgress {
+  padding-top: 21px;
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.localProgress > span {
+  color: var(--muted-foreground);
+  font-size: 9px;
+  line-height: 1.8;
+}
+.localProgress > div {
+  height: 5px;
+  margin-top: 11px;
+  border-radius: 5px;
+  background: var(--card);
+}
+.localProgress i {
+  display: block;
+  height: 100%;
+  background: #21a816;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+.lessonSidebar > .button {
+  margin-top: 25px;
+}
+.lessonReader > article {
+  padding: 10px 0 26px;
+}
+.lessonReader article h3 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-top: 16px;
+}
+.lessonReader article > p:not(.eyebrow) {
+  margin-top: 21px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.95;
+}
+.practicePrompt {
+  padding: 22px;
+  border-left: 2px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  background: var(--industry-wash);
+  margin-top: 25px;
+}
+.practicePrompt > span {
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.13em;
+}
+.practicePrompt > p {
+  margin-top: 12px;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.95;
+}
+.lessonReader article > .lessonTakeaway {
+  font-size: 12px !important;
+  color: var(--ink) !important;
+}
+.lessonReader article > button {
+  margin-top: 25px;
+}
+.knowledgeCheck {
+  margin: 0;
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+.knowledgeCheck legend {
+  padding-inline: 8px;
+  color: var(--industry-blue);
+  font-size: 11px;
+  font-weight: 500;
+}
+.knowledgeCheck > p:first-of-type {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink);
+  margin-bottom: 17px;
+}
+.knowledgeCheck > label {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  padding-block: 9px;
+  cursor: pointer;
+}
+.knowledgeCheck input {
+  width: 16px;
+  height: 16px;
+  accent-color: #1088ef;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.knowledgeCheck > button {
+  margin-top: 17px;
+}
+.quizFeedback {
+  margin-top: 17px !important;
+  color: var(--industry-blue);
+  font-size: 11px;
+  line-height: 1.85;
+}
+
+/* Product links and the concept canvas keep marketing and local examples distinct. */
+.modulesSection {
+  padding-block: 62px;
+  background: var(--cream);
+  border-block: 1px solid var(--border);
+}
+.moduleIcon {
+  color: var(--industry-blue);
+}
+.moduleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+}
+.moduleGrid > a {
+  display: flex;
+  flex-direction: column;
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+.moduleGrid > a:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+.moduleGrid a > span {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  color: var(--industry-blue);
+}
+.moduleGrid h3 {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 22px;
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+.moduleGrid h3 svg {
+  color: var(--industry-blue);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.moduleGrid p {
+  color: var(--muted-foreground);
+  font-size: 11px;
+  line-height: 1.85;
+  margin-top: 15px;
+  flex: 1;
+}
+.moduleGrid small {
+  color: var(--industry-blue);
+  font-size: 9px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.previewSection {
+  padding-block: 65px;
+}
+.productCanvas {
+  min-height: 740px;
+  background: var(--card);
+}
+.productCanvas > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.productCanvas header > b {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+}
+.productCanvas header b span {
+  color: var(--industry-blue);
+}
+.productCanvas header > span {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  flex: 1;
+}
+.canvasBody {
+  padding: 25px;
+}
+.canvasBody > h3 {
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.canvasMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding-block: 23px;
+}
+.canvasMetrics .metric {
+  background: var(--cream);
+}
+.canvasMetrics .metric dd {
+  font-size: 23px;
+}
+.canvasRows {
+  display: grid;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.canvasRows > div {
+  display: grid;
+  grid-template-columns: 145px 1fr 240px;
+  gap: 25px;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.canvasRows > div:last-child {
+  border: 0;
+}
+.canvasRows > div:nth-child(even) {
+  background: var(--cream);
+}
+.canvasRows div > span {
+  color: var(--industry-blue);
+  font-size: 10px;
+}
+.canvasRows b {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+.canvasRows small {
+  color: var(--muted-foreground);
+  font-size: 10px;
+}
+.canvasNote {
+  color: var(--muted-foreground);
+  font-size: 10px;
+  line-height: 1.8;
+  margin-top: 22px !important;
+}
+.faqSection {
+  padding-block: 62px;
+  border-block: 1px solid var(--border);
+  background: var(--cream);
+}
+.faqSection > .wrap {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 65px;
+}
+.faqSection h2 {
+  margin-top: 12px;
+  max-width: 330px;
+}
+.faqList details {
+  border-bottom: 1px solid var(--border);
+}
+.faqList summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 21px 3px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
+  cursor: pointer;
+  list-style: none;
+}
+.faqList summary::-webkit-details-marker {
+  display: none;
+}
+.faqList summary > svg {
+  color: var(--industry-blue);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faqList details[open] summary > svg {
+  transform: rotate(45deg);
+}
+.faqList details > p {
+  max-width: 620px;
+  padding: 0 3px 22px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.relatedSection {
+  padding-block: 62px;
+}
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.relatedGrid a {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 25px;
+  background: var(--card);
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.relatedGrid a:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+.relatedGrid a > span {
+  color: var(--industry-blue);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+.relatedGrid h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 15px;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  margin-top: 20px;
+}
+.relatedGrid h3 svg {
+  flex-shrink: 0;
+  color: var(--industry-blue);
+  margin-top: 5px;
+}
+.closing {
+  padding-block: 55px;
+  border-block: 1px solid var(--border);
+  background: var(--industry-wash);
+}
+.closing > .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+.closing h2 {
+  max-width: 630px;
+  font-size: 31px;
+  margin-top: 12px;
+}
+.closing p:last-child {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  line-height: 1.85;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1050px) {
+  .industry h1 {
+    font-size: 45px;
+  }
+  .schoolLayout,
+  .collegeHeading,
+  .lmsLayout {
+    gap: 35px;
+  }
+  .schoolNotebook {
+    padding-right: 18px;
+  }
+  .schoolNotebook > header {
+    gap: 9px;
+  }
+  .dayCards b {
+    font-size: 11px;
+  }
+  .dayCards div div > span {
+    font-size: 8px;
+  }
+  .schoolCallout {
+    font-size: 20px;
+  }
+  .collegeHeading {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+  .sessionProspectus {
+    padding-inline: 20px;
+  }
+  .scheduleRibbon {
+    gap: 17px;
+    grid-template-columns: 1fr 22px 1fr 0.8fr;
+  }
+  .scheduleRibbon b {
+    font-size: 16px;
+  }
+  .scheduleRibbon .ribbonNote {
+    gap: 10px;
+    flex-direction: column;
+    align-items: start;
+  }
+  .campusDossier {
+    width: 180px;
+    right: 15px;
+    padding: 17px;
+  }
+  .campusBookmark {
+    width: 155px;
+    left: 15px;
+  }
+  .studioBody {
+    grid-template-columns: 1fr 1fr;
+  }
+  .studioOutline {
+    padding-inline: 13px;
+  }
+  .studioOutline > h3 {
+    font-size: 19px;
+  }
+  .studioOutline > div {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .studioOutline b {
+    flex-basis: 100%;
+  }
+  .lessonCanvas {
+    padding-inline: 13px;
+  }
+  .learningOrbit > i {
+    width: 115px;
+  }
+  .learningOrbit b {
+    font-size: 11px;
+  }
+  .moduleGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .perspectiveLayout {
+    gap: 25px;
+    grid-template-columns: 0.8fr 1.5fr;
+  }
+  .roleStory {
+    padding: 23px;
+  }
+  .roleStory h3 {
+    font-size: 23px;
+  }
+  .attendanceLayout,
+  .collegeDemo,
+  .creditDemo {
+    gap: 22px;
+  }
+  .attendanceSummary {
+    padding: 20px;
+  }
+  .learnerList > div {
+    gap: 10px;
+    padding-inline: 0;
+  }
+  .learnerList select {
+    width: 110px;
+  }
+  .learningDemo {
+    gap: 25px;
+    grid-template-columns: 0.8fr 1.5fr;
+  }
+  .lessonSidebar {
+    padding: 17px;
+  }
+  .canvasRows > div {
+    grid-template-columns: 115px 1fr 190px;
+    gap: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .wrap {
+    padding-inline: 24px;
+  }
+  .industry h1 {
+    font-size: clamp(36px, 6.5vw, 52px);
+  }
+  .schoolLayout,
+  .lmsLayout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .schoolNotebook {
+    max-width: 560px;
+    width: 100%;
+    margin-inline: auto !important;
+  }
+  .collegeHeading {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .sessionProspectus {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-left: 0;
+    border-block: 1px solid var(--border);
+    padding: 23px 0;
+  }
+  .sessionProspectus > header {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .sessionProspectus > div {
+    gap: 13px;
+    padding-top: 0;
+  }
+  .sessionProspectus p {
+    font-size: 11px;
+  }
+  .scheduleRibbon {
+    grid-template-columns: 1fr 20px 1fr;
+    gap: 20px;
+  }
+  .scheduleRibbon .ribbonNote {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+  .ribbonNote br {
+    display: none;
+  }
+  .campusScene {
+    padding-inline: 20px;
+    padding-bottom: 17px;
+  }
+  .campusLineArt {
+    margin-top: 30px;
+  }
+  .campusDossier {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 12px;
+    transform: none;
+    box-shadow: none;
+    padding: 16px;
+  }
+  .campusDossier > svg {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .campusDossier > span {
+    max-width: 90px;
+    font-size: 7px;
+  }
+  .campusDossier > div {
+    margin: 0;
+  }
+  .campusDossier small {
+    font-size: 8px;
+  }
+  .campusBookmark {
+    position: static;
+    transform: none;
+    width: fit-content;
+    padding: 12px 0 0;
+    margin-inline: auto;
+    border: 0;
+    background: transparent;
+  }
+  .campusBookmark > span {
+    font-size: 9px;
+  }
+  .campusScene figcaption {
+    margin-top: 16px;
+    font-size: 8px;
+  }
+  .lmsLayout > div {
+    grid-row: 1;
+  }
+  .studioWindow {
+    max-width: 600px;
+    width: 100%;
+    margin-inline: auto !important;
+  }
+  .studioOutline {
+    padding-inline: 22px;
+  }
+  .studioOutline > div {
+    flex-wrap: nowrap;
+    gap: 9px;
+  }
+  .studioOutline b {
+    flex-basis: auto;
+  }
+  .studioOutline > h3 {
+    font-size: 23px;
+  }
+  .studioBody {
+    min-height: 350px;
+  }
+  .sectionHeading {
+    align-items: start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .perspectiveLayout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .roleChoices {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .roleChoices > button {
+    font-size: 11px;
+    padding: 14px;
+  }
+  .roleChoices button > svg {
+    display: none;
+  }
+  .attendanceLayout,
+  .collegeDemo,
+  .creditDemo,
+  .learningDemo {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .attendanceSummary .metrics {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .exampleSessions {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .exampleSessions > article {
+    padding: 17px 13px;
+  }
+  .exampleSessions h3 {
+    font-size: 15px;
+  }
+  .exampleSessions article > span {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .exampleSessions p {
+    font-size: 9px;
+  }
+  .creditSummary {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 15px 30px;
+  }
+  .creditDrawing {
+    grid-column: 1;
+    margin: 0;
+  }
+  .creditSummary h3 {
+    grid-row: 2;
+    grid-column: 1;
+    margin: 0;
+  }
+  .creditSummary > .field {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .creditNumber {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    padding-block: 15px;
+  }
+  .creditSummary > .button {
+    grid-column: 1 / -1;
+    width: fit-content;
+  }
+  .creditSummary > .note {
+    grid-column: 1 / -1;
+  }
+  .lessonSidebar {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 15px 25px;
+  }
+  .lessonSidebar > .badge {
+    grid-column: 1;
+  }
+  .lessonSidebar h3 {
+    grid-column: 1;
+    margin: 0;
+    font-size: 22px;
+  }
+  .lessonChoices {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    margin: 0;
+  }
+  .localProgress {
+    grid-column: 1;
+    margin-top: 0;
+  }
+  .lessonSidebar > .button {
+    grid-column: 1 / -1;
+    width: fit-content;
+    margin-top: 0;
+  }
+  .canvasRows > div {
+    grid-template-columns: 100px 1fr 145px;
+    gap: 18px;
+    padding: 18px;
+  }
+  .faqSection > .wrap {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .faqSection h2 {
+    max-width: 100%;
+  }
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .closing > .wrap {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@media (max-width: 540px) {
+  .wrap {
+    padding-inline: 18px;
+  }
+  .breadcrumb {
+    padding-block: 19px 6px;
+    gap: 6px;
+    font-size: 10px;
+  }
+  .industry > section:first-of-type {
+    padding-block-start: 12px;
+  }
+  .industry h1 {
+    font-size: clamp(32px, 8vw, 43px);
+    letter-spacing: -0.045em;
+    margin-top: 15px;
+  }
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.13em;
+  }
+  .lead {
+    font-size: 13px;
+    margin-top: 20px !important;
+    line-height: 1.9;
+  }
+  .actions {
+    gap: 17px;
+    margin-top: 25px;
+  }
+  .schoolHero,
+  .collegeHero,
+  .universityHero,
+  .lmsHero {
+    padding-bottom: 45px;
+  }
+  .schoolPrinciples {
+    gap: 17px;
+    margin-top: 25px;
+    font-size: 9px;
+  }
+  .schoolNotebook {
+    padding: 19px 15px 16px 29px;
+  }
+  .schoolNotebook header > span {
+    font-size: 7px;
+  }
+  .schoolNotebook .badge {
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+  .schoolDrawing {
+    margin-top: 20px;
+  }
+  .dayCards > div {
+    padding: 12px 10px;
+    gap: 10px;
+  }
+  .dayIcon {
+    width: 30px;
+    height: 33px;
+  }
+  .dayIcon svg {
+    width: 17px;
+  }
+  .dayCards b {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .dayCards div div > span {
+    font-size: 8px;
+    line-height: 1.8;
+  }
+  .schoolCallout {
+    font-size: 18px;
+    gap: 0;
+  }
+  .schoolCallout svg {
+    width: 55px;
+    height: 42px;
+  }
+  .schoolNotebook figcaption {
+    font-size: 7px;
+  }
+  .sessionProspectus {
+    gap: 16px 12px;
+  }
+  .sessionProspectus > div {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .sessionProspectus p {
+    font-size: 10px;
+  }
+  .sessionProspectus div > span {
+    font-size: 8px;
+  }
+  .collegeRibbon {
+    margin-top: 27px !important;
+    padding: 17px 15px;
+  }
+  .collegeRibbon > header {
+    gap: 9px;
+    padding-bottom: 18px;
+  }
+  .collegeRibbon header > span {
+    font-size: 8px;
+  }
+  .collegeRibbon header > .badge {
+    width: 100%;
+    font-size: 8px;
+  }
+  .scheduleRibbon {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding-block: 20px;
+  }
+  .scheduleRibbon > svg {
+    transform: rotate(90deg);
+    justify-self: center;
+    width: 16px;
+    height: 16px;
+  }
+  .scheduleRibbon > div:not(.ribbonNote) {
+    padding: 16px 17px;
+  }
+  .scheduleRibbon b {
+    font-size: 19px;
+  }
+  .scheduleRibbon .ribbonNote {
+    grid-column: 1;
+    padding-top: 8px;
+  }
+  .scheduleRibbon .ribbonNote span {
+    font-size: 10px;
+  }
+  .academicThread {
+    gap: 7px;
+  }
+  .academicThread > span {
+    font-size: 6px;
+    letter-spacing: 0.04em;
+  }
+  .academicThread > i {
+    width: 18px;
+  }
+  .campusScene {
+    padding: 20px 14px 14px;
+    margin-top: 27px !important;
+  }
+  .campusLineArt {
+    margin-top: 20px;
+  }
+  .campusDossier {
+    padding: 14px;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .campusDossier > span {
+    max-width: none;
+    flex: 1;
+  }
+  .campusDossier > div {
+    flex-basis: calc(50% - 7px);
+  }
+  .campusDossier b {
+    font-size: 11px;
+  }
+  .campusScene figcaption {
+    font-size: 7px;
+  }
+  .studioWindow > header {
+    gap: 8px;
+    padding: 13px;
+  }
+  .studioWindow header > span:nth-child(2) {
+    font-size: 7px;
+  }
+  .studioWindow .badge {
+    font-size: 7px;
+    width: 100%;
+  }
+  .studioBody {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .studioOutline {
+    padding: 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .studioOutline > h3 {
+    font-size: 24px;
+  }
+  .studioOutline > h3 br {
+    display: none;
+  }
+  .studioOutline > div {
+    gap: 10px;
+    padding-top: 18px;
+  }
+  .studioOutline b {
+    font-size: 11px;
+  }
+  .lessonCanvas {
+    padding: 20px;
+  }
+  .learningOrbit {
+    padding-block: 15px 20px;
+  }
+  .learningOrbit > span {
+    width: 80px;
+    height: 80px;
+  }
+  .learningOrbit > i {
+    top: 15px;
+    width: 120px;
+    height: 110px;
+  }
+  .learningOrbit b {
+    font-size: 14px;
+  }
+  .practiceTile {
+    justify-content: center;
+  }
+  .studioWindow figcaption {
+    font-size: 7px;
+  }
+  .perspectiveSection,
+  .demoSection,
+  .modulesSection,
+  .previewSection,
+  .faqSection,
+  .relatedSection {
+    padding-block: 45px;
+  }
+  .roleChoices {
+    gap: 7px;
+  }
+  .roleChoices > button {
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    font-size: 10px;
+    line-height: 1.7;
+    padding: 12px 10px;
+  }
+  .roleChoices button > span {
+    font-size: 8px;
+  }
+  .roleStory {
+    padding: 20px;
+  }
+  .roleStory h3 {
+    font-size: 23px;
+  }
+  .roleStory > p {
+    font-size: 11px;
+  }
+  .roleStory ol {
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .roleStory li > b {
+    font-size: 10px;
+    margin-top: 12px;
+  }
+  .roleStory li > svg {
+    width: 12px;
+  }
+  .demoSurface {
+    padding: 17px;
+    border-radius: 10px;
+  }
+  .learnerList > div {
+    flex-wrap: wrap;
+    padding-block: 16px;
+    gap: 10px;
+  }
+  .learnerList > div > div {
+    min-width: 115px;
+  }
+  .learnerList select {
+    min-height: 44px;
+    font-size: 16px;
+    width: 100%;
+  }
+  .learnerList label {
+    flex-basis: 100%;
+    margin-left: 50px;
+  }
+  .attendanceSummary {
+    padding: 18px;
+  }
+  .attendanceSummary h3 {
+    font-size: 23px;
+  }
+  .attendanceSummary .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .metric {
+    padding: 13px;
+  }
+  .metric dd {
+    font-size: 23px;
+  }
+  .metric dt {
+    font-size: 9px;
+  }
+  .exampleSessions {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+  .exampleSessions > article {
+    padding: 17px;
+  }
+  .exampleSessions h3 {
+    font-size: 17px;
+  }
+  .exampleSessions p {
+    font-size: 10px;
+  }
+  .proposalPanel {
+    padding: 18px;
+  }
+  .formGrid {
+    gap: 15px;
+  }
+  .field input,
+  .field select {
+    min-height: 44px;
+    font-size: 16px;
+    padding-inline: 9px;
+  }
+  .conflictResult > strong {
+    font-size: 17px;
+  }
+  .courseList label {
+    padding: 15px 12px;
+    gap: 10px;
+  }
+  .courseList b {
+    font-size: 11px;
+  }
+  .courseList small {
+    font-size: 7px;
+  }
+  .courseList strong {
+    font-size: 22px;
+  }
+  .creditSummary {
+    display: block;
+    padding: 20px;
+  }
+  .creditDrawing {
+    width: 125px;
+    margin-bottom: 18px;
+  }
+  .creditSummary h3 {
+    margin-bottom: 23px;
+  }
+  .creditNumber {
+    margin-block: 23px;
+    padding-block: 20px;
+  }
+  .creditSummary > .note {
+    margin-top: 22px !important;
+  }
+  .lessonSidebar {
+    display: block;
+    padding: 18px;
+  }
+  .lessonSidebar h3 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  .lessonChoices {
+    margin-top: 20px;
+  }
+  .localProgress {
+    margin-top: 22px;
+  }
+  .lessonSidebar > .button {
+    margin-top: 20px;
+  }
+  .lessonReader article h3 {
+    font-size: 27px;
+  }
+  .lessonReader article > p:not(.eyebrow) {
+    font-size: 12px;
+  }
+  .practicePrompt {
+    padding: 18px;
+  }
+  .knowledgeCheck {
+    padding: 18px;
+  }
+  .knowledgeCheck > p:first-of-type {
+    font-size: 12px;
+  }
+  .knowledgeCheck > label {
+    font-size: 11px;
+  }
+  .moduleGrid {
+    gap: 12px;
+  }
+  .moduleGrid > a {
+    padding: 17px;
+  }
+  .moduleGrid a > span {
+    font-size: 6px;
+  }
+  .moduleGrid h3 {
+    font-size: 16px;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .moduleGrid h3 svg {
+    width: 14px;
+  }
+  .moduleGrid p {
+    font-size: 10px;
+  }
+  .moduleGrid small {
+    font-size: 8px;
+  }
+  .productCanvas > header {
+    padding: 16px;
+    gap: 10px;
+  }
+  .productCanvas header > span {
+    font-size: 9px;
+  }
+  .productCanvas header > .badge {
+    width: 100%;
+    font-size: 8px;
+  }
+  .canvasBody {
+    padding: 17px;
+  }
+  .canvasBody > h3 {
+    font-size: 20px;
+  }
+  .canvasMetrics {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+  .canvasMetrics .metric:last-child {
+    grid-column: 1 / -1;
+  }
+  .canvasMetrics .metric dd {
+    font-size: 19px;
+  }
+  .canvasRows > div {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding: 17px;
+  }
+  .canvasRows b {
+    font-size: 12px;
+  }
+  .canvasRows small {
+    font-size: 9px;
+  }
+  .productCanvas {
+    min-height: 790px;
+  }
+  .faqList summary {
+    font-size: 12px;
+  }
+  .faqList details > p {
+    font-size: 11px;
+  }
+  .relatedGrid a {
+    padding: 22px;
+  }
+  .relatedGrid h3 {
+    font-size: 21px;
+  }
+  .closing {
+    padding-block: 40px;
+  }
+  .closing h2 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 359px) {
+  .moduleGrid {
+    grid-template-columns: 1fr;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .roleStory ol {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .roleStory li > b {
+    margin-top: 8px;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .schoolNotebook {
+    transition: transform 0.35s ease;
+  }
+  .schoolNotebook:hover {
+    transform: rotate(0);
+  }
+  .courseList label {
+    transition:
+      border-color 0.2s,
+      background 0.2s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .industry *,
+  .industry *::before,
+  .industry *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
