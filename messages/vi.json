@@ -10841,7 +10841,29 @@
         ],
         "extraQuote": "Adon giúp chúng tôi đơn giản hóa kế toán, bán hàng và quản lý đội ngũ tại một nơi. Thay vì xoay xở nhiều công cụ, giờ mọi thứ đã kết nối và dễ quản lý hơn nhiều.",
         "extraAuthor": "Richard Miles",
-        "extraRole": "Quản lý đào tạo, Enterprise Corp"
+        "extraRole": "Quản lý đào tạo, Enterprise Corp",
+        "moreStories": [
+          {
+            "name": "Farhana Akter",
+            "role": "Trưởng nhóm Tài chính, Nhà sản xuất dệt may",
+            "quote": "Trước đây chốt sổ cuối tháng mất cả tuần. Giờ số liệu đã sẵn sàng trước khi có ai hỏi."
+          },
+          {
+            "name": "Tanvir Rahman",
+            "role": "Trưởng bộ phận Vận hành, Công ty phân phối",
+            "quote": "Tồn kho, mua hàng và bán hàng cuối cùng đã kết nối với nhau. Đội kho đã thôi giữ bảng tính riêng."
+          },
+          {
+            "name": "Sarah Collins",
+            "role": "Quản lý Nhân sự, Công ty dịch vụ",
+            "quote": "Bảng lương và chấm công ở cùng một nơi giúp đội nhân sự tiết kiệm hàng giờ mỗi tháng và ít sai sót hơn hẳn."
+          }
+        ],
+        "carousel": {
+          "previous": "Câu chuyện trước",
+          "next": "Câu chuyện tiếp theo",
+          "slide": "Câu chuyện {current} / {total}"
+        }
       },
       "cta": {
         "title": "Đưa doanh nghiệp lên tầm cao mới",

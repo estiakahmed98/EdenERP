@@ -10841,7 +10841,29 @@
         ],
         "extraQuote": "Adon, muhasebe, satış ve ekip yönetimini tek yerde sadeleştirmemize yardımcı oldu. Birden fazla araç arasında geçiş yapmak yerine artık her şey bağlantılı ve yönetmesi çok daha kolay.",
         "extraAuthor": "Richard Miles",
-        "extraRole": "Eğitim Müdürü, Enterprise Corp"
+        "extraRole": "Eğitim Müdürü, Enterprise Corp",
+        "moreStories": [
+          {
+            "name": "Farhana Akter",
+            "role": "Finans Lideri, Tekstil üreticisi",
+            "quote": "Ay sonu kapanışı eskiden bir hafta sürerdi. Artık rakamlar kimse sormadan hazır oluyor."
+          },
+          {
+            "name": "Tanvir Rahman",
+            "role": "Operasyon Müdürü, Dağıtım şirketi",
+            "quote": "Stok, satın alma ve satış sonunda birbiriyle konuşuyor. Depo ekibimiz kendi tablolarını tutmayı bıraktı."
+          },
+          {
+            "name": "Sarah Collins",
+            "role": "İK Müdürü, Hizmet şirketi",
+            "quote": "Bordro ve devam takibinin tek yerde olması İK ekibimize her ay saatler kazandırıyor, hatalar da çok azaldı."
+          }
+        ],
+        "carousel": {
+          "previous": "Önceki hikâye",
+          "next": "Sonraki hikâye",
+          "slide": "Hikâye {current} / {total}"
+        }
       },
       "cta": {
         "title": "İşletmenizi bir sonraki seviyeye taşıyın",

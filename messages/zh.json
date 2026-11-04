@@ -10841,7 +10841,29 @@
         ],
         "extraQuote": "Adon 帮助我们将会计、销售和团队管理简化到一个平台中。无需再来回切换多个工具，现在一切互联，管理也轻松得多。",
         "extraAuthor": "Richard Miles",
-        "extraRole": "Enterprise Corp 培训经理"
+        "extraRole": "Enterprise Corp 培训经理",
+        "moreStories": [
+          {
+            "name": "Farhana Akter",
+            "role": "纺织制造商 财务负责人",
+            "quote": "以前月末结账要花一周时间。现在还没人问，数据就已经准备好了。"
+          },
+          {
+            "name": "Tanvir Rahman",
+            "role": "分销公司 运营负责人",
+            "quote": "库存、采购和销售终于打通了。我们的仓库团队不再各自维护表格。"
+          },
+          {
+            "name": "Sarah Collins",
+            "role": "服务公司 人力资源经理",
+            "quote": "薪资和考勤集中在一处，HR 团队每月节省数小时，错误也少了很多。"
+          }
+        ],
+        "carousel": {
+          "previous": "上一个故事",
+          "next": "下一个故事",
+          "slide": "第 {current} / {total} 个故事"
+        }
       },
       "cta": {
         "title": "让您的业务更上一层楼",

@@ -40321,7 +40321,29 @@
         ],
         "extraQuote": "Adon helped us simplify accounting, sales, and team management in one place. Instead of juggling multiple tools, everything is now connected and much easier to manage.",
         "extraAuthor": "Richard Miles",
-        "extraRole": "Training Manager, Enterprise Corp"
+        "extraRole": "Training Manager, Enterprise Corp",
+        "moreStories": [
+          {
+            "name": "Farhana Akter",
+            "role": "Finance Lead, Textile manufacturer",
+            "quote": "Month-end close used to take us a week. Now the numbers are ready before anyone asks for them."
+          },
+          {
+            "name": "Tanvir Rahman",
+            "role": "Operations Head, Distribution company",
+            "quote": "Inventory, purchasing and sales finally talk to each other. Our warehouse team stopped keeping their own spreadsheets."
+          },
+          {
+            "name": "Sarah Collins",
+            "role": "HR Manager, Services firm",
+            "quote": "Payroll and attendance in one place saves our HR team hours every month, with far fewer mistakes."
+          }
+        ],
+        "carousel": {
+          "previous": "Previous story",
+          "next": "Next story",
+          "slide": "Story {current} of {total}"
+        }
       },
       "cta": {
         "title": "Take your business to the next level",
