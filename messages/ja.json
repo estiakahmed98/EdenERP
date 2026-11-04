@@ -10614,7 +10614,55 @@
         "運用",
         "HR"
       ],
-      "description": "組み込みAIアシスタンスでレポートを生成し、データを理解し、タスクを自動化し、より速い決定を行います。"
+      "description": "組み込みAIアシスタンスでレポートを生成し、データを理解し、タスクを自動化し、より速い決定を行います。",
+      "stage": {
+        "phases": [
+          "各モジュールが、ビジネスの一部を担っています。",
+          "Adonが各モジュールからシグナルを集めます。",
+          "コンテキストがインテリジェンスに変わります。",
+          "経営陣のための、ひとつのインテリジェントなビュー。"
+        ],
+        "executiveTitle": "一度聞くだけで、ビジネス全体が見える。",
+        "providersLabel": "モデルを選択",
+        "providersNote": "モデルに依存しない設計。名称とロゴは各所有者に帰属します。",
+        "askLabel": "CEOの質問",
+        "question": "今週のビジネスの状況は？",
+        "briefLabel": "エグゼクティブブリーフ",
+        "insights": [
+          {
+            "title": "キャッシュ見通し",
+            "body": "売掛金が来月の買掛金を14%の余裕でカバーします。"
+          },
+          {
+            "title": "在庫リスク",
+            "body": "売れ筋3品目が木曜日までに発注点に達します。"
+          },
+          {
+            "title": "生産",
+            "body": "ライン2は計画より6%遅れています。プレス機の保守が必要です。"
+          }
+        ],
+        "metrics": {
+          "netCash": "純現金",
+          "receivables": "売掛金",
+          "payables": "買掛金",
+          "stockHealth": "在庫状況",
+          "lowStock": "在庫僅少",
+          "lineEfficiency": "ライン効率",
+          "ordersRunning": "進行中の指図",
+          "attendance": "本日の出席",
+          "feesCollected": "徴収済み学費",
+          "openPos": "未完了の発注",
+          "received": "入荷済み",
+          "headcount": "従業員数",
+          "payrollReady": "給与準備完了",
+          "pipeline": "パイプライン",
+          "wonThisMonth": "今月の受注",
+          "revenue": "売上",
+          "live": "ライブ",
+          "onTrack": "順調"
+        }
+      }
     },
     "levelUp": {
       "tag": "✦ 高速で信頼性",
@@ -10676,6 +10724,7 @@
       "titlePrefix": "ビジネスに必要な",
       "titleHand": "すべて",
       "titleSuffix": "が一つのプラットフォームに。",
+      "callout": "一度設定すれば、あとは自動で回ります。",
       "cards": [
         {
           "icon": "⚡",
@@ -10714,6 +10763,7 @@
       "titlePrefix": "モダンな",
       "titleCircled": "ビジネス",
       "titleSuffix": "管理ソフトウェア",
+      "note": "サプライズなし。あなたのデータ、あなたのルール、明快な価格。",
       "cards": [
         {
           "icon": "🌍",

@@ -10,6 +10,7 @@ import Hero from "./Hero";
 import LevelUpSection from "./LevelUpSection";
 import MarqueeStrip from "./MarqueeStrip";
 import NativeAISection from "./NativeAISection";
+import StackedSection from "./StackedSection";
 import StatsSection from "./StatsSection";
 import TestimonialsSection from "./TestimonialsSection";
 import { GLOBAL_CSS, useReveal } from "./landing-ui";
@@ -21,12 +22,21 @@ export default function LandingPage() {
     <main className="landing-page bn-content min-h-screen bg-(--cream) text-(--ink)">
       <style>{GLOBAL_CSS}</style>
       <Hero />
-      <MarqueeStrip />
+            <NativeAISection />
+      {/* <MarqueeStrip /> */}
       <AppsSection />
-      <NativeAISection />
-      <LevelUpSection />
-      <FeaturesSection />
-      <EnterpriseSection />
+
+      <div className="relative">
+        <StackedSection index={0}>
+          <LevelUpSection />
+        </StackedSection>
+        <StackedSection index={1}>
+          <FeaturesSection />
+        </StackedSection>
+        <StackedSection index={2}>
+          <EnterpriseSection />
+        </StackedSection>
+      </div>
       <StatsSection />
       <TestimonialsSection />
       <CTASection />

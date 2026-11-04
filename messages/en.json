@@ -40094,7 +40094,55 @@
           "Merchandising"
 
         ],
-        "description": "Generate reports, understand data, automate tasks, and make faster decisions with built-in AI assistance."
+        "description": "Generate reports, understand data, automate tasks, and make faster decisions with built-in AI assistance.",
+        "stage": {
+          "phases": [
+            "Every module holds its own piece of the story.",
+            "Adon gathers signals from each module.",
+            "Context turns into intelligence.",
+            "One intelligent view for leadership."
+          ],
+          "executiveTitle": "Ask once. See the whole business.",
+          "providersLabel": "Bring your model",
+          "providersNote": "Model-agnostic by design. Names and logos belong to their owners.",
+          "askLabel": "CEO asks",
+          "question": "How is the business doing this week?",
+          "briefLabel": "Executive brief",
+          "insights": [
+            {
+              "title": "Cash outlook",
+              "body": "Receivables cover next month's payables with a 14% buffer."
+            },
+            {
+              "title": "Stock risk",
+              "body": "3 fast-moving items reach reorder level by Thursday."
+            },
+            {
+              "title": "Production",
+              "body": "Line 2 is 6% behind plan. Maintenance is due on the press."
+            }
+          ],
+          "metrics": {
+            "netCash": "Net cash",
+            "receivables": "Receivables",
+            "payables": "Payables",
+            "stockHealth": "Stock health",
+            "lowStock": "Low stock",
+            "lineEfficiency": "Line efficiency",
+            "ordersRunning": "Orders running",
+            "attendance": "Attendance today",
+            "feesCollected": "Fees collected",
+            "openPos": "Open POs",
+            "received": "Received",
+            "headcount": "Headcount",
+            "payrollReady": "Payroll ready",
+            "pipeline": "Pipeline",
+            "wonThisMonth": "Won this month",
+            "revenue": "Revenue",
+            "live": "Live",
+            "onTrack": "On track"
+          }
+        }
       },
       "levelUp": {
         "tag": "✦ Fast & reliable",
@@ -40156,6 +40204,7 @@
         "titlePrefix": "Everything your business",
         "titleHand": "needs",
         "titleSuffix": "in one platform.",
+        "callout": "Set it up once. It keeps running.",
         "cards": [
           {
             "icon": "⚡",
@@ -40194,6 +40243,7 @@
         "titlePrefix": "Modern",
         "titleCircled": "business",
         "titleSuffix": "management software",
+        "note": "No surprises: your data, your rules, one clear price.",
         "cards": [
           {
             "icon": "🌍",

@@ -10614,7 +10614,55 @@
           "运营",
           "HR"
         ],
-        "description": "借助内置 AI 助手生成报告、理解数据、自动化任务并更快做出决策。"
+        "description": "借助内置 AI 助手生成报告、理解数据、自动化任务并更快做出决策。",
+        "stage": {
+          "phases": [
+            "每个模块都承载着业务的一部分。",
+            "Adon 从每个模块汇集信号。",
+            "上下文转化为智能。",
+            "为管理层打造的统一智能视图。"
+          ],
+          "executiveTitle": "问一次，看清整个业务。",
+          "providersLabel": "选择您的模型",
+          "providersNote": "模型无关的设计。名称和标志归各自所有者所有。",
+          "askLabel": "CEO 提问",
+          "question": "本周业务进展如何？",
+          "briefLabel": "高管简报",
+          "insights": [
+            {
+              "title": "现金展望",
+              "body": "应收账款可覆盖下月应付账款，并有 14% 余量。"
+            },
+            {
+              "title": "库存风险",
+              "body": "3 个畅销品将在周四前降至再订货点。"
+            },
+            {
+              "title": "生产",
+              "body": "2 号线落后计划 6%，冲压机需要维护。"
+            }
+          ],
+          "metrics": {
+            "netCash": "净现金",
+            "receivables": "应收账款",
+            "payables": "应付账款",
+            "stockHealth": "库存健康",
+            "lowStock": "低库存",
+            "lineEfficiency": "产线效率",
+            "ordersRunning": "进行中订单",
+            "attendance": "今日出勤",
+            "feesCollected": "已收学费",
+            "openPos": "未结采购单",
+            "received": "已收货",
+            "headcount": "员工人数",
+            "payrollReady": "工资已就绪",
+            "pipeline": "销售管道",
+            "wonThisMonth": "本月赢单",
+            "revenue": "收入",
+            "live": "实时",
+            "onTrack": "正常"
+          }
+        }
       },
       "levelUp": {
         "tag": "✦ 快速且可靠",
@@ -10676,6 +10724,7 @@
         "titlePrefix": "您的业务",
         "titleHand": "所需的一切",
         "titleSuffix": "尽在一个平台。",
+        "callout": "设置一次，之后自动运行。",
         "cards": [
           {
             "icon": "⚡",
@@ -10714,6 +10763,7 @@
         "titlePrefix": "现代化",
         "titleCircled": "业务",
         "titleSuffix": "管理软件",
+        "note": "没有意外：您的数据、您的规则、一个清晰的价格。",
         "cards": [
           {
             "icon": "🌍",

@@ -10614,7 +10614,55 @@
           "vận hành",
           "HR"
         ],
-        "description": "Tạo báo cáo, hiểu dữ liệu, tự động hóa nhiệm vụ và ra quyết định nhanh hơn với hỗ trợ AI tích hợp."
+        "description": "Tạo báo cáo, hiểu dữ liệu, tự động hóa nhiệm vụ và ra quyết định nhanh hơn với hỗ trợ AI tích hợp.",
+        "stage": {
+          "phases": [
+            "Mỗi phân hệ giữ một phần câu chuyện.",
+            "Adon thu thập tín hiệu từ từng phân hệ.",
+            "Bối cảnh trở thành trí tuệ.",
+            "Một góc nhìn thông minh cho ban lãnh đạo."
+          ],
+          "executiveTitle": "Hỏi một lần. Thấy toàn bộ doanh nghiệp.",
+          "providersLabel": "Chọn mô hình của bạn",
+          "providersNote": "Thiết kế không phụ thuộc mô hình. Tên và logo thuộc về chủ sở hữu.",
+          "askLabel": "CEO hỏi",
+          "question": "Tuần này doanh nghiệp hoạt động thế nào?",
+          "briefLabel": "Tóm tắt điều hành",
+          "insights": [
+            {
+              "title": "Triển vọng dòng tiền",
+              "body": "Khoản phải thu đủ trả khoản phải trả tháng tới, dư 14%."
+            },
+            {
+              "title": "Rủi ro tồn kho",
+              "body": "3 mặt hàng bán chạy chạm mức đặt lại trước thứ Năm."
+            },
+            {
+              "title": "Sản xuất",
+              "body": "Dây chuyền 2 chậm 6% so với kế hoạch. Máy ép đến hạn bảo trì."
+            }
+          ],
+          "metrics": {
+            "netCash": "Tiền mặt ròng",
+            "receivables": "Phải thu",
+            "payables": "Phải trả",
+            "stockHealth": "Tình trạng kho",
+            "lowStock": "Sắp hết hàng",
+            "lineEfficiency": "Hiệu suất dây chuyền",
+            "ordersRunning": "Lệnh đang chạy",
+            "attendance": "Điểm danh hôm nay",
+            "feesCollected": "Học phí đã thu",
+            "openPos": "PO đang mở",
+            "received": "Đã nhận",
+            "headcount": "Nhân sự",
+            "payrollReady": "Lương sẵn sàng",
+            "pipeline": "Cơ hội bán hàng",
+            "wonThisMonth": "Thắng tháng này",
+            "revenue": "Doanh thu",
+            "live": "Trực tiếp",
+            "onTrack": "Đúng tiến độ"
+          }
+        }
       },
       "levelUp": {
         "tag": "✦ Nhanh & đáng tin cậy",
@@ -10676,6 +10724,7 @@
         "titlePrefix": "Mọi thứ doanh nghiệp",
         "titleHand": "cần",
         "titleSuffix": "trên một nền tảng.",
+        "callout": "Thiết lập một lần, hệ thống tự vận hành.",
         "cards": [
           {
             "icon": "⚡",
@@ -10714,6 +10763,7 @@
         "titlePrefix": "Hiện đại",
         "titleCircled": "kinh doanh",
         "titleSuffix": "phần mềm quản lý",
+        "note": "Không bất ngờ: dữ liệu của bạn, quy tắc của bạn, một mức giá rõ ràng.",
         "cards": [
           {
             "icon": "🌍",

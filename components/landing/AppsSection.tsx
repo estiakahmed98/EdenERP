@@ -1,90 +1,106 @@
 "use client";
 
 import {
-  ArrowUpRight,
+  BarChart3,
   Bot,
   BookOpen,
+  Building2,
   Calculator,
   CalendarRange,
+  Car,
   Check,
   Clock3,
+  ContactRound,
   CreditCard,
   Factory,
   FileSignature,
+  FolderKanban,
   FolderOpen,
   Globe2,
+  GraduationCap,
+  HandCoins,
   Handshake,
+  Landmark,
   Layers3,
   LayoutDashboard,
   LifeBuoy,
   ListChecks,
   MessageCircle,
   PackageOpen,
+  PiggyBank,
+  Plug,
   RefreshCw,
+  School,
   Send,
+  ShieldCheck,
+  Shirt,
   ShoppingBag,
-  Sparkles,
+  Stethoscope,
   Store,
   TrendingUp,
+  Truck,
   UsersRound,
   Wrench,
   Zap,
+  type LucideIcon,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/navigation";
 import { APPS, type AppItem } from "./landing-data";
-import { HandText, SectionTag } from "./landing-ui";
+import {
+  HandText,
+  ICON_TONES,
+  MARQUEE_MASK,
+  SURFACE,
+  SectionTag,
+  marqueeDuration,
+} from "./landing-ui";
+import LiveDemoButton from "../live-demo-button";
 
-const APP_ICONS = [
-  Calculator,
-  BookOpen,
-  FileSignature,
-  Handshake,
-  Wrench,
-  RefreshCw,
-  Bot,
-  Store,
-  MessageCircle,
-  FolderOpen,
-  ListChecks,
-  Clock3,
-  Zap,
-  CalendarRange,
-  LifeBuoy,
-  ShoppingBag,
-  Globe2,
-  Send,
-  CreditCard,
-  PackageOpen,
-  Factory,
-  TrendingUp,
-  UsersRound,
-  LayoutDashboard,
-] as const;
+const APP_ICONS: Record<string, LucideIcon> = {
+  Accounting: Calculator,
+  Knowledge: BookOpen,
+  Sign: FileSignature,
+  CRM: Handshake,
+  Studio: Wrench,
+  Subscribe: RefreshCw,
+  AI: Bot,
+  "Point Sale": Store,
+  Discuss: MessageCircle,
+  Documents: FolderOpen,
+  Project: ListChecks,
+  Timesheets: Clock3,
+  "Field Svc": Zap,
+  Planning: CalendarRange,
+  Helpdesk: LifeBuoy,
+  eCommerce: ShoppingBag,
+  Website: Globe2,
+  "Email Mktg": Send,
+  Purchase: CreditCard,
+  Inventory: PackageOpen,
+  Manufactur: Factory,
+  Sales: TrendingUp,
+  HR: UsersRound,
+  Dashboard: LayoutDashboard,
+  "Project Acctg": FolderKanban,
+  Budgeting: PiggyBank,
+  "Supply Chain": Truck,
+  "Open Platform": Plug,
+  Quality: ShieldCheck,
+  "Emp. Portal": ContactRound,
+  "Eng. Maint.": Wrench,
+  Medical: Stethoscope,
+  "Trade Finance": Landmark,
+  Transport: Car,
+  Analytics: BarChart3,
+  "Real Estate": Building2,
+  Education: School,
+  Merchandising: Shirt,
+  "Fund Acctg": HandCoins,
+  University: GraduationCap,
+};
 
-const ROW_STYLES = [
-  {
-    animation: "animate-[marqueeRight_30s_linear_infinite]",
-    icon: "from-cyan-400 to-blue-500 shadow-cyan-500/20",
-    glow: "bg-cyan-400/20",
-  },
-  {
-    animation: "animate-[marqueeLeft_34s_linear_infinite]",
-    icon: "from-violet-400 to-fuchsia-500 shadow-violet-500/20",
-    glow: "bg-violet-400/20",
-  },
-  {
-    animation: "animate-[marqueeRight_38s_linear_infinite]",
-    icon: "from-emerald-400 to-teal-500 shadow-emerald-500/20",
-    glow: "bg-emerald-400/20",
-  },
-  {
-    animation: "animate-[marqueeLeft_32s_linear_infinite]",
-    icon: "from-amber-300 to-orange-500 shadow-orange-500/20",
-    glow: "bg-orange-400/20",
-  },
-] as const;
+const ROW_COUNT = 4;
 
 function AppGroup({
   apps,
@@ -97,39 +113,33 @@ function AppGroup({
   badge: string;
   ariaHidden?: boolean;
 }) {
-  const rowStyle = ROW_STYLES[rowIndex];
-
   return (
     <div aria-hidden={ariaHidden} className="flex shrink-0 gap-3 pr-3">
       {apps.map((app, appIndex) => {
-        const Icon = APP_ICONS[rowIndex * 6 + appIndex];
+        const Icon = APP_ICONS[app.name] ?? Layers3;
+        // Checkerboard tones: neighbours differ across and between rows.
+        const tone = ICON_TONES[(rowIndex + appIndex) % ICON_TONES.length];
 
         return (
           <div
             key={app.name}
-            className="group/card relative flex h-19 w-52 shrink-0 items-center gap-3 overflow-hidden rounded-2xl border border-border/70 bg-background/85 px-3.5 text-left shadow-[0_12px_35px_-25px_rgba(15,23,42,0.7)] backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:bg-background hover:shadow-[0_18px_45px_-24px_rgba(15,23,42,0.55)] sm:w-55"
+            className={`flex h-16 w-52 shrink-0 items-center gap-3 px-3 text-left sm:w-56 ${SURFACE}`}
           >
             <span
-              className={`pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full blur-2xl transition-opacity duration-300 group-hover/card:opacity-100 ${rowStyle.glow}`}
-            />
-
-            <span
-              className={`relative grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br text-white shadow-lg ${rowStyle.icon}`}
+              className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${tone}`}
             >
-              <Icon className="h-[18px] w-[18px]" strokeWidth={2.1} />
+              <Icon className="h-4 w-4" strokeWidth={2} />
             </span>
 
             <span className="min-w-0 flex-1">
-              <span className="block truncate font-body text-[13px] font-extrabold tracking-[-0.01em] text-foreground">
+              <span className="block truncate font-body text-sm font-semibold text-(--ink)">
                 {app.name}
               </span>
-              <span className="mt-1 flex items-center gap-1 text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
-                <Check className="h-3 w-3 text-emerald-500" strokeWidth={3} />
+              <span className="mt-0.5 flex items-center gap-1 text-[11px] text-(--muted)">
+                <Check className="h-3 w-3 text-(--teal)" strokeWidth={2.5} />
                 {badge}
               </span>
             </span>
-
-            <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/40 transition-all duration-300 group-hover/card:-translate-y-0.5 group-hover/card:translate-x-0.5 group-hover/card:text-primary" />
           </div>
         );
       })}
@@ -146,26 +156,20 @@ function AppMarqueeRow({
   rowIndex: number;
   badge: string;
 }) {
+  // Rows alternate direction at one shared pace.
+  const animation =
+    rowIndex % 2 === 0
+      ? "animate-[marqueeRight_40s_linear_infinite]"
+      : "animate-[marqueeLeft_40s_linear_infinite]";
+
   return (
-    <div
-      className="group/marquee overflow-hidden py-1.5"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 5%, black 95%, transparent)",
-      }}
-    >
+    <div className="group/marquee overflow-hidden" style={MARQUEE_MASK}>
       <div
-        className={`flex w-max ${ROW_STYLES[rowIndex].animation} group-hover/marquee:[animation-play-state:paused] motion-reduce:animate-none`}
+        className={`flex w-max ${animation} group-hover/marquee:[animation-play-state:paused] motion-reduce:animate-none`}
+        style={{ animationDuration: marqueeDuration(apps.length) }}
       >
         <AppGroup apps={apps} rowIndex={rowIndex} badge={badge} />
-        <AppGroup
-          apps={apps}
-          rowIndex={rowIndex}
-          badge={badge}
-          ariaHidden
-        />
+        <AppGroup apps={apps} rowIndex={rowIndex} badge={badge} ariaHidden />
       </div>
     </div>
   );
@@ -173,57 +177,47 @@ function AppMarqueeRow({
 
 export default function AppsSection() {
   const t = useTranslations("pages.home");
-  const commonT = useTranslations("common.actions");
-  const rows = [0, 1, 2, 3].map((rowIndex) =>
-    APPS.slice(rowIndex * 6, rowIndex * 6 + 6),
+  const perRow = Math.ceil(APPS.length / ROW_COUNT);
+  const rows = Array.from({ length: ROW_COUNT }, (_, rowIndex) =>
+    APPS.slice(rowIndex * perRow, (rowIndex + 1) * perRow),
   );
 
   return (
-    <section className="relative overflow-hidden bg-(--cream) px-4 py-24 sm:px-6 sm:py-28">
-      <div className="pointer-events-none absolute left-1/2 top-8 h-72 w-175 -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse,color-mix(in_srgb,var(--purple)_10%,transparent),transparent_68%)]" />
-
-      <div className="relative mx-auto max-w-240 text-center">
+    <section className="bg-(--cream) px-4 py-20 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-240 text-center">
         <div className="reveal">
           <SectionTag>{t("apps.tag")}</SectionTag>
-          <h2 className="mb-2.5 mt-4 font-hand text-[clamp(36px,5vw,62px)] font-bold leading-[1.1] text-(--ink)">
+          <h2 className="mt-5 font-hand text-[clamp(34px,5vw,60px)] font-bold leading-[1.1] text-(--ink)">
             {t("apps.title")} <HandText>{t("apps.titleHand")}</HandText>{" "}
             {t("apps.titleSuffix")}
           </h2>
-          <p className="mx-auto mb-11 max-w-130 font-body text-[15px] leading-[1.7] text-[var(--muted)]">
-            {t("apps.description")}
-          </p>
         </div>
 
-        <div className="reveal relative overflow-hidden rounded-[28px] border border-border/70 bg-[linear-gradient(145deg,rgba(255,255,255,0.82),rgba(255,255,255,0.48))] py-5 shadow-[0_35px_100px_-50px_rgba(15,23,42,0.4)] ring-1 ring-black/[0.025] backdrop-blur-xl dark:bg-[linear-gradient(145deg,rgba(30,41,59,0.68),rgba(15,23,42,0.45))] sm:rounded-[34px] sm:py-6">
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(color-mix(in_srgb,var(--purple)_3.5%,transparent)_1px,transparent_1px),linear-gradient(90deg,color-mix(in_srgb,var(--purple)_3.5%,transparent)_1px,transparent_1px)] bg-[size:28px_28px]" />
-          <div className="pointer-events-none absolute -left-20 top-1/4 h-52 w-52 rounded-full bg-cyan-400/10 blur-[65px]" />
-          <div className="pointer-events-none absolute -right-20 bottom-0 h-60 w-60 rounded-full bg-violet-400/10 blur-[70px]" />
-
-          <div className="relative mx-4 mb-3 flex flex-col items-start justify-between gap-3 border-b border-border/60 px-1 pb-5 text-left sm:mx-7 sm:flex-row sm:items-center sm:px-2">
+        <div className="reveal shadow-float mt-12 overflow-hidden rounded-3xl border border-border bg-card py-5 sm:py-6">
+          <div className="mx-4 mb-4 flex flex-col items-start justify-between gap-3 border-b border-border pb-5 text-left sm:mx-6 sm:flex-row sm:items-center">
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-(--purple) text-white shadow-lg shadow-primary/15">
-                <Layers3 className="h-5 w-5" />
+              <span
+                className={`grid h-9 w-9 place-items-center rounded-xl ${ICON_TONES[0]}`}
+              >
+                <Layers3 className="h-4 w-4" strokeWidth={2} />
               </span>
               <div>
-                <div className="flex items-center gap-1.5">
-                  <h3 className="font-body text-sm font-extrabold text-foreground sm:text-base">
-                    {t("apps.ecosystemLabel", { count: APPS.length })}
-                  </h3>
-                  <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-                </div>
-                <p className="mt-0.5 text-[10px] text-muted-foreground sm:text-[11px]">
+                <h3 className="font-body text-sm font-semibold text-(--ink) sm:text-base">
+                  {t("apps.ecosystemLabel", { count: APPS.length })}
+                </h3>
+                <p className="mt-0.5 text-[11px] text-(--muted)">
                   {t("apps.ecosystemHint")}
                 </p>
               </div>
             </div>
 
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1.5 text-[9px] font-extrabold uppercase tracking-[0.1em] text-emerald-700 dark:text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <span className="inline-flex items-center gap-2 rounded-full bg-(--teal)/10 px-3 py-1 text-[11px] font-semibold text-(--teal)">
+              <span className="h-1.5 w-1.5 rounded-full bg-(--teal)" />
               {t("apps.readyLabel")}
             </span>
           </div>
 
-          <div className="relative space-y-1 px-1 sm:px-2">
+          <div className="space-y-3">
             {rows.map((row, rowIndex) => (
               <AppMarqueeRow
                 key={rowIndex}
@@ -235,13 +229,9 @@ export default function AppsSection() {
           </div>
         </div>
 
-        <Link
-          href="/apps"
-          className="group mt-7 inline-flex items-center gap-2 rounded-full btn-gradient px-5 py-2.5 font-body text-[12px] font-extrabold text-white no-underline transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-18px_color-mix(in_srgb,var(--purple)_60%,transparent)]"
-        >
-          {commonT("viewAllApps")}
-          <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </Link>
+        <div className="reveal reveal-d3 mt-10 flex flex-wrap justify-center gap-3">
+          <LiveDemoButton />
+        </div>
       </div>
     </section>
   );

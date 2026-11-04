@@ -43,6 +43,23 @@ export const APPS: AppItem[] = [
   { name: "Sales", icon: "📈", color: "#f0ffd5" },
   { name: "HR", icon: "👥", color: "#d5e8f0" },
   { name: "Dashboard", icon: "🎛️", color: "#f0e8d5" },
+  // Header Apps-menu modules that had no landing card yet.
+  { name: "Project Acctg", icon: "🗂️", color: "#d5eaf5" },
+  { name: "Budgeting", icon: "🐷", color: "#e0e0ff" },
+  { name: "Supply Chain", icon: "🚚", color: "#fff0d5" },
+  { name: "Open Platform", icon: "🔌", color: "#ead5f5" },
+  { name: "Quality", icon: "🛡️", color: "#d5f5e0" },
+  { name: "Emp. Portal", icon: "🪪", color: "#d5e8f5" },
+  { name: "Eng. Maint.", icon: "🔧", color: "#f5e8d5" },
+  { name: "Medical", icon: "🩺", color: "#ffe0e8" },
+  { name: "Trade Finance", icon: "🏦", color: "#e8f5d5" },
+  { name: "Transport", icon: "🚗", color: "#d5f5f5" },
+  { name: "Analytics", icon: "📊", color: "#e8d5f5" },
+  { name: "Real Estate", icon: "🏢", color: "#f5d5e8" },
+  { name: "Education", icon: "🏫", color: "#fffbe6" },
+  { name: "Merchandising", icon: "👕", color: "#d5ffe8" },
+  { name: "Fund Acctg", icon: "🤲", color: "#ffe8e8" },
+  { name: "University", icon: "🎓", color: "#e8e8ff" },
 ];
 
 export const ALTS: Record<string, string> = {

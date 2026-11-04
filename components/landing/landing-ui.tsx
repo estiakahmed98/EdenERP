@@ -18,7 +18,7 @@ export const GLOBAL_CSS = `
   --body: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
-.landing-page { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: hidden; }
+.landing-page { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: clip; }
 html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
 .dark .landing-page { --purple: #1088ef; --purple-dark: #003180; --teal: #21a816; --cream: #0a1424; --gray-bg: #0f1c30; --ink: #eaf1fa; --muted: #9fb2cc; --purple-light: #12263f; }
 .landing-page.green, .landing-page.theme-green, .green .landing-page, .theme-green .landing-page {
@@ -322,6 +322,28 @@ export function TypeWriter({ words }: { words: string[] }) {
     </span>
   );
 }
+
+/* Shared look for the Hero → Marquee → Apps run, so the three read as one flow. */
+export const ICON_TONES = [
+  "bg-(--purple-light) text-(--purple)",
+  "bg-(--teal)/10 text-(--teal)",
+] as const;
+
+export const SURFACE =
+  "rounded-2xl border border-border bg-card transition-colors duration-300 hover:border-(--purple)/30";
+
+export const MARQUEE_MASK: React.CSSProperties = {
+  maskImage:
+    "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+  WebkitMaskImage:
+    "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
+};
+
+/** Drops decorative sparkle glyphs (✦ ★ ✨) that some translated tags start with. */
+export const plainTag = (text: string) => text.replace(/^[✦★✨]\s*/u, "");
+
+/** Same scroll pace everywhere: duration grows with the number of items. */
+export const marqueeDuration = (count: number) => `${count * 3.6}s`;
 
 export function SectionTag({
   children,

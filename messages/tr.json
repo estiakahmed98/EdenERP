@@ -10614,7 +10614,55 @@
           "operasyonlar",
           "HR"
         ],
-        "description": "Yerleşik yapay zekâ desteğiyle raporlar oluşturun, verileri anlayın, görevleri otomatikleştirin ve daha hızlı kararlar alın."
+        "description": "Yerleşik yapay zekâ desteğiyle raporlar oluşturun, verileri anlayın, görevleri otomatikleştirin ve daha hızlı kararlar alın.",
+        "stage": {
+          "phases": [
+            "Her modül hikâyenin bir parçasını taşır.",
+            "Adon her modülden sinyalleri toplar.",
+            "Bağlam zekâya dönüşür.",
+            "Yönetim için tek bir akıllı görünüm."
+          ],
+          "executiveTitle": "Bir kez sorun. Tüm işletmeyi görün.",
+          "providersLabel": "Modelinizi seçin",
+          "providersNote": "Modelden bağımsız tasarım. İsimler ve logolar sahiplerine aittir.",
+          "askLabel": "CEO soruyor",
+          "question": "Bu hafta işler nasıl gidiyor?",
+          "briefLabel": "Yönetici özeti",
+          "insights": [
+            {
+              "title": "Nakit görünümü",
+              "body": "Alacaklar, gelecek ayın borçlarını %14 payla karşılıyor."
+            },
+            {
+              "title": "Stok riski",
+              "body": "Hızlı satan 3 ürün perşembeye kadar yeniden sipariş seviyesine iniyor."
+            },
+            {
+              "title": "Üretim",
+              "body": "Hat 2 planın %6 gerisinde. Presin bakımı geldi."
+            }
+          ],
+          "metrics": {
+            "netCash": "Net nakit",
+            "receivables": "Alacaklar",
+            "payables": "Borçlar",
+            "stockHealth": "Stok durumu",
+            "lowStock": "Düşük stok",
+            "lineEfficiency": "Hat verimliliği",
+            "ordersRunning": "Süren emirler",
+            "attendance": "Bugünkü katılım",
+            "feesCollected": "Tahsil edilen ücret",
+            "openPos": "Açık siparişler",
+            "received": "Teslim alınan",
+            "headcount": "Çalışan sayısı",
+            "payrollReady": "Bordro hazır",
+            "pipeline": "Satış hunisi",
+            "wonThisMonth": "Bu ay kazanılan",
+            "revenue": "Gelir",
+            "live": "Canlı",
+            "onTrack": "Yolunda"
+          }
+        }
       },
       "levelUp": {
         "tag": "✦ Hızlı ve güvenilir",
@@ -10676,6 +10724,7 @@
         "titlePrefix": "İşletmenizin ihtiyaç duyduğu her şey",
         "titleHand": "tek",
         "titleSuffix": "platformda.",
+        "callout": "Bir kez kurun, gerisi kendiliğinden işler.",
         "cards": [
           {
             "icon": "⚡",
@@ -10714,6 +10763,7 @@
         "titlePrefix": "Modern",
         "titleCircled": "iş",
         "titleSuffix": "yönetim yazılımı",
+        "note": "Sürpriz yok: verileriniz, kurallarınız, tek ve net fiyat.",
         "cards": [
           {
             "icon": "🌍",
