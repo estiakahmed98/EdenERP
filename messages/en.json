@@ -11654,6 +11654,8 @@
         "exploreMedical": "Explore Medical Centre",
         "tfModule": "Trade Finance",
         "crModule": "Sales & CRM",
+        "reModule": "Real Estate",
+        "exploreRe": "Explore Real Estate",
         "exploreTf": "Explore Trade Finance",
         "exploreCrm": "Explore Sales & CRM",
         "tpModule": "Transport Pool",
@@ -11773,6 +11775,16 @@
           "tfLc": "Letters of Credit",
           "tfTt": "TT Remittances",
           "tfShipments": "Export Shipments",
+          "reDashboard": "Sales Dashboard",
+          "reProperties": "Properties",
+          "reUnits": "Units",
+          "reBookings": "Bookings",
+          "reCollections": "Collections",
+          "reHandover": "Handover",
+          "reRevRec": "Revenue Recognition",
+          "reLeases": "Leases",
+          "reBrokers": "Brokers",
+          "reBuyerPortal": "Buyer Portal",
           "tfPapers": "BD Export Papers",
           "crPipeline": "Pipeline",
           "crLeads": "Leads",
@@ -19750,6 +19762,2012 @@
         },
         "closing": {
           "title": "Bring your checkup form. We will set up a round in the demo."
+        }
+      },
+      "reDashboardPage": {
+        "meta": {
+          "title": "Real Estate Sales Dashboard: Bookings, Collections and Stock in One View | Adon ERP",
+          "description": "See units sold, booking value, collections and overdue instalments across every project in one dashboard. Built for property developers in Bangladesh.",
+          "keywords": [
+            "real estate sales dashboard",
+            "property developer software Bangladesh",
+            "unit sales tracking",
+            "real estate ERP",
+            "Adon ERP real estate"
+          ]
+        },
+        "hero": {
+          "title": "Sales dashboard: what sold, what came in, and what is still owed",
+          "lead": "Every project on one screen. Units sold this month, booking value, money collected against instalments, and the buyers who are behind, without asking three people for three spreadsheets.",
+          "secondaryCta": "See the dashboard"
+        },
+        "sample": {
+          "count": "4 projects",
+          "notes": [
+            "sales by project",
+            "stock by status",
+            "money owed, at a glance"
+          ]
+        },
+        "ui": {
+          "title": "Sales Dashboard",
+          "kSold": "Units sold",
+          "kSoldSub": "this month",
+          "kBooking": "Booking value",
+          "kBookingSub": "+12% on last month",
+          "kCollected": "Collected",
+          "kCollectedSub": "against instalments due",
+          "kOverdue": "Overdue",
+          "kOverdueSub": "11 buyers",
+          "projectsTitle": "Sales by project",
+          "stockTitle": "Unit status",
+          "centreCaption": "units",
+          "sAvailable": "Available",
+          "sBooked": "Booked",
+          "sSold": "Sold",
+          "sHanded": "Handed over",
+          "unitsSuffix": "units",
+          "caption": "A partial preview of Sales Dashboard in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "From a sale to money in the bank, in three steps",
+          "intro": "The dashboard follows the same path every flat takes.",
+          "steps": [
+            {
+              "tag": "Sell",
+              "question": "What was booked",
+              "body": "Every booking lands here the moment it is saved, with its unit and price."
+            },
+            {
+              "tag": "Collect",
+              "question": "What came in",
+              "body": "Instalments received are matched to each buyer and each project."
+            },
+            {
+              "tag": "Chase",
+              "question": "What is late",
+              "body": "Overdue instalments are listed by buyer so the right person makes the call."
+            }
+          ],
+          "formTitle": "What the dashboard reads from",
+          "form": [
+            {
+              "label": "Bookings",
+              "body": "Unit, buyer, price and booking date."
+            },
+            {
+              "label": "Payment plans",
+              "body": "Instalment dates and amounts for each buyer."
+            },
+            {
+              "label": "Receipts",
+              "body": "Money actually received, by cheque, transfer or cash."
+            },
+            {
+              "label": "Unit status",
+              "body": "Available, booked, sold or handed over."
+            },
+            {
+              "label": "Project",
+              "body": "Which project each figure belongs to."
+            }
+          ]
+        },
+        "connect": {
+          "title": "One dashboard, fed by the whole module",
+          "intro": "Nothing is typed in here. It reads what the other screens already hold.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reBookings": "Units sold and booking value.",
+            "reCollections": "Money received and money late.",
+            "reUnits": "Stock by status.",
+            "reProperties": "Projects and their blocks.",
+            "financialReports": "Figures that tie back to the books.",
+            "reRevRec": "Revenue recognised so far."
+          }
+        },
+        "local": {
+          "title": "A sales view that matches how developers here sell",
+          "intro": "Flats are sold on instalments, over years, often through brokers. The dashboard keeps that in view.",
+          "points": [
+            {
+              "title": "Instalment-first",
+              "body": "Collections sit next to sales, not in a separate report."
+            },
+            {
+              "title": "BDT and lakh/crore",
+              "body": "Figures in the grouping your team already reads."
+            },
+            {
+              "title": "By project",
+              "body": "Each launch tracked on its own."
+            },
+            {
+              "title": "Broker sales included",
+              "body": "Sales through brokers count from day one."
+            }
+          ],
+          "story": {
+            "title": "A Monday sales meeting, without the spreadsheets",
+            "intro": "A sample week, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Mon 9:00",
+                "text": "The sales head opens the dashboard on the meeting screen."
+              },
+              {
+                "time": "Mon 9:05",
+                "text": "Riverside Heights is ahead; Lakeview is behind on bookings."
+              },
+              {
+                "time": "Mon 9:15",
+                "text": "11 overdue buyers are split between two collection officers."
+              },
+              {
+                "time": "Mon 9:30",
+                "text": "Three units on hold are released back to stock."
+              },
+              {
+                "time": "Mon 9:40",
+                "text": "The meeting ends with a list, not a debate about whose numbers are right."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use a sales dashboard",
+          "angles": {
+            "retail": "Mall and shop-space sales by floor.",
+            "food-hospitality": "Restaurant spaces sold or leased in a development.",
+            "real-estate": "Flats, plots and shops sold by project.",
+            "consulting": "Advisory fees from property clients.",
+            "manufacturing": "Staff housing and industrial plots.",
+            "health-fitness": "Clinic and diagnostic spaces.",
+            "trades": "Contractor payments against project sales.",
+            "others": "Land sales by block."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the sales dashboard",
+          "items": [
+            {
+              "q": "Can I see one project at a time?",
+              "a": "Yes, filter by project or look across all of them."
+            },
+            {
+              "q": "Does it include broker sales?",
+              "a": "Yes, the broker is recorded on the booking."
+            },
+            {
+              "q": "Where do the figures come from?",
+              "a": "From bookings, payment plans and receipts already in the system."
+            },
+            {
+              "q": "Can I print it for a meeting?",
+              "a": "Yes, print or export to PDF."
+            },
+            {
+              "q": "Is it live?",
+              "a": "It updates as soon as a booking or receipt is saved."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last month's sales sheet. We will rebuild it as a dashboard in the demo."
+        }
+      },
+      "rePropertiesPage": {
+        "meta": {
+          "title": "Real Estate Projects and Blocks: Every Property, Tower and Phase in One Place | Adon ERP",
+          "description": "Set up each project with its land, blocks, floors, units and construction progress. Built for real estate developers in Bangladesh.",
+          "keywords": [
+            "real estate project management software",
+            "property register Bangladesh",
+            "developer project setup",
+            "tower and block tracking",
+            "Adon ERP properties"
+          ]
+        },
+        "hero": {
+          "title": "Properties: every project, block and floor, set up once",
+          "lead": "A project holds its land, its blocks or towers, floors and units. Sales, collections and construction progress all hang off this one record, so nothing is typed twice.",
+          "secondaryCta": "See a project record"
+        },
+        "sample": {
+          "count": "4 projects",
+          "notes": [
+            "the project list",
+            "blocks and floors",
+            "construction progress"
+          ]
+        },
+        "ui": {
+          "title": "Properties",
+          "listTitle": "Projects",
+          "stLaunch": "Launching",
+          "stBuilding": "Under construction",
+          "stReady": "Ready to hand over",
+          "detailTitle": "Blocks and towers",
+          "dLocation": "Location",
+          "dLand": "Land",
+          "dHandover": "Handover",
+          "dUnits": "Total units",
+          "cBlock": "Block",
+          "cFloors": "Floors",
+          "cUnits": "Units",
+          "cSold": "Sold",
+          "cBuilt": "Built",
+          "caption": "A partial preview of Properties in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A project record, in three layers",
+          "intro": "Where it is, how it is divided, and how far along it is.",
+          "steps": [
+            {
+              "tag": "Place",
+              "question": "Where it is",
+              "body": "Name, location, land area and launch date."
+            },
+            {
+              "tag": "Structure",
+              "question": "How it is divided",
+              "body": "Blocks or towers, floors and the units on each."
+            },
+            {
+              "tag": "Progress",
+              "question": "How far along",
+              "body": "Construction progress by block, against the handover date."
+            }
+          ],
+          "formTitle": "What you fill in for a project",
+          "form": [
+            {
+              "label": "Name and location",
+              "body": "Such as Riverside Heights, Purbachal."
+            },
+            {
+              "label": "Land area",
+              "body": "In katha, bigha or square feet."
+            },
+            {
+              "label": "Blocks or towers",
+              "body": "Each with its number of floors."
+            },
+            {
+              "label": "Launch and handover dates",
+              "body": "Planned dates the team works to."
+            },
+            {
+              "label": "Project type",
+              "body": "Residential, commercial or mixed."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The project is where everything starts",
+          "intro": "Units, bookings and revenue all belong to a project.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reUnits": "Flats and shops on each floor.",
+            "reBookings": "Sales for the project.",
+            "reHandover": "Handover when blocks are ready.",
+            "reRevRec": "Revenue by project.",
+            "reDashboard": "Project sales at a glance.",
+            "fixedAssetRegister": "Developer-owned assets."
+          }
+        },
+        "local": {
+          "title": "Project records the way developers here work",
+          "intro": "Land comes in katha and bigha, projects launch in phases, and a tower can be half sold before the first slab is cast.",
+          "points": [
+            {
+              "title": "Local land units",
+              "body": "Katha, bigha and square feet side by side."
+            },
+            {
+              "title": "Phases",
+              "body": "Launch a block at a time."
+            },
+            {
+              "title": "One record",
+              "body": "Sales and construction read the same project."
+            },
+            {
+              "title": "Progress by block",
+              "body": "Each tower tracked separately."
+            }
+          ],
+          "story": {
+            "title": "One new project, from land to first booking",
+            "intro": "A sample launch, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Week 1",
+                "text": "The project is created with its land and location."
+              },
+              {
+                "time": "Week 1",
+                "text": "Tower A and Tower B are added with their floors."
+              },
+              {
+                "time": "Week 2",
+                "text": "Units are generated for each floor."
+              },
+              {
+                "time": "Week 3",
+                "text": "The launch date and handover date are fixed."
+              },
+              {
+                "time": "Week 4",
+                "text": "The first booking is taken against Tower A."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use project records",
+          "angles": {
+            "retail": "Shopping mall phases and floors.",
+            "food-hospitality": "Food courts and hotel wings.",
+            "real-estate": "Residential and commercial towers.",
+            "consulting": "Client projects under advisory.",
+            "manufacturing": "Staff housing colonies.",
+            "health-fitness": "Medical complexes by block.",
+            "trades": "Contractor packages by block.",
+            "others": "Plot developments by phase."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about properties",
+          "items": [
+            {
+              "q": "Can a project have many blocks?",
+              "a": "Yes, as many as you need, each with its own floors."
+            },
+            {
+              "q": "Can I use katha and bigha?",
+              "a": "Yes, alongside square feet."
+            },
+            {
+              "q": "Can I launch in phases?",
+              "a": "Yes, open one block at a time."
+            },
+            {
+              "q": "Can I attach layouts and approvals?",
+              "a": "Yes, files and images on the project."
+            },
+            {
+              "q": "Can I copy a project?",
+              "a": "Yes, start a new phase from an existing one."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your project list. We will set up one tower in the demo."
+        }
+      },
+      "reUnitsPage": {
+        "meta": {
+          "title": "Real Estate Unit Inventory: A Live Stacking Plan of Every Flat and Shop | Adon ERP",
+          "description": "See every unit by floor with its size, facing, rate and status. Hold, book and sell without double-selling. Built for developers in Bangladesh.",
+          "keywords": [
+            "unit inventory real estate",
+            "stacking plan software",
+            "flat availability tracker",
+            "property unit management Bangladesh",
+            "Adon ERP units"
+          ]
+        },
+        "hero": {
+          "title": "Units: a live stacking plan, so no flat is sold twice",
+          "lead": "Every flat and shop sits on a floor-by-floor grid, coloured by status. Click a unit to see its size, facing, rate and price, and hold it for a buyer in one step.",
+          "secondaryCta": "See the stacking plan"
+        },
+        "sample": {
+          "count": "212 units",
+          "notes": [
+            "the stacking plan",
+            "status by colour",
+            "one unit's details"
+          ]
+        },
+        "ui": {
+          "title": "Units",
+          "stackTitle": "Stacking plan, Tower A",
+          "floor": "Floor",
+          "sAvail": "Available",
+          "sBooked": "Booked",
+          "sSold": "Sold",
+          "sHold": "On hold",
+          "detailTitle": "Unit 7C",
+          "dSize": "Size",
+          "dFacing": "Facing",
+          "dRate": "Rate per sft",
+          "dPrice": "Price",
+          "dBeds": "Bedrooms",
+          "dBaths": "Bathrooms",
+          "holdBtn": "Hold for buyer",
+          "facingValue": "South, lake view",
+          "caption": "A partial preview of Units in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A unit, from available to sold",
+          "intro": "Each unit moves through the same few states, and everyone sees the same state.",
+          "steps": [
+            {
+              "tag": "Available",
+              "question": "Ready to sell",
+              "body": "Listed with size, facing and price."
+            },
+            {
+              "tag": "Held",
+              "question": "Kept for a buyer",
+              "body": "A hold with an expiry, so it does not sit blocked."
+            },
+            {
+              "tag": "Sold",
+              "question": "Booked and paid for",
+              "body": "Linked to a booking and its payment plan."
+            }
+          ],
+          "formTitle": "What you fill in for a unit",
+          "form": [
+            {
+              "label": "Unit number",
+              "body": "Such as 7C, floor 7."
+            },
+            {
+              "label": "Size",
+              "body": "Saleable area in square feet."
+            },
+            {
+              "label": "Facing and view",
+              "body": "South, lake view, road side."
+            },
+            {
+              "label": "Rate per sft",
+              "body": "The price the total is worked from."
+            },
+            {
+              "label": "Rooms",
+              "body": "Bedrooms, bathrooms and balconies."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Units connect the project to the sale",
+          "intro": "A unit belongs to a project and is sold through a booking.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reProperties": "The project and its blocks.",
+            "reBookings": "Sale of each unit.",
+            "reHandover": "Handover of sold units.",
+            "reLeases": "Units let out instead of sold.",
+            "reDashboard": "Stock by status.",
+            "reBrokers": "Units a broker is selling."
+          }
+        },
+        "local": {
+          "title": "Unit stock the way sales teams actually use it",
+          "intro": "Buyers want to see what is left, on which floor, facing which way, and at what rate.",
+          "points": [
+            {
+              "title": "One status for everyone",
+              "body": "Sales, accounts and brokers see the same grid."
+            },
+            {
+              "title": "Holds that expire",
+              "body": "A held unit returns to stock on its own."
+            },
+            {
+              "title": "Price from rate",
+              "body": "Size times rate, plus extras, worked out for you."
+            },
+            {
+              "title": "Floor by floor",
+              "body": "Find a unit the way a buyer asks for it."
+            }
+          ],
+          "story": {
+            "title": "One flat, from enquiry to sold",
+            "intro": "A sample sale, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Day 1",
+                "text": "A buyer asks for a south-facing flat above the 6th floor."
+              },
+              {
+                "time": "Day 1",
+                "text": "The stacking plan shows 7C and 9A available."
+              },
+              {
+                "time": "Day 1",
+                "text": "7C is held for three days."
+              },
+              {
+                "time": "Day 3",
+                "text": "The buyer decides and the unit is booked."
+              },
+              {
+                "time": "Day 3",
+                "text": "The grid turns the unit to sold for everybody."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use unit inventory",
+          "angles": {
+            "retail": "Shop spaces by floor in a mall.",
+            "food-hospitality": "Hotel rooms and serviced apartments.",
+            "real-estate": "Flats and shops by tower.",
+            "consulting": "Office spaces for clients.",
+            "manufacturing": "Industrial plots and sheds.",
+            "health-fitness": "Clinic suites.",
+            "trades": "Showroom and workshop units.",
+            "others": "Plots by block."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about units",
+          "items": [
+            {
+              "q": "Can I put a unit on hold?",
+              "a": "Yes, for a set number of days, then it returns to stock."
+            },
+            {
+              "q": "Can I see only what is available?",
+              "a": "Yes, filter by status, size, floor or facing."
+            },
+            {
+              "q": "Can I add parking and extras?",
+              "a": "Yes, as extras on the unit price."
+            },
+            {
+              "q": "Can I import my unit list?",
+              "a": "Yes, from a spreadsheet."
+            },
+            {
+              "q": "Can I show it to brokers?",
+              "a": "Yes, brokers see the stock you allow them to."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your unit list. We will build the stacking plan in the demo."
+        }
+      },
+      "reBookingsPage": {
+        "meta": {
+          "title": "Real Estate Bookings: Allotment, Payment Plan and Schedule in One Form | Adon ERP",
+          "description": "Book a unit, set the payment plan, and see every instalment date and amount from the start. Built for property developers in Bangladesh.",
+          "keywords": [
+            "real estate booking software",
+            "installment payment plan property",
+            "allotment letter",
+            "property sales Bangladesh",
+            "Adon ERP bookings"
+          ]
+        },
+        "hero": {
+          "title": "Bookings: pick the unit, set the plan, and the schedule writes itself",
+          "lead": "A booking ties a buyer to a unit with a price and a payment plan. Booking money, down payment and monthly instalments are laid out with dates, so nobody has to rebuild the schedule in a spreadsheet.",
+          "secondaryCta": "See a booking"
+        },
+        "sample": {
+          "count": "138 bookings",
+          "notes": [
+            "the booking form",
+            "the payment schedule",
+            "status of each instalment"
+          ]
+        },
+        "ui": {
+          "title": "Bookings",
+          "formTitle": "New booking",
+          "fBuyer": "Buyer",
+          "fUnit": "Unit",
+          "fPrice": "Price",
+          "fBooking": "Booking money",
+          "fPlan": "Payment plan",
+          "fBroker": "Broker",
+          "scheduleTitle": "Payment schedule",
+          "cItem": "Item",
+          "cDue": "Due",
+          "cAmount": "Amount",
+          "cStatus": "Status",
+          "iBooking": "Booking money",
+          "iDown": "Down payment",
+          "iInst": "Instalment",
+          "stPaid": "Paid",
+          "stDue": "Due",
+          "stUpcoming": "Upcoming",
+          "planValue": "20% down, 24 monthly",
+          "caption": "A partial preview of Bookings in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A booking, in three steps",
+          "intro": "Who, what and how they will pay.",
+          "steps": [
+            {
+              "tag": "Buyer",
+              "question": "Who is buying",
+              "body": "Buyer details, nominee and the broker, if any."
+            },
+            {
+              "tag": "Unit",
+              "question": "What they are buying",
+              "body": "The unit, its size and price, with any discount."
+            },
+            {
+              "tag": "Plan",
+              "question": "How they will pay",
+              "body": "Booking money, down payment and monthly instalments."
+            }
+          ],
+          "formTitle": "What you fill in for a booking",
+          "form": [
+            {
+              "label": "Buyer",
+              "body": "Name, contact, NID and nominee."
+            },
+            {
+              "label": "Unit",
+              "body": "Picked from the stacking plan."
+            },
+            {
+              "label": "Price and discount",
+              "body": "Total price after any discount."
+            },
+            {
+              "label": "Booking money",
+              "body": "Amount taken at booking."
+            },
+            {
+              "label": "Payment plan",
+              "body": "Down payment and instalment count."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A booking touches sales, accounts and the buyer",
+          "intro": "Once it is saved, the right people see the right part of it.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reUnits": "The unit being sold.",
+            "reBrokers": "Commission on the sale.",
+            "reCollections": "Instalments to collect.",
+            "reBuyerPortal": "What the buyer sees.",
+            "receipts": "Booking money received.",
+            "reDashboard": "Bookings in the sales view."
+          }
+        },
+        "local": {
+          "title": "Booking forms that match how flats are sold here",
+          "intro": "A flat is paid for over years. The plan, the dates and the nominee all matter.",
+          "points": [
+            {
+              "title": "Instalments built in",
+              "body": "Dates and amounts from the plan, not from memory."
+            },
+            {
+              "title": "Allotment letter",
+              "body": "Printed from the booking."
+            },
+            {
+              "title": "Nominee recorded",
+              "body": "Kept with the buyer from day one."
+            },
+            {
+              "title": "Discounts tracked",
+              "body": "Every discount shows who approved it."
+            }
+          ],
+          "story": {
+            "title": "One booking, from visit to schedule",
+            "intro": "A sample sale, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Day 1",
+                "text": "The buyer visits the site with a broker."
+              },
+              {
+                "time": "Day 1",
+                "text": "Unit 7C is chosen and the price is agreed."
+              },
+              {
+                "time": "Day 2",
+                "text": "Booking money is received and a receipt is issued."
+              },
+              {
+                "time": "Day 2",
+                "text": "The plan, 20% down and 24 monthly instalments, is set."
+              },
+              {
+                "time": "Day 3",
+                "text": "The allotment letter is printed and signed."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use bookings",
+          "angles": {
+            "retail": "Shop space booked ahead of opening.",
+            "food-hospitality": "Restaurant space reservations.",
+            "real-estate": "Flat, shop and plot bookings.",
+            "consulting": "Retainers collected in instalments.",
+            "manufacturing": "Staff housing allotments.",
+            "health-fitness": "Clinic space bookings.",
+            "trades": "Showroom bookings.",
+            "others": "Plot bookings with instalments."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about bookings",
+          "items": [
+            {
+              "q": "Can the plan be changed after booking?",
+              "a": "Yes, with a record of who changed it and why."
+            },
+            {
+              "q": "Can I print an allotment letter?",
+              "a": "Yes, from the booking."
+            },
+            {
+              "q": "Can one buyer book several units?",
+              "a": "Yes, each with its own plan."
+            },
+            {
+              "q": "Can I cancel a booking?",
+              "a": "Yes, with a refund calculation by your policy."
+            },
+            {
+              "q": "Can brokers raise bookings?",
+              "a": "Yes, pending your approval."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring one real booking. We will enter it and show the schedule in the demo."
+        }
+      },
+      "reCollectionsPage": {
+        "meta": {
+          "title": "Real Estate Collections: Know Who Owes What, and for How Long | Adon ERP",
+          "description": "Track instalments due, received and overdue across every project, with ageing by buyer. Built for property developers in Bangladesh.",
+          "keywords": [
+            "real estate collections software",
+            "instalment collection tracking",
+            "overdue buyer follow up",
+            "property receivables Bangladesh",
+            "Adon ERP collections"
+          ]
+        },
+        "hero": {
+          "title": "Collections: every instalment due, received and late",
+          "lead": "See what falls due this month, what has come in, and which buyers are behind and by how many days. The collection team starts the day with a list, not a hunt.",
+          "secondaryCta": "See overdue buyers"
+        },
+        "sample": {
+          "count": "61 instalments due",
+          "notes": [
+            "due this month",
+            "who is late",
+            "overdue by age"
+          ]
+        },
+        "ui": {
+          "title": "Collections",
+          "kDue": "Due this month",
+          "kCollected": "Collected",
+          "kOverdue": "Overdue",
+          "kRate": "Collection rate",
+          "tableTitle": "Instalments due",
+          "cBuyer": "Buyer",
+          "cUnit": "Unit",
+          "cDue": "Due",
+          "cAmount": "Amount",
+          "cStatus": "Status",
+          "stPaid": "Paid",
+          "stLate": "Late",
+          "stDueSoon": "Due soon",
+          "stPromised": "Promised",
+          "agingTitle": "Overdue by age",
+          "a0": "0 to 30 days",
+          "a1": "31 to 60 days",
+          "a2": "61 to 90 days",
+          "a3": "Over 90 days",
+          "caption": "A partial preview of Collections in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "From due date to received, in three steps",
+          "intro": "Each instalment is followed until it is paid.",
+          "steps": [
+            {
+              "tag": "Due",
+              "question": "What is coming",
+              "body": "Instalments by due date for the month ahead."
+            },
+            {
+              "tag": "Chase",
+              "question": "Who is behind",
+              "body": "Late buyers by days overdue, with notes from each call."
+            },
+            {
+              "tag": "Receive",
+              "question": "What came in",
+              "body": "Receipts matched to the instalment they pay."
+            }
+          ],
+          "formTitle": "What you record against an instalment",
+          "form": [
+            {
+              "label": "Receipt",
+              "body": "Amount, date and how it was paid."
+            },
+            {
+              "label": "Cheque or transfer",
+              "body": "Reference for the bank."
+            },
+            {
+              "label": "Promise to pay",
+              "body": "The date the buyer committed to."
+            },
+            {
+              "label": "Call note",
+              "body": "What was said, and by whom."
+            },
+            {
+              "label": "Late charge",
+              "body": "Delay charge, if your policy has one."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Collections turn the payment plan into cash",
+          "intro": "Instalments come from bookings and end in the books.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reBookings": "The payment plans.",
+            "receipts": "Money received.",
+            "bankAccounts": "Where it is banked.",
+            "arApAging": "Ageing in the books.",
+            "reDashboard": "Collection rate for management.",
+            "reBuyerPortal": "Buyers see their dues."
+          }
+        },
+        "local": {
+          "title": "Collections for sales that are paid over years",
+          "intro": "A buyer can miss a month, promise the next, and pay in cash or by cheque. The record should keep up.",
+          "points": [
+            {
+              "title": "Promises recorded",
+              "body": "A date and a name, not a memory."
+            },
+            {
+              "title": "Ageing by buyer",
+              "body": "See who is slipping early."
+            },
+            {
+              "title": "Cheque tracking",
+              "body": "Dishonoured cheques flagged at once."
+            },
+            {
+              "title": "Late charges",
+              "body": "Applied by your own rule."
+            }
+          ],
+          "story": {
+            "title": "One late buyer, from reminder to receipt",
+            "intro": "A sample follow-up, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Day 1",
+                "text": "The instalment falls due and is not paid."
+              },
+              {
+                "time": "Day 3",
+                "text": "An automatic reminder goes to the buyer."
+              },
+              {
+                "time": "Day 7",
+                "text": "A collection officer calls and notes a promise to pay."
+              },
+              {
+                "time": "Day 12",
+                "text": "A cheque arrives and the receipt is issued."
+              },
+              {
+                "time": "Day 12",
+                "text": "The instalment turns paid and the buyer leaves the late list."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use collections",
+          "angles": {
+            "retail": "Shop buyers paying over time.",
+            "food-hospitality": "Space buyers on instalments.",
+            "real-estate": "Flat and plot instalments.",
+            "consulting": "Retainers collected on schedule.",
+            "manufacturing": "Staff housing deductions.",
+            "health-fitness": "Clinic space instalments.",
+            "trades": "Showroom instalments.",
+            "others": "Plot instalments with late charges."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about collections",
+          "items": [
+            {
+              "q": "Can I send reminders?",
+              "a": "Yes, by SMS or email before and after the due date."
+            },
+            {
+              "q": "Can I charge for late payment?",
+              "a": "Yes, by a rule you set."
+            },
+            {
+              "q": "Can I record a part payment?",
+              "a": "Yes, the rest stays due."
+            },
+            {
+              "q": "Do receipts post to accounts?",
+              "a": "Yes, to the receivable and the bank."
+            },
+            {
+              "q": "Can I export the overdue list?",
+              "a": "Yes, to a spreadsheet."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your overdue list. We will load it and show the ageing in the demo."
+        }
+      },
+      "reHandoverPage": {
+        "meta": {
+          "title": "Real Estate Handover: A Checklist from Final Payment to Keys | Adon ERP",
+          "description": "Run every handover from one checklist: payment cleared, utilities, snag list, documents and keys. Built for property developers in Bangladesh.",
+          "keywords": [
+            "property handover checklist",
+            "flat handover software",
+            "snag list tracking",
+            "real estate handover Bangladesh",
+            "Adon ERP handover"
+          ]
+        },
+        "hero": {
+          "title": "Handover: nothing forgotten between the last payment and the keys",
+          "lead": "Each unit gets a checklist. Dues cleared, utilities connected, snags fixed, papers signed, keys handed over. Everyone can see how far a handover has got and what is holding it up.",
+          "secondaryCta": "See a handover checklist"
+        },
+        "sample": {
+          "count": "9 handovers this month",
+          "notes": [
+            "the checklist",
+            "what is holding it up",
+            "handovers coming up"
+          ]
+        },
+        "ui": {
+          "title": "Handover",
+          "checklistTitle": "Handover checklist, Unit 7C",
+          "buyerLabel": "Buyer",
+          "c1": "Full payment received",
+          "c2": "Utility connections",
+          "c3": "Snag list cleared",
+          "c4": "Documents signed",
+          "c5": "Keys handed over",
+          "stDone": "Done",
+          "stProgress": "In progress",
+          "stPending": "Pending",
+          "readyLabel": "Ready",
+          "upcomingTitle": "Upcoming handovers",
+          "cUnit": "Unit",
+          "cBuyer": "Buyer",
+          "cDate": "Date",
+          "cReady": "Ready",
+          "caption": "A partial preview of Handover in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A handover, in three steps",
+          "intro": "Money, building, then paper.",
+          "steps": [
+            {
+              "tag": "Money",
+              "question": "Is it all paid",
+              "body": "Dues cleared, including any late charges."
+            },
+            {
+              "tag": "Building",
+              "question": "Is it ready",
+              "body": "Utilities connected and snags fixed."
+            },
+            {
+              "tag": "Paper",
+              "question": "Is it signed",
+              "body": "Documents signed and keys handed over."
+            }
+          ],
+          "formTitle": "What you tick off for a handover",
+          "form": [
+            {
+              "label": "Dues cleared",
+              "body": "Checked against collections."
+            },
+            {
+              "label": "Utilities",
+              "body": "Electricity, gas and water."
+            },
+            {
+              "label": "Snag list",
+              "body": "Defects found and fixed, with photos."
+            },
+            {
+              "label": "Documents",
+              "body": "Deed, possession letter and receipts."
+            },
+            {
+              "label": "Keys",
+              "body": "Handed over, with the buyer's signature."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A handover is the end of the sale and the start of ownership",
+          "intro": "It checks what was sold, paid for and built.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reBookings": "The sale being completed.",
+            "reCollections": "Confirms dues are cleared.",
+            "reUnits": "Unit status changes to handed over.",
+            "reRevRec": "Final revenue recognition.",
+            "reBuyerPortal": "Buyer sees handover progress.",
+            "reProperties": "Block completion."
+          }
+        },
+        "local": {
+          "title": "Handovers that go the way the buyer expects",
+          "intro": "Buyers inspect closely, and one missed item can delay a handover by weeks.",
+          "points": [
+            {
+              "title": "Checklist per unit",
+              "body": "The same steps every time."
+            },
+            {
+              "title": "Snag photos",
+              "body": "Defects recorded where they were found."
+            },
+            {
+              "title": "Dues checked first",
+              "body": "No handover with money outstanding."
+            },
+            {
+              "title": "Buyer sign-off",
+              "body": "Signed on the day, kept on file."
+            }
+          ],
+          "story": {
+            "title": "One flat, from last payment to keys",
+            "intro": "A sample handover, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Week 1",
+                "text": "The final instalment is received and dues show clear."
+              },
+              {
+                "time": "Week 1",
+                "text": "Electricity and gas connections are requested."
+              },
+              {
+                "time": "Week 2",
+                "text": "The buyer inspects and lists four snags."
+              },
+              {
+                "time": "Week 3",
+                "text": "Snags are fixed and the buyer signs them off."
+              },
+              {
+                "time": "Week 3",
+                "text": "Documents are signed and the keys are handed over."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use handover",
+          "angles": {
+            "retail": "Shop spaces handed over for fit-out.",
+            "food-hospitality": "Restaurant spaces handed over shell and core.",
+            "real-estate": "Flats and shops handed over to buyers.",
+            "consulting": "Office handovers to clients.",
+            "manufacturing": "Factory shed handover.",
+            "health-fitness": "Clinic handover for fit-out.",
+            "trades": "Showroom handover.",
+            "others": "Plot possession."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about handover",
+          "items": [
+            {
+              "q": "Can I block handover when dues remain?",
+              "a": "Yes, the checklist will not complete until they are cleared."
+            },
+            {
+              "q": "Can I add my own steps?",
+              "a": "Yes, edit the checklist for your projects."
+            },
+            {
+              "q": "Can buyers see progress?",
+              "a": "Yes, through the buyer portal."
+            },
+            {
+              "q": "Can I attach snag photos?",
+              "a": "Yes, from a phone."
+            },
+            {
+              "q": "Can I hand over in batches?",
+              "a": "Yes, by block or by floor."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your handover checklist. We will load it for one unit in the demo."
+        }
+      },
+      "reRevRecPage": {
+        "meta": {
+          "title": "Real Estate Revenue Recognition: Percentage of Completion That Ties to the Books | Adon ERP",
+          "description": "Recognise property revenue by percentage of completion, with contract assets, deferred income and the journal worked out for you. Built for developers in Bangladesh.",
+          "keywords": [
+            "real estate revenue recognition",
+            "IFRS 15 property developer",
+            "percentage of completion accounting",
+            "deferred income real estate",
+            "Adon ERP revenue recognition"
+          ]
+        },
+        "hero": {
+          "title": "Revenue recognition: income follows construction, not just cash",
+          "lead": "Collections tell you what came in. Recognition tells you what you have earned. Adon ERP works the percentage of completion for each project and posts the journal, so the books and the site agree.",
+          "secondaryCta": "See the journal"
+        },
+        "sample": {
+          "count": "4 projects",
+          "notes": [
+            "recognised against deferred",
+            "by project",
+            "the monthly journal"
+          ]
+        },
+        "ui": {
+          "title": "Revenue Recognition",
+          "kContract": "Contract value",
+          "kRecognised": "Recognised to date",
+          "kDeferred": "Deferred",
+          "kMethod": "Method",
+          "methodValue": "% of completion",
+          "tableTitle": "By project",
+          "cProject": "Project",
+          "cComplete": "Complete",
+          "cRecognised": "Recognised",
+          "cDeferred": "Deferred",
+          "journalTitle": "This month's journal",
+          "jDr": "Dr",
+          "jCr": "Cr",
+          "lContractAsset": "Contract asset",
+          "lRevenue": "Sales revenue",
+          "lAdvance": "Customer advances",
+          "lDeferred": "Deferred income",
+          "caption": "A partial preview of Revenue Recognition in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "From construction to the journal, in three steps",
+          "intro": "How a month's revenue is worked out.",
+          "steps": [
+            {
+              "tag": "Measure",
+              "question": "How far along",
+              "body": "Percentage of completion for each project."
+            },
+            {
+              "tag": "Compare",
+              "question": "Earned versus billed",
+              "body": "Revenue earned against what buyers have paid."
+            },
+            {
+              "tag": "Post",
+              "question": "What to book",
+              "body": "A journal for revenue, contract assets and advances."
+            }
+          ],
+          "formTitle": "What you set for each project",
+          "form": [
+            {
+              "label": "Method",
+              "body": "Percentage of completion, or on handover."
+            },
+            {
+              "label": "Contract value",
+              "body": "Total sold value of the project."
+            },
+            {
+              "label": "Cost to complete",
+              "body": "Estimate, updated as work progresses."
+            },
+            {
+              "label": "Completion",
+              "body": "Percentage, from site or from cost."
+            },
+            {
+              "label": "Accounts",
+              "body": "Revenue, advance and deferred income."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Recognition is where sales meet the ledger",
+          "intro": "It reads sales and construction and writes the journal.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reBookings": "Contract values.",
+            "reCollections": "Cash received from buyers.",
+            "reProperties": "Completion by project.",
+            "journalEntries": "The journal it posts.",
+            "financialReports": "Revenue and deferred income in reports.",
+            "reHandover": "Revenue on handover method."
+          }
+        },
+        "local": {
+          "title": "Recognition that audit teams can follow",
+          "intro": "Auditors ask how revenue was worked out. The workings should be one click away.",
+          "points": [
+            {
+              "title": "Workings kept",
+              "body": "Every month's calculation saved."
+            },
+            {
+              "title": "Posts for you",
+              "body": "A journal, ready to review and post."
+            },
+            {
+              "title": "By project",
+              "body": "Each project on its own basis."
+            },
+            {
+              "title": "Reconciles to cash",
+              "body": "Earned versus received, side by side."
+            }
+          ],
+          "story": {
+            "title": "One month-end, from site report to journal",
+            "intro": "A sample close, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Day 1",
+                "text": "The site engineer updates completion for each block."
+              },
+              {
+                "time": "Day 2",
+                "text": "Adon ERP works out the revenue earned to date."
+              },
+              {
+                "time": "Day 2",
+                "text": "It compares that to what buyers have paid."
+              },
+              {
+                "time": "Day 3",
+                "text": "The finance lead reviews the journal."
+              },
+              {
+                "time": "Day 3",
+                "text": "It is posted and the month is closed."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use revenue recognition",
+          "angles": {
+            "retail": "Mall developers booking space revenue.",
+            "food-hospitality": "Hotel apartments sold off plan.",
+            "real-estate": "Flats sold before completion.",
+            "consulting": "Advisory fees recognised over time.",
+            "manufacturing": "Housing built for staff.",
+            "health-fitness": "Medical complexes sold off plan.",
+            "trades": "Fit-out contracts by progress.",
+            "others": "Plot developments by phase."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about revenue recognition",
+          "items": [
+            {
+              "q": "Does it follow IFRS 15?",
+              "a": "It supports over-time recognition; your auditor confirms the policy."
+            },
+            {
+              "q": "Can I recognise on handover instead?",
+              "a": "Yes, per project."
+            },
+            {
+              "q": "Where does completion come from?",
+              "a": "From site progress or from cost incurred."
+            },
+            {
+              "q": "Can I review before posting?",
+              "a": "Yes, nothing posts until you approve it."
+            },
+            {
+              "q": "Can I see past months?",
+              "a": "Yes, every calculation is kept."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring last month's journal. We will rework it in the demo."
+        }
+      },
+      "reLeasesPage": {
+        "meta": {
+          "title": "Real Estate Leases: Rent, Renewals and Deposits Without the Diary | Adon ERP",
+          "description": "Manage tenant leases with rent schedules, yearly increases, security deposits and renewal dates. Built for property owners in Bangladesh.",
+          "keywords": [
+            "lease management software Bangladesh",
+            "rent schedule",
+            "tenant management",
+            "lease renewal tracking",
+            "Adon ERP leases"
+          ]
+        },
+        "hero": {
+          "title": "Leases: every tenant, rent and renewal date in one list",
+          "lead": "Know who is renting what, at what rent, until when. Renewal dates, yearly increases and deposits are tracked on the lease, so a lapsed agreement never goes unnoticed.",
+          "secondaryCta": "See the lease list"
+        },
+        "sample": {
+          "count": "86 active leases",
+          "notes": [
+            "the lease list",
+            "leases ending soon",
+            "rent review terms"
+          ]
+        },
+        "ui": {
+          "title": "Leases",
+          "listTitle": "Active leases",
+          "cTenant": "Tenant",
+          "cUnit": "Unit",
+          "cRent": "Monthly rent",
+          "cEnds": "Ends",
+          "cStatus": "Status",
+          "stActive": "Active",
+          "stExpiring": "Ending soon",
+          "stRenewal": "In renewal",
+          "expiryTitle": "Leases ending",
+          "e30": "Next 30 days",
+          "e60": "31 to 60 days",
+          "e90": "61 to 90 days",
+          "reviewTitle": "Rent review",
+          "dIncrease": "Yearly increase",
+          "dDeposit": "Security deposit",
+          "dNotice": "Notice period",
+          "increaseValue": "5%",
+          "depositValue": "3 months",
+          "noticeValue": "90 days",
+          "caption": "A partial preview of Leases in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A lease, in three steps",
+          "intro": "Who, what and when.",
+          "steps": [
+            {
+              "tag": "Tenant",
+              "question": "Who is renting",
+              "body": "Tenant details, trade licence and contact."
+            },
+            {
+              "tag": "Terms",
+              "question": "On what terms",
+              "body": "Rent, yearly increase, deposit and notice period."
+            },
+            {
+              "tag": "Dates",
+              "question": "Until when",
+              "body": "Start, end and renewal, with reminders."
+            }
+          ],
+          "formTitle": "What you fill in for a lease",
+          "form": [
+            {
+              "label": "Tenant",
+              "body": "Name, contact and documents."
+            },
+            {
+              "label": "Unit",
+              "body": "The space being let."
+            },
+            {
+              "label": "Rent",
+              "body": "Monthly amount and due day."
+            },
+            {
+              "label": "Increase",
+              "body": "Yearly increase, by percentage or amount."
+            },
+            {
+              "label": "Deposit",
+              "body": "Amount held and when it is returned."
+            }
+          ]
+        },
+        "connect": {
+          "title": "A lease turns a unit into steady income",
+          "intro": "It uses the unit, raises the rent, and ends in the books.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reUnits": "The space being let.",
+            "receipts": "Rent received.",
+            "invoicesAr": "Rent invoices.",
+            "bankAccounts": "Where rent is banked.",
+            "reDashboard": "Income in the sales view.",
+            "reCollections": "Late rent follow-up."
+          }
+        },
+        "local": {
+          "title": "Lease records for owners who rent out many spaces",
+          "intro": "Rent rises every year, deposits are held for long, and renewals depend on a date in someone's diary.",
+          "points": [
+            {
+              "title": "Renewal reminders",
+              "body": "Ahead of the date, not after."
+            },
+            {
+              "title": "Increases applied",
+              "body": "Rent steps up on the right day."
+            },
+            {
+              "title": "Deposits tracked",
+              "body": "Held and returned with a record."
+            },
+            {
+              "title": "Rent invoices",
+              "body": "Raised each month automatically."
+            }
+          ],
+          "story": {
+            "title": "One lease, from signing to renewal",
+            "intro": "A sample tenancy, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Year 1",
+                "text": "A shop is let at BDT 85,000 a month with three months' deposit."
+              },
+              {
+                "time": "Year 1",
+                "text": "Rent is invoiced and received every month."
+              },
+              {
+                "time": "Year 2",
+                "text": "Rent steps up 5% on the anniversary."
+              },
+              {
+                "time": "Year 3",
+                "text": "A reminder arrives 90 days before the end."
+              },
+              {
+                "time": "Year 3",
+                "text": "The lease is renewed on revised terms."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use leases",
+          "angles": {
+            "retail": "Shop tenants in a mall.",
+            "food-hospitality": "Restaurant and kiosk tenants.",
+            "real-estate": "Flats and offices let to tenants.",
+            "consulting": "Office space for advisory firms.",
+            "manufacturing": "Factory shed tenants.",
+            "health-fitness": "Clinic and gym tenants.",
+            "trades": "Workshop and showroom tenants.",
+            "others": "Land and warehouse leases."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about leases",
+          "items": [
+            {
+              "q": "Can rent increase automatically?",
+              "a": "Yes, by percentage or fixed amount each year."
+            },
+            {
+              "q": "Can I track deposits?",
+              "a": "Yes, held, adjusted and returned."
+            },
+            {
+              "q": "Can I invoice rent monthly?",
+              "a": "Yes, generated from the lease."
+            },
+            {
+              "q": "Do I get renewal reminders?",
+              "a": "Yes, 30, 60 and 90 days ahead."
+            },
+            {
+              "q": "Can I attach the agreement?",
+              "a": "Yes, a scan or PDF on the lease."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a few leases. We will load them and show the renewal list in the demo."
+        }
+      },
+      "reBrokersPage": {
+        "meta": {
+          "title": "Real Estate Brokers: Commission Rules, Statements and Payouts | Adon ERP",
+          "description": "Track brokers, their sales, commission rates and what is due, with commission released as buyers pay. Built for property developers in Bangladesh.",
+          "keywords": [
+            "real estate broker commission software",
+            "broker management Bangladesh",
+            "sales commission property",
+            "commission statement",
+            "Adon ERP brokers"
+          ]
+        },
+        "hero": {
+          "title": "Brokers: who sold what, and what they are owed",
+          "lead": "Each booking records its broker. Commission follows your rule, a rate, a tier, or released as the buyer pays, and every broker can be shown a clear statement instead of a phone call.",
+          "secondaryCta": "See a commission statement"
+        },
+        "sample": {
+          "count": "27 brokers",
+          "notes": [
+            "the leaderboard",
+            "commission due",
+            "a broker's statement"
+          ]
+        },
+        "ui": {
+          "title": "Brokers",
+          "boardTitle": "Broker leaderboard",
+          "cBroker": "Broker",
+          "cDeals": "Deals",
+          "cSales": "Sales value",
+          "cRate": "Rate",
+          "cDue": "Commission due",
+          "statementTitle": "Commission statement",
+          "sTotal": "Total commission",
+          "sPaid": "Paid",
+          "sDue": "Due now",
+          "sHeld": "Held until 20% collected",
+          "shareCaption": "of sales",
+          "shareTitle": "Share of sales",
+          "caption": "A partial preview of Brokers in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "A broker's commission, in three steps",
+          "intro": "From the deal to the payout.",
+          "steps": [
+            {
+              "tag": "Sell",
+              "question": "What they sold",
+              "body": "Bookings tagged with the broker."
+            },
+            {
+              "tag": "Earn",
+              "question": "What they earned",
+              "body": "Commission worked out by your rule."
+            },
+            {
+              "tag": "Pay",
+              "question": "What is due",
+              "body": "Released as buyers pay, with a statement."
+            }
+          ],
+          "formTitle": "What you set for a broker",
+          "form": [
+            {
+              "label": "Broker",
+              "body": "Name, contact and trade licence."
+            },
+            {
+              "label": "Rate",
+              "body": "A percentage, or a tier by volume."
+            },
+            {
+              "label": "Release rule",
+              "body": "On booking, or as the buyer pays."
+            },
+            {
+              "label": "Projects",
+              "body": "Which projects they may sell."
+            },
+            {
+              "label": "Bank details",
+              "body": "For payout."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Brokers are paid from the sales they bring",
+          "intro": "Commission is earned on a booking and paid from collections.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reBookings": "Sales by each broker.",
+            "reCollections": "Buyer payments release commission.",
+            "reUnits": "Stock a broker can sell.",
+            "billsAp": "Commission payable.",
+            "reDashboard": "Broker sales in the view.",
+            "bankAccounts": "Where payouts are made."
+          }
+        },
+        "local": {
+          "title": "Commission that brokers trust and finance can defend",
+          "intro": "Disputes about commission are the quickest way to lose a good broker.",
+          "points": [
+            {
+              "title": "Rules in writing",
+              "body": "The rate and the release rule are on file."
+            },
+            {
+              "title": "Statements",
+              "body": "A broker sees what is earned and what is due."
+            },
+            {
+              "title": "Tiers",
+              "body": "Higher rates for higher volume."
+            },
+            {
+              "title": "Held until paid",
+              "body": "Released only as buyers pay."
+            }
+          ],
+          "story": {
+            "title": "One broker, from sale to payout",
+            "intro": "A sample commission, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Day 1",
+                "text": "A broker brings a buyer and a booking is saved."
+              },
+              {
+                "time": "Day 1",
+                "text": "Commission at 2.5% is worked out and held."
+              },
+              {
+                "time": "Month 2",
+                "text": "The buyer reaches 20% paid and the first part is released."
+              },
+              {
+                "time": "Month 2",
+                "text": "A statement is sent to the broker."
+              },
+              {
+                "time": "Month 2",
+                "text": "Finance pays the broker by bank transfer."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use broker commission",
+          "angles": {
+            "retail": "Space brokers for mall tenants.",
+            "food-hospitality": "Agents selling serviced units.",
+            "real-estate": "Brokers selling flats and plots.",
+            "consulting": "Referral partners.",
+            "manufacturing": "Agents for industrial plots.",
+            "health-fitness": "Agents for medical spaces.",
+            "trades": "Referral fees to contractors.",
+            "others": "Land agents."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about brokers",
+          "items": [
+            {
+              "q": "Can commission rates differ by broker?",
+              "a": "Yes, by broker, by project or by tier."
+            },
+            {
+              "q": "Can commission be held back?",
+              "a": "Yes, until the buyer pays a set share."
+            },
+            {
+              "q": "Can a broker see their own sales?",
+              "a": "Yes, a statement for each broker."
+            },
+            {
+              "q": "Can I pay in batches?",
+              "a": "Yes, one payout for many commissions."
+            },
+            {
+              "q": "What if a booking is cancelled?",
+              "a": "Commission is reversed by your rule."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring your broker list and rates. We will set up the rules in the demo."
+        }
+      },
+      "reBuyerPortalPage": {
+        "meta": {
+          "title": "Real Estate Buyer Portal: Dues, Receipts and Construction Updates for Buyers | Adon ERP",
+          "description": "Give buyers a portal to see their payments, receipts, documents and construction progress. Built for property developers in Bangladesh.",
+          "keywords": [
+            "buyer portal real estate",
+            "customer portal property developer",
+            "payment receipts online",
+            "construction progress updates",
+            "Adon ERP buyer portal"
+          ]
+        },
+        "hero": {
+          "title": "Buyer portal: buyers stop calling to ask what they owe",
+          "lead": "Each buyer logs in to see their unit, what they have paid, what is next, and how construction is going. Fewer calls to the office, and a buyer who trusts the numbers.",
+          "secondaryCta": "See the buyer view"
+        },
+        "sample": {
+          "count": "138 buyers",
+          "notes": [
+            "what the buyer sees",
+            "dues and receipts",
+            "construction progress"
+          ]
+        },
+        "ui": {
+          "title": "Buyer Portal",
+          "hello": "Welcome, Tahmina",
+          "unitLabel": "Your unit",
+          "paidLabel": "Paid so far",
+          "nextLabel": "Next instalment",
+          "payBtn": "Pay now",
+          "progressTitle": "Construction progress",
+          "p1": "Foundation",
+          "p2": "Structure",
+          "p3": "Finishing",
+          "docsTitle": "Documents",
+          "d1": "Allotment letter",
+          "d2": "Payment receipts",
+          "d3": "Agreement copy",
+          "stDone": "Done",
+          "stProgress": "In progress",
+          "stPending": "Pending",
+          "viewDoc": "View",
+          "caption": "A partial preview of Buyer Portal in Adon ERP. Company, people and figures are sample data."
+        },
+        "flow": {
+          "title": "What a buyer can do, in three steps",
+          "intro": "See it, pay it, trust it.",
+          "steps": [
+            {
+              "tag": "See",
+              "question": "What do I owe",
+              "body": "Paid so far, next instalment and the full schedule."
+            },
+            {
+              "tag": "Pay",
+              "question": "How do I pay",
+              "body": "Pay online or see where to deposit."
+            },
+            {
+              "tag": "Follow",
+              "question": "How is it going",
+              "body": "Construction updates and photos for the buyer's block."
+            }
+          ],
+          "formTitle": "What you choose to share",
+          "form": [
+            {
+              "label": "Payment schedule",
+              "body": "Dues, dates and receipts."
+            },
+            {
+              "label": "Documents",
+              "body": "Allotment letter and agreement."
+            },
+            {
+              "label": "Construction updates",
+              "body": "Photos and progress by block."
+            },
+            {
+              "label": "Notices",
+              "body": "Messages for all buyers or one."
+            },
+            {
+              "label": "Requests",
+              "body": "Plan changes and name transfers."
+            }
+          ]
+        },
+        "connect": {
+          "title": "The portal shows buyers what the team already knows",
+          "intro": "Nothing is entered twice. It reads the same records.",
+          "groups": {
+            "before": "Linked to",
+            "after": "Used by",
+            "shows": "Where it shows up"
+          },
+          "items": {
+            "reBookings": "The unit and plan.",
+            "reCollections": "Dues and receipts.",
+            "reHandover": "Handover progress.",
+            "reProperties": "Construction progress.",
+            "receipts": "Receipts the buyer can download.",
+            "reDashboard": "Fewer calls to follow up."
+          }
+        },
+        "local": {
+          "title": "A portal that suits buyers who watch every taka",
+          "intro": "Buyers pay over years, and many live abroad. They want proof, and they want it at any hour.",
+          "points": [
+            {
+              "title": "Receipts on demand",
+              "body": "Download any receipt, any time."
+            },
+            {
+              "title": "Works on a phone",
+              "body": "Built for a small screen."
+            },
+            {
+              "title": "Overseas buyers",
+              "body": "See progress from anywhere."
+            },
+            {
+              "title": "You choose what shows",
+              "body": "Share only what you want to."
+            }
+          ],
+          "story": {
+            "title": "One buyer, from a call to a login",
+            "intro": "A sample day, the way it usually runs.",
+            "steps": [
+              {
+                "time": "Mon",
+                "text": "A buyer abroad wonders if the last payment was received."
+              },
+              {
+                "time": "Mon",
+                "text": "Instead of calling, she logs in to the portal."
+              },
+              {
+                "time": "Mon",
+                "text": "The receipt is there, with the new balance."
+              },
+              {
+                "time": "Mon",
+                "text": "She sees the structure photos for her block."
+              },
+              {
+                "time": "Mon",
+                "text": "The office never got a call."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "How different businesses use a buyer portal",
+          "angles": {
+            "retail": "Space buyers following fit-out dates.",
+            "food-hospitality": "Buyers of serviced units.",
+            "real-estate": "Flat and plot buyers.",
+            "consulting": "Clients following milestones.",
+            "manufacturing": "Housing allottees.",
+            "health-fitness": "Clinic space buyers.",
+            "trades": "Clients following fit-out work.",
+            "others": "Plot buyers following development."
+          }
+        },
+        "faq": {
+          "title": "Questions we get about the buyer portal",
+          "items": [
+            {
+              "q": "Can buyers pay online?",
+              "a": "Yes, through the payment methods you set up."
+            },
+            {
+              "q": "Can buyers download receipts?",
+              "a": "Yes, any time."
+            },
+            {
+              "q": "Is it in Bangla?",
+              "a": "Yes, with the languages you choose."
+            },
+            {
+              "q": "Can I post construction photos?",
+              "a": "Yes, by block and date."
+            },
+            {
+              "q": "Can I send a notice?",
+              "a": "Yes, to all buyers or a block."
+            },
+            {
+              "q": "Where is Adon ERP available?",
+              "a": "We are currently onboarding companies in Dhaka. Book a demo and we will walk through it with sample data."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Bring a buyer's file. We will show how it looks from their side in the demo."
         }
       },
       "tfContractsPage": {
