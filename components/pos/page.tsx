@@ -9,11 +9,11 @@ import PosWorkspace from "./workspaces";
 import PosSnapshot from "./snapshots";
 import { css } from "./ui";
 
-export function posMetadata(slug: PosSlug): Metadata {
+export async function posMetadata(slug: PosSlug): Promise<Metadata> {
   return {
     title: `${pages[slug].title} | Point of Sale | EdenERP`,
     description: pages[slug].description,
-    alternates: getLocaleAlternates(`/apps/pos/${slug}`),
+    alternates: await getLocaleAlternates(`/apps/pos/${slug}`),
   };
 }
 export function PosPage({ slug }: { slug: PosSlug }) {

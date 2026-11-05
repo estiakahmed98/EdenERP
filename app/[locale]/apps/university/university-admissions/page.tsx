@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.universityDashboard") || "University Dashboard | AdonERP",
     description:
       "Explore an integrated university management experience for admissions, academics, students, examinations, fees, and graduation.",
-    alternates: getLocaleAlternates("/apps/university/university-dashboard"),
+    alternates: await getLocaleAlternates("/apps/university/university-dashboard"),
   };
 }
 

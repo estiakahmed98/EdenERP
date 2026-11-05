@@ -17,14 +17,14 @@ import IndustryHero from "./heroes";
 import IndustryDemo, { RolePerspective } from "./demos";
 import { Badge, Metric, css } from "./ui";
 
-export function educationIndustryMetadata(
+export async function educationIndustryMetadata(
   industry: EducationIndustry,
-): Metadata {
+): Promise<Metadata> {
   const p = pages[industry];
   return {
     title: `${p.title} Management | Education Industries | EdenERP`,
     description: p.description,
-    alternates: getLocaleAlternates(`/industries/${industry}`),
+    alternates: await getLocaleAlternates(`/industries/${industry}`),
   };
 }
 function ProductCanvas({ industry }: { industry: EducationIndustry }) {

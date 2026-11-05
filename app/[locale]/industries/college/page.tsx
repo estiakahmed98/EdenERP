@@ -3,7 +3,7 @@ import {
   educationIndustryMetadata,
 } from "@/components/education/industry/page";
 
-export const metadata = educationIndustryMetadata("college");
+export const generateMetadata = () => educationIndustryMetadata("college");
 
 export default function EducationIndustryLanding() {
   return <EducationIndustryPage industry="college" />;

@@ -31,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.registration") || "Registration | AdonERP",
     description:
       "Manage student registrations, advising holds, and course waivers in one unified hub.",
-    alternates: getLocaleAlternates("/apps/university/registration"),
+    alternates: await getLocaleAlternates("/apps/university/registration"),
   };
 }
 

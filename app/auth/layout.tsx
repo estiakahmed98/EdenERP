@@ -1,6 +1,11 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 
 import AuthSessionProvider from "@/lib/session-provider";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false, nocache: true },
+};
 
 export default async function AuthLayout({
   children,

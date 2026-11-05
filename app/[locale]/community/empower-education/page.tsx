@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
-    alternates: getLocaleAlternates("/community/empower-education"),
+    alternates: await getLocaleAlternates("/community/empower-education"),
   };
 }
 

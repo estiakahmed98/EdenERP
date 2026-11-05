@@ -3,7 +3,7 @@ import {
   merchandisingMetadata,
 } from "@/components/merchandising/page";
 
-export const metadata = merchandisingMetadata("profitability");
+export const generateMetadata = () => merchandisingMetadata("profitability");
 
 export default function MerchandisingSubpage() {
   return <MerchandisingPage slug="profitability" />;

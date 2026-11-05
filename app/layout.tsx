@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import Script from "next/script";
+import type { Metadata, Viewport } from "next";
 import { Caveat, Geist, Geist_Mono, Rubik, Tiro_Bangla } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { getLocale } from "next-intl/server";
 
+import GoogleAnalytics from "@/components/google-analytics";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
 
@@ -41,34 +41,30 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
 
   title: {
-    default: "Adon ERP - Enterprise Solution",
+    default: siteConfig.title,
     template: "%s | Adon ERP",
   },
 
   description: siteConfig.description,
-
-  keywords: [
-    "ERP",
-    "Business Software",
-    "Inventory Management",
-    "CRM",
-    "Accounting",
-    "POS",
-    "Manufacturing",
-    "HRM",
-    "Adon ERP",
-  ],
-
+  keywords: [...siteConfig.keywords],
   applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
+  manifest: "/manifest.webmanifest",
+  formatDetection: { email: false, address: false, telephone: false },
 
-  alternates: {
-    canonical: "/",
+  verification: {
+    google: siteConfig.googleVerification || undefined,
+    other: siteConfig.bingVerification
+      ? { "msvalidate.01": siteConfig.bingVerification }
+      : undefined,
   },
 
   robots: {
     index: true,
     follow: true,
-
     googleBot: {
       index: true,
       follow: true,
@@ -78,94 +74,72 @@ export const metadata: Metadata = {
     },
   },
 
+  // og:image / twitter:image are provided by app/opengraph-image.tsx
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
-    url: siteConfig.url,
     siteName: siteConfig.name,
-
-    title: "Adon ERP - Enterprise Solution",
-
+    title: siteConfig.title,
     description: siteConfig.description,
-
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Adon ERP",
-      },
-    ],
   },
 
   twitter: {
     card: "summary_large_image",
-
-    title: "Adon ERP - Enterprise Solution",
-
+    title: siteConfig.title,
     description: siteConfig.description,
-
     creator: siteConfig.twitterHandle,
-
-    images: ["/og-image.png"],
   },
 
   icons: {
     icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
+      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: dark)" },
+      { url: "/icon.svg", type: "image/svg+xml" },
     ],
-
     apple: "/apple-icon.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b1020" },
+  ],
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
-
   url: siteConfig.url,
-
-  logo: `${siteConfig.url}/icon.svg`,
-
+  logo: `${siteConfig.url}/adon_erp_logo.png`,
   description: siteConfig.description,
-
-  sameAs: [
-    "https://facebook.com",
-    "https://linkedin.com",
-    "https://twitter.com",
-  ],
+  ...(siteConfig.sameAs.length ? { sameAs: siteConfig.sameAs } : {}),
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-
+  "@id": `${siteConfig.url}/#website`,
   name: siteConfig.name,
-
   url: siteConfig.url,
-
   description: siteConfig.description,
+  publisher: { "@id": `${siteConfig.url}/#organization` },
+  inLanguage: ["en", "bn", "zh", "tr", "ar", "ja", "ne", "vi"],
+};
 
-  potentialAction: {
-    "@type": "SearchAction",
-
-    target: `${siteConfig.url}/search?q={search_term_string}`,
-
-    "query-input": "required name=search_term_string",
-  },
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: siteConfig.name,
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description: siteConfig.description,
+  url: siteConfig.url,
+  publisher: { "@id": `${siteConfig.url}/#organization` },
 };
 
 export default async function RootLayout({
@@ -183,21 +157,17 @@ export default async function RootLayout({
       className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${caveat.variable} ${tiroBangla.variable}`}
     >
       <body className="bg-background font-sans antialiased" suppressHydrationWarning>
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
+        {[organizationSchema, websiteSchema, softwareSchema].map((schema) => (
+          <script
+            key={schema["@type"]}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+            }}
+          />
+        ))}
 
-        <Script
-          id="website-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
+        <GoogleAnalytics />
 
         <ThemeProvider
           attribute="class"

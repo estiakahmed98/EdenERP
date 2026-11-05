@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site";
 import fs from "node:fs";
 import path from "node:path";
@@ -63,23 +64,41 @@ function discoverAppPageRoutes(appDir: string): string[] {
   const routes = new Set<string>();
 
   for (const file of pageFiles) {
-    const rel = path.relative(appDir, file);
-    const segments = rel.split(path.sep);
+    const segments = path.relative(appDir, file).split(path.sep);
+
+    // Only localized public pages live under app/[locale]
+    if (segments[0] !== "[locale]") continue;
+    segments.shift();
 
     if (segments.some((s) => isRouteGroup(s) || isParallelRoute(s))) continue;
     if (segments.some((s) => isDynamicSegment(s))) continue;
     if (segments.some((s) => SPECIAL_SEGMENT_FILES.has(s))) continue;
+    if (segments.some((s) => s.startsWith("_"))) continue;
 
-    // drop trailing "page.*"
-    segments.pop();
-    const routePath = "/" + segments.join("/");
-    routes.add(routePath === "/" ? "/" : routePath.replace(/\/+$/, ""));
+    segments.pop(); // drop page.*
+    const routePath = segments.length ? "/" + segments.join("/") : "";
+    if (NOINDEX_PREFIXES.some((p) => routePath === p || routePath.startsWith(p + "/"))) continue;
+    routes.add(routePath);
   }
 
-  // ensure root is present
-  routes.add("/");
-
+  routes.add("");
   return [...routes].sort((a, b) => a.localeCompare(b));
+}
+
+const NOINDEX_PREFIXES = ["/auth", "/checkout"];
+
+/**
+ * Next.js writes sitemap URLs into the XML verbatim (no escaping), so a raw "&"
+ * (e.g. "/industries/food&hospitality") produces invalid XML. Escape XML entities.
+ * Percent-encoding is not an option: "/food%26hospitality" returns 404.
+ */
+function xmlEscape(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -87,12 +106,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const appDir = path.join(process.cwd(), "app");
   const paths = discoverAppPageRoutes(appDir);
 
-  const entries: MetadataRoute.Sitemap = paths.map((p) => ({
-    url: `${siteConfig.url}${p}`,
-    lastModified: now,
-    changeFrequency: p === "/" ? "weekly" : "monthly",
-    priority: p === "/" ? 1 : 0.6,
-  }));
+  // One entry per locale per page, each carrying hreflang alternates.
+  return paths.map(xmlEscape).flatMap((p) => {
+    const languages = {
+      ...Object.fromEntries(
+        routing.locales.map((l) => [l, `${siteConfig.url}/${l}${p}`])
+      ),
+      "x-default": `${siteConfig.url}/${routing.defaultLocale}${p}`,
+    };
+    const depth = p === "" ? 0 : p.split("/").length - 1;
 
-  return entries;
+    return routing.locales.map((locale) => ({
+      url: `${siteConfig.url}/${locale}${p}`,
+      lastModified: now,
+      changeFrequency: (p === "" ? "weekly" : "monthly") as "weekly" | "monthly",
+      priority:
+        p === ""
+          ? 1
+          : Math.round(Math.max(0.4, 0.8 - (depth - 1) * 0.1) * 10) / 10,
+      alternates: { languages },
+    }));
+  });
 }

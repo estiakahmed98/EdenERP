@@ -11,11 +11,11 @@ import AqlWorkspace from "./aql";
 import SpcWorkspace from "./spc";
 import { QualityClosing, QualityConnections, QualityFlow, css } from "./ui";
 
-export function qualityMetadata(slug: QualitySlug): Metadata {
+export async function qualityMetadata(slug: QualitySlug): Promise<Metadata> {
   return {
     title: `${qualityPages[slug].title} | Quality Management`,
     description: qualityPages[slug].description,
-    alternates: getLocaleAlternates(`/apps/quality/${slug}`),
+    alternates: await getLocaleAlternates(`/apps/quality/${slug}`),
   };
 }
 const workspaces = {

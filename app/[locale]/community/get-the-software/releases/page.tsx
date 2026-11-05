@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
-    alternates: getLocaleAlternates("/community/get-the-software/releases"),
+    alternates: await getLocaleAlternates("/community/get-the-software/releases"),
   };
 }
 

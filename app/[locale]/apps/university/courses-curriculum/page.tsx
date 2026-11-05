@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.coursesCurriculum") || "Courses & Curriculum | AdonERP",
     description:
       "Manage course catalogs, prerequisites, and programme curricula in one unified hub.",
-    alternates: getLocaleAlternates("/apps/university/courses-curriculum"),
+    alternates: await getLocaleAlternates("/apps/university/courses-curriculum"),
   };
 }
 

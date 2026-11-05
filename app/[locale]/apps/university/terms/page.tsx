@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.terms") || "Terms | AdonERP",
     description:
       "Manage academic terms, registration windows, and grading periods in one unified hub.",
-    alternates: getLocaleAlternates("/apps/university/terms"),
+    alternates: await getLocaleAlternates("/apps/university/terms"),
   };
 }
 

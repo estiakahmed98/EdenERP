@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.classSchedule") || "Class Schedule | AdonERP",
     description:
       "Manage sections, timetables, room allocations, and faculty workloads in one unified hub.",
-    alternates: getLocaleAlternates("/apps/university/class-schedule"),
+    alternates: await getLocaleAlternates("/apps/university/class-schedule"),
   };
 }
 
