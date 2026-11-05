@@ -98,6 +98,10 @@
                     "attendance": "勤怠",
                     "payroll": "給与",
                     "budgetManagement": "予算管理",
+                    "analytics": "分析",
+                    "engineeringMaintenance": "設備保全",
+                    "transportPool": "車両管理",
+                    "biAnalyticsReporting": "BI 分析・レポート",
                     "fundAccounting": "資金会計",
                     "fundDashboard": "資金ダッシュボード",
                     "grants": "助成金",
@@ -164,6 +168,406 @@
                     "events": "イベント",
                     "translations": "翻訳",
                     "becomePartner": "パートナーになる"
+                }
+            },
+            "modules": {
+                "industries": {
+                    "title": "業種",
+                    "links": {
+                        "buyingHouse": "バイイングハウス",
+                        "accessories": "付属品",
+                        "ecommerce": "EC",
+                        "lms": "LMS",
+                        "school": "学校",
+                        "college": "カレッジ",
+                        "university": "大学",
+                        "merchandising": "マーチャンダイジング",
+                        "travelAgency": "旅行代理店",
+                        "textile": "テキスタイル",
+                        "garments": "縫製・アパレル",
+                        "ngo": "NGO",
+                        "realEstate": "不動産",
+                        "agroRice": "農業（米）",
+                        "tv": "テレビ",
+                        "steel": "鉄鋼"
+                    }
+                },
+                "accounting": {
+                    "title": "会計",
+                    "links": {
+                        "accountingHub": "会計ハブ",
+                        "chartOfAccounts": "勘定科目表",
+                        "journalEntries": "仕訳",
+                        "ledgers": "元帳",
+                        "invoicesAr": "請求書（売掛）",
+                        "billsAp": "支払請求書（買掛）",
+                        "purchaseOrders": "発注書",
+                        "itemsProducts": "品目 / 製品",
+                        "customers": "顧客",
+                        "vendors": "仕入先",
+                        "bankAccounts": "銀行口座",
+                        "receipts": "入出金伝票",
+                        "deliveryChallans": "納品書",
+                        "pettyCash": "小口現金",
+                        "chequeRegister": "小切手台帳",
+                        "closingFy": "決算・会計年度",
+                        "financialReports": "財務レポート",
+                        "vatRegister": "VAT 台帳",
+                        "discountsCoupons": "割引・クーポン",
+                        "loanManagement": "ローン管理",
+                        "fixedAssetRegister": "固定資産台帳",
+                        "exchangeRates": "為替レート",
+                        "arApAging": "売掛 / 買掛エイジング",
+                        "bankReconciliation": "銀行照合"
+                    }
+                },
+                "projectAccounting": {
+                    "title": "プロジェクト会計",
+                    "links": {
+                        "overview": "概要",
+                        "costCodes": "原価コード",
+                        "budgets": "予算",
+                        "jobCost": "工事原価",
+                        "changeOrders": "変更指示",
+                        "wip": "仕掛 (WIP)",
+                        "progressBilling": "出来高請求",
+                        "schedule": "スケジュール",
+                        "risksIssues": "リスクと課題",
+                        "documents": "ドキュメント",
+                        "milestones": "マイルストーン",
+                        "boq": "BOQ",
+                        "billAllocations": "請求配賦",
+                        "pAndL": "損益"
+                    }
+                },
+                "budgetManagement": {
+                    "title": "予算管理",
+                    "links": {
+                        "overview": "概要",
+                        "lines": "予算明細",
+                        "requisitions": "申請",
+                        "variance": "差異",
+                        "approvals": "承認",
+                        "rbrf": "RBRF"
+                    }
+                },
+                "supplyChain": {
+                    "title": "サプライチェーン",
+                    "links": {
+                        "overview": "概要",
+                        "goodsReceipts": "入荷",
+                        "landedCost": "輸入諸掛",
+                        "procurement": "調達",
+                        "purchaseRequisitions": "購買依頼",
+                        "comparativeStatements": "相見積比較表",
+                        "tenderManagement": "入札管理"
+                    }
+                },
+                "inventory": {
+                    "title": "在庫",
+                    "links": {
+                        "demandForecast": "需要予測",
+                        "warehouses": "倉庫",
+                        "stockMovements": "在庫移動",
+                        "inventorySummary": "在庫サマリー",
+                        "gatePasses": "ゲートパス",
+                        "weighbridgeScales": "計量台・はかり"
+                    }
+                },
+                "openPlatform": {
+                    "title": "オープンプラットフォーム",
+                    "links": {
+                        "taxRates": "税率",
+                        "migrationStudio": "移行スタジオ",
+                        "exportTakeout": "エクスポート / データ持ち出し"
+                    }
+                },
+                "manufacturing": {
+                    "title": "製造",
+                    "links": {
+                        "workCenters": "作業区",
+                        "routings": "工順",
+                        "billOfMaterials": "部品表",
+                        "mrpPlanning": "MRP 計画",
+                        "capacityPlanning": "能力計画",
+                        "masterScheduleMps": "基準生産計画 (MPS)",
+                        "schedulingAps": "スケジューリング (APS)",
+                        "linePlanningBoard": "ライン計画ボード",
+                        "orderAllocation": "オーダー割当",
+                        "shopFloor": "製造現場",
+                        "productionOrders": "製造オーダー",
+                        "batchesLots": "バッチ / ロット",
+                        "serialNumbers": "シリアル番号",
+                        "qcTemplates": "QC テンプレート",
+                        "qualityControl": "品質管理",
+                        "scrapWaste": "スクラップ / 廃棄",
+                        "subcontracting": "外注加工",
+                        "standardCosting": "標準原価",
+                        "productionCosting": "製造原価"
+                    }
+                },
+                "quality": {
+                    "title": "品質 (QMS)",
+                    "links": {
+                        "qualityDashboard": "品質ダッシュボード",
+                        "nonConformance": "不適合",
+                        "capa": "CAPA",
+                        "aqlSampling": "AQL 抜取検査",
+                        "spc": "SPC"
+                    }
+                },
+                "hrPayroll": {
+                    "title": "人事・給与",
+                    "links": {
+                        "departments": "部門",
+                        "designations": "役職",
+                        "gradesSteps": "等級・号俸",
+                        "salaryComponents": "給与項目",
+                        "salaryStructures": "給与体系",
+                        "employees": "従業員",
+                        "payrollRuns": "給与計算",
+                        "approvalsInbox": "承認受信箱",
+                        "taxBracketsNbr": "税率区分 (NBR)",
+                        "form108Annual": "様式 108（年次）",
+                        "hrPolicyPfGratuity": "人事規程（PF/退職金）",
+                        "shifts": "シフト",
+                        "holidayCalendar": "休日カレンダー",
+                        "leaveTypes": "休暇種別",
+                        "leaveApplications": "休暇申請",
+                        "attendance": "勤怠",
+                        "projects": "プロジェクト",
+                        "finalSettlements": "退職精算",
+                        "serviceRecords": "勤務記録",
+                        "recruitment": "採用",
+                        "appraisals": "人事評価",
+                        "wppfWelfare": "WPPF・福利厚生",
+                        "salaryBudgets": "給与予算",
+                        "hrReports": "人事レポート"
+                    }
+                },
+                "employeePortal": {
+                    "title": "従業員ポータル",
+                    "links": {
+                        "myProfile": "マイプロフィール",
+                        "myPayslips": "マイ給与明細",
+                        "myLeaves": "マイ休暇",
+                        "myAttendance": "マイ勤怠",
+                        "myPfGratuity": "マイ PF・退職金"
+                    }
+                },
+                "engineeringMaintenance": {
+                    "title": "設備保全",
+                    "links": {
+                        "engineeringMaintenance": "設備保全",
+                        "equipment": "設備",
+                        "pmSchedules": "予防保全計画",
+                        "workOrders": "作業指示",
+                        "spareParts": "予備部品",
+                        "downtime": "ダウンタイム",
+                        "calibration": "校正"
+                    }
+                },
+                "medicalCentre": {
+                    "title": "医療センター",
+                    "links": {
+                        "medicalCentre": "医療センター",
+                        "clinicVisits": "診療記録",
+                        "pharmacy": "薬局",
+                        "healthCheckups": "健康診断"
+                    }
+                },
+                "tradeFinance": {
+                    "title": "貿易金融",
+                    "links": {
+                        "salesContracts": "販売契約",
+                        "lettersOfCredit": "信用状",
+                        "ttRemittances": "電信送金 (TT)",
+                        "exportShipments": "輸出出荷",
+                        "bdExportPapers": "バングラデシュ輸出書類"
+                    }
+                },
+                "salesCrm": {
+                    "title": "営業・CRM",
+                    "groups": {
+                        "pipeline": "パイプライン",
+                        "activities": "活動",
+                        "orders": "受注",
+                        "accounts": "アカウント",
+                        "distribution": "流通",
+                        "finance": "財務",
+                        "engageAi": "エンゲージ・AI",
+                        "dms": "DMS",
+                        "tradePromo": "販促",
+                        "vanSales": "移動販売",
+                        "insights": "インサイト"
+                    },
+                    "links": {
+                        "crm": "CRM",
+                        "pipeline": "パイプライン",
+                        "leads": "リード",
+                        "contacts": "連絡先",
+                        "deals": "商談",
+                        "tasks": "タスク",
+                        "visitLog": "訪問記録",
+                        "quotes": "見積",
+                        "salesOrders": "販売オーダー",
+                        "returns": "返品",
+                        "customer360": "顧客 360",
+                        "accountPlans": "アカウントプラン",
+                        "objections": "反論対応",
+                        "playbook": "プレイブック",
+                        "pricing": "価格設定",
+                        "schemes": "スキーム",
+                        "dealers": "販売店",
+                        "field": "フィールド",
+                        "orgAccess": "組織・アクセス",
+                        "dispatch": "出荷手配",
+                        "commissions": "コミッション",
+                        "credit": "与信",
+                        "collections": "回収",
+                        "capture": "キャプチャ",
+                        "sequences": "シーケンス",
+                        "askAi": "AI に質問",
+                        "secondarySales": "二次販売",
+                        "distributorStock": "代理店在庫",
+                        "marketReturns": "市場返品",
+                        "sellThrough": "販売実績",
+                        "secondaryTargets": "二次目標",
+                        "promotions": "プロモーション",
+                        "claims": "クレーム",
+                        "rebates": "リベート",
+                        "vans": "販売車両",
+                        "trips": "運行",
+                        "vanSales": "移動販売",
+                        "vanStock": "車載在庫",
+                        "dashboard": "ダッシュボード",
+                        "targets": "目標",
+                        "forecast": "予測",
+                        "relationships": "リレーション",
+                        "amScorecard": "AM スコアカード"
+                    }
+                },
+                "transportPool": {
+                    "title": "車両管理",
+                    "links": {
+                        "transportPool": "車両管理",
+                        "vehicles": "車両",
+                        "trips": "運行",
+                        "fuelLog": "燃料記録",
+                        "maintenance": "整備"
+                    }
+                },
+                "analytics": {
+                    "title": "分析",
+                    "links": {
+                        "biAnalyticsReporting": "BI 分析・レポート",
+                        "executiveDashboard": "経営ダッシュボード",
+                        "financialReports": "財務レポート",
+                        "hrPayroll": "人事・給与",
+                        "demandForecast": "需要予測",
+                        "exportTakeout": "エクスポート / データ持ち出し"
+                    }
+                },
+                "realEstate": {
+                    "title": "不動産",
+                    "links": {
+                        "salesDashboard": "販売ダッシュボード",
+                        "properties": "物件",
+                        "units": "区画",
+                        "bookings": "予約",
+                        "collections": "回収",
+                        "handover": "引き渡し",
+                        "revenueRecognition": "収益認識",
+                        "leases": "賃貸借",
+                        "brokers": "仲介業者",
+                        "buyerPortal": "購入者ポータル"
+                    }
+                },
+                "education": {
+                    "title": "教育",
+                    "links": {
+                        "educationDashboard": "教育ダッシュボード",
+                        "admissions": "入学",
+                        "students": "生徒",
+                        "academics": "学務",
+                        "studentAttendance": "生徒出欠",
+                        "timetable": "時間割",
+                        "examsResults": "試験・成績",
+                        "promotionCertificates": "進級・証明書",
+                        "hifz": "ヒフズ（コーラン暗唱）",
+                        "boardingMess": "寮・食堂",
+                        "welfareFunds": "福祉基金",
+                        "notices": "お知らせ",
+                        "onlinePayments": "オンライン決済",
+                        "library": "図書館",
+                        "schoolBus": "スクールバス",
+                        "storeIssues": "物品払出",
+                        "rooms": "教室",
+                        "fees": "学費",
+                        "feeReports": "学費レポート",
+                        "institutionSettings": "機関設定"
+                    }
+                },
+                "pos": {
+                    "title": "POS（販売時点管理）",
+                    "links": {
+                        "registerTill": "レジ",
+                        "shifts": "シフト",
+                        "receipts": "レシート",
+                        "daySummaryZ": "日次集計 (Z)",
+                        "outletDashboard": "店舗ダッシュボード",
+                        "loyaltyVouchers": "ポイント・クーポン",
+                        "transfers": "在庫移動",
+                        "stockLots": "在庫ロット",
+                        "outletStock": "店舗在庫",
+                        "outletsRegisters": "店舗・レジ"
+                    }
+                },
+                "merchandising": {
+                    "title": "マーチャンダイジング",
+                    "links": {
+                        "merchandisingDashboard": "マーチャンダイジング ダッシュボード",
+                        "stylesCosting": "スタイル・原価",
+                        "tnaCalendar": "TNA カレンダー",
+                        "materialBooking": "資材手配",
+                        "productionFollowUp": "生産フォロー",
+                        "factories": "工場",
+                        "inHouseReceipts": "社内入荷",
+                        "profitability": "収益性",
+                        "buyerPortal": "バイヤーポータル"
+                    }
+                },
+                "fundAccounting": {
+                    "title": "基金会計",
+                    "links": {
+                        "fundDashboard": "基金ダッシュボード",
+                        "grants": "助成金",
+                        "donorsFunds": "寄付者・基金",
+                        "fundReports": "基金レポート",
+                        "beneficiariesME": "受益者・M&E",
+                        "costAllocation": "コスト配賦"
+                    }
+                },
+                "university": {
+                    "title": "大学",
+                    "links": {
+                        "universityDashboard": "大学ダッシュボード",
+                        "universityAdmissions": "大学入学",
+                        "universityStudents": "大学生",
+                        "facultiesProgrammes": "学部・課程",
+                        "coursesCurriculum": "科目・カリキュラム",
+                        "classSchedule": "授業時間割",
+                        "registration": "履修登録",
+                        "studentAccounts": "学生勘定",
+                        "terms": "学期",
+                        "gradesResults": "成績・結果",
+                        "examsAttendance": "試験・出欠",
+                        "outcomesObe": "学習成果 (OBE)",
+                        "facultyWorkload": "教員・業務量",
+                        "campusServices": "キャンパスサービス",
+                        "graduation": "卒業",
+                        "universitySettings": "大学設定"
+                    }
                 }
             },
             "mobileMenuLabel": "メニューを切り替え"

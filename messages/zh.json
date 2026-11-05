@@ -98,6 +98,10 @@
           "attendance": "考勤",
           "payroll": "薪资",
           "budgetManagement": "预算管理",
+          "analytics": "分析",
+          "engineeringMaintenance": "工程维护",
+          "transportPool": "车辆调度",
+          "biAnalyticsReporting": "BI 分析与报表",
           "fundAccounting": "基金会计",
           "fundDashboard": "基金仪表板",
           "grants": "赠款",
@@ -164,6 +168,406 @@
           "events": "活动",
           "translations": "翻译",
           "becomePartner": "成为合作伙伴"
+        }
+      },
+      "modules": {
+        "industries": {
+          "title": "行业",
+          "links": {
+            "buyingHouse": "采购行",
+            "accessories": "配件",
+            "ecommerce": "电子商务",
+            "lms": "LMS",
+            "school": "学校",
+            "college": "学院",
+            "university": "大学",
+            "merchandising": "跟单",
+            "travelAgency": "旅行社",
+            "textile": "纺织",
+            "garments": "服装",
+            "ngo": "NGO",
+            "realEstate": "房地产",
+            "agroRice": "农业大米",
+            "tv": "电视",
+            "steel": "钢铁"
+          }
+        },
+        "accounting": {
+          "title": "会计",
+          "links": {
+            "accountingHub": "会计中心",
+            "chartOfAccounts": "科目表",
+            "journalEntries": "日记账分录",
+            "ledgers": "分类账",
+            "invoicesAr": "发票（应收）",
+            "billsAp": "账单（应付）",
+            "purchaseOrders": "采购订单",
+            "itemsProducts": "物料 / 产品",
+            "customers": "客户",
+            "vendors": "供应商",
+            "bankAccounts": "银行账户",
+            "receipts": "收付款凭证",
+            "deliveryChallans": "送货单",
+            "pettyCash": "备用金",
+            "chequeRegister": "支票登记簿",
+            "closingFy": "结账与财年",
+            "financialReports": "财务报表",
+            "vatRegister": "增值税登记簿",
+            "discountsCoupons": "折扣与优惠券",
+            "loanManagement": "贷款管理",
+            "fixedAssetRegister": "固定资产登记簿",
+            "exchangeRates": "汇率",
+            "arApAging": "应收 / 应付账龄",
+            "bankReconciliation": "银行对账"
+          }
+        },
+        "projectAccounting": {
+          "title": "项目会计",
+          "links": {
+            "overview": "概览",
+            "costCodes": "成本代码",
+            "budgets": "预算",
+            "jobCost": "作业成本",
+            "changeOrders": "变更单",
+            "wip": "在制品 (WIP)",
+            "progressBilling": "进度开票",
+            "schedule": "进度计划",
+            "risksIssues": "风险与问题",
+            "documents": "文档",
+            "milestones": "里程碑",
+            "boq": "BOQ",
+            "billAllocations": "账单分摊",
+            "pAndL": "损益"
+          }
+        },
+        "budgetManagement": {
+          "title": "预算管理",
+          "links": {
+            "overview": "概览",
+            "lines": "预算行",
+            "requisitions": "申请",
+            "variance": "差异",
+            "approvals": "审批",
+            "rbrf": "RBRF"
+          }
+        },
+        "supplyChain": {
+          "title": "供应链",
+          "links": {
+            "overview": "概览",
+            "goodsReceipts": "收货单",
+            "landedCost": "到岸成本",
+            "procurement": "采购",
+            "purchaseRequisitions": "采购申请",
+            "comparativeStatements": "比价表",
+            "tenderManagement": "招标管理"
+          }
+        },
+        "inventory": {
+          "title": "库存",
+          "links": {
+            "demandForecast": "需求预测",
+            "warehouses": "仓库",
+            "stockMovements": "库存移动",
+            "inventorySummary": "库存汇总",
+            "gatePasses": "出入门证",
+            "weighbridgeScales": "地磅与秤"
+          }
+        },
+        "openPlatform": {
+          "title": "开放平台",
+          "links": {
+            "taxRates": "税率",
+            "migrationStudio": "迁移工作室",
+            "exportTakeout": "导出 / 数据带走"
+          }
+        },
+        "manufacturing": {
+          "title": "制造",
+          "links": {
+            "workCenters": "工作中心",
+            "routings": "工艺路线",
+            "billOfMaterials": "物料清单",
+            "mrpPlanning": "MRP 计划",
+            "capacityPlanning": "产能计划",
+            "masterScheduleMps": "主生产计划 (MPS)",
+            "schedulingAps": "高级排程 (APS)",
+            "linePlanningBoard": "产线计划看板",
+            "orderAllocation": "订单分配",
+            "shopFloor": "车间现场",
+            "productionOrders": "生产订单",
+            "batchesLots": "批次 / 批号",
+            "serialNumbers": "序列号",
+            "qcTemplates": "质检模板",
+            "qualityControl": "质量控制",
+            "scrapWaste": "废料 / 损耗",
+            "subcontracting": "外包加工",
+            "standardCosting": "标准成本",
+            "productionCosting": "生产成本"
+          }
+        },
+        "quality": {
+          "title": "质量 (QMS)",
+          "links": {
+            "qualityDashboard": "质量仪表板",
+            "nonConformance": "不合格项",
+            "capa": "CAPA",
+            "aqlSampling": "AQL 抽样",
+            "spc": "SPC"
+          }
+        },
+        "hrPayroll": {
+          "title": "人力资源与薪资",
+          "links": {
+            "departments": "部门",
+            "designations": "职位",
+            "gradesSteps": "职级与级档",
+            "salaryComponents": "薪资项目",
+            "salaryStructures": "薪资结构",
+            "employees": "员工",
+            "payrollRuns": "薪资发放",
+            "approvalsInbox": "审批收件箱",
+            "taxBracketsNbr": "税率级距 (NBR)",
+            "form108Annual": "108 表（年度）",
+            "hrPolicyPfGratuity": "人事政策（公积金/酬金）",
+            "shifts": "班次",
+            "holidayCalendar": "假日日历",
+            "leaveTypes": "假期类型",
+            "leaveApplications": "请假申请",
+            "attendance": "考勤",
+            "projects": "项目",
+            "finalSettlements": "离职结算",
+            "serviceRecords": "服务记录",
+            "recruitment": "招聘",
+            "appraisals": "绩效评估",
+            "wppfWelfare": "WPPF 与福利",
+            "salaryBudgets": "薪资预算",
+            "hrReports": "人事报表"
+          }
+        },
+        "employeePortal": {
+          "title": "员工门户",
+          "links": {
+            "myProfile": "我的资料",
+            "myPayslips": "我的工资单",
+            "myLeaves": "我的假期",
+            "myAttendance": "我的考勤",
+            "myPfGratuity": "我的公积金与酬金"
+          }
+        },
+        "engineeringMaintenance": {
+          "title": "工程维护",
+          "links": {
+            "engineeringMaintenance": "工程维护",
+            "equipment": "设备",
+            "pmSchedules": "预防性维护计划",
+            "workOrders": "工单",
+            "spareParts": "备件",
+            "downtime": "停机",
+            "calibration": "校准"
+          }
+        },
+        "medicalCentre": {
+          "title": "医疗中心",
+          "links": {
+            "medicalCentre": "医疗中心",
+            "clinicVisits": "门诊就诊",
+            "pharmacy": "药房",
+            "healthCheckups": "健康体检"
+          }
+        },
+        "tradeFinance": {
+          "title": "贸易融资",
+          "links": {
+            "salesContracts": "销售合同",
+            "lettersOfCredit": "信用证",
+            "ttRemittances": "电汇汇款",
+            "exportShipments": "出口装运",
+            "bdExportPapers": "孟加拉出口单据"
+          }
+        },
+        "salesCrm": {
+          "title": "销售与 CRM",
+          "groups": {
+            "pipeline": "销售管道",
+            "activities": "活动",
+            "orders": "订单",
+            "accounts": "客户",
+            "distribution": "分销",
+            "finance": "财务",
+            "engageAi": "互动与 AI",
+            "dms": "DMS",
+            "tradePromo": "贸易促销",
+            "vanSales": "车销",
+            "insights": "洞察"
+          },
+          "links": {
+            "crm": "CRM",
+            "pipeline": "销售管道",
+            "leads": "线索",
+            "contacts": "联系人",
+            "deals": "商机",
+            "tasks": "任务",
+            "visitLog": "拜访记录",
+            "quotes": "报价",
+            "salesOrders": "销售订单",
+            "returns": "退货",
+            "customer360": "客户 360",
+            "accountPlans": "客户计划",
+            "objections": "异议处理",
+            "playbook": "销售手册",
+            "pricing": "定价",
+            "schemes": "方案",
+            "dealers": "经销商",
+            "field": "外勤",
+            "orgAccess": "组织与权限",
+            "dispatch": "发货",
+            "commissions": "佣金",
+            "credit": "信用",
+            "collections": "回款",
+            "capture": "采集",
+            "sequences": "序列",
+            "askAi": "问 AI",
+            "secondarySales": "二级销售",
+            "distributorStock": "经销商库存",
+            "marketReturns": "市场退货",
+            "sellThrough": "终端动销",
+            "secondaryTargets": "二级目标",
+            "promotions": "促销",
+            "claims": "索赔",
+            "rebates": "返利",
+            "vans": "车辆",
+            "trips": "行程",
+            "vanSales": "车销",
+            "vanStock": "车载库存",
+            "dashboard": "仪表板",
+            "targets": "目标",
+            "forecast": "预测",
+            "relationships": "关系",
+            "amScorecard": "客户经理记分卡"
+          }
+        },
+        "transportPool": {
+          "title": "车辆调度",
+          "links": {
+            "transportPool": "车辆调度",
+            "vehicles": "车辆",
+            "trips": "行程",
+            "fuelLog": "燃油记录",
+            "maintenance": "维护"
+          }
+        },
+        "analytics": {
+          "title": "分析",
+          "links": {
+            "biAnalyticsReporting": "BI 分析与报表",
+            "executiveDashboard": "管理层仪表板",
+            "financialReports": "财务报表",
+            "hrPayroll": "人力资源与薪资",
+            "demandForecast": "需求预测",
+            "exportTakeout": "导出 / 数据带走"
+          }
+        },
+        "realEstate": {
+          "title": "房地产",
+          "links": {
+            "salesDashboard": "销售仪表板",
+            "properties": "物业",
+            "units": "单元",
+            "bookings": "预订",
+            "collections": "回款",
+            "handover": "交房",
+            "revenueRecognition": "收入确认",
+            "leases": "租赁",
+            "brokers": "经纪人",
+            "buyerPortal": "买家门户"
+          }
+        },
+        "education": {
+          "title": "教育",
+          "links": {
+            "educationDashboard": "教育仪表板",
+            "admissions": "招生",
+            "students": "学生",
+            "academics": "教务",
+            "studentAttendance": "学生考勤",
+            "timetable": "课程表",
+            "examsResults": "考试与成绩",
+            "promotionCertificates": "升级与证书",
+            "hifz": "Hifz（古兰经背诵）",
+            "boardingMess": "住宿与膳食",
+            "welfareFunds": "福利基金",
+            "notices": "通知",
+            "onlinePayments": "在线缴费",
+            "library": "图书馆",
+            "schoolBus": "校车",
+            "storeIssues": "物资领用",
+            "rooms": "教室",
+            "fees": "学费",
+            "feeReports": "学费报表",
+            "institutionSettings": "机构设置"
+          }
+        },
+        "pos": {
+          "title": "销售点 (POS)",
+          "links": {
+            "registerTill": "收银台",
+            "shifts": "班次",
+            "receipts": "小票",
+            "daySummaryZ": "日结汇总 (Z)",
+            "outletDashboard": "门店仪表板",
+            "loyaltyVouchers": "会员积分与代金券",
+            "transfers": "调拨",
+            "stockLots": "库存批次",
+            "outletStock": "门店库存",
+            "outletsRegisters": "门店与收银台"
+          }
+        },
+        "merchandising": {
+          "title": "跟单",
+          "links": {
+            "merchandisingDashboard": "跟单仪表板",
+            "stylesCosting": "款式与成本",
+            "tnaCalendar": "TNA 日历",
+            "materialBooking": "物料预订",
+            "productionFollowUp": "生产跟进",
+            "factories": "工厂",
+            "inHouseReceipts": "内部收货",
+            "profitability": "盈利能力",
+            "buyerPortal": "买家门户"
+          }
+        },
+        "fundAccounting": {
+          "title": "基金会计",
+          "links": {
+            "fundDashboard": "基金仪表板",
+            "grants": "赠款",
+            "donorsFunds": "捐赠方与基金",
+            "fundReports": "基金报表",
+            "beneficiariesME": "受益人与监测评估",
+            "costAllocation": "成本分摊"
+          }
+        },
+        "university": {
+          "title": "大学",
+          "links": {
+            "universityDashboard": "大学仪表板",
+            "universityAdmissions": "大学招生",
+            "universityStudents": "大学学生",
+            "facultiesProgrammes": "院系与专业",
+            "coursesCurriculum": "课程与教学大纲",
+            "classSchedule": "课表",
+            "registration": "选课注册",
+            "studentAccounts": "学生账户",
+            "terms": "学期",
+            "gradesResults": "成绩与结果",
+            "examsAttendance": "考试与考勤",
+            "outcomesObe": "学习成果 (OBE)",
+            "facultyWorkload": "教师与工作量",
+            "campusServices": "校园服务",
+            "graduation": "毕业",
+            "universitySettings": "大学设置"
+          }
         }
       },
       "mobileMenuLabel": "切换菜单"

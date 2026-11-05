@@ -98,6 +98,10 @@
                     "attendance": "उपस्थिति",
                     "payroll": "तलब",
                     "budgetManagement": "बजेट व्यवस्थापन",
+                    "analytics": "एनालिटिक्स",
+                    "engineeringMaintenance": "इन्जिनियरिङ मर्मतसम्भार",
+                    "transportPool": "यातायात पुल",
+                    "biAnalyticsReporting": "BI एनालिटिक्स र रिपोर्टिङ",
                     "fundAccounting": "कोष लेखा",
                     "fundDashboard": "कोष ड्यासबोर्ड",
                     "grants": "अनुदान",
@@ -164,6 +168,406 @@
                     "events": "कार्यक्रमहरू",
                     "translations": "अनुवादहरू",
                     "becomePartner": "साझेदार बन्नुहोस्"
+                }
+            },
+            "modules": {
+                "industries": {
+                    "title": "उद्योगहरू",
+                    "links": {
+                        "buyingHouse": "बायिङ हाउस",
+                        "accessories": "एक्सेसरिज",
+                        "ecommerce": "ई-कमर्स",
+                        "lms": "LMS",
+                        "school": "विद्यालय",
+                        "college": "कलेज",
+                        "university": "विश्वविद्यालय",
+                        "merchandising": "मर्चेन्डाइजिङ",
+                        "travelAgency": "ट्राभल एजेन्सी",
+                        "textile": "कपडा",
+                        "garments": "तयारी पोशाक",
+                        "ngo": "गैरसरकारी संस्था",
+                        "realEstate": "घरजग्गा",
+                        "agroRice": "कृषि चामल",
+                        "tv": "टिभी",
+                        "steel": "स्टिल"
+                    }
+                },
+                "accounting": {
+                    "title": "लेखा",
+                    "links": {
+                        "accountingHub": "लेखा हब",
+                        "chartOfAccounts": "खाताहरूको सूची",
+                        "journalEntries": "जर्नल प्रविष्टिहरू",
+                        "ledgers": "खाताबही",
+                        "invoicesAr": "बिलहरू (प्राप्य)",
+                        "billsAp": "आपूर्तिकर्ता बिल (भुक्तानीयोग्य)",
+                        "purchaseOrders": "खरिद आदेशहरू",
+                        "itemsProducts": "वस्तु / उत्पादनहरू",
+                        "customers": "ग्राहकहरू",
+                        "vendors": "आपूर्तिकर्ताहरू",
+                        "bankAccounts": "बैंक खाताहरू",
+                        "receipts": "रसिदहरू",
+                        "deliveryChallans": "डेलिभरी चलानहरू",
+                        "pettyCash": "सानो नगद",
+                        "chequeRegister": "चेक रजिस्टर",
+                        "closingFy": "बन्द तथा आर्थिक वर्ष",
+                        "financialReports": "वित्तीय प्रतिवेदन",
+                        "vatRegister": "भ्याट रजिस्टर",
+                        "discountsCoupons": "छुट र कुपनहरू",
+                        "loanManagement": "ऋण व्यवस्थापन",
+                        "fixedAssetRegister": "स्थिर सम्पत्ति रजिस्टर",
+                        "exchangeRates": "विनिमय दर",
+                        "arApAging": "प्राप्य / भुक्तानीयोग्य उमेर",
+                        "bankReconciliation": "बैंक मिलान"
+                    }
+                },
+                "projectAccounting": {
+                    "title": "परियोजना लेखा",
+                    "links": {
+                        "overview": "सिंहावलोकन",
+                        "costCodes": "लागत कोडहरू",
+                        "budgets": "बजेटहरू",
+                        "jobCost": "कार्य लागत",
+                        "changeOrders": "परिवर्तन आदेशहरू",
+                        "wip": "चालु काम (WIP)",
+                        "progressBilling": "प्रगति बिलिङ",
+                        "schedule": "तालिका",
+                        "risksIssues": "जोखिम र समस्याहरू",
+                        "documents": "कागजातहरू",
+                        "milestones": "माइलस्टोनहरू",
+                        "boq": "BOQ",
+                        "billAllocations": "बिल बाँडफाँड",
+                        "pAndL": "नाफा-नोक्सान"
+                    }
+                },
+                "budgetManagement": {
+                    "title": "बजेट व्यवस्थापन",
+                    "links": {
+                        "overview": "सिंहावलोकन",
+                        "lines": "लाइनहरू",
+                        "requisitions": "मागहरू",
+                        "variance": "भिन्नता",
+                        "approvals": "स्वीकृतिहरू",
+                        "rbrf": "RBRF"
+                    }
+                },
+                "supplyChain": {
+                    "title": "आपूर्ति शृङ्खला",
+                    "links": {
+                        "overview": "सिंहावलोकन",
+                        "goodsReceipts": "सामान प्राप्ति",
+                        "landedCost": "आयात लागत",
+                        "procurement": "खरिद",
+                        "purchaseRequisitions": "खरिद मागहरू",
+                        "comparativeStatements": "तुलनात्मक विवरण",
+                        "tenderManagement": "टेन्डर व्यवस्थापन"
+                    }
+                },
+                "inventory": {
+                    "title": "इन्भेन्टरी",
+                    "links": {
+                        "demandForecast": "माग पूर्वानुमान",
+                        "warehouses": "गोदामहरू",
+                        "stockMovements": "स्टक आवागमन",
+                        "inventorySummary": "इन्भेन्टरी सारांश",
+                        "gatePasses": "गेट पासहरू",
+                        "weighbridgeScales": "तौल मेसिन र तराजु"
+                    }
+                },
+                "openPlatform": {
+                    "title": "खुला प्लेटफर्म",
+                    "links": {
+                        "taxRates": "कर दरहरू",
+                        "migrationStudio": "माइग्रेसन स्टुडियो",
+                        "exportTakeout": "निर्यात / डाटा टेकआउट"
+                    }
+                },
+                "manufacturing": {
+                    "title": "उत्पादन",
+                    "links": {
+                        "workCenters": "कार्य केन्द्रहरू",
+                        "routings": "राउटिङहरू",
+                        "billOfMaterials": "सामग्री सूची",
+                        "mrpPlanning": "MRP योजना",
+                        "capacityPlanning": "क्षमता योजना",
+                        "masterScheduleMps": "मास्टर तालिका (MPS)",
+                        "schedulingAps": "तालिकाकरण (APS)",
+                        "linePlanningBoard": "लाइन योजना बोर्ड",
+                        "orderAllocation": "अर्डर बाँडफाँड",
+                        "shopFloor": "उत्पादन फ्लोर",
+                        "productionOrders": "उत्पादन आदेशहरू",
+                        "batchesLots": "ब्याच / लटहरू",
+                        "serialNumbers": "सिरियल नम्बरहरू",
+                        "qcTemplates": "QC टेम्प्लेटहरू",
+                        "qualityControl": "गुणस्तर नियन्त्रण",
+                        "scrapWaste": "स्क्र्याप / खेर",
+                        "subcontracting": "उप-ठेक्का",
+                        "standardCosting": "मानक लागत",
+                        "productionCosting": "उत्पादन लागत"
+                    }
+                },
+                "quality": {
+                    "title": "गुणस्तर (QMS)",
+                    "links": {
+                        "qualityDashboard": "गुणस्तर ड्यासबोर्ड",
+                        "nonConformance": "गैर-अनुरूपता",
+                        "capa": "CAPA",
+                        "aqlSampling": "AQL नमूना",
+                        "spc": "SPC"
+                    }
+                },
+                "hrPayroll": {
+                    "title": "मानव संसाधन र तलब",
+                    "links": {
+                        "departments": "विभागहरू",
+                        "designations": "पदहरू",
+                        "gradesSteps": "ग्रेड र तहहरू",
+                        "salaryComponents": "तलब घटकहरू",
+                        "salaryStructures": "तलब संरचनाहरू",
+                        "employees": "कर्मचारीहरू",
+                        "payrollRuns": "तलब प्रक्रिया",
+                        "approvalsInbox": "स्वीकृति इनबक्स",
+                        "taxBracketsNbr": "कर दर (NBR)",
+                        "form108Annual": "फारम १०८ (वार्षिक)",
+                        "hrPolicyPfGratuity": "मानव संसाधन नीति (PF/उपदान)",
+                        "shifts": "सिफ्टहरू",
+                        "holidayCalendar": "सार्वजनिक बिदा क्यालेन्डर",
+                        "leaveTypes": "बिदाका प्रकार",
+                        "leaveApplications": "बिदा आवेदनहरू",
+                        "attendance": "हाजिरी",
+                        "projects": "परियोजनाहरू",
+                        "finalSettlements": "अन्तिम हिसाब",
+                        "serviceRecords": "सेवा अभिलेख",
+                        "recruitment": "कर्मचारी भर्ना",
+                        "appraisals": "कार्यसम्पादन मूल्याङ्कन",
+                        "wppfWelfare": "WPPF र कल्याण",
+                        "salaryBudgets": "तलब बजेट",
+                        "hrReports": "मानव संसाधन प्रतिवेदन"
+                    }
+                },
+                "employeePortal": {
+                    "title": "कर्मचारी पोर्टल",
+                    "links": {
+                        "myProfile": "मेरो प्रोफाइल",
+                        "myPayslips": "मेरो तलब पर्ची",
+                        "myLeaves": "मेरो बिदा",
+                        "myAttendance": "मेरो हाजिरी",
+                        "myPfGratuity": "मेरो PF र उपदान"
+                    }
+                },
+                "engineeringMaintenance": {
+                    "title": "इन्जिनियरिङ मर्मतसम्भार",
+                    "links": {
+                        "engineeringMaintenance": "इन्जिनियरिङ मर्मतसम्भार",
+                        "equipment": "उपकरण",
+                        "pmSchedules": "निवारक मर्मत तालिका",
+                        "workOrders": "कार्य आदेशहरू",
+                        "spareParts": "स्पेयर पार्टस",
+                        "downtime": "अवरोध समय",
+                        "calibration": "क्यालिब्रेसन"
+                    }
+                },
+                "medicalCentre": {
+                    "title": "मेडिकल सेन्टर",
+                    "links": {
+                        "medicalCentre": "मेडिकल सेन्टर",
+                        "clinicVisits": "क्लिनिक भ्रमण",
+                        "pharmacy": "फार्मेसी",
+                        "healthCheckups": "स्वास्थ्य जाँच"
+                    }
+                },
+                "tradeFinance": {
+                    "title": "व्यापार वित्त",
+                    "links": {
+                        "salesContracts": "बिक्री सम्झौता",
+                        "lettersOfCredit": "प्रतीतपत्र (LC)",
+                        "ttRemittances": "TT रेमिट्यान्स",
+                        "exportShipments": "निर्यात ढुवानी",
+                        "bdExportPapers": "बंगलादेश निर्यात कागजात"
+                    }
+                },
+                "salesCrm": {
+                    "title": "बिक्री र CRM",
+                    "groups": {
+                        "pipeline": "पाइपलाइन",
+                        "activities": "गतिविधिहरू",
+                        "orders": "अर्डरहरू",
+                        "accounts": "खाताहरू",
+                        "distribution": "वितरण",
+                        "finance": "वित्त",
+                        "engageAi": "सम्पर्क र AI",
+                        "dms": "DMS",
+                        "tradePromo": "व्यापार प्रवर्धन",
+                        "vanSales": "भ्यान बिक्री",
+                        "insights": "अन्तर्दृष्टि"
+                    },
+                    "links": {
+                        "crm": "CRM",
+                        "pipeline": "पाइपलाइन",
+                        "leads": "लिडहरू",
+                        "contacts": "सम्पर्कहरू",
+                        "deals": "डिलहरू",
+                        "tasks": "कार्यहरू",
+                        "visitLog": "भ्रमण लग",
+                        "quotes": "कोटेसनहरू",
+                        "salesOrders": "बिक्री आदेशहरू",
+                        "returns": "फिर्ताहरू",
+                        "customer360": "ग्राहक 360",
+                        "accountPlans": "खाता योजनाहरू",
+                        "objections": "आपत्तिहरू",
+                        "playbook": "प्लेबुक",
+                        "pricing": "मूल्य निर्धारण",
+                        "schemes": "योजनाहरू",
+                        "dealers": "डिलरहरू",
+                        "field": "फिल्ड",
+                        "orgAccess": "संगठन र पहुँच",
+                        "dispatch": "डिस्प्याच",
+                        "commissions": "कमिसनहरू",
+                        "credit": "क्रेडिट",
+                        "collections": "सङ्कलन",
+                        "capture": "क्याप्चर",
+                        "sequences": "सिक्वेन्सहरू",
+                        "askAi": "AI लाई सोध्नुहोस्",
+                        "secondarySales": "दोस्रो तहको बिक्री",
+                        "distributorStock": "वितरक स्टक",
+                        "marketReturns": "बजार फिर्ता",
+                        "sellThrough": "सेल-थ्रु",
+                        "secondaryTargets": "दोस्रो तहको लक्ष्य",
+                        "promotions": "प्रवर्धनहरू",
+                        "claims": "दाबीहरू",
+                        "rebates": "छुट फिर्ता",
+                        "vans": "भ्यानहरू",
+                        "trips": "यात्राहरू",
+                        "vanSales": "भ्यान बिक्री",
+                        "vanStock": "भ्यान स्टक",
+                        "dashboard": "ड्यासबोर्ड",
+                        "targets": "लक्ष्यहरू",
+                        "forecast": "पूर्वानुमान",
+                        "relationships": "सम्बन्धहरू",
+                        "amScorecard": "AM स्कोरकार्ड"
+                    }
+                },
+                "transportPool": {
+                    "title": "यातायात पुल",
+                    "links": {
+                        "transportPool": "यातायात पुल",
+                        "vehicles": "सवारी साधनहरू",
+                        "trips": "यात्राहरू",
+                        "fuelLog": "इन्धन लग",
+                        "maintenance": "मर्मतसम्भार"
+                    }
+                },
+                "analytics": {
+                    "title": "एनालिटिक्स",
+                    "links": {
+                        "biAnalyticsReporting": "BI एनालिटिक्स र रिपोर्टिङ",
+                        "executiveDashboard": "कार्यकारी ड्यासबोर्ड",
+                        "financialReports": "वित्तीय प्रतिवेदन",
+                        "hrPayroll": "मानव संसाधन र तलब",
+                        "demandForecast": "माग पूर्वानुमान",
+                        "exportTakeout": "निर्यात / डाटा टेकआउट"
+                    }
+                },
+                "realEstate": {
+                    "title": "घरजग्गा",
+                    "links": {
+                        "salesDashboard": "बिक्री ड्यासबोर्ड",
+                        "properties": "सम्पत्तिहरू",
+                        "units": "युनिटहरू",
+                        "bookings": "बुकिङहरू",
+                        "collections": "सङ्कलन",
+                        "handover": "हस्तान्तरण",
+                        "revenueRecognition": "राजस्व मान्यता",
+                        "leases": "भाडा सम्झौता",
+                        "brokers": "ब्रोकरहरू",
+                        "buyerPortal": "खरिदकर्ता पोर्टल"
+                    }
+                },
+                "education": {
+                    "title": "शिक्षा",
+                    "links": {
+                        "educationDashboard": "शिक्षा ड्यासबोर्ड",
+                        "admissions": "भर्ना",
+                        "students": "विद्यार्थीहरू",
+                        "academics": "शैक्षिक",
+                        "studentAttendance": "विद्यार्थी हाजिरी",
+                        "timetable": "समय तालिका",
+                        "examsResults": "परीक्षा र नतिजा",
+                        "promotionCertificates": "कक्षोन्नति र प्रमाणपत्र",
+                        "hifz": "हिफ्ज",
+                        "boardingMess": "छात्रावास र भोजनालय",
+                        "welfareFunds": "कल्याण कोष",
+                        "notices": "सूचनाहरू",
+                        "onlinePayments": "अनलाइन भुक्तानी",
+                        "library": "पुस्तकालय",
+                        "schoolBus": "विद्यालय बस",
+                        "storeIssues": "स्टोर निकासा",
+                        "rooms": "कोठाहरू",
+                        "fees": "शुल्क",
+                        "feeReports": "शुल्क प्रतिवेदन",
+                        "institutionSettings": "संस्था सेटिङ"
+                    }
+                },
+                "pos": {
+                    "title": "बिक्री केन्द्र (POS)",
+                    "links": {
+                        "registerTill": "रजिस्टर (टिल)",
+                        "shifts": "सिफ्टहरू",
+                        "receipts": "रसिदहरू",
+                        "daySummaryZ": "दिनको सारांश (Z)",
+                        "outletDashboard": "आउटलेट ड्यासबोर्ड",
+                        "loyaltyVouchers": "लोयल्टी र भाउचर",
+                        "transfers": "स्थानान्तरण",
+                        "stockLots": "स्टक लटहरू",
+                        "outletStock": "आउटलेट स्टक",
+                        "outletsRegisters": "आउटलेट र रजिस्टर"
+                    }
+                },
+                "merchandising": {
+                    "title": "मर्चेन्डाइजिङ",
+                    "links": {
+                        "merchandisingDashboard": "मर्चेन्डाइजिङ ड्यासबोर्ड",
+                        "stylesCosting": "स्टाइल र लागत",
+                        "tnaCalendar": "TNA क्यालेन्डर",
+                        "materialBooking": "सामग्री बुकिङ",
+                        "productionFollowUp": "उत्पादन फलो-अप",
+                        "factories": "कारखानाहरू",
+                        "inHouseReceipts": "आन्तरिक प्राप्ति",
+                        "profitability": "नाफामूलकता",
+                        "buyerPortal": "खरिदकर्ता पोर्टल"
+                    }
+                },
+                "fundAccounting": {
+                    "title": "कोष लेखा",
+                    "links": {
+                        "fundDashboard": "कोष ड्यासबोर्ड",
+                        "grants": "अनुदानहरू",
+                        "donorsFunds": "दाता र कोषहरू",
+                        "fundReports": "कोष प्रतिवेदन",
+                        "beneficiariesME": "लाभार्थी र अनुगमन-मूल्याङ्कन",
+                        "costAllocation": "लागत बाँडफाँड"
+                    }
+                },
+                "university": {
+                    "title": "विश्वविद्यालय",
+                    "links": {
+                        "universityDashboard": "विश्वविद्यालय ड्यासबोर्ड",
+                        "universityAdmissions": "विश्वविद्यालय भर्ना",
+                        "universityStudents": "विश्वविद्यालय विद्यार्थी",
+                        "facultiesProgrammes": "संकाय र कार्यक्रमहरू",
+                        "coursesCurriculum": "पाठ्यक्रम र पाठ्यसूची",
+                        "classSchedule": "कक्षा तालिका",
+                        "registration": "दर्ता",
+                        "studentAccounts": "विद्यार्थी खाता",
+                        "terms": "सत्रहरू",
+                        "gradesResults": "ग्रेड र नतिजा",
+                        "examsAttendance": "परीक्षा र हाजिरी",
+                        "outcomesObe": "उपलब्धि (OBE)",
+                        "facultyWorkload": "प्राध्यापक र कार्यभार",
+                        "campusServices": "क्याम्पस सेवाहरू",
+                        "graduation": "दीक्षान्त",
+                        "universitySettings": "विश्वविद्यालय सेटिङ"
+                    }
                 }
             },
             "mobileMenuLabel": "मेनु टगल गर्नुहोस्"
