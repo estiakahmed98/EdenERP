@@ -663,6 +663,238 @@
           "title": "Hãy mang đến một đơn bạn sắp đặt. Chúng tôi sẽ lập và chuyển nó thành hóa đơn ngay trong buổi demo."
         }
       },
+    
+      "itemsProducts": {
+        "meta": {
+          "title": "Mặt hàng & Sản phẩm: Một danh sách mặt hàng sạch cho Bán hàng, Mua hàng và Tồn kho | Adon ERP",
+          "description": "Giữ sản phẩm, dịch vụ, nguyên liệu thô và vật tư tiêu hao trong một danh sách với SKU, đơn vị, chi phí, mức đặt hàng lại và ánh xạ tài khoản. Được xây dựng cho các công ty tại Bangladesh.",
+          "keywords": [
+            "phần mềm danh mục mặt hàng Bangladesh",
+            "phần mềm kế toán danh sách sản phẩm",
+            "thiết lập mặt hàng tồn kho",
+            "SKU và điểm đặt hàng lại",
+            "phần mềm kế toán Bangladesh",
+            "mặt hàng Adon ERP"
+          ]
+        },
+        "hero": {
+          "title": "Mặt hàng và sản phẩm: một danh sách mà bán hàng, mua hàng và tồn kho đều sử dụng",
+          "lead": "Thiết lập mỗi thứ bạn mua hoặc bán một lần, với SKU, đơn vị và chi phí của nó. Sau đó, đơn hàng, hóa đơn, hóa đơn bán hàng và phiếu giao hàng chọn từ cùng một danh sách, vì vậy một tên không bao giờ được nhập theo hai cách.",
+          "secondaryCta": "Xem cách một mặt hàng được thiết lập"
+        },
+        "sample": {
+          "count": "25 trên 27",
+          "notes": [
+            "một danh sách cho mọi thứ bạn mua và bán",
+            "điểm đặt hàng lại cảnh báo trước khi hết hàng",
+            "tài khoản được điền theo danh mục"
+          ]
+        },
+        "ui": {
+          "title": "Mặt hàng / Sản phẩm",
+          "newItem": "Mặt hàng mới",
+          "printLabels": "In nhãn",
+          "tabAll": "Tất cả",
+          "tabProducts": "Sản phẩm",
+          "tabServices": "Dịch vụ",
+          "tabRaw": "Nguyên liệu thô",
+          "tabFinished": "Thành phẩm",
+          "tabInactive": "Không hoạt động",
+          "thName": "Tên",
+          "thSku": "SKU",
+          "thCategory": "Danh mục",
+          "thUom": "Đơn vị",
+          "thCost": "Chi phí",
+          "thReorder": "Điểm đặt hàng lại",
+          "catRaw": "Nguyên liệu thô",
+          "catConsumable": "Vật tư tiêu hao",
+          "catFinished": "Thành phẩm",
+          "catService": "Dịch vụ",
+          "newTitle": "Mặt hàng mới",
+          "fName": "Tên *",
+          "fSku": "SKU",
+          "fBarcode": "Mã vạch",
+          "fUom": "Đơn vị đo lường",
+          "fCost": "Chi phí đơn vị mặc định",
+          "fCategory": "Danh mục mặt hàng",
+          "fReorder": "Quản lý đặt hàng lại",
+          "fReorderPoint": "Điểm đặt hàng lại",
+          "fReorderQty": "Số lượng đặt hàng lại",
+          "fAccounts": "Ánh xạ tài khoản (tự động điền theo danh mục)",
+          "fInventory": "Tài khoản tồn kho",
+          "fCogs": "Tài khoản COGS",
+          "create": "Tạo mặt hàng",
+          "caption": "Bản xem trước một phần của Mặt hàng / Sản phẩm trong Adon ERP. Công ty, mặt hàng và số liệu là dữ liệu mẫu."
+        },
+        "flow": {
+          "title": "Cách các mặt hàng được nhóm, trong bốn danh mục",
+          "intro": "Mỗi mặt hàng thuộc về một danh mục. Danh mục quyết định tài khoản nào nó được ghi vào, vì vậy bạn không cần ánh xạ từng mặt hàng bằng tay.",
+          "steps": [
+            {
+              "tag": "Nguyên liệu thô",
+              "question": "Mua để làm ra thứ gì đó",
+              "body": "Mực, hạt, giấy. Được đếm trong tồn kho và chuyển sang chi phí khi được sử dụng trong sản xuất."
+            },
+            {
+              "tag": "Thành phẩm",
+              "question": "Được làm ra và bán",
+              "body": "Thùng carton, túi, hàng đóng gói. Được giữ trong tồn kho cho đến khi một lần bán chuyển chi phí sang COGS và giá sang doanh thu."
+            },
+            {
+              "tag": "Vật tư tiêu hao",
+              "question": "Được dùng hết, không bán",
+              "body": "Băng keo, găng tay, vật tư vệ sinh. Mua với số lượng lớn, với điểm đặt hàng lại để kệ không bao giờ trống."
+            }
+          ],
+          "aside": {
+            "tag": "Dịch vụ",
+            "body": "Vận chuyển, sửa chữa hoặc lao động. Một dịch vụ không có tồn kho và không có mức đặt hàng lại, chỉ có giá, và được ghi vào doanh thu hoặc chi phí."
+          },
+          "formTitle": "Những gì bạn điền vào một mặt hàng mới",
+          "form": [
+            {
+              "label": "Tên",
+              "body": "Trường bắt buộc duy nhất. Sử dụng tên mà nhóm của bạn nói ra, ví dụ \"Cuộn giấy Kraft\"."
+            },
+            {
+              "label": "SKU và mã vạch",
+              "body": "Mã riêng của bạn và mã vạch EAN-13 tùy chọn hoặc nội bộ, để mặt hàng có thể được tìm thấy bằng quét hoặc bằng mã."
+            },
+            {
+              "label": "Đơn vị đo lường và chi phí",
+              "body": "kg, cái, công việc hoặc đơn vị riêng của bạn, với chi phí đơn vị mặc định mà đơn hàng và hóa đơn bắt đầu từ đó."
+            },
+            {
+              "label": "Quản lý đặt hàng lại",
+              "body": "Điểm đặt hàng lại, số lượng đặt hàng lại, tồn kho tối thiểu và tối đa, để các mặt hàng ít nổi bật trong danh sách."
+            },
+            {
+              "label": "Ánh xạ tài khoản",
+              "body": "Tài khoản tồn kho, COGS, doanh thu và chi phí. Tùy chọn và được điền theo danh mục nếu bạn để trống."
+            }
+          ]
+        },
+        "connect": {
+          "title": "Mặt hàng cung cấp cho mọi bước mua và bán",
+          "intro": "Một mặt hàng được thiết lập một lần và sau đó được đọc bởi gần như mọi công cụ khác, từ đơn mua hàng đầu tiên đến báo cáo cuối cùng.",
+          "groups": {
+            "before": "Trước mặt hàng",
+            "after": "Nơi mặt hàng được sử dụng",
+            "shows": "Nơi nó xuất hiện"
+          },
+          "items": {
+            "chartOfAccounts": "Các tài khoản tồn kho, COGS, doanh thu và chi phí mà một mặt hàng được ghi vào.",
+            "vendors": "Bạn mua mặt hàng từ ai.",
+            "purchaseOrders": "Chọn mặt hàng với số lượng và chi phí đơn vị khi bạn đặt hàng.",
+            "invoicesAr": "Bán mặt hàng cho khách hàng với giá và VAT của chúng.",
+            "deliveryChallans": "Liệt kê các mặt hàng rời cổng trong mỗi chuyến.",
+            "ledgers": "Tồn kho và giá vốn hàng bán, theo từng tài khoản.",
+            "financialReports": "Giá trị tồn kho và biên lợi nhuận trong báo cáo của bạn.",
+            "accountingHub": "Tóm tắt tồn kho và bán hàng trong nháy mắt."
+          }
+        },
+        "local": {
+          "title": "Một danh sách mặt hàng phù hợp với cách các công ty Bangladesh giao thương",
+          "intro": "Nhiều công ty mua nguyên liệu thô theo kg, bán hàng đóng gói theo cái và tính phí vận chuyển như một công việc. Một danh sách phải xử lý cả ba.",
+          "points": [
+            {
+              "title": "Đơn vị của riêng bạn",
+              "body": "kg, cái, công việc, cuộn hoặc thùng carton. Mỗi mặt hàng mang đơn vị của nó, vì vậy số lượng trên đơn hàng và phiếu giao hàng luôn có nghĩa giống nhau."
+            },
+            {
+              "title": "Chi phí bằng taka",
+              "body": "Đặt chi phí đơn vị mặc định bằng BDT. Đơn hàng và hóa đơn bắt đầu từ đó, và bạn thay đổi khi giá của nhà cung cấp thay đổi."
+            },
+            {
+              "title": "Điểm đặt hàng lại hiệu quả",
+              "body": "Đặt điểm một lần. Danh sách hiển thị nó bên cạnh mỗi mặt hàng, vì vậy thủ kho biết cần yêu cầu gì trước khi hết hàng."
+            },
+            {
+              "title": "In nhãn",
+              "body": "In nhãn mặt hàng từ danh sách cho kệ và thùng, sử dụng SKU và mã vạch bạn đã nhập."
+            }
+          ],
+          "story": {
+            "title": "Một mặt hàng mới, từ thiết lập đến lần bán đầu tiên",
+            "intro": "Một mặt hàng mẫu cho băng keo đóng gói, cách nó thường diễn ra.",
+            "steps": [
+              {
+                "time": "1 thg 9",
+                "text": "Thủ kho thêm \"Băng keo đóng gói BOPP\", đơn vị cái, danh mục Vật tư tiêu hao."
+              },
+              {
+                "time": "1 thg 9",
+                "text": "Điểm đặt hàng lại được đặt thành 300. Các tài khoản được điền từ danh mục."
+              },
+              {
+                "time": "4 thg 9",
+                "text": "Một đơn mua hàng chọn mặt hàng với số lượng và chi phí đơn vị."
+              },
+              {
+                "time": "10 thg 9",
+                "text": "Băng keo đến và tồn kho tăng lên."
+              },
+              {
+                "time": "20 thg 9",
+                "text": "Tồn kho giảm xuống dưới điểm đặt hàng lại, và mặt hàng nổi bật trong danh sách."
+              }
+            ]
+          }
+        },
+        "industries": {
+          "title": "Cách các ngành khác nhau sử dụng danh sách mặt hàng",
+          "angles": {
+            "retail": "Hàng nghìn mặt hàng, mỗi mặt hàng có SKU và mã vạch.",
+            "food-hospitality": "Nguyên liệu và vật tư mua theo trọng lượng, bán như món ăn.",
+            "real-estate": "Vật liệu và phụ kiện được định giá theo đơn vị cho mỗi dự án.",
+            "consulting": "Chủ yếu là dịch vụ, với một vài mặt hàng cho thiết bị.",
+            "manufacturing": "Nguyên liệu thô, đóng gói và thành phẩm trong các danh mục riêng biệt.",
+            "health-fitness": "Vật tư tiêu hao và mặt hàng bán lẻ, với điểm đặt hàng lại.",
+            "trades": "Phụ tùng và lao động như các mặt hàng riêng biệt trong mỗi công việc.",
+            "others": "Một danh sách ngắn các vật tư, với dịch vụ cho phí và khoản tài trợ."
+          }
+        },
+        "faq": {
+          "title": "Các câu hỏi chúng tôi nhận được về mặt hàng",
+          "items": [
+            {
+              "q": "Một mặt hàng trong Adon ERP là gì?",
+              "a": "Đó là bất cứ thứ gì bạn mua, làm hoặc bán: một sản phẩm, một nguyên liệu thô, một vật tư tiêu hao hoặc một dịch vụ. Mỗi thứ có một tên, một SKU tùy chọn, một đơn vị và một chi phí mặc định."
+            },
+            {
+              "q": "Tôi cần điền gì để tạo một mặt hàng?",
+              "a": "Chỉ tên là bắt buộc. Thêm SKU, mã vạch, đơn vị, chi phí mặc định và danh mục khi bạn có. Mọi thứ khác có thể được thêm sau."
+            },
+            {
+              "q": "Các danh mục mặt hàng dùng để làm gì?",
+              "a": "Danh mục đặt tài khoản nào mà mặt hàng được ghi vào, vì vậy một nguyên liệu thô đi vào tồn kho và một dịch vụ đi vào doanh thu mà không cần ánh xạ thủ công."
+            },
+            {
+              "q": "Tôi có thể đặt tài khoản cho một mặt hàng không?",
+              "a": "Có. Ánh xạ tài khoản là tùy chọn. Để trống để sử dụng mặc định của danh mục, hoặc chọn tài khoản tồn kho, COGS, doanh thu hoặc chi phí của riêng bạn."
+            },
+            {
+              "q": "Điểm đặt hàng lại hoạt động như thế nào?",
+              "a": "Đặt điểm đặt hàng lại và số lượng, với tồn kho tối thiểu và tối đa tùy chọn. Danh sách hiển thị điểm đặt hàng lại bên cạnh mỗi mặt hàng."
+            },
+            {
+              "q": "Tôi có thể ngừng sử dụng một mặt hàng mà không mất lịch sử không?",
+              "a": "Có. Sử dụng Ngừng hoạt động. Mặt hàng rời khỏi danh sách chọn nhưng vẫn ở trong tài liệu cũ. Tab Không hoạt động hiển thị lại nó."
+            },
+            {
+              "q": "Tôi có thể xuất danh sách không?",
+              "a": "Có. Tìm kiếm hoặc lọc theo danh mục, sau đó xuất sang CSV hoặc Excel, in danh sách hoặc in nhãn."
+            },
+            {
+              "q": "Adon ERP có ở đâu?",
+              "a": "Chúng tôi hiện đang onboard các công ty tại Dhaka. Đặt một buổi demo và chúng tôi sẽ thiết lập một vài mặt hàng của bạn cùng với bạn."
+            }
+          ]
+        },
+        "closing": {
+          "title": "Mang mười mặt hàng của riêng bạn. Chúng tôi sẽ thiết lập chúng với đơn vị, chi phí và điểm đặt hàng lại trong buổi demo."
+        }
+      },
       "common": {
         "onboardingNote": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka.",
         "closingBody": "Demo trực tiếp bằng tiếng Anh hoặc tiếng Bengal, dùng sổ sách mẫu gần với ngành của bạn, có thời gian dành cho câu hỏi của kế toán viên.",
