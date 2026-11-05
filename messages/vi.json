@@ -895,6 +895,198 @@
           "title": "Mang mười mặt hàng của riêng bạn. Chúng tôi sẽ thiết lập chúng với đơn vị, chi phí và điểm đặt hàng lại trong buổi demo."
         }
       },
+     
+"customers": {
+  "meta": {
+    "title": "Khách hàng: Một danh sách mà Hóa đơn, Biên lai và Phiếu giao hàng chia sẻ",
+    "description": "Giữ mỗi khách hàng một lần, với tên và ID tham chiếu, và chọn họ trên hóa đơn, biên lai và phiếu giao hàng. Được xây dựng cho các công ty tại Bangladesh.",
+    "keywords": [
+      "phần mềm kế toán danh sách khách hàng",
+      "quản lý khách hàng Bangladesh",
+      "khách hàng phải thu",
+      "phần mềm kế toán Bangladesh",
+      "khách hàng Adon ERP"
+    ]
+  },
+  "hero": {
+    "title": "Khách hàng: thêm một lần, xuất hóa đơn ở mọi nơi",
+    "lead": "Giữ một danh sách sạch những người và công ty bạn bán hàng. Hóa đơn, biên lai và phiếu giao hàng chọn từ đó, vì vậy lịch sử của một khách hàng nằm ở một nơi thay vì ba cách viết.",
+    "secondaryCta": "Xem cách một khách hàng được thêm"
+  },
+  "sample": {
+    "count": "25 trên 500",
+    "notes": [
+      "mỗi khách hàng có một ID tham chiếu",
+      "chỉnh sửa hoặc vô hiệu hóa bằng một cú nhấp",
+      "hai trường để thêm khách hàng"
+    ]
+  },
+  "ui": {
+    "newCustomer": "Khách hàng mới",
+    "thName": "Tên",
+    "thRef": "ID tham chiếu",
+    "thActive": "Hoạt động",
+    "yes": "Có",
+    "newTitle": "Khách hàng mới",
+    "create": "Tạo khách hàng",
+    "fName": "Tên khách hàng",
+    "fDescription": "Mô tả",
+    "optional": "Tùy chọn",
+    "caption": "Bản xem trước một phần của Khách hàng trong Adon ERP. Công ty và khách hàng là dữ liệu mẫu."
+  },
+  "flow": {
+    "title": "Một bản ghi khách hàng vẫn đơn giản",
+    "intro": "Hai trường giúp bạn bắt đầu. Sau đó bản ghi thu thập các hóa đơn, biên lai và phiếu giao hàng ghi tên nó.",
+    "steps": [
+      {
+        "tag": "Hoạt động",
+        "question": "Đang sử dụng",
+        "body": "Được hiển thị trong mọi danh sách chọn khách hàng, trên hóa đơn, biên lai và phiếu giao hàng."
+      },
+      {
+        "tag": "Không hoạt động",
+        "question": "Không còn bán",
+        "body": "Vô hiệu hóa một khách hàng bạn đã ngừng bán. Họ rời khỏi danh sách chọn, và tài liệu cũ của họ vẫn như cũ."
+      },
+      {
+        "tag": "ID tham chiếu",
+        "question": "Một định danh ổn định",
+        "body": "Mỗi khách hàng nhận được một ID tham chiếu, để xuất và nhập có thể khớp đúng bản ghi ngay cả khi hai tên trông giống nhau."
+      }
+    ],
+    "formTitle": "Những gì bạn điền vào một khách hàng mới",
+    "form": [
+      {
+        "label": "Tên khách hàng",
+        "body": "Tên sẽ in trên hóa đơn và phiếu giao hàng, ví dụ \"Padma Knitwear Ltd.\"."
+      },
+      {
+        "label": "Mô tả",
+        "body": "Tùy chọn. Một ghi chú ngắn, chẳng hạn như người liên hệ, vị trí nhà máy hoặc thói quen thanh toán."
+      }
+    ]
+  },
+  "connect": {
+    "title": "Khách hàng kết nối bán hàng với việc nhận tiền",
+    "intro": "Khách hàng được chọn khi bắt đầu bán hàng và được theo dõi đến tiền mặt, vì vậy một danh sách điều khiển toàn bộ chuỗi.",
+    "groups": {
+      "before": "Trước khách hàng",
+      "after": "Nơi khách hàng được sử dụng",
+      "shows": "Nơi nó xuất hiện"
+    },
+    "items": {
+      "itemsProducts": "Những gì bạn bán, với đơn vị và giá.",
+      "chartOfAccounts": "Tài khoản phải thu mà số dư khách hàng được ghi vào.",
+      "invoicesAr": "Xuất hóa đơn cho khách hàng, sau đó theo dõi những gì vẫn chưa thanh toán.",
+      "receipts": "Ghi lại thanh toán đối với khách hàng.",
+      "deliveryChallans": "In phiếu giao hàng cho mỗi chuyến gửi đến họ.",
+      "ledgers": "Số dư của một khách hàng, từng dòng.",
+      "accountingHub": "Các khoản phải thu và bán hàng gần đây trong nháy mắt.",
+      "financialReports": "Số dư khách hàng trong báo cáo của bạn."
+    }
+  },
+  "local": {
+    "title": "Khách hàng theo cách các công ty Bangladesh bán hàng",
+    "intro": "Nhiều công ty bán cho cùng một người mua trong nhiều năm, thường là bán chịu, và qua nhiều nhà máy hoặc chi nhánh. Danh sách phải giữ gọn gàng khi nó phát triển.",
+    "points": [
+      {
+        "title": "Hàng trăm khách hàng, vẫn nhanh",
+        "body": "Tìm kiếm theo tên và sắp xếp danh sách. Một công ty có năm trăm khách hàng tìm thấy một người trong vài giây."
+      },
+      {
+        "title": "Một tên cho mỗi khách hàng",
+        "body": "Chọn khách hàng từ danh sách trên mọi tài liệu, để \"ABG Sweater Ltd\" không bao giờ cũng là \"ABG Sweaters Ltd\"."
+      },
+      {
+        "title": "Lịch sử được giữ",
+        "body": "Vô hiệu hóa một khách hàng và hóa đơn, biên lai cũ của họ vẫn chính xác như cũ."
+      },
+      {
+        "title": "Sẵn sàng cho toàn bộ lần bán",
+        "body": "Cùng một khách hàng được sử dụng cho hóa đơn, phiếu giao hàng và biên lai, không cần nhập lại."
+      }
+    ],
+    "story": {
+      "title": "Một khách hàng, từ đơn hàng đầu tiên đến thanh toán",
+      "intro": "Một khách hàng mẫu cho hàng dệt kim, cách nó thường diễn ra.",
+      "steps": [
+        {
+          "time": "1 thg 10",
+          "text": "Kế toán thêm \"Padma Knitwear Ltd.\" với một ghi chú ngắn."
+        },
+        {
+          "time": "3 thg 10",
+          "text": "Một phiếu giao hàng được in cho chuyến đầu tiên."
+        },
+        {
+          "time": "5 thg 10",
+          "text": "Hóa đơn được lập từ cùng một bản ghi khách hàng."
+        },
+        {
+          "time": "19 thg 10",
+          "text": "Một biên lai được ghi lại khi thanh toán đến."
+        },
+        {
+          "time": "20 thg 10",
+          "text": "Sổ cái hiển thị hóa đơn và biên lai cùng nhau."
+        }
+      ]
+    }
+  },
+  "industries": {
+    "title": "Cách các ngành khác nhau sử dụng danh sách khách hàng",
+    "angles": {
+      "retail": "Khách hàng vãng lai và khách hàng tài khoản, với tín dụng cho người mua thường xuyên.",
+      "food-hospitality": "Khách hàng doanh nghiệp và sự kiện được xuất hóa đơn theo tài khoản.",
+      "real-estate": "Người thuê và người mua gắn với một bất động sản hoặc dự án.",
+      "consulting": "Khách hàng được xuất hóa đơn cho phí duy trì và dự án.",
+      "manufacturing": "Người mua đặt hàng lớn và thanh toán theo điều khoản.",
+      "health-fitness": "Thành viên và khách hàng thường xuyên với hóa đơn lặp lại.",
+      "trades": "Khách hàng được xuất hóa đơn theo công việc, với lịch sử thăm rõ ràng.",
+      "others": "Nhà tài trợ, nhà tài trợ và thành viên trả phí trong một danh sách."
+    }
+  },
+  "faq": {
+    "title": "Các câu hỏi chúng tôi nhận được về khách hàng",
+    "items": [
+      {
+        "q": "Tôi cần gì để thêm một khách hàng?",
+        "a": "Chỉ tên khách hàng. Mô tả là tùy chọn."
+      },
+      {
+        "q": "Tôi có thể sử dụng một khách hàng ở đâu sau khi thêm?",
+        "a": "Trên hóa đơn, biên lai và phiếu giao hàng. Tất cả đều chọn từ cùng một danh sách."
+      },
+      {
+        "q": "ID tham chiếu là gì?",
+        "a": "Một định danh duy nhất được cấp cho mỗi khách hàng. Nó vẫn giữ nguyên ngay cả khi bạn chỉnh sửa tên."
+      },
+      {
+        "q": "Tôi có thể ngừng bán cho một khách hàng mà không mất lịch sử của họ không?",
+        "a": "Có. Sử dụng Vô hiệu hóa. Khách hàng rời khỏi danh sách chọn, và hóa đơn, biên lai cũ vẫn ở trong sổ sách."
+      },
+      {
+        "q": "Tôi có thể xóa một khách hàng không?",
+        "a": "Có, với biểu tượng xóa. Nếu một khách hàng đã có tài liệu, vô hiệu hóa là lựa chọn an toàn hơn."
+      },
+      {
+        "q": "Tôi có thể tìm kiếm và xuất danh sách không?",
+        "a": "Có. Tìm kiếm theo tên, sau đó xuất sang CSV hoặc Excel, hoặc in danh sách."
+      },
+      {
+        "q": "Tôi có thể mang khách hàng hiện tại của mình vào không?",
+        "a": "Có. Gửi danh sách của bạn cho chúng tôi trong quá trình onboard và chúng tôi sẽ tải nó cùng với bạn."
+      },
+      {
+        "q": "Adon ERP có ở đâu?",
+        "a": "Chúng tôi hiện đang onboard các công ty tại Dhaka. Đặt một buổi demo và chúng tôi sẽ thêm một vài khách hàng của riêng bạn."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Mang theo danh sách các khách hàng hàng đầu của bạn. Chúng tôi sẽ tải chúng và lập hóa đơn đầu tiên trong buổi demo."
+  }
+},
       "common": {
         "onboardingNote": "Hiện chúng tôi đang tiếp nhận doanh nghiệp tại Dhaka.",
         "closingBody": "Demo trực tiếp bằng tiếng Anh hoặc tiếng Bengal, dùng sổ sách mẫu gần với ngành của bạn, có thời gian dành cho câu hỏi của kế toán viên.",

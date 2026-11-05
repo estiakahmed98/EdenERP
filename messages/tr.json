@@ -895,6 +895,198 @@
     "title": "Kendi kalemlerinizden on tane getirin. Demoda bunları birimler, maliyetler ve yeniden sipariş noktalarıyla ayarlayacağız."
   }
 },
+
+"customers": {
+  "meta": {
+    "title": "Müşteriler: Faturaların, Makbuzların ve İrsaliyelerin Paylaştığı Tek Liste",
+    "description": "Her müşteriyi bir kez, bir ad ve referans ID ile tutun ve faturalarda, makbuzlarda ve teslimat irsaliyelerinde seçin. Bangladeş'teki şirketler için tasarlandı.",
+    "keywords": [
+      "müşteri listesi muhasebe yazılımı",
+      "müşteri yönetimi Bangladeş",
+      "alacak hesapları müşteriler",
+      "muhasebe yazılımı Bangladeş",
+      "Adon ERP müşteriler"
+    ]
+  },
+  "hero": {
+    "title": "Müşteriler: bir kez ekleyin, her yerde faturalandırın",
+    "lead": "Sattığınız kişi ve şirketlerin temiz bir listesini tutun. Faturalar, makbuzlar ve teslimat irsaliyeleri bundan seçer, böylece bir müşterinin geçmişi üç yazım yerine tek bir yerde kalır.",
+    "secondaryCta": "Bir müşterinin nasıl eklendiğini görün"
+  },
+  "sample": {
+    "count": "500'ün 25'i",
+    "notes": [
+      "her müşterinin bir referans ID'si vardır",
+      "tek tıkla düzenleyin veya devre dışı bırakın",
+      "müşteri eklemek için iki alan"
+    ]
+  },
+  "ui": {
+    "newCustomer": "Yeni Müşteri",
+    "thName": "Ad",
+    "thRef": "Referans ID",
+    "thActive": "Aktif",
+    "yes": "Evet",
+    "newTitle": "Yeni Müşteri",
+    "create": "Müşteri Oluştur",
+    "fName": "Müşteri Adı",
+    "fDescription": "Açıklama",
+    "optional": "İsteğe bağlı",
+    "caption": "Adon ERP'de Müşteriler'in kısmi bir önizlemesi. Şirket ve müşteriler örnek verilerdir."
+  },
+  "flow": {
+    "title": "Bir müşteri kaydı basit kalır",
+    "intro": "İki alan sizi başlatır. Kayıt daha sonra onu adlandıran faturaları, makbuzları ve irsaliyeleri toplar.",
+    "steps": [
+      {
+        "tag": "Aktif",
+        "question": "Kullanımda",
+        "body": "Her müşteri seçim listesinde, faturalarda, makbuzlarda ve teslimat irsaliyelerinde gösterilir."
+      },
+      {
+        "tag": "Pasif",
+        "question": "Artık satış yapılmıyor",
+        "body": "Satış yapmayı bıraktığınız bir müşteriyi devre dışı bırakın. Seçim listelerinden çıkarlar ve geçmiş belgeleri olduğu gibi kalır."
+      },
+      {
+        "tag": "Referans ID",
+        "question": "Kararlı bir tanımlayıcı",
+        "body": "Her müşteri bir referans ID alır, böylece iki ad benzer görünse bile dışa aktarma ve içe aktarma doğru kaydı eşleştirebilir."
+      }
+    ],
+    "formTitle": "Yeni bir müşteride doldurduklarınız",
+    "form": [
+      {
+        "label": "Müşteri adı",
+        "body": "Faturalarda ve irsaliyelerde yazdırılacak ad, örneğin \"Padma Knitwear Ltd.\"."
+      },
+      {
+        "label": "Açıklama",
+        "body": "İsteğe bağlı. İlgili kişi, fabrika konumu veya ödeme alışkanlığı gibi kısa bir not."
+      }
+    ]
+  },
+  "connect": {
+    "title": "Müşteriler satışı ödeme almaya bağlar",
+    "intro": "Müşteri bir satışın başında seçilir ve nakde kadar takip edilir, böylece tek bir liste tüm zinciri yönetir.",
+    "groups": {
+      "before": "Müşteriden önce",
+      "after": "Müşterilerin kullanıldığı yer",
+      "shows": "Göründüğü yer"
+    },
+    "items": {
+      "itemsProducts": "Ne sattığınız, birimler ve fiyatlarla.",
+      "chartOfAccounts": "Müşteri bakiyelerinin kaydedildiği alacak hesabı.",
+      "invoicesAr": "Müşteriyi faturalandırın, sonra hâlâ ödenmemiş olanı takip edin.",
+      "receipts": "Müşteriye karşı ödemeyi kaydedin.",
+      "deliveryChallans": "Onlara gönderilen her yük için bir irsaliye yazdırın.",
+      "ledgers": "Bir müşterinin bakiyesi, satır satır.",
+      "accountingHub": "Bir bakışta alacaklar ve son satışlar.",
+      "financialReports": "Tablolarınızda müşteri bakiyeleri."
+    }
+  },
+  "local": {
+    "title": "Bangladeşli şirketlerin satış yapma şekline göre müşteriler",
+    "intro": "Birçok şirket yıllarca aynı alıcılara satış yapar, genellikle kredili ve birkaç fabrika veya şube genelinde. Liste büyüdükçe düzenli kalmalıdır.",
+    "points": [
+      {
+        "title": "Yüzlerce müşteri, hâlâ hızlı",
+        "body": "Ada göre arayın ve listeyi sıralayın. Beş yüz müşterisi olan bir şirket saniyeler içinde birini bulur."
+      },
+      {
+        "title": "Müşteri başına bir ad",
+        "body": "Her belgede listeden müşteriyi seçin, böylece \"ABG Sweater Ltd\" asla \"ABG Sweaters Ltd\" olmaz."
+      },
+      {
+        "title": "Geçmiş korunur",
+        "body": "Bir müşteriyi devre dışı bırakın ve geçmiş faturaları ve makbuzları tam olarak oldukları gibi kalır."
+      },
+      {
+        "title": "Tüm satış için hazır",
+        "body": "Aynı müşteri fatura, teslimat irsaliyesi ve makbuz için kullanılır, yeniden yazma yok."
+      }
+    ],
+    "story": {
+      "title": "Bir müşteri, ilk siparişten ödemeye",
+      "intro": "Örme giyim için örnek bir müşteri, genellikle nasıl işlediği.",
+      "steps": [
+        {
+          "time": "1 Eki",
+          "text": "Muhasebeci kısa bir notla \"Padma Knitwear Ltd.\" ekler."
+        },
+        {
+          "time": "3 Eki",
+          "text": "İlk yük için bir teslimat irsaliyesi yazdırılır."
+        },
+        {
+          "time": "5 Eki",
+          "text": "Fatura aynı müşteri kaydından düzenlenir."
+        },
+        {
+          "time": "19 Eki",
+          "text": "Ödeme geldiğinde bir makbuz kaydedilir."
+        },
+        {
+          "time": "20 Eki",
+          "text": "Defter, fatura ve makbuzu birlikte gösterir."
+        }
+      ]
+    }
+  },
+  "industries": {
+    "title": "Farklı sektörler müşteri listesini nasıl kullanır",
+    "angles": {
+      "retail": "Gelen ve hesap müşterileri, düzenli alıcılar için kredi.",
+      "food-hospitality": "Kurumsal müşteriler ve hesaba faturalandırılan etkinlikler.",
+      "real-estate": "Bir mülke veya projeye bağlı kiracılar ve alıcılar.",
+      "consulting": "Danışmanlık ve projeler için faturalandırılan müşteriler.",
+      "manufacturing": "Büyük siparişler veren ve şartlarla ödeyen alıcılar.",
+      "health-fitness": "Üyeler ve tekrarlanan faturalandırmalı düzenli müşteriler.",
+      "trades": "Her iş için faturalandırılan müşteriler, net ziyaret geçmişiyle.",
+      "others": "Bağışçılar, sponsorlar ve ödeme yapan üyeler tek listede."
+    }
+  },
+  "faq": {
+    "title": "Müşteriler hakkında aldığımız sorular",
+    "items": [
+      {
+        "q": "Bir müşteri eklemek için neye ihtiyacım var?",
+        "a": "Yalnızca müşteri adı. Açıklama isteğe bağlıdır."
+      },
+      {
+        "q": "Eklendikten sonra bir müşteriyi nerede kullanabilirim?",
+        "a": "Faturalarda, makbuzlarda ve teslimat irsaliyelerinde. Hepsi aynı listeden seçer."
+      },
+      {
+        "q": "Referans ID nedir?",
+        "a": "Her müşteriye verilen benzersiz bir tanımlayıcı. Adı düzenleseniz bile aynı kalır."
+      },
+      {
+        "q": "Geçmişini kaybetmeden bir müşteriye satışı durdurabilir miyim?",
+        "a": "Evet. Devre Dışı Bırak'ı kullanın. Müşteri seçim listelerinden çıkar ve eski faturalar ve makbuzlar defterlerde kalır."
+      },
+      {
+        "q": "Bir müşteriyi silebilir miyim?",
+        "a": "Evet, sil simgesiyle. Bir müşterinin zaten belgeleri varsa, devre dışı bırakmak daha güvenli seçimdir."
+      },
+      {
+        "q": "Listeyi arayabilir ve dışa aktarabilir miyim?",
+        "a": "Evet. Ada göre arayın, ardından CSV veya Excel'e aktarın veya listeyi yazdırın."
+      },
+      {
+        "q": "Mevcut müşterilerimi getirebilir miyim?",
+        "a": "Evet. Onboarding sırasında listenizi bize gönderin ve sizinle birlikte yükleyelim."
+      },
+      {
+        "q": "Adon ERP nerede mevcut?",
+        "a": "Şu anda Dakka'da şirketleri onboarding yapıyoruz. Bir demo ayırtın ve kendi müşterilerinizden birkaçını ekleyelim."
+      }
+    ]
+  },
+  "closing": {
+    "title": "En iyi müşterilerinizin bir listesini getirin. Onları yükleyeceğiz ve demoda ilk faturayı düzenleyeceğiz."
+  }
+},
       "common": {
         "onboardingNote": "Şu anda Dakka’daki şirketleri sisteme alıyoruz.",
         "closingBody": "İngilizce veya Bengalce canlı demo; sektörünüze yakın örnek defterlerle ve muhasebecinizin soruları için ayrılmış zamanla.",
