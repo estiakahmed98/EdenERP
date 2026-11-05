@@ -1,19 +1,8 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-
 import BecomeAPartnerPage from "./BecomeAPartnerPage";
-import { getLocaleAlternates } from "@/i18n/metadata";
+import { communityMetadata } from "@/components/community/redesign/page";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations(
-    "pages.community.metadata.collaborateBecomePartner",
-  );
-
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: await getLocaleAlternates("/community/collaborate/become-a-partner"),
-  };
+export function generateMetadata() {
+  return communityMetadata("become-a-partner");
 }
 
 export default function Page() {

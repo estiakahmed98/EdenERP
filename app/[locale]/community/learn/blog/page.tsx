@@ -1,6 +1,3 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-
 import BlogPage from "@/components/landing/community/learn/blog/BlogPage";
 import { getLocaleAlternates } from "@/i18n/metadata";
 import { getBlogList, parseListQuery } from "@/lib/blog";
@@ -10,6 +7,7 @@ import { getBlogList, parseListQuery } from "@/lib/blog";
 export const dynamic = "force-dynamic";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
+import { communityMetadata } from "@/components/community/redesign/page";
 
 export async function generateMetadata({
   searchParams,
@@ -28,6 +26,8 @@ export async function generateMetadata({
     // Search / archive / pagination variants are thin duplicates of the main list.
     robots: filtered ? { index: false, follow: true } : undefined,
   };
+export function generateMetadata() {
+  return communityMetadata("blog");
 }
 
 export default async function Page({
