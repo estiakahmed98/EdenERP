@@ -2,14 +2,13 @@
  * Demo blog posts (Game of Thrones themed ERP stories) so the public blog
  * (/community/learn/blog) and /admin/blog have something to show.
  *
- *   npx tsx prisma/seed-blogs.ts            # add / refresh the demo posts
- *   npx tsx prisma/seed-blogs.ts --reset    # remove only these demo posts
+ * Runs as part of the main seed:
+ *   npx prisma db seed                      # adds / refreshes the demo posts
+ *   npx prisma db seed -- --reset-blogs     # removes only these demo posts
  *
  * Safe to re-run: posts are matched by slug (all slugs start with "got-"),
  * so real posts are never touched. Fictional pen names, original text.
  */
-import "dotenv/config";
-
 import { db } from "../lib/db";
 
 const PREFIX = "got-";
@@ -269,14 +268,14 @@ const POSTS: Seed[] = [
   },
 ];
 
-async function reset() {
+export async function resetDemoBlogs() {
   const result = await db.blog.deleteMany({
     where: { slug: { startsWith: PREFIX } },
   });
   console.log(`Removed ${result.count} demo blog posts.`);
 }
 
-async function seed() {
+export async function seedDemoBlogs() {
   for (const post of POSTS) {
     const data = {
       title: post.title,
@@ -296,17 +295,3 @@ async function seed() {
   const total = await db.blog.count();
   console.log(`Seeded ${POSTS.length} demo blog posts (${total} posts in total).`);
 }
-
-async function main() {
-  if (process.argv.includes("--reset")) await reset();
-  else await seed();
-}
-
-main()
-  .catch((error) => {
-    console.error(error);
-    process.exitCode = 1;
-  })
-  .finally(async () => {
-    await db.$disconnect();
-  });
