@@ -2,7 +2,9 @@ import { createHash, randomUUID } from "node:crypto";
 import { Prisma } from "@/lib/generated/prisma/client";
 import { db } from "@/lib/db";
 import type {
+  DemoAdminCreate,
   DemoAdminData,
+  DemoAdminUpdate,
   DemoRequestRow,
   DemoSubmission,
 } from "./validation";
@@ -70,11 +72,17 @@ export async function saveDemoRequest(input: DemoSubmission, ip: string) {
   });
 }
 
-type StoredRow = Omit<DemoRequestRow, "createdAt" | "updatedAt"> & {
-  createdAt: Date;
-  updatedAt: Date;
-};
-const publicColumns = Prisma.sql`"id","fullName","companyName","phone","shareMore","email","modules","message","locale","status","adminNotes","version","createdAt","updatedAt"`;
+type StoredRow = DemoRequestRow;
+/**
+ * Timestamps are returned as explicit UTC ISO strings. Raw `timestamptz` values
+ * go through the pg driver adapter, which mis-reads them when the database
+ * session time zone is not UTC (rows showed up hours off).
+ */
+const isoUtc = (column: "createdAt" | "updatedAt") =>
+  Prisma.raw(
+    `to_char("${column}" AT TIME ZONE 'UTC','YYYY-MM-DD"T"HH24:MI:SS.MS"Z"') AS "${column}"`,
+  );
+const publicColumns = Prisma.sql`"id","fullName","companyName","phone","shareMore","email","modules","message","locale","status","adminNotes","version",${isoUtc("createdAt")},${isoUtc("updatedAt")}`;
 export async function getDemoRequests(query: {
   q: string;
   status: string;
@@ -111,30 +119,72 @@ export async function getDemoRequests(query: {
     ]),
   ) as DemoAdminData["counts"];
   return {
-    requests: rows.map((row) => ({
-      ...row,
-      createdAt: row.createdAt.toISOString(),
-      updatedAt: row.updatedAt.toISOString(),
-    })),
+    requests: rows,
     total: count[0].total,
     page: query.page,
     pageSize,
     counts,
   };
 }
-export async function updateDemoRequest(input: {
-  id: string;
-  version: number;
-  status: string;
-  adminNotes: string;
-}) {
-  const rows = await db.$queryRaw<
-    StoredRow[]
-  >`UPDATE "demo_requests" SET "status"=${input.status}::"DemoRequestStatus","adminNotes"=${input.adminNotes},"version"="version"+1,"updatedAt"=CURRENT_TIMESTAMP WHERE "id"=${input.id}::uuid AND "version"=${input.version} RETURNING ${publicColumns}`;
+const toRow = (row: StoredRow): DemoRequestRow => row;
+const textArray = (values: readonly string[]) =>
+  Prisma.sql`array_remove(ARRAY[${Prisma.join(values.length ? values.map((v) => Prisma.sql`${v}`) : [Prisma.sql`NULL`])}]::text[],NULL)`;
+
+/** Admin: create a request by hand (e.g. a lead received over the phone). */
+export async function createDemoRequest(input: DemoAdminCreate) {
+  const id = randomUUID();
+  const requestKey = randomUUID();
+  const payloadHash = hash(JSON.stringify(input));
+  const dedupeKey = hash(`admin|${requestKey}`);
+  const shareMore = Boolean(
+    input.email || input.modules.length || input.message,
+  );
+  const rows = await db.$queryRaw<StoredRow[]>(Prisma.sql`
+    INSERT INTO "demo_requests" ("id","requestKey","dedupeKey","payloadHash","fullName","companyName","phone","shareMore","email","modules","message","locale","status","adminNotes","updatedAt")
+    VALUES (${id}::uuid,${requestKey}::uuid,${dedupeKey},${payloadHash},${input.fullName},${input.companyName},${input.phone},${shareMore},${input.email || null},${textArray(input.modules)},${input.message || null},'en',${input.status}::"DemoRequestStatus",${input.adminNotes},CURRENT_TIMESTAMP)
+    RETURNING ${publicColumns}`);
+  return toRow(rows[0]);
+}
+
+/** Admin: partial update with optimistic locking on `version`. */
+export async function updateDemoRequest(input: DemoAdminUpdate) {
+  const sets: Prisma.Sql[] = [];
+  if (input.status !== undefined)
+    sets.push(Prisma.sql`"status"=${input.status}::"DemoRequestStatus"`);
+  if (input.adminNotes !== undefined)
+    sets.push(Prisma.sql`"adminNotes"=${input.adminNotes}`);
+  if (input.fullName !== undefined)
+    sets.push(Prisma.sql`"fullName"=${input.fullName}`);
+  if (input.companyName !== undefined)
+    sets.push(Prisma.sql`"companyName"=${input.companyName}`);
+  if (input.phone !== undefined) sets.push(Prisma.sql`"phone"=${input.phone}`);
+  if (input.email !== undefined)
+    sets.push(Prisma.sql`"email"=${input.email || null}`);
+  if (input.modules !== undefined)
+    sets.push(Prisma.sql`"modules"=${textArray(input.modules)}`);
+  if (input.message !== undefined)
+    sets.push(Prisma.sql`"message"=${input.message || null}`);
+  if (
+    input.email !== undefined ||
+    input.modules !== undefined ||
+    input.message !== undefined
+  )
+    sets.push(
+      Prisma.sql`"shareMore"=(COALESCE(${input.email ?? null},"email",'')<>'' OR cardinality(${input.modules ? textArray(input.modules) : Prisma.sql`"modules"`})>0 OR COALESCE(${input.message ?? null},"message",'')<>'')`,
+    );
+  const rows = await db.$queryRaw<StoredRow[]>(Prisma.sql`
+    UPDATE "demo_requests" SET ${sets.length ? Prisma.sql`${Prisma.join(sets, ",")},` : Prisma.empty}"version"="version"+1,"updatedAt"=CURRENT_TIMESTAMP
+    WHERE "id"=${input.id}::uuid AND "version"=${input.version}
+    RETURNING ${publicColumns}`);
   if (!rows[0]) throw new DemoRequestError("UPDATE_CONFLICT", 409);
-  return {
-    ...rows[0],
-    createdAt: rows[0].createdAt.toISOString(),
-    updatedAt: rows[0].updatedAt.toISOString(),
-  };
+  return toRow(rows[0]);
+}
+
+/** Admin: permanently delete a request. */
+export async function deleteDemoRequest(id: string) {
+  const rows = await db.$queryRaw<
+    { id: string }[]
+  >`DELETE FROM "demo_requests" WHERE "id"=${id}::uuid RETURNING "id"`;
+  if (!rows[0]) throw new DemoRequestError("NOT_FOUND", 404);
+  return { id: rows[0].id };
 }

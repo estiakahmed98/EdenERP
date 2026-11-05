@@ -1,7 +1,24 @@
 "use client";
 
-import { useState, useTransition, useRef, useCallback, useMemo } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useTransition,
+} from "react";
 
+import {
+  CircleHelp,
+  CreditCard,
+  ExternalLink,
+  Layers,
+  LayoutTemplate,
+  Megaphone,
+  Package,
+  type LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -379,9 +396,10 @@ function SectionCard({
 }) {
   return (
     <div
-      className={`rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-800 dark:shadow-none ${className}`}
+      className={`rounded-3xl bg-card p-6 shadow-sm ring-1 ring-border ${className}`}
     >
-      <h2 className="mb-4 text-base font-semibold text-slate-900 dark:text-slate-200">
+      <h2 className="mb-5 flex items-center gap-2.5 text-base font-bold text-foreground">
+        <span className="h-5 w-1.5 rounded-full bg-linear-to-b from-primary to-secondary" />
         {title}
       </h2>
       {children}
@@ -398,7 +416,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="text-[11px] font-medium uppercase tracking-wide text-slate-400 dark:text-slate-300">
+      <span className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
         {label}
       </span>
       {children}
@@ -432,10 +450,10 @@ function PlanCard({
     <div
       onClick={onActivate}
       className={[
-        "w-[280px] shrink-0 cursor-pointer rounded-xl border bg-white p-4 transition-all dark:bg-slate-800",
+        "w-[280px] shrink-0 cursor-pointer rounded-xl border bg-card p-4 transition-all",
         isActive
           ? "border-[2px] shadow-sm"
-          : "border-slate-200 opacity-70 hover:opacity-90",
+          : "border-border opacity-70 hover:opacity-90",
       ].join(" ")}
       style={isActive ? { borderColor: plan.accent } : {}}
     >
@@ -448,10 +466,10 @@ function PlanCard({
           {plan.icon}
         </div>
         <div className="min-w-0 flex-1">
-          <div className="truncate text-sm font-semibold text-slate-800 dark:text-slate-200">
+          <div className="truncate text-sm font-semibold text-foreground">
             {plan.name || "Unnamed plan"}
           </div>
-          <div className="truncate text-xs text-slate-400 dark:text-slate-300">
+          <div className="truncate text-xs text-muted-foreground">
             {plan.tagline || "—"}
           </div>
         </div>
@@ -459,8 +477,8 @@ function PlanCard({
           className={[
             "shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold",
             plan.enabled
-              ? "bg-emerald-50 text-emerald-700"
-              : "bg-slate-100 text-slate-400",
+              ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
+              : "bg-muted text-muted-foreground",
           ].join(" ")}
         >
           {plan.enabled ? "On" : "Off"}
@@ -476,14 +494,14 @@ function PlanCard({
           checked={plan.enabled}
           onCheckedChange={(checked) => update({ enabled: checked })}
         />
-        <span className="ml-1 flex-1 text-xs text-slate-500 dark:text-slate-300">
+        <span className="ml-1 flex-1 text-xs text-muted-foreground">
           Enabled
         </span>
         <button
           type="button"
           disabled={index === 0}
           onClick={() => onMove(-1)}
-          className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-slate-400 hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700"
+          className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-muted-foreground hover:bg-muted disabled:opacity-30"
         >
           ←
         </button>
@@ -491,7 +509,7 @@ function PlanCard({
           type="button"
           disabled={index === totalPlans - 1}
           onClick={() => onMove(1)}
-          className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-slate-400 hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-700"
+          className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-muted-foreground hover:bg-muted disabled:opacity-30"
         >
           →
         </button>
@@ -501,7 +519,7 @@ function PlanCard({
             if (!window.confirm("Delete this plan?")) return;
             onDelete();
           }}
-          className="flex h-7 w-7 items-center justify-center rounded-md border border-red-100 text-red-400 hover:bg-red-50"
+          className="flex h-7 w-7 items-center justify-center rounded-md border border-destructive/20 text-destructive hover:bg-destructive/10"
         >
           ✕
         </button>
@@ -559,7 +577,7 @@ function PlanCard({
               type="color"
               value={plan.accent}
               onChange={(e) => update({ accent: e.target.value })}
-              className="h-8 w-full cursor-pointer rounded-md border border-slate-200 px-1 py-0.5"
+              className="h-8 w-full cursor-pointer rounded-md border border-border px-1 py-0.5"
             />
           </Field>
           <Field label="Currency">
@@ -568,7 +586,7 @@ function PlanCard({
               onChange={(e) =>
                 update({ currency: e.target.value as "BDT" | "USD" })
               }
-              className="h-8 w-full rounded-md border border-slate-200 px-2 text-xs text-slate-700"
+              className="h-8 w-full rounded-md border border-border px-2 text-xs text-foreground/80"
             >
               <option value="BDT">BDT</option>
               <option value="USD">USD</option>
@@ -595,14 +613,14 @@ function PlanCard({
         </div>
 
         {/* Pricing */}
-        <div className="rounded-lg bg-slate-50 p-2.5 dark:bg-slate-700/30">
-          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-300">
+        <div className="rounded-lg bg-muted/50 p-2.5">
+          <p className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
             Pricing
           </p>
           <div className="grid grid-cols-2 gap-2">
             <Field label="Setup fee">
               <Input
-                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
+                className="h-8 text-xs bg-card border border-border"
                 value={plan.setupFee}
                 onChange={(e) => update({ setupFee: e.target.value })}
                 placeholder="0"
@@ -610,7 +628,7 @@ function PlanCard({
             </Field>
             <Field label="Monthly fee">
               <Input
-                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
+                className="h-8 text-xs bg-card border border-border"
                 value={plan.monthlyFee}
                 onChange={(e) => update({ monthlyFee: e.target.value })}
                 placeholder="0"
@@ -618,7 +636,7 @@ function PlanCard({
             </Field>
             <Field label="Quarterly fee">
               <Input
-                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
+                className="h-8 text-xs bg-card border border-border"
                 value={plan.quarterlyFee}
                 onChange={(e) => update({ quarterlyFee: e.target.value })}
                 placeholder="0"
@@ -626,7 +644,7 @@ function PlanCard({
             </Field>
             <Field label="Server fee">
               <Input
-                className="h-8 text-xs bg-white dark:bg-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-600"
+                className="h-8 text-xs bg-card border border-border"
                 value={plan.serverFee}
                 onChange={(e) => update({ serverFee: e.target.value })}
                 placeholder="0"
@@ -638,13 +656,13 @@ function PlanCard({
         {/* Features */}
         <div>
           <div className="mb-1.5 flex items-center justify-between">
-            <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+            <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
               Features
             </p>
             <button
               type="button"
               onClick={() => update({ features: [...plan.features, ""] })}
-              className="text-[11px] text-teal-700 hover:underline"
+              className="text-[11px] text-primary hover:underline"
             >
               + Add
             </button>
@@ -671,7 +689,7 @@ function PlanCard({
                       features: plan.features.filter((_, idx) => idx !== fi),
                     })
                   }
-                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-red-100 text-xs text-red-400 hover:bg-red-50"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-destructive/20 text-xs text-destructive hover:bg-destructive/10"
                 >
                   ✕
                 </button>
@@ -694,7 +712,7 @@ function FaqList({
   return (
     <div className="space-y-3">
       {faqs.map((faq, index) => (
-        <div key={index} className="rounded-xl border border-slate-100 p-3.5">
+        <div key={index} className="rounded-xl border border-border p-3.5">
           <div className="mb-2.5 flex items-center gap-2">
             <Switch
               checked={faq.enabled}
@@ -706,18 +724,18 @@ function FaqList({
                 )
               }
             />
-            <span className="flex-1 text-xs text-slate-400">Enabled</span>
+            <span className="flex-1 text-xs text-muted-foreground">Enabled</span>
             <button
               type="button"
               onClick={() => onChange(resequence(moveItem(faqs, index, -1)))}
-              className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-xs text-slate-400 hover:bg-slate-50"
+              className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-xs text-muted-foreground hover:bg-muted"
             >
               ↑
             </button>
             <button
               type="button"
               onClick={() => onChange(resequence(moveItem(faqs, index, 1)))}
-              className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-xs text-slate-400 hover:bg-slate-50"
+              className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-xs text-muted-foreground hover:bg-muted"
             >
               ↓
             </button>
@@ -727,7 +745,7 @@ function FaqList({
                 if (!window.confirm("Delete this FAQ?")) return;
                 onChange(resequence(faqs.filter((_, i) => i !== index)));
               }}
-              className="flex h-7 w-7 items-center justify-center rounded-md border border-red-100 text-xs text-red-400 hover:bg-red-50"
+              className="flex h-7 w-7 items-center justify-center rounded-md border border-destructive/20 text-xs text-destructive hover:bg-destructive/10"
             >
               ✕
             </button>
@@ -764,9 +782,25 @@ function FaqList({
 
 /* ─── Main component ─────────────────────────────────────────────────────── */
 
+type TabKey = "general" | "packages" | "plans" | "modules" | "faqs" | "standard";
+const TABS: { key: TabKey; label: string; icon: LucideIcon }[] = [
+  { key: "general", label: "Page & billing", icon: LayoutTemplate },
+  { key: "packages", label: "Packages & CTAs", icon: Megaphone },
+  { key: "plans", label: "Plans", icon: CreditCard },
+  { key: "modules", label: "Modules & packs", icon: Layers },
+  { key: "faqs", label: "FAQs", icon: CircleHelp },
+  { key: "standard", label: "Standard plan", icon: Package },
+];
+
 export default function PricingAdminPage({
   initialData,
 }: PricingAdminPageProps) {
+  const [tab, setTab] = useState<TabKey>("general");
+  const [, setMeasured] = useState(0);
+  useEffect(() => {
+    // The carousel centres on its container width, which is only known after mount.
+    if (tab === "plans") setMeasured((n) => n + 1);
+  }, [tab]);
   const [locale, setLocale] = useState<PricingLocale>(
     initialData.pageData.locale,
   );
@@ -1032,69 +1066,111 @@ export default function PricingAdminPage({
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F4F8F7] to-[#EEEFE0] dark:from-[#071218] dark:to-[#061217] p-4 sm:p-6">
-      <div className="container mx-auto space-y-6">
-        {/* ── Header ──────────────────────────────────────────────────────── */}
-        <div className="rounded-2xl bg-gradient-to-r from-[#0E4B4B] to-[#086666] p-6 text-white shadow-lg">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <h1 className="text-2xl font-semibold">Pricing management</h1>
-              <p className="mt-1 text-sm text-white/70">
-                Manage visibility, content, plans, modules, and FAQs.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-2.5">
-              <select
-                value={locale}
-                onChange={(e) => loadLocale(e.target.value as PricingLocale)}
-                className="rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white"
-              >
-                {locales.map((option) => (
-                  <option key={option} value={option}>{languageNames[option]}</option>
-                ))}
-              </select>
-              {/* header save removed — using floating save button */}
-              <Button
-                asChild
-                type="button"
-                variant="outline"
-                className="rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white hover:text-white"
-              >
-                <a href={`/${locale}/pricing`} target="_blank" rel="noreferrer">
-                  Preview ↗
-                </a>
-              </Button>
-            </div>
-          </div>
-
-          {/* Page enabled toggle */}
-          <div className="mt-4 flex items-center gap-3 rounded-xl bg-white/10 p-4">
-            <Switch
-              checked={form.pricingPageEnabled}
-              onCheckedChange={(checked) =>
-                updateField("pricingPageEnabled", checked)
-              }
-            />
-            <div>
-              <div className="text-sm font-semibold">Pricing page enabled</div>
-              <div className="text-xs text-white/60">
-                Hides pricing from navigation and blocks direct access when off.
-              </div>
-            </div>
-          </div>
-
-          {status && (
-            <p className="mt-3 rounded-lg bg-emerald-500/20 px-3 py-2 text-sm text-emerald-200">
-              ✓ {status}
+    <div className="min-h-screen p-6">
+      <div className="w-full space-y-6">
+        {/* ── Heading + controls ─────────────────────────────────────────── */}
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground">
+              Pricing
+            </h1>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Visibility, content, plans, modules and FAQs for the public
+              pricing page.
             </p>
-          )}
-          {error && (
-            <p className="mt-3 rounded-lg bg-red-500/20 px-3 py-2 text-sm text-red-200">
-              ✕ {error}
-            </p>
-          )}
+          </div>
+          <div className="flex flex-wrap items-center gap-2.5">
+            <select
+              value={locale}
+              onChange={(e) => loadLocale(e.target.value as PricingLocale)}
+              aria-label="Language"
+              className="h-10 rounded-xl border-0 bg-card px-3 text-sm font-medium text-foreground shadow-sm ring-1 ring-border"
+            >
+              {locales.map((option) => (
+                <option key={option} value={option}>{languageNames[option]}</option>
+              ))}
+            </select>
+            <Button asChild variant="outline" className="h-10 rounded-xl">
+              <a href={`/${locale}/pricing`} target="_blank" rel="noreferrer">
+                <ExternalLink /> Preview
+              </a>
+            </Button>
+          </div>
         </div>
 
+        {/* Page enabled */}
+        <div
+          className={`flex items-center gap-4 rounded-3xl p-5 ring-1 transition-colors ${
+            form.pricingPageEnabled
+              ? "bg-linear-to-r from-primary/10 to-secondary/10 ring-primary/25"
+              : "bg-muted/60 ring-border"
+          }`}
+        >
+          <Switch
+            checked={form.pricingPageEnabled}
+            onCheckedChange={(checked) =>
+              updateField("pricingPageEnabled", checked)
+            }
+          />
+          <div className="min-w-0 flex-1">
+            <div className="text-sm font-bold text-foreground">
+              Pricing page is {form.pricingPageEnabled ? "live" : "hidden"}
+            </div>
+            <div className="text-xs text-muted-foreground">
+              {form.pricingPageEnabled
+                ? "Visitors can see Pricing in the menu and open the page."
+                : "Pricing is removed from the menu and direct links are blocked."}
+            </div>
+          </div>
+          <span
+            className={`hidden rounded-full px-3 py-1 text-xs font-bold sm:inline ${
+              form.pricingPageEnabled
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted-foreground/20 text-muted-foreground"
+            }`}
+          >
+            {form.pricingPageEnabled ? "LIVE" : "OFF"}
+          </span>
+        </div>
+
+        {status && (
+          <p className="rounded-2xl bg-emerald-500/10 px-4 py-3 text-sm font-medium text-emerald-700 dark:text-emerald-300">
+            ✓ {status}
+          </p>
+        )}
+        {error && (
+          <p className="rounded-2xl bg-destructive/10 px-4 py-3 text-sm font-medium text-destructive">
+            ✕ {error}
+          </p>
+        )}
+
+        {/* Section tabs */}
+        <div
+          role="tablist"
+          aria-label="Pricing sections"
+          className="sticky top-24 z-20 flex gap-1.5 overflow-x-auto rounded-2xl bg-card/90 p-1.5 shadow-sm ring-1 ring-border backdrop-blur-xl"
+        >
+          {TABS.map(({ key, label, icon: Icon }) => (
+            <button
+              key={key}
+              type="button"
+              role="tab"
+              aria-selected={tab === key}
+              onClick={() => setTab(key)}
+              className={`flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+                tab === key
+                  ? "bg-linear-to-r from-primary to-secondary text-white shadow-md"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+              }`}
+            >
+              <Icon className="size-4" />
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {tab === "general" && (
+          <div className="space-y-6">
         {/* ── Metadata & Billing ──────────────────────────────────────────── */}
         <div className="grid gap-6 lg:grid-cols-2">
           <SectionCard title="Metadata & hero">
@@ -1216,7 +1292,11 @@ export default function PricingAdminPage({
             </div>
           </SectionCard>
         </div>
+          </div>
+        )}
 
+        {tab === "packages" && (
+          <div className="space-y-6">
         {/* ── Package labels & CTAs ────────────────────────────────────────── */}
         <SectionCard title="Package labels & CTA sections">
           <div className="grid gap-3 lg:grid-cols-2">
@@ -1348,7 +1428,11 @@ export default function PricingAdminPage({
             </Field>
           </div>
         </SectionCard>
+          </div>
+        )}
 
+        {tab === "plans" && (
+          <div className="space-y-6">
         {/* ── Plans carousel ───────────────────────────────────────────────── */}
         <SectionCard title="Plans">
           <div className="mb-4 flex items-center justify-between">
@@ -1362,8 +1446,8 @@ export default function PricingAdminPage({
                   className={[
                     "h-2 rounded-full transition-all",
                     i === activePlanIndex
-                      ? "w-5 bg-teal-700"
-                      : "w-2 bg-slate-300 hover:bg-slate-400",
+                      ? "w-5 bg-primary"
+                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50",
                   ].join(" ")}
                   aria-label={`Select plan ${i + 1}`}
                 />
@@ -1376,7 +1460,7 @@ export default function PricingAdminPage({
                 type="button"
                 disabled={activePlanIndex === 0}
                 onClick={() => setActivePlanIndex((i) => Math.max(0, i - 1))}
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-30"
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted disabled:opacity-30"
               >
                 ←
               </button>
@@ -1388,7 +1472,7 @@ export default function PricingAdminPage({
                     Math.min(form.plans.length - 1, i + 1),
                   )
                 }
-                className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50 disabled:opacity-30"
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted disabled:opacity-30"
               >
                 →
               </button>
@@ -1448,7 +1532,11 @@ export default function PricingAdminPage({
             </div>
           </div>
         </SectionCard>
+          </div>
+        )}
 
+        {tab === "modules" && (
+          <div className="space-y-6">
         {/* ── Modules & Success packs ──────────────────────────────────────── */}
         <div className="grid gap-6 lg:grid-cols-2">
           <SectionCard title="Modules">
@@ -1464,7 +1552,7 @@ export default function PricingAdminPage({
               {form.modules.map((module, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 rounded-lg border border-slate-100 p-2"
+                  className="flex items-center gap-2 rounded-lg border border-border p-2"
                 >
                   <Switch
                     checked={module.enabled}
@@ -1500,7 +1588,7 @@ export default function PricingAdminPage({
                         resequence(moveItem(form.modules, index, -1)),
                       )
                     }
-                    className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-xs text-slate-400 hover:bg-slate-50"
+                    className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-xs text-muted-foreground hover:bg-muted"
                   >
                     ↑
                   </button>
@@ -1512,7 +1600,7 @@ export default function PricingAdminPage({
                         resequence(moveItem(form.modules, index, 1)),
                       )
                     }
-                    className="flex h-7 w-7 items-center justify-center rounded-md border border-slate-200 text-xs text-slate-400 hover:bg-slate-50"
+                    className="flex h-7 w-7 items-center justify-center rounded-md border border-border text-xs text-muted-foreground hover:bg-muted"
                   >
                     ↓
                   </button>
@@ -1524,7 +1612,7 @@ export default function PricingAdminPage({
                         resequence(form.modules.filter((_, i) => i !== index)),
                       )
                     }
-                    className="flex h-7 w-7 items-center justify-center rounded-md border border-red-100 text-xs text-red-400 hover:bg-red-50"
+                    className="flex h-7 w-7 items-center justify-center rounded-md border border-destructive/20 text-xs text-destructive hover:bg-destructive/10"
                   >
                     ✕
                   </button>
@@ -1618,7 +1706,11 @@ export default function PricingAdminPage({
             </div>
           </SectionCard>
         </div>
+          </div>
+        )}
 
+        {tab === "faqs" && (
+          <div className="space-y-6">
         {/* ── FAQs ────────────────────────────────────────────────────────── */}
         <div className="grid gap-6 lg:grid-cols-2">
           {(
@@ -1628,7 +1720,7 @@ export default function PricingAdminPage({
             ] as const
           ).map(([key, title, subtitle]) => (
             <SectionCard key={key} title={title}>
-              <p className="mb-4 text-xs text-slate-400">{subtitle}</p>
+              <p className="mb-4 text-xs text-muted-foreground">{subtitle}</p>
               <FaqList
                 faqs={form[key]}
                 onChange={(updated) =>
@@ -1656,7 +1748,11 @@ export default function PricingAdminPage({
             </SectionCard>
           ))}
         </div>
+          </div>
+        )}
 
+        {tab === "standard" && (
+          <div className="space-y-6">
         {/* ── Standard plan content ────────────────────────────────────────── */}
         <SectionCard title="Standard plan content">
           <div className="grid gap-3 lg:grid-cols-2">
@@ -1784,6 +1880,8 @@ export default function PricingAdminPage({
             </Field>
           </div>
         </SectionCard>
+          </div>
+        )}
       </div>
 
       {/* Floating Save button (bottom-right). Pulses when there are unsaved changes. */}
@@ -1794,8 +1892,8 @@ export default function PricingAdminPage({
           disabled={!isDirty || isPending}
           className={
             !isDirty || isPending
-              ? "inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200 text-slate-600 shadow-sm cursor-not-allowed opacity-80"
-              : "inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-gradient text-white shadow-lg ring-2 ring-teal-400 animate-pulse"
+              ? "inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-muted text-muted-foreground shadow-sm cursor-not-allowed opacity-80"
+              : "inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-gradient text-white shadow-lg ring-2 ring-primary/50 animate-pulse"
           }
         >
           {isPending ? "Saving…" : "Save changes"}

@@ -546,7 +546,7 @@ const AdminDashboard: React.FC = () => {
   );
 
   return (
-    <div className="p-6 bg-background text-foreground min-h-screen">
+    <div className="min-h-screen p-6 text-foreground">
       {/* ---------- NEW Analytics ---------- */}
       <section className="bg-card rounded-xl border border-border shadow-sm p-5 mb-8">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">

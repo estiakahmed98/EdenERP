@@ -1,147 +1,202 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
-import {
-  Home,
-  LogOut,
-  ChevronLeft,
-  ChevronRight,
-  UserCog,
-  Shield,
-  BookOpen,
-  BadgeDollarSign,
-  MessageSquare,
-} from "lucide-react";
+import { ChevronsLeft, ChevronsRight, LogOut } from "lucide-react";
+
+import { ADMIN_NAV, isAdminRouteActive } from "./admin-nav";
 
 interface Props {
   onNavigate?: () => void;
   collapsed?: boolean;
   onToggleCollapse?: () => void;
+  user?: { name: string; role: string; image?: string };
+  /** Mobile drawer: fills its container instead of being fixed to the viewport. */
+  drawer?: boolean;
 }
 
-export const SIDEBAR_EXPANDED = 260;
-export const SIDEBAR_COLLAPSED = 80;
+export const SIDEBAR_EXPANDED = 256;
+export const SIDEBAR_COLLAPSED = 72;
 
-const AdminSidebar = ({ onNavigate, collapsed, onToggleCollapse }: Props) => {
+function initials(name?: string) {
+  const parts = (name || "Admin").trim().split(/\s+/);
+  return ((parts[0]?.[0] ?? "A") + (parts[1]?.[0] ?? "")).toUpperCase();
+}
+
+const AdminSidebar = ({
+  onNavigate,
+  collapsed = false,
+  onToggleCollapse,
+  user,
+  drawer = false,
+}: Props) => {
   const pathname = usePathname();
-  const router = useRouter();
-  const [internalCollapsed, setInternalCollapsed] = useState(false);
+  const [signingOut, setSigningOut] = React.useState(false);
 
-  const isControlled = typeof collapsed === "boolean";
-  const isCollapsed = isControlled ? collapsed : internalCollapsed;
-
-  const isActive = (href: string) => {
-    if (href === "/admin") return pathname === "/admin";
-    return pathname.startsWith(href);
+  const handleSignOut = async () => {
+    setSigningOut(true);
+    try {
+      await signOut({ callbackUrl: "/auth/signin" });
+    } finally {
+      setSigningOut(false);
+    }
   };
-
-  const handleNavigate = () => {
-    onNavigate?.();
-  };
-
-  const navItems = [
-    { name: "Dashboard", href: "/admin", icon: Home },
-    { name: "Blog", href: "/admin/blog", icon: BookOpen },
-    { name: "Pricing", href: "/admin/pricing", icon: BadgeDollarSign },
-    { name: "Demo requests", href: "/admin/demo-bookings", icon: MessageSquare },
-  ];
 
   return (
     <aside
-      className="md:fixed md:left-0 md:top-0 md:z-50 flex h-screen flex-col border-r border-slate-200 bg-white text-zinc-900 shadow-sm transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white w-full md:w-auto"
+      className={`flex flex-col border-r border-border bg-card text-card-foreground transition-[width] duration-300 ${
+        drawer
+          ? "h-full w-full"
+          : "h-screen md:fixed md:left-0 md:top-0 md:z-40"
+      }`}
       style={{
-        width: isCollapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED,
+        width: drawer ? undefined : collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED,
       }}
     >
-      {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-200 p-4 dark:border-zinc-800">
-        <div className="flex items-center gap-3">
-          {!isCollapsed && (
-            <div className="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow">
-              <Shield size={20} />
-            </div>
-          )}
-
-          {!isCollapsed && (
-            <div>
-              <h2 className="text-lg font-bold leading-none">Admin Panel</h2>
-              <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                Adon ERP
-              </p>
-            </div>
-          )}
-        </div>
-
-        <button
-          onClick={() => {
-            if (isControlled) onToggleCollapse?.();
-            else setInternalCollapsed((c) => !c);
-          }}
-          className="flex size-8 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-zinc-700 transition hover:bg-slate-200 dark:border-zinc-700 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+      {/* Brand */}
+      <div
+        className={`flex h-16 shrink-0 items-center border-b border-border ${
+          collapsed ? "justify-center px-2" : "justify-between px-4"
+        }`}
+      >
+        <Link
+          href="/admin"
+          onClick={onNavigate}
+          className="flex min-w-0 items-center gap-3"
+          title="Adon ERP admin"
         >
-          {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
-        </button>
+          <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-xl ring-1 ring-border">
+            <Image
+              src="/icon-192.png"
+              alt=""
+              width={36}
+              height={36}
+              className="size-9 object-cover"
+              priority
+            />
+          </span>
+          {!collapsed && (
+            <span className="min-w-0 leading-tight">
+              <span className="block truncate text-sm font-bold text-foreground">
+                Adon ERP
+              </span>
+              <span className="block truncate text-xs text-muted-foreground">
+                Admin panel
+              </span>
+            </span>
+          )}
+        </Link>
+
+        {!collapsed && onToggleCollapse && (
+          <button
+            type="button"
+            onClick={onToggleCollapse}
+            aria-label="Collapse sidebar"
+            className="hidden size-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:flex"
+          >
+            <ChevronsLeft size={18} />
+          </button>
+        )}
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 overflow-y-auto p-3">
-        {navItems.map((item) => {
-          const active = isActive(item.href);
-          const Icon = item.icon;
-
-          return (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={handleNavigate}
-              title={isCollapsed ? item.name : undefined}
-              className={`flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition ${
-                active
-                  ? "bg-primary text-white shadow-sm"
-                  : "text-zinc-700 hover:bg-zinc-200 hover:text-primary dark:text-white/80 dark:hover:bg-zinc-700/50 dark:hover:text-primary"
-              }`}
-            >
-              <Icon size={20} className="shrink-0" />
-              {!isCollapsed && <span>{item.name}</span>}
-            </Link>
-          );
-        })}
+      <nav
+        aria-label="Admin"
+        className="flex-1 space-y-5 overflow-y-auto px-3 py-4"
+      >
+        {ADMIN_NAV.map((group) => (
+          <div key={group.label}>
+            {!collapsed ? (
+              <p className="mb-1.5 px-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/80">
+                {group.label}
+              </p>
+            ) : (
+              <div className="mx-3 mb-2 h-px bg-border" />
+            )}
+            <ul className="space-y-1">
+              {group.items.map((item) => {
+                const active = isAdminRouteActive(pathname, item.href);
+                const Icon = item.icon;
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={onNavigate}
+                      title={collapsed ? item.name : undefined}
+                      aria-current={active ? "page" : undefined}
+                      className={`relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                        collapsed ? "justify-center" : ""
+                      } ${
+                        active
+                          ? "bg-primary/10 text-primary"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                      }`}
+                    >
+                      {active && (
+                        <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-primary" />
+                      )}
+                      <Icon size={19} className="shrink-0" />
+                      {!collapsed && <span className="truncate">{item.name}</span>}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
       </nav>
 
       {/* Footer */}
-      <div className="border-t border-slate-200 p-4 dark:border-zinc-800">
-        <div className="flex items-center gap-3">
-          {!isCollapsed && (
-            <div className="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow">
-              <UserCog size={20} />
-            </div>
-          )}
-
-          {!isCollapsed && (
-            <div className="min-w-0 flex-1">
-              <p className="truncate font-medium text-zinc-900 dark:text-white">
-                Admin User
-              </p>
-              <p className="truncate text-sm text-zinc-500 dark:text-zinc-400">
-                admin@example.com
-              </p>
-            </div>
-          )}
-
+      <div className="shrink-0 border-t border-border p-3">
+        {collapsed && onToggleCollapse && (
           <button
-            onClick={async () => {
-              try {
-                await signOut({ callbackUrl: "/auth/signin" });
-              } catch {
-                router.push("/auth/signin");
-              }
-            }}
-            className="flex size-9 items-center justify-center rounded-full bg-slate-100 text-zinc-700 transition hover:bg-red-100 hover:text-red-600 dark:bg-zinc-800 dark:text-white dark:hover:bg-red-500/20 dark:hover:text-red-400"
+            type="button"
+            onClick={onToggleCollapse}
+            aria-label="Expand sidebar"
+            className="mb-2 hidden w-full items-center justify-center rounded-lg py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:flex"
           >
-            <LogOut size={18} />
+            <ChevronsRight size={18} />
+          </button>
+        )}
+        <div
+          className={`flex items-center gap-3 rounded-lg bg-muted/60 p-2.5 ${
+            collapsed ? "flex-col" : ""
+          }`}
+        >
+          {user?.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={user.image}
+              alt=""
+              className="size-9 shrink-0 rounded-lg object-cover"
+            />
+          ) : (
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-lg btn-gradient text-xs font-bold text-white">
+              {initials(user?.name)}
+            </span>
+          )}
+          {!collapsed && (
+            <div className="min-w-0 flex-1 leading-tight">
+              <p className="truncate text-sm font-semibold text-foreground">
+                {user?.name || "Admin"}
+              </p>
+              <p className="truncate text-xs capitalize text-muted-foreground">
+                {(user?.role || "admin").toLowerCase()}
+              </p>
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={handleSignOut}
+            disabled={signingOut}
+            aria-label="Sign out"
+            title="Sign out"
+            className="flex size-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive disabled:opacity-50"
+          >
+            <LogOut size={17} />
           </button>
         </div>
       </div>

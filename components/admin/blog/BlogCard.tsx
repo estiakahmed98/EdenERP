@@ -1,8 +1,43 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import {
+  CalendarDays,
+  ChevronLeft,
+  ChevronRight,
+  FileText,
+  LayoutGrid,
+  List,
+  Pencil,
+  Plus,
+  Search,
+  Trash2,
+  X,
+} from "lucide-react";
+import { toast } from "sonner";
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 import { processBlogSummary } from "./summaryUtils";
 
 const BlogForm = dynamic(() => import("./BlogForm"), { ssr: false });
@@ -18,23 +53,251 @@ interface Blog {
   updatedAt: string | Date;
 }
 
+type View = "grid" | "list";
+const PAGE_SIZE = 12;
+const VIEW_KEY = "admin-blog-view";
+
+const formatDate = (value: string | Date) =>
+  new Date(value).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+const initialsOf = (name: string) => {
+  const parts = (name || "?").trim().split(/\s+/);
+  return ((parts[0]?.[0] ?? "?") + (parts[1]?.[0] ?? "")).toUpperCase();
+};
+
+function Cover({ blog, className }: { blog: Blog; className?: string }) {
+  return blog.image ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={blog.image}
+      alt=""
+      loading="lazy"
+      className={cn("size-full object-cover", className)}
+    />
+  ) : (
+    <div
+      className={cn(
+        "flex size-full items-center justify-center bg-linear-to-br from-primary/15 to-secondary/20 text-primary/50",
+        className,
+      )}
+    >
+      <FileText className="size-10" aria-hidden="true" />
+    </div>
+  );
+}
+
+function Author({ blog, light }: { blog: Blog; light?: boolean }) {
+  return (
+    <span
+      className={cn(
+        "flex items-center gap-2 text-xs font-medium",
+        light ? "text-white/85" : "text-muted-foreground",
+      )}
+    >
+      <span
+        className={cn(
+          "flex size-6 items-center justify-center rounded-full text-[10px] font-bold",
+          light ? "bg-white/20 text-white" : "bg-primary/10 text-primary",
+        )}
+      >
+        {initialsOf(blog.author)}
+      </span>
+      <span className="truncate">{blog.author}</span>
+      <span aria-hidden="true">·</span>
+      <span className="inline-flex items-center gap-1 whitespace-nowrap">
+        <CalendarDays className="size-3" aria-hidden="true" />
+        {formatDate(blog.date)}
+      </span>
+    </span>
+  );
+}
+
+function Actions({
+  blog,
+  onDelete,
+  floating,
+}: {
+  blog: Blog;
+  onDelete: (blog: Blog) => void;
+  floating?: boolean;
+}) {
+  const base =
+    "flex size-9 items-center justify-center rounded-xl transition-colors";
+  const edit = floating
+    ? "bg-white/90 text-slate-800 shadow-md backdrop-blur hover:bg-white hover:text-primary"
+    : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary";
+  const del = floating
+    ? "bg-white/90 text-slate-800 shadow-md backdrop-blur hover:bg-destructive hover:text-white"
+    : "bg-muted text-muted-foreground hover:bg-destructive/10 hover:text-destructive";
+  return (
+    <div
+      className={cn(
+        "flex gap-1.5",
+        floating &&
+          "absolute right-3 top-3 z-10 translate-y-1 opacity-0 transition-all group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100",
+      )}
+    >
+      <Link
+        href={`/admin/blog/edit/${blog.id}`}
+        aria-label={`Edit ${blog.title}`}
+        title="Edit"
+        className={cn(base, edit)}
+      >
+        <Pencil className="size-4" />
+      </Link>
+      <button
+        type="button"
+        aria-label={`Delete ${blog.title}`}
+        title="Delete"
+        onClick={() => onDelete(blog)}
+        className={cn(base, del)}
+      >
+        <Trash2 className="size-4" />
+      </button>
+    </div>
+  );
+}
+
+/** Large hero card for the newest post. */
+function FeaturedCard({
+  blog,
+  onDelete,
+}: {
+  blog: Blog;
+  onDelete: (blog: Blog) => void;
+}) {
+  return (
+    <article className="group relative min-h-80 overflow-hidden rounded-3xl bg-secondary shadow-lg md:col-span-2">
+      <Cover
+        blog={blog}
+        className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-black/5" />
+      <Link
+        href={`/admin/blog/edit/${blog.id}`}
+        aria-label={`Edit ${blog.title}`}
+        className="absolute inset-0 z-0"
+      />
+      <Actions blog={blog} onDelete={onDelete} floating />
+      <div className="pointer-events-none relative z-0 flex h-full min-h-80 flex-col justify-end gap-3 p-6 md:p-8">
+        <span className="w-fit rounded-full bg-primary px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+          Latest
+        </span>
+        <h3 className="line-clamp-2 text-2xl font-bold leading-tight text-white md:text-3xl">
+          {blog.title}
+        </h3>
+        <p className="line-clamp-2 max-w-2xl text-sm text-white/75">
+          {processBlogSummary(blog.summary, 180)}
+        </p>
+        <Author blog={blog} light />
+      </div>
+    </article>
+  );
+}
+
+function PostCard({
+  blog,
+  onDelete,
+}: {
+  blog: Blog;
+  onDelete: (blog: Blog) => void;
+}) {
+  return (
+    <article className="group relative flex flex-col overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border transition-all hover:-translate-y-1 hover:shadow-xl">
+      <div className="relative aspect-16/10 overflow-hidden">
+        <Cover
+          blog={blog}
+          className="transition-transform duration-500 group-hover:scale-105"
+        />
+        <Actions blog={blog} onDelete={onDelete} floating />
+      </div>
+      <div className="flex flex-1 flex-col gap-2.5 p-5">
+        <Link
+          href={`/admin/blog/edit/${blog.id}`}
+          className="after:absolute after:inset-0 after:z-0"
+        >
+          <h3 className="line-clamp-2 text-base font-bold leading-snug text-foreground transition-colors group-hover:text-primary">
+            {blog.title}
+          </h3>
+        </Link>
+        <p className="line-clamp-2 flex-1 text-sm text-muted-foreground">
+          {processBlogSummary(blog.summary, 140)}
+        </p>
+        <div className="border-t border-border pt-3">
+          <Author blog={blog} />
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function PostRow({
+  blog,
+  onDelete,
+}: {
+  blog: Blog;
+  onDelete: (blog: Blog) => void;
+}) {
+  return (
+    <article className="group flex items-center gap-4 rounded-2xl bg-card p-3 shadow-sm ring-1 ring-border transition-all hover:shadow-md hover:ring-primary/30">
+      <Link
+        href={`/admin/blog/edit/${blog.id}`}
+        className="size-20 shrink-0 overflow-hidden rounded-xl sm:size-24"
+        aria-label={`Edit ${blog.title}`}
+      >
+        <Cover blog={blog} />
+      </Link>
+      <div className="min-w-0 flex-1 space-y-1.5">
+        <Link href={`/admin/blog/edit/${blog.id}`}>
+          <h3 className="truncate text-base font-bold text-foreground group-hover:text-primary">
+            {blog.title}
+          </h3>
+        </Link>
+        <p className="line-clamp-1 text-sm text-muted-foreground sm:line-clamp-2">
+          {processBlogSummary(blog.summary, 160)}
+        </p>
+        <Author blog={blog} />
+      </div>
+      <div className="shrink-0 pr-1">
+        <Actions blog={blog} onDelete={onDelete} />
+      </div>
+    </article>
+  );
+}
+
 export default function BlogCard() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+  const [view, setView] = useState<View>("grid");
+  const [toDelete, setToDelete] = useState<Blog | null>(null);
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem(VIEW_KEY);
+    if (saved === "grid" || saved === "list") setView(saved);
+  }, []);
+
+  const changeView = (next: View) => {
+    setView(next);
+    window.localStorage.setItem(VIEW_KEY, next);
+  };
 
   // Debounce search to reduce API calls
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDebouncedSearchTerm(searchTerm);
-      setPage(1); // Reset page when search changes
+      setDebouncedSearchTerm(searchTerm.trim());
+      setPage(1);
     }, 300);
-
     return () => clearTimeout(timer);
   }, [searchTerm]);
 
@@ -43,23 +306,15 @@ export default function BlogCard() {
       setLoading(true);
       const params = new URLSearchParams({
         page: page.toString(),
-        limit: "12",
+        limit: String(PAGE_SIZE),
         ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
       });
-
-      // Add cache busting for fresh data but allow caching for pagination
-      const cacheKey = debouncedSearchTerm ? "no-store" : "default";
       const response = await fetch(`/api/blog?${params}`, {
-        cache: cacheKey as RequestCache,
-        next: { revalidate: debouncedSearchTerm ? 0 : 60 }, // Cache for 60 seconds when not searching
+        cache: debouncedSearchTerm ? "no-store" : "default",
+        next: { revalidate: debouncedSearchTerm ? 0 : 60 },
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch blogs");
-      }
-
+      if (!response.ok) throw new Error("Failed to fetch blogs");
       const data = await response.json();
-
       if (data) {
         setBlogs(data.blogs || []);
         setTotalPages(data.pagination?.pages || 1);
@@ -67,487 +322,277 @@ export default function BlogCard() {
       }
     } catch (error) {
       console.error("Error fetching blogs:", error);
-      // Keep existing blogs on error to avoid empty state
+      toast.error("Blog posts could not be loaded.");
     } finally {
       setLoading(false);
     }
   }, [debouncedSearchTerm, page]);
 
-  // Optimized useEffect with proper dependencies
   useEffect(() => {
-    fetchBlogs();
+    void fetchBlogs();
   }, [fetchBlogs]);
 
-  const handleDelete = async (id: number) => {
-    if (!confirm("Are you sure you want to delete this blog?")) return;
-
+  async function confirmDelete() {
+    if (!toDelete) return;
+    setDeleting(true);
     try {
-      const response = await fetch(`/api/blog/${id}`, {
+      const response = await fetch(`/api/blog/${toDelete.id}`, {
         method: "DELETE",
       });
-
-      if (response.ok) {
-        fetchBlogs();
-      } else {
-        alert("Error deleting blog");
-      }
-    } catch (error) {
-      console.error("Error deleting blog:", error);
-      alert("Error deleting blog");
+      if (!response.ok) throw new Error("delete failed");
+      toast.success(`Deleted “${toDelete.title}”`);
+      setToDelete(null);
+      if (blogs.length === 1 && page > 1) setPage((p) => p - 1);
+      else void fetchBlogs();
+    } catch {
+      toast.error("The blog post could not be deleted.");
+    } finally {
+      setDeleting(false);
     }
-  };
-
-  if (loading) {
-    return (
-      <div className="space-y-6">
-        {/* Header Skeleton */}
-        <div className="bg-gradient-to-r from-gray-200 to-gray-300 rounded-2xl shadow-lg p-6 animate-pulse">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            <div>
-              <div className="h-8 bg-gray-300 rounded w-48 mb-2"></div>
-              <div className="h-4 bg-gray-300 rounded w-64"></div>
-            </div>
-            <div className="h-12 bg-gray-300 rounded-full w-40"></div>
-          </div>
-
-          {/* Search Bar Skeleton */}
-          <div className="mt-6">
-            <div className="relative max-w-md">
-              <div className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 bg-gray-300 rounded"></div>
-              <div className="h-12 bg-gray-300 rounded-xl w-full pl-10"></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Blog Grid Skeleton */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {Array.from({ length: 8 }, (_, i) => (
-            <div
-              key={i}
-              className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg overflow-hidden"
-            >
-              {/* Image Skeleton */}
-              <div className="relative h-48 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse"></div>
-              </div>
-
-              {/* Content Skeleton */}
-              <div className="p-5">
-                <div className="h-6 bg-gray-200 rounded w-3/4 mb-2 animate-pulse"></div>
-                <div className="space-y-2 mb-4">
-                  <div className="h-4 bg-gray-200 rounded w-full animate-pulse"></div>
-                  <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse"></div>
-                </div>
-
-                {/* Meta Information Skeleton */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-1">
-                    <div className="w-4 h-4 bg-gray-200 rounded animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 rounded w-16 animate-pulse"></div>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-4 h-4 bg-gray-200 rounded animate-pulse"></div>
-                    <div className="h-4 bg-gray-200 rounded w-20 animate-pulse"></div>
-                  </div>
-                </div>
-
-                {/* Actions Skeleton */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                  <div className="h-4 bg-gray-200 rounded w-12 animate-pulse"></div>
-                  <div className="h-4 bg-gray-200 rounded w-16 animate-pulse"></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Pagination Skeleton */}
-        <div className="bg-white/90 border border-gray-200 rounded-2xl shadow-lg p-6">
-          <div className="flex items-center justify-between">
-            <div className="h-10 bg-gray-200 rounded w-20 animate-pulse"></div>
-            <div className="flex items-center space-x-2">
-              {Array.from({ length: 5 }, (_, i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 bg-gray-200 rounded animate-pulse"
-                ></div>
-              ))}
-            </div>
-            <div className="h-10 bg-gray-200 rounded w-20 animate-pulse"></div>
-          </div>
-        </div>
-      </div>
-    );
   }
 
-  return (
-    <div className="space-y-6">
-      {/* Header Section */}
-      <div className="bg-gradient-to-r from-[#0E4B4B] to-[#086666] rounded-2xl shadow-lg p-6 border border-[#F4F8F7]/10">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#F4F8F7] mb-2">
-              Blog Management
-            </h1>
-            <p className="text-[#F4F8F7]/70 text-sm">
-              Create and manage your blog posts
-            </p>
-          </div>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="btn-gradient text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 border border-[#C0704D] hover:border-[#A85D3F] flex items-center space-x-2"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 4v16m8-8H4"
-              />
-            </svg>
-            <span>New Blog Post</span>
-          </button>
-        </div>
+  const showFeatured =
+    view === "grid" && page === 1 && !debouncedSearchTerm && blogs.length > 1;
+  const featured = showFeatured ? blogs[0] : undefined;
+  const rest = showFeatured ? blogs.slice(1) : blogs;
 
-        {/* Search Bar */}
-        <div className="mt-6">
-          <div className="relative max-w-md">
-            <svg
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#819A91] w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-            <input
-              type="text"
-              placeholder="Search blogs..."
-              value={searchTerm}
-              onChange={(e) => {
-                setSearchTerm(e.target.value);
-                setPage(1);
-              }}
-              className="w-full pl-10 pr-4 py-3 bg-[#EEEFE0] border border-[#D1D8BE] rounded-xl focus:ring-2 focus:ring-[#819A91] focus:border-[#819A91] text-[#0D1414] placeholder-[#2D4A3C]/50 transition-all duration-300"
-            />
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1).filter(
+    (n) => n === 1 || n === totalPages || Math.abs(n - page) <= 1,
+  );
+
+  return (
+    <div className="w-full space-y-6">
+      {/* Heading */}
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <div className="flex items-center gap-3">
+            <h2 className="text-3xl font-bold tracking-tight text-foreground">
+              Blog
+            </h2>
+            {!loading || totalCount > 0 ? (
+              <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-bold text-primary">
+                {totalCount} {totalCount === 1 ? "post" : "posts"}
+              </span>
+            ) : null}
           </div>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Write, publish and manage the stories on your website.
+          </p>
+        </div>
+        <Button size="lg" className="rounded-xl" onClick={() => setIsModalOpen(true)}>
+          <Plus /> New post
+        </Button>
+      </div>
+
+      {/* Toolbar */}
+      <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-card p-2.5 shadow-sm ring-1 ring-border">
+        <div className="relative min-w-52 flex-1">
+          <Search
+            className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+            aria-hidden="true"
+          />
+          <Input
+            type="search"
+            aria-label="Search blog posts"
+            placeholder="Search by title or author…"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="h-11 rounded-xl border-0 bg-muted/60 pl-10 shadow-none"
+          />
+        </div>
+        {searchTerm && (
+          <Button variant="ghost" onClick={() => setSearchTerm("")}>
+            <X /> Clear
+          </Button>
+        )}
+        <div
+          role="group"
+          aria-label="Layout"
+          className="flex rounded-xl bg-muted/60 p-1"
+        >
+          {(
+            [
+              ["grid", LayoutGrid, "Grid"],
+              ["list", List, "List"],
+            ] as const
+          ).map(([key, Icon, label]) => (
+            <button
+              key={key}
+              type="button"
+              aria-pressed={view === key}
+              aria-label={`${label} view`}
+              title={`${label} view`}
+              onClick={() => changeView(key)}
+              className={cn(
+                "flex size-9 items-center justify-center rounded-lg transition-colors",
+                view === key
+                  ? "bg-card text-primary shadow-sm"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              <Icon className="size-4" />
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Blog Grid */}
-      {blogs.length > 0 ? (
-        <>
-          {/* Results Summary */}
-          <div className="bg-white/90 backdrop-blur-sm border border-[#D1D8BE] rounded-2xl shadow-lg p-4">
-            <p className="text-sm text-[#2D4A3C]/70">
-              Showing {(page - 1) * 12 + 1} to {Math.min(page * 12, totalCount)}{" "}
-              of {totalCount} blogs
-              {debouncedSearchTerm && ` for "${debouncedSearchTerm}"`}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {blogs.map((blog) => (
-              <div
-                key={blog.id}
-                className="bg-white/90 backdrop-blur-sm border border-[#D1D8BE] rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden group relative"
-              >
-                {/* Clickable overlay that doesn't interfere with buttons */}
-                <Link
-                  href={`/admin/blog/edit/${blog.id}`}
-                  className="absolute inset-0 z-0"
-                  aria-label={`Edit ${blog.title}`}
-                />
-
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  {blog.image ? (
-                    <img
-                      src={blog.image}
-                      alt={blog.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-[#EEEFE0] to-[#D1D8BE] flex items-center justify-center">
-                      <svg
-                        className="w-12 h-12 text-[#819A91]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2m0-1h.01"
-                        />
-                      </svg>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0E4B4B]/10 to-[#086666]/10 opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                </div>
-
-                {/* Content */}
-                <div className="p-5">
-                  <h3 className="font-semibold text-[#0D1414] line-clamp-2 mb-2 group-hover:text-[#0E4B4B] transition-colors duration-300">
-                    {blog.title}
-                  </h3>
-                  <p className="text-[#2D4A3C]/70 text-sm line-clamp-2 mb-4 leading-relaxed">
-                    {processBlogSummary(blog.summary, 160)}
-                  </p>
-
-                  {/* Meta Information */}
-                  <div className="flex items-center justify-between text-sm text-[#2D4A3C]/50 mb-4">
-                    <span className="flex items-center space-x-1">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                        />
-                      </svg>
-                      <span>{blog.author}</span>
-                    </span>
-                    <span className="flex items-center space-x-1">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                      </svg>
-                      <span>
-                        {new Date(blog.date).toLocaleDateString("bn-BD")}
-                      </span>
-                    </span>
-                  </div>
-
-                  {/* Actions - Wrapped in a div with higher z-index to stay above the clickable overlay */}
-                  <div className="relative z-10 flex items-center justify-between pt-4 border-t border-[#D1D8BE]">
-                    <Link
-                      href={`/admin/blog/edit/${blog.id}`}
-                      className="flex items-center space-x-2 text-[#0E4B4B] hover:text-[#086666] font-medium text-sm transition-colors duration-300"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                        />
-                      </svg>
-                      <span>Edit</span>
-                    </Link>
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        handleDelete(blog.id);
-                      }}
-                      className="flex items-center space-x-2 text-[#C0704D] hover:text-[#A85D3F] font-medium text-sm transition-colors duration-300"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                        />
-                      </svg>
-                      <span>Delete</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
+      {/* Content */}
+      {loading && !blogs.length ? (
+        view === "grid" ? (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-72 rounded-3xl" />
             ))}
           </div>
+        ) : (
+          <div className="space-y-3">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Skeleton key={i} className="h-28 rounded-2xl" />
+            ))}
+          </div>
+        )
+      ) : blogs.length ? (
+        <>
+          {view === "grid" ? (
+            <div
+              className={cn(
+                "grid gap-6 md:grid-cols-2 lg:grid-cols-3",
+                loading && "opacity-60 transition-opacity",
+              )}
+            >
+              {featured && <FeaturedCard blog={featured} onDelete={setToDelete} />}
+              {rest.map((blog) => (
+                <PostCard key={blog.id} blog={blog} onDelete={setToDelete} />
+              ))}
+            </div>
+          ) : (
+            <div className={cn("space-y-3", loading && "opacity-60")}>
+              {blogs.map((blog) => (
+                <PostRow key={blog.id} blog={blog} onDelete={setToDelete} />
+              ))}
+            </div>
+          )}
+
+          {totalPages > 1 && (
+            <nav
+              aria-label="Pagination"
+              className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3 shadow-sm ring-1 ring-border"
+            >
+              <span className="pl-2 text-sm text-muted-foreground">
+                Page {page} of {totalPages}
+              </span>
+              <div className="flex items-center gap-1">
+                <Button
+                  variant="ghost"
+                  size="icon-sm"
+                  aria-label="Previous page"
+                  disabled={page <= 1 || loading}
+                  onClick={() => setPage((p) => p - 1)}
+                >
+                  <ChevronLeft />
+                </Button>
+                {pageNumbers.map((n, i) => (
+                  <span key={n} className="flex items-center">
+                    {i > 0 && n - pageNumbers[i - 1] > 1 && (
+                      <span className="px-1 text-muted-foreground">…</span>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setPage(n)}
+                      aria-current={n === page ? "page" : undefined}
+                      className={cn(
+                        "size-8 rounded-lg text-sm font-semibold transition-colors",
+                        n === page
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:bg-muted",
+                      )}
+                    >
+                      {n}
+                    </button>
+                  </span>
+                ))}
+                <Button
+                  variant="ghost"
+                  size="icon-sm"
+                  aria-label="Next page"
+                  disabled={page >= totalPages || loading}
+                  onClick={() => setPage((p) => p + 1)}
+                >
+                  <ChevronRight />
+                </Button>
+              </div>
+            </nav>
+          )}
         </>
       ) : (
-        <div className="bg-white/90 backdrop-blur-sm border border-[#D1D8BE] rounded-2xl shadow-lg p-12 text-center">
-          <div className="w-20 h-20 bg-[#EEEFE0] rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg
-              className="w-10 h-10 text-[#819A91]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
+        <div className="flex flex-col items-center gap-4 rounded-3xl bg-card px-6 py-20 text-center shadow-sm ring-1 ring-border">
+          <span className="flex size-20 items-center justify-center rounded-3xl bg-linear-to-br from-primary/15 to-secondary/20 text-primary">
+            <FileText className="size-9" />
+          </span>
+          <div>
+            <p className="text-lg font-bold text-foreground">
+              {debouncedSearchTerm ? "No posts match your search" : "No posts yet"}
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {debouncedSearchTerm
+                ? "Try a different title or author."
+                : "Write your first post and it will show up here."}
+            </p>
           </div>
-          <h3 className="text-xl font-semibold text-[#0D1414] mb-2">
-            No blogs found
-          </h3>
-          <p className="text-[#2D4A3C]/70 mb-6">
-            Get started by creating your first blog post
-          </p>
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="btn-gradient text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 border border-[#C0704D] hover:border-[#A85D3F]"
-          >
-            Create Blog Post
-          </button>
+          {!debouncedSearchTerm && (
+            <Button size="lg" className="rounded-xl" onClick={() => setIsModalOpen(true)}>
+              <Plus /> Write the first post
+            </Button>
+          )}
         </div>
       )}
 
-      {/* Pagination */}
-      {totalPages > 1 && (
-        <div className="bg-white/90 backdrop-blur-sm border border-[#D1D8BE] rounded-2xl shadow-lg p-6">
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => setPage(page - 1)}
-              disabled={page === 1}
-              className="flex items-center space-x-2 px-4 py-2 border border-[#D1D8BE] rounded-xl text-[#0D1414] hover:bg-[#EEEFE0] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-              <span>Previous</span>
-            </button>
+      {/* New post */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-h-[92vh] w-[95vw] max-w-6xl overflow-y-auto p-2 sm:max-w-6xl sm:p-4">
+          <DialogTitle className="sr-only">New blog post</DialogTitle>
+          <DialogDescription className="sr-only">
+            Fill in the details to publish a new blog post.
+          </DialogDescription>
+          <BlogForm
+            onSuccess={() => {
+              setIsModalOpen(false);
+              toast.success("Blog post published");
+              void fetchBlogs();
+            }}
+          />
+        </DialogContent>
+      </Dialog>
 
-            {/* Smart pagination - show limited page numbers */}
-            <div className="flex items-center space-x-2">
-              {/* First page */}
-              {page > 3 && (
-                <>
-                  <button
-                    onClick={() => setPage(1)}
-                    className="w-10 h-10 rounded-xl font-medium transition-all duration-300 text-[#2D4A3C] hover:bg-[#EEEFE0]"
-                  >
-                    1
-                  </button>
-                  {page > 4 && <span className="text-[#2D4A3C]/50">...</span>}
-                </>
-              )}
-
-              {/* Page range around current page */}
-              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                let pageNum;
-                if (totalPages <= 5) {
-                  pageNum = i + 1;
-                } else if (page <= 3) {
-                  pageNum = i + 1;
-                } else if (page >= totalPages - 2) {
-                  pageNum = totalPages - 4 + i;
-                } else {
-                  pageNum = page - 2 + i;
-                }
-
-                return pageNum <= totalPages ? (
-                  <button
-                    key={pageNum}
-                    onClick={() => setPage(pageNum)}
-                    className={`w-10 h-10 rounded-xl font-medium transition-all duration-300 ${
-                      page === pageNum
-                        ? "bg-gradient-to-r from-[#0E4B4B] to-[#086666] text-white shadow-lg"
-                        : "text-[#2D4A3C] hover:bg-[#EEEFE0]"
-                    }`}
-                  >
-                    {pageNum}
-                  </button>
-                ) : null;
-              })}
-
-              {/* Last page */}
-              {page < totalPages - 2 && (
-                <>
-                  {page < totalPages - 3 && (
-                    <span className="text-[#2D4A3C]/50">...</span>
-                  )}
-                  <button
-                    onClick={() => setPage(totalPages)}
-                    className="w-10 h-10 rounded-xl font-medium transition-all duration-300 text-[#2D4A3C] hover:bg-[#EEEFE0]"
-                  >
-                    {totalPages}
-                  </button>
-                </>
-              )}
-            </div>
-
-            <button
-              onClick={() => setPage(page + 1)}
-              disabled={page === totalPages}
-              className="flex items-center space-x-2 px-4 py-2 border border-[#D1D8BE] rounded-xl text-[#0D1414] hover:bg-[#EEEFE0] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
-            >
-              <span>Next</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* Blog Form Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 ">
-          <div className="overflow-y-auto h-[80vh] w-[80vw]">
-            <BlogForm
-              onSuccess={() => {
-                setIsModalOpen(false);
-                fetchBlogs();
+      {/* Delete confirmation */}
+      <AlertDialog
+        open={toDelete !== null}
+        onOpenChange={(open) => !open && !deleting && setToDelete(null)}
+      >
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete this post?</AlertDialogTitle>
+            <AlertDialogDescription>
+              {toDelete
+                ? `“${toDelete.title}” will be permanently removed from the website. This can't be undone.`
+                : ""}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deleting}>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              disabled={deleting}
+              onClick={(event) => {
+                event.preventDefault();
+                void confirmDelete();
               }}
-            />
-          </div>
-        </div>
-      )}
+              className="bg-destructive text-white hover:bg-destructive/90"
+            >
+              {deleting ? "Deleting…" : "Delete"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }

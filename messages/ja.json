@@ -46,6 +46,9 @@
                 "pricing": "料金",
                 "help": "ヘルプ",
                 "signIn": "サインイン",
+                "signOut": "ログアウト",
+                "dashboard": "ダッシュボード",
+                "account": "マイアカウント",
                 "tryFree": "無料で試す"
             },
             "menu": {

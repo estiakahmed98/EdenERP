@@ -49,13 +49,13 @@ export default function RecentBlogs() {
 
   if (loading) {
     return (
-      <div className="rounded-2xl border border-[#be923c]/20 bg-white/80 backdrop-blur-sm shadow-sm overflow-hidden">
+      <div className="rounded-2xl border border-border bg-card backdrop-blur-sm shadow-sm overflow-hidden">
         {/* Header */}
-        <div className="flex items-center gap-3 px-6 py-5 border-b border-[#be923c]/20 bg-[#003535]/95">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#be923c]/15">
-            <BookOpen className="h-5 w-5 text-[#be923c]" />
+        <div className="flex items-center gap-3 px-6 py-5 border-b border-white/10 bg-gradient-to-r from-primary to-secondary">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-card/15">
+            <BookOpen className="h-5 w-5 text-white" />
           </div>
-          <h3 className="text-base font-semibold tracking-wide text-[#be923c]">
+          <h3 className="text-base font-semibold tracking-wide text-white">
             Recent Articles
           </h3>
         </div>
@@ -75,13 +75,13 @@ export default function RecentBlogs() {
   }
 
   return (
-    <div className="rounded-2xl border border-[#be923c]/20 bg-white/80 backdrop-blur-sm shadow-sm overflow-hidden">
+    <div className="rounded-2xl border border-border bg-card backdrop-blur-sm shadow-sm overflow-hidden">
       {/* Header */}
       <div className="p-5 border-b bg-muted/40 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#be923c]/15">
-          <BookOpen className="h-5 w-5 text-[#be923c]" />
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+          <BookOpen className="h-5 w-5 text-primary" />
         </div>
-        <h3 className="text-lg font-semibold text-[#be923c]">
+        <h3 className="text-lg font-semibold text-primary">
           Recent Articles
         </h3>
       </div>

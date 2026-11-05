@@ -7,9 +7,10 @@ import LanguageSwitcher from "@/components/language-switcher";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { Link, usePathname } from "@/i18n/navigation";
 import { appsMegaMenu, type MegaMenuColumn } from "@/lib/apps-menu";
-import NextLink from "next/link";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
+
+import { MobileUserMenu, UserMenu } from "@/components/user-menu";
 
 type MenuId = "apps" | "industries" | "community";
 
@@ -533,14 +534,7 @@ export default function Header({
             <ThemeSwitcher variant="desktop" />
 
             {session?.user ? (
-              <div className="flex items-center gap-3 rounded-xl btn-gradient text-white">
-                <NextLink
-                  href="/admin"
-                  className="rounded-xl px-4 py-2 text-sm font-semibold text-white transition-colors"
-                >
-                  {session.user.name ?? session.user.email}
-                </NextLink>
-              </div>
+              <UserMenu user={session.user} />
             ) : (
               <div className="flex items-center gap-3 rounded-xl btn-gradient text-white">
                 <Link
@@ -774,13 +768,10 @@ export default function Header({
             <LanguageSwitcher variant="mobile" />
 
             {session?.user ? (
-              <NextLink
-                href="/admin"
-                className="block w-full rounded-2xl border border-border bg-card px-5 py-4 text-center text-base font-bold text-foreground"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {session.user.name ?? session.user.email}
-              </NextLink>
+              <MobileUserMenu
+                user={session.user}
+                onNavigate={() => setMobileMenuOpen(false)}
+              />
             ) : (
               <Link
                 href="/auth/signin"
