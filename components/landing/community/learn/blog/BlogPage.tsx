@@ -60,6 +60,12 @@ export default function BlogPage() {
                         src={post.image}
                         alt={post.title}
                         fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        // Admin-uploaded images may live on any host: only optimize local + Unsplash.
+                        unoptimized={
+                          /^https?:\/\//.test(post.image) &&
+                          !post.image.startsWith("https://images.unsplash.com/")
+                        }
                         className="object-cover transition duration-500 group-hover:scale-105"
                       />
                     </div>
