@@ -1,25 +1,12 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  ApparelIndustryPage,
+  apparelMetadata,
+} from "@/components/industries/apparel/page";
 
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("layout.header.modules.industries");
-
-  return {
-    title: t("links.accessories"),
-    alternates: await getLocaleAlternates("/industries/accessories"),
-  };
+export function generateMetadata() {
+  return apparelMetadata("accessories");
 }
 
 export default function IndustriesAccessoriesPage() {
-  return (
-    <ComingSoonPage
-      moduleKey="industries"
-      linkKey="accessories"
-      backHref="/industries"
-      backKey="backIndustries"
-    />
-  );
+  return <ApparelIndustryPage slug="accessories" />;
 }
