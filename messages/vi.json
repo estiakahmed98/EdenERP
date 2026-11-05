@@ -207,7 +207,7 @@
     "accountingShowcase": {
       "bills": {
         "meta": {
-          "title": "Hóa đơn mua hàng (AP): Hóa đơn nhà cung cấp, GTGT và thanh toán bằng taka | Adon ERP",
+          "title": "Hóa đơn mua hàng (AP): Hóa đơn nhà cung cấp, GTGT và thanh toán bằng taka",
           "description": "Ghi hóa đơn nhà cung cấp với thuế GTGT trên từng dòng, xem bạn nợ mỗi nhà cung cấp bao nhiêu và khi nào đến hạn, theo dõi thanh toán một phần và toàn bộ. Xây dựng cho doanh nghiệp tại Bangladesh.",
           "keywords": [
             "phần mềm hóa đơn nhà cung cấp Bangladesh",
@@ -436,7 +436,7 @@
       },
       "purchaseOrders": {
         "meta": {
-          "title": "Đơn mua hàng: Thỏa thuận giá và số lượng trước khi hàng đến | Adon ERP",
+          "title": "Đơn mua hàng: Thỏa thuận giá và số lượng trước khi hàng đến",
           "description": "Lập đơn mua hàng, duyệt, ghi nhận hàng đã nhận, và chuyển đơn thành hóa đơn nhà cung cấp chỉ với một cú nhấp. Xây dựng cho doanh nghiệp tại Bangladesh.",
           "keywords": [
             "phần mềm đơn mua hàng Bangladesh",
@@ -756,7 +756,7 @@
       },
       "ledgers": {
         "meta": {
-          "title": "Sổ cái: Tách riêng từng dòng bút toán | Adon ERP",
+          "title": "Sổ cái: Tách riêng từng dòng bút toán",
           "description": "Tạo sổ cái riêng cho bán hàng, lương, tài sản hoặc dự án, xem mỗi sổ có bao nhiêu bút toán nhật ký và giữ sổ sách dễ đọc. Xây dựng cho doanh nghiệp tại Bangladesh.",
           "keywords": [
             "phần mềm sổ cái Bangladesh",
@@ -895,7 +895,7 @@
       },
       "invoices": {
         "meta": {
-          "title": "Hóa đơn bán hàng (AR): Hóa đơn GTGT và Mushak-6.3 bằng taka | Adon ERP",
+          "title": "Hóa đơn bán hàng (AR): Hóa đơn GTGT và Mushak-6.3 bằng taka",
           "description": "Lập hóa đơn khách hàng với thuế GTGT trên từng dòng, in hóa đơn thương mại hoặc Mushak-6.3 song ngữ, và xem mỗi bên mua còn nợ bao nhiêu. Xây dựng cho doanh nghiệp tại Bangladesh.",
           "keywords": [
             "phần mềm hóa đơn Bangladesh",
@@ -1126,7 +1126,7 @@
       },
       "journal": {
         "meta": {
-          "title": "Bút toán nhật ký bằng taka, tự cân khi bạn gõ | Adon ERP",
+          "title": "Bút toán nhật ký bằng taka, tự cân khi bạn gõ",
           "description": "Ghi khấu hao, trích trước lương, dự phòng và điều chỉnh thành bút toán kép. Tổng nợ và tổng có tự kiểm tra, và mỗi bút toán đều được đánh số và tìm kiếm được.",
           "keywords": [
             "phần mềm bút toán nhật ký Bangladesh",
@@ -1413,7 +1413,7 @@
       },
       "hub": {
         "meta": {
-          "title": "Trung tâm Kế toán: Bảng điều khiển kế toán trực tiếp cho doanh nghiệp Bangladesh | Adon ERP",
+          "title": "Trung tâm Kế toán: Bảng điều khiển kế toán trực tiếp cho doanh nghiệp Bangladesh",
           "description": "Xem doanh thu, thu nhập ròng, phải thu, phải trả và tổng tài sản trên một màn hình trực tiếp, bằng taka, lakh và crore. Trung tâm Kế toán của Adon ERP, xây dựng cho doanh nghiệp tại Bangladesh.",
           "keywords": [
             "bảng điều khiển kế toán Bangladesh",
@@ -1849,7 +1849,7 @@
     },
     "accounting": {
       "metadata": {
-        "title": "Kế toán | Adon ERP",
+        "title": "Kế toán",
         "description": "Nền tảng kế toán ứng dụng AI cho mọi hoạt động tài chính — từ đối soát và chi phí đến khai thuế và báo cáo theo thời gian thực."
       },
       "hero": {
@@ -2384,7 +2384,7 @@
     },
     "apps": {
       "metadata": {
-        "title": "Ứng dụng | Adon ERP",
+        "title": "Ứng dụng",
         "description": "Khám phá các ứng dụng hàng đầu, công cụ mới phát hành và tiện ích doanh nghiệp phổ biến cho Adon ERP."
       },
       "filterBar": {
@@ -3173,7 +3173,7 @@
     },
     "blog": {
       "metadata": {
-        "title": "Nền tảng Blog thông minh & Tiếp thị nội dung | Adon ERP",
+        "title": "Nền tảng Blog thông minh & Tiếp thị nội dung",
         "description": "Tạo bài blog đẹp mắt, kết nối với khán giả, cải thiện SEO và biến kiến thức của bạn thành một kênh tăng trưởng mạnh mẽ cho doanh nghiệp."
       },
       "hero": {
@@ -3564,7 +3564,7 @@
     },
     "Checkout": {
       "metadata": {
-        "title": "Thanh toán | Adon ERP",
+        "title": "Thanh toán",
         "description": "Hoàn tất mua hàng an toàn. Cung cấp thông tin thanh toán và giao hàng."
       },
       "checkoutPage": {
@@ -4531,7 +4531,7 @@
         "hero": {
           "eyebrow": "Đối tác đáng tin cậy",
           "title": "Đối tác triển khai",
-          "description": "Kết nối với các chuyên gia được chứng nhận, những người mang giải pháp Eden ERP đến doanh nghiệp và cơ quan chính phủ trong khu vực.",
+          "description": "Kết nối với các chuyên gia được chứng nhận, những người mang giải pháp  Adon ERP đến doanh nghiệp và cơ quan chính phủ trong khu vực.",
           "cta": "Tìm đối tác phù hợp nhất"
         },
         "filters": {
@@ -4560,7 +4560,7 @@
         },
         "banner": {
           "title": "Được các tổ chức hàng đầu tin dùng",
-          "description": "Tham gia cùng hơn 15 triệu người dùng tin cậy Eden ERP và các đối tác được chứng nhận của chúng tôi cho chuyển đổi số thành công."
+          "description": "Tham gia cùng hơn 15 triệu người dùng tin cậy  Adon ERP và các đối tác được chứng nhận của chúng tôi cho chuyển đổi số thành công."
         },
         "partners": [
           {
@@ -6088,7 +6088,7 @@
       },
       "metadata": {
         "root": {
-          "title": "Cộng đồng | Adon ERP",
+          "title": "Cộng đồng",
           "description": "Khám phá các lộ trình học tập, dịch vụ, cộng tác và truy cập phần mềm trong cộng đồng Adon ERP."
         },
         "collaborate": {
@@ -6152,7 +6152,7 @@
           "description": "Đọc các câu chuyện và kết quả đã xác minh từ doanh nghiệp sử dụng Adon ERP."
         },
         "getServicesSupport": {
-          "title": "Hỗ trợ | Adon ERP",
+          "title": "Hỗ trợ",
           "description": "Nhận hỗ trợ từ đội ngũ chuyên gia và nhanh chóng liên hệ đúng đầu mối Adon ERP."
         },
         "getServicesFindAccountant": {
@@ -6409,7 +6409,7 @@
     },
     "contact": {
       "metadata": {
-        "title": "Liên hệ | Adon ERP",
+        "title": "Liên hệ",
         "description": "Liên hệ đội ngũ Adon ERP cho các yêu cầu về bán hàng, hỗ trợ hoặc triển khai."
       },
       "hero": {
@@ -6497,7 +6497,7 @@
     },
     "crm": {
       "metadata": {
-        "title": "CRM | Adon ERP",
+        "title": "CRM",
         "description": "Adon ERP CRM giúp đội ngũ thu thập khách hàng tiềm năng, quản lý pipeline, tự động hóa theo dõi và biến mọi cơ hội thành doanh thu."
       },
       "hero": {
@@ -7470,7 +7470,7 @@
     },
     "ecommerce": {
       "metadata": {
-        "title": "Thương mại điện tử | Adon ERP",
+        "title": "Thương mại điện tử",
         "description": "Bán mọi thứ, ở mọi nơi, với tất cả được kết nối trong một ứng dụng. Tạo cửa hàng, quản lý sản phẩm, nhận đơn và phát triển thương hiệu thật đẹp mắt."
       },
       "hero": {
@@ -7713,7 +7713,7 @@
     },
     "elearning": {
       "metadata": {
-        "title": "eLearning | Adon ERP",
+        "title": "eLearning",
         "description": "Tạo khóa học trực tuyến, xuất bản bài học, theo dõi tiến độ, đo lường kết quả và giúp học viên đạt thành công với một nền tảng học tập đẹp mắt."
       },
       "hero": {
@@ -7916,7 +7916,7 @@
     },
     "eSign": {
       "metadata": {
-        "title": "eSign | Adon ERP",
+        "title": "eSign",
         "description": "Gửi, ký và quản lý thỏa thuận kinh doanh trong Adon ERP với quy trình an toàn, lời nhắc, dấu vết kiểm toán và phê duyệt một chạm."
       },
       "hero": {
@@ -9038,7 +9038,7 @@
     },
     "forum": {
       "metadata": {
-        "title": "Diễn đàn cộng đồng | Adon ERP",
+        "title": "Diễn đàn cộng đồng",
         "description": "Tạo cộng đồng, thúc đẩy cộng tác, cải thiện hỗ trợ và cung cấp nơi đơn giản để người dùng hỏi, trả lời, bình chọn và chia sẻ kiến thức."
       },
       "hero": {
@@ -10458,7 +10458,7 @@
     },
     "help": {
       "metadata": {
-        "title": "Trợ giúp | Adon ERP",
+        "title": "Trợ giúp",
         "description": "Nhận hỗ trợ và tìm câu trả lời cho câu hỏi của bạn."
       },
       "hero": {
@@ -10557,7 +10557,7 @@
     },
     "home": {
       "metadata": {
-        "title": "Trang chủ | Adon ERP",
+        "title": "Trang chủ",
         "description": "Quản lý đăng ký, kế toán, vận hành đội ngũ và tăng trưởng doanh nghiệp từ một nền tảng ERP kết nối."
       },
       "hero": {
@@ -11987,7 +11987,7 @@
     },
     "live-chat": {
       "metadata": {
-        "title": "Live Chat | Adon ERP",
+        "title": "Live Chat",
         "description": "Biến khách truy cập thành khách hàng tiềm năng, khách hàng thực sự và người hâm mộ trung thành. Trả lời câu hỏi, giải quyết vấn đề và xây dựng mối quan hệ tốt hơn từ một không gian trò chuyện đơn giản."
       },
       "hero": {
@@ -14363,7 +14363,7 @@
     },
     "pos-retail": {
       "metadata": {
-        "title": "POS Bán lẻ | Adon ERP",
+        "title": "POS Bán lẻ",
         "description": "Adon ERP POS giúp đội ngũ bán hàng nhanh hơn, quản lý tồn kho, thưởng khách hàng trung thành và đồng bộ mọi giao dịch với kế toán."
       },
       "hero": {
@@ -14560,7 +14560,7 @@
     },
     "pricing": {
       "metadata": {
-        "title": "Bảng giá | Adon ERP",
+        "title": "Bảng giá",
         "description": "Các gói giá đơn giản, minh bạch và linh hoạt cho Adon ERP. Chọn gói phù hợp với quy mô và nhu cầu doanh nghiệp của bạn."
       },
       "hero": {
@@ -14985,7 +14985,7 @@
     },
     "procurement": {
       "metadata": {
-        "title": "Mua sắm & Quản lý đấu thầu | Adon ERP",
+        "title": "Mua sắm & Quản lý đấu thầu",
         "description": "Vận hành đề nghị mua hàng, bảng so sánh, phân bổ chi phí nhập hàng và quản lý đấu thầu trong một quy trình mua sắm kết nối."
       },
       "header": {
@@ -15800,7 +15800,7 @@
     },
     "quality": {
       "metadata": {
-        "title": "Kiểm soát chất lượng | Adon ERP",
+        "title": "Kiểm soát chất lượng",
         "description": "Giải pháp kiểm soát chất lượng nâng cao - dễ dàng phát hiện lỗi, quản lý kiểm tra và duy trì sản xuất liên tục."
       },
       "header": {
@@ -16532,7 +16532,7 @@
     },
     "rental": {
       "metadata": {
-        "title": "Quản lý cho thuê | Adon ERP",
+        "title": "Quản lý cho thuê",
         "description": "Adon Rental kết hợp tồn kho, thương mại điện tử, bán hàng, kế toán và chữ ký trong một ứng dụng. Sắp xếp tốt hơn, giảm công việc thủ công và tăng tốc mọi quy trình cho thuê."
       },
       "hero": {
@@ -16720,7 +16720,7 @@
     },
     "restaurant-pos": {
       "metadata": {
-        "title": "POS Nhà hàng | Adon ERP",
+        "title": "POS Nhà hàng",
         "description": "Adon ERP Restaurant POS kết nối bàn, đơn hàng, bếp, thanh toán, tồn kho và kế toán trong một quy trình liền mạch."
       },
       "hero": {
@@ -17111,7 +17111,7 @@
     },
     "sales-quotation": {
       "metadata": {
-        "title": "Báo giá Bán hàng | Adon ERP",
+        "title": "Báo giá Bán hàng",
         "description": "Adon ERP Sales giúp đội ngũ tạo báo giá chuyên nghiệp, quản lý giá, chốt giao dịch nhanh hơn và chuyển cơ hội thành đơn hàng."
       },
       "hero": {
@@ -17608,7 +17608,7 @@
     },
     "subscriptions": {
       "metadata": {
-        "title": "Thuê bao | Adon ERP",
+        "title": "Thuê bao",
         "description": "Từ báo giá thuê bao và gia hạn đến lập hóa đơn tự động và quy trình giữ chân, Adon ERP giúp doanh thu định kỳ dễ dự đoán."
       },
       "hero": {
@@ -17826,7 +17826,7 @@
     },
     "support": {
       "metadata": {
-        "title": "Hỗ trợ | Adon ERP",
+        "title": "Hỗ trợ",
         "description": "Nhận hỗ trợ từ đội ngũ chuyên gia và nhanh chóng liên hệ đúng đầu mối Adon ERP."
       },
       "hero": {
@@ -19287,7 +19287,7 @@
     },
     "website-builder": {
       "metadata": {
-        "title": "Trình dựng Website | Adon ERP",
+        "title": "Trình dựng Website",
         "description": "Xây dựng nhiều hơn một website. Xây dựng cả doanh nghiệp. Thiết kế trang đẹp, bán sản phẩm, quản lý khách hàng và phát triển từ một ứng dụng tích hợp."
       },
       "hero": {

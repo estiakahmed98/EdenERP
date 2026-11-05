@@ -11,7 +11,7 @@ import { css } from "./ui";
 
 export async function posMetadata(slug: PosSlug): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | Point of Sale | EdenERP`,
+    title: `${pages[slug].title} | Point of Sale`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(`/apps/pos/${slug}`),
   };
@@ -22,7 +22,7 @@ export function PosPage({ slug }: { slug: PosSlug }) {
     <main lang="en" dir="ltr" className={css.pos} data-pos-page={slug}>
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/"> Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/apps/pos/register-till">Point of Sale</Link>
           <ChevronRight size={11} aria-hidden="true" />

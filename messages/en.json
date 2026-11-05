@@ -647,7 +647,7 @@
     "accountingShowcase": {
       "bills": {
         "meta": {
-          "title": "Bills (AP): Supplier Bills, VAT and Payments in Taka | Adon ERP",
+          "title": "Bills (AP): Supplier Bills, VAT and Payments in Taka",
           "description": "Record supplier bills with VAT on every line, see what you owe each vendor and when it falls due, and track part and full payments. Built for companies in Bangladesh.",
           "keywords": [
             "supplier bill software Bangladesh",
@@ -876,7 +876,7 @@
       },
       "purchaseOrders": {
         "meta": {
-          "title": "Purchase Orders: Agree Price and Quantity Before Goods Arrive | Adon ERP",
+          "title": "Purchase Orders: Agree Price and Quantity Before Goods Arrive",
           "description": "Raise purchase orders, approve them, record what arrives, and turn an order into a supplier bill with one click. Built for companies in Bangladesh.",
           "keywords": [
             "purchase order software Bangladesh",
@@ -1105,7 +1105,7 @@
       },
       "itemsProducts": {
         "meta": {
-          "title": "Items & Products: One Clean Item List for Sales, Purchases and Stock | Adon ERP",
+          "title": "Items & Products: One Clean Item List for Sales, Purchases and Stock",
           "description": "Keep products, services, raw materials and consumables in one list with SKU, unit, cost, reorder levels and account mappings. Built for companies in Bangladesh.",
           "keywords": [
             "item master software Bangladesh",
@@ -1336,7 +1336,7 @@
       },
       "customers": {
         "meta": {
-          "title": "Customers: One List That Invoices, Receipts and Challans Share | Adon ERP",
+          "title": "Customers: One List That Invoices, Receipts and Challans Share",
           "description": "Keep every customer once, with a name and reference ID, and pick them on invoices, receipts and delivery challans. Built for companies in Bangladesh.",
           "keywords": [
             "customer list accounting software",
@@ -1527,7 +1527,7 @@
       },
       "vendors": {
         "meta": {
-          "title": "Vendors: One Supplier List for Orders, Bills and Payments | Adon ERP",
+          "title": "Vendors: One Supplier List for Orders, Bills and Payments",
           "description": "Keep every supplier once and pick them on purchase orders and bills. Built for companies in Bangladesh.",
           "keywords": [
             "vendor management software Bangladesh",
@@ -1718,7 +1718,7 @@
       },
       "bankAccounts": {
         "meta": {
-          "title": "Bank Accounts: Tell the Books Where the Money Sits | Adon ERP",
+          "title": "Bank Accounts: Tell the Books Where the Money Sits",
           "description": "Add your company’s bank accounts, link each to a cash account, and see them masked and active in one list. Built for companies in Bangladesh.",
           "keywords": [
             "bank account setup accounting software",
@@ -1920,7 +1920,7 @@
       },
       "receipts": {
         "meta": {
-          "title": "Receipts: Record Money In and Out With a Numbered Trail | Adon ERP",
+          "title": "Receipts: Record Money In and Out With a Numbered Trail",
           "description": "Create sales and expense receipts with a number, a customer, an amount and the right accounts, and void a mistake without deleting it. Built for companies in Bangladesh.",
           "keywords": [
             "receipt voucher software Bangladesh",
@@ -2140,7 +2140,7 @@
       },
       "deliveryChallans": {
         "meta": {
-          "title": "Delivery Challans: Print a Numbered Challan for Every Load | Adon ERP",
+          "title": "Delivery Challans: Print a Numbered Challan for Every Load",
           "description": "Create and print numbered delivery challans with customer, reference, vehicle and item lines in one step. Built for companies in Bangladesh.",
           "keywords": [
             "delivery challan software Bangladesh",
@@ -2354,7 +2354,7 @@
       },
       "pettyCash": {
         "meta": {
-          "title": "Petty Cash Vouchers: Record Small Cash Spends With a Signed Voucher | Adon ERP",
+          "title": "Petty Cash Vouchers: Record Small Cash Spends With a Signed Voucher",
           "description": "Create numbered petty cash and conveyance vouchers with payee, expense lines and a total, then void, print or tag them to a project. Built for companies in Bangladesh.",
           "keywords": [
             "petty cash software Bangladesh",
@@ -2578,7 +2578,7 @@
       },
       "chequeRegister": {
         "meta": {
-          "title": "Cheque Register: Know Which Cheques Are Issued, Cleared or Bounced | Adon ERP",
+          "title": "Cheque Register: Know Which Cheques Are Issued, Cleared or Bounced",
           "description": "Record every cheque with number, date, payee and bank, and mark it cleared or bounced when the bank tells you. Built for companies in Bangladesh.",
           "keywords": [
             "cheque register software Bangladesh",
@@ -2799,7 +2799,7 @@
       },
       "closingFy": {
         "meta": {
-          "title": "Closing & Financial Year: Close the Books Once a Year | Adon ERP",
+          "title": "Closing & Financial Year: Close the Books Once a Year",
           "description": "Close the financial year with a closing entry that zeroes income and expense into retained earnings, and keep the record of it. Built for companies in Bangladesh.",
           "keywords": [
             "year end closing software Bangladesh",
@@ -2988,7 +2988,7 @@
       },
       "financialReports": {
         "meta": {
-          "title": "Financial Reports: Trial Balance, Balance Sheet and More | Adon ERP",
+          "title": "Financial Reports: Trial Balance, Balance Sheet and More",
           "description": "Eleven reports from the same books: trial balance, balance sheet, income statement, cash flow, account ledger, AR and AP by party, and product reports. Built for companies in Bangladesh.",
           "keywords": [
             "financial reports software Bangladesh",
@@ -3202,7 +3202,7 @@
       },
       "vatRegister": {
         "meta": {
-          "title": "VAT Register: VAT Charged and VAT Paid, Ready for the Monthly Return | Adon ERP",
+          "title": "VAT Register: VAT Charged and VAT Paid, Ready for the Monthly Return",
           "description": "See output VAT from sales and input VAT from purchases in one register, with monthly totals for the VAT return. Built for companies in Bangladesh.",
           "keywords": [
             "VAT register software Bangladesh",
@@ -3410,7 +3410,7 @@
       },
       "discountsCoupons": {
         "meta": {
-          "title": "Discounts & Coupons: Offers With Limits You Control | Adon ERP",
+          "title": "Discounts & Coupons: Offers With Limits You Control",
           "description": "Create coupon codes with a percentage or fixed discount, a minimum purchase, a cap, valid dates and usage limits, and see how often each was used. Built for companies in Bangladesh.",
           "keywords": [
             "discount coupon software Bangladesh",
@@ -3630,7 +3630,7 @@
       },
       "loanManagement": {
         "meta": {
-          "title": "Loan Management: Every Loan, Its EMI and What Is Left | Adon ERP",
+          "title": "Loan Management: Every Loan, Its EMI and What Is Left",
           "description": "Keep bank loans with lender, rate, EMI and outstanding balance, and see the full instalment schedule for each. Built for companies in Bangladesh.",
           "keywords": [
             "loan management software Bangladesh",
@@ -3847,7 +3847,7 @@
       },
       "fixedAssetRegister": {
         "meta": {
-          "title": "Fixed Asset Register: Cost, Depreciation and Book Value | Adon ERP",
+          "title": "Fixed Asset Register: Cost, Depreciation and Book Value",
           "description": "Keep buildings, plant, vehicles and equipment in one register, run depreciation with one button, and see accumulated depreciation and book value. Built for companies in Bangladesh.",
           "keywords": [
             "fixed asset register Bangladesh",
@@ -4078,7 +4078,7 @@
       },
       "exchangeRates": {
         "meta": {
-          "title": "Exchange Rates: Dated Rates for Foreign-Currency Invoices | Adon ERP",
+          "title": "Exchange Rates: Dated Rates for Foreign-Currency Invoices",
           "description": "Record dated exchange rates, such as USD to BDT, and let invoices and bills in foreign currency pick the latest rate automatically. Built for companies in Bangladesh.",
           "keywords": [
             "exchange rate software Bangladesh",
@@ -4276,7 +4276,7 @@
       },
       "arApAging": {
         "meta": {
-          "title": "AR / AP Aging: Who Owes You, and Whom You Owe, by Age | Adon ERP",
+          "title": "AR / AP Aging: Who Owes You, and Whom You Owe, by Age",
           "description": "See receivables and payables in age buckets as of any date, with the total open and the number of open documents for each customer or vendor. Built for companies in Bangladesh.",
           "keywords": [
             "AR aging report Bangladesh",
@@ -4484,7 +4484,7 @@
       },
       "bankReconciliation": {
         "meta": {
-          "title": "Bank Reconciliation: Match the Statement to Your Books | Adon ERP",
+          "title": "Bank Reconciliation: Match the Statement to Your Books",
           "description": "Import a bank statement CSV, get suggested matches against your book transactions, confirm them and mark the month reconciled. Built for companies in Bangladesh.",
           "keywords": [
             "bank reconciliation software Bangladesh",
@@ -4688,7 +4688,7 @@
       },
       "projects": {
         "meta": {
-          "title": "Project Accounting: Budget, Cost, Billing and Profit for Every Project | Adon ERP",
+          "title": "Project Accounting: Budget, Cost, Billing and Profit for Every Project",
           "description": "Run each project as its own set of books: cost codes, budgets, job cost, change orders, WIP, billing, schedule and P&L. Built for project-based companies in Bangladesh.",
           "keywords": [
             "project accounting software Bangladesh",
@@ -4882,7 +4882,7 @@
       },
       "pjCostCodes": {
         "meta": {
-          "title": "Cost Codes: The Backbone of Job Costing | Adon ERP",
+          "title": "Cost Codes: The Backbone of Job Costing",
           "description": "Set up a cost code structure for each project and tag budgets and postings to it. Built for project-based companies in Bangladesh.",
           "keywords": [
             "cost codes job costing",
@@ -5080,7 +5080,7 @@
       },
       "pjBudgets": {
         "meta": {
-          "title": "Project Budgets: Plan the Cost Before You Spend It | Adon ERP",
+          "title": "Project Budgets: Plan the Cost Before You Spend It",
           "description": "Set a budget per cost code and cost type, and see budget beside actual on every line. Built for project-based companies in Bangladesh.",
           "keywords": [
             "project budget software Bangladesh",
@@ -5284,7 +5284,7 @@
       },
       "pjJobCost": {
         "meta": {
-          "title": "Job Cost: Budget, Committed, Actual and Forecast by Cost Code | Adon ERP",
+          "title": "Job Cost: Budget, Committed, Actual and Forecast by Cost Code",
           "description": "See budget, committed, actual, forecast and variance for every cost code, and assign cost codes to bills and orders. Built for project-based companies in Bangladesh.",
           "keywords": [
             "job cost report",
@@ -5486,7 +5486,7 @@
       },
       "pjChangeOrders": {
         "meta": {
-          "title": "Change Orders: Revise Contract and Budget Without Losing the Original | Adon ERP",
+          "title": "Change Orders: Revise Contract and Budget Without Losing the Original",
           "description": "Log variations and changes, approve them, and see the revised contract value and cost budget while the originals stay on record. Built for project-based companies in Bangladesh.",
           "keywords": [
             "change order software",
@@ -5692,7 +5692,7 @@
       },
       "pjWip": {
         "meta": {
-          "title": "WIP: Percentage-of-Completion Revenue for Each Project | Adon ERP",
+          "title": "WIP: Percentage-of-Completion Revenue for Each Project",
           "description": "Work in progress by cost-to-cost percent complete: earned revenue, over-billing and under-billing, estimated cost to complete and gross profit. Built for project-based companies in Bangladesh.",
           "keywords": [
             "WIP schedule",
@@ -5892,7 +5892,7 @@
       },
       "pjProgressBilling": {
         "meta": {
-          "title": "Progress Billing: Interim Payment Certificates With Retention, AIT and VDS | Adon ERP",
+          "title": "Progress Billing: Interim Payment Certificates With Retention, AIT and VDS",
           "description": "Raise interim payment certificates with retention, mobilization recovery, AIT and VDS, and track subcontractor retention. Built for project-based companies in Bangladesh.",
           "keywords": [
             "interim payment certificate software",
@@ -6114,7 +6114,7 @@
       },
       "pjSchedule": {
         "meta": {
-          "title": "Project Schedule: Tasks, Progress and Earned Value | Adon ERP",
+          "title": "Project Schedule: Tasks, Progress and Earned Value",
           "description": "A task list with planned dates and physical progress, a simple Gantt timeline and SPI and CPI. Built for project-based companies in Bangladesh.",
           "keywords": [
             "project schedule software",
@@ -6318,7 +6318,7 @@
       },
       "pjRisks": {
         "meta": {
-          "title": "Risks & Issues: Keep Problems on the Project Record | Adon ERP",
+          "title": "Risks & Issues: Keep Problems on the Project Record",
           "description": "A risk register and an issue log on each project, with owner, status and mitigation. Built for project-based companies in Bangladesh.",
           "keywords": [
             "project risk register",
@@ -6524,7 +6524,7 @@
       },
       "pjDocuments": {
         "meta": {
-          "title": "Project Documents: Licences, Permits and Contracts on the Project | Adon ERP",
+          "title": "Project Documents: Licences, Permits and Contracts on the Project",
           "description": "Attach documents from the company library to a project and see their category and expiry. Built for project-based companies in Bangladesh.",
           "keywords": [
             "project document management",
@@ -6715,7 +6715,7 @@
       },
       "pjMilestones": {
         "meta": {
-          "title": "Project Milestones: Targets You Can Bill Against | Adon ERP",
+          "title": "Project Milestones: Targets You Can Bill Against",
           "description": "Set milestones with target dates and billable amounts, and see which have been completed and invoiced. Built for project-based companies in Bangladesh.",
           "keywords": [
             "project milestones billing",
@@ -6913,7 +6913,7 @@
       },
       "pjBoq": {
         "meta": {
-          "title": "BOQ: Bill of Quantities With Done Quantity for Billing | Adon ERP",
+          "title": "BOQ: Bill of Quantities With Done Quantity for Billing",
           "description": "Keep a bill of quantities with unit, quantity and rate, and record the quantity done so you can bill progress. Built for project-based companies in Bangladesh.",
           "keywords": [
             "bill of quantities software",
@@ -7111,7 +7111,7 @@
       },
       "pjBillAllocations": {
         "meta": {
-          "title": "Bill Allocations: Split One Supplier Bill Across Projects | Adon ERP",
+          "title": "Bill Allocations: Split One Supplier Bill Across Projects",
           "description": "Allocate a share of a supplier bill to a project, so shared materials and services are costed fairly. Built for project-based companies in Bangladesh.",
           "keywords": [
             "bill allocation across projects",
@@ -7299,7 +7299,7 @@
       },
       "pjPnl": {
         "meta": {
-          "title": "Project P&L: Revenue, Cost and Profit for One Project | Adon ERP",
+          "title": "Project P&L: Revenue, Cost and Profit for One Project",
           "description": "A profit and loss for each project: revenue from invoices and milestones, direct and indirect cost, net profit, margin and budget against actual. Built for project-based companies in Bangladesh.",
           "keywords": [
             "project profit and loss",
@@ -7508,7 +7508,7 @@
       },
       "bmOverview": {
         "meta": {
-          "title": "Budget Management: Versions, Requisitions, Approval and Variance | Adon ERP",
+          "title": "Budget Management: Versions, Requisitions, Approval and Variance",
           "description": "Plan the year with versioned budgets, collect departmental requisitions, route them through four approvals and watch variance as you spend. Built for companies in Bangladesh.",
           "keywords": [
             "budget management software Bangladesh",
@@ -7704,7 +7704,7 @@
       },
       "bmLines": {
         "meta": {
-          "title": "Budget Lines: Plan Every Department, Category by Category | Adon ERP",
+          "title": "Budget Lines: Plan Every Department, Category by Category",
           "description": "Add budget lines by department and category, annual or by month, with notes. Built for companies in Bangladesh.",
           "keywords": [
             "budget lines by department",
@@ -7896,7 +7896,7 @@
       },
       "bmRequisitions": {
         "meta": {
-          "title": "Requisitions: Departments Ask, the Budget Answers | Adon ERP",
+          "title": "Requisitions: Departments Ask, the Budget Answers",
           "description": "Departments raise opex and capex requisitions that move from draft to submitted to approved. Built for companies in Bangladesh.",
           "keywords": [
             "departmental requisition software",
@@ -8085,7 +8085,7 @@
       },
       "bmVariance": {
         "meta": {
-          "title": "Budget Variance: See How Much of Each Category Is Used | Adon ERP",
+          "title": "Budget Variance: See How Much of Each Category Is Used",
           "description": "Compare budget with actual by category, see variance in taka and percent used, and spot overspend early. Built for companies in Bangladesh.",
           "keywords": [
             "budget variance report",
@@ -8277,7 +8277,7 @@
       },
       "bmApprovals": {
         "meta": {
-          "title": "Budget Approvals: A Four-Stage Route With a Decision Log | Adon ERP",
+          "title": "Budget Approvals: A Four-Stage Route With a Decision Log",
           "description": "Route a budget through Finance, Compliance, Management and the CEO, with approve, return and reject at each stage. Built for companies in Bangladesh.",
           "keywords": [
             "budget approval workflow",
@@ -8470,7 +8470,7 @@
       },
       "bmRbrf": {
         "meta": {
-          "title": "RBRF: Re-Budget Requests With a Reason and an Approval | Adon ERP",
+          "title": "RBRF: Re-Budget Requests With a Reason and an Approval",
           "description": "Propose a new amount for a budget line with a justification, and revise the line only when the request is approved. Built for companies in Bangladesh.",
           "keywords": [
             "re-budget request",
@@ -8662,7 +8662,7 @@
       },
       "scOverview": {
         "meta": {
-          "title": "Supply Chain: From Requisition to Landed Cost in One Flow | Adon ERP",
+          "title": "Supply Chain: From Requisition to Landed Cost in One Flow",
           "description": "Follow every purchase from the first requisition through comparison, tender, goods receipt and landed cost. Built for companies in Bangladesh.",
           "keywords": [
             "supply chain software Bangladesh",
@@ -8868,7 +8868,7 @@
       },
       "scRequisitions": {
         "meta": {
-          "title": "Purchase Requisitions: Ask Before You Buy | Adon ERP",
+          "title": "Purchase Requisitions: Ask Before You Buy",
           "description": "Departments raise numbered requisitions with items, quantities, a needed-by date and a priority, and approved ones move on to buying. Built for companies in Bangladesh.",
           "keywords": [
             "purchase requisition software Bangladesh",
@@ -9070,7 +9070,7 @@
       },
       "scComparative": {
         "meta": {
-          "title": "Comparative Statements: Compare Supplier Quotations Fairly | Adon ERP",
+          "title": "Comparative Statements: Compare Supplier Quotations Fairly",
           "description": "Put quotations from several suppliers side by side, see the lowest rate for each item, and record the decision with the reason. Built for companies in Bangladesh.",
           "keywords": [
             "comparative statement software",
@@ -9264,7 +9264,7 @@
       },
       "scTender": {
         "meta": {
-          "title": "Tender Management: Run Tenders and Score Bids | Adon ERP",
+          "title": "Tender Management: Run Tenders and Score Bids",
           "description": "Run tenders with a number, closing date and status, record the bids, and rank them on technical and price scores. Built for companies in Bangladesh.",
           "keywords": [
             "tender management software Bangladesh",
@@ -9455,7 +9455,7 @@
       },
       "scGoodsReceipts": {
         "meta": {
-          "title": "Goods Receipts: Record What Actually Arrived | Adon ERP",
+          "title": "Goods Receipts: Record What Actually Arrived",
           "description": "Record goods receipt notes against purchase orders with ordered, received and accepted quantities, and handle partial deliveries and rejections. Built for companies in Bangladesh.",
           "keywords": [
             "goods receipt note software Bangladesh",
@@ -9649,7 +9649,7 @@
       },
       "scLandedCost": {
         "meta": {
-          "title": "Landed Cost: The True Cost of Imported Goods | Adon ERP",
+          "title": "Landed Cost: The True Cost of Imported Goods",
           "description": "Add freight, insurance, customs duty, clearing and port charges to the goods value and spread them over the items, giving a landed unit cost. Built for companies in Bangladesh.",
           "keywords": [
             "landed cost software Bangladesh",
@@ -9851,7 +9851,7 @@
       },
       "invForecast": {
         "meta": {
-          "title": "Demand Forecast: Know What to Reorder Before You Run Out | Adon ERP",
+          "title": "Demand Forecast: Know What to Reorder Before You Run Out",
           "description": "Forecast demand from past issues, see days of cover for each item, and get a list of what to reorder now. Built for companies in Bangladesh.",
           "keywords": [
             "demand forecast software Bangladesh",
@@ -10054,7 +10054,7 @@
       },
       "invWarehouses": {
         "meta": {
-          "title": "Warehouses: Every Store, Zone and Bin in One Place | Adon ERP",
+          "title": "Warehouses: Every Store, Zone and Bin in One Place",
           "description": "Keep several warehouses with zones and bins, see how full each one is, and what the stock in it is worth. Built for companies in Bangladesh.",
           "keywords": [
             "warehouse management software Bangladesh",
@@ -10248,7 +10248,7 @@
       },
       "invMovements": {
         "meta": {
-          "title": "Stock Movements: A Ledger of Every Receipt, Issue and Transfer | Adon ERP",
+          "title": "Stock Movements: A Ledger of Every Receipt, Issue and Transfer",
           "description": "See every stock movement with its reference, item, warehouse, quantity and running balance. Built for companies in Bangladesh.",
           "keywords": [
             "stock movement ledger",
@@ -10450,7 +10450,7 @@
       },
       "invSummary": {
         "meta": {
-          "title": "Inventory Summary: Stock Value, Turnover and Dead Stock | Adon ERP",
+          "title": "Inventory Summary: Stock Value, Turnover and Dead Stock",
           "description": "See the total stock value, how it splits by category, the top items and how fast stock turns over. Built for companies in Bangladesh.",
           "keywords": [
             "inventory summary report Bangladesh",
@@ -10651,7 +10651,7 @@
       },
       "invGatePasses": {
         "meta": {
-          "title": "Gate Passes: Control Every Vehicle In and Out | Adon ERP",
+          "title": "Gate Passes: Control Every Vehicle In and Out",
           "description": "Issue numbered gate passes for inward and outward vehicles with driver, party, purpose and times. Built for companies in Bangladesh.",
           "keywords": [
             "gate pass software Bangladesh",
@@ -10845,7 +10845,7 @@
       },
       "invWeighbridge": {
         "meta": {
-          "title": "Weighbridge & Scales: Weighment Tickets Tied to the Order | Adon ERP",
+          "title": "Weighbridge & Scales: Weighment Tickets Tied to the Order",
           "description": "Record gross, tare and net weight for each vehicle and compare the net with the purchase order quantity. Built for companies in Bangladesh.",
           "keywords": [
             "weighbridge software Bangladesh",
@@ -11040,7 +11040,7 @@
       },
       "opTaxRates": {
         "meta": {
-          "title": "Tax Rates: VAT, AIT and VDS, Set Up Once | Adon ERP",
+          "title": "Tax Rates: VAT, AIT and VDS, Set Up Once",
           "description": "Keep VAT at 15%, 10%, 7.5% and 5%, tax deducted at source and other rates, each with its account and effective date. Built for companies in Bangladesh.",
           "keywords": [
             "tax rates software Bangladesh",
@@ -11240,7 +11240,7 @@
       },
       "opMigration": {
         "meta": {
-          "title": "Migration Studio: Bring Your Data Over, Checked First | Adon ERP",
+          "title": "Migration Studio: Bring Your Data Over, Checked First",
           "description": "Import from Excel, CSV or another system with column mapping, row checks and an import summary. Built for companies in Bangladesh.",
           "keywords": [
             "data migration software Bangladesh",
@@ -11437,7 +11437,7 @@
       },
       "opExport": {
         "meta": {
-          "title": "Export / Takeout: Your Data, Whenever You Want It | Adon ERP",
+          "title": "Export / Takeout: Your Data, Whenever You Want It",
           "description": "Export any dataset as CSV, Excel, JSON or PDF, or take a full copy of your data. Built for companies in Bangladesh.",
           "keywords": [
             "data export software Bangladesh",
@@ -11909,7 +11909,7 @@
       },
       "ledgers": {
         "meta": {
-          "title": "Ledgers: Keep Every Stream of Entries Apart | Adon ERP",
+          "title": "Ledgers: Keep Every Stream of Entries Apart",
           "description": "Create separate ledgers for sales, payroll, assets or projects, see how many journal entries each one holds, and keep your books easy to read. Built for companies in Bangladesh.",
           "keywords": [
             "ledger software Bangladesh",
@@ -12048,7 +12048,7 @@
       },
       "invoices": {
         "meta": {
-          "title": "Invoices (AR): VAT Invoices and Mushak-6.3 in Taka | Adon ERP",
+          "title": "Invoices (AR): VAT Invoices and Mushak-6.3 in Taka",
           "description": "Raise customer invoices with VAT on every line, print a commercial bill or a bilingual Mushak-6.3, and see what each buyer still owes. Built for companies in Bangladesh.",
           "keywords": [
             "invoice software Bangladesh",
@@ -12279,7 +12279,7 @@
       },
       "journal": {
         "meta": {
-          "title": "Journal Entries in Taka, Balanced as You Type | Adon ERP",
+          "title": "Journal Entries in Taka, Balanced as You Type",
           "description": "Post depreciation, salary accruals, provisions and corrections as double-entry journals. Debit and credit totals check themselves, and every entry is numbered and searchable.",
           "keywords": [
             "journal entry software Bangladesh",
@@ -12566,7 +12566,7 @@
       },
       "hub": {
         "meta": {
-          "title": "Accounting Hub: Live Accounting Dashboard for Bangladeshi Businesses | Adon ERP",
+          "title": "Accounting Hub: Live Accounting Dashboard for Bangladeshi Businesses",
           "description": "See revenue, net income, receivables, payables and total assets on one live screen, in taka, lakh and crore. The Accounting Hub of Adon ERP, built for companies in Bangladesh.",
           "keywords": [
             "accounting dashboard Bangladesh",
@@ -12833,7 +12833,7 @@
       },
       "hrDept": {
         "meta": {
-          "title": "Departments: Your Organisation as a Tree | Adon ERP",
+          "title": "Departments: Your Organisation as a Tree",
           "description": "Set up departments and sub-departments with a head, a headcount and a cost centre, so approvals and salary cost go to the right place. Built for companies in Bangladesh.",
           "keywords": [
             "department management software Bangladesh",
@@ -13023,7 +13023,7 @@
       },
       "hrDesig": {
         "meta": {
-          "title": "Designations: Job Titles, Grade Bands and Vacant Posts | Adon ERP",
+          "title": "Designations: Job Titles, Grade Bands and Vacant Posts",
           "description": "Keep every job title with its department, its grade band and the number of approved posts, so vacancies are visible before hiring starts. Built for companies in Bangladesh.",
           "keywords": [
             "designation list HR",
@@ -13217,7 +13217,7 @@
       },
       "hrGradesPage": {
         "meta": {
-          "title": "Grades & Steps: A Pay Scale Everyone Can Read | Adon ERP",
+          "title": "Grades & Steps: A Pay Scale Everyone Can Read",
           "description": "Build a pay scale of grades and steps with a basic salary for each, a fixed increment between steps, and promotions that move people up a grade. Built for companies in Bangladesh.",
           "keywords": [
             "pay scale software",
@@ -13407,7 +13407,7 @@
       },
       "hrComp": {
         "meta": {
-          "title": "Salary Components: Earnings and Deductions, Each with a Rule | Adon ERP",
+          "title": "Salary Components: Earnings and Deductions, Each with a Rule",
           "description": "Define every earning and deduction once, as a fixed amount, a share of basic or a formula, with a tax flag and a ledger account. Built for companies in Bangladesh.",
           "keywords": [
             "salary components payroll",
@@ -13606,7 +13606,7 @@
       },
       "hrStruct": {
         "meta": {
-          "title": "Salary Structures: One Shape of Pay for Many People | Adon ERP",
+          "title": "Salary Structures: One Shape of Pay for Many People",
           "description": "Build salary structures from components, show how gross breaks down into basic and allowances, and assign one structure to many employees. Built for companies in Bangladesh.",
           "keywords": [
             "salary structure software",
@@ -13791,7 +13791,7 @@
       },
       "hrRuns": {
         "meta": {
-          "title": "Payroll Runs: Compute, Approve and Pay Each Month | Adon ERP",
+          "title": "Payroll Runs: Compute, Approve and Pay Each Month",
           "description": "Run payroll once a month: pull in attendance, leave and overtime, compute gross and net for every employee, approve, and pay with a bank advice and a journal entry. Built for companies in Bangladesh.",
           "keywords": [
             "payroll software Bangladesh",
@@ -13997,7 +13997,7 @@
       },
       "hrInbox": {
         "meta": {
-          "title": "Approvals Inbox: Every HR Request in One List | Adon ERP",
+          "title": "Approvals Inbox: Every HR Request in One List",
           "description": "Approve payroll, leave, advances, overtime and settlements from one inbox, with the details beside the list and a comment on every decision. Built for companies in Bangladesh.",
           "keywords": [
             "HR approval workflow",
@@ -14191,7 +14191,7 @@
       },
       "hrTaxSlabs": {
         "meta": {
-          "title": "Tax Brackets (NBR): Income Tax Slabs and Monthly TDS | Adon ERP",
+          "title": "Tax Brackets (NBR): Income Tax Slabs and Monthly TDS",
           "description": "Keep the income tax slabs for each income year, work out each employee's annual tax and deduct it monthly as TDS, with the figures carried to the annual return. Built for companies in Bangladesh.",
           "keywords": [
             "income tax slab Bangladesh",
@@ -14389,7 +14389,7 @@
       },
       "hrF108": {
         "meta": {
-          "title": "Form 108 (Annual): The Return of Salaried Employees | Adon ERP",
+          "title": "Form 108 (Annual): The Return of Salaried Employees",
           "description": "Prepare the annual return of salaried employees from the year's payroll: salary paid and tax deducted for each employee, with missing TINs flagged before filing. Built for companies in Bangladesh.",
           "keywords": [
             "Form 108 Bangladesh",
@@ -14581,7 +14581,7 @@
       },
       "hrPolicyPage": {
         "meta": {
-          "title": "HR Policy (PF/Gratuity): Provident Fund and Gratuity Rules | Adon ERP",
+          "title": "HR Policy (PF/Gratuity): Provident Fund and Gratuity Rules",
           "description": "Set provident fund rates, the vesting schedule for the employer's share and gratuity rules by length of service, used the same way by payroll and final settlements. Built for companies in Bangladesh.",
           "keywords": [
             "provident fund policy",
@@ -14783,7 +14783,7 @@
       },
       "hrShiftsPage": {
         "meta": {
-          "title": "Shifts: Working Hours, Night Shifts and Weekly Rosters | Adon ERP",
+          "title": "Shifts: Working Hours, Night Shifts and Weekly Rosters",
           "description": "Set shifts with a start, an end and a grace period, run night shifts past midnight, and roster crews by week, so lateness and overtime are measured fairly. Built for companies in Bangladesh.",
           "keywords": [
             "shift management software",
@@ -14971,7 +14971,7 @@
       },
       "hrHolidayPage": {
         "meta": {
-          "title": "Holiday Calendar: National, Public and Company Holidays | Adon ERP",
+          "title": "Holiday Calendar: National, Public and Company Holidays",
           "description": "Keep the year's national, public and company holidays and the weekly holiday in one calendar, used by attendance, leave and payroll. Built for companies in Bangladesh.",
           "keywords": [
             "holiday calendar Bangladesh",
@@ -15158,7 +15158,7 @@
       },
       "hrLeaveTypesPage": {
         "meta": {
-          "title": "Leave Types: Entitlements, Carry Forward and Encashment | Adon ERP",
+          "title": "Leave Types: Entitlements, Carry Forward and Encashment",
           "description": "Set up casual, sick, earned, maternity, festival and unpaid leave with days per year or days earned, carry-forward and encashment rules, and whether payroll deducts it. Built for companies in Bangladesh.",
           "keywords": [
             "leave policy software",
@@ -15366,7 +15366,7 @@
       },
       "hrLeaveAppsPage": {
         "meta": {
-          "title": "Leave Applications: Request, Approve and Track Leave | Adon ERP",
+          "title": "Leave Applications: Request, Approve and Track Leave",
           "description": "Apply for leave from the portal or through HR, see the balance before sending, route it to the manager and HR, and carry approved leave to attendance and payroll. Built for companies in Bangladesh.",
           "keywords": [
             "leave application software",
@@ -15554,7 +15554,7 @@
       },
       "hrProjectsPage": {
         "meta": {
-          "title": "HR Projects: People, Time Shares and Salary Cost by Project | Adon ERP",
+          "title": "HR Projects: People, Time Shares and Salary Cost by Project",
           "description": "Assign employees to projects with a share of their time, catch over-allocation, and split salary cost to Project Accounting from the same shares. Built for companies in Bangladesh.",
           "keywords": [
             "employee project allocation",
@@ -15737,7 +15737,7 @@
       },
       "hrSettle": {
         "meta": {
-          "title": "Final Settlements: Pay Leavers Correctly, on One Sheet | Adon ERP",
+          "title": "Final Settlements: Pay Leavers Correctly, on One Sheet",
           "description": "Settle resignations, terminations and retirements on one sheet: unpaid salary, leave encashment, gratuity and PF, less notice pay, advances and tax, after clearance from each department. Built for companies in Bangladesh.",
           "keywords": [
             "final settlement calculation",
@@ -15937,7 +15937,7 @@
       },
       "hrService": {
         "meta": {
-          "title": "Service Records: An Employee's Working Life, with Dates | Adon ERP",
+          "title": "Service Records: An Employee's Working Life, with Dates",
           "description": "Keep every joining, confirmation, increment, promotion and transfer with a date, the grade and salary after it, and the letter behind it. Built for companies in Bangladesh.",
           "keywords": [
             "service record HR",
@@ -16127,7 +16127,7 @@
       },
       "hrWppfPage": {
         "meta": {
-          "title": "WPPF & Welfare: Workers' Profit Participation Fund | Adon ERP",
+          "title": "WPPF & Welfare: Workers' Profit Participation Fund",
           "description": "Work out the workers' share of net profit at year end, split it between the participation fund, the welfare fund and the foundation, and pay eligible workers equally. Built for companies in Bangladesh.",
           "keywords": [
             "WPPF Bangladesh",
@@ -16319,7 +16319,7 @@
       },
       "hrBudget": {
         "meta": {
-          "title": "Salary Budgets: Payroll Cost and Headcount Against Plan | Adon ERP",
+          "title": "Salary Budgets: Payroll Cost and Headcount Against Plan",
           "description": "Set a salary budget and planned headcount for each department, track spending from payroll runs against where it should be by now, and test increments before approving them. Built for companies in Bangladesh.",
           "keywords": [
             "salary budget software",
@@ -16505,7 +16505,7 @@
       },
       "hrReportsPage": {
         "meta": {
-          "title": "HR Reports: Headcount, Payroll Cost, Absence and Turnover | Adon ERP",
+          "title": "HR Reports: Headcount, Payroll Cost, Absence and Turnover",
           "description": "See headcount, payroll cost, absence and gender mix on one page, and print the muster roll, bank advice, PF and tax reports. Filter by department, location and month. Built for companies in Bangladesh.",
           "keywords": [
             "HR reports software",
@@ -16701,7 +16701,7 @@
       },
       "epProfilePage": {
         "meta": {
-          "title": "My Profile: Employee Self-Service for Personal Details | Adon ERP",
+          "title": "My Profile: Employee Self-Service for Personal Details",
           "description": "Employees see their personal, job and bank details, send changes to HR for approval, and keep their documents on file, from a phone, in English or Bangla. Built for companies in Bangladesh.",
           "keywords": [
             "employee self service portal",
@@ -16902,7 +16902,7 @@
       },
       "epPayslipsPage": {
         "meta": {
-          "title": "My Payslips: Every Payslip, Line by Line, on a Phone | Adon ERP",
+          "title": "My Payslips: Every Payslip, Line by Line, on a Phone",
           "description": "Employees see every payslip since joining with earnings and deductions line by line, and download a PDF the day payroll is approved. Built for companies in Bangladesh.",
           "keywords": [
             "online payslip",
@@ -17088,7 +17088,7 @@
       },
       "epLeavesPage": {
         "meta": {
-          "title": "My Leaves: Balances and Leave Requests from a Phone | Adon ERP",
+          "title": "My Leaves: Balances and Leave Requests from a Phone",
           "description": "Employees see their leave balance for every type, apply in under a minute with holidays left out, and follow the request until it is approved. Built for companies in Bangladesh.",
           "keywords": [
             "leave app employee",
@@ -17284,7 +17284,7 @@
       },
       "epAttendancePage": {
         "meta": {
-          "title": "My Attendance: Your Month, Your Punches, Your Corrections | Adon ERP",
+          "title": "My Attendance: Your Month, Your Punches, Your Corrections",
           "description": "Employees see every day of the month marked present, late, absent or on leave, with in and out times, and ask for a correction when a punch is missing. Built for companies in Bangladesh.",
           "keywords": [
             "employee attendance portal",
@@ -17471,7 +17471,7 @@
       },
       "epPfPage": {
         "meta": {
-          "title": "My PF & Gratuity: Provident Fund Balance and Gratuity Earned | Adon ERP",
+          "title": "My PF & Gratuity: Provident Fund Balance and Gratuity Earned",
           "description": "Employees see their provident fund balance by own share, employer share and profit, every month's contribution, the vested share, and the gratuity earned so far. Built for companies in Bangladesh.",
           "keywords": [
             "provident fund balance employee",
@@ -17658,7 +17658,7 @@
       },
       "emOverviewPage": {
         "meta": {
-          "title": "Engineering Maintenance: Plant Uptime, Work Orders and PM in One View | Adon ERP",
+          "title": "Engineering Maintenance: Plant Uptime, Work Orders and PM in One View",
           "description": "See plant availability, MTBF and MTTR, open work orders, the machines losing the most time, and preventive maintenance coming due. Built for factories in Bangladesh.",
           "keywords": [
             "maintenance management software Bangladesh",
@@ -17855,7 +17855,7 @@
       },
       "emEquipmentPage": {
         "meta": {
-          "title": "Equipment Register: Every Machine, Its History and Its Cost | Adon ERP",
+          "title": "Equipment Register: Every Machine, Its History and Its Cost",
           "description": "Keep every machine in a plant tree with make, serial, warranty, running hours and criticality, linked to the fixed asset register. Built for factories in Bangladesh.",
           "keywords": [
             "equipment register software",
@@ -18051,7 +18051,7 @@
       },
       "emPmPage": {
         "meta": {
-          "title": "PM Schedules: Preventive Maintenance by Calendar or Running Hours | Adon ERP",
+          "title": "PM Schedules: Preventive Maintenance by Calendar or Running Hours",
           "description": "Plan preventive maintenance by date, running hours or counter, with a checklist and parts for each plan, work orders raised on their own, and overdue plans flagged. Built for factories in Bangladesh.",
           "keywords": [
             "preventive maintenance software",
@@ -18242,7 +18242,7 @@
       },
       "emWorkOrdersPage": {
         "meta": {
-          "title": "Work Orders: Breakdowns and Planned Jobs, from Report to Close | Adon ERP",
+          "title": "Work Orders: Breakdowns and Planned Jobs, from Report to Close",
           "description": "Raise breakdown, preventive and improvement work orders with a checklist, a technician, spare parts and hours, and see labour and parts cost on every job. Built for factories in Bangladesh.",
           "keywords": [
             "maintenance work order software",
@@ -18438,7 +18438,7 @@
       },
       "emSparesPage": {
         "meta": {
-          "title": "Spare Parts: Critical Spares That Never Run Out | Adon ERP",
+          "title": "Spare Parts: Critical Spares That Never Run Out",
           "description": "Keep maintenance spare parts with minimum, maximum and reorder points, where each part is used, critical spares flagged, and requisitions raised when stock runs low. Built for factories in Bangladesh.",
           "keywords": [
             "spare parts inventory",
@@ -18627,7 +18627,7 @@
       },
       "emDowntimePage": {
         "meta": {
-          "title": "Downtime: Every Stop, Its Reason and What It Cost | Adon ERP",
+          "title": "Downtime: Every Stop, Its Reason and What It Cost",
           "description": "Record every machine stop with a start, an end and a reason, see a Pareto of causes, and work out availability, MTBF, MTTR and lost output. Built for factories in Bangladesh.",
           "keywords": [
             "machine downtime tracking",
@@ -18816,7 +18816,7 @@
       },
       "emCalibrationPage": {
         "meta": {
-          "title": "Calibration: Measuring Instruments, Due Dates and Certificates | Adon ERP",
+          "title": "Calibration: Measuring Instruments, Due Dates and Certificates",
           "description": "Keep every gauge, scale and sensor with its calibration interval, flag due and overdue instruments, record readings against tolerance and attach the certificate. Built for factories in Bangladesh.",
           "keywords": [
             "calibration management software",
@@ -19001,7 +19001,7 @@
       },
       "mcOverviewPage": {
         "meta": {
-          "title": "Medical Centre: Your Factory Clinic, Today | Adon ERP",
+          "title": "Medical Centre: Your Factory Clinic, Today",
           "description": "See today's clinic visits, the waiting queue, workplace injuries, beds in use and medicines running low, linked to HR for rest and sick leave. Built for companies in Bangladesh.",
           "keywords": [
             "factory clinic software",
@@ -19194,7 +19194,7 @@
       },
       "mcVisitsPage": {
         "meta": {
-          "title": "Clinic Visits: Vitals, Findings, Medicines and Leave Advice | Adon ERP",
+          "title": "Clinic Visits: Vitals, Findings, Medicines and Leave Advice",
           "description": "Record every visit to the factory clinic with vitals, complaint, findings, medicines given and the outcome, with injuries kept for the accident register and rest advice sent to HR. Built for companies in Bangladesh.",
           "keywords": [
             "clinic visit record",
@@ -19399,7 +19399,7 @@
       },
       "mcPharmacyPage": {
         "meta": {
-          "title": "Clinic Pharmacy: Medicine Stock, Batches and Expiry | Adon ERP",
+          "title": "Clinic Pharmacy: Medicine Stock, Batches and Expiry",
           "description": "Keep the clinic's medicines and first-aid stock by batch, give the oldest batch first, watch expiry dates and minimum stock, and link every issue to a clinic visit. Built for companies in Bangladesh.",
           "keywords": [
             "clinic pharmacy stock",
@@ -19588,7 +19588,7 @@
       },
       "mcCheckupsPage": {
         "meta": {
-          "title": "Health Checkups: Pre-employment and Periodic Checkups with Results | Adon ERP",
+          "title": "Health Checkups: Pre-employment and Periodic Checkups with Results",
           "description": "Plan pre-employment, periodic and job-specific checkups by department, record results against normal ranges, book follow-ups and send fitness results to HR. Built for companies in Bangladesh.",
           "keywords": [
             "employee health checkup software",
@@ -19786,7 +19786,7 @@
       },
       "uniGradesPage": {
         "meta": {
-          "title": "University Grades & Results: Marks, GPA, CGPA and Transcripts | Adon ERP",
+          "title": "University Grades & Results: Marks, GPA, CGPA and Transcripts",
           "description": "Enter marks by course section, apply the grading scale, publish results and print transcripts with GPA and CGPA. Built for universities in Bangladesh.",
           "keywords": [
             "university result management",
@@ -19878,7 +19878,7 @@
       },
       "uniExamsPage": {
         "meta": {
-          "title": "University Exams & Attendance: Eligibility, Schedule and Seat Plan | Adon ERP",
+          "title": "University Exams & Attendance: Eligibility, Schedule and Seat Plan",
           "description": "Record class attendance, check exam eligibility against the minimum, and build the exam schedule and seat plan from the same registrations. Built for universities in Bangladesh.",
           "keywords": [
             "university exam management",
@@ -19971,7 +19971,7 @@
       },
       "uniOutcomesPage": {
         "meta": {
-          "title": "Outcome-Based Education (OBE): Map Courses to Programme Outcomes | Adon ERP",
+          "title": "Outcome-Based Education (OBE): Map Courses to Programme Outcomes",
           "description": "Map course outcomes to programme outcomes, link assessments and see attainment as a heat map. Built for universities in Bangladesh running outcome-based education.",
           "keywords": [
             "OBE software university",
@@ -20059,7 +20059,7 @@
       },
       "uniFacultyPage": {
         "meta": {
-          "title": "Faculty & Workload: Credit Hours, Course Assignment and Load Balance | Adon ERP",
+          "title": "Faculty & Workload: Credit Hours, Course Assignment and Load Balance",
           "description": "See each teacher's credit hours against the norm, assign courses and sections, and spot overloads before the schedule is final. Built for universities in Bangladesh.",
           "keywords": [
             "faculty workload software",
@@ -20148,7 +20148,7 @@
       },
       "uniCampusPage": {
         "meta": {
-          "title": "Campus Services: Hostel, Transport, Library and Medical in One Queue | Adon ERP",
+          "title": "Campus Services: Hostel, Transport, Library and Medical in One Queue",
           "description": "Handle hostel seats, transport passes, library and medical requests from one queue, with charges that can go to the student account. Built for universities in Bangladesh.",
           "keywords": [
             "campus services software",
@@ -20245,7 +20245,7 @@
       },
       "uniGraduationPage": {
         "meta": {
-          "title": "University Graduation: Degree Audit, Clearances and Convocation List | Adon ERP",
+          "title": "University Graduation: Degree Audit, Clearances and Convocation List",
           "description": "Audit credits against programme requirements, track clearances from library, hostel and accounts, and build the convocation list. Built for universities in Bangladesh.",
           "keywords": [
             "degree audit software",
@@ -20361,7 +20361,7 @@
       },
       "edDashboardPage": {
         "meta": {
-          "title": "School Dashboard: Enrolment, Seats and Families at a Glance | Adon ERP",
+          "title": "School Dashboard: Enrolment, Seats and Families at a Glance",
           "description": "See enrolled students, seats filled, sections, teachers, families and applicants for the whole school in one dashboard. Built for schools in Bangladesh.",
           "keywords": [
             "school dashboard software",
@@ -20453,7 +20453,7 @@
       },
       "edAdmissionsPage": {
         "meta": {
-          "title": "School Admissions: Rounds, Applications, Merit List and Seats | Adon ERP",
+          "title": "School Admissions: Rounds, Applications, Merit List and Seats",
           "description": "Run admission rounds by class with applications, form fees, tests, offers, waitlists and a merit list you can print. Built for schools in Bangladesh.",
           "keywords": [
             "school admission software",
@@ -20558,7 +20558,7 @@
       },
       "edStudentsPage": {
         "meta": {
-          "title": "Student Records: ID, Class, Roll and Guardian in One Register | Adon ERP",
+          "title": "Student Records: ID, Class, Roll and Guardian in One Register",
           "description": "Keep every student with a permanent ID, class, section, roll, guardian phone and status. Filter by year, class and section. Built for schools in Bangladesh.",
           "keywords": [
             "student information system Bangladesh",
@@ -20646,7 +20646,7 @@
       },
       "edAcademicsPage": {
         "meta": {
-          "title": "Academics Setup: Sessions, Classes, Sections, Subjects and Teaching | Adon ERP",
+          "title": "Academics Setup: Sessions, Classes, Sections, Subjects and Teaching",
           "description": "Set up academic sessions and terms, levels and classes, sections, subjects with board codes, curriculum and teaching loads. Built for schools in Bangladesh.",
           "keywords": [
             "academic setup school software",
@@ -20735,7 +20735,7 @@
       },
       "edAttendancePage": {
         "meta": {
-          "title": "Student Attendance: Take the Register with a Tap, Text the Guardian | Adon ERP",
+          "title": "Student Attendance: Take the Register with a Tap, Text the Guardian",
           "description": "Take daily attendance by tapping each student: present, late, absent or leave. Guardians of absent students get a text. Built for schools in Bangladesh.",
           "keywords": [
             "student attendance software",
@@ -20821,7 +20821,7 @@
       },
       "edTimetablePage": {
         "meta": {
-          "title": "School Timetable: Class, Teacher and Bell Schedule Without Clashes | Adon ERP",
+          "title": "School Timetable: Class, Teacher and Bell Schedule Without Clashes",
           "description": "Build class timetables period by period, see each teacher's week, set the bell schedule, auto-fill and manage substitutes. Built for schools in Bangladesh.",
           "keywords": [
             "school timetable software",
@@ -20912,7 +20912,7 @@
       },
       "edExamsPage": {
         "meta": {
-          "title": "Exams & Results: Marks Entry, Grading and Published Results | Adon ERP",
+          "title": "Exams & Results: Marks Entry, Grading and Published Results",
           "description": "Set up exams with weights, enter marks by paper, apply grading schemes and publish results with pass rates. Built for schools in Bangladesh.",
           "keywords": [
             "exam management software school",
@@ -21006,7 +21006,7 @@
       },
       "edPromotionPage": {
         "meta": {
-          "title": "Promotion & Certificates: Move a Whole Session Up in One Run | Adon ERP",
+          "title": "Promotion & Certificates: Move a Whole Session Up in One Run",
           "description": "Promote students into the next session from a published result: pass go up, fail repeat, the last class passes out. Preview first and reverse if needed. Built for schools in Bangladesh.",
           "keywords": [
             "student promotion software",
@@ -21099,7 +21099,7 @@
       },
       "edHifzPage": {
         "meta": {
-          "title": "Hifz Tracking: Sabaq, Sabqi and Manzil for Every Student | Adon ERP",
+          "title": "Hifz Tracking: Sabaq, Sabqi and Manzil for Every Student",
           "description": "Record each student's daily Hifz: new lesson (Sabaq), recent revision (Sabqi) and old revision (Manzil), with grades and mistakes. Built for madrasas and Hifz sections in Bangladesh.",
           "keywords": [
             "hifz management software",
@@ -21192,7 +21192,7 @@
       },
       "edBoardingPage": {
         "meta": {
-          "title": "Boarding & Mess: Rooms, Boarders, Meals and Monthly Fees | Adon ERP",
+          "title": "Boarding & Mess: Rooms, Boarders, Meals and Monthly Fees",
           "description": "Give boarders a room and bed, charge boarding and mess fees by month held, and record meal-off days. Built for boarding schools and madrasas in Bangladesh.",
           "keywords": [
             "boarding school software",
@@ -21278,7 +21278,7 @@
       },
       "edWelfarePage": {
         "meta": {
-          "title": "Welfare Funds: Zakat, Sadaqah and Donations Kept Apart and Accounted For | Adon ERP",
+          "title": "Welfare Funds: Zakat, Sadaqah and Donations Kept Apart and Accounted For",
           "description": "Hold Zakat, Sadaqah and general donation funds in separate accounts, pay student dues from a fund and check Zakat eligibility. Built for madrasas and schools in Bangladesh.",
           "keywords": [
             "zakat fund management",
@@ -21362,7 +21362,7 @@
       },
       "edNoticesPage": {
         "meta": {
-          "title": "School Notices: Write Once, Send by Portal, SMS and Email | Adon ERP",
+          "title": "School Notices: Write Once, Send by Portal, SMS and Email",
           "description": "Compose a notice once and send it to an audience through the guardian portal, SMS and email, with merge fields, templates, scheduling and a delivery log. Built for schools in Bangladesh.",
           "keywords": [
             "school notice SMS",
@@ -21465,7 +21465,7 @@
       },
       "edOnlinePage": {
         "meta": {
-          "title": "Online Fee Payments: Gateway Payments Matched to Receipts and Settled | Adon ERP",
+          "title": "Online Fee Payments: Gateway Payments Matched to Receipts and Settled",
           "description": "Take fees online through a payment gateway. Each payment becomes an ordinary receipt and sits in a clearing account until the gateway pays you. Built for schools in Bangladesh.",
           "keywords": [
             "online school fee payment Bangladesh",
@@ -21561,7 +21561,7 @@
       },
       "edLibraryPage": {
         "meta": {
-          "title": "School Library: Issue, Return and Fines by Accession Number | Adon ERP",
+          "title": "School Library: Issue, Return and Fines by Accession Number",
           "description": "Lend books by accession number or barcode, track loans and overdue copies, and charge late fines to the pupil's fees. Built for school libraries in Bangladesh.",
           "keywords": [
             "school library software",
@@ -21653,7 +21653,7 @@
       },
       "edBusPage": {
         "meta": {
-          "title": "School Bus: Routes, Riders, Boarding Register and Bus Fees | Adon ERP",
+          "title": "School Bus: Routes, Riders, Boarding Register and Bus Fees",
           "description": "Plan school bus routes on Transport Pool vehicles, assign riders and attendants, and bill the bus fee monthly only to pupils on a route. Built for schools in Bangladesh.",
           "keywords": [
             "school bus management software",
@@ -21746,7 +21746,7 @@
       },
       "edStorePage": {
         "meta": {
-          "title": "Store Issues: Uniform, Books and Stationery Issued from Stock | Adon ERP",
+          "title": "Store Issues: Uniform, Books and Stationery Issued from Stock",
           "description": "Issue uniform, books and stationery to a pupil from stock, charged to the pupil's fees or free. Stock never goes below zero. Built for schools in Bangladesh.",
           "keywords": [
             "school store software",
@@ -21836,7 +21836,7 @@
       },
       "edRoomsPage": {
         "meta": {
-          "title": "School Rooms: Classrooms, Labs and Halls with Free-Room Finder | Adon ERP",
+          "title": "School Rooms: Classrooms, Labs and Halls with Free-Room Finder",
           "description": "Keep a list of classrooms, labs and halls with seats, assign home rooms to sections and find free rooms for any period. Built for schools in Bangladesh.",
           "keywords": [
             "school room management",
@@ -21926,7 +21926,7 @@
       },
       "edFeesPage": {
         "meta": {
-          "title": "School Fees: Demand Runs, Fee Structure, Waivers and Late Fines | Adon ERP",
+          "title": "School Fees: Demand Runs, Fee Structure, Waivers and Late Fines",
           "description": "Run monthly fee demands with one journal per run, set fee structure and heads, apply waivers and releases, and take payments at the counter. Built for schools in Bangladesh.",
           "keywords": [
             "school fee management Bangladesh",
@@ -22021,7 +22021,7 @@
       },
       "edFeeReportsPage": {
         "meta": {
-          "title": "Fee Reports: Billed, Collected, Outstanding and Defaulters by Class | Adon ERP",
+          "title": "Fee Reports: Billed, Collected, Outstanding and Defaulters by Class",
           "description": "See billed, collected, outstanding, waivers, written off and advance held, with collection by class, defaulters, a student ledger and a tie-out to the books. Built for schools in Bangladesh.",
           "keywords": [
             "school fee report",
@@ -22110,7 +22110,7 @@
       },
       "edSettingsPage": {
         "meta": {
-          "title": "Institution Settings: Type, Revenue Basis, Rolls, Attendance and Off-days | Adon ERP",
+          "title": "Institution Settings: Type, Revenue Basis, Rolls, Attendance and Off-days",
           "description": "Set the institution type, revenue basis, roll numbering, calendar, late fine, attendance rules, weekly off-days and MPO status in one place. Built for schools in Bangladesh.",
           "keywords": [
             "school settings software",
@@ -22215,7 +22215,7 @@
       },
       "reDashboardPage": {
         "meta": {
-          "title": "Real Estate Sales Dashboard: Bookings, Collections and Stock in One View | Adon ERP",
+          "title": "Real Estate Sales Dashboard: Bookings, Collections and Stock in One View",
           "description": "See units sold, booking value, collections and overdue instalments across every project in one dashboard. Built for property developers in Bangladesh.",
           "keywords": [
             "real estate sales dashboard",
@@ -22415,7 +22415,7 @@
       },
       "rePropertiesPage": {
         "meta": {
-          "title": "Real Estate Projects and Blocks: Every Property, Tower and Phase in One Place | Adon ERP",
+          "title": "Real Estate Projects and Blocks: Every Property, Tower and Phase in One Place",
           "description": "Set up each project with its land, blocks, floors, units and construction progress. Built for real estate developers in Bangladesh.",
           "keywords": [
             "real estate project management software",
@@ -22613,7 +22613,7 @@
       },
       "reUnitsPage": {
         "meta": {
-          "title": "Real Estate Unit Inventory: A Live Stacking Plan of Every Flat and Shop | Adon ERP",
+          "title": "Real Estate Unit Inventory: A Live Stacking Plan of Every Flat and Shop",
           "description": "See every unit by floor with its size, facing, rate and status. Hold, book and sell without double-selling. Built for developers in Bangladesh.",
           "keywords": [
             "unit inventory real estate",
@@ -22812,7 +22812,7 @@
       },
       "reBookingsPage": {
         "meta": {
-          "title": "Real Estate Bookings: Allotment, Payment Plan and Schedule in One Form | Adon ERP",
+          "title": "Real Estate Bookings: Allotment, Payment Plan and Schedule in One Form",
           "description": "Book a unit, set the payment plan, and see every instalment date and amount from the start. Built for property developers in Bangladesh.",
           "keywords": [
             "real estate booking software",
@@ -23015,7 +23015,7 @@
       },
       "reCollectionsPage": {
         "meta": {
-          "title": "Real Estate Collections: Know Who Owes What, and for How Long | Adon ERP",
+          "title": "Real Estate Collections: Know Who Owes What, and for How Long",
           "description": "Track instalments due, received and overdue across every project, with ageing by buyer. Built for property developers in Bangladesh.",
           "keywords": [
             "real estate collections software",
@@ -23218,7 +23218,7 @@
       },
       "reHandoverPage": {
         "meta": {
-          "title": "Real Estate Handover: A Checklist from Final Payment to Keys | Adon ERP",
+          "title": "Real Estate Handover: A Checklist from Final Payment to Keys",
           "description": "Run every handover from one checklist: payment cleared, utilities, snag list, documents and keys. Built for property developers in Bangladesh.",
           "keywords": [
             "property handover checklist",
@@ -23418,7 +23418,7 @@
       },
       "reRevRecPage": {
         "meta": {
-          "title": "Real Estate Revenue Recognition: Percentage of Completion That Ties to the Books | Adon ERP",
+          "title": "Real Estate Revenue Recognition: Percentage of Completion That Ties to the Books",
           "description": "Recognise property revenue by percentage of completion, with contract assets, deferred income and the journal worked out for you. Built for developers in Bangladesh.",
           "keywords": [
             "real estate revenue recognition",
@@ -23619,7 +23619,7 @@
       },
       "reLeasesPage": {
         "meta": {
-          "title": "Real Estate Leases: Rent, Renewals and Deposits Without the Diary | Adon ERP",
+          "title": "Real Estate Leases: Rent, Renewals and Deposits Without the Diary",
           "description": "Manage tenant leases with rent schedules, yearly increases, security deposits and renewal dates. Built for property owners in Bangladesh.",
           "keywords": [
             "lease management software Bangladesh",
@@ -23823,7 +23823,7 @@
       },
       "reBrokersPage": {
         "meta": {
-          "title": "Real Estate Brokers: Commission Rules, Statements and Payouts | Adon ERP",
+          "title": "Real Estate Brokers: Commission Rules, Statements and Payouts",
           "description": "Track brokers, their sales, commission rates and what is due, with commission released as buyers pay. Built for property developers in Bangladesh.",
           "keywords": [
             "real estate broker commission software",
@@ -24020,7 +24020,7 @@
       },
       "reBuyerPortalPage": {
         "meta": {
-          "title": "Real Estate Buyer Portal: Dues, Receipts and Construction Updates for Buyers | Adon ERP",
+          "title": "Real Estate Buyer Portal: Dues, Receipts and Construction Updates for Buyers",
           "description": "Give buyers a portal to see their payments, receipts, documents and construction progress. Built for property developers in Bangladesh.",
           "keywords": [
             "buyer portal real estate",
@@ -24221,7 +24221,7 @@
       },
       "tfContractsPage": {
         "meta": {
-          "title": "Export Sales Contracts: Buyer, PO, Value and Delivery | Adon ERP",
+          "title": "Export Sales Contracts: Buyer, PO, Value and Delivery",
           "description": "Keep every export sales contract with buyer, PO, value and delivery date, and follow it through LCs, shipments and realisation. Built for exporters in Bangladesh.",
           "keywords": [
             "export sales contract software",
@@ -24415,7 +24415,7 @@
       },
       "tfLcPage": {
         "meta": {
-          "title": "Letters of Credit: Master and Back-to-Back LCs, MT700 and Utilisation | Adon ERP",
+          "title": "Letters of Credit: Master and Back-to-Back LCs, MT700 and Utilisation",
           "description": "Keep master and back-to-back LCs with the SWIFT MT700 read into fields, value shipped and encashed, bank charges, amendments and days to the last shipment date. Built for exporters in Bangladesh.",
           "keywords": [
             "letter of credit software Bangladesh",
@@ -24607,7 +24607,7 @@
       },
       "tfTtPage": {
         "meta": {
-          "title": "TT Remittances: Advances, Realisation and the 120-Day Clock | Adon ERP",
+          "title": "TT Remittances: Advances, Realisation and the 120-Day Clock",
           "description": "Record telegraphic transfers in and out, hold advances as a liability until shipment, apply them to invoices, and watch the 120-day realisation clock on foreign-currency invoices. Built for exporters in Bangladesh.",
           "keywords": [
             "TT remittance software",
@@ -24801,7 +24801,7 @@
       },
       "tfShipmentsPage": {
         "meta": {
-          "title": "Export Shipments: Packing List, Commercial Invoice and B/L from One Record | Adon ERP",
+          "title": "Export Shipments: Packing List, Commercial Invoice and B/L from One Record",
           "description": "Book a shipment from an order's open lines, print the packing list and commercial invoice, recognise revenue at ex-factory, and follow it on board, arrived and delivered. Built for exporters in Bangladesh.",
           "keywords": [
             "export shipment software",
@@ -25003,7 +25003,7 @@
       },
       "tfPapersPage": {
         "meta": {
-          "title": "BD Export Papers: EXP, Realisation, UD, Cash Incentives and Bills of Entry | Adon ERP",
+          "title": "BD Export Papers: EXP, Realisation, UD, Cash Incentives and Bills of Entry",
           "description": "Keep the Bangladesh paper trail behind every export: EXP and proceeds realisation, utilisation declarations, cash-incentive claims and bills of entry on imports. Built for exporters in Bangladesh.",
           "keywords": [
             "EXP form Bangladesh",
@@ -34867,8 +34867,8 @@
     },
     "analytics": {
       "metadata": {
-        "title": "BI Analytics & Reporting | EdenERP",
-        "description": "Explore executive dashboards, financial and workforce reporting, demand forecasting, and portable demo data with EdenERP Analytics."
+        "title": "BI Analytics & Reporting",
+        "description": "Explore executive dashboards, financial and workforce reporting, demand forecasting, and portable demo data with  Adon ERP Analytics."
       },
       "hero": {
         "eyebrow": "Business intelligence, connected",
@@ -35066,7 +35066,7 @@
         "description": "Preview the formats and controls that help organizations keep their information portable.",
         "fullDataTakeout": "Full data takeout · demo bundle",
         "bundleDescription": "Download a small locally generated demonstration dataset in CSV or JSON format. It contains no company records.",
-        "demoOnlyNotice": "Demonstration data only — never connected to an EdenERP account.",
+        "demoOnlyNotice": "Demonstration data only — never connected to an  Adon ERP account.",
         "downloadBundle": "Download {format} demo",
         "dataset": "Dataset",
         "format": "Format",
@@ -35117,13 +35117,13 @@
       "cta": {
         "title": "See your business",
         "titleHighlight": "more clearly.",
-        "description": "Explore how EdenERP can bring reporting and business intelligence together for your teams.",
+        "description": "Explore how  Adon ERP can bring reporting and business intelligence together for your teams.",
         "button": "Request a demonstration"
       }
     },
     "engineeringMaintenance": {
       "metadata": {
-        "title": "Engineering Maintenance | EdenERP",
+        "title": "Engineering Maintenance",
         "description": "Explore an illustrative engineering maintenance showcase for equipment, preventive schedules, work orders, spare parts, downtime, and calibration."
       },
       "hero": {
@@ -35373,18 +35373,18 @@
         ]
       },
       "cta": {
-        "eyebrow": "Explore EdenERP",
+        "eyebrow": "Explore  Adon ERP",
         "title": "Make maintenance",
         "titleHighlight": "more visible.",
-        "description": "See how EdenERP can bring equipment, maintenance planning, and operational context into one connected experience.",
+        "description": "See how  Adon ERP can bring equipment, maintenance planning, and operational context into one connected experience.",
         "button": "Request a demonstration",
         "note": "Showcase only · no operational maintenance records are created"
       }
     },
     "transportPool": {
       "metadata": {
-        "title": "Transport Pool | EdenERP",
-        "description": "Explore fleet registration, trip planning, fuel and mileage summaries, and vehicle maintenance with the EdenERP Transport Pool showcase."
+        "title": "Transport Pool",
+        "description": "Explore fleet registration, trip planning, fuel and mileage summaries, and vehicle maintenance with the  Adon ERP Transport Pool showcase."
       },
       "hero": {
         "eyebrow": "Fleet operations, connected",
@@ -35611,10 +35611,10 @@
         ]
       },
       "cta": {
-        "eyebrow": "Explore EdenERP",
+        "eyebrow": "Explore  Adon ERP",
         "title": "Bring your fleet",
         "titleHighlight": "into clearer view.",
-        "description": "See how EdenERP can connect vehicle records, trips, fuel visibility, and maintenance planning for your team.",
+        "description": "See how  Adon ERP can connect vehicle records, trips, fuel visibility, and maintenance planning for your team.",
         "button": "Request a demonstration",
         "note": "Showcase only · no live vehicle or trip records are connected"
       }
@@ -35789,7 +35789,7 @@
     },
     "accounting": {
       "metadata": {
-        "title": "Accounting | Adon ERP",
+        "title": "Accounting",
         "description": "AI-powered accounting platform for all your financial operations — from reconciliation and expenses to tax returns and real-time reporting."
       },
       "hero": {
@@ -36325,7 +36325,7 @@
     },
     "apps": {
       "metadata": {
-        "title": "Apps | Adon ERP",
+        "title": "Apps",
         "description": "Browse top apps, newly released tools, and popular business extensions for Adon ERP."
       },
       "hub": {
@@ -37158,7 +37158,7 @@
     },
     "blog": {
       "metadata": {
-        "title": "Smart Blogging & Content Marketing Platform | Adon ERP",
+        "title": "Smart Blogging & Content Marketing Platform",
         "description": "Create beautiful blog posts, connect with your audience, improve SEO, and turn your knowledge into a powerful growth channel for your business."
       },
       "hero": {
@@ -37549,7 +37549,7 @@
     },
     "Checkout": {
       "metadata": {
-        "title": "Checkout | Adon ERP",
+        "title": "Checkout",
         "description": "Complete your purchase securely. Provide payment and delivery information."
       },
       "checkoutPage": {
@@ -38516,7 +38516,7 @@
         "hero": {
           "eyebrow": "Trusted partners",
           "title": "Implementation Partners",
-          "description": "Connect with certified experts who bring Eden ERP solutions to businesses and government organizations across the region.",
+          "description": "Connect with certified experts who bring  Adon ERP solutions to businesses and government organizations across the region.",
           "cta": "Find Best Match"
         },
         "filters": {
@@ -38545,7 +38545,7 @@
         },
         "banner": {
           "title": "Trusted by leading organizations",
-          "description": "Join 15 million+ users who rely on Eden ERP and our certified partners for successful digital transformation."
+          "description": "Join 15 million+ users who rely on  Adon ERP and our certified partners for successful digital transformation."
         },
         "partners": [
           {
@@ -40073,7 +40073,7 @@
       },
       "metadata": {
         "root": {
-          "title": "Community | Adon ERP",
+          "title": "Community",
           "description": "Explore learning, services, collaboration, and software access paths across the Adon ERP community."
         },
         "collaborate": {
@@ -40137,7 +40137,7 @@
           "description": "Read verified customer stories and outcomes from businesses using Adon ERP."
         },
         "getServicesSupport": {
-          "title": "Support | Adon ERP",
+          "title": "Support",
           "description": "Get support from our team of experts and reach the right Adon ERP contact quickly."
         },
         "getServicesFindAccountant": {
@@ -40394,8 +40394,8 @@
     },
     "contact": {
       "metadata": {
-        "title": "Contact Us | Adon ERP",
-        "description": "Get in touch with Adon ERP team for sales, support, or implementation inquiries."
+        "title": "Contact Adon ERP – ERP Software Company in Dhaka, Bangladesh",
+        "description": "Visit or call Adon ERP at Tower 71, ECB Chattar, Dhaka Cantonment, Dhaka-1206. Call +880 1842-781978 for ERP sales, support and implementation in Bangladesh."
       },
       "hero": {
         "eyebrowLabel": "Get in Touch",
@@ -40482,7 +40482,7 @@
     },
     "crm": {
       "metadata": {
-        "title": "CRM | Adon ERP",
+        "title": "CRM",
         "description": "Adon ERP CRM helps your team capture leads, manage pipelines, automate follow-ups, and turn every opportunity into revenue."
       },
       "hero": {
@@ -41455,7 +41455,7 @@
     },
     "ecommerce": {
       "metadata": {
-        "title": "eCommerce | Adon ERP",
+        "title": "eCommerce",
         "description": "Sell anything, anywhere, with everything connected in one app. Create your store, manage products, accept orders, and grow your brand beautifully."
       },
       "hero": {
@@ -41698,7 +41698,7 @@
     },
     "elearning": {
       "metadata": {
-        "title": "eLearning | Adon ERP",
+        "title": "eLearning",
         "description": "Create online courses, publish lessons, track progress, measure results, and help your students reach success with a beautiful learning platform."
       },
       "hero": {
@@ -41901,7 +41901,7 @@
     },
     "eSign": {
       "metadata": {
-        "title": "eSign | Adon ERP",
+        "title": "eSign",
         "description": "Send, sign, and manage business agreements inside Adon ERP with secure workflows, reminders, audit trails, and one-click approvals."
       },
       "hero": {
@@ -43023,7 +43023,7 @@
     },
     "forum": {
       "metadata": {
-        "title": "Community Forum | Adon ERP",
+        "title": "Community Forum",
         "description": "Create a community, foster collaboration, improve support, and give users a simple place to ask, answer, vote, and share knowledge."
       },
       "hero": {
@@ -44443,7 +44443,7 @@
     },
     "help": {
       "metadata": {
-        "title": "Help | Adon ERP",
+        "title": "Help",
         "description": "Get support and find answers to your questions."
       },
       "hero": {
@@ -44542,8 +44542,8 @@
     },
     "home": {
       "metadata": {
-        "title": "Home | Adon ERP",
-        "description": "Manage subscriptions, accounting, team operations, and business growth from one connected ERP platform."
+        "title": "ERP Software in Bangladesh for Accounting, Inventory, HR & POS",
+        "description": "Adon ERP is a Dhaka-based ERP software company. Run accounting, VAT, inventory, HR & payroll, POS and manufacturing for your Bangladesh business from one connected platform."
       },
       "hero": {
         "tag": "✦ Manage your entire business in one place",
@@ -45978,7 +45978,7 @@
     },
     "live-chat": {
       "metadata": {
-        "title": "Live Chat | Adon ERP",
+        "title": "Live Chat",
         "description": "Turn visitors into leads, customers, and loyal fans. Answer questions, solve problems, and build better relationships from one simple chat workspace."
       },
       "hero": {
@@ -48052,7 +48052,7 @@
     },
     "pos-retail": {
       "metadata": {
-        "title": "POS Retail | Adon ERP",
+        "title": "POS Retail",
         "description": "Adon ERP POS helps your team sell faster, manage inventory, reward loyal customers, and sync every transaction with accounting."
       },
       "hero": {
@@ -48249,7 +48249,7 @@
     },
     "pricing": {
       "metadata": {
-        "title": "Pricing | Adon ERP",
+        "title": "Pricing",
         "description": "Simple, transparent, and flexible pricing plans for Adon ERP. Choose the right plan for your business size and needs."
       },
       "hero": {
@@ -48674,7 +48674,7 @@
     },
     "procurement": {
       "metadata": {
-        "title": "Procurement & Tender Management | Adon ERP",
+        "title": "Procurement & Tender Management",
         "description": "Run purchase requisitions, comparative statements, landed cost allocation, and tender management in one connected procurement workflow."
       },
       "header": {
@@ -48848,8 +48848,8 @@
     },
     "budgetManagement": {
       "metadata": {
-        "title": "Budget Management | EdenERP",
-        "description": "Plan departmental budgets, review versions, coordinate approvals, and monitor spending with the EdenERP Budget Management showcase."
+        "title": "Budget Management",
+        "description": "Plan departmental budgets, review versions, coordinate approvals, and monitor spending with the  Adon ERP Budget Management showcase."
       },
       "hero": {
         "eyebrow": "Budget Management",
@@ -49161,7 +49161,7 @@
       },
       "finalCta": {
         "title": "Make your next budget a shared success.",
-        "description": "See how EdenERP can bring version control, departmental planning, approvals, and budget visibility into a connected experience.",
+        "description": "See how  Adon ERP can bring version control, departmental planning, approvals, and budget visibility into a connected experience.",
         "button": "Talk to our team",
         "caption": "A guided product demonstration, tailored to your planning process."
       }
@@ -49169,7 +49169,7 @@
     "fundAccounting": {
       "dashboard": {
         "metadata": {
-          "title": "Fund Dashboard | EdenERP",
+          "title": "Fund Dashboard",
           "description": "Explore a sample fund dashboard for grant visibility, donor oversight, restricted funding, and nonprofit accountability."
         },
         "hero": {
@@ -49275,13 +49275,13 @@
         },
         "finalCta": {
           "title": "Bring greater clarity to every funding conversation.",
-          "description": "Explore how EdenERP can support a connected view of grants, donors, restrictions, and programme outcomes.",
+          "description": "Explore how  Adon ERP can support a connected view of grants, donors, restrictions, and programme outcomes.",
           "button": "Talk to our team"
         }
       },
       "grants": {
         "metadata": {
-          "title": "Grants | EdenERP",
+          "title": "Grants",
           "description": "Explore a sample grant register with donor awards, spending progress, funding tranches, monitoring, and grant lifecycle visibility."
         },
         "hero": {
@@ -49365,13 +49365,13 @@
         },
         "finalCta": {
           "title": "Bring your grant portfolio into clearer focus.",
-          "description": "See how EdenERP can connect grant records, donor commitments, spending visibility, and monitoring context.",
+          "description": "See how  Adon ERP can connect grant records, donor commitments, spending visibility, and monitoring context.",
           "button": "Explore a guided demo"
         }
       },
       "donorsFunds": {
         "metadata": {
-          "title": "Donors & Funds | EdenERP",
+          "title": "Donors & Funds",
           "description": "Explore donor portfolio and fund restriction previews for nonprofit organizations managing donor-supported programmes."
         },
         "hero": {
@@ -49464,7 +49464,7 @@
       },
       "reports": {
         "metadata": {
-          "title": "Fund Reports | EdenERP",
+          "title": "Fund Reports",
           "description": "Explore nonprofit fund reporting concepts, sample fund statements, and an informational overview of NGOAB-related reporting topics."
         },
         "hero": {
@@ -49570,7 +49570,7 @@
       },
       "beneficiaries": {
         "metadata": {
-          "title": "Beneficiaries & M&E | EdenERP",
+          "title": "Beneficiaries & M&E",
           "description": "Explore an illustrative beneficiary and monitoring and evaluation showcase with programme indicators, baselines, targets, and progress."
         },
         "hero": {
@@ -49669,7 +49669,7 @@
       },
       "costAllocation": {
         "metadata": {
-          "title": "Cost Allocation | EdenERP",
+          "title": "Cost Allocation",
           "description": "Explore a sample shared-cost allocation preview across donor-funded grants, including allocation bases, distribution, review status, and history."
         },
         "hero": {
@@ -50720,7 +50720,7 @@
     },
     "quality": {
       "metadata": {
-        "title": "Quality Control | Adon ERP",
+        "title": "Quality Control",
         "description": "Advanced quality control solution - detect defects easily, manage inspections, and keep production running."
       },
       "header": {
@@ -51398,7 +51398,7 @@
     },
     "rental": {
       "metadata": {
-        "title": "Rental Management | Adon ERP",
+        "title": "Rental Management",
         "description": "Adon Rental is now inventory, ecommerce, sales, accounting, and signatures in one app. Get organized, reduce manual work, and make every rental process faster."
       },
       "hero": {
@@ -51586,7 +51586,7 @@
     },
     "restaurant-pos": {
       "metadata": {
-        "title": "Restaurant POS | Adon ERP",
+        "title": "Restaurant POS",
         "description": "Adon ERP Restaurant POS connects your tables, orders, kitchen, payments, inventory, and accounting in one seamless workflow."
       },
       "hero": {
@@ -51977,7 +51977,7 @@
     },
     "sales-quotation": {
       "metadata": {
-        "title": "Sales Quotations | Adon ERP",
+        "title": "Sales Quotations",
         "description": "Adon ERP Sales helps your team create polished quotes, manage pricing, close deals faster, and convert opportunities into orders."
       },
       "hero": {
@@ -52474,7 +52474,7 @@
     },
     "subscriptions": {
       "metadata": {
-        "title": "Subscriptions | Adon ERP",
+        "title": "Subscriptions",
         "description": "From subscription quotes and renewals to automated billing and retention workflows, Adon ERP keeps recurring revenue predictable."
       },
       "hero": {
@@ -52692,7 +52692,7 @@
     },
     "support": {
       "metadata": {
-        "title": "Support | Adon ERP",
+        "title": "Support",
         "description": "Get support from our team of experts and reach the right Adon ERP contact quickly."
       },
       "hero": {
@@ -54153,7 +54153,7 @@
     },
     "website-builder": {
       "metadata": {
-        "title": "Website Builder | Adon ERP",
+        "title": "Website Builder",
         "description": "Build more than a website. Build a business. Design beautiful pages, sell products, manage customers, and grow from one integrated app."
       },
       "hero": {

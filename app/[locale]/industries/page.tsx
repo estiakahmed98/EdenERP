@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Building2, Shirt } from "lucide-react";
+
+import { getLocaleAlternates } from "@/i18n/metadata";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Industry ERP Solutions in Bangladesh",
+    description:
+      "Industry-specific ERP for Bangladesh businesses: garments, textile, retail, manufacturing, NGO, real estate, food & hospitality and more — from Adon ERP, Dhaka.",
+    alternates: await getLocaleAlternates("/industries"),
+  };
+}
 
 const industryCards = [
   {

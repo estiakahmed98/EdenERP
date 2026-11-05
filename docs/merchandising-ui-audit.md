@@ -5,7 +5,7 @@ The nine menu-linked routes under `app/[locale]/apps/merchandising` currently re
 model in this checkout. The industry landing page is a separate consumer. Preserve
 all route URLs, alternates, the global header and shared booking popup.
 
-Accounting, Manufacturing, QMS and POS establish Rubik typography, EdenERP blue,
+Accounting, Manufacturing, QMS and POS establish Rubik typography,  Adon ERP blue,
 navy and green, scoped light/dark styles and a 1240px content frame. Reuse the
 global `LiveDemoButton` and `DemoPreview`, with merchandising-specific copy.
 Keep breadcrumb spacing compact. Do not add a module navigation strip.

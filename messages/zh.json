@@ -207,7 +207,7 @@
     "accountingShowcase": {
       "bills": {
         "meta": {
-          "title": "采购账单 (AP)：以塔卡计价的供应商账单、增值税与付款 | Adon ERP",
+          "title": "采购账单 (AP)：以塔卡计价的供应商账单、增值税与付款",
           "description": "录入每行含增值税的供应商账单，查看对每家供应商的欠款及到期日，并跟踪部分付款与全额付款。专为孟加拉国企业打造。",
           "keywords": [
             "孟加拉国供应商账单软件",
@@ -436,7 +436,7 @@
       },
       "purchaseOrders": {
         "meta": {
-          "title": "采购订单：在货到之前约定价格和数量 | Adon ERP",
+          "title": "采购订单：在货到之前约定价格和数量",
           "description": "开具采购订单、审批、记录到货，并一键把订单转为供应商账单。专为孟加拉国企业打造。",
           "keywords": [
             "孟加拉国采购订单软件",
@@ -756,7 +756,7 @@
       },
       "ledgers": {
         "meta": {
-          "title": "分类账：让每一类分录各归其位 | Adon ERP",
+          "title": "分类账：让每一类分录各归其位",
           "description": "为销售、工资、资产或项目分别建立分类账，查看每个分类账里有多少笔日记账分录，让账目一目了然。专为孟加拉国企业打造。",
           "keywords": [
             "孟加拉国分类账软件",
@@ -895,7 +895,7 @@
       },
       "invoices": {
         "meta": {
-          "title": "销售发票 (AR)：以塔卡计价的增值税发票与 Mushak-6.3 | Adon ERP",
+          "title": "销售发票 (AR)：以塔卡计价的增值税发票与 Mushak-6.3",
           "description": "开具每行含增值税的客户发票，打印商业账单或双语 Mushak-6.3，并查看每位买方还欠多少。专为孟加拉国企业打造。",
           "keywords": [
             "孟加拉国发票软件",
@@ -1126,7 +1126,7 @@
       },
       "journal": {
         "meta": {
-          "title": "以塔卡记账的日记账分录，边输入边平衡 | Adon ERP",
+          "title": "以塔卡记账的日记账分录，边输入边平衡",
           "description": "将折旧、工资计提、准备金和更正作为复式日记账过账。借贷合计自动校验，每笔分录都有编号并可搜索。",
           "keywords": [
             "孟加拉国日记账分录软件",
@@ -1413,7 +1413,7 @@
       },
       "hub": {
         "meta": {
-          "title": "会计中心：面向孟加拉国企业的实时会计仪表盘 | Adon ERP",
+          "title": "会计中心：面向孟加拉国企业的实时会计仪表盘",
           "description": "在一个实时画面中查看收入、净收入、应收、应付和总资产，以塔卡、lakh 和 crore 显示。Adon ERP 的会计中心，专为孟加拉国企业打造。",
           "keywords": [
             "孟加拉国会计仪表盘",
@@ -1849,7 +1849,7 @@
     },
     "accounting": {
       "metadata": {
-        "title": "会计 | Adon ERP",
+        "title": "会计",
         "description": "面向所有财务运营的 AI 会计平台——从对账和费用到报税及实时报告。"
       },
       "hero": {
@@ -2384,7 +2384,7 @@
     },
     "apps": {
       "metadata": {
-        "title": "应用 | Adon ERP",
+        "title": "应用",
         "description": "浏览 Adon ERP 的热门应用、最新发布工具和常用业务扩展。"
       },
       "filterBar": {
@@ -3173,7 +3173,7 @@
     },
     "blog": {
       "metadata": {
-        "title": "智能博客与内容营销平台 | Adon ERP",
+        "title": "智能博客与内容营销平台",
         "description": "创建精美博客文章、连接受众、提升 SEO，并将您的知识转化为强大的业务增长渠道。"
       },
       "hero": {
@@ -3564,7 +3564,7 @@
     },
     "Checkout": {
       "metadata": {
-        "title": "结账 | Adon ERP",
+        "title": "结账",
         "description": "安全完成购买。请提供付款和配送信息。"
       },
       "checkoutPage": {
@@ -4531,7 +4531,7 @@
         "hero": {
           "eyebrow": "值得信赖的合作伙伴",
           "title": "实施合作伙伴",
-          "description": "联系经过认证的专家，他们为本地区企业和政府机构提供 Eden ERP 解决方案。",
+          "description": "联系经过认证的专家，他们为本地区企业和政府机构提供  Adon ERP 解决方案。",
           "cta": "寻找最佳匹配"
         },
         "filters": {
@@ -4560,7 +4560,7 @@
         },
         "banner": {
           "title": "深受领先机构信赖",
-          "description": "加入 1500 万+ 用户，他们依靠 Eden ERP 和我们的认证合作伙伴成功推进数字化转型。"
+          "description": "加入 1500 万+ 用户，他们依靠  Adon ERP 和我们的认证合作伙伴成功推进数字化转型。"
         },
         "partners": [
           {
@@ -6088,7 +6088,7 @@
       },
       "metadata": {
         "root": {
-          "title": "社区 | Adon ERP",
+          "title": "社区",
           "description": "探索 Adon ERP 社区中的学习、服务、协作和软件获取路径。"
         },
         "collaborate": {
@@ -6152,7 +6152,7 @@
           "description": "阅读使用 Adon ERP 的企业经过验证的客户案例和成果。"
         },
         "getServicesSupport": {
-          "title": "支持 | Adon ERP",
+          "title": "支持",
           "description": "从专家团队获得支持，并快速联系正确的 Adon ERP 联系人。"
         },
         "getServicesFindAccountant": {
@@ -6409,7 +6409,7 @@
     },
     "contact": {
       "metadata": {
-        "title": "联系我们 | Adon ERP",
+        "title": "联系我们",
         "description": "如有销售、支持或实施相关咨询，请联系 Adon ERP 团队。"
       },
       "hero": {
@@ -6497,7 +6497,7 @@
     },
     "crm": {
       "metadata": {
-        "title": "CRM | Adon ERP",
+        "title": "CRM",
         "description": "Adon ERP CRM 帮助团队获取潜在客户、管理销售管道、自动跟进，并将每个商机转化为收入。"
       },
       "hero": {
@@ -7470,7 +7470,7 @@
     },
     "ecommerce": {
       "metadata": {
-        "title": "电子商务 | Adon ERP",
+        "title": "电子商务",
         "description": "一个应用连接所有环节，让您随时随地销售任何商品。创建商店、管理产品、接收订单，并漂亮地发展品牌。"
       },
       "hero": {
@@ -7713,7 +7713,7 @@
     },
     "elearning": {
       "metadata": {
-        "title": "eLearning | Adon ERP",
+        "title": "eLearning",
         "description": "创建在线课程、发布课程内容、跟踪进度、衡量成果，并通过精美学习平台帮助学员获得成功。"
       },
       "hero": {
@@ -7916,7 +7916,7 @@
     },
     "eSign": {
       "metadata": {
-        "title": "eSign | Adon ERP",
+        "title": "eSign",
         "description": "在 Adon ERP 内发送、签署和管理商业协议，并使用安全工作流、提醒、审计追踪和一键审批。"
       },
       "hero": {
@@ -9038,7 +9038,7 @@
     },
     "forum": {
       "metadata": {
-        "title": "社区论坛 | Adon ERP",
+        "title": "社区论坛",
         "description": "创建社区、促进协作、改善支持，并为用户提供一个简单的空间来提问、回答、投票和分享知识。"
       },
       "hero": {
@@ -10458,7 +10458,7 @@
     },
     "help": {
       "metadata": {
-        "title": "帮助 | Adon ERP",
+        "title": "帮助",
         "description": "获取支持并找到问题的答案。"
       },
       "hero": {
@@ -10557,7 +10557,7 @@
     },
     "home": {
       "metadata": {
-        "title": "首页 | Adon ERP",
+        "title": "首页",
         "description": "从一个互联的 ERP 平台管理订阅、会计、团队运营和业务增长。"
       },
       "hero": {
@@ -11987,7 +11987,7 @@
     },
     "live-chat": {
       "metadata": {
-        "title": "Live Chat | Adon ERP",
+        "title": "Live Chat",
         "description": "将访客转化为潜在客户、客户和忠实粉丝。通过一个简单的聊天工作区回答问题、解决难题并建立更好的客户关系。"
       },
       "hero": {
@@ -14363,7 +14363,7 @@
     },
     "pos-retail": {
       "metadata": {
-        "title": "零售 POS | Adon ERP",
+        "title": "零售 POS",
         "description": "Adon ERP POS 帮助团队更快销售、管理库存、奖励忠实客户，并将每笔交易与会计系统同步。"
       },
       "hero": {
@@ -14560,7 +14560,7 @@
     },
     "pricing": {
       "metadata": {
-        "title": "定价 | Adon ERP",
+        "title": "定价",
         "description": "Adon ERP 简单、透明且灵活的定价方案。根据企业规模和需求选择合适套餐。"
       },
       "hero": {
@@ -14985,7 +14985,7 @@
     },
     "procurement": {
       "metadata": {
-        "title": "采购与招标管理 | Adon ERP",
+        "title": "采购与招标管理",
         "description": "在一个互联的采购工作流中处理采购申请、比价表、到岸成本分摊和招标管理。"
       },
       "header": {
@@ -15800,7 +15800,7 @@
     },
     "quality": {
       "metadata": {
-        "title": "质量控制 | Adon ERP",
+        "title": "质量控制",
         "description": "高级质量控制解决方案——轻松发现缺陷、管理检验并保持生产持续运行。"
       },
       "header": {
@@ -16532,7 +16532,7 @@
     },
     "rental": {
       "metadata": {
-        "title": "租赁管理 | Adon ERP",
+        "title": "租赁管理",
         "description": "Adon Rental 将库存、电子商务、销售、会计和签名整合到一个应用中。让运营井然有序、减少手动工作，并加快每个租赁流程。"
       },
       "hero": {
@@ -16720,7 +16720,7 @@
     },
     "restaurant-pos": {
       "metadata": {
-        "title": "餐厅 POS | Adon ERP",
+        "title": "餐厅 POS",
         "description": "Adon ERP 餐厅 POS 将餐桌、订单、厨房、付款、库存和会计连接到一个无缝工作流中。"
       },
       "hero": {
@@ -17111,7 +17111,7 @@
     },
     "sales-quotation": {
       "metadata": {
-        "title": "销售报价 | Adon ERP",
+        "title": "销售报价",
         "description": "Adon ERP Sales 帮助团队创建专业报价、管理价格、更快成交，并将商机转化为订单。"
       },
       "hero": {
@@ -17608,7 +17608,7 @@
     },
     "subscriptions": {
       "metadata": {
-        "title": "订阅 | Adon ERP",
+        "title": "订阅",
         "description": "从订阅报价和续订到自动计费与客户留存工作流，Adon ERP 让经常性收入更加可预测。"
       },
       "hero": {
@@ -17826,7 +17826,7 @@
     },
     "support": {
       "metadata": {
-        "title": "支持 | Adon ERP",
+        "title": "支持",
         "description": "从专家团队获得支持，并快速联系正确的 Adon ERP 联系人。"
       },
       "hero": {
@@ -19287,7 +19287,7 @@
     },
     "website-builder": {
       "metadata": {
-        "title": "网站构建器 | Adon ERP",
+        "title": "网站构建器",
         "description": "打造的不只是网站，更是业务。设计精美页面、销售产品、管理客户，并通过一个集成应用推动增长。"
       },
       "hero": {

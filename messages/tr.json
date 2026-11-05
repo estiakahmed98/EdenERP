@@ -207,7 +207,7 @@
     "accountingShowcase": {
       "bills": {
         "meta": {
-          "title": "Alış Faturaları (AP): Taka ile Tedarikçi Faturaları, KDV ve Ödemeler | Adon ERP",
+          "title": "Alış Faturaları (AP): Taka ile Tedarikçi Faturaları, KDV ve Ödemeler",
           "description": "Her satırda KDV’li tedarikçi faturalarını kaydedin, her tedarikçiye ne kadar borcunuz olduğunu ve vadesini görün, kısmi ve tam ödemeleri izleyin. Bangladeş’teki şirketler için geliştirildi.",
           "keywords": [
             "Bangladeş tedarikçi faturası yazılımı",
@@ -436,7 +436,7 @@
       },
       "purchaseOrders": {
         "meta": {
-          "title": "Satın Alma Siparişleri: Mal Gelmeden Önce Fiyat ve Miktarı Kararlaştırın | Adon ERP",
+          "title": "Satın Alma Siparişleri: Mal Gelmeden Önce Fiyat ve Miktarı Kararlaştırın",
           "description": "Satın alma siparişi oluşturun, onaylayın, gelenleri kaydedin ve siparişi tek tıkla tedarikçi faturasına çevirin. Bangladeş’teki şirketler için geliştirildi.",
           "keywords": [
             "Bangladeş satın alma siparişi yazılımı",
@@ -756,7 +756,7 @@
       },
       "ledgers": {
         "meta": {
-          "title": "Defter-i Kebir: Her Kayıt Akışını Ayrı Tutun | Adon ERP",
+          "title": "Defter-i Kebir: Her Kayıt Akışını Ayrı Tutun",
           "description": "Satış, bordro, varlık veya projeler için ayrı defterler oluşturun, her birinde kaç yevmiye kaydı olduğunu görün ve kayıtlarınızı okunaklı tutun. Bangladeş’teki şirketler için geliştirildi.",
           "keywords": [
             "Bangladeş defter yazılımı",
@@ -895,7 +895,7 @@
       },
       "invoices": {
         "meta": {
-          "title": "Satış Faturaları (AR): Taka ile KDV’li Faturalar ve Mushak-6.3 | Adon ERP",
+          "title": "Satış Faturaları (AR): Taka ile KDV’li Faturalar ve Mushak-6.3",
           "description": "Her satırda KDV’li müşteri faturaları kesin, ticari fatura veya iki dilli Mushak-6.3 yazdırın ve her alıcının hâlâ ne kadar borçlu olduğunu görün. Bangladeş’teki şirketler için geliştirildi.",
           "keywords": [
             "Bangladeş fatura yazılımı",
@@ -1126,7 +1126,7 @@
       },
       "journal": {
         "meta": {
-          "title": "Taka ile Yevmiye Kayıtları, Yazdıkça Dengelenir | Adon ERP",
+          "title": "Taka ile Yevmiye Kayıtları, Yazdıkça Dengelenir",
           "description": "Amortisman, maaş tahakkukları, karşılıklar ve düzeltmeleri çift girişli yevmiye olarak kaydedin. Borç ve alacak toplamları kendini kontrol eder; her kayıt numaralıdır ve aranabilir.",
           "keywords": [
             "Bangladeş yevmiye kaydı yazılımı",
@@ -1413,7 +1413,7 @@
       },
       "hub": {
         "meta": {
-          "title": "Muhasebe Merkezi: Bangladeşli İşletmeler için Canlı Muhasebe Panosu | Adon ERP",
+          "title": "Muhasebe Merkezi: Bangladeşli İşletmeler için Canlı Muhasebe Panosu",
           "description": "Gelir, net gelir, alacaklar, borçlar ve toplam varlıkları tek bir canlı ekranda görün; taka, lakh ve crore cinsinden. Bangladeş’teki şirketler için geliştirilen Adon ERP Muhasebe Merkezi.",
           "keywords": [
             "Bangladeş muhasebe panosu",
@@ -1849,7 +1849,7 @@
     },
     "accounting": {
       "metadata": {
-        "title": "Muhasebe | Adon ERP",
+        "title": "Muhasebe",
         "description": "Mutabakat ve giderlerden vergi beyannameleri ve gerçek zamanlı raporlamaya kadar tüm finansal işlemleriniz için yapay zekâ destekli muhasebe platformu."
       },
       "hero": {
@@ -2384,7 +2384,7 @@
     },
     "apps": {
       "metadata": {
-        "title": "Uygulamalar | Adon ERP",
+        "title": "Uygulamalar",
         "description": "Adon ERP için en iyi uygulamalara, yeni yayımlanan araçlara ve popüler iş uzantılarına göz atın."
       },
       "filterBar": {
@@ -3173,7 +3173,7 @@
     },
     "blog": {
       "metadata": {
-        "title": "Akıllı Bloglama ve İçerik Pazarlama Platformu | Adon ERP",
+        "title": "Akıllı Bloglama ve İçerik Pazarlama Platformu",
         "description": "Güzel blog yazıları oluşturun, hedef kitlenizle bağlantı kurun, SEO'yu geliştirin ve bilginizi işletmeniz için güçlü bir büyüme kanalına dönüştürün."
       },
       "hero": {
@@ -3564,7 +3564,7 @@
     },
     "Checkout": {
       "metadata": {
-        "title": "Ödeme | Adon ERP",
+        "title": "Ödeme",
         "description": "Satın alma işleminizi güvenle tamamlayın. Ödeme ve teslimat bilgilerini girin."
       },
       "checkoutPage": {
@@ -4531,7 +4531,7 @@
         "hero": {
           "eyebrow": "Güvenilir iş ortakları",
           "title": "Uygulama İş Ortakları",
-          "description": "Bölge genelindeki işletmelere ve kamu kurumlarına Eden ERP çözümleri sunan sertifikalı uzmanlarla bağlantı kurun.",
+          "description": "Bölge genelindeki işletmelere ve kamu kurumlarına  Adon ERP çözümleri sunan sertifikalı uzmanlarla bağlantı kurun.",
           "cta": "En İyi Eşleşmeyi Bul"
         },
         "filters": {
@@ -4560,7 +4560,7 @@
         },
         "banner": {
           "title": "Önde gelen kuruluşların güveniyle",
-          "description": "Başarılı dijital dönüşüm için Eden ERP'ye ve sertifikalı iş ortaklarımıza güvenen 15 milyon+ kullanıcıya katılın."
+          "description": "Başarılı dijital dönüşüm için  Adon ERP'ye ve sertifikalı iş ortaklarımıza güvenen 15 milyon+ kullanıcıya katılın."
         },
         "partners": [
           {
@@ -6088,7 +6088,7 @@
       },
       "metadata": {
         "root": {
-          "title": "Topluluk | Adon ERP",
+          "title": "Topluluk",
           "description": "Adon ERP topluluğundaki öğrenme, hizmet, iş birliği ve yazılım erişim yollarını keşfedin."
         },
         "collaborate": {
@@ -6152,7 +6152,7 @@
           "description": "Adon ERP kullanan işletmelerin doğrulanmış müşteri hikâyelerini ve sonuçlarını okuyun."
         },
         "getServicesSupport": {
-          "title": "Destek | Adon ERP",
+          "title": "Destek",
           "description": "Uzman ekibimizden destek alın ve doğru Adon ERP iletişim noktasına hızlıca ulaşın."
         },
         "getServicesFindAccountant": {
@@ -6409,7 +6409,7 @@
     },
     "contact": {
       "metadata": {
-        "title": "Bize Ulaşın | Adon ERP",
+        "title": "Bize Ulaşın",
         "description": "Satış, destek veya uygulama talepleri için Adon ERP ekibiyle iletişime geçin."
       },
       "hero": {
@@ -6497,7 +6497,7 @@
     },
     "crm": {
       "metadata": {
-        "title": "CRM | Adon ERP",
+        "title": "CRM",
         "description": "Adon ERP CRM, ekibinizin potansiyel müşterileri yakalamasına, satış hunilerini yönetmesine, takipleri otomatikleştirmesine ve her fırsatı gelire dönüştürmesine yardımcı olur."
       },
       "hero": {
@@ -7470,7 +7470,7 @@
     },
     "ecommerce": {
       "metadata": {
-        "title": "e-Ticaret | Adon ERP",
+        "title": "e-Ticaret",
         "description": "Her şeyi, her yerde, tümü tek bir uygulamada bağlı şekilde satın. Mağazanızı oluşturun, ürünleri yönetin, siparişleri kabul edin ve markanızı şık biçimde büyütün."
       },
       "hero": {
@@ -7713,7 +7713,7 @@
     },
     "elearning": {
       "metadata": {
-        "title": "e-Öğrenme | Adon ERP",
+        "title": "e-Öğrenme",
         "description": "Çevrimiçi kurslar oluşturun, dersler yayınlayın, ilerlemeyi takip edin, sonuçları ölçün ve güzel bir öğrenme platformuyla öğrencilerinizin başarıya ulaşmasına yardımcı olun."
       },
       "hero": {
@@ -7916,7 +7916,7 @@
     },
     "eSign": {
       "metadata": {
-        "title": "eSign | Adon ERP",
+        "title": "eSign",
         "description": "Güvenli iş akışları, hatırlatıcılar, denetim izleri ve tek tıklamalı onaylarla iş sözleşmelerini Adon ERP içinde gönderin, imzalayın ve yönetin."
       },
       "hero": {
@@ -9038,7 +9038,7 @@
     },
     "forum": {
       "metadata": {
-        "title": "Topluluk Forumu | Adon ERP",
+        "title": "Topluluk Forumu",
         "description": "Bir topluluk oluşturun, iş birliğini geliştirin, desteği iyileştirin ve kullanıcılara soru sormak, yanıtlamak, oy vermek ve bilgi paylaşmak için basit bir alan sağlayın."
       },
       "hero": {
@@ -10458,7 +10458,7 @@
     },
     "help": {
       "metadata": {
-        "title": "Yardım | Adon ERP",
+        "title": "Yardım",
         "description": "Destek alın ve sorularınıza yanıt bulun."
       },
       "hero": {
@@ -10557,7 +10557,7 @@
     },
     "home": {
       "metadata": {
-        "title": "Ana Sayfa | Adon ERP",
+        "title": "Ana Sayfa",
         "description": "Abonelikleri, muhasebeyi, ekip operasyonlarını ve iş büyümesini tek bir bağlantılı ERP platformundan yönetin."
       },
       "hero": {
@@ -11987,7 +11987,7 @@
     },
     "live-chat": {
       "metadata": {
-        "title": "Canlı Sohbet | Adon ERP",
+        "title": "Canlı Sohbet",
         "description": "Ziyaretçileri potansiyel müşterilere, müşterilere ve sadık takipçilere dönüştürün. Soruları yanıtlayın, sorunları çözün ve tek bir basit sohbet çalışma alanından daha iyi ilişkiler kurun."
       },
       "hero": {
@@ -14363,7 +14363,7 @@
     },
     "pos-retail": {
       "metadata": {
-        "title": "Perakende POS | Adon ERP",
+        "title": "Perakende POS",
         "description": "Adon ERP POS ekibinizin daha hızlı satış yapmasına, envanteri yönetmesine, sadık müşterileri ödüllendirmesine ve her işlemi muhasebeyle senkronize etmesine yardımcı olur."
       },
       "hero": {
@@ -14560,7 +14560,7 @@
     },
     "pricing": {
       "metadata": {
-        "title": "Fiyatlandırma | Adon ERP",
+        "title": "Fiyatlandırma",
         "description": "Adon ERP için basit, şeffaf ve esnek fiyatlandırma planları. İşletme büyüklüğünüze ve ihtiyaçlarınıza uygun planı seçin."
       },
       "hero": {
@@ -14985,7 +14985,7 @@
     },
     "procurement": {
       "metadata": {
-        "title": "Tedarik ve İhale Yönetimi | Adon ERP",
+        "title": "Tedarik ve İhale Yönetimi",
         "description": "Satın alma taleplerini, karşılaştırmalı tabloları, maliyet dağıtımını ve ihale yönetimini tek bir bağlantılı tedarik iş akışında yürütün."
       },
       "header": {
@@ -15800,7 +15800,7 @@
     },
     "quality": {
       "metadata": {
-        "title": "Kalite Kontrol | Adon ERP",
+        "title": "Kalite Kontrol",
         "description": "Gelişmiş kalite kontrol çözümü — kusurları kolayca tespit edin, kontrolleri yönetin ve üretimi sürdürün."
       },
       "header": {
@@ -16532,7 +16532,7 @@
     },
     "rental": {
       "metadata": {
-        "title": "Kiralama Yönetimi | Adon ERP",
+        "title": "Kiralama Yönetimi",
         "description": "Adon Rental artık envanter, e-Ticaret, satış, muhasebe ve imzaları tek uygulamada birleştiriyor. Düzenli olun, manuel işi azaltın ve her kiralama sürecini hızlandırın."
       },
       "hero": {
@@ -16720,7 +16720,7 @@
     },
     "restaurant-pos": {
       "metadata": {
-        "title": "Restoran POS | Adon ERP",
+        "title": "Restoran POS",
         "description": "Adon ERP Restaurant POS masalarınızı, siparişlerinizi, mutfağınızı, ödemelerinizi, envanterinizi ve muhasebenizi tek ve kesintisiz iş akışında birleştirir."
       },
       "hero": {
@@ -17111,7 +17111,7 @@
     },
     "sales-quotation": {
       "metadata": {
-        "title": "Satış Teklifleri | Adon ERP",
+        "title": "Satış Teklifleri",
         "description": "Adon ERP Sales ekibinizin profesyonel teklifler oluşturmasına, fiyatlandırmayı yönetmesine, anlaşmaları daha hızlı kapatmasına ve fırsatları siparişlere dönüştürmesine yardımcı olur."
       },
       "hero": {
@@ -17608,7 +17608,7 @@
     },
     "subscriptions": {
       "metadata": {
-        "title": "Abonelikler | Adon ERP",
+        "title": "Abonelikler",
         "description": "Abonelik teklifleri ve yenilemelerden otomatik faturalandırma ve müşteri elde tutma iş akışlarına kadar Adon ERP tekrarlayan geliri öngörülebilir tutar."
       },
       "hero": {
@@ -17826,7 +17826,7 @@
     },
     "support": {
       "metadata": {
-        "title": "Destek | Adon ERP",
+        "title": "Destek",
         "description": "Uzman ekibimizden destek alın ve doğru Adon ERP iletişim noktasına hızlıca ulaşın."
       },
       "hero": {
@@ -19287,7 +19287,7 @@
     },
     "website-builder": {
       "metadata": {
-        "title": "Web Sitesi Oluşturucu | Adon ERP",
+        "title": "Web Sitesi Oluşturucu",
         "description": "Bir web sitesinden fazlasını oluşturun. Bir işletme oluşturun. Güzel sayfalar tasarlayın, ürün satın, müşterileri yönetin ve tek bir entegre uygulamadan büyüyün."
       },
       "hero": {

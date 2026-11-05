@@ -11,7 +11,7 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Chart of Accounts: The Backbone of Your Business | Adon ERP',
+  title: 'Chart of Accounts: The Backbone of Your Business',
   description: 'Understand how the Chart of Accounts organizes your financial data in Adon ERP. See how assets, liabilities, income, and expenses fit together.',
 }
 

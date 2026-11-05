@@ -3,7 +3,7 @@ import {
   otherIndustryMetadata,
 } from "@/components/industries/others/page";
 
-export const metadata = otherIndustryMetadata("ecommerce");
+export const generateMetadata = () => otherIndustryMetadata("ecommerce");
 
 export default function OtherIndustryLanding() {
   return <OtherIndustryPage slug="ecommerce" />;

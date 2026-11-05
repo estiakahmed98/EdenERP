@@ -207,7 +207,7 @@
         "accountingShowcase": {
             "bills": {
                 "meta": {
-                    "title": "買掛請求 (AP)：タカ建ての仕入先請求書、VAT、支払 | Adon ERP",
+                    "title": "買掛請求 (AP)：タカ建ての仕入先請求書、VAT、支払",
                     "description": "各行にVATを付けた仕入先請求書を登録し、各仕入先への未払額と支払期日を確認、一部支払・全額支払を追跡します。バングラデシュの企業向けに開発。",
                     "keywords": [
                         "バングラデシュ 仕入先請求書ソフト",
@@ -436,7 +436,7 @@
             },
             "purchaseOrders": {
                 "meta": {
-                    "title": "発注書：商品が届く前に価格と数量を合意 | Adon ERP",
+                    "title": "発注書：商品が届く前に価格と数量を合意",
                     "description": "発注書を作成・承認し、入荷を記録し、発注をワンクリックで仕入先請求書に変換します。バングラデシュの企業向けに開発。",
                     "keywords": [
                         "バングラデシュ 発注書ソフト",
@@ -756,7 +756,7 @@
             },
             "ledgers": {
                 "meta": {
-                    "title": "元帳：仕訳の流れを分けて管理 | Adon ERP",
+                    "title": "元帳：仕訳の流れを分けて管理",
                     "description": "売上、給与、資産、プロジェクトごとに元帳を分け、それぞれの仕訳件数を確認して、帳簿を読みやすく保ちます。バングラデシュの企業向けに開発。",
                     "keywords": [
                         "バングラデシュ 元帳ソフト",
@@ -895,7 +895,7 @@
             },
             "invoices": {
                 "meta": {
-                    "title": "請求書 (AR)：タカ建てのVAT請求書とMushak-6.3 | Adon ERP",
+                    "title": "請求書 (AR)：タカ建てのVAT請求書とMushak-6.3",
                     "description": "各行にVATを付けた顧客請求書を発行し、商業請求書または二言語のMushak-6.3を印刷、各取引先の未収額も確認できます。バングラデシュの企業向けに開発。",
                     "keywords": [
                         "バングラデシュ 請求書ソフト",
@@ -1126,7 +1126,7 @@
             },
             "journal": {
                 "meta": {
-                    "title": "タカ建ての仕訳、入力しながら貸借が一致 | Adon ERP",
+                    "title": "タカ建ての仕訳、入力しながら貸借が一致",
                     "description": "減価償却、給与未払計上、引当金、修正を複式仕訳として転記。借方と貸方の合計は自動で照合され、すべての仕訳に番号が付き、検索できます。",
                     "keywords": [
                         "バングラデシュ 仕訳ソフト",
@@ -1413,7 +1413,7 @@
             },
             "hub": {
                 "meta": {
-                    "title": "会計ハブ：バングラデシュ企業向けのリアルタイム会計ダッシュボード | Adon ERP",
+                    "title": "会計ハブ：バングラデシュ企業向けのリアルタイム会計ダッシュボード",
                     "description": "売上、純利益、売掛金、買掛金、総資産を一つのライブ画面で、タカ・lakh・croreで確認。バングラデシュの企業向けに開発された Adon ERP の会計ハブ。",
                     "keywords": [
                         "バングラデシュ 会計ダッシュボード",
@@ -1849,7 +1849,7 @@
         },
         "accounting": {
             "metadata": {
-                "title": "会計 | Adon ERP",
+                "title": "会計",
                 "description": "すべての財務業務のためのAI搭載会計プラットフォーム — 照合と経費から確定申告とリアルタイムレポートまで。"
             },
             "hero": {
@@ -2384,7 +2384,7 @@
   },
   "apps": {
     "metadata": {
-      "title": "アプリ | Adon ERP",
+      "title": "アプリ",
       "description": "Adon ERPの人気アプリ、新リリースツール、人気のビジネス拡張機能を閲覧します。"
     },
     "filterBar": {
@@ -3173,7 +3173,7 @@
   },
   "blog": {
     "metadata": {
-      "title": "スマートブログ＆コンテンツマーケティングプラットフォーム | Adon ERP",
+      "title": "スマートブログ＆コンテンツマーケティングプラットフォーム",
       "description": "美しいブログ記事を作成し、読者とつながり、SEOを改善し、あなたの知識をビジネスの強力な成長チャネルに変えましょう。"
     },
     "hero": {
@@ -3564,7 +3564,7 @@
   },
   "Checkout": {
     "metadata": {
-      "title": "チェックアウト | Adon ERP",
+      "title": "チェックアウト",
       "description": "購入を安全に完了します。支払いと配送情報を提供してください。"
     },
     "checkoutPage": {
@@ -4531,7 +4531,7 @@
       "hero": {
         "eyebrow": "信頼できるパートナー",
         "title": "実装パートナー",
-        "description": "地域全体の企業や政府機関にEden ERPソリューションを提供する認定専門家とつながりましょう。",
+        "description": "地域全体の企業や政府機関に Adon ERPソリューションを提供する認定専門家とつながりましょう。",
         "cta": "ベストマッチを見つける"
       },
       "filters": {
@@ -4560,7 +4560,7 @@
       },
       "banner": {
         "title": "大手組織に信頼されています",
-        "description": "Eden ERPと認定パートナーを信頼してデジタル変革を成功させている1500万人以上のユーザーに参加しましょう。"
+        "description": " Adon ERPと認定パートナーを信頼してデジタル変革を成功させている1500万人以上のユーザーに参加しましょう。"
       },
       "partners": [
         {
@@ -6088,7 +6088,7 @@
     },
     "metadata": {
       "root": {
-        "title": "コミュニティ | Adon ERP",
+        "title": "コミュニティ",
         "description": "Adon ERPコミュニティ全体の学習、サービス、コラボレーション、ソフトウェアアクセスパスを探索しましょう。"
       },
       "collaborate": {
@@ -6152,7 +6152,7 @@
         "description": "Adon ERPを使用している企業からの検証済み顧客ストーリーと成果を読みましょう。"
       },
       "getServicesSupport": {
-        "title": "サポート | Adon ERP",
+        "title": "サポート",
         "description": "専門家チームからサポートを受け、適切なAdon ERP連絡先に迅速に到達しましょう。"
       },
       "getServicesFindAccountant": {
@@ -6409,7 +6409,7 @@
   },
   "contact": {
     "metadata": {
-      "title": "お問い合わせ | Adon ERP",
+      "title": "お問い合わせ",
       "description": "営業、サポート、実装に関するお問い合わせはAdon ERPチームまでご連絡ください。"
     },
     "hero": {
@@ -6497,7 +6497,7 @@
   },
   "crm": {
     "metadata": {
-      "title": "CRM | Adon ERP",
+      "title": "CRM",
       "description": "Adon ERP CRMは、チームがリードを獲得し、パイプラインを管理し、フォローアップを自動化し、すべての機会を収益に変えるのを支援します。"
     },
     "hero": {
@@ -7470,7 +7470,7 @@
 },
 "ecommerce": {
   "metadata": {
-    "title": "eコマース | Adon ERP",
+    "title": "eコマース",
     "description": "何でも、どこでも販売。すべてが1つのアプリで接続。ストアを作成し、商品を管理し、注文を受け付け、ブランドを美しく成長させましょう。"
   },
   "hero": {
@@ -7713,7 +7713,7 @@
 },
 "elearning": {
   "metadata": {
-    "title": "eラーニング | Adon ERP",
+    "title": "eラーニング",
     "description": "オンラインコースを作成し、レッスンを公開し、進捗を追跡し、結果を測定し、美しい学習プラットフォームで生徒の成功を支援します。"
   },
   "hero": {
@@ -7916,7 +7916,7 @@
 },
 "eSign": {
   "metadata": {
-    "title": "eSign | Adon ERP",
+    "title": "eSign",
     "description": "安全なワークフロー、リマインダー、監査証跡、ワンクリック承認でAdon ERP内でビジネス契約を送信、署名、管理。"
   },
   "hero": {
@@ -9038,7 +9038,7 @@
 },
 "forum": {
   "metadata": {
-    "title": "コミュニティフォーラム | Adon ERP",
+    "title": "コミュニティフォーラム",
     "description": "コミュニティを作成し、コラボレーションを促進し、サポートを改善し、ユーザーが質問、回答、投票、知識共有するためのシンプルな場所を提供。"
   },
   "hero": {
@@ -10458,7 +10458,7 @@
   },
   "help": {
     "metadata": {
-      "title": "ヘルプ | Adon ERP",
+      "title": "ヘルプ",
       "description": "サポートを受け、質問の答えを見つけましょう。"
     },
     "hero": {
@@ -10557,7 +10557,7 @@
   },
   "home": {
     "metadata": {
-      "title": "ホーム | Adon ERP",
+      "title": "ホーム",
       "description": "サブスクリプション、会計、チーム運用、ビジネス成長を一つの接続されたERPプラットフォームから管理します。"
     },
     "hero": {
@@ -11987,7 +11987,7 @@
   },
   "live-chat": {
     "metadata": {
-      "title": "ライブチャット | Adon ERP",
+      "title": "ライブチャット",
       "description": "訪問者をリード、顧客、ロイヤルファンに変えましょう。一つのシンプルなチャットワークスペースから質問に答え、問題を解決し、より良い関係を構築します。"
     },
     "hero": {
@@ -14363,7 +14363,7 @@
   },
   "pos-retail": {
     "metadata": {
-      "title": "POS小売 | Adon ERP",
+      "title": "POS小売",
       "description": "Adon ERP POSは、チームがより速く販売し、在庫を管理し、ロイヤル顧客に報酬を与え、すべての取引を会計と同期するのを支援します。"
     },
     "hero": {
@@ -14560,7 +14560,7 @@
   },
   "pricing": {
     "metadata": {
-      "title": "価格 | Adon ERP",
+      "title": "価格",
       "description": "Adon ERPのシンプルで透明、柔軟な価格プラン。ビジネス規模とニーズに合ったプランを選択してください。"
     },
     "hero": {
@@ -14985,7 +14985,7 @@
   },
   "procurement": {
     "metadata": {
-      "title": "調達と入札管理 | Adon ERP",
+      "title": "調達と入札管理",
       "description": "購買要求、比較明細、陸揚げ原価配分、入札管理を一つの接続された調達ワークフローで実行します。"
     },
     "header": {
@@ -15800,7 +15800,7 @@
   },
   "quality": {
     "metadata": {
-      "title": "品質管理 | Adon ERP",
+      "title": "品質管理",
       "description": "高度な品質管理ソリューション - 欠陥を簡単に検出し、検査を管理し、生産を稼働させ続けます。"
     },
     "header": {
@@ -16478,7 +16478,7 @@
   },
   "rental": {
     "metadata": {
-      "title": "レンタル管理 | Adon ERP",
+      "title": "レンタル管理",
       "description": "Adon Rentalは現在、在庫、eコマース、営業、会計、署名を一つのアプリに統合しています。整理整頓し、手作業を減らし、すべてのレンタルプロセスを迅速化します。"
     },
     "hero": {
@@ -16666,7 +16666,7 @@
   },
   "restaurant-pos": {
     "metadata": {
-      "title": "レストランPOS | Adon ERP",
+      "title": "レストランPOS",
       "description": "Adon ERPレストランPOSは、テーブル、注文、キッチン、支払い、在庫、会計を一つのシームレスなワークフローで接続します。"
     },
     "hero": {
@@ -17057,7 +17057,7 @@
   },
   "sales-quotation": {
     "metadata": {
-      "title": "販売見積もり | Adon ERP",
+      "title": "販売見積もり",
       "description": "Adon ERP Salesは、チームが洗練された見積もりを作成し、価格を管理し、取引をより速くクローズし、機会を注文に変換するのを支援します。"
     },
     "hero": {
@@ -17554,7 +17554,7 @@
   },
   "subscriptions": {
     "metadata": {
-      "title": "サブスクリプション | Adon ERP",
+      "title": "サブスクリプション",
       "description": "サブスクリプション見積もりや更新から、自動請求、リテンションワークフローまで、Adon ERPは経常収益を予測可能に保ちます。"
     },
     "hero": {
@@ -17772,7 +17772,7 @@
   },
   "support": {
     "metadata": {
-      "title": "サポート | Adon ERP",
+      "title": "サポート",
       "description": "専門家チームからサポートを受け、適切なAdon ERP連絡先に迅速に到達しましょう。"
     },
     "hero": {
@@ -19233,7 +19233,7 @@
   },
   "website-builder": {
     "metadata": {
-      "title": "ウェブサイトビルダー | Adon ERP",
+      "title": "ウェブサイトビルダー",
       "description": "ウェブサイト以上のものを構築。ビジネスを構築。美しいページをデザインし、製品を販売し、顧客を管理し、一つの統合アプリから成長します。"
     },
     "hero": {
