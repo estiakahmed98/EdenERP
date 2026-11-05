@@ -57,7 +57,7 @@ export const pages: Record<CommunitySlug, Page> = {
     "LEARN. CONNECT. BUILD YOUR NEXT STEP.",
     "A little shared knowledge.",
     "A much clearer way forward.",
-    "Find your way through product guides, conversations and collaboration. One considered starting point for the EdenERP community.",
+    "Find your way through product guides, conversations and collaboration. One considered starting point for the Adon ERP community.",
     "Find the right place to begin.",
     "Search the Community menu or choose a purpose. Every card leads to an existing page, including the unchanged partner directory.",
     [
@@ -138,7 +138,7 @@ export const pages: Record<CommunitySlug, Page> = {
     "Blog",
     "Learn",
     "/community/learn/blog",
-    "THE EDEN ERP JOURNAL",
+    "THE Adon ERP JOURNAL",
     "Ideas worth reading.",
     "A little context for the work.",
     "Browse articles from the existing public blog service. Search the journal, open a post and read at your own pace.",
@@ -162,7 +162,7 @@ export const pages: Record<CommunitySlug, Page> = {
     "YOUR WORKFLOW IS A GOOD PLACE TO START",
     "Bring the questions.",
     "Let’s make the conversation useful.",
-    "Prepare a few notes about your operation, explore the product context and request a live demo through the shared EdenERP form.",
+    "Prepare a few notes about your operation, explore the product context and request a live demo through the shared Adon ERP form.",
     "Prepare your conversation brief.",
     "This brief stays on this page and is not automatically sent with the shared request form. Keep it beside you when you speak with the team.",
     [

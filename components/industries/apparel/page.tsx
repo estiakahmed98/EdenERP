@@ -28,7 +28,7 @@ import ApparelDemo, { ApparelStory } from "./workspaces";
 import { Badge, Metric, css } from "./ui";
 export async function apparelMetadata(slug: ApparelSlug): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | Garments & Textile Industries | EdenERP`,
+    title: `${pages[slug].title} | Garments & Textile Industries | Adon ERP`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(`/industries/${slug}`),
   };
@@ -224,7 +224,7 @@ export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
     >
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/">Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/industries">Industries</Link>
           <ChevronRight size={11} aria-hidden="true" />

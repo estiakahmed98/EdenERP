@@ -22,7 +22,7 @@ export async function industrialMetadata(
   slug: IndustrialSlug,
 ): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | EdenERP Industries`,
+    title: `${pages[slug].title} | Adon ERP Industries`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(routeFor(slug)),
   };
@@ -168,7 +168,7 @@ export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
     >
       <div className={base.wrap}>
         <nav className={base.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/">Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/industries">Industries</Link>
           <ChevronRight size={11} aria-hidden="true" />

@@ -15,7 +15,7 @@ translation records and have no meaningful local interaction.
 
 Replace the presentation while preserving all six URLs, locale-aware site shell,
 legacy component entry points and existing app pages. Use English page copy,
-EdenERP blue/navy/green, compact breadcrumbs, shared `LiveDemoButton`, shared
+Adon ERP blue/navy/green, compact breadcrumbs, shared `LiveDemoButton`, shared
 half-blurred `DemoPreview`, responsive light/dark styles and reduced motion.
 Retain translation resources for compatibility. Do not add backend/API changes.
 Remove testimonial/rating presentation from these redesigned routes because no

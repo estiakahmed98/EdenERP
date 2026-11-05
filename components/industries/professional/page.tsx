@@ -38,7 +38,7 @@ export async function professionalMetadata(
   slug: ProfessionalSlug,
 ): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | ${groupLabel(pages[slug].group)} Industries | EdenERP`,
+    title: `${pages[slug].title} | ${groupLabel(pages[slug].group)} Industries | Adon ERP`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(routeFor(slug)),
   };
@@ -290,7 +290,7 @@ export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
     >
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/">Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/industries">Industries</Link>
           <ChevronRight size={11} aria-hidden="true" />

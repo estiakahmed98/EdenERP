@@ -188,7 +188,7 @@ function BlogHero() {
           </div>
           <figure className={css.journalCover}>
             <PenLine size={24} />
-            <span>EDEN ERP / THE JOURNAL</span>
+            <span>Adon ERP / THE JOURNAL</span>
             <b>
               Notes
               <br />

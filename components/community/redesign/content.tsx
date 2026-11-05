@@ -473,7 +473,7 @@ function SupportContent({ contact }: { contact: ContactInfo }) {
       <GuideLibrary rows={referenceNotes} kind="reference" />
       <EmailComposer
         email={contact.supportEmail}
-        subject="EdenERP support enquiry"
+        subject="Adon ERP support enquiry"
         title="Give your question a little context."
       />
     </>
@@ -529,7 +529,7 @@ function TranslationsContent({ labels }: { labels: TranslationLabels }) {
     try {
       const content = translationArtifact(locale, draft);
       downloadText(
-        `edenerp-${locale}-label-draft.json`,
+        `Adon ERP-${locale}-label-draft.json`,
         content,
         "application/json",
       );
@@ -659,7 +659,7 @@ function PartnershipContent({ contact }: { contact: ContactInfo }) {
       </p>
       <EmailComposer
         email={contact.salesEmail}
-        subject={`EdenERP partnership enquiry: ${partnerPaths[path].title}`}
+        subject={`Adon ERP partnership enquiry: ${partnerPaths[path].title}`}
         title="Introduce your practice and your questions."
       />
     </>
@@ -688,7 +688,7 @@ export default function CommunityContent({
         <GuideLibrary rows={discussionNotes} kind="discussion" />
         <EmailComposer
           email={contact.supportEmail}
-          subject="EdenERP product discussion"
+          subject="Adon ERP product discussion"
           title="Prepare a thoughtful product question."
         />
       </>

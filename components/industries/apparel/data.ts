@@ -21,7 +21,7 @@ type Content = {
 export const pages: Record<ApparelSlug, Content> = {
   garments: {
     title: "Garments",
-    eyebrow: "EDEN ERP / GARMENT OPERATIONS",
+    eyebrow: "Adon ERP / GARMENT OPERATIONS",
     headline: "A style becomes an order.",
     accent: "Keep every piece in context.",
     description:
@@ -97,7 +97,7 @@ export const pages: Record<ApparelSlug, Content> = {
   },
   accessories: {
     title: "Accessories",
-    eyebrow: "EDEN ERP / APPAREL ACCESSORIES",
+    eyebrow: "Adon ERP / APPAREL ACCESSORIES",
     headline: "Small parts.",
     accent: "A much clearer order picture.",
     description:
@@ -169,7 +169,7 @@ export const pages: Record<ApparelSlug, Content> = {
   },
   "buying-house": {
     title: "Buying House",
-    eyebrow: "EDEN ERP / BUYING-HOUSE OPERATIONS",
+    eyebrow: "Adon ERP / BUYING-HOUSE OPERATIONS",
     headline: "Bring the buyer,",
     accent: "factory and detail together.",
     description:
@@ -245,7 +245,7 @@ export const pages: Record<ApparelSlug, Content> = {
   },
   merchandising: {
     title: "Merchandising",
-    eyebrow: "EDEN ERP / MERCHANDISING OPERATIONS",
+    eyebrow: "Adon ERP / MERCHANDISING OPERATIONS",
     headline: "A style in motion.",
     accent: "A clearer next action.",
     description:

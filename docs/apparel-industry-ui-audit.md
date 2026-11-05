@@ -7,7 +7,7 @@ Complete those four in menu order, preserving their URLs, locale alternates,
 header/footer, existing app pages and the shared booking popup.
 
 Preserve the previous Others industry work and the user's Git state. Keep the established English content,
-EdenERP brand palette, scoped light/dark styling, compact breadcrumb spacing,
+Adon ERP brand palette, scoped light/dark styling, compact breadcrumb spacing,
 shared `LiveDemoButton` and half-blurred `DemoPreview`. Add no module navigation
 strip. Use the local Sites workflow and the React component-review checklist.
 

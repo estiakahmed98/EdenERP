@@ -31,7 +31,7 @@ import RetailWorkspace, { RetailStory } from "./workspaces";
 import { Badge, Metric, Note, css } from "./ui";
 export async function retailMetadata(slug: RetailSlug): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | Retail Industries | EdenERP`,
+    title: `${pages[slug].title} | Retail Industries | Adon ERP`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(`/industries/retail/${slug}`),
   };
@@ -242,7 +242,7 @@ export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
     >
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/">Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/industries">Industries</Link>
           <ChevronRight size={11} aria-hidden="true" />

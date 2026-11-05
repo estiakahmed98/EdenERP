@@ -17,7 +17,7 @@ export async function communityMetadata(
   slug: CommunitySlug,
 ): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | EdenERP Community`,
+    title: `${pages[slug].title} | Adon ERP Community`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(pages[slug].path),
   };
@@ -58,7 +58,7 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
     >
       <div className={base.wrap}>
         <nav className={base.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/">Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           {slug === "home" ? (
             <span aria-current="page">Community</span>

@@ -35,7 +35,7 @@ export async function hospitalityMetadata(
   slug: HospitalitySlug,
 ): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | Food & Hospitality | EdenERP`,
+    title: `${pages[slug].title} | Food & Hospitality | Adon ERP`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(
       `/industries/food&hospitality/${slug}`,
@@ -215,7 +215,7 @@ export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
     >
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/">Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/industries">Industries</Link>
           <ChevronRight size={11} aria-hidden="true" />
