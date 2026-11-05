@@ -1,47 +1,12 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import {
+  CommunityPage,
+  communityMetadata,
+} from "@/components/community/redesign/page";
 
-import CommunityHubPage from "@/components/community/CommunityHubPage";
-import { getLocaleAlternates } from "@/i18n/metadata";
-
-type HubLink = {
-  label: string;
-  href: string;
-  description?: string;
-};
-
-type HubSection = {
-  title: string;
-  links: HubLink[];
-};
-
-type HubAction = {
-  label: string;
-  href: string;
-};
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("pages.community.metadata.root");
-
-  return {
-    title: t("title"),
-    description: t("description"),
-    alternates: await getLocaleAlternates("/community"),
-  };
+export function generateMetadata() {
+  return communityMetadata("home");
 }
 
-export default async function CommunityPage() {
-  const t = await getTranslations("pages.community.hubs.communityRoot");
-
-  return (
-    <CommunityHubPage
-      eyebrow={t("eyebrow")}
-      title={t("title")}
-      description={t("description")}
-      highlights={t.raw("highlights") as string[]}
-      primaryAction={t.raw("primaryAction") as HubAction}
-      secondaryAction={t.raw("secondaryAction") as HubAction}
-      sections={t.raw("sections") as HubSection[]}
-    />
-  );
+export default function Page() {
+  return <CommunityPage slug="home" />;
 }

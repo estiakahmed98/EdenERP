@@ -1,0 +1,2080 @@
+.community {
+  isolation: isolate;
+}
+.journalLibrary {
+  min-width: 0;
+}
+.community textarea {
+  display: block;
+  width: 100%;
+  min-height: 125px;
+  resize: vertical;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--ink);
+  background: var(--background);
+}
+.community textarea:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.community button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+.community details > summary {
+  cursor: pointer;
+}
+.homeHero,
+.tutorialHero,
+.docsHero,
+.trainingHero,
+.blogHero,
+.advisorHero,
+.supportHero,
+.storiesHero,
+.forumHero,
+.eventsHero,
+.translationsHero,
+.partnerHero {
+  padding-bottom: 70px;
+}
+.split,
+.reverseSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.reverseSplit {
+  grid-template-columns: 1.05fr 1fr;
+}
+.centerCopy {
+  max-width: 970px;
+  text-align: center;
+  margin-inline: auto;
+}
+.centerCopy > p:last-of-type {
+  margin-inline: auto;
+}
+.centerCopy > div:last-child {
+  justify-content: center;
+}
+.guideArt {
+  width: 100%;
+  height: auto;
+  color: var(--p-blue);
+}
+/* Home: three linked community directions form an asymmetric directory. */
+.homeHero {
+  background: radial-gradient(
+    ellipse at 80% 35%,
+    var(--p-wash),
+    transparent 57%
+  );
+}
+.homeLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.communityMap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+.communityMap > a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 20px 40px -34px #00318055;
+  transition:
+    transform 0.25s,
+    border-color 0.25s;
+}
+.communityMap > a:first-child {
+  grid-row: 1/3;
+  background: var(--p-wash);
+  border-radius: 100px 100px 10px 10px;
+  padding-top: 55px;
+  justify-content: center;
+  transform: rotate(-3deg);
+}
+.communityMap > a:nth-child(2) {
+  background: var(--p-sage);
+  transform: rotate(2deg);
+}
+.communityMap > a:nth-child(3) {
+  background: var(--p-sand);
+}
+.communityMap a > svg {
+  color: var(--p-blue);
+}
+.communityMap a > span {
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  color: var(--muted-foreground);
+}
+.communityMap a > b {
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  color: var(--ink);
+}
+.communityMap a > svg:last-child {
+  margin-top: auto;
+}
+.communityMap > a:hover {
+  border-color: var(--p-blue);
+  transform: translateY(-3px);
+}
+/* Tutorials: a book and a small written reading path. */
+.walkthroughStudy {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--card);
+  box-shadow: 0 22px 45px -35px #00318055;
+}
+.walkthroughStudy > span {
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  color: var(--muted-foreground);
+}
+.walkthroughStudy > .guideArt {
+  margin-block: 27px 15px;
+}
+.guideStrip {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 14px;
+  padding: 18px;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  background: var(--p-wash);
+  font-size: 10px;
+  color: var(--p-blue);
+  letter-spacing: 0.06em;
+}
+.walkthroughStudy > div:nth-last-child(2) {
+  margin-top: 22px;
+}
+.walkthroughStudy > figcaption {
+  margin-top: 22px;
+}
+/* Documentation: a reversed index, with ruled reference rows. */
+.docsHero {
+  background: radial-gradient(
+    ellipse at 20% 35%,
+    var(--p-wash),
+    transparent 55%
+  );
+}
+.referenceSpread {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  transform: rotate(-2deg);
+  box-shadow: 0 22px 45px -35px #00318055;
+}
+.referenceSpread > header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--p-blue);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--border);
+}
+.referenceSpread > ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.referenceSpread li {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+.referenceSpread li > span {
+  font-size: 11px;
+  color: var(--p-blue);
+}
+.referenceSpread li > b {
+  font-size: 20px;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  font-weight: 400;
+  color: var(--ink);
+}
+.referenceSpread > figcaption {
+  margin-top: 25px;
+}
+/* Training: a horizontal role-to-conversation process. */
+.learningPath {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 45px !important;
+}
+.learningPath > div {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+  position: relative;
+}
+.learningPath > div:nth-child(2) {
+  background: var(--p-wash);
+}
+.learningPath > div:not(:nth-child(3)):after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  border-top: 1px dashed var(--border);
+  right: -26px;
+  top: 50%;
+}
+.learningPath svg {
+  color: var(--p-blue);
+  margin-bottom: 27px;
+}
+.learningPath span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+.learningPath b {
+  display: block;
+  font-size: 27px;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 15px;
+}
+.learningPath small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 14px;
+}
+.learningPath > figcaption {
+  grid-column: 1/-1;
+}
+/* Journal: an editorial masthead and typographic cover. */
+.blogHero {
+  background: linear-gradient(180deg, transparent, var(--p-wash));
+}
+.journalHeading {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 90px;
+  align-items: center;
+}
+.journalCover {
+  position: relative;
+  padding: 29px 30px;
+  background: #003180;
+  border: 1px solid #003180;
+  border-radius: 5px;
+  color: #fff;
+  transform: rotate(4deg);
+  overflow: hidden;
+}
+.journalCover > svg {
+  margin-bottom: 25px;
+}
+.journalCover > span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+.journalCover > b {
+  display: block;
+  font-size: 59px;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+  margin-top: 29px;
+  position: relative;
+  z-index: 1;
+}
+.journalCover b > em {
+  font:
+    italic 63px Georgia,
+    serif;
+}
+.journalCover > div {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border: 1px solid #ffffff38;
+  border-radius: 50%;
+  right: -90px;
+  bottom: 70px;
+}
+.journalCover > small {
+  display: block;
+  font-size: 11px;
+  line-height: 1.8;
+  max-width: 190px;
+  margin-top: 29px;
+  position: relative;
+  z-index: 1;
+}
+.community .journalCover > figcaption {
+  color: #ffffffaf;
+  margin-top: 20px;
+  font-size: 9px;
+  text-align: left;
+}
+/* Advisor: conversation notes with an offset brief card. */
+.advisorHero {
+  background: radial-gradient(
+    ellipse at 80% 35%,
+    var(--p-wash),
+    transparent 55%
+  );
+}
+.advisorStudy {
+  padding: 20px 15px 0;
+}
+.dialogueArt {
+  display: grid;
+  gap: 17px;
+}
+.dialogueArt > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 20px 20px 20px 4px;
+  background: var(--card);
+  font-size: 20px;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+.dialogueArt > div:nth-child(2) {
+  margin-left: 55px;
+  background: var(--p-wash);
+  border-radius: 20px 20px 4px 20px;
+}
+.dialogueArt > div:nth-child(3) {
+  margin-right: 40px;
+  background: var(--p-sage);
+}
+.dialogueArt svg {
+  color: var(--p-blue);
+  flex: none;
+}
+.conversationNote {
+  max-width: 300px;
+  padding: 23px 26px;
+  margin: 25px 0 0 auto;
+  background: var(--p-sand);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  transform: rotate(3deg);
+}
+.conversationNote > span {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.conversationNote > b {
+  display: block;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 14px;
+}
+.conversationNote > small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 15px;
+}
+.advisorStudy > figcaption {
+  margin-top: 25px;
+}
+/* Support: a help compass with working destination links. */
+.helpCompass {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+}
+.helpHub {
+  padding: 25px;
+  border: 1px dashed var(--border);
+  border-radius: 90px 90px 10px 10px;
+  background: var(--p-wash);
+  text-align: center;
+  margin-bottom: 22px;
+}
+.helpHub > svg {
+  margin: 15px auto 20px;
+  color: var(--p-blue);
+}
+.helpHub > b {
+  display: block;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+}
+.helpCompass > a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 5px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--ink);
+}
+.helpCompass a > svg {
+  color: var(--p-blue);
+  flex: none;
+}
+.helpCompass a > svg:last-child {
+  margin-left: auto;
+}
+.helpCompass > figcaption {
+  margin-top: 23px;
+}
+/* Stories: editorial story rows, without testimonial/impact claims. */
+.storiesHeading {
+  max-width: 1000px;
+}
+.storyboard {
+  display: grid;
+  margin-top: 40px !important;
+  border-top: 1px solid var(--border);
+}
+.storyboard > div {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 20px 1.1fr;
+  gap: 25px;
+  align-items: center;
+  padding: 28px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.storyboard span {
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 0.07em;
+  color: var(--muted-foreground);
+}
+.storyboard b {
+  font:
+    italic 31px Georgia,
+    serif;
+  color: var(--p-blue);
+  letter-spacing: -0.025em;
+}
+.storyboard i {
+  width: 6px;
+  height: 6px;
+  background: var(--p-blue);
+  border-radius: 50%;
+}
+.storyboard small {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+}
+.storyboard > figcaption {
+  margin-top: 23px;
+}
+/* Forum: offset question and context cards. */
+.discussionStack {
+  padding: 25px 20px 0;
+}
+.discussionStack > div {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 20px 40px -34px #00318055;
+  transform: rotate(-4deg);
+}
+.discussionStack > div:nth-child(2) {
+  margin: 25px -5px 0 45px;
+  transform: rotate(3deg);
+  background: var(--p-wash);
+}
+.discussionStack svg {
+  color: var(--p-blue);
+  margin-bottom: 22px;
+}
+.discussionStack span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.discussionStack b {
+  display: block;
+  font-size: 29px;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+  color: var(--ink);
+  margin-top: 20px;
+}
+.discussionStack > figcaption {
+  margin-top: 28px;
+}
+/* Events: a personal planning agenda, with no imaginary public dates. */
+.eventsLayout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.agendaStudy {
+  padding: 29px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 22px 45px -35px #00318055;
+  transform: rotate(2deg);
+}
+.agendaStudy > header {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  color: var(--p-blue);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+}
+.agendaStudy h3 {
+  font-size: 35px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-top: 29px;
+}
+.agendaStudy > ol {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 0;
+}
+.agendaStudy li {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  font-size: 13px;
+  padding-block: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--ink);
+}
+.agendaStudy li > span {
+  font-size: 10px;
+  color: var(--p-blue);
+}
+.agendaStudy > figcaption {
+  margin-top: 25px;
+}
+/* Translations: source panel beside two stacked wording/review panels. */
+.languageSpread {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  max-width: 940px;
+  margin: 42px auto 0 !important;
+}
+.languageSpread > div {
+  padding: 25px 30px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+}
+.languageSpread > div:first-child {
+  grid-row: 1/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--p-wash);
+  transform: rotate(-2deg);
+}
+.languageSpread > div:nth-child(2) {
+  background: var(--p-sage);
+}
+.languageSpread svg {
+  color: var(--p-blue);
+  margin-bottom: 22px;
+}
+.languageSpread span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  color: var(--muted-foreground);
+}
+.languageSpread b {
+  display: block;
+  font-size: 29px;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+  color: var(--ink);
+  margin-top: 17px;
+}
+.languageSpread > div:first-child > b {
+  font-size: 39px;
+}
+.languageSpread > figcaption {
+  grid-column: 1/-1;
+}
+/* Partners: a collaboration bridge, separate from the excluded directory. */
+.collaborationBridge {
+  display: grid;
+  grid-template-columns: 1fr 43px 1fr;
+  gap: 15px;
+  align-items: center;
+}
+.collaborationBridge > div {
+  padding: 24px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+}
+.collaborationBridge > div:first-child {
+  background: var(--p-wash);
+  transform: rotate(-3deg);
+}
+.collaborationBridge > div:nth-of-type(2) {
+  background: var(--p-sage);
+  transform: rotate(3deg);
+}
+.collaborationBridge > svg,
+.collaborationBridge div > svg {
+  color: var(--p-blue);
+}
+.collaborationBridge div > svg {
+  margin-bottom: 25px;
+}
+.collaborationBridge span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  color: var(--muted-foreground);
+}
+.collaborationBridge b {
+  display: block;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+  margin-top: 20px;
+  color: var(--ink);
+}
+.collaborationBridge > figcaption {
+  grid-column: 1/-1;
+  margin-top: 15px;
+}
+/* Readable libraries and local tools. */
+.contentSection {
+  padding-block: 60px;
+  scroll-margin-top: 95px;
+}
+.resourceFilters {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 25px;
+  align-items: end;
+  margin-bottom: 27px;
+}
+.searchField > div {
+  position: relative;
+}
+.searchField input {
+  padding-left: 42px !important;
+}
+.searchField svg {
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+.directoryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.directoryGrid > a {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+.directoryGrid > a:hover {
+  border-color: var(--p-blue);
+  transform: translateY(-3px);
+}
+.directoryGrid a > span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.directoryGrid h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 23px;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  margin-top: 23px;
+}
+.directoryGrid h3 > svg {
+  flex: none;
+  color: var(--p-blue);
+}
+.directoryGrid p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  margin-top: 15px;
+}
+.resultStatus {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  margin-top: 22px !important;
+}
+.moreLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  padding-top: 23px;
+  margin-top: 25px;
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.moreLinks > a {
+  color: var(--p-blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.guideGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.guideGrid[data-kind="reference"] {
+  grid-template-columns: 1fr 1fr;
+}
+.guideCard {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+}
+.guideCard > summary {
+  padding: 25px;
+  list-style: none;
+}
+.guideCard > summary::-webkit-details-marker {
+  display: none;
+}
+.guideCard summary > span {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.guideCard h3 {
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  margin-top: 23px;
+}
+.guideCard summary > p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  margin-top: 15px;
+}
+.guideCard summary > b {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--p-blue);
+  margin-top: 23px;
+}
+.guideCard > div {
+  padding: 0 25px 25px;
+}
+.guideCard ol {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+  margin: 0;
+  padding: 22px 0 0 19px;
+  border-top: 1px solid var(--border);
+}
+.guideCard li {
+  padding-left: 4px;
+  margin-bottom: 14px;
+}
+.guideCard div > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--p-blue);
+  margin-top: 14px;
+}
+.guideCard[open] {
+  border-color: var(--p-blue);
+}
+.agendaPlanner,
+.briefLayout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 35px;
+  align-items: start;
+}
+.topicChecks {
+  display: grid;
+  gap: 14px;
+  margin-top: 25px;
+}
+.topicChecks > label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 19px 22px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  min-height: 63px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.topicChecks input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--p-blue);
+  flex: none;
+}
+.topicChecks b {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+}
+.topicChecks small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 5px;
+}
+.localPlan {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--cream);
+}
+.localPlan > span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+.localPlan h3 {
+  font-size: 29px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  margin-top: 17px;
+}
+.localPlan > label {
+  margin-top: 25px;
+}
+.localPlan > ol {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 0;
+}
+.localPlan li {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.localPlan li > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--p-blue);
+}
+.localPlan pre {
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border: 1px dashed var(--border);
+  border-radius: 7px;
+  padding: 20px;
+  background: var(--card);
+  color: var(--ink);
+  margin-block: 25px;
+}
+.localPlan > button[data-live-demo-cta] {
+  margin-top: 24px;
+}
+.briefLayout > .topicChecks {
+  margin: 0;
+}
+.briefLayout > div > label:last-child {
+  margin-top: 25px;
+}
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 12px 16px;
+  border: 1px solid var(--p-blue);
+  border-radius: 7px;
+  background: var(--p-wash);
+  color: var(--p-blue);
+  font-size: 12px !important;
+  line-height: 1.7;
+  transition: background 0.2s;
+}
+.actionButton:hover {
+  background: var(--card);
+}
+.contactRoutes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+.contactRoutes > a {
+  display: grid;
+  grid-template-columns: 1fr 18px;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--p-wash);
+}
+.contactRoutes span {
+  grid-column: 1/-1;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.contactRoutes b {
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  color: var(--ink);
+}
+.contactRoutes svg {
+  color: var(--p-blue);
+  align-self: center;
+}
+.emailComposer {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 22px 35px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--cream);
+  margin-top: 40px;
+}
+.emailComposer > div > span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.emailComposer h3 {
+  font-size: 28px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  margin-top: 17px;
+}
+.emailComposer div > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 20px;
+  overflow-wrap: anywhere;
+}
+.emailComposer p > a {
+  color: var(--p-blue);
+}
+.emailComposer > .actionButton {
+  justify-self: start;
+  grid-column: 2;
+}
+.emailComposer > p {
+  grid-column: 1/-1;
+  margin: 0 !important;
+}
+.shortField {
+  max-width: 400px;
+  margin-bottom: 25px;
+}
+.journeyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.journeyGrid > article {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+}
+.journeyGrid article > span {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.journeyGrid h3 {
+  font-size: 25px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  margin-top: 23px;
+}
+.journeyGrid p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  margin-top: 17px;
+}
+.journeyGrid ol {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  padding-left: 17px;
+  margin-block: 23px;
+}
+.journeyGrid li {
+  margin-bottom: 13px;
+  padding-left: 3px;
+}
+.journeyGrid article > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--p-blue);
+}
+.translationToolbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 27px;
+}
+.translationToolbar > label {
+  width: 350px;
+  max-width: 100%;
+}
+.translationEditor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.translationEditor > section {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+}
+.translationEditor > section:first-child {
+  background: var(--p-wash);
+}
+.translationEditor section > span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.translationEditor code {
+  display: block;
+  font-size: 12px;
+  color: var(--p-blue);
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+  margin-top: 25px;
+}
+.translationEditor blockquote {
+  font-size: 27px;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  margin: 25px 0;
+  color: var(--ink);
+}
+.translationEditor small {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.translationEditor section > p:not(.labelPreview) {
+  font-size: 23px;
+  line-height: 1.8;
+  color: var(--ink);
+  margin-top: 17px;
+}
+.translationEditor .field {
+  margin-top: 25px;
+}
+.translationEditor section > label {
+  margin-top: 25px;
+}
+.labelPreview {
+  font-size: 20px;
+  line-height: 1.8;
+  padding: 17px 20px;
+  background: var(--cream);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  margin-top: 20px !important;
+  overflow-wrap: anywhere;
+}
+.translationEditor .actionButton {
+  margin-top: 23px;
+}
+.partnerChoices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.partnerChoices > button {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 17px;
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+}
+.partnerChoices button > span {
+  font-size: 10px;
+  color: var(--p-blue);
+}
+.partnerChoices b {
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+  color: var(--ink);
+}
+.partnerChoices small {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+}
+.partnerChoices [aria-pressed="true"] {
+  border-color: var(--p-blue);
+  background: var(--p-wash);
+}
+/* Real API journal: no decorative pagination or no-op read controls. */
+.journalSearch {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+.journalSearch input {
+  min-height: 46px;
+}
+.journalState {
+  padding: 45px 30px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--cream);
+  text-align: center;
+}
+.journalState > svg {
+  margin: 0 auto 20px;
+  color: var(--p-blue);
+}
+.journalState h3 {
+  font-size: 29px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+.journalState p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  max-width: 600px;
+  margin: 17px auto 0;
+}
+.journalState .actionButton {
+  margin-top: 25px;
+}
+.postGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: start;
+}
+.postCard {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+}
+.postIndex {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--p-wash);
+  overflow: hidden;
+}
+.postIndex > span {
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  color: var(--muted-foreground);
+  position: relative;
+  z-index: 1;
+}
+.postIndex > b {
+  font:
+    italic 55px Georgia,
+    serif;
+  color: var(--p-blue);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+.postIndex > i {
+  position: absolute;
+  left: 40%;
+  top: 20px;
+  width: 130px;
+  height: 130px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+.postMeta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 24px;
+}
+.postCard > h3 {
+  font-size: 27px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  margin-top: 17px;
+  overflow-wrap: anywhere;
+}
+.postCard > p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+  margin-top: 18px;
+  white-space: pre-wrap;
+}
+.articleDetails {
+  margin-top: 25px;
+  border-top: 1px solid var(--border);
+}
+.articleDetails > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--p-blue);
+}
+.articleDetails summary::-webkit-details-marker {
+  display: none;
+}
+.articleDetails > div {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--ink);
+  border-top: 1px dashed var(--border);
+  padding-top: 22px;
+  margin-top: 22px;
+}
+.journalPagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+.journalPagination > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+@media (max-width: 1100px) {
+  .split,
+  .reverseSplit,
+  .homeLayout {
+    gap: 40px;
+  }
+  .communityMap {
+    gap: 13px;
+  }
+  .communityMap > a {
+    padding: 22px;
+  }
+  .communityMap a > b {
+    font-size: 23px;
+  }
+  .journalHeading {
+    gap: 50px;
+  }
+  .journalCover > b {
+    font-size: 54px;
+  }
+  .eventsLayout {
+    gap: 45px;
+  }
+  .discussionStack b {
+    font-size: 26px;
+  }
+  .collaborationBridge {
+    gap: 10px;
+    grid-template-columns: 1fr 35px 1fr;
+  }
+  .collaborationBridge > svg {
+    width: 35px;
+  }
+  .collaborationBridge > div {
+    padding: 22px 17px;
+  }
+  .collaborationBridge b {
+    font-size: 22px;
+  }
+  .directoryGrid,
+  .guideGrid,
+  .journeyGrid {
+    gap: 17px;
+  }
+  .directoryGrid > a,
+  .guideCard > summary,
+  .journeyGrid > article {
+    padding: 22px;
+  }
+  .guideCard > div {
+    padding: 0 22px 22px;
+  }
+  .agendaPlanner,
+  .briefLayout {
+    gap: 25px;
+  }
+  .localPlan {
+    padding: 23px;
+  }
+  .contactRoutes {
+    gap: 15px;
+  }
+  .contactRoutes > a {
+    padding: 21px;
+    gap: 18px;
+  }
+  .contactRoutes b {
+    font-size: 15px;
+  }
+  .partnerChoices {
+    gap: 17px;
+  }
+  .partnerChoices > button {
+    padding: 23px;
+  }
+  .partnerChoices b {
+    font-size: 21px;
+  }
+}
+@media (max-width: 800px) {
+  .split,
+  .reverseSplit,
+  .homeLayout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .communityMap,
+  .walkthroughStudy,
+  .referenceSpread,
+  .advisorStudy,
+  .helpCompass,
+  .discussionStack,
+  .collaborationBridge {
+    max-width: 560px;
+    width: 100%;
+    margin: 15px auto 0 !important;
+  }
+  .reverseSplit > div {
+    grid-row: 1;
+  }
+  .learningPath {
+    gap: 18px;
+  }
+  .learningPath > div {
+    padding: 22px;
+  }
+  .learningPath > div:not(:nth-child(3)):after {
+    right: -19px;
+    width: 18px;
+  }
+  .learningPath b {
+    font-size: 24px;
+  }
+  .journalHeading {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 35px;
+  }
+  .journalCover {
+    padding: 25px;
+  }
+  .journalCover > b {
+    font-size: 48px;
+  }
+  .journalCover b > em {
+    font-size: 53px;
+  }
+  .storyboard > div {
+    grid-template-columns: 0.8fr 1fr 15px 1fr;
+    gap: 20px;
+  }
+  .storyboard b {
+    font-size: 27px;
+  }
+  .storyboard small {
+    font-size: 12px;
+  }
+  .eventsLayout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .agendaStudy {
+    max-width: 500px;
+    width: 100%;
+    margin: 15px auto 0 !important;
+  }
+  .languageSpread {
+    gap: 18px;
+  }
+  .languageSpread > div {
+    padding: 23px;
+  }
+  .languageSpread b {
+    font-size: 26px;
+  }
+  .languageSpread > div:first-child > b {
+    font-size: 35px;
+  }
+  .directoryGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .guideGrid {
+    grid-template-columns: 1fr;
+  }
+  .guideGrid[data-kind="reference"] {
+    grid-template-columns: 1fr 1fr;
+  }
+  .guideCard > summary {
+    padding: 25px;
+  }
+  .guideCard > div {
+    padding: 0 25px 25px;
+  }
+  .agendaPlanner,
+  .briefLayout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .topicChecks {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .topicChecks > label {
+    padding: 18px;
+  }
+  .contactRoutes {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contactRoutes > a:last-child {
+    grid-column: 1/-1;
+  }
+  .emailComposer {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .emailComposer > .actionButton {
+    grid-column: 1;
+  }
+  .journeyGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .journeyGrid > article {
+    padding: 26px;
+  }
+  .translationEditor {
+    gap: 20px;
+  }
+  .translationEditor > section {
+    padding: 23px;
+  }
+  .translationEditor blockquote {
+    font-size: 24px;
+  }
+  .partnerChoices {
+    grid-template-columns: 1fr;
+  }
+  .partnerChoices > button {
+    padding: 25px;
+    gap: 13px;
+  }
+  .partnerChoices b {
+    font-size: 24px;
+  }
+  .postCard {
+    padding: 23px;
+  }
+}
+@media (max-width: 540px) {
+  .homeHero,
+  .tutorialHero,
+  .docsHero,
+  .trainingHero,
+  .blogHero,
+  .advisorHero,
+  .supportHero,
+  .storiesHero,
+  .forumHero,
+  .eventsHero,
+  .translationsHero,
+  .partnerHero {
+    padding-bottom: 45px;
+  }
+  .community textarea {
+    font-size: 16px;
+    min-height: 135px;
+  }
+  .communityMap {
+    gap: 12px;
+  }
+  .communityMap > a {
+    padding: 20px 17px;
+    gap: 14px;
+  }
+  .communityMap > a:first-child {
+    padding-top: 35px;
+    border-radius: 80px 80px 10px 10px;
+  }
+  .communityMap a > span {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .communityMap a > b {
+    font-size: 23px;
+  }
+  .walkthroughStudy {
+    padding: 21px;
+  }
+  .walkthroughStudy > span {
+    font-size: 9px;
+  }
+  .walkthroughStudy > .guideArt {
+    margin-top: 20px;
+  }
+  .guideStrip {
+    font-size: 9px;
+    gap: 10px;
+    padding: 16px 12px;
+  }
+  .guideStrip > svg {
+    width: 12px;
+    flex: none;
+  }
+  .referenceSpread {
+    padding: 22px;
+    transform: rotate(-1deg);
+  }
+  .referenceSpread > header {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .referenceSpread li {
+    gap: 17px;
+    padding-block: 22px;
+  }
+  .referenceSpread li > b {
+    font-size: 19px;
+  }
+  .learningPath {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 30px !important;
+  }
+  .learningPath > div {
+    padding: 25px;
+  }
+  .learningPath > div:not(:nth-child(3)):after {
+    display: none;
+  }
+  .learningPath b {
+    font-size: 27px;
+  }
+  .journalHeading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .journalCover {
+    max-width: 330px;
+    width: 100%;
+    margin: 15px auto 0 !important;
+    padding: 27px;
+    transform: rotate(2deg);
+  }
+  .journalCover > b {
+    font-size: 57px;
+  }
+  .journalCover b > em {
+    font-size: 61px;
+  }
+  .advisorStudy {
+    padding: 15px 8px 0;
+  }
+  .dialogueArt {
+    gap: 15px;
+  }
+  .dialogueArt > div {
+    padding: 20px 17px;
+    font-size: 18px;
+    gap: 13px;
+  }
+  .dialogueArt > div:nth-child(2) {
+    margin-left: 25px;
+  }
+  .dialogueArt > div:nth-child(3) {
+    margin-right: 20px;
+  }
+  .conversationNote {
+    padding: 21px 23px;
+    max-width: 275px;
+  }
+  .conversationNote > b {
+    font-size: 24px;
+  }
+  .helpCompass {
+    padding: 21px;
+  }
+  .helpHub {
+    padding: 23px;
+  }
+  .helpHub > b {
+    font-size: 26px;
+  }
+  .helpCompass > a {
+    font-size: 13px;
+    gap: 12px;
+  }
+  .storyboard > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+    padding: 24px 5px;
+  }
+  .storyboard span {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .storyboard b {
+    font-size: 27px;
+  }
+  .storyboard i {
+    display: none;
+  }
+  .storyboard small {
+    grid-column: 1/-1;
+    font-size: 12px;
+  }
+  .discussionStack {
+    padding: 20px 10px 0;
+  }
+  .discussionStack > div {
+    padding: 24px;
+    transform: rotate(-2deg);
+  }
+  .discussionStack > div:nth-child(2) {
+    margin-left: 25px;
+    transform: rotate(2deg);
+  }
+  .discussionStack b {
+    font-size: 25px;
+  }
+  .agendaStudy {
+    padding: 23px;
+    transform: rotate(1deg);
+  }
+  .agendaStudy > header {
+    font-size: 9px;
+    line-height: 1.8;
+    gap: 11px;
+  }
+  .agendaStudy h3 {
+    font-size: 31px;
+  }
+  .agendaStudy li {
+    font-size: 12px;
+    gap: 15px;
+  }
+  .languageSpread {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 30px !important;
+  }
+  .languageSpread > div {
+    padding: 25px;
+  }
+  .languageSpread > div:first-child {
+    grid-row: auto;
+    transform: rotate(-1deg);
+  }
+  .languageSpread > div:first-child > b {
+    font-size: 34px;
+  }
+  .languageSpread b {
+    font-size: 28px;
+  }
+  .languageSpread span {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .collaborationBridge {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .collaborationBridge > div {
+    padding: 25px;
+  }
+  .collaborationBridge > div:first-child {
+    transform: rotate(-1deg);
+  }
+  .collaborationBridge > div:nth-of-type(2) {
+    transform: rotate(1deg);
+  }
+  .collaborationBridge > svg {
+    justify-self: center;
+    width: 35px;
+    height: 35px;
+  }
+  .collaborationBridge b {
+    font-size: 27px;
+  }
+  .collaborationBridge b > br {
+    display: none;
+  }
+  .collaborationBridge b {
+    line-height: 1.5;
+  }
+  .collaborationBridge > figcaption {
+    margin-top: 5px;
+  }
+  .contentSection {
+    padding-block: 44px;
+  }
+  .resourceFilters {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .directoryGrid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .directoryGrid > a {
+    padding: 24px;
+  }
+  .directoryGrid h3 {
+    font-size: 25px;
+  }
+  .directoryGrid p {
+    font-size: 12px;
+  }
+  .resultStatus {
+    font-size: 11px;
+  }
+  .moreLinks {
+    font-size: 11px;
+    gap: 15px;
+  }
+  .moreLinks > span {
+    width: 100%;
+  }
+  .guideGrid[data-kind="reference"] {
+    grid-template-columns: 1fr;
+  }
+  .guideCard > summary {
+    padding: 23px;
+  }
+  .guideCard h3 {
+    font-size: 25px;
+  }
+  .guideCard summary > span {
+    font-size: 9px;
+  }
+  .guideCard > div {
+    padding: 0 23px 23px;
+  }
+  .topicChecks {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .topicChecks > label {
+    padding: 19px;
+    min-height: 65px;
+    gap: 14px;
+  }
+  .topicChecks b {
+    font-size: 14px;
+  }
+  .topicChecks > label {
+    font-size: 13px;
+  }
+  .localPlan {
+    padding: 23px;
+  }
+  .localPlan > span {
+    font-size: 9px;
+  }
+  .localPlan h3 {
+    font-size: 27px;
+  }
+  .localPlan pre {
+    font-size: 12px;
+    padding: 18px;
+    line-height: 1.9;
+  }
+  .actionButton {
+    font-size: 12px !important;
+    min-height: 46px;
+  }
+  .contactRoutes {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .contactRoutes > a {
+    padding: 22px;
+  }
+  .contactRoutes b {
+    font-size: 17px;
+  }
+  .emailComposer {
+    padding: 23px;
+    gap: 22px;
+    margin-top: 30px;
+  }
+  .emailComposer h3 {
+    font-size: 27px;
+  }
+  .emailComposer > div > span {
+    font-size: 9px;
+  }
+  .journeyGrid > article {
+    padding: 24px;
+  }
+  .journeyGrid h3 {
+    font-size: 26px;
+  }
+  .translationToolbar {
+    align-items: start;
+    flex-direction: column;
+    gap: 17px;
+  }
+  .translationToolbar > label {
+    width: 100%;
+  }
+  .translationEditor {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .translationEditor > section {
+    padding: 24px;
+  }
+  .translationEditor section > span {
+    font-size: 9px;
+  }
+  .translationEditor blockquote {
+    font-size: 26px;
+  }
+  .translationEditor code {
+    font-size: 11px;
+  }
+  .partnerChoices > button {
+    padding: 24px;
+  }
+  .partnerChoices b {
+    font-size: 25px;
+  }
+  .partnerChoices small {
+    font-size: 12px;
+  }
+  .journalSearch {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .journalSearch > .actionButton {
+    justify-self: start;
+  }
+  .journalState {
+    padding: 32px 24px;
+  }
+  .journalState h3 {
+    font-size: 27px;
+  }
+  .journalState p {
+    font-size: 12px;
+  }
+  .postGrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .postCard {
+    padding: 23px;
+  }
+  .postCard > h3 {
+    font-size: 27px;
+  }
+  .postCard > p {
+    font-size: 12px;
+  }
+  .postIndex {
+    padding: 22px;
+  }
+  .postIndex > b {
+    font-size: 51px;
+  }
+  .journalPagination {
+    gap: 17px;
+  }
+  .journalPagination > p {
+    font-size: 11px;
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media (max-width: 359px) {
+  .communityMap {
+    grid-template-columns: 1fr;
+  }
+  .communityMap > a:first-child {
+    grid-row: auto;
+    border-radius: 60px 60px 10px 10px;
+    padding-top: 30px;
+  }
+  .communityMap a > b > br {
+    display: none;
+  }
+  .storyboard > div {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .dialogueArt > div {
+    font-size: 17px;
+  }
+  .localPlan pre {
+    padding: 15px;
+  }
+  .translationEditor .actionButton {
+    width: 100%;
+    padding-inline: 12px;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .referenceSpread,
+  .journalCover,
+  .conversationNote,
+  .discussionStack > div,
+  .agendaStudy,
+  .languageSpread > div,
+  .collaborationBridge > div {
+    transition: transform 0.35s;
+  }
+  .referenceSpread:hover,
+  .journalCover:hover,
+  .conversationNote:hover,
+  .discussionStack > div:hover,
+  .agendaStudy:hover,
+  .languageSpread > div:hover,
+  .collaborationBridge > div:hover {
+    transform: rotate(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .community *,
+  .community *:before,
+  .community *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
