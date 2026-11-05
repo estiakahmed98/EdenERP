@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
 import BlogPage from "@/components/landing/community/learn/blog/BlogPage";
 import { getLocaleAlternates } from "@/i18n/metadata";
 import { getBlogList, parseListQuery } from "@/lib/blog";
@@ -7,7 +10,6 @@ import { getBlogList, parseListQuery } from "@/lib/blog";
 export const dynamic = "force-dynamic";
 
 type SearchParams = Promise<Record<string, string | string[] | undefined>>;
-import { communityMetadata } from "@/components/community/redesign/page";
 
 export async function generateMetadata({
   searchParams,
@@ -19,15 +21,13 @@ export async function generateMetadata({
   const filtered = Boolean(query.q || query.month || query.page > 1);
 
   return {
-    // The translated title already carries the brand ("… | Adon ERP Community").
+    // The translated title already carries the brand ("... | Adon ERP Community").
     title: { absolute: t("title") },
     description: t("description"),
     alternates: await getLocaleAlternates("/community/learn/blog"),
     // Search / archive / pagination variants are thin duplicates of the main list.
     robots: filtered ? { index: false, follow: true } : undefined,
   };
-export function generateMetadata() {
-  return communityMetadata("blog");
 }
 
 export default async function Page({
@@ -37,7 +37,7 @@ export default async function Page({
 }) {
   const query = parseListQuery(await searchParams);
   let result = await getBlogList(query);
-  // ?page=999 → show the last page instead of an empty list
+  // ?page=999 -> show the last page instead of an empty list
   if (!result.posts.length && result.total > 0 && query.page > result.pages) {
     query.page = result.pages;
     result = await getBlogList(query);
