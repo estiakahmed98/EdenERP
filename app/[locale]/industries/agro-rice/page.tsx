@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-
-import ComingSoonPage from "@/components/coming-soon-page";
-import { getLocaleAlternates } from "@/i18n/metadata";
+import {
+  ManufacturingIndustryPage,
+  manufacturingIndustryMetadata,
+} from "@/components/industries/manufacturing/page";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("layout.header.modules.industries");
@@ -13,13 +12,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function IndustriesAgroRicePage() {
-  return (
-    <ComingSoonPage
-      moduleKey="industries"
-      linkKey="agroRice"
-      backHref="/industries"
-      backKey="backIndustries"
-    />
-  );
+export default function ManufacturingIndustryLanding() {
+  return <ManufacturingIndustryPage slug="agro-rice" />;
 }

@@ -87,13 +87,27 @@ function discoverAppPageRoutes(appDir: string): string[] {
 
 const NOINDEX_PREFIXES = ["/auth", "/checkout"];
 
+/**
+ * Next.js writes sitemap URLs into the XML verbatim (no escaping), so a raw "&"
+ * (e.g. "/industries/food&hospitality") produces invalid XML. Escape XML entities.
+ * Percent-encoding is not an option: "/food%26hospitality" returns 404.
+ */
+function xmlEscape(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const appDir = path.join(process.cwd(), "app");
   const paths = discoverAppPageRoutes(appDir);
 
   // One entry per locale per page, each carrying hreflang alternates.
-  return paths.flatMap((p) => {
+  return paths.map(xmlEscape).flatMap((p) => {
     const languages = {
       ...Object.fromEntries(
         routing.locales.map((l) => [l, `${siteConfig.url}/${l}${p}`])
@@ -106,7 +120,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteConfig.url}/${locale}${p}`,
       lastModified: now,
       changeFrequency: (p === "" ? "weekly" : "monthly") as "weekly" | "monthly",
-      priority: p === "" ? 1 : Math.max(0.4, 0.8 - (depth - 1) * 0.1),
+      priority:
+        p === ""
+          ? 1
+          : Math.round(Math.max(0.4, 0.8 - (depth - 1) * 0.1) * 10) / 10,
       alternates: { languages },
     }));
   });
