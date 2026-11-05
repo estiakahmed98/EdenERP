@@ -161,7 +161,7 @@ async function ensureFileExists(targetFile, sourceFile) {
 
 async function main() {
   console.log("");
-  console.log("EdenERP i18n Missing Key Fixer");
+  console.log(" Adon ERP i18n Missing Key Fixer");
   console.log("==============================");
   console.log("");
   console.log("Existing values will NOT be overwritten.");

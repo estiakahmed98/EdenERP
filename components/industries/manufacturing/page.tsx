@@ -15,11 +15,11 @@ import {
 import IndustryHero from "./heroes";
 import IndustryWorkspace, { ProcessStory } from "./workspaces";
 import { Badge, Metric, css } from "./ui";
-export function manufacturingIndustryMetadata(slug: IndustrySlug): Metadata {
+export async function manufacturingIndustryMetadata(slug: IndustrySlug): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | Manufacturing Industries | EdenERP`,
+    title: `${pages[slug].title} | Manufacturing Industries`,
     description: pages[slug].description,
-    alternates: getLocaleAlternates(`/industries/${slug}`),
+    alternates: await getLocaleAlternates(`/industries/${slug}`),
   };
 }
 function ProductCanvas({ slug }: { slug: IndustrySlug }) {
@@ -160,7 +160,7 @@ export function ManufacturingIndustryPage({ slug }: { slug: IndustrySlug }) {
     >
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/"> Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/industries">Industries</Link>
           <ChevronRight size={11} aria-hidden="true" />

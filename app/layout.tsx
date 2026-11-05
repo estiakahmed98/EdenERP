@@ -55,6 +55,18 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   formatDetection: { email: false, address: false, telephone: false },
 
+  // Local SEO geo signals (Dhaka, Bangladesh)
+  other: {
+    "geo.region": "BD-13",
+    "geo.placename": "Dhaka",
+    ...(siteConfig.business.geo
+      ? {
+          "geo.position": `${siteConfig.business.geo.latitude};${siteConfig.business.geo.longitude}`,
+          ICBM: `${siteConfig.business.geo.latitude}, ${siteConfig.business.geo.longitude}`,
+        }
+      : {}),
+  },
+
   verification: {
     google: siteConfig.googleVerification || undefined,
     other: siteConfig.bingVerification
@@ -109,14 +121,74 @@ export const viewport: Viewport = {
   ],
 };
 
+const { business } = siteConfig;
+
+const postalAddress = {
+  "@type": "PostalAddress",
+  ...business.address,
+};
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
+  legalName: business.legalName,
   url: siteConfig.url,
   logo: `${siteConfig.url}/adon_erp_logo.png`,
   description: siteConfig.description,
+  email: business.salesEmail,
+  telephone: business.phone,
+  address: postalAddress,
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      telephone: business.phone,
+      email: business.salesEmail,
+      areaServed: "BD",
+      availableLanguage: ["English", "Bengali"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      telephone: business.phone,
+      email: business.supportEmail,
+      areaServed: "BD",
+      availableLanguage: ["English", "Bengali"],
+    },
+  ],
+  ...(siteConfig.sameAs.length ? { sameAs: siteConfig.sameAs } : {}),
+};
+
+/** Local SEO: makes the Dhaka office eligible for Google local / Maps results. */
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${siteConfig.url}/#localbusiness`,
+  name: siteConfig.name,
+  url: `${siteConfig.url}/en/contact`,
+  image: `${siteConfig.url}/adon_erp_logo.png`,
+  logo: `${siteConfig.url}/adon_erp_logo.png`,
+  description: siteConfig.description,
+  telephone: business.phone,
+  email: business.salesEmail,
+  address: postalAddress,
+  ...(business.geo
+    ? { geo: { "@type": "GeoCoordinates", ...business.geo } }
+    : {}),
+  hasMap: business.mapUrl,
+  openingHoursSpecification: business.openingHours.map((h) => ({
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: h.days,
+    opens: h.opens,
+    closes: h.closes,
+  })),
+  areaServed: business.areaServed.map((name) => ({
+    "@type": name === "Bangladesh" ? "Country" : "City",
+    name,
+  })),
+  parentOrganization: { "@id": `${siteConfig.url}/#organization` },
   ...(siteConfig.sameAs.length ? { sameAs: siteConfig.sameAs } : {}),
 };
 
@@ -157,7 +229,7 @@ export default async function RootLayout({
       className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${caveat.variable} ${tiroBangla.variable}`}
     >
       <body className="bg-background font-sans antialiased" suppressHydrationWarning>
-        {[organizationSchema, websiteSchema, softwareSchema].map((schema) => (
+        {[organizationSchema, localBusinessSchema, websiteSchema, softwareSchema].map((schema) => (
           <script
             key={schema["@type"]}
             type="application/ld+json"

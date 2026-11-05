@@ -16,7 +16,7 @@ type Content = {
 export const pages: Record<OtherIndustry, Content> = {
   ecommerce: {
     title: "E-commerce",
-    eyebrow: "EDEN ERP / E-COMMERCE",
+    eyebrow: " Adon ERP / E-COMMERCE",
     headline: "A considered storefront.",
     accent: "A clearer order journey.",
     description:
@@ -92,7 +92,7 @@ export const pages: Record<OtherIndustry, Content> = {
   },
   ngo: {
     title: "NGO",
-    eyebrow: "EDEN ERP / NGO & PROGRAMME OPERATIONS",
+    eyebrow: " Adon ERP / NGO & PROGRAMME OPERATIONS",
     headline: "Keep the purpose.",
     accent: "Bring the detail together.",
     description:
@@ -168,7 +168,7 @@ export const pages: Record<OtherIndustry, Content> = {
   },
   tv: {
     title: "TV",
-    eyebrow: "EDEN ERP / TV & MEDIA OPERATIONS",
+    eyebrow: " Adon ERP / TV & MEDIA OPERATIONS",
     headline: "Behind every programme,",
     accent: "a clearer operational picture.",
     description:

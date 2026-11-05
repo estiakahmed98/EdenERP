@@ -3,7 +3,7 @@
 All three menu-linked routes `/industries/ecommerce`, `/industries/ngo` and
 `/industries/tv` currently render `ComingSoonPage`. Preserve route paths, locale
 alternates, global header/footer and the existing booking popup. Work locally in
-the EdenERP checkout using the Sites presentation workflow; do not deploy a new
+the  Adon ERP checkout using the Sites presentation workflow; do not deploy a new
 site or change unrelated app pages.
 
 Existing product presentations cover commerce, inventory, fund accounting,
@@ -18,7 +18,7 @@ an implemented broadcast platform.
 | NGO        | Centred programme/fund dossier and connected purpose-to-record path | Example budget and three planning allocations                   |
 | TV         | Panoramic programme frame, production notes and segment strip       | Editable five-segment rundown with start/end clocks             |
 
-Maintain EdenERP typography, blue/navy/green, light/dark mode, compact breadcrumb
+Maintain  Adon ERP typography, blue/navy/green, light/dark mode, compact breadcrumb
 spacing and the same shared `LiveDemoButton` and half-blurred `DemoPreview`.
 Keep each hero layout independent. Fully usable local examples sit outside the
 blur. Do not introduce an extra module navigation strip.

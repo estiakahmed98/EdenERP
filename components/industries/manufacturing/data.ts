@@ -22,7 +22,7 @@ type Content = {
 export const pages: Record<IndustrySlug, Content> = {
   steel: {
     title: "Steel",
-    eyebrow: "EDEN ERP / STEEL MANUFACTURING",
+    eyebrow: " Adon ERP / STEEL MANUFACTURING",
     headline: "Follow the metal.",
     accent: "Keep the detail.",
     description:
@@ -112,7 +112,7 @@ export const pages: Record<IndustrySlug, Content> = {
   },
   "agro-rice": {
     title: "Agro Rice",
-    eyebrow: "EDEN ERP / AGRO & RICE MILLING",
+    eyebrow: " Adon ERP / AGRO & RICE MILLING",
     headline: "From incoming paddy",
     accent: "to a clearer mill picture.",
     description:

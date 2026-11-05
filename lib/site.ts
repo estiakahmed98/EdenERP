@@ -53,4 +53,46 @@ export const siteConfig = {
   gtmId: process.env.NEXT_PUBLIC_GTM_ID || "",
   googleVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   bingVerification: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "",
+
+  /**
+   * Local SEO — NAP (Name, Address, Phone). Keep this identical to the
+   * Google Business Profile listing and the contact page.
+   */
+  business: {
+    legalName: "Adon ERP",
+    phone: "+8801842781978",
+    phoneDisplay: "+880 1842-781978",
+    whatsapp: "8801842781978",
+    salesEmail: "sales@adonerp.com",
+    supportEmail: "support@adonerp.com",
+    address: {
+      streetAddress:
+        "Tower 71, Flat # 9 A-B, 516/3 South Manikdi, Matikata Road, ECB Chattar",
+      addressLocality: "Dhaka Cantonment",
+      addressRegion: "Dhaka",
+      postalCode: "1206",
+      addressCountry: "BD",
+    },
+    /** Set NEXT_PUBLIC_BUSINESS_GEO="lat,lng" (copy from Google Maps pin). */
+    geo: (() => {
+      const [lat, lng] = (process.env.NEXT_PUBLIC_BUSINESS_GEO || "")
+        .split(",")
+        .map((v) => Number(v.trim()));
+      return Number.isFinite(lat) && Number.isFinite(lng) && lat && lng
+        ? { latitude: lat, longitude: lng }
+        : null;
+    })(),
+    /** Google Business Profile / Maps share link (optional). */
+    mapUrl:
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_URL ||
+      "https://maps.google.com/?q=Tower+71+ECB+Chattar+Dhaka+Cantonment",
+    openingHours: [
+      {
+        days: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "11:00",
+        closes: "20:00",
+      },
+    ],
+    areaServed: ["Bangladesh", "Dhaka", "Chattogram", "Gazipur", "Narayanganj"],
+  },
 } as const;

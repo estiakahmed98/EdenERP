@@ -23,11 +23,11 @@ import {
 import OtherIndustryHero from "./heroes";
 import OtherIndustryDemo, { IndustryStory } from "./workspaces";
 import { Badge, Metric, css } from "./ui";
-export function otherIndustryMetadata(slug: OtherIndustry): Metadata {
+export async function otherIndustryMetadata(slug: OtherIndustry): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | Industries | EdenERP`,
+    title: `${pages[slug].title} | Industries`,
     description: pages[slug].description,
-    alternates: getLocaleAlternates(`/industries/${slug}`),
+    alternates: await getLocaleAlternates(`/industries/${slug}`),
   };
 }
 function ProductCanvas({ slug }: { slug: OtherIndustry }) {
@@ -187,7 +187,7 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
     >
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/"> Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/industries">Industries</Link>
           <ChevronRight size={11} aria-hidden="true" />

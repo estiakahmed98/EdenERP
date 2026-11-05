@@ -13,7 +13,7 @@ Links should lead to existing implemented presentations; no feature is presented
 as a newly connected production service.
 
 Use the Sites skill's local presentation workflow. Maintain the established
-Rubik typography, EdenERP blue/navy/green, light/dark tokens, shared LiveDemoButton
+Rubik typography,  Adon ERP blue/navy/green, light/dark tokens, shared LiveDemoButton
 and DemoPreview. No module navigation strip. Keep breadcrumb/hero spacing compact.
 
 | Industry   | Visual story                                                     | Working local example                                           |

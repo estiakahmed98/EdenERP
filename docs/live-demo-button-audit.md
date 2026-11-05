@@ -50,7 +50,7 @@ FAQ prose mentioning a demo is not a button label.
   render `<LiveDemoButton />`; it accepts no label, URL or styling overrides.
 - `components/live-demo-button.module.css` owns sizing, wrapping, focus outline,
   hover lift and reduced-motion handling. The existing global `btn-gradient`
-  retains the EdenERP blue gradient and hover brightness. The icon cannot shrink;
+  retains the  Adon ERP blue gradient and hover brightness. The icon cannot shrink;
   long translations wrap within the available width, with a 44 px minimum height.
 - `common.actions.liveDemo` is the sole label key in all eight catalogs. Its English
   value is **Meet an Advisor with Live Demo**. Retired Accounting and Manufacturing

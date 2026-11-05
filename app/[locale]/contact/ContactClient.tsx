@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/lib/site";
 
 type ContactInfo = {
   icon: "mail" | "phone" | "mapPin" | "clock";
@@ -85,14 +86,14 @@ export default function ContactClient() {
       title: t("contactInfo.phone.title"),
       details: [t("contactInfo.phone.number1"), t("contactInfo.phone.number2")],
       action: t("contactInfo.phone.action"),
-      href: "tel:+8801234567890",
+      href: `tel:${siteConfig.business.phone}`,
     },
     {
       icon: "mail",
       title: t("contactInfo.email.title"),
       details: [t("contactInfo.email.sales"), t("contactInfo.email.support")],
       action: t("contactInfo.email.action"),
-      href: "mailto:sales@adonerp.com",
+      href: `mailto:${siteConfig.business.salesEmail}`,
     },
     {
       icon: "mapPin",
@@ -224,7 +225,7 @@ export default function ContactClient() {
             {/* Direction Button */}
             <div className="mt-4 rounded-xl bg-primary/5 p-4 text-center dark:bg-primary/10">
               <a
-                href="https://maps.google.com/?q=Tower+71+ECB+Chattar+Dhaka+Cantonment"
+                href={siteConfig.business.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"

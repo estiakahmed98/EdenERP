@@ -10,7 +10,7 @@ import MerchandisingSnapshot from "./snapshots";
 import { css } from "./ui";
 export async function merchandisingMetadata(slug: MerchandisingSlug): Promise<Metadata> {
   return {
-    title: `${pages[slug].title} | Merchandising | EdenERP`,
+    title: `${pages[slug].title} | Merchandising`,
     description: pages[slug].description,
     alternates: await getLocaleAlternates(`/apps/merchandising/${slug}`),
   };
@@ -26,7 +26,7 @@ export function MerchandisingPage({ slug }: { slug: MerchandisingSlug }) {
     >
       <div className={css.wrap}>
         <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">EdenERP</Link>
+          <Link href="/"> Adon ERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/apps/merchandising/merchandising-dashboard">
             Merchandising

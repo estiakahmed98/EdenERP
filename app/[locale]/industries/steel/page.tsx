@@ -3,7 +3,7 @@ import {
   manufacturingIndustryMetadata,
 } from "@/components/industries/manufacturing/page";
 
-export const metadata = manufacturingIndustryMetadata("steel");
+export const generateMetadata = () => manufacturingIndustryMetadata("steel");
 
 export default function ManufacturingIndustryLanding() {
   return <ManufacturingIndustryPage slug="steel" />;

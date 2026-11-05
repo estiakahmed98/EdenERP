@@ -24,7 +24,7 @@ type Content = {
 export const pages: Record<EducationIndustry, Content> = {
   school: {
     title: "School",
-    eyebrow: "EDEN ERP FOR SCHOOLS",
+    eyebrow: " Adon ERP FOR SCHOOLS",
     headline: "Make room for",
     accent: "a connected school day.",
     description:
@@ -101,7 +101,7 @@ export const pages: Record<EducationIndustry, Content> = {
   },
   college: {
     title: "College",
-    eyebrow: "EDEN ERP FOR COLLEGES",
+    eyebrow: " Adon ERP FOR COLLEGES",
     headline: "A clearer rhythm",
     accent: "for every academic session.",
     description:
@@ -178,7 +178,7 @@ export const pages: Record<EducationIndustry, Content> = {
   },
   university: {
     title: "University",
-    eyebrow: "EDEN ERP FOR UNIVERSITIES",
+    eyebrow: " Adon ERP FOR UNIVERSITIES",
     headline: "A connected campus.",
     accent: "A considered academic journey.",
     description:
@@ -255,7 +255,7 @@ export const pages: Record<EducationIndustry, Content> = {
   },
   lms: {
     title: "LMS",
-    eyebrow: "EDEN ERP FOR LEARNING EXPERIENCES",
+    eyebrow: " Adon ERP FOR LEARNING EXPERIENCES",
     headline: "Give every lesson",
     accent: "a thoughtful next step.",
     description:

@@ -377,7 +377,7 @@ function normalizeNode(
 
 async function main() {
   console.log("");
-  console.log("EdenERP i18n Type Fixer v2");
+  console.log(" Adon ERP i18n Type Fixer v2");
   console.log("==========================");
   console.log("");
   console.log(

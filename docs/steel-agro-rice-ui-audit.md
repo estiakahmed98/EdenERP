@@ -15,7 +15,7 @@ records or live readings. No new customer data was supplied for this task.
 
 Steel uses a rolling-line composition, coil illustration, material identity and
 order-weight allocation. Agro Rice uses a paddy-to-output composition with a
-grain illustration and a separate milling mass-balance exercise. Share EdenERP
+grain illustration and a separate milling mass-balance exercise. Share  Adon ERP
 brand tokens, Rubik typography, light/dark foundations and accessibility; avoid
 repeating the same hero layout. Keep compact breadcrumb spacing and omit an
 extra module navigation strip.

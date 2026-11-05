@@ -16,7 +16,7 @@ function isObject(value) {
 /**
  * Deep merge two values.
  *
- * Important for EdenERP:
+ * Important for  Adon ERP:
  *
  * pages/community.json
  * +
@@ -252,7 +252,7 @@ async function mergeLocale(locale) {
 
 async function main() {
   console.log("");
-  console.log("EdenERP Translation Merger");
+  console.log(" Adon ERP Translation Merger");
   console.log("==========================");
   console.log("");
   console.log(

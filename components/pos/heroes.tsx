@@ -72,7 +72,7 @@ function RegisterHero() {
             <div className={css.terminal}>
               <header>
                 <span>
-                  <Store size={15} /> EdenERP · Register
+                  <Store size={15} />  Adon ERP · Register
                 </span>
                 <i>Preview</i>
               </header>
