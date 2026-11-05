@@ -1,10 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Caveat,
-  Plus_Jakarta_Sans,
-  Rubik,
-  Tiro_Bangla,
-} from "next/font/google";
+import { Rubik, Tiro_Bangla } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { getLocale } from "next-intl/server";
 
@@ -14,25 +9,14 @@ import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
 
-// Landing page body font (was a render-blocking @import from fonts.googleapis.com)
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-jakarta",
-  display: "swap",
-});
-
 const rubik = Rubik({
   subsets: ["latin"],
   variable: "--font-rubik",
 });
 
-const caveat = Caveat({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-caveat",
-  display: "swap", // used by the hero H1 (LCP) — keep preloaded
-});
+// Caveat (handwritten headings) and Plus Jakarta Sans (landing body) are only
+// used on the public site, so they are loaded in app/[locale]/layout.tsx. That
+// way /admin and /auth don't download ~100 KB of unused fonts.
 
 const tiroBangla = Tiro_Bangla({
   subsets: ["bengali"],
@@ -234,7 +218,7 @@ export default async function RootLayout({
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
-      className={`${jakarta.variable} ${rubik.variable} ${caveat.variable} ${tiroBangla.variable}`}
+      className={`${rubik.variable} ${tiroBangla.variable}`}
     >
       <body className="bg-background font-sans antialiased" suppressHydrationWarning>
         {[organizationSchema, localBusinessSchema, websiteSchema, softwareSchema].map((schema) => (

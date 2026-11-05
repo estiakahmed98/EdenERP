@@ -491,6 +491,7 @@ function PlanCard({
         onClick={(e) => e.stopPropagation()}
       >
         <Switch
+          aria-label="Plan enabled"
           checked={plan.enabled}
           onCheckedChange={(checked) => update({ enabled: checked })}
         />
@@ -715,6 +716,7 @@ function FaqList({
         <div key={index} className="rounded-xl border border-border p-3.5">
           <div className="mb-2.5 flex items-center gap-2">
             <Switch
+              aria-label="FAQ enabled"
               checked={faq.enabled}
               onCheckedChange={(checked) =>
                 onChange(
@@ -1107,6 +1109,7 @@ export default function PricingAdminPage({
           }`}
         >
           <Switch
+            aria-label="Pricing page enabled"
             checked={form.pricingPageEnabled}
             onCheckedChange={(checked) =>
               updateField("pricingPageEnabled", checked)
@@ -1555,6 +1558,7 @@ export default function PricingAdminPage({
                   className="flex items-center gap-2 rounded-lg border border-border p-2"
                 >
                   <Switch
+                    aria-label="Module enabled"
                     checked={module.enabled}
                     onCheckedChange={(checked) =>
                       updateField(

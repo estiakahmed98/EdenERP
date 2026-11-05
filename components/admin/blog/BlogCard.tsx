@@ -101,7 +101,7 @@ function Author({ blog, light }: { blog: Blog; light?: boolean }) {
       <span
         className={cn(
           "flex size-6 items-center justify-center rounded-full text-[10px] font-bold",
-          light ? "bg-white/20 text-white" : "bg-primary/10 text-primary",
+          light ? "bg-white/20 text-white" : "bg-primary/10 text-foreground",
         )}
       >
         {initialsOf(blog.author)}
@@ -184,7 +184,7 @@ function FeaturedCard({
       />
       <Actions blog={blog} onDelete={onDelete} floating />
       <div className="pointer-events-none relative z-0 flex h-full min-h-80 flex-col justify-end gap-3 p-6 md:p-8">
-        <span className="w-fit rounded-full bg-primary px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+        <span className="w-fit rounded-full bg-secondary px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
           Latest
         </span>
         <h3 className="line-clamp-2 text-2xl font-bold leading-tight text-white md:text-3xl">

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrowRight, BookOpen, Building2, Shirt } from "lucide-react";
 
 import { getLocaleAlternates } from "@/i18n/metadata";
+import { Link } from "@/i18n/navigation";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -17,22 +17,22 @@ const industryCards = [
   {
     title: "Book Store",
     description:
-      "A bookstore landing page inspired by your provided reference, adapted to AdonERP's shell.",
-    href: "/industries/book-store",
+      "Point of sale, ISBN-level stock, publisher purchasing and member discounts for bookshops.",
+    href: "/industries/retail/book-store",
     icon: BookOpen,
   },
   {
     title: "Furniture Store",
     description:
-      "Placeholder route for a retail-focused furniture experience and catalog operations.",
-    href: "/industries",
+      "Showroom sales, custom orders, delivery scheduling and warehouse stock for furniture retailers.",
+    href: "/industries/retail/furniture-store",
     icon: Building2,
   },
   {
     title: "Clothing Store",
     description:
-      "Placeholder route for fashion inventory, seasonal launches, and omnichannel sales.",
-    href: "/industries",
+      "Size and colour variants, seasonal collections and omnichannel sales for fashion retail.",
+    href: "/industries/retail/clothing-store",
     icon: Shirt,
   },
 ];

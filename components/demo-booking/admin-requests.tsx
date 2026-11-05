@@ -448,7 +448,7 @@ export default function AdminDemoRequests() {
                     >
                       <TableCell className="pl-4">
                         <div className="flex items-center gap-3">
-                          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-primary">
+                          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-foreground">
                             {initialsOf(row.fullName)}
                           </span>
                           <div className="min-w-0">
@@ -571,7 +571,7 @@ export default function AdminDemoRequests() {
                         setSheetRow(row);
                       }}
                     >
-                      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-primary">
+                      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-foreground">
                         {initialsOf(row.fullName)}
                       </span>
                       <span className="min-w-0">

@@ -79,7 +79,7 @@ export default function AdminRecentBlogs() {
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15">
           <BookOpen className="h-5 w-5 text-primary" />
         </div>
-        <h3 className="text-lg font-semibold text-primary">Recent Articles</h3>
+        <h3 className="text-lg font-semibold text-foreground">Recent Articles</h3>
       </div>
 
       {/* Content */}

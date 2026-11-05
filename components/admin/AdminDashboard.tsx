@@ -569,6 +569,7 @@ const AdminDashboard: React.FC = () => {
 
           <div className="flex flex-wrap gap-2 items-center">
             <select
+              aria-label="Date range"
               value={rangePreset}
               onChange={(e) => setRangePreset(e.target.value as RangePreset)}
               className="text-sm border border-input rounded-lg px-3 py-2 bg-background"
@@ -599,6 +600,7 @@ const AdminDashboard: React.FC = () => {
             )}
 
             <select
+              aria-label="Group by"
               value={bucket}
               onChange={(e) => setBucket(e.target.value as AnalyticsBucket)}
               className="text-sm border border-input rounded-lg px-3 py-2 bg-background"
@@ -951,7 +953,7 @@ const AdminDashboard: React.FC = () => {
                           >
                             <td className="px-6 py-4">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-lg bg-muted text-primary flex items-center justify-center text-xs font-bold">
+                                <div className="w-8 h-8 rounded-lg bg-primary/10 text-foreground flex items-center justify-center text-xs font-bold">
                                   {index + 1}
                                 </div>
                                 <span className="font-medium text-foreground truncate max-w-xs">
@@ -1164,7 +1166,7 @@ const AdminDashboard: React.FC = () => {
                             className="flex items-center justify-between p-3 hover:bg-muted rounded-lg transition-colors group"
                           >
                             <div className="flex items-center gap-3">
-                              <div className="w-8 h-8 rounded-lg bg-muted text-primary flex items-center justify-center text-xs font-bold">
+                              <div className="w-8 h-8 rounded-lg bg-primary/10 text-foreground flex items-center justify-center text-xs font-bold">
                                 {index + 1}
                               </div>
                               <span className="font-medium text-foreground">
@@ -1560,6 +1562,7 @@ const AdminDashboard: React.FC = () => {
                   Post Status
                 </label>
                 <select
+                  aria-label="Post status"
                   value={editBlogData.post_status}
                   onChange={(e) =>
                     setEditBlogData({
