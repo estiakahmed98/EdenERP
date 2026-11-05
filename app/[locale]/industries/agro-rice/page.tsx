@@ -1,7 +1,8 @@
-import {
-  ManufacturingIndustryPage,
-  manufacturingIndustryMetadata,
-} from "@/components/industries/manufacturing/page";
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+
+import { ManufacturingIndustryPage } from "@/components/industries/manufacturing/page";
+import { getLocaleAlternates } from "@/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("layout.header.modules.industries");
