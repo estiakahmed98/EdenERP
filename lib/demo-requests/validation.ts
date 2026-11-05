@@ -24,19 +24,22 @@ const name = (max: number) =>
     .min(2, "Please enter at least two characters.")
     .max(max)
     .regex(/^[^\u0000-\u001f\u007f]*$/, "Please remove control characters.");
+const phoneField = z
+  .string()
+  .trim()
+  .max(40)
+  .regex(/^\+?[0-9\s().-]+$/, "Enter a valid phone number.")
+  .refine((value) => {
+    const n = value.replace(/\D/g, "").length;
+    return n >= 7 && n <= 15;
+  }, "Enter a phone number with 7–15 digits.");
+const normalizePhone = (value: string) =>
+  (value.startsWith("+") ? "+" : "") + value.replace(/\D/g, "");
 export const demoDetailsSchema = z
   .object({
     fullName: name(120),
     companyName: name(160),
-    phone: z
-      .string()
-      .trim()
-      .max(40)
-      .regex(/^\+?[0-9\s().-]+$/, "Enter a valid phone number.")
-      .refine((value) => {
-        const n = value.replace(/\D/g, "").length;
-        return n >= 7 && n <= 15;
-      }, "Enter a phone number with 7–15 digits."),
+    phone: phoneField,
     shareMore: z.boolean().default(false),
     email: z.string().trim().max(254).default(""),
     modules: z.array(z.enum(DEMO_MODULES)).max(DEMO_MODULES.length).default([]),
@@ -60,8 +63,7 @@ export const demoDetailsSchema = z
   })
   .transform((value) => ({
     ...value,
-    phone:
-      (value.phone.startsWith("+") ? "+" : "") + value.phone.replace(/\D/g, ""),
+    phone: normalizePhone(value.phone),
     email: value.shareMore ? value.email.toLowerCase() : "",
     modules: value.shareMore ? [...new Set(value.modules)].sort() : [],
     message: value.shareMore ? value.message : "",
@@ -107,14 +109,66 @@ export const demoAdminQuerySchema = z.object({
   status: z.enum(["ALL", ...DEMO_STATUSES]).default("ALL"),
   page: z.coerce.number().int().min(1).max(10000).default(1),
 });
+const adminEmail = z
+  .string()
+  .trim()
+  .max(254)
+  .refine(
+    (value) => !value || z.string().email().safeParse(value).success,
+    "Enter a valid email address or leave it blank.",
+  )
+  .transform((value) => value.toLowerCase());
+const adminModules = z
+  .array(z.enum(DEMO_MODULES))
+  .max(DEMO_MODULES.length)
+  .transform((value) => [...new Set(value)].sort());
+const adminMessage = z
+  .string()
+  .trim()
+  .max(2000, "Use no more than 2,000 characters.");
+const adminNotes = z.string().trim().max(4000);
+const demoStatus = z.enum(DEMO_STATUSES);
+
+/** Admin "New request" (manual entry, e.g. a lead received by phone). */
+export const demoAdminCreateSchema = z
+  .object({
+    fullName: name(120),
+    companyName: name(160),
+    phone: phoneField.transform(normalizePhone),
+    email: adminEmail.default(""),
+    modules: adminModules.default([]),
+    message: adminMessage.default(""),
+    status: demoStatus.default("NEW"),
+    adminNotes: adminNotes.default(""),
+  })
+  .strict();
+export type DemoAdminCreate = z.infer<typeof demoAdminCreateSchema>;
+
+/**
+ * Admin update. `id` + `version` are required (optimistic locking); every other
+ * field is optional so the same endpoint serves quick status changes and the
+ * full edit form.
+ */
 export const demoAdminUpdateSchema = z
   .object({
     id: z.string().uuid(),
     version: z.number().int().min(0),
-    status: z.enum(DEMO_STATUSES),
-    adminNotes: z.string().trim().max(4000),
+    status: demoStatus.optional(),
+    adminNotes: adminNotes.optional(),
+    fullName: name(120).optional(),
+    companyName: name(160).optional(),
+    phone: phoneField.transform(normalizePhone).optional(),
+    email: adminEmail.optional(),
+    modules: adminModules.optional(),
+    message: adminMessage.optional(),
   })
   .strict();
+export type DemoAdminUpdate = z.infer<typeof demoAdminUpdateSchema>;
+
+export const demoAdminDeleteSchema = z
+  .object({ id: z.string().uuid() })
+  .strict();
+
 export type DemoRequestRow = {
   id: string;
   fullName: string;

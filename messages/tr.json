@@ -46,6 +46,9 @@
         "pricing": "Fiyatlandırma",
         "help": "Yardım",
         "signIn": "Giriş yap",
+        "signOut": "Çıkış yap",
+        "dashboard": "Yönetim paneli",
+        "account": "Hesabım",
         "tryFree": "Ücretsiz deneyin"
       },
       "menu": {

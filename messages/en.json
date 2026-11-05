@@ -82,6 +82,9 @@
         "pricing": "Pricing",
         "help": "Help",
         "signIn": "Sign in",
+        "signOut": "Sign out",
+        "dashboard": "Dashboard",
+        "account": "My account",
         "tryFree": "Try it free"
       },
       "menu": {

@@ -46,6 +46,9 @@
         "pricing": "Bảng giá",
         "help": "Trợ giúp",
         "signIn": "Đăng nhập",
+        "signOut": "Đăng xuất",
+        "dashboard": "Bảng điều khiển",
+        "account": "Tài khoản của tôi",
         "tryFree": "Dùng thử miễn phí"
       },
       "menu": {

@@ -1,102 +1,107 @@
 "use client";
 
 import React from "react";
-import { Bell, Menu, Search, UserCog, ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ExternalLink, Menu, Moon, Sun } from "lucide-react";
+
+import { useTheme } from "@/components/theme-provider";
+import { getAdminPage } from "./admin-nav";
 
 interface AdminHeaderProps {
   title?: string;
   toggleSidebar?: () => void;
-  user?: {
-    name: string;
-    role: string;
-    image?: string;
-  };
+  user?: { name: string; role: string; image?: string };
 }
 
-const AdminHeader = ({
-  title = "Admin Dashboard",
-  toggleSidebar,
-  user,
-}: AdminHeaderProps) => {
+function ThemeToggle() {
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+  React.useEffect(() => setMounted(true), []);
+  const dark = mounted && resolvedTheme === "dark";
+
   return (
-    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/90">
-      <div className="flex h-16 items-center justify-between gap-4 px-4 md:px-6">
-        {/* Left */}
-        <div className="flex items-center gap-3">
-          {/* Mobile Menu */}
+    <button
+      type="button"
+      onClick={() => setTheme(dark ? "light" : "dark")}
+      aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
+      title={dark ? "Light theme" : "Dark theme"}
+      className="flex size-10 items-center justify-center rounded-xl text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+    >
+      {dark ? <Sun size={18} /> : <Moon size={18} />}
+    </button>
+  );
+}
+
+function initials(name?: string) {
+  const parts = (name || "Admin").trim().split(/\s+/);
+  return ((parts[0]?.[0] ?? "A") + (parts[1]?.[0] ?? "")).toUpperCase();
+}
+
+/** Top bar: where am I + quick actions. Page titles live in each page. */
+const AdminHeader = ({ toggleSidebar, user }: AdminHeaderProps) => {
+  const pathname = usePathname();
+  const page = getAdminPage(pathname);
+  const Icon = page.icon;
+
+  return (
+    <header className="sticky top-0 z-30 border-b border-border bg-card/85 backdrop-blur-xl">
+      <div className="flex h-16 items-center justify-between gap-3 px-4 md:px-6">
+        <div className="flex min-w-0 items-center gap-3">
           <button
+            type="button"
             onClick={toggleSidebar}
-            className="flex size-10 items-center justify-center rounded-lg bg-slate-100 text-zinc-700 transition hover:bg-slate-200 md:hidden dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+            aria-label="Open menu"
+            className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-muted text-foreground transition-colors hover:bg-muted/70 md:hidden"
           >
-            <Menu size={22} />
+            <Menu size={20} />
           </button>
 
-          {/* Title */}
-          <div>
-            <h1 className="text-lg font-bold text-zinc-900 dark:text-white md:text-xl">
-              {title}
-            </h1>
-
-            <p className="hidden text-sm text-zinc-500 dark:text-zinc-400 sm:block">
-              Adon ERP Admin Panel
+          <span className="hidden size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary sm:flex">
+            <Icon size={19} />
+          </span>
+          <div className="min-w-0 leading-tight">
+            <p className="truncate text-sm font-bold text-foreground">
+              {page.name}
+            </p>
+            <p className="hidden truncate text-xs text-muted-foreground sm:block">
+              {page.description}
             </p>
           </div>
         </div>
 
-        {/* Search */}
-        <div className="hidden max-w-md flex-1 items-center rounded-full bg-slate-100 px-4 py-2 md:flex dark:bg-zinc-800">
-          <Search size={18} className="text-zinc-500" />
-
-          <input
-            type="text"
-            placeholder="Search..."
-            className="ml-2 w-full bg-transparent text-sm outline-none placeholder:text-zinc-400 dark:text-white"
-          />
-        </div>
-
-        {/* Right */}
-        <div className="flex items-center gap-3">
-          {/* View Site */}
+        <div className="flex items-center gap-1.5">
           <Link
             href="/"
             target="_blank"
-            className="hidden items-center gap-2 rounded-full btn-gradient px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:opacity-90 md:flex"
+            className="hidden items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground sm:flex"
           >
-            <ExternalLink size={16} />
-            View Site
+            <ExternalLink size={15} />
+            View site
           </Link>
-
-          {/* Notification */}
-          <button className="relative flex size-10 items-center justify-center rounded-full bg-slate-100 text-zinc-700 transition hover:bg-slate-200 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700">
-            <Bell size={20} />
-
-            <span className="absolute right-2 top-2 size-2 rounded-full bg-primary" />
-          </button>
-
-          {/* User */}
-          <div className="flex items-center gap-3 rounded-full bg-slate-100 px-2 py-1.5 dark:bg-zinc-800">
+          <ThemeToggle />
+          <span className="mx-1 hidden h-7 w-px bg-border sm:block" />
+          <div className="flex items-center gap-2.5 rounded-xl py-1 pl-1 pr-2">
             {user?.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={user.image}
-                alt={user.name}
-                className="size-9 rounded-full object-cover"
+                alt=""
+                className="size-9 rounded-xl object-cover"
               />
             ) : (
-              <div className="flex size-9 items-center justify-center rounded-full bg-primary text-white">
-                <UserCog size={18} />
-              </div>
+              <span className="flex size-9 items-center justify-center rounded-xl btn-gradient text-xs font-bold text-white">
+                {initials(user?.name)}
+              </span>
             )}
-
-            <div className="hidden pr-2 sm:block">
-              <p className="text-sm font-semibold text-zinc-900 dark:text-white">
-                {user?.name || "Admin User"}
-              </p>
-
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                {user?.role || "Admin"}
-              </p>
-            </div>
+            <span className="hidden leading-tight lg:block">
+              <span className="block text-sm font-semibold text-foreground">
+                {user?.name || "Admin"}
+              </span>
+              <span className="block text-xs capitalize text-muted-foreground">
+                {(user?.role || "admin").toLowerCase()}
+              </span>
+            </span>
           </div>
         </div>
       </div>

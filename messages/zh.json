@@ -46,6 +46,9 @@
         "pricing": "定价",
         "help": "帮助",
         "signIn": "登录",
+        "signOut": "退出登录",
+        "dashboard": "控制台",
+        "account": "我的账户",
         "tryFree": "免费试用"
       },
       "menu": {

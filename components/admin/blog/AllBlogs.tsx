@@ -126,19 +126,19 @@ export default function AllBlogs() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/20 py-12" />
+      <div className="min-h-screen py-12" />
     );
   }
 
   if (!blogs.length) {
     return (
-      <div className="flex items-center justify-center min-h-96 bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/20">
-        <div className="text-center p-10 bg-white/80 rounded-3xl shadow-xl border border-emerald-200">
+      <div className="flex items-center justify-center min-h-96 ">
+        <div className="text-center p-10 bg-card rounded-3xl shadow-xl border border-border">
           <div className="text-4xl mb-4">📝</div>
-          <h3 className="text-2xl font-bold text-emerald-600 mb-2">
+          <h3 className="text-2xl font-bold text-primary mb-2">
             No blog posts found
           </h3>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Please check back later for new content.
           </p>
         </div>
@@ -147,14 +147,14 @@ export default function AllBlogs() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-emerald-50/30 via-white to-teal-50/20 py-12 px-4">
+    <main className="min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto">
         <section aria-label="Blog posts">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogItems.map((blog) => (
               <article key={blog.id} className="group">
                 <Link href={blog.href} aria-label={`Read: ${blog.title}`}>
-                  <div className="bg-white/80 rounded-3xl shadow-xl hover:shadow-2xl transition-all border border-emerald-200/30 hover:scale-105">
+                  <div className="bg-card rounded-3xl shadow-xl hover:shadow-2xl transition-all border border-border hover:scale-105">
                     <div className="relative h-48 overflow-hidden">
                       {blog.image ? (
                         <img
@@ -163,23 +163,23 @@ export default function AllBlogs() {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform"
                         />
                       ) : (
-                        <div className="h-full flex items-center justify-center bg-emerald-100">
+                        <div className="h-full flex items-center justify-center bg-primary/10">
                           📝
                         </div>
                       )}
-                      <span className="absolute top-4 right-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full">
+                      <span className="absolute top-4 right-4 bg-primary text-white text-xs px-3 py-1 rounded-full">
                         Blog
                       </span>
                     </div>
 
                     <div className="p-6">
-                      <h2 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">
+                      <h2 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary">
                         {blog.title}
                       </h2>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
+                      <p className="text-muted-foreground mb-4 line-clamp-3">
                         {blog.summary}
                       </p>
-                      <div className="flex items-center justify-between border-t pt-4 text-sm text-emerald-600">
+                      <div className="flex items-center justify-between border-t pt-4 text-sm text-primary">
                         <time>{blog.formattedDate}</time>
                         <span>→</span>
                       </div>
