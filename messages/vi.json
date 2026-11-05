@@ -40,6 +40,7 @@
   "layout": {
     "header": {
       "nav": {
+        "blog": "Blog",
         "apps": "ERP",
         "industries": "Ngành nghề",
         "community": "Cộng đồng",
@@ -5089,6 +5090,22 @@
         }
       },
       "blog": {
+        "dynamic": {
+                "recent": "Bài viết mới",
+                "sponsored": "Được tài trợ",
+                "previous": "Trước",
+                "next": "Sau",
+                "emptyTitle": "Chưa có bài viết",
+                "emptyText": "Bài viết mới sẽ xuất hiện ở đây ngay khi được đăng.",
+                "noResults": "Không có bài viết nào khớp với “{query}”.",
+                "clearFilters": "Xóa bộ lọc",
+                "back": "Quay lại tất cả bài viết",
+                "by": "Tác giả: {author}",
+                "archive": "Lưu trữ: {month}",
+                "searchLabel": "Tìm kiếm: “{query}”",
+                "totalPosts": "{count} bài viết",
+                "pageOf": "Trang {page} / {pages}"
+        },
         "hero": {
           "title": "Bài viết mới nhất",
           "categories": [

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
+import { prisma } from "@/lib/prisma";
 import { siteConfig } from "@/lib/site";
 import fs from "node:fs";
 import path from "node:path";
@@ -101,13 +102,43 @@ function xmlEscape(value: string) {
     .replace(/'/g, "&apos;");
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const BLOG_BASE = "/community/learn/blog";
+
+/** Published blog posts (managed in /admin/blog). Never fails the whole sitemap. */
+async function blogPostEntries(): Promise<MetadataRoute.Sitemap> {
+  try {
+    const posts = await prisma.blog.findMany({
+      select: { slug: true, updatedAt: true },
+      orderBy: { date: "desc" },
+    });
+    return posts.flatMap((post) => {
+      const rel = `${BLOG_BASE}/${encodeURIComponent(post.slug)}`;
+      const languages = {
+        ...Object.fromEntries(
+          routing.locales.map((l) => [l, xmlEscape(`${siteConfig.url}/${l}${rel}`)]),
+        ),
+        "x-default": xmlEscape(`${siteConfig.url}/${routing.defaultLocale}${rel}`),
+      };
+      return routing.locales.map((locale) => ({
+        url: xmlEscape(`${siteConfig.url}/${locale}${rel}`),
+        lastModified: post.updatedAt,
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+        alternates: { languages },
+      }));
+    });
+  } catch {
+    return [];
+  }
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const appDir = path.join(process.cwd(), "app");
   const paths = discoverAppPageRoutes(appDir);
 
   // One entry per locale per page, each carrying hreflang alternates.
-  return paths.map(xmlEscape).flatMap((p) => {
+  const pages = paths.map(xmlEscape).flatMap((p) => {
     const languages = {
       ...Object.fromEntries(
         routing.locales.map((l) => [l, `${siteConfig.url}/${l}${p}`])
@@ -127,4 +158,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages },
     }));
   });
+
+  return [...pages, ...(await blogPostEntries())];
 }

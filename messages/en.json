@@ -76,6 +76,7 @@
   "layout": {
     "header": {
       "nav": {
+        "blog": "Blog",
         "apps": "ERP",
         "industries": "Industries",
         "community": "Community",
@@ -38246,6 +38247,22 @@
         }
       },
       "blog": {
+        "dynamic": {
+                "recent": "Recent posts",
+                "sponsored": "Sponsored",
+                "previous": "Previous",
+                "next": "Next",
+                "emptyTitle": "No posts yet",
+                "emptyText": "New stories will appear here as soon as they are published.",
+                "noResults": "No posts match “{query}”.",
+                "clearFilters": "Clear filters",
+                "back": "Back to all posts",
+                "by": "By {author}",
+                "archive": "Archive: {month}",
+                "searchLabel": "Search: “{query}”",
+                "totalPosts": "{count, plural, one {# post} other {# posts}}",
+                "pageOf": "Page {page} of {pages}"
+        },
         "hero": {
           "title": "Our Latest Posts",
           "categories": [

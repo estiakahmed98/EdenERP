@@ -40,6 +40,7 @@
   "layout": {
     "header": {
       "nav": {
+        "blog": "المدونة",
         "apps": "تخطيط موارد المؤسسات",
         "industries": "الصناعات",
         "community": "المجتمع",
@@ -5088,6 +5089,22 @@
         }
       },
       "blog": {
+        "dynamic": {
+                "recent": "أحدث المقالات",
+                "sponsored": "إعلان",
+                "previous": "السابق",
+                "next": "التالي",
+                "emptyTitle": "لا توجد مقالات بعد",
+                "emptyText": "ستظهر المقالات الجديدة هنا فور نشرها.",
+                "noResults": "لا توجد مقالات تطابق “{query}”.",
+                "clearFilters": "مسح الفلاتر",
+                "back": "العودة إلى كل المقالات",
+                "by": "بقلم {author}",
+                "archive": "الأرشيف: {month}",
+                "searchLabel": "بحث: “{query}”",
+                "totalPosts": "عدد المقالات: {count}",
+                "pageOf": "الصفحة {page} من {pages}"
+        },
         "hero": {
           "title": "أحدث منشوراتنا",
           "categories": [

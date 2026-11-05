@@ -10,6 +10,8 @@
     "build:turbo": "next build --turbopack",
     "start": "next start",
     "lint": "eslint .",
+    "seed:blogs": "npx tsx prisma/seed-blogs.ts",
+    "seed:blogs:reset": "npx tsx prisma/seed-blogs.ts --reset",
     "i18n:check": "node scripts/check-i18n-keys.mjs",
     "i18n:merge": "node scripts/merge-translations.mjs",
     "i18n:fix-missing": "node scripts/fix-i18n-missing-keys.mjs",

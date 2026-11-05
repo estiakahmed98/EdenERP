@@ -40,6 +40,7 @@
   "layout": {
     "header": {
       "nav": {
+        "blog": "Blog",
         "apps": "ERP",
         "industries": "Sektörler",
         "community": "Topluluk",
@@ -5089,6 +5090,22 @@
         }
       },
       "blog": {
+        "dynamic": {
+                "recent": "Son yazılar",
+                "sponsored": "Sponsorlu",
+                "previous": "Önceki",
+                "next": "Sonraki",
+                "emptyTitle": "Henüz yazı yok",
+                "emptyText": "Yeni yazılar yayınlanır yayınlanmaz burada görünecek.",
+                "noResults": "“{query}” ile eşleşen yazı bulunamadı.",
+                "clearFilters": "Filtreleri temizle",
+                "back": "Tüm yazılara dön",
+                "by": "Yazar: {author}",
+                "archive": "Arşiv: {month}",
+                "searchLabel": "Arama: “{query}”",
+                "totalPosts": "{count} yazı",
+                "pageOf": "Sayfa {page} / {pages}"
+        },
         "hero": {
           "title": "En Son Yazılarımız",
           "categories": [

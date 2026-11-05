@@ -284,6 +284,8 @@ const communityMegaMenu: MegaMenuColumn[] = [
   },
 ];
 
+const BLOG_HREF = "/community/learn/blog";
+
 const navItems: NavItem[] = [
   { labelKey: "nav.apps", href: "/apps", id: "apps", megaMenu: appsMegaMenu },
   {
@@ -299,6 +301,7 @@ const navItems: NavItem[] = [
     megaMenu: communityMegaMenu,
   },
   { labelKey: "nav.pricing", href: "/pricing" },
+  { labelKey: "nav.blog", href: BLOG_HREF },
   { labelKey: "nav.help", href: "/help" },
 ];
 
@@ -327,7 +330,11 @@ export default function Header({
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  const isActiveMenu = (item: NavItem) => isActivePath(item.href);
+  const isActiveMenu = (item: NavItem) =>
+    // The Blog link lives under /community; don't highlight both.
+    item.href === "/community" && isActivePath(BLOG_HREF)
+      ? false
+      : isActivePath(item.href);
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {

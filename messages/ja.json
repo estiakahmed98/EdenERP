@@ -40,6 +40,7 @@
     "layout": {
         "header": {
             "nav": {
+                "blog": "ブログ",
                 "apps": "ERP",
                 "industries": "業界",
                 "community": "コミュニティ",
@@ -5089,6 +5090,22 @@
       }
     },
     "blog": {
+      "dynamic": {
+            "recent": "最新の投稿",
+            "sponsored": "スポンサー",
+            "previous": "前へ",
+            "next": "次へ",
+            "emptyTitle": "まだ投稿がありません",
+            "emptyText": "新しい記事が公開されると、ここに表示されます。",
+            "noResults": "「{query}」に一致する投稿は見つかりませんでした。",
+            "clearFilters": "フィルターをクリア",
+            "back": "すべての投稿に戻る",
+            "by": "投稿者：{author}",
+            "archive": "アーカイブ：{month}",
+            "searchLabel": "検索：「{query}」",
+            "totalPosts": "{count}件の投稿",
+            "pageOf": "{pages}ページ中{page}ページ"
+      },
       "hero": {
         "title": "最新の投稿",
         "categories": [

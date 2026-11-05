@@ -40,6 +40,7 @@
   "layout": {
     "header": {
       "nav": {
+        "blog": "ব্লগ",
         "apps": "ERP",
         "industries": "ইন্ডাস্ট্রিজ",
         "community": "কমিউনিটি",
@@ -21693,6 +21694,22 @@
         }
       },
       "blog": {
+        "dynamic": {
+                "recent": "সাম্প্রতিক পোস্ট",
+                "sponsored": "স্পনসর্ড",
+                "previous": "আগের",
+                "next": "পরের",
+                "emptyTitle": "এখনও কোনো পোস্ট নেই",
+                "emptyText": "নতুন লেখা প্রকাশিত হলেই এখানে দেখা যাবে।",
+                "noResults": "“{query}” এর সাথে মিলে এমন কোনো পোস্ট পাওয়া যায়নি।",
+                "clearFilters": "ফিল্টার মুছুন",
+                "back": "সব পোস্টে ফিরে যান",
+                "by": "লেখক: {author}",
+                "archive": "আর্কাইভ: {month}",
+                "searchLabel": "অনুসন্ধান: “{query}”",
+                "totalPosts": "{count}টি পোস্ট",
+                "pageOf": "পৃষ্ঠা {page} / {pages}"
+        },
         "hero": {
           "title": "আমাদের সর্বশেষ পোস্ট",
           "categories": [
