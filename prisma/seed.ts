@@ -2,6 +2,7 @@ import bcrypt from "bcryptjs";
 
 import { db } from "../lib/db";
 import { getDefaultPricingData } from "../lib/pricing/defaults";
+import { resetDemoBlogs, seedDemoBlogs } from "./seed-blogs";
 
 async function seedAdminUser() {
   const email = "admin@example.com";
@@ -186,6 +187,12 @@ async function seedPricingLocale(locale: "en" | "bn") {
 }
 
 async function main() {
+  // `npx prisma db seed -- --reset-blogs` only removes the demo blog posts.
+  if (process.argv.includes("--reset-blogs")) {
+    await resetDemoBlogs();
+    return;
+  }
+
   await seedAdminUser();
 
   await db.pricingSettings.upsert({
@@ -199,6 +206,8 @@ async function main() {
 
   await seedPricingLocale("en");
   await seedPricingLocale("bn");
+
+  await seedDemoBlogs();
 }
 
 main()
