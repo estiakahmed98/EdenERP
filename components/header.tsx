@@ -241,10 +241,10 @@ const communityMegaMenu: MegaMenuColumn[] = [
     accentClass: "text-sky-600",
     underlineClass: "bg-sky-200",
     links: [
-      {
-        labelKey: "menu.community.findPartner",
-        href: "/community/get-services/find-partner",
-      },
+      // {
+      //   labelKey: "menu.community.findPartner",
+      //   href: "/community/get-services/find-partner",
+      // },
       {
         labelKey: "menu.community.meetAdvisor",
         href: "/community/get-services/meet-advisor",
