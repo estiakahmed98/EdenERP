@@ -1,11 +1,33 @@
+/**
+ * Resolves the public site URL dynamically. Priority:
+ *  1. NEXT_PUBLIC_SITE_URL           – explicit override (custom domain)
+ *  2. VERCEL_PROJECT_PRODUCTION_URL  – Vercel's production domain (e.g. adon-erp.vercel.app,
+ *                                      or the custom domain once one is attached)
+ *  3. VERCEL_URL                     – current deployment URL (previews)
+ *  4. http://localhost:PORT          – local dev
+ */
+function resolveSiteUrl(): string {
+  const withProtocol = (host: string) =>
+    (/^https?:\/\//.test(host) ? host : `https://${host}`).replace(/\/+$/, "");
+
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  if (explicit) return withProtocol(explicit);
+
+  const vercelProd = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
+  if (vercelProd) return withProtocol(vercelProd);
+
+  const vercelDeployment = process.env.VERCEL_URL?.trim();
+  if (vercelDeployment) return withProtocol(vercelDeployment);
+
+  return `http://localhost:${process.env.PORT || 3000}`;
+}
+
 export const siteConfig = {
   name: "Adon ERP",
   title: "Adon ERP - Enterprise Solution",
   description:
     "Empower your business with innovative solutions for digital transformation. Join thousands of companies scaling faster with Adon ERP.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ||
-    "http://localhost:3000",
+  url: resolveSiteUrl(),
   locale: "en_US",
   twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE || undefined,
   keywords: [
