@@ -663,6 +663,238 @@
           "title": "Vermek üzere olduğunuz bir siparişi getirin. Demoda oluşturalım ve faturaya çevirelim."
         }
       },
+      
+"itemsProducts": {
+  "meta": {
+    "title": "Kalemler ve Ürünler: Satış, Alım ve Stok için Tek Temiz Kalem Listesi | Adon ERP",
+    "description": "Ürünleri, hizmetleri, hammaddeleri ve sarf malzemelerini SKU, birim, maliyet, yeniden sipariş seviyeleri ve hesap eşlemeleriyle tek listede tutun. Bangladeş'teki şirketler için tasarlandı.",
+    "keywords": [
+      "kalem ana verisi yazılımı Bangladeş",
+      "ürün listesi muhasebe yazılımı",
+      "envanter kalem kurulumu",
+      "SKU ve yeniden sipariş noktası",
+      "muhasebe yazılımı Bangladeş",
+      "Adon ERP kalemler"
+    ]
+  },
+  "hero": {
+    "title": "Kalemler ve ürünler: satış, alım ve stokun hep birlikte kullandığı tek liste",
+    "lead": "Satın aldığınız veya sattığınız her şeyi SKU, birim ve maliyetiyle bir kez ayarlayın. Ardından siparişler, faturalar, satış faturaları ve teslimat irsaliyeleri aynı listeden seçer, böylece bir ad hiçbir zaman iki şekilde yazılmaz.",
+    "secondaryCta": "Bir kalemin nasıl ayarlandığını görün"
+  },
+  "sample": {
+    "count": "27'nin 25'i",
+    "notes": [
+      "satın aldığınız ve sattığınız her şey için tek liste",
+      "yeniden sipariş noktası tükenmeden önce uyarır",
+      "hesaplar kategoriye göre doldurulur"
+    ]
+  },
+  "ui": {
+    "title": "Kalemler / Ürünler",
+    "newItem": "Yeni Kalem",
+    "printLabels": "Etiket Yazdır",
+    "tabAll": "Tümü",
+    "tabProducts": "Ürünler",
+    "tabServices": "Hizmetler",
+    "tabRaw": "Hammaddeler",
+    "tabFinished": "Mamuller",
+    "tabInactive": "Pasif",
+    "thName": "Ad",
+    "thSku": "SKU",
+    "thCategory": "Kategori",
+    "thUom": "Birim",
+    "thCost": "Maliyet",
+    "thReorder": "Yeniden sipariş noktası",
+    "catRaw": "Hammadde",
+    "catConsumable": "Sarf Malzemesi",
+    "catFinished": "Mamul",
+    "catService": "Hizmet",
+    "newTitle": "Yeni Kalem",
+    "fName": "Ad *",
+    "fSku": "SKU",
+    "fBarcode": "Barkod",
+    "fUom": "Ölçü Birimi",
+    "fCost": "Varsayılan Birim Maliyet",
+    "fCategory": "Kalem Kategorisi",
+    "fReorder": "Yeniden sipariş yönetimi",
+    "fReorderPoint": "Yeniden Sipariş Noktası",
+    "fReorderQty": "Yeniden Sipariş Miktarı",
+    "fAccounts": "Hesap eşlemeleri (kategoriye göre otomatik doldurulur)",
+    "fInventory": "Envanter Hesabı",
+    "fCogs": "SMM Hesabı",
+    "create": "Kalem Oluştur",
+    "caption": "Adon ERP'de Kalemler / Ürünler'in kısmi bir önizlemesi. Şirket, kalemler ve rakamlar örnek verilerdir."
+  },
+  "flow": {
+    "title": "Kalemler dört kategoride nasıl gruplanır",
+    "intro": "Her kalem bir kategoriye aittir. Kategori, hangi hesaplara kaydedileceğini belirler, böylece her kalemi elle eşlemeniz gerekmez.",
+    "steps": [
+      {
+        "tag": "Hammadde",
+        "question": "Bir şey yapmak için satın alınır",
+        "body": "Mürekkep, granül, kağıt. Stokta sayılır ve üretimde kullanıldığında maliyete taşınır."
+      },
+      {
+        "tag": "Mamul",
+        "question": "Yapılır ve satılır",
+        "body": "Kartonlar, çantalar, paketlenmiş ürünler. Bir satış maliyeti SMM'ye ve fiyatı gelire taşıyana kadar envanterde tutulur."
+      },
+      {
+        "tag": "Sarf Malzemesi",
+        "question": "Tüketilir, satılmaz",
+        "body": "Bant, eldiven, temizlik malzemeleri. Toplu alınır, rafın asla boş kalmaması için yeniden sipariş noktasıyla."
+      }
+    ],
+    "aside": {
+      "tag": "Hizmet",
+      "body": "Navlun, onarımlar veya işçilik. Bir hizmetin stoğu ve yeniden sipariş seviyesi yoktur, yalnızca bir fiyatı vardır ve gelir veya gidere kaydedilir."
+    },
+    "formTitle": "Yeni bir kalemde doldurduklarınız",
+    "form": [
+      {
+        "label": "Ad",
+        "body": "Tek zorunlu alan. Ekibinizin yüksek sesle söylediği adı kullanın, örneğin \"Kraft Kağıt Rulo\"."
+      },
+      {
+        "label": "SKU ve barkod",
+        "body": "Kendi kodunuz ve isteğe bağlı bir EAN-13 veya dahili barkod, böylece kalemler tarama veya kodla bulunabilir."
+      },
+      {
+        "label": "Ölçü birimi ve maliyet",
+        "body": "kg, adet, iş veya kendi biriminiz, siparişlerin ve faturaların başladığı varsayılan birim maliyetle."
+      },
+      {
+        "label": "Yeniden sipariş yönetimi",
+        "body": "Yeniden sipariş noktası, yeniden sipariş miktarı, minimum ve maksimum stok, böylece düşük kalemler listede öne çıkar."
+      },
+      {
+        "label": "Hesap eşlemeleri",
+        "body": "Envanter, SMM, gelir ve gider hesapları. İsteğe bağlı ve boş bırakırsanız kategori tarafından doldurulur."
+      }
+    ]
+  },
+  "connect": {
+    "title": "Kalemler her satın alma ve satış adımını besler",
+    "intro": "Bir kalem bir kez ayarlanır ve ardından ilk satın alma siparişinden son rapora kadar neredeyse her diğer araç tarafından okunur.",
+    "groups": {
+      "before": "Kalemden önce",
+      "after": "Kalemlerin kullanıldığı yer",
+      "shows": "Göründüğü yer"
+    },
+    "items": {
+      "chartOfAccounts": "Bir kalemin kaydedildiği envanter, SMM, gelir ve gider hesapları.",
+      "vendors": "Kalemi kimden satın aldığınız.",
+      "purchaseOrders": "Sipariş verirken miktar ve birim maliyetle kalemleri seçin.",
+      "invoicesAr": "Kalemleri fiyatları ve KDV'leriyle müşterilere satın.",
+      "deliveryChallans": "Her yükte kapıdan çıkan kalemleri listeleyin.",
+      "ledgers": "Envanter ve satılan malın maliyeti, hesap hesap.",
+      "financialReports": "Tablolarınızda stok değeri ve marjlar.",
+      "accountingHub": "Bir bakışta stok ve satış özeti."
+    }
+  },
+  "local": {
+    "title": "Bangladeşli şirketlerin ticaret yapma şekline uyan bir kalem listesi",
+    "intro": "Birçok şirket hammaddeyi kilo ile alır, paketlenmiş ürünleri adet ile satar ve navlunu iş olarak ücretlendirir. Tek bir liste üçünü de ele almalıdır.",
+    "points": [
+      {
+        "title": "Kendi birimleriniz",
+        "body": "kg, adet, iş, rulo veya karton. Her kalem birimini taşır, böylece siparişlerdeki ve irsaliyelerdeki miktarlar her zaman aynı şeyi ifade eder."
+      },
+      {
+        "title": "Taka cinsinden maliyetler",
+        "body": "BDT cinsinden varsayılan bir birim maliyet belirleyin. Siparişler ve faturalar bundan başlar ve tedarikçinin fiyatı değiştiğinde siz değiştirirsiniz."
+      },
+      {
+        "title": "İşe yarayan yeniden sipariş noktaları",
+        "body": "Noktayı bir kez belirleyin. Liste her kalemin yanında gösterir, böylece depo sorumlusu tükenmeden önce ne isteyeceğini bilir."
+      },
+      {
+        "title": "Etiket yazdır",
+        "body": "Raf ve kutular için listeden kalem etiketleri yazdırın, zaten girdiğiniz SKU ve barkodu kullanarak."
+      }
+    ],
+    "story": {
+      "title": "Bir yeni kalem, kurulumdan ilk satışa",
+      "intro": "Paketleme bandı için örnek bir kalem, genellikle nasıl işlediği.",
+      "steps": [
+        {
+          "time": "1 Eyl",
+          "text": "Depo sorumlusu \"BOPP Paketleme Bandı\" ekler, birim adet, kategori Sarf Malzemesi."
+        },
+        {
+          "time": "1 Eyl",
+          "text": "Yeniden sipariş noktası 300'e ayarlanır. Hesaplar kategoriden doldurulur."
+        },
+        {
+          "time": "4 Eyl",
+          "text": "Bir satın alma siparişi kalemi miktar ve birim maliyetle seçer."
+        },
+        {
+          "time": "10 Eyl",
+          "text": "Bant gelir ve stok artar."
+        },
+        {
+          "time": "20 Eyl",
+          "text": "Stok yeniden sipariş noktasının altına düşer ve kalem listede öne çıkar."
+        }
+      ]
+    }
+  },
+  "industries": {
+    "title": "Farklı sektörler kalem listesini nasıl kullanır",
+    "angles": {
+      "retail": "Her biri SKU ve barkodlu binlerce kalem.",
+      "food-hospitality": "Ağırlıkla alınan, yemek olarak satılan malzemeler ve sarf malzemeleri.",
+      "real-estate": "Her proje için birim başına fiyatlandırılan malzemeler ve bağlantı parçaları.",
+      "consulting": "Çoğunlukla hizmetler, ekipman için birkaç kalem.",
+      "manufacturing": "Hammadde, paketleme ve mamuller ayrı kategorilerde.",
+      "health-fitness": "Yeniden sipariş noktalarıyla sarf malzemeleri ve perakende kalemleri.",
+      "trades": "Her işte ayrı kalemler olarak parçalar ve işçilik.",
+      "others": "Ücretler ve hibeler için hizmetlerle kısa bir sarf malzemesi listesi."
+    }
+  },
+  "faq": {
+    "title": "Kalemler hakkında aldığımız sorular",
+    "items": [
+      {
+        "q": "Adon ERP'de bir kalem nedir?",
+        "a": "Satın aldığınız, yaptığınız veya sattığınız her şeydir: bir ürün, bir hammadde, bir sarf malzemesi veya bir hizmet. Her birinin bir adı, isteğe bağlı bir SKU'su, bir birimi ve varsayılan bir maliyeti vardır."
+      },
+      {
+        "q": "Bir kalem oluşturmak için neyi doldurmam gerekir?",
+        "a": "Yalnızca ad gereklidir. SKU, barkod, birim, varsayılan maliyet ve kategoriyi sahip olduğunuzda ekleyin. Diğer her şey daha sonra eklenebilir."
+      },
+      {
+        "q": "Kalem kategorileri ne içindir?",
+        "a": "Kategori, kalemin hangi hesaplara kaydedileceğini belirler, böylece bir hammadde herhangi bir manuel eşleme olmadan envantere ve bir hizmet gelire gider."
+      },
+      {
+        "q": "Tek bir kalem için hesap belirleyebilir miyim?",
+        "a": "Evet. Hesap eşlemeleri isteğe bağlıdır. Kategori varsayılanlarını kullanmak için boş bırakın veya kendi envanter, SMM, gelir veya gider hesabınızı seçin."
+      },
+      {
+        "q": "Yeniden sipariş noktaları nasıl çalışır?",
+        "a": "İsteğe bağlı minimum ve maksimum stokla bir yeniden sipariş noktası ve miktarı belirleyin. Liste her kalemin yanında yeniden sipariş noktasını gösterir."
+      },
+      {
+        "q": "Geçmişi kaybetmeden bir kalemi kullanmayı bırakabilir miyim?",
+        "a": "Evet. Devre Dışı Bırak'ı kullanın. Kalem seçim listelerinden çıkar ancak eski belgelerde kalır. Pasif sekmesi onu tekrar gösterir."
+      },
+      {
+        "q": "Listeyi dışa aktarabilir miyim?",
+        "a": "Evet. Kategoriye göre arayın veya filtreleyin, ardından CSV veya Excel'e aktarın, listeyi yazdırın veya etiketleri yazdırın."
+      },
+      {
+        "q": "Adon ERP nerede mevcut?",
+        "a": "Şu anda Dakka'da şirketleri onboarding yapıyoruz. Bir demo ayırtın ve kendi kalemlerinizden birkaçını sizinle birlikte ayarlayalım."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Kendi kalemlerinizden on tane getirin. Demoda bunları birimler, maliyetler ve yeniden sipariş noktalarıyla ayarlayacağız."
+  }
+},
       "common": {
         "onboardingNote": "Şu anda Dakka’daki şirketleri sisteme alıyoruz.",
         "closingBody": "İngilizce veya Bengalce canlı demo; sektörünüze yakın örnek defterlerle ve muhasebecinizin soruları için ayrılmış zamanla.",

@@ -175,7 +175,7 @@
 
 @theme inline {
   --font-sans: var(--font-rubik);
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

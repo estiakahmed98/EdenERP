@@ -65,6 +65,22 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+/**
+ * Namespaces only read by Server Components (getTranslations / RSC
+ * useTranslations). They are NOT serialized into every page's HTML.
+ * `pages.accountingShowcase` alone is ~890 KB (≈60% of all messages).
+ * Before adding a client component that uses one of these, remove it here.
+ */
+const SERVER_ONLY_PAGE_NAMESPACES = ["accountingShowcase"] as const;
+
+function pickClientMessages(messages: Awaited<ReturnType<typeof getMessages>>) {
+  const pages = messages.pages as Record<string, unknown> | undefined;
+  if (!pages) return messages;
+  const clientPages = { ...pages };
+  for (const ns of SERVER_ONLY_PAGE_NAMESPACES) delete clientPages[ns];
+  return { ...messages, pages: clientPages };
+}
+
 export default async function LocaleLayout({
   children,
   params,
@@ -78,12 +94,17 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const activeLocale = await getLocale();
-  const messages = await getMessages();
-  const pricingConfig = await getPricingSiteConfig();
+  const [activeLocale, messages, pricingConfig] = await Promise.all([
+    getLocale(),
+    getMessages(),
+    getPricingSiteConfig(),
+  ]);
 
   return (
-    <NextIntlClientProvider locale={activeLocale} messages={messages}>
+    <NextIntlClientProvider
+      locale={activeLocale}
+      messages={pickClientMessages(messages)}
+    >
       <LocaleDocument />
       <AuthSessionProvider>
         <DemoBookingProvider>

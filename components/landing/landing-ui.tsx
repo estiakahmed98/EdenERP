@@ -3,8 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export const GLOBAL_CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
 .landing-page {
   --purple: #1088ef;
   --purple-light: #e8f1fb;
@@ -15,7 +13,7 @@ export const GLOBAL_CSS = `
   --ink: #14233b;
   --muted: #556a85;
   --hand: var(--font-caveat), 'Segoe Print', cursive;
-  --body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --body: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 .landing-page { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: clip; }
@@ -78,6 +76,15 @@ html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rub
 .landing-page .reveal-d2 { transition-delay:.2s; }
 .landing-page .reveal-d3 { transition-delay:.3s; }
 
+/* Above-the-fold hero: CSS-only entrance (no JS, no opacity:0) so the H1 —
+   the LCP element — paints immediately instead of waiting for hydration. */
+@keyframes heroIn { from { transform:translateY(18px); } to { transform:none; } }
+.landing-page .hero-in { animation: heroIn .7s cubic-bezier(.16,1,.3,1) both; }
+.landing-page .hero-d1 { animation-delay:.05s; }
+.landing-page .hero-d2 { animation-delay:.12s; }
+.landing-page .hero-d3 { animation-delay:.2s; }
+@media (prefers-reduced-motion: reduce) { .landing-page .hero-in { animation:none; } }
+
 .landing-page .font-hand { font-family: var(--hand); }
 .landing-page .font-body { font-family: var(--body); }
 .landing-page .shadow-float { box-shadow: 0 30px 80px rgba(15,23,42,.10), 0 0 0 1px rgba(15,23,42,.04); }
@@ -126,8 +133,29 @@ export function useReveal() {
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
 
-    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
+    const observeAll = (root: ParentNode) =>
+      root
+        .querySelectorAll(".reveal:not(.in)")
+        .forEach((el) => obs.observe(el));
+    observeAll(document);
+
+    // Sections are code-split (next/dynamic) and can mount after this effect,
+    // so also pick up .reveal elements that appear later.
+    const mutations = new MutationObserver((records) => {
+      for (const record of records) {
+        record.addedNodes.forEach((node) => {
+          if (!(node instanceof Element)) return;
+          if (node.classList.contains("reveal")) obs.observe(node);
+          observeAll(node);
+        });
+      }
+    });
+    mutations.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      mutations.disconnect();
+      obs.disconnect();
+    };
   }, []);
 }
 
@@ -223,8 +251,8 @@ function initializeThreeBackground(canvas: HTMLCanvasElement) {
     mouseY = -(event.clientY / innerHeight - 0.5) * 2;
   };
 
-  window.addEventListener("mousemove", onMouse);
-  let rafId: number;
+  window.addEventListener("mousemove", onMouse, { passive: true });
+  let rafId: number | undefined;
   const tick = (timestamp: number) => {
     rafId = requestAnimationFrame(tick);
     pts.rotation.y = timestamp * 0.00008 + mouseX * 0.04;
@@ -235,9 +263,31 @@ function initializeThreeBackground(canvas: HTMLCanvasElement) {
     renderer.render(scene, cam);
   };
 
-  rafId = requestAnimationFrame(tick);
+  // Only animate while the canvas is on screen and the tab is visible.
+  let onScreen = true;
+  const play = () => {
+    if (rafId === undefined && onScreen && !document.hidden) {
+      rafId = requestAnimationFrame(tick);
+    }
+  };
+  const pause = () => {
+    if (rafId !== undefined) cancelAnimationFrame(rafId);
+    rafId = undefined;
+  };
+  const visibilityObserver = new IntersectionObserver(([entry]) => {
+    onScreen = entry.isIntersecting;
+    if (onScreen) play();
+    else pause();
+  });
+  visibilityObserver.observe(canvas);
+  const onVisibility = () => (document.hidden ? pause() : play());
+  document.addEventListener("visibilitychange", onVisibility);
+
+  play();
   return () => {
-    cancelAnimationFrame(rafId);
+    pause();
+    visibilityObserver.disconnect();
+    document.removeEventListener("visibilitychange", onVisibility);
     renderer.dispose();
     window.removeEventListener("mousemove", onMouse);
   };
@@ -250,23 +300,59 @@ export function ThreeBg() {
     const canvas = ref.current;
     if (!canvas) return;
 
+    // Purely decorative: skip it where it costs the most (small screens,
+    // reduced motion, data saver) — this 118 KB lib + WebGL loop hurt LCP/TBT.
+    const connection = (
+      navigator as Navigator & { connection?: { saveData?: boolean } }
+    ).connection;
+    if (
+      window.matchMedia("(max-width: 767px)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      connection?.saveData
+    ) {
+      return;
+    }
+
     let disposed = false;
     let cleanup: (() => void) | undefined;
 
-    void loadThreeScript()
-      .then(() => {
-        if (disposed || !window.THREE) return;
-        cleanup = initializeThreeBackground(canvas);
-      })
-      .catch((error: unknown) => {
-        console.error(
-          "Unable to initialize the Three.js landing background.",
-          error,
-        );
-      });
+    const start = () => {
+      if (disposed) return;
+      void loadThreeScript()
+        .then(() => {
+          if (disposed || !window.THREE) return;
+          cleanup = initializeThreeBackground(canvas);
+        })
+        .catch((error: unknown) => {
+          console.error(
+            "Unable to initialize the Three.js landing background.",
+            error,
+          );
+        });
+    };
+
+    // Defer until the page has loaded and the main thread is idle.
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+    let idleId: number | undefined;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+    const schedule = () => {
+      if (w.requestIdleCallback) {
+        idleId = w.requestIdleCallback(start, { timeout: 4000 });
+      } else {
+        timeoutId = setTimeout(start, 2500);
+      }
+    };
+    if (document.readyState === "complete") schedule();
+    else window.addEventListener("load", schedule, { once: true });
 
     return () => {
       disposed = true;
+      window.removeEventListener("load", schedule);
+      if (idleId !== undefined) w.cancelIdleCallback?.(idleId);
+      if (timeoutId !== undefined) clearTimeout(timeoutId);
       cleanup?.();
     };
   }, []);

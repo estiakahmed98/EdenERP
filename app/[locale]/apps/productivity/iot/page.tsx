@@ -12,20 +12,16 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: "/apps/productivity/iot" },
   openGraph: {
     type: "website",
     title,
     description,
-    url: "/apps/productivity/iot",
     siteName: siteConfig.name,
-    images: [{ url: "/icon.svg" }],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/icon.svg"],
     creator: siteConfig.twitterHandle,
   },
 };

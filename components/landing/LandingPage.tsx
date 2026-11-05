@@ -1,19 +1,23 @@
 "use client";
 
 import React from "react";
+import dynamic from "next/dynamic";
 
-import AppsSection from "./AppsSection";
-import CTASection from "./CTASection";
-import EnterpriseSection from "./EnterpriseSection";
-import FeaturesSection from "./FeaturesSection";
 import Hero from "./Hero";
-import LevelUpSection from "./LevelUpSection";
-import MarqueeStrip from "./MarqueeStrip";
-import NativeAISection from "./NativeAISection";
 import StackedSection from "./StackedSection";
-import StatsSection from "./StatsSection";
-import TestimonialsSection from "./TestimonialsSection";
 import { GLOBAL_CSS, useReveal } from "./landing-ui";
+
+// Below-the-fold sections are code-split into their own chunks so the hero
+// can paint and become interactive sooner. They are still server-rendered
+// (ssr default), so the HTML/content stays crawlable for SEO.
+const NativeAISection = dynamic(() => import("./NativeAISection"));
+const AppsSection = dynamic(() => import("./AppsSection"));
+const LevelUpSection = dynamic(() => import("./LevelUpSection"));
+const FeaturesSection = dynamic(() => import("./FeaturesSection"));
+const EnterpriseSection = dynamic(() => import("./EnterpriseSection"));
+const StatsSection = dynamic(() => import("./StatsSection"));
+const TestimonialsSection = dynamic(() => import("./TestimonialsSection"));
+const CTASection = dynamic(() => import("./CTASection"));
 
 export default function LandingPage() {
   useReveal();
@@ -22,8 +26,7 @@ export default function LandingPage() {
     <main className="landing-page bn-content min-h-screen bg-(--cream) text-(--ink)">
       <style>{GLOBAL_CSS}</style>
       <Hero />
-            <NativeAISection />
-      {/* <MarqueeStrip /> */}
+      <NativeAISection />
       <AppsSection />
 
       <div className="relative">

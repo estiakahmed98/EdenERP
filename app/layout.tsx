@@ -1,5 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, Geist, Geist_Mono, Rubik, Tiro_Bangla } from "next/font/google";
+import {
+  Caveat,
+  Plus_Jakarta_Sans,
+  Rubik,
+  Tiro_Bangla,
+} from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { getLocale } from "next-intl/server";
 
@@ -9,14 +14,12 @@ import { siteConfig } from "@/lib/site";
 
 import "./globals.css";
 
-const geist = Geist({
+// Landing page body font (was a render-blocking @import from fonts.googleapis.com)
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
+  display: "swap",
 });
 
 const rubik = Rubik({
@@ -28,6 +31,7 @@ const caveat = Caveat({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-caveat",
+  display: "swap", // used by the hero H1 (LCP) — keep preloaded
 });
 
 const tiroBangla = Tiro_Bangla({
@@ -35,6 +39,7 @@ const tiroBangla = Tiro_Bangla({
   weight: ["400"],
   style: ["normal", "italic"],
   variable: "--font-tiro-bangla",
+  preload: false, // only used on Bengali pages
 });
 
 export const metadata: Metadata = {
@@ -103,12 +108,15 @@ export const metadata: Metadata = {
   },
 
   icons: {
+    // SVG favicon first (crisp at any size); PNG/ICO fallbacks are rendered
+    // from the same public/icon.svg so every browser shows the same icon.
     icon: [
-      { url: "/icon-light-32x32.png", media: "(prefers-color-scheme: light)" },
-      { url: "/icon-dark-32x32.png", media: "(prefers-color-scheme: dark)" },
       { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-light-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: "/apple-icon.png",
+    shortcut: "/favicon.ico",
+    apple: { url: "/apple-icon.png", sizes: "180x180" },
   },
 };
 
@@ -226,7 +234,7 @@ export default async function RootLayout({
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
       suppressHydrationWarning
-      className={`${geist.variable} ${geistMono.variable} ${rubik.variable} ${caveat.variable} ${tiroBangla.variable}`}
+      className={`${jakarta.variable} ${rubik.variable} ${caveat.variable} ${tiroBangla.variable}`}
     >
       <body className="bg-background font-sans antialiased" suppressHydrationWarning>
         {[organizationSchema, localBusinessSchema, websiteSchema, softwareSchema].map((schema) => (

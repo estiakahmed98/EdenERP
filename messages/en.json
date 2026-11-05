@@ -54370,6 +54370,198 @@
         "subtitle": "your growth potential",
         "button": "Start now"
       }
+    },
+    "university-students": {
+    "metadata": {
+      "title": "University Students | Adon ERP",
+      "description": "Manage student profiles, academic history, and enrollment status in one unified hub."
+    },
+    "hero": {
+      "badge": "Unified Student Records",
+      "title": "Every student's journey,",
+      "titleHighlight": "perfectly organized.",
+      "description": "Track enrollment, assign advisors, and manage academic paths from a single, powerful directory. No more scattered records.",
+      "buttons": {
+        "requestDemo": "Request a Demo",
+        "exploreFeatures": "Explore Features"
+      },
+      "dashboard": {
+        "brand": "Adon ERP",
+        "pageName": "University Students",
+        "language": "English",
+        "institution": "National University",
+        "sidebar": {
+          "title": "University",
+          "dashboard": "University Dashboard",
+          "admissions": "University Admissions",
+          "students": "University Students",
+          "faculties": "Faculties & Programmes",
+          "courses": "Courses & Curriculum",
+          "classSchedule": "Class Schedule",
+          "registration": "Registration",
+          "studentAccounts": "Student Accounts",
+          "gradesResults": "Grades & Results",
+          "examsAttendance": "Exams & Attendance",
+          "graduation": "Graduation",
+          "terms": "Terms"
+        },
+        "directory": {
+          "title": "University students",
+          "description": "Every student belongs to a programme for the whole degree. The catalog year fixes which curriculum they follow, even after the curriculum changes.",
+          "buttons": {
+            "admitStudent": "Admit a student",
+            "import": "Import",
+            "assignAdvisor": "Assign advisor"
+          },
+          "filters": {
+            "faculty": "Faculty",
+            "department": "Department",
+            "programme": "Programme",
+            "admitTerm": "Admit term",
+            "status": "Status",
+            "all": "All",
+            "active": "Active",
+            "search": "Search",
+            "searchPlaceholder": "No., name or phone"
+          },
+          "studentCount": "{count} students",
+          "table": {
+            "studentNo": "STUDENT NO.",
+            "name": "NAME",
+            "programme": "PROGRAMME",
+            "admitTerm": "ADMIT TERM",
+            "catalogYear": "CATALOG YEAR",
+            "advisor": "ADVISOR",
+            "status": "STATUS"
+          }
+        },
+        "preview": {
+          "message": "Preview mode. Explore the full student directory.",
+          "button": "Book a live demo"
+        }
+      }
+    },
+    "featuresSection": {
+      "titleLine1": "What makes the",
+      "titleLine2": "student directory",
+      "titleLine3": "different?",
+      "description": "Managing thousands of students shouldn't be a headache. Here is how the Hub brings clarity to student data management.",
+      "items": {
+        "unifiedProfiles": {
+          "title": "Unified Profiles",
+          "question": "Is every student's record easily accessible?",
+          "answer": "From their initial application to their final transcript, every piece of data is linked to a single student ID. No more digging through spreadsheets or filing cabinets.",
+          "source": "Synced from the Central Registry"
+        },
+        "academicTracking": {
+          "title": "Academic Tracking",
+          "question": "How do we know which curriculum a student follows?",
+          "answer": "The system locks a student to the catalog year they joined. Even if the university updates its curriculum, the student's path remains clear and consistent.",
+          "source": "Synced from Academic Operations"
+        },
+        "advisorManagement": {
+          "title": "Advisor Management",
+          "question": "Are students getting the guidance they need?",
+          "answer": "Assign advisors in bulk or individually. Track which faculty members are responsible for which cohorts, ensuring no student falls through the cracks.",
+          "source": "Synced from Faculty Allocations"
+        },
+        "statusVisibility": {
+          "title": "Status Visibility",
+          "question": "Can we instantly see who is active or on leave?",
+          "answer": "Filter students by Active, Graduated, or On Leave status. Get an instant, accurate count of who is currently studying and who has stepped away.",
+          "source": "Synced from Student Status Modules"
+        }
+      }
+    },
+    "campusSection": {
+      "titleLine1": "Built for the realities of",
+      "titleLine2": "campus administration",
+      "description": "We understand that a student's record is not just a name and a number. It's their entire academic life. Adon ERP is designed to protect and organize that data.",
+      "cards": {
+        "academicRecord": {
+          "title": "Complete Academic Record",
+          "description": "From their application test scores to their final graduation thesis, every milestone is tracked and easily retrievable."
+        },
+        "financialIntegration": {
+          "title": "Financial Integration",
+          "description": "Instantly check a student's fee clearance status. The student profile links directly to their billing and invoice history."
+        },
+        "bulkOperations": {
+          "title": "Bulk Operations",
+          "description": "Need to move an entire cohort to a new advisor? Select multiple students and update their records at once, saving hours of manual work."
+        },
+        "catalogYears": {
+          "title": "Curated Catalog Years",
+          "description": "The system automatically locks a student to the curriculum rules of the year they joined, ensuring they aren't affected by future course changes."
+        },
+        "searchFilter": {
+          "title": "Intuitive Search & Filter",
+          "description": "Filter by Faculty, Department, Programme, or Status. Find the exact group of students you need to communicate with in seconds."
+        },
+        "termTracking": {
+          "title": "Term-based Tracking",
+          "description": "See exactly which term a student was admitted in. This historical context is vital for auditing and academic planning."
+        }
+      },
+      "timeline": {
+        "title": "A typical day for the registrar",
+        "items": {
+          "morning": {
+            "time": "9:00 am",
+            "description": "The registrar checks the dashboard to see how many new students have accepted their offers overnight."
+          },
+          "import": {
+            "time": "10:30 am",
+            "description": "A new batch of transfer students needs to be imported. The registrar uses the bulk import tool to add them in minutes."
+          },
+          "curriculum": {
+            "time": "1:00 pm",
+            "description": "A student calls confused about their curriculum. The registrar searches their ID and instantly sees they are tied to the 2022 catalog year."
+          },
+          "export": {
+            "time": "3:00 pm",
+            "description": "The department head requests a list of all active students in the 'BA-ALL' programme. The registrar applies filters and exports the data."
+          },
+          "advisors": {
+            "time": "5:00 pm",
+            "description": "Before leaving, the registrar bulk-assigns a newly hired faculty member as the advisor for all incoming Spring 2026 students."
+          }
+        }
+      }
+    },
+    "faqSection": {
+      "titleLine1": "Questions about",
+      "titleLine2": "the student",
+      "titleLine3": "directory",
+      "items": {
+        "importData": {
+          "question": "Can we import existing student data?",
+          "answer": "Yes, the system includes robust import tools. You can upload CSV files to bulk-add students, update their details, and assign them to specific programmes instantly."
+        },
+        "search": {
+          "question": "How does the search function work?",
+          "answer": "The search bar allows you to find students instantly using their Student Number, full Name, or Phone number. It queries the entire database in real-time."
+        },
+        "studentHistory": {
+          "question": "Can we track a student's entire history?",
+          "answer": "Absolutely. Clicking on any student ID opens their full profile, showing their admission details, current courses, grades, fee history, and advisor notes."
+        },
+        "assignAdvisors": {
+          "question": "Is it easy to assign advisors?",
+          "answer": "Yes. You can select multiple students at once and use the 'Assign advisor' button. This is perfect for assigning an entire intake cohort to a specific faculty member."
+        }
+      }
+    },
+    "ctaSection": {
+      "titleLine1": "Ready to modernize",
+      "titleLine2": "your student records?",
+      "description": "Get a personalized walkthrough of the Students module. We'll show you how easy it is to manage thousands of profiles.",
+      "buttons": {
+        "scheduleWalkthrough": "Schedule a Walkthrough",
+        "browseModules": "Browse All Modules"
+      }
     }
+  }
+
   }
 }
