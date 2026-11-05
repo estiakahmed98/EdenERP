@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
-    alternates: getLocaleAlternates("/apps/transport-pool/transport-pool"),
+    alternates: await getLocaleAlternates("/apps/transport-pool/transport-pool"),
   };
 }
 

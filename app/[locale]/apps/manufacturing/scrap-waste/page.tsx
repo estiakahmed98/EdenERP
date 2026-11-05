@@ -3,7 +3,7 @@ import {
   manufacturingMetadata,
 } from "@/components/manufacturing/module-page";
 
-export const metadata = manufacturingMetadata("scrap-waste");
+export const generateMetadata = () => manufacturingMetadata("scrap-waste");
 
 export default function ManufacturingSubpage() {
   return <ManufacturingModulePage slug="scrap-waste" />;

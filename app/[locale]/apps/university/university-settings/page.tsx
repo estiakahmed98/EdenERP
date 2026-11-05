@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.universitySettings") || "University Settings | AdonERP",
     description:
       "Configure institutional rules, grading scales, and numbering formats in one unified hub.",
-    alternates: getLocaleAlternates("/apps/university/university-settings"),
+    alternates: await getLocaleAlternates("/apps/university/university-settings"),
   };
 }
 

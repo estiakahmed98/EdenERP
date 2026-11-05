@@ -228,7 +228,7 @@ export async function accountingMetadata(
   const title = t("title");
   const description = t("description");
   const path = slug.startsWith("/") ? slug : `/apps/accounting/${slug}`;
-  const alternates = getLocaleAlternates(path);
+  const alternates = await getLocaleAlternates(path);
 
   return {
     title,

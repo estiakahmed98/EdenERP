@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
-    alternates: getLocaleAlternates("/community/get-services/customer-stories"),
+    alternates: await getLocaleAlternates("/community/get-services/customer-stories"),
   };
 }
 

@@ -8,11 +8,11 @@ import MerchandisingHero from "./heroes";
 import MerchandisingWorkspace from "./workspaces";
 import MerchandisingSnapshot from "./snapshots";
 import { css } from "./ui";
-export function merchandisingMetadata(slug: MerchandisingSlug): Metadata {
+export async function merchandisingMetadata(slug: MerchandisingSlug): Promise<Metadata> {
   return {
     title: `${pages[slug].title} | Merchandising | EdenERP`,
     description: pages[slug].description,
-    alternates: getLocaleAlternates(`/apps/merchandising/${slug}`),
+    alternates: await getLocaleAlternates(`/apps/merchandising/${slug}`),
   };
 }
 export function MerchandisingPage({ slug }: { slug: MerchandisingSlug }) {

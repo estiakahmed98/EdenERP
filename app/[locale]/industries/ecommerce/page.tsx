@@ -9,7 +9,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: t("links.ecommerce"),
-    alternates: getLocaleAlternates("/industries/ecommerce"),
+    alternates: await getLocaleAlternates("/industries/ecommerce"),
   };
 }
 

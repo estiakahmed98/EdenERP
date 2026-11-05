@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.facultiesProgrammes") || "Faculties & Programmes | AdonERP",
     description:
       "Manage academic structures, departments, and programmes in one unified hub.",
-    alternates: getLocaleAlternates("/apps/university/faculties-programmes"),
+    alternates: await getLocaleAlternates("/apps/university/faculties-programmes"),
   };
 }
 

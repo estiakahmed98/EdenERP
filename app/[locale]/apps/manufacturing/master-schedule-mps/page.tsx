@@ -3,7 +3,7 @@ import {
   manufacturingMetadata,
 } from "@/components/manufacturing/module-page";
 
-export const metadata = manufacturingMetadata("master-schedule-mps");
+export const generateMetadata = () => manufacturingMetadata("master-schedule-mps");
 
 export default function ManufacturingSubpage() {
   return <ManufacturingModulePage slug="master-schedule-mps" />;

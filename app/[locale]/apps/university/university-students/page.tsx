@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("links.universityStudents") || "University Students | AdonERP",
     description:
       "Manage student profiles, academic history, and enrollment status in one unified hub.",
-    alternates: getLocaleAlternates("/apps/university/university-students"),
+    alternates: await getLocaleAlternates("/apps/university/university-students"),
   };
 }
 

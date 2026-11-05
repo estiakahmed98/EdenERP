@@ -107,7 +107,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
-    alternates: getLocaleAlternates("/help")
+    alternates: await getLocaleAlternates("/help")
   };
 }
 
