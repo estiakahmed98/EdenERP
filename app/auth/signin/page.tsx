@@ -93,8 +93,8 @@ export default function SignInPage() {
             <Image
               src="/adon_erp_logo.png"
               alt="Adon ERP logo"
-              width={1801}
-              height={1000}
+              width={288}
+              height={160}
               className="mx-auto h-20 w-auto"
               priority
             />

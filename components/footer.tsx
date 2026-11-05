@@ -113,8 +113,8 @@ export default function Footer({
               <Image
                 src="/adon_erp_logo.png"
                 alt="Adon ERP logo"
-                width={140}
-                height={50}
+                width={180}
+                height={100}
                 className="h-9 w-auto shrink-0 sm:h-24 xl:h-24"
                 priority
               />
@@ -184,8 +184,8 @@ export default function Footer({
             <Image
               src="/adon_erp_logo.png"
               alt="Adon ERP logo"
-              width={140}
-              height={50}
+              width={180}
+              height={100}
               className="h-9 w-auto shrink-0 sm:h-14 xl:h-16"
               priority
             />
