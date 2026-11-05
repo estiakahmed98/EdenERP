@@ -98,6 +98,10 @@
           "attendance": "Devam Takibi",
           "payroll": "Bordro",
           "budgetManagement": "Bütçe Yönetimi",
+          "analytics": "Analitik",
+          "engineeringMaintenance": "Mühendislik Bakımı",
+          "transportPool": "Araç Havuzu",
+          "biAnalyticsReporting": "BI Analitik ve Raporlama",
           "fundAccounting": "Fon Muhasebesi",
           "fundDashboard": "Fon Paneli",
           "grants": "Hibeler",
@@ -164,6 +168,406 @@
           "events": "Etkinlikler",
           "translations": "Çeviriler",
           "becomePartner": "İş Ortağı Olun"
+        }
+      },
+      "modules": {
+        "industries": {
+          "title": "Sektörler",
+          "links": {
+            "buyingHouse": "Satın Alma Ofisi",
+            "accessories": "Aksesuarlar",
+            "ecommerce": "E-ticaret",
+            "lms": "LMS",
+            "school": "Okul",
+            "college": "Kolej",
+            "university": "Üniversite",
+            "merchandising": "Merchandising",
+            "travelAgency": "Seyahat Acentesi",
+            "textile": "Tekstil",
+            "garments": "Hazır Giyim",
+            "ngo": "STK",
+            "realEstate": "Gayrimenkul",
+            "agroRice": "Tarım - Pirinç",
+            "tv": "TV",
+            "steel": "Çelik"
+          }
+        },
+        "accounting": {
+          "title": "Muhasebe",
+          "links": {
+            "accountingHub": "Muhasebe Merkezi",
+            "chartOfAccounts": "Hesap Planı",
+            "journalEntries": "Yevmiye Kayıtları",
+            "ledgers": "Defteri Kebir",
+            "invoicesAr": "Satış Faturaları (Alacak)",
+            "billsAp": "Alış Faturaları (Borç)",
+            "purchaseOrders": "Satın Alma Siparişleri",
+            "itemsProducts": "Kalemler / Ürünler",
+            "customers": "Müşteriler",
+            "vendors": "Tedarikçiler",
+            "bankAccounts": "Banka Hesapları",
+            "receipts": "Tahsilat ve Tediyeler",
+            "deliveryChallans": "Sevk İrsaliyeleri",
+            "pettyCash": "Küçük Kasa",
+            "chequeRegister": "Çek Kayıt Defteri",
+            "closingFy": "Kapanış ve Mali Yıl",
+            "financialReports": "Mali Raporlar",
+            "vatRegister": "KDV Defteri",
+            "discountsCoupons": "İndirimler ve Kuponlar",
+            "loanManagement": "Kredi Yönetimi",
+            "fixedAssetRegister": "Sabit Kıymet Defteri",
+            "exchangeRates": "Döviz Kurları",
+            "arApAging": "Alacak / Borç Yaşlandırma",
+            "bankReconciliation": "Banka Mutabakatı"
+          }
+        },
+        "projectAccounting": {
+          "title": "Proje Muhasebesi",
+          "links": {
+            "overview": "Genel Bakış",
+            "costCodes": "Maliyet Kodları",
+            "budgets": "Bütçeler",
+            "jobCost": "İş Maliyeti",
+            "changeOrders": "Değişiklik Emirleri",
+            "wip": "Devam Eden İşler (WIP)",
+            "progressBilling": "Hakediş Faturalama",
+            "schedule": "Takvim",
+            "risksIssues": "Riskler ve Sorunlar",
+            "documents": "Belgeler",
+            "milestones": "Kilometre Taşları",
+            "boq": "BOQ",
+            "billAllocations": "Fatura Dağıtımları",
+            "pAndL": "Kâr / Zarar"
+          }
+        },
+        "budgetManagement": {
+          "title": "Bütçe Yönetimi",
+          "links": {
+            "overview": "Genel Bakış",
+            "lines": "Kalemler",
+            "requisitions": "Talepler",
+            "variance": "Sapma",
+            "approvals": "Onaylar",
+            "rbrf": "RBRF"
+          }
+        },
+        "supplyChain": {
+          "title": "Tedarik Zinciri",
+          "links": {
+            "overview": "Genel Bakış",
+            "goodsReceipts": "Mal Kabul",
+            "landedCost": "Varış Maliyeti",
+            "procurement": "Satın Alma",
+            "purchaseRequisitions": "Satın Alma Talepleri",
+            "comparativeStatements": "Karşılaştırma Tabloları",
+            "tenderManagement": "İhale Yönetimi"
+          }
+        },
+        "inventory": {
+          "title": "Envanter",
+          "links": {
+            "demandForecast": "Talep Tahmini",
+            "warehouses": "Depolar",
+            "stockMovements": "Stok Hareketleri",
+            "inventorySummary": "Envanter Özeti",
+            "gatePasses": "Kapı Geçiş Belgeleri",
+            "weighbridgeScales": "Kantar ve Teraziler"
+          }
+        },
+        "openPlatform": {
+          "title": "Açık Platform",
+          "links": {
+            "taxRates": "Vergi Oranları",
+            "migrationStudio": "Taşıma Stüdyosu",
+            "exportTakeout": "Dışa Aktarım / Veri Alma"
+          }
+        },
+        "manufacturing": {
+          "title": "Üretim",
+          "links": {
+            "workCenters": "İş Merkezleri",
+            "routings": "Rotalar",
+            "billOfMaterials": "Ürün Ağacı",
+            "mrpPlanning": "MRP Planlama",
+            "capacityPlanning": "Kapasite Planlama",
+            "masterScheduleMps": "Ana Üretim Planı (MPS)",
+            "schedulingAps": "Çizelgeleme (APS)",
+            "linePlanningBoard": "Hat Planlama Panosu",
+            "orderAllocation": "Sipariş Tahsisi",
+            "shopFloor": "Atölye",
+            "productionOrders": "Üretim Emirleri",
+            "batchesLots": "Partiler / Lotlar",
+            "serialNumbers": "Seri Numaraları",
+            "qcTemplates": "KK Şablonları",
+            "qualityControl": "Kalite Kontrol",
+            "scrapWaste": "Hurda / Fire",
+            "subcontracting": "Fason Üretim",
+            "standardCosting": "Standart Maliyet",
+            "productionCosting": "Üretim Maliyeti"
+          }
+        },
+        "quality": {
+          "title": "Kalite (QMS)",
+          "links": {
+            "qualityDashboard": "Kalite Panosu",
+            "nonConformance": "Uygunsuzluk",
+            "capa": "CAPA",
+            "aqlSampling": "AQL Örnekleme",
+            "spc": "SPC"
+          }
+        },
+        "hrPayroll": {
+          "title": "İK ve Bordro",
+          "links": {
+            "departments": "Departmanlar",
+            "designations": "Unvanlar",
+            "gradesSteps": "Dereceler ve Kademeler",
+            "salaryComponents": "Maaş Bileşenleri",
+            "salaryStructures": "Maaş Yapıları",
+            "employees": "Çalışanlar",
+            "payrollRuns": "Bordro Çalıştırmaları",
+            "approvalsInbox": "Onay Kutusu",
+            "taxBracketsNbr": "Vergi Dilimleri (NBR)",
+            "form108Annual": "Form 108 (Yıllık)",
+            "hrPolicyPfGratuity": "İK Politikası (PF/İkramiye)",
+            "shifts": "Vardiyalar",
+            "holidayCalendar": "Tatil Takvimi",
+            "leaveTypes": "İzin Türleri",
+            "leaveApplications": "İzin Başvuruları",
+            "attendance": "Devam Takibi",
+            "projects": "Projeler",
+            "finalSettlements": "Nihai Hesaplaşmalar",
+            "serviceRecords": "Hizmet Kayıtları",
+            "recruitment": "İşe Alım",
+            "appraisals": "Performans Değerlendirme",
+            "wppfWelfare": "WPPF ve Refah",
+            "salaryBudgets": "Maaş Bütçeleri",
+            "hrReports": "İK Raporları"
+          }
+        },
+        "employeePortal": {
+          "title": "Çalışan Portalı",
+          "links": {
+            "myProfile": "Profilim",
+            "myPayslips": "Bordrolarım",
+            "myLeaves": "İzinlerim",
+            "myAttendance": "Devam Kayıtlarım",
+            "myPfGratuity": "PF ve İkramiyem"
+          }
+        },
+        "engineeringMaintenance": {
+          "title": "Mühendislik Bakımı",
+          "links": {
+            "engineeringMaintenance": "Mühendislik Bakımı",
+            "equipment": "Ekipman",
+            "pmSchedules": "Önleyici Bakım Planları",
+            "workOrders": "İş Emirleri",
+            "spareParts": "Yedek Parçalar",
+            "downtime": "Duruş Süresi",
+            "calibration": "Kalibrasyon"
+          }
+        },
+        "medicalCentre": {
+          "title": "Sağlık Merkezi",
+          "links": {
+            "medicalCentre": "Sağlık Merkezi",
+            "clinicVisits": "Klinik Ziyaretleri",
+            "pharmacy": "Eczane",
+            "healthCheckups": "Sağlık Kontrolleri"
+          }
+        },
+        "tradeFinance": {
+          "title": "Dış Ticaret Finansmanı",
+          "links": {
+            "salesContracts": "Satış Sözleşmeleri",
+            "lettersOfCredit": "Akreditifler",
+            "ttRemittances": "Havale (TT) Transferleri",
+            "exportShipments": "İhracat Sevkiyatları",
+            "bdExportPapers": "BD İhracat Belgeleri"
+          }
+        },
+        "salesCrm": {
+          "title": "Satış ve CRM",
+          "groups": {
+            "pipeline": "Satış Hunisi",
+            "activities": "Aktiviteler",
+            "orders": "Siparişler",
+            "accounts": "Hesaplar",
+            "distribution": "Dağıtım",
+            "finance": "Finans",
+            "engageAi": "Etkileşim ve AI",
+            "dms": "DMS",
+            "tradePromo": "Ticari Promosyon",
+            "vanSales": "Araçlı Satış",
+            "insights": "İçgörüler"
+          },
+          "links": {
+            "crm": "CRM",
+            "pipeline": "Satış Hunisi",
+            "leads": "Potansiyel Müşteriler",
+            "contacts": "Kişiler",
+            "deals": "Fırsatlar",
+            "tasks": "Görevler",
+            "visitLog": "Ziyaret Kaydı",
+            "quotes": "Teklifler",
+            "salesOrders": "Satış Siparişleri",
+            "returns": "İadeler",
+            "customer360": "Müşteri 360",
+            "accountPlans": "Hesap Planları",
+            "objections": "İtirazlar",
+            "playbook": "Satış Rehberi",
+            "pricing": "Fiyatlandırma",
+            "schemes": "Kampanyalar",
+            "dealers": "Bayiler",
+            "field": "Saha",
+            "orgAccess": "Organizasyon ve Erişim",
+            "dispatch": "Sevkiyat",
+            "commissions": "Komisyonlar",
+            "credit": "Kredi",
+            "collections": "Tahsilatlar",
+            "capture": "Veri Toplama",
+            "sequences": "Diziler",
+            "askAi": "AI'ya Sor",
+            "secondarySales": "İkincil Satışlar",
+            "distributorStock": "Distribütör Stoku",
+            "marketReturns": "Pazar İadeleri",
+            "sellThrough": "Satış Devri",
+            "secondaryTargets": "İkincil Hedefler",
+            "promotions": "Promosyonlar",
+            "claims": "Talepler",
+            "rebates": "Ciro Primleri",
+            "vans": "Araçlar",
+            "trips": "Seferler",
+            "vanSales": "Araçlı Satış",
+            "vanStock": "Araç Stoku",
+            "dashboard": "Pano",
+            "targets": "Hedefler",
+            "forecast": "Tahmin",
+            "relationships": "İlişkiler",
+            "amScorecard": "AM Puan Kartı"
+          }
+        },
+        "transportPool": {
+          "title": "Araç Havuzu",
+          "links": {
+            "transportPool": "Araç Havuzu",
+            "vehicles": "Araçlar",
+            "trips": "Seferler",
+            "fuelLog": "Yakıt Kaydı",
+            "maintenance": "Bakım"
+          }
+        },
+        "analytics": {
+          "title": "Analitik",
+          "links": {
+            "biAnalyticsReporting": "BI Analitik ve Raporlama",
+            "executiveDashboard": "Yönetici Panosu",
+            "financialReports": "Mali Raporlar",
+            "hrPayroll": "İK ve Bordro",
+            "demandForecast": "Talep Tahmini",
+            "exportTakeout": "Dışa Aktarım / Veri Alma"
+          }
+        },
+        "realEstate": {
+          "title": "Gayrimenkul",
+          "links": {
+            "salesDashboard": "Satış Panosu",
+            "properties": "Mülkler",
+            "units": "Birimler",
+            "bookings": "Rezervasyonlar",
+            "collections": "Tahsilatlar",
+            "handover": "Teslim",
+            "revenueRecognition": "Gelir Tahakkuku",
+            "leases": "Kiralamalar",
+            "brokers": "Komisyoncular",
+            "buyerPortal": "Alıcı Portalı"
+          }
+        },
+        "education": {
+          "title": "Eğitim",
+          "links": {
+            "educationDashboard": "Eğitim Panosu",
+            "admissions": "Kabuller",
+            "students": "Öğrenciler",
+            "academics": "Akademik",
+            "studentAttendance": "Öğrenci Devamı",
+            "timetable": "Ders Programı",
+            "examsResults": "Sınavlar ve Sonuçlar",
+            "promotionCertificates": "Sınıf Geçme ve Sertifikalar",
+            "hifz": "Hafızlık",
+            "boardingMess": "Yatakhane ve Yemekhane",
+            "welfareFunds": "Yardım Fonları",
+            "notices": "Duyurular",
+            "onlinePayments": "Online Ödemeler",
+            "library": "Kütüphane",
+            "schoolBus": "Okul Servisi",
+            "storeIssues": "Depo Çıkışları",
+            "rooms": "Derslikler",
+            "fees": "Ücretler",
+            "feeReports": "Ücret Raporları",
+            "institutionSettings": "Kurum Ayarları"
+          }
+        },
+        "pos": {
+          "title": "Satış Noktası (POS)",
+          "links": {
+            "registerTill": "Kasa",
+            "shifts": "Vardiyalar",
+            "receipts": "Fişler",
+            "daySummaryZ": "Gün Sonu Özeti (Z)",
+            "outletDashboard": "Mağaza Panosu",
+            "loyaltyVouchers": "Sadakat ve Kuponlar",
+            "transfers": "Transferler",
+            "stockLots": "Stok Lotları",
+            "outletStock": "Mağaza Stoku",
+            "outletsRegisters": "Mağazalar ve Kasalar"
+          }
+        },
+        "merchandising": {
+          "title": "Merchandising",
+          "links": {
+            "merchandisingDashboard": "Merchandising Panosu",
+            "stylesCosting": "Modeller ve Maliyet",
+            "tnaCalendar": "TNA Takvimi",
+            "materialBooking": "Malzeme Rezervasyonu",
+            "productionFollowUp": "Üretim Takibi",
+            "factories": "Fabrikalar",
+            "inHouseReceipts": "Şirket İçi Kabuller",
+            "profitability": "Kârlılık",
+            "buyerPortal": "Alıcı Portalı"
+          }
+        },
+        "fundAccounting": {
+          "title": "Fon Muhasebesi",
+          "links": {
+            "fundDashboard": "Fon Panosu",
+            "grants": "Hibeler",
+            "donorsFunds": "Bağışçılar ve Fonlar",
+            "fundReports": "Fon Raporları",
+            "beneficiariesME": "Faydalanıcılar ve İ&D",
+            "costAllocation": "Maliyet Dağıtımı"
+          }
+        },
+        "university": {
+          "title": "Üniversite",
+          "links": {
+            "universityDashboard": "Üniversite Panosu",
+            "universityAdmissions": "Üniversite Kabulleri",
+            "universityStudents": "Üniversite Öğrencileri",
+            "facultiesProgrammes": "Fakülteler ve Programlar",
+            "coursesCurriculum": "Dersler ve Müfredat",
+            "classSchedule": "Ders Programı",
+            "registration": "Ders Kaydı",
+            "studentAccounts": "Öğrenci Hesapları",
+            "terms": "Dönemler",
+            "gradesResults": "Notlar ve Sonuçlar",
+            "examsAttendance": "Sınavlar ve Devam",
+            "outcomesObe": "Öğrenme Çıktıları (OBE)",
+            "facultyWorkload": "Öğretim Üyeleri ve İş Yükü",
+            "campusServices": "Kampüs Hizmetleri",
+            "graduation": "Mezuniyet",
+            "universitySettings": "Üniversite Ayarları"
+          }
         }
       },
       "mobileMenuLabel": "Menüyü aç/kapat"

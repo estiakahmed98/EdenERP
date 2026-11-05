@@ -98,6 +98,10 @@
           "attendance": "الحضور",
           "payroll": "الرواتب",
           "budgetManagement": "إدارة الميزانية",
+          "analytics": "التحليلات",
+          "engineeringMaintenance": "الصيانة الهندسية",
+          "transportPool": "أسطول النقل",
+          "biAnalyticsReporting": "تحليلات وتقارير BI",
           "fundAccounting": "محاسبة التمويل",
           "fundDashboard": "لوحة التمويل",
           "grants": "المنح",
@@ -164,6 +168,406 @@
           "events": "الأحداث",
           "translations": "الترجمات",
           "becomePartner": "كن شريكاً"
+        }
+      },
+      "modules": {
+        "industries": {
+          "title": "القطاعات",
+          "links": {
+            "buyingHouse": "مكتب الشراء",
+            "accessories": "الإكسسوارات",
+            "ecommerce": "التجارة الإلكترونية",
+            "lms": "LMS",
+            "school": "المدرسة",
+            "college": "الكلية",
+            "university": "الجامعة",
+            "merchandising": "التسويق السلعي",
+            "travelAgency": "وكالة السفر",
+            "textile": "المنسوجات",
+            "garments": "الملابس الجاهزة",
+            "ngo": "المنظمات غير الحكومية",
+            "realEstate": "العقارات",
+            "agroRice": "الأرز الزراعي",
+            "tv": "التلفزيون",
+            "steel": "الصلب"
+          }
+        },
+        "accounting": {
+          "title": "المحاسبة",
+          "links": {
+            "accountingHub": "مركز المحاسبة",
+            "chartOfAccounts": "دليل الحسابات",
+            "journalEntries": "قيود اليومية",
+            "ledgers": "دفاتر الأستاذ",
+            "invoicesAr": "الفواتير (الذمم المدينة)",
+            "billsAp": "فواتير الموردين (الذمم الدائنة)",
+            "purchaseOrders": "أوامر الشراء",
+            "itemsProducts": "الأصناف / المنتجات",
+            "customers": "العملاء",
+            "vendors": "الموردون",
+            "bankAccounts": "الحسابات البنكية",
+            "receipts": "سندات القبض والصرف",
+            "deliveryChallans": "أذونات التسليم",
+            "pettyCash": "العهدة النقدية",
+            "chequeRegister": "سجل الشيكات",
+            "closingFy": "الإقفال والسنة المالية",
+            "financialReports": "التقارير المالية",
+            "vatRegister": "سجل ضريبة القيمة المضافة",
+            "discountsCoupons": "الخصومات والقسائم",
+            "loanManagement": "إدارة القروض",
+            "fixedAssetRegister": "سجل الأصول الثابتة",
+            "exchangeRates": "أسعار الصرف",
+            "arApAging": "أعمار الذمم المدينة / الدائنة",
+            "bankReconciliation": "التسوية البنكية"
+          }
+        },
+        "projectAccounting": {
+          "title": "محاسبة المشاريع",
+          "links": {
+            "overview": "نظرة عامة",
+            "costCodes": "رموز التكلفة",
+            "budgets": "الموازنات",
+            "jobCost": "تكلفة العمل",
+            "changeOrders": "أوامر التغيير",
+            "wip": "أعمال قيد التنفيذ (WIP)",
+            "progressBilling": "الفوترة حسب الإنجاز",
+            "schedule": "الجدول الزمني",
+            "risksIssues": "المخاطر والمشكلات",
+            "documents": "المستندات",
+            "milestones": "المراحل الرئيسية",
+            "boq": "BOQ",
+            "billAllocations": "توزيع الفواتير",
+            "pAndL": "الأرباح والخسائر"
+          }
+        },
+        "budgetManagement": {
+          "title": "إدارة الموازنة",
+          "links": {
+            "overview": "نظرة عامة",
+            "lines": "البنود",
+            "requisitions": "الطلبات",
+            "variance": "الانحراف",
+            "approvals": "الموافقات",
+            "rbrf": "RBRF"
+          }
+        },
+        "supplyChain": {
+          "title": "سلسلة الإمداد",
+          "links": {
+            "overview": "نظرة عامة",
+            "goodsReceipts": "استلام البضائع",
+            "landedCost": "التكلفة الواصلة",
+            "procurement": "المشتريات",
+            "purchaseRequisitions": "طلبات الشراء",
+            "comparativeStatements": "جداول المقارنة",
+            "tenderManagement": "إدارة المناقصات"
+          }
+        },
+        "inventory": {
+          "title": "المخزون",
+          "links": {
+            "demandForecast": "توقع الطلب",
+            "warehouses": "المستودعات",
+            "stockMovements": "حركات المخزون",
+            "inventorySummary": "ملخص المخزون",
+            "gatePasses": "تصاريح البوابة",
+            "weighbridgeScales": "الموازين والقبان"
+          }
+        },
+        "openPlatform": {
+          "title": "المنصة المفتوحة",
+          "links": {
+            "taxRates": "معدلات الضريبة",
+            "migrationStudio": "استوديو الترحيل",
+            "exportTakeout": "التصدير / أخذ البيانات"
+          }
+        },
+        "manufacturing": {
+          "title": "التصنيع",
+          "links": {
+            "workCenters": "مراكز العمل",
+            "routings": "مسارات التصنيع",
+            "billOfMaterials": "قائمة المواد",
+            "mrpPlanning": "تخطيط MRP",
+            "capacityPlanning": "تخطيط الطاقة الإنتاجية",
+            "masterScheduleMps": "الجدول الرئيسي (MPS)",
+            "schedulingAps": "الجدولة (APS)",
+            "linePlanningBoard": "لوحة تخطيط الخطوط",
+            "orderAllocation": "تخصيص الطلبات",
+            "shopFloor": "أرضية المصنع",
+            "productionOrders": "أوامر الإنتاج",
+            "batchesLots": "الدفعات / اللوتات",
+            "serialNumbers": "الأرقام التسلسلية",
+            "qcTemplates": "قوالب مراقبة الجودة",
+            "qualityControl": "مراقبة الجودة",
+            "scrapWaste": "الخردة / الهدر",
+            "subcontracting": "التصنيع من الباطن",
+            "standardCosting": "التكلفة المعيارية",
+            "productionCosting": "تكلفة الإنتاج"
+          }
+        },
+        "quality": {
+          "title": "الجودة (QMS)",
+          "links": {
+            "qualityDashboard": "لوحة الجودة",
+            "nonConformance": "عدم المطابقة",
+            "capa": "CAPA",
+            "aqlSampling": "معاينة AQL",
+            "spc": "SPC"
+          }
+        },
+        "hrPayroll": {
+          "title": "الموارد البشرية والرواتب",
+          "links": {
+            "departments": "الأقسام",
+            "designations": "المسميات الوظيفية",
+            "gradesSteps": "الدرجات والمراتب",
+            "salaryComponents": "مكونات الراتب",
+            "salaryStructures": "هياكل الرواتب",
+            "employees": "الموظفون",
+            "payrollRuns": "دورات الرواتب",
+            "approvalsInbox": "صندوق الموافقات",
+            "taxBracketsNbr": "الشرائح الضريبية (NBR)",
+            "form108Annual": "النموذج 108 (سنوي)",
+            "hrPolicyPfGratuity": "سياسة الموارد البشرية (PF/مكافأة نهاية الخدمة)",
+            "shifts": "الورديات",
+            "holidayCalendar": "تقويم العطلات",
+            "leaveTypes": "أنواع الإجازات",
+            "leaveApplications": "طلبات الإجازة",
+            "attendance": "الحضور",
+            "projects": "المشاريع",
+            "finalSettlements": "التسويات النهائية",
+            "serviceRecords": "سجلات الخدمة",
+            "recruitment": "التوظيف",
+            "appraisals": "تقييم الأداء",
+            "wppfWelfare": "WPPF والرعاية",
+            "salaryBudgets": "موازنات الرواتب",
+            "hrReports": "تقارير الموارد البشرية"
+          }
+        },
+        "employeePortal": {
+          "title": "بوابة الموظف",
+          "links": {
+            "myProfile": "ملفي الشخصي",
+            "myPayslips": "قسائم راتبي",
+            "myLeaves": "إجازاتي",
+            "myAttendance": "حضوري",
+            "myPfGratuity": "PF ومكافأتي"
+          }
+        },
+        "engineeringMaintenance": {
+          "title": "الصيانة الهندسية",
+          "links": {
+            "engineeringMaintenance": "الصيانة الهندسية",
+            "equipment": "المعدات",
+            "pmSchedules": "جداول الصيانة الوقائية",
+            "workOrders": "أوامر العمل",
+            "spareParts": "قطع الغيار",
+            "downtime": "التوقفات",
+            "calibration": "المعايرة"
+          }
+        },
+        "medicalCentre": {
+          "title": "المركز الطبي",
+          "links": {
+            "medicalCentre": "المركز الطبي",
+            "clinicVisits": "زيارات العيادة",
+            "pharmacy": "الصيدلية",
+            "healthCheckups": "الفحوصات الصحية"
+          }
+        },
+        "tradeFinance": {
+          "title": "تمويل التجارة",
+          "links": {
+            "salesContracts": "عقود البيع",
+            "lettersOfCredit": "الاعتمادات المستندية",
+            "ttRemittances": "التحويلات البرقية (TT)",
+            "exportShipments": "شحنات التصدير",
+            "bdExportPapers": "مستندات التصدير البنغلاديشية"
+          }
+        },
+        "salesCrm": {
+          "title": "المبيعات وCRM",
+          "groups": {
+            "pipeline": "مسار المبيعات",
+            "activities": "الأنشطة",
+            "orders": "الطلبات",
+            "accounts": "الحسابات",
+            "distribution": "التوزيع",
+            "finance": "المالية",
+            "engageAi": "التفاعل والذكاء الاصطناعي",
+            "dms": "DMS",
+            "tradePromo": "الترويج التجاري",
+            "vanSales": "مبيعات الشاحنات",
+            "insights": "الرؤى"
+          },
+          "links": {
+            "crm": "CRM",
+            "pipeline": "مسار المبيعات",
+            "leads": "العملاء المحتملون",
+            "contacts": "جهات الاتصال",
+            "deals": "الصفقات",
+            "tasks": "المهام",
+            "visitLog": "سجل الزيارات",
+            "quotes": "عروض الأسعار",
+            "salesOrders": "أوامر البيع",
+            "returns": "المرتجعات",
+            "customer360": "العميل 360",
+            "accountPlans": "خطط الحسابات",
+            "objections": "الاعتراضات",
+            "playbook": "دليل البيع",
+            "pricing": "التسعير",
+            "schemes": "البرامج",
+            "dealers": "الوكلاء",
+            "field": "الميدان",
+            "orgAccess": "المؤسسة والصلاحيات",
+            "dispatch": "الإرسال",
+            "commissions": "العمولات",
+            "credit": "الائتمان",
+            "collections": "التحصيلات",
+            "capture": "الالتقاط",
+            "sequences": "التسلسلات",
+            "askAi": "اسأل الذكاء الاصطناعي",
+            "secondarySales": "المبيعات الثانوية",
+            "distributorStock": "مخزون الموزع",
+            "marketReturns": "مرتجعات السوق",
+            "sellThrough": "البيع للمستهلك",
+            "secondaryTargets": "الأهداف الثانوية",
+            "promotions": "العروض الترويجية",
+            "claims": "المطالبات",
+            "rebates": "الخصومات المستردة",
+            "vans": "الشاحنات",
+            "trips": "الرحلات",
+            "vanSales": "مبيعات الشاحنات",
+            "vanStock": "مخزون الشاحنة",
+            "dashboard": "لوحة المعلومات",
+            "targets": "الأهداف",
+            "forecast": "التوقعات",
+            "relationships": "العلاقات",
+            "amScorecard": "بطاقة أداء مدير الحساب"
+          }
+        },
+        "transportPool": {
+          "title": "أسطول النقل",
+          "links": {
+            "transportPool": "أسطول النقل",
+            "vehicles": "المركبات",
+            "trips": "الرحلات",
+            "fuelLog": "سجل الوقود",
+            "maintenance": "الصيانة"
+          }
+        },
+        "analytics": {
+          "title": "التحليلات",
+          "links": {
+            "biAnalyticsReporting": "تحليلات وتقارير BI",
+            "executiveDashboard": "لوحة الإدارة التنفيذية",
+            "financialReports": "التقارير المالية",
+            "hrPayroll": "الموارد البشرية والرواتب",
+            "demandForecast": "توقع الطلب",
+            "exportTakeout": "التصدير / أخذ البيانات"
+          }
+        },
+        "realEstate": {
+          "title": "العقارات",
+          "links": {
+            "salesDashboard": "لوحة المبيعات",
+            "properties": "الممتلكات",
+            "units": "الوحدات",
+            "bookings": "الحجوزات",
+            "collections": "التحصيلات",
+            "handover": "التسليم",
+            "revenueRecognition": "الاعتراف بالإيراد",
+            "leases": "عقود الإيجار",
+            "brokers": "الوسطاء",
+            "buyerPortal": "بوابة المشتري"
+          }
+        },
+        "education": {
+          "title": "التعليم",
+          "links": {
+            "educationDashboard": "لوحة التعليم",
+            "admissions": "القبول",
+            "students": "الطلاب",
+            "academics": "الشؤون الأكاديمية",
+            "studentAttendance": "حضور الطلاب",
+            "timetable": "الجدول الدراسي",
+            "examsResults": "الامتحانات والنتائج",
+            "promotionCertificates": "الترفيع والشهادات",
+            "hifz": "تحفيظ القرآن",
+            "boardingMess": "السكن والإعاشة",
+            "welfareFunds": "صناديق الرعاية",
+            "notices": "الإشعارات",
+            "onlinePayments": "المدفوعات الإلكترونية",
+            "library": "المكتبة",
+            "schoolBus": "حافلة المدرسة",
+            "storeIssues": "صرف المخازن",
+            "rooms": "القاعات",
+            "fees": "الرسوم",
+            "feeReports": "تقارير الرسوم",
+            "institutionSettings": "إعدادات المؤسسة"
+          }
+        },
+        "pos": {
+          "title": "نقطة البيع (POS)",
+          "links": {
+            "registerTill": "الصندوق",
+            "shifts": "الورديات",
+            "receipts": "الإيصالات",
+            "daySummaryZ": "ملخص اليوم (Z)",
+            "outletDashboard": "لوحة الفرع",
+            "loyaltyVouchers": "الولاء والقسائم",
+            "transfers": "التحويلات",
+            "stockLots": "دفعات المخزون",
+            "outletStock": "مخزون الفرع",
+            "outletsRegisters": "الفروع والصناديق"
+          }
+        },
+        "merchandising": {
+          "title": "التسويق السلعي",
+          "links": {
+            "merchandisingDashboard": "لوحة التسويق السلعي",
+            "stylesCosting": "الموديلات والتكلفة",
+            "tnaCalendar": "تقويم TNA",
+            "materialBooking": "حجز المواد",
+            "productionFollowUp": "متابعة الإنتاج",
+            "factories": "المصانع",
+            "inHouseReceipts": "الاستلام الداخلي",
+            "profitability": "الربحية",
+            "buyerPortal": "بوابة المشتري"
+          }
+        },
+        "fundAccounting": {
+          "title": "محاسبة الصناديق",
+          "links": {
+            "fundDashboard": "لوحة الصناديق",
+            "grants": "المنح",
+            "donorsFunds": "المانحون والصناديق",
+            "fundReports": "تقارير الصناديق",
+            "beneficiariesME": "المستفيدون والمتابعة والتقييم",
+            "costAllocation": "توزيع التكاليف"
+          }
+        },
+        "university": {
+          "title": "الجامعة",
+          "links": {
+            "universityDashboard": "لوحة الجامعة",
+            "universityAdmissions": "القبول الجامعي",
+            "universityStudents": "طلاب الجامعة",
+            "facultiesProgrammes": "الكليات والبرامج",
+            "coursesCurriculum": "المقررات والمناهج",
+            "classSchedule": "جدول المحاضرات",
+            "registration": "التسجيل",
+            "studentAccounts": "حسابات الطلاب",
+            "terms": "الفصول الدراسية",
+            "gradesResults": "الدرجات والنتائج",
+            "examsAttendance": "الامتحانات والحضور",
+            "outcomesObe": "مخرجات التعلم (OBE)",
+            "facultyWorkload": "أعضاء هيئة التدريس والعبء",
+            "campusServices": "خدمات الحرم الجامعي",
+            "graduation": "التخرج",
+            "universitySettings": "إعدادات الجامعة"
+          }
         }
       },
       "mobileMenuLabel": "تبديل القائمة"

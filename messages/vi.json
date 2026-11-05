@@ -98,6 +98,10 @@
           "attendance": "Chấm công",
           "payroll": "Tiền lương",
           "budgetManagement": "Quản lý ngân sách",
+          "analytics": "Phân tích",
+          "engineeringMaintenance": "Bảo trì kỹ thuật",
+          "transportPool": "Đội xe",
+          "biAnalyticsReporting": "Phân tích & báo cáo BI",
           "fundAccounting": "Kế toán quỹ",
           "fundDashboard": "Bảng điều khiển quỹ",
           "grants": "Khoản tài trợ",
@@ -164,6 +168,406 @@
           "events": "Sự kiện",
           "translations": "Bản dịch",
           "becomePartner": "Trở thành đối tác"
+        }
+      },
+      "modules": {
+        "industries": {
+          "title": "Ngành nghề",
+          "links": {
+            "buyingHouse": "Văn phòng thu mua",
+            "accessories": "Phụ liệu",
+            "ecommerce": "Thương mại điện tử",
+            "lms": "LMS",
+            "school": "Trường học",
+            "college": "Cao đẳng",
+            "university": "Đại học",
+            "merchandising": "Merchandising",
+            "travelAgency": "Đại lý du lịch",
+            "textile": "Dệt",
+            "garments": "May mặc",
+            "ngo": "Tổ chức phi chính phủ",
+            "realEstate": "Bất động sản",
+            "agroRice": "Lúa gạo",
+            "tv": "Truyền hình",
+            "steel": "Thép"
+          }
+        },
+        "accounting": {
+          "title": "Kế toán",
+          "links": {
+            "accountingHub": "Trung tâm kế toán",
+            "chartOfAccounts": "Hệ thống tài khoản",
+            "journalEntries": "Bút toán nhật ký",
+            "ledgers": "Sổ cái",
+            "invoicesAr": "Hóa đơn (phải thu)",
+            "billsAp": "Hóa đơn NCC (phải trả)",
+            "purchaseOrders": "Đơn đặt hàng",
+            "itemsProducts": "Mặt hàng / Sản phẩm",
+            "customers": "Khách hàng",
+            "vendors": "Nhà cung cấp",
+            "bankAccounts": "Tài khoản ngân hàng",
+            "receipts": "Phiếu thu chi",
+            "deliveryChallans": "Phiếu giao hàng",
+            "pettyCash": "Quỹ tiền mặt nhỏ",
+            "chequeRegister": "Sổ séc",
+            "closingFy": "Khóa sổ & năm tài chính",
+            "financialReports": "Báo cáo tài chính",
+            "vatRegister": "Sổ thuế GTGT",
+            "discountsCoupons": "Chiết khấu & phiếu giảm giá",
+            "loanManagement": "Quản lý khoản vay",
+            "fixedAssetRegister": "Sổ tài sản cố định",
+            "exchangeRates": "Tỷ giá",
+            "arApAging": "Tuổi nợ phải thu / phải trả",
+            "bankReconciliation": "Đối chiếu ngân hàng"
+          }
+        },
+        "projectAccounting": {
+          "title": "Kế toán dự án",
+          "links": {
+            "overview": "Tổng quan",
+            "costCodes": "Mã chi phí",
+            "budgets": "Ngân sách",
+            "jobCost": "Chi phí công việc",
+            "changeOrders": "Lệnh thay đổi",
+            "wip": "Dở dang (WIP)",
+            "progressBilling": "Thanh toán theo tiến độ",
+            "schedule": "Lịch trình",
+            "risksIssues": "Rủi ro & vấn đề",
+            "documents": "Tài liệu",
+            "milestones": "Mốc tiến độ",
+            "boq": "BOQ",
+            "billAllocations": "Phân bổ hóa đơn",
+            "pAndL": "Lãi & lỗ"
+          }
+        },
+        "budgetManagement": {
+          "title": "Quản lý ngân sách",
+          "links": {
+            "overview": "Tổng quan",
+            "lines": "Dòng ngân sách",
+            "requisitions": "Đề xuất",
+            "variance": "Chênh lệch",
+            "approvals": "Phê duyệt",
+            "rbrf": "RBRF"
+          }
+        },
+        "supplyChain": {
+          "title": "Chuỗi cung ứng",
+          "links": {
+            "overview": "Tổng quan",
+            "goodsReceipts": "Nhận hàng",
+            "landedCost": "Chi phí nhập kho",
+            "procurement": "Mua sắm",
+            "purchaseRequisitions": "Đề nghị mua hàng",
+            "comparativeStatements": "Bảng so sánh giá",
+            "tenderManagement": "Quản lý đấu thầu"
+          }
+        },
+        "inventory": {
+          "title": "Kho hàng",
+          "links": {
+            "demandForecast": "Dự báo nhu cầu",
+            "warehouses": "Kho bãi",
+            "stockMovements": "Di chuyển kho",
+            "inventorySummary": "Tổng hợp tồn kho",
+            "gatePasses": "Phiếu ra vào cổng",
+            "weighbridgeScales": "Cân xe & cân điện tử"
+          }
+        },
+        "openPlatform": {
+          "title": "Nền tảng mở",
+          "links": {
+            "taxRates": "Thuế suất",
+            "migrationStudio": "Studio chuyển đổi dữ liệu",
+            "exportTakeout": "Xuất / Mang dữ liệu đi"
+          }
+        },
+        "manufacturing": {
+          "title": "Sản xuất",
+          "links": {
+            "workCenters": "Trung tâm làm việc",
+            "routings": "Quy trình công nghệ",
+            "billOfMaterials": "Định mức nguyên vật liệu",
+            "mrpPlanning": "Hoạch định MRP",
+            "capacityPlanning": "Hoạch định công suất",
+            "masterScheduleMps": "Kế hoạch sản xuất tổng thể (MPS)",
+            "schedulingAps": "Lập lịch (APS)",
+            "linePlanningBoard": "Bảng kế hoạch chuyền",
+            "orderAllocation": "Phân bổ đơn hàng",
+            "shopFloor": "Xưởng sản xuất",
+            "productionOrders": "Lệnh sản xuất",
+            "batchesLots": "Lô / Mẻ",
+            "serialNumbers": "Số sê-ri",
+            "qcTemplates": "Mẫu QC",
+            "qualityControl": "Kiểm soát chất lượng",
+            "scrapWaste": "Phế liệu / Hao hụt",
+            "subcontracting": "Gia công ngoài",
+            "standardCosting": "Giá thành định mức",
+            "productionCosting": "Giá thành sản xuất"
+          }
+        },
+        "quality": {
+          "title": "Chất lượng (QMS)",
+          "links": {
+            "qualityDashboard": "Bảng điều khiển chất lượng",
+            "nonConformance": "Sự không phù hợp",
+            "capa": "CAPA",
+            "aqlSampling": "Lấy mẫu AQL",
+            "spc": "SPC"
+          }
+        },
+        "hrPayroll": {
+          "title": "Nhân sự & tiền lương",
+          "links": {
+            "departments": "Phòng ban",
+            "designations": "Chức danh",
+            "gradesSteps": "Ngạch & bậc",
+            "salaryComponents": "Thành phần lương",
+            "salaryStructures": "Cơ cấu lương",
+            "employees": "Nhân viên",
+            "payrollRuns": "Kỳ tính lương",
+            "approvalsInbox": "Hộp phê duyệt",
+            "taxBracketsNbr": "Biểu thuế (NBR)",
+            "form108Annual": "Mẫu 108 (hằng năm)",
+            "hrPolicyPfGratuity": "Chính sách nhân sự (PF/Trợ cấp)",
+            "shifts": "Ca làm việc",
+            "holidayCalendar": "Lịch ngày lễ",
+            "leaveTypes": "Loại nghỉ phép",
+            "leaveApplications": "Đơn xin nghỉ",
+            "attendance": "Chấm công",
+            "projects": "Dự án",
+            "finalSettlements": "Quyết toán nghỉ việc",
+            "serviceRecords": "Hồ sơ công tác",
+            "recruitment": "Tuyển dụng",
+            "appraisals": "Đánh giá hiệu suất",
+            "wppfWelfare": "WPPF & phúc lợi",
+            "salaryBudgets": "Ngân sách lương",
+            "hrReports": "Báo cáo nhân sự"
+          }
+        },
+        "employeePortal": {
+          "title": "Cổng nhân viên",
+          "links": {
+            "myProfile": "Hồ sơ của tôi",
+            "myPayslips": "Phiếu lương của tôi",
+            "myLeaves": "Nghỉ phép của tôi",
+            "myAttendance": "Chấm công của tôi",
+            "myPfGratuity": "PF & trợ cấp của tôi"
+          }
+        },
+        "engineeringMaintenance": {
+          "title": "Bảo trì kỹ thuật",
+          "links": {
+            "engineeringMaintenance": "Bảo trì kỹ thuật",
+            "equipment": "Thiết bị",
+            "pmSchedules": "Lịch bảo trì phòng ngừa",
+            "workOrders": "Lệnh công việc",
+            "spareParts": "Phụ tùng",
+            "downtime": "Thời gian ngừng máy",
+            "calibration": "Hiệu chuẩn"
+          }
+        },
+        "medicalCentre": {
+          "title": "Trung tâm y tế",
+          "links": {
+            "medicalCentre": "Trung tâm y tế",
+            "clinicVisits": "Lượt khám",
+            "pharmacy": "Nhà thuốc",
+            "healthCheckups": "Khám sức khỏe"
+          }
+        },
+        "tradeFinance": {
+          "title": "Tài trợ thương mại",
+          "links": {
+            "salesContracts": "Hợp đồng bán hàng",
+            "lettersOfCredit": "Thư tín dụng",
+            "ttRemittances": "Chuyển tiền TT",
+            "exportShipments": "Lô hàng xuất khẩu",
+            "bdExportPapers": "Chứng từ xuất khẩu Bangladesh"
+          }
+        },
+        "salesCrm": {
+          "title": "Bán hàng & CRM",
+          "groups": {
+            "pipeline": "Phễu bán hàng",
+            "activities": "Hoạt động",
+            "orders": "Đơn hàng",
+            "accounts": "Tài khoản",
+            "distribution": "Phân phối",
+            "finance": "Tài chính",
+            "engageAi": "Tương tác & AI",
+            "dms": "DMS",
+            "tradePromo": "Khuyến mại thương mại",
+            "vanSales": "Bán hàng lưu động",
+            "insights": "Thông tin chi tiết"
+          },
+          "links": {
+            "crm": "CRM",
+            "pipeline": "Phễu bán hàng",
+            "leads": "Khách hàng tiềm năng",
+            "contacts": "Liên hệ",
+            "deals": "Cơ hội",
+            "tasks": "Công việc",
+            "visitLog": "Nhật ký viếng thăm",
+            "quotes": "Báo giá",
+            "salesOrders": "Đơn bán hàng",
+            "returns": "Hàng trả lại",
+            "customer360": "Khách hàng 360",
+            "accountPlans": "Kế hoạch tài khoản",
+            "objections": "Phản đối",
+            "playbook": "Cẩm nang bán hàng",
+            "pricing": "Định giá",
+            "schemes": "Chương trình",
+            "dealers": "Đại lý",
+            "field": "Hiện trường",
+            "orgAccess": "Tổ chức & quyền truy cập",
+            "dispatch": "Điều phối giao hàng",
+            "commissions": "Hoa hồng",
+            "credit": "Tín dụng",
+            "collections": "Thu nợ",
+            "capture": "Thu thập",
+            "sequences": "Chuỗi tự động",
+            "askAi": "Hỏi AI",
+            "secondarySales": "Bán hàng thứ cấp",
+            "distributorStock": "Tồn kho nhà phân phối",
+            "marketReturns": "Hàng trả lại thị trường",
+            "sellThrough": "Bán ra",
+            "secondaryTargets": "Chỉ tiêu thứ cấp",
+            "promotions": "Khuyến mãi",
+            "claims": "Yêu cầu bồi hoàn",
+            "rebates": "Chiết khấu hoàn lại",
+            "vans": "Xe bán hàng",
+            "trips": "Chuyến đi",
+            "vanSales": "Bán hàng lưu động",
+            "vanStock": "Tồn kho trên xe",
+            "dashboard": "Bảng điều khiển",
+            "targets": "Chỉ tiêu",
+            "forecast": "Dự báo",
+            "relationships": "Mối quan hệ",
+            "amScorecard": "Thẻ điểm AM"
+          }
+        },
+        "transportPool": {
+          "title": "Đội xe",
+          "links": {
+            "transportPool": "Đội xe",
+            "vehicles": "Phương tiện",
+            "trips": "Chuyến đi",
+            "fuelLog": "Nhật ký nhiên liệu",
+            "maintenance": "Bảo dưỡng"
+          }
+        },
+        "analytics": {
+          "title": "Phân tích",
+          "links": {
+            "biAnalyticsReporting": "Phân tích & báo cáo BI",
+            "executiveDashboard": "Bảng điều khiển điều hành",
+            "financialReports": "Báo cáo tài chính",
+            "hrPayroll": "Nhân sự & tiền lương",
+            "demandForecast": "Dự báo nhu cầu",
+            "exportTakeout": "Xuất / Mang dữ liệu đi"
+          }
+        },
+        "realEstate": {
+          "title": "Bất động sản",
+          "links": {
+            "salesDashboard": "Bảng điều khiển bán hàng",
+            "properties": "Dự án bất động sản",
+            "units": "Căn / đơn vị",
+            "bookings": "Đặt chỗ",
+            "collections": "Thu tiền",
+            "handover": "Bàn giao",
+            "revenueRecognition": "Ghi nhận doanh thu",
+            "leases": "Hợp đồng thuê",
+            "brokers": "Môi giới",
+            "buyerPortal": "Cổng người mua"
+          }
+        },
+        "education": {
+          "title": "Giáo dục",
+          "links": {
+            "educationDashboard": "Bảng điều khiển giáo dục",
+            "admissions": "Tuyển sinh",
+            "students": "Học sinh",
+            "academics": "Học vụ",
+            "studentAttendance": "Điểm danh học sinh",
+            "timetable": "Thời khóa biểu",
+            "examsResults": "Thi & kết quả",
+            "promotionCertificates": "Lên lớp & chứng chỉ",
+            "hifz": "Hifz (học thuộc Kinh Qur'an)",
+            "boardingMess": "Nội trú & bếp ăn",
+            "welfareFunds": "Quỹ phúc lợi",
+            "notices": "Thông báo",
+            "onlinePayments": "Thanh toán trực tuyến",
+            "library": "Thư viện",
+            "schoolBus": "Xe buýt trường học",
+            "storeIssues": "Xuất kho vật tư",
+            "rooms": "Phòng học",
+            "fees": "Học phí",
+            "feeReports": "Báo cáo học phí",
+            "institutionSettings": "Cài đặt cơ sở"
+          }
+        },
+        "pos": {
+          "title": "Điểm bán hàng (POS)",
+          "links": {
+            "registerTill": "Quầy thu ngân",
+            "shifts": "Ca làm việc",
+            "receipts": "Hóa đơn bán lẻ",
+            "daySummaryZ": "Tổng kết ngày (Z)",
+            "outletDashboard": "Bảng điều khiển cửa hàng",
+            "loyaltyVouchers": "Khách hàng thân thiết & phiếu quà tặng",
+            "transfers": "Điều chuyển",
+            "stockLots": "Lô tồn kho",
+            "outletStock": "Tồn kho cửa hàng",
+            "outletsRegisters": "Cửa hàng & quầy thu ngân"
+          }
+        },
+        "merchandising": {
+          "title": "Merchandising",
+          "links": {
+            "merchandisingDashboard": "Bảng điều khiển merchandising",
+            "stylesCosting": "Mẫu mã & giá thành",
+            "tnaCalendar": "Lịch TNA",
+            "materialBooking": "Đặt nguyên phụ liệu",
+            "productionFollowUp": "Theo dõi sản xuất",
+            "factories": "Nhà máy",
+            "inHouseReceipts": "Nhận hàng nội bộ",
+            "profitability": "Khả năng sinh lời",
+            "buyerPortal": "Cổng người mua"
+          }
+        },
+        "fundAccounting": {
+          "title": "Kế toán quỹ",
+          "links": {
+            "fundDashboard": "Bảng điều khiển quỹ",
+            "grants": "Khoản tài trợ",
+            "donorsFunds": "Nhà tài trợ & quỹ",
+            "fundReports": "Báo cáo quỹ",
+            "beneficiariesME": "Người thụ hưởng & giám sát đánh giá",
+            "costAllocation": "Phân bổ chi phí"
+          }
+        },
+        "university": {
+          "title": "Đại học",
+          "links": {
+            "universityDashboard": "Bảng điều khiển đại học",
+            "universityAdmissions": "Tuyển sinh đại học",
+            "universityStudents": "Sinh viên đại học",
+            "facultiesProgrammes": "Khoa & chương trình",
+            "coursesCurriculum": "Môn học & chương trình đào tạo",
+            "classSchedule": "Lịch học",
+            "registration": "Đăng ký học phần",
+            "studentAccounts": "Tài khoản sinh viên",
+            "terms": "Học kỳ",
+            "gradesResults": "Điểm & kết quả",
+            "examsAttendance": "Thi & điểm danh",
+            "outcomesObe": "Chuẩn đầu ra (OBE)",
+            "facultyWorkload": "Giảng viên & khối lượng",
+            "campusServices": "Dịch vụ khuôn viên",
+            "graduation": "Tốt nghiệp",
+            "universitySettings": "Cài đặt đại học"
+          }
         }
       },
       "mobileMenuLabel": "Bật/tắt menu"
