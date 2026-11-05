@@ -1,0 +1,956 @@
+.industrial {
+  isolation: isolate;
+}
+.fabricArt,
+.beamArt,
+.chairArt {
+  width: 100%;
+  height: auto;
+  color: var(--p-blue);
+}
+.heroFoot {
+  font-size: 10px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  margin-top: 29px !important;
+}
+.textileHero,
+.metalHero,
+.furnitureHero {
+  padding-bottom: 75px;
+}
+/* Textile: a material study and woven process ribbons. */
+.textileHero {
+  background: radial-gradient(
+    ellipse at 80% 35%,
+    var(--p-wash),
+    transparent 56%
+  );
+}
+.textileLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.materialStudy {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--card);
+  box-shadow: 0 23px 50px -37px #00318055;
+}
+.materialStudy > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+}
+.fabricCanvas {
+  position: relative;
+  margin-block: 15px 22px;
+  padding-bottom: 20px;
+}
+.fabricCanvas > .fabricArt {
+  max-width: 450px;
+  display: block;
+  margin-inline: auto;
+}
+.fabricLabel {
+  position: absolute;
+  right: 0;
+  bottom: 8px;
+  width: 175px;
+  padding: 15px 17px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  transform: rotate(4deg);
+  box-shadow: 0 12px 25px -22px #00318055;
+}
+.fabricLabel > span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+}
+.fabricLabel > b {
+  display: block;
+  font-size: 33px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--p-blue);
+  margin-top: 9px;
+}
+.fabricLabel b > small {
+  font-size: 17px;
+  letter-spacing: 0;
+}
+.fabricLabel > small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 9px;
+}
+.processRibbons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.processRibbons > div {
+  padding: 16px 12px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--p-wash);
+}
+.processRibbons > div:nth-child(2) {
+  background: var(--p-sage);
+}
+.processRibbons > div:nth-child(3) {
+  background: var(--p-sand);
+}
+.processRibbons div > span {
+  font-size: 9px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  display: block;
+}
+.processRibbons b {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-top: 12px;
+}
+.processRibbons b > small {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.processRibbons div > small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 8px;
+}
+.materialStudy > div:nth-last-child(2) {
+  margin-top: 20px;
+}
+.materialStudy > figcaption {
+  margin-top: 20px;
+}
+/* Metal: a wide technical plate and dimension grid with a separate cut docket. */
+.metalHeading {
+  max-width: 1000px;
+  text-align: center;
+  margin-inline: auto;
+}
+.metalHeading > p:first-of-type {
+  margin-top: 22px;
+}
+.metalHeading > p:last-of-type {
+  margin-inline: auto;
+}
+.metalHeading > div:last-child {
+  justify-content: center;
+}
+.cutStudy {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 35px;
+  align-items: center;
+  margin-top: 45px !important;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 30px;
+  background-color: var(--p-wash);
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.cutDrawing {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--card);
+  transform: rotate(-1deg);
+}
+.cutDrawing > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+}
+.cutDrawing header > svg {
+  color: var(--p-blue);
+  flex: none;
+}
+.cutDrawing > .beamArt {
+  margin-block: 25px;
+}
+.dimensionStrip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px dashed var(--border);
+  padding-top: 20px;
+  font-size: 9px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.dimensionStrip > i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--p-blue);
+  flex: none;
+}
+.cutDocket {
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card);
+  padding: 25px;
+  transform: rotate(2deg);
+  box-shadow: 0 20px 35px -30px #00318055;
+}
+.cutDocket > svg {
+  color: var(--p-blue);
+  margin-bottom: 20px;
+}
+.cutDocket > span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.07em;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.cutDocket > b {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: var(--p-blue);
+  margin-block: 15px;
+}
+.cutDocket b > small {
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 125px;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+.cutDocket > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  line-height: 1.8;
+  border-bottom: 1px solid var(--border);
+  padding-block: 12px;
+}
+.cutDocket strong {
+  font-weight: 500;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.cutDocket > small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 18px;
+}
+.cutStudy > figcaption {
+  grid-column: 1/-1;
+}
+/* Furniture production: an exploded object with a component-kit note. */
+.furnitureHero {
+  background: radial-gradient(
+    ellipse at 20% 35%,
+    var(--p-sand),
+    transparent 57%
+  );
+}
+.furnitureLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.assemblyStudy {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  background: var(--card);
+  box-shadow: 0 22px 45px -35px #00318055;
+}
+.assemblyStudy > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--muted-foreground);
+}
+.assemblyCanvas {
+  position: relative;
+  padding: 18px 35px 12px;
+}
+.assemblyCanvas > .chairArt {
+  display: block;
+  max-width: 340px;
+  margin-inline: auto;
+}
+.assemblyLabelA,
+.assemblyLabelB,
+.assemblyLabelC {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 125px;
+  color: var(--p-blue);
+}
+.assemblyLabelA {
+  left: 0;
+  top: 22%;
+}
+.assemblyLabelB {
+  right: 0;
+  top: 48%;
+}
+.assemblyLabelC {
+  left: 0;
+  bottom: 18%;
+}
+.assemblyCanvas b {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 400;
+  background: var(--card);
+  flex: none;
+}
+.assemblyCanvas span {
+  font-size: 10px;
+  line-height: 1.8;
+  background: var(--card);
+}
+.kitNote {
+  padding: 20px 23px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--p-sage);
+  transform: rotate(-1.5deg);
+}
+.kitNote > span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.kitNote > b {
+  display: flex;
+  align-items: baseline;
+  gap: 17px;
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: var(--p-green);
+  margin-top: 10px;
+}
+.kitNote b > small {
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0;
+  max-width: 220px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+.kitNote > p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 12px;
+}
+.assemblyStudy > figcaption {
+  margin-top: 23px;
+}
+.assemblyFlow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--border);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.assemblyFlow > svg {
+  color: var(--p-blue);
+}
+/* Scoped workspaces extend the shared industry presentation foundation. */
+.textileWorkspace {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 35px;
+  align-items: start;
+}
+.lossFields {
+  display: grid;
+  gap: 23px;
+  margin-top: 25px;
+}
+.lengthTimeline {
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--cream);
+}
+.lengthTimeline > span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.lengthTimeline > h3 {
+  font-size: 27px;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  margin-top: 16px;
+}
+.lengthTimeline > ol {
+  list-style: none;
+  padding: 0;
+  margin: 27px 0 0;
+  display: grid;
+  gap: 25px;
+}
+.lengthTimeline li {
+  display: flex;
+  gap: 17px;
+  align-items: start;
+}
+.lengthTimeline li > span {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 27px;
+  height: 27px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 10px;
+  color: var(--p-blue);
+  background: var(--card);
+}
+.lengthTimeline li > div {
+  flex: 1;
+}
+.lengthTimeline h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  margin: 0;
+}
+.lengthTimeline b {
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-top: 8px;
+}
+.lengthTimeline small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 8px;
+}
+.lengthTrack {
+  height: 6px;
+  margin-top: 13px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.lengthTrack > i {
+  display: block;
+  height: 100%;
+  background: var(--p-blue);
+  border-radius: 4px;
+  transition: width 0.25s;
+}
+.cutInputs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.patterns {
+  display: grid;
+  gap: 20px;
+  margin-top: 25px;
+}
+.patterns > section {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--cream);
+}
+.patterns header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 21px;
+}
+.patterns header > span {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
+}
+.patterns header > b {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.cutBar {
+  display: flex;
+  align-items: stretch;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--p-sand);
+}
+.cutBar > i {
+  display: block;
+  background: var(--p-blue);
+  border-right: 2px solid var(--card);
+  transition: width 0.25s;
+}
+.cutBar > span {
+  flex: 1;
+}
+.patternKey {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 14px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.patternKey > span:first-child {
+  color: var(--p-blue);
+}
+.itemId {
+  display: block;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-top: 6px;
+}
+@media (max-width: 1100px) {
+  .textileLayout,
+  .furnitureLayout {
+    gap: 40px;
+  }
+  .materialStudy,
+  .assemblyStudy {
+    padding: 20px;
+  }
+  .materialStudy > header,
+  .assemblyStudy > header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .processRibbons {
+    gap: 8px;
+  }
+  .processRibbons > div {
+    padding: 15px 11px;
+  }
+  .processRibbons b {
+    font-size: 18px;
+  }
+  .cutStudy {
+    gap: 25px;
+    padding: 25px;
+  }
+  .cutDrawing {
+    padding: 20px;
+  }
+  .cutDocket {
+    padding: 21px;
+  }
+  .cutDocket > b {
+    font-size: 55px;
+    gap: 15px;
+  }
+  .cutDocket > div {
+    gap: 15px;
+  }
+  .assemblyCanvas {
+    padding-inline: 25px;
+  }
+  .assemblyCanvas span {
+    font-size: 9px;
+  }
+  .assemblyLabelA,
+  .assemblyLabelB,
+  .assemblyLabelC {
+    max-width: 105px;
+    gap: 7px;
+  }
+  .kitNote {
+    padding: 18px 20px;
+  }
+  .textileWorkspace {
+    gap: 25px;
+  }
+  .cutInputs {
+    gap: 15px;
+  }
+}
+@media (max-width: 800px) {
+  .textileLayout,
+  .furnitureLayout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .materialStudy,
+  .assemblyStudy {
+    max-width: 550px;
+    width: 100%;
+    margin: 12px auto 0 !important;
+  }
+  .materialStudy > header,
+  .assemblyStudy > header {
+    flex-wrap: nowrap;
+  }
+  .processRibbons {
+    gap: 12px;
+  }
+  .processRibbons b {
+    font-size: 21px;
+  }
+  .furnitureLayout > div {
+    grid-row: 1;
+  }
+  .assemblyCanvas {
+    padding-inline: 40px;
+  }
+  .assemblyLabelA,
+  .assemblyLabelB,
+  .assemblyLabelC {
+    max-width: 130px;
+  }
+  .assemblyCanvas span {
+    font-size: 10px;
+  }
+  .cutStudy {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 22px;
+    padding: 23px;
+  }
+  .cutDrawing {
+    padding: 18px;
+  }
+  .dimensionStrip {
+    flex-wrap: wrap;
+    gap: 9px 12px;
+  }
+  .dimensionStrip > i {
+    display: none;
+  }
+  .cutDocket {
+    padding: 20px;
+  }
+  .cutDocket > div {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .textileWorkspace {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .lossFields {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .cutInputs {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+}
+@media (max-width: 540px) {
+  .textileHero,
+  .metalHero,
+  .furnitureHero {
+    padding-bottom: 45px;
+  }
+  .heroFoot {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .materialStudy,
+  .assemblyStudy {
+    padding: 18px;
+  }
+  .materialStudy > header,
+  .assemblyStudy > header {
+    font-size: 9px;
+    line-height: 1.8;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .fabricCanvas {
+    padding-bottom: 35px;
+    margin-top: 15px;
+  }
+  .fabricLabel {
+    width: 150px;
+    padding: 13px 15px;
+    bottom: 0;
+    transform: rotate(3deg);
+  }
+  .fabricLabel > b {
+    font-size: 29px;
+  }
+  .fabricLabel b > small {
+    font-size: 15px;
+  }
+  .fabricLabel > small {
+    font-size: 9px;
+  }
+  .processRibbons {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .processRibbons > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 15px;
+    padding: 15px;
+    align-items: center;
+  }
+  .processRibbons div > span {
+    grid-column: 1;
+    grid-row: 1/3;
+    font-size: 9px;
+  }
+  .processRibbons b {
+    font-size: 22px;
+    margin: 0;
+    text-align: right;
+  }
+  .processRibbons div > small {
+    margin: 0;
+    font-size: 9px;
+    text-align: right;
+  }
+  .metalHeading > p:first-of-type {
+    margin-top: 19px;
+  }
+  .cutStudy {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 21px;
+    margin-top: 30px !important;
+  }
+  .cutDrawing {
+    padding: 20px 17px;
+    transform: none;
+  }
+  .cutDrawing > header {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .cutDrawing > .beamArt {
+    margin-block: 25px 18px;
+  }
+  .dimensionStrip {
+    font-size: 9px;
+    gap: 9px;
+  }
+  .cutDocket {
+    padding: 23px;
+    transform: rotate(1deg);
+  }
+  .cutDocket > div {
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+  .cutDocket > b {
+    font-size: 57px;
+  }
+  .assemblyCanvas {
+    padding: 22px 20px 13px;
+  }
+  .assemblyCanvas > .chairArt {
+    max-width: 300px;
+  }
+  .assemblyLabelA,
+  .assemblyLabelB,
+  .assemblyLabelC {
+    max-width: 90px;
+    gap: 6px;
+  }
+  .assemblyCanvas span {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+  .assemblyCanvas b {
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
+  }
+  .assemblyLabelA {
+    top: 23%;
+  }
+  .assemblyLabelB {
+    top: 47%;
+  }
+  .assemblyLabelC {
+    bottom: 18%;
+  }
+  .kitNote {
+    padding: 18px;
+  }
+  .kitNote > b {
+    font-size: 39px;
+    gap: 15px;
+  }
+  .kitNote b > small {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .assemblyFlow {
+    font-size: 9px;
+    gap: 12px;
+  }
+  .lossFields {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .lengthTimeline {
+    padding: 21px;
+  }
+  .lengthTimeline > span {
+    font-size: 9px;
+    line-height: 1.8;
+  }
+  .lengthTimeline > h3 {
+    font-size: 25px;
+  }
+  .lengthTimeline li {
+    gap: 13px;
+  }
+  .lengthTimeline h4 {
+    font-size: 11px;
+  }
+  .lengthTimeline b {
+    font-size: 26px;
+  }
+  .lengthTimeline small {
+    font-size: 10px;
+  }
+  .cutInputs {
+    gap: 20px 15px;
+  }
+  .patterns > section {
+    padding: 20px;
+  }
+  .patterns header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .patterns header > b {
+    font-size: 15px;
+  }
+  .patterns header > span {
+    font-size: 9px;
+  }
+  .patternKey {
+    align-items: start;
+    gap: 15px;
+    font-size: 10px;
+  }
+  .patternKey > span:last-child {
+    text-align: right;
+  }
+  .cutBar {
+    height: 32px;
+  }
+}
+@media (max-width: 359px) {
+  .cutInputs {
+    grid-template-columns: 1fr;
+  }
+  .kitNote > b {
+    gap: 12px;
+  }
+  .assemblyCanvas {
+    padding-inline: 15px;
+  }
+  .assemblyLabelA,
+  .assemblyLabelB,
+  .assemblyLabelC {
+    max-width: 80px;
+  }
+  .patternKey {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .patternKey > span:last-child {
+    text-align: left;
+  }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .fabricLabel,
+  .cutDrawing,
+  .cutDocket,
+  .kitNote {
+    transition: transform 0.35s;
+  }
+  .fabricLabel:hover,
+  .cutDrawing:hover,
+  .cutDocket:hover,
+  .kitNote:hover {
+    transform: rotate(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .industrial *,
+  .industrial *:before,
+  .industrial *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
