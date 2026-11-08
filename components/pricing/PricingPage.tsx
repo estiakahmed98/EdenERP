@@ -1,138 +1,282 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Sparkles } from "lucide-react";
-import { BillingCycle, CurrencyCode, ERPPlan, PricingContent } from "./types";
-import { SectionEyebrow } from "./SectionEyebrow";
-import { FaqItem } from "./FaqItem";
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  Blocks,
+  Check,
+  CircleHelp,
+  Layers3,
+  LifeBuoy,
+  SlidersHorizontal,
+  Sparkles,
+  Users,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+import LiveDemoButton from "@/components/live-demo-button";
+import type { BillingCycle, CurrencyCode, PricingContent } from "./types";
 import { PlanCard } from "./PlanCard";
-import { useRouter } from "next/navigation";
+import { FaqItem } from "./FaqItem";
+import { getPlanPrice, hasConfiguredFeature } from "./plan-presentation";
+import css from "./pricing.module.css";
 
 interface PricingPageProps {
   data: PricingContent;
-  onBuyNow: (planId: string) => void;
+  onBuyNow: (
+    planId: string,
+    billing: BillingCycle,
+    currency: CurrencyCode,
+  ) => void;
   onSuccessPacks: () => void;
+  initialBilling?: BillingCycle;
+  initialCurrency?: CurrencyCode;
 }
 
 export function PricingPage({
   data,
   onBuyNow,
   onSuccessPacks,
+  initialBilling = "yearly",
+  initialCurrency = "BDT",
 }: PricingPageProps) {
-  const router = useRouter();
-  const packages = data.erpPackages;
-  const packageFeatures = Array.from(
-    new Set(packages.flatMap((pack) => pack.features)),
+  const t = useTranslations("pages.pricing.ui");
+  const common = useTranslations("common.states");
+  const packages = data.erpPackages.filter((plan) => plan.enabled);
+  const featuredId = packages.find(
+    (plan) => plan.badge && plan.id !== "enterprise",
+  )?.id;
+  const [billing, setBilling] = useState<BillingCycle>(initialBilling);
+  const [currency, setCurrency] = useState<CurrencyCode>(initialCurrency);
+  const [previewId, setPreviewId] = useState(
+    featuredId ?? packages[0]?.id ?? "",
   );
-  const enterprisePlan = packages.find((plan) => plan.id === "enterprise");
-  const enterpriseCustomIntegrationFeature =
-    enterprisePlan?.features[enterprisePlan.features.length - 1];
-  const hasPackageFeature = (pack: ERPPlan, feature: string) => {
-    if (pack.id === "enterprise") return true;
-    if (pack.id === "enterpriselite") {
-      return feature !== enterpriseCustomIntegrationFeature;
-    }
-
-    return pack.features.includes(feature);
-  };
-  const [billing, setBilling] = useState<BillingCycle>("yearly");
-  const [currency, setCurrency] = useState<CurrencyCode>("BDT");
+  const [comparisonId, setComparisonId] = useState(packages[0]?.id ?? "");
+  const preview = packages.find((plan) => plan.id === previewId) ?? packages[0];
+  const comparisonPlan =
+    packages.find((plan) => plan.id === comparisonId) ?? packages[0];
+  const enterprise = packages.find((plan) => plan.id === "enterprise");
+  const features = Array.from(
+    new Set(packages.flatMap((plan) => plan.features)),
+  );
+  const maxFeatures = Math.max(
+    1,
+    ...packages.map((plan) => plan.features.length),
+  );
+  const hasPrices = packages.some(
+    (plan) => getPlanPrice(plan, billing) !== null,
+  );
+  const hasQuarterlyPrices = packages.some(
+    (plan) =>
+      plan.quarterlyFee && typeof plan.users === "number" && plan.users > 0,
+  );
+  const cycles = (
+    ["yearly", "semiannual", "quarterly", "monthly"] as const
+  ).filter((cycle) => data.hero.billingToggle?.[cycle]);
+  const discount = (cycle: BillingCycle) =>
+    cycle === "monthly"
+      ? undefined
+      : data.hero.billingToggle?.[`${cycle}Discount`];
 
   return (
-    <>
-      <main className="relative min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.16),transparent_34%),radial-gradient(circle_at_top_right,rgba(6,182,212,0.16),transparent_30%),linear-gradient(180deg,#ffffff_0%,#f8fafc_46%,#ecfdf5_100%)] dark:bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_34%),radial-gradient(circle_at_top_right,rgba(6,182,212,0.10),transparent_30%),linear-gradient(180deg,#020617_0%,#0f172a_55%,#020617_100%)]">
-        <div className="pointer-events-none absolute left-1/2 top-24 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-200/30 blur-3xl dark:bg-emerald-500/10" />
-        <div className="relative mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
-          <SectionEyebrow
-            icon={<Sparkles className="h-4 w-4" />}
-            label={data.hero.eyebrow ?? ""}
-          />
-
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+    <main className={css.page} data-pricing-page>
+      <section
+        className={`${css.wrap} ${css.hero}`}
+        aria-labelledby="pricing-title"
+      >
+        <div className={css.heroCopy}>
+          <p className={css.eyebrow}>
+            <span className={css.statusDot} />
+            {data.hero.eyebrow}
+          </p>
+          <h1 id="pricing-title">
             {data.hero.title}
             <br />
-            <span className="bg-linear-to-r from-emerald-600 to-cyan-600 bg-clip-text text-transparent">
+            <span className={css.marker}>
               {data.hero.titleHighlight}
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 420 14"
+                preserveAspectRatio="none"
+              >
+                <path d="M3 9C87 1 235 0 416 7M15 12C143 6 286 5 402 10" />
+              </svg>
             </span>
           </h1>
-
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-300">
-            {data.hero.description}
-          </p>
-
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:items-start">
-            <div className="relative inline-flex flex-wrap items-center justify-center rounded-2xl border border-white/70 bg-white/90 p-1.5 shadow-xl shadow-emerald-900/5 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80">
-              <button
-                onClick={() => setBilling("yearly")}
-                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "yearly"
-                    ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
-                    : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                  }`}
-              >
-                {data.hero.billingToggle?.yearly}
-                <span className="absolute -right-2 -top-2 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
-                  {data.hero.billingToggle?.yearlyDiscount}
-                </span>
-              </button>
-
-              <button
-                onClick={() => setBilling("semiannual")}
-                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "semiannual"
-                    ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
-                    : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                  }`}
-              >
-                {data.hero.billingToggle?.semiannual}
-                <span className="absolute -right-2 -top-2 rounded-full bg-teal-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
-                  {data.hero.billingToggle?.semiannualDiscount}
-                </span>
-              </button>
-              <button
-                onClick={() => setBilling("quarterly")}
-                className={`relative rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "quarterly"
-                    ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
-                    : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                  }`}
-              >
-                {data.hero.billingToggle?.quarterly}
-                <span className="absolute -right-2 -top-2 rounded-full bg-cyan-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
-                  {data.hero.billingToggle?.quarterlyDiscount}
-                </span>
-              </button>
-              <button
-                onClick={() => setBilling("monthly")}
-                className={`rounded-xl px-6 py-2.5 text-sm font-semibold transition-all ${billing === "monthly"
-                    ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
-                    : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                  }`}
-              >
-                {data.hero.billingToggle?.monthly}
-              </button>
+          <p className={css.heroDescription}>{data.hero.description}</p>
+          <div className={css.heroActions}>
+            <LiveDemoButton />
+            <a href="#plan-comparison">
+              {t("compare")}
+              <ArrowDown size={16} aria-hidden="true" />
+            </a>
+          </div>
+          <div className={css.heroFootnote}>
+            <span />
+            <p>{t("heroNote")}</p>
+          </div>
+        </div>
+        <div className={css.studio}>
+          <div className={css.studioHeading}>
+            <span>
+              <Layers3 size={15} aria-hidden="true" />
+              {t("planPreview")}
+            </span>
+            <span className={css.studioDots} aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
+          </div>
+          {preview && (
+            <div
+              className={css.previewCard}
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <div className={css.previewIdentity}>
+                <span aria-hidden="true">{preview.icon}</span>
+                <div>
+                  <small>{t("yourPlan")}</small>
+                  <strong>{preview.name}</strong>
+                </div>
+                <ArrowUpRight size={23} aria-hidden="true" />
+              </div>
+              <div className={css.previewStats}>
+                <div>
+                  <span>{t("includedTeam")}</span>
+                  <strong>
+                    {preview.users ?? "—"}
+                    <small>{data.packagePricing.usersLabel}</small>
+                    <svg aria-hidden="true" viewBox="0 0 120 56">
+                      <path d="M7 25C11 4 105 0 113 25C122 52 26 62 8 39C-5 21 24 9 49 9" />
+                    </svg>
+                  </strong>
+                </div>
+                <div>
+                  <span>{t("coverage")}</span>
+                  <strong>
+                    {String(preview.features.length).padStart(2, "0")}
+                    <small>{t("featuresLabel")}</small>
+                  </strong>
+                </div>
+              </div>
+              <div className={css.previewFeatures}>
+                {preview.features.slice(0, 3).map((feature) => (
+                  <span key={feature}>
+                    <Check size={12} aria-hidden="true" />
+                    {feature}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="inline-flex rounded-xl border border-white/70 bg-white/90 p-1 shadow-lg shadow-slate-900/5 backdrop-blur dark:border-slate-700 dark:bg-slate-900/80">
-                {(["BDT", "USD"] as const).map((nextCurrency) => (
+          )}
+          <div
+            className={css.spectrum}
+            role="group"
+            aria-label={t("choosePreview")}
+          >
+            {packages.map((plan) => (
+              <button
+                type="button"
+                key={plan.id}
+                aria-pressed={preview?.id === plan.id}
+                onClick={() => setPreviewId(plan.id)}
+                onMouseEnter={() => setPreviewId(plan.id)}
+                onFocus={() => setPreviewId(plan.id)}
+              >
+                <span
+                  className={css.spectrumBar}
+                  style={{
+                    height: `${18 + (plan.features.length / maxFeatures) * 48}px`,
+                  }}
+                >
+                  <span />
+                </span>
+                <span className={css.spectrumLabel}>{plan.name}</span>
+              </button>
+            ))}
+          </div>
+          <span className={css.handNote}>
+            {t("touchNote")}
+            <svg viewBox="0 0 100 44" fill="none" aria-hidden="true">
+              <path d="M4 7c29-13 73-1 74 20 0 12-21 6-19-5 3-13 24-9 34 11m-14-3 15 6-2-14" />
+            </svg>
+          </span>
+        </div>
+      </section>
+
+      <section
+        className={`${css.wrap} ${css.plansSection}`}
+        id="plans"
+        aria-labelledby="plans-title"
+      >
+        <div className={css.sectionTop}>
+          <div>
+            <p className={css.eyebrow}>{t("plansEyebrow")}</p>
+            <h2 id="plans-title">{t("plansTitle")}</h2>
+          </div>
+          <p>{t("plansDescription")}</p>
+        </div>
+        <div className={css.controlBar}>
+          {hasPrices ? (
+            <>
+              <div
+                className={css.billingControl}
+                role="group"
+                aria-label={t("billingCycle")}
+              >
+                {cycles.map((cycle) => (
                   <button
-                    key={nextCurrency}
-                    onClick={() => setCurrency(nextCurrency)}
-                    className={`rounded-lg px-5 py-2 text-sm font-semibold transition-all ${currency === nextCurrency
-                        ? "bg-slate-900 text-white shadow-md dark:bg-emerald-600"
-                        : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
-                      }`}
+                    type="button"
+                    key={cycle}
+                    aria-pressed={billing === cycle}
+                    onClick={() => setBilling(cycle)}
                   >
-                    {nextCurrency}
+                    <span>{data.hero.billingToggle?.[cycle]}</span>
+                    {hasQuarterlyPrices && discount(cycle) && (
+                      <small>{discount(cycle)}</small>
+                    )}
                   </button>
                 ))}
               </div>
-              <p className="mt-3 text-xs text-slate-400">
-                {data.packagePricing.currencyRate}
-              </p>
-            </div>
-          </div>
+              <div className={css.currencyArea}>
+                <div
+                  className={css.currencyControl}
+                  role="group"
+                  aria-label={t("displayCurrency")}
+                >
+                  {(["BDT", "USD"] as const).map((value) => (
+                    <button
+                      type="button"
+                      key={value}
+                      aria-pressed={currency === value}
+                      onClick={() => setCurrency(value)}
+                    >
+                      {value}
+                    </button>
+                  ))}
+                </div>
+                <span>{data.packagePricing.currencyRate}</span>
+              </div>
+            </>
+          ) : (
+            <p className={css.quoteNote}>
+              <CircleHelp size={18} aria-hidden="true" />
+              <span>{t("quoteNote")}</span>
+            </p>
+          )}
+          {!hasPrices && (
+            <a className={css.controlCompare} href="#plan-comparison">
+              {t("compare")}
+              <ArrowDown size={15} aria-hidden="true" />
+            </a>
+          )}
         </div>
-
-        <div className="relative mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {hasPrices && <p className={css.currencyNote}>{t("currencyNote")}</p>}
+        {packages.length > 0 ? (
+          <div className={css.planGrid}>
             {packages.map((plan) => (
               <PlanCard
                 key={plan.id}
@@ -141,121 +285,243 @@ export function PricingPage({
                 currency={currency}
                 labels={data.packagePricing}
                 includedFeaturesHeading={data.includedFeaturesHeading}
-                onBuyNow={() => onBuyNow(plan.id)}
+                highlighted={plan.id === featuredId}
+                onBuyNow={() => onBuyNow(plan.id, billing, currency)}
               />
             ))}
           </div>
-
-          <div className="mt-16 overflow-hidden rounded-3xl border border-white/80 bg-white/90 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none">
-            <div className="border-b border-slate-200 bg-linear-to-r from-emerald-50 via-white to-cyan-50 px-6 py-5 dark:border-slate-700 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
-              <h2 className="text-left text-2xl font-bold text-slate-900 dark:text-white">
-                {data.includedFeaturesHeading}
-              </h2>
-            </div>
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[900px] border-collapse">
-                <thead>
-                  <tr className="border-b border-slate-200 bg-white/80 dark:border-slate-700 dark:bg-slate-900">
-                    <th className="p-5 text-left text-base font-semibold text-slate-900 dark:text-white">
-                      {data.successPacksPage.comparisonTable?.featureHeader}
-                    </th>
-                    {packages.map((pack) => (
-                      <th
-                        key={pack.id}
-                        className="p-5 text-center text-base font-semibold"
-                        style={{ color: pack.badge ? pack.accent : undefined }}
-                      >
-                        <span
-                          className={
-                            pack.badge
-                              ? ""
-                              : "text-slate-600 dark:text-slate-300"
-                          }
-                        >
-                          {pack.name}
-                        </span>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {packageFeatures.map((feature, idx) => (
-                    <tr
-                      key={feature}
-                      className={`border-b border-slate-100 dark:border-slate-700 ${
-                        idx % 2 === 0
-                          ? "bg-white dark:bg-slate-900"
-                          : "bg-slate-50 dark:bg-slate-800/50"
-                      }`}
-                    >
-                      <td className="p-5 text-base font-medium text-slate-700 dark:text-slate-300">
-                        {feature}
-                      </td>
-                      {packages.map((pack) => (
-                        <td key={pack.id} className="p-5 text-center">
-                          {hasPackageFeature(pack, feature) ? (
-                            <CheckCircle2
-                              className="mx-auto h-6 w-6"
-                              style={{ color: pack.accent }}
-                            />
-                          ) : (
-                            <span className="text-slate-300 dark:text-slate-600">
-                              —
-                            </span>
-                          )}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+        ) : (
+          <div className={css.emptyState}>
+            <p>{t("noPlans")}</p>
+            <LiveDemoButton />
           </div>
+        )}
+      </section>
 
-          <div className="mt-12 text-center">
-            <div className="mb-4 text-sm font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
-              {data.modules.title}
+      <section
+        className={`${css.wrap} ${css.decisionSection}`}
+        aria-labelledby="decision-title"
+      >
+        <div className={css.decisionIntro}>
+          <p className={css.eyebrow}>{t("decisionEyebrow")}</p>
+          <h2 id="decision-title">{t("decisionTitle")}</h2>
+          <svg aria-hidden="true" viewBox="0 0 140 50">
+            <path d="M4 13C32-8 84 6 76 28C68 50 42 23 66 20C91 17 112 21 132 39m-17-1 19 3-5-17" />
+          </svg>
+        </div>
+        <div className={css.decisionSteps}>
+          {[
+            { icon: Users, key: "team" },
+            { icon: Blocks, key: "modules" },
+            { icon: SlidersHorizontal, key: "implementation" },
+          ].map(({ icon: Icon, key }, index) => (
+            <div key={key}>
+              <span className={css.decisionNumber}>0{index + 1}</span>
+              <Icon size={21} aria-hidden="true" />
+              <h3>{t(`${key}Title`)}</h3>
+              <p>{t(`${key}Description`)}</p>
+              {key === "implementation" && (
+                <button type="button" onClick={onSuccessPacks}>
+                  {t("implementationLink")}
+                  <ArrowUpRight size={14} aria-hidden="true" />
+                </button>
+              )}
             </div>
-            <div className="flex flex-wrap justify-center gap-2">
-              {data.modules.list.map((module: string) => (
-                <span
-                  key={module}
-                  className="rounded-full border border-emerald-100 bg-white/90 px-4 py-1.5 text-sm font-medium text-slate-700 shadow-sm shadow-emerald-900/5 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
-                >
+          ))}
+        </div>
+      </section>
+
+      <section
+        className={`${css.wrap} ${css.comparisonSection}`}
+        id="plan-comparison"
+        aria-labelledby="comparison-title"
+      >
+        <div className={css.sectionTop}>
+          <div>
+            <p className={css.eyebrow}>{t("comparisonEyebrow")}</p>
+            <h2 id="comparison-title">{t("comparisonTitle")}</h2>
+          </div>
+          <p>{t("comparisonDescription")}</p>
+        </div>
+        {comparisonPlan && (
+          <div className={css.mobileCompareControl}>
+            <label htmlFor="comparison-plan">{t("comparePlan")}</label>
+            <select
+              id="comparison-plan"
+              value={comparisonPlan.id}
+              onChange={(event) => setComparisonId(event.target.value)}
+            >
+              {packages.map((plan) => (
+                <option key={plan.id} value={plan.id}>
+                  {plan.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+        <div className={css.tableShell}>
+          <table className={css.comparisonTable}>
+            <caption className="sr-only">{t("comparisonTitle")}</caption>
+            <thead>
+              <tr>
+                <th scope="col">
+                  {data.successPacksPage.comparisonTable?.featureHeader ??
+                    t("featuresLabel")}
+                </th>
+                {packages.map((plan) => (
+                  <th
+                    key={plan.id}
+                    scope="col"
+                    data-mobile-selected={comparisonPlan?.id === plan.id}
+                    data-featured={plan.id === featuredId}
+                  >
+                    <span>{plan.name}</span>
+                    {plan.users != null && (
+                      <small>
+                        {plan.users} {data.packagePricing.usersLabel}
+                      </small>
+                    )}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {features.map((feature) => (
+                <tr key={feature}>
+                  <th scope="row">{feature}</th>
+                  {packages.map((plan) => (
+                    <td
+                      key={plan.id}
+                      data-mobile-selected={comparisonPlan?.id === plan.id}
+                      data-featured={plan.id === featuredId}
+                    >
+                      {hasConfiguredFeature(plan, feature) ? (
+                        <>
+                          <Check size={17} aria-hidden="true" />
+                          <span className="sr-only">{common("included")}</span>
+                        </>
+                      ) : (
+                        <>
+                          <span aria-hidden="true" className={css.notListed}>
+                            —
+                          </span>
+                          <span className="sr-only">{t("notListed")}</span>
+                        </>
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className={css.comparisonNote}>
+          <Check size={14} aria-hidden="true" />
+          {t("comparisonNote")}
+        </p>
+      </section>
+
+      {data.modules.list.length > 0 && (
+        <section className={css.moduleSection} aria-labelledby="modules-title">
+          <div className={css.wrap}>
+            <div className={css.moduleHeading}>
+              <div className={css.moduleMark} aria-hidden="true">
+                <Layers3 size={28} />
+                <i />
+                <i />
+              </div>
+              <div>
+                <p className={css.eyebrow}>{t("moduleEyebrow")}</p>
+                <h2 id="modules-title">{t("moduleTitle")}</h2>
+                <p>{t("moduleNote")}</p>
+              </div>
+            </div>
+            <div className={css.moduleCloud}>
+              {data.modules.list.map((module, index) => (
+                <span key={`${module}-${index}`}>
+                  <span aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   {module}
                 </span>
               ))}
             </div>
           </div>
+        </section>
+      )}
 
-          <div className="mt-16">
-            <div className="mb-8 text-center">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white lg:text-4xl">
-                {data.faq.title}
-              </h2>
-              <p className="mt-2 text-slate-500 dark:text-slate-400">
-                {data.faq.description}
+      {enterprise && (
+        <section
+          className={`${css.wrap} ${css.enterpriseSection}`}
+          aria-labelledby="enterprise-title"
+        >
+          <div className={css.enterprisePanel}>
+            <div>
+              <p className={css.eyebrow}>
+                <Sparkles size={14} aria-hidden="true" />
+                {t("enterpriseEyebrow")}
               </p>
+              <h2 id="enterprise-title">
+                {enterprise.name}
+                <span className={css.enterprisePeriod}>.</span>
+              </h2>
+              <p>{enterprise.tagline}</p>
+              <LiveDemoButton />
             </div>
-            <div className="mx-auto max-w-3xl">
-              {data.faq.items.map((faq, idx: number) => (
-                <FaqItem key={faq.id ?? idx} q={faq.question} a={faq.answer} />
-              ))}
+            <div className={css.enterpriseFeatures}>
+              <span>{data.includedFeaturesHeading}</span>
+              <ul>
+                {enterprise.features.map((feature) => (
+                  <li key={feature}>
+                    <Check size={15} aria-hidden="true" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+        </section>
+      )}
 
-          <div className="mt-16 rounded-3xl bg-linear-to-r from-slate-950 via-slate-900 to-emerald-950 p-8 text-center text-white shadow-2xl shadow-slate-900/20 dark:from-slate-950 dark:to-slate-900">
-            <h2 className="text-2xl font-bold">{data.finalCta.title}</h2>
-            <p className="mt-2 text-slate-300">{data.finalCta.description}</p>
-            <button
-              onClick={() => router.push("/contact")}
-              className="mt-5 rounded-lg bg-emerald-600 px-6 py-2.5 font-semibold transition hover:bg-emerald-700"
-            >
-              {data.finalCta.button}
-            </button>
+      {data.faq.items.length > 0 && (
+        <section
+          className={`${css.wrap} ${css.faqSection}`}
+          aria-labelledby="pricing-faq-title"
+        >
+          <div className={css.faqIntro}>
+            <span className={css.faqIcon}>
+              <LifeBuoy size={28} aria-hidden="true" />
+            </span>
+            <p className={css.eyebrow}>{t("faqEyebrow")}</p>
+            <h2 id="pricing-faq-title">{data.faq.title}</h2>
+            <p>{data.faq.description}</p>
+            <LiveDemoButton />
           </div>
+          <div className={css.faqList}>
+            {data.faq.items.map((faq, index) => (
+              <FaqItem key={faq.id ?? index} q={faq.question} a={faq.answer} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section
+        className={`${css.wrap} ${css.finalSection}`}
+        aria-labelledby="pricing-final-title"
+      >
+        <div className={css.finalOrbit} aria-hidden="true">
+          <i />
+          <i />
+          <Layers3 size={29} />
         </div>
-      </main>
-    </>
+        <h2 id="pricing-final-title">{data.finalCta.title}</h2>
+        <p>{data.finalCta.description}</p>
+        <LiveDemoButton />
+        <a href="#plans">
+          {t("backToPlans")}
+          <ArrowRight size={14} aria-hidden="true" />
+        </a>
+      </section>
+    </main>
   );
 }

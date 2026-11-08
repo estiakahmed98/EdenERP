@@ -1,7 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { hasConfiguredFeature } from "./plan-presentation";
 import { CheckCircle2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { FaqItem } from "./FaqItem";
 import { PricingContent } from "./types";
@@ -12,6 +14,7 @@ interface SuccessPacksPageProps {
 }
 
 export function SuccessPacksPage({ data, onBack }: SuccessPacksPageProps) {
+  const t = useTranslations("pages.pricing.ui");
   const content = data.successPacksPage;
   const packages = data.erpPackages;
   const router = useRouter();
@@ -37,7 +40,7 @@ export function SuccessPacksPage({ data, onBack }: SuccessPacksPageProps) {
               </h1>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
                 <strong className="text-emerald-600 dark:text-emerald-400">
-                  {content.description}
+                  {t("implementationDescription")}
                 </strong>
               </p>
             </div>
@@ -91,8 +94,7 @@ export function SuccessPacksPage({ data, onBack }: SuccessPacksPageProps) {
                     </td>
                     {packages.map((pack) => (
                       <td key={pack.id} className="p-4 text-center">
-                        {pack.id === "enterprise" ||
-                        pack.features.includes(feature) ? (
+                        {hasConfiguredFeature(pack, feature) ? (
                           <CheckCircle2
                             className="mx-auto h-5 w-5"
                             style={{ color: pack.accent }}

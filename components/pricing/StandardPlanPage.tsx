@@ -10,12 +10,15 @@ import {
 } from "./constants";
 import { formatCurrency, getPerUserMonthly } from "./utils";
 import { useRouter } from "@/i18n/navigation";
+import { getPlanPrice } from "./plan-presentation";
+import { QuotePlanDetails } from "./QuotePlanDetails";
 
 interface StandardPlanPageProps {
   data: PricingContent;
   selectedPlanId?: string;
   onBack: () => void;
   onReadMore: () => void;
+  initialBilling?: BillingCycle;
 }
 
 export function StandardPlanPage({
@@ -23,6 +26,7 @@ export function StandardPlanPage({
   selectedPlanId,
   onBack,
   onReadMore,
+  initialBilling = "yearly",
 }: StandardPlanPageProps) {
   const tStandard = data.standardPlanPage;
   const packages = data.erpPackages;
@@ -37,8 +41,12 @@ export function StandardPlanPage({
   const initialUserCount =
     typeof pricingPlan.users === "number" ? pricingPlan.users : 1;
 
-  const [billing, setBilling] = useState<BillingCycle>("yearly");
+  const [billing, setBilling] = useState<BillingCycle>(initialBilling);
   const [userCount, setUserCount] = useState(initialUserCount);
+
+  if (!getPlanPrice(pricingPlan, billing)) {
+    return <QuotePlanDetails data={data} plan={pricingPlan} onBack={onBack} onReadMore={onReadMore} />;
+  }
 
   const basePerUserMonthly =
     isEnterprise || isMonthlyPricedPlan
