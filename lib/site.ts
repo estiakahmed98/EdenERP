@@ -51,7 +51,10 @@ export const siteConfig = {
     .filter(Boolean),
   gaId: process.env.NEXT_PUBLIC_GA_ID || "",
   gtmId: process.env.NEXT_PUBLIC_GTM_ID || "",
-  googleVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  // Google Search Console token (public by design: it is rendered in <head>).
+  googleVerification:
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+    "d3rVHLAts0ra0YAcNaV2snV6_CP_mdjDF1uY4gjSzmY",
   bingVerification: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "",
 
   /**
