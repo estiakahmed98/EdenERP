@@ -24,72 +24,76 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { getLocaleAlternates } from "@/i18n/metadata";
+import { useTranslations } from "next-intl";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const tx = await getTranslations("pages.universityApp.registration");
   const t = await getTranslations("layout.header.modules.university");
   return {
-    title: t("links.registration") || "Registration | AdonERP",
+    title: t("links.registration") || tx("page.registrationAdonerp"),
     description:
-      "Manage student registrations, advising holds, and course waivers in one unified hub.",
+      tx("page.manageStudentRegistrationsAdvisingHoldsA"),
     alternates: await getLocaleAlternates("/apps/university/registration"),
   };
 }
 
 // --- DATA FOR THE HERO SCREENSHOT ---
-const registrationData = [
-  { id: "ALL231007", name: "Nafisa Chowdhury", cgpa: "2.90", credits: "106", status: "Advising pending" },
-  { id: "ALL231014", name: "Habib Islam", cgpa: "2.96", credits: "106", status: "Advising pending" },
-  { id: "ALL231020", name: "Nayeem Kabir", cgpa: "2.91", credits: "106", status: "Advising pending" },
-];
+const registrationData = memoT((tx: TFn) => ([
+  { id: "ALL231007", name: "Nafisa Chowdhury", cgpa: "2.90", credits: "106", status: tx("page.advisingPending") },
+  { id: "ALL231014", name: "Habib Islam", cgpa: "2.96", credits: "106", status: tx("page.advisingPending") },
+  { id: "ALL231020", name: "Nayeem Kabir", cgpa: "2.91", credits: "106", status: tx("page.advisingPending") },
+]));
 
 // --- CONTENT FOR PAGE SECTIONS ---
-const featureQuestions = [
+const featureQuestions = memoT((tx: TFn) => ([
   {
-    title: "Advising Workflows",
-    question: "How do we manage advisor approvals efficiently?",
-    answer: "The system routes students to their assigned advisors based on their programme. Advisors can review, approve, or turn back registrations in bulk, ensuring no student is left waiting.",
-    source: "Synced from Advising Modules",
+    title: tx("page.advisingWorkflows"),
+    question: tx("page.howDoWeManageAdvisorApprovals"),
+    answer: tx("page.theSystemRoutesStudentsToTheir"),
+    source: tx("page.syncedFromAdvisingModules"),
   },
   {
-    title: "Hold Management",
-    question: "What happens if a student has an unpaid fee or a library hold?",
-    answer: "The system automatically blocks registration if an active hold exists. Once the respective department clears the hold in their module, the student is instantly allowed to register.",
-    source: "Synced from Student Accounts",
+    title: tx("page.holdManagement"),
+    question: tx("page.whatHappensIfAStudentHas"),
+    answer: tx("page.theSystemAutomaticallyBlocksRegistration"),
+    source: tx("page.syncedFromStudentAccounts"),
   },
   {
-    title: "Prerequisite & Limit Checks",
-    question: "Can we prevent students from taking the wrong courses?",
-    answer: "Yes. The registration engine verifies that all prerequisites are met and that the student hasn't exceeded the maximum credit limit for the term before accepting the registration.",
-    source: "Synced from Curriculum Rules",
+    title: tx("page.prerequisiteLimitChecks"),
+    question: tx("page.canWePreventStudentsFromTaking"),
+    answer: tx("page.yesTheRegistrationEngineVerifiesThat"),
+    source: tx("page.syncedFromCurriculumRules"),
   },
   {
-    title: "Waitlist Automation",
-    question: "What if a class is full?",
-    answer: "If a section reaches capacity, the student is automatically placed on a waitlist. When another student drops the course, the system automatically promotes the first person on the waitlist.",
-    source: "Synced from Enrollment Engine",
+    title: tx("page.waitlistAutomation"),
+    question: tx("page.whatIfAClassIsFull"),
+    answer: tx("page.ifASectionReachesCapacityThe"),
+    source: tx("page.syncedFromEnrollmentEngine"),
   },
-];
+]));
 
-const faqs = [
+const faqs = memoT((tx: TFn) => ([
   {
-    q: "Can students register for multiple terms at once?",
-    a: "No. The system enforces registration windows. Students can only register for courses within the active term's designated registration window.",
+    q: tx("page.canStudentsRegisterForMultipleTerms"),
+    a: tx("page.noTheSystemEnforcesRegistrationWindows"),
   },
   {
-    q: "How are senior students prioritized?",
-    a: "The system uses a 'wave' registration system. Seniors are given an earlier registration window than juniors or freshmen, ensuring they get the seats they need to graduate on time.",
+    q: tx("page.howAreSeniorStudentsPrioritized"),
+    a: tx("page.theSystemUsesAWaveRegistration"),
   },
   {
-    q: "Can an advisor approve a student outside their department?",
-    a: "Generally, no. Advisors are mapped to specific cohorts or departments. However, the Registrar's office always retains the ability to approve registrations across the board.",
+    q: tx("page.canAnAdvisorApproveAStudent"),
+    a: tx("page.generallyNoAdvisorsAreMappedTo"),
   },
   {
-    q: "What is a 'time clash'?",
-    a: "A time clash occurs when a student tries to register for two courses that occur at the same time. The system detects this and blocks the registration to ensure students don't miss classes.",
+    q: tx("page.whatIsATimeClash"),
+    a: tx("page.aTimeClashOccursWhenA"),
   },
-];
+]));
 
 export default function UniversityRegistrationPage() {
+  const tx = useTranslations("pages.universityApp.registration");
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       
@@ -100,20 +104,20 @@ export default function UniversityRegistrationPage() {
           {/* Hero Text */}
           <div className="mx-auto max-w-[800px] text-center mb-12">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-1.5 text-[12px] font-semibold text-primary shadow-sm">
-              <Sparkles className="h-4 w-4" /> Seamless Course Registration
+              <Sparkles className="h-4 w-4" />{" "}{tx("page.seamlessCourseRegistration")}
             </div>
             <h1 className="showcase-heading text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.05] tracking-[-0.04em] text-foreground">
-              A frictionless start <span className="text-primary">to every semester.</span>
+              {tx("page.aFrictionlessStart")}{" "}<span className="text-primary">{tx("page.toEverySemester")}</span>
             </h1>
             <p className="mx-auto mt-5 max-w-[580px] text-[16px] leading-7 text-muted-foreground">
-              From advising approvals to automatic waitlist management, streamline the entire registration process for students and faculty alike.
+              {tx("page.fromAdvisingApprovalsToAutomaticWaitlist")}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <button className="btn-gradient rounded-lg px-6 py-3 text-[13px] font-bold shadow-lg transition-transform hover:-translate-y-0.5">
-                Request a Demo
+                {tx("page.requestADemo")}
               </button>
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
-                Explore Features
+                {tx("page.exploreFeatures")}
               </button>
             </div>
           </div>
@@ -125,16 +129,16 @@ export default function UniversityRegistrationPage() {
               {/* App Top Bar */}
               <div className="flex h-12 items-center justify-between border-b border-border bg-muted/30 px-4 sm:px-6 relative z-20">
                 <div className="flex items-center gap-2 text-[12px]">
-                  <span className="font-bold text-primary">Adon ERP</span>
+                  <span className="font-bold text-primary">{tx("page.adonErp")}</span>
                   <span className="text-muted-foreground/50">/</span>
-                  <span className="font-semibold text-foreground">Registration</span>
+                  <span className="font-semibold text-foreground">{tx("page.registration")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="hidden sm:flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <Globe className="h-3 w-3" /> English
+                    <Globe className="h-3 w-3" />{" "}{tx("page.english")}
                   </div>
                   <div className="flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <School className="h-3 w-3" /> National University <ChevronDown className="h-3 w-3" />
+                    <School className="h-3 w-3" />{" "}{tx("page.nationalUniversity")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                 </div>
               </div>
@@ -145,23 +149,23 @@ export default function UniversityRegistrationPage() {
                 {/* Sidebar */}
                 <div className="hidden w-[220px] shrink-0 border-r border-border bg-card py-4 sm:block overflow-y-auto">
                   <div className="mb-3 flex items-center justify-between px-5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                    University <ChevronDown className="h-3 w-3" />
+                    {tx("page.university")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                   <nav className="space-y-0.5 px-3">
                     {[
-                      { icon: LayoutDashboard, label: "University Dashboard" },
-                      { icon: FileText, label: "University Admissions" },
-                      { icon: Users, label: "University Students" },
-                      { icon: School, label: "Faculties & Programmes" },
-                      { icon: BookOpen, label: "Courses & Curriculum" },
-                      { icon: CalendarDays, label: "Class Schedule" },
-                      { icon: Calendar, label: "Registration", active: true },
-                      { icon: CreditCard, label: "Student Accounts" },
-                      { icon: Award, label: "Grades & Results" },
-                      { icon: CalendarDays, label: "Exams & Attendance" },
-                      { icon: GraduationCap, label: "Outcomes (OBE)" },
-                      { icon: Briefcase, label: "Faculty & Workload" },
-                      { icon: Building, label: "Campus Services" },
+                      { icon: LayoutDashboard, label: tx("page.universityDashboard") },
+                      { icon: FileText, label: tx("page.universityAdmissions") },
+                      { icon: Users, label: tx("page.universityStudents") },
+                      { icon: School, label: tx("page.facultiesProgrammes") },
+                      { icon: BookOpen, label: tx("page.coursesCurriculum") },
+                      { icon: CalendarDays, label: tx("page.classSchedule") },
+                      { icon: Calendar, label: tx("page.registration"), active: true },
+                      { icon: CreditCard, label: tx("page.studentAccounts") },
+                      { icon: Award, label: tx("page.gradesResults") },
+                      { icon: CalendarDays, label: tx("page.examsAttendance") },
+                      { icon: GraduationCap, label: tx("page.outcomesObe") },
+                      { icon: Briefcase, label: tx("page.facultyWorkload") },
+                      { icon: Building, label: tx("page.campusServices") },
                     ].map((item, i) => (
                       <div
                         key={i}
@@ -185,16 +189,16 @@ export default function UniversityRegistrationPage() {
                     {/* Page Header */}
                     <div className="mb-5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                       <div>
-                        <h1 className="text-[22px] font-bold tracking-tight text-foreground">Registration</h1>
+                        <h1 className="text-[22px] font-bold tracking-tight text-foreground">{tx("page.registration")}</h1>
                         <p className="mt-1.5 max-w-[750px] text-[12px] leading-5 text-muted-foreground">
-                          Students register for a term's sections in waves (seniors first). A hold, a missing advisor approval, an unmet prerequisite, a time clash or the credit limit stops a registration; a full section puts the student on its waitlist, and a drop moves the first waiting student up at once.
+                          {tx("page.studentsRegisterForATermS")}
                         </p>
                       </div>
                       <div className="shrink-0 mt-2 sm:mt-0">
-                        <label className="mb-1 block text-[10px] font-medium text-muted-foreground">Term</label>
+                        <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{tx("page.term")}</label>
                         <div className="relative">
                           <select className="w-[180px] appearance-none rounded-md border border-border bg-card px-2.5 py-1.5 text-[11px] font-medium text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                            <option>Spring 2027 - Registration</option>
+                            <option>{tx("page.spring2027Registration")}</option>
                           </select>
                           <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-muted-foreground" />
                         </div>
@@ -204,12 +208,12 @@ export default function UniversityRegistrationPage() {
                     {/* Tabs */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       <button className="rounded-md border border-border bg-card px-4 py-1.5 text-[12px] font-medium text-primary shadow-sm hover:bg-muted">
-                        Registration desk
+                        {tx("page.registrationDesk")}
                       </button>
                       <button className="rounded-md bg-primary px-4 py-1.5 text-[12px] font-bold text-primary-foreground shadow-sm">
-                        Advising
+                        {tx("page.advising")}
                       </button>
-                      {["Holds", "Windows", "Overview"].map((tab) => (
+                      {[tx("page.holds"), tx("page.windows"), tx("page.overview")].map((tab) => (
                         <button key={tab} className="rounded-md border border-border bg-card px-4 py-1.5 text-[12px] font-medium text-primary shadow-sm hover:bg-muted">
                           {tab}
                         </button>
@@ -220,38 +224,38 @@ export default function UniversityRegistrationPage() {
                     <div className="rounded-xl border border-border bg-card p-4 shadow-sm opacity-60 blur-[2px] pointer-events-none mb-6">
                       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 mb-2">
                         <div>
-                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">Status</label>
+                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{tx("page.status")}</label>
                           <div className="relative">
                             <select className="w-full appearance-none rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] font-medium text-foreground shadow-sm">
-                              <option>Advising pending</option>
+                              <option>{tx("page.advisingPending")}</option>
                             </select>
                             <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-muted-foreground" />
                           </div>
                         </div>
                         <div>
-                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">Advisor</label>
+                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{tx("page.advisor")}</label>
                           <div className="relative">
                             <select className="w-full appearance-none rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] font-medium text-foreground shadow-sm">
-                              <option>All</option>
+                              <option>{tx("page.all")}</option>
                             </select>
                             <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-muted-foreground" />
                           </div>
                         </div>
                         <div>
-                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">Programme</label>
+                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{tx("page.programme")}</label>
                           <div className="relative">
                             <select className="w-full appearance-none rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] font-medium text-foreground shadow-sm">
-                              <option>All</option>
+                              <option>{tx("page.all")}</option>
                             </select>
                             <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-muted-foreground" />
                           </div>
                         </div>
                         <div>
-                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">Search</label>
-                          <input type="text" placeholder="Student number or name" className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] text-foreground shadow-sm" />
+                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{tx("page.search")}</label>
+                          <input type="text" placeholder={tx("page.studentNumberOrName")} className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] text-foreground shadow-sm" />
                         </div>
                       </div>
-                      <p className="text-[11px] text-muted-foreground mt-3">1406 pending · 0 approved · 0 turned back</p>
+                      <p className="text-[11px] text-muted-foreground mt-3">{tx("page.n1406Pending0Approved0Turned")}</p>
                     </div>
 
                     {/* Table Area (Blurred) */}
@@ -259,16 +263,16 @@ export default function UniversityRegistrationPage() {
                       <table className="w-full text-left text-[11px]">
                         <thead className="bg-muted/50 text-muted-foreground">
                           <tr>
-                            <th className="px-4 py-3 font-semibold">STUDENT NO.</th>
-                            <th className="px-4 py-3 font-semibold">NAME</th>
-                            <th className="px-4 py-3 font-semibold text-center">CGPA</th>
-                            <th className="px-4 py-3 font-semibold text-center">CREDITS EARNED</th>
-                            <th className="px-4 py-3 font-semibold">STATUS</th>
-                            <th className="px-4 py-3 font-semibold text-right">ACTIONS</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.studentNo")}</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.name")}</th>
+                            <th className="px-4 py-3 font-semibold text-center">{tx("page.cgpa")}</th>
+                            <th className="px-4 py-3 font-semibold text-center">{tx("page.creditsEarned")}</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.status2")}</th>
+                            <th className="px-4 py-3 font-semibold text-right">{tx("page.actions")}</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-border">
-                          {registrationData.map((row, i) => (
+                          {registrationData(tx).map((row, i) => (
                             <tr key={i} className="hover:bg-muted/30">
                               <td className="px-4 py-3 font-medium text-foreground">{row.id}</td>
                               <td className="px-4 py-3 text-muted-foreground">{row.name}</td>
@@ -278,8 +282,8 @@ export default function UniversityRegistrationPage() {
                                 <span className="rounded-full bg-[#d97706]/10 px-2 py-0.5 text-[10px] font-bold text-[#d97706]">{row.status}</span>
                               </td>
                               <td className="px-4 py-3 text-right flex items-center justify-end gap-1.5">
-                                <button className="rounded-md border border-border bg-card px-2 py-1 text-[10px] font-medium text-primary shadow-sm hover:bg-muted">Approve</button>
-                                <button className="rounded-md border border-border bg-card px-2 py-1 text-[10px] font-medium text-primary shadow-sm hover:bg-muted">Waiver / overload...</button>
+                                <button className="rounded-md border border-border bg-card px-2 py-1 text-[10px] font-medium text-primary shadow-sm hover:bg-muted">{tx("page.approve")}</button>
+                                <button className="rounded-md border border-border bg-card px-2 py-1 text-[10px] font-medium text-primary shadow-sm hover:bg-muted">{tx("page.waiverOverload")}</button>
                               </td>
                             </tr>
                           ))}
@@ -296,10 +300,10 @@ export default function UniversityRegistrationPage() {
                   <div className="absolute top-[175px] bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent backdrop-blur-[3px] flex flex-col items-center justify-end pb-12">
                     <div className="pointer-events-auto flex flex-col items-center">
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/80 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
-                        Preview mode. Explore the full registration flow.
+                        {tx("page.previewModeExploreTheFullRegistration")}
                       </p>
                       <button className="btn-gradient rounded-lg px-8 py-2.5 text-[13px] font-bold shadow-xl transition-transform hover:-translate-y-0.5">
-                        Book a live demo
+                        {tx("page.bookALiveDemo")}
                       </button>
                     </div>
                   </div>
@@ -318,15 +322,15 @@ export default function UniversityRegistrationPage() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                A seamless flow<br />from advising<br />to enrollment
+                {tx("page.aSeamlessFlow")}<br />{tx("page.fromAdvising")}<br />{tx("page.toEnrollment")}
               </h2>
               <p className="mt-5 max-w-[400px] text-[14px] leading-7 text-muted-foreground">
-                Registration is the busiest time of the year. The Adon ERP Registration module is designed to handle thousands of students without a single glitch.
+                {tx("page.registrationIsTheBusiestTimeOf")}
               </p>
             </div>
             
             <div className="space-y-8">
-              {featureQuestions.map((item, i) => (
+              {featureQuestions(tx).map((item, i) => (
                 <div key={i} className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[200px_1fr]">
                   <div>
                     <p className="text-[13px] font-bold text-primary">{item.title}</p>
@@ -350,10 +354,10 @@ export default function UniversityRegistrationPage() {
         <div className="mx-auto max-w-[1300px] px-5 sm:px-8">
           <div className="mb-10">
             <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-              Designed for the<br />high-stress rush
+              {tx("page.designedForThe")}<br />{tx("page.highStressRush")}
             </h2>
             <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-muted-foreground">
-              We know that during registration week, every second counts. Adon ERP ensures that the system handles the heavy lifting, so your staff can focus on helping students.
+              {tx("page.weKnowThatDuringRegistrationWeek")}
             </p>
           </div>
 
@@ -363,22 +367,22 @@ export default function UniversityRegistrationPage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <FileCheck2 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Instant Hold Verification</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">No more manually checking spreadsheets. If a student has an unpaid fee or an administrative hold, the system catches it instantly during registration.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.instantHoldVerification")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.noMoreManuallyCheckingSpreadsheetsIf")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <WalletCards className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Automated Prerequisite Checks</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">The system cross-references the student's academic history against the course requirements. If they haven't passed the prerequisite, they can't register.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.automatedPrerequisiteChecks")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.theSystemCrossReferencesTheStudent")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <School className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Wave-Based Priority</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Configure the system to open registration for seniors first, then juniors, then freshmen. This ensures graduating students get the classes they need to finish.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.waveBasedPriority")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.configureTheSystemToOpenRegistration")}</p>
               </div>
             </div>
 
@@ -387,35 +391,35 @@ export default function UniversityRegistrationPage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <BookOpenCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Advising Dashboard</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Advisors get a dedicated view where they can see all pending student registrations, approve them in bulk, or turn them back with notes for the student.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.advisingDashboard")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.advisorsGetADedicatedViewWhere")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Layers3 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Waitlist Automation</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">If a class is full, students are queued. As soon as someone drops, the system automatically bumps the next person from the waitlist into the class and notifies them.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.waitlistAutomation")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.ifAClassIsFullStudents")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <CalendarDays className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Clash Detection</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">The system scans the student's selected courses against the master timetable. If two classes overlap, the registration is blocked with a clear error message.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.clashDetection")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.theSystemScansTheStudentS")}</p>
               </div>
             </div>
 
             {/* Timeline Box */}
             <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-sm">
-              <h3 className="mb-6 text-[15px] font-bold text-foreground">A day for the registrar</h3>
+              <h3 className="mb-6 text-[15px] font-bold text-foreground">{tx("page.aDayForTheRegistrar")}</h3>
               <div className="relative border-l-2 border-muted ml-3 space-y-6">
                 {[
-                  { time: "9:00 am", text: "The registrar checks the dashboard. 1406 students are pending advising. They notify the department heads to review their queues." },
-                  { time: "10:30 am", text: "A student calls because they can't register. The registrar searches their ID and sees they have a library hold. They direct the student to the library." },
-                  { time: "1:00 pm", text: "An advisor requests permission to overload a student's schedule. The registrar reviews the student's high CGPA and approves the waiver in the system." },
-                  { time: "3:00 pm", text: "The registrar opens the registration window for the senior cohort. The system automatically emails all eligible students." },
-                  { time: "5:00 pm", text: "The registrar checks the waitlists for the most popular sections and informs the department that they need to add another section." }
+                  { time: tx("page.n900Am"), text: tx("page.theRegistrarChecksTheDashboard1406") },
+                  { time: tx("page.n1030Am"), text: tx("page.aStudentCallsBecauseTheyCan") },
+                  { time: tx("page.n100Pm"), text: tx("page.anAdvisorRequestsPermissionToOverload") },
+                  { time: tx("page.n300Pm"), text: tx("page.theRegistrarOpensTheRegistrationWindow") },
+                  { time: tx("page.n500Pm"), text: tx("page.theRegistrarChecksTheWaitlistsFor") }
                 ].map((item, i) => (
                   <div key={i} className="relative pl-6">
                     <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-card bg-primary ring-4 ring-primary/10" />
@@ -435,11 +439,11 @@ export default function UniversityRegistrationPage() {
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                Questions about<br />the registration<br />process
+                {tx("page.questionsAbout")}<br />{tx("page.theRegistration")}<br />{tx("page.process")}
               </h2>
             </div>
             <div className="border-t border-border">
-              {faqs.map((faq, i) => (
+              {faqs(tx).map((faq, i) => (
                 <details key={i} className="group border-b border-border py-5">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[14px] font-bold text-foreground marker:hidden [&::-webkit-details-marker]:hidden">
                     {faq.q}
@@ -466,17 +470,17 @@ export default function UniversityRegistrationPage() {
             
             <div className="relative mx-auto max-w-[700px]">
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,3.2rem)] leading-[1.1] tracking-[-0.04em]">
-                Ready to simplify<br />your registration?
+                {tx("page.readyToSimplify")}<br />{tx("page.yourRegistration")}
               </h2>
               <p className="mx-auto mt-5 max-w-[500px] text-[15px] leading-6 text-secondary-foreground/70">
-                Get a personalized walkthrough of the Registration module. We'll show you how to handle advising, holds, and waitlists without the stress.
+                {tx("page.getAPersonalizedWalkthroughOfThe")}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <button className="rounded-lg bg-card px-6 py-3 text-[13px] font-bold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-muted shadow-lg">
-                  Schedule a Walkthrough
+                  {tx("page.scheduleAWalkthrough")}
                 </button>
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
-                  Browse All Modules
+                  {tx("page.browseAllModules")}
                 </button>
               </div>
             </div>

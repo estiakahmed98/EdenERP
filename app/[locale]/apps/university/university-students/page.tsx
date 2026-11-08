@@ -23,6 +23,7 @@ import {
   UserPlus,
 } from "lucide-react";
 import { getLocaleAlternates } from "@/i18n/metadata";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("pages.university-students");
@@ -34,11 +35,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // --- DATA FOR THE HERO SCREENSHOT ---
-const studentData = [
-  { id: "ALL222004", name: "Walid Nizami", programme: "BA-ALL", term: "Autumn 2022", year: "2022", advisor: "Ishrat Sadia Faruqi", status: "Active" },
-  { id: "ALL231001", name: "Sajjad Alam", programme: "BA-ALL", term: "Spring 2023", year: "2023", advisor: "Fahim Yasin Uddin", status: "Active" },
-  { id: "ALL231003", name: "Mostafa Siddique", programme: "BA-ALL", term: "Spring 2023", year: "2023", advisor: "Fahim Yasin Uddin", status: "Active" },
-];
+const studentData = memoT((tx: TFn) => ([
+  { id: "ALL222004", name: "Walid Nizami", programme: "BA-ALL", term: tx("page.autumn2022"), year: "2022", advisor: tx("page.ishratSadiaFaruqi"), status: tx("page.active") },
+  { id: "ALL231001", name: "Sajjad Alam", programme: "BA-ALL", term: tx("page.spring2023"), year: "2023", advisor: tx("page.fahimYasinUddin"), status: tx("page.active") },
+  { id: "ALL231003", name: "Mostafa Siddique", programme: "BA-ALL", term: tx("page.spring2023"), year: "2023", advisor: tx("page.fahimYasinUddin"), status: tx("page.active") },
+]));
 
 // --- CONTENT FOR PAGE SECTIONS ---
 const featureKeys = [
@@ -48,6 +49,7 @@ const featureKeys = [
 const faqKeys = ["importData", "search", "studentHistory", "assignAdvisors"] as const;
 
 export default async function UniversityStudentsPage() {
+  const tx = await getTranslations("pages.universityApp.universityStudents");
   const t = await getTranslations("pages.university-students");
 
   return (
@@ -202,7 +204,7 @@ export default async function UniversityStudentsPage() {
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-border">
-                          {studentData.map((student, i) => (
+                          {studentData(tx).map((student, i) => (
                             <tr key={i} className="hover:bg-muted/30">
                               <td className="px-4 py-3 font-medium text-primary">{student.id}</td>
                               <td className="px-4 py-3 text-foreground">{student.name}</td>

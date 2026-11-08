@@ -3,41 +3,46 @@ import { ArrowRight, BookOpen, Building2, Shirt } from "lucide-react";
 
 import { getLocaleAlternates } from "@/i18n/metadata";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("pages.industriesApp.index");
   return {
-    title: "Industry ERP Solutions in Bangladesh",
+    title: t("page.industryErpSolutionsInBangladesh"),
     description:
-      "Industry-specific ERP for Bangladesh businesses: garments, textile, retail, manufacturing, NGO, real estate, food & hospitality and more — from Adon ERP, Dhaka.",
+      t("page.industrySpecificErpForBangladeshBusiness"),
     alternates: await getLocaleAlternates("/industries"),
   };
 }
 
-const industryCards = [
+const industryCards = memoT((t: TFn) => ([
   {
-    title: "Book Store",
+    title: t("page.bookStore"),
     description:
-      "Point of sale, ISBN-level stock, publisher purchasing and member discounts for bookshops.",
+      t("page.pointOfSaleIsbnLevelStock"),
     href: "/industries/retail/book-store",
     icon: BookOpen,
   },
   {
-    title: "Furniture Store",
+    title: t("page.furnitureStore"),
     description:
-      "Showroom sales, custom orders, delivery scheduling and warehouse stock for furniture retailers.",
+      t("page.showroomSalesCustomOrdersDeliverySchedul"),
     href: "/industries/retail/furniture-store",
     icon: Building2,
   },
   {
-    title: "Clothing Store",
+    title: t("page.clothingStore"),
     description:
-      "Size and colour variants, seasonal collections and omnichannel sales for fashion retail.",
+      t("page.sizeAndColourVariantsSeasonalCollections"),
     href: "/industries/retail/clothing-store",
     icon: Shirt,
   },
-];
+]));
 
 export default function IndustriesPage() {
+  const t = useTranslations("pages.industriesApp.index");
   return (
     <main className="min-h-screen bg-background text-foreground">
       <section className="relative overflow-hidden">
@@ -46,24 +51,22 @@ export default function IndustriesPage() {
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
           <div className="max-w-3xl space-y-6">
             <span className="inline-flex rounded-full border border-primary/20 bg-card/80 px-4 py-1 text-sm font-medium text-primary shadow-sm backdrop-blur">
-              Retail industry pages
+              {t("page.retailIndustryPages")}
             </span>
 
             <div className="space-y-4">
               <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                Industry-specific experiences for every kind of retail business.
+                {t("page.industrySpecificExperiencesForEveryKind")}
               </h1>
 
               <p className="max-w-2xl text-lg leading-8 text-muted-foreground">
-                The new bookstore page is ready under the industries route. It
-                follows your reference layout while keeping the AdonERP header
-                and footer already used across the project.
+                {t("page.theNewBookstorePageIsReady")}
               </p>
             </div>
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {industryCards.map((card) => {
+            {industryCards(t).map((card) => {
               const Icon = card.icon;
 
               return (
@@ -90,7 +93,7 @@ export default function IndustriesPage() {
                     </div>
 
                     <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                      Open page
+                      {t("page.openPage")}
                       <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </div>

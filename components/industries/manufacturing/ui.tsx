@@ -2,21 +2,24 @@ import type { ReactNode } from "react";
 import { ArrowDown, FlaskConical, Info } from "lucide-react";
 import LiveDemoButton from "@/components/live-demo-button";
 import css from "./industry.module.css";
+import { useTranslations } from "next-intl";
 export { css };
 export function Badge({ children }: { children?: ReactNode }) {
+  const t = useTranslations("pages.industriesApp");
   return (
     <span className={css.badge}>
       <FlaskConical size={12} aria-hidden="true" />
-      {children ?? "Illustrative preview"}
+      {children ?? t("manufacturing.ui.illustrativePreview")}
     </span>
   );
 }
 export function Actions() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <div className={css.actions}>
       <LiveDemoButton />
       <a href="#industry-workspace">
-        Explore the example <ArrowDown size={15} aria-hidden="true" />
+        {t("manufacturing.ui.exploreTheExample")}{" "}<ArrowDown size={15} aria-hidden="true" />
       </a>
     </div>
   );

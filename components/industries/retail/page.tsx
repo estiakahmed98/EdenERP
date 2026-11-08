@@ -29,14 +29,18 @@ import {
 import RetailHero from "./heroes";
 import RetailWorkspace, { RetailStory } from "./workspaces";
 import { Badge, Metric, Note, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { type TFn } from "@/lib/i18n/t-types";
 export async function retailMetadata(slug: RetailSlug): Promise<Metadata> {
+  const tx = await getTranslations("pages.industriesApp");
   return {
-    title: `${pages[slug].title} | Retail Industries | Adon ERP`,
-    description: pages[slug].description,
+    title: `${pages(tx)[slug].title} | Retail Industries | Adon ERP`,
+    description: pages(tx)[slug].description,
     alternates: await getLocaleAlternates(`/industries/retail/${slug}`),
   };
 }
-function evidence(slug: RetailSlug): {
+function evidence(slug: RetailSlug, tx: TFn): {
   stats: [string, string][];
   columns: string[];
   rows: ReactNode[][];
@@ -44,44 +48,44 @@ function evidence(slug: RetailSlug): {
   if (slug === "book-store") {
     const quantity = [1, 0, 1],
       total = basketTotal(
-        books.map((b, i) => ({ price: b.price, quantity: quantity[i] })),
+        books(tx).map((b, i) => ({ price: b.price, quantity: quantity[i] })),
       );
     return {
       stats: [
-        ["Fictional titles", "3"],
-        ["Selected example books", "2"],
-        ["Example basket", money(total)],
+        [tx("retail.page.fictionalTitles"), "3"],
+        [tx("retail.page.selectedExampleBooks"), "2"],
+        [tx("retail.page.exampleBasket"), money(total)],
       ],
       columns: [
-        "Example title",
-        "Identifier",
-        "Illustrative price",
-        "Selected quantity",
+        tx("retail.page.exampleTitle"),
+        tx("retail.page.identifier"),
+        tx("retail.page.illustrativePrice"),
+        tx("retail.page.selectedQuantity"),
       ],
-      rows: books.map((b, i) => [b.name, b.id, money(b.price), quantity[i]]),
+      rows: books(tx).map((b, i) => [b.name, b.id, money(b.price), quantity[i]]),
     };
   }
   if (slug === "clothing-store") {
     const result = variantComparison(12, 3);
     return {
       stats: [
-        ["Selected example variant", "Navy / M"],
-        ["Fictional stock", "12 pieces"],
-        ["Requested pieces", "3"],
+        [tx("retail.page.selectedExampleVariant"), tx("retail.page.navyM")],
+        [tx("retail.page.fictionalStock"), tx("retail.page.n12Pieces")],
+        [tx("retail.page.requestedPieces"), "3"],
       ],
       columns: [
-        "Concept style",
-        "Variant identifier",
-        "Example request",
-        "Fictional stock after request",
+        tx("retail.page.conceptStyle"),
+        tx("retail.page.variantIdentifier"),
+        tx("retail.page.exampleRequest"),
+        tx("retail.page.fictionalStockAfterRequest"),
       ],
       rows: [
-        ["Everyday overshirt", "EX-CL-NAVY-M", 3, result.remaining],
+        [tx("retail.page.everydayOvershirt"), "EX-CL-NAVY-M", 3, result.remaining],
         [
-          "Reservation state",
-          "No reservation created",
-          "Local comparison only",
-          "No stock change",
+          tx("retail.page.reservationState"),
+          tx("retail.page.noReservationCreated"),
+          tx("retail.page.localComparisonOnly"),
+          tx("retail.page.noStockChange"),
         ],
       ],
     };
@@ -94,15 +98,15 @@ function evidence(slug: RetailSlug): {
     );
     return {
       stats: [
-        ["Example selected pieces", num(result.pieces)],
-        ["Illustrative finish", "Natural"],
-        ["Local estimate", money(result.total)],
+        [tx("retail.page.exampleSelectedPieces"), num(result.pieces)],
+        [tx("retail.page.illustrativeFinish"), tx("retail.page.natural")],
+        [tx("retail.page.localEstimate"), money(result.total)],
       ],
       columns: [
-        "Concept furniture",
-        "Illustrative base price",
-        "Example quantity",
-        "Finish extra / piece",
+        tx("retail.page.conceptFurniture"),
+        tx("retail.page.illustrativeBasePrice"),
+        tx("retail.page.exampleQuantity"),
+        tx("retail.page.finishExtraPiece"),
       ],
       rows: furniture.map((f) => [f.name, money(f.price), 1, money(0)]),
     };
@@ -111,15 +115,15 @@ function evidence(slug: RetailSlug): {
     const result = batchDates(referenceDate, 3, batches);
     return {
       stats: [
-        ["Example reference", dateLabel(referenceDate)],
-        ["Fictional batches", "4"],
-        ["Example window", "3 calendar days"],
+        [tx("retail.page.exampleReference"), dateLabel(referenceDate)],
+        [tx("retail.page.fictionalBatches"), "4"],
+        [tx("retail.page.exampleWindow"), tx("retail.page.n3CalendarDays")],
       ],
       columns: [
-        "Fictional item",
-        "Example batch",
-        "Recorded date",
-        "Days from reference",
+        tx("retail.page.fictionalItem"),
+        tx("retail.page.exampleBatch"),
+        tx("retail.page.recordedDate"),
+        tx("retail.page.daysFromReference"),
       ],
       rows: batches.map((b, i) => [
         b.name,
@@ -133,60 +137,61 @@ function evidence(slug: RetailSlug): {
     const result = purchasePacks(240, 65, 50);
     return {
       stats: [
-        ["Example target", "240 units"],
-        ["Entered pack size", "50 units"],
-        ["Calculated packs", num(result.packs)],
+        [tx("retail.page.exampleTarget"), tx("retail.page.n240Units")],
+        [tx("retail.page.enteredPackSize"), tx("retail.page.n50Units")],
+        [tx("retail.page.calculatedPacks"), num(result.packs)],
       ],
       columns: [
-        "Fictional item",
-        "Example on hand",
-        "Incoming units",
-        "Units beyond target",
+        tx("retail.page.fictionalItem"),
+        tx("retail.page.exampleOnHand"),
+        tx("retail.page.incomingUnits"),
+        tx("retail.page.unitsBeyondTarget"),
       ],
       rows: [
-        ["EX-H01 / Concept fixing", 65, result.incoming, result.remaining],
+        [tx("retail.page.exH01ConceptFixing"), 65, result.incoming, result.remaining],
         [
-          "Purchase state",
-          "No supplier selected",
-          "No order created",
-          "Local calculation only",
+          tx("retail.page.purchaseState"),
+          tx("retail.page.noSupplierSelected"),
+          tx("retail.page.noOrderCreated"),
+          tx("retail.page.localCalculationOnly"),
         ],
       ],
     };
   }
   const selection = [1, 0, 1],
     result = giftBudget(
-      toys.map((t, i) => ({ price: t.price, quantity: selection[i] })),
+      toys(tx).map((t, i) => ({ price: t.price, quantity: selection[i] })),
       0,
       2000,
     );
   return {
     stats: [
-      ["Example budget", money(2000)],
-      ["Selected toy total", money(result.total)],
-      ["Budget remaining", money(result.remaining)],
+      [tx("retail.page.exampleBudget"), money(2000)],
+      [tx("retail.page.selectedToyTotal"), money(result.total)],
+      [tx("retail.page.budgetRemaining"), money(result.remaining)],
     ],
     columns: [
-      "Fictional toy",
-      "Identifier",
-      "Illustrative price",
-      "Example quantity",
+      tx("retail.page.fictionalToy"),
+      tx("retail.page.identifier"),
+      tx("retail.page.illustrativePrice"),
+      tx("retail.page.exampleQuantity"),
     ],
-    rows: toys.map((t, i) => [t.name, t.id, money(t.price), selection[i]]),
+    rows: toys(tx).map((t, i) => [t.name, t.id, money(t.price), selection[i]]),
   };
 }
 function ConceptCanvas({ slug }: { slug: RetailSlug }) {
-  const data = evidence(slug);
+  const tx = useTranslations("pages.industriesApp");
+  const data = evidence(slug, tx);
   return (
     <div className={css.previewCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          {tx("retail.page.eden")}<span>{tx("retail.page.erp")}</span>
         </b>
-        <span>Retail / {pages[slug].title}</span>
-        <Badge>Concept canvas · fictional records</Badge>
+        <span>{tx("retail.page.retail")}{" "}{pages(tx)[slug].title}</span>
+        <Badge>{tx("retail.page.conceptCanvasFictionalRecords")}</Badge>
       </header>
-      <h3>{pages[slug].demoTitle}</h3>
+      <h3>{pages(tx)[slug].demoTitle}</h3>
       <dl className={css.previewStats}>
         {data.stats.map(([label, amount]) => (
           <Metric key={label} label={label} value={amount} />
@@ -196,12 +201,11 @@ function ConceptCanvas({ slug }: { slug: RetailSlug }) {
         className={css.tableScroll}
         tabIndex={0}
         role="region"
-        aria-label={`${pages[slug].title} fictional example records, scroll horizontally`}
+        aria-label={`${pages(tx)[slug].title} fictional example records, scroll horizontally`}
       >
         <table>
           <caption className={css.srOnly}>
-            Static illustrative records based on this page’s initial example,
-            separate from the editable workspace
+            {tx("retail.page.staticIllustrativeRecordsBasedOnThis")}
           </caption>
           <thead>
             <tr>
@@ -224,15 +228,14 @@ function ConceptCanvas({ slug }: { slug: RetailSlug }) {
         </table>
       </div>
       <Note>
-        This is a static concept canvas. All identifiers, amounts, quantities
-        and dates are fictional; the editable local example above does not
-        update this canvas or create any real transaction.
+        {tx("retail.page.thisIsAStaticConceptCanvas")}
       </Note>
     </div>
   );
 }
 export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
-  const p = pages[slug];
+  const tx = useTranslations("pages.industriesApp");
+  const p = pages(tx)[slug];
   return (
     <main
       className={css.retail}
@@ -241,12 +244,12 @@ export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
       data-retail-industry={slug}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={tx("retail.page.breadcrumb")}>
+          <Link href="/">{tx("retail.page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{tx("retail.page.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <span>Retail</span>
+          <span>{tx("retail.page.retail2")}</span>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -257,23 +260,22 @@ export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
       <section className={css.modulesSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>THE RETAIL PRODUCT CONVERSATION</p>
-            <h2>Follow the detail into the product.</h2>
+            <p className={css.eyebrow}>{tx("retail.page.theRetailProductConversation")}</p>
+            <h2>{tx("retail.page.followTheDetailIntoTheProduct")}</h2>
             <p>
-              Explore the existing ERP presentations for your store’s checkout,
-              item and stock questions.
+              {tx("retail.page.exploreTheExistingErpPresentationsFor")}
             </p>
           </div>
           <div className={css.moduleGrid}>
             {p.tools.map((t, i) => (
               <Link key={t.href} href={t.href}>
-                <span>0{i + 1} / PRODUCT PREVIEW</span>
+                <span>0{i + 1}{" "}{tx("retail.page.productPreview")}</span>
                 <h3>
                   {t.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{t.body}</p>
-                <small>Explore the presentation</small>
+                <small>{tx("retail.page.exploreThePresentation")}</small>
               </Link>
             ))}
           </div>
@@ -282,16 +284,15 @@ export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
       <section className={css.previewSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>A CLOSER LOOK AT THE EXPERIENCE</p>
-            <h2>The record behind the retail story.</h2>
+            <p className={css.eyebrow}>{tx("retail.page.aCloserLookAtTheExperience")}</p>
+            <h2>{tx("retail.page.theRecordBehindTheRetailStory")}</h2>
             <p>
-              Illustrative records, with the complete workflow available in a
-              guided advisor conversation.
+              {tx("retail.page.illustrativeRecordsWithTheCompleteWorkfl")}
             </p>
           </div>
           <DemoPreview
             title={`${p.title} retail experience`}
-            description="Bring your catalogue, checkout and stock questions to an advisor for a guided conversation about your own store."
+            description={tx("retail.page.bringYourCatalogueCheckoutAndStock")}
           >
             <ConceptCanvas slug={slug} />
           </DemoPreview>
@@ -300,8 +301,8 @@ export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
       <section className={css.faqSection}>
         <div className={`${css.wrap} ${css.faqLayout}`}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Understand the example.</h2>
+            <p className={css.eyebrow}>{tx("retail.page.aFewUsefulDetails")}</p>
+            <h2>{tx("retail.page.understandTheExample")}</h2>
           </div>
           <div className={css.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -319,15 +320,15 @@ export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
       <section className={css.relatedSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>OTHER RETAIL PERSPECTIVES</p>
-            <h2>A different shop. Its own story.</h2>
+            <p className={css.eyebrow}>{tx("retail.page.otherRetailPerspectives")}</p>
+            <h2>{tx("retail.page.aDifferentShopItsOwnStory")}</h2>
           </div>
           <div className={css.relatedGrid}>
             {retailSlugs
               .filter((s) => s !== slug)
               .map((s) => (
                 <Link key={s} href={`/industries/retail/${s}`}>
-                  {pages[s].title}
+                  {pages(tx)[s].title}
                   <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               ))}
@@ -337,11 +338,10 @@ export function RetailIndustryPage({ slug }: { slug: RetailSlug }) {
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR STORE. YOUR WAY OF WORKING.</p>
-            <h2>Let’s bring your retail details into focus.</h2>
+            <p className={css.eyebrow}>{tx("retail.page.yourStoreYourWayOfWorking")}</p>
+            <h2>{tx("retail.page.letSBringYourRetailDetails")}</h2>
             <p>
-              Share your catalogue, outlet and counter process with an advisor.
-              Explore how the product conversation fits your operation.
+              {tx("retail.page.shareYourCatalogueOutletAndCounter")}
             </p>
           </div>
           <LiveDemoButton />

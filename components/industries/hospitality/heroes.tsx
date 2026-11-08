@@ -39,8 +39,10 @@ import {
   PlateArt,
   css,
 } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: HospitalitySlug }) {
-  const p = pages[slug];
+  const tx = useTranslations("pages.industriesApp");
+  const p = pages(tx)[slug];
   return (
     <>
       <p className={css.eyebrow}>{p.eyebrow}</p>
@@ -54,6 +56,7 @@ function Copy({ slug }: { slug: HospitalitySlug }) {
   );
 }
 function RestaurantHero() {
+  const tx = useTranslations("pages.industriesApp");
   return (
     <section className={css.restaurantHero}>
       <div className={`${css.wrap} ${css.restaurantLayout}`}>
@@ -62,16 +65,16 @@ function RestaurantHero() {
           <Actions />
           <div className={css.serviceSignature}>
             <Utensils size={15} />
-            <span>DINING ROOM / ORDER / SERVICE</span>
+            <span>{tx("hospitality.heroes.diningRoomOrderService")}</span>
           </div>
         </div>
         <figure className={css.diningPlan}>
           <header>
-            <span>THE DINING ROOM / CONCEPT PLAN</span>
-            <Badge>Fictional tables</Badge>
+            <span>{tx("hospitality.heroes.theDiningRoomConceptPlan")}</span>
+            <Badge>{tx("hospitality.heroes.fictionalTables")}</Badge>
           </header>
           <div className={css.planCanvas}>
-            <div className={css.hostDesk}>HOST / ARRIVAL</div>
+            <div className={css.hostDesk}>{tx("hospitality.heroes.hostArrival")}</div>
             <div className={css.tableSketches}>
               {tables.map((t) => (
                 <div
@@ -80,30 +83,30 @@ function RestaurantHero() {
                   key={t.id}
                 >
                   <b>{t.id}</b>
-                  <span>{t.seats} seats</span>
+                  <span>{t.seats}{" "}{tx("hospitality.heroes.seats")}</span>
                 </div>
               ))}
             </div>
             <div className={css.placeSetting}>
               <PlateArt />
             </div>
-            <span className={css.planDoor}>ENTRY</span>
+            <span className={css.planDoor}>{tx("hospitality.heroes.entry")}</span>
           </div>
           <div className={css.tableDocket}>
             <ClipboardList size={19} />
             <div>
-              <span>EXAMPLE TABLE T02</span>
-              <b>4 seats. A party of 4.</b>
+              <span>{tx("hospitality.heroes.exampleTableT02")}</span>
+              <b>{tx("hospitality.heroes.n4SeatsAPartyOf4")}</b>
             </div>
             <small>
-              A seat comparison,
+              {tx("hospitality.heroes.aSeatComparison")}
               <br />
-              not a reservation.
+              {tx("hospitality.heroes.notAReservation")}
             </small>
           </div>
-          <HandNote>A little room for better service.</HandNote>
+          <HandNote>{tx("hospitality.heroes.aLittleRoomForBetterService")}</HandNote>
           <figcaption>
-            Concept floor plan · fictional table states and seat counts
+            {tx("hospitality.heroes.conceptFloorPlanFictionalTableStates")}
           </figcaption>
         </figure>
       </div>
@@ -111,63 +114,63 @@ function RestaurantHero() {
   );
 }
 function FastFoodHero() {
-  const counts = ticketCounts(tickets.map((t) => t.stage));
+  const tx = useTranslations("pages.industriesApp");
+  const counts = ticketCounts(tickets(tx).map((t) => t.stage));
   return (
     <section className={css.fastHero}>
       <div className={css.wrap}>
         <div className={css.fastHeading}>
-          <Badge>THE KITCHEN PASS / CONCEPT 01</Badge>
+          <Badge>{tx("hospitality.heroes.theKitchenPassConcept01")}</Badge>
           <Copy slug="fast-food" />
           <Actions />
         </div>
         <figure className={css.kitchenPass}>
           <div className={css.heroTicket}>
-            <span>EX-K01 / FICTIONAL TICKET</span>
+            <span>{tx("hospitality.heroes.exK01FictionalTicket")}</span>
             <b>
-              The order,
+              {tx("hospitality.heroes.theOrder")}
               <br />
-              in the picture.
+              {tx("hospitality.heroes.inThePicture")}
             </b>
             <div>
-              <span>1 × house burger</span>
-              <span>1 × potato side</span>
+              <span>{tx("hospitality.heroes.n1HouseBurger")}</span>
+              <span>{tx("hospitality.heroes.n1PotatoSide")}</span>
             </div>
             <footer>
               <i />
-              Queued / local example
+              {tx("hospitality.heroes.queuedLocalExample")}
             </footer>
           </div>
           <div className={css.burgerStudy}>
-            <span>THE HANDOFF, LAYER BY LAYER</span>
+            <span>{tx("hospitality.heroes.theHandoffLayerByLayer")}</span>
             <BurgerArt />
-            <small>Concept food illustration</small>
+            <small>{tx("hospitality.heroes.conceptFoodIllustration")}</small>
           </div>
           <div className={css.passNote}>
-            <span>ONE EXAMPLE PROCESS</span>
+            <span>{tx("hospitality.heroes.oneExampleProcess")}</span>
             <h3>
-              A visible stage.
-              <br />A clearer next step.
+              {tx("hospitality.heroes.aVisibleStage")}
+              <br />{tx("hospitality.heroes.aClearerNextStep")}
             </h3>
             <ol>
               {ticketStages.map((stage, i) => (
                 <li key={stage}>
                   <span>0{i + 1}</span>
-                  {ticketLabels[stage]}
-                  <small>{counts[stage]} example ticket</small>
+                  {ticketLabels(tx)[stage]}
+                  <small>{counts[stage]}{" "}{tx("hospitality.heroes.exampleTicket")}</small>
                 </li>
               ))}
             </ol>
           </div>
           <div className={css.passRail}>
-            <span>TAKE THE ORDER</span>
+            <span>{tx("hospitality.heroes.takeTheOrder")}</span>
             <ArrowRight size={15} />
-            <span>PREPARE</span>
+            <span>{tx("hospitality.heroes.prepare")}</span>
             <ArrowRight size={15} />
-            <span>READY FOR HANDOFF</span>
+            <span>{tx("hospitality.heroes.readyForHandoff")}</span>
           </div>
           <figcaption>
-            Fictional kitchen pass · stages change only in the local exercise
-            below
+            {tx("hospitality.heroes.fictionalKitchenPassStagesChangeOnly")}
           </figcaption>
         </figure>
       </div>
@@ -175,6 +178,7 @@ function FastFoodHero() {
   );
 }
 function GuestHouseHero() {
+  const tx = useTranslations("pages.industriesApp");
   const stay = stayEstimate(arrivalDate, departureDate, 4000);
   return (
     <section className={css.guestHero}>
@@ -182,44 +186,43 @@ function GuestHouseHero() {
         <figure className={css.guestJournal}>
           <div className={css.journalPages}>
             <div className={css.journalIllustration}>
-              <span>THE WELCOME JOURNAL</span>
+              <span>{tx("hospitality.heroes.theWelcomeJournal")}</span>
               <DoorArt />
-              <small>A quiet arrival, thoughtfully considered.</small>
+              <small>{tx("hospitality.heroes.aQuietArrivalThoughtfullyConsidered")}</small>
             </div>
             <div className={css.journalEntry}>
-              <span>EX-STAY-01 / FICTIONAL</span>
+              <span>{tx("hospitality.heroes.exStay01Fictional")}</span>
               <h3>
-                A few days.
-                <br />A little clarity.
+                {tx("hospitality.heroes.aFewDays")}
+                <br />{tx("hospitality.heroes.aLittleClarity")}
               </h3>
               <div>
-                <small>ARRIVAL</small>
+                <small>{tx("hospitality.heroes.arrival")}</small>
                 <b>
-                  15 <em>DEC</em>
+                  15 <em>{tx("hospitality.heroes.dec")}</em>
                 </b>
               </div>
               <div>
-                <small>DEPARTURE</small>
+                <small>{tx("hospitality.heroes.departure")}</small>
                 <b>
-                  18 <em>DEC</em>
+                  18 <em>{tx("hospitality.heroes.dec")}</em>
                 </b>
               </div>
               <p>
-                {stay.nights} example nights
+                {stay.nights}{" "}{tx("hospitality.heroes.exampleNights")}
                 <br />
-                <strong>{money(stay.nightly)} / night</strong>
+                <strong>{money(stay.nightly)}{" "}{tx("hospitality.heroes.night")}</strong>
               </p>
             </div>
           </div>
           <div className={css.keyTag}>
             <KeyArt />
-            <span>THE GUEST HOUSE</span>
+            <span>{tx("hospitality.heroes.theGuestHouse")}</span>
             <b>01</b>
-            <small>Concept key tag</small>
+            <small>{tx("hospitality.heroes.conceptKeyTag")}</small>
           </div>
           <figcaption>
-            Illustrative stay journal · dates and rates are fictional, not an
-            availability check
+            {tx("hospitality.heroes.illustrativeStayJournalDatesAndRates")}
           </figcaption>
         </figure>
         <div>
@@ -227,7 +230,7 @@ function GuestHouseHero() {
           <Actions />
           <p className={css.guestFoot}>
             <DoorOpen size={16} />
-            Arrival. Stay. A considered departure.
+            {tx("hospitality.heroes.arrivalStayAConsideredDeparture")}
           </p>
         </div>
       </div>
@@ -235,6 +238,7 @@ function GuestHouseHero() {
   );
 }
 function BeverageHero() {
+  const tx = useTranslations("pages.industriesApp");
   const load = cartonLoad(drinks, 600);
   return (
     <section className={css.beverageHero}>
@@ -246,41 +250,40 @@ function BeverageHero() {
         <figure className={css.distributionMap}>
           <div className={css.depotNode}>
             <Warehouse size={28} />
-            <span>01 / THE DEPOT</span>
-            <b>The stock context</b>
-            <small>Item → carton → units</small>
+            <span>{tx("hospitality.heroes.n01TheDepot")}</span>
+            <b>{tx("hospitality.heroes.theStockContext")}</b>
+            <small>{tx("hospitality.heroes.itemCartonUnits")}</small>
           </div>
           <div className={css.routeLine} />
           <div className={css.crateStudy}>
-            <span>EX-LOAD-01 / FICTIONAL COUNT</span>
+            <span>{tx("hospitality.heroes.exLoad01FictionalCount")}</span>
             <BottleArt />
             <div>
               <b>
                 {num(load.cartons)}
-                <small>cartons</small>
+                <small>{tx("hospitality.heroes.cartons")}</small>
               </b>
               <span>=</span>
               <b>
                 {num(load.units)}
-                <small>individual units</small>
+                <small>{tx("hospitality.heroes.individualUnits")}</small>
               </b>
             </div>
           </div>
           <div className={css.routeLine} />
           <div className={css.outletNode}>
             <Building2 size={28} />
-            <span>02 / THE OUTLET</span>
-            <b>The next handoff</b>
-            <small>Trip and stock records</small>
+            <span>{tx("hospitality.heroes.n02TheOutlet")}</span>
+            <b>{tx("hospitality.heroes.theNextHandoff")}</b>
+            <small>{tx("hospitality.heroes.tripAndStockRecords")}</small>
           </div>
           <div className={css.dispatchLabel}>
             <MapPin size={14} />
-            <span>DEPOT → OUTLET / CONCEPTUAL FLOW</span>
-            <small>Count arithmetic only</small>
+            <span>{tx("hospitality.heroes.depotOutletConceptualFlow")}</span>
+            <small>{tx("hospitality.heroes.countArithmeticOnly")}</small>
           </div>
           <figcaption>
-            Fictional distribution story · no vehicle, route or dispatch is
-            assigned
+            {tx("hospitality.heroes.fictionalDistributionStoryNoVehicleRoute")}
           </figcaption>
         </figure>
       </div>
@@ -288,6 +291,7 @@ function BeverageHero() {
   );
 }
 function HotelHero() {
+  const tx = useTranslations("pages.industriesApp");
   const snapshot = hotelSnapshot(rooms);
   return (
     <section className={css.hotelHero}>
@@ -297,60 +301,60 @@ function HotelHero() {
             <Copy slug="hotel" />
             <Actions />
             <div className={css.propertySignature}>
-              <span>THE ROOM</span>
+              <span>{tx("hospitality.heroes.theRoom")}</span>
               <i />
-              <span>THE FLOOR</span>
+              <span>{tx("hospitality.heroes.theFloor")}</span>
               <i />
-              <span>THE WHOLE PICTURE</span>
+              <span>{tx("hospitality.heroes.theWholePicture")}</span>
             </div>
           </div>
           <figure className={css.propertyStudy}>
             <div className={css.facadeRoof}>
               <Building2 size={21} />
-              <span>A SMALL PROPERTY / CONCEPT STUDY</span>
+              <span>{tx("hospitality.heroes.aSmallPropertyConceptStudy")}</span>
             </div>
             <div className={css.facadeRooms}>
               {rooms.map((room) => (
                 <div key={room.id} data-state={room.state}>
-                  <span>ROOM {room.id}</span>
+                  <span>{tx("hospitality.heroes.room")}{" "}{room.id}</span>
                   <i />
-                  <small>{roomLabels[room.state]}</small>
+                  <small>{roomLabels(tx)[room.state]}</small>
                 </div>
               ))}
             </div>
             <div className={css.facadeEntrance}>
-              <span>ARRIVAL & RECEPTION</span>
+              <span>{tx("hospitality.heroes.arrivalReception")}</span>
               <div />
             </div>
             <div className={css.serviceMemo}>
-              <span>THE SERVICE NOTE</span>
+              <span>{tx("hospitality.heroes.theServiceNote")}</span>
               <b>
-                Every room state
+                {tx("hospitality.heroes.everyRoomState")}
                 <br />
-                adds context.
+                {tx("hospitality.heroes.addsContext")}
               </b>
-              <small>Room 103 / service in this example</small>
+              <small>{tx("hospitality.heroes.room103ServiceInThisExample")}</small>
             </div>
             <figcaption>
-              Concept facade · six fictional rooms and local example states
+              {tx("hospitality.heroes.conceptFacadeSixFictionalRoomsAnd")}
             </figcaption>
           </figure>
         </div>
         <dl className={css.propertyRibbon}>
           <div>
-            <dt>Fictional rooms</dt>
+            <dt>{tx("hospitality.heroes.fictionalRooms")}</dt>
             <dd>{rooms.length}</dd>
           </div>
           <div>
-            <dt>Occupied in the example</dt>
+            <dt>{tx("hospitality.heroes.occupiedInTheExample")}</dt>
             <dd>{snapshot.occupied}</dd>
           </div>
           <div>
-            <dt>Ready + occupied denominator</dt>
+            <dt>{tx("hospitality.heroes.readyOccupiedDenominator")}</dt>
             <dd>{snapshot.denominator}</dd>
           </div>
           <div>
-            <dt>Illustrative occupancy</dt>
+            <dt>{tx("hospitality.heroes.illustrativeOccupancy")}</dt>
             <dd>{snapshot.occupancy?.toFixed(0)}%</dd>
           </div>
         </dl>

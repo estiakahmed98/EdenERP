@@ -16,8 +16,10 @@ import {
 import { Link } from "@/i18n/navigation";
 import { pages, type CommunitySlug } from "./data";
 import { Actions, DialogueArt, GuideArt, HandNote, base, css } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: CommunitySlug }) {
-  const p = pages[slug];
+  const tx = useTranslations("pages.communityApp");
+  const p = pages(tx)[slug];
   return (
     <>
       <p className={base.eyebrow}>{p.eyebrow}</p>
@@ -31,6 +33,7 @@ function Copy({ slug }: { slug: CommunitySlug }) {
   );
 }
 function HomeHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.homeHero}>
       <div className={`${base.wrap} ${css.homeLayout}`}>
@@ -41,31 +44,31 @@ function HomeHero() {
         <div className={css.communityMap}>
           <Link href="/community/learn/tutorials">
             <BookOpen size={26} />
-            <span>01 / LEARN</span>
+            <span>{tx("heroes.n01Learn")}</span>
             <b>
-              Find your
+              {tx("heroes.findYour")}
               <br />
-              next question.
+              {tx("heroes.nextQuestion")}
             </b>
             <ArrowRight size={17} />
           </Link>
           <Link href="/community/get-services/support">
             <LifeBuoy size={26} />
-            <span>02 / GET HELP</span>
+            <span>{tx("heroes.n02GetHelp")}</span>
             <b>
-              A clearer
+              {tx("heroes.aClearer")}
               <br />
-              route forward.
+              {tx("heroes.routeForward")}
             </b>
             <ArrowRight size={17} />
           </Link>
           <Link href="/community/collaborate/become-a-partner">
             <Handshake size={26} />
-            <span>03 / COLLABORATE</span>
+            <span>{tx("heroes.n03Collaborate")}</span>
             <b>
-              Bring your
+              {tx("heroes.bringYour")}
               <br />
-              perspective.
+              {tx("heroes.perspective")}
             </b>
             <ArrowRight size={17} />
           </Link>
@@ -75,6 +78,7 @@ function HomeHero() {
   );
 }
 function TutorialsHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.tutorialHero}>
       <div className={`${base.wrap} ${css.split}`}>
@@ -83,18 +87,18 @@ function TutorialsHero() {
           <Actions />
         </div>
         <figure className={css.walkthroughStudy}>
-          <span>THE WRITTEN WALKTHROUGH</span>
+          <span>{tx("heroes.theWrittenWalkthrough")}</span>
           <GuideArt />
           <div className={css.guideStrip}>
-            <span>OBSERVE</span>
+            <span>{tx("heroes.observe")}</span>
             <ArrowRight size={14} />
-            <span>EXPLORE</span>
+            <span>{tx("heroes.explore")}</span>
             <ArrowRight size={14} />
-            <span>ASK</span>
+            <span>{tx("heroes.ask")}</span>
           </div>
-          <HandNote>A useful place to begin.</HandNote>
+          <HandNote>{tx("heroes.aUsefulPlaceToBegin")}</HandNote>
           <figcaption>
-            Concept reading path · explore the written guides below
+            {tx("heroes.conceptReadingPathExploreTheWritten")}
           </figcaption>
         </figure>
       </div>
@@ -102,20 +106,21 @@ function TutorialsHero() {
   );
 }
 function DocsHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.docsHero}>
       <div className={`${base.wrap} ${css.reverseSplit}`}>
         <figure className={css.referenceSpread}>
           <header>
             <FileText size={21} />
-            <span>THE PRODUCT-GUIDE INDEX</span>
+            <span>{tx("heroes.theProductGuideIndex")}</span>
           </header>
           <ol>
             {[
-              "Find the product context",
-              "Read the example labels",
-              "Prepare your questions",
-              "Choose the next conversation",
+              tx("heroes.findTheProductContext"),
+              tx("heroes.readTheExampleLabels"),
+              tx("heroes.prepareYourQuestions"),
+              tx("heroes.chooseTheNextConversation"),
             ].map((t, i) => (
               <li key={t}>
                 <span>0{i + 1}</span>
@@ -124,7 +129,7 @@ function DocsHero() {
             ))}
           </ol>
           <figcaption>
-            Reference notes for exploring public product presentations
+            {tx("heroes.referenceNotesForExploringPublicProduct")}
           </figcaption>
         </figure>
         <div>
@@ -136,6 +141,7 @@ function DocsHero() {
   );
 }
 function TrainingHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.trainingHero}>
       <div className={base.wrap}>
@@ -147,30 +153,29 @@ function TrainingHero() {
           {[
             {
               icon: Users,
-              title: "Your role",
-              body: "Start with the work you do.",
+              title: tx("heroes.yourRole"),
+              body: tx("heroes.startWithTheWorkYouDo"),
             },
             {
               icon: GraduationCap,
-              title: "Your topics",
-              body: "Choose the detail worth exploring.",
+              title: tx("heroes.yourTopics"),
+              body: tx("heroes.chooseTheDetailWorthExploring"),
             },
             {
               icon: MessagesSquare,
-              title: "Your conversation",
-              body: "Bring the questions together.",
+              title: tx("heroes.yourConversation"),
+              body: tx("heroes.bringTheQuestionsTogether"),
             },
           ].map(({ icon: Icon, title, body }, i) => (
             <div key={title}>
               <Icon size={25} />
-              <span>0{i + 1} / THE LEARNING AGENDA</span>
+              <span>0{i + 1}{" "}{tx("heroes.theLearningAgenda")}</span>
               <b>{title}</b>
               <small>{body}</small>
             </div>
           ))}
           <figcaption>
-            A local exploration plan, separate from enrolment or course
-            completion
+            {tx("heroes.aLocalExplorationPlanSeparateFrom")}
           </figcaption>
         </figure>
       </div>
@@ -178,6 +183,7 @@ function TrainingHero() {
   );
 }
 function BlogHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.blogHero}>
       <div className={base.wrap}>
@@ -188,17 +194,17 @@ function BlogHero() {
           </div>
           <figure className={css.journalCover}>
             <PenLine size={24} />
-            <span>Adon ERP / THE JOURNAL</span>
+            <span>{tx("heroes.adonErpTheJournal")}</span>
             <b>
-              Notes
+              {tx("heroes.notes")}
               <br />
-              from the
+              {tx("heroes.fromThe")}
               <br />
-              <em>work.</em>
+              <em>{tx("heroes.work")}</em>
             </b>
             <div />
-            <small>Articles from the public blog service.</small>
-            <figcaption>Editorial cover illustration</figcaption>
+            <small>{tx("heroes.articlesFromThePublicBlogService")}</small>
+            <figcaption>{tx("heroes.editorialCoverIllustration")}</figcaption>
           </figure>
         </div>
       </div>
@@ -206,6 +212,7 @@ function BlogHero() {
   );
 }
 function AdvisorHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.advisorHero}>
       <div className={`${base.wrap} ${css.split}`}>
@@ -216,15 +223,15 @@ function AdvisorHero() {
         <figure className={css.advisorStudy}>
           <DialogueArt />
           <div className={css.conversationNote}>
-            <span>THE CONVERSATION BRIEF</span>
+            <span>{tx("heroes.theConversationBrief")}</span>
             <b>
-              Your process is
-              <br />a good starting point.
+              {tx("heroes.yourProcessIs")}
+              <br />{tx("heroes.aGoodStartingPoint")}
             </b>
-            <small>Prepare notes below, then request a walkthrough.</small>
+            <small>{tx("heroes.prepareNotesBelowThenRequestA")}</small>
           </div>
           <figcaption>
-            Concept conversation notes · not a confirmed meeting
+            {tx("heroes.conceptConversationNotesNotAConfirmed")}
           </figcaption>
         </figure>
       </div>
@@ -232,30 +239,31 @@ function AdvisorHero() {
   );
 }
 function SupportHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.supportHero}>
       <div className={`${base.wrap} ${css.reverseSplit}`}>
         <figure className={css.helpCompass}>
           <div className={css.helpHub}>
             <LifeBuoy size={47} />
-            <b>A useful next step.</b>
+            <b>{tx("heroes.aUsefulNextStep")}</b>
           </div>
           <Link href="/community/learn/documentation">
             <FileText size={18} />
-            Read a guide
+            {tx("heroes.readAGuide")}
             <ArrowRight size={14} />
           </Link>
           <Link href="/community/get-services/meet-advisor">
             <MessagesSquare size={18} />
-            Prepare a conversation
+            {tx("heroes.prepareAConversation")}
             <ArrowRight size={14} />
           </Link>
           <Link href="/contact">
             <CompassMark />
-            Find contact routes
+            {tx("heroes.findContactRoutes")}
             <ArrowRight size={14} />
           </Link>
-          <figcaption>Existing help destinations, kept in one place</figcaption>
+          <figcaption>{tx("heroes.existingHelpDestinationsKeptInOne")}</figcaption>
         </figure>
         <div>
           <Copy slug="support" />
@@ -269,6 +277,7 @@ function CompassMark() {
   return <Route size={18} aria-hidden="true" />;
 }
 function StoriesHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.storiesHero}>
       <div className={base.wrap}>
@@ -277,9 +286,9 @@ function StoriesHero() {
           <Actions />
         </div>
         <figure className={css.storyboard}>
-          {["The context", "The workflow", "The questions"].map((title, i) => (
+          {[tx("heroes.theContext"), tx("heroes.theWorkflow"), tx("heroes.theQuestions")].map((title, i) => (
             <div key={title}>
-              <span>0{i + 1} / THE STORY NOTES</span>
+              <span>0{i + 1}{" "}{tx("heroes.theStoryNotes")}</span>
               <b>{title}</b>
               <i />
               <small>
@@ -294,8 +303,7 @@ function StoriesHero() {
             </div>
           ))}
           <figcaption>
-            Illustrative story structure · no customer endorsement or measured
-            result is claimed
+            {tx("heroes.illustrativeStoryStructureNoCustomerEndo")}
           </figcaption>
         </figure>
       </div>
@@ -303,6 +311,7 @@ function StoriesHero() {
   );
 }
 function ForumHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.forumHero}>
       <div className={`${base.wrap} ${css.split}`}>
@@ -313,24 +322,24 @@ function ForumHero() {
         <figure className={css.discussionStack}>
           <div>
             <MessagesSquare size={22} />
-            <span>THE QUESTION NOTE</span>
+            <span>{tx("heroes.theQuestionNote")}</span>
             <b>
-              What are you
+              {tx("heroes.whatAreYou")}
               <br />
-              trying to understand?
+              {tx("heroes.tryingToUnderstand")}
             </b>
           </div>
           <div>
             <ArrowRight size={20} />
-            <span>THE CONTEXT NOTE</span>
+            <span>{tx("heroes.theContextNote")}</span>
             <b>
-              Start with the workflow.
+              {tx("heroes.startWithTheWorkflow")}
               <br />
-              Then add the detail.
+              {tx("heroes.thenAddTheDetail")}
             </b>
           </div>
           <figcaption>
-            Authored discussion prompts · not live forum posts
+            {tx("heroes.authoredDiscussionPromptsNotLiveForum")}
           </figcaption>
         </figure>
       </div>
@@ -338,6 +347,7 @@ function ForumHero() {
   );
 }
 function EventsHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.eventsHero}>
       <div className={`${base.wrap} ${css.eventsLayout}`}>
@@ -348,17 +358,17 @@ function EventsHero() {
         <figure className={css.agendaStudy}>
           <header>
             <CalendarDays size={23} />
-            <span>YOUR TEAM’S AGENDA NOTES</span>
+            <span>{tx("heroes.yourTeamSAgendaNotes")}</span>
           </header>
           <h3>
-            A little time.
-            <br />A few good topics.
+            {tx("heroes.aLittleTime")}
+            <br />{tx("heroes.aFewGoodTopics")}
           </h3>
           <ol>
             {[
-              "Choose the focus",
-              "Gather the questions",
-              "Discuss the next step",
+              tx("heroes.chooseTheFocus"),
+              tx("heroes.gatherTheQuestions"),
+              tx("heroes.discussTheNextStep"),
             ].map((t, i) => (
               <li key={t}>
                 <span>0{i + 1}</span>
@@ -367,8 +377,7 @@ function EventsHero() {
             ))}
           </ol>
           <figcaption>
-            Personal agenda concept · no public event or registration is
-            represented
+            {tx("heroes.personalAgendaConceptNoPublicEvent")}
           </figcaption>
         </figure>
       </div>
@@ -376,6 +385,7 @@ function EventsHero() {
   );
 }
 function TranslationsHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.translationsHero}>
       <div className={base.wrap}>
@@ -386,33 +396,32 @@ function TranslationsHero() {
         <figure className={css.languageSpread}>
           <div>
             <Languages size={29} />
-            <span>THE SOURCE</span>
+            <span>{tx("heroes.theSource")}</span>
             <b>
-              Words with
+              {tx("heroes.wordsWith")}
               <br />
-              their context.
+              {tx("heroes.theirContext")}
             </b>
           </div>
           <div>
             <Globe2 size={29} />
-            <span>THE LOCAL WORDING</span>
+            <span>{tx("heroes.theLocalWording")}</span>
             <b>
-              A draft worth
+              {tx("heroes.aDraftWorth")}
               <br />
-              reviewing.
+              {tx("heroes.reviewing")}
             </b>
           </div>
           <div>
             <FileText size={29} />
-            <span>THE REVIEW ARTIFACT</span>
+            <span>{tx("heroes.theReviewArtifact")}</span>
             <b>
-              One label.
-              <br />A clear handoff.
+              {tx("heroes.oneLabel")}
+              <br />{tx("heroes.aClearHandoff")}
             </b>
           </div>
           <figcaption>
-            A translation-review concept · no contribution is automatically
-            published
+            {tx("heroes.aTranslationReviewConceptNoContribution")}
           </figcaption>
         </figure>
       </div>
@@ -420,35 +429,35 @@ function TranslationsHero() {
   );
 }
 function PartnerHero() {
+  const tx = useTranslations("pages.communityApp");
   return (
     <section className={css.partnerHero}>
       <div className={`${base.wrap} ${css.reverseSplit}`}>
         <figure className={css.collaborationBridge}>
           <div>
             <Users size={29} />
-            <span>YOUR PRACTICE</span>
+            <span>{tx("heroes.yourPractice")}</span>
             <b>
-              Skills.
+              {tx("heroes.skills")}
               <br />
-              Experience.
+              {tx("heroes.experience")}
               <br />
-              Perspective.
+              {tx("heroes.perspective2")}
             </b>
           </div>
           <Handshake size={42} />
           <div>
             <MessagesSquare size={29} />
-            <span>THE CONVERSATION</span>
+            <span>{tx("heroes.theConversation")}</span>
             <b>
-              Questions.
+              {tx("heroes.questions")}
               <br />
-              Context.
-              <br />A next step.
+              {tx("heroes.context")}
+              <br />{tx("heroes.aNextStep")}
             </b>
           </div>
           <figcaption>
-            Collaboration concept · no partner status or programme tier is
-            implied
+            {tx("heroes.collaborationConceptNoPartnerStatusOr")}
           </figcaption>
         </figure>
         <div>

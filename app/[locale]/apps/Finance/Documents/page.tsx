@@ -91,12 +91,13 @@ function DocumentDashboard({
   t: (key: string) => string;
   raw: (key: string) => unknown;
 }) {
-  const fallbackFolders = ["Inbox", "Contracts", "Invoices", "HR Files", "Shared", "Archive"];
+  const tx = useTranslations("pages.appPages.documents");
+  const fallbackFolders = [tx("page.inbox"), tx("page.contracts"), tx("page.invoices"), tx("page.hrFiles"), tx("page.shared"), tx("page.archive")];
   const fallbackDocuments = [
-    { title: "Client contract", status: "Ready for signature", color: "orange" },
-    { title: "Supplier invoice", status: "Auto-classified", color: "emerald" },
-    { title: "HR onboarding", status: "Needs approval", color: "cyan" },
-    { title: "Project brief", status: "Shared with team", color: "violet" },
+    { title: tx("page.clientContract"), status: tx("page.readyForSignature"), color: "orange" },
+    { title: tx("page.supplierInvoice"), status: tx("page.autoClassified"), color: "emerald" },
+    { title: tx("page.hrOnboarding"), status: tx("page.needsApproval"), color: "cyan" },
+    { title: tx("page.projectBrief"), status: tx("page.sharedWithTeam"), color: "violet" },
   ];
   const foldersData = raw("hero.dashboard.folders");
   const documentsData = raw("hero.dashboard.documents");
@@ -200,6 +201,7 @@ function DocumentDashboard({
 }
 
 export default function DocumentsPage() {
+  const tx = useTranslations("pages.appPages.documents");
   const t = useTranslations("pages");
   const commonT = useTranslations("common.actions");
   const tr = (key: string) => t(`documents.${key}`);
@@ -212,53 +214,53 @@ export default function DocumentsPage() {
   };
 
   const fallbackFeaturesList = [
-    { title: "Split PDFs", description: "Separate contracts, invoices, and forms into clean documents in seconds.", icon: "File" },
-    { title: "Auto folder rules", description: "Route files to the right workspace using tags, clients, projects, and teams.", icon: "FolderKanban" },
-    { title: "Smart search", description: "Find any document by title, content, owner, client, or approval status.", icon: "Search" },
-    { title: "Secure sharing", description: "Share files with role-based permissions, expiry links, and audit trails.", icon: "Lock" },
-    { title: "E-sign workflows", description: "Send, sign, approve, and archive documents without leaving Adon ERP.", icon: "FileSignature" },
-    { title: "Activity insights", description: "Track views, approvals, comments, and document performance in one place.", icon: "BarChart3" },
+    { title: tx("page.splitPdfs"), description: tx("page.separateContractsInvoicesAndFormsInto"), icon: "File" },
+    { title: tx("page.autoFolderRules"), description: tx("page.routeFilesToTheRightWorkspace"), icon: "FolderKanban" },
+    { title: tx("page.smartSearch"), description: tx("page.findAnyDocumentByTitleContent"), icon: "Search" },
+    { title: tx("page.secureSharing"), description: tx("page.shareFilesWithRoleBasedPermissions"), icon: "Lock" },
+    { title: tx("page.eSignWorkflows"), description: tx("page.sendSignApproveAndArchiveDocuments"), icon: "FileSignature" },
+    { title: tx("page.activityInsights"), description: tx("page.trackViewsApprovalsCommentsAndDocument"), icon: "BarChart3" },
   ];
   const fallbackAppsList = [
-    { title: "CRM", description: "Client files and proposals", icon: "Users" },
-    { title: "Projects", description: "Tasks, briefs, and docs", icon: "Grid3X3" },
-    { title: "Accounting", description: "Bills and statements", icon: "FileCheck2" },
-    { title: "HR", description: "Employee documents", icon: "BadgeCheck" },
-    { title: "Helpdesk", description: "Tickets and attachments", icon: "MessageSquare" },
-    { title: "Approvals", description: "Review and sign-off flows", icon: "ShieldCheck" },
+    { title: "CRM", description: tx("page.clientFilesAndProposals"), icon: "Users" },
+    { title: tx("page.projects"), description: tx("page.tasksBriefsAndDocs"), icon: "Grid3X3" },
+    { title: tx("page.accounting"), description: tx("page.billsAndStatements"), icon: "FileCheck2" },
+    { title: "HR", description: tx("page.employeeDocuments"), icon: "BadgeCheck" },
+    { title: tx("page.helpdesk"), description: tx("page.ticketsAndAttachments"), icon: "MessageSquare" },
+    { title: tx("page.approvals"), description: tx("page.reviewAndSignOffFlows"), icon: "ShieldCheck" },
   ];
   const fallbackDocumentTypesList = [
-    { title: "Email", icon: "Mail" },
-    { title: "Scan", icon: "UploadCloud" },
-    { title: "Files", icon: "File" },
+    { title: tx("page.email"), icon: "Mail" },
+    { title: tx("page.scan"), icon: "UploadCloud" },
+    { title: tx("page.files"), icon: "File" },
   ];
   const fallbackMetricsList = [
-    { label: "Manual file sorting", saved: "42h saved/month", percentage: 75 },
-    { label: "Signature follow-up", saved: "18h saved/month", percentage: 65 },
-    { label: "Approval tracking", saved: "31h saved/month", percentage: 70 },
-    { label: "Searching documents", saved: "24h saved/month", percentage: 60 },
+    { label: tx("page.manualFileSorting"), saved: tx("page.n42hSavedMonth"), percentage: 75 },
+    { label: tx("page.signatureFollowUp"), saved: tx("page.n18hSavedMonth"), percentage: 65 },
+    { label: tx("page.approvalTracking"), saved: tx("page.n31hSavedMonth"), percentage: 70 },
+    { label: tx("page.searchingDocuments"), saved: tx("page.n24hSavedMonth"), percentage: 60 },
   ];
   const fallbackStepsList = [
-    "Upload or scan a document",
-    "Adon ERP identifies the type and owner",
-    "The file is routed to the right workflow",
-    "Approvals, signatures, and archive rules run automatically",
+    tx("page.uploadOrScanADocument"),
+    tx("page.adonErpIdentifiesTheTypeAnd"),
+    tx("page.theFileIsRoutedToThe"),
+    tx("page.approvalsSignaturesAndArchiveRulesRun"),
   ];
-  const fallbackCollaborationFeaturesList = ["Comments", "Approvals", "Mentions", "Access control"];
-  const fallbackOrganizationColumnsList = ["Inbox", "In Review", "Waiting Signature", "Approved"];
-  const fallbackOrganizationCardsList = ["Invoice", "Proposal", "Agreement"];
+  const fallbackCollaborationFeaturesList = [tx("page.comments"), tx("page.approvals"), tx("page.mentions"), tx("page.accessControl")];
+  const fallbackOrganizationColumnsList = [tx("page.inbox"), tx("page.inReview"), tx("page.waitingSignature"), tx("page.approved")];
+  const fallbackOrganizationCardsList = [tx("page.invoice"), tx("page.proposal"), tx("page.agreement")];
   const fallbackSigningFeaturesList = [
-    "Send signature requests in one click",
-    "Track signed, pending, and expired documents",
-    "Automatically archive completed files",
+    tx("page.sendSignatureRequestsInOneClick"),
+    tx("page.trackSignedPendingAndExpiredDocuments"),
+    tx("page.automaticallyArchiveCompletedFiles"),
   ];
-  const fallbackLeftItemsList = ["Payment slip", "Contract file"];
-  const fallbackInboxItemsList = ["Invoice", "Agreement", "Receipt", "Approval note"];
-  const fallbackRightItemsList = ["Client doc", "Signed certificate"];
+  const fallbackLeftItemsList = [tx("page.paymentSlip"), tx("page.contractFile")];
+  const fallbackInboxItemsList = [tx("page.invoice"), tx("page.agreement"), tx("page.receipt"), tx("page.approvalNote")];
+  const fallbackRightItemsList = [tx("page.clientDoc"), tx("page.signedCertificate")];
   const fallbackCommentsList = [
-    { name: "Sarah", text: "Approved the final terms" },
-    { name: "Nadim", text: "Added missing client attachment" },
-    { name: "Emma", text: "Requested signature from client" },
+    { name: "Sarah", text: tx("page.approvedTheFinalTerms") },
+    { name: "Nadim", text: tx("page.addedMissingClientAttachment") },
+    { name: "Emma", text: tx("page.requestedSignatureFromClient") },
   ];
 
   const featuresData = raw("featuresSection.list");
@@ -399,7 +401,7 @@ export default function DocumentsPage() {
                   className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
                   <p className="font-semibold text-slate-900 dark:text-slate-100">{item}</p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Captured from email</p>
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{tx("page.capturedFromEmail")}</p>
                 </div>
               ))}
             </div>
@@ -407,7 +409,7 @@ export default function DocumentsPage() {
             <div className="rounded-[1.7rem] bg-slate-50 dark:bg-slate-800/40 p-4">
               <div className="mx-auto max-w-xs rounded-2xl bg-white dark:bg-slate-900 p-4 shadow-sm">
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">Document inbox</span>
+                  <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">{tx("page.documentInbox")}</span>
                   <Inbox className="h-4 w-4 text-orange-500 dark:text-orange-400" />
                 </div>
                 <div className="space-y-3">
@@ -430,7 +432,7 @@ export default function DocumentsPage() {
                   className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-4 text-left"
                 >
                   <p className="font-semibold text-slate-900 dark:text-slate-100">{item}</p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Ready to archive</p>
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{tx("page.readyToArchive")}</p>
                 </div>
               ))}
             </div>
@@ -454,7 +456,7 @@ export default function DocumentsPage() {
                 </div>
               </div>
               <button className="mt-4 w-full rounded-xl btn-gradient py-3 text-sm font-semibold text-white transition">
-                Sign & Send
+                {tx("page.signSend")}
               </button>
             </div>
           </div>
@@ -522,7 +524,7 @@ export default function DocumentsPage() {
                       className="rounded-xl bg-white dark:bg-slate-900 p-3 text-left shadow-sm"
                     >
                       <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">{card}</p>
-                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">Client workspace</p>
+                      <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{tx("page.clientWorkspace")}</p>
                     </div>
                   ))}
                 </div>
@@ -636,7 +638,7 @@ export default function DocumentsPage() {
 
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-sm sm:col-span-2">
               <p className="mb-4 font-semibold text-slate-900 dark:text-slate-100">
-                How does document automation work?
+                {tx("page.howDoesDocumentAutomationWork")}
               </p>
 
               <div className="space-y-3">

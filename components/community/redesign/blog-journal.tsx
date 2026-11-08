@@ -9,8 +9,10 @@ import {
 } from "lucide-react";
 import { articleText, parseJournal } from "./logic";
 import { base, css } from "./ui";
+import { useTranslations } from "next-intl";
 type Journal = ReturnType<typeof parseJournal>;
 export default function BlogJournal() {
+  const t = useTranslations("pages.communityApp");
   const [draft, setDraft] = useState(""),
     [query, setQuery] = useState(""),
     [page, setPage] = useState(1),
@@ -61,33 +63,32 @@ export default function BlogJournal() {
     <div className={css.journalLibrary} aria-busy={state === "loading"}>
       <form className={css.journalSearch} onSubmit={search}>
         <label className={base.field}>
-          <span>Search article titles, summaries and authors</span>
+          <span>{t("blog-journal.searchArticleTitlesSummariesAndAuthors")}</span>
           <input
             type="search"
             maxLength={100}
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
-            placeholder="Find a journal article…"
+            placeholder={t("blog-journal.findAJournalArticle")}
           />
         </label>
         <button type="submit" className={css.actionButton}>
           <Search size={15} aria-hidden="true" />
-          Search journal
+          {t("blog-journal.searchJournal")}
         </button>
       </form>
       {state === "loading" && (
         <div className={css.journalState} role="status">
           <RefreshCw size={22} aria-hidden="true" />
-          <h3>Loading the journal…</h3>
-          <p>Reading the existing public article service.</p>
+          <h3>{t("blog-journal.loadingTheJournal")}</h3>
+          <p>{t("blog-journal.readingTheExistingPublicArticleService")}</p>
         </div>
       )}
       {state === "error" && (
         <div className={css.journalState} role="alert">
-          <h3>The journal is unavailable right now.</h3>
+          <h3>{t("blog-journal.theJournalIsUnavailableRightNow")}</h3>
           <p>
-            The existing article service could not be loaded. No sample articles
-            have been substituted.
+            {t("blog-journal.theExistingArticleServiceCouldNot")}
           </p>
           <button
             type="button"
@@ -95,7 +96,7 @@ export default function BlogJournal() {
             onClick={() => setAttempt((n) => n + 1)}
           >
             <RefreshCw size={14} aria-hidden="true" />
-            Try again
+            {t("blog-journal.tryAgain")}
           </button>
         </div>
       )}
@@ -105,13 +106,13 @@ export default function BlogJournal() {
             <div className={css.journalState} role="status">
               <h3>
                 {query
-                  ? "No articles match that search."
-                  : "No articles are available yet."}
+                  ? t("blog-journal.noArticlesMatchThatSearch")
+                  : t("blog-journal.noArticlesAreAvailableYet")}
               </h3>
               <p>
                 {query
-                  ? "Try another title, author or topic."
-                  : "The journal will show posts returned by the public service when they are available."}
+                  ? t("blog-journal.tryAnotherTitleAuthorOrTopic")
+                  : t("blog-journal.theJournalWillShowPostsReturned")}
               </p>
             </div>
           ) : (
@@ -123,7 +124,7 @@ export default function BlogJournal() {
                 return (
                   <article key={post.id} className={css.postCard}>
                     <div className={css.postIndex}>
-                      <span>FROM THE JOURNAL</span>
+                      <span>{t("blog-journal.fromTheJournal")}</span>
                       <b>
                         {String((data.page - 1) * 6 + i + 1).padStart(2, "0")}
                       </b>
@@ -139,7 +140,7 @@ export default function BlogJournal() {
                         }
                       >
                         {Number.isNaN(date.getTime())
-                          ? "Date unavailable"
+                          ? t("blog-journal.dateUnavailable")
                           : date.toLocaleDateString("en-GB", {
                               day: "2-digit",
                               month: "short",
@@ -152,12 +153,12 @@ export default function BlogJournal() {
                     {summary && <p>{summary}</p>}
                     <details className={css.articleDetails}>
                       <summary>
-                        Read article
+                        {t("blog-journal.readArticle")}
                         <ChevronDown size={15} aria-hidden="true" />
                       </summary>
                       <div>
                         {body ||
-                          "No readable article text is included in this record."}
+                          t("blog-journal.noReadableArticleTextIsIncluded")}
                       </div>
                     </details>
                   </article>
@@ -173,11 +174,11 @@ export default function BlogJournal() {
               onClick={() => setPage((n) => Math.max(1, n - 1))}
             >
               <ArrowLeft size={14} aria-hidden="true" />
-              Previous
+              {t("blog-journal.previous")}
             </button>
             <p role="status">
-              {data.total} article{data.total === 1 ? "" : "s"}
-              {data.pages > 0 ? ` · page ${data.page} of ${data.pages}` : ""}
+              {data.total}{" "}{t("blog-journal.article")}{data.total === 1 ? "" : "s"}
+              {data.pages > 0 ? t("blog-journal.pageOf", { page: String(data.page), pages: String(data.pages) }) : ""}
             </p>
             <button
               type="button"
@@ -185,7 +186,7 @@ export default function BlogJournal() {
               disabled={page >= Math.min(data.pages, 1000)}
               onClick={() => setPage((n) => n + 1)}
             >
-              Next
+              {t("blog-journal.next")}
               <ArrowRight size={14} aria-hidden="true" />
             </button>
           </div>

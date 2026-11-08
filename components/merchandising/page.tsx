@@ -8,15 +8,19 @@ import MerchandisingHero from "./heroes";
 import MerchandisingWorkspace from "./workspaces";
 import MerchandisingSnapshot from "./snapshots";
 import { css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 export async function merchandisingMetadata(slug: MerchandisingSlug): Promise<Metadata> {
+  const t = await getTranslations("pages.merchandisingApp");
   return {
-    title: `${pages[slug].title} | Merchandising`,
-    description: pages[slug].description,
+    title: `${pages(t)[slug].title} | Merchandising`,
+    description: pages(t)[slug].description,
     alternates: await getLocaleAlternates(`/apps/merchandising/${slug}`),
   };
 }
 export function MerchandisingPage({ slug }: { slug: MerchandisingSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.merchandisingApp");
+  const p = pages(t)[slug];
   return (
     <main
       className={css.merchandising}
@@ -25,11 +29,11 @@ export function MerchandisingPage({ slug }: { slug: MerchandisingSlug }) {
       data-merchandising-page={slug}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/"> Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={t("page.breadcrumb")}>
+          <Link href="/">{" "}{t("page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <Link href="/apps/merchandising/merchandising-dashboard">
-            Merchandising
+            {t("page.merchandising")}
           </Link>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
@@ -41,8 +45,8 @@ export function MerchandisingPage({ slug }: { slug: MerchandisingSlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>THE WORK, CONNECTED</p>
-              <h2>Keep the next handoff clear.</h2>
+              <p className={css.eyebrow}>{t("page.theWorkConnected")}</p>
+              <h2>{t("page.keepTheNextHandoffClear")}</h2>
             </div>
           </div>
           <ol className={css.workflow}>
@@ -64,19 +68,19 @@ export function MerchandisingPage({ slug }: { slug: MerchandisingSlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>FOLLOW THE ORDER’S STORY</p>
-              <h2>The next detail is connected.</h2>
+              <p className={css.eyebrow}>{t("page.followTheOrderSStory")}</p>
+              <h2>{t("page.theNextDetailIsConnected")}</h2>
             </div>
           </div>
           <div className={css.relatedGrid}>
             {p.related.map((item) => (
               <Link key={item} href={`/apps/merchandising/${item}`}>
-                <span>MERCHANDISING / EXPLORE</span>
+                <span>{t("page.merchandisingExplore")}</span>
                 <h3>
-                  {pages[item].title}
+                  {pages(t)[item].title}
                   <ArrowRight size={18} aria-hidden="true" />
                 </h3>
-                <p>{pages[item].description}</p>
+                <p>{pages(t)[item].description}</p>
               </Link>
             ))}
           </div>
@@ -86,12 +90,11 @@ export function MerchandisingPage({ slug }: { slug: MerchandisingSlug }) {
         <div className={css.wrap}>
           <div>
             <p className={css.eyebrow}>
-              BRING YOUR PROCESS TO THE CONVERSATION
+              {t("page.bringYourProcessToTheConversation")}
             </p>
-            <h2>From a style question to a clearer workflow.</h2>
+            <h2>{t("page.fromAStyleQuestionToA")}</h2>
             <p>
-              Explore your costing, material and order-follow-up questions with
-              an advisor.
+              {t("page.exploreYourCostingMaterialAndOrder")}
             </p>
           </div>
           <LiveDemoButton />

@@ -8,8 +8,10 @@ import {
   type IndustrySlug,
 } from "./data";
 import { Actions, Badge, CoilDrawing, PaddyDrawing, css } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: IndustrySlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <>
       <p className={css.eyebrow}>{p.eyebrow}</p>
@@ -23,6 +25,7 @@ function Copy({ slug }: { slug: IndustrySlug }) {
   );
 }
 function SteelHero() {
+  const t = useTranslations("pages.industriesApp");
   const weight = steelWeight(
     steelExample.gross,
     steelExample.tare,
@@ -39,51 +42,50 @@ function SteelHero() {
           <aside className={css.materialPassport}>
             <header>
               <Layers size={23} />
-              <span>THE MATERIAL PASSPORT</span>
+              <span>{t("manufacturing.heroes.theMaterialPassport")}</span>
             </header>
             <div>
-              <span>Identity</span>
-              <b>Coil / lot reference</b>
+              <span>{t("manufacturing.heroes.identity")}</span>
+              <b>{t("manufacturing.heroes.coilLotReference")}</b>
             </div>
             <div>
-              <span>Process</span>
-              <b>Order + work-centre context</b>
+              <span>{t("manufacturing.heroes.process")}</span>
+              <b>{t("manufacturing.heroes.orderWorkCentreContext")}</b>
             </div>
             <div>
-              <span>Movement</span>
-              <b>Weight + stock handoff</b>
+              <span>{t("manufacturing.heroes.movement")}</span>
+              <b>{t("manufacturing.heroes.weightStockHandoff")}</b>
             </div>
           </aside>
         </div>
         <figure className={css.rollingScene}>
           <header>
-            <span>THE MILL, IN CONTEXT</span>
-            <Badge>Concept illustration · no live machine data</Badge>
+            <span>{t("manufacturing.heroes.theMillInContext")}</span>
+            <Badge>{t("manufacturing.heroes.conceptIllustrationNoLiveMachineData")}</Badge>
           </header>
           <div className={css.rollingArt}>
             <CoilDrawing />
             <div className={css.coilLabel}>
-              <span>EXAMPLE MATERIAL</span>
+              <span>{t("manufacturing.heroes.exampleMaterial")}</span>
               <b>{steelExample.reference}</b>
-              <small>Identity through each handoff</small>
+              <small>{t("manufacturing.heroes.identityThroughEachHandoff")}</small>
             </div>
             <div className={css.netSlip}>
               <Scale size={21} />
-              <span>EXAMPLE NET INTAKE</span>
+              <span>{t("manufacturing.heroes.exampleNetIntake")}</span>
               <b>{kg(weight.net)}</b>
-              <small>Gross less tare · local arithmetic</small>
+              <small>{t("manufacturing.heroes.grossLessTareLocalArithmetic")}</small>
             </div>
           </div>
           <div className={css.steelFlow}>
-            <span>01 / INTAKE</span>
+            <span>{t("manufacturing.heroes.n01Intake")}</span>
             <i />
-            <span>02 / PRODUCTION</span>
+            <span>{t("manufacturing.heroes.n02Production")}</span>
             <i />
-            <span>03 / DISPATCH CONTEXT</span>
+            <span>{t("manufacturing.heroes.n03DispatchContext")}</span>
           </div>
           <figcaption>
-            Conceptual rolling line with illustrative weighment · no production
-            or performance claim
+            {t("manufacturing.heroes.conceptualRollingLineWithIllustrativeWei")}
           </figcaption>
         </figure>
       </div>
@@ -91,6 +93,7 @@ function SteelHero() {
   );
 }
 function RiceHero() {
+  const t = useTranslations("pages.industriesApp");
   const balance = riceMassBalance(riceExample.input, riceExample);
   return (
     <section className={css.riceHero}>
@@ -100,11 +103,11 @@ function RiceHero() {
           <div className={css.paddySheet}>
             <header>
               <Wheat size={19} />
-              <span>THE LOT, THROUGH THE MILL</span>
+              <span>{t("manufacturing.heroes.theLotThroughTheMill")}</span>
             </header>
             <PaddyDrawing />
             <div className={css.lotReference}>
-              <span>ILLUSTRATIVE INPUT LOT</span>
+              <span>{t("manufacturing.heroes.illustrativeInputLot")}</span>
               <b>{riceExample.reference}</b>
               <strong>{kg(riceExample.input)}</strong>
             </div>
@@ -112,27 +115,27 @@ function RiceHero() {
           <div className={css.outputTickets}>
             <div>
               <Box size={18} />
-              <span>Head rice</span>
+              <span>{t("manufacturing.heroes.headRice")}</span>
               <b>{kg(riceExample.headRice)}</b>
             </div>
             <div>
               <Layers size={18} />
-              <span>Broken rice</span>
+              <span>{t("manufacturing.heroes.brokenRice")}</span>
               <b>{kg(riceExample.brokenRice)}</b>
             </div>
             <div>
               <Package size={18} />
-              <span>Bran + husk</span>
+              <span>{t("manufacturing.heroes.branHusk")}</span>
               <b>{kg(riceExample.bran + riceExample.husk)}</b>
             </div>
           </div>
           <div className={css.balanceNote}>
-            <span>Recorded outputs {kg(balance.recorded)}</span>
+            <span>{t("manufacturing.heroes.recordedOutputs")}{" "}{kg(balance.recorded)}</span>
             <ArrowRight size={14} />
-            <b>{kg(balance.unassigned)} unassigned</b>
+            <b>{kg(balance.unassigned)}{" "}{t("manufacturing.heroes.unassigned")}</b>
           </div>
           <figcaption>
-            Example weights only · output fractions are not milling benchmarks
+            {t("manufacturing.heroes.exampleWeightsOnlyOutputFractionsAre")}
           </figcaption>
         </figure>
         <div>
@@ -140,13 +143,13 @@ function RiceHero() {
           <Actions />
           <div className={css.ricePrinciples}>
             <span>
-              <Wheat size={15} /> Lot context
+              <Wheat size={15} />{" "}{t("manufacturing.heroes.lotContext")}
             </span>
             <span>
-              <Scale size={15} /> Weight context
+              <Scale size={15} />{" "}{t("manufacturing.heroes.weightContext")}
             </span>
             <span>
-              <Package size={15} /> Stock context
+              <Package size={15} />{" "}{t("manufacturing.heroes.stockContext")}
             </span>
           </div>
         </div>

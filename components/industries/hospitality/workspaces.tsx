@@ -27,6 +27,7 @@ import {
   type RoomState,
 } from "./data";
 import { Badge, Metric, Note, css } from "./ui";
+import { useTranslations } from "next-intl";
 function number(raw: string) {
   if (raw.trim() === "")
     throw new Error("Fill in each example value to calculate the result.");
@@ -63,10 +64,11 @@ function Numeric({
   );
 }
 function Reset({ onClick }: { onClick: () => void }) {
+  const t = useTranslations("pages.industriesApp");
   return (
     <button type="button" className={css.reset} onClick={onClick}>
       <RotateCcw size={13} aria-hidden="true" />
-      Reset example
+      {t("hospitality.workspaces.resetExample")}
     </button>
   );
 }
@@ -78,20 +80,21 @@ function Outcome({ error, children }: { error: string; children: string }) {
   );
 }
 export function HospitalityStory({ slug }: { slug: HospitalitySlug }) {
+  const t = useTranslations("pages.industriesApp");
   const [index, setIndex] = useState(0),
-    p = pages[slug],
+    p = pages(t)[slug],
     stage = p.stages[index];
   return (
     <section className={css.storySection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
-          <p className={css.eyebrow}>THE OPERATION, IN CONTEXT</p>
+          <p className={css.eyebrow}>{t("hospitality.workspaces.theOperationInContext")}</p>
           <h2>{p.story}</h2>
         </div>
         <div
           className={css.storyChoices}
           role="group"
-          aria-label="Choose an operational perspective"
+          aria-label={t("hospitality.workspaces.chooseAnOperationalPerspective")}
         >
           {p.stages.map((row, i) => (
             <button
@@ -125,6 +128,7 @@ export function HospitalityStory({ slug }: { slug: HospitalitySlug }) {
   );
 }
 function RestaurantWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [selected, setSelected] = useState(1),
     [party, setParty] = useState("4");
   const table = tables[selected];
@@ -134,12 +138,12 @@ function RestaurantWorkspace() {
     result = seatFit(table.seats, number(party));
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Enter a valid example party size.";
+      e instanceof Error ? e.message : t("hospitality.workspaces.enterAValidExamplePartySize");
   }
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Fictional dining room · no live connection</Badge>
+        <Badge>{t("hospitality.workspaces.fictionalDiningRoomNoLiveConnection")}</Badge>
         <Reset
           onClick={() => {
             setSelected(1);
@@ -150,13 +154,13 @@ function RestaurantWorkspace() {
       <div className={css.seatingWorkspace}>
         <div className={css.seatingBoard}>
           <header>
-            <span>EXAMPLE FLOOR / CHOOSE A TABLE</span>
-            <small>Occupied example tables are disabled.</small>
+            <span>{t("hospitality.workspaces.exampleFloorChooseATable")}</span>
+            <small>{t("hospitality.workspaces.occupiedExampleTablesAreDisabled")}</small>
           </header>
           <div
             className={css.seatingChoices}
             role="group"
-            aria-label="Select a fictional open table"
+            aria-label={t("hospitality.workspaces.selectAFictionalOpenTable")}
           >
             {tables.map((row, i) => (
               <button
@@ -169,23 +173,23 @@ function RestaurantWorkspace() {
               >
                 <Users size={19} aria-hidden="true" />
                 <b>{row.id}</b>
-                <span>{row.seats} seats</span>
+                <span>{row.seats}{" "}{t("hospitality.workspaces.seats")}</span>
                 <small>
                   {row.state === "occupied"
-                    ? "Example occupied"
-                    : "Example open"}
+                    ? t("hospitality.workspaces.exampleOccupied")
+                    : t("hospitality.workspaces.exampleOpen")}
                 </small>
               </button>
             ))}
           </div>
         </div>
-        <section className={css.seatResult} aria-label="Local seat comparison">
-          <span>THE PARTY AND THE TABLE</span>
+        <section className={css.seatResult} aria-label={t("hospitality.workspaces.localSeatComparison")}>
+          <span>{t("hospitality.workspaces.thePartyAndTheTable")}</span>
           <h3>
-            {table.id} / {table.seats} example seats
+            {table.id} / {table.seats}{" "}{t("hospitality.workspaces.exampleSeats")}
           </h3>
           <Numeric
-            label="Entered party size · people"
+            label={t("hospitality.workspaces.enteredPartySizePeople")}
             raw={party}
             onChange={setParty}
             min={1}
@@ -193,24 +197,23 @@ function RestaurantWorkspace() {
           />
           <dl className={css.metrics}>
             <Metric
-              label="Seats left after this party"
+              label={t("hospitality.workspaces.seatsLeftAfterThisParty")}
               value={result ? num(result.spare) : "—"}
             />
             <Metric
-              label="Additional seats needed"
+              label={t("hospitality.workspaces.additionalSeatsNeeded")}
               value={result ? num(result.short) : "—"}
             />
           </dl>
           <Outcome error={error}>
             {result
               ? result.enough
-                ? `The entered party fits this fictional table, with ${result.spare} spare seats.`
-                : `This fictional table has ${result.short} fewer seats than the entered party needs.`
+                ? t("hospitality.workspaces.theEnteredPartyFitsThisFictional", { spare: String(result.spare) })
+                : t("hospitality.workspaces.thisFictionalTableHasFewerSeats", { short: String(result.short) })
               : ""}
           </Outcome>
           <Note>
-            Single-table seat arithmetic only. No room availability, scheduling
-            or reservation is checked.
+            {t("hospitality.workspaces.singleTableSeatArithmeticOnlyNo")}
           </Note>
         </section>
       </div>
@@ -218,8 +221,9 @@ function RestaurantWorkspace() {
   );
 }
 function FastFoodWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [entries, setEntries] = useState(() =>
-    tickets.map((row) => ({ ...row })),
+    tickets(t).map((row) => ({ ...row })),
   );
   const counts = ticketCounts(entries.map((row) => row.stage));
   function advance(id: string) {
@@ -232,14 +236,14 @@ function FastFoodWorkspace() {
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Three fictional tickets · local stages</Badge>
-        <Reset onClick={() => setEntries(tickets.map((row) => ({ ...row })))} />
+        <Badge>{t("hospitality.workspaces.threeFictionalTicketsLocalStages")}</Badge>
+        <Reset onClick={() => setEntries(tickets(t).map((row) => ({ ...row })))} />
       </div>
       <dl className={css.ticketMetrics}>
         {ticketStages.map((stage) => (
           <Metric
             key={stage}
-            label={`${ticketLabels[stage]} · example tickets`}
+            label={`${ticketLabels(t)[stage]} · example tickets`}
             value={counts[stage]}
           />
         ))}
@@ -253,7 +257,7 @@ function FastFoodWorkspace() {
           >
             <header>
               <b>{row.id}</b>
-              <span>{ticketLabels[row.stage]}</span>
+              <span>{ticketLabels(t)[row.stage]}</span>
             </header>
             <ul>
               {row.items.map((item) => (
@@ -262,12 +266,12 @@ function FastFoodWorkspace() {
             </ul>
             <ol
               className={css.ticketProgress}
-              aria-label={`${row.id} current stage: ${ticketLabels[row.stage]}`}
+              aria-label={`${row.id} current stage: ${ticketLabels(t)[row.stage]}`}
             >
               {ticketStages.map((stage) => (
                 <li key={stage} data-active={row.stage === stage}>
                   <i />
-                  <span>{ticketLabels[stage]}</span>
+                  <span>{ticketLabels(t)[stage]}</span>
                 </li>
               ))}
             </ol>
@@ -279,26 +283,26 @@ function FastFoodWorkspace() {
               aria-label={
                 row.stage === "ready"
                   ? `${row.id} is ready in the example`
-                  : `Move ${row.id} to ${ticketLabels[nextTicketStage(row.stage)]}`
+                  : t("hospitality.workspaces.moveTo", { id: String(row.id), v2: String(ticketLabels(t)[nextTicketStage(row.stage)]) })
               }
             >
               {row.stage === "ready"
-                ? "Ready in the example"
-                : `Move to ${ticketLabels[nextTicketStage(row.stage)]}`}
+                ? t("hospitality.workspaces.readyInTheExample")
+                : t("hospitality.workspaces.moveTo2", { v1: String(ticketLabels(t)[nextTicketStage(row.stage)]) })}
               <ArrowRight size={14} aria-hidden="true" />
             </button>
           </article>
         ))}
       </div>
-      <Outcome error="">{`Example board: ${counts.queued} queued, ${counts.preparing} preparing and ${counts.ready} ready.`}</Outcome>
+      <Outcome error="">{t("hospitality.workspaces.exampleBoardQueuedPreparingAndReady", { queued: String(counts.queued), preparing: String(counts.preparing), ready: String(counts.ready) })}</Outcome>
       <Note>
-        Stages are changed by you. There are no live timers, kitchen messages,
-        payments or real order updates.
+        {t("hospitality.workspaces.stagesAreChangedByYouThere")}
       </Note>
     </>
   );
 }
 function GuestWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [arrival, setArrival] = useState(arrivalDate),
     [departure, setDeparture] = useState(departureDate),
     [rate, setRate] = useState("4000");
@@ -308,12 +312,12 @@ function GuestWorkspace() {
     result = stayEstimate(arrival, departure, number(rate));
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Use valid example dates and rate.";
+      e instanceof Error ? e.message : t("hospitality.workspaces.useValidExampleDatesAndRate");
   }
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>EX-STAY-01 · fictional dates and rate</Badge>
+        <Badge>{t("hospitality.workspaces.exStay01FictionalDatesAnd")}</Badge>
         <Reset
           onClick={() => {
             setArrival(arrivalDate);
@@ -325,7 +329,7 @@ function GuestWorkspace() {
       <div className={css.stayWorkspace}>
         <div className={css.stayInputs}>
           <label className={css.field}>
-            <span>Example arrival date</span>
+            <span>{t("hospitality.workspaces.exampleArrivalDate")}</span>
             <input
               type="date"
               min="2000-01-01"
@@ -335,7 +339,7 @@ function GuestWorkspace() {
             />
           </label>
           <label className={css.field}>
-            <span>Example departure date</span>
+            <span>{t("hospitality.workspaces.exampleDepartureDate")}</span>
             <input
               type="date"
               min="2000-01-01"
@@ -345,31 +349,30 @@ function GuestWorkspace() {
             />
           </label>
           <Numeric
-            label="Entered nightly room rate · BDT"
+            label={t("hospitality.workspaces.enteredNightlyRoomRateBdt")}
             raw={rate}
             onChange={setRate}
             max={10000000}
             step="0.01"
           />
           <Note>
-            Use 1–365 example nights. Date differences use calendar days in UTC
-            and ignore check-in/out times.
+            {t("hospitality.workspaces.use1365ExampleNightsDate")}
           </Note>
         </div>
-        <section className={css.stayReceipt} aria-label="Local stay estimate">
-          <span>THE STAY, IN A FEW SIMPLE NUMBERS</span>
-          <h3>A considered little estimate.</h3>
+        <section className={css.stayReceipt} aria-label={t("hospitality.workspaces.localStayEstimate")}>
+          <span>{t("hospitality.workspaces.theStayInAFewSimple")}</span>
+          <h3>{t("hospitality.workspaces.aConsideredLittleEstimate")}</h3>
           <div className={css.nightCount}>
             <strong>{result ? result.nights : "—"}</strong>
-            <span>example nights</span>
+            <span>{t("hospitality.workspaces.exampleNights")}</span>
           </div>
           <dl>
             <Metric
-              label="Entered rate, rounded to cents"
+              label={t("hospitality.workspaces.enteredRateRoundedToCents")}
               value={result ? money(result.nightly) : "—"}
             />
             <Metric
-              label="Example room-charge estimate"
+              label={t("hospitality.workspaces.exampleRoomChargeEstimate")}
               value={result ? money(result.total) : "—"}
             />
           </dl>
@@ -379,8 +382,7 @@ function GuestWorkspace() {
               : ""}
           </Outcome>
           <Note>
-            Room charge only. This does not include taxes, meals or extras, and
-            creates no booking or bill.
+            {t("hospitality.workspaces.roomChargeOnlyThisDoesNot")}
           </Note>
         </section>
       </div>
@@ -388,6 +390,7 @@ function GuestWorkspace() {
   );
 }
 function BeverageWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [entries, setEntries] = useState(() =>
       drinks.map((row) => ({
         cartons: String(row.cartons),
@@ -409,7 +412,7 @@ function BeverageWorkspace() {
     error =
       e instanceof Error
         ? e.message
-        : "Enter valid example carton and unit counts.";
+        : t("hospitality.workspaces.enterValidExampleCartonAndUnit");
   }
   function update(index: number, key: "cartons" | "units", raw: string) {
     setEntries((prev) =>
@@ -419,7 +422,7 @@ function BeverageWorkspace() {
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Fictional beverages · count arithmetic only</Badge>
+        <Badge>{t("hospitality.workspaces.fictionalBeveragesCountArithmeticOnly")}</Badge>
         <Reset
           onClick={() => {
             setEntries(
@@ -434,34 +437,33 @@ function BeverageWorkspace() {
       </div>
       <div className={css.loadSettings}>
         <Numeric
-          label="Entered limit · individual units"
+          label={t("hospitality.workspaces.enteredLimitIndividualUnits")}
           raw={limit}
           onChange={setLimit}
           min={1}
           max={100000000}
         />
         <Note>
-          The entered count limit is an assumption. It does not represent a
-          vehicle’s weight, volume or loading capacity.
+          {t("hospitality.workspaces.theEnteredCountLimitIsAn")}
         </Note>
       </div>
       <div
         className={css.tableScroll}
         role="region"
         tabIndex={0}
-        aria-label="Editable fictional carton load, scroll horizontally"
+        aria-label={t("hospitality.workspaces.editableFictionalCartonLoadScrollHorizon")}
       >
         <table>
           <caption className={css.srOnly}>
-            Fictional carton counts converted to individual units
+            {t("hospitality.workspaces.fictionalCartonCountsConvertedToIndividu")}
           </caption>
           <thead>
             <tr>
               {[
-                "Fictional beverage",
-                "Example cartons",
-                "Units / carton",
-                "Calculated units",
+                t("hospitality.workspaces.fictionalBeverage"),
+                t("hospitality.workspaces.exampleCartons"),
+                t("hospitality.workspaces.unitsCarton"),
+                t("hospitality.workspaces.calculatedUnits"),
               ].map((s) => (
                 <th key={s} scope="col">
                   {s}
@@ -478,7 +480,7 @@ function BeverageWorkspace() {
                 </th>
                 <td>
                   <label>
-                    <span className={css.srOnly}>{row.name} cartons</span>
+                    <span className={css.srOnly}>{row.name}{" "}{t("hospitality.workspaces.cartons")}</span>
                     <input
                       type="number"
                       inputMode="numeric"
@@ -493,7 +495,7 @@ function BeverageWorkspace() {
                 <td>
                   <label>
                     <span className={css.srOnly}>
-                      {row.name} units per carton
+                      {row.name}{" "}{t("hospitality.workspaces.unitsPerCarton")}
                     </span>
                     <input
                       type="number"
@@ -514,18 +516,18 @@ function BeverageWorkspace() {
       </div>
       <dl className={css.loadMetrics}>
         <Metric
-          label="Example cartons"
+          label={t("hospitality.workspaces.exampleCartons")}
           value={result ? num(result.cartons) : "—"}
         />
         <Metric
-          label="Calculated individual units"
+          label={t("hospitality.workspaces.calculatedIndividualUnits")}
           value={result ? num(result.units) : "—"}
         />
         <Metric
           label={
             result && result.remaining < 0
-              ? "Units over entered limit"
-              : "Units below entered limit"
+              ? t("hospitality.workspaces.unitsOverEnteredLimit")
+              : t("hospitality.workspaces.unitsBelowEnteredLimit")
           }
           value={result ? num(Math.abs(result.remaining)) : "—"}
         />
@@ -533,18 +535,18 @@ function BeverageWorkspace() {
       <Outcome error={error}>
         {result
           ? result.remaining < 0
-            ? `The example exceeds the entered count limit by ${num(-result.remaining)} units.`
-            : `The example is ${num(result.remaining)} units below the entered count limit.`
+            ? t("hospitality.workspaces.theExampleExceedsTheEnteredCount", { num: String(num(-result.remaining)) })
+            : t("hospitality.workspaces.theExampleIsUnitsBelowThe", { num: String(num(result.remaining)) })
           : ""}
       </Outcome>
       <Note>
-        No dispatch, stock reservation, route assignment or physical loading
-        approval is created.
+        {t("hospitality.workspaces.noDispatchStockReservationRouteAssignmen")}
       </Note>
     </>
   );
 }
 function HotelWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [states, setStates] = useState(() => rooms.map((row) => row.state));
   const snapshot = hotelSnapshot(
     rooms.map((row, i) => ({ ...row, state: states[i] })),
@@ -552,7 +554,7 @@ function HotelWorkspace() {
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Six fictional rooms · local property-day example</Badge>
+        <Badge>{t("hospitality.workspaces.sixFictionalRoomsLocalPropertyDay")}</Badge>
         <Reset onClick={() => setStates(rooms.map((row) => row.state))} />
       </div>
       <div className={css.propertyWorkspace}>
@@ -561,22 +563,22 @@ function HotelWorkspace() {
             <section
               className={css.floorRow}
               key={floor}
-              aria-label={`Example floor ${floor}`}
+              aria-label={t("hospitality.workspaces.exampleFloor", { floor: String(floor) })}
             >
               <header>
-                <span>FLOOR {floor}</span>
-                <small>Fictional room states</small>
+                <span>{t("hospitality.workspaces.floor")}{" "}{floor}</span>
+                <small>{t("hospitality.workspaces.fictionalRoomStates")}</small>
               </header>
               <div>
                 {rooms.map((room, i) =>
                   room.floor === floor ? (
                     <article key={room.id} data-state={states[i]}>
-                      <span>ROOM {room.id}</span>
-                      <b>{roomLabels[states[i]]}</b>
-                      <small>{money(room.rate)} / example day</small>
+                      <span>{t("hospitality.workspaces.room")}{" "}{room.id}</span>
+                      <b>{roomLabels(t)[states[i]]}</b>
+                      <small>{money(room.rate)}{" "}{t("hospitality.workspaces.exampleDay")}</small>
                       <label className={css.field}>
                         <span className={css.srOnly}>
-                          Room {room.id} example state
+                          {t("hospitality.workspaces.room2")}{" "}{room.id}{" "}{t("hospitality.workspaces.exampleState")}
                         </span>
                         <select
                           value={states[i]}
@@ -589,7 +591,7 @@ function HotelWorkspace() {
                         >
                           {roomStates.map((state) => (
                             <option key={state} value={state}>
-                              {roomLabels[state]}
+                              {roomLabels(t)[state]}
                             </option>
                           ))}
                         </select>
@@ -602,40 +604,38 @@ function HotelWorkspace() {
           ))}
         </div>
         <aside className={css.propertyResult}>
-          <span>THE DECLARED EXAMPLE BASIS</span>
+          <span>{t("hospitality.workspaces.theDeclaredExampleBasis")}</span>
           <h3>
-            A room picture,
+            {t("hospitality.workspaces.aRoomPicture")}
             <br />
-            with its context.
+            {t("hospitality.workspaces.withItsContext")}
           </h3>
           <dl className={css.metrics}>
             <Metric
-              label="Occupied / ready+occupied rooms"
+              label={t("hospitality.workspaces.occupiedReadyOccupiedRooms")}
               value={`${snapshot.occupied} / ${snapshot.denominator}`}
             />
             <Metric
-              label="Illustrative occupancy"
+              label={t("hospitality.workspaces.illustrativeOccupancy")}
               value={
                 snapshot.occupancy === null
                   ? "Undefined"
                   : `${snapshot.occupancy.toFixed(1)}%`
               }
             />
-            <Metric label="Rooms marked service" value={snapshot.service} />
+            <Metric label={t("hospitality.workspaces.roomsMarkedService")} value={snapshot.service} />
             <Metric
-              label="Occupied example room charges"
+              label={t("hospitality.workspaces.occupiedExampleRoomCharges")}
               value={money(snapshot.chargeTotal)}
             />
           </dl>
           <Outcome error="">
             {snapshot.occupancy === null
-              ? "Every example room is marked service. The occupancy denominator is zero, so the percentage is undefined."
-              : `Fictional counts: ${snapshot.ready} ready, ${snapshot.occupied} occupied, ${snapshot.service} service.`}
+              ? t("hospitality.workspaces.everyExampleRoomIsMarkedService")
+              : t("hospitality.workspaces.fictionalCountsReadyOccupiedService", { ready: String(snapshot.ready), occupied: String(snapshot.occupied), service: String(snapshot.service) })}
           </Outcome>
           <Note>
-            Ready + occupied is the declared denominator; service rooms are
-            excluded. Charges sum occupied fictional rates for one day, with no
-            billing or posted revenue.
+            {t("hospitality.workspaces.readyOccupiedIsTheDeclaredDenominator")}
           </Note>
         </aside>
       </div>
@@ -654,13 +654,14 @@ export default function HospitalityWorkspace({
 }: {
   slug: HospitalitySlug;
 }) {
-  const p = pages[slug],
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug],
     Workspace = workspaces[slug];
   return (
     <section className={css.workspaceSection} id="hospitality-workspace">
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
-          <p className={css.eyebrow}>EXPLORE A SMALL PART OF THE WORK</p>
+          <p className={css.eyebrow}>{t("hospitality.workspaces.exploreASmallPartOfThe")}</p>
           <h2>{p.demoTitle}</h2>
           <p>{p.demoDescription}</p>
         </div>

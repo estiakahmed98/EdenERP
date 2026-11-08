@@ -18,8 +18,10 @@ import {
   ToyArt,
   css,
 } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: RetailSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <>
       <p className={css.eyebrow}>{p.category}</p>
@@ -33,35 +35,36 @@ function Copy({ slug }: { slug: RetailSlug }) {
   );
 }
 function BookHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.bookHero}>
       <div className={`${css.wrap} ${css.bookLayout}`}>
         <div className={css.bookCopy}>
-          <span className={css.edition}>RETAIL NOTES / CHAPTER 01</span>
+          <span className={css.edition}>{t("retail.heroes.retailNotesChapter01")}</span>
           <Copy slug="book-store" />
           <Actions />
-          <p className={css.heroFoot}>The shelf. The reader. The record.</p>
+          <p className={css.heroFoot}>{t("retail.heroes.theShelfTheReaderTheRecord")}</p>
         </div>
         <figure className={css.libraryScene}>
           <div className={css.shelfLabel}>
             <BookOpen size={17} />
-            <span>THE CONSIDERED BOOKSHELF</span>
+            <span>{t("retail.heroes.theConsideredBookshelf")}</span>
           </div>
           <div className={css.bookDisplay}>
             <div className={css.featuredBook}>
-              <span>EX-B01 / FICTIONAL TITLE</span>
+              <span>{t("retail.heroes.exB01FictionalTitle")}</span>
               <b>
-                The
+                {t("retail.heroes.the")}
                 <br />
-                Quiet
+                {t("retail.heroes.quiet")}
                 <br />
-                <i>Atlas.</i>
+                <i>{t("retail.heroes.atlas")}</i>
               </b>
               <div className={css.bookOrbit} />
-              <small>A collection of imagined journeys</small>
+              <small>{t("retail.heroes.aCollectionOfImaginedJourneys")}</small>
             </div>
             <div className={css.bookSpines}>
-              {books.slice(1).map((book) => (
+              {books(t).slice(1).map((book) => (
                 <div key={book.id} data-colour={book.colour}>
                   <span>{book.name}</span>
                   <small>{book.id}</small>
@@ -71,13 +74,13 @@ function BookHero() {
           </div>
           <div className={css.shelfRule} />
           <div className={css.bookTicket}>
-            <span>EXAMPLE / PAPERBACK</span>
+            <span>{t("retail.heroes.examplePaperback")}</span>
             <b>{money(450)}</b>
-            <small>Illustrative price · not an offer</small>
+            <small>{t("retail.heroes.illustrativePriceNotAnOffer")}</small>
           </div>
-          <CurvedNote>Every title has a place.</CurvedNote>
+          <CurvedNote>{t("retail.heroes.everyTitleHasAPlace")}</CurvedNote>
           <figcaption>
-            Concept shelf · fictional titles, identifiers and prices
+            {t("retail.heroes.conceptShelfFictionalTitlesIdentifiersAn")}
           </figcaption>
         </figure>
       </div>
@@ -85,48 +88,48 @@ function BookHero() {
   );
 }
 function ClothingHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.clothingHero}>
       <div className={css.wrap}>
         <div className={css.lookbookHeading}>
-          <Badge>COLLECTION / CONCEPT 01</Badge>
+          <Badge>{t("retail.heroes.collectionConcept01")}</Badge>
           <Copy slug="clothing-store" />
           <Actions />
         </div>
         <figure className={css.lookbook}>
           <div className={css.swatchCard}>
             <Palette size={19} />
-            <span>THE COLOUR STORY</span>
+            <span>{t("retail.heroes.theColourStory")}</span>
             <div className={css.swatchDots}>
               {colours.map((c) => (
                 <i key={c.id} style={{ background: c.hex }} />
               ))}
             </div>
-            <b>Navy. Sage. Cream.</b>
-            <small>Three illustrative colour choices</small>
+            <b>{t("retail.heroes.navySageCream")}</b>
+            <small>{t("retail.heroes.threeIllustrativeColourChoices")}</small>
           </div>
           <div className={css.garmentPlate}>
-            <span>THE EVERYDAY OVERSHIRT / CONCEPT FLAT</span>
+            <span>{t("retail.heroes.theEverydayOvershirtConceptFlat")}</span>
             <ShirtArt />
             <div className={css.plateRule} />
-            <span>COLOUR × SIZE × STOCK CONTEXT</span>
+            <span>{t("retail.heroes.colourSizeStockContext")}</span>
           </div>
           <div className={css.variantCard}>
             <Tag size={18} />
-            <span>EX-CL-NAVY-M</span>
+            <span>{t("retail.heroes.exClNavyM")}</span>
             <b>
-              A collection,
+              {t("retail.heroes.aCollection")}
               <br />
-              piece by piece.
+              {t("retail.heroes.pieceByPiece")}
             </b>
             <div>
               S <span>M</span> L
             </div>
-            <small>Fictional variant identifiers and stock</small>
+            <small>{t("retail.heroes.fictionalVariantIdentifiersAndStock")}</small>
           </div>
           <figcaption>
-            A conceptual lookbook, separate from the editable variant exercise
-            below
+            {t("retail.heroes.aConceptualLookbookSeparateFromThe")}
           </figcaption>
         </figure>
       </div>
@@ -134,47 +137,48 @@ function ClothingHero() {
   );
 }
 function FurnitureHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.furnitureHero}>
       <div className={`${css.wrap} ${css.furnitureLayout}`}>
         <figure className={css.roomSheet}>
           <header>
-            <span>THE SMALL SHOWROOM / CONCEPT PLAN</span>
+            <span>{t("retail.heroes.theSmallShowroomConceptPlan")}</span>
             <ArrowUpRight size={18} />
           </header>
           <RoomArt />
           <div className={css.roomLegend}>
             <span>
               <i />
-              Studio sofa
+              {t("retail.heroes.studioSofa")}
             </span>
             <span>
               <i />
-              Reading chair
+              {t("retail.heroes.readingChair")}
             </span>
             <span>
               <i />
-              Low table
+              {t("retail.heroes.lowTable")}
             </span>
           </div>
           <div className={css.finishStrip}>
-            <span>FINISH NOTES</span>
+            <span>{t("retail.heroes.finishNotes")}</span>
             <i />
             <i />
             <i />
-            <small>A choice belongs in the record.</small>
+            <small>{t("retail.heroes.aChoiceBelongsInTheRecord")}</small>
           </div>
           <figcaption>
-            Illustrative top view · not a scale or dimension-checked room plan
+            {t("retail.heroes.illustrativeTopViewNotAScale")}
           </figcaption>
         </figure>
         <div className={css.furnitureCopy}>
           <Copy slug="furniture-store" />
           <Actions />
           <div className={css.materialSignature}>
-            <span>01 / THE PIECE</span>
-            <span>02 / THE FINISH</span>
-            <span>03 / THE HANDOFF</span>
+            <span>{t("retail.heroes.n01ThePiece")}</span>
+            <span>{t("retail.heroes.n02TheFinish")}</span>
+            <span>{t("retail.heroes.n03TheHandoff")}</span>
           </div>
         </div>
       </div>
@@ -182,6 +186,7 @@ function FurnitureHero() {
   );
 }
 function GroceryHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.groceryHero}>
       <div className={css.wrap}>
@@ -191,40 +196,40 @@ function GroceryHero() {
             <Actions />
           </div>
           <div className={css.freshSeal}>
-            <span>RETAIL</span>
+            <span>{t("retail.heroes.retail")}</span>
             <ProduceArt />
-            <b>A shelf with a story.</b>
-            <small>Concept produce illustration</small>
+            <b>{t("retail.heroes.aShelfWithAStory")}</b>
+            <small>{t("retail.heroes.conceptProduceIllustration")}</small>
           </div>
         </div>
         <figure className={css.freshLedger}>
           <div className={css.ledgerTitle}>
-            <span>THE SHELF NOTES</span>
+            <span>{t("retail.heroes.theShelfNotes")}</span>
             <b>
-              Batch detail,
+              {t("retail.heroes.batchDetail")}
               <br />
-              kept close.
+              {t("retail.heroes.keptClose")}
             </b>
           </div>
           <div className={css.dateTicket}>
-            <span>FICTIONAL REFERENCE DATE</span>
+            <span>{t("retail.heroes.fictionalReferenceDate")}</span>
             <b>
-              15 <i>DEC</i>
+              15 <i>{t("retail.heroes.dec")}</i>
             </b>
-            <small>2026 / editable example below</small>
+            <small>{t("retail.heroes.n2026EditableExampleBelow")}</small>
           </div>
           <div className={css.batchTicket}>
-            <span>EX-G02 / YOGHURT CUP</span>
+            <span>{t("retail.heroes.exG02YoghurtCup")}</span>
             <b>
-              36 <small>example units</small>
+              36 <small>{t("retail.heroes.exampleUnits")}</small>
             </b>
             <p>
-              Recorded date <strong>16 Dec 2026</strong>
+              {t("retail.heroes.recordedDate")}{" "}<strong>{t("retail.heroes.n16Dec2026")}</strong>
             </p>
-            <small>Date arithmetic only · no safety assessment</small>
+            <small>{t("retail.heroes.dateArithmeticOnlyNoSafetyAssessment")}</small>
           </div>
           <figcaption>
-            Concept stock ledger · dates and quantities are illustrative
+            {t("retail.heroes.conceptStockLedgerDatesAndQuantities")}
           </figcaption>
         </figure>
       </div>
@@ -232,6 +237,7 @@ function GroceryHero() {
   );
 }
 function HardwareHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.hardwareHero}>
       <div className={css.wrap}>
@@ -242,41 +248,40 @@ function HardwareHero() {
         <figure className={css.pegboard}>
           <div className={css.drawingPlate}>
             <header>
-              <span>ITEM STUDY / CONCEPT ONLY</span>
+              <span>{t("retail.heroes.itemStudyConceptOnly")}</span>
               <span>EX-H01</span>
             </header>
             <FixingArt />
             <div className={css.diagramCaption}>
-              THE UNIT IS PART OF THE DETAIL.
+              {t("retail.heroes.theUnitIsPartOfThe")}
             </div>
           </div>
           <div className={css.packTicket}>
             <Boxes size={25} />
-            <span>ILLUSTRATIVE PACK NOTE</span>
+            <span>{t("retail.heroes.illustrativePackNote")}</span>
             <b>
-              50<small>units / pack</small>
+              50<small>{t("retail.heroes.unitsPack")}</small>
             </b>
             <div>
-              <span>Target</span>
-              <strong>240 units</strong>
+              <span>{t("retail.heroes.target")}</span>
+              <strong>{t("retail.heroes.n240Units")}</strong>
             </div>
             <div>
-              <span>On hand</span>
-              <strong>65 units</strong>
+              <span>{t("retail.heroes.onHand")}</span>
+              <strong>{t("retail.heroes.n65Units")}</strong>
             </div>
             <div>
-              <span>Shortage</span>
-              <strong>175 units</strong>
+              <span>{t("retail.heroes.shortage")}</span>
+              <strong>{t("retail.heroes.n175Units")}</strong>
             </div>
             <footer>
-              <b>4 packs</b>
-              <span>25 units remain after the target</span>
+              <b>{t("retail.heroes.n4Packs")}</b>
+              <span>{t("retail.heroes.n25UnitsRemainAfterTheTarget")}</span>
             </footer>
           </div>
-          <CurvedNote>Count the pack. Keep the unit.</CurvedNote>
+          <CurvedNote>{t("retail.heroes.countThePackKeepTheUnit")}</CurvedNote>
           <figcaption>
-            Concept fastener drawing and fictional pack arithmetic · no product
-            specification
+            {t("retail.heroes.conceptFastenerDrawingAndFictionalPack")}
           </figcaption>
         </figure>
       </div>
@@ -284,52 +289,53 @@ function HardwareHero() {
   );
 }
 function ToyHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.toyHero}>
       <div className={`${css.wrap} ${css.toyLayout}`}>
         <div className={css.toyCopy}>
-          <Badge>A THOUGHTFUL LITTLE RETAIL WORLD</Badge>
+          <Badge>{t("retail.heroes.aThoughtfulLittleRetailWorld")}</Badge>
           <Copy slug="toy-store" />
           <Actions />
           <div className={css.playSignature}>
             <span>
-              <Check size={13} />A clear basket
+              <Check size={13} />{t("retail.heroes.aClearBasket")}
             </span>
             <span>
-              <Check size={13} />A considered gift
+              <Check size={13} />{t("retail.heroes.aConsideredGift")}
             </span>
           </div>
         </div>
         <figure className={css.playDisplay}>
           <div className={css.playOrbit} />
           <div className={css.blockStage}>
-            <span>THE PLAY COLLECTION / CONCEPT 01</span>
+            <span>{t("retail.heroes.thePlayCollectionConcept01")}</span>
             <ToyArt />
             <b>
-              Room for
+              {t("retail.heroes.roomFor")}
               <br />
-              <i>imagination.</i>
+              <i>{t("retail.heroes.imagination")}</i>
             </b>
           </div>
           <div className={css.trainNote}>
             <ToyArt kind="train" />
             <span>
-              A small collection.
+              {t("retail.heroes.aSmallCollection")}
               <br />
-              Its own item details.
+              {t("retail.heroes.itsOwnItemDetails")}
             </span>
           </div>
           <div className={css.giftNote}>
-            <span>GIFT BASKET / EXAMPLE</span>
+            <span>{t("retail.heroes.giftBasketExample")}</span>
             <b>
-              A little thought
+              {t("retail.heroes.aLittleThought")}
               <br />
-              goes a long way.
+              {t("retail.heroes.goesALongWay")}
             </b>
-            <small>Explore an entered budget below.</small>
+            <small>{t("retail.heroes.exploreAnEnteredBudgetBelow")}</small>
           </div>
           <figcaption>
-            Fictional toy concepts · no age, safety or availability claims
+            {t("retail.heroes.fictionalToyConceptsNoAgeSafety")}
           </figcaption>
         </figure>
       </div>

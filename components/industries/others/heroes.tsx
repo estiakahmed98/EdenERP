@@ -11,8 +11,10 @@ import {
 } from "lucide-react";
 import { money, pages, products, segments, type OtherIndustry } from "./data";
 import { Actions, Badge, ProductArt, css } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: OtherIndustry }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <>
       <p className={css.eyebrow}>{p.eyebrow}</p>
@@ -26,6 +28,7 @@ function Copy({ slug }: { slug: OtherIndustry }) {
   );
 }
 function EcommerceHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.ecommerceHero}>
       <div className={`${css.wrap} ${css.ecommerceLayout}`}>
@@ -35,32 +38,32 @@ function EcommerceHero() {
           <div className={css.commercePrinciples}>
             <span>
               <ShoppingBag size={15} />
-              Product
+              {t("others.heroes.product")}
             </span>
             <span>
               <Package size={15} />
-              Order
+              {t("others.heroes.order")}
             </span>
             <span>
               <FileText size={15} />
-              Business context
+              {t("others.heroes.businessContext")}
             </span>
           </div>
         </div>
         <figure className={css.storefront}>
           <header>
-            <b>THE EVERYDAY EDIT</b>
-            <Badge>Fictional storefront</Badge>
+            <b>{t("others.heroes.theEverydayEdit")}</b>
+            <Badge>{t("others.heroes.fictionalStorefront")}</Badge>
           </header>
           <div className={css.storeTitle}>
-            <span>THOUGHTFUL EVERYDAY OBJECTS</span>
+            <span>{t("others.heroes.thoughtfulEverydayObjects")}</span>
             <h3>
-              A little order.
-              <br />A lot of possibility.
+              {t("others.heroes.aLittleOrder")}
+              <br />{t("others.heroes.aLotOfPossibility")}
             </h3>
           </div>
           <div className={css.heroProducts}>
-            {products.map((product, i) => (
+            {products(t).map((product, i) => (
               <div key={product.id} data-art={product.art}>
                 <ProductArt kind={product.art} />
                 <span>
@@ -73,14 +76,13 @@ function EcommerceHero() {
           </div>
           <div className={css.orderSlip}>
             <span>
-              <ShoppingBag size={16} /> AN EXAMPLE BASKET
+              <ShoppingBag size={16} />{" "}{t("others.heroes.anExampleBasket")}
             </span>
-            <b>Product → Quantity → Total</b>
-            <small>A readable path into the order conversation.</small>
+            <b>{t("others.heroes.productQuantityTotal")}</b>
+            <small>{t("others.heroes.aReadablePathIntoTheOrder")}</small>
           </div>
           <figcaption>
-            Concept storefront and product illustrations · not a live catalogue
-            or shop
+            {t("others.heroes.conceptStorefrontAndProductIllustrations")}
           </figcaption>
         </figure>
       </div>
@@ -88,6 +90,7 @@ function EcommerceHero() {
   );
 }
 function NgoHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.ngoHero}>
       <div className={css.wrap}>
@@ -101,43 +104,43 @@ function NgoHero() {
               <span>
                 <HeartHandshake size={26} />
               </span>
-              <b>Purpose</b>
-              <small>The programme context</small>
+              <b>{t("others.heroes.purpose")}</b>
+              <small>{t("others.heroes.theProgrammeContext")}</small>
             </div>
             <i />
             <div>
               <span>
                 <Wallet size={26} />
               </span>
-              <b>Funds</b>
-              <small>The planning context</small>
+              <b>{t("others.heroes.funds")}</b>
+              <small>{t("others.heroes.thePlanningContext")}</small>
             </div>
             <i />
             <div>
               <span>
                 <Layers size={26} />
               </span>
-              <b>Activities</b>
-              <small>The operational detail</small>
+              <b>{t("others.heroes.activities")}</b>
+              <small>{t("others.heroes.theOperationalDetail")}</small>
             </div>
             <i />
             <div>
               <span>
                 <BookOpen size={26} />
               </span>
-              <b>Records</b>
-              <small>The evidence to explore</small>
+              <b>{t("others.heroes.records")}</b>
+              <small>{t("others.heroes.theEvidenceToExplore")}</small>
             </div>
           </div>
           <div className={css.programmeDossier}>
             <header>
-              <span>EXAMPLE PLANNING DOSSIER</span>
-              <Badge>Illustrative, not donated funds</Badge>
+              <span>{t("others.heroes.examplePlanningDossier")}</span>
+              <Badge>{t("others.heroes.illustrativeNotDonatedFunds")}</Badge>
             </header>
             <div className={css.budgetHeadline}>
-              <span>Local planning budget</span>
-              <b>BDT 100,000</b>
-              <small>No donor, beneficiary or impact claim.</small>
+              <span>{t("others.heroes.localPlanningBudget")}</span>
+              <b>{t("others.heroes.bdt100000")}</b>
+              <small>{t("others.heroes.noDonorBeneficiaryOrImpactClaim")}</small>
             </div>
             <div className={css.budgetBands}>
               <i />
@@ -145,13 +148,13 @@ function NgoHero() {
               <i />
             </div>
             <div className={css.budgetLegend}>
-              <span>Programme A · 35%</span>
-              <span>Programme B · 45%</span>
-              <span>Shared operations · 20%</span>
+              <span>{t("others.heroes.programmeA35")}</span>
+              <span>{t("others.heroes.programmeB45")}</span>
+              <span>{t("others.heroes.sharedOperations20")}</span>
             </div>
           </div>
           <span className={css.purposeNote}>
-            the purpose and the detail, together
+            {t("others.heroes.thePurposeAndTheDetailTogether")}
             <svg viewBox="0 0 130 65" fill="none" aria-hidden="true">
               <path
                 d="M4 8c25 50 78 50 113 17m-22 2 24-5-4 22"
@@ -163,8 +166,7 @@ function NgoHero() {
             </svg>
           </span>
           <figcaption>
-            Conceptual programme-to-record illustration · all amounts and labels
-            are fictional
+            {t("others.heroes.conceptualProgrammeToRecordIllustrationA")}
           </figcaption>
         </figure>
       </div>
@@ -172,6 +174,7 @@ function NgoHero() {
   );
 }
 function TvHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.tvHero}>
       <div className={css.wrap}>
@@ -182,21 +185,21 @@ function TvHero() {
           </div>
           <aside className={css.productionNotes}>
             <Clapperboard size={26} />
-            <span>THE WORK BEHIND THE SCREEN</span>
+            <span>{t("others.heroes.theWorkBehindTheScreen")}</span>
             <p>
-              Planning.
+              {t("others.heroes.planning")}
               <br />
-              Resources.
+              {t("others.heroes.resources")}
               <br />
-              <b>The commercial context.</b>
+              <b>{t("others.heroes.theCommercialContext")}</b>
             </p>
           </aside>
         </div>
         <figure className={css.broadcastScene}>
           <div className={css.programmeFrame}>
             <header>
-              <span>PROGRAMME / CONCEPT VIEW</span>
-              <Badge>Not a broadcast signal</Badge>
+              <span>{t("others.heroes.programmeConceptView")}</span>
+              <Badge>{t("others.heroes.notABroadcastSignal")}</Badge>
             </header>
             <div className={css.screenComposition}>
               <div className={css.viewfinderCorners} />
@@ -236,17 +239,17 @@ function TvHero() {
                 />
               </svg>
               <div>
-                <span>THE PROGRAMME STORY</span>
-                <b>Brief → Plan → Handoff</b>
+                <span>{t("others.heroes.theProgrammeStory")}</span>
+                <b>{t("others.heroes.briefPlanHandoff")}</b>
               </div>
             </div>
           </div>
           <div className={css.rundownStrip}>
             <header>
-              <span>AN ILLUSTRATIVE RUNDOWN</span>
-              <b>05 segments</b>
+              <span>{t("others.heroes.anIllustrativeRundown")}</span>
+              <b>{t("others.heroes.n05Segments")}</b>
             </header>
-            {segments.map((segment, i) => (
+            {segments(t).map((segment, i) => (
               <div key={segment.id}>
                 <span>0{i + 1}</span>
                 <b>{segment.title}</b>
@@ -255,12 +258,11 @@ function TvHero() {
             ))}
             <p>
               <ArrowRight size={14} />
-              Explore timing in the local example below.
+              {t("others.heroes.exploreTimingInTheLocalExample")}
             </p>
           </div>
           <figcaption>
-            Concept production canvas · no live transmission, video playback or
-            audience data
+            {t("others.heroes.conceptProductionCanvasNoLiveTransmissio")}
           </figcaption>
         </figure>
       </div>

@@ -19,6 +19,7 @@ import {
   type ApparelSlug,
 } from "./data";
 import { Badge, Metric, Note, css } from "./ui";
+import { useTranslations } from "next-intl";
 function number(value: string) {
   if (value.trim() === "")
     throw new Error("Fill in each example value to calculate the result.");
@@ -55,22 +56,23 @@ function Numeric({
   );
 }
 export function ApparelStory({ slug }: { slug: ApparelSlug }) {
+  const t = useTranslations("pages.industriesApp");
   const [index, setIndex] = useState(0);
-  const p = pages[slug],
+  const p = pages(t)[slug],
     stage = p.stages[index];
   return (
     <section className={css.storySection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>THE WORKFLOW, IN CONTEXT</p>
+            <p className={css.eyebrow}>{t("apparel.workspaces.theWorkflowInContext")}</p>
             <h2>{p.story}</h2>
           </div>
         </div>
         <div
           className={css.stageChoices}
           role="group"
-          aria-label="Choose an operational perspective"
+          aria-label={t("apparel.workspaces.chooseAnOperationalPerspective")}
         >
           {p.stages.map((item, i) => (
             <button
@@ -104,6 +106,7 @@ export function ApparelStory({ slug }: { slug: ApparelSlug }) {
   );
 }
 function GarmentsDemo() {
+  const t = useTranslations("pages.industriesApp");
   const [quantity, setQuantity] = useState("3000");
   const [ratios, setRatios] = useState(() =>
     sizes.map((row) => String(row.ratio)),
@@ -113,12 +116,12 @@ function GarmentsDemo() {
   try {
     result = sizeBreakdown(number(quantity), ratios.map(number));
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example quantities.";
+    error = e instanceof Error ? e.message : t("apparel.workspaces.useValidExampleQuantities");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>EX-ORDER-01 · fictional size breakdown</Badge>
+        <Badge>{t("apparel.workspaces.exOrder01FictionalSizeBreakdown")}</Badge>
         <button
           type="button"
           className={css.button}
@@ -128,13 +131,13 @@ function GarmentsDemo() {
           }}
         >
           <RotateCcw size={14} />
-          Reset breakdown
+          {t("apparel.workspaces.resetBreakdown")}
         </button>
       </div>
       <div className={css.garmentsDemo}>
         <div>
           <Numeric
-            label="Example order quantity · pieces"
+            label={t("apparel.workspaces.exampleOrderQuantityPieces")}
             value={quantity}
             onChange={setQuantity}
             min={1}
@@ -155,19 +158,18 @@ function GarmentsDemo() {
             ))}
           </div>
           <Note>
-            Ratio units are whole non-negative numbers. At least one must be
-            positive. All figures belong only to this local example.
+            {t("apparel.workspaces.ratioUnitsAreWholeNonNegative")}
           </Note>
         </div>
-        <section className={css.sizeResult} aria-label="Local size allocation">
-          <span>THE ORDER, DIVIDED INTO WHOLE PIECES</span>
-          <h3>A breakdown that adds up.</h3>
+        <section className={css.sizeResult} aria-label={t("apparel.workspaces.localSizeAllocation")}>
+          <span>{t("apparel.workspaces.theOrderDividedIntoWholePieces")}</span>
+          <h3>{t("apparel.workspaces.aBreakdownThatAddsUp")}</h3>
           <div className={css.sizeColumns}>
             {sizes.map((row, i) => (
               <div key={row.label}>
                 <span>{row.label}</span>
                 <strong>{result ? num(result[i]) : "—"}</strong>
-                <small>example pieces</small>
+                <small>{t("apparel.workspaces.examplePieces")}</small>
                 <i
                   style={{
                     height: `${result ? Math.max(0, (result[i] / Math.max(1, ...result)) * 75) : 0}px`,
@@ -182,11 +184,10 @@ function GarmentsDemo() {
             data-warning={!!error}
           >
             {error ||
-              `Allocated ${num(result!.reduce((sum, value) => sum + value, 0))} of ${num(number(quantity))} example pieces.`}
+              t("apparel.workspaces.allocatedOfExamplePieces", { num: String(num(result!.reduce((sum, value) => sum + value, 0))), num2: String(num(number(quantity))) })}
           </div>
           <Note>
-            Largest-remainder rounding preserves the total. This does not save
-            an order, reserve fabric or create a marker/cutting plan.
+            {t("apparel.workspaces.largestRemainderRoundingPreservesTheTota")}
           </Note>
         </section>
       </div>
@@ -194,6 +195,7 @@ function GarmentsDemo() {
   );
 }
 function AccessoriesDemo() {
+  const t = useTranslations("pages.industriesApp");
   const [quantity, setQuantity] = useState("1000");
   const [allowance, setAllowance] = useState("2.5");
   const [entries, setEntries] = useState(() =>
@@ -214,7 +216,7 @@ function AccessoriesDemo() {
       })),
     );
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example counts.";
+    error = e instanceof Error ? e.message : t("apparel.workspaces.useValidExampleCounts");
   }
   function update(index: number, key: "perPiece" | "stock", value: string) {
     setEntries((prev) =>
@@ -224,7 +226,7 @@ function AccessoriesDemo() {
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Fictional trims · all counts in pieces</Badge>
+        <Badge>{t("apparel.workspaces.fictionalTrimsAllCountsInPieces")}</Badge>
         <button
           className={css.button}
           type="button"
@@ -240,25 +242,25 @@ function AccessoriesDemo() {
           }}
         >
           <RotateCcw size={14} />
-          Reset requirement
+          {t("apparel.workspaces.resetRequirement")}
         </button>
       </div>
       <div className={css.accessorySettings}>
         <Numeric
-          label="Example order quantity · garments"
+          label={t("apparel.workspaces.exampleOrderQuantityGarments")}
           value={quantity}
           onChange={setQuantity}
           min={1}
         />
         <Numeric
-          label="Entered extra allowance · %"
+          label={t("apparel.workspaces.enteredExtraAllowance")}
           value={allowance}
           onChange={setAllowance}
           max={100}
           step="0.01"
         />
         <div className={css.gapMetric}>
-          <span>Example lines with a shortfall</span>
+          <span>{t("apparel.workspaces.exampleLinesWithAShortfall")}</span>
           <b>
             {result ? result.filter((row) => row.short > 0).length : "—"}
             <small> / 4</small>
@@ -269,21 +271,21 @@ function AccessoriesDemo() {
         className={css.tableScroll}
         role="region"
         tabIndex={0}
-        aria-label="Editable trim requirements, scroll horizontally"
+        aria-label={t("apparel.workspaces.editableTrimRequirementsScrollHorizontal")}
       >
         <table>
           <caption className={css.srOnly}>
-            Illustrative accessory requirements in whole pieces
+            {t("apparel.workspaces.illustrativeAccessoryRequirementsInWhole")}
           </caption>
           <thead>
             <tr>
               {[
-                "Example item",
-                "Pieces / garment",
-                "Example stock · pcs",
-                "Required · pcs",
-                "Short · pcs",
-                "Spare · pcs",
+                t("apparel.workspaces.exampleItem"),
+                t("apparel.workspaces.piecesGarment"),
+                t("apparel.workspaces.exampleStockPcs"),
+                t("apparel.workspaces.requiredPcs"),
+                t("apparel.workspaces.shortPcs"),
+                t("apparel.workspaces.sparePcs"),
               ].map((label) => (
                 <th key={label} scope="col">
                   {label}
@@ -297,7 +299,7 @@ function AccessoriesDemo() {
                 <th scope="row">{row.name}</th>
                 <td>
                   <label>
-                    <span className={css.srOnly}>{row.name} per garment</span>
+                    <span className={css.srOnly}>{row.name}{" "}{t("apparel.workspaces.perGarment")}</span>
                     <input
                       type="number"
                       inputMode="numeric"
@@ -311,7 +313,7 @@ function AccessoriesDemo() {
                 </td>
                 <td>
                   <label>
-                    <span className={css.srOnly}>{row.name} example stock</span>
+                    <span className={css.srOnly}>{row.name}{" "}{t("apparel.workspaces.exampleStock")}</span>
                     <input
                       type="number"
                       inputMode="numeric"
@@ -339,14 +341,13 @@ function AccessoriesDemo() {
         </p>
       )}
       <Note>
-        Required pieces = order quantity × entered count × entered allowance
-        factor, rounded up to a whole piece. The allowance is an assumption, not
-        a standard; no purchasing or stock action is performed.
+        {t("apparel.workspaces.requiredPiecesOrderQuantityEnteredCount")}
       </Note>
     </>
   );
 }
 function BuyingDemo() {
+  const t = useTranslations("pages.industriesApp");
   const [mode, setMode] = useState<"margin" | "commission">("margin");
   const [quantity, setQuantity] = useState("10000");
   const [selling, setSelling] = useState("8.50");
@@ -363,16 +364,16 @@ function BuyingDemo() {
             selling: number(selling),
             buying: number(buying),
           }
-        : { mode, quantity: number(quantity), fee: number(fee) },
+        : { mode, quantity: number(quantity), fee: number(fee) }, t,
     );
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Use valid example prices and quantity.";
+      e instanceof Error ? e.message : t("apparel.workspaces.useValidExamplePricesAndQuantity");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Illustrative settlement · USD only</Badge>
+        <Badge>{t("apparel.workspaces.illustrativeSettlementUsdOnly")}</Badge>
         <button
           className={css.button}
           type="button"
@@ -385,33 +386,33 @@ function BuyingDemo() {
           }}
         >
           <RotateCcw size={14} />
-          Reset commercial example
+          {t("apparel.workspaces.resetCommercialExample")}
         </button>
       </div>
       <div
         className={css.settlementChoices}
         role="group"
-        aria-label="Example settlement model"
+        aria-label={t("apparel.workspaces.exampleSettlementModel")}
       >
         <button
           type="button"
           aria-pressed={mode === "margin"}
           onClick={() => setMode("margin")}
         >
-          Margin trading
+          {t("apparel.workspaces.marginTrading")}
         </button>
         <button
           type="button"
           aria-pressed={mode === "commission"}
           onClick={() => setMode("commission")}
         >
-          Commission fee
+          {t("apparel.workspaces.commissionFee")}
         </button>
       </div>
       <div className={css.buyingDemo}>
         <div>
           <Numeric
-            label="Example quantity · pieces"
+            label={t("apparel.workspaces.exampleQuantityPieces")}
             value={quantity}
             onChange={setQuantity}
             min={1}
@@ -420,13 +421,13 @@ function BuyingDemo() {
             {mode === "margin" ? (
               <>
                 <Numeric
-                  label="Entered selling price / pc · USD"
+                  label={t("apparel.workspaces.enteredSellingPricePcUsd")}
                   value={selling}
                   onChange={setSelling}
                   step="0.01"
                 />
                 <Numeric
-                  label="Entered purchase cost / pc · USD"
+                  label={t("apparel.workspaces.enteredPurchaseCostPcUsd")}
                   value={buying}
                   onChange={setBuying}
                   step="0.01"
@@ -434,7 +435,7 @@ function BuyingDemo() {
               </>
             ) : (
               <Numeric
-                label="Entered commission fee / pc · USD"
+                label={t("apparel.workspaces.enteredCommissionFeePcUsd")}
                 value={fee}
                 onChange={setFee}
                 step="0.01"
@@ -442,37 +443,35 @@ function BuyingDemo() {
             )}
           </div>
           <Note>
-            Prices/fees are rounded to cents before quantity multiplication. No
-            exchange rate, tax rule, invoice or buyer/factory contract is
-            inferred.
+            {t("apparel.workspaces.pricesFeesAreRoundedToCents")}
           </Note>
         </div>
         <section
           className={css.commercialResult}
-          aria-label="Local commercial model result"
+          aria-label={t("apparel.workspaces.localCommercialModelResult")}
         >
           <span>
             {mode === "margin"
-              ? "THE TRADING CONVERSATION"
-              : "THE FEE CONVERSATION"}
+              ? t("apparel.workspaces.theTradingConversation")
+              : t("apparel.workspaces.theFeeConversation")}
           </span>
           <h3>
             {mode === "margin"
-              ? "Keep sales and purchase cost together."
-              : "A fee is its own commercial record."}
+              ? t("apparel.workspaces.keepSalesAndPurchaseCostTogether")
+              : t("apparel.workspaces.aFeeIsItsOwnCommercial")}
           </h3>
           <dl className={css.metrics}>
             <Metric
               label={
                 mode === "margin"
-                  ? "Example selling value"
-                  : "Example gross commission fees"
+                  ? t("apparel.workspaces.exampleSellingValue")
+                  : t("apparel.workspaces.exampleGrossCommissionFees")
               }
               value={result ? money(result.revenue) : "—"}
             />
             <Metric
               label={
-                mode === "margin" ? "Example purchase cost" : "Operating costs"
+                mode === "margin" ? t("apparel.workspaces.examplePurchaseCost") : t("apparel.workspaces.operatingCosts")
               }
               value={
                 result
@@ -485,8 +484,8 @@ function BuyingDemo() {
             <Metric
               label={
                 mode === "margin"
-                  ? "Difference before other costs"
-                  : "Net result"
+                  ? t("apparel.workspaces.differenceBeforeOtherCosts")
+                  : t("apparel.workspaces.netResult")
               }
               value={
                 result
@@ -498,7 +497,7 @@ function BuyingDemo() {
             />
             <Metric
               label={
-                mode === "margin" ? "Difference / selling value" : "Net margin"
+                mode === "margin" ? t("apparel.workspaces.differenceSellingValue") : t("apparel.workspaces.netMargin")
               }
               value={
                 result
@@ -512,8 +511,8 @@ function BuyingDemo() {
           <p className={css.resultMessage} role="status" data-warning={!!error}>
             {error ||
               (mode === "margin"
-                ? "The trading difference excludes other business costs."
-                : "Commission mode calculates fees only. Unknown operating costs are not treated as zero.")}
+                ? t("apparel.workspaces.theTradingDifferenceExcludesOtherBusines")
+                : t("apparel.workspaces.commissionModeCalculatesFeesOnlyUnknown"))}
           </p>
         </section>
       </div>
@@ -521,6 +520,7 @@ function BuyingDemo() {
   );
 }
 function MerchandisingDemo() {
+  const t = useTranslations("pages.industriesApp");
   const [pcd, setPcd] = useState(examplePcd);
   const [offsets, setOffsets] = useState(() =>
     milestones.map((row) => String(row.days)),
@@ -531,12 +531,12 @@ function MerchandisingDemo() {
     result = milestoneDates(pcd, offsets.map(number));
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Use valid example dates and offsets.";
+      e instanceof Error ? e.message : t("apparel.workspaces.useValidExampleDatesAndOffsets");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Fictional calendar-day planning exercise</Badge>
+        <Badge>{t("apparel.workspaces.fictionalCalendarDayPlanningExercise")}</Badge>
         <button
           type="button"
           className={css.button}
@@ -546,13 +546,13 @@ function MerchandisingDemo() {
           }}
         >
           <RotateCcw size={14} />
-          Reset dates
+          {t("apparel.workspaces.resetDates")}
         </button>
       </div>
       <div className={css.dateDemo}>
         <div className={css.dateInputs}>
           <label className={css.field}>
-            <span>Example planned cutting date</span>
+            <span>{t("apparel.workspaces.examplePlannedCuttingDate")}</span>
             <input
               type="date"
               min="2000-01-01"
@@ -577,17 +577,15 @@ function MerchandisingDemo() {
             ))}
           </div>
           <Note>
-            Offsets are whole calendar days from 0 to 365. Weekends, holidays,
-            capacity and dependencies are not modelled; the offsets are not
-            recommended lead times.
+            {t("apparel.workspaces.offsetsAreWholeCalendarDaysFrom")}
           </Note>
         </div>
         <section
           className={css.dateResults}
-          aria-label="Local milestone date results"
+          aria-label={t("apparel.workspaces.localMilestoneDateResults")}
         >
-          <span>WORK BACK FROM THE EXAMPLE PCD</span>
-          <h3>A date conversation with the assumptions visible.</h3>
+          <span>{t("apparel.workspaces.workBackFromTheExamplePcd")}</span>
+          <h3>{t("apparel.workspaces.aDateConversationWithTheAssumptions")}</h3>
           <ol>
             {milestones.map((row, i) => (
               <li key={row.id}>
@@ -597,7 +595,7 @@ function MerchandisingDemo() {
                   <small>
                     {result
                       ? `${offsets[i]} calendar days before PCD`
-                      : "Check the entered example"}
+                      : t("apparel.workspaces.checkTheEnteredExample")}
                   </small>
                 </div>
                 <strong>{result ? dateLabel(result[i]) : "—"}</strong>
@@ -606,7 +604,7 @@ function MerchandisingDemo() {
           </ol>
           <p className={css.resultMessage} role="status" data-warning={!!error}>
             {error ||
-              "These dates update only this example. No TNA milestone, booking or production plan is saved."}
+              t("apparel.workspaces.theseDatesUpdateOnlyThisExample")}
           </p>
         </section>
       </div>
@@ -620,18 +618,19 @@ const demos = {
   merchandising: MerchandisingDemo,
 };
 export default function ApparelDemo({ slug }: { slug: ApparelSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   const Demo = demos[slug];
   return (
     <section className={css.demoSection} id="industry-demo">
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>EXPLORE A SMALL PART OF THE WORK</p>
+            <p className={css.eyebrow}>{t("apparel.workspaces.exploreASmallPartOfThe")}</p>
             <h2>{p.demoTitle}</h2>
             <p>{p.demoDescription}</p>
           </div>
-          <Badge>Local example · not connected</Badge>
+          <Badge>{t("apparel.workspaces.localExampleNotConnected")}</Badge>
         </div>
         <div className={css.demoSurface}>
           <Demo />

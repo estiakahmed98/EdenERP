@@ -22,85 +22,89 @@ import {
   Plus,
 } from "lucide-react";
 import { getLocaleAlternates } from "@/i18n/metadata";
+import { useTranslations } from "next-intl";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const tx = await getTranslations("pages.universityApp.universityAdmissions");
   const t = await getTranslations("layout.header.modules.university");
   return {
-    title: t("links.universityDashboard") || "University Dashboard | AdonERP",
+    title: t("links.universityDashboard") || tx("page.universityDashboardAdonerp"),
     description:
-      "Explore an integrated university management experience for admissions, academics, students, examinations, fees, and graduation.",
+      tx("page.exploreAnIntegratedUniversityManagementE"),
     alternates: await getLocaleAlternates("/apps/university/university-dashboard"),
   };
 }
 
 // --- DATA FOR NEW HERO SCREENSHOT (ADMISSIONS) ---
-const admissionsKpiData = [
-  { label: "Applications", value: "1,384", color: "text-foreground" },
-  { label: "Eligible", value: "997", color: "text-[#8b5cf6]" }, // Purple
-  { label: "Offered", value: "281", color: "text-[#f59e0b]" }, // Amber
-  { label: "Accepted", value: "0", color: "text-[#10b981]" }, // Green
-  { label: "Admitted", value: "506", color: "text-[#10b981]" }, // Green
-  { label: "Waiting list", value: "52", color: "text-[#f59e0b]" }, // Amber
-];
+const admissionsKpiData = memoT((tx: TFn) => ([
+  { label: tx("page.applications"), value: "1,384", color: "text-foreground" },
+  { label: tx("page.eligible"), value: "997", color: "text-[#8b5cf6]" }, // Purple
+  { label: tx("page.offered"), value: "281", color: "text-[#f59e0b]" }, // Amber
+  { label: tx("page.accepted"), value: "0", color: "text-[#10b981]" }, // Green
+  { label: tx("page.admitted"), value: "506", color: "text-[#10b981]" }, // Green
+  { label: tx("page.waitingList"), value: "52", color: "text-[#f59e0b]" }, // Amber
+]));
 
 // --- 100% UNIQUE CONTENT FOR PAGE SECTIONS ---
-const fiveQuestions = [
+const fiveQuestions = memoT((tx: TFn) => ([
   {
-    title: "Enrolment Health",
-    question: "Are we tracking our admission targets efficiently?",
-    answer: "Stay ahead of your enrolment goals. This dashboard consolidates application pipelines, acceptance rates, and final admissions into a singular, real-time view so you never miss a target.",
-    source: "Synced from Admissions & CRM modules",
+    title: tx("page.enrolmentHealth"),
+    question: tx("page.areWeTrackingOurAdmissionTargets"),
+    answer: tx("page.stayAheadOfYourEnrolmentGoals"),
+    source: tx("page.syncedFromAdmissionsCrmModules"),
   },
   {
-    title: "Academic Velocity",
-    question: "How smoothly is the curriculum progressing?",
-    answer: "Monitor class capacity, faculty allocation, and student progress simultaneously. Instantly identify bottlenecks in course registration or exam scheduling before they impact the academic calendar.",
-    source: "Synced from Academic Operations",
+    title: tx("page.academicVelocity"),
+    question: tx("page.howSmoothlyIsTheCurriculumProgressing"),
+    answer: tx("page.monitorClassCapacityFacultyAllocationAnd"),
+    source: tx("page.syncedFromAcademicOperations"),
   },
   {
-    title: "Financial Clearance",
-    question: "Are tuition and fees being processed seamlessly?",
-    answer: "Track real-time revenue generation, pending invoices, and scholarship disbursements. A unified ledger ensures your finance team stays aligned with student accounts at every step.",
-    source: "Synced from Billing & Student Ledgers",
+    title: tx("page.financialClearance"),
+    question: tx("page.areTuitionAndFeesBeingProcessed"),
+    answer: tx("page.trackRealTimeRevenueGenerationPending"),
+    source: tx("page.syncedFromBillingStudentLedgers"),
   },
   {
-    title: "Resource Allocation",
-    question: "Do our departments have exactly what they need?",
-    answer: "Analyze student-to-faculty ratios, active department sizes, and programme workloads. Use live data to optimize resource distribution across the entire university ecosystem.",
-    source: "Synced from HR & Departmental Records",
+    title: tx("page.resourceAllocation"),
+    question: tx("page.doOurDepartmentsHaveExactlyWhat"),
+    answer: tx("page.analyzeStudentToFacultyRatiosActive"),
+    source: tx("page.syncedFromHrDepartmentalRecords"),
   },
   {
-    title: "Campus Overview",
-    question: "What does the current institutional landscape look like?",
-    answer: "From on-leave counts to total active graduates, get the macro picture of your university's scale. It's the single source of truth for board meetings and strategic planning.",
-    source: "Synced from the Central Registry",
+    title: tx("page.campusOverview"),
+    question: tx("page.whatDoesTheCurrentInstitutionalLandscape"),
+    answer: tx("page.fromOnLeaveCountsToTotal"),
+    source: tx("page.syncedFromTheCentralRegistry"),
   },
-];
+]));
 
-const faqs = [
+const faqs = memoT((tx: TFn) => ([
   {
-    q: "What exactly does the University Hub cover?",
-    a: "The University Hub is a comprehensive, 360-degree command center. It integrates student admissions, academic schedules, financial ledgers, and graduation tracking into a single, unified dashboard experience.",
+    q: tx("page.whatExactlyDoesTheUniversityHub"),
+    a: tx("page.theUniversityHubIsAComprehensive"),
   },
   {
-    q: "Is the data on this dashboard updated automatically?",
-    a: "Yes. The dashboard is directly linked to your ERP system. Every number, from 'Applications' to 'Graduated', is populated in real-time based on the actions taken by your staff across various modules.",
+    q: tx("page.isTheDataOnThisDashboard"),
+    a: tx("page.yesTheDashboardIsDirectlyLinked"),
   },
   {
-    q: "Does this system support local financial compliance?",
-    a: "Absolutely. The underlying finance module is built for local compliance, handling everything from specific tax deductions to local currency formatting (Lakh/Crore) and popular payment gateways.",
+    q: tx("page.doesThisSystemSupportLocalFinancial"),
+    a: tx("page.absolutelyTheUnderlyingFinanceModuleIs"),
   },
   {
-    q: "How does the multi-campus management work?",
-    a: "You can manage multiple branches or campuses from a single login. A simple dropdown in the top bar allows you to switch contexts instantly, keeping each campus's data securely isolated yet easily accessible.",
+    q: tx("page.howDoesTheMultiCampusManagement"),
+    a: tx("page.youCanManageMultipleBranchesOr"),
   },
   {
-    q: "Can we customize what data appears on the dashboard?",
-    a: "The dashboard is designed to highlight the most critical metrics by default. However, individual users can often customize their views and permissions based on their specific administrative roles.",
+    q: tx("page.canWeCustomizeWhatDataAppears"),
+    a: tx("page.theDashboardIsDesignedToHighlight"),
   },
-];
+]));
 
 export default function UniversityDashboardPage() {
+  const tx = useTranslations("pages.universityApp.universityAdmissions");
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       
@@ -111,18 +115,18 @@ export default function UniversityDashboardPage() {
           {/* Hero Text */}
           <div className="mx-auto max-w-[800px] text-center mb-12">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-1.5 text-[12px] font-semibold text-primary shadow-sm">
-              <Sparkles className="h-4 w-4" /> Next-Gen Campus Management
+              <Sparkles className="h-4 w-4" />{" "}{tx("page.nextGenCampusManagement")}
             </div>
             <h1 className="showcase-heading text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.05] tracking-[-0.04em] text-foreground">
-              Run your entire campus <span className="text-primary">from a single screen.</span>
+              {tx("page.runYourEntireCampus")}{" "}<span className="text-primary">{tx("page.fromASingleScreen")}</span>
             </h1>
             <p className="mx-auto mt-5 max-w-[580px] text-[16px] leading-7 text-muted-foreground">
-              From the first admission application to the final graduation clearance. Track applications, faculty workload, and financial health instantly—without switching tabs.
+              {tx("page.fromTheFirstAdmissionApplicationTo")}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <LiveDemoButton />
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
-                View All Features
+                {tx("page.viewAllFeatures")}
               </button>
             </div>
           </div>
@@ -134,16 +138,16 @@ export default function UniversityDashboardPage() {
               {/* App Top Bar */}
               <div className="flex h-12 items-center justify-between border-b border-border bg-muted/30 px-4 sm:px-6 relative z-20">
                 <div className="flex items-center gap-2 text-[12px]">
-                  <span className="font-bold text-primary">Adon ERP</span>
+                  <span className="font-bold text-primary">{tx("page.adonErp")}</span>
                   <span className="text-muted-foreground/50">/</span>
-                  <span className="font-semibold text-foreground">University Admissions</span>
+                  <span className="font-semibold text-foreground">{tx("page.universityAdmissions")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="hidden sm:flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <Globe className="h-3 w-3" /> English
+                    <Globe className="h-3 w-3" />{" "}{tx("page.english")}
                   </div>
                   <div className="flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <School className="h-3 w-3" /> National University <ChevronDown className="h-3 w-3" />
+                    <School className="h-3 w-3" />{" "}{tx("page.nationalUniversity")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                 </div>
               </div>
@@ -154,21 +158,21 @@ export default function UniversityDashboardPage() {
                 {/* Sidebar */}
                 <div className="hidden w-[220px] shrink-0 border-r border-border bg-card py-4 sm:block overflow-y-auto">
                   <div className="mb-3 flex items-center justify-between px-5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                    University <ChevronDown className="h-3 w-3" />
+                    {tx("page.university")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                   <nav className="space-y-0.5 px-3">
                     {[
-                      { icon: LayoutDashboard, label: "University Dashboard" },
-                      { icon: FileText, label: "University Admissions", active: true },
-                      { icon: Users, label: "University Students" },
-                      { icon: School, label: "Faculties & Programmes" },
-                      { icon: BookOpen, label: "Courses & Curriculum" },
-                      { icon: CalendarDays, label: "Class Schedule" },
-                      { icon: Calendar, label: "Registration" },
-                      { icon: CreditCard, label: "Student Accounts" },
-                      { icon: Award, label: "Grades & Results" },
-                      { icon: GraduationCap, label: "Graduation" },
-                      { icon: Calendar, label: "Terms" },
+                      { icon: LayoutDashboard, label: tx("page.universityDashboard") },
+                      { icon: FileText, label: tx("page.universityAdmissions"), active: true },
+                      { icon: Users, label: tx("page.universityStudents") },
+                      { icon: School, label: tx("page.facultiesProgrammes") },
+                      { icon: BookOpen, label: tx("page.coursesCurriculum") },
+                      { icon: CalendarDays, label: tx("page.classSchedule") },
+                      { icon: Calendar, label: tx("page.registration") },
+                      { icon: CreditCard, label: tx("page.studentAccounts") },
+                      { icon: Award, label: tx("page.gradesResults") },
+                      { icon: GraduationCap, label: tx("page.graduation") },
+                      { icon: Calendar, label: tx("page.terms") },
                     ].map((item, i) => (
                       <div
                         key={i}
@@ -191,26 +195,26 @@ export default function UniversityDashboardPage() {
                   <div className="relative z-0">
                     {/* Page Header */}
                     <div className="mb-6">
-                      <h1 className="text-[20px] font-bold tracking-tight text-foreground">University admissions</h1>
+                      <h1 className="text-[20px] font-bold tracking-tight text-foreground">{tx("page.universityAdmissions2")}</h1>
                       <p className="mt-1.5 max-w-[850px] text-[11px] leading-5 text-muted-foreground">
-                        A round per intake term: applications with SSC and HSC results and up to three programme choices, the admission test, a merit list, offers in merit order (quota seats first), and admission with the waiver the applicant's results earned.
+                        {tx("page.aRoundPerIntakeTermApplications")}
                       </p>
                     </div>
 
                     {/* Top Controls */}
                     <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end">
                       <div className="w-full sm:w-[280px]">
-                        <label className="mb-1 block text-[11px] font-medium text-muted-foreground">Round</label>
+                        <label className="mb-1 block text-[11px] font-medium text-muted-foreground">{tx("page.round")}</label>
                         <div className="relative">
                           <select className="w-full appearance-none rounded-md border border-border bg-card px-3 py-2 text-[12px] font-medium text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                            <option>Spring 2027 — undergraduate admission</option>
-                            <option>Autumn 2026 — undergraduate admission</option>
+                            <option>{tx("page.spring2027UndergraduateAdmission")}</option>
+                            <option>{tx("page.autumn2026UndergraduateAdmission")}</option>
                           </select>
                           <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
                         </div>
                       </div>
                       <button className="flex items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-2 text-[12px] font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90">
-                        <Plus className="h-3.5 w-3.5" /> New admission round
+                        <Plus className="h-3.5 w-3.5" />{" "}{tx("page.newAdmissionRound")}
                       </button>
                     </div>
 
@@ -219,25 +223,25 @@ export default function UniversityDashboardPage() {
                       <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
                         <div>
                           <div className="flex flex-wrap items-center gap-2">
-                            <h2 className="text-[14px] font-bold text-foreground">Spring 2027 — undergraduate admission</h2>
-                            <span className="rounded-full bg-[#10b981]/10 px-2 py-0.5 text-[10px] font-bold text-[#10b981]">Offers</span>
+                            <h2 className="text-[14px] font-bold text-foreground">{tx("page.spring2027UndergraduateAdmission")}</h2>
+                            <span className="rounded-full bg-[#10b981]/10 px-2 py-0.5 text-[10px] font-bold text-[#10b981]">{tx("page.offers")}</span>
                             <span className="text-[10px] text-muted-foreground">
-                              Intake term: Spring 2027 · Applications: 31 Aug 2026 – 10 Oct 2026 · test on 18 Oct 2026 · Form fee: 1,000
+                              {tx("page.intakeTermSpring2027Applications31")}
                             </span>
                           </div>
                         </div>
                         <div className="flex flex-wrap gap-1.5">
                           <button className="rounded-md bg-primary px-3 py-1.5 text-[11px] font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90">
-                            Offer freed seats to the waiting list
+                            {tx("page.offerFreedSeatsToTheWaiting")}
                           </button>
                           <button className="rounded-md border border-border bg-card px-3 py-1.5 text-[11px] font-medium text-foreground shadow-sm transition-colors hover:bg-muted">
-                            Expire lapsed offers
+                            {tx("page.expireLapsedOffers")}
                           </button>
                           <button className="rounded-md border border-border bg-card px-3 py-1.5 text-[11px] font-medium text-foreground shadow-sm transition-colors hover:bg-muted">
-                            Admit all accepted (0)
+                            {tx("page.admitAllAccepted0")}
                           </button>
                           <button className="rounded-md border border-border bg-card px-3 py-1.5 text-[11px] font-medium text-foreground shadow-sm transition-colors hover:bg-muted">
-                            Finalise the round
+                            {tx("page.finaliseTheRound")}
                           </button>
                         </div>
                       </div>
@@ -245,7 +249,7 @@ export default function UniversityDashboardPage() {
 
                     {/* KPI Grid */}
                     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 mb-5">
-                      {admissionsKpiData.map((kpi, i) => (
+                      {admissionsKpiData(tx).map((kpi, i) => (
                         <div key={i} className="rounded-lg border border-border bg-card p-3 shadow-sm flex flex-col justify-center">
                           <p className={`text-[20px] font-bold tracking-tight leading-none ${kpi.color}`}>{kpi.value}</p>
                           <p className="mt-1.5 text-[10px] font-medium text-muted-foreground">{kpi.label}</p>
@@ -256,7 +260,7 @@ export default function UniversityDashboardPage() {
                     {/* Fees Collected Card */}
                     <div className="rounded-lg border border-border bg-card p-4 shadow-sm">
                       <p className="text-[22px] font-bold tracking-tight text-foreground">1,346,000</p>
-                      <p className="mt-1 text-[10px] font-medium text-muted-foreground">Form fees collected</p>
+                      <p className="mt-1 text-[10px] font-medium text-muted-foreground">{tx("page.formFeesCollected")}</p>
                     </div>
 
                   </div>
@@ -268,7 +272,7 @@ export default function UniversityDashboardPage() {
                   <div className="absolute top-[150px] bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent backdrop-blur-[3px] flex flex-col items-center justify-end pb-12">
                     <div className="pointer-events-auto flex flex-col items-center">
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/80 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
-                        Preview mode. Explore the full campus hub inside Adon ERP.
+                        {tx("page.previewModeExploreTheFullCampus")}
                       </p>
                       <LiveDemoButton />
                     </div>
@@ -288,15 +292,15 @@ export default function UniversityDashboardPage() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                The core metrics<br />every dean<br />needs to see
+                {tx("page.theCoreMetrics")}<br />{tx("page.everyDean")}<br />{tx("page.needsToSee")}
               </h2>
               <p className="mt-5 max-w-[400px] text-[14px] leading-7 text-muted-foreground">
-                Managing a university means balancing hundreds of moving parts. Here is how the Hub translates raw ERP data into actionable insights for your leadership team.
+                {tx("page.managingAUniversityMeansBalancingHundred")}
               </p>
             </div>
             
             <div className="space-y-8">
-              {fiveQuestions.map((item, i) => (
+              {fiveQuestions(tx).map((item, i) => (
                 <div key={i} className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[200px_1fr]">
                   <div>
                     <p className="text-[13px] font-bold text-primary">{item.title}</p>
@@ -320,10 +324,10 @@ export default function UniversityDashboardPage() {
         <div className="mx-auto max-w-[1300px] px-5 sm:px-8">
           <div className="mb-10">
             <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-              Engineered for the<br />realities of local campuses
+              {tx("page.engineeredForThe")}<br />{tx("page.realitiesOfLocalCampuses")}
             </h2>
             <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-muted-foreground">
-              We didn't just translate a foreign software. Adon ERP was built from the ground up to handle the specific administrative, financial, and cultural nuances of educational institutions here.
+              {tx("page.weDidnTJustTranslateA")}
             </p>
           </div>
 
@@ -333,22 +337,22 @@ export default function UniversityDashboardPage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <FileCheck2 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Official Document Generation</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Generate mark sheets, official transcripts, and certificates that strictly adhere to national education board formats, ready for immediate printing.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.officialDocumentGeneration")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.generateMarkSheetsOfficialTranscriptsAnd")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <WalletCards className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Localized Financial Views</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Financial dashboards automatically display figures in Lakh and Crore, eliminating mental math and ensuring clarity during budget meetings.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.localizedFinancialViews")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.financialDashboardsAutomaticallyDisplayF")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <School className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Multi-Branch Architecture</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Whether you run a main campus and an urban branch, or multiple colleges, switch between them effortlessly. Data remains completely isolated per branch.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.multiBranchArchitecture")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.whetherYouRunAMainCampus")}</p>
               </div>
             </div>
 
@@ -357,35 +361,35 @@ export default function UniversityDashboardPage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <BookOpenCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Streamlined Admissions</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Track prospective students from their initial inquiry through to fee payment and student ID generation, all within a single, unified workflow.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.streamlinedAdmissions")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.trackProspectiveStudentsFromTheirInitial")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Layers3 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Bilingual by Default</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Toggle the interface between English and Bangla instantly. The entire UI translates, ensuring all staff members can work comfortably.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.bilingualByDefault")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.toggleTheInterfaceBetweenEnglishAnd")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <CalendarDays className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Custom Academic Calendars</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Define your academic and fiscal years exactly as they are. The system adapts to your specific start and end dates, with no rigid constraints.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.customAcademicCalendars")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.defineYourAcademicAndFiscalYears")}</p>
               </div>
             </div>
 
             {/* Timeline Box */}
             <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-sm">
-              <h3 className="mb-6 text-[15px] font-bold text-foreground">A day in the life with the Hub</h3>
+              <h3 className="mb-6 text-[15px] font-bold text-foreground">{tx("page.aDayInTheLifeWith")}</h3>
               <div className="relative border-l-2 border-muted ml-3 space-y-6">
                 {[
-                  { time: "9:00 am", text: "The registrar opens the dashboard. A quick glance shows a spike in new applications for the upcoming Spring term." },
-                  { time: "11:30 am", text: "The finance head reviews fee collections. The hub highlights a specific department lagging behind on tuition clearances." },
-                  { time: "2:00 pm", text: "A department head checks faculty workload. Live data helps them reallocate classes to balance the teaching load." },
-                  { time: "4:30 pm", text: "The admissions team finalizes a round. They generate the final merit list and send out offers directly from the platform." },
-                  { time: "6:00 pm", text: "The Vice Chancellor reviews the overall student metrics from home, confirming the university is on track for its enrollment targets." }
+                  { time: tx("page.n900Am"), text: tx("page.theRegistrarOpensTheDashboardA") },
+                  { time: tx("page.n1130Am"), text: tx("page.theFinanceHeadReviewsFeeCollections") },
+                  { time: tx("page.n200Pm"), text: tx("page.aDepartmentHeadChecksFacultyWorkload") },
+                  { time: tx("page.n430Pm"), text: tx("page.theAdmissionsTeamFinalizesARound") },
+                  { time: tx("page.n600Pm"), text: tx("page.theViceChancellorReviewsTheOverall") }
                 ].map((item, i) => (
                   <div key={i} className="relative pl-6">
                     <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-card bg-primary ring-4 ring-primary/10" />
@@ -405,11 +409,11 @@ export default function UniversityDashboardPage() {
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                Frequently asked<br />questions<br />by administrators
+                {tx("page.frequentlyAsked")}<br />{tx("page.questions")}<br />{tx("page.byAdministrators")}
               </h2>
             </div>
             <div className="border-t border-border">
-              {faqs.map((faq, i) => (
+              {faqs(tx).map((faq, i) => (
                 <details key={i} className="group border-b border-border py-5">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[14px] font-bold text-foreground marker:hidden [&::-webkit-details-marker]:hidden">
                     {faq.q}
@@ -436,15 +440,15 @@ export default function UniversityDashboardPage() {
             
             <div className="relative mx-auto max-w-[700px]">
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,3.2rem)] leading-[1.1] tracking-[-0.04em]">
-                See how Adon ERP fits<br />your institution's workflow.
+                {tx("page.seeHowAdonErpFits")}<br />{tx("page.yourInstitutionSWorkflow")}
               </h2>
               <p className="mx-auto mt-5 max-w-[500px] text-[15px] leading-6 text-secondary-foreground/70">
-                Get a personalized walkthrough of the Admissions Hub. We'll use sample data that mirrors your campus structure to show you exactly how it works.
+                {tx("page.getAPersonalizedWalkthroughOfThe")}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <LiveDemoButton />
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
-                  Browse All Modules
+                  {tx("page.browseAllModules")}
                 </button>
               </div>
             </div>

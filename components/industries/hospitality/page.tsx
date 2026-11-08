@@ -31,18 +31,22 @@ import {
 import HospitalityHero from "./heroes";
 import HospitalityWorkspace, { HospitalityStory } from "./workspaces";
 import { Badge, Metric, Note, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { type TFn } from "@/lib/i18n/t-types";
 export async function hospitalityMetadata(
   slug: HospitalitySlug,
 ): Promise<Metadata> {
+  const tx = await getTranslations("pages.industriesApp");
   return {
-    title: `${pages[slug].title} | Food & Hospitality | Adon ERP`,
-    description: pages[slug].description,
+    title: `${pages(tx)[slug].title} | Food & Hospitality | Adon ERP`,
+    description: pages(tx)[slug].description,
     alternates: await getLocaleAlternates(
       `/industries/food&hospitality/${slug}`,
     ),
   };
 }
-function evidence(slug: HospitalitySlug): {
+function evidence(slug: HospitalitySlug, tx: TFn): {
   stats: [string, string][];
   columns: string[];
   rows: ReactNode[][];
@@ -51,43 +55,43 @@ function evidence(slug: HospitalitySlug): {
     const fit = seatFit(4, 4);
     return {
       stats: [
-        ["Example table", "T02"],
-        ["Entered party size", "4 people"],
-        ["Example spare seats", num(fit.spare)],
+        [tx("hospitality.page.exampleTable"), "T02"],
+        [tx("hospitality.page.enteredPartySize"), tx("hospitality.page.n4People")],
+        [tx("hospitality.page.exampleSpareSeats"), num(fit.spare)],
       ],
       columns: [
-        "Fictional table",
-        "Example seats",
-        "Fictional state",
-        "Record context",
+        tx("hospitality.page.fictionalTable"),
+        tx("hospitality.page.exampleSeats"),
+        tx("hospitality.page.fictionalState"),
+        tx("hospitality.page.recordContext"),
       ],
       rows: tables.map((t) => [
         t.id,
         t.seats,
         t.state,
-        "Concept only · no reservation",
+        tx("hospitality.page.conceptOnlyNoReservation"),
       ]),
     };
   }
   if (slug === "fast-food") {
-    const counts = ticketCounts(tickets.map((t) => t.stage));
+    const counts = ticketCounts(tickets(tx).map((t) => t.stage));
     return {
       stats: [
-        ["Example queued", num(counts.queued)],
-        ["Example preparing", num(counts.preparing)],
-        ["Example ready", num(counts.ready)],
+        [tx("hospitality.page.exampleQueued"), num(counts.queued)],
+        [tx("hospitality.page.examplePreparing"), num(counts.preparing)],
+        [tx("hospitality.page.exampleReady"), num(counts.ready)],
       ],
       columns: [
-        "Fictional ticket",
-        "Example items",
-        "Initial stage",
-        "Record context",
+        tx("hospitality.page.fictionalTicket"),
+        tx("hospitality.page.exampleItems"),
+        tx("hospitality.page.initialStage"),
+        tx("hospitality.page.recordContext"),
       ],
-      rows: tickets.map((t) => [
+      rows: tickets(tx).map((t) => [
         t.id,
         t.items.join(" · "),
-        ticketLabels[t.stage],
-        "Static concept · not a kitchen feed",
+        ticketLabels(tx)[t.stage],
+        tx("hospitality.page.staticConceptNotAKitchenFeed"),
       ]),
     };
   }
@@ -95,22 +99,22 @@ function evidence(slug: HospitalitySlug): {
     const stay = stayEstimate(arrivalDate, departureDate, 4000);
     return {
       stats: [
-        ["Example nights", num(stay.nights)],
-        ["Entered rate / night", money(stay.nightly)],
-        ["Example room charge", money(stay.total)],
+        [tx("hospitality.page.exampleNights"), num(stay.nights)],
+        [tx("hospitality.page.enteredRateNight"), money(stay.nightly)],
+        [tx("hospitality.page.exampleRoomCharge"), money(stay.total)],
       ],
       columns: [
-        "Fictional stay",
-        "Example arrival",
-        "Example departure",
-        "Record context",
+        tx("hospitality.page.fictionalStay"),
+        tx("hospitality.page.exampleArrival"),
+        tx("hospitality.page.exampleDeparture"),
+        tx("hospitality.page.recordContext"),
       ],
       rows: [
         [
           "EX-STAY-01",
           dateLabel(arrivalDate),
           dateLabel(departureDate),
-          "Local estimate · no booking",
+          tx("hospitality.page.localEstimateNoBooking"),
         ],
       ],
     };
@@ -119,15 +123,15 @@ function evidence(slug: HospitalitySlug): {
     const load = cartonLoad(drinks, 600);
     return {
       stats: [
-        ["Example cartons", num(load.cartons)],
-        ["Individual units", num(load.units)],
-        ["Entered count limit", "600 units"],
+        [tx("hospitality.page.exampleCartons"), num(load.cartons)],
+        [tx("hospitality.page.individualUnits"), num(load.units)],
+        [tx("hospitality.page.enteredCountLimit"), tx("hospitality.page.n600Units")],
       ],
       columns: [
-        "Fictional beverage",
-        "Example cartons",
-        "Units / carton",
-        "Calculated units",
+        tx("hospitality.page.fictionalBeverage"),
+        tx("hospitality.page.exampleCartons"),
+        tx("hospitality.page.unitsCarton"),
+        tx("hospitality.page.calculatedUnits"),
       ],
       rows: drinks.map((d, i) => [d.name, d.cartons, d.units, load.lines[i]]),
     };
@@ -135,31 +139,32 @@ function evidence(slug: HospitalitySlug): {
   const snapshot = hotelSnapshot(rooms);
   return {
     stats: [
-      ["Fictional occupied rooms", num(snapshot.occupied)],
-      ["Declared denominator", num(snapshot.denominator)],
-      ["Illustrative occupancy", `${snapshot.occupancy?.toFixed(1)}%`],
+      [tx("hospitality.page.fictionalOccupiedRooms"), num(snapshot.occupied)],
+      [tx("hospitality.page.declaredDenominator"), num(snapshot.denominator)],
+      [tx("hospitality.page.illustrativeOccupancy"), `${snapshot.occupancy?.toFixed(1)}%`],
     ],
     columns: [
-      "Fictional room",
-      "Example floor",
-      "Initial state",
-      "Illustrative daily rate",
+      tx("hospitality.page.fictionalRoom"),
+      tx("hospitality.page.exampleFloor"),
+      tx("hospitality.page.initialState"),
+      tx("hospitality.page.illustrativeDailyRate"),
     ],
-    rows: rooms.map((r) => [r.id, r.floor, roomLabels[r.state], money(r.rate)]),
+    rows: rooms.map((r) => [r.id, r.floor, roomLabels(tx)[r.state], money(r.rate)]),
   };
 }
 function ConceptCanvas({ slug }: { slug: HospitalitySlug }) {
-  const data = evidence(slug);
+  const tx = useTranslations("pages.industriesApp");
+  const data = evidence(slug, tx);
   return (
     <div className={css.previewCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          {tx("hospitality.page.eden")}<span>{tx("hospitality.page.erp")}</span>
         </b>
-        <span>Food & Hospitality / {pages[slug].title}</span>
-        <Badge>Concept canvas · fictional records</Badge>
+        <span>{tx("hospitality.page.foodHospitality")}{" "}{pages(tx)[slug].title}</span>
+        <Badge>{tx("hospitality.page.conceptCanvasFictionalRecords")}</Badge>
       </header>
-      <h3>{pages[slug].demoTitle}</h3>
+      <h3>{pages(tx)[slug].demoTitle}</h3>
       <dl className={css.previewStats}>
         {data.stats.map(([label, amount]) => (
           <Metric key={label} label={label} value={amount} />
@@ -169,12 +174,11 @@ function ConceptCanvas({ slug }: { slug: HospitalitySlug }) {
         className={css.tableScroll}
         tabIndex={0}
         role="region"
-        aria-label={`${pages[slug].title} fictional example records, scroll horizontally`}
+        aria-label={`${pages(tx)[slug].title} fictional example records, scroll horizontally`}
       >
         <table>
           <caption className={css.srOnly}>
-            Static illustrative records based on the initial example, separate
-            from the editable workspace
+            {tx("hospitality.page.staticIllustrativeRecordsBasedOnThe")}
           </caption>
           <thead>
             <tr>
@@ -197,15 +201,14 @@ function ConceptCanvas({ slug }: { slug: HospitalitySlug }) {
         </table>
       </div>
       <Note>
-        Static concept canvas. All identifiers, states, amounts, quantities and
-        dates are fictional. The editable local exercise above does not update
-        this canvas or create a real transaction.
+        {tx("hospitality.page.staticConceptCanvasAllIdentifiersStates")}
       </Note>
     </div>
   );
 }
 export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
-  const p = pages[slug];
+  const tx = useTranslations("pages.industriesApp");
+  const p = pages(tx)[slug];
   return (
     <main
       className={css.hospitality}
@@ -214,12 +217,12 @@ export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
       data-hospitality-industry={slug}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={tx("hospitality.page.breadcrumb")}>
+          <Link href="/">{tx("hospitality.page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{tx("hospitality.page.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <span>Food & Hospitality</span>
+          <span>{tx("hospitality.page.foodHospitality2")}</span>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -230,23 +233,22 @@ export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
       <section className={css.modulesSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>FOLLOW THE DETAIL INTO THE PRODUCT</p>
-            <h2>The supporting product conversation.</h2>
+            <p className={css.eyebrow}>{tx("hospitality.page.followTheDetailIntoTheProduct")}</p>
+            <h2>{tx("hospitality.page.theSupportingProductConversation")}</h2>
             <p>
-              Explore existing ERP presentations for the item, service, stock
-              and accounting questions behind your operation.
+              {tx("hospitality.page.exploreExistingErpPresentationsForThe")}
             </p>
           </div>
           <div className={css.moduleGrid}>
             {p.tools.map((t, i) => (
               <Link key={t.href} href={t.href}>
-                <span>0{i + 1} / PRODUCT PREVIEW</span>
+                <span>0{i + 1}{" "}{tx("hospitality.page.productPreview")}</span>
                 <h3>
                   {t.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{t.body}</p>
-                <small>Explore the presentation</small>
+                <small>{tx("hospitality.page.exploreThePresentation")}</small>
               </Link>
             ))}
           </div>
@@ -255,16 +257,15 @@ export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
       <section className={css.previewSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>A CLOSER LOOK AT THE EXPERIENCE</p>
-            <h2>The record behind the welcome.</h2>
+            <p className={css.eyebrow}>{tx("hospitality.page.aCloserLookAtTheExperience")}</p>
+            <h2>{tx("hospitality.page.theRecordBehindTheWelcome")}</h2>
             <p>
-              Illustrative records, with a full product walkthrough available in
-              a guided advisor conversation.
+              {tx("hospitality.page.illustrativeRecordsWithAFullProduct")}
             </p>
           </div>
           <DemoPreview
             title={`${p.title} industry experience`}
-            description="Bring your service, guest, stock or accounting questions to an advisor and explore the product context for your own operation."
+            description={tx("hospitality.page.bringYourServiceGuestStockOr")}
           >
             <ConceptCanvas slug={slug} />
           </DemoPreview>
@@ -273,8 +274,8 @@ export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
       <section className={css.faqSection}>
         <div className={`${css.wrap} ${css.faqLayout}`}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Understand the example.</h2>
+            <p className={css.eyebrow}>{tx("hospitality.page.aFewUsefulDetails")}</p>
+            <h2>{tx("hospitality.page.understandTheExample")}</h2>
           </div>
           <div className={css.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -292,15 +293,15 @@ export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
       <section className={css.relatedSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>MORE FOOD & HOSPITALITY PERSPECTIVES</p>
-            <h2>A different operation. Its own story.</h2>
+            <p className={css.eyebrow}>{tx("hospitality.page.moreFoodHospitalityPerspectives")}</p>
+            <h2>{tx("hospitality.page.aDifferentOperationItsOwnStory")}</h2>
           </div>
           <div className={css.relatedGrid}>
             {hospitalitySlugs
               .filter((s) => s !== slug)
               .map((s) => (
                 <Link key={s} href={`/industries/food&hospitality/${s}`}>
-                  {pages[s].title}
+                  {pages(tx)[s].title}
                   <ArrowRight size={16} aria-hidden="true" />
                 </Link>
               ))}
@@ -310,11 +311,10 @@ export function HospitalityIndustryPage({ slug }: { slug: HospitalitySlug }) {
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR OPERATION. YOUR WAY OF WORKING.</p>
-            <h2>Let’s bring your service details into focus.</h2>
+            <p className={css.eyebrow}>{tx("hospitality.page.yourOperationYourWayOfWorking")}</p>
+            <h2>{tx("hospitality.page.letSBringYourServiceDetails")}</h2>
             <p>
-              Share your dining-room, counter, property or distribution process
-              with an advisor and explore the relevant product workflows.
+              {tx("hospitality.page.shareYourDiningRoomCounterProperty")}
             </p>
           </div>
           <LiveDemoButton />

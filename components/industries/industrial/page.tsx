@@ -18,16 +18,20 @@ import {
 import IndustrialHero from "./heroes";
 import IndustrialWorkspace, { IndustrialWorkflow } from "./workspaces";
 import { Badge, Metric, Note, base, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { type TFn } from "@/lib/i18n/t-types";
 export async function industrialMetadata(
   slug: IndustrialSlug,
 ): Promise<Metadata> {
+  const tx = await getTranslations("pages.industriesApp");
   return {
-    title: `${pages[slug].title} | Adon ERP Industries`,
-    description: pages[slug].description,
+    title: `${pages(tx)[slug].title} | Adon ERP Industries`,
+    description: pages(tx)[slug].description,
     alternates: await getLocaleAlternates(routeFor(slug)),
   };
 }
-function evidence(slug: IndustrialSlug): {
+function evidence(slug: IndustrialSlug, tx: TFn): {
   stats: [string, string][];
   columns: string[];
   rows: ReactNode[][];
@@ -36,17 +40,17 @@ function evidence(slug: IndustrialSlug): {
     const fabric = fabricLength(1000, defaultLosses);
     return {
       stats: [
-        ["Example incoming length", "1,000 m"],
-        ["Calculated final length", `${num(fabric.finished, 3)} m`],
-        ["Example retained share", `${fabric.retainedPercent.toFixed(2)}%`],
+        [tx("industrial.page.exampleIncomingLength"), "1,000 m"],
+        [tx("industrial.page.calculatedFinalLength"), `${num(fabric.finished, 3)} m`],
+        [tx("industrial.page.exampleRetainedShare"), `${fabric.retainedPercent.toFixed(2)}%`],
       ],
       columns: [
-        "Fictional stage",
-        "Entered loss",
-        "Removed length · m",
-        "Remaining length · m",
+        tx("industrial.page.fictionalStage"),
+        tx("industrial.page.enteredLoss"),
+        tx("industrial.page.removedLengthM"),
+        tx("industrial.page.remainingLengthM"),
       ],
-      rows: textileStages.map((stage, i) => [
+      rows: textileStages(tx).map((stage, i) => [
         stage,
         `${fabric.stages[i].percent}%`,
         num(fabric.stages[i].loss, 3),
@@ -58,15 +62,15 @@ function evidence(slug: IndustrialSlug): {
     const cut = barPattern(6000, 1200, 3, 12);
     return {
       stats: [
-        ["Example stock length", "6,000 mm"],
-        ["Requested pieces", "12"],
-        ["Calculated bars", num(cut.bars)],
+        [tx("industrial.page.exampleStockLength"), tx("industrial.page.n6000Mm")],
+        [tx("industrial.page.requestedPieces"), "12"],
+        [tx("industrial.page.calculatedBars"), num(cut.bars)],
       ],
       columns: [
-        "Grouped example pattern",
-        "Number of bars",
-        "Pieces / bar",
-        "Remaining length / bar",
+        tx("industrial.page.groupedExamplePattern"),
+        tx("industrial.page.numberOfBars"),
+        tx("industrial.page.piecesBar"),
+        tx("industrial.page.remainingLengthBar"),
       ],
       rows: cut.patterns.map((pattern, i) => [
         `EX-PATTERN-0${i + 1}`,
@@ -79,16 +83,16 @@ function evidence(slug: IndustrialSlug): {
   const kits = componentKits(24, components);
   return {
     stats: [
-      ["Example requested chairs", "24"],
-      ["Component-only kit equivalents", num(kits.available)],
-      ["Requested kit shortfall", num(kits.short)],
+      [tx("industrial.page.exampleRequestedChairs"), "24"],
+      [tx("industrial.page.componentOnlyKitEquivalents"), num(kits.available)],
+      [tx("industrial.page.requestedKitShortfall"), num(kits.short)],
     ],
     columns: [
-      "Fictional component",
-      "Pieces / chair",
-      "Example stock · pcs",
-      "Required · pcs",
-      "Short · pcs",
+      tx("industrial.page.fictionalComponent"),
+      tx("industrial.page.piecesChair"),
+      tx("industrial.page.exampleStockPcs"),
+      tx("industrial.page.requiredPcs"),
+      tx("industrial.page.shortPcs"),
     ],
     rows: components.map((row, i) => [
       row.name,
@@ -100,19 +104,20 @@ function evidence(slug: IndustrialSlug): {
   };
 }
 function ConceptCanvas({ slug }: { slug: IndustrialSlug }) {
-  const data = evidence(slug);
+  const tx = useTranslations("pages.industriesApp");
+  const data = evidence(slug, tx);
   return (
     <div className={base.previewCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          {tx("industrial.page.eden")}<span>{tx("industrial.page.erp")}</span>
         </b>
         <span>
-          {pages[slug].category} / {pages[slug].title}
+          {pages(tx)[slug].category} / {pages(tx)[slug].title}
         </span>
-        <Badge>Concept canvas · fictional records</Badge>
+        <Badge>{tx("industrial.page.conceptCanvasFictionalRecords")}</Badge>
       </header>
-      <h3>{pages[slug].demoTitle}</h3>
+      <h3>{pages(tx)[slug].demoTitle}</h3>
       <dl className={base.previewStats}>
         {data.stats.map(([label, value]) => (
           <Metric key={label} label={label} value={value} />
@@ -122,12 +127,11 @@ function ConceptCanvas({ slug }: { slug: IndustrialSlug }) {
         className={base.tableScroll}
         role="region"
         tabIndex={0}
-        aria-label={`${pages[slug].title} fictional records, scroll horizontally`}
+        aria-label={`${pages(tx)[slug].title} fictional records, scroll horizontally`}
       >
         <table>
           <caption className={base.srOnly}>
-            Static illustrative records based on the initial example, separate
-            from the editable workspace
+            {tx("industrial.page.staticIllustrativeRecordsBasedOnThe")}
           </caption>
           <thead>
             <tr>
@@ -150,15 +154,14 @@ function ConceptCanvas({ slug }: { slug: IndustrialSlug }) {
         </table>
       </div>
       <Note>
-        Static concept canvas. Every identifier, length, count and process
-        assumption is fictional. The editable local example above does not
-        update this canvas or create a production transaction.
+        {tx("industrial.page.staticConceptCanvasEveryIdentifierLength")}
       </Note>
     </div>
   );
 }
 export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
-  const p = pages[slug];
+  const tx = useTranslations("pages.industriesApp");
+  const p = pages(tx)[slug];
   return (
     <main
       className={`${base.professional} ${css.industrial}`}
@@ -167,10 +170,10 @@ export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
       data-industrial-industry={slug}
     >
       <div className={base.wrap}>
-        <nav className={base.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Adon ERP</Link>
+        <nav className={base.breadcrumb} aria-label={tx("industrial.page.breadcrumb")}>
+          <Link href="/">{tx("industrial.page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{tx("industrial.page.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <span>{p.category}</span>
           <ChevronRight size={11} aria-hidden="true" />
@@ -183,23 +186,22 @@ export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
       <section className={base.modulesSection}>
         <div className={base.wrap}>
           <div className={base.sectionHeading}>
-            <p className={base.eyebrow}>FOLLOW THE DETAIL INTO THE PRODUCT</p>
-            <h2>The supporting manufacturing conversation.</h2>
+            <p className={base.eyebrow}>{tx("industrial.page.followTheDetailIntoTheProduct")}</p>
+            <h2>{tx("industrial.page.theSupportingManufacturingConversation")}</h2>
             <p>
-              Explore existing ERP presentations for the material, component,
-              production and quality questions behind your operation.
+              {tx("industrial.page.exploreExistingErpPresentationsForThe")}
             </p>
           </div>
           <div className={base.moduleGrid}>
             {p.tools.map((t, i) => (
               <Link key={t.href} href={t.href}>
-                <span>0{i + 1} / PRODUCT PREVIEW</span>
+                <span>0{i + 1}{" "}{tx("industrial.page.productPreview")}</span>
                 <h3>
                   {t.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{t.body}</p>
-                <small>Explore the presentation</small>
+                <small>{tx("industrial.page.exploreThePresentation")}</small>
               </Link>
             ))}
           </div>
@@ -208,16 +210,15 @@ export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
       <section className={base.previewSection}>
         <div className={base.wrap}>
           <div className={base.sectionHeading}>
-            <p className={base.eyebrow}>A CLOSER LOOK AT THE EXPERIENCE</p>
-            <h2>The record behind the making.</h2>
+            <p className={base.eyebrow}>{tx("industrial.page.aCloserLookAtTheExperience")}</p>
+            <h2>{tx("industrial.page.theRecordBehindTheMaking")}</h2>
             <p>
-              Illustrative records, with a full product walkthrough available in
-              a guided advisor conversation.
+              {tx("industrial.page.illustrativeRecordsWithAFullProduct")}
             </p>
           </div>
           <DemoPreview
             title={`${p.title} industry experience`}
-            description="Bring your material, process, component and production questions to an advisor and explore your operation’s product context."
+            description={tx("industrial.page.bringYourMaterialProcessComponentAnd")}
           >
             <ConceptCanvas slug={slug} />
           </DemoPreview>
@@ -226,8 +227,8 @@ export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
       <section className={base.faqSection}>
         <div className={`${base.wrap} ${base.faqLayout}`}>
           <div className={base.sectionHeading}>
-            <p className={base.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Understand the example.</h2>
+            <p className={base.eyebrow}>{tx("industrial.page.aFewUsefulDetails")}</p>
+            <h2>{tx("industrial.page.understandTheExample")}</h2>
           </div>
           <div className={base.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -245,8 +246,8 @@ export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
       <section className={base.relatedSection}>
         <div className={base.wrap}>
           <div className={base.sectionHeading}>
-            <p className={base.eyebrow}>CONNECTED INDUSTRY PERSPECTIVES</p>
-            <h2>A different process. Its own story.</h2>
+            <p className={base.eyebrow}>{tx("industrial.page.connectedIndustryPerspectives")}</p>
+            <h2>{tx("industrial.page.aDifferentProcessItsOwnStory")}</h2>
           </div>
           <div className={base.relatedGrid}>
             {p.related.map((item) => (
@@ -262,12 +263,11 @@ export function IndustrialIndustryPage({ slug }: { slug: IndustrialSlug }) {
         <div className={base.wrap}>
           <div>
             <p className={base.eyebrow}>
-              YOUR PRODUCTION. YOUR WAY OF WORKING.
+              {tx("industrial.page.yourProductionYourWayOfWorking")}
             </p>
-            <h2>Let’s bring your manufacturing details into focus.</h2>
+            <h2>{tx("industrial.page.letSBringYourManufacturingDetails")}</h2>
             <p>
-              Discuss your material, process and assembly workflow with an
-              advisor, using the questions that matter to your operation.
+              {tx("industrial.page.discussYourMaterialProcessAndAssembly")}
             </p>
           </div>
           <LiveDemoButton />

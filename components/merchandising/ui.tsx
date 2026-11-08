@@ -3,6 +3,7 @@ import { ArrowDown, FlaskConical, Info } from "lucide-react";
 import LiveDemoButton from "@/components/live-demo-button";
 import { cn } from "@/lib/utils";
 import css from "./merchandising.module.css";
+import { useTranslations } from "next-intl";
 export { css };
 export function Badge({
   children,
@@ -11,20 +12,22 @@ export function Badge({
   children?: ReactNode;
   local?: boolean;
 }) {
+  const t = useTranslations("pages.merchandisingApp");
   return (
     <span className={cn(css.badge, local && css.localBadge)}>
       <FlaskConical size={12} aria-hidden="true" />
       {children ??
-        (local ? "Local exercise · not saved" : "Supplied screenshot snapshot")}
+        (local ? t("ui.localExerciseNotSaved") : t("ui.suppliedScreenshotSnapshot"))}
     </span>
   );
 }
 export function Actions() {
+  const t = useTranslations("pages.merchandisingApp");
   return (
     <div className={css.actions}>
       <LiveDemoButton />
       <a href="#merchandising-workspace">
-        Explore the workspace <ArrowDown size={15} aria-hidden="true" />
+        {t("ui.exploreTheWorkspace")}{" "}<ArrowDown size={15} aria-hidden="true" />
       </a>
     </div>
   );

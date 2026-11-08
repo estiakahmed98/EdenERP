@@ -34,16 +34,20 @@ import {
 import ProfessionalHero from "./heroes";
 import ProfessionalWorkspace, { ProfessionalWorkflow } from "./workspaces";
 import { Badge, Metric, Note, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { type TFn } from "@/lib/i18n/t-types";
 export async function professionalMetadata(
   slug: ProfessionalSlug,
 ): Promise<Metadata> {
+  const tx = await getTranslations("pages.industriesApp");
   return {
-    title: `${pages[slug].title} | ${groupLabel(pages[slug].group)} Industries | Adon ERP`,
-    description: pages[slug].description,
-    alternates: await getLocaleAlternates(routeFor(slug)),
+    title: `${pages(tx)[slug].title} | ${groupLabel(pages(tx)[slug].group, tx)} Industries | Adon ERP`,
+    description: pages(tx)[slug].description,
+    alternates: await getLocaleAlternates(routeFor(slug, tx)),
   };
 }
-function evidence(slug: ProfessionalSlug): {
+function evidence(slug: ProfessionalSlug, tx: TFn): {
   stats: [string, string][];
   columns: string[];
   rows: ReactNode[][];
@@ -51,15 +55,15 @@ function evidence(slug: ProfessionalSlug): {
   if (slug === "real-estate-agency")
     return {
       stats: [
-        ["Fictional properties", "3"],
-        ["Example types", "3"],
-        ["Initial price filter", money(15000000)],
+        [tx("professional.page.fictionalProperties"), "3"],
+        [tx("professional.page.exampleTypes"), "3"],
+        [tx("professional.page.initialPriceFilter"), money(15000000)],
       ],
       columns: [
-        "Fictional property",
-        "Type",
-        "Example area · sq ft",
-        "Illustrative price",
+        tx("professional.page.fictionalProperty"),
+        tx("professional.page.type"),
+        tx("professional.page.exampleAreaSqFt"),
+        tx("professional.page.illustrativePrice"),
       ],
       rows: properties.map((p) => [p.name, p.type, p.area, money(p.price)]),
     };
@@ -69,15 +73,15 @@ function evidence(slug: ProfessionalSlug): {
     );
     return {
       stats: [
-        ["Example phases", "3"],
-        ["Entered fee / hour", money(1500)],
-        ["Local total", money(result.total)],
+        [tx("professional.page.examplePhases"), "3"],
+        [tx("professional.page.enteredFeeHour"), money(1500)],
+        [tx("professional.page.localTotal"), money(result.total)],
       ],
       columns: [
-        "Fictional phase",
-        "Whole hours",
-        "Entered hourly fee",
-        "Calculated amount",
+        tx("professional.page.fictionalPhase"),
+        tx("professional.page.wholeHours"),
+        tx("professional.page.enteredHourlyFee"),
+        tx("professional.page.calculatedAmount"),
       ],
       rows: phases.map((p, i) => [
         p.name,
@@ -93,15 +97,15 @@ function evidence(slug: ProfessionalSlug): {
     );
     return {
       stats: [
-        ["Fictional work lines", "3"],
-        ["Entered line total", money(result.total)],
-        ["Example budget", money(300000)],
+        [tx("professional.page.fictionalWorkLines"), "3"],
+        [tx("professional.page.enteredLineTotal"), money(result.total)],
+        [tx("professional.page.exampleBudget"), money(300000)],
       ],
       columns: [
-        "Illustrative work item",
-        "Whole quantity",
-        "Entered unit rate",
-        "Calculated amount",
+        tx("professional.page.illustrativeWorkItem"),
+        tx("professional.page.wholeQuantity"),
+        tx("professional.page.enteredUnitRate"),
+        tx("professional.page.calculatedAmount"),
       ],
       rows: workItems.map((w, i) => [
         w.name,
@@ -115,15 +119,15 @@ function evidence(slug: ProfessionalSlug): {
     const progress = checklist([true, false, false, false]);
     return {
       stats: [
-        ["Fictional tasks", num(progress.total)],
-        ["Manually selected", num(progress.done)],
-        ["Example share", `${progress.percent}%`],
+        [tx("professional.page.fictionalTasks"), num(progress.total)],
+        [tx("professional.page.manuallySelected"), num(progress.done)],
+        [tx("professional.page.exampleShare"), `${progress.percent}%`],
       ],
-      columns: ["Example task", "Initial selection", "Context"],
-      rows: reviewTasks.map((t, i) => [
+      columns: [tx("professional.page.exampleTask"), tx("professional.page.initialSelection"), tx("professional.page.context")],
+      rows: reviewTasks(tx).map((t, i) => [
         t,
-        i === 0 ? "Selected" : "Unselected",
-        "Manual example only",
+        i === 0 ? tx("professional.page.selected") : tx("professional.page.unselected"),
+        tx("professional.page.manualExampleOnly"),
       ]),
     };
   }
@@ -134,21 +138,21 @@ function evidence(slug: ProfessionalSlug): {
     );
     return {
       stats: [
-        ["Entered budget", money(300000)],
-        ["Allocated", money(result.assigned)],
-        ["Unallocated", money(result.remaining)],
+        [tx("professional.page.enteredBudget"), money(300000)],
+        [tx("professional.page.allocated"), money(result.assigned)],
+        [tx("professional.page.unallocated"), money(result.remaining)],
       ],
       columns: [
-        "Fictional channel",
-        "Entered amount",
-        "Share of allocated amount",
-        "Context",
+        tx("professional.page.fictionalChannel"),
+        tx("professional.page.enteredAmount"),
+        tx("professional.page.shareOfAllocatedAmount"),
+        tx("professional.page.context"),
       ],
       rows: channels.map((c, i) => [
         c.name,
         money(c.amount),
         `${result.shares[i].toFixed(1)}%`,
-        "Allocation only · no forecast",
+        tx("professional.page.allocationOnlyNoForecast"),
       ]),
     };
   }
@@ -156,21 +160,21 @@ function evidence(slug: ProfessionalSlug): {
     const counts = candidateCounts(candidates.map((c) => c.stage));
     return {
       stats: [
-        ["Example applied", num(counts.applied)],
-        ["Example interview", num(counts.interview)],
-        ["Example shortlisted", num(counts.shortlist)],
+        [tx("professional.page.exampleApplied"), num(counts.applied)],
+        [tx("professional.page.exampleInterview"), num(counts.interview)],
+        [tx("professional.page.exampleShortlisted"), num(counts.shortlist)],
       ],
       columns: [
-        "Anonymous fictional ID",
-        "Role label",
-        "Initial example stage",
-        "Context",
+        tx("professional.page.anonymousFictionalId"),
+        tx("professional.page.roleLabel"),
+        tx("professional.page.initialExampleStage"),
+        tx("professional.page.context"),
       ],
       rows: candidates.map((c) => [
         c.id,
         c.role,
-        candidateLabels[c.stage],
-        "Manual stage only",
+        candidateLabels(tx)[c.stage],
+        tx("professional.page.manualStageOnly"),
       ]),
     };
   }
@@ -178,21 +182,21 @@ function evidence(slug: ProfessionalSlug): {
     const counts = evidenceCounts(evidenceRows.map((r) => r.state));
     return {
       stats: [
-        ["Missing", num(counts.missing)],
-        ["Provided", num(counts.provided)],
-        ["Manually reviewed", num(counts.reviewed)],
+        [tx("professional.page.missing"), num(counts.missing)],
+        [tx("professional.page.provided"), num(counts.provided)],
+        [tx("professional.page.manuallyReviewed"), num(counts.reviewed)],
       ],
       columns: [
-        "Fictional document",
-        "Example identifier",
-        "Initial state",
-        "Context",
+        tx("professional.page.fictionalDocument"),
+        tx("professional.page.exampleIdentifier"),
+        tx("professional.page.initialState"),
+        tx("professional.page.context"),
       ],
       rows: evidenceRows.map((r) => [
         r.name,
         r.id,
-        evidenceLabels[r.state],
-        "Not a compliance decision",
+        evidenceLabels(tx)[r.state],
+        tx("professional.page.notAComplianceDecision"),
       ]),
     };
   }
@@ -206,32 +210,33 @@ function evidence(slug: ProfessionalSlug): {
   });
   return {
     stats: [
-      ["Example travellers", "2"],
-      ["Example nights", "3"],
-      ["Entered trip total", money(trip.total)],
+      [tx("professional.page.exampleTravellers"), "2"],
+      [tx("professional.page.exampleNights"), "3"],
+      [tx("professional.page.enteredTripTotal"), money(trip.total)],
     ],
-    columns: ["Example service", "Entered basis", "Local amount"],
+    columns: [tx("professional.page.exampleService"), tx("professional.page.enteredBasis"), tx("professional.page.localAmount")],
     rows: [
-      ["Fares", "2 travellers × BDT 25,000", money(trip.fares)],
-      ["Room stay", "1 room × 3 nights × BDT 5,000", money(trip.stay)],
-      ["Transfer", "Entered once", money(trip.transfer)],
+      [tx("professional.page.fares"), tx("professional.page.n2TravellersBdt25000"), money(trip.fares)],
+      [tx("professional.page.roomStay"), tx("professional.page.n1Room3NightsBdt5"), money(trip.stay)],
+      [tx("professional.page.transfer"), tx("professional.page.enteredOnce"), money(trip.transfer)],
     ],
   };
 }
 function ConceptCanvas({ slug }: { slug: ProfessionalSlug }) {
-  const data = evidence(slug);
+  const tx = useTranslations("pages.industriesApp");
+  const data = evidence(slug, tx);
   return (
     <div className={css.previewCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          {tx("professional.page.eden")}<span>{tx("professional.page.erp")}</span>
         </b>
         <span>
-          {groupLabel(pages[slug].group)} / {pages[slug].title}
+          {groupLabel(pages(tx)[slug].group, tx)} / {pages(tx)[slug].title}
         </span>
-        <Badge>Concept canvas · fictional records</Badge>
+        <Badge>{tx("professional.page.conceptCanvasFictionalRecords")}</Badge>
       </header>
-      <h3>{pages[slug].demoTitle}</h3>
+      <h3>{pages(tx)[slug].demoTitle}</h3>
       <dl className={css.previewStats}>
         {data.stats.map(([label, value]) => (
           <Metric key={label} label={label} value={value} />
@@ -241,12 +246,11 @@ function ConceptCanvas({ slug }: { slug: ProfessionalSlug }) {
         className={css.tableScroll}
         role="region"
         tabIndex={0}
-        aria-label={`${pages[slug].title} fictional records, scroll horizontally`}
+        aria-label={`${pages(tx)[slug].title} fictional records, scroll horizontally`}
       >
         <table>
           <caption className={css.srOnly}>
-            Static illustrative records based on the initial example, separate
-            from the editable workspace
+            {tx("professional.page.staticIllustrativeRecordsBasedOnThe")}
           </caption>
           <thead>
             <tr>
@@ -269,17 +273,16 @@ function ConceptCanvas({ slug }: { slug: ProfessionalSlug }) {
         </table>
       </div>
       <Note>
-        Static concept canvas. All identifiers, selections, amounts and
-        quantities are fictional. The editable local example above does not
-        update this canvas or create a real transaction.
+        {tx("professional.page.staticConceptCanvasAllIdentifiersSelecti")}
       </Note>
     </div>
   );
 }
 export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
-  const p = pages[slug],
+  const tx = useTranslations("pages.industriesApp");
+  const p = pages(tx)[slug],
     related = professionalSlugs.filter(
-      (s) => s !== slug && pages[s].group === p.group,
+      (s) => s !== slug && pages(tx)[s].group === p.group,
     );
   return (
     <main
@@ -289,12 +292,12 @@ export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
       data-professional-industry={slug}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={tx("professional.page.breadcrumb")}>
+          <Link href="/">{tx("professional.page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{tx("professional.page.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <span>{groupLabel(p.group)}</span>
+          <span>{groupLabel(p.group, tx)}</span>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -305,23 +308,22 @@ export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
       <section className={css.modulesSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>FOLLOW THE DETAIL INTO THE PRODUCT</p>
-            <h2>The supporting product conversation.</h2>
+            <p className={css.eyebrow}>{tx("professional.page.followTheDetailIntoTheProduct")}</p>
+            <h2>{tx("professional.page.theSupportingProductConversation")}</h2>
             <p>
-              Explore the existing ERP presentations for your project, customer,
-              accounting and operational questions.
+              {tx("professional.page.exploreTheExistingErpPresentationsFor")}
             </p>
           </div>
           <div className={css.moduleGrid}>
             {p.tools.map((t, i) => (
               <Link key={t.href} href={t.href}>
-                <span>0{i + 1} / PRODUCT PREVIEW</span>
+                <span>0{i + 1}{" "}{tx("professional.page.productPreview")}</span>
                 <h3>
                   {t.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{t.body}</p>
-                <small>Explore the presentation</small>
+                <small>{tx("professional.page.exploreThePresentation")}</small>
               </Link>
             ))}
           </div>
@@ -330,16 +332,15 @@ export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
       <section className={css.previewSection}>
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>A CLOSER LOOK AT THE EXPERIENCE</p>
-            <h2>The record behind the work.</h2>
+            <p className={css.eyebrow}>{tx("professional.page.aCloserLookAtTheExperience")}</p>
+            <h2>{tx("professional.page.theRecordBehindTheWork")}</h2>
             <p>
-              Illustrative records, with a full product walkthrough available in
-              a guided advisor conversation.
+              {tx("professional.page.illustrativeRecordsWithAFullProduct")}
             </p>
           </div>
           <DemoPreview
             title={`${p.title} industry experience`}
-            description="Bring your client, project and operational questions to an advisor and explore the relevant product workflows."
+            description={tx("professional.page.bringYourClientProjectAndOperational")}
           >
             <ConceptCanvas slug={slug} />
           </DemoPreview>
@@ -348,8 +349,8 @@ export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
       <section className={css.faqSection}>
         <div className={`${css.wrap} ${css.faqLayout}`}>
           <div className={css.sectionHeading}>
-            <p className={css.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Understand the example.</h2>
+            <p className={css.eyebrow}>{tx("professional.page.aFewUsefulDetails")}</p>
+            <h2>{tx("professional.page.understandTheExample")}</h2>
           </div>
           <div className={css.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -368,14 +369,14 @@ export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <p className={css.eyebrow}>
-              MORE {groupLabel(p.group).toUpperCase()} PERSPECTIVES
+              {tx("professional.page.more")}{" "}{groupLabel(p.group, tx).toUpperCase()}{" "}{tx("professional.page.perspectives")}
             </p>
-            <h2>A different practice. Its own story.</h2>
+            <h2>{tx("professional.page.aDifferentPracticeItsOwnStory")}</h2>
           </div>
           <div className={css.relatedGrid} data-count={related.length}>
             {related.map((s) => (
-              <Link key={s} href={routeFor(s)}>
-                {pages[s].title}
+              <Link key={s} href={routeFor(s, tx)}>
+                {pages(tx)[s].title}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
             ))}
@@ -385,11 +386,10 @@ export function ProfessionalIndustryPage({ slug }: { slug: ProfessionalSlug }) {
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR WORK. YOUR WAY OF WORKING.</p>
-            <h2>Let’s bring your operational details into focus.</h2>
+            <p className={css.eyebrow}>{tx("professional.page.yourWorkYourWayOfWorking")}</p>
+            <h2>{tx("professional.page.letSBringYourOperationalDetails")}</h2>
             <p>
-              Discuss your client, project and service process with an advisor
-              and explore the product context for your own operation.
+              {tx("professional.page.discussYourClientProjectAndService")}
             </p>
           </div>
           <LiveDemoButton />

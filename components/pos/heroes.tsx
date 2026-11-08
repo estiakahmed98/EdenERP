@@ -23,9 +23,11 @@ import {
   ReceiptPaper,
   css,
 } from "./ui";
+import { useTranslations } from "next-intl";
 
 function Copy({ slug }: { slug: PosSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.posApp");
+  const p = pages(t)[slug];
   return (
     <>
       <p className={css.eyebrow}>{p.eyebrow}</p>
@@ -43,6 +45,7 @@ function FigureLabel({ children }: { children: React.ReactNode }) {
 }
 
 function RegisterHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.registerHero}>
       <div className={css.wrap}>
@@ -52,13 +55,13 @@ function RegisterHero() {
             <HeroActions />
             <div className={css.quietFeatures}>
               <span>
-                <ScanLine size={15} /> Find
+                <ScanLine size={15} />{" "}{t("heroes.find")}
               </span>
               <span>
-                <ShoppingBag size={15} /> Tender
+                <ShoppingBag size={15} />{" "}{t("heroes.tender")}
               </span>
               <span>
-                <ReceiptText size={15} /> Trace
+                <ReceiptText size={15} />{" "}{t("heroes.trace")}
               </span>
             </div>
           </div>
@@ -67,46 +70,46 @@ function RegisterHero() {
             <div className={css.productFloat}>
               <Denim />
               <span>DH-6070</span>
-              <b>Ready for the basket</b>
+              <b>{t("heroes.readyForTheBasket")}</b>
             </div>
             <div className={css.terminal}>
               <header>
                 <span>
-                  <Store size={15} />  Adon ERP · Register
+                  <Store size={15} />{" "}{t("heroes.adonErpRegister")}
                 </span>
-                <i>Preview</i>
+                <i>{t("heroes.preview")}</i>
               </header>
               <div className={css.scanBox}>
                 <ScanLine size={20} />
-                <span>One scan. A clear next step.</span>
+                <span>{t("heroes.oneScanAClearNextStep")}</span>
               </div>
               <div className={css.terminalProduct}>
                 <Denim />
                 <div>
-                  <b>Athletic Fit Jean</b>
-                  <small>12 oz Denim · 1 item</small>
+                  <b>{t("heroes.athleticFitJean")}</b>
+                  <small>{t("heroes.n12OzDenim1Item")}</small>
                 </div>
                 <strong>৳ 3,450</strong>
               </div>
               <div className={css.terminalTotal}>
-                <span>Basket total</span>
+                <span>{t("heroes.basketTotal")}</span>
                 <strong>৳ 3,450.00</strong>
               </div>
               <div className={css.mockAction}>
-                Scan → Tender → Receipt <ArrowRight size={16} />
+                {t("heroes.scanTenderReceipt")}{" "}<ArrowRight size={16} />
               </div>
             </div>
             <div className={css.smallSlip}>
               <Barcode />
-              <b>THE NEXT CHAPTER</b>
-              <span>A sale with a trail.</span>
+              <b>{t("heroes.theNextChapter")}</b>
+              <span>{t("heroes.aSaleWithATrail")}</span>
             </div>
             <span className={css.handNote}>
-              the counter, connected
+              {t("heroes.theCounterConnected")}
               <Arrow />
             </span>
             <FigureLabel>
-              Illustrated checkout · supplied product and price
+              {t("heroes.illustratedCheckoutSuppliedProductAndPri")}
             </FigureLabel>
           </figure>
         </div>
@@ -115,6 +118,7 @@ function RegisterHero() {
   );
 }
 function ShiftsHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.shiftsHero}>
       <div className={css.wrap}>
@@ -126,15 +130,15 @@ function ShiftsHero() {
           <figure className={css.drawerScene}>
             <div className={css.drawerTop}>
               <Wallet size={25} />
-              <span>SHIFT RECONCILIATION</span>
-              <b>Every difference has a place.</b>
+              <span>{t("heroes.shiftReconciliation")}</span>
+              <b>{t("heroes.everyDifferenceHasAPlace")}</b>
             </div>
             <div className={css.drawer}>
               <div className={css.banknotes}>
-                ৳<span>EXPECTED</span>
+                ৳<span>{t("heroes.expected")}</span>
               </div>
               <div className={css.banknotes}>
-                ৳<span>COUNTED</span>
+                ৳<span>{t("heroes.counted")}</span>
               </div>
               <div className={css.coins}>
                 <i />
@@ -143,28 +147,28 @@ function ShiftsHero() {
               </div>
             </div>
             <div className={css.varianceStamp}>
-              <Check size={17} /> Posted shift · 000023
-              <span>৳ 0.00 variance</span>
+              <Check size={17} />{" "}{t("heroes.postedShift000023")}
+              <span>{t("heroes.n000Variance")}</span>
             </div>
-            <FigureLabel>Supplied closed shift · R1-BSC</FigureLabel>
+            <FigureLabel>{t("heroes.suppliedClosedShiftR1Bsc")}</FigureLabel>
           </figure>
         </div>
         <ol className={css.shiftRibbon}>
           <li>
-            <span>01 / OPEN</span>
-            <strong>Cashier + float</strong>
+            <span>{t("heroes.n01Open")}</span>
+            <strong>{t("heroes.cashierFloat")}</strong>
           </li>
           <li>
-            <span>02 / TRADE</span>
-            <strong>Receipts in context</strong>
+            <span>{t("heroes.n02Trade")}</span>
+            <strong>{t("heroes.receiptsInContext")}</strong>
           </li>
           <li>
-            <span>03 / COUNT</span>
-            <strong>Expected vs counted</strong>
+            <span>{t("heroes.n03Count")}</span>
+            <strong>{t("heroes.expectedVsCounted")}</strong>
           </li>
           <li>
-            <span>04 / REVIEW</span>
-            <strong>A clear handover</strong>
+            <span>{t("heroes.n04Review")}</span>
+            <strong>{t("heroes.aClearHandover")}</strong>
           </li>
         </ol>
       </div>
@@ -172,6 +176,7 @@ function ShiftsHero() {
   );
 }
 function ReceiptsHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.receiptsHero}>
       <div className={`${css.wrap} ${css.receiptsLayout}`}>
@@ -179,25 +184,25 @@ function ReceiptsHero() {
           <div className={css.receiptBack} />
           <ReceiptPaper />
           <span className={css.receiptAnnotation}>
-            A little paper.
-            <br />A lot of context.
+            {t("heroes.aLittlePaper")}
+            <br />{t("heroes.aLotOfContext")}
             <Arrow />
           </span>
           <FigureLabel>
-            Illustrative receipt · no original receipt supplied
+            {t("heroes.illustrativeReceiptNoOriginalReceiptSupp")}
           </FigureLabel>
         </figure>
         <div>
           <Copy slug="receipts" />
           <div className={css.receiptChips}>
             <span>
-              <Box size={14} /> The basket
+              <Box size={14} />{" "}{t("heroes.theBasket")}
             </span>
             <span>
-              <CreditCard size={14} /> The tender
+              <CreditCard size={14} />{" "}{t("heroes.theTender")}
             </span>
             <span>
-              <ReceiptText size={14} /> The tax
+              <ReceiptText size={14} />{" "}{t("heroes.theTax")}
             </span>
           </div>
           <HeroActions />
@@ -207,6 +212,7 @@ function ReceiptsHero() {
   );
 }
 function SummaryHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.summaryHero}>
       <div className={css.wrap}>
@@ -216,34 +222,34 @@ function SummaryHero() {
         </div>
         <figure className={css.closeStatement}>
           <div className={css.statementLabel}>
-            <span>Z / CLOSING STATEMENT</span>
+            <span>{t("heroes.zClosingStatement")}</span>
             <Badge />
           </div>
           <div className={css.statementFigure}>
-            <span>Gross sales</span>
+            <span>{t("heroes.grossSales")}</span>
             <strong>
               <small>৳</small> 3,450<span>.00</span>
             </strong>
-            <p>One receipt. One item. A visible breakdown.</p>
+            <p>{t("heroes.oneReceiptOneItemAVisible")}</p>
           </div>
           <div className={css.salesBridge}>
             <div>
-              <span>Includes VAT</span>
+              <span>{t("heroes.includesVat")}</span>
               <b>৳ 450.00</b>
             </div>
             <span>+</span>
             <div>
-              <span>Cost of goods</span>
+              <span>{t("heroes.costOfGoods")}</span>
               <b>৳ 1,261.09</b>
             </div>
             <span>+</span>
             <div className={css.bridgeResult}>
-              <span>Gross margin, after VAT & cost</span>
+              <span>{t("heroes.grossMarginAfterVatCost")}</span>
               <b>৳ 1,738.91</b>
             </div>
           </div>
           <FigureLabel>
-            Supplied day-summary figures · historical snapshot
+            {t("heroes.suppliedDaySummaryFiguresHistoricalSnaps")}
           </FigureLabel>
         </figure>
       </div>
@@ -251,47 +257,48 @@ function SummaryHero() {
   );
 }
 function DashboardHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.dashboardHero}>
       <div className={`${css.wrap} ${css.dashboardLayout}`}>
         <div>
           <Copy slug="outlet-dashboard" />
           <HeroActions />
-          <p className={css.dashboardFoot}>OUTLETS / BASKETS / MARGIN</p>
+          <p className={css.dashboardFoot}>{t("heroes.outletsBasketsMargin")}</p>
         </div>
         <figure className={css.dashboardMosaic}>
           <div className={css.mosaicSales}>
-            <span>NET SALES · SUPPLIED WINDOW</span>
+            <span>{t("heroes.netSalesSuppliedWindow")}</span>
             <strong>৳ 3,450</strong>
             <div className={css.singleBar}>
               <i />
-              <span>One receipt in the supplied 14-day view</span>
+              <span>{t("heroes.oneReceiptInTheSupplied14")}</span>
             </div>
           </div>
           <div className={css.mosaicBasket}>
             <ShoppingBag size={22} />
             <strong>1</strong>
-            <span>Receipt</span>
-            <small>৳ 3,450 average basket</small>
+            <span>{t("heroes.receipt")}</span>
+            <small>{t("heroes.n3450AverageBasket")}</small>
           </div>
           <div className={css.mosaicMargin}>
-            <span>GROSS MARGIN</span>
+            <span>{t("heroes.grossMargin")}</span>
             <strong>৳ 1,738.91</strong>
             <div className={css.marginTrack}>
               <i />
             </div>
-            <small>58% · as shown in source</small>
+            <small>{t("heroes.n58AsShownInSource")}</small>
           </div>
           <div className={css.mosaicRegister}>
             <Monitor size={21} />
             <div>
               <b>R1-BSC</b>
-              <span>Bashundhara City</span>
+              <span>{t("heroes.bashundharaCity")}</span>
             </div>
             <ArrowRight size={18} />
           </div>
           <FigureLabel>
-            Supplied historical dashboard · no invented trend
+            {t("heroes.suppliedHistoricalDashboardNoInventedTre")}
           </FigureLabel>
         </figure>
       </div>
@@ -299,6 +306,7 @@ function DashboardHero() {
   );
 }
 function LoyaltyHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.loyaltyHero}>
       <div className={css.wrap}>
@@ -307,34 +315,34 @@ function LoyaltyHero() {
           <HeroActions />
         </div>
         <figure className={css.loyaltyScene}>
-          <span className={css.orbitLabel}>A balance worth understanding.</span>
+          <span className={css.orbitLabel}>{t("heroes.aBalanceWorthUnderstanding")}</span>
           <div className={css.loyaltyCard}>
             <header>
               <span>
-                EDEN<span>ERP</span> / RETAIL
+                {t("heroes.eden")}<span>{t("heroes.erp")}</span>{" "}{t("heroes.retail")}
               </span>
               <Gift size={23} />
             </header>
-            <span>LOYALTY ACCOUNTS</span>
+            <span>{t("heroes.loyaltyAccounts")}</span>
             <strong>27</strong>
             <footer>
-              <span>3,610 points in the supplied snapshot</span>
+              <span>{t("heroes.n3610PointsInTheSupplied")}</span>
               <i />
             </footer>
           </div>
           <div className={css.voucher}>
             <div>
-              <span>ACTIVE GIFT VOUCHERS</span>
+              <span>{t("heroes.activeGiftVouchers")}</span>
               <b>02</b>
             </div>
             <div>
-              <span>Outstanding value</span>
+              <span>{t("heroes.outstandingValue")}</span>
               <strong>৳ 3,770</strong>
             </div>
           </div>
           <div className={css.loyaltyRing} />
           <FigureLabel>
-            Supplied aggregate balances · card illustration is conceptual
+            {t("heroes.suppliedAggregateBalancesCardIllustratio")}
           </FigureLabel>
         </figure>
       </div>
@@ -342,6 +350,7 @@ function LoyaltyHero() {
   );
 }
 function TransfersHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.transfersHero}>
       <div className={css.wrap}>
@@ -354,12 +363,12 @@ function TransfersHero() {
         <figure className={css.routeScene}>
           <div className={css.routeOrigin}>
             <Box size={32} />
-            <span>SOURCE / FG</span>
-            <b>Finished Goods</b>
+            <span>{t("heroes.sourceFg")}</span>
+            <b>{t("heroes.finishedGoods")}</b>
           </div>
           <div className={css.routeTransit}>
             <span className={css.routeCaption}>
-              Dispatch → Receive → Reconcile
+              {t("heroes.dispatchReceiveReconcile")}
             </span>
             <div className={css.routeTrack}>
               <i />
@@ -369,17 +378,16 @@ function TransfersHero() {
               <i />
             </div>
             <span className={css.routeReference}>
-              STR-2026-000002 · 27 units · 3 lines
+              {t("heroes.str202600000227Units3")}
             </span>
           </div>
           <div className={css.routeDestination}>
             <Store size={32} />
-            <span>DESTINATION / OUT2</span>
-            <b>Jamuna Future Park</b>
+            <span>{t("heroes.destinationOut2")}</span>
+            <b>{t("heroes.jamunaFuturePark")}</b>
           </div>
           <FigureLabel>
-            Supplied received transfer · diagram shows the handover, not live
-            tracking
+            {t("heroes.suppliedReceivedTransferDiagramShowsThe")}
           </FigureLabel>
         </figure>
       </div>
@@ -387,6 +395,7 @@ function TransfersHero() {
   );
 }
 function LotsHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.lotsHero}>
       <div className={`${css.wrap} ${css.lotsLayout}`}>
@@ -394,18 +403,18 @@ function LotsHero() {
           <Copy slug="stock-lots" />
           <HeroActions />
           <div className={css.lotSource}>
-            <span>SUPPLIED LOT / 000001</span>
-            <b>Gulshan Surplus Traders</b>
-            <small>Assorted ladies’ tops + kids’ tees · 6 bales</small>
+            <span>{t("heroes.suppliedLot000001")}</span>
+            <b>{t("heroes.gulshanSurplusTraders")}</b>
+            <small>{t("heroes.assortedLadiesTopsKidsTees6")}</small>
           </div>
         </div>
         <figure className={css.lotScene}>
           <div className={css.lotQuantity}>
             <b>1,150</b>
-            <span>UNITS IN ONE LOT</span>
+            <span>{t("heroes.unitsInOneLot")}</span>
           </div>
           <div className={css.bale}>
-            <span>LOT / 2026</span>
+            <span>{t("heroes.lot2026")}</span>
             <Package size={65} />
             <Barcode />
           </div>
@@ -413,19 +422,19 @@ function LotsHero() {
           <div className={css.sortedItems}>
             <div>
               <Denim top />
-              <span>Sort the intake</span>
+              <span>{t("heroes.sortTheIntake")}</span>
             </div>
             <div>
               <Gift size={37} />
-              <span>Share the cost</span>
+              <span>{t("heroes.shareTheCost")}</span>
             </div>
             <div>
               <ReceiptText size={37} />
-              <span>Review the basis</span>
+              <span>{t("heroes.reviewTheBasis")}</span>
             </div>
           </div>
           <FigureLabel>
-            Supplied lot totals · illustrative item sorting
+            {t("heroes.suppliedLotTotalsIllustrativeItemSorting")}
           </FigureLabel>
         </figure>
       </div>
@@ -433,6 +442,7 @@ function LotsHero() {
   );
 }
 function StockHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.stockHero}>
       <div className={css.wrap}>
@@ -442,43 +452,43 @@ function StockHero() {
           </div>
           <div>
             <p className={css.stockNumber}>
-              1,390<span>units on hand</span>
+              1,390<span>{t("heroes.unitsOnHand")}</span>
             </p>
             <HeroActions />
           </div>
         </div>
         <figure className={css.shelfScene}>
           <div className={css.shelfItem}>
-            <span>01 / DENIM</span>
+            <span>{t("heroes.n01Denim")}</span>
             <Denim />
             <div>
-              <b>Athletic Fit Jean</b>
-              <span>DH-6070 · 192 units</span>
+              <b>{t("heroes.athleticFitJean")}</b>
+              <span>{t("heroes.dh6070192Units")}</span>
             </div>
           </div>
           <div className={css.shelfItem}>
-            <span>02 / COTTON TWILL</span>
+            <span>{t("heroes.n02CottonTwill")}</span>
             <Denim />
             <div>
-              <b>Three-Quarter Pant</b>
-              <span>DH-7101 · 80 units</span>
+              <b>{t("heroes.threeQuarterPant")}</b>
+              <span>{t("heroes.dh710180Units")}</span>
             </div>
           </div>
           <div className={css.shelfItem}>
-            <span>03 / ASSORTED TOPS</span>
+            <span>{t("heroes.n03AssortedTops")}</span>
             <Denim top />
             <div>
-              <b>Ladies’ Top — Blue</b>
-              <span>LOT-TOP-BLU · 380 units</span>
+              <b>{t("heroes.ladiesTopBlue")}</b>
+              <span>{t("heroes.lotTopBlu380Units")}</span>
             </div>
           </div>
           <div className={css.shelfBase}>
             <Barcode />
-            <span>OUT1 / BASHUNDHARA CITY</span>
-            <b>6 SKUs. One stock view.</b>
+            <span>{t("heroes.out1BashundharaCity")}</span>
+            <b>{t("heroes.n6SkusOneStockView")}</b>
           </div>
           <FigureLabel>
-            Three of six supplied stock lines · conceptual product illustrations
+            {t("heroes.threeOfSixSuppliedStockLines")}
           </FigureLabel>
         </figure>
       </div>
@@ -486,6 +496,7 @@ function StockHero() {
   );
 }
 function OutletsHero() {
+  const t = useTranslations("pages.posApp");
   return (
     <section className={css.outletsHero}>
       <div className={`${css.wrap} ${css.outletsLayout}`}>
@@ -493,39 +504,39 @@ function OutletsHero() {
           <div className={css.networkGrid} />
           <div className={css.networkHub}>
             <Box size={29} />
-            <b>Factory</b>
-            <span>FG / RM / WIP / CN</span>
+            <b>{t("heroes.factory")}</b>
+            <span>{t("heroes.fgRmWipCn")}</span>
           </div>
           <div className={css.networkBranch} />
           <div className={css.networkOutlet}>
             <Store size={24} />
             <div>
               <span>OUT1</span>
-              <b>Bashundhara City</b>
-              <small>Register · R1-BSC</small>
+              <b>{t("heroes.bashundharaCity")}</b>
+              <small>{t("heroes.registerR1Bsc")}</small>
             </div>
           </div>
           <div className={css.networkOutlet}>
             <Store size={24} />
             <div>
               <span>OUT2</span>
-              <b>Jamuna Future Park</b>
-              <small>Register · R1-JFP</small>
+              <b>{t("heroes.jamunaFuturePark")}</b>
+              <small>{t("heroes.registerR1Jfp")}</small>
             </div>
           </div>
           <div className={css.networkTotals}>
-            <b>6</b> locations <span>→</span>
-            <b>2</b> selling outlets
+            <b>6</b>{" "}{t("heroes.locations")}{" "}<span>→</span>
+            <b>2</b>{" "}{t("heroes.sellingOutlets")}
           </div>
           <FigureLabel>
-            Supplied location network · schematic, not a geographic map
+            {t("heroes.suppliedLocationNetworkSchematicNotA")}
           </FigureLabel>
         </figure>
         <div>
           <Copy slug="outlets-registers" />
           <HeroActions />
           <p className={css.networkCaption}>
-            <MapPin size={15} /> A place for the stock. A context for the sale.
+            <MapPin size={15} />{" "}{t("heroes.aPlaceForTheStockA")}
           </p>
         </div>
       </div>

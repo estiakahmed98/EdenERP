@@ -18,8 +18,10 @@ import {
   type ApparelSlug,
 } from "./data";
 import { Actions, Badge, GarmentDrawing, TrimDrawing, css } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: ApparelSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <>
       <p className={css.eyebrow}>{p.eyebrow}</p>
@@ -33,6 +35,7 @@ function Copy({ slug }: { slug: ApparelSlug }) {
   );
 }
 function GarmentsHero() {
+  const t = useTranslations("pages.industriesApp");
   const pieces = sizeBreakdown(
     3000,
     sizes.map((row) => row.ratio),
@@ -46,44 +49,43 @@ function GarmentsHero() {
           <div className={css.garmentPrinciples}>
             <span>
               <Scissors size={15} />
-              Breakdown
+              {t("apparel.heroes.breakdown")}
             </span>
             <span>
               <Shirt size={15} />
-              Production
+              {t("apparel.heroes.production")}
             </span>
             <span>
               <FileText size={15} />
-              Review
+              {t("apparel.heroes.review")}
             </span>
           </div>
         </div>
         <figure className={css.patternSheet}>
           <header>
-            <span>THE ORDER, PIECE BY PIECE</span>
-            <Badge>Concept pattern sheet</Badge>
+            <span>{t("apparel.heroes.theOrderPieceByPiece")}</span>
+            <Badge>{t("apparel.heroes.conceptPatternSheet")}</Badge>
           </header>
           <div className={css.patternArt}>
             <GarmentDrawing />
             <div className={css.patternLabel}>
               <span>EX-ORDER-01</span>
-              <b>3,000 pieces</b>
-              <small>Size ratio · 1 : 2 : 2 : 1</small>
+              <b>{t("apparel.heroes.n3000Pieces")}</b>
+              <small>{t("apparel.heroes.sizeRatio1221")}</small>
             </div>
-            <span className={css.patternCorner}>SIZE / MATERIAL / PROCESS</span>
+            <span className={css.patternCorner}>{t("apparel.heroes.sizeMaterialProcess")}</span>
           </div>
           <div className={css.sizeRibbon}>
             {sizes.map((row, i) => (
               <div key={row.label}>
                 <span>{row.label}</span>
                 <b>{num(pieces[i])}</b>
-                <small>example pieces</small>
+                <small>{t("apparel.heroes.examplePieces")}</small>
               </div>
             ))}
           </div>
           <figcaption>
-            Conceptual garment drawing and fictional order breakdown · not a
-            physical cutting plan
+            {t("apparel.heroes.conceptualGarmentDrawingAndFictionalOrde")}
           </figcaption>
         </figure>
       </div>
@@ -91,6 +93,7 @@ function GarmentsHero() {
   );
 }
 function AccessoriesHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.accessoriesHero}>
       <div className={css.wrap}>
@@ -100,32 +103,32 @@ function AccessoriesHero() {
         </div>
         <figure className={css.trimOrganiser}>
           <header>
-            <span>THE DETAILS DRAWER</span>
-            <Badge>Concept accessory library</Badge>
+            <span>{t("apparel.heroes.theDetailsDrawer")}</span>
+            <Badge>{t("apparel.heroes.conceptAccessoryLibrary")}</Badge>
           </header>
           <div className={css.trimPockets}>
             {(
               [
                 {
                   kind: "button",
-                  title: "Buttons",
-                  note: "Count the fastening detail",
+                  title: t("apparel.heroes.buttons"),
+                  note: t("apparel.heroes.countTheFasteningDetail"),
                 },
-                { kind: "zip", title: "Zips", note: "Keep the unit explicit" },
+                { kind: "zip", title: t("apparel.heroes.zips"), note: t("apparel.heroes.keepTheUnitExplicit") },
                 {
                   kind: "label",
-                  title: "Labels",
-                  note: "Connect identity with the item",
+                  title: t("apparel.heroes.labels"),
+                  note: t("apparel.heroes.connectIdentityWithTheItem"),
                 },
                 {
                   kind: "tag",
-                  title: "Hang tags",
-                  note: "Follow the finishing context",
+                  title: t("apparel.heroes.hangTags"),
+                  note: t("apparel.heroes.followTheFinishingContext"),
                 },
               ] as const
             ).map((row, i) => (
               <div key={row.kind}>
-                <span>0{i + 1} / PIECE DETAIL</span>
+                <span>0{i + 1}{" "}{t("apparel.heroes.pieceDetail")}</span>
                 <TrimDrawing kind={row.kind} />
                 <b>{row.title}</b>
                 <small>{row.note}</small>
@@ -133,7 +136,7 @@ function AccessoriesHero() {
             ))}
           </div>
           <div className={css.trimCallout}>
-            <span>Small details, kept in the picture.</span>
+            <span>{t("apparel.heroes.smallDetailsKeptInThePicture")}</span>
             <svg viewBox="0 0 120 45" fill="none" aria-hidden="true">
               <path
                 d="M3 3c25 39 71 41 109 13m-19 2 21-5-6 19"
@@ -145,8 +148,7 @@ function AccessoriesHero() {
             </svg>
           </div>
           <figcaption>
-            Concept illustrations · no actual accessory specification or stock
-            is implied
+            {t("apparel.heroes.conceptIllustrationsNoActualAccessorySpe")}
           </figcaption>
         </figure>
       </div>
@@ -154,6 +156,7 @@ function AccessoriesHero() {
   );
 }
 function BuyingHouseHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.buyingHero}>
       <div className={`${css.wrap} ${css.buyingLayout}`}>
@@ -161,44 +164,43 @@ function BuyingHouseHero() {
           <div className={css.mapGrid} />
           <div className={css.buyerNode}>
             <Users size={23} />
-            <span>BUYER CONTEXT</span>
-            <b>The order brief</b>
+            <span>{t("apparel.heroes.buyerContext")}</span>
+            <b>{t("apparel.heroes.theOrderBrief")}</b>
           </div>
           <div className={css.coordinationLine} />
           <div className={css.factoryNode}>
             <Factory size={23} />
-            <span>FACTORY CONTEXT</span>
-            <b>The production handoff</b>
+            <span>{t("apparel.heroes.factoryContext")}</span>
+            <b>{t("apparel.heroes.theProductionHandoff")}</b>
           </div>
           <div className={css.orderDossier}>
             <header>
               <FileText size={20} />
-              <span>EX-BH-01 / CONCEPT DOSSIER</span>
+              <span>{t("apparel.heroes.exBh01ConceptDossier")}</span>
             </header>
             <h3>
-              The commercial model
+              {t("apparel.heroes.theCommercialModel")}
               <br />
-              belongs in the record.
+              {t("apparel.heroes.belongsInTheRecord")}
             </h3>
             <div>
-              <span>Margin trading</span>
-              <small>Sales and purchase-cost context</small>
+              <span>{t("apparel.heroes.marginTrading")}</span>
+              <small>{t("apparel.heroes.salesAndPurchaseCostContext")}</small>
             </div>
             <div>
-              <span>Commission</span>
-              <small>A fee basis, kept distinct</small>
+              <span>{t("apparel.heroes.commission")}</span>
+              <small>{t("apparel.heroes.aFeeBasisKeptDistinct")}</small>
             </div>
           </div>
           <figcaption>
-            Conceptual coordination map · no real buyer, factory assignment or
-            order
+            {t("apparel.heroes.conceptualCoordinationMapNoRealBuyer")}
           </figcaption>
         </figure>
         <div>
           <Copy slug="buying-house" />
           <Actions />
           <p className={css.buyingFootnote}>
-            A clear handoff starts with a clear commercial context.
+            {t("apparel.heroes.aClearHandoffStartsWithA")}
           </p>
         </div>
       </div>
@@ -206,6 +208,7 @@ function BuyingHouseHero() {
   );
 }
 function MerchandisingHero() {
+  const t = useTranslations("pages.industriesApp");
   const dates = milestoneDates(
     examplePcd,
     milestones.map((row) => row.days),
@@ -220,36 +223,36 @@ function MerchandisingHero() {
           </div>
           <div className={css.pcdFlag}>
             <CalendarDays size={23} />
-            <span>ILLUSTRATIVE PLANNED CUTTING DATE</span>
+            <span>{t("apparel.heroes.illustrativePlannedCuttingDate")}</span>
             <b>
-              15 <em>DEC</em>
+              15 <em>{t("apparel.heroes.dec")}</em>
             </b>
-            <small>2026 / calendar-day example</small>
+            <small>{t("apparel.heroes.n2026CalendarDayExample")}</small>
           </div>
         </div>
         <figure className={css.actionDesk}>
           <div className={css.styleFolder}>
             <header>
               <Shirt size={18} />
-              <span>EX-STYLE-01 / CONCEPT</span>
+              <span>{t("apparel.heroes.exStyle01Concept")}</span>
             </header>
             <GarmentDrawing />
             <div>
-              <span>Style brief</span>
-              <small>Specification and commercial context</small>
+              <span>{t("apparel.heroes.styleBrief")}</span>
+              <small>{t("apparel.heroes.specificationAndCommercialContext")}</small>
             </div>
           </div>
           <div className={css.actionSpine}>
             <header>
-              <span>WORK BACK FROM THE NEXT HANDOFF</span>
-              <Badge>Example date offsets</Badge>
+              <span>{t("apparel.heroes.workBackFromTheNextHandoff")}</span>
+              <Badge>{t("apparel.heroes.exampleDateOffsets")}</Badge>
             </header>
             {milestones.map((row, i) => (
               <div key={row.id}>
                 <span>{String(i + 1).padStart(2, "0")}</span>
                 <div>
                   <b>{row.name}</b>
-                  <small>{row.days} calendar days before example PCD</small>
+                  <small>{row.days}{" "}{t("apparel.heroes.calendarDaysBeforeExamplePcd")}</small>
                 </div>
                 <strong>{dateLabel(dates[i])}</strong>
               </div>
@@ -258,15 +261,14 @@ function MerchandisingHero() {
           <div className={css.materialMemo}>
             <Layers size={20} />
             <b>
-              Keep material readiness
+              {t("apparel.heroes.keepMaterialReadiness")}
               <br />
-              in the conversation.
+              {t("apparel.heroes.inTheConversation")}
             </b>
-            <span>A date is one part of the order’s context.</span>
+            <span>{t("apparel.heroes.aDateIsOnePartOf")}</span>
           </div>
           <figcaption>
-            Illustrative style/action composition · no source TNA milestones are
-            changed
+            {t("apparel.heroes.illustrativeStyleActionCompositionNoSour")}
           </figcaption>
         </figure>
       </div>

@@ -2,21 +2,24 @@ import type { ReactNode } from "react";
 import { ArrowDown, FlaskConical, Info } from "lucide-react";
 import LiveDemoButton from "@/components/live-demo-button";
 import css from "./hospitality.module.css";
+import { useTranslations } from "next-intl";
 export { css };
 export function Badge({ children }: { children?: ReactNode }) {
+  const t = useTranslations("pages.industriesApp");
   return (
     <span className={css.badge}>
       <FlaskConical size={12} aria-hidden="true" />
-      {children ?? "Illustrative example"}
+      {children ?? t("hospitality.ui.illustrativeExample")}
     </span>
   );
 }
 export function Actions() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <div className={css.actions}>
       <LiveDemoButton />
       <a href="#hospitality-workspace">
-        Explore the example
+        {t("hospitality.ui.exploreTheExample")}
         <ArrowDown size={14} aria-hidden="true" />
       </a>
     </div>

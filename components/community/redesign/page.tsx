@@ -11,19 +11,21 @@ import CommunityContent, {
   type TranslationLabels,
 } from "./content";
 import BlogJournal from "./blog-journal";
-import { menuSlugs, pages, type CommunitySlug } from "./data";
+import { menuSlugs, pages, type CommunitySlug, groupLabel } from "./data";
 import { base, css } from "./ui";
 export async function communityMetadata(
   slug: CommunitySlug,
 ): Promise<Metadata> {
+  const t = await getTranslations("pages.communityApp");
   return {
-    title: `${pages[slug].title} | Adon ERP Community`,
-    description: pages[slug].description,
-    alternates: await getLocaleAlternates(pages[slug].path),
+    title: `${pages(t)[slug].title} | Adon ERP Community`,
+    description: pages(t)[slug].description,
+    alternates: await getLocaleAlternates(pages(t)[slug].path),
   };
 }
 export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
-  const p = pages[slug],
+  const t = await getTranslations("pages.communityApp");
+  const p = pages(t)[slug],
     business = siteConfig.business;
   const contact: ContactInfo = {
     supportEmail: business.supportEmail,
@@ -46,7 +48,7 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
   }
   const related = menuSlugs
     .filter(
-      (s) => s !== slug && (slug === "home" || pages[s].group === p.group),
+      (s) => s !== slug && (slug === "home" || pages(t)[s].group === p.group),
     )
     .slice(0, 4);
   return (
@@ -57,16 +59,16 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
       data-community-page={slug}
     >
       <div className={base.wrap}>
-        <nav className={base.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Adon ERP</Link>
+        <nav className={base.breadcrumb} aria-label={t("page.breadcrumb")}>
+          <Link href="/">{t("page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
           {slug === "home" ? (
-            <span aria-current="page">Community</span>
+            <span aria-current="page">{t("page.community")}</span>
           ) : (
             <>
-              <Link href="/community">Community</Link>
+              <Link href="/community">{t("page.community")}</Link>
               <ChevronRight size={11} aria-hidden="true" />
-              <span>{p.group}</span>
+              <span>{groupLabel(p.group, t)}</span>
               <ChevronRight size={11} aria-hidden="true" />
               <span aria-current="page">{p.title}</span>
             </>
@@ -79,8 +81,8 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
           <div className={base.sectionHeading}>
             <p className={base.eyebrow}>
               {p.group === "Community"
-                ? "THE COMMUNITY DIRECTORY"
-                : p.group.toUpperCase()}
+                ? t("page.theCommunityDirectory")
+                : groupLabel(p.group, t).toUpperCase()}
             </p>
             <h2>{p.sectionTitle}</h2>
             <p>{p.sectionDescription}</p>
@@ -95,8 +97,8 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
       <section className={base.faqSection}>
         <div className={`${base.wrap} ${base.faqLayout}`}>
           <div className={base.sectionHeading}>
-            <p className={base.eyebrow}>A LITTLE USEFUL CONTEXT</p>
-            <h2>Before the next step.</h2>
+            <p className={base.eyebrow}>{t("page.aLittleUsefulContext")}</p>
+            <h2>{t("page.beforeTheNextStep")}</h2>
           </div>
           <div className={base.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -114,13 +116,13 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
       <section className={base.relatedSection}>
         <div className={base.wrap}>
           <div className={base.sectionHeading}>
-            <p className={base.eyebrow}>KEEP EXPLORING</p>
-            <h2>A few connected places to go.</h2>
+            <p className={base.eyebrow}>{t("page.keepExploring")}</p>
+            <h2>{t("page.aFewConnectedPlacesToGo")}</h2>
           </div>
           <div className={base.relatedGrid}>
             {related.map((s) => (
-              <Link key={s} href={pages[s].path}>
-                {pages[s].title}
+              <Link key={s} href={pages(t)[s].path}>
+                {pages(t)[s].title}
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
             ))}
@@ -130,11 +132,10 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
       <section className={base.closing} id="community-next-step">
         <div className={base.wrap}>
           <div>
-            <p className={base.eyebrow}>YOUR WORKFLOW. YOUR QUESTIONS.</p>
-            <h2>Bring the next conversation into focus.</h2>
+            <p className={base.eyebrow}>{t("page.yourWorkflowYourQuestions")}</p>
+            <h2>{t("page.bringTheNextConversationIntoFocus")}</h2>
             <p>
-              Share your process with an advisor and explore the product context
-              that matters to your team.
+              {t("page.shareYourProcessWithAnAdvisor")}
             </p>
           </div>
           <LiveDemoButton />

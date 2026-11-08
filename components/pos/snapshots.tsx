@@ -13,6 +13,8 @@ import {
   type PosSlug,
 } from "./data";
 import { Badge, Stat, Tag, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { type TFn } from "@/lib/i18n/t-types";
 
 type Evidence = {
   caption: string;
@@ -21,36 +23,36 @@ type Evidence = {
   stats: [string, string][];
   note: string;
 };
-function getEvidence(slug: PosSlug): Evidence {
+function getEvidence(slug: PosSlug, t: TFn): Evidence {
   switch (slug) {
     case "register-till":
       return {
-        caption: "Register context from supplied screenshot",
-        columns: ["Register", "Shift", "Cashier", "Float", "Cart"],
+        caption: t("snapshots.registerContextFromSuppliedScreenshot"),
+        columns: [t("snapshots.register"), t("snapshots.shift"), t("snapshots.cashier"), t("snapshots.float"), t("snapshots.cart")],
         rows: [
-          ["R1-BSC", "SHF-2026-000024", "RASEL", money(0), "Empty in source"],
+          ["R1-BSC", "SHF-2026-000024", "RASEL", money(0), t("snapshots.emptyInSource")],
         ],
         stats: [
-          ["Register", "R1-BSC"],
-          ["Cashier", "RASEL"],
-          ["Shift status", "Open"],
+          [t("snapshots.register"), "R1-BSC"],
+          [t("snapshots.cashier"), "RASEL"],
+          [t("snapshots.shiftStatus"), t("snapshots.open")],
         ],
-        note: "The original screenshot shows an empty cart. The interactive basket above is an illustrative exercise using supplied product prices.",
+        note: t("snapshots.theOriginalScreenshotShowsAnEmpty"),
       };
     case "shifts":
       return {
-        caption: "Eight fully visible supplied shifts",
+        caption: t("snapshots.eightFullyVisibleSuppliedShifts"),
         columns: [
-          "Shift",
-          "Register / cashier",
-          "Opened",
-          "Closed",
-          "Float",
-          "Expected / counted",
-          "Receipts",
-          "Status",
+          t("snapshots.shift"),
+          t("snapshots.registerCashier"),
+          t("snapshots.opened"),
+          t("snapshots.closed"),
+          t("snapshots.float"),
+          t("snapshots.expectedCounted"),
+          t("snapshots.receipts"),
+          t("snapshots.status"),
         ],
-        rows: shifts.map((row) => [
+        rows: shifts(t).map((row) => [
           row.id,
           <>
             {row.register}
@@ -60,87 +62,87 @@ function getEvidence(slug: PosSlug): Evidence {
           row.closed,
           money(row.float),
           row.cash === null ? (
-            "Not shown"
+            t("snapshots.notShown")
           ) : (
             <>
               {money(row.cash)}
-              <small>Counted same · variance ৳ 0.00</small>
+              <small>{t("snapshots.countedSameVariance000")}</small>
             </>
           ),
           row.receipts,
           <Tag positive={row.status === "Posted"}>{row.status}</Tag>,
         ]),
         stats: [
-          ["Visible records", "8"],
-          ["Open record", "000024"],
-          ["Registers in excerpt", "2"],
+          [t("snapshots.visibleRecords"), "8"],
+          [t("snapshots.openRecord"), "000024"],
+          [t("snapshots.registersInExcerpt"), "2"],
         ],
-        note: "Excerpt only. Lower truncated rows and unshown journal references are omitted; this is not a complete shift history.",
+        note: t("snapshots.excerptOnlyLowerTruncatedRowsAnd"),
       };
     case "receipts":
       return {
-        caption: "Supplied summary evidence used for the receipt illustration",
+        caption: t("snapshots.suppliedSummaryEvidenceUsedForThe"),
         columns: [
-          "Item",
-          "Quantity",
-          "Tender",
-          "Customer total",
-          "VAT included",
-          "Record source",
+          t("snapshots.item"),
+          t("snapshots.quantity"),
+          t("snapshots.tender"),
+          t("snapshots.customerTotal"),
+          t("snapshots.vatIncluded"),
+          t("snapshots.recordSource"),
         ],
         rows: [
           [
-            "DH-6070 · Athletic Fit Jean — 12 oz Denim",
+            t("snapshots.dh6070AthleticFitJean12"),
             1,
-            "Cash",
+            t("snapshots.cash"),
             money(3450),
             money(450),
-            "Day summary, not a receipt",
+            t("snapshots.daySummaryNotAReceipt"),
           ],
         ],
         stats: [
-          ["Source receipts", "1"],
-          ["Source total", money(3450)],
-          ["Original receipt ID", "Not supplied"],
+          [t("snapshots.sourceReceipts"), "1"],
+          [t("snapshots.sourceTotal"), money(3450)],
+          [t("snapshots.originalReceiptId"), t("snapshots.notSupplied")],
         ],
-        note: "A receipt screenshot, receipt number, customer identity and timestamp were not supplied. EXAMPLE-01 above is explicitly illustrative.",
+        note: t("snapshots.aReceiptScreenshotReceiptNumberCustomer"),
       };
     case "day-summary-z":
       return {
-        caption: "Day-summary breakdown from supplied screenshot",
-        columns: ["Breakdown", "Detail", "Count", "Value"],
+        caption: t("snapshots.daySummaryBreakdownFromSuppliedScreensho"),
+        columns: [t("snapshots.breakdown"), t("snapshots.detail"), t("snapshots.count"), t("snapshots.value")],
         rows: [
-          ["Tender", "Cash", "1×", money(3450)],
-          ["Category", "finished_good", 1, money(3450)],
-          ["Top item", "Athletic Fit Jean — 12 oz Denim", 1, money(3450)],
+          [t("snapshots.tender"), t("snapshots.cash"), "1×", money(3450)],
+          [t("snapshots.category"), "finished_good", 1, money(3450)],
+          [t("snapshots.topItem"), t("snapshots.athleticFitJean12OzDenim"), 1, money(3450)],
           [
-            "Gross margin",
-            "Sales less VAT and cost",
-            "58% as shown",
+            t("snapshots.grossMargin"),
+            t("snapshots.salesLessVatAndCost"),
+            t("snapshots.n58AsShown"),
             money(1738.91),
           ],
         ],
         stats: [
-          ["Net sales", money(3450)],
+          [t("snapshots.netSales"), money(3450)],
           ["VAT", money(450)],
-          ["Cost of goods", money(1261.09)],
+          [t("snapshots.costOfGoods"), money(1261.09)],
         ],
-        note: "Refunds and discount are zero. The source shows no variance figure. A trading date is not inferred from an incomplete selector.",
+        note: t("snapshots.refundsAndDiscountAreZeroThe"),
       };
     case "outlet-dashboard":
       return {
-        caption: "Dashboard top-item evidence",
+        caption: t("snapshots.dashboardTopItemEvidence"),
         columns: [
-          "Item",
-          "Units",
-          "Net sales",
-          "Item gross margin",
-          "On hand",
-          "Days cover",
+          t("snapshots.item"),
+          t("snapshots.units"),
+          t("snapshots.netSales"),
+          t("snapshots.itemGrossMargin"),
+          t("snapshots.onHand"),
+          t("snapshots.daysCover"),
         ],
         rows: [
           [
-            "DH-6070 · Athletic Fit Jean — 12 oz Denim",
+            t("snapshots.dh6070AthleticFitJean12"),
             1,
             money(3450),
             money(2188.91),
@@ -149,52 +151,52 @@ function getEvidence(slug: PosSlug): Evidence {
           ],
         ],
         stats: [
-          ["Receipts", "1"],
-          ["Average basket", money(3450)],
-          ["Overall gross margin", money(1738.91)],
+          [t("snapshots.receipts"), "1"],
+          [t("snapshots.averageBasket"), money(3450)],
+          [t("snapshots.overallGrossMargin"), money(1738.91)],
         ],
-        note: "The source item margin is 2,188.91, while the headline margin is 1,738.91 (a 450 VAT difference). Both are preserved as separate source figures. Dashboard stock is a separate snapshot from Outlet Stock.",
+        note: t("snapshots.theSourceItemMarginIs2"),
       };
     case "loyalty-vouchers":
       return {
-        caption: "Aggregate balances from the supplied outlet dashboard",
-        columns: ["Category", "Count", "Balance", "Individual records"],
+        caption: t("snapshots.aggregateBalancesFromTheSuppliedOutlet"),
+        columns: [t("snapshots.category"), t("snapshots.count"), t("snapshots.balance"), t("snapshots.individualRecords")],
         rows: [
           [
-            "Loyalty accounts",
+            t("snapshots.loyaltyAccounts"),
             27,
-            "3,610 points · BDT 3,610 shown",
-            "Not supplied",
+            t("snapshots.n3610PointsBdt3610"),
+            t("snapshots.notSupplied"),
           ],
-          ["Active vouchers", 2, money(3770), "Not supplied"],
+          [t("snapshots.activeVouchers"), 2, money(3770), t("snapshots.notSupplied")],
           [
-            "Vouchers sold in dashboard window",
-            "Not shown",
+            t("snapshots.vouchersSoldInDashboardWindow"),
+            t("snapshots.notShown"),
             money(0),
-            "Not supplied",
+            t("snapshots.notSupplied"),
           ],
         ],
         stats: [
-          ["Loyalty accounts", "27"],
-          ["Points", "3,610"],
-          ["Active vouchers", "2"],
+          [t("snapshots.loyaltyAccounts"), "27"],
+          [t("snapshots.points"), "3,610"],
+          [t("snapshots.activeVouchers"), "2"],
         ],
-        note: "Aggregate data only. No customer ledger, voucher detail, expiry, earning policy or redemption rule is invented.",
+        note: t("snapshots.aggregateDataOnlyNoCustomerLedger"),
       };
     case "transfers":
       return {
-        caption: "Two supplied received transfers",
+        caption: t("snapshots.twoSuppliedReceivedTransfers"),
         columns: [
-          "Transfer",
-          "From → to",
-          "Sent",
-          "Received",
-          "Lines / quantity",
-          "Sent value",
-          "Shortage",
-          "Markdown",
+          t("snapshots.transfer"),
+          t("snapshots.fromTo"),
+          t("snapshots.sent"),
+          t("snapshots.received"),
+          t("snapshots.linesQuantity"),
+          t("snapshots.sentValue"),
+          t("snapshots.shortage"),
+          t("snapshots.markdown"),
         ],
-        rows: transfers.map((row) => [
+        rows: transfers(t).map((row) => [
           row.id,
           `${row.from} → ${row.to}`,
           row.sent,
@@ -205,54 +207,54 @@ function getEvidence(slug: PosSlug): Evidence {
           row.markdown === null ? "—" : money(row.markdown),
         ]),
         stats: [
-          ["Supplied transfers", "2"],
-          ["Source status", "Received"],
-          ["Destinations", "OUT1 / OUT2"],
+          [t("snapshots.suppliedTransfers"), "2"],
+          [t("snapshots.sourceStatus"), t("snapshots.received")],
+          [t("snapshots.destinations"), t("snapshots.out1Out2")],
         ],
-        note: "Dashes remain unreported values. Quantity differences in the local exercise do not recalculate the historical monetary shortage or markdown.",
+        note: t("snapshots.dashesRemainUnreportedValuesQuantityDiff"),
       };
     case "stock-lots":
       return {
-        caption: "Supplied posted stock lot",
+        caption: t("snapshots.suppliedPostedStockLot"),
         columns: [
-          "Stock lot",
-          "Vendor",
-          "Description",
-          "Received",
-          "Lump cost",
-          "Basis",
-          "Quantity",
-          "Bill",
+          t("snapshots.stockLot"),
+          t("snapshots.vendor"),
+          t("snapshots.description"),
+          t("snapshots.received"),
+          t("snapshots.lumpCost"),
+          t("snapshots.basis"),
+          t("snapshots.quantity"),
+          t("snapshots.bill"),
         ],
         rows: [
           [
             "LOT-2026-000001",
-            "Gulshan Surplus Traders",
-            "Assorted ladies’ tops + kids’ tees — cancelled export order, 6 bales",
-            "Sep 14",
+            t("snapshots.gulshanSurplusTraders"),
+            t("snapshots.assortedLadiesTopsKidsTeesCancelled"),
+            t("snapshots.sep14"),
             money(180000),
-            "Estimated retail value",
+            t("snapshots.estimatedRetailValue"),
             1150,
             "BILL-2026-000056",
           ],
         ],
         stats: [
-          ["Lot quantity", "1,150"],
-          ["Lump cost", money(180000)],
-          ["Source status", "Posted"],
+          [t("snapshots.lotQuantity"), "1,150"],
+          [t("snapshots.lumpCost"), money(180000)],
+          [t("snapshots.sourceStatus"), t("snapshots.posted")],
         ],
-        note: "The lot's original item intake and allocation results were not supplied. The example calculator does not reconstruct them.",
+        note: t("snapshots.theLotSOriginalItemIntake"),
       };
     case "outlet-stock":
       return {
-        caption: "Six supplied stock lines · OUT1 Bashundhara City",
+        caption: t("snapshots.sixSuppliedStockLinesOut1Bashundhara"),
         columns: [
-          "SKU / item",
-          "On hand",
-          "Average cost",
-          "Stock value",
-          "Retail price",
-          "Retail value",
+          t("snapshots.skuItem"),
+          t("snapshots.onHand"),
+          t("snapshots.averageCost"),
+          t("snapshots.stockValue"),
+          t("snapshots.retailPrice"),
+          t("snapshots.retailValue"),
         ],
         rows: stock.map((row) => [
           <>
@@ -266,67 +268,67 @@ function getEvidence(slug: PosSlug): Evidence {
           money(row.retail),
         ]),
         stats: [
-          ["SKUs / units", "6 / 1,390"],
-          ["Stock value", money(853556.98)],
-          ["Retail value", money(2531860)],
+          [t("snapshots.skusUnits"), "6 / 1,390"],
+          [t("snapshots.stockValue"), money(853556.98)],
+          [t("snapshots.retailValue"), money(2531860)],
         ],
         note: "Count sheets shown in the source: CNT-2026-000006 open, 0/6 counted; CNT-2026-000005 posted, 5/7 counted, variance −21,067.71. Their line-level counts are not supplied.",
       };
     case "outlets-registers":
       return {
-        caption: "Six supplied warehouse / outlet designations",
-        columns: ["Code", "Location", "Address", "Counter sales", "Register"],
-        rows: locations.map((row) => [
+        caption: t("snapshots.sixSuppliedWarehouseOutletDesignations"),
+        columns: [t("snapshots.code"), t("snapshots.location"), t("snapshots.address"), t("snapshots.counterSales"), t("snapshots.register")],
+        rows: locations(t).map((row) => [
           row.code,
           row.name,
           row.address,
-          row.outlet ? "Yes" : "No",
+          row.outlet ? t("snapshots.yes") : t("snapshots.no"),
           row.register ?? "—",
         ]),
         stats: [
-          ["Locations", "6"],
-          ["Selling outlets", "2"],
-          ["Registers", "2"],
+          [t("snapshots.locations"), "6"],
+          [t("snapshots.sellingOutlets"), "2"],
+          [t("snapshots.registers"), "2"],
         ],
-        note: "Both registers show VAT 15%. R1-BSC shows open shift SHF-2026-000024; R1-JFP has no open shift shown. Retail settings and cashier details below the screenshot crop are not invented.",
+        note: t("snapshots.bothRegistersShowVat15R1"),
       };
   }
 }
 export default function PosSnapshot({ slug }: { slug: PosSlug }) {
-  const evidence = getEvidence(slug);
+  const t = useTranslations("pages.posApp");
+  const evidence = getEvidence(slug, t);
   return (
     <section className={css.snapshotSection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>A CLOSER LOOK AT THE PRODUCT</p>
-            <h2>The detail behind the experience.</h2>
+            <p className={css.eyebrow}>{t("snapshots.aCloserLookAtTheProduct")}</p>
+            <h2>{t("snapshots.theDetailBehindTheExperience")}</h2>
             <p>
-              Supplied software data, presented as a historical preview. Explore
-              the full workflow with an advisor.
+              {t("snapshots.suppliedSoftwareDataPresentedAsA")}
             </p>
           </div>
           <Badge />
         </div>
         <DemoPreview
-          title={pages[slug].title}
-          description="Explore the complete checkout, reporting and outlet-stock workflow in a guided product conversation."
+          title={pages(t)[slug].title}
+          description={t("snapshots.exploreTheCompleteCheckoutReportingAnd")}
         >
           <div className={css.sourceWorkspace}>
             <header className={css.sourceBar}>
               <b>
-                Eden<span>ERP</span>
+                {t("snapshots.eden")}<span>{t("snapshots.erp")}</span>
               </b>
-              <span>/ Point of Sale / {pages[slug].title}</span>
+              <span>{t("snapshots.pointOfSale")}{" "}{pages(t)[slug].title}</span>
               <span>
                 <Building2 size={13} />
-                {company}
+                {company(t)}
               </span>
             </header>
             <div className={css.sourceContent}>
               <div className={css.sourceTitle}>
-                <h3>{pages[slug].title}</h3>
-                <Tag>Supplied snapshot</Tag>
+                <h3>{pages(t)[slug].title}</h3>
+                <Tag>{t("snapshots.suppliedSnapshot")}</Tag>
               </div>
               <dl className={css.sourceStats}>
                 {evidence.stats.map(([label, value]) => (

@@ -1,3 +1,4 @@
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 export const industrialSlugs = ["textile", "metal", "furniture"] as const;
 export type IndustrialSlug = (typeof industrialSlugs)[number];
 type Content = {
@@ -19,199 +20,199 @@ const tool = (title: string, href: string, body: string) => ({
   href,
   body,
 });
-const bom = tool(
-  "Bill of materials",
+const bom = memoT((t: TFn) => (tool(
+  t("industrial.data.billOfMaterials"),
   "/apps/manufacturing/bill-of-materials",
-  "Explore component and material records in the existing presentation.",
-);
-const orders = tool(
-  "Production orders",
+  t("industrial.data.exploreComponentAndMaterialRecordsIn"),
+)));
+const orders = memoT((t: TFn) => (tool(
+  t("industrial.data.productionOrders"),
   "/apps/manufacturing/production-orders",
-  "Follow the production-order presentation.",
-);
-const routings = tool(
-  "Routings",
+  t("industrial.data.followTheProductionOrderPresentation"),
+)));
+const routings = memoT((t: TFn) => (tool(
+  t("industrial.data.routings"),
   "/apps/manufacturing/routings",
-  "Explore the sequence of operations and work-centre context.",
-);
-const qc = tool(
-  "Quality control",
+  t("industrial.data.exploreTheSequenceOfOperationsAnd"),
+)));
+const qc = memoT((t: TFn) => (tool(
+  t("industrial.data.qualityControl"),
   "/apps/manufacturing/quality-control",
-  "Look at the inspection and quality workspace.",
-);
-const manufacturingLinks = [
-  { title: "Steel", href: "/industries/steel" },
-  { title: "Agro & Rice", href: "/industries/agro-rice" },
-];
-export const pages: Record<IndustrialSlug, Content> = {
+  t("industrial.data.lookAtTheInspectionAndQuality"),
+)));
+const manufacturingLinks = memoT((t: TFn) => ([
+  { title: t("industrial.data.steel"), href: "/industries/steel" },
+  { title: t("industrial.data.agroRice"), href: "/industries/agro-rice" },
+]));
+export const pages = memoT((t: TFn): Record<IndustrialSlug, Content> => ({
   textile: {
-    title: "Textile Manufacturing",
-    category: "Garments & Textile",
-    eyebrow: "FROM THE FIRST THREAD TO THE FINISH",
-    headline: "A fabric of connected details.",
-    accent: "A clearer manufacturing story.",
+    title: t("industrial.data.textileManufacturing"),
+    category: t("industrial.data.garmentsTextile"),
+    eyebrow: t("industrial.data.fromTheFirstThreadToThe"),
+    headline: t("industrial.data.aFabricOfConnectedDetails"),
+    accent: t("industrial.data.aClearerManufacturingStory"),
     description:
-      "Bring the material, process stage and length assumptions into a considered view. Keep the detail behind the fabric as readable as the fabric itself.",
-    demoTitle: "Follow an example length through three stages.",
+      t("industrial.data.bringTheMaterialProcessStageAnd"),
+    demoTitle: t("industrial.data.followAnExampleLengthThroughThree"),
     demoDescription:
-      "Enter an incoming fabric length and three fictional loss percentages. See sequential length arithmetic, with each stage rounded to millimetres.",
+      t("industrial.data.enterAnIncomingFabricLengthAnd"),
     steps: [
       [
-        "The material",
-        "Keep the lot identity and unit of measure clear from the start.",
+        t("industrial.data.theMaterial"),
+        t("industrial.data.keepTheLotIdentityAndUnit"),
       ],
       [
-        "The process",
-        "Read each entered stage assumption before the next handoff.",
+        t("industrial.data.theProcess"),
+        t("industrial.data.readEachEnteredStageAssumptionBefore"),
       ],
       [
-        "The record",
-        "Explore the existing lot, order, routing and quality presentations.",
+        t("industrial.data.theRecord"),
+        t("industrial.data.exploreTheExistingLotOrderRouting"),
       ],
     ],
     tools: [
       tool(
-        "Batches & lots",
+        t("industrial.data.batchesLots"),
         "/apps/manufacturing/batches-lots",
-        "Explore lot identity and traceability context.",
+        t("industrial.data.exploreLotIdentityAndTraceabilityContext"),
       ),
-      orders,
-      routings,
-      qc,
+      orders(t),
+      routings(t),
+      qc(t),
     ],
     related: [
-      { title: "Garments", href: "/industries/garments" },
-      { title: "Accessories", href: "/industries/accessories" },
-      { title: "Buying House", href: "/industries/buying-house" },
-      { title: "Merchandising", href: "/industries/merchandising" },
+      { title: t("industrial.data.garments"), href: "/industries/garments" },
+      { title: t("industrial.data.accessories"), href: "/industries/accessories" },
+      { title: t("industrial.data.buyingHouse"), href: "/industries/buying-house" },
+      { title: t("industrial.data.merchandising"), href: "/industries/merchandising" },
     ],
     faqs: [
       [
-        "Is the loss percentage a textile standard?",
-        "No. Every percentage is an editable assumption. The exercise models length subtraction only, without material, machine or process recommendations.",
+        t("industrial.data.isTheLossPercentageATextile"),
+        t("industrial.data.noEveryPercentageIsAnEditable"),
       ],
       [
-        "Does the example convert yarn into fabric?",
-        "No. It keeps metres throughout. It does not convert mass to length, model width or GSM, or estimate dye/chemical requirements.",
+        t("industrial.data.doesTheExampleConvertYarnInto"),
+        t("industrial.data.noItKeepsMetresThroughoutIt"),
       ],
       [
-        "How are the stage values calculated?",
-        "Each stage applies its entered loss percentage to the previous stage’s remaining length, then rounds that result to the nearest millimetre. This is not a saved production forecast.",
+        t("industrial.data.howAreTheStageValuesCalculated"),
+        t("industrial.data.eachStageAppliesItsEnteredLoss"),
       ],
     ],
   },
   metal: {
-    title: "Metal Fabrication",
-    category: "Manufacturing",
-    eyebrow: "THE DETAIL BEHIND EVERY PIECE",
-    headline: "Precision starts with clarity.",
-    accent: "From the stock bar to the job.",
+    title: t("industrial.data.metalFabrication"),
+    category: t("industrial.data.manufacturing"),
+    eyebrow: t("industrial.data.theDetailBehindEveryPiece"),
+    headline: t("industrial.data.precisionStartsWithClarity"),
+    accent: t("industrial.data.fromTheStockBarToThe"),
     description:
-      "Bring stock length, requested pieces and the assumptions behind a cutting conversation into focus. A measured, modern perspective on fabrication work.",
-    demoTitle: "Explore a simple one-length cutting pattern.",
+      t("industrial.data.bringStockLengthRequestedPiecesAnd"),
+    demoTitle: t("industrial.data.exploreASimpleOneLengthCutting"),
     demoDescription:
-      "Enter stock length, piece length, a per-piece allowance and requested pieces. Calculate grouped patterns in whole millimetres, without creating a cutting plan.",
+      t("industrial.data.enterStockLengthPieceLengthA"),
     steps: [
       [
-        "The stock",
-        "Keep stock length and requested piece length in the same unit.",
+        t("industrial.data.theStock"),
+        t("industrial.data.keepStockLengthAndRequestedPiece"),
       ],
-      ["The allowance", "Make the assumed consumption per piece explicit."],
+      [t("industrial.data.theAllowance"), t("industrial.data.makeTheAssumedConsumptionPerPiece")],
       [
-        "The handoff",
-        "Explore BOM, routing, scrap and production-order presentations.",
+        t("industrial.data.theHandoff"),
+        t("industrial.data.exploreBomRoutingScrapAndProduction"),
       ],
     ],
     tools: [
-      bom,
-      routings,
+      bom(t),
+      routings(t),
       tool(
-        "Scrap & waste",
+        t("industrial.data.scrapWaste"),
         "/apps/manufacturing/scrap-waste",
-        "Explore the existing scrap and waste presentation.",
+        t("industrial.data.exploreTheExistingScrapAndWaste"),
       ),
-      orders,
+      orders(t),
     ],
     related: [
-      ...manufacturingLinks,
+      ...manufacturingLinks(t),
       {
-        title: "Furniture Production",
+        title: t("industrial.data.furnitureProduction"),
         href: "/industries/manufacturing/furniture",
       },
-      { title: "Textile", href: "/industries/manufacturing/textile" },
+      { title: t("industrial.data.textile"), href: "/industries/manufacturing/textile" },
     ],
     faqs: [
       [
-        "Is this a machine-ready cutting plan?",
-        "No. It is one-dimensional arithmetic with one piece length. It does not evaluate tools, material properties, fixtures, end trim or machine constraints.",
+        t("industrial.data.isThisAMachineReadyCutting"),
+        t("industrial.data.noItIsOneDimensionalArithmetic"),
       ],
       [
-        "What does the allowance represent?",
+        t("industrial.data.whatDoesTheAllowanceRepresent"),
         "An entered whole-millimetre allowance consumed for every piece, including final separation. It is an explicit example assumption, not a recommended kerf or end-trim rule.",
       ],
       [
-        "How are the patterns grouped?",
+        t("industrial.data.howAreThePatternsGrouped"),
         "The example shows the count of full-pattern bars and, when necessary, one partial-pattern bar. Remaining length is an arithmetic remainder, not a guaranteed reusable offcut.",
       ],
     ],
   },
   furniture: {
-    title: "Furniture Production",
-    category: "Manufacturing",
-    eyebrow: "CRAFT IN THE OBJECT. CLARITY IN THE PARTS.",
-    headline: "Thoughtfully made.",
-    accent: "Clearly connected, part by part.",
+    title: t("industrial.data.furnitureProduction"),
+    category: t("industrial.data.manufacturing"),
+    eyebrow: t("industrial.data.craftInTheObjectClarityIn"),
+    headline: t("industrial.data.thoughtfullyMade"),
+    accent: t("industrial.data.clearlyConnectedPartByPart"),
     description:
-      "Bring the design, component counts and assembly conversation into one composed experience. Keep the records behind each furniture piece in view.",
-    demoTitle: "Read the components behind a small batch.",
+      t("industrial.data.bringTheDesignComponentCountsAnd"),
+    demoTitle: t("industrial.data.readTheComponentsBehindASmall"),
     demoDescription:
       "Enter a fictional order quantity, per-chair component counts and stock. Compare component-only kit coverage, without reserving parts or releasing production.",
     steps: [
       [
-        "The design",
-        "Keep the product identity and component context together.",
+        t("industrial.data.theDesign"),
+        t("industrial.data.keepTheProductIdentityAndComponent"),
       ],
       [
-        "The parts",
-        "Compare whole-piece requirements for each component separately.",
+        t("industrial.data.theParts"),
+        t("industrial.data.compareWholePieceRequirementsForEach"),
       ],
       [
-        "The assembly",
-        "Explore BOM, production, costing and quality presentations.",
+        t("industrial.data.theAssembly"),
+        t("industrial.data.exploreBomProductionCostingAndQuality"),
       ],
     ],
     tools: [
-      bom,
-      orders,
+      bom(t),
+      orders(t),
       tool(
-        "Production costing",
+        t("industrial.data.productionCosting"),
         "/apps/manufacturing/production-costing",
-        "Explore the existing manufacturing-cost presentation.",
+        t("industrial.data.exploreTheExistingManufacturingCostPrese"),
       ),
-      qc,
+      qc(t),
     ],
     related: [
-      ...manufacturingLinks,
-      { title: "Metal Fabrication", href: "/industries/manufacturing/metal" },
-      { title: "Furniture Retail", href: "/industries/retail/furniture-store" },
+      ...manufacturingLinks(t),
+      { title: t("industrial.data.metalFabrication"), href: "/industries/manufacturing/metal" },
+      { title: t("industrial.data.furnitureRetail"), href: "/industries/retail/furniture-store" },
     ],
     faqs: [
       [
-        "Does kit coverage mean furniture is available?",
-        "No. The count considers only the three entered component lines. It excludes labour, machines, other materials, quality and assembly constraints.",
+        t("industrial.data.doesKitCoverageMeanFurnitureIs"),
+        t("industrial.data.noTheCountConsidersOnlyThe"),
       ],
       [
-        "What units does the example use?",
-        "Whole pieces for each separately identified component. It does not combine timber volume, fabric length or weight into a piece count.",
+        t("industrial.data.whatUnitsDoesTheExampleUse"),
+        t("industrial.data.wholePiecesForEachSeparatelyIdentified"),
       ],
       [
-        "Does editing the example reserve or order parts?",
-        "No. Every figure is fictional and changes locally. No stock reservation, purchasing, BOM change or production order is created.",
+        t("industrial.data.doesEditingTheExampleReserveOr"),
+        t("industrial.data.noEveryFigureIsFictionalAnd"),
       ],
     ],
   },
-};
-export const textileStages = ["Preparation", "Colour process", "Finishing"];
+}));
+export const textileStages = memoT((t: TFn) => ([t("industrial.data.preparation"), t("industrial.data.colourProcess"), t("industrial.data.finishing")]));
 export const defaultLosses = [1, 2, 0.5];
 export const components = [
   { id: "EX-F01", name: "Leg component", perUnit: 4, stock: 80 },

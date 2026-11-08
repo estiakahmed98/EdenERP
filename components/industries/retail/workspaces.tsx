@@ -26,6 +26,8 @@ import {
   type RetailSlug,
 } from "./data";
 import { Badge, Metric, Note, ShirtArt, ToyArt, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 function value(raw: string) {
   if (raw.trim() === "")
     throw new Error("Fill in each example value to calculate the result.");
@@ -62,10 +64,11 @@ function Numeric({
   );
 }
 function Reset({ onClick }: { onClick: () => void }) {
+  const t = useTranslations("pages.industriesApp");
   return (
     <button type="button" className={css.reset} onClick={onClick}>
       <RotateCcw size={13} aria-hidden="true" />
-      Reset example
+      {t("retail.workspaces.resetExample")}
     </button>
   );
 }
@@ -77,21 +80,22 @@ function Outcome({ error, children }: { error: string; children: string }) {
   );
 }
 export function RetailStory({ slug }: { slug: RetailSlug }) {
+  const t = useTranslations("pages.industriesApp");
   const [selected, setSelected] = useState(0),
-    p = pages[slug],
+    p = pages(t)[slug],
     stage = p.stages[selected];
   return (
     <section className={css.storySection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
-          <p className={css.eyebrow}>THE STORE, IN CONTEXT</p>
+          <p className={css.eyebrow}>{t("retail.workspaces.theStoreInContext")}</p>
           <h2>{p.story}</h2>
         </div>
         <div className={css.storyLayout}>
           <div
             className={css.storyChoices}
             role="group"
-            aria-label="Choose a retail perspective"
+            aria-label={t("retail.workspaces.chooseARetailPerspective")}
           >
             {p.stages.map((row, i) => (
               <button
@@ -124,26 +128,27 @@ export function RetailStory({ slug }: { slug: RetailSlug }) {
   );
 }
 function BookWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [quantities, setQuantities] = useState([1, 0, 1]);
   const total = basketTotal(
-    books.map((b, i) => ({ price: b.price, quantity: quantities[i] })),
+    books(t).map((b, i) => ({ price: b.price, quantity: quantities[i] })),
   );
   const count = quantities.reduce((a, b) => a + b, 0);
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Fictional book catalogue · BDT</Badge>
+        <Badge>{t("retail.workspaces.fictionalBookCatalogueBdt")}</Badge>
         <Reset onClick={() => setQuantities([1, 0, 1])} />
       </div>
       <div className={css.basketLayout}>
         <div className={css.bookChoices}>
-          {books.map((book, i) => (
+          {books(t).map((book, i) => (
             <article key={book.id}>
               <div className={css.miniBook} data-colour={book.colour}>
                 <span>{book.id}</span>
                 <b>{book.name}</b>
                 <i />
-                <small>FICTIONAL TITLE</small>
+                <small>{t("retail.workspaces.fictionalTitle")}</small>
               </div>
               <h3>{book.name}</h3>
               <p>{book.detail}</p>
@@ -151,7 +156,7 @@ function BookWorkspace() {
               <div className={css.quantityControl}>
                 <button
                   type="button"
-                  aria-label={`Remove one ${book.name} from example`}
+                  aria-label={t("retail.workspaces.removeOneFromExample", { name: String(book.name) })}
                   disabled={quantities[i] === 0}
                   onClick={() =>
                     setQuantities((prev) =>
@@ -166,7 +171,7 @@ function BookWorkspace() {
                 </output>
                 <button
                   type="button"
-                  aria-label={`Add one ${book.name} to example`}
+                  aria-label={t("retail.workspaces.addOneToExample", { name: String(book.name) })}
                   disabled={quantities[i] >= 99}
                   onClick={() =>
                     setQuantities((prev) =>
@@ -181,13 +186,13 @@ function BookWorkspace() {
           ))}
         </div>
         <aside className={css.basketReceipt}>
-          <span>THE READER’S BASKET / LOCAL EXAMPLE</span>
-          <h3>A little shelf discovery.</h3>
+          <span>{t("retail.workspaces.theReaderSBasketLocalExample")}</span>
+          <h3>{t("retail.workspaces.aLittleShelfDiscovery")}</h3>
           <ul>
-            {books
+            {books(t)
               .filter((_, i) => quantities[i] > 0)
               .map((book) => {
-                const i = books.indexOf(book);
+                const i = books(t).indexOf(book);
                 return (
                   <li key={book.id}>
                     <span>
@@ -201,7 +206,7 @@ function BookWorkspace() {
                 );
               })}
           </ul>
-          {count === 0 && <p>No example books selected.</p>}
+          {count === 0 && <p>{t("retail.workspaces.noExampleBooksSelected")}</p>}
           <dl>
             <Metric
               label={`${count} example book${count === 1 ? "" : "s"} · total`}
@@ -210,8 +215,7 @@ function BookWorkspace() {
           </dl>
           <Outcome error="">{`${count} selected example books. Basket total ${money(total)}.`}</Outcome>
           <Note>
-            Unit prices only. No tax, discount, payment or real stock check is
-            applied.
+            {t("retail.workspaces.unitPricesOnlyNoTaxDiscount")}
           </Note>
         </aside>
       </div>
@@ -219,6 +223,7 @@ function BookWorkspace() {
   );
 }
 function ClothingWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [colour, setColour] = useState(0),
     [size, setSize] = useState(1),
     [requested, setRequested] = useState("3");
@@ -229,12 +234,12 @@ function ClothingWorkspace() {
     result = variantComparison(stock, value(requested));
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Enter a valid requested quantity.";
+      e instanceof Error ? e.message : t("retail.workspaces.enterAValidRequestedQuantity");
   }
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>EX-CL / fictional overshirt variants</Badge>
+        <Badge>{t("retail.workspaces.exClFictionalOvershirtVariants")}</Badge>
         <Reset
           onClick={() => {
             setColour(0);
@@ -247,13 +252,13 @@ function ClothingWorkspace() {
         <div className={css.selectedGarment}>
           <ShirtArt colour={colours[colour].hex} />
           <span>
-            EX-CL-{colours[colour].id.toUpperCase()}-{clothingSizes[size]}
+            {t("retail.workspaces.exCl")}{colours[colour].id.toUpperCase()}-{clothingSizes[size]}
           </span>
-          <small>Concept drawing · no real product specification</small>
+          <small>{t("retail.workspaces.conceptDrawingNoRealProductSpecification")}</small>
         </div>
         <div className={css.variantControls}>
           <fieldset>
-            <legend>Choose an example colour</legend>
+            <legend>{t("retail.workspaces.chooseAnExampleColour")}</legend>
             <div className={css.colourChoices}>
               {colours.map((row, i) => (
                 <label key={row.id}>
@@ -272,7 +277,7 @@ function ClothingWorkspace() {
             </div>
           </fieldset>
           <fieldset>
-            <legend>Choose an example size</legend>
+            <legend>{t("retail.workspaces.chooseAnExampleSize")}</legend>
             <div className={css.sizeChoices}>
               {clothingSizes.map((row, i) => (
                 <label key={row}>
@@ -288,31 +293,30 @@ function ClothingWorkspace() {
             </div>
           </fieldset>
           <Numeric
-            label="Requested example quantity · pieces"
+            label={t("retail.workspaces.requestedExampleQuantityPieces")}
             raw={requested}
             onChange={setRequested}
             min={1}
           />
           <dl className={css.metrics}>
             <Metric
-              label="Selected variant · example on hand"
+              label={t("retail.workspaces.selectedVariantExampleOnHand")}
               value={num(stock)}
             />
             <Metric
-              label="Shortfall for this request · pcs"
+              label={t("retail.workspaces.shortfallForThisRequestPcs")}
               value={result ? num(result.short) : "—"}
             />
           </dl>
           <Outcome error={error}>
             {result
               ? result.short > 0
-                ? `The request exceeds fictional stock by ${num(result.short)} pieces.`
-                : `Fictional stock covers the request, with ${num(result.remaining)} pieces left in the example.`
+                ? t("retail.workspaces.theRequestExceedsFictionalStockBy", { num: String(num(result.short)) })
+                : t("retail.workspaces.fictionalStockCoversTheRequestWith", { num: String(num(result.remaining)) })
               : ""}
           </Outcome>
           <Note>
-            This comparison is local only. No availability promise, reservation
-            or sale is made.
+            {t("retail.workspaces.thisComparisonIsLocalOnlyNo")}
           </Note>
         </div>
       </div>
@@ -320,6 +324,7 @@ function ClothingWorkspace() {
   );
 }
 function FurnitureWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [finish, setFinish] = useState(0),
     [quantities, setQuantities] = useState(["1", "1", "1"]),
     [delivery, setDelivery] = useState("1000");
@@ -338,12 +343,12 @@ function FurnitureWorkspace() {
     error =
       e instanceof Error
         ? e.message
-        : "Use valid example quantities and amounts.";
+        : t("retail.workspaces.useValidExampleQuantitiesAndAmounts");
   }
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Fictional showroom set · BDT</Badge>
+        <Badge>{t("retail.workspaces.fictionalShowroomSetBdt")}</Badge>
         <Reset
           onClick={() => {
             setFinish(0);
@@ -355,7 +360,7 @@ function FurnitureWorkspace() {
       <div className={css.furnitureWorkspace}>
         <div>
           <fieldset>
-            <legend>Choose an illustrative finish</legend>
+            <legend>{t("retail.workspaces.chooseAnIllustrativeFinish")}</legend>
             <div className={css.finishChoices}>
               {finishes.map((row, i) => (
                 <label key={row.id}>
@@ -368,7 +373,7 @@ function FurnitureWorkspace() {
                   <span>
                     <i data-finish={row.id} />
                     <b>{row.name}</b>
-                    <small>+ {money(row.extra)} / piece</small>
+                    <small>+ {money(row.extra)}{" "}{t("retail.workspaces.piece")}</small>
                   </span>
                 </label>
               ))}
@@ -379,7 +384,7 @@ function FurnitureWorkspace() {
               <div key={row.id}>
                 <span>
                   <b>{row.name}</b>
-                  <small>Base {money(row.price)} / piece</small>
+                  <small>{t("retail.workspaces.base")}{" "}{money(row.price)}{" "}{t("retail.workspaces.piece")}</small>
                 </span>
                 <Numeric
                   label={`${row.name} · quantity`}
@@ -396,10 +401,10 @@ function FurnitureWorkspace() {
           </div>
         </div>
         <aside className={css.setReceipt}>
-          <span>THE PIECES AND THE FINISH</span>
-          <h3>{finishes[finish].name} / concept set</h3>
+          <span>{t("retail.workspaces.thePiecesAndTheFinish")}</span>
+          <h3>{finishes[finish].name}{" "}{t("retail.workspaces.conceptSet")}</h3>
           <Numeric
-            label="Entered delivery amount · BDT"
+            label={t("retail.workspaces.enteredDeliveryAmountBdt")}
             raw={delivery}
             onChange={setDelivery}
             max={10000000}
@@ -407,45 +412,45 @@ function FurnitureWorkspace() {
           />
           <dl>
             <Metric
-              label="Example pieces"
+              label={t("retail.workspaces.examplePieces")}
               value={result ? num(result.pieces) : "—"}
             />
             <Metric
-              label="Furniture + finish surcharge"
+              label={t("retail.workspaces.furnitureFinishSurcharge")}
               value={result ? money(result.subtotal) : "—"}
             />
             <Metric
-              label="Delivery added once"
+              label={t("retail.workspaces.deliveryAddedOnce")}
               value={result ? money(result.delivery) : "—"}
             />
             <Metric
-              label="Illustrative set total"
+              label={t("retail.workspaces.illustrativeSetTotal")}
               value={result ? money(result.total) : "—"}
             />
           </dl>
           <Outcome error={error}>
             {result
               ? result.pieces === 0
-                ? "Choose at least one piece to build the set. No delivery is added to an empty set."
-                : `Local estimate ${money(result.total)}. No quotation is saved.`
+                ? t("retail.workspaces.chooseAtLeastOnePieceTo")
+                : t("retail.workspaces.localEstimateNoQuotationIsSaved", { money: String(money(result.total)) })
               : ""}
           </Outcome>
           <Note>
-            Example prices and delivery only. No tax, discount, lead time or
-            stock availability is inferred.
+            {t("retail.workspaces.examplePricesAndDeliveryOnlyNo")}
           </Note>
         </aside>
       </div>
     </>
   );
 }
-const dateStates: Record<string, string> = {
-  past: "Date label passed",
-  today: "Matches reference date",
-  window: "Inside example window",
-  later: "Beyond example window",
-};
+const dateStates = memoT((t: TFn): Record<string, string> => ({
+  past: t("retail.workspaces.dateLabelPassed"),
+  today: t("retail.workspaces.matchesReferenceDate"),
+  window: t("retail.workspaces.insideExampleWindow"),
+  later: t("retail.workspaces.beyondExampleWindow"),
+}));
 function GroceryWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [reference, setReference] = useState(referenceDate),
     [window, setWindow] = useState("3"),
     [filter, setFilter] = useState("all");
@@ -457,7 +462,7 @@ function GroceryWorkspace() {
     error =
       e instanceof Error
         ? e.message
-        : "Use valid example dates and a review window.";
+        : t("retail.workspaces.useValidExampleDatesAndA");
   }
   const rows = batches
     .map((row, i) => ({ ...row, calculated: result?.[i] }))
@@ -465,7 +470,7 @@ function GroceryWorkspace() {
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Four fictional batches · calendar dates only</Badge>
+        <Badge>{t("retail.workspaces.fourFictionalBatchesCalendarDatesOnly")}</Badge>
         <Reset
           onClick={() => {
             setReference(referenceDate);
@@ -476,7 +481,7 @@ function GroceryWorkspace() {
       </div>
       <div className={css.batchSettings}>
         <label className={css.field}>
-          <span>Example reference date</span>
+          <span>{t("retail.workspaces.exampleReferenceDate")}</span>
           <input
             type="date"
             min="2000-01-01"
@@ -486,35 +491,35 @@ function GroceryWorkspace() {
           />
         </label>
         <Numeric
-          label="Example review window · calendar days"
+          label={t("retail.workspaces.exampleReviewWindowCalendarDays")}
           raw={window}
           onChange={setWindow}
           max={365}
         />
         <label className={css.field}>
-          <span>Show date labels</span>
+          <span>{t("retail.workspaces.showDateLabels")}</span>
           <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-            <option value="all">All batches</option>
-            <option value="past">Date label passed</option>
-            <option value="today">Matches reference</option>
-            <option value="window">Inside example window</option>
-            <option value="later">Beyond example window</option>
+            <option value="all">{t("retail.workspaces.allBatches")}</option>
+            <option value="past">{t("retail.workspaces.dateLabelPassed")}</option>
+            <option value="today">{t("retail.workspaces.matchesReference")}</option>
+            <option value="window">{t("retail.workspaces.insideExampleWindow")}</option>
+            <option value="later">{t("retail.workspaces.beyondExampleWindow")}</option>
           </select>
         </label>
       </div>
       <dl className={css.batchMetrics}>
         <Metric
-          label="Date labels before reference"
+          label={t("retail.workspaces.dateLabelsBeforeReference")}
           value={result ? result.filter((r) => r.state === "past").length : "—"}
         />
         <Metric
-          label="Date labels matching reference"
+          label={t("retail.workspaces.dateLabelsMatchingReference")}
           value={
             result ? result.filter((r) => r.state === "today").length : "—"
           }
         />
         <Metric
-          label="Future dates inside window"
+          label={t("retail.workspaces.futureDatesInsideWindow")}
           value={
             result ? result.filter((r) => r.state === "window").length : "—"
           }
@@ -524,20 +529,20 @@ function GroceryWorkspace() {
         className={css.tableScroll}
         tabIndex={0}
         role="region"
-        aria-label="Illustrative batch date review, scroll horizontally"
+        aria-label={t("retail.workspaces.illustrativeBatchDateReviewScrollHorizon")}
       >
         <table>
           <caption className={css.srOnly}>
-            Fictional batch dates compared with an entered reference date
+            {t("retail.workspaces.fictionalBatchDatesComparedWithAn")}
           </caption>
           <thead>
             <tr>
               {[
-                "Fictional item / batch",
-                "Example units",
-                "Recorded date",
-                "Day difference",
-                "Date observation",
+                t("retail.workspaces.fictionalItemBatch"),
+                t("retail.workspaces.exampleUnits"),
+                t("retail.workspaces.recordedDate"),
+                t("retail.workspaces.dayDifference"),
+                t("retail.workspaces.dateObservation"),
               ].map((s) => (
                 <th scope="col" key={s}>
                   {s}
@@ -565,8 +570,8 @@ function GroceryWorkspace() {
                     data-state={row.calculated?.state}
                   >
                     {row.calculated
-                      ? dateStates[row.calculated.state]
-                      : "Check inputs"}
+                      ? dateStates(t)[row.calculated.state]
+                      : t("retail.workspaces.checkInputs")}
                   </span>
                 </td>
               </tr>
@@ -574,7 +579,7 @@ function GroceryWorkspace() {
             {rows.length === 0 && (
               <tr>
                 <td colSpan={5}>
-                  No fictional batches match this date filter.
+                  {t("retail.workspaces.noFictionalBatchesMatchThisDate")}
                 </td>
               </tr>
             )}
@@ -585,14 +590,13 @@ function GroceryWorkspace() {
         error={error}
       >{`${rows.length} fictional batches shown. Dates do not determine safety or saleability.`}</Outcome>
       <Note>
-        These are arithmetic observations only. Storage conditions, actual shelf
-        life and food-safety decisions are outside this example; no inventory is
-        changed.
+        {t("retail.workspaces.theseAreArithmeticObservationsOnlyStorag")}
       </Note>
     </>
   );
 }
 function HardwareWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [target, setTarget] = useState("240"),
     [onHand, setOnHand] = useState("65"),
     [pack, setPack] = useState("50");
@@ -602,12 +606,12 @@ function HardwareWorkspace() {
     result = purchasePacks(value(target), value(onHand), value(pack));
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Enter valid whole-unit quantities.";
+      e instanceof Error ? e.message : t("retail.workspaces.enterValidWholeUnitQuantities");
   }
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>EX-H01 · fictional fixing / units only</Badge>
+        <Badge>{t("retail.workspaces.exH01FictionalFixingUnitsOnly")}</Badge>
         <Reset
           onClick={() => {
             setTarget("240");
@@ -619,66 +623,64 @@ function HardwareWorkspace() {
       <div className={css.packWorkspace}>
         <div className={css.packInputs}>
           <Numeric
-            label="Entered target · individual units"
+            label={t("retail.workspaces.enteredTargetIndividualUnits")}
             raw={target}
             onChange={setTarget}
           />
           <Numeric
-            label="Example on hand · individual units"
+            label={t("retail.workspaces.exampleOnHandIndividualUnits")}
             raw={onHand}
             onChange={setOnHand}
           />
           <Numeric
-            label="Entered purchase-pack size · units"
+            label={t("retail.workspaces.enteredPurchasePackSizeUnits")}
             raw={pack}
             onChange={setPack}
             min={1}
           />
           <Note>
-            All inputs are whole units. Pack size must be positive; the target
-            can be zero.
+            {t("retail.workspaces.allInputsAreWholeUnitsPack")}
           </Note>
         </div>
         <section
           className={css.packResult}
-          aria-label="Local whole-pack calculation"
+          aria-label={t("retail.workspaces.localWholePackCalculation")}
         >
-          <span>WHOLE PACKS / VISIBLE REMAINDER</span>
+          <span>{t("retail.workspaces.wholePacksVisibleRemainder")}</span>
           <h3>
             {result ? num(result.packs) : "—"}
-            <small>packs needed</small>
+            <small>{t("retail.workspaces.packsNeeded")}</small>
           </h3>
           <div className={css.packFlow}>
             <span>
               {result ? num(result.shortage) : "—"}
-              <small>units short</small>
+              <small>{t("retail.workspaces.unitsShort")}</small>
             </span>
             <ArrowRight size={16} aria-hidden="true" />
             <span>
               {result ? num(result.incoming) : "—"}
-              <small>incoming units</small>
+              <small>{t("retail.workspaces.incomingUnits")}</small>
             </span>
           </div>
           <dl className={css.metrics}>
             <Metric
-              label="Example units after purchase packs"
+              label={t("retail.workspaces.exampleUnitsAfterPurchasePacks")}
               value={result ? num(result.after) : "—"}
             />
             <Metric
-              label="Units remaining beyond target"
+              label={t("retail.workspaces.unitsRemainingBeyondTarget")}
               value={result ? num(result.remaining) : "—"}
             />
           </dl>
           <Outcome error={error}>
             {result
               ? result.packs === 0
-                ? "Example on-hand units already cover the target; no packs are needed."
+                ? t("retail.workspaces.exampleOnHandUnitsAlreadyCover")
                 : `${result.packs} whole packs cover the ${result.shortage}-unit shortage.`
               : ""}
           </Outcome>
           <Note>
-            Local arithmetic only. No supplier price, availability or purchase
-            order is implied.
+            {t("retail.workspaces.localArithmeticOnlyNoSupplierPrice")}
           </Note>
         </section>
       </div>
@@ -686,6 +688,7 @@ function HardwareWorkspace() {
   );
 }
 function ToyWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [selected, setSelected] = useState([true, false, true]),
     [wrap, setWrap] = useState(false),
     [wrapAmount, setWrapAmount] = useState("150"),
@@ -694,7 +697,7 @@ function ToyWorkspace() {
     error = "";
   try {
     result = giftBudget(
-      toys.map((row, i) => ({
+      toys(t).map((row, i) => ({
         price: row.price,
         quantity: selected[i] ? 1 : 0,
       })),
@@ -703,12 +706,12 @@ function ToyWorkspace() {
     );
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Use valid example budget amounts.";
+      e instanceof Error ? e.message : t("retail.workspaces.useValidExampleBudgetAmounts");
   }
   return (
     <>
       <div className={css.workspaceToolbar}>
-        <Badge>Fictional toy collection · BDT</Badge>
+        <Badge>{t("retail.workspaces.fictionalToyCollectionBdt")}</Badge>
         <Reset
           onClick={() => {
             setSelected([true, false, true]);
@@ -720,7 +723,7 @@ function ToyWorkspace() {
       </div>
       <div className={css.giftWorkspace}>
         <div className={css.toyChoices}>
-          {toys.map((row, i) => (
+          {toys(t).map((row, i) => (
             <label key={row.id}>
               <input
                 type="checkbox"
@@ -735,7 +738,7 @@ function ToyWorkspace() {
               <span className={css.toyChoiceBody}>
                 <ToyArt kind={row.kind} />
                 <span className={css.selectionMark}>
-                  {selected[i] ? "Selected" : "Add to example"}
+                  {selected[i] ? t("retail.workspaces.selected") : t("retail.workspaces.addToExample")}
                 </span>
                 <b>{row.name}</b>
                 <small>{row.detail}</small>
@@ -745,10 +748,10 @@ function ToyWorkspace() {
           ))}
         </div>
         <aside className={css.giftReceipt}>
-          <span>A LITTLE GIFT, CONSIDERED</span>
-          <h3>Keep the budget in the picture.</h3>
+          <span>{t("retail.workspaces.aLittleGiftConsidered")}</span>
+          <h3>{t("retail.workspaces.keepTheBudgetInThePicture")}</h3>
           <Numeric
-            label="Entered gift budget · BDT"
+            label={t("retail.workspaces.enteredGiftBudgetBdt")}
             raw={budget}
             onChange={setBudget}
             max={10000000}
@@ -760,11 +763,11 @@ function ToyWorkspace() {
               checked={wrap}
               onChange={(e) => setWrap(e.target.checked)}
             />
-            Include an illustrative gift-wrap charge
+            {t("retail.workspaces.includeAnIllustrativeGiftWrapCharge")}
           </label>
           {wrap && (
             <Numeric
-              label="Entered gift-wrap amount · BDT"
+              label={t("retail.workspaces.enteredGiftWrapAmountBdt")}
               raw={wrapAmount}
               onChange={setWrapAmount}
               max={10000000}
@@ -773,14 +776,14 @@ function ToyWorkspace() {
           )}
           <dl className={css.metrics}>
             <Metric
-              label="Example gift total"
+              label={t("retail.workspaces.exampleGiftTotal")}
               value={result ? money(result.total) : "—"}
             />
             <Metric
               label={
                 result && result.remaining < 0
-                  ? "Over entered budget"
-                  : "Remaining budget"
+                  ? t("retail.workspaces.overEnteredBudget")
+                  : t("retail.workspaces.remainingBudget")
               }
               value={result ? money(Math.abs(result.remaining)) : "—"}
             />
@@ -788,13 +791,12 @@ function ToyWorkspace() {
           <Outcome error={error}>
             {result
               ? result.remaining < 0
-                ? `The example is ${money(-result.remaining)} over the entered budget.`
-                : `The example leaves ${money(result.remaining)} of the entered budget.`
+                ? t("retail.workspaces.theExampleIsOverTheEntered", { money: String(money(-result.remaining)) })
+                : t("retail.workspaces.theExampleLeavesOfTheEntered", { money: String(money(result.remaining)) })
               : ""}
           </Outcome>
           <Note>
-            No age/safety guidance, live stock check, payment or reservation is
-            provided.
+            {t("retail.workspaces.noAgeSafetyGuidanceLiveStock")}
           </Note>
         </aside>
       </div>
@@ -810,13 +812,14 @@ const workspaces = {
   "toy-store": ToyWorkspace,
 };
 export default function RetailWorkspace({ slug }: { slug: RetailSlug }) {
-  const p = pages[slug],
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug],
     Workspace = workspaces[slug];
   return (
     <section className={css.workspaceSection} id="retail-workspace">
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
-          <p className={css.eyebrow}>TRY A SMALL PART OF THE WORK</p>
+          <p className={css.eyebrow}>{t("retail.workspaces.tryASmallPartOfThe")}</p>
           <h2>{p.demoTitle}</h2>
           <p>{p.demoDescription}</p>
         </div>

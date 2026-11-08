@@ -13,6 +13,7 @@ import LiveDemoButton from "@/components/live-demo-button";
 import {
   discussionNotes,
   groups,
+  groupLabel,
   guides,
   journeys,
   menuSlugs,
@@ -32,6 +33,7 @@ import {
   translationArtifact,
 } from "./logic";
 import { Note, base, css } from "./ui";
+import { useTranslations } from "next-intl";
 export type ContactInfo = {
   supportEmail: string;
   salesEmail: string;
@@ -41,10 +43,11 @@ export type ContactInfo = {
 export type TranslationLabels = { en: string; bn: string; ar: string };
 type Language = keyof TranslationLabels;
 function Reset({ onClick }: { onClick: () => void }) {
+  const tx = useTranslations("pages.communityApp");
   return (
     <button type="button" className={base.reset} onClick={onClick}>
       <RotateCcw size={13} aria-hidden="true" />
-      Reset
+      {tx("content.reset")}
     </button>
   );
 }
@@ -57,6 +60,7 @@ function SearchField({
   setQuery: (q: string) => void;
   label: string;
 }) {
+  const tx = useTranslations("pages.communityApp");
   return (
     <label className={`${base.field} ${css.searchField}`}>
       <span>{label}</span>
@@ -66,7 +70,7 @@ function SearchField({
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Type to explore…"
+          placeholder={tx("content.typeToExplore")}
         />
       </div>
     </label>
@@ -83,21 +87,22 @@ function downloadText(filename: string, text: string, type: string) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 function Directory() {
+  const tx = useTranslations("pages.communityApp");
   const [query, setQuery] = useState(""),
     [group, setGroup] = useState("all");
   const resources = [
     ...menuSlugs.map((s) => ({
-      title: pages[s].title,
-      group: pages[s].group,
-      path: pages[s].path,
-      description: pages[s].description,
+      title: pages(tx)[s].title,
+      group: pages(tx)[s].group,
+      path: pages(tx)[s].path,
+      description: pages(tx)[s].description,
     })),
     {
-      title: "Find a Partner",
+      title: tx("content.findAPartner"),
       group: "Get Services",
       path: "/community/get-services/find-partner",
       description:
-        "Open the existing partner directory. Its page and filters remain unchanged.",
+        tx("content.openTheExistingPartnerDirectoryIts"),
     },
   ];
   const results = resources.filter(
@@ -113,14 +118,14 @@ function Directory() {
         <SearchField
           query={query}
           setQuery={setQuery}
-          label="Search the Community directory"
+          label={tx("content.searchTheCommunityDirectory")}
         />
         <label className={base.field}>
-          <span>Choose a purpose</span>
+          <span>{tx("content.chooseAPurpose")}</span>
           <select value={group} onChange={(e) => setGroup(e.target.value)}>
-            <option value="all">All Community pages</option>
+            <option value="all">{tx("content.allCommunityPages")}</option>
             {groups.map((g) => (
-              <option key={g}>{g}</option>
+              <option key={g} value={g}>{groupLabel(g, tx)}</option>
             ))}
           </select>
         </label>
@@ -128,7 +133,7 @@ function Directory() {
       <div className={css.directoryGrid}>
         {results.map((r) => (
           <Link href={r.path} key={r.path}>
-            <span>{r.group.toUpperCase()}</span>
+            <span>{groupLabel(r.group, tx).toUpperCase()}</span>
             <h3>
               {r.title}
               <ArrowRight size={17} aria-hidden="true" />
@@ -138,16 +143,16 @@ function Directory() {
         ))}
       </div>
       <p className={css.resultStatus} role="status">
-        {results.length} Community destinations match.
+        {results.length}{" "}{tx("content.communityDestinationsMatch")}
         {results.length === 0
-          ? " Try a broader search or another purpose."
+          ? tx("content.tryABroaderSearchOrAnother")
           : ""}
       </p>
       <div className={css.moreLinks}>
-        <span>Explore the existing category hubs:</span>
-        <Link href="/community/learn">Learn</Link>
-        <Link href="/community/get-services">Get Services</Link>
-        <Link href="/community/collaborate">Collaborate</Link>
+        <span>{tx("content.exploreTheExistingCategoryHubs")}</span>
+        <Link href="/community/learn">{tx("content.learn")}</Link>
+        <Link href="/community/get-services">{tx("content.getServices")}</Link>
+        <Link href="/community/collaborate">{tx("content.collaborate")}</Link>
       </div>
     </>
   );
@@ -159,6 +164,7 @@ export function GuideLibrary({
   rows: Guide[];
   kind?: "guides" | "reference" | "discussion";
 }) {
+  const tx = useTranslations("pages.communityApp");
   const [query, setQuery] = useState(""),
     [category, setCategory] = useState("all");
   const result = filterGuides(rows, query, category),
@@ -171,17 +177,17 @@ export function GuideLibrary({
           setQuery={setQuery}
           label={
             kind === "discussion"
-              ? "Search starter discussion notes"
-              : "Search the guide library"
+              ? tx("content.searchStarterDiscussionNotes")
+              : tx("content.searchTheGuideLibrary")
           }
         />
         <label className={base.field}>
-          <span>Topic</span>
+          <span>{tx("content.topic")}</span>
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="all">All topics</option>
+            <option value="all">{tx("content.allTopics")}</option>
             {categories.map((c) => (
               <option key={c}>{c}</option>
             ))}
@@ -198,7 +204,7 @@ export function GuideLibrary({
               <h3>{row.title}</h3>
               <p>{row.summary}</p>
               <b>
-                Read the {kind === "discussion" ? "note" : "guide"}
+                {tx("content.readThe")}{" "}{kind === "discussion" ? "note" : "guide"}
                 <ArrowRight size={15} aria-hidden="true" />
               </b>
             </summary>
@@ -217,24 +223,25 @@ export function GuideLibrary({
         ))}
       </div>
       <p className={css.resultStatus} role="status">
-        {result.length} {kind === "discussion" ? "starter notes" : "guides"}{" "}
-        shown.{result.length === 0 ? " Try another search or topic." : ""}
+        {result.length} {kind === "discussion" ? tx("content.starterNotes") : "guides"}{" "}
+        {tx("content.shown")}{result.length === 0 ? tx("content.tryAnotherSearchOrTopic") : ""}
       </p>
     </>
   );
 }
 function AgendaPlanner({ event = false }: { event?: boolean }) {
+  const tx = useTranslations("pages.communityApp");
   const [role, setRole] = useState("Owner / cross-team"),
     [selected, setSelected] = useState(["finance", "stock"]),
     [minutes, setMinutes] = useState(15);
-  const agenda = selectedAgenda(topics, selected),
+  const agenda = selectedAgenda(topics(tx), selected),
     duration = agendaMinutes(agenda.length, minutes);
   function changeRole(next: string) {
     setRole(next);
     setSelected(
       next === "Owner / cross-team"
         ? ["finance", "stock"]
-        : topics.filter((t) => t.group === next).map((t) => t.id),
+        : topics(tx).filter((t) => t.group === next).map((t) => t.id),
     );
   }
   return (
@@ -242,9 +249,9 @@ function AgendaPlanner({ event = false }: { event?: boolean }) {
       <div>
         {!event && (
           <label className={base.field}>
-            <span>Choose an exploration perspective</span>
+            <span>{tx("content.chooseAnExplorationPerspective")}</span>
             <select value={role} onChange={(e) => changeRole(e.target.value)}>
-              {["Owner / cross-team", "Finance", "Operations", "People"].map(
+              {[tx("content.ownerCrossTeam"), tx("content.finance"), tx("content.operations"), tx("content.people")].map(
                 (r) => (
                   <option key={r}>{r}</option>
                 ),
@@ -253,7 +260,7 @@ function AgendaPlanner({ event = false }: { event?: boolean }) {
           </label>
         )}
         <div className={css.topicChecks}>
-          {topics.map((topic) => (
+          {topics(tx).map((topic) => (
             <label key={topic.id}>
               <input
                 type="checkbox"
@@ -269,25 +276,25 @@ function AgendaPlanner({ event = false }: { event?: boolean }) {
               />
               <span>
                 <b>{topic.label}</b>
-                <small>{topic.group} / product exploration</small>
+                <small>{topic.group}{" "}{tx("content.productExploration")}</small>
               </span>
             </label>
           ))}
         </div>
       </div>
       <aside className={css.localPlan}>
-        <span>{event ? "YOUR LOCAL AGENDA" : "YOUR EXPLORATION PATH"}</span>
-        <h3>{event ? "A few focused topics." : "Make the learning useful."}</h3>
+        <span>{event ? tx("content.yourLocalAgenda") : tx("content.yourExplorationPath")}</span>
+        <h3>{event ? tx("content.aFewFocusedTopics") : tx("content.makeTheLearningUseful")}</h3>
         {event && (
           <label className={base.field}>
-            <span>Assumed minutes per topic</span>
+            <span>{tx("content.assumedMinutesPerTopic")}</span>
             <select
               value={minutes}
               onChange={(e) => setMinutes(Number(e.target.value))}
             >
               {[10, 15, 20, 30].map((n) => (
                 <option key={n} value={n}>
-                  {n} minutes
+                  {n}{" "}{tx("content.minutes")}
                 </option>
               ))}
             </select>
@@ -304,26 +311,27 @@ function AgendaPlanner({ event = false }: { event?: boolean }) {
           ))}
         </ol>
         <p className={css.resultStatus} role="status">
-          {agenda.length} selected topic{agenda.length === 1 ? "" : "s"}
-          {event ? ` · ${duration} assumed minutes` : ""}.
-          {agenda.length === 0 ? " Choose a topic to begin." : ""}
+          {agenda.length}{" "}{tx("content.selectedTopic")}{agenda.length === 1 ? "" : "s"}
+          {event ? tx("content.assumedMinutes", { duration: String(duration) }) : ""}.
+          {agenda.length === 0 ? tx("content.chooseATopicToBegin") : ""}
         </p>
         <Note>
           {event
-            ? "This is a personal agenda, not a confirmed event, registration or meeting duration."
-            : "This is a local topic plan, separate from enrolment, completed training or certification."}
+            ? tx("content.thisIsAPersonalAgendaNot")
+            : tx("content.thisIsALocalTopicPlan")}
         </Note>
       </aside>
     </div>
   );
 }
 function AdvisorBrief() {
+  const tx = useTranslations("pages.communityApp");
   const [industry, setIndustry] = useState("Manufacturing"),
     [selected, setSelected] = useState(["finance"]),
     [question, setQuestion] = useState(""),
     [copyStatus, setCopyStatus] = useState(""),
     [copying, setCopying] = useState(false);
-  const chosen = selectedAgenda(topics, selected);
+  const chosen = selectedAgenda(topics(tx), selected);
   const brief = `Workflow context: ${industry}\nTopics: ${chosen.map((t) => t.label).join(", ") || "To discuss"}\nQuestions: ${question.trim() || "Add your questions beside this preview."}`;
   async function copy() {
     setCopying(true);
@@ -342,12 +350,12 @@ function AdvisorBrief() {
     <div className={css.briefLayout}>
       <div>
         <label className={base.field}>
-          <span>Your workflow context</span>
+          <span>{tx("content.yourWorkflowContext")}</span>
           <select
             value={industry}
             onChange={(e) => setIndustry(e.target.value)}
           >
-            {["Manufacturing", "Retail", "Services", "Education", "Other"].map(
+            {[tx("content.manufacturing"), tx("content.retail"), tx("content.services"), tx("content.education"), tx("content.other")].map(
               (i) => (
                 <option key={i}>{i}</option>
               ),
@@ -355,7 +363,7 @@ function AdvisorBrief() {
           </select>
         </label>
         <div className={css.topicChecks}>
-          {topics.map((t) => (
+          {topics(tx).map((t) => (
             <label key={t.id}>
               <input
                 type="checkbox"
@@ -374,19 +382,19 @@ function AdvisorBrief() {
           ))}
         </div>
         <label className={base.field}>
-          <span>Questions to keep beside you · optional</span>
+          <span>{tx("content.questionsToKeepBesideYouOptional")}</span>
           <textarea
             value={question}
             maxLength={1200}
             rows={4}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder="What would you like to understand about your workflow?"
+            placeholder={tx("content.whatWouldYouLikeToUnderstand")}
           />
         </label>
       </div>
       <aside className={css.localPlan}>
-        <span>YOUR LOCAL CONVERSATION NOTES</span>
-        <h3>A brief with useful context.</h3>
+        <span>{tx("content.yourLocalConversationNotes")}</span>
+        <h3>{tx("content.aBriefWithUsefulContext")}</h3>
         <pre>{brief}</pre>
         <button
           type="button"
@@ -395,14 +403,13 @@ function AdvisorBrief() {
           onClick={copy}
         >
           <Copy size={14} aria-hidden="true" />
-          {copying ? "Copying…" : "Copy local brief"}
+          {copying ? tx("content.copying") : tx("content.copyLocalBrief")}
         </button>
         <p role="status" className={css.resultStatus}>
           {copyStatus}
         </p>
         <Note>
-          These notes are not automatically sent with the shared demo request.
-          Keep them for the conversation.
+          {tx("content.theseNotesAreNotAutomaticallySent")}
         </Note>
         <LiveDemoButton />
       </aside>
@@ -418,79 +425,81 @@ function EmailComposer({
   subject: string;
   title: string;
 }) {
+  const tx = useTranslations("pages.communityApp");
   const [message, setMessage] = useState("");
   const href = emailDraft(email, subject, message);
   return (
     <section className={css.emailComposer}>
       <div>
-        <span>PREPARE AN EMAIL DRAFT</span>
+        <span>{tx("content.prepareAnEmailDraft")}</span>
         <h3>{title}</h3>
         <p>
-          To: <a href={`mailto:${email}`}>{email}</a>
+          {tx("content.to")}{" "}<a href={`mailto:${email}`}>{email}</a>
         </p>
       </div>
       <label className={base.field}>
-        <span>Details for your draft · optional</span>
+        <span>{tx("content.detailsForYourDraftOptional")}</span>
         <textarea
           rows={4}
           maxLength={3000}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Add the workflow, context and questions you want to discuss."
+          placeholder={tx("content.addTheWorkflowContextAndQuestions")}
         />
       </label>
       <a href={href} className={css.actionButton}>
-        Open an email draft
+        {tx("content.openAnEmailDraft")}
         <ArrowUpRight size={14} aria-hidden="true" />
       </a>
       <Note>
-        Opens your mail application. This page does not send an email or create
-        a ticket/application.
+        {tx("content.opensYourMailApplicationThisPage")}
       </Note>
     </section>
   );
 }
 function SupportContent({ contact }: { contact: ContactInfo }) {
+  const tx = useTranslations("pages.communityApp");
   return (
     <>
       <div className={css.contactRoutes}>
         <a href={`mailto:${contact.supportEmail}`}>
-          <span>CONFIGURED SUPPORT EMAIL</span>
+          <span>{tx("content.configuredSupportEmail")}</span>
           <b>{contact.supportEmail}</b>
           <ArrowUpRight size={16} />
         </a>
         <a href={`tel:${contact.phone}`}>
-          <span>CONFIGURED BUSINESS PHONE</span>
+          <span>{tx("content.configuredBusinessPhone")}</span>
           <b>{contact.phoneDisplay}</b>
           <ArrowUpRight size={16} />
         </a>
         <Link href="/contact">
-          <span>MORE CONTACT OPTIONS</span>
-          <b>Open the contact page</b>
+          <span>{tx("content.moreContactOptions")}</span>
+          <b>{tx("content.openTheContactPage")}</b>
           <ArrowRight size={16} />
         </Link>
       </div>
-      <GuideLibrary rows={referenceNotes} kind="reference" />
+      <GuideLibrary rows={referenceNotes(tx)} kind="reference" />
       <EmailComposer
         email={contact.supportEmail}
         subject="Adon ERP support enquiry"
-        title="Give your question a little context."
+        title={tx("content.giveYourQuestionALittleContext")}
       />
     </>
   );
 }
 function Stories() {
+  const tx = useTranslations("pages.communityApp");
   const [category, setCategory] = useState("all");
-  const rows = journeys.filter(
+  const rows = journeys(tx).filter(
     (r) => category === "all" || r.category === category,
   );
   return (
     <>
       <label className={`${base.field} ${css.shortField}`}>
-        <span>Choose a workflow perspective</span>
+        <span>{tx("content.chooseAWorkflowPerspective")}</span>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="all">All illustrative journeys</option>
-          {journeys.map((r) => (
+          <option value="all">{tx("content.allIllustrativeJourneys")}</option>
+          {journeys(tx).map((r) => (
             <option key={r.category}>{r.category}</option>
           ))}
         </select>
@@ -498,7 +507,7 @@ function Stories() {
       <div className={css.journeyGrid}>
         {rows.map((r) => (
           <article key={r.id}>
-            <span>ILLUSTRATIVE WORKFLOW / {r.category.toUpperCase()}</span>
+            <span>{tx("content.illustrativeWorkflow")}{" "}{r.category.toUpperCase()}</span>
             <h3>{r.title}</h3>
             <p>{r.context}</p>
             <ol>
@@ -507,20 +516,20 @@ function Stories() {
               ))}
             </ol>
             <Link href={r.href}>
-              Explore the product context
+              {tx("content.exploreTheProductContext")}
               <ArrowUpRight size={14} />
             </Link>
           </article>
         ))}
       </div>
       <p className={css.resultStatus} role="status">
-        {rows.length} illustrative journeys shown. No verified customer result
-        is claimed.
+        {rows.length}{" "}{tx("content.illustrativeJourneysShownNoVerifiedCusto")}
       </p>
     </>
   );
 }
 function TranslationsContent({ labels }: { labels: TranslationLabels }) {
+  const tx = useTranslations("pages.communityApp");
   const [locale, setLocale] = useState<Language>("bn"),
     [drafts, setDrafts] = useState<TranslationLabels>(() => ({ ...labels })),
     [status, setStatus] = useState("");
@@ -534,11 +543,11 @@ function TranslationsContent({ labels }: { labels: TranslationLabels }) {
         "application/json",
       );
       setStatus(
-        "A local draft download was requested. No translation has been published.",
+        tx("content.aLocalDraftDownloadWasRequested"),
       );
     } catch (e) {
       setStatus(
-        e instanceof Error ? e.message : "The draft could not be prepared.",
+        e instanceof Error ? e.message : tx("content.theDraftCouldNotBePrepared"),
       );
     }
   }
@@ -546,7 +555,7 @@ function TranslationsContent({ labels }: { labels: TranslationLabels }) {
     <>
       <div className={css.translationToolbar}>
         <label className={base.field}>
-          <span>Configured target language</span>
+          <span>{tx("content.configuredTargetLanguage")}</span>
           <select
             value={locale}
             onChange={(e) => {
@@ -554,9 +563,9 @@ function TranslationsContent({ labels }: { labels: TranslationLabels }) {
               setStatus("");
             }}
           >
-            <option value="bn">Bengali</option>
-            <option value="ar">Arabic</option>
-            <option value="en">English</option>
+            <option value="bn">{tx("content.bengali")}</option>
+            <option value="ar">{tx("content.arabic")}</option>
+            <option value="en">{tx("content.english")}</option>
           </select>
         </label>
         <Reset
@@ -568,20 +577,20 @@ function TranslationsContent({ labels }: { labels: TranslationLabels }) {
       </div>
       <div className={css.translationEditor}>
         <section>
-          <span>THE CONFIGURED SOURCE</span>
-          <code>common.actions.liveDemo</code>
+          <span>{tx("content.theConfiguredSource")}</span>
+          <code>{tx("content.commonActionsLivedemo")}</code>
           <blockquote lang="en" dir="ltr">
             {labels.en}
           </blockquote>
-          <small>Configured target label</small>
+          <small>{tx("content.configuredTargetLabel")}</small>
           <p lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
             {labels[locale]}
           </p>
         </section>
         <section>
-          <span>YOUR LOCAL WORDING DRAFT</span>
+          <span>{tx("content.yourLocalWordingDraft")}</span>
           <label className={base.field}>
-            <span>Edit a draft label · up to 500 characters</span>
+            <span>{tx("content.editADraftLabelUpTo")}</span>
             <textarea
               value={draft}
               maxLength={500}
@@ -598,11 +607,11 @@ function TranslationsContent({ labels }: { labels: TranslationLabels }) {
             lang={locale}
             dir={locale === "ar" ? "rtl" : "ltr"}
           >
-            {draft || "Your draft preview appears here."}
+            {draft || tx("content.yourDraftPreviewAppearsHere")}
           </p>
           <button type="button" className={css.actionButton} onClick={download}>
             <Download size={14} />
-            Download local JSON draft
+            {tx("content.downloadLocalJsonDraft")}
           </button>
         </section>
       </div>
@@ -614,16 +623,17 @@ function TranslationsContent({ labels }: { labels: TranslationLabels }) {
   );
 }
 function PartnershipContent({ contact }: { contact: ContactInfo }) {
+  const tx = useTranslations("pages.communityApp");
   const [path, setPath] = useState(0),
-    [selected, setSelected] = useState(partnerChecklist.map(() => false));
+    [selected, setSelected] = useState(partnerChecklist(tx).map(() => false));
   return (
     <>
       <div
         className={css.partnerChoices}
         role="group"
-        aria-label="Choose a partnership conversation topic"
+        aria-label={tx("content.chooseAPartnershipConversationTopic")}
       >
-        {partnerPaths.map((p, i) => (
+        {partnerPaths(tx).map((p, i) => (
           <button
             key={p.id}
             type="button"
@@ -637,7 +647,7 @@ function PartnershipContent({ contact }: { contact: ContactInfo }) {
         ))}
       </div>
       <div className={css.topicChecks}>
-        {partnerChecklist.map((task, i) => (
+        {partnerChecklist(tx).map((task, i) => (
           <label key={task}>
             <input
               type="checkbox"
@@ -654,13 +664,13 @@ function PartnershipContent({ contact }: { contact: ContactInfo }) {
         ))}
       </div>
       <p role="status" className={css.resultStatus}>
-        {selected.filter(Boolean).length} of {partnerChecklist.length}{" "}
-        preparation notes selected. This is not an application or approval.
+        {selected.filter(Boolean).length}{" "}{tx("content.of")}{" "}{partnerChecklist(tx).length}{" "}
+        {tx("content.preparationNotesSelectedThisIsNot")}
       </p>
       <EmailComposer
         email={contact.salesEmail}
-        subject={`Adon ERP partnership enquiry: ${partnerPaths[path].title}`}
-        title="Introduce your practice and your questions."
+        subject={`Adon ERP partnership enquiry: ${partnerPaths(tx)[path].title}`}
+        title={tx("content.introduceYourPracticeAndYourQuestions")}
       />
     </>
   );
@@ -674,10 +684,11 @@ export default function CommunityContent({
   contact: ContactInfo;
   labels?: TranslationLabels;
 }) {
+  const tx = useTranslations("pages.communityApp");
   if (slug === "home") return <Directory />;
-  if (slug === "tutorials") return <GuideLibrary rows={guides} />;
+  if (slug === "tutorials") return <GuideLibrary rows={guides(tx)} />;
   if (slug === "documentation")
-    return <GuideLibrary rows={referenceNotes} kind="reference" />;
+    return <GuideLibrary rows={referenceNotes(tx)} kind="reference" />;
   if (slug === "training") return <AgendaPlanner />;
   if (slug === "meet-advisor") return <AdvisorBrief />;
   if (slug === "support") return <SupportContent contact={contact} />;
@@ -685,11 +696,11 @@ export default function CommunityContent({
   if (slug === "forum")
     return (
       <>
-        <GuideLibrary rows={discussionNotes} kind="discussion" />
+        <GuideLibrary rows={discussionNotes(tx)} kind="discussion" />
         <EmailComposer
           email={contact.supportEmail}
           subject="Adon ERP product discussion"
-          title="Prepare a thoughtful product question."
+          title={tx("content.prepareAThoughtfulProductQuestion")}
         />
       </>
     );
@@ -698,7 +709,7 @@ export default function CommunityContent({
     return labels ? (
       <TranslationsContent labels={labels} />
     ) : (
-      <p>Configured label samples are unavailable.</p>
+      <p>{tx("content.configuredLabelSamplesAreUnavailable")}</p>
     );
   if (slug === "become-a-partner")
     return <PartnershipContent contact={contact} />;

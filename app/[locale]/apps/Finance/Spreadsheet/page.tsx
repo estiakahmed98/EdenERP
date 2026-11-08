@@ -95,17 +95,18 @@ function SpreadsheetMockup({
   t: (key: string) => string;
   raw: (key: string) => unknown;
 }) {
-  const fallbackHeaders = ["Metric", "Jan", "Feb", "Mar", "Apr", "Total"];
+  const tx = useTranslations("pages.appPages.spreadsheet");
+  const fallbackHeaders = [tx("page.metric"), tx("page.jan"), tx("page.feb"), tx("page.mar"), tx("page.apr"), tx("page.total")];
   const fallbackRows = [
-    ["Revenue", "$12.4k", "$18.7k", "$21.9k", "$28.2k", "$81.2k"],
-    ["Expenses", "$4.8k", "$6.1k", "$7.3k", "$8.9k", "$27.1k"],
-    ["Profit", "$7.6k", "$12.6k", "$14.6k", "$19.3k", "$54.1k"],
-    ["Growth", "12%", "18%", "21%", "32%", "24%"],
+    [tx("page.revenue"), "$12.4k", "$18.7k", "$21.9k", "$28.2k", "$81.2k"],
+    [tx("page.expenses"), "$4.8k", "$6.1k", "$7.3k", "$8.9k", "$27.1k"],
+    [tx("page.profit"), "$7.6k", "$12.6k", "$14.6k", "$19.3k", "$54.1k"],
+    [tx("page.growth"), "12%", "18%", "21%", "32%", "24%"],
   ];
   const fallbackInsights = [
-    "Sales increased by 32%",
-    "Marketing cost is stable",
-    "Cashflow forecast is healthy",
+    tx("page.salesIncreasedBy32"),
+    tx("page.marketingCostIsStable"),
+    tx("page.cashflowForecastIsHealthy"),
   ];
   const headers = raw("hero.spreadsheet.headers");
   const rows = raw("hero.spreadsheet.rows");
@@ -211,6 +212,7 @@ function SpreadsheetMockup({
 }
 
 export default function SpreadsheetPage() {
+  const tx = useTranslations("pages.appPages.spreadsheet");
   const t = useTranslations("pages");
   const commonT = useTranslations("common.actions");
   const tr = (key: string) => t(`spreadsheet.${key}`);
@@ -223,36 +225,36 @@ export default function SpreadsheetPage() {
   };
   const fallbackFeaturesList = [
     {
-      title: "Collaborative sheets",
-      description: "Work with your team in real time with controlled access and shared views.",
+      title: tx("page.collaborativeSheets"),
+      description: tx("page.workWithYourTeamInReal"),
       icon: "Users",
     },
     {
-      title: "Smart formulas",
-      description: "Create calculations faster with formula suggestions and reusable logic.",
+      title: tx("page.smartFormulas"),
+      description: tx("page.createCalculationsFasterWithFormulaSugge"),
       icon: "WandSparkles",
     },
   ];
   const fallbackAppsList = [
-    { title: "Sales", description: "Pipeline and revenue sheets", icon: "BarChart3" },
-    { title: "Inventory", description: "Stock planning and forecasts", icon: "Database" },
+    { title: tx("page.sales"), description: tx("page.pipelineAndRevenueSheets"), icon: "BarChart3" },
+    { title: tx("page.inventory"), description: tx("page.stockPlanningAndForecasts"), icon: "Database" },
   ];
   const fallbackModulesList = [
-    { title: "CRM pipeline", icon: "Users" },
-    { title: "Project data", icon: "Grid3X3" },
-    { title: "Sales orders", icon: "BarChart3" },
-    { title: "Inventory values", icon: "Database" },
+    { title: tx("page.crmPipeline"), icon: "Users" },
+    { title: tx("page.projectData"), icon: "Grid3X3" },
+    { title: tx("page.salesOrders"), icon: "BarChart3" },
+    { title: tx("page.inventoryValues"), icon: "Database" },
   ];
   const fallbackStatsList = [
-    { label: "Leads", value: "1,240", change: "+18%" },
-    { label: "Revenue", value: "$92.4k", change: "+32%" },
-    { label: "Orders", value: "846", change: "+21%" },
-    { label: "Profit", value: "$41.8k", change: "+27%" },
+    { label: tx("page.leads"), value: "1,240", change: "+18%" },
+    { label: tx("page.revenue"), value: "$92.4k", change: "+32%" },
+    { label: tx("page.orders"), value: "846", change: "+21%" },
+    { label: tx("page.profit"), value: "$41.8k", change: "+27%" },
   ];
   const fallbackPivotFeatures = [
-    "Group data by customer, product, region, or team",
-    "Refresh reports without exporting CSV files",
-    "Share protected views with managers",
+    tx("page.groupDataByCustomerProductRegion"),
+    tx("page.refreshReportsWithoutExportingCsvFiles"),
+    tx("page.shareProtectedViewsWithManagers"),
   ];
 
   const featuresData = raw("featuresSection.list");
@@ -404,7 +406,7 @@ export default function SpreadsheetPage() {
 
             <Image
               src="/Assets/Spreadsheet/Pivot analysis.png"
-              alt="Pivot analysis"
+              alt={tx("page.pivotAnalysis")}
               width={1200}
               height={900}
               className="h-auto w-full"

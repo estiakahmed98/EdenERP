@@ -8,23 +8,27 @@ import PosHero from "./heroes";
 import PosWorkspace from "./workspaces";
 import PosSnapshot from "./snapshots";
 import { css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export async function posMetadata(slug: PosSlug): Promise<Metadata> {
+  const t = await getTranslations("pages.posApp");
   return {
-    title: `${pages[slug].title} | Point of Sale`,
-    description: pages[slug].description,
+    title: `${pages(t)[slug].title} | Point of Sale`,
+    description: pages(t)[slug].description,
     alternates: await getLocaleAlternates(`/apps/pos/${slug}`),
   };
 }
 export function PosPage({ slug }: { slug: PosSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.posApp");
+  const p = pages(t)[slug];
   return (
     <main lang="en" dir="ltr" className={css.pos} data-pos-page={slug}>
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/"> Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={t("page.breadcrumb")}>
+          <Link href="/">{" "}{t("page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/apps/pos/register-till">Point of Sale</Link>
+          <Link href="/apps/pos/register-till">{t("page.pointOfSale")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -35,8 +39,8 @@ export function PosPage({ slug }: { slug: PosSlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>THE WORKFLOW, IN CONTEXT</p>
-              <h2>From the first action to a clear outcome.</h2>
+              <p className={css.eyebrow}>{t("page.theWorkflowInContext")}</p>
+              <h2>{t("page.fromTheFirstActionToA")}</h2>
             </div>
           </div>
           <ol className={css.workflow}>
@@ -58,22 +62,22 @@ export function PosPage({ slug }: { slug: PosSlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>CONNECTED BY DESIGN</p>
-              <h2>Follow the next part of retail.</h2>
+              <p className={css.eyebrow}>{t("page.connectedByDesign")}</p>
+              <h2>{t("page.followTheNextPartOfRetail")}</h2>
             </div>
           </div>
           <div className={css.relatedGrid}>
             {p.related.map((item) => (
               <Link href={`/apps/pos/${item}`} key={item}>
                 <span>
-                  POINT OF SALE /{" "}
+                  {t("page.pointOfSale2")}{" "}
                   {String(posSlugs.indexOf(item) + 1).padStart(2, "0")}
                 </span>
                 <h3>
-                  {pages[item].title}
+                  {pages(t)[item].title}
                   <ArrowRight size={18} />
                 </h3>
-                <p>{pages[item].description}</p>
+                <p>{pages(t)[item].description}</p>
               </Link>
             ))}
           </div>
@@ -82,11 +86,10 @@ export function PosPage({ slug }: { slug: PosSlug }) {
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR COUNTER. YOUR WORKFLOW.</p>
-            <h2>Let’s put your retail process in the picture.</h2>
+            <p className={css.eyebrow}>{t("page.yourCounterYourWorkflow")}</p>
+            <h2>{t("page.letSPutYourRetailProcess")}</h2>
             <p>
-              Bring your checkout, outlet and stock questions to a guided
-              product conversation.
+              {t("page.bringYourCheckoutOutletAndStock")}
             </p>
           </div>
           <LiveDemoButton />

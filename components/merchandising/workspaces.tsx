@@ -33,6 +33,7 @@ import {
   Tag,
   css,
 } from "./ui";
+import { useTranslations } from "next-intl";
 
 function Toggle({
   value,
@@ -130,6 +131,7 @@ function MarginInputs({
   setCost: (v: string) => void;
   setQty: (v: string) => void;
 }) {
+  const t = useTranslations("pages.merchandisingApp");
   const valid =
     numeric(price) &&
     Number(price) >= 0.01 &&
@@ -141,95 +143,95 @@ function MarginInputs({
     : null;
   return (
     <>
-      <Badge local>Illustrative USD scenario</Badge>
+      <Badge local>{t("workspaces.illustrativeUsdScenario")}</Badge>
       <div className={css.formGrid}>
         <Numeric
-          label="Selling price / pc · USD"
+          label={t("workspaces.sellingPricePcUsd")}
           value={price}
           onChange={setPrice}
         />
-        <Numeric label="Cost / pc · USD" value={cost} onChange={setCost} />
+        <Numeric label={t("workspaces.costPcUsd")} value={cost} onChange={setCost} />
         <Numeric
-          label="Example quantity · pieces"
+          label={t("workspaces.exampleQuantityPieces")}
           value={qty}
           onChange={setQty}
           integer
         />
       </div>
       <div className={css.scenarioResult} role="status">
-        <span>Calculated margin</span>
+        <span>{t("workspaces.calculatedMargin")}</span>
         <strong>{result ? `${result.margin.toFixed(2)}%` : "—"}</strong>
         <p>
           {result
             ? `${usd(result.net)} contribution on ${usd(result.revenue)} sales in this local exercise.`
-            : "Enter a price of at least USD 0.01, a positive whole quantity and a non-negative cost (maximum 1,000,000 per field)."}
+            : t("workspaces.enterAPriceOfAtLeast")}
         </p>
       </div>
       <Notice>
-        Order-currency arithmetic only. No exchange rate, document posting or
-        source-sheet update is inferred.
+        {t("workspaces.orderCurrencyArithmeticOnlyNoExchange")}
       </Notice>
     </>
   );
 }
 
 function DashboardWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [view, setView] = useState("risk");
   const risks = [
     {
       id: "000001",
       style: "6026",
-      ship: "18 Aug",
-      reason: "12 material shortages · 1st PO delivery +42 d",
+      ship: t("workspaces.n18Aug"),
+      reason: t("workspaces.n12MaterialShortages1stPoDelivery"),
     },
     {
       id: "000002",
       style: "6070",
-      ship: "08 Sep",
-      reason: "Ship date passed · source alert",
+      ship: t("workspaces.n08Sep"),
+      reason: t("workspaces.shipDatePassedSourceAlert"),
     },
     {
       id: "000003",
       style: "8010",
-      ship: "17 Sep",
-      reason: "On-board (B/L date) +12 d",
+      ship: t("workspaces.n17Sep"),
+      reason: t("workspaces.onBoardBLDate12"),
     },
     {
       id: "000004",
       style: "5343",
-      ship: "22 Sep",
-      reason: "Fabric in-house +57 d",
+      ship: t("workspaces.n22Sep"),
+      reason: t("workspaces.fabricInHouse57D"),
     },
   ];
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>4 November 2026 · historical brief</Badge>
+        <Badge>{t("workspaces.n4November2026HistoricalBrief")}</Badge>
         <Toggle
           value={view}
           setValue={setView}
-          label="Dashboard evidence view"
+          label={t("workspaces.dashboardEvidenceView")}
           items={[
-            ["risk", "Order risks"],
-            ["owners", "Action owners"],
-            ["materials", "Material gaps"],
+            ["risk", t("workspaces.orderRisks")],
+            ["owners", t("workspaces.actionOwners")],
+            ["materials", t("workspaces.materialGaps")],
           ]}
         />
       </div>
       <dl className={css.metrics}>
-        <Metric label="Open orders" value="16" detail="USD 1,826,227" />
+        <Metric label={t("workspaces.openOrders")} value="16" detail="USD 1,826,227" />
         <Metric
-          label="Orders at risk"
+          label={t("workspaces.ordersAtRisk")}
           value="14"
           detail="3 shipping within 14 d · source"
         />
         <Metric
-          label="TNA milestones late"
+          label={t("workspaces.tnaMilestonesLate")}
           value="64"
           detail="7 due within 7 d · source"
         />
         <Metric
-          label="Open shipments"
+          label={t("workspaces.openShipments")}
           value="3"
           detail="3 due within 14 d · source"
         />
@@ -243,7 +245,7 @@ function DashboardWorkspace() {
                 <b>{contract(row.id)}</b>
                 <p>{row.reason}</p>
               </div>
-              <Tag tone="red">Ship {row.ship}</Tag>
+              <Tag tone="red">{t("workspaces.ship")}{" "}{row.ship}</Tag>
             </article>
           ))}
         </div>
@@ -255,40 +257,39 @@ function DashboardWorkspace() {
               <div>
                 <i style={{ width: `${(row.late / 21) * 100}%` }} />
               </div>
-              <b>{row.late} late</b>
-              <small>max +{row.delay} d</small>
+              <b>{row.late}{" "}{t("workspaces.late")}</b>
+              <small>{t("workspaces.max")}{row.delay} d</small>
             </div>
           ))}
         </div>
       ) : (
         <div className={css.gapGrid}>
-          <Panel title="8 orders with shortages">
+          <Panel title={t("workspaces.n8OrdersWithShortages")}>
             <strong className={css.resultNumber}>8</strong>
-            <p>Inside 14 days of PCD in the source brief.</p>
+            <p>{t("workspaces.inside14DaysOfPcdIn")}</p>
           </Panel>
-          <Panel title="Missing a material plan">
+          <Panel title={t("workspaces.missingAMaterialPlan")}>
             <strong className={css.resultNumber}>3</strong>
             <p>
-              The source also reports three orders without a plan. They are not
-              counted as known zero shortages.
+              {t("workspaces.theSourceAlsoReportsThreeOrders")}
             </p>
           </Panel>
         </div>
       )}
       <Notice>
-        Source excerpt only: four risk rows are fully visible. Aggregate
-        counters describe the wider order book, not just the displayed rows.
+        {t("workspaces.sourceExcerptOnlyFourRiskRows")}
       </Notice>
     </>
   );
 }
 function StylesWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [search, setSearch] = useState("");
   const [id, setId] = useState("8010");
   const [price, setPrice] = useState("16.40");
   const [cost, setCost] = useState("15.02");
   const [qty, setQty] = useState("1");
-  const filtered = styles.filter((row) =>
+  const filtered = styles(t).filter((row) =>
     `${row.id} ${row.name} ${row.buyer}`
       .toLowerCase()
       .includes(search.toLowerCase()),
@@ -300,7 +301,7 @@ function StylesWorkspace() {
         <SearchField
           value={search}
           onChange={setSearch}
-          label="Search style, buyer or reference"
+          label={t("workspaces.searchStyleBuyerOrReference")}
         />
         <div className={css.styleList}>
           {filtered.map((row) => (
@@ -337,7 +338,7 @@ function StylesWorkspace() {
           ))}
         </div>
         {!filtered.length && (
-          <p className={css.empty}>No matching source styles.</p>
+          <p className={css.empty}>{t("workspaces.noMatchingSourceStyles")}</p>
         )}
         {selected && (
           <div className={css.styleEvidence}>
@@ -346,13 +347,13 @@ function StylesWorkspace() {
             </b>
             <dl className={css.metrics}>
               <Metric
-                label="Source cost / pc"
+                label={t("workspaces.sourceCostPc")}
                 value={
                   selected.cost === null ? "Not shown" : usd(selected.cost)
                 }
               />
               <Metric
-                label="Source margin"
+                label={t("workspaces.sourceMargin")}
                 value={
                   selected.margin === null
                     ? "Not shown"
@@ -360,18 +361,17 @@ function StylesWorkspace() {
                 }
               />
               <Metric
-                label="Samples / approvals"
+                label={t("workspaces.samplesApprovals")}
                 value={`${selected.samples} / ${selected.approvals}`}
               />
             </dl>
             <p>
-              Source style 26002 shows 9.1% with rounded cost and FOB. Source
-              margins are preserved; hidden precision is not reconstructed.
+              {t("workspaces.sourceStyle26002Shows91")}
             </p>
           </div>
         )}
       </div>
-      <Panel title="A separate cost conversation">
+      <Panel title={t("workspaces.aSeparateCostConversation")}>
         <MarginInputs
           price={price}
           cost={cost}
@@ -385,6 +385,7 @@ function StylesWorkspace() {
   );
 }
 function TnaWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [view, setView] = useState("calendar");
   const [id, setId] = useState("2");
   const [plan, setPlan] = useState("2026-10-02");
@@ -394,21 +395,21 @@ function TnaWorkspace() {
   let error = "";
   try {
     if (plan && actual) result = compareDates(plan, actual, wall || undefined);
-    else error = "Choose a plan and comparison date.";
+    else error = t("workspaces.chooseAPlanAndComparisonDate");
   } catch (e) {
-    error = e instanceof Error ? e.message : "Choose valid dates.";
+    error = e instanceof Error ? e.message : t("workspaces.chooseValidDates");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Tag>Source order · SC-2026-000017 · 0 of 30 done</Tag>
+        <Tag>{t("workspaces.sourceOrderSc20260000170")}</Tag>
         <Toggle
           value={view}
           setValue={setView}
-          label="Milestone display"
+          label={t("workspaces.milestoneDisplay")}
           items={[
-            ["calendar", "Date cards"],
-            ["matrix", "Source matrix"],
+            ["calendar", t("workspaces.dateCards")],
+            ["matrix", t("workspaces.sourceMatrix")],
           ]}
         />
       </div>
@@ -416,7 +417,7 @@ function TnaWorkspace() {
         <div>
           {view === "calendar" ? (
             <div className={css.dateCards}>
-              {milestones.map((row) => (
+              {milestones(t).map((row) => (
                 <button
                   type="button"
                   key={row.id}
@@ -430,7 +431,7 @@ function TnaWorkspace() {
                   <span>{dateLabel(row.plan)}</span>
                   <b>{row.name}</b>
                   <Tag>{row.kind}</Tag>
-                  <small>{row.status} · source label</small>
+                  <small>{row.status}{" "}{t("workspaces.sourceLabel")}</small>
                 </button>
               ))}
             </div>
@@ -439,22 +440,22 @@ function TnaWorkspace() {
               className={css.tableScroll}
               tabIndex={0}
               role="region"
-              aria-label="Source milestone matrix, scroll horizontally"
+              aria-label={t("workspaces.sourceMilestoneMatrixScrollHorizontally")}
             >
               <table>
                 <caption className={css.srOnly}>
-                  Seven visible source milestones, all owned by Merchandiser
+                  {t("workspaces.sevenVisibleSourceMilestonesAllOwned")}
                 </caption>
                 <thead>
                   <tr>
-                    <th scope="col">Milestone</th>
-                    <th scope="col">Plan</th>
-                    <th scope="col">Kind</th>
-                    <th scope="col">Source status</th>
+                    <th scope="col">{t("workspaces.milestone")}</th>
+                    <th scope="col">{t("workspaces.plan")}</th>
+                    <th scope="col">{t("workspaces.kind")}</th>
+                    <th scope="col">{t("workspaces.sourceStatus")}</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {milestones.map((row) => (
+                  {milestones(t).map((row) => (
                     <tr key={row.id}>
                       <td>{row.name}</td>
                       <td>{dateLabel(row.plan)}</td>
@@ -467,15 +468,13 @@ function TnaWorkspace() {
             </div>
           )}
           <Notice>
-            All seven visible rows are owned by Merchandiser. Their wall/actual
-            fields are blank. Source statuses are not recalculated against
-            today.
+            {t("workspaces.allSevenVisibleRowsAreOwned")}
           </Notice>
         </div>
-        <Panel title="Local date comparison">
+        <Panel title={t("workspaces.localDateComparison")}>
           <Badge local />
           <div className={css.formGrid}>
-            <Field label="Plan date">
+            <Field label={t("workspaces.planDate")}>
               <input
                 type="date"
                 min="2000-01-01"
@@ -484,7 +483,7 @@ function TnaWorkspace() {
                 onChange={(e) => setPlan(e.target.value)}
               />
             </Field>
-            <Field label="Actual / comparison date">
+            <Field label={t("workspaces.actualComparisonDate")}>
               <input
                 type="date"
                 min="2000-01-01"
@@ -493,7 +492,7 @@ function TnaWorkspace() {
                 onChange={(e) => setActual(e.target.value)}
               />
             </Field>
-            <Field label="Buyer wall date · optional">
+            <Field label={t("workspaces.buyerWallDateOptional")}>
               <input
                 type="date"
                 min="2000-01-01"
@@ -504,26 +503,25 @@ function TnaWorkspace() {
             </Field>
           </div>
           <div className={css.scenarioResult} role="status">
-            <span>Difference from plan</span>
+            <span>{t("workspaces.differenceFromPlan")}</span>
             <strong>
               {result ? `${result.delay > 0 ? "+" : ""}${result.delay} d` : "—"}
             </strong>
             <p>
               {result
                 ? result.delay > 0
-                  ? "Comparison date is after the plan."
+                  ? t("workspaces.comparisonDateIsAfterThePlan")
                   : result.delay < 0
-                    ? "Comparison date is before the plan."
-                    : "Comparison date matches the plan."
+                    ? t("workspaces.comparisonDateIsBeforeThePlan")
+                    : t("workspaces.comparisonDateMatchesThePlan")
                 : error}
             </p>
             {result?.wallDelay !== null && result && (
-              <p>Difference from wall date: {result.wallDelay} d.</p>
+              <p>{t("workspaces.differenceFromWallDate")}{" "}{result.wallDelay} d.</p>
             )}
           </div>
           <Notice>
-            The example dates are local inputs. They do not update the selected
-            milestone or the 64-late source aggregate.
+            {t("workspaces.theExampleDatesAreLocalInputs")}
           </Notice>
         </Panel>
       </div>
@@ -531,10 +529,11 @@ function TnaWorkspace() {
   );
 }
 function MaterialsWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [search, setSearch] = useState("");
   const [shortOnly, setShortOnly] = useState(false);
   const [id, setId] = useState("000001");
-  const filtered = materials.filter(
+  const filtered = materials(t).filter(
     (row) =>
       `${row.id} ${row.style} ${row.name} ${row.buyer}`
         .toLowerCase()
@@ -548,7 +547,7 @@ function MaterialsWorkspace() {
         <SearchField
           value={search}
           onChange={setSearch}
-          label="Find order, style or buyer"
+          label={t("workspaces.findOrderStyleOrBuyer")}
         />
         <label className={css.checkbox}>
           <input
@@ -556,7 +555,7 @@ function MaterialsWorkspace() {
             checked={shortOnly}
             onChange={(e) => setShortOnly(e.target.checked)}
           />
-          Short or missing plan only
+          {t("workspaces.shortOrMissingPlanOnly")}
         </label>
       </div>
       <div className={css.materialWorkspace}>
@@ -578,37 +577,37 @@ function MaterialsWorkspace() {
                   row.short === null ? "amber" : row.short > 0 ? "red" : "green"
                 }
               >
-                {row.short === null ? "No plan" : `${row.short} short`}
+                {row.short === null ? t("workspaces.noPlan") : `${row.short} short`}
               </Tag>
             </button>
           ))}
           {!filtered.length && (
-            <p className={css.empty}>No source orders match these filters.</p>
+            <p className={css.empty}>{t("workspaces.noSourceOrdersMatchTheseFilters")}</p>
           )}
         </div>
         {selected ? (
-          <Panel title={`Style ${selected.style} · readiness`}>
+          <Panel title={t("workspaces.styleReadiness", { style: String(selected.style) })}>
             <Tag>{contract(selected.id)}</Tag>
             <p className={css.detailText}>
               {selected.buyer}
               <br />
-              {num(selected.qty)} pieces ordered
+              {num(selected.qty)}{" "}{t("workspaces.piecesOrdered")}
             </p>
             {selected.lines === null ? (
               <div className={css.noPlan}>
                 <LayersMark />
-                <b>No material plan shown</b>
-                <p>Booked, in-house and shortage counts remain unknown.</p>
+                <b>{t("workspaces.noMaterialPlanShown")}</b>
+                <p>{t("workspaces.bookedInHouseAndShortageCounts")}</p>
               </div>
             ) : (
               <>
                 <Progress
-                  label="Material lines booked"
+                  label={t("workspaces.materialLinesBooked")}
                   value={selected.booked!}
                   total={selected.lines}
                 />
                 <Progress
-                  label="Material lines in-house"
+                  label={t("workspaces.materialLinesInHouse")}
                   value={selected.inHouse!}
                   total={selected.lines}
                   green
@@ -617,19 +616,17 @@ function MaterialsWorkspace() {
             )}
             <dl className={css.metrics}>
               <Metric
-                label="Fabric in-house due"
+                label={t("workspaces.fabricInHouseDue")}
                 value={dateLabel(selected.due)}
               />
-              <Metric label="PCD · source" value={dateLabel(selected.pcd)} />
+              <Metric label={t("workspaces.pcdSource")} value={dateLabel(selected.pcd)} />
             </dl>
             <Notice>
-              Line counts are not material-unit quantities. Dates are preserved
-              exactly as supplied, including any source sequencing
-              inconsistencies.
+              {t("workspaces.lineCountsAreNotMaterialUnit")}
             </Notice>
           </Panel>
         ) : (
-          <p className={css.empty}>Clear a filter to inspect a source order.</p>
+          <p className={css.empty}>{t("workspaces.clearAFilterToInspectA")}</p>
         )}
       </div>
     </>
@@ -639,10 +636,11 @@ function LayersMark() {
   return <span className={css.unknownMark}>?</span>;
 }
 function ProductionWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [own, setOwn] = useState(false);
   const [id, setId] = useState("000004");
   const [pace, setPace] = useState("500");
-  const filtered = production.filter(
+  const filtered = production(t).filter(
     (row) => !own || row.factory === "Own floor",
   );
   const selected = filtered.find((row) => row.id === id) ?? filtered[0];
@@ -652,11 +650,11 @@ function ProductionWorkspace() {
   return (
     <>
       <div className={css.toolbar}>
-        <Field label="Supplied production order">
+        <Field label={t("workspaces.suppliedProductionOrder")}>
           <select value={selected.id} onChange={(e) => setId(e.target.value)}>
             {filtered.map((row) => (
               <option key={row.id} value={row.id}>
-                {contract(row.id)} · style {row.style}
+                {contract(row.id)}{" "}{t("workspaces.style")}{" "}{row.style}
               </option>
             ))}
           </select>
@@ -667,7 +665,7 @@ function ProductionWorkspace() {
             checked={own}
             onChange={(e) => setOwn(e.target.checked)}
           />
-          Own floor only
+          {t("workspaces.ownFloorOnly")}
         </label>
       </div>
       <div className={css.productionWorkspace}>
@@ -682,43 +680,42 @@ function ProductionWorkspace() {
             </Tag>
           </div>
           <Progress
-            label="Sewn · source quantity"
+            label={t("workspaces.sewnSourceQuantity")}
             value={selected.sewn}
             total={selected.qty}
           />
           <Progress
-            label="Packed · source quantity"
+            label={t("workspaces.packedSourceQuantity")}
             value={selected.packed}
             total={selected.qty}
             green
           />
           <dl className={css.metrics}>
             <Metric
-              label="Raw sewn completion"
+              label={t("workspaces.rawSewnCompletion")}
               value={`${((selected.sewn / selected.qty) * 100).toFixed(1)}%`}
             />
             <Metric
-              label="Raw packed completion"
+              label={t("workspaces.rawPackedCompletion")}
               value={`${((selected.packed / selected.qty) * 100).toFixed(1)}%`}
             />
-            <Metric label="Source ship date" value={selected.ship} />
+            <Metric label={t("workspaces.sourceShipDate")} value={selected.ship} />
           </dl>
           <Notice>
-            Over-completion is preserved in the numbers; only the decorative bar
-            is capped. Source status is not inferred from these ratios.
+            {t("workspaces.overCompletionIsPreservedInThe")}
           </Notice>
         </div>
-        <Panel title="What would the remaining work take?">
-          <Badge local>Illustrative sewing pace</Badge>
+        <Panel title={t("workspaces.whatWouldTheRemainingWorkTake")}>
+          <Badge local>{t("workspaces.illustrativeSewingPace")}</Badge>
           <Numeric
-            label="Assumed sewn pieces / working day"
+            label={t("workspaces.assumedSewnPiecesWorkingDay")}
             value={pace}
             onChange={setPace}
             integer
           />
           <div className={css.scenarioResult} role="status">
             <span>
-              Remaining sewing · {result ? num(result.remaining) : "—"} pieces
+              {t("workspaces.remainingSewing")}{" "}{result ? num(result.remaining) : "—"}{" "}{t("workspaces.pieces")}
             </span>
             <strong>
               {result?.days === null || !result
@@ -727,17 +724,16 @@ function ProductionWorkspace() {
             </strong>
             <p>
               {!result
-                ? "Enter whole pieces per day from 0 to 1,000,000."
+                ? t("workspaces.enterWholePiecesPerDayFrom")
                 : result.days === null
-                  ? "A positive pace is needed to estimate duration."
+                  ? t("workspaces.aPositivePaceIsNeededTo")
                   : result.remaining === 0
-                    ? "No remaining sewing against the ordered quantity."
+                    ? t("workspaces.noRemainingSewingAgainstTheOrdered")
                     : `${Math.ceil(result.days)} whole working days at the entered pace.`}
             </p>
           </div>
           <Notice>
-            This is not a predicted shipment date. Packing, shifts, holidays and
-            a real run rate are not supplied.
+            {t("workspaces.thisIsNotAPredictedShipment")}
           </Notice>
         </Panel>
       </div>
@@ -745,9 +741,10 @@ function ProductionWorkspace() {
   );
 }
 function FactoriesWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [id, setId] = useState("mymensingh");
   const [pace, setPace] = useState("4200");
-  const selected = factories.find((row) => row.id === id)!;
+  const selected = factories(t).find((row) => row.id === id)!;
   const result = numeric(pace, true)
     ? remainingDays(selected.wip, 0, Number(pace))
     : null;
@@ -759,28 +756,28 @@ function FactoriesWorkspace() {
           setValue={(value) => {
             setId(value);
             setPace(
-              String(factories.find((row) => row.id === value)!.capacity),
+              String(factories(t).find((row) => row.id === value)!.capacity),
             );
           }}
-          label="Factory dossier"
-          items={factories.map((row) => [
+          label={t("workspaces.factoryDossier")}
+          items={factories(t).map((row) => [
             row.id,
-            row.id === "savar" ? "Savar" : "Mymensingh",
+            row.id === "savar" ? t("workspaces.savar") : t("workspaces.mymensingh"),
           ])}
         />
         <div className={css.factoryProfile}>
-          <span>SUPPLIED FACTORY PROFILE</span>
+          <span>{t("workspaces.suppliedFactoryProfile")}</span>
           <h3>{selected.name}</h3>
           <p>{selected.location}</p>
           <Tag>{selected.types}</Tag>
         </div>
         <dl className={css.metrics}>
-          <Metric label="Production lines" value={selected.lines} />
-          <Metric label="Machines" value={selected.machines} />
-          <Metric label="Capacity · pcs / day" value={num(selected.capacity)} />
-          <Metric label="Open orders" value={selected.orders} />
-          <Metric label="Pieces in progress" value={num(selected.wip)} />
-          <Metric label="Source load" value={`${selected.days.toFixed(2)} d`} />
+          <Metric label={t("workspaces.productionLines")} value={selected.lines} />
+          <Metric label={t("workspaces.machines")} value={selected.machines} />
+          <Metric label={t("workspaces.capacityPcsDay")} value={num(selected.capacity)} />
+          <Metric label={t("workspaces.openOrders")} value={selected.orders} />
+          <Metric label={t("workspaces.piecesInProgress")} value={num(selected.wip)} />
+          <Metric label={t("workspaces.sourceLoad")} value={`${selected.days.toFixed(2)} d`} />
         </dl>
         <div className={css.certificateFlags}>
           {selected.certificates.map((cert) => (
@@ -790,19 +787,18 @@ function FactoriesWorkspace() {
           ))}
         </div>
         <Notice>
-          These are source certificate flags. Expiry dates and verification
-          documents were not supplied. Next ship in source: {selected.nextShip}.
+          {t("workspaces.theseAreSourceCertificateFlagsExpiry")}{" "}{selected.nextShip}.
         </Notice>
       </div>
-      <Panel title="A simple capacity conversation">
+      <Panel title={t("workspaces.aSimpleCapacityConversation")}>
         <Numeric
-          label="Assumed capacity · pieces / day"
+          label={t("workspaces.assumedCapacityPiecesDay")}
           value={pace}
           onChange={setPace}
           integer
         />
         <div className={css.scenarioResult} role="status">
-          <span>Equivalent load on source WIP</span>
+          <span>{t("workspaces.equivalentLoadOnSourceWip")}</span>
           <strong>
             {result?.days === null || !result
               ? "—"
@@ -810,52 +806,52 @@ function FactoriesWorkspace() {
           </strong>
           <p>
             {result?.days === null
-              ? "Enter a positive capacity to calculate equivalent load."
+              ? t("workspaces.enterAPositiveCapacityToCalculate")
               : !result
-                ? "Use whole capacity from 0 to 1,000,000."
+                ? t("workspaces.useWholeCapacityFrom0To")
                 : `${num(selected.wip)} pieces divided by the entered daily capacity.`}
           </p>
         </div>
         <Notice>
-          Capacity division is an illustrative load measure, not a factory
-          booking or a promised delivery date.
+          {t("workspaces.capacityDivisionIsAnIllustrativeLoad")}
         </Notice>
       </Panel>
     </div>
   );
 }
 function ReceiptsWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [mode, setMode] = useState("all");
-  const [id, setId] = useState(receipts[0].id);
-  const filtered = receipts.filter(
+  const [id, setId] = useState(receipts(t)[0].id);
+  const filtered = receipts(t).filter(
     (row) => mode === "all" || row.mode === mode,
   );
   const selected = filtered.find((row) => row.id === id) ?? filtered[0];
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Three supplied posted receipts</Badge>
+        <Badge>{t("workspaces.threeSuppliedPostedReceipts")}</Badge>
         <Toggle
           value={mode}
           setValue={setMode}
-          label="Receipt ownership mode"
+          label={t("workspaces.receiptOwnershipMode")}
           items={[
-            ["all", "All receipts"],
-            ["Our stock", "Our stock"],
-            ["Memo", "Buyer’s goods · memo"],
+            ["all", t("workspaces.allReceipts")],
+            [t("workspaces.ourStock"), t("workspaces.ourStock")],
+            [t("workspaces.memo"), t("workspaces.buyerSGoodsMemo")],
           ]}
         />
       </div>
       <dl className={css.metrics}>
         <Metric
-          label="Filtered source pieces"
+          label={t("workspaces.filteredSourcePieces")}
           value={num(filtered.reduce((s, r) => s + r.qty, 0))}
         />
         <Metric
-          label="Filtered cartons"
+          label={t("workspaces.filteredCartons")}
           value={num(filtered.reduce((s, r) => s + r.cartons, 0))}
         />
-        <Metric label="Source drafts" value="0" />
+        <Metric label={t("workspaces.sourceDrafts")} value="0" />
       </dl>
       <div className={css.receiptWorkspace}>
         <div className={css.receiptList}>
@@ -869,7 +865,7 @@ function ReceiptsWorkspace() {
               <b>{row.id}</b>
               <small>{row.factory}</small>
               <div>
-                <strong>{num(row.qty)} pcs</strong>
+                <strong>{num(row.qty)}{" "}{t("workspaces.pcs")}</strong>
                 <Tag tone={row.mode === "Memo" ? "blue" : "green"}>
                   {row.mode}
                 </Tag>
@@ -877,8 +873,8 @@ function ReceiptsWorkspace() {
             </button>
           ))}
         </div>
-        <Panel title="The receipt, in context">
-          <Tag tone="green">Posted · source status</Tag>
+        <Panel title={t("workspaces.theReceiptInContext")}>
+          <Tag tone="green">{t("workspaces.postedSourceStatus")}</Tag>
           <h4 className={css.receiptReference}>{selected.id}</h4>
           <p className={css.detailText}>
             {selected.buyer}
@@ -887,39 +883,38 @@ function ReceiptsWorkspace() {
           </p>
           <dl className={css.detailList}>
             <div>
-              <dt>Factory</dt>
+              <dt>{t("workspaces.factory")}</dt>
               <dd>{selected.factory}</dd>
             </div>
             <div>
-              <dt>Inspector</dt>
+              <dt>{t("workspaces.inspector")}</dt>
               <dd>{selected.inspector}</dd>
             </div>
             <div>
-              <dt>Packing</dt>
+              <dt>{t("workspaces.packing")}</dt>
               <dd>
-                {num(selected.cartons)} cartons · {num(selected.qty)} pieces
+                {num(selected.cartons)}{" "}{t("workspaces.cartons")}{" "}{num(selected.qty)}{" "}{t("workspaces.pieces")}
               </dd>
             </div>
             <div>
-              <dt>Ownership</dt>
+              <dt>{t("workspaces.ownership")}</dt>
               <dd>
                 {selected.mode === "Memo"
-                  ? "Memo · buyer’s goods"
-                  : "Our stock"}
+                  ? t("workspaces.memoBuyerSGoods")
+                  : t("workspaces.ourStock")}
               </dd>
             </div>
             <div>
-              <dt>Source value</dt>
+              <dt>{t("workspaces.sourceValue")}</dt>
               <dd>
                 {selected.value === null
-                  ? "Not shown"
+                  ? t("workspaces.notShown")
                   : `${num(selected.value)} · currency not shown`}
               </dd>
             </div>
           </dl>
           <Notice>
-            Memo values remain unknown. The visible own-stock value is not
-            assigned a currency absent from its screenshot.
+            {t("workspaces.memoValuesRemainUnknownTheVisible")}
           </Notice>
         </Panel>
       </div>
@@ -927,6 +922,7 @@ function ReceiptsWorkspace() {
   );
 }
 function ProfitWorkspace() {
+  const t = useTranslations("pages.merchandisingApp");
   const [view, setView] = useState("aggregate");
   const [mode, setMode] = useState("all");
   const [price, setPrice] = useState("16.40");
@@ -936,67 +932,65 @@ function ProfitWorkspace() {
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Actual aggregates · BDT</Badge>
+        <Badge>{t("workspaces.actualAggregatesBdt")}</Badge>
         <Toggle
           value={view}
           setValue={setView}
-          label="Profitability evidence"
+          label={t("workspaces.profitabilityEvidence")}
           items={[
-            ["aggregate", "Report totals"],
-            ["orders", "Order excerpt"],
+            ["aggregate", t("workspaces.reportTotals")],
+            ["orders", t("workspaces.orderExcerpt")],
           ]}
         />
       </div>
       {view === "aggregate" ? (
         <>
           <dl className={css.metrics}>
-            <Metric label="Revenue" value={bdt(profitSummary.revenue)} />
+            <Metric label={t("workspaces.revenue")} value={bdt(profitSummary.revenue)} />
             <Metric
-              label="Cost of goods shipped"
+              label={t("workspaces.costOfGoodsShipped")}
               value={bdt(profitSummary.cost)}
             />
-            <Metric label="Net" value={bdt(profitSummary.net)} />
-            <Metric label="Actual / quoted margin" value="30.9% / 14.3%" />
-            <Metric label="Orders / pieces ordered" value="17 / 132,415" />
+            <Metric label={t("workspaces.net")} value={bdt(profitSummary.net)} />
+            <Metric label={t("workspaces.actualQuotedMargin")} value="30.9% / 14.3%" />
+            <Metric label={t("workspaces.ordersPiecesOrdered")} value="17 / 132,415" />
             <Metric
-              label="Cost to date"
+              label={t("workspaces.costToDate")}
               value={bdt(profitSummary.costToDate)}
             />
           </dl>
           <Notice>
-            Cost to date includes finished output / margin receipts, shipped or
-            not. It is distinct from the cost of goods shipped and is not
-            subtracted twice.
+            {t("workspaces.costToDateIncludesFinishedOutput")}
           </Notice>
         </>
       ) : (
         <>
-          <Field label="Settlement mode · source excerpt">
+          <Field label={t("workspaces.settlementModeSourceExcerpt")}>
             <select value={mode} onChange={(e) => setMode(e.target.value)}>
-              <option value="all">All visible modes</option>
-              <option>Own floor</option>
-              <option>Commission</option>
+              <option value="all">{t("workspaces.allVisibleModes")}</option>
+              <option>{t("workspaces.ownFloor")}</option>
+              <option>{t("workspaces.commission")}</option>
             </select>
           </Field>
           <div
             className={css.tableScroll}
             tabIndex={0}
             role="region"
-            aria-label="Profitability order excerpt, scroll horizontally"
+            aria-label={t("workspaces.profitabilityOrderExcerptScrollHorizonta")}
           >
             <table>
               <caption className={css.srOnly}>
-                Four visible profitability records, per-piece USD and net BDT
+                {t("workspaces.fourVisibleProfitabilityRecordsPerPiece")}
               </caption>
               <thead>
                 <tr>
                   {[
-                    "Order / style",
-                    "Mode",
-                    "Quoted / pc · USD",
-                    "Actual / pc · USD",
-                    "Actual cost / pc · USD",
-                    "Source net · BDT",
+                    t("workspaces.orderStyle"),
+                    t("workspaces.mode"),
+                    t("workspaces.quotedPcUsd"),
+                    t("workspaces.actualPcUsd"),
+                    t("workspaces.actualCostPcUsd"),
+                    t("workspaces.sourceNetBdt"),
                   ].map((label) => (
                     <th scope="col" key={label}>
                       {label}
@@ -1009,17 +1003,17 @@ function ProfitWorkspace() {
                   <tr key={row.id}>
                     <td>
                       {contract(row.id)}
-                      <small>Style {row.style}</small>
+                      <small>{t("workspaces.style2")}{" "}{row.style}</small>
                     </td>
                     <td>{row.mode}</td>
                     <td>{row.quote.toFixed(2)}</td>
                     <td>
                       {row.actual.toFixed(2)}
                       {row.mode === "Commission" && (
-                        <small>Commission fee, not FOB sales</small>
+                        <small>{t("workspaces.commissionFeeNotFobSales")}</small>
                       )}
                     </td>
-                    <td>{row.actualCost?.toFixed(2) ?? "Not shown"}</td>
+                    <td>{row.actualCost?.toFixed(2) ?? t("workspaces.notShown")}</td>
                     <td>{num(row.net)}</td>
                   </tr>
                 ))}
@@ -1027,22 +1021,19 @@ function ProfitWorkspace() {
             </table>
           </div>
           <Notice>
-            Four-row excerpt from a 17-order report. The commission row's 0.49
-            is a per-piece fee; unknown cost is not treated as zero.
+            {t("workspaces.fourRowExcerptFromA17")}
           </Notice>
         </>
       )}
       <div className={css.profitScenario}>
         <div>
-          <p className={css.eyebrow}>A SEPARATE COMMERCIAL EXERCISE</p>
-          <h3>What changes when the cost changes?</h3>
+          <p className={css.eyebrow}>{t("workspaces.aSeparateCommercialExercise")}</p>
+          <h3>{t("workspaces.whatChangesWhenTheCostChanges")}</h3>
           <p>
-            Use a plain USD sales scenario to understand contribution and
-            margin. This is not the actual BDT report or a commission
-            calculation.
+            {t("workspaces.useAPlainUsdSalesScenario")}
           </p>
         </div>
-        <Panel title="Local selling-price and cost scenario">
+        <Panel title={t("workspaces.localSellingPriceAndCostScenario")}>
           <MarginInputs
             price={price}
             cost={cost}
@@ -1057,17 +1048,18 @@ function ProfitWorkspace() {
   );
 }
 function PortalWorkspace() {
-  const [id, setId] = useState(portalUsers[0].id);
+  const t = useTranslations("pages.merchandisingApp");
+  const [id, setId] = useState(portalUsers(t)[0].id);
   const [section, setSection] = useState("samples");
-  const user = portalUsers.find((row) => row.id === id)!;
+  const user = portalUsers(t).find((row) => row.id === id)!;
   const canDecide =
     user.canApprove && ["samples", "approvals"].includes(section);
   return (
     <div className={css.portalWorkspace}>
       <div>
-        <Badge>4 active in summary · 3 visible user rows</Badge>
+        <Badge>{t("workspaces.n4ActiveInSummary3Visible")}</Badge>
         <div className={css.portalPeople}>
-          {portalUsers.map((row) => (
+          {portalUsers(t).map((row) => (
             <button
               key={row.id}
               aria-pressed={id === row.id}
@@ -1088,15 +1080,13 @@ function PortalWorkspace() {
           ))}
         </div>
         <Notice>
-          The fourth active login is not visible in the supplied crop and is not
-          fabricated. Contact details and sign-in credentials are not part of
-          this preview.
+          {t("workspaces.theFourthActiveLoginIsNot")}
         </Notice>
       </div>
-      <Panel title="Role and section preview">
-        <Tag tone="green">Active · source status</Tag>
+      <Panel title={t("workspaces.roleAndSectionPreview")}>
+        <Tag tone="green">{t("workspaces.activeSourceStatus")}</Tag>
         <h4 className={css.portalName}>{user.name}</h4>
-        <Field label="Source-enabled section">
+        <Field label={t("workspaces.sourceEnabledSection")}>
           <select value={section} onChange={(e) => setSection(e.target.value)}>
             {user.tabs.map((tab) => (
               <option key={tab} value={tab}>
@@ -1108,29 +1098,28 @@ function PortalWorkspace() {
         <div className={css.permissionResult} role="status">
           {canDecide ? <Check size={23} /> : <LockKeyhole size={23} />}
           <strong>
-            {canDecide ? "View + decision role" : "View only in this section"}
+            {canDecide ? t("workspaces.viewDecisionRole") : t("workspaces.viewOnlyInThisSection")}
           </strong>
           <p>
             {canDecide
-              ? "The source grants this Merchandiser approval capability. Samples / approvals are decision areas in this explanatory preview."
+              ? t("workspaces.theSourceGrantsThisMerchandiserApproval")
               : user.canApprove
-                ? "Merchandiser approval capability does not imply editing every portal section."
-                : "The supplied QA role cannot approve. This section is presented as read-only."}
+                ? t("workspaces.merchandiserApprovalCapabilityDoesNotImp")
+                : t("workspaces.theSuppliedQaRoleCannotApprove")}
           </p>
         </div>
         <dl className={css.detailList}>
           <div>
-            <dt>Can approve · source</dt>
-            <dd>{user.canApprove ? "Yes" : "No"}</dd>
+            <dt>{t("workspaces.canApproveSource")}</dt>
+            <dd>{user.canApprove ? t("workspaces.yes") : t("workspaces.no")}</dd>
           </div>
           <div>
-            <dt>Last seen · source</dt>
-            <dd>{user.lastSeen ?? "Not shown"}</dd>
+            <dt>{t("workspaces.lastSeenSource")}</dt>
+            <dd>{user.lastSeen ?? t("workspaces.notShown")}</dd>
           </div>
         </dl>
         <Notice>
-          Explanatory UI only. No authentication, approval, reset, revoke or
-          access grant is performed.
+          {t("workspaces.explanatoryUiOnlyNoAuthenticationApprova")}
         </Notice>
       </Panel>
     </div>
@@ -1152,18 +1141,19 @@ export default function MerchandisingWorkspace({
 }: {
   slug: MerchandisingSlug;
 }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.merchandisingApp");
+  const p = pages(t)[slug];
   const Workspace = workspaces[slug];
   return (
     <section id="merchandising-workspace" className={css.workspaceSection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>EXPLORE THE WORKFLOW</p>
+            <p className={css.eyebrow}>{t("workspaces.exploreTheWorkflow")}</p>
             <h2>{p.workspace}</h2>
             <p>{p.instruction}</p>
           </div>
-          <Badge local>Interactive demo · not connected</Badge>
+          <Badge local>{t("workspaces.interactiveDemoNotConnected")}</Badge>
         </div>
         <div className={css.workspace}>
           <Workspace />

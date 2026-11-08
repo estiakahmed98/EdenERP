@@ -9,13 +9,19 @@ import {
   TrendingUp,
   FolderTree
 } from 'lucide-react'
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: 'Chart of Accounts: The Backbone of Your Business',
-  description: 'Understand how the Chart of Accounts organizes your financial data in Adon ERP. See how assets, liabilities, income, and expenses fit together.',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("pages.appPages.chartOfAccounts");
+  return {
+    title: t("meta.title"),
+    description: t("meta.description"),
+  };
 }
 
 export default function PublicChartOfAccountsPage() {
+  const t = useTranslations("pages.appPages.chartOfAccounts");
   return (
     <main className="min-h-screen bg-[var(--cream)] text-foreground pb-24">
       
@@ -25,14 +31,14 @@ export default function PublicChartOfAccountsPage() {
         <div className="mx-auto max-w-[1000px] px-6 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-6">
             <FolderTree className="h-4 w-4" />
-            <span>Accounting Core</span>
+            <span>{t("page.accountingCore")}</span>
           </div>
           <h1 className="showcase-heading text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[var(--ink)] mb-6">
-            The map of your money.<br />
-            <span className="text-primary">Perfectly organized.</span>
+            {t("page.theMapOfYourMoney")}<br />
+            <span className="text-primary">{t("page.perfectlyOrganized")}</span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-10 leading-relaxed">
-            Every taka that enters or leaves your business needs a home. The Chart of Accounts is the structured tree that tells your ERP exactly where every transaction belongs.
+            {t("page.everyTakaThatEntersOrLeaves")}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <LiveDemoButton />
@@ -40,7 +46,7 @@ export default function PublicChartOfAccountsPage() {
               href="#how-it-works" 
               className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-6 py-3 text-[15px] font-medium text-foreground transition-colors hover:bg-muted"
             >
-              See How It Works
+              {t("page.seeHowItWorks")}
             </Link>
           </div>
         </div>
@@ -52,13 +58,13 @@ export default function PublicChartOfAccountsPage() {
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
               <h2 className="showcase-heading text-3xl sm:text-4xl text-[var(--ink)] mb-6">
-                Think of it as a filing cabinet for your finances.
+                {t("page.thinkOfItAsAFiling")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                When you buy a chair, the software doesn't just record "Bought a chair." It automatically files that expense under <strong className="text-foreground">Furniture & Equipment</strong>. 
+                {t("page.whenYouBuyAChairThe")}{" "}<strong className="text-foreground">{t("page.furnitureEquipment")}</strong>. 
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                The Chart of Accounts (CoA) is that structure. It groups your money into five main categories, making it instantly clear where your business is making money and where it is spending it.
+                {t("page.theChartOfAccountsCoaIs")}
               </p>
             </div>
             
@@ -66,9 +72,9 @@ export default function PublicChartOfAccountsPage() {
             <div className="grid gap-4 sm:grid-cols-2 bg-card p-6 sm:p-8 rounded-2xl border border-border shadow-sm">
               <div className="space-y-4">
                 {[
-                  { label: 'Assets', desc: 'What you own', color: 'bg-blue-500' },
-                  { label: 'Liabilities', desc: 'What you owe', color: 'bg-red-500' },
-                  { label: 'Capital', desc: 'Owner\'s stake', color: 'bg-purple-500' },
+                  { label: t("page.assets"), desc: t("page.whatYouOwn"), color: 'bg-blue-500' },
+                  { label: t("page.liabilities"), desc: t("page.whatYouOwe"), color: 'bg-red-500' },
+                  { label: t("page.capital"), desc: t("page.ownerSStake"), color: 'bg-purple-500' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3 p-3 rounded-lg border border-border/50 bg-background">
                     <div className={`mt-1 h-3 w-3 rounded-full ${item.color}`} />
@@ -81,8 +87,8 @@ export default function PublicChartOfAccountsPage() {
               </div>
               <div className="space-y-4 sm:pt-12">
                 {[
-                  { label: 'Income', desc: 'What you earn', color: 'bg-green-500' },
-                  { label: 'Expenses', desc: 'What you spend', color: 'bg-orange-500' },
+                  { label: t("page.income"), desc: t("page.whatYouEarn"), color: 'bg-green-500' },
+                  { label: t("page.expenses"), desc: t("page.whatYouSpend"), color: 'bg-orange-500' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3 p-3 rounded-lg border border-border/50 bg-background">
                     <div className={`mt-1 h-3 w-3 rounded-full ${item.color}`} />
@@ -103,17 +109,17 @@ export default function PublicChartOfAccountsPage() {
         <div className="mx-auto max-w-[1200px] px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="showcase-heading text-3xl sm:text-4xl text-[var(--ink)] mb-4">
-              A hierarchy, not a flat list.
+              {t("page.aHierarchyNotAFlatList")}
             </h2>
             <p className="text-lg text-muted-foreground">
-              We use a Parent-Child structure. You can drill down from a broad category all the way to a specific ledger account.
+              {t("page.weUseAParentChildStructure")}
             </p>
           </div>
 
           {/* Illustrative Tree Graphic (Static) */}
           <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card shadow-sm overflow-hidden">
             <div className="border-b border-border bg-muted/30 px-6 py-3 flex items-center justify-between">
-              <span className="text-sm font-semibold text-muted-foreground">Example Hierarchy</span>
+              <span className="text-sm font-semibold text-muted-foreground">{t("page.exampleHierarchy")}</span>
             </div>
             <div className="p-6 font-mono text-sm space-y-4 text-foreground/80">
               
@@ -121,7 +127,7 @@ export default function PublicChartOfAccountsPage() {
               <div className="flex items-center gap-2">
                 <span className="text-muted-foreground">▼</span>
                 <span className="font-semibold text-primary">01000000</span>
-                <span>Asset Accounts</span>
+                <span>{t("page.assetAccounts")}</span>
               </div>
               
               {/* Level 1 */}
@@ -129,7 +135,7 @@ export default function PublicChartOfAccountsPage() {
                 <div className="flex items-center gap-2">
                   <span className="text-muted-foreground">▼</span>
                   <span className="font-medium text-primary">01100000</span>
-                  <span>Current Assets</span>
+                  <span>{t("page.currentAssets")}</span>
                 </div>
                 
                 {/* Level 2 */}
@@ -137,12 +143,12 @@ export default function PublicChartOfAccountsPage() {
                   <div className="flex items-center gap-2">
                     <span className="text-muted-foreground">▶</span>
                     <span className="text-primary">01110000</span>
-                    <span>Cash & Cash Equivalents</span>
+                    <span>{t("page.cashCashEquivalents")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-muted-foreground">▶</span>
                     <span className="text-primary">01120000</span>
-                    <span>Accounts Receivable</span>
+                    <span>{t("page.accountsReceivable")}</span>
                   </div>
                 </div>
               </div>
@@ -152,7 +158,7 @@ export default function PublicChartOfAccountsPage() {
                 <div className="flex items-center gap-2">
                   <span className="text-muted-foreground">▶</span>
                   <span className="font-medium text-primary">01200000</span>
-                  <span>Fixed Assets</span>
+                  <span>{t("page.fixedAssets")}</span>
                 </div>
               </div>
 
@@ -167,10 +173,10 @@ export default function PublicChartOfAccountsPage() {
           <div className="grid gap-12 lg:grid-cols-3">
             <div className="lg:col-span-1">
               <h2 className="showcase-heading text-3xl sm:text-4xl text-[var(--ink)] mb-6">
-                Built for clarity from day one.
+                {t("page.builtForClarityFromDayOne")}
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Whether you are a startup or a multi-company group, the Chart of Accounts adapts to your operational reality.
+                {t("page.whetherYouAreAStartupOr")}
               </p>
             </div>
             
@@ -179,9 +185,9 @@ export default function PublicChartOfAccountsPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--purple-light)] text-primary">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Pre-configured for BD</h3>
+                <h3 className="text-xl font-semibold text-foreground">{t("page.preConfiguredForBd")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Comes out of the box with standard account heads tailored for Bangladeshi businesses, including VAT accounts.
+                  {t("page.comesOutOfTheBoxWith")}
                 </p>
               </div>
 
@@ -189,9 +195,9 @@ export default function PublicChartOfAccountsPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--purple-light)] text-primary">
                   <Layers className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Multi-Company Support</h3>
+                <h3 className="text-xl font-semibold text-foreground">{t("page.multiCompanySupport")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Run a factory and a trading arm? Create separate CoAs for each entity or share a standardized group structure.
+                  {t("page.runAFactoryAndATrading")}
                 </p>
               </div>
 
@@ -199,9 +205,9 @@ export default function PublicChartOfAccountsPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--purple-light)] text-primary">
                   <Search className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Granular Control</h3>
+                <h3 className="text-xl font-semibold text-foreground">{t("page.granularControl")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Don't lump everything together. Break down "Transport" into "Fuel", "Vehicle Maintenance", and "Tolls" for precise reporting.
+                  {t("page.donTLumpEverythingTogetherBreak")}
                 </p>
               </div>
 
@@ -209,9 +215,9 @@ export default function PublicChartOfAccountsPage() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--purple-light)] text-primary">
                   <TrendingUp className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Better Reports</h3>
+                <h3 className="text-xl font-semibold text-foreground">{t("page.betterReports")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  A well-organized Chart of Accounts is the secret to meaningful financial reports. Your Balance Sheet will actually make sense.
+                  {t("page.aWellOrganizedChartOfAccounts")}
                 </p>
               </div>
             </div>
@@ -225,10 +231,10 @@ export default function PublicChartOfAccountsPage() {
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
               <h2 className="showcase-heading text-3xl sm:text-4xl mb-6">
-                Ready to organize your books?
+                {t("page.readyToOrganizeYourBooks")}
               </h2>
               <p className="text-lg text-white/75 leading-relaxed mb-8 max-w-lg">
-                See how Adon ERP's Chart of Accounts can bring clarity to your business finances. Book a walkthrough with our team today.
+                {t("page.seeHowAdonErpSChart")}
               </p>
               <LiveDemoButton />
             </div>
@@ -237,16 +243,16 @@ export default function PublicChartOfAccountsPage() {
               <div>
                 <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-[var(--teal)]" /> 
-                  Can I rename default accounts?
+                  {t("page.canIRenameDefaultAccounts")}
                 </h3>
-                <p className="text-white/70 text-sm leading-relaxed">Yes, you have complete control to rename, edit, or reorganize any account node to match your exact terminology.</p>
+                <p className="text-white/70 text-sm leading-relaxed">{t("page.yesYouHaveCompleteControlTo")}</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-[var(--teal)]" /> 
-                  What if I make a mistake later?
+                  {t("page.whatIfIMakeAMistake")}
                 </h3>
-                <p className="text-white/70 text-sm leading-relaxed">You can add, merge, or deactivate accounts at any time. However, accounts with existing transactions cannot be deleted to maintain audit trails.</p>
+                <p className="text-white/70 text-sm leading-relaxed">{t("page.youCanAddMergeOrDeactivate")}</p>
               </div>
             </div>
           </div>

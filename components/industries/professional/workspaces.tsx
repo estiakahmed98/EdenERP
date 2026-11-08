@@ -31,6 +31,7 @@ import {
   type ProfessionalSlug,
 } from "./data";
 import { AllocationRing, Badge, Metric, Note, css } from "./ui";
+import { useTranslations } from "next-intl";
 function number(raw: string) {
   if (raw.trim() === "")
     throw new Error("Fill in each example value to calculate the result.");
@@ -67,10 +68,11 @@ function Numeric({
   );
 }
 function Reset({ onClick }: { onClick: () => void }) {
+  const tx = useTranslations("pages.industriesApp");
   return (
     <button type="button" className={css.reset} onClick={onClick}>
       <RotateCcw size={13} aria-hidden="true" />
-      Reset example
+      {tx("professional.workspaces.resetExample")}
     </button>
   );
 }
@@ -82,6 +84,7 @@ function Outcome({ error, children }: { error: string; children: string }) {
   );
 }
 function AgencyWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [type, setType] = useState("all"),
     [limit, setLimit] = useState("15000000");
   let rows: (typeof properties)[number][] = [],
@@ -89,12 +92,12 @@ function AgencyWorkspace() {
   try {
     rows = filterProperties(properties, type, number(limit));
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use a valid example price limit.";
+    error = e instanceof Error ? e.message : tx("professional.workspaces.useAValidExamplePriceLimit");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Fictional property portfolio</Badge>
+        <Badge>{tx("professional.workspaces.fictionalPropertyPortfolio")}</Badge>
         <Reset
           onClick={() => {
             setType("all");
@@ -104,16 +107,16 @@ function AgencyWorkspace() {
       </div>
       <div className={css.filterBar}>
         <label className={css.field}>
-          <span>Illustrative property type</span>
+          <span>{tx("professional.workspaces.illustrativePropertyType")}</span>
           <select value={type} onChange={(e) => setType(e.target.value)}>
-            <option value="all">All example types</option>
-            {["Apartment", "Office", "Shop"].map((t) => (
+            <option value="all">{tx("professional.workspaces.allExampleTypes")}</option>
+            {[tx("professional.workspaces.apartment"), tx("professional.workspaces.office"), tx("professional.workspaces.shop")].map((t) => (
               <option key={t}>{t}</option>
             ))}
           </select>
         </label>
         <Numeric
-          label="Entered listed-price limit · BDT"
+          label={tx("professional.workspaces.enteredListedPriceLimitBdt")}
           raw={limit}
           onChange={setLimit}
           step="0.01"
@@ -126,9 +129,9 @@ function AgencyWorkspace() {
               <Building2 size={40} aria-hidden="true" />
               <span>{p.id}</span>
             </div>
-            <small>{p.type} / FICTIONAL RECORD</small>
+            <small>{p.type}{" "}{tx("professional.workspaces.fictionalRecord")}</small>
             <h3>{p.name}</h3>
-            <p>{num(p.area)} sq ft · illustrative area</p>
+            <p>{num(p.area)}{" "}{tx("professional.workspaces.sqFtIllustrativeArea")}</p>
             <b>{money(p.price)}</b>
           </article>
         ))}
@@ -136,16 +139,16 @@ function AgencyWorkspace() {
       <Outcome error={error}>
         {rows.length
           ? `${rows.length} fictional records match the entered filters.`
-          : "No fictional records match these filters. Try another type or price limit."}
+          : tx("professional.workspaces.noFictionalRecordsMatchTheseFilters")}
       </Outcome>
       <Note>
-        These are fictional listed amounts, separate from real availability,
-        valuation or buyer affordability.
+        {tx("professional.workspaces.theseAreFictionalListedAmountsSeparate")}
       </Note>
     </>
   );
 }
 function ArchitectureWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [hours, setHours] = useState(() => phases.map((p) => String(p.hours))),
     [rate, setRate] = useState("1500");
   let result: ReturnType<typeof costLines> | null = null,
@@ -158,12 +161,12 @@ function ArchitectureWorkspace() {
     error =
       e instanceof Error
         ? e.message
-        : "Use valid whole hours and an example rate.";
+        : tx("professional.workspaces.useValidWholeHoursAndAn");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>EX-ARCH-01 · fictional phase hours</Badge>
+        <Badge>{tx("professional.workspaces.exArch01FictionalPhaseHours")}</Badge>
         <Reset
           onClick={() => {
             setHours(phases.map((p) => String(p.hours)));
@@ -174,7 +177,7 @@ function ArchitectureWorkspace() {
       <div className={css.phaseWorkspace}>
         <div>
           <Numeric
-            label="Entered fee per whole hour · BDT"
+            label={tx("professional.workspaces.enteredFeePerWholeHourBdt")}
             raw={rate}
             onChange={setRate}
             step="0.01"
@@ -193,16 +196,15 @@ function ArchitectureWorkspace() {
             ))}
           </div>
           <Note>
-            Hours and the fee are editable assumptions; no recommended
-            professional rate or scope is inferred.
+            {tx("professional.workspaces.hoursAndTheFeeAreEditable")}
           </Note>
         </div>
         <section
           className={css.summaryCard}
-          aria-label="Local phase-fee estimate"
+          aria-label={tx("professional.workspaces.localPhaseFeeEstimate")}
         >
-          <span>THE EFFORT, PHASE BY PHASE</span>
-          <h3>A clearer fee conversation.</h3>
+          <span>{tx("professional.workspaces.theEffortPhaseByPhase")}</span>
+          <h3>{tx("professional.workspaces.aClearerFeeConversation")}</h3>
           <dl className={css.summaryLines}>
             {phases.map((p, i) => (
               <Metric
@@ -212,18 +214,17 @@ function ArchitectureWorkspace() {
               />
             ))}
             <Metric
-              label="Illustrative phase-fee total"
+              label={tx("professional.workspaces.illustrativePhaseFeeTotal")}
               value={result ? money(result.total) : "—"}
             />
           </dl>
           <Outcome error={error}>
             {result
-              ? `Entered effort produces a local total of ${money(result.total)}.`
+              ? tx("professional.workspaces.enteredEffortProducesALocalTotal", { money: String(money(result.total)) })
               : ""}
           </Outcome>
           <Note>
-            Local arithmetic only. No proposal, invoice, tax or project record
-            is created.
+            {tx("professional.workspaces.localArithmeticOnlyNoProposalInvoice")}
           </Note>
         </section>
       </div>
@@ -231,6 +232,7 @@ function ArchitectureWorkspace() {
   );
 }
 function ConstructionWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [entries, setEntries] = useState(() =>
       workItems.map((w) => ({
         quantity: String(w.quantity),
@@ -253,7 +255,7 @@ function ConstructionWorkspace() {
     error =
       e instanceof Error
         ? e.message
-        : "Use valid example quantities and rates.";
+        : tx("professional.workspaces.useValidExampleQuantitiesAndRates");
     result = null;
   }
   function update(i: number, key: "quantity" | "rate", raw: string) {
@@ -264,7 +266,7 @@ function ConstructionWorkspace() {
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Fictional work lines · BDT</Badge>
+        <Badge>{tx("professional.workspaces.fictionalWorkLinesBdt")}</Badge>
         <Reset
           onClick={() => {
             setEntries(
@@ -279,34 +281,33 @@ function ConstructionWorkspace() {
       </div>
       <div className={css.budgetSetting}>
         <Numeric
-          label="Entered example budget · BDT"
+          label={tx("professional.workspaces.enteredExampleBudgetBdt")}
           raw={budget}
           onChange={setBudget}
           step="0.01"
         />
         <Note>
-          Whole-unit quantities and rates are fictional. The units label the
-          example lines, not an engineering specification.
+          {tx("professional.workspaces.wholeUnitQuantitiesAndRatesAre")}
         </Note>
       </div>
       <div
         className={css.tableScroll}
         role="region"
         tabIndex={0}
-        aria-label="Editable fictional work lines, scroll horizontally"
+        aria-label={tx("professional.workspaces.editableFictionalWorkLinesScrollHorizont")}
       >
         <table>
           <caption className={css.srOnly}>
-            Fictional work quantities multiplied by entered unit rates
+            {tx("professional.workspaces.fictionalWorkQuantitiesMultipliedByEnter")}
           </caption>
           <thead>
             <tr>
               {[
-                "Illustrative work item",
-                "Unit",
-                "Whole quantity",
-                "Entered rate · BDT",
-                "Line amount · BDT",
+                tx("professional.workspaces.illustrativeWorkItem"),
+                tx("professional.workspaces.unit"),
+                tx("professional.workspaces.wholeQuantity"),
+                tx("professional.workspaces.enteredRateBdt"),
+                tx("professional.workspaces.lineAmountBdt"),
               ].map((s) => (
                 <th key={s} scope="col">
                   {s}
@@ -321,7 +322,7 @@ function ConstructionWorkspace() {
                 <td>{w.unit}</td>
                 <td>
                   <label>
-                    <span className={css.srOnly}>{w.name} quantity</span>
+                    <span className={css.srOnly}>{w.name}{" "}{tx("professional.workspaces.quantity")}</span>
                     <input
                       type="number"
                       min="0"
@@ -335,7 +336,7 @@ function ConstructionWorkspace() {
                 </td>
                 <td>
                   <label>
-                    <span className={css.srOnly}>{w.name} rate</span>
+                    <span className={css.srOnly}>{w.name}{" "}{tx("professional.workspaces.rate")}</span>
                     <input
                       type="number"
                       min="0"
@@ -355,14 +356,14 @@ function ConstructionWorkspace() {
       </div>
       <dl className={css.metrics}>
         <Metric
-          label="Entered line total"
+          label={tx("professional.workspaces.enteredLineTotal")}
           value={result ? money(result.total) : "—"}
         />
         <Metric
           label={
             comparison && comparison.remaining < 0
-              ? "Over entered budget"
-              : "Unallocated budget"
+              ? tx("professional.workspaces.overEnteredBudget")
+              : tx("professional.workspaces.unallocatedBudget")
           }
           value={comparison ? money(Math.abs(comparison.remaining)) : "—"}
         />
@@ -370,29 +371,29 @@ function ConstructionWorkspace() {
       <Outcome error={error}>
         {comparison
           ? comparison.remaining < 0
-            ? `The lines exceed the entered budget by ${money(-comparison.remaining)}.`
-            : `The entered budget has ${money(comparison.remaining)} unallocated.`
+            ? tx("professional.workspaces.theLinesExceedTheEnteredBudget", { money: String(money(-comparison.remaining)) })
+            : tx("professional.workspaces.theEnteredBudgetHasUnallocated", { money: String(money(comparison.remaining)) })
           : ""}
       </Outcome>
       <Note>
-        No procurement, approved budget or actual project-cost result is
-        represented.
+        {tx("professional.workspaces.noProcurementApprovedBudgetOrActual")}
       </Note>
     </>
   );
 }
 function AccountingWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [selected, setSelected] = useState([true, false, false, false]);
   const progress = checklist(selected);
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>EX-ENG-01 · manually tracked example</Badge>
+        <Badge>{tx("professional.workspaces.exEng01ManuallyTrackedExample")}</Badge>
         <Reset onClick={() => setSelected([true, false, false, false])} />
       </div>
       <div className={css.reviewWorkspace}>
         <div className={css.checklist}>
-          {reviewTasks.map((task, i) => (
+          {reviewTasks(tx).map((task, i) => (
             <label key={task}>
               <input
                 type="checkbox"
@@ -405,7 +406,7 @@ function AccountingWorkspace() {
                 }}
               />
               <span>
-                <small>0{i + 1} / EXAMPLE TASK</small>
+                <small>0{i + 1}{" "}{tx("professional.workspaces.exampleTask")}</small>
                 <b>{task}</b>
               </span>
             </label>
@@ -413,34 +414,33 @@ function AccountingWorkspace() {
         </div>
         <section
           className={css.summaryCard}
-          aria-label="Manually selected task progress"
+          aria-label={tx("professional.workspaces.manuallySelectedTaskProgress")}
         >
-          <span>THE SELECTED EXAMPLE TASKS</span>
-          <h3>A little clarity for the next review.</h3>
+          <span>{tx("professional.workspaces.theSelectedExampleTasks")}</span>
+          <h3>{tx("professional.workspaces.aLittleClarityForTheNext")}</h3>
           <div className={css.largeCount}>
             {progress.done}
-            <small> / {progress.total} selected</small>
+            <small> / {progress.total}{" "}{tx("professional.workspaces.selected")}</small>
           </div>
           <progress
             className={css.progress}
             value={progress.done}
             max={progress.total}
-            aria-label="Selected example review tasks"
+            aria-label={tx("professional.workspaces.selectedExampleReviewTasks")}
           />
           <dl className={css.metrics}>
             <Metric
-              label="Example tasks remaining"
+              label={tx("professional.workspaces.exampleTasksRemaining")}
               value={progress.remaining}
             />
             <Metric
-              label="Manually selected share"
+              label={tx("professional.workspaces.manuallySelectedShare")}
               value={`${progress.percent?.toFixed(0)}%`}
             />
           </dl>
           <Outcome error="">{`${progress.done} of ${progress.total} fictional tasks are selected. No accounts are reviewed automatically.`}</Outcome>
           <Note>
-            The percentage reflects checkbox selections only; it is not an
-            engagement conclusion.
+            {tx("professional.workspaces.thePercentageReflectsCheckboxSelectionsO")}
           </Note>
         </section>
       </div>
@@ -448,6 +448,7 @@ function AccountingWorkspace() {
   );
 }
 function MarketingWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [amounts, setAmounts] = useState(() =>
       channels.map((c) => String(c.amount)),
     ),
@@ -457,12 +458,12 @@ function MarketingWorkspace() {
   try {
     result = allocation(amounts.map(number), number(budget));
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example amounts.";
+    error = e instanceof Error ? e.message : tx("professional.workspaces.useValidExampleAmounts");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>EX-CAMP-01 · entered amounts only</Badge>
+        <Badge>{tx("professional.workspaces.exCamp01EnteredAmountsOnly")}</Badge>
         <Reset
           onClick={() => {
             setAmounts(channels.map((c) => String(c.amount)));
@@ -473,7 +474,7 @@ function MarketingWorkspace() {
       <div className={css.campaignWorkspace}>
         <div>
           <Numeric
-            label="Entered total budget · BDT"
+            label={tx("professional.workspaces.enteredTotalBudgetBdt")}
             raw={budget}
             onChange={setBudget}
             step="0.01"
@@ -492,13 +493,12 @@ function MarketingWorkspace() {
             ))}
           </div>
           <Note>
-            Channel amounts are assumptions, separate from any ad platform,
-            performance result or approved spend.
+            {tx("professional.workspaces.channelAmountsAreAssumptionsSeparateFrom")}
           </Note>
         </div>
         <section
           className={css.campaignResult}
-          aria-label="Local allocation result"
+          aria-label={tx("professional.workspaces.localAllocationResult")}
         >
           <AllocationRing
             amounts={result ? result.shares : [0, 0, 0]}
@@ -515,14 +515,14 @@ function MarketingWorkspace() {
           </ul>
           <dl className={css.metrics}>
             <Metric
-              label="Entered allocation total"
+              label={tx("professional.workspaces.enteredAllocationTotal")}
               value={result ? money(result.assigned) : "—"}
             />
             <Metric
               label={
                 result && result.remaining < 0
-                  ? "Over entered budget"
-                  : "Unallocated budget"
+                  ? tx("professional.workspaces.overEnteredBudget")
+                  : tx("professional.workspaces.unallocatedBudget")
               }
               value={result ? money(Math.abs(result.remaining)) : "—"}
             />
@@ -530,8 +530,8 @@ function MarketingWorkspace() {
           <Outcome error={error}>
             {result
               ? result.remaining < 0
-                ? `The example is ${money(-result.remaining)} over budget.`
-                : `The example has ${money(result.remaining)} unallocated.`
+                ? tx("professional.workspaces.theExampleIsOverBudget", { money: String(money(-result.remaining)) })
+                : tx("professional.workspaces.theExampleHasUnallocated", { money: String(money(result.remaining)) })
               : ""}
           </Outcome>
         </section>
@@ -540,19 +540,20 @@ function MarketingWorkspace() {
   );
 }
 function TalentWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [stages, setStages] = useState(() => candidates.map((c) => c.stage));
   const counts = candidateCounts(stages);
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Anonymous fictional candidate IDs</Badge>
+        <Badge>{tx("professional.workspaces.anonymousFictionalCandidateIds")}</Badge>
         <Reset onClick={() => setStages(candidates.map((c) => c.stage))} />
       </div>
       <dl className={css.threeMetrics}>
         {candidateStages.map((s) => (
           <Metric
             key={s}
-            label={`${candidateLabels[s]} · fictional candidates`}
+            label={`${candidateLabels(tx)[s]} · fictional candidates`}
             value={counts[s]}
           />
         ))}
@@ -562,9 +563,9 @@ function TalentWorkspace() {
           <article key={c.id}>
             <UserRound size={27} aria-hidden="true" />
             <h3>{c.id}</h3>
-            <p>{c.role} / fictional</p>
+            <p>{c.role}{" "}{tx("professional.workspaces.fictional")}</p>
             <label className={css.field}>
-              <span>{c.id} · example stage</span>
+              <span>{c.id}{" "}{tx("professional.workspaces.exampleStage")}</span>
               <select
                 value={stages[i]}
                 onChange={(e) => {
@@ -576,7 +577,7 @@ function TalentWorkspace() {
               >
                 {candidateStages.map((s) => (
                   <option key={s} value={s}>
-                    {candidateLabels[s]}
+                    {candidateLabels(tx)[s]}
                   </option>
                 ))}
               </select>
@@ -584,15 +585,15 @@ function TalentWorkspace() {
           </article>
         ))}
       </div>
-      <Outcome error="">{`Fictional journey: ${counts.applied} applied, ${counts.interview} interview and ${counts.shortlist} shortlisted.`}</Outcome>
+      <Outcome error="">{tx("professional.workspaces.fictionalJourneyAppliedInterviewAndShort", { applied: String(counts.applied), interview: String(counts.interview), shortlist: String(counts.shortlist) })}</Outcome>
       <Note>
-        Stages are manually selected. No applicant is assessed, ranked,
-        contacted or saved.
+        {tx("professional.workspaces.stagesAreManuallySelectedNoApplicant")}
       </Note>
     </>
   );
 }
 function AuditWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [states, setStates] = useState(() => evidenceRows.map((r) => r.state)),
     [filter, setFilter] = useState("all");
   const count = evidenceCounts(states),
@@ -602,7 +603,7 @@ function AuditWorkspace() {
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Fictional evidence · manually selected states</Badge>
+        <Badge>{tx("professional.workspaces.fictionalEvidenceManuallySelectedStates")}</Badge>
         <Reset
           onClick={() => {
             setStates(evidenceRows.map((r) => r.state));
@@ -612,25 +613,25 @@ function AuditWorkspace() {
       </div>
       <div className={css.evidenceFilter}>
         <label className={css.field}>
-          <span>Show example evidence</span>
+          <span>{tx("professional.workspaces.showExampleEvidence")}</span>
           <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-            <option value="all">All example states</option>
+            <option value="all">{tx("professional.workspaces.allExampleStates")}</option>
             {evidenceStates.map((s) => (
               <option key={s} value={s}>
-                {evidenceLabels[s]}
+                {evidenceLabels(tx)[s]}
               </option>
             ))}
           </select>
         </label>
         <p>
-          {count.reviewed} of {count.total} manually marked reviewed
+          {count.reviewed}{" "}{tx("professional.workspaces.of")}{" "}{count.total}{" "}{tx("professional.workspaces.manuallyMarkedReviewed")}
         </p>
       </div>
       <dl className={css.threeMetrics}>
         {evidenceStates.map((s) => (
           <Metric
             key={s}
-            label={`${evidenceLabels[s]} · fictional records`}
+            label={`${evidenceLabels(tx)[s]} · fictional records`}
             value={count[s]}
           />
         ))}
@@ -639,20 +640,19 @@ function AuditWorkspace() {
         className={css.tableScroll}
         role="region"
         tabIndex={0}
-        aria-label="Editable fictional evidence list, scroll horizontally"
+        aria-label={tx("professional.workspaces.editableFictionalEvidenceListScrollHoriz")}
       >
         <table>
           <caption className={css.srOnly}>
-            Fictional evidence states, separate from compliance or certification
-            decisions
+            {tx("professional.workspaces.fictionalEvidenceStatesSeparateFromCompl")}
           </caption>
           <thead>
             <tr>
               {[
-                "Example document",
-                "Identifier",
-                "Manually selected state",
-                "Context",
+                tx("professional.workspaces.exampleDocument"),
+                tx("professional.workspaces.identifier"),
+                tx("professional.workspaces.manuallySelectedState"),
+                tx("professional.workspaces.context"),
               ].map((s) => (
                 <th key={s} scope="col">
                   {s}
@@ -668,7 +668,7 @@ function AuditWorkspace() {
                 <td>
                   <label>
                     <span className={css.srOnly}>
-                      {row.id} example evidence state
+                      {row.id}{" "}{tx("professional.workspaces.exampleEvidenceState")}
                     </span>
                     <select
                       value={row.state}
@@ -681,18 +681,18 @@ function AuditWorkspace() {
                     >
                       {evidenceStates.map((s) => (
                         <option key={s} value={s}>
-                          {evidenceLabels[s]}
+                          {evidenceLabels(tx)[s]}
                         </option>
                       ))}
                     </select>
                   </label>
                 </td>
-                <td>Fictional record · no document analysis</td>
+                <td>{tx("professional.workspaces.fictionalRecordNoDocumentAnalysis")}</td>
               </tr>
             ))}
             {visible.length === 0 && (
               <tr>
-                <td colSpan={4}>No fictional records match this state.</td>
+                <td colSpan={4}>{tx("professional.workspaces.noFictionalRecordsMatchThisState")}</td>
               </tr>
             )}
           </tbody>
@@ -700,13 +700,13 @@ function AuditWorkspace() {
       </div>
       <Outcome error="">{`${visible.length} fictional evidence records shown. Reviewed is a manual example state.`}</Outcome>
       <Note>
-        No standard is evaluated, finding created or certificate issued by this
-        local list.
+        {tx("professional.workspaces.noStandardIsEvaluatedFindingCreated")}
       </Note>
     </>
   );
 }
 function TravelWorkspace() {
+  const tx = useTranslations("pages.industriesApp");
   const [fields, setFields] = useState({
     travellers: "2",
     fare: "25000",
@@ -728,20 +728,20 @@ function TravelWorkspace() {
     });
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Use valid example counts and amounts.";
+      e instanceof Error ? e.message : tx("professional.workspaces.useValidExampleCountsAndAmounts");
   }
   const inputs: [keyof typeof fields, string, number, number, string][] = [
-    ["travellers", "Example travellers", 1, 100, "1"],
-    ["fare", "Entered fare / traveller · BDT", 0, 100000000, "0.01"],
-    ["rooms", "Example rooms", 1, 100, "1"],
-    ["nights", "Example nights", 1, 365, "1"],
-    ["nightly", "Entered room rate / night · BDT", 0, 100000000, "0.01"],
-    ["transfer", "Entered transfer amount · BDT", 0, 100000000, "0.01"],
+    ["travellers", tx("professional.workspaces.exampleTravellers"), 1, 100, "1"],
+    ["fare", tx("professional.workspaces.enteredFareTravellerBdt"), 0, 100000000, "0.01"],
+    ["rooms", tx("professional.workspaces.exampleRooms"), 1, 100, "1"],
+    ["nights", tx("professional.workspaces.exampleNights"), 1, 365, "1"],
+    ["nightly", tx("professional.workspaces.enteredRoomRateNightBdt"), 0, 100000000, "0.01"],
+    ["transfer", tx("professional.workspaces.enteredTransferAmountBdt"), 0, 100000000, "0.01"],
   ];
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>EX-TRIP-01 · entered prices only</Badge>
+        <Badge>{tx("professional.workspaces.exTrip01EnteredPricesOnly")}</Badge>
         <Reset
           onClick={() =>
             setFields({
@@ -769,35 +769,34 @@ function TravelWorkspace() {
             />
           ))}
         </div>
-        <section className={css.summaryCard} aria-label="Local trip estimate">
-          <span>THE ENTERED JOURNEY ASSUMPTIONS</span>
-          <h3>A little clarity before the next conversation.</h3>
+        <section className={css.summaryCard} aria-label={tx("professional.workspaces.localTripEstimate")}>
+          <span>{tx("professional.workspaces.theEnteredJourneyAssumptions")}</span>
+          <h3>{tx("professional.workspaces.aLittleClarityBeforeTheNext")}</h3>
           <dl className={css.summaryLines}>
             <Metric
-              label="Traveller fares"
+              label={tx("professional.workspaces.travellerFares")}
               value={result ? money(result.fares) : "—"}
             />
             <Metric
-              label="Rooms × nights × nightly rate"
+              label={tx("professional.workspaces.roomsNightsNightlyRate")}
               value={result ? money(result.stay) : "—"}
             />
             <Metric
-              label="Transfer added once"
+              label={tx("professional.workspaces.transferAddedOnce")}
               value={result ? money(result.transfer) : "—"}
             />
             <Metric
-              label="Illustrative trip total"
+              label={tx("professional.workspaces.illustrativeTripTotal")}
               value={result ? money(result.total) : "—"}
             />
           </dl>
           <Outcome error={error}>
             {result
-              ? `The local estimate is ${money(result.total)}, using only entered assumptions.`
+              ? tx("professional.workspaces.theLocalEstimateIsUsingOnly", { money: String(money(result.total)) })
               : ""}
           </Outcome>
           <Note>
-            Taxes, additional fees and other services are excluded. No live
-            fares, availability, reservation or ticketing is connected.
+            {tx("professional.workspaces.taxesAdditionalFeesAndOtherServices")}
           </Note>
         </section>
       </div>
@@ -819,13 +818,14 @@ export default function ProfessionalWorkspace({
 }: {
   slug: ProfessionalSlug;
 }) {
-  const p = pages[slug],
+  const tx = useTranslations("pages.industriesApp");
+  const p = pages(tx)[slug],
     Workspace = workspaces[slug];
   return (
     <section className={css.workspaceSection} id="professional-workspace">
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
-          <p className={css.eyebrow}>EXPLORE A SMALL PART OF THE WORK</p>
+          <p className={css.eyebrow}>{tx("professional.workspaces.exploreASmallPartOfThe")}</p>
           <h2>{p.demoTitle}</h2>
           <p>{p.demoDescription}</p>
         </div>
@@ -837,20 +837,21 @@ export default function ProfessionalWorkspace({
   );
 }
 export function ProfessionalWorkflow({ slug }: { slug: ProfessionalSlug }) {
+  const tx = useTranslations("pages.industriesApp");
   const [selected, setSelected] = useState(0);
   return (
     <section className={css.workflowSection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
-          <p className={css.eyebrow}>THE WORK, IN CONTEXT</p>
-          <h2>Keep the next handoff clear.</h2>
+          <p className={css.eyebrow}>{tx("professional.workspaces.theWorkInContext")}</p>
+          <h2>{tx("professional.workspaces.keepTheNextHandoffClear")}</h2>
         </div>
         <div
           className={css.workflowChoices}
           role="group"
-          aria-label="Choose a workflow perspective"
+          aria-label={tx("professional.workspaces.chooseAWorkflowPerspective")}
         >
-          {pages[slug].steps.map(([title], i) => (
+          {pages(tx)[slug].steps.map(([title], i) => (
             <button
               key={title}
               type="button"
@@ -864,7 +865,7 @@ export function ProfessionalWorkflow({ slug }: { slug: ProfessionalSlug }) {
           ))}
         </div>
         <p className={css.workflowDetail} aria-live="polite">
-          {pages[slug].steps[selected][1]}
+          {pages(tx)[slug].steps[selected][1]}
         </p>
       </div>
     </section>

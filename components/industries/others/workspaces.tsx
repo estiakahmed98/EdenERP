@@ -18,6 +18,7 @@ import {
   type OtherIndustry,
 } from "./data";
 import { Badge, Metric, Note, ProductArt, css } from "./ui";
+import { useTranslations } from "next-intl";
 function amount(value: string) {
   if (value.trim() === "")
     throw new Error("Fill in each example amount to calculate the result.");
@@ -56,15 +57,16 @@ function AmountField({
   );
 }
 export function IndustryStory({ slug }: { slug: OtherIndustry }) {
+  const t = useTranslations("pages.industriesApp");
   const [index, setIndex] = useState(0);
-  const p = pages[slug],
+  const p = pages(t)[slug],
     stage = p.stages[index];
   return (
     <section className={css.storySection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>THE WORKFLOW IN CONTEXT</p>
+            <p className={css.eyebrow}>{t("others.workspaces.theWorkflowInContext")}</p>
             <h2>{p.storyTitle}</h2>
           </div>
         </div>
@@ -72,7 +74,7 @@ export function IndustryStory({ slug }: { slug: OtherIndustry }) {
           <div
             className={css.storyChoices}
             role="group"
-            aria-label="Choose a workflow perspective"
+            aria-label={t("others.workspaces.chooseAWorkflowPerspective")}
           >
             {p.stages.map((item, i) => (
               <button
@@ -105,12 +107,13 @@ export function IndustryStory({ slug }: { slug: OtherIndustry }) {
   );
 }
 function CommerceDemo() {
+  const t = useTranslations("pages.industriesApp");
   const [basket, setBasket] = useState<Record<string, number>>({
     ...initialBasket,
   });
   const [delivery, setDelivery] = useState("80");
   const [discount, setDiscount] = useState("0");
-  const lines = products
+  const lines = products(t)
     .filter((row) => (basket[row.id] ?? 0) > 0)
     .map((row) => ({ ...row, qty: basket[row.id] }));
   let result: ReturnType<typeof basketTotals> | null = null;
@@ -118,7 +121,7 @@ function CommerceDemo() {
   try {
     result = basketTotals(lines, amount(delivery), amount(discount));
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example amounts.";
+    error = e instanceof Error ? e.message : t("others.workspaces.useValidExampleAmounts");
   }
   function change(id: string, delta: number) {
     setBasket((prev) => ({
@@ -129,7 +132,7 @@ function CommerceDemo() {
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Fictional products · no live prices or stock</Badge>
+        <Badge>{t("others.workspaces.fictionalProductsNoLivePricesOr")}</Badge>
         <button
           type="button"
           className={css.button}
@@ -140,12 +143,12 @@ function CommerceDemo() {
           }}
         >
           <RotateCcw size={14} />
-          Reset basket
+          {t("others.workspaces.resetBasket")}
         </button>
       </div>
       <div className={css.commerceDemo}>
         <div className={css.productCards}>
-          {products.map((product) => (
+          {products(t).map((product) => (
             <article key={product.id} data-art={product.art}>
               <div>
                 <ProductArt kind={product.art} />
@@ -160,25 +163,25 @@ function CommerceDemo() {
                 onClick={() => change(product.id, 1)}
               >
                 <Plus size={14} />
-                Add to example
+                {t("others.workspaces.addToExample")}
               </button>
             </article>
           ))}
         </div>
-        <section className={css.basketPanel} aria-label="Local example basket">
-          <h3>The basket, explained.</h3>
+        <section className={css.basketPanel} aria-label={t("others.workspaces.localExampleBasket")}>
+          <h3>{t("others.workspaces.theBasketExplained")}</h3>
           <div className={css.basketLines}>
             {lines.map((row) => (
               <div key={row.id}>
                 <span>
                   <b>{row.name}</b>
-                  <small>{money(row.price)} each</small>
+                  <small>{money(row.price)}{" "}{t("others.workspaces.each")}</small>
                 </span>
                 <div className={css.quantity}>
                   <button
                     type="button"
                     className={css.button}
-                    aria-label={`Remove one ${row.name}`}
+                    aria-label={t("others.workspaces.removeOne", { name: String(row.name) })}
                     onClick={() => change(row.id, -1)}
                   >
                     <Minus size={13} />
@@ -187,7 +190,7 @@ function CommerceDemo() {
                   <button
                     type="button"
                     className={css.button}
-                    aria-label={`Add one ${row.name}`}
+                    aria-label={t("others.workspaces.addOne", { name: String(row.name) })}
                     disabled={row.qty >= 99}
                     onClick={() => change(row.id, 1)}
                   >
@@ -198,37 +201,37 @@ function CommerceDemo() {
             ))}
             {!lines.length && (
               <p className={css.empty}>
-                The example basket is empty. Add a product to explore.
+                {t("others.workspaces.theExampleBasketIsEmptyAdd")}
               </p>
             )}
           </div>
           <div className={css.formGrid}>
             <AmountField
-              label="Example delivery · BDT"
+              label={t("others.workspaces.exampleDeliveryBdt")}
               value={delivery}
               onChange={setDelivery}
             />
             <AmountField
-              label="Flat discount · BDT"
+              label={t("others.workspaces.flatDiscountBdt")}
               value={discount}
               onChange={setDiscount}
             />
           </div>
           <dl className={css.basketTotals} aria-live="polite">
             <div>
-              <dt>Item subtotal</dt>
+              <dt>{t("others.workspaces.itemSubtotal")}</dt>
               <dd>{result ? money(result.subtotal) : "—"}</dd>
             </div>
             <div>
-              <dt>Delivery</dt>
+              <dt>{t("others.workspaces.delivery")}</dt>
               <dd>{result ? money(result.delivery) : "—"}</dd>
             </div>
             <div>
-              <dt>Flat discount</dt>
+              <dt>{t("others.workspaces.flatDiscount")}</dt>
               <dd>{result ? money(result.discount) : "—"}</dd>
             </div>
             <div>
-              <dt>Example total</dt>
+              <dt>{t("others.workspaces.exampleTotal")}</dt>
               <dd>{result ? money(result.total) : "—"}</dd>
             </div>
           </dl>
@@ -238,8 +241,7 @@ function CommerceDemo() {
             </p>
           )}
           <Note>
-            Tax is not calculated. Empty baskets have no delivery charge. No
-            order, payment, coupon redemption or stock reservation is made.
+            {t("others.workspaces.taxIsNotCalculatedEmptyBaskets")}
           </Note>
         </section>
       </div>
@@ -247,10 +249,11 @@ function CommerceDemo() {
   );
 }
 function NgoDemo() {
+  const t = useTranslations("pages.industriesApp");
   const [budget, setBudget] = useState("100000");
   const [allocations, setAllocations] = useState<Record<string, string>>(
     Object.fromEntries(
-      programmeLines.map((row) => [row.id, String(row.amount)]),
+      programmeLines(t).map((row) => [row.id, String(row.amount)]),
     ),
   );
   const [view, setView] = useState("amount");
@@ -259,15 +262,15 @@ function NgoDemo() {
   try {
     result = programmeBudget(
       amount(budget),
-      programmeLines.map((row) => amount(allocations[row.id])),
+      programmeLines(t).map((row) => amount(allocations[row.id])),
     );
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example amounts.";
+    error = e instanceof Error ? e.message : t("others.workspaces.useValidExampleAmounts");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Fictional planning amounts · not donations or expenditure</Badge>
+        <Badge>{t("others.workspaces.fictionalPlanningAmountsNotDonationsOr")}</Badge>
         <button
           type="button"
           className={css.button}
@@ -275,27 +278,27 @@ function NgoDemo() {
             setBudget("100000");
             setAllocations(
               Object.fromEntries(
-                programmeLines.map((row) => [row.id, String(row.amount)]),
+                programmeLines(t).map((row) => [row.id, String(row.amount)]),
               ),
             );
             setView("amount");
           }}
         >
           <RotateCcw size={14} />
-          Reset plan
+          {t("others.workspaces.resetPlan")}
         </button>
       </div>
       <div className={css.ngoDemo}>
         <div>
           <div className={css.budgetInput}>
             <AmountField
-              label="Illustrative planning budget · BDT"
+              label={t("others.workspaces.illustrativePlanningBudgetBdt")}
               value={budget}
               onChange={setBudget}
             />
           </div>
           <div className={css.programmeInputs}>
-            {programmeLines.map((row, i) => (
+            {programmeLines(t).map((row, i) => (
               <div key={row.id}>
                 <span>0{i + 1}</span>
                 <AmountField
@@ -309,52 +312,51 @@ function NgoDemo() {
             ))}
           </div>
           <Note>
-            All labels are fictional. The example checks no donor restrictions,
-            beneficiary eligibility or expenditure policy.
+            {t("others.workspaces.allLabelsAreFictionalTheExample")}
           </Note>
         </div>
         <section
           className={css.budgetResult}
-          aria-label="Local programme budget result"
+          aria-label={t("others.workspaces.localProgrammeBudgetResult")}
         >
-          <span>THE PLANNING CONVERSATION</span>
-          <h3>See the allocation without losing the purpose.</h3>
+          <span>{t("others.workspaces.thePlanningConversation")}</span>
+          <h3>{t("others.workspaces.seeTheAllocationWithoutLosingThe")}</h3>
           <div
             className={css.viewToggle}
             role="group"
-            aria-label="Budget display"
+            aria-label={t("others.workspaces.budgetDisplay")}
           >
             <button
               type="button"
               aria-pressed={view === "amount"}
               onClick={() => setView("amount")}
             >
-              Amounts
+              {t("others.workspaces.amounts")}
             </button>
             <button
               type="button"
               aria-pressed={view === "share"}
               onClick={() => setView("share")}
             >
-              Shares
+              {t("others.workspaces.shares")}
             </button>
           </div>
           <dl className={css.metrics}>
             <Metric
-              label="Assigned planning amount"
+              label={t("others.workspaces.assignedPlanningAmount")}
               value={result ? money(result.assigned) : "—"}
             />
             <Metric
               label={
                 result && result.remaining < 0
-                  ? "Above the example budget"
-                  : "Unassigned planning amount"
+                  ? t("others.workspaces.aboveTheExampleBudget")
+                  : t("others.workspaces.unassignedPlanningAmount")
               }
               value={result ? money(Math.abs(result.remaining)) : "—"}
             />
           </dl>
           <div className={css.programmeBreakdown}>
-            {programmeLines.map((row, i) => (
+            {programmeLines(t).map((row, i) => (
               <div key={row.id}>
                 <span>
                   <i data-tone={i} />
@@ -378,7 +380,7 @@ function NgoDemo() {
             {error ||
               (result
                 ? `${result.share.toFixed(2)}% of the entered example budget is assigned. This is arithmetic, not spending approval.`
-                : "Enter the example amounts.")}
+                : t("others.workspaces.enterTheExampleAmounts"))}
           </p>
         </section>
       </div>
@@ -386,10 +388,11 @@ function NgoDemo() {
   );
 }
 function TvDemo() {
+  const t = useTranslations("pages.industriesApp");
   const [start, setStart] = useState("19:00");
   const [target, setTarget] = useState("30");
   const [durations, setDurations] = useState<Record<string, string>>(
-    Object.fromEntries(segments.map((row) => [row.id, row.duration])),
+    Object.fromEntries(segments(t).map((row) => [row.id, row.duration])),
   );
   let result: ReturnType<typeof programmeRundown> | null = null;
   let error = "";
@@ -397,16 +400,16 @@ function TvDemo() {
     result = programmeRundown(
       start,
       amount(target),
-      segments.map((row) => ({ id: row.id, duration: durations[row.id] })),
+      segments(t).map((row) => ({ id: row.id, duration: durations[row.id] })),
     );
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example timings.";
+    error = e instanceof Error ? e.message : t("others.workspaces.useValidExampleTimings");
   }
   return (
     <>
       <div className={css.toolbar}>
         <Badge>
-          Local planning clock · whole seconds, no broadcast control
+          {t("others.workspaces.localPlanningClockWholeSecondsNo")}
         </Badge>
         <button
           className={css.button}
@@ -415,17 +418,17 @@ function TvDemo() {
             setStart("19:00");
             setTarget("30");
             setDurations(
-              Object.fromEntries(segments.map((row) => [row.id, row.duration])),
+              Object.fromEntries(segments(t).map((row) => [row.id, row.duration])),
             );
           }}
         >
           <RotateCcw size={14} />
-          Reset rundown
+          {t("others.workspaces.resetRundown")}
         </button>
       </div>
       <div className={css.rundownSettings}>
         <label className={css.field}>
-          <span>Example start · 24-hour clock</span>
+          <span>{t("others.workspaces.exampleStart24HourClock")}</span>
           <input
             type="time"
             step="60"
@@ -434,7 +437,7 @@ function TvDemo() {
           />
         </label>
         <label className={css.field}>
-          <span>Target length · whole minutes</span>
+          <span>{t("others.workspaces.targetLengthWholeMinutes")}</span>
           <input
             type="number"
             inputMode="numeric"
@@ -446,35 +449,33 @@ function TvDemo() {
           />
         </label>
         <div className={css.rundownTotal} role="status">
-          <span>Total example duration</span>
+          <span>{t("others.workspaces.totalExampleDuration")}</span>
           <b>{result ? formatDuration(result.total) : "—"}</b>
           <small>
             {result
               ? result.remaining === 0
-                ? "Matches the example target"
+                ? t("others.workspaces.matchesTheExampleTarget")
                 : `${formatDuration(result.remaining)} ${result.remaining < 0 ? "over" : "under"} the example target`
-              : "Check the entered timings"}
+              : t("others.workspaces.checkTheEnteredTimings")}
           </small>
         </div>
       </div>
       <p id="rundown-format" className={css.formatHint}>
-        Durations use mm:ss (maximum 180:00 per segment). Clock labels show +1
-        day when the example crosses midnight.
+        {t("others.workspaces.durationsUseMmSsMaximum180")}
       </p>
       <div
         className={css.tableScroll}
         tabIndex={0}
         role="region"
-        aria-label="Editable example rundown, scroll horizontally"
+        aria-label={t("others.workspaces.editableExampleRundownScrollHorizontally")}
       >
         <table>
           <caption className={css.srOnly}>
-            Five fictional programme segments with editable durations and
-            calculated start/end clocks
+            {t("others.workspaces.fiveFictionalProgrammeSegmentsWithEditab")}
           </caption>
           <thead>
             <tr>
-              {["Segment", "Duration · mm:ss", "Starts", "Ends"].map(
+              {[t("others.workspaces.segment"), t("others.workspaces.durationMmSs"), t("others.workspaces.starts"), t("others.workspaces.ends")].map(
                 (label) => (
                   <th key={label} scope="col">
                     {label}
@@ -484,7 +485,7 @@ function TvDemo() {
             </tr>
           </thead>
           <tbody>
-            {segments.map((row) => {
+            {segments(t).map((row) => {
               const timing = result?.timings.find((item) => item.id === row.id);
               return (
                 <tr key={row.id}>
@@ -495,7 +496,7 @@ function TvDemo() {
                   <td>
                     <label>
                       <span className={css.srOnly}>
-                        {row.title} duration in minutes and seconds
+                        {row.title}{" "}{t("others.workspaces.durationInMinutesAndSeconds")}
                       </span>
                       <input
                         className={css.durationInput}
@@ -517,13 +518,13 @@ function TvDemo() {
                   <td>
                     {timing ? timing.start.time : "—"}
                     {!!timing?.start.days && (
-                      <small>+{timing.start.days} day</small>
+                      <small>+{timing.start.days}{" "}{t("others.workspaces.day")}</small>
                     )}
                   </td>
                   <td>
                     {timing ? timing.end.time : "—"}
                     {!!timing?.end.days && (
-                      <small>+{timing.end.days} day</small>
+                      <small>+{timing.end.days}{" "}{t("others.workspaces.day")}</small>
                     )}
                   </td>
                 </tr>
@@ -538,27 +539,26 @@ function TvDemo() {
         </p>
       )}
       <Note>
-        This is not frame-accurate timecode, transmission scheduling or media
-        playback. The clock has no date, timezone, station feed, advertising
-        inventory or rights integration.
+        {t("others.workspaces.thisIsNotFrameAccurateTimecode")}
       </Note>
     </>
   );
 }
 const demos = { ecommerce: CommerceDemo, ngo: NgoDemo, tv: TvDemo };
 export default function OtherIndustryDemo({ slug }: { slug: OtherIndustry }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   const Demo = demos[slug];
   return (
     <section className={css.demoSection} id="industry-demo">
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>TRY A SMALL PART OF THE WORKFLOW</p>
+            <p className={css.eyebrow}>{t("others.workspaces.tryASmallPartOfThe")}</p>
             <h2>{p.demoTitle}</h2>
             <p>{p.demoDescription}</p>
           </div>
-          <Badge>Local example · not connected</Badge>
+          <Badge>{t("others.workspaces.localExampleNotConnected")}</Badge>
         </div>
         <div className={css.demoSurface}>
           <Demo />
