@@ -2,21 +2,24 @@ import type { ReactNode } from "react";
 import { ArrowDown, FlaskConical, Info } from "lucide-react";
 import LiveDemoButton from "@/components/live-demo-button";
 import css from "./professional.module.css";
+import { useTranslations } from "next-intl";
 export { css };
 export function Badge({ children }: { children?: ReactNode }) {
+  const t = useTranslations("pages.industriesApp");
   return (
     <span className={css.badge}>
       <FlaskConical size={12} aria-hidden="true" />
-      {children ?? "Illustrative example"}
+      {children ?? t("professional.ui.illustrativeExample")}
     </span>
   );
 }
 export function Actions() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <div className={css.actions}>
       <LiveDemoButton />
       <a href="#professional-workspace">
-        Explore the example
+        {t("professional.ui.exploreTheExample")}
         <ArrowDown size={14} aria-hidden="true" />
       </a>
     </div>
@@ -284,6 +287,7 @@ export function AllocationRing({
   amounts: number[];
   labels: string[];
 }) {
+  const t = useTranslations("pages.industriesApp");
   const total = amounts.reduce((a, b) => a + b, 0),
     circumference = 2 * Math.PI * 46;
   let offset = 0;
@@ -300,7 +304,7 @@ export function AllocationRing({
                   `${label}: ${((amounts[i] / total) * 100).toFixed(1)}% of allocated amount`,
               )
               .join(", ")
-          : "No example amount allocated"
+          : t("professional.ui.noExampleAmountAllocated")
       }
     >
       <circle

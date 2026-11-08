@@ -26,78 +26,82 @@ import {
   Home,
 } from "lucide-react";
 import { getLocaleAlternates } from "@/i18n/metadata";
+import { useTranslations } from "next-intl";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const tx = await getTranslations("pages.universityApp.classSchedule");
   const t = await getTranslations("layout.header.modules.university");
   return {
-    title: t("links.classSchedule") || "Class Schedule | AdonERP",
+    title: t("links.classSchedule") || tx("page.classScheduleAdonerp"),
     description:
-      "Manage sections, timetables, room allocations, and faculty workloads in one unified hub.",
+      tx("page.manageSectionsTimetablesRoomAllocationsA"),
     alternates: await getLocaleAlternates("/apps/university/class-schedule"),
   };
 }
 
 // --- DATA FOR THE HERO SCREENSHOT ---
-const scheduleData = [
+const scheduleData = memoT((tx: TFn) => ([
   {
-    section: "ALL 1101 §1",
-    title: "Arabic Grammar (Nahw) I",
-    teacher: "Shahriar Nazmul Rahman",
-    times: "Sat 08:30–09:50 · ABI-105; Mon 08:30–09:50 · ABI-105",
-    cohort: "BA-ALL · 2027-SPR · A",
+    section: tx("page.all11011"),
+    title: tx("page.arabicGrammarNahwI"),
+    teacher: tx("page.shahriarNazmulRahman"),
+    times: tx("page.sat08300950Abi"),
+    cohort: tx("page.baAll2027SprA"),
     seats: "0 / 18",
-    status: "Open",
+    status: tx("page.open"),
   },
-];
+]));
 
 // --- CONTENT FOR PAGE SECTIONS ---
-const featureQuestions = [
+const featureQuestions = memoT((tx: TFn) => ([
   {
-    title: "Conflict-Free Scheduling",
-    question: "How do we prevent double-booking?",
-    answer: "The system automatically checks for clashes in room availability, teacher schedules, and student cohorts. If a conflict exists, the schedule is refused, saving hours of manual checking.",
-    source: "Synced from Scheduling Engine",
+    title: tx("page.conflictFreeScheduling"),
+    question: tx("page.howDoWePreventDoubleBooking"),
+    answer: tx("page.theSystemAutomaticallyChecksForClashes"),
+    source: tx("page.syncedFromSchedulingEngine"),
   },
   {
-    title: "Cohort Management",
-    question: "Can we schedule for specific groups?",
-    answer: "Group students by programme, intake year, and section. The system ensures every student in a cohort gets a seat without overlapping with their other required classes.",
-    source: "Synced from Academic Operations",
+    title: tx("page.cohortManagement"),
+    question: tx("page.canWeScheduleForSpecificGroups"),
+    answer: tx("page.groupStudentsByProgrammeIntakeYear"),
+    source: tx("page.syncedFromAcademicOperations"),
   },
   {
-    title: "Room & Resource Tracking",
-    question: "Are we using our campus efficiently?",
-    answer: "Track exactly which rooms are in use, their capacity, and the total room-hours consumed per week. Identify underutilized spaces and optimize your campus footprint.",
-    source: "Synced from Campus Services",
+    title: tx("page.roomResourceTracking"),
+    question: tx("page.areWeUsingOurCampusEfficiently"),
+    answer: tx("page.trackExactlyWhichRoomsAreIn"),
+    source: tx("page.syncedFromCampusServices"),
   },
   {
-    title: "Faculty Workload",
-    question: "Are teachers overburdened?",
-    answer: "The system tracks how many sections and hours each teacher is assigned to. The 'Faculty load' tab gives department heads an instant view of teaching distribution.",
-    source: "Synced from HR & Faculty Management",
+    title: tx("page.facultyWorkload"),
+    question: tx("page.areTeachersOverburdened"),
+    answer: tx("page.theSystemTracksHowManySections"),
+    source: tx("page.syncedFromHrFacultyManagement"),
   },
-];
+]));
 
-const faqs = [
+const faqs = memoT((tx: TFn) => ([
   {
-    q: "Can we schedule a lab without a theory section?",
-    a: "No. The system enforces a rule that a lab section must be paired with its corresponding theory section. This ensures students are properly enrolled in both components.",
+    q: tx("page.canWeScheduleALabWithout"),
+    a: tx("page.noTheSystemEnforcesARule"),
   },
   {
-    q: "How does the 'Only teacher TBA' filter work?",
-    a: "If a section is created before a teacher is assigned, it will appear under this filter. Administrators can quickly see which classes still need a faculty member.",
+    q: tx("page.howDoesTheOnlyTeacherTba"),
+    a: tx("page.ifASectionIsCreatedBefore"),
   },
   {
-    q: "What happens if a room is under maintenance?",
-    a: "You can mark a room as unavailable in the Setup tab. The scheduling engine will automatically avoid assigning any sections to that room during the blocked period.",
+    q: tx("page.whatHappensIfARoomIs"),
+    a: tx("page.youCanMarkARoomAs"),
   },
   {
-    q: "Can we view a visual timetable?",
-    a: "Yes. Clicking on the 'Timetable' tab provides a grid view of the week, showing exactly where and when every section is meeting, color-coded by department.",
+    q: tx("page.canWeViewAVisualTimetable"),
+    a: tx("page.yesClickingOnTheTimetableTab"),
   },
-];
+]));
 
 export default function UniversityClassSchedulePage() {
+  const tx = useTranslations("pages.universityApp.classSchedule");
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       
@@ -108,18 +112,20 @@ export default function UniversityClassSchedulePage() {
           {/* Hero Text */}
           <div className="mx-auto max-w-[800px] text-center mb-12">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-1.5 text-[12px] font-semibold text-primary shadow-sm">
-              <Sparkles className="h-4 w-4" /> Intelligent Timetable Management
+              <Sparkles className="h-4 w-4" />{" "}{tx("page.intelligentTimetableManagement")}
             </div>
             <h1 className="showcase-heading text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.05] tracking-[-0.04em] text-foreground">
-              Every class. Every room. <span className="text-primary">Perfectly timed.</span>
+              {tx("page.everyClassEveryRoom")}{" "}<span className="text-primary">{tx("page.perfectlyTimed")}</span>
             </h1>
             <p className="mx-auto mt-5 max-w-[580px] text-[16px] leading-7 text-muted-foreground">
-              Eliminate scheduling conflicts, manage room capacities, and balance faculty workloads with a powerful, automated engine.
+              {tx("page.eliminateSchedulingConflictsManageRoomCa")}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <LiveDemoButton />
+              <button className="btn-gradient rounded-lg px-6 py-3 text-[13px] font-bold shadow-lg transition-transform hover:-translate-y-0.5">
+                {tx("page.requestADemo")}
+              </button>
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
-                Explore Features
+                {tx("page.exploreFeatures")}
               </button>
             </div>
           </div>
@@ -131,16 +137,16 @@ export default function UniversityClassSchedulePage() {
               {/* App Top Bar */}
               <div className="flex h-12 items-center justify-between border-b border-border bg-muted/30 px-4 sm:px-6 relative z-20">
                 <div className="flex items-center gap-2 text-[12px]">
-                  <span className="font-bold text-primary">Adon ERP</span>
+                  <span className="font-bold text-primary">{tx("page.adonErp")}</span>
                   <span className="text-muted-foreground/50">/</span>
-                  <span className="font-semibold text-foreground">Class Schedule</span>
+                  <span className="font-semibold text-foreground">{tx("page.classSchedule")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="hidden sm:flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <Globe className="h-3 w-3" /> English
+                    <Globe className="h-3 w-3" />{" "}{tx("page.english")}
                   </div>
                   <div className="flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <School className="h-3 w-3" /> National University <ChevronDown className="h-3 w-3" />
+                    <School className="h-3 w-3" />{" "}{tx("page.nationalUniversity")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                 </div>
               </div>
@@ -151,23 +157,23 @@ export default function UniversityClassSchedulePage() {
                 {/* Sidebar */}
                 <div className="hidden w-[220px] shrink-0 border-r border-border bg-card py-4 sm:block overflow-y-auto">
                   <div className="mb-3 flex items-center justify-between px-5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                    University <ChevronDown className="h-3 w-3" />
+                    {tx("page.university")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                   <nav className="space-y-0.5 px-3">
                     {[
-                      { icon: LayoutDashboard, label: "University Dashboard" },
-                      { icon: FileText, label: "University Admissions" },
-                      { icon: Users, label: "University Students" },
-                      { icon: School, label: "Faculties & Programmes" },
-                      { icon: BookOpen, label: "Courses & Curriculum" },
-                      { icon: CalendarDays, label: "Class Schedule", active: true },
-                      { icon: Calendar, label: "Registration" },
-                      { icon: CreditCard, label: "Student Accounts" },
-                      { icon: Award, label: "Grades & Results" },
-                      { icon: CalendarDays, label: "Exams & Attendance" },
-                      { icon: GraduationCap, label: "Outcomes (OBE)" },
-                      { icon: Briefcase, label: "Faculty & Workload" },
-                      { icon: Building, label: "Campus Services" },
+                      { icon: LayoutDashboard, label: tx("page.universityDashboard") },
+                      { icon: FileText, label: tx("page.universityAdmissions") },
+                      { icon: Users, label: tx("page.universityStudents") },
+                      { icon: School, label: tx("page.facultiesProgrammes") },
+                      { icon: BookOpen, label: tx("page.coursesCurriculum") },
+                      { icon: CalendarDays, label: tx("page.classSchedule"), active: true },
+                      { icon: Calendar, label: tx("page.registration") },
+                      { icon: CreditCard, label: tx("page.studentAccounts") },
+                      { icon: Award, label: tx("page.gradesResults") },
+                      { icon: CalendarDays, label: tx("page.examsAttendance") },
+                      { icon: GraduationCap, label: tx("page.outcomesObe") },
+                      { icon: Briefcase, label: tx("page.facultyWorkload2") },
+                      { icon: Building, label: tx("page.campusServices") },
                     ].map((item, i) => (
                       <div
                         key={i}
@@ -191,16 +197,16 @@ export default function UniversityClassSchedulePage() {
                     {/* Page Header */}
                     <div className="mb-5 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                       <div>
-                        <h1 className="text-[22px] font-bold tracking-tight text-foreground">Class Schedule</h1>
+                        <h1 className="text-[22px] font-bold tracking-tight text-foreground">{tx("page.classSchedule")}</h1>
                         <p className="mt-1.5 max-w-[750px] text-[12px] leading-5 text-muted-foreground">
-                          A term's sections with their times, rooms and teachers. A section can be kept for one cohort (programme × intake × group) and for men or women only; a lab is paired with its theory section. A clash of room, teacher or cohort is refused.
+                          {tx("page.aTermSSectionsWithTheir")}
                         </p>
                       </div>
                       <div className="shrink-0 mt-2 sm:mt-0">
-                        <label className="mb-1 block text-[10px] font-medium text-muted-foreground">Term</label>
+                        <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{tx("page.term")}</label>
                         <div className="relative">
                           <select className="w-[180px] appearance-none rounded-md border border-border bg-card px-2.5 py-1.5 text-[11px] font-medium text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                            <option>Spring 2027 - Registration</option>
+                            <option>{tx("page.spring2027Registration")}</option>
                           </select>
                           <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-muted-foreground" />
                         </div>
@@ -211,35 +217,35 @@ export default function UniversityClassSchedulePage() {
                     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 mb-6">
                       <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
                         <p className="text-[24px] font-bold tracking-tight text-foreground leading-none">1,585</p>
-                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">sections</p>
-                        <p className="text-[10px] text-muted-foreground/70">1,585 open</p>
+                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">{tx("page.sections")}</p>
+                        <p className="text-[10px] text-muted-foreground/70">{tx("page.n1585Open")}</p>
                       </div>
                       <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
                         <p className="text-[24px] font-bold tracking-tight text-[#0ea5e9] leading-none">48,113</p>
-                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">seats</p>
-                        <p className="text-[10px] text-muted-foreground/70">7,124 taken</p>
+                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">{tx("page.seats")}</p>
+                        <p className="text-[10px] text-muted-foreground/70">{tx("page.n7124Taken")}</p>
                       </div>
                       <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
                         <p className="text-[24px] font-bold tracking-tight text-[#21a816] leading-none">0</p>
-                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">without class times</p>
+                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">{tx("page.withoutClassTimes")}</p>
                       </div>
                       <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
                         <p className="text-[24px] font-bold tracking-tight text-[#d97706] leading-none">1</p>
-                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">teacher to be announced</p>
+                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">{tx("page.teacherToBeAnnounced")}</p>
                       </div>
                       <div className="rounded-xl border border-border bg-card p-4 shadow-sm">
                         <p className="text-[24px] font-bold tracking-tight text-[#9333ea] leading-none">120 / 133</p>
-                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">rooms in use</p>
-                        <p className="text-[10px] text-muted-foreground/70">4,046.5 room-hours a week</p>
+                        <p className="mt-1 text-[11px] font-medium text-muted-foreground">{tx("page.roomsInUse")}</p>
+                        <p className="text-[10px] text-muted-foreground/70">{tx("page.n40465RoomHoursA")}</p>
                       </div>
                     </div>
 
                     {/* Tabs */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       <button className="rounded-md bg-primary px-4 py-1.5 text-[12px] font-bold text-primary-foreground shadow-sm">
-                        Sections
+                        {tx("page.sections2")}
                       </button>
-                      {["Timetable", "Planning", "Faculty load", "Setup"].map((tab) => (
+                      {[tx("page.timetable"), tx("page.planning"), tx("page.facultyLoad"), tx("page.setup")].map((tab) => (
                         <button key={tab} className="rounded-md border border-border bg-card px-4 py-1.5 text-[12px] font-medium text-primary shadow-sm hover:bg-muted">
                           {tab}
                         </button>
@@ -249,31 +255,31 @@ export default function UniversityClassSchedulePage() {
                     {/* Filter Box (Blurred) */}
                     <div className="rounded-xl border border-border bg-card p-4 shadow-sm opacity-60 blur-[2px] pointer-events-none">
                       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 mb-3">
-                        {["Department", "Cohort programme", "Status"].map((label, i) => (
+                        {[tx("page.department"), tx("page.cohortProgramme"), tx("page.status")].map((label, i) => (
                           <div key={i}>
                             <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{label}</label>
                             <div className="relative">
                               <select className="w-full appearance-none rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] font-medium text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary">
-                                <option>All</option>
+                                <option>{tx("page.all")}</option>
                               </select>
                               <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-muted-foreground" />
                             </div>
                           </div>
                         ))}
                         <div>
-                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">Search</label>
-                          <input type="text" placeholder="Code or title" className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+                          <label className="mb-1 block text-[10px] font-medium text-muted-foreground">{tx("page.search")}</label>
+                          <input type="text" placeholder={tx("page.codeOrTitle")} className="w-full rounded-md border border-border bg-background px-2.5 py-1.5 text-[11px] text-foreground shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
                         </div>
                       </div>
                       <div className="flex items-center gap-4 mt-4">
                         <label className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                          <input type="checkbox" className="rounded border-border" /> Only without class times
+                          <input type="checkbox" className="rounded border-border" />{" "}{tx("page.onlyWithoutClassTimes")}
                         </label>
                         <label className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                          <input type="checkbox" className="rounded border-border" /> Only teacher TBA
+                          <input type="checkbox" className="rounded border-border" />{" "}{tx("page.onlyTeacherTba")}
                         </label>
                         <button className="ml-auto flex items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-[12px] font-bold text-primary-foreground shadow-sm">
-                          <Plus className="h-3.5 w-3.5" /> New section
+                          <Plus className="h-3.5 w-3.5" />{" "}{tx("page.newSection")}
                         </button>
                       </div>
                     </div>
@@ -287,9 +293,11 @@ export default function UniversityClassSchedulePage() {
                   <div className="absolute top-[200px] bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent backdrop-blur-[3px] flex flex-col items-center justify-end pb-12">
                     <div className="pointer-events-auto flex w-full flex-col items-center px-4">
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/80 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
-                        Preview mode. Explore the full scheduling engine.
+                        {tx("page.previewModeExploreTheFullScheduling")}
                       </p>
-                      <LiveDemoButton />
+                      <button className="btn-gradient rounded-lg px-8 py-2.5 text-[13px] font-bold shadow-xl transition-transform hover:-translate-y-0.5">
+                        {tx("page.bookALiveDemo")}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -307,15 +315,15 @@ export default function UniversityClassSchedulePage() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                Smart scheduling<br />for complex<br />campuses
+                {tx("page.smartScheduling")}<br />{tx("page.forComplex")}<br />{tx("page.campuses")}
               </h2>
               <p className="mt-5 max-w-[400px] text-[14px] leading-7 text-muted-foreground">
-                Manual timetabling is a recipe for disaster. The Adon ERP scheduling engine handles thousands of data points to create a flawless academic week.
+                {tx("page.manualTimetablingIsARecipeFor")}
               </p>
             </div>
             
             <div className="space-y-8">
-              {featureQuestions.map((item, i) => (
+              {featureQuestions(tx).map((item, i) => (
                 <div key={i} className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[200px_1fr]">
                   <div>
                     <p className="text-[13px] font-bold text-primary">{item.title}</p>
@@ -339,10 +347,10 @@ export default function UniversityClassSchedulePage() {
         <div className="mx-auto max-w-[1300px] px-5 sm:px-8">
           <div className="mb-10">
             <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-              Optimized for the<br />local campus reality
+              {tx("page.optimizedForThe")}<br />{tx("page.localCampusReality")}
             </h2>
             <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-muted-foreground">
-              We know that university scheduling isn't just about time. It's about space, resources, and the physical limits of your campus. Adon ERP is built to respect those limits.
+              {tx("page.weKnowThatUniversitySchedulingIsn")}
             </p>
           </div>
 
@@ -352,22 +360,22 @@ export default function UniversityClassSchedulePage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <FileCheck2 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Room Capacity Matching</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">The system prevents you from assigning a 100-student section to a 30-seat classroom. Capacity rules are enforced automatically.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.roomCapacityMatching")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.theSystemPreventsYouFromAssigning")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <WalletCards className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Room Utilization Metrics</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">See exactly how many room-hours your campus is consuming per week. Use this data to decide if you need to build more classrooms or consolidate.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.roomUtilizationMetrics")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.seeExactlyHowManyRoomHours")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <School className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Lab & Theory Pairing</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">The system understands that a physics lab requires a corresponding theory class. It automatically links them, ensuring students don't face schedule clashes.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.labTheoryPairing")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.theSystemUnderstandsThatAPhysics")}</p>
               </div>
             </div>
 
@@ -376,35 +384,35 @@ export default function UniversityClassSchedulePage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <BookOpenCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Cohort-Based Allocation</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Schedule for an entire intake group at once. The system guarantees that every student in that cohort has a free slot for the assigned section.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.cohortBasedAllocation")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.scheduleForAnEntireIntakeGroup")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Layers3 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Faculty Load Balancing</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">The 'Faculty load' tab visualizes teaching distribution. Identify which teachers are overloaded and which have room to take on more sections.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.facultyLoadBalancing")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.theFacultyLoadTabVisualizesTeaching")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <CalendarDays className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Visual Timetable Grid</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Switch to the 'Timetable' tab to see a visual representation of the week. Instantly spot free periods and potential bottlenecks in the schedule.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.visualTimetableGrid")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.switchToTheTimetableTabTo")}</p>
               </div>
             </div>
 
             {/* Timeline Box */}
             <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-sm">
-              <h3 className="mb-6 text-[15px] font-bold text-foreground">A day for the scheduling team</h3>
+              <h3 className="mb-6 text-[15px] font-bold text-foreground">{tx("page.aDayForTheSchedulingTeam")}</h3>
               <div className="relative border-l-2 border-muted ml-3 space-y-6">
                 {[
-                  { time: "9:00 am", text: "The team reviews the 'Faculty load' tab and realizes Dr. Rahman is assigned to too many morning classes. They begin reallocating." },
-                  { time: "10:30 am", text: "A new section for 'Advanced Physics' is needed. The team uses 'New section' to create it, assigning a room and a time slot." },
-                  { time: "1:00 pm", text: "A conflict alert pops up. The team realizes a lab was booked in a room already reserved for a seminar. They choose an alternative room." },
-                  { time: "3:00 pm", text: "The scheduling team filters by 'Only teacher TBA' to find classes that still need a faculty member assigned. They fill the gaps." },
-                  { time: "5:00 pm", text: "The Spring 2027 timetable is finalized. The team publishes it, and students can now view their exact schedule in their portals." }
+                  { time: tx("page.n900Am"), text: tx("page.theTeamReviewsTheFacultyLoad") },
+                  { time: tx("page.n1030Am"), text: tx("page.aNewSectionForAdvancedPhysics") },
+                  { time: tx("page.n100Pm"), text: tx("page.aConflictAlertPopsUpThe") },
+                  { time: tx("page.n300Pm"), text: tx("page.theSchedulingTeamFiltersByOnly") },
+                  { time: tx("page.n500Pm"), text: tx("page.theSpring2027TimetableIsFinalized") }
                 ].map((item, i) => (
                   <div key={i} className="relative pl-6">
                     <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-card bg-primary ring-4 ring-primary/10" />
@@ -424,11 +432,11 @@ export default function UniversityClassSchedulePage() {
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                Questions about<br />scheduling<br />and timetables
+                {tx("page.questionsAbout")}<br />{tx("page.scheduling")}<br />{tx("page.andTimetables")}
               </h2>
             </div>
             <div className="border-t border-border">
-              {faqs.map((faq, i) => (
+              {faqs(tx).map((faq, i) => (
                 <details key={i} className="group border-b border-border py-5">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[14px] font-bold text-foreground marker:hidden [&::-webkit-details-marker]:hidden">
                     {faq.q}
@@ -455,15 +463,17 @@ export default function UniversityClassSchedulePage() {
             
             <div className="relative mx-auto max-w-[700px]">
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,3.2rem)] leading-[1.1] tracking-[-0.04em]">
-                Ready to optimize<br />your campus timetable?
+                {tx("page.readyToOptimize")}<br />{tx("page.yourCampusTimetable")}
               </h2>
               <p className="mx-auto mt-5 max-w-[500px] text-[15px] leading-6 text-secondary-foreground/70">
-                Get a personalized walkthrough of the Scheduling module. We'll show you how to eliminate conflicts and maximize room usage.
+                {tx("page.getAPersonalizedWalkthroughOfThe")}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                <LiveDemoButton />
+                <button className="rounded-lg bg-card px-6 py-3 text-[13px] font-bold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-muted shadow-lg">
+                  {tx("page.scheduleAWalkthrough")}
+                </button>
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
-                  Browse All Modules
+                  {tx("page.browseAllModules")}
                 </button>
               </div>
             </div>

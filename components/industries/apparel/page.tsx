@@ -26,14 +26,18 @@ import {
 import ApparelHero from "./heroes";
 import ApparelDemo, { ApparelStory } from "./workspaces";
 import { Badge, Metric, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { type TFn } from "@/lib/i18n/t-types";
 export async function apparelMetadata(slug: ApparelSlug): Promise<Metadata> {
+  const t = await getTranslations("pages.industriesApp");
   return {
-    title: `${pages[slug].title} | Garments & Textile Industries | Adon ERP`,
-    description: pages[slug].description,
+    title: `${pages(t)[slug].title} | Garments & Textile Industries | Adon ERP`,
+    description: pages(t)[slug].description,
     alternates: await getLocaleAlternates(`/industries/${slug}`),
   };
 }
-function canvasData(slug: ApparelSlug): {
+function canvasData(slug: ApparelSlug, t: TFn): {
   stats: [string, string][];
   columns: string[];
   rows: ReactNode[][];
@@ -45,21 +49,21 @@ function canvasData(slug: ApparelSlug): {
     );
     return {
       stats: [
-        ["Example order pieces", "3,000"],
-        ["Example sizes", "4"],
-        ["Ratio units", "1 : 2 : 2 : 1"],
+        [t("apparel.page.exampleOrderPieces"), "3,000"],
+        [t("apparel.page.exampleSizes"), "4"],
+        [t("apparel.page.ratioUnits"), "1 : 2 : 2 : 1"],
       ],
       columns: [
-        "Example size",
-        "Ratio units",
-        "Allocated pieces",
-        "Record context",
+        t("apparel.page.exampleSize"),
+        t("apparel.page.ratioUnits"),
+        t("apparel.page.allocatedPieces"),
+        t("apparel.page.recordContext"),
       ],
       rows: sizes.map((row, i) => [
         row.label,
         row.ratio,
         num(pieces[i]),
-        "Local breakdown · not a cutting plan",
+        t("apparel.page.localBreakdownNotACuttingPlan"),
       ]),
     };
   }
@@ -67,16 +71,16 @@ function canvasData(slug: ApparelSlug): {
     const results = trimRequirements(1000, 2.5, trims);
     return {
       stats: [
-        ["Example order pieces", "1,000"],
-        ["Entered extra allowance", "2.5%"],
-        ["Example accessory lines", "4"],
+        [t("apparel.page.exampleOrderPieces"), "1,000"],
+        [t("apparel.page.enteredExtraAllowance"), "2.5%"],
+        [t("apparel.page.exampleAccessoryLines"), "4"],
       ],
       columns: [
-        "Example item",
-        "Count / garment",
-        "Example stock · pcs",
-        "Required · pcs",
-        "Short · pcs",
+        t("apparel.page.exampleItem"),
+        t("apparel.page.countGarment"),
+        t("apparel.page.exampleStockPcs"),
+        t("apparel.page.requiredPcs"),
+        t("apparel.page.shortPcs"),
       ],
       rows: trims.map((row, i) => [
         row.name,
@@ -93,31 +97,31 @@ function canvasData(slug: ApparelSlug): {
       quantity: 10000,
       selling: 8.5,
       buying: 7.2,
-    });
+    }, t);
     return {
       stats: [
-        ["Example trading sales", money(trade.revenue)],
-        ["Example purchase cost", money(trade.cost!)],
-        ["Difference before other costs", money(trade.contribution!)],
+        [t("apparel.page.exampleTradingSales"), money(trade.revenue)],
+        [t("apparel.page.examplePurchaseCost"), money(trade.cost!)],
+        [t("apparel.page.differenceBeforeOtherCosts"), money(trade.contribution!)],
       ],
       columns: [
-        "Separate model",
-        "Example basis",
-        "Example gross amount",
-        "Meaning",
+        t("apparel.page.separateModel"),
+        t("apparel.page.exampleBasis"),
+        t("apparel.page.exampleGrossAmount"),
+        t("apparel.page.meaning"),
       ],
       rows: [
         [
-          "Margin trading",
-          "10,000 pieces × USD 8.50",
+          t("apparel.page.marginTrading"),
+          t("apparel.page.n10000PiecesUsd850"),
           money(trade.revenue),
-          "Selling value, before purchase and other costs",
+          t("apparel.page.sellingValueBeforePurchaseAndOther"),
         ],
         [
-          "Commission fee",
-          "10,000 pieces × USD 0.35",
+          t("apparel.page.commissionFee"),
+          t("apparel.page.n10000PiecesUsd035"),
           money(3500),
-          "Gross fees only · operating costs unknown",
+          t("apparel.page.grossFeesOnlyOperatingCostsUnknown"),
         ],
       ],
     };
@@ -128,37 +132,38 @@ function canvasData(slug: ApparelSlug): {
   );
   return {
     stats: [
-      ["Example cutting date", dateLabel(examplePcd)],
-      ["Example milestones", "4"],
-      ["Calendar basis", "Calendar days"],
+      [t("apparel.page.exampleCuttingDate"), dateLabel(examplePcd)],
+      [t("apparel.page.exampleMilestones"), "4"],
+      [t("apparel.page.calendarBasis"), t("apparel.page.calendarDays")],
     ],
     columns: [
-      "Example milestone",
-      "Days before PCD",
-      "Calculated date",
-      "Record context",
+      t("apparel.page.exampleMilestone"),
+      t("apparel.page.daysBeforePcd"),
+      t("apparel.page.calculatedDate"),
+      t("apparel.page.recordContext"),
     ],
     rows: milestones.map((row, i) => [
       row.name,
       row.days,
       dateLabel(dates[i]),
-      "Local assumption · not a saved TNA plan",
+      t("apparel.page.localAssumptionNotASavedTna"),
     ]),
   };
 }
 function ProductCanvas({ slug }: { slug: ApparelSlug }) {
-  const evidence = canvasData(slug);
+  const t = useTranslations("pages.industriesApp");
+  const evidence = canvasData(slug, t);
   return (
     <div className={css.productCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          {t("apparel.page.eden")}<span>{t("apparel.page.erp")}</span>
         </b>
-        <span>/ {pages[slug].title} / Concept canvas</span>
-        <Badge>Illustrative records · no live connection</Badge>
+        <span>/ {pages(t)[slug].title}{" "}{t("apparel.page.conceptCanvas")}</span>
+        <Badge>{t("apparel.page.illustrativeRecordsNoLiveConnection")}</Badge>
       </header>
       <div className={css.canvasBody}>
-        <h3>{pages[slug].demoTitle}</h3>
+        <h3>{pages(t)[slug].demoTitle}</h3>
         <dl className={css.canvasMetrics}>
           {evidence.stats.map(([label, value]) => (
             <Metric key={label} label={label} value={value} />
@@ -168,12 +173,11 @@ function ProductCanvas({ slug }: { slug: ApparelSlug }) {
           className={css.tableScroll}
           tabIndex={0}
           role="region"
-          aria-label={`${pages[slug].title} illustrative records, scroll horizontally`}
+          aria-label={`${pages(t)[slug].title} illustrative records, scroll horizontally`}
         >
           <table>
             <caption className={css.srOnly}>
-              {pages[slug].title} static illustrative records based on the
-              initial local example
+              {pages(t)[slug].title}{" "}{t("apparel.page.staticIllustrativeRecordsBasedOnThe")}
             </caption>
             <thead>
               <tr>
@@ -196,22 +200,21 @@ function ProductCanvas({ slug }: { slug: ApparelSlug }) {
           </table>
         </div>
         <p className={css.canvasNote}>
-          Static concept canvas, separate from the editable example above. All
-          figures and dates are illustrative. No order, reservation, purchase
-          request, invoice or TNA milestone is created.
+          {t("apparel.page.staticConceptCanvasSeparateFromThe")}
         </p>
       </div>
     </div>
   );
 }
 export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   const related = [
-    { title: "Textile", href: "/industries/manufacturing/textile" },
+    { title: t("apparel.page.textile"), href: "/industries/manufacturing/textile" },
     ...apparelSlugs
       .filter((item) => item !== slug)
       .map((item) => ({
-        title: pages[item].title,
+        title: pages(t)[item].title,
         href: `/industries/${item}`,
       })),
   ];
@@ -223,12 +226,12 @@ export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
       data-apparel-industry={slug}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={t("apparel.page.breadcrumb")}>
+          <Link href="/">{t("apparel.page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{t("apparel.page.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <span>Garments & Textile</span>
+          <span>{t("apparel.page.garmentsTextile")}</span>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -240,24 +243,23 @@ export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>THE SUPPORTING PRODUCT CONVERSATION</p>
-              <h2>Follow the relevant product detail.</h2>
+              <p className={css.eyebrow}>{t("apparel.page.theSupportingProductConversation")}</p>
+              <h2>{t("apparel.page.followTheRelevantProductDetail")}</h2>
               <p>
-                Explore existing ERP presentations, then discuss your own order,
-                material and commercial process with an advisor.
+                {t("apparel.page.exploreExistingErpPresentationsThenDiscu")}
               </p>
             </div>
           </div>
           <div className={css.moduleGrid}>
             {p.tools.map((tool, i) => (
               <Link href={tool.href} key={tool.href}>
-                <span>0{i + 1} / PRODUCT PREVIEW</span>
+                <span>0{i + 1}{" "}{t("apparel.page.productPreview")}</span>
                 <h3>
                   {tool.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{tool.body}</p>
-                <small>Explore the presentation</small>
+                <small>{t("apparel.page.exploreThePresentation")}</small>
               </Link>
             ))}
           </div>
@@ -267,18 +269,17 @@ export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>SEE THE RECORD AND THE CONTEXT</p>
-              <h2>A closer look at the experience.</h2>
+              <p className={css.eyebrow}>{t("apparel.page.seeTheRecordAndTheContext")}</p>
+              <h2>{t("apparel.page.aCloserLookAtTheExperience")}</h2>
               <p>
-                Illustrative records with the complete product context available
-                in a guided advisor conversation.
+                {t("apparel.page.illustrativeRecordsWithTheCompleteProduc")}
               </p>
             </div>
             <Badge />
           </div>
           <DemoPreview
             title={`${p.title} workflow`}
-            description="Explore your garment, material, factory and order-follow-up questions with an advisor in a guided product conversation."
+            description={t("apparel.page.exploreYourGarmentMaterialFactoryAnd")}
           >
             <ProductCanvas slug={slug} />
           </DemoPreview>
@@ -287,8 +288,8 @@ export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
       <section className={css.faqSection}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Understand the example.</h2>
+            <p className={css.eyebrow}>{t("apparel.page.aFewUsefulDetails")}</p>
+            <h2>{t("apparel.page.understandTheExample")}</h2>
           </div>
           <div className={css.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -308,15 +309,15 @@ export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
           <div className={css.sectionHeading}>
             <div>
               <p className={css.eyebrow}>
-                THE WIDER GARMENTS & TEXTILE JOURNEY
+                {t("apparel.page.theWiderGarmentsTextileJourney")}
               </p>
-              <h2>Explore the next part of the process.</h2>
+              <h2>{t("apparel.page.exploreTheNextPartOfThe")}</h2>
             </div>
           </div>
           <div className={css.relatedGrid}>
             {related.map((item) => (
               <Link href={item.href} key={item.href}>
-                <span>INDUSTRY / EXPLORE</span>
+                <span>{t("apparel.page.industryExplore")}</span>
                 <h3>
                   {item.title}
                   <ArrowRight size={17} aria-hidden="true" />
@@ -329,11 +330,10 @@ export function ApparelIndustryPage({ slug }: { slug: ApparelSlug }) {
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR OPERATION. YOUR WORKFLOW.</p>
-            <h2>Bring your order’s story to the conversation.</h2>
+            <p className={css.eyebrow}>{t("apparel.page.yourOperationYourWorkflow")}</p>
+            <h2>{t("apparel.page.bringYourOrderSStoryTo")}</h2>
             <p>
-              Discuss your style, factory, material and commercial-record
-              questions with an advisor.
+              {t("apparel.page.discussYourStyleFactoryMaterialAnd")}
             </p>
           </div>
           <LiveDemoButton />

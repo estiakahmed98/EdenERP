@@ -1,3 +1,4 @@
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 export const professionalSlugs = [
   "real-estate-agency",
   "architecture-firm",
@@ -27,446 +28,446 @@ const tool = (title: string, href: string, body: string) => ({
   href,
   body,
 });
-const invoices = tool(
-  "Customer invoices",
+const invoices = memoT((t: TFn) => (tool(
+  t("professional.data.customerInvoices"),
   "/apps/accounting/invoices-ar",
-  "Explore the existing billing and receivables presentation.",
-);
-const clients = tool(
-  "Customer records",
+  t("professional.data.exploreTheExistingBillingAndReceivables"),
+)));
+const clients = memoT((t: TFn) => (tool(
+  t("professional.data.customerRecords"),
   "/apps/accounting/customers",
-  "Look at the customer-record presentation.",
-);
-const projects = tool(
-  "Projects",
+  t("professional.data.lookAtTheCustomerRecordPresentation"),
+)));
+const projects = memoT((t: TFn) => (tool(
+  t("professional.data.projects"),
   "/apps/project-accounting/projects",
-  "Explore project identity, context and related records.",
-);
-const documents = tool(
-  "Project documents",
+  t("professional.data.exploreProjectIdentityContextAndRelated"),
+)));
+const documents = memoT((t: TFn) => (tool(
+  t("professional.data.projectDocuments"),
   "/apps/project-accounting/documents",
-  "Look at the existing project-document presentation.",
-);
-export const pages: Record<ProfessionalSlug, Content> = {
+  t("professional.data.lookAtTheExistingProjectDocument"),
+)));
+export const pages = memoT((t: TFn): Record<ProfessionalSlug, Content> => ({
   "real-estate-agency": {
-    title: "Real Estate Agency",
+    title: t("professional.data.realEstateAgency"),
     group: "realestate",
-    eyebrow: "THE PROPERTY AND THE CONVERSATION",
-    headline: "Every address has a story.",
-    accent: "Keep the whole picture close.",
+    eyebrow: t("professional.data.thePropertyAndTheConversation"),
+    headline: t("professional.data.everyAddressHasAStory"),
+    accent: t("professional.data.keepTheWholePictureClose"),
     description:
-      "Bring property detail, buyer conversations and the records behind each handoff into one considered view. A fresh perspective on the business behind the address.",
-    demoTitle: "Explore a fictional property portfolio.",
+      t("professional.data.bringPropertyDetailBuyerConversationsAnd"),
+    demoTitle: t("professional.data.exploreAFictionalPropertyPortfolio"),
     demoDescription:
-      "Choose a property type and enter a price limit to filter three illustrative records. These are not real listings or availability promises.",
+      t("professional.data.chooseAPropertyTypeAndEnter"),
     steps: [
-      ["The property", "Keep type, area and the item’s identity together."],
+      [t("professional.data.theProperty"), t("professional.data.keepTypeAreaAndTheItem")],
       [
-        "The conversation",
-        "Connect the property detail with the buyer’s questions.",
+        t("professional.data.theConversation"),
+        t("professional.data.connectThePropertyDetailWithThe"),
       ],
       [
-        "The handoff",
-        "Review existing booking, unit and customer presentations.",
+        t("professional.data.theHandoff"),
+        t("professional.data.reviewExistingBookingUnitAndCustomer"),
       ],
     ],
     tools: [
       tool(
-        "Properties",
+        t("professional.data.properties"),
         "/apps/real-estate/properties",
-        "Explore the existing property presentation.",
+        t("professional.data.exploreTheExistingPropertyPresentation"),
       ),
       tool(
-        "Units",
+        t("professional.data.units"),
         "/apps/real-estate/units",
-        "Look at individual unit records and their context.",
+        t("professional.data.lookAtIndividualUnitRecordsAnd"),
       ),
       tool(
-        "Booking records",
+        t("professional.data.bookingRecords"),
         "/apps/real-estate/bookings",
-        "Explore the product presentation for booking records.",
+        t("professional.data.exploreTheProductPresentationForBooking"),
       ),
-      clients,
+      clients(t),
     ],
     faqs: [
       [
-        "Are these actual properties?",
-        "No. All names, areas, identifiers and prices are fictional. The example does not show live availability or make an offer.",
+        t("professional.data.areTheseActualProperties"),
+        t("professional.data.noAllNamesAreasIdentifiersAnd"),
       ],
       [
-        "What does the price limit do?",
-        "It filters the illustrative listed amounts only, together with the chosen property type. It is not an affordability assessment or investment recommendation.",
+        t("professional.data.whatDoesThePriceLimitDo"),
+        t("professional.data.itFiltersTheIllustrativeListedAmounts"),
       ],
       [
-        "Will selecting a property create a booking?",
-        "No. This portfolio is an exploratory local example. Discuss your actual property and buyer workflow with an advisor.",
+        t("professional.data.willSelectingAPropertyCreateA"),
+        t("professional.data.noThisPortfolioIsAnExploratory"),
       ],
     ],
   },
   "architecture-firm": {
-    title: "Architecture Firm",
+    title: t("professional.data.architectureFirm"),
     group: "realestate",
-    eyebrow: "DESIGN INTENT. PROJECT CONTEXT.",
-    headline: "Space for better ideas.",
-    accent: "Structure for the work behind them.",
+    eyebrow: t("professional.data.designIntentProjectContext"),
+    headline: t("professional.data.spaceForBetterIdeas"),
+    accent: t("professional.data.structureForTheWorkBehindThem"),
     description:
-      "Give the brief, the design phases and the effort behind the drawings a clear place. A composed operational perspective for the architecture practice.",
-    demoTitle: "Explore a small phase-effort estimate.",
+      t("professional.data.giveTheBriefTheDesignPhases"),
+    demoTitle: t("professional.data.exploreASmallPhaseEffortEstimate"),
     demoDescription:
-      "Enter whole hours for three fictional design phases and an hourly fee in BDT. The arithmetic stays local and does not save a quotation.",
+      t("professional.data.enterWholeHoursForThreeFictional"),
     steps: [
       [
-        "The brief",
-        "Give the scope and project identity a clear starting point.",
+        t("professional.data.theBrief"),
+        t("professional.data.giveTheScopeAndProjectIdentity"),
       ],
-      ["The phases", "Keep the effort assumptions visible by design phase."],
+      [t("professional.data.thePhases"), t("professional.data.keepTheEffortAssumptionsVisibleBy")],
       [
-        "The record",
-        "Explore project, schedule, document and billing presentations.",
+        t("professional.data.theRecord"),
+        t("professional.data.exploreProjectScheduleDocumentAndBilling"),
       ],
     ],
     tools: [
-      projects,
+      projects(t),
       tool(
-        "Project schedule",
+        t("professional.data.projectSchedule"),
         "/apps/project-accounting/schedule",
-        "Explore the scheduling presentation.",
+        t("professional.data.exploreTheSchedulingPresentation"),
       ),
-      documents,
-      invoices,
+      documents(t),
+      invoices(t),
     ],
     faqs: [
       [
-        "Is the drawing a scale plan?",
-        "No. It is a conceptual illustration, separate from any technical drawing or building specification.",
+        t("professional.data.isTheDrawingAScalePlan"),
+        t("professional.data.noItIsAConceptualIllustration"),
       ],
       [
-        "Are the hours and fee recommended rates?",
-        "No. They are editable fictional assumptions. The example multiplies whole hours by the entered hourly fee, rounded to cents.",
+        t("professional.data.areTheHoursAndFeeRecommended"),
+        t("professional.data.noTheyAreEditableFictionalAssumptions"),
       ],
       [
-        "Does this generate a proposal?",
-        "No. It calculates a local amount only, without scope approval, taxes or a saved quotation.",
+        t("professional.data.doesThisGenerateAProposal"),
+        t("professional.data.noItCalculatesALocalAmount"),
       ],
     ],
   },
   construction: {
-    title: "Construction",
+    title: t("professional.data.construction"),
     group: "realestate",
-    eyebrow: "THE WORK ON SITE. THE DETAIL IN THE RECORD.",
-    headline: "Build with a clearer picture.",
-    accent: "From the site to the cost line.",
+    eyebrow: t("professional.data.theWorkOnSiteTheDetail"),
+    headline: t("professional.data.buildWithAClearerPicture"),
+    accent: t("professional.data.fromTheSiteToTheCost"),
     description:
-      "Bring work items, quantities and project-cost conversations closer together. A precise, modern perspective on the records behind progress on site.",
-    demoTitle: "Read the numbers behind a small work plan.",
+      t("professional.data.bringWorkItemsQuantitiesAndProject"),
+    demoTitle: t("professional.data.readTheNumbersBehindASmall"),
     demoDescription:
-      "Adjust fictional whole-unit quantities, rates and a budget. This is arithmetic for discussion, not an engineering estimate or procurement instruction.",
+      t("professional.data.adjustFictionalWholeUnitQuantitiesRates"),
     steps: [
       [
-        "The work item",
-        "Keep quantity, unit and the item description distinct.",
+        t("professional.data.theWorkItem"),
+        t("professional.data.keepQuantityUnitAndTheItem"),
       ],
       [
-        "The cost line",
-        "Calculate entered quantities and rates transparently.",
+        t("professional.data.theCostLine"),
+        t("professional.data.calculateEnteredQuantitiesAndRatesTransp"),
       ],
       [
-        "The project view",
-        "Explore existing BOQ, budget and job-cost presentations.",
+        t("professional.data.theProjectView"),
+        t("professional.data.exploreExistingBoqBudgetAndJob"),
       ],
     ],
     tools: [
       tool(
-        "Bill of quantities",
+        t("professional.data.billOfQuantities"),
         "/apps/project-accounting/boq",
-        "Look at the existing BOQ presentation.",
+        t("professional.data.lookAtTheExistingBoqPresentation"),
       ),
       tool(
-        "Project budgets",
+        t("professional.data.projectBudgets"),
         "/apps/project-accounting/budgets",
-        "Explore the project-budget presentation.",
+        t("professional.data.exploreTheProjectBudgetPresentation"),
       ),
       tool(
-        "Job cost",
+        t("professional.data.jobCost"),
         "/apps/project-accounting/job-cost",
-        "Review the project-cost presentation.",
+        t("professional.data.reviewTheProjectCostPresentation"),
       ),
-      projects,
+      projects(t),
     ],
     faqs: [
       [
-        "Can this be used as a construction estimate?",
-        "The example is fictional arithmetic only. It does not evaluate specifications, productivity, wastage, site conditions or engineering requirements.",
+        t("professional.data.canThisBeUsedAsA"),
+        t("professional.data.theExampleIsFictionalArithmeticOnly"),
       ],
       [
-        "What does the budget difference mean?",
-        "It compares the entered budget with the sum of the displayed line amounts. It does not represent approved spending or actual project performance.",
+        t("professional.data.whatDoesTheBudgetDifferenceMean"),
+        t("professional.data.itComparesTheEnteredBudgetWith"),
       ],
       [
-        "Does changing a line order materials?",
-        "No. The example creates no purchase, stock movement, contract or project record.",
+        t("professional.data.doesChangingALineOrderMaterials"),
+        t("professional.data.noTheExampleCreatesNoPurchase"),
       ],
     ],
   },
   "accounting-firm": {
-    title: "Accounting Firm",
+    title: t("professional.data.accountingFirm"),
     group: "consulting",
-    eyebrow: "A CONSIDERED VIEW OF CLIENT WORK",
-    headline: "Clear records.",
-    accent: "A calmer client review.",
+    eyebrow: t("professional.data.aConsideredViewOfClientWork"),
+    headline: t("professional.data.clearRecords"),
+    accent: t("professional.data.aCalmerClientReview"),
     description:
-      "Give the work behind the numbers a readable path. Bring client context, review tasks and the next handoff into a composed practice-management conversation.",
-    demoTitle: "Work through a small review checklist.",
+      t("professional.data.giveTheWorkBehindTheNumbers"),
+    demoTitle: t("professional.data.workThroughASmallReviewChecklist"),
     demoDescription:
-      "Manually mark four fictional engagement tasks. The progress reflects only your selections, not an automated accounting or compliance review.",
+      t("professional.data.manuallyMarkFourFictionalEngagementTasks"),
     steps: [
-      ["The engagement", "Start with client and period context."],
-      ["The review", "Keep manually tracked tasks and open questions visible."],
+      [t("professional.data.theEngagement"), t("professional.data.startWithClientAndPeriodContext")],
+      [t("professional.data.theReview"), t("professional.data.keepManuallyTrackedTasksAndOpen")],
       [
-        "The handoff",
-        "Explore the accounting records that support the conversation.",
+        t("professional.data.theHandoff"),
+        t("professional.data.exploreTheAccountingRecordsThatSupport"),
       ],
     ],
     tools: [
       tool(
-        "Accounting hub",
+        t("professional.data.accountingHub"),
         "/apps/accounting/accounting-hub",
-        "Explore the accounting overview presentation.",
+        t("professional.data.exploreTheAccountingOverviewPresentation"),
       ),
       tool(
-        "Ledgers",
+        t("professional.data.ledgers"),
         "/apps/accounting/ledgers",
-        "Look at the ledger presentation.",
+        t("professional.data.lookAtTheLedgerPresentation"),
       ),
       tool(
-        "Bank reconciliation",
+        t("professional.data.bankReconciliation"),
         "/apps/accounting/bank-reconciliation",
-        "Explore the bank-reconciliation presentation.",
+        t("professional.data.exploreTheBankReconciliationPresentation"),
       ),
       tool(
-        "Financial reports",
+        t("professional.data.financialReports"),
         "/apps/accounting/financial-reports",
-        "Review the reporting presentation.",
+        t("professional.data.reviewTheReportingPresentation"),
       ),
     ],
     faqs: [
       [
-        "Does marking a task review real accounts?",
-        "No. These are manually selected local example tasks. No ledger, document or accounting result is inspected.",
+        t("professional.data.doesMarkingATaskReviewReal"),
+        t("professional.data.noTheseAreManuallySelectedLocal"),
       ],
       [
-        "Does 100% mean the engagement is complete?",
-        "It means all four example checkboxes are selected. It is not a professional review conclusion or a compliance decision.",
+        t("professional.data.does100MeanTheEngagementIs"),
+        t("professional.data.itMeansAllFourExampleCheckboxes"),
       ],
       [
-        "Are any client records saved?",
-        "No. The engagement identifier and tasks are fictional, and changes stay in this page’s local state.",
+        t("professional.data.areAnyClientRecordsSaved"),
+        t("professional.data.noTheEngagementIdentifierAndTasks"),
       ],
     ],
   },
   "marketing-agency": {
-    title: "Marketing Agency",
+    title: t("professional.data.marketingAgency"),
     group: "consulting",
-    eyebrow: "CREATIVE THINKING. VISIBLE ASSUMPTIONS.",
-    headline: "Big ideas need room.",
-    accent: "Good work needs a clear plan.",
+    eyebrow: t("professional.data.creativeThinkingVisibleAssumptions"),
+    headline: t("professional.data.bigIdeasNeedRoom"),
+    accent: t("professional.data.goodWorkNeedsAClearPlan"),
     description:
-      "Bring the campaign brief, channel amounts and client conversation into a creative workspace with a considered operational foundation.",
-    demoTitle: "Give a campaign budget a clear shape.",
+      t("professional.data.bringTheCampaignBriefChannelAmounts"),
+    demoTitle: t("professional.data.giveACampaignBudgetAClear"),
     demoDescription:
-      "Edit three fictional channel amounts and compare their total with an entered budget. The chart shows allocation only, with no performance prediction.",
+      t("professional.data.editThreeFictionalChannelAmountsAnd"),
     steps: [
-      ["The brief", "Keep the client and campaign context close to the work."],
+      [t("professional.data.theBrief"), t("professional.data.keepTheClientAndCampaignContext")],
       [
-        "The allocation",
-        "Make entered channel amounts and the remaining budget visible.",
+        t("professional.data.theAllocation"),
+        t("professional.data.makeEnteredChannelAmountsAndThe"),
       ],
-      ["The delivery", "Explore project, customer and invoice presentations."],
+      [t("professional.data.theDelivery"), t("professional.data.exploreProjectCustomerAndInvoicePresenta")],
     ],
     tools: [
-      projects,
-      clients,
+      projects(t),
+      clients(t),
       tool(
-        "Budget lines",
+        t("professional.data.budgetLines"),
         "/apps/budget-management/lines",
-        "Explore the existing budget-line presentation.",
+        t("professional.data.exploreTheExistingBudgetLinePresentation"),
       ),
-      invoices,
+      invoices(t),
     ],
     faqs: [
       [
-        "Does the chart predict campaign results?",
-        "No. It visualises entered amounts only, without impressions, conversions, ROI or performance forecasts.",
+        t("professional.data.doesTheChartPredictCampaignResults"),
+        t("professional.data.noItVisualisesEnteredAmountsOnly"),
       ],
       [
-        "What happens if allocations exceed the budget?",
-        "The example displays the amount over budget. It does not approve or place any advertising spend.",
+        t("professional.data.whatHappensIfAllocationsExceedThe"),
+        t("professional.data.theExampleDisplaysTheAmountOver"),
       ],
       [
-        "Does changing a channel connect to an ad platform?",
-        "No. All values are fictional and local. There is no advertising-platform integration or payment.",
+        t("professional.data.doesChangingAChannelConnectTo"),
+        t("professional.data.noAllValuesAreFictionalAnd"),
       ],
     ],
   },
   "talent-acquisition": {
-    title: "Talent Acquisition",
+    title: t("professional.data.talentAcquisition"),
     group: "consulting",
-    eyebrow: "A CLEARER PATH THROUGH RECRUITMENT",
-    headline: "Make room for the next step.",
-    accent: "Keep the candidate journey clear.",
+    eyebrow: t("professional.data.aClearerPathThroughRecruitment"),
+    headline: t("professional.data.makeRoomForTheNextStep"),
+    accent: t("professional.data.keepTheCandidateJourneyClear"),
     description:
-      "Bring role context, candidate identifiers and explicit recruitment stages into a thoughtful, readable process. A human-centred perspective on the work behind hiring.",
-    demoTitle: "Explore an anonymous candidate journey.",
+      t("professional.data.bringRoleContextCandidateIdentifiersAnd"),
+    demoTitle: t("professional.data.exploreAnAnonymousCandidateJourney"),
     demoDescription:
-      "Change the stages of three fictional candidate IDs. This is local workflow tracking, with no ranking, assessment or hiring recommendation.",
+      t("professional.data.changeTheStagesOfThreeFictional"),
     steps: [
-      ["The role", "Keep the role and candidate identity in context."],
+      [t("professional.data.theRole"), t("professional.data.keepTheRoleAndCandidateIdentity")],
       [
-        "The conversation",
-        "Record an explicit stage rather than an inferred assessment.",
+        t("professional.data.theConversation"),
+        t("professional.data.recordAnExplicitStageRatherThan"),
       ],
       [
-        "The next step",
-        "Explore the existing recruitment and activity presentations.",
+        t("professional.data.theNextStep"),
+        t("professional.data.exploreTheExistingRecruitmentAndActivity"),
       ],
     ],
     tools: [
       tool(
-        "Recruitment",
+        t("professional.data.recruitment"),
         "/apps/human-resources/recruitment",
-        "Explore the existing recruitment presentation.",
+        t("professional.data.exploreTheExistingRecruitmentPresentatio"),
       ),
       tool(
-        "Activity tasks",
+        t("professional.data.activityTasks"),
         "/apps/sales/crm/activities/tasks",
-        "Look at the task and follow-up presentation.",
+        t("professional.data.lookAtTheTaskAndFollow"),
       ),
-      clients,
-      invoices,
+      clients(t),
+      invoices(t),
     ],
     faqs: [
       [
-        "Are these real applicants?",
-        "No. Only fictional anonymous identifiers and role labels are shown. No personal applicant information is used.",
+        t("professional.data.areTheseRealApplicants"),
+        t("professional.data.noOnlyFictionalAnonymousIdentifiersAnd"),
       ],
       [
-        "Does moving a stage evaluate a person?",
-        "No. Stages change only when you select them; there is no scoring, ranking, suitability inference or hiring recommendation.",
+        t("professional.data.doesMovingAStageEvaluateA"),
+        t("professional.data.noStagesChangeOnlyWhenYou"),
       ],
       [
-        "Are candidates contacted or saved?",
-        "No. Changes remain local and do not contact anyone or update a recruitment database.",
+        t("professional.data.areCandidatesContactedOrSaved"),
+        t("professional.data.noChangesRemainLocalAndDo"),
       ],
     ],
   },
   "audit-certification": {
-    title: "Audit & Certification",
+    title: t("professional.data.auditCertification"),
     group: "consulting",
-    eyebrow: "EVIDENCE WITH ITS CONTEXT INTACT",
-    headline: "A clearer trail of evidence.",
-    accent: "A more considered review.",
+    eyebrow: t("professional.data.evidenceWithItsContextIntact"),
+    headline: t("professional.data.aClearerTrailOfEvidence"),
+    accent: t("professional.data.aMoreConsideredReview"),
     description:
-      "Bring document identity, review state and follow-up context into a focused evidence conversation. Let the record tell a readable story, one item at a time.",
-    demoTitle: "Explore a small evidence review list.",
+      t("professional.data.bringDocumentIdentityReviewStateAnd"),
+    demoTitle: t("professional.data.exploreASmallEvidenceReviewList"),
     demoDescription:
-      "Set fictional documents to missing, provided or reviewed, then filter the list. States are manually selected examples, not a compliance or certification result.",
+      t("professional.data.setFictionalDocumentsToMissingProvided"),
     steps: [
-      ["The evidence", "Keep each document’s identity and context visible."],
+      [t("professional.data.theEvidence"), t("professional.data.keepEachDocumentSIdentityAnd")],
       [
-        "The review state",
-        "Distinguish provided material from a manually reviewed item.",
+        t("professional.data.theReviewState"),
+        t("professional.data.distinguishProvidedMaterialFromAManually"),
       ],
       [
-        "The follow-up",
-        "Explore existing document and quality-action presentations.",
+        t("professional.data.theFollowUp"),
+        t("professional.data.exploreExistingDocumentAndQualityAction"),
       ],
     ],
     tools: [
-      documents,
+      documents(t),
       tool(
-        "Quality dashboard",
+        t("professional.data.qualityDashboard"),
         "/apps/quality/quality-dashboard",
-        "Explore the existing quality overview.",
+        t("professional.data.exploreTheExistingQualityOverview"),
       ),
       tool(
-        "Non-conformance",
+        t("professional.data.nonConformance"),
         "/apps/quality/non-conformance",
-        "Look at the non-conformance presentation.",
+        t("professional.data.lookAtTheNonConformancePresentation"),
       ),
       tool(
         "CAPA",
         "/apps/quality/capa",
-        "Explore corrective and preventive action records.",
+        t("professional.data.exploreCorrectiveAndPreventiveActionReco"),
       ),
     ],
     faqs: [
       [
-        "Does Reviewed mean certified or compliant?",
-        "No. It is a manually selected state in a fictional list. The example evaluates no standard and issues no certificate.",
+        t("professional.data.doesReviewedMeanCertifiedOrCompliant"),
+        t("professional.data.noItIsAManuallySelected"),
       ],
       [
-        "Can I upload real evidence here?",
-        "This example has no upload or document-analysis feature. Discuss actual evidence handling with an advisor.",
+        t("professional.data.canIUploadRealEvidenceHere"),
+        t("professional.data.thisExampleHasNoUploadOr"),
       ],
       [
-        "Does changing a state update quality records?",
-        "No. The local list is separate from the linked quality presentations and does not create findings or actions.",
+        t("professional.data.doesChangingAStateUpdateQuality"),
+        t("professional.data.noTheLocalListIsSeparate"),
       ],
     ],
   },
   "travel-agency": {
-    title: "Travel Agency",
+    title: t("professional.data.travelAgency"),
     group: "consulting",
-    eyebrow: "THE JOURNEY AND THE DETAILS BEHIND IT",
-    headline: "A journey worth planning.",
-    accent: "The details, beautifully in view.",
+    eyebrow: t("professional.data.theJourneyAndTheDetailsBehind"),
+    headline: t("professional.data.aJourneyWorthPlanning"),
+    accent: t("professional.data.theDetailsBeautifullyInView"),
     description:
-      "Bring travellers, stay assumptions and service amounts into one considered travel conversation. A clear itinerary begins with a clear view of the details.",
-    demoTitle: "Put together an illustrative trip estimate.",
+      t("professional.data.bringTravellersStayAssumptionsAndService"),
+    demoTitle: t("professional.data.putTogetherAnIllustrativeTripEstimate"),
     demoDescription:
-      "Enter travellers, fares, room nights and a transfer amount. Calculate a local BDT estimate, without checking availability or making a booking.",
+      t("professional.data.enterTravellersFaresRoomNightsAnd"),
     steps: [
-      ["The journey", "Keep traveller count and the trip brief clear."],
+      [t("professional.data.theJourney"), t("professional.data.keepTravellerCountAndTheTrip")],
       [
-        "The assumptions",
-        "Separate per-traveller fares, room nights and transfer charges.",
+        t("professional.data.theAssumptions"),
+        t("professional.data.separatePerTravellerFaresRoomNights"),
       ],
-      ["The record", "Explore customer, quote and billing presentations."],
+      [t("professional.data.theRecord"), t("professional.data.exploreCustomerQuoteAndBillingPresentati")],
     ],
     tools: [
-      clients,
+      clients(t),
       tool(
-        "Sales quotations",
+        t("professional.data.salesQuotations"),
         "/apps/sales/crm/orders/quotes",
-        "Explore the existing quotation presentation.",
+        t("professional.data.exploreTheExistingQuotationPresentation"),
       ),
-      invoices,
+      invoices(t),
       tool(
-        "Customer receipts",
+        t("professional.data.customerReceipts"),
         "/apps/accounting/receipts",
-        "Look at the receipt presentation.",
+        t("professional.data.lookAtTheReceiptPresentation"),
       ),
     ],
     faqs: [
       [
-        "Are these actual fares or room prices?",
-        "No. All prices are entered fictional assumptions. No airline, hotel, itinerary availability or live price feed is connected.",
+        t("professional.data.areTheseActualFaresOrRoom"),
+        t("professional.data.noAllPricesAreEnteredFictional"),
       ],
       [
-        "How is the estimate calculated?",
-        "Travellers × fare per traveller, plus rooms × nights × nightly room rate, plus a single transfer amount. Taxes, fees and other services are outside this example.",
+        t("professional.data.howIsTheEstimateCalculated"),
+        t("professional.data.travellersFarePerTravellerPlusRooms"),
       ],
       [
-        "Does the example book or issue anything?",
-        "No. It creates no reservation, ticket, payment, travel document or quotation record.",
+        t("professional.data.doesTheExampleBookOrIssue"),
+        t("professional.data.noItCreatesNoReservationTicket"),
       ],
     ],
   },
-};
-export const groupLabel = (group: "realestate" | "consulting") =>
-  group === "realestate" ? "Real Estate" : "Consulting";
-export const routeFor = (slug: ProfessionalSlug) =>
-  `/industries/${pages[slug].group}/${slug}`;
+}));
+export const groupLabel = (group: "realestate" | "consulting", t: TFn) =>
+  group === "realestate" ? t("professional.data.realEstate") : t("professional.data.consulting");
+export const routeFor = (slug: ProfessionalSlug, t: TFn) =>
+  `/industries/${pages(t)[slug].group}/${slug}`;
 export const properties = [
   {
     id: "EX-P01",
@@ -500,12 +501,12 @@ export const workItems = [
   { name: "Masonry work", unit: "m²", quantity: 80, rate: 950 },
   { name: "Finish work", unit: "m²", quantity: 60, rate: 1200 },
 ] as const;
-export const reviewTasks = [
-  "Example documents received",
-  "Ledger questions noted",
-  "Reconciliation review noted",
-  "Client handoff prepared",
-];
+export const reviewTasks = memoT((t: TFn) => ([
+  t("professional.data.exampleDocumentsReceived"),
+  t("professional.data.ledgerQuestionsNoted"),
+  t("professional.data.reconciliationReviewNoted"),
+  t("professional.data.clientHandoffPrepared"),
+]));
 export const channels = [
   { name: "Search", amount: 120000 },
   { name: "Social", amount: 105000 },
@@ -513,11 +514,11 @@ export const channels = [
 ] as const;
 export const candidateStages = ["applied", "interview", "shortlist"] as const;
 export type CandidateStage = (typeof candidateStages)[number];
-export const candidateLabels: Record<CandidateStage, string> = {
-  applied: "Applied",
-  interview: "Interview",
-  shortlist: "Shortlisted",
-};
+export const candidateLabels = memoT((t: TFn): Record<CandidateStage, string> => ({
+  applied: t("professional.data.applied"),
+  interview: t("professional.data.interview"),
+  shortlist: t("professional.data.shortlisted"),
+}));
 export const candidates: { id: string; role: string; stage: CandidateStage }[] =
   [
     { id: "EX-C01", role: "Role brief A", stage: "applied" },
@@ -526,11 +527,11 @@ export const candidates: { id: string; role: string; stage: CandidateStage }[] =
   ];
 export const evidenceStates = ["missing", "provided", "reviewed"] as const;
 export type EvidenceState = (typeof evidenceStates)[number];
-export const evidenceLabels: Record<EvidenceState, string> = {
-  missing: "Missing",
-  provided: "Provided",
-  reviewed: "Reviewed",
-};
+export const evidenceLabels = memoT((t: TFn): Record<EvidenceState, string> => ({
+  missing: t("professional.data.missing"),
+  provided: t("professional.data.provided"),
+  reviewed: t("professional.data.reviewed"),
+}));
 export const evidenceRows: {
   id: string;
   name: string;

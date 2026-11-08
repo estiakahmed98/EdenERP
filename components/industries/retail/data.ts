@@ -1,3 +1,4 @@
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 export const retailSlugs = [
   "book-store",
   "clothing-store",
@@ -25,371 +26,371 @@ const tool = (title: string, href: string, body: string) => ({
   href,
   body,
 });
-const pos = tool(
-  "Point of sale",
+const pos = memoT((t: TFn) => (tool(
+  t("retail.data.pointOfSale"),
   "/apps/pos/register-till",
-  "Explore the register and checkout presentation.",
-);
-const stock = tool(
-  "Outlet stock",
+  t("retail.data.exploreTheRegisterAndCheckoutPresentatio"),
+)));
+const stock = memoT((t: TFn) => (tool(
+  t("retail.data.outletStock"),
   "/apps/pos/outlet-stock",
-  "Look at the stock and count-sheet workspace.",
-);
-const loyalty = tool(
-  "Loyalty & vouchers",
+  t("retail.data.lookAtTheStockAndCount"),
+)));
+const loyalty = memoT((t: TFn) => (tool(
+  t("retail.data.loyaltyVouchers"),
   "/apps/pos/loyalty-vouchers",
-  "Explore the customer-rewards presentation.",
-);
-const outlets = tool(
-  "Outlet dashboard",
+  t("retail.data.exploreTheCustomerRewardsPresentation"),
+)));
+const outlets = memoT((t: TFn) => (tool(
+  t("retail.data.outletDashboard"),
   "/apps/pos/outlet-dashboard",
-  "Follow the outlet reporting presentation.",
-);
-const transfers = tool(
-  "Stock transfers",
+  t("retail.data.followTheOutletReportingPresentation"),
+)));
+const transfers = memoT((t: TFn) => (tool(
+  t("retail.data.stockTransfers"),
   "/apps/pos/transfers",
-  "Explore the warehouse-to-outlet handoff.",
-);
-const products = tool(
-  "Items & products",
+  t("retail.data.exploreTheWarehouseToOutletHandoff"),
+)));
+const products = memoT((t: TFn) => (tool(
+  t("retail.data.itemsProducts"),
   "/apps/accounting/items-products",
-  "Look at item records and catalogue context.",
-);
-export const pages: Record<RetailSlug, Content> = {
+  t("retail.data.lookAtItemRecordsAndCatalogue"),
+)));
+export const pages = memoT((t: TFn): Record<RetailSlug, Content> => ({
   "book-store": {
-    title: "Book Store",
-    category: "FOR THE BUSINESS OF BOOKS",
-    headline: "A good story starts",
-    accent: "with a well-run bookstore.",
+    title: t("retail.data.bookStore"),
+    category: t("retail.data.forTheBusinessOfBooks"),
+    headline: t("retail.data.aGoodStoryStarts"),
+    accent: t("retail.data.withAWellRunBookstore"),
     description:
-      "Bring the shelf, the reader and the counter into one conversation. Explore a retail experience shaped around books and the details behind every title.",
-    demoTitle: "Build a reader’s basket.",
+      t("retail.data.bringTheShelfTheReaderAnd"),
+    demoTitle: t("retail.data.buildAReaderSBasket"),
     demoDescription:
-      "Pick from three fictional titles and adjust their quantities. See the basket update in BDT, without placing an order.",
-    story: "From a title on the shelf to a reader at the counter.",
+      t("retail.data.pickFromThreeFictionalTitlesAnd"),
+    story: t("retail.data.fromATitleOnTheShelf"),
     stages: [
       {
-        label: "The catalogue",
-        title: "Give every title a clear place.",
-        body: "Discuss how title, edition, item identity and shelf context fit into your own catalogue.",
-        points: ["Item identity", "Edition context", "Shelf and stock"],
+        label: t("retail.data.theCatalogue"),
+        title: t("retail.data.giveEveryTitleAClearPlace"),
+        body: t("retail.data.discussHowTitleEditionItemIdentity"),
+        points: [t("retail.data.itemIdentity"), t("retail.data.editionContext"), t("retail.data.shelfAndStock")],
       },
       {
-        label: "The counter",
-        title: "Keep the basket easy to read.",
-        body: "Use the local book basket to explore quantities and prices, then open the register presentation for the wider checkout conversation.",
-        points: ["Selected titles", "Piece quantities", "Clear basket total"],
+        label: t("retail.data.theCounter"),
+        title: t("retail.data.keepTheBasketEasyToRead"),
+        body: t("retail.data.useTheLocalBookBasketTo"),
+        points: [t("retail.data.selectedTitles"), t("retail.data.pieceQuantities"), t("retail.data.clearBasketTotal")],
       },
       {
-        label: "The return visit",
-        title: "Make room for the next chapter.",
-        body: "Explore customer loyalty and outlet reporting with an advisor using your own retail process.",
-        points: ["Customer context", "Rewards discussion", "Outlet reporting"],
+        label: t("retail.data.theReturnVisit"),
+        title: t("retail.data.makeRoomForTheNextChapter"),
+        body: t("retail.data.exploreCustomerLoyaltyAndOutletReporting"),
+        points: [t("retail.data.customerContext"), t("retail.data.rewardsDiscussion"), t("retail.data.outletReporting")],
       },
     ],
-    tools: [pos, stock, loyalty, outlets],
+    tools: [pos(t), stock(t), loyalty(t), outlets(t)],
     faqs: [
       [
-        "Are these real books and prices?",
-        "No. The titles, identifiers, stock and BDT prices are fictional examples. The local basket does not check availability or create a sale.",
+        t("retail.data.areTheseRealBooksAndPrices"),
+        t("retail.data.noTheTitlesIdentifiersStockAnd"),
       ],
       [
-        "Does the example include taxes or discounts?",
-        "No. It totals the entered book quantities at the displayed illustrative unit prices. The full checkout workflow is discussed separately.",
+        t("retail.data.doesTheExampleIncludeTaxesOr"),
+        t("retail.data.noItTotalsTheEnteredBook"),
       ],
       [
-        "Can we review our catalogue and counter process?",
-        "Yes. Use the shared advisor button to discuss catalogue structure, checkout, stock and customer-rewards questions.",
+        t("retail.data.canWeReviewOurCatalogueAnd"),
+        t("retail.data.yesUseTheSharedAdvisorButton"),
       ],
     ],
   },
   "clothing-store": {
-    title: "Clothing Store",
-    category: "A CLEARER VIEW OF YOUR COLLECTION",
-    headline: "Every colour. Every size.",
-    accent: "One considered retail experience.",
+    title: t("retail.data.clothingStore"),
+    category: t("retail.data.aClearerViewOfYourCollection"),
+    headline: t("retail.data.everyColourEverySize"),
+    accent: t("retail.data.oneConsideredRetailExperience"),
     description:
-      "Give the collection a clear operational picture—from colour and size combinations to the stock behind the next customer request.",
-    demoTitle: "Find the detail behind a variant.",
+      t("retail.data.giveTheCollectionAClearOperational"),
+    demoTitle: t("retail.data.findTheDetailBehindAVariant"),
     demoDescription:
-      "Choose a fictional colour and size, then compare the requested pieces with illustrative stock. Nothing is reserved or sold.",
-    story: "Let the collection’s details travel with the sale.",
+      t("retail.data.chooseAFictionalColourAndSize"),
+    story: t("retail.data.letTheCollectionSDetailsTravel"),
     stages: [
       {
-        label: "The collection",
-        title: "Start with the colour and size.",
-        body: "A garment is more than its style name. Explore the variants that give a collection its retail detail.",
-        points: ["Style identity", "Colour choices", "Size combinations"],
+        label: t("retail.data.theCollection"),
+        title: t("retail.data.startWithTheColourAndSize"),
+        body: t("retail.data.aGarmentIsMoreThanIts"),
+        points: [t("retail.data.styleIdentity"), t("retail.data.colourChoices"), t("retail.data.sizeCombinations")],
       },
       {
-        label: "The stock picture",
-        title: "Read the specific variant.",
-        body: "The example checks the selected colour-size combination, rather than combining unlike variants into a single stock promise.",
+        label: t("retail.data.theStockPicture"),
+        title: t("retail.data.readTheSpecificVariant"),
+        body: t("retail.data.theExampleChecksTheSelectedColour"),
         points: [
-          "Variant identifier",
-          "Example on-hand pieces",
-          "Requested pieces",
+          t("retail.data.variantIdentifier"),
+          t("retail.data.exampleOnHandPieces"),
+          t("retail.data.requestedPieces"),
         ],
       },
       {
-        label: "The store journey",
-        title: "Connect the collection to the outlet.",
-        body: "Explore the existing outlet and transfer presentations for a discussion of where the collection lives.",
-        points: ["Outlet records", "Stock handoffs", "Register context"],
+        label: t("retail.data.theStoreJourney"),
+        title: t("retail.data.connectTheCollectionToTheOutlet"),
+        body: t("retail.data.exploreTheExistingOutletAndTransfer"),
+        points: [t("retail.data.outletRecords"), t("retail.data.stockHandoffs"), t("retail.data.registerContext")],
       },
     ],
-    tools: [products, stock, transfers, pos],
+    tools: [products(t), stock(t), transfers(t), pos(t)],
     faqs: [
       [
-        "Is the variant stock connected to a live store?",
-        "No. All nine colour-size combinations contain fictional stock values. The comparison happens only in your browser.",
+        t("retail.data.isTheVariantStockConnectedTo"),
+        t("retail.data.noAllNineColourSizeCombinations"),
       ],
       [
-        "Will choosing a variant reserve it?",
-        "No. The result is an illustrative quantity comparison; it creates no reservation, transfer or sale.",
+        t("retail.data.willChoosingAVariantReserveIt"),
+        t("retail.data.noTheResultIsAnIllustrative"),
       ],
       [
-        "What happens when a request exceeds the example stock?",
-        "The example shows the shortfall for that exact variant. It does not claim that another outlet can fulfil it.",
+        t("retail.data.whatHappensWhenARequestExceeds"),
+        t("retail.data.theExampleShowsTheShortfallFor"),
       ],
     ],
   },
   "furniture-store": {
-    title: "Furniture Store",
-    category: "FROM THE SHOWROOM TO THE ORDER",
-    headline: "A beautiful room.",
-    accent: "A clearer order behind it.",
+    title: t("retail.data.furnitureStore"),
+    category: t("retail.data.fromTheShowroomToTheOrder"),
+    headline: t("retail.data.aBeautifulRoom"),
+    accent: t("retail.data.aClearerOrderBehindIt"),
     description:
-      "Bring finishes, furniture pieces and delivery context into a considered retail conversation. Make the details behind the showroom arrangement easy to follow.",
-    demoTitle: "Compose a small showroom set.",
+      t("retail.data.bringFinishesFurniturePiecesAndDelivery"),
+    demoTitle: t("retail.data.composeASmallShowroomSet"),
     demoDescription:
-      "Select a fictional finish, piece quantities and an illustrative delivery amount. The calculation is a local estimate, not a saved quotation.",
-    story: "Keep the choices behind the room in view.",
+      t("retail.data.selectAFictionalFinishPieceQuantities"),
+    story: t("retail.data.keepTheChoicesBehindTheRoom"),
     stages: [
       {
-        label: "The arrangement",
-        title: "See the pieces as a set.",
-        body: "Use the furniture composition to discuss which pieces belong together and how they appear on the order.",
-        points: ["Selected furniture", "Piece quantities", "Room context"],
+        label: t("retail.data.theArrangement"),
+        title: t("retail.data.seeThePiecesAsASet"),
+        body: t("retail.data.useTheFurnitureCompositionToDiscuss"),
+        points: [t("retail.data.selectedFurniture"), t("retail.data.pieceQuantities"), t("retail.data.roomContext")],
       },
       {
-        label: "The finish",
-        title: "Make the chosen finish explicit.",
-        body: "The local example applies a displayed fictional surcharge to every selected piece. Actual pricing rules are not inferred.",
+        label: t("retail.data.theFinish"),
+        title: t("retail.data.makeTheChosenFinishExplicit"),
+        body: t("retail.data.theLocalExampleAppliesADisplayed"),
         points: [
-          "Finish selection",
-          "Visible surcharge",
-          "Calculated piece values",
+          t("retail.data.finishSelection"),
+          t("retail.data.visibleSurcharge"),
+          t("retail.data.calculatedPieceValues"),
         ],
       },
       {
-        label: "The handoff",
-        title: "Carry delivery context into the conversation.",
-        body: "The entered delivery amount is arithmetic only. Discuss real order and dispatch requirements with an advisor.",
-        points: ["Order detail", "Delivery context", "Stock handoff"],
+        label: t("retail.data.theHandoff"),
+        title: t("retail.data.carryDeliveryContextIntoTheConversation"),
+        body: t("retail.data.theEnteredDeliveryAmountIsArithmetic"),
+        points: [t("retail.data.orderDetail"), t("retail.data.deliveryContext"), t("retail.data.stockHandoff")],
       },
     ],
-    tools: [products, pos, stock, transfers],
+    tools: [products(t), pos(t), stock(t), transfers(t)],
     faqs: [
       [
-        "Is this an actual furniture quote?",
-        "No. The furniture, finishes, unit prices and delivery amount are fictional assumptions. The example does not save a quote or promise availability.",
+        t("retail.data.isThisAnActualFurnitureQuote"),
+        t("retail.data.noTheFurnitureFinishesUnitPrices"),
       ],
       [
-        "How is the finish surcharge applied?",
-        "The displayed surcharge is added to each selected furniture piece before quantity multiplication. Delivery is added once to the set.",
+        t("retail.data.howIsTheFinishSurchargeApplied"),
+        t("retail.data.theDisplayedSurchargeIsAddedTo"),
       ],
       [
-        "Does the room drawing check furniture dimensions?",
+        t("retail.data.doesTheRoomDrawingCheckFurniture"),
         "No. It is a conceptual top-view illustration, not a scale plan or a room-fit calculation.",
       ],
     ],
   },
   "grocery-store": {
-    title: "Grocery Store",
-    category: "A FRESH PERSPECTIVE ON RETAIL",
-    headline: "The everyday shop.",
-    accent: "With the details in view.",
+    title: t("retail.data.groceryStore"),
+    category: t("retail.data.aFreshPerspectiveOnRetail"),
+    headline: t("retail.data.theEverydayShop"),
+    accent: t("retail.data.withTheDetailsInView"),
     description:
-      "Keep the counter moving while bringing the batch, quantity and date conversation closer to the shelf. A fresh visual perspective on everyday retail work.",
-    demoTitle: "Read the dates behind the shelf.",
+      t("retail.data.keepTheCounterMovingWhileBringing"),
+    demoTitle: t("retail.data.readTheDatesBehindTheShelf"),
     demoDescription:
-      "Move an example reference date and inspect four fictional batches. Date differences are calendar arithmetic, not a food-safety or saleability decision.",
-    story: "Make shelf context part of the daily conversation.",
+      t("retail.data.moveAnExampleReferenceDateAnd"),
+    story: t("retail.data.makeShelfContextPartOfThe"),
     stages: [
       {
-        label: "Incoming stock",
-        title: "Give the batch its context.",
-        body: "Discuss item, received quantity and recorded dates as separate details rather than one generic stock number.",
-        points: ["Item and batch", "Recorded quantity", "Recorded date"],
+        label: t("retail.data.incomingStock"),
+        title: t("retail.data.giveTheBatchItsContext"),
+        body: t("retail.data.discussItemReceivedQuantityAndRecorded"),
+        points: [t("retail.data.itemAndBatch"), t("retail.data.recordedQuantity"), t("retail.data.recordedDate")],
       },
       {
-        label: "Date review",
-        title: "Keep the reference date visible.",
-        body: "The date exercise identifies past, matching and future labels relative to an entered date. The three-day window is an editable example assumption.",
+        label: t("retail.data.dateReview"),
+        title: t("retail.data.keepTheReferenceDateVisible"),
+        body: t("retail.data.theDateExerciseIdentifiesPastMatching"),
         points: [
-          "Reference date",
-          "Calendar-day difference",
-          "Review-window assumption",
+          t("retail.data.referenceDate"),
+          t("retail.data.calendarDayDifference"),
+          t("retail.data.reviewWindowAssumption"),
         ],
       },
       {
-        label: "The counter",
-        title: "Connect the shelf with the next sale.",
-        body: "Explore the existing stock and register presentations for your store’s operational discussion.",
+        label: t("retail.data.theCounter"),
+        title: t("retail.data.connectTheShelfWithTheNext"),
+        body: t("retail.data.exploreTheExistingStockAndRegister"),
         points: [
-          "Shelf and store context",
-          "Register workflow",
-          "Outlet reporting",
+          t("retail.data.shelfAndStoreContext"),
+          t("retail.data.registerWorkflow"),
+          t("retail.data.outletReporting"),
         ],
       },
     ],
-    tools: [stock, pos, transfers, outlets],
+    tools: [stock(t), pos(t), transfers(t), outlets(t)],
     faqs: [
       [
-        "Does a future date mean a batch is safe to sell?",
-        "No. This example only subtracts dates. It does not assess storage conditions, food safety, legal requirements or saleability.",
+        t("retail.data.doesAFutureDateMeanA"),
+        t("retail.data.noThisExampleOnlySubtractsDates"),
       ],
       [
-        "Are these real batch records?",
-        "No. All batch identifiers, quantities and dates are fictional and remain unchanged when you move the example reference date.",
+        t("retail.data.areTheseRealBatchRecords"),
+        t("retail.data.noAllBatchIdentifiersQuantitiesAnd"),
       ],
       [
-        "Does the review window change inventory?",
-        "No. It only changes which date labels fall inside the local example window. There is no stock write-off or purchasing action.",
+        t("retail.data.doesTheReviewWindowChangeInventory"),
+        t("retail.data.noItOnlyChangesWhichDate"),
       ],
     ],
   },
   "hardware-store": {
-    title: "Hardware Store",
-    category: "PRECISION AT THE TRADE COUNTER",
-    headline: "From the smallest fixing",
-    accent: "to the complete order.",
+    title: t("retail.data.hardwareStore"),
+    category: t("retail.data.precisionAtTheTradeCounter"),
+    headline: t("retail.data.fromTheSmallestFixing"),
+    accent: t("retail.data.toTheCompleteOrder"),
     description:
-      "Bring packs, individual units and trade-counter quantities into focus. Keep the numbers behind the requested item as precise as the job it belongs to.",
-    demoTitle: "Turn a unit shortage into whole packs.",
+      t("retail.data.bringPacksIndividualUnitsAndTrade"),
+    demoTitle: t("retail.data.turnAUnitShortageIntoWhole"),
     demoDescription:
-      "Enter a target quantity, example stock and units per pack. Calculate the packs needed and the remaining units, without creating a purchase.",
-    story: "Keep the unit clear from shelf to counter.",
+      t("retail.data.enterATargetQuantityExampleStock"),
+    story: t("retail.data.keepTheUnitClearFromShelf"),
     stages: [
       {
-        label: "Item identity",
-        title: "Start with the exact item.",
-        body: "A fixing’s item record and unit matter. The concept drawing is decorative; actual specifications belong in your own records.",
+        label: t("retail.data.itemIdentity"),
+        title: t("retail.data.startWithTheExactItem"),
+        body: t("retail.data.aFixingSItemRecordAnd"),
         points: [
-          "Item identifier",
-          "Recorded specification",
-          "Unit of measure",
+          t("retail.data.itemIdentifier"),
+          t("retail.data.recordedSpecification"),
+          t("retail.data.unitOfMeasure"),
         ],
       },
       {
-        label: "Pack arithmetic",
-        title: "Order in packs. Read the result in units.",
-        body: "The local calculator rounds purchase packs upward so the example unit target can be met.",
-        points: ["Target units", "Units already on hand", "Whole packs needed"],
+        label: t("retail.data.packArithmetic"),
+        title: t("retail.data.orderInPacksReadTheResult"),
+        body: t("retail.data.theLocalCalculatorRoundsPurchasePacks"),
+        points: [t("retail.data.targetUnits"), t("retail.data.unitsAlreadyOnHand"), t("retail.data.wholePacksNeeded")],
       },
       {
-        label: "Counter handoff",
-        title: "Keep purchasing and selling context distinct.",
-        body: "Explore the stock and register presentations without turning the arithmetic example into a real purchase or sale.",
-        points: ["Stock context", "Counter request", "Product records"],
+        label: t("retail.data.counterHandoff"),
+        title: t("retail.data.keepPurchasingAndSellingContextDistinct"),
+        body: t("retail.data.exploreTheStockAndRegisterPresentations"),
+        points: [t("retail.data.stockContext"), t("retail.data.counterRequest"), t("retail.data.productRecords")],
       },
     ],
-    tools: [products, stock, pos, transfers],
+    tools: [products(t), stock(t), pos(t), transfers(t)],
     faqs: [
       [
-        "Does the calculator order stock?",
-        "No. It calculates a pack quantity from entered whole numbers. No supplier order, reservation or stock movement is created.",
+        t("retail.data.doesTheCalculatorOrderStock"),
+        t("retail.data.noItCalculatesAPackQuantity"),
       ],
       [
-        "Why can there be units left over?",
-        "When the shortage is not divisible by the pack size, the result rounds up to a full pack. The remaining units are shown explicitly.",
+        t("retail.data.whyCanThereBeUnitsLeft"),
+        t("retail.data.whenTheShortageIsNotDivisible"),
       ],
       [
-        "Does the drawing specify a certified fixing?",
-        "No. It is a conceptual illustration only. It does not represent an actual product specification or certification.",
+        t("retail.data.doesTheDrawingSpecifyACertified"),
+        t("retail.data.noItIsAConceptualIllustration"),
       ],
     ],
   },
   "toy-store": {
-    title: "Toy Store",
-    category: "A LITTLE PLAY. A LOT MORE CLARITY.",
-    headline: "Make space for play.",
-    accent: "Keep the shop in order.",
+    title: t("retail.data.toyStore"),
+    category: t("retail.data.aLittlePlayALotMore"),
+    headline: t("retail.data.makeSpaceForPlay"),
+    accent: t("retail.data.keepTheShopInOrder"),
     description:
-      "Bring a playful collection to life while keeping the basket, gifting detail and stock conversation clear. Retail deserves a little imagination and a considered workflow.",
-    demoTitle: "Put together a gift basket.",
+      t("retail.data.bringAPlayfulCollectionToLife"),
+    demoTitle: t("retail.data.putTogetherAGiftBasket"),
     demoDescription:
-      "Choose fictional toys, add optional gift wrap and compare the total with an entered budget. The example does not process a payment or reserve items.",
-    story: "Give the joyful part a thoughtful retail backdrop.",
+      t("retail.data.chooseFictionalToysAddOptionalGift"),
+    story: t("retail.data.giveTheJoyfulPartAThoughtful"),
     stages: [
       {
-        label: "The collection",
-        title: "Let each item have its own identity.",
-        body: "Explore the collection through fictional product cards, with visible prices and separate item records.",
+        label: t("retail.data.theCollection"),
+        title: t("retail.data.letEachItemHaveItsOwn"),
+        body: t("retail.data.exploreTheCollectionThroughFictionalProd"),
         points: [
-          "Product identity",
-          "Displayed example price",
-          "Selected pieces",
+          t("retail.data.productIdentity"),
+          t("retail.data.displayedExamplePrice"),
+          t("retail.data.selectedPieces"),
         ],
       },
       {
-        label: "The gift",
-        title: "Make the basket easy to understand.",
-        body: "The gift example adds the selected toys and a single entered wrap charge before comparing the total with the budget.",
-        points: ["Selected toys", "Optional wrap", "Budget difference"],
+        label: t("retail.data.theGift"),
+        title: t("retail.data.makeTheBasketEasyToUnderstand"),
+        body: t("retail.data.theGiftExampleAddsTheSelected"),
+        points: [t("retail.data.selectedToys"), t("retail.data.optionalWrap"), t("retail.data.budgetDifference")],
       },
       {
-        label: "The next visit",
-        title: "Carry the conversation beyond the gift.",
-        body: "Explore loyalty, checkout and outlet reporting without inventing reviews or safety badges.",
+        label: t("retail.data.theNextVisit"),
+        title: t("retail.data.carryTheConversationBeyondTheGift"),
+        body: t("retail.data.exploreLoyaltyCheckoutAndOutletReporting"),
         points: [
-          "Checkout context",
-          "Customer-rewards discussion",
-          "Outlet reporting",
+          t("retail.data.checkoutContext"),
+          t("retail.data.customerRewardsDiscussion"),
+          t("retail.data.outletReporting"),
         ],
       },
     ],
-    tools: [pos, loyalty, stock, outlets],
+    tools: [pos(t), loyalty(t), stock(t), outlets(t)],
     faqs: [
       [
-        "Are these toys available for purchase?",
-        "No. The products, prices and identifiers are fictional. The example has no checkout, payment or stock reservation.",
+        t("retail.data.areTheseToysAvailableForPurchase"),
+        t("retail.data.noTheProductsPricesAndIdentifiers"),
       ],
       [
-        "Does the page recommend toys for a particular age?",
-        "No. The illustrations have no age guidance, safety claims or certifications. Actual product suitability needs its own verified information.",
+        t("retail.data.doesThePageRecommendToysFor"),
+        t("retail.data.noTheIllustrationsHaveNoAge"),
       ],
       [
-        "What if the basket exceeds the entered budget?",
-        "The local example shows the amount over budget. You can change the selection or budget without submitting anything.",
+        t("retail.data.whatIfTheBasketExceedsThe"),
+        t("retail.data.theLocalExampleShowsTheAmount"),
       ],
     ],
   },
-};
-export const books = [
+}));
+export const books = memoT((t: TFn) => ([
   {
     id: "EX-B01",
     name: "The Quiet Atlas",
-    detail: "Travel essays · paperback",
+    detail: t("retail.data.travelEssaysPaperback"),
     price: 450,
     colour: "blue",
   },
   {
     id: "EX-B02",
     name: "Small Garden Notes",
-    detail: "Nature journal · hardback",
+    detail: t("retail.data.natureJournalHardback"),
     price: 680,
     colour: "green",
   },
   {
     id: "EX-B03",
     name: "A City in Lines",
-    detail: "Illustrated fiction · paperback",
+    detail: t("retail.data.illustratedFictionPaperback"),
     price: 520,
     colour: "sand",
   },
-] as const;
+] as const));
 export const colours = [
   { id: "navy", name: "Navy", hex: "#31527a" },
   { id: "sage", name: "Sage", hex: "#91a990" },
@@ -418,29 +419,29 @@ export const batches = [
   { id: "EX-G04", name: "Oat pack", quantity: 42, date: "2027-01-12" },
 ] as const;
 export const referenceDate = "2026-12-15";
-export const toys = [
+export const toys = memoT((t: TFn) => ([
   {
     id: "EX-T01",
     name: "Shape blocks",
-    detail: "Fictional wooden set",
+    detail: t("retail.data.fictionalWoodenSet"),
     price: 850,
     kind: "blocks",
   },
   {
     id: "EX-T02",
     name: "Little train",
-    detail: "Fictional play collection",
+    detail: t("retail.data.fictionalPlayCollection"),
     price: 1250,
     kind: "train",
   },
   {
     id: "EX-T03",
     name: "Pattern puzzle",
-    detail: "Fictional puzzle box",
+    detail: t("retail.data.fictionalPuzzleBox"),
     price: 650,
     kind: "puzzle",
   },
-] as const;
+] as const));
 export const money = (amount: number) =>
   new Intl.NumberFormat("en-BD", {
     style: "currency",

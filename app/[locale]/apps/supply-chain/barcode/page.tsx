@@ -25,65 +25,67 @@ import {
 } from "lucide-react";
 
 import { HandUnderline } from "@/components/ui/headunderline";
+import { useTranslations } from "next-intl";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 
 const handwrittenFont =
   '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
 
-const features = [
+const features = memoT((t: TFn) => ([
   {
-    title: "Barcode scanning",
+    title: t("page.barcodeScanning"),
     description:
-      "Scan products, lots, serial numbers, packages, locations, and transfers in seconds.",
+      t("page.scanProductsLotsSerialNumbersPackages"),
   },
   {
-    title: "Batch operations",
+    title: t("page.batchOperations"),
     description:
-      "Validate multiple receipts, deliveries, inventory adjustments, and internal transfers faster.",
+      t("page.validateMultipleReceiptsDeliveriesInvent"),
   },
   {
-    title: "Lot and serial tracking",
+    title: t("page.lotAndSerialTracking"),
     description:
-      "Track each product movement with full traceability from receipt to delivery.",
+      t("page.trackEachProductMovementWithFull"),
   },
   {
-    title: "Mobile warehouse flow",
+    title: t("page.mobileWarehouseFlow"),
     description:
-      "Use barcode flows on phones, tablets, scanners, or warehouse devices.",
+      t("page.useBarcodeFlowsOnPhonesTablets"),
   },
   {
-    title: "Inventory accuracy",
+    title: t("page.inventoryAccuracy"),
     description:
-      "Reduce manual mistakes and keep real-time stock quantities clean and reliable.",
+      t("page.reduceManualMistakesAndKeepReal"),
   },
-];
+]));
 
-const apps = [
+const apps = memoT((t: TFn) => ([
   {
-    title: "Inventory",
-    description: "Track stock",
+    title: t("page.inventory"),
+    description: t("page.trackStock"),
     icon: Warehouse,
   },
   {
-    title: "Sales",
-    description: "Deliver orders",
+    title: t("page.sales"),
+    description: t("page.deliverOrders"),
     icon: BarChart3,
   },
   {
-    title: "Purchase",
-    description: "Receive products",
+    title: t("page.purchase"),
+    description: t("page.receiveProducts"),
     icon: ShoppingCart,
   },
   {
-    title: "Manufacturing",
-    description: "Scan components",
+    title: t("page.manufacturing"),
+    description: t("page.scanComponents"),
     icon: Boxes,
   },
   {
-    title: "Quality",
-    description: "Validate checks",
+    title: t("page.quality"),
+    description: t("page.validateChecks"),
     icon: ShieldCheck,
   },
-];
+]));
 
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
@@ -99,6 +101,7 @@ const avatars = [
 ];
 
 export default function BarcodeLandingSections() {
+  const t = useTranslations("pages.appPages.barcode");
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
@@ -107,17 +110,16 @@ export default function BarcodeLandingSections() {
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Scan faster.{" "}
+            {t("page.scanFaster")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                Move smarter.
+                {t("page.moveSmarter")}
               </span>
             </HandUnderline>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            Barcode helps your warehouse team receive, pick, pack, transfer,
-            count, and validate inventory with speed and accuracy.
+            {t("page.barcodeHelpsYourWarehouseTeamReceive")}
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -125,14 +127,14 @@ export default function BarcodeLandingSections() {
               href="#start"
               className="rounded-md btn-gradient px-6 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
-              Start now
+              {t("page.startNow")}
             </Link>
 
             <Link
               href="#features"
               className="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-200 shadow-sm transition hover:border-[#714b67]/30 hover:text-[#714b67] dark:hover:border-[#9b6a8f] dark:hover:text-[#9b6a8f]"
             >
-              Watch a demo
+              {t("page.watchADemo")}
             </Link>
           </div>
 
@@ -146,15 +148,15 @@ export default function BarcodeLandingSections() {
                 <div className="flex items-center gap-3">
                   <ScanBarcode className="h-5 w-5 text-[#714b67] dark:text-[#9b6a8f]" />
                   <span className="font-bold text-slate-900 dark:text-white">
-                    Barcode
+                    {t("page.barcode")}
                   </span>
                   <span className="hidden text-xs text-slate-400 dark:text-slate-500 sm:block">
-                    Receipts / Delivery Orders / Inventory / Transfers
+                    {t("page.receiptsDeliveryOrdersInventoryTransfers")}
                   </span>
                 </div>
 
                 <button className="rounded-md btn-gradient px-4 py-2 text-xs font-bold text-white transition">
-                  Scan
+                  {t("page.scan")}
                 </button>
               </div>
 
@@ -165,15 +167,15 @@ export default function BarcodeLandingSections() {
                   </div>
 
                   <p className="mt-5 text-center text-sm font-bold text-slate-900 dark:text-white">
-                    Scan product barcode
+                    {t("page.scanProductBarcode")}
                   </p>
 
                   <div className="mt-5 space-y-3">
                     {[
-                      "Product scanned",
-                      "Lot number detected",
-                      "Quantity updated",
-                      "Location assigned",
+                      t("page.productScanned"),
+                      t("page.lotNumberDetected"),
+                      t("page.quantityUpdated"),
+                      t("page.locationAssigned"),
                     ].map((item) => (
                       <div
                         key={item}
@@ -190,22 +192,22 @@ export default function BarcodeLandingSections() {
                   <div className="grid gap-4 md:grid-cols-4">
                     {[
                       [
-                        "Receipts",
+                        t("page.receipts"),
                         "48",
                         "bg-sky-50 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
                       ],
                       [
-                        "Pickings",
+                        t("page.pickings"),
                         "21",
                         "bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400",
                       ],
                       [
-                        "Transfers",
+                        t("page.transfers"),
                         "36",
                         "bg-emerald-50 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
                       ],
                       [
-                        "Errors",
+                        t("page.errors"),
                         "02",
                         "bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400",
                       ],
@@ -222,54 +224,54 @@ export default function BarcodeLandingSections() {
 
                   <div className="mt-5 overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-sm ring-1 ring-slate-100 dark:ring-slate-700">
                     <div className="grid grid-cols-6 gap-4 border-b border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 px-5 py-3 text-left text-[11px] font-bold uppercase text-slate-400 dark:text-slate-500">
-                      <span>Barcode</span>
-                      <span>Product</span>
-                      <span>Lot/Serial</span>
-                      <span>Location</span>
-                      <span>Qty</span>
-                      <span>Status</span>
+                      <span>{t("page.barcode")}</span>
+                      <span>{t("page.product")}</span>
+                      <span>{t("page.lotSerial")}</span>
+                      <span>{t("page.location")}</span>
+                      <span>{t("page.qty")}</span>
+                      <span>{t("page.status")}</span>
                     </div>
 
                     {[
                       [
                         "BC-000421",
-                        "Office Chair",
+                        t("page.officeChair"),
                         "LOT-24A",
                         "WH/Stock",
                         "28",
-                        "Done",
+                        t("page.done"),
                       ],
                       [
                         "BC-000422",
-                        "Desk Lamp",
+                        t("page.deskLamp"),
                         "SN-9921",
                         "WH/Input",
                         "12",
-                        "Ready",
+                        t("page.ready"),
                       ],
                       [
                         "BC-000423",
-                        "Storage Box",
+                        t("page.storageBox"),
                         "LOT-19C",
                         "WH/Pack",
                         "64",
-                        "Picked",
+                        t("page.picked"),
                       ],
                       [
                         "BC-000424",
-                        "Blue Sofa",
+                        t("page.blueSofa"),
                         "SN-4178",
                         "WH/Output",
                         "04",
-                        "Waiting",
+                        t("page.waiting"),
                       ],
                       [
                         "BC-000425",
-                        "Wood Table",
+                        t("page.woodTable"),
                         "LOT-77B",
                         "WH/Stock",
                         "18",
-                        "Done",
+                        t("page.done"),
                       ],
                     ].map((row) => (
                       <div
@@ -318,7 +320,7 @@ export default function BarcodeLandingSections() {
             <FloatingNote
               className="mx-auto mt-12 z-30"
               color="bg-[#02cfc3] dark:bg-[#02cfc3]/30"
-              text="Scan once. Update everywhere."
+              text={t("page.scanOnceUpdateEverywhere")}
             />
           </div>
         </div>
@@ -336,16 +338,15 @@ export default function BarcodeLandingSections() {
               style={{ fontFamily: handwrittenFont }}
             >
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-                <span className="dark:text-[#02cfc3]">Receive</span>
+                <span className="dark:text-[#02cfc3]">{t("page.receive")}</span>
               </HandUnderline>{" "}
-              products
+              {t("page.products")}
               <br />
-              without the paperwork
+              {t("page.withoutThePaperwork")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Scan incoming goods, validate purchase orders, confirm quantities,
-              and place products directly into the right warehouse location.
+              {t("page.scanIncomingGoodsValidatePurchaseOrders")}
             </p>
           </div>
 
@@ -355,19 +356,19 @@ export default function BarcodeLandingSections() {
             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-5 flex items-center justify-between">
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Incoming Shipment
+                  {t("page.incomingShipment")}
                 </p>
                 <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                  Ready
+                  {t("page.ready")}
                 </span>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
-                  ["Vendor", "Azure Interior"],
-                  ["Reference", "WH/IN/00042"],
-                  ["Expected", "Today"],
-                  ["Destination", "WH/Stock"],
+                  [t("page.vendor"), t("page.azureInterior")],
+                  [t("page.reference"), "WH/IN/00042"],
+                  [t("page.expected"), t("page.today")],
+                  [t("page.destination"), "WH/Stock"],
                 ].map(([label, value]) => (
                   <div
                     key={label}
@@ -385,9 +386,9 @@ export default function BarcodeLandingSections() {
 
               <div className="mt-6 space-y-3">
                 {[
-                  ["Office Chair", "28 / 28", "Validated"],
-                  ["Desk Lamp", "12 / 12", "Validated"],
-                  ["Wood Table", "18 / 20", "To scan"],
+                  [t("page.officeChair"), "28 / 28", t("page.validated")],
+                  [t("page.deskLamp"), "12 / 12", t("page.validated")],
+                  [t("page.woodTable"), "18 / 20", t("page.toScan")],
                 ].map(([name, qty, status]) => (
                   <div
                     key={name}
@@ -413,7 +414,7 @@ export default function BarcodeLandingSections() {
               </div>
 
               <button className="mt-6 w-full rounded-md btn-gradient px-5 py-3 text-sm font-bold text-white transition">
-                Validate receipt
+                {t("page.validateReceipt")}
               </button>
             </div>
           </div>
@@ -435,15 +436,15 @@ export default function BarcodeLandingSections() {
                   <div className="mt-6 rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4 text-center">
                     <QrCode className="mx-auto h-24 w-24 text-slate-900 dark:text-white" />
                     <p className="mt-3 text-xs font-bold text-slate-500 dark:text-slate-400">
-                      Scan package
+                      {t("page.scanPackage")}
                     </p>
                   </div>
 
                   <div className="mt-6 space-y-3">
                     {[
                       "WH/OUT/00091",
-                      "Customer: Deco Addict",
-                      "3 products picked",
+                      t("page.customerDecoAddict"),
+                      t("page.n3ProductsPicked"),
                     ].map((item) => (
                       <div
                         key={item}
@@ -455,7 +456,7 @@ export default function BarcodeLandingSections() {
                   </div>
 
                   <button className="mt-5 w-full rounded-md btn-gradient px-4 py-3 text-xs font-bold text-white transition">
-                    Scan next
+                    {t("page.scanNext")}
                   </button>
                 </div>
               </div>
@@ -469,23 +470,22 @@ export default function BarcodeLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Pick, pack, and{" "}
+              {t("page.pickPackAnd")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
-                <span className="dark:text-amber-200">ship</span>
+                <span className="dark:text-amber-200">{t("page.ship")}</span>
               </HandUnderline>
               <br />
-              with confidence
+              {t("page.withConfidence")}
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Scan each product during picking and packing. Prevent wrong
-              shipments, missing items, duplicate scans, and location mistakes.
+              {t("page.scanEachProductDuringPickingAnd")}
             </p>
 
             <FloatingNote
               className="mt-10 z-30"
               color="bg-amber-400 dark:bg-amber-700"
-              text="No more wrong packages"
+              text={t("page.noMoreWrongPackages")}
             />
           </div>
         </div>
@@ -497,15 +497,14 @@ export default function BarcodeLandingSections() {
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            Count inventory{" "}
+            {t("page.countInventory")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">without chaos</span>
+              <span className="dark:text-sky-200">{t("page.withoutChaos")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-            Run physical counts by scanning locations and products. Update stock
-            quantities with clean audit trails and fewer manual corrections.
+            {t("page.runPhysicalCountsByScanningLocations")}
           </p>
 
           <div className="relative mx-auto mt-14 max-w-5xl">
@@ -514,19 +513,19 @@ export default function BarcodeLandingSections() {
             <div className="relative grid gap-6 md:grid-cols-3">
               {[
                 {
-                  title: "Scan location",
+                  title: t("page.scanLocation"),
                   icon: Warehouse,
                   color:
                     "bg-sky-100 text-sky-600 dark:bg-sky-950/50 dark:text-sky-400",
                 },
                 {
-                  title: "Scan product",
+                  title: t("page.scanProduct"),
                   icon: ScanBarcode,
                   color:
                     "bg-[#02cfc3] dark:bg-[#02cfc3]/30 text-[#02a6a6] dark:text-[#02cfc3]",
                 },
                 {
-                  title: "Confirm quantity",
+                  title: t("page.confirmQuantity"),
                   icon: CheckCircle2,
                   color:
                     "bg-emerald-100 text-emerald-600 dark:bg-emerald-950/50 dark:text-emerald-400",
@@ -553,7 +552,7 @@ export default function BarcodeLandingSections() {
                     </h3>
 
                     <p className="mt-3 text-sm leading-6 text-slate-500 dark:text-slate-400">
-                      Step {index + 1} for fast and clean inventory adjustment.
+                      {t("page.step")}{" "}{index + 1}{" "}{t("page.forFastAndCleanInventoryAdjustment")}
                     </p>
 
                     {index < 2 && (
@@ -576,18 +575,16 @@ export default function BarcodeLandingSections() {
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Full traceability
+              {t("page.fullTraceability")}
               <br />
-              from{" "}
+              {t("page.from")}{" "}
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
-                <span className="dark:text-rose-200">barcode to delivery</span>
+                <span className="dark:text-rose-200">{t("page.barcodeToDelivery")}</span>
               </HandUnderline>
             </h2>
 
             <p className="mt-6 max-w-xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Link barcodes with lots, serial numbers, packages, warehouse
-              locations, vendor receipts, manufacturing components, and customer
-              deliveries.
+              {t("page.linkBarcodesWithLotsSerialNumbers")}
             </p>
           </div>
 
@@ -595,20 +592,20 @@ export default function BarcodeLandingSections() {
             <div className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.13)] dark:shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
               <div className="mb-6 flex items-center justify-between">
                 <p className="font-bold text-slate-900 dark:text-white">
-                  Traceability Report
+                  {t("page.traceabilityReport")}
                 </p>
                 <span className="rounded-full bg-sky-50 dark:bg-sky-950/50 px-3 py-1 text-xs font-bold text-sky-600 dark:text-sky-400">
-                  Live
+                  {t("page.live")}
                 </span>
               </div>
 
               <div className="space-y-4">
                 {[
-                  ["Receipt", "WH/IN/00042", "Vendor → WH/Input"],
-                  ["Quality Check", "QC/0018", "Passed"],
-                  ["Internal Transfer", "WH/INT/00031", "Input → Stock"],
-                  ["Picking", "WH/OUT/00091", "Stock → Pack"],
-                  ["Delivery", "WH/OUT/00091", "Pack → Customer"],
+                  [t("page.receipt"), "WH/IN/00042", t("page.vendorWhInput")],
+                  [t("page.qualityCheck"), "QC/0018", t("page.passed")],
+                  [t("page.internalTransfer"), "WH/INT/00031", t("page.inputStock")],
+                  [t("page.picking"), "WH/OUT/00091", t("page.stockPack")],
+                  [t("page.delivery"), "WH/OUT/00091", t("page.packCustomer")],
                 ].map(([type, reference, route], index) => (
                   <div
                     key={`${type}:${reference}:${index}`}
@@ -653,20 +650,20 @@ export default function BarcodeLandingSections() {
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            All the{" "}
+            {t("page.allThe")}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10">features</span>
+              <span className="relative z-10">{t("page.features")}</span>
               <span className="absolute -inset-x-3 -inset-y-2 rounded-[50%] border-[6px] border-[#02cfc3] dark:border-[#02cfc3]/70" />
             </span>
             <br />
-            done{" "}
+            {t("page.done2")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">right.</span>
+              <span className="dark:text-[#02cfc3]">{t("page.right")}</span>
             </HandUnderline>
           </h2>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {features.map((feature) => (
+            {features(t).map((feature) => (
               <div
                 key={feature.title}
                 className="rounded-xl border border-white dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
@@ -694,7 +691,7 @@ export default function BarcodeLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all features <ArrowRight className="h-4 w-4" />
+            {t("page.seeAllFeatures")}{" "}<ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -705,22 +702,22 @@ export default function BarcodeLandingSections() {
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
             style={{ fontFamily: handwrittenFont }}
           >
-            One{" "}
+            {t("page.one")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
-              <span className="dark:text-[#02cfc3]">need</span>
+              <span className="dark:text-[#02cfc3]">{t("page.need")}</span>
             </HandUnderline>
-            , one{" "}
+            {t("page.one2")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
-              <span className="dark:text-sky-200">app.</span>
+              <span className="dark:text-sky-200">{t("page.app")}</span>
             </HandUnderline>
           </h2>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
-            Expand as you grow.
+            {t("page.expandAsYouGrow")}
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            {apps.map((app) => {
+            {apps(t).map((app) => {
               const Icon = app.icon;
 
               return (
@@ -749,7 +746,7 @@ export default function BarcodeLandingSections() {
             href="#"
             className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[#714b67] dark:text-[#9b6a8f] hover:underline"
           >
-            See all Apps <ArrowRight className="h-4 w-4" />
+            {t("page.seeAllApps")}{" "}<ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -761,7 +758,7 @@ export default function BarcodeLandingSections() {
               <img
                 key={avatar}
                 src={avatar}
-                alt="User avatar"
+                alt={t("page.userAvatar")}
                 className="absolute z-10 h-14 w-14 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
                 style={{
                   left: `${10 + ((index * 17) % 78)}%`,
@@ -797,10 +794,10 @@ export default function BarcodeLandingSections() {
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{ fontFamily: handwrittenFont }}
               >
-                Join 15 million users
+                {t("page.join15MillionUsers")}
               </p>
               <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
-                who grow their business with Adon
+                {t("page.whoGrowTheirBusinessWithAdon")}
               </p>
             </div>
           </div>
@@ -813,23 +810,22 @@ export default function BarcodeLandingSections() {
 
               <div>
                 <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                  Barcode helped our warehouse team reduce manual mistakes,
-                  speed up picking, and keep every product movement visible.
+                  {t("page.barcodeHelpedOurWarehouseTeamReduce")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-3">
                   <img
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face"
-                    alt="Customer"
+                    alt={t("page.customer")}
                     className="h-12 w-12 rounded-full object-cover"
                   />
 
                   <div>
                     <p className="font-bold text-slate-900 dark:text-white">
-                      Andrew Ross
+                      {t("page.andrewRoss")}
                     </p>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
-                      Warehouse manager
+                      {t("page.warehouseManager")}
                     </p>
                   </div>
                 </div>
@@ -846,22 +842,22 @@ export default function BarcodeLandingSections() {
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
               style={{ fontFamily: handwrittenFont }}
             >
-              Speed up
+              {t("page.speedUp")}
               <br />
-              your{" "}
+              {t("page.your")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="text-[#02a6a6] dark:text-[#02cfc3]">
-                  warehouse
+                  {t("page.warehouse")}
                 </span>
               </HandUnderline>{" "}
-              flow
+              {t("page.flow")}
             </h2>
 
             <Link
               href="/pricing"
               className="mt-8 inline-flex rounded-md btn-gradient px-7 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 dark:shadow-primary/40"
             >
-              Start now
+              {t("page.startNow")}
             </Link>
           </div>
         </div>
@@ -879,6 +875,7 @@ function FloatingNote({
   text?: string;
   color?: string;
 }) {
+  const t = useTranslations("pages.appPages.barcode");
   return (
     <div
       className={`relative flex w-fit items-center rounded-full bg-white dark:bg-slate-800 py-3 pl-16 pr-8 text-sm italic text-slate-700 dark:text-slate-200 shadow-xl ring-1 ring-slate-100 dark:ring-slate-700 ${className}`}
@@ -889,7 +886,7 @@ function FloatingNote({
 
       <img
         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face"
-        alt="User"
+        alt={t("page.user")}
         className="absolute left-3 h-12 w-12 rounded-full object-cover"
       />
 

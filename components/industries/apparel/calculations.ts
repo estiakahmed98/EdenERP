@@ -1,3 +1,4 @@
+import { type TFn } from "@/lib/i18n/t-types";
 function integer(value: number, min: number, max: number, label: string) {
   if (!Number.isInteger(value) || value < min || value > max)
     throw new Error(`${label} must be a whole number from ${min} to ${max}.`);
@@ -49,12 +50,12 @@ function cents(value: number, label: string) {
     throw new Error(`${label} must be from 0 to 1,000,000 USD.`);
   return Math.round(value * 100);
 }
-export function settlementScenario(input: Settlement) {
+export function settlementScenario(input: Settlement, t: TFn) {
   integer(input.quantity, 1, 1000000, "Example quantity");
   if (input.mode === "commission") {
     return {
       mode: input.mode,
-      revenue: (cents(input.fee, "Per-piece fee") * input.quantity) / 100,
+      revenue: (cents(input.fee, t("apparel.calculations.perPieceFee")) * input.quantity) / 100,
       cost: null,
       contribution: null,
       margin: null,

@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight, FlaskConical, ScanLine } from "lucide-react";
 import LiveDemoButton from "@/components/live-demo-button";
 import { cn } from "@/lib/utils";
 import css from "./pos.module.css";
+import { useTranslations } from "next-intl";
 export { css };
 
 export function Badge({
@@ -12,11 +13,12 @@ export function Badge({
   children?: ReactNode;
   demo?: boolean;
 }) {
+  const t = useTranslations("pages.posApp");
   return (
     <span className={cn(css.badge, demo && css.demoBadge)}>
       <FlaskConical size={12} aria-hidden="true" />
       {children ??
-        (demo ? "Illustrative · local only" : "Supplied screenshot snapshot")}
+        (demo ? t("ui.illustrativeLocalOnly") : t("ui.suppliedScreenshotSnapshot"))}
     </span>
   );
 }
@@ -33,11 +35,12 @@ export function Button({
   );
 }
 export function HeroActions() {
+  const t = useTranslations("pages.posApp");
   return (
     <div className={css.heroActions}>
       <LiveDemoButton />
       <a href="#pos-workspace" className={css.textLink}>
-        Explore the workspace <ArrowDown size={15} aria-hidden="true" />
+        {t("ui.exploreTheWorkspace")}{" "}<ArrowDown size={15} aria-hidden="true" />
       </a>
     </div>
   );
@@ -141,30 +144,31 @@ export function Denim({ top = false }: { top?: boolean }) {
   );
 }
 export function ReceiptPaper({ compact = false }: { compact?: boolean }) {
+  const t = useTranslations("pages.posApp");
   return (
     <div className={cn(css.receiptPaper, compact && css.compactReceipt)}>
-      <span className={css.receiptBrand}>DENIM HOUSE</span>
-      <span className={css.receiptSubtitle}>ILLUSTRATIVE RECEIPT</span>
+      <span className={css.receiptBrand}>{t("ui.denimHouse")}</span>
+      <span className={css.receiptSubtitle}>{t("ui.illustrativeReceipt")}</span>
       <div className={css.paperRule} />
       <div className={css.paperLine}>
-        <span>Athletic Fit Jean</span>
+        <span>{t("ui.athleticFitJean")}</span>
         <b>3,450.00</b>
       </div>
       <div className={css.paperLine}>
-        <span>Quantity</span>
+        <span>{t("ui.quantity")}</span>
         <span>1</span>
       </div>
       <div className={css.paperRule} />
       <div className={css.paperLine}>
-        <span>Includes VAT</span>
+        <span>{t("ui.includesVat")}</span>
         <span>450.00</span>
       </div>
       <div className={css.paperLine}>
-        <strong>TOTAL · BDT</strong>
+        <strong>{t("ui.totalBdt")}</strong>
         <strong>3,450.00</strong>
       </div>
       <Barcode />
-      <span className={css.receiptSubtitle}>Example from supplied summary</span>
+      <span className={css.receiptSubtitle}>{t("ui.exampleFromSuppliedSummary")}</span>
     </div>
   );
 }

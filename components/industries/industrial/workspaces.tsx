@@ -11,6 +11,7 @@ import {
   type IndustrialSlug,
 } from "./data";
 import { Badge, Metric, Note, base, css } from "./ui";
+import { useTranslations } from "next-intl";
 function number(raw: string) {
   if (raw.trim() === "")
     throw new Error("Fill in each example value to calculate the result.");
@@ -47,10 +48,11 @@ function Numeric({
   );
 }
 function Reset({ onClick }: { onClick: () => void }) {
+  const t = useTranslations("pages.industriesApp");
   return (
     <button type="button" className={base.reset} onClick={onClick}>
       <RotateCcw size={13} aria-hidden="true" />
-      Reset example
+      {t("industrial.workspaces.resetExample")}
     </button>
   );
 }
@@ -62,6 +64,7 @@ function Outcome({ error, children }: { error: string; children: string }) {
   );
 }
 function TextileWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [incoming, setIncoming] = useState("1000"),
     [losses, setLosses] = useState(() => defaultLosses.map(String));
   let result: ReturnType<typeof fabricLength> | null = null,
@@ -72,12 +75,12 @@ function TextileWorkspace() {
     error =
       e instanceof Error
         ? e.message
-        : "Use valid example lengths and loss percentages.";
+        : t("industrial.workspaces.useValidExampleLengthsAndLoss");
   }
   return (
     <>
       <div className={base.toolbar}>
-        <Badge>EX-TX01 · fictional length assumptions</Badge>
+        <Badge>{t("industrial.workspaces.exTx01FictionalLengthAssumptions")}</Badge>
         <Reset
           onClick={() => {
             setIncoming("1000");
@@ -88,14 +91,14 @@ function TextileWorkspace() {
       <div className={css.textileWorkspace}>
         <div>
           <Numeric
-            label="Incoming example length · metres"
+            label={t("industrial.workspaces.incomingExampleLengthMetres")}
             raw={incoming}
             onChange={setIncoming}
             min={0.001}
             step="0.001"
           />
           <div className={css.lossFields}>
-            {textileStages.map((stage, i) => (
+            {textileStages(t).map((stage, i) => (
               <Numeric
                 key={stage}
                 label={`${stage} · entered loss %`}
@@ -109,19 +112,17 @@ function TextileWorkspace() {
             ))}
           </div>
           <Note>
-            Each percentage is applied sequentially. Length is rounded to
-            millimetres after each stage; percentages are rounded to two
-            decimals.
+            {t("industrial.workspaces.eachPercentageIsAppliedSequentiallyLengt")}
           </Note>
         </div>
         <section
           className={css.lengthTimeline}
-          aria-label="Local sequential fabric-length calculation"
+          aria-label={t("industrial.workspaces.localSequentialFabricLengthCalculation")}
         >
-          <span>ONE UNIT, THROUGH THE PROCESS</span>
-          <h3>Follow the remaining length.</h3>
+          <span>{t("industrial.workspaces.oneUnitThroughTheProcess")}</span>
+          <h3>{t("industrial.workspaces.followTheRemainingLength")}</h3>
           <ol>
-            {textileStages.map((stage, i) => (
+            {textileStages(t).map((stage, i) => (
               <li key={stage}>
                 <span>0{i + 1}</span>
                 <div>
@@ -130,7 +131,7 @@ function TextileWorkspace() {
                   <small>
                     {result
                       ? `${num(result.stages[i].loss, 3)} m removed from ${num(result.stages[i].before, 3)} m`
-                      : "Check the entered example"}
+                      : t("industrial.workspaces.checkTheEnteredExample")}
                   </small>
                   <div
                     className={css.lengthTrack}
@@ -160,26 +161,26 @@ function TextileWorkspace() {
       </div>
       <dl className={base.threeMetrics}>
         <Metric
-          label="Entered incoming length · m"
+          label={t("industrial.workspaces.enteredIncomingLengthM")}
           value={result ? num(result.incoming, 3) : "—"}
         />
         <Metric
-          label="Calculated final length · m"
+          label={t("industrial.workspaces.calculatedFinalLengthM")}
           value={result ? num(result.finished, 3) : "—"}
         />
         <Metric
-          label="Example retained-length share"
+          label={t("industrial.workspaces.exampleRetainedLengthShare")}
           value={result ? `${result.retainedPercent.toFixed(2)}%` : "—"}
         />
       </dl>
       <Note>
-        No yarn conversion, process recommendation, production forecast or saved
-        lot record is created.
+        {t("industrial.workspaces.noYarnConversionProcessRecommendationPro")}
       </Note>
     </>
   );
 }
 function MetalWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [fields, setFields] = useState({
     stock: "6000",
     piece: "1200",
@@ -197,18 +198,18 @@ function MetalWorkspace() {
     );
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Use valid whole-millimetre inputs.";
+      e instanceof Error ? e.message : t("industrial.workspaces.useValidWholeMillimetreInputs");
   }
   const inputs: [keyof typeof fields, string, number, number][] = [
-    ["stock", "Example stock length · mm", 1, 1000000],
-    ["piece", "Requested piece length · mm", 1, 1000000],
-    ["allowance", "Entered allowance / piece · mm", 0, 1000],
-    ["quantity", "Requested example pieces", 1, 10000],
+    ["stock", t("industrial.workspaces.exampleStockLengthMm"), 1, 1000000],
+    ["piece", t("industrial.workspaces.requestedPieceLengthMm"), 1, 1000000],
+    ["allowance", t("industrial.workspaces.enteredAllowancePieceMm"), 0, 1000],
+    ["quantity", t("industrial.workspaces.requestedExamplePieces"), 1, 10000],
   ];
   return (
     <>
       <div className={base.toolbar}>
-        <Badge>EX-CUT01 · one-dimensional example</Badge>
+        <Badge>{t("industrial.workspaces.exCut01OneDimensionalExample")}</Badge>
         <Reset
           onClick={() =>
             setFields({
@@ -234,26 +235,26 @@ function MetalWorkspace() {
       </div>
       <dl className={base.threeMetrics}>
         <Metric
-          label="Pieces / full-pattern bar"
+          label={t("industrial.workspaces.piecesFullPatternBar")}
           value={result ? num(result.perBar) : "—"}
         />
         <Metric
-          label="Calculated stock bars"
+          label={t("industrial.workspaces.calculatedStockBars")}
           value={result ? num(result.bars) : "—"}
         />
         <Metric
-          label="Remaining length / all bars · mm"
+          label={t("industrial.workspaces.remainingLengthAllBarsMm")}
           value={result ? num(result.remaining) : "—"}
         />
       </dl>
       <div className={css.patterns}>
         {result?.patterns.map((pattern, i) => (
-          <section key={i} aria-label={`Grouped cutting pattern ${i + 1}`}>
+          <section key={i} aria-label={t("industrial.workspaces.groupedCuttingPattern", { v1: String(i + 1) })}>
             <header>
-              <span>PATTERN 0{i + 1}</span>
+              <span>{t("industrial.workspaces.pattern0")}{i + 1}</span>
               <b>
-                {num(pattern.bars)} bar{pattern.bars === 1 ? "" : "s"} ×{" "}
-                {num(pattern.pieces)} pieces
+                {num(pattern.bars)}{" "}{t("industrial.workspaces.bar")}{pattern.bars === 1 ? "" : "s"} ×{" "}
+                {num(pattern.pieces)}{" "}{t("industrial.workspaces.pieces")}
               </b>
             </header>
             <div
@@ -269,8 +270,8 @@ function MetalWorkspace() {
               <span />
             </div>
             <div className={css.patternKey}>
-              <span>{num(pattern.used)} mm consumed / bar</span>
-              <span>{num(pattern.remaining)} mm remains / bar</span>
+              <span>{num(pattern.used)}{" "}{t("industrial.workspaces.mmConsumedBar")}</span>
+              <span>{num(pattern.remaining)}{" "}{t("industrial.workspaces.mmRemainsBar")}</span>
             </div>
           </section>
         ))}
@@ -281,14 +282,13 @@ function MetalWorkspace() {
           : ""}
       </Outcome>
       <Note>
-        Allowance is consumed for every piece, including final separation. End
-        trim, material/tool constraints and offcut reuse are outside this
-        exercise; no cutting plan is saved.
+        {t("industrial.workspaces.allowanceIsConsumedForEveryPiece")}
       </Note>
     </>
   );
 }
 function FurnitureWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [quantity, setQuantity] = useState("24"),
     [entries, setEntries] = useState(() =>
       components.map((row) => ({
@@ -308,7 +308,7 @@ function FurnitureWorkspace() {
     );
   } catch (e) {
     error =
-      e instanceof Error ? e.message : "Use valid whole component counts.";
+      e instanceof Error ? e.message : t("industrial.workspaces.useValidWholeComponentCounts");
   }
   function update(i: number, key: "perUnit" | "stock", raw: string) {
     setEntries((prev) =>
@@ -318,7 +318,7 @@ function FurnitureWorkspace() {
   return (
     <>
       <div className={base.toolbar}>
-        <Badge>EX-FURN01 · three fictional component lines</Badge>
+        <Badge>{t("industrial.workspaces.exFurn01ThreeFictionalComponentLines")}</Badge>
         <Reset
           onClick={() => {
             setQuantity("24");
@@ -333,36 +333,34 @@ function FurnitureWorkspace() {
       </div>
       <div className={base.budgetSetting}>
         <Numeric
-          label="Entered example order · chairs"
+          label={t("industrial.workspaces.enteredExampleOrderChairs")}
           raw={quantity}
           onChange={setQuantity}
           min={1}
           max={10000}
         />
         <Note>
-          Each line is a separately identified component counted in whole
-          pieces. Kit coverage considers these three lines only.
+          {t("industrial.workspaces.eachLineIsASeparatelyIdentified")}
         </Note>
       </div>
       <div
         className={base.tableScroll}
         role="region"
         tabIndex={0}
-        aria-label="Editable fictional furniture components, scroll horizontally"
+        aria-label={t("industrial.workspaces.editableFictionalFurnitureComponentsScro")}
       >
         <table>
           <caption className={base.srOnly}>
-            Whole-piece component requirements and stock shortfalls for a
-            fictional chair batch
+            {t("industrial.workspaces.wholePieceComponentRequirementsAndStock")}
           </caption>
           <thead>
             <tr>
               {[
-                "Fictional component",
-                "Pieces / chair",
-                "Example stock · pcs",
-                "Required · pcs",
-                "Short · pcs",
+                t("industrial.workspaces.fictionalComponent"),
+                t("industrial.workspaces.piecesChair"),
+                t("industrial.workspaces.exampleStockPcs"),
+                t("industrial.workspaces.requiredPcs"),
+                t("industrial.workspaces.shortPcs"),
               ].map((s) => (
                 <th key={s} scope="col">
                   {s}
@@ -380,7 +378,7 @@ function FurnitureWorkspace() {
                 <td>
                   <label>
                     <span className={base.srOnly}>
-                      {row.name} pieces per chair
+                      {row.name}{" "}{t("industrial.workspaces.piecesPerChair")}
                     </span>
                     <input
                       type="number"
@@ -396,7 +394,7 @@ function FurnitureWorkspace() {
                 <td>
                   <label>
                     <span className={base.srOnly}>
-                      {row.name} example stock
+                      {row.name}{" "}{t("industrial.workspaces.exampleStock")}
                     </span>
                     <input
                       type="number"
@@ -418,29 +416,27 @@ function FurnitureWorkspace() {
       </div>
       <dl className={base.threeMetrics}>
         <Metric
-          label="Component-only kit equivalents in stock"
+          label={t("industrial.workspaces.componentOnlyKitEquivalentsInStock")}
           value={result ? num(result.available) : "—"}
         />
         <Metric
-          label="Requested kits covered by components"
+          label={t("industrial.workspaces.requestedKitsCoveredByComponents")}
           value={result ? num(result.covered) : "—"}
         />
         <Metric
-          label="Requested kit shortfall"
+          label={t("industrial.workspaces.requestedKitShortfall")}
           value={result ? num(result.short) : "—"}
         />
       </dl>
       <Outcome error={error}>
         {result
           ? result.short > 0
-            ? `The entered components leave ${num(result.short)} of the requested kits uncovered.`
-            : "The entered components cover the requested kit count in this local example."
+            ? t("industrial.workspaces.theEnteredComponentsLeaveOfThe", { num: String(num(result.short)) })
+            : t("industrial.workspaces.theEnteredComponentsCoverTheRequested")
           : ""}
       </Outcome>
       <Note>
-        Component coverage does not include labour, machines, other materials or
-        quality. No finished-product availability, inventory reservation or
-        production release is implied.
+        {t("industrial.workspaces.componentCoverageDoesNotIncludeLabour")}
       </Note>
     </>
   );
@@ -455,13 +451,14 @@ export default function IndustrialWorkspace({
 }: {
   slug: IndustrialSlug;
 }) {
+  const t = useTranslations("pages.industriesApp");
   const Workspace = workspaces[slug],
-    p = pages[slug];
+    p = pages(t)[slug];
   return (
     <section className={base.workspaceSection} id="professional-workspace">
       <div className={base.wrap}>
         <div className={base.sectionHeading}>
-          <p className={base.eyebrow}>EXPLORE A SMALL PART OF THE WORK</p>
+          <p className={base.eyebrow}>{t("industrial.workspaces.exploreASmallPartOfThe")}</p>
           <h2>{p.demoTitle}</h2>
           <p>{p.demoDescription}</p>
         </div>
@@ -473,20 +470,21 @@ export default function IndustrialWorkspace({
   );
 }
 export function IndustrialWorkflow({ slug }: { slug: IndustrialSlug }) {
+  const t = useTranslations("pages.industriesApp");
   const [index, setIndex] = useState(0);
   return (
     <section className={base.workflowSection}>
       <div className={base.wrap}>
         <div className={base.sectionHeading}>
-          <p className={base.eyebrow}>THE WORK, IN CONTEXT</p>
-          <h2>Keep the next manufacturing handoff clear.</h2>
+          <p className={base.eyebrow}>{t("industrial.workspaces.theWorkInContext")}</p>
+          <h2>{t("industrial.workspaces.keepTheNextManufacturingHandoffClear")}</h2>
         </div>
         <div
           className={base.workflowChoices}
           role="group"
-          aria-label="Choose a manufacturing perspective"
+          aria-label={t("industrial.workspaces.chooseAManufacturingPerspective")}
         >
-          {pages[slug].steps.map(([title], i) => (
+          {pages(t)[slug].steps.map(([title], i) => (
             <button
               key={title}
               type="button"
@@ -500,7 +498,7 @@ export function IndustrialWorkflow({ slug }: { slug: IndustrialSlug }) {
           ))}
         </div>
         <p className={base.workflowDetail} aria-live="polite">
-          {pages[slug].steps[index][1]}
+          {pages(t)[slug].steps[index][1]}
         </p>
       </div>
     </section>

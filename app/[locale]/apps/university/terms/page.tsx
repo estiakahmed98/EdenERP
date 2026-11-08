@@ -26,100 +26,104 @@ import {
   Building,
 } from "lucide-react";
 import { getLocaleAlternates } from "@/i18n/metadata";
+import { useTranslations } from "next-intl";
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const tx = await getTranslations("pages.universityApp.terms");
   const t = await getTranslations("layout.header.modules.university");
   return {
-    title: t("links.terms") || "Terms | AdonERP",
+    title: t("links.terms") || tx("page.termsAdonerp"),
     description:
-      "Manage academic terms, registration windows, and grading periods in one unified hub.",
+      tx("page.manageAcademicTermsRegistrationWindowsAn"),
     alternates: await getLocaleAlternates("/apps/university/terms"),
   };
 }
 
 // --- DATA FOR THE HERO SCREENSHOT ---
-const termsData = [
+const termsData = memoT((tx: TFn) => ([
   {
     name: "Autumn 2027",
     code: "2027-AUT",
-    dates: "1 Jul 2027 – 31 Dec 2027",
-    reg: "10 Jun 2027 – 30 Jun 2027",
-    addDrop: "14 Jul 2027",
-    withdrawal: "8 Sept 2027",
-    status: "Planning",
+    dates: tx("page.n1Jul202731Dec2027"),
+    reg: tx("page.n10Jun202730Jun2027"),
+    addDrop: tx("page.n14Jul2027"),
+    withdrawal: tx("page.n8Sept2027"),
+    status: tx("page.planning"),
     intake: "0",
   },
   {
     name: "Spring 2027",
     code: "2027-SPR",
-    dates: "1 Jan 2027 – 30 Jun 2027",
-    reg: "11 Dec 2026 – 31 Dec 2026",
-    addDrop: "14 Jan 2027",
-    withdrawal: "11 Mar 2027",
-    status: "Registration",
+    dates: tx("page.n1Jan202730Jun2027"),
+    reg: tx("page.n11Dec202631Dec2026"),
+    addDrop: tx("page.n14Jan2027"),
+    withdrawal: tx("page.n11Mar2027"),
+    status: tx("page.registration"),
     intake: "506",
   },
   {
     name: "Autumn 2026",
     code: "2026-AUT",
     current: true,
-    dates: "1 Jul 2026 – 31 Dec 2026",
-    reg: "10 Jun 2026 – 30 Jun 2026",
-    addDrop: "14 Jul 2026",
-    withdrawal: "8 Sept 2026",
-    status: "Running",
+    dates: tx("page.n1Jul202631Dec2026"),
+    reg: tx("page.n10Jun202630Jun2026"),
+    addDrop: tx("page.n14Jul2026"),
+    withdrawal: tx("page.n8Sept2026"),
+    status: tx("page.running"),
     intake: "894",
   },
-];
+]));
 
 // --- CONTENT FOR PAGE SECTIONS ---
-const featureQuestions = [
+const featureQuestions = memoT((tx: TFn) => ([
   {
-    title: "Term Lifecycle",
-    question: "How do we manage the transition between semesters?",
-    answer: "The system enforces a strict lifecycle: Planning → Registration → Running → Grading → Closed. Each stage unlocks specific features, ensuring students can't register during grading, and grades can't be entered during planning.",
-    source: "Synced from Academic Calendar",
+    title: tx("page.termLifecycle"),
+    question: tx("page.howDoWeManageTheTransition"),
+    answer: tx("page.theSystemEnforcesAStrictLifecycle"),
+    source: tx("page.syncedFromAcademicCalendar"),
   },
   {
-    title: "Registration Windows",
-    question: "Can we control when students can add or drop classes?",
-    answer: "Absolutely. You define the exact dates for registration opening, the last day to add/drop, and the final withdrawal deadline. The system automatically blocks any actions outside these windows.",
-    source: "Synced from Registration Rules",
+    title: tx("page.registrationWindows"),
+    question: tx("page.canWeControlWhenStudentsCan"),
+    answer: tx("page.absolutelyYouDefineTheExactDates"),
+    source: tx("page.syncedFromRegistrationRules"),
   },
   {
-    title: "Refund Policies",
-    question: "How are refunds calculated based on the term dates?",
-    answer: "The term configuration includes a refund schedule by week. If a student withdraws, the system automatically calculates the refund amount based on exactly which week of the term they are in.",
-    source: "Synced from Finance Modules",
+    title: tx("page.refundPolicies"),
+    question: tx("page.howAreRefundsCalculatedBasedOn"),
+    answer: tx("page.theTermConfigurationIncludesARefund"),
+    source: tx("page.syncedFromFinanceModules"),
   },
   {
-    title: "Yearly Rollover",
-    question: "Is it easy to set up the next academic year?",
-    answer: "Yes. Use the 'Create the year's terms' button to instantly generate the full academic calendar for the upcoming year, copying over the structure and dates from the previous year.",
-    source: "Synced from System Automation",
+    title: tx("page.yearlyRollover"),
+    question: tx("page.isItEasyToSetUp"),
+    answer: tx("page.yesUseTheCreateTheYear"),
+    source: tx("page.syncedFromSystemAutomation"),
   },
-];
+]));
 
-const faqs = [
+const faqs = memoT((tx: TFn) => ([
   {
-    q: "Can we have overlapping terms?",
-    a: "Yes, especially if you run different programmes (e.g., a summer school running alongside the main Autumn term). The system allows overlapping dates as long as they are defined in separate term records.",
+    q: tx("page.canWeHaveOverlappingTerms"),
+    a: tx("page.yesEspeciallyIfYouRunDifferent"),
   },
   {
-    q: "What happens when a term is 'Closed'?",
-    a: "Once a term is closed, it becomes a permanent historical record. No new registrations, grades, or financial adjustments can be made against that term without reopening it via admin override.",
+    q: tx("page.whatHappensWhenATermIs"),
+    a: tx("page.onceATermIsClosedIt"),
   },
   {
-    q: "How does the system know which term is 'Current'?",
-    a: "The system looks at the defined dates. The term containing today's date is automatically highlighted as 'Current' in the dashboard, making it clear for administrators.",
+    q: tx("page.howDoesTheSystemKnowWhich"),
+    a: tx("page.theSystemLooksAtTheDefined"),
   },
   {
-    q: "Can we customize the refund weeks?",
-    a: "Yes. The 'Refund by week' settings allow you to specify exactly what percentage of fees is refundable during week 1, week 2, etc., up to the withdrawal deadline.",
+    q: tx("page.canWeCustomizeTheRefundWeeks"),
+    a: tx("page.yesTheRefundByWeekSettings"),
   },
-];
+]));
 
 export default function UniversityTermsPage() {
+  const tx = useTranslations("pages.universityApp.terms");
   return (
     <main className="min-h-screen overflow-x-hidden bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       
@@ -130,20 +134,20 @@ export default function UniversityTermsPage() {
           {/* Hero Text */}
           <div className="mx-auto max-w-[800px] text-center mb-12">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-4 py-1.5 text-[12px] font-semibold text-primary shadow-sm">
-              <Sparkles className="h-4 w-4" /> Academic Calendar Management
+              <Sparkles className="h-4 w-4" />{" "}{tx("page.academicCalendarManagement")}
             </div>
             <h1 className="showcase-heading text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.05] tracking-[-0.04em] text-foreground">
-              Every semester. <span className="text-primary">Perfectly timed.</span>
+              {tx("page.everySemester")}{" "}<span className="text-primary">{tx("page.perfectlyTimed")}</span>
             </h1>
             <p className="mx-auto mt-5 max-w-[580px] text-[16px] leading-7 text-muted-foreground">
-              Control registration windows, add/drop deadlines, and grading periods. A single source of truth for your entire academic calendar.
+              {tx("page.controlRegistrationWindowsAddDropDeadlin")}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <button className="btn-gradient rounded-lg px-6 py-3 text-[13px] font-bold shadow-lg transition-transform hover:-translate-y-0.5">
-                Request a Demo
+                {tx("page.requestADemo")}
               </button>
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
-                Explore Features
+                {tx("page.exploreFeatures")}
               </button>
             </div>
           </div>
@@ -155,16 +159,16 @@ export default function UniversityTermsPage() {
               {/* App Top Bar */}
               <div className="flex h-12 items-center justify-between border-b border-border bg-muted/30 px-4 sm:px-6 relative z-20">
                 <div className="flex items-center gap-2 text-[12px]">
-                  <span className="font-bold text-primary">Adon ERP</span>
+                  <span className="font-bold text-primary">{tx("page.adonErp")}</span>
                   <span className="text-muted-foreground/50">/</span>
-                  <span className="font-semibold text-foreground">Terms</span>
+                  <span className="font-semibold text-foreground">{tx("page.terms")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="hidden sm:flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <Globe className="h-3 w-3" /> English
+                    <Globe className="h-3 w-3" />{" "}{tx("page.english")}
                   </div>
                   <div className="flex items-center gap-1.5 rounded border border-border bg-card px-2.5 py-1 text-[10px] font-medium text-muted-foreground">
-                    <School className="h-3 w-3" /> National University <ChevronDown className="h-3 w-3" />
+                    <School className="h-3 w-3" />{" "}{tx("page.nationalUniversity")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                 </div>
               </div>
@@ -175,24 +179,24 @@ export default function UniversityTermsPage() {
                 {/* Sidebar */}
                 <div className="hidden w-[220px] shrink-0 border-r border-border bg-card py-4 sm:block overflow-y-auto">
                   <div className="mb-3 flex items-center justify-between px-5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                    University <ChevronDown className="h-3 w-3" />
+                    {tx("page.university")}{" "}<ChevronDown className="h-3 w-3" />
                   </div>
                   <nav className="space-y-0.5 px-3">
                     {[
-                      { icon: LayoutDashboard, label: "University Dashboard" },
-                      { icon: FileText, label: "University Admissions" },
-                      { icon: Users, label: "University Students" },
-                      { icon: School, label: "Faculties & Programmes" },
-                      { icon: BookOpen, label: "Courses & Curriculum" },
-                      { icon: CalendarDays, label: "Class Schedule" },
-                      { icon: Calendar, label: "Registration" },
-                      { icon: CreditCard, label: "Student Accounts" },
-                      { icon: Award, label: "Grades & Results" },
-                      { icon: CalendarDays, label: "Exams & Attendance" },
-                      { icon: GraduationCap, label: "Outcomes (OBE)" },
-                      { icon: Briefcase, label: "Faculty & Workload" },
-                      { icon: Building, label: "Campus Services" },
-                      { icon: Calendar, label: "Terms", active: true },
+                      { icon: LayoutDashboard, label: tx("page.universityDashboard") },
+                      { icon: FileText, label: tx("page.universityAdmissions") },
+                      { icon: Users, label: tx("page.universityStudents") },
+                      { icon: School, label: tx("page.facultiesProgrammes") },
+                      { icon: BookOpen, label: tx("page.coursesCurriculum") },
+                      { icon: CalendarDays, label: tx("page.classSchedule") },
+                      { icon: Calendar, label: tx("page.registration") },
+                      { icon: CreditCard, label: tx("page.studentAccounts") },
+                      { icon: Award, label: tx("page.gradesResults") },
+                      { icon: CalendarDays, label: tx("page.examsAttendance") },
+                      { icon: GraduationCap, label: tx("page.outcomesObe") },
+                      { icon: Briefcase, label: tx("page.facultyWorkload") },
+                      { icon: Building, label: tx("page.campusServices") },
+                      { icon: Calendar, label: tx("page.terms"), active: true },
                     ].map((item, i) => (
                       <div
                         key={i}
@@ -215,9 +219,9 @@ export default function UniversityTermsPage() {
                   <div className="relative z-0">
                     {/* Page Header */}
                     <div className="mb-5">
-                      <h1 className="text-[22px] font-bold tracking-tight text-foreground">Terms</h1>
+                      <h1 className="text-[22px] font-bold tracking-tight text-foreground">{tx("page.terms")}</h1>
                       <p className="mt-1.5 max-w-[850px] text-[12px] leading-5 text-muted-foreground">
-                        Each term carries the dates that registration, billing and refunds obey: when registration opens and closes, the last day of add/drop, the withdrawal deadline, and the refund by week. A term moves Planning → Registration → Running → Grading → Closed.
+                        {tx("page.eachTermCarriesTheDatesThat")}
                       </p>
                     </div>
 
@@ -231,10 +235,10 @@ export default function UniversityTermsPage() {
                         <ChevronDown className="pointer-events-none absolute right-2 top-1/2 h-3 w-3 -translate-y-1/2 text-muted-foreground" />
                       </div>
                       <button className="flex items-center justify-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-[12px] font-medium text-primary shadow-sm transition-colors hover:bg-muted">
-                        <CalendarDays className="h-3.5 w-3.5" /> Create the year's terms
+                        <CalendarDays className="h-3.5 w-3.5" />{" "}{tx("page.createTheYearSTerms")}
                       </button>
                       <button className="flex items-center justify-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-[12px] font-bold text-primary-foreground shadow-sm transition-colors hover:bg-primary/90">
-                        <Plus className="h-3.5 w-3.5" /> New term
+                        <Plus className="h-3.5 w-3.5" />{" "}{tx("page.newTerm")}
                       </button>
                     </div>
 
@@ -243,24 +247,24 @@ export default function UniversityTermsPage() {
                       <table className="w-full text-left text-[11px]">
                         <thead className="bg-muted/50 text-muted-foreground">
                           <tr>
-                            <th className="px-4 py-3 font-semibold">TERM</th>
-                            <th className="px-4 py-3 font-semibold">DATES</th>
-                            <th className="px-4 py-3 font-semibold">REGISTRATION</th>
-                            <th className="px-4 py-3 font-semibold">ADD/DROP UNTIL</th>
-                            <th className="px-4 py-3 font-semibold">WITHDRAWAL UNTIL</th>
-                            <th className="px-4 py-3 font-semibold">STATUS</th>
-                            <th className="px-4 py-3 font-semibold text-right">INTAKE</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.term")}</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.dates")}</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.registration2")}</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.addDropUntil")}</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.withdrawalUntil")}</th>
+                            <th className="px-4 py-3 font-semibold">{tx("page.status")}</th>
+                            <th className="px-4 py-3 font-semibold text-right">{tx("page.intake")}</th>
                             <th className="px-4 py-3 font-semibold"></th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-border">
-                          {termsData.map((term, i) => (
+                          {termsData(tx).map((term, i) => (
                             <tr key={i} className="hover:bg-muted/30">
                               <td className="px-4 py-3">
                                 <div className="flex flex-col">
                                   <span className="font-bold text-foreground flex items-center gap-1.5">
                                     {term.name}
-                                    {term.current && <span className="rounded-full bg-primary/10 px-1.5 py-0.5 text-[9px] font-bold text-primary">Current</span>}
+                                    {term.current && <span className="rounded-full bg-primary/10 px-1.5 py-0.5 text-[9px] font-bold text-primary">{tx("page.current")}</span>}
                                   </span>
                                   <span className="text-[10px] text-muted-foreground">{term.code}</span>
                                 </div>
@@ -283,9 +287,9 @@ export default function UniversityTermsPage() {
                                     <Star className="h-3.5 w-3.5" />
                                   </button>
                                   <button className="rounded-md border border-border px-2 py-1 text-[10px] font-medium text-primary hover:bg-muted transition-colors">
-                                    {term.status === "Planning" ? "Open registration" : 
-                                     term.status === "Registration" ? "Back to planning" : 
-                                     "Start grading"}
+                                    {term.status === "Planning" ? tx("page.openRegistration") : 
+                                     term.status === "Registration" ? tx("page.backToPlanning") : 
+                                     tx("page.startGrading")}
                                   </button>
                                   <button className="rounded-md border border-border p-1.5 text-primary hover:bg-muted transition-colors">
                                     <Edit2 className="h-3.5 w-3.5" />
@@ -307,10 +311,10 @@ export default function UniversityTermsPage() {
                   <div className="absolute top-[185px] bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent backdrop-blur-[3px] flex flex-col items-center justify-end pb-12">
                     <div className="pointer-events-auto flex flex-col items-center">
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/80 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
-                        Preview mode. Explore the full academic calendar.
+                        {tx("page.previewModeExploreTheFullAcademic")}
                       </p>
                       <button className="btn-gradient rounded-lg px-8 py-2.5 text-[13px] font-bold shadow-xl transition-transform hover:-translate-y-0.5">
-                        Book a live demo
+                        {tx("page.bookALiveDemo")}
                       </button>
                     </div>
                   </div>
@@ -329,15 +333,15 @@ export default function UniversityTermsPage() {
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                A calendar that<br />runs itself
+                {tx("page.aCalendarThat")}<br />{tx("page.runsItself")}
               </h2>
               <p className="mt-5 max-w-[400px] text-[14px] leading-7 text-muted-foreground">
-                Forget manually tracking dates. The Terms module enforces the rules of your academic calendar, ensuring consistency across registration, billing, and grading.
+                {tx("page.forgetManuallyTrackingDatesTheTerms")}
               </p>
             </div>
             
             <div className="space-y-8">
-              {featureQuestions.map((item, i) => (
+              {featureQuestions(tx).map((item, i) => (
                 <div key={i} className="grid gap-4 border-b border-border pb-8 sm:grid-cols-[200px_1fr]">
                   <div>
                     <p className="text-[13px] font-bold text-primary">{item.title}</p>
@@ -361,10 +365,10 @@ export default function UniversityTermsPage() {
         <div className="mx-auto max-w-[1300px] px-5 sm:px-8">
           <div className="mb-10">
             <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-              Built for complex<br />academic schedules
+              {tx("page.builtForComplex")}<br />{tx("page.academicSchedules")}
             </h2>
             <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-muted-foreground">
-              Every institution runs on a different calendar. Adon ERP gives you the flexibility to define your terms exactly as they are, without rigid constraints.
+              {tx("page.everyInstitutionRunsOnADifferent")}
             </p>
           </div>
 
@@ -374,22 +378,22 @@ export default function UniversityTermsPage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <FileCheck2 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Strict Lifecycle Enforcement</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Once a term moves to 'Grading', students can no longer register. The system automatically locks features based on the term's current status.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.strictLifecycleEnforcement")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.onceATermMovesToGrading")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <WalletCards className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Refund Schedule Mapping</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Define exactly how much is refunded based on the withdrawal week. The finance module automatically calculates this when a student drops out.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.refundScheduleMapping")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.defineExactlyHowMuchIsRefunded")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <School className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Automated Year Generation</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Tired of setting up terms one by one? Use the 'Create the year's terms' tool to generate your entire academic calendar in seconds.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.automatedYearGeneration")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.tiredOfSettingUpTermsOne")}</p>
               </div>
             </div>
 
@@ -398,35 +402,35 @@ export default function UniversityTermsPage() {
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <BookOpenCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Clear Registration Windows</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Set specific dates for when registration opens and closes. The system displays countdown timers to students and blocks access outside those dates.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.clearRegistrationWindows")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.setSpecificDatesForWhenRegistration")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <Layers3 className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Add/Drop Deadlines</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">Define the exact date when students can no longer modify their schedule. This prevents chaos later in the semester and locks in accurate billing.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.addDropDeadlines")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.defineTheExactDateWhenStudents")}</p>
               </div>
               <div className="rounded-xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <CalendarDays className="h-5 w-5" />
                 </div>
-                <h3 className="text-[15px] font-bold text-foreground">Current Term Highlighting</h3>
-                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">The system automatically detects the current date and highlights the active term, ensuring administrators always know which term they are operating in.</p>
+                <h3 className="text-[15px] font-bold text-foreground">{tx("page.currentTermHighlighting")}</h3>
+                <p className="mt-2 text-[13px] leading-6 text-muted-foreground">{tx("page.theSystemAutomaticallyDetectsTheCurrent")}</p>
               </div>
             </div>
 
             {/* Timeline Box */}
             <div className="rounded-xl border border-border bg-card p-6 md:p-8 shadow-sm">
-              <h3 className="mb-6 text-[15px] font-bold text-foreground">A day for the registrar</h3>
+              <h3 className="mb-6 text-[15px] font-bold text-foreground">{tx("page.aDayForTheRegistrar")}</h3>
               <div className="relative border-l-2 border-muted ml-3 space-y-6">
                 {[
-                  { time: "9:00 am", text: "The registrar opens the Terms page. The 'Autumn 2027' term is currently in 'Planning' status. They review the dates." },
-                  { time: "10:30 am", text: "They click 'Open registration' on the Autumn 2027 term. The system updates the status and emails all eligible students." },
-                  { time: "1:00 pm", text: "Spring 2027 is in 'Registration' phase. The registrar checks the intake number and sees 506 students have already registered." },
-                  { time: "3:00 pm", text: "A student calls wanting to withdraw from a course. The registrar checks the withdrawal date for the current term and approves the request." },
-                  { time: "5:00 pm", text: "The registrar uses 'Create the year's terms' to instantly generate the full calendar for 2028, saving hours of manual setup." }
+                  { time: tx("page.n900Am"), text: tx("page.theRegistrarOpensTheTermsPage") },
+                  { time: tx("page.n1030Am"), text: tx("page.theyClickOpenRegistrationOnThe") },
+                  { time: tx("page.n100Pm"), text: tx("page.spring2027IsInRegistrationPhase") },
+                  { time: tx("page.n300Pm"), text: tx("page.aStudentCallsWantingToWithdraw") },
+                  { time: tx("page.n500Pm"), text: tx("page.theRegistrarUsesCreateTheYear") }
                 ].map((item, i) => (
                   <div key={i} className="relative pl-6">
                     <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-card bg-primary ring-4 ring-primary/10" />
@@ -446,11 +450,11 @@ export default function UniversityTermsPage() {
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <div>
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,2.8rem)] leading-[1.1] tracking-[-0.04em] text-foreground">
-                Questions about<br />academic terms
+                {tx("page.questionsAbout")}<br />{tx("page.academicTerms")}
               </h2>
             </div>
             <div className="border-t border-border">
-              {faqs.map((faq, i) => (
+              {faqs(tx).map((faq, i) => (
                 <details key={i} className="group border-b border-border py-5">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-[14px] font-bold text-foreground marker:hidden [&::-webkit-details-marker]:hidden">
                     {faq.q}
@@ -477,17 +481,17 @@ export default function UniversityTermsPage() {
             
             <div className="relative mx-auto max-w-[700px]">
               <h2 className="showcase-heading text-[clamp(2rem,3.5vw,3.2rem)] leading-[1.1] tracking-[-0.04em]">
-                Ready to master<br />your academic calendar?
+                {tx("page.readyToMaster")}<br />{tx("page.yourAcademicCalendar")}
               </h2>
               <p className="mx-auto mt-5 max-w-[500px] text-[15px] leading-6 text-secondary-foreground/70">
-                Get a personalized walkthrough of the Terms module. We'll show you how to automate your registration windows and grading periods.
+                {tx("page.getAPersonalizedWalkthroughOfThe")}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <button className="rounded-lg bg-card px-6 py-3 text-[13px] font-bold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-muted shadow-lg">
-                  Schedule a Walkthrough
+                  {tx("page.scheduleAWalkthrough")}
                 </button>
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
-                  Browse All Modules
+                  {tx("page.browseAllModules")}
                 </button>
               </div>
             </div>

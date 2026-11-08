@@ -10,6 +10,7 @@ import {
   type IndustrySlug,
 } from "./data";
 import { Badge, Metric, Note, css } from "./ui";
+import { useTranslations } from "next-intl";
 function WeightInput({
   label,
   value,
@@ -40,22 +41,23 @@ function numeric(value: string) {
   return Number(value);
 }
 export function ProcessStory({ slug }: { slug: IndustrySlug }) {
+  const t = useTranslations("pages.industriesApp");
   const [index, setIndex] = useState(0);
-  const p = pages[slug],
+  const p = pages(t)[slug],
     stage = p.stages[index];
   return (
     <section className={css.processSection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>A PROCESS WITH CONTEXT</p>
+            <p className={css.eyebrow}>{t("manufacturing.workspaces.aProcessWithContext")}</p>
             <h2>{p.story}</h2>
           </div>
         </div>
         <div
           className={css.stageButtons}
           role="group"
-          aria-label="Choose a process stage"
+          aria-label={t("manufacturing.workspaces.chooseAProcessStage")}
         >
           {p.stages.map((item, i) => (
             <button
@@ -89,6 +91,7 @@ export function ProcessStory({ slug }: { slug: IndustrySlug }) {
   );
 }
 function SteelWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [gross, setGross] = useState(String(steelExample.gross));
   const [tare, setTare] = useState(String(steelExample.tare));
   const [first, setFirst] = useState(String(steelExample.orders[0].weight));
@@ -101,12 +104,12 @@ function SteelWorkspace() {
       numeric(second),
     ]);
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example weights.";
+    error = e instanceof Error ? e.message : t("manufacturing.workspaces.useValidExampleWeights");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Illustrative weighment · kg, rounded to 0.001</Badge>
+        <Badge>{t("manufacturing.workspaces.illustrativeWeighmentKgRoundedTo0")}</Badge>
         <button
           type="button"
           className={css.button}
@@ -118,61 +121,60 @@ function SteelWorkspace() {
           }}
         >
           <RotateCcw size={14} />
-          Reset example
+          {t("manufacturing.workspaces.resetExample")}
         </button>
       </div>
       <div className={css.steelWorkspace}>
         <div>
           <div className={css.weighmentFields}>
             <WeightInput
-              label="Gross weighment · kg"
+              label={t("manufacturing.workspaces.grossWeighmentKg")}
               value={gross}
               onChange={setGross}
             />
             <span>−</span>
             <WeightInput
-              label="Tare weighment · kg"
+              label={t("manufacturing.workspaces.tareWeighmentKg")}
               value={tare}
               onChange={setTare}
             />
           </div>
           <div className={css.netResult}>
-            <span>Calculated net weight</span>
+            <span>{t("manufacturing.workspaces.calculatedNetWeight")}</span>
             <strong>{result ? kg(result.net) : "—"}</strong>
           </div>
           <div className={css.allocationFields}>
             <WeightInput
-              label="EX-ORDER-A · allocated kg"
+              label={t("manufacturing.workspaces.exOrderAAllocatedKg")}
               value={first}
               onChange={setFirst}
             />
             <WeightInput
-              label="EX-ORDER-B · allocated kg"
+              label={t("manufacturing.workspaces.exOrderBAllocatedKg")}
               value={second}
               onChange={setSecond}
             />
           </div>
           <Note>
-            No dimensions, grade, thickness or physical cutting rules are
-            inferred. These are two example order weights, not a cutting plan.
+            {t("manufacturing.workspaces.noDimensionsGradeThicknessOrPhysical")}
           </Note>
         </div>
         <section
           className={css.allocationPanel}
-          aria-label="Local allocation result"
+          aria-label={t("manufacturing.workspaces.localAllocationResult")}
         >
-          <span>THE WEIGHT CONVERSATION</span>
-          <h3>Know what the example leaves unallocated.</h3>
+          <span>{t("manufacturing.workspaces.theWeightConversation")}</span>
+          <h3>{t("manufacturing.workspaces.knowWhatTheExampleLeavesUnallocated")}</h3>
           <dl className={css.metrics}>
             <Metric
-              label="Example allocated weight"
+              label={t("manufacturing.workspaces.exampleAllocatedWeight")}
               value={result ? kg(result.allocated) : "—"}
             />
             <Metric
               label={
                 result && result.remaining < 0
-                  ? "Example allocation shortfall"
-                  : "Example unallocated weight"
+                  ? t("manufacturing.workspaces.exampleAllocationShortfall")
+                  : t("manufacturing.workspaces.exampleUnallocatedWeight")
               }
               value={result ? kg(Math.abs(result.remaining)) : "—"}
             />
@@ -191,14 +193,13 @@ function SteelWorkspace() {
           >
             {error ||
               (!result
-                ? "Enter the weights to compare."
+                ? t("manufacturing.workspaces.enterTheWeightsToCompare")
                 : result.remaining < 0
-                  ? "The example allocations exceed the calculated net weight."
-                  : "The entered allocations fit within the example net weight. No stock has been reserved.")}
+                  ? t("manufacturing.workspaces.theExampleAllocationsExceedTheCalculated")
+                  : t("manufacturing.workspaces.theEnteredAllocationsFitWithinThe"))}
           </p>
           <Note>
-            The result does not create a scale ticket, stock reservation,
-            production order or dispatch record.
+            {t("manufacturing.workspaces.theResultDoesNotCreateA")}
           </Note>
         </section>
       </div>
@@ -206,6 +207,7 @@ function SteelWorkspace() {
   );
 }
 function RiceWorkspace() {
+  const t = useTranslations("pages.industriesApp");
   const [input, setInput] = useState(String(riceExample.input));
   const [outputs, setOutputs] = useState({
     headRice: String(riceExample.headRice),
@@ -223,12 +225,12 @@ function RiceWorkspace() {
       husk: numeric(outputs.husk),
     });
   } catch (e) {
-    error = e instanceof Error ? e.message : "Use valid example weights.";
+    error = e instanceof Error ? e.message : t("manufacturing.workspaces.useValidExampleWeights");
   }
   return (
     <>
       <div className={css.toolbar}>
-        <Badge>Illustrative lot · no standard recovery assumed</Badge>
+        <Badge>{t("manufacturing.workspaces.illustrativeLotNoStandardRecoveryAssumed")}</Badge>
         <button
           className={css.button}
           type="button"
@@ -243,18 +245,18 @@ function RiceWorkspace() {
           }}
         >
           <RotateCcw size={14} />
-          Reset example
+          {t("manufacturing.workspaces.resetExample")}
         </button>
       </div>
       <div className={css.riceWorkspace}>
         <div>
           <div className={css.paddyInput}>
             <WeightInput
-              label="Example net paddy input · kg"
+              label={t("manufacturing.workspaces.exampleNetPaddyInputKg")}
               value={input}
               onChange={setInput}
             />
-            <span>EX-PADDY-01 / LOCAL INPUT</span>
+            <span>{t("manufacturing.workspaces.exPaddy01LocalInput")}</span>
           </div>
           <div className={css.outputFields}>
             {(
@@ -278,33 +280,31 @@ function RiceWorkspace() {
             ))}
           </div>
           <Note>
-            Weights are rounded to 0.001 kg for the arithmetic. The example does
-            not correct moisture, classify quality or determine an acceptable
-            milling yield.
+            {t("manufacturing.workspaces.weightsAreRoundedTo0001")}
           </Note>
         </div>
-        <section className={css.massPanel} aria-label="Local mass balance">
-          <span>INPUT → RECORDED OUTPUTS</span>
-          <h3>Keep the arithmetic visible.</h3>
+        <section className={css.massPanel} aria-label={t("manufacturing.workspaces.localMassBalance")}>
+          <span>{t("manufacturing.workspaces.inputRecordedOutputs")}</span>
+          <h3>{t("manufacturing.workspaces.keepTheArithmeticVisible")}</h3>
           <dl className={css.metrics}>
             <Metric
-              label="Recorded outputs"
+              label={t("manufacturing.workspaces.recordedOutputs")}
               value={result ? kg(result.recorded) : "—"}
             />
             <Metric
               label={
                 result && result.unassigned < 0
-                  ? "Outputs above input"
-                  : "Unassigned input weight"
+                  ? t("manufacturing.workspaces.outputsAboveInput")
+                  : t("manufacturing.workspaces.unassignedInputWeight")
               }
               value={result ? kg(Math.abs(result.unassigned)) : "—"}
             />
             <Metric
-              label="Head-rice fraction · example"
+              label={t("manufacturing.workspaces.headRiceFractionExample")}
               value={result ? `${result.headRicePercent.toFixed(2)}%` : "—"}
             />
             <Metric
-              label="Head + broken fraction · example"
+              label={t("manufacturing.workspaces.headBrokenFractionExample")}
               value={result ? `${result.ricePercent.toFixed(2)}%` : "—"}
             />
           </dl>
@@ -315,12 +315,11 @@ function RiceWorkspace() {
           >
             {error ||
               (result && result.unassigned < 0
-                ? "Recorded output weights exceed the entered paddy input."
-                : "Unassigned weight is an arithmetic gap. It is not automatically classified as process loss.")}
+                ? t("manufacturing.workspaces.recordedOutputWeightsExceedTheEntered")
+                : t("manufacturing.workspaces.unassignedWeightIsAnArithmeticGap"))}
           </p>
           <Note>
-            These fractions belong only to the entered example, not a benchmark
-            or a quality decision. No production output or inventory is posted.
+            {t("manufacturing.workspaces.theseFractionsBelongOnlyToThe")}
           </Note>
         </section>
       </div>
@@ -328,17 +327,18 @@ function RiceWorkspace() {
   );
 }
 export default function IndustryWorkspace({ slug }: { slug: IndustrySlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <section className={css.workspaceSection} id="industry-workspace">
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>EXPLORE THE QUANTITY CONVERSATION</p>
+            <p className={css.eyebrow}>{t("manufacturing.workspaces.exploreTheQuantityConversation")}</p>
             <h2>{p.demoTitle}</h2>
             <p>{p.demoDescription}</p>
           </div>
-          <Badge>Local example · not connected</Badge>
+          <Badge>{t("manufacturing.workspaces.localExampleNotConnected")}</Badge>
         </div>
         <div className={css.workspace}>
           {slug === "steel" ? <SteelWorkspace /> : <RiceWorkspace />}

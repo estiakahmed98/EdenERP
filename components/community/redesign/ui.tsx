@@ -2,6 +2,7 @@ import { ArrowDown, BookOpen, Compass, MessagesSquare } from "lucide-react";
 import LiveDemoButton from "@/components/live-demo-button";
 import base from "@/components/industries/professional/professional.module.css";
 import css from "./community.module.css";
+import { useTranslations } from "next-intl";
 export { base, css };
 export {
   Note,
@@ -9,11 +10,12 @@ export {
   HandNote,
 } from "@/components/industries/professional/ui";
 export function Actions() {
+  const t = useTranslations("pages.communityApp");
   return (
     <div className={base.actions}>
       <LiveDemoButton />
       <a href="#community-content">
-        Explore this page
+        {t("ui.exploreThisPage")}
         <ArrowDown size={14} aria-hidden="true" />
       </a>
     </div>
@@ -52,19 +54,20 @@ export function GuideArt() {
   );
 }
 export function DialogueArt() {
+  const t = useTranslations("pages.communityApp");
   return (
     <div className={css.dialogueArt} aria-hidden="true">
       <div>
         <MessagesSquare size={21} />
-        <span>Your workflow.</span>
+        <span>{t("ui.yourWorkflow")}</span>
       </div>
       <div>
         <BookOpen size={21} />
-        <span>The product context.</span>
+        <span>{t("ui.theProductContext")}</span>
       </div>
       <div>
         <Compass size={21} />
-        <span>A useful next step.</span>
+        <span>{t("ui.aUsefulNextStep")}</span>
       </div>
     </div>
   );

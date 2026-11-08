@@ -35,6 +35,7 @@ import {
   Tag,
   css,
 } from "./ui";
+import { useTranslations } from "next-intl";
 
 function Selection({
   items,
@@ -120,6 +121,7 @@ const validCount = (value: string, max = 100000) =>
   validAmount(value, max) && Number.isInteger(Number(value));
 
 function RegisterWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [query, setQuery] = useState("");
   const [basket, setBasket] = useState<Record<string, number>>({
     "DH-6070": 1,
@@ -145,9 +147,9 @@ function RegisterWorkspace() {
           <SearchBox
             value={query}
             onChange={setQuery}
-            label="Search product or SKU"
+            label={t("workspaces.searchProductOrSku")}
           />
-          <Tag>R1-BSC · example basket</Tag>
+          <Tag>{t("workspaces.r1BscExampleBasket")}</Tag>
         </div>
         <div className={css.productGrid}>
           {stock
@@ -161,7 +163,7 @@ function RegisterWorkspace() {
                 key={row.sku}
                 className={css.productButton}
                 onClick={() => change(row.sku, 1)}
-                aria-label={`Add ${row.name} to demo basket`}
+                aria-label={t("workspaces.addToDemoBasket", { name: String(row.name) })}
               >
                 <div className={css.productArt}>
                   <Denim top={row.sku.startsWith("LOT")} />
@@ -179,28 +181,28 @@ function RegisterWorkspace() {
           `${row.sku} ${row.name}`.toLowerCase().includes(query.toLowerCase()),
         ) && (
           <p className={css.empty}>
-            No matching products. Try “denim” or “DH-6070”.
+            {t("workspaces.noMatchingProductsTryDenimOr")}
           </p>
         )}
       </div>
-      <Panel title="Your demo basket" className={css.basketPanel}>
+      <Panel title={t("workspaces.yourDemoBasket")} className={css.basketPanel}>
         <div className={css.basketLines}>
           {lines.map((row) => (
             <div className={css.basketLine} key={row.sku}>
               <div>
                 <b>{row.name}</b>
-                <small>{money(row.price)} each</small>
+                <small>{money(row.price)}{" "}{t("workspaces.each")}</small>
               </div>
               <div className={css.qtyControls}>
                 <Button
-                  aria-label={`Remove one ${row.sku}`}
+                  aria-label={t("workspaces.removeOne", { sku: String(row.sku) })}
                   onClick={() => change(row.sku, -1)}
                 >
                   <Minus size={13} />
                 </Button>
                 <span>{row.qty}</span>
                 <Button
-                  aria-label={`Add one ${row.sku}`}
+                  aria-label={t("workspaces.addOne", { sku: String(row.sku) })}
                   disabled={row.qty >= 999}
                   onClick={() => change(row.sku, 1)}
                 >
@@ -211,22 +213,22 @@ function RegisterWorkspace() {
           ))}
           {!lines.length && (
             <p className={css.empty}>
-              Your basket is empty. Add an item to begin.
+              {t("workspaces.yourBasketIsEmptyAddAn")}
             </p>
           )}
         </div>
         <dl className={css.totals}>
           <div>
-            <dt>Includes VAT · 15% demo rate</dt>
+            <dt>{t("workspaces.includesVat15DemoRate")}</dt>
             <dd>{money(totals.tax)}</dd>
           </div>
           <div>
-            <dt>Total</dt>
+            <dt>{t("workspaces.total")}</dt>
             <dd>{money(totals.total)}</dd>
           </div>
         </dl>
         <Numeric
-          label="Cash tender · BDT"
+          label={t("workspaces.cashTenderBdt")}
           value={tender}
           onChange={(value) => {
             setTender(value);
@@ -240,15 +242,15 @@ function RegisterWorkspace() {
               setComplete(false);
             }}
           >
-            Exact amount
+            {t("workspaces.exactAmount")}
           </Button>
           <span>
-            Change <b>{money(totals.change)}</b>
+            {t("workspaces.change")}{" "}<b>{money(totals.change)}</b>
           </span>
         </div>
         {!valid && (
           <p role="alert" className={css.error}>
-            Enter a cash amount between 0 and 100,000,000.
+            {t("workspaces.enterACashAmountBetween0")}
           </p>
         )}
         <Button
@@ -257,14 +259,14 @@ function RegisterWorkspace() {
           onClick={() => setComplete(true)}
         >
           <ShoppingBag size={16} />
-          {complete ? "Simulation complete" : "Simulate checkout"}
+          {complete ? t("workspaces.simulationComplete") : t("workspaces.simulateCheckout")}
         </Button>
         <p className={css.feedback} role="status">
           {complete
-            ? "Demo calculated. No payment taken, receipt saved or stock changed."
+            ? t("workspaces.demoCalculatedNoPaymentTakenReceipt")
             : totals.due > 0
               ? `${money(totals.due)} still due in this exercise.`
-              : "Local exercise · no sale will be created."}
+              : t("workspaces.localExerciseNoSaleWillBe")}
         </p>
         <Button
           onClick={() => {
@@ -274,7 +276,7 @@ function RegisterWorkspace() {
             setComplete(false);
           }}
         >
-          <RotateCcw size={13} /> Reset basket
+          <RotateCcw size={13} />{" "}{t("workspaces.resetBasket")}
         </Button>
       </Panel>
     </div>
@@ -282,7 +284,8 @@ function RegisterWorkspace() {
 }
 
 function ShiftsWorkspace() {
-  const closed = shifts.filter((row) => row.cash !== null);
+  const t = useTranslations("pages.posApp");
+  const closed = shifts(t).filter((row) => row.cash !== null);
   const [id, setId] = useState(closed[0].id);
   const [count, setCount] = useState("3450");
   const row = closed.find((item) => item.id === id)!;
@@ -293,7 +296,7 @@ function ShiftsWorkspace() {
   return (
     <div className={css.reconcileLab}>
       <div>
-        <Field label="Supplied closed shift">
+        <Field label={t("workspaces.suppliedClosedShift")}>
           <select
             value={id}
             onChange={(e) => {
@@ -316,17 +319,17 @@ function ShiftsWorkspace() {
               {row.opened} → {row.closed}
             </span>
           </div>
-          <Tag positive>Posted source record</Tag>
+          <Tag positive>{t("workspaces.postedSourceRecord")}</Tag>
         </div>
         <dl className={css.stats}>
-          <Stat label="Opening float" value={money(row.float)} />
-          <Stat label="Expected cash · source" value={money(row.cash!)} />
-          <Stat label="Receipts" value={row.receipts} />
+          <Stat label={t("workspaces.openingFloat")} value={money(row.float)} />
+          <Stat label={t("workspaces.expectedCashSource")} value={money(row.cash!)} />
+          <Stat label={t("workspaces.receipts")} value={row.receipts} />
         </dl>
       </div>
-      <Panel title="Your count, compared">
+      <Panel title={t("workspaces.yourCountCompared")}>
         <Numeric
-          label="Locally counted cash · BDT"
+          label={t("workspaces.locallyCountedCashBdt")}
           value={count}
           onChange={setCount}
         />
@@ -334,27 +337,27 @@ function ShiftsWorkspace() {
           className={css.varianceResult}
           data-negative={variance !== null && variance !== 0}
         >
-          <span>Cash variance</span>
+          <span>{t("workspaces.cashVariance")}</span>
           <strong>{variance === null ? "—" : money(variance)}</strong>
           <p role="status">
             {variance === null
-              ? "Enter a valid cash count to compare."
+              ? t("workspaces.enterAValidCashCountTo")
               : variance === 0
-                ? "The local count matches expected cash."
+                ? t("workspaces.theLocalCountMatchesExpectedCash")
                 : variance < 0
-                  ? "The local count is short of expected cash."
-                  : "The local count exceeds expected cash."}
+                  ? t("workspaces.theLocalCountIsShortOf")
+                  : t("workspaces.theLocalCountExceedsExpectedCash")}
           </p>
         </div>
         <Note>
-          The supplied posted shift remains unchanged. This comparison is not a
-          close or a journal posting.
+          {t("workspaces.theSuppliedPostedShiftRemainsUnchanged")}
         </Note>
       </Panel>
     </div>
   );
 }
 function ReceiptsWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [query, setQuery] = useState("");
   const [mode, setMode] = useState("inclusive");
   const match = "example-01 dh-6070 athletic fit jean denim".includes(
@@ -363,54 +366,52 @@ function ReceiptsWorkspace() {
   return (
     <div className={css.receiptLab}>
       <div>
-        <Badge demo>Illustrative receipt · derived totals</Badge>
+        <Badge demo>{t("workspaces.illustrativeReceiptDerivedTotals")}</Badge>
         <SearchBox
           value={query}
           onChange={setQuery}
-          label="Find example receipt or product"
+          label={t("workspaces.findExampleReceiptOrProduct")}
         />
         {match ? (
           <div className={css.receiptListItem}>
             <ReceiptPaper compact />
             <div>
-              <span>EXAMPLE-01 · LOCAL DEMO</span>
-              <h3>Athletic Fit Jean</h3>
-              <p>DH-6070 · 1 unit · Cash</p>
+              <span>{t("workspaces.example01LocalDemo")}</span>
+              <h3>{t("workspaces.athleticFitJean")}</h3>
+              <p>{t("workspaces.dh60701UnitCash")}</p>
               <b>{money(3450)}</b>
               <small>
-                The item, tender and totals come from the supplied summary. The
-                receipt identifier is illustrative.
+                {t("workspaces.theItemTenderAndTotalsCome")}
               </small>
             </div>
           </div>
         ) : (
           <p className={css.empty}>
-            No matching example. Search “DH-6070” or clear the search.
+            {t("workspaces.noMatchingExampleSearchDh6070")}
           </p>
         )}
       </div>
-      <Panel title="A transparent tax breakdown">
+      <Panel title={t("workspaces.aTransparentTaxBreakdown")}>
         <Selection
-          label="Price display"
+          label={t("workspaces.priceDisplay")}
           value={mode}
           onChange={setMode}
           items={[
-            { value: "inclusive", label: "VAT inclusive" },
-            { value: "exclusive", label: "Before VAT" },
+            { value: "inclusive", label: t("workspaces.vatInclusive") },
+            { value: "exclusive", label: t("workspaces.beforeVat") },
           ]}
         />
         <dl className={css.stats}>
           <Stat
             label={
-              mode === "inclusive" ? "Price including VAT" : "Price before VAT"
+              mode === "inclusive" ? t("workspaces.priceIncludingVat") : t("workspaces.priceBeforeVat")
             }
             value={money(mode === "inclusive" ? 3450 : 3000)}
           />
-          <Stat label="VAT · supplied amount" value={money(450)} />
+          <Stat label={t("workspaces.vatSuppliedAmount")} value={money(450)} />
         </dl>
         <p className={css.explainer}>
-          The customer total is {money(3450)} in both views. Changing the
-          display does not add VAT a second time.
+          {t("workspaces.theCustomerTotalIs")}{" "}{money(3450)}{" "}{t("workspaces.inBothViewsChangingTheDisplay")}
         </p>
         <Barcode />
       </Panel>
@@ -418,50 +419,51 @@ function ReceiptsWorkspace() {
   );
 }
 function SummaryWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [mode, setMode] = useState("totals");
   return (
     <>
       <div className={css.labToolbar}>
         <Badge />
         <Selection
-          label="Summary view"
+          label={t("workspaces.summaryView")}
           value={mode}
           onChange={setMode}
           items={[
-            { value: "totals", label: "Closing totals" },
-            { value: "bridge", label: "Explain the margin" },
+            { value: "totals", label: t("workspaces.closingTotals") },
+            { value: "bridge", label: t("workspaces.explainTheMargin") },
           ]}
         />
       </div>
       {mode === "totals" ? (
         <dl className={css.summaryStats}>
           <Stat
-            label="Gross / net sales"
+            label={t("workspaces.grossNetSales")}
             value={money(saleSummary.gross)}
             detail="No refunds or discounts in source"
           />
-          <Stat label="VAT included" value={money(saleSummary.vat)} />
-          <Stat label="Cost of goods" value={money(saleSummary.cost)} />
+          <Stat label={t("workspaces.vatIncluded")} value={money(saleSummary.vat)} />
+          <Stat label={t("workspaces.costOfGoods")} value={money(saleSummary.cost)} />
           <Stat
-            label="Gross margin"
+            label={t("workspaces.grossMargin")}
             value={money(saleSummary.margin)}
             detail="Source shows 58%"
           />
-          <Stat label="Receipts / items" value="1 / 1" />
-          <Stat label="Average basket" value={money(3450)} />
+          <Stat label={t("workspaces.receiptsItems")} value="1 / 1" />
+          <Stat label={t("workspaces.averageBasket")} value={money(3450)} />
         </dl>
       ) : (
         <div className={css.waterfall}>
           {[
-            { label: "Customer total", value: 3450, width: 100 },
-            { label: "Less VAT", value: 450, width: (450 / 3450) * 100 },
+            { label: t("workspaces.customerTotal"), value: 3450, width: 100 },
+            { label: t("workspaces.lessVat"), value: 450, width: (450 / 3450) * 100 },
             {
-              label: "Less cost of goods",
+              label: t("workspaces.lessCostOfGoods"),
               value: 1261.09,
               width: (1261.09 / 3450) * 100,
             },
             {
-              label: "Gross margin",
+              label: t("workspaces.grossMargin"),
               value: 1738.91,
               width: (1738.91 / 3450) * 100,
             },
@@ -478,88 +480,85 @@ function SummaryWorkspace() {
       )}
       <div className={css.summaryFoot}>
         <span>
-          Cash tender <b>{money(3450)}</b>
+          {t("workspaces.cashTender")}{" "}<b>{money(3450)}</b>
         </span>
         <span>
-          Top item <b>DH-6070 · 1 unit</b>
+          {t("workspaces.topItem")}{" "}<b>{t("workspaces.dh60701Unit")}</b>
         </span>
         <span>
-          Category <b>finished_good</b>
+          {t("workspaces.category")}{" "}<b>{t("workspaces.finishedGood")}</b>
         </span>
       </div>
       <Note>
-        No trading date or shift has been inferred from the summary selector.
-        Figures reproduce the supplied snapshot.
+        {t("workspaces.noTradingDateOrShiftHas")}
       </Note>
     </>
   );
 }
 function DashboardWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [view, setView] = useState("sales");
   return (
     <>
       <div className={css.labToolbar}>
-        <Tag>All outlets · supplied 14-day window</Tag>
+        <Tag>{t("workspaces.allOutletsSupplied14DayWindow")}</Tag>
         <Selection
-          label="Dashboard evidence view"
+          label={t("workspaces.dashboardEvidenceView")}
           value={view}
           onChange={setView}
           items={[
-            { value: "sales", label: "Sales evidence" },
-            { value: "stock", label: "Stock cover" },
+            { value: "sales", label: t("workspaces.salesEvidence") },
+            { value: "stock", label: t("workspaces.stockCover") },
           ]}
         />
       </div>
       <dl className={css.summaryStats}>
-        <Stat label="Net sales" value={money(3450)} />
-        <Stat label="Receipts" value="1" detail="0 returns" />
+        <Stat label={t("workspaces.netSales")} value={money(3450)} />
+        <Stat label={t("workspaces.receipts")} value="1" detail="0 returns" />
         <Stat
-          label="Gross margin"
+          label={t("workspaces.grossMargin")}
           value={money(1738.91)}
           detail="58% as shown"
         />
       </dl>
       {view === "sales" ? (
         <div className={css.dashboardEvidence}>
-          <Panel title="The complete supplied sales contribution">
+          <Panel title={t("workspaces.theCompleteSuppliedSalesContribution")}>
             <div className={css.evidenceBar}>
               <span>DH-6070</span>
               <i />
               <b>{money(3450)}</b>
             </div>
             <p>
-              One Athletic Fit Jean at R1-BSC. Cash is the only tender shown.
+              {t("workspaces.oneAthleticFitJeanAtR1")}
             </p>
             <Note>
-              No daily chart is reconstructed: the screenshot does not expose
-              all daily values.
+              {t("workspaces.noDailyChartIsReconstructedThe")}
             </Note>
           </Panel>
-          <Panel title="From total to context">
+          <Panel title={t("workspaces.fromTotalToContext")}>
             <dl className={css.stackedStats}>
-              <Stat label="Average basket" value={money(3450)} />
-              <Stat label="Average per day, as shown" value={money(246.43)} />
+              <Stat label={t("workspaces.averageBasket")} value={money(3450)} />
+              <Stat label={t("workspaces.averagePerDayAsShown")} value={money(246.43)} />
             </dl>
           </Panel>
         </div>
       ) : (
-        <Panel title="Top item · supplied dashboard stock cover">
+        <Panel title={t("workspaces.topItemSuppliedDashboardStockCover")}>
           <div className={css.stockCover}>
             <Denim />
             <div>
-              <b>DH-6070 · Athletic Fit Jean</b>
+              <b>{t("workspaces.dh6070AthleticFitJean")}</b>
               <p>
-                On hand <strong>295</strong> · Units sold <strong>1</strong>
+                {t("workspaces.onHand")}{" "}<strong>295</strong>{" "}{t("workspaces.unitsSold")}{" "}<strong>1</strong>
               </p>
               <span className={css.coverDays}>
-                4,130 <small>days cover · source figure</small>
+                4,130 <small>{t("workspaces.daysCoverSourceFigure")}</small>
               </span>
             </div>
           </div>
           <Note>
-            This dashboard snapshot reports 295 on hand. The separate
-            outlet-stock screenshot reports 192; the two are not treated as the
-            same balance or date.
+            {t("workspaces.thisDashboardSnapshotReports295On")}
           </Note>
         </Panel>
       )}
@@ -567,6 +566,7 @@ function DashboardWorkspace() {
   );
 }
 function LoyaltyWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [balance, setBalance] = useState("100");
   const [redeem, setRedeem] = useState("25");
   const [rate, setRate] = useState("1");
@@ -579,38 +579,36 @@ function LoyaltyWorkspace() {
   return (
     <div className={css.loyaltyLab}>
       <div>
-        <Badge demo>Illustrative policy · not a customer balance</Badge>
-        <h3>What would a redemption look like?</h3>
+        <Badge demo>{t("workspaces.illustrativePolicyNotACustomerBalance")}</Badge>
+        <h3>{t("workspaces.whatWouldARedemptionLookLike")}</h3>
         <p className={css.explainer}>
-          Set your own example balance and BDT per point. The defaults below
-          illustrate the interaction; they are not Denim House's redemption
-          policy.
+          {t("workspaces.setYourOwnExampleBalanceAnd")}
         </p>
         <div className={css.formGrid}>
           <Numeric
-            label="Example available points"
+            label={t("workspaces.exampleAvailablePoints")}
             value={balance}
             onChange={setBalance}
             max={1000000}
             integer
           />
           <Numeric
-            label="Points to redeem"
+            label={t("workspaces.pointsToRedeem")}
             value={redeem}
             onChange={setRedeem}
             max={1000000}
             integer
           />
           <Numeric
-            label="Example BDT per point"
+            label={t("workspaces.exampleBdtPerPoint")}
             value={rate}
             onChange={setRate}
             max={1000}
           />
         </div>
       </div>
-      <Panel title="Redemption preview">
-        <span className={css.resultEyebrow}>Illustrative value</span>
+      <Panel title={t("workspaces.redemptionPreview")}>
+        <span className={css.resultEyebrow}>{t("workspaces.illustrativeValue")}</span>
         <strong className={css.largeResult}>
           {valid
             ? money(Math.round(Number(redeem) * Number(rate) * 100) / 100)
@@ -619,26 +617,26 @@ function LoyaltyWorkspace() {
         <p role="status">
           {valid
             ? `${number(Number(balance) - Number(redeem))} example points would remain.`
-            : "Use whole non-negative points, a positive rate, and redeem no more than the available balance."}
+            : t("workspaces.useWholeNonNegativePointsA")}
         </p>
         <div className={css.paperRule} />
         <p>
-          No points are redeemed and no voucher is issued. Customer identities
-          and voucher codes were not supplied.
+          {t("workspaces.noPointsAreRedeemedAndNo")}
         </p>
       </Panel>
     </div>
   );
 }
 function TransfersWorkspace() {
-  const [id, setId] = useState(transfers[0].id);
+  const t = useTranslations("pages.posApp");
+  const [id, setId] = useState(transfers(t)[0].id);
   const [received, setReceived] = useState("27");
-  const row = transfers.find((item) => item.id === id)!;
+  const row = transfers(t).find((item) => item.id === id)!;
   const valid = validCount(received);
   return (
     <div className={css.transferLab}>
       <div>
-        <Field label="Supplied received transfer">
+        <Field label={t("workspaces.suppliedReceivedTransfer")}>
           <select
             value={id}
             onChange={(e) => {
@@ -646,7 +644,7 @@ function TransfersWorkspace() {
               setReceived("");
             }}
           >
-            {transfers.map((item) => (
+            {transfers(t).map((item) => (
               <option key={item.id} value={item.id}>
                 {item.id} · {item.to}
               </option>
@@ -655,53 +653,53 @@ function TransfersWorkspace() {
         </Field>
         <div className={css.transferRoute}>
           <div>
-            <span>FG</span>
-            <b>Finished Goods</b>
-            <small>Sent {row.sent}</small>
+            <span>{t("workspaces.fg")}</span>
+            <b>{t("workspaces.finishedGoods")}</b>
+            <small>{t("workspaces.sent")}{" "}{row.sent}</small>
           </div>
           <ArrowRight size={23} />
           <div>
             <span>{row.to}</span>
             <b>{row.outlet}</b>
-            <small>Received {row.received}</small>
+            <small>{t("workspaces.received")}{" "}{row.received}</small>
           </div>
         </div>
         <dl className={css.stats}>
-          <Stat label="Sent quantity" value={row.qty} />
-          <Stat label="Sent value" value={money(row.value)} />
-          <Stat label="Source status" value="Received" />
+          <Stat label={t("workspaces.sentQuantity")} value={row.qty} />
+          <Stat label={t("workspaces.sentValue")} value={money(row.value)} />
+          <Stat label={t("workspaces.sourceStatus")} value="Received" />
         </dl>
         <p className={css.explainer}>
-          Source shortage:{" "}
-          {row.shortage === null ? "not shown" : money(row.shortage)} ·
-          Markdown: {row.markdown === null ? "not shown" : money(row.markdown)}
+          {t("workspaces.sourceShortage")}{" "}
+          {row.shortage === null ? t("workspaces.notShown") : money(row.shortage)}{" "}{t("workspaces.markdown")}{" "}{row.markdown === null ? t("workspaces.notShown") : money(row.markdown)}
         </p>
       </div>
-      <Panel title="Local receiving exercise">
+      <Panel title={t("workspaces.localReceivingExercise")}>
         <Numeric
-          label="Example received units"
+          label={t("workspaces.exampleReceivedUnits")}
           value={received}
           onChange={setReceived}
           max={100000}
           integer
         />
         <div className={css.varianceResult}>
-          <span>Quantity difference from sent</span>
+          <span>{t("workspaces.quantityDifferenceFromSent")}</span>
           <strong>{valid ? Number(received) - row.qty : "—"}</strong>
           <p role="status">
             {valid
-              ? "Units only. No monetary shortage is inferred from this aggregate quantity."
-              : "Enter a whole quantity from 0 to 100,000."}
+              ? t("workspaces.unitsOnlyNoMonetaryShortageIs")
+              : t("workspaces.enterAWholeQuantityFrom0")}
           </p>
         </div>
         <Note>
-          This does not change the supplied received record or move stock.
+          {t("workspaces.thisDoesNotChangeTheSupplied")}
         </Note>
       </Panel>
     </div>
   );
 }
 function LotsWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [basis, setBasis] = useState("retail");
   const [first, setFirst] = useState("600");
   const [second, setSecond] = useState("550");
@@ -723,39 +721,38 @@ function LotsWorkspace() {
   return (
     <>
       <div className={css.labToolbar}>
-        <Badge demo>Illustrative intake · supplied lump cost</Badge>
+        <Badge demo>{t("workspaces.illustrativeIntakeSuppliedLumpCost")}</Badge>
         <Selection
-          label="Cost allocation basis"
+          label={t("workspaces.costAllocationBasis")}
           value={basis}
           onChange={setBasis}
           items={[
-            { value: "retail", label: "Retail value" },
-            { value: "quantity", label: "Quantity" },
+            { value: "retail", label: t("workspaces.retailValue") },
+            { value: "quantity", label: t("workspaces.quantity") },
           ]}
         />
       </div>
       <div className={css.allocationLab}>
         <div className={css.allocationInputs}>
           <Numeric
-            label="Example tops · qty · retail BDT 690"
+            label={t("workspaces.exampleTopsQtyRetailBdt690")}
             value={first}
             onChange={setFirst}
             max={100000}
             integer
           />
           <Numeric
-            label="Example tees · qty · retail BDT 490"
+            label={t("workspaces.exampleTeesQtyRetailBdt490")}
             value={second}
             onChange={setSecond}
             max={100000}
             integer
           />
           <Note>
-            Example intake lines are editable. They are not the missing original
-            SKU breakdown.
+            {t("workspaces.exampleIntakeLinesAreEditableThey")}
           </Note>
         </div>
-        <Panel title="BDT 180,000 · fully apportioned">
+        <Panel title={t("workspaces.bdt180000FullyApportioned")}>
           {allocation ? (
             <>
               <div className={css.allocationBar}>
@@ -769,23 +766,22 @@ function LotsWorkspace() {
               {allocation.map((row, i) => (
                 <div className={css.allocationRow} key={i}>
                   <span>
-                    {i === 0 ? "Example tops" : "Example tees"}
+                    {i === 0 ? t("workspaces.exampleTops") : t("workspaces.exampleTees")}
                     <small>
-                      {money(row.unitCost)} per unit, rounded display
+                      {money(row.unitCost)}{" "}{t("workspaces.perUnitRoundedDisplay")}
                     </small>
                   </span>
                   <b>{money(row.value)}</b>
                 </div>
               ))}
               <p role="status" className={css.allocationTotal}>
-                <Check size={16} /> Total allocated{" "}
+                <Check size={16} />{" "}{t("workspaces.totalAllocated")}{" "}
                 {money(allocation.reduce((a, b) => a + b.value, 0))}
               </p>
             </>
           ) : (
             <p role="alert" className={css.error}>
-              Enter whole quantities between 1 and 100,000 for both example
-              lines.
+              {t("workspaces.enterWholeQuantitiesBetween1And")}
             </p>
           )}
         </Panel>
@@ -794,6 +790,7 @@ function LotsWorkspace() {
   );
 }
 function StockWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [query, setQuery] = useState("");
   const [sku, setSku] = useState("DH-6070");
   const [count, setCount] = useState("192");
@@ -807,7 +804,7 @@ function StockWorkspace() {
         <SearchBox
           value={query}
           onChange={setQuery}
-          label="Search the supplied stock"
+          label={t("workspaces.searchTheSuppliedStock")}
         />
         <div className={css.stockList}>
           {filtered.map((item) => (
@@ -825,27 +822,27 @@ function StockWorkspace() {
               </span>
               <strong>
                 {number(item.qty)}
-                <small>on hand</small>
+                <small>{t("workspaces.onHand2")}</small>
               </strong>
             </button>
           ))}
           {!filtered.length && (
-            <p className={css.empty}>No matching stock lines.</p>
+            <p className={css.empty}>{t("workspaces.noMatchingStockLines")}</p>
           )}
         </div>
       </div>
-      <Panel title="Count with context">
-        <Tag>{row.sku} · OUT1</Tag>
+      <Panel title={t("workspaces.countWithContext")}>
+        <Tag>{row.sku}{" "}{t("workspaces.out1")}</Tag>
         <div className={css.countProduct}>
           <Denim top={row.sku.startsWith("LOT")} />
           <div>
             <b>{row.name}</b>
-            <p>Source on hand: {number(row.qty)}</p>
-            <small>Average cost: {money(row.cost)}</small>
+            <p>{t("workspaces.sourceOnHand")}{" "}{number(row.qty)}</p>
+            <small>{t("workspaces.averageCost")}{" "}{money(row.cost)}</small>
           </div>
         </div>
         <Numeric
-          label="Local physical count · units"
+          label={t("workspaces.localPhysicalCountUnits")}
           value={count}
           onChange={setCount}
           max={100000}
@@ -853,24 +850,24 @@ function StockWorkspace() {
         />
         <p className={css.countVariance} role="status">
           {validCount(count)
-            ? `Quantity variance: ${Number(count) - row.qty} units`
-            : "Enter a whole count from 0 to 100,000."}
+            ? t("workspaces.quantityVarianceUnits", { v1: String(Number(count) - row.qty) })
+            : t("workspaces.enterAWholeCountFrom0")}
         </p>
         <Note>
-          No count sheet is saved or adjustment posted. Source balances are
-          unchanged.
+          {t("workspaces.noCountSheetIsSavedOr")}
         </Note>
       </Panel>
     </div>
   );
 }
 function OutletsWorkspace() {
+  const t = useTranslations("pages.posApp");
   const [code, setCode] = useState("OUT1");
-  const location = locations.find((row) => row.code === code)!;
+  const location = locations(t).find((row) => row.code === code)!;
   return (
     <div className={css.outletLab}>
       <div className={css.locationList}>
-        {locations.map((row) => (
+        {locations(t).map((row) => (
           <button
             key={row.code}
             aria-pressed={code === row.code}
@@ -879,7 +876,7 @@ function OutletsWorkspace() {
             <span className={css.locationCode}>{row.code}</span>
             <span>
               <b>{row.name}</b>
-              <small>{row.outlet ? "Selling outlet" : "Warehouse"}</small>
+              <small>{row.outlet ? t("workspaces.sellingOutlet") : t("workspaces.warehouse")}</small>
             </span>
             <ArrowRight size={15} />
           </button>
@@ -888,15 +885,15 @@ function OutletsWorkspace() {
       <Panel title={location.name}>
         <Tag positive={location.outlet}>
           {location.outlet
-            ? "Sells over the counter"
-            : "Warehouse · not a selling outlet"}
+            ? t("workspaces.sellsOverTheCounter")
+            : t("workspaces.warehouseNotASellingOutlet")}
         </Tag>
         <p className={css.locationAddress}>{location.address}</p>
         <dl className={css.stats}>
-          <Stat label="Location code" value={location.code} />
-          <Stat label="Register" value={location.register ?? "None shown"} />
+          <Stat label={t("workspaces.locationCode")} value={location.code} />
+          <Stat label={t("workspaces.register")} value={location.register ?? "None shown"} />
           {location.register && (
-            <Stat label="VAT setting · source" value="15%" />
+            <Stat label={t("workspaces.vatSettingSource")} value="15%" />
           )}
         </dl>
         {location.register ? (
@@ -905,19 +902,17 @@ function OutletsWorkspace() {
             <b>{location.register}</b>
             <span>
               {location.code === "OUT1"
-                ? "Open shift: SHF-2026-000024 · source snapshot"
-                : "No open shift shown in source"}
+                ? t("workspaces.openShiftShf2026000024Source")
+                : t("workspaces.noOpenShiftShownInSource")}
             </span>
           </div>
         ) : (
           <p className={css.explainer}>
-            No POS register is shown for this warehouse in the supplied
-            configuration.
+            {t("workspaces.noPosRegisterIsShownFor")}
           </p>
         )}
         <Note>
-          Read-only explorer. Register creation, cashier permissions and retail
-          settings require the product workspace.
+          {t("workspaces.readOnlyExplorerRegisterCreationCashier")}
         </Note>
       </Panel>
     </div>
@@ -936,18 +931,19 @@ const workspaces = {
   "outlets-registers": OutletsWorkspace,
 };
 export default function PosWorkspace({ slug }: { slug: PosSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.posApp");
+  const p = pages(t)[slug];
   const Workspace = workspaces[slug];
   return (
     <section id="pos-workspace" className={css.workspaceSection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>GET A FEEL FOR THE WORKFLOW</p>
+            <p className={css.eyebrow}>{t("workspaces.getAFeelForTheWorkflow")}</p>
             <h2>{p.lab}</h2>
             <p>{p.labDescription}</p>
           </div>
-          <Badge demo>Interactive preview · not connected</Badge>
+          <Badge demo>{t("workspaces.interactivePreviewNotConnected")}</Badge>
         </div>
         <div className={css.lab}>
           <Workspace />

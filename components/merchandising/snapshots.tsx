@@ -20,42 +20,44 @@ import {
   type MerchandisingSlug,
 } from "./data";
 import { Badge, Metric, Tag, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { type TFn } from "@/lib/i18n/t-types";
 type Evidence = {
   stats: [string, string][];
   columns: string[];
   rows: ReactNode[][];
   note: string;
 };
-function evidenceFor(slug: MerchandisingSlug): Evidence {
+function evidenceFor(slug: MerchandisingSlug, t: TFn): Evidence {
   switch (slug) {
     case "merchandising-dashboard":
       return {
         stats: [
-          ["Open orders", "16"],
-          ["Value of open orders", "USD 1,826,227"],
-          ["Confirmed average margin", "12.8%"],
+          [t("snapshots.openOrders"), "16"],
+          [t("snapshots.valueOfOpenOrders"), t("snapshots.usd1826227")],
+          [t("snapshots.confirmedAverageMargin"), "12.8%"],
         ],
-        columns: ["Owner", "Late actions", "Maximum source delay"],
+        columns: [t("snapshots.owner"), t("snapshots.lateActions"), t("snapshots.maximumSourceDelay")],
         rows: owners.map((row) => [row.name, row.late, `+${row.delay} d`]),
         note: "Historical 4 November 2026 snapshot: 14 at-risk orders, 64 late milestones, 8 orders with shortages, 9 behind plan, 3 open shipments, USD 71,848 advances, 4 unpaid invoices (USD 388,787) and 2 open export LCs. Source figures describe the wider order book.",
       };
     case "styles-costing":
       return {
         stats: [
-          ["All source styles", "9"],
-          ["Source samples overdue", "9"],
-          ["Source approvals overdue", "4"],
+          [t("snapshots.allSourceStyles"), "9"],
+          [t("snapshots.sourceSamplesOverdue"), "9"],
+          [t("snapshots.sourceApprovalsOverdue"), "4"],
         ],
         columns: [
-          "Style / name",
-          "Buyer / season",
-          "Cost / pc · USD",
-          "Confirmed FOB · USD",
-          "Source margin",
-          "Samples / approvals / sheets",
-          "Source status",
+          t("snapshots.styleName"),
+          t("snapshots.buyerSeason"),
+          t("snapshots.costPcUsd"),
+          t("snapshots.confirmedFobUsd"),
+          t("snapshots.sourceMargin"),
+          t("snapshots.samplesApprovalsSheets"),
+          t("snapshots.sourceStatus"),
         ],
-        rows: styles.map((row) => [
+        rows: styles(t).map((row) => [
           <>
             <b>{row.id}</b>
             <small>{row.name}</small>
@@ -70,88 +72,88 @@ function evidenceFor(slug: MerchandisingSlug): Evidence {
           `${row.samples} / ${row.approvals} / ${row.sheets}`,
           <Tag>{row.status}</Tag>,
         ]),
-        note: "Five fully visible rows from nine styles. All-style source status counts: Costing 2, Confirmed 1, In production 3, Shipped 3. Unseen rows and hidden cost precision are not reconstructed.",
+        note: t("snapshots.fiveFullyVisibleRowsFromNine"),
       };
     case "tna-calendar":
       return {
         stats: [
           [
-            "All milestones",
-            String(tnaStates.reduce((sum, row) => sum + row.value, 0)),
+            t("snapshots.allMilestones"),
+            String(tnaStates(t).reduce((sum, row) => sum + row.value, 0)),
           ],
-          ["Late / done", "64 / 279"],
-          ["Selected order done", "0 / 30"],
+          [t("snapshots.lateDone"), "64 / 279"],
+          [t("snapshots.selectedOrderDone"), "0 / 30"],
         ],
         columns: [
-          "Milestone",
-          "Kind",
-          "Owner",
-          "Plan",
-          "Wall / actual",
-          "Source status",
+          t("snapshots.milestone"),
+          t("snapshots.kind"),
+          t("snapshots.owner"),
+          t("snapshots.plan"),
+          t("snapshots.wallActual"),
+          t("snapshots.sourceStatus"),
         ],
-        rows: milestones.map((row) => [
+        rows: milestones(t).map((row) => [
           row.name,
           row.kind,
-          "Merchandiser",
+          t("snapshots.merchandiser"),
           dateLabel(row.plan),
-          "Not entered",
+          t("snapshots.notEntered"),
           row.status,
         ]),
-        note: "Selected order SC-2026-000017. Seven fully visible rows out of 30; global states: Late 64, On track 16, Pending 141, Done 279, N/A 10. Four wall dates breached, seven due in seven days and 14 orders with late milestones are source alerts, not fresh date calculations.",
+        note: t("snapshots.selectedOrderSc2026000017Seven"),
       };
     case "material-booking":
       return {
         stats: [
-          ["Dashboard shortage orders", "8"],
-          ["Dashboard missing plans", "3"],
-          ["Visible booking rows", "7"],
+          [t("snapshots.dashboardShortageOrders"), "8"],
+          [t("snapshots.dashboardMissingPlans"), "3"],
+          [t("snapshots.visibleBookingRows"), "7"],
         ],
         columns: [
-          "Contract / style",
-          "Buyer",
-          "Order quantity",
-          "Fabric due / PCD",
-          "Booked lines",
-          "In-house lines",
-          "Short lines",
+          t("snapshots.contractStyle"),
+          t("snapshots.buyer"),
+          t("snapshots.orderQuantity"),
+          t("snapshots.fabricDuePcd"),
+          t("snapshots.bookedLines"),
+          t("snapshots.inHouseLines"),
+          t("snapshots.shortLines"),
         ],
-        rows: materials.map((row) => [
+        rows: materials(t).map((row) => [
           <>
             {contract(row.id)}
             <small>
-              Style {row.style} · {row.name}
+              {t("snapshots.style")}{" "}{row.style} · {row.name}
             </small>
           </>,
           row.buyer,
           num(row.qty),
           <>
             {dateLabel(row.due)}
-            <small>PCD {dateLabel(row.pcd)}</small>
+            <small>{t("snapshots.pcd")}{" "}{dateLabel(row.pcd)}</small>
           </>,
-          row.lines === null ? "No plan" : `${row.booked}/${row.lines}`,
+          row.lines === null ? t("snapshots.noPlan") : `${row.booked}/${row.lines}`,
           row.lines === null ? "—" : `${row.inHouse}/${row.lines}`,
-          row.short === null ? "Unknown" : row.short,
+          row.short === null ? t("snapshots.unknown") : row.short,
         ]),
-        note: "Visible order excerpt only. Counts are material lines. SC-2026-000009 has no plan, rather than zero requirements or a known shortage count. Source dates are preserved, including rows whose fabric due date follows their PCD.",
+        note: t("snapshots.visibleOrderExcerptOnlyCountsAre"),
       };
     case "production-follow-up":
       return {
         stats: [
-          ["Dashboard behind / input late", "6 / 3"],
-          ["Dashboard complete / shipped", "2 / 3"],
-          ["Visible production rows", "5"],
+          [t("snapshots.dashboardBehindInputLate"), "6 / 3"],
+          [t("snapshots.dashboardCompleteShipped"), "2 / 3"],
+          [t("snapshots.visibleProductionRows"), "5"],
         ],
         columns: [
-          "Contract / style",
-          "Floor / factory",
-          "Order qty",
-          "Sewn",
-          "Packed",
-          "Ship · source",
-          "Source status",
+          t("snapshots.contractStyle"),
+          t("snapshots.floorFactory"),
+          t("snapshots.orderQty"),
+          t("snapshots.sewn"),
+          t("snapshots.packed"),
+          t("snapshots.shipSource"),
+          t("snapshots.sourceStatus"),
         ],
-        rows: production.map((row) => [
+        rows: production(t).map((row) => [
           <>
             {contract(row.id)}
             <small>
@@ -165,26 +167,26 @@ function evidenceFor(slug: MerchandisingSlug): Evidence {
           row.ship,
           row.status,
         ]),
-        note: "Sewn or packed values may exceed ordered quantity; the raw values remain visible. No daily output series, run rate, new ship projection or MES synchronization is invented. The status totals cover more rows than this five-row excerpt.",
+        note: t("snapshots.sewnOrPackedValuesMayExceed"),
       };
     case "factories":
       return {
         stats: [
-          ["Factories", "2"],
-          ["Open orders", "3"],
-          ["Certificate alerts", "3"],
+          [t("snapshots.factories"), "2"],
+          [t("snapshots.openOrders"), "3"],
+          [t("snapshots.certificateAlerts"), "3"],
         ],
         columns: [
-          "Factory",
-          "Product types",
-          "Lines / machines",
-          "Pieces / day",
-          "Certificate source flags",
-          "Open orders",
-          "WIP / load",
-          "Next ship · source",
+          t("snapshots.factory"),
+          t("snapshots.productTypes"),
+          t("snapshots.linesMachines"),
+          t("snapshots.piecesDay"),
+          t("snapshots.certificateSourceFlags"),
+          t("snapshots.openOrders"),
+          t("snapshots.wipLoad"),
+          t("snapshots.nextShipSource"),
         ],
-        rows: factories.map((row) => [
+        rows: factories(t).map((row) => [
           row.name,
           row.types,
           `${row.lines} / ${row.machines}`,
@@ -198,30 +200,30 @@ function evidenceFor(slug: MerchandisingSlug): Evidence {
           </div>,
           row.orders,
           <>
-            {num(row.wip)} pcs<small>{row.days.toFixed(2)} d</small>
+            {num(row.wip)}{" "}{t("snapshots.pcs")}<small>{row.days.toFixed(2)} d</small>
           </>,
           row.nextShip,
         ]),
-        note: "Pieces in progress total 6,440. Source certificate badges are reproduced as flags, without claiming live certification, document verification or complete expiry dates.",
+        note: t("snapshots.piecesInProgressTotal6440"),
       };
     case "in-house-receipts":
       return {
         stats: [
-          ["Posted pieces", "8,400"],
-          ["Cartons", "750"],
-          ["Drafts", "0"],
+          [t("snapshots.postedPieces"), "8,400"],
+          [t("snapshots.cartons"), "750"],
+          [t("snapshots.drafts"), "0"],
         ],
         columns: [
-          "Receipt / date",
-          "Contract / buyer",
-          "Factory / inspector",
-          "Pieces",
-          "Cartons",
-          "Ownership",
-          "Source value",
-          "Status",
+          t("snapshots.receiptDate"),
+          t("snapshots.contractBuyer"),
+          t("snapshots.factoryInspector"),
+          t("snapshots.pieces"),
+          t("snapshots.cartons"),
+          t("snapshots.ownership"),
+          t("snapshots.sourceValue"),
+          t("snapshots.status"),
         ],
-        rows: receipts.map((row) => [
+        rows: receipts(t).map((row) => [
           <>
             {row.id}
             <small>{row.date}</small>
@@ -236,33 +238,33 @@ function evidenceFor(slug: MerchandisingSlug): Evidence {
           </>,
           num(row.qty),
           row.cartons,
-          row.mode === "Memo" ? "Memo · buyer’s goods" : "Our stock",
+          row.mode === "Memo" ? t("snapshots.memoBuyerSGoods") : t("snapshots.ourStock"),
           row.value === null ? "—" : `${num(row.value)} · currency not shown`,
-          <Tag tone="green">Posted</Tag>,
+          <Tag tone="green">{t("snapshots.posted")}</Tag>,
         ]),
         note: "Three source receipts: 3,000 own-stock pieces and 5,400 memo pieces. The visible own-stock value is 1,920,000 without a displayed currency. Unreported memo values remain unknown.",
       };
     case "profitability":
       return {
         stats: [
-          ["Orders / shipped pieces", "17 / 25,916"],
-          ["Revenue · BDT", num(profitSummary.revenue)],
-          ["Net · BDT", num(profitSummary.net)],
+          [t("snapshots.ordersShippedPieces"), "17 / 25,916"],
+          [t("snapshots.revenueBdt"), num(profitSummary.revenue)],
+          [t("snapshots.netBdt"), num(profitSummary.net)],
         ],
         columns: [
-          "Contract / style",
-          "Mode",
-          "Qty / shipped",
-          "Quoted FOB / cost · USD",
-          "Quoted margin",
-          "Actual / cost · USD",
-          "Actual margin",
-          "Net · BDT",
+          t("snapshots.contractStyle"),
+          t("snapshots.mode"),
+          t("snapshots.qtyShipped"),
+          t("snapshots.quotedFobCostUsd"),
+          t("snapshots.quotedMargin"),
+          t("snapshots.actualCostUsd"),
+          t("snapshots.actualMargin"),
+          t("snapshots.netBdt"),
         ],
         rows: profits.map((row) => [
           <>
             {contract(row.id)}
-            <small>Style {row.style}</small>
+            <small>{t("snapshots.style")}{" "}{row.style}</small>
           </>,
           row.mode,
           `${num(row.qty)} / ${num(row.shipped)}`,
@@ -272,32 +274,32 @@ function evidenceFor(slug: MerchandisingSlug): Evidence {
           `${row.actualMargin.toFixed(1)}%`,
           num(row.net),
         ]),
-        note: "Four complete rows from 17 orders. Actual aggregates: revenue BDT 44,706,064; COGS BDT 30,915,509; net BDT 13,790,555. Cost to date BDT 64,364,812 is separate. The commission row's USD 0.49 actual is a fee, not FOB sales; its actual cost is not shown.",
+        note: t("snapshots.fourCompleteRowsFrom17Orders"),
       };
     case "buyer-portal":
       return {
         stats: [
-          ["Active logins · summary", "4"],
-          ["Visible user rows", "3"],
-          ["AEO styles / orders", "4 / 5"],
+          [t("snapshots.activeLoginsSummary"), "4"],
+          [t("snapshots.visibleUserRows"), "3"],
+          [t("snapshots.aeoStylesOrders"), "4 / 5"],
         ],
         columns: [
-          "Person",
-          "Buyer",
-          "Role",
-          "Can approve · source",
-          "Last seen · source",
-          "Status",
+          t("snapshots.person"),
+          t("snapshots.buyer"),
+          t("snapshots.role"),
+          t("snapshots.canApproveSource"),
+          t("snapshots.lastSeenSource"),
+          t("snapshots.status"),
         ],
-        rows: portalUsers.map((row) => [
+        rows: portalUsers(t).map((row) => [
           row.name,
           row.buyer,
           row.role,
-          row.canApprove ? "Yes" : "No",
+          row.canApprove ? t("snapshots.yes") : t("snapshots.no"),
           row.lastSeen ?? "—",
-          <Tag tone="green">Active</Tag>,
+          <Tag tone="green">{t("snapshots.active")}</Tag>,
         ]),
-        note: "Only three user rows are visible. The fourth active login, unseen users and credentials are not invented. AEO tabs: samples, TNA, shipments, documents. BlueWave shows default (all). The interactive role preview grants no actual access.",
+        note: t("snapshots.onlyThreeUserRowsAreVisible"),
       };
   }
 }
@@ -306,38 +308,38 @@ export default function MerchandisingSnapshot({
 }: {
   slug: MerchandisingSlug;
 }) {
-  const evidence = evidenceFor(slug);
+  const t = useTranslations("pages.merchandisingApp");
+  const evidence = evidenceFor(slug, t);
   return (
     <section className={css.snapshotSection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>THE EVIDENCE BEHIND THE EXPERIENCE</p>
-            <h2>A closer look at the workspace.</h2>
+            <p className={css.eyebrow}>{t("snapshots.theEvidenceBehindTheExperience")}</p>
+            <h2>{t("snapshots.aCloserLookAtTheWorkspace")}</h2>
             <p>
-              Supplied software records, presented as a historical preview.
-              Explore the full process with an advisor.
+              {t("snapshots.suppliedSoftwareRecordsPresentedAsA")}
             </p>
           </div>
           <Badge />
         </div>
         <DemoPreview
-          title={pages[slug].title}
-          description="Explore the complete style-to-shipment workflow, records and merchandising decisions in a guided product conversation."
+          title={pages(t)[slug].title}
+          description={t("snapshots.exploreTheCompleteStyleToShipment")}
         >
           <div className={css.sourceWorkspace}>
             <header className={css.sourceBar}>
               <b>
-                Eden<span>ERP</span>
+                {t("snapshots.eden")}<span>{t("snapshots.erp")}</span>
               </b>
-              <span>/ Merchandising / {pages[slug].title}</span>
+              <span>{t("snapshots.merchandising")}{" "}{pages(t)[slug].title}</span>
               <Building2 size={14} />
-              <span>Supplied software snapshot</span>
+              <span>{t("snapshots.suppliedSoftwareSnapshot")}</span>
             </header>
             <div className={css.sourceContent}>
               <div className={css.sourceTitle}>
-                <h3>{pages[slug].title}</h3>
-                <Tag>Supplied data</Tag>
+                <h3>{pages(t)[slug].title}</h3>
+                <Tag>{t("snapshots.suppliedData")}</Tag>
               </div>
               <dl className={css.sourceMetrics}>
                 {evidence.stats.map(([label, value]) => (
@@ -348,11 +350,11 @@ export default function MerchandisingSnapshot({
                 className={css.tableScroll}
                 tabIndex={0}
                 role="region"
-                aria-label={`${pages[slug].title} source table, scroll horizontally`}
+                aria-label={`${pages(t)[slug].title} source table, scroll horizontally`}
               >
                 <table>
                   <caption className={css.srOnly}>
-                    {pages[slug].title} supplied-record excerpt
+                    {pages(t)[slug].title}{" "}{t("snapshots.suppliedRecordExcerpt")}
                   </caption>
                   <thead>
                     <tr>

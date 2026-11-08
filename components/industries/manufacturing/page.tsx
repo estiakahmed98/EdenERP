@@ -15,14 +15,18 @@ import {
 import IndustryHero from "./heroes";
 import IndustryWorkspace, { ProcessStory } from "./workspaces";
 import { Badge, Metric, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 export async function manufacturingIndustryMetadata(slug: IndustrySlug): Promise<Metadata> {
+  const t = await getTranslations("pages.industriesApp");
   return {
-    title: `${pages[slug].title} | Manufacturing Industries`,
-    description: pages[slug].description,
+    title: `${pages(t)[slug].title} | Manufacturing Industries`,
+    description: pages(t)[slug].description,
     alternates: await getLocaleAlternates(`/industries/${slug}`),
   };
 }
 function ProductCanvas({ slug }: { slug: IndustrySlug }) {
+  const t = useTranslations("pages.industriesApp");
   const steel = steelWeight(
     steelExample.gross,
     steelExample.tare,
@@ -33,17 +37,17 @@ function ProductCanvas({ slug }: { slug: IndustrySlug }) {
     <div className={css.productCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          {t("manufacturing.page.eden")}<span>{t("manufacturing.page.erp")}</span>
         </b>
-        <span>/ {pages[slug].title} / Illustrative quantity canvas</span>
-        <Badge>Example records · not live ERP data</Badge>
+        <span>/ {pages(t)[slug].title}{" "}{t("manufacturing.page.illustrativeQuantityCanvas")}</span>
+        <Badge>{t("manufacturing.page.exampleRecordsNotLiveErpData")}</Badge>
       </header>
       <div className={css.canvasBody}>
         <div className={css.canvasHeading}>
           <h3>
             {slug === "steel"
-              ? "Material, weight and order context"
-              : "Input lot and recorded output context"}
+              ? t("manufacturing.page.materialWeightAndOrderContext")
+              : t("manufacturing.page.inputLotAndRecordedOutputContext")}
           </h3>
           <span>
             {slug === "steel" ? steelExample.reference : riceExample.reference}
@@ -52,28 +56,28 @@ function ProductCanvas({ slug }: { slug: IndustrySlug }) {
         <dl className={css.canvasMetrics}>
           {slug === "steel" ? (
             <>
-              <Metric label="Example net weight" value={kg(steel.net)} />
+              <Metric label={t("manufacturing.page.exampleNetWeight")} value={kg(steel.net)} />
               <Metric
-                label="Example allocated weight"
+                label={t("manufacturing.page.exampleAllocatedWeight")}
                 value={kg(steel.allocated)}
               />
               <Metric
-                label="Example unallocated weight"
+                label={t("manufacturing.page.exampleUnallocatedWeight")}
                 value={kg(steel.remaining)}
               />
             </>
           ) : (
             <>
               <Metric
-                label="Example paddy input"
+                label={t("manufacturing.page.examplePaddyInput")}
                 value={kg(riceExample.input)}
               />
               <Metric
-                label="Example recorded outputs"
+                label={t("manufacturing.page.exampleRecordedOutputs")}
                 value={kg(rice.recorded)}
               />
               <Metric
-                label="Example unassigned weight"
+                label={t("manufacturing.page.exampleUnassignedWeight")}
                 value={kg(rice.unassigned)}
               />
             </>
@@ -83,26 +87,26 @@ function ProductCanvas({ slug }: { slug: IndustrySlug }) {
           className={css.tableScroll}
           role="region"
           tabIndex={0}
-          aria-label={`${pages[slug].title} example table, scroll horizontally`}
+          aria-label={`${pages(t)[slug].title} example table, scroll horizontally`}
         >
           <table>
             <caption className={css.srOnly}>
-              {pages[slug].title} illustrative records, no ERP transactions
+              {pages(t)[slug].title}{" "}{t("manufacturing.page.illustrativeRecordsNoErpTransactions")}
             </caption>
             <thead>
               <tr>
                 {(slug === "steel"
                   ? [
-                      "Example order",
-                      "Material reference",
-                      "Allocated weight",
-                      "Record context",
+                      t("manufacturing.page.exampleOrder"),
+                      t("manufacturing.page.materialReference"),
+                      t("manufacturing.page.allocatedWeight"),
+                      t("manufacturing.page.recordContext"),
                     ]
                   : [
-                      "Example output",
-                      "Input lot",
-                      "Recorded weight",
-                      "Record context",
+                      t("manufacturing.page.exampleOutput"),
+                      t("manufacturing.page.inputLot"),
+                      t("manufacturing.page.recordedWeight"),
+                      t("manufacturing.page.recordContext"),
                     ]
                 ).map((label) => (
                   <th key={label} scope="col">
@@ -118,7 +122,7 @@ function ProductCanvas({ slug }: { slug: IndustrySlug }) {
                       <td>{row.reference}</td>
                       <td>{steelExample.reference}</td>
                       <td>{kg(row.weight)}</td>
-                      <td>Local illustration · not reserved</td>
+                      <td>{t("manufacturing.page.localIllustrationNotReserved")}</td>
                     </tr>
                   ))
                 : (
@@ -133,23 +137,22 @@ function ProductCanvas({ slug }: { slug: IndustrySlug }) {
                       <td>{label}</td>
                       <td>{riceExample.reference}</td>
                       <td>{kg(weight)}</td>
-                      <td>Local illustration · not posted</td>
+                      <td>{t("manufacturing.page.localIllustrationNotPosted")}</td>
                     </tr>
                   ))}
             </tbody>
           </table>
         </div>
         <p className={css.canvasNote}>
-          Static concept canvas based on the initial example. Editable inputs
-          above have separate local state. This is not a live weighment,
-          physical cutting plan, quality decision or production record.
+          {t("manufacturing.page.staticConceptCanvasBasedOnThe")}
         </p>
       </div>
     </div>
   );
 }
 export function ManufacturingIndustryPage({ slug }: { slug: IndustrySlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   const other = slug === "steel" ? "agro-rice" : "steel";
   return (
     <main
@@ -159,12 +162,12 @@ export function ManufacturingIndustryPage({ slug }: { slug: IndustrySlug }) {
       data-production-industry={slug}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/"> Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={t("manufacturing.page.breadcrumb")}>
+          <Link href="/">{" "}{t("manufacturing.page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{t("manufacturing.page.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <span>Manufacturing</span>
+          <span>{t("manufacturing.page.manufacturing")}</span>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -176,24 +179,23 @@ export function ManufacturingIndustryPage({ slug }: { slug: IndustrySlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>BRING THE SUPPORTING WORK INTO VIEW</p>
-              <h2>Explore the relevant product previews.</h2>
+              <p className={css.eyebrow}>{t("manufacturing.page.bringTheSupportingWorkIntoView")}</p>
+              <h2>{t("manufacturing.page.exploreTheRelevantProductPreviews")}</h2>
               <p>
-                Start with the existing ERP presentations, then discuss the
-                requirements of your own operation in a guided demo.
+                {t("manufacturing.page.startWithTheExistingErpPresentations")}
               </p>
             </div>
           </div>
           <div className={css.moduleGrid}>
             {p.tools.map((tool, i) => (
               <Link key={tool.href} href={tool.href}>
-                <span>0{i + 1} / PRODUCT PRESENTATION</span>
+                <span>0{i + 1}{" "}{t("manufacturing.page.productPresentation")}</span>
                 <h3>
                   {tool.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{tool.body}</p>
-                <small>Explore the preview</small>
+                <small>{t("manufacturing.page.exploreThePreview")}</small>
               </Link>
             ))}
           </div>
@@ -203,18 +205,17 @@ export function ManufacturingIndustryPage({ slug }: { slug: IndustrySlug }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>SEE THE QUANTITY AND THE CONTEXT</p>
-              <h2>A closer look at the workspace.</h2>
+              <p className={css.eyebrow}>{t("manufacturing.page.seeTheQuantityAndTheContext")}</p>
+              <h2>{t("manufacturing.page.aCloserLookAtTheWorkspace")}</h2>
               <p>
-                Illustrative records, with the full workflow available as an
-                advisor conversation.
+                {t("manufacturing.page.illustrativeRecordsWithTheFullWorkflow")}
               </p>
             </div>
             <Badge />
           </div>
           <DemoPreview
             title={`${p.title} workflow`}
-            description="Explore your intake, production and inventory questions with an advisor in a guided product conversation."
+            description={t("manufacturing.page.exploreYourIntakeProductionAndInventory")}
           >
             <ProductCanvas slug={slug} />
           </DemoPreview>
@@ -223,10 +224,10 @@ export function ManufacturingIndustryPage({ slug }: { slug: IndustrySlug }) {
       <section className={css.faqSection}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Understand the example.</h2>
+            <p className={css.eyebrow}>{t("manufacturing.page.aFewUsefulDetails")}</p>
+            <h2>{t("manufacturing.page.understandTheExample")}</h2>
             <Link href={`/industries/${other}`} className={css.otherIndustry}>
-              Explore {pages[other].title}
+              {t("manufacturing.page.explore")}{" "}{pages(t)[other].title}
               <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </div>
@@ -246,11 +247,10 @@ export function ManufacturingIndustryPage({ slug }: { slug: IndustrySlug }) {
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR OPERATION. YOUR PROCESS.</p>
-            <h2>Bring your production story to the conversation.</h2>
+            <p className={css.eyebrow}>{t("manufacturing.page.yourOperationYourProcess")}</p>
+            <h2>{t("manufacturing.page.bringYourProductionStoryToThe")}</h2>
             <p>
-              Discuss your material, weight, quality and inventory workflows
-              with an advisor.
+              {t("manufacturing.page.discussYourMaterialWeightQualityAnd")}
             </p>
           </div>
           <LiveDemoButton />

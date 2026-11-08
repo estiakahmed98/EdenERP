@@ -23,16 +23,20 @@ import {
 import OtherIndustryHero from "./heroes";
 import OtherIndustryDemo, { IndustryStory } from "./workspaces";
 import { Badge, Metric, css } from "./ui";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 export async function otherIndustryMetadata(slug: OtherIndustry): Promise<Metadata> {
+  const t = await getTranslations("pages.industriesApp");
   return {
-    title: `${pages[slug].title} | Industries`,
-    description: pages[slug].description,
+    title: `${pages(t)[slug].title} | Industries`,
+    description: pages(t)[slug].description,
     alternates: await getLocaleAlternates(`/industries/${slug}`),
   };
 }
 function ProductCanvas({ slug }: { slug: OtherIndustry }) {
+  const t = useTranslations("pages.industriesApp");
   const basket = basketTotals(
-    products
+    products(t)
       .filter((row) => initialBasket[row.id])
       .map((row) => ({ ...row, qty: initialBasket[row.id] })),
     80,
@@ -40,71 +44,71 @@ function ProductCanvas({ slug }: { slug: OtherIndustry }) {
   );
   const budget = programmeBudget(
     100000,
-    programmeLines.map((row) => row.amount),
+    programmeLines(t).map((row) => row.amount),
   );
-  const rundown = programmeRundown("19:00", 30, segments);
+  const rundown = programmeRundown("19:00", 30, segments(t));
   const columns =
     slug === "ecommerce"
-      ? ["Example product", "Reference", "Quantity", "Unit price"]
+      ? [t("others.page.exampleProduct"), t("others.page.reference"), t("others.page.quantity"), t("others.page.unitPrice")]
       : slug === "ngo"
         ? [
-            "Example planning line",
-            "Reference",
-            "Planning amount",
-            "Record context",
+            t("others.page.examplePlanningLine"),
+            t("others.page.reference"),
+            t("others.page.planningAmount"),
+            t("others.page.recordContext"),
           ]
-        : ["Example segment", "Duration", "Starts", "Ends"];
+        : [t("others.page.exampleSegment"), t("others.page.duration"), t("others.page.starts"), t("others.page.ends")];
   return (
     <div className={css.productCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          {t("others.page.eden")}<span>{t("others.page.erp")}</span>
         </b>
-        <span>/ {pages[slug].title} / Concept canvas</span>
-        <Badge>Illustrative records · no live connection</Badge>
+        <span>/ {pages(t)[slug].title}{" "}{t("others.page.conceptCanvas")}</span>
+        <Badge>{t("others.page.illustrativeRecordsNoLiveConnection")}</Badge>
       </header>
       <div className={css.canvasBody}>
         <h3>
           {slug === "ecommerce"
-            ? "The basket and business context"
+            ? t("others.page.theBasketAndBusinessContext")
             : slug === "ngo"
-              ? "The programme-planning conversation"
-              : "The programme rundown, in view"}
+              ? t("others.page.theProgrammePlanningConversation")
+              : t("others.page.theProgrammeRundownInView")}
         </h3>
         <dl className={css.canvasMetrics}>
           {slug === "ecommerce" ? (
             <>
               <Metric
-                label="Example item subtotal"
+                label={t("others.page.exampleItemSubtotal")}
                 value={money(basket.subtotal)}
               />
-              <Metric label="Example delivery" value={money(basket.delivery)} />
+              <Metric label={t("others.page.exampleDelivery")} value={money(basket.delivery)} />
               <Metric
-                label="Example total · tax not calculated"
+                label={t("others.page.exampleTotalTaxNotCalculated")}
                 value={money(basket.total)}
               />
             </>
           ) : slug === "ngo" ? (
             <>
-              <Metric label="Example planning budget" value={money(100000)} />
+              <Metric label={t("others.page.examplePlanningBudget")} value={money(100000)} />
               <Metric
-                label="Assigned in example"
+                label={t("others.page.assignedInExample")}
                 value={money(budget.assigned)}
               />
               <Metric
-                label="Unassigned in example"
+                label={t("others.page.unassignedInExample")}
                 value={money(budget.remaining)}
               />
             </>
           ) : (
             <>
-              <Metric label="Example start" value="19:00:00" />
+              <Metric label={t("others.page.exampleStart")} value="19:00:00" />
               <Metric
-                label="Example duration"
+                label={t("others.page.exampleDuration")}
                 value={formatDuration(rundown.total)}
               />
               <Metric
-                label="Below example target"
+                label={t("others.page.belowExampleTarget")}
                 value={formatDuration(rundown.remaining)}
               />
             </>
@@ -114,12 +118,11 @@ function ProductCanvas({ slug }: { slug: OtherIndustry }) {
           className={css.tableScroll}
           tabIndex={0}
           role="region"
-          aria-label={`${pages[slug].title} illustrative table, scroll horizontally`}
+          aria-label={`${pages(t)[slug].title} illustrative table, scroll horizontally`}
         >
           <table>
             <caption className={css.srOnly}>
-              {pages[slug].title} static illustrative records based on the
-              initial example
+              {pages(t)[slug].title}{" "}{t("others.page.staticIllustrativeRecordsBasedOnThe")}
             </caption>
             <thead>
               <tr>
@@ -132,7 +135,7 @@ function ProductCanvas({ slug }: { slug: OtherIndustry }) {
             </thead>
             <tbody>
               {slug === "ecommerce"
-                ? products
+                ? products(t)
                     .filter((row) => initialBasket[row.id])
                     .map((row) => (
                       <tr key={row.id}>
@@ -143,15 +146,15 @@ function ProductCanvas({ slug }: { slug: OtherIndustry }) {
                       </tr>
                     ))
                 : slug === "ngo"
-                  ? programmeLines.map((row) => (
+                  ? programmeLines(t).map((row) => (
                       <tr key={row.id}>
                         <td>{row.label}</td>
-                        <td>EX-PLAN / {row.id}</td>
+                        <td>{t("others.page.exPlan")}{" "}{row.id}</td>
                         <td>{money(row.amount)}</td>
-                        <td>Local planning example · not spent</td>
+                        <td>{t("others.page.localPlanningExampleNotSpent")}</td>
                       </tr>
                     ))
-                  : segments.map((row) => {
+                  : segments(t).map((row) => {
                       const timing = rundown.timings.find(
                         (item) => item.id === row.id,
                       )!;
@@ -168,16 +171,15 @@ function ProductCanvas({ slug }: { slug: OtherIndustry }) {
           </table>
         </div>
         <p className={css.canvasNote}>
-          Static concept canvas, separate from the editable local example above.
-          No shop order, donor or beneficiary record, expenditure approval,
-          media playback or transmission is created.
+          {t("others.page.staticConceptCanvasSeparateFromThe")}
         </p>
       </div>
     </div>
   );
 }
 export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <main
       lang="en"
@@ -186,12 +188,12 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
       data-other-industry={slug}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/"> Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={t("others.page.breadcrumb")}>
+          <Link href="/">{" "}{t("others.page.adonErp")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{t("others.page.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <span>Others</span>
+          <span>{t("others.page.others")}</span>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -203,24 +205,23 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>THE SUPPORTING PRODUCT CONVERSATION</p>
-              <h2>Explore the relevant business records.</h2>
+              <p className={css.eyebrow}>{t("others.page.theSupportingProductConversation")}</p>
+              <h2>{t("others.page.exploreTheRelevantBusinessRecords")}</h2>
               <p>
-                Browse existing product presentations, then discuss the workflow
-                and configuration your organisation needs.
+                {t("others.page.browseExistingProductPresentationsThenDi")}
               </p>
             </div>
           </div>
           <div className={css.moduleGrid}>
             {p.tools.map((tool, i) => (
               <Link href={tool.href} key={tool.href}>
-                <span>0{i + 1} / PRODUCT PREVIEW</span>
+                <span>0{i + 1}{" "}{t("others.page.productPreview")}</span>
                 <h3>
                   {tool.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{tool.body}</p>
-                <small>Explore the presentation</small>
+                <small>{t("others.page.exploreThePresentation")}</small>
               </Link>
             ))}
           </div>
@@ -230,18 +231,17 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>SEE THE DETAIL AND THE CONTEXT</p>
-              <h2>A closer look at the experience.</h2>
+              <p className={css.eyebrow}>{t("others.page.seeTheDetailAndTheContext")}</p>
+              <h2>{t("others.page.aCloserLookAtTheExperience")}</h2>
               <p>
-                Illustrative records with a guided product conversation
-                available through the shared advisor button.
+                {t("others.page.illustrativeRecordsWithAGuidedProduct")}
               </p>
             </div>
             <Badge />
           </div>
           <DemoPreview
             title={`${p.title} workflow`}
-            description="Bring your operational questions to an advisor and explore the complete product context in a guided conversation."
+            description={t("others.page.bringYourOperationalQuestionsToAn")}
           >
             <ProductCanvas slug={slug} />
           </DemoPreview>
@@ -250,8 +250,8 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
       <section className={css.faqSection}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Know what you’re exploring.</h2>
+            <p className={css.eyebrow}>{t("others.page.aFewUsefulDetails")}</p>
+            <h2>{t("others.page.knowWhatYouReExploring")}</h2>
           </div>
           <div className={css.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -271,9 +271,9 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
           <div className={css.sectionHeading}>
             <div>
               <p className={css.eyebrow}>
-                DIFFERENT INDUSTRIES. A SHARED BUSINESS FOUNDATION.
+                {t("others.page.differentIndustriesASharedBusinessFounda")}
               </p>
-              <h2>Explore another operational story.</h2>
+              <h2>{t("others.page.exploreAnotherOperationalStory")}</h2>
             </div>
           </div>
           <div className={css.relatedGrid}>
@@ -281,9 +281,9 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
               .filter((item) => item !== slug)
               .map((item) => (
                 <Link href={`/industries/${item}`} key={item}>
-                  <span>INDUSTRY / {pages[item].title.toUpperCase()}</span>
+                  <span>{t("others.page.industry")}{" "}{pages(t)[item].title.toUpperCase()}</span>
                   <h3>
-                    {pages[item].headline} {pages[item].accent}
+                    {pages(t)[item].headline} {pages(t)[item].accent}
                     <ArrowRight size={18} aria-hidden="true" />
                   </h3>
                 </Link>
@@ -294,11 +294,10 @@ export function OtherIndustryPage({ slug }: { slug: OtherIndustry }) {
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR ORGANISATION. YOUR WORKFLOW.</p>
-            <h2>Let’s begin with the way you work.</h2>
+            <p className={css.eyebrow}>{t("others.page.yourOrganisationYourWorkflow")}</p>
+            <h2>{t("others.page.letSBeginWithTheWay")}</h2>
             <p>
-              Bring your records, planning and operational questions to an
-              advisor conversation.
+              {t("others.page.bringYourRecordsPlanningAndOperational")}
             </p>
           </div>
           <LiveDemoButton />

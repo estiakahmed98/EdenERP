@@ -18,8 +18,10 @@ import {
   base,
   css,
 } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: IndustrialSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <>
       <p className={base.eyebrow}>{p.eyebrow}</p>
@@ -33,6 +35,7 @@ function Copy({ slug }: { slug: IndustrialSlug }) {
   );
 }
 function TextileHero() {
+  const t = useTranslations("pages.industriesApp");
   const fabric = fabricLength(1000, defaultLosses);
   return (
     <section className={css.textileHero}>
@@ -41,26 +44,26 @@ function TextileHero() {
           <Copy slug="textile" />
           <Actions />
           <p className={css.heroFoot}>
-            THE MATERIAL / THE PROCESS / THE FINISHED LENGTH
+            {t("industrial.heroes.theMaterialTheProcessTheFinished")}
           </p>
         </div>
         <figure className={css.materialStudy}>
           <header>
-            <span>EX-TX01 / THE MATERIAL NOTES</span>
-            <Badge>Concept fabric study</Badge>
+            <span>{t("industrial.heroes.exTx01TheMaterialNotes")}</span>
+            <Badge>{t("industrial.heroes.conceptFabricStudy")}</Badge>
           </header>
           <div className={css.fabricCanvas}>
             <FabricArt />
             <div className={css.fabricLabel}>
-              <span>ILLUSTRATIVE INPUT</span>
+              <span>{t("industrial.heroes.illustrativeInput")}</span>
               <b>
                 1,000 <small>m</small>
               </b>
-              <small>Length stays in metres throughout.</small>
+              <small>{t("industrial.heroes.lengthStaysInMetresThroughout")}</small>
             </div>
           </div>
           <div className={css.processRibbons}>
-            {textileStages.map((stage, i) => (
+            {textileStages(t).map((stage, i) => (
               <div key={stage}>
                 <span>
                   0{i + 1} / {stage}
@@ -69,14 +72,13 @@ function TextileHero() {
                   {num(fabric.stages[i].after, 3)}
                   <small> m</small>
                 </b>
-                <small>After {defaultLosses[i]}% entered loss</small>
+                <small>{t("industrial.heroes.after")}{" "}{defaultLosses[i]}{t("industrial.heroes.enteredLoss")}</small>
               </div>
             ))}
           </div>
-          <HandNote>Keep the length’s journey in view.</HandNote>
+          <HandNote>{t("industrial.heroes.keepTheLengthSJourneyIn")}</HandNote>
           <figcaption>
-            Fictional fabric-length assumptions · no material conversion or
-            process forecast
+            {t("industrial.heroes.fictionalFabricLengthAssumptionsNoMateri")}
           </figcaption>
         </figure>
       </div>
@@ -84,56 +86,56 @@ function TextileHero() {
   );
 }
 function MetalHero() {
+  const t = useTranslations("pages.industriesApp");
   const cut = barPattern(6000, 1200, 3, 12);
   return (
     <section className={css.metalHero}>
       <div className={base.wrap}>
         <div className={css.metalHeading}>
-          <Badge>THE FABRICATION STUDY / CONCEPT 01</Badge>
+          <Badge>{t("industrial.heroes.theFabricationStudyConcept01")}</Badge>
           <Copy slug="metal" />
           <Actions />
         </div>
         <figure className={css.cutStudy}>
           <div className={css.cutDrawing}>
             <header>
-              <span>EX-CUT01 / ONE-LENGTH PATTERN</span>
+              <span>{t("industrial.heroes.exCut01OneLengthPattern")}</span>
               <Ruler size={18} />
             </header>
             <BeamArt />
             <div className={css.dimensionStrip}>
-              <span>6,000 mm stock</span>
+              <span>{t("industrial.heroes.n6000MmStock")}</span>
               <i />
-              <span>1,200 mm piece</span>
+              <span>{t("industrial.heroes.n1200MmPiece")}</span>
               <i />
-              <span>3 mm allowance / piece</span>
+              <span>{t("industrial.heroes.n3MmAllowancePiece")}</span>
             </div>
           </div>
           <div className={css.cutDocket}>
             <Layers size={24} />
-            <span>THE ENTERED CUT ASSUMPTIONS</span>
+            <span>{t("industrial.heroes.theEnteredCutAssumptions")}</span>
             <b>
               {cut.perBar}
-              <small>pieces / full-pattern bar</small>
+              <small>{t("industrial.heroes.piecesFullPatternBar")}</small>
             </b>
             <div>
-              <span>Requested pieces</span>
+              <span>{t("industrial.heroes.requestedPieces")}</span>
               <strong>12</strong>
             </div>
             <div>
-              <span>Calculated stock bars</span>
+              <span>{t("industrial.heroes.calculatedStockBars")}</span>
               <strong>{cut.bars}</strong>
             </div>
             <div>
-              <span>Remaining length / all bars</span>
-              <strong>{num(cut.remaining)} mm</strong>
+              <span>{t("industrial.heroes.remainingLengthAllBars")}</span>
+              <strong>{num(cut.remaining)}{" "}{t("industrial.heroes.mm")}</strong>
             </div>
             <small>
-              Allowance is consumed for every piece, including final separation.
+              {t("industrial.heroes.allowanceIsConsumedForEveryPiece")}
             </small>
           </div>
           <figcaption>
-            Concept bar illustration and fictional arithmetic · no machine-ready
-            cutting plan
+            {t("industrial.heroes.conceptBarIllustrationAndFictionalArithm")}
           </figcaption>
         </figure>
       </div>
@@ -141,52 +143,52 @@ function MetalHero() {
   );
 }
 function FurnitureHero() {
+  const t = useTranslations("pages.industriesApp");
   const kits = componentKits(24, components);
   return (
     <section className={css.furnitureHero}>
       <div className={`${base.wrap} ${css.furnitureLayout}`}>
         <figure className={css.assemblyStudy}>
           <header>
-            <span>EX-FURN01 / THE ASSEMBLY NOTES</span>
-            <Badge>Concept exploded view</Badge>
+            <span>{t("industrial.heroes.exFurn01TheAssemblyNotes")}</span>
+            <Badge>{t("industrial.heroes.conceptExplodedView")}</Badge>
           </header>
           <div className={css.assemblyCanvas}>
             <ChairArt />
             <div className={css.assemblyLabelA}>
               <b>A</b>
-              <span>Design context</span>
+              <span>{t("industrial.heroes.designContext")}</span>
             </div>
             <div className={css.assemblyLabelB}>
               <b>B</b>
-              <span>Seat panel</span>
+              <span>{t("industrial.heroes.seatPanel")}</span>
             </div>
             <div className={css.assemblyLabelC}>
               <b>C</b>
-              <span>Leg components</span>
+              <span>{t("industrial.heroes.legComponents")}</span>
             </div>
           </div>
           <div className={css.kitNote}>
-            <span>COMPONENT-ONLY EXAMPLE</span>
+            <span>{t("industrial.heroes.componentOnlyExample")}</span>
             <b>
               {kits.available}
-              <small>kit equivalents from entered stock</small>
+              <small>{t("industrial.heroes.kitEquivalentsFromEnteredStock")}</small>
             </b>
-            <p>For an illustrative request of 24 chairs.</p>
+            <p>{t("industrial.heroes.forAnIllustrativeRequestOf24")}</p>
           </div>
           <figcaption>
-            Concept chair drawing · three-line component arithmetic, separate
-            from real production
+            {t("industrial.heroes.conceptChairDrawingThreeLineComponent")}
           </figcaption>
         </figure>
         <div>
           <Copy slug="furniture" />
           <Actions />
           <div className={css.assemblyFlow}>
-            <span>DESIGN</span>
+            <span>{t("industrial.heroes.design")}</span>
             <ArrowRight size={13} />
-            <span>PARTS</span>
+            <span>{t("industrial.heroes.parts")}</span>
             <ArrowRight size={13} />
-            <span>ASSEMBLY</span>
+            <span>{t("industrial.heroes.assembly")}</span>
           </div>
         </div>
       </div>

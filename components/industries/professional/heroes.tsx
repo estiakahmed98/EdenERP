@@ -41,8 +41,10 @@ import {
   RouteArt,
   css,
 } from "./ui";
+import { useTranslations } from "next-intl";
 function Copy({ slug }: { slug: ProfessionalSlug }) {
-  const p = pages[slug];
+  const t = useTranslations("pages.industriesApp");
+  const p = pages(t)[slug];
   return (
     <>
       <p className={css.eyebrow}>{p.eyebrow}</p>
@@ -56,6 +58,7 @@ function Copy({ slug }: { slug: ProfessionalSlug }) {
   );
 }
 function AgencyHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.agencyHero}>
       <div className={`${css.wrap} ${css.agencyLayout}`}>
@@ -63,13 +66,13 @@ function AgencyHero() {
           <Copy slug="real-estate-agency" />
           <Actions />
           <p className={css.heroFoot}>
-            THE ADDRESS / THE BUYER / THE NEXT HANDOFF
+            {t("professional.heroes.theAddressTheBuyerTheNext")}
           </p>
         </div>
         <figure className={css.portfolio}>
           <header>
             <MapPin size={17} />
-            <span>THE PROPERTY PORTFOLIO / CONCEPT</span>
+            <span>{t("professional.heroes.thePropertyPortfolioConcept")}</span>
           </header>
           <BuildingArt />
           <div className={css.propertyNotes}>
@@ -80,15 +83,15 @@ function AgencyHero() {
                 </span>
                 <b>{p.name}</b>
                 <small>
-                  {num(p.area)} sq ft · {p.type}
+                  {num(p.area)}{" "}{t("professional.heroes.sqFt")}{" "}{p.type}
                 </small>
                 <strong>{money(p.price)}</strong>
               </div>
             ))}
           </div>
-          <HandNote>The detail behind the address.</HandNote>
+          <HandNote>{t("professional.heroes.theDetailBehindTheAddress")}</HandNote>
           <figcaption>
-            Concept massing and fictional properties · not live listings
+            {t("professional.heroes.conceptMassingAndFictionalPropertiesNot")}
           </figcaption>
         </figure>
       </div>
@@ -96,35 +99,36 @@ function AgencyHero() {
   );
 }
 function ArchitectureHero() {
+  const t = useTranslations("pages.industriesApp");
   return (
     <section className={css.architectureHero}>
       <div className={css.wrap}>
         <div className={css.architectureHeading}>
-          <Badge>THE DESIGN DESK / CONCEPT STUDY 01</Badge>
+          <Badge>{t("professional.heroes.theDesignDeskConceptStudy01")}</Badge>
           <Copy slug="architecture-firm" />
           <Actions />
         </div>
         <figure className={css.draftingDesk}>
           <div className={css.planIndex}>
-            <span>THE PHASE NOTES</span>
+            <span>{t("professional.heroes.thePhaseNotes")}</span>
             <b>
               01
               <br />
-              <em>Design intent.</em>
+              <em>{t("professional.heroes.designIntent")}</em>
             </b>
-            <small>Give every phase a clear place.</small>
+            <small>{t("professional.heroes.giveEveryPhaseAClearPlace")}</small>
           </div>
           <div className={css.planStack}>
             <div className={css.backSheet} />
             <div className={css.frontSheet}>
               <header>
-                <span>EX-ARCH-01 / CONCEPT ONLY</span>
-                <span>PLAN STUDY</span>
+                <span>{t("professional.heroes.exArch01ConceptOnly")}</span>
+                <span>{t("professional.heroes.planStudy")}</span>
               </header>
               <PlanArt />
               <div>
-                <span>BRIEF → PHASES → RECORDS</span>
-                <small>Not a scale drawing</small>
+                <span>{t("professional.heroes.briefPhasesRecords")}</span>
+                <small>{t("professional.heroes.notAScaleDrawing")}</small>
               </div>
             </div>
           </div>
@@ -133,13 +137,12 @@ function ArchitectureHero() {
               <div key={p.name}>
                 <span>0{i + 1}</span>
                 <b>{p.name}</b>
-                <small>{p.hours} fictional hours</small>
+                <small>{p.hours}{" "}{t("professional.heroes.fictionalHours")}</small>
               </div>
             ))}
           </div>
           <figcaption>
-            Illustrative drafting composition · no technical specification or
-            project is created
+            {t("professional.heroes.illustrativeDraftingCompositionNoTechnic")}
           </figcaption>
         </figure>
       </div>
@@ -147,6 +150,7 @@ function ArchitectureHero() {
   );
 }
 function ConstructionHero() {
+  const t = useTranslations("pages.industriesApp");
   const costs = costLines(
     workItems.map((row) => ({ quantity: row.quantity, rate: row.rate })),
   );
@@ -160,15 +164,15 @@ function ConstructionHero() {
         <figure className={css.siteComposition}>
           <div className={css.siteDrawing}>
             <header>
-              <span>THE SITE NOTES / CONCEPT ELEVATION</span>
+              <span>{t("professional.heroes.theSiteNotesConceptElevation")}</span>
               <span>EX-WORK-01</span>
             </header>
             <CraneArt />
-            <p>THE WORK ITEM IS PART OF THE PROJECT STORY.</p>
+            <p>{t("professional.heroes.theWorkItemIsPartOf")}</p>
           </div>
           <div className={css.costTicket}>
             <ClipboardList size={23} />
-            <span>FICTIONAL WORK LINES</span>
+            <span>{t("professional.heroes.fictionalWorkLines")}</span>
             {workItems.map((row, i) => (
               <div key={row.name}>
                 <span>{row.name}</span>
@@ -176,13 +180,12 @@ function ConstructionHero() {
               </div>
             ))}
             <footer>
-              <span>Entered example total</span>
+              <span>{t("professional.heroes.enteredExampleTotal")}</span>
               <b>{money(costs.total)}</b>
             </footer>
           </div>
           <figcaption>
-            Concept site illustration and fictional arithmetic · no engineering
-            estimate or specification
+            {t("professional.heroes.conceptSiteIllustrationAndFictionalArith")}
           </figcaption>
         </figure>
       </div>
@@ -190,6 +193,7 @@ function ConstructionHero() {
   );
 }
 function AccountingHero() {
+  const t = useTranslations("pages.industriesApp");
   const progress = checklist([true, false, false, false]);
   return (
     <section className={css.accountingHero}>
@@ -197,13 +201,13 @@ function AccountingHero() {
         <figure className={css.reviewLedger}>
           <header>
             <FileText size={18} />
-            <span>EX-ENG-01 / FICTIONAL REVIEW NOTES</span>
+            <span>{t("professional.heroes.exEng01FictionalReviewNotes")}</span>
           </header>
           <div className={css.ledgerHeading}>
             <h3>
-              The work behind
+              {t("professional.heroes.theWorkBehind")}
               <br />
-              the numbers.
+              {t("professional.heroes.theNumbers")}
             </h3>
             <b>
               {progress.done}
@@ -211,7 +215,7 @@ function AccountingHero() {
             </b>
           </div>
           <div className={css.ledgerRows}>
-            {reviewTasks.map((task, i) => (
+            {reviewTasks(t).map((task, i) => (
               <div key={task}>
                 <span>0{i + 1}</span>
                 <b>{task}</b>
@@ -219,17 +223,16 @@ function AccountingHero() {
               </div>
             ))}
           </div>
-          <p>Manually tracked example tasks, with their context intact.</p>
+          <p>{t("professional.heroes.manuallyTrackedExampleTasksWithTheir")}</p>
           <figcaption>
-            Illustrative engagement ledger · no accounts or documents are
-            inspected
+            {t("professional.heroes.illustrativeEngagementLedgerNoAccountsOr")}
           </figcaption>
         </figure>
         <div>
           <Copy slug="accounting-firm" />
           <Actions />
           <p className={css.heroFoot}>
-            CLIENT CONTEXT / REVIEW NOTES / A CLEARER HANDOFF
+            {t("professional.heroes.clientContextReviewNotesAClearer")}
           </p>
         </div>
       </div>
@@ -237,6 +240,7 @@ function AccountingHero() {
   );
 }
 function MarketingHero() {
+  const t = useTranslations("pages.industriesApp");
   const budget = allocation(
     channels.map((c) => c.amount),
     300000,
@@ -247,20 +251,20 @@ function MarketingHero() {
         <div>
           <Copy slug="marketing-agency" />
           <Actions />
-          <HandNote>Give the idea a little structure.</HandNote>
+          <HandNote>{t("professional.heroes.giveTheIdeaALittleStructure")}</HandNote>
         </div>
         <figure className={css.creativeBoard}>
           <div className={css.creativePoster}>
-            <span>EX-CAMP-01 / THE CREATIVE BRIEF</span>
+            <span>{t("professional.heroes.exCamp01TheCreativeBrief")}</span>
             <b>
-              Think.
+              {t("professional.heroes.think")}
               <br />
-              Make.
+              {t("professional.heroes.make")}
               <br />
-              <em>Connect.</em>
+              <em>{t("professional.heroes.connect")}</em>
             </b>
             <div className={css.posterOrbit} />
-            <small>A concept campaign, with its assumptions visible.</small>
+            <small>{t("professional.heroes.aConceptCampaignWithItsAssumptions")}</small>
           </div>
           <div className={css.channelNote}>
             <AllocationRing
@@ -268,14 +272,13 @@ function MarketingHero() {
               labels={channels.map((c) => c.name)}
             />
             <div>
-              <span>EXAMPLE ALLOCATION</span>
+              <span>{t("professional.heroes.exampleAllocation")}</span>
               <b>{money(budget.assigned)}</b>
-              <small>Budget shape, not predicted results.</small>
+              <small>{t("professional.heroes.budgetShapeNotPredictedResults")}</small>
             </div>
           </div>
           <figcaption>
-            Concept campaign board · fictional channel amounts and no
-            performance forecast
+            {t("professional.heroes.conceptCampaignBoardFictionalChannelAmou")}
           </figcaption>
         </figure>
       </div>
@@ -283,6 +286,7 @@ function MarketingHero() {
   );
 }
 function TalentHero() {
+  const t = useTranslations("pages.industriesApp");
   const counts = candidateCounts(candidates.map((c) => c.stage));
   return (
     <section className={css.talentHero}>
@@ -294,35 +298,34 @@ function TalentHero() {
           </div>
           <div className={css.roleBrief}>
             <UserRound size={25} />
-            <span>THE ROLE BRIEF</span>
+            <span>{t("professional.heroes.theRoleBrief")}</span>
             <b>
-              A clear next step,
+              {t("professional.heroes.aClearNextStep")}
               <br />
-              with the person in context.
+              {t("professional.heroes.withThePersonInContext")}
             </b>
-            <small>Anonymous fictional candidate IDs</small>
+            <small>{t("professional.heroes.anonymousFictionalCandidateIds")}</small>
           </div>
         </div>
         <figure className={css.candidateJourney}>
           {candidateStages.map((stage, i) => (
             <div className={css.journeyStep} key={stage}>
               <header>
-                <span>0{i + 1} / THE JOURNEY</span>
+                <span>0{i + 1}{" "}{t("professional.heroes.theJourney")}</span>
                 <ArrowRight size={16} />
               </header>
               <div className={css.avatarMark}>
                 <UserRound size={28} />
               </div>
-              <b>{candidateLabels[stage]}</b>
-              <span>{counts[stage]} fictional candidate</span>
+              <b>{candidateLabels(t)[stage]}</b>
+              <span>{counts[stage]}{" "}{t("professional.heroes.fictionalCandidate")}</span>
               <small>
                 {candidates[i].id} / {candidates[i].role}
               </small>
             </div>
           ))}
           <figcaption>
-            Illustrative stages · no scoring, applicant assessment or hiring
-            recommendation
+            {t("professional.heroes.illustrativeStagesNoScoringApplicantAsse")}
           </figcaption>
         </figure>
       </div>
@@ -330,6 +333,7 @@ function TalentHero() {
   );
 }
 function AuditHero() {
+  const t = useTranslations("pages.industriesApp");
   const count = evidenceCounts(evidenceRows.map((r) => r.state));
   return (
     <section className={css.auditHero}>
@@ -338,45 +342,44 @@ function AuditHero() {
           <Copy slug="audit-certification" />
           <Actions />
           <p className={css.heroFoot}>
-            THE DOCUMENT / THE REVIEW STATE / THE FOLLOW-UP
+            {t("professional.heroes.theDocumentTheReviewStateThe")}
           </p>
         </div>
         <figure className={css.evidenceDesk}>
           <div className={css.dossierBack}>
             <EvidenceArt />
-            <span>THE DOCUMENT CONTEXT</span>
+            <span>{t("professional.heroes.theDocumentContext")}</span>
           </div>
           <div className={css.dossierFront}>
             <header>
-              <span>EX-E01 / FICTIONAL EVIDENCE</span>
+              <span>{t("professional.heroes.exE01FictionalEvidence")}</span>
             </header>
             <EvidenceArt />
             <b>
-              A readable
+              {t("professional.heroes.aReadable")}
               <br />
-              trail of context.
+              {t("professional.heroes.trailOfContext")}
             </b>
-            <small>Manually reviewed in this example</small>
+            <small>{t("professional.heroes.manuallyReviewedInThisExample")}</small>
           </div>
           <div className={css.reviewPath}>
             <span>
               {count.missing}
-              <small>Missing</small>
+              <small>{t("professional.heroes.missing")}</small>
             </span>
             <i />
             <span>
               {count.provided}
-              <small>Provided</small>
+              <small>{t("professional.heroes.provided")}</small>
             </span>
             <i />
             <span>
               {count.reviewed}
-              <small>Reviewed</small>
+              <small>{t("professional.heroes.reviewed")}</small>
             </span>
           </div>
           <figcaption>
-            Concept evidence dossier · not a compliance decision or
-            certification seal
+            {t("professional.heroes.conceptEvidenceDossierNotACompliance")}
           </figcaption>
         </figure>
       </div>
@@ -384,6 +387,7 @@ function AuditHero() {
   );
 }
 function TravelHero() {
+  const t = useTranslations("pages.industriesApp");
   const trip = tripEstimate({
     travellers: 2,
     fare: 25000,
@@ -397,39 +401,39 @@ function TravelHero() {
       <div className={`${css.wrap} ${css.travelLayout}`}>
         <figure className={css.itinerary}>
           <header>
-            <span>EX-TRIP-01 / THE ITINERARY NOTES</span>
-            <Badge>Fictional journey</Badge>
+            <span>{t("professional.heroes.exTrip01TheItineraryNotes")}</span>
+            <Badge>{t("professional.heroes.fictionalJourney")}</Badge>
           </header>
           <RouteArt />
           <div className={css.waypointLabels}>
-            <span>01 / DEPARTURE</span>
-            <span>02 / THE STAY</span>
-            <span>03 / RETURN</span>
+            <span>{t("professional.heroes.n01Departure")}</span>
+            <span>{t("professional.heroes.n02TheStay")}</span>
+            <span>{t("professional.heroes.n03Return")}</span>
           </div>
           <div className={css.tripPass}>
             <div>
-              <span>EXAMPLE TRAVELLERS</span>
+              <span>{t("professional.heroes.exampleTravellers")}</span>
               <b>02</b>
             </div>
             <div>
-              <span>EXAMPLE NIGHTS</span>
+              <span>{t("professional.heroes.exampleNights")}</span>
               <b>03</b>
             </div>
             <div>
-              <span>LOCAL ESTIMATE</span>
+              <span>{t("professional.heroes.localEstimate")}</span>
               <strong>{money(trip.total)}</strong>
             </div>
           </div>
-          <HandNote>A journey, thoughtfully considered.</HandNote>
+          <HandNote>{t("professional.heroes.aJourneyThoughtfullyConsidered")}</HandNote>
           <figcaption>
-            Concept travel plan · fictional prices and no live availability
+            {t("professional.heroes.conceptTravelPlanFictionalPricesAnd")}
           </figcaption>
         </figure>
         <div>
           <Copy slug="travel-agency" />
           <Actions />
           <p className={css.heroFoot}>
-            THE JOURNEY / THE ASSUMPTIONS / THE RECORD
+            {t("professional.heroes.theJourneyTheAssumptionsTheRecord")}
           </p>
         </div>
       </div>

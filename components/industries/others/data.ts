@@ -1,3 +1,4 @@
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 export const otherIndustries = ["ecommerce", "ngo", "tv"] as const;
 export type OtherIndustry = (typeof otherIndustries)[number];
 type Content = {
@@ -13,274 +14,274 @@ type Content = {
   tools: { title: string; body: string; href: string }[];
   faqs: [string, string][];
 };
-export const pages: Record<OtherIndustry, Content> = {
+export const pages = memoT((t: TFn): Record<OtherIndustry, Content> => ({
   ecommerce: {
-    title: "E-commerce",
-    eyebrow: " Adon ERP / E-COMMERCE",
-    headline: "A considered storefront.",
-    accent: "A clearer order journey.",
+    title: t("others.data.eCommerce"),
+    eyebrow: t("others.data.adonErpECommerce"),
+    headline: t("others.data.aConsideredStorefront"),
+    accent: t("others.data.aClearerOrderJourney"),
     description:
-      "Explore how the product, basket and business records fit together—from a customer’s first selection to the next operational handoff.",
-    storyTitle: "Give the order a readable path.",
-    demoTitle: "Build a small example basket.",
+      t("others.data.exploreHowTheProductBasketAnd"),
+    storyTitle: t("others.data.giveTheOrderAReadablePath"),
+    demoTitle: t("others.data.buildASmallExampleBasket"),
     demoDescription:
-      "Explore three fictional products, change quantities and compare an example delivery charge and flat discount. No order, payment or stock reservation is created.",
+      t("others.data.exploreThreeFictionalProductsChangeQuant"),
     stages: [
       {
-        label: "The catalogue",
-        title: "Start with the product in context.",
-        body: "Bring the product identity, price and stock conversation together before following the order into business records.",
-        points: ["Product identity", "Price context", "Inventory discussion"],
+        label: t("others.data.theCatalogue"),
+        title: t("others.data.startWithTheProductInContext"),
+        body: t("others.data.bringTheProductIdentityPriceAnd"),
+        points: [t("others.data.productIdentity"), t("others.data.priceContext"), t("others.data.inventoryDiscussion")],
       },
       {
-        label: "The basket",
-        title: "Keep the calculation easy to read.",
-        body: "Use the local basket to see the relationship between item totals, an entered delivery charge and a flat discount.",
+        label: t("others.data.theBasket"),
+        title: t("others.data.keepTheCalculationEasyToRead"),
+        body: t("others.data.useTheLocalBasketToSee"),
         points: [
-          "Selected products",
-          "Quantity and subtotal",
-          "Example order total",
+          t("others.data.selectedProducts"),
+          t("others.data.quantityAndSubtotal"),
+          t("others.data.exampleOrderTotal"),
         ],
       },
       {
-        label: "The handoff",
-        title: "Follow the commercial detail beyond the basket.",
-        body: "Explore the existing invoice and delivery-document presentations when discussing your order workflow.",
+        label: t("others.data.theHandoff"),
+        title: t("others.data.followTheCommercialDetailBeyondThe"),
+        body: t("others.data.exploreTheExistingInvoiceAndDelivery"),
         points: [
-          "Order context",
-          "Invoice presentation",
-          "Delivery-document context",
+          t("others.data.orderContext"),
+          t("others.data.invoicePresentation"),
+          t("others.data.deliveryDocumentContext"),
         ],
       },
     ],
     tools: [
       {
-        title: "E-commerce presentation",
-        body: "Explore the existing website commerce showcase.",
+        title: t("others.data.eCommercePresentation"),
+        body: t("others.data.exploreTheExistingWebsiteCommerceShowcas"),
         href: "/apps/website/ecommerce",
       },
       {
-        title: "Inventory overview",
-        body: "Look at the inventory presentation behind the product conversation.",
+        title: t("others.data.inventoryOverview"),
+        body: t("others.data.lookAtTheInventoryPresentationBehind"),
         href: "/apps/inventory/inventory-summary",
       },
       {
-        title: "Customer invoices",
-        body: "Explore the existing invoice presentation and its commercial context.",
+        title: t("others.data.customerInvoices"),
+        body: t("others.data.exploreTheExistingInvoicePresentationAnd"),
         href: "/apps/accounting/invoices-ar",
       },
       {
-        title: "Delivery documents",
-        body: "Inspect the delivery-challan showcase for the order handoff.",
+        title: t("others.data.deliveryDocuments"),
+        body: t("others.data.inspectTheDeliveryChallanShowcaseFor"),
         href: "/apps/accounting/delivery-challans",
       },
     ],
     faqs: [
       [
-        "Can I place an order or pay here?",
-        "No. The products, basket and charges are illustrative local examples. No checkout, payment gateway, delivery booking or inventory service is connected.",
+        t("others.data.canIPlaceAnOrderOr"),
+        t("others.data.noTheProductsBasketAndCharges"),
       ],
       [
-        "Does the basket calculate tax?",
-        "No. The example shows item totals, an entered delivery charge and a flat discount only. Tax rules and any production checkout configuration should be discussed separately.",
+        t("others.data.doesTheBasketCalculateTax"),
+        t("others.data.noTheExampleShowsItemTotals"),
       ],
       [
-        "Can we discuss our own products and order process?",
-        "Yes. Bring your catalogue, price structure, inventory and delivery questions to the advisor walkthrough.",
+        t("others.data.canWeDiscussOurOwnProducts"),
+        t("others.data.yesBringYourCataloguePriceStructure"),
       ],
     ],
   },
   ngo: {
     title: "NGO",
-    eyebrow: " Adon ERP / NGO & PROGRAMME OPERATIONS",
-    headline: "Keep the purpose.",
-    accent: "Bring the detail together.",
+    eyebrow: t("others.data.adonErpNgoProgrammeOperations"),
+    headline: t("others.data.keepThePurpose"),
+    accent: t("others.data.bringTheDetailTogether"),
     description:
-      "Explore the relationship between funds, programmes and the records behind them, with a clear view of the administrative work that supports your mission.",
-    storyTitle: "Make the programme context visible.",
-    demoTitle: "Explore a programme-budget conversation.",
+      t("others.data.exploreTheRelationshipBetweenFundsProgra"),
+    storyTitle: t("others.data.makeTheProgrammeContextVisible"),
+    demoTitle: t("others.data.exploreAProgrammeBudgetConversation"),
     demoDescription:
-      "Adjust an illustrative planning budget and three allocation amounts. The calculation does not record a donation, transfer funds or approve programme spending.",
+      t("others.data.adjustAnIllustrativePlanningBudgetAnd"),
     stages: [
       {
-        label: "Fund context",
-        title: "Begin with the funding conversation.",
-        body: "Use the existing donor and fund presentations to discuss how funding identity and purpose should remain visible in your records.",
+        label: t("others.data.fundContext"),
+        title: t("others.data.beginWithTheFundingConversation"),
+        body: t("others.data.useTheExistingDonorAndFund"),
         points: [
-          "Fund and donor context",
-          "Programme purpose",
-          "Document references",
+          t("others.data.fundAndDonorContext"),
+          t("others.data.programmePurpose"),
+          t("others.data.documentReferences"),
         ],
       },
       {
-        label: "Programme detail",
-        title: "Keep the activities connected to their context.",
-        body: "Bring programme planning and allocation questions into the same conversation, without treating an example budget as actual spending.",
+        label: t("others.data.programmeDetail"),
+        title: t("others.data.keepTheActivitiesConnectedToTheir"),
+        body: t("others.data.bringProgrammePlanningAndAllocationQuest"),
         points: [
-          "Programme structure",
-          "Planning amounts",
-          "Allocation discussion",
+          t("others.data.programmeStructure"),
+          t("others.data.planningAmounts"),
+          t("others.data.allocationDiscussion"),
         ],
       },
       {
-        label: "Reporting",
-        title: "Follow the record behind the report.",
-        body: "Explore the existing fund-reporting and grant presentations when discussing the evidence and reports your organisation needs.",
-        points: ["Grant context", "Record review", "Reporting presentation"],
+        label: t("others.data.reporting"),
+        title: t("others.data.followTheRecordBehindTheReport"),
+        body: t("others.data.exploreTheExistingFundReportingAnd"),
+        points: [t("others.data.grantContext"), t("others.data.recordReview"), t("others.data.reportingPresentation")],
       },
     ],
     tools: [
       {
-        title: "Donors & funds",
-        body: "Explore donor and fund identities in the existing presentation.",
+        title: t("others.data.donorsFunds"),
+        body: t("others.data.exploreDonorAndFundIdentitiesIn"),
         href: "/apps/fund-accounting/donors-funds",
       },
       {
-        title: "Grants",
-        body: "Look at grant context and the supporting product showcase.",
+        title: t("others.data.grants"),
+        body: t("others.data.lookAtGrantContextAndThe"),
         href: "/apps/fund-accounting/grants",
       },
       {
-        title: "Cost allocation",
-        body: "Inspect the existing allocation presentation as a discussion starting point.",
+        title: t("others.data.costAllocation"),
+        body: t("others.data.inspectTheExistingAllocationPresentation"),
         href: "/apps/fund-accounting/cost-allocation",
       },
       {
-        title: "Fund reports",
-        body: "Explore the reporting showcase and its record context.",
+        title: t("others.data.fundReports"),
+        body: t("others.data.exploreTheReportingShowcaseAndIts"),
         href: "/apps/fund-accounting/reports",
       },
     ],
     faqs: [
       [
-        "Are these actual donations or programme results?",
-        "No. Every amount and programme label in this page is illustrative. No donor, recipient, beneficiary or impact claim is represented by the example.",
+        t("others.data.areTheseActualDonationsOrProgramme"),
+        t("others.data.noEveryAmountAndProgrammeLabel"),
       ],
       [
-        "Does a balanced allocation approve expenditure?",
-        "No. It only means the entered planning amounts add up to the example budget. The tool does not check grant restrictions, eligibility, policy or compliance, and it approves no spending.",
+        t("others.data.doesABalancedAllocationApproveExpenditur"),
+        t("others.data.noItOnlyMeansTheEntered"),
       ],
       [
-        "Can we explore our fund and reporting structure?",
-        "Yes. Bring your programme structure, fund categories, allocation questions and reporting needs to an advisor conversation.",
+        t("others.data.canWeExploreOurFundAnd"),
+        t("others.data.yesBringYourProgrammeStructureFund"),
       ],
     ],
   },
   tv: {
     title: "TV",
-    eyebrow: " Adon ERP / TV & MEDIA OPERATIONS",
-    headline: "Behind every programme,",
-    accent: "a clearer operational picture.",
+    eyebrow: t("others.data.adonErpTvMediaOperations"),
+    headline: t("others.data.behindEveryProgramme"),
+    accent: t("others.data.aClearerOperationalPicture"),
     description:
-      "Explore the planning, resources and commercial context behind a television programme, with room for the detail of your own production workflow.",
-    storyTitle: "Keep the work behind the screen in view.",
-    demoTitle: "Shape an illustrative programme rundown.",
+      t("others.data.exploreThePlanningResourcesAndCommercial"),
+    storyTitle: t("others.data.keepTheWorkBehindTheScreen"),
+    demoTitle: t("others.data.shapeAnIllustrativeProgrammeRundown"),
     demoDescription:
-      "Edit five segment durations, choose a start time and compare the total with an example target. The clock is a local planning illustration, not a broadcast automation system.",
+      t("others.data.editFiveSegmentDurationsChooseA"),
     stages: [
       {
-        label: "Programme planning",
-        title: "Give the programme a clear planning context.",
-        body: "Use the example rundown to discuss segment lengths and handoffs alongside the wider project schedule.",
-        points: ["Programme brief", "Segment sequence", "Schedule context"],
+        label: t("others.data.programmePlanning"),
+        title: t("others.data.giveTheProgrammeAClearPlanning"),
+        body: t("others.data.useTheExampleRundownToDiscuss"),
+        points: [t("others.data.programmeBrief"), t("others.data.segmentSequence"), t("others.data.scheduleContext")],
       },
       {
-        label: "Resources & cost",
-        title: "Bring the supporting work into the picture.",
-        body: "Explore existing project budgets and asset records when discussing the resources behind a production.",
+        label: t("others.data.resourcesCost"),
+        title: t("others.data.bringTheSupportingWorkIntoThe"),
+        body: t("others.data.exploreExistingProjectBudgetsAndAsset"),
         points: [
-          "Project budget context",
-          "Equipment records",
-          "Team and resource discussion",
+          t("others.data.projectBudgetContext"),
+          t("others.data.equipmentRecords"),
+          t("others.data.teamAndResourceDiscussion"),
         ],
       },
       {
-        label: "Commercial handoff",
-        title: "Keep the business record close to the programme.",
-        body: "Explore the invoice presentation for commercial questions around your operation. No advertising inventory, rights or billing integration is implied by this page.",
+        label: t("others.data.commercialHandoff"),
+        title: t("others.data.keepTheBusinessRecordCloseTo"),
+        body: t("others.data.exploreTheInvoicePresentationForCommerci"),
         points: [
-          "Commercial context",
-          "Document presentation",
-          "Review and follow-up",
+          t("others.data.commercialContext"),
+          t("others.data.documentPresentation"),
+          t("others.data.reviewAndFollowUp"),
         ],
       },
     ],
     tools: [
       {
-        title: "Project schedule",
-        body: "Explore the existing project-schedule presentation for planning context.",
+        title: t("others.data.projectSchedule"),
+        body: t("others.data.exploreTheExistingProjectSchedulePresent"),
         href: "/apps/project-accounting/schedule",
       },
       {
-        title: "Project budgets",
-        body: "Inspect project budgeting as a production-cost discussion starting point.",
+        title: t("others.data.projectBudgets"),
+        body: t("others.data.inspectProjectBudgetingAsAProduction"),
         href: "/apps/project-accounting/budgets",
       },
       {
-        title: "Equipment records",
-        body: "Explore the existing fixed-asset register presentation.",
+        title: t("others.data.equipmentRecords"),
+        body: t("others.data.exploreTheExistingFixedAssetRegister"),
         href: "/apps/accounting/fixed-asset-register",
       },
       {
-        title: "Commercial invoices",
-        body: "Look at the invoice showcase for the commercial handoff.",
+        title: t("others.data.commercialInvoices"),
+        body: t("others.data.lookAtTheInvoiceShowcaseFor"),
         href: "/apps/accounting/invoices-ar",
       },
     ],
     faqs: [
       [
-        "Does this control a broadcast or play media?",
-        "No. There is no playout, streaming, signal monitoring, media playback or transmission integration. The rundown is an editable local timing example.",
+        t("others.data.doesThisControlABroadcastOr"),
+        t("others.data.noThereIsNoPlayoutStreaming"),
       ],
       [
-        "Are the timings frame-accurate broadcast timecode?",
-        "No. The calculator uses whole seconds and a 24-hour clock. It does not model frame rates, timecode standards, transmission rules or a real station schedule.",
+        t("others.data.areTheTimingsFrameAccurateBroadcast"),
+        t("others.data.noTheCalculatorUsesWholeSeconds"),
       ],
       [
-        "Can we discuss our own production process?",
-        "Yes. Bring programme planning, project cost, equipment and commercial-record questions to a guided product conversation.",
+        t("others.data.canWeDiscussOurOwnProduction"),
+        t("others.data.yesBringProgrammePlanningProjectCost"),
       ],
     ],
   },
-};
-export const products = [
+}));
+export const products = memoT((t: TFn) => ([
   {
     id: "EX-NOTE",
     name: "Everyday notebook",
-    category: "Stationery",
+    category: t("others.data.stationery"),
     price: 350,
     art: "notebook",
   },
   {
     id: "EX-MUG",
     name: "Desk mug",
-    category: "Everyday objects",
+    category: t("others.data.everydayObjects"),
     price: 650,
     art: "mug",
   },
   {
     id: "EX-TOTE",
     name: "Canvas tote",
-    category: "Carry essentials",
+    category: t("others.data.carryEssentials"),
     price: 950,
     art: "tote",
   },
-] as const;
+] as const));
 export const initialBasket: Record<string, number> = {
   "EX-NOTE": 1,
   "EX-MUG": 1,
 };
-export const programmeLines = [
-  { id: "programme-a", label: "Example programme A", amount: 35000 },
-  { id: "programme-b", label: "Example programme B", amount: 45000 },
-  { id: "shared", label: "Shared operations · example", amount: 20000 },
-];
-export const segments = [
-  { id: "EX-01", title: "Opening", duration: "02:00" },
-  { id: "EX-02", title: "News segment", duration: "09:00" },
-  { id: "EX-03", title: "Feature", duration: "08:00" },
-  { id: "EX-04", title: "Example break", duration: "03:00" },
-  { id: "EX-05", title: "Closing", duration: "02:00" },
-];
+export const programmeLines = memoT((t: TFn) => ([
+  { id: "programme-a", label: t("others.data.exampleProgrammeA"), amount: 35000 },
+  { id: "programme-b", label: t("others.data.exampleProgrammeB"), amount: 45000 },
+  { id: "shared", label: t("others.data.sharedOperationsExample"), amount: 20000 },
+]));
+export const segments = memoT((t: TFn) => ([
+  { id: "EX-01", title: t("others.data.opening"), duration: "02:00" },
+  { id: "EX-02", title: t("others.data.newsSegment"), duration: "09:00" },
+  { id: "EX-03", title: t("others.data.feature"), duration: "08:00" },
+  { id: "EX-04", title: t("others.data.exampleBreak"), duration: "03:00" },
+  { id: "EX-05", title: t("others.data.closing"), duration: "02:00" },
+]));
 export const money = (value: number) =>
   `BDT ${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;

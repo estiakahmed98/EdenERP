@@ -1,3 +1,4 @@
+import { memoT, type TFn } from "@/lib/i18n/t-types";
 export const hospitalitySlugs = [
   "restaurant",
   "fast-food",
@@ -26,321 +27,321 @@ const tool = (title: string, href: string, body: string) => ({
   href,
   body,
 });
-const restaurantPos = tool(
-  "Restaurant POS",
+const restaurantPos = memoT((t: TFn) => (tool(
+  t("hospitality.data.restaurantPos"),
   "/apps/sales/pos-restaurant",
-  "Explore the existing dining and checkout presentation.",
-);
-const items = tool(
-  "Items & products",
+  t("hospitality.data.exploreTheExistingDiningAndCheckout"),
+)));
+const items = memoT((t: TFn) => (tool(
+  t("hospitality.data.itemsProducts"),
   "/apps/accounting/items-products",
-  "Look at the item records behind the service.",
-);
-const stock = tool(
-  "Stock movements",
+  t("hospitality.data.lookAtTheItemRecordsBehind"),
+)));
+const stock = memoT((t: TFn) => (tool(
+  t("hospitality.data.stockMovements"),
   "/apps/inventory/stock-movements",
-  "Follow the inventory movement presentation.",
-);
-const invoices = tool(
-  "Customer invoices",
+  t("hospitality.data.followTheInventoryMovementPresentation"),
+)));
+const invoices = memoT((t: TFn) => (tool(
+  t("hospitality.data.customerInvoices"),
   "/apps/accounting/invoices-ar",
-  "Explore customer billing records and the receivables view.",
-);
-const customers = tool(
-  "Customer records",
+  t("hospitality.data.exploreCustomerBillingRecordsAndThe"),
+)));
+const customers = memoT((t: TFn) => (tool(
+  t("hospitality.data.customerRecords"),
   "/apps/accounting/customers",
-  "Look at the existing customer-record presentation.",
-);
-const reports = tool(
-  "Financial reports",
+  t("hospitality.data.lookAtTheExistingCustomerRecord"),
+)));
+const reports = memoT((t: TFn) => (tool(
+  t("hospitality.data.financialReports"),
   "/apps/accounting/financial-reports",
-  "Explore the reporting presentation with an advisor.",
-);
-export const pages: Record<HospitalitySlug, Content> = {
+  t("hospitality.data.exploreTheReportingPresentationWithAn"),
+)));
+export const pages = memoT((t: TFn): Record<HospitalitySlug, Content> => ({
   restaurant: {
-    title: "Restaurant",
-    eyebrow: "THE ART OF A WELL-RUN SERVICE",
-    headline: "A thoughtful table.",
-    accent: "A well-connected service.",
+    title: t("hospitality.data.restaurant"),
+    eyebrow: t("hospitality.data.theArtOfAWellRun"),
+    headline: t("hospitality.data.aThoughtfulTable"),
+    accent: t("hospitality.data.aWellConnectedService"),
     description:
-      "Bring the dining room, the counter and the details behind each order into one considered experience. A clearer operational conversation, from the first seat to the last bill.",
-    demoTitle: "Find the right table for the party.",
+      t("hospitality.data.bringTheDiningRoomTheCounter"),
+    demoTitle: t("hospitality.data.findTheRightTableForThe"),
     demoDescription:
-      "Choose a fictional table and enter a party size. Compare seats locally, without checking live availability or making a reservation.",
-    story: "Every service has a rhythm. Give it a clear path.",
+      t("hospitality.data.chooseAFictionalTableAndEnter"),
+    story: t("hospitality.data.everyServiceHasARhythmGive"),
     stages: [
       {
-        label: "The dining room",
-        title: "Start with the table and the party.",
-        body: "Use the seating exercise to discuss how table identity and seat counts fit your dining-room process.",
-        points: ["Table identity", "Party size", "Seat comparison"],
+        label: t("hospitality.data.theDiningRoom"),
+        title: t("hospitality.data.startWithTheTableAndThe"),
+        body: t("hospitality.data.useTheSeatingExerciseToDiscuss"),
+        points: [t("hospitality.data.tableIdentity"), t("hospitality.data.partySize"), t("hospitality.data.seatComparison")],
       },
       {
-        label: "The order",
-        title: "Carry context from the table to the counter.",
-        body: "Explore the existing Restaurant POS presentation to discuss ordering and checkout in your own operation.",
-        points: ["Order detail", "Service handoff", "Checkout context"],
+        label: t("hospitality.data.theOrder"),
+        title: t("hospitality.data.carryContextFromTheTableTo"),
+        body: t("hospitality.data.exploreTheExistingRestaurantPosPresentat"),
+        points: [t("hospitality.data.orderDetail"), t("hospitality.data.serviceHandoff"), t("hospitality.data.checkoutContext")],
       },
       {
-        label: "The close",
-        title: "Keep the records behind service readable.",
-        body: "Review item, stock and billing presentations without treating the local seating exercise as a live restaurant system.",
-        points: ["Item records", "Stock movements", "Billing detail"],
+        label: t("hospitality.data.theClose"),
+        title: t("hospitality.data.keepTheRecordsBehindServiceReadable"),
+        body: t("hospitality.data.reviewItemStockAndBillingPresentations"),
+        points: [t("hospitality.data.itemRecords"), t("hospitality.data.stockMovements"), t("hospitality.data.billingDetail")],
       },
     ],
-    tools: [restaurantPos, items, stock, invoices],
+    tools: [restaurantPos(t), items(t), stock(t), invoices(t)],
     faqs: [
       [
-        "Does choosing a table reserve it?",
-        "No. The floor plan and table states are fictional. Selecting a table only compares its seats with the entered party size.",
+        t("hospitality.data.doesChoosingATableReserveIt"),
+        t("hospitality.data.noTheFloorPlanAndTable"),
       ],
       [
-        "Can the example combine tables?",
-        "No. It considers one selected table at a time. Combined seating and scheduling requirements can be discussed with an advisor.",
+        t("hospitality.data.canTheExampleCombineTables"),
+        t("hospitality.data.noItConsidersOneSelectedTable"),
       ],
       [
-        "Where can we discuss real restaurant workflows?",
-        "Use the shared advisor button and bring your dining-room, order, kitchen and checkout questions to the conversation.",
+        t("hospitality.data.whereCanWeDiscussRealRestaurant"),
+        t("hospitality.data.useTheSharedAdvisorButtonAnd"),
       ],
     ],
   },
   "fast-food": {
-    title: "Fast Food",
-    eyebrow: "A CLEARER VIEW OF THE KITCHEN PASS",
-    headline: "The next order.",
-    accent: "A clearer handoff.",
+    title: t("hospitality.data.fastFood"),
+    eyebrow: t("hospitality.data.aClearerViewOfTheKitchen"),
+    headline: t("hospitality.data.theNextOrder"),
+    accent: t("hospitality.data.aClearerHandoff"),
     description:
-      "Give the rush a readable rhythm. Bring the ticket, the preparation stage and the collection handoff into focus with a fresh perspective on fast-food operations.",
-    demoTitle: "Move a ticket through the kitchen pass.",
+      t("hospitality.data.giveTheRushAReadableRhythm"),
+    demoTitle: t("hospitality.data.moveATicketThroughTheKitchen"),
     demoDescription:
-      "Advance three fictional tickets from queued to preparing to ready. The board is an editable local example, separate from any real kitchen.",
-    story: "Keep the handoff visible, one ticket at a time.",
+      t("hospitality.data.advanceThreeFictionalTicketsFromQueued"),
+    story: t("hospitality.data.keepTheHandoffVisibleOneTicket"),
     stages: [
       {
-        label: "The ticket",
-        title: "Let the order carry its detail.",
-        body: "Each example ticket has its own identifier and short item list, ready for a conversation about your ordering process.",
-        points: ["Ticket identifier", "Item detail", "Initial stage"],
+        label: t("hospitality.data.theTicket"),
+        title: t("hospitality.data.letTheOrderCarryItsDetail"),
+        body: t("hospitality.data.eachExampleTicketHasItsOwn"),
+        points: [t("hospitality.data.ticketIdentifier"), t("hospitality.data.itemDetail"), t("hospitality.data.initialStage")],
       },
       {
-        label: "The preparation",
-        title: "Show the stage, without guessing the time.",
-        body: "Change stages explicitly in the example. No simulated live timer or invented speed improvement is shown.",
-        points: ["Queued", "Preparing", "Ready"],
+        label: t("hospitality.data.thePreparation"),
+        title: t("hospitality.data.showTheStageWithoutGuessingThe"),
+        body: t("hospitality.data.changeStagesExplicitlyInTheExample"),
+        points: [t("hospitality.data.queued"), t("hospitality.data.preparing"), t("hospitality.data.ready")],
       },
       {
-        label: "The handoff",
-        title: "Connect the kitchen conversation to the wider product.",
-        body: "Explore the existing POS, item and stock presentations when reviewing the counter-to-kitchen journey.",
-        points: ["Order context", "Collection handoff", "Stock records"],
+        label: t("hospitality.data.theHandoff"),
+        title: t("hospitality.data.connectTheKitchenConversationToThe"),
+        body: t("hospitality.data.exploreTheExistingPosItemAnd"),
+        points: [t("hospitality.data.orderContext"), t("hospitality.data.collectionHandoff"), t("hospitality.data.stockRecords")],
       },
     ],
     tools: [
-      restaurantPos,
-      items,
-      stock,
+      restaurantPos(t),
+      items(t),
+      stock(t),
       tool(
-        "Loyalty & vouchers",
+        t("hospitality.data.loyaltyVouchers"),
         "/apps/pos/loyalty-vouchers",
-        "Explore the existing customer-rewards presentation.",
+        t("hospitality.data.exploreTheExistingCustomerRewardsPresent"),
       ),
     ],
     faqs: [
       [
-        "Is the board connected to a kitchen?",
-        "No. All tickets and stages are fictional and change only in this page’s local state.",
+        t("hospitality.data.isTheBoardConnectedToA"),
+        t("hospitality.data.noAllTicketsAndStagesAre"),
       ],
       [
-        "Does Ready mean an order was completed or paid?",
-        "No. Ready is only a stage in the local example. It does not complete a sale, notify a guest or record a payment.",
+        t("hospitality.data.doesReadyMeanAnOrderWas"),
+        t("hospitality.data.noReadyIsOnlyAStage"),
       ],
       [
-        "Can I restart the example?",
-        "Yes. Reset restores the three fictional tickets and their original stages.",
+        t("hospitality.data.canIRestartTheExample"),
+        t("hospitality.data.yesResetRestoresTheThreeFictional"),
       ],
     ],
   },
   "guest-house": {
-    title: "Guest House",
-    eyebrow: "A WARM WELCOME, WITH THE DETAILS IN PLACE",
-    headline: "A stay to remember.",
-    accent: "The detail, thoughtfully kept.",
+    title: t("hospitality.data.guestHouse"),
+    eyebrow: t("hospitality.data.aWarmWelcomeWithTheDetails"),
+    headline: t("hospitality.data.aStayToRemember"),
+    accent: t("hospitality.data.theDetailThoughtfullyKept"),
     description:
-      "Bring arrival dates, room choices and the conversation behind the guest’s stay into a calm, considered view. Hospitality begins with attention to the small things.",
-    demoTitle: "Explore a simple stay estimate.",
+      t("hospitality.data.bringArrivalDatesRoomChoicesAnd"),
+    demoTitle: t("hospitality.data.exploreASimpleStayEstimate"),
     demoDescription:
-      "Choose example arrival and departure dates and an entered nightly rate. Calculate nights and room charges, without creating a booking.",
-    story: "Make the stay easy to follow, from arrival to departure.",
+      t("hospitality.data.chooseExampleArrivalAndDepartureDates"),
+    story: t("hospitality.data.makeTheStayEasyToFollow"),
     stages: [
       {
-        label: "The arrival",
-        title: "Keep the dates clear from the start.",
-        body: "The local exercise uses explicit arrival and departure dates and counts nights between them.",
-        points: ["Arrival date", "Departure date", "Night count"],
+        label: t("hospitality.data.theArrival"),
+        title: t("hospitality.data.keepTheDatesClearFromThe"),
+        body: t("hospitality.data.theLocalExerciseUsesExplicitArrival"),
+        points: [t("hospitality.data.arrivalDate"), t("hospitality.data.departureDate"), t("hospitality.data.nightCount")],
       },
       {
-        label: "The stay",
-        title: "Make the entered rate visible.",
-        body: "Use an illustrative nightly rate to understand the arithmetic behind a simple room-charge estimate.",
+        label: t("hospitality.data.theStay"),
+        title: t("hospitality.data.makeTheEnteredRateVisible"),
+        body: t("hospitality.data.useAnIllustrativeNightlyRateTo"),
         points: [
-          "Entered nightly rate",
-          "Calculated room charge",
-          "Visible assumptions",
+          t("hospitality.data.enteredNightlyRate"),
+          t("hospitality.data.calculatedRoomCharge"),
+          t("hospitality.data.visibleAssumptions"),
         ],
       },
       {
-        label: "The departure",
-        title: "Bring guest records and billing into the conversation.",
-        body: "Explore existing customer and accounting presentations for the wider record-keeping discussion. The estimate is not a hospitality booking engine.",
-        points: ["Customer context", "Billing records", "Accounting review"],
+        label: t("hospitality.data.theDeparture"),
+        title: t("hospitality.data.bringGuestRecordsAndBillingInto"),
+        body: t("hospitality.data.exploreExistingCustomerAndAccountingPres"),
+        points: [t("hospitality.data.customerContext"), t("hospitality.data.billingRecords"), t("hospitality.data.accountingReview")],
       },
     ],
     tools: [
-      customers,
-      invoices,
+      customers(t),
+      invoices(t),
       tool(
-        "Customer receipts",
+        t("hospitality.data.customerReceipts"),
         "/apps/accounting/receipts",
-        "Explore recorded customer payments in the accounting presentation.",
+        t("hospitality.data.exploreRecordedCustomerPaymentsInThe"),
       ),
-      reports,
+      reports(t),
     ],
     faqs: [
       [
-        "Will these dates check room availability?",
-        "No. This is a local nights-and-rate exercise with no room inventory or reservation connection.",
+        t("hospitality.data.willTheseDatesCheckRoomAvailability"),
+        t("hospitality.data.noThisIsALocalNights"),
       ],
       [
-        "What is included in the estimate?",
-        "Only the number of nights multiplied by the entered nightly room rate. Taxes, meals, other services and discounts are not included.",
+        t("hospitality.data.whatIsIncludedInTheEstimate"),
+        t("hospitality.data.onlyTheNumberOfNightsMultiplied"),
       ],
       [
-        "Can I use historical dates?",
-        "Yes. The fictional exercise accepts valid dates from 2000 through 2100, with a stay of 1 to 365 nights. It is not a booking request.",
+        t("hospitality.data.canIUseHistoricalDates"),
+        t("hospitality.data.yesTheFictionalExerciseAcceptsValid"),
       ],
     ],
   },
   "beverage-distributor": {
-    title: "Beverage Distributor",
-    eyebrow: "FROM THE DEPOT TO THE NEXT OUTLET",
-    headline: "Keep the cartons moving.",
-    accent: "Keep every unit in view.",
+    title: t("hospitality.data.beverageDistributor"),
+    eyebrow: t("hospitality.data.fromTheDepotToTheNext"),
+    headline: t("hospitality.data.keepTheCartonsMoving"),
+    accent: t("hospitality.data.keepEveryUnitInView"),
     description:
-      "Bring cartons, unit counts and outlet handoffs into a clear distribution story. Follow the detail from the stock record to the next dispatch conversation.",
-    demoTitle: "Build a small carton-load example.",
+      t("hospitality.data.bringCartonsUnitCountsAndOutlet"),
+    demoTitle: t("hospitality.data.buildASmallCartonLoadExample"),
     demoDescription:
-      "Change carton counts and units per carton, then compare the resulting units with an entered count limit. No vehicle load or dispatch is approved.",
-    story: "Follow the quantity through each handoff.",
+      t("hospitality.data.changeCartonCountsAndUnitsPer"),
+    story: t("hospitality.data.followTheQuantityThroughEachHandoff"),
     stages: [
       {
-        label: "The depot",
-        title: "Start with the carton and its unit count.",
-        body: "The example keeps cartons and individual units distinct for each fictional beverage item.",
-        points: ["Item identity", "Carton count", "Units per carton"],
+        label: t("hospitality.data.theDepot"),
+        title: t("hospitality.data.startWithTheCartonAndIts"),
+        body: t("hospitality.data.theExampleKeepsCartonsAndIndividual"),
+        points: [t("hospitality.data.itemIdentity"), t("hospitality.data.cartonCount"), t("hospitality.data.unitsPerCarton")],
       },
       {
-        label: "The load",
-        title: "Read the totals before the next handoff.",
-        body: "Compare total units with an entered unit-count limit. Weight, volume, stacking and vehicle constraints need their own checks.",
-        points: ["Total cartons", "Individual units", "Entered count limit"],
+        label: t("hospitality.data.theLoad"),
+        title: t("hospitality.data.readTheTotalsBeforeTheNext"),
+        body: t("hospitality.data.compareTotalUnitsWithAnEntered"),
+        points: [t("hospitality.data.totalCartons"), t("hospitality.data.individualUnits"), t("hospitality.data.enteredCountLimit")],
       },
       {
-        label: "The outlet",
-        title: "Bring the stock and trip records into view.",
-        body: "Explore the existing distributor-stock, trip and van-stock presentations to discuss your distribution process.",
-        points: ["Distributor stock", "Trip context", "Outlet handoff"],
+        label: t("hospitality.data.theOutlet"),
+        title: t("hospitality.data.bringTheStockAndTripRecords"),
+        body: t("hospitality.data.exploreTheExistingDistributorStockTrip"),
+        points: [t("hospitality.data.distributorStock"), t("hospitality.data.tripContext"), t("hospitality.data.outletHandoff")],
       },
     ],
     tools: [
       tool(
-        "Distributor stock",
+        t("hospitality.data.distributorStock"),
         "/apps/sales/crm/dms/distributor-stock",
-        "Explore the existing distributor-stock presentation.",
+        t("hospitality.data.exploreTheExistingDistributorStockPresen"),
       ),
       tool(
-        "Trip records",
+        t("hospitality.data.tripRecords"),
         "/apps/sales/crm/van-sales/trips",
-        "Look at the trip and outlet-visit presentation.",
+        t("hospitality.data.lookAtTheTripAndOutlet"),
       ),
       tool(
-        "Van stock",
+        t("hospitality.data.vanStock"),
         "/apps/sales/crm/van-sales/van-stock",
-        "Explore stock held on a van in the existing product view.",
+        t("hospitality.data.exploreStockHeldOnAVan"),
       ),
-      invoices,
+      invoices(t),
     ],
     faqs: [
       [
-        "Does a count inside the limit approve a vehicle load?",
-        "No. The exercise compares counts only. It does not account for weight, volume, stacking, actual capacity or delivery constraints.",
+        t("hospitality.data.doesACountInsideTheLimit"),
+        t("hospitality.data.noTheExerciseComparesCountsOnly"),
       ],
       [
-        "Are these real beverage or stock records?",
-        "No. All item identifiers, carton counts and units per carton are fictional and can be edited locally.",
+        t("hospitality.data.areTheseRealBeverageOrStock"),
+        t("hospitality.data.noAllItemIdentifiersCartonCounts"),
       ],
       [
-        "Does changing a carton count create a dispatch?",
-        "No. There is no dispatch, route assignment, reservation or stock movement created by the example.",
+        t("hospitality.data.doesChangingACartonCountCreate"),
+        t("hospitality.data.noThereIsNoDispatchRoute"),
       ],
     ],
   },
   hotel: {
-    title: "Hotel",
-    eyebrow: "A CONSIDERED VIEW OF THE WHOLE PROPERTY",
-    headline: "Every room has a story.",
-    accent: "See the property with clarity.",
+    title: t("hospitality.data.hotel"),
+    eyebrow: t("hospitality.data.aConsideredViewOfTheWhole"),
+    headline: t("hospitality.data.everyRoomHasAStory"),
+    accent: t("hospitality.data.seeThePropertyWithClarity"),
     description:
-      "Bring room status, service context and the numbers behind a property-day into one composed experience. A thoughtful perspective on hospitality, floor by floor.",
-    demoTitle: "Explore a small property-day snapshot.",
+      t("hospitality.data.bringRoomStatusServiceContextAnd"),
+    demoTitle: t("hospitality.data.exploreASmallPropertyDaySnapshot"),
     demoDescription:
-      "Change six fictional room states and inspect the resulting count and room-charge arithmetic. This example is not connected to reservations or housekeeping.",
-    story: "See the property through a few useful perspectives.",
+      t("hospitality.data.changeSixFictionalRoomStatesAnd"),
+    story: t("hospitality.data.seeThePropertyThroughAFew"),
     stages: [
       {
-        label: "The room picture",
-        title: "Keep the room and its state together.",
-        body: "Each fictional room can be marked ready, occupied or service in the local board. These are example states, not live availability.",
-        points: ["Room identity", "Floor context", "Explicit state"],
+        label: t("hospitality.data.theRoomPicture"),
+        title: t("hospitality.data.keepTheRoomAndItsState"),
+        body: t("hospitality.data.eachFictionalRoomCanBeMarked"),
+        points: [t("hospitality.data.roomIdentity"), t("hospitality.data.floorContext"), t("hospitality.data.explicitState")],
       },
       {
-        label: "The day’s numbers",
-        title: "Make the arithmetic assumptions visible.",
-        body: "The example compares occupied rooms with ready plus occupied rooms. Rooms in service are excluded from that denominator.",
-        points: ["Room counts", "Declared denominator", "Example room charges"],
+        label: t("hospitality.data.theDaySNumbers"),
+        title: t("hospitality.data.makeTheArithmeticAssumptionsVisible"),
+        body: t("hospitality.data.theExampleComparesOccupiedRoomsWith"),
+        points: [t("hospitality.data.roomCounts"), t("hospitality.data.declaredDenominator"), t("hospitality.data.exampleRoomCharges")],
       },
       {
-        label: "The record",
-        title: "Bring billing and reporting questions to the review.",
-        body: "Explore the existing accounting presentations for your records discussion without inferring a dedicated hotel/PMS integration.",
-        points: ["Customer records", "Billing context", "Financial reporting"],
+        label: t("hospitality.data.theRecord"),
+        title: t("hospitality.data.bringBillingAndReportingQuestionsTo"),
+        body: t("hospitality.data.exploreTheExistingAccountingPresentation"),
+        points: [t("hospitality.data.customerRecords"), t("hospitality.data.billingContext"), t("hospitality.data.financialReporting")],
       },
     ],
     tools: [
-      customers,
-      invoices,
+      customers(t),
+      invoices(t),
       tool(
-        "Customer receipts",
+        t("hospitality.data.customerReceipts"),
         "/apps/accounting/receipts",
-        "Explore the accounting receipt presentation.",
+        t("hospitality.data.exploreTheAccountingReceiptPresentation"),
       ),
-      reports,
+      reports(t),
     ],
     faqs: [
       [
-        "Does this change actual room inventory?",
-        "No. The room board is fictional and updates only local page state. It does not change reservations, housekeeping or availability.",
+        t("hospitality.data.doesThisChangeActualRoomInventory"),
+        t("hospitality.data.noTheRoomBoardIsFictional"),
       ],
       [
-        "How is the example occupancy percentage calculated?",
-        "Occupied rooms divided by ready plus occupied rooms. Rooms marked service are excluded. If every room is in service, the percentage stays undefined rather than showing zero.",
+        t("hospitality.data.howIsTheExampleOccupancyPercentage"),
+        t("hospitality.data.occupiedRoomsDividedByReadyPlus"),
       ],
       [
-        "What does the room-charge total represent?",
-        "It sums the displayed fictional daily rates for occupied rooms only. It is not posted revenue, guest billing or a hotel performance report.",
+        t("hospitality.data.whatDoesTheRoomChargeTotal"),
+        t("hospitality.data.itSumsTheDisplayedFictionalDaily"),
       ],
     ],
   },
-};
+}));
 export const tables = [
   { id: "T01", seats: 2, state: "open" },
   { id: "T02", seats: 4, state: "open" },
@@ -348,20 +349,20 @@ export const tables = [
   { id: "T04", seats: 4, state: "open" },
 ] as const;
 export const ticketStages: TicketStage[] = ["queued", "preparing", "ready"];
-export const ticketLabels: Record<TicketStage, string> = {
-  queued: "Queued",
-  preparing: "Preparing",
-  ready: "Ready",
-};
-export const tickets: { id: string; items: string[]; stage: TicketStage }[] = [
+export const ticketLabels = memoT((t: TFn): Record<TicketStage, string> => ({
+  queued: t("hospitality.data.queued"),
+  preparing: t("hospitality.data.preparing"),
+  ready: t("hospitality.data.ready"),
+}));
+export const tickets = memoT((t: TFn): { id: string; items: string[]; stage: TicketStage }[] => ([
   {
     id: "EX-K01",
-    items: ["1 × house burger", "1 × potato side"],
+    items: [t("hospitality.data.n1HouseBurger"), t("hospitality.data.n1PotatoSide")],
     stage: "queued",
   },
-  { id: "EX-K02", items: ["2 × veggie wraps"], stage: "preparing" },
-  { id: "EX-K03", items: ["1 × sandwich", "1 × juice"], stage: "ready" },
-];
+  { id: "EX-K02", items: [t("hospitality.data.n2VeggieWraps")], stage: "preparing" },
+  { id: "EX-K03", items: [t("hospitality.data.n1Sandwich"), t("hospitality.data.n1Juice")], stage: "ready" },
+]));
 export const arrivalDate = "2026-12-15",
   departureDate = "2026-12-18";
 export const drinks = [
@@ -370,11 +371,11 @@ export const drinks = [
   { id: "EX-D03", name: "Cold brew", cartons: 6, units: 6 },
 ] as const;
 export const roomStates: RoomState[] = ["ready", "occupied", "service"];
-export const roomLabels: Record<RoomState, string> = {
-  ready: "Ready",
-  occupied: "Occupied",
-  service: "Service",
-};
+export const roomLabels = memoT((t: TFn): Record<RoomState, string> => ({
+  ready: t("hospitality.data.ready"),
+  occupied: t("hospitality.data.occupied"),
+  service: t("hospitality.data.service"),
+}));
 export const rooms: {
   id: string;
   floor: string;
