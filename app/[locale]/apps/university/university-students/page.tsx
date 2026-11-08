@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import {
@@ -69,9 +70,7 @@ export default async function UniversityStudentsPage() {
               {t("hero.description")}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <button className="btn-gradient rounded-lg px-6 py-3 text-[13px] font-bold shadow-lg transition-transform hover:-translate-y-0.5">
-                {t("hero.buttons.requestDemo")}
-              </button>
+              <LiveDemoButton />
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
                 {t("hero.buttons.exploreFeatures")}
               </button>
@@ -226,13 +225,11 @@ export default async function UniversityStudentsPage() {
                 <div className="absolute inset-0 z-20 pointer-events-none">
                   {/* Gradient starts right below the active "University Students" menu item (approx 145px from top) */}
                   <div className="absolute top-[145px] bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent backdrop-blur-[3px] flex flex-col items-center justify-end pb-12">
-                    <div className="pointer-events-auto flex flex-col items-center">
+                    <div className="pointer-events-auto flex w-full flex-col items-center px-4">
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/80 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
                         {t("hero.dashboard.preview.message")}
                       </p>
-                      <button className="btn-gradient rounded-lg px-8 py-2.5 text-[13px] font-bold shadow-xl transition-transform hover:-translate-y-0.5">
-                        {t("hero.dashboard.preview.button")}
-                      </button>
+                      <LiveDemoButton />
                     </div>
                   </div>
                 </div>
@@ -398,9 +395,7 @@ export default async function UniversityStudentsPage() {
                 {t("ctaSection.description")}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                <button className="rounded-lg bg-card px-6 py-3 text-[13px] font-bold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-muted shadow-lg">
-                  {t("ctaSection.buttons.scheduleWalkthrough")}
-                </button>
+                <LiveDemoButton />
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
                   {t("ctaSection.buttons.browseModules")}
                 </button>

@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/navigation";
+import LiveDemoButton from "@/components/live-demo-button";
 import { ShowcaseHeading, ShowcaseHighlight } from "@/components/showcase-typography";
 import visual from "@/components/manufacturing/manufacturing-visuals.module.css";
 
@@ -90,7 +90,6 @@ type HeroData = {
   title: string;
   highlight: string;
   description: string;
-  primaryCta: string;
   secondaryCta: string;
   sampleNote: string;
   metrics: Metric[];
@@ -99,13 +98,7 @@ type HeroData = {
 function Ctas({ d, light = false, center = false }: { d: HeroData; light?: boolean; center?: boolean }) {
   return (
     <div className={`mt-8 flex flex-col gap-3 sm:flex-row ${center ? "justify-center" : ""}`}>
-      <Link
-        href="/contact"
-        className="btn-gradient inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-      >
-        {d.primaryCta}
-        <ArrowRight className="h-4 w-4" />
-      </Link>
+      <LiveDemoButton />
       <a
         href="#showcase"
         className={`inline-flex items-center justify-center gap-2 rounded-lg border px-5 py-3 text-sm font-semibold transition ${
@@ -689,12 +682,11 @@ function Benefits({ v, items }: { v: number; items: Item[] }) {
 /* Closing                                                             */
 /* ------------------------------------------------------------------ */
 
-function Cta({ v, title, description, button }: { v: number; title: string; description: string; button: string }) {
-  const link = (cls: string) => (
-    <Link href="/contact" className={`mt-7 inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-bold shadow-lg transition hover:-translate-y-0.5 ${cls}`}>
-      {button}
-      <ArrowRight className="h-4 w-4" />
-    </Link>
+function Cta({ v, title, description }: { v: number; title: string; description: string }) {
+  const action = (
+    <div className="mt-7 inline-flex max-w-full">
+      <LiveDemoButton />
+    </div>
   );
   if (v === 0) {
     return (
@@ -702,7 +694,7 @@ function Cta({ v, title, description, button }: { v: number; title: string; desc
         <div className="mx-auto max-w-3xl">
           <ShowcaseHeading className="text-balance text-3xl tracking-tight sm:text-4xl">{title}</ShowcaseHeading>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/75">{description}</p>
-          {link("bg-white text-secondary")}
+          {action}
         </div>
       </section>
     );
@@ -717,7 +709,7 @@ function Cta({ v, title, description, button }: { v: number; title: string; desc
             </span>
             <ShowcaseHeading className="mt-5 text-balance text-3xl tracking-tight text-foreground sm:text-4xl">{title}</ShowcaseHeading>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-muted-foreground">{description}</p>
-            {link("btn-gradient text-white")}
+            {action}
           </div>
         </div>
       </section>
@@ -732,7 +724,7 @@ function Cta({ v, title, description, button }: { v: number; title: string; desc
             <ShowcaseHeading className="mt-3 text-balance text-3xl tracking-tight sm:text-4xl">{title}</ShowcaseHeading>
             <p className="mt-3 text-sm leading-7 text-white/85">{description}</p>
           </div>
-          {link("bg-white text-primary")}
+          {action}
         </div>
       </section>
     );
@@ -743,7 +735,7 @@ function Cta({ v, title, description, button }: { v: number; title: string; desc
         <div className="mx-auto max-w-5xl border-y-4 border-double border-foreground/70 py-10 text-center">
           <ShowcaseHeading className="text-balance text-3xl tracking-tight text-foreground sm:text-4xl">{title}</ShowcaseHeading>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">{description}</p>
-          {link("btn-gradient text-white")}
+          {action}
         </div>
       </section>
     );
@@ -762,7 +754,7 @@ function Cta({ v, title, description, button }: { v: number; title: string; desc
           </div>
           <ShowcaseHeading className="mt-5 text-balance text-3xl tracking-tight text-foreground sm:text-4xl">{title}</ShowcaseHeading>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">{description}</p>
-          {link("btn-gradient text-white")}
+          {action}
         </div>
       </section>
     );
@@ -773,7 +765,7 @@ function Cta({ v, title, description, button }: { v: number; title: string; desc
       <div className="relative mx-auto max-w-4xl rounded-2xl border-2 border-dashed border-primary/45 bg-card px-6 py-12 text-center">
         <ShowcaseHeading className="text-balance text-3xl tracking-tight text-foreground sm:text-4xl">{title}</ShowcaseHeading>
         <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">{description}</p>
-        {link("btn-gradient text-white")}
+        {action}
       </div>
     </section>
   );
@@ -817,7 +809,6 @@ export function FundShell({ page, preview }: { page: FundPage; preview: ReactNod
     title: t("hero.title"),
     highlight: t("hero.titleHighlight"),
     description: t("hero.description"),
-    primaryCta: t("hero.primaryCta"),
     secondaryCta: t("hero.secondaryCta"),
     sampleNote: t("hero.sampleNote"),
     metrics: t.raw("hero.metrics") as Metric[],
@@ -878,7 +869,7 @@ export function FundShell({ page, preview }: { page: FundPage; preview: ReactNod
         </div>
       </section>
 
-      <Cta v={design.cta} title={t("finalCta.title")} description={t("finalCta.description")} button={t("finalCta.button")} />
+      <Cta v={design.cta} title={t("finalCta.title")} description={t("finalCta.description")} />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import LiveDemoButton from "@/components/live-demo-button";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import {
@@ -100,9 +101,7 @@ export default function UniversityCoursesCurriculumPage() {
               From prerequisites to published curriculums, manage the entire academic journey with a single source of truth.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <button className="btn-gradient rounded-lg px-6 py-3 text-[13px] font-bold shadow-lg transition-transform hover:-translate-y-0.5">
-                Request a Demo
-              </button>
+              <LiveDemoButton />
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
                 Explore Features
               </button>
@@ -246,13 +245,11 @@ export default function UniversityCoursesCurriculumPage() {
                 {/* Global Overlay to blur Sidebar & Main Content below "Courses & Curriculum" */}
                 <div className="absolute inset-0 z-20 pointer-events-none">
                   <div className="absolute top-[175px] bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent backdrop-blur-[3px] flex flex-col items-center justify-end pb-12">
-                    <div className="pointer-events-auto flex flex-col items-center">
+                    <div className="pointer-events-auto flex w-full flex-col items-center px-4">
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/80 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
                         Preview mode. Explore the full course catalog.
                       </p>
-                      <button className="btn-gradient rounded-lg px-8 py-2.5 text-[13px] font-bold shadow-xl transition-transform hover:-translate-y-0.5">
-                        Book a live demo
-                      </button>
+                      <LiveDemoButton />
                     </div>
                   </div>
                 </div>
@@ -424,9 +421,7 @@ export default function UniversityCoursesCurriculumPage() {
                 Get a personalized walkthrough of the Curriculum module. We'll show you how easy it is to enforce prerequisites and publish programs.
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                <button className="rounded-lg bg-card px-6 py-3 text-[13px] font-bold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-muted shadow-lg">
-                  Schedule a Walkthrough
-                </button>
+                <LiveDemoButton />
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
                   Browse All Modules
                 </button>
