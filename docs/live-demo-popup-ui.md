@@ -3,29 +3,34 @@
 ## Current behavior
 
 The former calendar planner is replaced by one small white request popup.
-All 39 shared CTA placements still use LiveDemoButton and the same provider.
+All shared CTA placements still use LiveDemoButton and the same provider.
 There is no calendar, date/time selection, country field, stepper, local schedule
 configuration or downloadable unsubmitted draft.
 
 The public form requires only Full Name, Company Name and Phone Number. The
-question “Would you like to share any additional information?” defaults to No.
+question “Would you like to share more information?” defaults to No.
 Yes reveals optional Email, Interested ERP Modules and Message fields. Returning
 to No clears these fields in memory; the server independently discards hidden
 optional information. Choosing Yes does not make any optional field required.
 
-The visual redesign uses a 500 px maximum width, a soft-white surface and a
-compact default height. A small vector conversation illustration, pale blue/green
-header glow and a fine decorative curve frame the title without a dark sidebar.
-These graphics are decorative, not product data or endorsements. Navy typography,
-the blue/navy CTA and small green accents retain the brand palette.
+Design #6 uses an 860 px maximum desktop width and a 646 px default height,
+bounded by the visual viewport. The repository's original AdonERP logo replaces
+the former invented EdenERP wordmark. A compact illustrated area sits beside a
+white form card on a pale blue surface. The custom vector ERP concept includes
+an isometric dashboard, layered base, floating module objects and fine curves.
+It contains no customer data, performance figures, advisor profiles or endorsements.
+Navy typography, the blue/navy CTA and a small green underline retain the palette.
 
-The three required inputs are integrated rows in one contact card, with field
-icons, quiet dividers, clear labels and focus-within highlights. Yes/No is a
+The three required inputs are individually outlined rows, with field icons,
+stable accessible labels and focus-within highlights. Yes/No is a
 compact segmented control; optional fields expand inside their own light panel.
-The footer has a restrained translucent surface and the primary action has a
-small arrow detail. No reviews, customer counts or trust badges were added.
+The footer continues the white form card and keeps its blue primary action
+visible independently of body scrolling. Copy explicitly says that the team
+will call to arrange the demo. No reviews, customer counts or trust badges were added.
 
-Header/footer remain outside one scrollable body. Visual Viewport handling
+Header/footer remain outside one scrollable body. On mobile the illustration
+becomes a small horizontal introduction; short screens omit it to prioritise
+the fields. Mobile width is bounded to 480 px. Visual Viewport handling
 accommodates mobile keyboards; short viewports use a compact header. Mobile
 inputs use 16 px text, and narrow-screen spacing preserves access to all controls.
 Reduced motion, Radix focus trapping, Escape/close behavior, validation
@@ -110,15 +115,27 @@ calendar configuration is required for this contact-request flow.
 - Focused TypeScript, ESLint, Prisma validation and representative HTTP renders
   cover the changed feature. API and database integration checks have passed.
 
-Browser access was attempted again, but its access host is unavailable. Visual,
-mobile keyboard and in-browser click checks remain unverified. No browser pass
-or production visual certification is claimed.
+### Design #6 verification — 8 November 2026
 
-For the latest visual redesign, the supplied message contained no attached
-reference screenshots. The implementation follows its written visual brief.
-Desktop/mobile screenshot capture was attempted through browser discovery, which
-returned “The browser access host is unavailable.” No substitute mockups are
-presented as QA screenshots. TypeScript, ESLint, request unit tests, shared CTA
-checks and presentation source checks pass. A comparison against a pre-redesign
-snapshot confirms that the request handlers, API, validation, database schema,
-shared provider and shared button were not changed by this visual work.
+The supplied reference informed the white/soft-blue composition, layered card,
+illustration and green detail. Calendar, scheduling fields, additional mandatory
+fields and a large marketing panel were deliberately omitted.
+
+Browser checks passed at 1440 × 900, 768 × 1024, 390 × 844, 320 × 568 and
+844 × 390. The basic desktop form fits without body scrolling. The 390 px mobile
+form shows all three required inputs without scrolling. Expanded optional
+details scroll within the modal; the header, Close and Submit remain reachable.
+Short-screen checks verify viewport containment and no horizontal body overflow.
+
+Browser interaction checks cover required-field errors, first-invalid-field
+focus, invalid optional email, Yes/No expansion and clearing hidden data,
+keyboard navigation from Message to Submit, Escape dismissal and return focus
+to the shared trigger. Desktop/mobile screenshots were captured from the running
+app. No valid request was submitted during visual QA and no confirmation was
+simulated. Native OS keyboard appearance and a real success screen were not
+exercised in this visual pass.
+
+Focused TypeScript, ESLint, request unit checks and scoped CSS/translation checks
+pass. The existing state, validation, POST payload, timeout, idempotency and
+success/error handlers were compared before formatting and are unchanged. API,
+validation module, database schema, provider and shared button remain unchanged.

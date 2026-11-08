@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
+import Image from "next/image";
 import {
   ArrowRight,
   Building2,
   Check,
   CheckCircle2,
   Loader2,
+  MessagesSquare,
   Phone,
   UserRound,
   X,
@@ -29,6 +31,7 @@ import {
   type DemoDetails,
 } from "@/lib/demo-requests/validation";
 import css from "./booking.module.css";
+import DemoIllustration from "./demo-illustration";
 
 type Props = {
   open: boolean;
@@ -37,97 +40,6 @@ type Props = {
 };
 type Errors = Partial<Record<keyof DemoDetails, string>>;
 
-/** A conversation motif, not a product screenshot or a trust endorsement. */
-function ConversationIllustration() {
-  return (
-    <svg viewBox="0 0 152 132" fill="none" aria-hidden="true" focusable="false">
-      <ellipse cx="78" cy="117" rx="51" ry="7" fill="#003180" opacity=".035" />
-      <path
-        d="M19 96C5 79 10 56 32 47M119 19C136 26 142 45 132 61"
-        stroke="#1088EF"
-        strokeOpacity=".27"
-        strokeDasharray="3 5"
-        strokeLinecap="round"
-      />
-      <g transform="rotate(9 88 53)">
-        <rect
-          x="45"
-          y="18"
-          width="88"
-          height="65"
-          rx="14"
-          fill="white"
-          fillOpacity=".9"
-          stroke="#DCEAF5"
-        />
-        <path
-          d="M64 38H113M64 47H100"
-          stroke="#CFDDEB"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-        <path
-          d="M108 77L115 91L118 77"
-          fill="white"
-          stroke="#DCEAF5"
-          strokeLinejoin="round"
-        />
-      </g>
-      <g transform="rotate(-7 65 77)">
-        <rect
-          x="17"
-          y="47"
-          width="95"
-          height="63"
-          rx="15"
-          fill="white"
-          stroke="#D9E6F1"
-        />
-        <path
-          d="M34 105L29 118L46 109"
-          fill="white"
-          stroke="#D9E6F1"
-          strokeLinejoin="round"
-        />
-        <rect
-          x="30"
-          y="61"
-          width="25"
-          height="25"
-          rx="8"
-          fill="#1088EF"
-          fillOpacity=".075"
-        />
-        <path
-          d="M37 72H49M43 66V78"
-          stroke="#1088EF"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
-        <path
-          d="M64 66H97M64 74H89M31 96H85"
-          stroke="#D3E0ED"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-      </g>
-      <circle cx="122" cy="99" r="10" fill="#F2FAEF" stroke="#E0EEDB" />
-      <path
-        d="M118 103C116 97 120 94 127 94C127 101 123 105 118 103ZM119 102L124 97"
-        stroke="#21A816"
-        strokeWidth="1.35"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M27 25L29 30L34 32L29 34L27 39L25 34L20 32L25 30L27 25Z"
-        fill="#1088EF"
-        fillOpacity=".25"
-      />
-      <circle cx="139" cy="78" r="2" fill="#21A816" fillOpacity=".4" />
-    </svg>
-  );
-}
 export default function DemoRequestDialog({
   open,
   onOpenChange,
@@ -313,68 +225,19 @@ export default function DemoRequestDialog({
         }}
       >
         <header className={css.header}>
-          <div className={css.headerGlow} aria-hidden="true" />
-          <div className={css.brandRow}>
-            <span className={css.brand}>
-              <svg
-                className={css.brandSymbol}
-                viewBox="0 0 22 22"
-                fill="none"
-                aria-hidden="true"
-              >
-                <rect
-                  x="1"
-                  y="1"
-                  width="20"
-                  height="20"
-                  rx="6"
-                  stroke="currentColor"
-                  strokeOpacity=".18"
-                />
-                <path
-                  d="M7 6H15M7 11H13M7 16H15M7 6V16"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <span>
-                Eden<span>ERP</span>
-              </span>
-            </span>
-            <DialogClose className={css.close} aria-label={t("close")}>
-              <X size={17} aria-hidden="true" />
-            </DialogClose>
-          </div>
-          <div className={css.hero}>
-            <div className={css.heroCopy}>
-              <span className={css.eyebrow}>{t("eyebrow")}</span>
-              <DialogTitle className={css.title}>
-                {saved ? t("successTitle") : t("title")}
-              </DialogTitle>
-              <DialogDescription className={css.description}>
-                {saved ? t("successCaption") : t("description")}
-              </DialogDescription>
-            </div>
-            {!saved && (
-              <div className={css.illustration}>
-                <ConversationIllustration />
-              </div>
-            )}
-          </div>
-          <svg
-            className={css.headerCurve}
-            viewBox="0 0 500 18"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M0 15C110 2 168 7 263 12C359 18 420 1 500 7"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1"
+          <span className={css.brandLogo}>
+            <Image
+              src="/adon_erp_logo.png"
+              alt="AdonERP"
+              width={168}
+              height={94}
+              priority
             />
-          </svg>
+          </span>
+          <span className={css.headerNote}>{t("eyebrow")}</span>
+          <DialogClose className={css.close} aria-label={t("close")}>
+            <X size={18} aria-hidden="true" />
+          </DialogClose>
         </header>
         <div
           ref={body}
@@ -383,248 +246,300 @@ export default function DemoRequestDialog({
           aria-label={t("title")}
           tabIndex={0}
         >
-          {saved ? (
-            <div className={css.success}>
-              <div className={css.successIcon}>
-                <CheckCircle2 size={31} aria-hidden="true" />
-              </div>
-              <h3 className={css.srOnly} ref={successHeading} tabIndex={-1}>
-                {t("successTitle")}
-              </h3>
-              <p role="status">{t("success")}</p>
-            </div>
-          ) : (
-            <form
-              id={formId}
-              onSubmit={submit}
-              noValidate
-              aria-busy={submitting}
-            >
-              <fieldset disabled={submitting} className={css.fields}>
-                <div className={css.contactCard}>
-                  {(
-                    [
-                      ["fullName", "name", "text", 120],
-                      ["companyName", "organization", "text", 160],
-                      ["phone", "tel", "tel", 40],
-                    ] as const
-                  ).map(([key, autoComplete, type, max]) => (
-                    <label
-                      className={css.field}
-                      data-invalid={!!errors[key]}
-                      key={key}
-                      htmlFor={uid + "-" + key}
-                    >
-                      <span className={css.fieldIcon} aria-hidden="true">
-                        {key === "fullName" ? (
-                          <UserRound size={18} />
-                        ) : key === "companyName" ? (
-                          <Building2 size={18} />
-                        ) : (
-                          <Phone size={18} />
-                        )}
-                      </span>
-                      <span className={css.fieldControl}>
-                        <span className={css.fieldLabel}>
-                          {t(key)}
-                          <small aria-hidden="true">*</small>
-                        </span>
-                        <input
-                          id={uid + "-" + key}
-                          type={type}
-                          autoComplete={autoComplete}
-                          required
-                          maxLength={max}
-                          value={details[key]}
-                          placeholder={t(key + "Placeholder")}
-                          onChange={(event) => update(key, event.target.value)}
-                          aria-invalid={!!errors[key]}
-                          aria-describedby={
-                            errors[key] ? uid + "-" + key + "-error" : undefined
-                          }
-                        />
-                      </span>
-                      {errors[key] && (
-                        <span
-                          className={css.fieldError}
-                          id={uid + "-" + key + "-error"}
-                        >
-                          {errors[key]}
-                        </span>
-                      )}
-                    </label>
-                  ))}
-                </div>
-                <fieldset className={css.question}>
-                  <legend>{t("additionalQuestion")}</legend>
-                  <div className={css.choices}>
-                    {[true, false].map((value) => (
-                      <label key={String(value)}>
-                        <input
-                          type="radio"
-                          name={uid + "-more"}
-                          checked={details.shareMore === value}
-                          onChange={() => shareMore(value)}
-                        />
-                        <span>
-                          {value ? t("yes") : t("no")}
-                          {details.shareMore === value && (
-                            <Check size={12} aria-hidden="true" />
-                          )}
-                        </span>
-                      </label>
+          <div className={css.layout}>
+            {!saved && (
+              <aside className={css.visualPanel} aria-hidden="true">
+                <span className={css.eyebrow}>
+                  <span />
+                  {t("liveDemo")}
+                </span>
+                <p className={css.visualTitle}>
+                  {t("visualTitle")
+                    .split("\n")
+                    .map((line) => (
+                      <span key={line}>{line}</span>
                     ))}
+                </p>
+                <p className={css.visualCaption}>{t("visualCaption")}</p>
+                <div className={css.illustration}>
+                  <DemoIllustration />
+                </div>
+              </aside>
+            )}
+            <div className={css.formPanel}>
+              <div className={css.intro}>
+                <span className={css.introIcon} aria-hidden="true">
+                  <MessagesSquare size={21} />
+                </span>
+                <div>
+                  <DialogTitle className={css.title}>
+                    {saved ? t("successTitle") : t("title")}
+                  </DialogTitle>
+                  <DialogDescription className={css.description}>
+                    {saved ? t("successCaption") : t("description")}
+                  </DialogDescription>
+                </div>
+              </div>
+              {saved ? (
+                <div className={css.success}>
+                  <div className={css.successIcon}>
+                    <CheckCircle2 size={31} aria-hidden="true" />
                   </div>
-                </fieldset>
-                {details.shareMore && (
-                  <div className={css.optional}>
-                    <label
-                      className={css.optionalField}
-                      htmlFor={uid + "-email"}
-                    >
-                      <span>
-                        {t("email")}
-                        <em>{t("optional")}</em>
-                      </span>
-                      <input
-                        id={uid + "-email"}
-                        type="email"
-                        autoComplete="email"
-                        placeholder={t("emailPlaceholder")}
-                        maxLength={254}
-                        value={details.email}
-                        onChange={(event) =>
-                          update("email", event.target.value)
-                        }
-                        aria-invalid={!!errors.email}
-                        aria-describedby={
-                          errors.email ? uid + "-email-error" : undefined
-                        }
-                      />
-                      {errors.email && (
-                        <span
-                          className={css.fieldError}
-                          id={uid + "-email-error"}
+                  <h3 className={css.srOnly} ref={successHeading} tabIndex={-1}>
+                    {t("successTitle")}
+                  </h3>
+                  <p role="status">{t("success")}</p>
+                </div>
+              ) : (
+                <form
+                  id={formId}
+                  onSubmit={submit}
+                  noValidate
+                  aria-busy={submitting}
+                >
+                  <fieldset disabled={submitting} className={css.fields}>
+                    <div className={css.contactCard}>
+                      {(
+                        [
+                          ["fullName", "name", "text", 120],
+                          ["companyName", "organization", "text", 160],
+                          ["phone", "tel", "tel", 40],
+                        ] as const
+                      ).map(([key, autoComplete, type, max]) => (
+                        <label
+                          className={css.field}
+                          data-invalid={!!errors[key]}
+                          key={key}
+                          htmlFor={uid + "-" + key}
                         >
-                          {errors.email}
-                        </span>
-                      )}
-                    </label>
-                    <fieldset className={css.modules}>
-                      <legend>
-                        {t("modules")}
-                        <em>{t("optional")}</em>
-                      </legend>
-                      <div
-                        className={css.moduleChoices}
-                        id={uid + "-modules"}
-                        tabIndex={-1}
-                      >
-                        {DEMO_MODULES.map((module) => (
-                          <label key={module}>
+                          <span className={css.fieldIcon} aria-hidden="true">
+                            {key === "fullName" ? (
+                              <UserRound size={18} />
+                            ) : key === "companyName" ? (
+                              <Building2 size={18} />
+                            ) : (
+                              <Phone size={18} />
+                            )}
+                          </span>
+                          <span className={css.fieldControl}>
+                            <span
+                              className={css.fieldLabel}
+                              id={uid + "-" + key + "-label"}
+                            >
+                              {t(key)}
+                              <small aria-hidden="true">*</small>
+                            </span>
                             <input
-                              type="checkbox"
-                              checked={details.modules.includes(module)}
-                              onChange={(event) => {
-                                const checked = event.target.checked;
-                                setDetails((current) => ({
-                                  ...current,
-                                  modules: checked
-                                    ? [...current.modules, module]
-                                    : current.modules.filter(
-                                        (value) => value !== module,
-                                      ),
-                                }));
-                                setError("");
-                              }}
+                              id={uid + "-" + key}
+                              type={type}
+                              autoComplete={autoComplete}
+                              required
+                              maxLength={max}
+                              value={details[key]}
+                              placeholder={t(key + "Placeholder")}
+                              onChange={(event) =>
+                                update(key, event.target.value)
+                              }
+                              aria-invalid={!!errors[key]}
+                              aria-labelledby={uid + "-" + key + "-label"}
+                              aria-describedby={
+                                errors[key]
+                                  ? uid + "-" + key + "-error"
+                                  : undefined
+                              }
+                            />
+                          </span>
+                          {errors[key] && (
+                            <span
+                              className={css.fieldError}
+                              id={uid + "-" + key + "-error"}
+                            >
+                              {errors[key]}
+                            </span>
+                          )}
+                        </label>
+                      ))}
+                    </div>
+                    <fieldset className={css.question}>
+                      <legend>{t("additionalQuestion")}</legend>
+                      <div className={css.choices}>
+                        {[true, false].map((value) => (
+                          <label key={String(value)}>
+                            <input
+                              type="radio"
+                              name={uid + "-more"}
+                              checked={details.shareMore === value}
+                              onChange={() => shareMore(value)}
                             />
                             <span>
-                              <Check size={11} aria-hidden="true" />
-                              {module}
+                              {value ? t("yes") : t("no")}
+                              {details.shareMore === value && (
+                                <Check size={12} aria-hidden="true" />
+                              )}
                             </span>
                           </label>
                         ))}
                       </div>
-                      {errors.modules && (
-                        <p className={css.fieldError}>{errors.modules}</p>
-                      )}
                     </fieldset>
-                    <label
-                      className={css.optionalField}
-                      htmlFor={uid + "-message"}
-                    >
-                      <span>
-                        {t("message")}
-                        <em>{t("optional")}</em>
-                      </span>
-                      <textarea
-                        id={uid + "-message"}
-                        rows={3}
-                        maxLength={2000}
-                        placeholder={t("messagePlaceholder")}
-                        value={details.message}
-                        onChange={(event) =>
-                          update("message", event.target.value)
-                        }
+                    {details.shareMore && (
+                      <div className={css.optional}>
+                        <label
+                          className={css.optionalField}
+                          htmlFor={uid + "-email"}
+                        >
+                          <span>
+                            {t("email")}
+                            <em>{t("optional")}</em>
+                          </span>
+                          <input
+                            id={uid + "-email"}
+                            type="email"
+                            autoComplete="email"
+                            placeholder={t("emailPlaceholder")}
+                            maxLength={254}
+                            value={details.email}
+                            onChange={(event) =>
+                              update("email", event.target.value)
+                            }
+                            aria-invalid={!!errors.email}
+                            aria-describedby={
+                              errors.email ? uid + "-email-error" : undefined
+                            }
+                          />
+                          {errors.email && (
+                            <span
+                              className={css.fieldError}
+                              id={uid + "-email-error"}
+                            >
+                              {errors.email}
+                            </span>
+                          )}
+                        </label>
+                        <fieldset className={css.modules}>
+                          <legend>
+                            {t("modules")}
+                            <em>{t("optional")}</em>
+                          </legend>
+                          <div
+                            className={css.moduleChoices}
+                            id={uid + "-modules"}
+                            tabIndex={-1}
+                          >
+                            {DEMO_MODULES.map((module) => (
+                              <label key={module}>
+                                <input
+                                  type="checkbox"
+                                  checked={details.modules.includes(module)}
+                                  onChange={(event) => {
+                                    const checked = event.target.checked;
+                                    setDetails((current) => ({
+                                      ...current,
+                                      modules: checked
+                                        ? [...current.modules, module]
+                                        : current.modules.filter(
+                                            (value) => value !== module,
+                                          ),
+                                    }));
+                                    setError("");
+                                  }}
+                                />
+                                <span>
+                                  <Check size={11} aria-hidden="true" />
+                                  {module}
+                                </span>
+                              </label>
+                            ))}
+                          </div>
+                          {errors.modules && (
+                            <p className={css.fieldError}>{errors.modules}</p>
+                          )}
+                        </fieldset>
+                        <label
+                          className={css.optionalField}
+                          htmlFor={uid + "-message"}
+                        >
+                          <span>
+                            {t("message")}
+                            <em>{t("optional")}</em>
+                          </span>
+                          <textarea
+                            id={uid + "-message"}
+                            rows={3}
+                            maxLength={2000}
+                            placeholder={t("messagePlaceholder")}
+                            value={details.message}
+                            onChange={(event) =>
+                              update("message", event.target.value)
+                            }
+                          />
+                          <small className={css.counter}>
+                            {details.message.length}/2000
+                          </small>
+                        </label>
+                      </div>
+                    )}
+                    <div className={css.honeypot} aria-hidden="true">
+                      <label htmlFor={uid + "-website"}>Website</label>
+                      <input
+                        id={uid + "-website"}
+                        name="website"
+                        autoComplete="off"
+                        tabIndex={-1}
+                        value={website}
+                        onChange={(event) => setWebsite(event.target.value)}
                       />
-                      <small className={css.counter}>
-                        {details.message.length}/2000
-                      </small>
-                    </label>
-                  </div>
-                )}
-                <div className={css.honeypot} aria-hidden="true">
-                  <label htmlFor={uid + "-website"}>Website</label>
-                  <input
-                    id={uid + "-website"}
-                    name="website"
-                    autoComplete="off"
-                    tabIndex={-1}
-                    value={website}
-                    onChange={(event) => setWebsite(event.target.value)}
-                  />
-                </div>
-              </fieldset>
-            </form>
-          )}
+                    </div>
+                  </fieldset>
+                </form>
+              )}
+            </div>
+          </div>
         </div>
         <footer className={css.footer}>
-          {error && (
-            <p className={css.error} role="alert">
-              {error}
-            </p>
-          )}
-          {saved ? (
-            <DialogClose className={css.submit}>{t("done")}</DialogClose>
-          ) : (
-            <>
-              <button
-                form={formId}
-                type="submit"
-                className={css.submit}
-                disabled={submitting}
-              >
-                {submitting ? (
-                  <Loader2
-                    size={16}
-                    className={css.spinner}
-                    aria-hidden="true"
-                  />
-                ) : null}
-                {submitting ? t("submitting") : t("submit")}
-                {!submitting && (
-                  <span className={css.submitIcon}>
-                    <ArrowRight size={16} aria-hidden="true" />
-                  </span>
+          <div className={css.footerInner}>
+            {error && (
+              <p className={css.error} role="alert">
+                {error}
+              </p>
+            )}
+            {saved ? (
+              <DialogClose className={css.submit}>{t("done")}</DialogClose>
+            ) : (
+              <>
+                <button
+                  form={formId}
+                  type="submit"
+                  className={css.submit}
+                  disabled={submitting}
+                >
+                  {submitting ? (
+                    <Loader2
+                      size={16}
+                      className={css.spinner}
+                      aria-hidden="true"
+                    />
+                  ) : null}
+                  {submitting ? t("submitting") : t("submit")}
+                  {!submitting && (
+                    <span className={css.submitIcon}>
+                      <ArrowRight size={16} aria-hidden="true" />
+                    </span>
+                  )}
+                </button>
+                {submitting && (
+                  <p className={css.srOnly} role="status">
+                    {t("loading")}
+                  </p>
                 )}
-              </button>
-              {submitting && (
-                <p className={css.srOnly} role="status">
-                  {t("loading")}
-                </p>
-              )}
-            </>
-          )}
+              </>
+            )}
+            {!saved && (
+              <p className={css.privacy}>
+                <Phone size={11} aria-hidden="true" />
+                {t("phoneFollowUp")}
+              </p>
+            )}
+          </div>
         </footer>
       </DialogContent>
     </Dialog>

@@ -1,15 +1,15 @@
 {
   "common": {
     "demoRequest": {
-      "title": "Request a\nlive demo.",
-      "description": "A little context. A better conversation.",
+      "title": "Meet an Advisor\nwith Live Demo",
+      "description": "Share a few details. Our team will call to arrange your AdonERP demo.",
       "fullName": "Full Name",
       "companyName": "Company Name",
       "phone": "Phone Number",
       "email": "Email",
       "modules": "Interested ERP Modules",
       "message": "Message",
-      "additionalQuestion": "Would you like to share any additional information?",
+      "additionalQuestion": "Would you like to share more information?",
       "yes": "Yes",
       "no": "No",
       "optional": "Optional",
@@ -34,7 +34,10 @@
       "eyebrow": "Let’s connect",
       "fullNamePlaceholder": "Your full name",
       "companyNamePlaceholder": "Your company or organization",
-      "phonePlaceholder": "Your contact number"
+      "phonePlaceholder": "Your contact number",
+      "visualTitle": "Your business.\nLive, in focus.",
+      "visualCaption": "A walkthrough shaped around the way you work.",
+      "phoneFollowUp": "We’ll call to arrange your demo."
     },
     "languageSwitcher": {
       "label": "Language",
