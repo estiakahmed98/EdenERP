@@ -20,8 +20,7 @@ export default function NotFound() {
           <span
             className="text-5xl font-black text-[#714b67]"
             style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontFamily: "var(--font-content)",
             }}
           >
             404
@@ -31,8 +30,7 @@ export default function NotFound() {
         <h1
           className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl lg:text-7xl"
           style={{
-            fontFamily:
-              '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+            fontFamily: "var(--font-content)",
           }}
         >
           Oops! This page got{" "}

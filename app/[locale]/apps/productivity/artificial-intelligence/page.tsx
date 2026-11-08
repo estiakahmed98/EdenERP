@@ -24,8 +24,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -91,7 +90,7 @@ export default function AIPoweredAppsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -158,7 +157,7 @@ export default function AIPoweredAppsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="dark:text-[#02cfc3]">{t("automationSection.title")}</span>
@@ -204,7 +203,7 @@ export default function AIPoweredAppsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
               <span className="dark:text-rose-200">{t("agentsSection.title")}</span>
@@ -274,7 +273,7 @@ export default function AIPoweredAppsLandingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("nextMoveSection.title")}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -288,7 +287,7 @@ export default function AIPoweredAppsLandingPage() {
 
             <p
               className="mt-10 text-2xl font-bold text-sky-500 dark:text-sky-400"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("nextMoveSection.useCase")}
               <br />
@@ -341,7 +340,7 @@ export default function AIPoweredAppsLandingPage() {
 
           <h2
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <span className="relative inline-block px-2">
               <span className="relative z-10">{t("insightsSection.title")}</span>
@@ -385,7 +384,7 @@ export default function AIPoweredAppsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("organizationSection.title")}
             <br />
@@ -406,7 +405,7 @@ export default function AIPoweredAppsLandingPage() {
 
               <p
                 className="mt-5 text-xl font-bold text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("organizationSection.uploadText")}
               </p>
@@ -431,7 +430,7 @@ export default function AIPoweredAppsLandingPage() {
 
           <p
             className="mt-12 text-center text-lg font-bold text-amber-500 dark:text-amber-400"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: "var(--font-annotation)" }}
           >
             {t("organizationSection.footerText")}
           </p>
@@ -446,7 +445,7 @@ export default function AIPoweredAppsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
@@ -493,7 +492,7 @@ export default function AIPoweredAppsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
            
@@ -575,7 +574,7 @@ export default function AIPoweredAppsLandingPage() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -623,7 +622,7 @@ export default function AIPoweredAppsLandingPage() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

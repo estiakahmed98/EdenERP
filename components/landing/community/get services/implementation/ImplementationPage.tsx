@@ -46,8 +46,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily:
-          '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: "var(--font-content)",
       }}
     >
       {children}
@@ -109,12 +108,12 @@ export default function PricingPacksPage() {
               <ScriptHeading className="mt-4">
                 {t("hero.title")}
               </ScriptHeading>
-              <p className="mt-4 text-xl text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              <p className="mt-4 text-xl text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
                 {t("hero.subtitle")}{" "}
                 <span className="italic">(self-implemented)</span>.
               </p>
             </div>
-            <button className="inline-flex items-center gap-2 rounded-xl btn-gradient px-8 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <button className="inline-flex items-center gap-2 rounded-xl btn-gradient px-8 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5" style={{ fontFamily: "var(--font-content)" }}>
               {t("hero.cta")}
               <ArrowRight className="h-5 w-5" />
             </button>
@@ -128,14 +127,14 @@ export default function PricingPacksPage() {
           <table className="w-full min-w-[900px] border-collapse">
             <thead>
               <tr>
-                <th className="border-b border-border bg-card px-6 py-5 text-left text-sm font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                <th className="border-b border-border bg-card px-6 py-5 text-left text-sm font-bold text-foreground" style={{ fontFamily: "var(--font-content)" }}>
                   {t("table.recommendedFor")}
                 </th>
                 {plans.map((plan) => (
                   <th
                     key={plan.name}
                     className={`px-6 py-5 text-center text-white ${plan.color}`}
-                    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                    style={{ fontFamily: "var(--font-content)" }}
                   >
                     <div className="text-4xl font-black">{plan.name}</div>
                     <div className="mt-2 text-sm font-medium text-white/90">
@@ -148,14 +147,14 @@ export default function PricingPacksPage() {
             <tbody>
               {/* Hours Row */}
               <tr className="border-b border-border">
-                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "var(--font-content)" }}>
                   {t("table.consultantHours")}
                 </td>
                 {plans.map((plan) => (
                   <td
                     key={plan.name}
                     className={`px-6 py-5 text-center text-3xl font-black text-white ${plan.color}`}
-                    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                    style={{ fontFamily: "var(--font-content)" }}
                   >
                     {plan.hours}
                   </td>
@@ -165,7 +164,7 @@ export default function PricingPacksPage() {
               {/* Features Rows */}
               {features.map((feature, idx) => (
                 <tr key={feature} className="border-b border-border hover:bg-muted/30">
-                  <td className="px-6 py-4 font-medium text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                  <td className="px-6 py-4 font-medium text-foreground" style={{ fontFamily: "var(--font-content)" }}>
                     {feature}
                   </td>
                   {plans.map((plan, i) => {
@@ -203,14 +202,14 @@ export default function PricingPacksPage() {
 
               {/* Returning Customers */}
               <tr className="border-b border-border bg-muted/20">
-                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "var(--font-content)" }}>
                   {t("table.returningCustomers")}
                 </td>
                 {plans.map((plan) => (
                   <td
                     key={plan.name}
                     className="px-6 py-5 text-center text-2xl font-black text-primary"
-                    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                    style={{ fontFamily: "var(--font-content)" }}
                   >
                     {plan.returning}
                   </td>
@@ -219,14 +218,14 @@ export default function PricingPacksPage() {
 
               {/* New Customers */}
               <tr>
-                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                <td className="px-6 py-5 font-bold text-foreground" style={{ fontFamily: "var(--font-content)" }}>
                   {t("table.newCustomers")} <span className="text-sm font-normal text-muted-foreground">{t("table.newCustomersNote")}</span>
                 </td>
                 {plans.map((plan) => (
                   <td
                     key={plan.name}
                     className={`px-6 py-5 text-center text-2xl font-black text-white ${plan.color}`}
-                    style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                    style={{ fontFamily: "var(--font-content)" }}
                   >
                     {plan.newCustomer}
                   </td>
@@ -237,7 +236,7 @@ export default function PricingPacksPage() {
         </div>
 
         {/* Notes */}
-        <div className="mt-6 space-y-1 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+        <div className="mt-6 space-y-1 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
           {notes.map((note) => (
             <p key={note}>{note}</p>
           ))}
@@ -245,7 +244,7 @@ export default function PricingPacksPage() {
 
         {/* CTA */}
         <div className="mt-10 flex justify-center">
-          <button className="inline-flex items-center gap-2 rounded-xl btn-gradient px-10 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <button className="inline-flex items-center gap-2 rounded-xl btn-gradient px-10 py-4 font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5" style={{ fontFamily: "var(--font-content)" }}>
             {t("faqSection.contact")}
             <ArrowRight className="h-5 w-5" />
           </button>
@@ -261,7 +260,7 @@ export default function PricingPacksPage() {
               label={t("faqSection.eyebrow")}
             />
             <ScriptHeading className="mt-4">{t("faqSection.title")}</ScriptHeading>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
               {t("faqSection.description")}
             </p>
           </div>
@@ -275,7 +274,7 @@ export default function PricingPacksPage() {
                 <button
                   onClick={() => toggleFaq(index)}
                   className="flex w-full items-center justify-between px-6 py-5 text-left font-semibold text-foreground transition hover:bg-muted/30"
-                  style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+                  style={{ fontFamily: "var(--font-content)" }}
                 >
                   <span className="text-lg">{faq.question}</span>
                   {openFaq === index ? (
@@ -285,7 +284,7 @@ export default function PricingPacksPage() {
                   )}
                 </button>
                 {openFaq === index && (
-                  <div className="border-t border-border px-6 py-4 text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+                  <div className="border-t border-border px-6 py-4 text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
                     {faq.answer}
                   </div>
                 )}
@@ -295,7 +294,7 @@ export default function PricingPacksPage() {
 
           {/* Contact Banner */}
         <div className="mt-10 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/5 p-6 text-center">
-          <p className="text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <p className="text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
               {t("faqSection.bannerLead")}{" "}
               <button className="font-semibold text-primary hover:underline">
                 {t("faqSection.contact")}
@@ -308,19 +307,19 @@ export default function PricingPacksPage() {
       {/* Trust Badge */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-8 text-center">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
             <span>{t("trust.0")}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
             <Users className="h-4 w-4 text-primary" />
             <span>{t("trust.1")}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
             <Award className="h-4 w-4 text-primary" />
             <span>{t("trust.2")}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
             <Calendar className="h-4 w-4 text-primary" />
             <span>{t("trust.3")}</span>
           </div>

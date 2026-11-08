@@ -32,7 +32,7 @@
     0 32px 100px -25px #0829534a,
     0 3px 18px #0031800c,
     inset 0 0 0 1px #ffffff80;
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   transition: height 180ms ease;
 }
 .dialog[data-expanded="true"] {

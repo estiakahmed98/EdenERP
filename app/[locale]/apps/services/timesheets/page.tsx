@@ -24,8 +24,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -96,7 +95,7 @@ export default function TimesheetsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -223,7 +222,7 @@ export default function TimesheetsLandingPage() {
 
           <h2
             className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hoursSection.title")}
             <br />
@@ -253,14 +252,14 @@ export default function TimesheetsLandingPage() {
 
             <p
               className="absolute -left-4 top-14 hidden rotate-[-8deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("hoursSection.demo.labels.timer")}
             </p>
 
             <p
               className="absolute left-44 top-12 hidden rotate-[4deg] text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("hoursSection.demo.labels.projects")}
             </p>
@@ -302,7 +301,7 @@ export default function TimesheetsLandingPage() {
 
             <div
               className="mt-3 flex justify-center gap-24 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               <span>{t("hoursSection.demo.labels.salesOrders")}</span>
               <span>{t("hoursSection.demo.labels.totalHours")}</span>
@@ -310,7 +309,7 @@ export default function TimesheetsLandingPage() {
 
             <p
               className="mt-4 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("hoursSection.demo.labels.overtime")}
             </p>
@@ -326,7 +325,7 @@ export default function TimesheetsLandingPage() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("productivitySection.title")}
             </h2>
@@ -366,7 +365,7 @@ export default function TimesheetsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
@@ -459,7 +458,7 @@ export default function TimesheetsLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
             
@@ -541,7 +540,7 @@ export default function TimesheetsLandingPage() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -589,7 +588,7 @@ export default function TimesheetsLandingPage() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

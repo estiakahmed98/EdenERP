@@ -27,8 +27,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 const apps = [
   { key: "manufacturing", icon: Factory },
@@ -61,7 +60,7 @@ function ScriptHeading({
   return (
     <h2
       className={`text-balance text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl ${className}`}
-      style={{ fontFamily: handwrittenFont }}
+      style={{ fontFamily: primaryFont }}
     >
       {children}
     </h2>
@@ -78,7 +77,7 @@ export default function QualityLandingSections() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("header.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -499,7 +498,7 @@ export default function QualityLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-2xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("advancedSections.workflow.titleStart")}{" "}
             <span className="relative inline-block">
@@ -572,7 +571,7 @@ export default function QualityLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -657,7 +656,7 @@ export default function QualityLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("ctaSection.title")}
               <br />

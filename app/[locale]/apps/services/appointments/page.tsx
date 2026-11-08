@@ -23,8 +23,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -93,7 +92,7 @@ export default function AppointmentSchedulingPage() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -201,7 +200,7 @@ export default function AppointmentSchedulingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("availabilitySection.title")}
               <br />
@@ -264,7 +263,7 @@ export default function AppointmentSchedulingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("setupSection.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -329,7 +328,7 @@ export default function AppointmentSchedulingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("opportunitySection.title")}
               <br />
@@ -377,7 +376,7 @@ export default function AppointmentSchedulingPage() {
 
           <h2
             className="mt-6 text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("onlineSchedulingSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -424,7 +423,7 @@ export default function AppointmentSchedulingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               <span className="relative inline-block px-2">
                 <span className="relative z-10">{t("reportingSection.title")}</span>
@@ -494,7 +493,7 @@ export default function AppointmentSchedulingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("optionsSection.title")}
               <br />
@@ -516,7 +515,7 @@ export default function AppointmentSchedulingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("remindersSection.title")}
               <br />
@@ -573,7 +572,7 @@ export default function AppointmentSchedulingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
@@ -620,7 +619,7 @@ export default function AppointmentSchedulingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
           </h2>
@@ -701,7 +700,7 @@ export default function AppointmentSchedulingPage() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -749,7 +748,7 @@ export default function AppointmentSchedulingPage() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

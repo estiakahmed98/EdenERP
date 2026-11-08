@@ -321,9 +321,9 @@
   z-index: 1;
 }
 .journalCover b > em {
-  font:
-    italic 63px Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 63px;
+  font-style: italic;
 }
 .journalCover > div {
   position: absolute;
@@ -491,9 +491,9 @@
   color: var(--muted-foreground);
 }
 .storyboard b {
-  font:
-    italic 31px Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 31px;
+  font-style: italic;
   color: var(--p-blue);
   letter-spacing: -0.025em;
 }
@@ -1290,9 +1290,9 @@
   z-index: 1;
 }
 .postIndex > b {
-  font:
-    italic 55px Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 55px;
+  font-style: italic;
   color: var(--p-blue);
   font-weight: 400;
   position: relative;

@@ -187,7 +187,7 @@ export default function AppsSection() {
       <div className="mx-auto max-w-240 text-center">
         <div className="reveal">
           <SectionTag>{t("apps.tag")}</SectionTag>
-          <h2 className="mt-5 font-hand text-[clamp(34px,5vw,60px)] font-bold leading-[1.1] text-(--ink)">
+          <h2 className="mt-5 landing-heading text-[clamp(34px,5vw,60px)] font-bold leading-[1.1] text-(--ink)">
             {t("apps.title")} <HandText>{t("apps.titleHand")}</HandText>{" "}
             {t("apps.titleSuffix")}
           </h2>

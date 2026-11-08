@@ -45,7 +45,7 @@ export default function EnterpriseSection() {
         <div className="reveal mb-10 flex flex-wrap items-end justify-between gap-8">
           <div>
             <SectionTag>{plainTag(t("enterprise.tag"))}</SectionTag>
-            <h2 className="mt-4 max-w-140 font-hand text-[clamp(36px,4.6vw,58px)] font-bold leading-[1.1] text-(--ink)">
+            <h2 className="mt-4 max-w-140 landing-heading text-[clamp(36px,4.6vw,58px)] font-bold leading-[1.1] text-(--ink)">
               {t("enterprise.titlePrefix")}{" "}
               <Circled color="var(--teal)">{t("enterprise.titleCircled")}</Circled>{" "}
               {t("enterprise.titleSuffix")}

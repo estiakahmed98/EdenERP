@@ -22,8 +22,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -91,7 +90,7 @@ export default function DiscussLandingPage() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -232,7 +231,7 @@ export default function DiscussLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("integratedSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -272,7 +271,7 @@ export default function DiscussLandingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("channelsSection.title")}
               <br />
@@ -315,7 +314,7 @@ export default function DiscussLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("integratedAppsSection.title")}
             <br />
@@ -375,7 +374,7 @@ export default function DiscussLandingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("centralHubSection.title")}
               <br />
@@ -434,7 +433,7 @@ export default function DiscussLandingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("videoSection.title")}
               <br />
@@ -453,7 +452,7 @@ export default function DiscussLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("messageChannelsSection.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -510,7 +509,7 @@ export default function DiscussLandingPage() {
           <div>
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("notificationsSection.title")}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -535,7 +534,7 @@ export default function DiscussLandingPage() {
 
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("successSection.title")}
               <br />
@@ -580,7 +579,7 @@ export default function DiscussLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
@@ -627,7 +626,7 @@ export default function DiscussLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
           </h2>
@@ -709,7 +708,7 @@ export default function DiscussLandingPage() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -757,7 +756,7 @@ export default function DiscussLandingPage() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

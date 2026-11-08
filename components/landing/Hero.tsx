@@ -85,7 +85,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-240 text-center">
         <SectionTag>{t("hero.tag")}</SectionTag>
 
-        <h1 className="hero-in hero-d1 mt-5 font-hand text-[clamp(34px,5.5vw,72px)] font-bold leading-[1.1] tracking-[-1px] text-(--ink)">
+        <h1 className="hero-in hero-d1 mt-5 landing-heading text-[clamp(34px,5.2vw,68px)] font-bold leading-[1.1] tracking-[-1px] text-(--ink)">
           {t("hero.titlePrefix")} <br />
           <HandText>
             <TypeWriter words={typeWords} />

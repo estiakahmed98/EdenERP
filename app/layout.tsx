@@ -12,11 +12,11 @@ import "./globals.css";
 const rubik = Rubik({
   subsets: ["latin"],
   variable: "--font-rubik",
+  display: "swap",
 });
 
-// Caveat (handwritten headings) and Plus Jakarta Sans (landing body) are only
-// used on the public site, so they are loaded in app/[locale]/layout.tsx. That
-// way /admin and /auth don't download ~100 KB of unused fonts.
+// Rubik is shared by every route. Public-site annotations load Caveat in the
+// locale layout; admin and authentication UI use only the primary font.
 
 const tiroBangla = Tiro_Bangla({
   subsets: ["bengali"],

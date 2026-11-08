@@ -1,4 +1,4 @@
-import { Caveat, Plus_Jakarta_Sans } from "next/font/google";
+import { Caveat } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import type { Metadata } from "next";
@@ -82,19 +82,15 @@ function pickClientMessages(messages: Awaited<ReturnType<typeof getMessages>>) {
   return { ...messages, pages: clientPages };
 }
 
-// Public-site-only fonts (preloaded only on routes under this layout).
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
+// Handwritten annotations only; primary text inherits Rubik from the root.
 const caveat = Caveat({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
-  display: "swap", // hero H1 (LCP) on the home page
+  display: "swap",
+  preload: false,
 });
 // Exposed as global CSS variables so portals (dialogs) get them too.
-const publicFontVars = `:root{--font-jakarta:${jakarta.style.fontFamily};--font-caveat:${caveat.style.fontFamily}}`;
+const publicFontVars = `:root{--font-caveat:${caveat.style.fontFamily}}`;
 
 export default async function LocaleLayout({
   children,

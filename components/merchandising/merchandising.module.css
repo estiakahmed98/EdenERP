@@ -4,7 +4,7 @@
   --m-red: #b9384e;
   --m-amber: #976117;
   --m-wash: color-mix(in srgb, #1088ef 5%, var(--card));
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   background: var(--background);
   color: var(--foreground);
   overflow: clip;
@@ -419,7 +419,7 @@
   right: -20px;
   top: 66px;
   color: var(--m-blue);
-  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-family: var(--font-annotation);
   font-size: 25px;
   line-height: 1.1;
   transform: rotate(6deg);
@@ -729,7 +729,7 @@
   margin-top: 4px;
   padding-right: 6px;
   color: var(--m-blue);
-  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-family: var(--font-annotation);
   font-size: 23px;
   transform: rotate(-4deg);
 }

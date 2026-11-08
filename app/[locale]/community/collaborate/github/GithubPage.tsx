@@ -57,7 +57,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl ${className}`}
       style={{
-        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: "var(--font-content)",
       }}
     >
       {children}
@@ -151,8 +151,7 @@ export default function GithubPage() {
                 <p
                   className="text-2xl font-medium text-muted-foreground"
                   style={{
-                    fontFamily:
-                      '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                    fontFamily: "var(--font-content)",
                   }}
                 >
                   {t("hero.preHeading")}
@@ -160,8 +159,7 @@ export default function GithubPage() {
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-foreground sm:text-6xl"
                   style={{
-                    fontFamily:
-                      '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                    fontFamily: "var(--font-content)",
                   }}
                 >
                   {t("hero.title")}

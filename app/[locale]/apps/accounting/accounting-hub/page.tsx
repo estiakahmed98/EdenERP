@@ -764,7 +764,7 @@ export default function AccountingHubPage() {
                           className="text-[22px] font-semibold leading-none"
                           style={{
                             fontFamily:
-                              'var(--font-tiro-bangla), "Noto Sans Bengali", sans-serif',
+                              'var(--font-tiro-bangla), var(--font-rubik), sans-serif',
                           }}
                         >
                           ৳

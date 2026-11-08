@@ -59,7 +59,7 @@ export default function CTASection() {
         </svg>
 
         <div className="relative z-10">
-          <h2 className="mx-auto max-w-180 font-hand text-[clamp(32px,4.6vw,56px)] font-bold leading-[1.1] text-white">
+          <h2 className="mx-auto max-w-180 landing-heading text-[clamp(32px,4.6vw,56px)] font-bold leading-[1.1] text-white">
             {t("cta.title")}
           </h2>
 

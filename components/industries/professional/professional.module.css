@@ -6,7 +6,7 @@
   --p-green: #25733b;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   overflow: clip;
 }
 :global(.dark) .professional {
@@ -149,10 +149,9 @@
   flex: none;
 }
 .handNote > span {
-  font:
-    18px/1.4 "Segoe Print",
-    "Bradley Hand",
-    cursive;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: var(--font-annotation);
   transform: rotate(-4deg);
 }
 .buildingArt,
@@ -291,9 +290,10 @@
   margin-top: 20px;
 }
 .planIndex b > em {
-  font:
-    italic 28px/1.4 Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 28px;
+  line-height: 1.4;
+  font-style: italic;
   letter-spacing: -0.02em;
   display: block;
   margin-top: 20px;
@@ -566,9 +566,10 @@
   flex: none;
 }
 .reviewLedger > p {
-  font:
-    italic 16px/1.6 Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 16px;
+  line-height: 1.6;
+  font-style: italic;
   color: var(--p-blue);
   margin-top: 23px;
 }
@@ -625,9 +626,9 @@
   margin-top: 32px;
 }
 .creativePoster b > em {
-  font:
-    italic 65px Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 65px;
+  font-style: italic;
   letter-spacing: -0.04em;
 }
 .creativePoster > small {

@@ -4,6 +4,13 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* One primary stack for headings, body text and controls across every route. */
+  --font-primary: var(--font-rubik), var(--font-tiro-bangla), ui-sans-serif, system-ui, sans-serif;
+  --font-content: var(--font-primary);
+  --font-annotation: var(--font-caveat, cursive), cursive;
+  --type-heading-leading: 1.12;
+  --type-heading-tracking: -0.025em;
+  --type-body-leading: 1.65;
   --color-sky-500: #1088ef;
   --color-sky-600: #1088ef;
   --color-sky-700: #003180;
@@ -174,7 +181,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-rubik);
+  --font-sans: var(--font-content);
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -236,14 +243,12 @@
 }
 
 .showcase-heading {
-  font-family: var(--font-rubik), var(--font-tiro-bangla), ui-sans-serif,
-    system-ui, sans-serif;
+  font-family: var(--font-content);
   font-weight: 700;
 }
 
 .showcase-heading-highlight {
-  font-family: var(--font-caveat), "Segoe Print", "Bradley Hand",
-    "Comic Sans MS", cursive;
+  font-family: var(--font-annotation);
   font-weight: 600;
 }
 
@@ -256,18 +261,27 @@
   }
 }
 
-html[lang^='bn'] body {
-  font-family: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif,
-    system-ui, sans-serif;
+/* Language scopes also cover explicitly English workspaces on Bengali routes. */
+:root:lang(bn),
+[lang^='bn'] {
+  --font-content: var(--font-primary);
+  --font-annotation: var(--font-tiro-bangla), var(--font-rubik), serif;
+  --type-heading-leading: 1.3;
+  --type-heading-tracking: 0em;
+}
+
+:root:lang(en),
+[lang^='en'] {
+  --font-content: var(--font-primary);
+  --font-annotation: var(--font-caveat, cursive), cursive;
+  --type-heading-leading: 1.12;
+  --type-heading-tracking: -0.025em;
 }
 
 html[lang^='bn'] .bn-content {
-  font-family: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif,
-    system-ui, sans-serif;
+  font-family: var(--font-content);
 }
 
-html[lang^='bn'] .showcase-heading-highlight {
-  font-family: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif,
-    system-ui, sans-serif;
+.showcase-heading-highlight:lang(bn) {
   font-style: italic;
 }

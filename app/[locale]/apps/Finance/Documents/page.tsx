@@ -56,7 +56,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 sm:text-5xl ${className}`}
       style={{
-        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: "var(--font-content)",
       }}
     >
       {children}
@@ -311,8 +311,7 @@ export default function DocumentsPage() {
               <span
                 className="text-orange-500 dark:text-orange-400"
                 style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                  fontFamily: "var(--font-content)",
                 }}
               >
                 {tr("hero.titleHighlight")}

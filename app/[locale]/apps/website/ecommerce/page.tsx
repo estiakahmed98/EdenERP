@@ -29,8 +29,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 export default function EcommerceArtisticSections() {
   const t = useTranslations("pages.ecommerce");
@@ -170,14 +169,14 @@ export default function EcommerceArtisticSections() {
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <p
             className="mb-2 text-lg font-bold text-sky-500 dark:text-sky-400"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: "var(--font-annotation)" }}
           >
             {t("hero.preTitle")}
           </p>
 
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-sky-400 dark:bg-sky-800">
@@ -234,7 +233,7 @@ export default function EcommerceArtisticSections() {
             <div className="flex-1 rounded-md bg-[#02cfc3] dark:bg-[#02cfc3]/30 py-2">
               <h2
                 className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("noCodeSection.title")}
               </h2>
@@ -259,7 +258,7 @@ export default function EcommerceArtisticSections() {
             <div className="mt-10 text-center">
               <span
                 className="text-2xl font-bold text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("noCodeSection.freePhotos")}
               </span>
@@ -274,7 +273,7 @@ export default function EcommerceArtisticSections() {
 
           <h2
             className="mt-5 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
               <span className="dark:text-amber-200">
@@ -288,7 +287,7 @@ export default function EcommerceArtisticSections() {
             <div className="text-left">
               <h3
                 className="text-2xl font-bold text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("productKingSection.subtitle")}
               </h3>
@@ -302,7 +301,7 @@ export default function EcommerceArtisticSections() {
                   <div key={item.title}>
                     <p
                       className="text-lg font-bold text-slate-900 dark:text-white"
-                      style={{ fontFamily: handwrittenFont }}
+                      style={{ fontFamily: primaryFont }}
                     >
                       {item.title}
                     </p>
@@ -337,7 +336,7 @@ export default function EcommerceArtisticSections() {
             <Heart className="h-9 w-9 fill-amber-300 dark:fill-amber-800 text-amber-400 dark:text-amber-500" />
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("loyaltySection.title")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -411,7 +410,7 @@ export default function EcommerceArtisticSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("analyticsSection.title")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -458,7 +457,7 @@ export default function EcommerceArtisticSections() {
 
             <p
               className="ml-auto mt-8 max-w-xs rotate-[-10deg] text-center text-lg text-[#714b67] dark:text-[#9b6a8f]"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("analyticsSection.integration")}
             </p>
@@ -470,7 +469,7 @@ export default function EcommerceArtisticSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("builtWithSection.title")}
           </h2>
@@ -510,7 +509,7 @@ export default function EcommerceArtisticSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -561,7 +560,7 @@ export default function EcommerceArtisticSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -652,7 +651,7 @@ export default function EcommerceArtisticSections() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaSection.title")}
               </p>
@@ -699,7 +698,7 @@ export default function EcommerceArtisticSections() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("getStartedSection.title")}
               <br />

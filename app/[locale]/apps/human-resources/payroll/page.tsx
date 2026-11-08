@@ -27,8 +27,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -123,7 +122,7 @@ export default function PayrollLandingSections() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -205,7 +204,7 @@ export default function PayrollLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("generateSection.title")}
               <br />
@@ -240,7 +239,7 @@ export default function PayrollLandingSections() {
 
           <h2
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("salaryRulesSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -273,7 +272,7 @@ export default function PayrollLandingSections() {
 
                     <p
                       className="mt-2 text-4xl font-bold text-slate-900 dark:text-slate-100"
-                      style={{ fontFamily: handwrittenFont }}
+                      style={{ fontFamily: primaryFont }}
                     >
                       {item.amount}
                     </p>
@@ -293,7 +292,7 @@ export default function PayrollLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("workEntriesSection.title")}
               <br />
@@ -360,7 +359,7 @@ export default function PayrollLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("payslipSection.title")}
               <br />
@@ -383,7 +382,7 @@ export default function PayrollLandingSections() {
 
           <h2
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("reportingSection.title")}
             <br />
@@ -439,7 +438,7 @@ export default function PayrollLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-slate-100 sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -485,7 +484,7 @@ export default function PayrollLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
           </h2>
@@ -570,7 +569,7 @@ export default function PayrollLandingSections() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/95 dark:bg-slate-900/95 p-6 sm:p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-2xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -618,7 +617,7 @@ export default function PayrollLandingSections() {
 
             <h2
               className="text-3xl sm:text-4xl font-bold leading-tight text-slate-900 dark:text-slate-100 sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

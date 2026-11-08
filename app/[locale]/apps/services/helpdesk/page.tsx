@@ -27,8 +27,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -124,7 +123,7 @@ export default function FieldServiceLandingPage() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -279,7 +278,7 @@ export default function FieldServiceLandingPage() {
 
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("planSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -352,7 +351,7 @@ export default function FieldServiceLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="dark:text-[#02cfc3]">{t("mobileSection.title")}</span>
@@ -367,21 +366,21 @@ export default function FieldServiceLandingPage() {
           <div className="relative mx-auto mt-14 max-w-4xl">
             <p
               className="absolute left-0 top-12 hidden rotate-15 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("mobileSection.labels.features")}
             </p>
 
             <p
               className="absolute right-0 top-8 hidden rotate-12 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("mobileSection.labels.recordTime")}
             </p>
 
             <p
               className="absolute bottom-12 right-8 hidden rotate-10 text-lg font-bold text-[#714b67] dark:text-[#9b6a8f] lg:block"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("mobileSection.labels.trackParts")}
             </p>
@@ -417,7 +416,7 @@ export default function FieldServiceLandingPage() {
                   </p>
                   <div
                     className="mt-3 text-2xl text-slate-900 dark:text-white"
-                    style={{ fontFamily: handwrittenFont }}
+                    style={{ fontFamily: primaryFont }}
                   >
                     {t("mobileSection.demo.signatureValue")}
                   </div>
@@ -460,7 +459,7 @@ export default function FieldServiceLandingPage() {
 
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("invoicingSection.title")}{" "}
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -523,7 +522,7 @@ export default function FieldServiceLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
@@ -602,7 +601,7 @@ export default function FieldServiceLandingPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
            
@@ -684,7 +683,7 @@ export default function FieldServiceLandingPage() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -732,7 +731,7 @@ export default function FieldServiceLandingPage() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

@@ -22,8 +22,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 function DashedArrow({ className = "" }: { className?: string }) {
   return (
@@ -251,7 +250,7 @@ export default function LiveChatLandingSections() {
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-amber-300">
@@ -294,7 +293,7 @@ export default function LiveChatLandingSections() {
                   <div className="flex flex-col justify-center text-left text-white">
                     <p
                       className="text-xl font-bold text-orange-200"
-                      style={{ fontFamily: handwrittenFont }}
+                      style={{ fontFamily: primaryFont }}
                     >
                       {t("hero.chatPreview.storeName")}
                     </p>
@@ -372,7 +371,7 @@ export default function LiveChatLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-rose-300">
               <span>{t("answerSection.title")}</span>
@@ -517,7 +516,7 @@ export default function LiveChatLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               <span className="relative inline-block">
                 <span className="relative z-10">
@@ -542,7 +541,7 @@ export default function LiveChatLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("helpSection.title")}
             </h2>
@@ -616,7 +615,7 @@ export default function LiveChatLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("visitorToCustomerSection.title")}{" "}
             <span className="relative inline-block px-3">
@@ -701,7 +700,7 @@ export default function LiveChatLandingSections() {
 
             <h2
               className="text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               <span className="relative inline-block">
                 <span className="relative z-10">
@@ -769,7 +768,7 @@ export default function LiveChatLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
@@ -820,7 +819,7 @@ export default function LiveChatLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -908,7 +907,7 @@ export default function LiveChatLandingSections() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-background/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.3)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-foreground"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaSection.title")}
               </p>
@@ -950,7 +949,7 @@ export default function LiveChatLandingSections() {
             </div>
             <h2
               className="text-4xl font-bold leading-tight text-foreground sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("getStartedSection.title")}
               <br />

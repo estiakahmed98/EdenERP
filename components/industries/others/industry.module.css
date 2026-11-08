@@ -4,7 +4,7 @@
   --industry-amber: #976017;
   --industry-wash: color-mix(in srgb, #1088ef 5%, var(--card));
   --product-fill: #8cb2cf;
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   color: var(--foreground);
   background: var(--background);
   overflow: clip;
@@ -441,7 +441,7 @@
   align-items: center;
   justify-content: end;
   color: var(--industry-green);
-  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-family: var(--font-annotation);
   font-size: 24px;
   transform: rotate(-4deg);
   margin-top: 1px;

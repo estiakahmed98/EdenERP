@@ -198,7 +198,7 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-240">
         <div className="reveal mb-8">
           <SectionTag>{plainTag(t("testimonials.tag"))}</SectionTag>
-          <h2 className="mt-4 font-hand text-[clamp(34px,4.6vw,56px)] font-bold leading-[1.1] text-(--ink)">
+          <h2 className="mt-4 landing-heading text-[clamp(34px,4.6vw,56px)] font-bold leading-[1.1] text-(--ink)">
             <HandText>{t("testimonials.title")}</HandText>
           </h2>
         </div>

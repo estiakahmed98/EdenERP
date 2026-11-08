@@ -27,8 +27,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 // Helper component to get icon by name
 const getIconComponent = (iconName: string) => {
@@ -128,7 +127,7 @@ export default function InventoryLandingSections() {
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">
@@ -169,7 +168,7 @@ export default function InventoryLandingSections() {
                   <div>
                     <span
                       className="text-lg font-bold text-[#714b67] dark:text-[#9b6a8f]"
-                      style={{ fontFamily: handwrittenFont }}
+                      style={{ fontFamily: primaryFont }}
                     >
                       {t("hero.dashboard.title")}
                     </span>
@@ -242,7 +241,7 @@ export default function InventoryLandingSections() {
 
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("replenishmentSection.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
@@ -266,7 +265,7 @@ export default function InventoryLandingSections() {
 
                     <p
                       className="mt-4 text-xl font-bold text-slate-900 dark:text-white"
-                      style={{ fontFamily: handwrittenFont }}
+                      style={{ fontFamily: primaryFont }}
                     >
                       {item.title}
                     </p>
@@ -288,7 +287,7 @@ export default function InventoryLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("demandForecastSection.title")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -344,7 +343,7 @@ export default function InventoryLandingSections() {
           <div className="order-2">
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("inventorySummarySection.title")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -380,7 +379,7 @@ export default function InventoryLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("gatePassesSection.title")}{" "}
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
@@ -436,7 +435,7 @@ export default function InventoryLandingSections() {
           <div className="order-2">
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("weighbridgeSection.title")}{" "}
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -495,7 +494,7 @@ export default function InventoryLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("qualitySection.title")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -525,7 +524,7 @@ export default function InventoryLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("warehouseSection.title")}
             </h2>
@@ -560,7 +559,7 @@ export default function InventoryLandingSections() {
 
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
               <span className="text-[#02a6a6] dark:text-[#02cfc3]">{t("pickingSection.title")}</span>
@@ -595,7 +594,7 @@ export default function InventoryLandingSections() {
 
                 <h3
                   className="mt-5 text-xl font-bold text-slate-900 dark:text-white"
-                  style={{ fontFamily: handwrittenFont }}
+                  style={{ fontFamily: primaryFont }}
                 >
                   {type.title}
                 </h3>
@@ -615,7 +614,7 @@ export default function InventoryLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               <HandUnderline color="bg-rose-300 dark:bg-rose-800">
                 <span className="dark:text-rose-200">{t("packingSection.title")}</span>
@@ -650,7 +649,7 @@ export default function InventoryLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -696,7 +695,7 @@ export default function InventoryLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
           </h2>
@@ -781,7 +780,7 @@ export default function InventoryLandingSections() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -829,7 +828,7 @@ export default function InventoryLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

@@ -3,7 +3,7 @@
   --industry-green: #187746;
   --industry-amber: #956019;
   --industry-wash: color-mix(in srgb, #1088ef 5%, var(--card));
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   color: var(--foreground);
   background: var(--background);
   overflow: clip;
@@ -360,7 +360,7 @@
   margin-top: 8px;
 }
 .trimCallout > span {
-  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-family: var(--font-annotation);
   font-size: 23px;
   transform: rotate(-3deg);
 }

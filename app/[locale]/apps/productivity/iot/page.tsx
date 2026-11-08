@@ -106,8 +106,7 @@ export default function IoTDefencePage() {
           <h1
             className="text-5xl font-bold leading-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
             style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontFamily: "var(--font-content)",
             }}
           >
             {t("hero.title")}{" "}
@@ -226,8 +225,7 @@ export default function IoTDefencePage() {
               <h2
                 className="text-5xl font-bold leading-tight text-slate-900 dark:text-white"
                 style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                  fontFamily: "var(--font-content)",
                 }}
               >
                 {t("missionSection.title")}{" "}
@@ -313,8 +311,7 @@ export default function IoTDefencePage() {
           <h2
             className="max-w-2xl text-6xl font-bold leading-tight text-slate-900 dark:text-white"
             style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontFamily: "var(--font-content)",
             }}
           >
             {t("featuresSection.title")}{" "}
@@ -360,8 +357,7 @@ export default function IoTDefencePage() {
           <h2
             className="text-5xl font-bold text-slate-900 dark:text-white"
             style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontFamily: "var(--font-content)",
             }}
           >
             {t("appsSection.title")}{" "}
@@ -396,8 +392,7 @@ export default function IoTDefencePage() {
           <h2
             className="text-6xl font-bold leading-tight text-slate-900 dark:text-white"
             style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontFamily: "var(--font-content)",
             }}
           >
             {t("ctaSection.title")}

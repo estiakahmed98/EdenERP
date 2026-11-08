@@ -89,8 +89,7 @@ export default function CertificationsPage() {
                 <h1
                   className="text-5xl font-semibold leading-none tracking-tight text-slate-900 sm:text-6xl"
                   style={{
-                    fontFamily:
-                      '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                    fontFamily: "var(--font-content)",
                   }}
                 >
                   Validate Your
@@ -194,8 +193,7 @@ export default function CertificationsPage() {
           <h2
             className="mt-8 text-4xl font-semibold text-slate-900 sm:text-5xl"
             style={{
-              fontFamily:
-                '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+              fontFamily: "var(--font-content)",
             }}
           >
             Choose your specialization
@@ -254,8 +252,7 @@ export default function CertificationsPage() {
             <h2
               className="mt-8 text-4xl font-semibold text-slate-900 sm:text-5xl"
               style={{
-                fontFamily:
-                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                fontFamily: "var(--font-content)",
               }}
             >
               Build trust with
@@ -296,8 +293,7 @@ export default function CertificationsPage() {
             <h2
               className="mt-8 text-4xl font-semibold text-slate-900 sm:text-5xl"
               style={{
-                fontFamily:
-                  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                fontFamily: "var(--font-content)",
               }}
             >
               Ready to become

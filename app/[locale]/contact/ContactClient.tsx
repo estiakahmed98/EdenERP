@@ -54,7 +54,7 @@ function HandwrittenHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl dark:text-slate-100 ${className}`}
       style={{
-        fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
+        fontFamily: "var(--font-content)",
       }}
     >
       {children}
@@ -127,7 +127,7 @@ export default function ContactClient() {
               <h1
                 className="text-balance text-5xl font-semibold leading-[0.98] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl dark:text-slate-100"
                 style={{
-                  fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
+                  fontFamily: "var(--font-content)",
                 }}
               >
                 {t("hero.title")}
@@ -337,7 +337,7 @@ export default function ContactClient() {
             <h2
               className="mt-8 text-4xl font-semibold leading-tight sm:text-5xl"
               style={{
-                fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
+                fontFamily: "var(--font-content)",
               }}
             >
               {t("cta.title")}

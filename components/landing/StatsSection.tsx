@@ -30,7 +30,7 @@ export default function StatsSection() {
       <div className="mx-auto max-w-240">
         <div className="reveal mb-10 text-center">
           <SectionTag>{plainTag(t("stats.tag"))}</SectionTag>
-          <h2 className="mx-auto mt-4 font-hand text-[clamp(34px,4.6vw,56px)] font-bold leading-[1.1] text-(--ink)">
+          <h2 className="mx-auto mt-4 landing-heading text-[clamp(34px,4.6vw,56px)] font-bold leading-[1.1] text-(--ink)">
             <HandText>{t("stats.title")}</HandText>
           </h2>
         </div>
@@ -58,7 +58,7 @@ export default function StatsSection() {
                     <Icon className="h-4.5 w-4.5" strokeWidth={1.9} aria-hidden="true" />
                   </span>
 
-                  <p className="mt-4 font-hand text-[40px] font-bold leading-none text-(--ink)">
+                  <p className="mt-4 font-body text-[40px] font-bold leading-none text-(--ink)">
                     {stat.value}
                   </p>
                   <p className="mt-2 font-body text-[13px] leading-snug text-(--muted)">

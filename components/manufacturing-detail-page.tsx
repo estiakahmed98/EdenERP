@@ -7,8 +7,7 @@ import { useTranslations } from "next-intl";
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 export function ScriptHeading({
   children,
@@ -20,7 +19,7 @@ export function ScriptHeading({
   return (
     <h2
       className={`text-balance text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl ${className}`}
-      style={{ fontFamily: handwrittenFont }}
+      style={{ fontFamily: primaryFont }}
     >
       {children}
     </h2>
@@ -108,7 +107,7 @@ export function ManufacturingDetailPage({
 
           <h1
             className="mt-5 text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {heroTitle}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -192,7 +191,7 @@ export function ManufacturingDetailPage({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-2xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {workflowTitle}{" "}
             <span className="relative inline-block">

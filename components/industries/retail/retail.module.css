@@ -4,7 +4,7 @@
   --retail-sage: color-mix(in srgb, #21a816 12%, var(--card));
   --retail-sand: color-mix(in srgb, #c59b65 16%, var(--card));
   --retail-green: #25733b;
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   background: var(--background);
   color: var(--foreground);
   overflow: clip;
@@ -162,10 +162,9 @@
   flex: none;
 }
 .curvedNote span {
-  font:
-    18px/1.4 "Segoe Print",
-    "Bradley Hand",
-    cursive;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: var(--font-annotation);
   transform: rotate(-5deg);
 }
 
@@ -254,7 +253,7 @@
   z-index: 1;
 }
 .featuredBook b i {
-  font-family: Georgia, serif;
+  font-family: var(--font-annotation);
   font-weight: 400;
 }
 .featuredBook > small {
@@ -616,7 +615,7 @@
 }
 .freshSeal > b {
   display: block;
-  font-family: Georgia, serif;
+  font-family: var(--font-annotation);
   font-size: 25px;
   font-weight: 400;
   font-style: italic;
@@ -944,9 +943,9 @@
   color: var(--ink);
 }
 .blockStage b > i {
-  font:
-    italic 34px Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 34px;
+  font-style: italic;
   color: var(--retail-blue);
 }
 .trainNote {

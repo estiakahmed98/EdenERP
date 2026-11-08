@@ -71,7 +71,7 @@
   overflow: visible;
 }
 .diagram text {
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
 }
 .caption {
   margin-top: 16px;

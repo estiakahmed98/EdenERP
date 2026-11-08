@@ -28,8 +28,7 @@ import {
 } from "lucide-react";
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 const avatars = [
   "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face",
@@ -199,7 +198,7 @@ export default function RentalPage() {
 
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <span className="relative inline-block text-[#02a6a6] dark:text-[#02cfc3]">
@@ -293,7 +292,7 @@ export default function RentalPage() {
 
           <h2
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("onlineRentalSection.title")}{" "}
             <span className="relative inline-block">
@@ -401,7 +400,7 @@ export default function RentalPage() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("timeMoneySection.title")}
               <br />
@@ -425,7 +424,7 @@ export default function RentalPage() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("signatureSection.title")}
               <br />
@@ -463,7 +462,7 @@ export default function RentalPage() {
                   <div className="mt-6 flex justify-end">
                     <div
                       className="text-2xl text-[#714b67] dark:text-[#9b6a8f]"
-                      style={{ fontFamily: handwrittenFont }}
+                      style={{ fontFamily: primaryFont }}
                     >
                       {t("signatureSection.signatureLabel")}
                     </div>
@@ -483,7 +482,7 @@ export default function RentalPage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("todoSection.title")}{" "}
             <span className="relative inline-block text-[#f59e0b] dark:text-[#fbbf24]">
@@ -529,7 +528,7 @@ export default function RentalPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block text-[#02a6a6] dark:text-[#02cfc3]">
@@ -582,7 +581,7 @@ export default function RentalPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
             <HandUnderline color="bg-sky-400 dark:bg-sky-900">
@@ -675,7 +674,7 @@ export default function RentalPage() {
             <div className="absolute left-1/2 top-1/2 z-10 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaSection.title")}
               </p>
@@ -721,7 +720,7 @@ export default function RentalPage() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("getStartedSection.title")}
               <br />

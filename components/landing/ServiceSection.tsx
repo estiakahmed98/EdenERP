@@ -212,7 +212,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-5xl lg:text-6xl ${className}`}
       style={{
-        fontFamily: `"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive`,
+        fontFamily: "var(--font-content)",
       }}
     >
       {children}

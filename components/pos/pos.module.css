@@ -5,7 +5,7 @@
   --pos-wash: color-mix(in srgb, #1088ef 5%, var(--card));
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   overflow: clip;
 }
 :global(.dark) .pos {
@@ -181,7 +181,7 @@
 .receiptAnnotation,
 .orbitLabel {
   color: var(--pos-blue);
-  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-family: var(--font-annotation);
   font-size: 23px;
   line-height: 1.2;
 }

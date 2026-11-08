@@ -646,7 +646,7 @@ function Captions({ progress }: { progress: MotionValue<number> }) {
           className="absolute inset-x-0 top-1/2 -translate-y-1/2"
           style={{ opacity: finalOpacity, y: finalY }}
         >
-          <h3 className="font-hand text-[clamp(24px,3vw,38px)] font-bold leading-[1.15] text-(--ink)">
+          <h3 className="landing-heading text-[clamp(24px,3vw,38px)] font-bold leading-[1.15] text-(--ink)">
             {t("stage.executiveTitle")}
           </h3>
           <p className="mx-auto mt-2 max-w-130 font-body text-sm leading-[1.6] text-(--muted)">
@@ -728,7 +728,7 @@ export default function NativeAISection() {
           <SectionTag>{t("tag")}</SectionTag>
           <h2
             id="native-ai-title"
-            className="mt-3 font-hand text-[clamp(28px,3.8vw,50px)] font-bold leading-[1.1] text-(--ink)"
+            className="mt-3 landing-heading text-[clamp(28px,3.8vw,50px)] font-bold leading-[1.1] text-(--ink)"
           >
             {t("title")}
           </h2>

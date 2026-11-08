@@ -143,11 +143,11 @@
 }
 
 .englishContent {
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
 }
 
 .englishContent.englishContent :global(.showcase-heading-highlight) {
-  font-family: var(--font-caveat), "Segoe Print", "Bradley Hand", cursive;
+  font-family: var(--font-annotation);
   font-style: normal;
 }
 

@@ -6,7 +6,7 @@
   --h-green: #25733b;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   overflow: clip;
 }
 :global(.dark) .hospitality {
@@ -146,10 +146,9 @@
   flex: none;
 }
 .handNote > span {
-  font:
-    18px/1.4 "Segoe Print",
-    "Bradley Hand",
-    cursive;
+  font-size: 18px;
+  line-height: 1.4;
+  font-family: var(--font-annotation);
   transform: rotate(-4deg);
 }
 .plateArt,
@@ -537,9 +536,10 @@
   margin-block: 20px;
 }
 .journalIllustration > small {
-  font:
-    italic 15px/1.5 Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 15px;
+  line-height: 1.5;
+  font-style: italic;
   color: var(--h-blue);
 }
 .journalEntry {
@@ -615,9 +615,9 @@
 }
 .keyTag > b {
   display: block;
-  font:
-    italic 42px Georgia,
-    serif;
+  font-family: var(--font-annotation);
+  font-size: 42px;
+  font-style: italic;
   color: var(--h-blue);
   margin-top: 8px;
 }

@@ -30,8 +30,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 type Employee = {
   name: string;
@@ -106,7 +105,7 @@ export default function HumanResourcesLandingSections() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-[#02cfc3]">
@@ -177,7 +176,7 @@ export default function HumanResourcesLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("allInOneSection.title")}
             <br />
@@ -203,7 +202,7 @@ export default function HumanResourcesLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             Organize every
             <br />
@@ -232,7 +231,7 @@ export default function HumanResourcesLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("privacySection.title")}{" "}
               <HandUnderline color="bg-rose-300 dark:bg-rose-900">
@@ -295,7 +294,7 @@ export default function HumanResourcesLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               Define clear
               <br />
@@ -333,7 +332,7 @@ export default function HumanResourcesLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               Grades that
               <br />
@@ -358,7 +357,7 @@ export default function HumanResourcesLandingSections() {
 
           <h2
             className="mt-6 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("timeOffSection.title")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-900">
@@ -420,7 +419,7 @@ export default function HumanResourcesLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             Build flexible
             <br />
@@ -448,7 +447,7 @@ export default function HumanResourcesLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("documentsSection.title")}
           </h2>
@@ -478,7 +477,7 @@ export default function HumanResourcesLandingSections() {
 
                   <p
                     className="mt-4 text-lg font-bold text-gray-900 dark:text-white"
-                    style={{ fontFamily: handwrittenFont }}
+                    style={{ fontFamily: primaryFont }}
                   >
                     {item.title}
                   </p>
@@ -497,7 +496,7 @@ export default function HumanResourcesLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -601,7 +600,7 @@ export default function HumanResourcesLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
           </h2>
@@ -686,7 +685,7 @@ export default function HumanResourcesLandingSections() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-[#11111f]/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.3)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-gray-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaBanner.title")}
               </p>
@@ -703,7 +702,7 @@ export default function HumanResourcesLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight text-gray-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("footerCta.title")}
               <br />

@@ -54,7 +54,7 @@ function ScriptHeading({
     <h2
       className={`text-balance text-4xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 sm:text-5xl ${className}`}
       style={{
-        fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+        fontFamily: "var(--font-content)",
       }}
     >
       {children}
@@ -272,8 +272,7 @@ export default function EsignPage() {
           <div className="mx-auto mt-8 max-w-4xl">
             <h1
               style={{
-                fontFamily:
-                  '"Hauser Script", "Segoe Script", "Brush Script MT", "Segoe Print", cursive',
+                fontFamily: "var(--font-content)",
               }}
               className="text-balance text-5xl font-semibold leading-tight tracking-tight text-slate-950 dark:text-slate-100 sm:text-6xl lg:text-7xl"
             >
@@ -281,8 +280,7 @@ export default function EsignPage() {
               <span
                 className="text-cyan-600 dark:text-cyan-400"
                 style={{
-                  fontFamily:
-                    '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                  fontFamily: "var(--font-content)",
                 }}
               >
                 {t("hero.titleHighlight")}
@@ -398,8 +396,7 @@ export default function EsignPage() {
                   <div
                     className="mt-5 rounded-xl border border-dashed border-cyan-300 dark:border-cyan-700 bg-cyan-50 dark:bg-cyan-950/30 p-4 text-center text-2xl text-cyan-700 dark:text-cyan-400"
                     style={{
-                      fontFamily:
-                        '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+                      fontFamily: "var(--font-annotation)",
                     }}
                   >
                     {t("mobileSection.signatureCard.name")}

@@ -157,7 +157,7 @@ export default function LevelUpSection() {
           <div className="reveal">
             <SectionTag>{plainTag(t("levelUp.tag"))}</SectionTag>
 
-            <h2 className="mt-5 font-hand text-[clamp(36px,4.4vw,58px)] font-bold leading-[1.08] text-(--ink)">
+            <h2 className="mt-5 landing-heading text-[clamp(36px,4.4vw,58px)] font-bold leading-[1.08] text-(--ink)">
               {t("levelUp.titlePrefix")}{" "}
               <HandText>{t("levelUp.titleHand")}</HandText>
             </h2>

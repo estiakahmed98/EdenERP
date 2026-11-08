@@ -24,8 +24,7 @@ import {
 
 import { HandUnderline } from "@/components/ui/headunderline";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 function FloatingNote({ className = "", t }: { className?: string; t: any }) {
   return (
@@ -141,7 +140,7 @@ export default function ELearningLandingSections() {
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("hero.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
@@ -178,7 +177,7 @@ export default function ELearningLandingSections() {
 
             <p
               className="absolute -right-10 top-8 hidden rotate-12 text-lg font-bold text-rose-400 dark:text-rose-500 lg:block"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: "var(--font-annotation)" }}
             >
               {t("hero.availableText")}
             </p>
@@ -187,7 +186,7 @@ export default function ELearningLandingSections() {
               <div className="border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-5 py-4 text-left">
                 <span
                   className="text-xl font-bold text-[#714b67] dark:text-[#9b6a8f]"
-                  style={{ fontFamily: handwrittenFont }}
+                  style={{ fontFamily: primaryFont }}
                 >
                   {t("hero.courseHeader.title")}
                 </span>
@@ -217,7 +216,7 @@ export default function ELearningLandingSections() {
 
           <h2
             className="mt-6 text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("easyLearnSection.title")}{" "}
             <HandUnderline color="bg-rose-300 dark:bg-rose-800">
@@ -250,7 +249,7 @@ export default function ELearningLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               <HandUnderline color="bg-sky-300 dark:bg-sky-800">
                 <span className="text-sky-600 dark:text-sky-400">
@@ -287,7 +286,7 @@ export default function ELearningLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             <HandUnderline color="bg-amber-300 dark:bg-amber-800">
               <span className="dark:text-amber-200">
@@ -330,7 +329,7 @@ export default function ELearningLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("featuresSection.title")}{" "}
             <span className="relative inline-block">
@@ -383,7 +382,7 @@ export default function ELearningLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("appsSection.title")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -473,7 +472,7 @@ export default function ELearningLandingSections() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("ctaSection.title")}
               </p>
@@ -517,7 +516,7 @@ export default function ELearningLandingSections() {
             </div>
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("getStartedSection.title")}
               <br />

@@ -3,7 +3,7 @@
   --qms-amber: #95630c;
   --qms-green: #187746;
   --qms-blue: color-mix(in srgb, var(--primary) 75%, var(--ink));
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   background: var(--background);
   color: var(--foreground);
 }
@@ -14,7 +14,7 @@
   --qms-blue: #79c5ff;
 }
 .quality.quality :global(.showcase-heading-highlight) {
-  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-family: var(--font-annotation);
   font-style: normal;
 }
 .wrap {
@@ -482,7 +482,7 @@
   flex-direction: column;
   align-items: flex-end;
   color: var(--qms-blue);
-  font-family: var(--font-caveat), "Segoe Print", cursive;
+  font-family: var(--font-annotation);
   font-size: 25px;
   line-height: 1;
   transform: rotate(-7deg);
@@ -1141,7 +1141,7 @@
 }
 .recordDialog {
   color: var(--foreground);
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
 }
 .recordForm {
   display: grid;
@@ -1957,7 +1957,7 @@
   overflow: visible;
 }
 .controlChart text {
-  font-family: var(--font-rubik), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-content);
   font-size: 10px;
 }
 .chartLinelimit line {

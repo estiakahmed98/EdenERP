@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 
 const scriptFont = {
-  fontFamily: '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive',
+  fontFamily: "var(--font-content)",
 };
 
 function ScriptHeading({

@@ -12,12 +12,11 @@ export const GLOBAL_CSS = `
   --gray-bg: #eef3f9;
   --ink: #14233b;
   --muted: #556a85;
-  --hand: var(--font-caveat), 'Segoe Print', cursive;
-  --body: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --hand: var(--font-annotation);
+  --body: var(--font-content);
 }
 
-.landing-page { font-family: var(--body); background: var(--cream); color: var(--ink); overflow-x: clip; }
-html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rubik), ui-sans-serif, system-ui, sans-serif; --hand: var(--font-tiro-bangla), serif; }
+.landing-page { font-family: var(--body); line-height: var(--type-body-leading); background: var(--cream); color: var(--ink); overflow-x: clip; }
 .dark .landing-page { --purple: #1088ef; --purple-dark: #003180; --teal: #21a816; --cream: #0a1424; --gray-bg: #0f1c30; --ink: #eaf1fa; --muted: #9fb2cc; --purple-light: #12263f; }
 .landing-page.green, .landing-page.theme-green, .green .landing-page, .theme-green .landing-page {
   --purple: #238b5a;
@@ -76,8 +75,8 @@ html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rub
 .landing-page .reveal-d2 { transition-delay:.2s; }
 .landing-page .reveal-d3 { transition-delay:.3s; }
 
-/* Above-the-fold hero: CSS-only entrance (no JS, no opacity:0) so the H1 —
-   the LCP element — paints immediately instead of waiting for hydration. */
+/* Above-the-fold hero: CSS-only entrance (no JS, no opacity:0) so the H1 â€”
+   the LCP element â€” paints immediately instead of waiting for hydration. */
 @keyframes heroIn { from { transform:translateY(18px); } to { transform:none; } }
 .landing-page .hero-in { animation: heroIn .7s cubic-bezier(.16,1,.3,1) both; }
 .landing-page .hero-d1 { animation-delay:.05s; }
@@ -86,6 +85,7 @@ html[lang^='bn'] .landing-page { --body: var(--font-tiro-bangla), var(--font-rub
 @media (prefers-reduced-motion: reduce) { .landing-page .hero-in { animation:none; } }
 
 .landing-page .font-hand { font-family: var(--hand); }
+.landing-page .landing-heading { font-family: var(--body); font-weight: 700; line-height: var(--type-heading-leading); letter-spacing: var(--type-heading-tracking); text-wrap: balance; }
 .landing-page .font-body { font-family: var(--body); }
 .landing-page .shadow-float { box-shadow: 0 30px 80px rgba(15,23,42,.10), 0 0 0 1px rgba(15,23,42,.04); }
 .landing-page .marquee-left { animation: marqueeLeft 20s linear infinite; }
@@ -323,7 +323,7 @@ export function ThreeBg() {
     if (!canvas) return;
 
     // Purely decorative: skip it where it costs the most (small screens,
-    // reduced motion, data saver) — this 118 KB lib + WebGL loop hurt LCP/TBT.
+    // reduced motion, data saver) â€” this 118 KB lib + WebGL loop hurt LCP/TBT.
     const connection = (
       navigator as Navigator & { connection?: { saveData?: boolean } }
     ).connection;
@@ -423,14 +423,14 @@ export function TypeWriter({ words }: { words: string[] }) {
   }, [wordIndex, words]);
 
   return (
-    <span className="font-hand text-(--teal)">
+    <span className="text-(--teal)">
       {text}
       <span className="animate-[blink_1s_infinite] font-light">|</span>
     </span>
   );
 }
 
-/* Shared look for the Hero → Marquee → Apps run, so the three read as one flow. */
+/* Shared look for the Hero â†’ Marquee â†’ Apps run, so the three read as one flow. */
 export const ICON_TONES = [
   "bg-(--purple-light) text-(--purple)",
   "bg-(--teal)/10 text-(--teal)",
@@ -446,8 +446,8 @@ export const MARQUEE_MASK: React.CSSProperties = {
     "linear-gradient(to right, transparent, black 6%, black 94%, transparent)",
 };
 
-/** Drops decorative sparkle glyphs (✦ ★ ✨) that some translated tags start with. */
-export const plainTag = (text: string) => text.replace(/^[✦★✨]\s*/u, "");
+/** Drops decorative sparkle glyphs (âœ¦ â˜… âœ¨) that some translated tags start with. */
+export const plainTag = (text: string) => text.replace(/^[âœ¦â˜…âœ¨]\s*/u, "");
 
 /** Same scroll pace everywhere: duration grows with the number of items. */
 export const marqueeDuration = (count: number) => `${count * 3.6}s`;

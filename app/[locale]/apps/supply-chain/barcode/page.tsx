@@ -28,8 +28,7 @@ import { HandUnderline } from "@/components/ui/headunderline";
 import { useTranslations } from "next-intl";
 import { memoT, type TFn } from "@/lib/i18n/t-types";
 
-const handwrittenFont =
-  '"Segoe Print", "Bradley Hand", "Comic Sans MS", cursive';
+const primaryFont = "var(--font-content)";
 
 const features = memoT((t: TFn) => ([
   {
@@ -108,7 +107,7 @@ export default function BarcodeLandingSections() {
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
           <h1
             className="text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("page.scanFaster")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -335,7 +334,7 @@ export default function BarcodeLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
                 <span className="dark:text-[#02cfc3]">{t("page.receive")}</span>
@@ -468,7 +467,7 @@ export default function BarcodeLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("page.pickPackAnd")}{" "}
               <HandUnderline color="bg-amber-300 dark:bg-amber-800">
@@ -495,7 +494,7 @@ export default function BarcodeLandingSections() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <h2
             className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("page.countInventory")}{" "}
             <HandUnderline color="bg-sky-300 dark:bg-sky-800">
@@ -546,7 +545,7 @@ export default function BarcodeLandingSections() {
 
                     <h3
                       className="mt-5 text-2xl font-bold text-slate-900 dark:text-white"
-                      style={{ fontFamily: handwrittenFont }}
+                      style={{ fontFamily: primaryFont }}
                     >
                       {step.title}
                     </h3>
@@ -573,7 +572,7 @@ export default function BarcodeLandingSections() {
           <div>
             <h2
               className="text-4xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("page.fullTraceability")}
               <br />
@@ -648,7 +647,7 @@ export default function BarcodeLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="max-w-xl text-5xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-6xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("page.allThe")}{" "}
             <span className="relative inline-block">
@@ -700,7 +699,7 @@ export default function BarcodeLandingSections() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl"
-            style={{ fontFamily: handwrittenFont }}
+            style={{ fontFamily: primaryFont }}
           >
             {t("page.one")}{" "}
             <HandUnderline color="bg-[#02cfc3] dark:bg-[#02cfc3]/30">
@@ -792,7 +791,7 @@ export default function BarcodeLandingSections() {
             <div className="absolute left-1/2 top-1/2 z-20 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-3xl bg-white/90 dark:bg-slate-900/90 p-8 shadow-[0_25px_80px_rgba(15,23,42,0.12)] dark:shadow-[0_25px_80px_rgba(0,0,0,0.4)] backdrop-blur">
               <p
                 className="text-4xl font-bold leading-tight text-slate-900 dark:text-white"
-                style={{ fontFamily: handwrittenFont }}
+                style={{ fontFamily: primaryFont }}
               >
                 {t("page.join15MillionUsers")}
               </p>
@@ -840,7 +839,7 @@ export default function BarcodeLandingSections() {
 
             <h2
               className="text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl"
-              style={{ fontFamily: handwrittenFont }}
+              style={{ fontFamily: primaryFont }}
             >
               {t("page.speedUp")}
               <br />
