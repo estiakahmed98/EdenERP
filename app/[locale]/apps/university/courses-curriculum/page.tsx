@@ -105,13 +105,7 @@ export default function UniversityCoursesCurriculumPage() {
               {tx("page.fromPrerequisitesToPublishedCurriculumsM")}
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-<<<<<<< HEAD
               <LiveDemoButton />
-=======
-              <button className="btn-gradient rounded-lg px-6 py-3 text-[13px] font-bold shadow-lg transition-transform hover:-translate-y-0.5">
-                {tx("page.requestADemo")}
-              </button>
->>>>>>> 7fa771495f3e54528b38883bdfaf3de5f5b7e3ee
               <button className="rounded-lg border border-border bg-card px-6 py-3 text-[13px] font-bold text-foreground shadow-sm transition-all hover:border-primary hover:text-primary">
                 {tx("page.exploreFeatures")}
               </button>
@@ -259,13 +253,7 @@ export default function UniversityCoursesCurriculumPage() {
                       <p className="text-[13px] font-medium text-muted-foreground mb-3 bg-card/80 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-md border border-border/50">
                         {tx("page.previewModeExploreTheFullCourse")}
                       </p>
-<<<<<<< HEAD
                       <LiveDemoButton />
-=======
-                      <button className="btn-gradient rounded-lg px-8 py-2.5 text-[13px] font-bold shadow-xl transition-transform hover:-translate-y-0.5">
-                        {tx("page.bookALiveDemo")}
-                      </button>
->>>>>>> 7fa771495f3e54528b38883bdfaf3de5f5b7e3ee
                     </div>
                   </div>
                 </div>
@@ -437,13 +425,7 @@ export default function UniversityCoursesCurriculumPage() {
                 {tx("page.getAPersonalizedWalkthroughOfThe")}
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-<<<<<<< HEAD
                 <LiveDemoButton />
-=======
-                <button className="rounded-lg bg-card px-6 py-3 text-[13px] font-bold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-muted shadow-lg">
-                  {tx("page.scheduleAWalkthrough")}
-                </button>
->>>>>>> 7fa771495f3e54528b38883bdfaf3de5f5b7e3ee
                 <button className="rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-[13px] font-bold text-white transition-all hover:bg-white/20">
                   {tx("page.browseAllModules")}
                 </button>

@@ -98,24 +98,40 @@ declare global {
   }
 }
 
-let threeScriptPromise: Promise<void> | undefined;
+let threeScriptPromise: Promise<boolean> | undefined;
 
 function loadThreeScript() {
   if (window.THREE) {
-    return Promise.resolve();
+    return Promise.resolve(true);
   }
 
   if (!threeScriptPromise) {
-    threeScriptPromise = new Promise<void>((resolve, reject) => {
+    const pending = new Promise<boolean>((resolve) => {
       const script = document.createElement("script");
-      script.src =
-        "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js";
-      script.onload = () => resolve();
-      script.onerror = () => {
-        threeScriptPromise = undefined;
-        reject(new Error("Failed to load the Three.js landing background."));
+      // Keep the existing r128 renderer, served by this app instead of a CDN.
+      script.src = "/vendor/three/three-0.128.0.min.js";
+      script.async = true;
+      const finish = (available: boolean) => {
+        window.clearTimeout(timeoutId);
+        script.onload = null;
+        script.onerror = null;
+        if (!available) script.remove();
+        resolve(available);
       };
-      document.head.appendChild(script);
+      const timeoutId = window.setTimeout(() => finish(false), 15000);
+      script.onload = () => finish(Boolean(window.THREE));
+      script.onerror = () => finish(false);
+      try {
+        document.head.appendChild(script);
+      } catch {
+        finish(false);
+      }
+    });
+    threeScriptPromise = pending;
+    void pending.then((available) => {
+      if (!available && threeScriptPromise === pending) {
+        threeScriptPromise = undefined;
+      }
     });
   }
 
@@ -288,6 +304,12 @@ function initializeThreeBackground(canvas: HTMLCanvasElement) {
     pause();
     visibilityObserver.disconnect();
     document.removeEventListener("visibilitychange", onVisibility);
+    geo.dispose();
+    mat.dispose();
+    tor.geometry.dispose();
+    tor.material.dispose();
+    tor2.geometry.dispose();
+    tor2.material.dispose();
     renderer.dispose();
     window.removeEventListener("mousemove", onMouse);
   };
@@ -319,15 +341,13 @@ export function ThreeBg() {
     const start = () => {
       if (disposed) return;
       void loadThreeScript()
-        .then(() => {
-          if (disposed || !window.THREE) return;
+        .then((available) => {
+          if (disposed || !available || !window.THREE) return;
           cleanup = initializeThreeBackground(canvas);
         })
-        .catch((error: unknown) => {
-          console.error(
-            "Unable to initialize the Three.js landing background.",
-            error,
-          );
+        .catch(() => {
+          // Decoration must not interrupt the page if WebGL is unavailable.
+          canvas.style.visibility = "hidden";
         });
     };
 
@@ -360,6 +380,7 @@ export function ThreeBg() {
   return (
     <canvas
       ref={ref}
+      aria-hidden="true"
       className="pointer-events-none absolute inset-0 h-full w-full"
     />
   );
