@@ -31,9 +31,8 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
     [sidebarCollapsed],
   );
 
-  // The shell geometry (fixed left sidebar) stays LTR; text direction is set per region.
   return (
-    <div dir="ltr" className="relative min-h-screen bg-background text-foreground">
+    <div dir={dir} className="relative min-h-screen bg-background text-foreground">
       {/* Soft brand glow behind the content */}
       <div
         aria-hidden="true"
@@ -67,10 +66,10 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
               />
 
               <motion.div
-                className="fixed left-0 top-0 z-50 h-full w-72 max-w-[85vw] md:hidden"
-                initial={{ x: "-100%" }}
+                className="fixed start-0 top-0 z-50 h-full w-72 max-w-[85vw] md:hidden"
+                initial={{ x: dir === "rtl" ? "100%" : "-100%" }}
                 animate={{ x: 0 }}
-                exit={{ x: "-100%" }}
+                exit={{ x: dir === "rtl" ? "100%" : "-100%" }}
                 transition={{ type: "spring", stiffness: 260, damping: 30 }}
               >
                 <AdminSidebar
@@ -86,7 +85,7 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
 
         {/* Main content */}
         <div
-          className="min-h-screen min-w-0 flex-1 transition-[padding] duration-300 md:pl-(--content-offset)"
+          className="min-h-screen min-w-0 flex-1 transition-[padding] duration-300 md:ps-(--content-offset)"
           style={
             { "--content-offset": `${contentOffset}px` } as React.CSSProperties
           }
@@ -97,7 +96,7 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
             user={user}
           />
 
-          <main dir={dir}>{children}</main>
+          <main>{children}</main>
           <Toaster richColors closeButton position="top-right" />
         </div>
       </div>

@@ -148,7 +148,7 @@ export default function RequestSheet({
         side="right"
         className="flex w-full flex-col gap-0 p-0 sm:max-w-xl"
       >
-        <SheetHeader className="border-b border-border p-6 text-left">
+        <SheetHeader className="border-b border-border p-6 text-start">
           <SheetTitle className="text-lg font-bold">
             {creating ? t("sheet.newTitle") : row.fullName}
           </SheetTitle>
@@ -211,7 +211,7 @@ export default function RequestSheet({
                       aria-checked={active}
                       onClick={() => set("status", value)}
                       className={cn(
-                        "flex items-center gap-2 rounded-xl border px-3 py-2.5 text-left text-sm font-semibold transition-colors",
+                        "flex items-center gap-2 rounded-xl border px-3 py-2.5 text-start text-sm font-semibold transition-colors",
                         active
                           ? meta.active
                           : "border-border bg-card text-muted-foreground hover:bg-muted",

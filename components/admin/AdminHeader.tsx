@@ -87,7 +87,7 @@ const AdminHeader = ({ toggleSidebar, user }: AdminHeaderProps) => {
           <AdminLanguageSwitcher />
           <ThemeToggle />
           <span className="mx-1 hidden h-7 w-px bg-border sm:block" />
-          <div className="flex items-center gap-2.5 rounded-xl py-1 pl-1 pr-2">
+          <div className="flex items-center gap-2.5 rounded-xl py-1 ps-1 pe-2">
             {user?.image ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img

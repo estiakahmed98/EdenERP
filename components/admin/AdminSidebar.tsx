@@ -51,10 +51,10 @@ const AdminSidebar = ({
   return (
     <aside
       dir={dir}
-      className={`flex flex-col border-r border-border bg-card text-card-foreground transition-[width] duration-300 ${
+      className={`flex flex-col border-e border-border bg-card text-card-foreground transition-[width] duration-300 ${
         drawer
           ? "h-full w-full"
-          : "h-screen md:fixed md:left-0 md:top-0 md:z-40"
+          : "h-screen md:fixed md:start-0 md:top-0 md:z-40"
       }`}
       style={{
         width: drawer ? undefined : collapsed ? SIDEBAR_COLLAPSED : SIDEBAR_EXPANDED,
@@ -101,7 +101,7 @@ const AdminSidebar = ({
             aria-label={t("shell.collapseSidebar")}
             className="hidden size-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:flex"
           >
-            <ChevronsLeft size={18} />
+            {dir === "rtl" ? <ChevronsRight size={18} /> : <ChevronsLeft size={18} />}
           </button>
         )}
       </div>
@@ -140,7 +140,7 @@ const AdminSidebar = ({
                       }`}
                     >
                       {active && (
-                        <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-primary" />
+                        <span className="absolute inset-y-2 start-0 w-1 rounded-e-full bg-primary" />
                       )}
                       <Icon size={19} className="shrink-0" />
                       {!collapsed && <span className="truncate">
@@ -164,7 +164,7 @@ const AdminSidebar = ({
             aria-label={t("shell.expandSidebar")}
             className="mb-2 hidden w-full items-center justify-center rounded-lg py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:flex"
           >
-            <ChevronsRight size={18} />
+            {dir === "rtl" ? <ChevronsLeft size={18} /> : <ChevronsRight size={18} />}
           </button>
         )}
         <div

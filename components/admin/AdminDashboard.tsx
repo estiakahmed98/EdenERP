@@ -567,7 +567,7 @@ const AdminDashboard: React.FC = () => {
             <p className="mt-1 text-xs text-muted-foreground">
               {autoRefreshing ? tr("refreshing") : " "}
               {lastAnalyticsUpdatedAt ? (
-                <span className="ml-2">
+                <span className="ms-2">
                   {tr("updatedBd", { time: formatBdTime(lastAnalyticsUpdatedAt) })}
                 </span>
               ) : null}
@@ -941,16 +941,16 @@ const AdminDashboard: React.FC = () => {
                   <table className="w-full text-sm">
                     <thead className="bg-muted/20 text-xs uppercase text-muted-foreground">
                       <tr>
-                        <th className="px-6 py-4 text-left font-medium">
+                        <th className="px-6 py-4 text-start font-medium">
                           {tr("topPages.path")}
                         </th>
-                        <th className="px-6 py-4 text-left font-medium">
+                        <th className="px-6 py-4 text-start font-medium">
                           {tr("topPages.views")}
                         </th>
-                        <th className="px-6 py-4 text-left font-medium">
+                        <th className="px-6 py-4 text-start font-medium">
                           {tr("topPages.avgActiveTime")}
                         </th>
-                        <th className="px-6 py-4 text-left font-medium">
+                        <th className="px-6 py-4 text-start font-medium">
                           {tr("topPages.engagement")}
                         </th>
                       </tr>

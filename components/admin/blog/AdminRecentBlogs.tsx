@@ -98,7 +98,7 @@ export default function AdminRecentBlogs() {
               <article className="relative flex flex-col gap-3 p-4 rounded-lg border border-border bg-card hover:bg-accent/50 hover:shadow-md transition-all duration-300">
                 {/* New badge (only first item) */}
                 {index === 0 && (
-                  <span className="absolute top-3 right-3 text-[10px] uppercase tracking-widest px-2 py-1 rounded-full bg-primary/20 text-primary-foreground">
+                  <span className="absolute top-3 end-3 text-[10px] uppercase tracking-widest px-2 py-1 rounded-full bg-primary/20 text-primary-foreground">
                     {t("new")}
                   </span>
                 )}

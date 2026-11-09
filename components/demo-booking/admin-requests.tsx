@@ -339,7 +339,7 @@ export default function AdminDemoRequests() {
                 setPage(1);
               }}
               className={cn(
-                "group rounded-2xl border bg-card p-4 text-left shadow-xs transition-all hover:shadow-md",
+                "group rounded-2xl border bg-card p-4 text-start shadow-xs transition-all hover:shadow-md",
                 active
                   ? "border-primary ring-2 ring-primary/20"
                   : "border-border hover:border-primary/40",
@@ -374,7 +374,7 @@ export default function AdminDemoRequests() {
         <div className="flex flex-wrap items-center gap-3 border-b border-border p-4">
           <div className="relative min-w-52 flex-1">
             <Search
-              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
               aria-hidden="true"
             />
             <Input
@@ -384,7 +384,7 @@ export default function AdminDemoRequests() {
               value={search}
               maxLength={100}
               onChange={(event) => setSearch(event.target.value)}
-              className="h-10 pl-9"
+              className="h-10 ps-9"
             />
           </div>
           {filtered && (
@@ -432,12 +432,12 @@ export default function AdminDemoRequests() {
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/40 hover:bg-muted/40">
-                    <TableHead className="pl-4">{t("table.client")}</TableHead>
+                    <TableHead className="ps-4">{t("table.client")}</TableHead>
                     <TableHead>{t("table.contact")}</TableHead>
                     <TableHead>{t("table.interest")}</TableHead>
                     <TableHead>{t("table.status")}</TableHead>
                     <TableHead>{t("table.received")}</TableHead>
-                    <TableHead className="pr-4 text-right">
+                    <TableHead className="pe-4 text-end">
                       <span className="sr-only">{t("table.actions")}</span>
                     </TableHead>
                   </TableRow>
@@ -452,7 +452,7 @@ export default function AdminDemoRequests() {
                         setSheetRow(row);
                       }}
                     >
-                      <TableCell className="pl-4">
+                      <TableCell className="ps-4">
                         <div className="flex items-center gap-3">
                           <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-foreground">
                             {initialsOf(row.fullName)}
@@ -525,7 +525,7 @@ export default function AdminDemoRequests() {
                           {timeAgo(row.createdAt, t, locale)}
                         </time>
                       </TableCell>
-                      <TableCell className="pr-4">
+                      <TableCell className="pe-4">
                         <div className="flex justify-end gap-1">
                           <Button
                             variant="ghost"
@@ -571,7 +571,7 @@ export default function AdminDemoRequests() {
                   <div className="flex items-start justify-between gap-3">
                     <button
                       type="button"
-                      className="flex min-w-0 items-center gap-3 text-left"
+                      className="flex min-w-0 items-center gap-3 text-start"
                       onClick={() => {
                         setFieldErrors({});
                         setSheetRow(row);

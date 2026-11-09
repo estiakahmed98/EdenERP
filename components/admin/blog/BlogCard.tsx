@@ -141,7 +141,7 @@ function Actions({
       className={cn(
         "flex gap-1.5",
         floating &&
-          "absolute right-3 top-3 z-10 translate-y-1 opacity-0 transition-all group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100",
+          "absolute end-3 top-3 z-10 translate-y-1 opacity-0 transition-all group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:translate-y-0 group-hover:opacity-100",
       )}
     >
       <Link
@@ -267,7 +267,7 @@ function PostRow({
         </p>
         <Author blog={blog} />
       </div>
-      <div className="shrink-0 pr-1">
+      <div className="shrink-0 pe-1">
         <Actions blog={blog} onDelete={onDelete} />
       </div>
     </article>
@@ -394,7 +394,7 @@ export default function BlogCard() {
       <div className="flex flex-wrap items-center gap-3 rounded-2xl bg-card p-2.5 shadow-sm ring-1 ring-border">
         <div className="relative min-w-52 flex-1">
           <Search
-            className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+            className="pointer-events-none absolute start-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
             aria-hidden="true"
           />
           <Input
@@ -403,7 +403,7 @@ export default function BlogCard() {
             placeholder={t("searchPlaceholder")}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="h-11 rounded-xl border-0 bg-muted/60 pl-10 shadow-none"
+            className="h-11 rounded-xl border-0 bg-muted/60 ps-10 shadow-none"
           />
         </div>
         {searchTerm && (
@@ -484,7 +484,7 @@ export default function BlogCard() {
               aria-label={t("pagination")}
               className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3 shadow-sm ring-1 ring-border"
             >
-              <span className="pl-2 text-sm text-muted-foreground">
+              <span className="ps-2 text-sm text-muted-foreground">
                 {t("pageOf", { page, total: totalPages })}
               </span>
               <div className="flex items-center gap-1">

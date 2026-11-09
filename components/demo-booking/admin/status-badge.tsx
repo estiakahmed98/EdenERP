@@ -66,7 +66,7 @@ export function StatusMenu({
           aria-label={t("status.aria", { status: t(`status.${status}.label`) })}
           onClick={(event) => event.stopPropagation()}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-full py-1 pl-2.5 pr-2 text-xs font-semibold ring-1 ring-inset outline-none transition-[filter,box-shadow] hover:brightness-95 focus-visible:ring-2 disabled:opacity-70",
+            "inline-flex items-center gap-1.5 rounded-full py-1 ps-2.5 pe-2 text-xs font-semibold ring-1 ring-inset outline-none transition-[filter,box-shadow] hover:brightness-95 focus-visible:ring-2 disabled:opacity-70",
             meta.pill,
           )}
         >

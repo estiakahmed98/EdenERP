@@ -497,7 +497,7 @@ function PlanCard({
           checked={plan.enabled}
           onCheckedChange={(checked) => update({ enabled: checked })}
         />
-        <span className="ml-1 flex-1 text-xs text-muted-foreground">
+        <span className="ms-1 flex-1 text-xs text-muted-foreground">
           {t("enabled")}
         </span>
         <button
@@ -1896,7 +1896,7 @@ export default function PricingAdminPage({
       </div>
 
       {/* Floating Save button (bottom-right). Pulses when there are unsaved changes. */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 end-6 z-50">
         <button
           type="button"
           onClick={handleSave}
