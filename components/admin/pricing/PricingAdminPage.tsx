@@ -25,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import type { PricingLocale, PricingPageData, PricingSiteConfig } from "@/lib/pricing/types";
 import { languageNames, locales } from "@/i18n/config";
+import { useTranslations } from "next-intl";
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 
@@ -443,6 +444,7 @@ function PlanCard({
   onMove: (direction: -1 | 1) => void;
   onDelete: () => void;
 }) {
+  const t = useTranslations("admin.pricing");
   const update = (patch: Partial<EditablePlan>) =>
     onChange({ ...plan, ...patch });
 
@@ -467,7 +469,7 @@ function PlanCard({
         </div>
         <div className="min-w-0 flex-1">
           <div className="truncate text-sm font-semibold text-foreground">
-            {plan.name || "Unnamed plan"}
+            {plan.name || t("unnamedPlan")}
           </div>
           <div className="truncate text-xs text-muted-foreground">
             {plan.tagline || "—"}
@@ -481,7 +483,7 @@ function PlanCard({
               : "bg-muted text-muted-foreground",
           ].join(" ")}
         >
-          {plan.enabled ? "On" : "Off"}
+          {plan.enabled ? t("on") : t("off")}
         </span>
       </div>
 
@@ -491,12 +493,12 @@ function PlanCard({
         onClick={(e) => e.stopPropagation()}
       >
         <Switch
-          aria-label="Plan enabled"
+          aria-label={t("planEnabled")}
           checked={plan.enabled}
           onCheckedChange={(checked) => update({ enabled: checked })}
         />
-        <span className="ml-1 flex-1 text-xs text-muted-foreground">
-          Enabled
+        <span className="ms-1 flex-1 text-xs text-muted-foreground">
+          {t("enabled")}
         </span>
         <button
           type="button"
@@ -517,7 +519,7 @@ function PlanCard({
         <button
           type="button"
           onClick={() => {
-            if (!window.confirm("Delete this plan?")) return;
+            if (!window.confirm(t("deleteThisPlan"))) return;
             onDelete();
           }}
           className="flex h-7 w-7 items-center justify-center rounded-md border border-destructive/20 text-destructive hover:bg-destructive/10"
@@ -529,7 +531,7 @@ function PlanCard({
       {/* Fields */}
       <div className="space-y-2 text-sm" onClick={(e) => e.stopPropagation()}>
         <div className="grid grid-cols-2 gap-2">
-          <Field label="Key">
+          <Field label={t("key")}>
             <Input
               className="h-8 text-xs"
               value={plan.id}
@@ -537,33 +539,33 @@ function PlanCard({
               placeholder="plan-key"
             />
           </Field>
-          <Field label="Name">
+          <Field label={t("name")}>
             <Input
               className="h-8 text-xs"
               value={plan.name}
               onChange={(e) => update({ name: e.target.value })}
-              placeholder="Plan name"
+              placeholder={t("planName")}
             />
           </Field>
         </div>
-        <Field label="Tagline">
+        <Field label={t("tagline")}>
           <Input
             className="h-8 text-xs"
             value={plan.tagline}
             onChange={(e) => update({ tagline: e.target.value })}
-            placeholder="Short tagline"
+            placeholder={t("shortTagline")}
           />
         </Field>
         <div className="grid grid-cols-2 gap-2">
-          <Field label="Badge">
+          <Field label={t("badge")}>
             <Input
               className="h-8 text-xs"
               value={plan.badge}
               onChange={(e) => update({ badge: e.target.value })}
-              placeholder="e.g. Popular"
+              placeholder={t("eGPopular")}
             />
           </Field>
-          <Field label="Icon">
+          <Field label={t("icon")}>
             <Input
               className="h-8 text-xs"
               value={plan.icon}
@@ -573,7 +575,7 @@ function PlanCard({
           </Field>
         </div>
         <div className="grid grid-cols-2 gap-2">
-          <Field label="Accent color">
+          <Field label={t("accentColor")}>
             <input
               type="color"
               value={plan.accent}
@@ -581,7 +583,7 @@ function PlanCard({
               className="h-8 w-full cursor-pointer rounded-md border border-border px-1 py-0.5"
             />
           </Field>
-          <Field label="Currency">
+          <Field label={t("currency")}>
             <select
               value={plan.currency}
               onChange={(e) =>
@@ -595,20 +597,20 @@ function PlanCard({
           </Field>
         </div>
         <div className="grid grid-cols-2 gap-2">
-          <Field label="Users">
+          <Field label={t("users")}>
             <Input
               className="h-8 text-xs"
               value={plan.users}
               onChange={(e) => update({ users: e.target.value })}
-              placeholder="e.g. 10"
+              placeholder={t("eG10")}
             />
           </Field>
-          <Field label="CTA text">
+          <Field label={t("ctaText")}>
             <Input
               className="h-8 text-xs"
               value={plan.cta}
               onChange={(e) => update({ cta: e.target.value })}
-              placeholder="Get started"
+              placeholder={t("getStarted")}
             />
           </Field>
         </div>
@@ -616,10 +618,10 @@ function PlanCard({
         {/* Pricing */}
         <div className="rounded-lg bg-muted/50 p-2.5">
           <p className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-            Pricing
+            {t("pricing")}
           </p>
           <div className="grid grid-cols-2 gap-2">
-            <Field label="Setup fee">
+            <Field label={t("setupFee")}>
               <Input
                 className="h-8 text-xs bg-card border border-border"
                 value={plan.setupFee}
@@ -627,7 +629,7 @@ function PlanCard({
                 placeholder="0"
               />
             </Field>
-            <Field label="Monthly fee">
+            <Field label={t("monthlyFee")}>
               <Input
                 className="h-8 text-xs bg-card border border-border"
                 value={plan.monthlyFee}
@@ -635,7 +637,7 @@ function PlanCard({
                 placeholder="0"
               />
             </Field>
-            <Field label="Quarterly fee">
+            <Field label={t("quarterlyFee")}>
               <Input
                 className="h-8 text-xs bg-card border border-border"
                 value={plan.quarterlyFee}
@@ -643,7 +645,7 @@ function PlanCard({
                 placeholder="0"
               />
             </Field>
-            <Field label="Server fee">
+            <Field label={t("serverFee")}>
               <Input
                 className="h-8 text-xs bg-card border border-border"
                 value={plan.serverFee}
@@ -658,14 +660,14 @@ function PlanCard({
         <div>
           <div className="mb-1.5 flex items-center justify-between">
             <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-              Features
+              {t("features")}
             </p>
             <button
               type="button"
               onClick={() => update({ features: [...plan.features, ""] })}
               className="text-[11px] text-primary hover:underline"
             >
-              + Add
+              {t("add")}
             </button>
           </div>
           <div className="space-y-1.5">
@@ -681,7 +683,7 @@ function PlanCard({
                       ),
                     })
                   }
-                  placeholder="Feature text"
+                  placeholder={t("featureText")}
                 />
                 <button
                   type="button"
@@ -710,13 +712,14 @@ function FaqList({
   faqs: EditableFaq[];
   onChange: (updated: EditableFaq[]) => void;
 }) {
+  const t = useTranslations("admin.pricing");
   return (
     <div className="space-y-3">
       {faqs.map((faq, index) => (
         <div key={index} className="rounded-xl border border-border p-3.5">
           <div className="mb-2.5 flex items-center gap-2">
             <Switch
-              aria-label="FAQ enabled"
+              aria-label={t("faqEnabled")}
               checked={faq.enabled}
               onCheckedChange={(checked) =>
                 onChange(
@@ -726,7 +729,9 @@ function FaqList({
                 )
               }
             />
-            <span className="flex-1 text-xs text-muted-foreground">Enabled</span>
+            <span className="flex-1 text-xs text-muted-foreground">
+              {t("enabled")}
+            </span>
             <button
               type="button"
               onClick={() => onChange(resequence(moveItem(faqs, index, -1)))}
@@ -744,7 +749,7 @@ function FaqList({
             <button
               type="button"
               onClick={() => {
-                if (!window.confirm("Delete this FAQ?")) return;
+                if (!window.confirm(t("deleteThisFaq"))) return;
                 onChange(resequence(faqs.filter((_, i) => i !== index)));
               }}
               className="flex h-7 w-7 items-center justify-center rounded-md border border-destructive/20 text-xs text-destructive hover:bg-destructive/10"
@@ -762,7 +767,7 @@ function FaqList({
                 ),
               )
             }
-            placeholder="Question"
+            placeholder={t("question")}
           />
           <Textarea
             className="text-sm"
@@ -774,7 +779,7 @@ function FaqList({
                 ),
               )
             }
-            placeholder="Answer"
+            placeholder={t("answer")}
           />
         </div>
       ))}
@@ -785,18 +790,19 @@ function FaqList({
 /* ─── Main component ─────────────────────────────────────────────────────── */
 
 type TabKey = "general" | "packages" | "plans" | "modules" | "faqs" | "standard";
-const TABS: { key: TabKey; label: string; icon: LucideIcon }[] = [
-  { key: "general", label: "Page & billing", icon: LayoutTemplate },
-  { key: "packages", label: "Packages & CTAs", icon: Megaphone },
-  { key: "plans", label: "Plans", icon: CreditCard },
-  { key: "modules", label: "Modules & packs", icon: Layers },
-  { key: "faqs", label: "FAQs", icon: CircleHelp },
-  { key: "standard", label: "Standard plan", icon: Package },
+const TABS: { key: TabKey; labelKey: string; icon: LucideIcon }[] = [
+  { key: "general", labelKey: "tabs.general", icon: LayoutTemplate },
+  { key: "packages", labelKey: "tabs.packages", icon: Megaphone },
+  { key: "plans", labelKey: "tabs.plans", icon: CreditCard },
+  { key: "modules", labelKey: "tabs.modules", icon: Layers },
+  { key: "faqs", labelKey: "tabs.faqs", icon: CircleHelp },
+  { key: "standard", labelKey: "tabs.standard", icon: Package },
 ];
 
 export default function PricingAdminPage({
   initialData,
 }: PricingAdminPageProps) {
+  const t = useTranslations("admin.pricing");
   const [tab, setTab] = useState<TabKey>("general");
   const [, setMeasured] = useState(0);
   useEffect(() => {
@@ -859,7 +865,7 @@ export default function PricingAdminPage({
       const response = await fetch(`/api/admin/pricing?locale=${nextLocale}`);
       const payload = await response.json();
       if (!response.ok) {
-        setError(payload.error ?? "Failed to load locale data");
+        setError(payload.error ?? t("loadLocaleFailed"));
         return;
       }
       const nextForm = buildAdminFormState(payload);
@@ -916,7 +922,9 @@ export default function PricingAdminPage({
 
     if (duplicatePlanIds.length > 0) {
       setError(
-        `Duplicate plan key found: ${Array.from(new Set(duplicatePlanIds)).join(", ")}`,
+        t("duplicatePlanKey", {
+          keys: Array.from(new Set(duplicatePlanIds)).join(", "),
+        }),
       );
       return;
     }
@@ -1045,8 +1053,8 @@ export default function PricingAdminPage({
         const details = result.details ? JSON.stringify(result.details) : null;
         setError(
           details
-            ? `${result.error ?? "Failed to save pricing data"}: ${details}`
-            : (result.error ?? "Failed to save pricing data"),
+            ? `${result.error ?? t("saveFailed")}: ${details}`
+            : (result.error ?? t("saveFailed")),
         );
         return;
       }
@@ -1054,7 +1062,7 @@ export default function PricingAdminPage({
       setForm(savedForm);
       initialSnapshotRef.current = JSON.stringify(savedForm);
       setActivePlanIndex(0);
-      setStatus("Pricing content saved.");
+      setStatus(t("saved"));
     });
   }
 
@@ -1074,18 +1082,17 @@ export default function PricingAdminPage({
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold tracking-tight text-foreground">
-              Pricing
+              {t("pricing")}
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Visibility, content, plans, modules and FAQs for the public
-              pricing page.
+              {t("visibilityContentPlansModulesAnd")}
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2.5">
             <select
               value={locale}
               onChange={(e) => loadLocale(e.target.value as PricingLocale)}
-              aria-label="Language"
+              aria-label={t("language")}
               className="h-10 rounded-xl border-0 bg-card px-3 text-sm font-medium text-foreground shadow-sm ring-1 ring-border"
             >
               {locales.map((option) => (
@@ -1094,7 +1101,7 @@ export default function PricingAdminPage({
             </select>
             <Button asChild variant="outline" className="h-10 rounded-xl">
               <a href={`/${locale}/pricing`} target="_blank" rel="noreferrer">
-                <ExternalLink /> Preview
+                <ExternalLink /> {t("preview")}
               </a>
             </Button>
           </div>
@@ -1109,7 +1116,7 @@ export default function PricingAdminPage({
           }`}
         >
           <Switch
-            aria-label="Pricing page enabled"
+            aria-label={t("pricingPageEnabled")}
             checked={form.pricingPageEnabled}
             onCheckedChange={(checked) =>
               updateField("pricingPageEnabled", checked)
@@ -1117,12 +1124,12 @@ export default function PricingAdminPage({
           />
           <div className="min-w-0 flex-1">
             <div className="text-sm font-bold text-foreground">
-              Pricing page is {form.pricingPageEnabled ? "live" : "hidden"}
+              {form.pricingPageEnabled ? t("pricingPageIsLive") : t("pricingPageIsHidden")}
             </div>
             <div className="text-xs text-muted-foreground">
               {form.pricingPageEnabled
-                ? "Visitors can see Pricing in the menu and open the page."
-                : "Pricing is removed from the menu and direct links are blocked."}
+                ? t("visitorsCanSeePricingIn")
+                : t("pricingIsRemovedFromThe")}
             </div>
           </div>
           <span
@@ -1132,7 +1139,7 @@ export default function PricingAdminPage({
                 : "bg-muted-foreground/20 text-muted-foreground"
             }`}
           >
-            {form.pricingPageEnabled ? "LIVE" : "OFF"}
+            {form.pricingPageEnabled ? t("live") : t("off2")}
           </span>
         </div>
 
@@ -1150,10 +1157,10 @@ export default function PricingAdminPage({
         {/* Section tabs */}
         <div
           role="tablist"
-          aria-label="Pricing sections"
+          aria-label={t("pricingSections")}
           className="sticky top-24 z-20 flex gap-1.5 overflow-x-auto rounded-2xl bg-card/90 p-1.5 shadow-sm ring-1 ring-border backdrop-blur-xl"
         >
-          {TABS.map(({ key, label, icon: Icon }) => (
+          {TABS.map(({ key, labelKey, icon: Icon }) => (
             <button
               key={key}
               type="button"
@@ -1167,7 +1174,7 @@ export default function PricingAdminPage({
               }`}
             >
               <Icon className="size-4" />
-              {label}
+              {t(labelKey)}
             </button>
           ))}
         </div>
@@ -1176,120 +1183,120 @@ export default function PricingAdminPage({
           <div className="space-y-6">
         {/* ── Metadata & Billing ──────────────────────────────────────────── */}
         <div className="grid gap-6 lg:grid-cols-2">
-          <SectionCard title="Metadata & hero">
+          <SectionCard title={t("metadataHero")}>
             <div className="space-y-3">
-              <Field label="Page title">
+              <Field label={t("pageTitle")}>
                 <Input
                   value={form.metadataTitle}
                   onChange={(e) => updateField("metadataTitle", e.target.value)}
-                  placeholder="e.g. Pricing — Your Brand"
+                  placeholder={t("eGPricingYourBrand")}
                 />
               </Field>
-              <Field label="Meta description">
+              <Field label={t("metaDescription")}>
                 <Textarea
                   value={form.metadataDescription}
                   onChange={(e) =>
                     updateField("metadataDescription", e.target.value)
                   }
-                  placeholder="Short SEO description"
+                  placeholder={t("shortSeoDescription")}
                 />
               </Field>
-              <Field label="Eyebrow">
+              <Field label={t("eyebrow")}>
                 <Input
                   value={form.heroEyebrow}
                   onChange={(e) => updateField("heroEyebrow", e.target.value)}
-                  placeholder="e.g. Simple & transparent"
+                  placeholder={t("eGSimpleTransparent")}
                 />
               </Field>
-              <Field label="Hero title">
+              <Field label={t("heroTitle")}>
                 <Input
                   value={form.heroTitle}
                   onChange={(e) => updateField("heroTitle", e.target.value)}
-                  placeholder="Main heading"
+                  placeholder={t("mainHeading")}
                 />
               </Field>
-              <Field label="Title highlight">
+              <Field label={t("titleHighlight")}>
                 <Input
                   value={form.heroTitleHighlight}
                   onChange={(e) =>
                     updateField("heroTitleHighlight", e.target.value)
                   }
-                  placeholder="Highlighted word(s)"
+                  placeholder={t("highlightedWordS")}
                 />
               </Field>
-              <Field label="Hero description">
+              <Field label={t("heroDescription")}>
                 <Textarea
                   value={form.heroDescription}
                   onChange={(e) =>
                     updateField("heroDescription", e.target.value)
                   }
-                  placeholder="Sub-heading paragraph"
+                  placeholder={t("subHeadingParagraph")}
                 />
               </Field>
             </div>
           </SectionCard>
 
-          <SectionCard title="Billing labels">
+          <SectionCard title={t("billingLabels")}>
             <div className="grid grid-cols-2 gap-3">
-              <Field label="Yearly">
+              <Field label={t("yearly")}>
                 <Input
                   value={form.billingYearly}
                   onChange={(e) => updateField("billingYearly", e.target.value)}
-                  placeholder="Yearly"
+                  placeholder={t("yearly")}
                 />
               </Field>
-              <Field label="Yearly discount">
+              <Field label={t("yearlyDiscount")}>
                 <Input
                   value={form.billingYearlyDiscount}
                   onChange={(e) =>
                     updateField("billingYearlyDiscount", e.target.value)
                   }
-                  placeholder="e.g. Save 30%"
+                  placeholder={t("eGSave30")}
                 />
               </Field>
-              <Field label="Semiannual">
+              <Field label={t("semiannual")}>
                 <Input
                   value={form.billingSemiannual}
                   onChange={(e) =>
                     updateField("billingSemiannual", e.target.value)
                   }
-                  placeholder="6 months"
+                  placeholder={t("6Months")}
                 />
               </Field>
-              <Field label="Semiannual discount">
+              <Field label={t("semiannualDiscount")}>
                 <Input
                   value={form.billingSemiannualDiscount}
                   onChange={(e) =>
                     updateField("billingSemiannualDiscount", e.target.value)
                   }
-                  placeholder="e.g. Save 15%"
+                  placeholder={t("eGSave15")}
                 />
               </Field>
-              <Field label="Quarterly">
+              <Field label={t("quarterly")}>
                 <Input
                   value={form.billingQuarterly}
                   onChange={(e) =>
                     updateField("billingQuarterly", e.target.value)
                   }
-                  placeholder="3 months"
+                  placeholder={t("3Months")}
                 />
               </Field>
-              <Field label="Quarterly discount">
+              <Field label={t("quarterlyDiscount")}>
                 <Input
                   value={form.billingQuarterlyDiscount}
                   onChange={(e) =>
                     updateField("billingQuarterlyDiscount", e.target.value)
                   }
-                  placeholder="e.g. Save 10%"
+                  placeholder={t("eGSave10")}
                 />
               </Field>
-              <Field label="Monthly">
+              <Field label={t("monthly")}>
                 <Input
                   value={form.billingMonthly}
                   onChange={(e) =>
                     updateField("billingMonthly", e.target.value)
                   }
-                  placeholder="Monthly"
+                  placeholder={t("monthly")}
                 />
               </Field>
             </div>
@@ -1301,132 +1308,132 @@ export default function PricingAdminPage({
         {tab === "packages" && (
           <div className="space-y-6">
         {/* ── Package labels & CTAs ────────────────────────────────────────── */}
-        <SectionCard title="Package labels & CTA sections">
+        <SectionCard title={t("packageLabelsCtaSections")}>
           <div className="grid gap-3 lg:grid-cols-2">
-            <Field label="Currency rate label">
+            <Field label={t("currencyRateLabel")}>
               <Input
                 value={form.currencyRate}
                 onChange={(e) => updateField("currencyRate", e.target.value)}
-                placeholder="e.g. 1 USD = 110 BDT"
+                placeholder={t("eG1Usd110")}
               />
             </Field>
-            <Field label="Per year label">
+            <Field label={t("perYearLabel")}>
               <Input
                 value={form.perYear}
                 onChange={(e) => updateField("perYear", e.target.value)}
-                placeholder="/ year"
+                placeholder={t("year")}
               />
             </Field>
-            <Field label="Per user per month">
+            <Field label={t("perUserPerMonth")}>
               <Input
                 value={form.perUserPerMonth}
                 onChange={(e) => updateField("perUserPerMonth", e.target.value)}
-                placeholder="/ user / month"
+                placeholder={t("userMonth")}
               />
             </Field>
-            <Field label="Total per month label">
+            <Field label={t("totalPerMonthLabel")}>
               <Input
                 value={form.totalPerMonth}
                 onChange={(e) => updateField("totalPerMonth", e.target.value)}
-                placeholder="Total / month"
+                placeholder={t("totalMonth")}
               />
             </Field>
-            <Field label="You save template">
+            <Field label={t("youSaveTemplate")}>
               <Input
                 value={form.youSave}
                 onChange={(e) => updateField("youSave", e.target.value)}
-                placeholder="You save {amount}"
+                placeholder={t("youSave")}
               />
             </Field>
-            <Field label="One-time setup label">
+            <Field label={t("oneTimeSetupLabel")}>
               <Input
                 value={form.oneTimeSetup}
                 onChange={(e) => updateField("oneTimeSetup", e.target.value)}
-                placeholder="One-time setup fee"
+                placeholder={t("oneTimeSetupFee")}
               />
             </Field>
-            <Field label="Monthly charge label">
+            <Field label={t("monthlyChargeLabel")}>
               <Input
                 value={form.monthlyCharge}
                 onChange={(e) => updateField("monthlyCharge", e.target.value)}
-                placeholder="Monthly charge"
+                placeholder={t("monthlyCharge")}
               />
             </Field>
-            <Field label="Server maintenance">
+            <Field label={t("serverMaintenance")}>
               <Input
                 value={form.serverMaintenance}
                 onChange={(e) =>
                   updateField("serverMaintenance", e.target.value)
                 }
-                placeholder="Server maintenance"
+                placeholder={t("serverMaintenance")}
               />
             </Field>
-            <Field label="Users label">
+            <Field label={t("usersLabel")}>
               <Input
                 value={form.usersLabel}
                 onChange={(e) => updateField("usersLabel", e.target.value)}
-                placeholder="Users"
+                placeholder={t("users")}
               />
             </Field>
-            <Field label="Included features heading">
+            <Field label={t("includedFeaturesHeading")}>
               <Input
                 value={form.includedFeaturesHeading}
                 onChange={(e) =>
                   updateField("includedFeaturesHeading", e.target.value)
                 }
-                placeholder="What's included"
+                placeholder={t("whatSIncluded")}
               />
             </Field>
-            <Field label="Final CTA title">
+            <Field label={t("finalCtaTitle")}>
               <Input
                 value={form.finalCtaTitle}
                 onChange={(e) => updateField("finalCtaTitle", e.target.value)}
-                placeholder="Ready to get started?"
+                placeholder={t("readyToGetStarted")}
               />
             </Field>
-            <Field label="Final CTA button">
+            <Field label={t("finalCtaButton")}>
               <Input
                 value={form.finalCtaButton}
                 onChange={(e) => updateField("finalCtaButton", e.target.value)}
-                placeholder="Talk to sales"
+                placeholder={t("talkToSales")}
               />
             </Field>
           </div>
           <div className="mt-3 space-y-3">
-            <Field label="Final CTA description">
+            <Field label={t("finalCtaDescription")}>
               <Textarea
                 value={form.finalCtaDescription}
                 onChange={(e) =>
                   updateField("finalCtaDescription", e.target.value)
                 }
-                placeholder="CTA supporting text"
+                placeholder={t("ctaSupportingText")}
               />
             </Field>
-            <Field label="Bottom note text">
+            <Field label={t("bottomNoteText")}>
               <Textarea
                 value={form.bottomNoteText}
                 onChange={(e) => updateField("bottomNoteText", e.target.value)}
-                placeholder="Bottom note copy"
+                placeholder={t("bottomNoteCopy")}
               />
             </Field>
           </div>
           <div className="mt-3 grid grid-cols-2 gap-3">
-            <Field label="Bottom note — success packs btn">
+            <Field label={t("bottomNoteSuccessPacksBtn")}>
               <Input
                 value={form.bottomNoteSuccessPacks}
                 onChange={(e) =>
                   updateField("bottomNoteSuccessPacks", e.target.value)
                 }
-                placeholder="Explore success packs"
+                placeholder={t("exploreSuccessPacks")}
               />
             </Field>
-            <Field label="Bottom note — contact sales btn">
+            <Field label={t("bottomNoteContactSalesBtn")}>
               <Input
                 value={form.bottomNoteContactSales}
                 onChange={(e) =>
                   updateField("bottomNoteContactSales", e.target.value)
                 }
-                placeholder="Contact sales"
+                placeholder={t("contactSales")}
               />
             </Field>
           </div>
@@ -1437,7 +1444,7 @@ export default function PricingAdminPage({
         {tab === "plans" && (
           <div className="space-y-6">
         {/* ── Plans carousel ───────────────────────────────────────────────── */}
-        <SectionCard title="Plans">
+        <SectionCard title={t("plans")}>
           <div className="mb-4 flex items-center justify-between">
             {/* Dot navigation */}
             <div className="flex items-center gap-1.5">
@@ -1452,7 +1459,7 @@ export default function PricingAdminPage({
                       ? "w-5 bg-primary"
                       : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50",
                   ].join(" ")}
-                  aria-label={`Select plan ${i + 1}`}
+                  aria-label={t("selectPlan", { number: i + 1 })}
                 />
               ))}
             </div>
@@ -1486,8 +1493,8 @@ export default function PricingAdminPage({
                   const nextPlanNumber = form.plans.length + 1;
                   const newPlan: EditablePlan = {
                     id: `custom-plan-${nextPlanNumber}`,
-                    name: `New Plan ${nextPlanNumber}`,
-                    tagline: "Custom pricing package",
+                    name: t("newPlanName", { number: nextPlanNumber }),
+                    tagline: t("newPlanTagline"),
                     badge: "",
                     icon: "📦",
                     accent: "#1D9E75",
@@ -1497,17 +1504,17 @@ export default function PricingAdminPage({
                     monthlyFee: "",
                     quarterlyFee: "",
                     serverFee: "",
-                    cta: "Get started",
+                    cta: t("newPlanCta"),
                     order: form.plans.length,
                     enabled: true,
-                    features: ["Core module access"],
+                    features: [t("newPlanFeature")],
                   };
                   updateField("plans", resequence([...form.plans, newPlan]));
                   setActivePlanIndex(form.plans.length);
                 }}
                 className="btn-gradient text-white"
               >
-                + Add plan
+                {t("addPlan")}
               </Button>
             </div>
           </div>
@@ -1542,13 +1549,13 @@ export default function PricingAdminPage({
           <div className="space-y-6">
         {/* ── Modules & Success packs ──────────────────────────────────────── */}
         <div className="grid gap-6 lg:grid-cols-2">
-          <SectionCard title="Modules">
-            <Field label="Section title">
+          <SectionCard title={t("modules")}>
+            <Field label={t("sectionTitle")}>
               <Input
                 className="mb-4"
                 value={form.modulesTitle}
                 onChange={(e) => updateField("modulesTitle", e.target.value)}
-                placeholder="Modules section title"
+                placeholder={t("modulesSectionTitle")}
               />
             </Field>
             <div className="space-y-2">
@@ -1558,7 +1565,7 @@ export default function PricingAdminPage({
                   className="flex items-center gap-2 rounded-lg border border-border p-2"
                 >
                   <Switch
-                    aria-label="Module enabled"
+                    aria-label={t("moduleEnabled")}
                     checked={module.enabled}
                     onCheckedChange={(checked) =>
                       updateField(
@@ -1582,7 +1589,7 @@ export default function PricingAdminPage({
                         ),
                       )
                     }
-                    placeholder="Module name"
+                    placeholder={t("moduleName")}
                   />
                   <button
                     type="button"
@@ -1634,65 +1641,65 @@ export default function PricingAdminPage({
                 ])
               }
             >
-              + Add module
+              {t("addModule")}
             </Button>
           </SectionCard>
 
-          <SectionCard title="Success packs content">
+          <SectionCard title={t("successPacksContent")}>
             <div className="space-y-3">
-              <Field label="Back button">
+              <Field label={t("backButton")}>
                 <Input
                   value={form.successBackButton}
                   onChange={(e) =>
                     updateField("successBackButton", e.target.value)
                   }
-                  placeholder="← Back"
+                  placeholder={t("back")}
                 />
               </Field>
-              <Field label="Title">
+              <Field label={t("title")}>
                 <Input
                   value={form.successTitle}
                   onChange={(e) => updateField("successTitle", e.target.value)}
-                  placeholder="Success packs title"
+                  placeholder={t("successPacksTitle")}
                 />
               </Field>
-              <Field label="Description">
+              <Field label={t("description")}>
                 <Textarea
                   value={form.successDescription}
                   onChange={(e) =>
                     updateField("successDescription", e.target.value)
                   }
-                  placeholder="Description"
+                  placeholder={t("description")}
                 />
               </Field>
-              <Field label="Estimator badge">
+              <Field label={t("estimatorBadge")}>
                 <Input
                   value={form.successEstimatorBadge}
                   onChange={(e) =>
                     updateField("successEstimatorBadge", e.target.value)
                   }
-                  placeholder="Badge text"
+                  placeholder={t("badgeText")}
                 />
               </Field>
-              <Field label="Comparison table feature header">
+              <Field label={t("comparisonTableFeatureHeader")}>
                 <Input
                   value={form.successFeatureHeader}
                   onChange={(e) =>
                     updateField("successFeatureHeader", e.target.value)
                   }
-                  placeholder="Feature"
+                  placeholder={t("feature")}
                 />
               </Field>
-              <Field label="FAQ title">
+              <Field label={t("faqTitle")}>
                 <Input
                   value={form.successFaqTitle}
                   onChange={(e) =>
                     updateField("successFaqTitle", e.target.value)
                   }
-                  placeholder="Frequently asked questions"
+                  placeholder={t("frequentlyAskedQuestions")}
                 />
               </Field>
-              <Field label="Notes (one per line)">
+              <Field label={t("notesOnePerLine")}>
                 <Textarea
                   value={form.successNotes.join("\n")}
                   onChange={(e) =>
@@ -1704,7 +1711,7 @@ export default function PricingAdminPage({
                         .filter(Boolean),
                     )
                   }
-                  placeholder={"Note line 1\nNote line 2"}
+                  placeholder={t("noteLine1NoteLine")}
                 />
               </Field>
             </div>
@@ -1719,8 +1726,8 @@ export default function PricingAdminPage({
         <div className="grid gap-6 lg:grid-cols-2">
           {(
             [
-              ["pricingFaqs", "Pricing FAQs", "Main pricing page"],
-              ["successFaqs", "Success pack FAQs", "Success packs page"],
+              ["pricingFaqs", t("faqPricingTitle"), t("faqPricingSubtitle")],
+              ["successFaqs", t("faqSuccessTitle"), t("faqSuccessSubtitle")],
             ] as const
           ).map(([key, title, subtitle]) => (
             <SectionCard key={key} title={title}>
@@ -1747,7 +1754,7 @@ export default function PricingAdminPage({
                   ] as FormState[typeof key])
                 }
               >
-                + Add FAQ
+                {t("addFaq")}
               </Button>
             </SectionCard>
           ))}
@@ -1758,128 +1765,128 @@ export default function PricingAdminPage({
         {tab === "standard" && (
           <div className="space-y-6">
         {/* ── Standard plan content ────────────────────────────────────────── */}
-        <SectionCard title="Standard plan content">
+        <SectionCard title={t("standardPlanContent")}>
           <div className="grid gap-3 lg:grid-cols-2">
-            <Field label="Back button">
+            <Field label={t("backButton")}>
               <Input
                 value={form.standardBackButton}
                 onChange={(e) =>
                   updateField("standardBackButton", e.target.value)
                 }
-                placeholder="← Back to plans"
+                placeholder={t("backToPlans")}
               />
             </Field>
-            <Field label="Title">
+            <Field label={t("title")}>
               <Input
                 value={form.standardTitle}
                 onChange={(e) => updateField("standardTitle", e.target.value)}
-                placeholder="Standard plan title"
+                placeholder={t("standardPlanTitle")}
               />
             </Field>
-            <Field label="Description">
+            <Field label={t("description")}>
               <Textarea
                 value={form.standardDescription}
                 onChange={(e) =>
                   updateField("standardDescription", e.target.value)
                 }
-                placeholder="Plan description"
+                placeholder={t("planDescription")}
               />
             </Field>
-            <Field label="User count label">
+            <Field label={t("userCountLabel")}>
               <Input
                 value={form.standardUserCountLabel}
                 onChange={(e) =>
                   updateField("standardUserCountLabel", e.target.value)
                 }
-                placeholder="Number of users"
+                placeholder={t("numberOfUsers")}
               />
             </Field>
-            <Field label="Implementation label">
+            <Field label={t("implementationLabel")}>
               <Input
                 value={form.standardImplementationLabel}
                 onChange={(e) =>
                   updateField("standardImplementationLabel", e.target.value)
                 }
-                placeholder="Implementation option"
+                placeholder={t("implementationOption")}
               />
             </Field>
-            <Field label="Success pack label">
+            <Field label={t("successPackLabel")}>
               <Input
                 value={form.standardSuccessPack}
                 onChange={(e) =>
                   updateField("standardSuccessPack", e.target.value)
                 }
-                placeholder="Success pack"
+                placeholder={t("successPack")}
               />
             </Field>
-            <Field label="Success pack sublabel">
+            <Field label={t("successPackSublabel")}>
               <Input
                 value={form.standardSuccessPackSublabel}
                 onChange={(e) =>
                   updateField("standardSuccessPackSublabel", e.target.value)
                 }
-                placeholder="Sublabel"
+                placeholder={t("sublabel")}
               />
             </Field>
-            <Field label="Success pack message">
+            <Field label={t("successPackMessage")}>
               <Textarea
                 value={form.standardSuccessPackMessage}
                 onChange={(e) =>
                   updateField("standardSuccessPackMessage", e.target.value)
                 }
-                placeholder="Message text"
+                placeholder={t("messageText")}
               />
             </Field>
-            <Field label="Read more button">
+            <Field label={t("readMoreButton")}>
               <Input
                 value={form.standardReadMoreButton}
                 onChange={(e) =>
                   updateField("standardReadMoreButton", e.target.value)
                 }
-                placeholder="Read more"
+                placeholder={t("readMore")}
               />
             </Field>
-            <Field label="Total per month label">
+            <Field label={t("totalPerMonthLabel")}>
               <Input
                 value={form.standardTotalPerMonth}
                 onChange={(e) =>
                   updateField("standardTotalPerMonth", e.target.value)
                 }
-                placeholder="Total / month"
+                placeholder={t("totalMonth")}
               />
             </Field>
-            <Field label="Buy now label">
+            <Field label={t("buyNowLabel")}>
               <Input
                 value={form.standardBuyNow}
                 onChange={(e) => updateField("standardBuyNow", e.target.value)}
-                placeholder="Buy now"
+                placeholder={t("buyNow")}
               />
             </Field>
-            <Field label="First year discount label">
+            <Field label={t("firstYearDiscountLabel")}>
               <Input
                 value={form.standardFirstYearDiscount}
                 onChange={(e) =>
                   updateField("standardFirstYearDiscount", e.target.value)
                 }
-                placeholder="First year discount"
+                placeholder={t("firstYearDiscount")}
               />
             </Field>
-            <Field label="Per user note">
+            <Field label={t("perUserNote")}>
               <Input
                 value={form.standardPerUserNote}
                 onChange={(e) =>
                   updateField("standardPerUserNote", e.target.value)
                 }
-                placeholder="Per user note"
+                placeholder={t("perUserNote")}
               />
             </Field>
-            <Field label="Print quote label">
+            <Field label={t("printQuoteLabel")}>
               <Input
                 value={form.standardQuotaPrint}
                 onChange={(e) =>
                   updateField("standardQuotaPrint", e.target.value)
                 }
-                placeholder="Print quote"
+                placeholder={t("printQuote")}
               />
             </Field>
           </div>
@@ -1889,7 +1896,7 @@ export default function PricingAdminPage({
       </div>
 
       {/* Floating Save button (bottom-right). Pulses when there are unsaved changes. */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 end-6 z-50">
         <button
           type="button"
           onClick={handleSave}
@@ -1900,7 +1907,7 @@ export default function PricingAdminPage({
               : "inline-flex items-center gap-2 px-4 py-2 rounded-lg btn-gradient text-white shadow-lg ring-2 ring-primary/50 animate-pulse"
           }
         >
-          {isPending ? "Saving…" : "Save changes"}
+          {isPending ? t("saving") : t("saveChanges")}
         </button>
       </div>
     </div>

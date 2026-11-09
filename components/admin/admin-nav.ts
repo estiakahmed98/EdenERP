@@ -7,52 +7,52 @@ import {
 } from "lucide-react";
 
 export type AdminNavItem = {
-  name: string;
+  /** Key under `admin.nav.items` (holds `name` and `description`). */
+  key: string;
   href: string;
   icon: LucideIcon;
-  description: string;
 };
 
-export type AdminNavGroup = { label: string; items: AdminNavItem[] };
+export type AdminNavGroup = {
+  /** Key under `admin.nav.groups`. */
+  key: string;
+  items: AdminNavItem[];
+};
 
 /** Single source of truth for the admin sidebar, header title and breadcrumbs. */
 export const ADMIN_NAV: AdminNavGroup[] = [
   {
-    label: "Overview",
+    key: "overview",
     items: [
       {
-        name: "Dashboard",
+        key: "dashboard",
         href: "/admin",
         icon: LayoutDashboard,
-        description: "Traffic, content and activity at a glance",
       },
     ],
   },
   {
-    label: "Sales",
+    key: "sales",
     items: [
       {
-        name: "Demo requests",
+        key: "demoBookings",
         href: "/admin/demo-bookings",
         icon: CalendarCheck,
-        description: "Track, follow up and close demo leads",
       },
       {
-        name: "Pricing",
+        key: "pricing",
         href: "/admin/pricing",
         icon: BadgeDollarSign,
-        description: "Plans, modules and public pricing page",
       },
     ],
   },
   {
-    label: "Content",
+    key: "content",
     items: [
       {
-        name: "Blog",
+        key: "blog",
         href: "/admin/blog",
         icon: BookOpen,
-        description: "Write and publish blog posts",
       },
     ],
   },

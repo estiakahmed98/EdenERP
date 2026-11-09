@@ -35,6 +35,8 @@ import {
   FaInternetExplorer,
 } from "react-icons/fa";
 
+import { useTranslations } from "next-intl";
+
 import AdminRecentBlogs from "./blog/AdminRecentBlogs";
 
 type ApiBlog = {
@@ -142,15 +144,18 @@ const TableSkeleton: React.FC<{ rows?: number; cols?: number }> = React.memo(
 TableSkeleton.displayName = "TableSkeleton";
 
 // ---------- Analytics helpers ----------
-const fmtSec = (sec: number) => {
-  if (!sec || sec <= 0) return "0s";
+const formatSeconds = (
+  sec: number,
+  tr: ReturnType<typeof useTranslations>,
+) => {
+  if (!sec || sec <= 0) return tr("duration.zero");
   const m = Math.floor(sec / 60);
   const s = Math.floor(sec % 60);
-  if (m <= 0) return `${s}s`;
+  if (m <= 0) return tr("duration.seconds", { s });
   const h = Math.floor(m / 60);
   const mm = m % 60;
-  if (h <= 0) return `${m}m ${s}s`;
-  return `${h}h ${mm}m`;
+  if (h <= 0) return tr("duration.minutesSeconds", { m, s });
+  return tr("duration.hoursMinutes", { h, m: mm });
 };
 function toISO(d: Date) {
   return d.toISOString();
@@ -243,6 +248,8 @@ function formatBdTime(date: Date | null) {
 }
 
 const AdminDashboard: React.FC = () => {
+  const tr = useTranslations("admin.dashboard");
+  const fmtSec = (sec: number) => formatSeconds(sec, tr);
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [isLoadingBlogs, setIsLoadingBlogs] = useState<boolean>(true);
   const [errorBlogs, setErrorBlogs] = useState<string | null>(null);
@@ -267,16 +274,16 @@ const AdminDashboard: React.FC = () => {
   const [deviceTab, setDeviceTab] = useState<DeviceTabKey>("deviceType");
 
   const tabOptions: Array<{ key: TabKey; label: string }> = [
-    { key: "traffic", label: "Traffic" },
-    { key: "sources", label: "Sources" },
-    { key: "geo", label: "Geo" },
-    { key: "devices", label: "Devices" },
+    { key: "traffic", label: tr("tabs.traffic") },
+    { key: "sources", label: tr("tabs.sources") },
+    { key: "geo", label: tr("tabs.geo") },
+    { key: "devices", label: tr("tabs.devices") },
   ];
 
   const deviceTabOptions: Array<{ key: DeviceTabKey; label: string }> = [
-    { key: "deviceType", label: "Device Type" },
-    { key: "browser", label: "Browser" },
-    { key: "os", label: "Operating System" },
+    { key: "deviceType", label: tr("deviceTabs.deviceType") },
+    { key: "browser", label: tr("deviceTabs.browser") },
+    { key: "os", label: tr("deviceTabs.os") },
   ];
 
   const BrowserLogo: React.FC<{ name?: string }> = ({ name }) => {
@@ -335,7 +342,7 @@ const AdminDashboard: React.FC = () => {
       } catch (err: unknown) {
         if (isAbortError(err)) return;
         console.error(err);
-        setErrorBlogs("Failed to fetch blogs. Please try again later.");
+        setErrorBlogs(tr("blogs.fetchFailed"));
       } finally {
         if (!controller?.signal.aborted) {
           setIsLoadingBlogs(false);
@@ -371,7 +378,7 @@ const AdminDashboard: React.FC = () => {
 
   // ---------- Blog actions ----------
   const handleDeleteClick = useCallback(async (id: number) => {
-    if (!window.confirm("Are you sure you want to delete this blog post?"))
+    if (!window.confirm(tr("blogs.confirmDelete")))
       return;
     try {
       const resp = await fetch("/api/blog", {
@@ -384,7 +391,7 @@ const AdminDashboard: React.FC = () => {
         setBlogs((prev) => prev.filter((b) => b.id !== id));
       });
     } catch {
-      alert("Failed to delete blog post. Please try again.");
+      alert(tr("blogs.deleteFailed"));
     }
   }, []);
 
@@ -421,7 +428,7 @@ const AdminDashboard: React.FC = () => {
         setEditBlogData(null);
       });
     } catch {
-      alert("Failed to update blog post. Please try again.");
+      alert(tr("blogs.updateFailed"));
     }
   }, []);
 
@@ -462,7 +469,7 @@ const AdminDashboard: React.FC = () => {
         const { from, to, bucket: resolvedBucket } = resolveRange();
         if (to <= from) {
           setAnalyticsError(
-            "Invalid date range. End date must be after start date.",
+            tr("range.invalid"),
           );
           setAnalyticsLoading(false);
           return;
@@ -505,7 +512,7 @@ const AdminDashboard: React.FC = () => {
         if (isAbortError(e)) return;
         console.error(e);
         setAnalyticsError(
-          e instanceof Error ? e.message : "Failed to load analytics.",
+          e instanceof Error ? e.message : tr("range.loadFailed"),
         );
       } finally {
         setAnalyticsLoading(false);
@@ -539,7 +546,7 @@ const AdminDashboard: React.FC = () => {
   const deviceTypePie = useMemo(
     () =>
       deviceTypeRows.map((r) => ({
-        name: r.name || "Unknown",
+        name: r.name || tr("devices.unknown"),
         value: r.count || 0,
       })),
     [deviceTypeRows],
@@ -552,16 +559,16 @@ const AdminDashboard: React.FC = () => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div>
             <h2 className="text-xl font-semibold text-foreground">
-              Website Analytics
+              {tr("title")}
             </h2>
             <p className="text-sm text-muted-foreground">
-              Visitors, page views, active time, sources, geo & devices
+              {tr("subtitle")}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              {autoRefreshing ? "Refreshing..." : " "}
+              {autoRefreshing ? tr("refreshing") : " "}
               {lastAnalyticsUpdatedAt ? (
-                <span className="ml-2">
-                  Updated (BD): {formatBdTime(lastAnalyticsUpdatedAt)}
+                <span className="ms-2">
+                  {tr("updatedBd", { time: formatBdTime(lastAnalyticsUpdatedAt) })}
                 </span>
               ) : null}
             </p>
@@ -569,16 +576,16 @@ const AdminDashboard: React.FC = () => {
 
           <div className="flex flex-wrap gap-2 items-center">
             <select
-              aria-label="Date range"
+              aria-label={tr("range.label")}
               value={rangePreset}
               onChange={(e) => setRangePreset(e.target.value as RangePreset)}
               className="text-sm border border-input rounded-lg px-3 py-2 bg-background"
             >
-              <option value="today">Today</option>
-              <option value="24h">Last 24h</option>
-              <option value="7d">Last 7 days</option>
-              <option value="30d">Last 30d</option>
-              <option value="custom">Custom</option>
+              <option value="today">{tr("range.today")}</option>
+              <option value="24h">{tr("range.last24h")}</option>
+              <option value="7d">{tr("range.last7d")}</option>
+              <option value="30d">{tr("range.last30d")}</option>
+              <option value="custom">{tr("range.custom")}</option>
             </select>
 
             {rangePreset === "custom" && (
@@ -589,7 +596,7 @@ const AdminDashboard: React.FC = () => {
                   onChange={(e) => setCustomFrom(e.target.value)}
                   className="text-sm border border-input rounded-lg px-3 py-2 bg-background"
                 />
-                <span className="text-muted-foreground text-sm">to</span>
+                <span className="text-muted-foreground text-sm">{tr("range.to")}</span>
                 <input
                   type="date"
                   value={customTo}
@@ -600,15 +607,15 @@ const AdminDashboard: React.FC = () => {
             )}
 
             <select
-              aria-label="Group by"
+              aria-label={tr("bucket.label")}
               value={bucket}
               onChange={(e) => setBucket(e.target.value as AnalyticsBucket)}
               className="text-sm border border-input rounded-lg px-3 py-2 bg-background"
               disabled={rangePreset === "24h"}
-              title={rangePreset === "24h" ? "24h uses hourly buckets" : ""}
+              title={rangePreset === "24h" ? tr("bucket.hourlyOnly") : ""}
             >
-              <option value="hour">Hourly</option>
-              <option value="day">Daily</option>
+              <option value="hour">{tr("bucket.hourly")}</option>
+              <option value="day">{tr("bucket.daily")}</option>
             </select>
           </div>
         </div>
@@ -616,7 +623,7 @@ const AdminDashboard: React.FC = () => {
         {/* KPI Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 mt-5">
           <StatCard
-            title="Live Users"
+            title={tr("kpi.liveUsers")}
             value={
               analyticsLoading
                 ? "…"
@@ -627,7 +634,7 @@ const AdminDashboard: React.FC = () => {
             loading={analyticsLoading || isPending}
           />
           <StatCard
-            title="Total Visitors"
+            title={tr("kpi.totalVisitors")}
             value={
               analyticsLoading
                 ? "…"
@@ -638,7 +645,7 @@ const AdminDashboard: React.FC = () => {
             loading={analyticsLoading || isPending}
           />
           <StatCard
-            title="Page Views"
+            title={tr("kpi.pageViews")}
             value={
               analyticsLoading
                 ? "…"
@@ -649,7 +656,7 @@ const AdminDashboard: React.FC = () => {
             loading={analyticsLoading || isPending}
           />
           <StatCard
-            title="Total Active Time"
+            title={tr("kpi.totalActiveTime")}
             value={
               analyticsLoading
                 ? "…"
@@ -660,7 +667,7 @@ const AdminDashboard: React.FC = () => {
             loading={analyticsLoading || isPending}
           />
           <StatCard
-            title="Avg Active Time"
+            title={tr("kpi.avgActiveTime")}
             value={
               analyticsLoading
                 ? "…"
@@ -699,7 +706,7 @@ const AdminDashboard: React.FC = () => {
             <SkeletonBox className="h-[320px] w-full" />
           ) : !analytics ? (
             <div className="text-muted-foreground text-sm">
-              No analytics data
+              {tr("noData")}
             </div>
           ) : tab === "traffic" ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -708,10 +715,10 @@ const AdminDashboard: React.FC = () => {
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <h3 className="text-base font-semibold text-foreground">
-                      Visitors Over Time
+                      {tr("traffic.visitorsTitle")}
                     </h3>
                     <p className="text-xs text-muted-foreground mt-1">
-                      Unique visitors trend
+                      {tr("traffic.visitorsSubtitle")}
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-ring flex items-center justify-center">
@@ -781,8 +788,10 @@ const AdminDashboard: React.FC = () => {
                           boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
                           fontSize: "12px",
                         }}
-                        formatter={(value) => [value, "Visitors"]}
-                        labelFormatter={(label) => `Time: ${label}`}
+                        formatter={(value) => [value, tr("traffic.visitorsSeries")]}
+                        labelFormatter={(label) =>
+                          tr("traffic.timeLabel", { label: String(label) })
+                        }
                       />
                       <Area
                         type="monotone"
@@ -814,10 +823,10 @@ const AdminDashboard: React.FC = () => {
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <h3 className="text-base font-semibold text-foreground">
-                      Page Views Over Time
+                      {tr("traffic.pageViewsTitle")}
                     </h3>
                     <p className="text-xs text-muted-foreground mt-1">
-                      Total page views trend
+                      {tr("traffic.pageViewsSubtitle")}
                     </p>
                   </div>
                   <div className="w-10 h-10 rounded-full bg-ring flex items-center justify-center">
@@ -887,8 +896,10 @@ const AdminDashboard: React.FC = () => {
                           boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
                           fontSize: "12px",
                         }}
-                        formatter={(value) => [value, "Page Views"]}
-                        labelFormatter={(label) => `Time: ${label}`}
+                        formatter={(value) => [value, tr("traffic.pageViewsSeries")]}
+                        labelFormatter={(label) =>
+                          tr("traffic.timeLabel", { label: String(label) })
+                        }
                       />
                       <Bar
                         dataKey="pageViews"
@@ -903,12 +914,12 @@ const AdminDashboard: React.FC = () => {
                   <div className="flex items-center gap-2 mt-4 pt-3 border-t border-border">
                     <div className="w-3 h-3 rounded-full bg-primary"></div>
                     <span className="text-xs text-muted-foreground">
-                      Total:{" "}
-                      {analytics.series.reduce(
-                        (acc, s) => acc + s.pageViews,
-                        0,
-                      )}{" "}
-                      page views
+                      {tr("traffic.totalPageViews", {
+                        count: analytics.series.reduce(
+                          (acc, s) => acc + s.pageViews,
+                          0,
+                        ),
+                      })}
                     </span>
                   </div>
                 )}
@@ -919,10 +930,10 @@ const AdminDashboard: React.FC = () => {
                 <div className="p-4 border-b border-border bg-muted/20">
                   <div className="flex justify-between items-center">
                     <h3 className="text-base font-semibold text-foreground">
-                      Top Performing Pages
+                      {tr("topPages.title")}
                     </h3>
                     <span className="text-xs text-muted-foreground">
-                      Sorted by views
+                      {tr("topPages.sortedBy")}
                     </span>
                   </div>
                 </div>
@@ -930,17 +941,17 @@ const AdminDashboard: React.FC = () => {
                   <table className="w-full text-sm">
                     <thead className="bg-muted/20 text-xs uppercase text-muted-foreground">
                       <tr>
-                        <th className="px-6 py-4 text-left font-medium">
-                          Path
+                        <th className="px-6 py-4 text-start font-medium">
+                          {tr("topPages.path")}
                         </th>
-                        <th className="px-6 py-4 text-left font-medium">
-                          Views
+                        <th className="px-6 py-4 text-start font-medium">
+                          {tr("topPages.views")}
                         </th>
-                        <th className="px-6 py-4 text-left font-medium">
-                          Avg Active Time
+                        <th className="px-6 py-4 text-start font-medium">
+                          {tr("topPages.avgActiveTime")}
                         </th>
-                        <th className="px-6 py-4 text-left font-medium">
-                          Engagement
+                        <th className="px-6 py-4 text-start font-medium">
+                          {tr("topPages.engagement")}
                         </th>
                       </tr>
                     </thead>
@@ -1002,10 +1013,10 @@ const AdminDashboard: React.FC = () => {
                                 ></div>
                                 <span className="text-sm text-gray-600">
                                   {p.avgActiveTimeSec > 120
-                                    ? "High"
+                                    ? tr("topPages.high")
                                     : p.avgActiveTimeSec > 60
-                                      ? "Medium"
-                                      : "Low"}
+                                      ? tr("topPages.medium")
+                                      : tr("topPages.low")}
                                 </span>
                               </div>
                             </td>
@@ -1021,7 +1032,7 @@ const AdminDashboard: React.FC = () => {
                               <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
                                 <FaFileAlt className="text-muted-foreground" />
                               </div>
-                              <p>No page data available</p>
+                              <p>{tr("topPages.empty")}</p>
                             </div>
                           </td>
                         </tr>
@@ -1036,10 +1047,10 @@ const AdminDashboard: React.FC = () => {
               <div className="flex justify-between items-center mb-4">
                 <div>
                   <h3 className="text-base font-semibold text-foreground">
-                    Traffic Sources
+                    {tr("sources.title")}
                   </h3>
                   <p className="text-xs text-muted-foreground mt-1">
-                    Where your visitors are coming from
+                    {tr("sources.subtitle")}
                   </p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
@@ -1102,7 +1113,7 @@ const AdminDashboard: React.FC = () => {
                           boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
                           fontSize: "12px",
                         }}
-                        formatter={(value) => [value, "Visits"]}
+                        formatter={(value) => [value, tr("sources.visits")]}
                       />
                       <Bar
                         dataKey="count"
@@ -1119,7 +1130,7 @@ const AdminDashboard: React.FC = () => {
                       <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mx-auto mb-3">
                         <FaGlobeAmericas className="text-muted-foreground text-xl" />
                       </div>
-                      <p>No source data available</p>
+                      <p>{tr("sources.empty")}</p>
                     </div>
                   </div>
                 )}
@@ -1130,7 +1141,7 @@ const AdminDashboard: React.FC = () => {
               <div className="bg-card rounded-2xl p-5 border border-border shadow-sm">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-base font-semibold text-foreground">
-                    Geographic Distribution
+                    {tr("geo.title")}
                   </h3>
                   <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
                     <FaGlobeAmericas className="text-primary text-sm" />
@@ -1142,11 +1153,10 @@ const AdminDashboard: React.FC = () => {
                       <FaGlobeAmericas className="text-muted-foreground text-xl" />
                     </div>
                     <p className="text-muted-foreground mb-2">
-                      Geo analytics not configured
+                      {tr("geo.notConfigured")}
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      Enable server-side IP → country/city mapping to see
-                      geographic data
+                      {tr("geo.notConfiguredHint")}
                     </p>
                   </div>
                 ) : (
@@ -1156,7 +1166,7 @@ const AdminDashboard: React.FC = () => {
                       <div className="p-4 border-b border-border bg-muted/20">
                         <h4 className="text-sm font-semibold text-foreground flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full bg-[#BC913A]"></div>
-                          Top Countries
+                          {tr("geo.topCountries")}
                         </h4>
                       </div>
                       <div className="p-2">
@@ -1202,7 +1212,7 @@ const AdminDashboard: React.FC = () => {
                       <div className="p-4 border-b border-border bg-muted/20">
                         <h4 className="text-sm font-semibold text-foreground flex items-center gap-2">
                           <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-                          Top Cities
+                          {tr("geo.topCities")}
                         </h4>
                       </div>
                       <div className="p-2">
@@ -1271,10 +1281,10 @@ const AdminDashboard: React.FC = () => {
                   <div className="bg-card rounded-xl border border-border p-5 shadow-sm">
                     <div className="mb-1">
                       <h3 className="text-sm font-semibold text-foreground">
-                        Device Types
+                        {tr("devices.typesTitle")}
                       </h3>
                       <p className="text-xs text-muted-foreground">
-                        Distribution of device categories
+                        {tr("devices.typesSubtitle")}
                       </p>
                     </div>
 
@@ -1330,7 +1340,7 @@ const AdminDashboard: React.FC = () => {
                       </div>
                     ) : (
                       <div className="h-[260px] flex items-center justify-center text-muted-foreground">
-                        No device data
+                        {tr("devices.typesEmpty")}
                       </div>
                     )}
                   </div>
@@ -1339,10 +1349,10 @@ const AdminDashboard: React.FC = () => {
                 <div className="bg-card rounded-xl border border-border p-5 shadow-sm">
                   <div className="mb-1">
                     <h3 className="text-sm font-semibold text-foreground">
-                      Browser Usage
+                      {tr("devices.browserTitle")}
                     </h3>
                     <p className="text-xs text-muted-foreground">
-                      Top browsers with icons + percentage
+                      {tr("devices.browserSubtitle")}
                     </p>
                   </div>
 
@@ -1390,7 +1400,7 @@ const AdminDashboard: React.FC = () => {
                     </div>
                   ) : (
                     <div className="h-[260px] flex items-center justify-center text-muted-foreground">
-                      No browser data
+                      {tr("devices.browserEmpty")}
                     </div>
                   )}
                 </div>
@@ -1398,10 +1408,10 @@ const AdminDashboard: React.FC = () => {
                 <div className="bg-card rounded-xl border border-border p-5 shadow-sm">
                   <div className="mb-1">
                     <h3 className="text-sm font-semibold text-foreground">
-                      Operating Systems
+                      {tr("devices.osTitle")}
                     </h3>
                     <p className="text-xs text-muted-foreground">
-                      Usage distribution
+                      {tr("devices.osSubtitle")}
                     </p>
                   </div>
 
@@ -1432,7 +1442,7 @@ const AdminDashboard: React.FC = () => {
                     </div>
                   ) : (
                     <div className="h-[260px] flex items-center justify-center text-muted-foreground">
-                      No OS data
+                      {tr("devices.osEmpty")}
                     </div>
                   )}
                 </div>
@@ -1447,10 +1457,10 @@ const AdminDashboard: React.FC = () => {
           <div className="flex items-center justify-between gap-3 mb-4">
             <div>
               <h3 className="text-lg font-semibold text-foreground">
-                Recent blog posts
+                {tr("blogs.title")}
               </h3>
               <p className="text-sm text-muted-foreground">
-                Quick actions for the latest entries
+                {tr("blogs.subtitle")}
               </p>
             </div>
             <button
@@ -1459,7 +1469,7 @@ const AdminDashboard: React.FC = () => {
               className="text-sm px-3 py-2 rounded-lg border border-border bg-background hover:bg-accent text-foreground transition-colors"
               disabled={isLoadingBlogs}
             >
-              {isLoadingBlogs ? "Refreshing..." : "Refresh"}
+              {isLoadingBlogs ? tr("refreshing") : tr("blogs.refresh")}
             </button>
           </div>
 
@@ -1476,14 +1486,20 @@ const AdminDashboard: React.FC = () => {
                 >
                   <div>
                     <p className="text-sm font-semibold text-foreground line-clamp-1">
-                      {blog.post_title || "Untitled post"}
+                      {blog.post_title || tr("blogs.untitled")}
                     </p>
                     <p className="text-xs text-muted-foreground mt-1">
-                      {blog.post_status}
+                      {blog.post_status === "publish"
+                        ? tr("blogs.statusPublished")
+                        : blog.post_status === "draft"
+                          ? tr("blogs.statusDraft")
+                          : blog.post_status === "pending"
+                            ? tr("blogs.statusPending")
+                            : blog.post_status}
                       {" ・ "}
                       {blog._d
                         ? blog._d.toLocaleDateString()
-                        : "Date unavailable"}
+                        : tr("blogs.dateUnavailable")}
                     </p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
@@ -1492,14 +1508,14 @@ const AdminDashboard: React.FC = () => {
                       onClick={() => handleEditClick(blog)}
                       className="px-3 py-1.5 text-xs rounded-lg border border-border bg-background hover:bg-accent text-foreground transition-colors"
                     >
-                      Edit
+                      {tr("blogs.edit")}
                     </button>
                     <button
                       type="button"
                       onClick={() => handleDeleteClick(blog.id)}
                       className="px-3 py-1.5 text-xs rounded-lg border border-destructive/30 text-destructive hover:bg-destructive/10 transition-colors"
                     >
-                      Delete
+                      {tr("blogs.delete")}
                     </button>
                   </div>
                 </li>
@@ -1507,7 +1523,7 @@ const AdminDashboard: React.FC = () => {
             </ul>
           ) : (
             <p className="text-sm text-muted-foreground">
-              No blog posts found.
+              {tr("blogs.empty")}
             </p>
           )}
         </div>
@@ -1529,7 +1545,7 @@ const AdminDashboard: React.FC = () => {
           >
             <div className="flex justify-between items-center p-5 border-b border-border">
               <h2 className="text-xl font-semibold text-foreground">
-                Edit Blog Post
+                {tr("blogs.editTitle")}
               </h2>
               <button
                 onClick={handleEditClose}
@@ -1542,7 +1558,7 @@ const AdminDashboard: React.FC = () => {
             <div className="p-5 space-y-4">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
-                  Post Title
+                  {tr("blogs.postTitle")}
                 </label>
                 <input
                   type="text"
@@ -1559,10 +1575,10 @@ const AdminDashboard: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-1">
-                  Post Status
+                  {tr("blogs.postStatus")}
                 </label>
                 <select
-                  aria-label="Post status"
+                  aria-label={tr("blogs.postStatus")}
                   value={editBlogData.post_status}
                   onChange={(e) =>
                     setEditBlogData({
@@ -1572,9 +1588,9 @@ const AdminDashboard: React.FC = () => {
                   }
                   className="w-full p-3 border border-input rounded-lg bg-background outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2"
                 >
-                  <option value="publish">Published</option>
-                  <option value="draft">Draft</option>
-                  <option value="pending">Pending Review</option>
+                  <option value="publish">{tr("blogs.statusPublished")}</option>
+                  <option value="draft">{tr("blogs.statusDraft")}</option>
+                  <option value="pending">{tr("blogs.statusPending")}</option>
                 </select>
               </div>
             </div>
@@ -1584,13 +1600,13 @@ const AdminDashboard: React.FC = () => {
                 onClick={handleEditClose}
                 className="px-4 py-2 text-foreground border border-border rounded-lg bg-background hover:bg-muted/30"
               >
-                Cancel
+                {tr("blogs.cancel")}
               </button>
               <button
                 onClick={() => handleEditSave(editBlogData)}
                 className="px-4 py-2 btn-gradient text-white rounded-lg hover:opacity-90"
               >
-                Save Changes
+                {tr("blogs.save")}
               </button>
             </div>
           </div>

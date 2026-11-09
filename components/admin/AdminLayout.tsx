@@ -7,6 +7,7 @@ import AdminSidebar, {
 } from "./AdminSidebar";
 import AdminHeader from "./AdminHeader";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLocale } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
 
 interface AdminLayoutProps {
@@ -20,6 +21,7 @@ interface AdminLayoutProps {
 }
 
 const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
+  const dir = useLocale() === "ar" ? "rtl" : "ltr";
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
@@ -30,7 +32,7 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
   );
 
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div dir={dir} className="relative min-h-screen bg-background text-foreground">
       {/* Soft brand glow behind the content */}
       <div
         aria-hidden="true"
@@ -64,10 +66,10 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
               />
 
               <motion.div
-                className="fixed left-0 top-0 z-50 h-full w-72 max-w-[85vw] md:hidden"
-                initial={{ x: "-100%" }}
+                className="fixed start-0 top-0 z-50 h-full w-72 max-w-[85vw] md:hidden"
+                initial={{ x: dir === "rtl" ? "100%" : "-100%" }}
                 animate={{ x: 0 }}
-                exit={{ x: "-100%" }}
+                exit={{ x: dir === "rtl" ? "100%" : "-100%" }}
                 transition={{ type: "spring", stiffness: 260, damping: 30 }}
               >
                 <AdminSidebar
@@ -83,7 +85,7 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
 
         {/* Main content */}
         <div
-          className="min-h-screen min-w-0 flex-1 transition-[padding] duration-300 md:pl-(--content-offset)"
+          className="min-h-screen min-w-0 flex-1 transition-[padding] duration-300 md:ps-(--content-offset)"
           style={
             { "--content-offset": `${contentOffset}px` } as React.CSSProperties
           }

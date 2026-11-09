@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, ChevronDown, Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import {
   DropdownMenu,
@@ -25,6 +26,7 @@ export function StatusPill({
   status: DemoRequestStatus;
   className?: string;
 }) {
+  const t = useTranslations("admin.demo");
   const meta = STATUS_META[status];
   const Icon = meta.icon;
   return (
@@ -36,7 +38,7 @@ export function StatusPill({
       )}
     >
       <Icon className="size-3.5" aria-hidden="true" />
-      {meta.label}
+      {t(`status.${status}.label`)}
     </span>
   );
 }
@@ -51,6 +53,7 @@ export function StatusMenu({
   busy?: boolean;
   onChange: (next: DemoRequestStatus) => void;
 }) {
+  const t = useTranslations("admin.demo");
   const meta = STATUS_META[status];
   const Icon = meta.icon;
 
@@ -60,10 +63,10 @@ export function StatusMenu({
         <button
           type="button"
           disabled={busy}
-          aria-label={`Status: ${meta.label}. Change status`}
+          aria-label={t("status.aria", { status: t(`status.${status}.label`) })}
           onClick={(event) => event.stopPropagation()}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-full py-1 pl-2.5 pr-2 text-xs font-semibold ring-1 ring-inset outline-none transition-[filter,box-shadow] hover:brightness-95 focus-visible:ring-2 disabled:opacity-70",
+            "inline-flex items-center gap-1.5 rounded-full py-1 ps-2.5 pe-2 text-xs font-semibold ring-1 ring-inset outline-none transition-[filter,box-shadow] hover:brightness-95 focus-visible:ring-2 disabled:opacity-70",
             meta.pill,
           )}
         >
@@ -72,7 +75,7 @@ export function StatusMenu({
           ) : (
             <Icon className="size-3.5" aria-hidden="true" />
           )}
-          {meta.label}
+          {t(`status.${status}.label`)}
           <ChevronDown className="size-3.5 opacity-70" aria-hidden="true" />
         </button>
       </DropdownMenuTrigger>
@@ -82,7 +85,7 @@ export function StatusMenu({
         onClick={(event) => event.stopPropagation()}
       >
         <DropdownMenuLabel className="text-xs font-medium text-muted-foreground">
-          Move to…
+          {t("status.moveTo")}
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         {DEMO_STATUSES.map((value) => {
@@ -104,9 +107,9 @@ export function StatusMenu({
                 <ItemIcon className="size-3.5" aria-hidden="true" />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-sm font-medium">{item.label}</span>
+                <span className="block text-sm font-medium">{t(`status.${value}.label`)}</span>
                 <span className="block text-xs text-muted-foreground">
-                  {item.hint}
+                  {t(`status.${value}.hint`)}
                 </span>
               </span>
               {value === status && (

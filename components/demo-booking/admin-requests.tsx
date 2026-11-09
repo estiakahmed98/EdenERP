@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { toast } from "sonner";
+import { useLocale, useTranslations } from "next-intl";
 
 import {
   AlertDialog,
@@ -82,13 +83,14 @@ async function api(method: string, payload?: unknown): Promise<ApiResult> {
   return { ok: response.ok, status: response.status, body };
 }
 
-function messageFor(result: ApiResult, fallback: string) {
+type Translate = ReturnType<typeof useTranslations>;
+
+function messageFor(result: ApiResult, fallback: string, t: Translate) {
   if (result.status === 401)
-    return "Your admin session has expired. Please sign in again.";
-  if (result.status === 409)
-    return "This request was changed elsewhere. The list has been refreshed — try again.";
-  if (result.status === 404) return "This request no longer exists.";
-  if (result.status === 429) return "Too many requests. Please wait a moment.";
+    return t("errors.sessionExpired");
+  if (result.status === 409) return t("errors.conflict");
+  if (result.status === 404) return t("errors.notFound");
+  if (result.status === 429) return t("errors.tooMany");
   return fallback;
 }
 
@@ -101,6 +103,8 @@ function toFieldErrors(result: ApiResult): FieldErrors {
 }
 
 export default function AdminDemoRequests() {
+  const t = useTranslations("admin.demo");
+  const locale = useLocale();
   const [data, setData] = useState<DemoAdminData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -147,12 +151,12 @@ export default function AdminDemoRequests() {
         if (!response.ok)
           throw new Error(
             response.status === 401
-              ? "Your admin session has expired. Please sign in again."
-              : "Requests could not be loaded. Please try again.",
+              ? t("errors.sessionExpired")
+              : t("errors.loadFailed"),
           );
         const value = (await response.json()) as DemoAdminData;
         if (!Array.isArray(value.requests) || typeof value.total !== "number")
-          throw new Error("The server returned an invalid response.");
+          throw new Error(t("errors.invalidResponse"));
         if (call !== sequence.current) return;
         // Deleted the last row of a page → step back.
         if (!value.requests.length && value.total > 0 && value.page > 1) {
@@ -163,7 +167,7 @@ export default function AdminDemoRequests() {
       } catch (cause) {
         if (call !== sequence.current || opts?.signal?.aborted) return;
         setError(
-          cause instanceof Error ? cause.message : "Requests could not be loaded.",
+          cause instanceof Error ? cause.message : t("errors.loadFailedShort"),
         );
       } finally {
         if (call === sequence.current && !opts?.signal?.aborted)
@@ -205,11 +209,14 @@ export default function AdminDemoRequests() {
     if (result.ok && result.body.request) {
       applyRow(result.body.request);
       toast.success(
-        `${row.fullName} moved to “${STATUS_META[next].label}”`,
+        t("toast.moved", {
+          name: row.fullName,
+          status: t(`status.${next}.label`),
+        }),
       );
       return;
     }
-    toast.error(messageFor(result, "The status could not be changed."));
+    toast.error(messageFor(result, t("errors.statusFailed"), t));
     void load({ silent: true });
   }
 
@@ -223,7 +230,7 @@ export default function AdminDemoRequests() {
     setSaving(false);
 
     if (result.ok && result.body.request) {
-      toast.success(editing ? "Changes saved" : "Demo request created");
+      toast.success(editing ? t("toast.saved") : t("toast.created"));
       setSheetRow(undefined);
       if (editing) applyRow(result.body.request);
       else {
@@ -236,10 +243,10 @@ export default function AdminDemoRequests() {
     }
     if (result.status === 400) {
       setFieldErrors(toFieldErrors(result));
-      toast.error("Please fix the highlighted fields.");
+      toast.error(t("errors.fixFields"));
       return;
     }
-    toast.error(messageFor(result, "Your changes could not be saved."));
+    toast.error(messageFor(result, t("errors.saveFailed"), t));
     if (result.status === 409) {
       setSheetRow(undefined);
       void load({ silent: true });
@@ -252,13 +259,13 @@ export default function AdminDemoRequests() {
     const result = await api("DELETE", { id: toDelete.id });
     setDeleting(false);
     if (result.ok || result.status === 404) {
-      toast.success(`Deleted request from ${toDelete.fullName}`);
+      toast.success(t("toast.deleted", { name: toDelete.fullName }));
       if (sheetRow && sheetRow.id === toDelete.id) setSheetRow(undefined);
       setToDelete(null);
       void load({ silent: true });
       return;
     }
-    toast.error(messageFor(result, "The request could not be deleted."));
+    toast.error(messageFor(result, t("errors.deleteFailed"), t));
   }
 
   const counts = data?.counts;
@@ -274,10 +281,10 @@ export default function AdminDemoRequests() {
     dot: string;
     icon: typeof Layers;
   }[] = [
-    { key: "ALL", label: "All requests", value: grandTotal, dot: "bg-primary", icon: Layers },
+    { key: "ALL", label: t("allRequests"), value: grandTotal, dot: "bg-primary", icon: Layers },
     ...DEMO_STATUSES.map((key) => ({
       key,
-      label: STATUS_META[key].label,
+      label: t(`status.${key}.label`),
       value: counts ? counts[key] : null,
       dot: STATUS_META[key].dot,
       icon: STATUS_META[key].icon,
@@ -290,11 +297,10 @@ export default function AdminDemoRequests() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            Demo requests
+            {t("title")}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Everyone who asked for a live demo. Move leads through the pipeline,
-            keep notes and never miss a follow-up.
+            {t("subtitle")}
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -302,10 +308,10 @@ export default function AdminDemoRequests() {
             variant="outline"
             onClick={() => void load()}
             disabled={loading}
-            aria-label="Refresh"
+            aria-label={t("refresh")}
           >
             <RefreshCw className={cn(loading && "animate-spin")} />
-            <span className="hidden sm:inline">Refresh</span>
+            <span className="hidden sm:inline">{t("refresh")}</span>
           </Button>
           <Button
             onClick={() => {
@@ -313,7 +319,7 @@ export default function AdminDemoRequests() {
               setSheetRow(null);
             }}
           >
-            <Plus /> New request
+            <Plus /> {t("newRequest")}
           </Button>
         </div>
       </div>
@@ -333,7 +339,7 @@ export default function AdminDemoRequests() {
                 setPage(1);
               }}
               className={cn(
-                "group rounded-2xl border bg-card p-4 text-left shadow-xs transition-all hover:shadow-md",
+                "group rounded-2xl border bg-card p-4 text-start shadow-xs transition-all hover:shadow-md",
                 active
                   ? "border-primary ring-2 ring-primary/20"
                   : "border-border hover:border-primary/40",
@@ -362,23 +368,23 @@ export default function AdminDemoRequests() {
 
       {/* List */}
       <section
-        aria-label="Demo requests"
+        aria-label={t("title")}
         className="overflow-hidden rounded-2xl border border-border bg-card shadow-xs"
       >
         <div className="flex flex-wrap items-center gap-3 border-b border-border p-4">
           <div className="relative min-w-52 flex-1">
             <Search
-              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              className="pointer-events-none absolute start-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
               aria-hidden="true"
             />
             <Input
               type="search"
-              aria-label="Search name, company, phone or email"
-              placeholder="Search name, company, phone or email…"
+              aria-label={t("searchLabel")}
+              placeholder={t("searchPlaceholder")}
               value={search}
               maxLength={100}
               onChange={(event) => setSearch(event.target.value)}
-              className="h-10 pl-9"
+              className="h-10 ps-9"
             />
           </div>
           {filtered && (
@@ -391,7 +397,7 @@ export default function AdminDemoRequests() {
                 setPage(1);
               }}
             >
-              <X /> Clear filters
+              <X /> {t("clearFilters")}
             </Button>
           )}
         </div>
@@ -404,11 +410,11 @@ export default function AdminDemoRequests() {
             <Inbox className="size-9 text-muted-foreground" />
             <p className="font-semibold text-foreground">{error}</p>
             <Button variant="outline" onClick={() => void load()}>
-              Try again
+              {t("tryAgain")}
             </Button>
           </div>
         ) : loading && !data ? (
-          <div className="space-y-3 p-4" role="status" aria-label="Loading">
+          <div className="space-y-3 p-4" role="status" aria-label={t("loading")}>
             {Array.from({ length: 6 }).map((_, index) => (
               <Skeleton key={index} className="h-14 w-full rounded-xl" />
             ))}
@@ -426,13 +432,13 @@ export default function AdminDemoRequests() {
               <Table>
                 <TableHeader>
                   <TableRow className="bg-muted/40 hover:bg-muted/40">
-                    <TableHead className="pl-4">Client</TableHead>
-                    <TableHead>Contact</TableHead>
-                    <TableHead>Interest</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Received</TableHead>
-                    <TableHead className="pr-4 text-right">
-                      <span className="sr-only">Actions</span>
+                    <TableHead className="ps-4">{t("table.client")}</TableHead>
+                    <TableHead>{t("table.contact")}</TableHead>
+                    <TableHead>{t("table.interest")}</TableHead>
+                    <TableHead>{t("table.status")}</TableHead>
+                    <TableHead>{t("table.received")}</TableHead>
+                    <TableHead className="pe-4 text-end">
+                      <span className="sr-only">{t("table.actions")}</span>
                     </TableHead>
                   </TableRow>
                 </TableHeader>
@@ -446,7 +452,7 @@ export default function AdminDemoRequests() {
                         setSheetRow(row);
                       }}
                     >
-                      <TableCell className="pl-4">
+                      <TableCell className="ps-4">
                         <div className="flex items-center gap-3">
                           <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-sm font-bold text-foreground">
                             {initialsOf(row.fullName)}
@@ -512,19 +518,19 @@ export default function AdminDemoRequests() {
                       <TableCell>
                         <time
                           dateTime={row.createdAt}
-                          title={formatDate(row.createdAt)}
+                          title={formatDate(row.createdAt, locale)}
                           className="flex items-center gap-1.5 whitespace-nowrap text-sm text-muted-foreground"
                         >
                           <CalendarClock className="size-3.5" />
-                          {timeAgo(row.createdAt)}
+                          {timeAgo(row.createdAt, t, locale)}
                         </time>
                       </TableCell>
-                      <TableCell className="pr-4">
+                      <TableCell className="pe-4">
                         <div className="flex justify-end gap-1">
                           <Button
                             variant="ghost"
                             size="icon-sm"
-                            aria-label={`Edit ${row.fullName}`}
+                            aria-label={t("editRow", { name: row.fullName })}
                             onClick={(e) => {
                               e.stopPropagation();
                               setFieldErrors({});
@@ -536,7 +542,7 @@ export default function AdminDemoRequests() {
                           <Button
                             variant="ghost"
                             size="icon-sm"
-                            aria-label={`Delete ${row.fullName}`}
+                            aria-label={t("deleteRow", { name: row.fullName })}
                             className="text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
                             onClick={(e) => {
                               e.stopPropagation();
@@ -565,7 +571,7 @@ export default function AdminDemoRequests() {
                   <div className="flex items-start justify-between gap-3">
                     <button
                       type="button"
-                      className="flex min-w-0 items-center gap-3 text-left"
+                      className="flex min-w-0 items-center gap-3 text-start"
                       onClick={() => {
                         setFieldErrors({});
                         setSheetRow(row);
@@ -598,7 +604,7 @@ export default function AdminDemoRequests() {
                       {row.phone}
                     </a>
                     <span className="text-xs text-muted-foreground">
-                      {timeAgo(row.createdAt)}
+                      {timeAgo(row.createdAt, t, locale)}
                     </span>
                   </div>
                   <div className="flex gap-2">
@@ -611,13 +617,13 @@ export default function AdminDemoRequests() {
                         setSheetRow(row);
                       }}
                     >
-                      <Pencil /> Edit
+                      <Pencil /> {t("edit")}
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
                       className="text-destructive hover:text-destructive"
-                      aria-label={`Delete ${row.fullName}`}
+                      aria-label={t("deleteRow", { name: row.fullName })}
                       onClick={() => setToDelete(row)}
                     >
                       <Trash2 />
@@ -630,15 +636,17 @@ export default function AdminDemoRequests() {
             {/* Pagination */}
             <div className="flex items-center justify-between gap-3 border-t border-border p-4 text-sm text-muted-foreground">
               <span>
-                {data.total} request{data.total === 1 ? "" : "s"} · Page{" "}
-                {data.page} of{" "}
-                {Math.max(1, Math.ceil(data.total / data.pageSize))}
+                {t("pagination", {
+                  count: data.total,
+                  page: data.page,
+                  pages: Math.max(1, Math.ceil(data.total / data.pageSize)),
+                })}
               </span>
               <div className="flex gap-2">
                 <Button
                   variant="outline"
                   size="icon-sm"
-                  aria-label="Previous page"
+                  aria-label={t("previous")}
                   disabled={page <= 1 || loading}
                   onClick={() => setPage((p) => p - 1)}
                 >
@@ -647,7 +655,7 @@ export default function AdminDemoRequests() {
                 <Button
                   variant="outline"
                   size="icon-sm"
-                  aria-label="Next page"
+                  aria-label={t("next")}
                   disabled={page * data.pageSize >= data.total || loading}
                   onClick={() => setPage((p) => p + 1)}
                 >
@@ -662,12 +670,12 @@ export default function AdminDemoRequests() {
               <Inbox className="size-7 text-muted-foreground" />
             </span>
             <p className="font-semibold text-foreground">
-              {filtered ? "No matching requests" : "No demo requests yet"}
+              {filtered ? t("emptyFiltered") : t("emptyNone")}
             </p>
             <p className="max-w-sm text-sm text-muted-foreground">
               {filtered
-                ? "Try a different search or clear the filters."
-                : "New requests from the website will appear here. You can also add one manually."}
+                ? t("emptyFilteredHint")
+                : t("emptyNoneHint")}
             </p>
             {!filtered && (
               <Button
@@ -676,7 +684,7 @@ export default function AdminDemoRequests() {
                   setSheetRow(null);
                 }}
               >
-                <Plus /> New request
+                <Plus /> {t("newRequest")}
               </Button>
             )}
           </div>
@@ -701,15 +709,20 @@ export default function AdminDemoRequests() {
       >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete this request?</AlertDialogTitle>
+            <AlertDialogTitle>{t("deleteTitle")}</AlertDialogTitle>
             <AlertDialogDescription>
               {toDelete
-                ? `The request from ${toDelete.fullName} (${toDelete.companyName}) will be permanently removed, including your follow-up notes. This can't be undone.`
+                ? t("deleteDesc", {
+                    name: toDelete.fullName,
+                    company: toDelete.companyName,
+                  })
                 : ""}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel disabled={deleting}>Cancel</AlertDialogCancel>
+            <AlertDialogCancel disabled={deleting}>
+              {t("cancel")}
+            </AlertDialogCancel>
             <AlertDialogAction
               disabled={deleting}
               onClick={(event) => {
@@ -718,7 +731,7 @@ export default function AdminDemoRequests() {
               }}
               className="bg-destructive text-white hover:bg-destructive/90"
             >
-              {deleting ? "Deleting…" : "Delete"}
+              {deleting ? t("deleting") : t("delete")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

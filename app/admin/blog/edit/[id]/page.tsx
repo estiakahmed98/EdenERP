@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import BlogForm from "@/components/admin/blog/BlogForm";
 
@@ -23,6 +24,7 @@ interface BlogData {
 }
 
 export default async function EditBlogPage({ params }: EditBlogPageProps) {
+  const t = await getTranslations("admin.blogEdit");
   const awaited = await params;
   const blog = (await prisma.blog.findUnique({
     where: { id: parseInt(awaited.id) },
@@ -55,10 +57,10 @@ export default async function EditBlogPage({ params }: EditBlogPageProps) {
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#F4F8F7]">
-                Edit Blog Post
+                {t("title")}
               </h1>
               <p className="text-[#F4F8F7]/70 text-sm mt-1">
-                Update your blog post content and details
+                {t("subtitle")}
               </p>
             </div>
           </div>
@@ -69,14 +71,14 @@ export default async function EditBlogPage({ params }: EditBlogPageProps) {
               href="/admin"
               className="hover:text-[#F4F8F7] transition-colors duration-300"
             >
-              Dashboard
+              {t("dashboard")}
             </Link>
             <span>/</span>
             <Link
               href="/admin/blog"
               className="hover:text-[#F4F8F7] transition-colors duration-300"
             >
-              Blogs
+              {t("blogs")}
             </Link>
             <span>/</span>
             <span className="text-[#F4F8F7] font-medium">Edit</span>

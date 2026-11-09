@@ -35,6 +35,11 @@ function getSystemTheme(): ResolvedTheme {
     : "light";
 }
 
+function resolveTheme(theme: Theme, enableSystem: boolean): ResolvedTheme {
+  if (theme === "system") return enableSystem ? getSystemTheme() : "light";
+  return theme === "dark" ? "dark" : "light";
+}
+
 function isAppTheme(theme: string): theme is AppTheme {
   return (APP_THEMES as readonly string[]).includes(theme);
 }
@@ -84,16 +89,12 @@ export function ThemeProvider({
         : defaultTheme;
 
     setThemeState(nextTheme);
-    setResolvedTheme(
-      nextTheme === "system" && enableSystem ? getSystemTheme() : "light",
-    );
+    setResolvedTheme(resolveTheme(nextTheme, enableSystem));
   }, [defaultTheme, enableSystem]);
 
   React.useEffect(() => {
     const updateResolvedTheme = () => {
-      setResolvedTheme(
-        theme === "system" && enableSystem ? getSystemTheme() : "light",
-      );
+      setResolvedTheme(resolveTheme(theme, enableSystem));
     };
 
     updateResolvedTheme();
@@ -114,9 +115,7 @@ export function ThemeProvider({
       setThemeState(nextTheme);
       window.localStorage.setItem(STORAGE_KEY, nextTheme);
       applyThemeClass(nextTheme, enableSystem);
-      setResolvedTheme(
-        nextTheme === "system" && enableSystem ? getSystemTheme() : "light",
-      );
+      setResolvedTheme(resolveTheme(nextTheme, enableSystem));
     },
     [enableSystem],
   );
