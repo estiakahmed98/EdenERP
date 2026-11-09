@@ -30,7 +30,9 @@ import {
   NS,
   SITE_URL,
   accountingMetadata,
+  industryGroupHref,
   industryGroups,
+  industryItemHref,
   toolSlugs,
   useCommon,
   type ToolKey,
@@ -834,7 +836,7 @@ export default function AccountingHubPage() {
             {industryGroups.map((g) => (
               <div key={g.slug}>
                 <h3 className="border-b border-border pb-3 text-[16px] font-semibold text-primary">
-                  <Link href={`/industries/${g.slug}`} className={link}>
+                  <Link href={industryGroupHref} className={link}>
                     {groups[g.slug]}
                   </Link>
                 </h3>
@@ -844,12 +846,7 @@ export default function AccountingHubPage() {
                 <ul className="mt-3 space-y-2">
                   {g.items.map((item) => (
                     <li key={item}>
-                      <Link
-                        href={`/industries/${g.slug}/${item}`}
-                        className={`${link} text-[14.5px] text-foreground/85`}
-                      >
-                        {items[item]}
-                      </Link>
+                      {industryItemHref(g.slug, item) ? (<Link href={industryItemHref(g.slug, item)!} className={`${link} text-[14.5px] text-foreground/85`}>{items[item]}</Link>) : (<span className="text-[14.5px] text-foreground/85">{items[item]}</span>)}
                     </li>
                   ))}
                 </ul>

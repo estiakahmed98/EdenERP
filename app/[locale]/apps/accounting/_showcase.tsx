@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
 
-import { NS, toolSlugs, useCommon, type ToolKey } from "./_shared";
+import { NS, industryGroupHref, toolSlugs, useCommon, type ToolKey } from "./_shared";
 
 /*
  * Pieces shared by the longer accounting showcase pages (Bills, Purchase
@@ -233,7 +233,7 @@ export function FinalSection({
         <ul className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {industryRoutes.map((slug) => (
             <li key={slug} className="border-t border-border pt-4">
-              <Link href={`/industries/${slug}`} className={`${link} text-[16px] font-semibold text-primary`}>
+              <Link href={industryGroupHref} className={`${link} text-[16px] font-semibold text-primary`}>
                 {groups[slug]}
               </Link>
               <p className="mt-1.5 text-[14px] leading-[1.6] text-muted-foreground">{industries.angles[slug]}</p>

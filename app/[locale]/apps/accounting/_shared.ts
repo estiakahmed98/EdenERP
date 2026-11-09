@@ -205,6 +205,43 @@ export const industryGroups = [
   { slug: "others", items: ["nonprofit-organization", "environmental-agency", "billboard-rental", "photography", "bike-leasing", "software-reseller"] },
 ] as const;
 
+/**
+ * Industry pages that actually exist, keyed by "<group>/<item>". Anything not
+ * listed here has no page yet, so it renders as plain text instead of a link
+ * that would 404.
+ */
+const industryPages: Record<string, string> = {
+  "retail/book-store": "/industries/retail/book-store",
+  "retail/clothing-store": "/industries/retail/clothing-store",
+  "retail/furniture-store": "/industries/retail/furniture-store",
+  "retail/grocery-store": "/industries/retail/grocery-store",
+  "retail/hardware-store": "/industries/retail/hardware-store",
+  "retail/toy-store": "/industries/retail/toy-store",
+  "food-hospitality/restaurant": "/industries/food&hospitality/restaurant",
+  "food-hospitality/fast-food": "/industries/food&hospitality/fast-food",
+  "food-hospitality/guest-house": "/industries/food&hospitality/guest-house",
+  "food-hospitality/beverage-distributor": "/industries/food&hospitality/beverage-distributor",
+  "food-hospitality/hotel": "/industries/food&hospitality/hotel",
+  "real-estate/real-estate-agency": "/industries/realestate/real-estate-agency",
+  "real-estate/architecture-firm": "/industries/realestate/architecture-firm",
+  "real-estate/construction": "/industries/realestate/construction",
+  "consulting/accounting-firm": "/industries/consulting/accounting-firm",
+  "consulting/marketing-agency": "/industries/consulting/marketing-agency",
+  "consulting/talent-acquisition": "/industries/consulting/talent-acquisition",
+  "consulting/audit-and-certification": "/industries/consulting/audit-certification",
+  "manufacturing/textile": "/industries/manufacturing/textile",
+  "manufacturing/metal": "/industries/manufacturing/metal",
+  "manufacturing/furnitures": "/industries/manufacturing/furniture",
+};
+
+/** Industry group links go to the industries index, which always exists. */
+export const industryGroupHref = "/industries";
+
+/** Real URL for an industry item, or null when its page is not built yet. */
+export function industryItemHref(group: string, item: string): string | null {
+  return industryPages[`${group}/${item}`] ?? null;
+}
+
 const openGraphLocales: Record<string, string> = {
   en: "en_BD",
   bn: "bn_BD",

@@ -36,6 +36,7 @@ import {
   NS,
   SITE_URL,
   accountingMetadata,
+  industryGroupHref,
   toolSlugs,
   useCommon,
   type ToolKey,
@@ -714,7 +715,7 @@ export default function InvoicesPage() {
           <ul className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {industryRoutes.map((slug) => (
               <li key={slug} className="border-t border-border pt-4">
-                <Link href={`/industries/${slug}`} className={`${link} text-[16px] font-semibold text-primary`}>
+                <Link href={industryGroupHref} className={`${link} text-[16px] font-semibold text-primary`}>
                   {groups[slug]}
                 </Link>
                 <p className="mt-1.5 text-[14px] leading-[1.6] text-muted-foreground">{industries.angles[slug]}</p>

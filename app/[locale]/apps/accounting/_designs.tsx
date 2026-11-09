@@ -4,7 +4,7 @@ import type { CSSProperties, ReactNode } from "react";
 
 import { Link } from "@/i18n/navigation";
 
-import { toolSlugs, useCommon, type ToolKey } from "./_shared";
+import { industryGroupHref, toolSlugs, useCommon, type ToolKey } from "./_shared";
 import { SecondaryButton, StorySteps, h2, lead, link, ruled, wrap, type Faq } from "./_showcase";
 
 /*
@@ -1255,7 +1255,7 @@ export function Final({
               {industryRoutes.map((slug) => (
                 <li key={slug}>
                   <Link
-                    href={`/industries/${slug}`}
+                    href={industryGroupHref}
                     className="group block h-full rounded-2xl border border-border bg-card p-5 transition-shadow hover:shadow-md focus-visible:outline-2 focus-visible:outline-ring"
                   >
                     <span className={`inline-flex items-center gap-1.5 text-[16px] font-semibold ${accent.text}`}>
@@ -1313,7 +1313,7 @@ export function Final({
                 {industryRoutes.map((slug) => (
                   <li key={slug} className="flex items-start gap-4">
                     <Link
-                      href={`/industries/${slug}`}
+                      href={industryGroupHref}
                       className={`shrink-0 rounded-full px-3 py-1 text-[14px] font-semibold ${accent.soft} ${accent.text} hover:underline focus-visible:outline-2 focus-visible:outline-ring`}
                     >
                       {groups[slug]}
@@ -1351,7 +1351,7 @@ export function Final({
                 {industryRoutes.map((slug) => (
                   <div key={slug} className="grid gap-1 px-5 py-4 sm:grid-cols-[12rem_1fr] sm:gap-6">
                     <dt>
-                      <Link href={`/industries/${slug}`} className={`${link} text-[15px] font-semibold ${accent.text}`}>
+                      <Link href={industryGroupHref} className={`${link} text-[15px] font-semibold ${accent.text}`}>
                         {groups[slug]}
                       </Link>
                     </dt>
@@ -1398,7 +1398,7 @@ export function Final({
             <ul className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
               {industryRoutes.map((slug) => (
                 <li key={slug} className={`border-t-2 pt-4`} style={{ borderColor: `color-mix(in oklch, ${accent.raw} 45%, transparent)` }}>
-                  <Link href={`/industries/${slug}`} className={`${link} text-[16px] font-semibold ${accent.text}`}>
+                  <Link href={industryGroupHref} className={`${link} text-[16px] font-semibold ${accent.text}`}>
                     {groups[slug]}
                   </Link>
                   <p className="mt-1.5 text-[14px] leading-[1.6] text-muted-foreground">{industries.angles[slug]}</p>
