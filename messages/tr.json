@@ -62696,6 +62696,1532 @@
         "v0ChartForV1V2UseArrowKeys": "{v1} {v2} için {v0} tablosu. Bitişik değerleri incelemek için bir noktadaki ok tuşlarını kullanın.",
         "v0OutsideSpecifications": "{v0} teknik özelliklerin dışında"
       }
+    },
+    "manufacturingModules": {
+      "modules": {
+        "work-centers": {
+          "title": "İş Merkezleri",
+          "category": "Üretim temeli",
+          "hero": [
+            "Her operasyona",
+            "çalışacağı doğru yeri verin."
+          ],
+          "description": "Makineleri, ekipleri ve dış kaynakları tek bir üretim modelinde toplayın. İlk iş sahaya inmeden önce çalışma saatlerini, pratik kapasiteyi ve oranları tanımlayın.",
+          "flow": [
+            "Kaynak takvimi",
+            "İş merkezi",
+            "Kullanılabilir kapasite"
+          ],
+          "callout": "Planlamadan önce sınırlarınızı bilin.",
+          "note": "Bir makine ancak takvimi kadar kullanılabilir. Plana duruş sürelerini ekleyin.",
+          "workspaceTitle": "Üretim kaynaklarınızın net bir resmi.",
+          "workspaceDescription": "Örnek iş merkezlerini inceleyin, planlanan yüklerini karşılaştırın ve çalışma bağlamını görmek için bir kaynak seçin.",
+          "contextLabel": "Kaynak / vardiya",
+          "valueLabel": "Günlük kapasite",
+          "totalLabel": "Toplam günlük kapasite",
+          "progressLabel": "Planlanan kullanım",
+          "rows": [
+            {
+              "name": "Film ekstrüzyonu",
+              "context": "Ekstrüzyon salonu · 2 vardiya",
+              "note": "İki vardiya 16 pratik saat sağlar. Hafta sonu işi eklemeden önce bir bakım aralığı ayırın."
+            },
+            {
+              "name": "Fleksografik baskı",
+              "context": "Baskı salonu · 2 vardiya",
+              "note": "Mürekkep değişimi ve temizlik, pratik vardiya payına dahildir."
+            },
+            {
+              "name": "Kesim ve yapıştırma",
+              "context": "Dönüştürme hattı · 2 vardiya",
+              "note": "Örnek plan bugünün kapasitesini dolduruyor. Ek operasyon atamadan önce başka bir iş merkezini inceleyin."
+            },
+            {
+              "name": "Paketleme istasyonu",
+              "context": "Bitirme alanı · 1 vardiya",
+              "note": "Bu örnekte istasyon bakım için bekletiliyor. Nominal saatleri referans olarak görünür kalır."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Kaynağı tanımlayın",
+              "description": "Bir makine, işçi grubu, hat veya dış iş merkezi seçin."
+            },
+            {
+              "title": "Takvimini belirleyin",
+              "description": "Vardiyaları, çalışma saatlerini ve beklenen duruşları kaydedin."
+            },
+            {
+              "title": "Kapasite ve oranları atayın",
+              "description": "Pratik kapasiteyi ve üretim maliyetlemesinde kullanılan oranları belirleyin."
+            },
+            {
+              "title": "Operasyonları bağlayın",
+              "description": "Kaynağı rotalarda yeniden kullanın ve planlanan yükünü inceleyin."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Bağlamlı kapasite",
+              "description": "Planlama kararlarını kaynak erişilebilirliğine dayandırmak için pratik saatleri kullanın."
+            },
+            {
+              "title": "Bir kaynak, çok rota",
+              "description": "Yeniden kullanılabilir iş merkezlerini yürüttükleri operasyonlara bağlı tutun."
+            },
+            {
+              "title": "Maliyeti açıklayan oranlar",
+              "description": "İşçilik, makine ve genel gider varsayımlarını standart maliyet kartlarına taşıyın."
+            }
+          ]
+        },
+        "routings": {
+          "title": "Rotalar",
+          "category": "Üretim temeli",
+          "hero": [
+            "Reçeteyi tekrarlanabilir",
+            "bir sürece dönüştürün."
+          ],
+          "description": "Operasyon sırasını, her adımın iş merkezini ve süresini tanımlayın. Planlamaya, yürütmeye ve maliyetlemeye ortak bir üretim rotası verin.",
+          "flow": [
+            "Operasyon sırası",
+            "İş merkezleri ve süre",
+            "Yürütülebilir rota"
+          ],
+          "callout": "Doğru adımlar, doğru sırada.",
+          "note": "Hazırlık süresi partiye, çalışma süresi operasyona aittir.",
+          "workspaceTitle": "Her ürünün sahada nasıl ilerlediğini görün.",
+          "workspaceDescription": "Örnek rotaları ve operasyon sayılarını inceleyin. Sırasını ve süre varsayımlarını görmek için bir rota seçin.",
+          "contextLabel": "Operasyon sırası",
+          "valueLabel": "Operasyonlar",
+          "totalLabel": "Tanımlı operasyonlar",
+          "progressLabel": "Rota hazırlığı",
+          "rows": [
+            {
+              "name": "PE poşet rotası",
+              "context": "Ekstrüzyon → Baskı → Yapıştırma → Kontrol",
+              "note": "Dört operasyon ekstrüzyonu nihai kontrole bağlar. Hazırlık parti başına, yapıştırma süresi birim başına planlanır."
+            },
+            {
+              "name": "5 katlı koli rotası",
+              "context": "Oluklu → Kesim → Katlama → Yapıştırma → Paketleme",
+              "note": "Beş adım özel dönüştürme kaynakları kullanır; paketleme, yapıştırıcı kuruma payını izler."
+            },
+            {
+              "name": "Fermuarlı poşet rotası",
+              "context": "Ekstrüzyon → Baskı → Fermuar → Yapıştırma → KK",
+              "note": "Fermuar takma operasyonu, gözden geçirilmiş iş merkezi süresini bekliyor."
+            },
+            {
+              "name": "Baskılı etiket rotası",
+              "context": "Baskı → Kesim → Delme",
+              "note": "Taslak sıra, yayımlanmadan önce süre tahminlerine hazır."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Ürün seçin",
+              "description": "Ürün ve üretim yöntemi için bir rota oluşturun."
+            },
+            {
+              "title": "Operasyonları sıralayın",
+              "description": "İşi yürütme sırasına dizin, ileriki adımlara yer bırakın."
+            },
+            {
+              "title": "Süre ve kaynakları belirleyin",
+              "description": "İş merkezlerini ve birim, parti veya sabit süreyi seçin."
+            },
+            {
+              "title": "Rotayı yayımlayın",
+              "description": "Kalite kontrollerini bağlayın ve rotayı üretim emirlerinde kullanın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Operasyonlar kaynaklarla buluşur",
+              "description": "Her rota adımının arkasında çalışan bir iş merkezi vardır."
+            },
+            {
+              "title": "Sıranın içinde kalite",
+              "description": "Kontrol noktalarını sürecin ihtiyaç duyduğu yere koyun."
+            },
+            {
+              "title": "Maliyeti olan bir rota",
+              "description": "Maliyet toplamlarında operasyon sürelerini ve kaynak oranlarını kullanın."
+            }
+          ]
+        },
+        "bill-of-materials": {
+          "title": "Ürün Ağacı",
+          "category": "Üretim temeli",
+          "hero": [
+            "Her girdi hesaplı.",
+            "Her çıktı tanımlı."
+          ],
+          "description": "Malzemeler, miktarlar ve beklenen çıktılar için net bir üretim reçetesi oluşturun. Üretim modeli gerçek süreci yansıtsın diye yan ürünleri ve hurdayı da ekleyin.",
+          "flow": [
+            "Malzemeler ve miktarlar",
+            "Üretim reçetesi",
+            "Ürünler ve verim"
+          ],
+          "callout": "İyi bir üretim planı burada başlar.",
+          "note": "Önce çıktı bazını belirleyin. Malzeme ihtiyacı ancak tanımlı bir parti miktarına göre anlam kazanır.",
+          "workspaceTitle": "Reçeteleriniz, önemli ayrıntılarla.",
+          "workspaceDescription": "Örnek ürün ağacı sürümlerini ve parti çıktılarını inceleyin. Her kayıt malzeme ve verim varsayımlarını açıklar.",
+          "contextLabel": "Sürüm / malzemeler",
+          "valueLabel": "Parti çıktısı",
+          "totalLabel": "Toplam örnek çıktı",
+          "progressLabel": "Reçete hazırlığı",
+          "rows": [
+            {
+              "name": "PE poşet 26×44",
+              "context": "v2.1 · Reçine, masterbatch, mürekkep",
+              "note": "Örnek reçete 1.000 poşet üretir. Reçine, masterbatch ve mürekkep bu çıktı bazına göre planlanır."
+            },
+            {
+              "name": "5 katlı koli kutusu",
+              "context": "Liner, flüting, yapıştırıcı · v1.3",
+              "note": "Kâğıt katmanları ve yapıştırıcı başlıca girdilerdir. Kesim artıkları bitmiş çıktıdan ayrı tanımlanır."
+            },
+            {
+              "name": "Fermuarlı PE poşet",
+              "context": "v1.0 · Film, fermuar, mürekkep",
+              "note": "Bu reçete varsayılan üretim ürün ağacı olmadan önce fermuar miktarı inceleniyor."
+            },
+            {
+              "name": "Baskılı askı etiketi",
+              "context": "v0.2 · Karton, mürekkep, ip",
+              "note": "Karton, baskı mürekkebi ve ip için taslak reçete. Yayımlamadan önce verim varsayımlarını doğrulayın."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Çıktıyı tanımlayın",
+              "description": "Bitmiş ürünü, ürün ağacı türünü ve parti miktarını seçin."
+            },
+            {
+              "title": "Girdileri oluşturun",
+              "description": "Malzeme miktarlarını doğru ölçü birimleriyle ekleyin."
+            },
+            {
+              "title": "Verimi hesaba katın",
+              "description": "Yan ürünleri, süreç kaybını ve hurdayı belirleyin."
+            },
+            {
+              "title": "Reçeteyi kullanın",
+              "description": "Onaylı ürün ağacını planlamaya ve üretim emirlerine bağlayın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Reçetelerden ihtiyaçlar",
+              "description": "Malzeme ihtiyaçlarını hesaplamak için ürün talebini ve ürün ağacı miktarlarını kullanın."
+            },
+            {
+              "title": "Tutarlı bir emir başlangıcı",
+              "description": "Üretim emirleri reçeteyi malzeme bazı olarak kullanır."
+            },
+            {
+              "title": "Ortak çıktı, net maliyet payları",
+              "description": "Beklenen çıktıları standart maliyet varsayımlarına bağlı tutun."
+            }
+          ]
+        },
+        "mrp-planning": {
+          "title": "MRP Planlama",
+          "category": "Malzeme ve üretim planlama",
+          "hero": [
+            "Talebi malzemesi hazır",
+            "bir plana dönüştürün."
+          ],
+          "description": "Talebi, ürün ağacı ihtiyaçlarını, eldeki stoku ve planlı girişleri aynı planlama konuşmasına getirin. Eksikleri üretimi durdurmadan önce belirleyin.",
+          "flow": [
+            "Talep ve ürün ağaçları",
+            "Net ihtiyaçlar",
+            "Tedarik önerileri"
+          ],
+          "callout": "Eksiği saha görmeden önce siz görün.",
+          "note": "Yeni tedarik önermeden önce stoku ve beklenen girişleri kontrol edin. Net ihtiyacı planlayın.",
+          "workspaceTitle": "Net bir sonraki adımla malzeme ihtiyaçları.",
+          "workspaceDescription": "Örnek bir planlama çalıştırmasını inceleyin. Malzeme karşılamasını karşılaştırın ve her ihtiyaç için önerilen eylemi görün.",
+          "contextLabel": "Talep kaynağı / malzeme",
+          "valueLabel": "Net ihtiyaç",
+          "totalLabel": "Net malzeme ihtiyacı",
+          "progressLabel": "Malzeme karşılama",
+          "rows": [
+            {
+              "name": "LDPE reçine",
+              "context": "MO-0148 · Film ekstrüzyonu",
+              "note": "Brüt ihtiyaç 1.200 kg, eldeki tedarik 720 kg. Bu örnekte net ihtiyaç 480 kg."
+            },
+            {
+              "name": "Beyaz masterbatch",
+              "context": "MO-0148 · Renk katkısı",
+              "note": "Eldeki malzeme planlanan ihtiyacı karşılıyor; bu örnekte ek tedarik önerilmiyor."
+            },
+            {
+              "name": "Kraft liner kâğıdı",
+              "context": "MO-0147 · Koli dönüştürme",
+              "note": "600 kg ihtiyacın 300 kg'ı karşılanmış. Kalan 300 kg için teslim süresini inceleyin."
+            },
+            {
+              "name": "Baskı mürekkebi",
+              "context": "MO-0146 · Fleksografik baskı",
+              "note": "Beklenen bir giriş kalan talebi karşılıyor. Varış tarihini planlanan başlangıçla doğrulayın."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Talebi toplayın",
+              "description": "Sipariş talebini ve ana üretim çizelgesini inceleyin."
+            },
+            {
+              "title": "Ürün ağacını açın",
+              "description": "Planlanan çıktıyı bileşen ihtiyaçlarına çevirin."
+            },
+            {
+              "title": "Mevcut tedariği düşün",
+              "description": "Stoku, rezervasyonları ve planlı girişleri hesaba katın."
+            },
+            {
+              "title": "İstisnaları inceleyin",
+              "description": "Eksikleri giderin ve zamanlı tedarik önerilerini değerlendirin."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Talebin bir takvimi var",
+              "description": "Malzeme ihtiyaçlarını MPS'teki miktar ve tarihlere bağlayın."
+            },
+            {
+              "title": "Reçeteler ihtiyacı belirler",
+              "description": "Bileşen miktarlarını seçilen üretim ürün ağacına bağlı tutun."
+            },
+            {
+              "title": "Kapasite resmi tamamlar",
+              "description": "Malzeme hazırlığını pratik üretim kapasitesiyle birlikte inceleyin."
+            }
+          ]
+        },
+        "capacity-planning": {
+          "title": "Kapasite Planlama",
+          "category": "Malzeme ve üretim planlama",
+          "hero": [
+            "Talebe yer açın.",
+            "Söz vermeden önce."
+          ],
+          "description": "Planlanan işi pratik kaynak kapasitesiyle karşılaştırın. Aşırı yüklü dönemleri görünür kılın ve her üretim taahhüdünün arkasındaki iş merkezi seçimlerini inceleyin.",
+          "flow": [
+            "Planlanan operasyonlar",
+            "Kaynak yükü",
+            "Uygulanabilir kapasite"
+          ],
+          "callout": "Darboğazı erken fark edin.",
+          "note": "Nominal saatler bir başlangıç noktasıdır. Vardiyalar, bakım ve verimlilik kullanılabilir kapasiteyi belirler.",
+          "workspaceTitle": "Üretim planınızın nerede yer istediğini görün.",
+          "workspaceDescription": "Beş günlük planlama penceresinde örnek kaynak yüklerini inceleyin. Kapasite ve kullanım ayrıntıları için listeye geçin.",
+          "contextLabel": "Kaynak takvimi",
+          "valueLabel": "Haftalık kapasite",
+          "totalLabel": "Haftalık kaynak kapasitesi",
+          "progressLabel": "Planlanan kullanım",
+          "rows": [
+            {
+              "name": "Film ekstrüzyonu",
+              "context": "WC-EXT-01 · 5 iş günü",
+              "note": "Örnek ekstrüzyon planı 80 saatin 68'ini kullanır, ek iş için 12 saat bırakır."
+            },
+            {
+              "name": "Fleksografik baskı",
+              "context": "WC-PRT-02 · 5 iş günü",
+              "note": "Talep 70 mevcut saate karşı 78 saat gerektiriyor. Gösterge %100'de sınırlı; 8 saatlik aşırı yük eylem gerektiriyor."
+            },
+            {
+              "name": "Kesim ve yapıştırma",
+              "context": "WC-CUT-03 · 5 iş günü",
+              "note": "80 mevcut saate karşı 60 saat planlandı. İşi buraya kaydırmadan önce operasyon uyumluluğunu inceleyin."
+            },
+            {
+              "name": "Paketleme istasyonu",
+              "context": "WC-PACK-04 · 5 iş günü",
+              "note": "Bu örnek planlama haftasında paketleme penceresinde 18 saat boşluk var."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Yükle başlayın",
+              "description": "Planlanan operasyon saatlerini iş merkezi ve döneme göre toplayın."
+            },
+            {
+              "title": "Takvimi uygulayın",
+              "description": "İşi pratik vardiyalar ve çalışma süresiyle karşılaştırın."
+            },
+            {
+              "title": "Kısıtları bulun",
+              "description": "Aşırı yüklü kaynakları ve kullanılamayan dönemleri belirleyin."
+            },
+            {
+              "title": "Planı dengeleyin",
+              "description": "Alternatif kaynakları, zamanlamayı ve kapasite varsayımlarını inceleyin."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Pratik kaynak takvimleri",
+              "description": "Kapasite, planı taşıyan iş merkezlerinden başlar."
+            },
+            {
+              "title": "Uygulanabilir bir çizelge oluşturun",
+              "description": "Operasyon zamanlamasını incelerken kapasite resmini kullanın."
+            },
+            {
+              "title": "Taahhütleri gerçekçi tutun",
+              "description": "Ana çizelgeyi kaynak kısıtlarına karşı inceleyin."
+            }
+          ]
+        },
+        "master-schedule-mps": {
+          "title": "Ana Çizelge (MPS)",
+          "category": "Malzeme ve üretim planlama",
+          "hero": [
+            "Talebe tarih verin.",
+            "Üretime yön verin."
+          ],
+          "description": "Ürün talebini zamana yayılmış bir üretim planına dönüştürün. Ayrıntılı çizelgeleme başlamadan önce miktarları, planlama dönemlerini ve tedarik varsayımlarını hizalayın.",
+          "flow": [
+            "Ürün talebi",
+            "Ana çizelge",
+            "Üretim hedefleri"
+          ],
+          "callout": "Önümüzdeki hafta için tek ortak plan.",
+          "note": "Bir üretim hedefi miktar ve dönem ister. İkisini de malzeme ve kapasiteye karşı inceleyin.",
+          "workspaceTitle": "Ne üretileceğine ve ne zaman üretileceğine ortak bakış.",
+          "workspaceDescription": "Örnek bir üretim haftasındaki ürün hedeflerini inceleyin. Planlama dayanağını görmek için bir hedef seçin.",
+          "contextLabel": "Planlama dayanağı",
+          "valueLabel": "Planlanan miktar",
+          "totalLabel": "Çizelgelenen örnek çıktı",
+          "progressLabel": "Plan hazırlığı",
+          "rows": [
+            {
+              "name": "PE poşet 26×44",
+              "context": "Müşteri talebi · A Haftası",
+              "note": "Örnek planda 12.000 adetlik hedef onaylı; olağan malzeme ve kapasite kontrollerine tabi."
+            },
+            {
+              "name": "5 katlı koli kutusu",
+              "context": "Satış siparişleri · A Haftası",
+              "note": "Koli hedefi, taahhüt edilmiş talebi haftalık üretim miktarında toplar."
+            },
+            {
+              "name": "Fermuarlı PE poşet",
+              "context": "İkmal · A Haftası",
+              "note": "İkmal hedefi, baskı kaynağı kısıtına karşı inceleniyor."
+            },
+            {
+              "name": "Baskılı askı etiketi",
+              "context": "Tahmin talebi · A Haftası",
+              "note": "Tahmine dayalı taslak hedef, onaylı üretim taahhütlerinden ayrı görünür."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Talebi inceleyin",
+              "description": "Ürün talebini ve beklenen stok ihtiyaçlarını görünür kılın."
+            },
+            {
+              "title": "Dönem hedeflerini belirleyin",
+              "description": "Her planlama penceresi için üretim miktarlarını seçin."
+            },
+            {
+              "title": "Uygulanabilirliği kontrol edin",
+              "description": "Malzeme erişilebilirliğini ve kaynak kapasitesini inceleyin."
+            },
+            {
+              "title": "Başlangıç planını onaylayın",
+              "description": "Anlaşılan çizelgeyi ayrıntılı planlamaya yön vermek için kullanın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Hedefin arkasındaki malzemeler",
+              "description": "Çizelgelenen çıktıyı bileşen ihtiyaçlarına çevirin."
+            },
+            {
+              "title": "Sözün arkasındaki kapasite",
+              "description": "Kaynakların amaçlanan planı destekleyip destekleyemeyeceğini kontrol edin."
+            },
+            {
+              "title": "Planı yürüten emirler",
+              "description": "Üzerinde anlaşılan miktarları üretim işine dönüştürün."
+            }
+          ]
+        },
+        "scheduling-aps": {
+          "title": "Çizelgeleme (APS)",
+          "category": "Ayrıntılı üretim planlama",
+          "hero": [
+            "İşi sıraya koyun.",
+            "Her saati değerli kılın."
+          ],
+          "description": "Operasyon zamanlamasını, kaynak erişilebilirliğini ve üretim önceliklerini net bir çizelge görünümünde birleştirin. İşi atölyeye bırakmadan önce sırayı inceleyin.",
+          "flow": [
+            "Emirler ve öncelikler",
+            "Kaynak sırası",
+            "Çizelgelenen operasyonlar"
+          ],
+          "callout": "Net bir sıra, kalabalık bir kuyruktan iyidir.",
+          "note": "Operasyon bağımlılıklarına uyun. Boştaki bir makine, önceki adımı bitmemiş bir işi çalıştıramaz.",
+          "workspaceTitle": "Bir bakışta okunan bir çizelge.",
+          "workspaceDescription": "Beş günlük örnek bir operasyon planını inceleyin. Kısıtını ve serbest bırakma bağlamını görmek için çizelgelenen bir iş seçin.",
+          "contextLabel": "Kaynak / bağımlılık",
+          "valueLabel": "Çalışma süresi",
+          "totalLabel": "Çizelgelenen operasyon süresi",
+          "progressLabel": "Operasyon tamamlanma",
+          "rows": [
+            {
+              "name": "MO-0148 · Film ekstrüzyonu",
+              "context": "WC-EXT-01 · İlk operasyon",
+              "note": "Ekstrüzyon sürüyor; örnek sırada çıktısı baskı operasyonunu besliyor."
+            },
+            {
+              "name": "MO-0148 · Fleksografik baskı",
+              "context": "WC-PRT-02 · Ekstrüzyondan sonra",
+              "note": "Baskı ekstrüzyonu izler ve örnek çalışma süresine hazırlık payını içerir."
+            },
+            {
+              "name": "MO-0147 · Koli dönüştürme",
+              "context": "WC-CUT-03 · Malzeme kısıtı",
+              "note": "Operasyonun çizelge penceresi var ancak malzeme erişilebilirliği nedeniyle hâlâ engelli."
+            },
+            {
+              "name": "MO-0146 · Poşet yapıştırma",
+              "context": "WC-CUT-03 · Fermuar takıldıktan sonra",
+              "note": "Yapıştırma, fermuar takmayı izler. İşi serbest bırakmadan önce önceki operasyonu inceleyin."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "İşi toplayın",
+              "description": "Üretim emirlerini, operasyonları ve öncelikleri inceleyin."
+            },
+            {
+              "title": "Kısıtlara uyun",
+              "description": "Takvimleri, bağımlılıkları ve malzeme hazırlığını kontrol edin."
+            },
+            {
+              "title": "Operasyonları sıralayın",
+              "description": "İşi kaynak tabanlı bir çizelgeye yerleştirin."
+            },
+            {
+              "title": "İnceleyin ve serbest bırakın",
+              "description": "İstisnaları çözün ve çalışma sırasını iletin."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Mevcut saatleri bilin",
+              "description": "Çizelge incelemesine pratik kaynak kapasitesini katın."
+            },
+            {
+              "title": "Hat bazında görsel plan",
+              "description": "Çizelgelenen işi üretim hattı görünümünde izleyin."
+            },
+            {
+              "title": "Zamanlamadan yürütmeye",
+              "description": "Sahaya net bir operasyon sırası verin."
+            }
+          ]
+        },
+        "line-planning-board": {
+          "title": "Hat Planlama Panosu",
+          "category": "Ayrıntılı üretim planlama",
+          "hero": [
+            "Her hat görüşte.",
+            "Her devir daha net."
+          ],
+          "description": "Her üretim hattına atanan işi, plandaki yerini ve dikkat isteyen işleri görün. Planlamacılara ve sahaya ortak bir görsel referans verin.",
+          "flow": [
+            "Emir öncelikleri",
+            "Hat atamaları",
+            "Görünür üretim planı"
+          ],
+          "callout": "İşi hat boyunca izleyin.",
+          "note": "Hat atamalarını görünür tutun. Engelli bir devri çözmeden arkasına daha fazla iş yüklemeyin.",
+          "workspaceTitle": "Kör noktasız hat planınız.",
+          "workspaceDescription": "Örnek hat atamalarını yürütme durumuna göre inceleyin. Aynı işi görmek için pano ve liste görünümleri arasında geçin.",
+          "contextLabel": "Hat ataması",
+          "valueLabel": "Atanan çıktı",
+          "totalLabel": "Panodaki örnek çıktı",
+          "progressLabel": "İş tamamlanma",
+          "rows": [
+            {
+              "name": "MO-0148 · PE poşetler",
+              "context": "Hat A-01 · Ekstrüzyon",
+              "note": "Hat A-01 ekstrüzyon işini yürütüyor. Sonraki devirden önce kalan çıktıyı izleyin."
+            },
+            {
+              "name": "MO-0146 · Fermuarlı poşetler",
+              "context": "Hat A-02 · Dönüştürme",
+              "note": "Örnek iş atandı ve ilk planlanan operasyona hazır."
+            },
+            {
+              "name": "MO-0147 · Koliler",
+              "context": "Hat B-02 · Katlama",
+              "note": "İşin sürmesi için koli atamasında malzemeye dikkat edilmeli."
+            },
+            {
+              "name": "MO-0145 · Askı etiketleri",
+              "context": "Hat C-01 · Bitirme",
+              "note": "Bitirme tamamlandı. Atama, panonun üretim bağlamının parçası olarak görünür kalır."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Kuyruğu inceleyin",
+              "description": "Hat kapasitesi gerektiren üretim işiyle başlayın."
+            },
+            {
+              "title": "Hattı atayın",
+              "description": "İşi uygun üretim kaynağıyla eşleştirin."
+            },
+            {
+              "title": "Devirleri izleyin",
+              "description": "Hazırlığı, süren işi ve engelli atamaları inceleyin."
+            },
+            {
+              "title": "İlerlemeyi uzlaştırın",
+              "description": "Görünen planı yürütme ve tamamlanmayla karşılaştırın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Panonun arkasında bir çizelge",
+              "description": "Atamaları ayrıntılı operasyon planına bağlı tutun."
+            },
+            {
+              "title": "İstasyondaki iş",
+              "description": "Operatörlerin sahada neyi yürüttüğünü izleyin."
+            },
+            {
+              "title": "Bağlamlı tahsis",
+              "description": "Her hatta taahhüt edilen emir miktarlarını inceleyin."
+            }
+          ]
+        },
+        "order-allocation": {
+          "title": "Emir Tahsisi",
+          "category": "Ayrıntılı üretim planlama",
+          "hero": [
+            "Her emri başarabileceği",
+            "yere yerleştirin."
+          ],
+          "description": "Üretim miktarlarını uygun hatlara ve kaynaklara bağlayın. Tahsis edilen işi, kalan miktarları ve her atamanın arkasındaki kısıtları inceleyin.",
+          "flow": [
+            "Emir miktarı",
+            "Kaynak ataması",
+            "Tahsis edilen iş"
+          ],
+          "callout": "Taahhüdü görünür kılın.",
+          "note": "Tahsis bir üretim taahhüdüdür. Hem kaynak uygunluğunu hem kalan miktarı kontrol edin.",
+          "workspaceTitle": "Her üretim miktarı için net bir sahip.",
+          "workspaceDescription": "Örnek tahsisleri inceleyin ve her emrin ne kadarının bir üretim hattına atandığını karşılaştırın.",
+          "contextLabel": "Atanan kaynak",
+          "valueLabel": "Tahsis edilen miktar",
+          "totalLabel": "Tahsis edilen örnek çıktı",
+          "progressLabel": "Emir tahsisi",
+          "rows": [
+            {
+              "name": "MO-0148 · PE poşetler",
+              "context": "Hat A-01 · 2.400 / 2.400",
+              "note": "Örnek emrin tüm miktarı A-01 hattına atandı."
+            },
+            {
+              "name": "MO-0147 · Koliler",
+              "context": "Hat B-02 · 1.800 / 900",
+              "note": "Örnek emrin yarısı tahsis edildi. Kalan 900 adet için kapasiteyi inceleyin."
+            },
+            {
+              "name": "MO-0146 · Fermuarlı poşetler",
+              "context": "Hat A-02 · 3.200 / 3.200",
+              "note": "Emir miktarı atandı; yürütme hazırlığı ayrıca inceleniyor."
+            },
+            {
+              "name": "MO-0144 · Arka kartonlar",
+              "context": "Kaynak seçimi bekleniyor",
+              "note": "Bu örnekte hiç üretim miktarı tahsis edilmedi. Planı inceledikten sonra uygun bir kaynak seçin."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Emri seçin",
+              "description": "Ürünü, miktarı ve gerekli üretim yöntemini inceleyin."
+            },
+            {
+              "title": "Kaynağı kontrol edin",
+              "description": "Uygunluğu, kapasiteyi ve planlanan iş yükünü karşılaştırın."
+            },
+            {
+              "title": "Miktarları atayın",
+              "description": "Amaçlanan miktarı tahsis edin ve kalanı inceleyin."
+            },
+            {
+              "title": "Taahhüdü izleyin",
+              "description": "Tahsisi planlama ve yürütme boyunca görünür tutun."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Taahhütten önce kapasite",
+              "description": "Çıktı atamadan önce pratik kaynak yükünü kontrol edin."
+            },
+            {
+              "title": "Ortak panoda atamalar",
+              "description": "Hat düzeyindeki taahhütleri üretim ekibine görünür kılın."
+            },
+            {
+              "title": "Tek üretim emri bağlamı",
+              "description": "Tahsisi desteklediği emre bağlayın."
+            }
+          ]
+        },
+        "shop-floor": {
+          "title": "Atölye",
+          "category": "Üretim yürütme",
+          "hero": [
+            "Planı, onu",
+            "üretenlere ulaştırın."
+          ],
+          "description": "Operasyonları, çıktıyı ve kalite kontrol noktalarını işin yakınında tutun. Ekiplerin üretim sırasını izlemesine ve her istasyonda olanları kaydetmesine yardımcı olun.",
+          "flow": [
+            "Serbest bırakılan operasyon",
+            "Operatör yürütmesi",
+            "Kaydedilen çıktı"
+          ],
+          "callout": "Sıradaki operasyon, tam önünüzde.",
+          "note": "Çıktıyı iş nerede yapılıyorsa orada kaydedin. Kabul edilen çıktıyı, yan ürünleri ve hurdayı ayrı tutun.",
+          "workspaceTitle": "Atölyedeki işe odaklı bir görünüm.",
+          "workspaceDescription": "İlerlemeyi, iş merkezi bağlamını ve istasyondaki sonraki eylemi görmek için örnek operasyon kartları seçin.",
+          "contextLabel": "İstasyon / operasyon",
+          "valueLabel": "Hedef miktar",
+          "totalLabel": "Örnek operasyon hedefleri",
+          "progressLabel": "Kaydedilen çıktı",
+          "rows": [
+            {
+              "name": "PE poşet ekstrüzyonu",
+              "context": "WC-EXT-01 · MO-0148",
+              "note": "Operasyon 2.400 hedef adedin 1.728'ini kaydetti. Kalan üretim miktarını inceleyin."
+            },
+            {
+              "name": "Fermuar takma",
+              "context": "WC-CUT-03 · MO-0146",
+              "note": "Örnek operasyon hazır. Başlamadan önce atanan istasyonu ve kalite talimatlarını doğrulayın."
+            },
+            {
+              "name": "Koli katlama",
+              "context": "WC-CUT-03 · MO-0147",
+              "note": "Bir malzeme eksikliği sonraki üretim miktarını bekletiyor. İstisnayı planlamaya görünür tutun."
+            },
+            {
+              "name": "Etiket nihai kontrolü",
+              "context": "WC-PACK-04 · MO-0145",
+              "note": "Örnek operasyonun tüm hedef adetleri kaydedildi ve tamamlanma kontrolü bitti."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Operasyonu bulun",
+              "description": "Atanan üretim işini ve istasyon bağlamını açın."
+            },
+            {
+              "title": "Sırayı yürütün",
+              "description": "Operasyon talimatlarını ve gerekli kontrol noktalarını izleyin."
+            },
+            {
+              "title": "Gerçek çıktıyı kaydedin",
+              "description": "Bitmiş çıktıyı yakalayın ve süreç kayıplarını ayırt edin."
+            },
+            {
+              "title": "Devri doğrulayın",
+              "description": "Operasyonu tamamlayın ve sonraki adıma hazırlanın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Rotadan talimatlar",
+              "description": "Operasyon sırasını üretim yöntemine bağlı tutun."
+            },
+            {
+              "title": "İstasyonda kalite",
+              "description": "Kusurların fark edilebileceği yerde ürünü kontrol edin."
+            },
+            {
+              "title": "Gerçek üretim maliyeti",
+              "description": "Gerçek emir maliyetlerini incelerken yürütme bağlamını kullanın."
+            }
+          ]
+        },
+        "batches-lots": {
+          "title": "Partiler / Lotlar",
+          "category": "Üretim izlenebilirliği",
+          "hero": [
+            "Partiyi izleyin.",
+            "Hikâyesini bozmayın."
+          ],
+          "description": "Gruplanmış üretim ve malzeme miktarlarına izlenebilir bir kimlik verin. Lot referanslarını giriş, üretim, kontrol ve bitmiş çıktı boyunca izleyin.",
+          "flow": [
+            "Girdi lotu",
+            "Üretim partisi",
+            "Çıktı lotu"
+          ],
+          "callout": "Malzemeyi izleyen bir referans.",
+          "note": "Girdiden çıktıya ilişkiyi koruyun. Parti etiketi, üretim geçmişi net olduğunda en yararlıdır.",
+          "workspaceTitle": "Bitmiş miktarın arkasındaki partiyi izleyin.",
+          "workspaceDescription": "Kaynağını, üretimini ve kalite bağlamını görmek için örnek bir lot seçin. İzleme açıklayıcıdır ve stoku değiştirmez.",
+          "contextLabel": "Kaynak / üretim referansı",
+          "valueLabel": "Lot miktarı",
+          "totalLabel": "Örnek lot miktarı",
+          "progressLabel": "İzleme kaydı bütünlüğü",
+          "rows": [
+            {
+              "name": "LDPE reçine lotu",
+              "context": "Giriş GRN-1101 · Tedarikçi partisi R81",
+              "note": "Tedarikçi lotu R81 teslim alındı ve örnek üretim çalıştırması için girdi kaynağı olarak tanımlandı."
+            },
+            {
+              "name": "Ekstrüde film partisi",
+              "context": "LOT-RM-1101 → MO-0148",
+              "note": "İşlemdeki film partisi girdi lotunu ve üretim emri referansını korur."
+            },
+            {
+              "name": "Bitmiş PE poşet lotu",
+              "context": "MO-0148 → Nihai kontrol",
+              "note": "Bitmiş lot, kabul edilen çıktıyı üretim emrine ve kontrol bağlamına bağlar."
+            },
+            {
+              "name": "Baskılı film bekletme lotu",
+              "context": "MO-0146 · Baskı kontrolü",
+              "note": "Bu örnek lot baskı incelemesi için bekletiliyor. Durumu serbest bırakılmış miktarlardan ayrı kalır."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Kaynağı belirleyin",
+              "description": "Girdi lotunu ve giriş referansını kaydedin."
+            },
+            {
+              "title": "Üretimi bağlayın",
+              "description": "Kaynak lotları üretim partisiyle ilişkili tutun."
+            },
+            {
+              "title": "Kaliteyi inceleyin",
+              "description": "Kontrolü ve serbest bırakma ya da bekletme durumunu izleyin."
+            },
+            {
+              "title": "Çıktıyı izleyin",
+              "description": "Bitmiş üretim miktarlarıyla ilişkiyi koruyun."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Her partinin arkasında bir emir",
+              "description": "Malzemeyi dönüştüren üretim işini izleyin."
+            },
+            {
+              "title": "Kalite bağlamıyla serbest bırakma",
+              "description": "Kontrolleri incelenen lotla ilişkili tutun."
+            },
+            {
+              "title": "Gerektiğinde bireysel kimlik",
+              "description": "Tek tek izlenen ürünler için seri düzeyinde kayıtları kullanın."
+            }
+          ]
+        },
+        "serial-numbers": {
+          "title": "Seri Numaraları",
+          "category": "Üretim izlenebilirliği",
+          "hero": [
+            "Her bir birim için",
+            "bir kimlik."
+          ],
+          "description": "Tek tek tanımlanan ürünleri üretim ve kalite incelemesi boyunca izleyin. Her seri referansını arkasındaki ürüne ve üretim bağlamına bağlayın.",
+          "flow": [
+            "Ürün kimliği",
+            "Seri ataması",
+            "Birim geçmişi"
+          ],
+          "callout": "Bir birim. İzlenebilir bir referans.",
+          "note": "Bireysel kimlik için seri, gruplanmış miktarlar için lot kullanın. Ürününüzün ihtiyaç duyduğu düzeyi seçin.",
+          "workspaceTitle": "Miktarın ötesine, tek tek birime bakın.",
+          "workspaceDescription": "Örnek seri referanslarını arayın ve üretim ile kalite bağlamını görmek için bir birim seçin.",
+          "contextLabel": "Emir / ürün referansı",
+          "valueLabel": "Tanımlı birimler",
+          "totalLabel": "Tek tek izlenen birimler",
+          "progressLabel": "Birim kaydı bütünlüğü",
+          "rows": [
+            {
+              "name": "Yapıştırma ünitesi montajı",
+              "context": "MO-0161 · Ürün SEAL-01",
+              "note": "Örnek birimin üretim referansı ve tamamlanmış kontrol bağlamı var."
+            },
+            {
+              "name": "Yapıştırma ünitesi montajı",
+              "context": "MO-0161 · Ürün SEAL-01",
+              "note": "Montaj kaydedildi; nihai kontrol referansı hâlâ bekliyor."
+            },
+            {
+              "name": "Terazi kontrolcüsü",
+              "context": "MO-0162 · Ürün CTRL-02",
+              "note": "Bir kalibrasyon incelemesi bu birimi üretim grubunun geri kalanından ayrı tutuyor."
+            },
+            {
+              "name": "Terazi kontrolcüsü",
+              "context": "MO-0162 · Ürün CTRL-02",
+              "note": "Bu birim tek tek tanımlı ve tamamlanmış bir kalite referansına sahip."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Seri izlemeyi seçin",
+              "description": "Birim düzeyinde referans gerektiren ürünleri belirleyin."
+            },
+            {
+              "title": "Kimliği atayın",
+              "description": "Bireysel bir seriyi üretim bağlamıyla ilişkilendirin."
+            },
+            {
+              "title": "Kontrolleri izleyin",
+              "description": "Birime bağlı kontrolleri ve durumu inceleyin."
+            },
+            {
+              "title": "Geçmişi koruyun",
+              "description": "Kimliği daha sonraki izlenebilirlik incelemesi için erişilebilir tutun."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Üretim bağlamı",
+              "description": "Bireysel ürünle ilişkili emri bulun."
+            },
+            {
+              "title": "Birim düzeyinde kalite",
+              "description": "Tanımlı bir birimin kontrol bağlamını inceleyin."
+            },
+            {
+              "title": "Parti düzeyinde ilişkiler",
+              "description": "Gruplanmış malzeme geçmişini birim kimliğinin yanında tutun."
+            }
+          ]
+        },
+        "qc-templates": {
+          "title": "KK Şablonları",
+          "category": "Kalite yönetimi",
+          "hero": [
+            "Kaliteyi bir kez tanımlayın.",
+            "Tutarlı kontrol edin."
+          ],
+          "description": "Net parametreler, sonuç türleri ve kabul edilebilir sınırlarla yeniden kullanılabilir kontrol şablonları oluşturun. Her kontrol noktasına neyin ölçüleceğine dair tutarlı bir tanım verin.",
+          "flow": [
+            "Kalite parametreleri",
+            "Kontrol şablonu",
+            "Tutarlı kontroller"
+          ],
+          "callout": "Kabul ölçütlerini netleştirin.",
+          "note": "Yararlı bir kalite parametresinin bir sonuç türü, bir sınırı ve kaydedilmesi için net bir gereksinimi vardır.",
+          "workspaceTitle": "Her kontrolün arkasındaki standart.",
+          "workspaceDescription": "Örnek kontrol şablonlarını, parametre sayılarını ve hazırlıklarını inceleyin. Her şablonun üretimde nereye oturduğunu görün.",
+          "contextLabel": "Kontrol noktası",
+          "valueLabel": "Parametreler",
+          "totalLabel": "Tanımlı örnek parametreler",
+          "progressLabel": "Şablon hazırlığı",
+          "rows": [
+            {
+              "name": "Film kalınlığı kontrolü",
+              "context": "Proses içi · Ekstrüzyon",
+              "note": "Sayısal kalınlık okumaları, genişlik ve görünüm kontrolleri örnek ekstrüzyon kontrolünü tanımlar."
+            },
+            {
+              "name": "Baskı kalitesi incelemesi",
+              "context": "Proses içi · Fleksografik baskı",
+              "note": "Çakışma, ton, yapışma ve görsel ölçütler tekrarlanabilir bir baskı incelemesi sağlar."
+            },
+            {
+              "name": "Koli mukavemet kontrolü",
+              "context": "Nihai kontrol · Koli",
+              "note": "Örnek mukavemet şablonu kabul sınırlarının onayını bekliyor."
+            },
+            {
+              "name": "Poşet yapıştırma bütünlüğü",
+              "context": "Nihai kontrol · Yapıştırma",
+              "note": "Taslak şablon, onaydan önce yapıştırma görünümü ve bütünlük kontrollerini tanımlar."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Kontrol noktasını seçin",
+              "description": "Kontrol edilecek ürün veya süreç noktasını belirleyin."
+            },
+            {
+              "title": "Parametreleri tanımlayın",
+              "description": "Sayısal, seçmeli veya açıklayıcı sonuç türlerini seçin."
+            },
+            {
+              "title": "Kabul edilebilir sınırları belirleyin",
+              "description": "Aralıkları ve zorunlu kontrol gereksinimlerini kaydedin."
+            },
+            {
+              "title": "Şablonu yeniden kullanın",
+              "description": "Üzerinde anlaşılan standardı ilgili kalite kontrolüne uygulayın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Ortak standartlı kontroller",
+              "description": "Kontrol sonuçlarını kaydederken tutarlı parametreler kullanın."
+            },
+            {
+              "title": "Rotada doğru nokta",
+              "description": "Kontrol noktalarını gerçekleştirilen operasyonla ilişkilendirin."
+            },
+            {
+              "title": "İşin yakınında talimatlar",
+              "description": "Yürütme sırasında kontrol bağlamını erişilebilir tutun."
+            }
+          ]
+        },
+        "quality-control": {
+          "title": "Kalite Kontrol",
+          "category": "Kalite yönetimi",
+          "hero": [
+            "Kaliteyi görünür kılın.",
+            "Her kontrol noktasında."
+          ],
+          "description": "Kontrol parametrelerini, kabul sınırlarını ve kaydedilen sonuçları bir arada tutun. Kalite kontrollerini malzeme girişinden üretime ve bitmiş çıktıya kadar izleyin.",
+          "flow": [
+            "Tanımlı standart",
+            "Kaydedilen kontrol",
+            "Kalite kararı"
+          ],
+          "callout": "İstisnayı olduğu yerde yakalayın.",
+          "note": "Tamamlanmış bir kontrol, gerekli sonuçlarına ihtiyaç duyar. Spesifikasyon dışı bulguları incelenene kadar görünür tutun.",
+          "workspaceTitle": "Kontrollerin, bulguların ve kararların net görünümü.",
+          "workspaceDescription": "Örnek kalite kayıtlarını inceleyin ve kapsamını ile sonuç bağlamını görmek için bir kontrol seçin.",
+          "contextLabel": "Şablon / kontrol noktası",
+          "valueLabel": "Gerekli kontroller",
+          "totalLabel": "Gerekli örnek kontroller",
+          "progressLabel": "Kaydedilen sonuçlar",
+          "rows": [
+            {
+              "name": "Film kalınlığı kontrolü",
+              "context": "QCT-001 · MO-0148",
+              "note": "Dört örnek sonucun tümü kaydedildi. Kalınlık ve genişlik ölçümleri tanımlı sınırlar içinde."
+            },
+            {
+              "name": "Baskı çakışma kontrolü",
+              "context": "QCT-002 · MO-0146",
+              "note": "Beş sonuç kaydedildi; bir çakışma bulgusu serbest bırakmadan önce inceleme gerektiriyor."
+            },
+            {
+              "name": "Koli nihai kontrolü",
+              "context": "QCT-003 · MO-0147",
+              "note": "Üç gerekli sonuçtan ikisi kaydedildi. Son mukavemet okuması bekliyor."
+            },
+            {
+              "name": "Yapıştırma bütünlüğü kontrolü",
+              "context": "QCT-004 · MO-0148",
+              "note": "Bu örnekte nihai yapıştırma kontrol noktası operasyon çıktısını bekliyor."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Standardı seçin",
+              "description": "Kontrol şablonunu ve üretim referansını seçin."
+            },
+            {
+              "title": "Sonuçları kaydedin",
+              "description": "Kontrol noktasında her gerekli değeri yakalayın."
+            },
+            {
+              "title": "İstisnaları inceleyin",
+              "description": "Bulguları sayısal aralıklar ve kabul ölçütleriyle karşılaştırın."
+            },
+            {
+              "title": "Kontrolü tamamlayın",
+              "description": "Kontrol sonucunu üretim bağlamıyla birlikte saklayın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Yeniden kullanılabilir kontrol standartları",
+              "description": "Parametreleri ve sınırları kontroller arasında tutarlı tutun."
+            },
+            {
+              "title": "Yürütmenin içinde kalite",
+              "description": "Kontrol işini üretim operasyonlarının yanına yerleştirin."
+            },
+            {
+              "title": "Bulgunun arkasında bir lot",
+              "description": "Kontrol edilen miktarın parti bağlamını izleyin."
+            }
+          ]
+        },
+        "scrap-waste": {
+          "title": "Hurda / Fire",
+          "category": "Üretim yürütme",
+          "hero": [
+            "Kaybı görün.",
+            "Nedenini anlayın."
+          ],
+          "description": "Hurdayı, geri kazanılabilir kesim artıklarını ve süreç fire'sini üretimde görünür tutun. Kaydedilen her miktarı kaynak operasyonuna ve bertaraf bağlamına bağlayın.",
+          "flow": [
+            "Üretim kaybı",
+            "Neden ve miktar",
+            "Geri kazanım veya bertaraf"
+          ],
+          "callout": "Küçük kayıplar da net bir kayıt hak eder.",
+          "note": "Geri kazanılabilir malzemeyi bertaraf fire'sinden ayırın. Miktarları ve işlemleri farklı hikâyeler anlatır.",
+          "workspaceTitle": "Üretim kaybını yararlı bir konuşmaya dönüştürün.",
+          "workspaceDescription": "Örnek kayıp kayıtlarını neden ve bertarafa göre inceleyin. Ne olduğunu ve neyin geri kazanılabileceğini görmek için bir kayıt seçin.",
+          "contextLabel": "Operasyon / neden",
+          "valueLabel": "Kaydedilen kayıp",
+          "totalLabel": "Kaydedilen örnek kayıp",
+          "progressLabel": "Geri kazanılabilir pay",
+          "rows": [
+            {
+              "name": "Film kenar kırpıntısı",
+              "context": "Ekstrüzyon · Kenar kırpma",
+              "note": "Bu temiz kırpıntının büyük kısmı örnek kayıtta geri kazanılabilir olarak tanımlı; geri kazanım kararını kayıp girişinden ayrı tutun."
+            },
+            {
+              "name": "Baskı hazırlık fire'si",
+              "context": "Baskı · Renk hazırlığı",
+              "note": "Mürekkep kirliliği geri kazanım seçeneklerini etkilediğinden hazırlık fire'si bertaraf incelemesi gerektiriyor."
+            },
+            {
+              "name": "Koli kesim artıkları",
+              "context": "Kesim · Kesim kalıbı düzeni",
+              "note": "Temiz kâğıt artıkları kaynak operasyona karşı kaydedildi ve geri kazanım için belirlendi."
+            },
+            {
+              "name": "Hasarlı yapıştırmalar",
+              "context": "Yapıştırma · Sıcaklık sapması",
+              "note": "Bu örnekte hasarlı çıktı geri kazanılabilir olarak belirlenmedi. Sıcaklık bulgusunu kalite ile inceleyin."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Kaynağı belirleyin",
+              "description": "Kaybı bir emre ve üretim operasyonuna bağlayın."
+            },
+            {
+              "title": "Miktarı ölçün",
+              "description": "Malzemeyi, miktarı ve kayıp nedenini kaydedin."
+            },
+            {
+              "title": "Bertarafı inceleyin",
+              "description": "Geri kazanım, inceleme ve bertaraf miktarlarını ayırt edin."
+            },
+            {
+              "title": "Etkiyi anlayın",
+              "description": "Verimi ve gerçek üretim maliyetini incelerken kaydı kullanın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Reçetede beklenen verim",
+              "description": "Üretim kayıplarını ürün ağacının çıktı varsayımlarıyla karşılaştırın."
+            },
+            {
+              "title": "Kaybın arkasındaki bulgular",
+              "description": "Kalite istisnalarını araştırma bağlamında tutun."
+            },
+            {
+              "title": "Kaybın bir maliyeti var",
+              "description": "Süreç kaybının gerçek üretim maliyetine etkisini inceleyin."
+            }
+          ]
+        },
+        "subcontracting": {
+          "title": "Fason Üretim",
+          "category": "Dış üretim",
+          "hero": [
+            "Dışarıda işleme.",
+            "Üretim görünümünüzün içinde."
+          ],
+          "description": "Dışarıda gerçekleştirilen operasyonları aynı üretim akışına bağlı tutun. İşleme kapsamını, gönderilen miktarları ve beklenen iadeleri net bir tedarikçi referansıyla izleyin.",
+          "flow": [
+            "Dış operasyon",
+            "Tedarikçi işlemesi",
+            "İade edilen çıktı"
+          ],
+          "callout": "Operasyon çıkar. Bağlam kalır.",
+          "note": "Gönderilen miktarları iade edilen çıktı, kabul edilen kayıp ve bekleyen işle uzlaştırın.",
+          "workspaceTitle": "Atölyenizin ötesindeki işin net görünümü.",
+          "workspaceDescription": "Örnek dış işleme işlerini ve iade ilerlemelerini inceleyin. Aşağıdaki tedarikçi adları örnek kaynak etiketleridir.",
+          "contextLabel": "Dış kaynak / operasyon",
+          "valueLabel": "Gönderilen miktar",
+          "totalLabel": "Gönderilen örnek miktar",
+          "progressLabel": "İade edilen miktar",
+          "rows": [
+            {
+              "name": "Laminasyonlu koli bitirme",
+              "context": "Tedarikçi kaynağı A · Laminasyon",
+              "note": "Bu örnekte gönderilen 1.500 adetten 900'ü iade edildi. İşi kapatmadan önce bekleyen 600'ü inceleyin."
+            },
+            {
+              "name": "Özel baskı geçişi",
+              "context": "Tedarikçi kaynağı B · Yaldız baskı",
+              "note": "İşleme kapsamı hazırlandı. Örnek iş henüz iade edilen miktar kaydetmedi."
+            },
+            {
+              "name": "Özel kalıp kesimi",
+              "context": "Tedarikçi kaynağı C · Kalıp kesim",
+              "note": "Gönderilen miktarın tamamı iade edildi ve dış işleme referansına bağlı kalıyor."
+            },
+            {
+              "name": "Kaplamalı etiket bitirme",
+              "context": "Tedarikçi kaynağı A · Kaplama",
+              "note": "İade edilen miktar kısmi. Tamamlamadan önce kaliteyi ve kalan adetleri inceleyin."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Dış işi tanımlayın",
+              "description": "Bir tedarikçi kaynağınca gerçekleştirilen rota operasyonunu belirleyin."
+            },
+            {
+              "title": "Devri hazırlayın",
+              "description": "İşleme kapsamını ve gönderilecek miktarları inceleyin."
+            },
+            {
+              "title": "İadeyi izleyin",
+              "description": "İade edilen çıktıyı ve kalan dış işi takip edin."
+            },
+            {
+              "title": "İşi uzlaştırın",
+              "description": "Kapatmadan önce kaliteyi, kayıpları ve işleme maliyetini inceleyin."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Rotada tedarikçi adımı",
+              "description": "Dış operasyonları üretim sırasının içinde tutun."
+            },
+            {
+              "title": "Kaynak emir",
+              "description": "Dış işlemenin arkasındaki üretim gereksinimini izleyin."
+            },
+            {
+              "title": "Dış işleme maliyeti",
+              "description": "Dış operasyon maliyetini emir maliyeti konuşmasında tutun."
+            }
+          ]
+        },
+        "standard-costing": {
+          "title": "Standart Maliyetlendirme",
+          "category": "Üretim maliyet kontrolü",
+          "hero": [
+            "Beklenen maliyeti bilin.",
+            "Üretim başlamadan önce."
+          ],
+          "description": "Ürün ağacı malzemelerini, rota süresini ve iş merkezi oranlarını standart üretim maliyetinde birleştirin. Emrin gerçekte ne kadara mal olduğunu kıyaslamak için tarihli bir temel tutun.",
+          "flow": [
+            "Ürün ağacı ve kaynak oranları",
+            "Maliyet toplama",
+            "Dondurulmuş maliyet temeli"
+          ],
+          "callout": "Temeli aynı reçeteden oluşturun.",
+          "note": "Varsayımları sürümle birlikte dondurun. Anlamlı bir sapma, kıyaslanacak kararlı bir standart ister.",
+          "workspaceTitle": "Açıklayabileceğiniz beklenen maliyet.",
+          "workspaceDescription": "Örnek 1.000 adetlik bir maliyet kartının bileşen dökümünü inceleyin. Değerler örnek BDT tutarlarıdır.",
+          "contextLabel": "Maliyet temeli",
+          "valueLabel": "Standart tutar",
+          "totalLabel": "Örnek standart parti maliyeti",
+          "progressLabel": "Temel incelendi",
+          "rows": [
+            {
+              "name": "Doğrudan malzeme",
+              "context": "BOM-PB-01 · 1.000 adetlik parti",
+              "note": "Malzeme bileşeni, örnek ürün ağacı miktar bazını ve referans malzeme oranlarını kullanır."
+            },
+            {
+              "name": "Doğrudan işçilik",
+              "context": "RT-PB-01 · Operasyon süresi",
+              "note": "İşçilik maliyeti rota süresini ve örnek iş merkezi işçilik oranını izler."
+            },
+            {
+              "name": "Makine maliyeti",
+              "context": "WC-EXT-01 · Makine oranı",
+              "note": "Makine süresi ve referans makine oranı, örnek makine bileşenini oluşturur."
+            },
+            {
+              "name": "Üretim genel giderleri",
+              "context": "İş merkezi genel gider bazı",
+              "note": "Örnek maliyet kartı dondurulmadan önce genel gider varsayımı hâlâ inceleniyor."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Temeli inceleyin",
+              "description": "Ürün ağacı, rota ve iş merkezi oranı varsayımlarını doğrulayın."
+            },
+            {
+              "title": "Bileşenleri toplayın",
+              "description": "Malzeme, işçilik, makine ve genel gider maliyetini birleştirin."
+            },
+            {
+              "title": "Çıktı paylarını inceleyin",
+              "description": "Ortak üretim çıktıları için tahsis varsayımlarını kontrol edin."
+            },
+            {
+              "title": "Sürümü dondurun",
+              "description": "Daha sonraki gerçek maliyet kıyaslaması için tarihli bir standart saklayın."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Reçeteden malzemeler",
+              "description": "Standart girdi miktarlarını üretim ürün ağacına bağlı tutun."
+            },
+            {
+              "title": "Kaynaktan oranlar",
+              "description": "Operasyon maliyetinin arkasındaki iş merkezi varsayımlarını kullanın."
+            },
+            {
+              "title": "Gerçekleşenler için bir temel",
+              "description": "Tamamlanan üretimi dondurulmuş standartla karşılaştırın."
+            }
+          ]
+        },
+        "production-costing": {
+          "title": "Üretim Maliyetlendirme",
+          "category": "Üretim maliyet kontrolü",
+          "hero": [
+            "Gerçek maliyeti izleyin.",
+            "Farkı açıklayın."
+          ],
+          "description": "Kaydedilen malzeme, operasyon ve işleme maliyetlerini emir düzeyinde bir görünüme getirin. Gerçek üretim maliyetini, planın arkasındaki standart varsayımlarla birlikte inceleyin.",
+          "flow": [
+            "Kaydedilen üretim",
+            "Gerçek emir maliyeti",
+            "Sapma incelemesi"
+          ],
+          "callout": "Her sapma bir soruyla başlar.",
+          "note": "Eşiti eşitle kıyaslayın: aynı ürün, çıktı bazı ve maliyet kapsamı.",
+          "workspaceTitle": "Tamamlanmış bir üretim işinin arkasındaki maliyet.",
+          "workspaceDescription": "Örnek 1.000 adetlik bir emir maliyet dökümünü inceleyin. Her bileşendeki standart referanslar örnek sapmayı açıklar.",
+          "contextLabel": "Standart referans",
+          "valueLabel": "Gerçek tutar",
+          "totalLabel": "Örnek gerçek parti maliyeti",
+          "progressLabel": "Maliyet kaydı bütünlüğü",
+          "rows": [
+            {
+              "name": "Doğrudan malzeme",
+              "context": "Standart BDT 18.500 · +BDT 700",
+              "note": "Gerçek malzeme maliyeti BDT 18.500'lük standarda karşı BDT 19.200. Tüketim ve oran farklarını inceleyin."
+            },
+            {
+              "name": "Doğrudan işçilik",
+              "context": "Standart BDT 2.400 · +BDT 200",
+              "note": "Kaydedilen işçilik maliyeti örnek standardın BDT 200 üzerinde. Operasyon süresi bazını inceleyin."
+            },
+            {
+              "name": "Makine maliyeti",
+              "context": "Standart BDT 1.600 · −BDT 100",
+              "note": "Bu örnekte gerçek makine bileşeni referans standardının BDT 100 altında."
+            },
+            {
+              "name": "Üretim genel giderleri",
+              "context": "Standart BDT 2.500 · +BDT 200",
+              "note": "Genel gider bileşeni inceleniyor. Örnek parti, BDT 25.000'lik standarda karşı toplam BDT 26.000."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Gerçek kayıtları toplayın",
+              "description": "Malzeme, operasyon ve dış işleme maliyeti bağlamını inceleyin."
+            },
+            {
+              "title": "Emir maliyetini oluşturun",
+              "description": "Gerçek bileşenleri çıktı bazına göre gruplayın."
+            },
+            {
+              "title": "Standartla karşılaştırın",
+              "description": "Eşleşen maliyet sürümünü ve üretim miktarını kullanın."
+            },
+            {
+              "title": "Sapmayı açıklayın",
+              "description": "Maliyet konuşmasını bitirmeden önce nedenleri inceleyin."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Kararlı bir karşılaştırma noktası",
+              "description": "Sapma incelemesi için tarihli bir standart maliyet kartı kullanın."
+            },
+            {
+              "title": "Maliyetin arkasındaki çıktı",
+              "description": "Maliyet analizini üretim emrine bağlı tutun."
+            },
+            {
+              "title": "Farkın arkasındaki kayıp",
+              "description": "Gerçek üretim maliyetini açıklarken hurda ve verimi inceleyin."
+            }
+          ]
+        }
+      },
+      "statuses": {
+        "Active": "Aktif",
+        "Allocated": "Tahsis edildi",
+        "Approved": "Onaylandı",
+        "At capacity": "Kapasitede",
+        "Available": "Kullanılabilir",
+        "Balanced": "Dengeli",
+        "Blocked": "Engelli",
+        "Completed": "Tamamlandı",
+        "Covered": "Karşılandı",
+        "Disposal": "Bertaraf",
+        "Draft": "Taslak",
+        "In process": "İşlemde",
+        "In progress": "Devam ediyor",
+        "Incoming": "Gelen",
+        "Maintenance": "Bakımda",
+        "On hold": "Beklemede",
+        "Overloaded": "Aşırı yüklü",
+        "Partial": "Kısmi",
+        "Passed": "Geçti",
+        "Pending": "Bekliyor",
+        "Posted": "İşlendi",
+        "Ready": "Hazır",
+        "Ready to send": "Göndermeye hazır",
+        "Recoverable": "Geri kazanılabilir",
+        "Released": "Serbest bırakıldı",
+        "Returned": "İade edildi",
+        "Review": "İncelemede",
+        "Reviewed": "İncelendi",
+        "Running": "Çalışıyor",
+        "Scheduled": "Çizelgelendi",
+        "Shortage": "Eksik",
+        "Unallocated": "Tahsis edilmedi",
+        "With vendor": "Tedarikçide"
+      },
+      "ui": {
+        "manufacturing": "Üretim",
+        "breadcrumb": "Gezinti yolu",
+        "overview": "{title} genel bakış",
+        "exploreWorkspace": "Çalışma alanını keşfedin",
+        "onThisPage": "Bu sayfada",
+        "navSample": "Örnek çalışma alanı",
+        "navWorkflow": "Nasıl çalışır",
+        "navConnected": "Bağlı modüller",
+        "inFocus": "{title} · Odakta",
+        "calloutRecorded": "Gerçek iş akışına yakından bakış.",
+        "calloutExplore": "Bir kaydı keşfedin. Ayrıntıyı izleyin.",
+        "workflowEyebrow": "Net bir çalışma yolu",
+        "workflowTitleA": "İlk adımdan",
+        "workflowTitleB": "sonuna kadar.",
+        "workflowDescription": "{title} için pratik bir sıra; üretim bağlamı bir arada tutulur.",
+        "connectEyebrow": "Birlikte çalışmak için tasarlandı",
+        "connectTitleA": "Koruyun:",
+        "connectTitleB": "üretim bağlamını.",
+        "connectDescription": "Bu işe girdilerini, çalışma bağlamını ve sonraki adımını veren Üretim'in ilgili bölümlerini izleyin.",
+        "connect": "BAĞLANTI",
+        "exploreModule": "Modülü keşfedin",
+        "ctaEyebrow": "Üretiminizi bağlamıyla görün",
+        "ctaTitle": "{title} konusuna yakından bakın.",
+        "ctaBody": "İş akışını üretim ekibinizle birlikte gözden geçirin ve operasyonunuza nasıl uyduğunu keşfedin.",
+        "softwareDataPreview": "Yazılım verisi önizlemesi",
+        "demo": {
+          "description": "Tüm çalışma alanını, kayıtları ve üretim sürecini keşfetmek için rehberli bir demo ayırtın.",
+          "ariaLabel": "Alt yarıda demo daveti bulunan {title} önizlemesi",
+          "eyebrow": "{title} · Tam tanıtım",
+          "heading": "Tüm iş akışını görün."
+        },
+        "units": {
+          "units": "adet",
+          "hours": "saat",
+          "kg": "kg",
+          "checks": "kontrol",
+          "operations": "operasyon",
+          "BDT": "BDT"
+        },
+        "workspace": {
+          "allRecords": "Tüm kayıtlar",
+          "register": "Liste",
+          "board": "Pano",
+          "timeline": "Planlama görünümü",
+          "cost": "Maliyet dökümü",
+          "trace": "İzleme görünümü",
+          "statusRecords": "{status} kayıtları",
+          "timelineNote": "Açıklayıcı beş günlük pencere. Çubuk konumları örnek yerleşimleri gösterir, hesaplanmış bir çizelge değildir.",
+          "resourceWork": "Kaynak / iş",
+          "days": [
+            "Pzt",
+            "Sal",
+            "Çar",
+            "Per",
+            "Cum"
+          ],
+          "viewPlacement": "{id} {name} örnek yerleşimini görüntüle",
+          "visibleCost": "Görünen maliyet bileşenleri",
+          "percentVisible": "Görünen maliyetin %{percent}'i",
+          "traceHeading": "Açıklayıcı izleme yapısı",
+          "tableCaption": "Örnek {title} kayıtları. Ayrıntıları görmek için bir referans seçin.",
+          "colReference": "Referans / kayıt",
+          "colStatus": "Durum",
+          "viewDetails": "Örnek ayrıntıları görüntüle",
+          "noMatchTitle": "Eşleşen kayıt yok",
+          "noMatchBody": "Başka bir arama deneyin veya durum filtresini temizleyin.",
+          "reset": "Filtreleri sıfırla",
+          "interactive": "Etkileşimli örnek",
+          "selectHint": "Üretim bağlamını keşfetmek için bir örnek kayıt seçin.",
+          "sampleData": "Örnek veri",
+          "metricRecords": "Örnek kayıtlar",
+          "metricStatuses": "{count} görünür durum kategorisi",
+          "metricAcross": "Tüm örnek kümesi genelinde",
+          "metricUnit": "{unit} · tüm örnek kayıtlar",
+          "filterAria": "Örnek kayıtları duruma göre filtrele",
+          "searchAria": "Örnek {title} kayıtlarında ara",
+          "searchPlaceholder": "Referans, ad veya kaynak ara…",
+          "clearSearch": "Aramayı temizle",
+          "displayAria": "Çalışma alanı görünümü",
+          "showing": "{total} örnek kaydın {shown} tanesi gösteriliyor",
+          "detailsAria": "Seçili örnek kayıt ayrıntıları",
+          "recordDetails": "Kayıt ayrıntıları",
+          "productionContext": "Üretim bağlamı",
+          "noRecord": "Bu aramayla eşleşen kayıt yok. Örneği keşfetmek için filtreleri sıfırlayın.",
+          "captionNote": "Açıklayıcı ürün önizlemesi. Hiçbir canlı ERP kaydı değiştirilmez.",
+          "captionAction": "Arayın, filtreleyin ve bir kayıt seçin"
+        }
+      },
+      "recorded": {
+        "work-centers": {
+          "title": "Üretiminizin arkasındaki kaynaklar.",
+          "description": "Sağlanan yazılım kayıtlarından renkli kaplama, galvalüm, oluklama ve boy kesme iş merkezleri."
+        },
+        "routings": {
+          "title": "Gerçek rotalar. Operasyon operasyon.",
+          "description": "Yazılımınızdan sağlanan üç üretim rotasını ve dört aşamalı renkli kaplama operasyon sırasını önizleyin."
+        },
+        "bill-of-materials": {
+          "title": "Üretim reçeteleri, malzeme satırına kadar.",
+          "description": "Sağlanan çelik ürün ağacı listesini ve düz levha reçetesini girdi, hurda, verim ve tahmini maliyetle birlikte inceleyin."
+        },
+        "capacity-planning": {
+          "title": "Kapasite ve yük, istisnalar görünürde.",
+          "description": "Sağlanan sekiz iş merkezi görünümü haftalık dilimleri, tarihsiz bir üretim emrini ve kaydedilen kapasite geçersiz kılmalarını içerir."
+        },
+        "master-schedule-mps": {
+          "title": "Üretim planı, dilim dilim.",
+          "description": "Sağlanan renkli bobin ürünlerinin haftalık planlamasını talep, giriş, MPS miktarları ve öngörülen stokla birlikte önizleyin."
+        },
+        "production-orders": {
+          "title": "Gerçek üretim emirleri. Yakından bakış.",
+          "description": "Çelik üretim emirlerini ürün, ürün ağacı, planlanan miktar, kaydedilen çıktı ve güncel durumlarıyla önizleyin."
+        },
+        "batches-lots": {
+          "title": "Her partinin arkasında bir üretim geçmişi.",
+          "description": "Sağlanan yazılım kayıtlarından parti referansları, ürünler, miktarlar ve üretim tarihleri."
+        }
+      }
     }
   },
   "admin": {

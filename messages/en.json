@@ -62696,6 +62696,1532 @@
         "v0ChartForV1V2UseArrowKeys": "{v0} chart for {v1} {v2}. Use arrow keys on a point to inspect adjacent values.",
         "v0OutsideSpecifications": "{v0} outside specifications"
       }
+    },
+    "manufacturingModules": {
+      "modules": {
+        "work-centers": {
+          "title": "Work Centers",
+          "category": "Production foundation",
+          "hero": [
+            "Give every operation",
+            "the right place to run."
+          ],
+          "description": "Bring machines, teams and external resources into one production model. Define working hours, practical capacity and rates before the first job reaches the floor.",
+          "flow": [
+            "Resource calendar",
+            "Work center",
+            "Available capacity"
+          ],
+          "callout": "Know your limits before you plan.",
+          "note": "A machine is only as available as its calendar. Include downtime in the plan.",
+          "workspaceTitle": "A clear picture of your production resources.",
+          "workspaceDescription": "Explore sample work centers, compare their planned load and select a resource to see its operating context.",
+          "contextLabel": "Resource / shift",
+          "valueLabel": "Daily capacity",
+          "totalLabel": "Combined daily capacity",
+          "progressLabel": "Planned utilization",
+          "rows": [
+            {
+              "name": "Film extrusion",
+              "context": "Extrusion hall · 2 shifts",
+              "note": "Two shifts provide 16 practical hours. Reserve a maintenance window before adding weekend work."
+            },
+            {
+              "name": "Flexographic printing",
+              "context": "Print hall · 2 shifts",
+              "note": "Ink changes and cleaning are included in the practical shift allowance."
+            },
+            {
+              "name": "Cutting & sealing",
+              "context": "Conversion line · 2 shifts",
+              "note": "The sample plan fills today's capacity. Review another work center before assigning additional operations."
+            },
+            {
+              "name": "Packing station",
+              "context": "Finishing area · 1 shift",
+              "note": "The station is held for maintenance in this example. Its nominal hours remain visible for reference."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Define the resource",
+              "description": "Choose a machine, labor group, line or external work center."
+            },
+            {
+              "title": "Set its calendar",
+              "description": "Record shifts, working hours and expected downtime."
+            },
+            {
+              "title": "Assign capacity & rates",
+              "description": "Set practical capacity and the rates used in production costing."
+            },
+            {
+              "title": "Connect operations",
+              "description": "Reuse the resource in routings and review its planned load."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Capacity with context",
+              "description": "Use practical hours to make planning decisions grounded in resource availability."
+            },
+            {
+              "title": "One resource, many routes",
+              "description": "Keep reusable work centers connected to the operations they perform."
+            },
+            {
+              "title": "Rates that explain cost",
+              "description": "Carry labor, machine and overhead assumptions into standard cost cards."
+            }
+          ]
+        },
+        "routings": {
+          "title": "Routings",
+          "category": "Production foundation",
+          "hero": [
+            "Turn a recipe into",
+            "a repeatable process."
+          ],
+          "description": "Define the sequence of operations, the work center for each step and the time it takes. Give planning, execution and costing a common production route.",
+          "flow": [
+            "Operation sequence",
+            "Work centers & time",
+            "Executable route"
+          ],
+          "callout": "The right steps, in the right order.",
+          "note": "Setup time belongs to the batch. Run time belongs to the operation.",
+          "workspaceTitle": "See how each product moves through the floor.",
+          "workspaceDescription": "Inspect sample routes and their operation counts. Select a route to review its sequence and timing assumptions.",
+          "contextLabel": "Operation sequence",
+          "valueLabel": "Operations",
+          "totalLabel": "Defined operations",
+          "progressLabel": "Route readiness",
+          "rows": [
+            {
+              "name": "PE poly bag route",
+              "context": "Extrude → Print → Seal → Inspect",
+              "note": "Four operations connect extrusion to final inspection. Setup is planned per batch and sealing time per unit."
+            },
+            {
+              "name": "5-ply carton route",
+              "context": "Corrugate → Cut → Fold → Glue → Pack",
+              "note": "Five steps use dedicated conversion resources; packing follows the glue cure allowance."
+            },
+            {
+              "name": "Zipper bag route",
+              "context": "Extrude → Print → Zip → Seal → QC",
+              "note": "The zipper attachment operation is awaiting a reviewed work-center time."
+            },
+            {
+              "name": "Printed tag route",
+              "context": "Print → Cut → Punch",
+              "note": "The draft sequence is ready for timing estimates before release."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Choose a product",
+              "description": "Create a route for the product and its production method."
+            },
+            {
+              "title": "Sequence operations",
+              "description": "Arrange work in execution order with space for future steps."
+            },
+            {
+              "title": "Set time & resources",
+              "description": "Choose work centers and per-unit, batch or fixed timing."
+            },
+            {
+              "title": "Release the route",
+              "description": "Connect quality checks and use the route on production orders."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Operations meet resources",
+              "description": "Every routing step has an operating work center behind it."
+            },
+            {
+              "title": "Quality in the sequence",
+              "description": "Place inspection checkpoints where the process needs them."
+            },
+            {
+              "title": "A route with a cost",
+              "description": "Use operation times and resource rates in cost rollups."
+            }
+          ]
+        },
+        "bill-of-materials": {
+          "title": "Bill of Materials",
+          "category": "Production foundation",
+          "hero": [
+            "Every input accounted for.",
+            "Every output defined."
+          ],
+          "description": "Build a clear production recipe for materials, quantities and expected outputs. Include co-products, by-products and scrap so the production model reflects the real process.",
+          "flow": [
+            "Materials & quantities",
+            "Production recipe",
+            "Products & yield"
+          ],
+          "callout": "A good production plan starts here.",
+          "note": "Specify the output basis first. Material requirements only make sense against a defined batch quantity.",
+          "workspaceTitle": "Your recipes, with the details that matter.",
+          "workspaceDescription": "Browse sample BOM versions and their batch outputs. Each record explains its material and yield assumptions.",
+          "contextLabel": "Version / materials",
+          "valueLabel": "Batch output",
+          "totalLabel": "Combined sample output",
+          "progressLabel": "Recipe readiness",
+          "rows": [
+            {
+              "name": "PE poly bag 26×44",
+              "context": "v2.1 · Resin, masterbatch, ink",
+              "note": "The sample recipe produces 1,000 bags. Resin, masterbatch and ink are planned against this output basis."
+            },
+            {
+              "name": "5-ply carton box",
+              "context": "v1.3 · Liner, medium, adhesive",
+              "note": "Paper layers and adhesive form the principal inputs. Offcuts are identified separately from finished output."
+            },
+            {
+              "name": "Zipper poly bag",
+              "context": "v1.0 · Film, zipper, ink",
+              "note": "The zipper quantity is under review before this recipe becomes the default production BOM."
+            },
+            {
+              "name": "Printed hang tag",
+              "context": "v0.2 · Board, ink, string",
+              "note": "A draft recipe for board, print ink and string. Confirm yield assumptions before release."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Define the output",
+              "description": "Choose the finished product, BOM type and batch quantity."
+            },
+            {
+              "title": "Build the inputs",
+              "description": "Add material quantities with the correct units of measure."
+            },
+            {
+              "title": "Account for yield",
+              "description": "Identify co-products, by-products, process loss and scrap."
+            },
+            {
+              "title": "Use the recipe",
+              "description": "Link the approved BOM to planning and production orders."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Requirements from recipes",
+              "description": "Use product demand and BOM quantities to calculate material needs."
+            },
+            {
+              "title": "A consistent order starting point",
+              "description": "Production orders use the recipe as their material basis."
+            },
+            {
+              "title": "Joint output, clear cost shares",
+              "description": "Keep expected outputs connected to standard cost assumptions."
+            }
+          ]
+        },
+        "mrp-planning": {
+          "title": "MRP Planning",
+          "category": "Material & production planning",
+          "hero": [
+            "Turn demand into",
+            "a material-ready plan."
+          ],
+          "description": "Bring demand, BOM requirements, available stock and scheduled receipts into the same planning conversation. Identify shortages before they hold up production.",
+          "flow": [
+            "Demand & BOMs",
+            "Net requirements",
+            "Supply proposals"
+          ],
+          "callout": "Find the shortage before the floor does.",
+          "note": "Check stock and expected receipts before proposing new supply. Plan the net requirement.",
+          "workspaceTitle": "Material requirements with a clear next action.",
+          "workspaceDescription": "Explore an illustrative planning run. Compare material coverage and inspect the proposed action for each requirement.",
+          "contextLabel": "Demand source / material",
+          "valueLabel": "Net requirement",
+          "totalLabel": "Net material requirement",
+          "progressLabel": "Material coverage",
+          "rows": [
+            {
+              "name": "LDPE resin",
+              "context": "MO-0148 · Film extrusion",
+              "note": "Gross need is 1,200 kg and available supply is 720 kg. The net requirement in this sample is 480 kg."
+            },
+            {
+              "name": "White masterbatch",
+              "context": "MO-0148 · Color additive",
+              "note": "Available material covers the planned requirement; no additional supply is proposed in this example."
+            },
+            {
+              "name": "Kraft liner paper",
+              "context": "MO-0147 · Carton conversion",
+              "note": "A 600 kg requirement has 300 kg covered. Review the delivery lead time for the remaining 300 kg."
+            },
+            {
+              "name": "Printing ink",
+              "context": "MO-0146 · Flexo print",
+              "note": "An expected receipt covers the remaining demand. Confirm its arrival date against the planned start."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Collect demand",
+              "description": "Review order demand and the master production schedule."
+            },
+            {
+              "title": "Expand the BOM",
+              "description": "Translate planned output into component requirements."
+            },
+            {
+              "title": "Net available supply",
+              "description": "Account for stock, reservations and scheduled receipts."
+            },
+            {
+              "title": "Review exceptions",
+              "description": "Resolve shortages and consider timed supply proposals."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Demand has a schedule",
+              "description": "Connect material needs to the quantities and dates in the MPS."
+            },
+            {
+              "title": "Recipes drive requirements",
+              "description": "Keep component quantities tied to the chosen production BOM."
+            },
+            {
+              "title": "Capacity completes the picture",
+              "description": "Review material readiness alongside practical production capacity."
+            }
+          ]
+        },
+        "capacity-planning": {
+          "title": "Capacity Planning",
+          "category": "Material & production planning",
+          "hero": [
+            "Make room for demand.",
+            "Before you promise it."
+          ],
+          "description": "Compare planned work with practical resource capacity. Make overloaded periods visible and review the work-center choices behind each production commitment.",
+          "flow": [
+            "Planned operations",
+            "Resource load",
+            "Feasible capacity"
+          ],
+          "callout": "Spot the bottleneck early.",
+          "note": "Nominal hours are a starting point. Shifts, maintenance and efficiency shape usable capacity.",
+          "workspaceTitle": "See where your production plan needs space.",
+          "workspaceDescription": "Review sample resource loads across a five-day planning window. Switch to the register for capacity and utilization details.",
+          "contextLabel": "Resource calendar",
+          "valueLabel": "Weekly capacity",
+          "totalLabel": "Weekly resource capacity",
+          "progressLabel": "Planned utilization",
+          "rows": [
+            {
+              "name": "Film extrusion",
+              "context": "WC-EXT-01 · 5 working days",
+              "note": "The sample extrusion plan uses 68 of 80 hours, leaving 12 hours for additional work."
+            },
+            {
+              "name": "Flexo printing",
+              "context": "WC-PRT-02 · 5 working days",
+              "note": "Demand requires 78 hours against 70 available. The meter is capped at 100%; the 8-hour overload needs action."
+            },
+            {
+              "name": "Cutting & sealing",
+              "context": "WC-CUT-03 · 5 working days",
+              "note": "Sixty hours are planned against 80 available. Review operation compatibility before shifting work here."
+            },
+            {
+              "name": "Packing station",
+              "context": "WC-PACK-04 · 5 working days",
+              "note": "The packing window has 18 spare hours in this sample planning week."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Start with the load",
+              "description": "Collect planned operation hours by work center and period."
+            },
+            {
+              "title": "Apply the calendar",
+              "description": "Compare work with practical shifts and working time."
+            },
+            {
+              "title": "Find constraints",
+              "description": "Identify overloaded resources and unavailable periods."
+            },
+            {
+              "title": "Balance the plan",
+              "description": "Review alternate resources, timing and capacity assumptions."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Practical resource calendars",
+              "description": "Capacity starts with the work centers that carry the plan."
+            },
+            {
+              "title": "Sequence a feasible schedule",
+              "description": "Use the capacity picture when reviewing operation timing."
+            },
+            {
+              "title": "Keep commitments realistic",
+              "description": "Review the master schedule against resource constraints."
+            }
+          ]
+        },
+        "master-schedule-mps": {
+          "title": "Master Schedule (MPS)",
+          "category": "Material & production planning",
+          "hero": [
+            "Give demand a date.",
+            "Give production a direction."
+          ],
+          "description": "Translate product demand into a time-phased production plan. Align quantities, planning periods and supply assumptions before detailed scheduling begins.",
+          "flow": [
+            "Product demand",
+            "Master schedule",
+            "Production targets"
+          ],
+          "callout": "One shared plan for the week ahead.",
+          "note": "A production target needs a quantity and a period. Review both against materials and capacity.",
+          "workspaceTitle": "A shared view of what to make, and when.",
+          "workspaceDescription": "Explore sample product targets across an illustrative production week. Select a target to review its planning basis.",
+          "contextLabel": "Planning basis",
+          "valueLabel": "Planned quantity",
+          "totalLabel": "Scheduled sample output",
+          "progressLabel": "Plan readiness",
+          "rows": [
+            {
+              "name": "PE poly bag 26×44",
+              "context": "Customer demand · Week A",
+              "note": "A 12,000-unit target is approved in the sample plan, subject to normal material and capacity checks."
+            },
+            {
+              "name": "5-ply carton box",
+              "context": "Sales orders · Week A",
+              "note": "The carton target groups committed demand into a weekly production quantity."
+            },
+            {
+              "name": "Zipper poly bag",
+              "context": "Replenishment · Week A",
+              "note": "The replenishment target is being reviewed against the printing resource constraint."
+            },
+            {
+              "name": "Printed hang tag",
+              "context": "Forecast demand · Week A",
+              "note": "A draft forecast-based target is visible separately from approved production commitments."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Review demand",
+              "description": "Bring product demand and expected stock needs into view."
+            },
+            {
+              "title": "Set period targets",
+              "description": "Choose production quantities for each planning window."
+            },
+            {
+              "title": "Check feasibility",
+              "description": "Review material availability and resource capacity."
+            },
+            {
+              "title": "Approve the baseline",
+              "description": "Use the agreed schedule to guide detailed planning."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Materials behind the target",
+              "description": "Translate scheduled output into component requirements."
+            },
+            {
+              "title": "Capacity behind the promise",
+              "description": "Check whether resources can support the intended plan."
+            },
+            {
+              "title": "Orders that execute the plan",
+              "description": "Turn agreed quantities into production work."
+            }
+          ]
+        },
+        "scheduling-aps": {
+          "title": "Scheduling (APS)",
+          "category": "Detailed production planning",
+          "hero": [
+            "Sequence the work.",
+            "Make every hour count."
+          ],
+          "description": "Bring operation timing, resource availability and production priorities into a clear scheduling view. Review the sequence before releasing work to the shop floor.",
+          "flow": [
+            "Orders & priorities",
+            "Resource sequence",
+            "Scheduled operations"
+          ],
+          "callout": "A clear sequence beats a crowded queue.",
+          "note": "Respect operation dependencies. A free machine cannot run a job whose previous step is unfinished.",
+          "workspaceTitle": "A schedule you can read at a glance.",
+          "workspaceDescription": "Inspect an illustrative five-day operation plan. Select a scheduled job to see its constraint and release context.",
+          "contextLabel": "Resource / dependency",
+          "valueLabel": "Run time",
+          "totalLabel": "Scheduled operation time",
+          "progressLabel": "Operation completion",
+          "rows": [
+            {
+              "name": "MO-0148 · Film extrusion",
+              "context": "WC-EXT-01 · First operation",
+              "note": "Extrusion is in progress; its output feeds the printing operation in the example sequence."
+            },
+            {
+              "name": "MO-0148 · Flexo printing",
+              "context": "WC-PRT-02 · After extrusion",
+              "note": "Printing follows extrusion and includes its setup allowance in the sample run time."
+            },
+            {
+              "name": "MO-0147 · Carton conversion",
+              "context": "WC-CUT-03 · Material constraint",
+              "note": "The operation has a scheduling window but remains blocked by material availability."
+            },
+            {
+              "name": "MO-0146 · Bag sealing",
+              "context": "WC-CUT-03 · After zipper fit",
+              "note": "Sealing follows zipper attachment. Review the preceding operation before releasing work."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Collect the work",
+              "description": "Review production orders, operations and priorities."
+            },
+            {
+              "title": "Respect constraints",
+              "description": "Check calendars, dependencies and material readiness."
+            },
+            {
+              "title": "Sequence operations",
+              "description": "Place work into a resource-based schedule."
+            },
+            {
+              "title": "Review & release",
+              "description": "Resolve exceptions and communicate the working sequence."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Know the available hours",
+              "description": "Bring practical resource capacity into the scheduling review."
+            },
+            {
+              "title": "A visual plan by line",
+              "description": "Follow scheduled work in the production line view."
+            },
+            {
+              "title": "From timing to execution",
+              "description": "Give the floor a clear operation sequence."
+            }
+          ]
+        },
+        "line-planning-board": {
+          "title": "Line Planning Board",
+          "category": "Detailed production planning",
+          "hero": [
+            "Every line in view.",
+            "Every handoff clearer."
+          ],
+          "description": "See the work assigned to each production line, its place in the plan and the jobs that need attention. Give planners and the floor a shared visual reference.",
+          "flow": [
+            "Order priorities",
+            "Line assignments",
+            "Visible production plan"
+          ],
+          "callout": "Follow the work across the line.",
+          "note": "Keep line assignments visible. Resolve a blocked handoff before loading more work behind it.",
+          "workspaceTitle": "Your line plan, without the blind spots.",
+          "workspaceDescription": "Browse sample line assignments by execution state. Switch between board and register views to inspect the same work.",
+          "contextLabel": "Line assignment",
+          "valueLabel": "Assigned output",
+          "totalLabel": "Output on the sample board",
+          "progressLabel": "Job completion",
+          "rows": [
+            {
+              "name": "MO-0148 · PE bags",
+              "context": "Line A-01 · Extrusion",
+              "note": "Line A-01 is executing the extrusion job. Follow the remaining output before the next handoff."
+            },
+            {
+              "name": "MO-0146 · Zipper bags",
+              "context": "Line A-02 · Conversion",
+              "note": "The sample job is assigned and ready for its first planned operation."
+            },
+            {
+              "name": "MO-0147 · Cartons",
+              "context": "Line B-02 · Folding",
+              "note": "The carton assignment needs material attention before work can continue."
+            },
+            {
+              "name": "MO-0145 · Hang tags",
+              "context": "Line C-01 · Finishing",
+              "note": "Finishing is complete. The assignment remains visible as part of the board's production context."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Review the queue",
+              "description": "Start with the production work that needs line capacity."
+            },
+            {
+              "title": "Assign the line",
+              "description": "Match the job to an appropriate production resource."
+            },
+            {
+              "title": "Follow the handoffs",
+              "description": "Review readiness, running work and blocked assignments."
+            },
+            {
+              "title": "Reconcile progress",
+              "description": "Compare the visible plan with execution and completion."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "A schedule behind the board",
+              "description": "Keep assignments connected to the detailed operation plan."
+            },
+            {
+              "title": "Work at the station",
+              "description": "Follow what operators are executing on the floor."
+            },
+            {
+              "title": "Allocation with context",
+              "description": "Review the order quantities committed to each line."
+            }
+          ]
+        },
+        "order-allocation": {
+          "title": "Order Allocation",
+          "category": "Detailed production planning",
+          "hero": [
+            "Place every order",
+            "where it can succeed."
+          ],
+          "description": "Connect production quantities to suitable lines and resources. Review allocated work, remaining quantities and the constraints behind each assignment.",
+          "flow": [
+            "Order quantity",
+            "Resource assignment",
+            "Allocated work"
+          ],
+          "callout": "Make the commitment visible.",
+          "note": "An allocation is a production commitment. Check both resource suitability and remaining quantity.",
+          "workspaceTitle": "A clear owner for every production quantity.",
+          "workspaceDescription": "Explore sample allocations and compare how much of each order has been assigned to a production line.",
+          "contextLabel": "Assigned resource",
+          "valueLabel": "Allocated quantity",
+          "totalLabel": "Allocated sample output",
+          "progressLabel": "Order allocation",
+          "rows": [
+            {
+              "name": "MO-0148 · PE bags",
+              "context": "Line A-01 · 2,400 of 2,400",
+              "note": "The full sample order quantity is assigned to line A-01."
+            },
+            {
+              "name": "MO-0147 · Cartons",
+              "context": "Line B-02 · 900 of 1,800",
+              "note": "Half of the sample order is allocated. Review capacity for the remaining 900 units."
+            },
+            {
+              "name": "MO-0146 · Zipper bags",
+              "context": "Line A-02 · 3,200 of 3,200",
+              "note": "The order quantity is assigned, with execution readiness reviewed separately."
+            },
+            {
+              "name": "MO-0144 · Backboards",
+              "context": "Awaiting resource selection",
+              "note": "No production quantity is allocated in this example. Choose a suitable resource after reviewing the plan."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Choose the order",
+              "description": "Review the product, quantity and required production method."
+            },
+            {
+              "title": "Check the resource",
+              "description": "Compare suitability, capacity and planned workload."
+            },
+            {
+              "title": "Assign quantities",
+              "description": "Allocate the intended quantity and review any remainder."
+            },
+            {
+              "title": "Follow the commitment",
+              "description": "Keep the allocation visible through planning and execution."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Capacity before commitment",
+              "description": "Check practical resource load before assigning output."
+            },
+            {
+              "title": "Assignments on a shared board",
+              "description": "Make line-level commitments visible to the production team."
+            },
+            {
+              "title": "One production order context",
+              "description": "Connect the allocation to the order it supports."
+            }
+          ]
+        },
+        "shop-floor": {
+          "title": "Shop Floor",
+          "category": "Production execution",
+          "hero": [
+            "Bring the plan",
+            "to the people making it."
+          ],
+          "description": "Keep operations, output and quality checkpoints close to the work. Help teams follow the production sequence and record what happens at each station.",
+          "flow": [
+            "Released operation",
+            "Operator execution",
+            "Recorded output"
+          ],
+          "callout": "The next operation, right in front of you.",
+          "note": "Record output where the work happens. Keep accepted output, by-products and scrap distinct.",
+          "workspaceTitle": "A focused view of the work on the floor.",
+          "workspaceDescription": "Select sample operation cards to inspect progress, work-center context and the next action at the station.",
+          "contextLabel": "Station / operation",
+          "valueLabel": "Target quantity",
+          "totalLabel": "Sample operation targets",
+          "progressLabel": "Recorded output",
+          "rows": [
+            {
+              "name": "PE bag extrusion",
+              "context": "WC-EXT-01 · MO-0148",
+              "note": "The operation has recorded 1,728 of 2,400 target units. Review the remaining production quantity."
+            },
+            {
+              "name": "Zipper attachment",
+              "context": "WC-CUT-03 · MO-0146",
+              "note": "The sample operation is ready. Confirm the assigned station and quality instructions before starting."
+            },
+            {
+              "name": "Carton folding",
+              "context": "WC-CUT-03 · MO-0147",
+              "note": "A material shortage is holding the next production quantity. Keep the exception visible to planning."
+            },
+            {
+              "name": "Tag final inspection",
+              "context": "WC-PACK-04 · MO-0145",
+              "note": "All target units are recorded for the sample operation and the completion check is finished."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Find the operation",
+              "description": "Open the assigned production work and station context."
+            },
+            {
+              "title": "Run the sequence",
+              "description": "Follow operation instructions and required checkpoints."
+            },
+            {
+              "title": "Record actual output",
+              "description": "Capture finished output and distinguish process losses."
+            },
+            {
+              "title": "Validate the handoff",
+              "description": "Complete the operation and prepare the next step."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Instructions from the route",
+              "description": "Keep the operation sequence linked to the production method."
+            },
+            {
+              "title": "Quality at the station",
+              "description": "Inspect the product where defects can be identified."
+            },
+            {
+              "title": "Actual production cost",
+              "description": "Use execution context when reviewing actual order costs."
+            }
+          ]
+        },
+        "batches-lots": {
+          "title": "Batches / Lots",
+          "category": "Production traceability",
+          "hero": [
+            "Follow the batch.",
+            "Keep its story intact."
+          ],
+          "description": "Give grouped production and material quantities a traceable identity. Follow lot references across receipt, production, inspection and finished output.",
+          "flow": [
+            "Input lot",
+            "Production batch",
+            "Output lot"
+          ],
+          "callout": "A reference that follows the material.",
+          "note": "Keep the input-to-output relationship. A batch label is most useful when its production history is clear.",
+          "workspaceTitle": "Trace the batch behind the finished quantity.",
+          "workspaceDescription": "Select a sample lot to explore its source, production and quality context. The trace is illustrative and does not change stock.",
+          "contextLabel": "Source / production reference",
+          "valueLabel": "Lot quantity",
+          "totalLabel": "Sample lot quantity",
+          "progressLabel": "Trace record completeness",
+          "rows": [
+            {
+              "name": "LDPE resin lot",
+              "context": "Receipt GRN-1101 · Supplier batch R81",
+              "note": "Supplier lot R81 is received and identified as an input source for the sample production run."
+            },
+            {
+              "name": "Extruded film batch",
+              "context": "LOT-RM-1101 → MO-0148",
+              "note": "The in-process film batch retains its input lot and production-order reference."
+            },
+            {
+              "name": "Finished PE bag lot",
+              "context": "MO-0148 → Final inspection",
+              "note": "The finished lot links accepted output to the production order and its inspection context."
+            },
+            {
+              "name": "Printed film hold lot",
+              "context": "MO-0146 · Print inspection",
+              "note": "This sample lot is held for print review. Its status remains distinct from released quantities."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Identify the source",
+              "description": "Record the input lot and its receipt reference."
+            },
+            {
+              "title": "Link production",
+              "description": "Keep source lots associated with the production batch."
+            },
+            {
+              "title": "Review quality",
+              "description": "Follow inspection and release or hold status."
+            },
+            {
+              "title": "Trace the output",
+              "description": "Retain the relationship to finished production quantities."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "An order behind every batch",
+              "description": "Follow the production work that transformed the material."
+            },
+            {
+              "title": "Release with quality context",
+              "description": "Keep inspections associated with the lot under review."
+            },
+            {
+              "title": "Individual identity where needed",
+              "description": "Use serial-level records for individually tracked products."
+            }
+          ]
+        },
+        "serial-numbers": {
+          "title": "Serial Numbers",
+          "category": "Production traceability",
+          "hero": [
+            "An identity for",
+            "every individual unit."
+          ],
+          "description": "Follow individually identified products through production and quality review. Connect each serial reference to the product and production context behind it.",
+          "flow": [
+            "Product identity",
+            "Serial assignment",
+            "Unit history"
+          ],
+          "callout": "One unit. One traceable reference.",
+          "note": "Use serials for individual identity and lots for grouped quantities. Choose the level your product needs.",
+          "workspaceTitle": "Look beyond the quantity to the individual unit.",
+          "workspaceDescription": "Search sample serial references and select a unit to inspect its production and quality context.",
+          "contextLabel": "Order / product reference",
+          "valueLabel": "Identified units",
+          "totalLabel": "Individually tracked units",
+          "progressLabel": "Unit record completeness",
+          "rows": [
+            {
+              "name": "Sealing unit assembly",
+              "context": "MO-0161 · Product SEAL-01",
+              "note": "The sample unit has a production reference and completed inspection context."
+            },
+            {
+              "name": "Sealing unit assembly",
+              "context": "MO-0161 · Product SEAL-01",
+              "note": "Assembly is recorded; the final inspection reference is still pending."
+            },
+            {
+              "name": "Scale controller",
+              "context": "MO-0162 · Product CTRL-02",
+              "note": "A calibration review holds this individual unit separately from the rest of its production group."
+            },
+            {
+              "name": "Scale controller",
+              "context": "MO-0162 · Product CTRL-02",
+              "note": "This unit is individually identified with a completed quality reference."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Choose serial tracking",
+              "description": "Identify the products that need unit-level references."
+            },
+            {
+              "title": "Assign the identity",
+              "description": "Associate an individual serial with its production context."
+            },
+            {
+              "title": "Follow inspections",
+              "description": "Review the checks and status attached to the unit."
+            },
+            {
+              "title": "Retain the history",
+              "description": "Keep the identity available for later traceability review."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Production context",
+              "description": "Find the order associated with the individual product."
+            },
+            {
+              "title": "Quality at unit level",
+              "description": "Review the inspection context for an identified unit."
+            },
+            {
+              "title": "Batch-level relationships",
+              "description": "Keep grouped material history alongside unit identity."
+            }
+          ]
+        },
+        "qc-templates": {
+          "title": "QC Templates",
+          "category": "Quality management",
+          "hero": [
+            "Define quality once.",
+            "Inspect consistently."
+          ],
+          "description": "Build reusable inspection templates with clear parameters, result types and acceptable limits. Give each checkpoint a consistent definition of what to measure.",
+          "flow": [
+            "Quality parameters",
+            "Inspection template",
+            "Consistent checks"
+          ],
+          "callout": "Make the acceptance criteria clear.",
+          "note": "A useful quality parameter has a result type, a limit and a clear requirement to record it.",
+          "workspaceTitle": "The standard behind every inspection.",
+          "workspaceDescription": "Browse sample inspection templates, their parameter counts and readiness. Review where each template fits in production.",
+          "contextLabel": "Inspection point",
+          "valueLabel": "Parameters",
+          "totalLabel": "Defined sample parameters",
+          "progressLabel": "Template readiness",
+          "rows": [
+            {
+              "name": "Film thickness check",
+              "context": "In-process · Extrusion",
+              "note": "Numeric thickness readings, width and appearance checks define the sample extrusion inspection."
+            },
+            {
+              "name": "Print quality review",
+              "context": "In-process · Flexographic print",
+              "note": "Registration, shade, adhesion and visual criteria provide a repeatable print review."
+            },
+            {
+              "name": "Carton strength check",
+              "context": "Final inspection · Carton",
+              "note": "The sample strength template is awaiting confirmation of its acceptance limits."
+            },
+            {
+              "name": "Bag seal integrity",
+              "context": "Final inspection · Sealing",
+              "note": "A draft template describes seal appearance and integrity checks before approval."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Choose the checkpoint",
+              "description": "Identify the product or process point to inspect."
+            },
+            {
+              "title": "Define parameters",
+              "description": "Choose numeric, selection or descriptive result types."
+            },
+            {
+              "title": "Set acceptable limits",
+              "description": "Record ranges and mandatory inspection requirements."
+            },
+            {
+              "title": "Reuse the template",
+              "description": "Apply the agreed standard to the relevant quality check."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Checks with a common standard",
+              "description": "Use consistent parameters when recording inspection results."
+            },
+            {
+              "title": "The right point in the route",
+              "description": "Associate checkpoints with the operation being performed."
+            },
+            {
+              "title": "Instructions near the work",
+              "description": "Keep inspection context available during execution."
+            }
+          ]
+        },
+        "quality-control": {
+          "title": "Quality Control",
+          "category": "Quality management",
+          "hero": [
+            "Make quality visible.",
+            "At every checkpoint."
+          ],
+          "description": "Keep inspection parameters, acceptance limits and recorded results together. Follow quality checks from material intake through production to finished output.",
+          "flow": [
+            "Defined standard",
+            "Recorded inspection",
+            "Quality decision"
+          ],
+          "callout": "Catch the exception where it happens.",
+          "note": "A completed inspection needs its required results. Keep out-of-spec findings visible until reviewed.",
+          "workspaceTitle": "A clear view of checks, findings and decisions.",
+          "workspaceDescription": "Explore sample quality records and select an inspection to review its scope and result context.",
+          "contextLabel": "Template / checkpoint",
+          "valueLabel": "Required checks",
+          "totalLabel": "Required sample checks",
+          "progressLabel": "Results recorded",
+          "rows": [
+            {
+              "name": "Film thickness inspection",
+              "context": "QCT-001 · MO-0148",
+              "note": "All four sample results are recorded. Thickness and width measurements fall inside the defined limits."
+            },
+            {
+              "name": "Print registration check",
+              "context": "QCT-002 · MO-0146",
+              "note": "Five results are recorded, with one registration finding requiring review before release."
+            },
+            {
+              "name": "Carton final inspection",
+              "context": "QCT-003 · MO-0147",
+              "note": "Two of three required results are recorded. The final strength reading remains pending."
+            },
+            {
+              "name": "Seal integrity check",
+              "context": "QCT-004 · MO-0148",
+              "note": "The final sealing checkpoint is waiting for its operation output in this sample."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Select the standard",
+              "description": "Choose the inspection template and production reference."
+            },
+            {
+              "title": "Record the results",
+              "description": "Capture each required value at the checkpoint."
+            },
+            {
+              "title": "Review exceptions",
+              "description": "Compare findings with numeric ranges and acceptance criteria."
+            },
+            {
+              "title": "Complete the check",
+              "description": "Retain the inspection result with its production context."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Reusable inspection standards",
+              "description": "Keep parameters and limits consistent across checks."
+            },
+            {
+              "title": "Quality inside execution",
+              "description": "Place inspection work alongside production operations."
+            },
+            {
+              "title": "A lot behind the finding",
+              "description": "Follow the batch context of the inspected quantity."
+            }
+          ]
+        },
+        "scrap-waste": {
+          "title": "Scrap / Waste",
+          "category": "Production execution",
+          "hero": [
+            "See the loss.",
+            "Understand the cause."
+          ],
+          "description": "Keep scrap, recoverable offcuts and process waste visible in production. Connect each recorded quantity to its source operation and disposition context.",
+          "flow": [
+            "Production loss",
+            "Reason & quantity",
+            "Recovery or disposal"
+          ],
+          "callout": "Small losses deserve a clear record.",
+          "note": "Separate recoverable material from disposal waste. Their quantities and treatment tell different stories.",
+          "workspaceTitle": "Turn production loss into a useful conversation.",
+          "workspaceDescription": "Review sample loss records by reason and disposition. Select a record to inspect what happened and what can be recovered.",
+          "contextLabel": "Operation / reason",
+          "valueLabel": "Recorded loss",
+          "totalLabel": "Recorded sample loss",
+          "progressLabel": "Recoverable share",
+          "rows": [
+            {
+              "name": "Film edge trim",
+              "context": "Extrusion · Edge trimming",
+              "note": "Most of this clean trim is identified as recoverable in the sample record; keep the recovery decision separate from the loss entry."
+            },
+            {
+              "name": "Print setup waste",
+              "context": "Printing · Color setup",
+              "note": "The setup waste requires a disposition review because ink contamination affects recovery options."
+            },
+            {
+              "name": "Carton offcuts",
+              "context": "Cutting · Die layout",
+              "note": "Clean paper offcuts are recorded against the source operation and designated for recovery."
+            },
+            {
+              "name": "Damaged seals",
+              "context": "Sealing · Temperature variance",
+              "note": "The damaged output is not designated recoverable in this example. Review the temperature finding with quality."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Identify the source",
+              "description": "Connect the loss to an order and production operation."
+            },
+            {
+              "title": "Measure the quantity",
+              "description": "Record the material, quantity and loss reason."
+            },
+            {
+              "title": "Review disposition",
+              "description": "Distinguish recovery, review and disposal quantities."
+            },
+            {
+              "title": "Understand the impact",
+              "description": "Use the record when reviewing yield and actual production cost."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Expected yield in the recipe",
+              "description": "Compare production losses with the BOM's output assumptions."
+            },
+            {
+              "title": "Findings behind the loss",
+              "description": "Keep quality exceptions in the investigation context."
+            },
+            {
+              "title": "Loss has a cost",
+              "description": "Review the effect of process loss on actual production cost."
+            }
+          ]
+        },
+        "subcontracting": {
+          "title": "Subcontracting",
+          "category": "External production",
+          "hero": [
+            "Outside processing.",
+            "Inside your production view."
+          ],
+          "description": "Keep externally performed operations connected to the same production flow. Follow the processing scope, sent quantities and expected returns with a clear vendor reference.",
+          "flow": [
+            "External operation",
+            "Vendor processing",
+            "Returned output"
+          ],
+          "callout": "The operation leaves. The context stays.",
+          "note": "Reconcile sent quantities with returned output, accepted loss and outstanding work.",
+          "workspaceTitle": "A clear view of the work beyond your floor.",
+          "workspaceDescription": "Inspect illustrative external-processing jobs and their return progress. Vendor names below are sample resource labels.",
+          "contextLabel": "External resource / operation",
+          "valueLabel": "Sent quantity",
+          "totalLabel": "Sample quantity sent",
+          "progressLabel": "Returned quantity",
+          "rows": [
+            {
+              "name": "Laminated carton finish",
+              "context": "Vendor resource A · Lamination",
+              "note": "Nine hundred of 1,500 sent units are returned in this sample. Review the outstanding 600 before closing the job."
+            },
+            {
+              "name": "Specialty print pass",
+              "context": "Vendor resource B · Foil print",
+              "note": "The processing scope is prepared. The sample job has not yet recorded a returned quantity."
+            },
+            {
+              "name": "Custom die cutting",
+              "context": "Vendor resource C · Die cut",
+              "note": "The full sent quantity is returned and remains linked to its external processing reference."
+            },
+            {
+              "name": "Coated tag finish",
+              "context": "Vendor resource A · Coating",
+              "note": "The returned quantity is partial. Review quality and the remaining units before completion."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Define external work",
+              "description": "Identify the routing operation performed by a vendor resource."
+            },
+            {
+              "title": "Prepare the handoff",
+              "description": "Review the processing scope and quantities to send."
+            },
+            {
+              "title": "Follow the return",
+              "description": "Track returned output and remaining external work."
+            },
+            {
+              "title": "Reconcile the job",
+              "description": "Review quality, losses and processing cost before closure."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "A vendor step in the route",
+              "description": "Keep external operations inside the production sequence."
+            },
+            {
+              "title": "The originating order",
+              "description": "Follow the production requirement behind outside processing."
+            },
+            {
+              "title": "External processing cost",
+              "description": "Keep outside-operation cost in the order cost conversation."
+            }
+          ]
+        },
+        "standard-costing": {
+          "title": "Standard Costing",
+          "category": "Manufacturing cost control",
+          "hero": [
+            "Know the expected cost.",
+            "Before production starts."
+          ],
+          "description": "Bring BOM materials, routing time and work-center rates into a standard production cost. Keep a dated baseline for comparing what the order actually costs.",
+          "flow": [
+            "BOM & resource rates",
+            "Cost rollup",
+            "Frozen cost baseline"
+          ],
+          "callout": "Build the baseline from the same recipe.",
+          "note": "Freeze the assumptions with the version. A useful variance needs a stable standard to compare against.",
+          "workspaceTitle": "An expected cost you can explain.",
+          "workspaceDescription": "Explore the component breakdown of an illustrative 1,000-unit cost card. Values are sample BDT amounts.",
+          "contextLabel": "Cost basis",
+          "valueLabel": "Standard amount",
+          "totalLabel": "Sample standard batch cost",
+          "progressLabel": "Basis reviewed",
+          "rows": [
+            {
+              "name": "Direct materials",
+              "context": "BOM-PB-01 · 1,000-unit batch",
+              "note": "The material component uses the sample BOM quantity basis and its reference material rates."
+            },
+            {
+              "name": "Direct labor",
+              "context": "RT-PB-01 · Operation time",
+              "note": "Labor cost follows the routing time and the sample work-center labor rate."
+            },
+            {
+              "name": "Machine cost",
+              "context": "WC-EXT-01 · Machine rate",
+              "note": "Machine time and the reference machine rate form the sample machine component."
+            },
+            {
+              "name": "Production overhead",
+              "context": "Work-center overhead basis",
+              "note": "The overhead assumption remains under review before the sample cost card is frozen."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Review the basis",
+              "description": "Confirm the BOM, routing and work-center rate assumptions."
+            },
+            {
+              "title": "Roll up components",
+              "description": "Combine material, labor, machine and overhead cost."
+            },
+            {
+              "title": "Review output shares",
+              "description": "Check allocation assumptions for joint production outputs."
+            },
+            {
+              "title": "Freeze the version",
+              "description": "Retain a dated standard for later actual-cost comparison."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "Materials from the recipe",
+              "description": "Keep standard input quantities tied to the production BOM."
+            },
+            {
+              "title": "Rates from the resource",
+              "description": "Use the work-center assumptions behind operation cost."
+            },
+            {
+              "title": "A baseline for actuals",
+              "description": "Compare completed production against the frozen standard."
+            }
+          ]
+        },
+        "production-costing": {
+          "title": "Production Costing",
+          "category": "Manufacturing cost control",
+          "hero": [
+            "Follow the actual cost.",
+            "Explain the difference."
+          ],
+          "description": "Bring recorded material, operation and processing costs into an order-level view. Review the actual production cost alongside the standard assumptions behind the plan.",
+          "flow": [
+            "Recorded production",
+            "Actual order cost",
+            "Variance review"
+          ],
+          "callout": "Every variance starts with a question.",
+          "note": "Compare like with like: the same product, output basis and cost scope.",
+          "workspaceTitle": "The cost behind a completed production job.",
+          "workspaceDescription": "Inspect a sample 1,000-unit order cost breakdown. Standard references in each component explain the example variance.",
+          "contextLabel": "Standard reference",
+          "valueLabel": "Actual amount",
+          "totalLabel": "Sample actual batch cost",
+          "progressLabel": "Cost record completeness",
+          "rows": [
+            {
+              "name": "Direct materials",
+              "context": "Standard BDT 18,500 · +BDT 700",
+              "note": "Actual material cost is BDT 19,200 against a BDT 18,500 standard. Review consumption and rate differences."
+            },
+            {
+              "name": "Direct labor",
+              "context": "Standard BDT 2,400 · +BDT 200",
+              "note": "Recorded labor cost is BDT 200 above the sample standard. Review the operation time basis."
+            },
+            {
+              "name": "Machine cost",
+              "context": "Standard BDT 1,600 · −BDT 100",
+              "note": "The actual machine component is BDT 100 below its reference standard in this example."
+            },
+            {
+              "name": "Production overhead",
+              "context": "Standard BDT 2,500 · +BDT 200",
+              "note": "The overhead component is under review. The example batch totals BDT 26,000 against a BDT 25,000 standard."
+            }
+          ],
+          "workflow": [
+            {
+              "title": "Gather actual records",
+              "description": "Review material, operation and outside-processing cost context."
+            },
+            {
+              "title": "Build the order cost",
+              "description": "Group the actual components against the output basis."
+            },
+            {
+              "title": "Compare the standard",
+              "description": "Use the matching cost version and production quantity."
+            },
+            {
+              "title": "Explain the variance",
+              "description": "Review the reasons before completing the cost discussion."
+            }
+          ],
+          "capabilities": [
+            {
+              "title": "A stable comparison point",
+              "description": "Use a dated standard cost card for the variance review."
+            },
+            {
+              "title": "Output behind the cost",
+              "description": "Keep cost analysis connected to the production order."
+            },
+            {
+              "title": "Loss behind the difference",
+              "description": "Review scrap and yield when explaining actual production cost."
+            }
+          ]
+        }
+      },
+      "statuses": {
+        "Active": "Active",
+        "Allocated": "Allocated",
+        "Approved": "Approved",
+        "At capacity": "At capacity",
+        "Available": "Available",
+        "Balanced": "Balanced",
+        "Blocked": "Blocked",
+        "Completed": "Completed",
+        "Covered": "Covered",
+        "Disposal": "Disposal",
+        "Draft": "Draft",
+        "In process": "In process",
+        "In progress": "In progress",
+        "Incoming": "Incoming",
+        "Maintenance": "Maintenance",
+        "On hold": "On hold",
+        "Overloaded": "Overloaded",
+        "Partial": "Partial",
+        "Passed": "Passed",
+        "Pending": "Pending",
+        "Posted": "Posted",
+        "Ready": "Ready",
+        "Ready to send": "Ready to send",
+        "Recoverable": "Recoverable",
+        "Released": "Released",
+        "Returned": "Returned",
+        "Review": "Review",
+        "Reviewed": "Reviewed",
+        "Running": "Running",
+        "Scheduled": "Scheduled",
+        "Shortage": "Shortage",
+        "Unallocated": "Unallocated",
+        "With vendor": "With vendor"
+      },
+      "ui": {
+        "manufacturing": "Manufacturing",
+        "breadcrumb": "Breadcrumb",
+        "overview": "{title} overview",
+        "exploreWorkspace": "Explore the workspace",
+        "onThisPage": "On this page",
+        "navSample": "Sample workspace",
+        "navWorkflow": "How it works",
+        "navConnected": "Connected modules",
+        "inFocus": "{title} · In focus",
+        "calloutRecorded": "A closer look at the real workflow.",
+        "calloutExplore": "Explore a record. Follow the detail.",
+        "workflowEyebrow": "A clear way to work",
+        "workflowTitleA": "From first step to",
+        "workflowTitleB": "follow-through.",
+        "workflowDescription": "A practical sequence for {title}, with the production context kept together.",
+        "connectEyebrow": "Built to work together",
+        "connectTitleA": "Keep the",
+        "connectTitleB": "production context.",
+        "connectDescription": "Follow the related parts of Manufacturing that give this work its inputs, operating context and next step.",
+        "connect": "CONNECT",
+        "exploreModule": "Explore module",
+        "ctaEyebrow": "See your production in context",
+        "ctaTitle": "Take a closer look at {title}.",
+        "ctaBody": "Walk through the workflow with your production team and explore how it fits your operation.",
+        "demo": {
+          "description": "Book a guided demo to explore the full workspace, records and production process.",
+          "ariaLabel": "{title} preview with a lower-half demo invitation",
+          "eyebrow": "{title} · Full walkthrough",
+          "heading": "See the complete workflow."
+        },
+        "units": {
+          "units": "units",
+          "hours": "hours",
+          "kg": "kg",
+          "checks": "checks",
+          "operations": "operations",
+          "BDT": "BDT"
+        },
+        "workspace": {
+          "allRecords": "All records",
+          "register": "Register",
+          "board": "Board",
+          "timeline": "Planning view",
+          "cost": "Cost breakdown",
+          "trace": "Trace view",
+          "statusRecords": "{status} records",
+          "timelineNote": "Illustrative five-day window. Bar positions show sample placements, not a calculated schedule.",
+          "resourceWork": "Resource / work",
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri"
+          ],
+          "viewPlacement": "View {id} {name} sample placement",
+          "visibleCost": "Visible cost components",
+          "percentVisible": "{percent}% of visible cost",
+          "traceHeading": "Illustrative trace structure",
+          "tableCaption": "Sample {title} records. Select a reference to view its details.",
+          "colReference": "Reference / record",
+          "colStatus": "Status",
+          "viewDetails": "View sample details",
+          "noMatchTitle": "No matching records",
+          "noMatchBody": "Try another search or clear the status filter.",
+          "reset": "Reset filters",
+          "interactive": "Interactive sample",
+          "selectHint": "Select a sample record to explore its production context.",
+          "sampleData": "Sample data",
+          "metricRecords": "Sample records",
+          "metricStatuses": "{count} visible status categories",
+          "metricAcross": "Across the full sample set",
+          "metricUnit": "{unit} · all sample records",
+          "filterAria": "Filter sample records by status",
+          "searchAria": "Search sample {title} records",
+          "searchPlaceholder": "Search reference, name or resource…",
+          "clearSearch": "Clear search",
+          "displayAria": "Workspace display",
+          "showing": "Showing {shown} of {total} sample records",
+          "detailsAria": "Selected sample record details",
+          "recordDetails": "Record details",
+          "productionContext": "Production context",
+          "noRecord": "No record matches this search. Reset the filters to explore the sample.",
+          "captionNote": "Illustrative product preview. No live ERP records are changed.",
+          "captionAction": "Search, filter and select a record"
+        },
+        "softwareDataPreview": "Software data preview"
+      },
+      "recorded": {
+        "work-centers": {
+          "title": "The resources behind your production.",
+          "description": "Colour coating, galvalume, corrugation and cut-to-length work centers from the supplied software records."
+        },
+        "routings": {
+          "title": "Real routes. Operation by operation.",
+          "description": "Preview the three production routes and the four-stage colour-coating operation sequence supplied from your software."
+        },
+        "bill-of-materials": {
+          "title": "Production recipes, down to the material line.",
+          "description": "Explore the supplied steel-product BOM register and the plain-sheet recipe, including input, scrap, yield and estimated cost."
+        },
+        "capacity-planning": {
+          "title": "Capacity and load, with the exceptions in view.",
+          "description": "The supplied eight-work-center view includes weekly buckets, one undated production order and recorded capacity overrides."
+        },
+        "master-schedule-mps": {
+          "title": "The production plan, bucket by bucket.",
+          "description": "Preview weekly planning for the supplied colour-coil products, including demand, receipts, MPS quantities and projected stock."
+        },
+        "production-orders": {
+          "title": "Real production orders. A closer look.",
+          "description": "Preview steel production orders with their product, BOM, planned quantity, recorded output and current status."
+        },
+        "batches-lots": {
+          "title": "A production history behind every batch.",
+          "description": "Batch references, products, quantities and manufacturing dates from the supplied software records."
+        }
+      }
     }
   },
   "admin": {

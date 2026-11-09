@@ -421,7 +421,7 @@ function SpcHero() {
   const { mean, sigma, lsl, usl } = suppliedSpcSummary;
   const points = Array.from({ length: 101 }, (_, i) => {
     const x = 20 + i * 0.07;
-    return `${45 + (x - 20) * 100},${180 - Math.exp(-0.5 * ((x - mean) / sigma) ** 2) * 145}`;
+    return `${(45 + (x - 20) * 100).toFixed(2)},${(180 - Math.exp(-0.5 * ((x - mean) / sigma) ** 2) * 145).toFixed(2)}`;
   }).join(" ");
   return (
     <section className={css.spcHero} data-qms-hero="spc">
