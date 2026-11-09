@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Calendar, BookOpen } from "lucide-react";
-import { format } from "date-fns";
+import { useLocale, useTranslations } from "next-intl";
 import { processBlogSummary } from "./summaryUtils";
 
 interface RecentBlog {
@@ -24,6 +24,8 @@ const RecentBlogSkeleton = () => (
 );
 
 export default function AdminRecentBlogs() {
+  const t = useTranslations("admin.recentBlogs");
+  const locale = useLocale();
   const [recentBlogs, setRecentBlogs] = useState<RecentBlog[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -54,7 +56,7 @@ export default function AdminRecentBlogs() {
             <BookOpen className="h-5 w-5 text-primary" />
           </div>
           <h3 className="text-base font-semibold tracking-wide text-primary">
-            Recent Articles
+            {t("title")}
           </h3>
         </div>
 
@@ -79,7 +81,9 @@ export default function AdminRecentBlogs() {
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/15">
           <BookOpen className="h-5 w-5 text-primary" />
         </div>
-        <h3 className="text-lg font-semibold text-foreground">Recent Articles</h3>
+        <h3 className="text-lg font-semibold text-foreground">
+          {t("title")}
+        </h3>
       </div>
 
       {/* Content */}
@@ -95,7 +99,7 @@ export default function AdminRecentBlogs() {
                 {/* New badge (only first item) */}
                 {index === 0 && (
                   <span className="absolute top-3 right-3 text-[10px] uppercase tracking-widest px-2 py-1 rounded-full bg-primary/20 text-primary-foreground">
-                    New
+                    {t("new")}
                   </span>
                 )}
 
@@ -123,14 +127,16 @@ export default function AdminRecentBlogs() {
                   <div className="flex items-center gap-2 text-xs text-muted-foreground pt-1">
                     <Calendar className="h-3 w-3 text-primary" />
                     <time dateTime={new Date(blog.date).toISOString()}>
-                      {format(new Date(blog.date), "MMM d, yyyy")}
+                      {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
+                        new Date(blog.date),
+                      )}
                     </time>
                   </div>
                 </div>
 
                 {/* Read link */}
                 <div className="flex items-center text-xs font-medium text-primary gap-1">
-                  <span>Read article</span>
+                  <span>{t("read")}</span>
                   <svg
                     className="h-3 w-3 transform group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -155,7 +161,7 @@ export default function AdminRecentBlogs() {
           href="admin/blog"
           className="mt-6 block text-center py-3 rounded-lg border border-dashed border-primary/30 bg-primary/5 hover:bg-primary/10 text-sm font-medium text-primary transition-all"
         >
-          View all articles →
+          {t("viewAll")}
         </Link>
       </div>
     </div>

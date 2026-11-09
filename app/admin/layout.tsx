@@ -1,6 +1,8 @@
 // app/admin/layout.tsx
 import React from "react";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import AdminLayout from "@/components/admin/AdminLayout";
 import { requireAdminSession } from "@/lib/auth-admin";
 
@@ -14,16 +16,22 @@ export default async function AdminDashboardLayout({
   children: React.ReactNode;
 }) {
   const session = await requireAdminSession();
+  const [locale, messages] = await Promise.all([getLocale(), getMessages()]);
 
   return (
-    <AdminLayout
-      user={{
-        name: session.user.name ?? "Admin User",
-        role: session.user.role,
-        image: session.user.image ?? undefined,
-      }}
+    <NextIntlClientProvider
+      locale={locale}
+      messages={{ admin: messages.admin }}
     >
-      {children}
-    </AdminLayout>
+      <AdminLayout
+        user={{
+          name: session.user.name ?? "Admin User",
+          role: session.user.role,
+          image: session.user.image ?? undefined,
+        }}
+      >
+        {children}
+      </AdminLayout>
+    </NextIntlClientProvider>
   );
 }

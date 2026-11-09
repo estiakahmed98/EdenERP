@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { toast } from "sonner";
+import { useLocale, useTranslations } from "next-intl";
 
 import {
   AlertDialog,
@@ -57,12 +58,12 @@ type View = "grid" | "list";
 const PAGE_SIZE = 12;
 const VIEW_KEY = "admin-blog-view";
 
-const formatDate = (value: string | Date) =>
-  new Date(value).toLocaleDateString("en-GB", {
+const formatDate = (value: string | Date, locale: string) =>
+  new Intl.DateTimeFormat(locale, {
     day: "numeric",
     month: "short",
     year: "numeric",
-  });
+  }).format(new Date(value));
 
 const initialsOf = (name: string) => {
   const parts = (name || "?").trim().split(/\s+/);
@@ -91,6 +92,7 @@ function Cover({ blog, className }: { blog: Blog; className?: string }) {
 }
 
 function Author({ blog, light }: { blog: Blog; light?: boolean }) {
+  const locale = useLocale();
   return (
     <span
       className={cn(
@@ -110,7 +112,7 @@ function Author({ blog, light }: { blog: Blog; light?: boolean }) {
       <span aria-hidden="true">·</span>
       <span className="inline-flex items-center gap-1 whitespace-nowrap">
         <CalendarDays className="size-3" aria-hidden="true" />
-        {formatDate(blog.date)}
+        {formatDate(blog.date, locale)}
       </span>
     </span>
   );
@@ -125,6 +127,7 @@ function Actions({
   onDelete: (blog: Blog) => void;
   floating?: boolean;
 }) {
+  const t = useTranslations("admin.blog");
   const base =
     "flex size-9 items-center justify-center rounded-xl transition-colors";
   const edit = floating
@@ -143,16 +146,16 @@ function Actions({
     >
       <Link
         href={`/admin/blog/edit/${blog.id}`}
-        aria-label={`Edit ${blog.title}`}
-        title="Edit"
+        aria-label={t("editPost", { title: blog.title })}
+        title={t("edit")}
         className={cn(base, edit)}
       >
         <Pencil className="size-4" />
       </Link>
       <button
         type="button"
-        aria-label={`Delete ${blog.title}`}
-        title="Delete"
+        aria-label={t("deletePost", { title: blog.title })}
+        title={t("delete")}
         onClick={() => onDelete(blog)}
         className={cn(base, del)}
       >
@@ -170,6 +173,7 @@ function FeaturedCard({
   blog: Blog;
   onDelete: (blog: Blog) => void;
 }) {
+  const t = useTranslations("admin.blog");
   return (
     <article className="group relative min-h-80 overflow-hidden rounded-3xl bg-secondary shadow-lg md:col-span-2">
       <Cover
@@ -179,13 +183,13 @@ function FeaturedCard({
       <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-black/5" />
       <Link
         href={`/admin/blog/edit/${blog.id}`}
-        aria-label={`Edit ${blog.title}`}
+        aria-label={t("editPost", { title: blog.title })}
         className="absolute inset-0 z-0"
       />
       <Actions blog={blog} onDelete={onDelete} floating />
       <div className="pointer-events-none relative z-0 flex h-full min-h-80 flex-col justify-end gap-3 p-6 md:p-8">
         <span className="w-fit rounded-full bg-secondary px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-          Latest
+          {t("latest")}
         </span>
         <h3 className="line-clamp-2 text-2xl font-bold leading-tight text-white md:text-3xl">
           {blog.title}
@@ -242,12 +246,13 @@ function PostRow({
   blog: Blog;
   onDelete: (blog: Blog) => void;
 }) {
+  const t = useTranslations("admin.blog");
   return (
     <article className="group flex items-center gap-4 rounded-2xl bg-card p-3 shadow-sm ring-1 ring-border transition-all hover:shadow-md hover:ring-primary/30">
       <Link
         href={`/admin/blog/edit/${blog.id}`}
         className="size-20 shrink-0 overflow-hidden rounded-xl sm:size-24"
-        aria-label={`Edit ${blog.title}`}
+        aria-label={t("editPost", { title: blog.title })}
       >
         <Cover blog={blog} />
       </Link>
@@ -270,6 +275,7 @@ function PostRow({
 }
 
 export default function BlogCard() {
+  const t = useTranslations("admin.blog");
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -322,7 +328,7 @@ export default function BlogCard() {
       }
     } catch (error) {
       console.error("Error fetching blogs:", error);
-      toast.error("Blog posts could not be loaded.");
+      toast.error(t("loadFailed"));
     } finally {
       setLoading(false);
     }
@@ -340,12 +346,12 @@ export default function BlogCard() {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("delete failed");
-      toast.success(`Deleted “${toDelete.title}”`);
+      toast.success(t("deleted", { title: toDelete.title }));
       setToDelete(null);
       if (blogs.length === 1 && page > 1) setPage((p) => p - 1);
       else void fetchBlogs();
     } catch {
-      toast.error("The blog post could not be deleted.");
+      toast.error(t("deleteFailed"));
     } finally {
       setDeleting(false);
     }
@@ -367,20 +373,20 @@ export default function BlogCard() {
         <div>
           <div className="flex items-center gap-3">
             <h2 className="text-3xl font-bold tracking-tight text-foreground">
-              Blog
+              {t("title")}
             </h2>
             {!loading || totalCount > 0 ? (
               <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-bold text-primary">
-                {totalCount} {totalCount === 1 ? "post" : "posts"}
+                {t("postCount", { count: totalCount })}
               </span>
             ) : null}
           </div>
           <p className="mt-1 text-sm text-muted-foreground">
-            Write, publish and manage the stories on your website.
+            {t("subtitle")}
           </p>
         </div>
         <Button size="lg" className="rounded-xl" onClick={() => setIsModalOpen(true)}>
-          <Plus /> New post
+          <Plus /> {t("newPost")}
         </Button>
       </div>
 
@@ -393,8 +399,8 @@ export default function BlogCard() {
           />
           <Input
             type="search"
-            aria-label="Search blog posts"
-            placeholder="Search by title or author…"
+            aria-label={t("searchLabel")}
+            placeholder={t("searchPlaceholder")}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="h-11 rounded-xl border-0 bg-muted/60 pl-10 shadow-none"
@@ -402,26 +408,26 @@ export default function BlogCard() {
         </div>
         {searchTerm && (
           <Button variant="ghost" onClick={() => setSearchTerm("")}>
-            <X /> Clear
+            <X /> {t("clear")}
           </Button>
         )}
         <div
           role="group"
-          aria-label="Layout"
+          aria-label={t("layout")}
           className="flex rounded-xl bg-muted/60 p-1"
         >
           {(
             [
-              ["grid", LayoutGrid, "Grid"],
-              ["list", List, "List"],
+              ["grid", LayoutGrid, t("views.grid")],
+              ["list", List, t("views.list")],
             ] as const
           ).map(([key, Icon, label]) => (
             <button
               key={key}
               type="button"
               aria-pressed={view === key}
-              aria-label={`${label} view`}
-              title={`${label} view`}
+              aria-label={label}
+              title={label}
               onClick={() => changeView(key)}
               className={cn(
                 "flex size-9 items-center justify-center rounded-lg transition-colors",
@@ -475,17 +481,17 @@ export default function BlogCard() {
 
           {totalPages > 1 && (
             <nav
-              aria-label="Pagination"
+              aria-label={t("pagination")}
               className="flex items-center justify-between gap-3 rounded-2xl bg-card p-3 shadow-sm ring-1 ring-border"
             >
               <span className="pl-2 text-sm text-muted-foreground">
-                Page {page} of {totalPages}
+                {t("pageOf", { page, total: totalPages })}
               </span>
               <div className="flex items-center gap-1">
                 <Button
                   variant="ghost"
                   size="icon-sm"
-                  aria-label="Previous page"
+                  aria-label={t("previous")}
                   disabled={page <= 1 || loading}
                   onClick={() => setPage((p) => p - 1)}
                 >
@@ -514,7 +520,7 @@ export default function BlogCard() {
                 <Button
                   variant="ghost"
                   size="icon-sm"
-                  aria-label="Next page"
+                  aria-label={t("next")}
                   disabled={page >= totalPages || loading}
                   onClick={() => setPage((p) => p + 1)}
                 >
@@ -531,17 +537,17 @@ export default function BlogCard() {
           </span>
           <div>
             <p className="text-lg font-bold text-foreground">
-              {debouncedSearchTerm ? "No posts match your search" : "No posts yet"}
+              {debouncedSearchTerm ? t("emptySearch") : t("emptyNone")}
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               {debouncedSearchTerm
-                ? "Try a different title or author."
-                : "Write your first post and it will show up here."}
+                ? t("emptySearchHint")
+                : t("emptyNoneHint")}
             </p>
           </div>
           {!debouncedSearchTerm && (
             <Button size="lg" className="rounded-xl" onClick={() => setIsModalOpen(true)}>
-              <Plus /> Write the first post
+              <Plus /> {t("writeFirst")}
             </Button>
           )}
         </div>
@@ -550,14 +556,14 @@ export default function BlogCard() {
       {/* New post */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="max-h-[92vh] w-[95vw] max-w-6xl overflow-y-auto p-2 sm:max-w-6xl sm:p-4">
-          <DialogTitle className="sr-only">New blog post</DialogTitle>
+          <DialogTitle className="sr-only">{t("newPostDialog")}</DialogTitle>
           <DialogDescription className="sr-only">
-            Fill in the details to publish a new blog post.
+            {t("newPostDialogDesc")}
           </DialogDescription>
           <BlogForm
             onSuccess={() => {
               setIsModalOpen(false);
-              toast.success("Blog post published");
+              toast.success(t("published"));
               void fetchBlogs();
             }}
           />
@@ -571,15 +577,17 @@ export default function BlogCard() {
       >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete this post?</AlertDialogTitle>
+            <AlertDialogTitle>{t("deleteTitle")}</AlertDialogTitle>
             <AlertDialogDescription>
               {toDelete
-                ? `“${toDelete.title}” will be permanently removed from the website. This can't be undone.`
+                ? t("deleteDesc", { title: toDelete.title })
                 : ""}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel disabled={deleting}>Cancel</AlertDialogCancel>
+            <AlertDialogCancel disabled={deleting}>
+              {t("cancel")}
+            </AlertDialogCancel>
             <AlertDialogAction
               disabled={deleting}
               onClick={(event) => {
@@ -588,7 +596,7 @@ export default function BlogCard() {
               }}
               className="bg-destructive text-white hover:bg-destructive/90"
             >
-              {deleting ? "Deleting…" : "Delete"}
+              {deleting ? t("deleting") : t("delete")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

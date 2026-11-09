@@ -7,6 +7,7 @@ import AdminSidebar, {
 } from "./AdminSidebar";
 import AdminHeader from "./AdminHeader";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLocale } from "next-intl";
 import { Toaster } from "@/components/ui/sonner";
 
 interface AdminLayoutProps {
@@ -20,6 +21,7 @@ interface AdminLayoutProps {
 }
 
 const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
+  const dir = useLocale() === "ar" ? "rtl" : "ltr";
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
@@ -29,8 +31,9 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
     [sidebarCollapsed],
   );
 
+  // The shell geometry (fixed left sidebar) stays LTR; text direction is set per region.
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div dir="ltr" className="relative min-h-screen bg-background text-foreground">
       {/* Soft brand glow behind the content */}
       <div
         aria-hidden="true"
@@ -94,7 +97,7 @@ const AdminLayout = ({ children, pageTitle, user }: AdminLayoutProps) => {
             user={user}
           />
 
-          <main>{children}</main>
+          <main dir={dir}>{children}</main>
           <Toaster richColors closeButton position="top-right" />
         </div>
       </div>

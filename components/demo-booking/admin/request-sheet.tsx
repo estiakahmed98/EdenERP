@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import {
   Building2,
   Loader2,
@@ -114,6 +115,8 @@ export default function RequestSheet({
   onSubmit: (values: RequestFormValues) => void;
   onDelete?: () => void;
 }) {
+  const t = useTranslations("admin.demo");
+  const locale = useLocale();
   const [values, setValues] = useState<RequestFormValues>(EMPTY);
   const creating = row === null;
 
@@ -147,30 +150,33 @@ export default function RequestSheet({
       >
         <SheetHeader className="border-b border-border p-6 text-left">
           <SheetTitle className="text-lg font-bold">
-            {creating ? "New demo request" : row.fullName}
+            {creating ? t("sheet.newTitle") : row.fullName}
           </SheetTitle>
           <SheetDescription>
             {creating
-              ? "Add a lead you received by phone, email or in person."
-              : `${row.companyName} · received ${formatDate(row.createdAt)}`}
+              ? t("sheet.newDesc")
+              : t("sheet.editDesc", {
+                  company: row.companyName,
+                  date: formatDate(row.createdAt, locale),
+                })}
           </SheetDescription>
 
           {!creating && (
             <div className="flex flex-wrap gap-2 pt-2">
               <Button asChild variant="outline" size="sm">
                 <a href={`tel:${row.phone}`}>
-                  <Phone /> Call
+                  <Phone /> {t("sheet.call")}
                 </a>
               </Button>
               <Button asChild variant="outline" size="sm">
                 <a href={whatsappLink(row.phone)} target="_blank" rel="noreferrer">
-                  <MessageCircle /> WhatsApp
+                  <MessageCircle /> {t("sheet.whatsapp")}
                 </a>
               </Button>
               {row.email && (
                 <Button asChild variant="outline" size="sm">
                   <a href={`mailto:${row.email}`}>
-                    <Mail /> Email
+                    <Mail /> {t("sheet.email")}
                   </a>
                 </Button>
               )}
@@ -186,11 +192,11 @@ export default function RequestSheet({
             {/* Status */}
             <div className="space-y-2">
               <Label className="text-xs font-semibold text-muted-foreground">
-                Status
+                {t("sheet.status")}
               </Label>
               <div
                 role="radiogroup"
-                aria-label="Status"
+                aria-label={t("sheet.status")}
                 className="grid grid-cols-2 gap-2"
               >
                 {DEMO_STATUSES.map((value) => {
@@ -212,19 +218,19 @@ export default function RequestSheet({
                       )}
                     >
                       <Icon className="size-4 shrink-0" aria-hidden="true" />
-                      {meta.label}
+                      {t(`status.${value}.label`)}
                     </button>
                   );
                 })}
               </div>
               <p className="text-xs text-muted-foreground">
-                {STATUS_META[values.status].hint}
+                {t(`status.${values.status}.hint`)}
               </p>
             </div>
 
             {/* Contact */}
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field id="rq-name" label="Full name" icon={User} error={errors.fullName}>
+              <Field id="rq-name" label={t("sheet.fullName")} icon={User} error={errors.fullName}>
                 <Input
                   id="rq-name"
                   value={values.fullName}
@@ -237,7 +243,7 @@ export default function RequestSheet({
               </Field>
               <Field
                 id="rq-company"
-                label="Company"
+                label={t("sheet.company")}
                 icon={Building2}
                 error={errors.companyName}
               >
@@ -251,7 +257,7 @@ export default function RequestSheet({
                   onChange={(e) => set("companyName", e.target.value)}
                 />
               </Field>
-              <Field id="rq-phone" label="Phone" icon={Phone} error={errors.phone}>
+              <Field id="rq-phone" label={t("sheet.phone")} icon={Phone} error={errors.phone}>
                 <Input
                   id="rq-phone"
                   type="tel"
@@ -264,13 +270,13 @@ export default function RequestSheet({
                   onChange={(e) => set("phone", e.target.value)}
                 />
               </Field>
-              <Field id="rq-email" label="Email" icon={Mail} error={errors.email}>
+              <Field id="rq-email" label={t("sheet.email")} icon={Mail} error={errors.email}>
                 <Input
                   id="rq-email"
                   type="email"
                   value={values.email}
                   maxLength={254}
-                  placeholder="Optional"
+                  placeholder={t("sheet.optional")}
                   autoComplete="off"
                   aria-invalid={!!errors.email}
                   onChange={(e) => set("email", e.target.value)}
@@ -281,7 +287,7 @@ export default function RequestSheet({
             {/* Modules */}
             <div className="space-y-2">
               <Label className="text-xs font-semibold text-muted-foreground">
-                Interested modules
+                {t("sheet.modules")}
               </Label>
               <div className="flex flex-wrap gap-2">
                 {DEMO_MODULES.map((name) => {
@@ -306,24 +312,24 @@ export default function RequestSheet({
               </div>
             </div>
 
-            <Field id="rq-message" label="Client message" error={errors.message}>
+            <Field id="rq-message" label={t("sheet.clientMessage")} error={errors.message}>
               <Textarea
                 id="rq-message"
                 rows={3}
                 maxLength={2000}
                 value={values.message}
-                placeholder="What does the client want to see?"
+                placeholder={t("sheet.messagePlaceholder")}
                 onChange={(e) => set("message", e.target.value)}
               />
             </Field>
 
-            <Field id="rq-notes" label="Internal follow-up notes" error={errors.adminNotes}>
+            <Field id="rq-notes" label={t("sheet.notes")} error={errors.adminNotes}>
               <Textarea
                 id="rq-notes"
                 rows={4}
                 maxLength={4000}
                 value={values.adminNotes}
-                placeholder="Only visible to admins — call outcomes, next steps…"
+                placeholder={t("sheet.notesPlaceholder")}
                 onChange={(e) => set("adminNotes", e.target.value)}
               />
             </Field>
@@ -338,7 +344,7 @@ export default function RequestSheet({
                 onClick={onDelete}
                 className="text-destructive hover:bg-destructive/10 hover:text-destructive"
               >
-                <Trash2 /> Delete
+                <Trash2 /> {t("sheet.delete")}
               </Button>
             ) : (
               <span />
@@ -350,11 +356,15 @@ export default function RequestSheet({
                 disabled={saving}
                 onClick={onClose}
               >
-                Cancel
+                {t("sheet.cancel")}
               </Button>
               <Button type="submit" disabled={saving}>
                 {saving && <Loader2 className="animate-spin" />}
-                {saving ? "Saving…" : creating ? "Create request" : "Save changes"}
+                {saving
+                  ? t("sheet.saving")
+                  : creating
+                    ? t("sheet.create")
+                    : t("sheet.save")}
               </Button>
             </div>
           </SheetFooter>

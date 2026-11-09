@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { useLocale, useTranslations } from "next-intl";
 import { ChevronsLeft, ChevronsRight, LogOut } from "lucide-react";
 
 import { ADMIN_NAV, isAdminRouteActive } from "./admin-nav";
@@ -34,6 +35,8 @@ const AdminSidebar = ({
   drawer = false,
 }: Props) => {
   const pathname = usePathname();
+  const t = useTranslations("admin");
+  const dir = useLocale() === "ar" ? "rtl" : "ltr";
   const [signingOut, setSigningOut] = React.useState(false);
 
   const handleSignOut = async () => {
@@ -47,6 +50,7 @@ const AdminSidebar = ({
 
   return (
     <aside
+      dir={dir}
       className={`flex flex-col border-r border-border bg-card text-card-foreground transition-[width] duration-300 ${
         drawer
           ? "h-full w-full"
@@ -66,7 +70,7 @@ const AdminSidebar = ({
           href="/admin"
           onClick={onNavigate}
           className="flex min-w-0 items-center gap-3"
-          title="Adon ERP admin"
+          title={t("shell.brandTitle")}
         >
           <span className="flex size-9 shrink-0 items-center justify-center overflow-hidden rounded-xl ring-1 ring-border">
             <Image
@@ -84,7 +88,7 @@ const AdminSidebar = ({
                 Adon ERP
               </span>
               <span className="block truncate text-xs text-muted-foreground">
-                Admin panel
+                {t("shell.panel")}
               </span>
             </span>
           )}
@@ -94,7 +98,7 @@ const AdminSidebar = ({
           <button
             type="button"
             onClick={onToggleCollapse}
-            aria-label="Collapse sidebar"
+            aria-label={t("shell.collapseSidebar")}
             className="hidden size-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:flex"
           >
             <ChevronsLeft size={18} />
@@ -104,14 +108,14 @@ const AdminSidebar = ({
 
       {/* Navigation */}
       <nav
-        aria-label="Admin"
+        aria-label={t("shell.navLabel")}
         className="flex-1 space-y-5 overflow-y-auto px-3 py-4"
       >
         {ADMIN_NAV.map((group) => (
-          <div key={group.label}>
+          <div key={group.key}>
             {!collapsed ? (
               <p className="mb-1.5 px-3 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/80">
-                {group.label}
+                {t(`nav.groups.${group.key}`)}
               </p>
             ) : (
               <div className="mx-3 mb-2 h-px bg-border" />
@@ -125,7 +129,7 @@ const AdminSidebar = ({
                     <Link
                       href={item.href}
                       onClick={onNavigate}
-                      title={collapsed ? item.name : undefined}
+                      title={collapsed ? t(`nav.items.${item.key}.name`) : undefined}
                       aria-current={active ? "page" : undefined}
                       className={`relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                         collapsed ? "justify-center" : ""
@@ -139,7 +143,9 @@ const AdminSidebar = ({
                         <span className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-primary" />
                       )}
                       <Icon size={19} className="shrink-0" />
-                      {!collapsed && <span className="truncate">{item.name}</span>}
+                      {!collapsed && <span className="truncate">
+                          {t(`nav.items.${item.key}.name`)}
+                        </span>}
                     </Link>
                   </li>
                 );
@@ -155,7 +161,7 @@ const AdminSidebar = ({
           <button
             type="button"
             onClick={onToggleCollapse}
-            aria-label="Expand sidebar"
+            aria-label={t("shell.expandSidebar")}
             className="mb-2 hidden w-full items-center justify-center rounded-lg py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:flex"
           >
             <ChevronsRight size={18} />
@@ -181,10 +187,10 @@ const AdminSidebar = ({
           {!collapsed && (
             <div className="min-w-0 flex-1 leading-tight">
               <p className="truncate text-sm font-semibold text-foreground">
-                {user?.name || "Admin"}
+                {user?.name || t("shell.defaultUser")}
               </p>
               <p className="truncate text-xs capitalize text-muted-foreground">
-                {(user?.role || "admin").toLowerCase()}
+                {t(`shell.role.${(user?.role || "admin").toLowerCase()}` as never)}
               </p>
             </div>
           )}
@@ -192,8 +198,8 @@ const AdminSidebar = ({
             type="button"
             onClick={handleSignOut}
             disabled={signingOut}
-            aria-label="Sign out"
-            title="Sign out"
+            aria-label={t("shell.signOut")}
+            title={t("shell.signOut")}
             className="flex size-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive disabled:opacity-50"
           >
             <LogOut size={17} />

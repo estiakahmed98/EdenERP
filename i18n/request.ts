@@ -1,4 +1,5 @@
 // i18n/request.ts
+import { cookies } from "next/headers";
 import { getRequestConfig } from "next-intl/server";
 
 import { defaultLocale, isLocale, type AppLocale } from "@/i18n/config";
@@ -24,7 +25,16 @@ async function getMessages(locale: AppLocale) {
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {
-  const requestedLocale = (await requestLocale)?.trim().toLowerCase();
+  let requestedLocale = (await requestLocale)?.trim().toLowerCase();
+
+  // Routes outside [locale] (e.g. /admin) have no locale segment, so fall back
+  // to the NEXT_LOCALE cookie set by the public site and the admin switcher.
+  if (!requestedLocale) {
+    requestedLocale = (await cookies())
+      .get("NEXT_LOCALE")
+      ?.value?.trim()
+      .toLowerCase();
+  }
 
   const locale: AppLocale =
     requestedLocale && isLocale(requestedLocale)
