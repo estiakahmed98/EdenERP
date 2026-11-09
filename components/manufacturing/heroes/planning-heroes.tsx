@@ -1,3 +1,4 @@
+import CapacityGauge from "./capacity-gauge";
 import {
   ArrowDown,
   ArrowRight,
@@ -91,44 +92,11 @@ export function CapacityHero({ copy, target }: HeroProps) {
             label="Supplied capacity view: eight work centers, zero overloaded, zero recorded utilization and one undated production order whose load is not placed."
             viewBox="0 0 360 245"
           >
-            <path
-              d="M45 190A135 135 0 0 1 315 190"
-              stroke="var(--border)"
-              strokeWidth="18"
-              strokeLinecap="round"
+            <CapacityGauge
+              utilizationLabel="RECORDED UTILIZATION"
+              availableLabel="Available"
+              overloadedLabel="Overloaded"
             />
-            <path
-              d="m180 188-118 0"
-              stroke="var(--ink)"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-            <circle cx="180" cy="188" r="7" fill="var(--ink)" />
-            <text
-              x="180"
-              y="140"
-              textAnchor="middle"
-              fontSize="43"
-              fontWeight="600"
-              fill="var(--ink)"
-            >
-              0%
-            </text>
-            <text
-              x="180"
-              y="166"
-              textAnchor="middle"
-              fontSize="11"
-              fill="var(--muted-foreground)"
-            >
-              RECORDED UTILIZATION
-            </text>
-            <text x="36" y="227" fontSize="11" fill="var(--muted-foreground)">
-              Available
-            </text>
-            <text x="265" y="227" fontSize="11" fill="var(--muted-foreground)">
-              Overloaded
-            </text>
           </Diagram>
           <Caption>
             Zero overloads in the supplied view. Undated work is not placed.

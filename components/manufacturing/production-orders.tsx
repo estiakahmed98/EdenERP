@@ -29,7 +29,7 @@ import visual from "./manufacturing-visuals.module.css";
 import ManufacturingHero from "./heroes/manufacturing-hero";
 import DemoPreview from "./demo-preview";
 import RecordedDemoWorkspace, {
-  recordedDemoCopy,
+  useRecordedDemoCopy,
 } from "./recorded-demo-workspace";
 
 type Step = { title: string; description: string };
@@ -44,6 +44,8 @@ const workflowIcons = [ClipboardCheck, Factory, PackageCheck, CheckCheck];
 export default function ManufacturingProductionOrders() {
   const t = useTranslations("pages.manufacturingDetails.productionOrders");
   const ui = useTranslations("pages.manufacturingShowcase");
+  const mt = useTranslations("pages.manufacturingModules.ui");
+  const recorded = useRecordedDemoCopy("production-orders");
   const steps = t.raw("workflowSteps") as Step[];
   const features = t.raw("features") as Step[];
   return (
@@ -92,10 +94,10 @@ export default function ManufacturingProductionOrders() {
             eyebrow={ui("workspaceEyebrow")}
             title={
               <ManufacturingMarker>
-                {recordedDemoCopy["production-orders"].title}
+                {recorded.title}
               </ManufacturingMarker>
             }
-            description={recordedDemoCopy["production-orders"].description}
+            description={recorded.description}
           >
             <div className="flex flex-col items-end">
               <span className="mb-1 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-[11px] text-muted-foreground">
@@ -103,16 +105,16 @@ export default function ManufacturingProductionOrders() {
                   className="size-1.5 rounded-full bg-primary"
                   aria-hidden="true"
                 />
-                Software data preview
+                {mt("softwareDataPreview")}
               </span>
               <div className="mt-3 hidden lg:block">
                 <ManufacturingCallout variant="swoop">
-                  A closer look at the real workflow.
+                  {mt("calloutRecorded")}
                 </ManufacturingCallout>
               </div>
             </div>
           </ManufacturingSectionHeading>
-          <DemoPreview title="Production Orders">
+          <DemoPreview title={ui("productionOrders")}>
             <RecordedDemoWorkspace slug="production-orders" />
           </DemoPreview>
         </div>

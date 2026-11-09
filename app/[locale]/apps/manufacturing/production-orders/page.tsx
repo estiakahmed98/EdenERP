@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import { useLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import ManufacturingProductionOrders from "@/components/manufacturing/production-orders";
-import ManufacturingEnglishContent from "@/components/manufacturing/english-content";
+import visual from "@/components/manufacturing/manufacturing-visuals.module.css";
 import { getLocaleAlternates } from "@/i18n/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations({
-    locale: "en",
-    namespace: "pages.manufacturingDetails.productionOrders",
-  });
+  const t = await getTranslations(
+    "pages.manufacturingDetails.productionOrders",
+  );
   return {
     title: t("moduleLabel"),
     description: t("heroDescription"),
@@ -17,9 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function ProductionOrdersPage() {
+  const locale = useLocale();
   return (
-    <ManufacturingEnglishContent>
+    <div className={locale === "en" ? visual.englishContent : undefined}>
       <ManufacturingProductionOrders />
-    </ManufacturingEnglishContent>
+    </div>
   );
 }

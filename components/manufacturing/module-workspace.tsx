@@ -13,6 +13,7 @@ import {
   Search,
   X,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import {
   ManufacturingMetric,
@@ -32,13 +33,7 @@ const money = new Intl.NumberFormat("en-US", {
   currencyDisplay: "code",
   maximumFractionDigits: 0,
 });
-const viewLabels: Record<PreviewView, string> = {
-  table: "Register",
-  board: "Board",
-  timeline: "Planning view",
-  cost: "Cost breakdown",
-  trace: "Trace view",
-};
+const ALL = "__all__";
 
 function statusClass(status: string) {
   if (["Blocked", "Shortage", "Overloaded", "Disposal"].includes(status))
@@ -71,7 +66,14 @@ function statusClass(status: string) {
   return "bg-primary/10 text-primary";
 }
 
+function useStatusLabel() {
+  const t = useTranslations("pages.manufacturingModules");
+  return (status: string) =>
+    t.has(`statuses.${status}`) ? t(`statuses.${status}`) : status;
+}
+
 function SampleStatus({ status }: { status: string }) {
+  const label = useStatusLabel();
   return (
     <span
       className={cn(
@@ -80,7 +82,7 @@ function SampleStatus({ status }: { status: string }) {
       )}
     >
       <span className="size-1.5 rounded-full bg-current" aria-hidden="true" />
-      {status}
+      {label(status)}
     </span>
   );
 }
@@ -123,9 +125,20 @@ export default function ModuleWorkspace({
 }: {
   content: ManufacturingModuleContent;
 }) {
+  const t = useTranslations("pages.manufacturingModules.ui.workspace");
+  const tm = useTranslations("pages.manufacturingModules.ui");
+  const tu = useTranslations("pages.manufacturingModules.ui.units");
+  const statusLabel = useStatusLabel();
+  const viewLabels: Record<PreviewView, string> = {
+    table: t("register"),
+    board: t("board"),
+    timeline: t("timeline"),
+    cost: t("cost"),
+    trace: t("trace"),
+  };
   const detailId = useId();
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState("All records");
+  const [filter, setFilter] = useState(ALL);
   const [selectedId, setSelectedId] = useState(content.rows[0][0]);
   const [view, setView] = useState<PreviewView>(content.view);
   const statuses = [...new Set(content.rows.map((row) => row[3]))];
@@ -133,7 +146,7 @@ export default function ModuleWorkspace({
     () =>
       content.rows.filter(
         (row) =>
-          (filter === "All records" || row[3] === filter) &&
+          (filter === ALL || row[3] === filter) &&
           `${row[0]} ${row[1]} ${row[2]} ${row[3]}`
             .toLowerCase()
             .includes(query.trim().toLowerCase()),
@@ -146,7 +159,7 @@ export default function ModuleWorkspace({
   const amount = (value: number) =>
     content.unit === "BDT"
       ? money.format(value)
-      : `${number.format(value)} ${content.unit}`;
+      : `${number.format(value)} ${tu(content.unit)}`;
   const selectClass = (row: SampleRow) =>
     cn(
       "rounded-lg border p-4 text-start",
@@ -172,7 +185,7 @@ export default function ModuleWorkspace({
       <span className="mt-1 block text-[11px] font-medium text-foreground">
         {row[1]}
       </span>
-      <span className="sr-only"> — View sample details</span>
+      <span className="sr-only"> — {t("viewDetails")}</span>
     </button>
   );
 
@@ -184,22 +197,22 @@ export default function ModuleWorkspace({
             className="mx-auto mb-3 size-6 text-muted-foreground"
             aria-hidden="true"
           />
-          <p className="text-sm font-semibold">No matching records</p>
+          <p className="text-sm font-semibold">{t("noMatchTitle")}</p>
           <p className="mt-2 text-xs text-muted-foreground">
-            Try another search or clear the status filter.
+            {t("noMatchBody")}
           </p>
           <button
             type="button"
             onClick={() => {
               setQuery("");
-              setFilter("All records");
+              setFilter(ALL);
             }}
             className={cn(
               "mt-4 rounded text-xs font-semibold text-primary underline underline-offset-4",
               styles.focus,
             )}
           >
-            Reset filters
+            {t("reset")}
           </button>
         </div>
       );
@@ -212,7 +225,7 @@ export default function ModuleWorkspace({
             .map((status) => (
               <section
                 key={status}
-                aria-label={`${status} records`}
+                aria-label={t("statusRecords", { status: statusLabel(status) })}
                 className="rounded-xl border border-border bg-muted/15 p-3"
               >
                 <div className="mb-3 flex items-center justify-between gap-2">
@@ -259,13 +272,12 @@ export default function ModuleWorkspace({
         <div className="overflow-x-auto p-4">
           <div className="min-w-[660px]">
             <p className="mb-4 text-[10px] leading-5 text-muted-foreground">
-              Illustrative five-day window. Bar positions show sample
-              placements, not a calculated schedule.
+              {t("timelineNote")}
             </p>
             <div className="grid grid-cols-[180px_1fr] border-b border-border pb-3 text-[10px] font-medium text-muted-foreground">
-              <span>Resource / work</span>
+              <span>{t("resourceWork")}</span>
               <div className="grid grid-cols-5 text-center">
-                {["Mon", "Tue", "Wed", "Thu", "Fri"].map((day) => (
+                {(t.raw("days") as string[]).map((day) => (
                   <span key={day}>{day}</span>
                 ))}
               </div>
@@ -285,7 +297,7 @@ export default function ModuleWorkspace({
                 >
                   <button
                     type="button"
-                    aria-label={`View ${row[0]} ${row[1]} sample placement`}
+                    aria-label={t("viewPlacement", { id: row[0], name: row[1] })}
                     aria-pressed={selected?.[0] === row[0]}
                     aria-controls={detailId}
                     onClick={() => setSelectedId(row[0])}
@@ -302,7 +314,7 @@ export default function ModuleWorkspace({
                   >
                     <span className="block truncate">{row[0]}</span>
                     <span className="block truncate text-[9px] opacity-75">
-                      {row[3]}
+                      {statusLabel(row[3])}
                     </span>
                   </button>
                 </div>
@@ -317,7 +329,7 @@ export default function ModuleWorkspace({
         <div className="space-y-3 p-4">
           <div className="mb-5 flex items-center justify-between gap-4">
             <span className="text-xs font-semibold">
-              Visible cost components
+              {t("visibleCost")}
             </span>
             <span className="text-sm font-semibold tabular-nums text-primary">
               {amount(visibleTotal)}
@@ -351,8 +363,11 @@ export default function ModuleWorkspace({
               </span>
               <span className="mt-2 flex items-center justify-between text-[10px] text-muted-foreground">
                 <span>
-                  {visibleTotal ? Math.round((row[4] / visibleTotal) * 100) : 0}
-                  % of visible cost
+                  {t("percentVisible", {
+                    percent: visibleTotal
+                      ? Math.round((row[4] / visibleTotal) * 100)
+                      : 0,
+                  })}
                 </span>
                 <SampleStatus status={row[3]} />
               </span>
@@ -371,7 +386,7 @@ export default function ModuleWorkspace({
             )}
           >
             <p className="mb-4 text-[10px] font-semibold uppercase tracking-wider text-primary">
-              Illustrative trace structure
+              {t("traceHeading")}
             </p>
             <ol className="grid gap-3 sm:grid-cols-3">
               {content.flow.map((stage, index) => (
@@ -423,14 +438,13 @@ export default function ModuleWorkspace({
       <div className="overflow-x-auto">
         <table className="w-full min-w-[650px] text-start text-xs">
           <caption className="sr-only">
-            Sample {content.title} records. Select a reference to view its
-            details.
+            {t("tableCaption", { title: content.title })}
           </caption>
           <thead className="bg-muted/20 text-[10px] uppercase tracking-wider text-muted-foreground">
             <tr>
               {[
-                "Reference / record",
-                "Status",
+                t("colReference"),
+                t("colStatus"),
                 content.valueLabel,
                 content.progressLabel,
               ].map((label) => (
@@ -490,10 +504,10 @@ export default function ModuleWorkspace({
           <span className="font-semibold">
             Adon <span className="text-primary">ERP</span>
           </span>
-          <span className="text-muted-foreground">/ Manufacturing</span>
+          <span className="text-muted-foreground">/ {tm("manufacturing")}</span>
         </div>
         <span className="rounded-full border border-dashed border-primary/30 bg-primary/5 px-3 py-1 text-[10px] font-medium text-primary">
-          Interactive sample
+          {t("interactive")}
         </span>
       </div>
       <div className="bg-[var(--cream)] p-4 sm:p-6">
@@ -503,35 +517,35 @@ export default function ModuleWorkspace({
               {content.title}
             </h3>
             <p className="mt-1 text-xs text-muted-foreground">
-              Select a sample record to explore its production context.
+              {t("selectHint")}
             </p>
           </div>
           <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1.5 text-[10px] text-muted-foreground">
             <CircleCheck className="size-3 text-primary" aria-hidden="true" />
-            Sample data
+            {t("sampleData")}
           </span>
         </div>
         <dl className="mb-5 grid gap-3 sm:grid-cols-3">
           <ManufacturingMetric
-            label="Sample records"
+            label={t("metricRecords")}
             value={number.format(content.rows.length)}
-            detail={`${statuses.length} visible status categories`}
+            detail={t("metricStatuses", { count: statuses.length })}
             icon={Boxes}
           />
           <ManufacturingMetric
-            label={`${content.focusStatus} records`}
+            label={t("statusRecords", { status: statusLabel(content.focusStatus) })}
             value={number.format(
               content.rows.filter((row) => row[3] === content.focusStatus)
                 .length,
             )}
-            detail="Across the full sample set"
+            detail={t("metricAcross")}
             icon={CircleCheck}
             annotated
           />
           <ManufacturingMetric
             label={content.totalLabel}
             value={number.format(total)}
-            detail={`${content.unit} · all sample records`}
+            detail={t("metricUnit", { unit: tu(content.unit) })}
             icon={Factory}
           />
         </dl>
@@ -539,10 +553,10 @@ export default function ModuleWorkspace({
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border p-3">
             <div
               role="group"
-              aria-label="Filter sample records by status"
+              aria-label={t("filterAria")}
               className="flex max-w-full gap-1 overflow-x-auto"
             >
-              {["All records", ...statuses].map((status) => (
+              {[ALL, ...statuses].map((status) => (
                 <button
                   key={status}
                   type="button"
@@ -556,9 +570,9 @@ export default function ModuleWorkspace({
                       : "text-muted-foreground hover:bg-muted/40",
                   )}
                 >
-                  {status}
+                  {status === ALL ? t("allRecords") : statusLabel(status)}
                   <span className="ms-2 text-[10px] opacity-70">
-                    {status === "All records"
+                    {status === ALL
                       ? content.rows.length
                       : content.rows.filter((row) => row[3] === status).length}
                   </span>
@@ -575,14 +589,14 @@ export default function ModuleWorkspace({
               <input
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                aria-label={`Search sample ${content.title} records`}
-                placeholder="Search reference, name or resource…"
+                aria-label={t("searchAria", { title: content.title })}
+                placeholder={t("searchPlaceholder")}
                 className="h-9 w-full rounded-md border border-border bg-background pe-9 ps-9 text-xs outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20"
               />
               {query && (
                 <button
                   type="button"
-                  aria-label="Clear search"
+                  aria-label={t("clearSearch")}
                   onClick={() => setQuery("")}
                   className={cn(
                     "absolute end-1 top-0.5 grid size-8 place-items-center rounded text-muted-foreground",
@@ -596,7 +610,7 @@ export default function ModuleWorkspace({
             {content.view !== "table" && (
               <div
                 role="group"
-                aria-label="Workspace display"
+                aria-label={t("displayAria")}
                 className="flex gap-1 rounded-lg border border-border p-1"
               >
                 {([content.view, "table"] as const).map((option) => (
@@ -632,18 +646,18 @@ export default function ModuleWorkspace({
                 aria-live="polite"
                 className="border-t border-border px-4 py-3 text-[10px] text-muted-foreground"
               >
-                Showing {visible.length} of {content.rows.length} sample records
+                {t("showing", { shown: visible.length, total: content.rows.length })}
               </p>
             </div>
             <aside
               id={detailId}
-              aria-label="Selected sample record details"
+              aria-label={t("detailsAria")}
               className="border-t border-border bg-muted/10 p-5 lg:border-s lg:border-t-0"
             >
               {selected ? (
                 <div key={selected[0]} className={visual.detail}>
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
-                    Record details
+                    {t("recordDetails")}
                   </p>
                   <h4 className="mt-4 break-words text-base font-semibold">
                     {selected[0]}
@@ -674,7 +688,7 @@ export default function ModuleWorkspace({
                   <div className="mt-5 rounded-lg border border-dashed border-primary/25 bg-primary/[0.04] p-3">
                     <span className="mb-2 inline-flex items-center gap-1.5 text-[10px] font-semibold text-primary">
                       <Check className="size-3" aria-hidden="true" />
-                      Production context
+                      {t("productionContext")}
                     </span>
                     <p className="text-[11px] leading-6 text-muted-foreground">
                       {selected[6]}
@@ -683,8 +697,7 @@ export default function ModuleWorkspace({
                 </div>
               ) : (
                 <p className="py-8 text-xs leading-6 text-muted-foreground">
-                  No record matches this search. Reset the filters to explore
-                  the sample.
+                  {t("noRecord")}
                 </p>
               )}
             </aside>
@@ -693,11 +706,11 @@ export default function ModuleWorkspace({
       </div>
       <figcaption className="flex flex-wrap items-center justify-between gap-3 border-t border-border px-5 py-3.5 text-[11px] text-muted-foreground sm:px-6">
         <span>
-          Illustrative product preview. No live ERP records are changed.
+          {t("captionNote")}
         </span>
         <span className="inline-flex items-center gap-1.5 text-primary">
           <Search className="size-3" aria-hidden="true" />
-          Search, filter and select a record
+          {t("captionAction")}
         </span>
       </figcaption>
     </figure>

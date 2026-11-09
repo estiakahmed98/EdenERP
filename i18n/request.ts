@@ -16,12 +16,30 @@ const messageLoaders = {
   vi: () => import("../messages/vi.json"),
 } satisfies Record<AppLocale, () => Promise<{ default: Record<string, unknown> }>>;
 
+const manufacturingLoaders = {
+  en: () => import("../messages/manufacturing/en.json"),
+  bn: () => import("../messages/manufacturing/bn.json"),
+  zh: () => import("../messages/manufacturing/zh.json"),
+  tr: () => import("../messages/manufacturing/tr.json"),
+  ar: () => import("../messages/manufacturing/ar.json"),
+  ja: () => import("../messages/manufacturing/ja.json"),
+  ne: () => import("../messages/manufacturing/ne.json"),
+  vi: () => import("../messages/manufacturing/vi.json"),
+} satisfies Record<AppLocale, () => Promise<{ default: Record<string, unknown> }>>;
+
 async function getMessages(locale: AppLocale) {
-  const [english, translated] = await Promise.all([
+  const [english, translated, englishMfg, translatedMfg] = await Promise.all([
     messageLoaders.en(),
     messageLoaders[locale](),
+    manufacturingLoaders.en(),
+    manufacturingLoaders[locale](),
   ]);
-  return mergeMessages(english.default, translated.default);
+  const base = mergeMessages(english.default, translated.default);
+  const manufacturing = mergeMessages(
+    englishMfg.default,
+    translatedMfg.default,
+  );
+  return mergeMessages(base, { pages: { manufacturingModules: manufacturing } });
 }
 
 export default getRequestConfig(async ({ requestLocale }) => {

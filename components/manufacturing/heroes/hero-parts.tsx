@@ -1,6 +1,7 @@
 import LiveDemoButton from "@/components/live-demo-button";
 import type { ReactNode, SVGProps } from "react";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { ManufacturingAction } from "../design-system";
@@ -23,15 +24,16 @@ export function Frame({
   className,
   children,
 }: HeroProps & { concept: HeroSlug; className?: string; children: ReactNode }) {
+  const t = useTranslations("pages.manufacturingModules.ui");
   return (
     <section
-      aria-label={`${copy.title} overview`}
+      aria-label={t("overview", { title: copy.title })}
       data-hero-concept={concept}
       className={cn(css.frame, className)}
     >
       <div className={css.shell}>
-        <nav aria-label="Breadcrumb" className={css.breadcrumb}>
-          <Link href="/apps/manufacturing">Manufacturing</Link>
+        <nav aria-label={t("breadcrumb")} className={css.breadcrumb}>
+          <Link href="/apps/manufacturing">{t("manufacturing")}</Link>
           <ArrowRight size={12} aria-hidden="true" />
           <span aria-current="page">{copy.title}</span>
         </nav>
@@ -61,11 +63,12 @@ export function Description({ copy }: HeroProps) {
   return <p className={css.description}>{copy.description}</p>;
 }
 export function Actions({ target = "sample-workspace" }: { target?: string }) {
+  const t = useTranslations("pages.manufacturingModules.ui");
   return (
     <div className={css.actions}>
       <LiveDemoButton />
       <ManufacturingAction href={`#${target}`} secondary>
-        Explore the workspace
+        {t("exploreWorkspace")}
       </ManufacturingAction>
     </div>
   );

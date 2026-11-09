@@ -1,0 +1,1526 @@
+{
+  "modules": {
+    "work-centers": {
+      "title": "工作中心",
+      "category": "生产基础",
+      "hero": [
+        "为每道工序",
+        "找到合适的位置。"
+      ],
+      "description": "将设备、班组和外部资源纳入同一个生产模型。在第一个任务到达车间之前，先定义工作时间、实际产能和费率。",
+      "flow": [
+        "资源日历",
+        "工作中心",
+        "可用产能"
+      ],
+      "callout": "计划之前，先了解自己的极限。",
+      "note": "设备的可用性取决于它的日历。请在计划中纳入停机时间。",
+      "workspaceTitle": "清晰呈现您的生产资源。",
+      "workspaceDescription": "浏览示例工作中心，比较其计划负荷，并选择一项资源查看其运行情况。",
+      "contextLabel": "资源 / 班次",
+      "valueLabel": "日产能",
+      "totalLabel": "日产能合计",
+      "progressLabel": "计划利用率",
+      "rows": [
+        {
+          "name": "薄膜挤出",
+          "context": "挤出车间 · 2个班次",
+          "note": "两个班次提供16个有效工时。增加周末作业前，请预留维护窗口。"
+        },
+        {
+          "name": "柔版印刷",
+          "context": "印刷车间 · 2个班次",
+          "note": "换墨和清洁已计入有效班次宽放时间。"
+        },
+        {
+          "name": "裁切与封口",
+          "context": "加工线 · 2个班次",
+          "note": "示例计划已排满今日产能。分配更多工序前，请先查看其他工作中心。"
+        },
+        {
+          "name": "包装工位",
+          "context": "整理区 · 1个班次",
+          "note": "本示例中该工位因维护而停用，其名义工时仍会显示以供参考。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "定义资源",
+          "description": "选择设备、人工组、产线或外部工作中心。"
+        },
+        {
+          "title": "设置日历",
+          "description": "记录班次、工作时间和预期停机。"
+        },
+        {
+          "title": "分配产能与费率",
+          "description": "设置有效产能以及用于生产成本核算的费率。"
+        },
+        {
+          "title": "关联工序",
+          "description": "在工艺路线中复用该资源，并查看其计划负荷。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "有背景的产能",
+          "description": "用有效工时，基于资源可用性做出计划决策。"
+        },
+        {
+          "title": "一个资源，多条路线",
+          "description": "让可复用的工作中心与其执行的工序保持关联。"
+        },
+        {
+          "title": "能解释成本的费率",
+          "description": "将人工、设备和间接费用假设带入标准成本卡。"
+        }
+      ]
+    },
+    "routings": {
+      "title": "工艺路线",
+      "category": "生产基础",
+      "hero": [
+        "把配方变成",
+        "可重复的流程。"
+      ],
+      "description": "定义工序顺序、每一步的工作中心和所需时间。让计划、执行和成本核算共用同一条生产路线。",
+      "flow": [
+        "工序顺序",
+        "工作中心与时间",
+        "可执行的路线"
+      ],
+      "callout": "正确的步骤，正确的顺序。",
+      "note": "准备时间属于批次，运行时间属于工序。",
+      "workspaceTitle": "了解每个产品如何流经车间。",
+      "workspaceDescription": "查看示例路线及其工序数量。选择一条路线，查看其顺序和时间假设。",
+      "contextLabel": "工序顺序",
+      "valueLabel": "工序",
+      "totalLabel": "已定义工序",
+      "progressLabel": "路线就绪度",
+      "rows": [
+        {
+          "name": "PE塑料袋路线",
+          "context": "挤出 → 印刷 → 封口 → 检验",
+          "note": "四道工序将挤出与最终检验连接起来。准备按批次计划，封口时间按单件计划。"
+        },
+        {
+          "name": "5层纸箱路线",
+          "context": "瓦楞 → 裁切 → 折叠 → 粘合 → 包装",
+          "note": "五个步骤使用专用加工资源；包装在胶水固化宽放时间之后进行。"
+        },
+        {
+          "name": "拉链袋路线",
+          "context": "挤出 → 印刷 → 拉链 → 封口 → 质检",
+          "note": "拉链安装工序正在等待经审核的工作中心时间。"
+        },
+        {
+          "name": "印刷吊牌路线",
+          "context": "印刷 → 裁切 → 冲孔",
+          "note": "草稿顺序已就绪，等待发布前的时间估算。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "选择产品",
+          "description": "为产品及其生产方式创建路线。"
+        },
+        {
+          "title": "排列工序",
+          "description": "按执行顺序排列作业，并为将来的步骤留出空间。"
+        },
+        {
+          "title": "设置时间与资源",
+          "description": "选择工作中心，以及按件、按批或固定时间。"
+        },
+        {
+          "title": "发布路线",
+          "description": "关联质量检查，并在生产订单中使用该路线。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "工序与资源相遇",
+          "description": "工艺路线的每一步背后都有一个运行的工作中心。"
+        },
+        {
+          "title": "质量融入顺序",
+          "description": "在流程需要的位置设置检验点。"
+        },
+        {
+          "title": "带成本的路线",
+          "description": "在成本汇总中使用工序时间和资源费率。"
+        }
+      ]
+    },
+    "bill-of-materials": {
+      "title": "物料清单",
+      "category": "生产基础",
+      "hero": [
+        "每项投入都有账可查。",
+        "每项产出都有定义。"
+      ],
+      "description": "为物料、数量和预期产出建立清晰的生产配方。纳入联产品、副产品和废料，使生产模型反映真实流程。",
+      "flow": [
+        "物料与数量",
+        "生产配方",
+        "产品与收得率"
+      ],
+      "callout": "好的生产计划从这里开始。",
+      "note": "先确定产出基准。只有针对明确的批量，物料需求才有意义。",
+      "workspaceTitle": "您的配方，细节一目了然。",
+      "workspaceDescription": "浏览示例BOM版本及其批次产出。每条记录都说明其物料和收得率假设。",
+      "contextLabel": "版本 / 物料",
+      "valueLabel": "批次产出",
+      "totalLabel": "示例产出合计",
+      "progressLabel": "配方就绪度",
+      "rows": [
+        {
+          "name": "PE塑料袋 26×44",
+          "context": "v2.1 · 树脂、色母粒、油墨",
+          "note": "示例配方可生产1,000个袋子。树脂、色母粒和油墨按此产出基准计划。"
+        },
+        {
+          "name": "5层纸箱",
+          "context": "面纸、芯纸、胶水 · v1.3",
+          "note": "纸层和胶水是主要投入。边角料与成品分开标识。"
+        },
+        {
+          "name": "拉链塑料袋",
+          "context": "v1.0 · 薄膜、拉链、油墨",
+          "note": "在该配方成为默认生产BOM之前，拉链数量正在审核中。"
+        },
+        {
+          "name": "印刷吊牌",
+          "context": "v0.2 · 卡纸、油墨、绳子",
+          "note": "卡纸、印刷油墨和绳子的草稿配方。发布前请确认收得率假设。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "定义产出",
+          "description": "选择成品、BOM类型和批量。"
+        },
+        {
+          "title": "构建投入",
+          "description": "以正确的计量单位添加物料数量。"
+        },
+        {
+          "title": "核算收得率",
+          "description": "识别联产品、副产品、工艺损耗和废料。"
+        },
+        {
+          "title": "使用配方",
+          "description": "将已批准的BOM关联到计划和生产订单。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "由配方得出需求",
+          "description": "用产品需求和BOM数量计算物料需求。"
+        },
+        {
+          "title": "一致的订单起点",
+          "description": "生产订单以配方作为物料依据。"
+        },
+        {
+          "title": "联产有清晰的成本份额",
+          "description": "让预期产出与标准成本假设保持关联。"
+        }
+      ]
+    },
+    "mrp-planning": {
+      "title": "MRP计划",
+      "category": "物料与生产计划",
+      "hero": [
+        "把需求转化为",
+        "物料齐备的计划。"
+      ],
+      "description": "将需求、BOM需求、可用库存和已排程的收货放进同一个计划中。在短缺拖慢生产之前就发现它。",
+      "flow": [
+        "需求与BOM",
+        "净需求",
+        "供应建议"
+      ],
+      "callout": "赶在车间之前发现短缺。",
+      "note": "在提出新的供应之前，先检查库存和预期收货。按净需求做计划。",
+      "workspaceTitle": "物料需求，下一步行动清晰。",
+      "workspaceDescription": "查看一次示例计划运行。比较物料覆盖情况，并查看每项需求的建议操作。",
+      "contextLabel": "需求来源 / 物料",
+      "valueLabel": "净需求",
+      "totalLabel": "物料净需求",
+      "progressLabel": "物料覆盖率",
+      "rows": [
+        {
+          "name": "LDPE树脂",
+          "context": "MO-0148 · 薄膜挤出",
+          "note": "总需求为1,200公斤，可用供应为720公斤。本示例的净需求为480公斤。"
+        },
+        {
+          "name": "白色色母粒",
+          "context": "MO-0148 · 着色添加剂",
+          "note": "可用物料已覆盖计划需求；本示例不建议额外供应。"
+        },
+        {
+          "name": "牛皮纸面纸",
+          "context": "MO-0147 · 纸箱加工",
+          "note": "600公斤的需求已覆盖300公斤。请核对其余300公斤的交货提前期。"
+        },
+        {
+          "name": "印刷油墨",
+          "context": "MO-0146 · 柔版印刷",
+          "note": "预期收货可覆盖其余需求。请对照计划开始日期确认到货日期。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "收集需求",
+          "description": "查看订单需求和主生产计划。"
+        },
+        {
+          "title": "展开BOM",
+          "description": "将计划产出转换为组件需求。"
+        },
+        {
+          "title": "扣减可用供应",
+          "description": "计入库存、预留和已排程收货。"
+        },
+        {
+          "title": "审核异常",
+          "description": "解决短缺，并考虑带时间的供应建议。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "需求有时间表",
+          "description": "将物料需求与MPS中的数量和日期关联。"
+        },
+        {
+          "title": "配方决定需求",
+          "description": "让组件数量与所选生产BOM保持关联。"
+        },
+        {
+          "title": "产能让全貌完整",
+          "description": "在查看实际生产产能的同时查看物料就绪情况。"
+        }
+      ]
+    },
+    "capacity-planning": {
+      "title": "产能计划",
+      "category": "物料与生产计划",
+      "hero": [
+        "为需求腾出空间。",
+        "在作出承诺之前。"
+      ],
+      "description": "将计划工作量与实际资源产能进行比较。让超负荷的时段清晰可见，并审视每项生产承诺背后的工作中心选择。",
+      "flow": [
+        "计划工序",
+        "资源负荷",
+        "可行产能"
+      ],
+      "callout": "尽早发现瓶颈。",
+      "note": "名义工时只是起点。班次、维护和效率决定可用产能。",
+      "workspaceTitle": "看清生产计划哪里需要空间。",
+      "workspaceDescription": "查看五天计划窗口内的示例资源负荷。切换到清单可查看产能和利用率详情。",
+      "contextLabel": "资源日历",
+      "valueLabel": "周产能",
+      "totalLabel": "每周资源产能",
+      "progressLabel": "计划利用率",
+      "rows": [
+        {
+          "name": "薄膜挤出",
+          "context": "WC-EXT-01 · 5个工作日",
+          "note": "示例挤出计划使用80小时中的68小时，为额外工作留出12小时。"
+        },
+        {
+          "name": "柔版印刷",
+          "context": "WC-PRT-02 · 5个工作日",
+          "note": "需求为78小时，而可用为70小时。仪表封顶在100%；8小时的超载需要处理。"
+        },
+        {
+          "name": "裁切与封口",
+          "context": "WC-CUT-03 · 5个工作日",
+          "note": "80小时可用中已计划60小时。转移工作到这里之前，请先核对工序兼容性。"
+        },
+        {
+          "name": "包装工位",
+          "context": "WC-PACK-04 · 5个工作日",
+          "note": "在这个示例计划周中，包装窗口有18小时空余。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "从负荷开始",
+          "description": "按工作中心和时段收集计划工序工时。"
+        },
+        {
+          "title": "应用日历",
+          "description": "将工作与实际班次和工作时间进行比较。"
+        },
+        {
+          "title": "找出约束",
+          "description": "识别超负荷的资源和不可用的时段。"
+        },
+        {
+          "title": "平衡计划",
+          "description": "审视备用资源、时间安排和产能假设。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "实际的资源日历",
+          "description": "产能始于承载计划的工作中心。"
+        },
+        {
+          "title": "编排可行的排程",
+          "description": "在审视工序时间时使用产能视图。"
+        },
+        {
+          "title": "让承诺切合实际",
+          "description": "对照资源约束审视主生产计划。"
+        }
+      ]
+    },
+    "master-schedule-mps": {
+      "title": "主生产计划(MPS)",
+      "category": "物料与生产计划",
+      "hero": [
+        "给需求一个日期。",
+        "给生产一个方向。"
+      ],
+      "description": "将产品需求转化为按时间分段的生产计划。在详细排程开始之前，统一数量、计划期间和供应假设。",
+      "flow": [
+        "产品需求",
+        "主生产计划",
+        "生产目标"
+      ],
+      "callout": "下周共用一份计划。",
+      "note": "生产目标需要数量和时段。请对照物料和产能审视两者。",
+      "workspaceTitle": "共同看清做什么、何时做。",
+      "workspaceDescription": "查看示例生产周内的产品目标。选择一个目标，审视其计划依据。",
+      "contextLabel": "计划依据",
+      "valueLabel": "计划数量",
+      "totalLabel": "已排程示例产出",
+      "progressLabel": "计划就绪度",
+      "rows": [
+        {
+          "name": "PE塑料袋 26×44",
+          "context": "客户需求 · A周",
+          "note": "示例计划中已批准12,000件的目标，但仍须通过常规的物料和产能检查。"
+        },
+        {
+          "name": "5层纸箱",
+          "context": "销售订单 · A周",
+          "note": "纸箱目标将已确认的需求汇总为每周生产数量。"
+        },
+        {
+          "name": "拉链塑料袋",
+          "context": "补货 · A周",
+          "note": "补货目标正在对照印刷资源约束进行审核。"
+        },
+        {
+          "name": "印刷吊牌",
+          "context": "预测需求 · A周",
+          "note": "基于预测的草稿目标与已批准的生产承诺分开显示。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "审视需求",
+          "description": "查看产品需求和预期库存需要。"
+        },
+        {
+          "title": "设定时段目标",
+          "description": "为每个计划窗口选择生产数量。"
+        },
+        {
+          "title": "检查可行性",
+          "description": "审视物料可用性和资源产能。"
+        },
+        {
+          "title": "批准基准",
+          "description": "用达成一致的排程指导详细计划。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "目标背后的物料",
+          "description": "将已排程产出转换为组件需求。"
+        },
+        {
+          "title": "承诺背后的产能",
+          "description": "检查资源能否支撑预期计划。"
+        },
+        {
+          "title": "执行计划的订单",
+          "description": "将商定的数量转化为生产作业。"
+        }
+      ]
+    },
+    "scheduling-aps": {
+      "title": "排程(APS)",
+      "category": "详细生产计划",
+      "hero": [
+        "排好作业顺序。",
+        "让每一小时都有价值。"
+      ],
+      "description": "将工序时间、资源可用性和生产优先级汇入清晰的排程视图。在向车间下达作业之前审视顺序。",
+      "flow": [
+        "订单与优先级",
+        "资源顺序",
+        "已排程工序"
+      ],
+      "callout": "清晰的顺序胜过拥挤的队列。",
+      "note": "遵守工序依赖关系。前一步未完成时，空闲设备也无法运行该作业。",
+      "workspaceTitle": "一眼就能读懂的排程。",
+      "workspaceDescription": "查看五天的示例工序计划。选择一个已排程作业，查看其约束和下达情况。",
+      "contextLabel": "资源 / 依赖",
+      "valueLabel": "运行时间",
+      "totalLabel": "已排程工序时间",
+      "progressLabel": "工序完成率",
+      "rows": [
+        {
+          "name": "MO-0148 · 薄膜挤出",
+          "context": "WC-EXT-01 · 第一道工序",
+          "note": "挤出正在进行；在示例顺序中，其产出供给印刷工序。"
+        },
+        {
+          "name": "MO-0148 · 柔版印刷",
+          "context": "WC-PRT-02 · 挤出之后",
+          "note": "印刷在挤出之后进行，示例运行时间中包含其准备宽放。"
+        },
+        {
+          "name": "MO-0147 · 纸箱加工",
+          "context": "WC-CUT-03 · 物料约束",
+          "note": "该工序有排程窗口，但仍因物料可用性而受阻。"
+        },
+        {
+          "name": "MO-0146 · 袋子封口",
+          "context": "WC-CUT-03 · 拉链安装之后",
+          "note": "封口在拉链安装之后进行。下达作业前请先审视前道工序。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "收集作业",
+          "description": "审视生产订单、工序和优先级。"
+        },
+        {
+          "title": "遵守约束",
+          "description": "检查日历、依赖关系和物料就绪情况。"
+        },
+        {
+          "title": "排列工序",
+          "description": "将作业放入基于资源的排程中。"
+        },
+        {
+          "title": "审核并下达",
+          "description": "解决异常，并传达作业顺序。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "了解可用工时",
+          "description": "将实际资源产能纳入排程审视。"
+        },
+        {
+          "title": "按产线的可视化计划",
+          "description": "在生产线视图中跟踪已排程的作业。"
+        },
+        {
+          "title": "从时间安排到执行",
+          "description": "给车间一个清晰的工序顺序。"
+        }
+      ]
+    },
+    "line-planning-board": {
+      "title": "产线计划看板",
+      "category": "详细生产计划",
+      "hero": [
+        "所有产线一览无余。",
+        "每次交接更清晰。"
+      ],
+      "description": "查看分配给每条生产线的作业、它在计划中的位置以及需要关注的作业。为计划员和车间提供共同的可视化参照。",
+      "flow": [
+        "订单优先级",
+        "产线分配",
+        "可视化生产计划"
+      ],
+      "callout": "跨产线跟踪作业。",
+      "note": "让产线分配保持可见。先解决受阻的交接，再在其后追加更多作业。",
+      "workspaceTitle": "没有盲区的产线计划。",
+      "workspaceDescription": "按执行状态浏览示例产线分配。在看板和清单视图之间切换，查看同一批作业。",
+      "contextLabel": "产线分配",
+      "valueLabel": "分配产出",
+      "totalLabel": "看板上的示例产出",
+      "progressLabel": "作业完成率",
+      "rows": [
+        {
+          "name": "MO-0148 · PE袋",
+          "context": "产线A-01 · 挤出",
+          "note": "产线A-01正在执行挤出作业。下次交接之前，请跟踪剩余产出。"
+        },
+        {
+          "name": "MO-0146 · 拉链袋",
+          "context": "产线A-02 · 加工",
+          "note": "示例作业已分配，并已准备好第一道计划工序。"
+        },
+        {
+          "name": "MO-0147 · 纸箱",
+          "context": "产线B-02 · 折叠",
+          "note": "纸箱分配需要先处理物料问题，作业才能继续。"
+        },
+        {
+          "name": "MO-0145 · 吊牌",
+          "context": "产线C-01 · 整理",
+          "note": "整理已完成。该分配作为看板生产背景的一部分仍然可见。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "审视队列",
+          "description": "从需要产线产能的生产作业开始。"
+        },
+        {
+          "title": "分配产线",
+          "description": "将作业与合适的生产资源匹配。"
+        },
+        {
+          "title": "跟踪交接",
+          "description": "审视就绪情况、进行中的作业和受阻的分配。"
+        },
+        {
+          "title": "核对进度",
+          "description": "将可见的计划与执行和完成情况进行比较。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "看板背后的排程",
+          "description": "让分配与详细工序计划保持关联。"
+        },
+        {
+          "title": "工位上的作业",
+          "description": "跟踪操作员在车间正在执行的内容。"
+        },
+        {
+          "title": "带背景的分配",
+          "description": "审视承诺给各产线的订单数量。"
+        }
+      ]
+    },
+    "order-allocation": {
+      "title": "订单分配",
+      "category": "详细生产计划",
+      "hero": [
+        "把每个订单放到",
+        "能成功的地方。"
+      ],
+      "description": "将生产数量与合适的产线和资源关联。审视已分配的作业、剩余数量以及每项分配背后的约束。",
+      "flow": [
+        "订单数量",
+        "资源分配",
+        "已分配作业"
+      ],
+      "callout": "让承诺清晰可见。",
+      "note": "分配就是生产承诺。请同时检查资源适配性和剩余数量。",
+      "workspaceTitle": "每个生产数量都有明确的负责方。",
+      "workspaceDescription": "浏览示例分配，比较每个订单有多少已分配给生产线。",
+      "contextLabel": "分配的资源",
+      "valueLabel": "分配数量",
+      "totalLabel": "已分配示例产出",
+      "progressLabel": "订单分配",
+      "rows": [
+        {
+          "name": "MO-0148 · PE袋",
+          "context": "产线A-01 · 2,400中的2,400",
+          "note": "示例订单的全部数量已分配给产线A-01。"
+        },
+        {
+          "name": "MO-0147 · 纸箱",
+          "context": "产线B-02 · 1,800中的900",
+          "note": "示例订单已分配一半。请检查其余900件的产能。"
+        },
+        {
+          "name": "MO-0146 · 拉链袋",
+          "context": "产线A-02 · 3,200中的3,200",
+          "note": "订单数量已分配，执行就绪情况另行审视。"
+        },
+        {
+          "name": "MO-0144 · 背板",
+          "context": "等待选择资源",
+          "note": "本示例未分配任何生产数量。审视计划后请选择合适的资源。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "选择订单",
+          "description": "审视产品、数量和所需的生产方式。"
+        },
+        {
+          "title": "检查资源",
+          "description": "比较适配性、产能和计划工作量。"
+        },
+        {
+          "title": "分配数量",
+          "description": "分配预期数量，并审视任何剩余部分。"
+        },
+        {
+          "title": "跟踪承诺",
+          "description": "在计划和执行过程中让分配保持可见。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "承诺之前先看产能",
+          "description": "分配产出之前，先检查资源的实际负荷。"
+        },
+        {
+          "title": "共享看板上的分配",
+          "description": "让生产团队看到产线级的承诺。"
+        },
+        {
+          "title": "一个生产订单的背景",
+          "description": "将分配与其所支撑的订单关联。"
+        }
+      ]
+    },
+    "shop-floor": {
+      "title": "车间执行",
+      "category": "生产执行",
+      "hero": [
+        "把计划",
+        "交到制造者手中。"
+      ],
+      "description": "让工序、产出和质量检验点贴近作业现场。帮助团队遵循生产顺序，并记录每个工位发生的情况。",
+      "flow": [
+        "已下达工序",
+        "操作员执行",
+        "已记录产出"
+      ],
+      "callout": "下一道工序，就在眼前。",
+      "note": "在作业发生的地方记录产出。将合格产出、副产品和废料分开记录。",
+      "workspaceTitle": "聚焦车间作业的视图。",
+      "workspaceDescription": "选择示例工序卡，查看进度、工作中心背景以及工位的下一步操作。",
+      "contextLabel": "工位 / 工序",
+      "valueLabel": "目标数量",
+      "totalLabel": "示例工序目标",
+      "progressLabel": "已记录产出",
+      "rows": [
+        {
+          "name": "PE袋挤出",
+          "context": "WC-EXT-01 · MO-0148",
+          "note": "该工序已记录2,400件目标中的1,728件。请审视剩余的生产数量。"
+        },
+        {
+          "name": "拉链安装",
+          "context": "WC-CUT-03 · MO-0146",
+          "note": "示例工序已就绪。开始前，请确认分配的工位和质量指引。"
+        },
+        {
+          "name": "纸箱折叠",
+          "context": "WC-CUT-03 · MO-0147",
+          "note": "物料短缺阻碍了下一批生产数量。请让计划方看到该异常。"
+        },
+        {
+          "name": "吊牌最终检验",
+          "context": "WC-PACK-04 · MO-0145",
+          "note": "示例工序的所有目标数量均已记录，完工检查已完成。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "找到工序",
+          "description": "打开分配的生产作业和工位背景。"
+        },
+        {
+          "title": "执行顺序",
+          "description": "遵循工序指引和所需的检验点。"
+        },
+        {
+          "title": "记录实际产出",
+          "description": "记录完成的产出，并区分工艺损耗。"
+        },
+        {
+          "title": "核实交接",
+          "description": "完成工序并为下一步做准备。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "来自路线的指引",
+          "description": "让工序顺序与生产方式保持关联。"
+        },
+        {
+          "title": "工位上的质量",
+          "description": "在能发现缺陷的地方检验产品。"
+        },
+        {
+          "title": "实际生产成本",
+          "description": "审视实际订单成本时使用执行背景。"
+        }
+      ]
+    },
+    "batches-lots": {
+      "title": "批次 / 批号",
+      "category": "生产追溯",
+      "hero": [
+        "追踪批次。",
+        "保持它的来龙去脉完整。"
+      ],
+      "description": "为成组的生产和物料数量赋予可追溯的标识。在收货、生产、检验和成品产出之间跟踪批号参照。",
+      "flow": [
+        "投入批号",
+        "生产批次",
+        "产出批号"
+      ],
+      "callout": "一个跟随物料的参照。",
+      "note": "保持从投入到产出的关系。批次标签在生产历史清晰时最有用。",
+      "workspaceTitle": "追溯成品数量背后的批次。",
+      "workspaceDescription": "选择一个示例批号，查看其来源、生产和质量背景。追溯仅作示意，不会改变库存。",
+      "contextLabel": "来源 / 生产参照",
+      "valueLabel": "批号数量",
+      "totalLabel": "示例批号数量",
+      "progressLabel": "追溯记录完整度",
+      "rows": [
+        {
+          "name": "LDPE树脂批号",
+          "context": "收货 GRN-1101 · 供应商批次 R81",
+          "note": "供应商批号R81已收货，并被标识为示例生产运行的投入来源。"
+        },
+        {
+          "name": "挤出薄膜批次",
+          "context": "LOT-RM-1101 → MO-0148",
+          "note": "在制薄膜批次保留其投入批号和生产订单参照。"
+        },
+        {
+          "name": "成品PE袋批号",
+          "context": "MO-0148 → 最终检验",
+          "note": "成品批号将合格产出与生产订单及其检验背景相关联。"
+        },
+        {
+          "name": "印刷薄膜暂扣批号",
+          "context": "MO-0146 · 印刷检验",
+          "note": "该示例批号因印刷审核而被暂扣，其状态与已放行数量保持区分。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "识别来源",
+          "description": "记录投入批号及其收货参照。"
+        },
+        {
+          "title": "关联生产",
+          "description": "让来源批号与生产批次保持关联。"
+        },
+        {
+          "title": "审视质量",
+          "description": "跟踪检验以及放行或暂扣状态。"
+        },
+        {
+          "title": "追溯产出",
+          "description": "保留与成品生产数量之间的关系。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "每个批次背后有订单",
+          "description": "跟踪转化该物料的生产作业。"
+        },
+        {
+          "title": "带质量背景的放行",
+          "description": "让检验与被审视的批号保持关联。"
+        },
+        {
+          "title": "需要时有个体标识",
+          "description": "对逐件追踪的产品使用序列号级记录。"
+        }
+      ]
+    },
+    "serial-numbers": {
+      "title": "序列号",
+      "category": "生产追溯",
+      "hero": [
+        "为每一件产品",
+        "赋予独一无二的身份。"
+      ],
+      "description": "在生产和质量审核过程中跟踪单独标识的产品。将每个序列号参照与其背后的产品和生产背景关联。",
+      "flow": [
+        "产品标识",
+        "序列号分配",
+        "单件履历"
+      ],
+      "callout": "一件产品。一个可追溯的参照。",
+      "note": "用序列号标识个体，用批号管理成组数量。选择产品所需的层级。",
+      "workspaceTitle": "不止看数量，更要看到每一件产品。",
+      "workspaceDescription": "搜索示例序列号参照，并选择一件产品查看其生产和质量背景。",
+      "contextLabel": "订单 / 产品参照",
+      "valueLabel": "已标识单件",
+      "totalLabel": "逐件追踪的单件",
+      "progressLabel": "单件记录完整度",
+      "rows": [
+        {
+          "name": "封口装置总成",
+          "context": "MO-0161 · 产品 SEAL-01",
+          "note": "该示例单件具有生产参照和已完成的检验背景。"
+        },
+        {
+          "name": "封口装置总成",
+          "context": "MO-0161 · 产品 SEAL-01",
+          "note": "装配已记录；最终检验参照仍待处理。"
+        },
+        {
+          "name": "秤控制器",
+          "context": "MO-0162 · 产品 CTRL-02",
+          "note": "校准审核使这一单件与其生产组的其余部分分开暂扣。"
+        },
+        {
+          "name": "秤控制器",
+          "context": "MO-0162 · 产品 CTRL-02",
+          "note": "该单件已被单独标识，并具有已完成的质量参照。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "选择序列号追踪",
+          "description": "确定哪些产品需要单件级参照。"
+        },
+        {
+          "title": "分配标识",
+          "description": "将单个序列号与其生产背景关联。"
+        },
+        {
+          "title": "跟踪检验",
+          "description": "审视附属于该单件的检查和状态。"
+        },
+        {
+          "title": "保留履历",
+          "description": "保留该标识，以备日后追溯审核。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "生产背景",
+          "description": "找到与该单个产品相关的订单。"
+        },
+        {
+          "title": "单件层面的质量",
+          "description": "审视已标识单件的检验背景。"
+        },
+        {
+          "title": "批次层面的关系",
+          "description": "在单件标识旁保留成组物料的历史。"
+        }
+      ]
+    },
+    "qc-templates": {
+      "title": "质检模板",
+      "category": "质量管理",
+      "hero": [
+        "质量标准定义一次。",
+        "检验始终一致。"
+      ],
+      "description": "建立可复用的检验模板，包含清晰的参数、结果类型和可接受范围。为每个检验点提供一致的测量定义。",
+      "flow": [
+        "质量参数",
+        "检验模板",
+        "一致的检查"
+      ],
+      "callout": "让验收标准清晰明确。",
+      "note": "有用的质量参数具有结果类型、限值，以及记录它的明确要求。",
+      "workspaceTitle": "每次检验背后的标准。",
+      "workspaceDescription": "浏览示例检验模板、其参数数量和就绪情况。审视每个模板在生产中的位置。",
+      "contextLabel": "检验点",
+      "valueLabel": "参数",
+      "totalLabel": "已定义示例参数",
+      "progressLabel": "模板就绪度",
+      "rows": [
+        {
+          "name": "薄膜厚度检查",
+          "context": "过程中 · 挤出",
+          "note": "数值型的厚度读数、宽度和外观检查构成示例挤出检验。"
+        },
+        {
+          "name": "印刷质量审核",
+          "context": "过程中 · 柔版印刷",
+          "note": "套准、色调、附着力和外观标准构成可重复的印刷审核。"
+        },
+        {
+          "name": "纸箱强度检查",
+          "context": "最终检验 · 纸箱",
+          "note": "示例强度模板正在等待确认其验收限值。"
+        },
+        {
+          "name": "袋封完整性",
+          "context": "最终检验 · 封口",
+          "note": "草稿模板描述了批准前的封口外观和完整性检查。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "选择检验点",
+          "description": "确定要检验的产品或流程节点。"
+        },
+        {
+          "title": "定义参数",
+          "description": "选择数值型、选择型或描述型的结果类型。"
+        },
+        {
+          "title": "设置可接受限值",
+          "description": "记录范围和强制性检验要求。"
+        },
+        {
+          "title": "复用模板",
+          "description": "将商定的标准应用于相关的质量检查。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "采用统一标准的检查",
+          "description": "记录检验结果时使用一致的参数。"
+        },
+        {
+          "title": "路线中的正确位置",
+          "description": "将检验点与正在进行的工序关联。"
+        },
+        {
+          "title": "作业旁的指引",
+          "description": "在执行期间保持检验背景可用。"
+        }
+      ]
+    },
+    "quality-control": {
+      "title": "质量控制",
+      "category": "质量管理",
+      "hero": [
+        "让质量可见。",
+        "在每一个检验点。"
+      ],
+      "description": "将检验参数、验收限值和已记录结果放在一起。跟踪从物料入库、生产到成品产出的质量检查。",
+      "flow": [
+        "已定义标准",
+        "已记录检验",
+        "质量判定"
+      ],
+      "callout": "在异常发生的地方发现它。",
+      "note": "完成的检验需要其必填结果。在审核之前，让超出规格的发现保持可见。",
+      "workspaceTitle": "检查、发现和判定一目了然。",
+      "workspaceDescription": "浏览示例质量记录，并选择一次检验查看其范围和结果背景。",
+      "contextLabel": "模板 / 检验点",
+      "valueLabel": "必检项",
+      "totalLabel": "示例必检项",
+      "progressLabel": "已记录结果",
+      "rows": [
+        {
+          "name": "薄膜厚度检验",
+          "context": "QCT-001 · MO-0148",
+          "note": "四项示例结果均已记录。厚度和宽度测量值均在规定限值内。"
+        },
+        {
+          "name": "印刷套准检查",
+          "context": "QCT-002 · MO-0146",
+          "note": "已记录五项结果，其中一项套准发现需在放行前审核。"
+        },
+        {
+          "name": "纸箱最终检验",
+          "context": "QCT-003 · MO-0147",
+          "note": "三项必填结果已记录两项。最后的强度读数仍待录入。"
+        },
+        {
+          "name": "封口完整性检查",
+          "context": "QCT-004 · MO-0148",
+          "note": "在此示例中，最终封口检验点正在等待工序产出。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "选择标准",
+          "description": "选择检验模板和生产参照。"
+        },
+        {
+          "title": "记录结果",
+          "description": "在检验点采集每项必填数值。"
+        },
+        {
+          "title": "审核异常",
+          "description": "将发现与数值范围和验收标准进行比较。"
+        },
+        {
+          "title": "完成检查",
+          "description": "连同生产背景一并保留检验结果。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "可复用的检验标准",
+          "description": "让各项检查中的参数和限值保持一致。"
+        },
+        {
+          "title": "质量融入执行",
+          "description": "将检验工作与生产工序并排安排。"
+        },
+        {
+          "title": "发现背后的批号",
+          "description": "跟踪被检数量的批次背景。"
+        }
+      ]
+    },
+    "scrap-waste": {
+      "title": "废料 / 损耗",
+      "category": "生产执行",
+      "hero": [
+        "看见损耗。",
+        "理解原因。"
+      ],
+      "description": "让生产中的废料、可回收边角料和工艺损耗保持可见。将每个已记录数量与其来源工序和处置背景关联。",
+      "flow": [
+        "生产损耗",
+        "原因与数量",
+        "回收或处置"
+      ],
+      "callout": "再小的损耗也值得清晰记录。",
+      "note": "区分可回收物料和需处置的废弃物。它们的数量和处理方式讲述着不同的故事。",
+      "workspaceTitle": "把生产损耗变成有价值的讨论。",
+      "workspaceDescription": "按原因和处置方式审视示例损耗记录。选择一条记录，查看发生了什么以及能回收什么。",
+      "contextLabel": "工序 / 原因",
+      "valueLabel": "已记录损耗",
+      "totalLabel": "已记录示例损耗",
+      "progressLabel": "可回收比例",
+      "rows": [
+        {
+          "name": "薄膜边料",
+          "context": "挤出 · 切边",
+          "note": "在示例记录中，这批干净边料大部分被判定为可回收；请将回收决定与损耗录入分开。"
+        },
+        {
+          "name": "印刷准备废料",
+          "context": "印刷 · 色彩准备",
+          "note": "准备废料需要进行处置审核，因为油墨污染会影响回收选项。"
+        },
+        {
+          "name": "纸箱边角料",
+          "context": "裁切 · 模切排版",
+          "note": "干净的纸边角料已按来源工序记录，并指定回收。"
+        },
+        {
+          "name": "受损封口",
+          "context": "封口 · 温度偏差",
+          "note": "在本示例中，受损产出未被指定为可回收。请与质量部门一起审视温度发现。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "识别来源",
+          "description": "将损耗与订单和生产工序关联。"
+        },
+        {
+          "title": "测量数量",
+          "description": "记录物料、数量和损耗原因。"
+        },
+        {
+          "title": "审视处置",
+          "description": "区分回收、复核和处置的数量。"
+        },
+        {
+          "title": "理解影响",
+          "description": "审视收得率和实际生产成本时使用该记录。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "配方中的预期收得率",
+          "description": "将生产损耗与BOM的产出假设进行比较。"
+        },
+        {
+          "title": "损耗背后的发现",
+          "description": "将质量异常置于调查背景中。"
+        },
+        {
+          "title": "损耗是有成本的",
+          "description": "审视工艺损耗对实际生产成本的影响。"
+        }
+      ]
+    },
+    "subcontracting": {
+      "title": "委外加工",
+      "category": "外部生产",
+      "hero": [
+        "外部加工。",
+        "仍在您的生产视图之内。"
+      ],
+      "description": "让外部执行的工序保持在同一生产流程中。通过清晰的供应商参照，跟踪加工范围、发出数量和预期返回。",
+      "flow": [
+        "外部工序",
+        "供应商加工",
+        "返回的产出"
+      ],
+      "callout": "工序离开了，背景留下来。",
+      "note": "将发出数量与返回产出、可接受损耗和未完成工作进行核对。",
+      "workspaceTitle": "清楚看到车间之外的工作。",
+      "workspaceDescription": "查看示例外部加工作业及其返回进度。下方的供应商名称为示例资源标签。",
+      "contextLabel": "外部资源 / 工序",
+      "valueLabel": "发出数量",
+      "totalLabel": "示例发出数量",
+      "progressLabel": "返回数量",
+      "rows": [
+        {
+          "name": "覆膜纸箱整理",
+          "context": "供应商资源A · 覆膜",
+          "note": "在此示例中，发出的1,500件中已返回900件。关闭作业前，请审视尚未返回的600件。"
+        },
+        {
+          "name": "特殊印刷工序",
+          "context": "供应商资源B · 烫金印刷",
+          "note": "加工范围已准备好。示例作业尚未记录返回数量。"
+        },
+        {
+          "name": "定制模切",
+          "context": "供应商资源C · 模切",
+          "note": "发出的数量已全部返回，并仍与其外部加工参照保持关联。"
+        },
+        {
+          "name": "涂层吊牌整理",
+          "context": "供应商资源A · 涂层",
+          "note": "返回数量为部分。完成之前请审视质量和剩余件数。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "定义外部作业",
+          "description": "确定由供应商资源执行的工艺路线工序。"
+        },
+        {
+          "title": "准备交接",
+          "description": "审视加工范围和要发出的数量。"
+        },
+        {
+          "title": "跟踪返回",
+          "description": "跟踪返回的产出和剩余的外部作业。"
+        },
+        {
+          "title": "核对作业",
+          "description": "关闭前审视质量、损耗和加工成本。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "路线中的供应商环节",
+          "description": "让外部工序保持在生产顺序之内。"
+        },
+        {
+          "title": "源头订单",
+          "description": "跟踪外部加工背后的生产需求。"
+        },
+        {
+          "title": "外部加工成本",
+          "description": "让委外工序的成本纳入订单成本的讨论。"
+        }
+      ]
+    },
+    "standard-costing": {
+      "title": "标准成本",
+      "category": "制造成本控制",
+      "hero": [
+        "了解预期成本。",
+        "在生产开始之前。"
+      ],
+      "description": "将BOM物料、工艺路线时间和工作中心费率汇总为标准生产成本。保留带日期的基准，用于与订单的实际成本比较。",
+      "flow": [
+        "BOM与资源费率",
+        "成本汇总",
+        "冻结的成本基准"
+      ],
+      "callout": "基准出自同一份配方。",
+      "note": "随版本冻结各项假设。有意义的差异需要稳定的标准作比较。",
+      "workspaceTitle": "可以解释的预期成本。",
+      "workspaceDescription": "查看一张示例1,000件成本卡的构成明细。数值为示例BDT金额。",
+      "contextLabel": "成本依据",
+      "valueLabel": "标准金额",
+      "totalLabel": "示例标准批次成本",
+      "progressLabel": "依据已审核",
+      "rows": [
+        {
+          "name": "直接材料",
+          "context": "BOM-PB-01 · 1,000件批量",
+          "note": "材料部分使用示例BOM的数量基准及其参照材料费率。"
+        },
+        {
+          "name": "直接人工",
+          "context": "RT-PB-01 · 工序时间",
+          "note": "人工成本依据工艺路线时间和示例工作中心的人工费率。"
+        },
+        {
+          "name": "设备成本",
+          "context": "WC-EXT-01 · 设备费率",
+          "note": "设备时间和参照设备费率构成示例的设备成本部分。"
+        },
+        {
+          "name": "生产间接费用",
+          "context": "工作中心间接费用基准",
+          "note": "在冻结示例成本卡之前，间接费用假设仍在审核中。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "审视依据",
+          "description": "确认BOM、工艺路线和工作中心费率假设。"
+        },
+        {
+          "title": "汇总各组成",
+          "description": "合并材料、人工、设备和间接费用成本。"
+        },
+        {
+          "title": "审视产出份额",
+          "description": "检查联产产出的分摊假设。"
+        },
+        {
+          "title": "冻结版本",
+          "description": "保留带日期的标准，用于日后与实际成本比较。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "来自配方的材料",
+          "description": "让标准投入数量与生产BOM保持关联。"
+        },
+        {
+          "title": "来自资源的费率",
+          "description": "使用工序成本背后的工作中心假设。"
+        },
+        {
+          "title": "实际成本的基准",
+          "description": "将已完成的生产与冻结的标准进行比较。"
+        }
+      ]
+    },
+    "production-costing": {
+      "title": "生产成本核算",
+      "category": "制造成本控制",
+      "hero": [
+        "跟踪实际成本。",
+        "解释差异。"
+      ],
+      "description": "将已记录的物料、工序和加工成本汇入订单级视图。在审视实际生产成本的同时，对照计划背后的标准假设。",
+      "flow": [
+        "已记录的生产",
+        "订单实际成本",
+        "差异审视"
+      ],
+      "callout": "每个差异都始于一个问题。",
+      "note": "同类相比：相同的产品、产出基准和成本范围。",
+      "workspaceTitle": "已完成生产作业背后的成本。",
+      "workspaceDescription": "查看一份示例1,000件订单的成本明细。每个组成部分中的标准参照解释了示例中的差异。",
+      "contextLabel": "标准参照",
+      "valueLabel": "实际金额",
+      "totalLabel": "示例实际批次成本",
+      "progressLabel": "成本记录完整度",
+      "rows": [
+        {
+          "name": "直接材料",
+          "context": "标准 BDT 18,500 · +BDT 700",
+          "note": "实际材料成本为BDT 19,200，标准为BDT 18,500。请审视消耗和费率差异。"
+        },
+        {
+          "name": "直接人工",
+          "context": "标准 BDT 2,400 · +BDT 200",
+          "note": "已记录的人工成本比示例标准高出BDT 200。请审视工序时间依据。"
+        },
+        {
+          "name": "设备成本",
+          "context": "标准 BDT 1,600 · −BDT 100",
+          "note": "在本示例中，实际设备成本部分比其参照标准低BDT 100。"
+        },
+        {
+          "name": "生产间接费用",
+          "context": "标准 BDT 2,500 · +BDT 200",
+          "note": "间接费用部分正在审核中。示例批次总计BDT 26,000，标准为BDT 25,000。"
+        }
+      ],
+      "workflow": [
+        {
+          "title": "收集实际记录",
+          "description": "审视物料、工序和委外加工的成本背景。"
+        },
+        {
+          "title": "构建订单成本",
+          "description": "按产出基准归集实际组成部分。"
+        },
+        {
+          "title": "与标准比较",
+          "description": "使用对应的成本版本和生产数量。"
+        },
+        {
+          "title": "解释差异",
+          "description": "在结束成本讨论之前审视原因。"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "稳定的比较基准",
+          "description": "差异审视时使用带日期的标准成本卡。"
+        },
+        {
+          "title": "成本背后的产出",
+          "description": "让成本分析与生产订单保持关联。"
+        },
+        {
+          "title": "差异背后的损耗",
+          "description": "解释实际生产成本时审视废料和收得率。"
+        }
+      ]
+    }
+  },
+  "statuses": {
+    "Active": "生效",
+    "Allocated": "已分配",
+    "Approved": "已批准",
+    "At capacity": "产能已满",
+    "Available": "可用",
+    "Balanced": "均衡",
+    "Blocked": "受阻",
+    "Completed": "已完成",
+    "Covered": "已覆盖",
+    "Disposal": "处置",
+    "Draft": "草稿",
+    "In process": "处理中",
+    "In progress": "进行中",
+    "Incoming": "在途",
+    "Maintenance": "维护中",
+    "On hold": "暂停",
+    "Overloaded": "超负荷",
+    "Partial": "部分",
+    "Passed": "通过",
+    "Pending": "待处理",
+    "Posted": "已过账",
+    "Ready": "就绪",
+    "Ready to send": "待发出",
+    "Recoverable": "可回收",
+    "Released": "已下达",
+    "Returned": "已返回",
+    "Review": "审核中",
+    "Reviewed": "已审核",
+    "Running": "运行中",
+    "Scheduled": "已排程",
+    "Shortage": "短缺",
+    "Unallocated": "未分配",
+    "With vendor": "在供应商处"
+  },
+  "ui": {
+    "manufacturing": "制造",
+    "breadcrumb": "面包屑导航",
+    "overview": "{title}概览",
+    "exploreWorkspace": "探索工作区",
+    "onThisPage": "本页内容",
+    "navSample": "示例工作区",
+    "navWorkflow": "工作方式",
+    "navConnected": "关联模块",
+    "inFocus": "{title} · 聚焦",
+    "calloutRecorded": "近距离了解真实的工作流程。",
+    "calloutExplore": "浏览一条记录，追踪细节。",
+    "workflowEyebrow": "清晰的工作方式",
+    "workflowTitleA": "从第一步到",
+    "workflowTitleB": "完整落实。",
+    "workflowDescription": "{title}的实用步骤，让生产背景保持在一起。",
+    "connectEyebrow": "为协同而生",
+    "connectTitleA": "保持",
+    "connectTitleB": "生产背景。",
+    "connectDescription": "跟随制造中的相关部分，它们为这项工作提供输入、运行背景和下一步。",
+    "connect": "关联",
+    "exploreModule": "了解模块",
+    "ctaEyebrow": "在背景中看您的生产",
+    "ctaTitle": "进一步了解{title}。",
+    "ctaBody": "与您的生产团队一起走一遍工作流程，看看它如何适配您的运营。",
+    "softwareDataPreview": "软件数据预览",
+    "demo": {
+      "description": "预约引导式演示，了解完整的工作区、记录和生产流程。",
+      "ariaLabel": "{title}预览，下半部分为演示邀请",
+      "eyebrow": "{title} · 完整演示",
+      "heading": "查看完整的工作流程。"
+    },
+    "units": {
+      "units": "件",
+      "hours": "小时",
+      "kg": "公斤",
+      "checks": "项检查",
+      "operations": "道工序",
+      "BDT": "BDT"
+    },
+    "workspace": {
+      "allRecords": "全部记录",
+      "register": "清单",
+      "board": "看板",
+      "timeline": "计划视图",
+      "cost": "成本明细",
+      "trace": "追溯视图",
+      "statusRecords": "{status}记录",
+      "timelineNote": "五天的示意窗口。条形位置显示示例安排，并非计算得出的排程。",
+      "resourceWork": "资源 / 作业",
+      "days": [
+        "周一",
+        "周二",
+        "周三",
+        "周四",
+        "周五"
+      ],
+      "viewPlacement": "查看 {id} {name} 的示例安排",
+      "visibleCost": "可见成本构成",
+      "percentVisible": "占可见成本的{percent}%",
+      "traceHeading": "示意追溯结构",
+      "tableCaption": "{title}示例记录。选择一个参照查看其详情。",
+      "colReference": "参照 / 记录",
+      "colStatus": "状态",
+      "viewDetails": "查看示例详情",
+      "noMatchTitle": "没有匹配的记录",
+      "noMatchBody": "请尝试其他搜索，或清除状态筛选。",
+      "reset": "重置筛选",
+      "interactive": "交互式示例",
+      "selectHint": "选择一条示例记录，了解其生产背景。",
+      "sampleData": "示例数据",
+      "metricRecords": "示例记录",
+      "metricStatuses": "{count}个可见状态类别",
+      "metricAcross": "覆盖整个示例集",
+      "metricUnit": "{unit} · 所有示例记录",
+      "filterAria": "按状态筛选示例记录",
+      "searchAria": "搜索{title}示例记录",
+      "searchPlaceholder": "搜索参照、名称或资源…",
+      "clearSearch": "清除搜索",
+      "displayAria": "工作区显示方式",
+      "showing": "显示 {total} 条示例记录中的 {shown} 条",
+      "detailsAria": "所选示例记录详情",
+      "recordDetails": "记录详情",
+      "productionContext": "生产背景",
+      "noRecord": "没有记录与此搜索匹配。请重置筛选以浏览示例。",
+      "captionNote": "仅为产品示意预览，不会更改任何真实的ERP记录。",
+      "captionAction": "搜索、筛选并选择记录"
+    }
+  },
+  "recorded": {
+    "work-centers": {
+      "title": "支撑生产的资源。",
+      "description": "来自所提供软件记录的彩涂、镀铝锌、压瓦和定尺剪切工作中心。"
+    },
+    "routings": {
+      "title": "真实路线。逐道工序。",
+      "description": "预览所提供软件中的三条生产路线和四阶段彩涂工序顺序。"
+    },
+    "bill-of-materials": {
+      "title": "生产配方，细化到物料行。",
+      "description": "查看所提供的钢材产品BOM清单和平板配方，包括投入、废料、收得率和估算成本。"
+    },
+    "capacity-planning": {
+      "title": "产能与负荷，异常尽收眼底。",
+      "description": "所提供的八个工作中心视图包含按周分段、一个未定日期的生产订单和已记录的产能调整。"
+    },
+    "master-schedule-mps": {
+      "title": "生产计划，逐段呈现。",
+      "description": "预览所提供彩涂卷产品的周计划，包括需求、收货、MPS数量和预计库存。"
+    },
+    "production-orders": {
+      "title": "真实的生产订单，近距离查看。",
+      "description": "预览钢材生产订单，包括其产品、BOM、计划数量、已记录产出和当前状态。"
+    },
+    "batches-lots": {
+      "title": "每个批次背后的生产履历。",
+      "description": "来自所提供软件记录的批次参照、产品、数量和生产日期。"
+    }
+  }
+}
