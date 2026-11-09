@@ -4,6 +4,7 @@ import LiveDemoButton from "@/components/live-demo-button";
 
 import { useEffect, useRef, type ReactNode } from "react";
 import { Presentation } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import css from "./demo-preview.module.css";
 
@@ -11,7 +12,7 @@ import css from "./demo-preview.module.css";
 export default function DemoPreview({
   title,
   children,
-  description = "Book a guided demo to explore the full workspace, records and production process.",
+  description,
   invitation,
 }: {
   title: string;
@@ -19,6 +20,7 @@ export default function DemoPreview({
   description?: string;
   invitation?: { regionLabel: string; eyebrow: string; heading: string };
 }) {
+  const t = useTranslations("pages.manufacturingModules.ui.demo");
   const surface = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const node = surface.current;
@@ -76,7 +78,7 @@ export default function DemoPreview({
       role="region"
       aria-label={
         invitation?.regionLabel ??
-        `${title} preview with a lower-half demo invitation`
+        t("ariaLabel", { title })
       }
     >
       <div ref={surface} className={css.surface}>
@@ -89,10 +91,10 @@ export default function DemoPreview({
             <Presentation size={21} aria-hidden="true" />
           </span>
           <p className={css.bookingEyebrow}>
-            {invitation?.eyebrow ?? `${title} · Full walkthrough`}
+            {invitation?.eyebrow ?? t("eyebrow", { title })}
           </p>
-          <h3>{invitation?.heading ?? "See the complete workflow."}</h3>
-          <p>{description}</p>
+          <h3>{invitation?.heading ?? t("heading")}</h3>
+          <p>{description ?? t("description")}</p>
           <div className={css.bookingAction}>
             <LiveDemoButton />
           </div>

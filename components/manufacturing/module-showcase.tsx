@@ -25,6 +25,7 @@ import {
   Wallet,
   Workflow,
 } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import {
@@ -40,7 +41,7 @@ import {
 import ModuleWorkspace from "./module-workspace";
 import DemoPreview from "./demo-preview";
 import RecordedDemoWorkspace, {
-  recordedDemoCopy,
+  useRecordedDemoCopy,
 } from "./recorded-demo-workspace";
 import { isRecordedDemoSlug } from "./recorded-demo-data";
 import type {
@@ -77,17 +78,23 @@ export default function ManufacturingModuleShowcase({
   slug: ManufacturingSlug;
   content: ManufacturingModuleContent;
 }) {
+  const t = useTranslations("pages.manufacturingModules.ui");
+  const locale = useLocale();
   const Icon = icons[content.icon];
-  const previewCopy = isRecordedDemoSlug(slug) ? recordedDemoCopy[slug] : null;
+  const titleLower = content.title.toLocaleLowerCase(locale);
+  const recordedCopy = useRecordedDemoCopy(
+    isRecordedDemoSlug(slug) ? slug : "work-centers",
+  );
+  const previewCopy = isRecordedDemoSlug(slug) ? recordedCopy : null;
   return (
     <main className="bg-background text-foreground">
       <ManufacturingHero slug={slug} copy={content} />
-      <nav aria-label="On this page" className="border-b border-border bg-card">
+      <nav aria-label={t("onThisPage")} className="border-b border-border bg-card">
         <div className={cn(styles.container, "flex gap-7 overflow-x-auto")}>
           {[
-            ["sample-workspace", "Sample workspace"],
-            ["module-workflow", "How it works"],
-            ["module-connections", "Connected modules"],
+            ["sample-workspace", t("navSample")],
+            ["module-workflow", t("navWorkflow")],
+            ["module-connections", t("navConnected")],
           ].map(([id, label], index) => (
             <a
               key={id}
@@ -109,7 +116,7 @@ export default function ManufacturingModuleShowcase({
       >
         <div className={styles.container}>
           <ManufacturingSectionHeading
-            eyebrow={`${content.title} · In focus`}
+            eyebrow={t("inFocus", { title: content.title })}
             title={
               <ManufacturingMarker>
                 {previewCopy?.title ?? content.workspaceTitle}
@@ -121,9 +128,7 @@ export default function ManufacturingModuleShowcase({
           >
             <div className="hidden lg:block">
               <ManufacturingCallout variant="swoop">
-                {previewCopy
-                  ? "A closer look at the real workflow."
-                  : "Explore a record. Follow the detail."}
+                {previewCopy ? t("calloutRecorded") : t("calloutExplore")}
               </ManufacturingCallout>
             </div>
           </ManufacturingSectionHeading>
@@ -145,16 +150,16 @@ export default function ManufacturingModuleShowcase({
       >
         <div className={styles.container}>
           <ManufacturingSectionHeading
-            eyebrow="A clear way to work"
+            eyebrow={t("workflowEyebrow")}
             title={
               <>
-                From first step to{" "}
+                {t("workflowTitleA")}{" "}
                 <ManufacturingMarker>
-                  <span className="text-primary">follow-through.</span>
+                  <span className="text-primary">{t("workflowTitleB")}</span>
                 </ManufacturingMarker>
               </>
             }
-            description={`A practical sequence for ${content.title.toLowerCase()}, with the production context kept together.`}
+            description={t("workflowDescription", { title: titleLower })}
           >
             <div className="mb-2 ms-auto mt-3 sm:me-2">
               <ManufacturingStickyNote>{content.note}</ManufacturingStickyNote>
@@ -228,16 +233,16 @@ export default function ManufacturingModuleShowcase({
       >
         <div className={styles.container}>
           <ManufacturingSectionHeading
-            eyebrow="Built to work together"
+            eyebrow={t("connectEyebrow")}
             title={
               <>
-                Keep the{" "}
+                {t("connectTitleA")}{" "}
                 <ManufacturingScribble>
-                  production context.
+                  {t("connectTitleB")}
                 </ManufacturingScribble>
               </>
             }
-            description="Follow the related parts of Manufacturing that give this work its inputs, operating context and next step."
+            description={t("connectDescription")}
           />
           <div className="grid gap-4 md:grid-cols-3">
             {content.capabilities.map(([title, description, link], index) => (
@@ -252,7 +257,7 @@ export default function ManufacturingModuleShowcase({
               >
                 <div className="mb-5 flex items-center justify-between">
                   <span className="font-mono text-[11px] text-primary">
-                    0{index + 1} / CONNECT
+                    0{index + 1} / {t("connect")}
                   </span>
                   <ArrowUpRight
                     className="size-4 text-muted-foreground"
@@ -264,7 +269,7 @@ export default function ManufacturingModuleShowcase({
                   {description}
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-primary">
-                  Explore module
+                  {t("exploreModule")}
                   <ArrowRight className="size-3" aria-hidden="true" />
                 </span>
               </Link>
@@ -281,14 +286,13 @@ export default function ManufacturingModuleShowcase({
         >
           <div className="max-w-xl">
             <ManufacturingEyebrow icon={Icon}>
-              See your production in context
+              {t("ctaEyebrow")}
             </ManufacturingEyebrow>
             <h2 className="showcase-heading mt-3 text-3xl tracking-tight sm:text-4xl">
-              Take a closer look at {content.title.toLowerCase()}.
+              {t("ctaTitle", { title: titleLower })}
             </h2>
             <p className="mt-4 text-base leading-7 text-muted-foreground">
-              Walk through the workflow with your production team and explore
-              how it fits your operation.
+              {t("ctaBody")}
             </p>
           </div>
           <LiveDemoButton />

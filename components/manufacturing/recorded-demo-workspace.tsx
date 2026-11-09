@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import { Building2, ChevronRight, Search } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import {
   capacityOverrides,
@@ -36,46 +37,11 @@ const titles: Record<RecordedDemoSlug, string> = {
   "production-orders": "Production Orders",
   "batches-lots": "Batches / Lots",
 };
-export const recordedDemoCopy: Record<
-  RecordedDemoSlug,
-  { title: string; description: string }
-> = {
-  "work-centers": {
-    title: "The resources behind your production.",
-    description:
-      "Colour coating, galvalume, corrugation and cut-to-length work centers from the supplied software records.",
-  },
-  routings: {
-    title: "Real routes. Operation by operation.",
-    description:
-      "Preview the three production routes and the four-stage colour-coating operation sequence supplied from your software.",
-  },
-  "bill-of-materials": {
-    title: "Production recipes, down to the material line.",
-    description:
-      "Explore the supplied steel-product BOM register and the plain-sheet recipe, including input, scrap, yield and estimated cost.",
-  },
-  "capacity-planning": {
-    title: "Capacity and load, with the exceptions in view.",
-    description:
-      "The supplied eight-work-center view includes weekly buckets, one undated production order and recorded capacity overrides.",
-  },
-  "master-schedule-mps": {
-    title: "The production plan, bucket by bucket.",
-    description:
-      "Preview weekly planning for the supplied colour-coil products, including demand, receipts, MPS quantities and projected stock.",
-  },
-  "production-orders": {
-    title: "Real production orders. A closer look.",
-    description:
-      "Preview steel production orders with their product, BOM, planned quantity, recorded output and current status.",
-  },
-  "batches-lots": {
-    title: "A production history behind every batch.",
-    description:
-      "Batch references, products, quantities and manufacturing dates from the supplied software records.",
-  },
-};
+/** Localized title and description for a recorded-demo preview. */
+export function useRecordedDemoCopy(slug: RecordedDemoSlug) {
+  const t = useTranslations("pages.manufacturingModules.recorded");
+  return { title: t(`${slug}.title`), description: t(`${slug}.description`) };
+}
 
 function Product({ product }: { product: SteelProductKey }) {
   const item = steelProducts[product];
