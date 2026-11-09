@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 
 import LiveDemoButton from "@/components/live-demo-button";
 
@@ -14,24 +15,29 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { qualityPages, suppliedSpcSummary, type QualitySlug } from "./data";
+import { getQualityPages, suppliedSpcSummary, type QualitySlug } from "./data";
 import { Provenance, css } from "./ui";
 
 function Breadcrumb({ slug }: { slug: QualitySlug }) {
+  const t = useTranslations("pages.qualityApp");
+  const qualityPages = getQualityPages(t);
+
   return (
-    <nav className={css.breadcrumb} aria-label="Breadcrumb">
-      <Link href="/apps/supply-chain/quality">Quality (QMS)</Link>
+    <nav className={css.breadcrumb} aria-label={t("copy.breadcrumb")}>
+      <Link href="/apps/supply-chain/quality">{t("copy.qualityQms")}</Link>
       <ArrowRight size={12} aria-hidden="true" />
       <span aria-current="page">{qualityPages[slug].title}</span>
     </nav>
   );
 }
 function HeroActions() {
+  const t = useTranslations("pages.qualityApp");
+
   return (
     <div className={css.heroActions}>
       <LiveDemoButton />
       <Link href="#qms-workspace" className={css.exploreLink}>
-        Explore the workspace
+        {t("copy.exploreTheWorkspace")}
         <ArrowDown size={14} aria-hidden="true" />
       </Link>
     </div>
@@ -39,38 +45,42 @@ function HeroActions() {
 }
 
 function DashboardHero() {
+  const t = useTranslations("pages.qualityApp");
+
   return (
     <section className={css.dashboardHero} data-qms-hero="quality-dashboard">
       <div className={css.wrap}>
         <Breadcrumb slug="quality-dashboard" />
         <div className={css.observatory}>
           <div className={css.observatoryCopy}>
-            <span className={css.eyebrow}>Quality intelligence / 01</span>
+            <span className={css.eyebrow}>
+              {t("copy.qualityIntelligence01")}
+            </span>
             <h1 className="showcase-heading">
-              Every signal.
-              <br />A clearer <span>quality story.</span>
+              {t("copy.everySignal")}
+              <br />
+              {t.rich("ui.qualityStory", {
+                highlight: (chunks) => <span>{chunks}</span>,
+              })}
             </h1>
-            <p>
-              See the exceptions, follow the actions and keep your production
-              quality in focus.
-            </p>
+            <p>{t("copy.seeTheExceptionsFollowTheActionsAndKeep")}</p>
             <HeroActions />
             <div className={css.heroEvidence}>
               <ShieldCheck size={15} aria-hidden="true" />
-              <span>Supplied quality snapshot · Last 90 days</span>
+              <span>{t("copy.suppliedQualitySnapshotLast90Days")}</span>
             </div>
           </div>
           <div className={css.observatoryBento}>
             <figure className={css.yieldTile}>
               <div className={css.tileLabel}>
-                First-pass yield
+                {t("copy.firstPassYield")}
                 <CheckCheck size={15} aria-hidden="true" />
               </div>
               <div className={css.yieldOrbit}>
                 <svg
                   viewBox="0 0 180 180"
                   role="img"
-                  aria-label="Supplied first-pass yield: 92 percent"
+                  aria-label={t("copy.suppliedFirstPassYield92Percent")}
                   fill="none"
                 >
                   <circle
@@ -103,42 +113,46 @@ function DashboardHero() {
                   </text>
                 </svg>
               </div>
-              <figcaption>Inspect the outcome.</figcaption>
+              <figcaption>{t("copy.inspectTheOutcome")}</figcaption>
             </figure>
             <div className={css.riskTile}>
-              <span className={css.microLabel}>Open quality cases</span>
+              <span className={css.microLabel}>
+                {t("copy.openQualityCases")}
+              </span>
               <strong>
-                4<span>of 6 raised</span>
+                4<span>{t("copy.of6Raised")}</span>
               </strong>
               <div>
                 <CircleAlert size={15} aria-hidden="true" />
-                <span>1 critical NC in the snapshot</span>
+                <span>{t("copy.1CriticalNcInTheSnapshot")}</span>
               </div>
             </div>
             <div className={css.signalTile}>
               <div>
-                <span className={css.microLabel}>October 2026</span>
+                <span className={css.microLabel}>{t("copy.october2026")}</span>
                 <h2>
-                  6 findings.
+                  {t("copy.6Findings")}
                   <br />
-                  One month in view.
+                  {t("copy.oneMonthInView")}
                 </h2>
               </div>
               <div
                 className={css.signalStack}
                 role="img"
-                aria-label="October 2026: six non-conformances, including one critical"
+                aria-label={t(
+                  "copy.october2026SixNonConformancesIncludingOneCritical",
+                )}
               >
                 <span />
                 <i />
-                <small>1 critical</small>
+                <small>{t("copy.1Critical")}</small>
               </div>
             </div>
             <div className={css.actionTile}>
               <ClipboardCheck size={21} aria-hidden="true" />
-              <span>Open CAPAs</span>
+              <span>{t("copy.openCapas")}</span>
               <strong>4</strong>
-              <small>0 overdue</small>
+              <small>{t("copy.0Overdue")}</small>
             </div>
           </div>
         </div>
@@ -148,42 +162,45 @@ function DashboardHero() {
 }
 
 function NcHero() {
+  const t = useTranslations("pages.qualityApp");
+
   return (
     <section className={css.ncHero} data-qms-hero="non-conformance">
       <div className={css.wrap}>
         <Breadcrumb slug="non-conformance" />
         <div className={css.ncHeroHeader}>
           <div>
-            <span className={css.eyebrow}>Exception management / 02</span>
+            <span className={css.eyebrow}>
+              {t("copy.exceptionManagement02")}
+            </span>
             <h1 className="showcase-heading">
-              Find the exception.
+              {t("copy.findTheException")}
               <br />
-              <span>Keep the whole story.</span>
+              <span>{t("copy.keepTheWholeStory")}</span>
             </h1>
           </div>
           <div>
-            <p>
-              Give every quality finding a clear source, a considered
-              disposition and an evidence trail worth following.
-            </p>
+            <p>{t("copy.giveEveryQualityFindingAClearSourceA")}</p>
             <HeroActions />
           </div>
         </div>
         <figure className={css.exceptionFile}>
           <div className={css.fileIndex}>
-            <span>QUALITY CASE FILE</span>
+            <span>{t("copy.qualityCaseFile")}</span>
             <strong>NC-0004</strong>
-            <small>Detected Oct 19, 2026</small>
+            <small>{t("copy.detectedOct192026")}</small>
           </div>
           <div className={css.fileEvidence}>
             <div className={css.fileEvidenceTop}>
-              <span>Corrugation pitch out of tolerance</span>
-              <span>Production · Major</span>
+              <span>{t("copy.corrugationPitchOutOfTolerance")}</span>
+              <span>{t("copy.productionMajor")}</span>
             </div>
             <svg
               viewBox="0 0 650 105"
               role="img"
-              aria-label="Illustrative corrugated profile with one highlighted tolerance exception; no measured values are implied."
+              aria-label={t(
+                "copy.illustrativeCorrugatedProfileWithOneHighlightedToleranceException",
+              )}
               fill="none"
             >
               <rect
@@ -216,18 +233,19 @@ function NcHero() {
               />
               <path d="m282 12 23-9" stroke="#c38c24" strokeWidth="1.5" />
               <text x="312" y="13" fontSize="10" fill="var(--muted-foreground)">
-                review the exception
+                {t("copy.reviewTheException")}
               </text>
             </svg>
             <figcaption>
-              Illustrative profile · Case identity and severity come from the
-              supplied record.
+              {t("copy.illustrativeProfileCaseIdentityAndSeverityComeFrom")}
             </figcaption>
           </div>
           <div className={css.fileDisposition}>
-            <span className={css.microLabel}>Current source status</span>
-            <strong>Open</strong>
-            <p>Contain → investigate → act</p>
+            <span className={css.microLabel}>
+              {t("copy.currentSourceStatus")}
+            </span>
+            <strong>{t("copy.open")}</strong>
+            <p>{t("copy.containInvestigateAct")}</p>
             <Provenance />
           </div>
         </figure>
@@ -237,29 +255,30 @@ function NcHero() {
 }
 
 function CapaHero() {
+  const t = useTranslations("pages.qualityApp");
+
   return (
     <section className={css.capaHero} data-qms-hero="capa">
       <div className={css.wrap}>
         <Breadcrumb slug="capa" />
         <header className={css.capaHeroHeader}>
           <span className={css.eyebrow}>
-            Corrective & preventive action / 03
+            {t("copy.correctivePreventiveAction03")}
           </span>
           <h1 className="showcase-heading">
-            A finding becomes an action.
+            {t("copy.aFindingBecomesAnAction")}
             <br />
-            <span>Evidence closes the loop.</span>
+            <span>{t("copy.evidenceClosesTheLoop")}</span>
           </h1>
           <p>
-            Bring root-cause thinking, accountable work and verification into
-            one deliberate quality journey.
+            {t("copy.bringRootCauseThinkingAccountableWorkAndVerification")}
           </p>
           <HeroActions />
         </header>
         <figure className={css.actionArchitecture}>
           <div className={css.actionRoute} aria-hidden="true" />
           <div className={css.capaSketch}>
-            Verify the fix.
+            {t("copy.verifyTheFix")}
             <svg viewBox="0 0 90 44" aria-hidden="true" fill="none">
               <path
                 d="M79 4C76 29 43 4 32 25C28 34 20 36 7 35M15 28 6 35 17 40"
@@ -271,19 +290,23 @@ function CapaHero() {
           </div>
           {[
             {
-              label: "Understand",
-              caption: "Define the problem",
+              label: t("copy.understand"),
+              caption: t("copy.defineTheProblem"),
               Icon: Microscope,
             },
             {
-              label: "Plan",
-              caption: "Choose the right action",
+              label: t("copy.plan"),
+              caption: t("copy.chooseTheRightAction"),
               Icon: Layers3,
             },
-            { label: "Act", caption: "Follow the work", Icon: ClipboardCheck },
             {
-              label: "Verify",
-              caption: "Review effectiveness",
+              label: t("copy.act"),
+              caption: t("copy.followTheWork"),
+              Icon: ClipboardCheck,
+            },
+            {
+              label: t("copy.verify"),
+              caption: t("copy.reviewEffectiveness"),
               Icon: ShieldCheck,
             },
           ].map(({ label, caption, Icon }, index) => (
@@ -319,8 +342,7 @@ function CapaHero() {
             </div>
           ))}
           <figcaption>
-            Supplied snapshot: 5 CAPAs · 4 open · 1 closed. The process
-            illustration is a workflow model.
+            {t("copy.suppliedSnapshot5Capas4Open1Closed")}
           </figcaption>
         </figure>
       </div>
@@ -329,6 +351,8 @@ function CapaHero() {
 }
 
 function AqlHero() {
+  const t = useTranslations("pages.qualityApp");
+
   return (
     <section className={css.aqlHero} data-qms-hero="aql-sampling">
       <div className={css.wrap}>
@@ -336,12 +360,13 @@ function AqlHero() {
         <div className={css.samplingLab}>
           <figure className={css.lotField}>
             <div className={css.tileLabel}>
-              FROM LOT TO SAMPLE<span>Code H</span>
+              {t("copy.fromLotToSample")}
+              <span>{t("copy.codeH")}</span>
             </div>
             <div
               className={css.lotDots}
               role="img"
-              aria-label="Sampling illustration: 500 units in a lot, sample 50. Each dot represents five units."
+              aria-label={t("copy.samplingIllustration500UnitsInALotSample")}
             >
               {Array.from({ length: 100 }, (_, i) => (
                 <i key={i} className={i < 10 ? css.sampleDot : undefined} />
@@ -349,42 +374,39 @@ function AqlHero() {
             </div>
             <div className={css.lotReduction}>
               <div>
-                <span>Lot quantity</span>
+                <span>{t("copy.lotQuantity")}</span>
                 <strong>500</strong>
               </div>
               <ArrowRight size={25} strokeWidth={1.3} aria-hidden="true" />
               <div>
-                <span>Sample quantity</span>
+                <span>{t("copy.sampleQuantity")}</span>
                 <strong>50</strong>
               </div>
             </div>
             <figcaption>
-              Each dot represents 5 units. Supplied AQL 2.5 / General II
-              example.
+              {t("copy.eachDotRepresents5UnitsSuppliedAql2")}
             </figcaption>
           </figure>
           <div className={css.samplingCopy}>
-            <span className={css.eyebrow}>Acceptance sampling / 04</span>
+            <span className={css.eyebrow}>
+              {t("copy.acceptanceSampling04")}
+            </span>
             <h1 className="showcase-heading">
-              A smaller sample.
+              {t("copy.aSmallerSample")}
               <br />
-              <span>A transparent decision.</span>
+              <span>{t("copy.aTransparentDecision")}</span>
             </h1>
-            <p>
-              Give lot size, inspection basis and acceptance limits a clear
-              place in the quality conversation.
-            </p>
+            <p>{t("copy.giveLotSizeInspectionBasisAndAcceptanceLimits")}</p>
             <div className={css.samplingThreshold}>
               <span>
                 <Check size={13} aria-hidden="true" />
-                Accept ≤ 3
+                {t("copy.accept3")}
               </span>
-              <span>Reject ≥ 4</span>
+              <span>{t("copy.reject4")}</span>
             </div>
             <HeroActions />
             <p className={css.heroFootnote}>
-              The interactive demo uses the numeric excerpt supplied in your
-              screenshot.
+              {t("copy.theInteractiveDemoUsesTheNumericExcerptSupplied")}
             </p>
           </div>
         </div>
@@ -394,6 +416,8 @@ function AqlHero() {
 }
 
 function SpcHero() {
+  const t = useTranslations("pages.qualityApp");
+
   const { mean, sigma, lsl, usl } = suppliedSpcSummary;
   const points = Array.from({ length: 101 }, (_, i) => {
     const x = 20 + i * 0.07;
@@ -406,18 +430,17 @@ function SpcHero() {
         <div className={css.spcHeroHeader}>
           <div>
             <span className={css.eyebrow}>
-              Statistical process control / 05
+              {t("copy.statisticalProcessControl05")}
             </span>
             <h1 className="showcase-heading">
-              Read the variation.
+              {t("copy.readTheVariation")}
               <br />
-              <span>Understand the process.</span>
+              <span>{t("copy.understandTheProcess")}</span>
             </h1>
           </div>
           <div>
             <p>
-              Put process behavior, control limits and specification context in
-              the same field of view.
+              {t("copy.putProcessBehaviorControlLimitsAndSpecificationContext")}
             </p>
             <HeroActions />
           </div>
@@ -427,7 +450,9 @@ function SpcHero() {
             <svg
               viewBox="0 0 800 220"
               role="img"
-              aria-label="Illustrative normal model using the supplied mean 23.3958 and sigma 0.8053, with specification limits 22 and 25 micrometers."
+              aria-label={t(
+                "copy.illustrativeNormalModelUsingTheSuppliedMean23",
+              )}
               fill="none"
             >
               <path
@@ -471,7 +496,7 @@ function SpcHero() {
                 fill="#72c5ff"
                 fontSize="11"
               >
-                MEAN 23.3958
+                {t("copy.mean233958")}
               </text>
               <text
                 x={45 + (usl - 20) * 100}
@@ -484,25 +509,24 @@ function SpcHero() {
               </text>
             </svg>
             <figcaption>
-              Illustrative normal model based on the supplied summary; not the
-              original QC readings.
+              {t("copy.illustrativeNormalModelBasedOnTheSuppliedSummary")}
             </figcaption>
           </div>
           <dl className={css.sourceSpcNumbers}>
             <div>
-              <dt>Source Cp</dt>
+              <dt>{t("copy.sourceCp")}</dt>
               <dd>0.621</dd>
             </div>
             <div>
-              <dt>Source Cpk</dt>
+              <dt>{t("copy.sourceCpk")}</dt>
               <dd>0.578</dd>
             </div>
             <div>
-              <dt>Readings analyzed</dt>
+              <dt>{t("copy.readingsAnalyzed")}</dt>
               <dd>100</dd>
             </div>
             <div>
-              <dt>Beyond control limits</dt>
+              <dt>{t("copy.beyondControlLimits")}</dt>
               <dd>3</dd>
             </div>
           </dl>

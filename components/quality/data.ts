@@ -1,3 +1,4 @@
+import type { TFn } from "@/lib/i18n/t-types";
 export const qualitySlugs = [
   "quality-dashboard",
   "non-conformance",
@@ -7,117 +8,101 @@ export const qualitySlugs = [
 ] as const;
 export type QualitySlug = (typeof qualitySlugs)[number];
 export const qualityCompany = "Alif Steel Mills Ltd";
-export const qualityPages: Record<
+export function getQualityPages(
+  t: TFn,
+): Record<
   QualitySlug,
   { title: string; description: string; steps: [string, string][] }
-> = {
-  "quality-dashboard": {
-    title: "Quality Dashboard",
-    description:
-      "Bring non-conformance, corrective action and inspection signals into a clear quality overview.",
-    steps: [
-      [
-        "See the signal",
-        "Review open cases, severity and inspection indicators.",
+> {
+  return {
+    "quality-dashboard": {
+      title: t("qualityPages.quality-dashboard.title"),
+      description: t("qualityPages.quality-dashboard.description"),
+      steps: [
+        [
+          t("qualityPages.quality-dashboard.steps.0.0"),
+          t("qualityPages.quality-dashboard.steps.0.1"),
+        ],
+        [
+          t("qualityPages.quality-dashboard.steps.1.0"),
+          t("qualityPages.quality-dashboard.steps.1.1"),
+        ],
+        [
+          t("qualityPages.quality-dashboard.steps.2.0"),
+          t("qualityPages.quality-dashboard.steps.2.1"),
+        ],
+        [
+          t("qualityPages.quality-dashboard.steps.3.0"),
+          t("qualityPages.quality-dashboard.steps.3.1"),
+        ],
       ],
-      [
-        "Find the context",
-        "Connect the snapshot to the supplied case excerpt.",
+    },
+    "non-conformance": {
+      title: t("qualityPages.non-conformance.title"),
+      description: t("qualityPages.non-conformance.description"),
+      steps: [
+        [
+          t("qualityPages.non-conformance.steps.0.0"),
+          t("qualityPages.non-conformance.steps.0.1"),
+        ],
+        [
+          t("qualityPages.non-conformance.steps.1.0"),
+          t("qualityPages.non-conformance.steps.1.1"),
+        ],
+        [
+          t("qualityPages.non-conformance.steps.2.0"),
+          t("qualityPages.non-conformance.steps.2.1"),
+        ],
+        [
+          t("qualityPages.non-conformance.steps.3.0"),
+          t("qualityPages.non-conformance.steps.3.1"),
+        ],
       ],
-      ["Follow the action", "Review corrective and preventive work in CAPA."],
-      [
-        "Review the outcome",
-        "Keep inspection evidence and closure decisions connected.",
+    },
+    capa: {
+      title: t("qualityPages.capa.title"),
+      description: t("qualityPages.capa.description"),
+      steps: [
+        [t("qualityPages.capa.steps.0.0"), t("qualityPages.capa.steps.0.1")],
+        [t("qualityPages.capa.steps.1.0"), t("qualityPages.capa.steps.1.1")],
+        [t("qualityPages.capa.steps.2.0"), t("qualityPages.capa.steps.2.1")],
+        [t("qualityPages.capa.steps.3.0"), t("qualityPages.capa.steps.3.1")],
       ],
-    ],
-  },
-  "non-conformance": {
-    title: "Non-Conformance",
-    description:
-      "Follow a quality exception from detection through containment, disposition and closure.",
-    steps: [
-      [
-        "Record the exception",
-        "Identify the problem, source, severity and affected quantity.",
+    },
+    "aql-sampling": {
+      title: t("qualityPages.aql-sampling.title"),
+      description: t("qualityPages.aql-sampling.description"),
+      steps: [
+        [
+          t("qualityPages.aql-sampling.steps.0.0"),
+          t("qualityPages.aql-sampling.steps.0.1"),
+        ],
+        [
+          t("qualityPages.aql-sampling.steps.1.0"),
+          t("qualityPages.aql-sampling.steps.1.1"),
+        ],
+        [
+          t("qualityPages.aql-sampling.steps.2.0"),
+          t("qualityPages.aql-sampling.steps.2.1"),
+        ],
+        [
+          t("qualityPages.aql-sampling.steps.3.0"),
+          t("qualityPages.aql-sampling.steps.3.1"),
+        ],
       ],
-      [
-        "Contain the issue",
-        "Review the immediate containment and disposition context.",
+    },
+    spc: {
+      title: t("qualityPages.spc.title"),
+      description: t("qualityPages.spc.description"),
+      steps: [
+        [t("qualityPages.spc.steps.0.0"), t("qualityPages.spc.steps.0.1")],
+        [t("qualityPages.spc.steps.1.0"), t("qualityPages.spc.steps.1.1")],
+        [t("qualityPages.spc.steps.2.0"), t("qualityPages.spc.steps.2.1")],
+        [t("qualityPages.spc.steps.3.0"), t("qualityPages.spc.steps.3.1")],
       ],
-      [
-        "Connect the action",
-        "Open the relevant corrective or preventive investigation.",
-      ],
-      [
-        "Retain the evidence",
-        "Review the outcome before a case is considered complete.",
-      ],
-    ],
-  },
-  capa: {
-    title: "CAPA",
-    description:
-      "Turn a quality finding into a clear action plan, verified evidence and an effective resolution.",
-    steps: [
-      [
-        "Understand the problem",
-        "Keep the finding and investigation context together.",
-      ],
-      [
-        "Plan the action",
-        "Define corrective or preventive work and its owner.",
-      ],
-      [
-        "Verify effectiveness",
-        "Review completed actions against the intended outcome.",
-      ],
-      ["Close the loop", "Retain the verification context with the case."],
-    ],
-  },
-  "aql-sampling": {
-    title: "AQL Sampling",
-    description:
-      "Explore acceptance sampling with a transparent plan lookup, sample quantity and accept/reject decision.",
-    steps: [
-      [
-        "Define the lot",
-        "Choose a whole-number lot quantity and inspection basis.",
-      ],
-      [
-        "Look up the plan",
-        "Use a configured row for the chosen AQL and level.",
-      ],
-      ["Inspect the sample", "Record the number of defective units found."],
-      [
-        "Review the decision",
-        "Compare the finding with the plan's acceptance and rejection limits.",
-      ],
-    ],
-  },
-  spc: {
-    title: "SPC",
-    description:
-      "Explore process variation with Individuals and moving-range charts, specification limits and capability metrics.",
-    steps: [
-      [
-        "Choose the readings",
-        "Keep the parameter, units and observation order clear.",
-      ],
-      [
-        "Estimate variation",
-        "Calculate moving ranges and the within-process sigma estimate.",
-      ],
-      [
-        "Inspect the signal",
-        "Compare observations with control and specification limits.",
-      ],
-      [
-        "Review capability",
-        "Interpret Cp and Cpk alongside process stability and the data basis.",
-      ],
-    ],
-  },
-};
+    },
+  };
+}
 
 export const qualitySnapshot = {
   ncTotal: 6,
@@ -154,10 +139,9 @@ export type NcRecord = {
   detected: string;
   provenance: "supplied" | "demo";
 };
-export const suppliedNcRecords: NcRecord[] = [
+export const suppliedNcRecords: Omit<NcRecord, "title">[] = [
   {
     id: "NC-0005",
-    title: "Bundle short-weight at dispatch",
     source: "Production",
     severity: "Major",
     status: "CAPA",
@@ -167,7 +151,6 @@ export const suppliedNcRecords: NcRecord[] = [
   },
   {
     id: "NC-0004",
-    title: "Corrugation pitch out of tolerance",
     source: "Production",
     severity: "Major",
     status: "Open",
@@ -177,7 +160,6 @@ export const suppliedNcRecords: NcRecord[] = [
   },
   {
     id: "NC-0003",
-    title: "Shade variation between two coils of one order",
     source: "Supplier",
     severity: "Minor",
     status: "Open",
@@ -187,7 +169,6 @@ export const suppliedNcRecords: NcRecord[] = [
   },
   {
     id: "NC-0002",
-    title: "White rust on incoming GI coil",
     source: "Inspection",
     severity: "Major",
     status: "CAPA",
@@ -196,6 +177,12 @@ export const suppliedNcRecords: NcRecord[] = [
     provenance: "supplied",
   },
 ];
+export function getSuppliedNcRecords(t: TFn) {
+  return suppliedNcRecords.map((row, index) => ({
+    ...row,
+    title: t(`suppliedNcRecords.${index}.title`),
+  }));
+}
 export type CapaRecord = {
   id: string;
   problem: string;
@@ -205,10 +192,9 @@ export type CapaRecord = {
   due: string | null;
   provenance: "supplied" | "demo";
 };
-export const suppliedCapaRecords: CapaRecord[] = [
+export const suppliedCapaRecords: Omit<CapaRecord, "problem">[] = [
   {
     id: "CAPA-0006",
-    problem: "Paint peel on T-bend after 3T",
     type: "Corrective",
     status: "Open",
     owner: null,
@@ -217,7 +203,6 @@ export const suppliedCapaRecords: CapaRecord[] = [
   },
   {
     id: "CAPA-0005",
-    problem: "Bundle short-weight at dispatch",
     type: "Preventive",
     status: "Open",
     owner: null,
@@ -226,7 +211,6 @@ export const suppliedCapaRecords: CapaRecord[] = [
   },
   {
     id: "CAPA-0004",
-    problem: "Corrugation pitch out of tolerance",
     type: "Preventive",
     status: "Open",
     owner: null,
@@ -235,7 +219,6 @@ export const suppliedCapaRecords: CapaRecord[] = [
   },
   {
     id: "CAPA-0002",
-    problem: "White rust on incoming GI coil",
     type: "Corrective",
     status: "Open",
     owner: null,
@@ -243,6 +226,12 @@ export const suppliedCapaRecords: CapaRecord[] = [
     provenance: "supplied",
   },
 ];
+export function getSuppliedCapaRecords(t: TFn) {
+  return suppliedCapaRecords.map((row, index) => ({
+    ...row,
+    problem: t(`suppliedCapaRecords.${index}.problem`),
+  }));
+}
 
 export type AqlPlan = {
   min: number;
@@ -277,9 +266,14 @@ export const suppliedSpcSummary = {
   target: 23.5,
   ucl: 25.8117,
   lcl: 20.9799,
-  parameter: "Top coat DFT (μm)",
-  context: "Colour Coil — Final (per coil)",
 };
+export function getSuppliedSpcSummary(t: TFn) {
+  return {
+    ...suppliedSpcSummary,
+    parameter: t("suppliedSpcSummary.parameter"),
+    context: t("suppliedSpcSummary.context"),
+  };
+}
 /** Deterministic simulation; these are not reconstructed source readings. */
 export const simulatedReadings = Array.from({ length: 100 }, (_, i) => {
   if ([36, 72, 91].includes(i)) return 20.35 - (i % 3) * 0.1;

@@ -1,8 +1,8 @@
+import { getTranslations } from "next-intl/server";
+import { useLocale } from "next-intl";
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import english from "@/messages/en.json";
 import { getLocaleAlternates } from "@/i18n/metadata";
-import { qualityPages, type QualitySlug } from "./data";
+import { getQualityPages, type QualitySlug } from "./data";
 import QualityHero from "./heroes";
 import DashboardWorkspace from "./dashboard";
 import NonConformanceWorkspace from "./non-conformance";
@@ -12,8 +12,11 @@ import SpcWorkspace from "./spc";
 import { QualityClosing, QualityConnections, QualityFlow, css } from "./ui";
 
 export async function qualityMetadata(slug: QualitySlug): Promise<Metadata> {
+  const t = await getTranslations("pages.qualityApp");
+  const qualityPages = getQualityPages(t);
+
   return {
-    title: `${qualityPages[slug].title} | Quality Management`,
+    title: t("ui.metadataTitle", { name: qualityPages[slug].title }),
     description: qualityPages[slug].description,
     alternates: await getLocaleAlternates(`/apps/quality/${slug}`),
   };
@@ -26,21 +29,21 @@ const workspaces = {
   spc: SpcWorkspace,
 };
 export function QualityPage({ slug }: { slug: QualitySlug }) {
+  const locale = useLocale();
+
   const SelectedWorkspace = workspaces[slug];
   return (
-    <NextIntlClientProvider
-      locale="en"
-      messages={{
-        common: { actions: { liveDemo: english.common.actions.liveDemo } },
-      }}
+    <main
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      className={css.quality}
+      data-qms-page={slug}
     >
-      <main lang="en" dir="ltr" className={css.quality} data-qms-page={slug}>
-        <QualityHero slug={slug} />
-        <SelectedWorkspace />
-        <QualityFlow slug={slug} />
-        <QualityConnections slug={slug} />
-        <QualityClosing />
-      </main>
-    </NextIntlClientProvider>
+      <QualityHero slug={slug} />
+      <SelectedWorkspace />
+      <QualityFlow slug={slug} />
+      <QualityConnections slug={slug} />
+      <QualityClosing />
+    </main>
   );
 }

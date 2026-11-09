@@ -1,4 +1,6 @@
 "use client";
+import { enumLabel, qualityError } from "./labels";
+import { useTranslations } from "next-intl";
 
 import { useState } from "react";
 import { ArrowDownRight, Calculator, Check, RotateCcw, X } from "lucide-react";
@@ -16,6 +18,8 @@ import {
 } from "./ui";
 
 export default function AqlWorkspace() {
+  const t = useTranslations("pages.qualityApp");
+
   const [lot, setLot] = useState("500");
   const [aql, setAql] = useState("2.5");
   const [level, setLevel] = useState("II");
@@ -42,25 +46,25 @@ export default function AqlWorkspace() {
   }
   return (
     <Workspace
-      title="A sample plan you can inspect."
-      description="Try the supplied numeric plan excerpt: AQL 2.5, General II, normal single sampling, lot sizes 2–500. Uncovered combinations return an explicit data gap."
+      title={t("copy.aSamplePlanYouCanInspect")}
+      description={t("copy.tryTheSuppliedNumericPlanExcerptAql2")}
       actions={
         <Button onClick={reset}>
           <RotateCcw size={14} aria-hidden="true" />
-          Load supplied example
+          {t("copy.loadSuppliedExample")}
         </Button>
       }
     >
       <div className={css.workspaceBody}>
         <div className={css.samplingScope}>
           <Calculator size={18} aria-hidden="true" />
-          <span>Plan scope: supplied matrix excerpt</span>
-          <Tag tone="blue">AQL 2.5 · General II</Tag>
-          <span>Normal / single sampling</span>
+          <span>{t("copy.planScopeSuppliedMatrixExcerpt")}</span>
+          <Tag tone="blue">{t("copy.aql25GeneralIi")}</Tag>
+          <span>{t("copy.normalSingleSampling")}</span>
         </div>
         <div className={css.aqlCalculatorGrid}>
           <Panel
-            title="Define the inspection basis"
+            title={t("copy.defineTheInspectionBasis")}
             className={css.calculatorPanel}
           >
             <form
@@ -70,7 +74,7 @@ export default function AqlWorkspace() {
               }}
             >
               <div className={css.formColumns}>
-                <Field label="Lot size">
+                <Field label={t("copy.lotSize")}>
                   <input
                     type="number"
                     min="2"
@@ -92,11 +96,13 @@ export default function AqlWorkspace() {
                     }}
                   >
                     {["1.0", "1.5", "2.5", "4.0", "6.5"].map((value) => (
-                      <option key={value}>{value}</option>
+                      <option key={value} value={value}>
+                        {value}
+                      </option>
                     ))}
                   </select>
                 </Field>
-                <Field label="Inspection level">
+                <Field label={t("copy.inspectionLevel")}>
                   <select
                     value={level}
                     onChange={(event) => {
@@ -104,19 +110,19 @@ export default function AqlWorkspace() {
                       setEvaluated(false);
                     }}
                   >
-                    <option value="I">General I</option>
-                    <option value="II">General II</option>
-                    <option value="III">General III</option>
+                    <option value="I">{t("copy.generalI")}</option>
+                    <option value="II">{t("copy.generalIi")}</option>
+                    <option value="III">{t("copy.generalIii")}</option>
                   </select>
                 </Field>
-                <Field label="Defective units found">
+                <Field label={t("copy.defectiveUnitsFound")}>
                   <input
                     type="number"
                     min="0"
                     max={lookup.plan?.sample}
                     step="1"
                     value={defects}
-                    placeholder="Enter after inspection"
+                    placeholder={t("copy.enterAfterInspection")}
                     onChange={(event) => {
                       setDefects(event.target.value);
                       setEvaluated(false);
@@ -126,10 +132,10 @@ export default function AqlWorkspace() {
               </div>
               <div className={css.formActions}>
                 <span className={css.microHint}>
-                  Sample counts are looked up, not estimated as a percentage.
+                  {t("copy.sampleCountsAreLookedUpNotEstimatedAs")}
                 </span>
                 <Button type="submit" variant="primary" disabled={!lookup.plan}>
-                  Evaluate finding
+                  {t("copy.evaluateFinding")}
                   <ArrowDownRight size={14} aria-hidden="true" />
                 </Button>
               </div>
@@ -137,29 +143,29 @@ export default function AqlWorkspace() {
           </Panel>
           <section
             className={css.samplingDecision}
-            aria-label="Sampling plan result"
+            aria-label={t("copy.samplingPlanResult")}
             aria-live="polite"
           >
             <Provenance />
             <span className={css.eyebrow}>
               {lookup.plan
-                ? `Plan code ${lookup.plan.code}`
-                : "Plan unavailable"}
+                ? t("dynamic.planCodeV0", { v0: lookup.plan.code })
+                : t("copy.planUnavailable")}
             </span>
             <h3>
               {lookup.plan
-                ? `${lookup.plan.sample} units to inspect`
-                : "A configured plan is needed."}
+                ? t("dynamic.v0UnitsToInspect", { v0: lookup.plan.sample })
+                : t("copy.aConfiguredPlanIsNeeded")}
             </h3>
             {lookup.plan ? (
               <>
                 <dl className={css.thresholdNumbers}>
                   <div>
-                    <dt>Accept at or below</dt>
+                    <dt>{t("copy.acceptAtOrBelow")}</dt>
                     <dd>{lookup.plan.accept}</dd>
                   </div>
                   <div>
-                    <dt>Reject at or above</dt>
+                    <dt>{t("copy.rejectAtOrAbove")}</dt>
                     <dd>{lookup.plan.reject}</dd>
                   </div>
                 </dl>
@@ -171,12 +177,14 @@ export default function AqlWorkspace() {
                   />
                 </div>
                 <p className={css.panelNote}>
-                  {lookup.plan.sample} sampled from a lot of{" "}
-                  {Number(lot).toLocaleString("en-US")}.
+                  {t("ui.sampledFrom", {
+                    sample: lookup.plan.sample,
+                    lot: Number(lot),
+                  })}
                 </p>
                 {result?.error ? (
                   <p role="alert" className={css.formError}>
-                    {result.error}
+                    {t("ui.defectiveRange", { sample: lookup.plan.sample })}
                   </p>
                 ) : result?.decision ? (
                   <div
@@ -192,70 +200,72 @@ export default function AqlWorkspace() {
                       <X size={19} aria-hidden="true" />
                     )}
                     <div>
-                      <strong>{result.decision} under this plan</strong>
+                      <strong>
+                        {t("ui.planDecision", {
+                          decision: enumLabel(t, result.decision),
+                        })}
+                      </strong>
                       <span>
-                        {defects} defective units recorded in the local
-                        evaluation.
+                        {t("ui.defectsRecorded", { count: Number(defects) })}
                       </span>
                     </div>
                   </div>
                 ) : (
                   <p className={css.waitingDecision}>
-                    Plan ready. Enter the inspection finding and evaluate.
+                    {t("copy.planReadyEnterTheInspectionFindingAndEvaluate")}
                   </p>
                 )}
               </>
             ) : (
-              <p className={css.formError}>{lookup.error}</p>
+              <p className={css.formError}>{qualityError(t, lookup.error)}</p>
             )}
           </section>
         </div>
         <dl className={css.metricsFour}>
           <Metric
-            label="Supported numeric rows"
+            label={t("copy.supportedNumericRows")}
             value="8"
-            detail="Fully visible supplied excerpt"
+            detail={t("copy.fullyVisibleSuppliedExcerpt")}
           />
           <Metric
-            label="Inspection basis"
+            label={t("copy.inspectionBasis")}
             value="II"
-            detail="General Inspection Level II"
+            detail={t("copy.generalInspectionLevelIi")}
             tone="blue"
           />
           <Metric
-            label="Supported AQL"
+            label={t("copy.supportedAql")}
             value="2.5"
-            detail="Other columns contain lookup arrows"
+            detail={t("copy.otherColumnsContainLookupArrows")}
           />
           <Metric
-            label="Largest supplied lot"
+            label={t("copy.largestSuppliedLot")}
             value="500"
-            detail="No extrapolation beyond the excerpt"
+            detail={t("copy.noExtrapolationBeyondTheExcerpt")}
           />
         </dl>
         <Panel
-          title="Inspect the supplied matrix"
+          title={t("copy.inspectTheSuppliedMatrix")}
           action={
             <span className={css.panelNote}>
-              Select a row to load its example
+              {t("copy.selectARowToLoadItsExample")}
             </span>
           }
         >
           <div id="sampling-matrix" className={css.tableScroll}>
             <table className={css.dataTable}>
               <caption className="sr-only">
-                Supplied General II AQL 2.5 plan excerpt. Select a lot interval
-                to load its maximum quantity.
+                {t("copy.suppliedGeneralIiAql25PlanExcerpt")}
               </caption>
               <thead>
                 <tr>
                   {[
-                    "Lot interval",
-                    "Code",
-                    "Sample",
-                    "Accept",
-                    "Reject",
-                    "Use example",
+                    t("copy.lotInterval"),
+                    t("copy.code"),
+                    t("copy.sample"),
+                    t("copy.accept"),
+                    t("copy.reject"),
+                    t("copy.useExample"),
                   ].map((label) => (
                     <th key={label} scope="col">
                       {label}
@@ -285,9 +295,17 @@ export default function AqlWorkspace() {
                     <td>
                       <Button
                         onClick={() => selectRow(plan.max)}
-                        aria-label={`Load lot ${plan.max}, sample ${plan.sample}, accept ${plan.accept}, reject ${plan.reject}`}
+                        aria-label={t(
+                          "dynamic.loadLotV0SampleV1AcceptV2Reject",
+                          {
+                            v0: plan.max,
+                            v1: plan.sample,
+                            v2: plan.accept,
+                            v3: plan.reject,
+                          },
+                        )}
                       >
-                        Load {plan.max}
+                        {t("ui.loadLot", { max: plan.max })}
                       </Button>
                     </td>
                   </tr>
@@ -296,9 +314,7 @@ export default function AqlWorkspace() {
             </table>
           </div>
           <p className={css.panelNote}>
-            The screenshot&apos;s default lot of 1,000 is outside the fully
-            visible numeric excerpt. This demo starts at 500 so its result can
-            be traced to the supplied row.
+            {t("copy.theScreenshotsDefaultLotOf1000Is")}
           </p>
         </Panel>
       </div>

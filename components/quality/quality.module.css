@@ -307,7 +307,7 @@
   gap: 0;
   margin-top: 38px;
   border: 1px solid var(--border);
-  border-left: 4px solid #d5a43b;
+  border-inline-start: 4px solid #d5a43b;
   border-radius: 5px 14px 14px 5px;
   background: var(--cream);
   box-shadow: 0 22px 50px -40px
@@ -318,7 +318,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 23px;
-  border-right: 1px dashed var(--border);
+  border-inline-end: 1px dashed var(--border);
 }
 .fileIndex > span {
   font-family: ui-monospace, monospace;
@@ -371,7 +371,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 23px;
-  border-left: 1px dashed var(--border);
+  border-inline-start: 1px dashed var(--border);
 }
 .fileDisposition > strong {
   margin-top: 13px;
@@ -652,8 +652,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
-  padding-left: 26px;
-  border-left: 1px solid #ffffff25;
+  padding-inline-start: 26px;
+  border-inline-start: 1px solid #ffffff25;
 }
 .sourceSpcNumbers dt {
   color: #a8c0df;
@@ -1026,7 +1026,7 @@
   width: 100%;
   min-width: 610px;
   border-collapse: collapse;
-  text-align: left;
+  text-align: start;
   font-size: 11px;
 }
 .dataTable thead th {
@@ -1058,7 +1058,7 @@
 .dataTable button:not(.button) {
   width: 100%;
   border-radius: 3px;
-  text-align: left;
+  text-align: start;
 }
 .recordCode {
   display: block;
@@ -1281,7 +1281,7 @@
   border: 1px solid transparent;
   border-radius: 7px;
   font-size: 11px;
-  text-align: left;
+  text-align: start;
 }
 .chartLegend button:hover,
 .chartLegend button[aria-pressed="true"] {
@@ -1566,7 +1566,7 @@
   border: 1px solid var(--border);
   border-radius: 9px;
   background: var(--card);
-  text-align: left;
+  text-align: start;
   transition:
     border-color 0.18s,
     background-color 0.18s;
@@ -2046,7 +2046,7 @@
   font-variant-numeric: tabular-nums;
 }
 .chartInspection p {
-  margin-left: auto;
+  margin-inline-start: auto;
   color: var(--muted-foreground);
   font-size: 10px;
 }
@@ -2278,7 +2278,7 @@
     justify-content: space-between;
     gap: 13px;
     padding: 15px 23px;
-    border-left: 0;
+    border-inline-start: 0;
     border-top: 1px dashed var(--border);
   }
   .fileDisposition > strong,
@@ -2295,7 +2295,7 @@
     gap: 40px;
   }
   .sourceSpcNumbers {
-    padding-left: 20px;
+    padding-inline-start: 20px;
     gap: 20px;
   }
   .processObservatory {
@@ -2402,7 +2402,7 @@
   }
   .sourceSpcNumbers {
     grid-template-columns: repeat(4, 1fr);
-    border-left: 0;
+    border-inline-start: 0;
     border-top: 1px solid #ffffff25;
     padding: 20px 0 0;
   }
@@ -2423,7 +2423,7 @@
     flex-wrap: wrap;
   }
   .dashboardInsight > .inlineLink {
-    margin-left: 35px;
+    margin-inline-start: 35px;
   }
   .recordLayout {
     grid-template-columns: 1fr;
@@ -2560,7 +2560,7 @@
   }
   .fileIndex {
     padding: 18px;
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px dashed var(--border);
   }
   .fileIndex strong {
@@ -2816,10 +2816,10 @@
     font-size: 8px;
   }
   .caseExcerpt > a > .tag {
-    margin-left: 65px;
+    margin-inline-start: 65px;
   }
   .caseExcerpt > a > svg {
-    margin-left: auto;
+    margin-inline-start: auto;
   }
   .dashboardInsight {
     padding: 16px;
@@ -3058,4 +3058,39 @@
   .connectionGrid > a {
     transition: none;
   }
+}
+
+/* Allow translated copy to breathe without changing the five hero identities. */
+.quality :is(h1, h2, h3, h4, p, button, label, figcaption) {
+  overflow-wrap: anywhere;
+}
+.quality :is(button, select, .provenance, .tag) {
+  max-width: 100%;
+}
+.quality :is(.provenance, .tag) {
+  white-space: normal;
+}
+.quality:where([lang="bn"], [lang="ne"], [lang="ar"], [lang="ja"], [lang="zh"])
+  :is(h1, h2, h3, h4, .eyebrow) {
+  letter-spacing: normal;
+}
+.quality:where([lang="bn"], [lang="ne"], [lang="ar"]) :is(h1, h2, h3, h4) {
+  line-height: 1.4;
+}
+.quality[dir="rtl"] :global(.lucide-arrow-right),
+.quality[dir="rtl"] .flowArrow {
+  transform: scaleX(-1);
+}
+.quality[dir="rtl"] :is(.controlChart, .processInstrument svg) {
+  direction: ltr;
+}
+.recordDialog[dir="rtl"] :global([data-slot="dialog-header"]) {
+  text-align: right;
+}
+.recordDialog[dir="rtl"] :global([data-slot="dialog-close"]) {
+  right: auto;
+  left: 1rem;
+}
+.quality:where([lang="bn"], [lang="ne"], [lang="ar"]) :is(.capaSketch) {
+  font-family: var(--font-content);
 }

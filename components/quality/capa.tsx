@@ -1,4 +1,6 @@
 "use client";
+import { enumLabel, formatDate } from "./labels";
+import { useTranslations, useLocale } from "next-intl";
 
 import { useState, type FormEvent } from "react";
 import { Check, ClipboardCheck, Plus } from "lucide-react";
@@ -9,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { suppliedCapaRecords, type CapaRecord } from "./data";
+import { getSuppliedCapaRecords, type CapaRecord } from "./data";
 import {
   Button,
   Empty,
@@ -22,13 +24,29 @@ import {
   css,
 } from "./ui";
 
-const actionSteps = [
-  "Review the finding and containment context",
-  "Document the proposed action and supporting evidence",
-  "Review effectiveness before considering closure",
-];
-const phases = ["Understand", "Plan", "Act", "Verify"];
 export default function CapaWorkspace() {
+  const t = useTranslations("pages.qualityApp");
+  const suppliedCapaRecords = getSuppliedCapaRecords(t);
+  const locale = useLocale();
+
+  const actionSteps = [
+    t("copy.reviewTheFindingAndContainmentContext"),
+    t("copy.documentTheProposedActionAndSupportingEvidence"),
+    t("copy.reviewEffectivenessBeforeConsideringClosure"),
+  ];
+  const phases = [
+    t("copy.understand"),
+    t("copy.plan"),
+    t("copy.act"),
+    t("copy.verify"),
+  ];
+
+  const phaseResponses = [
+    t("ui.phaseUnderstand"),
+    t("ui.phasePlan"),
+    t("ui.phaseAct"),
+    t("ui.phaseVerify"),
+  ];
   const [localRecords, setLocalRecords] = useState<CapaRecord[]>([]);
   const [query, setQuery] = useState("");
   const [type, setType] = useState("All");
@@ -76,46 +94,46 @@ export default function CapaWorkspace() {
     setType("All");
     setQuery("");
     setOpen(false);
-    setNotice(`${id} created in the local demo. No ERP record was changed.`);
+    setNotice(t("dynamic.v0CreatedInTheLocalDemoNoErp", { v0: id }));
   }
   return (
     <Workspace
-      title="From a problem to a considered response."
-      description="Explore the supplied CAPA register, then try a separate illustrative action plan. Checklists and phases are local demo interactions."
+      title={t("copy.fromAProblemToAConsideredResponse")}
+      description={t("copy.exploreTheSuppliedCapaRegisterThenTryA")}
       actions={
         <Button variant="primary" onClick={() => setOpen(true)}>
           <Plus size={14} aria-hidden="true" />
-          Open demo CAPA
+          {t("copy.openDemoCapa")}
         </Button>
       }
     >
       <div className={css.workspaceBody}>
         <div className={css.snapshotLine}>
-          <span>Supplied CAPA summary / Last 90 days</span>
-          <span>{localRecords.length} local demo additions</span>
+          <span>{t("copy.suppliedCapaSummaryLast90Days")}</span>
+          <span>{t("ui.localAdditions", { count: localRecords.length })}</span>
         </div>
         <dl className={css.metricsFour}>
           <Metric
-            label="CAPAs raised"
+            label={t("copy.capasRaised")}
             value="5"
-            detail="Source summary · 90 days"
+            detail={t("copy.sourceSummary90Days")}
           />
           <Metric
-            label="Open"
+            label={t("copy.open")}
             value="4"
-            detail="Four supplied open records"
+            detail={t("copy.fourSuppliedOpenRecords")}
             tone="amber"
           />
           <Metric
-            label="Overdue"
+            label={t("copy.overdue")}
             value="0"
-            detail="Source snapshot"
+            detail={t("copy.sourceSnapshot")}
             tone="green"
           />
           <Metric
-            label="Closed"
+            label={t("copy.closed")}
             value="1"
-            detail="Closed record not supplied"
+            detail={t("copy.closedRecordNotSupplied")}
             tone="blue"
           />
         </dl>
@@ -123,16 +141,20 @@ export default function CapaWorkspace() {
           <SearchField
             value={query}
             onChange={setQuery}
-            label="Search CAPA reference or problem…"
+            label={t("copy.searchCapaReferenceOrProblem")}
           />
-          <div className={css.segmented} role="group" aria-label="CAPA type">
+          <div
+            className={css.segmented}
+            role="group"
+            aria-label={t("copy.capaType")}
+          >
             {["All", "Corrective", "Preventive"].map((value) => (
               <Button
                 key={value}
                 aria-pressed={type === value}
                 onClick={() => setType(value)}
               >
-                {value}
+                {enumLabel(t, value)}
               </Button>
             ))}
           </div>
@@ -140,9 +162,9 @@ export default function CapaWorkspace() {
         <div className={css.capaWorkspaceGrid}>
           <div className={css.capaRegister}>
             <div className={css.registerHeading}>
-              <h3>Open CAPAs</h3>
+              <h3>{t("copy.openCapas")}</h3>
               <span role="status" aria-live="polite">
-                {visible.length} matching records
+                {t("ui.matchingRecords", { count: visible.length })}
               </span>
             </div>
             {visible.length ? (
@@ -161,40 +183,47 @@ export default function CapaWorkspace() {
                       <Tag
                         tone={record.type === "Corrective" ? "blue" : "neutral"}
                       >
-                        {record.type}
+                        {enumLabel(t, record.type)}
                       </Tag>
                     </span>
                     <strong>{record.problem}</strong>
                     <span className={css.capaCardMeta}>
-                      <span>Owner: {record.owner ?? "—"}</span>
-                      <span>Due: {record.due ?? "—"}</span>
+                      <span>
+                        {t("copy.owner")}
+                        {record.owner ?? "—"}
+                      </span>
+                      <span>
+                        {t("copy.due")}
+                        {formatDate(locale, record.due)}
+                      </span>
                     </span>
                     <span className={css.capaCardBottom}>
-                      <Tag tone="red">{record.status}</Tag>
+                      <Tag tone="red">{enumLabel(t, record.status)}</Tag>
                       <Provenance kind={record.provenance} />
                     </span>
                   </button>
                 ))}
               </div>
             ) : (
-              <Empty title="No matching CAPA">
-                Try another type or problem. The unseen closed source record is
-                not invented.
+              <Empty title={t("copy.noMatchingCapa")}>
+                {t("copy.tryAnotherTypeOrProblemTheUnseenClosed")}
               </Empty>
             )}
             <p className={css.registerFootnote}>
-              Owner and due dates are blank in the supplied open records.
+              {t("copy.ownerAndDueDatesAreBlankInThe")}
             </p>
           </div>
           <section
             id="capa-plan"
             className={css.actionPlan}
-            aria-label="Illustrative CAPA action plan"
+            aria-label={t("copy.illustrativeCapaActionPlan")}
           >
             {selected ? (
               <div key={selected.id} className={css.detailReveal}>
                 <div className={css.actionPlanHeader}>
-                  <span className={css.eyebrow}>Explore the action flow</span>
+                  <span className={css.eyebrow}>
+                    {t("copy.exploreTheActionFlow")}
+                  </span>
                   <Provenance kind="demo" />
                 </div>
                 <h3>{selected.id}</h3>
@@ -202,7 +231,7 @@ export default function CapaWorkspace() {
                 <div
                   className={css.phaseRail}
                   role="group"
-                  aria-label="Illustrative CAPA phase"
+                  aria-label={t("copy.illustrativeCapaPhase")}
                 >
                   {phases.map((label, index) => (
                     <button
@@ -221,29 +250,33 @@ export default function CapaWorkspace() {
                 <div className={css.phaseContext}>
                   <ClipboardCheck size={19} aria-hidden="true" />
                   <div>
-                    <strong>
-                      {phases[phase[selected.id] ?? 0]} the response
-                    </strong>
+                    <strong>{phaseResponses[phase[selected.id] ?? 0]}</strong>
                     <p>
                       {
                         [
-                          "Start with the finding and gather the missing investigation context.",
-                          "Define the action, owner and expected evidence before execution.",
-                          "Follow the chosen work and keep completion evidence together.",
-                          "Review effectiveness before considering a case complete.",
+                          t("copy.startWithTheFindingAndGatherTheMissing"),
+                          t(
+                            "copy.defineTheActionOwnerAndExpectedEvidenceBefore",
+                          ),
+                          t(
+                            "copy.followTheChosenWorkAndKeepCompletionEvidence",
+                          ),
+                          t(
+                            "copy.reviewEffectivenessBeforeConsideringACaseComplete",
+                          ),
                         ][phase[selected.id] ?? 0]
                       }
                     </p>
                   </div>
                 </div>
                 <div className={css.demoPlanHeading}>
-                  <h4>Illustrative evidence checklist</h4>
+                  <h4>{t("copy.illustrativeEvidenceChecklist")}</h4>
                   <span>{completed} / 3</span>
                 </div>
                 <div
                   className={css.checklistProgress}
                   role="progressbar"
-                  aria-label="Local demo checklist completion"
+                  aria-label={t("copy.localDemoChecklistCompletion")}
                   aria-valuemin={0}
                   aria-valuemax={3}
                   aria-valuenow={completed}
@@ -271,17 +304,18 @@ export default function CapaWorkspace() {
                   aria-live="polite"
                 >
                   {completed === 3
-                    ? "The demo checklist is complete. Review verification context before closure."
-                    : "Try the checklist to explore the evidence flow. Source status remains Open."}
+                    ? t(
+                        "copy.theDemoChecklistIsCompleteReviewVerificationContext",
+                      )
+                    : t("copy.tryTheChecklistToExploreTheEvidenceFlow")}
                 </div>
                 <p className={css.panelNote}>
-                  No source root cause, action items or verification evidence
-                  were supplied. This plan is an illustrative interaction.
+                  {t("copy.noSourceRootCauseActionItemsOrVerification")}
                 </p>
               </div>
             ) : (
-              <Empty title="Select an open case">
-                The local action-plan demonstration appears here.
+              <Empty title={t("copy.selectAnOpenCase")}>
+                {t("copy.theLocalActionPlanDemonstrationAppearsHere")}
               </Empty>
             )}
           </section>
@@ -293,43 +327,51 @@ export default function CapaWorkspace() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           className={`sm:max-w-[620px] ${css.recordDialog}`}
-          lang="en"
-          dir="ltr"
+          lang={locale}
+          dir={locale === "ar" ? "rtl" : "ltr"}
+          closeLabel={t("ui.close")}
         >
           <DialogHeader>
-            <DialogTitle>Open a demo CAPA</DialogTitle>
+            <DialogTitle>{t("copy.openADemoCapa")}</DialogTitle>
             <DialogDescription>
-              Create a local mock case to explore the planning flow. Nothing is
-              saved to the ERP.
+              {t("copy.createALocalMockCaseToExploreThe")}
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={create} className={css.recordForm}>
-            <Field label="Problem statement">
+            <Field label={t("copy.problemStatement")}>
               <input
                 name="problem"
                 required
                 maxLength={180}
-                placeholder="Describe the problem to investigate"
+                placeholder={t("copy.describeTheProblemToInvestigate")}
               />
             </Field>
             <div className={css.formColumns}>
-              <Field label="Action type">
+              <Field label={t("copy.actionType")}>
                 <select name="type" defaultValue="Corrective">
-                  <option>Corrective</option>
-                  <option>Preventive</option>
+                  <option value="Corrective">
+                    {enumLabel(t, "Corrective")}
+                  </option>
+                  <option value="Preventive">
+                    {enumLabel(t, "Preventive")}
+                  </option>
                 </select>
               </Field>
-              <Field label="Demo owner">
-                <input name="owner" maxLength={80} placeholder="Optional" />
+              <Field label={t("copy.demoOwner")}>
+                <input
+                  name="owner"
+                  maxLength={80}
+                  placeholder={t("copy.optional")}
+                />
               </Field>
-              <Field label="Demo due date">
+              <Field label={t("copy.demoDueDate")}>
                 <input name="due" type="date" />
               </Field>
             </div>
             <div className={css.formActions}>
-              <Button onClick={() => setOpen(false)}>Cancel</Button>
+              <Button onClick={() => setOpen(false)}>{t("copy.cancel")}</Button>
               <Button variant="primary" type="submit">
-                Create local demo CAPA
+                {t("copy.createLocalDemoCapa")}
               </Button>
             </div>
           </form>

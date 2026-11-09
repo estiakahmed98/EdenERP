@@ -1,4 +1,6 @@
 "use client";
+import { enumLabel, formatDate } from "./labels";
+import { useTranslations, useLocale } from "next-intl";
 
 import { useState, type FormEvent } from "react";
 import { CircleAlert, Plus, ShieldCheck } from "lucide-react";
@@ -10,7 +12,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import {
-  suppliedNcRecords,
+  getSuppliedNcRecords,
   type NcRecord,
   type NcSource,
   type Severity,
@@ -28,6 +30,10 @@ import {
 } from "./ui";
 
 export default function NonConformanceWorkspace() {
+  const t = useTranslations("pages.qualityApp");
+  const suppliedNcRecords = getSuppliedNcRecords(t);
+  const locale = useLocale();
+
   const [localRecords, setLocalRecords] = useState<NcRecord[]>([]);
   const [query, setQuery] = useState("");
   const [severity, setSeverity] = useState("All");
@@ -69,12 +75,12 @@ export default function NonConformanceWorkspace() {
     setSource("All");
     setSeverity("All");
     setOpen(false);
-    setNotice(`${id} added to this local demo. No ERP record was created.`);
+    setNotice(t("dynamic.v0AddedToThisLocalDemoNoErp", { v0: id }));
   }
   return (
     <Workspace
-      title="Every exception deserves a clear record."
-      description="Search and inspect the four supplied open records. Create a separate, clearly marked demo case to explore the entry flow."
+      title={t("copy.everyExceptionDeservesAClearRecord")}
+      description={t("copy.searchAndInspectTheFourSuppliedOpenRecords")}
       actions={
         <>
           <Button
@@ -84,72 +90,73 @@ export default function NonConformanceWorkspace() {
               setSeverity("All");
             }}
           >
-            Reset filters
+            {t("copy.resetFilters")}
           </Button>
           <Button variant="primary" onClick={() => setOpen(true)}>
             <Plus size={14} aria-hidden="true" />
-            Raise demo NC
+            {t("copy.raiseDemoNc")}
           </Button>
         </>
       }
     >
       <div className={css.workspaceBody}>
         <div className={css.snapshotLine}>
-          <span>Supplied register summary / 30 days</span>
-          <span>
-            {localRecords.length} local demo{" "}
-            {localRecords.length === 1 ? "record" : "records"}
-          </span>
+          <span>{t("copy.suppliedRegisterSummary30Days")}</span>
+          <span>{t("ui.localRecords", { count: localRecords.length })}</span>
         </div>
         <dl className={css.metricsFour}>
           <Metric
-            label="NCs raised"
+            label={t("copy.ncsRaised")}
             value="6"
-            detail="Source summary · 30 days"
+            detail={t("copy.sourceSummary30Days")}
           />
           <Metric
-            label="Open NCs"
+            label={t("copy.openNcs")}
             value="4"
-            detail="Four visible source rows"
+            detail={t("copy.fourVisibleSourceRows")}
             tone="red"
           />
           <Metric
-            label="Critical NCs"
+            label={t("copy.criticalNcs")}
             value="1"
-            detail="Individual case not supplied"
+            detail={t("copy.individualCaseNotSupplied")}
             tone="amber"
           />
           <Metric
-            label="Affected quantity"
+            label={t("copy.affectedQuantity")}
             value="0"
-            detail="Across the four supplied rows"
+            detail={t("copy.acrossTheFourSuppliedRows")}
           />
         </dl>
         <div className={css.filterBar}>
           <SearchField
             value={query}
             onChange={setQuery}
-            label="Search NC reference or problem…"
+            label={t("copy.searchNcReferenceOrProblem")}
           />
           <label className={css.inlineField}>
-            Severity
+            {t("copy.severity")}
             <select
               value={severity}
               onChange={(event) => setSeverity(event.target.value)}
             >
               {["All", "Minor", "Major", "Critical"].map((value) => (
-                <option key={value}>{value}</option>
+                <option key={value} value={value}>
+                  {enumLabel(t, value)}
+                </option>
               ))}
             </select>
           </label>
           <label className={css.inlineField}>
-            Source
+            {t("copy.source")}
             <select
               value={source}
               onChange={(event) => setSource(event.target.value)}
             >
               {["All", "Inspection", "Supplier", "Production"].map((value) => (
-                <option key={value}>{value}</option>
+                <option key={value} value={value}>
+                  {enumLabel(t, value)}
+                </option>
               ))}
             </select>
           </label>
@@ -157,24 +164,25 @@ export default function NonConformanceWorkspace() {
         <div className={css.recordLayout}>
           <div className={css.recordRegister}>
             <div className={css.registerHeading}>
-              <h3>Non-conformances</h3>
+              <h3>{t("copy.nonConformances")}</h3>
               <span role="status" aria-live="polite">
-                {visible.length} matching records
+                {t("ui.matchingRecords", { count: visible.length })}
               </span>
             </div>
             <div className={css.tableScroll}>
               <table className={css.dataTable}>
                 <caption className="sr-only">
-                  Supplied non-conformance excerpt and clearly identified local
-                  demo records
+                  {t(
+                    "copy.suppliedNonConformanceExcerptAndClearlyIdentifiedLocal",
+                  )}
                 </caption>
                 <thead>
                   <tr>
                     {[
-                      "Reference / finding",
-                      "Source",
-                      "Severity",
-                      "Status",
+                      t("copy.referenceFinding"),
+                      t("copy.source"),
+                      t("copy.severity"),
+                      t("copy.status"),
                     ].map((label) => (
                       <th key={label} scope="col">
                         {label}
@@ -202,12 +210,12 @@ export default function NonConformanceWorkspace() {
                           </span>
                           {record.provenance === "demo" && (
                             <span className={css.localRecord}>
-                              Local demo record
+                              {t("copy.localDemoRecord")}
                             </span>
                           )}
                         </button>
                       </th>
-                      <td>{record.source}</td>
+                      <td>{enumLabel(t, record.source)}</td>
                       <td>
                         <Tag
                           tone={
@@ -218,12 +226,12 @@ export default function NonConformanceWorkspace() {
                                 : "blue"
                           }
                         >
-                          {record.severity}
+                          {enumLabel(t, record.severity)}
                         </Tag>
                       </td>
                       <td>
                         <Tag tone={record.status === "Open" ? "red" : "blue"}>
-                          {record.status}
+                          {enumLabel(t, record.status)}
                         </Tag>
                       </td>
                     </tr>
@@ -232,20 +240,18 @@ export default function NonConformanceWorkspace() {
               </table>
             </div>
             {!visible.length && (
-              <Empty title="No matching records">
-                Try a different source or severity. The unseen source records
-                are not added to this demo.
+              <Empty title={t("copy.noMatchingRecords")}>
+                {t("copy.tryADifferentSourceOrSeverityTheUnseen")}
               </Empty>
             )}
             <p className={css.registerFootnote}>
-              Source totals include two records outside the supplied excerpt.
-              Local demo additions are counted separately.
+              {t("copy.sourceTotalsIncludeTwoRecordsOutsideTheSupplied")}
             </p>
           </div>
           <aside
             id="nc-detail"
             className={css.caseNotebook}
-            aria-label="Selected non-conformance details"
+            aria-label={t("copy.selectedNonConformanceDetails")}
           >
             {selected ? (
               <div key={selected.id} className={css.detailReveal}>
@@ -253,39 +259,41 @@ export default function NonConformanceWorkspace() {
                   <ShieldCheck size={18} aria-hidden="true" />
                   <Provenance kind={selected.provenance} />
                 </div>
-                <span className={css.microLabel}>Exception file</span>
+                <span className={css.microLabel}>
+                  {t("copy.exceptionFile")}
+                </span>
                 <h3>{selected.id}</h3>
                 <p className={css.notebookProblem}>{selected.title}</p>
                 <dl className={css.detailFacts}>
                   <div>
-                    <dt>Detected</dt>
-                    <dd>{selected.detected}</dd>
+                    <dt>{t("copy.detected")}</dt>
+                    <dd>{formatDate(locale, selected.detected)}</dd>
                   </div>
                   <div>
-                    <dt>Source</dt>
-                    <dd>{selected.source}</dd>
+                    <dt>{t("copy.source")}</dt>
+                    <dd>{enumLabel(t, selected.source)}</dd>
                   </div>
                   <div>
-                    <dt>Quantity affected</dt>
+                    <dt>{t("copy.quantityAffected")}</dt>
                     <dd>{selected.affected}</dd>
                   </div>
                   <div>
-                    <dt>Current status</dt>
-                    <dd>{selected.status}</dd>
+                    <dt>{t("copy.currentStatus")}</dt>
+                    <dd>{enumLabel(t, selected.status)}</dd>
                   </div>
                 </dl>
                 <div className={css.detailNote}>
                   <CircleAlert size={16} aria-hidden="true" />
                   <p>
                     {selected.provenance === "supplied"
-                      ? "Containment, disposition and root-cause notes were not included in the supplied record."
-                      : "This is a local demonstration case. It will reset when the page is reloaded."}
+                      ? t("copy.containmentDispositionAndRootCauseNotesWereNot")
+                      : t("copy.thisIsALocalDemonstrationCaseItWill")}
                   </p>
                 </div>
               </div>
             ) : (
-              <Empty title="Select a record">
-                A matching case will appear here.
+              <Empty title={t("copy.selectARecord")}>
+                {t("copy.aMatchingCaseWillAppearHere")}
               </Empty>
             )}
           </aside>
@@ -297,41 +305,45 @@ export default function NonConformanceWorkspace() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           className={`sm:max-w-[620px] ${css.recordDialog}`}
-          lang="en"
-          dir="ltr"
+          lang={locale}
+          dir={locale === "ar" ? "rtl" : "ltr"}
+          closeLabel={t("ui.close")}
         >
           <DialogHeader>
-            <DialogTitle>Raise a demo non-conformance</DialogTitle>
+            <DialogTitle>{t("copy.raiseADemoNonConformance")}</DialogTitle>
             <DialogDescription>
-              Explore the entry flow with a local mock record. Supplied records
-              remain unchanged.
+              {t("copy.exploreTheEntryFlowWithALocalMock")}
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={createRecord} className={css.recordForm}>
-            <Field label="Finding / problem">
+            <Field label={t("copy.findingProblem")}>
               <input
                 name="title"
                 required
                 maxLength={180}
-                placeholder="Describe the quality exception"
+                placeholder={t("copy.describeTheQualityException")}
               />
             </Field>
             <div className={css.formColumns}>
-              <Field label="Source">
+              <Field label={t("copy.source")}>
                 <select name="source" defaultValue="Production">
-                  <option>Production</option>
-                  <option>Inspection</option>
-                  <option>Supplier</option>
+                  <option value="Production">
+                    {enumLabel(t, "Production")}
+                  </option>
+                  <option value="Inspection">
+                    {enumLabel(t, "Inspection")}
+                  </option>
+                  <option value="Supplier">{enumLabel(t, "Supplier")}</option>
                 </select>
               </Field>
-              <Field label="Severity">
+              <Field label={t("copy.severity")}>
                 <select name="severity" defaultValue="Major">
-                  <option>Minor</option>
-                  <option>Major</option>
-                  <option>Critical</option>
+                  <option value="Minor">{enumLabel(t, "Minor")}</option>
+                  <option value="Major">{enumLabel(t, "Major")}</option>
+                  <option value="Critical">{enumLabel(t, "Critical")}</option>
                 </select>
               </Field>
-              <Field label="Quantity affected">
+              <Field label={t("copy.quantityAffected")}>
                 <input
                   name="affected"
                   type="number"
@@ -341,7 +353,7 @@ export default function NonConformanceWorkspace() {
                   required
                 />
               </Field>
-              <Field label="Detected date">
+              <Field label={t("copy.detectedDate")}>
                 <input
                   name="detected"
                   type="date"
@@ -351,9 +363,9 @@ export default function NonConformanceWorkspace() {
               </Field>
             </div>
             <div className={css.formActions}>
-              <Button onClick={() => setOpen(false)}>Cancel</Button>
+              <Button onClick={() => setOpen(false)}>{t("copy.cancel")}</Button>
               <Button variant="primary" type="submit">
-                Create local demo NC
+                {t("copy.createLocalDemoNc")}
               </Button>
             </div>
           </form>

@@ -1,9 +1,11 @@
 "use client";
+import { qualityError } from "./labels";
+import { useTranslations } from "next-intl";
 
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { Activity, Download, Table2 } from "lucide-react";
 import { calculateSpc, parseReadings } from "./calculations";
-import { simulatedReadings, suppliedSpcSummary as supplied } from "./data";
+import { simulatedReadings, getSuppliedSpcSummary } from "./data";
 import {
   Button,
   Empty,
@@ -41,6 +43,8 @@ function ControlChart({
   selected: number;
   onSelect: (index: number) => void;
 }) {
+  const t = useTranslations("pages.qualityApp");
+
   const points = useRef<(SVGCircleElement | null)[]>([]);
   const observations = kind === "range" ? stats.ranges : values;
   const lines =
@@ -89,7 +93,11 @@ function ControlChart({
       <svg
         viewBox="0 0 1000 325"
         role="group"
-        aria-label={`${kind === "range" ? "Moving-range" : "Individuals"} chart for ${observations.length} ${kind === "range" ? "ranges" : "readings"}. Use arrow keys on a point to inspect adjacent values.`}
+        aria-label={t("dynamic.v0ChartForV1V2UseArrowKeys", {
+          v0: kind === "range" ? t("copy.movingRange") : t("copy.individuals"),
+          v1: observations.length,
+          v2: kind === "range" ? t("ui.ranges") : t("ui.readings"),
+        })}
         className={css.controlChart}
       >
         {lines.map((line) => (
@@ -127,7 +135,7 @@ function ControlChart({
               r={index === selected ? 5.5 : 3.1}
               tabIndex={index === selected ? 0 : -1}
               role="button"
-              aria-label={`${kind === "range" ? "Range" : "Reading"} ${index + 1}: ${value.toFixed(4)}${outside ? ", beyond control limits" : outSpec ? ", outside specifications" : ""}`}
+              aria-label={`${kind === "range" ? t("copy.range") : t("copy.reading")} ${index + 1}: ${value.toFixed(4)}${outside ? t("copy.beyondControlLimits2") : outSpec ? t("copy.outsideSpecifications") : ""}`}
               className={
                 outside
                   ? css.outControlPoint
@@ -161,28 +169,31 @@ function ControlChart({
 }
 
 function SuppliedSummary() {
+  const t = useTranslations("pages.qualityApp");
+  const supplied = getSuppliedSpcSummary(t);
+
   return (
     <>
       <dl className={css.metricsSix}>
         <Metric label="Cp" value="0.621" tone="red" />
         <Metric label="Cpk" value="0.578" tone="red" />
-        <Metric label="Mean" value="23.3958" />
-        <Metric label="Within sigma" value="0.8053" />
-        <Metric label="Out of control" value="3" tone="red" />
+        <Metric label={t("copy.mean")} value="23.3958" />
+        <Metric label={t("copy.withinSigma")} value="0.8053" />
+        <Metric label={t("copy.outOfControl")} value="3" tone="red" />
         <Metric
-          label="Analyzed readings"
+          label={t("copy.analyzedReadings")}
           value="100"
-          detail="351 reported available"
+          detail={t("copy.351ReportedAvailable")}
         />
       </dl>
-      <Panel title="The supplied SPC snapshot">
+      <Panel title={t("copy.theSuppliedSpcSnapshot")}>
         <dl className={css.sourceLimits}>
           {[
-            ["Parameter", supplied.parameter],
-            ["Inspection context", supplied.context],
-            ["Specification", `${supplied.lsl}–${supplied.usl} μm`],
-            ["Target", `${supplied.target} μm`],
-            ["Control limits", `${supplied.lcl}–${supplied.ucl}`],
+            [t("copy.parameter"), supplied.parameter],
+            [t("copy.inspectionContext"), supplied.context],
+            [t("copy.specification"), `${supplied.lsl}–${supplied.usl} μm`],
+            [t("copy.target"), `${supplied.target} μm`],
+            [t("copy.controlLimits"), `${supplied.lcl}–${supplied.ucl}`],
           ].map(([label, value]) => (
             <div key={label}>
               <dt>{label}</dt>
@@ -190,10 +201,8 @@ function SuppliedSummary() {
             </div>
           ))}
         </dl>
-        <Empty title="The original reading values were not supplied">
-          The screenshot gives a summary and chart image, not the 100 individual
-          values. Use the separately labeled simulation or paste local readings
-          to explore the interactive charts.
+        <Empty title={t("copy.theOriginalReadingValuesWereNotSupplied")}>
+          {t("copy.theScreenshotGivesASummaryAndChartImage")}
         </Empty>
       </Panel>
     </>
@@ -201,6 +210,9 @@ function SuppliedSummary() {
 }
 
 export default function SpcWorkspace() {
+  const t = useTranslations("pages.qualityApp");
+  const supplied = getSuppliedSpcSummary(t);
+
   const [mode, setMode] = useState<"demo" | "supplied" | "local">("demo");
   const [kind, setKind] = useState<"individuals" | "range">("individuals");
   const [windowSize, setWindowSize] = useState("100");
@@ -242,7 +254,9 @@ export default function SpcWorkspace() {
   }
   function download() {
     const csv = [
-      "Observation,Value",
+      [t("copy.observation"), t("copy.valueM")]
+        .map((label) => `"${label.replaceAll('"', '""')}"`)
+        .join(","),
       ...values.map((value, index) => `${index + 1},${value}`),
     ].join("\r\n");
     const url = URL.createObjectURL(
@@ -256,8 +270,10 @@ export default function SpcWorkspace() {
   }
   return (
     <Workspace
-      title="Follow the process, point by point."
-      description="The source summary is preserved separately. Interactive charts use explicitly simulated or locally pasted readings, with metrics calculated from the visible data window."
+      title={t("copy.followTheProcessPointByPoint")}
+      description={t(
+        "copy.theSourceSummaryIsPreservedSeparatelyInteractiveCharts",
+      )}
       provenance={
         mode === "supplied" ? "supplied" : mode === "local" ? "local" : "demo"
       }
@@ -265,7 +281,7 @@ export default function SpcWorkspace() {
       <div className={css.workspaceBody}>
         <div className={css.spcToolbar}>
           <div>
-            <span className={css.microLabel}>Quality parameter</span>
+            <span className={css.microLabel}>{t("copy.qualityParameter")}</span>
             <h3>
               {supplied.parameter}
               <small>{supplied.context}</small>
@@ -274,7 +290,7 @@ export default function SpcWorkspace() {
           <div
             className={css.segmented}
             role="group"
-            aria-label="SPC data source"
+            aria-label={t("copy.spcDataSource")}
           >
             <Button
               aria-pressed={mode === "demo"}
@@ -283,13 +299,13 @@ export default function SpcWorkspace() {
                 setSelected(0);
               }}
             >
-              Simulated readings
+              {t("copy.simulatedReadings")}
             </Button>
             <Button
               aria-pressed={mode === "supplied"}
               onClick={() => setMode("supplied")}
             >
-              Supplied summary
+              {t("copy.suppliedSummary")}
             </Button>
             {localReadings.length > 0 && (
               <Button
@@ -299,7 +315,7 @@ export default function SpcWorkspace() {
                   setSelected(0);
                 }}
               >
-                Local readings
+                {t("copy.localReadings")}
               </Button>
             )}
           </div>
@@ -309,7 +325,7 @@ export default function SpcWorkspace() {
         ) : (
           <>
             <div className={css.spcControls}>
-              <Field label="Lower specification (μm)">
+              <Field label={t("copy.lowerSpecificationM")}>
                 <input
                   type="number"
                   step="any"
@@ -317,7 +333,7 @@ export default function SpcWorkspace() {
                   onChange={(event) => setLsl(event.target.value)}
                 />
               </Field>
-              <Field label="Upper specification (μm)">
+              <Field label={t("copy.upperSpecificationM")}>
                 <input
                   type="number"
                   step="any"
@@ -325,7 +341,7 @@ export default function SpcWorkspace() {
                   onChange={(event) => setUsl(event.target.value)}
                 />
               </Field>
-              <Field label="Visible / analyzed window">
+              <Field label={t("copy.visibleAnalyzedWindow")}>
                 <select
                   value={windowSize}
                   onChange={(event) => {
@@ -333,10 +349,12 @@ export default function SpcWorkspace() {
                     setSelected(0);
                   }}
                 >
-                  <option value="25">Last 25</option>
-                  <option value="50">Last 50</option>
-                  <option value="100">Last 100</option>
-                  <option value="all">All available in this demo</option>
+                  <option value="25">{t("copy.last25")}</option>
+                  <option value="50">{t("copy.last50")}</option>
+                  <option value="100">{t("copy.last100")}</option>
+                  <option value="all">
+                    {t("copy.allAvailableInThisDemo")}
+                  </option>
                 </select>
               </Field>
               <Provenance kind={mode === "local" ? "local" : "demo"} />
@@ -345,50 +363,52 @@ export default function SpcWorkspace() {
               <>
                 <dl className={css.metricsSix}>
                   <Metric
-                    label="Cp estimate"
+                    label={t("copy.cpEstimate")}
                     value={format(stats.cp)}
-                    detail="Visible-window calculation"
+                    detail={t("copy.visibleWindowCalculation")}
                     tone="blue"
                   />
                   <Metric
-                    label="Cpk estimate"
+                    label={t("copy.cpkEstimate")}
                     value={format(stats.cpk)}
-                    detail="Review stability first"
+                    detail={t("copy.reviewStabilityFirst")}
                     tone="blue"
                   />
                   <Metric
-                    label="Mean"
+                    label={t("copy.mean")}
                     value={format(stats.mean, 4)}
                     detail="μm"
                   />
                   <Metric
-                    label="Within sigma"
+                    label={t("copy.withinSigma")}
                     value={format(stats.sigma, 4)}
                     detail="MR̄ / 1.128"
                   />
                   <Metric
-                    label="Beyond control limits"
+                    label={t("copy.beyondControlLimits")}
                     value={stats.outOfControl}
-                    detail="Individuals, three-sigma rule"
+                    detail={t("copy.individualsThreeSigmaRule")}
                     tone={stats.outOfControl ? "red" : "neutral"}
                   />
                   <Metric
-                    label="Readings analyzed"
+                    label={t("copy.readingsAnalyzed")}
                     value={stats.count}
-                    detail={`${stats.outOfSpec} outside specifications`}
+                    detail={t("dynamic.v0OutsideSpecifications", {
+                      v0: stats.outOfSpec,
+                    })}
                   />
                 </dl>
                 <Panel
                   title={
                     kind === "range"
-                      ? "Moving-range control chart"
-                      : "Individuals control chart"
+                      ? t("copy.movingRangeControlChart")
+                      : t("copy.individualsControlChart")
                   }
                   action={
                     <div
                       className={css.segmented}
                       role="group"
-                      aria-label="SPC chart type"
+                      aria-label={t("copy.spcChartType")}
                     >
                       <Button
                         aria-pressed={kind === "individuals"}
@@ -397,7 +417,7 @@ export default function SpcWorkspace() {
                           setSelected(0);
                         }}
                       >
-                        Individuals
+                        {t("copy.individuals")}
                       </Button>
                       <Button
                         aria-pressed={kind === "range"}
@@ -406,7 +426,7 @@ export default function SpcWorkspace() {
                           setSelected(0);
                         }}
                       >
-                        Moving range
+                        {t("copy.movingRange2")}
                       </Button>
                     </div>
                   }
@@ -419,7 +439,7 @@ export default function SpcWorkspace() {
                         disabled={kind === "range"}
                         onChange={(event) => setShowSpecs(event.target.checked)}
                       />
-                      Show specification lines
+                      {t("copy.showSpecificationLines")}
                     </label>
                     <div>
                       <Button
@@ -427,7 +447,7 @@ export default function SpcWorkspace() {
                         aria-pressed={showTable}
                       >
                         <Table2 size={13} aria-hidden="true" />
-                        Readings table
+                        {t("copy.readingsTable")}
                       </Button>
                       <Button onClick={download}>
                         <Download size={13} aria-hidden="true" />
@@ -449,20 +469,27 @@ export default function SpcWorkspace() {
                     <Activity size={18} aria-hidden="true" />
                     <div>
                       <strong>
-                        {kind === "range" ? "Moving range" : "Reading"} #
-                        {active + 1}
+                        {t(
+                          kind === "range"
+                            ? "ui.rangeNumber"
+                            : "ui.readingNumber",
+                          { index: active + 1 },
+                        )}
                       </strong>
                       <span>{format(series[active] ?? null, 4)} μm</span>
                     </div>
                     <p>
                       {kind === "range"
-                        ? "Absolute difference between successive readings."
-                        : "Hover or focus a point. Use arrow keys to inspect adjacent readings."}
+                        ? t("copy.absoluteDifferenceBetweenSuccessiveReadings")
+                        : t("copy.hoverOrFocusAPointUseArrowKeys")}
                     </p>
                   </div>
                   <label className={css.pointSlider}>
                     <span>
-                      Inspect observation {active + 1} of {series.length}
+                      {t("ui.inspectObservation", {
+                        index: active + 1,
+                        count: series.length,
+                      })}
                     </span>
                     <input
                       type="range"
@@ -473,33 +500,31 @@ export default function SpcWorkspace() {
                       onChange={(event) =>
                         setSelected(Number(event.target.value))
                       }
-                      aria-label="Inspect a chart observation"
+                      aria-label={t("copy.inspectAChartObservation")}
                     />
                   </label>
                   <p className={css.panelNote}>
-                    Red points exceed control limits; amber points exceed
-                    specifications without exceeding control limits. Estimates
-                    use the visible window.
+                    {t("copy.redPointsExceedControlLimitsAmberPointsExceed")}
                   </p>
                   {stats.sigma === 0 && (
                     <p className={css.formError}>
-                      No moving-range variation is present. Cp and Cpk are
-                      undefined for this window.
+                      {t("copy.noMovingRangeVariationIsPresentCpAnd")}
                     </p>
                   )}
                   {showTable && (
                     <div className={css.readingsTable}>
                       <table className={css.dataTable}>
                         <caption className="sr-only">
-                          {mode === "local" ? "Locally pasted" : "Simulated"}{" "}
-                          process readings
+                          {mode === "local"
+                            ? t("ui.localReadingsCaption")
+                            : t("ui.simulatedReadingsCaption")}
                         </caption>
                         <thead>
                           <tr>
-                            <th scope="col">Observation</th>
-                            <th scope="col">Value (μm)</th>
-                            <th scope="col">Control status</th>
-                            <th scope="col">Specification status</th>
+                            <th scope="col">{t("copy.observation")}</th>
+                            <th scope="col">{t("copy.valueM")}</th>
+                            <th scope="col">{t("copy.controlStatus")}</th>
+                            <th scope="col">{t("copy.specificationStatus")}</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -509,13 +534,13 @@ export default function SpcWorkspace() {
                               <td>{value.toFixed(4)}</td>
                               <td>
                                 {value < stats.lcl || value > stats.ucl
-                                  ? "Beyond limit"
-                                  : "Within limits"}
+                                  ? t("copy.beyondLimit")
+                                  : t("copy.withinLimits")}
                               </td>
                               <td>
                                 {value < lsl || value > usl
-                                  ? "Outside spec"
-                                  : "Within spec"}
+                                  ? t("copy.outsideSpec")
+                                  : t("copy.withinSpec")}
                               </td>
                             </tr>
                           ))}
@@ -525,33 +550,30 @@ export default function SpcWorkspace() {
                   )}
                 </Panel>
                 <p className={css.statisticsNote}>
-                  Capability estimates are descriptive for this window. Review
-                  process stability and distribution assumptions before
-                  interpreting them.{" "}
+                  {t(
+                    "copy.capabilityEstimatesAreDescriptiveForThisWindowReview",
+                  )}{" "}
                   <a
                     href="https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc16.htm"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    NIST calculation reference
+                    {t("copy.nistCalculationReference")}
                   </a>
                 </p>
               </>
             ) : (
               <p role="alert" className={css.formError}>
-                {calculation.error}
+                {qualityError(t, calculation.error)}
               </p>
             )}
           </>
         )}
         <details className={css.readingsInput}>
-          <summary>Try your own local readings</summary>
-          <p>
-            Paste 2–500 numeric readings in observation order. They stay in this
-            page and are not sent to an ERP service.
-          </p>
+          <summary>{t("copy.tryYourOwnLocalReadings")}</summary>
+          <p>{t("copy.paste2500NumericReadingsInObservationOrder")}</p>
           <label className={css.field}>
-            <span>Readings, separated by commas, spaces or new lines</span>
+            <span>{t("copy.readingsSeparatedByCommasSpacesOrNewLines")}</span>
             <textarea
               rows={4}
               value={pasted}
@@ -561,11 +583,11 @@ export default function SpcWorkspace() {
           </label>
           {inputError && (
             <p role="alert" className={css.formError}>
-              {inputError}
+              {qualityError(t, inputError)}
             </p>
           )}
           <Button variant="primary" onClick={loadLocal}>
-            Apply local readings
+            {t("copy.applyLocalReadings")}
           </Button>
         </details>
       </div>

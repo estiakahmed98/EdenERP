@@ -1,6 +1,6 @@
 "use client";
 import { choiceLabel } from "./labels";
-import { useTranslations, useFormatter } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { useState } from "react";
 import { ArrowRight, Check, CheckCircle2, RotateCcw } from "lucide-react";
@@ -149,7 +149,6 @@ function SchoolDemo() {
 function CollegeDemo() {
   const t = useTranslations("pages.educationIndustries");
   const sessions = getSessions(t);
-  const formatter = useFormatter();
 
   const [proposal, setProposal] = useState({
     day: "Sunday",
@@ -261,10 +260,11 @@ function CollegeDemo() {
                 <li key={row.id}>
                   {t("ui.sharedResources", {
                     id: row.id,
-                    resources: formatter.list(
-                      row.reasons.map((reason) => t(`choices.${reason}`)),
-                      { type: "conjunction" },
-                    ),
+                    // Some browsers lack Nepali Intl.ListFormat data. A neutral
+                    // separator keeps server and client output identical.
+                    resources: row.reasons
+                      .map((reason) => t(`choices.${reason}`))
+                      .join(" / "),
                   })}
                 </li>
               ))}

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import LiveDemoButton from "@/components/live-demo-button";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import {
@@ -13,7 +14,7 @@ import { cn } from "@/lib/utils";
 import DemoPreview from "@/components/manufacturing/demo-preview";
 import {
   qualityCompany,
-  qualityPages,
+  getQualityPages,
   qualitySlugs,
   type QualitySlug,
 } from "./data";
@@ -50,6 +51,8 @@ export function Provenance({
   kind?: "supplied" | "demo" | "local";
   children?: ReactNode;
 }) {
+  const t = useTranslations("pages.qualityApp");
+
   const Icon = kind === "supplied" ? ShieldCheck : FlaskConical;
   return (
     <span
@@ -59,10 +62,10 @@ export function Provenance({
       <Icon size={12} aria-hidden="true" />
       {children ??
         (kind === "supplied"
-          ? "Supplied snapshot"
+          ? t("copy.suppliedSnapshot")
           : kind === "local"
-            ? "Local input · not saved"
-            : "Illustrative demo")}
+            ? t("copy.localInputNotSaved")
+            : t("copy.illustrativeDemo"))}
     </span>
   );
 }
@@ -107,29 +110,39 @@ export function Workspace({
   actions?: ReactNode;
   provenance?: "supplied" | "demo" | "local";
 }) {
+  const t = useTranslations("pages.qualityApp");
+
   return (
     <section
       id="qms-workspace"
       className={css.workspaceSection}
-      aria-label={`${title} interactive workspace`}
+      aria-label={t("ui.workspaceLabel", { title })}
     >
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <span className={css.eyebrow}>Explore the workspace</span>
+            <span className={css.eyebrow}>{t("copy.exploreTheWorkspace")}</span>
             <h2 className="showcase-heading">{title}</h2>
             <p>{description}</p>
           </div>
           <Provenance kind={provenance} />
         </div>
-        <DemoPreview title={title}>
+        <DemoPreview
+          title={title}
+          description={t("ui.previewDescription")}
+          invitation={{
+            regionLabel: t("ui.previewRegion", { title }),
+            eyebrow: t("ui.previewEyebrow", { title }),
+            heading: t("ui.previewHeading"),
+          }}
+        >
           <div className={css.workspace}>
             <header className={css.workspaceBar}>
               <div>
                 <strong>
                   Adon<span>ERP</span>
                 </strong>
-                <span>/ Quality</span>
+                <span>{t("copy.quality")}</span>
                 <span className={css.company}>
                   <Building2 size={13} aria-hidden="true" />
                   {qualityCompany}
@@ -215,15 +228,20 @@ export function Empty({
   );
 }
 export function QualityFlow({ slug }: { slug: QualitySlug }) {
+  const t = useTranslations("pages.qualityApp");
+  const qualityPages = getQualityPages(t);
+
   const page = qualityPages[slug];
   return (
     <section className={css.flowSection}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <span className={css.eyebrow}>A workflow with a clear purpose</span>
+            <span className={css.eyebrow}>
+              {t("copy.aWorkflowWithAClearPurpose")}
+            </span>
             <h2 className="showcase-heading">
-              Keep the evidence moving forward.
+              {t("copy.keepTheEvidenceMovingForward")}
             </h2>
           </div>
           <CheckCheck size={28} className={css.flowIcon} aria-hidden="true" />
@@ -249,14 +267,17 @@ export function QualityFlow({ slug }: { slug: QualitySlug }) {
   );
 }
 export function QualityConnections({ slug }: { slug: QualitySlug }) {
+  const t = useTranslations("pages.qualityApp");
+  const qualityPages = getQualityPages(t);
+
   return (
     <section className={css.connections}>
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <span className={css.eyebrow}>One quality system</span>
+            <span className={css.eyebrow}>{t("copy.oneQualitySystem")}</span>
             <h2 className="showcase-heading">
-              Follow the next part of the story.
+              {t("copy.followTheNextPartOfTheStory")}
             </h2>
           </div>
         </div>
@@ -278,19 +299,19 @@ export function QualityConnections({ slug }: { slug: QualitySlug }) {
   );
 }
 export function QualityClosing() {
+  const t = useTranslations("pages.qualityApp");
+
   return (
     <section className={css.closing}>
       <div className={css.wrap}>
         <div>
           <span className={css.eyebrow}>
-            Make the full quality journey visible
+            {t("copy.makeTheFullQualityJourneyVisible")}
           </span>
           <h2 className="showcase-heading">
-            Bring your process to the conversation.
+            {t("copy.bringYourProcessToTheConversation")}
           </h2>
-          <p>
-            Explore the complete workflow with a guided product walkthrough.
-          </p>
+          <p>{t("copy.exploreTheCompleteWorkflowWithAGuidedProduct")}</p>
         </div>
         <LiveDemoButton />
       </div>
