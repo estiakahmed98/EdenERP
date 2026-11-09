@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   Bell,
@@ -12,9 +13,12 @@ import {
   NotebookPen,
   Users,
 } from "lucide-react";
-import { pages, type EducationIndustry } from "./data";
+import { getPages, type EducationIndustry } from "./data";
 import { Actions, Arrow, Badge, css } from "./ui";
 function Copy({ industry }: { industry: EducationIndustry }) {
+  const t = useTranslations("pages.educationIndustries");
+  const pages = getPages(t);
+
   const p = pages[industry];
   return (
     <>
@@ -97,6 +101,8 @@ function SchoolDrawing() {
   );
 }
 function SchoolHero() {
+  const t = useTranslations("pages.educationIndustries");
+
   return (
     <section className={css.schoolHero}>
       <div className={`${css.wrap} ${css.schoolLayout}`}>
@@ -106,18 +112,18 @@ function SchoolHero() {
           <div className={css.schoolPrinciples}>
             <span>
               <Users size={15} />
-              Learner context
+              {t("copy.learnerContext")}
             </span>
             <span>
               <BookOpen size={15} />
-              Classroom rhythm
+              {t("copy.classroomRhythm")}
             </span>
           </div>
         </div>
         <figure className={css.schoolNotebook}>
           <div className={css.bindingDots} />
           <header>
-            <span>THE SCHOOL DAY / ILLUSTRATED</span>
+            <span>{t("copy.theSchoolDayIllustrated")}</span>
             <Badge />
           </header>
           <SchoolDrawing />
@@ -127,8 +133,8 @@ function SchoolHero() {
                 <ClipboardCheck size={20} />
               </span>
               <div>
-                <b>A considered morning</b>
-                <span>Class register → Attendance → Follow-up</span>
+                <b>{t("copy.aConsideredMorning")}</b>
+                <span>{t("copy.classRegisterAttendanceFollowUp")}</span>
               </div>
               <Check size={15} />
             </div>
@@ -137,17 +143,17 @@ function SchoolHero() {
                 <Bell size={20} />
               </span>
               <div>
-                <b>The office stays in context</b>
-                <span>Notices, learner records and fee questions</span>
+                <b>{t("copy.theOfficeStaysInContext")}</b>
+                <span>{t("copy.noticesLearnerRecordsAndFeeQuestions")}</span>
               </div>
             </div>
           </div>
           <span className={css.schoolCallout}>
-            make the day feel connected
+            {t("copy.makeTheDayFeelConnected")}
             <Arrow />
           </span>
           <figcaption>
-            Conceptual campus and school-day canvas · no real school data
+            {t("copy.conceptualCampusAndSchoolDayCanvasNoReal")}
           </figcaption>
         </figure>
       </div>
@@ -155,6 +161,8 @@ function SchoolHero() {
   );
 }
 function CollegeHero() {
+  const t = useTranslations("pages.educationIndustries");
+
   return (
     <section className={css.collegeHero}>
       <div className={css.wrap}>
@@ -166,30 +174,30 @@ function CollegeHero() {
           <aside className={css.sessionProspectus}>
             <header>
               <Compass size={24} />
-              <span>THE ACADEMIC SESSION</span>
+              <span>{t("copy.theAcademicSession")}</span>
             </header>
             <div>
               <span>01</span>
               <p>
-                The programme
-                <br />
-                <b>gives the structure.</b>
+                {t.rich("ui.programmeStructure", {
+                  em: (chunks) => <b>{chunks}</b>,
+                })}
               </p>
             </div>
             <div>
               <span>02</span>
               <p>
-                The timetable
-                <br />
-                <b>gives the rhythm.</b>
+                {t.rich("ui.timetableRhythm", {
+                  em: (chunks) => <b>{chunks}</b>,
+                })}
               </p>
             </div>
             <div>
               <span>03</span>
               <p>
-                The college office
-                <br />
-                <b>keeps the context.</b>
+                {t.rich("ui.officeContext", {
+                  em: (chunks) => <b>{chunks}</b>,
+                })}
               </p>
             </div>
           </aside>
@@ -197,33 +205,30 @@ function CollegeHero() {
         <figure className={css.collegeRibbon}>
           <header>
             <CalendarDays size={18} />
-            <span>A SESSION IN VIEW</span>
-            <Badge>Illustrative Sunday timetable</Badge>
+            <span>{t("copy.aSessionInView")}</span>
+            <Badge>{t("copy.illustrativeSundayTimetable")}</Badge>
           </header>
           <div className={css.scheduleRibbon}>
             <div>
               <span>09:00—10:00</span>
-              <b>Applied science</b>
-              <small>Lab 01 · Science 1</small>
+              <b>{t("copy.appliedScience")}</b>
+              <small>{t("copy.lab01Science1")}</small>
               <i />
             </div>
             <ArrowRight size={19} />
             <div>
               <span>10:00—11:00</span>
-              <b>Communication</b>
-              <small>Hall B · Humanities 1</small>
+              <b>{t("copy.communication")}</b>
+              <small>{t("copy.hallBHumanities1")}</small>
               <i />
             </div>
             <div className={css.ribbonNote}>
               <NotebookPen size={26} />
-              <span>
-                Each slot has a room,
-                <br />a group and a tutor.
-              </span>
+              <span>{t("ui.slotContext")}</span>
             </div>
           </div>
           <figcaption>
-            Two of three fictional sessions used in the local planning exercise
+            {t("copy.twoOfThreeFictionalSessionsUsedInThe")}
           </figcaption>
         </figure>
       </div>
@@ -231,6 +236,8 @@ function CollegeHero() {
   );
 }
 function UniversityHero() {
+  const t = useTranslations("pages.educationIndustries");
+
   return (
     <section className={css.universityHero}>
       <div className={css.wrap}>
@@ -240,11 +247,11 @@ function UniversityHero() {
         </div>
         <figure className={css.campusScene}>
           <div className={css.academicThread}>
-            <span>APPLICATION</span>
+            <span>{t("copy.application")}</span>
             <i />
-            <span>ACADEMIC CONTEXT</span>
+            <span>{t("copy.academicContext")}</span>
             <i />
-            <span>STUDENT JOURNEY</span>
+            <span>{t("copy.studentJourney")}</span>
           </div>
           <div className={css.campusLineArt}>
             <svg viewBox="0 0 740 220" fill="none" aria-hidden="true">
@@ -300,23 +307,24 @@ function UniversityHero() {
           </div>
           <div className={css.campusDossier}>
             <GraduationCap size={22} />
-            <span>EXAMPLE ACADEMIC MAP</span>
+            <span>{t("copy.exampleAcademicMap")}</span>
             <div>
-              <b>Structure</b>
-              <small>Programme & term context</small>
+              <b>{t("copy.structure")}</b>
+              <small>{t("copy.programmeTermContext")}</small>
             </div>
             <div>
-              <b>Choices</b>
-              <small>Courses & credit conversation</small>
+              <b>{t("copy.choices")}</b>
+              <small>{t("copy.coursesCreditConversation")}</small>
             </div>
           </div>
           <div className={css.campusBookmark}>
             <BookOpen size={20} />
-            <span>Begin with the student’s journey.</span>
+            <span>{t("copy.beginWithTheStudentsJourney")}</span>
           </div>
           <figcaption>
-            Conceptual campus illustration · no institution or accreditation
-            implied
+            {t(
+              "copy.conceptualCampusIllustrationNoInstitutionOrAccreditationImplied",
+            )}
           </figcaption>
         </figure>
       </div>
@@ -324,6 +332,8 @@ function UniversityHero() {
   );
 }
 function LmsHero() {
+  const t = useTranslations("pages.educationIndustries");
+
   return (
     <section className={css.lmsHero}>
       <div className={`${css.wrap} ${css.lmsLayout}`}>
@@ -334,21 +344,25 @@ function LmsHero() {
               <i />
               <i />
             </span>
-            <span>THE LEARNING STUDIO</span>
-            <Badge>Interactive example below</Badge>
+            <span>{t("copy.theLearningStudio")}</span>
+            <Badge>{t("copy.interactiveExampleBelow")}</Badge>
           </header>
           <div className={css.studioBody}>
             <div className={css.studioOutline}>
-              <span>THE SHORT COURSE</span>
-              <h3>
-                Thoughtful
-                <br />
-                learning design
-              </h3>
+              <span>{t("copy.theShortCourse")}</span>
+              <h3>{t("copy.thoughtfulLearningDesign")}</h3>
               {[
-                { number: "01", title: "A clear goal", Icon: Lightbulb },
-                { number: "02", title: "Room to practice", Icon: NotebookPen },
-                { number: "03", title: "A useful next step", Icon: Compass },
+                { number: "01", title: t("copy.aClearGoal"), Icon: Lightbulb },
+                {
+                  number: "02",
+                  title: t("copy.roomToPractice"),
+                  Icon: NotebookPen,
+                },
+                {
+                  number: "03",
+                  title: t("copy.aUsefulNextStep"),
+                  Icon: Compass,
+                },
               ].map(({ number, title, Icon }) => (
                 <div key={number}>
                   <span>{number}</span>
@@ -358,34 +372,29 @@ function LmsHero() {
               ))}
             </div>
             <div className={css.lessonCanvas}>
-              <span>LESSON / PRACTICE / REFLECTION</span>
+              <span>{t("copy.lessonPracticeReflection")}</span>
               <div className={css.learningOrbit}>
                 <span>
                   <BookOpen size={38} />
                 </span>
                 <i />
-                <b>Start with an idea.</b>
+                <b>{t("copy.startWithAnIdea")}</b>
               </div>
               <div className={css.practiceTile}>
                 <Layers size={21} />
-                <span>
-                  Make the practice
-                  <br />
-                  part of the lesson.
-                </span>
+                <span>{t("ui.practicePart")}</span>
               </div>
             </div>
           </div>
           <figcaption>
-            Reading-based sample studio · no video, enrolment or certificate
-            claim
+            {t("copy.readingBasedSampleStudioNoVideoEnrolmentOr")}
           </figcaption>
         </figure>
         <div>
           <Copy industry="lms" />
           <Actions />
           <p className={css.lmsFootnote}>
-            A small example of a more considered learning flow.
+            {t("copy.aSmallExampleOfAMoreConsideredLearning")}
           </p>
         </div>
       </div>

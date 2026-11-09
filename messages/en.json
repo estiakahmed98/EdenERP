@@ -901,7 +901,10 @@
         },
         "sample": {
           "count": "12 rows",
-          "titles": ["Fabric for kurtas", "Plastic granules"],
+          "titles": [
+            "Fabric for kurtas",
+            "Plastic granules"
+          ],
           "notes": [
             "every order has its own number",
             "what has arrived so far",
@@ -12083,7 +12086,10 @@
         "sample": {
           "count": "25 of 120",
           "terms": "Net 30",
-          "lineItems": ["Poly bag, 12 × 16 in", "Printed carton label"],
+          "lineItems": [
+            "Poly bag, 12 × 16 in",
+            "Printed carton label"
+          ],
           "notes": [
             "draft, approved, paid at a glance",
             "what has come in so far",
@@ -12395,7 +12401,12 @@
           "refresher": {
             "title": "A two-minute refresher on debit and credit",
             "intro": "For owners who sign off the month and want to read an entry without calling the accountant.",
-            "head": ["Type of account", "A debit", "A credit", "Example"],
+            "head": [
+              "Type of account",
+              "A debit",
+              "A credit",
+              "Example"
+            ],
             "rows": [
               [
                 "Assets",
@@ -15762,7 +15773,11 @@
         },
         "sample": {
           "count": "1 settlement",
-          "notes": ["what is payable", "what is recovered", "clearance first"]
+          "notes": [
+            "what is payable",
+            "what is recovered",
+            "clearance first"
+          ]
         },
         "ui": {
           "title": "Final Settlements",
@@ -16340,7 +16355,11 @@
         },
         "sample": {
           "count": "6 departments",
-          "notes": ["spent so far", "where it should be", "heads against plan"]
+          "notes": [
+            "spent so far",
+            "where it should be",
+            "heads against plan"
+          ]
         },
         "ui": {
           "title": "Salary Budgets",
@@ -17105,7 +17124,11 @@
         },
         "sample": {
           "count": "3 leave types",
-          "notes": ["days left for each", "past requests", "a new request"]
+          "notes": [
+            "days left for each",
+            "past requests",
+            "a new request"
+          ]
         },
         "ui": {
           "title": "My Leaves",
@@ -23028,7 +23051,11 @@
         },
         "sample": {
           "count": "61 instalments due",
-          "notes": ["due this month", "who is late", "overdue by age"]
+          "notes": [
+            "due this month",
+            "who is late",
+            "overdue by age"
+          ]
         },
         "ui": {
           "title": "Collections",
@@ -23628,7 +23655,11 @@
         },
         "sample": {
           "count": "86 active leases",
-          "notes": ["the lease list", "leases ending soon", "rent review terms"]
+          "notes": [
+            "the lease list",
+            "leases ending soon",
+            "rent review terms"
+          ]
         },
         "ui": {
           "title": "Leases",
@@ -23828,7 +23859,11 @@
         },
         "sample": {
           "count": "27 brokers",
-          "notes": ["the leaderboard", "commission due", "a broker's statement"]
+          "notes": [
+            "the leaderboard",
+            "commission due",
+            "a broker's statement"
+          ]
         },
         "ui": {
           "title": "Brokers",
@@ -25963,7 +25998,11 @@
         },
         "sample": {
           "count": "5 tasks",
-          "notes": ["overdue in red", "today's list", "linked to the account"]
+          "notes": [
+            "overdue in red",
+            "today's list",
+            "linked to the account"
+          ]
         },
         "ui": {
           "title": "Tasks",
@@ -28043,7 +28082,11 @@
         },
         "sample": {
           "count": "100 dealers",
-          "notes": ["dealers by region", "a tier for each", "credit used"]
+          "notes": [
+            "dealers by region",
+            "a tier for each",
+            "credit used"
+          ]
         },
         "ui": {
           "title": "Dealers",
@@ -28412,7 +28455,11 @@
         },
         "sample": {
           "count": "7 levels shown",
-          "notes": ["the sales tree", "a head at each level", "rights by role"]
+          "notes": [
+            "the sales tree",
+            "a head at each level",
+            "rights by role"
+          ]
         },
         "ui": {
           "title": "Org & Access",
@@ -28978,7 +29025,11 @@
         },
         "sample": {
           "count": "5 customers shown",
-          "notes": ["exposure against limit", "overdue days", "holds in red"]
+          "notes": [
+            "exposure against limit",
+            "overdue days",
+            "holds in red"
+          ]
         },
         "ui": {
           "title": "Credit",
@@ -29349,7 +29400,11 @@
         },
         "sample": {
           "count": "140 captured this month",
-          "notes": ["leads by source", "a card, scanned", "a lead, filled in"]
+          "notes": [
+            "leads by source",
+            "a card, scanned",
+            "a lead, filled in"
+          ]
         },
         "ui": {
           "title": "Capture",
@@ -30843,7 +30898,11 @@
         },
         "sample": {
           "count": "3 promotions",
-          "notes": ["the season's totals", "budget used", "return on spend"]
+          "notes": [
+            "the season's totals",
+            "budget used",
+            "return on spend"
+          ]
         },
         "ui": {
           "title": "Promotions",
@@ -31774,7 +31833,11 @@
         },
         "sample": {
           "count": "4 sales today",
-          "notes": ["the sale on a phone", "pay by any mode", "today's sales"]
+          "notes": [
+            "the sale on a phone",
+            "pay by any mode",
+            "today's sales"
+          ]
         },
         "ui": {
           "title": "Van Sales",
@@ -31957,7 +32020,11 @@
         },
         "sample": {
           "count": "4 items",
-          "notes": ["item by item", "differences in red", "cash checked"]
+          "notes": [
+            "item by item",
+            "differences in red",
+            "cash checked"
+          ]
         },
         "ui": {
           "title": "Van Stock",
@@ -32334,7 +32401,11 @@
         },
         "sample": {
           "count": "5 reps",
-          "notes": ["each rep's bar", "the line for today", "ahead or behind"]
+          "notes": [
+            "each rep's bar",
+            "the line for today",
+            "ahead or behind"
+          ]
         },
         "ui": {
           "title": "Targets",
@@ -32891,7 +32962,11 @@
         },
         "sample": {
           "count": "4 managers",
-          "notes": ["five measures", "one score", "the six-month trend"]
+          "notes": [
+            "five measures",
+            "one score",
+            "the six-month trend"
+          ]
         },
         "ui": {
           "title": "AM Scorecard",
@@ -33276,7 +33351,11 @@
         },
         "sample": {
           "count": "4 trips",
-          "notes": ["one trip still out", "from and to", "distance measured"]
+          "notes": [
+            "one trip still out",
+            "from and to",
+            "distance measured"
+          ]
         },
         "ui": {
           "title": "Trips",
@@ -33461,7 +33540,11 @@
         },
         "sample": {
           "count": "3 vehicles",
-          "notes": ["km per litre over time", "a drop flagged", "recent fills"]
+          "notes": [
+            "km per litre over time",
+            "a drop flagged",
+            "recent fills"
+          ]
         },
         "ui": {
           "title": "Fuel Log",
@@ -33642,7 +33725,11 @@
         },
         "sample": {
           "count": "5 vehicles",
-          "notes": ["this month first", "services and renewals", "by vehicle"]
+          "notes": [
+            "this month first",
+            "services and renewals",
+            "by vehicle"
+          ]
         },
         "ui": {
           "title": "Maintenance",
@@ -34423,7 +34510,11 @@
         },
         "sample": {
           "count": "11 items",
-          "notes": ["the settings", "history and forecast", "what to reorder"]
+          "notes": [
+            "the settings",
+            "history and forecast",
+            "what to reorder"
+          ]
         },
         "ui": {
           "title": "Demand Forecast",
@@ -34899,7 +34990,14 @@
         "pipelineTitle": "Sales pipeline · illustrative",
         "departmentTitle": "Departmental insights",
         "budgetUsage": "Illustrative budget utilization",
-        "chartMonths": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"]
+        "chartMonths": [
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct"
+        ]
       },
       "reports": {
         "title": "Financial reports",
@@ -35613,11 +35711,26 @@
         "sampleDistance": "Distance in shown trips",
         "filterLabel": "Filter sample trips by status",
         "filters": [
-          { "value": "All", "label": "All trips" },
-          { "value": "Completed", "label": "Completed" },
-          { "value": "Ongoing", "label": "Ongoing" },
-          { "value": "Scheduled", "label": "Scheduled" },
-          { "value": "Cancelled", "label": "Cancelled" }
+          {
+            "value": "All",
+            "label": "All trips"
+          },
+          {
+            "value": "Completed",
+            "label": "Completed"
+          },
+          {
+            "value": "Ongoing",
+            "label": "Ongoing"
+          },
+          {
+            "value": "Scheduled",
+            "label": "Scheduled"
+          },
+          {
+            "value": "Cancelled",
+            "label": "Cancelled"
+          }
         ],
         "historyTitle": "Sample trip history",
         "history": [
@@ -35814,7 +35927,11 @@
         "titleHighlightLead": "lead",
         "titleMiddle": "to the",
         "titleHighlightInvoice": "invoice",
-        "stages": ["New Leads", "Proposals", "Clients"]
+        "stages": [
+          "New Leads",
+          "Proposals",
+          "Clients"
+        ]
       },
       "serviceSection": {
         "title": "Smart service management",
@@ -36293,8 +36410,21 @@
         "description": "Scheduling made easy. Access a free platform to schedule, discuss, and share availabilities with your customers.",
         "demo": {
           "title": "Select a date & time",
-          "days": ["M", "T", "W", "T", "F", "S", "S"],
-          "times": ["09:00", "10:30", "14:00", "16:30"]
+          "days": [
+            "M",
+            "T",
+            "W",
+            "T",
+            "F",
+            "S",
+            "S"
+          ],
+          "times": [
+            "09:00",
+            "10:30",
+            "14:00",
+            "16:30"
+          ]
         }
       },
       "setupSection": {
@@ -36325,10 +36455,22 @@
         "demo": {
           "title": "Schedule meeting",
           "fields": [
-            ["Appointment type", "Business Consultation"],
-            ["Contact", "Customer name"],
-            ["Date", "July 24, 2026"],
-            ["Time", "10:30 AM"]
+            [
+              "Appointment type",
+              "Business Consultation"
+            ],
+            [
+              "Contact",
+              "Customer name"
+            ],
+            [
+              "Date",
+              "July 24, 2026"
+            ],
+            [
+              "Time",
+              "10:30 AM"
+            ]
           ],
           "button": "Confirm appointment"
         }
@@ -36348,10 +36490,22 @@
           "title": "Appointment",
           "status": "Confirmed",
           "fields": [
-            ["Customer", "Anita Oliver"],
-            ["Meeting", "Business consultation"],
-            ["Date", "July 24, 2026"],
-            ["Options", "Video call + Reminder"]
+            [
+              "Customer",
+              "Anita Oliver"
+            ],
+            [
+              "Meeting",
+              "Business consultation"
+            ],
+            [
+              "Date",
+              "July 24, 2026"
+            ],
+            [
+              "Options",
+              "Video call + Reminder"
+            ]
           ]
         }
       },
@@ -36556,7 +36710,11 @@
           "custom": "Create custom quotations aligned with your project scope, pricing, files, blueprints, and architectural services.",
           "templates": "Use templates and built-in quote tools to make proposals faster and more professional."
         },
-        "demoDocs": ["Quotation", "Proposal", "Invoice"]
+        "demoDocs": [
+          "Quotation",
+          "Proposal",
+          "Invoice"
+        ]
       },
       "financeSection": {
         "title": "Finance management to turn",
@@ -36577,7 +36735,13 @@
         "titleHighlight": "planning",
         "description": "Create shifts, track colleagues, material resources, planning, recruiting shifts and project timelines.",
         "table": {
-          "headers": ["Resource", "Mon", "Tue", "Wed", "Thu"],
+          "headers": [
+            "Resource",
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu"
+          ],
           "resources": [
             "Senior Architect",
             "Junior Designer",
@@ -36809,7 +36973,13 @@
         "titleHighlight": "present",
         "titleEnd": "right now",
         "description": "See live attendance status across departments. Quickly understand who is checked in, working remotely, late, or missing.",
-        "filters": ["Office", "Remote", "Late", "Missing", "Extra Hours"],
+        "filters": [
+          "Office",
+          "Remote",
+          "Late",
+          "Missing",
+          "Extra Hours"
+        ],
         "employees": [
           {
             "name": "Audrey Peterson",
@@ -36842,10 +37012,22 @@
           "title": "Attendance Correction",
           "badge": "To Review",
           "fields": [
-            ["Employee", "Marc Demo"],
-            ["Missing Check Out", "Yesterday"],
-            ["Suggested Time", "17:45"],
-            ["Reason", "Forgot to check out"]
+            [
+              "Employee",
+              "Marc Demo"
+            ],
+            [
+              "Missing Check Out",
+              "Yesterday"
+            ],
+            [
+              "Suggested Time",
+              "17:45"
+            ],
+            [
+              "Reason",
+              "Forgot to check out"
+            ]
           ],
           "approveButton": "Approve",
           "refuseButton": "Refuse"
@@ -36857,7 +37039,13 @@
         "description": "Analyze attendance by employee, department, week, month, work location, and approval status.",
         "analysisTitle": "Attendance Analysis",
         "badge": "Monthly",
-        "weeks": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
+        "weeks": [
+          "Week 1",
+          "Week 2",
+          "Week 3",
+          "Week 4",
+          "Week 5"
+        ]
       },
       "featuresSection": {
         "title": "All the features",
@@ -36980,7 +37168,11 @@
           "leadTracking": "Lead tracking",
           "activityScheduling": "Activity scheduling"
         },
-        "stages": ["New Leads", "Qualified", "Won"]
+        "stages": [
+          "New Leads",
+          "Qualified",
+          "Won"
+        ]
       },
       "mobileSection": {
         "title": "Mobile solution for onsite",
@@ -38056,7 +38248,10 @@
               "replies": 14,
               "views": 312,
               "lastActive": "2 hours ago",
-              "tags": ["purchase", "custom-fields"]
+              "tags": [
+                "purchase",
+                "custom-fields"
+              ]
             },
             {
               "title": "Best practices for multi-currency reporting in v17?",
@@ -38065,7 +38260,10 @@
               "replies": 8,
               "views": 189,
               "lastActive": "5 hours ago",
-              "tags": ["multi-currency", "reporting"]
+              "tags": [
+                "multi-currency",
+                "reporting"
+              ]
             },
             {
               "title": "Feature request: webhook notifications for stock transfers",
@@ -38074,7 +38272,11 @@
               "replies": 34,
               "views": 721,
               "lastActive": "30 minutes ago",
-              "tags": ["webhook", "inventory", "feature-request"]
+              "tags": [
+                "webhook",
+                "inventory",
+                "feature-request"
+              ]
             },
             {
               "title": "Getting Started guide for Windows dev setup",
@@ -38083,7 +38285,11 @@
               "replies": 21,
               "views": 540,
               "lastActive": "1 hour ago",
-              "tags": ["windows", "setup", "dev"]
+              "tags": [
+                "windows",
+                "setup",
+                "dev"
+              ]
             },
             {
               "title": "Bug: stock reconciliation produces negative qty on partial picks",
@@ -38092,7 +38298,11 @@
               "replies": 6,
               "views": 134,
               "lastActive": "12 hours ago",
-              "tags": ["inventory", "bug", "stock"]
+              "tags": [
+                "inventory",
+                "bug",
+                "stock"
+              ]
             },
             {
               "title": "Show & Tell: our custom CRM module for service firms",
@@ -38101,7 +38311,11 @@
               "replies": 18,
               "views": 445,
               "lastActive": "3 hours ago",
-              "tags": ["crm", "module", "show-and-tell"]
+              "tags": [
+                "crm",
+                "module",
+                "show-and-tell"
+              ]
             }
           ],
           "viewAllButton": "View all threads"
@@ -38417,7 +38631,10 @@
         "description": "Discover how modern businesses use smart ERP, CRM, automation, analytics, and integrations to scale operations efficiently.",
         "readMore": "Read More",
         "pagination": {
-          "dates": ["2026", "2025"],
+          "dates": [
+            "2026",
+            "2025"
+          ],
           "lastPage": "133",
           "aria": "Pagination"
         },
@@ -38461,7 +38678,11 @@
           "domain": "docs.adon-erp.com",
           "cardTitle": "Setup Guide",
           "cardDescription": "Company, apps, users, and workflow basics",
-          "items": ["CRM configuration", "Inventory rules", "Invoice workflow"]
+          "items": [
+            "CRM configuration",
+            "Inventory rules",
+            "Invoice workflow"
+          ]
         },
         "categoriesSection": {
           "eyebrow": "Product knowledge base",
@@ -38784,7 +39005,10 @@
               "replies": 14,
               "views": 312,
               "lastActive": "2 hours ago",
-              "tags": ["purchase", "custom-fields"]
+              "tags": [
+                "purchase",
+                "custom-fields"
+              ]
             },
             {
               "title": "Best practices for multi-currency reporting in v17?",
@@ -38793,7 +39017,10 @@
               "replies": 8,
               "views": 189,
               "lastActive": "5 hours ago",
-              "tags": ["multi-currency", "reporting"]
+              "tags": [
+                "multi-currency",
+                "reporting"
+              ]
             },
             {
               "title": "Feature request: webhook notifications for stock transfers",
@@ -38802,7 +39029,11 @@
               "replies": 34,
               "views": 721,
               "lastActive": "30 minutes ago",
-              "tags": ["webhook", "inventory", "feature-request"]
+              "tags": [
+                "webhook",
+                "inventory",
+                "feature-request"
+              ]
             },
             {
               "title": "Getting Started guide for Windows dev setup",
@@ -38811,7 +39042,11 @@
               "replies": 21,
               "views": 540,
               "lastActive": "1 hour ago",
-              "tags": ["windows", "setup", "dev"]
+              "tags": [
+                "windows",
+                "setup",
+                "dev"
+              ]
             },
             {
               "title": "Bug: stock reconciliation produces negative qty on partial picks",
@@ -38820,7 +39055,11 @@
               "replies": 6,
               "views": 134,
               "lastActive": "12 hours ago",
-              "tags": ["inventory", "bug", "stock"]
+              "tags": [
+                "inventory",
+                "bug",
+                "stock"
+              ]
             },
             {
               "title": "Show & Tell: our custom CRM module for service firms",
@@ -38829,7 +39068,11 @@
               "replies": 18,
               "views": 445,
               "lastActive": "3 hours ago",
-              "tags": ["crm", "module", "show-and-tell"]
+              "tags": [
+                "crm",
+                "module",
+                "show-and-tell"
+              ]
             }
           ]
         },
@@ -38970,25 +39213,34 @@
         "pullRequests": [
           {
             "summary": "Inventory: barcode lookahead validation",
-            "tags": ["in-progress", "review"],
+            "tags": [
+              "in-progress",
+              "review"
+            ],
             "author": "Omar Y.",
             "comments": 4
           },
           {
             "summary": "Accounting: auto-reconciliation engine",
-            "tags": ["approved"],
+            "tags": [
+              "approved"
+            ],
             "author": "Aisha K.",
             "comments": 12
           },
           {
             "summary": "Website: new elearning course player",
-            "tags": ["in-progress"],
+            "tags": [
+              "in-progress"
+            ],
             "author": "Jules P.",
             "comments": 8
           },
           {
             "summary": "CRM: bulk-import lead scoring",
-            "tags": ["draft"],
+            "tags": [
+              "draft"
+            ],
             "author": "Nadia R.",
             "comments": 2
           }
@@ -39820,7 +40072,13 @@
             "duration": "8 weeks",
             "lessons": "56 lessons",
             "description": "Build modules, customize workflows, connect APIs, and prepare production-ready AdonERP extensions.",
-            "topics": ["Next.js", "API", "Prisma", "Automation", "Deployment"]
+            "topics": [
+              "Next.js",
+              "API",
+              "Prisma",
+              "Automation",
+              "Deployment"
+            ]
           },
           {
             "title": "Business User Training",
@@ -39985,7 +40243,11 @@
         "player": {
           "label": "Tutorial player",
           "title": "Sales pipeline basics",
-          "steps": ["Watch", "Practice", "Apply"]
+          "steps": [
+            "Watch",
+            "Practice",
+            "Apply"
+          ]
         },
         "categoriesSection": {
           "eyebrow": "Browse by business workflow",
@@ -40310,7 +40572,13 @@
           }
         },
         "inventoryLabel": "Material inventory • Stock levels",
-        "materials": ["Concrete", "Rebar", "Lumber", "Drywall", "Paint"]
+        "materials": [
+          "Concrete",
+          "Rebar",
+          "Lumber",
+          "Drywall",
+          "Paint"
+        ]
       },
       "costsSection": {
         "title": "Keep an eye on the",
@@ -40840,7 +41108,10 @@
             "name": "Sofia Larsson",
             "role": "CFO · Nordic Abrasives Group",
             "country": "Sweden",
-            "results": ["40% fewer tools", "18 hrs/week saved"],
+            "results": [
+              "40% fewer tools",
+              "18 hrs/week saved"
+            ],
             "avatar": "SL",
             "tier": "Enterprise"
           },
@@ -40849,7 +41120,10 @@
             "name": "Rajesh Menon",
             "role": "Operations Director · IndoPacific Logistics",
             "country": "India",
-            "results": ["6-week go-live", "99% stock accuracy"],
+            "results": [
+              "6-week go-live",
+              "99% stock accuracy"
+            ],
             "avatar": "RM",
             "tier": "Mid-market"
           },
@@ -40858,7 +41132,10 @@
             "name": "Adèle Moreau",
             "role": "Founder & CEO · GreenLoop Commerce",
             "country": "France",
-            "results": ["Zero-touch scaling", "3× faster close"],
+            "results": [
+              "Zero-touch scaling",
+              "3× faster close"
+            ],
             "avatar": "AM",
             "tier": "Startup"
           },
@@ -40867,7 +41144,10 @@
             "name": "Kwame Osei",
             "role": "GM · Accra Kitchen Co.",
             "country": "Ghana",
-            "results": ["22% faster turnover", "1 unified system"],
+            "results": [
+              "22% faster turnover",
+              "1 unified system"
+            ],
             "avatar": "KO",
             "tier": "Retail"
           },
@@ -40876,7 +41156,10 @@
             "name": "Julia Saab",
             "role": "Head of Finance · Saab Holdings",
             "country": "Lebanon",
-            "results": ["10-day go-live", "Zero downtime"],
+            "results": [
+              "10-day go-live",
+              "Zero downtime"
+            ],
             "avatar": "JS",
             "tier": "Enterprise"
           },
@@ -40885,7 +41168,10 @@
             "name": "Fritz Lehmann",
             "role": "CTO · RheinTech GmbH",
             "country": "Germany",
-            "results": ["3-week migration", "Zero data loss"],
+            "results": [
+              "3-week migration",
+              "Zero data loss"
+            ],
             "avatar": "FL",
             "tier": "Enterprise"
           }
@@ -40966,7 +41252,13 @@
           "title": "Discuss",
           "subtitle": "Inbox / Channels / Messages / Meetings",
           "newButton": "New",
-          "channels": ["General", "Marketing", "Sales", "Support", "Project"],
+          "channels": [
+            "General",
+            "Marketing",
+            "Sales",
+            "Support",
+            "Project"
+          ],
           "messages": [
             {
               "name": "Audrey Peterson",
@@ -41018,7 +41310,12 @@
         "demo": {
           "title": "Sales Order",
           "badge": "Discuss",
-          "fields": ["Customer", "Quotation", "Total", "Status"],
+          "fields": [
+            "Customer",
+            "Quotation",
+            "Total",
+            "Status"
+          ],
           "thread": {
             "title": "Discuss thread",
             "description": "Ask questions, mention team members, and keep decisions attached to the document."
@@ -41251,9 +41548,20 @@
           }
         ],
         "demo": {
-          "leftItems": ["Payment slip", "Contract file"],
-          "inboxItems": ["Invoice", "Agreement", "Receipt", "Approval note"],
-          "rightItems": ["Client doc", "Signed certificate"]
+          "leftItems": [
+            "Payment slip",
+            "Contract file"
+          ],
+          "inboxItems": [
+            "Invoice",
+            "Agreement",
+            "Receipt",
+            "Approval note"
+          ],
+          "rightItems": [
+            "Client doc",
+            "Signed certificate"
+          ]
         }
       },
       "signingSection": {
@@ -41275,8 +41583,17 @@
       "organizationSection": {
         "title": "Organization is the key",
         "description": "Keep departments, clients, tasks, and approvals connected. Your team always knows where every file belongs and what needs action.",
-        "columns": ["Inbox", "In Review", "Waiting Signature", "Approved"],
-        "cards": ["Invoice", "Proposal", "Agreement"]
+        "columns": [
+          "Inbox",
+          "In Review",
+          "Waiting Signature",
+          "Approved"
+        ],
+        "cards": [
+          "Invoice",
+          "Proposal",
+          "Agreement"
+        ]
       },
       "collaborationSection": {
         "eyebrowIcon": "Users",
@@ -41284,7 +41601,12 @@
         "title": "The art of effective",
         "titleHighlight": "collaboration",
         "description": "Discuss documents with teammates, assign ownership, request approvals, and keep all comments connected to the file.",
-        "features": ["Comments", "Approvals", "Mentions", "Access control"],
+        "features": [
+          "Comments",
+          "Approvals",
+          "Mentions",
+          "Access control"
+        ],
         "demo": {
           "title": "Website contract draft",
           "comment": "Please review the pricing section before sending it to the client.",
@@ -41790,11 +42112,17 @@
           "inProgress": "In progress",
           "question1": {
             "text": "What is photosynthesis?",
-            "answers": ["Energy from sunlight", "Plant watering"]
+            "answers": [
+              "Energy from sunlight",
+              "Plant watering"
+            ]
           },
           "question2": {
             "text": "What is the best soil for young trees?",
-            "answers": ["Loose and rich soil", "Dry sand"]
+            "answers": [
+              "Loose and rich soil",
+              "Dry sand"
+            ]
           }
         },
         "button": "See evaluation"
@@ -42083,7 +42411,15 @@
         ],
         "calendar": {
           "title": "June 2026",
-          "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
           "events": [
             {
               "day": "Jun 25",
@@ -42111,9 +42447,15 @@
             "title": "Adon ERP 17 Release Deep Dive",
             "date": "Jun 25, 2026",
             "time": "14:00 UTC",
-            "speakers": ["Omar Yousef", "Aisha Karim"],
+            "speakers": [
+              "Omar Yousef",
+              "Aisha Karim"
+            ],
             "attendees": 840,
-            "tags": ["release", "v17"],
+            "tags": [
+              "release",
+              "v17"
+            ],
             "color": "from-blue-500 to-indigo-600"
           },
           {
@@ -42121,9 +42463,15 @@
             "title": "Build Your First Custom Module in 90 Minutes",
             "date": "Jul 2, 2026",
             "time": "10:00 UTC",
-            "speakers": ["Jules P.", "Lena K."],
+            "speakers": [
+              "Jules P.",
+              "Lena K."
+            ],
             "attendees": 530,
-            "tags": ["workshop", "development"],
+            "tags": [
+              "workshop",
+              "development"
+            ],
             "color": "from-emerald-500 to-teal-600"
           },
           {
@@ -42131,9 +42479,14 @@
             "title": "AdonERP Community Meetup — Berlin",
             "date": "Jul 18, 2026",
             "time": "18:00 CET",
-            "speakers": ["Community Team"],
+            "speakers": [
+              "Community Team"
+            ],
             "attendees": 120,
-            "tags": ["meetup", "in-person"],
+            "tags": [
+              "meetup",
+              "in-person"
+            ],
             "color": "from-violet-500 to-purple-600"
           },
           {
@@ -42141,9 +42494,15 @@
             "title": "Multi-currency & Compliance: A Practical Guide",
             "date": "Aug 5, 2026",
             "time": "11:00 UTC",
-            "speakers": ["Rajesh M.", "Nadia R."],
+            "speakers": [
+              "Rajesh M.",
+              "Nadia R."
+            ],
             "attendees": 610,
-            "tags": ["accounting", "compliance"],
+            "tags": [
+              "accounting",
+              "compliance"
+            ],
             "color": "from-amber-500 to-orange-600"
           }
         ],
@@ -42590,7 +42949,11 @@
           "pointsSystem": "Points system",
           "digitalWallet": "Digital wallet"
         },
-        "rewards": ["Coupons", "Loyalty cards", "Promotions"],
+        "rewards": [
+          "Coupons",
+          "Loyalty cards",
+          "Promotions"
+        ],
         "rewardIcons": {
           "Coupons": "🎫",
           "Loyalty cards": "💳",
@@ -42808,7 +43171,11 @@
         "taskDetail": {
           "title": "Task detail",
           "task": "Install solar panel",
-          "items": ["Customer ready", "Route optimized", "Parts available"]
+          "items": [
+            "Customer ready",
+            "Route optimized",
+            "Parts available"
+          ]
         }
       },
       "mobileSection": {
@@ -43083,7 +43450,14 @@
         "description": "User-friendly and advanced text editor. Enable users to edit and structure their content with plenty of helpful features.",
         "editor": {
           "title": "Your Answer",
-          "tools": ["B", "I", "U", "Link", "Image", "Code"],
+          "tools": [
+            "B",
+            "I",
+            "U",
+            "Link",
+            "Image",
+            "Code"
+          ],
           "features": {
             "boldText": "Bold text",
             "uploadImage": "Upload image",
@@ -43201,7 +43575,11 @@
           "taskTracking": "Task tracking",
           "timelineView": "Timeline view"
         },
-        "stages": ["To Do", "In Progress", "Done"]
+        "stages": [
+          "To Do",
+          "In Progress",
+          "Done"
+        ]
       },
       "materialsSection": {
         "title": "Turn raw",
@@ -43212,7 +43590,13 @@
           "manufacturing": "Easy manufacturing and purchasing keep production forecasts, costs and stock under control."
         },
         "table": {
-          "headers": ["Material", "BOM Qty", "On Hand", "Required", "Status"],
+          "headers": [
+            "Material",
+            "BOM Qty",
+            "On Hand",
+            "Required",
+            "Status"
+          ],
           "rows": [
             {
               "material": "Oak Wood",
@@ -43260,7 +43644,12 @@
           "barcodeScanning": "Barcode scanning",
           "autoReplenishment": "Auto replenishment"
         },
-        "items": ["Hardwood", "Plywood", "Veneer", "Hardware"]
+        "items": [
+          "Hardwood",
+          "Plywood",
+          "Veneer",
+          "Hardware"
+        ]
       },
       "featuresSection": {
         "title": "All the features",
@@ -43646,25 +44035,34 @@
         "prs": [
           {
             "summary": "Inventory: barcode lookahead validation",
-            "tags": ["in-progress", "review"],
+            "tags": [
+              "in-progress",
+              "review"
+            ],
             "author": "Omar Y.",
             "comments": 4
           },
           {
             "summary": "Accounting: auto-reconciliation engine",
-            "tags": ["approved"],
+            "tags": [
+              "approved"
+            ],
             "author": "Aisha K.",
             "comments": 12
           },
           {
             "summary": "Website: new elearning course player",
-            "tags": ["in-progress"],
+            "tags": [
+              "in-progress"
+            ],
             "author": "Jules P.",
             "comments": 8
           },
           {
             "summary": "CRM: bulk-import lead scoring",
-            "tags": ["draft"],
+            "tags": [
+              "draft"
+            ],
             "author": "Nadia R.",
             "comments": 2
           }
@@ -44168,7 +44566,13 @@
           }
         },
         "table": {
-          "headers": ["Product", "On Hand", "Forecast", "Min / Max", "Status"],
+          "headers": [
+            "Product",
+            "On Hand",
+            "Forecast",
+            "Min / Max",
+            "Status"
+          ],
           "rows": [
             {
               "product": "Hammer (16oz)",
@@ -44579,17 +44983,29 @@
             {
               "title": "To Do",
               "color": "#fef3c7",
-              "items": ["Design mockup", "User research", "API spec"]
+              "items": [
+                "Design mockup",
+                "User research",
+                "API spec"
+              ]
             },
             {
               "title": "In Progress",
               "color": "#dbeafe",
-              "items": ["Auth flow", "Dashboard", "Mobile nav"]
+              "items": [
+                "Auth flow",
+                "Dashboard",
+                "Mobile nav"
+              ]
             },
             {
               "title": "Done",
               "color": "#d1fae5",
-              "items": ["DB schema", "CI/CD", "Staging env"]
+              "items": [
+                "DB schema",
+                "CI/CD",
+                "Staging env"
+              ]
             }
           ]
         }
@@ -44972,8 +45388,17 @@
           "Tags",
           "Contract Type"
         ],
-        "groupBy": ["Manager", "Department", "Job Position", "Skills"],
-        "favorites": ["Save current search", "My team", "New hires"]
+        "groupBy": [
+          "Manager",
+          "Department",
+          "Job Position",
+          "Skills"
+        ],
+        "favorites": [
+          "Save current search",
+          "My team",
+          "New hires"
+        ]
       },
       "privacySection": {
         "title": "Keep the",
@@ -44984,12 +45409,30 @@
           "name": "Audrey Peterson",
           "confidential": "Confidential",
           "fields": [
-            ["Private Address", "Restricted"],
-            ["Wage", "Manager only"],
-            ["Emergency Contact", "Private"],
-            ["Contract", "HR only"],
-            ["Visa", "Protected"],
-            ["Bank Account", "Hidden"]
+            [
+              "Private Address",
+              "Restricted"
+            ],
+            [
+              "Wage",
+              "Manager only"
+            ],
+            [
+              "Emergency Contact",
+              "Private"
+            ],
+            [
+              "Contract",
+              "HR only"
+            ],
+            [
+              "Visa",
+              "Protected"
+            ],
+            [
+              "Bank Account",
+              "Hidden"
+            ]
           ],
           "footer": "Only authorized users can view this profile."
         }
@@ -44998,15 +45441,28 @@
         "title": "Show off",
         "titleHighlight": "those skills",
         "description": "Record every employee's skill set so the next time you need a French-speaking JavaScript expert, you know exactly who to call.",
-        "skills": ["React", "French", "JavaScript", "Design", "Sales"]
+        "skills": [
+          "React",
+          "French",
+          "JavaScript",
+          "Design",
+          "Sales"
+        ]
       },
       "timeOffSection": {
         "title": "Take control of",
         "titleHighlight": "time off",
         "titleEnd": "",
         "description": "Stay on top of PTO requests with integrated time off tracking. Use absence reports to monitor attendance and quickly approve vacation requests.",
-        "columns": ["Absent", "Present", "To Define"],
-        "leaveTypes": ["Paid Time Off", "Sick Leave"]
+        "columns": [
+          "Absent",
+          "Present",
+          "To Define"
+        ],
+        "leaveTypes": [
+          "Paid Time Off",
+          "Sick Leave"
+        ]
       },
       "documentsSection": {
         "title": "Never lose track of another document",
@@ -45065,10 +45521,22 @@
           "name": "Jennie Fletcher",
           "role": "Manager's Feedback",
           "criteria": [
-            ["Job knowledge", 5],
-            ["Time management", 4],
-            ["Teamwork", 5],
-            ["Autonomy", 4]
+            [
+              "Job knowledge",
+              5
+            ],
+            [
+              "Time management",
+              4
+            ],
+            [
+              "Teamwork",
+              5
+            ],
+            [
+              "Autonomy",
+              4
+            ]
           ]
         }
       },
@@ -45301,7 +45769,11 @@
       "warehouseSection": {
         "title": "Optimize your warehouse",
         "description": "Build clean warehouse operations with locations, routes, putaway rules, replenishment rules, picking flows, and transfer management.",
-        "stages": ["Receipts", "Pick", "Pack"]
+        "stages": [
+          "Receipts",
+          "Pick",
+          "Pack"
+        ]
       },
       "pickingSection": {
         "title": "Minimize",
@@ -45520,7 +45992,12 @@
           "Multi-currency support",
           "Recurring billing"
         ],
-        "gateways": ["Stripe", "PayPal", "Razorpay", "Square"],
+        "gateways": [
+          "Stripe",
+          "PayPal",
+          "Razorpay",
+          "Square"
+        ],
         "demo": {
           "totalDue": "Total Due",
           "amount": "$3,500.00",
@@ -45875,7 +46352,11 @@
             "priority": "Priority"
           },
           "chatTitle": "Chat",
-          "messages": ["Hello!", "Can you help?", "Sure, one moment."]
+          "messages": [
+            "Hello!",
+            "Can you help?",
+            "Sure, one moment."
+          ]
         }
       },
       "helpSection": {
@@ -45898,7 +46379,10 @@
         },
         "latestConversation": {
           "title": "Latest conversation",
-          "messages": ["Can I update my order?", "Yes, I can help."]
+          "messages": [
+            "Can I update my order?",
+            "Yes, I can help."
+          ]
         }
       },
       "visitorToCustomerSection": {
@@ -46066,7 +46550,11 @@
             },
             {
               "title": "Scrap",
-              "cards": ["Old laptop", "Broken monitor", "Damaged printer"]
+              "cards": [
+                "Old laptop",
+                "Broken monitor",
+                "Damaged printer"
+              ]
             }
           ]
         }
@@ -46076,14 +46564,26 @@
         "subtitle": "maintenance",
         "description": "to keep your line running.",
         "text": "Use computed statistics, scheduling rules, expected next failure dates, and IoT data to automate metrology and preventive maintenance.",
-        "days": ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
+        "days": [
+          "Sat",
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ]
       },
       "requestsSection": {
         "title": "Organize your",
         "subtitle": "maintenance requests",
         "description": "with great kanban and calendar views.",
         "text": "Easily track maintenance requests with kanban view. Use the maintenance calendar to organize activities and manage team workload in a clean drag-and-drop interface.",
-        "stages": ["New Request", "In Progress", "Repaired"]
+        "stages": [
+          "New Request",
+          "In Progress",
+          "Repaired"
+        ]
       },
       "equipmentSection": {
         "title": "Increase overall equipment",
@@ -46775,7 +47275,12 @@
         "titleHighlight": "project",
         "titleEnd": "hub",
         "description": "Manage projects, tasks, timesheets, meetings, documents and team expenses from one complete dashboard.",
-        "stages": ["To Do", "In Progress", "Review", "Done"]
+        "stages": [
+          "To Do",
+          "In Progress",
+          "Review",
+          "Done"
+        ]
       },
       "pipelineSection": {
         "title": "From lead to",
@@ -46785,7 +47290,11 @@
           "leadTracking": "Lead tracking",
           "oneClickInvoicing": "One-click invoicing"
         },
-        "stages": ["New", "Proposal", "Won"]
+        "stages": [
+          "New",
+          "Proposal",
+          "Won"
+        ]
       },
       "expandSection": {
         "title": "Expand as you grow",
@@ -46794,7 +47303,12 @@
           "campaignAnalytics": "Campaign analytics",
           "autoScheduling": "Auto-scheduling"
         },
-        "services": ["SEO", "Social", "Content", "Email"]
+        "services": [
+          "SEO",
+          "Social",
+          "Content",
+          "Email"
+        ]
       },
       "featuresSection": {
         "title": "All the features",
@@ -47029,7 +47543,11 @@
           "customViews": "Custom views",
           "timelineTracking": "Timeline tracking"
         },
-        "stages": ["To Do", "In Progress", "Done"]
+        "stages": [
+          "To Do",
+          "In Progress",
+          "Done"
+        ]
       },
       "featuresSection": {
         "title": "All the features",
@@ -47204,7 +47722,13 @@
         "table": {
           "title": "Simulation result",
           "badge": "Feasible",
-          "headers": ["Order", "Material", "Stock", "Time", "Status"],
+          "headers": [
+            "Order",
+            "Material",
+            "Stock",
+            "Time",
+            "Status"
+          ],
           "rows": [
             {
               "order": "MO/1042",
@@ -47240,23 +47764,47 @@
       "planningSection": {
         "title": "Planning that puts you ahead of schedule",
         "description": "Schedule manufacturing orders, reserve components, balance work centers, and see production timing before problems happen.",
-        "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
         "operations": [
           {
             "name": "Wood cutting",
-            "blocks": ["amber", "rose", "sky"]
+            "blocks": [
+              "amber",
+              "rose",
+              "sky"
+            ]
           },
           {
             "name": "Assembly",
-            "blocks": ["sky", "purple", "emerald"]
+            "blocks": [
+              "sky",
+              "purple",
+              "emerald"
+            ]
           },
           {
             "name": "Quality control",
-            "blocks": ["emerald", "amber", "rose"]
+            "blocks": [
+              "emerald",
+              "amber",
+              "rose"
+            ]
           },
           {
             "name": "Packing",
-            "blocks": ["purple", "sky", "amber"]
+            "blocks": [
+              "purple",
+              "sky",
+              "amber"
+            ]
           }
         ]
       },
@@ -47268,7 +47816,11 @@
         "floatingNote": "Scan, produce, and validate",
         "mobileLabel": "Mobile barcode app",
         "activeWorkOrder": "Active work order",
-        "steps": ["Scan component", "Start operation", "Validate quantity"],
+        "steps": [
+          "Scan component",
+          "Start operation",
+          "Validate quantity"
+        ],
         "validateButton": "Validate"
       },
       "paperlessSection": {
@@ -47276,7 +47828,12 @@
         "titleHighlight": "paperless",
         "titleEnd": "company",
         "description": "Give operators everything they need directly on screen: instructions, components, checks, drawings, notes, and validation actions.",
-        "menuItems": ["BOM", "Routing", "Work order", "Quality"],
+        "menuItems": [
+          "BOM",
+          "Routing",
+          "Work order",
+          "Quality"
+        ],
         "components": [
           "Component 1",
           "Component 2",
@@ -47292,7 +47849,11 @@
         "titleHighlight": "Six-Sigma",
         "titleEnd": "level 6!",
         "description": "Cut costs, reduce waste, detect quality issues, and ensure every product meets your standards. Track checks directly inside your production process.",
-        "categories": ["Checks", "Control Points", "Alerts"]
+        "categories": [
+          "Checks",
+          "Control Points",
+          "Alerts"
+        ]
       },
       "kaizenSection": {
         "title": "The perfect tool for",
@@ -47505,14 +48066,22 @@
             "description": "Deploy and customize AdonERP, guide clients through the full setup, and manage long-term upgrades and integrations.",
             "icon": "Building2",
             "accent": "from-violet-100 to-purple-100",
-            "tags": ["ERP Setup", "Customization", "Integration"]
+            "tags": [
+              "ERP Setup",
+              "Customization",
+              "Integration"
+            ]
           },
           {
             "title": "Reseller",
             "description": "Sell AdonERP subscriptions and complementary services to your customer base, supported by full training and materials.",
             "icon": "Megaphone",
             "accent": "from-purple-100 to-violet-100",
-            "tags": ["Subscription Sales", "B2B Outreach", "Channel Growth"]
+            "tags": [
+              "Subscription Sales",
+              "B2B Outreach",
+              "Channel Growth"
+            ]
           },
           {
             "title": "Consulting",
@@ -47667,9 +48236,18 @@
           "title": "Payslip Batch",
           "batchLabel": "July Payroll",
           "stats": [
-            ["Employees", "42"],
-            ["Gross Pay", "$102k"],
-            ["Net Pay", "$82k"]
+            [
+              "Employees",
+              "42"
+            ],
+            [
+              "Gross Pay",
+              "$102k"
+            ],
+            [
+              "Net Pay",
+              "$82k"
+            ]
           ],
           "steps": [
             "Compute work entries",
@@ -47744,11 +48322,26 @@
           "month": "July 2026 Payslip",
           "status": "Ready",
           "items": [
-            ["Basic Salary", "$5,200"],
-            ["Transport Allowance", "$300"],
-            ["Meal Allowance", "$180"],
-            ["Tax Deduction", "-$620"],
-            ["Insurance", "-$210"]
+            [
+              "Basic Salary",
+              "$5,200"
+            ],
+            [
+              "Transport Allowance",
+              "$300"
+            ],
+            [
+              "Meal Allowance",
+              "$180"
+            ],
+            [
+              "Tax Deduction",
+              "-$620"
+            ],
+            [
+              "Insurance",
+              "-$210"
+            ]
           ],
           "netSalary": "$4,850"
         }
@@ -47759,7 +48352,13 @@
         "description": "Understand salary cost, taxes, departments, deductions, and payroll trends with clean visual reporting.",
         "analysisTitle": "Payroll Analysis",
         "badge": "Monthly",
-        "months": ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5"]
+        "months": [
+          "Month 1",
+          "Month 2",
+          "Month 3",
+          "Month 4",
+          "Month 5"
+        ]
       },
       "featuresSection": {
         "title": "All the features",
@@ -47868,10 +48467,22 @@
             ],
             "managerFeedback": "She can provide achievement that convinced you of the employee's value.",
             "evaluation": [
-              ["Stress Resistance", 4],
-              ["Time Management", 5],
-              ["Teamwork", 4],
-              ["Autonomy", 5]
+              [
+                "Stress Resistance",
+                4
+              ],
+              [
+                "Time Management",
+                5
+              ],
+              [
+                "Teamwork",
+                4
+              ],
+              [
+                "Autonomy",
+                5
+              ]
             ]
           }
         }
@@ -47953,7 +48564,11 @@
           "status": "Done",
           "employee": "Mitchell Admin",
           "description": "Appraisal plan generated automatically",
-          "steps": ["Self evaluation", "Manager review", "Final validation"]
+          "steps": [
+            "Self evaluation",
+            "Manager review",
+            "Final validation"
+          ]
         }
       },
       "appsSection": {
@@ -48168,7 +48783,14 @@
         "products": {
           "title": "Products",
           "itemsCount": "items",
-          "items": ["Chair", "Table", "Sofa", "Lamp", "Shelf", "Cabinet"],
+          "items": [
+            "Chair",
+            "Table",
+            "Sofa",
+            "Lamp",
+            "Shelf",
+            "Cabinet"
+          ],
           "tapToAdd": "Tap to add"
         },
         "cardTerminal": {
@@ -48202,7 +48824,11 @@
         "description": "Let customers order from a kiosk, QR menu, tablet, or mobile page. Orders flow directly into your POS and inventory.",
         "card": {
           "title": "Self ordering",
-          "steps": ["Select product", "Choose options", "Pay securely"],
+          "steps": [
+            "Select product",
+            "Choose options",
+            "Pay securely"
+          ],
           "orderNumber": "Order #248",
           "readyMessage": "Ready for payment",
           "payNow": "Pay now"
@@ -48226,11 +48852,20 @@
         "description": "Sell from your store, website, social channels, and mobile orders while keeping stock and accounting perfectly connected.",
         "onlineOrder": {
           "title": "Online order",
-          "steps": ["Customer checkout", "Payment confirmed", "Stock reserved"]
+          "steps": [
+            "Customer checkout",
+            "Payment confirmed",
+            "Stock reserved"
+          ]
         },
         "storeWorkflow": {
           "title": "Store workflow",
-          "steps": ["Pick", "Pack", "Ship", "Invoice"]
+          "steps": [
+            "Pick",
+            "Pack",
+            "Ship",
+            "Invoice"
+          ]
         }
       },
       "featuresSection": {
@@ -48454,7 +49089,11 @@
           "setupFee": 0,
           "quarterlyFee": 0,
           "cta": "Get started",
-          "features": ["Accounting", "HR & Payroll", "Inventory"]
+          "features": [
+            "Accounting",
+            "HR & Payroll",
+            "Inventory"
+          ]
         },
         {
           "id": "professional",
@@ -48996,7 +49635,14 @@
           ],
           "chartTitle": "Budget utilization",
           "chartPeriod": "FY 2025",
-          "chartLabels": ["Jan", "Mar", "May", "Jul", "Sep", "Dec"],
+          "chartLabels": [
+            "Jan",
+            "Mar",
+            "May",
+            "Jul",
+            "Sep",
+            "Dec"
+          ],
           "remainingLabel": "Available this year",
           "remainingValue": "$690,000",
           "utilizationLabel": "Budget utilized",
@@ -49357,7 +50003,12 @@
           "availableValue": "৳115.507M",
           "availableCaption": "Awards less sample spending",
           "donorTitle": "Donor portfolio overview",
-          "donorHeaders": ["Donor", "Grants", "Award", "Spent"],
+          "donorHeaders": [
+            "Donor",
+            "Grants",
+            "Award",
+            "Spent"
+          ],
           "donors": [
             {
               "name": "UNICEF",
@@ -49417,10 +50068,22 @@
             }
           ],
           "portfolio": [
-            { "label": "Temporarily restricted", "value": "64.5%" },
-            { "label": "Permanently restricted", "value": "8.4%" },
-            { "label": "Unrestricted", "value": "27.1%" },
-            { "label": "Funding due", "value": "৳44.136M" }
+            {
+              "label": "Temporarily restricted",
+              "value": "64.5%"
+            },
+            {
+              "label": "Permanently restricted",
+              "value": "8.4%"
+            },
+            {
+              "label": "Unrestricted",
+              "value": "27.1%"
+            },
+            {
+              "label": "Funding due",
+              "value": "৳44.136M"
+            }
           ]
         },
         "features": {
@@ -49790,7 +50453,12 @@
           "sampleLabel": "Sample records",
           "foreignLabel": "Foreign",
           "donorsTitle": "Donor portfolio",
-          "donorHeaders": ["Donor code", "Donor", "Type", "Country"],
+          "donorHeaders": [
+            "Donor code",
+            "Donor",
+            "Type",
+            "Country"
+          ],
           "donors": [
             {
               "code": "DN-0104",
@@ -50264,13 +50932,21 @@
           "subtitle": "Community health access · Sample monitoring period",
           "sampleLabel": "Synthetic data",
           "demographics": [
-            { "label": "People reached", "value": "5,200", "percent": 100 },
+            {
+              "label": "People reached",
+              "value": "5,200",
+              "percent": 100
+            },
             {
               "label": "Female beneficiaries",
               "value": "2,770",
               "percent": 53
             },
-            { "label": "Male beneficiaries", "value": "2,430", "percent": 47 }
+            {
+              "label": "Male beneficiaries",
+              "value": "2,430",
+              "percent": 47
+            }
           ],
           "indicatorTitle": "Illustrative logical framework",
           "indicatorSubtitle": "Output and outcome measures · No personal data",
@@ -50286,7 +50962,11 @@
               "value": "02",
               "detail": "Follow-up suggested"
             },
-            { "label": "No data", "value": "01", "detail": "Awaiting a report" }
+            {
+              "label": "No data",
+              "value": "01",
+              "detail": "Awaiting a report"
+            }
           ],
           "indicatorHeaders": [
             "Indicator",
@@ -50710,7 +51390,11 @@
             },
             {
               "title": "In Progress",
-              "cards": ["Office Build-out", "Client Website", "Factory Line B"]
+              "cards": [
+                "Office Build-out",
+                "Client Website",
+                "Factory Line B"
+              ]
             },
             {
               "title": "Ready to Bill",
@@ -50722,7 +51406,11 @@
             },
             {
               "title": "Closed",
-              "cards": ["Q1 Consulting", "Brand Refresh", "Site Survey"]
+              "cards": [
+                "Q1 Consulting",
+                "Brand Refresh",
+                "Site Survey"
+              ]
             }
           ],
           "tasksText": "cost lines",
@@ -50751,7 +51439,12 @@
         "demo": {
           "title": "Budget vs Actual",
           "badge": "Live",
-          "rows": ["Labor", "Material", "Overhead", "Subcontract"]
+          "rows": [
+            "Labor",
+            "Material",
+            "Overhead",
+            "Subcontract"
+          ]
         }
       },
       "dashboardSection": {
@@ -50762,7 +51455,10 @@
           "kanbanView": "Ledger view",
           "allActivities": "All transactions"
         },
-        "columns": ["Committed Costs", "Actual Costs"],
+        "columns": [
+          "Committed Costs",
+          "Actual Costs"
+        ],
         "tasks": [
           "Steel purchase order",
           "Site labor - Week 12",
@@ -50801,7 +51497,13 @@
         "checklist": {
           "title": "Cost Ledger",
           "subtitle": "Project Cost Details",
-          "headers": ["Date", "Employee", "Description", "Hours", "Billable"],
+          "headers": [
+            "Date",
+            "Employee",
+            "Description",
+            "Hours",
+            "Billable"
+          ],
           "rows": [
             {
               "date": "7/10/2025",
@@ -50953,7 +51655,12 @@
           "project": "Project Accounting",
           "projectCode": "PRJ-OB-VAN",
           "status": "In progress",
-          "menu": ["Projects", "Overview", "", "Budgets"],
+          "menu": [
+            "Projects",
+            "Overview",
+            "",
+            "Budgets"
+          ],
           "tabs": [
             "Overview",
             "",
@@ -51380,7 +52087,12 @@
             "status": "RFQ"
           }
         ],
-        "smartActions": ["Order once", "Automate", "Confirm", "Receive"]
+        "smartActions": [
+          "Order once",
+          "Automate",
+          "Confirm",
+          "Receive"
+        ]
       },
       "agreementSection": {
         "title": "Flexible purchase agreements,",
@@ -51492,15 +52204,27 @@
         "cards": [
           {
             "title": "Purchase settings",
-            "tags": ["RFQ", "Approval", "Vendor"]
+            "tags": [
+              "RFQ",
+              "Approval",
+              "Vendor"
+            ]
           },
           {
             "title": "Vendor rules",
-            "tags": ["Terms", "Taxes", "Currency"]
+            "tags": [
+              "Terms",
+              "Taxes",
+              "Currency"
+            ]
           },
           {
             "title": "Product options",
-            "tags": ["UoM", "Routes", "Lead time"]
+            "tags": [
+              "UoM",
+              "Routes",
+              "Lead time"
+            ]
           }
         ]
       },
@@ -51677,10 +52401,22 @@
           "imageAlt": "AQL sampling based on ISO 2859-1",
           "exampleTitle": "Worked example",
           "example": {
-            "lotSize": { "label": "Lot size", "value": "1,200 pcs" },
-            "sampleSize": { "label": "Sample size", "value": "80 pcs" },
-            "acceptReject": { "label": "Accept / Reject", "value": "10 / 11" },
-            "defectsFound": { "label": "Defects found", "value": "6 → PASS" }
+            "lotSize": {
+              "label": "Lot size",
+              "value": "1,200 pcs"
+            },
+            "sampleSize": {
+              "label": "Sample size",
+              "value": "80 pcs"
+            },
+            "acceptReject": {
+              "label": "Accept / Reject",
+              "value": "10 / 11"
+            },
+            "defectsFound": {
+              "label": "Defects found",
+              "value": "6 → PASS"
+            }
           },
           "exampleDescription": "Six defects among 80 samples are within the acceptance number of 10, so the lot passes and ships. If defects reach the rejection number (11 or more), the lot fails and an NC and CAPA are raised automatically."
         },
@@ -52083,19 +52819,35 @@
           "columns": [
             {
               "title": "New Applications",
-              "cards": ["Graphic Designer", "Sales Executive", "QA Engineer"]
+              "cards": [
+                "Graphic Designer",
+                "Sales Executive",
+                "QA Engineer"
+              ]
             },
             {
               "title": "Initial Qualification",
-              "cards": ["Frontend Developer", "Marketing Manager", "HR Officer"]
+              "cards": [
+                "Frontend Developer",
+                "Marketing Manager",
+                "HR Officer"
+              ]
             },
             {
               "title": "First Interview",
-              "cards": ["Product Designer", "Account Manager", "UX Researcher"]
+              "cards": [
+                "Product Designer",
+                "Account Manager",
+                "UX Researcher"
+              ]
             },
             {
               "title": "Contract Proposal",
-              "cards": ["Senior Developer", "Operations Lead", "SEO Specialist"]
+              "cards": [
+                "Senior Developer",
+                "Operations Lead",
+                "SEO Specialist"
+              ]
             }
           ],
           "applicationsText": "applications"
@@ -52105,14 +52857,22 @@
         "title": "Never wonder about a",
         "titleHighlight": "job's status",
         "description": "Get full pipeline visibility from application to offer, so your team always knows what comes next.",
-        "columns": ["Open Jobs", "In Progress", "Hired"],
+        "columns": [
+          "Open Jobs",
+          "In Progress",
+          "Hired"
+        ],
         "candidatesCount": "candidates"
       },
       "visualizeSection": {
         "title": "Visualize the",
         "titleHighlight": "pipeline",
         "description": "Move applicants through your recruitment stages with a clean kanban view, interview status, tags, activities, and notes.",
-        "stages": ["Qualified", "Interview", "Contract"],
+        "stages": [
+          "Qualified",
+          "Interview",
+          "Contract"
+        ],
         "starsText": "stars",
         "interviewText": "Interview",
         "candidates": [
@@ -52141,10 +52901,22 @@
         "description": "Automate descriptions using templates and AI. Generate job posts, interview invitations, and candidate messages quickly.",
         "jobDescription": "Job Description",
         "fields": [
-          ["Programmer", "Software development and web applications"],
-          ["Requirements", "React, Next.js, TypeScript, REST API"],
-          ["Location", "Remote / Hybrid"],
-          ["Experience", "3+ years"]
+          [
+            "Programmer",
+            "Software development and web applications"
+          ],
+          [
+            "Requirements",
+            "React, Next.js, TypeScript, REST API"
+          ],
+          [
+            "Location",
+            "Remote / Hybrid"
+          ],
+          [
+            "Experience",
+            "3+ years"
+          ]
         ],
         "button": "Generate description"
       },
@@ -52166,7 +52938,15 @@
         "title": "Less scheduling,",
         "subtitle": "more interviewing!",
         "description": "Schedule interviews, send calendar invitations, coordinate with hiring teams, and keep candidates updated automatically.",
-        "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat",
+          "Sun"
+        ],
         "interviewText": "Interview"
       },
       "reportingSection": {
@@ -52174,7 +52954,12 @@
         "titleHighlight": "that makes sense",
         "description": "Look at your hiring data and understand where your candidates come from, how your pipeline performs, and where your team can improve.",
         "analysisTitle": "Recruitment Analysis",
-        "stages": ["Stage 1", "Stage 2", "Stage 3", "Stage 4"]
+        "stages": [
+          "Stage 1",
+          "Stage 2",
+          "Stage 3",
+          "Stage 4"
+        ]
       },
       "featuresSection": {
         "title": "All the features",
@@ -53096,12 +53881,47 @@
         "spreadsheet": {
           "title": "Adon Spreadsheet",
           "live": "Live",
-          "headers": ["Metric", "Jan", "Feb", "Mar", "Apr", "Total"],
+          "headers": [
+            "Metric",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "Total"
+          ],
           "rows": [
-            ["Revenue", "$12.4k", "$18.7k", "$21.9k", "$28.2k", "$81.2k"],
-            ["Expenses", "$4.8k", "$6.1k", "$7.3k", "$8.9k", "$27.1k"],
-            ["Profit", "$7.6k", "$12.6k", "$14.6k", "$19.3k", "$54.1k"],
-            ["Growth", "12%", "18%", "21%", "32%", "24%"]
+            [
+              "Revenue",
+              "$12.4k",
+              "$18.7k",
+              "$21.9k",
+              "$28.2k",
+              "$81.2k"
+            ],
+            [
+              "Expenses",
+              "$4.8k",
+              "$6.1k",
+              "$7.3k",
+              "$8.9k",
+              "$27.1k"
+            ],
+            [
+              "Profit",
+              "$7.6k",
+              "$12.6k",
+              "$14.6k",
+              "$19.3k",
+              "$54.1k"
+            ],
+            [
+              "Growth",
+              "12%",
+              "18%",
+              "21%",
+              "32%",
+              "24%"
+            ]
           ],
           "revenueTrend": "Revenue trend",
           "smartInsights": "Smart insights",
@@ -53153,10 +53973,30 @@
         "demo": {
           "title": "Pivot analysis",
           "rows": [
-            ["North Region", "Sales", "$42,900", "32%"],
-            ["South Region", "Inventory", "$21,400", "18%"],
-            ["Online Store", "Orders", "$59,120", "41%"],
-            ["Corporate", "Projects", "$33,700", "24%"]
+            [
+              "North Region",
+              "Sales",
+              "$42,900",
+              "32%"
+            ],
+            [
+              "South Region",
+              "Inventory",
+              "$21,400",
+              "18%"
+            ],
+            [
+              "Online Store",
+              "Orders",
+              "$59,120",
+              "41%"
+            ],
+            [
+              "Corporate",
+              "Projects",
+              "$33,700",
+              "24%"
+            ]
           ]
         }
       },
@@ -53582,7 +54422,12 @@
         "titleHighlight": "talent pool",
         "description": "Track applications, candidates and documents in one place so your team can evaluate the right people faster.",
         "table": {
-          "headers": ["Name", "Position", "Stage", "Applied"],
+          "headers": [
+            "Name",
+            "Position",
+            "Stage",
+            "Applied"
+          ],
           "rows": [
             {
               "name": "Emma Watson",
@@ -53631,7 +54476,12 @@
       },
       "documentsSection": {
         "title": "Never lose track of another document",
-        "documents": ["Resumes", "Cover Letters", "Portfolios", "Certificates"]
+        "documents": [
+          "Resumes",
+          "Cover Letters",
+          "Portfolios",
+          "Certificates"
+        ]
       },
       "featuresSection": {
         "title": "All the features",
@@ -53756,7 +54606,12 @@
           "quoteRequest": "Allow customers to easily request a quote using predefined templates on your website."
         },
         "pipelineLabel": "CRM pipeline • Lead to production",
-        "stages": ["New Leads", "Samples", "Quotations", "Production"]
+        "stages": [
+          "New Leads",
+          "Samples",
+          "Quotations",
+          "Production"
+        ]
       },
       "stockSection": {
         "title": "Streamlined",
@@ -53765,7 +54620,12 @@
           "deliveryOrders": "Delivery orders are automatically created in inventory when sales operations are confirmed.",
           "traceability": "Lots and package tracking allows full traceability of your inventory."
         },
-        "materials": ["Cotton Rolls", "Dyed Fabric", "Zippers", "Threads"],
+        "materials": [
+          "Cotton Rolls",
+          "Dyed Fabric",
+          "Zippers",
+          "Threads"
+        ],
         "orders": [
           "Order #TX-101",
           "Order #TX-102",
@@ -53787,7 +54647,14 @@
         "titleHighlight": "purchase",
         "description": "Handle purchasing, dropshipping, and subcontracting to keep your inventory perfectly stocked.",
         "table": {
-          "headers": ["PO #", "Supplier", "Material", "Qty", "Status", "ETA"],
+          "headers": [
+            "PO #",
+            "Supplier",
+            "Material",
+            "Qty",
+            "Status",
+            "ETA"
+          ],
           "rows": [
             {
               "po": "PO-1001",
@@ -54029,17 +54896,42 @@
         "selectedType": {
           "title": "Training Time Off",
           "fields": [
-            ["Requires allocation", "Yes"],
-            ["Approval", "Manager + HR"],
-            ["Responsible", "Marc Demo"],
-            ["Validity", "Current year"]
+            [
+              "Requires allocation",
+              "Yes"
+            ],
+            [
+              "Approval",
+              "Manager + HR"
+            ],
+            [
+              "Responsible",
+              "Marc Demo"
+            ],
+            [
+              "Validity",
+              "Current year"
+            ]
           ],
-          "tags": ["Vacation", "Sick", "Remote", "Training", "Custom"]
+          "tags": [
+            "Vacation",
+            "Sick",
+            "Remote",
+            "Training",
+            "Custom"
+          ]
         }
       },
       "availabilitySection": {
         "title": "See the breakdown of your available days",
-        "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        "months": [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun"
+        ],
         "ptoText": "PTO",
         "subtitle": "Do you have",
         "subtitleHighlight": "the time?",
@@ -54054,12 +54946,30 @@
           "name": "Anita Oliver",
           "type": "Paid Time Off Request",
           "fields": [
-            ["Time Off Type", "Paid Time Off"],
-            ["Duration", "5 days"],
-            ["From", "July 15"],
-            ["To", "July 20"],
-            ["Approver", "Marc Demo"],
-            ["Status", "To Approve"]
+            [
+              "Time Off Type",
+              "Paid Time Off"
+            ],
+            [
+              "Duration",
+              "5 days"
+            ],
+            [
+              "From",
+              "July 15"
+            ],
+            [
+              "To",
+              "July 20"
+            ],
+            [
+              "Approver",
+              "Marc Demo"
+            ],
+            [
+              "Status",
+              "To Approve"
+            ]
           ],
           "approveButton": "Approve",
           "refuseButton": "Refuse"
@@ -54070,7 +54980,11 @@
         "titleHighlight": "approve",
         "titleEnd": "done",
         "description": "Managers can review all requests from one dashboard, approve quickly, and keep the team calendar accurate.",
-        "columns": ["Absent", "Present", "To Approve"],
+        "columns": [
+          "Absent",
+          "Present",
+          "To Approve"
+        ],
         "floatingNote": "Approved in one click"
       },
       "featuresSection": {
@@ -54100,9 +55014,18 @@
         ],
         "seeAllLink": "See all features",
         "accrualDemo": [
-          ["Monthly accrual", "1.5 days"],
-          ["Yearly allocation", "18 days"],
-          ["Carryover", "5 days"]
+          [
+            "Monthly accrual",
+            "1.5 days"
+          ],
+          [
+            "Yearly allocation",
+            "18 days"
+          ],
+          [
+            "Carryover",
+            "5 days"
+          ]
         ]
       },
       "appsSection": {
@@ -54249,7 +55172,11 @@
         "titleHighlight": "Stop wondering",
         "description": "Smart time tracking. Launch a timer on the fly, and ensure that timesheets are always linked to the correct project, task, or sales order. No more missing data.",
         "demo": {
-          "tabs": ["Day", "Week", "Month"],
+          "tabs": [
+            "Day",
+            "Week",
+            "Month"
+          ],
           "infoText": "SO001 / Project Check Code",
           "labels": {
             "timer": "Timer ↗",
@@ -54258,7 +55185,11 @@
             "totalHours": "Total hours worked",
             "overtime": "Overtime ↗"
           },
-          "tableHeaders": ["Day", "Task Time", "Hours"],
+          "tableHeaders": [
+            "Day",
+            "Task Time",
+            "Hours"
+          ],
           "rows": [
             {
               "day": "Total Task - Web app validation",
@@ -54326,7 +55257,11 @@
         "viewsDemo": {
           "title": "Views",
           "description": "Switch between 5 different views as per your needs.",
-          "tabs": ["Day", "Week", "Month"],
+          "tabs": [
+            "Day",
+            "Week",
+            "Month"
+          ],
           "entries": [
             {
               "employee": "Audrey Peterson",
@@ -54431,7 +55366,11 @@
           "variants": "Variants",
           "stockTracking": "Stock tracking"
         },
-        "categories": ["Teddy Bears", "Action Figures", "Board Games"]
+        "categories": [
+          "Teddy Bears",
+          "Action Figures",
+          "Board Games"
+        ]
       },
       "rewardsSection": {
         "title": "Game-changing",
@@ -60692,6 +61631,555 @@
           "spring2023": "Spring 2023",
           "fahimYasinUddin": "Fahim Yasin Uddin"
         }
+      }
+    },
+    "educationIndustries": {
+      "pages": {
+        "school": {
+          "title": "School",
+          "eyebrow": "AdonERP FOR SCHOOLS",
+          "headline": "Make room for",
+          "accent": "a connected school day.",
+          "description": "Bring the admissions desk, classroom and school office into one considered view of the learner’s journey.",
+          "perspective": "A school day has more than one perspective.",
+          "demoTitle": "A small register. A clearer morning.",
+          "demoDescription": "Try marking attendance for four fictional learners. Every change stays in this browser session; no student record is saved.",
+          "toolsTitle": "Explore the work around the classroom.",
+          "tools": {
+            "0": {
+              "title": "Admissions & student records",
+              "body": "Follow the application journey into a structured student record."
+            },
+            "1": {
+              "title": "Attendance & the timetable",
+              "body": "Explore classroom registers and the school-day schedule."
+            },
+            "2": {
+              "title": "Fees & the school office",
+              "body": "Look at fee structures, collections and their reporting context."
+            },
+            "3": {
+              "title": "Notices & school communication",
+              "body": "See how a notice brings its audience and message together."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "School office",
+              "title": "Keep the learner’s context together.",
+              "body": "Start with admissions, follow the student record and keep the fee conversation connected to the right learner.",
+              "steps": {
+                "0": "Application & admission",
+                "1": "Student identity",
+                "2": "Fee and office context"
+              }
+            },
+            "1": {
+              "role": "Teachers",
+              "title": "Begin with the class in front of you.",
+              "body": "Explore the attendance, timetable and results views that support a teacher’s working day.",
+              "steps": {
+                "0": "Class & timetable",
+                "1": "Attendance register",
+                "2": "Exams & results"
+              }
+            },
+            "2": {
+              "role": "School leadership",
+              "title": "Read the school as a connected whole.",
+              "body": "Move between enrolment, academic activity and administrative detail without losing the context of the school.",
+              "steps": {
+                "0": "School dashboard",
+                "1": "Academic structure",
+                "2": "Reports & follow-up"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Is this a live school system?",
+              "1": "This page is an industry showcase. Its attendance exercise uses fictional learners and resets with the page. Use the advisor demo to discuss the complete product workflow."
+            },
+            "1": {
+              "0": "Can we explore our class and fee structure?",
+              "1": "Yes. Bring your class levels, sections, academic terms and fee rules to the demo so the discussion can follow your institution’s process."
+            },
+            "2": {
+              "0": "Will our existing data be changed here?",
+              "1": "No. This page does not connect to a student database, record attendance or collect fees."
+            }
+          }
+        },
+        "college": {
+          "title": "College",
+          "eyebrow": "AdonERP FOR COLLEGES",
+          "headline": "A clearer rhythm",
+          "accent": "for every academic session.",
+          "description": "Connect the programme, the classroom and the college office around the practical work of an academic session.",
+          "perspective": "A college runs on coordinated decisions.",
+          "demoTitle": "Try a timetable conversation.",
+          "demoDescription": "Compare a proposed lesson with three illustrative sessions. Check room, tutor and group overlaps without creating a booking.",
+          "toolsTitle": "Connect the session with the supporting work.",
+          "tools": {
+            "0": {
+              "title": "Academic structure",
+              "body": "Explore classes, sections and the academic framework behind the session."
+            },
+            "1": {
+              "title": "Timetable planning",
+              "body": "Inspect the teaching timetable and its classroom context."
+            },
+            "2": {
+              "title": "Examinations & results",
+              "body": "Look at assessment records and how results are presented."
+            },
+            "3": {
+              "title": "Fees & reporting",
+              "body": "Explore the office’s view of fee reporting and collections."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Academic office",
+              "title": "Plan the session as a whole.",
+              "body": "Bring the academic structure, class timetable and examination context into the same planning conversation.",
+              "steps": {
+                "0": "Programme & class structure",
+                "1": "Teaching timetable",
+                "2": "Assessment context"
+              }
+            },
+            "1": {
+              "role": "Faculty",
+              "title": "See the teaching commitment in context.",
+              "body": "Start from the group and teaching slot, then follow attendance and the assessment record.",
+              "steps": {
+                "0": "Teaching assignment",
+                "1": "Class attendance",
+                "2": "Assessment records"
+              }
+            },
+            "2": {
+              "role": "Administration",
+              "title": "Keep the office close to the session.",
+              "body": "Read learner and fee context alongside the academic calendar when reviewing college operations.",
+              "steps": {
+                "0": "Student records",
+                "1": "Fees & collections",
+                "2": "Reports & follow-up"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Does the planner reserve a room?",
+              "1": "No. It is a local demonstration that checks only the three visible example sessions. It does not read or update a college timetable."
+            },
+            "1": {
+              "0": "Can we discuss different programmes and sessions?",
+              "1": "Yes. Use your own programme, group, room and teaching arrangements as the starting point for an advisor walkthrough."
+            },
+            "2": {
+              "0": "Is a conflict-free example a complete timetable approval?",
+              "1": "No. A full timetable may also need institutional rules, availability and other constraints that are outside this small example."
+            }
+          }
+        },
+        "university": {
+          "title": "University",
+          "eyebrow": "AdonERP FOR UNIVERSITIES",
+          "headline": "A connected campus.",
+          "accent": "A considered academic journey.",
+          "description": "Explore the relationship between admissions, academic structure and the student journey, with space for the detail each university needs.",
+          "perspective": "One campus. Different responsibilities.",
+          "demoTitle": "Sketch an example semester.",
+          "demoDescription": "Choose from five fictional courses and compare their credits with an illustrative planning budget. This is not course registration or an eligibility decision.",
+          "toolsTitle": "Start with the available university previews.",
+          "tools": {
+            "0": {
+              "title": "University overview",
+              "body": "Explore the existing dashboard presentation and its campus-level context."
+            },
+            "1": {
+              "title": "Admissions journey",
+              "body": "Look at the existing university admissions showcase."
+            },
+            "2": {
+              "title": "Academic planning context",
+              "body": "Explore the Education academic-structure preview as a starting point for discussion."
+            },
+            "3": {
+              "title": "Campus resource context",
+              "body": "Inspect the existing room-management showcase for a resource conversation."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Academic office",
+              "title": "Begin with the shape of the institution.",
+              "body": "Use faculties, programmes, terms and courses to frame a discussion around your university’s academic structure.",
+              "steps": {
+                "0": "Institutional structure",
+                "1": "Term & curriculum context",
+                "2": "Student academic journey"
+              }
+            },
+            "1": {
+              "role": "Admissions team",
+              "title": "Keep the applicant’s journey readable.",
+              "body": "Explore the admissions showcase, then discuss the handoff into student and academic records.",
+              "steps": {
+                "0": "Application context",
+                "1": "Admissions review",
+                "2": "Student-record handoff"
+              }
+            },
+            "2": {
+              "role": "Campus leadership",
+              "title": "Follow the detail behind the overview.",
+              "body": "Use the campus overview to guide questions about academic activity, admissions and resource planning.",
+              "steps": {
+                "0": "University overview",
+                "1": "Academic activity",
+                "2": "Resource context"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Is the credit planner an official registration check?",
+              "1": "No. The courses, credits and budget are illustrative. It does not check prerequisites, degree requirements, academic standing or registration eligibility."
+            },
+            "1": {
+              "0": "Which university previews can I explore here?",
+              "1": "The linked university presentations cover the dashboard and admissions. Academic planning on this page is an illustrative discussion tool; use a guided demo to explore your institution’s requirements."
+            },
+            "2": {
+              "0": "Can we discuss our own academic rules?",
+              "1": "Yes. Bring programme structures, credit rules, term arrangements and reporting needs to the advisor conversation."
+            }
+          }
+        },
+        "lms": {
+          "title": "LMS",
+          "eyebrow": "AdonERP FOR LEARNING EXPERIENCES",
+          "headline": "Give every lesson",
+          "accent": "a thoughtful next step.",
+          "description": "Explore a focused learning experience that brings the lesson, practice and progress into a clear, approachable flow.",
+          "perspective": "Design the experience around the learner.",
+          "demoTitle": "Step inside a sample learning studio.",
+          "demoDescription": "Read three short example lessons, try a knowledge check and mark local progress. No enrolment, grade or certificate is created.",
+          "toolsTitle": "Connect learning with its wider context.",
+          "tools": {
+            "0": {
+              "title": "eLearning showcase",
+              "body": "Explore the existing eLearning product presentation."
+            },
+            "1": {
+              "title": "Learner records",
+              "body": "Look at the Education student-record showcase for institutional context."
+            },
+            "2": {
+              "title": "Assessment context",
+              "body": "Explore the existing examinations and results presentation."
+            },
+            "3": {
+              "title": "Academic structure",
+              "body": "See the structure that can frame an institutional learning conversation."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Learners",
+              "title": "A clear place to begin, practice and reflect.",
+              "body": "The sample studio keeps a short lesson, a practice question and a visible next action together.",
+              "steps": {
+                "0": "Open the lesson",
+                "1": "Try the activity",
+                "2": "Reflect & continue"
+              }
+            },
+            "1": {
+              "role": "Educators",
+              "title": "Make the learning intention visible.",
+              "body": "Use the studio to discuss how lesson content, practice and feedback should work for your learners.",
+              "steps": {
+                "0": "Frame the goal",
+                "1": "Shape the practice",
+                "2": "Explain the feedback"
+              }
+            },
+            "2": {
+              "role": "Learning teams",
+              "title": "Think beyond the content list.",
+              "body": "Use the product conversation to explore course structure and how learning should connect to your institution’s context.",
+              "steps": {
+                "0": "Course structure",
+                "1": "Learner experience",
+                "2": "Progress context"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Is there a video playing in this preview?",
+              "1": "No. The working demo is a reading-based lesson studio with local progress and a sample knowledge check. No video player or streaming integration is implied."
+            },
+            "1": {
+              "0": "Will completing the sample issue a certificate?",
+              "1": "No. Completion marks exist only in local component state and reset when the page is reloaded. They are not official learning records."
+            },
+            "2": {
+              "0": "How can we discuss our actual courses?",
+              "1": "Bring course outlines, learner groups and assessment needs to an advisor walkthrough. The sample studio is a starting point for that conversation."
+            }
+          }
+        }
+      },
+      "learners": {
+        "0": {
+          "label": "Learner 01"
+        },
+        "1": {
+          "label": "Learner 02"
+        },
+        "2": {
+          "label": "Learner 03"
+        },
+        "3": {
+          "label": "Learner 04"
+        }
+      },
+      "sessions": {
+        "0": {
+          "title": "Applied science"
+        },
+        "1": {
+          "title": "Communication"
+        },
+        "2": {
+          "title": "Quantitative skills"
+        }
+      },
+      "courses": {
+        "0": {
+          "title": "Academic communication",
+          "area": "Foundation"
+        },
+        "1": {
+          "title": "Quantitative thinking",
+          "area": "Foundation"
+        },
+        "2": {
+          "title": "Environment & society",
+          "area": "Interdisciplinary"
+        },
+        "3": {
+          "title": "Research foundations",
+          "area": "Methods"
+        },
+        "4": {
+          "title": "Design & inquiry",
+          "area": "Elective"
+        }
+      },
+      "lessons": {
+        "0": {
+          "title": "Start with a clear goal",
+          "duration": "Short reading",
+          "body": "A useful learning goal describes something a learner can do. In this sample, the goal is to explain an idea in your own words and connect it with a simple example.",
+          "prompt": "Choose a familiar idea. Write one sentence about what you would like someone to understand after a short lesson.",
+          "takeaway": "A visible goal gives the lesson and its practice a shared direction."
+        },
+        "1": {
+          "title": "Make room for practice",
+          "duration": "Short reading",
+          "body": "Practice gives the learner a chance to use the idea. It can be a small explanation, a worked example or a comparison. This sample uses a short reflection rather than an uploaded assignment.",
+          "prompt": "Explain your chosen idea in your own words. Add one example that would help another person understand it.",
+          "takeaway": "The practice should connect directly with the goal."
+        },
+        "2": {
+          "title": "Connect feedback with the next step",
+          "duration": "Short reading",
+          "body": "Feedback is easier to use when it points to something specific. In this studio, the sample question explains why an answer fits the learning goal, then gives you a next step to try.",
+          "prompt": "Read your explanation again. Identify one part that is clear and one part where a more concrete example would help.",
+          "takeaway": "Reflection can turn feedback into a useful next action."
+        }
+      },
+      "ui": {
+        "metadataTitle": "{name} Management | Education Industries",
+        "canvasTitle": "{name} / Concept canvas",
+        "initialMark": "{status} · initial example",
+        "present": "Present",
+        "late": "Late",
+        "unmarked": "Unmarked",
+        "exampleCredits": "{count} example credits",
+        "lessonNumber": "Lesson {number}",
+        "productPreviewNumber": "{number} / PRODUCT PREVIEW",
+        "experience": "{name} experience",
+        "previewRegion": "{name} preview with a lower-half demo invitation",
+        "walkthrough": "{name} · Full walkthrough",
+        "fullWorkflow": "See the complete workflow.",
+        "educationCategory": "EDUCATION / {name}",
+        "fictionalRecord": "{id} · fictional record",
+        "attendanceFor": "Attendance for {name}",
+        "endAfterStart": "End time must be after start time.",
+        "validTimes": "Choose valid start and end times.",
+        "overlaps": "Overlapping example sessions: {count}",
+        "sharedResources": "{id}: shared {resources}",
+        "creditsAbove": "Credits above the example budget: {count}.",
+        "creditsRemaining": "Credits remaining within the example budget: {count}.",
+        "lessonsCompleted": "Lessons marked complete locally: {count} of {total}",
+        "sampleLesson": "SAMPLE LESSON {number} / {duration}",
+        "absent": "Absent",
+        "illustrativePreview": "Illustrative preview",
+        "programmeStructure": "The programme <em>gives the structure.</em>",
+        "timetableRhythm": "The timetable <em>gives the rhythm.</em>",
+        "officeContext": "The college office <em>keeps the context.</em>",
+        "slotContext": "Each slot has a room, a group and a tutor.",
+        "practicePart": "Make the practice part of the lesson."
+      },
+      "choices": {
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "lab01": "Lab 01",
+        "hallB": "Hall B",
+        "tutorA": "Tutor A",
+        "tutorB": "Tutor B",
+        "science1": "Science 1",
+        "humanities1": "Humanities 1",
+        "room": "room",
+        "tutor": "tutor",
+        "group": "group"
+      },
+      "copy": {
+        "fictionalExampleData": "Fictional example data",
+        "theSchoolDayRegister": "The school-day register",
+        "theSessionOverview": "The session overview",
+        "theAcademicPlanningConversation": "The academic planning conversation",
+        "theLearningOutline": "The learning outline",
+        "fictionalLearners": "Fictional learners",
+        "initialMarks": "Initial marks",
+        "registerState": "Register state",
+        "localOnly": "Local only",
+        "exampleSessions": "Example sessions",
+        "roomsInExample": "Rooms in example",
+        "plannerState": "Planner state",
+        "fictionalCourses": "Fictional courses",
+        "exampleCreditBudget": "Example credit budget",
+        "registration": "Registration",
+        "notPerformed": "Not performed",
+        "sampleReadings": "Sample readings",
+        "knowledgeCheck": "Knowledge check",
+        "1Example": "1 example",
+        "officialLearningRecords": "Official learning records",
+        "noneCreated": "None created",
+        "shortReadingExampleContent": "Short reading · example content",
+        "illustrativeCompositionNotAScreenshotOfAConnected": "Illustrative composition, not a screenshot of a connected institution. The working example above is separate from this static canvas.",
+        "breadcrumb": "Breadcrumb",
+        "industries": "Industries",
+        "education": "Education",
+        "theWiderProductConversation": "THE WIDER PRODUCT CONVERSATION",
+        "browseExistingProductPresentationsThenBringYourInstitutions": "Browse existing product presentations, then bring your institution’s process to a guided demo.",
+        "exploreThePresentation": "Explore the presentation",
+        "seeThePartsTogether": "SEE THE PARTS TOGETHER",
+        "aCloserLookAtTheExperience": "A closer look at the experience.",
+        "conceptCanvasWithFictionalRecordsContinueTheConversation": "Concept canvas with fictional records. Continue the conversation with an advisor to explore your own workflow.",
+        "exploreYourInstitutionsRecordsLearningContextAndEveryday": "Explore your institution’s records, learning context and everyday workflows in a guided product conversation.",
+        "aFewUsefulDetails": "A FEW USEFUL DETAILS",
+        "knowWhatYoureExploring": "Know what you’re exploring.",
+        "educationInDifferentContexts": "EDUCATION, IN DIFFERENT CONTEXTS",
+        "exploreAnotherPartOfTheJourney": "Explore another part of the journey.",
+        "yourInstitutionYourWorkflow": "YOUR INSTITUTION. YOUR WORKFLOW.",
+        "letsBeginWithTheWayYouWork": "Let’s begin with the way you work.",
+        "bringYourAcademicAndAdministrativeQuestionsToAn": "Bring your academic and administrative questions to an advisor conversation.",
+        "learnerContext": "Learner context",
+        "classroomRhythm": "Classroom rhythm",
+        "theSchoolDayIllustrated": "THE SCHOOL DAY / ILLUSTRATED",
+        "aConsideredMorning": "A considered morning",
+        "classRegisterAttendanceFollowUp": "Class register → Attendance → Follow-up",
+        "theOfficeStaysInContext": "The office stays in context",
+        "noticesLearnerRecordsAndFeeQuestions": "Notices, learner records and fee questions",
+        "makeTheDayFeelConnected": "make the day feel connected",
+        "conceptualCampusAndSchoolDayCanvasNoReal": "Conceptual campus and school-day canvas · no real school data",
+        "theAcademicSession": "THE ACADEMIC SESSION",
+        "aSessionInView": "A SESSION IN VIEW",
+        "illustrativeSundayTimetable": "Illustrative Sunday timetable",
+        "appliedScience": "Applied science",
+        "lab01Science1": "Lab 01 · Science 1",
+        "communication": "Communication",
+        "hallBHumanities1": "Hall B · Humanities 1",
+        "twoOfThreeFictionalSessionsUsedInThe": "Two of three fictional sessions used in the local planning exercise",
+        "application": "APPLICATION",
+        "academicContext": "ACADEMIC CONTEXT",
+        "studentJourney": "STUDENT JOURNEY",
+        "exampleAcademicMap": "EXAMPLE ACADEMIC MAP",
+        "structure": "Structure",
+        "programmeTermContext": "Programme & term context",
+        "choices": "Choices",
+        "coursesCreditConversation": "Courses & credit conversation",
+        "beginWithTheStudentsJourney": "Begin with the student’s journey.",
+        "conceptualCampusIllustrationNoInstitutionOrAccreditationImplied": "Conceptual campus illustration · no institution or accreditation implied",
+        "theLearningStudio": "THE LEARNING STUDIO",
+        "interactiveExampleBelow": "Interactive example below",
+        "theShortCourse": "THE SHORT COURSE",
+        "aClearGoal": "A clear goal",
+        "roomToPractice": "Room to practice",
+        "aUsefulNextStep": "A useful next step",
+        "lessonPracticeReflection": "LESSON / PRACTICE / REFLECTION",
+        "startWithAnIdea": "Start with an idea.",
+        "readingBasedSampleStudioNoVideoEnrolmentOr": "Reading-based sample studio · no video, enrolment or certificate claim",
+        "aSmallExampleOfAMoreConsideredLearning": "A small example of a more considered learning flow.",
+        "startWithThePeopleDoingTheWork": "START WITH THE PEOPLE DOING THE WORK",
+        "chooseAPerspective": "Choose a perspective",
+        "fictionalClassFourAnonymousLearners": "Fictional class · four anonymous learners",
+        "resetExample": "Reset example",
+        "thisLocalExample": "THIS LOCAL EXAMPLE",
+        "aRegisterYouCanReadAtAGlance": "A register you can read at a glance.",
+        "marked": "Marked",
+        "inAttendance": "In attendance",
+        "stillUnmarked": "Still unmarked",
+        "inAttendanceIncludesPresentAndLateTheseMarks": "In attendance includes Present and Late. These marks update only the four fictional rows here; no register is submitted.",
+        "threeIllustrativeSessionsNoLiveAvailability": "Three illustrative sessions · no live availability",
+        "intervalsThatMeetExactlyAtABoundaryDo": "Intervals that meet exactly at a boundary do not overlap. Only matching rooms, tutors or groups in these three rows are checked.",
+        "localLessonProposal": "Local lesson proposal",
+        "tryAProposedLesson": "Try a proposed lesson",
+        "day": "Day",
+        "room": "Room",
+        "tutor": "Tutor",
+        "group": "Group",
+        "starts": "Starts",
+        "ends": "Ends",
+        "checkTheTimes": "Check the times",
+        "noOverlapsInThisExample": "No overlaps in this example",
+        "theProposalDoesNotConflictWithTheThree": "The proposal does not conflict with the three visible sessions. This does not reserve a room or approve a full timetable.",
+        "fictionalCoursesIllustrativeCredits": "Fictional courses · illustrative credits",
+        "credits": "credits",
+        "anExampleSemesterInView": "An example semester, in view.",
+        "illustrativeCreditBudget": "Illustrative credit budget",
+        "resetExamplePlan": "Reset example plan",
+        "noPrerequisiteDegreeAdmissionOrAcademicStandingRules": "No prerequisite, degree, admission or academic-standing rules are checked. This is a planning illustration, not official registration.",
+        "readingBasedLocalPreview": "Reading-based local preview",
+        "thoughtfulLearningDesign": "Thoughtful learning design",
+        "chooseASampleLesson": "Choose a sample lesson",
+        "localLessonProgress": "Local lesson progress",
+        "resetStudio": "Reset studio",
+        "tryASmallReflection": "TRY A SMALL REFLECTION",
+        "markedCompleteLocally": "Marked complete locally",
+        "markThisLessonCompleteLocally": "Mark this lesson complete locally",
+        "aSampleKnowledgeCheck": "A sample knowledge check",
+        "whichActivityGivesALearnerAChanceTo": "Which activity gives a learner a chance to use an idea?",
+        "readOnlyTheCourseTitle": "Read only the course title.",
+        "explainTheIdeaInYourOwnWordsWith": "Explain the idea in your own words with an example.",
+        "skipDirectlyToTheNextSection": "Skip directly to the next section.",
+        "checkExampleAnswer": "Check example answer",
+        "thatFitsTheExampleGoalExplainingAndApplying": "That fits the example goal: explaining and applying an idea gives the learner a way to practice.",
+        "tryAgainLookForAnActivityWhereThe": "Try again. Look for an activity where the learner explains or applies the idea, rather than only navigating.",
+        "progressAnswersAndCompletionMarksExistOnlyIn": "Progress, answers and completion marks exist only in this page’s local state. No learning record, grade, enrolment or certificate is saved.",
+        "tryASmallPartOfTheExperience": "TRY A SMALL PART OF THE EXPERIENCE",
+        "localExampleNotConnected": "Local example · not connected",
+        "exploreTheExample": "Explore the example"
       }
     }
   }

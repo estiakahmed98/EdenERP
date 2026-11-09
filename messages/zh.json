@@ -61632,6 +61632,555 @@
           "fahimYasinUddin": "Fahim Yasin Uddin"
         }
       }
+    },
+    "educationIndustries": {
+      "pages": {
+        "school": {
+          "title": "学校",
+          "eyebrow": "AdonERP 学校用",
+          "headline": "让校园的每一天",
+          "accent": "协同有序，从容运转。",
+          "description": "将招生、课堂与校务联系起来，清晰呈现学生在校学习的每个阶段。",
+          "perspective": "上学的一天有不止一种观点。",
+          "demoTitle": "一个小寄存器。一个更晴朗的早晨。",
+          "demoDescription": "尝试标记四名虚构学生的出勤情况。每个更改都会保留在该浏览器会话中；不保存学生记录。",
+          "toolsTitle": "探索课堂周围的工作。",
+          "tools": {
+            "0": {
+              "title": "招生和学生记录",
+              "body": "按照申请流程进入结构化的学生记录。"
+            },
+            "1": {
+              "title": "出席人数及时间表",
+              "body": "探索教室登记册和上课时间表。"
+            },
+            "2": {
+              "title": "费用和学校办公室",
+              "body": "查看费用结构、收费及其报告背景。"
+            },
+            "3": {
+              "title": "通知和学校通讯",
+              "body": "了解通知如何将受众和信息结合在一起。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "学校办公室",
+              "title": "将学生的背景放在一起。",
+              "body": "从招生开始，跟踪学生记录，并将费用对话与合适的学生联系起来。",
+              "steps": {
+                "0": "申请及入学",
+                "1": "学生身份",
+                "2": "费用和办公环境"
+              }
+            },
+            "1": {
+              "role": "教师队伍",
+              "title": "从你面前的课程开始。",
+              "body": "探索支持教师工作日的出勤率、时间表和结果视图。",
+              "steps": {
+                "0": "课程及时间表",
+                "1": "考勤登记",
+                "2": "考试及成绩"
+              }
+            },
+            "2": {
+              "role": "学校领导",
+              "title": "将学校视为一个相互联系的整体。",
+              "body": "在招生、学术活动和行政细节之间切换，而不会失去学校的背景。",
+              "steps": {
+                "0": "学校仪表板",
+                "1": "学术结构",
+                "2": "报告及后续行动"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "这是实时学校系统吗？",
+              "1": "此页面是行业展示。它的出勤练习使用虚构的学生并随页面重置。使用顾问演示来讨论完整的产品工作流程。"
+            },
+            "1": {
+              "0": "我们可以探讨一下我们的课程和费用结构吗？",
+              "1": "是的。将您的班级级别、部分、学术术语和费用规则带到演示中，以便讨论可以遵循您所在机构的流程。"
+            },
+            "2": {
+              "0": "我们现有的数据会在这里改变吗？",
+              "1": "不。此页面不会连接到学生数据库、记录出勤情况或收取费用。"
+            }
+          }
+        },
+        "college": {
+          "title": "学院",
+          "eyebrow": "面向学院的 AdonERP",
+          "headline": "让每个学期",
+          "accent": "更有条理，更好协同。",
+          "description": "围绕每学期的日常工作，协调教学项目、课堂安排与学院行政事务。",
+          "perspective": "学院的日常运作，需要协同决策。",
+          "demoTitle": "试着安排一节课。",
+          "demoDescription": "将拟安排的课程与三节示例课比较，检查教室、教师或学生组是否存在时间冲突。操作不会创建任何预约。",
+          "toolsTitle": "让教学安排与行政工作相互衔接。",
+          "tools": {
+            "0": {
+              "title": "学术结构",
+              "body": "了解学期中的班级、分组与教学框架。"
+            },
+            "1": {
+              "title": "时间表规划",
+              "body": "检查教学时间表及其课堂环境。"
+            },
+            "2": {
+              "title": "考试及结果",
+              "body": "查看评估记录以及结果的呈现方式。"
+            },
+            "3": {
+              "title": "费用和报告",
+              "body": "了解行政人员如何查看收费情况及相关报表。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "教务处",
+              "title": "统筹规划整个学期。",
+              "body": "将学术结构、课程时间表和考试背景纳入同一规划对话中。",
+              "steps": {
+                "0": "课程和班级结构",
+                "1": "教学时间表",
+                "2": "评估背景"
+              }
+            },
+            "1": {
+              "role": "教师",
+              "title": "全面了解教学任务。",
+              "body": "从小组和教学时段开始，然后跟踪出勤和评估记录。",
+              "steps": {
+                "0": "教学任务",
+                "1": "上课出勤率",
+                "2": "评估记录"
+              }
+            },
+            "2": {
+              "role": "行政管理",
+              "title": "让行政工作与学期安排保持同步。",
+              "body": "在审查大学运营时，请阅读学生和费用背景以及学术日历。",
+              "steps": {
+                "0": "学生记录",
+                "1": "费用及收费",
+                "2": "报告及后续行动"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "规划工具会预订教室吗？",
+              "1": "不会。这个页面内的示例仅检查可见的三节课，不会读取或修改学院的实际课程表。"
+            },
+            "1": {
+              "0": "可以讨论不同的教学项目和学期安排吗？",
+              "1": "是的。使用您自己的计划、小组、房间和教学安排作为顾问演练的起点。"
+            },
+            "2": {
+              "0": "示例中没有时间冲突，就代表整份课程表获批了吗？",
+              "1": "不。完整的时间表可能还需要机构规则、可用性和其他限制，这些都超出了这个小例子。"
+            }
+          }
+        },
+        "university": {
+          "title": "大学",
+          "eyebrow": "AdonERP 适用于大学",
+          "headline": "互联的校园。",
+          "accent": "有规划的学业旅程。",
+          "description": "了解招生、教务与学生学习历程如何衔接，同时兼顾各所大学的具体需求。",
+          "perspective": "一校区。不同的责任。",
+          "demoTitle": "试着规划一个示例学期。",
+          "demoDescription": "从五门虚构课程中选择科目，将总学分与示例学分上限比较。这不会进行选课注册，也不会判断注册资格。",
+          "toolsTitle": "从可用的大学预览开始。",
+          "tools": {
+            "0": {
+              "title": "大学概况",
+              "body": "探索现有的仪表板演示及其校园级别的背景。"
+            },
+            "1": {
+              "title": "招生历程",
+              "body": "看看现有的大学招生展示。"
+            },
+            "2": {
+              "title": "学术规划背景",
+              "body": "探索教育学术结构预览作为讨论的起点。"
+            },
+            "3": {
+              "title": "校园资源脉络",
+              "body": "检查现有的房间管理展示柜以进行资源对话。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "教务处",
+              "title": "从机构的形状开始。",
+              "body": "利用院系、项目、术语和课程来围绕大学的学术结构进行讨论。",
+              "steps": {
+                "0": "机构架构",
+                "1": "学期和课程背景",
+                "2": "学生的学术旅程"
+              }
+            },
+            "1": {
+              "role": "招生团队",
+              "title": "让申请人的旅程保持可读性。",
+              "body": "探索招生展示，然后讨论学生和学业记录的交接。",
+              "steps": {
+                "0": "应用上下文",
+                "1": "招生审核",
+                "2": "学生记录交接"
+              }
+            },
+            "2": {
+              "role": "校园领导",
+              "title": "遵循概述背后的细节。",
+              "body": "使用校园概览来指导有关学术活动、招生和资源规划的问题。",
+              "steps": {
+                "0": "大学概况",
+                "1": "学术活动",
+                "2": "资源上下文"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "学分规划工具会进行正式的注册资格审核吗？",
+              "1": "不会。课程、学分及上限仅为示例，不检查先修条件、学位要求、学业状态或注册资格。"
+            },
+            "1": {
+              "0": "我可以在这里探索哪些大学预展？",
+              "1": "链接的大学演示文稿涵盖仪表板和招生。本页的学术规划是一个说明性讨论工具；使用引导演示来探索您机构的要求。"
+            },
+            "2": {
+              "0": "我们可以讨论我们自己的学术规则吗？",
+              "1": "可以。请与顾问讨论您的教学项目结构、学分规则、学期安排及报表需求。"
+            }
+          }
+        },
+        "lms": {
+          "title": "LMS",
+          "eyebrow": "AdonERP 学习体验",
+          "headline": "让每一课",
+          "accent": "都有清晰的下一步。",
+          "description": "将课程、练习与学习进度融为一体，体验清晰易用的学习流程。",
+          "perspective": "围绕学生设计体验。",
+          "demoTitle": "走进示例学习工作室。",
+          "demoDescription": "阅读三篇简短的示例课程，回答练习题并在本页记录进度。操作不会生成报名记录、成绩或证书。",
+          "toolsTitle": "将学习与其更广泛的背景联系起来。",
+          "tools": {
+            "0": {
+              "title": "电子学习展示",
+              "body": "探索现有的电子学习产品演示。"
+            },
+            "1": {
+              "title": "学生记录",
+              "body": "查看教育学生记录展示以了解机构背景。"
+            },
+            "2": {
+              "title": "评估背景",
+              "body": "探索现有的考试和结果呈现。"
+            },
+            "3": {
+              "title": "学术结构",
+              "body": "查看可以构建机构学习对话的结构。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "学生",
+              "title": "一个清晰的开始、实践和反思的地方。",
+              "body": "示例工作室将简短的课程、练习题和可见的下一步行动结合在一起。",
+              "steps": {
+                "0": "打开课程",
+                "1": "尝试活动",
+                "2": "反思并继续"
+              }
+            },
+            "1": {
+              "role": "教育工作者",
+              "title": "让学习意图看得见。",
+              "body": "使用工作室讨论课程内容、练习和反馈应如何为您的学生发挥作用。",
+              "steps": {
+                "0": "设定目标",
+                "1": "塑造实践",
+                "2": "解释反馈"
+              }
+            },
+            "2": {
+              "role": "学习团队",
+              "title": "超越内容列表的思考。",
+              "body": "使用产品对话来探索课程结构以及学习应如何与您所在机构的背景联系起来。",
+              "steps": {
+                "0": "课程结构",
+                "1": "学习体验",
+                "2": "进展背景"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "此预览中是否有视频正在播放？",
+              "1": "不。工作演示是一个基于阅读的课程工作室，具有本地进度和示例知识检查。不暗示任何视频播放器或流媒体集成。"
+            },
+            "1": {
+              "0": "完成样品会颁发证书吗？",
+              "1": "不会。完成标记仅存在于本地组件状态中，并在重新加载页面时重置。它们不是正式的学习记录。"
+            },
+            "2": {
+              "0": "我们如何讨论我们的实际课程？",
+              "1": "将课程大纲、学生群体和评估需求提供给顾问演练。示例工作室是该对话的起点。"
+            }
+          }
+        }
+      },
+      "learners": {
+        "0": {
+          "label": "学生01"
+        },
+        "1": {
+          "label": "学生02"
+        },
+        "2": {
+          "label": "学生03"
+        },
+        "3": {
+          "label": "学生04"
+        }
+      },
+      "sessions": {
+        "0": {
+          "title": "应用科学"
+        },
+        "1": {
+          "title": "沟通"
+        },
+        "2": {
+          "title": "定量能力"
+        }
+      },
+      "courses": {
+        "0": {
+          "title": "学术交流",
+          "area": "基础课"
+        },
+        "1": {
+          "title": "定量思维",
+          "area": "基础课"
+        },
+        "2": {
+          "title": "环境与社会",
+          "area": "跨学科"
+        },
+        "3": {
+          "title": "研究基础",
+          "area": "研究方法"
+        },
+        "4": {
+          "title": "设计与探究",
+          "area": "选修课"
+        }
+      },
+      "lessons": {
+        "0": {
+          "title": "从明确的目标开始",
+          "duration": "短读",
+          "body": "有用的学习目标描述了学生可以做的事情。在此示例中，目标是用您自己的话解释一个想法并将其与一个简单的示例联系起来。",
+          "prompt": "选择一个熟悉的想法。写一个句子，说明您希望别人在简短的课程后理解什么。",
+          "takeaway": "可见的目标为课程及其实践提供了共同的方向。"
+        },
+        "1": {
+          "title": "腾出练习空间",
+          "duration": "短读",
+          "body": "实践让学生有机会运用这个想法。它可以是一个小的解释、一个可行的例子或一个比较。此示例使用简短的反思而不是上传的作业。",
+          "prompt": "用你自己的话解释你选择的想法。添加一个可以帮助其他人理解的例子。",
+          "takeaway": "实践应该与目标直接联系。"
+        },
+        "2": {
+          "title": "将反馈与下一步联系起来",
+          "duration": "短读",
+          "body": "当反馈指向特定的事物时，它更容易使用。在这个工作室中，示例问题解释了为什么答案符合学习目标，然后为您提供下一步尝试。",
+          "prompt": "再读一遍你的解释。确定一个清晰的部分和一个更具体的例子会有所帮助的部分。",
+          "takeaway": "反思可以将反馈转化为有用的下一步行动。"
+        }
+      },
+      "ui": {
+        "metadataTitle": "{name}管理 | 教育行业",
+        "canvasTitle": "{name} / 概念示意",
+        "initialMark": "{status} · 初始示例",
+        "present": "出勤",
+        "late": "迟到",
+        "unmarked": "未登记",
+        "exampleCredits": "示例学分：{count}",
+        "lessonNumber": "第 {number} 课",
+        "productPreviewNumber": "{number} / 产品预览",
+        "experience": "{name}应用体验",
+        "previewRegion": "{name}预览，下半部分提供演示预约入口",
+        "walkthrough": "{name} · 完整演示",
+        "fullWorkflow": "了解完整的工作流程。",
+        "educationCategory": "教育 / {name}",
+        "fictionalRecord": "{id} · 虚构记录",
+        "attendanceFor": "{name}的出勤状态",
+        "endAfterStart": "结束时间必须晚于开始时间。",
+        "validTimes": "选择有效的开始和结束时间。",
+        "overlaps": "时间冲突的示例课次：{count}",
+        "sharedResources": "{id}：共用{resources}",
+        "creditsAbove": "超出示例学分上限：{count}。",
+        "creditsRemaining": "距离示例学分上限还剩：{count}。",
+        "lessonsCompleted": "已在本页标记完成 {count} 课，共 {total} 课",
+        "sampleLesson": "示例课程 {number} / {duration}",
+        "absent": "缺勤",
+        "illustrativePreview": "说明性预览",
+        "programmeStructure": "教学项目<em>明确学习框架。</em>",
+        "timetableRhythm": "课程表<em>安排每日教学。</em>",
+        "officeContext": "学院行政办公室<em>汇总相关信息。</em>",
+        "slotContext": "每节课均对应教室、学生组和授课教师。",
+        "practicePart": "让练习成为课程的一部分。"
+      },
+      "choices": {
+        "sunday": "周日",
+        "monday": "周一",
+        "tuesday": "周二",
+        "lab01": "实验室 01",
+        "hallB": "礼堂 B",
+        "tutorA": "教师 A",
+        "tutorB": "教师 B",
+        "science1": "理科 1 组",
+        "humanities1": "人文 1 组",
+        "room": "教室",
+        "tutor": "教师",
+        "group": "学生组"
+      },
+      "copy": {
+        "fictionalExampleData": "虚构的示例数据",
+        "theSchoolDayRegister": "上课日登记表",
+        "theSessionOverview": "课次概览",
+        "theAcademicPlanningConversation": "学业规划讨论",
+        "theLearningOutline": "学习大纲",
+        "fictionalLearners": "虚构学生",
+        "initialMarks": "初始已登记人数",
+        "registerState": "出勤记录状态",
+        "localOnly": "仅保留在本页",
+        "exampleSessions": "示例课次",
+        "roomsInExample": "示例教室数",
+        "plannerState": "规划状态",
+        "fictionalCourses": "虚构课程",
+        "exampleCreditBudget": "示例学分上限",
+        "registration": "选课注册",
+        "notPerformed": "未执行",
+        "sampleReadings": "读数示例",
+        "knowledgeCheck": "知识检查",
+        "1Example": "1个例子",
+        "officialLearningRecords": "正式学习记录",
+        "noneCreated": "未创建任何记录",
+        "shortReadingExampleContent": "短读·示例内容",
+        "illustrativeCompositionNotAScreenshotOfAConnected": "说明性构图，而不是关联机构的屏幕截图。上面的工作示例与这个静态画布是分开的。",
+        "breadcrumb": "面包屑",
+        "industries": "行业",
+        "education": "教育",
+        "theWiderProductConversation": "了解更多产品功能",
+        "browseExistingProductPresentationsThenBringYourInstitutions": "浏览现有的产品演示，然后将您机构的流程进行指导演示。",
+        "exploreThePresentation": "探索演示文稿",
+        "seeThePartsTogether": "一起查看各个部分",
+        "aCloserLookAtTheExperience": "仔细看看体验。",
+        "conceptCanvasWithFictionalRecordsContinueTheConversation": "带有虚构记录的概念画布。继续与顾问对话，探索您自己的工作流程。",
+        "exploreYourInstitutionsRecordsLearningContextAndEveryday": "在引导式产品对话中探索您机构的记录、学习背景和日常工作流程。",
+        "aFewUsefulDetails": "一些有用的细节",
+        "knowWhatYoureExploring": "知道您正在探索什么。",
+        "educationInDifferentContexts": "不同背景下的教育",
+        "exploreAnotherPartOfTheJourney": "探索旅程的另一部分。",
+        "yourInstitutionYourWorkflow": "您的学校，您的工作方式。",
+        "letsBeginWithTheWayYouWork": "让我们从您的工作方式开始。",
+        "bringYourAcademicAndAdministrativeQuestionsToAn": "将您的学术和行政问题带到顾问谈话中。",
+        "learnerContext": "学生背景",
+        "classroomRhythm": "课堂节奏",
+        "theSchoolDayIllustrated": "上学日/图画",
+        "aConsideredMorning": "井然有序的早晨",
+        "classRegisterAttendanceFollowUp": "班级报到→出勤→跟进",
+        "theOfficeStaysInContext": "校务信息随时可查",
+        "noticesLearnerRecordsAndFeeQuestions": "通知、学生记录与费用信息",
+        "makeTheDayFeelConnected": "让每天的校务彼此衔接",
+        "conceptualCampusAndSchoolDayCanvasNoReal": "概念校园和上课画布·没有真实的学校数据",
+        "theAcademicSession": "学期安排",
+        "aSessionInView": "课程安排一览",
+        "illustrativeSundayTimetable": "周日时间表说明",
+        "appliedScience": "应用科学",
+        "lab01Science1": "实验室 01 · 科学 1",
+        "communication": "沟通表达",
+        "hallBHumanities1": "B馆·人文1",
+        "twoOfThreeFictionalSessionsUsedInThe": "当地规划练习中使用的三个虚构会议中的两个",
+        "application": "应用",
+        "academicContext": "学术背景",
+        "studentJourney": "学生之旅",
+        "exampleAcademicMap": "学术地图示例",
+        "structure": "学业结构",
+        "programmeTermContext": "教学项目与学期信息",
+        "choices": "选择",
+        "coursesCreditConversation": "课程与学分规划",
+        "beginWithTheStudentsJourney": "从学生的学习历程出发。",
+        "conceptualCampusIllustrationNoInstitutionOrAccreditationImplied": "概念性校园插图 · 不暗示任何机构或认证",
+        "theLearningStudio": "学习工作室",
+        "interactiveExampleBelow": "下面的交互示例",
+        "theShortCourse": "短期课程",
+        "aClearGoal": "明确的目标",
+        "roomToPractice": "练习机会",
+        "aUsefulNextStep": "有用的下一步",
+        "lessonPracticeReflection": "课程/练习/反思",
+        "startWithAnIdea": "从一个想法开始。",
+        "readingBasedSampleStudioNoVideoEnrolmentOr": "基于阅读的示例工作室·无视频、注册或证书索取",
+        "aSmallExampleOfAMoreConsideredLearning": "一个经过深思熟虑的学习流程的小例子。",
+        "startWithThePeopleDoingTheWork": "从从事工作的人开始",
+        "chooseAPerspective": "选择一个视角",
+        "fictionalClassFourAnonymousLearners": "虚构课堂·四位匿名学生",
+        "resetExample": "重置示例",
+        "thisLocalExample": "这个当地的例子",
+        "aRegisterYouCanReadAtAGlance": "一目了然的寄存器。",
+        "marked": "已登记",
+        "inAttendance": "实际到课人数",
+        "stillUnmarked": "仍未标记",
+        "inAttendanceIncludesPresentAndLateTheseMarks": "实际到课人数包括按时到课和迟到的学生。更改仅作用于本页的四条虚构记录，不会提交任何出勤记录。",
+        "threeIllustrativeSessionsNoLiveAvailability": "三个说明性会议 · 没有现场直播",
+        "intervalsThatMeetExactlyAtABoundaryDo": "恰好在边界处相交的区间不会重叠。仅检查这三行中匹配的房间、导师或小组。",
+        "localLessonProposal": "本地课程建议",
+        "tryAProposedLesson": "尝试建议的课程",
+        "day": "星期",
+        "room": "房间",
+        "tutor": "教师",
+        "group": "集团",
+        "starts": "开始",
+        "ends": "结束",
+        "checkTheTimes": "检查时间",
+        "noOverlapsInThisExample": "此示例中没有时间冲突",
+        "theProposalDoesNotConflictWithTheThree": "该提案与三个可见会议并不冲突。这并不预订房间或批准完整的时间表。",
+        "fictionalCoursesIllustrativeCredits": "虚构课程·说明性学分",
+        "credits": "学分",
+        "anExampleSemesterInView": "示例学期规划，一目了然。",
+        "illustrativeCreditBudget": "示例学分上限",
+        "resetExamplePlan": "重置示例计划",
+        "noPrerequisiteDegreeAdmissionOrAcademicStandingRules": "不检查先决条件、学位、入学或学术地位规则。此为规划图，并非正式注册。",
+        "readingBasedLocalPreview": "基于阅读的本地预览",
+        "thoughtfulLearningDesign": "贴心的学习设计",
+        "chooseASampleLesson": "选择示例课程",
+        "localLessonProgress": "本页学习进度",
+        "resetStudio": "重置工作室",
+        "tryASmallReflection": "尝试一个小反思",
+        "markedCompleteLocally": "本地标记为完成",
+        "markThisLessonCompleteLocally": "将本课程标记为本地完成",
+        "aSampleKnowledgeCheck": "知识检查样本",
+        "whichActivityGivesALearnerAChanceTo": "哪种活动让学生有机会运用某个想法？",
+        "readOnlyTheCourseTitle": "仅阅读课程标题。",
+        "explainTheIdeaInYourOwnWordsWith": "用你自己的话举例说明这个想法。",
+        "skipDirectlyToTheNextSection": "直接跳到下一节。",
+        "checkExampleAnswer": "检查示例答案",
+        "thatFitsTheExampleGoalExplainingAndApplying": "这符合示例目标：解释和应用一个想法为学生提供了一种练习的方法。",
+        "tryAgainLookForAnActivityWhereThe": "再试一次。寻找一个能让学生解释或应用这个想法的活动，而不仅仅是导航。",
+        "progressAnswersAndCompletionMarksExistOnlyIn": "进度、答案和完成标记仅存在于该页面的本地状态中。不保存学习记录、成绩、注册或证书。",
+        "tryASmallPartOfTheExperience": "尝试一小部分体验",
+        "localExampleNotConnected": "本页示例 · 未连接数据库",
+        "exploreTheExample": "探索示例"
+      }
     }
   }
 }

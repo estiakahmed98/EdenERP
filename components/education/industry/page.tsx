@@ -1,3 +1,6 @@
+import { choiceLabel } from "./labels";
+import { getTranslations } from "next-intl/server";
+import { useTranslations, useLocale } from "next-intl";
 import type { Metadata } from "next";
 import { ArrowRight, BookOpen, ChevronRight, Plus } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -5,12 +8,12 @@ import { getLocaleAlternates } from "@/i18n/metadata";
 import LiveDemoButton from "@/components/live-demo-button";
 import DemoPreview from "@/components/manufacturing/demo-preview";
 import {
-  courses,
+  getCourses,
   educationIndustries,
-  learners,
-  lessons,
-  pages,
-  sessions,
+  getLearners,
+  getLessons,
+  getPages,
+  getSessions,
   type EducationIndustry,
 } from "./data";
 import IndustryHero from "./heroes";
@@ -20,57 +23,82 @@ import { Badge, Metric, css } from "./ui";
 export async function educationIndustryMetadata(
   industry: EducationIndustry,
 ): Promise<Metadata> {
+  const t = await getTranslations("pages.educationIndustries");
+  const pages = getPages(t);
+
   const p = pages[industry];
   return {
-    title: `${p.title} Management | Education Industries`,
+    title: t("ui.metadataTitle", { name: p.title }),
     description: p.description,
     alternates: await getLocaleAlternates(`/industries/${industry}`),
   };
 }
 function ProductCanvas({ industry }: { industry: EducationIndustry }) {
+  const t = useTranslations("pages.educationIndustries");
+  const pages = getPages(t);
+  const learners = getLearners(t);
+  const courses = getCourses(t);
+  const lessons = getLessons(t);
+  const sessions = getSessions(t);
+
   return (
     <div className={css.productCanvas}>
       <header>
         <b>
-          Eden<span>ERP</span>
+          Adon<span>ERP</span>
         </b>
-        <span>/ {pages[industry].title} / Concept canvas</span>
-        <Badge>Fictional example data</Badge>
+        <span>{t("ui.canvasTitle", { name: pages[industry].title })}</span>
+        <Badge>{t("copy.fictionalExampleData")}</Badge>
       </header>
       <div className={css.canvasBody}>
         <h3>
           {industry === "school"
-            ? "The school-day register"
+            ? t("copy.theSchoolDayRegister")
             : industry === "college"
-              ? "The session overview"
+              ? t("copy.theSessionOverview")
               : industry === "university"
-                ? "The academic planning conversation"
-                : "The learning outline"}
+                ? t("copy.theAcademicPlanningConversation")
+                : t("copy.theLearningOutline")}
         </h3>
         <dl className={css.canvasMetrics}>
           {industry === "school" ? (
             <>
-              <Metric label="Fictional learners" value="4" />
-              <Metric label="Initial marks" value="3 / 4" />
-              <Metric label="Register state" value="Local only" />
+              <Metric label={t("copy.fictionalLearners")} value="4" />
+              <Metric label={t("copy.initialMarks")} value="3 / 4" />
+              <Metric
+                label={t("copy.registerState")}
+                value={t("copy.localOnly")}
+              />
             </>
           ) : industry === "college" ? (
             <>
-              <Metric label="Example sessions" value="3" />
-              <Metric label="Rooms in example" value="2" />
-              <Metric label="Planner state" value="Local only" />
+              <Metric label={t("copy.exampleSessions")} value="3" />
+              <Metric label={t("copy.roomsInExample")} value="2" />
+              <Metric
+                label={t("copy.plannerState")}
+                value={t("copy.localOnly")}
+              />
             </>
           ) : industry === "university" ? (
             <>
-              <Metric label="Fictional courses" value="5" />
-              <Metric label="Example credit budget" value="12" />
-              <Metric label="Registration" value="Not performed" />
+              <Metric label={t("copy.fictionalCourses")} value="5" />
+              <Metric label={t("copy.exampleCreditBudget")} value="12" />
+              <Metric
+                label={t("copy.registration")}
+                value={t("copy.notPerformed")}
+              />
             </>
           ) : (
             <>
-              <Metric label="Sample readings" value="3" />
-              <Metric label="Knowledge check" value="1 example" />
-              <Metric label="Official learning records" value="None created" />
+              <Metric label={t("copy.sampleReadings")} value="3" />
+              <Metric
+                label={t("copy.knowledgeCheck")}
+                value={t("copy.1Example")}
+              />
+              <Metric
+                label={t("copy.officialLearningRecords")}
+                value={t("copy.noneCreated")}
+              />
             </>
           )}
         </dl>
@@ -81,8 +109,14 @@ function ProductCanvas({ industry }: { industry: EducationIndustry }) {
                   <span>{row.id}</span>
                   <b>{row.label}</b>
                   <small>
-                    {i < 2 ? "Present" : i === 2 ? "Late" : "Unmarked"} ·
-                    initial example
+                    {t("ui.initialMark", {
+                      status:
+                        i < 2
+                          ? t("ui.present")
+                          : i === 2
+                            ? t("ui.late")
+                            : t("ui.unmarked"),
+                    })}
                   </small>
                 </div>
               ))
@@ -90,11 +124,11 @@ function ProductCanvas({ industry }: { industry: EducationIndustry }) {
               ? sessions.map((row) => (
                   <div key={row.id}>
                     <span>
-                      {row.day} · {row.start}
+                      {choiceLabel(t, row.day)} · <bdi>{row.start}</bdi>
                     </span>
                     <b>{row.title}</b>
                     <small>
-                      {row.room} · {row.group}
+                      {choiceLabel(t, row.room)} · {choiceLabel(t, row.group)}
                     </small>
                   </div>
                 ))
@@ -103,20 +137,23 @@ function ProductCanvas({ industry }: { industry: EducationIndustry }) {
                     <div key={row.id}>
                       <span>{row.id}</span>
                       <b>{row.title}</b>
-                      <small>{row.credits} example credits</small>
+                      <small>
+                        {t("ui.exampleCredits", { count: row.credits })}
+                      </small>
                     </div>
                   ))
                 : lessons.map((row) => (
                     <div key={row.id}>
-                      <span>Lesson {row.number}</span>
+                      <span>
+                        {t("ui.lessonNumber", { number: row.number })}
+                      </span>
                       <b>{row.title}</b>
-                      <small>Short reading · example content</small>
+                      <small>{t("copy.shortReadingExampleContent")}</small>
                     </div>
                   ))}
         </div>
         <p className={css.canvasNote}>
-          Illustrative composition, not a screenshot of a connected institution.
-          The working example above is separate from this static canvas.
+          {t("copy.illustrativeCompositionNotAScreenshotOfAConnected")}
         </p>
       </div>
     </div>
@@ -127,21 +164,25 @@ export function EducationIndustryPage({
 }: {
   industry: EducationIndustry;
 }) {
+  const t = useTranslations("pages.educationIndustries");
+  const pages = getPages(t);
+  const locale = useLocale();
+
   const p = pages[industry];
   return (
     <main
       className={css.industry}
-      lang="en"
-      dir="ltr"
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
       data-education-industry={industry}
     >
       <div className={css.wrap}>
-        <nav className={css.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/"> Adon ERP</Link>
+        <nav className={css.breadcrumb} aria-label={t("copy.breadcrumb")}>
+          <Link href="/">AdonERP</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <Link href="/industries">Industries</Link>
+          <Link href="/industries">{t("copy.industries")}</Link>
           <ChevronRight size={11} aria-hidden="true" />
-          <span>Education</span>
+          <span>{t("copy.education")}</span>
           <ChevronRight size={11} aria-hidden="true" />
           <span aria-current="page">{p.title}</span>
         </nav>
@@ -153,11 +194,14 @@ export function EducationIndustryPage({
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>THE WIDER PRODUCT CONVERSATION</p>
+              <p className={css.eyebrow}>
+                {t("copy.theWiderProductConversation")}
+              </p>
               <h2>{p.toolsTitle}</h2>
               <p>
-                Browse existing product presentations, then bring your
-                institution’s process to a guided demo.
+                {t(
+                  "copy.browseExistingProductPresentationsThenBringYourInstitutions",
+                )}
               </p>
             </div>
             <BookOpen size={27} className={css.moduleIcon} aria-hidden="true" />
@@ -165,13 +209,13 @@ export function EducationIndustryPage({
           <div className={css.moduleGrid}>
             {p.tools.map((tool, i) => (
               <Link key={tool.href} href={tool.href}>
-                <span>0{i + 1} / PRODUCT PREVIEW</span>
+                <span>{t("ui.productPreviewNumber", { number: i + 1 })}</span>
                 <h3>
                   {tool.title}
                   <ArrowRight size={17} aria-hidden="true" />
                 </h3>
                 <p>{tool.body}</p>
-                <small>Explore the presentation</small>
+                <small>{t("copy.exploreThePresentation")}</small>
               </Link>
             ))}
           </div>
@@ -181,18 +225,26 @@ export function EducationIndustryPage({
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>SEE THE PARTS TOGETHER</p>
-              <h2>A closer look at the experience.</h2>
+              <p className={css.eyebrow}>{t("copy.seeThePartsTogether")}</p>
+              <h2>{t("copy.aCloserLookAtTheExperience")}</h2>
               <p>
-                Concept canvas with fictional records. Continue the conversation
-                with an advisor to explore your own workflow.
+                {t(
+                  "copy.conceptCanvasWithFictionalRecordsContinueTheConversation",
+                )}
               </p>
             </div>
             <Badge />
           </div>
           <DemoPreview
-            title={`${p.title} experience`}
-            description="Explore your institution’s records, learning context and everyday workflows in a guided product conversation."
+            title={t("ui.experience", { name: p.title })}
+            invitation={{
+              regionLabel: t("ui.previewRegion", { name: p.title }),
+              eyebrow: t("ui.walkthrough", { name: p.title }),
+              heading: t("ui.fullWorkflow"),
+            }}
+            description={t(
+              "copy.exploreYourInstitutionsRecordsLearningContextAndEveryday",
+            )}
           >
             <ProductCanvas industry={industry} />
           </DemoPreview>
@@ -201,8 +253,8 @@ export function EducationIndustryPage({
       <section className={css.faqSection}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>A FEW USEFUL DETAILS</p>
-            <h2>Know what you’re exploring.</h2>
+            <p className={css.eyebrow}>{t("copy.aFewUsefulDetails")}</p>
+            <h2>{t("copy.knowWhatYoureExploring")}</h2>
           </div>
           <div className={css.faqList}>
             {p.faqs.map(([question, answer]) => (
@@ -221,8 +273,10 @@ export function EducationIndustryPage({
         <div className={css.wrap}>
           <div className={css.sectionHeading}>
             <div>
-              <p className={css.eyebrow}>EDUCATION, IN DIFFERENT CONTEXTS</p>
-              <h2>Explore another part of the journey.</h2>
+              <p className={css.eyebrow}>
+                {t("copy.educationInDifferentContexts")}
+              </p>
+              <h2>{t("copy.exploreAnotherPartOfTheJourney")}</h2>
             </div>
           </div>
           <div className={css.relatedGrid}>
@@ -230,7 +284,9 @@ export function EducationIndustryPage({
               .filter((item) => item !== industry)
               .map((item) => (
                 <Link key={item} href={`/industries/${item}`}>
-                  <span>EDUCATION / {pages[item].title.toUpperCase()}</span>
+                  <span>
+                    {t("ui.educationCategory", { name: pages[item].title })}
+                  </span>
                   <h3>
                     {pages[item].headline} {pages[item].accent}
                     <ArrowRight size={18} aria-hidden="true" />
@@ -243,12 +299,11 @@ export function EducationIndustryPage({
       <section className={css.closing}>
         <div className={css.wrap}>
           <div>
-            <p className={css.eyebrow}>YOUR INSTITUTION. YOUR WORKFLOW.</p>
-            <h2>Let’s begin with the way you work.</h2>
-            <p>
-              Bring your academic and administrative questions to an advisor
-              conversation.
+            <p className={css.eyebrow}>
+              {t("copy.yourInstitutionYourWorkflow")}
             </p>
+            <h2>{t("copy.letsBeginWithTheWayYouWork")}</h2>
+            <p>{t("copy.bringYourAcademicAndAdministrativeQuestionsToAn")}</p>
           </div>
           <LiveDemoButton />
         </div>

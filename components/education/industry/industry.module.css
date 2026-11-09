@@ -299,7 +299,7 @@
 }
 .sessionProspectus {
   padding: 22px 25px;
-  border-left: 1px solid var(--border);
+  border-inline-start: 1px solid var(--border);
   background: linear-gradient(90deg, var(--industry-wash), transparent);
 }
 .sessionProspectus header {
@@ -582,7 +582,7 @@
 }
 .studioOutline {
   padding: 25px 18px;
-  border-right: 1px solid var(--border);
+  border-inline-end: 1px solid var(--border);
 }
 .studioOutline > span {
   font-size: 7px;
@@ -735,14 +735,14 @@
   border-radius: 8px;
   color: var(--muted-foreground);
   font-size: 12px;
-  text-align: left;
+  text-align: start;
 }
 .roleChoices button > span {
   font-size: 9px;
   color: var(--industry-blue);
 }
 .roleChoices button > svg {
-  margin-left: auto;
+  margin-inline-start: auto;
   color: var(--industry-blue);
   flex-shrink: 0;
 }
@@ -794,7 +794,7 @@
 .roleStory li > b {
   display: block;
   margin-top: 14px;
-  padding-right: 5px;
+  padding-inline-end: 5px;
   font-size: 11px;
   line-height: 1.8;
   font-weight: 500;
@@ -1063,7 +1063,7 @@
   margin-top: 13px;
 }
 .conflictResult ul {
-  padding-left: 15px;
+  padding-inline-start: 15px;
 }
 .creditDemo {
   display: grid;
@@ -1115,7 +1115,7 @@
   color: var(--industry-blue);
   font-size: 23px;
   font-weight: 500;
-  text-align: right;
+  text-align: end;
 }
 .courseList strong small {
   font-weight: 400;
@@ -1190,7 +1190,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  text-align: left;
+  text-align: start;
   padding: 14px 10px;
   border: 1px solid transparent;
   border-radius: 7px;
@@ -1253,7 +1253,7 @@
 }
 .practicePrompt {
   padding: 22px;
-  border-left: 2px solid var(--primary);
+  border-inline-start: 2px solid var(--primary);
   border-radius: 0 8px 8px 0;
   background: var(--industry-wash);
   margin-top: 25px;
@@ -1603,7 +1603,7 @@
     gap: 35px;
   }
   .schoolNotebook {
-    padding-right: 18px;
+    padding-inline-end: 18px;
   }
   .schoolNotebook > header {
     gap: 9px;
@@ -1734,7 +1734,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    border-left: 0;
+    border-inline-start: 0;
     border-block: 1px solid var(--border);
     padding: 23px 0;
   }
@@ -2149,7 +2149,7 @@
   }
   .studioOutline {
     padding: 20px;
-    border-right: 0;
+    border-inline-end: 0;
     border-bottom: 1px solid var(--border);
   }
   .studioOutline > h3 {
@@ -2250,7 +2250,7 @@
   }
   .learnerList label {
     flex-basis: 100%;
-    margin-left: 50px;
+    margin-inline-start: 50px;
   }
   .attendanceSummary {
     padding: 18px;
@@ -2484,4 +2484,48 @@
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Localized copy may wrap differently; retain the composition without clipping. */
+.industry :is(h1, h2, h3, p, summary, button, label, figcaption) {
+  overflow-wrap: anywhere;
+}
+.industry :is(button, select) {
+  max-width: 100%;
+}
+.industry :is(.schoolNotebook, .collegeRibbon, .studioWindow) header {
+  flex-wrap: wrap;
+}
+.sessionProspectus p > b {
+  display: block;
+}
+.industry:where([lang="bn"], [lang="ne"], [lang="ar"], [lang="ja"], [lang="zh"])
+  :is(h1, h2, h3, .eyebrow) {
+  letter-spacing: normal;
+}
+.industry:where([lang="bn"], [lang="ne"], [lang="ar"]) :is(h1, h2, h3) {
+  line-height: 1.45;
+}
+.industry:where([lang="bn"], [lang="ne"], [lang="ar"], [lang="ja"], [lang="zh"])
+  .eyebrow {
+  font-size: 11px;
+}
+.industry[dir="rtl"] :global(.lucide-arrow-right),
+.industry[dir="rtl"] .breadcrumb svg {
+  transform: scaleX(-1);
+}
+.industry[dir="rtl"] .roleStory li > svg {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+}
+.industry[dir="rtl"] .practicePrompt {
+  border-radius: 8px 0 0 8px;
+}
+.industry[dir="rtl"]
+  :is(.schoolCallout, .campusBookmark, .ribbonNote, .practiceTile) {
+  font-family: var(--font-content);
+}
+.industry input[type="time"] {
+  direction: ltr;
 }

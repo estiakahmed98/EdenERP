@@ -1,21 +1,26 @@
 "use client";
+import { choiceLabel } from "./labels";
+import { useTranslations, useFormatter } from "next-intl";
 
 import { useState } from "react";
 import { ArrowRight, Check, CheckCircle2, RotateCcw } from "lucide-react";
 import { creditTotal, findConflicts } from "./calculations";
 import {
   attendanceInitial,
-  courses,
-  learners,
-  lessons,
-  pages,
-  sessions,
+  getCourses,
+  getLearners,
+  getLessons,
+  getPages,
+  getSessions,
   type AttendanceStatus,
   type EducationIndustry,
 } from "./data";
 import { Badge, Metric, Note, css } from "./ui";
 
 export function RolePerspective({ industry }: { industry: EducationIndustry }) {
+  const t = useTranslations("pages.educationIndustries");
+  const pages = getPages(t);
+
   const [index, setIndex] = useState(0);
   const p = pages[industry];
   const journey = p.journeys[index];
@@ -24,7 +29,9 @@ export function RolePerspective({ industry }: { industry: EducationIndustry }) {
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>START WITH THE PEOPLE DOING THE WORK</p>
+            <p className={css.eyebrow}>
+              {t("copy.startWithThePeopleDoingTheWork")}
+            </p>
             <h2>{p.perspective}</h2>
           </div>
         </div>
@@ -32,7 +39,7 @@ export function RolePerspective({ industry }: { industry: EducationIndustry }) {
           <div
             className={css.roleChoices}
             role="group"
-            aria-label="Choose a perspective"
+            aria-label={t("copy.chooseAPerspective")}
           >
             {p.journeys.map((item, i) => (
               <button
@@ -66,6 +73,9 @@ export function RolePerspective({ industry }: { industry: EducationIndustry }) {
   );
 }
 function SchoolDemo() {
+  const t = useTranslations("pages.educationIndustries");
+  const learners = getLearners(t);
+
   const [marks, setMarks] = useState<Record<string, AttendanceStatus>>({
     ...attendanceInitial,
   });
@@ -77,14 +87,14 @@ function SchoolDemo() {
   return (
     <>
       <div className={css.demoToolbar}>
-        <Badge>Fictional class · four anonymous learners</Badge>
+        <Badge>{t("copy.fictionalClassFourAnonymousLearners")}</Badge>
         <button
           className={css.button}
           type="button"
           onClick={() => setMarks({ ...attendanceInitial })}
         >
           <RotateCcw size={14} />
-          Reset example
+          {t("copy.resetExample")}
         </button>
       </div>
       <div className={css.attendanceLayout}>
@@ -94,10 +104,12 @@ function SchoolDemo() {
               <span className={css.learnerInitial}>{row.label.slice(-2)}</span>
               <div>
                 <b>{row.label}</b>
-                <small>{row.id} · fictional record</small>
+                <small>{t("ui.fictionalRecord", { id: row.id })}</small>
               </div>
               <label>
-                <span className={css.srOnly}>Attendance for {row.label}</span>
+                <span className={css.srOnly}>
+                  {t("ui.attendanceFor", { name: row.label })}
+                </span>
                 <select
                   value={marks[row.id]}
                   onChange={(e) =>
@@ -107,37 +119,38 @@ function SchoolDemo() {
                     }))
                   }
                 >
-                  <option value="unmarked">Unmarked</option>
-                  <option value="present">Present</option>
-                  <option value="late">Late</option>
-                  <option value="absent">Absent</option>
+                  <option value="unmarked">{t("ui.unmarked")}</option>
+                  <option value="present">{t("ui.present")}</option>
+                  <option value="late">{t("ui.late")}</option>
+                  <option value="absent">{t("ui.absent")}</option>
                 </select>
               </label>
             </div>
           ))}
         </div>
         <div className={css.attendanceSummary}>
-          <span>THIS LOCAL EXAMPLE</span>
-          <h3>A register you can read at a glance.</h3>
+          <span>{t("copy.thisLocalExample")}</span>
+          <h3>{t("copy.aRegisterYouCanReadAtAGlance")}</h3>
           <dl className={css.metrics} aria-live="polite">
-            <Metric label="Marked" value={`${marked} / 4`} />
-            <Metric label="In attendance" value={attending} />
+            <Metric label={t("copy.marked")} value={`${marked} / 4`} />
+            <Metric label={t("copy.inAttendance")} value={attending} />
             <Metric
-              label="Absent"
+              label={t("ui.absent")}
               value={values.filter((v) => v === "absent").length}
             />
-            <Metric label="Still unmarked" value={4 - marked} />
+            <Metric label={t("copy.stillUnmarked")} value={4 - marked} />
           </dl>
-          <Note>
-            In attendance includes Present and Late. These marks update only the
-            four fictional rows here; no register is submitted.
-          </Note>
+          <Note>{t("copy.inAttendanceIncludesPresentAndLateTheseMarks")}</Note>
         </div>
       </div>
     </>
   );
 }
 function CollegeDemo() {
+  const t = useTranslations("pages.educationIndustries");
+  const sessions = getSessions(t);
+  const formatter = useFormatter();
+
   const [proposal, setProposal] = useState({
     day: "Sunday",
     start: "09:30",
@@ -151,7 +164,11 @@ function CollegeDemo() {
   try {
     conflicts = findConflicts(proposal, sessions);
   } catch (e) {
-    error = e instanceof Error ? e.message : "Choose valid times.";
+    error = t(
+      e instanceof Error && e.message === "End time must be after start time."
+        ? "ui.endAfterStart"
+        : "ui.validTimes",
+    );
   }
   function update(field: keyof typeof proposal, value: string) {
     setProposal((prev) => ({ ...prev, [field]: value }));
@@ -159,33 +176,37 @@ function CollegeDemo() {
   return (
     <div className={css.collegeDemo}>
       <div>
-        <Badge>Three illustrative sessions · no live availability</Badge>
+        <Badge>{t("copy.threeIllustrativeSessionsNoLiveAvailability")}</Badge>
         <div className={css.exampleSessions}>
           {sessions.map((row) => (
             <article key={row.id}>
               <span>
-                {row.day} · {row.start}—{row.end}
+                {choiceLabel(t, row.day)} ·{" "}
+                <bdi>
+                  {row.start}—{row.end}
+                </bdi>
               </span>
               <h3>{row.title}</h3>
               <p>
-                {row.room} · {row.tutor} · {row.group}
+                {choiceLabel(t, row.room)} · {choiceLabel(t, row.tutor)} ·{" "}
+                {choiceLabel(t, row.group)}
               </p>
             </article>
           ))}
         </div>
-        <Note>
-          Intervals that meet exactly at a boundary do not overlap. Only
-          matching rooms, tutors or groups in these three rows are checked.
-        </Note>
+        <Note>{t("copy.intervalsThatMeetExactlyAtABoundaryDo")}</Note>
       </div>
-      <section className={css.proposalPanel} aria-label="Local lesson proposal">
-        <h3>Try a proposed lesson</h3>
+      <section
+        className={css.proposalPanel}
+        aria-label={t("copy.localLessonProposal")}
+      >
+        <h3>{t("copy.tryAProposedLesson")}</h3>
         <div className={css.formGrid}>
           {[
-            ["day", "Day", ["Sunday", "Monday", "Tuesday"]],
-            ["room", "Room", ["Lab 01", "Hall B"]],
-            ["tutor", "Tutor", ["Tutor A", "Tutor B"]],
-            ["group", "Group", ["Science 1", "Humanities 1"]],
+            ["day", t("copy.day"), ["Sunday", "Monday", "Tuesday"]],
+            ["room", t("copy.room"), ["Lab 01", "Hall B"]],
+            ["tutor", t("copy.tutor"), ["Tutor A", "Tutor B"]],
+            ["group", t("copy.group"), ["Science 1", "Humanities 1"]],
           ].map(([field, label, options]) => (
             <label className={css.field} key={String(field)}>
               <span>{String(label)}</span>
@@ -196,13 +217,15 @@ function CollegeDemo() {
                 }
               >
                 {(options as string[]).map((value) => (
-                  <option key={value}>{value}</option>
+                  <option key={value} value={value}>
+                    {choiceLabel(t, value)}
+                  </option>
                 ))}
               </select>
             </label>
           ))}
           <label className={css.field}>
-            <span>Starts</span>
+            <span>{t("copy.starts")}</span>
             <input
               type="time"
               value={proposal.start}
@@ -210,7 +233,7 @@ function CollegeDemo() {
             />
           </label>
           <label className={css.field}>
-            <span>Ends</span>
+            <span>{t("copy.ends")}</span>
             <input
               type="time"
               value={proposal.end}
@@ -225,10 +248,10 @@ function CollegeDemo() {
         >
           <strong>
             {error
-              ? "Check the times"
+              ? t("copy.checkTheTimes")
               : conflicts.length
-                ? `${conflicts.length} example overlaps`
-                : "No overlaps in this example"}
+                ? t("ui.overlaps", { count: conflicts.length })
+                : t("copy.noOverlapsInThisExample")}
           </strong>
           {error ? (
             <p>{error}</p>
@@ -236,15 +259,18 @@ function CollegeDemo() {
             <ul>
               {conflicts.map((row) => (
                 <li key={row.id}>
-                  {row.id}: shared {row.reasons.join(", ")}
+                  {t("ui.sharedResources", {
+                    id: row.id,
+                    resources: formatter.list(
+                      row.reasons.map((reason) => t(`choices.${reason}`)),
+                      { type: "conjunction" },
+                    ),
+                  })}
                 </li>
               ))}
             </ul>
           ) : (
-            <p>
-              The proposal does not conflict with the three visible sessions.
-              This does not reserve a room or approve a full timetable.
-            </p>
+            <p>{t("copy.theProposalDoesNotConflictWithTheThree")}</p>
           )}
         </div>
       </section>
@@ -252,6 +278,9 @@ function CollegeDemo() {
   );
 }
 function UniversityDemo() {
+  const t = useTranslations("pages.educationIndustries");
+  const courses = getCourses(t);
+
   const [selected, setSelected] = useState([courses[0].id, courses[1].id]);
   const [budget, setBudget] = useState(12);
   const total = creditTotal(selected, courses);
@@ -259,7 +288,7 @@ function UniversityDemo() {
   return (
     <div className={css.creditDemo}>
       <div>
-        <Badge>Fictional courses · illustrative credits</Badge>
+        <Badge>{t("copy.fictionalCoursesIllustrativeCredits")}</Badge>
         <div className={css.courseList}>
           {courses.map((course) => (
             <label key={course.id} data-selected={selected.includes(course.id)}>
@@ -282,7 +311,7 @@ function UniversityDemo() {
               </span>
               <strong>
                 {course.credits}
-                <small>credits</small>
+                <small>{t("copy.credits")}</small>
               </strong>
             </label>
           ))}
@@ -290,16 +319,16 @@ function UniversityDemo() {
       </div>
       <section className={css.creditSummary}>
         <GraduationDrawing />
-        <h3>An example semester, in view.</h3>
+        <h3>{t("copy.anExampleSemesterInView")}</h3>
         <label className={css.field}>
-          <span>Illustrative credit budget</span>
+          <span>{t("copy.illustrativeCreditBudget")}</span>
           <select
             value={budget}
             onChange={(e) => setBudget(Number(e.target.value))}
           >
             {[9, 12, 15].map((value) => (
               <option key={value} value={value}>
-                {value} example credits
+                {t("ui.exampleCredits", { count: value })}
               </option>
             ))}
           </select>
@@ -315,8 +344,8 @@ function UniversityDemo() {
           </strong>
           <p>
             {difference < 0
-              ? `${-difference} credits above the example budget.`
-              : `${difference} credits remain within the example budget.`}
+              ? t("ui.creditsAbove", { count: -difference })
+              : t("ui.creditsRemaining", { count: difference })}
           </p>
         </div>
         <button
@@ -328,11 +357,10 @@ function UniversityDemo() {
           }}
         >
           <RotateCcw size={14} />
-          Reset example plan
+          {t("copy.resetExamplePlan")}
         </button>
         <Note>
-          No prerequisite, degree, admission or academic-standing rules are
-          checked. This is a planning illustration, not official registration.
+          {t("copy.noPrerequisiteDegreeAdmissionOrAcademicStandingRules")}
         </Note>
       </section>
     </div>
@@ -361,6 +389,9 @@ function GraduationDrawing() {
   );
 }
 function LmsDemo() {
+  const t = useTranslations("pages.educationIndustries");
+  const lessons = getLessons(t);
+
   const [active, setActive] = useState(lessons[0].id);
   const [complete, setComplete] = useState<string[]>([]);
   const [answer, setAnswer] = useState("");
@@ -369,11 +400,11 @@ function LmsDemo() {
   return (
     <div className={css.learningDemo}>
       <aside className={css.lessonSidebar}>
-        <Badge>Reading-based local preview</Badge>
-        <h3>Thoughtful learning design</h3>
+        <Badge>{t("copy.readingBasedLocalPreview")}</Badge>
+        <h3>{t("copy.thoughtfulLearningDesign")}</h3>
         <div
           role="group"
-          aria-label="Choose a sample lesson"
+          aria-label={t("copy.chooseASampleLesson")}
           className={css.lessonChoices}
         >
           {lessons.map((row) => (
@@ -391,10 +422,15 @@ function LmsDemo() {
           ))}
         </div>
         <div className={css.localProgress}>
-          <span>{complete.length} of 3 lessons marked locally</span>
+          <span>
+            {t("ui.lessonsCompleted", {
+              count: complete.length,
+              total: lessons.length,
+            })}
+          </span>
           <div
             role="progressbar"
-            aria-label="Local lesson progress"
+            aria-label={t("copy.localLessonProgress")}
             aria-valuenow={complete.length}
             aria-valuemin={0}
             aria-valuemax={3}
@@ -413,18 +449,21 @@ function LmsDemo() {
           }}
         >
           <RotateCcw size={14} />
-          Reset studio
+          {t("copy.resetStudio")}
         </button>
       </aside>
       <div className={css.lessonReader}>
         <article>
           <p className={css.eyebrow}>
-            SAMPLE LESSON {lesson.number} / {lesson.duration.toUpperCase()}
+            {t("ui.sampleLesson", {
+              number: lesson.number,
+              duration: lesson.duration,
+            })}
           </p>
           <h3>{lesson.title}</h3>
           <p>{lesson.body}</p>
           <div className={css.practicePrompt}>
-            <span>TRY A SMALL REFLECTION</span>
+            <span>{t("copy.tryASmallReflection")}</span>
             <p>{lesson.prompt}</p>
           </div>
           <p className={css.lessonTakeaway}>{lesson.takeaway}</p>
@@ -438,17 +477,17 @@ function LmsDemo() {
           >
             <CheckCircle2 size={16} />
             {complete.includes(lesson.id)
-              ? "Marked complete locally"
-              : "Mark this lesson complete locally"}
+              ? t("copy.markedCompleteLocally")
+              : t("copy.markThisLessonCompleteLocally")}
           </button>
         </article>
         <fieldset className={css.knowledgeCheck}>
-          <legend>A sample knowledge check</legend>
-          <p>Which activity gives a learner a chance to use an idea?</p>
+          <legend>{t("copy.aSampleKnowledgeCheck")}</legend>
+          <p>{t("copy.whichActivityGivesALearnerAChanceTo")}</p>
           {[
-            ["title", "Read only the course title."],
-            ["explain", "Explain the idea in your own words with an example."],
-            ["skip", "Skip directly to the next section."],
+            ["title", t("copy.readOnlyTheCourseTitle")],
+            ["explain", t("copy.explainTheIdeaInYourOwnWordsWith")],
+            ["skip", t("copy.skipDirectlyToTheNextSection")],
           ].map(([id, label]) => (
             <label key={id}>
               <input
@@ -469,20 +508,17 @@ function LmsDemo() {
             disabled={!answer}
             onClick={() => setChecked(true)}
           >
-            Check example answer
+            {t("copy.checkExampleAnswer")}
           </button>
           {checked && (
             <p className={css.quizFeedback} role="status">
               {answer === "explain"
-                ? "That fits the example goal: explaining and applying an idea gives the learner a way to practice."
-                : "Try again. Look for an activity where the learner explains or applies the idea, rather than only navigating."}
+                ? t("copy.thatFitsTheExampleGoalExplainingAndApplying")
+                : t("copy.tryAgainLookForAnActivityWhereThe")}
             </p>
           )}
         </fieldset>
-        <Note>
-          Progress, answers and completion marks exist only in this page’s local
-          state. No learning record, grade, enrolment or certificate is saved.
-        </Note>
+        <Note>{t("copy.progressAnswersAndCompletionMarksExistOnlyIn")}</Note>
       </div>
     </div>
   );
@@ -498,6 +534,9 @@ export default function IndustryDemo({
 }: {
   industry: EducationIndustry;
 }) {
+  const t = useTranslations("pages.educationIndustries");
+  const pages = getPages(t);
+
   const p = pages[industry];
   const Demo = demos[industry];
   return (
@@ -505,11 +544,13 @@ export default function IndustryDemo({
       <div className={css.wrap}>
         <div className={css.sectionHeading}>
           <div>
-            <p className={css.eyebrow}>TRY A SMALL PART OF THE EXPERIENCE</p>
+            <p className={css.eyebrow}>
+              {t("copy.tryASmallPartOfTheExperience")}
+            </p>
             <h2>{p.demoTitle}</h2>
             <p>{p.demoDescription}</p>
           </div>
-          <Badge>Local example · not connected</Badge>
+          <Badge>{t("copy.localExampleNotConnected")}</Badge>
         </div>
         <div className={css.demoSurface}>
           <Demo />

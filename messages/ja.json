@@ -61632,6 +61632,555 @@
           "fahimYasinUddin": "ファヒム・ヤシン・ウディン"
         }
       }
+    },
+    "educationIndustries": {
+      "pages": {
+        "school": {
+          "title": "学校",
+          "eyebrow": "学校向けAdonERP",
+          "headline": "学校の毎日を、",
+          "accent": "ひとつにつながる流れに。",
+          "description": "入学手続き、授業、学校事務を連携させ、生徒の学校生活を一貫して把握できる環境へ。",
+          "perspective": "授業には複数の視点があります。",
+          "demoTitle": "小さなレジスター。より澄んだ朝。",
+          "demoDescription": "4 人の架空の学習者の出席をマークしてみてください。すべての変更はこのブラウザ セッションに残ります。生徒の記録は保存されません。",
+          "toolsTitle": "教室のあちこちで作品を見てみましょう。",
+          "tools": {
+            "0": {
+              "title": "入学と学生の記録",
+              "body": "申請プロセスをたどって、構造化された学生記録を作成します。"
+            },
+            "1": {
+              "title": "出席とタイムスケジュール",
+              "body": "教室の名簿と授業日のスケジュールを調べます。"
+            },
+            "2": {
+              "title": "料金と学校事務局",
+              "body": "料金体系、徴収金、およびそれらのレポートのコンテキストを確認します。"
+            },
+            "3": {
+              "title": "お知らせ・学校通信",
+              "body": "通知がどのように視聴者とメッセージを結びつけるかをご覧ください。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "学校事務室",
+              "title": "学習者のコンテキストをまとめておきます。",
+              "body": "入学手続きから始めて、生徒の記録を追跡し、料金に関する会話を適切な学習者につなげ続けます。",
+              "steps": {
+                "0": "申込み・入学",
+                "1": "学生の身分証明書",
+                "2": "料金とオフィスの背景"
+              }
+            },
+            "1": {
+              "role": "教師",
+              "title": "まずは目の前のクラスから始めましょう。",
+              "body": "教師の勤務日をサポートする出席状況、時間割、結果のビューを調べます。",
+              "steps": {
+                "0": "クラスと時間割",
+                "1": "出席簿",
+                "2": "試験と結果"
+              }
+            },
+            "2": {
+              "role": "学校のリーダーシップ",
+              "title": "学校を全体がつながっているものとして読んでください。",
+              "body": "学校のコンテキストを失うことなく、入学、学業、管理の詳細の間を移動します。",
+              "steps": {
+                "0": "学校のダッシュボード",
+                "1": "学術構造",
+                "2": "レポートとフォローアップ"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "これはライブスクールシステムですか？",
+              "1": "このページは業界のショーケースです。出席演習では架空の学習者を使用し、ページでリセットします。アドバイザのデモを使用して、完全な製品ワークフローについて話し合います。"
+            },
+            "1": {
+              "0": "クラスと料金体系を確認できますか?",
+              "1": "はい。クラスのレベル、セクション、学業条件、料金規則をデモに持ち込み、教育機関のプロセスに沿ってディスカッションできるようにします。"
+            },
+            "2": {
+              "0": "既存のデータはここで変更されるのでしょうか?",
+              "1": "いいえ。このページは学生データベースに接続したり、出席を記録したり、料金を徴収したりすることはありません。"
+            }
+          }
+        },
+        "college": {
+          "title": "カレッジ",
+          "eyebrow": "カレッジ向け AdonERP",
+          "headline": "すべての学期に、",
+          "accent": "見通しのよい運営を。",
+          "description": "学期ごとの実務を軸に、教育課程、授業、学校事務の連携を支えます。",
+          "perspective": "学校運営には、部門を越えた意思決定が欠かせません。",
+          "demoTitle": "授業の時間割を試しに組んでみましょう。",
+          "demoDescription": "新しい授業案と3件の授業例を比較し、教室、担当教員、受講グループの時間重複を確認できます。予約は作成されません。",
+          "toolsTitle": "学期の運営と関連業務をつなぎます。",
+          "tools": {
+            "0": {
+              "title": "教学体制",
+              "body": "学期を支えるクラス、グループ、教学体制を確認できます。"
+            },
+            "1": {
+              "title": "タイムテーブルの計画",
+              "body": "授業時間割とその教室の状況を調べます。"
+            },
+            "2": {
+              "title": "試験と結果",
+              "body": "評価記録と結果がどのように提示されるかを見てください。"
+            },
+            "3": {
+              "title": "料金とレポート",
+              "body": "学校事務での学費の集計・収納状況の確認方法をご覧ください。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "教務担当",
+              "title": "学期全体を見通して計画を立てます。",
+              "body": "学術的な構造、授業時間割、試験の背景を同じ計画の会話に取り入れます。",
+              "steps": {
+                "0": "プログラムとクラス構成",
+                "1": "授業時間割",
+                "2": "評価のコンテキスト"
+              }
+            },
+            "1": {
+              "role": "教員",
+              "title": "担当授業を関連情報とあわせて把握します。",
+              "body": "グループと指導枠から始めて、出席状況と評価記録を追跡します。",
+              "steps": {
+                "0": "授業の担当割り当て",
+                "1": "授業への出席",
+                "2": "評価記録"
+              }
+            },
+            "2": {
+              "role": "管理",
+              "title": "事務業務と学期の運営を連携させます。",
+              "body": "大学の運営を確認する際には、学業暦と併せて学習者と料金のコンテキストを読んでください。",
+              "steps": {
+                "0": "学生の記録",
+                "1": "料金と徴収",
+                "2": "レポートとフォローアップ"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "この計画ツールで教室を予約できますか？",
+              "1": "いいえ。このページ内の例は、表示されている3件の授業だけを確認します。実際の時間割の読み取りや更新は行いません。"
+            },
+            "1": {
+              "0": "さまざまな教育課程や学期の運用について相談できますか？",
+              "1": "はい。独自のプログラム、グループ、部屋、指導の取り決めをアドバイザーのウォークスルーの開始点として使用します。"
+            },
+            "2": {
+              "0": "例で時間の重複がなければ、時間割全体が承認されたことになりますか？",
+              "1": "いいえ、完全なスケジュールには、この小さな例の範囲外である制度上の規則、可用性、その他の制約も必要になる場合があります。"
+            }
+          }
+        },
+        "university": {
+          "title": "大学",
+          "eyebrow": "大学向け AdonERP",
+          "headline": "つながるキャンパス。",
+          "accent": "一人ひとりの学びを、計画的に。",
+          "description": "各大学の事情に合わせて、入学手続き、教学体制、学生の学修過程のつながりを確認できます。",
+          "perspective": "一つのキャンパス。 Different responsibilities.",
+          "demoTitle": "学期の履修計画を試してみましょう。",
+          "demoDescription": "5つの架空の科目から選び、合計単位数を設定した上限と比較できます。履修登録や登録資格の判定は行いません。",
+          "toolsTitle": "大学向けの機能紹介をご覧ください。",
+          "tools": {
+            "0": {
+              "title": "大学概要",
+              "body": "既存のダッシュボード プレゼンテーションとそのキャンパス レベルのコンテキストを調べます。"
+            },
+            "1": {
+              "title": "入学までの流れ",
+              "body": "既存の大学入学ショーケースを見てください。"
+            },
+            "2": {
+              "title": "学修計画に関する情報",
+              "body": "議論の出発点として、教育の学術構造のプレビューを調べてください。"
+            },
+            "3": {
+              "title": "キャンパスリソースのコンテキスト",
+              "body": "既存のルーム管理ショーケースでリソースの会話を調べます。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "アカデミックオフィス",
+              "title": "まずは組織の形から始めましょう。",
+              "body": "学部、プログラム、学期、コースを使用して、大学の学術構造に関する議論を組み立てます。",
+              "steps": {
+                "0": "組織構造",
+                "1": "学期とカリキュラムの背景",
+                "2": "学生の修学旅行"
+              }
+            },
+            "1": {
+              "role": "入学チーム",
+              "title": "出願から入学までの流れをわかりやすく。",
+              "body": "入学審査のショーケースを見て、学生と学業成績への引き継ぎについて話し合います。",
+              "steps": {
+                "0": "アプリケーションコンテキスト",
+                "1": "入学審査",
+                "2": "学生記録の引き継ぎ"
+              }
+            },
+            "2": {
+              "role": "キャンパスのリーダーシップ",
+              "title": "概要の背後にある詳細に従ってください。",
+              "body": "キャンパスの概要を使用して、学術活動、入学、リソース計画に関する質問を解決してください。",
+              "steps": {
+                "0": "大学概要",
+                "1": "学術活動",
+                "2": "リソースコンテキスト"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "単位計画ツールは正式な履修登録の審査を行いますか？",
+              "1": "いいえ。科目、単位数、上限は例示です。履修前提条件、学位取得要件、学業状況、登録資格は確認しません。"
+            },
+            "1": {
+              "0": "ここではどの大学のプレビューを確認できますか?",
+              "1": "リンクされている大学のプレゼンテーションでは、ダッシュボードと入学について説明しています。このページの学術計画は、説明のためのディスカッション ツールです。ガイド付きデモを使用して、教育機関の要件を検討してください。"
+            },
+            "2": {
+              "0": "私たち自身の学問上のルールについて話し合ってもいいですか？",
+              "1": "はい。教育課程の構成、単位に関する規則、学期の運用、必要な帳票についてアドバイザーにご相談ください。"
+            }
+          }
+        },
+        "lms": {
+          "title": "LMS",
+          "eyebrow": "学習体験のための AdonERP",
+          "headline": "すべてのレッスンに、",
+          "accent": "学びを深める次の一歩を。",
+          "description": "教材、練習、学習進捗をわかりやすい流れにまとめた、使いやすい学習体験をご覧ください。",
+          "perspective": "学習者を中心に体験をデザインします。",
+          "demoTitle": "サンプル学習スタジオに足を踏み入れてください。",
+          "demoDescription": "3つの短い教材を読み、確認問題に取り組み、このページ内で進捗を記録できます。受講登録、成績、修了証は作成されません。",
+          "toolsTitle": "学習をそのより広い文脈と結びつけます。",
+          "tools": {
+            "0": {
+              "title": "eラーニングショーケース",
+              "body": "既存の e ラーニング製品のプレゼンテーションをご覧ください。"
+            },
+            "1": {
+              "title": "学習者の記録",
+              "body": "教育機関の状況については、Education の学生記録ショーケースをご覧ください。"
+            },
+            "2": {
+              "title": "評価のコンテキスト",
+              "body": "既存の試験と結果のプレゼンテーションを調べてください。"
+            },
+            "3": {
+              "title": "学術構造",
+              "body": "組織内での学習に関する会話を組み立てることができる構造をご覧ください。"
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "学習者",
+              "title": "始め、練習し、振り返るための明確な場所。",
+              "body": "サンプル スタジオには、短いレッスン、練習用の質問、目に見える次のアクションがまとめられています。",
+              "steps": {
+                "0": "レッスンを開く",
+                "1": "アクティビティを試してみる",
+                "2": "反省して継続する"
+              }
+            },
+            "1": {
+              "role": "教育者",
+              "title": "学習の意図を可視化します。",
+              "body": "スタジオを使用して、レッスンの内容、練習、フィードバックが学習者にとってどのように機能するべきかを話し合います。",
+              "steps": {
+                "0": "ゴールを枠に入れる",
+                "1": "実践を形にする",
+                "2": "フィードバックを説明する"
+              }
+            },
+            "2": {
+              "role": "学習チーム",
+              "title": "コンテンツリストの枠を超えて考えてみましょう。",
+              "body": "製品に関する会話を使用して、コースの構造と、学習を教育機関のコンテキストにどのように結び付ける必要があるかを検討します。",
+              "steps": {
+                "0": "コース構成",
+                "1": "学習者の体験",
+                "2": "進捗状況"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "このプレビューで再生されるビデオはありますか?",
+              "1": "いいえ。動作デモは、ローカルでの進行状況とサンプル知識チェックを備えた読書ベースのレッスン スタジオです。ビデオプレーヤーやストリーミングの統合は含まれていません。"
+            },
+            "1": {
+              "0": "サンプルを完成させると証明書は発行されますか?",
+              "1": "いいえ。完了マークはローカル コンポーネント状態にのみ存在し、ページがリロードされるとリセットされます。これらは正式な学習記録ではありません。"
+            },
+            "2": {
+              "0": "実際のコースについてどのように話し合うことができますか?",
+              "1": "コースの概要、学習者グループ、評価のニーズをアドバイザーのウォークスルーに持ち込みます。サンプル スタジオはその会話の出発点です。"
+            }
+          }
+        }
+      },
+      "learners": {
+        "0": {
+          "label": "学習者01"
+        },
+        "1": {
+          "label": "学習者02"
+        },
+        "2": {
+          "label": "学習者03"
+        },
+        "3": {
+          "label": "学習者04"
+        }
+      },
+      "sessions": {
+        "0": {
+          "title": "応用科学"
+        },
+        "1": {
+          "title": "コミュニケーション"
+        },
+        "2": {
+          "title": "定量的なスキル"
+        }
+      },
+      "courses": {
+        "0": {
+          "title": "アカデミック・コミュニケーション",
+          "area": "基礎科目"
+        },
+        "1": {
+          "title": "定量的思考",
+          "area": "基礎科目"
+        },
+        "2": {
+          "title": "環境・社会",
+          "area": "学際的"
+        },
+        "3": {
+          "title": "研究基盤",
+          "area": "研究手法"
+        },
+        "4": {
+          "title": "デザインと探究",
+          "area": "選択科目"
+        }
+      },
+      "lessons": {
+        "0": {
+          "title": "明確な目標から始める",
+          "duration": "短い読み物",
+          "body": "有用な学習目標は、学習者ができることを説明します。このサンプルの目標は、アイデアを自分の言葉で説明し、それを簡単な例に結び付けることです。",
+          "prompt": "馴染みのあるアイデアを選択してください。短いレッスンの後に誰かに理解してもらいたいことについて一文を書きます。",
+          "takeaway": "目に見える目標は、レッスンとその実践に共通の方向性を与えます。"
+        },
+        "1": {
+          "title": "練習のためのスペースを確保する",
+          "duration": "短い読み物",
+          "body": "練習することで、学習者はそのアイデアを使用する機会が得られます。簡単な説明、実際の例、または比較でも構いません。このサンプルでは、​​アップロードされた割り当てではなく、短いリフレクションを使用します。",
+          "prompt": "自分の選んだアイデアを自分の言葉で説明してください。他の人が理解するのに役立つ例を 1 つ追加します。",
+          "takeaway": "実践は目標に直結するものでなければなりません。"
+        },
+        "2": {
+          "title": "フィードバックを次のステップにつなげる",
+          "duration": "短い読み物",
+          "body": "フィードバックは、何か特定のものを指している場合に使いやすくなります。このスタジオでは、サンプルの質問によって、回答が学習目標に適合する理由が説明され、次に試すべきステップが示されます。",
+          "prompt": "あなたの説明をもう一度読んでください。明確な部分と、より具体的な例が役立つ部分を 1 つ特定します。",
+          "takeaway": "振り返りにより、フィードバックを次の有益なアクションに変えることができます。"
+        }
+      },
+      "ui": {
+        "metadataTitle": "{name}管理 | 教育機関向け",
+        "canvasTitle": "{name} / コンセプト画面",
+        "initialMark": "{status} · 最初の例",
+        "present": "出席",
+        "late": "遅刻",
+        "unmarked": "未記録",
+        "exampleCredits": "単位数の例：{count}",
+        "lessonNumber": "レッスン {number}",
+        "productPreviewNumber": "{number} / 製品プレビュー",
+        "experience": "{name} エクスペリエンス",
+        "previewRegion": "{name} プレビュー (下半分のデモへの招待付き)",
+        "walkthrough": "{name} · 詳細デモ",
+        "fullWorkflow": "完全なワークフローをご覧ください。",
+        "educationCategory": "教育 / {name}",
+        "fictionalRecord": "{id} · 架空の記録",
+        "attendanceFor": "{name}の出欠",
+        "endAfterStart": "終了時刻は開始時刻より後である必要があります。",
+        "validTimes": "有効な開始時刻と終了時刻を選択してください。",
+        "overlaps": "時間が重なる授業例：{count}件",
+        "sharedResources": "{id}：{resources}が重複",
+        "creditsAbove": "設定した単位数の上限を{count}単位超えています。",
+        "creditsRemaining": "設定した単位数の上限まで残り{count}単位です。",
+        "lessonsCompleted": "このページで完了にしたレッスン：{total}件中{count}件",
+        "sampleLesson": "サンプルレッスン {number} / {duration}",
+        "absent": "欠席",
+        "illustrativePreview": "説明付きプレビュー",
+        "programmeStructure": "教育課程が<em>学びの枠組みを整えます。</em>",
+        "timetableRhythm": "時間割が<em>日々の授業を整えます。</em>",
+        "officeContext": "学校事務が<em>関連情報をまとめます。</em>",
+        "slotContext": "各授業には教室、受講グループ、担当教員が割り当てられています。",
+        "practicePart": "練習をレッスンの一部にしましょう。"
+      },
+      "choices": {
+        "sunday": "日曜日",
+        "monday": "月曜日",
+        "tuesday": "火曜日",
+        "lab01": "実習室 01",
+        "hallB": "講義室 B",
+        "tutorA": "教員 A",
+        "tutorB": "教員 B",
+        "science1": "理系 1",
+        "humanities1": "人文系 1",
+        "room": "教室",
+        "tutor": "担当教員",
+        "group": "受講グループ"
+      },
+      "copy": {
+        "fictionalExampleData": "架空のデータ例",
+        "theSchoolDayRegister": "登校日の名簿",
+        "theSessionOverview": "授業の一覧",
+        "theAcademicPlanningConversation": "学術計画に関する会話",
+        "theLearningOutline": "学習の概要",
+        "fictionalLearners": "架空の学習者",
+        "initialMarks": "初期状態の記録数",
+        "registerState": "出欠簿の状態",
+        "localOnly": "このページ内のみ",
+        "exampleSessions": "授業の例",
+        "roomsInExample": "例に含まれる教室",
+        "plannerState": "計画の状態",
+        "fictionalCourses": "架空のコース",
+        "exampleCreditBudget": "単位数の上限例",
+        "registration": "履修登録",
+        "notPerformed": "未実施",
+        "sampleReadings": "測定例",
+        "knowledgeCheck": "知識チェック",
+        "1Example": "1例",
+        "officialLearningRecords": "公式学習記録",
+        "noneCreated": "何も作成されていません",
+        "shortReadingExampleContent": "短い読み物・サンプルコンテンツ",
+        "illustrativeCompositionNotAScreenshotOfAConnected": "接続された機関のスクリーンショットではなく、説明的な構成。上記の実際の例は、この静的キャンバスとは別のものです。",
+        "breadcrumb": "ブレッドクラム",
+        "industries": "業種",
+        "education": "教育",
+        "theWiderProductConversation": "関連する製品機能",
+        "browseExistingProductPresentationsThenBringYourInstitutions": "既存の製品プレゼンテーションを閲覧し、教育機関のプロセスをガイド付きデモに持ち込みます。",
+        "exploreThePresentation": "プレゼンテーションを詳しく見る",
+        "seeThePartsTogether": "パーツをまとめて見る",
+        "aCloserLookAtTheExperience": "体験を詳しく見てみましょう。",
+        "conceptCanvasWithFictionalRecordsContinueTheConversation": "架空の記録を含むコンセプト キャンバス。アドバイザーとの会話を続けて、独自のワークフローを探ってください。",
+        "exploreYourInstitutionsRecordsLearningContextAndEveryday": "ガイド付きの製品会話で教育機関の記録、学習コンテキスト、日常のワークフローを探索します。",
+        "aFewUsefulDetails": "いくつかの役立つ詳細",
+        "knowWhatYoureExploring": "自分が何を探索しているのかを知りましょう。",
+        "educationInDifferentContexts": "さまざまな状況における教育",
+        "exploreAnotherPartOfTheJourney": "旅の別の部分を探索してください。",
+        "yourInstitutionYourWorkflow": "あなたの機関。あなたのワークフロー。",
+        "letsBeginWithTheWayYouWork": "まずは働き方から始めましょう。",
+        "bringYourAcademicAndAdministrativeQuestionsToAn": "学術的および管理上の質問をアドバイザーとの会話に持ち込んでください。",
+        "learnerContext": "学習者のコンテキスト",
+        "classroomRhythm": "教室のリズム",
+        "theSchoolDayIllustrated": "登校日 / イラスト付き",
+        "aConsideredMorning": "ゆとりある朝の準備",
+        "classRegisterAttendanceFollowUp": "履修登録 → 出席 → フォローアップ",
+        "theOfficeStaysInContext": "学校事務に必要な情報を集約",
+        "noticesLearnerRecordsAndFeeQuestions": "通知、学習者の記録、料金に関する質問",
+        "makeTheDayFeelConnected": "一日の業務をつなげる",
+        "conceptualCampusAndSchoolDayCanvasNoReal": "概念的なキャンパスと授業日のキャンバス – 実際の学校データなし",
+        "theAcademicSession": "学期の流れ",
+        "aSessionInView": "セッションの展望",
+        "illustrativeSundayTimetable": "日曜日の時刻表の例",
+        "appliedScience": "応用科学",
+        "lab01Science1": "研究室 01 · 科学 1",
+        "communication": "コミュニケーション",
+        "hallBHumanities1": "ホールB・人文科学1",
+        "twoOfThreeFictionalSessionsUsedInThe": "ローカル計画演習で使用される 3 つの架空のセッションのうち 2 つ",
+        "application": "アプリケーション",
+        "academicContext": "学術的背景",
+        "studentJourney": "学生の旅",
+        "exampleAcademicMap": "アカデミックマップの例",
+        "structure": "教学体制",
+        "programmeTermContext": "教育課程と学期の情報",
+        "choices": "選択肢",
+        "coursesCreditConversation": "科目と単位の計画",
+        "beginWithTheStudentsJourney": "学生の旅から始めましょう。",
+        "conceptualCampusIllustrationNoInstitutionOrAccreditationImplied": "概念的なキャンパスの図 – 暗黙の機関や認定はありません",
+        "theLearningStudio": "ラーニングスタジオ",
+        "interactiveExampleBelow": "以下のインタラクティブな例",
+        "theShortCourse": "ショートコース",
+        "aClearGoal": "明確な目標",
+        "roomToPractice": "練習の機会",
+        "aUsefulNextStep": "役立つ次のステップ",
+        "lessonPracticeReflection": "レッスン/実践/振り返り",
+        "startWithAnIdea": "アイデアから始めましょう。",
+        "readingBasedSampleStudioNoVideoEnrolmentOr": "読み取りベースのサンプル スタジオ · ビデオ、登録、証明書の請求はありません",
+        "aSmallExampleOfAMoreConsideredLearning": "より考慮された学習フローの小さな例。",
+        "startWithThePeopleDoingTheWork": "仕事をする人々から始める",
+        "chooseAPerspective": "視点を選択してください",
+        "fictionalClassFourAnonymousLearners": "架空のクラス · 4 人の匿名の学習者",
+        "resetExample": "リセット例",
+        "thisLocalExample": "このローカルな例",
+        "aRegisterYouCanReadAtAGlance": "一目でわかるレジスター。",
+        "marked": "記録済み",
+        "inAttendance": "出席者数",
+        "stillUnmarked": "まだマークされていない",
+        "inAttendanceIncludesPresentAndLateTheseMarks": "出席者数には遅刻者も含まれます。変更はこのページの架空の4件だけに反映され、出欠簿は送信されません。",
+        "threeIllustrativeSessionsNoLiveAvailability": "3 つの例示的なセッション · ライブ可用性なし",
+        "intervalsThatMeetExactlyAtABoundaryDo": "境界で正確に一致する間隔は重なりません。これら 3 つの行で一致するルーム、講師、またはグループのみがチェックされます。",
+        "localLessonProposal": "現地レッスンのご提案",
+        "tryAProposedLesson": "提案されたレッスンを試してみる",
+        "day": "曜日",
+        "room": "部屋",
+        "tutor": "担当教員",
+        "group": "グループ",
+        "starts": "始まります",
+        "ends": "終わり",
+        "checkTheTimes": "時間を確認してください",
+        "noOverlapsInThisExample": "この例では重複はありません",
+        "theProposalDoesNotConflictWithTheThree": "この提案は、表示されている 3 つのセッションと矛盾しません。これは部屋を予約したり、完全なスケジュールを承認したりするものではありません。",
+        "fictionalCoursesIllustrativeCredits": "架空のコース・イラスト単位",
+        "credits": "単位",
+        "anExampleSemesterInView": "学期の例を表示します。",
+        "illustrativeCreditBudget": "単位数の上限例",
+        "resetExamplePlan": "プラン例をリセットする",
+        "noPrerequisiteDegreeAdmissionOrAcademicStandingRules": "前提条件、学位、入学、学業上の地位に関する規則はチェックされません。こちらは企画イラストであり、正式登録ではございません。",
+        "readingBasedLocalPreview": "読み取りベースのローカル プレビュー",
+        "thoughtfulLearningDesign": "考え抜かれた学習デザイン",
+        "chooseASampleLesson": "サンプルレッスンを選ぶ",
+        "localLessonProgress": "このページでの学習進捗",
+        "resetStudio": "スタジオをリセットする",
+        "tryASmallReflection": "小さな反省をしてみる",
+        "markedCompleteLocally": "ローカルで完了マークが付けられました",
+        "markThisLessonCompleteLocally": "このレッスンをローカルで完了としてマークします",
+        "aSampleKnowledgeCheck": "知識チェックのサンプル",
+        "whichActivityGivesALearnerAChanceTo": "学習者にアイデアを使用する機会を与えるアクティビティはどれですか?",
+        "readOnlyTheCourseTitle": "コースのタイトルだけをお読みください。",
+        "explainTheIdeaInYourOwnWordsWith": "例を挙げて自分の言葉でアイデアを説明してください。",
+        "skipDirectlyToTheNextSection": "次のセクションに直接スキップしてください。",
+        "checkExampleAnswer": "解答例を確認する",
+        "thatFitsTheExampleGoalExplainingAndApplying": "これは、アイデアを説明して適用することで、学習者に練習方法を提供するという目的の例に当てはまります。",
+        "tryAgainLookForAnActivityWhereThe": "もう一度試してください。単にナビゲートするのではなく、学習者がアイデアを説明したり応用したりするアクティビティを探してください。",
+        "progressAnswersAndCompletionMarksExistOnlyIn": "進行状況、回答、完了マークは、このページのローカル状態にのみ存在します。学習記録、成績、登録、証明書は保存されません。",
+        "tryASmallPartOfTheExperience": "体験のほんの一部を試してみましょう",
+        "localExampleNotConnected": "ページ内の例 · データベース未接続",
+        "exploreTheExample": "例を見てみる"
+      }
     }
   }
 }

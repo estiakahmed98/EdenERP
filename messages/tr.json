@@ -61632,6 +61632,555 @@
           "fahimYasinUddin": "Fahim Yasin Uddin"
         }
       }
+    },
+    "educationIndustries": {
+      "pages": {
+        "school": {
+          "title": "Okul",
+          "eyebrow": "OKULLAR İÇİN AdonERP",
+          "headline": "Okulun her gününü",
+          "accent": "birlikte daha iyi yönetin.",
+          "description": "Kabul işlemlerini, sınıf içi çalışmaları ve okul yönetimini öğrencinin eğitim süreci etrafında bir araya getirin.",
+          "perspective": "Bir okul gününün birden fazla perspektifi vardır.",
+          "demoTitle": "Küçük bir kayıt. Daha net bir sabah.",
+          "demoDescription": "Dört kurgusal öğrencinin katılımını işaretlemeyi deneyin. Her değişiklik bu tarayıcı oturumunda kalır; hiçbir öğrenci kaydı kaydedilmez.",
+          "toolsTitle": "Sınıftaki çalışmaları keşfedin.",
+          "tools": {
+            "0": {
+              "title": "Kabuller ve öğrenci kayıtları",
+              "body": "Yapılandırılmış bir öğrenci kaydına yönelik başvuru yolculuğunu takip edin."
+            },
+            "1": {
+              "title": "Katılım ve zaman çizelgesi",
+              "body": "Sınıf kayıtlarını ve okul günü programını keşfedin."
+            },
+            "2": {
+              "title": "Ücretler ve okul ofisi",
+              "body": "Ücret yapılarına, tahsilatlara ve bunların raporlama bağlamlarına bakın."
+            },
+            "3": {
+              "title": "Bildirimler ve okul iletişimi",
+              "body": "Bir bildirimin hedef kitlesini ve mesajını nasıl bir araya getirdiğini görün."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Okul ofisi",
+              "title": "Öğrencinin içeriğini bir arada tutun.",
+              "body": "Kabullerle başlayın, öğrenci kayıtlarını takip edin ve ücret görüşmesini doğru öğrenciyle bağlantılı tutun.",
+              "steps": {
+                "0": "Başvuru ve kabul",
+                "1": "Öğrenci kimliği",
+                "2": "Ücret ve ofis bağlamı"
+              }
+            },
+            "1": {
+              "role": "Öğretmenler",
+              "title": "Önünüzdeki sınıftan başlayın.",
+              "body": "Bir öğretmenin çalışma gününü destekleyen katılım, zaman çizelgesi ve sonuç görünümlerini keşfedin.",
+              "steps": {
+                "0": "Sınıf ve ders programı",
+                "1": "Katılım kaydı",
+                "2": "Sınavlar ve sonuçlar"
+              }
+            },
+            "2": {
+              "role": "Okul liderliği",
+              "title": "Okulu bağlantılı bir bütün olarak okuyun.",
+              "body": "Okulun içeriğini kaybetmeden kayıt, akademik faaliyet ve idari ayrıntılar arasında geçiş yapın.",
+              "steps": {
+                "0": "Okul kontrol paneli",
+                "1": "Akademik yapı",
+                "2": "Raporlar ve takip"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Bu canlı bir okul sistemi mi?",
+              "1": "Bu sayfa bir endüstri vitrinidir. Devam alıştırması kurgusal öğrencileri kullanır ve sayfayla birlikte sıfırlanır. Ürün iş akışının tamamını tartışmak için danışman demosunu kullanın."
+            },
+            "1": {
+              "0": "Sınıf ve ücret yapımızı keşfedebilir miyiz?",
+              "1": "Evet. Tartışmanın kurumunuzun sürecini takip edebilmesi için sınıf seviyelerinizi, bölümlerinizi, akademik dönemlerinizi ve ücret kurallarınızı demoya getirin."
+            },
+            "2": {
+              "0": "Buradaki mevcut verilerimiz değişecek mi?",
+              "1": "Hayır. Bu sayfa bir öğrenci veri tabanına bağlanmaz, katılımı kaydetmez veya ücret toplamaz."
+            }
+          }
+        },
+        "college": {
+          "title": "Yüksekokul",
+          "eyebrow": "YÜKSEKOKULLAR İÇİN AdonERP",
+          "headline": "Her akademik dönem için",
+          "accent": "daha düzenli bir işleyiş.",
+          "description": "Akademik dönemin günlük işlerinde eğitim programı, sınıf ve okul yönetimi arasında koordinasyon sağlayın.",
+          "perspective": "Yüksekokul yönetimi, koordineli kararlarla güçlenir.",
+          "demoTitle": "Bir ders saati planlamayı deneyin.",
+          "demoDescription": "Önerdiğiniz dersi üç örnek dersle karşılaştırın. Herhangi bir rezervasyon oluşturmadan sınıf, öğretmen ve öğrenci grubu çakışmalarını kontrol edin.",
+          "toolsTitle": "Akademik dönemi idari işlerle birlikte yönetin.",
+          "tools": {
+            "0": {
+              "title": "Akademik yapı",
+              "body": "Oturumun arkasındaki sınıfları, bölümleri ve akademik çerçeveyi keşfedin."
+            },
+            "1": {
+              "title": "Zaman çizelgesi planlaması",
+              "body": "Öğretim programını ve sınıf içeriğini inceleyin."
+            },
+            "2": {
+              "title": "Sınavlar ve sonuçlar",
+              "body": "Değerlendirme kayıtlarına ve sonuçların nasıl sunulduğuna bakın."
+            },
+            "3": {
+              "title": "Ücretler ve raporlama",
+              "body": "Ofisin ücret raporlama ve tahsilatlara ilişkin görünümünü keşfedin."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Akademik ofis",
+              "title": "Akademik dönemi bir bütün olarak planlayın.",
+              "body": "Akademik yapıyı, ders programını ve sınav içeriğini aynı planlama konuşmasına dahil edin.",
+              "steps": {
+                "0": "Program ve sınıf yapısı",
+                "1": "Öğretim takvimi",
+                "2": "Değerlendirme bağlamı"
+              }
+            },
+            "1": {
+              "role": "Öğretim kadrosu",
+              "title": "Öğretim görevlerini tüm ayrıntılarıyla görün.",
+              "body": "Gruptan ve öğretim aralığından başlayın, ardından katılımı ve değerlendirme kaydını takip edin.",
+              "steps": {
+                "0": "Ders görevlendirmesi",
+                "1": "Derse katılım",
+                "2": "Değerlendirme kayıtları"
+              }
+            },
+            "2": {
+              "role": "Yönetim",
+              "title": "İdari işleri akademik dönemle uyumlu tutun.",
+              "body": "Üniversite faaliyetlerini incelerken akademik takvimin yanı sıra öğrenci ve ücret içeriğini de okuyun.",
+              "steps": {
+                "0": "Öğrenci kayıtları",
+                "1": "Ücretler ve tahsilatlar",
+                "2": "Raporlar ve takip"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Planlama aracı bir sınıf ayırtır mı?",
+              "1": "Hayır. Bu sayfa içi örnek yalnızca ekranda görünen üç dersi kontrol eder. Yüksekokulunuzun gerçek ders programını okumaz veya değiştirmez."
+            },
+            "1": {
+              "0": "Farklı eğitim programlarını ve akademik dönemleri görüşebilir miyiz?",
+              "1": "Evet. Bir danışmanın adım adım ilerlemesi için başlangıç ​​noktası olarak kendi programınızı, grubunuzu, odanızı ve öğretim düzenlemelerinizi kullanın."
+            },
+            "2": {
+              "0": "Örnekte çakışma olmaması, tüm ders programının onaylandığı anlamına gelir mi?",
+              "1": "Hayır. Tam bir zaman çizelgesi, bu küçük örneğin dışında kalan kurumsal kurallara, kullanılabilirliğe ve diğer kısıtlamalara da ihtiyaç duyabilir."
+            }
+          }
+        },
+        "university": {
+          "title": "Üniversite",
+          "eyebrow": "ÜNİVERSİTELER İÇİN AdonERP",
+          "headline": "Birbirine bağlı bir kampüs.",
+          "accent": "Özenle planlanan bir eğitim yolculuğu.",
+          "description": "Her üniversitenin kendine özgü ihtiyaçlarını gözeterek kabul, akademik yapı ve öğrencinin eğitim süreci arasındaki bağlantıyı keşfedin.",
+          "perspective": "Bir kampüs. Farklı sorumluluklar.",
+          "demoTitle": "Örnek bir dönem taslağı çizin.",
+          "demoDescription": "Beş kurgusal ders arasından seçim yaparak toplam krediyi örnek kredi sınırıyla karşılaştırın. Bu işlem ders kaydı yapmaz ve kayıt uygunluğunu belirlemez.",
+          "toolsTitle": "Mevcut üniversite önizlemeleriyle başlayın.",
+          "tools": {
+            "0": {
+              "title": "Üniversiteye genel bakış",
+              "body": "Mevcut kontrol paneli sunumunu ve kampüs düzeyindeki bağlamını keşfedin."
+            },
+            "1": {
+              "title": "Kabul yolculuğu",
+              "body": "Mevcut üniversite kabul vitrinine bakın."
+            },
+            "2": {
+              "title": "Akademik planlama bağlamı",
+              "body": "Tartışma için başlangıç noktası olarak Eğitim akademik yapısının önizlemesini keşfedin."
+            },
+            "3": {
+              "title": "Kampüs kaynak bağlamı",
+              "body": "Kaynak görüşmesi için mevcut oda yönetimi vitrini inceleyin."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Akademik ofis",
+              "title": "Kurumun şekliyle başlayın.",
+              "body": "Üniversitenizin akademik yapısı etrafında bir tartışma çerçevesi oluşturmak için fakülteleri, programları, terimleri ve kursları kullanın.",
+              "steps": {
+                "0": "Kurumsal yapı",
+                "1": "Dönem ve müfredat bağlamı",
+                "2": "Öğrencinin akademik yolculuğu"
+              }
+            },
+            "1": {
+              "role": "Kabul ekibi",
+              "title": "Başvuranın yolculuğunu okunabilir tutun.",
+              "body": "Kabul vitrini inceleyin, ardından öğrenci ve akademik kayıtlara geçiş konusunu tartışın.",
+              "steps": {
+                "0": "Uygulama bağlamı",
+                "1": "Kabul incelemesi",
+                "2": "Öğrenci kaydı aktarımı"
+              }
+            },
+            "2": {
+              "role": "Kampüs liderliği",
+              "title": "Genel bakışın arkasındaki ayrıntıları takip edin.",
+              "body": "Akademik faaliyetler, kabuller ve kaynak planlamasıyla ilgili sorulara rehberlik etmek için kampüse genel bakışı kullanın.",
+              "steps": {
+                "0": "Üniversiteye genel bakış",
+                "1": "Akademik aktivite",
+                "2": "Kaynak bağlamı"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Kredi planlayıcısı resmî bir ders kayıt kontrolü yapar mı?",
+              "1": "Hayır. Dersler, krediler ve sınır örnek niteliğindedir. Ön koşullar, mezuniyet gereklilikleri, akademik durum veya kayıt uygunluğu denetlenmez."
+            },
+            "1": {
+              "0": "Burada hangi üniversite ön izlemelerini keşfedebilirim?",
+              "1": "Bağlantılı üniversite sunumları kontrol panelini ve kabulleri kapsar. Bu sayfadaki akademik planlama açıklayıcı bir tartışma aracıdır; Kurumunuzun gereksinimlerini keşfetmek için rehberli bir demo kullanın."
+            },
+            "2": {
+              "0": "Kendi akademik kurallarımızı tartışabilir miyiz?",
+              "1": "Evet. Program yapılarını, kredi kurallarını, dönem düzenlemelerini ve raporlama ihtiyaçlarını danışman görüşmesine getirin."
+            }
+          }
+        },
+        "lms": {
+          "title": "LMS",
+          "eyebrow": "ÖĞRENME DENEYİMLERİ İÇİN AdonERP",
+          "headline": "Her ders için",
+          "accent": "anlamlı bir sonraki adım.",
+          "description": "Dersi, uygulamayı ve ilerlemeyi anlaşılır bir akışta birleştiren, odaklı bir öğrenme deneyimini keşfedin.",
+          "perspective": "Deneyimi öğrencinin etrafında tasarlayın.",
+          "demoTitle": "Örnek bir öğrenim stüdyosuna adım atın.",
+          "demoDescription": "Üç kısa örnek dersi okuyun, bilgi kontrolünü deneyin ve ilerlemenizi bu sayfada işaretleyin. Kayıt, not veya sertifika oluşturulmaz.",
+          "toolsTitle": "Öğrenimi daha geniş bağlamla birleştirin.",
+          "tools": {
+            "0": {
+              "title": "e-Öğrenim vitrini",
+              "body": "Mevcut e-Öğrenim ürün sunumunu keşfedin."
+            },
+            "1": {
+              "title": "Öğrenci kayıtları",
+              "body": "Kurumsal bağlam için Eğitim öğrenci kayıtları vitrinine bakın."
+            },
+            "2": {
+              "title": "Değerlendirme bağlamı",
+              "body": "Mevcut muayeneleri ve sonuçların sunumunu keşfedin."
+            },
+            "3": {
+              "title": "Akademik yapı",
+              "body": "Kurumsal bir öğrenme görüşmesini çerçeveleyebilecek yapıyı görün."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Öğrenciler",
+              "title": "Başlamak, pratik yapmak ve düşünmek için açık bir yer.",
+              "body": "Örnek stüdyoda kısa bir ders, bir pratik soru ve görünür bir sonraki eylem bir arada tutulur.",
+              "steps": {
+                "0": "Dersi aç",
+                "1": "Etkinliği deneyin",
+                "2": "Yansıt ve devam et"
+              }
+            },
+            "1": {
+              "role": "Eğitimciler",
+              "title": "Öğrenme niyetini görünür hale getirin.",
+              "body": "Ders içeriğinin, uygulamanın ve geri bildirimin öğrencileriniz için nasıl çalışması gerektiğini tartışmak için stüdyoyu kullanın.",
+              "steps": {
+                "0": "Hedefi çerçeveleyin",
+                "1": "Uygulamayı şekillendirin",
+                "2": "Geri bildirimi açıklayın"
+              }
+            },
+            "2": {
+              "role": "Öğrenme ekipleri",
+              "title": "İçerik listesinin ötesini düşünün.",
+              "body": "Kurs yapısını ve öğrenimin kurumunuzun bağlamıyla nasıl bağlantı kurması gerektiğini keşfetmek için ürün görüşmesini kullanın.",
+              "steps": {
+                "0": "Kurs yapısı",
+                "1": "Öğrenci deneyimi",
+                "2": "İlerleme bağlamı"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Bu önizlemede oynatılan bir video var mı?",
+              "1": "Hayır. Çalışma demosu, yerel ilerleme ve örnek bilgi kontrolü içeren okumaya dayalı bir ders stüdyosudur. Hiçbir video oynatıcı veya akış entegrasyonu ima edilmemiştir."
+            },
+            "1": {
+              "0": "Örneği tamamlamak bir sertifika verecek mi?",
+              "1": "Hayır. Tamamlanma işaretleri yalnızca yerel bileşen durumunda mevcuttur ve sayfa yeniden yüklendiğinde sıfırlanır. Bunlar resmi öğrenme kayıtları değildir."
+            },
+            "2": {
+              "0": "Gerçek derslerimizi nasıl tartışabiliriz?",
+              "1": "Dersin ana hatlarını, öğrenci gruplarını ve değerlendirme ihtiyaçlarını bir danışmana iletin. Örnek stüdyo bu konuşmanın başlangıç ​​noktasıdır."
+            }
+          }
+        }
+      },
+      "learners": {
+        "0": {
+          "label": "Öğrenci 01"
+        },
+        "1": {
+          "label": "Öğrenci 02"
+        },
+        "2": {
+          "label": "Öğrenci 03"
+        },
+        "3": {
+          "label": "Öğrenci 04"
+        }
+      },
+      "sessions": {
+        "0": {
+          "title": "Uygulamalı bilim"
+        },
+        "1": {
+          "title": "İletişim"
+        },
+        "2": {
+          "title": "Nicel beceriler"
+        }
+      },
+      "courses": {
+        "0": {
+          "title": "Akademik iletişim",
+          "area": "Temel ders"
+        },
+        "1": {
+          "title": "Nicel düşünme",
+          "area": "Temel ders"
+        },
+        "2": {
+          "title": "Çevre ve toplum",
+          "area": "Disiplinlerarası"
+        },
+        "3": {
+          "title": "Araştırma temelleri",
+          "area": "Yöntemler"
+        },
+        "4": {
+          "title": "Tasarım ve sorgulama",
+          "area": "Seçmeli"
+        }
+      },
+      "lessons": {
+        "0": {
+          "title": "Net bir hedefle başlayın",
+          "duration": "Kısa okuma",
+          "body": "Yararlı bir öğrenme hedefi, öğrencinin yapabileceği bir şeyi tanımlar. Bu örnekte amaç bir fikri kendi kelimelerinizle açıklamak ve basit bir örnekle ilişkilendirmektir.",
+          "prompt": "Tanıdık bir fikir seçin. Kısa bir dersten sonra birinin anlamasını istediğiniz şeyi anlatan bir cümle yazın.",
+          "takeaway": "Görünür bir hedef, derse ve uygulamaya ortak bir yön verir."
+        },
+        "1": {
+          "title": "Pratik yapmak için yer açın",
+          "duration": "Kısa okuma",
+          "body": "Alıştırma, öğrenciye fikri kullanma şansı verir. Küçük bir açıklama, çalışılmış bir örnek veya bir karşılaştırma olabilir. Bu örnekte, yüklenen bir ödev yerine kısa bir yansıma kullanılmaktadır.",
+          "prompt": "Seçtiğiniz fikri kendi kelimelerinizle açıklayın. Başka bir kişinin anlamasına yardımcı olacak bir örnek ekleyin.",
+          "takeaway": "Uygulama doğrudan hedefle bağlantılı olmalıdır."
+        },
+        "2": {
+          "title": "Geri bildirimi bir sonraki adıma bağlayın",
+          "duration": "Kısa okuma",
+          "body": "Belirli bir şeye işaret ettiğinde geri bildirimin kullanılması daha kolaydır. Bu stüdyoda örnek soru, bir cevabın neden öğrenme hedefine uyduğunu açıklıyor ve ardından denemeniz için size bir sonraki adım sunuyor.",
+          "prompt": "Açıklamanızı tekrar okuyun. Açık olan bir kısmı ve daha somut bir örneğin yardımcı olabileceği bir kısmı belirleyin.",
+          "takeaway": "Düşünme, geri bildirimi yararlı bir sonraki eyleme dönüştürebilir."
+        }
+      },
+      "ui": {
+        "metadataTitle": "{name} Yönetimi | Eğitim Sektörü",
+        "canvasTitle": "{name} / Kavramsal görünüm",
+        "initialMark": "{status} · ilk örnek",
+        "present": "Katıldı",
+        "late": "Geç katıldı",
+        "unmarked": "İşaretlenmedi",
+        "exampleCredits": "Örnek kredi: {count}",
+        "lessonNumber": "Ders {number}",
+        "productPreviewNumber": "{number} / ÜRÜN Önizlemesi",
+        "experience": "{name} deneyimi",
+        "previewRegion": "Alt yarı demo davetiyle {name} önizlemesi",
+        "walkthrough": "{name} · Ayrıntılı tanıtım",
+        "fullWorkflow": "İş akışının tamamını görün.",
+        "educationCategory": "EĞİTİM / {name}",
+        "fictionalRecord": "{id} · kurgusal kayıt",
+        "attendanceFor": "{name} için yoklama",
+        "endAfterStart": "Bitiş zamanı başlangıç zamanından sonra olmalıdır.",
+        "validTimes": "Geçerli başlangıç ve bitiş saatlerini seçin.",
+        "overlaps": "Çakışan örnek ders sayısı: {count}",
+        "sharedResources": "{id}: paylaşılan {resources}",
+        "creditsAbove": "Örnek kredi sınırının üzerindeki miktar: {count}.",
+        "creditsRemaining": "Örnek kredi sınırına kadar kalan miktar: {count}.",
+        "lessonsCompleted": "Bu sayfada tamamlandı olarak işaretlenen dersler: {count} / {total}",
+        "sampleLesson": "ÖRNEK DERS {number} / {duration}",
+        "absent": "Katılmadı",
+        "illustrativePreview": "Temsili önizleme",
+        "programmeStructure": "Eğitim programı <em>yapıyı belirler.</em>",
+        "timetableRhythm": "Ders programı <em>günlük işleyişi düzenler.</em>",
+        "officeContext": "Okul yönetimi <em>ilgili bilgileri bir arada tutar.</em>",
+        "slotContext": "Her dersin bir sınıfı, öğrenci grubu ve öğretmeni vardır.",
+        "practicePart": "Uygulamayı dersin bir parçası hâline getirin."
+      },
+      "choices": {
+        "sunday": "Pazar",
+        "monday": "Pazartesi",
+        "tuesday": "Salı",
+        "lab01": "Laboratuvar 01",
+        "hallB": "Salon B",
+        "tutorA": "Öğretmen A",
+        "tutorB": "Öğretmen B",
+        "science1": "Fen 1",
+        "humanities1": "Sosyal Bilimler 1",
+        "room": "sınıf",
+        "tutor": "öğretmen",
+        "group": "öğrenci grubu"
+      },
+      "copy": {
+        "fictionalExampleData": "Kurgusal örnek veriler",
+        "theSchoolDayRegister": "Okul günü kaydı",
+        "theSessionOverview": "Derslere genel bakış",
+        "theAcademicPlanningConversation": "Akademik planlama tartışması",
+        "theLearningOutline": "Öğrenme taslağı",
+        "fictionalLearners": "Kurgusal öğrenciler",
+        "initialMarks": "Başlangıçta işaretlenenler",
+        "registerState": "Yoklama durumu",
+        "localOnly": "Yalnızca bu sayfada",
+        "exampleSessions": "Örnek oturumlar",
+        "roomsInExample": "Örnekteki odalar",
+        "plannerState": "Planlama durumu",
+        "fictionalCourses": "Kurgusal kurslar",
+        "exampleCreditBudget": "Örnek kredi sınırı",
+        "registration": "Ders Kaydı",
+        "notPerformed": "Gerçekleştirilmedi",
+        "sampleReadings": "Örnek okumalar",
+        "knowledgeCheck": "Bilgi kontrolü",
+        "1Example": "1 örnek",
+        "officialLearningRecords": "Resmi öğrenme kayıtları",
+        "noneCreated": "Hiçbiri oluşturulmadı",
+        "shortReadingExampleContent": "Kısa okuma · örnek içerik",
+        "illustrativeCompositionNotAScreenshotOfAConnected": "Açıklayıcı kompozisyon, bağlantılı bir kurumun ekran görüntüsü değil. Yukarıdaki çalışma örneği bu statik tuvalden ayrıdır.",
+        "breadcrumb": "Gezinti yolu",
+        "industries": "Sektörler",
+        "education": "Eğitim",
+        "theWiderProductConversation": "ÜRÜNÜN DİĞER İŞLEVLERİ",
+        "browseExistingProductPresentationsThenBringYourInstitutions": "Mevcut ürün sunumlarına göz atın ve ardından kurumunuzun sürecini rehberli bir demoya taşıyın.",
+        "exploreThePresentation": "Sunuyu keşfedin",
+        "seeThePartsTogether": "PARÇALARI BİRLİKTE GÖRÜN",
+        "aCloserLookAtTheExperience": "Deneyime daha yakından bir bakış.",
+        "conceptCanvasWithFictionalRecordsContinueTheConversation": "Kurgusal kayıtlarla konsept tuval. Kendi iş akışınızı keşfetmek için bir danışmanla konuşmaya devam edin.",
+        "exploreYourInstitutionsRecordsLearningContextAndEveryday": "Rehberli bir ürün görüşmesinde kurumunuzun kayıtlarını, öğrenim bağlamını ve günlük iş akışlarını keşfedin.",
+        "aFewUsefulDetails": "İŞİNİZE YARAYACAK BİRKAÇ AYRINTI",
+        "knowWhatYoureExploring": "Ne keşfettiğinizi bilin.",
+        "educationInDifferentContexts": "FARKLI BAĞLAMLARDA EĞİTİM",
+        "exploreAnotherPartOfTheJourney": "Yolculuğun başka bir bölümünü keşfedin.",
+        "yourInstitutionYourWorkflow": "KURUMUNUZ. İŞ AKIŞINIZ.",
+        "letsBeginWithTheWayYouWork": "Çalışma şeklinizle başlayalım.",
+        "bringYourAcademicAndAdministrativeQuestionsToAn": "Akademik ve idari sorularınızı danışman görüşmesine getirin.",
+        "learnerContext": "Öğrenci bağlamı",
+        "classroomRhythm": "Sınıf ritmi",
+        "theSchoolDayIllustrated": "OKUL GÜNÜ / RESİMLİ",
+        "aConsideredMorning": "Düşünülmüş bir sabah",
+        "classRegisterAttendanceFollowUp": "Ders kaydı → Devam → Takip",
+        "theOfficeStaysInContext": "İlgili bilgiler okul yönetiminin elinin altında",
+        "noticesLearnerRecordsAndFeeQuestions": "Bildirimler, öğrenci kayıtları ve ücret soruları",
+        "makeTheDayFeelConnected": "günün tüm işlerini birbirine bağlayın",
+        "conceptualCampusAndSchoolDayCanvasNoReal": "Kavramsal kampüs ve okul günü tuvali · gerçek okul verileri yok",
+        "theAcademicSession": "AKADEMİK DÖNEM",
+        "aSessionInView": "GÖRÜNTÜLENEN BİR OTURUM",
+        "illustrativeSundayTimetable": "Açıklayıcı Pazar takvimi",
+        "appliedScience": "Uygulamalı bilim",
+        "lab01Science1": "Laboratuvar 01 · Bilim 1",
+        "communication": "İletişim",
+        "hallBHumanities1": "Salon B · Beşeri Bilimler 1",
+        "twoOfThreeFictionalSessionsUsedInThe": "Yerel planlama çalışmasında kullanılan üç kurgusal oturumdan ikisi",
+        "application": "UYGULAMA",
+        "academicContext": "AKADEMİK BAĞLAM",
+        "studentJourney": "ÖĞRENCİ YOLCULUĞU",
+        "exampleAcademicMap": "ÖRNEK AKADEMİK HARİTA",
+        "structure": "Akademik yapı",
+        "programmeTermContext": "Program ve dönem bağlamı",
+        "choices": "Seçimler",
+        "coursesCreditConversation": "Kurslar ve kredi görüşmesi",
+        "beginWithTheStudentsJourney": "Öğrencinin yolculuğuyla başlayın.",
+        "conceptualCampusIllustrationNoInstitutionOrAccreditationImplied": "Kavramsal kampüs illüstrasyonu · hiçbir kurum veya akreditasyon ima edilmemektedir",
+        "theLearningStudio": "ÖĞRENME STÜDYOSU",
+        "interactiveExampleBelow": "Aşağıdaki etkileşimli örnek",
+        "theShortCourse": "KISA KURS",
+        "aClearGoal": "Açık bir hedef",
+        "roomToPractice": "Uygulama fırsatı",
+        "aUsefulNextStep": "Yararlı bir sonraki adım",
+        "lessonPracticeReflection": "DERS / UYGULAMA / DÜŞÜNME",
+        "startWithAnIdea": "Bir fikirle başlayın.",
+        "readingBasedSampleStudioNoVideoEnrolmentOr": "Okumaya dayalı örnek stüdyo · video, kayıt veya sertifika talebi yok",
+        "aSmallExampleOfAMoreConsideredLearning": "Daha fazla düşünülmüş bir öğrenme akışının küçük bir örneği.",
+        "startWithThePeopleDoingTheWork": "İŞİ YAPAN İNSANLARLA BAŞLAYIN",
+        "chooseAPerspective": "Bir perspektif seçin",
+        "fictionalClassFourAnonymousLearners": "Kurgusal sınıf · dört anonim öğrenci",
+        "resetExample": "Örneği sıfırla",
+        "thisLocalExample": "BU YEREL ÖRNEK",
+        "aRegisterYouCanReadAtAGlance": "Bir bakışta okuyabileceğiniz bir kayıt.",
+        "marked": "İşaretlenen",
+        "inAttendance": "Katılan öğrenci",
+        "stillUnmarked": "Hala işaretlenmemiş",
+        "inAttendanceIncludesPresentAndLateTheseMarks": "Katılan öğrenci sayısına zamanında ve geç gelenler dahildir. Değişiklikler yalnızca buradaki dört kurgusal kaydı etkiler; hiçbir yoklama kaydı gönderilmez.",
+        "threeIllustrativeSessionsNoLiveAvailability": "Üç açıklayıcı oturum · canlı yayın yok",
+        "intervalsThatMeetExactlyAtABoundaryDo": "Tam olarak bir sınırda buluşan aralıklar örtüşmez. Yalnızca bu üç sıradaki eşleşen odalar, öğretmenler veya gruplar işaretlenir.",
+        "localLessonProposal": "Yerel ders önerisi",
+        "tryAProposedLesson": "Önerilen bir dersi deneyin",
+        "day": "Gün",
+        "room": "Oda",
+        "tutor": "Öğretmen",
+        "group": "Grup",
+        "starts": "Başlangıçlar",
+        "ends": "biter",
+        "checkTheTimes": "Saatleri kontrol edin",
+        "noOverlapsInThisExample": "Bu örnekte çakışma yok",
+        "theProposalDoesNotConflictWithTheThree": "Teklif görünürdeki üç oturumla çelişmiyor. Bu, bir oda rezerve etmek veya tam bir zaman çizelgesini onaylamak anlamına gelmez.",
+        "fictionalCoursesIllustrativeCredits": "Kurgusal kurslar · örnek krediler",
+        "credits": "kredi",
+        "anExampleSemesterInView": "Örnek bir dönem görünümünde.",
+        "illustrativeCreditBudget": "Örnek kredi sınırı",
+        "resetExamplePlan": "Örnek planı sıfırla",
+        "noPrerequisiteDegreeAdmissionOrAcademicStandingRules": "Hiçbir önkoşul, derece, kabul veya akademik durum kuralları kontrol edilmez. Bu bir planlama örneğidir, resmi kayıt değildir.",
+        "readingBasedLocalPreview": "Okumaya dayalı yerel önizleme",
+        "thoughtfulLearningDesign": "Düşünceli öğrenme tasarımı",
+        "chooseASampleLesson": "Örnek bir ders seçin",
+        "localLessonProgress": "Bu sayfadaki ders ilerlemesi",
+        "resetStudio": "Stüdyoyu sıfırla",
+        "tryASmallReflection": "KÜÇÜK BİR DÜŞÜNMEYİ DENEYİN",
+        "markedCompleteLocally": "Yerel olarak tamamlandı olarak işaretlendi",
+        "markThisLessonCompleteLocally": "Bu dersi yerel olarak tamamlandı olarak işaretle",
+        "aSampleKnowledgeCheck": "Örnek bir bilgi kontrolü",
+        "whichActivityGivesALearnerAChanceTo": "Hangi etkinlik öğrenciye bir fikri kullanma şansı verir?",
+        "readOnlyTheCourseTitle": "Yalnızca ders başlığını okuyun.",
+        "explainTheIdeaInYourOwnWordsWith": "Fikrinizi kendi sözlerinizle bir örnekle açıklayın.",
+        "skipDirectlyToTheNextSection": "Doğrudan bir sonraki bölüme geçin.",
+        "checkExampleAnswer": "Örnek yanıtı kontrol edin",
+        "thatFitsTheExampleGoalExplainingAndApplying": "Bu, örnek hedefe uyuyor: Bir fikri açıklamak ve uygulamak, öğrenciye pratik yapma yolu sağlar.",
+        "tryAgainLookForAnActivityWhereThe": "Tekrar deneyin. Öğrencinin sadece gezinmek yerine fikri açıkladığı veya uyguladığı bir aktivite arayın.",
+        "progressAnswersAndCompletionMarksExistOnlyIn": "İlerleme durumu, cevaplar ve tamamlama işaretleri yalnızca bu sayfanın yerel durumunda mevcuttur. Hiçbir öğrenme kaydı, notu, kaydı veya sertifikası kaydedilmez.",
+        "tryASmallPartOfTheExperience": "DENEYİMİN KÜÇÜK BİR BÖLÜMÜNÜ DENEYİN",
+        "localExampleNotConnected": "Sayfa içi örnek · Veritabanına bağlı değil",
+        "exploreTheExample": "Örneği keşfedin"
+      }
     }
   }
 }

@@ -12,10 +12,12 @@ export default function DemoPreview({
   title,
   children,
   description = "Book a guided demo to explore the full workspace, records and production process.",
+  invitation,
 }: {
   title: string;
   children: ReactNode;
   description?: string;
+  invitation?: { regionLabel: string; eyebrow: string; heading: string };
 }) {
   const surface = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -72,7 +74,10 @@ export default function DemoPreview({
       className={css.preview}
       data-demo-preview="half-blurred"
       role="region"
-      aria-label={`${title} preview with a lower-half demo invitation`}
+      aria-label={
+        invitation?.regionLabel ??
+        `${title} preview with a lower-half demo invitation`
+      }
     >
       <div ref={surface} className={css.surface}>
         {children}
@@ -83,8 +88,10 @@ export default function DemoPreview({
           <span className={css.bookingIcon}>
             <Presentation size={21} aria-hidden="true" />
           </span>
-          <p className={css.bookingEyebrow}>{title} · Full walkthrough</p>
-          <h3>See the complete workflow.</h3>
+          <p className={css.bookingEyebrow}>
+            {invitation?.eyebrow ?? `${title} · Full walkthrough`}
+          </p>
+          <h3>{invitation?.heading ?? "See the complete workflow."}</h3>
           <p>{description}</p>
           <div className={css.bookingAction}>
             <LiveDemoButton />

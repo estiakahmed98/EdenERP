@@ -20,13 +20,21 @@ const { findConflicts, creditTotal } = load(
 );
 const {
   educationIndustries,
-  pages,
+  getPages,
   sessions,
-  courses,
-  lessons,
-  learners,
+  getCourses,
+  getLessons,
+  getLearners,
   attendanceInitial,
 } = load("../components/education/industry/data.ts");
+const messages = JSON.parse(fs.readFileSync("messages/en.json", "utf8")).pages
+  .educationIndustries;
+const translate = (key) =>
+  key.split(".").reduce((value, part) => value[part], messages);
+const pages = getPages(translate),
+  courses = getCourses(translate),
+  lessons = getLessons(translate),
+  learners = getLearners(translate);
 const proposal = {
   day: "Sunday",
   start: "09:30",

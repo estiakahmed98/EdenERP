@@ -61632,6 +61632,555 @@
           "fahimYasinUddin": "Fahim Yasin Uddin"
         }
       }
+    },
+    "educationIndustries": {
+      "pages": {
+        "school": {
+          "title": "Trường học",
+          "eyebrow": "AdonERP DÀNH CHO TRƯỜNG HỌC",
+          "headline": "Kết nối mọi hoạt động",
+          "accent": "trong từng ngày học.",
+          "description": "Liên kết tuyển sinh, lớp học và công tác văn phòng để theo dõi xuyên suốt quá trình học tập của học sinh.",
+          "perspective": "Một ngày học có nhiều hơn một góc nhìn.",
+          "demoTitle": "Một sổ đăng ký nhỏ. Một buổi sáng trong trẻo hơn.",
+          "demoDescription": "Hãy thử chấm điểm điểm danh cho bốn học sinh hư cấu. Mọi thay đổi vẫn còn trong phiên trình duyệt này; không có hồ sơ sinh viên nào được lưu.",
+          "toolsTitle": "Khám phá công việc xung quanh lớp học.",
+          "tools": {
+            "0": {
+              "title": "Tuyển sinh và hồ sơ sinh viên",
+              "body": "Thực hiện theo hành trình đăng ký vào hồ sơ sinh viên có cấu trúc."
+            },
+            "1": {
+              "title": "Tham dự & lịch trình",
+              "body": "Khám phá sổ đăng ký lớp học và lịch trình ngày học."
+            },
+            "2": {
+              "title": "Học phí và văn phòng trường",
+              "body": "Xem xét cấu trúc phí, các khoản thu và bối cảnh báo cáo của chúng."
+            },
+            "3": {
+              "title": "Thông báo và liên lạc của trường",
+              "body": "Xem cách một thông báo gắn kết khán giả và thông điệp của nó với nhau."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "văn phòng trường học",
+              "title": "Giữ bối cảnh của người học cùng nhau.",
+              "body": "Bắt đầu với việc tuyển sinh, theo dõi hồ sơ học sinh và duy trì kết nối cuộc trò chuyện về học phí với đúng người học.",
+              "steps": {
+                "0": "Đơn đăng ký và nhập học",
+                "1": "Danh tính sinh viên",
+                "2": "Bối cảnh phí và văn phòng"
+              }
+            },
+            "1": {
+              "role": "giáo viên",
+              "title": "Bắt đầu với lớp học trước mặt bạn.",
+              "body": "Khám phá các chế độ xem điểm danh, thời gian biểu và kết quả hỗ trợ ngày làm việc của giáo viên.",
+              "steps": {
+                "0": "Lớp học & thời gian biểu",
+                "1": "Đăng ký tham dự",
+                "2": "Bài kiểm tra & kết quả"
+              }
+            },
+            "2": {
+              "role": "Lãnh đạo trường học",
+              "title": "Đọc trường học như một tổng thể được kết nối.",
+              "body": "Di chuyển giữa tuyển sinh, hoạt động học tập và chi tiết hành chính mà không làm mất bối cảnh của trường.",
+              "steps": {
+                "0": "Bảng thông tin trường học",
+                "1": "Cấu trúc học thuật",
+                "2": "Báo cáo & theo dõi"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Đây có phải là hệ thống trường học trực tiếp không?",
+              "1": "Trang này là một giới thiệu ngành công nghiệp. Bài tập điểm danh của nó sử dụng những người học hư cấu và đặt lại trang. Sử dụng bản demo cố vấn để thảo luận về quy trình làm việc hoàn chỉnh của sản phẩm."
+            },
+            "1": {
+              "0": "Chúng ta có thể khám phá cấu trúc lớp học và học phí của mình không?",
+              "1": "Vâng. Đưa các cấp lớp, môn học, điều khoản học thuật và quy định về lệ phí của bạn vào bản demo để cuộc thảo luận có thể diễn ra theo quy trình của tổ chức bạn."
+            },
+            "2": {
+              "0": "Dữ liệu hiện tại của chúng tôi sẽ được thay đổi ở đây?",
+              "1": "Không. Trang này không kết nối với cơ sở dữ liệu sinh viên, ghi lại việc điểm danh hoặc thu phí."
+            }
+          }
+        },
+        "college": {
+          "title": "Cao đẳng",
+          "eyebrow": "AdonERP DÀNH CHO TRƯỜNG CAO ĐẲNG",
+          "headline": "Vận hành nhịp nhàng",
+          "accent": "trong mỗi học kỳ.",
+          "description": "Phối hợp chương trình đào tạo, lớp học và công tác văn phòng trong các hoạt động thường ngày của mỗi học kỳ.",
+          "perspective": "Phối hợp quyết định để vận hành trường hiệu quả.",
+          "demoTitle": "Thử sắp xếp một buổi học.",
+          "demoDescription": "So sánh buổi học dự kiến với ba buổi học minh họa để kiểm tra xung đột về phòng, giảng viên hoặc nhóm học viên. Không có lịch đặt phòng nào được tạo.",
+          "toolsTitle": "Kết nối kế hoạch học kỳ với công tác quản lý.",
+          "tools": {
+            "0": {
+              "title": "Cấu trúc học thuật",
+              "body": "Tìm hiểu lớp học, nhóm học viên và cơ cấu đào tạo trong mỗi học kỳ."
+            },
+            "1": {
+              "title": "Lập kế hoạch thời gian biểu",
+              "body": "Kiểm tra thời gian biểu giảng dạy và bối cảnh lớp học của nó."
+            },
+            "2": {
+              "title": "Kiểm tra & kết quả",
+              "body": "Nhìn vào hồ sơ đánh giá và cách trình bày kết quả."
+            },
+            "3": {
+              "title": "Phí và báo cáo",
+              "body": "Khám phá quan điểm của văn phòng về báo cáo và thu phí."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Văn phòng học thuật",
+              "title": "Lập kế hoạch cho toàn bộ học kỳ.",
+              "body": "Đưa cấu trúc học thuật, thời khóa biểu và bối cảnh kiểm tra vào cùng một cuộc thảo luận về lập kế hoạch.",
+              "steps": {
+                "0": "Cấu trúc chương trình & lớp học",
+                "1": "Thời khóa biểu giảng dạy",
+                "2": "Bối cảnh đánh giá"
+              }
+            },
+            "1": {
+              "role": "Đội ngũ giảng viên",
+              "title": "Nắm rõ nhiệm vụ giảng dạy và thông tin liên quan.",
+              "body": "Bắt đầu từ nhóm và thời điểm giảng dạy, sau đó theo dõi điểm danh và hồ sơ đánh giá.",
+              "steps": {
+                "0": "Nhiệm vụ giảng dạy",
+                "1": "Tham dự lớp học",
+                "2": "Hồ sơ đánh giá"
+              }
+            },
+            "2": {
+              "role": "Hành chính",
+              "title": "Phối hợp công tác văn phòng với kế hoạch học kỳ.",
+              "body": "Đọc bối cảnh của người học và học phí cùng với lịch học khi xem xét các hoạt động của trường đại học.",
+              "steps": {
+                "0": "hồ sơ sinh viên",
+                "1": "Phí và thu phí",
+                "2": "Báo cáo & theo dõi"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Công cụ lập kế hoạch có đặt phòng học không?",
+              "1": "Không. Ví dụ trên trang chỉ kiểm tra ba buổi học đang hiển thị, không đọc hoặc cập nhật thời khóa biểu thực tế của trường."
+            },
+            "1": {
+              "0": "Chúng ta có thể thảo luận về các chương trình và buổi học khác nhau không?",
+              "1": "Vâng. Sử dụng chương trình, nhóm, phòng và cách sắp xếp giảng dạy của riêng bạn làm điểm khởi đầu cho quá trình hướng dẫn cố vấn."
+            },
+            "2": {
+              "0": "Ví dụ không trùng lịch có đồng nghĩa với việc toàn bộ thời khóa biểu đã được duyệt không?",
+              "1": "Không. Một thời gian biểu đầy đủ cũng có thể cần các quy tắc thể chế, tính khả dụng và các ràng buộc khác nằm ngoài ví dụ nhỏ này."
+            }
+          }
+        },
+        "university": {
+          "title": "Đại học",
+          "eyebrow": "AdonERP DÀNH CHO CÁC TRƯỜNG ĐẠI HỌC",
+          "headline": "Một khuôn viên kết nối.",
+          "accent": "Một hành trình học tập có định hướng.",
+          "description": "Khám phá mối liên hệ giữa tuyển sinh, cơ cấu đào tạo và quá trình học tập của sinh viên, phù hợp với nhu cầu riêng của từng trường.",
+          "perspective": "Một khuôn viên trường. Trách nhiệm khác nhau.",
+          "demoTitle": "Phác thảo một học kỳ mẫu.",
+          "demoDescription": "Chọn trong năm học phần giả định và so sánh tổng số tín chỉ với giới hạn minh họa. Thao tác này không đăng ký học phần hay xét điều kiện đăng ký.",
+          "toolsTitle": "Bắt đầu với các bản xem trước của trường đại học có sẵn.",
+          "tools": {
+            "0": {
+              "title": "Tổng quan về trường đại học",
+              "body": "Khám phá bản trình bày bảng điều khiển hiện có và bối cảnh cấp trường của nó."
+            },
+            "1": {
+              "title": "Hành trình tuyển sinh",
+              "body": "Nhìn vào giới thiệu tuyển sinh đại học hiện có."
+            },
+            "2": {
+              "title": "Bối cảnh lập kế hoạch học tập",
+              "body": "Khám phá bản xem trước cấu trúc học thuật Giáo dục làm điểm khởi đầu để thảo luận."
+            },
+            "3": {
+              "title": "Bối cảnh tài nguyên của trường",
+              "body": "Kiểm tra tủ trưng bày quản lý phòng hiện có để tìm cuộc trò chuyện về tài nguyên."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Văn phòng học thuật",
+              "title": "Bắt đầu với hình dạng của tổ chức.",
+              "body": "Sử dụng các khoa, chương trình, thuật ngữ và khóa học để tạo khung thảo luận xung quanh cấu trúc học thuật của trường đại học của bạn.",
+              "steps": {
+                "0": "Cơ cấu thể chế",
+                "1": "Bối cảnh học kỳ và chương trình giảng dạy",
+                "2": "Hành trình học tập của sinh viên"
+              }
+            },
+            "1": {
+              "role": "Đội ngũ tuyển sinh",
+              "title": "Giữ cho hành trình của người nộp đơn có thể đọc được.",
+              "body": "Khám phá buổi giới thiệu tuyển sinh, sau đó thảo luận về việc chuyển giao hồ sơ học tập và sinh viên.",
+              "steps": {
+                "0": "Bối cảnh ứng dụng",
+                "1": "Xét tuyển tuyển sinh",
+                "2": "Bàn giao hồ sơ học sinh"
+              }
+            },
+            "2": {
+              "role": "Lãnh đạo trường",
+              "title": "Thực hiện theo các chi tiết đằng sau cái nhìn tổng quan.",
+              "body": "Sử dụng tổng quan về khuôn viên trường để hướng dẫn các câu hỏi về hoạt động học tập, tuyển sinh và lập kế hoạch nguồn lực.",
+              "steps": {
+                "0": "Tổng quan về trường đại học",
+                "1": "Hoạt động học thuật",
+                "2": "Bối cảnh tài nguyên"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Công cụ lập kế hoạch tín chỉ có xét điều kiện đăng ký chính thức không?",
+              "1": "Không. Học phần, số tín chỉ và giới hạn chỉ mang tính minh họa. Công cụ không kiểm tra điều kiện tiên quyết, yêu cầu tốt nghiệp, tình trạng học tập hay điều kiện đăng ký."
+            },
+            "1": {
+              "0": "Tôi có thể khám phá những bản xem trước của trường đại học nào ở đây?",
+              "1": "Các bài thuyết trình của trường đại học được liên kết bao gồm bảng điều khiển và tuyển sinh. Lập kế hoạch học tập trên trang này là một công cụ thảo luận mang tính minh họa; sử dụng bản demo có hướng dẫn để khám phá các yêu cầu của tổ chức bạn."
+            },
+            "2": {
+              "0": "Chúng ta có thể thảo luận về các quy tắc học tập của riêng mình không?",
+              "1": "Có. Hãy trao đổi với cố vấn về cơ cấu chương trình, quy định tín chỉ, cách tổ chức học kỳ và nhu cầu báo cáo."
+            }
+          }
+        },
+        "lms": {
+          "title": "LMS",
+          "eyebrow": "AdonERP CHO KINH NGHIỆM HỌC TẬP",
+          "headline": "Mỗi bài học đều có",
+          "accent": "một bước tiếp theo ý nghĩa.",
+          "description": "Trải nghiệm quy trình học tập rõ ràng, dễ sử dụng, kết hợp bài học, thực hành và theo dõi tiến độ.",
+          "perspective": "Thiết kế trải nghiệm xung quanh người học.",
+          "demoTitle": "Bước vào một studio học tập mẫu.",
+          "demoDescription": "Đọc ba bài học ngắn, trả lời câu hỏi và đánh dấu tiến độ trên trang này. Không tạo hồ sơ ghi danh, điểm số hay chứng chỉ.",
+          "toolsTitle": "Kết nối việc học với bối cảnh rộng hơn của nó.",
+          "tools": {
+            "0": {
+              "title": "Triển lãm eLearning",
+              "body": "Khám phá bản trình bày sản phẩm eLearning hiện có."
+            },
+            "1": {
+              "title": "Hồ sơ người học",
+              "body": "Hãy xem phần giới thiệu hồ sơ sinh viên Giáo dục để biết bối cảnh của tổ chức."
+            },
+            "2": {
+              "title": "Bối cảnh đánh giá",
+              "body": "Khám phá các kỳ thi hiện có và trình bày kết quả."
+            },
+            "3": {
+              "title": "Cấu trúc học thuật",
+              "body": "Xem cấu trúc có thể định hình một cuộc trò chuyện về học tập trong tổ chức."
+            }
+          },
+          "journeys": {
+            "0": {
+              "role": "Người học",
+              "title": "Một nơi rõ ràng để bắt đầu, thực hành và suy ngẫm.",
+              "body": "Studio mẫu lưu giữ một bài học ngắn, một câu hỏi thực hành và hành động tiếp theo rõ ràng.",
+              "steps": {
+                "0": "Mở bài học",
+                "1": "Hãy thử hoạt động",
+                "2": "Suy ngẫm và tiếp tục"
+              }
+            },
+            "1": {
+              "role": "nhà giáo dục",
+              "title": "Làm cho ý định học tập trở nên rõ ràng.",
+              "body": "Sử dụng phòng thu để thảo luận xem nội dung bài học, hoạt động thực hành và phản hồi sẽ có tác dụng như thế nào đối với người học của bạn.",
+              "steps": {
+                "0": "Đóng khung mục tiêu",
+                "1": "Định hình việc thực hành",
+                "2": "Giải thích phản hồi"
+              }
+            },
+            "2": {
+              "role": "Nhóm học tập",
+              "title": "Hãy suy nghĩ xa hơn danh sách nội dung.",
+              "body": "Sử dụng cuộc trò chuyện về sản phẩm để khám phá cấu trúc khóa học và cách học tập nên kết nối với bối cảnh tổ chức của bạn.",
+              "steps": {
+                "0": "Cấu trúc khóa học",
+                "1": "Kinh nghiệm của người học",
+                "2": "Bối cảnh tiến bộ"
+              }
+            }
+          },
+          "faqs": {
+            "0": {
+              "0": "Có video nào đang phát trong bản xem trước này không?",
+              "1": "Không. Bản demo hoạt động là một studio bài học dựa trên việc đọc với tiến độ trên trang và kiểm tra kiến thức mẫu. Không có trình phát video hoặc tích hợp phát trực tuyến nào được ngụ ý."
+            },
+            "1": {
+              "0": "Việc hoàn thành mẫu có cấp giấy chứng nhận không?",
+              "1": "Không. Dấu hoàn thành chỉ tồn tại ở trạng thái thành phần cục bộ và được đặt lại khi trang được tải lại. Chúng không phải là hồ sơ học tập chính thức."
+            },
+            "2": {
+              "0": "Làm thế nào chúng ta có thể thảo luận về các khóa học thực tế của chúng tôi?",
+              "1": "Đưa đề cương khóa học, nhóm người học và nhu cầu đánh giá vào hướng dẫn của cố vấn. Studio mẫu là điểm khởi đầu cho cuộc trò chuyện đó."
+            }
+          }
+        }
+      },
+      "learners": {
+        "0": {
+          "label": "Người học 01"
+        },
+        "1": {
+          "label": "Người học 02"
+        },
+        "2": {
+          "label": "Người học 03"
+        },
+        "3": {
+          "label": "Người học 04"
+        }
+      },
+      "sessions": {
+        "0": {
+          "title": "Khoa học ứng dụng"
+        },
+        "1": {
+          "title": "Giao tiếp"
+        },
+        "2": {
+          "title": "Kỹ năng định lượng"
+        }
+      },
+      "courses": {
+        "0": {
+          "title": "Giao tiếp học thuật",
+          "area": "Cơ sở"
+        },
+        "1": {
+          "title": "Tư duy định lượng",
+          "area": "Cơ sở"
+        },
+        "2": {
+          "title": "Môi trường & xã hội",
+          "area": "Liên ngành"
+        },
+        "3": {
+          "title": "Cơ sở nghiên cứu",
+          "area": "Phương pháp"
+        },
+        "4": {
+          "title": "Thiết kế và khám phá",
+          "area": "Tự chọn"
+        }
+      },
+      "lessons": {
+        "0": {
+          "title": "Bắt đầu với một mục tiêu rõ ràng",
+          "duration": "đọc ngắn",
+          "body": "Mục tiêu học tập hữu ích mô tả điều gì đó mà người học có thể làm. Trong mẫu này, mục tiêu là giải thích một ý tưởng bằng từ ngữ của bạn và kết nối nó với một ví dụ đơn giản.",
+          "prompt": "Chọn một ý tưởng quen thuộc. Viết một câu về điều bạn muốn ai đó hiểu sau một bài học ngắn.",
+          "takeaway": "Một mục tiêu rõ ràng sẽ mang lại cho bài học và việc thực hành nó một hướng đi chung."
+        },
+        "1": {
+          "title": "Nhường chỗ cho việc luyện tập",
+          "duration": "đọc ngắn",
+          "body": "Thực hành mang lại cho người học cơ hội sử dụng ý tưởng. Nó có thể là một lời giải thích nhỏ, một ví dụ thực tế hoặc một sự so sánh. Mẫu này sử dụng phản hồi ngắn thay vì bài tập được tải lên.",
+          "prompt": "Giải thích ý tưởng bạn đã chọn bằng lời nói của riêng bạn. Thêm một ví dụ có thể giúp người khác hiểu nó.",
+          "takeaway": "Việc thực hành nên kết nối trực tiếp với mục tiêu."
+        },
+        "2": {
+          "title": "Kết nối phản hồi với bước tiếp theo",
+          "duration": "đọc ngắn",
+          "body": "Phản hồi sẽ dễ sử dụng hơn khi nó chỉ ra điều gì đó cụ thể. Trong studio này, câu hỏi mẫu sẽ giải thích lý do câu trả lời phù hợp với mục tiêu học tập, sau đó đưa ra bước tiếp theo để bạn thử.",
+          "prompt": "Đọc lại lời giải thích của bạn. Xác định một phần rõ ràng và một phần mà ví dụ cụ thể hơn sẽ hữu ích.",
+          "takeaway": "Sự phản ánh có thể biến phản hồi thành hành động hữu ích tiếp theo."
+        }
+      },
+      "ui": {
+        "metadataTitle": "Quản lý {name} | Giáo dục",
+        "canvasTitle": "{name} / Giao diện minh họa",
+        "initialMark": "{status} · ví dụ ban đầu",
+        "present": "Có mặt",
+        "late": "Đi muộn",
+        "unmarked": "Chưa điểm danh",
+        "exampleCredits": "Số tín chỉ minh họa: {count}",
+        "lessonNumber": "Bài học {number}",
+        "productPreviewNumber": "{number} / XEM TRƯỚC SẢN PHẨM",
+        "experience": "Trải nghiệm {name}",
+        "previewRegion": "Bản xem trước {name} với lời mời demo nửa dưới",
+        "walkthrough": "{name} · Giới thiệu chi tiết",
+        "fullWorkflow": "Xem quy trình làm việc hoàn chỉnh.",
+        "educationCategory": "GIÁO DỤC / {name}",
+        "fictionalRecord": "{id} · hồ sơ giả định",
+        "attendanceFor": "Điểm danh {name}",
+        "endAfterStart": "Thời gian kết thúc phải sau thời gian bắt đầu.",
+        "validTimes": "Chọn thời gian bắt đầu và kết thúc hợp lệ.",
+        "overlaps": "Số buổi học minh họa trùng lịch: {count}",
+        "sharedResources": "{id}: {resources} được chia sẻ",
+        "creditsAbove": "Số tín chỉ vượt giới hạn minh họa: {count}.",
+        "creditsRemaining": "Số tín chỉ còn lại trong giới hạn minh họa: {count}.",
+        "lessonsCompleted": "Bài học được đánh dấu hoàn thành trên trang này: {count}/{total}",
+        "sampleLesson": "BÀI HỌC MẪU {number} / {duration}",
+        "absent": "Vắng mặt",
+        "illustrativePreview": "Xem trước minh họa",
+        "programmeStructure": "Chương trình đào tạo <em>định hình nội dung học tập.</em>",
+        "timetableRhythm": "Thời khóa biểu <em>sắp xếp hoạt động hằng ngày.</em>",
+        "officeContext": "Văn phòng trường <em>tập hợp thông tin liên quan.</em>",
+        "slotContext": "Mỗi buổi học có phòng, nhóm học viên và giảng viên riêng.",
+        "practicePart": "Đưa thực hành vào từng bài học."
+      },
+      "choices": {
+        "sunday": "Chủ Nhật",
+        "monday": "Thứ Hai",
+        "tuesday": "Thứ Ba",
+        "lab01": "Phòng thí nghiệm 01",
+        "hallB": "Hội trường B",
+        "tutorA": "Giảng viên A",
+        "tutorB": "Giảng viên B",
+        "science1": "Khoa học 1",
+        "humanities1": "Nhân văn 1",
+        "room": "phòng học",
+        "tutor": "giảng viên",
+        "group": "nhóm học viên"
+      },
+      "copy": {
+        "fictionalExampleData": "Dữ liệu ví dụ hư cấu",
+        "theSchoolDayRegister": "Nhật ký ngày học",
+        "theSessionOverview": "Tổng quan các buổi học",
+        "theAcademicPlanningConversation": "Cuộc trò chuyện về kế hoạch học tập",
+        "theLearningOutline": "Đề cương học tập",
+        "fictionalLearners": "Người học hư cấu",
+        "initialMarks": "Đã điểm danh ban đầu",
+        "registerState": "Trạng thái sổ điểm danh",
+        "localOnly": "Chỉ trên trang này",
+        "exampleSessions": "Buổi học minh họa",
+        "roomsInExample": "Phòng học trong ví dụ",
+        "plannerState": "Trạng thái kế hoạch",
+        "fictionalCourses": "Các khóa học hư cấu",
+        "exampleCreditBudget": "Giới hạn tín chỉ minh họa",
+        "registration": "Đăng ký học phần",
+        "notPerformed": "Không được thực hiện",
+        "sampleReadings": "Bài đọc mẫu",
+        "knowledgeCheck": "Kiểm tra kiến thức",
+        "1Example": "1 ví dụ",
+        "officialLearningRecords": "Hồ sơ học tập chính thức",
+        "noneCreated": "Không có gì được tạo",
+        "shortReadingExampleContent": "Đọc ngắn · nội dung ví dụ",
+        "illustrativeCompositionNotAScreenshotOfAConnected": "Bố cục mang tính minh họa, không phải ảnh chụp màn hình của một tổ chức được kết nối. Ví dụ hoạt động ở trên tách biệt với canvas tĩnh này.",
+        "breadcrumb": "vụn bánh mì",
+        "industries": "Ngành nghề",
+        "education": "Giáo dục",
+        "theWiderProductConversation": "KHÁM PHÁ CÁC CHỨC NĂNG LIÊN QUAN",
+        "browseExistingProductPresentationsThenBringYourInstitutions": "Duyệt qua các bản trình bày sản phẩm hiện có, sau đó đưa quy trình của tổ chức của bạn vào bản demo có hướng dẫn.",
+        "exploreThePresentation": "Khám phá bài thuyết trình",
+        "seeThePartsTogether": "XEM CÁC BỘ PHẬN CÙNG NHAU",
+        "aCloserLookAtTheExperience": "Một cái nhìn sâu hơn về trải nghiệm.",
+        "conceptCanvasWithFictionalRecordsContinueTheConversation": "Khái niệm canvas với các hồ sơ hư cấu. Tiếp tục cuộc trò chuyện với cố vấn để khám phá quy trình làm việc của riêng bạn.",
+        "exploreYourInstitutionsRecordsLearningContextAndEveryday": "Khám phá hồ sơ, bối cảnh học tập và quy trình công việc hàng ngày của tổ chức bạn trong cuộc trò chuyện có hướng dẫn về sản phẩm.",
+        "aFewUsefulDetails": "MỘT SỐ CHI TIẾT HỮU ÍCH",
+        "knowWhatYoureExploring": "Biết những gì bạn đang khám phá.",
+        "educationInDifferentContexts": "GIÁO DỤC, TRONG BỐI CẢNH KHÁC NHAU",
+        "exploreAnotherPartOfTheJourney": "Khám phá một phần khác của cuộc hành trình.",
+        "yourInstitutionYourWorkflow": "TỔ CHỨC CỦA BẠN. QUY TRÌNH LÀM VIỆC CỦA BẠN.",
+        "letsBeginWithTheWayYouWork": "Hãy bắt đầu với cách bạn làm việc.",
+        "bringYourAcademicAndAdministrativeQuestionsToAn": "Đưa các câu hỏi về học thuật và hành chính của bạn vào cuộc trò chuyện với cố vấn.",
+        "learnerContext": "Bối cảnh của người học",
+        "classroomRhythm": "Nhịp điệu lớp học",
+        "theSchoolDayIllustrated": "NGÀY HỌC / MINH HỌA",
+        "aConsideredMorning": "Một buổi sáng đáng cân nhắc",
+        "classRegisterAttendanceFollowUp": "Đăng ký lớp → Điểm danh → Theo dõi",
+        "theOfficeStaysInContext": "Văn phòng luôn có thông tin cần thiết",
+        "noticesLearnerRecordsAndFeeQuestions": "Thông báo, hồ sơ học viên và thắc mắc về học phí",
+        "makeTheDayFeelConnected": "kết nối công việc trong ngày",
+        "conceptualCampusAndSchoolDayCanvasNoReal": "Khuôn viên ý tưởng và khung vẽ ngày học · không có dữ liệu trường học thực tế",
+        "theAcademicSession": "HỌC KỲ",
+        "aSessionInView": "MỘT PHIÊN ĐANG XEM",
+        "illustrativeSundayTimetable": "Lịch trình minh họa chủ nhật",
+        "appliedScience": "Khoa học ứng dụng",
+        "lab01Science1": "Phòng thí nghiệm 01 · Khoa học 1",
+        "communication": "Giao tiếp",
+        "hallBHumanities1": "Hội trường B · Nhân văn 1",
+        "twoOfThreeFictionalSessionsUsedInThe": "Hai trong số ba phiên hư cấu được sử dụng trong bài tập lập kế hoạch địa phương",
+        "application": "ỨNG DỤNG",
+        "academicContext": "BỐI CẢNH HỌC TẬP",
+        "studentJourney": "HÀNH TRÌNH SINH VIÊN",
+        "exampleAcademicMap": "BẢN ĐỒ HỌC TẬP VÍ DỤ",
+        "structure": "Cấu trúc",
+        "programmeTermContext": "Bối cảnh chương trình và học kỳ",
+        "choices": "Lựa chọn",
+        "coursesCreditConversation": "Các khóa học và hội thoại tín chỉ",
+        "beginWithTheStudentsJourney": "Bắt đầu với hành trình của học sinh.",
+        "conceptualCampusIllustrationNoInstitutionOrAccreditationImplied": "Minh họa khái niệm về khuôn viên trường · không ngụ ý về tổ chức hoặc chứng nhận",
+        "theLearningStudio": "STUDIO HỌC TẬP",
+        "interactiveExampleBelow": "Ví dụ tương tác dưới đây",
+        "theShortCourse": "KHÓA HỌC NGẮN",
+        "aClearGoal": "Một mục tiêu rõ ràng",
+        "roomToPractice": "Cơ hội thực hành",
+        "aUsefulNextStep": "Bước tiếp theo hữu ích",
+        "lessonPracticeReflection": "BÀI HỌC/THỰC HÀNH/Suy ngẫm",
+        "startWithAnIdea": "Bắt đầu với một ý tưởng.",
+        "readingBasedSampleStudioNoVideoEnrolmentOr": "Studio mẫu dựa trên việc đọc · không yêu cầu video, đăng ký hoặc chứng chỉ",
+        "aSmallExampleOfAMoreConsideredLearning": "Một ví dụ nhỏ về quy trình học tập được cân nhắc kỹ hơn.",
+        "startWithThePeopleDoingTheWork": "BẮT ĐẦU VỚI NHỮNG NGƯỜI LÀM CÔNG VIỆC",
+        "chooseAPerspective": "Chọn một góc nhìn",
+        "fictionalClassFourAnonymousLearners": "Lớp học hư cấu · bốn học viên ẩn danh",
+        "resetExample": "Đặt lại ví dụ",
+        "thisLocalExample": "VÍ DỤ ĐỊA PHƯƠNG NÀY",
+        "aRegisterYouCanReadAtAGlance": "Một đăng ký bạn có thể đọc trong nháy mắt.",
+        "marked": "Đã điểm danh",
+        "inAttendance": "Tổng số có mặt",
+        "stillUnmarked": "Vẫn chưa được đánh dấu",
+        "inAttendanceIncludesPresentAndLateTheseMarks": "Tổng số có mặt bao gồm học viên đến đúng giờ và đi muộn. Thay đổi chỉ áp dụng cho bốn hồ sơ giả định trên trang này; không có sổ điểm danh nào được gửi đi.",
+        "threeIllustrativeSessionsNoLiveAvailability": "Ba buổi minh họa · không có sẵn trực tiếp",
+        "intervalsThatMeetExactlyAtABoundaryDo": "Các khoảng gặp nhau chính xác tại một ranh giới không trùng nhau. Chỉ những phòng, giảng viên hoặc nhóm phù hợp trong ba hàng này mới được chọn.",
+        "localLessonProposal": "Đề xuất bài học địa phương",
+        "tryAProposedLesson": "Hãy thử một bài học được đề xuất",
+        "day": "Ngày",
+        "room": "phòng",
+        "tutor": "Giảng viên",
+        "group": "Nhóm",
+        "starts": "Bắt đầu",
+        "ends": "Kết thúc",
+        "checkTheTimes": "Kiểm tra thời gian",
+        "noOverlapsInThisExample": "Không có sự trùng lặp trong ví dụ này",
+        "theProposalDoesNotConflictWithTheThree": "Đề xuất không xung đột với ba phiên có thể nhìn thấy. Điều này không đặt phòng hoặc phê duyệt thời gian biểu đầy đủ.",
+        "fictionalCoursesIllustrativeCredits": "Các khóa học hư cấu · tín chỉ minh họa",
+        "credits": "tín chỉ",
+        "anExampleSemesterInView": "Một học kỳ ví dụ, đang được xem.",
+        "illustrativeCreditBudget": "Giới hạn tín chỉ minh họa",
+        "resetExamplePlan": "Đặt lại kế hoạch mẫu",
+        "noPrerequisiteDegreeAdmissionOrAcademicStandingRules": "Không có điều kiện tiên quyết, bằng cấp, nhập học hoặc tình trạng học tập nào được kiểm tra. Đây là minh họa quy hoạch, không phải đăng ký chính thức.",
+        "readingBasedLocalPreview": "Xem trước cục bộ dựa trên việc đọc",
+        "thoughtfulLearningDesign": "Thiết kế học tập chu đáo",
+        "chooseASampleLesson": "Chọn bài học mẫu",
+        "localLessonProgress": "Tiến độ học trên trang này",
+        "resetStudio": "Đặt lại phòng thu",
+        "tryASmallReflection": "THỬ MỘT SUY NGHĨ NHỎ",
+        "markedCompleteLocally": "Được đánh dấu là hoàn thành tại địa phương",
+        "markThisLessonCompleteLocally": "Đánh dấu bài học này là hoàn thành tại địa phương",
+        "aSampleKnowledgeCheck": "Kiểm tra kiến thức mẫu",
+        "whichActivityGivesALearnerAChanceTo": "Hoạt động nào mang lại cho người học cơ hội sử dụng một ý tưởng?",
+        "readOnlyTheCourseTitle": "Chỉ đọc tiêu đề khóa học.",
+        "explainTheIdeaInYourOwnWordsWith": "Giải thích ý tưởng bằng lời của bạn với một ví dụ.",
+        "skipDirectlyToTheNextSection": "Chuyển trực tiếp đến phần tiếp theo.",
+        "checkExampleAnswer": "Kiểm tra câu trả lời ví dụ",
+        "thatFitsTheExampleGoalExplainingAndApplying": "Điều đó phù hợp với mục tiêu của ví dụ: việc giải thích và áp dụng một ý tưởng mang lại cho người học một cách thực hành.",
+        "tryAgainLookForAnActivityWhereThe": "Hãy thử lại. Hãy tìm một hoạt động mà người học giải thích hoặc áp dụng ý tưởng thay vì chỉ điều hướng.",
+        "progressAnswersAndCompletionMarksExistOnlyIn": "Tiến trình, câu trả lời và điểm hoàn thành chỉ tồn tại ở trạng thái cục bộ của trang này. Không có hồ sơ học tập, lớp, tuyển sinh hoặc chứng chỉ nào được lưu.",
+        "tryASmallPartOfTheExperience": "THỬ MỘT PHẦN NHỎ CỦA TRẢI NGHIỆM",
+        "localExampleNotConnected": "Ví dụ trên trang · Chưa kết nối cơ sở dữ liệu",
+        "exploreTheExample": "Khám phá ví dụ"
+      }
     }
   }
 }
