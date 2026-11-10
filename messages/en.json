@@ -901,10 +901,7 @@
         },
         "sample": {
           "count": "12 rows",
-          "titles": [
-            "Fabric for kurtas",
-            "Plastic granules"
-          ],
+          "titles": ["Fabric for kurtas", "Plastic granules"],
           "notes": [
             "every order has its own number",
             "what has arrived so far",
@@ -12086,10 +12083,7 @@
         "sample": {
           "count": "25 of 120",
           "terms": "Net 30",
-          "lineItems": [
-            "Poly bag, 12 × 16 in",
-            "Printed carton label"
-          ],
+          "lineItems": ["Poly bag, 12 × 16 in", "Printed carton label"],
           "notes": [
             "draft, approved, paid at a glance",
             "what has come in so far",
@@ -12401,12 +12395,7 @@
           "refresher": {
             "title": "A two-minute refresher on debit and credit",
             "intro": "For owners who sign off the month and want to read an entry without calling the accountant.",
-            "head": [
-              "Type of account",
-              "A debit",
-              "A credit",
-              "Example"
-            ],
+            "head": ["Type of account", "A debit", "A credit", "Example"],
             "rows": [
               [
                 "Assets",
@@ -15773,11 +15762,7 @@
         },
         "sample": {
           "count": "1 settlement",
-          "notes": [
-            "what is payable",
-            "what is recovered",
-            "clearance first"
-          ]
+          "notes": ["what is payable", "what is recovered", "clearance first"]
         },
         "ui": {
           "title": "Final Settlements",
@@ -16355,11 +16340,7 @@
         },
         "sample": {
           "count": "6 departments",
-          "notes": [
-            "spent so far",
-            "where it should be",
-            "heads against plan"
-          ]
+          "notes": ["spent so far", "where it should be", "heads against plan"]
         },
         "ui": {
           "title": "Salary Budgets",
@@ -17124,11 +17105,7 @@
         },
         "sample": {
           "count": "3 leave types",
-          "notes": [
-            "days left for each",
-            "past requests",
-            "a new request"
-          ]
+          "notes": ["days left for each", "past requests", "a new request"]
         },
         "ui": {
           "title": "My Leaves",
@@ -23051,11 +23028,7 @@
         },
         "sample": {
           "count": "61 instalments due",
-          "notes": [
-            "due this month",
-            "who is late",
-            "overdue by age"
-          ]
+          "notes": ["due this month", "who is late", "overdue by age"]
         },
         "ui": {
           "title": "Collections",
@@ -23655,11 +23628,7 @@
         },
         "sample": {
           "count": "86 active leases",
-          "notes": [
-            "the lease list",
-            "leases ending soon",
-            "rent review terms"
-          ]
+          "notes": ["the lease list", "leases ending soon", "rent review terms"]
         },
         "ui": {
           "title": "Leases",
@@ -23859,11 +23828,7 @@
         },
         "sample": {
           "count": "27 brokers",
-          "notes": [
-            "the leaderboard",
-            "commission due",
-            "a broker's statement"
-          ]
+          "notes": ["the leaderboard", "commission due", "a broker's statement"]
         },
         "ui": {
           "title": "Brokers",
@@ -25998,11 +25963,7 @@
         },
         "sample": {
           "count": "5 tasks",
-          "notes": [
-            "overdue in red",
-            "today's list",
-            "linked to the account"
-          ]
+          "notes": ["overdue in red", "today's list", "linked to the account"]
         },
         "ui": {
           "title": "Tasks",
@@ -28082,11 +28043,7 @@
         },
         "sample": {
           "count": "100 dealers",
-          "notes": [
-            "dealers by region",
-            "a tier for each",
-            "credit used"
-          ]
+          "notes": ["dealers by region", "a tier for each", "credit used"]
         },
         "ui": {
           "title": "Dealers",
@@ -28455,11 +28412,7 @@
         },
         "sample": {
           "count": "7 levels shown",
-          "notes": [
-            "the sales tree",
-            "a head at each level",
-            "rights by role"
-          ]
+          "notes": ["the sales tree", "a head at each level", "rights by role"]
         },
         "ui": {
           "title": "Org & Access",
@@ -29025,11 +28978,7 @@
         },
         "sample": {
           "count": "5 customers shown",
-          "notes": [
-            "exposure against limit",
-            "overdue days",
-            "holds in red"
-          ]
+          "notes": ["exposure against limit", "overdue days", "holds in red"]
         },
         "ui": {
           "title": "Credit",
@@ -29400,11 +29349,7 @@
         },
         "sample": {
           "count": "140 captured this month",
-          "notes": [
-            "leads by source",
-            "a card, scanned",
-            "a lead, filled in"
-          ]
+          "notes": ["leads by source", "a card, scanned", "a lead, filled in"]
         },
         "ui": {
           "title": "Capture",
@@ -30898,11 +30843,7 @@
         },
         "sample": {
           "count": "3 promotions",
-          "notes": [
-            "the season's totals",
-            "budget used",
-            "return on spend"
-          ]
+          "notes": ["the season's totals", "budget used", "return on spend"]
         },
         "ui": {
           "title": "Promotions",
@@ -31833,11 +31774,7 @@
         },
         "sample": {
           "count": "4 sales today",
-          "notes": [
-            "the sale on a phone",
-            "pay by any mode",
-            "today's sales"
-          ]
+          "notes": ["the sale on a phone", "pay by any mode", "today's sales"]
         },
         "ui": {
           "title": "Van Sales",
@@ -32020,11 +31957,7 @@
         },
         "sample": {
           "count": "4 items",
-          "notes": [
-            "item by item",
-            "differences in red",
-            "cash checked"
-          ]
+          "notes": ["item by item", "differences in red", "cash checked"]
         },
         "ui": {
           "title": "Van Stock",
@@ -32401,11 +32334,7 @@
         },
         "sample": {
           "count": "5 reps",
-          "notes": [
-            "each rep's bar",
-            "the line for today",
-            "ahead or behind"
-          ]
+          "notes": ["each rep's bar", "the line for today", "ahead or behind"]
         },
         "ui": {
           "title": "Targets",
@@ -32962,11 +32891,7 @@
         },
         "sample": {
           "count": "4 managers",
-          "notes": [
-            "five measures",
-            "one score",
-            "the six-month trend"
-          ]
+          "notes": ["five measures", "one score", "the six-month trend"]
         },
         "ui": {
           "title": "AM Scorecard",
@@ -33351,11 +33276,7 @@
         },
         "sample": {
           "count": "4 trips",
-          "notes": [
-            "one trip still out",
-            "from and to",
-            "distance measured"
-          ]
+          "notes": ["one trip still out", "from and to", "distance measured"]
         },
         "ui": {
           "title": "Trips",
@@ -33540,11 +33461,7 @@
         },
         "sample": {
           "count": "3 vehicles",
-          "notes": [
-            "km per litre over time",
-            "a drop flagged",
-            "recent fills"
-          ]
+          "notes": ["km per litre over time", "a drop flagged", "recent fills"]
         },
         "ui": {
           "title": "Fuel Log",
@@ -33725,11 +33642,7 @@
         },
         "sample": {
           "count": "5 vehicles",
-          "notes": [
-            "this month first",
-            "services and renewals",
-            "by vehicle"
-          ]
+          "notes": ["this month first", "services and renewals", "by vehicle"]
         },
         "ui": {
           "title": "Maintenance",
@@ -34510,11 +34423,7 @@
         },
         "sample": {
           "count": "11 items",
-          "notes": [
-            "the settings",
-            "history and forecast",
-            "what to reorder"
-          ]
+          "notes": ["the settings", "history and forecast", "what to reorder"]
         },
         "ui": {
           "title": "Demand Forecast",
@@ -34990,14 +34899,7 @@
         "pipelineTitle": "Sales pipeline · illustrative",
         "departmentTitle": "Departmental insights",
         "budgetUsage": "Illustrative budget utilization",
-        "chartMonths": [
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct"
-        ]
+        "chartMonths": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"]
       },
       "reports": {
         "title": "Financial reports",
@@ -35927,11 +35829,7 @@
         "titleHighlightLead": "lead",
         "titleMiddle": "to the",
         "titleHighlightInvoice": "invoice",
-        "stages": [
-          "New Leads",
-          "Proposals",
-          "Clients"
-        ]
+        "stages": ["New Leads", "Proposals", "Clients"]
       },
       "serviceSection": {
         "title": "Smart service management",
@@ -36410,21 +36308,8 @@
         "description": "Scheduling made easy. Access a free platform to schedule, discuss, and share availabilities with your customers.",
         "demo": {
           "title": "Select a date & time",
-          "days": [
-            "M",
-            "T",
-            "W",
-            "T",
-            "F",
-            "S",
-            "S"
-          ],
-          "times": [
-            "09:00",
-            "10:30",
-            "14:00",
-            "16:30"
-          ]
+          "days": ["M", "T", "W", "T", "F", "S", "S"],
+          "times": ["09:00", "10:30", "14:00", "16:30"]
         }
       },
       "setupSection": {
@@ -36455,22 +36340,10 @@
         "demo": {
           "title": "Schedule meeting",
           "fields": [
-            [
-              "Appointment type",
-              "Business Consultation"
-            ],
-            [
-              "Contact",
-              "Customer name"
-            ],
-            [
-              "Date",
-              "July 24, 2026"
-            ],
-            [
-              "Time",
-              "10:30 AM"
-            ]
+            ["Appointment type", "Business Consultation"],
+            ["Contact", "Customer name"],
+            ["Date", "July 24, 2026"],
+            ["Time", "10:30 AM"]
           ],
           "button": "Confirm appointment"
         }
@@ -36490,22 +36363,10 @@
           "title": "Appointment",
           "status": "Confirmed",
           "fields": [
-            [
-              "Customer",
-              "Anita Oliver"
-            ],
-            [
-              "Meeting",
-              "Business consultation"
-            ],
-            [
-              "Date",
-              "July 24, 2026"
-            ],
-            [
-              "Options",
-              "Video call + Reminder"
-            ]
+            ["Customer", "Anita Oliver"],
+            ["Meeting", "Business consultation"],
+            ["Date", "July 24, 2026"],
+            ["Options", "Video call + Reminder"]
           ]
         }
       },
@@ -36710,11 +36571,7 @@
           "custom": "Create custom quotations aligned with your project scope, pricing, files, blueprints, and architectural services.",
           "templates": "Use templates and built-in quote tools to make proposals faster and more professional."
         },
-        "demoDocs": [
-          "Quotation",
-          "Proposal",
-          "Invoice"
-        ]
+        "demoDocs": ["Quotation", "Proposal", "Invoice"]
       },
       "financeSection": {
         "title": "Finance management to turn",
@@ -36735,13 +36592,7 @@
         "titleHighlight": "planning",
         "description": "Create shifts, track colleagues, material resources, planning, recruiting shifts and project timelines.",
         "table": {
-          "headers": [
-            "Resource",
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu"
-          ],
+          "headers": ["Resource", "Mon", "Tue", "Wed", "Thu"],
           "resources": [
             "Senior Architect",
             "Junior Designer",
@@ -36973,13 +36824,7 @@
         "titleHighlight": "present",
         "titleEnd": "right now",
         "description": "See live attendance status across departments. Quickly understand who is checked in, working remotely, late, or missing.",
-        "filters": [
-          "Office",
-          "Remote",
-          "Late",
-          "Missing",
-          "Extra Hours"
-        ],
+        "filters": ["Office", "Remote", "Late", "Missing", "Extra Hours"],
         "employees": [
           {
             "name": "Audrey Peterson",
@@ -37012,22 +36857,10 @@
           "title": "Attendance Correction",
           "badge": "To Review",
           "fields": [
-            [
-              "Employee",
-              "Marc Demo"
-            ],
-            [
-              "Missing Check Out",
-              "Yesterday"
-            ],
-            [
-              "Suggested Time",
-              "17:45"
-            ],
-            [
-              "Reason",
-              "Forgot to check out"
-            ]
+            ["Employee", "Marc Demo"],
+            ["Missing Check Out", "Yesterday"],
+            ["Suggested Time", "17:45"],
+            ["Reason", "Forgot to check out"]
           ],
           "approveButton": "Approve",
           "refuseButton": "Refuse"
@@ -37039,13 +36872,7 @@
         "description": "Analyze attendance by employee, department, week, month, work location, and approval status.",
         "analysisTitle": "Attendance Analysis",
         "badge": "Monthly",
-        "weeks": [
-          "Week 1",
-          "Week 2",
-          "Week 3",
-          "Week 4",
-          "Week 5"
-        ]
+        "weeks": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5"]
       },
       "featuresSection": {
         "title": "All the features",
@@ -37168,11 +36995,7 @@
           "leadTracking": "Lead tracking",
           "activityScheduling": "Activity scheduling"
         },
-        "stages": [
-          "New Leads",
-          "Qualified",
-          "Won"
-        ]
+        "stages": ["New Leads", "Qualified", "Won"]
       },
       "mobileSection": {
         "title": "Mobile solution for onsite",
@@ -38248,10 +38071,7 @@
               "replies": 14,
               "views": 312,
               "lastActive": "2 hours ago",
-              "tags": [
-                "purchase",
-                "custom-fields"
-              ]
+              "tags": ["purchase", "custom-fields"]
             },
             {
               "title": "Best practices for multi-currency reporting in v17?",
@@ -38260,10 +38080,7 @@
               "replies": 8,
               "views": 189,
               "lastActive": "5 hours ago",
-              "tags": [
-                "multi-currency",
-                "reporting"
-              ]
+              "tags": ["multi-currency", "reporting"]
             },
             {
               "title": "Feature request: webhook notifications for stock transfers",
@@ -38272,11 +38089,7 @@
               "replies": 34,
               "views": 721,
               "lastActive": "30 minutes ago",
-              "tags": [
-                "webhook",
-                "inventory",
-                "feature-request"
-              ]
+              "tags": ["webhook", "inventory", "feature-request"]
             },
             {
               "title": "Getting Started guide for Windows dev setup",
@@ -38285,11 +38098,7 @@
               "replies": 21,
               "views": 540,
               "lastActive": "1 hour ago",
-              "tags": [
-                "windows",
-                "setup",
-                "dev"
-              ]
+              "tags": ["windows", "setup", "dev"]
             },
             {
               "title": "Bug: stock reconciliation produces negative qty on partial picks",
@@ -38298,11 +38107,7 @@
               "replies": 6,
               "views": 134,
               "lastActive": "12 hours ago",
-              "tags": [
-                "inventory",
-                "bug",
-                "stock"
-              ]
+              "tags": ["inventory", "bug", "stock"]
             },
             {
               "title": "Show & Tell: our custom CRM module for service firms",
@@ -38311,11 +38116,7 @@
               "replies": 18,
               "views": 445,
               "lastActive": "3 hours ago",
-              "tags": [
-                "crm",
-                "module",
-                "show-and-tell"
-              ]
+              "tags": ["crm", "module", "show-and-tell"]
             }
           ],
           "viewAllButton": "View all threads"
@@ -38631,10 +38432,7 @@
         "description": "Discover how modern businesses use smart ERP, CRM, automation, analytics, and integrations to scale operations efficiently.",
         "readMore": "Read More",
         "pagination": {
-          "dates": [
-            "2026",
-            "2025"
-          ],
+          "dates": ["2026", "2025"],
           "lastPage": "133",
           "aria": "Pagination"
         },
@@ -38678,11 +38476,7 @@
           "domain": "docs.adon-erp.com",
           "cardTitle": "Setup Guide",
           "cardDescription": "Company, apps, users, and workflow basics",
-          "items": [
-            "CRM configuration",
-            "Inventory rules",
-            "Invoice workflow"
-          ]
+          "items": ["CRM configuration", "Inventory rules", "Invoice workflow"]
         },
         "categoriesSection": {
           "eyebrow": "Product knowledge base",
@@ -39005,10 +38799,7 @@
               "replies": 14,
               "views": 312,
               "lastActive": "2 hours ago",
-              "tags": [
-                "purchase",
-                "custom-fields"
-              ]
+              "tags": ["purchase", "custom-fields"]
             },
             {
               "title": "Best practices for multi-currency reporting in v17?",
@@ -39017,10 +38808,7 @@
               "replies": 8,
               "views": 189,
               "lastActive": "5 hours ago",
-              "tags": [
-                "multi-currency",
-                "reporting"
-              ]
+              "tags": ["multi-currency", "reporting"]
             },
             {
               "title": "Feature request: webhook notifications for stock transfers",
@@ -39029,11 +38817,7 @@
               "replies": 34,
               "views": 721,
               "lastActive": "30 minutes ago",
-              "tags": [
-                "webhook",
-                "inventory",
-                "feature-request"
-              ]
+              "tags": ["webhook", "inventory", "feature-request"]
             },
             {
               "title": "Getting Started guide for Windows dev setup",
@@ -39042,11 +38826,7 @@
               "replies": 21,
               "views": 540,
               "lastActive": "1 hour ago",
-              "tags": [
-                "windows",
-                "setup",
-                "dev"
-              ]
+              "tags": ["windows", "setup", "dev"]
             },
             {
               "title": "Bug: stock reconciliation produces negative qty on partial picks",
@@ -39055,11 +38835,7 @@
               "replies": 6,
               "views": 134,
               "lastActive": "12 hours ago",
-              "tags": [
-                "inventory",
-                "bug",
-                "stock"
-              ]
+              "tags": ["inventory", "bug", "stock"]
             },
             {
               "title": "Show & Tell: our custom CRM module for service firms",
@@ -39068,11 +38844,7 @@
               "replies": 18,
               "views": 445,
               "lastActive": "3 hours ago",
-              "tags": [
-                "crm",
-                "module",
-                "show-and-tell"
-              ]
+              "tags": ["crm", "module", "show-and-tell"]
             }
           ]
         },
@@ -39213,34 +38985,25 @@
         "pullRequests": [
           {
             "summary": "Inventory: barcode lookahead validation",
-            "tags": [
-              "in-progress",
-              "review"
-            ],
+            "tags": ["in-progress", "review"],
             "author": "Omar Y.",
             "comments": 4
           },
           {
             "summary": "Accounting: auto-reconciliation engine",
-            "tags": [
-              "approved"
-            ],
+            "tags": ["approved"],
             "author": "Aisha K.",
             "comments": 12
           },
           {
             "summary": "Website: new elearning course player",
-            "tags": [
-              "in-progress"
-            ],
+            "tags": ["in-progress"],
             "author": "Jules P.",
             "comments": 8
           },
           {
             "summary": "CRM: bulk-import lead scoring",
-            "tags": [
-              "draft"
-            ],
+            "tags": ["draft"],
             "author": "Nadia R.",
             "comments": 2
           }
@@ -40072,13 +39835,7 @@
             "duration": "8 weeks",
             "lessons": "56 lessons",
             "description": "Build modules, customize workflows, connect APIs, and prepare production-ready AdonERP extensions.",
-            "topics": [
-              "Next.js",
-              "API",
-              "Prisma",
-              "Automation",
-              "Deployment"
-            ]
+            "topics": ["Next.js", "API", "Prisma", "Automation", "Deployment"]
           },
           {
             "title": "Business User Training",
@@ -40243,11 +40000,7 @@
         "player": {
           "label": "Tutorial player",
           "title": "Sales pipeline basics",
-          "steps": [
-            "Watch",
-            "Practice",
-            "Apply"
-          ]
+          "steps": ["Watch", "Practice", "Apply"]
         },
         "categoriesSection": {
           "eyebrow": "Browse by business workflow",
@@ -40572,13 +40325,7 @@
           }
         },
         "inventoryLabel": "Material inventory • Stock levels",
-        "materials": [
-          "Concrete",
-          "Rebar",
-          "Lumber",
-          "Drywall",
-          "Paint"
-        ]
+        "materials": ["Concrete", "Rebar", "Lumber", "Drywall", "Paint"]
       },
       "costsSection": {
         "title": "Keep an eye on the",
@@ -41108,10 +40855,7 @@
             "name": "Sofia Larsson",
             "role": "CFO · Nordic Abrasives Group",
             "country": "Sweden",
-            "results": [
-              "40% fewer tools",
-              "18 hrs/week saved"
-            ],
+            "results": ["40% fewer tools", "18 hrs/week saved"],
             "avatar": "SL",
             "tier": "Enterprise"
           },
@@ -41120,10 +40864,7 @@
             "name": "Rajesh Menon",
             "role": "Operations Director · IndoPacific Logistics",
             "country": "India",
-            "results": [
-              "6-week go-live",
-              "99% stock accuracy"
-            ],
+            "results": ["6-week go-live", "99% stock accuracy"],
             "avatar": "RM",
             "tier": "Mid-market"
           },
@@ -41132,10 +40873,7 @@
             "name": "Adèle Moreau",
             "role": "Founder & CEO · GreenLoop Commerce",
             "country": "France",
-            "results": [
-              "Zero-touch scaling",
-              "3× faster close"
-            ],
+            "results": ["Zero-touch scaling", "3× faster close"],
             "avatar": "AM",
             "tier": "Startup"
           },
@@ -41144,10 +40882,7 @@
             "name": "Kwame Osei",
             "role": "GM · Accra Kitchen Co.",
             "country": "Ghana",
-            "results": [
-              "22% faster turnover",
-              "1 unified system"
-            ],
+            "results": ["22% faster turnover", "1 unified system"],
             "avatar": "KO",
             "tier": "Retail"
           },
@@ -41156,10 +40891,7 @@
             "name": "Julia Saab",
             "role": "Head of Finance · Saab Holdings",
             "country": "Lebanon",
-            "results": [
-              "10-day go-live",
-              "Zero downtime"
-            ],
+            "results": ["10-day go-live", "Zero downtime"],
             "avatar": "JS",
             "tier": "Enterprise"
           },
@@ -41168,10 +40900,7 @@
             "name": "Fritz Lehmann",
             "role": "CTO · RheinTech GmbH",
             "country": "Germany",
-            "results": [
-              "3-week migration",
-              "Zero data loss"
-            ],
+            "results": ["3-week migration", "Zero data loss"],
             "avatar": "FL",
             "tier": "Enterprise"
           }
@@ -41252,13 +40981,7 @@
           "title": "Discuss",
           "subtitle": "Inbox / Channels / Messages / Meetings",
           "newButton": "New",
-          "channels": [
-            "General",
-            "Marketing",
-            "Sales",
-            "Support",
-            "Project"
-          ],
+          "channels": ["General", "Marketing", "Sales", "Support", "Project"],
           "messages": [
             {
               "name": "Audrey Peterson",
@@ -41310,12 +41033,7 @@
         "demo": {
           "title": "Sales Order",
           "badge": "Discuss",
-          "fields": [
-            "Customer",
-            "Quotation",
-            "Total",
-            "Status"
-          ],
+          "fields": ["Customer", "Quotation", "Total", "Status"],
           "thread": {
             "title": "Discuss thread",
             "description": "Ask questions, mention team members, and keep decisions attached to the document."
@@ -41548,20 +41266,9 @@
           }
         ],
         "demo": {
-          "leftItems": [
-            "Payment slip",
-            "Contract file"
-          ],
-          "inboxItems": [
-            "Invoice",
-            "Agreement",
-            "Receipt",
-            "Approval note"
-          ],
-          "rightItems": [
-            "Client doc",
-            "Signed certificate"
-          ]
+          "leftItems": ["Payment slip", "Contract file"],
+          "inboxItems": ["Invoice", "Agreement", "Receipt", "Approval note"],
+          "rightItems": ["Client doc", "Signed certificate"]
         }
       },
       "signingSection": {
@@ -41583,17 +41290,8 @@
       "organizationSection": {
         "title": "Organization is the key",
         "description": "Keep departments, clients, tasks, and approvals connected. Your team always knows where every file belongs and what needs action.",
-        "columns": [
-          "Inbox",
-          "In Review",
-          "Waiting Signature",
-          "Approved"
-        ],
-        "cards": [
-          "Invoice",
-          "Proposal",
-          "Agreement"
-        ]
+        "columns": ["Inbox", "In Review", "Waiting Signature", "Approved"],
+        "cards": ["Invoice", "Proposal", "Agreement"]
       },
       "collaborationSection": {
         "eyebrowIcon": "Users",
@@ -41601,12 +41299,7 @@
         "title": "The art of effective",
         "titleHighlight": "collaboration",
         "description": "Discuss documents with teammates, assign ownership, request approvals, and keep all comments connected to the file.",
-        "features": [
-          "Comments",
-          "Approvals",
-          "Mentions",
-          "Access control"
-        ],
+        "features": ["Comments", "Approvals", "Mentions", "Access control"],
         "demo": {
           "title": "Website contract draft",
           "comment": "Please review the pricing section before sending it to the client.",
@@ -42112,17 +41805,11 @@
           "inProgress": "In progress",
           "question1": {
             "text": "What is photosynthesis?",
-            "answers": [
-              "Energy from sunlight",
-              "Plant watering"
-            ]
+            "answers": ["Energy from sunlight", "Plant watering"]
           },
           "question2": {
             "text": "What is the best soil for young trees?",
-            "answers": [
-              "Loose and rich soil",
-              "Dry sand"
-            ]
+            "answers": ["Loose and rich soil", "Dry sand"]
           }
         },
         "button": "See evaluation"
@@ -42411,15 +42098,7 @@
         ],
         "calendar": {
           "title": "June 2026",
-          "days": [
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat",
-            "Sun"
-          ],
+          "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
           "events": [
             {
               "day": "Jun 25",
@@ -42447,15 +42126,9 @@
             "title": "Adon ERP 17 Release Deep Dive",
             "date": "Jun 25, 2026",
             "time": "14:00 UTC",
-            "speakers": [
-              "Omar Yousef",
-              "Aisha Karim"
-            ],
+            "speakers": ["Omar Yousef", "Aisha Karim"],
             "attendees": 840,
-            "tags": [
-              "release",
-              "v17"
-            ],
+            "tags": ["release", "v17"],
             "color": "from-blue-500 to-indigo-600"
           },
           {
@@ -42463,15 +42136,9 @@
             "title": "Build Your First Custom Module in 90 Minutes",
             "date": "Jul 2, 2026",
             "time": "10:00 UTC",
-            "speakers": [
-              "Jules P.",
-              "Lena K."
-            ],
+            "speakers": ["Jules P.", "Lena K."],
             "attendees": 530,
-            "tags": [
-              "workshop",
-              "development"
-            ],
+            "tags": ["workshop", "development"],
             "color": "from-emerald-500 to-teal-600"
           },
           {
@@ -42479,14 +42146,9 @@
             "title": "AdonERP Community Meetup — Berlin",
             "date": "Jul 18, 2026",
             "time": "18:00 CET",
-            "speakers": [
-              "Community Team"
-            ],
+            "speakers": ["Community Team"],
             "attendees": 120,
-            "tags": [
-              "meetup",
-              "in-person"
-            ],
+            "tags": ["meetup", "in-person"],
             "color": "from-violet-500 to-purple-600"
           },
           {
@@ -42494,15 +42156,9 @@
             "title": "Multi-currency & Compliance: A Practical Guide",
             "date": "Aug 5, 2026",
             "time": "11:00 UTC",
-            "speakers": [
-              "Rajesh M.",
-              "Nadia R."
-            ],
+            "speakers": ["Rajesh M.", "Nadia R."],
             "attendees": 610,
-            "tags": [
-              "accounting",
-              "compliance"
-            ],
+            "tags": ["accounting", "compliance"],
             "color": "from-amber-500 to-orange-600"
           }
         ],
@@ -42949,11 +42605,7 @@
           "pointsSystem": "Points system",
           "digitalWallet": "Digital wallet"
         },
-        "rewards": [
-          "Coupons",
-          "Loyalty cards",
-          "Promotions"
-        ],
+        "rewards": ["Coupons", "Loyalty cards", "Promotions"],
         "rewardIcons": {
           "Coupons": "🎫",
           "Loyalty cards": "💳",
@@ -43171,11 +42823,7 @@
         "taskDetail": {
           "title": "Task detail",
           "task": "Install solar panel",
-          "items": [
-            "Customer ready",
-            "Route optimized",
-            "Parts available"
-          ]
+          "items": ["Customer ready", "Route optimized", "Parts available"]
         }
       },
       "mobileSection": {
@@ -43450,14 +43098,7 @@
         "description": "User-friendly and advanced text editor. Enable users to edit and structure their content with plenty of helpful features.",
         "editor": {
           "title": "Your Answer",
-          "tools": [
-            "B",
-            "I",
-            "U",
-            "Link",
-            "Image",
-            "Code"
-          ],
+          "tools": ["B", "I", "U", "Link", "Image", "Code"],
           "features": {
             "boldText": "Bold text",
             "uploadImage": "Upload image",
@@ -43575,11 +43216,7 @@
           "taskTracking": "Task tracking",
           "timelineView": "Timeline view"
         },
-        "stages": [
-          "To Do",
-          "In Progress",
-          "Done"
-        ]
+        "stages": ["To Do", "In Progress", "Done"]
       },
       "materialsSection": {
         "title": "Turn raw",
@@ -43590,13 +43227,7 @@
           "manufacturing": "Easy manufacturing and purchasing keep production forecasts, costs and stock under control."
         },
         "table": {
-          "headers": [
-            "Material",
-            "BOM Qty",
-            "On Hand",
-            "Required",
-            "Status"
-          ],
+          "headers": ["Material", "BOM Qty", "On Hand", "Required", "Status"],
           "rows": [
             {
               "material": "Oak Wood",
@@ -43644,12 +43275,7 @@
           "barcodeScanning": "Barcode scanning",
           "autoReplenishment": "Auto replenishment"
         },
-        "items": [
-          "Hardwood",
-          "Plywood",
-          "Veneer",
-          "Hardware"
-        ]
+        "items": ["Hardwood", "Plywood", "Veneer", "Hardware"]
       },
       "featuresSection": {
         "title": "All the features",
@@ -44035,34 +43661,25 @@
         "prs": [
           {
             "summary": "Inventory: barcode lookahead validation",
-            "tags": [
-              "in-progress",
-              "review"
-            ],
+            "tags": ["in-progress", "review"],
             "author": "Omar Y.",
             "comments": 4
           },
           {
             "summary": "Accounting: auto-reconciliation engine",
-            "tags": [
-              "approved"
-            ],
+            "tags": ["approved"],
             "author": "Aisha K.",
             "comments": 12
           },
           {
             "summary": "Website: new elearning course player",
-            "tags": [
-              "in-progress"
-            ],
+            "tags": ["in-progress"],
             "author": "Jules P.",
             "comments": 8
           },
           {
             "summary": "CRM: bulk-import lead scoring",
-            "tags": [
-              "draft"
-            ],
+            "tags": ["draft"],
             "author": "Nadia R.",
             "comments": 2
           }
@@ -44566,13 +44183,7 @@
           }
         },
         "table": {
-          "headers": [
-            "Product",
-            "On Hand",
-            "Forecast",
-            "Min / Max",
-            "Status"
-          ],
+          "headers": ["Product", "On Hand", "Forecast", "Min / Max", "Status"],
           "rows": [
             {
               "product": "Hammer (16oz)",
@@ -44849,11 +44460,10 @@
         "tag": "✦ Manage your entire business in one place",
         "titlePrefix": "Adon ERP : Affordable & Fast ",
         "typeWords": [
-          "Enterprise Solution",
-          "Features like SAP",
-          "Better than Odoo",
-          "Monday like CRM",
-          "Salesforce like CRM"
+          "Enterprise-Grade ERP, All-in-One Business Solution",
+          "SAP-Inspired Enterprise Features",
+          "Where Odoo Ends, AdonERP Begins",
+          "Salesforce-Level CRM, Made Simpler and Smarter"
         ],
         "description": "Set up in minutes with no coding or complicated configuration. Manage your team, sales, accounting, and operations from one connected platform."
       },
@@ -44983,29 +44593,17 @@
             {
               "title": "To Do",
               "color": "#fef3c7",
-              "items": [
-                "Design mockup",
-                "User research",
-                "API spec"
-              ]
+              "items": ["Design mockup", "User research", "API spec"]
             },
             {
               "title": "In Progress",
               "color": "#dbeafe",
-              "items": [
-                "Auth flow",
-                "Dashboard",
-                "Mobile nav"
-              ]
+              "items": ["Auth flow", "Dashboard", "Mobile nav"]
             },
             {
               "title": "Done",
               "color": "#d1fae5",
-              "items": [
-                "DB schema",
-                "CI/CD",
-                "Staging env"
-              ]
+              "items": ["DB schema", "CI/CD", "Staging env"]
             }
           ]
         }
@@ -45388,17 +44986,8 @@
           "Tags",
           "Contract Type"
         ],
-        "groupBy": [
-          "Manager",
-          "Department",
-          "Job Position",
-          "Skills"
-        ],
-        "favorites": [
-          "Save current search",
-          "My team",
-          "New hires"
-        ]
+        "groupBy": ["Manager", "Department", "Job Position", "Skills"],
+        "favorites": ["Save current search", "My team", "New hires"]
       },
       "privacySection": {
         "title": "Keep the",
@@ -45409,30 +44998,12 @@
           "name": "Audrey Peterson",
           "confidential": "Confidential",
           "fields": [
-            [
-              "Private Address",
-              "Restricted"
-            ],
-            [
-              "Wage",
-              "Manager only"
-            ],
-            [
-              "Emergency Contact",
-              "Private"
-            ],
-            [
-              "Contract",
-              "HR only"
-            ],
-            [
-              "Visa",
-              "Protected"
-            ],
-            [
-              "Bank Account",
-              "Hidden"
-            ]
+            ["Private Address", "Restricted"],
+            ["Wage", "Manager only"],
+            ["Emergency Contact", "Private"],
+            ["Contract", "HR only"],
+            ["Visa", "Protected"],
+            ["Bank Account", "Hidden"]
           ],
           "footer": "Only authorized users can view this profile."
         }
@@ -45441,28 +45012,15 @@
         "title": "Show off",
         "titleHighlight": "those skills",
         "description": "Record every employee's skill set so the next time you need a French-speaking JavaScript expert, you know exactly who to call.",
-        "skills": [
-          "React",
-          "French",
-          "JavaScript",
-          "Design",
-          "Sales"
-        ]
+        "skills": ["React", "French", "JavaScript", "Design", "Sales"]
       },
       "timeOffSection": {
         "title": "Take control of",
         "titleHighlight": "time off",
         "titleEnd": "",
         "description": "Stay on top of PTO requests with integrated time off tracking. Use absence reports to monitor attendance and quickly approve vacation requests.",
-        "columns": [
-          "Absent",
-          "Present",
-          "To Define"
-        ],
-        "leaveTypes": [
-          "Paid Time Off",
-          "Sick Leave"
-        ]
+        "columns": ["Absent", "Present", "To Define"],
+        "leaveTypes": ["Paid Time Off", "Sick Leave"]
       },
       "documentsSection": {
         "title": "Never lose track of another document",
@@ -45521,22 +45079,10 @@
           "name": "Jennie Fletcher",
           "role": "Manager's Feedback",
           "criteria": [
-            [
-              "Job knowledge",
-              5
-            ],
-            [
-              "Time management",
-              4
-            ],
-            [
-              "Teamwork",
-              5
-            ],
-            [
-              "Autonomy",
-              4
-            ]
+            ["Job knowledge", 5],
+            ["Time management", 4],
+            ["Teamwork", 5],
+            ["Autonomy", 4]
           ]
         }
       },
@@ -45769,11 +45315,7 @@
       "warehouseSection": {
         "title": "Optimize your warehouse",
         "description": "Build clean warehouse operations with locations, routes, putaway rules, replenishment rules, picking flows, and transfer management.",
-        "stages": [
-          "Receipts",
-          "Pick",
-          "Pack"
-        ]
+        "stages": ["Receipts", "Pick", "Pack"]
       },
       "pickingSection": {
         "title": "Minimize",
@@ -45992,12 +45534,7 @@
           "Multi-currency support",
           "Recurring billing"
         ],
-        "gateways": [
-          "Stripe",
-          "PayPal",
-          "Razorpay",
-          "Square"
-        ],
+        "gateways": ["Stripe", "PayPal", "Razorpay", "Square"],
         "demo": {
           "totalDue": "Total Due",
           "amount": "$3,500.00",
@@ -46352,11 +45889,7 @@
             "priority": "Priority"
           },
           "chatTitle": "Chat",
-          "messages": [
-            "Hello!",
-            "Can you help?",
-            "Sure, one moment."
-          ]
+          "messages": ["Hello!", "Can you help?", "Sure, one moment."]
         }
       },
       "helpSection": {
@@ -46379,10 +45912,7 @@
         },
         "latestConversation": {
           "title": "Latest conversation",
-          "messages": [
-            "Can I update my order?",
-            "Yes, I can help."
-          ]
+          "messages": ["Can I update my order?", "Yes, I can help."]
         }
       },
       "visitorToCustomerSection": {
@@ -46550,11 +46080,7 @@
             },
             {
               "title": "Scrap",
-              "cards": [
-                "Old laptop",
-                "Broken monitor",
-                "Damaged printer"
-              ]
+              "cards": ["Old laptop", "Broken monitor", "Damaged printer"]
             }
           ]
         }
@@ -46564,26 +46090,14 @@
         "subtitle": "maintenance",
         "description": "to keep your line running.",
         "text": "Use computed statistics, scheduling rules, expected next failure dates, and IoT data to automate metrology and preventive maintenance.",
-        "days": [
-          "Sat",
-          "Sun",
-          "Mon",
-          "Tue",
-          "Wed",
-          "Thu",
-          "Fri"
-        ]
+        "days": ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
       },
       "requestsSection": {
         "title": "Organize your",
         "subtitle": "maintenance requests",
         "description": "with great kanban and calendar views.",
         "text": "Easily track maintenance requests with kanban view. Use the maintenance calendar to organize activities and manage team workload in a clean drag-and-drop interface.",
-        "stages": [
-          "New Request",
-          "In Progress",
-          "Repaired"
-        ]
+        "stages": ["New Request", "In Progress", "Repaired"]
       },
       "equipmentSection": {
         "title": "Increase overall equipment",
@@ -47275,12 +46789,7 @@
         "titleHighlight": "project",
         "titleEnd": "hub",
         "description": "Manage projects, tasks, timesheets, meetings, documents and team expenses from one complete dashboard.",
-        "stages": [
-          "To Do",
-          "In Progress",
-          "Review",
-          "Done"
-        ]
+        "stages": ["To Do", "In Progress", "Review", "Done"]
       },
       "pipelineSection": {
         "title": "From lead to",
@@ -47290,11 +46799,7 @@
           "leadTracking": "Lead tracking",
           "oneClickInvoicing": "One-click invoicing"
         },
-        "stages": [
-          "New",
-          "Proposal",
-          "Won"
-        ]
+        "stages": ["New", "Proposal", "Won"]
       },
       "expandSection": {
         "title": "Expand as you grow",
@@ -47303,12 +46808,7 @@
           "campaignAnalytics": "Campaign analytics",
           "autoScheduling": "Auto-scheduling"
         },
-        "services": [
-          "SEO",
-          "Social",
-          "Content",
-          "Email"
-        ]
+        "services": ["SEO", "Social", "Content", "Email"]
       },
       "featuresSection": {
         "title": "All the features",
@@ -47543,11 +47043,7 @@
           "customViews": "Custom views",
           "timelineTracking": "Timeline tracking"
         },
-        "stages": [
-          "To Do",
-          "In Progress",
-          "Done"
-        ]
+        "stages": ["To Do", "In Progress", "Done"]
       },
       "featuresSection": {
         "title": "All the features",
@@ -47722,13 +47218,7 @@
         "table": {
           "title": "Simulation result",
           "badge": "Feasible",
-          "headers": [
-            "Order",
-            "Material",
-            "Stock",
-            "Time",
-            "Status"
-          ],
+          "headers": ["Order", "Material", "Stock", "Time", "Status"],
           "rows": [
             {
               "order": "MO/1042",
@@ -47764,47 +47254,23 @@
       "planningSection": {
         "title": "Planning that puts you ahead of schedule",
         "description": "Schedule manufacturing orders, reserve components, balance work centers, and see production timing before problems happen.",
-        "days": [
-          "Mon",
-          "Tue",
-          "Wed",
-          "Thu",
-          "Fri",
-          "Sat",
-          "Sun"
-        ],
+        "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         "operations": [
           {
             "name": "Wood cutting",
-            "blocks": [
-              "amber",
-              "rose",
-              "sky"
-            ]
+            "blocks": ["amber", "rose", "sky"]
           },
           {
             "name": "Assembly",
-            "blocks": [
-              "sky",
-              "purple",
-              "emerald"
-            ]
+            "blocks": ["sky", "purple", "emerald"]
           },
           {
             "name": "Quality control",
-            "blocks": [
-              "emerald",
-              "amber",
-              "rose"
-            ]
+            "blocks": ["emerald", "amber", "rose"]
           },
           {
             "name": "Packing",
-            "blocks": [
-              "purple",
-              "sky",
-              "amber"
-            ]
+            "blocks": ["purple", "sky", "amber"]
           }
         ]
       },
@@ -47816,11 +47282,7 @@
         "floatingNote": "Scan, produce, and validate",
         "mobileLabel": "Mobile barcode app",
         "activeWorkOrder": "Active work order",
-        "steps": [
-          "Scan component",
-          "Start operation",
-          "Validate quantity"
-        ],
+        "steps": ["Scan component", "Start operation", "Validate quantity"],
         "validateButton": "Validate"
       },
       "paperlessSection": {
@@ -47828,12 +47290,7 @@
         "titleHighlight": "paperless",
         "titleEnd": "company",
         "description": "Give operators everything they need directly on screen: instructions, components, checks, drawings, notes, and validation actions.",
-        "menuItems": [
-          "BOM",
-          "Routing",
-          "Work order",
-          "Quality"
-        ],
+        "menuItems": ["BOM", "Routing", "Work order", "Quality"],
         "components": [
           "Component 1",
           "Component 2",
@@ -47849,11 +47306,7 @@
         "titleHighlight": "Six-Sigma",
         "titleEnd": "level 6!",
         "description": "Cut costs, reduce waste, detect quality issues, and ensure every product meets your standards. Track checks directly inside your production process.",
-        "categories": [
-          "Checks",
-          "Control Points",
-          "Alerts"
-        ]
+        "categories": ["Checks", "Control Points", "Alerts"]
       },
       "kaizenSection": {
         "title": "The perfect tool for",
@@ -48066,22 +47519,14 @@
             "description": "Deploy and customize AdonERP, guide clients through the full setup, and manage long-term upgrades and integrations.",
             "icon": "Building2",
             "accent": "from-violet-100 to-purple-100",
-            "tags": [
-              "ERP Setup",
-              "Customization",
-              "Integration"
-            ]
+            "tags": ["ERP Setup", "Customization", "Integration"]
           },
           {
             "title": "Reseller",
             "description": "Sell AdonERP subscriptions and complementary services to your customer base, supported by full training and materials.",
             "icon": "Megaphone",
             "accent": "from-purple-100 to-violet-100",
-            "tags": [
-              "Subscription Sales",
-              "B2B Outreach",
-              "Channel Growth"
-            ]
+            "tags": ["Subscription Sales", "B2B Outreach", "Channel Growth"]
           },
           {
             "title": "Consulting",
@@ -48236,18 +47681,9 @@
           "title": "Payslip Batch",
           "batchLabel": "July Payroll",
           "stats": [
-            [
-              "Employees",
-              "42"
-            ],
-            [
-              "Gross Pay",
-              "$102k"
-            ],
-            [
-              "Net Pay",
-              "$82k"
-            ]
+            ["Employees", "42"],
+            ["Gross Pay", "$102k"],
+            ["Net Pay", "$82k"]
           ],
           "steps": [
             "Compute work entries",
@@ -48322,26 +47758,11 @@
           "month": "July 2026 Payslip",
           "status": "Ready",
           "items": [
-            [
-              "Basic Salary",
-              "$5,200"
-            ],
-            [
-              "Transport Allowance",
-              "$300"
-            ],
-            [
-              "Meal Allowance",
-              "$180"
-            ],
-            [
-              "Tax Deduction",
-              "-$620"
-            ],
-            [
-              "Insurance",
-              "-$210"
-            ]
+            ["Basic Salary", "$5,200"],
+            ["Transport Allowance", "$300"],
+            ["Meal Allowance", "$180"],
+            ["Tax Deduction", "-$620"],
+            ["Insurance", "-$210"]
           ],
           "netSalary": "$4,850"
         }
@@ -48352,13 +47773,7 @@
         "description": "Understand salary cost, taxes, departments, deductions, and payroll trends with clean visual reporting.",
         "analysisTitle": "Payroll Analysis",
         "badge": "Monthly",
-        "months": [
-          "Month 1",
-          "Month 2",
-          "Month 3",
-          "Month 4",
-          "Month 5"
-        ]
+        "months": ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5"]
       },
       "featuresSection": {
         "title": "All the features",
@@ -48467,22 +47882,10 @@
             ],
             "managerFeedback": "She can provide achievement that convinced you of the employee's value.",
             "evaluation": [
-              [
-                "Stress Resistance",
-                4
-              ],
-              [
-                "Time Management",
-                5
-              ],
-              [
-                "Teamwork",
-                4
-              ],
-              [
-                "Autonomy",
-                5
-              ]
+              ["Stress Resistance", 4],
+              ["Time Management", 5],
+              ["Teamwork", 4],
+              ["Autonomy", 5]
             ]
           }
         }
@@ -48564,11 +47967,7 @@
           "status": "Done",
           "employee": "Mitchell Admin",
           "description": "Appraisal plan generated automatically",
-          "steps": [
-            "Self evaluation",
-            "Manager review",
-            "Final validation"
-          ]
+          "steps": ["Self evaluation", "Manager review", "Final validation"]
         }
       },
       "appsSection": {
@@ -48783,14 +48182,7 @@
         "products": {
           "title": "Products",
           "itemsCount": "items",
-          "items": [
-            "Chair",
-            "Table",
-            "Sofa",
-            "Lamp",
-            "Shelf",
-            "Cabinet"
-          ],
+          "items": ["Chair", "Table", "Sofa", "Lamp", "Shelf", "Cabinet"],
           "tapToAdd": "Tap to add"
         },
         "cardTerminal": {
@@ -48824,11 +48216,7 @@
         "description": "Let customers order from a kiosk, QR menu, tablet, or mobile page. Orders flow directly into your POS and inventory.",
         "card": {
           "title": "Self ordering",
-          "steps": [
-            "Select product",
-            "Choose options",
-            "Pay securely"
-          ],
+          "steps": ["Select product", "Choose options", "Pay securely"],
           "orderNumber": "Order #248",
           "readyMessage": "Ready for payment",
           "payNow": "Pay now"
@@ -48852,20 +48240,11 @@
         "description": "Sell from your store, website, social channels, and mobile orders while keeping stock and accounting perfectly connected.",
         "onlineOrder": {
           "title": "Online order",
-          "steps": [
-            "Customer checkout",
-            "Payment confirmed",
-            "Stock reserved"
-          ]
+          "steps": ["Customer checkout", "Payment confirmed", "Stock reserved"]
         },
         "storeWorkflow": {
           "title": "Store workflow",
-          "steps": [
-            "Pick",
-            "Pack",
-            "Ship",
-            "Invoice"
-          ]
+          "steps": ["Pick", "Pack", "Ship", "Invoice"]
         }
       },
       "featuresSection": {
@@ -49089,11 +48468,7 @@
           "setupFee": 0,
           "quarterlyFee": 0,
           "cta": "Get started",
-          "features": [
-            "Accounting",
-            "HR & Payroll",
-            "Inventory"
-          ]
+          "features": ["Accounting", "HR & Payroll", "Inventory"]
         },
         {
           "id": "professional",
@@ -49635,14 +49010,7 @@
           ],
           "chartTitle": "Budget utilization",
           "chartPeriod": "FY 2025",
-          "chartLabels": [
-            "Jan",
-            "Mar",
-            "May",
-            "Jul",
-            "Sep",
-            "Dec"
-          ],
+          "chartLabels": ["Jan", "Mar", "May", "Jul", "Sep", "Dec"],
           "remainingLabel": "Available this year",
           "remainingValue": "$690,000",
           "utilizationLabel": "Budget utilized",
@@ -50003,12 +49371,7 @@
           "availableValue": "৳115.507M",
           "availableCaption": "Awards less sample spending",
           "donorTitle": "Donor portfolio overview",
-          "donorHeaders": [
-            "Donor",
-            "Grants",
-            "Award",
-            "Spent"
-          ],
+          "donorHeaders": ["Donor", "Grants", "Award", "Spent"],
           "donors": [
             {
               "name": "UNICEF",
@@ -50453,12 +49816,7 @@
           "sampleLabel": "Sample records",
           "foreignLabel": "Foreign",
           "donorsTitle": "Donor portfolio",
-          "donorHeaders": [
-            "Donor code",
-            "Donor",
-            "Type",
-            "Country"
-          ],
+          "donorHeaders": ["Donor code", "Donor", "Type", "Country"],
           "donors": [
             {
               "code": "DN-0104",
@@ -51390,11 +50748,7 @@
             },
             {
               "title": "In Progress",
-              "cards": [
-                "Office Build-out",
-                "Client Website",
-                "Factory Line B"
-              ]
+              "cards": ["Office Build-out", "Client Website", "Factory Line B"]
             },
             {
               "title": "Ready to Bill",
@@ -51406,11 +50760,7 @@
             },
             {
               "title": "Closed",
-              "cards": [
-                "Q1 Consulting",
-                "Brand Refresh",
-                "Site Survey"
-              ]
+              "cards": ["Q1 Consulting", "Brand Refresh", "Site Survey"]
             }
           ],
           "tasksText": "cost lines",
@@ -51439,12 +50789,7 @@
         "demo": {
           "title": "Budget vs Actual",
           "badge": "Live",
-          "rows": [
-            "Labor",
-            "Material",
-            "Overhead",
-            "Subcontract"
-          ]
+          "rows": ["Labor", "Material", "Overhead", "Subcontract"]
         }
       },
       "dashboardSection": {
@@ -51455,10 +50800,7 @@
           "kanbanView": "Ledger view",
           "allActivities": "All transactions"
         },
-        "columns": [
-          "Committed Costs",
-          "Actual Costs"
-        ],
+        "columns": ["Committed Costs", "Actual Costs"],
         "tasks": [
           "Steel purchase order",
           "Site labor - Week 12",
@@ -51497,13 +50839,7 @@
         "checklist": {
           "title": "Cost Ledger",
           "subtitle": "Project Cost Details",
-          "headers": [
-            "Date",
-            "Employee",
-            "Description",
-            "Hours",
-            "Billable"
-          ],
+          "headers": ["Date", "Employee", "Description", "Hours", "Billable"],
           "rows": [
             {
               "date": "7/10/2025",
@@ -51655,12 +50991,7 @@
           "project": "Project Accounting",
           "projectCode": "PRJ-OB-VAN",
           "status": "In progress",
-          "menu": [
-            "Projects",
-            "Overview",
-            "",
-            "Budgets"
-          ],
+          "menu": ["Projects", "Overview", "", "Budgets"],
           "tabs": [
             "Overview",
             "",
@@ -52087,12 +51418,7 @@
             "status": "RFQ"
           }
         ],
-        "smartActions": [
-          "Order once",
-          "Automate",
-          "Confirm",
-          "Receive"
-        ]
+        "smartActions": ["Order once", "Automate", "Confirm", "Receive"]
       },
       "agreementSection": {
         "title": "Flexible purchase agreements,",
@@ -52204,27 +51530,15 @@
         "cards": [
           {
             "title": "Purchase settings",
-            "tags": [
-              "RFQ",
-              "Approval",
-              "Vendor"
-            ]
+            "tags": ["RFQ", "Approval", "Vendor"]
           },
           {
             "title": "Vendor rules",
-            "tags": [
-              "Terms",
-              "Taxes",
-              "Currency"
-            ]
+            "tags": ["Terms", "Taxes", "Currency"]
           },
           {
             "title": "Product options",
-            "tags": [
-              "UoM",
-              "Routes",
-              "Lead time"
-            ]
+            "tags": ["UoM", "Routes", "Lead time"]
           }
         ]
       },
@@ -52819,35 +52133,19 @@
           "columns": [
             {
               "title": "New Applications",
-              "cards": [
-                "Graphic Designer",
-                "Sales Executive",
-                "QA Engineer"
-              ]
+              "cards": ["Graphic Designer", "Sales Executive", "QA Engineer"]
             },
             {
               "title": "Initial Qualification",
-              "cards": [
-                "Frontend Developer",
-                "Marketing Manager",
-                "HR Officer"
-              ]
+              "cards": ["Frontend Developer", "Marketing Manager", "HR Officer"]
             },
             {
               "title": "First Interview",
-              "cards": [
-                "Product Designer",
-                "Account Manager",
-                "UX Researcher"
-              ]
+              "cards": ["Product Designer", "Account Manager", "UX Researcher"]
             },
             {
               "title": "Contract Proposal",
-              "cards": [
-                "Senior Developer",
-                "Operations Lead",
-                "SEO Specialist"
-              ]
+              "cards": ["Senior Developer", "Operations Lead", "SEO Specialist"]
             }
           ],
           "applicationsText": "applications"
@@ -52857,22 +52155,14 @@
         "title": "Never wonder about a",
         "titleHighlight": "job's status",
         "description": "Get full pipeline visibility from application to offer, so your team always knows what comes next.",
-        "columns": [
-          "Open Jobs",
-          "In Progress",
-          "Hired"
-        ],
+        "columns": ["Open Jobs", "In Progress", "Hired"],
         "candidatesCount": "candidates"
       },
       "visualizeSection": {
         "title": "Visualize the",
         "titleHighlight": "pipeline",
         "description": "Move applicants through your recruitment stages with a clean kanban view, interview status, tags, activities, and notes.",
-        "stages": [
-          "Qualified",
-          "Interview",
-          "Contract"
-        ],
+        "stages": ["Qualified", "Interview", "Contract"],
         "starsText": "stars",
         "interviewText": "Interview",
         "candidates": [
@@ -52901,22 +52191,10 @@
         "description": "Automate descriptions using templates and AI. Generate job posts, interview invitations, and candidate messages quickly.",
         "jobDescription": "Job Description",
         "fields": [
-          [
-            "Programmer",
-            "Software development and web applications"
-          ],
-          [
-            "Requirements",
-            "React, Next.js, TypeScript, REST API"
-          ],
-          [
-            "Location",
-            "Remote / Hybrid"
-          ],
-          [
-            "Experience",
-            "3+ years"
-          ]
+          ["Programmer", "Software development and web applications"],
+          ["Requirements", "React, Next.js, TypeScript, REST API"],
+          ["Location", "Remote / Hybrid"],
+          ["Experience", "3+ years"]
         ],
         "button": "Generate description"
       },
@@ -52938,15 +52216,7 @@
         "title": "Less scheduling,",
         "subtitle": "more interviewing!",
         "description": "Schedule interviews, send calendar invitations, coordinate with hiring teams, and keep candidates updated automatically.",
-        "days": [
-          "Mon",
-          "Tue",
-          "Wed",
-          "Thu",
-          "Fri",
-          "Sat",
-          "Sun"
-        ],
+        "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
         "interviewText": "Interview"
       },
       "reportingSection": {
@@ -52954,12 +52224,7 @@
         "titleHighlight": "that makes sense",
         "description": "Look at your hiring data and understand where your candidates come from, how your pipeline performs, and where your team can improve.",
         "analysisTitle": "Recruitment Analysis",
-        "stages": [
-          "Stage 1",
-          "Stage 2",
-          "Stage 3",
-          "Stage 4"
-        ]
+        "stages": ["Stage 1", "Stage 2", "Stage 3", "Stage 4"]
       },
       "featuresSection": {
         "title": "All the features",
@@ -53881,47 +53146,12 @@
         "spreadsheet": {
           "title": "Adon Spreadsheet",
           "live": "Live",
-          "headers": [
-            "Metric",
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "Total"
-          ],
+          "headers": ["Metric", "Jan", "Feb", "Mar", "Apr", "Total"],
           "rows": [
-            [
-              "Revenue",
-              "$12.4k",
-              "$18.7k",
-              "$21.9k",
-              "$28.2k",
-              "$81.2k"
-            ],
-            [
-              "Expenses",
-              "$4.8k",
-              "$6.1k",
-              "$7.3k",
-              "$8.9k",
-              "$27.1k"
-            ],
-            [
-              "Profit",
-              "$7.6k",
-              "$12.6k",
-              "$14.6k",
-              "$19.3k",
-              "$54.1k"
-            ],
-            [
-              "Growth",
-              "12%",
-              "18%",
-              "21%",
-              "32%",
-              "24%"
-            ]
+            ["Revenue", "$12.4k", "$18.7k", "$21.9k", "$28.2k", "$81.2k"],
+            ["Expenses", "$4.8k", "$6.1k", "$7.3k", "$8.9k", "$27.1k"],
+            ["Profit", "$7.6k", "$12.6k", "$14.6k", "$19.3k", "$54.1k"],
+            ["Growth", "12%", "18%", "21%", "32%", "24%"]
           ],
           "revenueTrend": "Revenue trend",
           "smartInsights": "Smart insights",
@@ -53973,30 +53203,10 @@
         "demo": {
           "title": "Pivot analysis",
           "rows": [
-            [
-              "North Region",
-              "Sales",
-              "$42,900",
-              "32%"
-            ],
-            [
-              "South Region",
-              "Inventory",
-              "$21,400",
-              "18%"
-            ],
-            [
-              "Online Store",
-              "Orders",
-              "$59,120",
-              "41%"
-            ],
-            [
-              "Corporate",
-              "Projects",
-              "$33,700",
-              "24%"
-            ]
+            ["North Region", "Sales", "$42,900", "32%"],
+            ["South Region", "Inventory", "$21,400", "18%"],
+            ["Online Store", "Orders", "$59,120", "41%"],
+            ["Corporate", "Projects", "$33,700", "24%"]
           ]
         }
       },
@@ -54422,12 +53632,7 @@
         "titleHighlight": "talent pool",
         "description": "Track applications, candidates and documents in one place so your team can evaluate the right people faster.",
         "table": {
-          "headers": [
-            "Name",
-            "Position",
-            "Stage",
-            "Applied"
-          ],
+          "headers": ["Name", "Position", "Stage", "Applied"],
           "rows": [
             {
               "name": "Emma Watson",
@@ -54476,12 +53681,7 @@
       },
       "documentsSection": {
         "title": "Never lose track of another document",
-        "documents": [
-          "Resumes",
-          "Cover Letters",
-          "Portfolios",
-          "Certificates"
-        ]
+        "documents": ["Resumes", "Cover Letters", "Portfolios", "Certificates"]
       },
       "featuresSection": {
         "title": "All the features",
@@ -54606,12 +53806,7 @@
           "quoteRequest": "Allow customers to easily request a quote using predefined templates on your website."
         },
         "pipelineLabel": "CRM pipeline • Lead to production",
-        "stages": [
-          "New Leads",
-          "Samples",
-          "Quotations",
-          "Production"
-        ]
+        "stages": ["New Leads", "Samples", "Quotations", "Production"]
       },
       "stockSection": {
         "title": "Streamlined",
@@ -54620,12 +53815,7 @@
           "deliveryOrders": "Delivery orders are automatically created in inventory when sales operations are confirmed.",
           "traceability": "Lots and package tracking allows full traceability of your inventory."
         },
-        "materials": [
-          "Cotton Rolls",
-          "Dyed Fabric",
-          "Zippers",
-          "Threads"
-        ],
+        "materials": ["Cotton Rolls", "Dyed Fabric", "Zippers", "Threads"],
         "orders": [
           "Order #TX-101",
           "Order #TX-102",
@@ -54647,14 +53837,7 @@
         "titleHighlight": "purchase",
         "description": "Handle purchasing, dropshipping, and subcontracting to keep your inventory perfectly stocked.",
         "table": {
-          "headers": [
-            "PO #",
-            "Supplier",
-            "Material",
-            "Qty",
-            "Status",
-            "ETA"
-          ],
+          "headers": ["PO #", "Supplier", "Material", "Qty", "Status", "ETA"],
           "rows": [
             {
               "po": "PO-1001",
@@ -54896,42 +54079,17 @@
         "selectedType": {
           "title": "Training Time Off",
           "fields": [
-            [
-              "Requires allocation",
-              "Yes"
-            ],
-            [
-              "Approval",
-              "Manager + HR"
-            ],
-            [
-              "Responsible",
-              "Marc Demo"
-            ],
-            [
-              "Validity",
-              "Current year"
-            ]
+            ["Requires allocation", "Yes"],
+            ["Approval", "Manager + HR"],
+            ["Responsible", "Marc Demo"],
+            ["Validity", "Current year"]
           ],
-          "tags": [
-            "Vacation",
-            "Sick",
-            "Remote",
-            "Training",
-            "Custom"
-          ]
+          "tags": ["Vacation", "Sick", "Remote", "Training", "Custom"]
         }
       },
       "availabilitySection": {
         "title": "See the breakdown of your available days",
-        "months": [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun"
-        ],
+        "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
         "ptoText": "PTO",
         "subtitle": "Do you have",
         "subtitleHighlight": "the time?",
@@ -54946,30 +54104,12 @@
           "name": "Anita Oliver",
           "type": "Paid Time Off Request",
           "fields": [
-            [
-              "Time Off Type",
-              "Paid Time Off"
-            ],
-            [
-              "Duration",
-              "5 days"
-            ],
-            [
-              "From",
-              "July 15"
-            ],
-            [
-              "To",
-              "July 20"
-            ],
-            [
-              "Approver",
-              "Marc Demo"
-            ],
-            [
-              "Status",
-              "To Approve"
-            ]
+            ["Time Off Type", "Paid Time Off"],
+            ["Duration", "5 days"],
+            ["From", "July 15"],
+            ["To", "July 20"],
+            ["Approver", "Marc Demo"],
+            ["Status", "To Approve"]
           ],
           "approveButton": "Approve",
           "refuseButton": "Refuse"
@@ -54980,11 +54120,7 @@
         "titleHighlight": "approve",
         "titleEnd": "done",
         "description": "Managers can review all requests from one dashboard, approve quickly, and keep the team calendar accurate.",
-        "columns": [
-          "Absent",
-          "Present",
-          "To Approve"
-        ],
+        "columns": ["Absent", "Present", "To Approve"],
         "floatingNote": "Approved in one click"
       },
       "featuresSection": {
@@ -55014,18 +54150,9 @@
         ],
         "seeAllLink": "See all features",
         "accrualDemo": [
-          [
-            "Monthly accrual",
-            "1.5 days"
-          ],
-          [
-            "Yearly allocation",
-            "18 days"
-          ],
-          [
-            "Carryover",
-            "5 days"
-          ]
+          ["Monthly accrual", "1.5 days"],
+          ["Yearly allocation", "18 days"],
+          ["Carryover", "5 days"]
         ]
       },
       "appsSection": {
@@ -55172,11 +54299,7 @@
         "titleHighlight": "Stop wondering",
         "description": "Smart time tracking. Launch a timer on the fly, and ensure that timesheets are always linked to the correct project, task, or sales order. No more missing data.",
         "demo": {
-          "tabs": [
-            "Day",
-            "Week",
-            "Month"
-          ],
+          "tabs": ["Day", "Week", "Month"],
           "infoText": "SO001 / Project Check Code",
           "labels": {
             "timer": "Timer ↗",
@@ -55185,11 +54308,7 @@
             "totalHours": "Total hours worked",
             "overtime": "Overtime ↗"
           },
-          "tableHeaders": [
-            "Day",
-            "Task Time",
-            "Hours"
-          ],
+          "tableHeaders": ["Day", "Task Time", "Hours"],
           "rows": [
             {
               "day": "Total Task - Web app validation",
@@ -55257,11 +54376,7 @@
         "viewsDemo": {
           "title": "Views",
           "description": "Switch between 5 different views as per your needs.",
-          "tabs": [
-            "Day",
-            "Week",
-            "Month"
-          ],
+          "tabs": ["Day", "Week", "Month"],
           "entries": [
             {
               "employee": "Audrey Peterson",
@@ -55366,11 +54481,7 @@
           "variants": "Variants",
           "stockTracking": "Stock tracking"
         },
-        "categories": [
-          "Teddy Bears",
-          "Action Figures",
-          "Board Games"
-        ]
+        "categories": ["Teddy Bears", "Action Figures", "Board Games"]
       },
       "rewardsSection": {
         "title": "Game-changing",
@@ -62702,16 +61813,9 @@
         "work-centers": {
           "title": "Work Centers",
           "category": "Production foundation",
-          "hero": [
-            "Give every operation",
-            "the right place to run."
-          ],
+          "hero": ["Give every operation", "the right place to run."],
           "description": "Bring machines, teams and external resources into one production model. Define working hours, practical capacity and rates before the first job reaches the floor.",
-          "flow": [
-            "Resource calendar",
-            "Work center",
-            "Available capacity"
-          ],
+          "flow": ["Resource calendar", "Work center", "Available capacity"],
           "callout": "Know your limits before you plan.",
           "note": "A machine is only as available as its calendar. Include downtime in the plan.",
           "workspaceTitle": "A clear picture of your production resources.",
@@ -62778,10 +61882,7 @@
         "routings": {
           "title": "Routings",
           "category": "Production foundation",
-          "hero": [
-            "Turn a recipe into",
-            "a repeatable process."
-          ],
+          "hero": ["Turn a recipe into", "a repeatable process."],
           "description": "Define the sequence of operations, the work center for each step and the time it takes. Give planning, execution and costing a common production route.",
           "flow": [
             "Operation sequence",
@@ -62854,10 +61955,7 @@
         "bill-of-materials": {
           "title": "Bill of Materials",
           "category": "Production foundation",
-          "hero": [
-            "Every input accounted for.",
-            "Every output defined."
-          ],
+          "hero": ["Every input accounted for.", "Every output defined."],
           "description": "Build a clear production recipe for materials, quantities and expected outputs. Include co-products, by-products and scrap so the production model reflects the real process.",
           "flow": [
             "Materials & quantities",
@@ -62930,16 +62028,9 @@
         "mrp-planning": {
           "title": "MRP Planning",
           "category": "Material & production planning",
-          "hero": [
-            "Turn demand into",
-            "a material-ready plan."
-          ],
+          "hero": ["Turn demand into", "a material-ready plan."],
           "description": "Bring demand, BOM requirements, available stock and scheduled receipts into the same planning conversation. Identify shortages before they hold up production.",
-          "flow": [
-            "Demand & BOMs",
-            "Net requirements",
-            "Supply proposals"
-          ],
+          "flow": ["Demand & BOMs", "Net requirements", "Supply proposals"],
           "callout": "Find the shortage before the floor does.",
           "note": "Check stock and expected receipts before proposing new supply. Plan the net requirement.",
           "workspaceTitle": "Material requirements with a clear next action.",
@@ -63006,16 +62097,9 @@
         "capacity-planning": {
           "title": "Capacity Planning",
           "category": "Material & production planning",
-          "hero": [
-            "Make room for demand.",
-            "Before you promise it."
-          ],
+          "hero": ["Make room for demand.", "Before you promise it."],
           "description": "Compare planned work with practical resource capacity. Make overloaded periods visible and review the work-center choices behind each production commitment.",
-          "flow": [
-            "Planned operations",
-            "Resource load",
-            "Feasible capacity"
-          ],
+          "flow": ["Planned operations", "Resource load", "Feasible capacity"],
           "callout": "Spot the bottleneck early.",
           "note": "Nominal hours are a starting point. Shifts, maintenance and efficiency shape usable capacity.",
           "workspaceTitle": "See where your production plan needs space.",
@@ -63082,16 +62166,9 @@
         "master-schedule-mps": {
           "title": "Master Schedule (MPS)",
           "category": "Material & production planning",
-          "hero": [
-            "Give demand a date.",
-            "Give production a direction."
-          ],
+          "hero": ["Give demand a date.", "Give production a direction."],
           "description": "Translate product demand into a time-phased production plan. Align quantities, planning periods and supply assumptions before detailed scheduling begins.",
-          "flow": [
-            "Product demand",
-            "Master schedule",
-            "Production targets"
-          ],
+          "flow": ["Product demand", "Master schedule", "Production targets"],
           "callout": "One shared plan for the week ahead.",
           "note": "A production target needs a quantity and a period. Review both against materials and capacity.",
           "workspaceTitle": "A shared view of what to make, and when.",
@@ -63158,10 +62235,7 @@
         "scheduling-aps": {
           "title": "Scheduling (APS)",
           "category": "Detailed production planning",
-          "hero": [
-            "Sequence the work.",
-            "Make every hour count."
-          ],
+          "hero": ["Sequence the work.", "Make every hour count."],
           "description": "Bring operation timing, resource availability and production priorities into a clear scheduling view. Review the sequence before releasing work to the shop floor.",
           "flow": [
             "Orders & priorities",
@@ -63234,10 +62308,7 @@
         "line-planning-board": {
           "title": "Line Planning Board",
           "category": "Detailed production planning",
-          "hero": [
-            "Every line in view.",
-            "Every handoff clearer."
-          ],
+          "hero": ["Every line in view.", "Every handoff clearer."],
           "description": "See the work assigned to each production line, its place in the plan and the jobs that need attention. Give planners and the floor a shared visual reference.",
           "flow": [
             "Order priorities",
@@ -63310,16 +62381,9 @@
         "order-allocation": {
           "title": "Order Allocation",
           "category": "Detailed production planning",
-          "hero": [
-            "Place every order",
-            "where it can succeed."
-          ],
+          "hero": ["Place every order", "where it can succeed."],
           "description": "Connect production quantities to suitable lines and resources. Review allocated work, remaining quantities and the constraints behind each assignment.",
-          "flow": [
-            "Order quantity",
-            "Resource assignment",
-            "Allocated work"
-          ],
+          "flow": ["Order quantity", "Resource assignment", "Allocated work"],
           "callout": "Make the commitment visible.",
           "note": "An allocation is a production commitment. Check both resource suitability and remaining quantity.",
           "workspaceTitle": "A clear owner for every production quantity.",
@@ -63386,10 +62450,7 @@
         "shop-floor": {
           "title": "Shop Floor",
           "category": "Production execution",
-          "hero": [
-            "Bring the plan",
-            "to the people making it."
-          ],
+          "hero": ["Bring the plan", "to the people making it."],
           "description": "Keep operations, output and quality checkpoints close to the work. Help teams follow the production sequence and record what happens at each station.",
           "flow": [
             "Released operation",
@@ -63462,16 +62523,9 @@
         "batches-lots": {
           "title": "Batches / Lots",
           "category": "Production traceability",
-          "hero": [
-            "Follow the batch.",
-            "Keep its story intact."
-          ],
+          "hero": ["Follow the batch.", "Keep its story intact."],
           "description": "Give grouped production and material quantities a traceable identity. Follow lot references across receipt, production, inspection and finished output.",
-          "flow": [
-            "Input lot",
-            "Production batch",
-            "Output lot"
-          ],
+          "flow": ["Input lot", "Production batch", "Output lot"],
           "callout": "A reference that follows the material.",
           "note": "Keep the input-to-output relationship. A batch label is most useful when its production history is clear.",
           "workspaceTitle": "Trace the batch behind the finished quantity.",
@@ -63538,16 +62592,9 @@
         "serial-numbers": {
           "title": "Serial Numbers",
           "category": "Production traceability",
-          "hero": [
-            "An identity for",
-            "every individual unit."
-          ],
+          "hero": ["An identity for", "every individual unit."],
           "description": "Follow individually identified products through production and quality review. Connect each serial reference to the product and production context behind it.",
-          "flow": [
-            "Product identity",
-            "Serial assignment",
-            "Unit history"
-          ],
+          "flow": ["Product identity", "Serial assignment", "Unit history"],
           "callout": "One unit. One traceable reference.",
           "note": "Use serials for individual identity and lots for grouped quantities. Choose the level your product needs.",
           "workspaceTitle": "Look beyond the quantity to the individual unit.",
@@ -63614,10 +62661,7 @@
         "qc-templates": {
           "title": "QC Templates",
           "category": "Quality management",
-          "hero": [
-            "Define quality once.",
-            "Inspect consistently."
-          ],
+          "hero": ["Define quality once.", "Inspect consistently."],
           "description": "Build reusable inspection templates with clear parameters, result types and acceptable limits. Give each checkpoint a consistent definition of what to measure.",
           "flow": [
             "Quality parameters",
@@ -63690,10 +62734,7 @@
         "quality-control": {
           "title": "Quality Control",
           "category": "Quality management",
-          "hero": [
-            "Make quality visible.",
-            "At every checkpoint."
-          ],
+          "hero": ["Make quality visible.", "At every checkpoint."],
           "description": "Keep inspection parameters, acceptance limits and recorded results together. Follow quality checks from material intake through production to finished output.",
           "flow": [
             "Defined standard",
@@ -63766,10 +62807,7 @@
         "scrap-waste": {
           "title": "Scrap / Waste",
           "category": "Production execution",
-          "hero": [
-            "See the loss.",
-            "Understand the cause."
-          ],
+          "hero": ["See the loss.", "Understand the cause."],
           "description": "Keep scrap, recoverable offcuts and process waste visible in production. Connect each recorded quantity to its source operation and disposition context.",
           "flow": [
             "Production loss",
@@ -63842,10 +62880,7 @@
         "subcontracting": {
           "title": "Subcontracting",
           "category": "External production",
-          "hero": [
-            "Outside processing.",
-            "Inside your production view."
-          ],
+          "hero": ["Outside processing.", "Inside your production view."],
           "description": "Keep externally performed operations connected to the same production flow. Follow the processing scope, sent quantities and expected returns with a clear vendor reference.",
           "flow": [
             "External operation",
@@ -63918,10 +62953,7 @@
         "standard-costing": {
           "title": "Standard Costing",
           "category": "Manufacturing cost control",
-          "hero": [
-            "Know the expected cost.",
-            "Before production starts."
-          ],
+          "hero": ["Know the expected cost.", "Before production starts."],
           "description": "Bring BOM materials, routing time and work-center rates into a standard production cost. Keep a dated baseline for comparing what the order actually costs.",
           "flow": [
             "BOM & resource rates",
@@ -63994,10 +63026,7 @@
         "production-costing": {
           "title": "Production Costing",
           "category": "Manufacturing cost control",
-          "hero": [
-            "Follow the actual cost.",
-            "Explain the difference."
-          ],
+          "hero": ["Follow the actual cost.", "Explain the difference."],
           "description": "Bring recorded material, operation and processing costs into an order-level view. Review the actual production cost alongside the standard assumptions behind the plan.",
           "flow": [
             "Recorded production",
@@ -64152,13 +63181,7 @@
           "statusRecords": "{status} records",
           "timelineNote": "Illustrative five-day window. Bar positions show sample placements, not a calculated schedule.",
           "resourceWork": "Resource / work",
-          "days": [
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri"
-          ],
+          "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
           "viewPlacement": "View {id} {name} sample placement",
           "visibleCost": "Visible cost components",
           "percentVisible": "{percent}% of visible cost",
