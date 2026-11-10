@@ -1,134 +1,123 @@
-import { readdir, readFile } from "node:fs/promises";
+/**
+ * i18n parity check for messages/<locale>.json against messages/en.json.
+ *
+ * Fails (exit 1) on problems that break or visibly corrupt the UI:
+ *   - value type mismatch (string vs object/array) — next-intl throws
+ *   - ICU placeholder mismatch ({name} present in en but not in locale, or vice versa)
+ *   - encoding corruption: runs of "???" where text was lost on save
+ *   - invalid JSON
+ * Reports (no failure) coverage gaps, since missing keys fall back to English
+ * at runtime (i18n/messages.ts mergeMessages):
+ *   - keys missing from a locale, keys only in a locale
+ *
+ * Usage: node scripts/check-i18n-keys.mjs [--verbose]
+ */
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 
-const rootDir = process.cwd();
-const messagesDir = path.join(rootDir, "messages");
-const locales = ["en", "bn"];
+const messagesDir = path.join(process.cwd(), "messages");
+const BASE = "en";
+const LOCALES = ["bn", "zh", "tr", "ar", "ja", "ne", "vi"];
+const verbose = process.argv.includes("--verbose");
 
-async function collectJsonFiles(dir, baseDir = dir) {
-  const entries = await readdir(dir, { withFileTypes: true });
-  const files = await Promise.all(
-    entries.map(async (entry) => {
-      const fullPath = path.join(dir, entry.name);
-
-      if (entry.isDirectory()) {
-        return collectJsonFiles(fullPath, baseDir);
+// Text lost to a wrong-encoding save shows up as "?" runs or "?" inside words (d?zeyde).
+const qCount = (t) => (t.match(/\?/g) || []).length;
+const isCorrupt = (base, other) =>
+  /\?{3,}/.test(other) || (/\p{L}\?\p{L}/u.test(other) && qCount(other) > qCount(base));
+// Top-level ICU argument names: {name}, {count, plural, ...}
+function placeholders(text) {
+  const names = new Set();
+  let depth = 0;
+  for (let i = 0; i < text.length; i += 1) {
+    const ch = text[i];
+    if (ch === "{") {
+      if (depth === 0) {
+        const m = /^\{\s*([A-Za-z_][\w]*)/.exec(text.slice(i));
+        if (m) names.add(m[1]);
       }
-
-      if (entry.isFile() && entry.name.endsWith(".json")) {
-        return [path.relative(baseDir, fullPath)];
-      }
-
-      return [];
-    }),
-  );
-
-  return files.flat();
+      depth += 1;
+    } else if (ch === "}") {
+      depth = Math.max(0, depth - 1);
+    }
+  }
+  return [...names].sort().join(",");
 }
 
-function compareValues(left, right, currentPath, errors) {
-  const leftIsArray = Array.isArray(left);
-  const rightIsArray = Array.isArray(right);
+function kind(v) {
+  if (Array.isArray(v)) return "array";
+  if (v === null) return "null";
+  return typeof v;
+}
 
-  if (leftIsArray || rightIsArray) {
-    if (!leftIsArray || !rightIsArray) {
-      errors.push(`${currentPath}: array/non-array mismatch`);
-      return;
+function walk(base, other, keyPath, out) {
+  const kb = kind(base);
+  const ko = kind(other);
+  if (ko === "undefined") {
+    out.missing.push(keyPath);
+    return;
+  }
+  if (kb !== ko) {
+    out.errors.push(`${keyPath}: type mismatch (en ${kb} vs ${ko})`);
+    return;
+  }
+  if (kb === "object" || kb === "array") {
+    for (const key of Object.keys(base)) {
+      walk(base[key], other[key], kb === "array" ? `${keyPath}[${key}]` : `${keyPath}.${key}`, out);
     }
-
-    if (left.length !== right.length) {
-      errors.push(`${currentPath}: array length mismatch (${left.length} vs ${right.length})`);
-    }
-
-    const maxLength = Math.min(left.length, right.length);
-    for (let index = 0; index < maxLength; index += 1) {
-      compareValues(left[index], right[index], `${currentPath}[${index}]`, errors);
+    for (const key of Object.keys(other)) {
+      if (!(key in base)) out.extra.push(kb === "array" ? `${keyPath}[${key}]` : `${keyPath}.${key}`);
     }
     return;
   }
-
-  const leftIsObject = typeof left === "object" && left !== null;
-  const rightIsObject = typeof right === "object" && right !== null;
-
-  if (leftIsObject || rightIsObject) {
-    if (!leftIsObject || !rightIsObject) {
-      errors.push(`${currentPath}: object/non-object mismatch`);
-      return;
+  if (kb === "string") {
+    if (isCorrupt(base, other)) {
+      out.errors.push(`${keyPath}: corrupted text ${JSON.stringify(other.slice(0, 60))}`);
     }
-
-    const leftKeys = Object.keys(left).sort();
-    const rightKeys = Object.keys(right).sort();
-
-    for (const key of leftKeys) {
-      if (!rightKeys.includes(key)) {
-        errors.push(`${currentPath}.${key}: missing in bn`);
-      }
-    }
-
-    for (const key of rightKeys) {
-      if (!leftKeys.includes(key)) {
-        errors.push(`${currentPath}.${key}: missing in en`);
-      }
-    }
-
-    for (const key of leftKeys) {
-      if (rightKeys.includes(key)) {
-        compareValues(left[key], right[key], `${currentPath}.${key}`, errors);
-      }
-    }
-    return;
+    const pb = placeholders(base);
+    const po = placeholders(other);
+    if (pb !== po) out.errors.push(`${keyPath}: placeholder mismatch (en {${pb}} vs {${po}})`);
   }
+}
 
-  if (typeof left !== typeof right) {
-    errors.push(`${currentPath}: type mismatch (${typeof left} vs ${typeof right})`);
-  }
+async function load(locale) {
+  const file = path.join(messagesDir, `${locale}.json`);
+  return JSON.parse(await readFile(file, "utf8"));
 }
 
 async function main() {
-  const localeDirs = locales.map((locale) => path.join(messagesDir, locale));
-  const [enFiles, bnFiles] = await Promise.all(localeDirs.map((dir) => collectJsonFiles(dir)));
-  const errors = [];
+  const base = await load(BASE);
+  let failed = false;
 
-  const enSet = new Set(enFiles);
-  const bnSet = new Set(bnFiles);
-
-  for (const file of enSet) {
-    if (!bnSet.has(file)) {
-      errors.push(`${file}: missing file in bn`);
+  for (const locale of LOCALES) {
+    let messages;
+    try {
+      messages = await load(locale);
+    } catch (error) {
+      console.error(`✗ ${locale}: cannot read/parse messages/${locale}.json — ${error.message}`);
+      failed = true;
+      continue;
     }
-  }
 
-  for (const file of bnSet) {
-    if (!enSet.has(file)) {
-      errors.push(`${file}: missing file in en`);
-    }
-  }
+    const out = { errors: [], missing: [], extra: [] };
+    for (const key of Object.keys(base)) walk(base[key], messages[key], key, out);
 
-  const sharedFiles = [...enSet].filter((file) => bnSet.has(file)).sort();
-
-  for (const relativeFile of sharedFiles) {
-    const [enContent, bnContent] = await Promise.all([
-      readFile(path.join(messagesDir, "en", relativeFile), "utf8"),
-      readFile(path.join(messagesDir, "bn", relativeFile), "utf8"),
-    ]);
-
-    compareValues(
-      JSON.parse(enContent),
-      JSON.parse(bnContent),
-      relativeFile.replace(/\\/g, "/"),
-      errors,
+    const status = out.errors.length ? "✗" : "✓";
+    console.log(
+      `${status} ${locale}: ${out.errors.length} errors, ${out.missing.length} missing (falls back to en), ${out.extra.length} extra`,
     );
+    for (const e of out.errors) console.log(`    error  ${e}`);
+    if (verbose) {
+      for (const m of out.missing) console.log(`    missing ${m}`);
+      for (const x of out.extra) console.log(`    extra   ${x}`);
+    }
+    if (out.errors.length) failed = true;
   }
 
-  if (errors.length > 0) {
-    console.error("i18n key parity check failed:\n");
-    for (const error of errors) {
-      console.error(`- ${error}`);
-    }
+  if (failed) {
+    console.error("\ni18n check failed.");
     process.exit(1);
   }
-
-  console.log("i18n key parity check passed.");
+  console.log("\ni18n check passed (run with --verbose to list missing keys).");
 }
 
 main().catch((error) => {

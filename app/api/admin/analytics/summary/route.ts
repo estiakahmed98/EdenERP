@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@/lib/generated/prisma/client";
+import { isAdminRequest } from "@/lib/auth-admin";
 
 function parseDate(v: string | null, fallback: Date) {
   if (!v) return fallback;
@@ -10,6 +11,9 @@ function parseDate(v: string | null, fallback: Date) {
 }
 
 export async function GET(req: Request) {
+  if (!(await isAdminRequest())) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
   try {
     const { searchParams } = new URL(req.url);
 

@@ -11,7 +11,15 @@ function resolveSiteUrl(): string {
     (/^https?:\/\//.test(host) ? host : `https://${host}`).replace(/\/+$/, "");
 
   const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (explicit) return withProtocol(explicit);
+  // A template value left in place would point every canonical/hreflang/sitemap
+  // URL at someone else's domain; ignore it and fall through.
+  const isPlaceholder = !!explicit && /your-domain\.com|example\.(com|org|net)/i.test(explicit);
+  if (isPlaceholder && process.env.NODE_ENV === "production") {
+    console.warn(
+      `[site] NEXT_PUBLIC_SITE_URL is a placeholder (${explicit}); set it to the real production URL.`,
+    );
+  }
+  if (explicit && !isPlaceholder) return withProtocol(explicit);
 
   const vercelProd = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
   if (vercelProd) return withProtocol(vercelProd);

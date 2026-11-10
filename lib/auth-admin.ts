@@ -20,3 +20,9 @@ export async function requireAdminSession() {
 export async function getAdminSession() {
   return getServerSession(authOptions);
 }
+
+/** For API routes: true only for a signed-in ADMIN (no redirect). */
+export async function isAdminRequest() {
+  const session = await getServerSession(authOptions);
+  return session?.user?.role === "ADMIN";
+}

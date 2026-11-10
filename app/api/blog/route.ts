@@ -3,15 +3,8 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { generateSlug } from '@/lib/utils';
+import { sanitizeRichHtml } from '@/lib/security/sanitize-html';
 
-function sanitizeHtmlFragment(value: string) {
-  return value
-    .replace(/<\s*script[^>]*>.*?<\s*\/\s*script\s*>/gi, ' ')
-    .replace(/<\s*(iframe|object|embed|svg|math|style|link)[^>]*>.*?<\s*\/\s*\1\s*>/gi, ' ')
-    .replace(/on\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, ' ')
-    .replace(/href\s*=\s*(?:"\s*javascript:|"\s*vbscript:|\s*javascript:|\s*vbscript:)/gi, ' ')
-    .replace(/src\s*=\s*(?:"\s*javascript:|"\s*vbscript:|\s*javascript:|\s*vbscript:)/gi, ' ');
-}
 
 // GET all blogs - Public access
 export async function GET(request: NextRequest) {
@@ -90,8 +83,8 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    const safeSummary = typeof summary === 'string' ? sanitizeHtmlFragment(summary).trim().slice(0, 2000) : '';
-    const safeContent = typeof content === 'string' ? sanitizeHtmlFragment(content).slice(0, 250000) : '';
+    const safeSummary = typeof summary === 'string' ? sanitizeRichHtml(summary.slice(0, 4000)).trim().slice(0, 2000) : '';
+    const safeContent = typeof content === 'string' ? sanitizeRichHtml(content.slice(0, 250000)) : '';
     const safeImage = typeof image === 'string' ? image.trim().slice(0, 500) : '';
     const safeAds = typeof ads === 'string' ? ads.trim().slice(0, 500) : null;
 

@@ -11,12 +11,18 @@ const securityHeaders = [
     key: "Strict-Transport-Security",
     value: "max-age=63072000; includeSubDomains; preload",
   },
+  {
+    // The site uses none of these browser features.
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()",
+  },
 ];
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Type errors must fail the build (tsc --noEmit is clean as of the 2026-11 audit).
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   compress: true,
   poweredByHeader: false,
@@ -52,6 +58,13 @@ const nextConfig = {
       {
         source: "/admin/:path*",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
+        // Admin-uploaded files: never let the browser treat them as an active document.
+        source: "/uploads/:path*",
+        headers: [
+          { key: "Content-Security-Policy", value: "default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; sandbox" },
+        ],
       },
     ];
   },

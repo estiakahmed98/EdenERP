@@ -2,6 +2,14 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import crypto from "crypto";
 
+import { getClientIp } from "@/lib/security/client-ip";
+import { createRateLimiter } from "@/lib/security/rate-limit";
+
+// ~1 event / 2s sustained per IP is far above what the tracker sends (page views + 1 heartbeat/15s).
+const collectLimiter = createRateLimiter({ limit: 120, windowMs: 60_000 });
+const MAX_CLOCK_SKEW_MS = 5 * 60 * 1000;
+const MAX_BODY_BYTES = 8 * 1024;
+
 function safeStr(v: unknown, max = 500) {
   if (typeof v !== "string") return null;
   const s = v.trim();
@@ -9,16 +17,6 @@ function safeStr(v: unknown, max = 500) {
   return s.slice(0, max);
 }
 
-function getClientIp(req: Request) {
-  const xff = req.headers.get("x-forwarded-for");
-  if (xff) {
-    const first = xff.split(",")[0]?.trim();
-    if (first) return first;
-  }
-  const realIp = req.headers.get("x-real-ip");
-  if (realIp) return realIp.trim();
-  return null;
-}
 
 function sha256(input: string) {
   return crypto.createHash("sha256").update(input).digest("hex");
@@ -80,13 +78,22 @@ async function geoLookup(ip: string) {
     fields
   )}`;
 
-  const res = await fetch(url, { cache: "no-store" });
-  const json = (await res.json()) as GeoLookupResponse;
+  let json: GeoLookupResponse;
+  try {
+    // Never let a slow third-party lookup stall the collector.
+    const res = await fetch(url, { cache: "no-store", signal: AbortSignal.timeout(1500) });
+    json = (await res.json()) as GeoLookupResponse;
+  } catch {
+    return null;
+  }
 
   if (json?.status !== "success") return null;
 
-  const created = await prisma.geoIpCache.create({
-    data: {
+  // upsert: concurrent first hits from one IP must not fail on the unique key.
+  const created = await prisma.geoIpCache.upsert({
+    where: { ip },
+    update: {},
+    create: {
       ip,
       country: typeof json.country === "string" ? json.country : null,
       city: typeof json.city === "string" ? json.city : null,
@@ -101,8 +108,27 @@ async function geoLookup(ip: string) {
 }
 
 export async function POST(req: Request) {
+  const ip = getClientIp(req.headers);
+  // Without a trusted proxy IP every visitor would share one bucket, so only limit known IPs.
+  const limit = ip ? collectLimiter.check(ip) : null;
+  if (limit && !limit.ok) {
+    return NextResponse.json(
+      { ok: false, error: "Too many requests" },
+      { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } }
+    );
+  }
+  if (Number(req.headers.get("content-length") ?? 0) > MAX_BODY_BYTES) {
+    return NextResponse.json({ ok: false, error: "Payload too large" }, { status: 413 });
+  }
+
+  let body: any;
   try {
-    const body = await req.json();
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ ok: false, error: "Invalid JSON" }, { status: 400 });
+  }
+
+  try {
 
     const eventRaw = safeStr(body?.event, 50);
     if (!isAnalyticsEventType(eventRaw)) {
@@ -122,7 +148,14 @@ export async function POST(req: Request) {
       );
     }
 
-    const tsNum = typeof body?.ts === "number" ? body.ts : Date.now();
+    // Client clocks are untrusted: accept only small skew, else use server time.
+    const serverNow = Date.now();
+    const tsNum =
+      typeof body?.ts === "number" &&
+      Number.isFinite(body.ts) &&
+      Math.abs(body.ts - serverNow) <= MAX_CLOCK_SKEW_MS
+        ? body.ts
+        : serverNow;
     const ts = new Date(tsNum);
     const dayKey = getDayKeyUTC(ts);
 
@@ -154,9 +187,9 @@ export async function POST(req: Request) {
     const userId = safeStr(body?.userId, 100);
 
     // ✅ compute ipHash for daily unique visitors
-    const ip = getClientIp(req);
-    const salt = process.env.ANALYTICS_IP_SALT || "boe-default-salt";
-    const ipHash = ip ? sha256(`${salt}:${ip}`) : null;
+    // Never fall back to a public constant: a known salt makes IPv4 hashes trivially reversible.
+    const salt = process.env.ANALYTICS_IP_SALT || process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET || "";
+    const ipHash = ip && salt ? sha256(`${salt}:${ip}`) : null;
 
     // ✅ Geo only for page_view/session_start (NOT heartbeat)
     let country: string | null = null;
@@ -199,7 +232,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ ok: false }, { status: 400 });
+  } catch (error) {
+    console.error("[analytics] collect failed:", error);
+    return NextResponse.json({ ok: false }, { status: 500 });
   }
 }

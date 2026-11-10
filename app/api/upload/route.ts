@@ -1,46 +1,50 @@
-// app/api/upload/route.ts
 import { NextResponse } from "next/server";
 import path from "path";
 import fs from "fs/promises";
 import crypto from "crypto";
 
+import { isAdminRequest } from "@/lib/auth-admin";
+import { detectImageKind, MAX_UPLOAD_BYTES } from "@/lib/security/image-upload";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const uploadsRoot = path.join(process.cwd(), "public", "uploads"); // ✅ public/uploads
+const uploadsRoot = path.join(process.cwd(), "public", "uploads");
 
 export async function POST(req: Request) {
+  // Admin-only: this writes into /public, which is served from our origin.
+  if (!(await isAdminRequest())) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // Reject oversized bodies before buffering them (form overhead allowance: 64 KB).
+  const declared = Number(req.headers.get("content-length") ?? 0);
+  if (declared > MAX_UPLOAD_BYTES + 64 * 1024) {
+    return NextResponse.json({ error: "File too large (max 5MB)" }, { status: 413 });
+  }
+
   try {
     const form = await req.formData();
-    const file = form.get("file") as File | null;
-    if (!file) return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
-
-    const allowed = ["image/jpeg","image/png","image/webp","image/gif","image/avif"];
-    if (!allowed.includes(file.type)) {
-      return NextResponse.json({ error: "Unsupported file type" }, { status: 415 });
+    const file = form.get("file");
+    if (!(file instanceof File)) {
+      return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
     }
-
-    const buf = new Uint8Array(await file.arrayBuffer());
-    if (buf.byteLength > 5 * 1024 * 1024) {
+    if (file.size > MAX_UPLOAD_BYTES) {
       return NextResponse.json({ error: "File too large (max 5MB)" }, { status: 413 });
     }
 
-    const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
-    const name = `${Date.now()}-${crypto.randomBytes(8).toString("hex")}.${ext}`;
+    const buf = new Uint8Array(await file.arrayBuffer());
+    // Trust the bytes, not the client-supplied MIME type or filename.
+    const kind = detectImageKind(buf);
+    if (!kind) {
+      return NextResponse.json({ error: "Unsupported file type" }, { status: 415 });
+    }
 
+    const name = `${Date.now()}-${crypto.randomBytes(8).toString("hex")}.${kind.ext}`;
     await fs.mkdir(uploadsRoot, { recursive: true });
-    const dest = path.join(uploadsRoot, name);
-    await fs.writeFile(dest, buf);
+    await fs.writeFile(path.join(uploadsRoot, name), buf);
 
-    // return the URL we also serve via the route below
-    const url = `/uploads/${name}`;
-
-    // helpful logs
-    const host = req.headers.get("x-forwarded-host") || req.headers.get("host");
-    const proto = req.headers.get("x-forwarded-proto") || "http";
-    console.log("[upload] wrote:", dest, "url:", `${proto}://${host}${url}`);
-
-    return NextResponse.json({ url }, { status: 201 });
+    return NextResponse.json({ url: `/uploads/${name}` }, { status: 201 });
   } catch (e) {
     console.error("[upload] error:", e);
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });

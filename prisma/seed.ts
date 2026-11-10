@@ -1,19 +1,31 @@
 import bcrypt from "bcryptjs";
+import { randomBytes } from "node:crypto";
 
 import { db } from "../lib/db";
 import { getDefaultPricingData } from "../lib/pricing/defaults";
 import { resetDemoBlogs, seedDemoBlogs } from "./seed-blogs";
 
 async function seedAdminUser() {
-  const email = "admin@example.com";
-  const password = "admin123";
+  const email = (process.env.SEED_ADMIN_EMAIL || "admin@example.com").toLowerCase();
+  const password = process.env.SEED_ADMIN_PASSWORD;
+
+  // Never create an admin with a well-known password. In development a random
+  // one is generated and printed once; in production it must be supplied.
+  if (!password && process.env.NODE_ENV === "production") {
+    console.warn("Skipping admin seed: set SEED_ADMIN_PASSWORD (min 12 chars) to create one.");
+    return;
+  }
+  if (password && password.length < 12) {
+    throw new Error("SEED_ADMIN_PASSWORD must be at least 12 characters.");
+  }
 
   const existing = await db.user.findUnique({
     where: { email },
   });
 
   if (!existing) {
-    const passwordHash = await bcrypt.hash(password, 10);
+    const finalPassword = password ?? randomBytes(12).toString("base64url");
+    const passwordHash = await bcrypt.hash(finalPassword, 12);
 
     await db.user.create({
       data: {
@@ -26,6 +38,7 @@ async function seedAdminUser() {
     });
 
     console.log("Admin created:", email);
+    if (!password) console.log("Generated dev admin password (shown once):", finalPassword);
   }
 }
 

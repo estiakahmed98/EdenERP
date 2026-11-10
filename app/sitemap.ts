@@ -77,6 +77,8 @@ function discoverAppPageRoutes(appDir: string): string[] {
     if (segments.some((s) => s.startsWith("_"))) continue;
 
     segments.pop(); // drop page.*
+    // Legacy-URL stubs that only redirect must not be listed (sitemaps should hold final URLs).
+    if (REDIRECT_STUB.test(fs.readFileSync(file, "utf8"))) continue;
     const routePath = segments.length ? "/" + segments.join("/") : "";
     if (NOINDEX_PREFIXES.some((p) => routePath === p || routePath.startsWith(p + "/"))) continue;
     routes.add(routePath);
@@ -87,6 +89,7 @@ function discoverAppPageRoutes(appDir: string): string[] {
 }
 
 const NOINDEX_PREFIXES = ["/auth", "/checkout"];
+const REDIRECT_STUB = /^\s*(?:permanentRedirect|redirect)\(/m;
 
 /**
  * Next.js writes sitemap URLs into the XML verbatim (no escaping), so a raw "&"
@@ -127,7 +130,9 @@ async function blogPostEntries(): Promise<MetadataRoute.Sitemap> {
         alternates: { languages },
       }));
     });
-  } catch {
+  } catch (error) {
+    // Don't fail the whole sitemap, but never drop blog URLs silently either.
+    console.error("[sitemap] blog entries omitted — database query failed:", error);
     return [];
   }
 }

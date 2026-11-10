@@ -1,6 +1,7 @@
 import { Prisma } from "@/lib/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 import { processBlogSummary } from "@/components/admin/blog/summaryUtils";
+import { sanitizeRichHtml } from "@/lib/security/sanitize-html";
 
 /** Public blog data layer: reads the same posts the admin manages at /admin/blog. */
 
@@ -128,12 +129,5 @@ export async function getBlogBySlug(slug: string) {
 /** Excerpt that is safe to render as plain text. */
 export const excerpt = (summary: string, max = 150) => processBlogSummary(summary, max);
 
-/** Strip the most dangerous constructs from admin-authored HTML before rendering. */
-export function sanitizeHtmlFragment(value: string) {
-  return value
-    .replace(/<\s*script[^>]*>[\s\S]*?<\s*\/\s*script\s*>/gi, " ")
-    .replace(/<\s*(iframe|object|embed|svg|math|style|link|form|meta|base)[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi, " ")
-    .replace(/<\s*(iframe|object|embed|link|meta|base|input)[^>]*>/gi, " ")
-    .replace(/\son\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, " ")
-    .replace(/(href|src|xlink:href|formaction)\s*=\s*(?:"\s*(?:javascript|vbscript|data:text\/html)[^"]*"|'\s*(?:javascript|vbscript|data:text\/html)[^']*')/gi, "$1=\"#\"");
-}
+/** Allowlist-sanitize admin-authored HTML before rendering (see lib/security/sanitize-html). */
+export const sanitizeHtmlFragment = sanitizeRichHtml;
