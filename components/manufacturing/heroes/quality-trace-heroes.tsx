@@ -184,61 +184,104 @@ export function QualityHero({ copy, target }: HeroProps) {
             label="Illustrative film-thickness inspection lens: a 51 micrometer reading within a sample 45 to 55 micrometer range."
             viewBox="0 0 400 350"
           >
+            <defs>
+              <clipPath id="qc-lens-clip">
+                <circle cx="195" cy="163" r="106" />
+              </clipPath>
+              <linearGradient id="qc-sweep" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="var(--primary)" stopOpacity="0" />
+                <stop offset="1" stopColor="var(--primary)" stopOpacity=".14" />
+              </linearGradient>
+            </defs>
+            <path
+              className={css.lensTicks}
+              d="M195 22V56M195 270V304M53 163H86M304 163H338"
+              stroke="var(--primary)"
+              strokeWidth="1.5"
+            />
             <circle
+              className={css.lensHalo}
               cx="195"
               cy="163"
               r="127"
               stroke="var(--primary)"
               strokeOpacity=".15"
             />
-            <circle
-              cx="195"
-              cy="163"
-              r="110"
-              fill="var(--card)"
-              stroke="var(--border)"
-              strokeWidth="8"
-            />
-            <path
-              d="M195 22V56M195 270V304M53 163H86M304 163H338"
-              stroke="var(--primary)"
-              strokeWidth="1.5"
-            />
-            <path
-              d="M119 137C160 125 220 146 270 128M119 184C160 172 220 193 270 175"
-              stroke="var(--primary)"
-              strokeWidth="2"
-            />
-            <path
-              d="M147 137V180M141 143L147 137L153 143M141 174L147 180L153 174"
-              stroke="var(--teal)"
-              strokeWidth="1.5"
-            />
-            <path
-              d="m283 253 62 60"
-              stroke="var(--ink)"
-              strokeWidth="16"
-              strokeLinecap="round"
-            />
-            <text
-              x="207"
-              y="165"
-              textAnchor="middle"
-              fontSize="28"
-              fontWeight="600"
-              fill="var(--ink)"
-            >
-              51 μm
-            </text>
-            <text
-              x="195"
-              y="228"
-              textAnchor="middle"
-              fontSize="10"
-              fill="var(--muted-foreground)"
-            >
-              DEFINED LIMIT: 45–55 μm
-            </text>
+            <g className={css.lensFloat}>
+              <circle
+                cx="195"
+                cy="163"
+                r="110"
+                fill="var(--card)"
+                stroke="var(--border)"
+                strokeWidth="8"
+              />
+              <g clipPath="url(#qc-lens-clip)" aria-hidden="true">
+                <g className={css.lensSweep}>
+                  <rect
+                    x="85"
+                    y="25"
+                    width="220"
+                    height="30"
+                    fill="url(#qc-sweep)"
+                  />
+                  <path
+                    d="M85 55H305"
+                    stroke="var(--primary)"
+                    strokeOpacity=".45"
+                  />
+                </g>
+              </g>
+              <path
+                className={css.filmWave}
+                pathLength="1"
+                d="M119 137C160 125 220 146 270 128"
+                stroke="var(--primary)"
+                strokeWidth="2"
+              />
+              <path
+                className={css.filmWave}
+                pathLength="1"
+                d="M119 184C160 172 220 193 270 175"
+                stroke="var(--primary)"
+                strokeWidth="2"
+                style={{ animationDelay: "0.25s" }}
+              />
+              <path
+                className={css.gaugeArrow}
+                d="M147 137V180M141 143L147 137L153 143M141 174L147 180L153 174"
+                stroke="var(--teal)"
+                strokeWidth="1.5"
+              />
+              <path
+                className={css.lensHandle}
+                d="m283 253 62 60"
+                stroke="var(--ink)"
+                strokeWidth="16"
+                strokeLinecap="round"
+              />
+              <text
+                className={css.lensReading}
+                x="207"
+                y="165"
+                textAnchor="middle"
+                fontSize="28"
+                fontWeight="600"
+                fill="var(--ink)"
+              >
+                51 μm
+              </text>
+              <text
+                className={css.lensLimit}
+                x="195"
+                y="228"
+                textAnchor="middle"
+                fontSize="10"
+                fill="var(--muted-foreground)"
+              >
+                DEFINED LIMIT: 45–55 μm
+              </text>
+            </g>
           </Diagram>
           <span className={css.inspectionPassed}>
             <Check size={15} aria-hidden="true" />
