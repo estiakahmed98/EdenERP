@@ -7516,6 +7516,7 @@
           "title": "Bring a finished project. We will build its P&L in the demo."
         }
       },
+
       "bmOverview": {
         "meta": {
           "title": "Budget Management: Versions, Requisitions, Approval and Variance",
@@ -8670,6 +8671,7 @@
           "title": "Bring a line that has run out. We will re-budget it in the demo."
         }
       },
+
       "scOverview": {
         "meta": {
           "title": "Supply Chain: From Requisition to Landed Cost in One Flow",
@@ -9859,6 +9861,7 @@
           "title": "Bring an import file with its duty and freight bills. We will work out the landed cost in the demo."
         }
       },
+      
       "invForecast": {
         "meta": {
           "title": "Demand Forecast: Know What to Reorder Before You Run Out",
