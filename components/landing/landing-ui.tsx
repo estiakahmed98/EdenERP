@@ -422,10 +422,61 @@ export function TypeWriter({ words }: { words: string[] }) {
     return () => clearTimeout(timeout);
   }, [wordIndex, words]);
 
+  const phrase = words[wordIndex] ?? "";
+  const typed = text.length;
+
+  // The full phrase is always laid out; untyped characters are just
+  // transparent. Line breaks are therefore fixed before typing starts, so a
+  // word never begins on one line and jumps to the next mid-type.
+  // Each word is nowrap so hyphenated words ("All-in-One") stay whole.
+  let offset = 0;
+  let cursorPlaced = false;
+  const tokens = phrase.split(/(\s+)/).map((token, i) => {
+    const start = offset;
+    offset += token.length;
+    if (!token) return null;
+    if (/^\s+$/.test(token)) {
+      return (
+        <span key={i} className={typed > start ? undefined : "text-transparent"}>
+          {token}
+        </span>
+      );
+    }
+    const shown = Math.max(0, Math.min(token.length, typed - start));
+    const showCursor = !cursorPlaced && typed >= start && typed <= offset;
+    if (showCursor) cursorPlaced = true;
+    return (
+      <span key={i} className="whitespace-nowrap">
+        {token.slice(0, shown)}
+        {showCursor && (
+          <span
+            aria-hidden="true"
+            className="absolute animate-[blink_1s_infinite] font-light"
+          >
+            |
+          </span>
+        )}
+        <span className="text-transparent">{token.slice(shown)}</span>
+      </span>
+    );
+  });
+
   return (
-    <span className="text-(--teal)">
-      {text}
-      <span className="animate-[blink_1s_infinite] font-light">|</span>
+    <span className="inline-grid text-(--teal)">
+      {/* Every phrase occupies the same grid cell, so the box keeps the
+          height/width of the longest phrase and nothing below shifts. */}
+      {words.map((w, i) =>
+        i === wordIndex ? null : (
+          <span
+            key={i}
+            aria-hidden="true"
+            className="invisible col-start-1 row-start-1"
+          >
+            {w}
+          </span>
+        ),
+      )}
+      <span className="col-start-1 row-start-1">{tokens}</span>
     </span>
   );
 }
