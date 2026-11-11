@@ -1720,8 +1720,6 @@
           "title": "Bring a list of your main suppliers. We will load them and raise a first order in the demo."
         }
       },
-
-
       "bankAccounts": {
         "meta": {
           "title": "Bank Accounts: Tell the Books Where the Money Sits",
@@ -4084,6 +4082,8 @@
           "title": "Bring your asset list. We will load a few assets and run depreciation in the demo."
         }
       },
+
+
       "exchangeRates": {
         "meta": {
           "title": "Exchange Rates: Dated Rates for Foreign-Currency Invoices",
@@ -5290,6 +5290,7 @@
           "title": "Bring a project estimate. We will turn it into budget lines in the demo."
         }
       },
+
       "pjJobCost": {
         "meta": {
           "title": "Job Cost: Budget, Committed, Actual and Forecast by Cost Code",
@@ -6530,6 +6531,7 @@
           "title": "Bring your top three project worries. We will log them as risks in the demo."
         }
       },
+      
       "pjDocuments": {
         "meta": {
           "title": "Project Documents: Licences, Permits and Contracts on the Project",
