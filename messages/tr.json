@@ -9857,208 +9857,208 @@
         }
       },
       "invForecast": {
-        "meta": {
-          "title": "Talep Tahmini: Tükenmeden Neyi Yeniden Sıralayacağınızı Bilin",
-          "description": "Geçmiş sayılardan gelen talebi tahmin edin, her bir öğenin kapsam günlerini görün ve şimdi yeniden sıralanacak öğelerin bir listesini alın. Bangladeş'teki şirketler için tasarlandı.",
-          "keywords": [
-            "talep tahmini yazılımı Bangladeş",
-            "envanter tahmini",
-            "yeniden sıralama planlaması",
-            "kapak günleri",
-            "Adon ERP talep tahmini"
-          ]
+    "meta": {
+      "title": "Talep Tahmini: Stoklar Tükenmeden Ne Zaman Yeniden Sipariş Vereceğinizi Bilin",
+      "description": "Geçmiş stok tüketiminden gelecekteki talebi tahmin edin, her ürünün stokunun kaç gün yeteceğini görün ve şimdi neleri sipariş etmeniz gerektiğini öğrenin. Bangladeş’teki işletmeler için geliştirildi.",
+      "keywords": [
+        "Bangladeş talep tahmin yazılımı",
+        "stok talep tahmini",
+        "yeniden sipariş planlaması",
+        "stok karşılama süresi",
+        "Adon ERP talep tahmini"
+      ]
+    },
+    "hero": {
+      "title": "Stokların bitmesini beklemeyin, verilere göre tam zamanında sipariş verin",
+      "lead": "Adon ERP, her ürünün geçmiş aylardaki tüketimini analiz ederek önümüzdeki üç ayın tahmini talebini hesaplar. Bu tahmini mevcut stoklarla karşılaştırır; hangi ürünün önce tükeneceğini, ne zaman sipariş verilmesi gerektiğini ve yaklaşık maliyeti gösterir.",
+      "secondaryCta": "Stokun kaç gün yeteceği nasıl hesaplanıyor?"
+    },
+    "sample": {
+      "count": "5 ürün",
+      "notes": [
+        "Geçmiş tüketimden gelecekteki talep tahmini",
+        "Her ürün için stok karşılama süresi",
+        "Tahmini sipariş maliyeti"
+      ]
+    },
+    "ui": {
+      "title": "Talep Tahmini",
+      "accuracy": "Tahmin doğruluğu",
+      "accuracySub": "Son 6 ay",
+      "atRisk": "Hemen yeniden sipariş verilecek ürünler",
+      "atRiskSub": "Stoku 20 günden az yetecek ürünler",
+      "horizon": "Tahmin dönemi",
+      "horizonValue": "90 gün",
+      "horizonSub": "Önümüzdeki üç ay",
+      "suggested": "Tahmini sipariş tutarı",
+      "suggestedSub": "Hemen sipariş verilmesi gereken ürünler için",
+      "chart": "PP granül aylık tüketimi (ton)",
+      "actual": "Gerçekleşen",
+      "forecast": "Tahmin",
+      "chartNote": "Düz sütunlar geçmişteki gerçek tüketimi, kesikli sütunlar ise eğilime göre önümüzdeki üç ay için öngörülen tüketimi gösterir.",
+      "cover": "Stok karşılama süresi",
+      "days": "gün",
+      "orderNow": "Hemen sipariş ver",
+      "soon": "Yakında sipariş ver",
+      "ok": "Stok yeterli",
+      "caption": "Adon ERP Talep Tahmini özelliğinin kısmi önizlemesi. Gösterilen şirket ve rakamlar örnek amaçlıdır."
+    },
+    "flow": {
+      "title": "Geçmiş tüketimden yeniden sipariş listesine, yalnızca 3 adımda",
+      "intro": "Hesaplama yöntemi, depo sorumlusunun bile elle kontrol edebileceği kadar açık ve anlaşılırdır.",
+      "steps": [
+        {
+          "tag": "Geçmiş tüketim",
+          "question": "Gerçekte ne kadar kullandınız?",
+          "body": "Sisteme önceden kaydedilmiş stok hareketlerinden her ürünün aylık çıkış miktarı hesaplanır."
         },
-        "hero": {
-          "title": "Talep tahmini: raflar boşalmadan, veriye göre yeniden sipariş verin",
-          "lead": "Adon ERP, geçmiş aylarda her bir öğeden ne kadar kullandığınıza bakar, sonraki üç öğeyi öngörür ve bunu elinizde bulunanlarla karşılaştırır. İlk biten ürünler en üstte yer alır ve bunları sipariş etmenin maliyetine ilişkin bir tahmin de bulunur.",
-          "secondaryCta": "Kapağın nasıl çalıştığını görün"
+        {
+          "tag": "Talep tahmini",
+          "question": "Önümüzdeki aylarda ne kadar gerekecek?",
+          "body": "Tüketim eğilimi analiz edilerek gelecek üç ayın talebi öngörülür; mevsimsel artışlar da dikkate alınır."
         },
-        "sample": {
-          "count": "5 ürün",
-          "notes": [
-            "geçmiş kullanım, ardından tahmin",
-            "her öğe için teminat günleri",
-            "planlanacak bir sipariş değeri"
-          ]
-        },
-        "ui": {
-          "title": "Talep tahmini",
-          "accuracy": "Tahmin doğruluğu",
-          "accuracySub": "son 6 ay",
-          "atRisk": "Şimdi yeniden sıralanacak öğeler",
-          "atRiskSub": "20 günlük teminatın altında",
-          "horizon": "Tahmin ufku",
-          "horizonValue": "90 gün",
-          "horizonSub": "önümüzdeki üç ay",
-          "suggested": "Tahmini sipariş değeri",
-          "suggestedSub": "öğelerin şimdi yeniden sıralanması için",
-          "chart": "PP granülleri, aylık kullanım (ton)",
-          "actual": "gerçek",
-          "forecast": "tahmin",
-          "chartNote": "Geçmiş kullanım sağlamdır. Kesikli çubuklar, trendden tahmin edilen önümüzdeki üç ayı temsil ediyor.",
-          "cover": "Koruma günleri",
-          "days": "günler",
-          "orderNow": "şimdi sipariş ver",
-          "soon": "yakında",
-          "ok": "tamam",
-          "caption": "Adon ERP'deki Talep Tahmininin kısmi önizlemesi. Şirket ve rakamlar örnek verilerdir."
-        },
-        "flow": {
-          "title": "Üç adımda geçmiş kullanımdan yeniden sıralama listesine",
-          "intro": "Yöntem bilinçli olarak sade olduğundan mağaza görevlisi bunu bir kalemle kontrol edebilir.",
-          "steps": [
-            {
-              "tag": "Geçmiş kullanım",
-              "question": "Aslında ne kullandın",
-              "body": "Her kalem için aylık sayılar, önceden kaydedilmiş stok hareketlerinden alınmıştır."
-            },
-            {
-              "tag": "Tahmin",
-              "question": "Muhtemelen neye ihtiyacınız olacak",
-              "body": "Trend önümüzdeki üç ay için ileriye dönük olarak öngörülüyor, dolayısıyla mevsimsel büyüme gözden kaçırılmıyor."
-            },
-            {
-              "tag": "Kapak",
-              "question": "Stok ne kadar sürer",
-              "body": "Eldeki stokun tahmini kullanıma bölünmesi, teminat günlerini verir. 20 günün altı artık sipariş, 30 günün altı ise yakında."
-            }
-          ],
-          "formTitle": "Sayfada neler gösteriliyor?",
-          "form": [
-            {
-              "label": "doğruluk",
-              "body": "Geçmiş tahminlerin gerçek kullanıma ne kadar yakın olduğu."
-            },
-            {
-              "label": "Yeniden sıralanacak öğeler",
-              "body": "Kaç tanesi 20 günlük koruma altında."
-            },
-            {
-              "label": "Grafik",
-              "body": "Geçmişte içi dolu çubuklar olarak kullanıldı, tahminler kesikli çubuklar olarak kullanıldı."
-            },
-            {
-              "label": "Koruma günleri",
-              "body": "Her öğe için 30 gün işaretli bir çubuk."
-            },
-            {
-              "label": "Tahmini sipariş değeri",
-              "body": "Öğelerin şimdi yeniden sıralanması için eksiklik çarpı son oran."
-            }
-          ]
-        },
-        "connect": {
-          "title": "Tahmin, hisse senedi geçmişini satın alma planına dönüştürür",
-          "intro": "Verilenleri okuyor ve bir taleple bitiyor.",
-          "groups": {
-            "before": "Tahminden önce",
-            "after": "Tahminden sonra",
-            "shows": "Nerede görünür"
-          },
-          "items": {
-            "itemsProducts": "Noktaları ve birimleri yeniden sıralayın.",
-            "invMovements": "Tahminin üzerine inşa edildiği geçmiş.",
-            "scRequisitions": "Kısa olan için talepte bulunun.",
-            "purchaseOrders": "İhtiyaç açıksa doğrudan sipariş verin.",
-            "invSummary": "Stok değeri ve ciro.",
-            "scOverview": "Talepleri bir bakışta açın.",
-            "financialReports": "Açıklamalarınızda satın alma."
-          }
-        },
-        "local": {
-          "title": "Uzun teslim süreleri için tahmin",
-          "intro": "Yurt dışından gelen ham maddeler haftalar alır ve yeniden siparişin kaçırılması hattın durmasına neden olur. Gün cinsinden kapsam, bir tesis yöneticisinin harekete geçebileceği sayıdır.",
-          "points": [
-            {
-              "title": "Sadece miktar değil kapak",
-              "body": "İki bin kilo kullanıma bağlı olarak çok ya da az."
-            },
-            {
-              "title": "Akılda teslim süresi",
-              "body": "Kısa kapaklı ve uzun teslim süresine sahip ürünler ilk görülenlerdir."
-            },
-            {
-              "title": "Mevsimsel talep",
-              "body": "Trendde bayram ve ihracat zirveleri ortaya çıkıyor."
-            },
-            {
-              "title": "Bir sipariş değeri",
-              "body": "Finans ekibi, yeniden sipariş oluşturulmadan önce maliyetini görür."
-            }
-          ],
-          "story": {
-            "title": "Trendden talebe kadar tek tahmin",
-            "intro": "Örnek bir hammadde incelemesi, genellikle yürütüldüğü şekilde.",
-            "steps": [
-              {
-                "time": "1 Kas",
-                "text": "PP granül kullanımı üst üste beş aydır arttı."
-              },
-              {
-                "time": "1 Kas",
-                "text": "Aralık ayı tahmini 51 tondur."
-              },
-              {
-                "time": "1 Kas",
-                "text": "Eldeki stok 15 günü kapsıyor, dolayısıyla ürün şimdi sipariş gösteriyor."
-              },
-              {
-                "time": "2 Kasım",
-                "text": "Eksiklik için talepte bulunuldu."
-              },
-              {
-                "time": "20 Kasım",
-                "text": "Stoklar tükenmeden ürünler geliyor."
-              }
-            ]
-          }
-        },
-        "industries": {
-          "title": "Farklı esnaf talep tahminini nasıl kullanıyor?",
-          "angles": {
-            "retail": "Sezon ve satış trendine göre stok.",
-            "food-hospitality": "Haftalık kullanıma göre malzemeler ve sarf malzemeleri.",
-            "real-estate": "Proje aşamasına göre malzemeler.",
-            "consulting": "Kişi sayısına göre sarf malzemeleri.",
-            "manufacturing": "Üretim planına göre hammadde ve paketleme.",
-            "health-fitness": "Kullanıma göre sarf malzemeleri ve perakende ürünler.",
-            "trades": "İş hacmine göre parçalar.",
-            "others": "Program takvimine göre sarf malzemeleri."
-          }
-        },
-        "faq": {
-          "title": "Talep tahminiyle ilgili aldığımız sorular",
-          "items": [
-            {
-              "q": "Talep tahmini nasıldır?",
-              "a": "Her bir öğenin geçmişteki aylık kullanımından yola çıkarak ileriye yönelik bir trend olarak öngörülüyor."
-            },
-            {
-              "q": "Koruma günleri nedir?",
-              "a": "Eldeki stokun tahmin edilen oranda kaç gün dayanacağı."
-            },
-            {
-              "q": "Bir öğe şimdi ne zaman sipariş gösteriyor?",
-              "a": "20 günden az koruma süresi olduğunda."
-            },
-            {
-              "q": "Siparişleri kendi kendine mi artırıyor?",
-              "a": "Hayır. Neyin yeniden sıralanması gerektiğini gösterir ve siz bir talepte bulunursunuz."
-            },
-            {
-              "q": "Ne kadar ileri görünüyor?",
-              "a": "Doksan gün."
-            },
-            {
-              "q": "Adon ERP nerede kullanılabilir?",
-              "a": "Şu anda Dhaka'da şirket alımı yapıyoruz. Bir demo rezervasyonu yapın ve örnek verilerle üzerinden geçelim."
-            }
-          ]
-        },
-        "closing": {
-          "title": "En iyi on öğenizi ve geçen yılın kullanımını getirin. Bunları demoda tahmin edeceğiz."
+        {
+          "tag": "Stok karşılama süresi",
+          "question": "Mevcut stok kaç gün daha yeter?",
+          "body": "Mevcut stok, tahmini günlük tüketime bölünerek süre hesaplanır. 20 günün altı “Hemen sipariş ver”, 30 günün altı “Yakında sipariş ver” olarak işaretlenir."
         }
+      ],
+      "formTitle": "Bu sayfada neler görebilirsiniz?",
+      "form": [
+        {
+          "label": "Tahmin doğruluğu",
+          "body": "Önceki tahminlerin gerçek tüketimle ne kadar örtüştüğü."
+        },
+        {
+          "label": "Yeniden sipariş verilecek ürünler",
+          "body": "Stoku 20 günden az yetecek ürün sayısı."
+        },
+        {
+          "label": "Talep grafiği",
+          "body": "Geçmiş tüketim düz, tahminler kesikli sütunlarla gösterilir."
+        },
+        {
+          "label": "Stok karşılama süresi",
+          "body": "Her ürün için ayrı bir çubuk ve 30 günlük referans işareti."
+        },
+        {
+          "label": "Tahmini sipariş tutarı",
+          "body": "Hemen sipariş edilmesi gereken ürünlerin açık miktarı, son birim fiyatla çarpılarak hesaplanır."
+        }
+      ]
+    },
+    "connect": {
+      "title": "Stok geçmişinizi akıllı bir satın alma planına dönüştürün",
+      "intro": "Geçmiş stok çıkışlarını analiz ederek ihtiyaç duyulan ürünler için satın alma talebi oluşturmayı kolaylaştırır.",
+      "groups": {
+        "before": "Tahminden önce",
+        "after": "Tahminden sonra",
+        "shows": "Bilgilerin görüntülendiği yer"
       },
+      "items": {
+        "itemsProducts": "Yeniden sipariş noktaları ve ölçü birimleri.",
+        "invMovements": "Tahminin dayandığı stok hareketi geçmişi.",
+        "scRequisitions": "Eksik ürünler için satın alma talebi oluşturun.",
+        "purchaseOrders": "İhtiyaç netse doğrudan satın alma siparişi verin.",
+        "invSummary": "Stok değeri ve devir hızı.",
+        "scOverview": "Açık satın alma taleplerini tek bakışta görün.",
+        "financialReports": "Finansal raporlarda satın alma verilerini inceleyin."
+      }
+    },
+    "local": {
+      "title": "Uzun tedarik sürelerinde bile zamanında stok planlaması",
+      "intro": "Yurt dışından ham madde getirmek haftalar sürebilir. Yeniden siparişte gecikme, üretim hattını durdurabilir. Stokun kaç gün yeteceğini bilmek, tesis yöneticisinin zamanında karar almasını sağlar.",
+      "points": [
+        {
+          "title": "Yalnızca miktar değil, kaç gün yeteceği de önemli",
+          "body": "2.000 kilogram stokun çok mu az mı olduğu, günlük tüketime bağlıdır."
+        },
+        {
+          "title": "Tedarik süresini hesaba katın",
+          "body": "Stoku az gün yetecek ve tedariki uzun sürecek ürünlere öncelik verin."
+        },
+        {
+          "title": "Mevsimsel talebi öngörün",
+          "body": "Bayram dönemleri ve ihracatın yoğunlaştığı zamanlardaki talep değişimini geçmiş tüketim eğilimlerinde görün."
+        },
+        {
+          "title": "Sipariş maliyetini önceden görün",
+          "body": "Finans ekibi, satın alma talebi açılmadan önce tahmini maliyeti inceleyebilir."
+        }
+      ],
+      "story": {
+        "title": "Talep tahmininden satın alma talebine: tüm süreç bir arada",
+        "intro": "Bir ham madde stok değerlendirmesi üzerinden örnek akışı inceleyin.",
+        "steps": [
+          {
+            "time": "1 Kasım",
+            "text": "PP granül tüketimi beş aydır aralıksız artıyor."
+          },
+          {
+            "time": "1 Kasım",
+            "text": "Aralık ayı için tahmini talep 51 ton."
+          },
+          {
+            "time": "1 Kasım",
+            "text": "Mevcut stok yalnızca 15 gün yeteceğinden “Hemen sipariş ver” uyarısı çıkıyor."
+          },
+          {
+            "time": "2 Kasım",
+            "text": "Eksik miktar için satın alma talebi oluşturuluyor."
+          },
+          {
+            "time": "20 Kasım",
+            "text": "Yeni malzeme, stok tükenmeden teslim ediliyor."
+          }
+        ]
+      }
+    },
+    "industries": {
+      "title": "Farklı sektörler talep tahmininden nasıl yararlanıyor?",
+      "angles": {
+        "retail": "Mevsime ve satış eğilimlerine göre stok planlaması.",
+        "food-hospitality": "Haftalık tüketime göre malzeme ve ihtiyaç planlaması.",
+        "real-estate": "Proje aşamalarına göre yapı malzemesi ihtiyacı.",
+        "consulting": "Çalışan sayısına göre sarf malzemesi planlaması.",
+        "manufacturing": "Üretim planına göre ham madde ve ambalaj ihtiyacı.",
+        "health-fitness": "Kullanıma göre sarf malzemesi ve satış ürünleri için stok planlaması.",
+        "trades": "İş hacmine göre yedek parça ihtiyacı.",
+        "others": "Program takvimine göre malzeme planlaması."
+      }
+    },
+    "faq": {
+      "title": "Talep tahmini hakkında sık sorulan sorular",
+      "items": [
+        {
+          "q": "Talep tahmini nasıl yapılır?",
+          "a": "Her ürünün geçmiş aylardaki tüketimi analiz edilir ve eğilimi geleceğe yansıtılarak tahmini talep hesaplanır."
+        },
+        {
+          "q": "Stok karşılama süresi nedir?",
+          "a": "Mevcut stokun, tahmini tüketim hızına göre kaç gün yeteceğidir."
+        },
+        {
+          "q": "Bir ürün ne zaman “Hemen sipariş ver” olarak görünür?",
+          "a": "Stok karşılama süresi 20 günün altına düştüğünde."
+        },
+        {
+          "q": "Sistem siparişleri kendiliğinden oluşturur mu?",
+          "a": "Hayır. Yeniden sipariş edilmesi gereken ürünleri gösterir; satın alma talebini siz oluşturursunuz."
+        },
+        {
+          "q": "Ne kadar ileriye dönük tahmin yapılır?",
+          "a": "90 gün, yani önümüzdeki üç ay."
+        },
+        {
+          "q": "Adon ERP nerelerde kullanılabilir?",
+          "a": "Şu anda Dakka’daki işletmelerin Adon ERP kullanmaya başlamasına yardımcı oluyoruz. Demo randevusu alın; ekibimiz örnek verilerle özelliği size anlatsın."
+        }
+      ]
+    },
+    "closing": {
+      "title": "En çok kullandığınız 10 ürünü ve geçen yılın tüketim kayıtlarını getirin; demoda gelecekteki talebi birlikte tahmin edelim."
+    }
+  },
       "invWarehouses": {
         "meta": {
           "title": "Depolar: Her Mağaza, Bölge ve Depo Tek Yerde",

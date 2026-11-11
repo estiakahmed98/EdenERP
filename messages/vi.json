@@ -9857,208 +9857,208 @@
         }
       },
       "invForecast": {
-        "meta": {
-          "title": "Dự báo nhu cầu: Biết những gì cần sắp xếp lại trước khi hết hàng",
-          "description": "Dự báo nhu cầu từ các số phát hành trước đây, xem số ngày có hàng cho từng mặt hàng và nhận danh sách những mặt hàng cần đặt hàng lại ngay bây giờ. Được xây dựng cho các công ty ở Bangladesh.",
-          "keywords": [
-            "phần mềm dự báo nhu cầu Bangladesh",
-            "dự báo hàng tồn kho",
-            "sắp xếp lại kế hoạch",
-            "ngày che chở",
-            "Dự báo nhu cầu Adon ERP"
-          ]
+    "meta": {
+      "title": "Dự báo nhu cầu: Biết khi nào cần đặt hàng lại trước khi hết tồn kho",
+      "description": "Dự báo nhu cầu dựa trên lịch sử xuất kho, biết từng mặt hàng còn đủ dùng trong bao nhiêu ngày và xác định những mặt hàng cần đặt lại ngay. Được phát triển cho doanh nghiệp tại Bangladesh.",
+      "keywords": [
+        "phần mềm dự báo nhu cầu tại Bangladesh",
+        "dự báo nhu cầu tồn kho",
+        "lập kế hoạch đặt hàng lại",
+        "số ngày tồn kho đủ dùng",
+        "Adon ERP dự báo nhu cầu"
+      ]
+    },
+    "hero": {
+      "title": "Đừng đợi đến khi hết hàng — đặt hàng đúng lúc nhờ dữ liệu",
+      "lead": "Adon ERP phân tích mức sử dụng của từng mặt hàng trong các tháng trước để dự báo nhu cầu trong ba tháng tới. Sau đó, hệ thống đối chiếu với lượng tồn kho hiện tại để cho biết mặt hàng nào có nguy cơ hết trước, thời điểm cần đặt lại và chi phí ước tính.",
+      "secondaryCta": "Xem cách tính số ngày tồn kho đủ dùng"
+    },
+    "sample": {
+      "count": "5 mặt hàng",
+      "notes": [
+        "Dự báo nhu cầu từ dữ liệu sử dụng trước đây",
+        "Số ngày tồn kho đủ dùng của từng mặt hàng",
+        "Ước tính chi phí đặt hàng"
+      ]
+    },
+    "ui": {
+      "title": "Dự báo nhu cầu",
+      "accuracy": "Độ chính xác dự báo",
+      "accuracySub": "6 tháng gần nhất",
+      "atRisk": "Mặt hàng cần đặt lại ngay",
+      "atRiskSub": "Tồn kho đủ dùng dưới 20 ngày",
+      "horizon": "Kỳ dự báo",
+      "horizonValue": "90 ngày",
+      "horizonSub": "Ba tháng tới",
+      "suggested": "Giá trị đơn hàng ước tính",
+      "suggestedSub": "Cho các mặt hàng cần đặt lại ngay",
+      "chart": "Lượng sử dụng hạt nhựa PP theo tháng (tấn)",
+      "actual": "Thực tế",
+      "forecast": "Dự báo",
+      "chartNote": "Các cột liền thể hiện lượng sử dụng thực tế trước đây; các cột nét đứt thể hiện nhu cầu dự báo cho ba tháng tới theo xu hướng tiêu thụ.",
+      "cover": "Số ngày tồn kho đủ dùng",
+      "days": "ngày",
+      "orderNow": "Đặt hàng ngay",
+      "soon": "Sắp cần đặt hàng",
+      "ok": "Tồn kho đủ",
+      "caption": "Bản xem trước một phần tính năng Dự báo nhu cầu của Adon ERP. Doanh nghiệp và số liệu hiển thị chỉ mang tính minh họa."
+    },
+    "flow": {
+      "title": "Từ lịch sử sử dụng đến danh sách đặt hàng lại chỉ trong 3 bước",
+      "intro": "Cách tính được thiết kế đơn giản, rõ ràng để ngay cả thủ kho cũng có thể tự kiểm tra bằng tay.",
+      "steps": [
+        {
+          "tag": "Lịch sử sử dụng",
+          "question": "Thực tế đã sử dụng bao nhiêu?",
+          "body": "Tổng hợp lượng sử dụng hằng tháng của từng mặt hàng từ các giao dịch xuất kho đã được ghi nhận."
         },
-        "hero": {
-          "title": "Dự báo nhu cầu: sắp xếp lại khi các con số nói như vậy, không phải khi kệ trống",
-          "lead": "Adon ERP xem xét lượng từng mặt hàng bạn đã sử dụng trong những tháng qua, lập kế hoạch cho ba mặt hàng tiếp theo và so sánh số lượng đó với những mặt hàng hiện có. Các mặt hàng hết trước sẽ nằm ở trên cùng, cùng với ước tính chi phí khi đặt hàng.",
-          "secondaryCta": "Xem cách che phủ được thực hiện"
+        {
+          "tag": "Dự báo nhu cầu",
+          "question": "Những tháng tới có thể cần bao nhiêu?",
+          "body": "Phân tích xu hướng sử dụng để dự báo nhu cầu ba tháng tiếp theo, đồng thời tính đến mức tăng theo mùa."
         },
-        "sample": {
-          "count": "5 món",
-          "notes": [
-            "sử dụng trong quá khứ, sau đó là dự báo",
-            "ngày bảo hiểm cho từng hạng mục",
-            "một giá trị đơn hàng để lập kế hoạch"
-          ]
-        },
-        "ui": {
-          "title": "Dự báo nhu cầu",
-          "accuracy": "Độ chính xác của dự báo",
-          "accuracySub": "6 tháng qua",
-          "atRisk": "Các mặt hàng cần sắp xếp lại ngay bây giờ",
-          "atRiskSub": "dưới 20 ngày bảo hiểm",
-          "horizon": "Chân trời dự báo",
-          "horizonValue": "90 ngày",
-          "horizonSub": "ba tháng tới",
-          "suggested": "Giá trị đơn hàng ước tính",
-          "suggestedSub": "để sắp xếp lại các mặt hàng ngay bây giờ",
-          "chart": "Hạt PP sử dụng hàng tháng (tấn)",
-          "actual": "thực tế",
-          "forecast": "dự báo",
-          "chartNote": "Quá khứ sử dụng là vững chắc. Các thanh nét đứt là ba tháng tiếp theo, được dự đoán từ xu hướng.",
-          "cover": "Ngày che phủ",
-          "days": "ngày",
-          "orderNow": "đặt hàng ngay bây giờ",
-          "soon": "sớm thôi",
-          "ok": "được",
-          "caption": "Bản xem trước một phần Dự báo nhu cầu trong Adon ERP. Công ty và số liệu là dữ liệu mẫu."
-        },
-        "flow": {
-          "title": "Từ việc sử dụng trước đây đến danh sách sắp xếp lại, trong ba bước",
-          "intro": "Phương pháp này khá đơn giản nên người quản lý cửa hàng có thể kiểm tra bằng bút chì.",
-          "steps": [
-            {
-              "tag": "Sử dụng trước đây",
-              "question": "Những gì bạn thực sự đã sử dụng",
-              "body": "Số phát hành hàng tháng cho từng mặt hàng, lấy từ biến động tồn kho đã được ghi nhận."
-            },
-            {
-              "tag": "Dự báo",
-              "question": "Những gì bạn có thể sẽ cần",
-              "body": "Xu hướng này được dự đoán sẽ diễn ra trong ba tháng tới, do đó không thể bỏ qua sự tăng trưởng theo mùa."
-            },
-            {
-              "tag": "Bìa",
-              "question": "Cổ phiếu tồn tại trong bao lâu",
-              "body": "Lượng hàng tồn kho chia cho mức sử dụng dự kiến sẽ có số ngày sử dụng. Dưới 20 ngày là đặt hàng ngay, dưới 30 là sắp có hàng."
-            }
-          ],
-          "formTitle": "Trang này hiển thị những gì",
-          "form": [
-            {
-              "label": "Độ chính xác",
-              "body": "Những dự báo trong quá khứ đã được áp dụng thực tế đến mức nào."
-            },
-            {
-              "label": "Các mặt hàng cần sắp xếp lại",
-              "body": "Có bao nhiêu bảo hiểm dưới 20 ngày."
-            },
-            {
-              "label": "biểu đồ",
-              "body": "Trước đây sử dụng làm thanh liền, dự báo là thanh đứt nét."
-            },
-            {
-              "label": "Ngày che phủ",
-              "body": "Một thanh cho mỗi mục, có điểm đánh dấu là 30 ngày."
-            },
-            {
-              "label": "Giá trị đơn hàng ước tính",
-              "body": "Thiếu hụt lần tỷ lệ cuối cùng, để các mặt hàng được sắp xếp lại ngay bây giờ."
-            }
-          ]
-        },
-        "connect": {
-          "title": "Một dự báo biến lịch sử chứng khoán thành một kế hoạch mua hàng",
-          "intro": "Nó đọc những gì đã được ban hành và kết thúc bằng một yêu cầu.",
-          "groups": {
-            "before": "Trước dự báo",
-            "after": "Sau dự báo",
-            "shows": "Hiển thị ở đâu"
-          },
-          "items": {
-            "itemsProducts": "Sắp xếp lại điểm và đơn vị.",
-            "invMovements": "Lịch sử dự báo được xây dựng trên.",
-            "scRequisitions": "Đưa ra yêu cầu trưng dụng những gì còn thiếu.",
-            "purchaseOrders": "Đặt hàng trực tiếp nếu nhu cầu rõ ràng.",
-            "invSummary": "Giá trị cổ phiếu và doanh thu.",
-            "scOverview": "Mở yêu cầu trong nháy mắt.",
-            "financialReports": "Mua hàng trong báo cáo của bạn."
-          }
-        },
-        "local": {
-          "title": "Dự báo thời gian thực hiện dài",
-          "intro": "Nguyên liệu thô từ nước ngoài phải mất hàng tuần và một lần đặt hàng lại bị bỏ lỡ sẽ khiến dây chuyền phải dừng lại. Số ngày thực hiện là con số mà người quản lý nhà máy có thể thực hiện.",
-          "points": [
-            {
-              "title": "Bao phủ, không chỉ số lượng",
-              "body": "Hai ngàn cân nhiều hay ít tùy theo mục đích sử dụng."
-            },
-            {
-              "title": "Lưu ý đến thời gian dẫn đầu",
-              "body": "Những mặt hàng có bìa ngắn và thời gian thực hiện dài sẽ được nhìn thấy đầu tiên."
-            },
-            {
-              "title": "Nhu cầu theo mùa",
-              "body": "Đỉnh Eid và xuất khẩu xuất hiện theo xu hướng."
-            },
-            {
-              "title": "Một giá trị đơn hàng",
-              "body": "Bộ phận tài chính xem đơn đặt hàng lại sẽ có giá bao nhiêu trước khi nó được huy động."
-            }
-          ],
-          "story": {
-            "title": "Một dự báo, từ xu hướng đến nhu cầu",
-            "intro": "Một mẫu đánh giá nguyên liệu thô, cách nó thường chạy.",
-            "steps": [
-              {
-                "time": "1 Th11",
-                "text": "Việc sử dụng hạt PP đã tăng trong 5 tháng qua."
-              },
-              {
-                "time": "1 Th11",
-                "text": "Dự báo cho tháng 12 là 51 tấn."
-              },
-              {
-                "time": "1 Th11",
-                "text": "Hàng có sẵn trong 15 ngày nên hiện tại mặt hàng đã được đặt hàng."
-              },
-              {
-                "time": "2 tháng 11",
-                "text": "Một yêu cầu trưng dụng được đưa ra để bù đắp cho sự thiếu hụt."
-              },
-              {
-                "time": "20 tháng 11",
-                "text": "Hàng về trước khi hết hàng."
-              }
-            ]
-          }
-        },
-        "industries": {
-          "title": "Các ngành nghề khác nhau sử dụng dự báo nhu cầu như thế nào",
-          "angles": {
-            "retail": "Hàng tồn kho theo mùa và xu hướng bán hàng.",
-            "food-hospitality": "Nguyên liệu và vật dụng sử dụng hàng tuần.",
-            "real-estate": "Vật liệu theo giai đoạn dự án.",
-            "consulting": "Vật tư tiêu hao theo số lượng nhân viên.",
-            "manufacturing": "Nguyên liệu và đóng gói theo kế hoạch sản xuất.",
-            "health-fitness": "Vật tư tiêu hao và các mặt hàng bán lẻ theo cách sử dụng.",
-            "trades": "Chia theo khối lượng công việc.",
-            "others": "Cung cấp theo lịch chương trình."
-          }
-        },
-        "faq": {
-          "title": "Các câu hỏi chúng tôi nhận được về dự báo nhu cầu",
-          "items": [
-            {
-              "q": "Dự báo nhu cầu như thế nào?",
-              "a": "Từ việc sử dụng từng mặt hàng hàng tháng trong quá khứ, dự kiến sẽ trở thành xu hướng."
-            },
-            {
-              "q": "Ngày bảo hiểm là gì?",
-              "a": "Lượng hàng tồn kho trong kho sẽ tồn tại được bao nhiêu ngày ở mức dự báo."
-            },
-            {
-              "q": "Khi nào một mặt hàng hiển thị thứ tự bây giờ?",
-              "a": "Khi nó có thời gian bảo hiểm dưới 20 ngày."
-            },
-            {
-              "q": "Nó có tự tăng đơn hàng không?",
-              "a": "Không. Nó hiển thị những gì cần sắp xếp lại và bạn đưa ra yêu cầu."
-            },
-            {
-              "q": "Nó nhìn về phía trước bao xa?",
-              "a": "Chín mươi ngày."
-            },
-            {
-              "q": "Adon ERP có ở đâu?",
-              "a": "Chúng tôi hiện đang giới thiệu các công ty ở Dhaka. Đặt một bản demo và chúng tôi sẽ xem xét nó với dữ liệu mẫu."
-            }
-          ]
-        },
-        "closing": {
-          "title": "Mang theo mười mặt hàng hàng đầu của bạn và cách sử dụng năm ngoái. Chúng tôi sẽ dự đoán chúng trong bản demo."
+        {
+          "tag": "Số ngày tồn kho đủ dùng",
+          "question": "Lượng tồn hiện tại còn dùng được bao lâu?",
+          "body": "Lấy lượng tồn hiện có chia cho mức sử dụng dự báo mỗi ngày để tính số ngày đủ dùng. Dưới 20 ngày sẽ báo “Đặt hàng ngay”, dưới 30 ngày sẽ báo “Sắp cần đặt hàng”."
         }
+      ],
+      "formTitle": "Bạn sẽ thấy gì trên trang này?",
+      "form": [
+        {
+          "label": "Độ chính xác dự báo",
+          "body": "Mức độ khớp giữa các dự báo trước đây và lượng sử dụng thực tế."
+        },
+        {
+          "label": "Mặt hàng cần đặt lại",
+          "body": "Số mặt hàng có tồn kho đủ dùng dưới 20 ngày."
+        },
+        {
+          "label": "Biểu đồ nhu cầu",
+          "body": "Cột liền thể hiện lượng sử dụng thực tế, cột nét đứt thể hiện mức dự báo."
+        },
+        {
+          "label": "Số ngày tồn kho đủ dùng",
+          "body": "Mỗi mặt hàng có một thanh riêng với mốc tham chiếu 30 ngày."
+        },
+        {
+          "label": "Giá trị đơn hàng ước tính",
+          "body": "Tính lượng thiếu hụt nhân với đơn giá gần nhất cho các mặt hàng cần đặt lại ngay."
+        }
+      ]
+    },
+    "connect": {
+      "title": "Biến dữ liệu tồn kho trước đây thành kế hoạch mua hàng thông minh",
+      "intro": "Phân tích lịch sử xuất kho để hỗ trợ xác định mặt hàng cần lập phiếu đề nghị mua hàng.",
+      "groups": {
+        "before": "Trước khi dự báo",
+        "after": "Sau khi dự báo",
+        "shows": "Nơi xem thông tin"
       },
+      "items": {
+        "itemsProducts": "Điểm đặt hàng lại và đơn vị tính.",
+        "invMovements": "Lịch sử biến động tồn kho làm cơ sở dự báo.",
+        "scRequisitions": "Tạo phiếu đề nghị mua hàng để bù phần thiếu hụt.",
+        "purchaseOrders": "Tạo đơn mua hàng trực tiếp khi nhu cầu đã rõ ràng.",
+        "invSummary": "Giá trị và vòng quay hàng tồn kho.",
+        "scOverview": "Xem nhanh các đề nghị mua hàng đang xử lý.",
+        "financialReports": "Xem dữ liệu mua hàng trong báo cáo tài chính."
+      }
+    },
+    "local": {
+      "title": "Chủ động tồn kho ngay cả khi thời gian nhập hàng kéo dài",
+      "intro": "Nhập nguyên vật liệu từ nước ngoài có thể mất nhiều tuần. Chậm đặt hàng lại có thể khiến dây chuyền sản xuất phải dừng. Vì vậy, biết tồn kho còn đủ dùng bao nhiêu ngày sẽ giúp quản lý nhà máy quyết định kịp thời.",
+      "points": [
+        {
+          "title": "Không chỉ là số lượng, mà còn là số ngày đủ dùng",
+          "body": "2.000 kg hàng tồn là nhiều hay ít còn tùy vào mức sử dụng mỗi ngày."
+        },
+        {
+          "title": "Tính cả thời gian giao hàng",
+          "body": "Ưu tiên các mặt hàng sắp hết nhưng cần nhiều thời gian để nhập bổ sung."
+        },
+        {
+          "title": "Dự báo nhu cầu theo mùa",
+          "body": "Nhận biết biến động nhu cầu trong dịp Eid và mùa cao điểm xuất khẩu qua xu hướng sử dụng trước đây."
+        },
+        {
+          "title": "Biết trước chi phí đặt hàng",
+          "body": "Bộ phận tài chính có thể xem chi phí mua hàng dự kiến trước khi lập đề nghị."
+        }
+      ],
+      "story": {
+        "title": "Từ dự báo nhu cầu đến đề nghị mua hàng: Toàn bộ quy trình",
+        "intro": "Cùng xem một ví dụ rà soát tồn kho nguyên vật liệu.",
+        "steps": [
+          {
+            "time": "1 tháng 11",
+            "text": "Lượng sử dụng hạt nhựa PP tăng liên tục trong 5 tháng."
+          },
+          {
+            "time": "1 tháng 11",
+            "text": "Nhu cầu dự báo cho tháng 12 là 51 tấn."
+          },
+          {
+            "time": "1 tháng 11",
+            "text": "Tồn kho hiện tại chỉ đủ dùng 15 ngày nên hệ thống hiển thị “Đặt hàng ngay”."
+          },
+          {
+            "time": "2 tháng 11",
+            "text": "Phiếu đề nghị mua hàng được tạo để bù lượng thiếu hụt."
+          },
+          {
+            "time": "20 tháng 11",
+            "text": "Nguyên vật liệu mới được giao trước khi tồn kho cạn."
+          }
+        ]
+      }
+    },
+    "industries": {
+      "title": "Các ngành nghề ứng dụng dự báo nhu cầu như thế nào?",
+      "angles": {
+        "retail": "Lập kế hoạch tồn kho theo mùa và xu hướng bán hàng.",
+        "food-hospitality": "Lên kế hoạch nguyên liệu và vật tư theo mức dùng hằng tuần.",
+        "real-estate": "Dự tính vật liệu xây dựng theo từng giai đoạn dự án.",
+        "consulting": "Lập kế hoạch vật tư tiêu hao theo số lượng nhân viên.",
+        "manufacturing": "Dự tính nguyên vật liệu và bao bì theo kế hoạch sản xuất.",
+        "health-fitness": "Lập kế hoạch tồn kho vật tư tiêu hao và hàng bán lẻ theo mức sử dụng.",
+        "trades": "Dự báo nhu cầu phụ tùng theo khối lượng công việc.",
+        "others": "Lập kế hoạch vật tư theo lịch chương trình và hoạt động."
+      }
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp về dự báo nhu cầu",
+      "items": [
+        {
+          "q": "Dự báo nhu cầu được tính như thế nào?",
+          "a": "Hệ thống phân tích lượng sử dụng hằng tháng trước đây của từng mặt hàng và dựa vào xu hướng để ước tính nhu cầu tương lai."
+        },
+        {
+          "q": "Số ngày tồn kho đủ dùng là gì?",
+          "a": "Là số ngày lượng tồn hiện tại dự kiến còn đáp ứng được theo tốc độ sử dụng đã dự báo."
+        },
+        {
+          "q": "Khi nào hệ thống hiển thị “Đặt hàng ngay”?",
+          "a": "Khi số ngày tồn kho đủ dùng của một mặt hàng xuống dưới 20 ngày."
+        },
+        {
+          "q": "Hệ thống có tự động tạo đơn hàng không?",
+          "a": "Không. Hệ thống chỉ ra các mặt hàng cần đặt lại; bạn sẽ chủ động tạo phiếu đề nghị mua hàng."
+        },
+        {
+          "q": "Hệ thống dự báo trước bao lâu?",
+          "a": "90 ngày, tương đương ba tháng tới."
+        },
+        {
+          "q": "Adon ERP hiện có ở đâu?",
+          "a": "Chúng tôi hiện đang hỗ trợ các doanh nghiệp tại Dhaka triển khai Adon ERP. Hãy đặt lịch demo để đội ngũ của chúng tôi giới thiệu tính năng bằng dữ liệu mẫu."
+        }
+      ]
+    },
+    "closing": {
+      "title": "Hãy mang theo 10 mặt hàng được sử dụng nhiều nhất cùng dữ liệu tiêu thụ của năm trước. Chúng tôi sẽ dự báo nhu cầu ngay trong buổi demo."
+    }
+  },
       "invWarehouses": {
         "meta": {
           "title": "Kho hàng: Mọi cửa hàng, khu vực và thùng rác ở một nơi",
