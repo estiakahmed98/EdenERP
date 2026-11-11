@@ -1720,6 +1720,8 @@
           "title": "Bring a list of your main suppliers. We will load them and raise a first order in the demo."
         }
       },
+
+
       "bankAccounts": {
         "meta": {
           "title": "Bank Accounts: Tell the Books Where the Money Sits",
@@ -2801,6 +2803,8 @@
           "title": "Bring your latest cheque book. We will record a few leaves in the demo."
         }
       },
+
+      
       "closingFy": {
         "meta": {
           "title": "Closing & Financial Year: Close the Books Once a Year",
