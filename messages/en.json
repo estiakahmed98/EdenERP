@@ -41,6 +41,7 @@
     },
     "languageSwitcher": {
       "label": "Language",
+      "switchToEnglish": "Switch to English",
       "options": {
         "en": "EN",
         "bn": "বাংলা",

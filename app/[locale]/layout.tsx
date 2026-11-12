@@ -9,6 +9,7 @@ import Footer from "@/components/footer";
 import LocaleDocument from "@/components/locale-document";
 import Header from "@/components/header";
 import FloatingActions from "@/components/floating-actions";
+import GeoLocaleDetector from "@/components/geo-locale-detector";
 import AnalyticsTracker from "@/components/admin/AnalyticsTracker";
 import AuthSessionProvider from "@/lib/session-provider";
 import DemoBookingProvider from "@/components/demo-booking/provider";
@@ -121,6 +122,7 @@ export default async function LocaleLayout({
       <AuthSessionProvider>
         <DemoBookingProvider>
           <AnalyticsTracker />
+          <GeoLocaleDetector />
           <Header showPricing={pricingConfig.pricingPageEnabled} />
           {children}
           <Footer showPricing={pricingConfig.pricingPageEnabled} />

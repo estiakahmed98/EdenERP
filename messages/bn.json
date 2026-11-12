@@ -2,6 +2,7 @@
   "common": {
     "languageSwitcher": {
       "label": "ভাষা",
+      "switchToEnglish": "ইংরেজিতে দেখুন",
       "options": {
         "en": "EN",
         "bn": "বাংলা",

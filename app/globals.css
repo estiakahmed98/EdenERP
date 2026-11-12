@@ -285,3 +285,48 @@ html[lang^='bn'] .bn-content {
 .showcase-heading-highlight:lang(bn) {
   font-style: italic;
 }
+
+/* Geo-detected Bangla: the "English" hint glows softly until a language is picked. */
+@keyframes geo-english-hint-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--primary) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--primary) 0%, transparent),
+      0 0 14px 2px color-mix(in oklab, var(--primary) 35%, transparent);
+  }
+}
+
+@keyframes geo-english-hint-blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+.geo-english-hint {
+  animation: geo-english-hint-glow 1.8s ease-in-out infinite;
+}
+
+.geo-english-hint-dot {
+  animation: geo-english-hint-blink 1.8s ease-in-out infinite;
+}
+
+.geo-english-hint:hover,
+.geo-english-hint[data-highlighted] {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geo-english-hint,
+  .geo-english-hint-dot {
+    animation: none;
+    box-shadow: 0 0 0 2px color-mix(in oklab, var(--primary) 35%, transparent);
+  }
+}
