@@ -4,25 +4,26 @@
  * ALL DATA ON THIS PAGE IS DUMMY.
  */
 import type { Metadata } from "next";
+import { useLocale } from "next-intl";
 import { CalendarCheck, ClipboardCheck, HeartPulse, ShieldCheck } from "lucide-react";
 
 import { Bar, Card, Chip, HrPage, hrMetadata } from "../../human-resources/_hr";
 
-/** DUMMY data: [department, done, due]. */
-const progress: [string, number, number][] = [
-  ["Production", 96, 128],
-  ["Quality", 18, 18],
-  ["Supply Chain", 15, 24],
-  ["Sales", 9, 22],
-  ["Office", 20, 20],
+/** DUMMY data: [message key, English fallback, done, due]. */
+const progress: [string, string, number, number][] = [
+  ["dProduction", "Production", 96, 128],
+  ["dQuality", "Quality", 18, 18],
+  ["dSupplyChain", "Supply Chain", 15, 24],
+  ["dSales", "Sales", 9, 22],
+  ["dOffice", "Office", 20, 20],
 ];
-/** DUMMY data: [test, result, unit, normal low, normal high, scale max]. */
-const results: [string, number, string, number, number, number][] = [
-  ["Haemoglobin", 13.8, "g/dL", 13, 17, 20],
-  ["Fasting blood sugar", 6.4, "mmol/L", 3.9, 5.6, 10],
-  ["Blood pressure, systolic", 124, "mmHg", 90, 130, 180],
-  ["Body mass index", 24.1, "", 18.5, 25, 35],
-  ["Hearing, 4 kHz", 22, "dB", 0, 25, 60],
+/** DUMMY data: [message key, English fallback, result, unit, normal low, normal high, scale max]. */
+const results: [string, string, number, string, number, number, number][] = [
+  ["tHb", "Haemoglobin", 13.8, "g/dL", 13, 17, 20],
+  ["tFbs", "Fasting blood sugar", 6.4, "mmol/L", 3.9, 5.6, 10],
+  ["tBp", "Blood pressure, systolic", 124, "mmHg", 90, 130, 180],
+  ["tBmi", "Body mass index", 24.1, "", 18.5, 25, 35],
+  ["tHearing", "Hearing, 4 kHz", 22, "dB", 0, 25, 60],
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,6 +31,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function HealthCheckupsPage() {
+  const locale = useLocale();
+  /** Bangla pages show Bangla digits; other locales keep the sample figures as written. */
+  const num = (n: number) => (locale === "bn" ? n.toLocaleString("bn-BD", { useGrouping: false }) : String(n));
   return (
     <HrPage
       section="mcCheckupsPage"
@@ -54,14 +58,14 @@ export default function HealthCheckupsPage() {
       icons={[CalendarCheck, HeartPulse, ClipboardCheck, ShieldCheck]}
       render={(ui) => (
         <div className="grid gap-3 lg:grid-cols-12">
-          <Card className="lg:col-span-5" title={ui.campaign} right={<Chip tone="primary">158 / 212</Chip>}>
+          <Card className="lg:col-span-5" title={ui.campaign} right={<Chip tone="primary">{num(158)} / {num(212)}</Chip>}>
             <ul className="space-y-2.5">
-              {progress.map(([d, done, due]) => (
-                <li key={d} className="text-[11px]">
+              {progress.map(([k, fallback, done, due]) => (
+                <li key={k} className="text-[11px]">
                   <p className="flex justify-between">
-                    <span className="text-foreground">{d}</span>
+                    <span className="text-foreground">{ui[k] ?? fallback}</span>
                     <span className="tabular-nums text-muted-foreground">
-                      {done} / {due}
+                      {num(done)} / {num(due)}
                     </span>
                   </p>
                   <span className="mt-1 block">
@@ -73,11 +77,11 @@ export default function HealthCheckupsPage() {
           </Card>
           <Card className="lg:col-span-7" title={ui.resultTitle} right={<Chip tone="brown">{ui.followUp}</Chip>}>
             <ul className="space-y-2.5">
-              {results.map(([test, v, unit, lo, hi, max]) => {
+              {results.map(([k, fallback, v, unit, lo, hi, max]) => {
                 const out = v < lo || v > hi;
                 return (
-                  <li key={test} className="grid grid-cols-[9.5rem_1fr_4.5rem] items-center gap-3 text-[11px]">
-                    <span className="truncate text-foreground">{test}</span>
+                  <li key={k} className="grid grid-cols-[9.5rem_1fr_4.5rem] items-center gap-3 text-[11px]">
+                    <span className="truncate text-foreground">{ui[k] ?? fallback}</span>
                     <span className="relative block h-2 rounded-full bg-muted" aria-hidden="true">
                       <span className="absolute inset-y-0 rounded-full bg-[var(--teal)]/30" style={{ left: `${(lo / max) * 100}%`, width: `${((hi - lo) / max) * 100}%` }} />
                       <span
@@ -86,7 +90,7 @@ export default function HealthCheckupsPage() {
                       />
                     </span>
                     <span className={`text-end tabular-nums ${out ? "font-semibold text-[var(--chart-4)]" : "text-foreground"}`}>
-                      {v} <span className="text-[9.5px] font-normal text-muted-foreground">{unit}</span>
+                      {num(v)} <span className="text-[9.5px] font-normal text-muted-foreground">{unit}</span>
                     </span>
                   </li>
                 );

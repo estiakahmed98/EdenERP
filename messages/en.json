@@ -2803,7 +2803,6 @@
         }
       },
 
-      
       "closingFy": {
         "meta": {
           "title": "Closing & Financial Year: Close the Books Once a Year",
@@ -4084,7 +4083,6 @@
         }
       },
 
-
       "exchangeRates": {
         "meta": {
           "title": "Exchange Rates: Dated Rates for Foreign-Currency Invoices",
@@ -4695,7 +4693,7 @@
           "title": "Bring last month’s bank statement. We will reconcile it in the demo."
         }
       },
-      
+
       "projects": {
         "meta": {
           "title": "Project Accounting: Budget, Cost, Billing and Profit for Every Project",
@@ -6533,7 +6531,7 @@
           "title": "Bring your top three project worries. We will log them as risks in the demo."
         }
       },
-      
+
       "pjDocuments": {
         "meta": {
           "title": "Project Documents: Licences, Permits and Contracts on the Project",
@@ -9863,7 +9861,7 @@
           "title": "Bring an import file with its duty and freight bills. We will work out the landed cost in the demo."
         }
       },
-      
+
       "invForecast": {
         "meta": {
           "title": "Demand Forecast: Know What to Reorder Before You Run Out",
@@ -19021,7 +19019,14 @@
         "hero": {
           "title": "Medical centre: the factory clinic, run like the rest of the company",
           "lead": "Visits, the queue, injuries at work, beds in the rest room and medicine stock, on one page. Rest and sick-leave advice goes to HR without a paper slip.",
-          "secondaryCta": "See the clinic"
+          "secondaryCta": "See the clinic",
+          "features": [
+            "Today's clinic: visits, the queue and beds in use",
+            "Workplace injuries kept apart from illness",
+            "Medicines running low or close to expiry",
+            "Health checkups due by department",
+            "Sick leave and rest advice sent to HR"
+          ]
         },
         "sample": {
           "count": "30 visits today",
@@ -19214,7 +19219,14 @@
         "hero": {
           "title": "Clinic visits: one record for each visit, from vitals to advice",
           "lead": "Vitals, the complaint, what was found and what was given, on one screen. The outcome, back to work, rest or referral, goes to HR, and an injury at work goes to the accident register.",
-          "secondaryCta": "See a visit"
+          "secondaryCta": "See a visit",
+          "features": [
+            "Every visit to the factory clinic, by employee",
+            "Vital signs, complaint, findings and advice",
+            "Medicines given from the clinic's own stock",
+            "Workplace injuries recorded for the accident register",
+            "Rest or sick leave advice sent to HR with one click"
+          ]
         },
         "sample": {
           "count": "1 visit",
@@ -19419,7 +19431,14 @@
         "hero": {
           "title": "Pharmacy: the clinic's medicines, in date and in stock",
           "lead": "Every medicine is kept by batch with its expiry. The oldest batch goes out first, short-dated stock is flagged in red, and anything below its minimum is ready to reorder.",
-          "secondaryCta": "See the stock"
+          "secondaryCta": "See the stock",
+          "features": [
+            "The clinic's medicines and first-aid stock, by batch",
+            "Expiry dates, with the oldest batch given out first",
+            "Minimum stock, so nothing runs out on a night shift",
+            "Every issue linked to a clinic visit",
+            "A purchase requisition raised when stock runs low"
+          ]
         },
         "sample": {
           "count": "6 items shown",
@@ -19430,6 +19449,12 @@
           ]
         },
         "ui": {
+          "m0": "Paracetamol 500 mg tab",
+          "m1": "Oral rehydration salts",
+          "m2": "Antacid 400 mg tab",
+          "m3": "Povidone iodine 10% 100 ml",
+          "m4": "Cetirizine 10 mg tab",
+          "m5": "Crepe bandage 10 cm",
           "title": "Pharmacy",
           "expiring": "2 expiring within 3 months",
           "low": "1 below minimum",
@@ -19608,7 +19633,14 @@
         "hero": {
           "title": "Health checkups: everyone checked, and anyone at risk followed up",
           "lead": "Plan checkups by department, record results against the normal range, and book a follow-up for anything outside it. HR gets fit, fit with limits, or unfit, not the medical detail.",
-          "secondaryCta": "See a checkup"
+          "secondaryCta": "See a checkup",
+          "features": [
+            "Pre-employment, periodic and job-specific checkups",
+            "Who is due, by department and by date",
+            "Results against normal ranges, flagged when outside",
+            "Follow-up visits booked for anyone flagged",
+            "Fit, fit with limits, or unfit, sent to HR"
+          ]
         },
         "sample": {
           "count": "158 of 212 done",
@@ -19619,6 +19651,16 @@
           ]
         },
         "ui": {
+          "dProduction": "Production",
+          "dQuality": "Quality",
+          "dSupplyChain": "Supply Chain",
+          "dSales": "Sales",
+          "dOffice": "Office",
+          "tHb": "Haemoglobin",
+          "tFbs": "Fasting blood sugar",
+          "tBp": "Blood pressure, systolic",
+          "tBmi": "Body mass index",
+          "tHearing": "Hearing, 4 kHz",
           "title": "Health Checkups",
           "campaign": "Annual checkup 2026",
           "resultTitle": "Result · Tanvir Hasan",

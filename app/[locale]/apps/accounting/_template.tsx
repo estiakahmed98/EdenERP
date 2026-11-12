@@ -26,7 +26,8 @@ export function accountingPageMetadata(section: string, slug: string): Promise<M
 }
 
 export type TemplateContent = {
-  hero: { title: string; lead: string; secondaryCta: string };
+  /** `features` is optional: when a locale supplies it, it replaces the page's English feature list. */
+  hero: { title: string; lead: string; secondaryCta: string; features?: string[] };
   sample: { count: string; notes: string[] };
   ui: Record<string, string>;
   flow: {
@@ -365,6 +366,7 @@ export function TemplatePage({
 }) {
   const locale = useLocale();
   const { hero, flow, connect, local, industries, faq, closing, description } = content;
+  const featureList = hero.features?.length === features.length ? hero.features : features;
 
   const softwareSchema = {
     "@context": "https://schema.org",
@@ -376,7 +378,7 @@ export function TemplatePage({
     operatingSystem: "Web browser",
     inLanguage: locale,
     description,
-    featureList: features,
+    featureList,
     areaServed: { "@type": "City", name: "Dhaka" },
     publisher: { "@type": "Organization", name: "Adon ERP", url: SITE_URL },
   };
@@ -404,7 +406,7 @@ export function TemplatePage({
         title={hero.title}
         leadText={hero.lead}
         secondaryCta={hero.secondaryCta}
-        features={features}
+        features={featureList}
         preview={framed}
       />
 

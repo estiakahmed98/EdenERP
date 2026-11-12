@@ -4,18 +4,19 @@
  * ALL DATA ON THIS PAGE IS DUMMY.
  */
 import type { Metadata } from "next";
+import { useLocale } from "next-intl";
 import { CalendarX, ClipboardList, PackagePlus, Pill } from "lucide-react";
 
 import { Card, Chip, HrPage, hrMetadata, type HrTone } from "../../human-resources/_hr";
 
-/** DUMMY data: [medicine, batch, on hand, minimum, months to expiry]. */
-const stock: [string, string, number, number, number][] = [
-  ["Paracetamol 500 mg tab", "B-2611", 840, 300, 14],
-  ["Oral rehydration salts", "B-2540", 120, 150, 9],
-  ["Antacid 400 mg tab", "B-2488", 260, 100, 2],
-  ["Povidone iodine 10% 100 ml", "B-2402", 18, 10, 1],
-  ["Cetirizine 10 mg tab", "B-2577", 410, 100, 20],
-  ["Crepe bandage 10 cm", "—", 35, 20, 36],
+/** DUMMY data: [message key, English fallback, batch, on hand, minimum, months to expiry]. */
+const stock: [string, string, string, number, number, number][] = [
+  ["m0", "Paracetamol 500 mg tab", "B-2611", 840, 300, 14],
+  ["m1", "Oral rehydration salts", "B-2540", 120, 150, 9],
+  ["m2", "Antacid 400 mg tab", "B-2488", 260, 100, 2],
+  ["m3", "Povidone iodine 10% 100 ml", "B-2402", 18, 10, 1],
+  ["m4", "Cetirizine 10 mg tab", "B-2577", 410, 100, 20],
+  ["m5", "Crepe bandage 10 cm", "—", 35, 20, 36],
 ];
 
 function expiry(m: number): HrTone {
@@ -29,6 +30,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function PharmacyPage() {
+  const locale = useLocale();
+  /** Bangla pages show Bangla digits; other locales keep the sample figures as written. */
+  const num = (n: number) => (locale === "bn" ? n.toLocaleString("bn-BD", { useGrouping: false }) : String(n));
   return (
     <HrPage
       section="mcPharmacyPage"
@@ -70,15 +74,15 @@ export default function PharmacyPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {stock.map(([m, batch, qty, min, months]) => {
+                  {stock.map(([k, fallback, batch, qty, min, months]) => {
                     const low = qty < min;
                     return (
-                      <tr key={m} className="border-b border-border/60">
-                        <td className="py-2 font-medium text-foreground">{m}</td>
+                      <tr key={k} className="border-b border-border/60">
+                        <td className="py-2 font-medium text-foreground">{ui[k] ?? fallback}</td>
                         <td className="py-2 font-mono text-[10px] text-muted-foreground">{batch}</td>
                         <td className="py-2">
                           <span className="flex items-center gap-2">
-                            <span className="w-10 tabular-nums text-foreground">{qty}</span>
+                            <span className="w-10 tabular-nums text-foreground">{num(qty)}</span>
                             <span className="block h-1.5 w-24 rounded-full bg-muted" aria-hidden="true">
                               <span className={`block h-1.5 rounded-full ${low ? "bg-[var(--chart-4)]" : "bg-primary"}`} style={{ width: `${Math.min(100, (qty / (min * 3)) * 100)}%` }} />
                             </span>
@@ -87,7 +91,7 @@ export default function PharmacyPage() {
                         </td>
                         <td className="py-2 text-end">
                           <Chip tone={expiry(months)}>
-                            {months} {ui.months}
+                            {num(months)} {ui.months}
                           </Chip>
                         </td>
                       </tr>
