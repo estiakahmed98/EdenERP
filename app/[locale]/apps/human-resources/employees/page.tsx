@@ -646,7 +646,7 @@ export default function HumanResourcesLandingSections() {
       {/* Join 15 million users */}
       <section className="relative overflow-hidden bg-white dark:bg-[#0a0a1a] py-20">
         <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <div className="relative mx-auto min-h-90">
+          {/* <div className="relative mx-auto min-h-90">
             {avatars.map((avatar, index) => (
               <img
                 key={avatar}
@@ -693,7 +693,7 @@ export default function HumanResourcesLandingSections() {
                 {t("ctaBanner.description")}
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div id="start" className="mt-20 text-center">
             <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">
