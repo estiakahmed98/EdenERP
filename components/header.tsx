@@ -286,6 +286,40 @@ const communityMegaMenu: MegaMenuColumn[] = [
 
 const BLOG_HREF = "/community/learn/blog";
 
+const allMenuLinks = [
+  ...appsMegaMenu,
+  ...industriesMegaMenu,
+  ...communityMegaMenu,
+].flatMap((column) => column.links);
+
+const ACTIVE_COLUMN_CLASS =
+  "rounded-2xl bg-primary/5 p-3 ring-1 ring-primary/20";
+const ACTIVE_LINK_CLASS =
+  "bg-primary font-semibold text-primary-foreground shadow-sm";
+
+const activeDot = (
+  <span
+    aria-hidden
+    className="me-2 inline-block h-1.5 w-1.5 rounded-full bg-current align-middle"
+  />
+);
+
+/** Centre `el` inside `container` by adjusting only that container's scroll. */
+function centerWithin(container: Element | null, el: Element) {
+  if (!container) return;
+  const box = container.getBoundingClientRect();
+  const rect = el.getBoundingClientRect();
+  container.scrollTop +=
+    rect.top - box.top - (container.clientHeight - rect.height) / 2;
+}
+
+/** Ref callback: when a menu opens, bring the current page's link into view. */
+function revealActiveLink(el: HTMLAnchorElement | null) {
+  if (!el) return;
+  centerWithin(el.closest("ul"), el);
+  centerWithin(el.closest("[data-menu-scroll]"), el);
+}
+
 const navItems: NavItem[] = [
   { labelKey: "nav.apps", href: "/apps", id: "apps", megaMenu: appsMegaMenu },
   {
@@ -329,6 +363,20 @@ export default function Header({
     if (href === "/") return pathname === "/";
     return pathname === href || pathname.startsWith(`${href}/`);
   };
+
+  // Only the most specific matching menu link counts as the current page.
+  const activeHref = allMenuLinks.reduce<string | null>(
+    (best, link) =>
+      isActivePath(link.href) && (!best || link.href.length > best.length)
+        ? link.href
+        : best,
+    null,
+  );
+  const isActiveLink = (href: string) => href === activeHref;
+  const columnClass = (column: MegaMenuColumn, bleed = false) =>
+    column.links.some((link) => isActiveLink(link.href))
+      ? `${ACTIVE_COLUMN_CLASS}${bleed ? " -m-3" : ""}`
+      : undefined;
 
   const isActiveMenu = (item: NavItem) =>
     // The Blog link lives under /community; don't highlight both.
@@ -456,10 +504,16 @@ export default function Header({
                         </p>
                       </div>
 
-                      <div className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5 [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]">
+                      <div
+                        data-menu-scroll
+                        className="max-h-[calc(100vh-200px)] overflow-y-auto px-6 py-5 [scrollbar-color:var(--border)_transparent] [scrollbar-width:thin]"
+                      >
                         <div className="grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                           {item.megaMenu.map((column) => (
-                            <div key={column.titleKey}>
+                            <div
+                              key={column.titleKey}
+                              className={columnClass(column, true)}
+                            >
                               <div
                                 className={`uppercase ${
                                   item.id === "industries"
@@ -484,13 +538,24 @@ export default function Header({
                                     )}
                                     <Link
                                       href={link.href}
+                                      ref={
+                                        isActiveLink(link.href)
+                                          ? revealActiveLink
+                                          : undefined
+                                      }
+                                      aria-current={
+                                        isActiveLink(link.href)
+                                          ? "page"
+                                          : undefined
+                                      }
                                       onClick={() => setOpenDesktopMenu(null)}
                                       className={`block rounded-xl px-2 py-1.5 text-sm font-medium transition-all ${
-                                        isActivePath(link.href)
-                                          ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                        isActiveLink(link.href)
+                                          ? ACTIVE_LINK_CLASS
                                           : "text-muted-foreground hover:bg-accent/10 hover:text-primary"
                                       }`}
                                     >
+                                      {isActiveLink(link.href) && activeDot}
                                       {t(link.labelKey)}
                                     </Link>
                                   </li>
@@ -558,6 +623,7 @@ export default function Header({
 
       {mobileMenuOpen && (
         <div
+          data-menu-scroll
           className="fixed inset-x-0 z-50 overflow-x-hidden overflow-y-auto border-t border-border bg-background px-4 py-5 xl:hidden"
           style={{
             top: mobileDrawerTop,
@@ -593,7 +659,10 @@ export default function Header({
                 <div className="mt-3 rounded-2xl border border-border bg-card p-4">
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     {appsMegaMenu.map((column) => (
-                      <div key={column.titleKey}>
+                      <div
+                        key={column.titleKey}
+                        className={columnClass(column)}
+                      >
                         <div
                           className={`mb-3 border-b border-border pb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
                         >
@@ -610,9 +679,17 @@ export default function Header({
                               )}
                               <Link
                                 href={link.href}
+                                ref={
+                                  isActiveLink(link.href)
+                                    ? revealActiveLink
+                                    : undefined
+                                }
+                                aria-current={
+                                  isActiveLink(link.href) ? "page" : undefined
+                                }
                                 className={`block rounded-lg px-2 py-2 text-sm font-semibold transition-colors ${
-                                  isActivePath(link.href)
-                                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                  isActiveLink(link.href)
+                                    ? ACTIVE_LINK_CLASS
                                     : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
                                 }`}
                                 onClick={() => {
@@ -620,6 +697,7 @@ export default function Header({
                                   setMobileOpenMenu(null);
                                 }}
                               >
+                                {isActiveLink(link.href) && activeDot}
                                 {t(link.labelKey)}
                               </Link>
                             </li>
@@ -655,7 +733,10 @@ export default function Header({
                 <div className="mt-3 rounded-2xl border border-border bg-card p-4">
                   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {industriesMegaMenu.map((column) => (
-                      <div key={column.titleKey}>
+                      <div
+                        key={column.titleKey}
+                        className={columnClass(column)}
+                      >
                         <div
                           className={`mb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
                         >
@@ -666,9 +747,17 @@ export default function Header({
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
+                                ref={
+                                  isActiveLink(link.href)
+                                    ? revealActiveLink
+                                    : undefined
+                                }
+                                aria-current={
+                                  isActiveLink(link.href) ? "page" : undefined
+                                }
                                 className={`block wrap-break-word rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
-                                  isActivePath(link.href)
-                                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                  isActiveLink(link.href)
+                                    ? ACTIVE_LINK_CLASS
                                     : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
                                 }`}
                                 onClick={() => {
@@ -676,6 +765,7 @@ export default function Header({
                                   setMobileOpenMenu(null);
                                 }}
                               >
+                                {isActiveLink(link.href) && activeDot}
                                 {t(link.labelKey)}
                               </Link>
                             </li>
@@ -711,7 +801,10 @@ export default function Header({
                 <div className="mt-3 rounded-2xl border border-border bg-card p-4">
                   <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                     {communityMegaMenu.map((column) => (
-                      <div key={column.titleKey}>
+                      <div
+                        key={column.titleKey}
+                        className={columnClass(column)}
+                      >
                         <div
                           className={`mb-2 text-xs font-black uppercase tracking-[0.2em] ${column.accentClass}`}
                         >
@@ -722,9 +815,17 @@ export default function Header({
                             <li key={`${column.titleKey}:${link.href}`}>
                               <Link
                                 href={link.href}
+                                ref={
+                                  isActiveLink(link.href)
+                                    ? revealActiveLink
+                                    : undefined
+                                }
+                                aria-current={
+                                  isActiveLink(link.href) ? "page" : undefined
+                                }
                                 className={`block wrap-break-word rounded-lg px-2 py-1.5 text-sm font-semibold transition-colors ${
-                                  isActivePath(link.href)
-                                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                                  isActiveLink(link.href)
+                                    ? ACTIVE_LINK_CLASS
                                     : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
                                 }`}
                                 onClick={() => {
@@ -732,6 +833,7 @@ export default function Header({
                                   setMobileOpenMenu(null);
                                 }}
                               >
+                                {isActiveLink(link.href) && activeDot}
                                 {t(link.labelKey)}
                               </Link>
                             </li>
@@ -749,7 +851,7 @@ export default function Header({
                 href="/pricing"
                 className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
                   isActivePath("/pricing")
-                    ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                    ? ACTIVE_LINK_CLASS
                     : "text-foreground hover:bg-accent/10"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
@@ -762,7 +864,7 @@ export default function Header({
               href="/help"
               className={`block rounded-xl px-4 py-3 text-base font-bold transition-colors ${
                 isActivePath("/help")
-                  ? "bg-primary/10 text-primary ring-1 ring-primary/15"
+                  ? ACTIVE_LINK_CLASS
                   : "text-foreground hover:bg-accent/10"
               }`}
               onClick={() => setMobileMenuOpen(false)}
