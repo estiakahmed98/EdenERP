@@ -653,7 +653,7 @@
         "cookies": "Cookies",
         "gdpr": "GDPR"
       },
-      "copyright": "© {year} Adon ERP. All rights reserved."
+      "copyright": "© {year} {company}. All rights reserved."
     }
   },
   "pages": {

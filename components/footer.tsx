@@ -192,7 +192,12 @@ export default function Footer({
         </address>
 
         <div className={css.bottom}>
-          <p>{t("copyright", { year: currentYear })}</p>
+          <p>
+            {t("copyright", {
+              year: currentYear,
+              company: siteConfig.business.companyName,
+            })}
+          </p>
           <div className={css.socials}>
             {socialLinks.map(({ label, href, icon: Icon }) => (
               <a key={label} href={href} aria-label={label}>

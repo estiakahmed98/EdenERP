@@ -652,7 +652,7 @@
         "cookies": "クッキー",
         "gdpr": "GDPR"
       },
-      "copyright": "© {year} Adon ERP. 全著作権所有。"
+      "copyright": "© {year} {company}. 全著作権所有。"
     }
   },
   "pages": {

@@ -653,7 +653,7 @@
         "cookies": "কুকি নীতি",
         "gdpr": "GDPR"
       },
-      "copyright": "© {year} AdonERP। সর্বস্বত্ব সংরক্ষিত।"
+      "copyright": "© {year} {company}। সর্বস্বত্ব সংরক্ষিত।"
     }
   },
   "pages": {

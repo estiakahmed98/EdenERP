@@ -652,7 +652,7 @@
         "cookies": "Cookie",
         "gdpr": "GDPR"
       },
-      "copyright": "© {year} Adon ERP. Bảo lưu mọi quyền."
+      "copyright": "© {year} {company}. Bảo lưu mọi quyền."
     }
   },
   "pages": {
