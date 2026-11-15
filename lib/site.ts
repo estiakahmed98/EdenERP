@@ -93,6 +93,7 @@ export const siteConfig = {
   business: {
     legalName: "Adon ERP",
     companyName: "Birds Of Eden",
+    companyWebsite: "https://birdsofeden.me/",
     phones: businessPhones,
     phone: businessPhones[0].number,
     phoneDisplay: businessPhones[0].display,

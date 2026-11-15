@@ -144,6 +144,7 @@ export default function Footer({
               <MapPin size={15} aria-hidden="true" />
               {contactT("address.title")}
             </p>
+            <BusinessCompanyName />
             <a
               href={siteConfig.business.mapUrl}
               target="_blank"
@@ -156,7 +157,6 @@ export default function Footer({
                 ))}
               </span>
             </a>
-            <BusinessCompanyName />
           </div>
           <div className={`${css.contactGroup} ${css.phoneGroup}`}>
             <p className={css.contactLabel}>

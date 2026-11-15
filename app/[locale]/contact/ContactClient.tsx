@@ -164,12 +164,12 @@ export default function ContactClient() {
                     {info.title}
                   </h3>
                   <div className="mt-3 space-y-1">
+                    {info.icon === "mapPin" && <BusinessCompanyName />}
                     {info.details.map((detail, idx) => (
                       <p key={idx} dir={info.icon === "clock" ? undefined : "ltr"} className="text-sm text-slate-600 dark:text-slate-300">
                         {info.detailHrefs?.[idx] ? <a className="break-all hover:text-primary focus-visible:outline-2 focus-visible:outline-primary" href={info.detailHrefs[idx]}>{detail}</a> : detail}
                       </p>
                     ))}
-                    {info.icon === "mapPin" && <BusinessCompanyName />}
                   </div>
                   {info.action && info.href && (
                     <a
@@ -213,8 +213,8 @@ export default function ContactClient() {
                     {t("office.fullAddress")}
                   </h3>
                   <p dir="ltr" className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {siteConfig.business.addressLines.map((line) => <span key={line} className="block">{line}</span>)}
                     <BusinessCompanyName />
+                    {siteConfig.business.addressLines.map((line) => <span key={line} className="block">{line}</span>)}
                   </p>
                   <div className="mt-3 flex items-center gap-2 text-xs text-primary">
                     <MapPin className="h-3 w-3" />
