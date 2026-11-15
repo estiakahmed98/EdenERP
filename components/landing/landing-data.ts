@@ -1,3 +1,4 @@
+import { productInventory } from "@/lib/product-inventory";
 export type AppItem = {
   name: string;
   icon: string;
@@ -18,49 +19,7 @@ export type TestimonialItem = {
   score: number;
 };
 
-export const APPS: AppItem[] = [
-  { name: "Accounting", icon: "📊", color: "#e8d5f5" },
-  { name: "Knowledge", icon: "📘", color: "#d5e8f5" },
-  { name: "Sign", icon: "✍️", color: "#d5f5e8" },
-  { name: "CRM", icon: "🤝", color: "#f5e8d5" },
-  { name: "Studio", icon: "🛠️", color: "#f5d5e8" },
-  { name: "Subscribe", icon: "🔄", color: "#e8f5d5" },
-  { name: "AI", icon: "🤖", color: "#fffbe6" },
-  { name: "Point Sale", icon: "🏪", color: "#d5f5f5" },
-  { name: "Discuss", icon: "💬", color: "#ede8ff" },
-  { name: "Documents", icon: "📂", color: "#fff0e6" },
-  { name: "Project", icon: "✅", color: "#d5eeff" },
-  { name: "Timesheets", icon: "⏱️", color: "#d5ffe8" },
-  { name: "Field Svc", icon: "⚡", color: "#ffe8e8" },
-  { name: "Planning", icon: "🔀", color: "#e8e8ff" },
-  { name: "Helpdesk", icon: "🎯", color: "#ffe8f5" },
-  { name: "eCommerce", icon: "🛍️", color: "#e8ffe8" },
-  { name: "Website", icon: "🌐", color: "#fff8d5" },
-  { name: "Email Mktg", icon: "🚀", color: "#d5f0ff" },
-  { name: "Purchase", icon: "💳", color: "#f0d5ff" },
-  { name: "Inventory", icon: "📦", color: "#d5ffd5" },
-  { name: "Manufactur", icon: "🏭", color: "#ffd5f0" },
-  { name: "Sales", icon: "📈", color: "#f0ffd5" },
-  { name: "HR", icon: "👥", color: "#d5e8f0" },
-  { name: "Dashboard", icon: "🎛️", color: "#f0e8d5" },
-  // Header Apps-menu modules that had no landing card yet.
-  { name: "Project Acctg", icon: "🗂️", color: "#d5eaf5" },
-  { name: "Budgeting", icon: "🐷", color: "#e0e0ff" },
-  { name: "Supply Chain", icon: "🚚", color: "#fff0d5" },
-  { name: "Open Platform", icon: "🔌", color: "#ead5f5" },
-  { name: "Quality", icon: "🛡️", color: "#d5f5e0" },
-  { name: "Emp. Portal", icon: "🪪", color: "#d5e8f5" },
-  { name: "Eng. Maint.", icon: "🔧", color: "#f5e8d5" },
-  { name: "Medical", icon: "🩺", color: "#ffe0e8" },
-  { name: "Trade Finance", icon: "🏦", color: "#e8f5d5" },
-  { name: "Transport", icon: "🚗", color: "#d5f5f5" },
-  { name: "Analytics", icon: "📊", color: "#e8d5f5" },
-  { name: "Real Estate", icon: "🏢", color: "#f5d5e8" },
-  { name: "Education", icon: "🏫", color: "#fffbe6" },
-  { name: "Merchandising", icon: "👕", color: "#d5ffe8" },
-  { name: "Fund Acctg", icon: "🤲", color: "#ffe8e8" },
-  { name: "University", icon: "🎓", color: "#e8e8ff" },
-];
+export const APPS: AppItem[] = productInventory.modules.map((module) => ({ name: module.titleKey, icon: "", color: "#1088ef" }));
 
 export const ALTS: Record<string, string> = {
   Accounting: "Quickbooks",
@@ -113,27 +72,5 @@ export const FEATURES: FeatureItem[] = [
   },
 ];
 
-export const TESTIMONIALS: TestimonialItem[] = [
-  {
-    name: "Nazmus Sadat",
-    role: "Project Manager, Net Reputation",
-    quote:
-      "Adon ERP cut our billing time by 70%. Every invoice runs itself now.",
-    avatar: "🌸",
-    score: 5,
-  },
-  {
-    name: "David Rayan",
-    role: "CEO, Reputation Prime",
-    quote: "The accounting module alone replaced three separate tools we used.",
-    avatar: "🎯",
-    score: 5,
-  },
-  {
-    name: "Md Mosarouf Hossain",
-    role: "CFO, Gravionne",
-    quote: "We grew 3× without hiring extra finance staff. That says it all.",
-    avatar: "🌿",
-    score: 5,
-  },
-];
+// Endorsements are withheld until evidence and publication consent are documented.
+export const TESTIMONIALS: TestimonialItem[] = [];

@@ -1,4 +1,5 @@
 "use client";
+import { DemoMoney } from "../demo-money";
 
 import type { CSSProperties, ReactNode } from "react";
 import {
@@ -156,7 +157,7 @@ function AccountingBody({ m }: { m: Metrics }) {
     <>
       <Label>{m("netCash")}</Label>
       <div className="flex items-end justify-between gap-2">
-        <Value>৳ 4.82 Cr</Value>
+        <Value><DemoMoney amount={48200000} /></Value>
         <svg viewBox="0 0 80 28" className="h-7 w-20" aria-hidden="true">
           <path d="M0 22 L12 18 L24 20 L36 12 L48 14 L60 7 L80 4 V28 H0 Z" className="fill-(--accent)/12" />
           <path d="M0 22 L12 18 L24 20 L36 12 L48 14 L60 7 L80 4" fill="none" className="stroke-(--accent)" strokeWidth="1.6" strokeLinejoin="round" />
@@ -164,10 +165,10 @@ function AccountingBody({ m }: { m: Metrics }) {
       </div>
       <div className="mt-2 grid grid-cols-2 gap-1.5 text-[10px]">
         <span className="rounded-lg bg-(--cream) px-2 py-1 text-(--muted)">
-          {m("receivables")} <b className="block font-semibold text-(--ink)">৳ 1.24 Cr</b>
+          {m("receivables")} <b className="block font-semibold text-(--ink)"><DemoMoney amount={12400000} /></b>
         </span>
         <span className="rounded-lg bg-(--cream) px-2 py-1 text-(--muted)">
-          {m("payables")} <b className="block font-semibold text-(--ink)">৳ 0.86 Cr</b>
+          {m("payables")} <b className="block font-semibold text-(--ink)"><DemoMoney amount={8600000} /></b>
         </span>
       </div>
     </>
@@ -246,7 +247,7 @@ function EducationBody({ m }: { m: Metrics }) {
         </div>
       </div>
       <p className="mt-2 text-[10px] text-(--muted)">
-        {m("feesCollected")} <b className="font-semibold text-(--ink)">৳ 18.6 L</b>
+        {m("feesCollected")} <b className="font-semibold text-(--ink)"><DemoMoney amount={1860000} /></b>
       </p>
     </>
   );
@@ -306,7 +307,7 @@ function SalesBody({ m }: { m: Metrics }) {
   return (
     <>
       <Label>{m("pipeline")}</Label>
-      <Value>৳ 2.3 Cr</Value>
+      <Value><DemoMoney amount={23000000} /></Value>
       <div className="mt-2 space-y-1" aria-hidden="true">
         {[100, 68, 41].map((w, i) => (
           <span
@@ -382,7 +383,7 @@ export function ModuleChip({
   moduleKey: ModuleKey;
   name: string;
   label: string;
-  value: string;
+  value: ReactNode;
 }) {
   const { icon: Icon, accent } = MODULE_META[moduleKey];
   return (

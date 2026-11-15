@@ -1,4 +1,6 @@
 "use client";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -174,7 +176,7 @@ export default function GithubPage() {
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://github.com"
+                href="https://github.com/estiakahmed98/EdenERP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-xl btn-gradient px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-transform duration-300 hover:-translate-y-0.5"
@@ -192,7 +194,7 @@ export default function GithubPage() {
             </div>
 
             {/* Trust / activity card */}
-            <div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
+            {hasMarketingEvidence("github:unverified-commit-activity") ? (<div className="rounded-[2rem] border border-border bg-card p-6 shadow-[0_30px_80px_rgba(0,0,0,0.08)]">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                   <GitBranch className="h-5 w-5 text-primary" />
@@ -227,7 +229,7 @@ export default function GithubPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>) : null}
           </motion.div>
 
           {/* Right — code preview card */}
@@ -682,7 +684,7 @@ export default function GithubPage() {
       </section>
 
       {/* ═════════════════════ TESTIMONIALS ═════════════════════ */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      {hasMarketingEvidence("community/collaborate/github/GithubPage.tsx:endorsement:0") ? (<section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <SectionEyebrow
             iconName={t("testimonialsSection.eyebrowIcon")}
@@ -729,7 +731,7 @@ export default function GithubPage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section>) : null}
 
       {/* ═════════════════════ CTA ═════════════════════ */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
@@ -760,7 +762,7 @@ export default function GithubPage() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
-                href="https://github.com"
+                href="https://github.com/estiakahmed98/EdenERP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm font-semibold text-primary shadow-xl transition-all hover:shadow-2xl hover:-translate-y-0.5"

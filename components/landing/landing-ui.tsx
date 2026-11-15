@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "framer-motion";
 
 export const GLOBAL_CSS = `
 .landing-page {
@@ -82,7 +83,11 @@ export const GLOBAL_CSS = `
 .landing-page .hero-d1 { animation-delay:.05s; }
 .landing-page .hero-d2 { animation-delay:.12s; }
 .landing-page .hero-d3 { animation-delay:.2s; }
-@media (prefers-reduced-motion: reduce) { .landing-page .hero-in { animation:none; } }
+@media (prefers-reduced-motion: reduce) {
+  .landing-page .hero-in { animation:none; }
+  .landing-page .reveal { opacity:1; transform:none; transition:none; }
+  .landing-page :is(.marquee-left, .marquee-right) { animation:none; }
+}
 
 .landing-page .font-hand { font-family: var(--hand); }
 .landing-page .landing-heading { font-family: var(--body); font-weight: 700; line-height: var(--type-heading-leading); letter-spacing: var(--type-heading-tracking); text-wrap: balance; }
@@ -387,10 +392,12 @@ export function ThreeBg() {
 }
 
 export function TypeWriter({ words }: { words: string[] }) {
+  const reduceMotion = useReducedMotion();
   const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
 
   useEffect(() => {
+    if (reduceMotion || !words.length) return;
     let timeout: ReturnType<typeof setTimeout>;
     let charIndex = 0;
     let deleting = false;
@@ -420,10 +427,10 @@ export function TypeWriter({ words }: { words: string[] }) {
 
     timeout = setTimeout(step, 400);
     return () => clearTimeout(timeout);
-  }, [wordIndex, words]);
+  }, [wordIndex, words, reduceMotion]);
 
   const phrase = words[wordIndex] ?? "";
-  const typed = text.length;
+  const typed = reduceMotion ? phrase.length : text.length;
 
   // The full phrase is always laid out; untyped characters are just
   // transparent. Line breaks are therefore fixed before typing starts, so a
@@ -443,7 +450,7 @@ export function TypeWriter({ words }: { words: string[] }) {
       );
     }
     const shown = Math.max(0, Math.min(token.length, typed - start));
-    const showCursor = !cursorPlaced && typed >= start && typed <= offset;
+    const showCursor = !reduceMotion && !cursorPlaced && typed >= start && typed <= offset;
     if (showCursor) cursorPlaced = true;
     return (
       <span key={i} className="whitespace-nowrap">

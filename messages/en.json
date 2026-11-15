@@ -60,7 +60,7 @@
     "actions": {
       "liveDemo": "Meet an Advisor with Live Demo",
       "watchDemo": "Watch Demo",
-      "viewAllApps": "Explore 50+ tools",
+      "viewAllApps": "Explore business modules",
       "seeAllFeatures": "Explore all features",
       "contactSales": "Talk to Sales",
       "talkToSales": "Talk to Sales",
@@ -76,7 +76,12 @@
       "free": "FREE",
       "custom": "Custom"
     }
-  },
+  ,
+"whatsapp": {
+  "label": "Chat on WhatsApp",
+  "scrollTop": "Back to top"
+}
+},
   "layout": {
     "header": {
       "nav": {
@@ -36086,7 +36091,7 @@
         "description": "Everything you need to manage your business finances in one place.",
         "items": {
           "globalTax": "Global Tax Compliance",
-          "globalTaxDesc": "Pre-configured for 180+ countries with local tax rules",
+          "globalTaxDesc": "Confirm regional tax and banking requirements with our team.",
           "smartAlerts": "Smart Alerts",
           "smartAlertsDesc": "Automated notifications for unusual activity",
           "recurring": "Recurring Transactions",
@@ -38687,8 +38692,8 @@
           "contact": "Contact Partner"
         },
         "empty": {
-          "title": "No partners found",
-          "description": "Try adjusting your search or filter"
+          "title": "Ask us about partner options.",
+          "description": "Contact our team to discuss your needs and confirm available partner information."
         },
         "banner": {
           "title": "Trusted by leading organizations",
@@ -38960,7 +38965,7 @@
           "breadcrumb": "Community / Collaborate / GitHub",
           "subtitle": "Build Adon ERP",
           "title": "Together, on GitHub",
-          "description": "Adon ERP is open-source. Fork the repo, contribute code, review pull requests, and shape the roadmap alongside developers from more than 180 countries."
+          "description": "Explore the AdonERP repository, inspect the code and discuss proposed changes through GitHub."
         },
         "stats": [
           {
@@ -38983,7 +38988,7 @@
         "whyContribute": {
           "eyebrow": "Why contribute",
           "title": "Your code, shipped worldwide",
-          "description": "Every contribution goes into production. Fix a bug, ship a feature, improve docs — and watch your work land in the hands of tens of thousands of businesses."
+          "description": "Propose fixes, documentation or feature changes. Repository maintainers review and decide which changes are accepted."
         },
         "features": [
           {
@@ -38996,7 +39001,7 @@
           },
           {
             "title": "Power the community",
-            "description": "Your patches and features ship to thousands of businesses. Every line of code you contribute has real-world impact."
+            "description": "Discuss proposed changes with maintainers; publication and deployment require review."
           },
           {
             "title": "Ship faster together",
@@ -40495,7 +40500,7 @@
     "contact": {
       "metadata": {
         "title": "Contact Adon ERP – ERP Software Company in Dhaka, Bangladesh",
-        "description": "Visit or call Adon ERP at Tower 71, ECB Chattar, Dhaka Cantonment, Dhaka-1206. Call +880 1842-781978 for ERP sales, support and implementation in Bangladesh."
+        "description": "Visit or call Adon ERP at Tower 71, ECB Chattar, Dhaka Cantonment, Dhaka-1206. Call +880 1842-781978 or +880 1805412462 for ERP sales, support and implementation in Bangladesh."
       },
       "hero": {
         "eyebrowLabel": "Get in Touch",
@@ -40507,12 +40512,12 @@
         "phone": {
           "title": "Call Us",
           "number1": "+880 1842-781978",
-          "number2": "+880 1842-781978",
+          "number2": "+880 1805412462",
           "action": "Call now"
         },
         "email": {
           "title": "Email Us",
-          "sales": "sales@adonerp.com",
+          "sales": "adonventure@gmail.com",
           "support": "support@adonerp.com",
           "action": "Send email"
         },
@@ -40572,7 +40577,7 @@
       ],
       "cta": {
         "title": "Ready to Enterprise Solution?",
-        "description": "Join 500+ businesses already using Adon ERP to streamline their operations.",
+        "description": "Discuss the workflows, modules and implementation your business needs.",
         "viewPricing": "View Pricing",
         "scheduleCall": "Schedule a Call",
         "freeConsultation": "Free consultation",
@@ -43606,7 +43611,7 @@
     "github": {
       "metadata": {
         "title": "GitHub | AdonERP",
-        "description": "Join our open-source community on GitHub. Contribute code, review pull requests, and shape the roadmap alongside developers from more than 180 countries."
+        "description": "Explore the AdonERP repository, inspect the code and discuss proposed changes through GitHub."
       },
       "hero": {
         "eyebrowIcon": "GitBranch",
@@ -43615,7 +43620,7 @@
         "preHeading": "Build Adon ERP",
         "title": "Together, on",
         "titleHighlight": "GitHub",
-        "description": "Adon ERP is open-source. Fork the repo, contribute code, review pull requests, and shape the roadmap alongside developers from more than 180 countries.",
+        "description": "Explore the AdonERP repository, inspect the code and discuss proposed changes through GitHub.",
         "viewRepoButton": "View Repository",
         "guideButton": "Contributing Guide",
         "latestCommit": {
@@ -43646,7 +43651,7 @@
         "eyebrowLabel": "Why contribute",
         "title": "Your code,",
         "subtitle": "shipped worldwide",
-        "description": "Every contribution goes into production. Fix a bug, ship a feature, improve docs — and watch your work land in the hands of tens of thousands of businesses.",
+        "description": "Propose fixes, documentation or feature changes. Repository maintainers review and decide which changes are accepted.",
         "features": [
           {
             "title": "Open-source codebase",
@@ -43662,7 +43667,7 @@
           },
           {
             "title": "Power the community",
-            "description": "Your patches and features ship to thousands of businesses. Every line of code you contribute has real-world impact.",
+            "description": "Discuss proposed changes with maintainers; publication and deployment require review.",
             "icon": "Users",
             "gradient": "from-rose-500 to-pink-600"
           },
@@ -44488,13 +44493,13 @@
           "title": "Email Support",
           "description": "Send us an email and we'll respond within 24 hours.",
           "action": "Send Email",
-          "time": "support@adon-erp.com"
+          "time": "support@adonerp.com"
         },
         "phoneSupport": {
           "title": "Phone Support",
           "description": "Call our support team for urgent issues.",
           "action": "Call Now",
-          "time": "+1 (800) 123-4567"
+          "time": "+880 1842-781978 / +880 1805412462"
         }
       },
       "status": {
@@ -44547,10 +44552,10 @@
         "titleSuffix": "smart Adon ERP",
         "description": "Keep accounting, sales, customer management, inventory, and team workflows connected in one system. Reduce manual work, avoid mistakes, and make faster business decisions.",
         "altLabel": "Adon",
-        "ecosystemLabel": "{count} native business apps",
-        "ecosystemHint": "Built in, fully connected, and ready from day one",
-        "readyLabel": "All systems ready",
-        "appBadge": "Native app"
+        "ecosystemLabel": "{count} business modules",
+        "ecosystemHint": "Explore their published pages in the Apps directory.",
+        "readyLabel": "Product directory",
+        "appBadge": "Module"
       },
       "nativeAi": {
         "tag": "Smart AI Assistance",
@@ -44612,7 +44617,7 @@
             "pipeline": "Pipeline",
             "wonThisMonth": "Won this month",
             "revenue": "Revenue",
-            "live": "Live",
+            "live": "Sample",
             "onTrack": "On track"
           }
         }
@@ -44704,7 +44709,7 @@
         "titlePrefix": "Modern",
         "titleCircled": "business",
         "titleSuffix": "management software",
-        "note": "No surprises: your data, your rules, one clear price.",
+        "note": "Discuss scope, fees and implementation with an advisor.",
         "cards": [
           {
             "icon": "🌍",
@@ -44727,36 +44732,36 @@
           {
             "icon": "💰",
             "title": "Simple pricing",
-            "desc": "No hidden fees or complicated plans. Transparent pricing designed for growing businesses.",
-            "badge": "Transparent"
+            "desc": "Review the plan scope and discuss a quote based on your team and implementation needs.",
+            "badge": "Discuss scope"
           }
         ]
       },
       "stats": {
-        "tag": "✦ Built for growing businesses",
-        "title": "Start small, grow with confidence",
+        "tag": "Verified directory",
+        "title": "Explore the connected product directory",
         "items": [
           {
-            "value": "100+",
-            "label": "Early users"
+            "value": "—",
+            "label": "Modules"
           },
           {
-            "value": "50+",
-            "label": "Business tools"
+            "value": "—",
+            "label": "Apps directory pages"
           },
           {
-            "value": "Reliable",
-            "label": "Stable daily workflows"
+            "value": "—",
+            "label": "Industry pages"
           },
           {
-            "value": "Simple",
-            "label": "Easy for every team"
+            "value": "—",
+            "label": "Sectors"
           }
         ]
       },
       "testimonials": {
-        "tag": "✦ Customer stories",
-        "title": "Teams love using Adon",
+        "tag": "Product walkthroughs",
+        "title": "See the workflows for yourself.",
         "items": [
           {
             "name": "Nazmus Sadat",
@@ -44810,7 +44815,28 @@
         "title": "Take your business to the next level",
         "description": "Manage billing, payments, renewals, customer relationships, and reporting from one unified platform with Adon ERP."
       }
-    },
+    ,
+"demo": {
+  "preview": "AdonERP · product preview",
+  "title": "Client subscriptions",
+  "subtitle": "Billing and renewal example",
+  "disclosure": "Illustrative sample data. These are fictional businesses and figures, not live customer records or measured results.",
+  "records": "{count} sample records",
+  "revenue": "Monthly revenue",
+  "growth": "Sample change",
+  "renewing": "Example renewals",
+  "id": "ID",
+  "business": "Business",
+  "renewal": "Renewal",
+  "plan": "Plan",
+  "status": "Status",
+  "starter": "Starter",
+  "businessPlan": "Business",
+  "enterprise": "Enterprise",
+  "active": "Active",
+  "pending": "Pending"
+}
+},
     "hotel": {
       "metadata": {
         "title": "Hotel | AdonERP",
@@ -45609,7 +45635,7 @@
         "features": [
           {
             "title": "28,000+ banks supported",
-            "description": "Global coverage across 50+ countries"
+            "description": "Confirm regional tax and banking requirements with our team."
           },
           {
             "title": "95% auto-matching rate",
@@ -45650,7 +45676,7 @@
         "list": [
           {
             "title": "Global Tax Support",
-            "description": "Pre-configured for 180+ countries with local tax requirements",
+            "description": "Confirm regional tax and banking requirements with our team.",
             "gradient": "from-emerald-500 to-cyan-500"
           },
           {
@@ -48384,10 +48410,10 @@
         "description": "Simple, transparent, and flexible pricing plans for Adon ERP. Choose the right plan for your business size and needs."
       },
       "hero": {
-        "eyebrow": "Transparent Pricing",
+        "eyebrow": "Plans and pricing",
         "title": "Simple Plans.",
         "titleHighlight": "Powerful Software.",
-        "description": "Everything your business needs. Choose your plan, set your team size, and get started today.",
+        "description": "Compare the listed features and team sizes. Published charges are shown where configured; otherwise, request a quote.",
         "billingToggle": {
           "yearly": "Yearly",
           "semiannual": "6 Month",
@@ -48635,7 +48661,7 @@
       ],
       "includedFeaturesHeading": "Included features",
       "bottomNote": {
-        "text": "All plans include **unlimited support, hosting & maintenance**. No hidden fees, no limits on features or data.",
+        "text": "Discuss scope, fees and implementation with an advisor.",
         "buttons": {
           "successPacks": "📦 View Success Packs & Implementation",
           "contactSales": "💬 Talk to sales team"
@@ -48672,19 +48698,19 @@
         "items": [
           {
             "question": "How does user-based pricing work?",
-            "answer": "You pay based on the number of active users in your organization. You can increase or decrease user count at any time."
+            "answer": "Team size and scope inform the quote. Review the listed user limits and confirm charges with an advisor."
           },
           {
             "question": "Can I change my plan later?",
-            "answer": "Absolutely. You can upgrade to a higher plan or change user count at any time. Downgrades take effect in the next billing cycle."
+            "answer": "Discuss plan changes, any revised fees and their effective date with the team before making a change."
           },
           {
             "question": "What's the difference between yearly and monthly billing?",
-            "answer": "Yearly billing saves you about 35% compared to monthly, 6-month billing saves about 20%, and quarterly billing saves about 10%. With yearly billing, you're billed once for the entire year."
+            "answer": "Billing periods and any discounts depend on the configured plan and your agreed quote. A quotation-only plan does not advertise a fixed subscription price."
           },
           {
             "question": "What payment methods do you support?",
-            "answer": "We support bank transfer, bKash, Nagad, Rocket, and credit cards."
+            "answer": "Confirm available payment methods and payment terms with our team before placing an order."
           }
         ]
       },
@@ -53634,8 +53660,8 @@
           },
           "address": {
             "line1": "Tower 71, Flat # 9 A-B, 516/3 South Manikdi",
-            "line2": "Matikata Road, ECB Chattar",
-            "line3": "Dhaka Cantonment, Dhaka - 1206"
+            "line2": "Matikata Road, ECB Chattar, Dhaka Cantonment",
+            "line3": "Dhaka - 1206, Bangladesh"
           }
         }
       },
@@ -58555,7 +58581,7 @@
           "sizeAndColourVariantsSeasonalCollections": "Size and colour variants, seasonal collections and omnichannel sales for fashion retail.",
           "retailIndustryPages": "Retail industry pages",
           "industrySpecificExperiencesForEveryKind": "Industry-specific experiences for every kind of retail business.",
-          "theNewBookstorePageIsReady": "The new bookstore page is ready under the industries route. It follows your reference layout while keeping the AdonERP header and footer already used across the project.",
+          "theNewBookstorePageIsReady": "Explore product pages and connected workflows for your sector. Start with the work your team does, then discuss the modules and implementation you need.",
           "openPage": "Open page"
         }
       }
@@ -59829,7 +59855,7 @@
           "smartScheduling": "Smart scheduling",
           "forComplex": "for complex",
           "campuses": "campuses",
-          "manualTimetablingIsARecipeFor": "Manual timetabling is a recipe for disaster. The Adon ERP scheduling engine handles thousands of data points to create a flawless academic week.",
+          "manualTimetablingIsARecipeFor": "Review classes, rooms and timetable conflicts in one workspace.",
           "optimizedForThe": "Optimized for the",
           "localCampusReality": "local campus reality",
           "weKnowThatUniversitySchedulingIsn": "We know that university scheduling isn't just about time. It's about space, resources, and the physical limits of your campus. Adon ERP is built to respect those limits.",
@@ -60161,7 +60187,7 @@
           "aSeamlessFlow": "A seamless flow",
           "fromAdvising": "from advising",
           "toEnrollment": "to enrollment",
-          "registrationIsTheBusiestTimeOf": "Registration is the busiest time of the year. The Adon ERP Registration module is designed to handle thousands of students without a single glitch.",
+          "registrationIsTheBusiestTimeOf": "Manage course selections, prerequisites and registration records in one workspace.",
           "designedForThe": "Designed for the",
           "highStressRush": "high-stress rush",
           "weKnowThatDuringRegistrationWeek": "We know that during registration week, every second counts. Adon ERP ensures that the system handles the heavy lifting, so your staff can focus on helping students.",
@@ -63299,7 +63325,30 @@
         }
       }
     }
-  },
+  ,
+"industryDirectory": {
+  "eyebrow": "Industry solutions",
+  "title": "An ERP shaped around",
+  "highlight": "your industry.",
+  "lead": "Explore product pages and connected workflows for your sector. Start with the work your team does, then discuss the modules and implementation you need.",
+  "explore": "Explore industries",
+  "directoryTitle": "Find your industry.",
+  "search": "Search industries or businesses",
+  "workflow": "Connected product pages",
+  "sectorsCount": "{count} sectors",
+  "solutionsCount": "{count} industry pages",
+  "sectors": {
+    "garmentsTextile": "Connect style development, material booking and production follow-up across apparel and textile operations.",
+    "manufacturing": "Follow materials, production orders, quality checks and dispatch through the manufacturing workflow.",
+    "retail": "Explore checkout, stock, customer records and outlet reporting for different kinds of shops.",
+    "foodHospitality": "Connect stock, service, checkout and billing across food and hospitality businesses.",
+    "education": "Explore admissions, student records, attendance, fees and learning administration.",
+    "realEstate": "Bring property records, project work, billing and financial reporting into view.",
+    "consulting": "Explore client records, service delivery, billing and reporting for professional teams.",
+    "others": "Explore the workflows behind e-commerce, NGOs and broadcasting."
+  }
+}
+},
   "admin": {
     "shell": {
       "brandTitle": "Adon ERP admin",

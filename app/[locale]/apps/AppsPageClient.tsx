@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
 import { ArrowRight, LayoutGrid, Search, X } from "lucide-react";
 
 import LiveDemoButton from "@/components/live-demo-button";
@@ -9,7 +9,7 @@ import { MODULE_ICONS } from "@/components/landing/MarqueeStrip";
 import { ICON_TONES } from "@/components/landing/landing-ui";
 import { ShowcaseHeading, ShowcaseHighlight } from "@/components/showcase-typography";
 import { Link } from "@/i18n/navigation";
-import { appsMegaMenu } from "@/lib/apps-menu";
+import { productInventory, productCounts } from "@/lib/product-inventory";
 
 /** Which group each module sits in on this page. */
 const CATEGORY_OF: Record<string, string> = {
@@ -50,6 +50,7 @@ type ModuleCard = {
 
 export default function AppsPageClient() {
   const t = useTranslations("pages.apps.hub");
+  const format = useFormatter();
   const tHeader = useTranslations("layout.header");
 
   const [query, setQuery] = useState("");
@@ -57,7 +58,7 @@ export default function AppsPageClient() {
 
   const modules = useMemo<ModuleCard[]>(
     () =>
-      appsMegaMenu.map((column) => {
+      productInventory.modules.map((column) => {
         const id = column.titleKey.split(".")[1];
         return {
           id,
@@ -70,7 +71,7 @@ export default function AppsPageClient() {
     [tHeader],
   );
 
-  const totalPages = modules.reduce((n, m) => n + m.links.length, 0);
+  const totalPages = productCounts.appPages;
   const q = query.trim().toLowerCase();
 
   const visible = modules
@@ -168,7 +169,7 @@ export default function AppsPageClient() {
                 </button>
               )}
             </label>
-            <p className="mt-3 text-[13px] text-muted-foreground">{t("summary", { modules: modules.length, pages: totalPages })}</p>
+            <p className="mt-3 text-[13px] text-muted-foreground">{t("summary", { modules: format.number(productCounts.modules), pages: format.number(totalPages) })}</p>
           </div>
         </div>
       </section>

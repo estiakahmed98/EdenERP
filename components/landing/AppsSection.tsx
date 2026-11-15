@@ -1,52 +1,12 @@
 "use client";
 
-import {
-  BarChart3,
-  Bot,
-  BookOpen,
-  Building2,
-  Calculator,
-  CalendarRange,
-  Car,
-  Check,
-  Clock3,
-  ContactRound,
-  CreditCard,
-  Factory,
-  FileSignature,
-  FolderKanban,
-  FolderOpen,
-  Globe2,
-  GraduationCap,
-  HandCoins,
-  Handshake,
-  Landmark,
-  Layers3,
-  LayoutDashboard,
-  LifeBuoy,
-  ListChecks,
-  MessageCircle,
-  PackageOpen,
-  PiggyBank,
-  Plug,
-  RefreshCw,
-  School,
-  Send,
-  ShieldCheck,
-  Shirt,
-  ShoppingBag,
-  Stethoscope,
-  Store,
-  TrendingUp,
-  Truck,
-  UsersRound,
-  Wrench,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Check, Layers3, type LucideIcon } from "lucide-react";
+import { useFormatter, useTranslations } from "next-intl";
 
-import { APPS, type AppItem } from "./landing-data";
+import { productInventory, productCounts } from "@/lib/product-inventory";
+import { MODULE_ICONS } from "./MarqueeStrip";
+import { Link } from "@/i18n/navigation";
+type AppItem = { name: string; Icon: LucideIcon; href: string };
 import {
   HandText,
   ICON_TONES,
@@ -56,49 +16,6 @@ import {
   marqueeDuration,
 } from "./landing-ui";
 import LiveDemoButton from "../live-demo-button";
-
-const APP_ICONS: Record<string, LucideIcon> = {
-  Accounting: Calculator,
-  Knowledge: BookOpen,
-  Sign: FileSignature,
-  CRM: Handshake,
-  Studio: Wrench,
-  Subscribe: RefreshCw,
-  AI: Bot,
-  "Point Sale": Store,
-  Discuss: MessageCircle,
-  Documents: FolderOpen,
-  Project: ListChecks,
-  Timesheets: Clock3,
-  "Field Svc": Zap,
-  Planning: CalendarRange,
-  Helpdesk: LifeBuoy,
-  eCommerce: ShoppingBag,
-  Website: Globe2,
-  "Email Mktg": Send,
-  Purchase: CreditCard,
-  Inventory: PackageOpen,
-  Manufactur: Factory,
-  Sales: TrendingUp,
-  HR: UsersRound,
-  Dashboard: LayoutDashboard,
-  "Project Acctg": FolderKanban,
-  Budgeting: PiggyBank,
-  "Supply Chain": Truck,
-  "Open Platform": Plug,
-  Quality: ShieldCheck,
-  "Emp. Portal": ContactRound,
-  "Eng. Maint.": Wrench,
-  Medical: Stethoscope,
-  "Trade Finance": Landmark,
-  Transport: Car,
-  Analytics: BarChart3,
-  "Real Estate": Building2,
-  Education: School,
-  Merchandising: Shirt,
-  "Fund Acctg": HandCoins,
-  University: GraduationCap,
-};
 
 const ROW_COUNT = 4;
 
@@ -116,13 +33,15 @@ function AppGroup({
   return (
     <div aria-hidden={ariaHidden} className="flex shrink-0 gap-3 pr-3">
       {apps.map((app, appIndex) => {
-        const Icon = APP_ICONS[app.name] ?? Layers3;
+        const Icon = app.Icon;
         // Checkerboard tones: neighbours differ across and between rows.
         const tone = ICON_TONES[(rowIndex + appIndex) % ICON_TONES.length];
 
         return (
-          <div
+          <Link
             key={app.name}
+            href={app.href}
+            tabIndex={ariaHidden ? -1 : undefined}
             className={`flex h-16 w-52 shrink-0 items-center gap-3 px-3 text-left sm:w-56 ${SURFACE}`}
           >
             <span
@@ -140,7 +59,7 @@ function AppGroup({
                 {badge}
               </span>
             </span>
-          </div>
+          </Link>
         );
       })}
     </div>
@@ -177,9 +96,16 @@ function AppMarqueeRow({
 
 export default function AppsSection() {
   const t = useTranslations("pages.home");
-  const perRow = Math.ceil(APPS.length / ROW_COUNT);
+  const format = useFormatter();
+  const header = useTranslations("layout.header");
+  const apps = productInventory.modules.map((module) => ({
+    name: header(module.titleKey),
+    Icon: MODULE_ICONS[module.titleKey] ?? Layers3,
+    href: module.links[0].href,
+  }));
+  const perRow = Math.ceil(apps.length / ROW_COUNT);
   const rows = Array.from({ length: ROW_COUNT }, (_, rowIndex) =>
-    APPS.slice(rowIndex * perRow, (rowIndex + 1) * perRow),
+    apps.slice(rowIndex * perRow, (rowIndex + 1) * perRow),
   );
 
   return (
@@ -203,7 +129,9 @@ export default function AppsSection() {
               </span>
               <div>
                 <h3 className="font-body text-sm font-semibold text-(--ink) sm:text-base">
-                  {t("apps.ecosystemLabel", { count: APPS.length })}
+                  {t("apps.ecosystemLabel", {
+                    count: format.number(productCounts.modules),
+                  })}
                 </h3>
                 <p className="mt-0.5 text-[11px] text-(--muted)">
                   {t("apps.ecosystemHint")}

@@ -1,4 +1,7 @@
 "use client";
+import SampleDataNote from "@/components/sample-data-note";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -290,6 +293,7 @@ export default function ExpensesPage() {
 
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+      <SampleDataNote />
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
@@ -332,7 +336,7 @@ export default function ExpensesPage() {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-4 pt-4">
+              {hasMarketingEvidence("finance:Expenses:customer-rating") ? (<div className="flex items-center gap-4 pt-4">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div
@@ -349,7 +353,7 @@ export default function ExpensesPage() {
                     {t("hero.rating")}
                   </span>
                 </div>
-              </div>
+              </div>) : null}
             </div>
 
             {/* Right - Expense Dashboard */}
@@ -755,7 +759,7 @@ export default function ExpensesPage() {
 
       {/* Testimonial Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-slate-100 to-white dark:from-slate-900 dark:to-slate-950 px-6 py-12 text-center shadow-xl sm:px-10">
+        {hasMarketingEvidence("apps/Finance/Expenses:endorsement:0") ? (<div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-slate-100 to-white dark:from-slate-900 dark:to-slate-950 px-6 py-12 text-center shadow-xl sm:px-10">
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-10 left-10 h-20 w-20 rounded-full bg-emerald-500" />
             <div className="absolute bottom-10 right-10 h-32 w-32 rounded-full bg-cyan-500" />
@@ -780,7 +784,7 @@ export default function ExpensesPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div>) : null}
       </section>
 
       {/* Final CTA Section */}

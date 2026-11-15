@@ -1,7 +1,10 @@
 "use client";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import Image from "next/image";
 import { useState } from "react";
+import LiveDemoButton from "@/components/live-demo-button";
 import { ArrowRight, Search, Star, Users } from "lucide-react";
 import { useTranslations } from "next-intl";
 
@@ -74,7 +77,7 @@ export default function PartnersPage() {
       industryFilter === t("filters.allIndustries") ||
       partner.industry === industryFilter;
 
-    return matchesSearch && matchesLevel && matchesIndustry;
+    return hasMarketingEvidence(`partner:${partner.name}`) && matchesSearch && matchesLevel && matchesIndustry;
   });
 
   return (
@@ -90,10 +93,7 @@ export default function PartnersPage() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             {t("hero.description")}
           </p>
-          <button className="mt-8 inline-flex items-center gap-2 rounded-xl btn-gradient px-6 py-3 font-semibold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5">
-            {t("hero.cta")}
-            <ArrowRight className="h-4 w-4" />
-          </button>
+          <div className="mt-8 flex justify-center"><LiveDemoButton /></div>
         </div>
       </section>
 
@@ -227,11 +227,12 @@ export default function PartnersPage() {
               {t("empty.title")}
             </h3>
             <p className="text-muted-foreground">{t("empty.description")}</p>
+            <div className="mt-5 flex justify-center"><LiveDemoButton /></div>
           </div>
         ) : null}
 
         <div className="mt-16 rounded-3xl bg-gradient-to-r from-primary/10 to-primary/5 p-8 text-center">
-          <div className="mx-auto max-w-2xl">
+          {hasMarketingEvidence("partners:organization-endorsements") ? (<div className="mx-auto max-w-2xl">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
               <Users className="h-6 w-6 text-primary" />
             </div>
@@ -241,7 +242,7 @@ export default function PartnersPage() {
             <p className="mt-2 text-muted-foreground">
               {t("banner.description")}
             </p>
-          </div>
+          </div>) : null}
         </div>
       </section>
     </main>

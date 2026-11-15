@@ -42,8 +42,7 @@ export default async function HelpPage() {
       ]}
       contact={{
         email: siteConfig.business.supportEmail,
-        phone: siteConfig.business.phone,
-        phoneDisplay: siteConfig.business.phoneDisplay,
+        phones: [...siteConfig.business.phones],
       }}
     />
   );

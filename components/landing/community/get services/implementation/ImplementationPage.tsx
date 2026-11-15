@@ -1,4 +1,6 @@
 "use client";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import { useState } from "react";
 import {
@@ -305,7 +307,7 @@ export default function PricingPacksPage() {
       </section>
 
       {/* Trust Badge */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      {hasMarketingEvidence("implementation:trust-badges") ? (<section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-8 text-center">
           <div className="flex items-center gap-2 text-sm text-muted-foreground" style={{ fontFamily: "var(--font-content)" }}>
             <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
@@ -324,7 +326,7 @@ export default function PricingPacksPage() {
             <span>{t("trust.3")}</span>
           </div>
         </div>
-      </section>
+      </section>) : null}
     </main>
   );
 }

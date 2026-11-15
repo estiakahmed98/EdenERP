@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { useTranslations } from "next-intl";
+import { useFormatter, useTranslations } from "next-intl";
+import { productCounts } from "@/lib/product-inventory";
 import {
   Blocks,
   ShieldCheck,
@@ -16,10 +17,22 @@ import { HandText, ICON_TONES, SectionTag, plainTag } from "./landing-ui";
 const STAT_ICONS: LucideIcon[] = [UsersRound, Blocks, ShieldCheck, Smile];
 
 // A slight, uneven tilt so the tiles read like notes pinned to a board.
-const TILTS = ["-rotate-1", "rotate-[0.6deg]", "-rotate-[0.4deg]", "rotate-1"] as const;
+const TILTS = [
+  "-rotate-1",
+  "rotate-[0.6deg]",
+  "-rotate-[0.4deg]",
+  "rotate-1",
+] as const;
 
 export default function StatsSection() {
   const t = useTranslations("pages.home");
+  const format = useFormatter();
+  const counts = [
+    productCounts.modules,
+    productCounts.appPages,
+    productCounts.industryPages,
+    productCounts.sectors,
+  ];
   const stats = t.raw("stats.items") as Array<{
     value: string;
     label: string;
@@ -55,11 +68,15 @@ export default function StatsSection() {
                   <span
                     className={`grid h-10 w-10 place-items-center rounded-xl transition-transform duration-300 group-hover:-translate-y-0.5 ${ICON_TONES[index % ICON_TONES.length]}`}
                   >
-                    <Icon className="h-4.5 w-4.5" strokeWidth={1.9} aria-hidden="true" />
+                    <Icon
+                      className="h-4.5 w-4.5"
+                      strokeWidth={1.9}
+                      aria-hidden="true"
+                    />
                   </span>
 
                   <p className="mt-4 font-body text-[40px] font-bold leading-none text-(--ink)">
-                    {stat.value}
+                    {format.number(counts[index])}
                   </p>
                   <p className="mt-2 font-body text-[13px] leading-snug text-(--muted)">
                     {stat.label}

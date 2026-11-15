@@ -3,12 +3,13 @@
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { siteConfig } from "@/lib/site";
+import { useTranslations } from "next-intl";
+import { whatsappUrl } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "8801842781978";
-const WHATSAPP_MESSAGE =
-  "Hi, আমি Adon ERP সম্পর্কে জানতে চাই। আপনাদের ERP সলিউশন সম্পর্কে বিস্তারিত জানাবেন?";
 
 export default function FloatingActions() {
+  const t = useTranslations("common.whatsapp");
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function FloatingActions() {
       {showScrollTop && (
         <button
           type="button"
-          aria-label="Scroll to top"
+          aria-label={t("scrollTop")}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex h-11 w-11 items-center justify-center rounded-full border border-primary bg-background/90 text-primary shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-white"
         >
@@ -36,10 +37,10 @@ export default function FloatingActions() {
       )}
 
       <a
-        href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
+        href={whatsappUrl(siteConfig.business.whatsapp)}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
+        aria-label={t("label")}
         className="flex h-12 w-12 items-center justify-center rounded-full border border-[#25D366] bg-background/90 text-[#25D366] shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-[#25D366] hover:bg-[#25D366] hover:text-white hover:shadow-xl"
       >
         <FaWhatsapp size={26} />

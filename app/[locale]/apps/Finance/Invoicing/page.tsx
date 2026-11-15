@@ -1,5 +1,8 @@
 //app/%5Blocale%5D/apps/Finance/Invoicing/page.tsx
 "use client";
+import SampleDataNote from "@/components/sample-data-note";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
@@ -116,6 +119,7 @@ export default function InvoicingPage() {
 
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+      <SampleDataNote />
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
@@ -156,7 +160,7 @@ export default function InvoicingPage() {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-6 pt-4">
+              {hasMarketingEvidence("finance:Invoicing:customer-rating") ? (<div className="flex items-center gap-6 pt-4">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div
@@ -176,7 +180,7 @@ export default function InvoicingPage() {
                     {t("hero.rating")}
                   </span>
                 </div>
-              </div>
+              </div>) : null}
             </div>
 
             {/* Right - Invoice Preview */}
@@ -589,7 +593,7 @@ export default function InvoicingPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      {hasMarketingEvidence("apps/Finance/Invoicing:endorsement:0") ? (<section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           {testimonialsList.map((testimonial: any, idx: number) => (
             <motion.div
@@ -631,7 +635,7 @@ export default function InvoicingPage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section>) : null}
 
       {/* Final CTA Section */}
       <section

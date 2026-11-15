@@ -59,7 +59,7 @@
     "actions": {
       "liveDemo": "Danışmanımızla Görüşün, Canlı Demoyu Keşfedin",
       "watchDemo": "Demoyu İzle",
-      "viewAllApps": "50+ aracı keşfedin",
+      "viewAllApps": "İş modüllerini keşfedin",
       "seeAllFeatures": "Tüm özellikleri keşfedin",
       "contactSales": "Satış Ekibiyle Görüşün",
       "talkToSales": "Satış Ekibiyle Görüşün",
@@ -75,7 +75,12 @@
       "free": "Ücretsiz",
       "custom": "Özel"
     }
-  },
+  ,
+"whatsapp": {
+  "label": "WhatsApp üzerinden iletişim",
+  "scrollTop": "Başa dön"
+}
+},
   "layout": {
     "header": {
       "nav": {
@@ -36135,7 +36140,7 @@
         "description": "İşletmenizin finansını tek bir yerde yönetmek için ihtiyacınız olan her şey.",
         "items": {
           "globalTax": "Küresel Vergi Uyumluluğu",
-          "globalTaxDesc": "Yerel vergi kurallarıyla 180+ ülke için önceden yapılandırılmış",
+          "globalTaxDesc": "Yerel vergi ve banka entegrasyonu ihtiyaçlarını ekibimizle doğrulayın.",
           "smartAlerts": "Akıllı Uyarılar",
           "smartAlertsDesc": "Olağandışı faaliyetler için otomatik bildirimler",
           "recurring": "Tekrarlanan İşlemler",
@@ -38840,8 +38845,8 @@
           "contact": "İş Ortağıyla İletişime Geç"
         },
         "empty": {
-          "title": "İş ortağı bulunamadı",
-          "description": "Aramanızı veya filtrenizi değiştirmeyi deneyin"
+          "title": "İş ortağı seçeneklerini bize sorun.",
+          "description": "İhtiyaçlarınızı görüşmek ve mevcut iş ortağı bilgilerini doğrulamak için ekibimizle iletişime geçin."
         },
         "banner": {
           "title": "Önde gelen kuruluşların güveniyle",
@@ -39135,7 +39140,7 @@
           "breadcrumb": "Topluluk / İş Birliği / GitHub",
           "subtitle": "Adon ERP'yi Geliştirin",
           "title": "GitHub'da Birlikte",
-          "description": "Adon ERP açık kaynaklıdır. Depoyu fork'layın, koda katkıda bulunun, pull request'leri inceleyin ve 180'den fazla ülkeden geliştiricilerle birlikte yol haritasını şekillendirin."
+          "description": "AdonERP deposunu ve kodunu inceleyin, önerilen değişiklikleri GitHub üzerinden görüşün."
         },
         "stats": [
           {
@@ -39158,7 +39163,7 @@
         "whyContribute": {
           "eyebrow": "Neden katkıda bulunmalı?",
           "title": "Kodunuz, dünya çapında yayında",
-          "description": "Her katkı üretime alınır. Bir hatayı düzeltin, bir özellik yayınlayın, dokümanları iyileştirin — ve çalışmanızın on binlerce işletmenin eline ulaştığını görün."
+          "description": "Düzeltme, belge veya özellik değişikliği önerin. Depo sorumluları değişiklikleri inceleyerek kabul kararını verir."
         },
         "features": [
           {
@@ -39171,7 +39176,7 @@
           },
           {
             "title": "Topluluğa güç verin",
-            "description": "Yamalarınız ve özellikleriniz binlerce işletmeye ulaşır. Katkıda bulunduğunuz her kod satırı gerçek dünyada etki yaratır."
+            "description": "Önerilen değişiklikleri sorumlularla görüşün; yayımlama ve dağıtım inceleme gerektirir."
           },
           {
             "title": "Birlikte daha hızlı yayınlayın",
@@ -40707,12 +40712,12 @@
         "phone": {
           "title": "Bizi Arayın",
           "number1": "+880 1842-781978",
-          "number2": "+880 1842-781978",
+          "number2": "+880 1805412462",
           "action": "Şimdi ara"
         },
         "email": {
           "title": "Bize E-posta Gönderin",
-          "sales": "sales@adonerp.com",
+          "sales": "adonventure@gmail.com",
           "support": "support@adonerp.com",
           "action": "E-posta gönder"
         },
@@ -40772,7 +40777,7 @@
       ],
       "cta": {
         "title": "İşletmenizi dönüştürmeye hazır mısınız?",
-        "description": "Operasyonlarını kolaylaştırmak için zaten Adon ERP kullanan 500+ işletmeye katılın.",
+        "description": "İşletmenizin ihtiyaç duyduğu iş akışlarını, modülleri ve kurulumu görüşün.",
         "viewPricing": "Fiyatlandırmayı Görüntüle",
         "scheduleCall": "Görüşme Planla",
         "freeConsultation": "Ücretsiz danışmanlık",
@@ -43927,7 +43932,7 @@
     "github": {
       "metadata": {
         "title": "GitHub | AdonERP",
-        "description": "GitHub'daki açık kaynak topluluğumuza katılın. Kod katkısı yapın, pull request'leri inceleyin ve 180'den fazla ülkeden geliştiricilerle birlikte yol haritasını şekillendirin."
+        "description": "AdonERP deposunu ve kodunu inceleyin, önerilen değişiklikleri GitHub üzerinden görüşün."
       },
       "hero": {
         "eyebrowIcon": "GitBranch",
@@ -43936,7 +43941,7 @@
         "preHeading": "Adon ERP'yi Geliştirin",
         "title": "Birlikte,",
         "titleHighlight": "GitHub",
-        "description": "Adon ERP açık kaynaklıdır. Depoyu fork'layın, koda katkıda bulunun, pull request'leri inceleyin ve 180'den fazla ülkeden geliştiricilerle birlikte yol haritasını şekillendirin.",
+        "description": "AdonERP deposunu ve kodunu inceleyin, önerilen değişiklikleri GitHub üzerinden görüşün.",
         "viewRepoButton": "Depoyu Görüntüle",
         "guideButton": "Katkı Rehberi",
         "latestCommit": {
@@ -43967,7 +43972,7 @@
         "eyebrowLabel": "Neden katkıda bulunmalı?",
         "title": "Kodunuz,",
         "subtitle": "dünya çapında yayında",
-        "description": "Her katkı üretime alınır. Bir hatayı düzeltin, bir özellik yayınlayın, dokümanları iyileştirin — ve çalışmanızın on binlerce işletmenin eline ulaştığını görün.",
+        "description": "Düzeltme, belge veya özellik değişikliği önerin. Depo sorumluları değişiklikleri inceleyerek kabul kararını verir.",
         "features": [
           {
             "title": "Açık kaynak kod tabanı",
@@ -43983,7 +43988,7 @@
           },
           {
             "title": "Topluluğa güç verin",
-            "description": "Yamalarınız ve özellikleriniz binlerce işletmeye ulaşır. Katkıda bulunduğunuz her kod satırı gerçek dünyada etki yaratır.",
+            "description": "Önerilen değişiklikleri sorumlularla görüşün; yayımlama ve dağıtım inceleme gerektirir.",
             "icon": "Users",
             "gradient": "gül-500'den pembe-600'e"
           },
@@ -44824,13 +44829,13 @@
           "title": "E-posta Desteği",
           "description": "Bize e-posta gönderin; 24 saat içinde yanıt vereceğiz.",
           "action": "E-posta Gönder",
-          "time": "support@adon-erp.com"
+          "time": "support@adonerp.com"
         },
         "phoneSupport": {
           "title": "Telefon Desteği",
           "description": "Acil sorunlar için destek ekibimizi arayın.",
           "action": "Şimdi Ara",
-          "time": "+1 (800) 123-4567"
+          "time": "+880 1842-781978 / +880 1805412462"
         }
       },
       "status": {
@@ -44883,10 +44888,10 @@
         "titleSuffix": "akıllı Adon ERP ile",
         "description": "Muhasebe, satış, müşteri yönetimi, envanter ve ekip iş akışlarını tek sistemde bağlantılı tutun. Manuel işi azaltın, hataları önleyin ve daha hızlı iş kararları alın.",
         "altLabel": "Adon",
-        "ecosystemLabel": "{count} yerleşik iş uygulaması",
-        "ecosystemHint": "Dahili, tamamen bağlantılı ve ilk günden kullanıma hazır",
-        "readyLabel": "Tüm sistemler hazır",
-        "appBadge": "Yerleşik uygulama"
+        "ecosystemLabel": "{count} iş modülü",
+        "ecosystemHint": "Uygulama dizinindeki yayımlanmış sayfaları inceleyin.",
+        "readyLabel": "Ürün dizini",
+        "appBadge": "Modül"
       },
       "nativeAi": {
         "tag": "Akıllı Yapay Zekâ Desteği",
@@ -44948,7 +44953,7 @@
             "pipeline": "Satış hunisi",
             "wonThisMonth": "Bu ay kazanılan",
             "revenue": "Gelir",
-            "live": "Canlı",
+            "live": "Örnek",
             "onTrack": "Yolunda"
           }
         }
@@ -45052,7 +45057,7 @@
         "titlePrefix": "Çağdaş",
         "titleCircled": "iş",
         "titleSuffix": "yönetim yazılımı",
-        "note": "Sürpriz yok: verileriniz, kurallarınız, tek ve net fiyat.",
+        "note": "Kapsamı, ücretleri ve kurulumu bir danışmanla görüşün.",
         "cards": [
           {
             "icon": "🌍",
@@ -45075,36 +45080,36 @@
           {
             "icon": "💰",
             "title": "Basit fiyatlandırma",
-            "desc": "Gizli ücretler veya karmaşık planlar yok. Büyüyen işletmeler için tasarlanmış şeffaf fiyatlandırma.",
-            "badge": "Şeffaf"
+            "desc": "Ekibinizin ve kurulumunuzun ihtiyaçlarına göre plan kapsamını ve teklifi görüşün.",
+            "badge": "Kapsamı görüşün"
           }
         ]
       },
       "stats": {
-        "tag": "✦ Büyüyen işletmeler için tasarlandı",
-        "title": "Küçük başlayın, güvenle büyüyün",
+        "tag": "Doğrulanmış dizin",
+        "title": "Bağlantılı ürün dizinini keşfedin",
         "items": [
           {
-            "value": "100+",
-            "label": "İlk kullanıcılar"
+            "value": "—",
+            "label": "Modüller"
           },
           {
-            "value": "50+",
-            "label": "İş araçları"
+            "value": "—",
+            "label": "Uygulama dizini sayfaları"
           },
           {
-            "value": "Güvenilir",
-            "label": "Kararlı günlük iş akışları"
+            "value": "—",
+            "label": "Sektör sayfaları"
           },
           {
-            "value": "Basit",
-            "label": "Her ekip için kolay"
+            "value": "—",
+            "label": "Sektörler"
           }
         ]
       },
       "testimonials": {
-        "tag": "✦ Müşteri hikâyeleri",
-        "title": "Ekipler Adon'u kullanmayı seviyor",
+        "tag": "Ürün rehberleri",
+        "title": "İş akışlarını kendiniz inceleyin.",
         "items": [
           {
             "name": "Nazmus Sadat",
@@ -45158,7 +45163,28 @@
         "title": "İşletmenizi bir sonraki seviyeye taşıyın",
         "description": "Adon ERP ile faturalandırma, ödemeler, yenilemeler, müşteri ilişkileri ve raporlamayı tek bir birleşik platformdan yönetin."
       }
-    },
+    ,
+"demo": {
+  "preview": "AdonERP · ürün önizlemesi",
+  "title": "Müşteri abonelikleri",
+  "subtitle": "Faturalama ve yenileme örneği",
+  "disclosure": "Temsili örnek veriler. Şirketler ve rakamlar kurgusaldır; canlı müşteri kayıtları veya ölçülmüş sonuçlar değildir.",
+  "records": "{count} örnek kayıt",
+  "revenue": "Aylık gelir",
+  "growth": "Örnek değişim",
+  "renewing": "Örnek yenilemeler",
+  "id": "ID",
+  "business": "İşletme",
+  "renewal": "Yenileme",
+  "plan": "Plan",
+  "status": "Durum",
+  "starter": "Başlangıç",
+  "businessPlan": "İşletme",
+  "enterprise": "Kurumsal",
+  "active": "Etkin",
+  "pending": "Bekliyor"
+}
+},
     "hotel": {
       "metadata": {
         "title": "Otel | AdonERP",
@@ -46018,7 +46044,7 @@
         "features": [
           {
             "title": "28.000+ banka destekleniyor",
-            "description": "50'den fazla ülkede küresel kapsam"
+            "description": "Yerel vergi ve banka entegrasyonu ihtiyaçlarını ekibimizle doğrulayın."
           },
           {
             "title": "%95 otomatik eşleştirme oranı",
@@ -46059,7 +46085,7 @@
         "list": [
           {
             "title": "Küresel Vergi Desteği",
-            "description": "Yerel vergi gereksinimleriyle 180'den fazla ülke için önceden yapılandırılmış",
+            "description": "Yerel vergi ve banka entegrasyonu ihtiyaçlarını ekibimizle doğrulayın.",
             "gradient": "zümrüt-500'den camgöbeği-500'e"
           },
           {
@@ -48951,10 +48977,10 @@
         "description": "Adon ERP için basit, şeffaf ve esnek fiyatlandırma planları. İşletme büyüklüğünüze ve ihtiyaçlarınıza uygun planı seçin."
       },
       "hero": {
-        "eyebrow": "Şeffaf Fiyatlandırma",
+        "eyebrow": "Planlar ve fiyatlandırma",
         "title": "Basit Planlar.",
         "titleHighlight": "Güçlü Yazılım.",
-        "description": "İşletmenizin ihtiyaç duyduğu her şey. Planınızı seçin, ekip büyüklüğünüzü belirleyin ve bugün başlayın.",
+        "description": "Listelenen özellikleri ve kullanıcı sayılarını karşılaştırın. Yapılandırılmış ücretler gösterilir; diğer durumlarda teklif isteyin.",
         "billingToggle": {
           "yearly": "Yıllık",
           "semiannual": "6 Aylık",
@@ -49206,7 +49232,7 @@
       ],
       "includedFeaturesHeading": "Dahil özellikler",
       "bottomNote": {
-        "text": "Tüm planlara **sınırsız destek, barındırma ve bakım** dahildir. Gizli ücret yok, özellik veya veri sınırı yok.",
+        "text": "Kapsamı, ücretleri ve kurulumu bir danışmanla görüşün.",
         "buttons": {
           "successPacks": "📦 Success Pack'leri ve Uygulamayı Görüntüle",
           "contactSales": "💬 Satış ekibiyle görüşün"
@@ -49243,19 +49269,19 @@
         "items": [
           {
             "question": "Kullanıcı bazlı fiyatlandırma nasıl çalışır?",
-            "answer": "Kuruluşunuzdaki aktif kullanıcı sayısına göre ödeme yaparsınız. Kullanıcı sayısını istediğiniz zaman artırabilir veya azaltabilirsiniz."
+            "answer": "Teklif, ekip büyüklüğüne ve kapsama göre hazırlanır. Listelenen kullanıcı sınırlarını ve ücretleri danışmanınızla doğrulayın."
           },
           {
             "question": "Planımı daha sonra değiştirebilir miyim?",
-            "answer": "Elbette. İstediğiniz zaman daha yüksek bir plana geçebilir veya kullanıcı sayısını değiştirebilirsiniz. Plan düşürme bir sonraki faturalandırma döngüsünde geçerli olur."
+            "answer": "Plan değişikliğinden önce yeni ücretleri ve geçerlilik tarihini ekibimizle görüşün."
           },
           {
             "question": "Yıllık ve aylık faturalandırma arasındaki fark nedir?",
-            "answer": "Yıllık faturalandırma aylığa göre yaklaşık %35, 6 aylık faturalandırma yaklaşık %20, üç aylık faturalandırma ise yaklaşık %10 tasarruf sağlar. Yıllık faturalandırmada tüm yıl için tek seferde faturalandırılırsınız."
+            "answer": "Faturalama dönemleri ve indirimler, yapılandırılmış plana ve üzerinde anlaşılan teklife bağlıdır. Teklife dayalı planlarda sabit abonelik fiyatı ilan edilmez."
           },
           {
             "question": "Hangi ödeme yöntemlerini destekliyorsunuz?",
-            "answer": "Banka havalesi, bKash, Nagad, Rocket ve kredi kartlarını destekliyoruz."
+            "answer": "Sipariş vermeden önce kullanılabilir ödeme yöntemlerini ve koşullarını ekibimizle doğrulayın."
           }
         ]
       },
@@ -54370,8 +54396,8 @@
           },
           "address": {
             "line1": "Kule 71, Daire # 9 A-B, 516/3 Güney Manikdi",
-            "line2": "Matikata Yolu, ECB Chattar",
-            "line3": "Dakka Kantonu, Dakka - 1206"
+            "line2": "Matikata Yolu, ECB Chattar, Dhaka Kantonu",
+            "line3": "Dakka - 1206, Bangladeş"
           }
         }
       },
@@ -59390,7 +59416,7 @@
           "sizeAndColourVariantsSeasonalCollections": "Moda perakendesine yönelik beden ve renk çeşitleri, sezonluk koleksiyonlar ve çok kanallı satışlar.",
           "retailIndustryPages": "Perakende sektörü sayfaları",
           "industrySpecificExperiencesForEveryKind": "Her türlü perakende işi için sektöre özel deneyimler.",
-          "theNewBookstorePageIsReady": "Endüstriler rotası altında yeni kitapçı sayfası hazır. Proje genelinde halihazırda kullanılan AdonERP üstbilgisini ve altbilgisini korurken referans düzeninizi takip eder.",
+          "theNewBookstorePageIsReady": "Sektörünüzün ürün sayfalarını ve bağlantılı iş akışlarını inceleyin. Ardından ihtiyaç duyduğunuz modülleri ve kurulumu ekibimizle görüşün.",
           "openPage": "Sayfayı aç"
         }
       }
@@ -60664,7 +60690,7 @@
           "smartScheduling": "Akıllı planlama",
           "forComplex": "karmaşık için",
           "campuses": "kampüsler",
-          "manualTimetablingIsARecipeFor": "Manuel zaman çizelgeleme felakete davetiye çıkarır. Adon ERP planlama motoru, kusursuz bir akademik hafta oluşturmak için binlerce veri noktasını işler.",
+          "manualTimetablingIsARecipeFor": "Dersleri, sınıfları ve program çakışmalarını tek çalışma alanında inceleyin.",
           "optimizedForThe": "Şunun için optimize edildi:",
           "localCampusReality": "yerel kampüs gerçekliği",
           "weKnowThatUniversitySchedulingIsn": "Üniversite planlamasının sadece zamanla ilgili olmadığını biliyoruz. Bu alan, kaynaklar ve kampüsünüzün fiziksel sınırları ile ilgilidir. Adon ERP bu sınırlara uyacak şekilde tasarlandı.",
@@ -60996,7 +61022,7 @@
           "aSeamlessFlow": "Kusursuz bir akış",
           "fromAdvising": "tavsiye etmekten",
           "toEnrollment": "kayıt için",
-          "registrationIsTheBusiestTimeOf": "Kayıt yılın en yoğun zamanıdır. Adon ERP Kayıt modülü binlerce öğrenciyi tek bir aksaklık olmadan yönetebilecek şekilde tasarlanmıştır.",
+          "registrationIsTheBusiestTimeOf": "Ders seçimlerini, ön koşulları ve kayıt bilgilerini tek çalışma alanında yönetin.",
           "designedForThe": "Şunun için tasarlandı:",
           "highStressRush": "yüksek stresli acele",
           "weKnowThatDuringRegistrationWeek": "Kayıt haftasında her saniyenin önemli olduğunu biliyoruz. Adon ERP, sistemin ağır yükü kaldırmasını sağlar, böylece personeliniz öğrencilere yardım etmeye odaklanabilir.",
@@ -64222,7 +64248,30 @@
         }
       }
     }
-  },
+  ,
+"industryDirectory": {
+  "eyebrow": "Sektörel çözümler",
+  "title": "İşinize uygun ERP,",
+  "highlight": "sektörünüze özel yaklaşım.",
+  "lead": "Sektörünüzün ürün sayfalarını ve bağlantılı iş akışlarını inceleyin. Ardından ihtiyaç duyduğunuz modülleri ve kurulumu ekibimizle görüşün.",
+  "explore": "Sektörleri inceleyin",
+  "directoryTitle": "Sektörünüzü bulun.",
+  "search": "Sektör veya işletme arayın",
+  "workflow": "İlgili ürün sayfaları",
+  "sectorsCount": "{count} sektör",
+  "solutionsCount": "{count} sektör sayfası",
+  "sectors": {
+    "garmentsTextile": "Hazır giyim ve tekstil operasyonlarında model geliştirme, malzeme rezervasyonu ve üretim takibini bir arada inceleyin.",
+    "manufacturing": "Malzemeden üretim emirlerine, kalite kontrolünden sevkiyata kadar iş akışını izleyin.",
+    "retail": "Farklı mağazalar için satış, stok, müşteri kayıtları ve şube raporlarını inceleyin.",
+    "foodHospitality": "Yiyecek ve konaklama işletmelerinde stok, hizmet, kasa ve faturalama süreçlerini inceleyin.",
+    "education": "Kabul, öğrenci kayıtları, devam, ücretler ve öğrenim yönetimini inceleyin.",
+    "realEstate": "Gayrimenkul kayıtlarını, proje işlerini, faturalamayı ve finansal raporları inceleyin.",
+    "consulting": "Profesyonel ekipler için müşteri kayıtlarını, hizmet sunumunu, faturalamayı ve raporlamayı inceleyin.",
+    "others": "E-ticaret, STK ve yayıncılık işletmelerinin iş akışlarını inceleyin."
+  }
+}
+},
   "admin": {
     "shell": {
       "brandTitle": "Adon ERP yönetimi",

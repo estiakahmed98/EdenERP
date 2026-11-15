@@ -30,11 +30,32 @@ function resolveSiteUrl(): string {
   return `http://localhost:${process.env.PORT || 3000}`;
 }
 
+const officeAddress = {
+  building: "Tower 71, Flat # 9 A-B, 516/3 South Manikdi",
+  road: "Matikata Road, ECB Chattar",
+  locality: "Dhaka Cantonment",
+  city: "Dhaka",
+  postalCode: "1206",
+  country: "Bangladesh",
+} as const;
+
+const officeAddressLines = [
+  officeAddress.building,
+  `${officeAddress.road}, ${officeAddress.locality}`,
+  `${officeAddress.city} - ${officeAddress.postalCode}, ${officeAddress.country}`,
+] as const;
+
+const businessPhones = [
+  { number: "+8801842781978", display: "+880 1842-781978" },
+  { number: "+8801805412462", display: "+880 1805412462" },
+] as const;
+const businessEmail = "adonventure@gmail.com";
+
 export const siteConfig = {
   name: "Adon ERP",
   title: "Adon ERP - Enterprise Solution",
   description:
-    "Empower your business with innovative solutions for digital transformation. Join thousands of companies scaling faster with Adon ERP.",
+    "Connected modules for finance, sales, inventory, manufacturing and team operations. Explore AdonERP for your business.",
   url: resolveSiteUrl(),
   locale: "en_US",
   twitterHandle: process.env.NEXT_PUBLIC_TWITTER_HANDLE || undefined,
@@ -71,17 +92,19 @@ export const siteConfig = {
    */
   business: {
     legalName: "Adon ERP",
-    phone: "+8801842781978",
-    phoneDisplay: "+880 1842-781978",
+    phones: businessPhones,
+    phone: businessPhones[0].number,
+    phoneDisplay: businessPhones[0].display,
     whatsapp: "8801842781978",
-    salesEmail: "sales@adonerp.com",
+    email: businessEmail,
+    salesEmail: businessEmail,
     supportEmail: "support@adonerp.com",
+    addressLines: officeAddressLines,
     address: {
-      streetAddress:
-        "Tower 71, Flat # 9 A-B, 516/3 South Manikdi, Matikata Road, ECB Chattar",
-      addressLocality: "Dhaka Cantonment",
-      addressRegion: "Dhaka",
-      postalCode: "1206",
+      streetAddress: `${officeAddress.building}, ${officeAddress.road}`,
+      addressLocality: officeAddress.locality,
+      addressRegion: officeAddress.city,
+      postalCode: officeAddress.postalCode,
       addressCountry: "BD",
     },
     /** Set NEXT_PUBLIC_BUSINESS_GEO="lat,lng" (copy from Google Maps pin). */
@@ -96,7 +119,7 @@ export const siteConfig = {
     /** Google Business Profile / Maps share link (optional). */
     mapUrl:
       process.env.NEXT_PUBLIC_GOOGLE_MAPS_URL ||
-      "https://maps.google.com/?q=Tower+71+ECB+Chattar+Dhaka+Cantonment",
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddressLines.join(", "))}`,
     openingHours: [
       {
         days: ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],

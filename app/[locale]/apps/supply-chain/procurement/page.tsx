@@ -1,4 +1,7 @@
 "use client";
+import SampleDataNote from "@/components/sample-data-note";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import Image from "next/image";
 import Link from "next/link";
@@ -72,6 +75,7 @@ export default function ProcurementLandingSections() {
 
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <SampleDataNote />
       {/* Hero */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-24 text-center sm:px-6 lg:px-8">
@@ -561,7 +565,7 @@ export default function ProcurementLandingSections() {
       {/* Testimonial + CTA */}
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
+          {hasMarketingEvidence("apps/supply-chain/procurement:endorsement:0") ? (<div className="rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
               <div className="text-5xl text-amber-400 dark:text-amber-500">
                 &ldquo;
@@ -585,7 +589,7 @@ export default function ProcurementLandingSections() {
                 </div>
               </div>
             </div>
-          </div>
+          </div>) : null}
 
           <div id="start" className="mt-20 text-center">
             <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">

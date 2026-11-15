@@ -88,7 +88,7 @@ export function PricingPage({
         <div className={css.heroCopy}>
           <p className={css.eyebrow}>
             <span className={css.statusDot} />
-            {data.hero.eyebrow}
+            {hasPrices ? data.hero.eyebrow : data.packagePricing.customQuote ?? t("quoteDetailNote")}
           </p>
           <h1 id="pricing-title">
             {data.hero.title}
@@ -104,7 +104,7 @@ export function PricingPage({
               </svg>
             </span>
           </h1>
-          <p className={css.heroDescription}>{data.hero.description}</p>
+          <p className={css.heroDescription}>{hasPrices ? data.hero.description : t("quoteNote")}</p>
           <div className={css.heroActions}>
             <LiveDemoButton />
             <a href="#plan-comparison">

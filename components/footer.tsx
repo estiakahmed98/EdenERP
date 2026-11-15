@@ -1,10 +1,21 @@
 "use client";
 
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import {
+  Facebook,
+  Headphones,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/lib/site";
+import css from "./footer.module.css";
 
 type FooterSection = {
   titleKey: string;
@@ -85,6 +96,7 @@ export default function Footer({
   showPricing?: boolean;
 }) {
   const t = useTranslations("layout.footer");
+  const contactT = useTranslations("pages.contact.contactInfo");
   const currentYear = new Date().getFullYear();
   const resolvedSections = footerSections.map((section) => ({
     ...section,
@@ -94,74 +106,29 @@ export default function Footer({
   }));
 
   return (
-    <footer className="bn-content relative overflow-hidden border-t border-border bg-background text-foreground">
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-8 left-1/2 z-0 w-[90vw] -translate-x-1/2 text-center text-[15vw] font-black uppercase leading-none tracking-tight text-foreground/5 select-none sm:-bottom-12"
-      >
-        Adon ERP
-      </span>
-
-      <div className="relative z-10 mx-auto max-w-[90vw] px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_2fr] lg:gap-12">
-          {/* Brand Area */}
-          <div className="text-center lg:text-start">
-            <Link
-              href="/"
-              className="group inline-flex min-w-0 shrink items-center gap-2 transition-transform duration-300"
-            >
+    <footer className={`bn-content ${css.footer}`} data-site-footer>
+      <div className={css.wrap}>
+        <div className={css.top}>
+          <div className={css.brand}>
+            <Link href="/" className={css.brandLink}>
               <Image
                 src="/adon_erp_logo.png"
                 alt="Adon ERP logo"
-                width={180}
-                height={100}
-                className="h-9 w-auto shrink-0 sm:h-24 xl:h-24"
-                priority
+                width={206}
+                height={115}
+                className={css.logo}
               />
             </Link>
-
-            <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-muted-foreground lg:mx-0">
-              {t("description")}
-            </p>
-
-            <div className="mt-5 flex justify-center gap-3 lg:justify-start">
-              {socialLinks.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    aria-label={item.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-background/70 text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
-                  >
-                    <Icon size={18} />
-                  </a>
-                );
-              })}
-            </div>
+            <p className={css.description}>{t("description")}</p>
           </div>
-
-          {/* Links Area */}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-6">
+          <div className={css.navigation}>
             {resolvedSections.map((section) => (
-              <div
-                key={section.titleKey}
-                className="rounded-2xl bg-background/60 p-4 sm:bg-transparent sm:p-0"
-              >
-                <h3 className="mb-3 text-[11px] font-black uppercase tracking-[0.18em] text-foreground">
-                  {t(section.titleKey)}
-                </h3>
-
-                <ul className="space-y-2.5">
+              <div key={section.titleKey} className={css.linkGroup}>
+                <h3>{t(section.titleKey)}</h3>
+                <ul>
                   {section.links.map((link) => (
                     <li key={`${section.titleKey}:${link.labelKey}`}>
-                      <Link
-                        href={link.href}
-                        className="inline-flex text-sm font-medium leading-5 text-muted-foreground transition-colors hover:text-primary"
-                      >
-                        {t(link.labelKey)}
-                      </Link>
+                      <Link href={link.href}>{t(link.labelKey)}</Link>
                     </li>
                   ))}
                 </ul>
@@ -170,26 +137,67 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="my-6 h-px bg-linear-to-r from-transparent via-border to-transparent" />
+        <address className={css.contacts} data-business-contact>
+          <div className={`${css.contactGroup} ${css.addressGroup}`}>
+            <p className={css.contactLabel}>
+              <MapPin size={15} aria-hidden="true" />
+              {contactT("address.title")}
+            </p>
+            <a
+              href={siteConfig.business.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.addressLink}
+            >
+              <span dir="ltr">
+                {siteConfig.business.addressLines.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </span>
+            </a>
+          </div>
+          <div className={`${css.contactGroup} ${css.phoneGroup}`}>
+            <p className={css.contactLabel}>
+              <Phone size={14} aria-hidden="true" />
+              {contactT("phone.title")}
+            </p>
+            <div className={css.phoneLinks}>
+              {siteConfig.business.phones.map((phone) => (
+                <a key={phone.number} href={`tel:${phone.number}`} dir="ltr">
+                  {phone.display}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className={css.contactGroup}>
+            <p className={css.contactLabel}>
+              <Mail size={15} aria-hidden="true" />
+              {contactT("email.title")}
+            </p>
+            <a href={`mailto:${siteConfig.business.email}`} dir="ltr">
+              {siteConfig.business.email}
+            </a>
+          </div>
+          <div className={css.contactGroup}>
+            <p className={css.contactLabel}>
+              <Headphones size={15} aria-hidden="true" />
+              {t("sections.support")}
+            </p>
+            <a href={`mailto:${siteConfig.business.supportEmail}`} dir="ltr">
+              {siteConfig.business.supportEmail}
+            </a>
+          </div>
+        </address>
 
-        <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-start">
-          <p className="text-xs leading-6 text-muted-foreground sm:text-sm">
-            {t("copyright", { year: currentYear })}
-          </p>
-
-          <Link
-            href="/"
-            className="group inline-flex min-w-0 shrink items-center gap-2 transition-transform duration-300"
-          >
-            <Image
-              src="/adon_erp_logo.png"
-              alt="Adon ERP logo"
-              width={180}
-              height={100}
-              className="h-9 w-auto shrink-0 sm:h-14 xl:h-16"
-              priority
-            />
-          </Link>
+        <div className={css.bottom}>
+          <p>{t("copyright", { year: currentYear })}</p>
+          <div className={css.socials}>
+            {socialLinks.map(({ label, href, icon: Icon }) => (
+              <a key={label} href={href} aria-label={label}>
+                <Icon size={16} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

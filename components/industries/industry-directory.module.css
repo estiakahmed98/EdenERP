@@ -1,0 +1,501 @@
+.page {
+  --link: color-mix(in srgb, var(--primary) 72%, var(--foreground));
+  background: var(--background);
+  color: var(--foreground);
+}
+.page * {
+  box-sizing: border-box;
+}
+.wrap {
+  width: min(1240px, calc(100% - 64px));
+  margin-inline: auto;
+}
+.page a {
+  text-decoration: none;
+}
+.page :is(a, button, input):focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+.page h1,
+.page h2,
+.page h3,
+.page p {
+  margin: 0;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 70px;
+  padding-block: 70px;
+}
+.eyebrow {
+  color: var(--link);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+.hero h1 {
+  margin-top: 20px;
+  font-size: clamp(38px, 4vw, 57px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.22;
+  text-wrap: balance;
+}
+.hero h1 > span {
+  display: block;
+  color: var(--link);
+}
+.lead {
+  margin-top: 24px !important;
+  max-width: 540px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin-top: 27px;
+}
+.actions > a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--foreground);
+}
+.facts {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 23px;
+  color: var(--muted-foreground);
+  font-size: 11px;
+}
+.facts span {
+  padding-inline-start: 12px;
+  border-inline-start: 2px solid var(--accent);
+}
+.atlas {
+  padding: 22px;
+  border: 1px solid var(--border);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 7%, var(--card)),
+    var(--card) 65%
+  );
+  border-radius: 24px;
+  box-shadow: 0 26px 65px -45px #00318070;
+  transform: perspective(1200px) rotateY(-7deg) rotateX(3deg);
+}
+.atlasHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3px 16px;
+  color: var(--link);
+  font-size: 12px;
+  font-weight: 600;
+}
+.atlasGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+.atlasGrid > div {
+  display: flex;
+  min-height: 97px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 5px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--card);
+  text-align: center;
+}
+.atlasGrid svg {
+  color: var(--link);
+  flex-shrink: 0;
+}
+.atlasGrid > div:nth-child(3n) svg {
+  color: var(--accent);
+}
+.atlasGrid span {
+  font-size: 9px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.atlasFooter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+}
+.atlasFooter strong {
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: var(--link);
+}
+.atlasFooter span {
+  max-width: 180px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+}
+.atlasFooter > svg {
+  margin-inline-start: auto;
+  color: var(--link);
+}
+.directory {
+  padding-block: 32px 64px;
+  scroll-margin-top: 100px;
+}
+.directoryHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+}
+.directoryHeading h2 {
+  margin-top: 8px;
+  font-size: 31px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 330px;
+  max-width: 100%;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--muted-foreground);
+}
+.search input {
+  min-width: 0;
+  width: 100%;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  border: 0;
+  color: var(--foreground);
+  outline: none;
+}
+.search:focus-within {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+.search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+.search > svg {
+  flex-shrink: 0;
+}
+.search button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--muted-foreground);
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-block: 25px;
+}
+.filters button {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  min-height: 40px;
+  font: inherit;
+  font-size: 11px;
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--card);
+  color: var(--muted-foreground);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.filters button[aria-pressed="true"] {
+  color: var(--link);
+  background: color-mix(in srgb, var(--primary) 8%, var(--card));
+  border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+}
+.filters span {
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.sector {
+  padding: 30px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 21px;
+}
+.sector:nth-child(-n + 2) {
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--primary) 4%, var(--card)),
+    var(--card) 60%
+  );
+}
+.sectorHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+.icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--link);
+  background: var(--background);
+}
+.number {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+.sector h3 {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.sector > p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+  margin-top: 12px;
+  min-height: 50px;
+}
+.workflow {
+  margin-block: 21px;
+  padding: 15px;
+  border-radius: 11px;
+  background: var(--background);
+}
+.workflow > span {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 9px;
+  margin-bottom: 8px;
+}
+.workflow > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.workflow > div > span {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted-foreground);
+}
+.workflow a {
+  color: var(--link);
+  font-size: 10px;
+  line-height: 1.8;
+}
+.sector ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 25px;
+}
+.sector li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--foreground);
+  font-size: 12px;
+  line-height: 1.7;
+  min-height: 45px;
+  padding-block: 12px;
+  transition: color 0.2s;
+}
+.sector li a:hover {
+  color: var(--link);
+}
+.sector li a > svg {
+  flex-shrink: 0;
+  color: var(--link);
+}
+.closing {
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: space-between;
+  padding-block: 45px;
+}
+.closing h2 {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-block: 10px;
+}
+.closing p:last-child {
+  max-width: 600px;
+  color: var(--muted-foreground);
+  font-size: 13px;
+  line-height: 1.9;
+}
+.closing button {
+  flex-shrink: 0;
+}
+.empty {
+  display: grid;
+  justify-items: center;
+  padding: 55px 20px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  color: var(--muted-foreground);
+}
+.empty p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-block: 17px;
+}
+.empty button {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card);
+  color: var(--link);
+  padding: 12px 20px;
+  cursor: pointer;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+@media (max-width: 1000px) {
+  .hero {
+    gap: 35px;
+  }
+  .atlas {
+    padding: 17px;
+    transform: none;
+  }
+  .atlasGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atlasGrid > div {
+    min-height: 70px;
+    flex-direction: row;
+  }
+  .atlasGrid span {
+    max-width: 80px;
+  }
+  .grid {
+    gap: 17px;
+  }
+  .sector {
+    padding: 24px;
+  }
+  .sector ul {
+    grid-template-columns: 1fr;
+  }
+  .closing {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 700px) {
+  .wrap {
+    width: calc(100% - 40px);
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-block: 38px;
+  }
+  .hero h1 {
+    font-size: 39px;
+  }
+  .atlas {
+    max-width: 450px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .atlasGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .atlasGrid > div {
+    flex-direction: column;
+  }
+  .directory {
+    padding-top: 15px;
+  }
+  .directoryHeading {
+    display: grid;
+    gap: 20px;
+  }
+  .search {
+    width: 100%;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .sector ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .closing {
+    gap: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+  .sector {
+    padding: 22px;
+  }
+  .sector ul {
+    grid-template-columns: 1fr;
+  }
+  .atlasGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atlasGrid > div {
+    flex-direction: row;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page * {
+    transition: none !important;
+  }
+}

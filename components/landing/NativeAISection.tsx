@@ -1,4 +1,5 @@
 "use client";
+import { DemoMoney } from "./demo-money";
 
 import React, {
   useEffect,
@@ -103,8 +104,8 @@ const NODES: StageNode[] = [
   module_("salesCrm", 71, 83, 0.07),
 ];
 
-const MOBILE_MODULES: { key: ModuleKey; metric: string; value: string }[] = [
-  { key: "accounting", metric: "netCash", value: "৳ 4.82 Cr" },
+const MOBILE_MODULES: { key: ModuleKey; metric: string; value: React.ReactNode }[] = [
+  { key: "accounting", metric: "netCash", value: <DemoMoney amount={48200000} /> },
   { key: "inventory", metric: "stockHealth", value: "82%" },
   { key: "manufacturing", metric: "lineEfficiency", value: "87%" },
   { key: "education", metric: "attendance", value: "94%" },
@@ -691,6 +692,7 @@ function Experience({ progress }: { progress: MotionValue<number> }) {
 }
 
 export default function NativeAISection() {
+  const demo = useTranslations("pages.home.demo");
   const t = useTranslations("pages.home.nativeAi");
   const insights = t.raw("stage.insights") as Insight[];
   const reduced = usePrefersReducedMotion();
@@ -726,6 +728,7 @@ export default function NativeAISection() {
       >
         <div className="relative z-20 mx-auto max-w-240 shrink-0 text-center">
           <SectionTag>{t("tag")}</SectionTag>
+          <p data-demo-disclosure className="mt-2 text-xs text-(--muted)">{demo("disclosure")}</p>
           <h2
             id="native-ai-title"
             className="mt-3 landing-heading text-[clamp(28px,3.8vw,50px)] font-bold leading-[1.1] text-(--ink)"

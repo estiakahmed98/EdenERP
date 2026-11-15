@@ -59,7 +59,7 @@
     "actions": {
       "liveDemo": "Gặp chuyên gia, xem demo trực tiếp",
       "watchDemo": "Xem bản demo",
-      "viewAllApps": "Khám phá hơn 50 công cụ",
+      "viewAllApps": "Khám phá mô-đun kinh doanh",
       "seeAllFeatures": "Khám phá tất cả tính năng",
       "contactSales": "Trao đổi với bộ phận kinh doanh",
       "talkToSales": "Trao đổi với bộ phận kinh doanh",
@@ -75,7 +75,12 @@
       "free": "MIỄN PHÍ",
       "custom": "Theo nhu cầu"
     }
-  },
+  ,
+"whatsapp": {
+  "label": "Trò chuyện trên WhatsApp",
+  "scrollTop": "Về đầu trang"
+}
+},
   "layout": {
     "header": {
       "nav": {
@@ -36135,7 +36140,7 @@
         "description": "Mọi thứ bạn cần để quản lý tài chính doanh nghiệp tại một nơi.",
         "items": {
           "globalTax": "Tuân thủ thuế toàn cầu",
-          "globalTaxDesc": "Được cấu hình sẵn cho hơn 180 quốc gia với quy định thuế địa phương",
+          "globalTaxDesc": "Xác nhận yêu cầu thuế địa phương và kết nối ngân hàng với đội ngũ của chúng tôi.",
           "smartAlerts": "Cảnh báo thông minh",
           "smartAlertsDesc": "Thông báo tự động cho các hoạt động bất thường",
           "recurring": "Giao dịch định kỳ",
@@ -38840,8 +38845,8 @@
           "contact": "Liên hệ đối tác"
         },
         "empty": {
-          "title": "Không tìm thấy đối tác",
-          "description": "Hãy thử điều chỉnh tìm kiếm hoặc bộ lọc"
+          "title": "Hỏi chúng tôi về lựa chọn đối tác.",
+          "description": "Liên hệ đội ngũ để trao đổi nhu cầu và xác nhận thông tin đối tác hiện có."
         },
         "banner": {
           "title": "Được các tổ chức hàng đầu tin dùng",
@@ -39135,7 +39140,7 @@
           "breadcrumb": "Cộng đồng / Cộng tác / GitHub",
           "subtitle": "Xây dựng Adon ERP",
           "title": "Cùng nhau trên GitHub",
-          "description": "Adon ERP là mã nguồn mở. Fork repository, đóng góp mã, xem xét pull request và cùng định hình lộ trình với các nhà phát triển từ hơn 180 quốc gia."
+          "description": "Khám phá kho mã AdonERP, xem mã và trao đổi đề xuất thay đổi qua GitHub."
         },
         "stats": [
           {
@@ -39158,7 +39163,7 @@
         "whyContribute": {
           "eyebrow": "Tại sao nên đóng góp",
           "title": "Mã của bạn được triển khai toàn cầu",
-          "description": "Mỗi đóng góp đều đi vào production. Sửa lỗi, phát hành tính năng, cải thiện tài liệu — và thấy công việc của bạn đến tay hàng chục nghìn doanh nghiệp."
+          "description": "Đề xuất sửa lỗi, tài liệu hoặc thay đổi tính năng. Người quản lý kho mã sẽ xem xét và quyết định chấp thuận."
         },
         "features": [
           {
@@ -39171,7 +39176,7 @@
           },
           {
             "title": "Tiếp sức cho cộng đồng",
-            "description": "Bản vá và tính năng của bạn được triển khai đến hàng nghìn doanh nghiệp. Mỗi dòng mã bạn đóng góp đều tạo tác động thực tế."
+            "description": "Trao đổi đề xuất với người quản lý; việc công bố và triển khai cần được xem xét."
           },
           {
             "title": "Cùng nhau phát hành nhanh hơn",
@@ -40707,12 +40712,12 @@
         "phone": {
           "title": "Gọi cho chúng tôi",
           "number1": "+880 1842-781978",
-          "number2": "+880 1842-781978",
+          "number2": "+880 1805412462",
           "action": "Gọi ngay"
         },
         "email": {
           "title": "Email cho chúng tôi",
-          "sales": "sales@adonerp.com",
+          "sales": "adonventure@gmail.com",
           "support": "support@adonerp.com",
           "action": "Gửi email"
         },
@@ -40772,7 +40777,7 @@
       ],
       "cta": {
         "title": "Sẵn sàng chuyển đổi doanh nghiệp?",
-        "description": "Tham gia cùng hơn 500 doanh nghiệp đang dùng Adon ERP để tinh gọn hoạt động.",
+        "description": "Trao đổi về quy trình, mô-đun và triển khai mà doanh nghiệp cần.",
         "viewPricing": "Xem bảng giá",
         "scheduleCall": "Lên lịch cuộc gọi",
         "freeConsultation": "Tư vấn miễn phí",
@@ -43927,7 +43932,7 @@
     "github": {
       "metadata": {
         "title": "GitHub | AdonERP",
-        "description": "Tham gia cộng đồng mã nguồn mở trên GitHub. Đóng góp code, review pull request và cùng định hình lộ trình với nhà phát triển từ hơn 180 quốc gia."
+        "description": "Khám phá kho mã AdonERP, xem mã và trao đổi đề xuất thay đổi qua GitHub."
       },
       "hero": {
         "eyebrowIcon": "GitBranch",
@@ -43936,7 +43941,7 @@
         "preHeading": "Xây dựng Adon ERP",
         "title": "Cùng nhau trên",
         "titleHighlight": "GitHub",
-        "description": "Adon ERP là mã nguồn mở. Fork repository, đóng góp mã, xem xét pull request và cùng định hình lộ trình với các nhà phát triển từ hơn 180 quốc gia.",
+        "description": "Khám phá kho mã AdonERP, xem mã và trao đổi đề xuất thay đổi qua GitHub.",
         "viewRepoButton": "Xem repository",
         "guideButton": "Hướng dẫn đóng góp",
         "latestCommit": {
@@ -43967,7 +43972,7 @@
         "eyebrowLabel": "Tại sao nên đóng góp",
         "title": "Code của bạn,",
         "subtitle": "được phát hành toàn cầu",
-        "description": "Mỗi đóng góp đều đi vào production. Sửa lỗi, phát hành tính năng, cải thiện tài liệu — và thấy công việc của bạn đến tay hàng chục nghìn doanh nghiệp.",
+        "description": "Đề xuất sửa lỗi, tài liệu hoặc thay đổi tính năng. Người quản lý kho mã sẽ xem xét và quyết định chấp thuận.",
         "features": [
           {
             "title": "Mã nguồn mở",
@@ -43983,7 +43988,7 @@
           },
           {
             "title": "Tiếp sức cho cộng đồng",
-            "description": "Bản vá và tính năng của bạn được triển khai đến hàng nghìn doanh nghiệp. Mỗi dòng mã bạn đóng góp đều tạo tác động thực tế.",
+            "description": "Trao đổi đề xuất với người quản lý; việc công bố và triển khai cần được xem xét.",
             "icon": "Users",
             "gradient": "từ-rose-500 đến-hồng-600"
           },
@@ -44824,13 +44829,13 @@
           "title": "Hỗ trợ qua email",
           "description": "Gửi email cho chúng tôi và chúng tôi sẽ phản hồi trong vòng 24 giờ.",
           "action": "Gửi email",
-          "time": "support@adon-erp.com"
+          "time": "support@adonerp.com"
         },
         "phoneSupport": {
           "title": "Hỗ trợ qua điện thoại",
           "description": "Gọi đội ngũ hỗ trợ cho vấn đề khẩn cấp.",
           "action": "Gọi ngay",
-          "time": "+1 (800) 123-4567"
+          "time": "+880 1842-781978 / +880 1805412462"
         }
       },
       "status": {
@@ -44883,10 +44888,10 @@
         "titleSuffix": "Adon ERP thông minh",
         "description": "Giữ kế toán, bán hàng, quản lý khách hàng, tồn kho và quy trình đội ngũ kết nối trong một hệ thống. Giảm việc thủ công, tránh sai sót và ra quyết định kinh doanh nhanh hơn.",
         "altLabel": "Adon",
-        "ecosystemLabel": "{count} ứng dụng kinh doanh gốc",
-        "ecosystemHint": "Tích hợp sẵn, kết nối hoàn toàn và sẵn sàng từ ngày đầu",
-        "readyLabel": "Tất cả hệ thống đã sẵn sàng",
-        "appBadge": "Ứng dụng gốc"
+        "ecosystemLabel": "{count} mô-đun kinh doanh",
+        "ecosystemHint": "Xem các trang đã công bố trong danh mục ứng dụng.",
+        "readyLabel": "Danh mục sản phẩm",
+        "appBadge": "Mô-đun"
       },
       "nativeAi": {
         "tag": "Hỗ trợ AI thông minh",
@@ -44948,7 +44953,7 @@
             "pipeline": "Cơ hội bán hàng",
             "wonThisMonth": "Thắng tháng này",
             "revenue": "Doanh thu",
-            "live": "Trực tiếp",
+            "live": "Minh họa",
             "onTrack": "Đúng tiến độ"
           }
         }
@@ -45052,7 +45057,7 @@
         "titlePrefix": "Hiện đại",
         "titleCircled": "kinh doanh",
         "titleSuffix": "phần mềm quản lý",
-        "note": "Không bất ngờ: dữ liệu của bạn, quy tắc của bạn, một mức giá rõ ràng.",
+        "note": "Trao đổi về phạm vi, chi phí và triển khai với tư vấn viên.",
         "cards": [
           {
             "icon": "🌍",
@@ -45075,36 +45080,36 @@
           {
             "icon": "💰",
             "title": "Giá đơn giản",
-            "desc": "Không phí ẩn hay gói phức tạp. Mức giá minh bạch dành cho doanh nghiệp đang phát triển.",
-            "badge": "Minh bạch"
+            "desc": "Xem phạm vi gói và trao đổi báo giá theo nhu cầu của đội ngũ và việc triển khai.",
+            "badge": "Trao đổi phạm vi"
           }
         ]
       },
       "stats": {
-        "tag": "✦ Được xây dựng cho doanh nghiệp tăng trưởng",
-        "title": "Bắt đầu nhỏ, phát triển tự tin",
+        "tag": "Danh mục đã kiểm tra",
+        "title": "Khám phá danh mục sản phẩm kết nối",
         "items": [
           {
-            "value": "100+",
-            "label": "Người dùng đầu tiên"
+            "value": "—",
+            "label": "Mô-đun"
           },
           {
-            "value": "50+",
-            "label": "Công cụ kinh doanh"
+            "value": "—",
+            "label": "Trang danh mục ứng dụng"
           },
           {
-            "value": "Đáng tin cậy",
-            "label": "Quy trình hằng ngày ổn định"
+            "value": "—",
+            "label": "Trang theo ngành"
           },
           {
-            "value": "Đơn giản",
-            "label": "Dễ dàng cho mọi đội ngũ"
+            "value": "—",
+            "label": "Nhóm ngành"
           }
         ]
       },
       "testimonials": {
-        "tag": "✦ Câu chuyện khách hàng",
-        "title": "Các đội ngũ yêu thích sử dụng Adon",
+        "tag": "Hướng dẫn sản phẩm",
+        "title": "Tự khám phá các quy trình.",
         "items": [
           {
             "name": "Nazmus Sadat",
@@ -45158,7 +45163,28 @@
         "title": "Đưa doanh nghiệp lên tầm cao mới",
         "description": "Quản lý lập hóa đơn, thanh toán, gia hạn, quan hệ khách hàng và báo cáo từ một nền tảng hợp nhất với Adon ERP."
       }
-    },
+    ,
+"demo": {
+  "preview": "AdonERP · xem trước sản phẩm",
+  "title": "Gói đăng ký khách hàng",
+  "subtitle": "Ví dụ lập hóa đơn và gia hạn",
+  "disclosure": "Dữ liệu minh họa giả định, không phải hồ sơ khách hàng trực tiếp hay kết quả đã đo lường.",
+  "records": "{count} bản ghi mẫu",
+  "revenue": "Doanh thu tháng",
+  "growth": "Thay đổi minh họa",
+  "renewing": "Gia hạn minh họa",
+  "id": "ID",
+  "business": "Doanh nghiệp",
+  "renewal": "Gia hạn",
+  "plan": "Gói",
+  "status": "Trạng thái",
+  "starter": "Khởi đầu",
+  "businessPlan": "Doanh nghiệp",
+  "enterprise": "Quy mô lớn",
+  "active": "Hoạt động",
+  "pending": "Chờ xử lý"
+}
+},
     "hotel": {
       "metadata": {
         "title": "Khách sạn | AdonERP",
@@ -46018,7 +46044,7 @@
         "features": [
           {
             "title": "Hỗ trợ hơn 28.000 ngân hàng",
-            "description": "Phủ sóng toàn cầu tại hơn 50 quốc gia"
+            "description": "Xác nhận yêu cầu thuế địa phương và kết nối ngân hàng với đội ngũ của chúng tôi."
           },
           {
             "title": "Tỷ lệ khớp tự động 95%",
@@ -46059,7 +46085,7 @@
         "list": [
           {
             "title": "Hỗ trợ thuế toàn cầu",
-            "description": "Cấu hình sẵn cho hơn 180 quốc gia theo yêu cầu thuế địa phương",
+            "description": "Xác nhận yêu cầu thuế địa phương và kết nối ngân hàng với đội ngũ của chúng tôi.",
             "gradient": "từ-ngọc lục bảo-500 đến-cyan-500"
           },
           {
@@ -48951,10 +48977,10 @@
         "description": "Các gói giá đơn giản, minh bạch và linh hoạt cho Adon ERP. Chọn gói phù hợp với quy mô và nhu cầu doanh nghiệp của bạn."
       },
       "hero": {
-        "eyebrow": "Bảng giá minh bạch",
+        "eyebrow": "Gói và giá",
         "title": "Gói đơn giản.",
         "titleHighlight": "Phần mềm mạnh mẽ.",
-        "description": "Mọi thứ doanh nghiệp cần. Chọn gói, quy mô đội ngũ và bắt đầu ngay hôm nay.",
+        "description": "So sánh tính năng và số người dùng được liệt kê. Hiển thị phí đã cấu hình; nếu chưa có, hãy yêu cầu báo giá.",
         "billingToggle": {
           "yearly": "Hàng năm",
           "semiannual": "6 tháng",
@@ -49206,7 +49232,7 @@
       ],
       "includedFeaturesHeading": "Tính năng bao gồm",
       "bottomNote": {
-        "text": "Tất cả gói đều bao gồm **hỗ trợ, lưu trữ & bảo trì không giới hạn**. Không phí ẩn, không giới hạn tính năng hoặc dữ liệu.",
+        "text": "Trao đổi về phạm vi, chi phí và triển khai với tư vấn viên.",
         "buttons": {
           "successPacks": "📦 Xem Success Packs & Triển khai",
           "contactSales": "💬 Trao đổi với đội bán hàng"
@@ -49243,19 +49269,19 @@
         "items": [
           {
             "question": "Định giá theo người dùng hoạt động như thế nào?",
-            "answer": "Bạn thanh toán dựa trên số người dùng đang hoạt động trong tổ chức. Bạn có thể tăng hoặc giảm số người dùng bất cứ lúc nào."
+            "answer": "Báo giá dựa trên quy mô đội ngũ và phạm vi công việc. Hãy kiểm tra giới hạn người dùng và xác nhận phí với tư vấn viên."
           },
           {
             "question": "Tôi có thể đổi gói sau này không?",
-            "answer": "Chắc chắn. Bạn có thể nâng cấp lên gói cao hơn hoặc thay đổi số người dùng bất cứ lúc nào. Hạ cấp sẽ có hiệu lực trong chu kỳ thanh toán tiếp theo."
+            "answer": "Trao đổi với đội ngũ về việc đổi gói, phí điều chỉnh và ngày áp dụng trước khi thay đổi."
           },
           {
             "question": "Khác biệt giữa thanh toán hàng năm và hàng tháng là gì?",
-            "answer": "Thanh toán hàng năm giúp tiết kiệm khoảng 35% so với hàng tháng, thanh toán 6 tháng tiết kiệm khoảng 20%, và hàng quý tiết kiệm khoảng 10%. Với thanh toán hàng năm, bạn được tính phí một lần cho cả năm."
+            "answer": "Chu kỳ thanh toán và ưu đãi phụ thuộc vào cấu hình gói và báo giá đã thống nhất. Gói báo giá riêng không công bố phí đăng ký cố định."
           },
           {
             "question": "Bạn hỗ trợ những phương thức thanh toán nào?",
-            "answer": "Chúng tôi hỗ trợ chuyển khoản ngân hàng, bKash, Nagad, Rocket và thẻ tín dụng."
+            "answer": "Xác nhận phương thức và điều kiện thanh toán với đội ngũ trước khi đặt hàng."
           }
         ]
       },
@@ -54370,8 +54396,8 @@
           },
           "address": {
             "line1": "Tháp 71, Căn hộ số 9 A-B, 516/3 Nam Manikdi",
-            "line2": "Đường Matikata, ECB Chattar",
-            "line3": "Bang Dhaka, Dhaka - 1206"
+            "line2": "Đường Matikata, ECB Chattar, Bang Dhaka",
+            "line3": "Dhaka - 1206, Bangladesh"
           }
         }
       },
@@ -59390,7 +59416,7 @@
           "sizeAndColourVariantsSeasonalCollections": "Các biến thể về kích thước và màu sắc, bộ sưu tập theo mùa và doanh số bán hàng đa kênh cho ngành bán lẻ thời trang.",
           "retailIndustryPages": "Trang ngành bán lẻ",
           "industrySpecificExperiencesForEveryKind": "Kinh nghiệm cụ thể theo ngành cho mọi loại hình kinh doanh bán lẻ.",
-          "theNewBookstorePageIsReady": "Trang cửa hàng sách mới đã sẵn sàng theo lộ trình công nghiệp. Nó tuân theo bố cục tham chiếu của bạn trong khi vẫn giữ tiêu đề và chân trang AdonERP đã được sử dụng trong toàn bộ dự án.",
+          "theNewBookstorePageIsReady": "Khám phá trang sản phẩm và quy trình của ngành, sau đó trao đổi với chúng tôi về mô-đun và việc triển khai phù hợp.",
           "openPage": "Mở trang"
         }
       }
@@ -60664,7 +60690,7 @@
           "smartScheduling": "Lên lịch thông minh",
           "forComplex": "cho phức tạp",
           "campuses": "cơ sở",
-          "manualTimetablingIsARecipeFor": "Lập thời gian biểu thủ công là công thức dẫn đến thảm họa. Công cụ lập kế hoạch Adon ERP xử lý hàng nghìn điểm dữ liệu để tạo ra một tuần học tập hoàn hảo.",
+          "manualTimetablingIsARecipeFor": "Xem lớp học, phòng học và xung đột thời khóa biểu trong một không gian làm việc.",
           "optimizedForThe": "Tối ưu hóa cho",
           "localCampusReality": "thực tế khuôn viên địa phương",
           "weKnowThatUniversitySchedulingIsn": "Chúng tôi biết rằng việc lập kế hoạch học đại học không chỉ là vấn đề thời gian. Đó là về không gian, nguồn lực và giới hạn vật lý trong khuôn viên trường của bạn. Adon ERP được xây dựng để tôn trọng những giới hạn đó.",
@@ -60996,7 +61022,7 @@
           "aSeamlessFlow": "Một dòng chảy liền mạch",
           "fromAdvising": "từ việc tư vấn",
           "toEnrollment": "để ghi danh",
-          "registrationIsTheBusiestTimeOf": "Đăng ký là thời điểm bận rộn nhất trong năm. Mô-đun Đăng ký Adon ERP được thiết kế để xử lý hàng nghìn sinh viên mà không gặp một trục trặc nào.",
+          "registrationIsTheBusiestTimeOf": "Quản lý lựa chọn môn, điều kiện tiên quyết và hồ sơ đăng ký trong một không gian làm việc.",
           "designedForThe": "Được thiết kế cho",
           "highStressRush": "cơn sốt căng thẳng cao độ",
           "weKnowThatDuringRegistrationWeek": "Chúng tôi biết rằng trong tuần đăng ký, mỗi giây đều có giá trị. Adon ERP đảm bảo rằng hệ thống xử lý được những công việc nặng nhọc để nhân viên của bạn có thể tập trung vào việc giúp đỡ học sinh.",
@@ -64222,7 +64248,30 @@
         }
       }
     }
-  },
+  ,
+"industryDirectory": {
+  "eyebrow": "Giải pháp theo ngành",
+  "title": "ERP phù hợp với",
+  "highlight": "ngành của bạn.",
+  "lead": "Khám phá trang sản phẩm và quy trình của ngành, sau đó trao đổi với chúng tôi về mô-đun và việc triển khai phù hợp.",
+  "explore": "Khám phá ngành",
+  "directoryTitle": "Chọn ngành của bạn.",
+  "search": "Tìm ngành hoặc loại hình kinh doanh",
+  "workflow": "Trang sản phẩm liên quan",
+  "sectorsCount": "{count} nhóm ngành",
+  "solutionsCount": "{count} trang theo ngành",
+  "sectors": {
+    "garmentsTextile": "Kết nối phát triển mẫu, đặt vật tư và theo dõi sản xuất trong ngành may mặc và dệt may.",
+    "manufacturing": "Theo dõi vật tư, lệnh sản xuất, kiểm tra chất lượng và giao hàng trong quy trình sản xuất.",
+    "retail": "Khám phá bán hàng, tồn kho, hồ sơ khách hàng và báo cáo cửa hàng cho nhiều mô hình bán lẻ.",
+    "foodHospitality": "Kết nối tồn kho, phục vụ, bán hàng tại quầy và lập hóa đơn trong ngành ẩm thực và lưu trú.",
+    "education": "Khám phá tuyển sinh, hồ sơ học sinh, điểm danh, học phí và quản lý học tập.",
+    "realEstate": "Xem hồ sơ bất động sản, công việc dự án, lập hóa đơn và báo cáo tài chính.",
+    "consulting": "Khám phá hồ sơ khách hàng, cung cấp dịch vụ, lập hóa đơn và báo cáo cho đội ngũ chuyên môn.",
+    "others": "Khám phá quy trình của thương mại điện tử, NGO và đơn vị truyền hình."
+  }
+}
+},
   "admin": {
     "shell": {
       "brandTitle": "Quản trị Adon ERP",

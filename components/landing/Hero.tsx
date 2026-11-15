@@ -8,7 +8,8 @@ import {
   PackageCheck,
   TrendingUp,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
+import { formatDemoMoney } from "@/lib/demo-format";
 import LiveDemoButton from "@/components/live-demo-button";
 
 import {
@@ -20,13 +21,55 @@ import {
 } from "./landing-ui";
 
 const SUBSCRIPTIONS = [
-  { id: "AD-102", business: "Pixel Craft", renewal: "12 Sep", plan: "Starter", status: "Active" },
-  { id: "AD-103", business: "Nexa Fashion", renewal: "18 Sep", plan: "Business", status: "Active" },
-  { id: "AD-104", business: "Urban Mart", renewal: "22 Sep", plan: "Starter", status: "Pending" },
-  { id: "AD-105", business: "Bright Agency", renewal: "01 Oct", plan: "Enterprise", status: "Active" },
-  { id: "AD-106", business: "Northstar Labs", renewal: "04 Oct", plan: "Business", status: "Active" },
-  { id: "AD-107", business: "Canvas Studio", renewal: "09 Oct", plan: "Starter", status: "Pending" },
-  { id: "AD-108", business: "Vertex Retail", renewal: "14 Oct", plan: "Enterprise", status: "Active" },
+  {
+    id: "AD-102",
+    business: "Pixel Craft",
+    renewal: "2026-11-12",
+    plan: "Starter",
+    status: "Active",
+  },
+  {
+    id: "AD-103",
+    business: "Nexa Fashion",
+    renewal: "2026-11-18",
+    plan: "Business",
+    status: "Active",
+  },
+  {
+    id: "AD-104",
+    business: "Urban Mart",
+    renewal: "2026-11-22",
+    plan: "Starter",
+    status: "Pending",
+  },
+  {
+    id: "AD-105",
+    business: "Bright Agency",
+    renewal: "2026-12-01",
+    plan: "Enterprise",
+    status: "Active",
+  },
+  {
+    id: "AD-106",
+    business: "Northstar Labs",
+    renewal: "2026-12-04",
+    plan: "Business",
+    status: "Active",
+  },
+  {
+    id: "AD-107",
+    business: "Canvas Studio",
+    renewal: "2026-12-09",
+    plan: "Starter",
+    status: "Pending",
+  },
+  {
+    id: "AD-108",
+    business: "Vertex Retail",
+    renewal: "2026-12-14",
+    plan: "Enterprise",
+    status: "Active",
+  },
 ] as const;
 
 const VISIBLE_SUBSCRIPTIONS = 4;
@@ -37,12 +80,6 @@ const PLAN_STYLES = {
   Enterprise: "bg-(--teal)/10 text-(--teal)",
 } as const;
 
-const STATS = [
-  { label: "Monthly revenue", value: "$18.4K", icon: ChartNoAxesCombined },
-  { label: "Growth", value: "+12.4%", icon: TrendingUp },
-  { label: "Renewing soon", value: "07", icon: CalendarClock },
-] as const;
-
 const initials = (name: string) =>
   name
     .split(" ")
@@ -51,6 +88,36 @@ const initials = (name: string) =>
 
 export default function Hero() {
   const t = useTranslations("pages.home");
+  const demo = useTranslations("pages.home.demo");
+  const format = useFormatter();
+  const locale = useLocale();
+  const stats = [
+    {
+      label: demo("revenue"),
+      value: formatDemoMoney(1840000, locale),
+      icon: ChartNoAxesCombined,
+    },
+    {
+      label: demo("growth"),
+      value: format.number(0.124, {
+        style: "percent",
+        maximumFractionDigits: 1,
+        signDisplay: "always",
+      }),
+      icon: TrendingUp,
+    },
+    {
+      label: demo("renewing"),
+      value: format.number(SUBSCRIPTIONS.length),
+      icon: CalendarClock,
+    },
+  ];
+  const renewal = (date: string) =>
+    format.dateTime(new Date(date + "T00:00:00Z"), {
+      day: "numeric",
+      month: "short",
+      timeZone: "Asia/Dhaka",
+    });
   const typeWords = t.raw("hero.typeWords") as string[];
   const shouldReduceMotion = useReducedMotion();
   const [isSubscriptionListPaused, setIsSubscriptionListPaused] =
@@ -114,34 +181,44 @@ export default function Hero() {
             </div>
             <div className="mx-auto flex h-6 max-w-90 flex-1 items-center justify-center gap-1.5 rounded-md bg-muted/60 text-[11px] text-(--muted)">
               <span className="h-1.5 w-1.5 rounded-full bg-(--teal)" />
-              app.adon-erp.com/subscriptions
+              {demo("preview")}
             </div>
           </div>
 
           <div className="p-4 sm:p-6">
+            <p
+              data-demo-disclosure
+              className="mb-4 rounded-lg border border-dashed border-border px-3 py-2 text-xs leading-6 text-(--muted)"
+            >
+              {demo("disclosure")}
+            </p>
             <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
               <div className="flex items-center gap-3">
-                <span className={`grid h-9 w-9 place-items-center rounded-xl ${ICON_TONES[0]}`}>
+                <span
+                  className={`grid h-9 w-9 place-items-center rounded-xl ${ICON_TONES[0]}`}
+                >
                   <PackageCheck className="h-4 w-4" strokeWidth={2} />
                 </span>
                 <div>
                   <h2 className="font-body text-sm font-semibold text-(--ink) sm:text-base">
-                    Client Subscriptions
+                    {demo("title")}
                   </h2>
                   <p className="mt-0.5 text-[11px] text-(--muted)">
-                    Billing and renewal overview
+                    {demo("subtitle")}
                   </p>
                 </div>
               </div>
 
               <span className="inline-flex w-fit items-center gap-2 rounded-full bg-(--teal)/10 px-3 py-1 text-[11px] font-semibold text-(--teal)">
                 <span className="h-1.5 w-1.5 rounded-full bg-(--teal)" />
-                24 active plans
+                {demo("records", {
+                  count: format.number(SUBSCRIPTIONS.length),
+                })}
               </span>
             </div>
 
             <div className="mb-4 grid grid-cols-3 gap-2 sm:gap-3">
-              {STATS.map(({ label, value, icon: Icon }, index) => (
+              {stats.map(({ label, value, icon: Icon }, index) => (
                 <div
                   key={label}
                   className="rounded-2xl border border-border bg-(--cream) p-3"
@@ -163,11 +240,19 @@ export default function Hero() {
 
             <div
               className="rounded-2xl border border-border p-1.5 sm:p-2"
+              onFocus={() => setIsSubscriptionListPaused(true)}
+              onBlur={() => setIsSubscriptionListPaused(false)}
               onMouseEnter={() => setIsSubscriptionListPaused(true)}
               onMouseLeave={() => setIsSubscriptionListPaused(false)}
             >
               <div className="mb-1 hidden grid-cols-[72px_minmax(0,1fr)_110px_110px_90px] px-3 py-1.5 font-body text-[10px] font-semibold uppercase tracking-[0.12em] text-(--muted) sm:grid">
-                {["ID", "Business", "Renewal", "Plan", "Status"].map((heading) => (
+                {[
+                  demo("id"),
+                  demo("business"),
+                  demo("renewal"),
+                  demo("plan"),
+                  demo("status"),
+                ].map((heading) => (
                   <span key={heading}>{heading}</span>
                 ))}
               </div>
@@ -203,20 +288,29 @@ export default function Hero() {
                             {row.business}
                           </span>
                           <span className="mt-0.5 flex items-center gap-1.5 text-[10px] text-(--muted) sm:hidden">
-                            {row.id} · {row.renewal} · {row.plan}
+                            {row.id} · {renewal(row.renewal)} ·{" "}
+                            {demo(
+                              row.plan === "Business"
+                                ? "businessPlan"
+                                : row.plan.toLowerCase(),
+                            )}
                           </span>
                         </span>
                       </span>
 
                       <span className="hidden items-center gap-1.5 text-[11px] text-(--muted) sm:flex">
                         <CalendarClock className="h-3.5 w-3.5" />
-                        {row.renewal}
+                        {renewal(row.renewal)}
                       </span>
 
                       <span
                         className={`hidden w-fit rounded-full px-2 py-0.5 text-[10px] font-medium sm:inline-flex ${PLAN_STYLES[row.plan]}`}
                       >
-                        {row.plan}
+                        {demo(
+                          row.plan === "Business"
+                            ? "businessPlan"
+                            : row.plan.toLowerCase(),
+                        )}
                       </span>
 
                       <span
@@ -227,7 +321,7 @@ export default function Hero() {
                         }`}
                       >
                         <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                        {row.status}
+                        {demo(row.status.toLowerCase())}
                       </span>
                     </motion.div>
                   ))}

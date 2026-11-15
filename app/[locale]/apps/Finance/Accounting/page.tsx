@@ -1,5 +1,8 @@
 //app/%5Blocale%5D/apps/Finance/Accounting/page.tsx
 "use client";
+import SampleDataNote from "@/components/sample-data-note";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -187,6 +190,7 @@ export default function AccountingPage() {
 
   return (
     <main className="overflow-hidden bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+      <SampleDataNote />
       {/* Hero Section */}
       <section className="relative isolate">
         <div className="absolute inset-x-0 top-0 -z-10 h-168 bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.12),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.1),transparent_24%)] dark:bg-[radial-gradient(circle_at_15%_12%,rgba(16,185,129,0.08),transparent_25%),radial-gradient(circle_at_85%_15%,rgba(139,92,246,0.06),transparent_24%)]" />
@@ -219,7 +223,7 @@ export default function AccountingPage() {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-6 pt-4">
+              {hasMarketingEvidence("finance:Accounting:customer-rating") ? (<div className="flex items-center gap-6 pt-4">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div
@@ -239,7 +243,7 @@ export default function AccountingPage() {
                     {t("hero.rating")}
                   </span>
                 </div>
-              </div>
+              </div>) : null}
             </div>
 
             <div className="relative mx-auto w-full max-w-xl">
@@ -683,7 +687,7 @@ export default function AccountingPage() {
 
       {/* Testimonial Section */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-slate-100 to-white px-6 py-12 text-center shadow-xl dark:from-slate-900 dark:to-slate-950 sm:px-10">
+        {hasMarketingEvidence("apps/Finance/Accounting:endorsement:0") ? (<div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-slate-100 to-white px-6 py-12 text-center shadow-xl dark:from-slate-900 dark:to-slate-950 sm:px-10">
           <div className="absolute inset-0 opacity-5">
             <div className="absolute left-10 top-10 h-20 w-20 rounded-full bg-emerald-500" />
             <div className="absolute bottom-10 right-10 h-32 w-32 rounded-full bg-cyan-500" />
@@ -717,7 +721,7 @@ export default function AccountingPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div>) : null}
       </section>
 
       {/* Final CTA Section */}

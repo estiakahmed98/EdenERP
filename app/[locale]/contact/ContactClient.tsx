@@ -1,6 +1,8 @@
 // app/[locale]/contact/ContactClient.tsx
 
 "use client";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import {
   ArrowRight,
@@ -15,7 +17,6 @@ import {
   Globe,
   ChevronRight,
   Sparkles,
-  Headphones,
   ShieldCheck,
   Star,
   Rocket,
@@ -32,6 +33,7 @@ type ContactInfo = {
   icon: "mail" | "phone" | "mapPin" | "clock";
   title: string;
   details: string[];
+  detailHrefs?: string[];
   action?: string;
   href?: string;
 };
@@ -84,25 +86,23 @@ export default function ContactClient() {
     {
       icon: "phone",
       title: t("contactInfo.phone.title"),
-      details: [t("contactInfo.phone.number1"), t("contactInfo.phone.number2")],
+      details: siteConfig.business.phones.map((phone) => phone.display),
+      detailHrefs: siteConfig.business.phones.map((phone) => `tel:${phone.number}`),
       action: t("contactInfo.phone.action"),
       href: `tel:${siteConfig.business.phone}`,
     },
     {
       icon: "mail",
       title: t("contactInfo.email.title"),
-      details: [t("contactInfo.email.sales"), t("contactInfo.email.support")],
+      details: [siteConfig.business.email, siteConfig.business.supportEmail],
+      detailHrefs: [siteConfig.business.email, siteConfig.business.supportEmail].map((email) => `mailto:${email}`),
       action: t("contactInfo.email.action"),
-      href: `mailto:${siteConfig.business.salesEmail}`,
+      href: `mailto:${siteConfig.business.email}`,
     },
     {
       icon: "mapPin",
       title: t("contactInfo.address.title"),
-      details: [
-        t("contactInfo.address.line1"),
-        t("contactInfo.address.line2"),
-        t("contactInfo.address.line3"),
-      ],
+      details: [...siteConfig.business.addressLines],
     },
     {
       icon: "clock",
@@ -163,8 +163,8 @@ export default function ContactClient() {
                   </h3>
                   <div className="mt-3 space-y-1">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-sm text-slate-600 dark:text-slate-300">
-                        {detail}
+                      <p key={idx} dir={info.icon === "clock" ? undefined : "ltr"} className="text-sm text-slate-600 dark:text-slate-300">
+                        {info.detailHrefs?.[idx] ? <a className="break-all hover:text-primary focus-visible:outline-2 focus-visible:outline-primary" href={info.detailHrefs[idx]}>{detail}</a> : detail}
                       </p>
                     ))}
                   </div>
@@ -209,10 +209,8 @@ export default function ContactClient() {
                   <h3 className="text-lg font-semibold text-slate-950 dark:text-slate-100">
                     {t("office.fullAddress")}
                   </h3>
-                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Tower 71, Flat # 9 A-B, 516/3 South Manikdi<br />
-                    Matikata Road, ECB Chattar, Dhaka Cantonment<br />
-                    Dhaka - 1206, Bangladesh
+                  <p dir="ltr" className="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    {siteConfig.business.addressLines.map((line) => <span key={line} className="block">{line}</span>)}
                   </p>
                   <div className="mt-3 flex items-center gap-2 text-xs text-primary">
                     <MapPin className="h-3 w-3" />
@@ -239,7 +237,7 @@ export default function ContactClient() {
 
           {/* Why Choose Us & Social Links */}
           <div className="space-y-8">
-            <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-primary/5 to-transparent p-6 dark:border-slate-800">
+            {hasMarketingEvidence("contact:certification-and-sla") ? (<div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-primary/5 to-transparent p-6 dark:border-slate-800">
               <h3 className="text-lg font-semibold text-slate-950 dark:text-slate-100">
                 {t("whyChoose.title")}
               </h3>
@@ -257,7 +255,7 @@ export default function ContactClient() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div>) : null}
 
             {/* Social Links */}
             <div className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
@@ -290,13 +288,13 @@ export default function ContactClient() {
       </section>
 
       {/* Stats Section */}
-      <section className="relative overflow-hidden bg-[#f6f5f8] py-16 lg:py-24 dark:bg-slate-950">
+      {hasMarketingEvidence("contact:adoption-statistics") ? (<section className="relative overflow-hidden bg-[#f6f5f8] py-16 lg:py-24 dark:bg-slate-950">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.08),transparent_26%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.12),transparent_30%)] dark:bg-[radial-gradient(circle_at_18%_20%,rgba(124,58,237,0.16),transparent_30%),radial-gradient(circle_at_80%_80%,rgba(245,158,11,0.16),transparent_34%)]" />
         
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {t.raw("stats").map((stat: { value: string; label: string; icon: string }) => {
-              const IconMap: Record<string, any> = {
+              const IconMap: Record<string, typeof Users> = {
                 Users: Users,
                 Briefcase: Briefcase,
                 Building2: Building2,
@@ -322,7 +320,7 @@ export default function ContactClient() {
             })}
           </div>
         </div>
-      </section>
+      </section>) : null}
 
       {/* CTA Section */}
       <section className="mx-auto max-w-7xl px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-28">

@@ -30,8 +30,7 @@ export async function CommunityPage({ slug }: { slug: CommunitySlug }) {
   const contact: ContactInfo = {
     supportEmail: business.supportEmail,
     salesEmail: business.salesEmail,
-    phone: business.phone,
-    phoneDisplay: business.phoneDisplay,
+    phones: [...business.phones],
   };
   let labels: TranslationLabels | undefined;
   if (slug === "translations") {

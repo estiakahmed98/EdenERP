@@ -3,6 +3,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { productCounts } from "@/lib/product-inventory";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowRight,
@@ -189,7 +190,7 @@ const categoryStyles: Record<AppItem["category"], string> = {
 };
 
 const stats = [
-  { value: "50+", label: "Business apps" },
+  { value: String(productCounts.modules), label: "Modules in the directory" },
   { value: "1", label: "Shared database" },
   { value: "0", label: "Disconnected silos" },
 ];

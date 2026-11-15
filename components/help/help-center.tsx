@@ -39,7 +39,7 @@ type HelpResource = {
 type Props = {
   resources: HelpResource[];
   faqs: [string, string][];
-  contact: { email: string; phone: string; phoneDisplay: string };
+  contact: { email: string; phones: { number: string; display: string }[] };
 };
 
 const shortcuts = [
@@ -381,16 +381,16 @@ export default function HelpCenter({ resources, faqs, contact }: Props) {
               </span>
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
-            <a href={`tel:${contact.phone}`}>
+            {contact.phones.map((phone) => <a key={phone.number} href={`tel:${phone.number}`}>
               <span className={css.channelIcon}>
                 <Phone size={18} aria-hidden="true" />
               </span>
               <span>
                 <b>{t("supportOptions.phoneSupport.title")}</b>
-                <small dir="ltr">{contact.phoneDisplay}</small>
+                <small dir="ltr">{phone.display}</small>
               </span>
               <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
+            </a>)}
           </div>
           <Link
             href="/community/get-services/support"

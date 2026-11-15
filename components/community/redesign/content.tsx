@@ -37,8 +37,7 @@ import { useTranslations } from "next-intl";
 export type ContactInfo = {
   supportEmail: string;
   salesEmail: string;
-  phone: string;
-  phoneDisplay: string;
+  phones: { number: string; display: string }[];
 };
 export type TranslationLabels = { en: string; bn: string; ar: string };
 type Language = keyof TranslationLabels;
@@ -467,11 +466,11 @@ function SupportContent({ contact }: { contact: ContactInfo }) {
           <b>{contact.supportEmail}</b>
           <ArrowUpRight size={16} />
         </a>
-        <a href={`tel:${contact.phone}`}>
+        {contact.phones.map((phone) => <a key={phone.number} href={`tel:${phone.number}`}>
           <span>{tx("content.configuredBusinessPhone")}</span>
-          <b>{contact.phoneDisplay}</b>
+          <b dir="ltr">{phone.display}</b>
           <ArrowUpRight size={16} />
-        </a>
+        </a>)}
         <Link href="/contact">
           <span>{tx("content.moreContactOptions")}</span>
           <b>{tx("content.openTheContactPage")}</b>

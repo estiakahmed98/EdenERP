@@ -1,4 +1,7 @@
 "use client";
+import SampleDataNote from "@/components/sample-data-note";
+import { hasMarketingEvidence } from "@/lib/marketing-evidence";
+
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -297,6 +300,7 @@ export default function WebsiteBuilderSections() {
 
   return (
     <main className="overflow-hidden bg-white dark:bg-slate-950 text-slate-900 dark:text-white">
+      <SampleDataNote />
       <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-16">
         <div className="mx-auto max-w-7xl px-4 pb-20 text-center sm:px-6 lg:px-8">
           <h1
@@ -910,7 +914,7 @@ export default function WebsiteBuilderSections() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
+          {hasMarketingEvidence("apps/website:endorsement:0") ? (<div className="mx-auto mt-10 max-w-4xl rounded-xl bg-[#f7f7fa] dark:bg-slate-800/50 p-8 text-left shadow-sm">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
               <div className="text-5xl text-amber-400 dark:text-amber-500">
                 &ldquo;
@@ -938,7 +942,7 @@ export default function WebsiteBuilderSections() {
                 </div>
               </div>
             </div>
-          </div>
+          </div>) : null}
 
           <div id="start" className="mt-20 text-center">
             <div className="mx-auto mb-4 flex justify-center text-amber-400 dark:text-amber-500">

@@ -59,7 +59,7 @@
     "actions": {
       "liveDemo": "咨询顾问，体验在线演示",
       "watchDemo": "观看演示",
-      "viewAllApps": "探索 50+ 款工具",
+      "viewAllApps": "探索业务模块",
       "seeAllFeatures": "探索所有功能",
       "contactSales": "咨询销售团队",
       "talkToSales": "咨询销售团队",
@@ -75,7 +75,12 @@
       "free": "免费",
       "custom": "按需定制"
     }
-  },
+  ,
+"whatsapp": {
+  "label": "通过WhatsApp联系",
+  "scrollTop": "返回顶部"
+}
+},
   "layout": {
     "header": {
       "nav": {
@@ -36135,7 +36140,7 @@
         "description": "在一个平台中获得管理企业财务所需的一切。",
         "items": {
           "globalTax": "全球税务合规",
-          "globalTaxDesc": "已为 180+ 个国家预配置当地税务规则",
+          "globalTaxDesc": "请与团队确认当地税务要求和银行对接需求。",
           "smartAlerts": "智能提醒",
           "smartAlertsDesc": "针对异常活动自动发送通知",
           "recurring": "周期性交易",
@@ -38840,8 +38845,8 @@
           "contact": "联系合作伙伴"
         },
         "empty": {
-          "title": "未找到合作伙伴",
-          "description": "尝试调整搜索条件或筛选器"
+          "title": "欢迎咨询合作伙伴选择。",
+          "description": "请联系团队讨论需求，并确认可提供的合作伙伴信息。"
         },
         "banner": {
           "title": "深受领先机构信赖",
@@ -39135,7 +39140,7 @@
           "breadcrumb": "社区 / 协作 / GitHub",
           "subtitle": "构建 Adon ERP",
           "title": "在 GitHub 上携手共建",
-          "description": "Adon ERP 是开源项目。Fork 仓库、贡献代码、审查 Pull Request，并与来自 180+ 个国家的开发者共同塑造产品路线图。"
+          "description": "浏览AdonERP代码仓库，查看代码，并通过GitHub讨论修改建议。"
         },
         "stats": [
           {
@@ -39158,7 +39163,7 @@
         "whyContribute": {
           "eyebrow": "为什么参与贡献",
           "title": "您的代码，服务全球用户",
-          "description": "每一项贡献都会进入生产环境。修复一个错误、发布一项功能、改进文档——您的工作将真正惠及数万家企业。"
+          "description": "提出修复、文档或功能变更建议，由仓库维护者审核并决定是否采纳。"
         },
         "features": [
           {
@@ -39171,7 +39176,7 @@
           },
           {
             "title": "推动社区发展",
-            "description": "您的补丁和功能会交付给数千家企业。您贡献的每一行代码都具有真实影响力。"
+            "description": "请与维护者讨论修改建议；发布和部署须经过审核。"
           },
           {
             "title": "携手更快交付",
@@ -40707,12 +40712,12 @@
         "phone": {
           "title": "致电我们",
           "number1": "+880 1842-781978",
-          "number2": "+880 1842-781978",
+          "number2": "+880 1805412462",
           "action": "立即致电"
         },
         "email": {
           "title": "发送邮件",
-          "sales": "sales@adonerp.com",
+          "sales": "adonventure@gmail.com",
           "support": "support@adonerp.com",
           "action": "发送邮件"
         },
@@ -40772,7 +40777,7 @@
       ],
       "cta": {
         "title": "准备好转型您的业务了吗？",
-        "description": "加入已经使用 Adon ERP 简化运营的 500+ 家企业。",
+        "description": "讨论企业所需的业务流程、模块和实施方案。",
         "viewPricing": "查看定价",
         "scheduleCall": "预约通话",
         "freeConsultation": "免费咨询",
@@ -43927,7 +43932,7 @@
     "github": {
       "metadata": {
         "title": "GitHub | AdonERP",
-        "description": "加入我们的 GitHub 开源社区。贡献代码、审查 Pull Request，并与来自 180+ 个国家的开发者共同塑造路线图。"
+        "description": "浏览AdonERP代码仓库，查看代码，并通过GitHub讨论修改建议。"
       },
       "hero": {
         "eyebrowIcon": "GitBranch",
@@ -43936,7 +43941,7 @@
         "preHeading": "构建 Adon ERP",
         "title": "携手共建，就在",
         "titleHighlight": "GitHub",
-        "description": "Adon ERP 是开源项目。Fork 仓库、贡献代码、审查 Pull Request，并与来自 180+ 个国家的开发者共同塑造产品路线图。",
+        "description": "浏览AdonERP代码仓库，查看代码，并通过GitHub讨论修改建议。",
         "viewRepoButton": "查看仓库",
         "guideButton": "贡献指南",
         "latestCommit": {
@@ -43967,7 +43972,7 @@
         "eyebrowLabel": "为什么参与贡献",
         "title": "您的代码，",
         "subtitle": "服务全球用户",
-        "description": "每一项贡献都会进入生产环境。修复一个错误、发布一项功能、改进文档——您的工作将真正惠及数万家企业。",
+        "description": "提出修复、文档或功能变更建议，由仓库维护者审核并决定是否采纳。",
         "features": [
           {
             "title": "开源代码库",
@@ -43983,7 +43988,7 @@
           },
           {
             "title": "推动社区发展",
-            "description": "您的补丁和功能会交付给数千家企业。您贡献的每一行代码都具有真实影响力。",
+            "description": "请与维护者讨论修改建议；发布和部署须经过审核。",
             "icon": "Users",
             "gradient": "从玫瑰色 500 到粉色 600"
           },
@@ -44824,13 +44829,13 @@
           "title": "邮件支持",
           "description": "发送邮件，我们将在 24 小时内回复。",
           "action": "发送邮件",
-          "time": "support@adon-erp.com"
+          "time": "support@adonerp.com"
         },
         "phoneSupport": {
           "title": "电话支持",
           "description": "紧急问题可致电我们的支持团队。",
           "action": "立即致电",
-          "time": "+1 (800) 123-4567"
+          "time": "+880 1842-781978 / +880 1805412462"
         }
       },
       "status": {
@@ -44883,10 +44888,10 @@
         "titleSuffix": "智能 Adon ERP 管理一切",
         "description": "将会计、销售、客户管理、库存和团队工作流连接在同一个系统中。减少手动操作、避免错误，并更快做出业务决策。",
         "altLabel": "Adon",
-        "ecosystemLabel": "{count} 个原生业务应用",
-        "ecosystemHint": "内置、完全互联，从第一天即可使用",
-        "readyLabel": "所有系统就绪",
-        "appBadge": "原生应用"
+        "ecosystemLabel": "{count}个业务模块",
+        "ecosystemHint": "在应用目录中浏览已发布的产品页面。",
+        "readyLabel": "产品目录",
+        "appBadge": "模块"
       },
       "nativeAi": {
         "tag": "智能 AI 助手",
@@ -44948,7 +44953,7 @@
             "pipeline": "销售管道",
             "wonThisMonth": "本月赢单",
             "revenue": "收入",
-            "live": "实时",
+            "live": "示例",
             "onTrack": "正常"
           }
         }
@@ -45052,7 +45057,7 @@
         "titlePrefix": "现代化",
         "titleCircled": "业务",
         "titleSuffix": "管理软件",
-        "note": "没有意外：您的数据、您的规则、一个清晰的价格。",
+        "note": "与顾问讨论范围、费用和实施。",
         "cards": [
           {
             "icon": "🌍",
@@ -45075,36 +45080,36 @@
           {
             "icon": "💰",
             "title": "简单定价",
-            "desc": "无隐藏费用，无复杂套餐。透明定价，专为成长型企业设计。",
-            "badge": "透明"
+            "desc": "根据团队与实施需求，讨论方案范围和报价。",
+            "badge": "讨论范围"
           }
         ]
       },
       "stats": {
-        "tag": "✦ 为成长型企业打造",
-        "title": "从小起步，自信成长",
+        "tag": "已核实的产品目录",
+        "title": "探索互联的产品目录",
         "items": [
           {
-            "value": "100+",
-            "label": "早期用户"
+            "value": "—",
+            "label": "模块"
           },
           {
-            "value": "50+",
-            "label": "业务工具"
+            "value": "—",
+            "label": "应用目录页面"
           },
           {
-            "value": "可靠",
-            "label": "稳定的日常工作流"
+            "value": "—",
+            "label": "行业页面"
           },
           {
-            "value": "简单",
-            "label": "适合每个团队轻松使用"
+            "value": "—",
+            "label": "行业类别"
           }
         ]
       },
       "testimonials": {
-        "tag": "✦ 客户案例",
-        "title": "团队喜欢使用 Adon",
+        "tag": "产品指南",
+        "title": "亲自了解业务流程。",
         "items": [
           {
             "name": "Nazmus Sadat",
@@ -45158,7 +45163,28 @@
         "title": "让您的业务更上一层楼",
         "description": "使用 Adon ERP 在一个统一平台中管理计费、付款、续订、客户关系和报告。"
       }
-    },
+    ,
+"demo": {
+  "preview": "AdonERP · 产品预览",
+  "title": "客户订阅",
+  "subtitle": "账单与续订示例",
+  "disclosure": "仅为虚构示例数据，并非实时客户记录或经过衡量的成果。",
+  "records": "{count}条示例记录",
+  "revenue": "月收入",
+  "growth": "示例变化",
+  "renewing": "续订示例",
+  "id": "ID",
+  "business": "企业",
+  "renewal": "续订",
+  "plan": "方案",
+  "status": "状态",
+  "starter": "入门",
+  "businessPlan": "商业",
+  "enterprise": "企业",
+  "active": "有效",
+  "pending": "待处理"
+}
+},
     "hotel": {
       "metadata": {
         "title": "酒店 | AdonERP",
@@ -46018,7 +46044,7 @@
         "features": [
           {
             "title": "支持 28,000+ 家银行",
-            "description": "覆盖全球 50 多个国家"
+            "description": "请与团队确认当地税务要求和银行对接需求。"
           },
           {
             "title": "95% 自动匹配率",
@@ -46059,7 +46085,7 @@
         "list": [
           {
             "title": "全球税务支持",
-            "description": "为 180 多个国家预配置当地税务要求",
+            "description": "请与团队确认当地税务要求和银行对接需求。",
             "gradient": "从-emerald-500 到-cyan-500"
           },
           {
@@ -48951,10 +48977,10 @@
         "description": "Adon ERP 简单、透明且灵活的定价方案。根据企业规模和需求选择合适套餐。"
       },
       "hero": {
-        "eyebrow": "透明定价",
+        "eyebrow": "方案与价格",
         "title": "简单套餐。",
         "titleHighlight": "强大软件。",
-        "description": "企业所需的一切。选择套餐、设置团队规模，今天即可开始使用。",
+        "description": "比较列出的功能和用户数量。已配置费用将直接展示；其他情况可申请报价。",
         "billingToggle": {
           "yearly": "年付",
           "semiannual": "6 个月",
@@ -49206,7 +49232,7 @@
       ],
       "includedFeaturesHeading": "包含的功能",
       "bottomNote": {
-        "text": "所有套餐均包含**无限支持、托管与维护**。无隐藏费用，功能和数据均无限制。",
+        "text": "与顾问讨论范围、费用和实施。",
         "buttons": {
           "successPacks": "📦 查看成功服务包与实施方案",
           "contactSales": "💬 联系销售团队"
@@ -49243,19 +49269,19 @@
         "items": [
           {
             "question": "按用户定价如何计算？",
-            "answer": "费用根据组织中的活跃用户数量计算。您可以随时增加或减少用户数。"
+            "answer": "报价依据团队规模和工作范围制定。请查看列出的用户限制，并与顾问确认费用。"
           },
           {
             "question": "之后可以更改套餐吗？",
-            "answer": "当然可以。您可以随时升级到更高套餐或调整用户数量。降级将在下一个计费周期生效。"
+            "answer": "变更方案前，请与团队确认调整后的费用及生效日期。"
           },
           {
             "question": "年付和月付有什么区别？",
-            "answer": "与月付相比，年付约可节省 35%，6 个月付费约节省 20%，季度付费约节省 10%。年付时，全年费用一次性计费。"
+            "answer": "账单周期和优惠取决于方案配置及双方确认的报价。单独报价的方案不公布固定订阅价格。"
           },
           {
             "question": "支持哪些付款方式？",
-            "answer": "我们支持银行转账、bKash、Nagad、Rocket 和信用卡。"
+            "answer": "下单前，请与团队确认可用的付款方式和付款条件。"
           }
         ]
       },
@@ -54370,8 +54396,8 @@
           },
           "address": {
             "line1": "71 号塔楼 # 9 A-B, 516/3 南马尼克迪",
-            "line2": "马蒂卡塔路，ECB 查塔尔",
-            "line3": "达卡军营, 达卡 - 1206"
+            "line2": "马蒂卡塔路，ECB 查塔尔，达卡兵营",
+            "line3": "达卡 - 1206, 孟加拉国"
           }
         }
       },
@@ -59390,7 +59416,7 @@
           "sizeAndColourVariantsSeasonalCollections": "时尚零售的尺寸和颜色变体、季节性系列和全渠道销售。",
           "retailIndustryPages": "零售行业页面",
           "industrySpecificExperiencesForEveryKind": "适合各种零售业务的行业特定体验。",
-          "theNewBookstorePageIsReady": "新的书店页面已在行业路线下准备就绪。它遵循您的参考布局，同时保留整个项目中已使用的 AdonERP 页眉和页脚。",
+          "theNewBookstorePageIsReady": "浏览相关产品页面与业务流程，再与我们讨论所需模块和实施方案。",
           "openPage": "打开页面"
         }
       }
@@ -60664,7 +60690,7 @@
           "smartScheduling": "智能调度",
           "forComplex": "对于复杂的",
           "campuses": "校园",
-          "manualTimetablingIsARecipeFor": "手动安排时间表会导致灾难。 Adon ERP 调度引擎可处理数千个数据点，打造完美的学术周。",
+          "manualTimetablingIsARecipeFor": "在同一工作区查看班级、教室和课表冲突。",
           "optimizedForThe": "优化用于",
           "localCampusReality": "当地校园现实",
           "weKnowThatUniversitySchedulingIsn": "我们知道大学的日程安排不仅仅是时间问题。这与校园的空间、资源和物理限制有关。 Adon ERP 的设计就是为了遵守这些限制。",
@@ -60996,7 +61022,7 @@
           "aSeamlessFlow": "无缝流程",
           "fromAdvising": "来自建议",
           "toEnrollment": "到报名",
-          "registrationIsTheBusiestTimeOf": "报名是一年中最繁忙的时间。 Adon ERP 注册模块旨在无故障地处理数千名学生。",
+          "registrationIsTheBusiestTimeOf": "在同一工作区管理选课、先修条件和注册记录。",
           "designedForThe": "专为",
           "highStressRush": "高压力冲",
           "weKnowThatDuringRegistrationWeek": "我们知道，在报名周期间，每一秒都很重要。 Adon ERP 确保系统能够处理繁重的工作，以便您的员工可以专注于帮助学生。",
@@ -64222,7 +64248,30 @@
         }
       }
     }
-  },
+  ,
+"industryDirectory": {
+  "eyebrow": "行业解决方案",
+  "title": "贴合业务需求的ERP，",
+  "highlight": "从您的行业出发。",
+  "lead": "浏览相关产品页面与业务流程，再与我们讨论所需模块和实施方案。",
+  "explore": "浏览行业",
+  "directoryTitle": "选择您的行业。",
+  "search": "搜索行业或业务类型",
+  "workflow": "相关产品页面",
+  "sectorsCount": "{count}个行业类别",
+  "solutionsCount": "{count}个行业页面",
+  "sectors": {
+    "garmentsTextile": "连接服装与纺织业务中的款式开发、物料预订和生产跟进。",
+    "manufacturing": "了解从物料、生产订单、质量检查到发货的业务流程。",
+    "retail": "探索不同门店的收银、库存、客户档案和门店报表。",
+    "foodHospitality": "连接餐饮与住宿业务的库存、服务、收银和账单流程。",
+    "education": "探索招生、学生档案、考勤、学费及教学管理。",
+    "realEstate": "查看房产档案、项目工作、账单及财务报表。",
+    "consulting": "探索专业团队的客户档案、服务交付、账单和报表。",
+    "others": "探索电商、NGO与广播电视业务的工作流程。"
+  }
+}
+},
   "admin": {
     "shell": {
       "brandTitle": "Adon ERP 管理后台",

@@ -129,27 +129,27 @@ const organizationSchema = {
   url: siteConfig.url,
   logo: `${siteConfig.url}/adon_erp_logo.png`,
   description: siteConfig.description,
-  email: business.salesEmail,
+  email: business.email,
   telephone: business.phone,
   address: postalAddress,
-  contactPoint: [
+  contactPoint: business.phones.flatMap((phone) => [
     {
       "@type": "ContactPoint",
       contactType: "sales",
-      telephone: business.phone,
-      email: business.salesEmail,
+      telephone: phone.number,
+      email: business.email,
       areaServed: "BD",
       availableLanguage: ["English", "Bengali"],
     },
     {
       "@type": "ContactPoint",
       contactType: "customer support",
-      telephone: business.phone,
+      telephone: phone.number,
       email: business.supportEmail,
       areaServed: "BD",
       availableLanguage: ["English", "Bengali"],
     },
-  ],
+  ]),
   ...(siteConfig.sameAs.length ? { sameAs: siteConfig.sameAs } : {}),
 };
 
@@ -164,7 +164,12 @@ const localBusinessSchema = {
   logo: `${siteConfig.url}/adon_erp_logo.png`,
   description: siteConfig.description,
   telephone: business.phone,
-  email: business.salesEmail,
+  email: business.email,
+  contactPoint: business.phones.map((phone) => ({
+    "@type": "ContactPoint",
+    telephone: phone.number,
+    email: business.email,
+  })),
   address: postalAddress,
   ...(business.geo
     ? { geo: { "@type": "GeoCoordinates", ...business.geo } }

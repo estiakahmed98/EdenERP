@@ -59,7 +59,7 @@
     "actions": {
       "liveDemo": "アドバイザーに相談・ライブデモを体験",
       "watchDemo": "デモを見る",
-      "viewAllApps": "50以上のツールを探す",
+      "viewAllApps": "業務モジュールを見る",
       "seeAllFeatures": "すべての機能を見る",
       "contactSales": "営業担当に相談",
       "talkToSales": "営業担当に相談",
@@ -75,7 +75,12 @@
       "free": "無料",
       "custom": "個別見積り"
     }
-  },
+  ,
+"whatsapp": {
+  "label": "WhatsAppで相談",
+  "scrollTop": "先頭に戻る"
+}
+},
   "layout": {
     "header": {
       "nav": {
@@ -36135,7 +36140,7 @@
         "description": "ビジネス財務を1か所で管理するために必要なすべて。",
         "items": {
           "globalTax": "グローバル税務コンプライアンス",
-          "globalTaxDesc": "180以上の国向けに現地税務ルールで事前設定",
+          "globalTaxDesc": "地域の税務要件と銀行連携について担当者にご確認ください。",
           "smartAlerts": "スマートアラート",
           "smartAlertsDesc": "異常なアクティビティの自動通知",
           "recurring": "定期トランザクション",
@@ -38840,8 +38845,8 @@
           "contact": "パートナーに連絡"
         },
         "empty": {
-          "title": "パートナーが見つかりません",
-          "description": "検索またはフィルターを調整してみてください"
+          "title": "パートナーについてご相談ください。",
+          "description": "ご要件と対応可能なパートナー情報を担当チームにご確認ください。"
         },
         "banner": {
           "title": "大手組織に信頼されています",
@@ -39135,7 +39140,7 @@
           "breadcrumb": "コミュニティ / コラボレート / GitHub",
           "subtitle": "Adon ERPを構築する",
           "title": "一緒に、GitHubで",
-          "description": "Adon ERPはオープンソースです。リポジトリをフォークし、コードを貢献し、プルリクエストをレビューし、180か国以上の開発者と一緒にロードマップを形作りましょう。"
+          "description": "AdonERPのリポジトリでコードを確認し、GitHubで変更案をご相談ください。"
         },
         "stats": [
           {
@@ -39158,7 +39163,7 @@
         "whyContribute": {
           "eyebrow": "なぜ貢献するのか",
           "title": "あなたのコードが世界中に出荷される",
-          "description": "すべての貢献が製品に入ります。バグを修正し、機能を出荷し、ドキュメントを改善し、あなたの仕事が数万の企業の手に届くのを見てください。"
+          "description": "修正、文書、機能変更をご提案ください。採用はリポジトリの管理者がレビューして判断します。"
         },
         "features": [
           {
@@ -39171,7 +39176,7 @@
           },
           {
             "title": "コミュニティを動かす",
-            "description": "あなたのパッチと機能は数千の企業に出荷されます。貢献するすべてのコード行が実世界に影響を与えます。"
+            "description": "変更案は管理者にご相談ください。公開とデプロイにはレビューが必要です。"
           },
           {
             "title": "一緒により速く出荷",
@@ -40707,12 +40712,12 @@
         "phone": {
           "title": "電話する",
           "number1": "+880 1842-781978",
-          "number2": "+880 1842-781978",
+          "number2": "+880 1805412462",
           "action": "今すぐ電話"
         },
         "email": {
           "title": "メールする",
-          "sales": "sales@adonerp.com",
+          "sales": "adonventure@gmail.com",
           "support": "support@adonerp.com",
           "action": "メールを送る"
         },
@@ -40772,7 +40777,7 @@
       ],
       "cta": {
         "title": "ビジネスを変革する準備はできましたか？",
-        "description": "すでにAdon ERPを使用して業務を効率化している500以上のビジネスに参加しましょう。",
+        "description": "必要な業務、モジュール、導入についてご相談ください。",
         "viewPricing": "価格を見る",
         "scheduleCall": "通話をスケジュール",
         "freeConsultation": "無料相談",
@@ -43927,7 +43932,7 @@
     "github": {
       "metadata": {
         "title": "GitHub | AdonERP",
-        "description": "GitHubでオープンソースコミュニティに参加しましょう。コードを貢献し、プルリクエストをレビューし、180か国以上の開発者と一緒にロードマップを形作りましょう。"
+        "description": "AdonERPのリポジトリでコードを確認し、GitHubで変更案をご相談ください。"
       },
       "hero": {
         "eyebrowIcon": "GitBranch",
@@ -43936,7 +43941,7 @@
         "preHeading": "Adon ERPを構築する",
         "title": "一緒に、",
         "titleHighlight": "GitHub",
-        "description": "Adon ERPはオープンソースです。リポジトリをフォークし、コードを貢献し、プルリクエストをレビューし、180か国以上の開発者と一緒にロードマップを形作りましょう。",
+        "description": "AdonERPのリポジトリでコードを確認し、GitHubで変更案をご相談ください。",
         "viewRepoButton": "リポジトリを見る",
         "guideButton": "貢献ガイド",
         "latestCommit": {
@@ -43967,7 +43972,7 @@
         "eyebrowLabel": "なぜ貢献するのか",
         "title": "あなたのコードが",
         "subtitle": "世界中に出荷される",
-        "description": "すべての貢献が製品に入ります。バグを修正し、機能を出荷し、ドキュメントを改善し、あなたの仕事が数万の企業の手に届くのを見てください。",
+        "description": "修正、文書、機能変更をご提案ください。採用はリポジトリの管理者がレビューして判断します。",
         "features": [
           {
             "title": "オープンソースコードベース",
@@ -43983,7 +43988,7 @@
           },
           {
             "title": "コミュニティを動かす",
-            "description": "あなたのパッチと機能は数千の企業に出荷されます。貢献するすべてのコード行が実世界に影響を与えます。",
+            "description": "変更案は管理者にご相談ください。公開とデプロイにはレビューが必要です。",
             "icon": "Users",
             "gradient": "ローズ-500からピンク-600まで"
           },
@@ -44824,13 +44829,13 @@
           "title": "メールサポート",
           "description": "メールを送信してください。24時間以内に返信します。",
           "action": "メールを送る",
-          "time": "support@adon-erp.com"
+          "time": "support@adonerp.com"
         },
         "phoneSupport": {
           "title": "電話サポート",
           "description": "緊急の問題はサポートチームに電話してください。",
           "action": "今すぐ電話",
-          "time": "+1 (800) 123-4567"
+          "time": "+880 1842-781978 / +880 1805412462"
         }
       },
       "status": {
@@ -44883,10 +44888,10 @@
         "titleSuffix": "スマートAdon ERPで",
         "description": "会計、営業、顧客管理、在庫、チームワークフローを一つのシステムで接続したままにします。手作業を減らし、ミスを避け、より速いビジネス決定を行います。",
         "altLabel": "Adon",
-        "ecosystemLabel": "{count}のネイティブビジネスアプリ",
-        "ecosystemHint": "組み込み済み、完全に接続、初日から準備完了",
-        "readyLabel": "すべてのシステム準備完了",
-        "appBadge": "ネイティブアプリ"
+        "ecosystemLabel": "業務モジュール{count}件",
+        "ecosystemHint": "アプリ一覧から公開済みの各ページをご覧ください。",
+        "readyLabel": "製品一覧",
+        "appBadge": "モジュール"
       },
       "nativeAi": {
         "tag": "スマートAIアシスタンス",
@@ -44948,7 +44953,7 @@
             "pipeline": "パイプライン",
             "wonThisMonth": "今月の受注",
             "revenue": "収益",
-            "live": "ライブ",
+            "live": "サンプル",
             "onTrack": "順調"
           }
         }
@@ -45052,7 +45057,7 @@
         "titlePrefix": "モダンな",
         "titleCircled": "ビジネス",
         "titleSuffix": "管理ソフトウェア",
-        "note": "サプライズなし。あなたのデータ、あなたのルール、明快な価格。",
+        "note": "範囲、料金、導入について担当者にご相談ください。",
         "cards": [
           {
             "icon": "🌍",
@@ -45075,36 +45080,36 @@
           {
             "icon": "💰",
             "title": "シンプルな価格設定",
-            "desc": "隠れた費用や複雑なプランはありません。成長するビジネスのために設計された透明な価格設定。",
-            "badge": "透明"
+            "desc": "チームと導入の要件に合わせてプランの範囲とお見積もりをご相談ください。",
+            "badge": "範囲をご相談"
           }
         ]
       },
       "stats": {
-        "tag": "✦ 成長するビジネスのために構築",
-        "title": "小さく始め、自信を持って成長",
+        "tag": "確認済みの製品一覧",
+        "title": "つながる製品一覧をご覧ください",
         "items": [
           {
-            "value": "100+",
-            "label": "初期ユーザー"
+            "value": "—",
+            "label": "モジュール"
           },
           {
-            "value": "50+",
-            "label": "ビジネスツール"
+            "value": "—",
+            "label": "アプリ一覧のページ"
           },
           {
-            "value": "信頼性",
-            "label": "安定した日々のワークフロー"
+            "value": "—",
+            "label": "業種別ページ"
           },
           {
-            "value": "シンプル",
-            "label": "すべてのチームに簡単"
+            "value": "—",
+            "label": "業種分野"
           }
         ]
       },
       "testimonials": {
-        "tag": "✦ 顧客ストーリー",
-        "title": "チームはAdonの使用を愛しています",
+        "tag": "製品ガイド",
+        "title": "実際の業務の流れを確認。",
         "items": [
           {
             "name": "Nazmus Sadat",
@@ -45158,7 +45163,28 @@
         "title": "ビジネスを次のレベルへ",
         "description": "Adon ERPで請求、支払い、更新、顧客関係、レポートを一つの統合プラットフォームから管理します。"
       }
-    },
+    ,
+"demo": {
+  "preview": "AdonERP · 製品プレビュー",
+  "title": "顧客サブスクリプション",
+  "subtitle": "請求と更新のサンプル",
+  "disclosure": "説明用の架空データです。実際の顧客情報や測定された成果ではありません。",
+  "records": "サンプル{count}件",
+  "revenue": "月間売上",
+  "growth": "変化の例",
+  "renewing": "更新の例",
+  "id": "ID",
+  "business": "企業",
+  "renewal": "更新日",
+  "plan": "プラン",
+  "status": "状態",
+  "starter": "スターター",
+  "businessPlan": "ビジネス",
+  "enterprise": "エンタープライズ",
+  "active": "有効",
+  "pending": "保留"
+}
+},
     "hotel": {
       "metadata": {
         "title": "ホテル | AdonERP",
@@ -46018,7 +46044,7 @@
         "features": [
           {
             "title": "28,000以上の銀行をサポート",
-            "description": "50か国以上のグローバルカバレッジ"
+            "description": "地域の税務要件と銀行連携について担当者にご確認ください。"
           },
           {
             "title": "95%の自動マッチング率",
@@ -46059,7 +46085,7 @@
         "list": [
           {
             "title": "グローバル税務サポート",
-            "description": "現地の税務要件に合わせて180か国以上向けに事前構成",
+            "description": "地域の税務要件と銀行連携について担当者にご確認ください。",
             "gradient": "エメラルド 500 からシアン 500 まで"
           },
           {
@@ -48951,10 +48977,10 @@
         "description": "Adon ERPのシンプルで透明、柔軟な価格プラン。ビジネス規模とニーズに合ったプランを選択してください。"
       },
       "hero": {
-        "eyebrow": "透明な価格",
+        "eyebrow": "プランと料金",
         "title": "シンプルなプラン。",
         "titleHighlight": "強力なソフトウェア。",
-        "description": "ビジネスに必要なすべて。プランを選択し、チームサイズを設定し、今日から始めましょう。",
+        "description": "掲載された機能とユーザー数を比較できます。設定済み料金を表示し、それ以外はお見積もりをご案内します。",
         "billingToggle": {
           "yearly": "年払い",
           "semiannual": "6か月",
@@ -49206,7 +49232,7 @@
       ],
       "includedFeaturesHeading": "含まれる機能",
       "bottomNote": {
-        "text": "すべてのプランに**無制限のサポート、ホスティング、メンテナンス**が含まれます。隠れた費用、機能やデータの制限はありません。",
+        "text": "範囲、料金、導入について担当者にご相談ください。",
         "buttons": {
           "successPacks": "📦 サクセスパックと実装を見る",
           "contactSales": "💬 営業チームに相談"
@@ -49243,19 +49269,19 @@
         "items": [
           {
             "question": "ユーザーベースの価格設定はどのように機能しますか？",
-            "answer": "組織内のアクティブユーザー数に基づいて支払います。ユーザー数はいつでも増減できます。"
+            "answer": "チーム規模と業務範囲に基づいて見積もります。掲載されたユーザー数の上限と料金を担当者にご確認ください。"
           },
           {
             "question": "後でプランを変更できますか？",
-            "answer": "もちろんです。いつでも上位プランにアップグレードしたり、ユーザー数を変更したりできます。ダウングレードは次の請求サイクルで有効になります。"
+            "answer": "プラン変更前に、変更後の料金と適用日を担当者にご相談ください。"
           },
           {
             "question": "年間請求と月額請求の違いは何ですか？",
-            "answer": "年間請求は月額と比較して約35%節約でき、6か月請求は約20%、四半期請求は約10%節約できます。年間請求では、1年分を一度に請求されます。"
+            "answer": "請求期間と割引はプラン設定と合意した見積もりによって異なります。見積もり制のプランでは固定の利用料金を表示しません。"
           },
           {
             "question": "どの支払い方法をサポートしていますか？",
-            "answer": "銀行振込、bKash、Nagad、Rocket、クレジットカードをサポートしています。"
+            "answer": "ご注文前に、利用可能な支払方法と支払条件を担当者にご確認ください。"
           }
         ]
       },
@@ -54370,8 +54396,8 @@
           },
           "address": {
             "line1": "タワー 71、フラット # 9 A-B、516/3 South Manikdi",
-            "line2": "マティカタ通り、ECB チャタール",
-            "line3": "ダッカ カントンメント、ダッカ - 1206"
+            "line2": "Matikata Road、ECB Chattar、ダッカカントンメント",
+            "line3": "ダッカ - 1206、バングラデシュ"
           }
         }
       },
@@ -59390,7 +59416,7 @@
           "sizeAndColourVariantsSeasonalCollections": "ファッション小売業向けのサイズとカラーバリエーション、季節ごとのコレクション、オムニチャネル販売。",
           "retailIndustryPages": "小売業界のページ",
           "industrySpecificExperiencesForEveryKind": "あらゆる種類の小売業向けの業界固有のエクスペリエンス。",
-          "theNewBookstorePageIsReady": "業界ルートで新刊書店のページができました。プロジェクト全体ですでに使用されている AdonERP ヘッダーとフッターを維持しながら、参照レイアウトに従います。",
+          "theNewBookstorePageIsReady": "業種に合った製品ページと業務の流れを確認し、必要なモジュールや導入についてご相談ください。",
           "openPage": "ページを開く"
         }
       }
@@ -60664,7 +60690,7 @@
           "smartScheduling": "スマートなスケジューリング",
           "forComplex": "コンプレックスのための",
           "campuses": "キャンパス",
-          "manualTimetablingIsARecipeFor": "手動でスケジュールを作成すると、災害が発生します。 Adon ERP スケジューリング エンジンは、何千ものデータ ポイントを処理して、完璧な学術週間を作成します。",
+          "manualTimetablingIsARecipeFor": "クラス、教室、時間割の重複を一つの画面で確認できます。",
           "optimizedForThe": "向けに最適化",
           "localCampusReality": "地元のキャンパスの現実",
           "weKnowThatUniversitySchedulingIsn": "大学のスケジュール管理は時間だけを重視するものではないことを私たちは知っています。それはスペース、リソース、キャンパスの物理的な制限に関係します。 Adon ERP は、これらの制限を尊重するように構築されています。",
@@ -60996,7 +61022,7 @@
           "aSeamlessFlow": "シームレスなフロー",
           "fromAdvising": "アドバイスから",
           "toEnrollment": "入学まで",
-          "registrationIsTheBusiestTimeOf": "登録は一年で最も忙しい時期です。 Adon ERP 登録モジュールは、何千人もの学生を問題なく処理できるように設計されています。",
+          "registrationIsTheBusiestTimeOf": "履修科目の選択、前提条件、登録記録を一つの画面で管理できます。",
           "designedForThe": "のために設計されています",
           "highStressRush": "高ストレスラッシュ",
           "weKnowThatDuringRegistrationWeek": "登録週間は一秒一秒が重要であることを私たちは知っています。 Adon ERP は、システムが面倒な作業を確実に処理するため、スタッフは学生の支援に集中できます。",
@@ -64222,7 +64248,30 @@
         }
       }
     }
-  },
+  ,
+"industryDirectory": {
+  "eyebrow": "業種別ソリューション",
+  "title": "業務に合わせて選ぶ",
+  "highlight": "業種別ERP。",
+  "lead": "業種に合った製品ページと業務の流れを確認し、必要なモジュールや導入についてご相談ください。",
+  "explore": "業種を見る",
+  "directoryTitle": "業種を選択してください。",
+  "search": "業種や事業を検索",
+  "workflow": "関連する製品ページ",
+  "sectorsCount": "{count}分野",
+  "solutionsCount": "業種別ページ{count}件",
+  "sectors": {
+    "garmentsTextile": "アパレル・繊維事業のスタイル開発、資材手配、生産進捗を確認できます。",
+    "manufacturing": "資材、生産指示、品質検査、出荷までの流れを確認できます。",
+    "retail": "店舗の種類に合わせて、販売、在庫、顧客情報、店舗レポートを確認できます。",
+    "foodHospitality": "飲食・宿泊事業の在庫、サービス、会計、請求の流れを確認できます。",
+    "education": "入学手続き、学生情報、出欠、学費、学習管理を確認できます。",
+    "realEstate": "不動産情報、プロジェクト業務、請求、財務レポートを確認できます。",
+    "consulting": "専門サービスチームの顧客情報、サービス提供、請求、レポートを確認できます。",
+    "others": "EC、NGO、放送事業に関連する業務を確認できます。"
+  }
+}
+},
   "admin": {
     "shell": {
       "brandTitle": "Adon ERP 管理画面",
