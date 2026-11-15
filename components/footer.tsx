@@ -15,6 +15,7 @@ import Image from "next/image";
 
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/site";
+import BusinessCompanyName from "@/components/business-company-name";
 import css from "./footer.module.css";
 
 type FooterSection = {
@@ -155,6 +156,7 @@ export default function Footer({
                 ))}
               </span>
             </a>
+            <BusinessCompanyName />
           </div>
           <div className={`${css.contactGroup} ${css.phoneGroup}`}>
             <p className={css.contactLabel}>
