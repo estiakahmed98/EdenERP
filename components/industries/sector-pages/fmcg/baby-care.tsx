@@ -1,12 +1,12 @@
 import { Baby, Heart, ShieldCheck, Smile } from "lucide-react";
-import { Closing, Crumbs, SampleTable, SectionHead, Tail, loadSector, wrap } from "../kit";
+import { Closing, Crumbs, SampleTable, SectionHead, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
 const icons = [ShieldCheck, Heart, Baby, Smile];
 const tints = [
-  "bg-primary/10 text-[color-mix(in_oklab,var(--primary),var(--foreground)_35%)]",
-  "bg-chart-4/10 text-[color-mix(in_oklab,var(--chart-4),var(--foreground)_35%)]",
-  "bg-accent/10 text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]",
-  "bg-primary/10 text-[color-mix(in_oklab,var(--primary),var(--foreground)_35%)]",
+  "bg-(--sector-wash) text-(--sector-blue)",
+  "bg-(--sector-sand) text-(--sector-blue)",
+  "bg-(--sector-sage) text-(--sector-blue)",
+  "bg-(--sector-wash) text-(--sector-blue)",
 ];
 
 /** Baby & Child Care: rounded, gentle, safety-first lot tracing. */
@@ -16,20 +16,20 @@ export default async function BabyCarePage() {
   const v = p.visual;
 
   return (
-    <main className="bg-background">
+    <main className={sectorRoot}>
       <section className="relative overflow-hidden">
-        <div aria-hidden className="absolute -start-20 top-10 size-72 rounded-full bg-primary/20 blur-2xl" />
-        <div aria-hidden className="absolute -end-10 top-40 size-56 rounded-full bg-chart-4/20 blur-2xl" />
-        <div aria-hidden className="absolute bottom-0 start-1/3 size-48 rounded-full bg-accent/20 blur-2xl" />
+        <div aria-hidden className="absolute -start-20 top-10 size-72 rounded-full bg-(--sector-wash) blur-2xl" />
+        <div aria-hidden className="absolute -end-10 top-40 size-56 rounded-full bg-(--sector-sand) blur-2xl" />
+        <div aria-hidden className="absolute bottom-0 start-1/3 size-48 rounded-full bg-(--sector-sage) blur-2xl" />
         <Crumbs s={s} />
         <div className={`${wrap} relative py-16 text-center lg:py-24`}>
-          <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <span className="mx-auto flex size-16 items-center justify-center rounded-full bg-(--sector-wash) text-(--sector-blue)">
             <Baby className="size-8" aria-hidden />
           </span>
-          <p className="mt-5 text-sm font-semibold text-[color-mix(in_oklab,var(--primary),var(--foreground)_35%)]">{p.hero.eyebrow}</p>
+          <p className="mt-5 text-sm font-semibold text-(--sector-blue)">{p.hero.eyebrow}</p>
           <h1 className="mx-auto mt-3 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl">
             {p.hero.title}{" "}
-            <span className="rounded-full bg-chart-4/20 px-3 text-[color-mix(in_oklab,var(--chart-4),var(--foreground)_35%)]">{p.hero.highlight}</span>
+            <span className="rounded-full bg-(--sector-sand) px-3 text-(--sector-blue)">{p.hero.highlight}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{p.hero.lead}</p>
           <dl className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
@@ -46,12 +46,12 @@ export default async function BabyCarePage() {
       {/* Rounded pillars */}
       <section className="py-16 sm:py-20">
         <div className={wrap}>
-          <SectionHead eyebrow={s.c.pillarsEyebrow} title={v.pillarsTitle} accent="text-primary" center />
+          <SectionHead eyebrow={s.c.pillarsEyebrow} title={v.pillarsTitle} center />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {p.pillars.map((pl, i) => {
               const Icon = icons[i];
               return (
-                <div key={pl.title} className="rounded-[2rem] border-2 border-dashed border-primary/20 bg-card p-6 text-center">
+                <div key={pl.title} className="rounded-[2rem] border-2 border-dashed border-border bg-card p-6 text-center">
                   <span className={`mx-auto flex size-14 items-center justify-center rounded-full ${tints[i]}`}>
                     <Icon className="size-7" aria-hidden />
                   </span>
@@ -65,10 +65,10 @@ export default async function BabyCarePage() {
       </section>
 
       {/* Lot trace card + flow */}
-      <section className="bg-primary/5 py-16 sm:py-20">
+      <section className="bg-(--sector-wash) py-16 sm:py-20">
         <div className={`${wrap} grid gap-12 lg:grid-cols-2 lg:items-center`}>
-          <div className="rounded-[2.5rem] bg-card p-8 shadow-xl shadow-primary/10">
-            <p className="text-sm font-semibold text-[color-mix(in_oklab,var(--primary),var(--foreground)_35%)]">{v.traceTitle}</p>
+          <div className="rounded-[2.5rem] bg-card p-8 shadow-xl">
+            <p className="text-sm font-semibold text-(--sector-blue)">{v.traceTitle}</p>
             <div className="mt-6 space-y-4">
               {["trace1", "trace2", "trace3", "trace4"].map((k, i) => (
                 <div key={k} className="flex items-center gap-4">
@@ -82,7 +82,7 @@ export default async function BabyCarePage() {
             </div>
           </div>
           <div>
-            <SectionHead eyebrow={s.c.flowEyebrow} title={v.flowTitle} accent="text-primary" />
+            <SectionHead eyebrow={s.c.flowEyebrow} title={v.flowTitle} />
             <ol className="space-y-5">
               {p.flow.map((step) => (
                 <li key={step.title} className="rounded-3xl bg-card p-5">
@@ -97,24 +97,12 @@ export default async function BabyCarePage() {
 
       <section className="py-16 sm:py-20">
         <div className={wrap}>
-          <SampleTable
-            s={s}
-            frame="rounded-[2rem] border-primary/20"
-            head="bg-primary/10 text-[color-mix(in_oklab,var(--primary),var(--foreground)_35%)]"
-            badge="bg-chart-4/10 text-[color-mix(in_oklab,var(--chart-4),var(--foreground)_35%)]"
-          />
+          <SampleTable s={s} />
         </div>
       </section>
 
-      <Tail
-        s={s}
-        accent="text-primary"
-        card="rounded-[2rem] border-primary/10 bg-card hover:border-primary/30"
-        icon="text-primary"
-        item="rounded-[2rem] border-primary/10 bg-card"
-        chip="border-primary/20 hover:bg-primary/5"
-      />
-      <Closing s={s} panel="rounded-[2.5rem] bg-primary text-primary-foreground" accent="text-primary-foreground/80" />
+      <Tail s={s} />
+      <Closing s={s} />
     </main>
   );
 }

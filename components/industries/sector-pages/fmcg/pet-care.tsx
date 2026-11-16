@@ -1,49 +1,90 @@
 import { Bone, Cat, Dog, PawPrint } from "lucide-react";
-import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap } from "../kit";
+import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
-const stickers = [
-  "-rotate-2 bg-accent/20 text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]",
-  "rotate-1 bg-chart-4/20 text-[color-mix(in_oklab,var(--chart-4),var(--foreground)_35%)]",
-  "rotate-2 bg-primary/20 text-[color-mix(in_oklab,var(--primary),var(--foreground)_35%)]",
-  "-rotate-1 bg-chart-4/20 text-[color-mix(in_oklab,var(--chart-4),var(--foreground)_35%)]",
-];
+/** Soft supporting tints from the shared palette, one per channel / pillar. */
+const tints = ["bg-(--sector-sage)", "bg-(--sector-sand)", "bg-(--sector-wash)", "bg-(--sector-sand)"];
 const icons = [Dog, Cat, Bone, PawPrint];
 
-/** Pet Care: playful sticker cards, channel-led (pet shops, vets, online). */
+/** Pet Care: friendly, channel-led (pet shops, vets, online, own outlets) with paw-print accents. */
 export default async function PetCarePage() {
   const s = await loadSector("fmcg", "pet-care");
   const { p } = s;
   const v = p.visual;
 
   return (
-    <main className="bg-background">
-      <section className="bg-accent/5">
+    <main className={sectorRoot}>
+      <section className="relative overflow-hidden bg-gradient-to-b from-(--sector-sage) to-background">
+        {/* scattered paw prints */}
+        {["start-[6%] top-[22%] rotate-12", "start-[46%] top-[10%] -rotate-12", "end-[4%] bottom-[14%] rotate-45", "start-[38%] bottom-[8%] -rotate-6"].map((pos) => (
+          <PawPrint key={pos} aria-hidden className={`pointer-events-none absolute size-10 text-(--sector-blue) opacity-[0.07] ${pos}`} />
+        ))}
         <Crumbs s={s} />
-        <div className={`${wrap} grid gap-12 py-14 lg:grid-cols-2 lg:items-center lg:py-20`}>
+        <div className={`${wrap} relative grid gap-12 py-14 lg:grid-cols-2 lg:items-center lg:py-20`}>
           <div>
-            <Eyebrow className="text-chart-4">{p.hero.eyebrow}</Eyebrow>
-            <h1 className="mt-4 text-4xl font-black leading-[1.05] tracking-tight text-foreground sm:text-6xl">
+            <Eyebrow>{p.hero.eyebrow}</Eyebrow>
+            <h1 className="mt-4 text-4xl font-black leading-[1.08] tracking-tight text-(--ink) sm:text-6xl">
               {p.hero.title}{" "}
-              <span className="inline-block -rotate-1 rounded-xl bg-chart-4 px-3 py-1 text-primary-foreground">{p.hero.highlight}</span>
+              <span className="text-(--sector-blue)">{p.hero.highlight}</span>
             </h1>
+            <div aria-hidden className="mt-3 flex gap-1.5 text-(--sector-blue)">
+              {[0, 1, 2].map((i) => (
+                <PawPrint key={i} className="size-4" style={{ opacity: 1 - i * 0.3 }} />
+              ))}
+            </div>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">{p.hero.lead}</p>
             <dl className="mt-8 flex flex-wrap gap-3">
               {p.stats.map((st) => (
-                <div key={st.label} className="flex items-center gap-2 rounded-full border-2 border-foreground/80 bg-card px-4 py-2">
-                  <dt className="order-last text-sm text-foreground">{st.label}</dt>
-                  <dd className="font-black text-chart-4">{st.value}</dd>
+                <div key={st.label} className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 shadow-sm">
+                  <dt className="order-last text-sm text-muted-foreground">{st.label}</dt>
+                  <dd className="font-bold text-(--sector-blue)">{st.value}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <div className="relative mx-auto grid w-full max-w-md grid-cols-2 gap-4">
-            {["channel1", "channel2", "channel3", "channel4"].map((k, i) => {
+
+          {/* Channel hub */}
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="grid grid-cols-2 gap-4">
+              {["channel1", "channel2", "channel3", "channel4"].map((k, i) => {
+                const Icon = icons[i];
+                return (
+                  <div
+                    key={k}
+                    className={`rounded-3xl border border-border p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md ${tints[i]}`}
+                  >
+                    <span className="flex size-11 items-center justify-center rounded-full bg-card text-(--sector-blue) shadow-sm">
+                      <Icon className="size-6" aria-hidden />
+                    </span>
+                    <p className="mt-4 font-bold text-(--ink)">{v[k]}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{v[`${k}Note`]}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <span
+              aria-hidden
+              className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card text-(--sector-blue) shadow-md"
+            >
+              <PawPrint className="size-7" />
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillars */}
+      <section className="py-16 sm:py-20">
+        <div className={wrap}>
+          <SectionHead eyebrow={s.c.pillarsEyebrow} title={v.pillarsTitle} />
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {p.pillars.map((pl, i) => {
               const Icon = icons[i];
               return (
-                <div key={k} className={`rounded-3xl border-2 border-foreground/80 p-5 shadow-[4px_4px_0_0] shadow-foreground/80 ${stickers[i]}`}>
-                  <Icon className="size-8" aria-hidden />
-                  <p className="mt-4 font-bold">{v[k]}</p>
-                  <p className="mt-1 font-mono text-xs opacity-80">{v[`${k}Note`]}</p>
+                <div key={pl.title} className="group rounded-3xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary">
+                  <span className={`flex size-12 items-center justify-center rounded-2xl text-(--sector-blue) ${tints[i]}`}>
+                    <Icon className="size-6" aria-hidden />
+                  </span>
+                  <h3 className="mt-5 text-lg font-bold text-(--ink)">{pl.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{pl.body}</p>
                 </div>
               );
             })}
@@ -51,33 +92,22 @@ export default async function PetCarePage() {
         </div>
       </section>
 
-      {/* Sticker pillars */}
-      <section className="py-16 sm:py-20">
+      {/* Flow: paw-print trail */}
+      <section className="border-y border-border bg-(--cream) py-16 sm:py-20">
         <div className={wrap}>
-          <SectionHead eyebrow={s.c.pillarsEyebrow} title={v.pillarsTitle} accent="text-chart-4" />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {p.pillars.map((pl, i) => (
-              <div key={pl.title} className={`rounded-3xl border-2 border-foreground/80 p-6 shadow-[5px_5px_0_0] shadow-foreground/80 transition-transform hover:rotate-0 ${stickers[i]}`}>
-                <h3 className="text-lg font-black">{pl.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed opacity-90">{pl.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Flow as checklist cards */}
-      <section className="bg-chart-4/5 py-16 sm:py-20">
-        <div className={wrap}>
-          <SectionHead eyebrow={s.c.flowEyebrow} title={v.flowTitle} accent="text-chart-4" />
-          <ol className="grid gap-4 md:grid-cols-2">
+          <SectionHead eyebrow={s.c.flowEyebrow} title={v.flowTitle} />
+          <ol className="relative grid gap-6 md:grid-cols-4">
+            <div aria-hidden className="absolute start-6 end-6 top-6 hidden border-t-2 border-dashed border-border md:block" />
             {p.flow.map((step, i) => (
-              <li key={step.title} className="flex gap-4 rounded-2xl bg-card p-5">
-                <PawPrint className={`size-6 shrink-0 ${i % 2 ? "text-accent" : "text-chart-4"}`} aria-hidden />
-                <div>
-                  <h3 className="font-bold text-foreground">{step.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
-                </div>
+              <li key={step.title} className="relative">
+                <span className="relative z-10 flex size-12 items-center justify-center rounded-full border border-border bg-card text-(--sector-blue) shadow-sm">
+                  <PawPrint className="size-5" aria-hidden />
+                  <span className="absolute -end-1 -top-1 flex size-5 items-center justify-center rounded-full bg-(--sector-blue) text-[10px] font-bold text-card">
+                    {i + 1}
+                  </span>
+                </span>
+                <h3 className="mt-5 font-bold text-(--ink)">{step.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
               </li>
             ))}
           </ol>
@@ -86,25 +116,12 @@ export default async function PetCarePage() {
 
       <section className="py-16 sm:py-20">
         <div className={wrap}>
-          <SampleTable
-            s={s}
-            frame="border-2 border-foreground/80"
-            head="bg-accent/20 text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]"
-            badge="bg-chart-4 text-primary-foreground"
-          />
+          <SampleTable s={s} />
         </div>
       </section>
 
-      <Tail
-        s={s}
-        accent="text-chart-4"
-        card="border-2 border-foreground/70 bg-card hover:bg-accent/5"
-        icon="text-chart-4"
-        item="border-2 border-foreground/70 bg-card"
-        chip="border-2 border-foreground/70 hover:bg-chart-4/10"
-        surface="bg-accent/5"
-      />
-      <Closing s={s} panel="border-2 border-foreground/80 bg-chart-4 text-primary-foreground shadow-[6px_6px_0_0] shadow-foreground/80" accent="text-primary-foreground/80" />
+      <Tail s={s} />
+      <Closing s={s} />
     </main>
   );
 }

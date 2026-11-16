@@ -1,0 +1,26 @@
+/*
+ * Same semantic palette as the other industry pages
+ * (manufacturing, apparel, others, retail, hospitality, professional modules):
+ * one blue for eyebrows, links and highlights, light washes for surfaces,
+ * green / amber / sage / sand only as supporting tints. Built on the globals.css tokens.
+ */
+.sector {
+  --sector-blue: color-mix(in srgb, var(--primary) 78%, var(--ink));
+  --sector-green: color-mix(in srgb, var(--accent) 62%, var(--ink));
+  --sector-amber: #99631b;
+  --sector-wash: color-mix(in srgb, var(--primary) 6%, var(--card));
+  --sector-sage: color-mix(in srgb, var(--accent) 12%, var(--card));
+  --sector-sand: color-mix(in srgb, #c59b65 16%, var(--card));
+  font-family: var(--font-content);
+  background: var(--background);
+  color: var(--foreground);
+  overflow: clip;
+}
+:global(.dark) .sector {
+  --sector-blue: #8acbff;
+  --sector-green: #96dca4;
+  --sector-amber: #e7bd7c;
+  --sector-wash: color-mix(in srgb, var(--primary) 13%, var(--card));
+  --sector-sage: color-mix(in srgb, var(--accent) 16%, var(--card));
+  --sector-sand: color-mix(in srgb, #c59b65 18%, var(--card));
+}

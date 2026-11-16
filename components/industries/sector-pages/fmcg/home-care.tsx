@@ -1,11 +1,11 @@
 import { Droplets, FlaskConical, Recycle, ShoppingCart } from "lucide-react";
-import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap } from "../kit";
+import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
 const formula = [
-  { key: "ing1", pct: 62, bar: "bg-accent" },
-  { key: "ing2", pct: 18, bar: "bg-accent" },
-  { key: "ing3", pct: 12, bar: "bg-primary" },
-  { key: "ing4", pct: 8, bar: "bg-accent" },
+  { key: "ing1", pct: 62, bar: "bg-(--sector-green)" },
+  { key: "ing2", pct: 18, bar: "bg-(--sector-green)" },
+  { key: "ing3", pct: 12, bar: "bg-(--sector-blue)" },
+  { key: "ing4", pct: 8, bar: "bg-(--sector-green)" },
 ];
 const icons = [FlaskConical, Droplets, Recycle, ShoppingCart];
 
@@ -16,12 +16,12 @@ export default async function HomeCarePage() {
   const v = p.visual;
 
   return (
-    <main className="bg-background">
+    <main className={sectorRoot}>
       <section className="border-b border-border">
         <Crumbs s={s} />
         <div className={`${wrap} grid gap-12 py-14 lg:grid-cols-2 lg:items-center lg:py-20`}>
           <div className="order-last lg:order-first">
-            <div className="rounded-3xl border border-accent/20 bg-card p-6 shadow-sm">
+            <div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
               <div className="flex items-center justify-between">
                 <p className="font-semibold text-foreground">{v.formulaTitle}</p>
                 <span className="font-mono text-xs text-muted-foreground">{v.formulaCode}</span>
@@ -49,22 +49,22 @@ export default async function HomeCarePage() {
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">{v.yieldLabel}</p>
-                  <p className="font-semibold text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]">{v.yieldValue}</p>
+                  <p className="font-semibold text-(--sector-blue)">{v.yieldValue}</p>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <Eyebrow className="text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]">{p.hero.eyebrow}</Eyebrow>
+            <Eyebrow className="text-(--sector-blue)">{p.hero.eyebrow}</Eyebrow>
             <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
-              {p.hero.title} <span className="text-accent">{p.hero.highlight}</span>
+              {p.hero.title} <span className="text-(--sector-blue)">{p.hero.highlight}</span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{p.hero.lead}</p>
             <dl className="mt-8 grid grid-cols-3 gap-3">
               {p.stats.map((st) => (
-                <div key={st.label} className="flex flex-col rounded-2xl bg-accent/5 p-4">
+                <div key={st.label} className="flex flex-col rounded-2xl bg-(--sector-sage) p-4">
                   <dt className="text-xs text-muted-foreground">{st.label}</dt>
-                  <dd className="order-first text-lg font-bold text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]">{st.value}</dd>
+                  <dd className="order-first text-lg font-bold text-(--sector-blue)">{st.value}</dd>
                 </div>
               ))}
             </dl>
@@ -75,7 +75,7 @@ export default async function HomeCarePage() {
       {/* Bento pillars */}
       <section className="py-16 sm:py-20">
         <div className={wrap}>
-          <SectionHead eyebrow={s.c.pillarsEyebrow} title={v.pillarsTitle} accent="text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]" />
+          <SectionHead eyebrow={s.c.pillarsEyebrow} title={v.pillarsTitle} />
           <div className="grid gap-4 md:grid-cols-3 md:grid-rows-2">
             {p.pillars.map((pl, i) => {
               const Icon = icons[i];
@@ -83,11 +83,11 @@ export default async function HomeCarePage() {
               return (
                 <div
                   key={pl.title}
-                  className={`rounded-3xl p-7 ${big ? "bg-accent text-accent-foreground md:row-span-2" : "border border-border bg-card"} ${i === 3 ? "md:col-span-2" : ""}`}
+                  className={`rounded-3xl p-7 ${big ? "border border-border bg-(--sector-sage) md:row-span-2" : "border border-border bg-card"} ${i === 3 ? "md:col-span-2" : ""}`}
                 >
-                  <Icon className={`size-7 ${big ? "text-[color-mix(in_oklab,var(--accent),white_55%)]" : "text-accent"}`} aria-hidden />
-                  <h3 className={`mt-5 font-semibold ${big ? "text-2xl" : "text-foreground"}`}>{pl.title}</h3>
-                  <p className={`mt-2 text-sm leading-relaxed ${big ? "text-[color-mix(in_oklab,var(--accent),white_55%)]" : "text-muted-foreground"}`}>{pl.body}</p>
+                  <Icon className={`size-7 text-(--sector-blue)`} aria-hidden />
+                  <h3 className={`mt-5 font-semibold text-(--ink) ${big ? "text-2xl" : ""}`}>{pl.title}</h3>
+                  <p className={`mt-2 text-sm leading-relaxed text-muted-foreground`}>{pl.body}</p>
                 </div>
               );
             })}
@@ -96,17 +96,17 @@ export default async function HomeCarePage() {
       </section>
 
       {/* Flow with large digits */}
-      <section className="bg-secondary py-16 text-secondary-foreground sm:py-20">
+      <section className="bg-(--cream) py-16 text-(--ink) sm:py-20">
         <div className={wrap}>
-          <Eyebrow className="text-[color-mix(in_oklab,var(--accent),white_55%)]">{s.c.flowEyebrow}</Eyebrow>
+          <Eyebrow className="text-(--sector-blue)">{s.c.flowEyebrow}</Eyebrow>
           <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">{v.flowTitle}</h2>
           <ol className="mt-12 grid gap-10 sm:grid-cols-2">
             {p.flow.map((step, i) => (
               <li key={step.title} className="flex gap-6">
-                <span className="text-6xl font-black leading-none text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]">{i + 1}</span>
+                <span className="text-6xl font-black leading-none text-(--sector-blue)">{i + 1}</span>
                 <div>
                   <h3 className="font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[color-mix(in_oklab,var(--accent),white_55%)]">{step.body}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
                 </div>
               </li>
             ))}
@@ -116,25 +116,12 @@ export default async function HomeCarePage() {
 
       <section className="py-16 sm:py-20">
         <div className={wrap}>
-          <SampleTable
-            s={s}
-            frame="border-accent/20"
-            head="bg-accent/5 text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]"
-            badge="bg-accent/10 text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]"
-          />
+          <SampleTable s={s} />
         </div>
       </section>
 
-      <Tail
-        s={s}
-        accent="text-[color-mix(in_oklab,var(--accent),var(--foreground)_35%)]"
-        card="border-border bg-card hover:border-accent/80"
-        icon="text-accent"
-        item="border-border bg-card open:border-accent/30"
-        chip="border-accent/20 hover:bg-accent/5"
-        surface="bg-muted/30"
-      />
-      <Closing s={s} panel="bg-accent text-accent-foreground" accent="text-accent-foreground/80" />
+      <Tail s={s} />
+      <Closing s={s} />
     </main>
   );
 }
