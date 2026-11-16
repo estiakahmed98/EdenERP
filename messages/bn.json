@@ -178,7 +178,7 @@
           "fmcgHomeCare": "হোম ও হাউসহোল্ড কেয়ার",
           "fmcgHealthHygiene": "হেলথ ও হাইজিন (OTC)",
           "fmcgBabyCare": "বেবি ও চাইল্ড কেয়ার",
-          "fmcgTobacco": "তামাক",
+          "fmcgTobacco": "তামাক কোম্পানি",
           "fmcgPetCare": "পেট কেয়ার",
           "groupManufacturing": "ম্যানুফ্যাকচারিং",
           "groupFmcg": "FMCG",
@@ -64165,7 +64165,6 @@
     "others": "ই-কমার্স, NGO ও সম্প্রচার প্রতিষ্ঠানের কাজের ধরন অনুযায়ী সুবিধাগুলো দেখুন।"
   }
 },
-<<<<<<< Updated upstream
     "medicalCollegeApp": {
       "ui": {
         "college": "মেডিকেল কলেজ",
@@ -64422,8 +64421,7 @@
           "description": "শিক্ষাবর্ষের তারিখ, আসনের পরিকল্পনা ও প্রাতিষ্ঠানিক তথ্য সাজান এবং সঙ্গে সঙ্গে ভুল যাচাই করুন।"
         }
       }
-    }
-=======
+    },
 "sectorCommon": {
   "breadcrumb": "ব্রেডক্রাম্ব",
   "home": "হোম",
@@ -66335,7 +66333,6 @@
     }
   }
 }
->>>>>>> Stashed changes
 },
   "admin": {
     "shell": {

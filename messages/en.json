@@ -178,7 +178,7 @@
           "fmcgHomeCare": "Home & Household Care",
           "fmcgHealthHygiene": "Health & Hygiene (OTC)",
           "fmcgBabyCare": "Baby & Child Care",
-          "fmcgTobacco": "Tobacco",
+          "fmcgTobacco": "Tobacco Companies",
           "fmcgPetCare": "Pet Care",
           "groupManufacturing": "Manufacturing",
           "groupFmcg": "FMCG",
@@ -63771,7 +63771,6 @@
     "others": "Explore the workflows behind e-commerce, NGOs and broadcasting."
   }
 },
-<<<<<<< Updated upstream
     "medicalCollegeApp": {
       "ui": {
         "college": "Medical College",
@@ -64028,8 +64027,7 @@
           "description": "Organise academic dates, local seat plans and institutional reference fields with immediate validation."
         }
       }
-    }
-=======
+    },
 "sectorCommon": {
   "breadcrumb": "Breadcrumb",
   "home": "Home",
@@ -65941,7 +65939,6 @@
     }
   }
 }
->>>>>>> Stashed changes
 },
   "admin": {
     "shell": {
