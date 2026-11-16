@@ -16,24 +16,6 @@ export type MegaMenuColumn = {
 
 export const appsMegaMenu: MegaMenuColumn[] = [
   {
-    titleKey: "modules.medicalCollege.title",
-    accentClass: "text-blue-600",
-    underlineClass: "bg-blue-200",
-    links: collegePages.map((page) => ({
-      labelKey: `modules.medicalCollege.links.${page.slug}`,
-      href: `/apps/medical-college/${page.slug}`,
-    })),
-  },
-  {
-    titleKey: "modules.hospital.title",
-    accentClass: "text-blue-600",
-    underlineClass: "bg-blue-200",
-    links: hospitalPages.map((page) => ({
-      labelKey: `modules.hospital.links.${page.slug}`,
-      href: `/apps/hospital/${page.slug}`,
-    })),
-  },
-  {
     titleKey: "modules.accounting.title",
     accentClass: "text-emerald-600",
     underlineClass: "bg-emerald-200",
@@ -1192,5 +1174,23 @@ export const appsMegaMenu: MegaMenuColumn[] = [
         href: "/apps/university/university-settings",
       },
     ],
+  },
+  {
+    titleKey: "modules.medicalCollege.title",
+    accentClass: "text-blue-600",
+    underlineClass: "bg-blue-200",
+    links: collegePages.map((page) => ({
+      labelKey: `modules.medicalCollege.links.${page.slug}`,
+      href: `/apps/medical-college/${page.slug}`,
+    })),
+  },
+  {
+    titleKey: "modules.hospital.title",
+    accentClass: "text-blue-600",
+    underlineClass: "bg-blue-200",
+    links: hospitalPages.map((page) => ({
+      labelKey: `modules.hospital.links.${page.slug}`,
+      href: `/apps/hospital/${page.slug}`,
+    })),
   },
 ];
