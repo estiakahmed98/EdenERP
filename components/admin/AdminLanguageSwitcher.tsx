@@ -32,6 +32,10 @@ export default function AdminLanguageSwitcher() {
   function switchLanguage(next: AppLocale) {
     if (next === active) return;
     document.cookie = `${LOCALE_COOKIE}=${next}; path=/; max-age=31536000; samesite=lax`;
+    // Explicit choice: drop the automatic-locale markers (lib/geo/locale-cookies.ts).
+    for (const marker of ["GEO_LOCALE_HINT", "LOCALE_SOURCE"]) {
+      document.cookie = `${marker}=; path=/; max-age=0; samesite=lax`;
+    }
     router.refresh();
   }
 

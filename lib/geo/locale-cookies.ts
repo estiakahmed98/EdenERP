@@ -8,6 +8,10 @@ export const LOCALE_COOKIE = "NEXT_LOCALE";
 export const GEO_HINT_COOKIE = "GEO_LOCALE_HINT";
 /** Set once a geo decision was made, so the client does not re-check. */
 export const GEO_CHECKED_COOKIE = "GEO_LOCALE_CHECKED";
+/** Set when English was chosen automatically for a visitor forwarded from
+ *  adonerp.com (verified token, see lib/geo/domain-forward.ts). Cleared by an
+ *  explicit language choice, so a later forward never overrides that choice. */
+export const LOCALE_SOURCE_COOKIE = "LOCALE_SOURCE";
 
 export const ONE_YEAR_SECONDS = 60 * 60 * 24 * 365;
 export const ONE_DAY_SECONDS = 60 * 60 * 24;
@@ -15,23 +19,39 @@ export const ONE_DAY_SECONDS = 60 * 60 * 24;
 /** Countries that default to Bangla on first visit. */
 export const BANGLA_COUNTRIES = new Set(["BD"]);
 
+const DEFAULT_COUNTRY_HEADERS = [
+  "x-vercel-ip-country",
+  "cf-ipcountry",
+  "x-country-code",
+  "cloudfront-viewer-country",
+];
+
 /**
  * Country from headers set by the hosting edge (Vercel, Cloudflare, CloudFront,
  * nginx GeoIP). Returns an upper-case ISO 3166-1 alpha-2 code or null.
+ *
+ * Only a header the edge overwrites can be trusted, since clients can send any
+ * of them. On Vercel only `x-vercel-ip-country` is read; elsewhere set
+ * `GEO_COUNTRY_HEADER` (e.g. `cf-ipcountry`) to the one your edge sets.
+ * Without either, the legacy list below is tried in order.
  * `GEO_COUNTRY_OVERRIDE=BD` simulates a location outside production.
  */
-export function countryFromHeaders(headers: { get(name: string): string | null }) {
-  const override = process.env.GEO_COUNTRY_OVERRIDE?.trim();
-  if (override && process.env.NODE_ENV !== "production") return override.toUpperCase();
+export function countryFromHeaders(
+  headers: { get(name: string): string | null },
+  env: Record<string, string | undefined> = process.env,
+) {
+  const override = env.GEO_COUNTRY_OVERRIDE?.trim();
+  if (override && env.NODE_ENV !== "production") return override.toUpperCase();
 
-  const candidates = [
-    headers.get("x-vercel-ip-country"),
-    headers.get("cf-ipcountry"),
-    headers.get("x-country-code"),
-    headers.get("cloudfront-viewer-country"),
-  ];
-  for (const raw of candidates) {
-    const value = raw?.trim().toUpperCase();
+  const pinned = env.GEO_COUNTRY_HEADER?.trim().toLowerCase();
+  const names = pinned
+    ? [pinned]
+    : env.VERCEL
+      ? ["x-vercel-ip-country"]
+      : DEFAULT_COUNTRY_HEADERS;
+
+  for (const name of names) {
+    const value = headers.get(name)?.trim().toUpperCase();
     if (value && /^[A-Z]{2}$/.test(value) && value !== "XX" && value !== "T1") return value;
   }
   return null;

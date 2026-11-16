@@ -1,61 +1,50 @@
 import type { MegaMenuColumn } from "./apps-menu";
 
 export const industriesMegaMenu: MegaMenuColumn[] = [
-  {
-    titleKey: "menu.industries.retail",
-    accentClass: "text-teal-600",
+   {
+    titleKey: "menu.industries.garmentsTextile",
+    accentClass: "text-violet-500",
     underlineClass: "bg-border",
     links: [
       {
-        labelKey: "menu.industries.bookStore",
-        href: "/industries/retail/book-store",
+        labelKey: "menu.industries.textile",
+        href: "/industries/manufacturing/textile",
       },
       {
-        labelKey: "menu.industries.clothingStore",
-        href: "/industries/retail/clothing-store",
+        labelKey: "modules.industries.links.garments",
+        href: "/industries/garments",
       },
       {
-        labelKey: "menu.industries.furnitureStore",
-        href: "/industries/retail/furniture-store",
+        labelKey: "modules.industries.links.accessories",
+        href: "/industries/accessories",
       },
       {
-        labelKey: "menu.industries.groceryStore",
-        href: "/industries/retail/grocery-store",
+        labelKey: "modules.industries.links.buyingHouse",
+        href: "/industries/buying-house",
       },
       {
-        labelKey: "menu.industries.hardwareStore",
-        href: "/industries/retail/hardware-store",
-      },
-      {
-        labelKey: "menu.industries.toyStore",
-        href: "/industries/retail/toy-store",
+        labelKey: "modules.industries.links.merchandising",
+        href: "/industries/merchandising",
       },
     ],
   },
   {
-    titleKey: "menu.industries.foodHospitality",
-    accentClass: "text-sky-600",
+    titleKey: "menu.industries.manufacturing",
+    accentClass: "text-orange-500",
     underlineClass: "bg-border",
     links: [
+      { labelKey: "modules.industries.links.steel", href: "/industries/steel" },
       {
-        labelKey: "menu.industries.restaurant",
-        href: "/industries/food&hospitality/restaurant",
+        labelKey: "menu.industries.metal",
+        href: "/industries/manufacturing/metal",
       },
       {
-        labelKey: "menu.industries.fastFood",
-        href: "/industries/food&hospitality/fast-food",
+        labelKey: "menu.industries.furniture",
+        href: "/industries/manufacturing/furniture",
       },
       {
-        labelKey: "menu.industries.guestHouse",
-        href: "/industries/food&hospitality/guest-house",
-      },
-      {
-        labelKey: "menu.industries.beverageDistributor",
-        href: "/industries/food&hospitality/beverage-distributor",
-      },
-      {
-        labelKey: "menu.industries.hotel",
-        href: "/industries/food&hospitality/hotel",
+        labelKey: "modules.industries.links.agroRice",
+        href: "/industries/agro-rice",
       },
     ],
   },
@@ -105,53 +94,7 @@ export const industriesMegaMenu: MegaMenuColumn[] = [
       },
     ],
   },
-  {
-    titleKey: "menu.industries.garmentsTextile",
-    accentClass: "text-violet-500",
-    underlineClass: "bg-border",
-    links: [
-      {
-        labelKey: "menu.industries.textile",
-        href: "/industries/manufacturing/textile",
-      },
-      {
-        labelKey: "modules.industries.links.garments",
-        href: "/industries/garments",
-      },
-      {
-        labelKey: "modules.industries.links.accessories",
-        href: "/industries/accessories",
-      },
-      {
-        labelKey: "modules.industries.links.buyingHouse",
-        href: "/industries/buying-house",
-      },
-      {
-        labelKey: "modules.industries.links.merchandising",
-        href: "/industries/merchandising",
-      },
-    ],
-  },
-  {
-    titleKey: "menu.industries.manufacturing",
-    accentClass: "text-orange-500",
-    underlineClass: "bg-border",
-    links: [
-      { labelKey: "modules.industries.links.steel", href: "/industries/steel" },
-      {
-        labelKey: "menu.industries.metal",
-        href: "/industries/manufacturing/metal",
-      },
-      {
-        labelKey: "menu.industries.furniture",
-        href: "/industries/manufacturing/furniture",
-      },
-      {
-        labelKey: "modules.industries.links.agroRice",
-        href: "/industries/agro-rice",
-      },
-    ],
-  },
+ 
   {
     titleKey: "menu.industries.education",
     accentClass: "text-emerald-600",
@@ -170,6 +113,64 @@ export const industriesMegaMenu: MegaMenuColumn[] = [
         href: "/industries/university",
       },
       { labelKey: "modules.industries.links.lms", href: "/industries/lms" },
+    ],
+  },
+   {
+    titleKey: "menu.industries.foodHospitality",
+    accentClass: "text-sky-600",
+    underlineClass: "bg-border",
+    links: [
+      {
+        labelKey: "menu.industries.restaurant",
+        href: "/industries/food&hospitality/restaurant",
+      },
+      {
+        labelKey: "menu.industries.fastFood",
+        href: "/industries/food&hospitality/fast-food",
+      },
+      {
+        labelKey: "menu.industries.guestHouse",
+        href: "/industries/food&hospitality/guest-house",
+      },
+      {
+        labelKey: "menu.industries.beverageDistributor",
+        href: "/industries/food&hospitality/beverage-distributor",
+      },
+      {
+        labelKey: "menu.industries.hotel",
+        href: "/industries/food&hospitality/hotel",
+      },
+    ],
+  },
+  {
+    titleKey: "menu.industries.retail",
+    accentClass: "text-teal-600",
+    underlineClass: "bg-border",
+    links: [
+      {
+        labelKey: "menu.industries.bookStore",
+        href: "/industries/retail/book-store",
+      },
+      {
+        labelKey: "menu.industries.clothingStore",
+        href: "/industries/retail/clothing-store",
+      },
+      {
+        labelKey: "menu.industries.furnitureStore",
+        href: "/industries/retail/furniture-store",
+      },
+      {
+        labelKey: "menu.industries.groceryStore",
+        href: "/industries/retail/grocery-store",
+      },
+      {
+        labelKey: "menu.industries.hardwareStore",
+        href: "/industries/retail/hardware-store",
+      },
+      {
+        labelKey: "menu.industries.toyStore",
+        href: "/industries/retail/toy-store",
+      },
     ],
   },
   {
