@@ -24,7 +24,7 @@ import type { HospitalSlug } from "./registry";
 import { Badge, css, useHospital } from "./ui";
 
 export default function HospitalFigure({ slug }: { slug: HospitalSlug }) {
-  const { t, number } = useHospital();
+  const { t, number, digits } = useHospital();
   const label = (key: string) => t(`ui.${key}`);
   const cell = (Icon: typeof HeartPulse, key: string) => (
     <span className={css.visualCell}>
@@ -441,8 +441,8 @@ export default function HospitalFigure({ slug }: { slug: HospitalSlug }) {
           </div>
           <div className={css.expiryClock}>
             <span>{label("asOf")}</span>
-            <strong>16 / 11</strong>
-            <small>2026</small>
+            <strong>{digits("16 / 11")}</strong>
+            <small>{digits("2026")}</small>
           </div>
         </div>
       );
@@ -454,7 +454,7 @@ export default function HospitalFigure({ slug }: { slug: HospitalSlug }) {
           {["searched", "viewed", "exported"].map((key, index) => (
             <div key={key}>
               <span className={css.traceDot} />
-              <code>09:{String(index * 12).padStart(2, "0")}</code>
+              <code>{digits(`09:${String(index * 12).padStart(2, "0")}`)}</code>
               <span>{label(key)}</span>
               <span>DEMO-0{index + 1}</span>
             </div>

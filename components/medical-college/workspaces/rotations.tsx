@@ -34,7 +34,9 @@ function Calendar() {
     [sessions, setSessions] = useState<Session[]>([]),
     [reference, setReference] = useState(""),
     [note, setNote] = useState(""),
-    [error, setError] = useState<"referenceError" | "conflict" | null>(null);
+    [error, setError] = useState<"sessionReferenceError" | "conflict" | null>(
+      null,
+    );
   const base = validDate(week) ? week : "2026-11-16",
     days = Array.from({ length: 7 }, (_, i) => addDays(base, i)!),
     selected = sessions.find((s) => s.unit === unit && s.day === day);
@@ -44,7 +46,7 @@ function Calendar() {
       return;
     }
     if (!/^[A-Z0-9-]{2,24}$/i.test(reference.trim())) {
-      setError("referenceError");
+      setError("sessionReferenceError");
       return;
     }
     setSessions([
@@ -165,7 +167,7 @@ function Calendar() {
                             type="button"
                             aria-pressed={unit === u && day === d}
                             data-planned={!!plan}
-                            aria-label={`${t("ui.session", { unit: t(`ui.${u}`), date: date(d) })} · ${t(`ui.${plan ? "reserved" : "free"}`)}`}
+                            aria-label={`${t("ui.session", { unit: t(`ui.${u}`), date: date(d, true) })} · ${t(`ui.${plan ? "reserved" : "free"}`)}`}
                             onClick={() => choose(u, d)}
                           >
                             {plan ? (
@@ -193,7 +195,7 @@ function Calendar() {
         </Panel>
         <Panel title={t("ui.selected")}>
           <div className={css.selectedDate}>
-            <strong>{date(day)}</strong>
+            <strong>{date(day, true)}</strong>
             <span>{t(`ui.${unit}`)}</span>
           </div>
           {selected ? (
@@ -278,7 +280,7 @@ function Calendar() {
                       if (!days.includes(s.day)) setWeek(s.day);
                     }}
                   >
-                    <time dateTime={s.day}>{date(s.day)}</time>
+                    <time dateTime={s.day}>{date(s.day, true)}</time>
                     <strong>{s.reference}</strong>
                     <span>{t(`ui.${s.unit}`)}</span>
                     <Badge tone={s.attended ? "green" : "neutral"}>

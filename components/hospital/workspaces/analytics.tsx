@@ -176,7 +176,7 @@ function Indicators() {
           <p className={css.indicatorFormula}>{t(`ui.${row.formula}`)}</p>
           <p className={css.localNote}>
             {number(row.numerator)} ÷ {number(row.denominator)}
-            {row.percent ? " × 100" : ""}
+            {row.percent ? ` × ${number(100)}` : ""}
           </p>
         </Panel>
       </div>

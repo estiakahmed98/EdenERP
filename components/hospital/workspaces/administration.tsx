@@ -239,18 +239,13 @@ function Departments() {
   );
 }
 function Staff() {
-  const { t, locale } = useHospital();
+  const { t, date: dateLabel } = useHospital();
   const [asOf, setAsOf] = useState("2026-11-16");
   const [filter, setFilter] = useState("all");
   const dates = ["2026-09-15", "2026-12-07", "2028-03-28"];
   const rows = dates
     .map((date, index) => ({ date, index, state: expiryState(date, asOf) }))
     .filter((row) => filter === "all" || row.state === filter);
-  const dateLabel = (date: string) =>
-    new Intl.DateTimeFormat(locale, {
-      dateStyle: "medium",
-      timeZone: "UTC",
-    }).format(new Date(`${date}T00:00:00Z`));
   return (
     <>
       <div className={css.toolbar}>
@@ -306,7 +301,7 @@ function Staff() {
   );
 }
 function Access() {
-  const { t, locale } = useHospital();
+  const { t, time } = useHospital();
   const [action, setAction] = useState("all");
   const [role, setRole] = useState("all");
   const [from, setFrom] = useState("");
@@ -394,13 +389,7 @@ function Access() {
       <ol className={css.traceList}>
         {filtered.map((event) => (
           <li key={event.id}>
-            <time dateTime={event.time}>
-              {new Intl.DateTimeFormat(locale, {
-                hour: "2-digit",
-                minute: "2-digit",
-                timeZone: "Asia/Dhaka",
-              }).format(new Date(event.time))}
-            </time>
+            <time dateTime={event.time}>{time(event.time)}</time>
             <div>
               <strong>{t(`ui.${event.role}`)}</strong>
               <Badge tone="neutral">{t(`ui.${event.action}`)}</Badge>
@@ -454,7 +443,7 @@ function Settings() {
             <Field label={t("ui.facilityCode")}>
               <input
                 required
-                pattern="[A-Z0-9-]+"
+                pattern={"[A-Z0-9\\-]+"}
                 maxLength={32}
                 value={code}
                 onChange={(event) => {

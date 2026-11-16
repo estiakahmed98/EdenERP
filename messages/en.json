@@ -63982,7 +63982,12 @@
         "governanceSketch": "Connect responsibility to review.",
         "settingsSketch": "Check the details before the change.",
       "loadError": "The academic workspace could not be loaded. Please try again.",
-      "retry": "Try again"
+      "retry": "Try again",
+      "budgetNote": "Planning calculation only. No budget, expenditure or payment is approved or saved.",
+      "logbookProgress": "Logbook planning progress",
+      "noMatches": "No plans match your search and selected stage.",
+      "weekMarker": "Week / {value}",
+      "sessionReferenceError": "Use a reference of 2–24 letters, digits or hyphens."
       },
       "pages": {
         "intake-admission": {

@@ -71,7 +71,7 @@ function Logbook() {
   return (
     <Panel title={t("ui.logbook")}>
       <div className={css.logbookStudy}>
-        <Ring value={value} label={t("ui.pathProgress")} />
+        <Ring value={value} label={t("ui.logbookProgress")} />
         <div className={css.stack}>
           <Field label={t("ui.target")}>
             <input
@@ -214,7 +214,7 @@ function Postings() {
                 <span className={css.timelinePoint} />
                 <div>
                   <time dateTime={r.start}>
-                    {date(r.start)} → {date(r.end)}
+                    {date(r.start, true)} → {date(r.end, true)}
                   </time>
                   <h4>{r.title}</h4>
                   <Badge>{t("ui.planning")}</Badge>

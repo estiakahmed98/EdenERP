@@ -46,7 +46,7 @@ function Sketch({ label }: { label: string }) {
   );
 }
 export default function CollegeHero({ slug }: { slug: CollegeSlug }) {
-  const { t } = useCollege();
+  const { t, number } = useCollege();
   let content;
   switch (slug) {
     case "intake-admission":
@@ -101,7 +101,9 @@ export default function CollegeHero({ slug }: { slug: CollegeSlug }) {
             <LiveDemoButton />
           </div>
           <div className={css.wardHeaderPlan}>
-            <span>W / 01</span>
+            <span>
+              {t("ui.weekMarker", { value: number(1).padStart(2, number(0)) })}
+            </span>
             <Figure slug={slug} />
             <Sketch label="wardSketch" />
           </div>

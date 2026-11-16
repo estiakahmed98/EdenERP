@@ -16,22 +16,35 @@ export function useCollege() {
   const t = useTranslations("pages.medicalCollegeApp"),
     locale = useLocale(),
     f = useFormatter();
+  // ICU/CLDR versions differ between Node and browsers for Nepali's default
+  // digits. Pin native digits so server and client render the same content.
+  const numbering = locale === "ne" ? { numberingSystem: "deva" as const } : {};
   return {
     t,
     locale,
-    number: (n: number) => f.number(n, { maximumFractionDigits: 1 }),
+    number: (n: number) =>
+      f.number(n, { maximumFractionDigits: 1, ...numbering }),
     money: (n: number) =>
       f.number(n, {
         style: "currency",
         currency: "BDT",
         currencyDisplay: "narrowSymbol",
+        ...numbering,
       }),
-    date: (s: string) =>
-      f.dateTime(new Date(`${s}T12:00:00Z`), {
-        month: "short",
-        day: "numeric",
-        timeZone: "UTC",
-      }),
+    date: (s: string, includeYear = false) =>
+      // Some browsers also fall back to English month names for Nepali. Use
+      // unambiguous Gregorian YYYY-MM-DD (MM-DD in compact columns) instead.
+      locale === "ne"
+        ? (includeYear ? s : s.slice(5)).replace(/\d/g, (digit) =>
+            f.number(Number(digit), { useGrouping: false, ...numbering }),
+          )
+        : f.dateTime(new Date(`${s}T12:00:00Z`), {
+            month: "short",
+            day: "numeric",
+            ...(includeYear ? { year: "numeric" as const } : {}),
+            timeZone: "UTC",
+            ...numbering,
+          }),
   };
 }
 export function Button({

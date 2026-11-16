@@ -74,6 +74,8 @@ function Art({
     <figure
       className={`${s.art} ${className}`}
       aria-label={t(`pages.${slug}.title`)}
+      tabIndex={slug === "doctors-sittings" ? 0 : undefined}
+      role={slug === "doctors-sittings" ? "region" : undefined}
     >
       {children ?? <HospitalFigure slug={slug} />}
       <figcaption>{t(source ? "ui.source" : "ui.illustrative")}</figcaption>
@@ -153,7 +155,7 @@ function BlueprintLabel({ label, code }: { label: string; code: string }) {
 
 /** Each route has a separate editorial structure, rather than a shared split hero. */
 function Composition({ slug }: { slug: HospitalSlug }) {
-  const { t, number } = useHospital();
+  const { t, number, digits } = useHospital();
   switch (slug) {
     case "hospital-dashboard":
       return (
@@ -201,7 +203,7 @@ function Composition({ slug }: { slug: HospitalSlug }) {
           <div className={s.identityDossier}>
             <div className={s.identitySpine}>
               {t("ui.identity")}
-              <span>01 / 03</span>
+              <span>{digits("01 / 03")}</span>
             </div>
             <Art slug={slug} />
             <div className={s.identityTimeline}>
@@ -217,14 +219,14 @@ function Composition({ slug }: { slug: HospitalSlug }) {
       return (
         <>
           <div className={s.queueHeading}>
-            <span className={s.largeOutline}>01</span>
+            <span className={s.largeOutline}>{digits("01")}</span>
             <Heading slug={slug} />
             <Actions />
           </div>
           <div className={s.waitingRoom}>
             <div className={s.waitingDisplay}>
               <span>{t("ui.called")}</span>
-              <strong>01</strong>
+              <strong>{digits("01")}</strong>
               <div>
                 <i />
                 {t("ui.illustrative")}
@@ -405,7 +407,7 @@ function Composition({ slug }: { slug: HospitalSlug }) {
             </div>
             {["identity", "requestBed", "handover"].map((key, i) => (
               <div className={s.arrivalStation} key={key}>
-                <span>0{i + 1}</span>
+                <span>{number(i + 1).padStart(2, number(0))}</span>
                 {i === 0 ? (
                   <Fingerprint size={38} strokeWidth={1.2} aria-hidden="true" />
                 ) : i === 1 ? (
@@ -443,7 +445,8 @@ function Composition({ slug }: { slug: HospitalSlug }) {
             <div>
               <span className={s.smallCaps}>{t("ui.formula")}</span>
               <p>
-                {t("ui.occupiedBeds")} <i>÷</i> {t("ui.capacity")} <i>× 100</i>
+                {t("ui.occupiedBeds")} <i>÷</i> {t("ui.capacity")}{" "}
+                <i>× {number(100)}</i>
               </p>
               <span>{t("ui.noCensus")}</span>
             </div>
@@ -549,7 +552,9 @@ function Composition({ slug }: { slug: HospitalSlug }) {
           <div className={s.handoverRunway}>
             {["intake", "assessment", "transfer"].map((key, index) => (
               <div key={key}>
-                <span className={s.runwayNumber}>0{index + 1}</span>
+                <span className={s.runwayNumber}>
+                  {number(index + 1).padStart(2, number(0))}
+                </span>
                 <h3>{t(`ui.${key}`)}</h3>
                 <ArrowRight size={25} strokeWidth={1.1} aria-hidden="true" />
               </div>
@@ -651,7 +656,7 @@ function Composition({ slug }: { slug: HospitalSlug }) {
             <Heading slug={slug} />
             <div className={s.timeEdition}>
               <span>{t("ui.schedule")}</span>
-              <strong>17:00</strong>
+              <strong>{digits("17:00")}</strong>
               <small>{t("ui.illustrative")}</small>
             </div>
           </div>
@@ -749,7 +754,7 @@ function Composition({ slug }: { slug: HospitalSlug }) {
           <div className={s.accessRibbon}>
             {["searched", "viewed", "exported"].map((key, i) => (
               <div key={key}>
-                <time>09:{String(i * 12).padStart(2, "0")}</time>
+                <time>{digits(`09:${String(i * 12).padStart(2, "0")}`)}</time>
                 <span className={s.accessPoint} />
                 <strong>{t(`ui.${key}`)}</strong>
                 <small>DEMO-0{i + 1}</small>

@@ -119,7 +119,7 @@ function Admissions() {
           <Field label={t("ui.identifier")}>
             <input
               required
-              pattern="DEMO-[A-Za-z0-9-]+"
+              pattern={"DEMO-[A-Za-z0-9\\-]+"}
               maxLength={32}
               value={identifier}
               onChange={(event) => {
@@ -225,7 +225,7 @@ function Census() {
             {invalid && <Notice error>{t("ui.outOfBounds")}</Notice>}
             <p className={css.small}>
               {t("ui.formula")}: {t("ui.occupiedBeds")} ÷ {t("ui.capacity")} ×
-              100
+              {number(100)}
             </p>
           </div>
         </Panel>

@@ -69,7 +69,7 @@ function Patients() {
                   }}
                   required
                   maxLength={32}
-                  pattern="DEMO-[A-Za-z0-9-]+"
+                  pattern={"DEMO-[A-Za-z0-9\\-]+"}
                   placeholder="DEMO-P05"
                 />
               </Field>

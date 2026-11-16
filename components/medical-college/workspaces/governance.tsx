@@ -116,7 +116,7 @@ function Governance() {
         <div>
           <span className={css.eyebrow}>BDT</span>
           <h3>{t("ui.oversight")}</h3>
-          <p>{t("ui.notPayroll")}</p>
+          <p>{t("ui.budgetNote")}</p>
         </div>
         <div className={css.formGrid}>
           <Field label={t("ui.budget")}>

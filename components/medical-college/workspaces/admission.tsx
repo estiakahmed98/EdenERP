@@ -110,6 +110,7 @@ function Intake() {
                     <X size={19} />
                   </Dialog.Close>
                   <form
+                    noValidate
                     onSubmit={(e) => {
                       e.preventDefault();
                       create();
@@ -184,7 +185,7 @@ function Intake() {
           ) : (
             <>
               <p className={css.caption}>
-                {t("ui.count", { count: plans.length })}
+                {t("ui.count", { count: number(plans.length) })}
               </p>
               <Table
                 label={t("ui.pipeline")}
@@ -215,7 +216,9 @@ function Intake() {
                   </tr>
                 ))}
               </Table>
-              {!rows.length && <p className={css.caption}>{t("ui.empty")}</p>}
+              {!rows.length && (
+                <p className={css.caption}>{t("ui.noMatches")}</p>
+              )}
             </>
           )}
           {selectedPlan && (

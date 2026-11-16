@@ -36,21 +36,57 @@ export function useHospital() {
   const t = useTranslations("pages.hospitalApp");
   const locale = useLocale();
   const format = useFormatter();
+  const numbering = locale === "ne" ? { numberingSystem: "deva" as const } : {};
+  const digits = (value: string) =>
+    value.replace(/\d/g, (digit) =>
+      format.number(Number(digit), { useGrouping: false, ...numbering }),
+    );
   return {
     t,
     locale,
+    digits,
     number: (value: number) =>
-      format.number(value, { maximumFractionDigits: 1 }),
+      locale === "ne"
+        ? new Intl.NumberFormat("en-IN", {
+            maximumFractionDigits: 1,
+            ...numbering,
+          }).format(value)
+        : format.number(value, { maximumFractionDigits: 1 }),
+    date: (value: string) =>
+      locale === "ne"
+        ? digits(value)
+        : new Intl.DateTimeFormat(locale, {
+            dateStyle: "medium",
+            timeZone: "UTC",
+          }).format(new Date(`${value}T00:00:00Z`)),
+    time: (value: string) => {
+      const options = {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Asia/Dhaka",
+      } as const;
+      return locale === "ne"
+        ? digits(
+            new Intl.DateTimeFormat("en-GB", {
+              ...options,
+              hourCycle: "h23",
+            }).format(new Date(value)),
+          )
+        : new Intl.DateTimeFormat(locale, options).format(new Date(value));
+    },
     money: (value: number) =>
-      new Intl.NumberFormat(
-        locale === "bn" ? "bn-BD" : locale === "en" ? "en-IN" : locale,
-        {
-          style: "currency",
-          currency: "BDT",
-          currencyDisplay: "narrowSymbol",
-          maximumFractionDigits: 2,
-        },
-      ).format(value),
+      locale === "ne"
+        ? `BDT ${new Intl.NumberFormat("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2, ...numbering }).format(value)}`
+        : new Intl.NumberFormat(
+            locale === "bn" ? "bn-BD" : locale === "en" ? "en-IN" : locale,
+            {
+              style: "currency",
+              currency: "BDT",
+              currencyDisplay: "narrowSymbol",
+              maximumFractionDigits: 2,
+              ...numbering,
+            },
+          ).format(value),
   };
 }
 export function Button({

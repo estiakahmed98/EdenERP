@@ -1,0 +1,1760 @@
+{
+  "scope": "Medical College EN/Bn, eight pages and global module labels",
+  "reviewPasses": [
+    "English meaning",
+    "Bangladesh Bengali grammar and sentence structure",
+    "Medical education terminology",
+    "Professional UX and consistency",
+    "Literal/robotic wording removal"
+  ],
+  "counts": {
+    "rewritten": 117,
+    "retained": 127,
+    "added": 5
+  },
+  "entries": [
+    {
+      "key": "pages.medicalCollegeApp.ui.college",
+      "en": "Medical College",
+      "before": "মেডিকেল কলেজ",
+      "bn": "মেডিকেল কলেজ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.breadcrumb",
+      "en": "Breadcrumb",
+      "before": "অবস্থান নির্দেশিকা",
+      "bn": "অবস্থান নির্দেশিকা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.workspace",
+      "en": "Interactive workspace",
+      "before": "কাজের নমুনা",
+      "bn": "কাজের ডেমো",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.localOnly",
+      "en": "Local planning preview · changes are not saved",
+      "before": "স্থানীয় পরিকল্পনার নমুনা · পরিবর্তন সংরক্ষিত হয় না",
+      "bn": "পরিকল্পনার ডেমো · পরিবর্তন সংরক্ষণ করা হয় না",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.backend",
+      "en": "Medical College APIs, student records, roles and approvals are not connected in this repository.",
+      "before": "এই repository-তে Medical College-এর API, শিক্ষার্থীর তথ্য, ভূমিকা ও অনুমোদনব্যবস্থা সংযুক্ত নেই।",
+      "bn": "এই ডেমোতে মেডিকেল কলেজের API, শিক্ষার্থীর রেকর্ড, ব্যবহারকারীর ভূমিকা ও অনুমোদনব্যবস্থা সংযুক্ত নেই।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reset",
+      "en": "Reset preview",
+      "before": "নমুনা রিসেট করুন",
+      "bn": "ডেমো নতুন করে শুরু করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.loading",
+      "en": "Loading the academic workspace…",
+      "before": "একাডেমিক কাজের নমুনা লোড হচ্ছে…",
+      "bn": "একাডেমিক কাজের ডেমো লোড হচ্ছে…",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.continue",
+      "en": "Continue exploring",
+      "before": "পরবর্তী পেজ দেখুন",
+      "bn": "পরবর্তী পেজ দেখুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.view",
+      "en": "Workspace view",
+      "before": "কাজের ধরন",
+      "bn": "কাজের ধরন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.concept",
+      "en": "Concept illustration · no live academic data",
+      "before": "ধারণাভিত্তিক চিত্র · সরাসরি একাডেমিক তথ্য নয়",
+      "bn": "ধারণা বোঝানোর চিত্র · প্রকৃত একাডেমিক তথ্য নয়",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.planning",
+      "en": "Planning only",
+      "before": "শুধু পরিকল্পনা",
+      "bn": "শুধু পরিকল্পনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.empty",
+      "en": "No records are connected.",
+      "before": "কোনো তথ্য সংযুক্ত নেই।",
+      "bn": "কোনো তথ্য সংযুক্ত নেই।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.privacy",
+      "en": "Use non-personal planning references only. Do not enter student or patient information.",
+      "before": "শুধু ব্যক্তিগত তথ্যবিহীন পরিকল্পনার রেফারেন্স ব্যবহার করুন। শিক্ষার্থী বা রোগীর তথ্য লিখবেন না।",
+      "bn": "পরিকল্পনা চেনার জন্য এমন রেফারেন্স দিন, যাতে কারও ব্যক্তিগত তথ্য নেই। শিক্ষার্থী বা রোগীর তথ্য লিখবেন না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.notSaved",
+      "en": "Local review complete. Nothing has been submitted, approved or saved.",
+      "before": "স্থানীয় পর্যালোচনা সম্পন্ন। কোনো তথ্য জমা, অনুমোদন বা সংরক্ষণ করা হয়নি।",
+      "bn": "ডেমোর পর্যালোচনা শেষ হয়েছে। কোনো তথ্য জমা দেওয়া, অনুমোদন করা বা সংরক্ষণ করা হয়নি।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.search",
+      "en": "Search planning references",
+      "before": "পরিকল্পনার রেফারেন্স খুঁজুন",
+      "bn": "পরিকল্পনার রেফারেন্স খুঁজুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.all",
+      "en": "All stages",
+      "before": "সব ধাপ",
+      "bn": "সব ধাপ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.sort",
+      "en": "Sort references",
+      "before": "রেফারেন্স সাজান",
+      "bn": "রেফারেন্স সাজান",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.ascending",
+      "en": "Reference: A–Z",
+      "before": "রেফারেন্স: A–Z",
+      "bn": "রেফারেন্স: A–Z",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.descending",
+      "en": "Reference: Z–A",
+      "before": "রেফারেন্স: Z–A",
+      "bn": "রেফারেন্স: Z–A",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reference",
+      "en": "Planning reference",
+      "before": "পরিকল্পনার রেফারেন্স",
+      "bn": "পরিকল্পনার রেফারেন্স",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.programme",
+      "en": "Programme",
+      "before": "প্রোগ্রাম",
+      "bn": "প্রোগ্রাম",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.stage",
+      "en": "Stage",
+      "before": "ধাপ",
+      "bn": "ধাপ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.details",
+      "en": "Details",
+      "before": "বিস্তারিত",
+      "bn": "বিস্তারিত",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.open",
+      "en": "Open details",
+      "before": "বিস্তারিত দেখুন",
+      "bn": "বিস্তারিত দেখুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.close",
+      "en": "Close details",
+      "before": "বিস্তারিত বন্ধ করুন",
+      "bn": "বিস্তারিত বন্ধ করুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.remove",
+      "en": "Remove local plan",
+      "before": "স্থানীয় পরিকল্পনা মুছুন",
+      "bn": "পরিকল্পনাটি মুছুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.review",
+      "en": "Review preview",
+      "before": "নমুনা পর্যালোচনা করুন",
+      "bn": "ডেমোতে পর্যালোচনা করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.status",
+      "en": "Status",
+      "before": "অবস্থা",
+      "bn": "অবস্থা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.draft",
+      "en": "Draft",
+      "before": "খসড়া",
+      "bn": "খসড়া",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.ready",
+      "en": "Ready for review",
+      "before": "পর্যালোচনার জন্য প্রস্তুত",
+      "bn": "পর্যালোচনার জন্য প্রস্তুত",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.pending",
+      "en": "Awaiting review",
+      "before": "পর্যালোচনার অপেক্ষায়",
+      "bn": "পর্যালোচনা বাকি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.count",
+      "en": "{count} local plans",
+      "before": "স্থানীয় পরিকল্পনা: {count}টি",
+      "bn": "পরিকল্পনা: {count}টি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.notConfigured",
+      "en": "Not configured",
+      "before": "নির্ধারণ করা হয়নি",
+      "bn": "নির্ধারণ করা হয়নি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.invalid",
+      "en": "Check the highlighted inputs before continuing.",
+      "before": "এগোনোর আগে চিহ্নিত তথ্যগুলো সংশোধন করুন।",
+      "bn": "এগোনোর আগে চিহ্নিত তথ্যগুলো সংশোধন করুন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.referenceError",
+      "en": "Use a unique reference of 2–24 letters, digits or hyphens.",
+      "before": "২–২৪ অক্ষরের স্বতন্ত্র রেফারেন্স দিন; ইংরেজি অক্ষর, সংখ্যা ও হাইফেন ব্যবহার করা যাবে।",
+      "bn": "ইংরেজি অক্ষর, ইংরেজি সংখ্যা ও হাইফেন দিয়ে ২–২৪ অক্ষরের রেফারেন্স দিন। আগে ব্যবহার করা রেফারেন্স দেওয়া যাবে না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.add",
+      "en": "Add to local plan",
+      "before": "স্থানীয় পরিকল্পনায় যুক্ত করুন",
+      "bn": "পরিকল্পনায় যোগ করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.cancel",
+      "en": "Cancel",
+      "before": "বাতিল",
+      "bn": "বাতিল করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.name",
+      "en": "Plan title",
+      "before": "পরিকল্পনার শিরোনাম",
+      "bn": "পরিকল্পনার শিরোনাম",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.date",
+      "en": "Date",
+      "before": "তারিখ",
+      "bn": "তারিখ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.start",
+      "en": "Start date",
+      "before": "শুরুর তারিখ",
+      "bn": "শুরুর তারিখ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.end",
+      "en": "End date",
+      "before": "শেষের তারিখ",
+      "bn": "শেষের তারিখ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.notes",
+      "en": "Planning notes",
+      "before": "পরিকল্পনার নোট",
+      "bn": "পরিকল্পনার নোট",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.notesHint",
+      "en": "Non-personal learning or coordination notes only.",
+      "before": "ব্যক্তিগত তথ্য ছাড়া শুধু শেখার অভিজ্ঞতা বা সমন্বয়ের নোট লিখুন।",
+      "bn": "ব্যক্তিগত তথ্য বাদ দিয়ে শেখার অভিজ্ঞতা বা সমন্বয়সংক্রান্ত নোট লিখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.noIdentity",
+      "en": "No student identity is stored in this preview.",
+      "before": "এই নমুনায় শিক্ষার্থীর পরিচয় সংরক্ষণ করা হয় না।",
+      "bn": "এই ডেমোতে শিক্ষার্থীর পরিচয়সংক্রান্ত তথ্য সংরক্ষণ করা হয় না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.step",
+      "en": "Step {value}",
+      "before": "ধাপ {value}",
+      "bn": "ধাপ {value}",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.item",
+      "en": "Item {value}",
+      "before": "আইটেম {value}",
+      "bn": "আইটেম {value}",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.phase",
+      "en": "Phase handover",
+      "before": "পরবর্তী পর্বে অগ্রগতি",
+      "bn": "পরবর্তী পর্যায়ে হস্তান্তর",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.evidence",
+      "en": "Evidence",
+      "before": "পর্যালোচনার নথি",
+      "bn": "সহায়ক নথি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.supervision",
+      "en": "Supervision",
+      "before": "তত্ত্বাবধান",
+      "bn": "তত্ত্বাবধান",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.assessment",
+      "en": "Assessment",
+      "before": "মূল্যায়ন",
+      "bn": "মূল্যায়ন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.approval",
+      "en": "Institutional review",
+      "before": "প্রাতিষ্ঠানিক পর্যালোচনা",
+      "bn": "প্রাতিষ্ঠানিক পর্যালোচনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.attendance",
+      "en": "Attendance",
+      "before": "উপস্থিতি",
+      "bn": "উপস্থিতি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.logbook",
+      "en": "Logbook",
+      "before": "লগবুক",
+      "bn": "লগবুক",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.allowance",
+      "en": "Allowance estimate",
+      "before": "ভাতার আনুমানিক হিসাব",
+      "bn": "ভাতার আনুমানিক হিসাব",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.stipend",
+      "en": "Stipend estimate",
+      "before": "স্টাইপেন্ডের আনুমানিক হিসাব",
+      "bn": "স্টাইপেন্ডের আনুমানিক হিসাব",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reflection",
+      "en": "Learning reflection",
+      "before": "শেখার অভিজ্ঞতা",
+      "bn": "শেখার অভিজ্ঞতা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.documents",
+      "en": "Evidence attached in the scenario",
+      "before": "নমুনায় প্রয়োজনীয় নথি যুক্ত আছে",
+      "bn": "ডেমোর পরিকল্পনায় সহায়ক নথি যুক্ত আছে",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reviewer",
+      "en": "Reviewer noted in the scenario",
+      "before": "নমুনায় পর্যালোচনাকারী উল্লেখ করা আছে",
+      "bn": "ডেমোর পরিকল্পনায় পর্যালোচনাকারীর নাম উল্লেখ আছে",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.policy",
+      "en": "Institutional reference reviewed",
+      "before": "প্রাতিষ্ঠানিক নির্দেশনা পর্যালোচিত হয়েছে",
+      "bn": "প্রতিষ্ঠানের সংশ্লিষ্ট নির্দেশনা পর্যালোচনা করা হয়েছে",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.noApproval",
+      "en": "This checklist does not issue an approval or a signature.",
+      "before": "এই চেকলিস্টের মাধ্যমে অনুমোদন বা স্বাক্ষর দেওয়া হয় না।",
+      "bn": "এই চেকলিস্টের মাধ্যমে অনুমোদন বা স্বাক্ষর দেওয়া হয় না।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.duration",
+      "en": "Duration",
+      "before": "সময়কাল",
+      "bn": "সময়কাল",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.countComplete",
+      "en": "{completed} of {total} checked",
+      "before": "{total}টির মধ্যে {completed}টি যাচাই করা হয়েছে",
+      "bn": "{total}টির মধ্যে {completed}টি যাচাই করা হয়েছে",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.select",
+      "en": "Select…",
+      "before": "বেছে নিন…",
+      "bn": "বেছে নিন…",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.create",
+      "en": "Create planning scenario",
+      "before": "পরিকল্পনার নমুনা তৈরি করুন",
+      "bn": "পরিকল্পনা তৈরি করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.inquiry",
+      "en": "Intake planning",
+      "before": "প্রার্থী বাছাইয়ের পরিকল্পনা",
+      "bn": "ভর্তির প্রাথমিক পরিকল্পনা",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.verification",
+      "en": "Document review",
+      "before": "নথি পর্যালোচনা",
+      "bn": "নথি পর্যালোচনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.allocation",
+      "en": "Seat planning",
+      "before": "আসনের পরিকল্পনা",
+      "bn": "আসনের পরিকল্পনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.admission",
+      "en": "Admission review",
+      "before": "ভর্তি পর্যালোচনা",
+      "bn": "ভর্তি পর্যালোচনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.advance",
+      "en": "Move to next stage",
+      "before": "পরবর্তী ধাপে নিন",
+      "bn": "পরবর্তী ধাপে নিন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.noCandidates",
+      "en": "Candidate management is not connected.",
+      "before": "প্রার্থীর তথ্যব্যবস্থা সংযুক্ত নেই।",
+      "bn": "প্রার্থীর তথ্যব্যবস্থা সংযুক্ত নেই।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.candidateHelp",
+      "en": "Create a local planning reference to explore the pipeline. It is not an applicant or student record.",
+      "before": "প্রক্রিয়াটি দেখতে স্থানীয় পরিকল্পনার রেফারেন্স তৈরি করুন। এটি আবেদনকারী বা শিক্ষার্থীর তথ্য নয়।",
+      "bn": "ভর্তি প্রক্রিয়ার ধাপগুলো দেখতে একটি পরিকল্পনার রেফারেন্স তৈরি করুন। এটি আবেদনকারী বা শিক্ষার্থীর রেকর্ড নয়।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.pipeline",
+      "en": "Admission pipeline",
+      "before": "ভর্তি প্রক্রিয়ার ধাপ",
+      "bn": "ভর্তি প্রক্রিয়ার ধাপ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.seatPlan",
+      "en": "Seat allocation study",
+      "before": "আসন বণ্টনের পরিকল্পনা",
+      "bn": "আসন বণ্টনের পরিকল্পনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.capacity",
+      "en": "Capacity entered by you",
+      "before": "আপনার নির্ধারিত মোট আসন",
+      "bn": "আপনার নির্ধারিত মোট আসন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.allocated",
+      "en": "Seats allocated in your scenario",
+      "before": "আপনার পরিকল্পনায় বণ্টিত আসন",
+      "bn": "আপনার পরিকল্পনায় বণ্টিত আসন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.available",
+      "en": "Unallocated seats",
+      "before": "অবণ্টিত আসন",
+      "bn": "অবণ্টিত আসন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.seatError",
+      "en": "Enter whole numbers. Allocated seats cannot exceed capacity.",
+      "before": "পূর্ণসংখ্যা দিন। বণ্টিত আসন মোট আসনের বেশি হতে পারবে না।",
+      "bn": "পূর্ণসংখ্যা দিন। বণ্টিত আসন মোট আসনের বেশি হতে পারবে না।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.round",
+      "en": "DGME round reference",
+      "before": "DGME ভর্তি পর্বের রেফারেন্স",
+      "bn": "DGME-এর ভর্তি ধাপের রেফারেন্স",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.roundPlan",
+      "en": "Round planning timeline",
+      "before": "ভর্তি পর্বের সময়সূচি পরিকল্পনা",
+      "bn": "ভর্তির ধাপভিত্তিক পরিকল্পনা",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.roundHint",
+      "en": "A coordination illustration, not a published DGME round or admission decision. Verify the official circular separately.",
+      "before": "এটি সমন্বয়ের নমুনা; DGME-এর প্রকাশিত ভর্তি পর্ব বা সিদ্ধান্ত নয়। সংশ্লিষ্ট সরকারি বিজ্ঞপ্তি আলাদাভাবে যাচাই করুন।",
+      "bn": "এটি সমন্বয়ের একটি উদাহরণ; DGME-এর প্রকাশিত ভর্তি ধাপ বা ভর্তির সিদ্ধান্ত নয়। সংশ্লিষ্ট সরকারি বিজ্ঞপ্তি আলাদাভাবে যাচাই করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.notice",
+      "en": "Notice reference",
+      "before": "বিজ্ঞপ্তির রেফারেন্স",
+      "bn": "বিজ্ঞপ্তির রেফারেন্স",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.choice",
+      "en": "Allocation review",
+      "before": "বণ্টন পর্যালোচনা",
+      "bn": "আসন বণ্টন পর্যালোচনা",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.enrolment",
+      "en": "Admission handover",
+      "before": "ভর্তির দায়িত্ব হস্তান্তর",
+      "bn": "ভর্তির কার্যক্রম হস্তান্তর",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.seatFoot",
+      "en": "No capacity, quota or admission rule is inferred here.",
+      "before": "এখানে কোনো অনুমোদিত আসনসংখ্যা, কোটা বা ভর্তির বিধি ধরে নেওয়া হয়নি।",
+      "bn": "এখানে কোনো অনুমোদিত আসনসংখ্যা, কোটা বা ভর্তির বিধি ধরে নেওয়া হয়নি।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.sheet",
+      "en": "Assessment worksheet",
+      "before": "মূল্যায়নের ছক",
+      "bn": "মূল্যায়নের ছক",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.sheetHint",
+      "en": "Editable planning items, not an official curriculum or pass rule.",
+      "before": "পরিকল্পনার জন্য সম্পাদনাযোগ্য আইটেম; এটি আনুষ্ঠানিক পাঠ্যক্রম বা উত্তীর্ণ হওয়ার বিধি নয়।",
+      "bn": "পরিকল্পনার প্রয়োজনে আইটেম ও নম্বর বদলাতে পারবেন। এটি অনুমোদিত পাঠ্যক্রম বা পাসের নিয়ম নয়।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.criterion",
+      "en": "Assessment item",
+      "before": "মূল্যায়নের আইটেম",
+      "bn": "মূল্যায়নের আইটেম",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.score",
+      "en": "Marks entered",
+      "before": "প্রাপ্ত নম্বর",
+      "bn": "প্রাপ্ত নম্বর",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.maximum",
+      "en": "Maximum marks",
+      "before": "সর্বোচ্চ নম্বর",
+      "bn": "পূর্ণমান",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.addItem",
+      "en": "Add assessment item",
+      "before": "মূল্যায়নের আইটেম যোগ করুন",
+      "bn": "মূল্যায়নের আইটেম যোগ করুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.removeItem",
+      "en": "Remove item {value}",
+      "before": "আইটেম {value} মুছুন",
+      "bn": "আইটেম {value} মুছুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.marksError",
+      "en": "Enter every mark and maximum. Marks must be non-negative and cannot exceed a positive maximum.",
+      "before": "প্রতিটি প্রাপ্ত ও সর্বোচ্চ নম্বর দিন। প্রাপ্ত নম্বর ঋণাত্মক বা সর্বোচ্চ নম্বরের বেশি হতে পারবে না; সর্বোচ্চ নম্বর শূন্যের বেশি হতে হবে।",
+      "bn": "প্রতিটি আইটেমের প্রাপ্ত নম্বর ও পূর্ণমান দিন। প্রাপ্ত নম্বর শূন্যের কম বা পূর্ণমানের বেশি হতে পারবে না। পূর্ণমান শূন্যের বেশি হতে হবে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.total",
+      "en": "Total",
+      "before": "মোট",
+      "bn": "মোট",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.percentage",
+      "en": "Worksheet percentage",
+      "before": "ছকের শতকরা হিসাব",
+      "bn": "মোট নম্বরের শতকরা হার",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.professor",
+      "en": "Professor review checklist",
+      "before": "অধ্যাপকের পর্যালোচনার প্রস্তুতি",
+      "bn": "অধ্যাপকের পর্যালোচনার চেকলিস্ট",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.registrar",
+      "en": "Registrar review checklist",
+      "before": "রেজিস্ট্রারের পর্যালোচনার প্রস্তুতি",
+      "bn": "রেজিস্ট্রারের পর্যালোচনার চেকলিস্ট",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.sheetReady",
+      "en": "All items are valid; the worksheet can be reviewed locally.",
+      "before": "সব আইটেমের নম্বর সঠিক; ছকটি স্থানীয়ভাবে পর্যালোচনা করা যাবে।",
+      "bn": "সব আইটেমের নম্বর গ্রহণযোগ্য। ডেমোতে ছকটি পর্যালোচনা করতে পারবেন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reviewGate",
+      "en": "Review gates",
+      "before": "পর্যালোচনার শর্ত",
+      "bn": "পর্যালোচনার শর্ত",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.criteria",
+      "en": "Institutional criteria study",
+      "before": "প্রাতিষ্ঠানিক শর্তের নমুনা",
+      "bn": "প্রতিষ্ঠানের শর্ত অনুযায়ী প্রস্তুতি যাচাই",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.actualAttendance",
+      "en": "Attendance entered (%)",
+      "before": "উপস্থিতি (%)",
+      "bn": "উপস্থিতি (%)",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.minimumAttendance",
+      "en": "Institutional attendance minimum (%)",
+      "before": "প্রতিষ্ঠানের ন্যূনতম উপস্থিতির শর্ত (%)",
+      "bn": "প্রতিষ্ঠানের নির্ধারিত ন্যূনতম উপস্থিতি (%)",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.actualAssessment",
+      "en": "Assessment entered (%)",
+      "before": "মূল্যায়নের নম্বর (%)",
+      "bn": "মূল্যায়নে প্রাপ্ত নম্বর (%)",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.minimumAssessment",
+      "en": "Institutional assessment minimum (%)",
+      "before": "প্রতিষ্ঠানের ন্যূনতম মূল্যায়নের শর্ত (%)",
+      "bn": "মূল্যায়নে প্রতিষ্ঠানের নির্ধারিত ন্যূনতম নম্বর (%)",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.criteriaHint",
+      "en": "Set your own scenario criteria. No BMDC eligibility threshold or examination rule is preconfigured.",
+      "before": "নমুনার শর্ত নিজে নির্ধারণ করুন। BMDC-এর যোগ্যতার সীমা বা পরীক্ষার বিধি এখানে পূর্বনির্ধারিত নেই।",
+      "bn": "ডেমোর জন্য শর্ত নিজে নির্ধারণ করুন। এখানে BMDC-এর পরীক্ষায় অংশগ্রহণের যোগ্যতা বা পরীক্ষার কোনো নিয়ম আগে থেকে নির্ধারিত নেই।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.meets",
+      "en": "Meets entered criterion",
+      "before": "আপনার নির্ধারিত শর্ত পূরণ হয়েছে",
+      "bn": "আপনার নির্ধারিত শর্ত পূরণ হয়েছে",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.below",
+      "en": "Below entered criterion",
+      "before": "আপনার নির্ধারিত শর্ত পূরণ হয়নি",
+      "bn": "আপনার নির্ধারিত শর্ত পূরণ হয়নি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.eligibility",
+      "en": "Readiness for institutional review",
+      "before": "প্রাতিষ্ঠানিক পর্যালোচনার প্রস্তুতি",
+      "bn": "প্রাতিষ্ঠানিক পর্যালোচনার প্রস্তুতি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.notEligibility",
+      "en": "A local readiness check is not an eligibility decision, published result or phase promotion.",
+      "before": "স্থানীয় প্রস্তুতি যাচাই পরীক্ষার যোগ্যতা নির্ধারণ, ফল প্রকাশ বা পরবর্তী পর্বে উত্তরণ নয়।",
+      "bn": "ডেমোতে প্রস্তুতি যাচাই মানে পরীক্ষায় অংশগ্রহণের যোগ্যতা নির্ধারণ, ফল প্রকাশ বা পরবর্তী পর্যায়ে উত্তরণের অনুমোদন নয়।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.preparation",
+      "en": "Preparation",
+      "before": "প্রস্তুতি",
+      "bn": "প্রস্তুতি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.results",
+      "en": "Result worksheet",
+      "before": "ফলাফলের খসড়া",
+      "bn": "ফলাফল হিসাবের ছক",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.resultScore",
+      "en": "Marks for the result study",
+      "before": "ফলাফলের নমুনায় প্রাপ্ত নম্বর",
+      "bn": "ফলাফলের ডেমোতে প্রাপ্ত নম্বর",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.resultMaximum",
+      "en": "Maximum for the result study",
+      "before": "ফলাফলের নমুনায় সর্বোচ্চ নম্বর",
+      "bn": "ফলাফলের ডেমোতে পূর্ণমান",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.resultReview",
+      "en": "Review result study",
+      "before": "ফলাফলের নমুনা যাচাই করুন",
+      "bn": "ডেমোর ফলাফল যাচাই করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.resultNote",
+      "en": "No result is published or attached to a student.",
+      "before": "কোনো ফল প্রকাশ বা শিক্ষার্থীর তথ্যের সঙ্গে যুক্ত করা হয় না।",
+      "bn": "কোনো ফলাফল প্রকাশ করা হয় না বা শিক্ষার্থীর রেকর্ডে যুক্ত হয় না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.currentPhase",
+      "en": "Current phase",
+      "before": "বর্তমান পর্ব",
+      "bn": "বর্তমান পর্যায়",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.examReview",
+      "en": "Examination review",
+      "before": "পরীক্ষার পর্যালোচনা",
+      "bn": "পরীক্ষার পর্যালোচনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.nextPhase",
+      "en": "Next-phase handover",
+      "before": "পরবর্তী পর্বের দায়িত্ব হস্তান্তর",
+      "bn": "পরবর্তী পর্যায়ে হস্তান্তর",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.week",
+      "en": "Week beginning",
+      "before": "সপ্তাহের শুরুর তারিখ",
+      "bn": "সপ্তাহের শুরুর তারিখ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.previousWeek",
+      "en": "Previous week",
+      "before": "আগের সপ্তাহ",
+      "bn": "আগের সপ্তাহ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.nextWeek",
+      "en": "Next week",
+      "before": "পরের সপ্তাহ",
+      "bn": "পরের সপ্তাহ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.calendar",
+      "en": "Clinical rotation planner",
+      "before": "ক্লিনিক্যাল রোটেশনের পরিকল্পনা",
+      "bn": "ক্লিনিক্যাল রোটেশনের পরিকল্পনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.unitA",
+      "en": "Teaching unit A",
+      "before": "প্রশিক্ষণ ইউনিট A",
+      "bn": "প্রশিক্ষণ ইউনিট A",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.unitB",
+      "en": "Teaching unit B",
+      "before": "প্রশিক্ষণ ইউনিট B",
+      "bn": "প্রশিক্ষণ ইউনিট B",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.skills",
+      "en": "Skills laboratory",
+      "before": "দক্ষতা অনুশীলন ল্যাব",
+      "bn": "ক্লিনিক্যাল দক্ষতা অনুশীলনের ল্যাব",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.unit",
+      "en": "Teaching unit",
+      "before": "প্রশিক্ষণ ইউনিট",
+      "bn": "প্রশিক্ষণ ইউনিট",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.session",
+      "en": "{unit} · {date}",
+      "before": "{unit} · {date}",
+      "bn": "{unit} · {date}",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.free",
+      "en": "Unplanned session",
+      "before": "এখনও পরিকল্পনা করা হয়নি",
+      "bn": "সেশনের পরিকল্পনা করা হয়নি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reserved",
+      "en": "Planned session",
+      "before": "পরিকল্পিত সেশন",
+      "bn": "পরিকল্পিত সেশন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.assign",
+      "en": "Plan selected session",
+      "before": "বেছে নেওয়া সেশন পরিকল্পনা করুন",
+      "bn": "নির্বাচিত সেশনের পরিকল্পনা করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.conflict",
+      "en": "That session already has a local plan. Remove it before reallocating.",
+      "before": "সেশনটির স্থানীয় পরিকল্পনা আগে থেকেই আছে। নতুনভাবে বরাদ্দের আগে সেটি মুছুন।",
+      "bn": "এই সেশনের পরিকল্পনা আগে থেকেই আছে। নতুন পরিকল্পনা করতে আগেরটি মুছুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.calendarNote",
+      "en": "One planning block per unit/day. No actual ward placement or attendance is recorded.",
+      "before": "প্রতি ইউনিটে প্রতিদিন একটি পরিকল্পনা রাখা যাবে। প্রকৃত ওয়ার্ডে পোস্টিং বা উপস্থিতি রেকর্ড করা হয় না।",
+      "bn": "প্রতি ইউনিটের জন্য দিনে একটি সেশন পরিকল্পনা করা যাবে। এখানে প্রকৃত ওয়ার্ড পোস্টিং বা উপস্থিতি রেকর্ড করা হয় না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.attended",
+      "en": "Mark attendance in this scenario",
+      "before": "নমুনায় উপস্থিতি চিহ্নিত করুন",
+      "bn": "ডেমোতে উপস্থিতি চিহ্নিত করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.caseNote",
+      "en": "Learning history",
+      "before": "শেখার অভিজ্ঞতার ইতিহাস",
+      "bn": "প্রশিক্ষণের অভিজ্ঞতা",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.noClinical",
+      "en": "Do not enter patient cases or medical details. This is a non-clinical planning note.",
+      "before": "রোগীর কেস বা চিকিৎসার তথ্য লিখবেন না। এখানে শুধু প্রশিক্ষণ পরিকল্পনার নোট রাখা যাবে।",
+      "bn": "রোগীর কেস বা চিকিৎসাসংক্রান্ত তথ্য লিখবেন না। এখানে শুধু প্রশিক্ষণ পরিকল্পনার নোট লিখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.selected",
+      "en": "Selected session",
+      "before": "বেছে নেওয়া সেশন",
+      "bn": "নির্বাচিত সেশন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.noSessions",
+      "en": "No sessions planned this week.",
+      "before": "এই সপ্তাহের কোনো সেশন পরিকল্পনা করা হয়নি।",
+      "bn": "এই সপ্তাহে কোনো সেশনের পরিকল্পনা নেই।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.posting",
+      "en": "Rotational posting",
+      "before": "রোটেশনভিত্তিক পোস্টিং",
+      "bn": "রোটেশনভিত্তিক পোস্টিং",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.postingTitle",
+      "en": "Posting title",
+      "before": "পোস্টিংয়ের নাম",
+      "bn": "পোস্টিংয়ের নাম",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.addPosting",
+      "en": "Add posting to plan",
+      "before": "পরিকল্পনায় পোস্টিং যোগ করুন",
+      "bn": "পরিকল্পনায় পোস্টিং যোগ করুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.postingHint",
+      "en": "Enter institution-defined rotations. No mandatory sequence or duration is assumed.",
+      "before": "প্রতিষ্ঠানের নির্ধারিত রোটেশন দিন। বাধ্যতামূলক ক্রম বা মেয়াদ ধরে নেওয়া হয়নি।",
+      "bn": "প্রতিষ্ঠানের নির্ধারিত রোটেশন যোগ করুন। এখানে কোনো বাধ্যতামূলক ক্রম বা মেয়াদ ধরে নেওয়া হয়নি।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.dateError",
+      "en": "Enter a valid title and date range without overlapping another posting.",
+      "before": "সঠিক নাম ও তারিখ দিন। অন্য পোস্টিংয়ের সঙ্গে সময়ের মিল থাকা যাবে না।",
+      "bn": "পোস্টিংয়ের নাম, শুরুর তারিখ ও শেষের তারিখ সঠিকভাবে দিন। একই সময়ে একাধিক পোস্টিং রাখা যাবে না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.noPostings",
+      "en": "Build your posting timeline.",
+      "before": "পোস্টিংয়ের সময়সূচি তৈরি করুন।",
+      "bn": "পোস্টিংয়ের সময়সূচি তৈরি করুন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.postingEmpty",
+      "en": "Add dates to explore a training journey. No intern records are connected.",
+      "before": "প্রশিক্ষণের পরিকল্পনা দেখতে তারিখ যোগ করুন। ইন্টার্নদের তথ্য সংযুক্ত নেই।",
+      "bn": "প্রশিক্ষণের পরিকল্পনা দেখতে পোস্টিংয়ের তারিখ যোগ করুন। ইন্টার্ন চিকিৎসকদের রেকর্ড সংযুক্ত নেই।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.completed",
+      "en": "Completed entries",
+      "before": "সম্পন্ন এন্ট্রি",
+      "bn": "সম্পন্ন লগবুক এন্ট্রি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.target",
+      "en": "Planned entries",
+      "before": "পরিকল্পিত এন্ট্রি",
+      "bn": "লগবুক এন্ট্রির লক্ষ্যমাত্রা",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.logbookError",
+      "en": "Use whole numbers; completed entries cannot exceed a positive target.",
+      "before": "পূর্ণসংখ্যা দিন। সম্পন্ন এন্ট্রি নির্ধারিত লক্ষ্যের বেশি হতে পারবে না; লক্ষ্য শূন্যের বেশি হতে হবে।",
+      "bn": "পূর্ণসংখ্যা দিন। সম্পন্ন এন্ট্রি লক্ষ্যমাত্রার বেশি হতে পারবে না। লক্ষ্যমাত্রা শূন্যের বেশি হতে হবে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.rate",
+      "en": "Monthly amount entered (BDT)",
+      "before": "মাসিক অর্থের পরিমাণ (BDT)",
+      "bn": "আপনার দেওয়া মাসিক পরিমাণ (BDT)",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.months",
+      "en": "Months in this scenario",
+      "before": "নমুনার মেয়াদ (মাস)",
+      "bn": "পরিকল্পনার মেয়াদ (মাস)",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.amountError",
+      "en": "Enter a non-negative amount and 1–120 whole months.",
+      "before": "শূন্য বা তার বেশি অর্থ এবং পূর্ণসংখ্যায় ১–১২০ মাস দিন।",
+      "bn": "টাকার পরিমাণ শূন্য বা তার বেশি দিন। মেয়াদ পূর্ণসংখ্যায় ১–১২০ মাসের মধ্যে হতে হবে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.notPayroll",
+      "en": "Planning calculation only. No allowance, stipend or payroll is approved or paid.",
+      "before": "এটি শুধু পরিকল্পনার হিসাব। কোনো ভাতা, স্টাইপেন্ড বা বেতন অনুমোদন বা পরিশোধ করা হয় না।",
+      "bn": "এটি শুধু পরিকল্পনার হিসাব। কোনো ভাতা, স্টাইপেন্ড বা বেতন অনুমোদন বা পরিশোধ করা হয় না।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.supervisor",
+      "en": "Supervisor review checklist",
+      "before": "তত্ত্বাবধায়কের পর্যালোচনার প্রস্তুতি",
+      "bn": "তত্ত্বাবধায়কের পর্যালোচনার চেকলিস্ট",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.feedback",
+      "en": "Supervisor feedback draft",
+      "before": "তত্ত্বাবধায়কের মতামতের খসড়া",
+      "bn": "তত্ত্বাবধায়কের মতামতের খসড়া",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.pathway",
+      "en": "Training pathway",
+      "before": "প্রশিক্ষণের ধাপ",
+      "bn": "প্রশিক্ষণের ধাপ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.pathwayNote",
+      "en": "Illustrative coordination stages. Programme duration, affiliation and BCPS/BMDC requirements must be verified separately.",
+      "before": "সমন্বয়ের নমুনা ধাপ। প্রোগ্রামের মেয়াদ, স্বীকৃতি এবং BCPS/BMDC-এর শর্ত আলাদাভাবে যাচাই করতে হবে।",
+      "bn": "এগুলো প্রশিক্ষণ সমন্বয়ের উদাহরণ। প্রোগ্রামের মেয়াদ, প্রাতিষ্ঠানিক অধিভুক্তি এবং BCPS/BMDC-এর শর্ত আলাদাভাবে যাচাই করতে হবে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.enrol",
+      "en": "Enrolment evidence",
+      "before": "ভর্তির নথি",
+      "bn": "ভর্তির নথি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.portfolio",
+      "en": "Training portfolio",
+      "before": "প্রশিক্ষণের নথিপত্র",
+      "bn": "প্রশিক্ষণের নথিপত্র",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.supervisorReview",
+      "en": "Supervisor review",
+      "before": "তত্ত্বাবধায়কের পর্যালোচনা",
+      "bn": "তত্ত্বাবধায়কের পর্যালোচনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.assessmentReview",
+      "en": "Assessment review",
+      "before": "মূল্যায়ন পর্যালোচনা",
+      "bn": "মূল্যায়ন পর্যালোচনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.pathProgress",
+      "en": "Local checklist progress",
+      "before": "স্থানীয় চেকলিস্টের অগ্রগতি",
+      "bn": "ডেমোর চেকলিস্টের অগ্রগতি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.trackFCPS",
+      "en": "Organise fellowship training evidence and review preparation. No BCPS affiliation is verified here.",
+      "before": "ফেলোশিপ প্রশিক্ষণের নথি ও পর্যালোচনার প্রস্তুতি সাজান। এখানে BCPS-এর স্বীকৃতি যাচাই করা হয় না।",
+      "bn": "ফেলোশিপ প্রশিক্ষণের নথি গুছিয়ে পর্যালোচনার প্রস্তুতি নিন। এখানে BCPS-এর অধিভুক্তি যাচাই করা হয় না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.trackMD",
+      "en": "Organise institutional MD training plans, learning evidence and supervision notes.",
+      "before": "প্রতিষ্ঠানের MD প্রশিক্ষণের পরিকল্পনা, শেখার নথি ও তত্ত্বাবধানের নোট সাজান।",
+      "bn": "প্রতিষ্ঠানের MD প্রশিক্ষণের পরিকল্পনা, শিক্ষণ কার্যক্রমের নথি ও তত্ত্বাবধানের নোট গুছিয়ে রাখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.trackMS",
+      "en": "Organise institutional MS training plans, portfolio evidence and supervisor feedback.",
+      "before": "প্রতিষ্ঠানের MS প্রশিক্ষণের পরিকল্পনা, নথিপত্র ও তত্ত্বাবধায়কের মতামত সাজান।",
+      "bn": "প্রতিষ্ঠানের MS প্রশিক্ষণের পরিকল্পনা, পোর্টফোলিওর নথি ও তত্ত্বাবধায়কের মতামত গুছিয়ে রাখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.organisation",
+      "en": "Responsibility map",
+      "before": "দায়িত্বের সম্পর্কচিত্র",
+      "bn": "দায়িত্ববণ্টনের চিত্র",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.academic",
+      "en": "Academic coordination",
+      "before": "একাডেমিক সমন্বয়",
+      "bn": "একাডেমিক সমন্বয়",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.clinical",
+      "en": "Clinical teaching",
+      "before": "ক্লিনিক্যাল শিক্ষা",
+      "bn": "ক্লিনিক্যাল শিক্ষা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.finance",
+      "en": "Financial oversight",
+      "before": "আর্থিক তদারকি",
+      "bn": "আর্থিক তদারকি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.administration",
+      "en": "Administration",
+      "before": "প্রশাসন",
+      "bn": "প্রশাসন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.governanceNote",
+      "en": "Illustrative relationships, not a statutory committee structure or legal compliance statement.",
+      "before": "সম্পর্কের নমুনা চিত্র; এটি বিধিবদ্ধ কমিটি কাঠামো বা আইনগত প্রতিপালনের ঘোষণা নয়।",
+      "bn": "এটি দায়িত্বের সম্পর্ক বোঝানোর উদাহরণ; বিধিবদ্ধ কমিটির কাঠামো বা আইনগত শর্ত পূরণের ঘোষণা নয়।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.academicRole",
+      "en": "Coordinate academic planning and prepare assessment evidence for institutional review.",
+      "before": "একাডেমিক পরিকল্পনা সমন্বয় করুন এবং প্রাতিষ্ঠানিক পর্যালোচনার জন্য মূল্যায়নের নথি প্রস্তুত করুন।",
+      "bn": "একাডেমিক পরিকল্পনা সমন্বয় করুন এবং প্রাতিষ্ঠানিক পর্যালোচনার জন্য মূল্যায়নের নথি প্রস্তুত করুন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.clinicalRole",
+      "en": "Coordinate teaching-unit plans and non-clinical training records.",
+      "before": "প্রশিক্ষণ ইউনিটের পরিকল্পনা ও ব্যক্তিগত তথ্যবিহীন প্রশিক্ষণের নথি সমন্বয় করুন।",
+      "bn": "প্রশিক্ষণ ইউনিটের পরিকল্পনা ও চিকিৎসাসংক্রান্ত তথ্যবিহীন প্রশিক্ষণ নথির মধ্যে সমন্বয় করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.financeRole",
+      "en": "Compare proposed commitments with the amount entered for this planning exercise.",
+      "before": "পরিকল্পনায় নির্ধারিত অর্থের সঙ্গে প্রস্তাবিত ব্যয়ের তুলনা করুন।",
+      "bn": "পরিকল্পনায় নির্ধারিত অর্থের সঙ্গে প্রস্তাবিত ব্যয়ের তুলনা করুন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.administrationRole",
+      "en": "Organise institutional references, review ownership and configuration evidence.",
+      "before": "প্রাতিষ্ঠানিক নির্দেশনা, পর্যালোচনার দায়িত্ব ও সেটিংসের নথি সাজান।",
+      "bn": "প্রতিষ্ঠানের সংশ্লিষ্ট নথি, পর্যালোচনার দায়িত্ব ও সেটিংসসংক্রান্ত নথি গুছিয়ে রাখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.oversight",
+      "en": "Financial review study",
+      "before": "আর্থিক পর্যালোচনার নমুনা",
+      "bn": "আর্থিক পর্যালোচনার ডেমো",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.budget",
+      "en": "Budget entered (BDT)",
+      "before": "নির্ধারিত বাজেট (BDT)",
+      "bn": "আপনার দেওয়া বাজেট (BDT)",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.proposed",
+      "en": "Proposed amount (BDT)",
+      "before": "প্রস্তাবিত ব্যয় (BDT)",
+      "bn": "প্রস্তাবিত ব্যয় (BDT)",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.remaining",
+      "en": "Balance in this scenario",
+      "before": "নমুনায় অবশিষ্ট অর্থ",
+      "bn": "পরিকল্পনায় অবশিষ্ট অর্থ",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.budgetError",
+      "en": "Enter non-negative amounts. The proposed amount exceeds the entered budget or the inputs are invalid.",
+      "before": "শূন্য বা তার বেশি অর্থ দিন। প্রস্তাবিত ব্যয় বাজেটের বেশি অথবা দেওয়া তথ্য সঠিক নয়।",
+      "bn": "টাকার পরিমাণ শূন্য বা তার বেশি দিন। প্রস্তাবিত ব্যয় বাজেটের বেশি হয়েছে, অথবা দেওয়া পরিমাণ সঠিক নয়।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reviewSummary",
+      "en": "Open review summary",
+      "before": "পর্যালোচনার সারাংশ দেখুন",
+      "bn": "পর্যালোচনার সারাংশ দেখুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.governanceReady",
+      "en": "Evidence checklist complete for this local review only.",
+      "before": "শুধু এই স্থানীয় পর্যালোচনার নথি যাচাই সম্পন্ন হয়েছে।",
+      "bn": "ডেমোর এই পর্যালোচনায় সহায়ক নথির চেকলিস্ট পূরণ হয়েছে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.academicSetup",
+      "en": "Academic setup",
+      "before": "একাডেমিক সেটআপ",
+      "bn": "একাডেমিক সেটিংস",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.seatSettings",
+      "en": "Seat planning",
+      "before": "আসনের পরিকল্পনা",
+      "bn": "আসনের পরিকল্পনা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.validation",
+      "en": "Review & validation",
+      "before": "পর্যালোচনা ও যাচাই",
+      "bn": "পর্যালোচনা ও যাচাই",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.institution",
+      "en": "Institution code",
+      "before": "প্রতিষ্ঠানের কোড",
+      "bn": "প্রতিষ্ঠানের কোড",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.academicStart",
+      "en": "Academic period starts",
+      "before": "শিক্ষা কার্যক্রমের পর্ব শুরু",
+      "bn": "একাডেমিক মেয়াদের শুরুর তারিখ",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.academicEnd",
+      "en": "Academic period ends",
+      "before": "শিক্ষা কার্যক্রমের পর্ব শেষ",
+      "bn": "একাডেমিক মেয়াদের শেষের তারিখ",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.language",
+      "en": "Document language preference",
+      "before": "নথির ভাষার পছন্দ",
+      "bn": "নথির পছন্দের ভাষা",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.english",
+      "en": "English",
+      "before": "ইংরেজি",
+      "bn": "ইংরেজি",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.bengali",
+      "en": "Bengali",
+      "before": "বাংলা",
+      "bn": "বাংলা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.both",
+      "en": "English & Bengali",
+      "before": "ইংরেজি ও বাংলা",
+      "bn": "ইংরেজি ও বাংলা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.references",
+      "en": "Institutional references",
+      "before": "প্রাতিষ্ঠানিক নির্দেশনার রেফারেন্স",
+      "bn": "প্রাতিষ্ঠানিক রেফারেন্স",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.dgme",
+      "en": "DGME reference",
+      "before": "DGME রেফারেন্স",
+      "bn": "DGME রেফারেন্স",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.bmdc",
+      "en": "BMDC reference",
+      "before": "BMDC রেফারেন্স",
+      "bn": "BMDC রেফারেন্স",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.bcps",
+      "en": "BCPS reference",
+      "before": "BCPS রেফারেন্স",
+      "bn": "BCPS রেফারেন্স",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.referenceNote",
+      "en": "Reference fields are user-entered notes; their authenticity is not verified.",
+      "before": "রেফারেন্সগুলো ব্যবহারকারীর দেওয়া নোট; এগুলোর সত্যতা যাচাই করা হয় না।",
+      "bn": "এই রেফারেন্সগুলো ব্যবহারকারীর লেখা নোট। এগুলোর সত্যতা যাচাই করা হয় না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.validate",
+      "en": "Validate local settings",
+      "before": "স্থানীয় সেটিংস যাচাই করুন",
+      "bn": "ডেমোর সেটিংস যাচাই করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.settingsError",
+      "en": "Use a 2–20 character institution code, a valid academic date range and a valid seat plan.",
+      "before": "২–২০ অক্ষরের প্রতিষ্ঠানের কোড, সঠিক একাডেমিক তারিখের পরিসর ও আসনের পরিকল্পনা দিন।",
+      "bn": "২–২০ অক্ষরের প্রতিষ্ঠানের কোড দিন। একাডেমিক মেয়াদের শুরু ও শেষের তারিখ এবং আসনের পরিকল্পনাও সঠিক হতে হবে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.settingsNote",
+      "en": "Validation checks input consistency only. No licence, accreditation, configuration or audit record is saved.",
+      "before": "যাচাইয়ে শুধু দেওয়া তথ্যের সামঞ্জস্য পরীক্ষা করা হয়। কোনো লাইসেন্স, স্বীকৃতি, সেটিংস বা অডিট রেকর্ড সংরক্ষিত হয় না।",
+      "bn": "যাচাইয়ে শুধু দেওয়া তথ্যের সামঞ্জস্য পরীক্ষা করা হয়। কোনো লাইসেন্স, স্বীকৃতি, সেটিংস বা অডিট রেকর্ড সংরক্ষিত হয় না।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.localAudit",
+      "en": "Local review feedback",
+      "before": "স্থানীয় পর্যালোচনার ফল",
+      "bn": "ডেমোর পর্যালোচনার ফল",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.reviewNotRun",
+      "en": "Run validation to inspect the current configuration.",
+      "before": "বর্তমান সেটিংস পরীক্ষা করতে যাচাই চালু করুন।",
+      "bn": "বর্তমান তথ্য পরীক্ষা করতে সেটিংস যাচাই করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.valid",
+      "en": "Inputs consistent",
+      "before": "তথ্য সামঞ্জস্যপূর্ণ",
+      "bn": "তথ্য সামঞ্জস্যপূর্ণ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.incomplete",
+      "en": "Inputs incomplete",
+      "before": "তথ্য অসম্পূর্ণ",
+      "bn": "তথ্য অসম্পূর্ণ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.institutionHint",
+      "en": "Letters, digits and hyphens only.",
+      "before": "শুধু ইংরেজি অক্ষর, সংখ্যা ও হাইফেন ব্যবহার করুন।",
+      "bn": "শুধু ইংরেজি অক্ষর, ইংরেজি সংখ্যা ও হাইফেন ব্যবহার করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.edit",
+      "en": "Edit local plan",
+      "before": "স্থানীয় পরিকল্পনা সম্পাদনা করুন",
+      "bn": "পরিকল্পনা সম্পাদনা করুন",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.seatSketch",
+      "en": "Plan the seat, then review the evidence.",
+      "before": "আসনের পরিকল্পনার সঙ্গে নথিও যাচাই করুন।",
+      "bn": "আসনের পরিকল্পনার সঙ্গে নথিও যাচাই করুন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.marksSketch",
+      "en": "Make every mark understandable.",
+      "before": "প্রতিটি নম্বরের হিসাব পরিষ্কার রাখুন।",
+      "bn": "প্রতিটি নম্বরের হিসাব পরিষ্কার রাখুন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.wardSketch",
+      "en": "A place for every learning session.",
+      "before": "প্রতিটি প্রশিক্ষণ সেশনের সুস্পষ্ট পরিকল্পনা।",
+      "bn": "প্রতিটি প্রশিক্ষণ সেশনের সুস্পষ্ট পরিকল্পনা।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.trainingSketch",
+      "en": "Learning, documented with care.",
+      "before": "যত্ন নিয়ে রাখুন শেখার অভিজ্ঞতার নথি।",
+      "bn": "শেখার অভিজ্ঞতার নথি রাখুন যত্ন নিয়ে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.governanceSketch",
+      "en": "Connect responsibility to review.",
+      "before": "দায়িত্বের সঙ্গে যুক্ত থাকুক পর্যালোচনা।",
+      "bn": "দায়িত্ব অনুযায়ী পর্যালোচনা।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.settingsSketch",
+      "en": "Check the details before the change.",
+      "before": "পরিবর্তনের আগে তথ্যগুলো যাচাই করুন।",
+      "bn": "পরিবর্তনের আগে তথ্যগুলো যাচাই করুন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.loadError",
+      "en": "The academic workspace could not be loaded. Please try again.",
+      "before": "একাডেমিক কাজের নমুনা লোড করা যায়নি। আবার চেষ্টা করুন।",
+      "bn": "একাডেমিক কাজের ডেমো লোড করা যায়নি। আবার চেষ্টা করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.retry",
+      "en": "Try again",
+      "before": "আবার চেষ্টা করুন",
+      "bn": "আবার চেষ্টা করুন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.budgetNote",
+      "en": "Planning calculation only. No budget, expenditure or payment is approved or saved.",
+      "before": null,
+      "bn": "এটি শুধু পরিকল্পনার হিসাব। কোনো বাজেট, ব্যয় বা পেমেন্ট অনুমোদন কিংবা সংরক্ষণ করা হয় না।",
+      "decision": "added"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.logbookProgress",
+      "en": "Logbook planning progress",
+      "before": null,
+      "bn": "লগবুক পরিকল্পনার অগ্রগতি",
+      "decision": "added"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.noMatches",
+      "en": "No plans match your search and selected stage.",
+      "before": null,
+      "bn": "আপনার খোঁজ ও নির্বাচিত ধাপের সঙ্গে মেলে এমন কোনো পরিকল্পনা নেই।",
+      "decision": "added"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.weekMarker",
+      "en": "Week / {value}",
+      "before": null,
+      "bn": "সপ্তাহ / {value}",
+      "decision": "added"
+    },
+    {
+      "key": "pages.medicalCollegeApp.ui.sessionReferenceError",
+      "en": "Use a reference of 2–24 letters, digits or hyphens.",
+      "before": null,
+      "bn": "ইংরেজি অক্ষর, ইংরেজি সংখ্যা ও হাইফেন দিয়ে ২–২৪ অক্ষরের রেফারেন্স দিন।",
+      "decision": "added"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.intake-admission.title",
+      "en": "Intake & Admission",
+      "before": "প্রার্থী বাছাই ও ভর্তি",
+      "bn": "ভর্তি পরিকল্পনা ও কার্যক্রম",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.intake-admission.headline",
+      "en": "A considered intake.\nA clear path to admission.",
+      "before": "পরিকল্পিত প্রার্থী বাছাই।\nসুশৃঙ্খল ভর্তি প্রক্রিয়া।",
+      "bn": "সুচিন্তিত ভর্তি পরিকল্পনা।\nপ্রতিটি ধাপ স্পষ্ট।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.intake-admission.description",
+      "en": "Explore intake planning, round references and seat allocation in one focused workspace.",
+      "before": "প্রার্থী বাছাইয়ের পরিকল্পনা, ভর্তি পর্বের তথ্য ও আসন বণ্টন এক জায়গায় দেখুন।",
+      "bn": "ভর্তির প্রাথমিক পরিকল্পনা, ধাপভিত্তিক রেফারেন্স ও আসন বণ্টন এক জায়গায় দেখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.cards-items.title",
+      "en": "Cards & Items",
+      "before": "কার্ড ও আইটেম মূল্যায়ন",
+      "bn": "কার্ড ও আইটেম মূল্যায়ন",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.cards-items.headline",
+      "en": "Every item, considered.\nEvery assessment, traceable.",
+      "before": "প্রতিটি আইটেমের মূল্যায়ন।\nনম্বরের সুস্পষ্ট হিসাব।",
+      "bn": "প্রতিটি আইটেমের মূল্যায়ন।\nপ্রতিটি নম্বরের স্পষ্ট হিসাব।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.cards-items.description",
+      "en": "Work through an editable assessment sheet and a clearly separated academic review checklist.",
+      "before": "নম্বরের ছক পূরণ করুন এবং একাডেমিক পর্যালোচনার প্রস্তুতি আলাদাভাবে যাচাই করুন।",
+      "bn": "মূল্যায়নের ছকে নম্বর দিন। একাডেমিক পর্যালোচনার চেকলিস্ট আলাদাভাবে পূরণ করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.professional-exams.title",
+      "en": "Professional Exams",
+      "before": "প্রফেশনাল পরীক্ষা",
+      "bn": "প্রফেশনাল পরীক্ষা",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.professional-exams.headline",
+      "en": "From evidence\nto a confident review.",
+      "before": "প্রয়োজনীয় তথ্য থেকে\nসুস্পষ্ট পর্যালোচনা।",
+      "bn": "প্রয়োজনীয় নথি নিয়ে\nপ্রস্তুত হোন পর্যালোচনার জন্য।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.professional-exams.description",
+      "en": "Explore institutional review criteria, examination preparation and phase handover without inferring regulatory eligibility.",
+      "before": "প্রতিষ্ঠানের নির্ধারিত শর্ত, পরীক্ষার প্রস্তুতি ও পরবর্তী ধাপের পর্যালোচনা সাজান। এখানে নিয়ন্ত্রক সংস্থার যোগ্যতা যাচাই করা হয় না।",
+      "bn": "প্রতিষ্ঠানের শর্ত অনুযায়ী পরীক্ষার প্রস্তুতি ও পরবর্তী পর্যায়ে হস্তান্তরের পরিকল্পনা দেখুন। এটি নিয়ন্ত্রক সংস্থার বিধি অনুযায়ী পরীক্ষার যোগ্যতা নির্ধারণ করে না।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.ward-placement.title",
+      "en": "Ward Placement",
+      "before": "ওয়ার্ডে প্রশিক্ষণ",
+      "bn": "ওয়ার্ডে প্রশিক্ষণ",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.ward-placement.headline",
+      "en": "Learning on the ward.\nClarity in every rotation.",
+      "before": "ওয়ার্ডে হাতে-কলমে শিক্ষা।\nপ্রতিটি রোটেশনের পরিষ্কার পরিকল্পনা।",
+      "bn": "ওয়ার্ডে হাতে-কলমে শিক্ষা।\nপ্রতিটি রোটেশনের পরিষ্কার পরিকল্পনা।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.ward-placement.description",
+      "en": "Plan teaching-unit sessions, spot scheduling conflicts and organise non-clinical learning reflections.",
+      "before": "প্রশিক্ষণ সেশন পরিকল্পনা করুন, সময়সূচির সংঘাত দেখুন এবং শেখার অভিজ্ঞতার নোট রাখুন।",
+      "bn": "প্রশিক্ষণ ইউনিটের সেশন পরিকল্পনা করুন, সময়সূচিতে দ্বন্দ্ব আছে কি না দেখুন এবং রোগীর তথ্য ছাড়া শেখার অভিজ্ঞতার নোট রাখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.interns.title",
+      "en": "Interns",
+      "before": "ইন্টার্নশিপ",
+      "bn": "ইন্টার্ন চিকিৎসক",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.interns.headline",
+      "en": "A connected journey\nfrom posting to reflection.",
+      "before": "পোস্টিং থেকে শেখার অভিজ্ঞতা—\nইন্টার্নশিপের সমন্বিত পরিকল্পনা।",
+      "bn": "পোস্টিং থেকে শেখার অভিজ্ঞতা—\nইন্টার্নশিপের সমন্বিত পরিকল্পনা।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.interns.description",
+      "en": "Explore rotational postings, logbook planning, supervisor review and an illustrative allowance calculation.",
+      "before": "রোটেশনভিত্তিক পোস্টিং, লগবুক, তত্ত্বাবধায়কের পর্যালোচনা ও ভাতার হিসাব পরিকল্পনা করুন।",
+      "bn": "রোটেশনভিত্তিক পোস্টিং, লগবুক ও তত্ত্বাবধায়কের পর্যালোচনার পরিকল্পনা করুন। ভাতার আনুমানিক হিসাবও দেখুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.postgraduate-trainees.title",
+      "en": "Postgraduate Trainees",
+      "before": "স্নাতকোত্তর প্রশিক্ষণার্থী",
+      "bn": "স্নাতকোত্তর প্রশিক্ষণার্থী",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.postgraduate-trainees.headline",
+      "en": "Different pathways.\nOne considered training record.",
+      "before": "প্রশিক্ষণের পৃথক পথ।\nতথ্য রাখার সমন্বিত ব্যবস্থা।",
+      "bn": "প্রশিক্ষণের পথ আলাদা।\nনথি ও পর্যালোচনায় সমন্বয়।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.postgraduate-trainees.description",
+      "en": "Explore FCPS, MD and MS planning views with evidence, supervision and stipend calculations kept in context.",
+      "before": "FCPS, MD ও MS প্রশিক্ষণের পরিকল্পনা, প্রয়োজনীয় নথি, তত্ত্বাবধান ও স্টাইপেন্ডের হিসাব দেখুন।",
+      "bn": "FCPS, MD ও MS প্রশিক্ষণের পরিকল্পনা দেখুন। প্রয়োজনীয় নথি, তত্ত্বাবধান ও স্টাইপেন্ডের হিসাব আলাদাভাবে পর্যালোচনা করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.governance.title",
+      "en": "Governance",
+      "before": "পরিচালনা ও তদারকি",
+      "bn": "কলেজ পরিচালনা ও তদারকি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.governance.headline",
+      "en": "Good governance\nstarts with clear responsibilities.",
+      "before": "সুষ্ঠু পরিচালনার ভিত্তি—\nসুস্পষ্ট দায়িত্ববণ্টন।",
+      "bn": "সুষ্ঠু পরিচালনার ভিত্তি—\nসুস্পষ্ট দায়িত্ববণ্টন।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.governance.description",
+      "en": "Connect committee responsibilities, review evidence and financial oversight in an illustrative governance workspace.",
+      "before": "কমিটির দায়িত্ব, পর্যালোচনার নথি ও আর্থিক তদারকির পরিকল্পনা একসঙ্গে দেখুন।",
+      "bn": "দায়িত্বপ্রাপ্ত কমিটি, পর্যালোচনার সহায়ক নথি ও আর্থিক তদারকির সমন্বয় দেখুন কলেজ পরিচালনার এই ডেমোতে।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.college-settings.title",
+      "en": "College Settings",
+      "before": "কলেজের সেটিংস",
+      "bn": "কলেজের সেটিংস",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.college-settings.headline",
+      "en": "Configured for your college.\nReviewed before it changes.",
+      "before": "কলেজের প্রয়োজন অনুযায়ী সেটিংস।\nপরিবর্তনের আগে যাচাই।",
+      "bn": "কলেজের প্রয়োজন অনুযায়ী সেটিংস।\nপরিবর্তনের আগে যাচাই।",
+      "decision": "retained"
+    },
+    {
+      "key": "pages.medicalCollegeApp.pages.college-settings.description",
+      "en": "Organise academic dates, local seat plans and institutional reference fields with immediate validation.",
+      "before": "শিক্ষাবর্ষের তারিখ, আসনের পরিকল্পনা ও প্রাতিষ্ঠানিক তথ্য সাজান এবং সঙ্গে সঙ্গে ভুল যাচাই করুন।",
+      "bn": "একাডেমিক মেয়াদের তারিখ, আসনের পরিকল্পনা ও প্রাতিষ্ঠানিক রেফারেন্স দিন। তথ্যের সামঞ্জস্য সঙ্গে সঙ্গে যাচাই করুন।",
+      "decision": "rewritten"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.title",
+      "en": "Medical College",
+      "before": "মেডিকেল কলেজ",
+      "bn": "মেডিকেল কলেজ",
+      "decision": "retained"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.intake-admission",
+      "en": "Intake & Admission",
+      "before": "প্রার্থী বাছাই ও ভর্তি",
+      "bn": "ভর্তি পরিকল্পনা ও কার্যক্রম",
+      "decision": "rewritten"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.cards-items",
+      "en": "Cards & Items",
+      "before": "কার্ড ও আইটেম মূল্যায়ন",
+      "bn": "কার্ড ও আইটেম মূল্যায়ন",
+      "decision": "retained"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.professional-exams",
+      "en": "Professional Exams",
+      "before": "প্রফেশনাল পরীক্ষা",
+      "bn": "প্রফেশনাল পরীক্ষা",
+      "decision": "retained"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.ward-placement",
+      "en": "Ward Placement",
+      "before": "ওয়ার্ডে প্রশিক্ষণ",
+      "bn": "ওয়ার্ডে প্রশিক্ষণ",
+      "decision": "retained"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.interns",
+      "en": "Interns",
+      "before": "ইন্টার্নশিপ",
+      "bn": "ইন্টার্ন চিকিৎসক",
+      "decision": "rewritten"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.postgraduate-trainees",
+      "en": "Postgraduate Trainees",
+      "before": "স্নাতকোত্তর প্রশিক্ষণার্থী",
+      "bn": "স্নাতকোত্তর প্রশিক্ষণার্থী",
+      "decision": "retained"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.governance",
+      "en": "Governance",
+      "before": "পরিচালনা ও তদারকি",
+      "bn": "কলেজ পরিচালনা ও তদারকি",
+      "decision": "rewritten"
+    },
+    {
+      "key": "layout.header.modules.medicalCollege.links.college-settings",
+      "en": "College Settings",
+      "before": "কলেজের সেটিংস",
+      "bn": "কলেজের সেটিংস",
+      "decision": "retained"
+    }
+  ]
+}

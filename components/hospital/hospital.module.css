@@ -754,7 +754,7 @@
   color: var(--muted-foreground);
 }
 .bedTile[data-status="blocked"] {
-  background: var(--muted);
+  background: color-mix(in srgb, var(--amber) 8%, var(--card));
   color: var(--amber);
 }
 .bedTile small {

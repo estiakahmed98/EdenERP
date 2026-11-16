@@ -47,7 +47,9 @@ function Examination() {
             <Panel title={t("ui.criteria")}>
               <p className={css.caption}>{t("ui.criteriaHint")}</p>
               <div className={css.criteriaRow}>
-                <span className={css.criteriaIndex}>01</span>
+                <span className={css.criteriaIndex}>
+                  {number(1).padStart(2, number(0))}
+                </span>
                 <div className={css.formGrid}>
                   <Field label={t("ui.actualAttendance")}>
                     <input
@@ -83,7 +85,9 @@ function Examination() {
                 </Badge>
               </div>
               <div className={css.criteriaRow}>
-                <span className={css.criteriaIndex}>02</span>
+                <span className={css.criteriaIndex}>
+                  {number(2).padStart(2, number(0))}
+                </span>
                 <div className={css.formGrid}>
                   <Field label={t("ui.actualAssessment")}>
                     <input
