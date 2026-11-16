@@ -39,6 +39,8 @@ import {
 
 // Icon per header mega-menu column (keyed by the column's titleKey).
 export const MODULE_ICONS: Record<string, LucideIcon> = {
+  "modules.medicalCollege.title": GraduationCap,
+  "modules.hospital.title": Stethoscope,
   "modules.accounting.title": BadgeDollarSign,
   "modules.projectAccounting.title": FolderKanban,
   "modules.budgetManagement.title": PiggyBank,

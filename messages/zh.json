@@ -219,6 +219,35 @@
         }
       },
       "modules": {
+        "hospital": {
+          "title": "医院管理",
+          "links": {
+            "hospital-dashboard": "医院概览",
+            "patients": "患者",
+            "opd-serials": "门诊预约",
+            "consultations": "诊疗记录",
+            "billing": "收费",
+            "day-close": "日结",
+            "doctors-money": "医生结算",
+            "wards-beds": "病区与床位",
+            "admissions": "入院",
+            "bed-census": "床位统计",
+            "laboratory": "检验科",
+            "imaging": "影像科",
+            "pharmacy": "药房",
+            "operating-theatre": "手术室",
+            "emergency": "急诊",
+            "blood-bank": "血库",
+            "payers": "付款机构",
+            "indicators": "运营指标",
+            "doctors-sittings": "医生与出诊安排",
+            "services-prices": "服务与价格",
+            "hospital-departments": "医院科室",
+            "staff-registrations": "人员执业登记",
+            "record-access-log": "病历访问日志",
+            "hospital-settings": "医院设置"
+          }
+        },
         "industries": {
           "title": "行业",
           "links": {
@@ -616,6 +645,19 @@
             "graduation": "毕业",
             "universitySettings": "大学设置"
           }
+        },
+        "medicalCollege": {
+          "title": "医学院",
+          "links": {
+            "intake-admission": "招生与录取",
+            "cards-items": "考核卡与项目",
+            "professional-exams": "专业考试",
+            "ward-placement": "病房轮转",
+            "interns": "实习医师",
+            "postgraduate-trainees": "研究生培训",
+            "governance": "治理",
+            "college-settings": "学院设置"
+          }
         }
       },
       "mobileMenuLabel": "切换菜单"
@@ -656,6 +698,82 @@
     }
   },
   "pages": {
+    "hospitalApp": {
+      "pages": {
+        "hospital-dashboard": {
+          "title": "医院概览"
+        },
+        "patients": {
+          "title": "患者"
+        },
+        "opd-serials": {
+          "title": "门诊预约"
+        },
+        "consultations": {
+          "title": "诊疗记录"
+        },
+        "billing": {
+          "title": "收费"
+        },
+        "day-close": {
+          "title": "日结"
+        },
+        "doctors-money": {
+          "title": "医生结算"
+        },
+        "wards-beds": {
+          "title": "病区与床位"
+        },
+        "admissions": {
+          "title": "入院"
+        },
+        "bed-census": {
+          "title": "床位统计"
+        },
+        "laboratory": {
+          "title": "检验科"
+        },
+        "imaging": {
+          "title": "影像科"
+        },
+        "pharmacy": {
+          "title": "药房"
+        },
+        "operating-theatre": {
+          "title": "手术室"
+        },
+        "emergency": {
+          "title": "急诊"
+        },
+        "blood-bank": {
+          "title": "血库"
+        },
+        "payers": {
+          "title": "付款机构"
+        },
+        "indicators": {
+          "title": "运营指标"
+        },
+        "doctors-sittings": {
+          "title": "医生与出诊安排"
+        },
+        "services-prices": {
+          "title": "服务与价格"
+        },
+        "hospital-departments": {
+          "title": "医院科室"
+        },
+        "staff-registrations": {
+          "title": "人员执业登记"
+        },
+        "record-access-log": {
+          "title": "病历访问日志"
+        },
+        "hospital-settings": {
+          "title": "医院设置"
+        }
+      }
+    },
     "accountingShowcase": {
       "bills": {
         "meta": {

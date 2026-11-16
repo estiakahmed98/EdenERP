@@ -219,6 +219,35 @@
         }
       },
       "modules": {
+        "hospital": {
+          "title": "Hastane",
+          "links": {
+            "hospital-dashboard": "Hastane panosu",
+            "patients": "Hastalar",
+            "opd-serials": "Poliklinik sıraları",
+            "consultations": "Muayeneler",
+            "billing": "Faturalandırma",
+            "day-close": "Gün sonu",
+            "doctors-money": "Hekim ödemeleri",
+            "wards-beds": "Servisler ve yataklar",
+            "admissions": "Yatışlar",
+            "bed-census": "Yatak sayımı",
+            "laboratory": "Laboratuvar",
+            "imaging": "Görüntüleme",
+            "pharmacy": "Eczane",
+            "operating-theatre": "Ameliyathane",
+            "emergency": "Acil servis",
+            "blood-bank": "Kan bankası",
+            "payers": "Ödeyici kurumlar",
+            "indicators": "Göstergeler",
+            "doctors-sittings": "Hekimler ve çalışma saatleri",
+            "services-prices": "Hizmetler ve fiyatlar",
+            "hospital-departments": "Hastane birimleri",
+            "staff-registrations": "Personel kayıtları",
+            "record-access-log": "Kayıt erişim günlüğü",
+            "hospital-settings": "Hastane ayarları"
+          }
+        },
         "industries": {
           "title": "Sektörler",
           "links": {
@@ -616,6 +645,19 @@
             "graduation": "Mezuniyet",
             "universitySettings": "Üniversite Ayarları"
           }
+        },
+        "medicalCollege": {
+          "title": "Tıp Fakültesi",
+          "links": {
+            "intake-admission": "Kontenjan ve Kabul",
+            "cards-items": "Değerlendirme Kartları",
+            "professional-exams": "Mesleki Sınavlar",
+            "ward-placement": "Klinik Rotasyon",
+            "interns": "İntörnler",
+            "postgraduate-trainees": "Uzmanlık Öğrencileri",
+            "governance": "Yönetişim",
+            "college-settings": "Fakülte Ayarları"
+          }
         }
       },
       "mobileMenuLabel": "Menüyü aç/kapat"
@@ -656,6 +698,82 @@
     }
   },
   "pages": {
+    "hospitalApp": {
+      "pages": {
+        "hospital-dashboard": {
+          "title": "Hastane panosu"
+        },
+        "patients": {
+          "title": "Hastalar"
+        },
+        "opd-serials": {
+          "title": "Poliklinik sıraları"
+        },
+        "consultations": {
+          "title": "Muayeneler"
+        },
+        "billing": {
+          "title": "Faturalandırma"
+        },
+        "day-close": {
+          "title": "Gün sonu"
+        },
+        "doctors-money": {
+          "title": "Hekim ödemeleri"
+        },
+        "wards-beds": {
+          "title": "Servisler ve yataklar"
+        },
+        "admissions": {
+          "title": "Yatışlar"
+        },
+        "bed-census": {
+          "title": "Yatak sayımı"
+        },
+        "laboratory": {
+          "title": "Laboratuvar"
+        },
+        "imaging": {
+          "title": "Görüntüleme"
+        },
+        "pharmacy": {
+          "title": "Eczane"
+        },
+        "operating-theatre": {
+          "title": "Ameliyathane"
+        },
+        "emergency": {
+          "title": "Acil servis"
+        },
+        "blood-bank": {
+          "title": "Kan bankası"
+        },
+        "payers": {
+          "title": "Ödeyici kurumlar"
+        },
+        "indicators": {
+          "title": "Göstergeler"
+        },
+        "doctors-sittings": {
+          "title": "Hekimler ve çalışma saatleri"
+        },
+        "services-prices": {
+          "title": "Hizmetler ve fiyatlar"
+        },
+        "hospital-departments": {
+          "title": "Hastane birimleri"
+        },
+        "staff-registrations": {
+          "title": "Personel kayıtları"
+        },
+        "record-access-log": {
+          "title": "Kayıt erişim günlüğü"
+        },
+        "hospital-settings": {
+          "title": "Hastane ayarları"
+        }
+      }
+    },
     "accountingShowcase": {
       "bills": {
         "meta": {

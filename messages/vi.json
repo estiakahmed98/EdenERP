@@ -219,6 +219,35 @@
         }
       },
       "modules": {
+        "hospital": {
+          "title": "Bệnh viện",
+          "links": {
+            "hospital-dashboard": "Tổng quan bệnh viện",
+            "patients": "Bệnh nhân",
+            "opd-serials": "Số khám ngoại trú",
+            "consultations": "Khám bệnh",
+            "billing": "Thanh toán",
+            "day-close": "Chốt ngày",
+            "doctors-money": "Thu nhập bác sĩ",
+            "wards-beds": "Khoa nội trú và giường",
+            "admissions": "Nhập viện",
+            "bed-census": "Thống kê giường",
+            "laboratory": "Xét nghiệm",
+            "imaging": "Chẩn đoán hình ảnh",
+            "pharmacy": "Nhà thuốc",
+            "operating-theatre": "Phòng mổ",
+            "emergency": "Cấp cứu",
+            "blood-bank": "Ngân hàng máu",
+            "payers": "Đơn vị chi trả",
+            "indicators": "Chỉ số",
+            "doctors-sittings": "Bác sĩ và lịch khám",
+            "services-prices": "Dịch vụ và bảng giá",
+            "hospital-departments": "Các khoa bệnh viện",
+            "staff-registrations": "Đăng ký hành nghề nhân viên",
+            "record-access-log": "Nhật ký truy cập hồ sơ",
+            "hospital-settings": "Cài đặt bệnh viện"
+          }
+        },
         "industries": {
           "title": "Ngành nghề",
           "links": {
@@ -616,6 +645,19 @@
             "graduation": "Tốt nghiệp",
             "universitySettings": "Cài đặt đại học"
           }
+        },
+        "medicalCollege": {
+          "title": "Trường Y",
+          "links": {
+            "intake-admission": "Tuyển sinh và Nhập học",
+            "cards-items": "Phiếu và Mục Đánh giá",
+            "professional-exams": "Kỳ thi Chuyên môn",
+            "ward-placement": "Thực tập tại Khoa",
+            "interns": "Bác sĩ Thực tập",
+            "postgraduate-trainees": "Học viên Sau đại học",
+            "governance": "Quản trị",
+            "college-settings": "Cài đặt Trường"
+          }
         }
       },
       "mobileMenuLabel": "Bật/tắt menu"
@@ -656,6 +698,82 @@
     }
   },
   "pages": {
+    "hospitalApp": {
+      "pages": {
+        "hospital-dashboard": {
+          "title": "Tổng quan bệnh viện"
+        },
+        "patients": {
+          "title": "Bệnh nhân"
+        },
+        "opd-serials": {
+          "title": "Số khám ngoại trú"
+        },
+        "consultations": {
+          "title": "Khám bệnh"
+        },
+        "billing": {
+          "title": "Thanh toán"
+        },
+        "day-close": {
+          "title": "Chốt ngày"
+        },
+        "doctors-money": {
+          "title": "Thu nhập bác sĩ"
+        },
+        "wards-beds": {
+          "title": "Khoa nội trú và giường"
+        },
+        "admissions": {
+          "title": "Nhập viện"
+        },
+        "bed-census": {
+          "title": "Thống kê giường"
+        },
+        "laboratory": {
+          "title": "Xét nghiệm"
+        },
+        "imaging": {
+          "title": "Chẩn đoán hình ảnh"
+        },
+        "pharmacy": {
+          "title": "Nhà thuốc"
+        },
+        "operating-theatre": {
+          "title": "Phòng mổ"
+        },
+        "emergency": {
+          "title": "Cấp cứu"
+        },
+        "blood-bank": {
+          "title": "Ngân hàng máu"
+        },
+        "payers": {
+          "title": "Đơn vị chi trả"
+        },
+        "indicators": {
+          "title": "Chỉ số"
+        },
+        "doctors-sittings": {
+          "title": "Bác sĩ và lịch khám"
+        },
+        "services-prices": {
+          "title": "Dịch vụ và bảng giá"
+        },
+        "hospital-departments": {
+          "title": "Các khoa bệnh viện"
+        },
+        "staff-registrations": {
+          "title": "Đăng ký hành nghề nhân viên"
+        },
+        "record-access-log": {
+          "title": "Nhật ký truy cập hồ sơ"
+        },
+        "hospital-settings": {
+          "title": "Cài đặt bệnh viện"
+        }
+      }
+    },
     "accountingShowcase": {
       "bills": {
         "meta": {

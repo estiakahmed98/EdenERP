@@ -219,6 +219,35 @@
         }
       },
       "modules": {
+        "hospital": {
+          "title": "अस्पताल",
+          "links": {
+            "hospital-dashboard": "अस्पताल ड्यासबोर्ड",
+            "patients": "बिरामी",
+            "opd-serials": "ओपीडी पालो",
+            "consultations": "परामर्श",
+            "billing": "बिलिङ",
+            "day-close": "दैनिक हिसाब बन्द",
+            "doctors-money": "चिकित्सकको भुक्तानी",
+            "wards-beds": "वार्ड र शय्या",
+            "admissions": "भर्ना",
+            "bed-census": "शय्या गणना",
+            "laboratory": "प्रयोगशाला",
+            "imaging": "इमेजिङ",
+            "pharmacy": "फार्मेसी",
+            "operating-theatre": "शल्यकक्ष",
+            "emergency": "आकस्मिक कक्ष",
+            "blood-bank": "रक्त बैंक",
+            "payers": "भुक्तानीकर्ता",
+            "indicators": "सूचकहरू",
+            "doctors-sittings": "चिकित्सक र समयतालिका",
+            "services-prices": "सेवा र मूल्य",
+            "hospital-departments": "अस्पतालका विभाग",
+            "staff-registrations": "कर्मचारी दर्ता",
+            "record-access-log": "अभिलेख पहुँच लग",
+            "hospital-settings": "अस्पताल सेटिङ"
+          }
+        },
         "industries": {
           "title": "उद्योगहरू",
           "links": {
@@ -616,6 +645,19 @@
             "graduation": "दीक्षान्त",
             "universitySettings": "विश्वविद्यालय सेटिङ"
           }
+        },
+        "medicalCollege": {
+          "title": "मेडिकल कलेज",
+          "links": {
+            "intake-admission": "भर्ना तथा प्रवेश",
+            "cards-items": "मूल्याङ्कन कार्ड र विषय",
+            "professional-exams": "व्यावसायिक परीक्षा",
+            "ward-placement": "वार्ड प्रशिक्षण",
+            "interns": "इन्टर्नहरू",
+            "postgraduate-trainees": "स्नातकोत्तर प्रशिक्षार्थी",
+            "governance": "सुशासन",
+            "college-settings": "कलेज सेटिङ"
+          }
         }
       },
       "mobileMenuLabel": "मेनु टगल गर्नुहोस्"
@@ -656,6 +698,82 @@
     }
   },
   "pages": {
+    "hospitalApp": {
+      "pages": {
+        "hospital-dashboard": {
+          "title": "अस्पताल ड्यासबोर्ड"
+        },
+        "patients": {
+          "title": "बिरामी"
+        },
+        "opd-serials": {
+          "title": "ओपीडी पालो"
+        },
+        "consultations": {
+          "title": "परामर्श"
+        },
+        "billing": {
+          "title": "बिलिङ"
+        },
+        "day-close": {
+          "title": "दैनिक हिसाब बन्द"
+        },
+        "doctors-money": {
+          "title": "चिकित्सकको भुक्तानी"
+        },
+        "wards-beds": {
+          "title": "वार्ड र शय्या"
+        },
+        "admissions": {
+          "title": "भर्ना"
+        },
+        "bed-census": {
+          "title": "शय्या गणना"
+        },
+        "laboratory": {
+          "title": "प्रयोगशाला"
+        },
+        "imaging": {
+          "title": "इमेजिङ"
+        },
+        "pharmacy": {
+          "title": "फार्मेसी"
+        },
+        "operating-theatre": {
+          "title": "शल्यकक्ष"
+        },
+        "emergency": {
+          "title": "आकस्मिक कक्ष"
+        },
+        "blood-bank": {
+          "title": "रक्त बैंक"
+        },
+        "payers": {
+          "title": "भुक्तानीकर्ता"
+        },
+        "indicators": {
+          "title": "सूचकहरू"
+        },
+        "doctors-sittings": {
+          "title": "चिकित्सक र समयतालिका"
+        },
+        "services-prices": {
+          "title": "सेवा र मूल्य"
+        },
+        "hospital-departments": {
+          "title": "अस्पतालका विभाग"
+        },
+        "staff-registrations": {
+          "title": "कर्मचारी दर्ता"
+        },
+        "record-access-log": {
+          "title": "अभिलेख पहुँच लग"
+        },
+        "hospital-settings": {
+          "title": "अस्पताल सेटिङ"
+        }
+      }
+    },
     "accountingShowcase": {
       "bills": {
         "meta": {

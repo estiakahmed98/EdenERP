@@ -219,6 +219,35 @@
         }
       },
       "modules": {
+        "hospital": {
+          "title": "病院管理",
+          "links": {
+            "hospital-dashboard": "病院ダッシュボード",
+            "patients": "患者",
+            "opd-serials": "外来受付",
+            "consultations": "診察",
+            "billing": "会計",
+            "day-close": "日次締め",
+            "doctors-money": "医師報酬",
+            "wards-beds": "病棟・病床",
+            "admissions": "入院",
+            "bed-census": "病床統計",
+            "laboratory": "検査室",
+            "imaging": "画像検査",
+            "pharmacy": "薬局",
+            "operating-theatre": "手術室",
+            "emergency": "救急",
+            "blood-bank": "血液バンク",
+            "payers": "支払機関",
+            "indicators": "指標",
+            "doctors-sittings": "医師・診療予定",
+            "services-prices": "サービス・料金",
+            "hospital-departments": "診療科・部門",
+            "staff-registrations": "職員資格登録",
+            "record-access-log": "記録アクセスログ",
+            "hospital-settings": "病院設定"
+          }
+        },
         "industries": {
           "title": "業種",
           "links": {
@@ -616,6 +645,19 @@
             "graduation": "卒業",
             "universitySettings": "大学設定"
           }
+        },
+        "medicalCollege": {
+          "title": "医科大学",
+          "links": {
+            "intake-admission": "募集・入学",
+            "cards-items": "評価カード・項目",
+            "professional-exams": "専門試験",
+            "ward-placement": "病棟実習",
+            "interns": "臨床研修医",
+            "postgraduate-trainees": "大学院研修生",
+            "governance": "ガバナンス",
+            "college-settings": "大学設定"
+          }
         }
       },
       "mobileMenuLabel": "メニューを切り替え"
@@ -656,6 +698,82 @@
     }
   },
   "pages": {
+    "hospitalApp": {
+      "pages": {
+        "hospital-dashboard": {
+          "title": "病院ダッシュボード"
+        },
+        "patients": {
+          "title": "患者"
+        },
+        "opd-serials": {
+          "title": "外来受付"
+        },
+        "consultations": {
+          "title": "診察"
+        },
+        "billing": {
+          "title": "会計"
+        },
+        "day-close": {
+          "title": "日次締め"
+        },
+        "doctors-money": {
+          "title": "医師報酬"
+        },
+        "wards-beds": {
+          "title": "病棟・病床"
+        },
+        "admissions": {
+          "title": "入院"
+        },
+        "bed-census": {
+          "title": "病床統計"
+        },
+        "laboratory": {
+          "title": "検査室"
+        },
+        "imaging": {
+          "title": "画像検査"
+        },
+        "pharmacy": {
+          "title": "薬局"
+        },
+        "operating-theatre": {
+          "title": "手術室"
+        },
+        "emergency": {
+          "title": "救急"
+        },
+        "blood-bank": {
+          "title": "血液バンク"
+        },
+        "payers": {
+          "title": "支払機関"
+        },
+        "indicators": {
+          "title": "指標"
+        },
+        "doctors-sittings": {
+          "title": "医師・診療予定"
+        },
+        "services-prices": {
+          "title": "サービス・料金"
+        },
+        "hospital-departments": {
+          "title": "診療科・部門"
+        },
+        "staff-registrations": {
+          "title": "職員資格登録"
+        },
+        "record-access-log": {
+          "title": "記録アクセスログ"
+        },
+        "hospital-settings": {
+          "title": "病院設定"
+        }
+      }
+    },
     "accountingShowcase": {
       "bills": {
         "meta": {

@@ -33,6 +33,8 @@ const CATEGORY_OF: Record<string, string> = {
   education: "sector",
   university: "sector",
   medicalCentre: "sector",
+  medicalCollege: "sector",
+  hospital: "sector",
   analytics: "platform",
   openPlatform: "platform",
 };

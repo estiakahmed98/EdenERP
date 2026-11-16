@@ -219,6 +219,35 @@
         }
       },
       "modules": {
+        "hospital": {
+          "title": "المستشفى",
+          "links": {
+            "hospital-dashboard": "لوحة المستشفى",
+            "patients": "المرضى",
+            "opd-serials": "حجوزات العيادات",
+            "consultations": "الاستشارات",
+            "billing": "الفوترة",
+            "day-close": "إقفال اليوم",
+            "doctors-money": "مستحقات الأطباء",
+            "wards-beds": "الأجنحة والأسرة",
+            "admissions": "الدخول",
+            "bed-census": "إحصاء الأسرة",
+            "laboratory": "المختبر",
+            "imaging": "التصوير",
+            "pharmacy": "الصيدلية",
+            "operating-theatre": "غرفة العمليات",
+            "emergency": "الطوارئ",
+            "blood-bank": "بنك الدم",
+            "payers": "الجهات الدافعة",
+            "indicators": "المؤشرات",
+            "doctors-sittings": "الأطباء ومواعيد العيادات",
+            "services-prices": "الخدمات والأسعار",
+            "hospital-departments": "أقسام المستشفى",
+            "staff-registrations": "تسجيلات الموظفين المهنية",
+            "record-access-log": "سجل الوصول إلى الملفات",
+            "hospital-settings": "إعدادات المستشفى"
+          }
+        },
         "industries": {
           "title": "القطاعات",
           "links": {
@@ -616,6 +645,19 @@
             "graduation": "التخرج",
             "universitySettings": "إعدادات الجامعة"
           }
+        },
+        "medicalCollege": {
+          "title": "كلية الطب",
+          "links": {
+            "intake-admission": "القبول والتسجيل",
+            "cards-items": "بطاقات التقييم وبنوده",
+            "professional-exams": "الامتحانات المهنية",
+            "ward-placement": "التدريب في الأجنحة",
+            "interns": "أطباء الامتياز",
+            "postgraduate-trainees": "متدربو الدراسات العليا",
+            "governance": "الحوكمة",
+            "college-settings": "إعدادات الكلية"
+          }
         }
       },
       "mobileMenuLabel": "تبديل القائمة"
@@ -656,6 +698,82 @@
     }
   },
   "pages": {
+    "hospitalApp": {
+      "pages": {
+        "hospital-dashboard": {
+          "title": "لوحة المستشفى"
+        },
+        "patients": {
+          "title": "المرضى"
+        },
+        "opd-serials": {
+          "title": "حجوزات العيادات"
+        },
+        "consultations": {
+          "title": "الاستشارات"
+        },
+        "billing": {
+          "title": "الفوترة"
+        },
+        "day-close": {
+          "title": "إقفال اليوم"
+        },
+        "doctors-money": {
+          "title": "مستحقات الأطباء"
+        },
+        "wards-beds": {
+          "title": "الأجنحة والأسرة"
+        },
+        "admissions": {
+          "title": "الدخول"
+        },
+        "bed-census": {
+          "title": "إحصاء الأسرة"
+        },
+        "laboratory": {
+          "title": "المختبر"
+        },
+        "imaging": {
+          "title": "التصوير"
+        },
+        "pharmacy": {
+          "title": "الصيدلية"
+        },
+        "operating-theatre": {
+          "title": "غرفة العمليات"
+        },
+        "emergency": {
+          "title": "الطوارئ"
+        },
+        "blood-bank": {
+          "title": "بنك الدم"
+        },
+        "payers": {
+          "title": "الجهات الدافعة"
+        },
+        "indicators": {
+          "title": "المؤشرات"
+        },
+        "doctors-sittings": {
+          "title": "الأطباء ومواعيد العيادات"
+        },
+        "services-prices": {
+          "title": "الخدمات والأسعار"
+        },
+        "hospital-departments": {
+          "title": "أقسام المستشفى"
+        },
+        "staff-registrations": {
+          "title": "تسجيلات الموظفين المهنية"
+        },
+        "record-access-log": {
+          "title": "سجل الوصول إلى الملفات"
+        },
+        "hospital-settings": {
+          "title": "إعدادات المستشفى"
+        }
+      }
+    },
     "accountingShowcase": {
       "bills": {
         "meta": {
