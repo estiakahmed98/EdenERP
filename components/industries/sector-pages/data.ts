@@ -25,7 +25,6 @@ export const sectorFamilies = {
     menuKey: "menu.industries.groupOfIndustries",
     pages: {
       manufacturing: { key: "manufacturing", menu: "groupManufacturing" },
-      fmcg: { key: "fmcg", menu: "groupFmcg" },
       textiles: { key: "textiles", menu: "groupTextiles" },
       pharmaceuticals: { key: "pharmaceuticals", menu: "groupPharmaceuticals" },
       "heavy-industry": { key: "heavyIndustry", menu: "groupHeavyIndustry" },
@@ -94,12 +93,6 @@ export const sectorModules: Record<string, readonly string[]> = {
     "/apps/manufacturing/capacity-planning",
     "/apps/manufacturing/standard-costing",
     "/apps/engineering-maintenance/downtime",
-  ],
-  "group/fmcg": [
-    "/apps/sales/crm/distribution/dealers",
-    "/apps/inventory/demand-forecast",
-    "/apps/analytics/bi-analytics-reporting",
-    "/apps/sales/crm/finance/credit",
   ],
   "group/textiles": [
     "/apps/merchandising/merchandising-dashboard",

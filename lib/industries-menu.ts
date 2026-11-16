@@ -77,10 +77,6 @@ export const industriesMegaMenu: MegaMenuColumn[] = [
         href: "/industries/group/manufacturing",
       },
       {
-        labelKey: "menu.industries.groupFmcg",
-        href: "/industries/group/fmcg",
-      },
-      {
         labelKey: "menu.industries.groupTextiles",
         href: "/industries/group/textiles",
       },
