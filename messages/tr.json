@@ -64380,6 +64380,8 @@
   "solutionsCount": "{count} sektör sayfası",
   "sectors": {
     "garmentsTextile": "Hazır giyim ve tekstil operasyonlarında model geliştirme, malzeme rezervasyonu ve üretim takibini bir arada inceleyin.",
+    "fmcg": "Gıda, içecek, kişisel bakım ve ev bakım markalarında parti, son kullanma tarihi, distribütör ve ticari kampanyaları takip edin.",
+    "groupOfIndustries": "Birden fazla şirketi tek bir grup olarak yönetin; üretim, FMCG, tekstil, ilaç, ağır sanayi ve finans genelinde konsolide raporlar alın.",
     "manufacturing": "Malzemeden üretim emirlerine, kalite kontrolünden sevkiyata kadar iş akışını izleyin.",
     "retail": "Farklı mağazalar için satış, stok, müşteri kayıtları ve şube raporlarını inceleyin.",
     "foodHospitality": "Yiyecek ve konaklama işletmelerinde stok, hizmet, kasa ve faturalama süreçlerini inceleyin.",

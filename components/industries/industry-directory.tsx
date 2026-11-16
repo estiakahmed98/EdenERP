@@ -8,6 +8,8 @@ import {
   BriefcaseBusiness,
   Building2,
   Factory,
+  Network,
+  ShoppingBasket,
   Globe2,
   GraduationCap,
   Search,
@@ -25,6 +27,8 @@ import css from "./industry-directory.module.css";
 
 const icons: Record<string, LucideIcon> = {
   garmentsTextile: Shirt,
+  fmcg: ShoppingBasket,
+  groupOfIndustries: Network,
   manufacturing: Factory,
   retail: Store,
   foodHospitality: UtensilsCrossed,

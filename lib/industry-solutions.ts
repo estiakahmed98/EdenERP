@@ -2,6 +2,8 @@ import { productInventory } from "./product-inventory";
 
 const order = [
   "garmentsTextile",
+  "fmcg",
+  "groupOfIndustries",
   "manufacturing",
   "retail",
   "foodHospitality",
@@ -15,6 +17,16 @@ const paths: Record<string, string[]> = {
     "/apps/merchandising/styles-costing",
     "/apps/merchandising/material-booking",
     "/apps/merchandising/production-follow-up",
+  ],
+  fmcg: [
+    "/apps/sales/crm/distribution/dealers",
+    "/apps/inventory/demand-forecast",
+    "/apps/manufacturing/batches-lots",
+  ],
+  groupOfIndustries: [
+    "/apps/analytics/executive-dashboard",
+    "/apps/accounting/financial-reports",
+    "/apps/budget-management/variance",
   ],
   manufacturing: [
     "/apps/inventory/stock-movements",

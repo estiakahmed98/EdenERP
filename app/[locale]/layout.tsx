@@ -73,7 +73,13 @@ export function generateStaticParams() {
  * `pages.accountingShowcase` alone is ~890 KB (≈60% of all messages).
  * Before adding a client component that uses one of these, remove it here.
  */
-const SERVER_ONLY_PAGE_NAMESPACES = ["accountingShowcase"] as const;
+const SERVER_ONLY_PAGE_NAMESPACES = [
+  "accountingShowcase",
+  // FMCG / Group of Industries pages render only as Server Components.
+  "sectorFmcg",
+  "sectorGroup",
+  "sectorCommon",
+] as const;
 
 function pickClientMessages(messages: Awaited<ReturnType<typeof getMessages>>) {
   const pages = messages.pages as Record<string, unknown> | undefined;

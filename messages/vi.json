@@ -64380,6 +64380,8 @@
   "solutionsCount": "{count} trang theo ngành",
   "sectors": {
     "garmentsTextile": "Kết nối phát triển mẫu, đặt vật tư và theo dõi sản xuất trong ngành may mặc và dệt may.",
+    "fmcg": "Theo dõi lô hàng, hạn sử dụng, nhà phân phối và chương trình khuyến mãi cho các thương hiệu thực phẩm, đồ uống, chăm sóc cá nhân và gia dụng.",
+    "groupOfIndustries": "Vận hành nhiều công ty như một tập đoàn, với báo cáo hợp nhất cho sản xuất, FMCG, dệt may, dược phẩm, công nghiệp nặng và tài chính.",
     "manufacturing": "Theo dõi vật tư, lệnh sản xuất, kiểm tra chất lượng và giao hàng trong quy trình sản xuất.",
     "retail": "Khám phá bán hàng, tồn kho, hồ sơ khách hàng và báo cáo cửa hàng cho nhiều mô hình bán lẻ.",
     "foodHospitality": "Kết nối tồn kho, phục vụ, bán hàng tại quầy và lập hóa đơn trong ngành ẩm thực và lưu trú.",

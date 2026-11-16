@@ -170,6 +170,22 @@
         },
         "industries": {
           "garmentsTextile": "Garments & Textile",
+          "fmcg": "FMCG",
+          "groupOfIndustries": "Group of Industries",
+          "fmcgFood": "Food",
+          "fmcgBeverages": "Beverages",
+          "fmcgPersonalCare": "Personal Care & Beauty",
+          "fmcgHomeCare": "Home & Household Care",
+          "fmcgHealthHygiene": "Health & Hygiene (OTC)",
+          "fmcgBabyCare": "Baby & Child Care",
+          "fmcgTobacco": "Tobacco",
+          "fmcgPetCare": "Pet Care",
+          "groupManufacturing": "Manufacturing",
+          "groupFmcg": "FMCG",
+          "groupTextiles": "Textiles",
+          "groupPharmaceuticals": "Pharmaceuticals",
+          "groupHeavyIndustry": "Heavy Industry",
+          "groupFinancialServices": "Financial Services",
           "others": "Others",
           "education": "Education",
           "retail": "Retail",
@@ -63744,6 +63760,8 @@
   "solutionsCount": "{count} industry pages",
   "sectors": {
     "garmentsTextile": "Connect style development, material booking and production follow-up across apparel and textile operations.",
+    "fmcg": "Follow batches, expiry, distributors and trade schemes across food, beverage, personal care and household brands.",
+    "groupOfIndustries": "Run several companies as one group, with consolidated reports across manufacturing, FMCG, textiles, pharma, heavy industry and finance.",
     "manufacturing": "Follow materials, production orders, quality checks and dispatch through the manufacturing workflow.",
     "retail": "Explore checkout, stock, customer records and outlet reporting for different kinds of shops.",
     "foodHospitality": "Connect stock, service, checkout and billing across food and hospitality businesses.",
@@ -63753,6 +63771,7 @@
     "others": "Explore the workflows behind e-commerce, NGOs and broadcasting."
   }
 },
+<<<<<<< Updated upstream
     "medicalCollegeApp": {
       "ui": {
         "college": "Medical College",
@@ -64010,6 +64029,1919 @@
         }
       }
     }
+=======
+"sectorCommon": {
+  "breadcrumb": "Breadcrumb",
+  "home": "Home",
+  "industries": "Industries",
+  "sampleBadge": "Illustrative · fictional records",
+  "tableScroll": "scroll horizontally",
+  "flowEyebrow": "How the work moves",
+  "pillarsEyebrow": "What the ERP keeps together",
+  "modulesEyebrow": "Connected product pages",
+  "modulesTitle": "Open the product pages behind this workflow",
+  "faqEyebrow": "Good to know",
+  "faqTitle": "Questions teams ask",
+  "relatedFmcg": "Other FMCG categories",
+  "relatedGroup": "Other group sectors",
+  "ctaEyebrow": "Let's talk it through"
+},
+"sectorFmcg": {
+  "food": {
+    "meta": {
+      "title": "Food Manufacturing & Distribution ERP",
+      "description": "Batch, expiry and dispatch records for packaged food makers in Bangladesh, from raw material to retailer shelf."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Food",
+      "title": "Every batch, from field to",
+      "highlight": "shelf.",
+      "lead": "Follow raw material lots, production batches, best-before dates and dispatches in one place, so the oldest stock leaves first and every pack can be traced back."
+    },
+    "stats": [
+      {
+        "value": "FEFO",
+        "label": "pick rule for dispatch"
+      },
+      {
+        "value": "Lot → pack",
+        "label": "traceability chain"
+      },
+      {
+        "value": "3 temp.",
+        "label": "storage zones in the example"
+      }
+    ],
+    "visual": {
+      "ticketTag": "Batch ticket",
+      "batchCode": "FD-2611-0417",
+      "productName": "Spiced Lentil Chips 40 g",
+      "madeLabel": "Made on",
+      "madeValue": "04 Nov 2026",
+      "expiryLabel": "Best before",
+      "expiryValue": "03 May 2027",
+      "lineLabel": "Line",
+      "lineValue": "Fryer Line 2",
+      "storeLabel": "Stored at",
+      "storeValue": "Dry WH · Rack C4",
+      "shelfLifeLabel": "Shelf life used",
+      "shelfLifeValue": "62% · dispatch first",
+      "ticketFoot": "Fictional example. Raw lots: flour L-882, oil L-114, spice mix L-309.",
+      "flowTitle": "From raw material to retailer, step by step",
+      "pillarsTitle": "Freshness, safety and stock in one record"
+    },
+    "pillars": [
+      {
+        "title": "Raw material lots",
+        "body": "Receive flour, oil, sugar or spices against a lot number and supplier so you know exactly what went into each batch."
+      },
+      {
+        "title": "Cold, chilled and dry zones",
+        "body": "Keep warehouse locations by storage condition and see which stock sits where before it is picked."
+      },
+      {
+        "title": "Best-before control",
+        "body": "Dispatch the earliest-expiring stock first and see near-expiry items early enough to act on them."
+      },
+      {
+        "title": "Distributor dispatch",
+        "body": "Link each delivery challan to the batches on the truck, so a recall can reach the right outlets."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Receive and test",
+        "body": "Record incoming lots with supplier, quantity and QC result before release to production."
+      },
+      {
+        "title": "Produce the batch",
+        "body": "Issue materials to a production order and close it with output, yield and batch code."
+      },
+      {
+        "title": "Store by condition",
+        "body": "Put finished packs away in the right zone with the best-before date on the record."
+      },
+      {
+        "title": "Dispatch FEFO",
+        "body": "Pick the earliest-expiring stock for each distributor order and print the challan."
+      }
+    ],
+    "sample": {
+      "title": "Near-expiry stock review",
+      "caption": "Fictional products, batches and dates, for illustration only.",
+      "columns": [
+        "Batch",
+        "Product",
+        "Best before",
+        "Suggested action"
+      ],
+      "rows": [
+        [
+          "FD-2609-0211",
+          "Mango juice 250 ml",
+          "28 Nov 2026",
+          "Dispatch this week"
+        ],
+        [
+          "FD-2610-0098",
+          "Cream biscuits 75 g",
+          "15 Jan 2027",
+          "Normal FEFO"
+        ],
+        [
+          "FD-2608-0330",
+          "Instant noodles 62 g",
+          "02 Dec 2026",
+          "Offer to modern trade"
+        ],
+        [
+          "FD-2611-0417",
+          "Spiced lentil chips 40 g",
+          "03 May 2027",
+          "Hold for later orders"
+        ]
+      ]
+    },
+    "modules": [
+      "Give every production run a lot or batch identity you can trace.",
+      "Organise stock by warehouse, zone and rack.",
+      "Plan and record what leaves on each vehicle.",
+      "See inspection results and open quality issues."
+    ],
+    "faqs": [
+      {
+        "q": "Can we trace one pack back to its raw materials?",
+        "a": "Yes. The batch code links the finished goods to the production order and the raw material lots issued to it."
+      },
+      {
+        "q": "Does it handle FEFO as well as FIFO?",
+        "a": "Stock can be picked by earliest expiry date, so short-dated batches are offered first."
+      },
+      {
+        "q": "Is this data real?",
+        "a": "No. All products, batches and dates on this page are fictional examples."
+      }
+    ],
+    "cta": {
+      "title": "Bring your batch and expiry rules to a demo",
+      "body": "Show us how you produce, store and dispatch today, and we will walk through it in AdonERP."
+    }
+  },
+  "beverages": {
+    "meta": {
+      "title": "Beverage Distribution ERP",
+      "description": "Distributor, route and scheme records for beverage brands, from depot to outlet."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Beverages",
+      "title": "Keep every route",
+      "highlight": "flowing.",
+      "lead": "Plan van loads, manage distributors and outlet schemes, and see secondary sales and empties by route, all from one system."
+    },
+    "stats": [
+      {
+        "value": "Depot",
+        "label": "to outlet, in one view"
+      },
+      {
+        "value": "Route",
+        "label": "level load sheets"
+      },
+      {
+        "value": "Empties",
+        "label": "tracked with every trip"
+      }
+    ],
+    "visual": {
+      "stop1": "Regional depot",
+      "stop1Note": "Load sheet RT-07 · 420 cases",
+      "stop2": "Distributor point",
+      "stop2Note": "Secondary order · scheme applied",
+      "stop3": "Retail outlets",
+      "stop3Note": "38 outlets on today's beat",
+      "routeTitle": "Example route: Depot → Distributor → Outlet",
+      "routeFoot": "Fictional route and quantities, shown to explain the flow.",
+      "flowTitle": "From depot loading to outlet delivery",
+      "pillarsTitle": "Built around the way drinks reach the market"
+    },
+    "pillars": [
+      {
+        "title": "Distributor network",
+        "body": "Keep distributor territories, credit limits and price lists together."
+      },
+      {
+        "title": "Field force beats",
+        "body": "Plan outlet visits and capture orders route by route."
+      },
+      {
+        "title": "Trade schemes",
+        "body": "Set up case-based offers and see which outlets received them."
+      },
+      {
+        "title": "Vehicles and trips",
+        "body": "Record trips, fuel and returns, including empty crates and bottles."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Plan the load",
+        "body": "Build the van load from confirmed distributor and outlet orders."
+      },
+      {
+        "title": "Dispatch the trip",
+        "body": "Assign vehicle and driver and send stock out with a load sheet."
+      },
+      {
+        "title": "Deliver and collect",
+        "body": "Record deliveries, cash or credit, and returned empties at each stop."
+      },
+      {
+        "title": "Settle the route",
+        "body": "Reconcile stock, cash and empties when the vehicle returns."
+      }
+    ],
+    "sample": {
+      "title": "Route settlement",
+      "caption": "Fictional routes and figures, for illustration only.",
+      "columns": [
+        "Route",
+        "Cases out",
+        "Cases sold",
+        "Empties returned"
+      ],
+      "rows": [
+        [
+          "RT-07 Mirpur",
+          "420",
+          "396",
+          "352"
+        ],
+        [
+          "RT-11 Uttara",
+          "380",
+          "371",
+          "340"
+        ],
+        [
+          "RT-03 Motijheel",
+          "300",
+          "254",
+          "231"
+        ],
+        [
+          "RT-15 Gazipur",
+          "460",
+          "448",
+          "410"
+        ]
+      ]
+    },
+    "modules": [
+      "Manage distributors, territories and credit.",
+      "Plan beats and capture orders in the field.",
+      "Record vehicle trips and route activity.",
+      "Configure trade offers and track who received them."
+    ],
+    "faqs": [
+      {
+        "q": "Can we track returnable empties?",
+        "a": "Yes. Empties can be recorded on each delivery and reconciled when the route is settled."
+      },
+      {
+        "q": "Do schemes apply automatically?",
+        "a": "Scheme rules are set up once and applied to qualifying orders, so the field team does not calculate them by hand."
+      },
+      {
+        "q": "Are these routes real?",
+        "a": "No. Routes, outlets and figures shown here are fictional."
+      }
+    ],
+    "cta": {
+      "title": "See your routes in AdonERP",
+      "body": "Bring a sample route and scheme and we will show how it runs end to end."
+    }
+  },
+  "personalCare": {
+    "meta": {
+      "title": "Personal Care & Beauty ERP",
+      "description": "Formula, shade, pack-size and trade-promotion records for personal care and beauty brands."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Personal Care & Beauty",
+      "title": "Every shade, size and",
+      "highlight": "launch, organised.",
+      "lead": "Manage formulas, product variants, pricing and promotions together, so a new shade or pack size reaches the market without spreadsheet chaos."
+    },
+    "stats": [
+      {
+        "value": "Shade × size",
+        "label": "variant matrix"
+      },
+      {
+        "value": "BOM",
+        "label": "per formula version"
+      },
+      {
+        "value": "Promo",
+        "label": "linked to price lists"
+      }
+    ],
+    "visual": {
+      "swatchCaption": "Example shade family S-01 to S-06 · fictional",
+      "flowTitle": "From formula to the beauty shelf",
+      "pillarsTitle": "Variants, formulas and promotions, side by side"
+    },
+    "pillars": [
+      {
+        "title": "Variant-ready product records",
+        "body": "Keep shades, fragrances and pack sizes as variants of one product instead of dozens of loose items."
+      },
+      {
+        "title": "Formula versions",
+        "body": "Store each formula as a bill of materials and keep older versions for reference."
+      },
+      {
+        "title": "Price lists by channel",
+        "body": "Maintain separate prices for distributors, modern trade and online sellers."
+      },
+      {
+        "title": "Trade promotions",
+        "body": "Run bundle offers and gift-with-purchase schemes and see how stock moves during them."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Define the formula",
+        "body": "Set ingredients and quantities as a versioned bill of materials."
+      },
+      {
+        "title": "Create the variants",
+        "body": "Add shades and pack sizes with their own codes and barcodes."
+      },
+      {
+        "title": "Price and promote",
+        "body": "Assign channel prices and attach launch promotions."
+      },
+      {
+        "title": "Watch the sell-through",
+        "body": "Check stock and movement by variant to plan the next run."
+      }
+    ],
+    "sample": {
+      "title": "Variant stock overview",
+      "caption": "Fictional products and quantities, for illustration only.",
+      "columns": [
+        "SKU",
+        "Variant",
+        "Pack size",
+        "Stock (pcs)"
+      ],
+      "rows": [
+        [
+          "PC-LIP-S03",
+          "Matte lipstick · Rose",
+          "3.5 g",
+          "1,240"
+        ],
+        [
+          "PC-LIP-S05",
+          "Matte lipstick · Berry",
+          "3.5 g",
+          "860"
+        ],
+        [
+          "PC-SHM-200",
+          "Herbal shampoo",
+          "200 ml",
+          "4,500"
+        ],
+        [
+          "PC-SHM-450",
+          "Herbal shampoo",
+          "450 ml",
+          "2,180"
+        ]
+      ]
+    },
+    "modules": [
+      "Keep formulas and component quantities per version.",
+      "Maintain channel-wise price lists.",
+      "Set up trade offers and bundles.",
+      "See stock by item and variant."
+    ],
+    "faqs": [
+      {
+        "q": "Can one product have many shades and sizes?",
+        "a": "Yes. Variants share one product record while keeping their own codes, prices and stock."
+      },
+      {
+        "q": "Can we keep old formula versions?",
+        "a": "Each formula is versioned, so you can see what was used for any past batch."
+      },
+      {
+        "q": "Are the products real?",
+        "a": "No. Names, shades and quantities shown here are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Plan your next launch with us",
+      "body": "Show us a product family and we will model its variants, prices and promotions in a demo."
+    }
+  },
+  "homeCare": {
+    "meta": {
+      "title": "Home & Household Care ERP",
+      "description": "Formulation, batch yield, costing and procurement for detergent, cleaner and household care makers."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Home & Household Care",
+      "title": "Cleaner formulas,",
+      "highlight": "clearer costs.",
+      "lead": "Plan chemical formulations, track batch yield and scrap, and know the real cost of every litre or kilo you produce."
+    },
+    "stats": [
+      {
+        "value": "Formula",
+        "label": "costed per batch"
+      },
+      {
+        "value": "Yield",
+        "label": "planned vs actual"
+      },
+      {
+        "value": "Scrap",
+        "label": "recorded with reasons"
+      }
+    ],
+    "visual": {
+      "formulaTitle": "Example formula: Lemon dishwash liquid",
+      "formulaCode": "HC-F-021 · v3",
+      "ing1": "Water (process)",
+      "ing1Pct": "62%",
+      "ing2": "Surfactant blend",
+      "ing2Pct": "18%",
+      "ing3": "Builders & salts",
+      "ing3Pct": "12%",
+      "ing4": "Fragrance, colour, others",
+      "ing4Pct": "8%",
+      "batchLabel": "Batch size",
+      "batchValue": "5,000 L",
+      "yieldLabel": "Recorded yield",
+      "yieldValue": "4,910 L",
+      "flowTitle": "From mixing tank to market",
+      "pillarsTitle": "Formulation, cost and waste under one roof"
+    },
+    "pillars": [
+      {
+        "title": "Formulation as BOM",
+        "body": "Keep each detergent, cleaner or air-care formula as a versioned bill of materials with exact percentages."
+      },
+      {
+        "title": "Liquid and powder units",
+        "body": "Work in litres, kilos and packs, with conversions handled on the record."
+      },
+      {
+        "title": "Scrap and rework",
+        "body": "Record off-spec material and rework so losses are visible, not hidden in stock."
+      },
+      {
+        "title": "Chemical procurement",
+        "body": "Raise requisitions for surfactants, salts and packaging and compare supplier quotes."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Plan the batch",
+        "body": "Choose the formula version and batch size; material needs are calculated."
+      },
+      {
+        "title": "Mix and test",
+        "body": "Issue materials, record the mix and capture QC readings."
+      },
+      {
+        "title": "Fill and pack",
+        "body": "Convert bulk into bottles, pouches or sachets and close the order."
+      },
+      {
+        "title": "Cost the output",
+        "body": "See material, labour and overhead cost per unit for the finished batch."
+      }
+    ],
+    "sample": {
+      "title": "Batch yield and cost",
+      "caption": "Fictional batches and costs, for illustration only.",
+      "columns": [
+        "Batch",
+        "Product",
+        "Yield",
+        "Cost per unit"
+      ],
+      "rows": [
+        [
+          "HC-2611-031",
+          "Dishwash liquid 500 ml",
+          "98.2%",
+          "৳41.60"
+        ],
+        [
+          "HC-2611-032",
+          "Detergent powder 1 kg",
+          "96.8%",
+          "৳88.30"
+        ],
+        [
+          "HC-2611-035",
+          "Floor cleaner 1 L",
+          "97.5%",
+          "৳63.10"
+        ],
+        [
+          "HC-2611-038",
+          "Toilet cleaner 750 ml",
+          "95.9%",
+          "৳57.40"
+        ]
+      ]
+    },
+    "modules": [
+      "Keep formula ingredients and percentages per version.",
+      "Calculate the actual cost of each production run.",
+      "Record scrap, rework and their reasons.",
+      "Raise requisitions and compare supplier quotes."
+    ],
+    "faqs": [
+      {
+        "q": "Can we work with percentages instead of fixed quantities?",
+        "a": "Formulas can be scaled to any batch size, and component quantities follow the percentages."
+      },
+      {
+        "q": "Do we see actual cost or standard cost?",
+        "a": "Both can be compared: the planned cost from the formula and the actual cost recorded on the batch."
+      },
+      {
+        "q": "Is the formula on this page real?",
+        "a": "No. It is a simplified, fictional example."
+      }
+    ],
+    "cta": {
+      "title": "Bring a formula to the demo",
+      "body": "We will show how it is planned, produced and costed in AdonERP."
+    }
+  },
+  "healthHygiene": {
+    "meta": {
+      "title": "Health & Hygiene (OTC) ERP",
+      "description": "Batch release, QC templates, CAPA and returns for over-the-counter health and hygiene products."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Health & Hygiene (OTC)",
+      "title": "Release every batch",
+      "highlight": "with confidence.",
+      "lead": "Keep QC checks, batch release, complaints and returns on one record, so sanitisers, antiseptics and OTC products leave only when they are ready."
+    },
+    "stats": [
+      {
+        "value": "QC gate",
+        "label": "before every release"
+      },
+      {
+        "value": "CAPA",
+        "label": "linked to complaints"
+      },
+      {
+        "value": "Recall",
+        "label": "by batch and outlet"
+      }
+    ],
+    "visual": {
+      "releaseLabel": "Batch release record",
+      "releaseBatch": "HH-2611-0082 · Hand sanitiser 200 ml",
+      "releaseStatus": "Awaiting sign-off",
+      "check1": "Raw material certificates attached",
+      "check2": "In-process checks within limits",
+      "check3": "Finished product tests passed",
+      "check4": "QA manager sign-off",
+      "releaseNote": "Fictional record. Stock stays on hold until every check is complete.",
+      "stepLabel": "Step",
+      "gateLabel": "QC gate",
+      "flowTitle": "Four steps, each with a quality gate",
+      "pillarsTitle": "Quality and traceability built into the record"
+    },
+    "pillars": [
+      {
+        "title": "QC templates",
+        "body": "Define test parameters and limits once and apply them to every batch of a product."
+      },
+      {
+        "title": "Hold and release",
+        "body": "Keep finished stock on hold until QC results are recorded and approved."
+      },
+      {
+        "title": "Complaints to CAPA",
+        "body": "Turn a market complaint into a corrective action with an owner and due date."
+      },
+      {
+        "title": "Returns and recalls",
+        "body": "Find every outlet that received a batch and record what came back."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Check incoming materials",
+        "body": "Record certificates and test results for actives and packaging."
+      },
+      {
+        "title": "Monitor the process",
+        "body": "Capture in-process readings against the template limits."
+      },
+      {
+        "title": "Test the finished batch",
+        "body": "Record final tests and attach results to the batch."
+      },
+      {
+        "title": "Release or reject",
+        "body": "QA approves the batch for sale or moves it to quarantine."
+      }
+    ],
+    "sample": {
+      "title": "Batch release register",
+      "caption": "Fictional batches and statuses, for illustration only.",
+      "columns": [
+        "Batch",
+        "Product",
+        "QC result",
+        "Status"
+      ],
+      "rows": [
+        [
+          "HH-2611-0079",
+          "Antiseptic liquid 100 ml",
+          "Pass",
+          "Released"
+        ],
+        [
+          "HH-2611-0080",
+          "Hand wash 250 ml",
+          "Pass",
+          "Released"
+        ],
+        [
+          "HH-2611-0081",
+          "Sanitary pads (8 pcs)",
+          "Retest",
+          "On hold"
+        ],
+        [
+          "HH-2611-0082",
+          "Hand sanitiser 200 ml",
+          "Pass",
+          "Awaiting sign-off"
+        ]
+      ]
+    },
+    "modules": [
+      "Trace every batch and lot from materials to dispatch.",
+      "Define QC parameters and limits per product.",
+      "Assign and follow corrective and preventive actions.",
+      "Record returns against the original batch."
+    ],
+    "faqs": [
+      {
+        "q": "Can stock be blocked until QC approves it?",
+        "a": "Yes. Batches can stay on hold and cannot be dispatched until they are released."
+      },
+      {
+        "q": "Does this replace regulatory submissions?",
+        "a": "No. AdonERP keeps your operational records; regulatory filings follow your own process."
+      },
+      {
+        "q": "Are these batches real?",
+        "a": "No. All batches and results shown are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Walk through your release process",
+      "body": "Share your QC checklist and we will map it to batch release in AdonERP."
+    }
+  },
+  "babyCare": {
+    "meta": {
+      "title": "Baby & Child Care ERP",
+      "description": "Lot tracing, AQL sampling and customer records for diaper, baby food and child care brands."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Baby & Child Care",
+      "title": "Gentle products deserve",
+      "highlight": "careful records.",
+      "lead": "Trace every lot of diapers, wipes or baby food, sample it before it ships, and answer a parent's question with the full history in hand."
+    },
+    "stats": [
+      {
+        "value": "Lot",
+        "label": "on every pack"
+      },
+      {
+        "value": "AQL",
+        "label": "sampling before shipping"
+      },
+      {
+        "value": "360°",
+        "label": "view of each customer"
+      }
+    ],
+    "visual": {
+      "traceTitle": "Example lot trace · Baby wipes 80 pcs",
+      "trace1Label": "Nonwoven roll",
+      "trace1Value": "RM-NW-5521",
+      "trace2Label": "Production batch",
+      "trace2Value": "BC-2611-0144",
+      "trace3Label": "AQL inspection",
+      "trace3Value": "QC-AQL-0907 · accepted",
+      "trace4Label": "Shipped to",
+      "trace4Value": "DST-CTG-012",
+      "flowTitle": "Safety checks at every hand-off",
+      "pillarsTitle": "Care that shows in the details"
+    },
+    "pillars": [
+      {
+        "title": "Safety-first traceability",
+        "body": "Link every finished lot to its raw materials, so any concern can be traced in minutes."
+      },
+      {
+        "title": "Sampling before release",
+        "body": "Use AQL sampling plans to decide whether a lot ships, is reworked or is held."
+      },
+      {
+        "title": "Age-based product ranges",
+        "body": "Keep sizes and age bands as clear variants, such as newborn to toddler."
+      },
+      {
+        "title": "Careline history",
+        "body": "See a customer's orders, complaints and replies in one place."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Approve the materials",
+        "body": "Accept only material lots that meet the agreed specification."
+      },
+      {
+        "title": "Produce and label",
+        "body": "Print lot and date on every pack during production."
+      },
+      {
+        "title": "Sample the lot",
+        "body": "Inspect a sample by AQL plan before the lot moves to stock."
+      },
+      {
+        "title": "Ship and listen",
+        "body": "Dispatch to distributors and record any feedback against the lot."
+      }
+    ],
+    "sample": {
+      "title": "AQL inspection log",
+      "caption": "Fictional lots and results, for illustration only.",
+      "columns": [
+        "Lot",
+        "Product",
+        "Sample size",
+        "Decision"
+      ],
+      "rows": [
+        [
+          "BC-2611-0141",
+          "Diapers M (40 pcs)",
+          "80",
+          "Accepted"
+        ],
+        [
+          "BC-2611-0142",
+          "Diapers L (36 pcs)",
+          "80",
+          "Accepted"
+        ],
+        [
+          "BC-2611-0143",
+          "Baby cereal 400 g",
+          "50",
+          "Rework"
+        ],
+        [
+          "BC-2611-0144",
+          "Baby wipes 80 pcs",
+          "125",
+          "Accepted"
+        ]
+      ]
+    },
+    "modules": [
+      "Trace lots from materials to finished packs.",
+      "Run AQL sampling plans and record decisions.",
+      "Keep stock by warehouse and lot.",
+      "See each customer's full history."
+    ],
+    "faqs": [
+      {
+        "q": "Can we find which lot a complaint relates to?",
+        "a": "Yes. The lot printed on the pack leads to its production, inspection and shipment records."
+      },
+      {
+        "q": "Do you support AQL sampling?",
+        "a": "AQL plans can be set per product, and each inspection records the sample size and decision."
+      },
+      {
+        "q": "Is this data real?",
+        "a": "No. Lots, products and results on this page are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Show us how you keep products safe",
+      "body": "We will map your checks and tracing to AdonERP in a live demo."
+    }
+  },
+  "tobacco": {
+    "meta": {
+      "title": "Tobacco Manufacturing ERP",
+      "description": "Duty, VAT, stamp reconciliation and controlled stock movement records for tobacco manufacturers."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Tobacco",
+      "title": "Duty, stamps and stock,",
+      "highlight": "reconciled.",
+      "lead": "Keep VAT and duty records, stamp usage, gate passes and distributor sales in one auditable system, built for a tightly regulated industry."
+    },
+    "stats": [
+      {
+        "value": "VAT",
+        "label": "register kept automatically"
+      },
+      {
+        "value": "Stamps",
+        "label": "issued, used and damaged"
+      },
+      {
+        "value": "Gate pass",
+        "label": "for every movement"
+      }
+    ],
+    "visual": {
+      "barApplied": "Applied 58%",
+      "barStock": "In stock 30%",
+      "barDamaged": "12%",
+      "barCaption": "Example stamp reconciliation for one period · fictional figures",
+      "complianceNote": "This page describes operational record keeping. AdonERP does not promote tobacco products; tax and regulatory obligations follow your own advisers and the applicable law.",
+      "flowTitle": "From stamp receipt to period reconciliation",
+      "pillarsTitle": "An auditable record for a regulated business"
+    },
+    "pillars": [
+      {
+        "title": "VAT and duty register",
+        "body": "Sales and purchases feed a VAT register you can review before filing."
+      },
+      {
+        "title": "Stamp reconciliation",
+        "body": "Track stamps received, applied, damaged and in stock for each period."
+      },
+      {
+        "title": "Controlled movement",
+        "body": "Every transfer out of the factory or warehouse leaves with a gate pass."
+      },
+      {
+        "title": "Distributor sales",
+        "body": "Record distributor orders and credit within agreed limits."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Receive stamps",
+        "body": "Record stamp lots received with their serial ranges."
+      },
+      {
+        "title": "Apply in production",
+        "body": "Issue stamps to production and record applied and damaged quantities."
+      },
+      {
+        "title": "Move with a gate pass",
+        "body": "Release finished goods only against an approved gate pass."
+      },
+      {
+        "title": "Reconcile the period",
+        "body": "Compare stamps, stock, sales and VAT before closing the month."
+      }
+    ],
+    "sample": {
+      "title": "Monthly stamp reconciliation",
+      "caption": "Fictional figures, for illustration only.",
+      "columns": [
+        "Period",
+        "Received",
+        "Applied",
+        "Damaged"
+      ],
+      "rows": [
+        [
+          "2026-08",
+          "1,200,000",
+          "1,130,500",
+          "4,200"
+        ],
+        [
+          "2026-09",
+          "1,000,000",
+          "1,042,800",
+          "3,900"
+        ],
+        [
+          "2026-10",
+          "1,300,000",
+          "1,214,300",
+          "5,100"
+        ],
+        [
+          "2026-11",
+          "900,000",
+          "512,600",
+          "1,800"
+        ]
+      ]
+    },
+    "modules": [
+      "Review the VAT register built from your transactions.",
+      "Control every movement with gate passes.",
+      "Manage distributors and their credit.",
+      "Produce financial statements for each period."
+    ],
+    "faqs": [
+      {
+        "q": "Does AdonERP calculate the duty for us?",
+        "a": "It records rates and transactions you configure; please confirm rates and filings with your tax adviser."
+      },
+      {
+        "q": "Can we see stamp usage by period?",
+        "a": "Yes. Stamps received, applied, damaged and in stock can be reconciled per period."
+      },
+      {
+        "q": "Are the figures real?",
+        "a": "No. All figures on this page are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Review your compliance records with us",
+      "body": "We will show how VAT, stamps and gate passes connect in AdonERP."
+    }
+  },
+  "petCare": {
+    "meta": {
+      "title": "Pet Care ERP",
+      "description": "Orders, demand planning and channel sales for pet food and pet care brands selling through shops, vets and online."
+    },
+    "hero": {
+      "eyebrow": "FMCG · Pet Care",
+      "title": "Happy pets,",
+      "highlight": "tidy stock.",
+      "lead": "Sell through pet shops, vet clinics and online stores, plan demand by pack size and flavour, and never run out of the best sellers."
+    },
+    "stats": [
+      {
+        "value": "4",
+        "label": "sales channels in the example"
+      },
+      {
+        "value": "Flavour",
+        "label": "and pack-size planning"
+      },
+      {
+        "value": "POS",
+        "label": "for your own outlets"
+      }
+    ],
+    "visual": {
+      "channel1": "Pet shops",
+      "channel1Note": "Weekly reorder",
+      "channel2": "Vet clinics",
+      "channel2Note": "Prescription diets",
+      "channel3": "Online stores",
+      "channel3Note": "Daily dispatch",
+      "channel4": "Own outlets",
+      "channel4Note": "POS sales",
+      "flowTitle": "From forecast to food bowl",
+      "pillarsTitle": "Everything a growing pet brand juggles"
+    },
+    "pillars": [
+      {
+        "title": "Channel-wise orders",
+        "body": "Take orders from pet shops, clinics and online sellers with the right prices for each."
+      },
+      {
+        "title": "Demand by flavour",
+        "body": "Forecast demand for each flavour and pack size from past sales."
+      },
+      {
+        "title": "Dealer network",
+        "body": "Manage dealers and sub-dealers across cities with their own credit terms."
+      },
+      {
+        "title": "Outlet checkout",
+        "body": "Run your own pet stores with a POS that shares the same stock."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Forecast demand",
+        "body": "Use sales history to plan the next production or import."
+      },
+      {
+        "title": "Receive and store",
+        "body": "Put food, treats and accessories into stock by lot and expiry."
+      },
+      {
+        "title": "Sell across channels",
+        "body": "Fulfil dealer, clinic, online and outlet orders from one stock."
+      },
+      {
+        "title": "Reorder on time",
+        "body": "Spot fast movers early and reorder before shelves go empty."
+      }
+    ],
+    "sample": {
+      "title": "Channel orders this week",
+      "caption": "Fictional orders, for illustration only.",
+      "columns": [
+        "Order",
+        "Channel",
+        "Item",
+        "Quantity"
+      ],
+      "rows": [
+        [
+          "SO-PET-2201",
+          "Pet shop · Dhanmondi",
+          "Adult dog food 3 kg",
+          "24"
+        ],
+        [
+          "SO-PET-2202",
+          "Vet clinic · Banani",
+          "Kitten food 1.5 kg",
+          "18"
+        ],
+        [
+          "SO-PET-2203",
+          "Online store",
+          "Cat litter 5 L",
+          "60"
+        ],
+        [
+          "SO-PET-2204",
+          "Own outlet · Uttara",
+          "Chew treats 200 g",
+          "36"
+        ]
+      ]
+    },
+    "modules": [
+      "Take and track sales orders by channel.",
+      "Forecast demand from sales history.",
+      "Manage dealers and their territories.",
+      "Sell in your own stores from the same stock."
+    ],
+    "faqs": [
+      {
+        "q": "Can we sell through dealers and our own shops together?",
+        "a": "Yes. Dealer orders and POS sales draw on the same stock records."
+      },
+      {
+        "q": "Can we plan by flavour and pack size?",
+        "a": "Demand can be forecast per item, so each flavour and size is planned separately."
+      },
+      {
+        "q": "Are these orders real?",
+        "a": "No. Orders, outlets and items on this page are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Let's map your pet care channels",
+      "body": "Tell us where you sell and we will show it running in AdonERP."
+    }
+  }
+},
+"sectorGroup": {
+  "manufacturing": {
+    "meta": {
+      "title": "Group Manufacturing ERP",
+      "description": "Consolidated plant performance, capacity, costing and downtime for manufacturing groups with several factories."
+    },
+    "hero": {
+      "eyebrow": "Group of Industries · Manufacturing",
+      "title": "Many plants,",
+      "highlight": "one clear picture.",
+      "lead": "Each factory runs its own floor, while group management sees capacity, cost and downtime across every plant from a single dashboard."
+    },
+    "stats": [
+      {
+        "value": "6",
+        "label": "plants in the example group"
+      },
+      {
+        "value": "1",
+        "label": "consolidated dashboard"
+      },
+      {
+        "value": "Per plant",
+        "label": "standard costing"
+      }
+    ],
+    "visual": {
+      "mapTitle": "Example group · plant load",
+      "mapPeriod": "NOV 2026",
+      "plant1": "Gazipur Plant",
+      "plant2": "Savar Plant",
+      "plant3": "Chattogram Plant",
+      "plant4": "Narayanganj Plant",
+      "plant5": "Bogura Plant",
+      "plant6": "Khulna Plant",
+      "loadLabel": "illustrative load",
+      "flowTitle": "From plant floor to group board room",
+      "pillarsTitle": "Run each plant your way, see them all together"
+    },
+    "pillars": [
+      {
+        "title": "Company and plant structure",
+        "body": "Set up each factory as its own company or branch, with shared masters where it makes sense."
+      },
+      {
+        "title": "Group capacity view",
+        "body": "Compare available and booked capacity across plants before you accept a large order."
+      },
+      {
+        "title": "Comparable costing",
+        "body": "Use standard costs per plant so product margins can be compared fairly."
+      },
+      {
+        "title": "Downtime across sites",
+        "body": "See where machines stopped and why, plant by plant."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Plants record the day",
+        "body": "Production, consumption and downtime are entered where they happen."
+      },
+      {
+        "title": "Costs roll up",
+        "body": "Each plant's costs close into its own books."
+      },
+      {
+        "title": "Group consolidates",
+        "body": "Figures from every plant are combined for management review."
+      },
+      {
+        "title": "Leaders decide",
+        "body": "Load is shifted, investments are planned and targets are set."
+      }
+    ],
+    "sample": {
+      "title": "Plant comparison, November",
+      "caption": "Fictional plants and figures, for illustration only.",
+      "columns": [
+        "Plant",
+        "Output (units)",
+        "Capacity used",
+        "Downtime (hrs)"
+      ],
+      "rows": [
+        [
+          "Gazipur",
+          "1,24,500",
+          "82%",
+          "14"
+        ],
+        [
+          "Savar",
+          "88,200",
+          "67%",
+          "22"
+        ],
+        [
+          "Chattogram",
+          "1,51,000",
+          "91%",
+          "9"
+        ],
+        [
+          "Narayanganj",
+          "54,300",
+          "45%",
+          "31"
+        ]
+      ]
+    },
+    "modules": [
+      "One dashboard for group-level figures.",
+      "Compare capacity and load across plants.",
+      "Keep standard costs for fair comparison.",
+      "Record and analyse machine downtime."
+    ],
+    "faqs": [
+      {
+        "q": "Can each plant keep its own books?",
+        "a": "Yes. Plants can be set up as separate companies or branches and still be consolidated."
+      },
+      {
+        "q": "Do plants share item and customer masters?",
+        "a": "Masters can be shared across the group or kept per company, depending on how you work."
+      },
+      {
+        "q": "Are these plants real?",
+        "a": "No. Plant names and figures are fictional examples."
+      }
+    ],
+    "cta": {
+      "title": "See your group in one dashboard",
+      "body": "Bring your plant structure and we will show how it consolidates in AdonERP."
+    }
+  },
+  "fmcg": {
+    "meta": {
+      "title": "FMCG Group ERP",
+      "description": "Multi-brand distribution, demand planning, credit and BI for FMCG groups running several brands and companies."
+    },
+    "hero": {
+      "eyebrow": "Group of Industries · FMCG",
+      "title": "Many brands,",
+      "highlight": "one distribution engine.",
+      "lead": "Run food, beverage and personal care companies under one group, sharing distributors, warehouses and reports while each brand keeps its own identity."
+    },
+    "stats": [
+      {
+        "value": "5",
+        "label": "brands in the example group"
+      },
+      {
+        "value": "Shared",
+        "label": "distributor network"
+      },
+      {
+        "value": "Group",
+        "label": "level BI reports"
+      }
+    ],
+    "visual": {
+      "brand1": "Golden Harvest",
+      "brand1Cat": "Food",
+      "brand2": "Blue Spring",
+      "brand2Cat": "Beverages",
+      "brand3": "Rosa",
+      "brand3Cat": "Personal care",
+      "brand4": "Sparkle",
+      "brand4Cat": "Home care",
+      "brand5": "Little Steps",
+      "brand5Cat": "Baby care",
+      "brandMore": "Fictional brands · add yours",
+      "flowTitle": "From brand plan to group report",
+      "pillarsTitle": "Group strength, brand freedom"
+    },
+    "pillars": [
+      {
+        "title": "Shared distributors",
+        "body": "One distributor can carry several group brands with separate price lists and targets."
+      },
+      {
+        "title": "Group demand planning",
+        "body": "Forecast demand brand by brand, then plan shared warehouses and transport."
+      },
+      {
+        "title": "Credit across companies",
+        "body": "See a distributor's total exposure to the group before approving more credit."
+      },
+      {
+        "title": "Brand and group BI",
+        "body": "Report by brand, region and channel, or roll everything up for the board."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Brands plan",
+        "body": "Each brand sets its forecast, prices and schemes."
+      },
+      {
+        "title": "Supply is shared",
+        "body": "Warehouses and transport serve several brands at once."
+      },
+      {
+        "title": "Distributors order",
+        "body": "Orders and credit are managed across all group brands."
+      },
+      {
+        "title": "Group reviews",
+        "body": "Sales, margin and stock roll up into group reports."
+      }
+    ],
+    "sample": {
+      "title": "Brand sales by region",
+      "caption": "Fictional brands and figures in BDT lakh, for illustration only.",
+      "columns": [
+        "Brand",
+        "Dhaka",
+        "Chattogram",
+        "Rajshahi"
+      ],
+      "rows": [
+        [
+          "Golden Harvest",
+          "142.5",
+          "88.2",
+          "41.0"
+        ],
+        [
+          "Blue Spring",
+          "96.4",
+          "71.8",
+          "29.3"
+        ],
+        [
+          "Rosa",
+          "58.1",
+          "33.6",
+          "12.7"
+        ],
+        [
+          "Little Steps",
+          "44.9",
+          "21.5",
+          "10.2"
+        ]
+      ]
+    },
+    "modules": [
+      "Manage distributors carrying several brands.",
+      "Forecast demand per brand and item.",
+      "Build brand and group-level reports.",
+      "Control credit exposure across the group."
+    ],
+    "faqs": [
+      {
+        "q": "Can brands belong to different legal companies?",
+        "a": "Yes. Each company keeps its own books while sharing distributors and reports."
+      },
+      {
+        "q": "Can one distributor have different terms per brand?",
+        "a": "Price lists, schemes and targets can differ by brand for the same distributor."
+      },
+      {
+        "q": "Are these brands real?",
+        "a": "No. The brands shown are invented for this example."
+      }
+    ],
+    "cta": {
+      "title": "Bring your brand portfolio to a demo",
+      "body": "We will show how your brands share distribution while keeping their own numbers."
+    }
+  },
+  "textiles": {
+    "meta": {
+      "title": "Vertically Integrated Textile Group ERP",
+      "description": "Spinning, weaving, dyeing, garments and export units connected in one ERP for textile groups."
+    },
+    "hero": {
+      "eyebrow": "Group of Industries · Textiles",
+      "title": "From fibre to export,",
+      "highlight": "unit by unit.",
+      "lead": "Connect spinning, weaving, dyeing, garments and export units, so yarn, fabric and garments move between group companies with clear transfer records."
+    },
+    "stats": [
+      {
+        "value": "5",
+        "label": "linked units in the example"
+      },
+      {
+        "value": "Inter-unit",
+        "label": "transfer records"
+      },
+      {
+        "value": "LC",
+        "label": "and export documents"
+      }
+    ],
+    "visual": {
+      "unit1": "Spinning",
+      "unit1Note": "Yarn",
+      "unit2": "Weaving / Knitting",
+      "unit2Note": "Grey fabric",
+      "unit3": "Dyeing & Finishing",
+      "unit3Note": "Finished fabric",
+      "unit4": "Garments",
+      "unit4Note": "Cut, sew, pack",
+      "unit5": "Export",
+      "unit5Note": "LC & shipment",
+      "flowNote": "Each unit can be its own company, yet the order is followed from yarn to shipment.",
+      "flowTitle": "One buyer order through the whole group",
+      "pillarsTitle": "Vertical integration without the paperwork"
+    },
+    "pillars": [
+      {
+        "title": "Inter-unit transfers",
+        "body": "Move yarn and fabric between group companies at agreed transfer prices."
+      },
+      {
+        "title": "Order allocation",
+        "body": "Allocate buyer orders to units and lines based on capacity."
+      },
+      {
+        "title": "Merchandising view",
+        "body": "Follow style, material booking and production status per order."
+      },
+      {
+        "title": "Trade finance",
+        "body": "Keep LCs, export shipments and bank documents with the order."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Order confirmed",
+        "body": "The buyer order is booked and costed by merchandising."
+      },
+      {
+        "title": "Yarn and fabric planned",
+        "body": "Spinning and weaving units receive internal orders for the material."
+      },
+      {
+        "title": "Garments produced",
+        "body": "Finished fabric is transferred to garments and the order is produced."
+      },
+      {
+        "title": "Shipped under LC",
+        "body": "Export documents and shipment close the order against the LC."
+      }
+    ],
+    "sample": {
+      "title": "Inter-unit transfers this week",
+      "caption": "Fictional units, quantities and prices, for illustration only.",
+      "columns": [
+        "Transfer",
+        "From → To",
+        "Material",
+        "Quantity"
+      ],
+      "rows": [
+        [
+          "IT-2611-041",
+          "Spinning → Knitting",
+          "30s combed yarn",
+          "12,500 kg"
+        ],
+        [
+          "IT-2611-042",
+          "Knitting → Dyeing",
+          "Single jersey grey",
+          "11,800 kg"
+        ],
+        [
+          "IT-2611-043",
+          "Dyeing → Garments",
+          "Navy finished fabric",
+          "10,950 kg"
+        ],
+        [
+          "IT-2611-044",
+          "Garments → Export",
+          "Crew-neck tees",
+          "48,000 pcs"
+        ]
+      ]
+    },
+    "modules": [
+      "Follow orders, styles and status across units.",
+      "Allocate orders to units and lines.",
+      "Manage letters of credit for buyer orders.",
+      "Track export shipments and documents."
+    ],
+    "faqs": [
+      {
+        "q": "Can each unit be a separate company?",
+        "a": "Yes. Units can keep their own books, with transfers recorded between them."
+      },
+      {
+        "q": "Can we follow one order through every unit?",
+        "a": "The buyer order links the internal orders and transfers across the group."
+      },
+      {
+        "q": "Is this data real?",
+        "a": "No. Units, quantities and transfers are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Map your vertical group with us",
+      "body": "Show us your units and we will connect them in a live AdonERP demo."
+    }
+  },
+  "pharmaceuticals": {
+    "meta": {
+      "title": "Pharmaceutical Manufacturing ERP",
+      "description": "Batch genealogy, QC templates, deviations and controlled storage for pharmaceutical manufacturers."
+    },
+    "hero": {
+      "eyebrow": "Group of Industries · Pharmaceuticals",
+      "title": "Every tablet traced to its",
+      "highlight": "source.",
+      "lead": "Keep batch genealogy, QC results, deviations and controlled storage in one record, supporting the discipline good manufacturing practice expects."
+    },
+    "stats": [
+      {
+        "value": "Genealogy",
+        "label": "for every batch"
+      },
+      {
+        "value": "QC",
+        "label": "templates per product"
+      },
+      {
+        "value": "Deviation",
+        "label": "and non-conformance log"
+      }
+    ],
+    "visual": {
+      "treeTitle": "Example batch genealogy",
+      "fgCode": "PH-FG-2611-0207",
+      "fgName": "Paracetamol 500 mg tablets",
+      "in1": "API",
+      "in1Code": "API-L-3381",
+      "in2": "Excipient",
+      "in2Code": "EXC-L-1290",
+      "in3": "Blister foil",
+      "in3Code": "PKG-L-0775",
+      "treeNote": "Fictional lots. Each node opens the receipt, test and issue records.",
+      "stepPrefix": "STP",
+      "flowTitle": "From dispensing to batch release",
+      "pillarsTitle": "Discipline in every record"
+    },
+    "pillars": [
+      {
+        "title": "Batch genealogy",
+        "body": "See which API and excipient lots went into a batch and where that batch went."
+      },
+      {
+        "title": "QC templates",
+        "body": "Define tests and limits per product and record results against each batch."
+      },
+      {
+        "title": "Deviations and NCRs",
+        "body": "Log deviations, investigate them and close them with corrective actions."
+      },
+      {
+        "title": "Controlled storage",
+        "body": "Keep quarantine, approved and rejected stock in separate locations."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Dispense",
+        "body": "Weigh and issue approved material lots to the batch."
+      },
+      {
+        "title": "Manufacture",
+        "body": "Record granulation, compression or filling steps on the batch record."
+      },
+      {
+        "title": "Test",
+        "body": "Capture in-process and finished product test results."
+      },
+      {
+        "title": "Release",
+        "body": "QA reviews the record and releases or rejects the batch."
+      }
+    ],
+    "sample": {
+      "title": "Batch status board",
+      "caption": "Fictional batches and results, for illustration only.",
+      "columns": [
+        "Batch",
+        "Product",
+        "Stage",
+        "Status"
+      ],
+      "rows": [
+        [
+          "PH-FG-2611-0204",
+          "Omeprazole 20 mg capsules",
+          "Testing",
+          "In QC"
+        ],
+        [
+          "PH-FG-2611-0205",
+          "Cough syrup 100 ml",
+          "Released",
+          "Approved"
+        ],
+        [
+          "PH-FG-2611-0206",
+          "Vitamin C 250 mg",
+          "Compression",
+          "In process"
+        ],
+        [
+          "PH-FG-2611-0207",
+          "Paracetamol 500 mg",
+          "Review",
+          "Awaiting QA"
+        ]
+      ]
+    },
+    "modules": [
+      "Trace material lots into every batch.",
+      "Define QC tests and limits per product.",
+      "Log and close non-conformances.",
+      "Separate quarantine, approved and rejected stock."
+    ],
+    "faqs": [
+      {
+        "q": "Is AdonERP a validated GMP system?",
+        "a": "AdonERP keeps your operational records. Validation and regulatory approval follow your own quality process."
+      },
+      {
+        "q": "Can we see where a batch was shipped?",
+        "a": "Yes. Genealogy works both ways, from materials to batch and from batch to customers."
+      },
+      {
+        "q": "Are these batches real?",
+        "a": "No. All batches and results on this page are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Walk through a batch record with us",
+      "body": "We will show genealogy, QC and release in a live AdonERP demo."
+    }
+  },
+  "heavyIndustry": {
+    "meta": {
+      "title": "Heavy Industry ERP",
+      "description": "Equipment, preventive maintenance, spare parts and weighbridge records for steel, cement and heavy engineering groups."
+    },
+    "hero": {
+      "eyebrow": "Group of Industries · Heavy Industry",
+      "title": "Keep the big machines",
+      "highlight": "running.",
+      "lead": "Plan preventive maintenance, control spare parts and capture every weighbridge ticket for steel, cement, shipbuilding and heavy engineering operations."
+    },
+    "stats": [
+      {
+        "value": "PM",
+        "label": "schedules per asset"
+      },
+      {
+        "value": "Spares",
+        "label": "linked to equipment"
+      },
+      {
+        "value": "Weighbridge",
+        "label": "tickets recorded"
+      }
+    ],
+    "visual": {
+      "asset1": "Kiln drive",
+      "asset1Note": "EQ-KLN-01",
+      "asset2": "Rolling mill",
+      "asset2Note": "EQ-RML-03",
+      "asset3": "Overhead crane",
+      "asset3Note": "EQ-CRN-07",
+      "flowTitle": "From breakdown risk to planned maintenance",
+      "pillarsTitle": "Built for heavy assets and heavy loads"
+    },
+    "pillars": [
+      {
+        "title": "Equipment register",
+        "body": "Keep every asset with its location, specifications and history."
+      },
+      {
+        "title": "Preventive maintenance",
+        "body": "Schedule PM by calendar or running hours and get work orders on time."
+      },
+      {
+        "title": "Critical spares",
+        "body": "Link spare parts to equipment and keep minimum stock for critical items."
+      },
+      {
+        "title": "Weighbridge integration",
+        "body": "Record gross, tare and net weight for raw material and finished goods."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Register the asset",
+        "body": "Add equipment with its maintenance plan and spare parts list."
+      },
+      {
+        "title": "Plan the PM",
+        "body": "Work orders are created from calendar or hour-based schedules."
+      },
+      {
+        "title": "Do the job",
+        "body": "Technicians issue spares, record work and close the order."
+      },
+      {
+        "title": "Learn from downtime",
+        "body": "Review breakdowns and adjust plans to prevent repeats."
+      }
+    ],
+    "sample": {
+      "title": "Maintenance work orders",
+      "caption": "Fictional equipment and work orders, for illustration only.",
+      "columns": [
+        "Work order",
+        "Equipment",
+        "Type",
+        "Status"
+      ],
+      "rows": [
+        [
+          "WO-2611-118",
+          "Kiln drive EQ-KLN-01",
+          "Preventive",
+          "Scheduled"
+        ],
+        [
+          "WO-2611-119",
+          "Rolling mill EQ-RML-03",
+          "Breakdown",
+          "In progress"
+        ],
+        [
+          "WO-2611-120",
+          "Overhead crane EQ-CRN-07",
+          "Inspection",
+          "Completed"
+        ],
+        [
+          "WO-2611-121",
+          "Clinker cooler EQ-CLC-02",
+          "Preventive",
+          "Awaiting spares"
+        ]
+      ]
+    },
+    "modules": [
+      "Keep the full equipment register.",
+      "Schedule preventive maintenance.",
+      "Control spare parts by equipment.",
+      "Capture weighbridge tickets."
+    ],
+    "faqs": [
+      {
+        "q": "Can PM be based on running hours?",
+        "a": "Yes. Schedules can follow calendar intervals, running hours or both."
+      },
+      {
+        "q": "Can we connect our weighbridge?",
+        "a": "Weighbridge tickets can be recorded in AdonERP; device integration is scoped during implementation."
+      },
+      {
+        "q": "Is this equipment real?",
+        "a": "No. Equipment and work orders on this page are fictional."
+      }
+    ],
+    "cta": {
+      "title": "Bring your maintenance plan to a demo",
+      "body": "We will show how assets, PM and spares connect in AdonERP."
+    }
+  },
+  "financialServices": {
+    "meta": {
+      "title": "Financial Services & Group Finance ERP",
+      "description": "Consolidation, intercompany, bank reconciliation, loans and budget variance for group finance teams."
+    },
+    "hero": {
+      "eyebrow": "Group of Industries · Financial Services",
+      "title": "Close the group books",
+      "highlight": "with clarity.",
+      "lead": "Consolidate subsidiaries, eliminate intercompany balances, reconcile banks and track loans and budgets from one finance system."
+    },
+    "stats": [
+      {
+        "value": "4",
+        "label": "subsidiaries in the example"
+      },
+      {
+        "value": "Intercompany",
+        "label": "eliminations"
+      },
+      {
+        "value": "Budget",
+        "label": "vs actual by company"
+      }
+    ],
+    "visual": {
+      "parent": "Example Holdings Ltd.",
+      "parentNote": "Parent · consolidated",
+      "sub1": "Foods Ltd.",
+      "sub1Note": "100% owned",
+      "sub2": "Textiles Ltd.",
+      "sub2Note": "100% owned",
+      "sub3": "Pharma Ltd.",
+      "sub3Note": "75% owned",
+      "sub4": "Finance Ltd.",
+      "sub4Note": "100% owned",
+      "flowTitle": "Month-end close for the whole group",
+      "pillarsTitle": "Group finance, without the spreadsheet marathon"
+    },
+    "pillars": [
+      {
+        "title": "Consolidated statements",
+        "body": "Combine subsidiaries into group financial statements with consistent charts of accounts."
+      },
+      {
+        "title": "Intercompany eliminations",
+        "body": "Match and eliminate balances and transactions between group companies."
+      },
+      {
+        "title": "Banks and loans",
+        "body": "Reconcile bank accounts and follow loan schedules, interest and repayments."
+      },
+      {
+        "title": "Budget control",
+        "body": "Compare budget and actual by company, department and account."
+      }
+    ],
+    "flow": [
+      {
+        "title": "Companies close",
+        "body": "Each subsidiary finishes its own entries and bank reconciliation."
+      },
+      {
+        "title": "Intercompany matched",
+        "body": "Balances between group companies are matched and agreed."
+      },
+      {
+        "title": "Group consolidates",
+        "body": "Eliminations are posted and group statements are produced."
+      },
+      {
+        "title": "Variance reviewed",
+        "body": "Management reviews results against budget, company by company."
+      }
+    ],
+    "sample": {
+      "title": "Intercompany elimination summary",
+      "caption": "Fictional companies and amounts in BDT lakh, for illustration only.",
+      "columns": [
+        "Pair",
+        "Receivable",
+        "Payable",
+        "Difference"
+      ],
+      "rows": [
+        [
+          "Foods ↔ Textiles",
+          "84.20",
+          "84.20",
+          "0.00"
+        ],
+        [
+          "Pharma ↔ Holdings",
+          "126.50",
+          "125.90",
+          "0.60"
+        ],
+        [
+          "Finance ↔ Foods",
+          "210.00",
+          "210.00",
+          "0.00"
+        ],
+        [
+          "Textiles ↔ Pharma",
+          "18.75",
+          "18.75",
+          "0.00"
+        ]
+      ]
+    },
+    "modules": [
+      "Produce company and group financial statements.",
+      "Reconcile bank accounts.",
+      "Track loans, interest and repayments.",
+      "Compare budget and actual."
+    ],
+    "faqs": [
+      {
+        "q": "Can we consolidate partly owned subsidiaries?",
+        "a": "Ownership can be recorded per company; please confirm the accounting treatment with your auditors."
+      },
+      {
+        "q": "Do intercompany differences show up automatically?",
+        "a": "Balances between group companies are compared, so unmatched amounts stand out before consolidation."
+      },
+      {
+        "q": "Are these companies real?",
+        "a": "No. The group and figures shown are fictional."
+      }
+    ],
+    "cta": {
+      "title": "See your group close in AdonERP",
+      "body": "Bring your company structure and we will walk through consolidation in a demo."
+    }
+  }
+}
+>>>>>>> Stashed changes
 },
   "admin": {
     "shell": {

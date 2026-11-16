@@ -29,6 +29,76 @@ export const industriesMegaMenu: MegaMenuColumn[] = [
     ],
   },
   {
+    titleKey: "menu.industries.fmcg",
+    accentClass: "text-amber-600",
+    underlineClass: "bg-border",
+    links: [
+      {
+        labelKey: "menu.industries.fmcgFood",
+        href: "/industries/fmcg/food",
+      },
+      {
+        labelKey: "menu.industries.fmcgBeverages",
+        href: "/industries/fmcg/beverages",
+      },
+      {
+        labelKey: "menu.industries.fmcgPersonalCare",
+        href: "/industries/fmcg/personal-care",
+      },
+      {
+        labelKey: "menu.industries.fmcgHomeCare",
+        href: "/industries/fmcg/home-care",
+      },
+      {
+        labelKey: "menu.industries.fmcgHealthHygiene",
+        href: "/industries/fmcg/health-hygiene",
+      },
+      {
+        labelKey: "menu.industries.fmcgBabyCare",
+        href: "/industries/fmcg/baby-care",
+      },
+      {
+        labelKey: "menu.industries.fmcgTobacco",
+        href: "/industries/fmcg/tobacco",
+      },
+      {
+        labelKey: "menu.industries.fmcgPetCare",
+        href: "/industries/fmcg/pet-care",
+      },
+    ],
+  },
+  {
+    titleKey: "menu.industries.groupOfIndustries",
+    accentClass: "text-fuchsia-600",
+    underlineClass: "bg-border",
+    links: [
+      {
+        labelKey: "menu.industries.groupManufacturing",
+        href: "/industries/group/manufacturing",
+      },
+      {
+        labelKey: "menu.industries.groupFmcg",
+        href: "/industries/group/fmcg",
+      },
+      {
+        labelKey: "menu.industries.groupTextiles",
+        href: "/industries/group/textiles",
+      },
+      {
+        labelKey: "menu.industries.groupPharmaceuticals",
+        href: "/industries/group/pharmaceuticals",
+      },
+      {
+        labelKey: "menu.industries.groupHeavyIndustry",
+        href: "/industries/group/heavy-industry",
+      },
+      {
+        labelKey: "menu.industries.groupFinancialServices",
+        href: "/industries/group/financial-services",
+      },
+    ],
+  },
+  {
     titleKey: "menu.industries.manufacturing",
     accentClass: "text-orange-500",
     underlineClass: "bg-border",
