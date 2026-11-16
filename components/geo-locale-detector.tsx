@@ -9,6 +9,7 @@ import {
   GEO_CHECKED_COOKIE,
   GEO_HINT_COOKIE,
   LOCALE_COOKIE,
+  LOCALE_SOURCE_COOKIE,
   ONE_DAY_SECONDS,
   ONE_YEAR_SECONDS,
   readCookie,
@@ -17,7 +18,8 @@ import {
 
 /**
  * Client fallback for hosts that send no country header to proxy.ts.
- * On a visitor's very first page (no locale cookie, no geo decision yet) it
+ * On a visitor's very first page (no locale cookie, no geo decision, not
+ * forwarded from adonerp.com) it
  * asks /api/geo once and moves Bangladeshi visitors to Bangla.
  */
 export default function GeoLocaleDetector() {
@@ -26,7 +28,13 @@ export default function GeoLocaleDetector() {
   const router = useRouter();
 
   useEffect(() => {
-    if (readCookie(LOCALE_COOKIE) || readCookie(GEO_CHECKED_COOKIE)) return;
+    if (
+      readCookie(LOCALE_COOKIE) ||
+      readCookie(LOCALE_SOURCE_COOKIE) ||
+      readCookie(GEO_CHECKED_COOKIE)
+    ) {
+      return;
+    }
 
     const controller = new AbortController();
     fetch("/api/geo", { signal: controller.signal, cache: "no-store" })

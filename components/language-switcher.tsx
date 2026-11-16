@@ -9,6 +9,7 @@ import { isLocale, languageNames, locales, type AppLocale } from "@/i18n/config"
 import {
   GEO_HINT_COOKIE,
   LOCALE_COOKIE,
+  LOCALE_SOURCE_COOKIE,
   ONE_YEAR_SECONDS,
   deleteCookie,
   readCookie,
@@ -42,9 +43,10 @@ export default function LanguageSwitcher({
   }, [locale]);
 
   function switchLanguage(nextLocale: AppLocale) {
-    // An explicit choice wins over geo detection from now on.
+    // An explicit choice wins over geo detection and domain forwarding from now on.
     writeCookie(LOCALE_COOKIE, nextLocale, ONE_YEAR_SECONDS);
     deleteCookie(GEO_HINT_COOKIE);
+    deleteCookie(LOCALE_SOURCE_COOKIE);
     setShowEnglishHint(false);
     if (nextLocale === locale) return;
     router.replace(`${pathname}${window.location.search}${window.location.hash}`, {
