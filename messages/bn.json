@@ -409,7 +409,7 @@
           }
         },
         "hrPayroll": {
-          "title": "HR ও পেরোল",
+          "title": "হিউম্যান রিসোর্স ও পেরোল",
           "links": {
             "departments": "বিভাগ",
             "designations": "পদবি",
@@ -452,7 +452,7 @@
           "links": {
             "engineeringMaintenance": "ইঞ্জিনিয়ারিং রক্ষণাবেক্ষণ",
             "equipment": "সরঞ্জাম",
-            "pmSchedules": "PM সময়সূচি",
+            "pmSchedules": "পূর্ব-রক্ষণাবেক্ষণ সময়সূচি",
             "workOrders": "ওয়ার্ক অর্ডার",
             "spareParts": "খুচরা যন্ত্রাংশ",
             "downtime": "ডাউনটাইম",
@@ -479,7 +479,7 @@
           }
         },
         "salesCrm": {
-          "title": "সেলস ও CRM",
+          "title": "সেলস ও কাস্টমার রিলেশনশিপ ম্যানেজমেন্ট",
           "groups": {
             "pipeline": "পাইপলাইন",
             "activities": "কার্যক্রম",
@@ -494,7 +494,7 @@
             "insights": "ইনসাইট"
           },
           "links": {
-            "crm": "CRM",
+            "crm": "কাস্টমার রিলেশনশিপ ম্যানেজমেন্ট",
             "pipeline": "পাইপলাইন",
             "leads": "লিড",
             "contacts": "কনট্যাক্ট",
@@ -555,7 +555,7 @@
             "biAnalyticsReporting": "BI অ্যানালিটিক্স ও রিপোর্টিং",
             "executiveDashboard": "এক্সিকিউটিভ ড্যাশবোর্ড",
             "financialReports": "আর্থিক প্রতিবেদন",
-            "hrPayroll": "HR ও পেরোল",
+            "hrPayroll": "হিউম্যান রিসোর্স ও পেরোল",
             "demandForecast": "চাহিদা পূর্বাভাস",
             "exportTakeout": "ডেটা এক্সপোর্ট"
           }
@@ -620,7 +620,7 @@
           "links": {
             "merchandisingDashboard": "মার্চেন্ডাইজিং ড্যাশবোর্ড",
             "stylesCosting": "স্টাইল ও কস্টিং",
-            "tnaCalendar": "TNA ক্যালেন্ডার",
+            "tnaCalendar": "টাইম অ্যান্ড অ্যাকশান ক্যালেন্ডার",
             "materialBooking": "ম্যাটেরিয়াল বুকিং",
             "productionFollowUp": "প্রোডাকশন ফলো-আপ",
             "factories": "কারখানা",
@@ -636,7 +636,7 @@
             "grants": "অনুদান",
             "donorsFunds": "দাতা ও তহবিল",
             "fundReports": "ফান্ড রিপোর্ট",
-            "beneficiariesME": "উপকারভোগী ও M&E",
+            "beneficiariesME": "উপকারভোগী",
             "costAllocation": "ব্যয় বরাদ্দ"
           }
         },
@@ -3494,11 +3494,11 @@
         "exploreMaint": "ইঞ্জিনিয়ারিং রক্ষণাবেক্ষণ দেখুন",
         "exploreMedical": "মেডিকেল সেন্টার দেখুন",
         "tfModule": "ট্রেড ফাইন্যান্স",
-        "crModule": "বিক্রয় এবং CRM",
+        "crModule": "বিক্রয় এবং কাস্টমার রিলেশনশিপ ম্যানেজমেন্ট",
         "reModule": "রিয়েল এস্টেট",
         "exploreRe": "রিয়েল এস্টেট দেখুন",
         "exploreTf": "ট্রেড ফাইন্যান্স দেখুন",
-        "exploreCrm": "বিক্রয় এবং CRM এক্সপ্লোর করুন",
+        "exploreCrm": "বিক্রয় এবং কাস্টমার রিলেশনশিপ ম্যানেজমেন্ট এক্সপ্লোর করুন",
         "tpModule": "পরিবহন পুল",
         "anModule": "BI অ্যানালিটিক্স",
         "exploreTp": "ট্রান্সপোর্ট পুল দেখুন",
