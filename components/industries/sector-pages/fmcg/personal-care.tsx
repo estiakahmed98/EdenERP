@@ -1,7 +1,15 @@
 import { Sparkles } from "lucide-react";
 import { Closing, Crumbs, Eyebrow, SampleTable, SectionHead, Tail, loadSector, wrap, sectorRoot } from "../kit";
 
-const swatches = ["bg-(--sector-sand)", "bg-(--sector-sand)", "bg-(--sector-amber)/80", "bg-(--sector-blue)", "bg-(--sector-amber)", "bg-(--sector-sage)"];
+/** Example shade family S-01…S-06: sand → amber, then two blues (shared palette). */
+const swatches = [
+  "bg-(--sector-sand)",
+  "bg-(--sector-amber)/40",
+  "bg-(--sector-amber)/70",
+  "bg-(--sector-amber)",
+  "bg-(--sector-blue)/60",
+  "bg-(--sector-blue)",
+];
 
 /** Personal Care & Beauty: soft, editorial, variant-led (shade × pack size). */
 export default async function PersonalCarePage() {
@@ -26,7 +34,7 @@ export default async function PersonalCarePage() {
 
           <div className="mx-auto mt-12 flex max-w-xl items-end justify-center gap-3">
             {swatches.map((sw, i) => (
-              <div key={sw} className="flex flex-col items-center gap-2">
+              <div key={`S-0${i + 1}`} className="flex flex-col items-center gap-2">
                 <span className={`block w-10 rounded-t-full rounded-b-lg shadow-md sm:w-14 ${sw}`} style={{ height: `${70 + ((i * 23) % 50)}px` }} aria-hidden />
                 <span className="font-mono text-[10px] text-muted-foreground">{`S-0${i + 1}`}</span>
               </div>
