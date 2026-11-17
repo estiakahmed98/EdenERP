@@ -4,6 +4,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import bcrypt from "bcryptjs";
 
 import { db } from "@/lib/db";
+import { getAuthSecret } from "@/lib/auth-secret";
 import { getClientIp } from "@/lib/security/client-ip";
 import { createRateLimiter } from "@/lib/security/rate-limit";
 
@@ -22,6 +23,7 @@ function headerReader(headers: unknown) {
 }
 
 export const authOptions: NextAuthOptions = {
+  secret: getAuthSecret(),
   adapter: PrismaAdapter(db),
 
   session: {

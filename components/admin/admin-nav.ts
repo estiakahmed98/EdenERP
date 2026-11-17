@@ -3,6 +3,7 @@ import {
   BookOpen,
   CalendarCheck,
   LayoutDashboard,
+  MessagesSquare,
   type LucideIcon,
 } from "lucide-react";
 
@@ -34,6 +35,11 @@ export const ADMIN_NAV: AdminNavGroup[] = [
   {
     key: "sales",
     items: [
+      {
+        key: "liveChat",
+        href: "/admin/chat",
+        icon: MessagesSquare,
+      },
       {
         key: "demoBookings",
         href: "/admin/demo-bookings",

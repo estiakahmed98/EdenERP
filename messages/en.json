@@ -79,6 +79,43 @@
     "whatsapp": {
       "label": "Chat on WhatsApp",
       "scrollTop": "Back to top"
+    },
+    "chat": {
+      "title": "Chat with us",
+      "open": "Open live chat",
+      "close": "Close chat",
+      "online": "Support is online",
+      "offline": "Leave a message and we'll reply soon",
+      "reconnecting": "Reconnecting…",
+      "intro": "Tell us who you are and we'll reply right here.",
+      "welcome": "Hi {name}! Send us a message and our team will reply here.",
+      "placeholder": "Type a message…",
+      "send": "Send",
+      "loadOlder": "Load earlier messages",
+      "typing": "{name} is typing…",
+      "support": "Support",
+      "closedNotice": "This conversation was closed. Send a message to reopen it.",
+      "retry": "Not sent. Tap to retry",
+      "status": {
+        "pending": "Sending",
+        "failed": "Not sent",
+        "sent": "Sent",
+        "delivered": "Delivered",
+        "read": "Read"
+      },
+      "form": {
+        "name": "Your name",
+        "email": "Email (optional)",
+        "phone": "Phone (optional)",
+        "message": "How can we help? (optional)",
+        "start": "Start chat"
+      },
+      "errors": {
+        "RATE_LIMITED": "Too many messages. Please wait a moment.",
+        "TOO_LONG": "This message is too long.",
+        "invalid": "Please check your details.",
+        "generic": "Something went wrong. Please try again."
+      }
     }
   },
   "layout": {
@@ -65596,7 +65633,71 @@
         "blog": {
           "name": "Blog",
           "description": "Write and publish blog posts"
+        },
+        "liveChat": {
+          "name": "Live chat",
+          "description": "Reply to website visitors in real time"
         }
+      }
+    },
+    "chat": {
+      "title": "Live chat",
+      "subtitle": "Real-time conversations with website visitors",
+      "connected": "Live",
+      "connecting": "Connecting…",
+      "search": "Search name, email, phone or message",
+      "filters": {
+        "OPEN": "Open",
+        "CLOSED": "Resolved",
+        "ALL": "All"
+      },
+      "empty": "No conversations yet",
+      "noMessages": "No messages yet",
+      "typingShort": "typing…",
+      "typing": "{name} is typing…",
+      "colleagueTyping": "{name} is replying…",
+      "pick": "Select a conversation to start replying",
+      "back": "Back",
+      "onlineOn": "Online · {path}",
+      "lastSeen": "Last seen {time}",
+      "close": "Mark resolved",
+      "reopen": "Reopen",
+      "loadOlder": "Load earlier messages",
+      "placeholder": "Type a reply (Enter to send, Shift+Enter for a new line)",
+      "placeholderClosed": "Resolved conversation. Your reply will still be delivered",
+      "send": "Send",
+      "retry": "Not sent. Retry",
+      "newMessage": "New message",
+      "open": "Open",
+      "loadFailed": "Couldn't load conversations.",
+      "status": {
+        "pending": "Sending",
+        "failed": "Not sent",
+        "sent": "Sent",
+        "delivered": "Delivered",
+        "read": "Read"
+      },
+      "errors": {
+        "RATE_LIMITED": "Too many messages. Please wait a moment.",
+        "TOO_LONG": "This message is too long.",
+        "generic": "Something went wrong. Please try again."
+      },
+      "details": {
+        "title": "Visitor",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "currentPage": "Current page",
+        "startPage": "Started on",
+        "account": "Account",
+        "registered": "Registered user",
+        "guest": "Guest",
+        "language": "Language",
+        "started": "Started",
+        "lastSeen": "Last seen",
+        "now": "Online now",
+        "status": "Status",
+        "device": "Device"
       }
     },
     "dashboard": {

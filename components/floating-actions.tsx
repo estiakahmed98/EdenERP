@@ -6,6 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { siteConfig } from "@/lib/site";
 import { useTranslations } from "next-intl";
 import { whatsappUrl } from "@/lib/whatsapp";
+import ChatWidget from "@/components/chat/chat-widget";
 
 
 export default function FloatingActions() {
@@ -35,6 +36,8 @@ export default function FloatingActions() {
           <ArrowUp size={20} />
         </button>
       )}
+
+      <ChatWidget />
 
       <a
         href={whatsappUrl(siteConfig.business.whatsapp)}

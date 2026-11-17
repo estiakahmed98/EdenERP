@@ -70,9 +70,11 @@ model User {
   accounts Account[]
   sessions Session[]
 
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
-  analyticsEvents AnalyticsEvent[]
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  analyticsEvents   AnalyticsEvent[]
+  chatConversations ChatConversation[]
+  chatMessages      ChatMessage[]
 
   @@map("users")
 }
@@ -301,4 +303,75 @@ model PricingModule {
 
   @@index([locale, order])
   @@map("pricing_modules")
+}
+
+// ---------------------------------------------------------------------------
+// Live chat (visitor <-> admin support). Real-time delivery is over the
+// WebSocket at /api/chat/ws (server.ts); every message and status change is
+// persisted here so history, delivery and read receipts survive restarts.
+// ---------------------------------------------------------------------------
+
+enum ChatConversationStatus {
+  OPEN
+  CLOSED
+}
+
+enum ChatSenderType {
+  VISITOR
+  ADMIN
+  SYSTEM
+}
+
+model ChatConversation {
+  id           String                 @id @default(uuid()) @db.Uuid
+  /// sha256 of the visitor's secret chat token (the raw token lives only in an httpOnly cookie).
+  tokenHash    String                 @unique @map("token_hash") @db.VarChar(64)
+  userId       String?                @map("user_id")
+  user         User?                  @relation(fields: [userId], references: [id], onDelete: SetNull)
+  visitorName  String                 @map("visitor_name") @db.VarChar(120)
+  visitorEmail String?                @map("visitor_email") @db.VarChar(254)
+  visitorPhone String?                @map("visitor_phone") @db.VarChar(40)
+  locale       String                 @default("en") @db.VarChar(8)
+  status       ChatConversationStatus @default(OPEN)
+
+  // Tracking
+  startPath          String?   @map("start_path") @db.VarChar(512)
+  currentPath        String?   @map("current_path") @db.VarChar(512)
+  userAgent          String?   @map("user_agent") @db.VarChar(512)
+  ipHash             String?   @map("ip_hash") @db.VarChar(64)
+  visitorLastSeenAt  DateTime? @map("visitor_last_seen_at") @db.Timestamptz(3)
+  lastMessageAt      DateTime? @map("last_message_at") @db.Timestamptz(3)
+  lastMessagePreview String?   @map("last_message_preview") @db.VarChar(200)
+  closedAt           DateTime? @map("closed_at") @db.Timestamptz(3)
+
+  messages  ChatMessage[]
+  createdAt DateTime      @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt DateTime      @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@index([status, lastMessageAt])
+  @@index([userId])
+  @@index([lastMessageAt])
+  @@map("chat_conversations")
+}
+
+model ChatMessage {
+  id             String           @id @default(uuid()) @db.Uuid
+  conversationId String           @map("conversation_id") @db.Uuid
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  senderType     ChatSenderType   @map("sender_type")
+  /// Admin (or signed-in visitor) who wrote it; null for guests and system notes.
+  senderUserId   String?          @map("sender_user_id")
+  senderUser     User?            @relation(fields: [senderUserId], references: [id], onDelete: SetNull)
+  senderName     String?          @map("sender_name") @db.VarChar(120)
+  body           String           @db.Text
+  /// Client-generated id so a resend after reconnect is not stored twice.
+  clientId       String           @map("client_id") @db.VarChar(64)
+  deliveredAt    DateTime?        @map("delivered_at") @db.Timestamptz(3)
+  readAt         DateTime?        @map("read_at") @db.Timestamptz(3)
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@unique([conversationId, clientId])
+  @@index([conversationId, createdAt])
+  @@index([conversationId, senderType, readAt])
+  @@map("chat_messages")
 }
