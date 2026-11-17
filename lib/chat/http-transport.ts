@@ -6,14 +6,15 @@
  * Stateless: every request reads and writes Postgres, so it works across any
  * number of short-lived function instances. Presence is derived from
  * heartbeats (visitorLastSeenAt / chat_agent_presence) instead of open sockets.
- * Typing indicators are not carried over this transport.
+ * Expiring typing rows carry typing indicators across serverless instances.
  */
 import { db } from "@/lib/db";
 import { createRateLimiter } from "@/lib/security/rate-limit";
 import {
   CHAT_LIMITS,
-  normalizeBody,
+  validateMessageContent,
   type ChatClientEvent,
+  type AdminConversationDTO,
   type ChatServerEvent,
 } from "@/lib/chat/shared";
 import {
@@ -30,6 +31,8 @@ import {
   unreadForAdmin,
 } from "@/lib/chat/service";
 import type { ChatConversation } from "@/lib/generated/prisma/client";
+import { reactionActor } from "@/lib/chat/reactions";
+import { readTyping, writeTyping } from "@/lib/chat/typing";
 import { sendAutoReplyIfFirst } from "@/lib/chat/auto-reply";
 
 /** A heartbeat younger than this counts as online. Clients poll every few seconds. */
@@ -81,6 +84,18 @@ async function visitorHeartbeat(conversation: ChatConversation) {
   return touchVisitor(conversation.id, {});
 }
 
+/** Reactions must not masquerade as new messages or change read/unread state. */
+function messageChanges(m: Parameters<typeof toMessageDTO>[0], from: Date, conversation?: AdminConversationDTO): ChatServerEvent[] {
+  const events: ChatServerEvent[] = [];
+  if (m.createdAt > from) events.push({ t: "message", message: toMessageDTO(m), conversation });
+  else {
+    if (m.deliveredAt && m.deliveredAt > from) events.push({ t: "receipt", conversationId: m.conversationId, kind: "delivered", ids: [m.id], at: m.deliveredAt.toISOString() });
+    if (m.readAt && m.readAt > from) events.push({ t: "receipt", conversationId: m.conversationId, kind: "read", ids: [m.id], at: m.readAt.toISOString() });
+  }
+  if (m.reactionsUpdatedAt && m.reactionsUpdatedAt > from) events.push({ t: "reaction", message: toMessageDTO(m) });
+  return events;
+}
+
 // -------------------------------------------------------------------- poll
 
 export async function visitorPoll(conversation: ChatConversation, since: string | null): Promise<PollResult> {
@@ -93,19 +108,22 @@ export async function visitorPoll(conversation: ChatConversation, since: string 
   const events: ChatServerEvent[] = [];
   const agents = await agentsOnline();
   if (!from) {
-    events.push({ t: "hello", role: "visitor", conversation: toVisitorConversationDTO(current), agentsOnline: agents });
+    events.push({ t: "hello", role: "visitor", conversation: toVisitorConversationDTO(current), agentsOnline: agents, reactionActor: reactionActor("VISITOR", conversation.id) });
+    events.push(...await readTyping({ conversationId: conversation.id, from: "ADMIN" }));
     return { events, cursor };
   }
 
   const changed = await db.chatMessage.findMany({
+    include: { reactions: true },
     where: {
       conversationId: conversation.id,
-      OR: [{ createdAt: { gt: from } }, { deliveredAt: { gt: from } }, { readAt: { gt: from } }],
+      OR: [{ createdAt: { gt: from } }, { deliveredAt: { gt: from } }, { readAt: { gt: from } }, { reactionsUpdatedAt: { gt: from } }],
     },
     orderBy: { createdAt: "asc" },
     take: 200,
   });
-  for (const m of changed) events.push({ t: "message", message: toMessageDTO(m) });
+  for (const m of changed) events.push(...messageChanges(m, from));
+  events.push(...await readTyping({ conversationId: conversation.id, from: "ADMIN" }));
   events.push({ t: "agents", online: agents });
   events.push({ t: "conversation", conversation: toVisitorConversationDTO(current) });
   return { events, cursor };
@@ -125,14 +143,15 @@ export async function adminPoll(admin: { userId: string; name: string }, since: 
 
   if (!from) {
     return {
-      events: [{ t: "hello", role: "admin", userId: admin.userId, online: recent.filter(isOnlineAt).map((c) => c.id) }],
+      events: [{ t: "hello", role: "admin", userId: admin.userId, reactionActor: reactionActor("ADMIN", admin.userId), online: recent.filter(isOnlineAt).map((c) => c.id) }, ...await readTyping({ excludeActor: `a:${admin.userId}` })],
       cursor,
     };
   }
 
   const [messages, updated] = await Promise.all([
     db.chatMessage.findMany({
-      where: { OR: [{ createdAt: { gt: from } }, { deliveredAt: { gt: from } }, { readAt: { gt: from } }] },
+      include: { reactions: true },
+      where: { OR: [{ createdAt: { gt: from } }, { deliveredAt: { gt: from } }, { readAt: { gt: from } }, { reactionsUpdatedAt: { gt: from } }] },
       orderBy: { createdAt: "asc" },
       take: 500,
     }),
@@ -156,7 +175,7 @@ export async function adminPoll(admin: { userId: string; name: string }, since: 
   const events: ChatServerEvent[] = [];
   for (const s of summaries.values()) events.push({ t: "conversation", conversation: s });
   for (const m of messages) {
-    events.push({ t: "message", message: toMessageDTO(m), conversation: summaries.get(m.conversationId) });
+    events.push(...messageChanges(m, from, summaries.get(m.conversationId)));
   }
   for (const c of recent) {
     events.push({
@@ -167,16 +186,15 @@ export async function adminPoll(admin: { userId: string; name: string }, since: 
       currentPath: c.currentPath,
     });
   }
+  events.push(...await readTyping({ excludeActor: `a:${admin.userId}` }));
   return { events, cursor };
 }
 
 // ------------------------------------------------------------------ frames
 
 function validateBody(raw: string, clientId: string): { body: string } | { error: ChatServerEvent } {
-  const body = normalizeBody(raw);
-  if (!body) return { error: { t: "error", code: "EMPTY", clientId } };
-  if (body.length > CHAT_LIMITS.body) return { error: { t: "error", code: "TOO_LONG", clientId } };
-  return { body };
+  const value = validateMessageContent(raw);
+  return "error" in value ? { error: { t: "error", code: value.error, clientId } } : value;
 }
 
 export async function visitorFrame(conversation: ChatConversation, event: ChatClientEvent): Promise<ChatServerEvent[]> {
@@ -209,6 +227,8 @@ export async function visitorFrame(conversation: ChatConversation, event: ChatCl
       await touchVisitor(conversationId, { currentPath: event.path });
       return [];
     case "typing":
+      await writeTyping(conversationId, `v:${conversationId}`, "VISITOR", conversation.visitorName, event.typing);
+      return [];
     case "ping":
       return [];
     default:
@@ -217,7 +237,7 @@ export async function visitorFrame(conversation: ChatConversation, event: ChatCl
 }
 
 export async function adminFrame(admin: { userId: string; name: string }, event: ChatClientEvent): Promise<ChatServerEvent[]> {
-  if (event.t === "typing" || event.t === "ping") return [];
+  if (event.t === "ping") return [];
   if (!("conversationId" in event) || !event.conversationId) return [{ t: "error", code: "BAD_FRAME" }];
   const conversationId = event.conversationId;
   const conversation = await getConversation(conversationId);
@@ -230,6 +250,9 @@ export async function adminFrame(admin: { userId: string; name: string }, event:
   };
 
   switch (event.t) {
+    case "typing":
+      await writeTyping(conversationId, `a:${admin.userId}`, "ADMIN", admin.name, event.typing);
+      return [];
     case "send": {
       const v = validateBody(event.body, event.clientId);
       if ("error" in v) return [v.error];

@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   CHAT_WS_PATH,
   type ChatClientEvent,
+  type ChatMessageDTO,
   type ChatServerEvent,
 } from "@/lib/chat/shared";
 
@@ -45,6 +46,7 @@ export function useChatSocket(options: {
   onEvent: (event: ChatServerEvent) => void;
 }) {
   const { enabled, admin = false } = options;
+  const [reactionActor, setReactionActor] = useState<string | null>(null);
   const [status, setStatus] = useState<ChatSocketStatus>("idle");
   const [transport, setTransport] = useState<Transport>(FORCED ?? "ws");
   const wsRef = useRef<WebSocket | null>(null);
@@ -97,6 +99,7 @@ export function useChatSocket(options: {
           return;
         }
         if (event.t === "hello") {
+          setReactionActor(event.reactionActor ?? null);
           attempt = 0;
           everOpened = true;
           clearTimeout(helloTimer);
@@ -167,6 +170,7 @@ export function useChatSocket(options: {
 
     const dispatch = (events: ChatServerEvent[]) => {
       for (const event of events) {
+        if (event.t === "hello") setReactionActor(event.reactionActor ?? null);
         if (event.t === "message") {
           const m = event.message;
           outbox.current.delete(m.clientId);
@@ -193,12 +197,13 @@ export function useChatSocket(options: {
     };
 
     const sending = new Set<string>();
+    let typingPosts = Promise.resolve();
     const post = (frame: ChatClientEvent) => {
       if (frame.t === "send") {
         if (sending.has(frame.clientId)) return;
         sending.add(frame.clientId);
       }
-      void fetch(`${POLL_URL}${qs}`, {
+      const request = () => stopped ? Promise.resolve() : fetch(`${POLL_URL}${qs}`, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(frame),
@@ -214,6 +219,9 @@ export function useChatSocket(options: {
         .finally(() => {
           if (frame.t === "send") sending.delete(frame.clientId);
         });
+      // Keep a fast blur/stop from being overtaken by the preceding "typing" POST.
+      if (frame.t === "typing") typingPosts = typingPosts.then(request, request);
+      else void request();
     };
 
     const schedule = (ms: number) => {
@@ -234,8 +242,8 @@ export function useChatSocket(options: {
         cursor = data.cursor;
         failures = 0;
         dispatch(data.events);
+        setStatus("open");
         if (first) {
-          setStatus("open");
           for (const frame of outbox.current.values()) post(frame);
         }
       } catch {
@@ -290,13 +298,17 @@ export function useChatSocket(options: {
     return false;
   }, []);
 
-  return { status, send, transport };
+  return { status, send, transport, reactionActor };
 }
 
 /** Merge a message into a sorted list, replacing an optimistic copy with the same clientId. */
-export function upsertMessage<T extends { id: string; clientId: string; createdAt: string }>(list: T[], message: T) {
+export function upsertMessage<T extends ChatMessageDTO>(list: T[], message: T) {
   const i = list.findIndex((m) => m.id === message.id || m.clientId === message.clientId);
-  const next = i >= 0 ? list.map((m, j) => (j === i ? message : m)) : [...list, message];
+  // A delayed send/poll echo must not overwrite a newer reaction event.
+  const incoming = i >= 0 && (list[i].reactionsUpdatedAt ?? "") > (message.reactionsUpdatedAt ?? "")
+    ? { ...message, reactions: list[i].reactions, reactionsUpdatedAt: list[i].reactionsUpdatedAt }
+    : message;
+  const next = i >= 0 ? list.map((m, j) => (j === i ? incoming : m)) : [...list, incoming];
   return next.sort((a, b) => a.createdAt.localeCompare(b.createdAt));
 }
 
@@ -336,9 +348,10 @@ export function useTypingEmitter(send: (event: ChatClientEvent) => boolean, conv
   const ping = useCallback(() => {
     const now = Date.now();
     if (now - lastSent.current > 3_000) {
-      send({ t: "typing", typing: true, conversationId });
-      lastSent.current = now;
-      active.current = true;
+      if (send({ t: "typing", typing: true, conversationId })) {
+        lastSent.current = now;
+        active.current = true;
+      }
     }
     clearTimeout(idle.current);
     idle.current = setTimeout(stop, 4_000);
@@ -356,6 +369,7 @@ export function useRemoteTyping(timeoutMs = 6_000) {
   const update = useCallback(
     (key: string, isTyping: boolean, name?: string) => {
       clearTimeout(timers.current.get(key));
+      timers.current.delete(key);
       setTyping((prev) => {
         if (!isTyping) {
           if (!(key in prev)) return prev;

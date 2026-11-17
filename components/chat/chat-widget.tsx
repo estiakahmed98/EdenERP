@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import { Loader2, MessageCircle, Send, X } from "lucide-react";
+import { Loader2, MessageCircle, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +13,7 @@ import {
   CHAT_FLAG_COOKIE,
   CHAT_LIMITS,
   newClientId,
+  applyReaction,
   type ChatMessageDTO,
   type ChatServerEvent,
   type VisitorConversationDTO,
@@ -24,6 +25,8 @@ import {
   useRemoteTyping,
   useTypingEmitter,
 } from "@/hooks/use-chat-socket";
+import { MessageReactions } from "./message-reactions";
+import { ChatComposer, ChatMessageImage } from "./chat-composer";
 import { MessageStatus, TypingDots, deliveryState } from "./message-status";
 
 type LocalMessage = ChatMessageDTO & { failed?: boolean };
@@ -94,6 +97,9 @@ export default function ChatWidget() {
           setMessages((list) => upsertMessage(list, e.message));
           if (e.message.senderType !== "VISITOR") setRemoteTyping("admin", false);
           break;
+        case "reaction":
+          setMessages((list) => applyReaction(list, e.message));
+          break;
         case "receipt":
           setMessages((list) => applyReceipt(list, e));
           break;
@@ -114,8 +120,9 @@ export default function ChatWidget() {
     [setRemoteTyping, t],
   );
 
-  const { status, send } = useChatSocket({ enabled: Boolean(conversation), onEvent });
+  const { status, send, reactionActor } = useChatSocket({ enabled: Boolean(conversation), onEvent });
   const typingEmitter = useTypingEmitter(send);
+  useEffect(() => { if (!open) typingEmitter.stop(); }, [open, typingEmitter.stop]);
 
   // Page tracking: tell support which page the visitor is on.
   useEffect(() => {
@@ -177,7 +184,7 @@ export default function ChatWidget() {
 
   const retry = (m: LocalMessage) => {
     setMessages((list) => list.filter((x) => x.clientId !== m.clientId));
-    sendText(m.body);
+    sendText(m.body, conversation);
   };
 
   const adminTypingName = remoteTyping.admin;
@@ -278,7 +285,8 @@ export default function ChatWidget() {
                         {!mine && m.senderName && (
                           <p className="mb-0.5 text-xs font-semibold text-primary">{m.senderName}</p>
                         )}
-                        <p className="whitespace-pre-wrap break-words">{m.body}</p>
+                        {m.imageId && <ChatMessageImage imageId={m.imageId} label={t("composer.attachedImage")} />}
+                        {m.body && <p className="whitespace-pre-wrap [overflow-wrap:anywhere]">{m.body}</p>}
                         <div
                           className={cn(
                             "mt-1 flex items-center justify-end gap-1 text-[10px]",
@@ -290,6 +298,7 @@ export default function ChatWidget() {
                           </time>
                           {mine && <MessageStatus state={state} label={t(`status.${state}`)} />}
                         </div>
+                        <MessageReactions message={m} actor={reactionActor} mine={mine} enabled={status === "open"} onUpdate={(message) => setMessages((list) => applyReaction(list, message))} />
                         {m.failed && (
                           <button
                             type="button"
@@ -304,7 +313,7 @@ export default function ChatWidget() {
                   );
                 })}
                 {adminTypingName && (
-                  <div className="flex items-center gap-2 px-1 text-xs text-muted-foreground">
+                  <div role="status" className="flex w-fit items-center gap-2 rounded-2xl rounded-es-sm border border-border bg-card px-3 py-2 text-xs text-muted-foreground">
                     <TypingDots />
                     {t("typing", { name: typeof adminTypingName === "string" ? adminTypingName : t("support") })}
                   </div>
@@ -317,7 +326,7 @@ export default function ChatWidget() {
                 </p>
               )}
               {error && <p className="px-4 pt-2 text-xs text-destructive">{error}</p>}
-              <Composer onSend={(text) => sendText(text)} onTyping={typingEmitter.ping} placeholder={t("placeholder")} sendLabel={t("send")} />
+              <ChatComposer key={conversation.id} onSend={(text) => sendText(text, conversation)} onTyping={typingEmitter.ping} onStopTyping={typingEmitter.stop} placeholder={t("placeholder")} sendLabel={t("send")} />
             </>
           )}
         </div>
@@ -340,56 +349,6 @@ export default function ChatWidget() {
     </>
   );
 
-}
-
-function Composer({
-  onSend,
-  onTyping,
-  placeholder,
-  sendLabel,
-}: {
-  onSend: (text: string) => void;
-  onTyping: () => void;
-  placeholder: string;
-  sendLabel: string;
-}) {
-  const [text, setText] = useState("");
-  const submit = () => {
-    if (!text.trim()) return;
-    onSend(text);
-    setText("");
-  };
-  return (
-    <form
-      className="flex items-end gap-2 border-t border-border bg-[#f7fafd] p-3 dark:bg-background"
-      onSubmit={(e) => {
-        e.preventDefault();
-        submit();
-      }}
-    >
-      <Textarea
-        value={text}
-        rows={1}
-        maxLength={CHAT_LIMITS.body}
-        placeholder={placeholder}
-        aria-label={placeholder}
-        className="max-h-32 min-h-10 resize-none"
-        onChange={(e) => {
-          setText(e.target.value);
-          if (e.target.value) onTyping();
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
-            e.preventDefault();
-            submit();
-          }
-        }}
-      />
-      <Button type="submit" size="icon" disabled={!text.trim()} aria-label={sendLabel}>
-        <Send className="size-4 rtl:-scale-x-100" />
-      </Button>
-    </form>
-  );
 }
 
 function StartForm({

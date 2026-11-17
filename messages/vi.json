@@ -79,7 +79,15 @@
 "whatsapp": {
   "label": "Trò chuyện trên WhatsApp",
   "scrollTop": "Về đầu trang"
-}
+},
+    "chat": {
+      "composer": {
+        "emoji": "Chọn biểu tượng cảm xúc",
+        "attachedImage": "Xem ảnh đính kèm",
+        "react": "Bày tỏ cảm xúc với tin nhắn",
+        "reactionFailed": "Không thể cập nhật cảm xúc. Vui lòng thử lại."
+      }
+    }
 },
   "layout": {
     "header": {
@@ -67259,6 +67267,14 @@
       "newPlanTagline": "Gói giá tùy chỉnh",
       "newPlanCta": "Bắt đầu ngay",
       "newPlanFeature": "Quyền truy cập module cốt lõi"
+    },
+    "chat": {
+      "composer": {
+        "emoji": "Chọn biểu tượng cảm xúc",
+        "attachedImage": "Xem ảnh đính kèm",
+        "react": "Bày tỏ cảm xúc với tin nhắn",
+        "reactionFailed": "Không thể cập nhật cảm xúc. Vui lòng thử lại."
+      }
     }
   }
 }

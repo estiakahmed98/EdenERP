@@ -16,19 +16,17 @@ import {
   Phone,
   RotateCcw,
   Search,
-  Send,
   User,
 } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import {
-  CHAT_LIMITS,
   newClientId,
+  applyReaction,
   type AdminConversationDTO,
   type ChatMessageDTO,
   type ChatServerEvent,
@@ -40,6 +38,8 @@ import {
   useRemoteTyping,
   useTypingEmitter,
 } from "@/hooks/use-chat-socket";
+import { MessageReactions } from "./message-reactions";
+import { ChatComposer, ChatMessageImage } from "./chat-composer";
 import { MessageStatus, TypingDots, deliveryState } from "./message-status";
 
 type Filter = "OPEN" | "CLOSED" | "ALL";
@@ -145,6 +145,9 @@ export default function AdminChat() {
           }
           if (e.message.senderType === "VISITOR") setTyping(e.message.conversationId, false);
           break;
+        case "reaction":
+          setMessages((list) => applyReaction(list, e.message));
+          break;
         case "receipt":
           if (e.conversationId === activeRef.current) setMessages((list) => applyReceipt(list, e));
           break;
@@ -181,7 +184,7 @@ export default function AdminChat() {
     [openThread, setTyping, t],
   );
 
-  const { status, send } = useChatSocket({ enabled: true, admin: true, onEvent });
+  const { status, send, reactionActor } = useChatSocket({ enabled: true, admin: true, onEvent });
   const typingEmitter = useTypingEmitter(send, activeId ?? undefined);
 
   const active = conversations.find((c) => c.id === activeId) ?? null;
@@ -467,7 +470,8 @@ export default function AdminChat() {
                           )}
                         >
                           {mine && m.senderName && <p className="mb-0.5 text-[11px] font-semibold opacity-80">{m.senderName}</p>}
-                          <p className="whitespace-pre-wrap [overflow-wrap:anywhere]">{m.body}</p>
+                          {m.imageId && <ChatMessageImage imageId={m.imageId} label={t("composer.attachedImage")} />}
+                          {m.body && <p className="whitespace-pre-wrap [overflow-wrap:anywhere]">{m.body}</p>}
                           <div
                             className={cn(
                               "mt-1.5 flex items-center justify-end gap-1 text-[10px]",
@@ -484,6 +488,7 @@ export default function AdminChat() {
                               />
                             )}
                           </div>
+                          <MessageReactions message={m} actor={reactionActor} mine={mine} enabled={status === "open"} admin onUpdate={(message) => setMessages((list) => applyReaction(list, message))} />
                           {m.failed && (
                             <button
                               type="button"
@@ -502,7 +507,7 @@ export default function AdminChat() {
                   );
                 })}
                 {typing[active.id] && (
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <div role="status" className="flex w-fit items-center gap-2 rounded-2xl rounded-es-sm border border-border bg-card px-3 py-2 text-xs text-muted-foreground">
                     <TypingDots /> {t("typing", { name: active.visitorName })}
                   </div>
                 )}
@@ -516,8 +521,10 @@ export default function AdminChat() {
                 )}
               </div>
 
-              <AdminComposer
+              <ChatComposer
                 key={active.id}
+                admin
+                onStopTyping={typingEmitter.stop}
                 onSend={sendText}
                 onTyping={typingEmitter.ping}
                 placeholder={active.status === "CLOSED" ? t("placeholderClosed") : t("placeholder")}
@@ -606,58 +613,5 @@ function Detail({
       </dt>
       <dd className="col-start-2 -mt-0.5 text-xs leading-relaxed [overflow-wrap:anywhere]">{value}</dd>
     </div>
-  );
-}
-
-function AdminComposer({
-  onSend,
-  onTyping,
-  placeholder,
-  sendLabel,
-}: {
-  onSend: (text: string) => void;
-  onTyping: () => void;
-  placeholder: string;
-  sendLabel: string;
-}) {
-  const [text, setText] = useState("");
-  const submit = () => {
-    if (!text.trim()) return;
-    onSend(text);
-    setText("");
-  };
-  return (
-    <form
-      className="shrink-0 border-t border-border bg-[#f7fafd] p-3 dark:bg-card sm:p-4"
-      onSubmit={(e) => {
-        e.preventDefault();
-        submit();
-      }}
-    >
-      <div className="flex items-end gap-3 rounded-2xl border border-primary/15 bg-card p-2 transition focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/10">
-        <Textarea
-          value={text}
-          rows={1}
-          maxLength={CHAT_LIMITS.body}
-          placeholder={placeholder}
-          aria-label={placeholder}
-          className="max-h-40 min-h-12 resize-none border-0 bg-transparent py-3 text-sm shadow-none focus-visible:ring-0 dark:bg-transparent"
-          onChange={(e) => {
-            setText(e.target.value);
-            if (e.target.value) onTyping();
-          }}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
-              e.preventDefault();
-              submit();
-            }
-          }}
-        />
-        <Button type="submit" className="mb-0.5 h-10 rounded-xl px-4 text-white shadow-sm" disabled={!text.trim()} aria-label={sendLabel}>
-          <Send className="size-4 rtl:-scale-x-100" />
-          <span className="hidden sm:inline">{sendLabel}</span>
-        </Button>
-      </div>
-    </form>
   );
 }

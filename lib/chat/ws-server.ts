@@ -23,9 +23,10 @@ import {
   CHAT_COOKIE,
   CHAT_LIMITS,
   CHAT_WS_PATH,
-  normalizeBody,
+  validateMessageContent,
   parseClientEvent,
   type ChatClientEvent,
+  type ChatMessageDTO,
   type ChatServerEvent,
 } from "@/lib/chat/shared";
 import {
@@ -41,6 +42,8 @@ import {
   toVisitorConversationDTO,
   touchVisitor,
 } from "@/lib/chat/service";
+import { writeTyping } from "@/lib/chat/typing";
+import { reactionActor } from "@/lib/chat/reactions";
 import { sendAutoReplyIfFirst } from "@/lib/chat/auto-reply";
 
 type VisitorClient = { role: "visitor"; ws: WebSocket; conversationId: string; name: string; userId: string | null };
@@ -82,6 +85,11 @@ class ChatHub {
 
   // ---------------------------------------------------------------- fan-out
 
+  publishReaction(message: ChatMessageDTO) {
+    this.toVisitors(message.conversationId, { t: "reaction", message });
+    this.toAdmins({ t: "reaction", message });
+  }
+
   private send(ws: WebSocket, event: ChatServerEvent) {
     if (ws.readyState === ws.OPEN) ws.send(JSON.stringify(event));
   }
@@ -104,11 +112,13 @@ class ChatHub {
 
   attach(client: Client) {
     const { ws } = client;
+    let frames = Promise.resolve();
     this.alive.set(ws, true);
     ws.on("pong", () => this.alive.set(ws, true));
     ws.on("message", (data, isBinary) => {
       if (isBinary) return this.send(ws, { t: "error", code: "BAD_FRAME" });
-      void this.onFrame(client, data).catch((err) => {
+      // Preserve send/typing-stop order even when database writes are asynchronous.
+      frames = frames.then(() => this.onFrame(client, data)).then(() => {}).catch((err) => {
         console.error("chat: frame failed", err instanceof Error ? err.message : err);
         this.send(ws, { t: "error", code: "SERVER_ERROR" });
       });
@@ -131,6 +141,7 @@ class ChatHub {
       role: "visitor",
       conversation: toVisitorConversationDTO(conversation),
       agentsOnline: this.agentsOnline,
+      reactionActor: reactionActor("VISITOR", client.conversationId),
     });
 
     // Admin replies sent while the visitor was away are now delivered.
@@ -163,6 +174,7 @@ class ChatHub {
       t: "hello",
       role: "admin",
       userId: client.userId,
+      reactionActor: reactionActor("ADMIN", client.userId),
       online: [...this.visitors.keys()].filter(this.isOnline),
     });
     if (wasEmpty) this.toAllVisitors({ t: "agents", online: true });
@@ -205,17 +217,21 @@ class ChatHub {
     const event = parseClientEvent(data.toString());
     if (!event) return this.send(client.ws, { t: "error", code: "BAD_FRAME" });
     if (event.t === "ping") return this.send(client.ws, { t: "pong" });
-    return client.role === "visitor" ? this.onVisitorEvent(client, event) : this.onAdminEvent(client, event);
+    try {
+      return await (client.role === "visitor" ? this.onVisitorEvent(client, event) : this.onAdminEvent(client, event));
+    } catch (error) {
+      console.error("chat: frame failed", error instanceof Error ? error.message : error);
+      this.send(client.ws, { t: "error", code: "SERVER_ERROR", clientId: event.t === "send" ? event.clientId : undefined });
+    }
   }
 
   private async onVisitorEvent(client: VisitorClient, event: ChatClientEvent) {
     const conversationId = client.conversationId;
     switch (event.t) {
       case "send": {
-        const body = normalizeBody(event.body);
-        if (!body) return this.send(client.ws, { t: "error", code: "EMPTY", clientId: event.clientId });
-        if (body.length > CHAT_LIMITS.body)
-          return this.send(client.ws, { t: "error", code: "TOO_LONG", clientId: event.clientId });
+        const value = validateMessageContent(event.body);
+        if ("error" in value) return this.send(client.ws, { t: "error", code: value.error, clientId: event.clientId });
+        const { body } = value;
         if (!this.limiter.check(`v:${conversationId}`).ok)
           return this.send(client.ws, { t: "error", code: "RATE_LIMITED", clientId: event.clientId });
 
@@ -246,6 +262,7 @@ class ChatHub {
         return;
       }
       case "typing":
+        await writeTyping(conversationId, `v:${conversationId}`, "VISITOR", client.name, event.typing);
         return this.toAdmins({ t: "typing", conversationId, from: "VISITOR", typing: event.typing });
       case "read": {
         const { at, ids } = await markRead(conversationId, "ADMIN");
@@ -289,10 +306,9 @@ class ChatHub {
 
     switch (event.t) {
       case "send": {
-        const body = normalizeBody(event.body);
-        if (!body) return this.send(client.ws, { t: "error", code: "EMPTY", clientId: event.clientId });
-        if (body.length > CHAT_LIMITS.body)
-          return this.send(client.ws, { t: "error", code: "TOO_LONG", clientId: event.clientId });
+        const value = validateMessageContent(event.body);
+        if ("error" in value) return this.send(client.ws, { t: "error", code: value.error, clientId: event.clientId });
+        const { body } = value;
         if (!this.limiter.check(`a:${client.userId}`).ok)
           return this.send(client.ws, { t: "error", code: "RATE_LIMITED", clientId: event.clientId });
 
@@ -325,6 +341,7 @@ class ChatHub {
         return;
       }
       case "typing":
+        await writeTyping(conversationId, `a:${client.userId}`, "ADMIN", client.name, event.typing);
         this.toVisitors(conversationId, {
           t: "typing",
           conversationId,

@@ -61,13 +61,18 @@ export function parseCookies(header: string | undefined | null) {
 
 const iso = (d: Date | null | undefined) => (d ? d.toISOString() : null);
 
-export function toMessageDTO(m: ChatMessage): ChatMessageDTO {
+export function toMessageDTO(m: ChatMessage & { reactions?: { emoji: string; actor: string }[] }): ChatMessageDTO {
+  const reactions = new Map<string, string[]>();
+  for (const reaction of m.reactions ?? []) reactions.set(reaction.emoji, [...(reactions.get(reaction.emoji) ?? []), reaction.actor]);
   return {
     id: m.id,
     conversationId: m.conversationId,
     senderType: m.senderType,
     senderName: m.senderName,
     body: m.body,
+    imageId: m.imageId,
+    reactions: [...reactions].map(([emoji, actors]) => ({ emoji, actors: actors.sort() })),
+    reactionsUpdatedAt: iso(m.reactionsUpdatedAt),
     clientId: m.clientId,
     createdAt: m.createdAt.toISOString(),
     deliveredAt: iso(m.deliveredAt),
@@ -215,6 +220,7 @@ export async function listConversations(opts: {
 
 export async function getMessages(conversationId: string, before?: Date | null, take = CHAT_LIMITS.historyPage) {
   const rows = await db.chatMessage.findMany({
+    include: { reactions: true },
     where: { conversationId, ...(before ? { createdAt: { lt: before } } : {}) },
     orderBy: { createdAt: "desc" },
     take: Math.min(take, 200) + 1,
@@ -258,14 +264,17 @@ export async function saveMessage(input: {
   const now = new Date();
   // Resend after a reconnect: return the stored row instead of a duplicate.
   const existing = await db.chatMessage.findUnique({
+    include: { reactions: true },
     where: {
       conversationId_clientId: { conversationId: input.conversationId, clientId: input.clientId },
     },
   });
   if (existing) return { message: existing, duplicate: true };
 
+
   const [message] = await db.$transaction([
     db.chatMessage.create({
+      include: { reactions: true },
       data: {
         conversationId: input.conversationId,
         senderType: input.senderType,
@@ -286,6 +295,10 @@ export async function saveMessage(input: {
         // A visitor writing into a closed conversation reopens it.
         ...(input.senderType === "VISITOR" ? { status: "OPEN", closedAt: null } : {}),
       },
+    }),
+    db.chatTyping.updateMany({
+      where: { conversationId: input.conversationId, actor: input.senderType === "ADMIN" ? `a:${input.senderUserId}` : `v:${input.conversationId}` },
+      data: { expiresAt: now },
     }),
   ]);
   return { message, duplicate: false };

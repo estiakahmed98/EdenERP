@@ -79,7 +79,15 @@
 "whatsapp": {
   "label": "تواصل عبر WhatsApp",
   "scrollTop": "العودة للأعلى"
-}
+},
+    "chat": {
+      "composer": {
+        "emoji": "اختيار رمز تعبيري",
+        "attachedImage": "عرض الصورة المرفقة",
+        "react": "التفاعل مع الرسالة",
+        "reactionFailed": "تعذّر تحديث التفاعل. حاول مجددًا."
+      }
+    }
 },
   "layout": {
     "header": {
@@ -67259,6 +67267,14 @@
       "newPlanTagline": "باقة أسعار مخصّصة",
       "newPlanCta": "ابدأ الآن",
       "newPlanFeature": "الوصول إلى الوحدات الأساسية"
+    },
+    "chat": {
+      "composer": {
+        "emoji": "اختيار رمز تعبيري",
+        "attachedImage": "عرض الصورة المرفقة",
+        "react": "التفاعل مع الرسالة",
+        "reactionFailed": "تعذّر تحديث التفاعل. حاول مجددًا."
+      }
     }
   }
 }

@@ -79,7 +79,15 @@
 "whatsapp": {
   "label": "通过WhatsApp联系",
   "scrollTop": "返回顶部"
-}
+},
+    "chat": {
+      "composer": {
+        "emoji": "选择表情",
+        "attachedImage": "查看附加图片",
+        "react": "回应消息",
+        "reactionFailed": "无法更新回应，请重试。"
+      }
+    }
 },
   "layout": {
     "header": {
@@ -67259,6 +67267,14 @@
       "newPlanTagline": "自定义价格套餐",
       "newPlanCta": "立即开始",
       "newPlanFeature": "核心模块访问权限"
+    },
+    "chat": {
+      "composer": {
+        "emoji": "选择表情",
+        "attachedImage": "查看附加图片",
+        "react": "回应消息",
+        "reactionFailed": "无法更新回应，请重试。"
+      }
     }
   }
 }

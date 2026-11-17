@@ -79,7 +79,15 @@
 "whatsapp": {
   "label": "WhatsApp üzerinden iletişim",
   "scrollTop": "Başa dön"
-}
+},
+    "chat": {
+      "composer": {
+        "emoji": "Emoji seç",
+        "attachedImage": "Eklenen görseli görüntüle",
+        "react": "Mesaja tepki ver",
+        "reactionFailed": "Tepki güncellenemedi. Tekrar deneyin."
+      }
+    }
 },
   "layout": {
     "header": {
@@ -67259,6 +67267,14 @@
       "newPlanTagline": "Özel fiyatlandırma paketi",
       "newPlanCta": "Hemen başlayın",
       "newPlanFeature": "Çekirdek modül erişimi"
+    },
+    "chat": {
+      "composer": {
+        "emoji": "Emoji seç",
+        "attachedImage": "Eklenen görseli görüntüle",
+        "react": "Mesaja tepki ver",
+        "reactionFailed": "Tepki güncellenemedi. Tekrar deneyin."
+      }
     }
   }
 }

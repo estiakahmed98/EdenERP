@@ -115,6 +115,12 @@
         "TOO_LONG": "This message is too long.",
         "invalid": "Please check your details.",
         "generic": "Something went wrong. Please try again."
+      },
+      "composer": {
+        "emoji": "Choose emoji",
+        "attachedImage": "View attached image",
+        "react": "React to message",
+        "reactionFailed": "Could not update the reaction. Try again."
       }
     }
   },
@@ -65698,6 +65704,12 @@
         "now": "Online now",
         "status": "Status",
         "device": "Device"
+      },
+      "composer": {
+        "emoji": "Choose emoji",
+        "attachedImage": "View attached image",
+        "react": "React to message",
+        "reactionFailed": "Could not update the reaction. Try again."
       }
     },
     "dashboard": {

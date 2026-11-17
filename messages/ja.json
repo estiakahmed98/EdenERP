@@ -79,7 +79,15 @@
 "whatsapp": {
   "label": "WhatsAppで相談",
   "scrollTop": "先頭に戻る"
-}
+},
+    "chat": {
+      "composer": {
+        "emoji": "絵文字を選択",
+        "attachedImage": "添付画像を表示",
+        "react": "メッセージにリアクション",
+        "reactionFailed": "リアクションを更新できませんでした。もう一度お試しください。"
+      }
+    }
 },
   "layout": {
     "header": {
@@ -67259,6 +67267,14 @@
       "newPlanTagline": "カスタム料金パッケージ",
       "newPlanCta": "今すぐ始める",
       "newPlanFeature": "コアモジュールへのアクセス"
+    },
+    "chat": {
+      "composer": {
+        "emoji": "絵文字を選択",
+        "attachedImage": "添付画像を表示",
+        "react": "メッセージにリアクション",
+        "reactionFailed": "リアクションを更新できませんでした。もう一度お試しください。"
+      }
     }
   }
 }

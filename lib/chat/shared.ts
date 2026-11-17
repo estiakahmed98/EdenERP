@@ -32,6 +32,8 @@ export const CHAT_LIMITS = {
 
 export type ChatSender = "VISITOR" | "ADMIN" | "SYSTEM";
 export type ChatStatus = "OPEN" | "CLOSED";
+export const CHAT_REACTIONS = ["\u{1F44D}", "\u{2764}\u{FE0F}", "\u{1F602}", "\u{1F62E}", "\u{1F622}", "\u{1F64F}"] as const;
+export type ChatReactionDTO = { emoji: string; actors: string[] };
 
 export type ChatMessageDTO = {
   id: string;
@@ -39,6 +41,9 @@ export type ChatMessageDTO = {
   senderType: ChatSender;
   senderName: string | null;
   body: string;
+  imageId?: string | null;
+  reactions?: ChatReactionDTO[];
+  reactionsUpdatedAt?: string | null;
   clientId: string;
   createdAt: string;
   deliveredAt: string | null;
@@ -95,9 +100,11 @@ export type ChatServerEvent =
       role: "visitor";
       conversation: VisitorConversationDTO;
       agentsOnline: boolean;
+      reactionActor?: string;
     }
-  | { t: "hello"; role: "admin"; userId: string; online: string[] }
+  | { t: "hello"; role: "admin"; userId: string; online: string[]; reactionActor?: string }
   | { t: "message"; message: ChatMessageDTO; conversation?: AdminConversationDTO }
+  | { t: "reaction"; message: ChatMessageDTO }
   | {
       t: "receipt";
       conversationId: string;
@@ -141,6 +148,41 @@ export function normalizeBody(raw: string) {
     .trim();
 }
 
+/** Shared validation keeps polling and WebSocket text messages consistent. */
+export function validateMessageContent(raw: string): { body: string } | { error: "EMPTY" | "TOO_LONG" } {
+  const body = normalizeBody(raw);
+  if (!body) return { error: "EMPTY" };
+  if (body.length > CHAT_LIMITS.body) return { error: "TOO_LONG" };
+  return { body };
+}
+
+export function isChatReaction(value: unknown): value is string {
+  return typeof value === "string" && CHAT_REACTIONS.some((emoji) => emoji === value);
+}
+
+/** A reaction never inserts an unloaded message or rolls back a newer update. */
+export function applyReaction<T extends ChatMessageDTO>(messages: T[], update: ChatMessageDTO): T[] {
+  return messages.map((message) => {
+    if (message.id !== update.id || message.conversationId !== update.conversationId) return message;
+    if ((message.reactionsUpdatedAt ?? "") > (update.reactionsUpdatedAt ?? "")) return message;
+    return { ...message, reactions: update.reactions ?? [], reactionsUpdatedAt: update.reactionsUpdatedAt };
+  });
+}
+
+/** Aggregate colleagues before emitting a stop event; stopped rows expire naturally. */
+export function typingEvents(rows: { conversationId: string; senderType: string; name: string; expiresAt: Date }[], now = Date.now()): ChatServerEvent[] {
+  const latest = new Map<string, (typeof rows)[number]>();
+  for (const row of rows) {
+    if (row.senderType !== "ADMIN" && row.senderType !== "VISITOR") continue;
+    const key = `${row.conversationId}:${row.senderType}`;
+    if (!latest.has(key) || latest.get(key)!.expiresAt < row.expiresAt) latest.set(key, row);
+  }
+  return [...latest.values()].map((row) => ({
+    t: "typing", conversationId: row.conversationId, from: row.senderType as "ADMIN" | "VISITOR",
+    typing: row.expiresAt.getTime() > now, name: row.name,
+  }));
+}
+
 /** Strictly validate an inbound frame. Returns null for anything malformed. */
 export function parseClientEvent(raw: string): ChatClientEvent | null {
   let data: unknown;
@@ -156,6 +198,7 @@ export function parseClientEvent(raw: string): ChatClientEvent | null {
     case "send":
       if (!isStr(e.clientId) || !/^[A-Za-z0-9_-]{8,64}$/.test(e.clientId)) return null;
       if (!isStr(e.body) || !optId(e.conversationId)) return null;
+      if ("imageId" in e) return null; // Attachment sending has been removed.
       return {
         t: "send",
         clientId: e.clientId,

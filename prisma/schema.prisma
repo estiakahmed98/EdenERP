@@ -345,6 +345,8 @@ model ChatConversation {
   closedAt           DateTime? @map("closed_at") @db.Timestamptz(3)
 
   messages  ChatMessage[]
+  images    ChatImage[]
+  typing    ChatTyping[]
   createdAt DateTime      @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt DateTime      @updatedAt @map("updated_at") @db.Timestamptz(3)
 
@@ -364,6 +366,10 @@ model ChatMessage {
   senderUser     User?            @relation(fields: [senderUserId], references: [id], onDelete: SetNull)
   senderName     String?          @map("sender_name") @db.VarChar(120)
   body           String           @db.Text
+  imageId        String?          @map("image_id") @db.Uuid
+  image          ChatImage?       @relation(fields: [imageId], references: [id], onDelete: SetNull)
+  reactions      ChatReaction[]
+  reactionsUpdatedAt DateTime?    @map("reactions_updated_at") @db.Timestamptz(3)
   /// Client-generated id so a resend after reconnect is not stored twice.
   clientId       String           @map("client_id") @db.VarChar(64)
   deliveredAt    DateTime?        @map("delivered_at") @db.Timestamptz(3)
@@ -374,6 +380,47 @@ model ChatMessage {
   @@index([conversationId, createdAt])
   @@index([conversationId, senderType, readAt])
   @@map("chat_messages")
+}
+
+/// One reaction per participant and message; actor is an opaque participant key.
+model ChatReaction {
+  messageId String      @map("message_id") @db.Uuid
+  message   ChatMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  actor     String      @db.VarChar(64)
+  emoji     String      @db.VarChar(16)
+
+  @@id([messageId, actor])
+  @@map("chat_reactions")
+}
+
+/// Small, private chat images. Database storage survives serverless restarts.
+model ChatImage {
+  id             String           @id @default(uuid()) @db.Uuid
+  conversationId String           @map("conversation_id") @db.Uuid
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  senderType     ChatSenderType   @map("sender_type")
+  senderUserId   String?          @map("sender_user_id")
+  mime           String           @db.VarChar(32)
+  data           Bytes
+  messages       ChatMessage[]
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([conversationId, createdAt])
+  @@map("chat_images")
+}
+
+/// Expiring typing state shared by polling and WebSocket transports.
+model ChatTyping {
+  conversationId String           @map("conversation_id") @db.Uuid
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  actor          String           @db.VarChar(160)
+  senderType     ChatSenderType   @map("sender_type")
+  name           String           @db.VarChar(120)
+  expiresAt      DateTime         @map("expires_at") @db.Timestamptz(3)
+
+  @@id([conversationId, actor])
+  @@index([expiresAt])
+  @@map("chat_typing")
 }
 
 /// Admin heartbeat for the HTTP (polling) chat transport, used where the
