@@ -375,3 +375,14 @@ model ChatMessage {
   @@index([conversationId, senderType, readAt])
   @@map("chat_messages")
 }
+
+/// Admin heartbeat for the HTTP (polling) chat transport, used where the
+/// in-process WebSocket hub is unavailable (serverless hosts such as Vercel).
+model ChatAgentPresence {
+  userId     String   @id @map("user_id")
+  name       String?  @db.VarChar(120)
+  lastSeenAt DateTime @map("last_seen_at") @db.Timestamptz(3)
+
+  @@index([lastSeenAt])
+  @@map("chat_agent_presence")
+}

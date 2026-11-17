@@ -20,6 +20,13 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    // Live chat transport: Vercel (serverless) cannot hold WebSockets, so the
+    // widget polls /api/chat/poll there. Elsewhere it tries the WebSocket hub
+    // from server.ts and falls back to polling on its own.
+    NEXT_PUBLIC_CHAT_TRANSPORT:
+      process.env.NEXT_PUBLIC_CHAT_TRANSPORT || (process.env.VERCEL ? "poll" : ""),
+  },
   // Type errors must fail the build (tsc --noEmit is clean as of the 2026-11 audit).
   typescript: {
     ignoreBuildErrors: false,
