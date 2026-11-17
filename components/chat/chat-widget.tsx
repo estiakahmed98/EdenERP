@@ -188,12 +188,12 @@ export default function ChatWidget() {
         <div
           role="dialog"
           aria-label={t("title")}
-          className="fixed inset-x-3 bottom-24 z-50 flex max-h-[min(640px,calc(100dvh-8rem))] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl sm:inset-x-auto sm:end-5 sm:w-[380px]"
+          className="fixed inset-x-3 bottom-24 z-50 flex max-h-[min(640px,calc(100dvh-8rem))] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl [--primary:#1088ef] [--secondary:#003180] sm:inset-x-auto sm:end-5 sm:w-[380px]"
         >
           {/* Header */}
-          <div className="flex items-center gap-3 border-b border-border bg-primary px-4 py-3 text-primary-foreground">
+          <div className="flex items-center gap-3 border-b border-primary bg-[linear-gradient(100deg,#1088ef,#003180)] px-4 py-3 text-white">
             <div className="relative">
-              <span className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/15">
+              <span className="flex size-9 items-center justify-center rounded-full bg-white/15">
                 <MessageCircle className="size-5" aria-hidden />
               </span>
               <span
@@ -217,7 +217,7 @@ export default function ChatWidget() {
               type="button"
               onClick={() => setOpen(false)}
               aria-label={t("close")}
-              className="rounded-full p-1.5 transition hover:bg-primary-foreground/15"
+              className="rounded-full p-1.5 transition hover:bg-white/15"
             >
               <X className="size-5" />
             </button>
@@ -241,7 +241,7 @@ export default function ChatWidget() {
             />
           ) : (
             <>
-              <div ref={listRef} className="flex-1 space-y-2 overflow-y-auto bg-muted/30 px-3 py-4">
+              <div ref={listRef} className="flex-1 space-y-2 overflow-y-auto bg-[#f0f5fa] px-3 py-4 dark:bg-muted/30">
                 {hasMore && (
                   <button
                     type="button"
@@ -271,7 +271,7 @@ export default function ChatWidget() {
                         className={cn(
                           "max-w-[80%] rounded-2xl px-3 py-2 text-sm shadow-sm",
                           mine
-                            ? "rounded-ee-sm bg-primary text-primary-foreground"
+                            ? "rounded-ee-sm bg-[linear-gradient(100deg,#1088ef,#003180)] text-white"
                             : "rounded-es-sm border border-border bg-background",
                         )}
                       >
@@ -282,7 +282,7 @@ export default function ChatWidget() {
                         <div
                           className={cn(
                             "mt-1 flex items-center justify-end gap-1 text-[10px]",
-                            mine ? "text-primary-foreground/75" : "text-muted-foreground",
+                            mine ? "text-white/75" : "text-muted-foreground",
                           )}
                         >
                           <time dateTime={m.createdAt}>
@@ -328,7 +328,7 @@ export default function ChatWidget() {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? t("close") : t("open")}
         aria-expanded={open}
-        className="relative flex h-12 w-12 items-center justify-center rounded-full border border-primary bg-primary text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+        className="relative flex h-12 w-12 items-center justify-center rounded-full border border-[#1088ef] bg-[linear-gradient(100deg,#1088ef,#003180)] text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
       >
         {open ? <X size={22} /> : <MessageCircle size={24} />}
         {!open && unread > 0 && (
@@ -361,7 +361,7 @@ function Composer({
   };
   return (
     <form
-      className="flex items-end gap-2 border-t border-border p-3"
+      className="flex items-end gap-2 border-t border-border bg-[#f7fafd] p-3 dark:bg-background"
       onSubmit={(e) => {
         e.preventDefault();
         submit();

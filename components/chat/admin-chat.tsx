@@ -5,11 +5,14 @@ import { useLocale, useTranslations } from "next-intl";
 import {
   ArrowLeft,
   CheckCircle2,
+  Clock3,
   Globe,
   Inbox,
   Loader2,
   Mail,
   MessagesSquare,
+  Monitor,
+  PanelRight,
   Phone,
   RotateCcw,
   Search,
@@ -21,6 +24,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import {
   CHAT_LIMITS,
@@ -56,6 +60,7 @@ export default function AdminChat() {
   const [conversations, setConversations] = useState<AdminConversationDTO[]>([]);
   const [listLoading, setListLoading] = useState(true);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const [messages, setMessages] = useState<LocalMessage[]>([]);
   const [hasMore, setHasMore] = useState(false);
   const [threadLoading, setThreadLoading] = useState(false);
@@ -88,6 +93,7 @@ export default function AdminChat() {
 
   const openThread = useCallback(
     async (id: string) => {
+      setDetailsOpen(false);
       setActiveId(id);
       setMessages([]);
       setThreadLoading(true);
@@ -245,16 +251,21 @@ export default function AdminChat() {
     iso ? new Date(iso).toLocaleString(locale, { dateStyle: "medium", timeStyle: "short" }) : "—";
 
   return (
-    <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-tight">{t("title")}</h1>
-          <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
+    <div className="flex h-[calc(100dvh-4rem)] min-h-[580px] flex-col gap-5 p-3 [--primary:#1088ef] [--secondary:#003180] sm:p-5 lg:p-6">
+      <div className="flex shrink-0 items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <span className="btn-gradient flex size-12 shrink-0 items-center justify-center rounded-2xl shadow-sm">
+            <MessagesSquare className="size-6" />
+          </span>
+          <div>
+            <h1 className="text-xl font-semibold tracking-tight sm:text-2xl">{t("title")}</h1>
+            <p className="mt-1 hidden text-sm text-muted-foreground sm:block">{t("subtitle")}</p>
+          </div>
         </div>
         <span
           className={cn(
-            "inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium",
-            status === "open" ? "border-emerald-500/40 text-emerald-600" : "border-amber-500/40 text-amber-600",
+            "inline-flex shrink-0 items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-medium",
+            status === "open" ? "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400" : "border-amber-500/20 bg-amber-500/10 text-amber-700 dark:text-amber-400",
           )}
         >
           <span className={cn("size-2 rounded-full", status === "open" ? "bg-emerald-500" : "animate-pulse bg-amber-500")} />
@@ -262,10 +273,17 @@ export default function AdminChat() {
         </span>
       </div>
 
-      <div className="grid h-[calc(100dvh-14rem)] min-h-[520px] overflow-hidden rounded-xl border border-border bg-card md:grid-cols-[320px_1fr] xl:grid-cols-[320px_1fr_280px]">
+      <div className={cn(
+        "relative grid min-h-0 flex-1 overflow-hidden rounded-2xl border border-border bg-card shadow-[0_8px_40px_-16px_rgba(20,35,59,0.18)] lg:grid-cols-[280px_minmax(0,1fr)] 2xl:grid-cols-[320px_minmax(0,1fr)]",
+        active && "xl:grid-cols-[280px_minmax(0,1fr)_260px] 2xl:grid-cols-[320px_minmax(0,1fr)_290px]",
+      )}>
         {/* ------------------------------------------------ conversation list */}
-        <aside className={cn("flex min-h-0 flex-col border-e border-border", activeId && "hidden md:flex")}>
-          <div className="space-y-2 border-b border-border p-3">
+        <aside className={cn("flex min-h-0 min-w-0 flex-col border-e border-border", activeId && "hidden lg:flex")}>
+          <div className="space-y-4 border-b border-border p-4">
+            <div className="flex items-center justify-between gap-2">
+              <h2 className="flex items-center gap-2 text-sm font-semibold"><Inbox className="size-4 text-primary" />{t(`filters.${filter}`)}</h2>
+              <span className="rounded-md bg-muted/60 px-2 py-0.5 text-xs font-medium tabular-nums text-muted-foreground">{visible.length}</span>
+            </div>
             <div className="relative">
               <Search className="pointer-events-none absolute start-2.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
               <Input
@@ -273,18 +291,20 @@ export default function AdminChat() {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={t("search")}
                 aria-label={t("search")}
-                className="ps-8"
+                title={t("search")}
+                className="h-10 rounded-xl border-border/70 bg-muted/25 ps-8 text-xs shadow-none"
               />
             </div>
-            <div className="flex gap-1 rounded-lg bg-muted p-1 text-xs">
+            <div className="flex gap-1 rounded-xl bg-muted/45 p-1 text-xs">
               {(["OPEN", "CLOSED", "ALL"] as const).map((f) => (
                 <button
                   key={f}
                   type="button"
                   onClick={() => setFilter(f)}
+                  aria-pressed={filter === f}
                   className={cn(
-                    "flex-1 rounded-md px-2 py-1 font-medium transition",
-                    filter === f ? "bg-background shadow-sm" : "text-muted-foreground hover:text-foreground",
+                    "flex-1 rounded-lg px-2 py-2 font-medium transition focus-visible:outline-2 focus-visible:outline-primary",
+                    filter === f ? "btn-gradient text-white shadow-sm" : "text-muted-foreground hover:text-foreground",
                   )}
                 >
                   {t(`filters.${f}`)}
@@ -292,7 +312,7 @@ export default function AdminChat() {
               ))}
             </div>
           </div>
-          <div className="min-h-0 flex-1 overflow-y-auto">
+          <div className="min-h-0 flex-1 space-y-1 overflow-y-auto p-2">
             {listLoading && conversations.length === 0 ? (
               <div className="flex justify-center p-8">
                 <Loader2 className="size-5 animate-spin text-muted-foreground" />
@@ -308,13 +328,14 @@ export default function AdminChat() {
                   key={c.id}
                   type="button"
                   onClick={() => void openThread(c.id)}
+                  aria-current={c.id === activeId ? "true" : undefined}
                   className={cn(
-                    "flex w-full items-start gap-3 border-b border-border/60 px-3 py-3 text-start transition hover:bg-muted/60",
-                    c.id === activeId && "bg-muted",
+                    "relative flex w-full items-start gap-3 rounded-xl border border-transparent px-3 py-4 text-start transition focus-visible:outline-2 focus-visible:outline-primary",
+                    c.id === activeId ? "border-primary/20 bg-primary/10 shadow-xs" : "hover:bg-primary/5",
                   )}
                 >
                   <span className="relative shrink-0">
-                    <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                    <span className={cn("flex size-10 items-center justify-center rounded-2xl text-sm font-semibold", c.id === activeId ? "bg-primary text-white" : "bg-primary/10 text-primary")}>
                       {initials(c.visitorName)}
                     </span>
                     <span
@@ -326,12 +347,12 @@ export default function AdminChat() {
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="flex items-center justify-between gap-2">
-                      <span className={cn("truncate text-sm", c.unreadCount ? "font-semibold" : "font-medium")}>
+                      <span className={cn("truncate text-[13px]", c.unreadCount || c.id === activeId ? "font-semibold" : "font-medium")}>
                         {c.visitorName}
                       </span>
                       <span className="shrink-0 text-[11px] text-muted-foreground">{fmtTime(c.lastMessageAt ?? c.createdAt)}</span>
                     </span>
-                    <span className="mt-0.5 flex items-center justify-between gap-2">
+                    <span className="mt-1.5 flex items-center justify-between gap-2">
                       <span className="truncate text-xs text-muted-foreground">
                         {typing[c.id] ? (
                           <span className="inline-flex items-center gap-1 text-primary">
@@ -342,7 +363,7 @@ export default function AdminChat() {
                         )}
                       </span>
                       {c.unreadCount > 0 && (
-                        <span className="flex min-w-5 shrink-0 items-center justify-center rounded-full bg-primary px-1.5 text-[11px] font-bold text-primary-foreground">
+                        <span className="flex min-w-5 shrink-0 items-center justify-center rounded-full bg-primary px-1.5 text-[11px] font-bold text-white">
                           {c.unreadCount}
                         </span>
                       )}
@@ -355,25 +376,34 @@ export default function AdminChat() {
         </aside>
 
         {/* ------------------------------------------------------- thread */}
-        <section className={cn("flex min-h-0 flex-col", !activeId && "hidden md:flex")}>
+        <section className={cn("flex min-h-0 min-w-0 flex-col", !activeId && "hidden lg:flex")}>
           {!active ? (
-            <div className="flex flex-1 flex-col items-center justify-center gap-2 text-sm text-muted-foreground">
-              <MessagesSquare className="size-10" />
-              {t("pick")}
+            <div className="flex flex-1 flex-col items-center justify-center gap-5 bg-[#f0f5fa] p-8 text-center dark:bg-muted/20">
+              <div className="flex size-24 items-center justify-center rounded-[2rem] border border-primary/10 bg-primary/5 text-primary shadow-[0_0_0_12px_color-mix(in_srgb,var(--primary)_3%,transparent)]">
+                <MessagesSquare className="size-10" strokeWidth={1.5} />
+              </div>
+              <div className="space-y-2">
+                <p className="font-semibold">{t("title")}</p>
+                <p className="max-w-64 text-sm leading-relaxed text-muted-foreground">{t("pick")}</p>
+              </div>
             </div>
           ) : (
             <>
-              <header className="flex items-center gap-3 border-b border-border px-4 py-3">
-                <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setActiveId(null)} aria-label={t("back")}>
+              <header className="flex min-h-20 shrink-0 items-center gap-2 border-b border-primary bg-[linear-gradient(100deg,#1088ef,#003180)] px-3 py-3 text-white sm:gap-3 sm:px-5">
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/15 hover:text-white lg:hidden" onClick={() => setActiveId(null)} aria-label={t("back")}>
                   <ArrowLeft className="size-4 rtl:-scale-x-100" />
                 </Button>
+                <span className="relative hidden shrink-0 sm:block">
+                  <span className="flex size-10 items-center justify-center rounded-2xl border border-white/20 bg-white/15 text-sm font-semibold text-white">{initials(active.visitorName)}</span>
+                  <span className={cn("absolute -bottom-0.5 -end-0.5 size-3 rounded-full border-2 border-primary", isOnline(active) ? "bg-emerald-400" : "bg-zinc-300")} />
+                </span>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate font-semibold">{active.visitorName}</p>
-                  <p className="truncate text-xs text-muted-foreground">
+                  <p className="truncate text-sm font-semibold">{active.visitorName}</p>
+                  <p className="mt-1 truncate text-[11px] text-white/80">
                     {typing[active.id] ? (
-                      <span className="text-primary">{t("typingShort")}</span>
+                      <span className="text-white/90">{t("typingShort")}</span>
                     ) : isOnline(active) ? (
-                      <span className="text-emerald-600">
+                      <span className="text-white/90">
                         {t("onlineOn", { path: active.currentPath ?? "/" })}
                       </span>
                     ) : (
@@ -381,13 +411,26 @@ export default function AdminChat() {
                     )}
                   </p>
                 </div>
-                <Button variant={active.status === "OPEN" ? "outline" : "default"} size="sm" onClick={toggleStatus} disabled={status !== "open"}>
+                <Button className="h-9 rounded-xl border-white/30 bg-white/10 text-xs text-white shadow-none hover:bg-white/20 hover:text-white dark:border-white/30 dark:bg-white/10 dark:hover:bg-white/20" variant="outline" size="sm" onClick={toggleStatus} disabled={status !== "open"}>
                   {active.status === "OPEN" ? <CheckCircle2 className="size-4" /> : <RotateCcw className="size-4" />}
                   {active.status === "OPEN" ? t("close") : t("reopen")}
                 </Button>
+                <Sheet open={detailsOpen} onOpenChange={setDetailsOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon" className="shrink-0 rounded-xl text-white hover:bg-white/15 hover:text-white xl:hidden" aria-label={t("details.title")}>
+                      <PanelRight className="size-4" />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side={locale === "ar" ? "left" : "right"} aria-describedby={undefined} className="gap-0 overflow-y-auto bg-card [--primary:#1088ef] [--secondary:#003180]" dir={locale === "ar" ? "rtl" : "ltr"}>
+                    <div className="flex h-20 shrink-0 items-center border-b border-border px-5">
+                      <SheetTitle className="text-sm">{t("details.title")}</SheetTitle>
+                    </div>
+                    <VisitorDetails conversation={active} online={isOnline(active)} fmtFull={fmtFull} />
+                  </SheetContent>
+                </Sheet>
               </header>
 
-              <div ref={listRef} className="min-h-0 flex-1 space-y-2 overflow-y-auto bg-muted/30 px-4 py-4">
+              <div ref={listRef} role="log" aria-label={active.visitorName} aria-busy={threadLoading} className="min-h-0 flex-1 space-y-4 overflow-y-auto overscroll-contain bg-[#f0f5fa] px-4 py-6 dark:bg-muted/20 sm:px-6">
                 {threadLoading && (
                   <div className="flex justify-center p-6">
                     <Loader2 className="size-5 animate-spin text-muted-foreground" />
@@ -398,49 +441,62 @@ export default function AdminChat() {
                     {t("loadOlder")}
                   </button>
                 )}
-                {messages.map((m) => {
+                {messages.map((m, index) => {
                   const mine = m.senderType === "ADMIN";
                   const state = deliveryState(m);
+                  const date = new Date(m.createdAt);
+                  const previous = messages[index - 1];
+                  const showDate = !previous || new Date(previous.createdAt).toDateString() !== date.toDateString();
                   return (
-                    <div key={m.id} className={cn("flex", mine ? "justify-end" : "justify-start")}>
-                      <div
-                        className={cn(
-                          "max-w-[75%] rounded-2xl px-3 py-2 text-sm shadow-sm",
-                          mine
-                            ? "rounded-ee-sm bg-primary text-primary-foreground"
-                            : "rounded-es-sm border border-border bg-background",
-                        )}
-                      >
-                        {mine && m.senderName && <p className="mb-0.5 text-[11px] font-semibold opacity-80">{m.senderName}</p>}
-                        <p className="whitespace-pre-wrap break-words">{m.body}</p>
+                    <div key={m.id}>
+                      {showDate && (
+                        <div className="mb-6 flex items-center justify-center gap-3" aria-hidden="true">
+                          <span className="h-px w-10 bg-border" />
+                          <time dateTime={m.createdAt} className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">{date.toLocaleDateString(locale, { day: "numeric", month: "short", year: "numeric" })}</time>
+                          <span className="h-px w-10 bg-border" />
+                        </div>
+                      )}
+                      <div className={cn("flex items-end gap-2", mine ? "justify-end" : "justify-start")}>
+                        {!mine && <span aria-hidden="true" className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-card text-[9px] font-semibold text-muted-foreground">{initials(active.visitorName)}</span>}
                         <div
                           className={cn(
-                            "mt-1 flex items-center justify-end gap-1 text-[10px]",
-                            mine ? "text-primary-foreground/75" : "text-muted-foreground",
+                            "min-w-20 max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-xs sm:max-w-[75%]",
+                            mine
+                              ? "rounded-ee-md bg-[linear-gradient(100deg,#1088ef,#003180)] text-white"
+                              : "rounded-es-md border border-border/70 bg-card",
                           )}
                         >
-                          <time dateTime={m.createdAt} title={fmtFull(m.createdAt)}>
-                            {fmtTime(m.createdAt)}
-                          </time>
-                          {mine && (
-                            <MessageStatus
-                              state={state}
-                              label={`${t(`status.${state}`)}${m.readAt ? ` · ${fmtFull(m.readAt)}` : ""}`}
-                            />
+                          {mine && m.senderName && <p className="mb-0.5 text-[11px] font-semibold opacity-80">{m.senderName}</p>}
+                          <p className="whitespace-pre-wrap [overflow-wrap:anywhere]">{m.body}</p>
+                          <div
+                            className={cn(
+                              "mt-1.5 flex items-center justify-end gap-1 text-[10px]",
+                              mine ? "text-white/75" : "text-muted-foreground",
+                            )}
+                          >
+                            <time dateTime={m.createdAt} title={fmtFull(m.createdAt)}>
+                              {fmtTime(m.createdAt)}
+                            </time>
+                            {mine && (
+                              <MessageStatus
+                                state={state}
+                                label={`${t(`status.${state}`)}${m.readAt ? ` · ${fmtFull(m.readAt)}` : ""}`}
+                              />
+                            )}
+                          </div>
+                          {m.failed && (
+                            <button
+                              type="button"
+                              className="mt-1 text-[11px] font-medium underline"
+                              onClick={() => {
+                                setMessages((list) => list.filter((x) => x.clientId !== m.clientId));
+                                sendText(m.body);
+                              }}
+                            >
+                              {t("retry")}
+                            </button>
                           )}
                         </div>
-                        {m.failed && (
-                          <button
-                            type="button"
-                            className="mt-1 text-[11px] font-medium underline"
-                            onClick={() => {
-                              setMessages((list) => list.filter((x) => x.clientId !== m.clientId));
-                              sendText(m.body);
-                            }}
-                          >
-                            {t("retry")}
-                          </button>
-                        )}
                       </div>
                     </div>
                   );
@@ -473,29 +529,11 @@ export default function AdminChat() {
 
         {/* ------------------------------------------------------ details */}
         {active && (
-          <aside className="hidden min-h-0 overflow-y-auto border-s border-border p-4 text-sm xl:block">
-            <h2 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">{t("details.title")}</h2>
-            <dl className="space-y-3">
-              <Detail icon={User} label={t("details.name")} value={active.visitorName} />
-              <Detail
-                icon={Mail}
-                label={t("details.email")}
-                value={active.visitorEmail ? <a className="text-primary hover:underline" href={`mailto:${active.visitorEmail}`}>{active.visitorEmail}</a> : "—"}
-              />
-              <Detail
-                icon={Phone}
-                label={t("details.phone")}
-                value={active.visitorPhone ? <a className="text-primary hover:underline" href={`tel:${active.visitorPhone}`}>{active.visitorPhone}</a> : "—"}
-              />
-              <Detail icon={Globe} label={t("details.currentPage")} value={active.currentPath ?? "—"} />
-              <Detail icon={Globe} label={t("details.startPage")} value={active.startPath ?? "—"} />
-              <Detail label={t("details.account")} value={active.userId ? t("details.registered") : t("details.guest")} />
-              <Detail label={t("details.language")} value={active.locale.toUpperCase()} />
-              <Detail label={t("details.started")} value={fmtFull(active.createdAt)} />
-              <Detail label={t("details.lastSeen")} value={isOnline(active) ? t("details.now") : fmtFull(active.visitorLastSeenAt)} />
-              <Detail label={t("details.status")} value={t(`filters.${active.status}`)} />
-              {active.userAgent && <Detail label={t("details.device")} value={<span className="break-all text-xs">{active.userAgent}</span>} />}
-            </dl>
+          <aside className="hidden min-h-0 overflow-y-auto border-s border-border bg-card text-sm xl:block">
+            <div className="flex h-20 items-center border-b border-border px-5">
+              <h2 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground"><User className="size-4" />{t("details.title")}</h2>
+            </div>
+            <VisitorDetails conversation={active} online={isOnline(active)} fmtFull={fmtFull} />
           </aside>
         )}
       </div>
@@ -510,6 +548,47 @@ function mergeConversation(list: AdminConversationDTO[], c: AdminConversationDTO
   );
 }
 
+function VisitorDetails({ conversation, online, fmtFull }: {
+  conversation: AdminConversationDTO;
+  online: boolean;
+  fmtFull: (iso: string | null) => string;
+}) {
+  const t = useTranslations("admin.chat");
+  return (
+    <>
+      <div className="border-b border-border px-5 py-6 text-center">
+        <span className="mx-auto flex size-16 items-center justify-center rounded-3xl border border-primary/10 bg-primary/10 text-xl font-semibold text-primary">{initials(conversation.visitorName)}</span>
+        <h3 className="mt-3 break-words font-semibold">{conversation.visitorName}</h3>
+        <p className="mt-1 text-xs text-muted-foreground">{conversation.userId ? t("details.registered") : t("details.guest")}</p>
+        <span className={cn("mt-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-medium", conversation.status === "OPEN" ? "bg-primary/10 text-primary" : "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400")}><span className={cn("size-1.5 rounded-full", conversation.status === "OPEN" ? "bg-primary" : "bg-emerald-500")} />{t(`filters.${conversation.status}`)}</span>
+      </div>
+      <dl className="space-y-4 border-b border-border p-5">
+        <Detail
+          icon={Mail}
+          label={t("details.email")}
+          value={conversation.visitorEmail ? <a className="text-primary hover:underline" href={`mailto:${conversation.visitorEmail}`}>{conversation.visitorEmail}</a> : "—"}
+        />
+        <Detail
+          icon={Phone}
+          label={t("details.phone")}
+          value={conversation.visitorPhone ? <a className="text-primary hover:underline" href={`tel:${conversation.visitorPhone}`}>{conversation.visitorPhone}</a> : "—"}
+        />
+      </dl>
+      <dl className="space-y-4 border-b border-border p-5">
+        <Detail icon={Globe} label={t("details.currentPage")} value={conversation.currentPath ?? "—"} />
+        <Detail icon={Globe} label={t("details.startPage")} value={conversation.startPath ?? "—"} />
+        <Detail label={t("details.account")} value={conversation.userId ? t("details.registered") : t("details.guest")} />
+        <Detail label={t("details.language")} value={conversation.locale.toUpperCase()} />
+      </dl>
+      <dl className="space-y-4 p-5">
+        <Detail icon={Clock3} label={t("details.started")} value={fmtFull(conversation.createdAt)} />
+        <Detail icon={Clock3} label={t("details.lastSeen")} value={online ? <span className="text-emerald-600 dark:text-emerald-400">{t("details.now")}</span> : fmtFull(conversation.visitorLastSeenAt)} />
+        {conversation.userAgent && <Detail icon={Monitor} label={t("details.device")} value={<span className="text-[11px] leading-relaxed text-muted-foreground">{conversation.userAgent}</span>} />}
+      </dl>
+    </>
+  );
+}
+
 function Detail({
   icon: Icon,
   label,
@@ -520,12 +599,12 @@ function Detail({
   value: React.ReactNode;
 }) {
   return (
-    <div>
-      <dt className="flex items-center gap-1.5 text-xs text-muted-foreground">
-        {Icon && <Icon className="size-3.5" />}
+    <div className="grid grid-cols-[28px_minmax(0,1fr)] gap-x-2">
+      <dt className="col-span-2 flex items-center gap-2 text-[11px] text-muted-foreground">
+        <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-muted/40">{Icon ? <Icon className="size-3.5" /> : <User className="size-3.5" />}</span>
         {label}
       </dt>
-      <dd className="mt-0.5 break-words">{value}</dd>
+      <dd className="col-start-2 -mt-0.5 text-xs leading-relaxed [overflow-wrap:anywhere]">{value}</dd>
     </div>
   );
 }
@@ -549,34 +628,36 @@ function AdminComposer({
   };
   return (
     <form
-      className="flex items-end gap-2 border-t border-border p-3"
+      className="shrink-0 border-t border-border bg-[#f7fafd] p-3 dark:bg-card sm:p-4"
       onSubmit={(e) => {
         e.preventDefault();
         submit();
       }}
     >
-      <Textarea
-        value={text}
-        rows={1}
-        maxLength={CHAT_LIMITS.body}
-        placeholder={placeholder}
-        aria-label={placeholder}
-        className="max-h-40 min-h-10 resize-none"
-        onChange={(e) => {
-          setText(e.target.value);
-          if (e.target.value) onTyping();
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
-            e.preventDefault();
-            submit();
-          }
-        }}
-      />
-      <Button type="submit" disabled={!text.trim()} aria-label={sendLabel}>
-        <Send className="size-4 rtl:-scale-x-100" />
-        <span className="hidden sm:inline">{sendLabel}</span>
-      </Button>
+      <div className="flex items-end gap-3 rounded-2xl border border-primary/15 bg-card p-2 transition focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/10">
+        <Textarea
+          value={text}
+          rows={1}
+          maxLength={CHAT_LIMITS.body}
+          placeholder={placeholder}
+          aria-label={placeholder}
+          className="max-h-40 min-h-12 resize-none border-0 bg-transparent py-3 text-sm shadow-none focus-visible:ring-0 dark:bg-transparent"
+          onChange={(e) => {
+            setText(e.target.value);
+            if (e.target.value) onTyping();
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
+              e.preventDefault();
+              submit();
+            }
+          }}
+        />
+        <Button type="submit" className="mb-0.5 h-10 rounded-xl px-4 text-white shadow-sm" disabled={!text.trim()} aria-label={sendLabel}>
+          <Send className="size-4 rtl:-scale-x-100" />
+          <span className="hidden sm:inline">{sendLabel}</span>
+        </Button>
+      </div>
     </form>
   );
 }
