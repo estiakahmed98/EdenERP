@@ -252,6 +252,8 @@ export async function saveMessage(input: {
   body: string;
   clientId: string;
   delivered: boolean;
+  /** false: leave the inbox preview / last-activity time alone (automatic replies). */
+  updatePreview?: boolean;
 }) {
   const now = new Date();
   // Resend after a reconnect: return the stored row instead of a duplicate.
@@ -278,8 +280,9 @@ export async function saveMessage(input: {
     db.chatConversation.update({
       where: { id: input.conversationId },
       data: {
-        lastMessageAt: now,
-        lastMessagePreview: input.body.replace(/\s+/g, " ").slice(0, 200),
+        ...(input.updatePreview === false
+          ? {}
+          : { lastMessageAt: now, lastMessagePreview: input.body.replace(/\s+/g, " ").slice(0, 200) }),
         // A visitor writing into a closed conversation reopens it.
         ...(input.senderType === "VISITOR" ? { status: "OPEN", closedAt: null } : {}),
       },

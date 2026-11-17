@@ -196,7 +196,22 @@
           "talentAcquisition": "Yetenek Kazanımı",
           "textile": "Tekstil",
           "metal": "maden",
-          "furniture": "Mobilya"
+          "furniture": "Mobilya",
+          "fmcg": "Hızlı Tüketim Ürünleri",
+          "groupOfIndustries": "Sanayi Grupları",
+          "fmcgFood": "Gıda",
+          "fmcgBeverages": "İçecekler",
+          "fmcgPersonalCare": "Kişisel Bakım ve Güzellik",
+          "fmcgHomeCare": "Ev ve Ev Bakımı",
+          "fmcgHealthHygiene": "Sağlık ve Hijyen (OTC)",
+          "fmcgBabyCare": "Bebek ve Çocuk Bakımı",
+          "fmcgTobacco": "Tütün Sektörü",
+          "fmcgPetCare": "Evcil Hayvan Bakımı",
+          "groupManufacturing": "İmalat",
+          "groupTextiles": "Tekstil",
+          "groupPharmaceuticals": "İlaç",
+          "groupHeavyIndustry": "Ağır Sanayi",
+          "groupFinancialServices": "Finansal Hizmetler"
         },
         "community": {
           "learn": "Öğrenin",
@@ -64937,6 +64952,1780 @@
           "title": "Fakülte Ayarları",
           "headline": "Fakültenize göre yapılandırın.\nDeğiştirmeden önce inceleyin.",
           "description": "Akademik tarihleri, yerel kontenjan planlarını ve kurumsal referans alanlarını düzenleyip anında doğrulayın."
+        }
+      }
+    },
+    "sectorCommon": {
+      "breadcrumb": "İçerik yolu",
+      "home": "Ana sayfa",
+      "industries": "Sektörler",
+      "sampleBadge": "Örnek · kurgusal kayıtlar",
+      "tableScroll": "yatay kaydırın",
+      "flowEyebrow": "İş akışı",
+      "pillarsEyebrow": "ERP ile birlikte yönetilenler",
+      "modulesEyebrow": "Bağlantılı ürün sayfaları",
+      "modulesTitle": "Bu iş akışını destekleyen ürün sayfalarını inceleyin",
+      "faqEyebrow": "Bilmenizde fayda var",
+      "faqTitle": "Ekiplerin sık sorduğu sorular",
+      "relatedFmcg": "Diğer hızlı tüketim kategorileri",
+      "relatedGroup": "Diğer grup sektörleri",
+      "ctaEyebrow": "Birlikte değerlendirelim"
+    },
+    "sectorFmcg": {
+      "food": {
+        "meta": {
+          "title": "Gıda Üretimi ve Dağıtımı ERP",
+          "description": "Hammaddeden perakendeci rafına kadar Bangladeş'teki paketlenmiş gıda üreticileri için parti, son kullanma tarihi ve sevkıyat kayıtları."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · Gıda",
+          "title": "Tarladan rafa,",
+          "highlight": "her parti izlenebilir.",
+          "lead": "Hammadde lotlarını, üretim partilerini, son kullanma tarihlerini ve sevkıyatları tek bir yerden takip edin, böylece en eski stok ilk önce ayrılır ve her paket geriye doğru takip edilebilir."
+        },
+        "stats": [
+          {
+            "value": "FEFO",
+            "label": "gönderim için kural seçme"
+          },
+          {
+            "value": "Lot → paket",
+            "label": "izlenebilirlik zinciri"
+          },
+          {
+            "value": "3 sıcaklık bölgesi",
+            "label": "örnekteki depolama bölgeleri"
+          }
+        ],
+        "visual": {
+          "ticketTag": "Parti kartı",
+          "batchCode": "FD-2611-0417",
+          "productName": "Baharatlı Mercimek Cipsi 40 gr",
+          "madeLabel": "Üretim tarihi",
+          "madeValue": "04 Kasım 2026",
+          "expiryLabel": "Tavsiye edilen tüketim tarihi",
+          "expiryValue": "03 Mayıs 2027",
+          "lineLabel": "Üretim hattı",
+          "lineValue": "Fritöz Hattı 2",
+          "storeLabel": "Depolama konumu",
+          "storeValue": "Kuru depo · Raf C4",
+          "shelfLifeLabel": "Tüketilen raf ömrü",
+          "shelfLifeValue": "%62 · öncelikli sevkiyat",
+          "ticketFoot": "Kurgusal örnek. Ham partiler: un L-882, yağ L-114, baharat karışımı L-309.",
+          "flowTitle": "Hammaddeden perakendeciye adım adım",
+          "pillarsTitle": "Tazelik, güvenlik ve stok tek kayıtta"
+        },
+        "pillars": [
+          {
+            "title": "Hammadde lotları",
+            "body": "Parti numarasına ve tedarikçiye göre un, yağ, şeker veya baharat alın, böylece her partiye ne girdiğini tam olarak bilirsiniz."
+          },
+          {
+            "title": "Dondurulmuş, soğutulmuş ve kuru depolama",
+            "body": "Depo konumlarını depolama koşullarına göre tutun ve hangi stoğun toplanmadan önce nerede bulunduğunu görün."
+          },
+          {
+            "title": "Tüketim tarihi kontrolü",
+            "body": "İlk önce son kullanma tarihi geçmiş stokları gönderin ve son kullanma tarihi yaklaşmış ürünleri, bunlar üzerinde harekete geçebilecek kadar erken görün."
+          },
+          {
+            "title": "Distribütöre sevkiyat",
+            "body": "Her teslimat challan'ını kamyondaki partilere bağlayın, böylece geri çağırma işlemi doğru satış noktalarına ulaşabilir."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Teslim alın ve test edin",
+            "body": "Üretime sunulmadan önce gelen partileri tedarikçi, miktar ve kalite kontrol sonuçlarıyla birlikte kaydedin."
+          },
+          {
+            "title": "Partiyi üretin",
+            "body": "Malzemeleri bir üretim siparişine verin ve bunu çıktı, verim ve parti koduyla kapatın."
+          },
+          {
+            "title": "Koşullara göre depolayın",
+            "body": "Bitmiş paketleri, son kullanma tarihi kayıtlı olan sağ bölgeye koyun."
+          },
+          {
+            "title": "FEFO ile sevk edin",
+            "body": "Her distribütör siparişi için süresi en erken dolan stoğu seçin ve challan'ı yazdırın."
+          }
+        ],
+        "sample": {
+          "title": "Son kullanma tarihi yaklaşmış hisse senedi incelemesi",
+          "caption": "Kurgusal ürünler, partiler ve tarihler yalnızca gösterim amaçlıdır.",
+          "columns": [
+            "Parti",
+            "Ürün",
+            "Tavsiye edilen tüketim tarihi",
+            "Önerilen işlem"
+          ],
+          "rows": [
+            [
+              "FD-2609-0211",
+              "Mango suyu 250 ml",
+              "28 Kasım 2026",
+              "Bu hafta gönder"
+            ],
+            [
+              "FD-2610-0098",
+              "Kremalı bisküvi 75 gr",
+              "15 Ocak 2027",
+              "Normal FEFO"
+            ],
+            [
+              "FD-2608-0330",
+              "Hazır erişte 62 gr",
+              "02 Aralık 2026",
+              "Modern ticarete teklif"
+            ],
+            [
+              "FD-2611-0417",
+              "Baharatlı mercimek cipsi 40 gr",
+              "03 Mayıs 2027",
+              "Daha sonraki siparişler için bekleyin"
+            ]
+          ]
+        },
+        "modules": [
+          "Her üretim çalışmasına takip edebileceğiniz bir lot veya parti kimliği verin.",
+          "Stokları depoya, bölgeye ve rafa göre düzenleyin.",
+          "Her araçta ne bırakılacağını planlayın ve kaydedin.",
+          "Denetim sonuçlarını ve açık kalite sorunlarını görün."
+        ],
+        "faqs": [
+          {
+            "q": "Bir paketin izini hammaddelerine kadar takip edebilir miyiz?",
+            "a": "Evet. Parti kodu, bitmiş ürünleri üretim siparişine ve ona verilen hammadde partilerine bağlar."
+          },
+          {
+            "q": "FIFO'nun yanı sıra FEFO'yu da yönetiyor mu?",
+            "a": "Stoklar en erken son kullanma tarihine göre seçilebilir, bu nedenle önce kısa tarihli partiler sunulur."
+          },
+          {
+            "q": "Bu veriler gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm ürünler, partiler ve tarihler hayali örneklerdir."
+          }
+        ],
+        "cta": {
+          "title": "Partinizi ve son kullanma kurallarınızı bir demoya getirin",
+          "body": "Bugün bize nasıl ürettiğinizi, depoladığınızı ve sevk ettiğinizi gösterin, biz de bunu AdonERP'de ele alalım."
+        }
+      },
+      "beverages": {
+        "meta": {
+          "title": "İçecek Dağıtım ERP'si",
+          "description": "İçecek markalarının depodan satış noktasına kadar distribütör, rota ve şema kayıtları."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · İçecekler",
+          "title": "Her dağıtım rotasında",
+          "highlight": "kesintisiz akış.",
+          "lead": "Tek bir sistem üzerinden kamyonet yüklerini planlayın, distribütörleri ve satış noktalarını yönetin ve rotaya göre ikincil satışları ve boşaltmaları görün."
+        },
+        "stats": [
+          {
+            "value": "Depo",
+            "label": "çıkışa, tek görünümde"
+          },
+          {
+            "value": "Rota",
+            "label": "seviye yükleme sayfaları"
+          },
+          {
+            "value": "İade edilebilir boş ambalajlar",
+            "label": "her yolculukta takip edilir"
+          }
+        ],
+        "visual": {
+          "stop1": "Bölgesel depo",
+          "stop1Note": "Yükleme listesi RT-07 · 420 kasa",
+          "stop2": "Distribütör noktası",
+          "stop2Note": "İkincil satış siparişi · kampanya uygulandı",
+          "stop3": "Perakende satış noktaları",
+          "stop3Note": "Bugünkü ziyaret rotasında 38 satış noktası",
+          "routeTitle": "Örnek rota: Depo → Distribütör → Satış noktası",
+          "routeFoot": "Akışı açıklamak için gösterilen kurgusal rota ve miktarlar.",
+          "flowTitle": "Depoda yüklemeden satış noktasına teslimata",
+          "pillarsTitle": "İçeceklerin pazara ulaşma şekli etrafında inşa edildi"
+        },
+        "pillars": [
+          {
+            "title": "Distribütör ağı",
+            "body": "Distribütör bölgelerini, kredi limitlerini ve fiyat listelerini bir arada tutun."
+          },
+          {
+            "title": "Saha satış ziyaret rotaları",
+            "body": "Satış noktası ziyaretlerini planlayın ve rota rota siparişleri yakalayın."
+          },
+          {
+            "title": "Ticari promosyonlar",
+            "body": "Vakaya dayalı teklifler oluşturun ve bunları hangi satış noktalarının aldığını görün."
+          },
+          {
+            "title": "Araçlar ve seferler",
+            "body": "Boş kasalar ve şişeler de dahil olmak üzere yolculukları, yakıtı ve iadeleri kaydedin."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Yükü planlayın",
+            "body": "Onaylanmış distribütör ve outlet siparişlerinden kamyonet yükünü oluşturun."
+          },
+          {
+            "title": "Seferi başlatın",
+            "body": "Araç ve sürücüyü atayın ve bir yükleme sayfasıyla stoku gönderin."
+          },
+          {
+            "title": "Teslim edin ve tahsil edin",
+            "body": "Teslimatları, nakit veya krediyi kaydedin ve her durakta iade edilen boş miktarları kaydedin."
+          },
+          {
+            "title": "Rota mutabakatını yapın",
+            "body": "Araç geri döndüğünde stok, nakit ve boşaltma işlemlerini uzlaştırın."
+          }
+        ],
+        "sample": {
+          "title": "Rota yerleşimi",
+          "caption": "Kurgusal rotalar ve şekiller yalnızca gösterim amaçlıdır.",
+          "columns": [
+            "Rota",
+            "Sevk edilen kasa",
+            "Satılan kasa",
+            "İade edilen boş ambalaj"
+          ],
+          "rows": [
+            [
+              "RT-07 Mirpur",
+              "420",
+              "396",
+              "352"
+            ],
+            [
+              "RT-11 Uttara",
+              "380",
+              "371",
+              "340"
+            ],
+            [
+              "RT-03 Motijheel",
+              "300",
+              "254",
+              "231"
+            ],
+            [
+              "RT-15 Gazipur",
+              "460",
+              "448",
+              "410"
+            ]
+          ]
+        },
+        "modules": [
+          "Distribütörleri, bölgeleri ve krediyi yönetin.",
+          "Sahada vuruşları planlayın ve siparişleri yakalayın.",
+          "Araç yolculuklarını ve rota etkinliğini kaydedin.",
+          "Takas tekliflerini yapılandırın ve bunları kimin aldığını takip edin."
+        ],
+        "faqs": [
+          {
+            "q": "İade edilebilir boşları takip edebilir miyiz?",
+            "a": "Evet. Boşlar her teslimatta kaydedilebilir ve rota belirlendiğinde uzlaştırılabilir."
+          },
+          {
+            "q": "Planlar otomatik olarak mı uygulanıyor?",
+            "a": "Program kuralları bir kez belirlenir ve uygun siparişlere uygulanır, böylece saha ekibi bunları elle hesaplamaz."
+          },
+          {
+            "q": "Bu yollar gerçek mi?",
+            "a": "Hayır. Burada gösterilen rotalar, satış noktaları ve rakamlar hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "AdonERP'deki rotalarınızı görün",
+          "body": "Örnek bir rota ve şema getirin, uçtan uca nasıl çalıştığını gösterelim."
+        }
+      },
+      "personalCare": {
+        "meta": {
+          "title": "Kişisel Bakım ve Güzellik ERP",
+          "description": "Kişisel bakım ve güzellik markaları için formül, gölge, paket boyutu ve ticari promosyon kayıtları."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · Kişisel Bakım ve Güzellik",
+          "title": "Her renk, boyut ve lansman",
+          "highlight": "düzenli yönetilsin.",
+          "lead": "Formülleri, ürün çeşitlerini, fiyatlandırmayı ve promosyonları birlikte yönetin, böylece yeni bir renk tonu veya paket boyutunun elektronik tablo kaosu olmadan pazara ulaşması sağlanır."
+        },
+        "stats": [
+          {
+            "value": "Gölge × boyut",
+            "label": "değişken matris"
+          },
+          {
+            "value": "BOM",
+            "label": "formül sürümü başına"
+          },
+          {
+            "value": "Promosyon",
+            "label": "fiyat listelerine bağlı"
+          }
+        ],
+        "visual": {
+          "swatchCaption": "Örnek renk ailesi S-01 ila S-06 · kurgusal",
+          "flowTitle": "Formülden güzellik rafına",
+          "pillarsTitle": "Çeşitler, formüller ve promosyonlar yan yana"
+        },
+        "pillars": [
+          {
+            "title": "Varyant destekli ürün kayıtları",
+            "body": "Tonları, kokuları ve paket boyutlarını düzinelerce ayrı ürün yerine tek bir ürünün çeşitleri olarak tutun."
+          },
+          {
+            "title": "Formül sürümleri",
+            "body": "Her formülü bir malzeme listesi olarak saklayın ve eski versiyonları referans olarak saklayın."
+          },
+          {
+            "title": "Kanal bazında fiyat listeleri",
+            "body": "Distribütörler, modern ticaret ve çevrimiçi satıcılar için ayrı fiyatlar koruyun."
+          },
+          {
+            "title": "Ticari promosyonlar",
+            "body": "Paket tekliflerini ve satın almayla birlikte hediye planlarını çalıştırın ve bunlar sırasında hisse senedinin nasıl hareket ettiğini görün."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Formülü tanımlayın",
+            "body": "Malzemeleri ve miktarları sürümlendirilmiş bir malzeme listesi olarak ayarlayın."
+          },
+          {
+            "title": "Varyantları oluşturun",
+            "body": "Kendi kodları ve barkodlarıyla gölgeler ve paket boyutları ekleyin."
+          },
+          {
+            "title": "Fiyatlandırın ve kampanya hazırlayın",
+            "body": "Kanal fiyatlarını atayın ve lansman promosyonlarını ekleyin."
+          },
+          {
+            "title": "Nihai satışları izleyin",
+            "body": "Bir sonraki çalışmayı planlamak için stoğu ve hareketi varyantlara göre kontrol edin."
+          }
+        ],
+        "sample": {
+          "title": "Varyant stokuna genel bakış",
+          "caption": "Kurgusal ürünler ve miktarlar yalnızca gösterim amaçlıdır.",
+          "columns": [
+            "SKU",
+            "Varyant",
+            "Ambalaj boyutu",
+            "Stok (adet)"
+          ],
+          "rows": [
+            [
+              "PC-LIP-S03",
+              "Mat ruj · Gül",
+              "3,5 gram",
+              "1,240"
+            ],
+            [
+              "PC-LIP-S05",
+              "Mat ruj · Berry",
+              "3,5 gram",
+              "860"
+            ],
+            [
+              "PC-SHM-200",
+              "Bitkisel şampuan",
+              "200 ml",
+              "4,500"
+            ],
+            [
+              "PC-SHM-450",
+              "Bitkisel şampuan",
+              "450ml",
+              "2,180"
+            ]
+          ]
+        },
+        "modules": [
+          "Formülleri ve bileşen miktarlarını sürüm başına saklayın.",
+          "Kanal bazında fiyat listeleri tutun.",
+          "Takas teklifleri ve paketleri ayarlayın.",
+          "Stokları ürüne ve çeşide göre görün."
+        ],
+        "faqs": [
+          {
+            "q": "Bir ürünün birden fazla rengi ve boyutu olabilir mi?",
+            "a": "Evet. Varyantlar kendi kodlarını, fiyatlarını ve stoklarını korurken tek bir ürün kaydını paylaşırlar."
+          },
+          {
+            "q": "Eski formül versiyonlarını saklayabilir miyiz?",
+            "a": "Her formülün sürümü vardır, böylece geçmiş herhangi bir parti için neyin kullanıldığını görebilirsiniz."
+          },
+          {
+            "q": "Ürünler gerçek mi?",
+            "a": "Hayır. Burada gösterilen isimler, renkler ve miktarlar hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "Bir sonraki lansmanınızı bizimle planlayın",
+          "body": "Bize bir ürün ailesi gösterin, biz de onun çeşitlerini, fiyatlarını ve promosyonlarını bir demoda modelleyelim."
+        }
+      },
+      "homeCare": {
+        "meta": {
+          "title": "Ev ve Ev Bakımı ERP'si",
+          "description": "Deterjan, temizlik ürünleri ve ev bakımı üreticileri için formülasyon, parti verimi, maliyetlendirme ve satın alma."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · Ev ve Ev Bakımı",
+          "title": "Net formüller,",
+          "highlight": "şeffaf maliyetler.",
+          "lead": "Kimyasal formülasyonları planlayın, parti verimini ve hurdayı takip edin ve ürettiğiniz her litre veya kilonun gerçek maliyetini öğrenin."
+        },
+        "stats": [
+          {
+            "value": "Formül",
+            "label": "parti başına maliyet"
+          },
+          {
+            "value": "Verim",
+            "label": "planlanan vs gerçek"
+          },
+          {
+            "value": "Fire",
+            "label": "nedenleri ile birlikte kaydedildi"
+          }
+        ],
+        "visual": {
+          "formulaTitle": "Örnek formül: Limonlu bulaşık deterjanı",
+          "formulaCode": "HC-F-021 · v3",
+          "ing1": "Su (işlem)",
+          "ing1Pct": "62%",
+          "ing2": "Yüzey aktif madde karışımı",
+          "ing2Pct": "18%",
+          "ing3": "İnşaatçılar ve tuzlar",
+          "ing3Pct": "12%",
+          "ing4": "Koku, renk, diğerleri",
+          "ing4Pct": "8%",
+          "batchLabel": "Parti boyutu",
+          "batchValue": "5.000 litre",
+          "yieldLabel": "Kaydedilen verim",
+          "yieldValue": "4.910L",
+          "flowTitle": "Karıştırma tankından pazara",
+          "pillarsTitle": "Formülasyon, maliyet ve atık tek çatı altında"
+        },
+        "pillars": [
+          {
+            "title": "Ürün ağacı olarak formül",
+            "body": "Her bir deterjan, temizleyici veya hava bakım formülünü, kesin yüzdelerle birlikte versiyonlanmış bir malzeme listesi olarak saklayın."
+          },
+          {
+            "title": "Sıvı ve toz ölçü birimleri",
+            "body": "Dönüşümler kayıt altına alınarak litre, kilo ve paket cinsinden çalışın."
+          },
+          {
+            "title": "Fire ve yeniden işleme",
+            "body": "Spesifikasyon dışı malzemeyi ve yeniden işlemeyi kaydedin; böylece kayıplar stokta gizli değil görünür olur."
+          },
+          {
+            "title": "Kimyasal tedariki",
+            "body": "Yüzey aktif maddeler, tuzlar ve ambalajlara yönelik talepleri artırın ve tedarikçi tekliflerini karşılaştırın."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Partiyi planlayın",
+            "body": "Formül sürümünü ve parti boyutunu seçin; Malzeme ihtiyaçları hesaplanır."
+          },
+          {
+            "title": "Karıştırın ve test edin",
+            "body": "Malzemeleri yayınlayın, karışımı kaydedin ve QC okumalarını yakalayın."
+          },
+          {
+            "title": "Doldurun ve paketleyin",
+            "body": "Döküntüleri şişelere, poşetlere veya keselere dönüştürün ve siparişi kapatın."
+          },
+          {
+            "title": "Üretim maliyetini hesaplayın",
+            "body": "Bitmiş parti için birim başına malzeme, işçilik ve genel gider maliyetlerini görün."
+          }
+        ],
+        "sample": {
+          "title": "Toplu verim ve maliyet",
+          "caption": "Kurgusal partiler ve maliyetler yalnızca örnekleme amaçlıdır.",
+          "columns": [
+            "Parti",
+            "Ürün",
+            "Verim",
+            "Birim maliyet"
+          ],
+          "rows": [
+            [
+              "HC-2611-031",
+              "Bulaşık deterjanı 500 ml",
+              "98.2%",
+              "৳41.60"
+            ],
+            [
+              "HC-2611-032",
+              "Deterjan tozu 1 kg",
+              "96.8%",
+              "৳88.30"
+            ],
+            [
+              "HC-2611-035",
+              "Zemin temizleyici 1 L",
+              "97.5%",
+              "৳63.10"
+            ],
+            [
+              "HC-2611-038",
+              "Tuvalet temizleyicisi 750 ml",
+              "95.9%",
+              "৳57.40"
+            ]
+          ]
+        },
+        "modules": [
+          "Formül içeriklerini ve yüzdelerini sürüm başına saklayın.",
+          "Her üretim çalışmasının gerçek maliyetini hesaplayın.",
+          "Hurda, yeniden işleme ve bunların nedenlerini kaydedin.",
+          "Talepleri artırın ve tedarikçi tekliflerini karşılaştırın."
+        ],
+        "faqs": [
+          {
+            "q": "Sabit miktarlar yerine yüzdelerle çalışabilir miyiz?",
+            "a": "Formüller herhangi bir parti büyüklüğüne göre ölçeklendirilebilir ve bileşen miktarları yüzdelere göre belirlenir."
+          },
+          {
+            "q": "Gerçek maliyeti mi yoksa standart maliyeti mi görüyoruz?",
+            "a": "Her ikisi de karşılaştırılabilir: formülden planlanan maliyet ve partiye kaydedilen fiili maliyet."
+          },
+          {
+            "q": "Bu sayfadaki formül gerçek mi?",
+            "a": "Hayır. Basitleştirilmiş, kurgusal bir örnek."
+          }
+        ],
+        "cta": {
+          "title": "Demoya bir formül getirin",
+          "body": "AdonERP'de nasıl planlandığını, üretildiğini ve maliyetlendirildiğini göstereceğiz."
+        }
+      },
+      "healthHygiene": {
+        "meta": {
+          "title": "Sağlık ve Hijyen (OTC) ERP",
+          "description": "Reçetesiz sağlık ve hijyen ürünleri için toplu sürüm, QC şablonları, CAPA ve iadeler."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · Sağlık ve Hijyen (OTC)",
+          "title": "Her partiyi",
+          "highlight": "güvenle serbest bırakın.",
+          "lead": "Kalite kontrol kontrollerini, seri yayınlarını, şikayetleri ve iadeleri tek bir kayıtta tutun; böylece dezenfektanlar, antiseptikler ve OTC ürünleri yalnızca hazır olduklarında ayrılır."
+        },
+        "stats": [
+          {
+            "value": "Kalite kontrol aşaması",
+            "label": "her sürümden önce"
+          },
+          {
+            "value": "CAPA",
+            "label": "şikayetlerle bağlantılı"
+          },
+          {
+            "value": "Ürün geri çağırma",
+            "label": "partiye ve çıkışa göre"
+          }
+        ],
+        "visual": {
+          "releaseLabel": "Parti serbest bırakma kaydı",
+          "releaseBatch": "HH-2611-0082 · El dezenfektanı 200 ml",
+          "releaseStatus": "Onay bekliyor",
+          "check1": "Hammadde sertifikaları ekli",
+          "check2": "Proses içi kontrol sonuçları sınırlar içinde",
+          "check3": "Bitmiş ürün testleri geçti",
+          "check4": "Kalite güvence yöneticisi onayı",
+          "releaseNote": "Kurgusal kayıt. Her kontrol tamamlanıncaya kadar stok beklemede kalır.",
+          "stepLabel": "Adım",
+          "gateLabel": "Kalite kontrol aşaması",
+          "flowTitle": "Her biri kalite kapısına sahip dört adım",
+          "pillarsTitle": "Kayıtlara yerleşik kalite ve izlenebilirlik"
+        },
+        "pillars": [
+          {
+            "title": "Kalite kontrol şablonları",
+            "body": "Test parametrelerini ve limitlerini bir kez tanımlayın ve bunları ürünün her partisine uygulayın."
+          },
+          {
+            "title": "Bloke ve serbest bırakma",
+            "body": "Kalite kontrol sonuçları kaydedilip onaylanana kadar bitmiş stoğu beklemede tutun."
+          },
+          {
+            "title": "Şikâyetten CAPA sürecine",
+            "body": "Bir pazar şikayetini, sahibi ve son tarihi olan bir düzeltici eyleme dönüştürün."
+          },
+          {
+            "title": "İade ve ürün geri çağırma",
+            "body": "Parti alan tüm satış noktalarını bulun ve geri gelenleri kaydedin."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Gelen malzemeleri kontrol edin",
+            "body": "Aktif maddeler ve ambalajlara ilişkin sertifikaları ve test sonuçlarını kaydedin."
+          },
+          {
+            "title": "Süreci izleyin",
+            "body": "Süreç içi okumaları şablon sınırlarına göre yakalayın."
+          },
+          {
+            "title": "Bitmiş partiyi test edin",
+            "body": "Son testleri kaydedin ve sonuçları partiye ekleyin."
+          },
+          {
+            "title": "Serbest bırakın veya reddedin",
+            "body": "QA, partinin satışını onaylar veya karantinaya alır."
+          }
+        ],
+        "sample": {
+          "title": "Toplu sürüm kaydı",
+          "caption": "Kurgusal gruplar ve durumlar yalnızca örnekleme amaçlıdır.",
+          "columns": [
+            "Parti",
+            "Ürün",
+            "Kalite kontrol sonucu",
+            "Durum"
+          ],
+          "rows": [
+            [
+              "HH-2611-0079",
+              "Antiseptik sıvı 100 ml",
+              "Uygun",
+              "Serbest bırakıldı"
+            ],
+            [
+              "HH-2611-0080",
+              "Elde yıkama 250 ml",
+              "Uygun",
+              "Serbest bırakıldı"
+            ],
+            [
+              "HH-2611-0081",
+              "Hijyenik pedler (8 adet)",
+              "Yeniden test",
+              "Blokede"
+            ],
+            [
+              "HH-2611-0082",
+              "El dezenfektanı 200 ml",
+              "Uygun",
+              "Onay bekliyor"
+            ]
+          ]
+        },
+        "modules": [
+          "Malzemelerden sevkiyata kadar her partiyi ve partiyi takip edin.",
+          "Ürün başına QC parametrelerini ve limitlerini tanımlayın.",
+          "Düzeltici ve önleyici faaliyetleri atayın ve takip edin.",
+          "Orijinal topluluğa karşı kayıt iadeleri."
+        ],
+        "faqs": [
+          {
+            "q": "Kalite Kontrol onaylayana kadar stoklar bloke edilebilir mi?",
+            "a": "Evet. Partiler beklemede kalabilir ve serbest bırakılana kadar gönderilemez."
+          },
+          {
+            "q": "Bu, düzenleyici gönderimlerin yerini mi alıyor?",
+            "a": "Hayır. AdonERP operasyonel kayıtlarınızı tutar; düzenleyici başvurular kendi sürecinizi takip eder."
+          },
+          {
+            "q": "Bu partiler gerçek mi?",
+            "a": "Hayır. Gösterilen tüm partiler ve sonuçlar kurgusaldır."
+          }
+        ],
+        "cta": {
+          "title": "Serbest bırakma sürecinizi gözden geçirin",
+          "body": "Kalite Kontrol kontrol listenizi paylaşın, biz de onu AdonERP'deki toplu sürümle eşleştirelim."
+        }
+      },
+      "babyCare": {
+        "meta": {
+          "title": "Bebek ve Çocuk Bakımı ERP",
+          "description": "Bebek bezi, bebek maması ve çocuk bakımı markaları için parti takibi, AQL örneklemesi ve müşteri kayıtları."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · Bebek ve Çocuk Bakımı",
+          "title": "Hassas ürünlere",
+          "highlight": "özenli kayıtlar.",
+          "lead": "Her bebek bezi, mendil veya bebek mamasını takip edin, gönderilmeden önce numune alın ve bir ebeveynin sorusunu elinizde tam geçmişle yanıtlayın."
+        },
+        "stats": [
+          {
+            "value": "Lot",
+            "label": "her pakette"
+          },
+          {
+            "value": "AQL",
+            "label": "göndermeden önce numune alma"
+          },
+          {
+            "value": "360°",
+            "label": "her müşterinin görünümü"
+          }
+        ],
+        "visual": {
+          "traceTitle": "Örnek lot takibi · Bebek mendili 80 adet",
+          "trace1Label": "Dokunmamış rulo",
+          "trace1Value": "RM-NW-5521",
+          "trace2Label": "Üretim partisi",
+          "trace2Value": "BC-2611-0144",
+          "trace3Label": "AQL numune kontrolü",
+          "trace3Value": "QC-AQL-0907 · kabul edildi",
+          "trace4Label": "Gönderildi",
+          "trace4Value": "DST-CTG-012",
+          "flowTitle": "Her teslimde güvenlik kontrolleri",
+          "pillarsTitle": "Ayrıntılarda görülen bakım"
+        },
+        "pillars": [
+          {
+            "title": "Güvenlik odaklı izlenebilirlik",
+            "body": "Bitmiş her partiyi hammaddelerine bağlayın, böylece herhangi bir endişe dakikalar içinde takip edilebilir."
+          },
+          {
+            "title": "Serbest bırakma öncesi numune alma",
+            "body": "Bir partinin sevk edilip edilmediğine, yeniden işlenip işlenmediğine veya elde tutulup tutulmadığına karar vermek için AQL numune alma planlarını kullanın."
+          },
+          {
+            "title": "Yaşa göre ürün grupları",
+            "body": "Boyutları ve yaş aralıklarını, yeni doğmuştan küçük çocuğa kadar net değişkenler olarak tutun."
+          },
+          {
+            "title": "Müşteri destek geçmişi",
+            "body": "Müşterinin siparişlerini, şikayetlerini ve yanıtlarını tek bir yerde görün."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Malzemeleri onaylayın",
+            "body": "Yalnızca üzerinde anlaşılan spesifikasyonu karşılayan malzeme partilerini kabul edin."
+          },
+          {
+            "title": "Üretin ve etiketleyin",
+            "body": "Üretim sırasında her paketin üzerine lot ve tarih yazdırın."
+          },
+          {
+            "title": "Lottan numune alın",
+            "body": "Parti stoğa taşınmadan önce bir numuneyi AQL planına göre inceleyin."
+          },
+          {
+            "title": "Sevk edin ve geri bildirimi izleyin",
+            "body": "Distribütörlere gönderin ve partiye ilişkin geri bildirimleri kaydedin."
+          }
+        ],
+        "sample": {
+          "title": "AQL inceleme günlüğü",
+          "caption": "Kurgusal partiler ve sonuçlar yalnızca örnekleme amaçlıdır.",
+          "columns": [
+            "Lot",
+            "Ürün",
+            "Numune büyüklüğü",
+            "Karar"
+          ],
+          "rows": [
+            [
+              "BC-2611-0141",
+              "Bebek Bezi M (40 adet)",
+              "80",
+              "Kabul edildi"
+            ],
+            [
+              "BC-2611-0142",
+              "Bebek Bezi L (36 adet)",
+              "80",
+              "Kabul edildi"
+            ],
+            [
+              "BC-2611-0143",
+              "Bebek gevreği 400 gr",
+              "50",
+              "Yeniden işleme"
+            ],
+            [
+              "BC-2611-0144",
+              "Bebek mendili 80 adet",
+              "125",
+              "Kabul edildi"
+            ]
+          ]
+        },
+        "modules": [
+          "Malzemelerden bitmiş paketlere kadar partilerin izini sürün.",
+          "AQL örnekleme planlarını çalıştırın ve kararları kaydedin.",
+          "Stokları depoya ve partiye göre tutun.",
+          "Her müşterinin tam geçmişini görün."
+        ],
+        "faqs": [
+          {
+            "q": "Şikayetin hangi partiye ait olduğunu bulabilir miyiz?",
+            "a": "Evet. Paketin üzerine basılan parti, üretim, muayene ve sevkiyat kayıtlarını gösterir."
+          },
+          {
+            "q": "AQL örneklemesini destekliyor musunuz?",
+            "a": "AQL planları ürün başına ayarlanabilir ve her denetim numune boyutunu ve kararını kaydeder."
+          },
+          {
+            "q": "Bu veriler gerçek mi?",
+            "a": "Hayır. Bu sayfadaki lotlar, ürünler ve sonuçlar hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "Ürünleri nasıl güvende tuttuğunuzu bize gösterin",
+          "body": "Çeklerinizi ve takiplerinizi canlı bir demoda AdonERP ile eşleştireceğiz."
+        }
+      },
+      "tobacco": {
+        "meta": {
+          "title": "Tütün Üretimi ERP'si",
+          "description": "Tütün üreticileri için gümrük vergisi, KDV, bandrol mutabakatı ve kontrollü stok hareketleri kayıtları."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · Tütün Sektörü",
+          "title": "Vergi, bandrol ve stok",
+          "highlight": "mutabakat içinde.",
+          "lead": "KDV ve gümrük kayıtlarını, bandrol kullanımını, kapı geçişlerini ve distribütör satışlarını, sıkı bir şekilde düzenlenen bir sektör için oluşturulmuş, denetlenebilir tek bir sistemde tutun."
+        },
+        "stats": [
+          {
+            "value": "VAT",
+            "label": "kayıt otomatik olarak tutulur"
+          },
+          {
+            "value": "Bandroller",
+            "label": "verilmiş, kullanılmış ve hasar görmüş"
+          },
+          {
+            "value": "Çıkış belgesi",
+            "label": "her hareket için"
+          }
+        ],
+        "visual": {
+          "barApplied": "Kullanılan %58",
+          "barStock": "Stokta %30",
+          "barDamaged": "12%",
+          "barCaption": "Bir döneme ait örnek bandrol mutabakatı · kurgusal veriler",
+          "complianceNote": "Bu sayfada operasyonel kayıt tutma açıklanmaktadır. AdonERP tütün ürünlerinin tanıtımını yapmaz; vergi ve düzenleme yükümlülükleri kendi danışmanlarınıza ve geçerli yasalara tabidir.",
+          "flowTitle": "Bandrol teslim almadan dönem mutabakatına",
+          "pillarsTitle": "Düzenlemeye tabi bir işletme için denetlenebilir bir kayıt"
+        },
+        "pillars": [
+          {
+            "title": "KDV ve vergi kayıtları",
+            "body": "Satış ve satın alma işlemleri, başvuruda bulunmadan önce inceleyebileceğiniz bir KDV kaydını besler."
+          },
+          {
+            "title": "Bandrol mutabakatı",
+            "body": "Her dönem için alınan, uygulanan, hasar gören ve stokta bulunan pulları takip edin."
+          },
+          {
+            "title": "Kontrollü stok hareketleri",
+            "body": "Fabrikadan veya depodan çıkan her transfer, bir kapı geçişiyle ayrılır."
+          },
+          {
+            "title": "Distribütör satışları",
+            "body": "Distribütör siparişlerini kaydedin ve kararlaştırılan limitler dahilinde kredi verin."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Bandrolleri teslim alın",
+            "body": "Alınan bandrol partilerini seri aralıklarıyla kaydedin."
+          },
+          {
+            "title": "Üretimde kullanın",
+            "body": "Üretime pul bastırın ve uygulanan ve hasarlı miktarları kaydedin."
+          },
+          {
+            "title": "Çıkış belgesiyle sevk edin",
+            "body": "Bitmiş ürünleri yalnızca onaylanmış bir geçiş iznine göre serbest bırakın."
+          },
+          {
+            "title": "Dönem mutabakatını yapın",
+            "body": "Ayı kapatmadan önce pulları, stokları, satışları ve KDV'yi karşılaştırın."
+          }
+        ],
+        "sample": {
+          "title": "Aylık pul mutabakatı",
+          "caption": "Kurgusal figürler yalnızca gösterim amaçlıdır.",
+          "columns": [
+            "Dönem",
+            "Teslim alınan",
+            "Kullanılan",
+            "Hasarlı"
+          ],
+          "rows": [
+            [
+              "2026-08",
+              "1,200,000",
+              "1,130,500",
+              "4,200"
+            ],
+            [
+              "2026-09",
+              "1,000,000",
+              "1,042,800",
+              "3,900"
+            ],
+            [
+              "2026-10",
+              "1,300,000",
+              "1,214,300",
+              "5,100"
+            ],
+            [
+              "2026-11",
+              "900,000",
+              "512,600",
+              "1,800"
+            ]
+          ]
+        },
+        "modules": [
+          "İşlemlerinizden oluşturulan KDV kaydını inceleyin.",
+          "Kapı geçişleriyle her hareketi kontrol edin.",
+          "Distribütörleri ve kredilerini yönetin.",
+          "Her dönem için mali tablolar oluşturun."
+        ],
+        "faqs": [
+          {
+            "q": "AdonERP bizim için görev hesaplıyor mu?",
+            "a": "Yapılandırdığınız oranları ve işlemleri kaydeder; lütfen vergi danışmanınızla oranları ve başvuruları onaylayın."
+          },
+          {
+            "q": "Dönemlere göre pul kullanımını görebilir miyiz?",
+            "a": "Evet. Alınan, uygulanan, hasar gören ve stokta bulunan pulların dönem bazında mutabakatı yapılabilir."
+          },
+          {
+            "q": "Rakamlar gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm rakamlar hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "Uyumluluk kayıtlarınızı bizimle inceleyin",
+          "body": "AdonERP'de KDV'nin, pulların ve kapı geçişlerinin nasıl bağlandığını göstereceğiz."
+        }
+      },
+      "petCare": {
+        "meta": {
+          "title": "Evcil Hayvan Bakımı ERP'si",
+          "description": "Mağazalar, veterinerler ve internet üzerinden satış yapan evcil hayvan maması ve evcil hayvan bakım markaları için siparişler, talep planlaması ve satış kanalı."
+        },
+        "hero": {
+          "eyebrow": "Hızlı Tüketim Ürünleri · Evcil Hayvan Bakımı",
+          "title": "Mutlu dostlar,",
+          "highlight": "düzenli stoklar.",
+          "lead": "Evcil hayvan mağazaları, veteriner klinikleri ve çevrimiçi mağazalar aracılığıyla satış yapın, talebi paket boyutuna ve lezzetine göre planlayın ve en çok satan ürünler asla tükenmesin."
+        },
+        "stats": [
+          {
+            "value": "4",
+            "label": "örnekteki satış kanalları"
+          },
+          {
+            "value": "lezzet",
+            "label": "ve paket boyutu planlaması"
+          },
+          {
+            "value": "POS",
+            "label": "kendi satış noktalarınız için"
+          }
+        ],
+        "visual": {
+          "channel1": "Evcil hayvan mağazaları",
+          "channel1Note": "Haftalık yeniden sıralama",
+          "channel2": "Veteriner klinikleri",
+          "channel2Note": "Reçeteli diyetler",
+          "channel3": "Çevrimiçi mağazalar",
+          "channel3Note": "Günlük gönderim",
+          "channel4": "Kendi satış noktaları",
+          "channel4Note": "POS satışları",
+          "flowTitle": "Tahminden yemek kasesine",
+          "pillarsTitle": "Büyüyen bir evcil hayvan markasının dengelediği her şey"
+        },
+        "pillars": [
+          {
+            "title": "Kanal bazında siparişler",
+            "body": "Evcil hayvan mağazalarından, kliniklerden ve çevrimiçi satıcılardan her biri için doğru fiyatlarla sipariş alın."
+          },
+          {
+            "title": "Lezzete göre talep",
+            "body": "Geçmiş satışlardan her lezzet ve paket boyutu için tahmini talep."
+          },
+          {
+            "title": "Bayi ağı",
+            "body": "Şehirlerdeki bayileri ve alt bayileri kendi kredi koşullarıyla yönetin."
+          },
+          {
+            "title": "Mağaza kasası",
+            "body": "Aynı stoğu paylaşan bir POS ile kendi evcil hayvan mağazalarınızı işletin."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Talebi tahmin edin",
+            "body": "Bir sonraki üretimi veya ithalatı planlamak için satış geçmişini kullanın."
+          },
+          {
+            "title": "Teslim alın ve depolayın",
+            "body": "Yiyecekleri, ikramları ve aksesuarları partiye ve son kullanma tarihine göre stoğa koyun."
+          },
+          {
+            "title": "Tüm kanallardan satış yapın",
+            "body": "Bayi, klinik, online ve outlet siparişlerini tek stoktan karşılayın."
+          },
+          {
+            "title": "Zamanında yeniden sipariş verin",
+            "body": "Hızlı hareket edenleri erken tespit edin ve raflar boşalmadan yeniden sipariş verin."
+          }
+        ],
+        "sample": {
+          "title": "Bu haftaki kanal siparişleri",
+          "caption": "Kurgusal siparişler, yalnızca gösterim amaçlıdır.",
+          "columns": [
+            "Sipariş",
+            "Kanal",
+            "Ürün",
+            "Miktar"
+          ],
+          "rows": [
+            [
+              "SO-PET-2201",
+              "Evcil hayvan dükkanı · Dhanmondi",
+              "Yetişkin köpek maması 3 kg",
+              "24"
+            ],
+            [
+              "SO-PET-2202",
+              "Veteriner kliniği · Banani",
+              "Yavru kedi maması 1,5 kg",
+              "18"
+            ],
+            [
+              "SO-PET-2203",
+              "Çevrimiçi mağaza",
+              "Kedi kumu 5 L",
+              "60"
+            ],
+            [
+              "SO-PET-2204",
+              "Kendi satış mağazası · Uttara",
+              "Çiğneme ikramları 200 g",
+              "36"
+            ]
+          ]
+        },
+        "modules": [
+          "Satış siparişlerini kanala göre alın ve takip edin.",
+          "Satış geçmişinden tahmini talep.",
+          "Bayileri ve bölgelerini yönetin.",
+          "Aynı stoktan kendi mağazalarınızda satış yapın."
+        ],
+        "faqs": [
+          {
+            "q": "Bayilerimiz ve kendi mağazalarımız aracılığıyla birlikte satış yapabilir miyiz?",
+            "a": "Evet. Bayi siparişleri ve POS satışları aynı stok kayıtlarından yararlanır."
+          },
+          {
+            "q": "Lezzet ve paket büyüklüğüne göre planlama yapabilir miyiz?",
+            "a": "Talep ürün bazında tahmin edilebildiği için her lezzet ve boyut ayrı ayrı planlanıyor."
+          },
+          {
+            "q": "Bu emirler gerçek mi?",
+            "a": "Hayır. Bu sayfadaki siparişler, satış noktaları ve ürünler hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "Evcil hayvan bakım kanallarınızın haritasını çıkaralım",
+          "body": "Bize nerede satış yaptığınızı söyleyin, biz de bunun AdonERP'de çalıştığını gösterelim."
+        }
+      }
+    },
+    "sectorGroup": {
+      "manufacturing": {
+        "meta": {
+          "title": "Grup Üretim ERP'si",
+          "description": "Çeşitli fabrikalara sahip üretim grupları için birleştirilmiş tesis performansı, kapasitesi, maliyeti ve arıza süresi."
+        },
+        "hero": {
+          "eyebrow": "Sanayi Grupları · İmalat",
+          "title": "Birçok fabrika,",
+          "highlight": "tek bir net görünüm.",
+          "lead": "Her fabrika kendi katını işletirken, grup yönetimi her fabrikadaki kapasiteyi, maliyeti ve kesinti sürelerini tek bir kontrol panelinden görür."
+        },
+        "stats": [
+          {
+            "value": "6",
+            "label": "örnek gruptaki bitkiler"
+          },
+          {
+            "value": "1",
+            "label": "birleştirilmiş kontrol paneli"
+          },
+          {
+            "value": "Fabrika bazında",
+            "label": "standart maliyetlendirme"
+          }
+        ],
+        "visual": {
+          "mapTitle": "Örnek grup · tesis yükü",
+          "mapPeriod": "NOV 2026",
+          "plant1": "Gazipur Fabrikası",
+          "plant2": "Savar Fabrikası",
+          "plant3": "Chattogram Tesisi",
+          "plant4": "Narayanganj Fabrikası",
+          "plant5": "Bogura Fabrikası",
+          "plant6": "Khulna Fabrikası",
+          "loadLabel": "örnek yük",
+          "flowTitle": "Fabrika katından grup yönetim kurulu odasına",
+          "pillarsTitle": "Her bitkiyi istediğiniz gibi çalıştırın, hepsini bir arada görün"
+        },
+        "pillars": [
+          {
+            "title": "Şirket ve fabrika yapısı",
+            "body": "Her fabrikayı, mantıklı olduğu yerde ortak ustalarla kendi şirketi veya şubesi olarak kurun."
+          },
+          {
+            "title": "Grup kapasite görünümü",
+            "body": "Büyük bir siparişi kabul etmeden önce tesislerdeki mevcut ve rezerve edilen kapasiteyi karşılaştırın."
+          },
+          {
+            "title": "Karşılaştırılabilir maliyetler",
+            "body": "Ürün marjlarının adil bir şekilde karşılaştırılabilmesi için tesis başına standart maliyetleri kullanın."
+          },
+          {
+            "title": "Tesisler arası duruş süreleri",
+            "body": "Makinelerin nerede ve neden durduğunu fabrika fabrika görün."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Fabrikalar günlük verileri kaydeder",
+            "body": "Üretim, tüketim ve aksama süreleri, oldukları yerde girilir."
+          },
+          {
+            "title": "Maliyetler toplanır",
+            "body": "Her tesisin maliyetleri kendi defterlerine yakındır."
+          },
+          {
+            "title": "Grup konsolide eder",
+            "body": "Yönetimin incelemesi için her tesisten alınan rakamlar birleştirilir."
+          },
+          {
+            "title": "Yönetim karar verir",
+            "body": "Yük kaydırılıyor, yatırımlar planlanıyor, hedefler belirleniyor."
+          }
+        ],
+        "sample": {
+          "title": "Bitki karşılaştırması, Kasım",
+          "caption": "Kurgusal bitkiler ve figürler yalnızca gösterim amaçlıdır.",
+          "columns": [
+            "Fabrika",
+            "Üretim (adet)",
+            "Kapasite kullanımı",
+            "Duruş süresi (saat)"
+          ],
+          "rows": [
+            [
+              "Gazipur",
+              "1,24,500",
+              "82%",
+              "14"
+            ],
+            [
+              "Savar",
+              "88,200",
+              "67%",
+              "22"
+            ],
+            [
+              "Chattogram",
+              "1,51,000",
+              "91%",
+              "9"
+            ],
+            [
+              "Narayanganj",
+              "54,300",
+              "45%",
+              "31"
+            ]
+          ]
+        },
+        "modules": [
+          "Grup düzeyindeki rakamlar için tek bir kontrol paneli.",
+          "Tesisler arasında kapasite ve yükü karşılaştırın.",
+          "Adil karşılaştırma için standart maliyetleri koruyun.",
+          "Makinenin aksama süresini kaydedin ve analiz edin."
+        ],
+        "faqs": [
+          {
+            "q": "Her bitki kendi defterini tutabilir mi?",
+            "a": "Evet. Fabrikalar ayrı şirketler veya şubeler halinde kurulabilir ve yine de konsolide edilebilir."
+          },
+          {
+            "q": "Fabrikalar ürün ve müşteri yöneticilerini paylaşıyor mu?",
+            "a": "Ustalar, nasıl çalıştığınıza bağlı olarak grup genelinde paylaşılabilir veya şirket bazında tutulabilir."
+          },
+          {
+            "q": "Bu bitkiler gerçek mi?",
+            "a": "Hayır. Bitki isimleri ve figürleri hayali örneklerdir."
+          }
+        ],
+        "cta": {
+          "title": "Grubunuzu tek bir kontrol panelinde görün",
+          "body": "Tesis yapınızı getirin, AdonERP'de nasıl konsolide edildiğini gösterelim."
+        }
+      },
+      "textiles": {
+        "meta": {
+          "title": "Dikey Entegre Tekstil Grubu ERP'si",
+          "description": "Tekstil grupları için tek bir ERP'ye bağlanan eğirme, dokuma, boyama, hazır giyim ve ihracat birimleri."
+        },
+        "hero": {
+          "eyebrow": "Sanayi Grupları · Tekstil",
+          "title": "Elyaftan ihracata,",
+          "highlight": "birim birim takip.",
+          "lead": "Eğirme, dokuma, boyama, hazır giyim ve ihracat birimlerini birbirine bağlayın, böylece iplik, kumaş ve giysilerin net transfer kayıtları ile grup şirketleri arasında taşınmasını sağlayın."
+        },
+        "stats": [
+          {
+            "value": "5",
+            "label": "örnekteki bağlı birimler"
+          },
+          {
+            "value": "Birimler arası",
+            "label": "kayıtları aktar"
+          },
+          {
+            "value": "LC",
+            "label": "ve ihracat belgeleri"
+          }
+        ],
+        "visual": {
+          "unit1": "Eğirme",
+          "unit1Note": "İplik",
+          "unit2": "Dokuma / Örme",
+          "unit2Note": "Ham kumaş",
+          "unit3": "Boyama ve Apre",
+          "unit3Note": "Bitmiş kumaş",
+          "unit4": "Giysiler",
+          "unit4Note": "Kes, dik, paketle",
+          "unit5": "İhracat",
+          "unit5Note": "LC ve sevkiyat",
+          "flowNote": "Her birim kendi firması olabilir ancak iplikten sevkiyata kadar sipariş takip edilir.",
+          "flowTitle": "Tüm grup boyunca bir alıcı siparişi",
+          "pillarsTitle": "Evrak gerektirmeden dikey entegrasyon"
+        },
+        "pillars": [
+          {
+            "title": "Birimler arası transferler",
+            "body": "İplik ve kumaşın grup şirketleri arasında anlaşılan transfer fiyatlarıyla taşınması."
+          },
+          {
+            "title": "Sipariş tahsisi",
+            "body": "Alıcı siparişlerini kapasiteye göre birimlere ve hatlara tahsis edin."
+          },
+          {
+            "title": "Merchandising görünümü",
+            "body": "Siparişe göre stil, malzeme rezervasyonu ve üretim durumunu takip edin."
+          },
+          {
+            "title": "Dış ticaret finansmanı",
+            "body": "Siparişle birlikte LC'leri, ihracat gönderilerini ve banka belgelerini saklayın."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Sipariş onaylanır",
+            "body": "Alıcı siparişi, satış yoluyla rezerve edilir ve maliyetlendirilir."
+          },
+          {
+            "title": "İplik ve kumaş planlanır",
+            "body": "Eğirme ve dokuma üniteleri malzeme için iç siparişleri alır."
+          },
+          {
+            "title": "Konfeksiyon üretilir",
+            "body": "Bitmiş kumaş giysiye aktarılır ve sipariş üretilir."
+          },
+          {
+            "title": "Akreditif kapsamında sevk edilir",
+            "body": "İhracat belgeleri ve sevkiyat, siparişi LC'ye karşı kapatır."
+          }
+        ],
+        "sample": {
+          "title": "Bu hafta birimler arası transferler",
+          "caption": "Kurgusal birimler, miktarlar ve fiyatlar yalnızca örnekleme amaçlıdır.",
+          "columns": [
+            "Transfer",
+            "Kaynak → Hedef",
+            "Malzeme",
+            "Miktar"
+          ],
+          "rows": [
+            [
+              "IT-2611-041",
+              "Eğirme → Örgü",
+              "30'lu yılların penye ipliği",
+              "12.500 kilo"
+            ],
+            [
+              "IT-2611-042",
+              "Örgü → Boyama",
+              "Süprem gri",
+              "11.800 kilo"
+            ],
+            [
+              "IT-2611-043",
+              "Boyama → Giysiler",
+              "Lacivert bitmiş kumaş",
+              "10.950 kilo"
+            ],
+            [
+              "IT-2611-044",
+              "Giysiler → İhracat",
+              "Bisiklet yakalı tişörtler",
+              "48.000 adet"
+            ]
+          ]
+        },
+        "modules": [
+          "Birimler arasındaki siparişleri, stilleri ve durumu takip edin.",
+          "Siparişleri birimlere ve hatlara dağıtın.",
+          "Alıcı siparişleri için akreditifleri yönetin.",
+          "İhracat gönderilerini ve belgelerini takip edin."
+        ],
+        "faqs": [
+          {
+            "q": "Her birim ayrı bir şirket olabilir mi?",
+            "a": "Evet. Birimler kendi defterlerini tutabilir ve aralarında transferler kaydedilebilir."
+          },
+          {
+            "q": "Her ünitede tek bir emri takip edebilir miyiz?",
+            "a": "Alıcı siparişi, dahili siparişleri ve grup genelindeki transferleri birbirine bağlar."
+          },
+          {
+            "q": "Bu veriler gerçek mi?",
+            "a": "Hayır. Birimler, miktarlar ve aktarımlar hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "Dikey grubunuzu bizimle haritalandırın",
+          "body": "Bize birimlerinizi gösterin, biz de onları canlı bir AdonERP demosuna bağlayalım."
+        }
+      },
+      "pharmaceuticals": {
+        "meta": {
+          "title": "İlaç Üretimi ERP'si",
+          "description": "İlaç üreticileri için toplu şecere, kalite kontrol şablonları, sapmalar ve kontrollü depolama."
+        },
+        "hero": {
+          "eyebrow": "Sanayi Grupları · İlaç",
+          "title": "Her tabletin",
+          "highlight": "kaynağına kadar izini sürün.",
+          "lead": "İyi üretim uygulamalarının beklediği disiplini destekleyerek parti şeceresini, kalite kontrol sonuçlarını, sapmaları ve kontrollü depolamayı tek bir kayıtta tutun."
+        },
+        "stats": [
+          {
+            "value": "Şecere",
+            "label": "her parti için"
+          },
+          {
+            "value": "QC",
+            "label": "ürün başına şablonlar"
+          },
+          {
+            "value": "Sapma",
+            "label": "ve uygunsuzluk günlüğü"
+          }
+        ],
+        "visual": {
+          "treeTitle": "Örnek toplu şecere",
+          "fgCode": "PH-FG-2611-0207",
+          "fgName": "Parasetamol 500 mg tablet",
+          "in1": "API",
+          "in1Code": "API-L-3381",
+          "in2": "Yardımcı madde",
+          "in2Code": "EXC-L-1290",
+          "in3": "Blister folyo",
+          "in3Code": "PKG-L-0775",
+          "treeNote": "Kurgusal partiler. Her düğüm alındı, test ve çıkış kayıtlarını açar.",
+          "stepPrefix": "STP",
+          "flowTitle": "Dağıtımdan toplu sürüme",
+          "pillarsTitle": "Her kayıtta disiplin"
+        },
+        "pillars": [
+          {
+            "title": "Parti izlenebilirliği",
+            "body": "Bir partiye hangi API ve yardımcı madde partilerinin girdiğini ve bu partinin nereye gittiğini görün."
+          },
+          {
+            "title": "Kalite kontrol şablonları",
+            "body": "Ürün başına testleri ve limitleri tanımlayın ve sonuçları her partiye göre kaydedin."
+          },
+          {
+            "title": "Sapmalar ve uygunsuzluk raporları",
+            "body": "Sapmaları günlüğe kaydedin, araştırın ve düzeltici eylemlerle kapatın."
+          },
+          {
+            "title": "Kontrollü depolama",
+            "body": "Karantinaya alınmış, onaylanmış ve reddedilmiş stokları ayrı konumlarda tutun."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Tartım ve hazırlık",
+            "body": "Onaylanan malzeme partilerini tartın ve partiye verin."
+          },
+          {
+            "title": "Üretim",
+            "body": "Granülasyon, sıkıştırma veya doldurma adımlarını parti kaydına kaydedin."
+          },
+          {
+            "title": "Test",
+            "body": "Süreç içi ve bitmiş ürün test sonuçlarını yakalayın."
+          },
+          {
+            "title": "Parti serbest bırakma",
+            "body": "QA kaydı inceler ve toplu işlemi serbest bırakır veya reddeder."
+          }
+        ],
+        "sample": {
+          "title": "Toplu durum panosu",
+          "caption": "Kurgusal gruplar ve sonuçlar yalnızca gösterim amaçlıdır.",
+          "columns": [
+            "Parti",
+            "Ürün",
+            "Aşama",
+            "Durum"
+          ],
+          "rows": [
+            [
+              "PH-FG-2611-0204",
+              "Omeprazol 20 mg kapsül",
+              "Test etme",
+              "Kalite kontrolde"
+            ],
+            [
+              "PH-FG-2611-0205",
+              "Öksürük şurubu 100 ml",
+              "Serbest bırakıldı",
+              "Onaylandı"
+            ],
+            [
+              "PH-FG-2611-0206",
+              "C Vitamini 250 mg",
+              "Sıkıştırma",
+              "Süreçte"
+            ],
+            [
+              "PH-FG-2611-0207",
+              "Parasetamol 500 mg",
+              "İncele",
+              "KG bekleniyor"
+            ]
+          ]
+        },
+        "modules": [
+          "Her partideki malzeme partilerini takip edin.",
+          "Ürün başına kalite kontrol testlerini ve limitleri tanımlayın.",
+          "Uygunsuzlukları günlüğe kaydedin ve kapatın.",
+          "Ayrı karantina, onaylanmış ve reddedilmiş stok."
+        ],
+        "faqs": [
+          {
+            "q": "AdonERP onaylanmış bir GMP sistemi midir?",
+            "a": "AdonERP operasyonel kayıtlarınızı tutar. Doğrulama ve düzenleyici onay, kendi kalite sürecinizi takip eder."
+          },
+          {
+            "q": "Bir partinin nereye sevk edildiğini görebilir miyiz?",
+            "a": "Evet. Şecere, malzemelerden partiye ve partiden müşterilere olmak üzere her iki şekilde de çalışır."
+          },
+          {
+            "q": "Bu partiler gerçek mi?",
+            "a": "Hayır. Bu sayfadaki tüm gruplar ve sonuçlar kurgusaldır."
+          }
+        ],
+        "cta": {
+          "title": "Bizimle toplu kayıt üzerinde yürüyün",
+          "body": "Canlı bir AdonERP demosunda şecere, kalite kontrol ve yayınları göstereceğiz."
+        }
+      },
+      "heavyIndustry": {
+        "meta": {
+          "title": "Ağır Sanayi ERP'si",
+          "description": "Çelik, çimento ve ağır mühendislik gruplarına yönelik ekipman, koruyucu bakım, yedek parça ve kantar kayıtları."
+        },
+        "hero": {
+          "eyebrow": "Sanayi Grupları · Ağır Sanayi",
+          "title": "Büyük makineleriniz",
+          "highlight": "çalışmaya devam etsin.",
+          "lead": "Önleyici bakımı planlayın, yedek parçaları kontrol edin ve çelik, çimento, gemi inşası ve ağır mühendislik operasyonlarına yönelik her kantar biletini alın."
+        },
+        "stats": [
+          {
+            "value": "PM",
+            "label": "varlık başına programlar"
+          },
+          {
+            "value": "Yedek parçalar",
+            "label": "ekipmana bağlı"
+          },
+          {
+            "value": "Kantar",
+            "label": "biletler kaydedildi"
+          }
+        ],
+        "visual": {
+          "asset1": "Fırın tahriki",
+          "asset1Note": "EQ-KLN-01",
+          "asset2": "Haddehane",
+          "asset2Note": "EQ-RML-03",
+          "asset3": "Tavan vinci",
+          "asset3Note": "EQ-CRN-07",
+          "flowTitle": "Arıza riskinden planlı bakıma",
+          "pillarsTitle": "Ağır varlıklar ve ağır yükler için tasarlandı"
+        },
+        "pillars": [
+          {
+            "title": "Ekipman envanteri",
+            "body": "Her varlığı konumu, özellikleri ve geçmişiyle birlikte saklayın."
+          },
+          {
+            "title": "Önleyici bakım",
+            "body": "PM'yi takvime veya çalışma saatlerine göre planlayın ve iş emirlerini zamanında alın."
+          },
+          {
+            "title": "Kritik yedek parçalar",
+            "body": "Yedek parçaları ekipmana bağlayın ve kritik öğeler için minimum stok bulundurun."
+          },
+          {
+            "title": "Kantar entegrasyonu",
+            "body": "Hammadde ve bitmiş ürünler için brüt, dara ve net ağırlığı kaydedin."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Ekipmanı kaydedin",
+            "body": "Bakım planı ve yedek parça listesiyle ekipmanı ekleyin."
+          },
+          {
+            "title": "Önleyici bakımı planlayın",
+            "body": "İş emirleri takvim veya saat bazlı programlardan oluşturulur."
+          },
+          {
+            "title": "İşi tamamlayın",
+            "body": "Teknisyenler yedek parçaları çıkarır, işi kaydeder ve siparişi kapatır."
+          },
+          {
+            "title": "Duruşları analiz edin",
+            "body": "Arızaları gözden geçirin ve tekrarları önlemek için planları düzenleyin."
+          }
+        ],
+        "sample": {
+          "title": "Bakım iş emirleri",
+          "caption": "Kurgusal ekipman ve iş emirleri yalnızca örnekleme amaçlıdır.",
+          "columns": [
+            "İş emri",
+            "Ekipman",
+            "Tür",
+            "Durum"
+          ],
+          "rows": [
+            [
+              "WO-2611-118",
+              "Fırın tahriki EQ-KLN-01",
+              "Önleyici",
+              "planlanmış"
+            ],
+            [
+              "WO-2611-119",
+              "Haddehane EQ-RML-03",
+              "Arıza",
+              "Devam ediyor"
+            ],
+            [
+              "WO-2611-120",
+              "Tavan vinci EQ-CRN-07",
+              "Muayene",
+              "Tamamlandı"
+            ],
+            [
+              "WO-2611-121",
+              "Klinker soğutucusu EQ-CLC-02",
+              "Önleyici",
+              "Yedek parçalar bekleniyor"
+            ]
+          ]
+        },
+        "modules": [
+          "Tam ekipman kaydını tutun.",
+          "Önleyici bakımı planlayın.",
+          "Yedek parçaları ekipmana göre kontrol edin.",
+          "Kantar biletlerini yakalayın."
+        ],
+        "faqs": [
+          {
+            "q": "PM çalışma saatlerine göre belirlenebilir mi?",
+            "a": "Evet. Programlar takvim aralıklarını, çalışma saatlerini veya her ikisini birden takip edebilir."
+          },
+          {
+            "q": "Kantarımızı bağlayabilir miyiz?",
+            "a": "Kantar biletleri AdonERP'ye kaydedilebilir; Cihaz entegrasyonunun kapsamı uygulama sırasında belirlenir."
+          },
+          {
+            "q": "Bu ekipman gerçek mi?",
+            "a": "Hayır. Bu sayfadaki ekipman ve iş emirleri hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "Bakım planınızı demoya taşıyın",
+          "body": "AdonERP'de varlıkların, PM'lerin ve yedek parçaların nasıl bağlandığını göstereceğiz."
+        }
+      },
+      "financialServices": {
+        "meta": {
+          "title": "Finansal Hizmetler ve Grup Finansmanı ERP",
+          "description": "Grup finans ekipleri için konsolidasyon, şirketler arası, banka mutabakatı, krediler ve bütçe farklılıkları."
+        },
+        "hero": {
+          "eyebrow": "Sanayi Grupları · Finansal Hizmetler",
+          "title": "Grup hesaplarını",
+          "highlight": "netlikle kapatın.",
+          "lead": "Bağlı kuruluşları birleştirin, şirketler arası bakiyeleri ortadan kaldırın, bankaların mutabakatını yapın ve kredileri ve bütçeleri tek bir finans sisteminden takip edin."
+        },
+        "stats": [
+          {
+            "value": "4",
+            "label": "örnekteki bağlı ortaklıklar"
+          },
+          {
+            "value": "Grup içi",
+            "label": "elemeler"
+          },
+          {
+            "value": "Bütçe",
+            "label": "vs şirkete göre fiili"
+          }
+        ],
+        "visual": {
+          "parent": "Örnek Holdings Ltd.",
+          "parentNote": "Ana şirket · konsolide",
+          "sub1": "Gıda Ltd.",
+          "sub1Note": "%100 sahip olunan",
+          "sub2": "Tekstil Ltd.",
+          "sub2Note": "%100 sahip olunan",
+          "sub3": "İlaç Ltd.",
+          "sub3Note": "%75'i sahip olunan",
+          "sub4": "Finans Ltd.",
+          "sub4Note": "%100 sahip olunan",
+          "flowTitle": "Tüm grubun ay sonu kapanışı",
+          "pillarsTitle": "Elektronik tablo maratonu olmadan grup finansmanı"
+        },
+        "pillars": [
+          {
+            "title": "Konsolide finansal tablolar",
+            "body": "Tutarlı hesap planları ile bağlı ortaklıkları grup mali tablolarında birleştirin."
+          },
+          {
+            "title": "Grup içi eliminasyonlar",
+            "body": "Grup şirketleri arasındaki bakiyeleri ve işlemleri eşleştirin ve ortadan kaldırın."
+          },
+          {
+            "title": "Bankalar ve krediler",
+            "body": "Banka hesaplarının mutabakatını yapın ve kredi programlarını, faiz ve geri ödemeleri takip edin."
+          },
+          {
+            "title": "Bütçe kontrolü",
+            "body": "Bütçeyi ve gerçekleşeni şirkete, departmana ve hesaba göre karşılaştırın."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Şirketler hesaplarını kapatır",
+            "body": "Her bağlı kuruluş kendi girişlerini ve banka mutabakatını tamamlar."
+          },
+          {
+            "title": "Grup içi hesaplar eşleştirilir",
+            "body": "Grup şirketleri arasındaki dengeler eşleştirilir ve kararlaştırılır."
+          },
+          {
+            "title": "Grup konsolide eder",
+            "body": "Elemeler yayınlanır ve grup bildirimleri oluşturulur."
+          },
+          {
+            "title": "Bütçe sapmaları incelenir",
+            "body": "Yönetim, sonuçları şirket bazında bütçeye göre inceler."
+          }
+        ],
+        "sample": {
+          "title": "Şirketler arası eleme özeti",
+          "caption": "Kurgusal şirketler ve BDT lakh cinsinden miktarlar yalnızca örnekleme amaçlıdır.",
+          "columns": [
+            "Şirket çifti",
+            "Alacak",
+            "Borç",
+            "Fark"
+          ],
+          "rows": [
+            [
+              "Gıda ↔ Tekstil",
+              "84.20",
+              "84.20",
+              "0.00"
+            ],
+            [
+              "İlaç ↔ Holdingler",
+              "126.50",
+              "125.90",
+              "0.60"
+            ],
+            [
+              "Finans ↔ Gıda",
+              "210.00",
+              "210.00",
+              "0.00"
+            ],
+            [
+              "Tekstil ↔ İlaç",
+              "18.75",
+              "18.75",
+              "0.00"
+            ]
+          ]
+        },
+        "modules": [
+          "Şirket ve grup mali tablolarını hazırlayın.",
+          "Banka hesaplarını uzlaştırın.",
+          "Kredileri, faizleri ve geri ödemeleri takip edin.",
+          "Bütçeyi ve gerçeği karşılaştırın."
+        ],
+        "faqs": [
+          {
+            "q": "Kısmen sahip olunan bağlı ortaklıkları konsolide edebilir miyiz?",
+            "a": "Sahiplik şirket bazında kaydedilebilir; lütfen muhasebe işlemlerini denetçilerinizle onaylayın."
+          },
+          {
+            "q": "Şirketler arası farklılıklar otomatik olarak ortaya çıkıyor mu?",
+            "a": "Grup şirketleri arasındaki bakiyeler karşılaştırılmakta, dolayısıyla konsolidasyon öncesinde eşleşmeyen tutarlar ön plana çıkmaktadır."
+          },
+          {
+            "q": "Bu şirketler gerçek mi?",
+            "a": "Hayır. Gösterilen grup ve rakamlar hayal ürünüdür."
+          }
+        ],
+        "cta": {
+          "title": "AdonERP'de grubunuzu yakından görün",
+          "body": "Şirket yapınızı getirin, konsolidasyonu bir demoda ele alalım."
         }
       }
     }

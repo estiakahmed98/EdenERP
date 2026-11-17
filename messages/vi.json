@@ -196,7 +196,22 @@
           "talentAcquisition": "Thu hút nhân tài",
           "textile": "Dệt may",
           "metal": "Kim loại",
-          "furniture": "Nội thất"
+          "furniture": "Nội thất",
+          "fmcg": "Hàng tiêu dùng nhanh",
+          "groupOfIndustries": "Tập đoàn công nghiệp",
+          "fmcgFood": "Thực phẩm",
+          "fmcgBeverages": "Đồ uống",
+          "fmcgPersonalCare": "Chăm sóc cá nhân & Làm đẹp",
+          "fmcgHomeCare": "Chăm sóc nhà cửa",
+          "fmcgHealthHygiene": "Sức khỏe & Vệ sinh (OTC)",
+          "fmcgBabyCare": "Chăm sóc trẻ sơ sinh & Trẻ em",
+          "fmcgTobacco": "Ngành thuốc lá",
+          "fmcgPetCare": "Chăm sóc thú cưng",
+          "groupManufacturing": "Sản xuất",
+          "groupTextiles": "Dệt may",
+          "groupPharmaceuticals": "Dược phẩm",
+          "groupHeavyIndustry": "Công nghiệp nặng",
+          "groupFinancialServices": "Dịch vụ tài chính"
         },
         "community": {
           "learn": "Tìm hiểu",
@@ -64937,6 +64952,1780 @@
           "title": "Cài đặt trường",
           "headline": "Thiết lập phù hợp với trường.\nRà soát trước khi thay đổi.",
           "description": "Sắp xếp ngày đào tạo, kế hoạch chỉ tiêu cục bộ và trường tham chiếu của cơ sở với khả năng kiểm tra ngay."
+        }
+      }
+    },
+    "sectorCommon": {
+      "breadcrumb": "Đường dẫn điều hướng",
+      "home": "Trang chủ",
+      "industries": "Ngành nghề",
+      "sampleBadge": "Minh họa · dữ liệu giả định",
+      "tableScroll": "cuộn ngang",
+      "flowEyebrow": "Quy trình vận hành",
+      "pillarsEyebrow": "Các nghiệp vụ ERP quản lý tập trung",
+      "modulesEyebrow": "Trang sản phẩm liên quan",
+      "modulesTitle": "Khám phá các sản phẩm hỗ trợ quy trình này",
+      "faqEyebrow": "Thông tin hữu ích",
+      "faqTitle": "Câu hỏi thường gặp",
+      "relatedFmcg": "Các nhóm hàng tiêu dùng nhanh khác",
+      "relatedGroup": "Các lĩnh vực khác của tập đoàn",
+      "ctaEyebrow": "Cùng trao đổi về nhu cầu của bạn"
+    },
+    "sectorFmcg": {
+      "food": {
+        "meta": {
+          "title": "ERP Sản xuất & Phân phối Thực phẩm",
+          "description": "Hồ sơ lô, hạn sử dụng và gửi hàng cho các nhà sản xuất thực phẩm đóng gói ở Bangladesh, từ nguyên liệu thô đến kệ bán lẻ."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Thực phẩm",
+          "title": "Mỗi lô hàng, từ nông trại",
+          "highlight": "đến kệ hàng.",
+          "lead": "Theo dõi các lô nguyên liệu thô, lô sản xuất, ngày sử dụng tốt nhất và gửi đi ở cùng một nơi, sao cho hàng tồn kho cũ nhất sẽ được chuyển đi trước và mỗi gói hàng đều có thể được truy ngược lại."
+        },
+        "stats": [
+          {
+            "value": "FEFO",
+            "label": "chọn quy tắc để gửi"
+          },
+          {
+            "value": "Lô nguyên liệu → gói thành phẩm",
+            "label": "chuỗi truy xuất nguồn gốc"
+          },
+          {
+            "value": "3 vùng nhiệt độ",
+            "label": "vùng lưu trữ trong ví dụ"
+          }
+        ],
+        "visual": {
+          "ticketTag": "Phiếu lô sản xuất",
+          "batchCode": "FD-2611-0417",
+          "productName": "Đậu lăng tẩm gia vị 40 g",
+          "madeLabel": "Ngày sản xuất",
+          "madeValue": "04 tháng 11 năm 2026",
+          "expiryLabel": "Hạn sử dụng tốt nhất",
+          "expiryValue": "03 tháng 5 năm 2027",
+          "lineLabel": "Dây chuyền",
+          "lineValue": "Nồi chiên dòng 2",
+          "storeLabel": "Vị trí lưu kho",
+          "storeValue": "Kho khô · Kệ C4",
+          "shelfLifeLabel": "Tỷ lệ thời hạn bảo quản đã qua",
+          "shelfLifeValue": "62% · ưu tiên xuất hàng",
+          "ticketFoot": "Ví dụ hư cấu. Lô nguyên liệu: bột L-882, dầu L-114, hỗn hợp gia vị L-309.",
+          "flowTitle": "Từng bước từ nguyên liệu thô đến nhà bán lẻ",
+          "pillarsTitle": "Độ tươi, an toàn và tồn kho trong một hồ sơ"
+        },
+        "pillars": [
+          {
+            "title": "Lô nguyên liệu",
+            "body": "Nhận bột mì, dầu, đường hoặc gia vị theo số lượng lô và nhà cung cấp để bạn biết chính xác thành phần của từng mẻ."
+          },
+          {
+            "title": "Khu đông lạnh, làm mát và kho khô",
+            "body": "Giữ vị trí kho theo điều kiện bảo quản và xem hàng nào nằm ở đâu trước khi được chọn."
+          },
+          {
+            "title": "Kiểm soát hạn sử dụng",
+            "body": "Trước tiên, hãy gửi những mặt hàng sắp hết hạn sớm nhất và xem các mặt hàng sắp hết hạn đủ sớm để xử lý chúng."
+          },
+          {
+            "title": "Giao hàng cho nhà phân phối",
+            "body": "Liên kết từng người giao hàng với các lô trên xe tải để đợt thu hồi có thể đến đúng cửa hàng."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Tiếp nhận và kiểm nghiệm",
+            "body": "Ghi lại các lô hàng đến với nhà cung cấp, số lượng và kết quả QC trước khi đưa vào sản xuất."
+          },
+          {
+            "title": "Sản xuất theo lô",
+            "body": "Phát hành nguyên liệu cho một lệnh sản xuất và đóng nó với mã sản lượng, sản lượng và lô."
+          },
+          {
+            "title": "Bảo quản theo điều kiện",
+            "body": "Đặt các gói đã hoàn thành vào đúng khu vực có ghi ngày sử dụng tốt nhất."
+          },
+          {
+            "title": "Xuất hàng theo FEFO",
+            "body": "Chọn hàng hết hạn sớm nhất cho mỗi đơn đặt hàng của nhà phân phối và in challan."
+          }
+        ],
+        "sample": {
+          "title": "Review hàng sắp hết hạn sử dụng",
+          "caption": "Sản phẩm hư cấu, lô và ngày tháng chỉ mang tính chất minh họa.",
+          "columns": [
+            "Lô sản xuất",
+            "Sản phẩm",
+            "Hạn sử dụng tốt nhất",
+            "Hành động đề xuất"
+          ],
+          "rows": [
+            [
+              "FD-2609-0211",
+              "Nước ép xoài 250 ml",
+              "28 tháng 11 năm 2026",
+              "Gửi đi trong tuần này"
+            ],
+            [
+              "FD-2610-0098",
+              "Bánh quy kem 75 g",
+              "15 tháng 1 năm 2027",
+              "FEFO bình thường"
+            ],
+            [
+              "FD-2608-0330",
+              "Mì ăn liền 62 g",
+              "02 tháng 12 năm 2026",
+              "Cung cấp cho thương mại hiện đại"
+            ],
+            [
+              "FD-2611-0417",
+              "Đậu lăng tẩm gia vị 40 g",
+              "03 tháng 5 năm 2027",
+              "Giữ cho các đơn đặt hàng sau"
+            ]
+          ]
+        },
+        "modules": [
+          "Cung cấp cho mỗi hoạt động sản xuất một lô hoặc danh tính lô mà bạn có thể theo dõi.",
+          "Sắp xếp hàng hóa theo kho, khu vực và giá đỡ.",
+          "Lập kế hoạch và ghi lại những gì để lại trên mỗi chiếc xe.",
+          "Xem kết quả kiểm tra và các vấn đề chất lượng mở."
+        ],
+        "faqs": [
+          {
+            "q": "Chúng ta có thể truy nguyên nguyên liệu thô của một gói không?",
+            "a": "Đúng. Mã lô liên kết thành phẩm với lệnh sản xuất và các lô nguyên liệu thô được cấp cho nó."
+          },
+          {
+            "q": "Nó có xử lý được FEFO cũng như FIFO không?",
+            "a": "Hàng có thể được chọn trước ngày hết hạn sớm nhất, vì vậy những lô hàng có hạn sử dụng ngắn sẽ được ưu tiên trước."
+          },
+          {
+            "q": "Dữ liệu này có thật không?",
+            "a": "Không. Tất cả các sản phẩm, lô hàng và ngày tháng trên trang này đều là ví dụ hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Đưa quy tắc lô và hạn sử dụng của bạn vào bản demo",
+          "body": "Hãy cho chúng tôi biết cách bạn sản xuất, lưu trữ và gửi hàng ngay hôm nay và chúng tôi sẽ hướng dẫn nó trong AdonERP."
+        }
+      },
+      "beverages": {
+        "meta": {
+          "title": "ERP phân phối đồ uống",
+          "description": "Hồ sơ nhà phân phối, lộ trình và kế hoạch cho các nhãn hiệu đồ uống, từ kho đến cửa hàng."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Đồ uống",
+          "title": "Mọi tuyến phân phối",
+          "highlight": "luôn thông suốt.",
+          "lead": "Lập kế hoạch tải xe tải, quản lý các nhà phân phối và sơ đồ cửa hàng, đồng thời xem doanh số bán hàng thứ cấp và hàng bán ra theo tuyến đường, tất cả từ một hệ thống."
+        },
+        "stats": [
+          {
+            "value": "kho",
+            "label": "đến ổ cắm, trong một chế độ xem"
+          },
+          {
+            "value": "Tuyến đường",
+            "label": "tờ tải cấp"
+          },
+          {
+            "value": "Vỏ chai và két hoàn trả",
+            "label": "được theo dõi trong mỗi chuyến đi"
+          }
+        ],
+        "visual": {
+          "stop1": "Tổng kho khu vực",
+          "stop1Note": "Phiếu chất hàng RT-07 · 420 thùng",
+          "stop2": "Điểm phân phối",
+          "stop2Note": "Đơn bán hàng thứ cấp · đã áp dụng khuyến mại",
+          "stop3": "Cửa hàng bán lẻ",
+          "stop3Note": "38 điểm bán trên tuyến viếng thăm hôm nay",
+          "routeTitle": "Tuyến minh họa: Kho → Nhà phân phối → Điểm bán",
+          "routeFoot": "Tuyến đường và số lượng hư cấu, được hiển thị để giải thích dòng chảy.",
+          "flowTitle": "Từ chất hàng tại kho đến giao cho điểm bán",
+          "pillarsTitle": "Được xây dựng xung quanh cách đồ uống tiếp cận thị trường"
+        },
+        "pillars": [
+          {
+            "title": "Mạng lưới nhà phân phối",
+            "body": "Giữ lãnh thổ của nhà phân phối, giới hạn tín dụng và bảng giá cùng nhau."
+          },
+          {
+            "title": "Tuyến viếng thăm của đội ngũ bán hàng",
+            "body": "Lập kế hoạch thăm cửa hàng và nắm bắt đơn hàng theo từng tuyến."
+          },
+          {
+            "title": "Chương trình khuyến mại thương mại",
+            "body": "Thiết lập các ưu đãi theo từng trường hợp và xem cửa hàng nào đã nhận được chúng."
+          },
+          {
+            "title": "Phương tiện và chuyến giao hàng",
+            "body": "Ghi lại các chuyến đi, nhiên liệu và lượt về, bao gồm cả thùng và chai rỗng."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Lập kế hoạch chất hàng",
+            "body": "Xây dựng tải trọng xe tải từ các đơn đặt hàng của nhà phân phối và cửa hàng đã được xác nhận."
+          },
+          {
+            "title": "Điều xe giao hàng",
+            "body": "Chỉ định phương tiện và tài xế và gửi hàng ra cùng với bảng tải hàng."
+          },
+          {
+            "title": "Giao hàng và thu tiền",
+            "body": "Ghi lại việc giao hàng, tiền mặt hoặc tín dụng và trả lại sản phẩm trống tại mỗi điểm dừng."
+          },
+          {
+            "title": "Quyết toán tuyến giao hàng",
+            "body": "Đối chiếu tồn kho, tiền mặt và dọn sạch khi xe về."
+          }
+        ],
+        "sample": {
+          "title": "giải quyết tuyến đường",
+          "caption": "Các tuyến đường và số liệu hư cấu, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Tuyến giao hàng",
+            "Số thùng xuất",
+            "Số thùng bán",
+            "Vỏ chai, két thu hồi"
+          ],
+          "rows": [
+            [
+              "RT-07 Mirpur",
+              "420",
+              "396",
+              "352"
+            ],
+            [
+              "RT-11 Uttara",
+              "380",
+              "371",
+              "340"
+            ],
+            [
+              "RT-03 Motijheel",
+              "300",
+              "254",
+              "231"
+            ],
+            [
+              "RT-15 Gazipur",
+              "460",
+              "448",
+              "410"
+            ]
+          ]
+        },
+        "modules": [
+          "Quản lý nhà phân phối, lãnh thổ và tín dụng.",
+          "Lập kế hoạch nhịp đập và nắm bắt các đơn đặt hàng tại hiện trường.",
+          "Ghi lại các chuyến đi xe và hoạt động tuyến đường.",
+          "Định cấu hình các ưu đãi giao dịch và theo dõi ai đã nhận được chúng."
+        ],
+        "faqs": [
+          {
+            "q": "Chúng tôi có thể theo dõi các sản phẩm trống có thể trả lại không?",
+            "a": "Đúng. Lượng hàng trống có thể được ghi lại trong mỗi lần giao hàng và được đối chiếu khi tuyến đường được giải quyết."
+          },
+          {
+            "q": "Các chương trình có được áp dụng tự động không?",
+            "a": "Quy tắc của chương trình được thiết lập một lần và áp dụng cho các đơn hàng đủ điều kiện nên nhóm hiện trường không tính toán thủ công."
+          },
+          {
+            "q": "Những tuyến đường này có thật không?",
+            "a": "Không. Các tuyến đường, cửa hàng và số liệu hiển thị ở đây là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Xem lộ trình của bạn trong AdonERP",
+          "body": "Mang theo một lộ trình và sơ đồ mẫu và chúng tôi sẽ chỉ ra cách nó chạy từ đầu đến cuối."
+        }
+      },
+      "personalCare": {
+        "meta": {
+          "title": "ERP Chăm sóc cá nhân & sắc đẹp",
+          "description": "Hồ sơ về công thức, màu sắc, kích thước gói và xúc tiến thương mại cho các nhãn hiệu chăm sóc cá nhân và làm đẹp."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Chăm sóc cá nhân & Làm đẹp",
+          "title": "Mọi màu sắc, quy cách và đợt ra mắt",
+          "highlight": "đều được quản lý ngăn nắp.",
+          "lead": "Quản lý các công thức, biến thể sản phẩm, giá cả và khuyến mãi cùng nhau để màu sắc hoặc kích thước gói mới tiếp cận thị trường mà không gây hỗn loạn trong bảng tính."
+        },
+        "stats": [
+          {
+            "value": "Bóng × kích thước",
+            "label": "ma trận biến thể"
+          },
+          {
+            "value": "BOM",
+            "label": "mỗi phiên bản công thức"
+          },
+          {
+            "value": "Khuyến mãi",
+            "label": "liên kết với bảng giá"
+          }
+        ],
+        "visual": {
+          "swatchCaption": "Ví dụ về họ bóng S-01 đến S-06 · hư cấu",
+          "flowTitle": "Từ sữa công thức đến kệ làm đẹp",
+          "pillarsTitle": "Các biến thể, công thức và chương trình khuyến mãi cạnh nhau"
+        },
+        "pillars": [
+          {
+            "title": "Hồ sơ sản phẩm hỗ trợ biến thể",
+            "body": "Giữ các sắc thái, hương thơm và kích cỡ gói dưới dạng biến thể của một sản phẩm thay vì hàng chục mặt hàng rời."
+          },
+          {
+            "title": "Phiên bản công thức",
+            "body": "Lưu trữ mỗi công thức dưới dạng danh mục nguyên vật liệu và giữ lại các phiên bản cũ hơn để tham khảo."
+          },
+          {
+            "title": "Bảng giá theo kênh",
+            "body": "Duy trì giá riêng cho nhà phân phối, thương mại hiện đại và người bán trực tuyến."
+          },
+          {
+            "title": "Chương trình khuyến mại",
+            "body": "Chạy các ưu đãi theo gói và chương trình tặng quà khi mua hàng và xem hàng hóa biến động như thế nào trong thời gian đó."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Xác định công thức",
+            "body": "Đặt thành phần và số lượng dưới dạng bảng nguyên liệu được phiên bản."
+          },
+          {
+            "title": "Tạo các biến thể",
+            "body": "Thêm sắc thái và kích cỡ gói bằng mã và mã vạch riêng."
+          },
+          {
+            "title": "Định giá và khuyến mại",
+            "body": "Chỉ định giá kênh và đính kèm các chương trình khuyến mãi ra mắt."
+          },
+          {
+            "title": "Theo dõi bán ra thị trường",
+            "body": "Kiểm tra hàng tồn kho và chuyển động theo mẫu mã để lên kế hoạch cho lần chạy tiếp theo."
+          }
+        ],
+        "sample": {
+          "title": "Tổng quan về cổ phiếu biến thể",
+          "caption": "Sản phẩm và số lượng hư cấu, chỉ mang tính chất minh họa.",
+          "columns": [
+            "SKU",
+            "Biến thể",
+            "Quy cách đóng gói",
+            "Tồn kho (chiếc)"
+          ],
+          "rows": [
+            [
+              "PC-LIP-S03",
+              "Son lì · Hoa hồng",
+              "3,5 g",
+              "1,240"
+            ],
+            [
+              "PC-LIP-S05",
+              "Son môi mờ · Berry",
+              "3,5 g",
+              "860"
+            ],
+            [
+              "PC-SHM-200",
+              "Dầu gội thảo dược",
+              "200ml",
+              "4,500"
+            ],
+            [
+              "PC-SHM-450",
+              "Dầu gội thảo dược",
+              "450ml",
+              "2,180"
+            ]
+          ]
+        },
+        "modules": [
+          "Giữ công thức và số lượng thành phần cho mỗi phiên bản.",
+          "Duy trì bảng giá theo kênh.",
+          "Thiết lập các ưu đãi và gói thương mại.",
+          "Xem kho theo mặt hàng và mẫu mã."
+        ],
+        "faqs": [
+          {
+            "q": "Một sản phẩm có thể có nhiều màu sắc và kích cỡ không?",
+            "a": "Đúng. Các biến thể chia sẻ một bản ghi sản phẩm trong khi vẫn giữ mã, giá và hàng tồn kho của riêng mình."
+          },
+          {
+            "q": "Chúng ta có thể giữ lại các phiên bản sữa công thức cũ không?",
+            "a": "Mỗi công thức đều được tạo phiên bản, vì vậy bạn có thể xem những gì đã được sử dụng cho bất kỳ đợt nào trước đây."
+          },
+          {
+            "q": "Các sản phẩm có thật không?",
+            "a": "Không. Tên, sắc thái và số lượng hiển thị ở đây là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Lên kế hoạch cho lần ra mắt tiếp theo của bạn với chúng tôi",
+          "body": "Cho chúng tôi xem dòng sản phẩm và chúng tôi sẽ mô hình hóa các biến thể, giá cả và chương trình khuyến mãi của nó trong bản demo."
+        }
+      },
+      "homeCare": {
+        "meta": {
+          "title": "ERP chăm sóc gia đình & gia đình",
+          "description": "Công thức, sản lượng lô, chi phí và mua sắm cho các nhà sản xuất chất tẩy rửa, chất tẩy rửa và sản phẩm chăm sóc gia đình."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Chăm sóc nhà cửa",
+          "title": "Công thức rõ ràng,",
+          "highlight": "chi phí minh bạch.",
+          "lead": "Lập kế hoạch công thức hóa học, theo dõi sản lượng lô và phế liệu, đồng thời biết chi phí thực tế của mỗi lít hoặc kg bạn sản xuất."
+        },
+        "stats": [
+          {
+            "value": "Công thức",
+            "label": "tính theo lô"
+          },
+          {
+            "value": "Hiệu suất thu hồi",
+            "label": "kế hoạch so với thực tế"
+          },
+          {
+            "value": "Phế phẩm",
+            "label": "ghi lại với lý do"
+          }
+        ],
+        "visual": {
+          "formulaTitle": "Công thức ví dụ: Nước rửa chén chanh",
+          "formulaCode": "HC-F-021 · v3",
+          "ing1": "Nước (quy trình)",
+          "ing1Pct": "62%",
+          "ing2": "Hỗn hợp chất hoạt động bề mặt",
+          "ing2Pct": "18%",
+          "ing3": "Chất xây dựng & muối",
+          "ing3Pct": "12%",
+          "ing4": "Hương thơm, màu sắc, khác",
+          "ing4Pct": "8%",
+          "batchLabel": "Kích thước lô",
+          "batchValue": "5.000 L",
+          "yieldLabel": "Sản lượng ghi nhận",
+          "yieldValue": "4.910 lít",
+          "flowTitle": "Từ bể trộn đến thị trường",
+          "pillarsTitle": "Xây dựng, chi phí và chất thải dưới một mái nhà"
+        },
+        "pillars": [
+          {
+            "title": "Quản lý công thức bằng định mức BOM",
+            "body": "Giữ mỗi công thức tẩy rửa, làm sạch hoặc chăm sóc không khí dưới dạng một hóa đơn nguyên vật liệu được phiên bản với tỷ lệ phần trăm chính xác."
+          },
+          {
+            "title": "Đơn vị đo chất lỏng và bột",
+            "body": "Làm việc theo lít, kg và gói, với các chuyển đổi được xử lý trong hồ sơ."
+          },
+          {
+            "title": "Phế phẩm và tái chế biến",
+            "body": "Ghi lại những tài liệu không đúng thông số kỹ thuật và làm lại để có thể nhìn thấy những tổn thất chứ không bị che giấu trong kho."
+          },
+          {
+            "title": "Mua nguyên liệu hóa chất",
+            "body": "Đưa ra yêu cầu về chất hoạt động bề mặt, muối và bao bì và so sánh báo giá của nhà cung cấp."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Lập kế hoạch lô",
+            "body": "Chọn phiên bản công thức và kích cỡ lô; nhu cầu vật chất được tính toán."
+          },
+          {
+            "title": "Pha trộn và kiểm nghiệm",
+            "body": "Phát hành vật liệu, ghi lại hỗn hợp và ghi lại kết quả kiểm tra chất lượng."
+          },
+          {
+            "title": "Chiết rót và đóng gói",
+            "body": "Chuyển đổi số lượng lớn thành chai, túi hoặc gói và đóng đơn hàng."
+          },
+          {
+            "title": "Tính giá thành sản phẩm",
+            "body": "Xem chi phí vật liệu, nhân công và chi phí chung trên mỗi đơn vị cho lô đã hoàn thành."
+          }
+        ],
+        "sample": {
+          "title": "Sản lượng và chi phí hàng loạt",
+          "caption": "Các lô và chi phí hư cấu chỉ mang tính chất minh họa.",
+          "columns": [
+            "Lô sản xuất",
+            "Sản phẩm",
+            "Hiệu suất thu hồi",
+            "Giá thành đơn vị"
+          ],
+          "rows": [
+            [
+              "HC-2611-031",
+              "Nước rửa chén 500ml",
+              "98.2%",
+              "৳41.60"
+            ],
+            [
+              "HC-2611-032",
+              "Bột giặt 1 kg",
+              "96.8%",
+              "৳88.30"
+            ],
+            [
+              "HC-2611-035",
+              "Nước lau sàn 1 L",
+              "97.5%",
+              "৳63.10"
+            ],
+            [
+              "HC-2611-038",
+              "Nước tẩy bồn cầu 750ml",
+              "95.9%",
+              "৳57.40"
+            ]
+          ]
+        },
+        "modules": [
+          "Giữ nguyên thành phần công thức và tỷ lệ phần trăm cho mỗi phiên bản.",
+          "Tính giá thành thực tế của từng đợt sản xuất.",
+          "Ghi lại phế liệu, việc làm lại và lý do của chúng.",
+          "Đưa ra yêu cầu và so sánh báo giá của nhà cung cấp."
+        ],
+        "faqs": [
+          {
+            "q": "Chúng ta có thể làm việc với tỷ lệ phần trăm thay vì số lượng cố định không?",
+            "a": "Công thức có thể được điều chỉnh theo bất kỳ kích thước lô nào và số lượng thành phần tuân theo tỷ lệ phần trăm."
+          },
+          {
+            "q": "Chúng ta thấy chi phí thực tế hay chi phí tiêu chuẩn?",
+            "a": "Cả hai đều có thể so sánh được: chi phí kế hoạch từ công thức và chi phí thực tế ghi trên lô."
+          },
+          {
+            "q": "Công thức trên trang này có thật không?",
+            "a": "Không. Đó là một ví dụ hư cấu, đơn giản."
+          }
+        ],
+        "cta": {
+          "title": "Mang công thức vào bản demo",
+          "body": "Chúng tôi sẽ chỉ ra cách nó được lên kế hoạch, sản xuất và định giá trong AdonERP."
+        }
+      },
+      "healthHygiene": {
+        "meta": {
+          "title": "ERP Y tế & Vệ sinh (OTC)",
+          "description": "Phát hành hàng loạt, mẫu QC, CAPA và trả lại cho các sản phẩm vệ sinh và sức khỏe không kê đơn."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Sức khỏe & Vệ sinh (OTC)",
+          "title": "Phê duyệt từng lô",
+          "highlight": "với sự tin cậy.",
+          "lead": "Lưu giữ các hoạt động kiểm tra QC, xuất xưởng theo lô, khiếu nại và trả lại trong một hồ sơ, vì vậy thuốc khử trùng, thuốc sát trùng và các sản phẩm OTC chỉ được xuất xưởng khi chúng đã sẵn sàng."
+        },
+        "stats": [
+          {
+            "value": "Cổng kiểm soát chất lượng",
+            "label": "trước mỗi lần phát hành"
+          },
+          {
+            "value": "CAPA",
+            "label": "liên quan đến khiếu nại"
+          },
+          {
+            "value": "Thu hồi sản phẩm",
+            "label": "theo lô và cửa hàng"
+          }
+        ],
+        "visual": {
+          "releaseLabel": "Hồ sơ phê duyệt xuất xưởng lô",
+          "releaseBatch": "HH-2611-0082 · Nước rửa tay khô 200 ml",
+          "releaseStatus": "Chờ ký duyệt",
+          "check1": "Giấy chứng nhận nguyên liệu đính kèm",
+          "check2": "Kết quả kiểm tra trong quá trình đạt giới hạn",
+          "check3": "Các thử nghiệm thành phẩm đã được thông qua",
+          "check4": "Quản lý đảm bảo chất lượng ký duyệt",
+          "releaseNote": "Hồ sơ hư cấu. Hàng tồn kho vẫn được giữ cho đến khi mọi cuộc kiểm tra hoàn tất.",
+          "stepLabel": "Bước",
+          "gateLabel": "Cổng kiểm soát chất lượng",
+          "flowTitle": "Bốn bước, mỗi bước có một cổng chất lượng",
+          "pillarsTitle": "Chất lượng và khả năng truy xuất nguồn gốc được tích hợp trong hồ sơ"
+        },
+        "pillars": [
+          {
+            "title": "Mẫu kiểm soát chất lượng",
+            "body": "Xác định các thông số và giới hạn thử nghiệm một lần và áp dụng chúng cho từng lô sản phẩm."
+          },
+          {
+            "title": "Tạm giữ và duyệt xuất xưởng",
+            "body": "Giữ nguyên kho thành phẩm cho đến khi kết quả QC được ghi lại và phê duyệt."
+          },
+          {
+            "title": "Từ khiếu nại đến CAPA",
+            "body": "Biến khiếu nại thị trường thành hành động khắc phục với chủ sở hữu và ngày đến hạn."
+          },
+          {
+            "title": "Trả hàng và thu hồi sản phẩm",
+            "body": "Tìm mọi cửa hàng đã nhận được một đợt và ghi lại những gì đã nhận lại."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Kiểm tra nguyên liệu đầu vào",
+            "body": "Ghi lại các chứng chỉ và kết quả kiểm nghiệm đối với hoạt chất và bao bì."
+          },
+          {
+            "title": "Giám sát quy trình",
+            "body": "Ghi lại các bài đọc trong quá trình so với giới hạn của mẫu."
+          },
+          {
+            "title": "Kiểm nghiệm lô thành phẩm",
+            "body": "Ghi lại các bài kiểm tra cuối cùng và đính kèm kết quả vào lô."
+          },
+          {
+            "title": "Phê duyệt hoặc loại bỏ",
+            "body": "QA phê duyệt lô hàng để bán hoặc chuyển nó đi kiểm dịch."
+          }
+        ],
+        "sample": {
+          "title": "Sổ đăng ký phát hành hàng loạt",
+          "caption": "Các lô và trạng thái hư cấu, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Lô sản xuất",
+            "Sản phẩm",
+            "Kết quả kiểm nghiệm",
+            "Trạng thái"
+          ],
+          "rows": [
+            [
+              "HH-2611-0079",
+              "Dung dịch sát trùng 100 ml",
+              "Đạt",
+              "Đã duyệt xuất xưởng"
+            ],
+            [
+              "HH-2611-0080",
+              "Nước rửa tay 250ml",
+              "Đạt",
+              "Đã duyệt xuất xưởng"
+            ],
+            [
+              "HH-2611-0081",
+              "Băng vệ sinh (8 cái)",
+              "Kiểm nghiệm lại",
+              "Tạm giữ"
+            ],
+            [
+              "HH-2611-0082",
+              "Nước rửa tay khô 200 ml",
+              "Đạt",
+              "Chờ ký duyệt"
+            ]
+          ]
+        },
+        "modules": [
+          "Theo dõi từng lô hàng từ nguyên liệu đến khi gửi đi.",
+          "Xác định các thông số và giới hạn QC cho mỗi sản phẩm.",
+          "Chỉ định và thực hiện các hành động khắc phục và phòng ngừa.",
+          "Ghi lại lợi nhuận so với lô ban đầu."
+        ],
+        "faqs": [
+          {
+            "q": "Cổ phiếu có thể bị chặn cho đến khi QC phê duyệt?",
+            "a": "Đúng. Các lô có thể bị giữ lại và không thể gửi đi cho đến khi chúng được phát hành."
+          },
+          {
+            "q": "Điều này có thay thế việc đệ trình theo quy định không?",
+            "a": "Không. AdonERP lưu giữ hồ sơ hoạt động của bạn; hồ sơ pháp lý tuân theo quy trình của riêng bạn."
+          },
+          {
+            "q": "Những lô này có thật không?",
+            "a": "Không. Tất cả các đợt và kết quả hiển thị đều là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Xem qua quá trình phát hành của bạn",
+          "body": "Chia sẻ danh sách kiểm tra QC của bạn và chúng tôi sẽ ánh xạ nó tới bản phát hành hàng loạt trong AdonERP."
+        }
+      },
+      "babyCare": {
+        "meta": {
+          "title": "ERP Chăm sóc Trẻ em & Trẻ em",
+          "description": "Truy tìm lô hàng, lấy mẫu AQL và hồ sơ khách hàng đối với các nhãn hiệu tã lót, thức ăn trẻ em và chăm sóc trẻ em."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Chăm sóc trẻ sơ sinh & Trẻ em",
+          "title": "Sản phẩm dịu nhẹ cần",
+          "highlight": "hồ sơ cẩn trọng.",
+          "lead": "Theo dõi từng lô tã, khăn lau hoặc thức ăn trẻ em, lấy mẫu trước khi vận chuyển và trả lời câu hỏi của phụ huynh với toàn bộ lịch sử trong tay."
+        },
+        "stats": [
+          {
+            "value": "Lô",
+            "label": "trên mỗi gói"
+          },
+          {
+            "value": "AQL",
+            "label": "lấy mẫu trước khi vận chuyển"
+          },
+          {
+            "value": "360°",
+            "label": "cái nhìn của từng khách hàng"
+          }
+        ],
+        "visual": {
+          "traceTitle": "Ví dụ truy xuất lô · Khăn ướt trẻ em 80 chiếc",
+          "trace1Label": "cuộn không dệt",
+          "trace1Value": "RM-NW-5521",
+          "trace2Label": "Lô sản xuất",
+          "trace2Value": "BC-2611-0144",
+          "trace3Label": "Kiểm tra lấy mẫu AQL",
+          "trace3Value": "QC-AQL-0907 · được chấp nhận",
+          "trace4Label": "Vận chuyển đến",
+          "trace4Value": "DST-CTG-012",
+          "flowTitle": "Kiểm tra an toàn ở mỗi lần giao hàng",
+          "pillarsTitle": "Sự quan tâm thể hiện trong từng chi tiết"
+        },
+        "pillars": [
+          {
+            "title": "Truy xuất ưu tiên an toàn",
+            "body": "Liên kết mọi lô thành phẩm với nguyên liệu thô của nó để mọi mối lo ngại đều có thể được truy tìm trong vài phút."
+          },
+          {
+            "title": "Lấy mẫu trước khi xuất xưởng",
+            "body": "Sử dụng kế hoạch lấy mẫu AQL để quyết định xem lô hàng được vận chuyển, làm lại hay bị giữ lại."
+          },
+          {
+            "title": "Dòng sản phẩm theo độ tuổi",
+            "body": "Giữ kích thước và độ tuổi dưới dạng các biến thể rõ ràng, chẳng hạn như trẻ sơ sinh đến trẻ mới biết đi."
+          },
+          {
+            "title": "Lịch sử chăm sóc khách hàng",
+            "body": "Xem đơn đặt hàng, khiếu nại và phản hồi của khách hàng ở một nơi."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Phê duyệt nguyên liệu",
+            "body": "Chỉ chấp nhận những lô vật liệu đáp ứng được đặc điểm kỹ thuật đã thỏa thuận."
+          },
+          {
+            "title": "Sản xuất và dán nhãn",
+            "body": "In lô và ngày trên mỗi gói trong quá trình sản xuất."
+          },
+          {
+            "title": "Lấy mẫu theo lô",
+            "body": "Kiểm tra mẫu theo kế hoạch AQL trước khi lô hàng được chuyển về kho."
+          },
+          {
+            "title": "Giao hàng và lắng nghe phản hồi",
+            "body": "Gửi đến các nhà phân phối và ghi lại mọi phản hồi về lô hàng."
+          }
+        ],
+        "sample": {
+          "title": "Nhật ký kiểm tra AQL",
+          "caption": "Rất nhiều và kết quả hư cấu, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Lô",
+            "Sản phẩm",
+            "Cỡ mẫu",
+            "Kết luận"
+          ],
+          "rows": [
+            [
+              "BC-2611-0141",
+              "Tã M (40 chiếc)",
+              "80",
+              "Chấp nhận"
+            ],
+            [
+              "BC-2611-0142",
+              "Tã giấy L (36 chiếc)",
+              "80",
+              "Chấp nhận"
+            ],
+            [
+              "BC-2611-0143",
+              "Ngũ cốc cho bé 400 g",
+              "50",
+              "Tái chế biến"
+            ],
+            [
+              "BC-2611-0144",
+              "Khăn lau trẻ em 80 chiếc",
+              "125",
+              "Chấp nhận"
+            ]
+          ]
+        },
+        "modules": [
+          "Theo dõi lô hàng từ nguyên liệu đến gói thành phẩm.",
+          "Chạy kế hoạch lấy mẫu AQL và ghi lại các quyết định.",
+          "Giữ hàng theo kho, theo lô.",
+          "Xem toàn bộ lịch sử của mỗi khách hàng."
+        ],
+        "faqs": [
+          {
+            "q": "Chúng ta có thể tìm thấy khiếu nại liên quan đến lô hàng nào không?",
+            "a": "Đúng. Lô hàng được in trên bao bì dẫn đến hồ sơ sản xuất, kiểm tra và vận chuyển."
+          },
+          {
+            "q": "Bạn có hỗ trợ lấy mẫu AQL không?",
+            "a": "Kế hoạch AQL có thể được thiết lập cho mỗi sản phẩm và mỗi lần kiểm tra đều ghi lại kích thước và quyết định mẫu."
+          },
+          {
+            "q": "Dữ liệu này có thật không?",
+            "a": "Không. Rất nhiều sản phẩm và kết quả trên trang này là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Chỉ cho chúng tôi cách bạn giữ sản phẩm an toàn",
+          "body": "Chúng tôi sẽ liên kết các séc và truy tìm của bạn với AdonERP trong bản demo trực tiếp."
+        }
+      },
+      "tobacco": {
+        "meta": {
+          "title": "ERP sản xuất thuốc lá",
+          "description": "Thuế, VAT, đối chiếu tem và hồ sơ lưu chuyển hàng tồn kho được kiểm soát của các nhà sản xuất thuốc lá."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Ngành thuốc lá",
+          "title": "Thuế, tem thuế và tồn kho,",
+          "highlight": "được đối soát đầy đủ.",
+          "lead": "Lưu giữ hồ sơ VAT và thuế, việc sử dụng tem, thẻ vào cổng và doanh số bán hàng của nhà phân phối trong một hệ thống có thể kiểm tra được, được xây dựng cho một ngành được quản lý chặt chẽ."
+        },
+        "stats": [
+          {
+            "value": "VAT",
+            "label": "đăng ký được giữ tự động"
+          },
+          {
+            "value": "Tem thuế",
+            "label": "ban hành, sử dụng và bị hư hỏng"
+          },
+          {
+            "value": "Phiếu ra cổng",
+            "label": "cho mọi chuyển động"
+          }
+        ],
+        "visual": {
+          "barApplied": "Đã sử dụng 58%",
+          "barStock": "Còn hàng 30%",
+          "barDamaged": "12%",
+          "barCaption": "Ví dụ đối soát tem thuế trong một kỳ · số liệu giả định",
+          "complianceNote": "Trang này mô tả việc lưu giữ hồ sơ hoạt động. AdonERP không quảng bá sản phẩm thuốc lá; nghĩa vụ thuế và quy định tuân theo các cố vấn của riêng bạn và luật hiện hành.",
+          "flowTitle": "Từ nhận tem thuế đến đối soát cuối kỳ",
+          "pillarsTitle": "Một hồ sơ có thể kiểm toán cho một doanh nghiệp được quản lý"
+        },
+        "pillars": [
+          {
+            "title": "Sổ thuế GTGT và thuế tiêu thụ",
+            "body": "Bán hàng và mua hàng cung cấp sổ đăng ký VAT mà bạn có thể xem lại trước khi nộp đơn."
+          },
+          {
+            "title": "Đối soát tem thuế",
+            "body": "Theo dõi tem nhận, áp dụng, hư hỏng và tồn kho theo từng thời kỳ."
+          },
+          {
+            "title": "Kiểm soát luân chuyển tồn kho",
+            "body": "Mỗi lần chuyển ra khỏi nhà máy hoặc nhà kho đều có thẻ ra vào."
+          },
+          {
+            "title": "Bán hàng cho nhà phân phối",
+            "body": "Ghi lại các đơn đặt hàng và tín dụng của nhà phân phối trong giới hạn đã thỏa thuận."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Nhận tem thuế",
+            "body": "Ghi lại các lô tem nhận được cùng với dãy số sê-ri của chúng."
+          },
+          {
+            "title": "Sử dụng tem trong sản xuất",
+            "body": "Cấp tem cho sản xuất và ghi nhận số lượng đã sử dụng, số lượng hư hỏng."
+          },
+          {
+            "title": "Xuất hàng theo phiếu ra cổng",
+            "body": "Chỉ xuất hàng thành phẩm khi có giấy phép qua cổng đã được phê duyệt."
+          },
+          {
+            "title": "Đối soát cuối kỳ",
+            "body": "So sánh tem, tồn kho, doanh thu và VAT trước khi kết thúc tháng."
+          }
+        ],
+        "sample": {
+          "title": "Đối chiếu tem hàng tháng",
+          "caption": "Số liệu hư cấu, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Kỳ",
+            "Đã nhận",
+            "Đã sử dụng",
+            "Hư hỏng"
+          ],
+          "rows": [
+            [
+              "2026-08",
+              "1,200,000",
+              "1,130,500",
+              "4,200"
+            ],
+            [
+              "2026-09",
+              "1,000,000",
+              "1,042,800",
+              "3,900"
+            ],
+            [
+              "2026-10",
+              "1,300,000",
+              "1,214,300",
+              "5,100"
+            ],
+            [
+              "2026-11",
+              "900,000",
+              "512,600",
+              "1,800"
+            ]
+          ]
+        },
+        "modules": [
+          "Xem lại sổ đăng ký VAT được xây dựng từ các giao dịch của bạn.",
+          "Kiểm soát mọi chuyển động bằng cổng vượt qua.",
+          "Quản lý nhà phân phối và tín dụng của họ.",
+          "Lập báo cáo tài chính theo từng kỳ."
+        ],
+        "faqs": [
+          {
+            "q": "AdonERP có tính thuế cho chúng tôi không?",
+            "a": "Nó ghi lại tỷ giá và giao dịch mà bạn định cấu hình; vui lòng xác nhận mức giá và hồ sơ với cố vấn thuế của bạn."
+          },
+          {
+            "q": "Chúng ta có thể xem việc sử dụng tem theo thời gian không?",
+            "a": "Đúng. Tem nhận được, áp dụng, hư hỏng và tồn kho có thể được đối chiếu theo từng thời kỳ."
+          },
+          {
+            "q": "Những con số có thật không?",
+            "a": "Không. Tất cả số liệu trên trang này đều là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Xem lại hồ sơ tuân thủ của bạn với chúng tôi",
+          "body": "Chúng tôi sẽ chỉ ra cách VAT, tem và cổng kết nối trong AdonERP."
+        }
+      },
+      "petCare": {
+        "meta": {
+          "title": "ERP chăm sóc thú cưng",
+          "description": "Đơn đặt hàng, lập kế hoạch nhu cầu và kênh bán hàng cho các thương hiệu thức ăn và chăm sóc thú cưng bán qua cửa hàng, bác sĩ thú y và trực tuyến."
+        },
+        "hero": {
+          "eyebrow": "Hàng tiêu dùng nhanh · Chăm sóc thú cưng",
+          "title": "Thú cưng khỏe vui,",
+          "highlight": "tồn kho ngăn nắp.",
+          "lead": "Bán thông qua các cửa hàng thú cưng, phòng khám thú y và cửa hàng trực tuyến, lập kế hoạch nhu cầu theo kích cỡ và hương vị gói và không bao giờ hết sản phẩm bán chạy nhất."
+        },
+        "stats": [
+          {
+            "value": "4",
+            "label": "kênh bán hàng trong ví dụ"
+          },
+          {
+            "value": "hương vị",
+            "label": "và lập kế hoạch kích thước gói"
+          },
+          {
+            "value": "POS",
+            "label": "cho các cửa hàng của riêng bạn"
+          }
+        ],
+        "visual": {
+          "channel1": "Cửa hàng thú cưng",
+          "channel1Note": "Sắp xếp lại hàng tuần",
+          "channel2": "Phòng khám thú y",
+          "channel2Note": "Chế độ ăn kiêng theo toa",
+          "channel3": "Cửa hàng trực tuyến",
+          "channel3Note": "Công văn hàng ngày",
+          "channel4": "Cửa hàng riêng",
+          "channel4Note": "bán hàng POS",
+          "flowTitle": "Từ dự báo đến bát thức ăn",
+          "pillarsTitle": "Mọi thứ mà một thương hiệu thú cưng đang phát triển đều có thể tung hứng"
+        },
+        "pillars": [
+          {
+            "title": "Đơn hàng theo kênh",
+            "body": "Nhận đơn đặt hàng từ các cửa hàng thú cưng, phòng khám và người bán trực tuyến với mức giá phù hợp cho từng loại."
+          },
+          {
+            "title": "Nhu cầu theo hương vị",
+            "body": "Dự báo nhu cầu cho từng hương vị và kích cỡ đóng gói từ lần bán hàng trước đây."
+          },
+          {
+            "title": "Mạng lưới đại lý",
+            "body": "Quản lý các đại lý và đại lý phụ trên khắp các thành phố với các điều khoản tín dụng của riêng họ."
+          },
+          {
+            "title": "Thu ngân tại cửa hàng",
+            "body": "Điều hành các cửa hàng thú cưng của riêng bạn với một POS có cùng nguồn hàng."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Dự báo nhu cầu",
+            "body": "Sử dụng lịch sử bán hàng để lập kế hoạch sản xuất hoặc nhập khẩu tiếp theo."
+          },
+          {
+            "title": "Nhập và lưu kho",
+            "body": "Đưa thực phẩm, đồ ăn và phụ kiện vào kho theo lô và hạn sử dụng."
+          },
+          {
+            "title": "Bán hàng đa kênh",
+            "body": "Thực hiện các đơn đặt hàng của đại lý, phòng khám, trực tuyến và cửa hàng từ một kho."
+          },
+          {
+            "title": "Đặt hàng bổ sung đúng lúc",
+            "body": "Phát hiện sớm những sản phẩm chuyển động nhanh và sắp xếp lại trước khi kệ trống."
+          }
+        ],
+        "sample": {
+          "title": "Đơn đặt hàng kênh trong tuần này",
+          "caption": "Lệnh hư cấu, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Đơn hàng",
+            "Kênh bán hàng",
+            "Mặt hàng",
+            "Số lượng"
+          ],
+          "rows": [
+            [
+              "SO-PET-2201",
+              "Cửa hàng thú cưng · Dhanmondi",
+              "Thức ăn cho chó trưởng thành 3kg",
+              "24"
+            ],
+            [
+              "SO-PET-2202",
+              "Phòng khám thú y · Banani",
+              "Thức ăn cho mèo con 1,5kg",
+              "18"
+            ],
+            [
+              "SO-PET-2203",
+              "Cửa hàng trực tuyến",
+              "Cát vệ sinh cho mèo 5 L",
+              "60"
+            ],
+            [
+              "SO-PET-2204",
+              "Cửa hàng riêng · Uttara",
+              "Kẹo nhai 200 g",
+              "36"
+            ]
+          ]
+        },
+        "modules": [
+          "Nhận và theo dõi đơn hàng bán hàng theo kênh.",
+          "Dự báo nhu cầu từ lịch sử bán hàng.",
+          "Quản lý các đại lý và lãnh thổ của họ.",
+          "Bán trong các cửa hàng của riêng bạn từ cùng một cổ phiếu."
+        ],
+        "faqs": [
+          {
+            "q": "Chúng ta có thể cùng nhau bán hàng thông qua các đại lý và cửa hàng riêng của chúng ta không?",
+            "a": "Đúng. Đơn đặt hàng của đại lý và doanh số bán hàng POS đều dựa trên cùng một hồ sơ tồn kho."
+          },
+          {
+            "q": "Chúng ta có thể lập kế hoạch theo hương vị và kích cỡ gói không?",
+            "a": "Nhu cầu có thể được dự báo cho từng mặt hàng, do đó mỗi hương vị và kích cỡ đều được lên kế hoạch riêng."
+          },
+          {
+            "q": "Những mệnh lệnh này có thật không?",
+            "a": "Không. Đơn đặt hàng, cửa hàng và mặt hàng trên trang này là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Hãy lập bản đồ các kênh chăm sóc thú cưng của bạn",
+          "body": "Hãy cho chúng tôi biết nơi bạn bán và chúng tôi sẽ hiển thị nó đang chạy trong AdonERP."
+        }
+      }
+    },
+    "sectorGroup": {
+      "manufacturing": {
+        "meta": {
+          "title": "Nhóm Sản xuất ERP",
+          "description": "Hợp nhất hiệu suất, công suất, chi phí và thời gian ngừng hoạt động của nhà máy cho các nhóm sản xuất có nhiều nhà máy."
+        },
+        "hero": {
+          "eyebrow": "Tập đoàn công nghiệp · Sản xuất",
+          "title": "Nhiều nhà máy,",
+          "highlight": "một bức tranh rõ ràng.",
+          "lead": "Mỗi nhà máy vận hành tầng riêng của mình, trong khi ban quản lý nhóm xem công suất, chi phí và thời gian ngừng hoạt động trên mỗi nhà máy từ một bảng thông tin duy nhất."
+        },
+        "stats": [
+          {
+            "value": "6",
+            "label": "thực vật trong nhóm ví dụ"
+          },
+          {
+            "value": "1",
+            "label": "bảng điều khiển hợp nhất"
+          },
+          {
+            "value": "Theo nhà máy",
+            "label": "chi phí tiêu chuẩn"
+          }
+        ],
+        "visual": {
+          "mapTitle": "Nhóm ví dụ · tải trọng nhà máy",
+          "mapPeriod": "NOV 2026",
+          "plant1": "Nhà máy Gazipur",
+          "plant2": "Nhà máy Savar",
+          "plant3": "Nhà máy Chattogram",
+          "plant4": "Nhà máy Narayanganj",
+          "plant5": "Nhà máy Bogura",
+          "plant6": "Nhà máy Khulna",
+          "loadLabel": "tải minh họa",
+          "flowTitle": "Từ sàn nhà máy đến phòng họp nhóm",
+          "pillarsTitle": "Chạy từng cây theo cách của bạn, xem tất cả chúng cùng nhau"
+        },
+        "pillars": [
+          {
+            "title": "Cơ cấu công ty và nhà máy",
+            "body": "Thiết lập mỗi nhà máy thành công ty hoặc chi nhánh riêng, với các chủ sở hữu chung nếu thấy hợp lý."
+          },
+          {
+            "title": "Tổng quan công suất tập đoàn",
+            "body": "So sánh công suất sẵn có và đặt trước giữa các nhà máy trước khi bạn chấp nhận đơn đặt hàng lớn."
+          },
+          {
+            "title": "Giá thành có thể so sánh",
+            "body": "Sử dụng chi phí tiêu chuẩn cho mỗi nhà máy để có thể so sánh lợi nhuận sản phẩm một cách công bằng."
+          },
+          {
+            "title": "Thời gian dừng máy theo cơ sở",
+            "body": "Xem máy dừng ở đâu và tại sao, từng nhà máy."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Nhà máy ghi nhận dữ liệu ngày",
+            "body": "Sản xuất, tiêu thụ và thời gian ngừng hoạt động được nhập vào nơi chúng xảy ra."
+          },
+          {
+            "title": "Tổng hợp chi phí",
+            "body": "Chi phí của mỗi nhà máy gần với sổ sách riêng của nó."
+          },
+          {
+            "title": "Tập đoàn hợp nhất dữ liệu",
+            "body": "Số liệu từ mỗi nhà máy được tổng hợp để quản lý xem xét."
+          },
+          {
+            "title": "Ban lãnh đạo ra quyết định",
+            "body": "Tải trọng được chuyển dịch, các khoản đầu tư được lên kế hoạch và các mục tiêu được đặt ra."
+          }
+        ],
+        "sample": {
+          "title": "So sánh thực vật, tháng 11",
+          "caption": "Thực vật và số liệu giả định, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Nhà máy",
+            "Sản lượng (đơn vị)",
+            "Công suất sử dụng",
+            "Dừng máy (giờ)"
+          ],
+          "rows": [
+            [
+              "Gazipur",
+              "1,24,500",
+              "82%",
+              "14"
+            ],
+            [
+              "Savar",
+              "88,200",
+              "67%",
+              "22"
+            ],
+            [
+              "Chattogram",
+              "1,51,000",
+              "91%",
+              "9"
+            ],
+            [
+              "Narayanganj",
+              "54,300",
+              "45%",
+              "31"
+            ]
+          ]
+        },
+        "modules": [
+          "Một bảng thông tin dành cho các số liệu ở cấp độ nhóm.",
+          "So sánh công suất và tải giữa các nhà máy.",
+          "Giữ chi phí tiêu chuẩn để so sánh công bằng.",
+          "Ghi lại và phân tích thời gian ngừng hoạt động của máy."
+        ],
+        "faqs": [
+          {
+            "q": "Mỗi cây có thể giữ sổ sách riêng của mình không?",
+            "a": "Đúng. Các nhà máy có thể được thành lập như các công ty hoặc chi nhánh riêng biệt và vẫn được hợp nhất."
+          },
+          {
+            "q": "Các nhà máy có chia sẻ chủ nhân về mặt hàng và khách hàng không?",
+            "a": "Các chuyên gia có thể được chia sẻ trong nhóm hoặc được giữ cho mỗi công ty, tùy thuộc vào cách bạn làm việc."
+          },
+          {
+            "q": "Những cây này có thật không?",
+            "a": "Không. Tên và số liệu thực vật chỉ là ví dụ hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Xem nhóm của bạn trong một trang tổng quan",
+          "body": "Mang theo cấu trúc nhà máy của bạn và chúng tôi sẽ chỉ ra cách nó hợp nhất trong AdonERP."
+        }
+      },
+      "textiles": {
+        "meta": {
+          "title": "ERP Tập đoàn Dệt may tích hợp theo chiều dọc",
+          "description": "Các đơn vị kéo sợi, dệt, nhuộm, may và xuất khẩu được kết nối trong một hệ thống ERP cho các tập đoàn dệt may."
+        },
+        "hero": {
+          "eyebrow": "Tập đoàn công nghiệp · Dệt may",
+          "title": "Từ sợi đến xuất khẩu,",
+          "highlight": "kết nối từng đơn vị.",
+          "lead": "Kết nối các đơn vị kéo sợi, dệt, nhuộm, may và xuất khẩu nên sợi, vải và hàng may mặc di chuyển giữa các công ty trong tập đoàn với hồ sơ chuyển nhượng rõ ràng."
+        },
+        "stats": [
+          {
+            "value": "5",
+            "label": "đơn vị liên kết trong ví dụ"
+          },
+          {
+            "value": "Liên đơn vị",
+            "label": "hồ sơ chuyển nhượng"
+          },
+          {
+            "value": "LC",
+            "label": "và chứng từ xuất khẩu"
+          }
+        ],
+        "visual": {
+          "unit1": "Quay",
+          "unit1Note": "Sợi",
+          "unit2": "Dệt / Đan",
+          "unit2Note": "Vải mộc",
+          "unit3": "Nhuộm & Hoàn thiện",
+          "unit3Note": "Vải thành phẩm",
+          "unit4": "May mặc",
+          "unit4Note": "Cắt, may, đóng gói",
+          "unit5": "Xuất khẩu",
+          "unit5Note": "LC & lô hàng",
+          "flowNote": "Mỗi đơn vị có thể là công ty riêng của mình, tuy nhiên đơn hàng vẫn được tuân thủ từ sợi đến lô hàng.",
+          "flowTitle": "Một người mua đặt hàng cho cả nhóm",
+          "pillarsTitle": "Tích hợp dọc không cần giấy tờ"
+        },
+        "pillars": [
+          {
+            "title": "Điều chuyển nội bộ giữa các đơn vị",
+            "body": "Vận chuyển sợi và vải giữa các công ty trong nhóm theo giá chuyển nhượng đã thỏa thuận."
+          },
+          {
+            "title": "Phân bổ đơn hàng",
+            "body": "Phân bổ đơn đặt hàng của người mua cho các đơn vị và dây chuyền dựa trên năng lực."
+          },
+          {
+            "title": "Theo dõi đơn hàng may mặc",
+            "body": "Theo dõi phong cách, đặt hàng nguyên vật liệu và tình trạng sản xuất trên mỗi đơn hàng."
+          },
+          {
+            "title": "Tài trợ thương mại",
+            "body": "Lưu trữ LC, lô hàng xuất khẩu và chứng từ ngân hàng kèm theo đơn hàng."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Xác nhận đơn hàng",
+            "body": "Đơn đặt hàng của người mua được đặt trước và tính chi phí bằng cách bán hàng."
+          },
+          {
+            "title": "Lập kế hoạch sợi và vải",
+            "body": "Các đơn vị kéo sợi và dệt nhận đơn đặt hàng nội bộ về nguyên liệu."
+          },
+          {
+            "title": "Sản xuất hàng may mặc",
+            "body": "Vải thành phẩm được chuyển sang may mặc và đơn hàng được sản xuất."
+          },
+          {
+            "title": "Xuất hàng theo thư tín dụng",
+            "body": "Chứng từ xuất khẩu và lô hàng đóng theo lệnh LC."
+          }
+        ],
+        "sample": {
+          "title": "Chuyển giao liên đơn vị trong tuần này",
+          "caption": "Đơn vị, số lượng và giá cả hư cấu chỉ mang tính chất minh họa.",
+          "columns": [
+            "Phiếu điều chuyển",
+            "Từ → Đến",
+            "Nguyên liệu",
+            "Số lượng"
+          ],
+          "rows": [
+            [
+              "IT-2611-041",
+              "Kéo sợi → Đan",
+              "sợi chải kỹ 30s",
+              "12.500 kg"
+            ],
+            [
+              "IT-2611-042",
+              "Đan → Nhuộm",
+              "Áo đơn màu xám",
+              "11.800 kg"
+            ],
+            [
+              "IT-2611-043",
+              "Nhuộm → May mặc",
+              "Vải thành phẩm hải quân",
+              "10.950 kg"
+            ],
+            [
+              "IT-2611-044",
+              "May mặc → Xuất khẩu",
+              "Áo thun cổ tròn",
+              "48.000 chiếc"
+            ]
+          ]
+        },
+        "modules": [
+          "Thực hiện theo các đơn đặt hàng, phong cách và trạng thái trên các đơn vị.",
+          "Phân bổ đơn hàng cho các đơn vị và tuyến.",
+          "Quản lý thư tín dụng cho đơn đặt hàng của người mua.",
+          "Theo dõi lô hàng và chứng từ xuất khẩu."
+        ],
+        "faqs": [
+          {
+            "q": "Mỗi đơn vị có thể là một công ty riêng biệt?",
+            "a": "Đúng. Các đơn vị có thể giữ sổ sách riêng của mình và ghi lại các lần chuyển khoản giữa chúng."
+          },
+          {
+            "q": "Chúng ta có thể làm theo một mệnh lệnh cho mỗi đơn vị không?",
+            "a": "Đơn đặt hàng của người mua liên kết các đơn đặt hàng nội bộ và chuyển giao trong nhóm."
+          },
+          {
+            "q": "Dữ liệu này có thật không?",
+            "a": "Không. Đơn vị, số lượng và chuyển khoản là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Lập bản đồ nhóm ngành dọc của bạn với chúng tôi",
+          "body": "Hãy cho chúng tôi xem các đơn vị của bạn và chúng tôi sẽ kết nối chúng trong bản demo AdonERP trực tiếp."
+        }
+      },
+      "pharmaceuticals": {
+        "meta": {
+          "title": "ERP sản xuất dược phẩm",
+          "description": "Phả hệ hàng loạt, mẫu QC, sai lệch và lưu trữ có kiểm soát dành cho nhà sản xuất dược phẩm."
+        },
+        "hero": {
+          "eyebrow": "Tập đoàn công nghiệp · Dược phẩm",
+          "title": "Truy xuất từng viên thuốc",
+          "highlight": "đến tận nguồn gốc.",
+          "lead": "Lưu giữ phả hệ lô, kết quả QC, sai lệch và lưu trữ có kiểm soát trong một hồ sơ, hỗ trợ kỷ luật thực hành sản xuất tốt mong đợi."
+        },
+        "stats": [
+          {
+            "value": "Phả hệ",
+            "label": "cho mỗi lô"
+          },
+          {
+            "value": "QC",
+            "label": "mẫu cho mỗi sản phẩm"
+          },
+          {
+            "value": "Độ lệch",
+            "label": "và nhật ký không phù hợp"
+          }
+        ],
+        "visual": {
+          "treeTitle": "Ví dụ về phả hệ hàng loạt",
+          "fgCode": "PH-FG-2611-0207",
+          "fgName": "Viên nén Paracetamol 500 mg",
+          "in1": "API",
+          "in1Code": "API-L-3381",
+          "in2": "Tá dược",
+          "in2Code": "EXC-L-1290",
+          "in3": "Lá vỉ",
+          "in3Code": "PKG-L-0775",
+          "treeNote": "Lô hàng hư cấu. Mỗi nút mở các bản ghi nhận, kiểm tra và phát hành.",
+          "stepPrefix": "STP",
+          "flowTitle": "Từ phân phối đến phát hành hàng loạt",
+          "pillarsTitle": "Kỷ luật trong từng hồ sơ"
+        },
+        "pillars": [
+          {
+            "title": "Truy xuất nguồn gốc lô",
+            "body": "Xem lô API và tá dược nào được đưa vào một lô và lô đó đi đâu."
+          },
+          {
+            "title": "Mẫu kiểm soát chất lượng",
+            "body": "Xác định các thử nghiệm và giới hạn cho mỗi sản phẩm và ghi lại kết quả theo từng lô."
+          },
+          {
+            "title": "Sai lệch và báo cáo không phù hợp",
+            "body": "Ghi lại những sai lệch, điều tra chúng và xử lý chúng bằng các hành động khắc phục."
+          },
+          {
+            "title": "Bảo quản có kiểm soát",
+            "body": "Giữ cách ly, tồn kho đã được phê duyệt và bị từ chối ở các địa điểm riêng biệt."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Cân và cấp phát nguyên liệu",
+            "body": "Cân và cấp lô nguyên liệu đã được phê duyệt cho lô."
+          },
+          {
+            "title": "Sản xuất",
+            "body": "Ghi lại các bước tạo hạt, nén hoặc điền vào hồ sơ lô."
+          },
+          {
+            "title": "Kiểm nghiệm",
+            "body": "Ghi lại kết quả kiểm tra sản phẩm trong quá trình và thành phẩm."
+          },
+          {
+            "title": "Phê duyệt xuất xưởng",
+            "body": "QA xem xét hồ sơ và phát hành hoặc từ chối lô."
+          }
+        ],
+        "sample": {
+          "title": "Bảng trạng thái hàng loạt",
+          "caption": "Lô và kết quả hư cấu, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Lô sản xuất",
+            "Sản phẩm",
+            "Công đoạn",
+            "Trạng thái"
+          ],
+          "rows": [
+            [
+              "PH-FG-2611-0204",
+              "Viên nang Omeprazol 20 mg",
+              "Kiểm tra",
+              "Trong QC"
+            ],
+            [
+              "PH-FG-2611-0205",
+              "Thuốc ho 100ml",
+              "Đã duyệt xuất xưởng",
+              "Đã được phê duyệt"
+            ],
+            [
+              "PH-FG-2611-0206",
+              "Vitamin C 250 mg",
+              "nén",
+              "Đang trong quá trình"
+            ],
+            [
+              "PH-FG-2611-0207",
+              "Paracetamol 500 mg",
+              "Xem lại",
+              "Đang chờ QA"
+            ]
+          ]
+        },
+        "modules": [
+          "Theo dõi các lô nguyên liệu theo từng lô.",
+          "Xác định các xét nghiệm và giới hạn QC cho mỗi sản phẩm.",
+          "Ghi nhật ký và đóng các lỗi không tuân thủ.",
+          "Kiểm dịch riêng biệt, hàng được phê duyệt và bị từ chối."
+        ],
+        "faqs": [
+          {
+            "q": "AdonERP có phải là hệ thống đạt tiêu chuẩn GMP không?",
+            "a": "AdonERP lưu giữ hồ sơ hoạt động của bạn. Việc xác nhận và phê duyệt theo quy định tuân theo quy trình chất lượng của riêng bạn."
+          },
+          {
+            "q": "Chúng ta có thể biết lô hàng đã được chuyển đến đâu không?",
+            "a": "Đúng. Gia phả làm việc theo cả hai cách, từ nguyên liệu đến mẻ và từ mẻ đến khách hàng."
+          },
+          {
+            "q": "Những lô này có thật không?",
+            "a": "Không. Tất cả các đợt và kết quả trên trang này đều là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Đi qua một bản ghi hàng loạt với chúng tôi",
+          "body": "Chúng tôi sẽ hiển thị phả hệ, QC và phát hành trong bản demo AdonERP trực tiếp."
+        }
+      },
+      "heavyIndustry": {
+        "meta": {
+          "title": "ERP công nghiệp nặng",
+          "description": "Hồ sơ thiết bị, bảo trì phòng ngừa, phụ tùng thay thế và cầu cân cho các nhóm thép, xi măng và kỹ thuật nặng."
+        },
+        "hero": {
+          "eyebrow": "Tập đoàn công nghiệp · Công nghiệp nặng",
+          "title": "Giữ cho máy móc hạng nặng",
+          "highlight": "vận hành liên tục.",
+          "lead": "Lập kế hoạch bảo trì phòng ngừa, kiểm soát phụ tùng thay thế và nắm bắt mọi phiếu cân cầu cho các hoạt động thép, xi măng, đóng tàu và kỹ thuật nặng."
+        },
+        "stats": [
+          {
+            "value": "PM",
+            "label": "lịch trình cho mỗi tài sản"
+          },
+          {
+            "value": "phụ tùng",
+            "label": "liên kết với thiết bị"
+          },
+          {
+            "value": "Cân xe tải",
+            "label": "vé đã ghi"
+          }
+        ],
+        "visual": {
+          "asset1": "Truyền động lò nung",
+          "asset1Note": "EQ-KLN-01",
+          "asset2": "Máy cán",
+          "asset2Note": "EQ-RML-03",
+          "asset3": "Cần cẩu trên không",
+          "asset3Note": "EQ-CRN-07",
+          "flowTitle": "Từ rủi ro hỏng hóc đến bảo trì theo kế hoạch",
+          "pillarsTitle": "Được xây dựng cho tài sản nặng và tải nặng"
+        },
+        "pillars": [
+          {
+            "title": "Sổ thiết bị",
+            "body": "Giữ mọi tài sản với vị trí, thông số kỹ thuật và lịch sử của nó."
+          },
+          {
+            "title": "Bảo trì phòng ngừa",
+            "body": "Lên lịch PM theo lịch hoặc giờ làm việc và nhận lệnh sản xuất đúng hạn."
+          },
+          {
+            "title": "Phụ tùng thiết yếu",
+            "body": "Liên kết các phụ tùng thay thế với thiết bị và giữ lượng tồn kho tối thiểu cho các mặt hàng quan trọng."
+          },
+          {
+            "title": "Tích hợp cân xe tải",
+            "body": "Ghi lại tổng, trọng lượng bì và trọng lượng tịnh của nguyên liệu thô và thành phẩm."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Đăng ký thiết bị",
+            "body": "Thêm thiết bị với kế hoạch bảo trì và danh sách phụ tùng thay thế."
+          },
+          {
+            "title": "Lập kế hoạch bảo trì",
+            "body": "Lệnh sản xuất được tạo từ lịch hoặc lịch làm việc theo giờ."
+          },
+          {
+            "title": "Thực hiện công việc",
+            "body": "Kỹ thuật viên xuất phụ tùng, ghi chép công việc và chốt đơn hàng."
+          },
+          {
+            "title": "Phân tích thời gian dừng máy",
+            "body": "Xem xét sự cố và điều chỉnh kế hoạch để ngăn chặn sự lặp lại."
+          }
+        ],
+        "sample": {
+          "title": "Lệnh công việc bảo trì",
+          "caption": "Thiết bị hư cấu và lệnh làm việc chỉ mang tính chất minh họa.",
+          "columns": [
+            "Lệnh công việc",
+            "Thiết bị",
+            "Loại",
+            "Trạng thái"
+          ],
+          "rows": [
+            [
+              "WO-2611-118",
+              "Dẫn động lò nung EQ-KLN-01",
+              "phòng ngừa",
+              "Đã lên lịch"
+            ],
+            [
+              "WO-2611-119",
+              "Máy cán EQ-RML-03",
+              "Sự cố",
+              "Đang tiến hành"
+            ],
+            [
+              "WO-2611-120",
+              "Cầu trục EQ-CRN-07",
+              "Kiểm tra",
+              "Đã hoàn thành"
+            ],
+            [
+              "WO-2611-121",
+              "Máy làm nguội clinker EQ-CLC-02",
+              "phòng ngừa",
+              "Đang chờ phụ tùng"
+            ]
+          ]
+        },
+        "modules": [
+          "Giữ sổ đăng ký thiết bị đầy đủ.",
+          "Lập kế hoạch bảo trì phòng ngừa.",
+          "Kiểm soát phụ tùng bằng thiết bị.",
+          "Chụp vé cầu cân."
+        ],
+        "faqs": [
+          {
+            "q": "PM có thể dựa trên giờ chạy không?",
+            "a": "Đúng. Lịch trình có thể theo các khoảng thời gian, giờ hoạt động hoặc cả hai."
+          },
+          {
+            "q": "Chúng ta có thể kết nối cầu cân của mình không?",
+            "a": "Phiếu cân cầu có thể được ghi lại trong AdonERP; tích hợp thiết bị được xác định phạm vi trong quá trình thực hiện."
+          },
+          {
+            "q": "Thiết bị này có thật không?",
+            "a": "Không. Thiết bị và lệnh sản xuất trên trang này là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Mang kế hoạch bảo trì của bạn đến bản demo",
+          "body": "Chúng tôi sẽ chỉ ra cách kết nối tài sản, PM và phụ tùng trong AdonERP."
+        }
+      },
+      "financialServices": {
+        "meta": {
+          "title": "Dịch vụ Tài chính & Tài chính Tập đoàn ERP",
+          "description": "Hợp nhất, liên công ty, đối chiếu ngân hàng, các khoản vay và chênh lệch ngân sách cho các nhóm tài chính nhóm."
+        },
+        "hero": {
+          "eyebrow": "Tập đoàn công nghiệp · Dịch vụ tài chính",
+          "title": "Khóa sổ toàn tập đoàn",
+          "highlight": "một cách rõ ràng.",
+          "lead": "Hợp nhất các công ty con, loại bỏ số dư giữa các công ty, đối chiếu các ngân hàng và theo dõi các khoản vay và ngân sách từ một hệ thống tài chính."
+        },
+        "stats": [
+          {
+            "value": "4",
+            "label": "công ty con trong ví dụ"
+          },
+          {
+            "value": "Nội bộ tập đoàn",
+            "label": "sự loại bỏ"
+          },
+          {
+            "value": "Ngân sách",
+            "label": "so với thực tế theo công ty"
+          }
+        ],
+        "visual": {
+          "parent": "Ví dụ Holdings Ltd.",
+          "parentNote": "Công ty mẹ · hợp nhất",
+          "sub1": "Công ty TNHH Thực phẩm",
+          "sub1Note": "100% sở hữu",
+          "sub2": "Công ty TNHH dệt may",
+          "sub2Note": "100% sở hữu",
+          "sub3": "Công ty TNHH Dược phẩm",
+          "sub3Note": "75% sở hữu",
+          "sub4": "Công ty TNHH Tài chính",
+          "sub4Note": "100% sở hữu",
+          "flowTitle": "Tổng kết cuối tháng cho cả nhóm",
+          "pillarsTitle": "Tài chính nhóm, không có bảng tính marathon"
+        },
+        "pillars": [
+          {
+            "title": "Báo cáo tài chính hợp nhất",
+            "body": "Hợp nhất các công ty con thành báo cáo tài chính tập đoàn với sơ đồ tài khoản nhất quán."
+          },
+          {
+            "title": "Loại trừ giao dịch nội bộ",
+            "body": "So khớp và loại bỏ số dư và giao dịch giữa các công ty trong nhóm."
+          },
+          {
+            "title": "Ngân hàng và khoản vay",
+            "body": "Đối chiếu các tài khoản ngân hàng và theo dõi lịch vay, lãi suất và trả nợ."
+          },
+          {
+            "title": "Kiểm soát ngân sách",
+            "body": "So sánh ngân sách và thực tế theo công ty, bộ phận và tài khoản."
+          }
+        ],
+        "flow": [
+          {
+            "title": "Các công ty khóa sổ",
+            "body": "Mỗi công ty con hoàn thành các bút toán và đối chiếu ngân hàng riêng của mình."
+          },
+          {
+            "title": "Đối chiếu giao dịch nội bộ",
+            "body": "Số dư giữa các công ty trong nhóm được khớp và thống nhất."
+          },
+          {
+            "title": "Hợp nhất báo cáo tập đoàn",
+            "body": "Việc loại bỏ được đăng và các tuyên bố của nhóm được đưa ra."
+          },
+          {
+            "title": "Rà soát chênh lệch ngân sách",
+            "body": "Ban quản lý xem xét kết quả so với ngân sách, theo từng công ty."
+          }
+        ],
+        "sample": {
+          "title": "Tóm tắt loại trừ giữa các công ty",
+          "caption": "Các công ty hư cấu và số tiền tính bằng BDT lakh, chỉ mang tính chất minh họa.",
+          "columns": [
+            "Cặp công ty",
+            "Phải thu",
+            "Phải trả",
+            "Chênh lệch"
+          ],
+          "rows": [
+            [
+              "Thực phẩm ↔ Dệt may",
+              "84.20",
+              "84.20",
+              "0.00"
+            ],
+            [
+              "Dược phẩm ↔ Holdings",
+              "126.50",
+              "125.90",
+              "0.60"
+            ],
+            [
+              "Tài chính ↔ Thực phẩm",
+              "210.00",
+              "210.00",
+              "0.00"
+            ],
+            [
+              "Dệt may ↔ Dược phẩm",
+              "18.75",
+              "18.75",
+              "0.00"
+            ]
+          ]
+        },
+        "modules": [
+          "Lập báo cáo tài chính của công ty và tập đoàn.",
+          "Đối chiếu tài khoản ngân hàng.",
+          "Theo dõi các khoản vay, lãi và trả nợ.",
+          "So sánh ngân sách và thực tế."
+        ],
+        "faqs": [
+          {
+            "q": "Chúng ta có thể hợp nhất các công ty con thuộc sở hữu một phần không?",
+            "a": "Quyền sở hữu có thể được ghi lại cho mỗi công ty; vui lòng xác nhận cách xử lý kế toán với kiểm toán viên của bạn."
+          },
+          {
+            "q": "Sự khác biệt giữa các công ty có tự động xuất hiện không?",
+            "a": "Số dư giữa các công ty trong nhóm được so sánh, do đó số dư chưa từng có sẽ nổi bật trước khi hợp nhất."
+          },
+          {
+            "q": "Những công ty này có thật không?",
+            "a": "Không. Nhóm và số liệu được hiển thị là hư cấu."
+          }
+        ],
+        "cta": {
+          "title": "Xem nhóm của bạn thân thiết trong AdonERP",
+          "body": "Mang theo cấu trúc công ty của bạn và chúng tôi sẽ hướng dẫn quá trình hợp nhất trong bản demo."
         }
       }
     }

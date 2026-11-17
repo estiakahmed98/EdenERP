@@ -41,6 +41,7 @@ import {
   toVisitorConversationDTO,
   touchVisitor,
 } from "@/lib/chat/service";
+import { sendAutoReplyIfFirst } from "@/lib/chat/auto-reply";
 
 type VisitorClient = { role: "visitor"; ws: WebSocket; conversationId: string; name: string; userId: string | null };
 type AdminClient = { role: "admin"; ws: WebSocket; userId: string; name: string };
@@ -233,6 +234,15 @@ class ChatHub {
         const summary = await adminConversationSummary(conversationId, true);
         this.toAdmins({ t: "message", message: dto, conversation: summary ?? undefined });
         this.toAdmins({ t: "typing", conversationId, from: "VISITOR", typing: false });
+
+        const conversation = await getConversation(conversationId);
+        const auto = conversation ? await sendAutoReplyIfFirst(conversation, true) : null;
+        if (auto) {
+          const autoDto = toMessageDTO(auto);
+          this.toVisitors(conversationId, { t: "message", message: autoDto });
+          const autoSummary = await adminConversationSummary(conversationId, true);
+          this.toAdmins({ t: "message", message: autoDto, conversation: autoSummary ?? undefined });
+        }
         return;
       }
       case "typing":

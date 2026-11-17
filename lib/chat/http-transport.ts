@@ -30,6 +30,7 @@ import {
   unreadForAdmin,
 } from "@/lib/chat/service";
 import type { ChatConversation } from "@/lib/generated/prisma/client";
+import { sendAutoReplyIfFirst } from "@/lib/chat/auto-reply";
 
 /** A heartbeat younger than this counts as online. Clients poll every few seconds. */
 export const ONLINE_MS = 30_000;
@@ -194,7 +195,11 @@ export async function visitorFrame(conversation: ChatConversation, event: ChatCl
         clientId: event.clientId,
         delivered: false, // set when an agent's inbox fetches it
       });
-      return [{ t: "message", message: toMessageDTO(message) }];
+      const events: ChatServerEvent[] = [{ t: "message", message: toMessageDTO(message) }];
+      // The visitor receives it in this response, so it is delivered.
+      const auto = await sendAutoReplyIfFirst(conversation, true);
+      if (auto) events.push({ t: "message", message: toMessageDTO(auto) });
+      return events;
     }
     case "read": {
       const { at, ids } = await markRead(conversationId, "ADMIN");
